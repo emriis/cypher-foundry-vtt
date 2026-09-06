@@ -1,0 +1,122 @@
+<section class="tab inventory {{tab.cssClass}}" data-group="primary" data-tab="inventory">
+
+  <div class="inventory-section">
+    <h3>{{localize 'CYPHER.Cypher.Title'}} ({{items.cyphers.length}}/{{system.cypherLimit}})</h3>
+    <button type="button" data-action="itemCreate" data-type="cypher"><i class="fa-solid fa-plus"></i></button>
+    <ul class="item-list">
+      {{#each items.cyphers as |item|}}
+      <li class="item {{#if item.system.depleted}}depleted{{/if}}" data-item-id="{{item.id}}">
+        <span class="item-name">{{item.name}}</span>
+        <span class="item-level">{{item.system.level}}</span>
+        <button type="button" data-action="useCypher" title="{{localize 'CYPHER.Cypher.Use'}}"><i class="fa-solid fa-bolt"></i></button>
+        <a data-action="itemEdit"><i class="fa-solid fa-edit"></i></a>
+        <a data-action="itemDelete"><i class="fa-solid fa-trash"></i></a>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+
+  <div class="inventory-section">
+    <h3>{{localize 'CYPHER.Artifact.Title'}}</h3>
+    <button type="button" data-action="itemCreate" data-type="artifact"><i class="fa-solid fa-plus"></i></button>
+    <ul class="item-list">
+      {{#each items.artifacts as |item|}}
+      <li class="item {{#if item.system.depleted}}depleted{{/if}}" data-item-id="{{item.id}}">
+        <span class="item-name">{{item.name}}</span>
+        <span class="item-level">{{item.system.level}}</span>
+        <button type="button" data-action="rollDepletion" title="{{localize 'CYPHER.Depletion.Roll'}}"><i class="fa-solid fa-dice"></i></button>
+        <a data-action="itemEdit"><i class="fa-solid fa-edit"></i></a>
+        <a data-action="itemDelete"><i class="fa-solid fa-trash"></i></a>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+
+  <div class="inventory-section">
+    <h3>{{localize 'CYPHER.Oddity.Title'}}</h3>
+    <button type="button" data-action="itemCreate" data-type="oddity"><i class="fa-solid fa-plus"></i></button>
+    <ul class="item-list">
+      {{#each items.oddities as |item|}}
+      <li class="item" data-item-id="{{item.id}}">
+        <span class="item-name">{{item.name}}</span>
+        <a data-action="itemEdit"><i class="fa-solid fa-edit"></i></a>
+        <a data-action="itemDelete"><i class="fa-solid fa-trash"></i></a>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+
+  <div class="inventory-section">
+    <h3>{{localize 'CYPHER.Attack.Title'}}</h3>
+    <button type="button" data-action="itemCreate" data-type="attack"><i class="fa-solid fa-plus"></i></button>
+    <ul class="item-list">
+      {{#each items.attacks as |item|}}
+      <li class="item" data-item-id="{{item.id}}">
+        <span class="item-name">{{item.name}}</span>
+        <span class="item-detail">{{localize (concat "CYPHER.AttackType." item.system.attackType)}} — {{item.system.damage}} {{localize 'CYPHER.Damage'}}</span>
+        <button type="button" data-action="rollAttack" title="{{localize 'CYPHER.Roll.Attack'}}"><i class="fa-solid fa-dice-d20"></i></button>
+        <a data-action="itemEdit"><i class="fa-solid fa-edit"></i></a>
+        <a data-action="itemDelete"><i class="fa-solid fa-trash"></i></a>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+
+  <div class="inventory-section">
+    <h3>{{localize 'CYPHER.Armor.Title'}}</h3>
+    <button type="button" data-action="itemCreate" data-type="armor"><i class="fa-solid fa-plus"></i></button>
+    <ul class="item-list">
+      {{#each items.armor as |item|}}
+      <li class="item" data-item-id="{{item.id}}">
+        <span class="item-name">{{item.name}}</span>
+        <span class="item-detail">{{localize (concat "CYPHER.Armor." item.system.category)}}</span>
+        <label><input type="checkbox" data-action="toggleEquipped" {{#if item.system.equipped}}checked{{/if}}/> {{localize 'CYPHER.Equipped'}}</label>
+        <a data-action="itemEdit"><i class="fa-solid fa-edit"></i></a>
+        <a data-action="itemDelete"><i class="fa-solid fa-trash"></i></a>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+
+  <div class="inventory-section">
+    <h3>{{localize 'CYPHER.Shield.Title'}}</h3>
+    <button type="button" data-action="itemCreate" data-type="shield"><i class="fa-solid fa-plus"></i></button>
+    <ul class="item-list">
+      {{#each items.shields as |item|}}
+      <li class="item {{#if item.system.broken}}broken{{/if}}" data-item-id="{{item.id}}">
+        <span class="item-name">{{item.name}}</span>
+        <span class="item-detail">
+          {{#if item.system.broken}}
+            {{localize 'CYPHER.Shield.BrokenLabel'}}
+          {{else}}
+            {{localize 'CYPHER.Wound.minor'}} {{item.system.wounds.minor.current}}/{{item.system.wounds.minor.max}} —
+            {{localize 'CYPHER.Wound.moderate'}} {{item.system.wounds.moderate.current}}/{{item.system.wounds.moderate.max}} —
+            {{localize 'CYPHER.Wound.major'}} {{item.system.wounds.major.current}}/{{item.system.wounds.major.max}}
+          {{/if}}
+        </span>
+        <label><input type="checkbox" data-action="toggleEquipped" {{#if item.system.equipped}}checked{{/if}}/> {{localize 'CYPHER.Equipped'}}</label>
+        <a data-action="itemEdit"><i class="fa-solid fa-edit"></i></a>
+        <a data-action="itemDelete"><i class="fa-solid fa-trash"></i></a>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+
+  <div class="inventory-section">
+    <h3>{{localize 'CYPHER.Equipment.Title'}}</h3>
+    <button type="button" data-action="itemCreate" data-type="equipment"><i class="fa-solid fa-plus"></i></button>
+    <ul class="item-list">
+      {{#each items.equipment as |item|}}
+      <li class="item {{#if item.system.depleted}}depleted{{/if}}" data-item-id="{{item.id}}">
+        <span class="item-name">{{item.name}} {{#if (gt item.system.quantity 1)}}(x{{item.system.quantity}}){{/if}}</span>
+        {{#ifNotEquals item.system.depletionDie "none"}}
+        <button type="button" data-action="rollDepletion" title="{{localize 'CYPHER.Depletion.Roll'}}"><i class="fa-solid fa-dice"></i></button>
+        {{/ifNotEquals}}
+        <a data-action="itemEdit"><i class="fa-solid fa-edit"></i></a>
+        <a data-action="itemDelete"><i class="fa-solid fa-trash"></i></a>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+
+</section>

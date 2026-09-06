@@ -1,0 +1,415 @@
+{
+  "CYPHER": {
+    "Name": "Nom",
+    "Description": "Description",
+    "Biography": "Biographie",
+    "Notes": "Notes",
+    "Tier": "Rang",
+    "Effort": "Effort",
+    "Edge": "Avantage",
+    "XP": "XP",
+    "Level": "Niveau",
+    "Damage": "Dégâts",
+    "Equipped": "Équipé",
+    "Identified": "Identifié(e)",
+    "CypherLimit": "Limite de cyphers",
+    "AdditionalAbilities": "Aptitudes supplémentaires",
+
+    "Sheet": {
+      "PC": "Fiche de personnage",
+      "NPC": "Fiche de PNJ",
+      "Community": "Fiche de Communauté"
+    },
+
+    "Tab": {
+      "main": "Principal",
+      "skills": "Compétences",
+      "abilities": "Aptitudes",
+      "inventory": "Inventaire",
+      "advancement": "Avancement",
+      "biography": "Biographie"
+    },
+
+    "CharacterLine": {
+      "Prefix": "Je suis un(e)",
+      "Middle": "qui",
+      "Who": "et qui",
+      "And": "et",
+      "AddSecondDescriptor": "Ajouter un second descripteur",
+      "RemoveSecondDescriptor": "Retirer le second descripteur",
+      "AddSecondFocus": "Ajouter un second focus",
+      "RemoveSecondFocus": "Retirer le second focus"
+    },
+    "Descriptor": "Descripteur",
+    "Descriptor2": "Second descripteur",
+    "Type": "Type",
+    "Focus": "Focus",
+    "Focus2": "Second focus",
+    "Profession": "Profession",
+    "Species": "Espèce",
+    "SpeciesPlaceholder": "ex. Humain, Elfe, Cyborg... (optionnel)",
+    "ResourcePoints": "Points de Ressource",
+
+    "Genre": {
+      "Label": "Genre de jeu",
+      "none": "Non spécifié",
+      "realWorld": "Monde Réel",
+      "fantasy": "Fantasy",
+      "sciFi": "Science-Fiction",
+      "superhero": "Super-héros",
+      "custom": "Personnalisé (tous les champs)",
+      "RealWorldHint": "Monde Réel : pas de Type ni de Focus — un(e) Descripteur + Profession suffit. Par défaut, inaptitude aux armes moyennes/lourdes (sauf compétence de fond dédiée)."
+    },
+
+    "Superhero": {
+      "Rank": "Rang du Type (1-5)",
+      "PowerShifts": "Amplificateurs de Pouvoir",
+      "Hint": "Chaque catégorie est plafonnée à 3. Un amplificateur agit comme un niveau d'Effort gratuit et permanent pour les tâches concernées. Les tâches peuvent aller jusqu'à difficulté 15 dans ce genre."
+    },
+
+    "PowerShift": {
+      "accuracy": "Précision (attaques)",
+      "dexterity": "Dextérité (esquive, initiative, acrobaties)",
+      "flight": "Vol",
+      "healing": "Guérison (récupération bonus)",
+      "increasedRange": "Portée accrue",
+      "intelligence": "Intelligence (défense Int., savoirs)",
+      "power": "Puissance (effets/dégâts d'une capacité)",
+      "prodigy": "Prodige (échange de capacités)",
+      "resilience": "Résilience (blocage, défense Puissance)",
+      "savant": "Savant (deux compétences précises)",
+      "singleAttack": "Attaque unique (un type d'attaque précis)",
+      "strength": "Force (athlétisme, dégâts de mêlée)"
+    },
+
+    "Stat": {
+      "Label": "Caractéristique",
+      "might": "Puissance",
+      "speed": "Célérité",
+      "intellect": "Intellect",
+      "none": "Aucune",
+      "AddCustom": "Ajouter une caractéristique",
+      "RemoveCustom": "Retirer cette caractéristique",
+      "CustomName": "Nom de la caractéristique",
+      "CustomNamePlaceholder": "ex. Chance, Foi, Volonté...",
+      "ConfirmDeleteCustom": "Retirer définitivement cette caractéristique personnalisée ?"
+    },
+
+    "Armor": {
+      "Title": "Armure",
+      "Category": "Catégorie",
+      "none": "Aucune",
+      "light": "Légère",
+      "medium": "Moyenne",
+      "heavy": "Lourde",
+      "FreelyUsable": "Utilisation libre (autorisée par le Type)",
+      "BlockEase": "Facilite le Blocage (pas)",
+      "DodgeHinder": "Entrave l'Esquive (pas)",
+      "AppliesToAllSpeed": "s'applique à toutes les tâches de Célérité — armure non maîtrisée",
+      "BaseWas": "base :",
+      "Damage": "Endommager (intrusion MJ)",
+      "DamageHint": "Une attaque spéciale ou une intrusion du MJ réduit d'1 pas le bonus de Blocage de l'armure — jamais son handicap d'Esquive.",
+      "Damaged": "Armure endommagée",
+      "DamagedNote": "L'armure de {name} est endommagée : son bonus de Blocage est réduit.",
+      "DamagedBanner": "Armure endommagée — bonus de Blocage réduit",
+      "NoBlockBonusToDamage": "Cette armure n'a aucun bonus de Blocage à endommager.",
+      "NoArmorEquipped": "Aucune armure équipée — rien à endommager.",
+      "Repair": "Réparer l'armure",
+      "ConfirmRepair": "Retirer tous les dégâts accumulés sur le bonus de Blocage de l'armure ?",
+      "NoneEquipped": "Aucune armure équipée.",
+      "ManageInInventory": "Pour changer d'armure, coche « Équipé » sur l'objet voulu dans l'onglet Inventaire (une seule à la fois).",
+      "BlockEaseDamage": "Dégâts au bonus de Blocage",
+      "ItemHint": "Coche « Équipé » pour rendre cette armure active sur la fiche du personnage. Une seule armure peut être équipée à la fois — équiper celle-ci désactive automatiquement les autres."
+    },
+
+    "Wound": {
+      "Title": "Blessures",
+      "minor": "Mineure",
+      "moderate": "Modérée",
+      "major": "Majeure",
+      "Rally": "Se reprendre (dépenser des points de Puissance pour retirer cette blessure)",
+      "RallyMajorSuperhero": "Se reprendre (10 Puissance — réservé au genre Super-héros)",
+      "Hint": "3 cases par sévérité par défaut. Modérée pleine = toutes les actions handicapées. Chaque blessure majeure handicape d'1 pas supplémentaire. 3 blessures majeures = mort.",
+      "HinderedBanner": "Personnage handicapé",
+      "DeadBanner": "Personnage mort",
+      "HinderedStatus": "Handicapé",
+      "DeadStatus": "Mort"
+    },
+
+    "Recovery": {
+      "Title": "Récupérations",
+      "action": "Une action",
+      "tenMinutes": "10 minutes",
+      "hour": "1 heure",
+      "tenHours": "10 heures",
+      "RemovesAllMinor": "Retire toutes les blessures mineures.",
+      "RemovesOneModerate": "Retire une blessure modérée.",
+      "RemovesAllModerateReminder": "Retire toutes les blessures modérées. (Une blessure majeure peut être retirée avec un jet de Puissance difficulté 6 réussi — à gérer manuellement.)"
+    },
+
+    "Skill": {
+      "New": "Nouvelle compétence",
+      "Level": "Niveau de formation"
+    },
+    "SkillLevel": {
+      "inability": "Inaptitude",
+      "none": "Aucun",
+      "trained": "Entrainé(e)",
+      "specialized": "Spécialisé(e)",
+      "expert": "Expert(e)"
+    },
+
+    "CustomField": {
+      "Title": "Champs libres",
+      "Hint": "Ajoute n'importe quel élément propre à ton personnage, non prévu par le système (statut, réputation, allié, dette, etc.).",
+      "Add": "Ajouter un champ",
+      "Remove": "Retirer ce champ",
+      "Label": "Nom du champ",
+      "LabelPlaceholder": "ex. Réputation, Allié, Dette...",
+      "Type": "Type de champ",
+      "text": "Texte",
+      "number": "Nombre",
+      "checkbox": "Case à cocher",
+      "ConfirmDelete": "Retirer définitivement ce champ libre ?"
+    },
+
+    "Ability": {
+      "New": "Nouvelle aptitude",
+      "Source": "Origine (Type/Foyer/Avancement)",
+      "CostStat": "Coût",
+      "Action": "Action requise",
+      "ActionNone": "Aucune",
+      "ActionStandard": "Action",
+      "ActionMovement": "Mouvement"
+    },
+
+    "Cypher": {
+      "Title": "Cyphers",
+      "Type": "Type de cypher",
+      "Subtle": "Discret",
+      "Manifest": "Manifeste",
+      "Internal": "Interne (implanté)",
+      "Depleted": "Épuisé",
+      "Use": "Utiliser",
+      "Used": "Ce cypher a été utilisé et est maintenant épuisé."
+    },
+
+    "Artifact": {
+      "Title": "Artefacts",
+      "Form": "Forme"
+    },
+
+    "Depletion": {
+      "Die": "Dé d'épuisement",
+      "Threshold": "Seuil",
+      "none": "Ne s'épuise jamais",
+      "Depleted": "Épuisé",
+      "Roll": "Jet d'épuisement",
+      "Title": "Épuisement : {name}",
+      "Range": "Seuil {threshold} sur 1{die}",
+      "StillWorks": "Fonctionne encore.",
+      "LastUse": "Fonctionne, mais c'était la dernière utilisation — désormais épuisé.",
+      "Never": "Cet objet ne s'épuise jamais.",
+      "Hint": "Quand tu utilises cet artefact, clique sur le dé pour lancer son jet d'épuisement. \"Ne s'épuise jamais\" correspond à la mention « — » du CRD.",
+      "EquipmentHint": "Cet équipement utilise un épuisement plutôt qu'une quantité fixe (comme une trousse de secours ou de l'aspirine dans le CRD)."
+    },
+
+    "Oddity": {
+      "Title": "Curiosités"
+    },
+
+    "Equipment": {
+      "Title": "Équipement",
+      "Quantity": "Quantité",
+      "Weight": "Poids"
+    },
+    "Weight": {
+      "none": "Aucun",
+      "light": "Léger",
+      "medium": "Moyen",
+      "heavy": "Lourd"
+    },
+
+    "Attack": {
+      "Title": "Attaques",
+      "Type": "Type d'attaque",
+      "FreelyUsable": "Arme utilisable librement (sinon entrave de 1 palier)"
+    },
+    "AttackType": {
+      "light": "Légère (2 dégâts)",
+      "medium": "Moyenne (4 dégâts)",
+      "heavy": "Lourde (6 dégâts)"
+    },
+
+    "Item": {
+      "New": "Nouveau : {type}"
+    },
+
+    "Roll": {
+      "Roll": "Lancer",
+      "Task": "Jet de tâche",
+      "Attack": "Jet d'attaque",
+      "Recovery": "Jet de récupération",
+      "Difficulty": "Difficulté",
+      "Effective": "Effective",
+      "Target": "Nombre cible",
+      "Routine": "routine, réussite automatique",
+      "EffortLevels": "Niveaux d'effort",
+      "EffortSpent": "Effort dépensé",
+      "AssetSteps": "Pas d'atout",
+      "LinkedSkill": "Compétence liée",
+      "NoSkill": "Aucune",
+      "MaxEffortHint": "max {max}, selon le score d'Effort",
+      "PoolPoints": "points de réserve",
+      "Steps": "paliers",
+      "Success": "Réussite",
+      "Failure": "Échec",
+      "TotalDamage": "dégâts totaux",
+      "MinorEffect": "effet mineur (19 naturel)",
+      "MajorEffect": "effet majeur (20 naturel)",
+      "GMIntrusionFree": "intrusion du MJ gratuite (1 naturel)",
+      "WoundHinder": "Entravé de {steps} palier(s) à cause des blessures",
+      "ExtraHinder": "Entrave supplémentaire de {steps} palier(s) (coup de chance / arme non maîtrisée)",
+      "ArmorModifier": "Modificateur d'armure : {steps} palier(s)",
+      "ArmorSpeedHinder": "Entravé de {steps} palier(s) (armure non maîtrisée)",
+      "CostRefunded": "Le coût de l'action a été remboursé (20 naturel).",
+      "Rallied": "{name} se reprend et retire une blessure {severity}."
+    },
+
+    "Defense": {
+      "Block": "Bloquer",
+      "Dodge": "Esquiver",
+      "IncomingSeverity": "Sévérité de la blessure encourue",
+      "AttackerTarget": "nombre cible de l'attaquant",
+      "BlockSuccess": "Blocage réussi : la blessure {severity} est réduite d'un cran.",
+      "DodgeSuccess": "Esquive réussie : la blessure est entièrement évitée.",
+      "Failed": "Défense échouée : blessure {severity} subie."
+    },
+
+    "Shield": {
+      "Title": "Boucliers",
+      "SheetHint": "Tout personnage peut utiliser un bouclier librement, quel que soit son Type. Sur un Blocage réussi, choisis de réduire la blessure d'un cran comme d'habitude, ou de la faire absorber entièrement par un bouclier équipé.",
+      "UseShield": "Utiliser un bouclier (Blocage réussi = blessure entière absorbée)",
+      "NoneReduceInstead": "Aucun — réduire la blessure d'un cran comme d'habitude",
+      "Absorbed": "{name} absorbe entièrement la blessure {severity} — aucun dégât subi.",
+      "Broken": "Bouclier détruit",
+      "BrokenNote": "{name} a subi sa blessure majeure et est détruit.",
+      "BrokenLabel": "Détruit"
+    },
+
+    "XP": {
+      "Title": "Points d'Expérience",
+      "Reroll": "Relancer",
+      "RerollResult": "Résultat de la relance",
+      "RerollCompare": "Ancien résultat : {old} — Nouveau : {new} — Meilleur des deux : {final}",
+      "RerollHint": "Relance (1 XP) : clique sur le bouton qui apparaît sous n'importe quel jet dans le tchat, immédiatement après le jet (le tien ou celui d'un autre joueur).",
+      "EditInHeader": "Modifie la valeur des XP directement dans l'en-tête de la fiche, en haut.",
+      "PlayerIntrusion": "Intrusion joueur",
+      "PlayerIntrusionPrompt": "Décris comment tu modifies la situation en ta faveur",
+      "LuckyShot": "Coup de chance",
+      "LuckyShotHint": "entravé de 4 paliers",
+      "LuckyShotHint2": "Coup de chance (1 XP) : disponible directement dans la boîte de dialogue d'un jet d'attaque, pour tenter d'attaquer à l'aveugle."
+    },
+
+    "Advancement": {
+      "Title": "Avancement de personnage",
+      "Hint": "Choisis un avancement pour chacun des 4 emplacements du rang courant, puis achète-les un par un (4 XP chacun). Une fois les 4 achetés, le personnage passe automatiquement au rang suivant.",
+      "Slot": "Emplacement",
+      "Bought": "Acheté",
+      "Buy": "Acheter",
+      "capabilities": "Aptitudes accrues (+4 aux Réserves)",
+      "perfection": "Vers la perfection (+1 Marge)",
+      "effort": "Effort supplémentaire (+1, max 6)",
+      "skill": "Compétence (formation/spécialisation)",
+      "other": "Autre",
+      "other-recovery": "Autre : Récupération (+2 permanent)",
+      "other-focus": "Autre : Nouveau Focus",
+      "other-armor": "Autre : Toute armure utilisable librement",
+      "other-weapons": "Autre : Toute arme utilisable librement",
+      "other-genre": "Autre : Aptitude de Genre supplémentaire",
+      "CapabilitiesDialogHint": "Répartis 4 points entre tes trois Réserves (le total doit faire exactement 4).",
+      "CapabilitiesNote": "Les points de Réserve ont été répartis.",
+      "PerfectionNote": "Marge de {stat} augmentée de 1.",
+      "EffortNote": "Effort augmenté de 1.",
+      "PickExistingSkill": "Compétence existante à améliorer",
+      "OrNewSkillName": "...ou nom d'une nouvelle compétence entrainée/spécialisée.",
+      "SkillNote": "{name} est maintenant au niveau : {level}.",
+      "OtherRecoveryNote": "Bonus de récupération permanent +2.",
+      "OtherFocusNote": "Choisis une nouvelle capacité de Focus (à ajouter manuellement dans l'onglet Aptitudes).",
+      "OtherArmorNote": "Le personnage peut désormais utiliser librement toutes les catégories d'armure.",
+      "OtherWeaponsNote": "Le personnage peut désormais utiliser librement toutes les armes.",
+      "OtherGenreNote": "Choisis une aptitude de Genre supplémentaire (à ajouter manuellement dans l'onglet Aptitudes).",
+      "Purchased": "Avancement acheté",
+      "TierReached": "Rang {tier} atteint !",
+      "NewTierFocus": "Le personnage gagne une nouvelle aptitude de Focus gratuite (rang {tier}).",
+      "NewTierGenre": "Le personnage gagne aussi une aptitude de Genre gratuite (rang {tier}).",
+      "PermanentTraits": "Acquis permanents",
+      "RecoveryBonus": "Bonus de récupération",
+      "AllCategories": "toutes catégories",
+      "AllWeaponsFree": "Toute arme utilisable librement"
+    },
+
+    "NPC": {
+      "Level": "Niveau",
+      "TargetNumber": "Nombre cible",
+      "Health": "Santé",
+      "Movement": "Mouvement",
+      "Modifications": "Modificateurs",
+      "ModificationsPlaceholder": "ex. attaque comme un niveau 5, +2 à l'Esquive...",
+      "Combat": "Combat",
+      "Interaction": "Interaction",
+      "Use": "Utilisation",
+      "Loot": "Butin",
+      "GMNotes": "Notes du MJ",
+      "ApplyDamage": "Appliquer des dégâts",
+      "IgnoreArmor": "Ignorer l'armure"
+    },
+
+    "Community": {
+      "Resources": "Ressources"
+    },
+
+    "Confirm": {
+      "Delete": "Confirmer la suppression",
+      "DeleteItem": "Supprimer définitivement « {name} » ?",
+      "Add": "Ajouter"
+    },
+
+    "Warning": {
+      "NotPC": "Seuls les personnages joueurs peuvent effectuer ce jet.",
+      "NotEnoughPool": "Pas assez de points dans la réserve de {stat} pour cet effort.",
+      "CannotRallyMajor": "Impossible de se reprendre pour retirer une blessure majeure (hors genre super-héros).",
+      "NotEnoughMightToRally": "Pas assez de points de Puissance pour se reprendre.",
+      "CharacterDied": "{name} a subi sa dernière blessure majeure et meurt.",
+      "CustomStatExists": "Une statistique avec ce nom existe déjà.",
+      "NotEnoughXP": "Pas assez de Points d'Expérience ({amount} requis pour : {reason}).",
+      "ChooseAdvancementType": "Choisis d'abord un type d'avancement pour cet emplacement.",
+      "CapabilitiesMustSumFour": "La répartition doit totaliser exactement 4 points."
+    },
+
+    "Migration": {
+      "Begin": "Cypher : migration des données du monde vers la version {version}. Merci de ne pas fermer le jeu...",
+      "Complete": "Cypher : migration des données du monde vers la version {version} terminée.",
+      "TooOld": "Vos données Cypher (version {version}) sont trop anciennes pour être migrées automatiquement. Merci de mettre à jour via des versions intermédiaires, ou de demander de l'aide."
+    }
+  },
+
+  "TYPES": {
+    "Actor": {
+      "pc": "Personnage joueur",
+      "npc": "PNJ",
+      "community": "Communauté"
+    },
+    "Item": {
+      "skill": "Compétence",
+      "ability": "Aptitude",
+      "cypher": "Cypher",
+      "artifact": "Artefact",
+      "oddity": "Curiosité",
+      "equipment": "Équipement",
+      "attack": "Attaque",
+      "armor": "Armure",
+      "shield": "Bouclier"
+    }
+  }
+}

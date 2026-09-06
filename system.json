@@ -1,0 +1,81 @@
+{
+  "id": "cypher",
+  "title": "Cypher",
+  "description": "Un système de jeu non-officiel pour Cypher (Monte Cook Games), construit sous la Cypher Open License. / An unofficial game system for Cypher (Monte Cook Games), built under the Cypher Open License.",
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14.360"
+  },
+  "authors": [
+    {
+      "name": "Aymeric VILAIN"
+    }
+  ],
+  "esmodules": [
+    "cypher.mjs"
+  ],
+  "styles": [
+    "css/cypher.css"
+  ],
+  "languages": [
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json"
+    },
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "documentTypes": {
+    "Actor": {
+      "pc": {
+        "htmlFields": ["biography", "notes"]
+      },
+      "npc": {
+        "htmlFields": ["biography", "notes"]
+      },
+      "community": {
+        "htmlFields": ["biography", "notes"]
+      }
+    },
+    "Item": {
+      "skill": {},
+      "ability": {},
+      "cypher": {},
+      "artifact": {},
+      "oddity": {},
+      "equipment": {},
+      "attack": {},
+      "armor": {},
+      "shield": {}
+    }
+  },
+  "packs": [],
+  "packFolders": [],
+  "primaryTokenAttribute": "stats.might.pool",
+  "secondaryTokenAttribute": "stats.speed.pool",
+  "grid": {
+    "distance": 1.5,
+    "units": "m"
+  },
+  "url": "",
+  "manifest": "",
+  "download": "",
+  "license": "LICENSE.txt",
+  "readme": "README.md",
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD). See https://col.montecookgames.com for license terms."
+    },
+    "needsMigrationVersion": "0.1.0",
+    "compatibleMigrationVersion": "0.1.0",
+    "hotReload": {
+      "extensions": ["css", "hbs", "json"],
+      "paths": ["css/cypher.css", "templates", "lang"]
+    }
+  }
+}

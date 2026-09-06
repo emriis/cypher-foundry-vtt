@@ -1,0 +1,24 @@
+<section class="tab skills {{tab.cssClass}}" data-group="primary" data-tab="skills">
+  <button type="button" class="item-create" data-action="itemCreate" data-type="skill">
+    <i class="fa-solid fa-plus"></i> {{localize 'CYPHER.Skill.New'}}
+  </button>
+  <ul class="item-list skills-list">
+    <li class="item-list-header">
+      <span class="skill-name">{{localize 'CYPHER.Name'}}</span>
+      <span class="skill-stat">{{localize 'CYPHER.Stat.Label'}}</span>
+      <span class="skill-level">{{localize 'CYPHER.Skill.Level'}}</span>
+      <span class="skill-controls"></span>
+    </li>
+    {{#each items.skills as |item|}}
+    <li class="item" data-item-id="{{item.id}}">
+      <span class="skill-name">{{item.name}}</span>
+      <span class="skill-stat">{{localize (concat "CYPHER.Stat." item.system.stat)}}</span>
+      <span class="skill-level skill-level-{{item.system.level}}">{{localize (concat "CYPHER.SkillLevel." item.system.level)}}</span>
+      <span class="skill-controls">
+        <a data-action="itemEdit"><i class="fa-solid fa-edit"></i></a>
+        <a data-action="itemDelete"><i class="fa-solid fa-trash"></i></a>
+      </span>
+    </li>
+    {{/each}}
+  </ul>
+</section>
