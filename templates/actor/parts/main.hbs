@@ -1,0 +1,190 @@
+<section class="tab main {{tab.cssClass}}" data-group="primary" data-tab="main">
+
+  <div class="stats-row">
+    {{#each system.stats as |stat key|}}
+    <div class="stat-block stat-{{key}}">
+      <h3>{{localize (concat "CYPHER.Stat." key)}}</h3>
+      <div class="pool-row">
+        <input class="pool-value" name="system.stats.{{key}}.pool.value" type="number" value="{{stat.pool.value}}" min="0"/>
+        <span>/</span>
+        <input class="pool-max" name="system.stats.{{key}}.pool.max" type="number" value="{{stat.pool.max}}" min="0"/>
+      </div>
+      <label class="edge-row">{{localize 'CYPHER.Edge'}}
+        <input name="system.stats.{{key}}.edge" type="number" value="{{stat.edge}}" min="0"/>
+      </label>
+      <button type="button" class="roll-stat" data-action="rollStat" data-stat="{{key}}" data-difficulty="3">
+        <i class="fa-solid fa-dice-d20"></i> {{localize 'CYPHER.Roll.Roll'}}
+      </button>
+    </div>
+    {{/each}}
+  </div>
+
+  {{#if system.customStats.length}}
+  <div class="stats-row custom-stats-row">
+    {{#each system.customStats as |stat|}}
+    <div class="stat-block stat-custom" data-stat-id="{{stat.id}}">
+      <h3>{{stat.label}}
+        <a class="remove-custom-stat" data-action="deleteCustomStat" title="{{localize 'CYPHER.Stat.RemoveCustom'}}"><i class="fa-solid fa-xmark"></i></a>
+      </h3>
+      <!-- Champs cachés : préservent id/label lors de la soumission du formulaire entier.
+           Un ArrayField est TOUJOURS remplacé en bloc par Foundry — tout champ d'un élément
+           qui n'est pas présent comme <input> nommé serait sinon perdu à chaque soumission.
+           Hidden fields: preserve id/label across whole-form submission. An ArrayField is
+           ALWAYS replaced wholesale by Foundry — any element field not present as a named
+           <input> would otherwise be lost on every submit. -->
+      <input type="hidden" name="system.customStats.{{@index}}.id" value="{{stat.id}}"/>
+      <input type="hidden" name="system.customStats.{{@index}}.label" value="{{stat.label}}"/>
+      <div class="pool-row">
+        <input class="pool-value" name="system.customStats.{{@index}}.pool.value" type="number" value="{{stat.pool.value}}" min="0"/>
+        <span>/</span>
+        <input class="pool-max" name="system.customStats.{{@index}}.pool.max" type="number" value="{{stat.pool.max}}" min="0"/>
+      </div>
+      <label class="edge-row">{{localize 'CYPHER.Edge'}}
+        <input name="system.customStats.{{@index}}.edge" type="number" value="{{stat.edge}}" min="0"/>
+      </label>
+      <button type="button" class="roll-stat" data-action="rollStat" data-stat="{{stat.id}}" data-difficulty="3">
+        <i class="fa-solid fa-dice-d20"></i> {{localize 'CYPHER.Roll.Roll'}}
+      </button>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+
+  <button type="button" class="add-custom-stat" data-action="addCustomStat">
+    <i class="fa-solid fa-plus"></i> {{localize 'CYPHER.Stat.AddCustom'}}
+  </button>
+
+
+  {{#if system.hindered}}
+  <p class="hindered-banner">
+    <i class="fa-solid fa-triangle-exclamation"></i>
+    {{localize 'CYPHER.Wound.HinderedBanner'}} ({{system.hinderSteps}} {{localize 'CYPHER.Roll.Steps'}})
+  </p>
+  {{/if}}
+  {{#if system.dead}}
+  <p class="dead-banner"><i class="fa-solid fa-skull"></i> {{localize 'CYPHER.Wound.DeadBanner'}}</p>
+  {{/if}}
+
+  <div class="wounds-block">
+    <h3>{{localize 'CYPHER.Wound.Title'}}</h3>
+    <div class="wounds-row">
+      {{#each system.wounds as |wound severity|}}
+      <div class="wound-severity wound-{{severity}}">
+        <label>{{localize (concat "CYPHER.Wound." severity)}}</label>
+        <div class="wound-boxes">
+          <input name="system.wounds.{{severity}}.current" type="number" value="{{wound.current}}" min="0" max="{{wound.max}}"/>
+          <span>/ {{wound.max}}</span>
+        </div>
+        {{#ifNotEquals severity "major"}}
+        <button type="button" data-action="rallyWound" data-severity="{{severity}}" title="{{localize 'CYPHER.Wound.Rally'}}">
+          <i class="fa-solid fa-heart-pulse"></i>
+        </button>
+        {{else}}
+          {{#if ../system.canRallyMajor}}
+          <button type="button" data-action="rallyWound" data-severity="major" title="{{localize 'CYPHER.Wound.RallyMajorSuperhero'}}">
+            <i class="fa-solid fa-heart-pulse"></i>
+          </button>
+          {{/if}}
+        {{/ifNotEquals}}
+      </div>
+      {{/each}}
+    </div>
+    <p class="wound-hint">{{localize 'CYPHER.Wound.Hint'}}</p>
+  </div>
+
+  <div class="armor-block">
+    <h3>{{localize 'CYPHER.Armor.Title'}}</h3>
+    {{#if system.armor.itemId}}
+    <p class="armor-active-name">
+      <i class="fa-solid fa-shield-halved"></i>
+      <strong>{{system.armor.name}}</strong> — {{localize (concat "CYPHER.Armor." system.armor.category)}}
+      {{#if system.armor.freelyUsable}}<span class="armor-freely-usable-tag">({{localize 'CYPHER.Armor.FreelyUsable'}})</span>{{/if}}
+    </p>
+    {{else}}
+    <p class="armor-none-note">{{localize 'CYPHER.Armor.NoneEquipped'}}</p>
+    {{/if}}
+    <p class="armor-hint">
+      {{localize 'CYPHER.Armor.BlockEase'}}: {{system.armor.blockEase}}{{#if system.armor.damaged}} <span class="armor-damaged-note">({{localize 'CYPHER.Armor.BaseWas'}} {{system.armor.baseBlockEase}})</span>{{/if}} —
+      {{localize 'CYPHER.Armor.DodgeHinder'}}: {{system.armor.dodgeHinder}}
+      {{#if system.armor.speedTaskHinder}} ({{localize 'CYPHER.Armor.AppliesToAllSpeed'}}){{/if}}
+    </p>
+    {{#if system.armor.damaged}}
+    <p class="armor-damaged-banner"><i class="fa-solid fa-triangle-exclamation"></i> {{localize 'CYPHER.Armor.DamagedBanner'}}</p>
+    {{/if}}
+    {{#if system.armor.itemId}}
+    <div class="armor-damage-buttons">
+      <button type="button" data-action="damageArmor" title="{{localize 'CYPHER.Armor.DamageHint'}}">
+        <i class="fa-solid fa-burst"></i> {{localize 'CYPHER.Armor.Damage'}}
+      </button>
+      {{#if system.armor.damaged}}
+      <button type="button" data-action="repairArmor">
+        <i class="fa-solid fa-hammer"></i> {{localize 'CYPHER.Armor.Repair'}}
+      </button>
+      {{/if}}
+    </div>
+    {{/if}}
+    <p class="armor-manage-hint">{{localize 'CYPHER.Armor.ManageInInventory'}}</p>
+    <div class="defense-buttons">
+      <button type="button" data-action="rollDefense" data-defense-type="block">
+        <i class="fa-solid fa-shield-halved"></i> {{localize 'CYPHER.Defense.Block'}}
+      </button>
+      <button type="button" data-action="rollDefense" data-defense-type="dodge">
+        <i class="fa-solid fa-person-running"></i> {{localize 'CYPHER.Defense.Dodge'}}
+      </button>
+    </div>
+  </div>
+
+  <div class="recoveries-block">
+    <h3>{{localize 'CYPHER.Recovery.Title'}}</h3>
+    <div class="recovery-row">
+      {{#each system.recoveries as |checked key|}}
+      <label class="recovery-item">
+        <input type="checkbox" name="system.recoveries.{{key}}" {{#if checked}}checked{{/if}}/>
+        {{localize (concat "CYPHER.Recovery." key)}}
+        <button type="button" data-action="rollRecovery" data-interval="{{key}}" title="{{localize 'CYPHER.Roll.Recovery'}}">
+          <i class="fa-solid fa-dice-d6"></i>
+        </button>
+      </label>
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="additional-abilities-block">
+    <h3>{{localize 'CYPHER.AdditionalAbilities'}}</h3>
+    <textarea name="system.additionalAbilities">{{system.additionalAbilities}}</textarea>
+  </div>
+
+  <div class="custom-fields-block">
+    <h3>{{localize 'CYPHER.CustomField.Title'}}</h3>
+    <p class="custom-fields-hint">{{localize 'CYPHER.CustomField.Hint'}}</p>
+    {{#if system.customFields.length}}
+    <div class="custom-fields-list">
+      {{#each system.customFields as |field|}}
+      <div class="custom-field-row" data-field-id="{{field.id}}">
+        <label class="custom-field-label">{{field.label}}</label>
+        <!-- Champs cachés : préservent id/label/fieldType lors de la soumission du formulaire
+             entier (voir note équivalente sur les stats personnalisées plus haut).
+             Hidden fields: preserve id/label/fieldType across whole-form submission
+             (see equivalent note on custom stats above). -->
+        <input type="hidden" name="system.customFields.{{@index}}.id" value="{{field.id}}"/>
+        <input type="hidden" name="system.customFields.{{@index}}.label" value="{{field.label}}"/>
+        <input type="hidden" name="system.customFields.{{@index}}.fieldType" value="{{field.fieldType}}"/>
+        {{#ifEquals field.fieldType "text"}}
+        <input type="text" name="system.customFields.{{@index}}.valueText" value="{{field.valueText}}"/>
+        {{/ifEquals}}
+        {{#ifEquals field.fieldType "number"}}
+        <input type="number" name="system.customFields.{{@index}}.valueNumber" value="{{field.valueNumber}}"/>
+        {{/ifEquals}}
+        {{#ifEquals field.fieldType "checkbox"}}
+        <input type="checkbox" name="system.customFields.{{@index}}.valueBoolean" {{#if field.valueBoolean}}checked{{/if}}/>
+        {{/ifEquals}}
+        <a class="remove-custom-field" data-action="deleteCustomField" title="{{localize 'CYPHER.CustomField.Remove'}}"><i class="fa-solid fa-trash"></i></a>
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+    <button type="button" class="add-custom-field" data-action="addCustomField">
+      <i class="fa-solid fa-plus"></i> {{localize 'CYPHER.CustomField.Add'}}
+    </button>
+  </div>
+</section>

@@ -1,0 +1,220 @@
+<section class="item-body">
+
+  {{#ifEquals item.type "skill"}}
+  <div class="form-group">
+    <label>{{localize 'CYPHER.Stat.Label'}}</label>
+    <select name="system.stat">
+      <option value="might" {{#ifEquals system.stat "might"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.might'}}</option>
+      <option value="speed" {{#ifEquals system.stat "speed"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.speed'}}</option>
+      <option value="intellect" {{#ifEquals system.stat "intellect"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.intellect'}}</option>
+      <option value="none" {{#ifEquals system.stat "none"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.none'}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>{{localize 'CYPHER.Skill.Level'}}</label>
+    <select name="system.level">
+      <option value="inability" {{#ifEquals system.level "inability"}}selected{{/ifEquals}}>{{localize 'CYPHER.SkillLevel.inability'}}</option>
+      <option value="none" {{#ifEquals system.level "none"}}selected{{/ifEquals}}>{{localize 'CYPHER.SkillLevel.none'}}</option>
+      <option value="trained" {{#ifEquals system.level "trained"}}selected{{/ifEquals}}>{{localize 'CYPHER.SkillLevel.trained'}}</option>
+      <option value="specialized" {{#ifEquals system.level "specialized"}}selected{{/ifEquals}}>{{localize 'CYPHER.SkillLevel.specialized'}}</option>
+      <option value="expert" {{#ifEquals system.level "expert"}}selected{{/ifEquals}}>{{localize 'CYPHER.SkillLevel.expert'}}</option>
+    </select>
+  </div>
+  {{/ifEquals}}
+
+  {{#ifEquals item.type "ability"}}
+  <div class="form-group">
+    <label>{{localize 'CYPHER.Ability.Source'}}</label>
+    <input name="system.source" type="text" value="{{system.source}}"/>
+  </div>
+  <div class="form-group">
+    <label>{{localize 'CYPHER.Tier'}}</label>
+    <input name="system.tier" type="number" value="{{system.tier}}" min="1" max="6"/>
+  </div>
+  <div class="form-group inline">
+    <label>{{localize 'CYPHER.Ability.CostStat'}}</label>
+    <select name="system.cost.stat">
+      <option value="none" {{#ifEquals system.cost.stat "none"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.none'}}</option>
+      <option value="might" {{#ifEquals system.cost.stat "might"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.might'}}</option>
+      <option value="speed" {{#ifEquals system.cost.stat "speed"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.speed'}}</option>
+      <option value="intellect" {{#ifEquals system.cost.stat "intellect"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.intellect'}}</option>
+    </select>
+    <input name="system.cost.amount" type="number" value="{{system.cost.amount}}" min="0"/>
+  </div>
+  <div class="form-group">
+    <label>{{localize 'CYPHER.Ability.Action'}}</label>
+    <select name="system.action">
+      <option value="none" {{#ifEquals system.action "none"}}selected{{/ifEquals}}>{{localize 'CYPHER.Ability.ActionNone'}}</option>
+      <option value="action" {{#ifEquals system.action "action"}}selected{{/ifEquals}}>{{localize 'CYPHER.Ability.ActionStandard'}}</option>
+      <option value="movement" {{#ifEquals system.action "movement"}}selected{{/ifEquals}}>{{localize 'CYPHER.Ability.ActionMovement'}}</option>
+    </select>
+  </div>
+  {{/ifEquals}}
+
+  {{#ifEquals item.type "cypher"}}
+  <div class="form-group">
+    <label>{{localize 'CYPHER.Cypher.Type'}}</label>
+    <select name="system.cypherType">
+      <option value="subtle" {{#ifEquals system.cypherType "subtle"}}selected{{/ifEquals}}>{{localize 'CYPHER.Cypher.Subtle'}}</option>
+      <option value="manifest" {{#ifEquals system.cypherType "manifest"}}selected{{/ifEquals}}>{{localize 'CYPHER.Cypher.Manifest'}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>{{localize 'CYPHER.Level'}}</label>
+    <input name="system.level" type="text" value="{{system.level}}"/>
+  </div>
+  <div class="form-group inline">
+    <label><input type="checkbox" name="system.internal" {{#if system.internal}}checked{{/if}}/> {{localize 'CYPHER.Cypher.Internal'}}</label>
+    <label><input type="checkbox" name="system.depleted" {{#if system.depleted}}checked{{/if}}/> {{localize 'CYPHER.Cypher.Depleted'}}</label>
+  </div>
+  {{/ifEquals}}
+
+  {{#ifEquals item.type "artifact"}}
+  <div class="form-group">
+    <label>{{localize 'CYPHER.Level'}}</label>
+    <input name="system.level" type="text" value="{{system.level}}"/>
+  </div>
+  <div class="form-group">
+    <label>{{localize 'CYPHER.Artifact.Form'}}</label>
+    <input name="system.form" type="text" value="{{system.form}}"/>
+  </div>
+  <div class="form-group inline">
+    <label>{{localize 'CYPHER.Depletion.Die'}}</label>
+    <select name="system.depletionDie">
+      <option value="none" {{#ifEquals system.depletionDie "none"}}selected{{/ifEquals}}>{{localize 'CYPHER.Depletion.none'}}</option>
+      <option value="d6" {{#ifEquals system.depletionDie "d6"}}selected{{/ifEquals}}>1d6</option>
+      <option value="d8" {{#ifEquals system.depletionDie "d8"}}selected{{/ifEquals}}>1d8</option>
+      <option value="d10" {{#ifEquals system.depletionDie "d10"}}selected{{/ifEquals}}>1d10</option>
+      <option value="d12" {{#ifEquals system.depletionDie "d12"}}selected{{/ifEquals}}>1d12</option>
+      <option value="d20" {{#ifEquals system.depletionDie "d20"}}selected{{/ifEquals}}>1d20</option>
+    </select>
+    <label>{{localize 'CYPHER.Depletion.Threshold'}}
+      <input name="system.depletionThreshold" type="number" value="{{system.depletionThreshold}}" min="1"/>
+    </label>
+  </div>
+  <div class="form-group inline">
+    <label><input type="checkbox" name="system.identified" {{#if system.identified}}checked{{/if}}/> {{localize 'CYPHER.Identified'}}</label>
+    <label><input type="checkbox" name="system.depleted" {{#if system.depleted}}checked{{/if}}/> {{localize 'CYPHER.Depletion.Depleted'}}</label>
+  </div>
+  <p class="depletion-hint">{{localize 'CYPHER.Depletion.Hint'}}</p>
+  {{/ifEquals}}
+
+  {{#ifEquals item.type "attack"}}
+  <div class="form-group">
+    <label>{{localize 'CYPHER.Attack.Type'}}</label>
+    <select name="system.attackType">
+      <option value="light" {{#ifEquals system.attackType "light"}}selected{{/ifEquals}}>{{localize 'CYPHER.AttackType.light'}}</option>
+      <option value="medium" {{#ifEquals system.attackType "medium"}}selected{{/ifEquals}}>{{localize 'CYPHER.AttackType.medium'}}</option>
+      <option value="heavy" {{#ifEquals system.attackType "heavy"}}selected{{/ifEquals}}>{{localize 'CYPHER.AttackType.heavy'}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>{{localize 'CYPHER.Damage'}}</label>
+    <input name="system.damage" type="number" value="{{system.damage}}" min="0"/>
+  </div>
+  <div class="form-group">
+    <label>{{localize 'CYPHER.Stat.Label'}}</label>
+    <select name="system.stat">
+      <option value="might" {{#ifEquals system.stat "might"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.might'}}</option>
+      <option value="speed" {{#ifEquals system.stat "speed"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.speed'}}</option>
+    </select>
+  </div>
+  <div class="form-group inline">
+    <label><input type="checkbox" name="system.freelyUsable" {{#if system.freelyUsable}}checked{{/if}}/> {{localize 'CYPHER.Attack.FreelyUsable'}}</label>
+  </div>
+  {{/ifEquals}}
+
+  {{#ifEquals item.type "armor"}}
+  <div class="form-group">
+    <label>{{localize 'CYPHER.Armor.Category'}}</label>
+    <select name="system.category">
+      <option value="light" {{#ifEquals system.category "light"}}selected{{/ifEquals}}>{{localize 'CYPHER.Armor.light'}}</option>
+      <option value="medium" {{#ifEquals system.category "medium"}}selected{{/ifEquals}}>{{localize 'CYPHER.Armor.medium'}}</option>
+      <option value="heavy" {{#ifEquals system.category "heavy"}}selected{{/ifEquals}}>{{localize 'CYPHER.Armor.heavy'}}</option>
+    </select>
+  </div>
+  <div class="form-group inline">
+    <label><input type="checkbox" name="system.freelyUsable" {{#if system.freelyUsable}}checked{{/if}}/> {{localize 'CYPHER.Armor.FreelyUsable'}}</label>
+    <label><input type="checkbox" name="system.equipped" {{#if system.equipped}}checked{{/if}}/> {{localize 'CYPHER.Equipped'}}</label>
+  </div>
+  <div class="form-group">
+    <label>{{localize 'CYPHER.Armor.BlockEaseDamage'}}</label>
+    <input name="system.blockEaseDamage" type="number" value="{{system.blockEaseDamage}}" min="0"/>
+  </div>
+  <p class="armor-item-hint">{{localize 'CYPHER.Armor.ItemHint'}}</p>
+  {{/ifEquals}}
+
+  {{#ifEquals item.type "shield"}}
+  <p class="shield-hint">{{localize 'CYPHER.Shield.SheetHint'}}</p>
+  <div class="form-group inline">
+    <label><input type="checkbox" name="system.equipped" {{#if system.equipped}}checked{{/if}}/> {{localize 'CYPHER.Equipped'}}</label>
+    {{#if system.broken}}<span class="shield-broken-badge">{{localize 'CYPHER.Shield.BrokenLabel'}}</span>{{/if}}
+  </div>
+  <div class="shield-wounds-row">
+    <div class="wound-severity wound-minor">
+      <label>{{localize 'CYPHER.Wound.minor'}}</label>
+      <div class="wound-boxes">
+        <input name="system.wounds.minor.current" type="number" value="{{system.wounds.minor.current}}" min="0" max="{{system.wounds.minor.max}}"/>
+        <span>/ {{system.wounds.minor.max}}</span>
+      </div>
+    </div>
+    <div class="wound-severity wound-moderate">
+      <label>{{localize 'CYPHER.Wound.moderate'}}</label>
+      <div class="wound-boxes">
+        <input name="system.wounds.moderate.current" type="number" value="{{system.wounds.moderate.current}}" min="0" max="{{system.wounds.moderate.max}}"/>
+        <span>/ {{system.wounds.moderate.max}}</span>
+      </div>
+    </div>
+    <div class="wound-severity wound-major">
+      <label>{{localize 'CYPHER.Wound.major'}}</label>
+      <div class="wound-boxes">
+        <input name="system.wounds.major.current" type="number" value="{{system.wounds.major.current}}" min="0" max="{{system.wounds.major.max}}"/>
+        <span>/ {{system.wounds.major.max}}</span>
+      </div>
+    </div>
+  </div>
+  {{/ifEquals}}
+
+  {{#ifEquals item.type "equipment"}}
+  <div class="form-group">
+    <label>{{localize 'CYPHER.Equipment.Quantity'}}</label>
+    <input name="system.quantity" type="number" value="{{system.quantity}}" min="0"/>
+  </div>
+  <div class="form-group">
+    <label>{{localize 'CYPHER.Equipment.Weight'}}</label>
+    <select name="system.weight">
+      <option value="none" {{#ifEquals system.weight "none"}}selected{{/ifEquals}}>{{localize 'CYPHER.Weight.none'}}</option>
+      <option value="light" {{#ifEquals system.weight "light"}}selected{{/ifEquals}}>{{localize 'CYPHER.Weight.light'}}</option>
+      <option value="medium" {{#ifEquals system.weight "medium"}}selected{{/ifEquals}}>{{localize 'CYPHER.Weight.medium'}}</option>
+      <option value="heavy" {{#ifEquals system.weight "heavy"}}selected{{/ifEquals}}>{{localize 'CYPHER.Weight.heavy'}}</option>
+    </select>
+  </div>
+  <div class="form-group inline">
+    <label>{{localize 'CYPHER.Depletion.Die'}}</label>
+    <select name="system.depletionDie">
+      <option value="none" {{#ifEquals system.depletionDie "none"}}selected{{/ifEquals}}>{{localize 'CYPHER.Depletion.none'}}</option>
+      <option value="d6" {{#ifEquals system.depletionDie "d6"}}selected{{/ifEquals}}>1d6</option>
+      <option value="d8" {{#ifEquals system.depletionDie "d8"}}selected{{/ifEquals}}>1d8</option>
+      <option value="d10" {{#ifEquals system.depletionDie "d10"}}selected{{/ifEquals}}>1d10</option>
+      <option value="d12" {{#ifEquals system.depletionDie "d12"}}selected{{/ifEquals}}>1d12</option>
+      <option value="d20" {{#ifEquals system.depletionDie "d20"}}selected{{/ifEquals}}>1d20</option>
+    </select>
+    <label>{{localize 'CYPHER.Depletion.Threshold'}}
+      <input name="system.depletionThreshold" type="number" value="{{system.depletionThreshold}}" min="1"/>
+    </label>
+  </div>
+  {{#ifNotEquals system.depletionDie "none"}}
+  <div class="form-group inline">
+    <label><input type="checkbox" name="system.depleted" {{#if system.depleted}}checked{{/if}}/> {{localize 'CYPHER.Depletion.Depleted'}}</label>
+  </div>
+  <p class="depletion-hint">{{localize 'CYPHER.Depletion.EquipmentHint'}}</p>
+  {{/ifNotEquals}}
+  {{/ifEquals}}
+
+
+  <div class="form-group description-group">
+    <label>{{localize 'CYPHER.Description'}}</label>
+    <prose-mirror name="system.description" value="{{system.description}}"></prose-mirror>
+  </div>
+
+</section>

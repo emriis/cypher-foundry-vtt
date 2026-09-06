@@ -1,0 +1,768 @@
+.cypher.sheet {
+  font-family: "Signika", sans-serif;
+  color: #2a1e14;
+}
+
+.cypher .sheet-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #8a5a2c;
+}
+
+.cypher .sheet-header .profile-img {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #8a5a2c;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.cypher .header-fields {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cypher .header-fields input[name="name"] {
+  font-size: 1.4rem;
+  font-weight: bold;
+  border: none;
+  border-bottom: 1px solid #8a5a2c66;
+  background: transparent;
+}
+
+.cypher .descriptor-line {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+}
+
+.cypher .descriptor-line input {
+  flex: 1;
+  min-width: 80px;
+}
+
+.cypher .header-stats-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.cypher .header-stats-row label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.cypher .header-stats-row input {
+  width: 50px;
+}
+
+/* Stats */
+.cypher .stats-row {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.cypher .stat-block {
+  flex: 1;
+  border: 1px solid #8a5a2c55;
+  border-radius: 6px;
+  padding: 8px;
+  text-align: center;
+  background: #f7f0e4;
+}
+
+.cypher .stat-block h3 {
+  margin: 0 0 6px;
+  border: none;
+  font-size: 0.95rem;
+}
+
+.cypher .pool-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 1.2rem;
+}
+
+.cypher .pool-row input {
+  width: 50px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.cypher .edge-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+.cypher .edge-row input {
+  width: 40px;
+  text-align: center;
+}
+
+.cypher button.roll-stat {
+  margin-top: 6px;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Armor / damage track */
+.cypher .armor-damagetrack-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.cypher .armor-block, .cypher .damage-track-block {
+  flex: 1;
+  border: 1px solid #8a5a2c33;
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+
+.cypher .step-modifier-note {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin: 4px 0 0;
+}
+
+/* Recoveries */
+.cypher .recovery-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.cypher .recovery-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+}
+
+/* Item lists */
+.cypher .item-list {
+  list-style: none;
+  margin: 4px 0 12px;
+  padding: 0;
+}
+
+.cypher .item-list .item,
+.cypher .item-list .item-list-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  border-bottom: 1px solid #8a5a2c22;
+}
+
+.cypher .item-list .item.depleted {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.cypher .item-list .item-name {
+  flex: 1;
+  font-weight: 600;
+}
+
+.cypher .item-list a, .cypher .item-list button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #8a5a2c;
+}
+
+.cypher .inventory-section h3 {
+  border-bottom: 1px solid #8a5a2c55;
+  margin-bottom: 2px;
+}
+
+.cypher .item-create {
+  cursor: pointer;
+  margin-bottom: 4px;
+}
+
+/* Item sheet */
+.cypher.item .item-header {
+  border-bottom: 2px solid #8a5a2c;
+  padding-bottom: 6px;
+}
+
+.cypher .item-type-label {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin: 2px 0 0;
+}
+
+.cypher .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 6px 0;
+}
+
+.cypher .form-group.inline {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.cypher .description-group prose-mirror {
+  min-height: 150px;
+}
+
+.cypher .result.success, .cypher-roll-card .success {
+  color: #2f7a2f;
+  font-weight: bold;
+}
+
+.cypher-roll-card .failure {
+  color: #a11f1f;
+  font-weight: bold;
+}
+
+.cypher-roll-card h3 {
+  margin: 0 0 4px;
+}
+
+/* Wounds */
+.cypher .hindered-banner, .cypher .dead-banner {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin: 6px 0;
+}
+
+.cypher .hindered-banner {
+  background: #f7e0c0;
+  color: #7a4a10;
+}
+
+.cypher .dead-banner {
+  background: #f0c0c0;
+  color: #7a1010;
+}
+
+.cypher .wounds-row {
+  display: flex;
+  gap: 10px;
+}
+
+.cypher .wound-severity {
+  flex: 1;
+  border: 1px solid #8a5a2c33;
+  border-radius: 6px;
+  padding: 6px 8px;
+  text-align: center;
+}
+
+.cypher .wound-boxes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.cypher .wound-boxes input {
+  width: 40px;
+  text-align: center;
+}
+
+.cypher .wound-hint, .cypher .armor-hint {
+  font-size: 0.75rem;
+  opacity: 0.75;
+  margin: 4px 0 0;
+}
+
+.cypher .armor-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cypher .cypher-hindered {
+  color: #a15a10;
+}
+
+.cypher .cypher-refund {
+  color: #2f7a2f;
+  font-style: italic;
+}
+
+/* Optional descriptor/focus toggles */
+.cypher .and-joiner {
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.cypher .add-optional, .cypher .remove-optional {
+  cursor: pointer;
+  color: #8a5a2c;
+  font-size: 0.9rem;
+}
+
+.cypher .remove-optional {
+  color: #a11f1f;
+}
+
+/* Custom stats */
+.cypher .custom-stats-row {
+  margin-top: 4px;
+}
+
+.cypher .stat-custom h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.cypher .remove-custom-stat {
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: #a11f1f;
+}
+
+.cypher .add-custom-stat {
+  margin: 4px 0 10px;
+  cursor: pointer;
+}
+
+/* Genre & superhero fields */
+.cypher .genre-species-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  margin-bottom: 4px;
+}
+
+.cypher .genre-species-row label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.cypher .genre-hint {
+  font-size: 0.72rem;
+  opacity: 0.75;
+  margin: 2px 0 4px;
+  font-style: italic;
+}
+
+.cypher .superhero-block {
+  border: 1px solid #8a5a2c33;
+  border-radius: 6px;
+  padding: 6px 8px;
+  margin: 4px 0;
+}
+
+.cypher .rank-field {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+}
+
+.cypher .rank-field input {
+  width: 45px;
+}
+
+.cypher .power-shifts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.cypher .power-shifts-label {
+  font-weight: bold;
+  font-size: 0.78rem;
+  flex-basis: 100%;
+}
+
+.cypher .power-shift-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+}
+
+.cypher .power-shift-item input {
+  width: 36px;
+  text-align: center;
+}
+
+/* Custom genre extra row */
+.cypher .custom-genre-extra-row {
+  margin-top: 4px;
+}
+
+.cypher .custom-genre-extra-row label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+/* Custom fields */
+.cypher .custom-fields-hint {
+  font-size: 0.75rem;
+  opacity: 0.75;
+  margin: 0 0 6px;
+}
+
+.cypher .custom-fields-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.cypher .custom-field-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cypher .custom-field-label {
+  flex: 0 0 140px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.cypher .custom-field-row input[type="text"],
+.cypher .custom-field-row input[type="number"] {
+  flex: 1;
+}
+
+.cypher .remove-custom-field {
+  cursor: pointer;
+  color: #a11f1f;
+}
+
+.cypher .add-custom-field {
+  cursor: pointer;
+}
+
+/* XP & Advancement tab */
+.cypher .xp-block, .cypher .advancement-block, .cypher .advancement-traits-block {
+  border: 1px solid #8a5a2c33;
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+}
+
+.cypher .xp-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cypher .xp-value-label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.cypher .xp-value-label input {
+  width: 60px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.cypher .xp-hint, .cypher .advancement-hint {
+  font-size: 0.75rem;
+  opacity: 0.75;
+  margin: 6px 0 0;
+}
+
+.cypher .advancement-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.cypher .advancement-slot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  background: #f7f0e4;
+}
+
+.cypher .advancement-slot.bought {
+  background: #e3f0e3;
+  opacity: 0.85;
+}
+
+.cypher .slot-number {
+  font-weight: bold;
+  font-size: 0.8rem;
+  min-width: 70px;
+}
+
+.cypher .slot-bought-badge {
+  color: #2f7a2f;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.cypher .advancement-traits-block ul {
+  margin: 4px 0 0;
+  padding-left: 18px;
+  font-size: 0.85rem;
+}
+
+.cypher .advancement-traits-block li {
+  margin-bottom: 4px;
+}
+
+/* Chat reroll button */
+.cypher-reroll-button {
+  margin-top: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.cypher-reroll-card {
+  border-top: 1px dashed #8a5a2c55;
+  margin-top: 6px;
+  padding-top: 6px;
+}
+
+/* Defense buttons */
+.cypher .defense-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.cypher .defense-buttons button {
+  flex: 1;
+  cursor: pointer;
+}
+
+.cypher-defense-note {
+  font-style: italic;
+  margin-top: 4px;
+}
+
+.cypher-defense-note.failure {
+  color: #a11f1f;
+}
+
+.cypher-armor-mod {
+  color: #2f5a8a;
+}
+
+/* Shields */
+.cypher .item-list .item.broken {
+  opacity: 0.6;
+}
+
+.cypher .item-list .item.broken .item-name {
+  text-decoration: line-through;
+}
+
+.cypher .shield-hint {
+  font-size: 0.78rem;
+  opacity: 0.8;
+  margin-bottom: 6px;
+}
+
+.cypher .shield-broken-badge {
+  color: #a11f1f;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.cypher .shield-wounds-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+/* Armor damage */
+.cypher .armor-damaged-note {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.cypher .armor-damaged-banner {
+  background: #f7e0c0;
+  color: #7a4a10;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin: 4px 0;
+}
+
+.cypher .armor-damage-buttons {
+  display: flex;
+  gap: 8px;
+  margin: 4px 0;
+}
+
+.cypher .armor-damage-buttons button {
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+/* Depletion */
+.cypher .depletion-hint {
+  font-size: 0.75rem;
+  opacity: 0.75;
+  margin: 4px 0 0;
+}
+
+/* Unified armor display */
+.cypher .armor-active-name {
+  font-size: 0.9rem;
+  margin: 2px 0 4px;
+}
+
+.cypher .armor-freely-usable-tag {
+  font-size: 0.75rem;
+  opacity: 0.75;
+  margin-left: 4px;
+}
+
+.cypher .armor-none-note {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  font-style: italic;
+  margin: 2px 0 4px;
+}
+
+.cypher .armor-manage-hint {
+  font-size: 0.72rem;
+  opacity: 0.65;
+  margin: 4px 0;
+}
+
+.cypher .armor-item-hint {
+  font-size: 0.75rem;
+  opacity: 0.75;
+  margin-top: 4px;
+}
+
+/* NPC sheet */
+.cypher.sheet .npc-header .header-fields,
+.cypher.sheet .community-header .header-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.cypher.sheet .npc-level-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.cypher.sheet .npc-level-row label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+}
+
+.cypher.sheet .npc-level-row input {
+  width: 50px;
+}
+
+.cypher.sheet .npc-target-number {
+  font-size: 0.9rem;
+  padding: 2px 8px;
+  background: #f7e0c0;
+  border-radius: 4px;
+}
+
+.cypher.sheet .npc-stats-row {
+  display: flex;
+  gap: 16px;
+  margin: 8px 0;
+}
+
+.cypher.sheet .npc-stats-row label, .cypher.sheet .npc-body .form-group {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+}
+
+.cypher.sheet .npc-section, .cypher.sheet .community-section {
+  margin: 10px 0;
+}
+
+.cypher.sheet .npc-section h3, .cypher.sheet .community-section h3 {
+  border-bottom: 1px solid #8a5a2c55;
+  margin-bottom: 4px;
+}
+
+.cypher.sheet .npc-section prose-mirror, .cypher.sheet .community-section prose-mirror {
+  min-height: 80px;
+}
+
+.cypher.sheet .gm-notes {
+  border: 1px dashed #a11f1f55;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+/* -------------------------------------------- */
+/* Scrolling : chaque section de contenu doit pouvoir défiler indépendamment de l'en-tête
+   et de la barre d'onglets, qui restent fixes en haut de la fenêtre.
+   Scrolling: each content section must scroll independently of the header and tab bar,
+   which stay fixed at the top of the window. */
+
+.cypher.sheet .window-content {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.cypher.sheet .window-content > form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.cypher.sheet .sheet-header,
+.cypher.sheet .sheet-tabs,
+.cypher.sheet nav.tabs {
+  flex: 0 0 auto;
+}
+
+.cypher.sheet .tab,
+.cypher.sheet .npc-body,
+.cypher.sheet .community-body,
+.cypher.sheet .item-body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  min-height: 0;
+  padding-right: 4px;
+}

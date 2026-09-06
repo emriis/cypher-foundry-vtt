@@ -1,0 +1,9 @@
+<header class="sheet-header community-header">
+  <img class="profile-img" src="{{actor.img}}" data-action="editImage" data-edit="img" alt="{{actor.name}}"/>
+  <div class="header-fields">
+    <input name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'CYPHER.Name'}}"/>
+    <label>{{localize 'CYPHER.Tier'}}
+      <input name="system.tier" type="number" value="{{system.tier}}" min="1" max="6"/>
+    </label>
+  </div>
+</header>

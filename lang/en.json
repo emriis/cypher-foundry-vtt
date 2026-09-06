@@ -1,0 +1,415 @@
+{
+  "CYPHER": {
+    "Name": "Name",
+    "Description": "Description",
+    "Biography": "Biography",
+    "Notes": "Notes",
+    "Tier": "Tier",
+    "Effort": "Effort",
+    "Edge": "Edge",
+    "XP": "XP",
+    "Level": "Level",
+    "Damage": "Damage",
+    "Equipped": "Equipped",
+    "Identified": "Identified",
+    "CypherLimit": "Cypher Limit",
+    "AdditionalAbilities": "Additional Abilities",
+
+    "Sheet": {
+      "PC": "Character Sheet",
+      "NPC": "NPC Sheet",
+      "Community": "Community Sheet"
+    },
+
+    "Tab": {
+      "main": "Main",
+      "skills": "Skills",
+      "abilities": "Abilities",
+      "inventory": "Inventory",
+      "advancement": "Advancement",
+      "biography": "Biography"
+    },
+
+    "CharacterLine": {
+      "Prefix": "I am a",
+      "Middle": "who is",
+      "Who": "who",
+      "And": "and",
+      "AddSecondDescriptor": "Add a second descriptor",
+      "RemoveSecondDescriptor": "Remove the second descriptor",
+      "AddSecondFocus": "Add a second focus",
+      "RemoveSecondFocus": "Remove the second focus"
+    },
+    "Descriptor": "Descriptor",
+    "Descriptor2": "Second Descriptor",
+    "Type": "Type",
+    "Focus": "Focus",
+    "Focus2": "Second Focus",
+    "Profession": "Profession",
+    "Species": "Species",
+    "SpeciesPlaceholder": "e.g. Human, Elf, Cyborg... (optional)",
+    "ResourcePoints": "Resource Points",
+
+    "Genre": {
+      "Label": "Genre",
+      "none": "Unspecified",
+      "realWorld": "Real World",
+      "fantasy": "Fantasy",
+      "sciFi": "Science Fiction",
+      "superhero": "Superhero",
+      "custom": "Custom (all fields)",
+      "RealWorldHint": "Real World: no Type or Focus — a Descriptor + Profession is enough. By default, inability with medium/heavy weapons (unless offset by a dedicated background skill)."
+    },
+
+    "Superhero": {
+      "Rank": "Type Rank (1-5)",
+      "PowerShifts": "Power Shifts",
+      "Hint": "Each category is capped at 3. A shift acts as a free, permanent level of Effort for the relevant tasks. Tasks can go up to difficulty 15 in this genre."
+    },
+
+    "PowerShift": {
+      "accuracy": "Accuracy (attack rolls)",
+      "dexterity": "Dexterity (dodge, initiative, acrobatics)",
+      "flight": "Flight",
+      "healing": "Healing (bonus recovery)",
+      "increasedRange": "Increased Range",
+      "intelligence": "Intelligence (Int. defense, knowledge)",
+      "power": "Power (ability effects/damage)",
+      "prodigy": "Prodigy (ability trade-up)",
+      "resilience": "Resilience (block, Might defense)",
+      "savant": "Savant (two specific skills)",
+      "singleAttack": "Single Attack (one specific attack)",
+      "strength": "Strength (athletics, melee damage)"
+    },
+
+    "Stat": {
+      "Label": "Stat",
+      "might": "Might",
+      "speed": "Speed",
+      "intellect": "Intellect",
+      "none": "None",
+      "AddCustom": "Add a Stat",
+      "RemoveCustom": "Remove this stat",
+      "CustomName": "Stat Name",
+      "CustomNamePlaceholder": "e.g. Luck, Faith, Willpower...",
+      "ConfirmDeleteCustom": "Permanently remove this custom stat?"
+    },
+
+    "Armor": {
+      "Title": "Armor",
+      "Category": "Category",
+      "none": "None",
+      "light": "Light",
+      "medium": "Medium",
+      "heavy": "Heavy",
+      "FreelyUsable": "Freely usable (granted by Type)",
+      "BlockEase": "Eases Block (steps)",
+      "DodgeHinder": "Hinders Dodge (steps)",
+      "AppliesToAllSpeed": "applies to all Speed tasks — armor not freely usable",
+      "BaseWas": "base:",
+      "Damage": "Damage (GM intrusion)",
+      "DamageHint": "A special attack or GM intrusion reduces the armor's Block bonus by 1 step — never its Dodge hindrance.",
+      "Damaged": "Armor Damaged",
+      "DamagedNote": "{name}'s armor is damaged: its Block bonus is reduced.",
+      "DamagedBanner": "Armor damaged — Block bonus reduced",
+      "NoBlockBonusToDamage": "This armor has no Block bonus left to damage.",
+      "NoArmorEquipped": "No armor equipped — nothing to damage.",
+      "Repair": "Repair Armor",
+      "ConfirmRepair": "Clear all accumulated damage to the armor's Block bonus?",
+      "NoneEquipped": "No armor equipped.",
+      "ManageInInventory": "To change armor, check \"Equipped\" on the desired item under the Inventory tab (only one at a time).",
+      "BlockEaseDamage": "Damage to Block Bonus",
+      "ItemHint": "Check \"Equipped\" to make this armor active on the character sheet. Only one armor can be equipped at a time — equipping this one automatically unequips the others."
+    },
+
+    "Wound": {
+      "Title": "Wounds",
+      "minor": "Minor",
+      "moderate": "Moderate",
+      "major": "Major",
+      "Rally": "Rally (spend Might points to remove this wound)",
+      "RallyMajorSuperhero": "Rally (10 Might — Superhero genre only)",
+      "Hint": "3 boxes per severity by default. Moderate full = all actions hindered. Each major wound adds 1 more hindered step. 3 major wounds = death.",
+      "HinderedBanner": "Character Hindered",
+      "DeadBanner": "Character Dead",
+      "HinderedStatus": "Hindered",
+      "DeadStatus": "Dead"
+    },
+
+    "Recovery": {
+      "Title": "Recoveries",
+      "action": "One Action",
+      "tenMinutes": "10 Minutes",
+      "hour": "1 Hour",
+      "tenHours": "10 Hours",
+      "RemovesAllMinor": "Removes all minor wounds.",
+      "RemovesOneModerate": "Removes one moderate wound.",
+      "RemovesAllModerateReminder": "Removes all moderate wounds. (One major wound can be removed with a successful difficulty 6 Might task — handle manually.)"
+    },
+
+    "Skill": {
+      "New": "New Skill",
+      "Level": "Training Level"
+    },
+    "SkillLevel": {
+      "inability": "Inability",
+      "none": "None",
+      "trained": "Trained",
+      "specialized": "Specialized",
+      "expert": "Expert"
+    },
+
+    "CustomField": {
+      "Title": "Custom Fields",
+      "Hint": "Add anything specific to your character that the system doesn't already provide for (status, reputation, ally, debt, etc.).",
+      "Add": "Add a Field",
+      "Remove": "Remove this field",
+      "Label": "Field Name",
+      "LabelPlaceholder": "e.g. Reputation, Ally, Debt...",
+      "Type": "Field Type",
+      "text": "Text",
+      "number": "Number",
+      "checkbox": "Checkbox",
+      "ConfirmDelete": "Permanently remove this custom field?"
+    },
+
+    "Ability": {
+      "New": "New Ability",
+      "Source": "Source (Type/Focus/Advancement)",
+      "CostStat": "Cost",
+      "Action": "Action Required",
+      "ActionNone": "None",
+      "ActionStandard": "Action",
+      "ActionMovement": "Movement"
+    },
+
+    "Cypher": {
+      "Title": "Cyphers",
+      "Type": "Cypher Type",
+      "Subtle": "Subtle",
+      "Manifest": "Manifest",
+      "Internal": "Internal (Implanted)",
+      "Depleted": "Depleted",
+      "Use": "Use",
+      "Used": "This cypher has been used and is now depleted."
+    },
+
+    "Artifact": {
+      "Title": "Artifacts",
+      "Form": "Form"
+    },
+
+    "Depletion": {
+      "Die": "Depletion Die",
+      "Threshold": "Threshold",
+      "none": "Never depletes",
+      "Depleted": "Depleted",
+      "Roll": "Depletion Roll",
+      "Title": "Depletion: {name}",
+      "Range": "Threshold {threshold} on 1{die}",
+      "StillWorks": "Still works.",
+      "LastUse": "Works, but that was the last use — now depleted.",
+      "Never": "This item never depletes.",
+      "Hint": "When you use this artifact, click the die to roll its depletion check. \"Never depletes\" corresponds to the CRD's \"—\" notation.",
+      "EquipmentHint": "This equipment uses depletion instead of a fixed quantity (like a medical bag or aspirin in the CRD)."
+    },
+
+    "Oddity": {
+      "Title": "Oddities"
+    },
+
+    "Equipment": {
+      "Title": "Equipment",
+      "Quantity": "Quantity",
+      "Weight": "Weight"
+    },
+    "Weight": {
+      "none": "None",
+      "light": "Light",
+      "medium": "Medium",
+      "heavy": "Heavy"
+    },
+
+    "Attack": {
+      "Title": "Attacks",
+      "Type": "Attack Type",
+      "FreelyUsable": "Weapon mastered (otherwise -1 step)"
+    },
+    "AttackType": {
+      "light": "Light (2 damage)",
+      "medium": "Medium (4 damage)",
+      "heavy": "Heavy (6 damage)"
+    },
+
+    "Item": {
+      "New": "New {type}"
+    },
+
+    "Roll": {
+      "Roll": "Roll",
+      "Task": "Task Roll",
+      "Attack": "Attack Roll",
+      "Recovery": "Recovery Roll",
+      "Difficulty": "Difficulty",
+      "Effective": "Effective",
+      "Target": "Target Number",
+      "Routine": "routine, automatic success",
+      "EffortLevels": "Levels of Effort",
+      "EffortSpent": "Effort Spent",
+      "AssetSteps": "Asset Steps",
+      "LinkedSkill": "Linked Skill",
+      "NoSkill": "None",
+      "MaxEffortHint": "max {max}, based on Effort score",
+      "PoolPoints": "pool points",
+      "Steps": "steps",
+      "Success": "Success",
+      "Failure": "Failure",
+      "TotalDamage": "total damage",
+      "MinorEffect": "minor effect (natural 19)",
+      "MajorEffect": "major effect (natural 20)",
+      "GMIntrusionFree": "free GM intrusion (natural 1)",
+      "WoundHinder": "Hindered by {steps} steps from wounds",
+      "ExtraHinder": "Extra hindrance of {steps} steps (lucky shot / unfamiliar weapon)",
+      "ArmorModifier": "Armor modifier: {steps} steps",
+      "ArmorSpeedHinder": "Hindered by {steps} steps (unfamiliar armor)",
+      "CostRefunded": "The action's point cost was refunded (natural 20).",
+      "Rallied": "{name} rallies and removes a {severity} wound."
+    },
+
+    "Defense": {
+      "Block": "Block",
+      "Dodge": "Dodge",
+      "IncomingSeverity": "Incoming Wound Severity",
+      "AttackerTarget": "attacker's target number",
+      "BlockSuccess": "Block succeeded: the {severity} wound is reduced by one step.",
+      "DodgeSuccess": "Dodge succeeded: the wound is avoided entirely.",
+      "Failed": "Defense failed: a {severity} wound is taken."
+    },
+
+    "Shield": {
+      "Title": "Shields",
+      "SheetHint": "Any character can use a shield freely, regardless of their Type. On a successful Block, choose to reduce the wound by one step as usual, or have it absorbed entirely by an equipped shield.",
+      "UseShield": "Use a shield (successful Block = whole wound absorbed)",
+      "NoneReduceInstead": "None — reduce the wound by one step as usual",
+      "Absorbed": "{name} absorbs the entire {severity} wound — no damage taken.",
+      "Broken": "Shield Broken",
+      "BrokenNote": "{name} has taken its major wound and is destroyed.",
+      "BrokenLabel": "Broken"
+    },
+
+    "XP": {
+      "Title": "Experience Points",
+      "Reroll": "Reroll",
+      "RerollResult": "Reroll Result",
+      "RerollCompare": "Old result: {old} — New: {new} — Better of the two: {final}",
+      "RerollHint": "Reroll (1 XP): click the button that appears under any roll in chat, right after the roll (yours or another player's).",
+      "EditInHeader": "Edit the XP value directly in the sheet's header, at the top.",
+      "PlayerIntrusion": "Player Intrusion",
+      "PlayerIntrusionPrompt": "Describe how you alter the situation in your favor",
+      "LuckyShot": "Lucky Shot",
+      "LuckyShotHint": "hindered by 4 steps",
+      "LuckyShotHint2": "Lucky Shot (1 XP): available directly in the attack roll dialog, to attempt a blind attack."
+    },
+
+    "Advancement": {
+      "Title": "Character Advancement",
+      "Hint": "Pick a type for each of the current tier's 4 slots, then buy them one at a time (4 XP each). Once all 4 are bought, the character automatically advances a tier.",
+      "Slot": "Slot",
+      "Bought": "Bought",
+      "Buy": "Buy",
+      "capabilities": "Increasing Capabilities (+4 to Pools)",
+      "perfection": "Moving Toward Perfection (+1 Edge)",
+      "effort": "Extra Effort (+1, max 6)",
+      "skill": "Skill (training/specialization)",
+      "other": "Other",
+      "other-recovery": "Other: Recovery (+2 permanent)",
+      "other-focus": "Other: New Focus",
+      "other-armor": "Other: Freely usable armor (all)",
+      "other-weapons": "Other: Freely usable weapons (all)",
+      "other-genre": "Other: Extra Genre Ability",
+      "CapabilitiesDialogHint": "Distribute 4 points among your three Pools (total must be exactly 4).",
+      "CapabilitiesNote": "Pool points have been distributed.",
+      "PerfectionNote": "{stat} Edge increased by 1.",
+      "EffortNote": "Effort increased by 1.",
+      "PickExistingSkill": "Existing skill to improve",
+      "OrNewSkillName": "...or name of a new trained skill",
+      "SkillNote": "{name} is now at level: {level}.",
+      "OtherRecoveryNote": "Permanent recovery bonus +2.",
+      "OtherFocusNote": "Choose a new Focus ability (add it manually under the Abilities tab).",
+      "OtherArmorNote": "The character can now freely use all armor categories.",
+      "OtherWeaponsNote": "The character can now freely use all weapons.",
+      "OtherGenreNote": "Choose an extra Genre ability (add it manually under the Abilities tab).",
+      "Purchased": "Advancement Purchased",
+      "TierReached": "Tier {tier} Reached!",
+      "NewTierFocus": "The character gains a new free Focus ability (tier {tier}).",
+      "NewTierGenre": "The character also gains a free Genre ability (tier {tier}).",
+      "PermanentTraits": "Permanent Traits",
+      "RecoveryBonus": "Recovery Bonus",
+      "AllCategories": "all categories",
+      "AllWeaponsFree": "All weapons freely usable"
+    },
+
+    "NPC": {
+      "Level": "Level",
+      "TargetNumber": "Target Number",
+      "Health": "Health",
+      "Movement": "Movement",
+      "Modifications": "Modifications",
+      "ModificationsPlaceholder": "e.g. attacks as level 5, +2 to Dodge...",
+      "Combat": "Combat",
+      "Interaction": "Interaction",
+      "Use": "Use",
+      "Loot": "Loot",
+      "GMNotes": "GM Notes",
+      "ApplyDamage": "Apply Damage",
+      "IgnoreArmor": "Ignore Armor"
+    },
+
+    "Community": {
+      "Resources": "Resources"
+    },
+
+    "Confirm": {
+      "Delete": "Confirm Deletion",
+      "DeleteItem": "Permanently delete \"{name}\"?",
+      "Add": "Add"
+    },
+
+    "Warning": {
+      "NotPC": "Only player characters can make this roll.",
+      "NotEnoughPool": "Not enough points in the {stat} pool for this Effort.",
+      "CannotRallyMajor": "You can't rally to remove a major wound (outside the superhero genre).",
+      "NotEnoughMightToRally": "Not enough Might points to rally.",
+      "CharacterDied": "{name} has taken a third major wound and dies.",
+      "CustomStatExists": "A stat with that name already exists.",
+      "NotEnoughXP": "Not enough Experience Points ({amount} required for: {reason}).",
+      "ChooseAdvancementType": "Choose an advancement type for this slot first.",
+      "CapabilitiesMustSumFour": "The distribution must add up to exactly 4 points."
+    },
+
+    "Migration": {
+      "Begin": "Cypher: migrating world data to version {version}. Please do not close the game...",
+      "Complete": "Cypher: world data migration to version {version} complete.",
+      "TooOld": "Your Cypher data (version {version}) is too old to migrate automatically. Please update through intermediate versions first, or ask for help."
+    }
+  },
+
+  "TYPES": {
+    "Actor": {
+      "pc": "Player Character",
+      "npc": "NPC",
+      "community": "Community"
+    },
+    "Item": {
+      "skill": "Skill",
+      "ability": "Ability",
+      "cypher": "Cypher",
+      "artifact": "Artifact",
+      "oddity": "Oddity",
+      "equipment": "Equipment",
+      "attack": "Attack",
+      "armor": "Armor",
+      "shield": "Shield"
+    }
+  }
+}

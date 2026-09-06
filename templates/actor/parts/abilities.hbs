@@ -1,0 +1,22 @@
+<section class="tab abilities {{tab.cssClass}}" data-group="primary" data-tab="abilities">
+  <button type="button" class="item-create" data-action="itemCreate" data-type="ability">
+    <i class="fa-solid fa-plus"></i> {{localize 'CYPHER.Ability.New'}}
+  </button>
+  <ul class="item-list abilities-list">
+    {{#each items.abilities as |item|}}
+    <li class="item" data-item-id="{{item.id}}">
+      <span class="ability-name">{{item.name}}</span>
+      <span class="ability-source">{{item.system.source}}</span>
+      <span class="ability-cost">
+        {{#if item.system.cost.amount}}
+          {{item.system.cost.amount}} {{localize (concat "CYPHER.Stat." item.system.cost.stat)}}
+        {{/if}}
+      </span>
+      <span class="item-controls">
+        <a data-action="itemEdit"><i class="fa-solid fa-edit"></i></a>
+        <a data-action="itemDelete"><i class="fa-solid fa-trash"></i></a>
+      </span>
+    </li>
+    {{/each}}
+  </ul>
+</section>
