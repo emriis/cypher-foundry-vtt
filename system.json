@@ -3,8 +3,6 @@
   "title": "Cypher",
   "description": "Un système de jeu non-officiel pour Cypher (Monte Cook Games), construit sous la Cypher Open License. / An unofficial game system for Cypher (Monte Cook Games), built under the Cypher Open License.",
   "version": "0.1.0",
-  "manifest": "https://github.com/emriis/cypher-foundry-vtt/releases/latest/download/system.json",
-  "download": "https://github.com/emriis/cypher-foundry-vtt/releases/download/rc0/system.zip",
   "compatibility": {
     "minimum": "13",
     "verified": "14.360"
@@ -64,9 +62,9 @@
     "distance": 1.5,
     "units": "m"
   },
-  "url": "",
-  "manifest": "",
-  "download": "",
+  "url": "https://github.com/emriis/cypher-foundry-vtt",
+  "manifest": "https://github.com/emriis/cypher-foundry-vtt/releases/latest/download/system.json",
+  "download": "https://github.com/emriis/cypher-foundry-vtt/releases/download/0.1.0/system.zip",
   "license": "LICENSE.txt",
   "readme": "README.md",
   "flags": {
