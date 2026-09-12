@@ -1,0 +1,91 @@
+<section class="tab advancement {{tab.cssClass}}" data-group="primary" data-tab="advancement">
+
+  <div class="xp-block">
+    <h3>{{localize 'CYPHER.XP.Title'}}</h3>
+    <div class="xp-row">
+      <span class="xp-value-label">{{localize 'CYPHER.XP'}} : <strong>{{system.xp}}</strong></span>
+      <button type="button" data-action="playerIntrusion">
+        <i class="fa-solid fa-bolt"></i> {{localize 'CYPHER.XP.PlayerIntrusion'}} ({{config.xpCosts.playerIntrusion}} PX)
+      </button>
+    </div>
+    <p class="xp-hint">{{localize 'CYPHER.XP.EditInHeader'}}</p>
+    <p class="xp-hint">{{localize 'CYPHER.XP.RerollHint'}}</p>
+    <p class="xp-hint">{{localize 'CYPHER.XP.LuckyShotHint2'}}</p>
+  </div>
+
+  <div class="advancement-block">
+    <h3>{{localize 'CYPHER.Advancement.Title'}} — {{localize 'CYPHER.Tier'}} {{system.tier}}</h3>
+    <p class="advancement-hint">{{localize 'CYPHER.Advancement.Hint'}}</p>
+
+    <div class="advancement-slots">
+      {{#each system.advancementSlots as |slot|}}
+      <div class="advancement-slot {{#if slot.bought}}bought{{/if}}">
+        <span class="slot-number">{{localize 'CYPHER.Advancement.Slot'}} {{@index}}</span>
+
+        <!-- Champ caché : préserve "bought" lors de la soumission du formulaire entier, puisque
+             ce champ n'a aucun contrôle visible propre (bought.hbs affiche juste un badge texte).
+             Hidden field: preserves "bought" across whole-form submission, since it has no
+             visible control of its own (the template just shows a text badge for it). -->
+        <input type="hidden" name="system.advancementSlots.{{@index}}.bought" value="{{slot.bought}}"/>
+
+        <!-- Les select restent volontairement actifs même après achat (pas de "disabled") :
+             un <select disabled> est exclu de la soumission HTML, ce qui ferait perdre son
+             type au prochain changement ailleurs sur la fiche. Le bouton "Acheter" disparaît
+             déjà une fois l'emplacement acheté, donc rechoisir un type ici n'a plus d'effet
+             mécanique — seulement cosmétique.
+             The selects are intentionally left enabled even after purchase (no "disabled"):
+             a disabled <select> is excluded from HTML form submission, which would lose its
+             type on the next change made elsewhere on the sheet. The "Buy" button already
+             disappears once a slot is bought, so re-picking a type here has no more
+             mechanical effect — purely cosmetic. -->
+        <select name="system.advancementSlots.{{@index}}.type">
+          <option value="">—</option>
+          <option value="capabilities" {{#ifEquals slot.type "capabilities"}}selected{{/ifEquals}}>{{localize 'CYPHER.Advancement.capabilities'}}</option>
+          <option value="perfection" {{#ifEquals slot.type "perfection"}}selected{{/ifEquals}}>{{localize 'CYPHER.Advancement.perfection'}}</option>
+          <option value="effort" {{#ifEquals slot.type "effort"}}selected{{/ifEquals}}>{{localize 'CYPHER.Advancement.effort'}}</option>
+          <option value="skill" {{#ifEquals slot.type "skill"}}selected{{/ifEquals}}>{{localize 'CYPHER.Advancement.skill'}}</option>
+          <option value="other" {{#ifEquals slot.type "other"}}selected{{/ifEquals}}>{{localize 'CYPHER.Advancement.other'}}</option>
+        </select>
+
+        {{#ifEquals slot.type "other"}}
+        <select name="system.advancementSlots.{{@index}}.otherType">
+          <option value="">—</option>
+          <option value="recovery" {{#ifEquals slot.otherType "recovery"}}selected{{/ifEquals}}>{{localize 'CYPHER.Advancement.other-recovery'}}</option>
+          <option value="focus" {{#ifEquals slot.otherType "focus"}}selected{{/ifEquals}}>{{localize 'CYPHER.Advancement.other-focus'}}</option>
+          <option value="armor" {{#ifEquals slot.otherType "armor"}}selected{{/ifEquals}}>{{localize 'CYPHER.Advancement.other-armor'}}</option>
+          <option value="weapons" {{#ifEquals slot.otherType "weapons"}}selected{{/ifEquals}}>{{localize 'CYPHER.Advancement.other-weapons'}}</option>
+          <option value="genre" {{#ifEquals slot.otherType "genre"}}selected{{/ifEquals}}>{{localize 'CYPHER.Advancement.other-genre'}}</option>
+        </select>
+        {{else}}
+        <!-- otherType préservé même quand non affiché (type != "other"), pour ne pas le perdre
+             si l'utilisateur choisit "Autre" plus tard puis revient en arrière.
+             otherType preserved even when not shown (type != "other"), so it isn't lost if the
+             user picks "Other" later then switches back. -->
+        <input type="hidden" name="system.advancementSlots.{{@index}}.otherType" value="{{slot.otherType}}"/>
+        {{/ifEquals}}
+
+        {{#if slot.bought}}
+        <span class="slot-bought-badge"><i class="fa-solid fa-circle-check"></i> {{localize 'CYPHER.Advancement.Bought'}}</span>
+        {{else}}
+        <button type="button" data-action="purchaseAdvancement" data-slot="{{@index}}">
+          {{localize 'CYPHER.Advancement.Buy'}} ({{../config.xpCosts.advancementSlot}} PX)
+        </button>
+        {{/if}}
+      </div>
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="advancement-traits-block">
+    <h3>{{localize 'CYPHER.Advancement.PermanentTraits'}}</h3>
+    <ul>
+      <li>{{localize 'CYPHER.Advancement.RecoveryBonus'}}: +{{system.recoveryBonus}}</li>
+      <li>{{localize 'CYPHER.Armor.FreelyUsable'}} ({{localize 'CYPHER.Advancement.AllCategories'}}):
+        <input type="checkbox" name="system.canFreelyUseAllArmor" {{#if system.canFreelyUseAllArmor}}checked{{/if}}/>
+      </li>
+      <li>{{localize 'CYPHER.Advancement.AllWeaponsFree'}}:
+        <input type="checkbox" name="system.canFreelyUseAllWeapons" {{#if system.canFreelyUseAllWeapons}}checked{{/if}}/>
+      </li>
+    </ul>
+  </div>
+</section>

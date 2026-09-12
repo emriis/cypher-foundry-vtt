@@ -1,0 +1,20 @@
+<header class="sheet-header npc-header">
+  <img class="profile-img" src="{{actor.img}}" data-action="editImage" data-edit="img" alt="{{actor.name}}"/>
+  <div class="header-fields">
+    <input name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'CYPHER.Name'}}"/>
+    <div class="npc-level-row">
+      <label>{{localize 'CYPHER.NPC.Level'}}
+        <input name="system.level" type="number" value="{{system.level}}" min="1"/>
+      </label>
+      <span class="npc-target-number">{{localize 'CYPHER.NPC.TargetNumber'}}: <strong>{{system.targetNumber}}</strong></span>
+      <label>{{localize 'CYPHER.NPC.Health'}}
+        <input name="system.health.value" type="number" value="{{system.health.value}}" min="0"/>
+        <span>/</span>
+        <input name="system.health.max" type="number" value="{{system.health.max}}" min="0"/>
+      </label>
+      <button type="button" data-action="applyDamage">
+        <i class="fa-solid fa-burst"></i> {{localize 'CYPHER.NPC.ApplyDamage'}}
+      </button>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,7 @@
+<header class="sheet-header item-header">
+  <img class="profile-img" src="{{item.img}}" data-action="editImage" data-edit="img" alt="{{item.name}}"/>
+  <div class="header-fields">
+    <input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'CYPHER.Name'}}"/>
+    <p class="item-type-label">{{localize (concat "TYPES.Item." item.type)}}</p>
+  </div>
+</header>
