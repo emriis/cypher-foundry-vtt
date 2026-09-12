@@ -1,0 +1,42 @@
+<section class="npc-body">
+  <div class="npc-stats-row">
+    <label>{{localize 'CYPHER.Armor.Title'}}
+      <input name="system.armor" type="number" value="{{system.armor}}" min="0"/>
+    </label>
+    <label>{{localize 'CYPHER.Damage'}}
+      <input name="system.damage" type="text" value="{{system.damage}}" placeholder="ex. 4"/>
+    </label>
+    <label>{{localize 'CYPHER.NPC.Movement'}}
+      <input name="system.movement" type="text" value="{{system.movement}}" placeholder="ex. Short"/>
+    </label>
+  </div>
+  <div class="form-group">
+    <label>{{localize 'CYPHER.NPC.Modifications'}}</label>
+    <input name="system.modifications" type="text" value="{{system.modifications}}" placeholder="{{localize 'CYPHER.NPC.ModificationsPlaceholder'}}"/>
+  </div>
+
+  <div class="npc-section">
+    <h3>{{localize 'CYPHER.NPC.Combat'}}</h3>
+    <prose-mirror name="system.combat" value="{{system.combat}}"></prose-mirror>
+  </div>
+
+  <div class="npc-section">
+    <h3>{{localize 'CYPHER.NPC.Interaction'}}</h3>
+    <prose-mirror name="system.interaction" value="{{system.interaction}}"></prose-mirror>
+  </div>
+
+  <div class="npc-section">
+    <h3>{{localize 'CYPHER.NPC.Use'}}</h3>
+    <prose-mirror name="system.use" value="{{system.use}}"></prose-mirror>
+  </div>
+
+  <div class="npc-section">
+    <h3>{{localize 'CYPHER.NPC.Loot'}}</h3>
+    <prose-mirror name="system.loot" value="{{system.loot}}"></prose-mirror>
+  </div>
+
+  <div class="npc-section gm-notes">
+    <h3>{{localize 'CYPHER.NPC.GMNotes'}}</h3>
+    <prose-mirror name="system.gmNotes" value="{{system.gmNotes}}"></prose-mirror>
+  </div>
+</section>

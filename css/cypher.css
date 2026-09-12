@@ -1,0 +1,1078 @@
+/* ==================================================================
+   CYPHER — Design System
+   ==================================================================
+   Jetons de conception (variables CSS) centralisant couleurs, typo et
+   espacements. Objectif : cohérence visuelle, accessibilité (contrastes
+   WCAG AA vérifiés), et compatibilité avec les thèmes clair/sombre de
+   Foundry V13+ (classes .theme-light / .theme-dark posées par le cœur
+   du logiciel sur la fenêtre de la fiche).
+   Design tokens (CSS variables) centralizing color, type, and spacing.
+   Goal: visual consistency, accessibility (WCAG AA contrast verified),
+   and compatibility with Foundry V13+'s light/dark themes (.theme-light
+   / .theme-dark classes applied by core to the sheet window).
+   ================================================================== */
+
+.cypher.sheet {
+  /* ---- Typographie / Typography ----
+     Signika est la police d'interface native de Foundry (lisible, humaniste,
+     sans-serif) — on la réutilise pour une cohérence visuelle avec le reste
+     du logiciel, avec une pile de secours système complète.
+     Signika is Foundry's own native UI font (legible, humanist sans-serif) —
+     reused here for visual consistency with the rest of the software, with
+     a full system fallback stack. */
+  --cypher-font-family: "Signika", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --cypher-font-size-xs: 0.72rem;
+  --cypher-font-size-sm: 0.8rem;
+  --cypher-font-size-base: 0.9rem;
+  --cypher-font-size-md: 1rem;
+  --cypher-font-size-lg: 1.2rem;
+  --cypher-font-size-xl: 1.4rem;
+
+  /* ---- Espacement / Spacing ---- */
+  --cypher-space-xs: 2px;
+  --cypher-space-sm: 4px;
+  --cypher-space-md: 8px;
+  --cypher-space-lg: 12px;
+  --cypher-space-xl: 16px;
+
+  --cypher-radius-sm: 4px;
+  --cypher-radius-md: 6px;
+
+  /* ---- Cible cliquable minimale (icônes seules) / Minimum click target (icon-only) ----
+     Recommandation AAA (2.5.5) : 44px. On vise un compromis raisonnable pour
+     une interface dense de fiche de personnage : 28px, largement supérieur
+     à la taille d'icône brute et confortable au clic/tap.
+     AAA recommendation (2.5.5): 44px. We aim for a reasonable compromise for
+     a dense character sheet UI: 28px, well above raw icon size and
+     comfortable to click/tap. */
+  --cypher-target-size: 28px;
+
+  /* ================================================================
+     THÈME CLAIR (par défaut) / LIGHT THEME (default)
+     Tous les ratios de contraste ci-dessous ont été vérifiés manuellement
+     (formule de luminance relative WCAG) contre leur fond réel d'usage.
+     All contrast ratios below were manually verified (WCAG relative
+     luminance formula) against their actual usage background.
+     ================================================================ */
+  --cypher-color-bg-sheet: #fffdfa;
+  --cypher-color-bg-card: #f7f0e4;
+  --cypher-color-bg-card-alt: #e3f0e3;
+  --cypher-color-bg-hover: #f0e6d4;
+
+  --cypher-color-text: #2a1e14;              /* 16.5:1 sur blanc / on white */
+  --cypher-color-text-muted: #5b4a3a;        /* 7.2:1 sur blanc / on white — remplace l'opacité pour garder un contraste garanti, replaces opacity to keep guaranteed contrast */
+  --cypher-color-text-on-accent: #fffdfa;
+
+  --cypher-color-border: #8a5a2c;
+  --cypher-color-border-soft: rgba(138, 90, 44, 0.33);
+  --cypher-color-border-faint: rgba(138, 90, 44, 0.2);
+
+  --cypher-color-accent: #8a5a2c;            /* 5.8:1 sur blanc / on white */
+  --cypher-color-accent-hover: #6e4722;      /* 8.0:1 sur blanc / on white */
+
+  --cypher-color-success: #2f7a2f;           /* 5.4:1 sur blanc / on white */
+  --cypher-color-danger: #a11f1f;            /* 7.7:1 sur blanc / on white */
+  --cypher-color-danger-bg: rgba(161, 31, 31, 0.08);
+  --cypher-color-info: #2f5a8a;              /* 7.1:1 sur blanc / on white */
+
+  --cypher-color-warning-bg: #f7e0c0;
+  --cypher-color-warning-text: #7a4a10;      /* 6.0:1 sur ce fond / on this bg */
+  --cypher-color-danger-soft-bg: #f0c0c0;
+  --cypher-color-danger-soft-text: #7a1010;  /* 6.9:1 sur ce fond / on this bg */
+
+  --cypher-focus-ring: #2f5a8a;
+
+  color: var(--cypher-color-text);
+  background: var(--cypher-color-bg-sheet);
+  font-family: var(--cypher-font-family);
+}
+
+/* ================================================================
+   THÈME SOMBRE / DARK THEME
+   Activé automatiquement par Foundry (.theme-dark posé sur la fenêtre
+   selon le réglage du monde ou une surcharge par fiche).
+   Automatically activated by Foundry (.theme-dark applied to the window
+   per world setting or a per-sheet override).
+   ================================================================ */
+.cypher.sheet.theme-dark {
+  --cypher-color-bg-sheet: #211a14;
+  --cypher-color-bg-card: #2f2620;
+  --cypher-color-bg-card-alt: #24361f;
+  --cypher-color-bg-hover: #3a2f26;
+
+  --cypher-color-text: #f0e6d8;              /* 13.9:1 sur le fond sombre / on dark bg */
+  --cypher-color-text-muted: #c2b3a0;        /* ~9.6:1 sur le fond sombre / on dark bg */
+  --cypher-color-text-on-accent: #211a14;
+
+  --cypher-color-border: #a97c4a;
+  --cypher-color-border-soft: rgba(201, 161, 90, 0.35);
+  --cypher-color-border-faint: rgba(201, 161, 90, 0.22);
+
+  --cypher-color-accent: #c9a15a;            /* 7.1:1 sur le fond sombre / on dark bg */
+  --cypher-color-accent-hover: #ddb877;
+
+  --cypher-color-success: #6fcf6f;
+  --cypher-color-danger: #ef8a8a;
+  --cypher-color-danger-bg: rgba(239, 138, 138, 0.12);
+  --cypher-color-info: #8ec1f2;
+
+  --cypher-color-warning-bg: #4a3418;
+  --cypher-color-warning-text: #f0c98a;
+  --cypher-color-danger-soft-bg: #4a2020;
+  --cypher-color-danger-soft-text: #f0a8a8;
+
+  --cypher-focus-ring: #8ec1f2;
+}
+
+/* ================================================================
+   Accessibilité transverse / Cross-cutting accessibility
+   ================================================================ */
+
+/* Anneau de focus visible et cohérent sur tout élément interactif —
+   navigation clavier indispensable, absente jusqu'ici.
+   Visible, consistent focus ring on every interactive element —
+   essential keyboard navigation, previously absent entirely. */
+.cypher.sheet a:focus-visible,
+.cypher.sheet button:focus-visible,
+.cypher.sheet input:focus-visible,
+.cypher.sheet select:focus-visible,
+.cypher.sheet textarea:focus-visible,
+.cypher.sheet prose-mirror:focus-visible {
+  outline: 2px solid var(--cypher-focus-ring);
+  outline-offset: 2px;
+  border-radius: var(--cypher-radius-sm);
+}
+
+/* Respecte la préférence système de réduction des animations.
+   Respects the system's reduced-motion preference. */
+@media (prefers-reduced-motion: reduce) {
+  .cypher.sheet * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Cible cliquable minimale pour les icônes seules (édition, suppression,
+   bascules +/-) — évite les clics manqués, notamment tactiles.
+   Minimum click target for icon-only controls (edit, delete, +/- toggles)
+   — avoids missed clicks, especially on touch. */
+.cypher.sheet .item-list a,
+.cypher.sheet .item-list button,
+.cypher.sheet .add-optional,
+.cypher.sheet .remove-optional,
+.cypher.sheet .remove-custom-stat,
+.cypher.sheet .remove-custom-field {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--cypher-target-size);
+  min-height: var(--cypher-target-size);
+  border-radius: var(--cypher-radius-sm);
+  transition: background-color 120ms ease;
+}
+
+.cypher.sheet .item-list a:hover,
+.cypher.sheet .item-list button:hover,
+.cypher.sheet .add-optional:hover,
+.cypher.sheet .remove-optional:hover {
+  background: var(--cypher-color-bg-hover);
+}
+
+/* ================================================================
+   En-tête / Header
+   ================================================================ */
+
+.cypher .sheet-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding-bottom: var(--cypher-space-md);
+  border-bottom: 2px solid var(--cypher-color-border);
+}
+
+.cypher .sheet-header .profile-img {
+  width: 80px;
+  height: 80px;
+  border: 2px solid var(--cypher-color-border);
+  border-radius: var(--cypher-radius-sm);
+  object-fit: cover;
+}
+
+.cypher .header-fields {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--cypher-space-sm);
+}
+
+.cypher .header-fields input[name="name"] {
+  font-size: var(--cypher-font-size-xl);
+  font-weight: bold;
+  border: none;
+  border-bottom: 1px solid var(--cypher-color-border-soft);
+  background: transparent;
+  color: var(--cypher-color-text);
+}
+
+.cypher .descriptor-line {
+  display: flex;
+  align-items: center;
+  gap: var(--cypher-space-sm);
+  flex-wrap: wrap;
+  font-size: var(--cypher-font-size-sm);
+}
+
+.cypher .descriptor-line input {
+  flex: 1;
+  min-width: 80px;
+}
+
+.cypher .header-stats-row {
+  display: flex;
+  gap: var(--cypher-space-lg);
+  flex-wrap: wrap;
+}
+
+.cypher .header-stats-row label {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--cypher-font-size-xs);
+  text-transform: uppercase;
+  color: var(--cypher-color-text-muted);
+}
+
+.cypher .header-stats-row input {
+  width: 50px;
+}
+
+/* ================================================================
+   Statistiques / Stats
+   ================================================================ */
+
+.cypher .stats-row {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.cypher .stat-block {
+  flex: 1;
+  border: 1px solid var(--cypher-color-border-soft);
+  border-radius: var(--cypher-radius-md);
+  padding: var(--cypher-space-md);
+  text-align: center;
+  background: var(--cypher-color-bg-card);
+}
+
+.cypher .stat-block h3 {
+  margin: 0 0 6px;
+  border: none;
+  font-size: var(--cypher-font-size-md);
+  color: var(--cypher-color-text);
+}
+
+.cypher .pool-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--cypher-space-sm);
+  font-size: var(--cypher-font-size-lg);
+}
+
+.cypher .pool-row input {
+  width: 50px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.cypher .edge-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--cypher-space-sm);
+  font-size: var(--cypher-font-size-sm);
+  margin-top: var(--cypher-space-sm);
+  color: var(--cypher-color-text-muted);
+}
+
+.cypher .edge-row input {
+  width: 40px;
+  text-align: center;
+}
+
+.cypher button.roll-stat {
+  margin-top: var(--cypher-space-sm);
+  width: 100%;
+  min-height: var(--cypher-target-size);
+  cursor: pointer;
+}
+
+/* ================================================================
+   Armure / Suivi (bloc générique) / Armor / Track (generic block)
+   ================================================================ */
+
+.cypher .armor-damagetrack-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.cypher .armor-block, .cypher .damage-track-block {
+  flex: 1;
+  border: 1px solid var(--cypher-color-border-faint);
+  border-radius: var(--cypher-radius-md);
+  padding: 6px var(--cypher-space-md);
+}
+
+.cypher .step-modifier-note {
+  font-size: var(--cypher-font-size-sm);
+  color: var(--cypher-color-text-muted);
+  margin: var(--cypher-space-sm) 0 0;
+}
+
+/* ================================================================
+   Récupérations / Recoveries
+   ================================================================ */
+
+.cypher .recovery-row {
+  display: flex;
+  gap: var(--cypher-space-lg);
+  flex-wrap: wrap;
+}
+
+.cypher .recovery-item {
+  display: flex;
+  align-items: center;
+  gap: var(--cypher-space-sm);
+  font-size: var(--cypher-font-size-sm);
+}
+
+/* ================================================================
+   Listes d'objets / Item lists
+   ================================================================ */
+
+.cypher .item-list {
+  list-style: none;
+  margin: var(--cypher-space-sm) 0 12px;
+  padding: 0;
+}
+
+.cypher .item-list .item,
+.cypher .item-list .item-list-header {
+  display: flex;
+  align-items: center;
+  gap: var(--cypher-space-md);
+  padding: var(--cypher-space-sm) 6px;
+  border-bottom: 1px solid var(--cypher-color-border-faint);
+}
+
+/* Corrigé : l'opacité réduite (0.5) faisait tomber le contraste du texte
+   sous le seuil AA (~3.2:1). On garde le signal non-coloré (barré) et une
+   couleur de texte atténuée mais garantie lisible, plutôt qu'une simple
+   transparence.
+   Fixed: reduced opacity (0.5) dropped text contrast below the AA
+   threshold (~3.2:1). We keep the non-color signal (strikethrough) and a
+   muted-but-guaranteed-legible text color, instead of plain transparency. */
+.cypher .item-list .item.depleted {
+  color: var(--cypher-color-text-muted);
+  text-decoration: line-through;
+}
+
+.cypher .item-list .item.depleted .item-name {
+  color: inherit;
+}
+
+.cypher .item-list .item-name {
+  flex: 1;
+  font-weight: 600;
+}
+
+/* Alignement en colonnes pour les listes de Compétences/Capacités
+   Column alignment for Skill/Ability lists */
+.cypher .skill-name, .cypher .ability-name {
+  flex: 1;
+  font-weight: 600;
+}
+
+.cypher .skill-stat, .cypher .skill-level {
+  flex: 0 0 90px;
+  font-size: var(--cypher-font-size-sm);
+}
+
+.cypher .ability-source {
+  flex: 0 0 130px;
+  font-size: var(--cypher-font-size-sm);
+  color: var(--cypher-color-text-muted);
+}
+
+.cypher .ability-cost {
+  flex: 0 0 90px;
+  font-size: var(--cypher-font-size-sm);
+}
+
+.cypher .skill-controls, .cypher .item-controls {
+  flex: 0 0 auto;
+  display: flex;
+  gap: var(--cypher-space-sm);
+}
+
+.cypher .item-list a, .cypher .item-list button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--cypher-color-accent);
+}
+
+.cypher .inventory-section h3 {
+  border-bottom: 1px solid var(--cypher-color-border-soft);
+  margin-bottom: var(--cypher-space-xs);
+}
+
+.cypher .item-create {
+  cursor: pointer;
+  margin-bottom: var(--cypher-space-sm);
+  min-height: var(--cypher-target-size);
+}
+
+/* ================================================================
+   Fiche d'objet / Item sheet
+   ================================================================ */
+
+.cypher.item .item-header {
+  border-bottom: 2px solid var(--cypher-color-border);
+  padding-bottom: var(--cypher-space-md);
+}
+
+.cypher .item-type-label {
+  text-transform: uppercase;
+  font-size: var(--cypher-font-size-xs);
+  color: var(--cypher-color-text-muted);
+  margin: 2px 0 0;
+}
+
+.cypher .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cypher-space-xs);
+  margin: 6px 0;
+}
+
+.cypher .form-group.inline {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--cypher-space-md);
+}
+
+.cypher .description-group prose-mirror {
+  min-height: 150px;
+}
+
+/* ================================================================
+   Résultats de jet (cartes de tchat) / Roll results (chat cards)
+   ================================================================ */
+
+.cypher .result.success, .cypher-roll-card .success {
+  color: var(--cypher-color-success);
+  font-weight: bold;
+}
+
+.cypher-roll-card .failure {
+  color: var(--cypher-color-danger);
+  font-weight: bold;
+}
+
+.cypher-roll-card h3 {
+  margin: 0 0 var(--cypher-space-sm);
+}
+
+/* ================================================================
+   Blessures / Wounds
+   ================================================================ */
+
+.cypher .hindered-banner, .cypher .dead-banner {
+  padding: var(--cypher-space-sm) var(--cypher-space-md);
+  border-radius: var(--cypher-radius-sm);
+  font-weight: bold;
+  margin: 6px 0;
+}
+
+.cypher .hindered-banner {
+  background: var(--cypher-color-warning-bg);
+  color: var(--cypher-color-warning-text);
+}
+
+.cypher .dead-banner {
+  background: var(--cypher-color-danger-soft-bg);
+  color: var(--cypher-color-danger-soft-text);
+}
+
+.cypher .wounds-row {
+  display: flex;
+  gap: 10px;
+}
+
+.cypher .wound-severity {
+  flex: 1;
+  border: 1px solid var(--cypher-color-border-faint);
+  border-radius: var(--cypher-radius-md);
+  padding: 6px var(--cypher-space-md);
+  text-align: center;
+}
+
+/* Accent de couleur par sévérité — un COMPLÉMENT au texte du libellé,
+   jamais le seul indicateur (le nom "Mineure/Modérée/Majeure" reste le
+   signal principal, lisible même sans distinction chromatique).
+   Color accent per severity — a COMPLEMENT to the label text, never the
+   sole indicator (the "Minor/Moderate/Major" name remains the primary
+   signal, legible even without color differentiation). */
+.cypher .wound-severity.wound-moderate {
+  border-color: var(--cypher-color-warning-text);
+}
+
+.cypher .wound-severity.wound-major {
+  border-color: var(--cypher-color-danger);
+}
+
+.cypher .wound-boxes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--cypher-space-xs);
+}
+
+.cypher .wound-boxes input {
+  width: 40px;
+  text-align: center;
+}
+
+.cypher .wound-hint, .cypher .armor-hint {
+  font-size: var(--cypher-font-size-xs);
+  color: var(--cypher-color-text-muted);
+  margin: var(--cypher-space-sm) 0 0;
+}
+
+.cypher .armor-row {
+  display: flex;
+  align-items: center;
+  gap: var(--cypher-space-lg);
+}
+
+.cypher .cypher-hindered {
+  color: var(--cypher-color-warning-text);
+}
+
+.cypher .cypher-refund {
+  color: var(--cypher-color-success);
+  font-style: italic;
+}
+
+/* ================================================================
+   Bascules descripteur/foyer optionnels / Optional descriptor/focus toggles
+   ================================================================ */
+
+.cypher .and-joiner {
+  font-style: italic;
+  color: var(--cypher-color-text-muted);
+}
+
+.cypher .add-optional, .cypher .remove-optional {
+  cursor: pointer;
+  color: var(--cypher-color-accent);
+  font-size: var(--cypher-font-size-md);
+}
+
+.cypher .remove-optional {
+  color: var(--cypher-color-danger);
+}
+
+/* ================================================================
+   Statistiques personnalisées / Custom stats
+   ================================================================ */
+
+.cypher .custom-stats-row {
+  margin-top: var(--cypher-space-sm);
+}
+
+.cypher .stat-custom h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.cypher .remove-custom-stat {
+  cursor: pointer;
+  font-size: var(--cypher-font-size-sm);
+  color: var(--cypher-color-danger);
+}
+
+.cypher .add-custom-stat {
+  margin: var(--cypher-space-sm) 0 10px;
+  cursor: pointer;
+  min-height: var(--cypher-target-size);
+}
+
+/* ================================================================
+   Genre & bloc super-héros / Genre & superhero block
+   ================================================================ */
+
+.cypher .genre-species-row {
+  display: flex;
+  gap: var(--cypher-space-lg);
+  align-items: flex-end;
+  margin-bottom: var(--cypher-space-sm);
+}
+
+.cypher .genre-species-row label {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--cypher-font-size-xs);
+  text-transform: uppercase;
+  color: var(--cypher-color-text-muted);
+}
+
+.cypher .genre-hint {
+  font-size: var(--cypher-font-size-xs);
+  color: var(--cypher-color-text-muted);
+  margin: 2px 0 var(--cypher-space-sm);
+  font-style: italic;
+}
+
+.cypher .superhero-block {
+  border: 1px solid var(--cypher-color-border-faint);
+  border-radius: var(--cypher-radius-md);
+  padding: 6px var(--cypher-space-md);
+  margin: var(--cypher-space-sm) 0;
+}
+
+.cypher .rank-field {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--cypher-font-size-sm);
+  margin-bottom: var(--cypher-space-sm);
+}
+
+.cypher .rank-field input {
+  width: 45px;
+}
+
+.cypher .power-shifts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cypher-space-md);
+  align-items: center;
+}
+
+.cypher .power-shifts-label {
+  font-weight: bold;
+  font-size: 0.78rem;
+  flex-basis: 100%;
+}
+
+.cypher .power-shift-item {
+  display: flex;
+  align-items: center;
+  gap: var(--cypher-space-sm);
+  font-size: var(--cypher-font-size-xs);
+}
+
+.cypher .power-shift-item input {
+  width: 36px;
+  text-align: center;
+}
+
+/* ================================================================
+   Genre personnalisé / Custom genre extra row
+   ================================================================ */
+
+.cypher .custom-genre-extra-row {
+  margin-top: var(--cypher-space-sm);
+}
+
+.cypher .custom-genre-extra-row label {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--cypher-font-size-xs);
+  text-transform: uppercase;
+  color: var(--cypher-color-text-muted);
+}
+
+/* ================================================================
+   Champs libres / Custom fields
+   ================================================================ */
+
+.cypher .custom-fields-hint {
+  font-size: var(--cypher-font-size-xs);
+  color: var(--cypher-color-text-muted);
+  margin: 0 0 6px;
+}
+
+.cypher .custom-fields-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cypher-space-sm);
+  margin-bottom: 6px;
+}
+
+.cypher .custom-field-row {
+  display: flex;
+  align-items: center;
+  gap: var(--cypher-space-md);
+}
+
+.cypher .custom-field-label {
+  flex: 0 0 140px;
+  font-weight: 600;
+  font-size: var(--cypher-font-size-sm);
+}
+
+.cypher .custom-field-row input[type="text"],
+.cypher .custom-field-row input[type="number"] {
+  flex: 1;
+}
+
+.cypher .remove-custom-field {
+  cursor: pointer;
+  color: var(--cypher-color-danger);
+}
+
+.cypher .add-custom-field {
+  cursor: pointer;
+  min-height: var(--cypher-target-size);
+}
+
+/* ================================================================
+   Onglet PX & Avancement / XP & Advancement tab
+   ================================================================ */
+
+.cypher .xp-block, .cypher .advancement-block, .cypher .advancement-traits-block {
+  border: 1px solid var(--cypher-color-border-faint);
+  border-radius: var(--cypher-radius-md);
+  padding: var(--cypher-space-md) 10px;
+  margin-bottom: 10px;
+}
+
+.cypher .xp-row {
+  display: flex;
+  align-items: center;
+  gap: var(--cypher-space-lg);
+}
+
+.cypher .xp-value-label {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--cypher-font-size-xs);
+  text-transform: uppercase;
+  color: var(--cypher-color-text-muted);
+}
+
+.cypher .xp-value-label input {
+  width: 60px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.cypher .xp-hint, .cypher .advancement-hint {
+  font-size: var(--cypher-font-size-xs);
+  color: var(--cypher-color-text-muted);
+  margin: 6px 0 0;
+}
+
+.cypher .advancement-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.cypher .advancement-slot {
+  display: flex;
+  align-items: center;
+  gap: var(--cypher-space-md);
+  padding: var(--cypher-space-sm) 6px;
+  border-radius: var(--cypher-radius-sm);
+  background: var(--cypher-color-bg-card);
+}
+
+.cypher .advancement-slot.bought {
+  background: var(--cypher-color-bg-card-alt);
+}
+
+.cypher .slot-number {
+  font-weight: bold;
+  font-size: var(--cypher-font-size-sm);
+  min-width: 70px;
+}
+
+.cypher .slot-bought-badge {
+  color: var(--cypher-color-success);
+  font-size: var(--cypher-font-size-sm);
+  font-weight: bold;
+}
+
+.cypher .advancement-traits-block ul {
+  margin: var(--cypher-space-sm) 0 0;
+  padding-left: 18px;
+  font-size: var(--cypher-font-size-sm);
+}
+
+.cypher .advancement-traits-block li {
+  margin-bottom: var(--cypher-space-sm);
+}
+
+/* ================================================================
+   Message de tchat — bouton de relance / Chat message — reroll button
+   ================================================================ */
+
+.cypher-reroll-button {
+  margin-top: 6px;
+  cursor: pointer;
+  font-size: var(--cypher-font-size-sm);
+  min-height: var(--cypher-target-size);
+}
+
+.cypher-reroll-card {
+  border-top: 1px dashed var(--cypher-color-border-soft);
+  margin-top: 6px;
+  padding-top: 6px;
+}
+
+/* ================================================================
+   Boutons de défense / Defense buttons
+   ================================================================ */
+
+.cypher .defense-buttons {
+  display: flex;
+  gap: var(--cypher-space-md);
+  margin-top: 6px;
+}
+
+.cypher .defense-buttons button {
+  flex: 1;
+  cursor: pointer;
+  min-height: var(--cypher-target-size);
+}
+
+.cypher-defense-note {
+  font-style: italic;
+  margin-top: var(--cypher-space-sm);
+}
+
+.cypher-defense-note.failure {
+  color: var(--cypher-color-danger);
+}
+
+.cypher-armor-mod {
+  color: var(--cypher-color-info);
+}
+
+/* ================================================================
+   Boucliers / Shields
+   ================================================================ */
+
+.cypher .item-list .item.broken {
+  color: var(--cypher-color-text-muted);
+}
+
+.cypher .item-list .item.broken .item-name {
+  text-decoration: line-through;
+}
+
+.cypher .shield-hint {
+  font-size: 0.78rem;
+  color: var(--cypher-color-text-muted);
+  margin-bottom: 6px;
+}
+
+.cypher .shield-broken-badge {
+  color: var(--cypher-color-danger);
+  font-weight: bold;
+  font-size: var(--cypher-font-size-sm);
+}
+
+.cypher .shield-wounds-row {
+  display: flex;
+  gap: var(--cypher-space-md);
+  margin-top: 6px;
+}
+
+/* ================================================================
+   Dégâts d'armure / Armor damage
+   ================================================================ */
+
+.cypher .armor-damaged-note {
+  text-decoration: line-through;
+  color: var(--cypher-color-text-muted);
+}
+
+.cypher .armor-damaged-banner {
+  background: var(--cypher-color-warning-bg);
+  color: var(--cypher-color-warning-text);
+  padding: 3px var(--cypher-space-md);
+  border-radius: var(--cypher-radius-sm);
+  font-size: var(--cypher-font-size-sm);
+  margin: 4px 0;
+}
+
+.cypher .armor-damage-buttons {
+  display: flex;
+  gap: var(--cypher-space-md);
+  margin: 4px 0;
+}
+
+.cypher .armor-damage-buttons button {
+  cursor: pointer;
+  font-size: var(--cypher-font-size-sm);
+  min-height: var(--cypher-target-size);
+}
+
+/* ================================================================
+   Épuisement / Depletion
+   ================================================================ */
+
+.cypher .depletion-hint {
+  font-size: var(--cypher-font-size-xs);
+  color: var(--cypher-color-text-muted);
+  margin: 4px 0 0;
+}
+
+/* ================================================================
+   Armure unifiée / Unified armor display
+   ================================================================ */
+
+.cypher .armor-active-name {
+  font-size: 0.9rem;
+  margin: 2px 0 4px;
+}
+
+.cypher .armor-freely-usable-tag {
+  font-size: var(--cypher-font-size-xs);
+  color: var(--cypher-color-text-muted);
+  margin-left: var(--cypher-space-sm);
+}
+
+.cypher .armor-none-note {
+  font-size: 0.85rem;
+  color: var(--cypher-color-text-muted);
+  font-style: italic;
+  margin: 2px 0 4px;
+}
+
+.cypher .armor-manage-hint {
+  font-size: 0.72rem;
+  color: var(--cypher-color-text-muted);
+  margin: 4px 0;
+}
+
+.cypher .armor-item-hint {
+  font-size: var(--cypher-font-size-xs);
+  color: var(--cypher-color-text-muted);
+  margin-top: var(--cypher-space-sm);
+}
+
+/* ================================================================
+   Fiche PNJ / Communauté / NPC / Community sheet
+   ================================================================ */
+
+.cypher.sheet .npc-header .header-fields,
+.cypher.sheet .community-header .header-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.cypher.sheet .npc-level-row {
+  display: flex;
+  align-items: center;
+  gap: var(--cypher-space-lg);
+  flex-wrap: wrap;
+}
+
+.cypher.sheet .npc-level-row label {
+  display: flex;
+  align-items: center;
+  gap: var(--cypher-space-sm);
+  font-size: var(--cypher-font-size-sm);
+}
+
+.cypher.sheet .npc-level-row input {
+  width: 50px;
+}
+
+.cypher.sheet .npc-target-number {
+  font-size: 0.9rem;
+  padding: 2px var(--cypher-space-md);
+  background: var(--cypher-color-warning-bg);
+  color: var(--cypher-color-warning-text);
+  border-radius: var(--cypher-radius-sm);
+}
+
+.cypher.sheet .npc-stats-row {
+  display: flex;
+  gap: var(--cypher-space-xl);
+  margin: var(--cypher-space-md) 0;
+}
+
+.cypher.sheet .npc-stats-row label, .cypher.sheet .npc-body .form-group {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--cypher-font-size-sm);
+}
+
+.cypher.sheet .npc-section, .cypher.sheet .community-section {
+  margin: 10px 0;
+}
+
+.cypher.sheet .npc-section h3, .cypher.sheet .community-section h3 {
+  border-bottom: 1px solid var(--cypher-color-border-soft);
+  margin-bottom: var(--cypher-space-sm);
+}
+
+.cypher.sheet .npc-section prose-mirror, .cypher.sheet .community-section prose-mirror {
+  min-height: 80px;
+}
+
+.cypher.sheet .gm-notes {
+  border: 1px dashed var(--cypher-color-danger);
+  padding: var(--cypher-space-md);
+  border-radius: var(--cypher-radius-sm);
+}
+
+/* ================================================================
+   Défilement / Scrolling
+   Chaque section de contenu défile indépendamment de l'en-tête et de la
+   barre d'onglets, qui restent fixes en haut de la fenêtre.
+   Each content section scrolls independently of the header and tab bar,
+   which stay fixed at the top of the window.
+   ================================================================ */
+
+.cypher.sheet .window-content {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.cypher.sheet .window-content > form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.cypher.sheet .sheet-header,
+.cypher.sheet .sheet-tabs,
+.cypher.sheet nav.tabs {
+  flex: 0 0 auto;
+}
+
+.cypher.sheet .tab,
+.cypher.sheet .npc-body,
+.cypher.sheet .community-body,
+.cypher.sheet .item-body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  min-height: 0;
+  padding-right: 4px;
+}
