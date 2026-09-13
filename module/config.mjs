@@ -1,12 +1,21 @@
+/**
+ * Centralized constants and rule configuration for the Cypher system.
+ *
+ * Keep game-rule values in this module rather than duplicating literals across
+ * documents, data models, and sheets. Consumers should import CYPHER instead
+ * of redefining these values locally.
+ */
 export const CYPHER = {};
 
-/* Les trois stats du Cypher / The three Cypher stats */
+/** Core Cypher stat identifiers. */
 CYPHER.stats = ["might", "speed", "intellect"];
 
-/* Niveaux de compétence — modificateurs de pas appliqués à la difficulté
-   Skill training levels — step modifiers applied to task difficulty.
-   inability = hindered 1 step ; none = untrained ; trained = eased 1 ;
-   specialized = eased 2 ; expert = eased 3 (requires a special ability, per rules) */
+/**
+ * Skill training levels and their step modifiers.
+ *
+ * Inability hinders a task by one step; untrained has no modifier; trained,
+ * specialized, and expert ease a task by one, two, and three steps respectively.
+ */
 CYPHER.skillLevels = {
   inability: -1,
   none: 0,
@@ -15,24 +24,26 @@ CYPHER.skillLevels = {
   expert: 3
 };
 
-/* Sévérités de blessure, dans l'ordre croissant / Wound severities, ascending order */
+/** Wound severities in ascending order. */
 CYPHER.woundSeverities = ["minor", "moderate", "major"];
 
-/* Nombre de cases par défaut pour un personnage de base (peut être augmenté par le Type)
-   Default wound boxes for a core character (Types can grant more) */
+/** Default wound capacity for a core character before Type-specific modifiers. */
 CYPHER.defaultWoundMax = { minor: 3, moderate: 3, major: 3 };
 
-/* Conversion des dégâts en Points de Réserve (ex. poison, maladie, attaque psychique)
-   qui débordent une fois la Réserve à 0, en sévérité de blessure.
-   Pool-damage-to-wound conversion, used when a Pool hits 0 and damage overflows. */
+/**
+ * Converts overflow damage from an empty Pool into wound severity.
+ * The first matching maximum defines the resulting severity.
+ */
 CYPHER.poolDamageToWound = [
   { max: 4, severity: "minor" },
   { max: 8, severity: "moderate" },
   { max: Infinity, severity: "major" }
 ];
 
+/** Supported character tiers. */
 CYPHER.tiers = [1, 2, 3, 4, 5, 6];
 
+/** Supported item data-model types. */
 CYPHER.itemTypes = [
   "skill",
   "ability",
@@ -45,51 +56,48 @@ CYPHER.itemTypes = [
   "shield"
 ];
 
-/* Cases de blessure par défaut d'un bouclier — différentes de celles d'un PJ
-   Default wound boxes for a shield — different from a PC's */
+/** Default wound capacity for shields. */
 CYPHER.defaultShieldWoundMax = { minor: 3, moderate: 2, major: 1 };
 
+/** Supported cypher categories. */
 CYPHER.cypherTypes = ["subtle", "manifest"];
 
-/* Coût en points de Réserve par niveau d'Effort : 3 pour le premier niveau, 2 pour chacun des suivants
-   Effort cost per level: 3 for the first level, 2 for each additional level (before Edge discount) */
+/**
+ * Effort cost by level before Edge is applied.
+ * The first level costs three Pool points; each additional level costs two.
+ */
 CYPHER.effortCostFirstLevel = 3;
 CYPHER.effortCostAdditionalLevel = 2;
 
+/** Recovery intervals supported by the system. */
 CYPHER.recoveryIntervals = ["action", "tenMinutes", "hour", "tenHours"];
 
-/* Genres de jeu pris en charge par la fiche / Genres supported by the sheet.
-   "custom" déverrouille TOUS les champs de genre à la fois (Type+Foyer+Espèce+Profession+
-   Rang/Décalages), pour une création de personnage entièrement à la carte.
-   "custom" unlocks ALL genre fields at once (Type+Focus+Species+Profession+Rank/Shifts),
-   for fully à la carte character creation. */
+/**
+ * Supported game genres. The custom genre exposes all character-creation
+ * fields for fully custom character definitions.
+ */
 CYPHER.genres = ["none", "realWorld", "fantasy", "sciFi", "superhero", "custom"];
 
-/* Types de champ disponibles pour les Champs Libres (section entièrement personnalisable)
-   Available field types for Custom Fields (fully user-defined section) */
+/** Field types available to the fully customizable Custom Fields section. */
 CYPHER.customFieldTypes = ["text", "number", "checkbox"];
 
-/* Dés d'épuisement possibles pour un Artefact ou un Équipement à charges (ex. "1 en 1d20")
-   Possible depletion dice for an Artifact or a charge-based Equipment (e.g. "1 in 1d20") */
+/** Depletion dice available to artifacts and charge-based equipment. */
 CYPHER.depletionDice = ["d6", "d8", "d10", "d12", "d20"];
 CYPHER.depletionDieMax = { d6: 6, d8: 8, d10: 10, d12: 12, d20: 20 };
 
-/* Catégories de Décalage de Pouvoir (super-héros), chacune plafonnée à 3 par personnage
-   Power Shift categories (superhero), each capped at 3 per character */
+/** Power Shift categories supported by superhero characters. */
 CYPHER.powerShiftCategories = [
   "accuracy", "dexterity", "flight", "healing", "increasedRange",
   "intelligence", "power", "prodigy", "resilience", "savant", "singleAttack", "strength"
 ];
 
-/* Coût de Ralliement d'une blessure majeure — réservé au genre super-héros
-   Cost to rally a major wound — superhero genre only */
+/** Rally cost for a major wound in superhero games. */
 CYPHER.rallyCostMajorSuperhero = 10;
 
-/* Difficulté maximale des tâches : 10 normalement, 15 en super-héros ("impossible tasks")
-   Maximum task difficulty: 10 normally, 15 for superhero games ("impossible tasks") */
+/** Maximum task difficulty for standard and superhero games. */
 CYPHER.maxDifficulty = { standard: 10, superhero: 15 };
 
-/* Économie de Points d'Expérience (PX) / Experience Point (XP) economy */
+/** Experience Point costs for player-facing special actions. */
 CYPHER.xpCosts = {
   reroll: 1,
   playerIntrusion: 1,
@@ -97,29 +105,30 @@ CYPHER.xpCosts = {
   advancementSlot: 4
 };
 
-/* Les 4 emplacements d'avancement par palier ; "other" est un remplacement au choix de l'un
-   des 4 emplacements standards. The 4 advancement slots per tier; "other" is a substitute
-   for one of the 4 standard slots. */
+/**
+ * Standard advancement slots available at each tier. "other" replaces one
+ * standard slot when a character selects an alternate advancement.
+ */
 CYPHER.advancementTypes = ["capabilities", "perfection", "effort", "skill", "other"];
 CYPHER.otherAdvancementTypes = ["recovery", "focus", "armor", "weapons", "genre"];
 
-/* Dégâts de base par catégorie d'arme / Base damage by weapon category */
+/** Base damage by weapon category. */
 CYPHER.weaponDamage = { light: 2, medium: 4, heavy: 6 };
 
-/* Catégories d'armure des PJ : facilite le Blocage (pas), handicape l'Esquive (pas)
-   PC armor categories: eases Block (steps), hinders Dodge (steps) */
+/**
+ * Armor categories and their defensive task modifiers.
+ * Armor eases Block and hinders Dodge by the configured number of steps.
+ */
 CYPHER.armorCategories = {
   light: { block: 1, dodge: 1 },
   medium: { block: 2, dodge: 2 },
   heavy: { block: 3, dodge: 3 }
 };
 
-/* Coût de Ralliement (points de Puissance) pour retirer une blessure — les blessures majeures
-   ne peuvent pas être ralliées (hors genre super-héros).
-   Rally cost (Might points) to remove a wound — major wounds can't be rallied (outside superhero genre) */
+/** Rally cost in Might points for removing minor and moderate wounds. */
 CYPHER.rallyCost = { minor: 2, moderate: 5 };
 
-/* Icônes de statut / status icons */
+/** Icons used by custom status effects. */
 CYPHER.statusIcons = {
   hindered: "icons/svg/downgrade.svg",
   dead: "icons/svg/skull.svg"
