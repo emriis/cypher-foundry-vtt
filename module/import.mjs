@@ -1,29 +1,23 @@
 import { CYPHER } from "./config.mjs";
 
 /**
- * Import d'un personnage exporté depuis le Character Builder officiel de Cypher
- * (le même format que le module Foundry tiers "cyphersystem"). La structure de
- * données de cet export est entièrement différente de celle de ce système —
- * ce fichier fait donc office de mappeur/traducteur, pas d'un simple chargement.
+ * Maps a character exported by the official Cypher Character Builder to this
+ * system's Foundry data model.
  *
- * Import of a character exported from the official Cypher Character Builder
- * (the same format used by the third-party Foundry module "cyphersystem").
- * That export's data structure is entirely different from this system's own —
- * this file is therefore a mapper/translator, not a simple loader.
+ * The Builder export uses a different data structure from this system, so the
+ * importer translates source data into actor and item documents.
  */
 
 /* -------------------------------------------- */
-/*  Point d'entrée / Entry point                  */
+/* Entry point */
 /* -------------------------------------------- */
 
 /**
- * Importe les données JSON exportées par le Character Builder et crée un
- * nouvel Acteur PJ correspondant dans ce système.
- * Imports the JSON data exported by the Character Builder and creates a
- * matching new PC Actor in this system.
+ * Imports Character Builder JSON and creates a corresponding PC Actor.
  *
- * @param {object} jsonData Le JSON tel qu'exporté par le Character Builder / The JSON as exported by the Character Builder
- * @returns {Promise<Actor|null>}
+ * @param {object} jsonData Character Builder export data.
+ * @returns {Promise<Actor|null>} The created actor, or `null` when validation
+ *   fails or actor creation does not succeed.
  */
 export async function importFromBuilder(jsonData) {
   if (!jsonData || typeof jsonData !== "object") {
@@ -57,7 +51,7 @@ export async function importFromBuilder(jsonData) {
 }
 
 /* -------------------------------------------- */
-/*  Données de l'acteur / Actor data              */
+/* Actor data */
 /* -------------------------------------------- */
 
 export function buildActorData(jsonData) {
@@ -68,12 +62,8 @@ export function buildActorData(jsonData) {
 
   const wounds = parseWoundsFromNotes(src.notes ?? "");
 
-  // Dans l'export du Character Builder, le champ "Species" correspond en réalité
-  // au second descripteur du CRD (le paquet de traits qu'une espèce comme Humain
-  // ou, ici, Dragonfolk confère est mécaniquement identique à un descripteur).
-  // In the Character Builder export, the "Species" field actually corresponds
-  // to the CRD's second descriptor (the trait package a species like Human or,
-  // here, Dragonfolk grants is mechanically identical to a descriptor).
+  // The Builder's "Species" field maps to the second CRD descriptor because
+  // the species trait package is mechanically equivalent to a descriptor.
   const descriptor2 = extractSpeciesAsDescriptor(rawItems);
 
   const statBlock = (pool) => ({
@@ -93,12 +83,8 @@ export function buildActorData(jsonData) {
       descriptor: basic.descriptor ?? "",
       type: basic.type ?? "",
       focus: basic.focus ?? "",
-      // Aucun équivalent de "Genre" dans l'export : on déverrouille tous les
-      // champs (Type/Foyer/Espèce/Profession/Rang) plutôt que d'en cacher qui
-      // pourraient contenir des données importées. Ajustable ensuite à la main.
-      // No "Genre" equivalent in the export: unlock every field (Type/Focus/
-      // Species/Profession/Rank) instead of hiding any that might hold
-      // imported data. Adjustable by hand afterward.
+      // The export has no equivalent of Genre, so keep all genre-dependent
+      // fields available for imported values and manual adjustment.
       genre: "custom",
       hasSecondDescriptor: !!descriptor2,
       descriptor2: descriptor2 ?? "",
@@ -125,15 +111,11 @@ export function buildActorData(jsonData) {
 }
 
 /* -------------------------------------------- */
-/*  Blessures / Wounds                            */
+/* Wounds */
 /* -------------------------------------------- */
 
-// La limite entre le libellé et la fraction doit être assez large pour
-// couvrir plusieurs cases à cocher ("[--] [--] [--] ..."), mais bornée pour
-// ne pas déborder sur la sévérité suivante.
-// The gap between the label and the fraction must be wide enough to cover
-// several checkbox placeholders ("[--] [--] [--] ..."), but bounded so it
-// doesn't bleed into the next severity.
+// Keep the label-to-fraction gap wide enough for checkbox placeholders while
+// bounding it so a match cannot consume the following wound severity.
 const WOUND_PATTERNS = {
   minor: /(?:minor|mineure?s?)\s*:?[^\d]{0,120}?(\d+)\s*\/\s*(\d+)/i,
   moderate: /(?:moderate|mod[ée]r[ée]es?)\s*:?[^\d]{0,120}?(\d+)\s*\/\s*(\d+)/i,
@@ -141,16 +123,13 @@ const WOUND_PATTERNS = {
 };
 
 /**
- * Parsing tolérant des blessures depuis le texte libre HTML des notes de
- * l'export (ex. "Minor: [--][--][--] 0/5"). Analysé sévérité par sévérité :
- * si une sévérité échoue à parser, elle retombe individuellement sur 3/0 au
- * lieu de faire échouer tout le bloc — plus robuste face aux variations de
- * mise en forme (langue, espacement, cases à cocher différentes...).
- * Tolerant parsing of wounds from the export's free HTML notes text (e.g.
- * "Minor: [--][--][--] 0/5"). Parsed severity by severity: if one severity
- * fails to parse, it individually falls back to 3/0 instead of failing the
- * whole block — more robust against formatting variation (language, spacing,
- * different checkbox styles...).
+ * Parses wound values from the export's free-form HTML notes.
+ *
+ * Each severity is parsed independently. A missing match falls back to the
+ * configured default maximum for that severity.
+ *
+ * @param {string} notesHtml Raw notes HTML from the Character Builder export.
+ * @returns {object} Parsed wound values keyed by severity.
  */
 export function parseWoundsFromNotes(notesHtml) {
   const text = String(notesHtml ?? "").replace(/<[^>]+>/g, " ");
@@ -170,7 +149,7 @@ export function parseWoundsFromNotes(notesHtml) {
 }
 
 /* -------------------------------------------- */
-/*  Espèce → second descripteur / Species → second descriptor */
+/* Species to second descriptor */
 /* -------------------------------------------- */
 
 const GRANTED_FROM_RE = /Granted from ([^<]+)/i;
@@ -191,20 +170,14 @@ function extractGrantedFrom(desc) {
 }
 
 /* -------------------------------------------- */
-/*  Compétences "Utilisation libre" / "Freely Use" pseudo-skills */
+/* Freely usable pseudo-skills */
 /* -------------------------------------------- */
 
 const FREELY_USE_RE = /^Freely Use\s+(.+?)\s+(Weapons?|Armor)$/i;
 
 function isIgnoredPseudoSkill(name) {
-  // "Initiative" est exportée comme pseudo-compétence par le Character Builder ;
-  // ce système n'a pas d'objet équivalent (l'initiative est un jet de Vitesse
-  // classique), donc on l'ignore silencieusement plutôt que de créer un objet
-  // Compétence "Initiative" qui n'aurait pas de sens ici.
-  // "Initiative" is exported as a pseudo-skill by the Character Builder; this
-  // system has no equivalent item (initiative is just a normal Speed roll),
-  // so it's silently ignored instead of creating a nonsensical "Initiative"
-  // Skill item.
+  // Ignore the Builder's Initiative pseudo-skill because this system handles
+  // initiative as a normal Speed roll.
   return /^Initiative$/i.test(name);
 }
 
@@ -213,12 +186,10 @@ function isFreelyUseSkill(name) {
 }
 
 /**
- * Repère les pseudo-compétences "Freely Use Light/Medium/Heavy/All
- * Weapons/Armor" pour déterminer, catégorie par catégorie, quelles armes et
- * armures importées doivent être marquées "utilisable librement" (freelyUsable).
- * Finds the "Freely Use Light/Medium/Heavy/All Weapons/Armor" pseudo-skills to
- * determine, category by category, which imported weapons and armor should be
- * flagged as freely usable.
+ * Extracts pseudo-skills that grant free use of weapon or armor categories.
+ *
+ * @param {Array<object>} rawItems Character Builder item data.
+ * @returns {{weaponCats: Set<string>, armorCats: Set<string>}} Free-use categories.
  */
 export function extractFreelyUsableCategories(rawItems) {
   const weaponCats = new Set();
@@ -245,7 +216,7 @@ export function extractFreelyUsableCategories(rawItems) {
 }
 
 /* -------------------------------------------- */
-/*  Compétences / Skills                          */
+/* Skills */
 /* -------------------------------------------- */
 
 const SKILL_LEVEL_MAP = {
@@ -262,7 +233,7 @@ function mapSkillLevel(rating) {
 }
 
 /* -------------------------------------------- */
-/*  Aptitudes / Abilities                         */
+/* Abilities */
 /* -------------------------------------------- */
 
 function mapCostStat(pool) {
@@ -272,18 +243,10 @@ function mapCostStat(pool) {
 }
 
 /**
- * Le coût d'une aptitude peut être exprimé "1+" dans l'export (coût de base +
- * Effort supplémentaire optionnel). Seul l'entier de base est conservé dans
- * le champ numérique ; le "+" reste visible dans le texte de description
- * (déjà complet), donc aucune information n'est réellement perdue — et cela
- * n'affecte en rien la dépense d'Effort réelle lors des jets, qui passe par
- * la boîte de dialogue de jet, indépendante de ce champ d'affichage.
- * An ability's cost can be written "1+" in the export (base cost + optional
- * extra Effort). Only the base integer is kept in the numeric field; the "+"
- * remains visible in the description text (already complete), so no real
- * information is lost — and this has no bearing on actual Effort spending
- * during rolls, which goes through the roll dialog, independent of this
- * display field.
+ * Parses an ability cost from the Builder export.
+ *
+ * Values such as `1+` store the base integer in the numeric field while the
+ * complete source description remains available on the imported item.
  */
 function parseCostAmount(cost) {
   if (typeof cost === "number") return Math.max(0, cost);
@@ -292,7 +255,7 @@ function parseCostAmount(cost) {
 }
 
 /* -------------------------------------------- */
-/*  Attaques / Attacks                            */
+/* Attacks */
 /* -------------------------------------------- */
 
 function mapAttackType(typeText) {
@@ -305,14 +268,10 @@ function mapAttackType(typeText) {
 const RANGED_NAME_RE = /\b(bow|arc|gun|pistol|rifle|crossbow|bolt|arrow|arbal[eè]te|fusil|blaster)\b/i;
 
 /**
- * L'export du Character Builder ne précise pas toujours la statistique liée
- * à une arme. Quand la donnée existe (system.settings.rollButton.pool), elle
- * est utilisée directement ; sinon, repli sur une heuristique simple basée
- * sur le nom, puis sur "Puissance" par défaut si rien ne correspond.
- * The Character Builder export doesn't always specify a weapon's linked stat.
- * When the data exists (system.settings.rollButton.pool) it's used directly;
- * otherwise, fall back to a simple name-based heuristic, then to "Might" by
- * default if nothing matches.
+ * Resolves the stat associated with an imported attack.
+ *
+ * Uses the explicit Builder value when available, then a name-based ranged
+ * weapon heuristic, and finally Might.
  */
 function mapAttackStat(rollButtonPool, name) {
   const key = String(rollButtonPool ?? "").toLowerCase();
@@ -322,29 +281,19 @@ function mapAttackStat(rollButtonPool, name) {
 }
 
 /* -------------------------------------------- */
-/*  Mapping générique des objets / Generic item mapping */
+/* Generic item mapping */
 /* -------------------------------------------- */
 
 /**
- * Convertit les objets de l'export du Character Builder en objets Foundry
- * pour ce système. Chaque objet est traité indépendamment (try/catch) afin
- * qu'un objet imprévu n'interrompe pas tout l'import — il est alors ignoré et
- * signalé dans les avertissements retournés.
+ * Converts Character Builder items into this system's Foundry item data.
  *
- * Types actuellement pris en charge : skill, ability, equipment, attack.
- * Les types cypher/artifact/armor/shield/oddity ne sont pas encore mappés,
- * faute d'échantillon d'export les contenant à ce jour — ils sont ignorés
- * avec un avertissement plutôt que mappés au hasard.
+ * Supported source types are `skill`, `ability`, `equipment`, and `attack`.
+ * Unsupported types are skipped and reported as warnings. Each item is
+ * isolated so one malformed item does not abort the entire import.
  *
- * Converts the Character Builder export's items into this system's Foundry
- * items. Each item is handled independently (try/catch) so an unexpected
- * item doesn't abort the whole import — it's skipped and reported in the
- * returned warnings instead.
- *
- * Currently supported types: skill, ability, equipment, attack.
- * cypher/artifact/armor/shield/oddity types aren't mapped yet, for lack of an
- * export sample containing them so far — they're skipped with a warning
- * rather than guessed at.
+ * @param {Array<object>} rawItems Character Builder item data.
+ * @param {{weaponCats: Set<string>, armorCats: Set<string>}} freely Free-use categories.
+ * @returns {{items: Array<object>, warnings: Array<string>}} Mapped items and warnings.
  */
 export function mapItems(rawItems, freely) {
   const created = [];
@@ -363,10 +312,8 @@ export function mapItems(rawItems, freely) {
             name,
             type: "skill",
             system: {
-              // L'export ne précise pas la Caractéristique liée à la compétence ;
-              // "none" par défaut, à corriger à la main si besoin.
-              // The export doesn't specify the skill's linked stat;
-              // defaults to "none", adjust by hand if needed.
+              // The export does not specify the skill's linked stat; leave it
+              // unset so it can be adjusted manually after import.
               stat: "none",
               level: mapSkillLevel(basic.rating),
               description: desc
@@ -438,15 +385,11 @@ export function mapItems(rawItems, freely) {
 }
 
 /* -------------------------------------------- */
-/*  Interface : bouton + boîte de dialogue de choix de fichier            */
-/*  UI: button + file-picking dialog                                      */
+/* Import UI */
 /* -------------------------------------------- */
 
 /**
- * Ouvre une boîte de dialogue permettant de choisir un fichier JSON exporté
- * du Character Builder, puis lance l'import.
- * Opens a dialog to pick a JSON file exported from the Character Builder,
- * then runs the import.
+ * Opens a file picker for a Character Builder JSON export and starts the import.
  */
 export async function openImportDialog() {
   const content = `
@@ -482,16 +425,10 @@ export async function openImportDialog() {
 }
 
 /**
- * Ajoute un bouton "Importer (Character Builder)" dans l'en-tête de la barre
- * latérale Acteurs. Best-effort : si la structure DOM de la barre latérale
- * change d'une version de Foundry à l'autre, le bouton peut ne pas apparaître
- * — dans ce cas, `game.cypher.importFromBuilder(data)` et
- * `game.cypher.openImportDialog()` restent utilisables depuis une macro.
- * Adds an "Import (Character Builder)" button to the Actors sidebar header.
- * Best-effort: if the sidebar's DOM structure changes between Foundry
- * versions, the button may not appear — in that case,
- * `game.cypher.importFromBuilder(data)` and `game.cypher.openImportDialog()`
- * remain usable from a macro.
+ * Registers the Character Builder import button in the Actors directory.
+ *
+ * Registration is best-effort because Foundry's sidebar DOM can vary between
+ * versions. The importer functions remain available to macros independently.
  */
 export function registerImportButton() {
   Hooks.on("renderActorDirectory", (app, html) => {
