@@ -1,3 +1,9 @@
+/**
+ * Foundry VTT entry point for the Cypher system.
+ *
+ * Registers system configuration, custom documents, data models, sheets,
+ * Handlebars helpers, world migrations, and document-level rules hooks.
+ */
 import { CYPHER } from "./module/config.mjs";
 
 import * as documents from "./module/documents/_module.mjs";
@@ -9,8 +15,6 @@ import { importFromBuilder, openImportDialog, registerImportButton } from "./mod
 Hooks.once("init", () => {
   console.log("Cypher | Initialisation / Initializing");
 
-  // Exposé pour utilisation en macro, même si le bouton de la barre latérale
-  // ne trouve pas son point d'ancrage sur une version de Foundry donnée.
   // Exposed for macro use, even if the sidebar button fails to find its
   // anchor point on a given Foundry version.
   game.cypher = { CYPHER, importFromBuilder, openImportDialog };
@@ -19,13 +23,13 @@ Hooks.once("init", () => {
   registerImportButton();
 
   /* -------------------------------------------- */
-  /*  Classes de documents / Document classes       */
+  /*  Document classes                              */
   /* -------------------------------------------- */
   CONFIG.Actor.documentClass = documents.CypherActor;
   CONFIG.Item.documentClass = documents.CypherItem;
 
   /* -------------------------------------------- */
-  /*  Modèles de données / Data models              */
+  /*  Data models                                  */
   /* -------------------------------------------- */
   CONFIG.Actor.dataModels = {
     pc: models.CypherPCData,
@@ -46,7 +50,7 @@ Hooks.once("init", () => {
   };
 
   /* -------------------------------------------- */
-  /*  Feuilles / Sheets                             */
+  /*  Sheets                                       */
   /* -------------------------------------------- */
   const DocumentSheetConfig = foundry.applications.apps.DocumentSheetConfig;
 
@@ -74,10 +78,9 @@ Hooks.once("init", () => {
   });
 
   /* -------------------------------------------- */
-  /*  Réglages monde / World settings               */
+  /*  World settings                               */
   /* -------------------------------------------- */
-  // Version de schéma stockée pour la migration — jamais affichée en configuration.
-  // Stored schema version for migration — never shown in the config UI.
+  // Stored schema version for migration; hidden from the configuration UI.
   game.settings.register("cypher", "schemaVersion", {
     scope: "world",
     config: false,
@@ -86,7 +89,7 @@ Hooks.once("init", () => {
   });
 
   /* -------------------------------------------- */
-  /*  Helpers Handlebars / Handlebars helpers       */
+  /*  Handlebars helpers                           */
   /* -------------------------------------------- */
   Handlebars.registerHelper("concat", (...args) => {
     args.pop();
@@ -101,7 +104,7 @@ Hooks.once("init", () => {
   Handlebars.registerHelper("gt", (a, b) => a > b);
 
   /* -------------------------------------------- */
-  /*  Statuts personnalisés / Custom status effects */
+  /*  Custom status effects                        */
   /* -------------------------------------------- */
   CONFIG.statusEffects.push(
     {
@@ -122,11 +125,10 @@ Hooks.once("ready", async () => {
   await migrateWorld();
 });
 
-/* -------------------------------------------- */
-/*  Exclusivité d'armure : une seule armure Équipée à la fois par acteur / Armor exclusivity:
-    only one Equipped armor at a time per actor. Filet de sécurité au niveau du document,
-    quel que soit l'endroit où le changement a été fait (fiche perso ou fiche d'objet).
-    Document-level safety net, regardless of where the change was made (actor or item sheet). */
+/**
+ * Ensures that only one armor item is equipped on an actor at a time.
+ * This document-level safeguard applies regardless of which sheet changed the item.
+ */
 Hooks.on("updateItem", async (item, changes, options, userId) => {
   if (item.type !== "armor" || !item.actor) return;
   if (changes.system?.equipped !== true) return;
@@ -138,9 +140,9 @@ Hooks.on("updateItem", async (item, changes, options, userId) => {
   }
 });
 
-/* -------------------------------------------- */
-/*  Bouton de relance sur les messages de jet (1 PX) / Reroll button on roll messages (1 XP) */
-/* -------------------------------------------- */
+/**
+ * Adds a one-click XP reroll action to eligible task roll messages owned by the actor.
+ */
 Hooks.on("renderChatMessageHTML", (message, html) => {
   const rerollable = message.getFlag("cypher", "rerollable");
   if (!rerollable) return;
