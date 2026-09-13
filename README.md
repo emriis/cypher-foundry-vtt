@@ -94,6 +94,39 @@ d'enrichisseurs de texte personnalisés, et enregistrement de contenu tiers via 
   compatibilité thème clair/sombre de Foundry, anneaux de focus clavier, cibles cliquables
   minimales — à réutiliser tel quel pour toute nouvelle feuille ou application du système.
 
+### Import depuis le Character Builder officiel
+
+Un bouton **« Importer (Character Builder) »** apparaît dans la barre latérale Acteurs
+(`module/import.mjs`) pour créer directement un PJ dans ce système à partir d'un export `.json`
+du [Character Builder officiel](https://tools.cypher-rpg.com/builder) (même format que le module
+Foundry tiers `cyphersystem`). La structure de données étant entièrement différente de celle de
+ce système, il s'agit d'un vrai mappeur, pas d'un chargement direct :
+
+- Blessures : extraites par analyse tolérante (regex) du texte libre des notes de l'export
+  (`Minor: ... 0/5` etc.) ; si une sévérité ne peut pas être analysée, elle retombe
+  individuellement sur 3/0 sans faire échouer le reste de l'import.
+- Genre de jeu : aucun équivalent dans l'export, réglé sur **Personnalisé** (tous les champs
+  Type/Foyer/Espèce/Profession/Rang déverrouillés) — à ajuster ensuite à la main.
+- Le champ « Species » de l'export correspond en réalité au **second descripteur** du CRD (le
+  paquet de traits qu'une espèce à bénéfices mécaniques confère est identique à un descripteur) ;
+  il est donc importé comme second descripteur, pas comme un champ Espèce séparé.
+- Les pseudo-compétences `Freely Use ...` de l'export ne deviennent pas des objets Compétence :
+  elles servent à cocher `freelyUsable` sur les armes/armures importées de la catégorie
+  correspondante. La pseudo-compétence `Initiative` est ignorée (pas d'équivalent dans ce système).
+- Le coût d'une aptitude écrit `"1+"` dans l'export est stocké comme l'entier de base (`1`) ; le
+  texte de description complet (qui mentionne l'Effort additionnel) est conservé tel quel, et cela
+  n'affecte en rien la dépense d'Effort réelle lors des jets (gérée indépendamment par la boîte de
+  dialogue de jet).
+- Compétences, Aptitudes, Équipement et Armes (Attaques) sont pris en charge. **Cyphers, Artefacts,
+  Armures, Boucliers et Curiosités ne sont pas encore mappés**, faute d'échantillon d'export les
+  contenant à ce jour — ils sont ignorés avec un avertissement (visible en jeu et dans la console)
+  plutôt que mappés au hasard. Si vous avez un export contenant ces types, partagez-le pour étendre
+  le mappeur.
+- `game.cypher.importFromBuilder(jsonData)` et `game.cypher.openImportDialog()` restent utilisables
+  depuis une macro si le bouton de la barre latérale ne trouve pas son point d'ancrage sur une
+  version de Foundry donnée (placement du bouton fait au mieux, DOM de la barre latérale non garanti
+  stable d'une version à l'autre).
+
 ### Ce qu'il reste à faire (volontairement laissé pour la V2)
 
 Vous avez choisi de commencer **sans compendiums**. Prochaines étapes suggérées :
@@ -240,6 +273,37 @@ This is **not** an official Monte Cook Games product.
   typography/spacing tokens, WCAG AA-verified contrast, Foundry light/dark theme compatibility,
   keyboard focus rings, minimum click targets — reuse as-is for any new sheet or application in
   this system.
+
+### Import from the official Character Builder
+
+An **"Import (Character Builder)"** button appears in the Actors sidebar (`module/import.mjs`)
+to create a PC directly in this system from a `.json` export produced by the
+[official Character Builder](https://tools.cypher-rpg.com/builder) (same format as the
+third-party Foundry module `cyphersystem`). That export's data structure is entirely different
+from this system's own, so this is a real mapper, not a direct load:
+
+- Wounds: extracted via tolerant regex parsing of the export's free-text notes
+  (`Minor: ... 0/5`, etc.); if one severity can't be parsed, it individually falls back to 3/0
+  without failing the rest of the import.
+- Genre: no equivalent in the export, set to **Custom** (unlocks every Type/Focus/Species/
+  Profession/Rank field) — adjust by hand afterward.
+- The export's "Species" field actually corresponds to the CRD's **second descriptor** (the
+  trait package a mechanically-benefited species grants is identical to a descriptor), so it's
+  imported as a second descriptor, not a separate Species field.
+- The export's `Freely Use ...` pseudo-skills don't become Skill items: they're used to flag
+  `freelyUsable` on imported weapons/armor of the matching category. The `Initiative`
+  pseudo-skill is ignored (no equivalent in this system).
+- An ability cost written `"1+"` in the export is stored as the base integer (`1`); the full
+  description text (which mentions the extra Effort) is kept as-is, and this has no bearing on
+  actual Effort spending during rolls (handled independently by the roll dialog).
+- Skills, Abilities, Equipment, and Weapons (Attacks) are supported. **Cyphers, Artifacts,
+  Armor, Shields, and Oddities aren't mapped yet**, for lack of an export sample containing them
+  so far — they're skipped with a warning (shown in-game and in the console) rather than guessed
+  at. If you have an export containing those types, share it to extend the mapper.
+- `game.cypher.importFromBuilder(jsonData)` and `game.cypher.openImportDialog()` remain usable
+  from a macro if the sidebar button fails to find its anchor point on a given Foundry version
+  (button placement is best-effort, since the sidebar's DOM isn't guaranteed stable across
+  versions).
 
 ### Suggested next steps
 
