@@ -4,12 +4,19 @@ import * as documents from "./module/documents/_module.mjs";
 import * as models from "./module/data-models/_module.mjs";
 import * as sheets from "./module/sheets/_module.mjs";
 import { migrateWorld } from "./module/migration.mjs";
+import { importFromBuilder, openImportDialog, registerImportButton } from "./module/import.mjs";
 
 Hooks.once("init", () => {
   console.log("Cypher | Initialisation / Initializing");
 
-  game.cypher = { CYPHER };
+  // Exposé pour utilisation en macro, même si le bouton de la barre latérale
+  // ne trouve pas son point d'ancrage sur une version de Foundry donnée.
+  // Exposed for macro use, even if the sidebar button fails to find its
+  // anchor point on a given Foundry version.
+  game.cypher = { CYPHER, importFromBuilder, openImportDialog };
   CONFIG.CYPHER = CYPHER;
+
+  registerImportButton();
 
   /* -------------------------------------------- */
   /*  Classes de documents / Document classes       */

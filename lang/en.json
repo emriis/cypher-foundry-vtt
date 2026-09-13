@@ -245,6 +245,21 @@
       "New": "New {type}"
     },
 
+    "Import": {
+      "Button": "Import (Character Builder)",
+      "Title": "Import a Character Builder export",
+      "PickFile": "JSON file exported from the official Character Builder",
+      "Hint": "Creates a new character in this system from a .json file exported by the official Cypher Character Builder. The data structure is different from this system's, so some fields (Genre, Species, weapon/skill stats) are approximated and may need manual adjustment afterward.",
+      "NoFile": "Please choose a file first.",
+      "ParseError": "Couldn't read this file as valid JSON.",
+      "OnlyPC": "Only Player Character exports can be imported.",
+      "DefaultName": "Imported Character",
+      "Success": "{name} was imported successfully. Check Genre, Species/second descriptor, and skill/weapon stats.",
+      "WarningsCount": "Import finished with {count} warning(s) — see the console (F12) for details.",
+      "UnsupportedType": "Item \"{name}\" ({type}): this item type isn't supported by the importer yet, it was skipped.",
+      "ItemFailed": "Item \"{name}\": import failed ({error})."
+    },
+
     "Roll": {
       "Roll": "Roll",
       "Task": "Task Roll",

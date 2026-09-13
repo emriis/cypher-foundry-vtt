@@ -245,6 +245,21 @@
       "New": "Nouveau : {type}"
     },
 
+    "Import": {
+      "Button": "Importer (Character Builder)",
+      "Title": "Importer un export du Character Builder",
+      "PickFile": "Fichier JSON exporté depuis le Character Builder officiel",
+      "Hint": "Crée un nouveau personnage dans ce système à partir d'un fichier .json exporté par le Character Builder officiel de Cypher. La structure de données étant différente de celle de ce système, certains champs (Genre de jeu, Espèce, caractéristiques liées aux compétences/armes) sont approximés et peuvent nécessiter un ajustement manuel après import.",
+      "NoFile": "Choisis d'abord un fichier.",
+      "ParseError": "Impossible de lire ce fichier comme du JSON valide.",
+      "OnlyPC": "Seuls les exports de Personnage Joueur peuvent être importés.",
+      "DefaultName": "Personnage importé",
+      "Success": "{name} a été importé avec succès. Vérifie le Genre de jeu, l'Espèce/second descripteur, et les caractéristiques liées aux compétences/armes.",
+      "WarningsCount": "Import terminé avec {count} avertissement(s) — voir la console (F12) pour le détail.",
+      "UnsupportedType": "Objet « {name} » ({type}) : ce type d'objet n'est pas encore pris en charge par l'import, il a été ignoré.",
+      "ItemFailed": "Objet « {name} » : échec de l'import ({error})."
+    },
+
     "Roll": {
       "Roll": "Lancer",
       "Task": "Jet de tâche",
