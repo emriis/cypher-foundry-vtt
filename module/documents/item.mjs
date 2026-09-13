@@ -1,10 +1,20 @@
 import { CYPHER } from "../config.mjs";
 
+/**
+ * Foundry Item document extended with Cypher-specific item behavior.
+ *
+ * This document owns item actions that need access to the parent actor or to
+ * Foundry document APIs, while reusable game rules remain centralized in the
+ * configuration and actor logic.
+ */
 export default class CypherItem extends Item {
 
   /**
-   * Utilise un cypher : marque comme épuisé et poste un message de chat.
-   * Uses a cypher: marks it depleted and posts a chat message.
+   * Uses a cypher, marks it as depleted, and posts a chat notification.
+   *
+   * No-op when called for a non-cypher item.
+   *
+   * @returns {Promise<void>|undefined} The update and chat-message operation.
    */
   async useCypher() {
     if (this.type !== "cypher") return;
@@ -16,14 +26,18 @@ export default class CypherItem extends Item {
   }
 
   /**
-   * Effectue une attaque à partir d'un objet Arme : lance la tâche liée sur l'acteur parent,
-   * avec les dégâts de base selon la catégorie d'arme (légère 2 / moyenne 4 / lourde 6).
-   * Une arme non maîtrisée (freelyUsable = false, et l'avancement "Armes" non acheté)
-   * handicape l'attaque d'1 pas.
-   * Rolls an attack from a Weapon item, delegating to the parent actor's task roll,
-   * with base damage from the weapon category (light 2 / medium 4 / heavy 6). An
-   * unfamiliar weapon (freelyUsable = false, and the "Weapons" advancement not bought)
-   * hinders the attack by 1 step.
+   * Rolls an attack using this weapon and delegates task resolution to the parent actor.
+   *
+   * Weapon familiarity is converted into a task hindrance here so the actor remains
+   * responsible for the common task-roll calculation.
+   *
+   * @param {object} [options={}] Attack-roll options.
+   * @param {number} [options.effortLevels=0] Number of Effort levels to spend.
+   * @param {number} [options.assetSteps=0] Number of asset steps applied to the roll.
+   * @param {number} [options.difficulty=3] Base task difficulty.
+   * @param {boolean} [options.luckyShot=false] Whether to use the Lucky Shot rule.
+   * @param {string|null} [options.skillItemId=null] Skill item used for the attack.
+   * @returns {Promise<object>|undefined} The actor task-roll result.
    */
   async rollAttack({ effortLevels = 0, assetSteps = 0, difficulty = 3, luckyShot = false, skillItemId = null } = {}) {
     if (this.type !== "attack" || !this.actor) return;
@@ -45,15 +59,12 @@ export default class CypherItem extends Item {
   }
 
   /**
-   * Effectue le jet d'épuisement d'un Artefact (ou d'un Équipement à charges) : lance le dé
-   * d'épuisement, et si le résultat tombe dans la plage d'épuisement, l'objet fonctionne quand
-   * même cette fois-ci mais devient épuisé pour les usages futurs.
-   * Rolls the depletion check for an Artifact (or a charge-based Equipment): rolls the
-   * depletion die, and if the result falls within the depletion range, the item still works
-   * this time but becomes depleted for future uses.
+   * Rolls an artifact or charge-based equipment depletion check.
    *
-   * Rules: "you roll the die in the depletion stat. If your roll is in the depletion range
-   * of numbers, the artifact works, but that is its last use."
+   * When the result is within the configured depletion threshold, the item still
+   * works for the current use but becomes depleted for subsequent uses.
+   *
+   * @returns {Promise<void>|undefined} The depletion-check operation.
    */
   async rollDepletion() {
     if (!["artifact", "equipment"].includes(this.type) || !this.actor) return;
