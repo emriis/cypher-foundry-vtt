@@ -1,0 +1,30 @@
+{
+  "_id": "dmRoMq0zjc9gNsX2",
+  "_key": "!items!dmRoMq0zjc9gNsX2",
+  "name": "Endurant(e)",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "might"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Athlétisme",
+      "Survie en extérieur",
+      "",
+      ""
+    ],
+    "description": "<p>Tu encaisses des coups qui ralentiraient la plupart des gens, et tu continues d'avancer malgré tout.</p><p><em>Tu gagnes +2 à ta Réserve de Puissance, et un entrainement en Athlétisme ou Survie en extérieur.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Construit sous la Cypher Open License à partir du contenu du Cypher Reference Document (CRD)."
+    }
+  }
+}

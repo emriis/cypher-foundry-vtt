@@ -1,0 +1,30 @@
+{
+  "_id": "zJTS8YejU7BW2OYA",
+  "_key": "!items!zJTS8YejU7BW2OYA",
+  "name": "Intelligent(e)",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Chimie",
+      "Ingénierie",
+      "Mathématiques",
+      ""
+    ],
+    "description": "<p>L'esprit vif et l'apprentissage rapide, tu saisis des idées complexes qui laissent les autres perplexes.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Chimie, Ingénierie ou Mathématiques.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Construit sous la Cypher Open License à partir du contenu du Cypher Reference Document (CRD)."
+    }
+  }
+}

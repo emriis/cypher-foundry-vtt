@@ -1,0 +1,30 @@
+{
+  "_id": "F6Sn1Jr7JI9h2TzF",
+  "_key": "!items!F6Sn1Jr7JI9h2TzF",
+  "name": "Chaotique",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "speed"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Initiative",
+      "Représentation",
+      "",
+      ""
+    ],
+    "description": "<p>Le danger t'effraie rarement, surtout parce que tu ne t'attardes pas sur les conséquences — l'imprévu te stimule.</p><p><em>Tu gagnes +2 à ta Réserve de Célérité, et un entrainement en Initiative ou Représentation.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Construit sous la Cypher Open License à partir du contenu du Cypher Reference Document (CRD)."
+    }
+  }
+}

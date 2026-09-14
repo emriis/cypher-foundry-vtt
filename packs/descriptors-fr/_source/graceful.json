@@ -1,0 +1,30 @@
+{
+  "_id": "SClg01Q5cDnb4yDR",
+  "_key": "!items!SClg01Q5cDnb4yDR",
+  "name": "Gracieux(se)",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "speed"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Gymnastique",
+      "Initiative",
+      "",
+      ""
+    ],
+    "description": "<p>Tu te déplaces avec une élégance fluide et posée, que ce soit en dansant, en combattant, ou en traversant simplement une pièce.</p><p><em>Tu gagnes +2 à ta Réserve de Célérité, et un entrainement en Gymnastique ou Initiative.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Construit sous la Cypher Open License à partir du contenu du Cypher Reference Document (CRD)."
+    }
+  }
+}

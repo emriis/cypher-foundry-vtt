@@ -1,0 +1,30 @@
+{
+  "_id": "YII9VWxzi2bQsne9",
+  "_key": "!items!YII9VWxzi2bQsne9",
+  "name": "Charming",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Charm",
+      "Deception",
+      "",
+      ""
+    ],
+    "description": "<p>A smooth talker with an easy smile, you have a gift for getting people to see things your way.</p><p><em>You gain +2 to your Intellect Pool, and training in Charm or Deception.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+    }
+  }
+}

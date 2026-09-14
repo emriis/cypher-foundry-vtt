@@ -1,0 +1,30 @@
+{
+  "_id": "aR7nhfar2WvpScbV",
+  "_key": "!items!aR7nhfar2WvpScbV",
+  "name": "Furtif(ve)",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "speed"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Vol à la tire",
+      "Discrétion",
+      "",
+      ""
+    ],
+    "description": "<p>Rapide et silencieux(se), tu sais utiliser l'ombre et la distraction pour te déplacer sans être vu(e) ni entendu(e).</p><p><em>Tu gagnes +2 à ta Réserve de Célérité, et un entrainement en Vol à la tire ou Discrétion.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Construit sous la Cypher Open License à partir du contenu du Cypher Reference Document (CRD)."
+    }
+  }
+}

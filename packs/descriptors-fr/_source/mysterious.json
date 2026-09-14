@@ -1,0 +1,31 @@
+{
+  "_id": "zPQIJw8goSMU7yhb",
+  "_key": "!items!zPQIJw8goSMU7yhb",
+  "name": "Mystérieux(se)",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect",
+      "speed"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Tromperie",
+      "Discrétion",
+      "",
+      ""
+    ],
+    "description": "<p>Personne ne sait vraiment d'où tu viens ni ce que tu veux, et tu préfères que ça reste ainsi.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect ou Célérité, et un entrainement en Tromperie ou Discrétion.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Construit sous la Cypher Open License à partir du contenu du Cypher Reference Document (CRD)."
+    }
+  }
+}

@@ -501,4 +501,82 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
 
     await item.update({ "system.equipped": newState });
   }
+
+  /* -------------------------------------------- */
+  /*  Glisser-déposer / Drag & drop                 */
+  /* -------------------------------------------- */
+
+  /**
+   * Intercepte le dépôt d'un Descripteur (depuis un compendium ou le monde) pour appliquer
+   * ses effets plutôt que de l'intégrer tel quel comme un objet ordinaire — voir
+   * CypherActor#applyDescriptor pour le détail de ce qui est réellement créé/modifié.
+   * Intercepts dropping a Descriptor (from a compendium or the world) to apply its effects
+   * instead of embedding it as-is like a normal item — see CypherActor#applyDescriptor for
+   * what actually gets created/modified.
+   *
+   * @override
+   */
+  async _onDropItem(event, data) {
+    const item = await Item.implementation.fromDropData(data);
+    if (item?.type === "descriptor") {
+      await CypherPCSheet.#applyDroppedDescriptor(this.actor, item);
+      return;
+    }
+    return super._onDropItem(event, data);
+  }
+
+  static async #applyDroppedDescriptor(actor, item) {
+    if (actor.type !== "pc") {
+      ui.notifications.warn(game.i18n.localize("CYPHER.Warning.NotPC"));
+      return;
+    }
+
+    const statOptions = item.system.statOptions ?? [];
+    const skillOptions = (item.system.skillOptions ?? []).filter(s => s?.trim());
+
+    const statField = statOptions.length > 1 ? `
+      <div class="form-group">
+        <label>${game.i18n.localize("CYPHER.Descriptor.ChooseStat")}</label>
+        <select name="stat">
+          ${statOptions.map(s => `<option value="${s}">${game.i18n.localize(`CYPHER.Stat.${s}`)}</option>`).join("")}
+        </select>
+      </div>` : "";
+
+    const skillSelectOptions = skillOptions.map(s => `<option value="${s}">${s}</option>`).join("");
+
+    const content = `
+      <p>${game.i18n.format("CYPHER.Descriptor.ApplyPrompt", { name: item.name })}</p>
+      ${statField}
+      <div class="form-group">
+        <label>${game.i18n.localize("CYPHER.Descriptor.ChooseSkill")}</label>
+        <select name="skillChoice">
+          ${skillSelectOptions}
+          <option value="__other__">${game.i18n.localize("CYPHER.Descriptor.SkillCustomOption")}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>${game.i18n.localize("CYPHER.Descriptor.SkillCustomLabel")}</label>
+        <input type="text" name="skillCustom" placeholder="${game.i18n.localize("CYPHER.Descriptor.SkillCustomLabel")}"/>
+      </div>`;
+
+    const result = await foundry.applications.api.DialogV2.prompt({
+      window: { title: game.i18n.format("CYPHER.Descriptor.ApplyTitle", { name: item.name }) },
+      content,
+      ok: {
+        label: game.i18n.localize("CYPHER.Confirm.Add"),
+        callback: (event, button) => {
+          const form = button.form;
+          const skillChoice = form.skillChoice?.value;
+          const skillName = (!skillChoice || skillChoice === "__other__") ? form.skillCustom.value : skillChoice;
+          return {
+            stat: form.stat?.value ?? statOptions[0],
+            skillName
+          };
+        }
+      }
+    });
+
+    if (!result?.skillName?.trim()) return;
+    await actor.applyDescriptor(item, result);
+  }
 }

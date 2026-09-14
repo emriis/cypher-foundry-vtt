@@ -1,0 +1,30 @@
+{
+  "_id": "gW98DVrzh0McJGEW",
+  "_key": "!items!gW98DVrzh0McJGEW",
+  "name": "Rapide",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "speed"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Tromperie",
+      "Initiative",
+      "",
+      ""
+    ],
+    "description": "<p>Rapide des pieds, des mains et de la langue, tu fais tout un cran plus vite que la moyenne des gens.</p><p><em>Tu gagnes +2 à ta Réserve de Célérité, et un entrainement en Tromperie ou Initiative.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Construit sous la Cypher Open License à partir du contenu du Cypher Reference Document (CRD)."
+    }
+  }
+}

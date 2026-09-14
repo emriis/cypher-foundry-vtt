@@ -211,6 +211,30 @@
   {{/ifNotEquals}}
   {{/ifEquals}}
 
+  {{#ifEquals item.type "descriptor"}}
+  <div class="form-group">
+    <label>{{localize 'CYPHER.Descriptor.StatOptions'}}</label>
+    <div class="descriptor-stat-options">
+      <label><input type="checkbox" data-action="toggleDescriptorStat" data-stat="might" {{#if statOptionsSet.might}}checked{{/if}}/> {{localize 'CYPHER.Stat.might'}}</label>
+      <label><input type="checkbox" data-action="toggleDescriptorStat" data-stat="speed" {{#if statOptionsSet.speed}}checked{{/if}}/> {{localize 'CYPHER.Stat.speed'}}</label>
+      <label><input type="checkbox" data-action="toggleDescriptorStat" data-stat="intellect" {{#if statOptionsSet.intellect}}checked{{/if}}/> {{localize 'CYPHER.Stat.intellect'}}</label>
+    </div>
+    <p class="descriptor-hint">{{localize 'CYPHER.Descriptor.StatOptionsHint'}}</p>
+  </div>
+  <div class="form-group">
+    <label>{{localize 'CYPHER.Descriptor.StatAmount'}}</label>
+    <input name="system.statAmount" type="number" value="{{system.statAmount}}" min="1"/>
+  </div>
+  <div class="form-group">
+    <label>{{localize 'CYPHER.Descriptor.SkillOptions'}}</label>
+    <p class="descriptor-hint">{{localize 'CYPHER.Descriptor.SkillOptionsHint'}}</p>
+    <input name="system.skillOptions.0" type="text" value="{{lookup system.skillOptions 0}}"/>
+    <input name="system.skillOptions.1" type="text" value="{{lookup system.skillOptions 1}}"/>
+    <input name="system.skillOptions.2" type="text" value="{{lookup system.skillOptions 2}}"/>
+    <input name="system.skillOptions.3" type="text" value="{{lookup system.skillOptions 3}}"/>
+  </div>
+  {{/ifEquals}}
+
 
   <div class="form-group description-group">
     <label>{{localize 'CYPHER.Description'}}</label>

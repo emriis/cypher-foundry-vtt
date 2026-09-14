@@ -1,0 +1,30 @@
+{
+  "_id": "FQycJ7y0cudYHuZW",
+  "_key": "!items!FQycJ7y0cudYHuZW",
+  "name": "Chaotic",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "speed"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Initiative",
+      "Performance",
+      "",
+      ""
+    ],
+    "description": "<p>Danger rarely fazes you, mostly because you don't dwell on consequences — you thrive on the unexpected.</p><p><em>You gain +2 to your Speed Pool, and training in Initiative or Performance.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+    }
+  }
+}
