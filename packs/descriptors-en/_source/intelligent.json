@@ -1,0 +1,30 @@
+{
+  "_id": "uecCMuu2u8K2nmvD",
+  "_key": "!items!uecCMuu2u8K2nmvD",
+  "name": "Intelligent",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Chemistry",
+      "Engineering",
+      "Mathematics",
+      ""
+    ],
+    "description": "<p>Sharp-minded and quick to learn, you grasp complex ideas that leave others struggling.</p><p><em>You gain +2 to your Intellect Pool, and training in Chemistry, Engineering or Mathematics.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+    }
+  }
+}

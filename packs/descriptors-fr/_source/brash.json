@@ -1,0 +1,30 @@
+{
+  "_id": "sbpHDvu8sG6OF0My",
+  "_key": "!items!sbpHDvu8sG6OF0My",
+  "name": "Impétueux(se)",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "speed"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Piratage",
+      "Initiative",
+      "",
+      ""
+    ],
+    "description": "<p>Tu es audacieux, plein d'énergie, un brin irrévérencieux — prompt à agir et à dire ce que tu penses.</p><p><em>Tu gagnes +2 à ta Réserve de Célérité, et un entrainement en Piratage ou Initiative.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Construit sous la Cypher Open License à partir du contenu du Cypher Reference Document (CRD)."
+    }
+  }
+}

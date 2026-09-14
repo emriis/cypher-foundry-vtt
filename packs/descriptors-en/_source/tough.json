@@ -1,0 +1,30 @@
+{
+  "_id": "oVzYOAbpumVt0CWt",
+  "_key": "!items!oVzYOAbpumVt0CWt",
+  "name": "Tough",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "might"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Athletics",
+      "Outdoor Survival",
+      "",
+      ""
+    ],
+    "description": "<p>You shrug off punishment that would slow down most people, and keep moving forward regardless.</p><p><em>You gain +2 to your Might Pool, and training in Athletics or Outdoor Survival.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+    }
+  }
+}

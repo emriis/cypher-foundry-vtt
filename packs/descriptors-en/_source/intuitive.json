@@ -1,0 +1,30 @@
+{
+  "_id": "OvTZjrRYQ18bU1SZ",
+  "_key": "!items!OvTZjrRYQ18bU1SZ",
+  "name": "Intuitive",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Psychology",
+      "Recognizing Motive",
+      "",
+      ""
+    ],
+    "description": "<p>You often sense what someone will do or say before they do it, as if a step ahead of the room.</p><p><em>You gain +2 to your Intellect Pool, and training in Psychology or Recognizing Motive.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+    }
+  }
+}

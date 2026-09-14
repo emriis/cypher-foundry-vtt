@@ -1,0 +1,30 @@
+{
+  "_id": "NZmxFxtY8d6TWgq0",
+  "_key": "!items!NZmxFxtY8d6TWgq0",
+  "name": "Rugged",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "might"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Animal Care",
+      "Outdoor Survival",
+      "",
+      ""
+    ],
+    "description": "<p>Years of living close to the land have left you weathered, capable, and at home in the wild.</p><p><em>You gain +2 to your Might Pool, and training in Animal Care or Outdoor Survival.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+    }
+  }
+}

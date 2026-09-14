@@ -1,0 +1,30 @@
+{
+  "_id": "1nBhGThG70xSu3CU",
+  "_key": "!items!1nBhGThG70xSu3CU",
+  "name": "Créatif(ve)",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Représentation",
+      "Édition",
+      "",
+      ""
+    ],
+    "description": "<p>Les idées te viennent facilement, que tu les couches sur le papier, les interprètes ou les construises de toutes pièces.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Représentation ou Édition.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Construit sous la Cypher Open License à partir du contenu du Cypher Reference Document (CRD)."
+    }
+  }
+}
