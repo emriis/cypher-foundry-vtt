@@ -1,17 +1,21 @@
 import { CYPHER } from "../config.mjs";
 
 /**
- * Extension de la classe Actor de Foundry pour le Cypher.
- * Extends Foundry's Actor class with Cypher logic.
+ * Extends Foundry's Actor document with shared Cypher System mechanics.
+ *
+ * This class owns rules that apply directly to actors, including task resolution,
+ * Effort costs, XP spending, recovery, advancement, wounds, armor damage, and
+ * custom character data.
+ *
+ * Player-character-specific schema and derived data remain in the PC data model.
  */
 export default class CypherActor extends Actor {
 
   /* -------------------------------------------- */
-  /*  Coût de l'Effort / Effort cost                */
+  /*  Effort cost                                      */
   /* -------------------------------------------- */
 
   /**
-   * Calcule le coût total en points de Réserve pour un nombre de niveaux d'Effort,
    * avec la Marge déduite UNE SEULE FOIS sur le total (jamais par niveau).
    * Computes total Pool cost for a number of Effort levels, with Edge discounted
    * ONCE on the total (never per level), per the rules.
@@ -24,11 +28,10 @@ export default class CypherActor extends Actor {
   }
 
   /* -------------------------------------------- */
-  /*  Résolution de statistique / Stat resolution   */
+  /*  Stat resolution                                   */
   /* -------------------------------------------- */
 
   /**
-   * Résout une clé de statistique (une des trois stats de base, ou une stat personnalisée
    * par son id) vers ses données et le chemin de mise à jour à utiliser.
    * Resolves a stat key (one of the three core stats, or a custom stat by id) to its
    * data and the update path to use.
@@ -44,11 +47,10 @@ export default class CypherActor extends Actor {
   }
 
   /* -------------------------------------------- */
-  /*  Jets de tâche / Task rolls                   */
+  /*  Task rolls                                       */
   /* -------------------------------------------- */
 
   /**
-   * Lance un jet de tâche du Cypher : d20 contre (difficulté - pas) * 3.
    * Rolls a Cypher task: d20 vs (difficulty - steps) * 3.
    */
   async rollTask({
@@ -62,8 +64,8 @@ export default class CypherActor extends Actor {
       return null;
     }
 
-    // Coup de chance : dépense 1 PX pour attaquer à l'aveugle, handicapé de 4 pas
-    // Lucky shot: spend 1 XP to attack blind, hindered by 4 steps
+    // A Lucky Shot costs 1 XP and applies 4 additional hindrance steps.
+
     if (luckyShot) {
       if (!(await this.spendXP(CYPHER.xpCosts.luckyShot, game.i18n.localize("CYPHER.XP.LuckyShot")))) return null;
       extraHinderSteps += 4;
@@ -74,10 +76,11 @@ export default class CypherActor extends Actor {
     const statData = resolved.data;
     const statLabel = CYPHER.stats.includes(stat) ? game.i18n.localize(resolved.label) : resolved.label;
 
-    // Les pas d'atout sont plafonnés à 2 / asset steps capped at 2
+    // Asset steps are capped at 2.
+
     assetSteps = Math.min(2, Math.max(0, assetSteps));
-    // L'Effort ne peut pas dépasser le score d'Effort du personnage (max 6)
-    // Effort can't exceed the character's Effort score (max 6)
+    // Effort cannot exceed the character's Effort score, up to a maximum of 6.
+
     effortLevels = Math.min(this.system.effort, 6, Math.max(0, effortLevels));
 
     const skillItem = skillItemId ? this.items.get(skillItemId) : null;
@@ -91,22 +94,14 @@ export default class CypherActor extends Actor {
       return null;
     }
 
-    // Chaque niveau d'effort réduit la difficulté d'un pas ; les atouts, la compétence,
-    // le handicap de blessures, et tout handicap supplémentaire (coup de chance, arme non
-    // maîtrisée...) s'ajoutent aussi. Each Effort level reduces difficulty by one step;
-    // assets, skill, wound hindrance, and any extra hindrance (lucky shot, unfamiliar
-    // weapon...) also apply.
+    // Each Effort level reduces difficulty by one step. Assets, skills, wound hindrance,
+    // and additional hindrance such as Lucky Shot or unfamiliar weapons also apply.
+
     const woundHinder = this.system.hinderSteps ?? 0;
 
-    // Bug corrigé : le handicap de Vitesse d'une armure non maîtrisée (system.armor.speedTaskHinder)
-    // n'était calculé nulle part utilisé — il ne s'appliquait qu'aux jets d'Esquive explicites.
-    // Il doit en réalité handicaper TOUTES les tâches de Vitesse, pas seulement l'Esquive.
-    // On l'exclut ici uniquement quand ce jet EST un jet d'Esquive, puisque son handicap est
-    // alors déjà pris en compte via armorModifier (même valeur), pour éviter un double comptage.
-    // Bugfix: an unfamiliar armor's Speed hindrance (system.armor.speedTaskHinder) was computed
-    // but never actually applied — it only affected explicit Dodge rolls. It should hinder ALL
-    // Speed tasks, not just Dodge. Excluded here only when this roll IS a Dodge, since its
-    // hindrance is already folded into armorModifier (same value) to avoid double-counting.
+    // Unfamiliar armor hinders all Speed tasks. Dodge rolls already include this modifier
+    // through armorModifier, so it is excluded here to avoid double-counting.
+
     const autoArmorSpeedHinder = (stat === "speed" && defenseType !== "dodge")
       ? (this.system.armor?.speedTaskHinder ?? 0)
       : 0;
@@ -115,7 +110,8 @@ export default class CypherActor extends Actor {
     const effectiveDifficulty = Math.max(0, difficulty - totalSteps);
     const targetNumber = effectiveDifficulty * 3;
 
-    // Dépense les points de pool / Spend the pool points
+    // Spend the required Pool points before resolving the roll.
+
     if (totalCost > 0) {
       await this.update({ [`${resolved.path}.pool.value`]: statData.pool.value - totalCost });
     }
@@ -124,8 +120,8 @@ export default class CypherActor extends Actor {
     const d20 = roll.total;
     const success = effectiveDifficulty <= 0 ? true : d20 >= targetNumber;
 
-    // Résultats spéciaux 1 / 17 / 18 / 19 / 20, tels que décrits dans les règles
-    // Special results on 1 / 17 / 18 / 19 / 20, as written in the rules
+    // Apply the special results for natural 1, 17, 18, 19, and 20.
+
     let damageBonus = 0;
     let effectText = "";
     let refund = false;
@@ -144,8 +140,8 @@ export default class CypherActor extends Actor {
       refund = true;
     }
 
-    // Un 20 naturel rembourse le coût de l'action (les points dépensés sont restitués)
-    // A natural 20 refunds the action's point cost
+    // A natural 20 refunds the Pool points spent on the action.
+
     if (refund && totalCost > 0) {
       const afterSpend = statData.pool.value - totalCost;
       await this.update({ [`${resolved.path}.pool.value`]: Math.min(statData.pool.max, afterSpend + totalCost) });
@@ -153,15 +149,14 @@ export default class CypherActor extends Actor {
 
     const totalDamage = isAttack ? baseDamage + damageBonus : 0;
 
-    // Un Blocage réussi peut transférer la blessure entière à un bouclier équipé et intact,
-    // plutôt que de la réduire d'un cran sur le personnage.
-    // A successful Block can transfer the whole wound to an equipped, unbroken shield,
-    // instead of reducing it by one step on the character.
+    // A successful Block can transfer the full wound to an equipped, unbroken shield
+    // instead of reducing its severity on the character.
+
     const shieldItem = shieldItemId ? this.items.get(shieldItemId) : null;
     const usingShield = defenseType === "block" && shieldItem?.type === "shield" && !shieldItem.system.broken;
 
-    // Texte descriptif du résultat de la défense (Blocage/Esquive), affiché dans le message
-    // Descriptive text for the defense result (Block/Dodge), shown in the message
+    // Build descriptive text for the defense result displayed in the chat message.
+
     let defenseNote = "";
     if (defenseType) {
       if (success) {
@@ -215,8 +210,8 @@ export default class CypherActor extends Actor {
       }
     });
 
-    // Résolution de la blessure selon le résultat de la défense (Blocage/Esquive)
-    // Wound resolution based on the defense result (Block/Dodge)
+    // Resolve the incoming wound according to the defense result.
+
     if (defenseType) {
       if (success) {
         if (defenseType === "block") {
@@ -227,7 +222,8 @@ export default class CypherActor extends Actor {
             if (reduced) await this.addWound(reduced);
           }
         }
-        // Une Esquive réussie évite entièrement la blessure / A successful Dodge avoids the wound entirely
+        // A successful Dodge avoids the wound entirely.
+
       } else {
         await this.addWound(incomingSeverity);
       }
@@ -247,7 +243,6 @@ export default class CypherActor extends Actor {
   }
 
   /**
-   * Fait absorber une blessure entière par un bouclier, avec débordement en cascade
    * (3 mineures → 2 modérées → 1 majeure, selon les règles). Le bouclier est détruit
    * dès qu'il subit une blessure majeure.
    * Has a shield absorb a whole wound, with cascading overflow (3 minor → 2 moderate →
@@ -271,7 +266,6 @@ export default class CypherActor extends Actor {
   }
 
   /**
-   * Lance un jet de Défense : Blocage (Puissance, facilité par l'armure) ou Esquive (Vitesse,
    * handicapée par l'armure), contre le nombre cible de l'attaquant. Un Blocage réussi réduit
    * la sévérité de la blessure d'un cran ; une Esquive réussie l'évite entièrement ; un échec
    * inflige la blessure telle quelle.
@@ -294,11 +288,10 @@ export default class CypherActor extends Actor {
   }
 
   /* -------------------------------------------- */
-  /*  Points d'Expérience / Experience Points       */
+  /*  Experience Points                                */
   /* -------------------------------------------- */
 
   /**
-   * Dépense des PX si le personnage en a assez. Renvoie true si la dépense a réussi.
    * Spends XP if the character has enough. Returns true if the spend succeeded.
    */
   async spendXP(amount, reasonLabel = "") {
@@ -407,7 +400,7 @@ export default class CypherActor extends Actor {
   }
 
   /* -------------------------------------------- */
-  /*  Avancement de personnage / Character advancement */
+  /*  Character advancement                             */
   /* -------------------------------------------- */
 
   /**
@@ -539,7 +532,7 @@ export default class CypherActor extends Actor {
   }
 
   /* -------------------------------------------- */
-  /*  Récupérations / Recovery rolls                */
+  /*  Recovery rolls                                   */
   /* -------------------------------------------- */
 
   /**
@@ -627,11 +620,10 @@ export default class CypherActor extends Actor {
   }
 
   /* -------------------------------------------- */
-  /*  Stats personnalisées / Custom stats           */
+  /*  Custom stats                                     */
   /* -------------------------------------------- */
 
   /**
-   * Ajoute une statistique personnalisée (en plus de Puissance/Vitesse/Intelligence).
    * Adds a custom stat (in addition to Might/Speed/Intellect).
    */
   async addCustomStat(label) {
@@ -649,6 +641,11 @@ export default class CypherActor extends Actor {
     await this.update({ "system.customStats": customStats });
   }
 
+  /**
+   * Removes a custom stat identified by its stable id.
+   *
+   * @param {string} id - Identifier of the custom stat to remove.
+   */
   async deleteCustomStat(id) {
     if (this.type !== "pc") return;
     const customStats = this.system.customStats.filter(s => s.id !== id);
@@ -656,11 +653,10 @@ export default class CypherActor extends Actor {
   }
 
   /* -------------------------------------------- */
-  /*  Champs Libres / Custom fields                 */
+  /*  Custom fields                                    */
   /* -------------------------------------------- */
 
   /**
-   * Ajoute un champ libre (texte, nombre, ou case à cocher) — pour ajouter n'importe quel
    * élément de personnage non prévu par le système, indépendamment du genre.
    * Adds a custom field (text, number, or checkbox) — to add any character element the
    * system doesn't already provide for, independent of genre.
@@ -678,6 +674,11 @@ export default class CypherActor extends Actor {
     await this.update({ "system.customFields": customFields });
   }
 
+  /**
+   * Removes a custom field identified by its stable id.
+   *
+   * @param {string} id - Identifier of the custom field to remove.
+   */
   async deleteCustomField(id) {
     if (this.type !== "pc") return;
     const customFields = this.system.customFields.filter(f => f.id !== id);
@@ -685,7 +686,7 @@ export default class CypherActor extends Actor {
   }
 
   /* -------------------------------------------- */
-  /*  Dégâts d'armure / Armor damage                */
+  /*  Armor damage                                     */
   /* -------------------------------------------- */
 
   /**
@@ -721,7 +722,6 @@ export default class CypherActor extends Actor {
   }
 
   /**
-   * Répare l'armure équipée, retirant tous les dégâts accumulés sur son bonus de Blocage.
    * Repairs the equipped armor, clearing all accumulated damage to its Block bonus.
    */
   async repairArmor() {
@@ -734,11 +734,10 @@ export default class CypherActor extends Actor {
   }
 
   /* -------------------------------------------- */
-  /*  Dégâts et blessures / Damage and wounds       */
+  /*  Damage and wounds                                */
   /* -------------------------------------------- */
 
   /**
-   * Applique des dégâts. Pour un PJ, convertit le montant en sévérité de blessure
    * (1-4 mineure, 5-8 modérée, 9+ majeure) sauf si une sévérité est fournie explicitement.
    * Applies damage. For a PC, converts the amount to a wound severity
    * (1-4 minor, 5-8 moderate, 9+ major) unless an explicit severity is given.
@@ -746,8 +745,9 @@ export default class CypherActor extends Actor {
   async applyDamage(amount, { severity = null, stat = null, ignoreArmor = false } = {}) {
     if (this.type !== "pc") return this._applyNpcDamage(amount, { ignoreArmor });
 
-    // Dégâts directs sur une Réserve (poison, maladie, attaque psychique...) : si la Réserve
-    // tombe à 0, l'excédent se convertit en blessure via la table de conversion.
+    // Direct Pool damage (for example poison, disease, or a mental attack) reduces the
+    // selected Pool first. Any overflow is converted into a wound.
+
     if (stat) {
       const resolved = this._resolveStat(stat);
       if (!resolved) return;
@@ -766,6 +766,12 @@ export default class CypherActor extends Actor {
     await this.addWound(woundSeverity);
   }
 
+  /**
+   * Converts a numeric damage amount into the corresponding wound severity.
+   *
+   * @param {number} amount - Damage amount to convert.
+   * @returns {string} The configured wound severity.
+   */
   _convertDamageToWound(amount) {
     for (const tier of CYPHER.poolDamageToWound) {
       if (amount <= tier.max) return tier.severity;
@@ -774,7 +780,6 @@ export default class CypherActor extends Actor {
   }
 
   /**
-   * Ajoute une blessure d'une sévérité donnée, avec débordement en cascade
    * (mineure pleine → devient modérée ; modérée pleine → devient majeure).
    * Adds a wound of a given severity, with cascading overflow.
    */
@@ -796,6 +801,14 @@ export default class CypherActor extends Actor {
     await this._syncWoundStatusEffects();
   }
 
+  /**
+   * Applies damage to an NPC actor after accounting for its Armor value.
+   *
+   * @param {number} amount - Incoming damage.
+   * @param {object} options - Damage application options.
+   * @param {boolean} [options.ignoreArmor=false] - Whether to bypass Armor.
+   * @returns {Promise<number|undefined>} Final damage applied, when applicable.
+   */
   async _applyNpcDamage(amount, { ignoreArmor = false } = {}) {
     const armor = ignoreArmor ? 0 : (this.system.armor ?? 0);
     const finalDamage = Math.max(0, amount - armor);
