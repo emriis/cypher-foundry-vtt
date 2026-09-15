@@ -51,10 +51,30 @@
       "equipment": {},
       "attack": {},
       "armor": {},
-      "shield": {}
+      "shield": {},
+      "descriptor": {}
     }
   },
-  "packs": [],
+  "packs": [
+    {
+      "name": "descriptors-fr",
+      "label": "Descripteurs (FR)",
+      "path": "packs/descriptors-fr",
+      "type": "Item",
+      "system": "cypher",
+      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "flags": {}
+    },
+    {
+      "name": "descriptors-en",
+      "label": "Descriptors (EN)",
+      "path": "packs/descriptors-en",
+      "type": "Item",
+      "system": "cypher",
+      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "flags": {}
+    }
+  ],
   "packFolders": [],
   "primaryTokenAttribute": "stats.might.pool",
   "secondaryTokenAttribute": "stats.speed.pool",

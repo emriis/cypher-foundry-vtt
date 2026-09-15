@@ -1,0 +1,30 @@
+{
+  "_id": "uX5xiZZ4UWyGMs1Y",
+  "_key": "!items!uX5xiZZ4UWyGMs1Y",
+  "name": "Graceful",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "speed"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Gymnastics",
+      "Initiative",
+      "",
+      ""
+    ],
+    "description": "<p>You move with a fluid, deliberate elegance, whether dancing, fighting, or simply crossing a room.</p><p><em>You gain +2 to your Speed Pool, and training in Gymnastics or Initiative.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+    }
+  }
+}

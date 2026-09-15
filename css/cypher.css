@@ -468,6 +468,29 @@
 }
 
 /* ================================================================
+   Fiche d'objet — Descripteur / Item sheet — Descriptor
+   ================================================================ */
+
+.cypher .descriptor-stat-options {
+  display: flex;
+  gap: var(--cypher-space-lg);
+  flex-wrap: wrap;
+}
+
+.cypher .descriptor-stat-options label {
+  display: flex;
+  align-items: center;
+  gap: var(--cypher-space-sm);
+  font-weight: normal;
+}
+
+.cypher .descriptor-hint {
+  font-size: var(--cypher-font-size-xs);
+  color: var(--cypher-color-text-muted);
+  margin: var(--cypher-space-xs) 0 var(--cypher-space-sm);
+}
+
+/* ================================================================
    Résultats de jet (cartes de tchat) / Roll results (chat cards)
    ================================================================ */
 

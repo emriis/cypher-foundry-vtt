@@ -1,0 +1,30 @@
+{
+  "_id": "EDTPv99zkkTd1Ghy",
+  "_key": "!items!EDTPv99zkkTd1Ghy",
+  "name": "Stealthy",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "speed"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Pickpocketing",
+      "Stealth",
+      "",
+      ""
+    ],
+    "description": "<p>Quick and quiet, you know how to use shadows and distraction to move unseen and unheard.</p><p><em>You gain +2 to your Speed Pool, and training in Pickpocketing or Stealth.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+    }
+  }
+}

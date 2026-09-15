@@ -1,0 +1,30 @@
+{
+  "_id": "XQ0RgUfvjSiTtkX4",
+  "_key": "!items!XQ0RgUfvjSiTtkX4",
+  "name": "Skeptical",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Identifying",
+      "Recognizing Motive",
+      "",
+      ""
+    ],
+    "description": "<p>You question what others take for granted, and that habit has served you well more than once.</p><p><em>You gain +2 to your Intellect Pool, and training in Identifying or Recognizing Motive.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+    }
+  }
+}

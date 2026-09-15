@@ -1,0 +1,30 @@
+{
+  "_id": "W1sHFaqeJpdbXotj",
+  "_key": "!items!W1sHFaqeJpdbXotj",
+  "name": "Brash",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "speed"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Hacking",
+      "Initiative",
+      "",
+      ""
+    ],
+    "description": "<p>You're bold, energetic, and a little irreverent — quick to act and quick to speak your mind.</p><p><em>You gain +2 to your Speed Pool, and training in Hacking or Initiative.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+    }
+  }
+}

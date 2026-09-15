@@ -42,7 +42,8 @@ Hooks.once("init", () => {
     equipment: models.CypherEquipmentData,
     armor: models.CypherArmorData,
     attack: models.CypherAttackData,
-    shield: models.CypherShieldData
+    shield: models.CypherShieldData,
+    descriptor: models.CypherDescriptorData
   };
 
   /* -------------------------------------------- */

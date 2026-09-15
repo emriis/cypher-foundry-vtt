@@ -1,0 +1,30 @@
+{
+  "_id": "qgVHqF5nAdDNyoEd",
+  "_key": "!items!qgVHqF5nAdDNyoEd",
+  "name": "Réservé(e)",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Tromperie",
+      "Déguisement",
+      "",
+      ""
+    ],
+    "description": "<p>Tu gardes ton vrai visage derrière un masque, préférant maintenir les autres à une distance prudente.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Tromperie ou Déguisement.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Construit sous la Cypher Open License à partir du contenu du Cypher Reference Document (CRD)."
+    }
+  }
+}

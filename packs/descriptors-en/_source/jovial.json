@@ -1,0 +1,30 @@
+{
+  "_id": "1EgOEyA7FVGTaAJ9",
+  "_key": "!items!1EgOEyA7FVGTaAJ9",
+  "name": "Jovial",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Charm",
+      "Performance",
+      "",
+      ""
+    ],
+    "description": "<p>Cheerful and outgoing, you put people at ease with a joke and a warm smile.</p><p><em>You gain +2 to your Intellect Pool, and training in Charm or Performance.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "_id": "llgLSVpx1V2zg3BG",
+  "_key": "!items!llgLSVpx1V2zg3BG",
+  "name": "Mysterious",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect",
+      "speed"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Deception",
+      "Stealth",
+      "",
+      ""
+    ],
+    "description": "<p>No one is quite sure where you came from or what you want, and you prefer to keep it that way.</p><p><em>You gain +2 to your Intellect or Speed Pool, and training in Deception or Stealth.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "_id": "9w1sDeQnwpnvJrPa",
+  "_key": "!items!9w1sDeQnwpnvJrPa",
+  "name": "Gloomy",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "speed",
+      "might"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "History",
+      "Recognizing Motive",
+      "",
+      ""
+    ],
+    "description": "<p>You expect the worst as a matter of course, which means you're rarely disappointed when it happens.</p><p><em>You gain +2 to your Speed or Might Pool, and training in History or Recognizing Motive.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+    }
+  }
+}

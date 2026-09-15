@@ -1,0 +1,30 @@
+{
+  "_id": "3TpouYiiQy1XivmW",
+  "_key": "!items!3TpouYiiQy1XivmW",
+  "name": "Mystique",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Savoir magique",
+      "Savoir psychique",
+      "Savoir religieux",
+      ""
+    ],
+    "description": "<p>Tu es en phase avec le mystérieux et le paranormal, attiré(e) par les savoirs anciens et les vérités cachées.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Savoir magique, Savoir psychique ou Savoir religieux.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Construit sous la Cypher Open License à partir du contenu du Cypher Reference Document (CRD)."
+    }
+  }
+}

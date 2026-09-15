@@ -1,0 +1,30 @@
+{
+  "_id": "8A8aUlbjwUkPQbhF",
+  "_key": "!items!8A8aUlbjwUkPQbhF",
+  "name": "Vertueux(se)",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "might"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Philosophie",
+      "Savoir religieux",
+      "",
+      ""
+    ],
+    "description": "<p>Tu vis selon un code que tu t'efforces de respecter chaque jour, te corrigeant dès que tu t'en écartes.</p><p><em>Tu gagnes +2 à ta Réserve de Puissance, et un entrainement en Philosophie ou Savoir religieux.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Construit sous la Cypher Open License à partir du contenu du Cypher Reference Document (CRD)."
+    }
+  }
+}

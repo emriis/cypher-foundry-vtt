@@ -127,13 +127,51 @@ ce système, il s'agit d'un vrai mappeur, pas d'un chargement direct :
   version de Foundry donnée (placement du bouton fait au mieux, DOM de la barre latérale non garanti
   stable d'une version à l'autre).
 
-### Ce qu'il reste à faire (volontairement laissé pour la V2)
+### Compendiums de Descripteurs (FR/EN)
 
-Vous avez choisi de commencer **sans compendiums**. Prochaines étapes suggérées :
+Premier lot de compendiums bilingues, avant les Types et les Foyers : **33 Descripteurs** du
+CRD, sous la forme d'un nouveau type d'objet `descriptor` (`module/data-models/item-descriptor.mjs`),
+packagés dans deux compendiums LevelDB (`descriptors-fr`, `descriptors-en`).
+
+Un Descripteur n'est volontairement **pas un objet persistant** : le glisser sur une fiche PJ
+(`CypherPCSheet#_onDropItem`) ouvre une boîte de dialogue pour choisir la statistique (si le
+Descripteur en propose plusieurs, ex. Gloomy/Sombre) et la compétence (parmi celles listées, ou
+un texte libre pour couvrir les formulations "...ou similaire" du CRD), puis applique directement
+l'effet via `CypherActor#applyDescriptor` :
+- +2 (ou le montant défini) à la Réserve choisie ;
+- création d'une Compétence entrainée correspondante, ou avancement d'une compétence existante du
+  même nom (même logique de progression que l'avancement de personnage : inaptitude annulée,
+  entrainée → spécialisée...) ;
+- le nom du Descripteur est inscrit dans `system.descriptor`, déjà affiché dans la phrase de
+  personnage de l'en-tête ;
+- un message de tchat récapitule ce qui a été accordé.
+
+Le texte descriptif ("flavor") de chaque entrée est une reformulation originale et non une
+reproduction du texte du CRD ; seules les données mécaniques (bonus de Réserve, choix de
+compétences) suivent fidèlement le CRD, comme le permet la Cypher Open License.
+
+**Régénérer/étendre les sources** : `python3 scripts/generate-descriptors.py` régénère
+`packs/descriptors-{fr,en}/_source/*.json`. Pour recompiler en pack LevelDB chargeable par
+Foundry (nécessite `@foundryvtt/foundryvtt-cli`, installable via `npm install --no-save
+@foundryvtt/foundryvtt-cli`) :
+
+```
+npx fvtt package pack -n descriptors-en --in packs/descriptors-en/_source --out /tmp/out-en
+cp /tmp/out-en/descriptors-en/* packs/descriptors-en/
+npx fvtt package pack -n descriptors-fr --in packs/descriptors-fr/_source --out /tmp/out-fr
+cp /tmp/out-fr/descriptors-fr/* packs/descriptors-fr/
+```
+
+(Le CLI imbrique son résultat dans `<out>/<nom-du-pack>/` ; il faut remonter son contenu au
+niveau attendu par `system.json`, qui pointe directement vers `packs/<nom-du-pack>/`. Chaque
+fichier source doit contenir un champ `_key` au format `!items!<_id>`, sans quoi le CLI l'ignore
+silencieusement.)
+
+### Ce qu'il reste à faire (V2)
+
 1. Tester la fiche de personnage en jeu, ajuster le layout/CSS selon vos goûts.
-2. Une fois la base validée, on pourra construire les **compendiums bilingues** (Types, Foyers,
-   Descripteurs, Capacités, Créatures, Cyphers, Artefacts...) à partir du CRD, avec une paire de
-   packs EN/FR par catégorie (ex. `types-fr`, `types-en`), en respectant la Cypher Open License.
+2. Étendre le même principe (item "générateur" + compendium bilingue) aux **Types** et aux
+   **Foyers**, à partir du CRD, en respectant la Cypher Open License.
 3. Ajouter des macros compendium pour automatiser des actions répétitives (application de dégâts
    de groupe, gestion des intrusions du MJ, etc.).
 4. Ajouter une feuille PNJ dédiée avec calcul automatique du nombre cible (niveau × 3).
@@ -305,8 +343,28 @@ from this system's own, so this is a real mapper, not a direct load:
   (button placement is best-effort, since the sidebar's DOM isn't guaranteed stable across
   versions).
 
+### Descriptor compendiums (FR/EN)
+
+First batch of bilingual compendiums, ahead of Types and Foci: **33 CRD Descriptors**, as a new
+`descriptor` item type (`module/data-models/item-descriptor.mjs`), packaged into two LevelDB
+compendiums (`descriptors-fr`, `descriptors-en`).
+
+A Descriptor is deliberately **not a persistent item**: dropping it onto a PC sheet
+(`CypherPCSheet#_onDropItem`) opens a dialog to pick the stat (if the Descriptor offers more than
+one, e.g. Gloomy) and the skill (from the listed options, or free text to cover the CRD's
+"...or similar" wording), then applies the effect directly via `CypherActor#applyDescriptor`: a
+Pool bonus, a newly trained (or advanced) Skill item, the Descriptor's name written into
+`system.descriptor` (already shown in the header's character sentence), and a chat message
+summarizing the grant. Flavor text is an original rewrite, not CRD text reproduction — only the
+mechanical data (Pool bonus, skill choices) follows the CRD, as the Cypher Open License allows.
+
+Regenerate the source JSON with `python3 scripts/generate-descriptors.py`, then recompile into a
+loadable LevelDB pack with the `@foundryvtt/foundryvtt-cli` package — see the French section above
+for the exact commands (each source file needs a `_key: "!items!<_id>"` field, or the CLI silently
+skips it).
+
 ### Suggested next steps
 
-See the French section above — same roadmap: playtest the sheet, then build bilingual
-compendium pairs (Types, Foci, Descriptors, Abilities, Creatures, Cyphers, Artifacts...) under the
-Cypher Open License, add automation macros, and a dedicated NPC sheet.
+See the French section above — same roadmap: playtest the sheet, then extend the same
+generator-item + bilingual-compendium approach to Types and Foci, add automation macros, and a
+dedicated NPC sheet.

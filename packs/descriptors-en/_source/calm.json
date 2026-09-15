@@ -1,0 +1,30 @@
+{
+  "_id": "IZqC2n37RfD71vw3",
+  "_key": "!items!IZqC2n37RfD71vw3",
+  "name": "Calm",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Charm",
+      "Skilled Trade",
+      "",
+      ""
+    ],
+    "description": "<p>Little rattles you. You favor an inner stillness that lets you think clearly under pressure.</p><p><em>You gain +2 to your Intellect Pool, and training in Charm or Skilled Trade.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+    }
+  }
+}
