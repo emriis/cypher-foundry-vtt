@@ -1,0 +1,30 @@
+{
+  "_id": "Y6RbEJQz3qECQTeQ",
+  "_key": "!items!Y6RbEJQz3qECQTeQ",
+  "name": "Resilient",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "might"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Athletics",
+      "Escaping",
+      "",
+      ""
+    ],
+    "description": "<p>You're tougher than you look, able to take a beating and keep going without panic.</p><p><em>You gain +2 to your Might Pool, and training in Athletics or Escaping.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+    }
+  }
+}

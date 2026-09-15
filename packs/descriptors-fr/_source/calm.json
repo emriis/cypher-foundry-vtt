@@ -1,0 +1,30 @@
+{
+  "_id": "AZ12SoVjPpXRI3l9",
+  "_key": "!items!AZ12SoVjPpXRI3l9",
+  "name": "Calme",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Charme",
+      "Métier qualifié",
+      "",
+      ""
+    ],
+    "description": "<p>Rien ne te déstabilise vraiment. Tu cultives une stabilité intérieure qui te permet de réfléchir clairement sous pression.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Charme ou Métier qualifié.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Construit sous la Cypher Open License à partir du contenu du Cypher Reference Document (CRD)."
+    }
+  }
+}

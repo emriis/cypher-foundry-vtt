@@ -1,0 +1,30 @@
+{
+  "_id": "wcrWpUlXH0z9fvUS",
+  "_key": "!items!wcrWpUlXH0z9fvUS",
+  "name": "Strong",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "might"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Athletics",
+      "Intimidation",
+      "",
+      ""
+    ],
+    "description": "<p>Physically powerful and well aware of it, you put your strength to good use in nearly everything you do.</p><p><em>You gain +2 to your Might Pool, and training in Athletics or Intimidation.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+    }
+  }
+}

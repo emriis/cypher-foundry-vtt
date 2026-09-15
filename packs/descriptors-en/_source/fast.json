@@ -1,0 +1,30 @@
+{
+  "_id": "PZpHKR53zo3TSUVU",
+  "_key": "!items!PZpHKR53zo3TSUVU",
+  "name": "Fast",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "speed"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Deception",
+      "Initiative",
+      "",
+      ""
+    ],
+    "description": "<p>Quick of foot, quick of hand, and quick of tongue, you simply do everything a beat faster than most.</p><p><em>You gain +2 to your Speed Pool, and training in Deception or Initiative.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+    }
+  }
+}

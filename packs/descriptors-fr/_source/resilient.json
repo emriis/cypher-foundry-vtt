@@ -1,0 +1,30 @@
+{
+  "_id": "FsiNF13p9Q8gR1zJ",
+  "_key": "!items!FsiNF13p9Q8gR1zJ",
+  "name": "Résilient(e)",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "might"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Athlétisme",
+      "Évasion",
+      "",
+      ""
+    ],
+    "description": "<p>Tu es plus coriace qu'il n'y paraît, capable d'encaisser sans jamais paniquer.</p><p><em>Tu gagnes +2 à ta Réserve de Puissance, et un entrainement en Athlétisme ou Évasion.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Construit sous la Cypher Open License à partir du contenu du Cypher Reference Document (CRD)."
+    }
+  }
+}

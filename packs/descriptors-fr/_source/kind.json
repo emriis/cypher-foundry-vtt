@@ -1,0 +1,30 @@
+{
+  "_id": "N2dCTPmmTcAtrYjT",
+  "_key": "!items!N2dCTPmmTcAtrYjT",
+  "name": "Bienveillant(e)",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Charme",
+      "Soins",
+      "",
+      ""
+    ],
+    "description": "<p>Tu te mets facilement à la place des autres, et cela te rend patient(e) avec eux.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Charme ou Soins.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Construit sous la Cypher Open License à partir du contenu du Cypher Reference Document (CRD)."
+    }
+  }
+}

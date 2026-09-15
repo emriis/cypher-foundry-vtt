@@ -1,0 +1,30 @@
+{
+  "_id": "Oyxmggw4InYRowGF",
+  "_key": "!items!Oyxmggw4InYRowGF",
+  "name": "Cautious",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "speed"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Gathering Information",
+      "Perception",
+      "",
+      ""
+    ],
+    "description": "<p>You study a situation carefully before committing to it, preferring preparation over recklessness.</p><p><em>You gain +2 to your Speed Pool, and training in Gathering Information or Perception.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "_id": "lroE3X2lMJ7SU1Os",
+  "_key": "!items!lroE3X2lMJ7SU1Os",
+  "name": "Intuitif(ve)",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Psychologie",
+      "Déceler les intentions",
+      "",
+      ""
+    ],
+    "description": "<p>Tu sens souvent ce que quelqu'un va faire ou dire avant qu'il ne le fasse, comme si tu avais toujours un coup d'avance.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Psychologie ou Déceler les intentions.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Construit sous la Cypher Open License à partir du contenu du Cypher Reference Document (CRD)."
+    }
+  }
+}

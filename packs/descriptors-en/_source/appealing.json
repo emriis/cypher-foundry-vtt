@@ -1,0 +1,30 @@
+{
+  "_id": "emk34QSpjHG7PVqD",
+  "_key": "!items!emk34QSpjHG7PVqD",
+  "name": "Appealing",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Charm",
+      "Recognizing Motive",
+      "",
+      ""
+    ],
+    "description": "<p>You have an easy, likeable charisma that puts strangers at ease and draws allies to your side.</p><p><em>You gain +2 to your Intellect Pool, and training in Charm or Recognizing Motive.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+    }
+  }
+}

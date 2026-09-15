@@ -1,0 +1,30 @@
+{
+  "_id": "JWwlkYHPKGe0HOgW",
+  "_key": "!items!JWwlkYHPKGe0HOgW",
+  "name": "Inquisitive",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Gathering Information",
+      "Identifying",
+      "",
+      ""
+    ],
+    "description": "<p>The unknown calls to you, and you take care to be prepared before you go looking for answers.</p><p><em>You gain +2 to your Intellect Pool, and training in Gathering Information or Identifying.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+    }
+  }
+}

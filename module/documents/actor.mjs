@@ -823,6 +823,79 @@ export default class CypherActor extends Actor {
     }
   }
 
+  /* -------------------------------------------- */
+  /*  Descripteurs / Descriptors                    */
+  /* -------------------------------------------- */
+
+  /**
+   * Applique un Descripteur du CRD au personnage : augmente la Réserve choisie du montant
+   * indiqué et crée (ou fait progresser) une Compétence entrainée. Contrairement à un objet
+   * classique, le Descripteur lui-même n'est jamais intégré à l'acteur — seul son effet l'est,
+   * à l'image de la façon dont un Type ou un Focus fonctionnent dans le CRD (voir aussi
+   * système.descriptor, déjà affiché dans la phrase de personnage de l'en-tête).
+   * Applies a CRD Descriptor to the character: increases the chosen Pool by the given amount
+   * and creates (or advances) a trained Skill. Unlike a normal item, the Descriptor itself is
+   * never embedded on the actor — only its effect is, mirroring how a Type or Focus work in
+   * the CRD (see also system.descriptor, already shown in the header's character sentence).
+   *
+   * @param {Item} descriptorItem Le Descripteur (compendium ou monde) à appliquer / The Descriptor item (compendium or world) to apply
+   * @param {object} [options]
+   * @param {string} [options.stat] Statistique choisie parmi statOptions (ignorée si un seul choix) / Chosen stat among statOptions (ignored if only one choice)
+   * @param {string} [options.skillName] Nom de la compétence choisie (issue de skillOptions, ou saisie libre) / Chosen skill name (from skillOptions, or freely typed)
+   */
+  async applyDescriptor(descriptorItem, { stat = null, skillName = null } = {}) {
+    if (this.type !== "pc" || descriptorItem?.type !== "descriptor") return;
+
+    const statOptions = descriptorItem.system.statOptions ?? [];
+    const chosenStat = stat && statOptions.includes(stat) ? stat : statOptions[0];
+    const finalSkillName = skillName?.trim();
+    if (!chosenStat || !finalSkillName) return;
+
+    const amount = descriptorItem.system.statAmount ?? 2;
+    await this.update({
+      "system.descriptor": descriptorItem.name,
+      [`system.stats.${chosenStat}.pool.max`]: this.system.stats[chosenStat].pool.max + amount,
+      [`system.stats.${chosenStat}.pool.value`]: this.system.stats[chosenStat].pool.value + amount
+    });
+
+    // Fait progresser une compétence homonyme existante (inaptitude annulée, entrainée devient
+    // spécialisée...), ou en crée une nouvelle entrainée sinon — même logique de progression
+    // que purchaseAdvancementSlot pour l'avancement "skill".
+    // Advances an existing skill of the same name (inability cancelled, trained becomes
+    // specialized...), or creates a new trained one otherwise — same progression logic as
+    // purchaseAdvancementSlot's "skill" advancement.
+    const order = ["inability", "none", "trained", "specialized", "expert"];
+    const existing = this.items.find(i => i.type === "skill" && i.name.toLowerCase() === finalSkillName.toLowerCase());
+    let chatNote;
+
+    if (existing) {
+      const newLevel = existing.system.level === "inability"
+        ? "trained"
+        : order[Math.min(order.length - 1, order.indexOf(existing.system.level) + 1)];
+      await existing.update({ "system.level": newLevel });
+      chatNote = game.i18n.format("CYPHER.Descriptor.SkillUpgraded", { name: existing.name, level: game.i18n.localize(`CYPHER.SkillLevel.${newLevel}`) });
+    } else {
+      const [created] = await this.createEmbeddedDocuments("Item", [{
+        name: finalSkillName,
+        type: "skill",
+        system: {
+          level: "trained",
+          description: game.i18n.format("CYPHER.Descriptor.GrantedFrom", { name: descriptorItem.name })
+        }
+      }]);
+      chatNote = game.i18n.format("CYPHER.Descriptor.SkillGranted", { name: created.name });
+    }
+
+    await ChatMessage.create({
+      speaker: ChatMessage.getSpeaker({ actor: this }),
+      content: `<div class="cypher-roll-card">
+        <h3>${game.i18n.format("CYPHER.Descriptor.Applied", { name: descriptorItem.name })}</h3>
+        <p>${game.i18n.format("CYPHER.Descriptor.StatNote", { amount, stat: game.i18n.localize(`CYPHER.Stat.${chosenStat}`) })}</p>
+        <p>${chatNote}</p>
+      </div>`
+    });
+  }
+
   /** @override */
   prepareBaseData() {
     super.prepareBaseData();

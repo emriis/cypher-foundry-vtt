@@ -1,0 +1,30 @@
+{
+  "_id": "ye1f2i9KzL9hyC4J",
+  "_key": "!items!ye1f2i9KzL9hyC4J",
+  "name": "Guarded",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Deception",
+      "Disguise",
+      "",
+      ""
+    ],
+    "description": "<p>You keep your true self behind a mask, preferring to keep others at a careful distance.</p><p><em>You gain +2 to your Intellect Pool, and training in Deception or Disguise.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+    }
+  }
+}

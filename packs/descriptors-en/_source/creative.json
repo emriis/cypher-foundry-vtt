@@ -1,0 +1,30 @@
+{
+  "_id": "I6KUMGwxYlDQSkWJ",
+  "_key": "!items!I6KUMGwxYlDQSkWJ",
+  "name": "Creative",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Performance",
+      "Publishing",
+      "",
+      ""
+    ],
+    "description": "<p>Ideas come easily to you, whether you write them down, perform them, or build them from scratch.</p><p><em>You gain +2 to your Intellect Pool, and training in Performance or Publishing.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+    }
+  }
+}
