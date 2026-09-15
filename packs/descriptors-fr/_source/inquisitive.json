@@ -1,0 +1,30 @@
+{
+  "_id": "XnMuTSynvAYo7w0R",
+  "_key": "!items!XnMuTSynvAYo7w0R",
+  "name": "Curieux(se)",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Récolte d'informations",
+      "Identification",
+      "",
+      ""
+    ],
+    "description": "<p>L'inconnu t'appelle, et tu prends soin d'être préparé(e) avant de partir en quête de réponses.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Récolte d'informations ou Identification.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Construit sous la Cypher Open License à partir du contenu du Cypher Reference Document (CRD)."
+    }
+  }
+}

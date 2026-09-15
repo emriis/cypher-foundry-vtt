@@ -1,0 +1,30 @@
+{
+  "_id": "QQbMhQlwaeWYSECa",
+  "_key": "!items!QQbMhQlwaeWYSECa",
+  "name": "Mechanical",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Engineering",
+      "Heavy Equipment Operation",
+      "Systems Operation",
+      ""
+    ],
+    "description": "<p>You have a natural talent with machines of all kinds, understanding and repairing them with ease.</p><p><em>You gain +2 to your Intellect Pool, and training in Engineering, Heavy Equipment Operation or Systems Operation.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+    }
+  }
+}

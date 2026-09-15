@@ -1,0 +1,30 @@
+{
+  "_id": "c88yxy2dVLE2BgYK",
+  "_key": "!items!c88yxy2dVLE2BgYK",
+  "name": "Fort(e)",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "might"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Athlétisme",
+      "Intimidation",
+      "",
+      ""
+    ],
+    "description": "<p>Physiquement puissant(e) et pleinement conscient(e) de l'être, tu mets ta force à profit dans presque tout ce que tu entreprends.</p><p><em>Tu gagnes +2 à ta Réserve de Puissance, et un entrainement en Athlétisme ou Intimidation.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Construit sous la Cypher Open License à partir du contenu du Cypher Reference Document (CRD)."
+    }
+  }
+}

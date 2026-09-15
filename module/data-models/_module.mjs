@@ -17,3 +17,4 @@ export { default as CypherEquipmentData } from "./item-equipment.mjs";
 export { default as CypherArmorData } from "./item-armor.mjs";
 export { default as CypherAttackData } from "./item-attack.mjs";
 export { default as CypherShieldData } from "./item-shield.mjs";
+export { default as CypherDescriptorData } from "./item-descriptor.mjs";

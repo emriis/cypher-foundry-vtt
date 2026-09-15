@@ -1,0 +1,30 @@
+{
+  "_id": "oq4isaNxDGmSTpLG",
+  "_key": "!items!oq4isaNxDGmSTpLG",
+  "name": "Honorable",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "might"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Charm",
+      "Philosophy",
+      "",
+      ""
+    ],
+    "description": "<p>Trustworthy and forthright, you try to do what's right even when it costs you something.</p><p><em>You gain +2 to your Might Pool, and training in Charm or Philosophy.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+    }
+  }
+}

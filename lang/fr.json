@@ -245,6 +245,25 @@
       "New": "Nouveau : {type}"
     },
 
+    "Descriptor": {
+      "StatOptions": "Choix de caractéristique",
+      "StatOptionsHint": "Réserve(s) auxquelles ce Descripteur peut ajouter son bonus. Coche deux caractéristiques (ex. Célérité ou Puissance) si le texte du CRD propose un choix.",
+      "StatAmount": "Bonus de Réserve",
+      "SkillOptions": "Choix de compétence",
+      "SkillOptionsHint": "Jusqu'à quatre noms de compétences au choix (laisse les emplacements en trop vides). Une option \"Autre\" est toujours proposée en plus, pour couvrir les formulations du CRD du type \"ou similaire\".",
+      "ApplyPrompt": "Applique le descripteur {name} à ce personnage.",
+      "ApplyTitle": "Appliquer le Descripteur : {name}",
+      "ChooseStat": "Ajouter le bonus à",
+      "ChooseSkill": "Devenir entrainé(e) en",
+      "SkillCustomOption": "Autre (préciser ci-dessous)",
+      "SkillCustomLabel": "Nom de la compétence",
+      "Applied": "Descripteur appliqué : {name}",
+      "StatNote": "+{amount} à la Réserve de {stat}.",
+      "SkillGranted": "Entrainé(e) en {name}.",
+      "SkillUpgraded": "{name} est maintenant au niveau : {level}.",
+      "GrantedFrom": "Accordé par le Descripteur : {name}"
+    },
+
     "Import": {
       "Button": "Importer (Character Builder)",
       "Title": "Importer un export du Character Builder",
@@ -424,7 +443,8 @@
       "equipment": "Équipement",
       "attack": "Attaque",
       "armor": "Armure",
-      "shield": "Bouclier"
+      "shield": "Bouclier",
+      "descriptor": "Descripteur"
     }
   }
 }

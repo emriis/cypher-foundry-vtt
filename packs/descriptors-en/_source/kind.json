@@ -1,0 +1,30 @@
+{
+  "_id": "OstLY3FepRnbDbhv",
+  "_key": "!items!OstLY3FepRnbDbhv",
+  "name": "Kind",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Charm",
+      "Healing",
+      "",
+      ""
+    ],
+    "description": "<p>You see things from other people's point of view easily, and treat them with patience because of it.</p><p><em>You gain +2 to your Intellect Pool, and training in Charm or Healing.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "_id": "yOGJ87bXOz1QeJSG",
+  "_key": "!items!yOGJ87bXOz1QeJSG",
+  "name": "Compassionate",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Animal Care",
+      "Healing",
+      "",
+      ""
+    ],
+    "description": "<p>Helping others is what drives you, and you're at your best tending to someone else's wounds or troubles.</p><p><em>You gain +2 to your Intellect Pool, and training in Animal Care or Healing.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+    }
+  }
+}

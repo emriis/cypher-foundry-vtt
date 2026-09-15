@@ -245,6 +245,25 @@
       "New": "New {type}"
     },
 
+    "Descriptor": {
+      "StatOptions": "Stat Choices",
+      "StatOptionsHint": "Which Pool(s) this Descriptor can add its bonus to. Pick two (e.g. Speed or Might) if the CRD text offers a choice.",
+      "StatAmount": "Pool Bonus",
+      "SkillOptions": "Skill Choices",
+      "SkillOptionsHint": "Up to four skill names to choose from (leave extra slots blank). An \"Other\" option is always offered too, to cover the CRD's \"...or similar\" wording.",
+      "ApplyPrompt": "Apply the {name} descriptor to this character.",
+      "ApplyTitle": "Apply Descriptor: {name}",
+      "ChooseStat": "Add the bonus to",
+      "ChooseSkill": "Become trained in",
+      "SkillCustomOption": "Other (specify below)",
+      "SkillCustomLabel": "Skill name",
+      "Applied": "Descriptor Applied: {name}",
+      "StatNote": "+{amount} to the {stat} Pool.",
+      "SkillGranted": "Trained in {name}.",
+      "SkillUpgraded": "{name} is now at level: {level}.",
+      "GrantedFrom": "Granted from Descriptor: {name}"
+    },
+
     "Import": {
       "Button": "Import (Character Builder)",
       "Title": "Import a Character Builder export",
@@ -424,7 +443,8 @@
       "equipment": "Equipment",
       "attack": "Attack",
       "armor": "Armor",
-      "shield": "Shield"
+      "shield": "Shield",
+      "descriptor": "Descriptor"
     }
   }
 }

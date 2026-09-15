@@ -1,0 +1,30 @@
+{
+  "_id": "5ujlWrJwT7GZScSo",
+  "_key": "!items!5ujlWrJwT7GZScSo",
+  "name": "Robuste",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "might"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Soin animalier",
+      "Survie en extérieur",
+      "",
+      ""
+    ],
+    "description": "<p>Des années passées près de la nature t'ont rendu(e) endurci(e), débrouillard(e), et à l'aise en pleine nature.</p><p><em>Tu gagnes +2 à ta Réserve de Puissance, et un entrainement en Soin animalier ou Survie en extérieur.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Construit sous la Cypher Open License à partir du contenu du Cypher Reference Document (CRD)."
+    }
+  }
+}
