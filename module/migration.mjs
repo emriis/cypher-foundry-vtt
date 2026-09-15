@@ -1,25 +1,18 @@
 /**
- * Migrations de schéma — suit le modèle du système dnd5e : chaque acteur/objet stocke la
- * version du système avec laquelle il a été mis à jour pour la dernière fois (drapeau
- * `flags.cypher.schemaVersion`) ; si elle est antérieure à `needsMigrationVersion` (déclaré
- * dans system.json), on fait tourner les fonctions de migration correspondantes.
+ * Schema migration support for persisted Cypher documents.
  *
- * Schema migrations — follows the dnd5e system's pattern: every actor/item stores the system
- * version it was last updated against (`flags.cypher.schemaVersion` flag); if it's older than
- * `needsMigrationVersion` (declared in system.json), the matching migration functions run.
- *
- * Ce fichier est un point de départ volontairement minimal : aucune migration concrète n'est
- * encore nécessaire (V1 du système, aucun monde existant). Ajoutez une fonction migrateToX()
- * et un appel dans migrateWorld() à chaque futur changement de schéma qui casse la
- * compatibilité avec des données déjà enregistrées.
- * This file is a deliberately minimal starting point: no concrete migration is needed yet
- * (system V1, no existing worlds). Add a migrateToX() function and a call in migrateWorld()
- * for every future schema change that breaks compatibility with already-saved data.
+ * Each actor and item can store the system version it was last migrated against
+ * in `flags.cypher.schemaVersion`. Add a `migrateToX` step and invoke it from
+ * `migrateWorld` whenever a schema change is incompatible with saved data.
  */
 
 /**
- * Lance la migration du monde si nécessaire. À appeler dans le hook "ready", MJ uniquement.
- * Runs world migration if needed. Call this in the "ready" hook, GM only.
+ * Runs pending world migrations.
+ *
+ * This entry point is intended to be called from the Foundry `ready` hook and
+ * performs migrations only when the current user is a Game Master.
+ *
+ * @returns {Promise<void>}
  */
 export async function migrateWorld() {
   if (!game.user.isGM) return;
@@ -41,12 +34,11 @@ export async function migrateWorld() {
     try {
       await migrateActor(actor);
     } catch (err) {
-      console.error(`Cypher | Échec de la migration de l'acteur ${actor.name}`, err);
+      console.error(`Cypher | Actor migration failed for ${actor.name}`, err);
     }
   }
 
-  // Migre aussi les acteurs/objets à l'intérieur des compendiums non verrouillés
-  // Also migrates actors/items inside unlocked compendium packs
+  // Also migrate actors/items stored in unlocked compendium packs.
   for (const pack of game.packs) {
     if (pack.locked || !["Actor", "Item"].includes(pack.documentName)) continue;
     const documents = await pack.getDocuments();
@@ -54,7 +46,7 @@ export async function migrateWorld() {
       try {
         if (doc.documentName === "Actor") await migrateActor(doc);
       } catch (err) {
-        console.error(`Cypher | Échec de la migration de ${doc.name} (${pack.collection})`, err);
+        console.error(`Cypher | Migration failed for ${doc.name} (${pack.collection})`, err);
       }
     }
   }
@@ -64,15 +56,17 @@ export async function migrateWorld() {
 }
 
 /**
- * Migre un acteur individuel. Ajoutez vos appels de migration concrets ici.
- * Migrates a single actor. Add your concrete migration calls here.
+ * Migrates one actor and records the current migration version.
+ *
+ * Keep concrete schema transformations in this function as the data model evolves.
+ *
+ * @param {Actor} actor Actor document to migrate.
+ * @returns {Promise<void>}
  */
 async function migrateActor(actor) {
   const updates = {};
 
-  // Exemple de structure pour une future migration :
-  // Example structure for a future migration:
-  //
+  // Example future migration:
   // if (foundry.utils.isNewerVersion("0.2.0", actor.getFlag("cypher", "schemaVersion") ?? "0.0.0")) {
   //   updates["system.someOldField"] = undefined;
   //   updates["system.someNewField"] = actor.system.someOldField ?? defaultValue;

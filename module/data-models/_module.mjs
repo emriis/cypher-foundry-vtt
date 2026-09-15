@@ -1,3 +1,9 @@
+/**
+ * Public exports for all Cypher actor and item data models.
+ *
+ * Keep model registration centralized here so the system entry point can
+ * import the complete model set from a single module.
+ */
 export { default as CypherPCData } from "./actor-pc.mjs";
 export { default as CypherNPCData } from "./actor-npc.mjs";
 export { default as CypherCommunityData } from "./actor-community.mjs";

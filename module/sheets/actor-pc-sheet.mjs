@@ -1,6 +1,12 @@
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
 
+/**
+ * Foundry VTT sheet for player characters using the Cypher system.
+ *
+ * Prepares template context and exposes UI actions for rolls, inventory,
+ * advancement, recovery, and other player-character interactions.
+ */
 export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
 
   static DEFAULT_OPTIONS = {
@@ -61,6 +67,13 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
 
   tabGroups = { primary: "main" };
 
+  /**
+   * Prepares the actor, item collections, tabs, and enriched text used by the
+   * sheet templates.
+   *
+   * @param {object} options Foundry application context options.
+   * @returns {Promise<object>} Template context.
+   */
   async _prepareContext(options) {
     const context = await super._prepareContext(options);
     context.system = this.actor.system;
@@ -83,6 +96,13 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     return context;
   }
 
+  /**
+   * Adds the active tab state to an individual template-part context.
+   *
+   * @param {string} partId Sheet part identifier.
+   * @param {object} context Current template context.
+   * @returns {Promise<object>} Updated part context.
+   */
   async _preparePartContext(partId, context) {
     context = await super._preparePartContext(partId, context);
     if (["main", "skills", "abilities", "inventory", "advancement", "biography"].includes(partId)) {
@@ -95,6 +115,12 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
   /*  Actions                                       */
   /* -------------------------------------------- */
 
+  /**
+   * Rolls a task for the selected stat after collecting roll options.
+   *
+   * @param {PointerEvent} event Action event.
+   * @param {HTMLElement} target Action target element.
+   */
   static async #onRollStat(event, target) {
     const stat = target.dataset.stat;
     const difficulty = Number(target.dataset.difficulty ?? 3);
@@ -104,10 +130,14 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
   }
 
   /**
-   * Boîte de dialogue partagée pour choisir difficulté / effort / atouts / coup de chance,
-   * utilisée à la fois pour les jets de stat et les jets d'attaque.
-   * Shared dialog to choose difficulty / effort / assets / lucky shot,
-   * used for both stat rolls and attack rolls.
+   * Opens the shared roll-options dialog used by task and attack rolls.
+   *
+   * @param {Actor} actor PC actor being rolled.
+   * @param {object} [options] Roll configuration.
+   * @param {number} [options.difficulty=3] Initial difficulty.
+   * @param {boolean} [options.isAttack=false] Whether to expose attack-only
+   *   options such as Lucky Shot.
+   * @returns {Promise<object|null>} Selected roll options, or `null` if cancelled.
    */
   static async #promptRollOptions(actor, { difficulty = 3, isAttack = false } = {}) {
     const maxDifficulty = actor.system.maxDifficulty ?? 10;
@@ -160,21 +190,45 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     });
   }
 
+  /**
+   * Starts a recovery roll for the selected recovery interval.
+   *
+   * @param {PointerEvent} event Action event.
+   * @param {HTMLElement} target Action target element.
+   */
   static async #onRollRecovery(event, target) {
     const interval = target.dataset.interval;
     await this.actor.rollRecovery(interval);
   }
 
+  /**
+   * Uses the selected cypher item.
+   *
+   * @param {PointerEvent} event Action event.
+   * @param {HTMLElement} target Action target element.
+   */
   static async #onUseCypher(event, target) {
     const item = this.actor.items.get(target.dataset.itemId);
     await item?.useCypher();
   }
 
+  /**
+   * Rolls the depletion check for the selected item.
+   *
+   * @param {PointerEvent} event Action event.
+   * @param {HTMLElement} target Action target element.
+   */
   static async #onRollDepletion(event, target) {
     const item = this.actor.items.get(target.dataset.itemId);
     await item?.rollDepletion();
   }
 
+  /**
+   * Collects attack roll options and delegates the roll to the selected attack item.
+   *
+   * @param {PointerEvent} event Action event.
+   * @param {HTMLElement} target Action target element.
+   */
   static async #onRollAttack(event, target) {
     const item = this.actor.items.get(target.dataset.itemId);
     if (!item) return;
@@ -183,13 +237,18 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     await item.rollAttack(result);
   }
 
+  /**
+   * Collects defense options and resolves a Block or Dodge roll.
+   *
+   * @param {PointerEvent} event Action event.
+   * @param {HTMLElement} target Action target element.
+   */
   static async #onRollDefense(event, target) {
     const defenseType = target.dataset.defenseType; // "block" or "dodge"
     const maxDifficulty = this.actor.system.maxDifficulty ?? 10;
     const maxEffort = this.actor.system.effort ?? 1;
 
-    // Boucliers équipés et non détruits : uniquement pertinent pour un Blocage
-    // Equipped, unbroken shields: only relevant for a Block
+    // Only equipped, unbroken shields can contribute to a Block.
     const shields = defenseType === "block"
       ? this.actor.items.filter(i => i.type === "shield" && i.system.equipped && !i.system.broken)
       : [];
@@ -258,10 +317,22 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     await this.actor.rollDefense(defenseType, result);
   }
 
+  /**
+   * Applies one point of damage to the actor's equipped armor.
+   *
+   * @param {PointerEvent} event Action event.
+   * @param {HTMLElement} target Action target element.
+   */
   static async #onDamageArmor(event, target) {
     await this.actor.damageArmor(1);
   }
 
+  /**
+   * Confirms and repairs the actor's equipped armor.
+   *
+   * @param {PointerEvent} event Action event.
+   * @param {HTMLElement} target Action target element.
+   */
   static async #onRepairArmor(event, target) {
     const confirmed = await foundry.applications.api.DialogV2.confirm({
       window: { title: game.i18n.localize("CYPHER.Armor.Repair") },
@@ -270,6 +341,12 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     if (confirmed) await this.actor.repairArmor();
   }
 
+  /**
+   * Prompts for a player intrusion description and applies its XP transaction.
+   *
+   * @param {PointerEvent} event Action event.
+   * @param {HTMLElement} target Action target element.
+   */
   static async #onPlayerIntrusion(event, target) {
     const content = `
       <div class="form-group">
@@ -287,6 +364,12 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     if (description !== null && description !== undefined) await this.actor.usePlayerIntrusion(description);
   }
 
+  /**
+   * Collects advancement-specific choices and purchases the selected slot.
+   *
+   * @param {PointerEvent} event Action event.
+   * @param {HTMLElement} target Action target element.
+   */
   static async #onPurchaseAdvancement(event, target) {
     const index = Number(target.dataset.slot);
     const slot = this.actor.system.advancementSlots[index];
@@ -373,11 +456,23 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     await this.actor.purchaseAdvancementSlot(index, extra);
   }
 
+  /**
+   * Attempts to rally the selected wound severity.
+   *
+   * @param {PointerEvent} event Action event.
+   * @param {HTMLElement} target Action target element.
+   */
   static async #onRallyWound(event, target) {
     const severity = target.dataset.severity;
     await this.actor.rallyWound(severity);
   }
 
+  /**
+   * Toggles the optional second descriptor.
+   *
+   * @param {PointerEvent} event Action event.
+   * @param {HTMLElement} target Action target element.
+   */
   static async #onToggleSecondDescriptor(event, target) {
     const enabled = this.actor.system.hasSecondDescriptor;
     if (enabled) {
@@ -387,6 +482,12 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     }
   }
 
+  /**
+   * Toggles the optional second focus.
+   *
+   * @param {PointerEvent} event Action event.
+   * @param {HTMLElement} target Action target element.
+   */
   static async #onToggleSecondFocus(event, target) {
     const enabled = this.actor.system.hasSecondFocus;
     if (enabled) {
@@ -396,6 +497,12 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     }
   }
 
+  /**
+   * Prompts for and adds a player-defined stat.
+   *
+   * @param {PointerEvent} event Action event.
+   * @param {HTMLElement} target Action target element.
+   */
   static async #onAddCustomStat(event, target) {
     const content = `
       <div class="form-group">
@@ -415,6 +522,12 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     if (label) await this.actor.addCustomStat(label);
   }
 
+  /**
+   * Confirms and removes the selected custom stat.
+   *
+   * @param {PointerEvent} event Action event.
+   * @param {HTMLElement} target Action target element.
+   */
   static async #onDeleteCustomStat(event, target) {
     const id = target.closest("[data-stat-id]").dataset.statId;
     const confirmed = await foundry.applications.api.DialogV2.confirm({
@@ -424,6 +537,12 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     if (confirmed) await this.actor.deleteCustomStat(id);
   }
 
+  /**
+   * Prompts for and adds a player-defined custom field.
+   *
+   * @param {PointerEvent} event Action event.
+   * @param {HTMLElement} target Action target element.
+   */
   static async #onAddCustomField(event, target) {
     const content = `
       <div class="form-group">
@@ -454,6 +573,12 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     if (result?.label) await this.actor.addCustomField(result.label, result.fieldType);
   }
 
+  /**
+   * Confirms and removes the selected custom field.
+   *
+   * @param {PointerEvent} event Action event.
+   * @param {HTMLElement} target Action target element.
+   */
   static async #onDeleteCustomField(event, target) {
     const id = target.closest("[data-field-id]").dataset.fieldId;
     const confirmed = await foundry.applications.api.DialogV2.confirm({
@@ -463,17 +588,35 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     if (confirmed) await this.actor.deleteCustomField(id);
   }
 
+  /**
+   * Creates a new embedded item of the requested type.
+   *
+   * @param {PointerEvent} event Action event.
+   * @param {HTMLElement} target Action target element.
+   */
   static async #onItemCreate(event, target) {
     const type = target.dataset.type;
     const name = game.i18n.format("CYPHER.Item.New", { type: game.i18n.localize(`TYPES.Item.${type}`) });
     await this.actor.createEmbeddedDocuments("Item", [{ name, type }]);
   }
 
+  /**
+   * Opens the selected embedded item's sheet.
+   *
+   * @param {PointerEvent} event Action event.
+   * @param {HTMLElement} target Action target element.
+   */
   static async #onItemEdit(event, target) {
     const item = this.actor.items.get(target.closest("[data-item-id]").dataset.itemId);
     item?.sheet.render(true);
   }
 
+  /**
+   * Confirms and deletes the selected embedded item.
+   *
+   * @param {PointerEvent} event Action event.
+   * @param {HTMLElement} target Action target element.
+   */
   static async #onItemDelete(event, target) {
     const li = target.closest("[data-item-id]");
     const item = this.actor.items.get(li.dataset.itemId);
@@ -485,13 +628,18 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     if (confirmed) await item.delete();
   }
 
+  /**
+   * Toggles an item's equipped state and enforces the single-equipped-armor rule.
+   *
+   * @param {PointerEvent} event Action event.
+   * @param {HTMLElement} target Action target element.
+   */
   static async #onToggleEquipped(event, target) {
     const item = this.actor.items.get(target.closest("[data-item-id]").dataset.itemId);
     if (!item) return;
     const newState = !item.system.equipped;
 
-    // Une seule armure peut être équipée à la fois : on désactive les autres avant d'activer
-    // celle-ci. Only one armor can be equipped at a time: unequip the others before equipping this one.
+    // Only one Armor item may be equipped at a time.
     if (item.type === "armor" && newState) {
       const others = this.actor.items.filter(i => i.type === "armor" && i.id !== item.id && i.system.equipped);
       if (others.length) {
