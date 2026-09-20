@@ -1,0 +1,53 @@
+{
+  "_id": "n2kf6GkpcrWUi2DN",
+  "_key": "!items!n2kf6GkpcrWUi2DN",
+  "name": "Noble Warrior",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Fantasy",
+    "subgenre": "Epic Fantasy",
+    "poolBonuses": {
+      "might": 2,
+      "speed": 2,
+      "intellect": 0
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 3,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": false,
+    "freeArmor": true,
+    "skillOptions": [],
+    "abilities": [
+      {
+        "name": "Expert Combatant",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on."
+      }
+    ],
+    "statOptions": [
+      "might",
+      "intellect"
+    ],
+    "description": "<p>A Epic Fantasy Type focused on noble warrior archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Epic Fantasy. Primary Pools: might, intellect.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

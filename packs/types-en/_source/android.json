@@ -1,0 +1,83 @@
+{
+  "_id": "42r1hx6a6x7XwEz0",
+  "_key": "!items!42r1hx6a6x7XwEz0",
+  "name": "Android",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Science Fiction",
+    "subgenre": "Space Opera",
+    "poolBonuses": {
+      "might": 1,
+      "speed": 1,
+      "intellect": 2
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 2,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": true,
+    "freeArmor": true,
+    "skillOptions": [],
+    "abilities": [
+      {
+        "name": "Built to Hack",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2
+        },
+        "description": "When you roll to hack an unintelligent computer or machine and your roll is less than a 9, treat the roll as a 9. (This means you don’t get a GM intrusion if you roll a 1.) Hacking tasks—which you can initiate using your ability to wirelessly network or by directly connecting to the target machine—include breaking into secure databases, taking temporary control of remote turrets, unlocking electronically secured entrances, and so on."
+      },
+      {
+        "name": "Effort",
+        "tier": 1,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Increase the minimum number rolled for this ability by 3."
+      },
+      {
+        "name": "Flex Skill",
+        "tier": 3,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Choose one task (other than an attack or defense skill) on which you will concentrate. For the rest of the day, you’re trained in that task. You can’t use this ability with a skill in which you’re already trained to become specialized. This ability refreshes when you use a ten-hour recovery. Enabler."
+      },
+      {
+        "name": "Machine Not Flesh",
+        "tier": 3,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "You are a sophisticated, intelligent machine with a generally humanoid shape; work with your GM to determine specifics. This gives you the following benefits:"
+      }
+    ],
+    "statOptions": [
+      "might",
+      "intellect"
+    ],
+    "description": "<p>A Space Opera Type focused on android archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Science Fiction. Subgenre: Space Opera. Primary Pools: might, intellect.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

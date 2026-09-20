@@ -1,0 +1,53 @@
+{
+  "_id": "R1EeFJsIvRySI9m5",
+  "_key": "!items!R1EeFJsIvRySI9m5",
+  "name": "Monk",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Fantasy",
+    "subgenre": "Dungeon Fantasy",
+    "poolBonuses": {
+      "might": 2,
+      "speed": 2,
+      "intellect": 0
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 3,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": false,
+    "freeArmor": false,
+    "skillOptions": [],
+    "abilities": [
+      {
+        "name": "No Need for Weapons",
+        "tier": 3,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Your unarmed attacks (such as punches, kicks, elbows, or knees) inflict an additional 2 damage."
+      }
+    ],
+    "statOptions": [
+      "might",
+      "speed"
+    ],
+    "description": "<p>A Dungeon Fantasy Type focused on monk archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Dungeon Fantasy. Primary Pools: might, speed.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "_id": "xRsw0HAFkWeZRK9C",
+  "_key": "!items!xRsw0HAFkWeZRK9C",
+  "name": "Ranger",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Fantasy",
+    "subgenre": "Dungeon Fantasy",
+    "poolBonuses": {
+      "might": 1,
+      "speed": 2,
+      "intellect": 1
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 3,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": false,
+    "freeArmor": true,
+    "skillOptions": [],
+    "abilities": [
+      {
+        "name": "Expert Tracker",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "You are trained in tracking."
+      },
+      {
+        "name": "Find the Way",
+        "tier": 6,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "When you are tracking a creature, have gotten lost, don’t know the first step to take to begin a journey, or are attempting to choose between two or more routes to take, you can ask your GM one question about the task and get a very short, helpful answer. Once you use this ability, you can’t use it again until after your next recovery. Action."
+      }
+    ],
+    "statOptions": [
+      "speed",
+      "intellect"
+    ],
+    "description": "<p>A Dungeon Fantasy Type focused on ranger archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Dungeon Fantasy. Primary Pools: speed, intellect.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

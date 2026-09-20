@@ -1,0 +1,63 @@
+{
+  "_id": "YHre761k7EWxE6Gi",
+  "_key": "!items!YHre761k7EWxE6Gi",
+  "name": "Scoundrel",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Science Fiction",
+    "subgenre": "Space Opera",
+    "poolBonuses": {
+      "might": 0,
+      "speed": 2,
+      "intellect": 2
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 2,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": false,
+    "freeArmor": true,
+    "skillOptions": [],
+    "abilities": [
+      {
+        "name": "Desperate Defense",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "While you have at least one moderate or one major wound, you can choose to enter a state of heightened awareness against threats. While in this state, you can’t use points from your Intellect Pool, but you add +1 to your Speed Edge and gain two assets to block and dodge tasks. If you choose to end the heightened state while you remain wounded, you can’t resume it again until after you use a recovery. Enabler."
+      },
+      {
+        "name": "Effort",
+        "tier": 1,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Increase the minimum number rolled for this ability by 3."
+      }
+    ],
+    "statOptions": [
+      "speed",
+      "intellect"
+    ],
+    "description": "<p>A Space Opera Type focused on scoundrel archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Science Fiction. Subgenre: Space Opera. Primary Pools: speed, intellect.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

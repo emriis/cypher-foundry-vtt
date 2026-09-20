@@ -1,0 +1,83 @@
+{
+  "_id": "Ic1i9V2ORmoT72Ce",
+  "_key": "!items!Ic1i9V2ORmoT72Ce",
+  "name": "Living God (Rank 5)",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Superheroes",
+    "subgenre": "Superheroes",
+    "poolBonuses": {
+      "might": 10,
+      "speed": 10,
+      "intellect": 10
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 3,
+      "moderate": 2,
+      "major": 0
+    },
+    "freeWeapons": true,
+    "freeArmor": true,
+    "skillOptions": [],
+    "abilities": [
+      {
+        "name": "Push on Through",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Instead of a ten-minute recovery, you have a second one-action recovery. Thus, your first two recoveries are one action, the third is one hour, and the fourth is ten hours."
+      },
+      {
+        "name": "Second Focus",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "You have two foci instead of one. At tier 1 you gain two abilities from each of them. When you advance to a new tier, you gain a new ability from each focus."
+      },
+      {
+        "name": "Super Combatant",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on."
+      },
+      {
+        "name": "Superheroics",
+        "tier": 6,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Choose one Pool: Might, Speed, or Intellect. For tasks using your chosen Pool, add your rank to the amount of Effort you can apply, allowing you to apply additional levels of Effort to tasks in that Pool."
+      }
+    ],
+    "statOptions": [
+      "might",
+      "intellect"
+    ],
+    "description": "<p>A Superheroes Type focused on living god (rank 5) archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Superheroes. Subgenre: Superheroes. Primary Pools: might, intellect.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

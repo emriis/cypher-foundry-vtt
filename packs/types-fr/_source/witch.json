@@ -1,0 +1,82 @@
+{
+  "_id": "yrA3XpA52bCEnkkV",
+  "_key": "!items!yrA3XpA52bCEnkkV",
+  "name": "Sorcière",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Fantasy",
+    "subgenre": "Swords & Sorcery",
+    "poolBonuses": {
+      "might": 0,
+      "speed": 1,
+      "intellect": 3
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 2,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": false,
+    "freeArmor": true,
+    "skillOptions": [],
+    "abilities": [
+      {
+        "name": "Brew Potion",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "You brew a potion. You can choose its effect from the Low-Power Manifest Cyphers table. Your brewed potion cypher counts toward your cypher limit (or to the limit of anyone you give the potion to), plus the allowance granted by Potion Cyphers. If you are already at your cypher limit, your choice of one of your current cyphers loses its magic so you can have the new potion cypher."
+      },
+      {
+        "name": "Evil Eye",
+        "tier": 6,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1
+        },
+        "description": "You make the sign of the evil eye, targeting a creature within short range with your Intellect attack. On a success, they are afflicted by a spirit of misfortune until you use a one-hour recovery. During this period, the GM afflicts them by introducing (or intruding, if against a PC) inconvenient events such as tripping, losing an item, missing an appointment, and so on."
+      },
+      {
+        "name": "Effort",
+        "tier": 6,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Increase the misfortune duration so it lasts until you use a ten-hour recovery. Inflict 2 Intellect damage per level of Effort on a  successful attack (in addition to the misfortune aspect of the ability)."
+      },
+      {
+        "name": "Potion Cyphers",
+        "tier": 3,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "You can bear two additional cyphers at a time as long as they are cyphers you created with Brew Potion."
+      }
+    ],
+    "statOptions": [
+      "intellect"
+    ],
+    "description": "<p>Un Type de Épées & Sorcellerie centré sur l'archétype sorcière, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Épées & Sorcellerie. Réserves principales : Intellect.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

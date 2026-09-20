@@ -1,0 +1,41 @@
+{
+  "_id": "6vVh6aUrO83BDTAM",
+  "_key": "!items!6vVh6aUrO83BDTAM",
+  "name": "Soigneur",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Science Fiction",
+    "subgenre": "Postapocalypse",
+    "poolBonuses": {
+      "might": 1,
+      "speed": 1,
+      "intellect": 2
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 2,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": false,
+    "freeArmor": true,
+    "skillOptions": [],
+    "abilities": [],
+    "statOptions": [
+      "intellect"
+    ],
+    "description": "<p>Un Type de Postapocalypse centré sur l'archétype soigneur, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Science-fiction. Sous-genre : Postapocalypse. Réserves principales : Intellect.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}
