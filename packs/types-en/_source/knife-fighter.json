@@ -1,0 +1,82 @@
+{
+  "_id": "WakPf2hXozURF5Uw",
+  "_key": "!items!WakPf2hXozURF5Uw",
+  "name": "Knife Fighter",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Fantasy",
+    "subgenre": "Swords & Sorcery",
+    "poolBonuses": {
+      "might": 0,
+      "speed": 4,
+      "intellect": 0
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 3,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": false,
+    "freeArmor": true,
+    "skillOptions": [],
+    "abilities": [
+      {
+        "name": "Expert Combatant",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on."
+      },
+      {
+        "name": "Deep Slice",
+        "tier": 6,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "The foe takes +2 damage."
+      },
+      {
+        "name": "Let Them Bleed",
+        "tier": 6,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "The wound bleeds; on your next turn, the foe takes 2 damage that ignores armor."
+      },
+      {
+        "name": "Gut Ripper GM intrusions",
+        "tier": 6,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Your knife gets stuck in your foe and slips from your grasp. Instead of hurting your foe, you accidentally inflict a minor wound on yourself. Your knife sheath is empty and you can’t complete the attack."
+      }
+    ],
+    "statOptions": [
+      "speed"
+    ],
+    "description": "<p>A Swords & Sorcery Type focused on knife fighter archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Swords & Sorcery. Primary Pools: speed.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

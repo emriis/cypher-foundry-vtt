@@ -52,7 +52,8 @@
       "attack": {},
       "armor": {},
       "shield": {},
-      "descriptor": {}
+      "descriptor": {},
+      "type": {}
     }
   },
   "packs": [
@@ -60,6 +61,24 @@
       "name": "descriptors-fr",
       "label": "Descripteurs (FR)",
       "path": "packs/descriptors-fr",
+      "type": "Item",
+      "system": "cypher",
+      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "flags": {}
+    },
+    {
+      "name": "types-fr",
+      "label": "Types (FR)",
+      "path": "packs/types-fr",
+      "type": "Item",
+      "system": "cypher",
+      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "flags": {}
+    },
+    {
+      "name": "types-en",
+      "label": "Types (EN)",
+      "path": "packs/types-en",
       "type": "Item",
       "system": "cypher",
       "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
@@ -75,7 +94,18 @@
       "flags": {}
     }
   ],
-  "packFolders": [],
+  "packFolders": [
+    {
+      "name": "Français",
+      "sorting": "a",
+      "packs": ["descriptors-fr", "types-fr"]
+    },
+    {
+      "name": "English",
+      "sorting": "a",
+      "packs": ["descriptors-en", "types-en"]
+    }
+  ],
   "primaryTokenAttribute": "stats.might.pool",
   "secondaryTokenAttribute": "stats.speed.pool",
   "grid": {

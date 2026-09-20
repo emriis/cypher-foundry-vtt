@@ -1,0 +1,73 @@
+{
+  "_id": "SGM1MyYDwiCSbYOc",
+  "_key": "!items!SGM1MyYDwiCSbYOc",
+  "name": "Enhanced Hero (Rank 2)",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Superheroes",
+    "subgenre": "Superheroes",
+    "poolBonuses": {
+      "might": 6,
+      "speed": 6,
+      "intellect": 2
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 3,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": true,
+    "freeArmor": true,
+    "skillOptions": [],
+    "abilities": [
+      {
+        "name": "No Need for Weapons",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Your unarmed attacks (such as punches, kicks, elbows, or knees) inflict an additional 2 damage."
+      },
+      {
+        "name": "Press Advantage",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "When your damage-dealing attack roll is 17 or higher, you deal +1 damage with the attack. If you roll a 19 or 20, you inflict the extra damage regardless of whether you choose to deal additional damage or take a special minor or major effect."
+      },
+      {
+        "name": "Superheroics",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Choose one Pool: Might, Speed, or Intellect. For tasks using your chosen Pool, add your rank to the amount of Effort you can apply, allowing you to apply additional levels of Effort to tasks in that Pool."
+      }
+    ],
+    "statOptions": [
+      "might",
+      "speed"
+    ],
+    "description": "<p>A Superheroes Type focused on enhanced hero (rank 2) archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Superheroes. Subgenre: Superheroes. Primary Pools: might, speed.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

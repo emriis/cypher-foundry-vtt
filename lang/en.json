@@ -263,6 +263,20 @@
       "SkillUpgraded": "{name} is now at level: {level}.",
       "GrantedFrom": "Granted from Descriptor: {name}"
     },
+    "Type": {
+      "Genre": "Genre",
+      "Subgenre": "Subgenre",
+      "StatOptions": "Primary Pools",
+      "AlreadyApplied": "A Type has already been applied to this character.",
+      "ApplyTitle": "Apply Type: {name}",
+      "ApplyPrompt": "Apply the mechanical benefits of {name} to this character?",
+      "ChooseEdgeStat": "Pool for the Edge bonus",
+      "ChooseSkill": "Granted skill",
+      "Applied": "Type applied: {name}",
+      "GrantedFrom": "Granted by Type: {name}",
+      "SkillGranted": "Trained in {name}.",
+      "SkillUpgraded": "{name} improved to {level}."
+    },
 
     "Import": {
       "Button": "Import (Character Builder)",

@@ -1,0 +1,93 @@
+{
+  "_id": "GyPCIzb4j6WJMCR8",
+  "_key": "!items!GyPCIzb4j6WJMCR8",
+  "name": "Sword Fighter",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Fantasy",
+    "subgenre": "Swords & Sorcery",
+    "poolBonuses": {
+      "might": 2,
+      "speed": 2,
+      "intellect": 0
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 3,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": false,
+    "freeArmor": true,
+    "skillOptions": [],
+    "abilities": [
+      {
+        "name": "Combat Prowess",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "You add +1 damage to one type of weapon attack of your choice: melee weapon attacks or ranged weapon attacks."
+      },
+      {
+        "name": "Expert Combatant",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on."
+      },
+      {
+        "name": "Eat Steel",
+        "tier": 6,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "The foe takes +2 damage."
+      },
+      {
+        "name": "Slice and Step",
+        "tier": 6,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "You reposition your foe or yourself an immediate distance away, easing your attack on your next turn (whether against that foe or a different one)."
+      },
+      {
+        "name": "Swing Through GM intrusions",
+        "tier": 6,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Your sword chips or bends, reducing its damage by 1 until repaired. Your sword goes flying, landing a short distance away. Your foe deflects your attack, and you inflict a moderate wound on yourself."
+      }
+    ],
+    "statOptions": [
+      "might",
+      "speed"
+    ],
+    "description": "<p>A Swords & Sorcery Type focused on sword fighter archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Swords & Sorcery. Primary Pools: might, speed.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "_id": "t1jz7vKhcoFVgi9s",
+  "_key": "!items!t1jz7vKhcoFVgi9s",
+  "name": "Archer (Fantasy épique)",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Fantasy",
+    "subgenre": "Epic Fantasy",
+    "poolBonuses": {
+      "might": 0,
+      "speed": 0,
+      "intellect": 0
+    },
+    "edgeChoice": 0,
+    "woundBonuses": {
+      "minor": 0,
+      "moderate": 0,
+      "major": 0
+    },
+    "freeWeapons": false,
+    "freeArmor": false,
+    "skillOptions": [],
+    "abilities": [],
+    "statOptions": [
+      "speed"
+    ],
+    "description": "<p>Un Type de Fantasy épique centré sur l'archétype archer (fantasy épique), tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Fantasy épique. Réserves principales : Célérité.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

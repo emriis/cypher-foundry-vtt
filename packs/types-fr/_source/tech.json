@@ -1,0 +1,72 @@
+{
+  "_id": "Sz0GzX0ZVfzQw7Z4",
+  "_key": "!items!Sz0GzX0ZVfzQw7Z4",
+  "name": "Technicien",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Science Fiction",
+    "subgenre": "Space Opera",
+    "poolBonuses": {
+      "might": 0,
+      "speed": 1,
+      "intellect": 3
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 2,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": false,
+    "freeArmor": true,
+    "skillOptions": [],
+    "abilities": [
+      {
+        "name": "Always Tinkering",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "You build a single-use technological device. You can choose its effect from the Low-Power Manifest Cyphers table. Your device counts toward your cypher limit (or the limit of anyone you give the device to). If you are already at your cypher limit, your choice of one of your current cyphers shorts out, had to be salvaged for parts to create the new device, or something similar, and the new device takes its place."
+      },
+      {
+        "name": "Craft Device",
+        "tier": 6,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5
+        },
+        "description": "You build a new—but somewhat fragile—device if you succeed at a difficulty 3 engineering task. You can choose its effect from the Low-Power Manifest Cyphers table. The resulting device is not a cypher, doesn’t count toward your cypher limit, and usually isn’t limited to one use; instead, it has a depletion of 1 in 1d6. The device is small enough that you can carry it."
+      },
+      {
+        "name": "Cypher Use",
+        "tier": 6,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "You can bear one additional cypher at a time."
+      }
+    ],
+    "statOptions": [
+      "intellect"
+    ],
+    "description": "<p>Un Type de Space Opera centré sur l'archétype technicien, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Science-fiction. Sous-genre : Space Opera. Réserves principales : Intellect.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

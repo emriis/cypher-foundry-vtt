@@ -263,6 +263,20 @@
       "SkillUpgraded": "{name} est maintenant au niveau : {level}.",
       "GrantedFrom": "Accordé par le Descripteur : {name}"
     },
+    "Type": {
+      "Genre": "Genre",
+      "Subgenre": "Sous-genre",
+      "StatOptions": "Réserves principales",
+      "AlreadyApplied": "Un Type a déjà été appliqué à ce personnage.",
+      "ApplyTitle": "Appliquer le Type : {name}",
+      "ApplyPrompt": "Appliquer les effets mécaniques de {name} à ce personnage ?",
+      "ChooseEdgeStat": "Réserve recevant le bonus d’Edge",
+      "ChooseSkill": "Compétence accordée",
+      "Applied": "Type appliqué : {name}",
+      "GrantedFrom": "Accordé par le Type : {name}",
+      "SkillGranted": "Compétence entraînée : {name}.",
+      "SkillUpgraded": "{name} passe au niveau {level}."
+    },
 
     "Import": {
       "Button": "Importer (Character Builder)",

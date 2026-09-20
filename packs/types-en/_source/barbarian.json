@@ -1,0 +1,83 @@
+{
+  "_id": "cBy4vHd3CHyNjLF7",
+  "_key": "!items!cBy4vHd3CHyNjLF7",
+  "name": "Barbarian",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Fantasy",
+    "subgenre": "Dungeon Fantasy",
+    "poolBonuses": {
+      "might": 3,
+      "speed": 1,
+      "intellect": 0
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 3,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": true,
+    "freeArmor": true,
+    "skillOptions": [],
+    "abilities": [
+      {
+        "name": "Frenzy",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1
+        },
+        "description": "While in combat, you can enter a state of frenzy. While in this state, you can’t use Intellect points, but you add +1 to your Might Edge and your Speed Edge. This effect lasts as long as you wish, but it ends if no combat is taking place within range of your senses."
+      },
+      {
+        "name": "Effort",
+        "tier": 1,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Ease your allies’ attacks against one foe of your choice for the rest of the combat."
+      },
+      {
+        "name": "Wilderness Survival",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "You know how to survive in unpeopled lands. After spending at least ten minutes in the wilderness and succeeding on a difficulty 2 outdoor survival task (or a difficulty your GM determines is appropriate to the area), you find something useful you were seeking. The useful thing might be shelter in the form of a cave or tree hollow, all the makings necessary to start a fire, a game animal you bring down with ease, or berries, mushrooms, root vegetables, or other food. You know how to best prepare any game or vegetation you find and are able to feed yourself and up to five allies."
+      },
+      {
+        "name": "Wounded Fury",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "While you have at least three moderate wounds or at least one major wound, you gain one free level of Effort you can apply to one of your attacks each round. Enabler."
+      }
+    ],
+    "statOptions": [
+      "might",
+      "speed"
+    ],
+    "description": "<p>A Dungeon Fantasy Type focused on barbarian archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Dungeon Fantasy. Primary Pools: might, speed.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

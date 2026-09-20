@@ -670,7 +670,37 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       await CypherPCSheet.#applyDroppedDescriptor(this.actor, item);
       return;
     }
+    if (item?.type === "type") {
+      await CypherPCSheet.#applyDroppedType(this.actor, item);
+      return;
+    }
     return super._onDropItem(event, data);
+  }
+
+  static async #applyDroppedType(actor, item) {
+    if (actor.type !== "pc") {
+      ui.notifications.warn(game.i18n.localize("CYPHER.Warning.NotPC"));
+      return;
+    }
+    const statOptions = item.system.statOptions ?? [];
+    const skillOptions = (item.system.skillOptions ?? []).filter(skill => skill?.trim());
+    const statField = item.system.edgeChoice && statOptions.length > 1 ? `
+      <div class="form-group"><label>${game.i18n.localize("CYPHER.Type.ChooseEdgeStat")}</label>
+        <select name="stat">${statOptions.map(stat => `<option value="${stat}">${game.i18n.localize(`CYPHER.Stat.${stat}`)}</option>`).join("")}</select>
+      </div>` : "";
+    const skillField = skillOptions.length ? `
+      <div class="form-group"><label>${game.i18n.localize("CYPHER.Type.ChooseSkill")}</label>
+        <select name="skillName">${skillOptions.map(skill => `<option value="${skill}">${skill}</option>`).join("")}</select>
+      </div>` : "";
+    const result = await foundry.applications.api.DialogV2.prompt({
+      window: { title: game.i18n.format("CYPHER.Type.ApplyTitle", { name: item.name }) },
+      content: `<p>${game.i18n.format("CYPHER.Type.ApplyPrompt", { name: item.name })}</p>${statField}${skillField}`,
+      ok: {
+        label: game.i18n.localize("CYPHER.Confirm.Add"),
+        callback: (event, button) => ({ stat: button.form.stat?.value ?? statOptions[0], skillName: button.form.skillName?.value })
+      }
+    });
+    if (result) await actor.applyType(item, result);
   }
 
   static async #applyDroppedDescriptor(actor, item) {

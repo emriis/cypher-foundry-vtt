@@ -1,0 +1,41 @@
+{
+  "_id": "w3ooBpVRVaftfvC0",
+  "_key": "!items!w3ooBpVRVaftfvC0",
+  "name": "Psion",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Science Fiction",
+    "subgenre": "Space Opera",
+    "poolBonuses": {
+      "might": 0,
+      "speed": 0,
+      "intellect": 4
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 2,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": false,
+    "freeArmor": false,
+    "skillOptions": [],
+    "abilities": [],
+    "statOptions": [
+      "intellect"
+    ],
+    "description": "<p>A Space Opera Type focused on psion archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Science Fiction. Subgenre: Space Opera. Primary Pools: intellect.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

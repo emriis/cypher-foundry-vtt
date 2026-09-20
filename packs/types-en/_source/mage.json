@@ -1,0 +1,72 @@
+{
+  "_id": "PJt0TDw12UnoBErw",
+  "_key": "!items!PJt0TDw12UnoBErw",
+  "name": "Mage",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Fantasy",
+    "subgenre": "Dungeon Fantasy",
+    "poolBonuses": {
+      "might": 0,
+      "speed": 1,
+      "intellect": 3
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 2,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": false,
+    "freeArmor": false,
+    "skillOptions": [],
+    "abilities": [
+      {
+        "name": "Blast",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1
+        },
+        "description": "You emit a short-range blast of energy inflicting 4 damage on a target with a successful attack roll. Work with the GM to determine the type of energy comprising your blast."
+      },
+      {
+        "name": "Effort",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Gain fine control over the effect until you use a ten-minute or longer recovery, varying the intensity as you wish within immediate range; for instance, you could use it to warm the area, cook food without burning it, provide bright light in the area, and so on. Increase the maximum level of material that you can cut through by 1."
+      },
+      {
+        "name": "Prepare Spell",
+        "tier": 3,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Each day you can pick a different magical effect and cast it as a spell. Choose a low-power manifest cypher. After spending ten minutes preparing, you gain that cypher’s effect as a spell (a character special ability). You can cast that spell as an action, costing 2 Intellect. This spell does not count toward your cypher limit. Unlike when using a cypher, you do not lose this spell after casting it."
+      }
+    ],
+    "statOptions": [
+      "intellect"
+    ],
+    "description": "<p>A Dungeon Fantasy Type focused on mage archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Dungeon Fantasy. Primary Pools: intellect.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

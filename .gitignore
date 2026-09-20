@@ -1,3 +1,12 @@
+# Generated release artifacts
+/dist/
+
+# Transient LevelDB files created while editing Foundry compendium packs
+/packs/**/LOCK
+/packs/**/LOG
+/packs/**/LOG.old
+/packs/**/*.log
+
 # Fichiers système d'exploitation / OS files
 .DS_Store
 Thumbs.db
@@ -11,18 +20,16 @@ desktop.ini
 # Node (si un jour un outillage de build/lint est ajouté)
 # Node (if build/lint tooling is ever added)
 node_modules/
-package-lock.json
-.DS_Store
 npm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
 
 # Scratch local / fichiers de test ponctuels non destinés au dépôt
 # Local scratch / one-off test files not meant for the repo
-test_*.mjs
 *.local.json
-
-# Archives générées lors de tests locaux
-# Archives generated during local testing
-*.zip
 
 
 

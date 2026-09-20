@@ -1,0 +1,72 @@
+{
+  "_id": "5XL1bKtOKhZNWFt2",
+  "_key": "!items!5XL1bKtOKhZNWFt2",
+  "name": "Nécromancien",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Fantasy",
+    "subgenre": "Dungeon Fantasy",
+    "poolBonuses": {
+      "might": 0,
+      "speed": 0,
+      "intellect": 4
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 2,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": false,
+    "freeArmor": true,
+    "skillOptions": [],
+    "abilities": [
+      {
+        "name": "Drain Life",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1
+        },
+        "description": "You send forth an ashy tendril reaching up to short range, inflicting 2 damage to a living target with a successful Intellect attack roll. You benefit from their drained life, healing a minor wound from yourself or an ally within immediate range. Action."
+      },
+      {
+        "name": "Tribulation",
+        "tier": 3,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1
+        },
+        "description": "You conjure pure spiritual energy to blast up to five undead, demons, and creatures of similar ilk of level 2 or less within short range. If you succeed on a separate Intellect attack against each foe, you choose whether they spend their next turn fleeing or lose their next turn."
+      },
+      {
+        "name": "Effort",
+        "tier": 3,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Increase the maximum level of the foe you can affect by 1. Specify some other action for the creatures to perform for one round, such as attacking a foe of your choice."
+      }
+    ],
+    "statOptions": [
+      "intellect"
+    ],
+    "description": "<p>Un Type de Fantasy de donjon centré sur l'archétype nécromancien, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Fantasy de donjon. Réserves principales : Intellect.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

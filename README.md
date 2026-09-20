@@ -1,5 +1,11 @@
 # Cypher — Système Foundry VTT (non-officiel) / Unofficial Foundry VTT System
 
+## Compatible with Cypher
+
+Le guide de contribution, avec les flux séparés pour l'implémentation, les
+compendiums, la CI et les releases, se trouve dans
+[`docs/development.md`](docs/development.md).
+
 ## 🇫🇷 À propos
 
 Ce système est construit à partir du **Cypher Reference Document (CRD)** publié par
@@ -167,11 +173,29 @@ niveau attendu par `system.json`, qui pointe directement vers `packs/<nom-du-pac
 fichier source doit contenir un champ `_key` au format `!items!<_id>`, sans quoi le CLI l'ignore
 silencieusement.)
 
+### Compendiums de Types (FR/EN)
+
+Les Types du document de référence sont générés dans deux compendiums bilingues, regroupés dans
+les dossiers de langue `Français` et `English` grâce à `packFolders`. Les 56 Types couvrent les
+sections Fantasy, Science-fiction et Super-héros du document, avec leurs variantes de sous-genre.
+Les noms français sont des traductions de travail à relire ; les descriptions sont des résumés
+originaux et non une copie du document source.
+
+Pour régénérer les sources :
+
+```
+npm run generate-types
+```
+
+Puis compiler les deux packs avec le CLI Foundry, en utilisant la même procédure que pour les
+Descripteurs : `types-en` depuis `packs/types-en/_source` et `types-fr` depuis
+`packs/types-fr/_source`. Le CLI Foundry n'est pas inclus dans ce dépôt.
+
 ### Ce qu'il reste à faire (V2)
 
 1. Tester la fiche de personnage en jeu, ajuster le layout/CSS selon vos goûts.
-2. Étendre le même principe (item "générateur" + compendium bilingue) aux **Types** et aux
-   **Foyers**, à partir du CRD, en respectant la Cypher Open License.
+2. Étendre le même principe (item "générateur" + compendium bilingue) aux **Foyers**, à partir
+  du CRD, en respectant la Cypher Open License.
 3. Ajouter des macros compendium pour automatiser des actions répétitives (application de dégâts
    de groupe, gestion des intrusions du MJ, etc.).
 4. Ajouter une feuille PNJ dédiée avec calcul automatique du nombre cible (niveau × 3).
@@ -368,3 +392,20 @@ skips it).
 See the French section above — same roadmap: playtest the sheet, then extend the same
 generator-item + bilingual-compendium approach to Types and Foci, add automation macros, and a
 dedicated NPC sheet.
+
+## Publier une version / Releasing a version
+
+Exécutez `./scripts/package.ps1` depuis PowerShell pour créer `dist/system.json` et
+`dist/system.zip`. L'archive ne contient que les fichiers nécessaires à Foundry, avec
+`system.json` à sa racine. Le script vérifie que la version et l'URL `download` du manifeste
+correspondent.
+
+Create and push a `v<version>` tag matching the `version` in `system.json` to publish a GitHub
+release automatically. The workflow attaches `system.json` and `system.zip`; Foundry uses the
+stable `manifest` URL to discover the latest version and the versioned `download` URL to install
+the matching archive.
+
+## Tests
+
+Run `npm test` to execute the unit tests for deterministic game rules. GitHub Actions runs this
+command for every push and pull request, and before packaging a tagged release.
