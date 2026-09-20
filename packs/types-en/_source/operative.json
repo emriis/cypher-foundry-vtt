@@ -1,0 +1,83 @@
+{
+  "_id": "iVNGKLu0a9L9e9EF",
+  "_key": "!items!iVNGKLu0a9L9e9EF",
+  "name": "Operative",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Science Fiction",
+    "subgenre": "Hard Science Fiction",
+    "poolBonuses": {
+      "might": 0,
+      "speed": 2,
+      "intellect": 2
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 2,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": false,
+    "freeArmor": true,
+    "skillOptions": [],
+    "abilities": [
+      {
+        "name": "Escape",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 2
+        },
+        "description": "When you roll to escape (such as slipping your restraints, squeezing through the bars, breaking the grip of a creature holding you, or pulling free from sucking quicksand) and your roll is less than a 9, treat the roll as a 9. (This means you don’t get a GM intrusion if you roll a 1.)"
+      },
+      {
+        "name": "Effort",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Increase the minimum number rolled for this ability by 3."
+      },
+      {
+        "name": "Spin Identity",
+        "tier": 3,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2
+        },
+        "description": "When you roll to convince an intelligent creature (including computers and surveillance systems) that you are someone or something other than who you actually are, and your roll is less than a 6, treat the roll as a 6. (This means you don’t get a GM intrusion if you roll a 1.)"
+      },
+      {
+        "name": "Effort",
+        "tier": 3,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Increase the minimum number rolled for this ability by 3."
+      }
+    ],
+    "statOptions": [
+      "speed",
+      "intellect"
+    ],
+    "description": "<p>A Hard Science Fiction Type focused on operative archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Science Fiction. Subgenre: Hard Science Fiction. Primary Pools: speed, intellect.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

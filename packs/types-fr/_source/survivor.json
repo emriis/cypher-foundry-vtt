@@ -1,0 +1,83 @@
+{
+  "_id": "aOvLsshDJYlR9BJA",
+  "_key": "!items!aOvLsshDJYlR9BJA",
+  "name": "Survivant",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Science Fiction",
+    "subgenre": "Postapocalypse",
+    "poolBonuses": {
+      "might": 1,
+      "speed": 2,
+      "intellect": 1
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 3,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": false,
+    "freeArmor": true,
+    "skillOptions": [],
+    "abilities": [
+      {
+        "name": "Despite My Wounds",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "While you have two or more moderate wounds or one major wound, you get a free reroll on one action each round (as if you had spent 1 XP). Enabler."
+      },
+      {
+        "name": "Enhanced Scavenging",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2
+        },
+        "description": "When you roll to scavenge the postapocalyptic landscape for something useful and your roll is less than a 9, treat the roll as a 9. (This means you don’t get a GM intrusion if you roll a 1.) Your enhanced effect persists until you take a ten-minute or longer recovery."
+      },
+      {
+        "name": "Effort",
+        "tier": 1,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Increase the minimum number rolled for this ability by 3."
+      },
+      {
+        "name": "Get Out",
+        "tier": 3,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "If you move at least an immediate distance away from the most obvious threat or toward what promises to offer safety, one task you attempt next round is eased. Enabler."
+      }
+    ],
+    "statOptions": [
+      "might",
+      "speed"
+    ],
+    "description": "<p>Un Type de Postapocalypse centré sur l'archétype survivant, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Science-fiction. Sous-genre : Postapocalypse. Réserves principales : Puissance, Célérité.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

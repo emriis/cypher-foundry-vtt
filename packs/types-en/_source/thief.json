@@ -1,0 +1,63 @@
+{
+  "_id": "RQi056TCzuh0Xe2d",
+  "_key": "!items!RQi056TCzuh0Xe2d",
+  "name": "Thief",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Fantasy",
+    "subgenre": "Swords & Sorcery",
+    "poolBonuses": {
+      "might": 0,
+      "speed": 3,
+      "intellect": 1
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 2,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": false,
+    "freeArmor": true,
+    "skillOptions": [],
+    "abilities": [
+      {
+        "name": "Effort",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Increase the minimum number rolled for this ability by 3."
+      },
+      {
+        "name": "Ferocious When Cornered",
+        "tier": 3,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "While you have at least three minor wounds, at least two moderate wounds, or at least one major wound, you gain one free level of Effort you can apply to one of your attacks each round. Enabler."
+      }
+    ],
+    "statOptions": [
+      "speed",
+      "intellect"
+    ],
+    "description": "<p>A Swords & Sorcery Type focused on thief archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Swords & Sorcery. Primary Pools: speed, intellect.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

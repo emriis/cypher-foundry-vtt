@@ -1,0 +1,41 @@
+{
+  "_id": "OnrTW1vwR86uLXxV",
+  "_key": "!items!OnrTW1vwR86uLXxV",
+  "name": "Tender",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Science Fiction",
+    "subgenre": "Postapocalypse",
+    "poolBonuses": {
+      "might": 1,
+      "speed": 1,
+      "intellect": 2
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 2,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": false,
+    "freeArmor": true,
+    "skillOptions": [],
+    "abilities": [],
+    "statOptions": [
+      "intellect"
+    ],
+    "description": "<p>A Postapocalypse Type focused on tender archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Science Fiction. Subgenre: Postapocalypse. Primary Pools: intellect.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

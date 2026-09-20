@@ -1,0 +1,93 @@
+{
+  "_id": "cjYfH8nWb46h1CDO",
+  "_key": "!items!cjYfH8nWb46h1CDO",
+  "name": "Pilote spatial",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Science Fiction",
+    "subgenre": "Space Opera",
+    "poolBonuses": {
+      "might": 0,
+      "speed": 2,
+      "intellect": 2
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 2,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": false,
+    "freeArmor": true,
+    "skillOptions": [],
+    "abilities": [
+      {
+        "name": "Disarming Shot",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "The attack inflicts 1 less damage, but your foe drops something they are holding in one hand (such as a weapon or shield). To retrieve the object, the foe must use an action."
+      },
+      {
+        "name": "Piercing Accuracy",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "The foe takes +2 damage."
+      },
+      {
+        "name": "Audacious Blast GM intrusions",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Your blaster runs out of power. Your blaster shot ricochets, hitting you or an ally for a moderate wound. The attack draws the attention of other hostiles."
+      },
+      {
+        "name": "Cypher Use",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "You can bear one additional cypher at a time."
+      },
+      {
+        "name": "Redline Maneuver GM intrusions",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "The FTL engines fail. The ship takes significant damage. Someone’s console within the ship explodes, inflicting a moderate wound."
+      }
+    ],
+    "statOptions": [
+      "speed",
+      "intellect"
+    ],
+    "description": "<p>Un Type de Space Opera centré sur l'archétype pilote spatial, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Science-fiction. Sous-genre : Space Opera. Réserves principales : Célérité, Intellect.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

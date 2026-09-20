@@ -1,0 +1,103 @@
+{
+  "_id": "F2t78BNPgxAMetLR",
+  "_key": "!items!F2t78BNPgxAMetLR",
+  "name": "Swashbuckler",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Fantasy",
+    "subgenre": "Epic Fantasy",
+    "poolBonuses": {
+      "might": 0,
+      "speed": 3,
+      "intellect": 1
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 3,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": false,
+    "freeArmor": true,
+    "skillOptions": [],
+    "abilities": [
+      {
+        "name": "Attack Flourish",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "When you attack, you add stylish moves, entertaining quips, or a certain something that entertains or impresses others. One creature you choose within short range who can see you gains an asset to their next task if taken within a round or two. Enabler."
+      },
+      {
+        "name": "Daring Lunge",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "The foe takes +2 damage."
+      },
+      {
+        "name": "Disarming Agility",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "The attack inflicts 1 less damage, but your foe drops something they are holding in one hand (such as a weapon or shield). To retrieve the dropped item, the foe must use an action."
+      },
+      {
+        "name": "Flamboyant Swordplay GM intrusions",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Your foe’s disarmed object strikes your ally for a minor wound. The tip of your weapon gets embedded in the floor or wall, requiring an action to free it. The attack impact jars you, hindering tasks with that hand until you use an action to shake it off."
+      },
+      {
+        "name": "Romantic Flair",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2
+        },
+        "description": "Your accompanying exuberant charm, bold confidence, perfectly timed bow, or suggestive wink means if your roll to charm or impress is less than a 9, treat the roll as a 9. (This means you don’t get a GM intrusion if you roll a 1.)"
+      },
+      {
+        "name": "Effort",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Increase the minimum number rolled for this ability by 3."
+      }
+    ],
+    "statOptions": [
+      "speed",
+      "intellect"
+    ],
+    "description": "<p>A Epic Fantasy Type focused on swashbuckler archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Epic Fantasy. Primary Pools: speed, intellect.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

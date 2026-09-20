@@ -1,0 +1,73 @@
+{
+  "_id": "7doSDZLDoR64oREK",
+  "_key": "!items!7doSDZLDoR64oREK",
+  "name": "Warrior",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Fantasy",
+    "subgenre": "Epic Fantasy",
+    "poolBonuses": {
+      "might": 3,
+      "speed": 1,
+      "intellect": 0
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 3,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": true,
+    "freeArmor": true,
+    "skillOptions": [],
+    "abilities": [
+      {
+        "name": "Combat Prowess",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "You add +1 damage to one type of weapon attack of your choice: melee weapon attacks or ranged weapon attacks."
+      },
+      {
+        "name": "Despite My Wounds",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "While you have two or more moderate wounds or one major wound, you get a free reroll on one action each round (as if you had spent 1 XP). Enabler."
+      },
+      {
+        "name": "Expert Combatant",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on."
+      }
+    ],
+    "statOptions": [
+      "might",
+      "speed"
+    ],
+    "description": "<p>A Epic Fantasy Type focused on warrior archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Epic Fantasy. Primary Pools: might, speed.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

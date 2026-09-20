@@ -235,6 +235,25 @@
   </div>
   {{/ifEquals}}
 
+  {{#ifEquals item.type "type"}}
+  <div class="form-group">
+    <label>{{localize 'CYPHER.Tier'}}</label>
+    <input name="system.tier" type="number" value="{{system.tier}}" min="1" max="6"/>
+  </div>
+  <div class="form-group">
+    <label>{{localize 'CYPHER.Type.Genre'}}</label>
+    <input name="system.genre" type="text" value="{{system.genre}}"/>
+  </div>
+  <div class="form-group">
+    <label>{{localize 'CYPHER.Type.Subgenre'}}</label>
+    <input name="system.subgenre" type="text" value="{{system.subgenre}}"/>
+  </div>
+  <div class="form-group">
+    <label>{{localize 'CYPHER.Type.StatOptions'}}</label>
+    <input name="system.statOptions" type="text" value="{{system.statOptions}}"/>
+  </div>
+  {{/ifEquals}}
+
 
   <div class="form-group description-group">
     <label>{{localize 'CYPHER.Description'}}</label>

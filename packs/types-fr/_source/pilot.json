@@ -1,0 +1,83 @@
+{
+  "_id": "7Okoc8TYct93PXLY",
+  "_key": "!items!7Okoc8TYct93PXLY",
+  "name": "Pilote",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Science Fiction",
+    "subgenre": "Hard Science Fiction",
+    "poolBonuses": {
+      "might": 0,
+      "speed": 1,
+      "intellect": 3
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 2,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": false,
+    "freeArmor": true,
+    "skillOptions": [],
+    "abilities": [
+      {
+        "name": "Born to Pilot",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2
+        },
+        "description": "When you roll to pilot a spacecraft and your roll is less than a 9, treat the roll as a 9. (This means you don’t get a GM intrusion if you roll a 1.) Spacecraft piloting tasks include specific maneuvers like safely docking the craft, turning or accelerating the ship gradually enough to avoid dangerously high gravity for sustained periods, noticing something unusual come up on the sensors, and so on."
+      },
+      {
+        "name": "Effort",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Increase the minimum number rolled for this ability by 3."
+      },
+      {
+        "name": "Expert Space Pilot",
+        "tier": 3,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "You are trained in piloting spacecraft."
+      },
+      {
+        "name": "Piloting Flourish",
+        "tier": 6,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "When you handle a spacecraft, your impressive piloting chops, your diverting quips, and/or a certain something in the way you accomplish a maneuver entertains or impresses others. One creature you choose on or near the spacecraft who can see you or is otherwise aware of your maneuver gains an asset to their next task if taken within a round or two."
+      }
+    ],
+    "statOptions": [
+      "speed",
+      "intellect"
+    ],
+    "description": "<p>Un Type de Science-fiction réaliste centré sur l'archétype pilote, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Science-fiction. Sous-genre : Science-fiction réaliste. Réserves principales : Célérité, Intellect.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

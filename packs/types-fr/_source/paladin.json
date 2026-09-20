@@ -1,0 +1,63 @@
+{
+  "_id": "2v1aUejpYmB3xSrz",
+  "_key": "!items!2v1aUejpYmB3xSrz",
+  "name": "Paladin",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Fantasy",
+    "subgenre": "Dungeon Fantasy",
+    "poolBonuses": {
+      "might": 3,
+      "speed": 0,
+      "intellect": 1
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 3,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": true,
+    "freeArmor": true,
+    "skillOptions": [],
+    "abilities": [
+      {
+        "name": "Combat Prowess",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "You add +1 damage to one type of weapon attack of your choice: melee weapon attacks or ranged weapon attacks."
+      },
+      {
+        "name": "Holy Succor",
+        "tier": 1,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1
+        },
+        "description": "While an ally within immediate range of you has at least three moderate wounds or at least one major wound, you can extend your divine grace, granting them one free level of Effort they can apply each round to an attack or defense roll. The divine grace they are afforded lasts until the wounds are healed or they use a ten-minute or longer recovery."
+      }
+    ],
+    "statOptions": [
+      "might",
+      "intellect"
+    ],
+    "description": "<p>Un Type de Fantasy de donjon centré sur l'archétype paladin, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Fantasy de donjon. Réserves principales : Puissance, Intellect.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

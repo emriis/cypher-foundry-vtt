@@ -1,0 +1,72 @@
+{
+  "_id": "9d1JRPKxjueVTHW1",
+  "_key": "!items!9d1JRPKxjueVTHW1",
+  "name": "Ingénieur",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Science Fiction",
+    "subgenre": "Hard Science Fiction",
+    "poolBonuses": {
+      "might": 0,
+      "speed": 1,
+      "intellect": 3
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 2,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": false,
+    "freeArmor": true,
+    "skillOptions": [],
+    "abilities": [
+      {
+        "name": "Expert Engineer",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "You are trained in engineering."
+      },
+      {
+        "name": "Repair",
+        "tier": 6,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "If you succeed on an engineering task (difficulty equal to the device’s level + 1), you temporarily repair a piece of broken equipment or an inactive power source to get a few more uses out of it."
+      },
+      {
+        "name": "Upgrade",
+        "tier": 6,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "If you succeed at a difficulty 3 engineering task, you make the device function about 25 percent above its rated specifications. When you take a ten-hour recovery, the device breaks, requiring a full repair (as opposed to another Modify Device task) to regain its original, unmodified function. For example, you could overclock a medium blaster so that it deals 1 additional damage, modify a food printer so that each cup of coffee made with it tastes better, modify a spacecraft’s engine so that its acceleration is improved by 25 percent, and so on."
+      }
+    ],
+    "statOptions": [
+      "intellect"
+    ],
+    "description": "<p>Un Type de Science-fiction réaliste centré sur l'archétype ingénieur, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Science-fiction. Sous-genre : Science-fiction réaliste. Réserves principales : Intellect.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

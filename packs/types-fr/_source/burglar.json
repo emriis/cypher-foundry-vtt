@@ -1,0 +1,73 @@
+{
+  "_id": "DUeXDIRJQnfSZ2oM",
+  "_key": "!items!DUeXDIRJQnfSZ2oM",
+  "name": "Cambrioleur",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Fantasy",
+    "subgenre": "Epic Fantasy",
+    "poolBonuses": {
+      "might": 0,
+      "speed": 2,
+      "intellect": 2
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 2,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": false,
+    "freeArmor": true,
+    "skillOptions": [],
+    "abilities": [
+      {
+        "name": "Effort",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Increase the minimum number rolled for this ability by 3."
+      },
+      {
+        "name": "Slip Into Shadow",
+        "tier": 3,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Even if in full view of a creature, your successful stealth task allows you to slip away from that creature and hide from view in a nearby shadow, behind a tree or furnishing, or in the next room as your action."
+      },
+      {
+        "name": "Effort",
+        "tier": 3,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Attempt to slip away from one additional target looking directly at you (attempt a separate stealth task against each)."
+      }
+    ],
+    "statOptions": [
+      "speed",
+      "intellect"
+    ],
+    "description": "<p>Un Type de Fantasy épique centré sur l'archétype cambrioleur, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Fantasy épique. Réserves principales : Célérité, Intellect.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

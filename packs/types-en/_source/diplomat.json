@@ -1,0 +1,62 @@
+{
+  "_id": "jAbj0CJpsXr2UY2Z",
+  "_key": "!items!jAbj0CJpsXr2UY2Z",
+  "name": "Diplomat",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Science Fiction",
+    "subgenre": "Hard Science Fiction",
+    "poolBonuses": {
+      "might": 0,
+      "speed": 1,
+      "intellect": 3
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 2,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": false,
+    "freeArmor": true,
+    "skillOptions": [],
+    "abilities": [
+      {
+        "name": "Connected",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2
+        },
+        "description": "You know people who get things done—not just respected people in positions of authority, but also a variety of online hackers and regular street criminals. These people are not necessarily your friends and might not be trustworthy, but they owe you a favor or two. When you use this ability, you remember or otherwise establish a level 2 contact you can reach out to in a specific location. You and your GM can work out the specifics."
+      },
+      {
+        "name": "Effort",
+        "tier": 1,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Increase the level of the new contact by 1."
+      }
+    ],
+    "statOptions": [
+      "intellect"
+    ],
+    "description": "<p>A Hard Science Fiction Type focused on diplomat archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Science Fiction. Subgenre: Hard Science Fiction. Primary Pools: intellect.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

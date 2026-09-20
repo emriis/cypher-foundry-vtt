@@ -1,0 +1,83 @@
+{
+  "_id": "0A8Aq3TzsoJbkwvK",
+  "_key": "!items!0A8Aq3TzsoJbkwvK",
+  "name": "Star des pouvoirs (Rang 2)",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Superheroes",
+    "subgenre": "Superheroes",
+    "poolBonuses": {
+      "might": 4,
+      "speed": 4,
+      "intellect": 6
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 3,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": false,
+    "freeArmor": true,
+    "skillOptions": [],
+    "abilities": [
+      {
+        "name": "Enhanced Energy",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "When you succeed on an important task using your powers as determined by your GM, you regain 4 points to your Intellect Pool. Each time you do, you regain 1 less point. This ability renews after you take a ten-hour recovery. Enabler."
+      },
+      {
+        "name": "Power Prowess",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "You inflict +1 damage with any attack you make involving your powers."
+      },
+      {
+        "name": "Superheroics",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Choose one Pool: Might, Speed, or Intellect. For tasks using your chosen Pool, add your rank to the amount of Effort you can apply, allowing you to apply additional levels of Effort to tasks in that Pool."
+      },
+      {
+        "name": "Wider Use",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "When you pick your focus, in addition to choosing two tier 1 abilities, you also choose one tier 2 ability."
+      }
+    ],
+    "statOptions": [
+      "might",
+      "intellect"
+    ],
+    "description": "<p>Un Type de Super-héros centré sur l'archétype star des pouvoirs (rang 2), tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Super-héros. Sous-genre : Super-héros. Réserves principales : Puissance, Intellect.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

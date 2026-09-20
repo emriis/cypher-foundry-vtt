@@ -1,0 +1,72 @@
+{
+  "_id": "ClePwau6r486Ln5U",
+  "_key": "!items!ClePwau6r486Ln5U",
+  "name": "Noble",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Science Fiction",
+    "subgenre": "Space Opera",
+    "poolBonuses": {
+      "might": 1,
+      "speed": 1,
+      "intellect": 2
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 2,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": false,
+    "freeArmor": true,
+    "skillOptions": [],
+    "abilities": [
+      {
+        "name": "Exorbitant Reach",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "You have an exorbitant item of your choice, such as a personal force field or a small spaceship. Work with your GM to determine something appropriate for the setting."
+      },
+      {
+        "name": "Retainer",
+        "tier": 3,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "You enjoy the services of a loyal level 2 follower who looks after your affairs, accounts, meals, clothing, and other trivial needs so you don’t have to. Work with your GM to flesh out the details of your retainer."
+      },
+      {
+        "name": "At higher tiers",
+        "tier": 5,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Your follower improves when you reach tier 3 and again at tier 5 (this is explained in the section about followers)."
+      }
+    ],
+    "statOptions": [
+      "intellect"
+    ],
+    "description": "<p>A Space Opera Type focused on noble archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Science Fiction. Subgenre: Space Opera. Primary Pools: intellect.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

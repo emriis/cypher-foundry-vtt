@@ -1,0 +1,113 @@
+{
+  "_id": "6lrBA0S14lV2ueqi",
+  "_key": "!items!6lrBA0S14lV2ueqi",
+  "name": "Cleric",
+  "type": "type",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "tier": 1,
+    "genre": "Fantasy",
+    "subgenre": "Dungeon Fantasy",
+    "poolBonuses": {
+      "might": 1,
+      "speed": 1,
+      "intellect": 2
+    },
+    "edgeChoice": 1,
+    "woundBonuses": {
+      "minor": 2,
+      "moderate": 1,
+      "major": 0
+    },
+    "freeWeapons": false,
+    "freeArmor": true,
+    "skillOptions": [],
+    "abilities": [
+      {
+        "name": "Combat Prowess",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "You add +1 damage to one type of weapon attack of your choice: melee weapon attacks or ranged weapon attacks."
+      },
+      {
+        "name": "Divine Radiance",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1
+        },
+        "description": "You channel divine influence to gain one of the following effects."
+      },
+      {
+        "name": "Blessing",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "A target within short range is charged with benevolent divine grace. At any point before they’ve taken their next ten-minute or longer recovery, they gain an asset to one action."
+      },
+      {
+        "name": "Effort",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Affect two additional targets."
+      },
+      {
+        "name": "Turn Undead",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Up to five undead creatures of level 2 or less within short range are blasted by divine radiance (make separate Intellect attack rolls against each target). Affected targets are repulsed and must spend their next turn fleeing your presence."
+      },
+      {
+        "name": "Effort",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Affect two additional targets. Increase the maximum level of undead you can affect by 1."
+      },
+      {
+        "name": "Healing Hand",
+        "tier": 3,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1
+        },
+        "description": "With a touch, you reduce one wound’s severity. A healed minor wound is gone completely, one moderate wound becomes a minor wound, or one major wound becomes a moderate wound. (If the character is at their limit of lower-severity wounds, you can’t use this ability to reduce the severity of their wounds.)"
+      }
+    ],
+    "statOptions": [
+      "might",
+      "intellect"
+    ],
+    "description": "<p>A Dungeon Fantasy Type focused on cleric archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Dungeon Fantasy. Primary Pools: might, intellect.</em></p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}
