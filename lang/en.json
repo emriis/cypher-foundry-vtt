@@ -68,7 +68,7 @@
       "accuracy": "Accuracy (attack rolls)",
       "dexterity": "Dexterity (dodge, initiative, acrobatics)",
       "flight": "Flight",
-      "healing": "Healing (bonus recovery)",
+      "healing": "Healing (one additional one-action recovery each day)",
       "increasedRange": "Increased Range",
       "intelligence": "Intelligence (Int. defense, knowledge)",
       "power": "Power (ability effects/damage)",
@@ -230,7 +230,7 @@
     "Attack": {
       "Title": "Attacks",
       "Type": "Attack Type",
-      "FreelyUsable": "Weapon mastered (otherwise -1 step)"
+      "FreelyUsable": "Freely usable weapon (otherwise hindered by 1 step)"
     },
     "AttackType": {
       "light": "Light (2 damage)",
@@ -316,9 +316,9 @@
       "MajorEffect": "major effect (natural 20)",
       "GMIntrusionFree": "free GM intrusion (natural 1)",
       "WoundHinder": "Hindered by {steps} steps from wounds",
-      "ExtraHinder": "Extra hindrance of {steps} steps (lucky shot / unfamiliar weapon)",
+      "ExtraHinder": "Extra hindrance of {steps} steps (lucky shot / weapon not freely usable)",
       "ArmorModifier": "Armor modifier: {steps} steps",
-      "ArmorSpeedHinder": "Hindered by {steps} steps (unfamiliar armor)",
+      "ArmorSpeedHinder": "Hindered by {steps} steps (armor not freely usable)",
       "CostRefunded": "The action's point cost was refunded (natural 20).",
       "Rallied": "{name} rallies and removes a {severity} wound."
     },
@@ -350,10 +350,10 @@
       "Reroll": "Reroll",
       "RerollResult": "Reroll Result",
       "RerollCompare": "Old result: {old} — New: {new} — Better of the two: {final}",
-      "RerollHint": "Reroll (1 XP): click the button that appears under any roll in chat, right after the roll (yours or another player's).",
-      "EditInHeader": "Edit the XP value directly in the sheet's header, at the top.",
+      "RerollHint": "Reroll (1 XP): click the button beneath any chat roll, yours or another player's.",
+      "EditInHeader": "Edit XP directly in the sheet header.",
       "PlayerIntrusion": "Player Intrusion",
-      "PlayerIntrusionPrompt": "Describe how you alter the situation in your favor",
+      "PlayerIntrusionPrompt": "Describe how you alter the situation in your favor.",
       "LuckyShot": "Lucky Shot",
       "LuckyShotHint": "hindered by 4 steps",
       "LuckyShotHint2": "Lucky Shot (1 XP): available directly in the attack roll dialog, to attempt a blind attack."

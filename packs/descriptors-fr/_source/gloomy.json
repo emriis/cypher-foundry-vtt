@@ -1,7 +1,7 @@
 {
   "_id": "hg31suU8V1SUNoMR",
   "_key": "!items!hg31suU8V1SUNoMR",
-  "name": "Sombre",
+  "name": "Pessimiste",
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
@@ -11,12 +11,12 @@
     ],
     "statAmount": 2,
     "skillOptions": [
-      "Histoire",
-      "Déceler les intentions",
+      "Discernement des motivations",
+      "",
       "",
       ""
     ],
-    "description": "<p>Tu t'attends au pire par principe, ce qui fait que tu es rarement déçu(e) quand cela arrive.</p><p><em>Tu gagnes +2 à ta Réserve de Célérité ou Puissance, et un entrainement en Histoire ou Déceler les intentions.</em></p>"
+    "description": "<p>Tu t'attends souvent au pire. Il t'est plus facile d'anticiper les problèmes et d'être surpris quand les choses se passent bien.</p><p><em>Tu gagnes +2 à ta Réserve de Célérité ou Puissance, et un entrainement en Discernement des motivations.</em></p>"
   },
   "folder": null,
   "sort": 0,

@@ -22,59 +22,76 @@ TYPES = [
     ("Bard", "Barde", "Fantasy", "Dungeon Fantasy", ["speed", "intellect"]),
     ("Cleric", "Clerc", "Fantasy", "Dungeon Fantasy", ["might", "intellect"]),
     ("Druid", "Druide", "Fantasy", "Dungeon Fantasy", ["might", "intellect"]),
-    ("Fighter", "Guerrier", "Fantasy", "Dungeon Fantasy", ["might", "speed"]),
+    ("Fighter", "Combattant", "Fantasy", "Dungeon Fantasy", ["might", "speed"]),
     ("Mage", "Mage", "Fantasy", "Dungeon Fantasy", ["intellect"]),
     ("Monk", "Moine", "Fantasy", "Dungeon Fantasy", ["might", "speed"]),
     ("Necromancer", "Nécromancien", "Fantasy", "Dungeon Fantasy", ["intellect"]),
     ("Paladin", "Paladin", "Fantasy", "Dungeon Fantasy", ["might", "intellect"]),
     ("Ranger", "Rôdeur", "Fantasy", "Dungeon Fantasy", ["speed", "intellect"]),
     ("Rogue", "Roublard", "Fantasy", "Dungeon Fantasy", ["speed", "intellect"]),
-    ("Archer", "Archer", "Fantasy", "Swords & Sorcery", ["speed"]),
-    ("Axe Fighter", "Combattant à la hache", "Fantasy", "Swords & Sorcery", ["might"]),
-    ("Barbarian (Swords & Sorcery)", "Barbare (Épées & Sorcellerie)", "Fantasy", "Swords & Sorcery", ["might"]),
-    ("Knife Fighter", "Combattant au couteau", "Fantasy", "Swords & Sorcery", ["speed"]),
-    ("Priest", "Prêtre", "Fantasy", "Swords & Sorcery", ["intellect"]),
-    ("Sorcerer", "Ensorceleur", "Fantasy", "Swords & Sorcery", ["intellect"]),
-    ("Sword Fighter", "Combattant à l'épée", "Fantasy", "Swords & Sorcery", ["might", "speed"]),
-    ("Thief", "Voleur", "Fantasy", "Swords & Sorcery", ["speed", "intellect"]),
-    ("Two-Weapon Fighter", "Combattant à deux armes", "Fantasy", "Swords & Sorcery", ["speed"]),
-    ("Witch", "Sorcière", "Fantasy", "Swords & Sorcery", ["intellect"]),
-    ("Archer (Epic Fantasy)", "Archer (Fantasy épique)", "Fantasy", "Epic Fantasy", ["speed"]),
-    ("Burglar", "Cambrioleur", "Fantasy", "Epic Fantasy", ["speed", "intellect"]),
-    ("Noble Warrior", "Guerrier noble", "Fantasy", "Epic Fantasy", ["might", "intellect"]),
-    ("Swashbuckler", "Spadassin", "Fantasy", "Epic Fantasy", ["speed", "intellect"]),
-    ("Warrior", "Guerrier", "Fantasy", "Epic Fantasy", ["might", "speed"]),
-    ("Wizard", "Magicien", "Fantasy", "Epic Fantasy", ["intellect"]),
-    ("Soldier (Hard Science Fiction)", "Soldat (Science-fiction réaliste)", "Science Fiction", "Hard Science Fiction", ["might", "speed"]),
+    ("Archer", "Archer·ère", "Fantasy", "Swords & Sorcery", ["speed"]),
+    ("Axe Fighter", "Combattant·e à la hache", "Fantasy", "Swords & Sorcery", ["might"]),
+    ("Barbarian (Swords & Sorcery)", "Barbare (Sword & Sorcery)", "Fantasy", "Swords & Sorcery", ["might"]),
+    ("Knife Fighter", "Combattant·e au Couteau", "Fantasy", "Swords & Sorcery", ["speed"]),
+    ("Priest", "Prêtre·esse", "Fantasy", "Swords & Sorcery", ["intellect"]),
+    ("Sorcerer", "Ensorceleur·euse", "Fantasy", "Swords & Sorcery", ["intellect"]),
+    ("Sword Fighter", "Combattant·e à l’épée", "Fantasy", "Swords & Sorcery", ["might", "speed"]),
+    ("Thief", "Voleur·euse", "Fantasy", "Swords & Sorcery", ["speed", "intellect"]),
+    ("Two-Weapon Fighter", "Combattant·e à deux armes", "Fantasy", "Swords & Sorcery", ["speed"]),
+    ("Witch", "Sorcier·ère", "Fantasy", "Swords & Sorcery", ["intellect"]),
+    ("Archer (Epic Fantasy)", "Archer·ère (Fantasy épique)", "Fantasy", "Epic Fantasy", ["speed"]),
+    ("Burglar", "Cambrioleur·euse", "Fantasy", "Epic Fantasy", ["speed", "intellect"]),
+    ("Noble Warrior", "Noble guerrier·ère", "Fantasy", "Epic Fantasy", ["might", "intellect"]),
+    ("Swashbuckler", "Bretteur·euse", "Fantasy", "Epic Fantasy", ["speed", "intellect"]),
+    ("Warrior", "Guerrier·ère", "Fantasy", "Epic Fantasy", ["might", "speed"]),
+    ("Wizard", "Magicien·ne", "Fantasy", "Epic Fantasy", ["intellect"]),
+    ("Soldier (Hard Science Fiction)", "Soldat·e (SF dure)", "Science Fiction", "Hard Science Fiction", ["might", "speed"]),
     ("Diplomat", "Diplomate", "Science Fiction", "Hard Science Fiction", ["intellect"]),
-    ("Engineer", "Ingénieur", "Science Fiction", "Hard Science Fiction", ["intellect"]),
-    ("Medic", "Médecin", "Science Fiction", "Hard Science Fiction", ["intellect"]),
-    ("Noble (Hard Science Fiction)", "Noble (Science-fiction réaliste)", "Science Fiction", "Hard Science Fiction", ["intellect"]),
-    ("Operative", "Agent opérationnel", "Science Fiction", "Hard Science Fiction", ["speed", "intellect"]),
+    ("Engineer", "Ingénieur·e", "Science Fiction", "Hard Science Fiction", ["intellect"]),
+    ("Medic", "Toubib", "Science Fiction", "Hard Science Fiction", ["intellect"]),
+    ("Noble (Hard Science Fiction)", "Noble (SF dure)", "Science Fiction", "Hard Science Fiction", ["intellect"]),
+    ("Operative", "Opérateur·rice", "Science Fiction", "Hard Science Fiction", ["speed", "intellect"]),
     ("Pilot", "Pilote", "Science Fiction", "Hard Science Fiction", ["speed", "intellect"]),
-    ("Soldier", "Soldat", "Science Fiction", "Hard Science Fiction", ["might", "speed"]),
+    ("Soldier", "Soldat·e", "Science Fiction", "Hard Science Fiction", ["might", "speed"]),
     ("Android", "Androïde", "Science Fiction", "Space Opera", ["might", "intellect"]),
-    ("Diplomat (Space Opera)", "Diplomate (Space Opera)", "Science Fiction", "Space Opera", ["intellect"]),
-    ("Medic (Space Opera)", "Médecin (Space Opera)", "Science Fiction", "Space Opera", ["intellect"]),
-    ("Noble", "Noble", "Science Fiction", "Space Opera", ["intellect"]),
-    ("Psion", "Psion", "Science Fiction", "Space Opera", ["intellect"]),
+    ("Diplomat (Space Opera)", "Diplomate (de SF dure)", "Science Fiction", "Space Opera", ["intellect"]),
+    ("Medic (Space Opera)", "Toubib (de SF dure)", "Science Fiction", "Space Opera", ["intellect"]),
+    ("Noble", "Noble (Space Opera)", "Science Fiction", "Space Opera", ["intellect"]),
+    ("Psion", "Psion·ne", "Science Fiction", "Space Opera", ["intellect"]),
     ("Scoundrel", "Fripouille", "Science Fiction", "Space Opera", ["speed", "intellect"]),
-    ("Soldier (Space Opera)", "Soldat (Space Opera)", "Science Fiction", "Space Opera", ["might", "speed"]),
+    ("Soldier (Space Opera)", "Soldat·e (de SF dure)", "Science Fiction", "Space Opera", ["might", "speed"]),
     ("Starpilot", "Pilote spatial", "Science Fiction", "Space Opera", ["speed", "intellect"]),
-    ("Tech", "Technicien", "Science Fiction", "Space Opera", ["intellect"]),
-    ("Trader", "Marchand", "Science Fiction", "Space Opera", ["intellect"]),
-    ("Dealer", "Revendeur", "Science Fiction", "Postapocalypse", ["intellect", "speed"]),
-    ("Heavy", "Lourd", "Science Fiction", "Postapocalypse", ["might"]),
-    ("Survivor", "Survivant", "Science Fiction", "Postapocalypse", ["might", "speed"]),
+    ("Tech", "Tech", "Science Fiction", "Space Opera", ["intellect"]),
+    ("Trader", "Marchand·e", "Science Fiction", "Space Opera", ["intellect"]),
+    ("Dealer", "Magouilleur·euse", "Science Fiction", "Postapocalypse", ["intellect", "speed"]),
+    ("Heavy", "Bourrin·e", "Science Fiction", "Postapocalypse", ["might"]),
+    ("Survivor", "Survivant·e", "Science Fiction", "Postapocalypse", ["might", "speed"]),
     ("Tender", "Soigneur", "Science Fiction", "Postapocalypse", ["intellect"]),
-    ("Crimefighter (Rank 1)", "Combattant du crime (Rang 1)", "Superheroes", "Superheroes", ["speed", "intellect"]),
-    ("Vigilante (Rank 1)", "Vigilant (Rang 1)", "Superheroes", "Superheroes", ["might", "speed"]),
-    ("Enhanced Hero (Rank 2)", "Héros augmenté (Rang 2)", "Superheroes", "Superheroes", ["might", "speed"]),
-    ("Powerstar (Rank 2)", "Star des pouvoirs (Rang 2)", "Superheroes", "Superheroes", ["might", "intellect"]),
-    ("Superhuman (Rank 3)", "Surhumain (Rang 3)", "Superheroes", "Superheroes", ["might", "speed", "intellect"]),
-    ("Powerhouse (Rank 4)", "Force de la nature (Rang 4)", "Superheroes", "Superheroes", ["might"]),
-    ("Living God (Rank 5)", "Dieu vivant (Rang 5)", "Superheroes", "Superheroes", ["might", "intellect"]),
+    ("Crimefighter (Rank 1)", "Justicier·ère", "Superheroes", "Superheroes", ["speed", "intellect"]),
+    ("Vigilante (Rank 1)", "Vengeur·euse", "Superheroes", "Superheroes", ["might", "speed"]),
+    ("Enhanced Hero (Rank 2)", "Héros·ïne Augmenté·e", "Superheroes", "Superheroes", ["might", "speed"]),
+    ("Powerstar (Rank 2)", "Astropuissance", "Superheroes", "Superheroes", ["might", "intellect"]),
+    ("Superhuman (Rank 3)", "Surhumain·e", "Superheroes", "Superheroes", ["might", "speed", "intellect"]),
+    ("Powerhouse (Rank 4)", "Colosse", "Superheroes", "Superheroes", ["might"]),
+    ("Living God (Rank 5)", "Dieu Vivant", "Superheroes", "Superheroes", ["might", "intellect"]),
 ]
+
+GENRE_LABELS = {
+    "en": {"Fantasy": "Fantasy", "Science Fiction": "Science Fiction", "Superheroes": "Superheroes"},
+    "fr": {"Fantasy": "Fantasy", "Science Fiction": "Science-fiction", "Superheroes": "Super-héros"}
+}
+SUBGENRE_LABELS = {
+    "en": {
+        "Dungeon Fantasy": "Dungeon Fantasy", "Swords & Sorcery": "Swords & Sorcery",
+        "Epic Fantasy": "Epic Fantasy", "Hard Science Fiction": "Hard Science Fiction",
+        "Space Opera": "Space Opera", "Postapocalypse": "Postapocalypse", "Superheroes": "Superheroes"
+    },
+    "fr": {
+        "Dungeon Fantasy": "Dungeon Fantasy", "Swords & Sorcery": "Épées & Sorcellerie",
+        "Epic Fantasy": "Fantasy épique", "Hard Science Fiction": "Science-fiction dure",
+        "Space Opera": "Space Opera", "Postapocalypse": "Postapocalyptique", "Superheroes": "Super-héros"
+    }
+}
 
 
 def stable_id(language, slug):
@@ -86,10 +103,51 @@ def slugify(name):
     return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
 
 
+def genre_folder_id(language, genre):
+    return stable_id(language, f"genre-{slugify(genre)}")
+
+
+def subgenre_folder_id(language, genre, subgenre):
+    return stable_id(language, f"subgenre-{slugify(genre)}-{slugify(subgenre)}")
+
+
+def make_genre_folder(language, genre, sort):
+    folder_id = genre_folder_id(language, genre)
+    return {
+        "_id": folder_id,
+        "_key": f"!folders!{folder_id}",
+        "name": GENRE_LABELS[language][genre],
+        "type": "Item",
+        "folder": None,
+        "sorting": "a",
+        "sort": sort,
+        "description": "",
+        "flags": {}
+    }
+
+
+def make_subgenre_folder(language, genre, subgenre, sort):
+    folder_id = subgenre_folder_id(language, genre, subgenre)
+    return {
+        "_id": folder_id,
+        "_key": f"!folders!{folder_id}",
+        "name": SUBGENRE_LABELS[language][subgenre],
+        "type": "Item",
+        "folder": genre_folder_id(language, genre),
+        "sorting": "a",
+        "sort": sort,
+        "description": "",
+        "flags": {}
+    }
+
+
 def read_reference_paragraphs():
-    reference = os.path.join(ROOT, "Cypher-Reference-Document-2026-07-29.docx")
+    reference = os.environ.get(
+        "CYPHER_REFERENCE_DOCUMENT",
+        os.path.join(ROOT, "docs", "local", "Cypher-Reference-Document-2026-07-29.docx")
+    )
     if not os.path.exists(reference):
-        return []
+        raise FileNotFoundError(f"Cypher Reference Document not found: {reference}")
     with zipfile.ZipFile(reference) as archive:
         root = ET.fromstring(archive.read("word/document.xml"))
     namespace = {"w": "http://schemas.openxmlformats.org/wordprocessingml/2006/main"}
@@ -183,12 +241,8 @@ def extract_rules(paragraphs, name, subgenre):
 
 def write_item(language, name, name_fr, genre, subgenre, stats, rules):
     localized_name = name if language == "en" else name_fr
-    genre_label = genre if language == "en" else {"Fantasy": "Fantasy", "Science Fiction": "Science-fiction", "Superheroes": "Super-héros"}[genre]
-    subgenre_label = subgenre if language == "en" else {
-        "Dungeon Fantasy": "Fantasy de donjon", "Swords & Sorcery": "Épées & Sorcellerie",
-        "Epic Fantasy": "Fantasy épique", "Hard Science Fiction": "Science-fiction réaliste",
-        "Space Opera": "Space Opera", "Postapocalypse": "Postapocalypse", "Superheroes": "Super-héros"
-    }[subgenre]
+    genre_label = GENRE_LABELS[language][genre]
+    subgenre_label = SUBGENRE_LABELS[language][subgenre]
     if language == "en":
         description = f"<p>A {subgenre} Type focused on {localized_name.lower()} archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: {genre_label}. Subgenre: {subgenre_label}. Primary Pools: {', '.join(stats)}.</em></p>"
     else:
@@ -202,7 +256,11 @@ def write_item(language, name, name_fr, genre, subgenre, stats, rules):
             "tier": 1, "genre": genre, "subgenre": subgenre,
             **rules, "statOptions": stats,
             "description": description
-        }, "folder": None, "sort": 0, "ownership": {"default": 0},
+        }, "folder": (
+            subgenre_folder_id(language, genre, subgenre)
+            if subgenre != genre else genre_folder_id(language, genre)
+        ), "sort": 0,
+        "ownership": {"default": 0},
         "flags": {"cypher": {"sourceLicense": (
             "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
             if language == "fr" else
@@ -213,15 +271,34 @@ def write_item(language, name, name_fr, genre, subgenre, stats, rules):
 
 def main():
     reference_paragraphs = read_reference_paragraphs()
+    genres = list(dict.fromkeys(entry[2] for entry in TYPES))
+    subgenres = list(dict.fromkeys(
+        (entry[2], entry[3]) for entry in TYPES if entry[2] != entry[3]
+    ))
     for language in ("en", "fr"):
         target = os.path.join(BASE, f"types-{language}", "_source")
         os.makedirs(target, exist_ok=True)
+        for index, genre in enumerate(genres):
+            folder = make_genre_folder(language, genre, (index + 1) * 100000)
+            with open(os.path.join(target, f"genre-{slugify(genre)}.json"), "w", encoding="utf-8") as output:
+                json.dump(folder, output, ensure_ascii=False, indent=2)
+                output.write("\n")
+        for index, (genre, subgenre) in enumerate(subgenres):
+            folder = make_subgenre_folder(language, genre, subgenre, (index + 1) * 100000)
+            filename = f"subgenre-{slugify(genre)}-{slugify(subgenre)}.json"
+            with open(os.path.join(target, filename), "w", encoding="utf-8") as output:
+                json.dump(folder, output, ensure_ascii=False, indent=2)
+                output.write("\n")
         for entry in TYPES:
             item = write_item(language, *entry, extract_rules(reference_paragraphs, entry[0], entry[3]))
             with open(os.path.join(target, f"{slugify(entry[0])}.json"), "w", encoding="utf-8") as output:
                 json.dump(item, output, ensure_ascii=False, indent=2)
                 output.write("\n")
-    print(f"Generated {len(TYPES)} types x 2 languages = {len(TYPES) * 2} files")
+    source_count = (len(TYPES) + len(genres) + len(subgenres)) * 2
+    print(
+        f"Generated {len(TYPES)} types, {len(genres)} genre folders, and "
+        f"{len(subgenres)} subgenre folders x 2 languages = {source_count} files"
+    )
 
 
 if __name__ == "__main__":

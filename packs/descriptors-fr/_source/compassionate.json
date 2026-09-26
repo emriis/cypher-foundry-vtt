@@ -1,7 +1,7 @@
 {
   "_id": "V2iHyTfmu1mkAXJc",
   "_key": "!items!V2iHyTfmu1mkAXJc",
-  "name": "Compatissant(e)",
+  "name": "Bienveillant·e",
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
@@ -10,12 +10,12 @@
     ],
     "statAmount": 2,
     "skillOptions": [
-      "Soin animalier",
-      "Soins",
+      "Soin",
+      "",
       "",
       ""
     ],
-    "description": "<p>Aider les autres, voilà ce qui te fait avancer, et tu es à ton meilleur quand tu soignes les blessures ou les soucis d'autrui.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Soin animalier ou Soins.</em></p>"
+    "description": "<p>Aider les autres est ta vocation. Ta générosité naturelle apporte de la joie à autrui.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Soin.</em></p>"
   },
   "folder": null,
   "sort": 0,

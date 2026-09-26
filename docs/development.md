@@ -62,14 +62,23 @@ For Types, regenerate both language sources with:
 npm run generate-types
 ```
 
+The Type generator reads `docs/local/Cypher-Reference-Document-2026-07-29.docx`. If that
+local-only directory is not available in the current worktree, set
+`CYPHER_REFERENCE_DOCUMENT` to the DOCX path before running the generator. It stops with an
+error if the reference is unavailable rather than generating Types without their extracted
+mechanics.
+
 Then rebuild each affected LevelDB pack with the Foundry CLI. The `_source/`
 JSON is the reviewable source of truth; the adjacent LevelDB files are what
 Foundry loads because `system.json` declares them directly.
 
 The Type list follows the genre and subgenre headings in the local Reference
-Document. French names and descriptions are working translations for review;
-the descriptions are original summaries. Compile `types-en` and `types-fr`
-from their respective `_source/` directories before distributing a release.
+Document. Each language pack groups Types under genre folders and, where the
+genre has distinct subgenres, nested subgenre folders. Superhero Types are
+directly in their genre folder because their genre and subgenre are the same.
+French names and descriptions are working translations for review; the
+descriptions are original summaries. Compile `types-en` and `types-fr` from
+their respective `_source/` directories before distributing a release.
 
 ## 3. Development and CI
 
@@ -99,5 +108,5 @@ The release workflow follows the Foundry history-friendly release model:
 
 The stable `manifest` URL in `system.json` must continue to use GitHub's
 `releases/latest/download/system.json`, while `download` must remain pinned to
-the exact release version. This lets Foundry detect updates and still lets users
-install an earlier release from its history.
+the exact release version. This lets Foundry detect updates while preserving
+access to earlier releases.

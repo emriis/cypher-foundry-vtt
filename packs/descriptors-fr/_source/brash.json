@@ -1,7 +1,7 @@
 {
   "_id": "sbpHDvu8sG6OF0My",
   "_key": "!items!sbpHDvu8sG6OF0My",
-  "name": "Impétueux(se)",
+  "name": "Audacieux·se",
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
@@ -10,12 +10,12 @@
     ],
     "statAmount": 2,
     "skillOptions": [
-      "Piratage",
+      "Piratage informatique",
       "Initiative",
       "",
       ""
     ],
-    "description": "<p>Tu es audacieux, plein d'énergie, un brin irrévérencieux — prompt à agir et à dire ce que tu penses.</p><p><em>Tu gagnes +2 à ta Réserve de Célérité, et un entrainement en Piratage ou Initiative.</em></p>"
+    "description": "<p>Tu as un tempérament affirmé et une grande confiance en toi. Certain·es te trouvent courageux·se, d'autres prétentieux·se.</p><p><em>Tu gagnes +2 à ta Réserve de Célérité, et un entrainement en Piratage informatique ou Initiative.</em></p>"
   },
   "folder": null,
   "sort": 0,

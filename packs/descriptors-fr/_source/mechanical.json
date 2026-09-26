@@ -1,7 +1,7 @@
 {
   "_id": "1pMGAoGrKqWsYCei",
   "_key": "!items!1pMGAoGrKqWsYCei",
-  "name": "Mécanicien(ne)",
+  "name": "Mécanicien·ne",
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
@@ -11,11 +11,11 @@
     "statAmount": 2,
     "skillOptions": [
       "Ingénierie",
-      "Conduite d'engins lourds",
-      "Utilisation de systèmes",
+      "Utilisation d'équipement lourd",
+      "Exploitation de systèmes",
       ""
     ],
-    "description": "<p>Tu as un talent naturel avec les machines en tout genre, que tu comprends et répares avec aisance.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Ingénierie, Conduite d'engins lourds ou Utilisation de systèmes.</em></p>"
+    "description": "<p>Tu as un don pour les machines. Tu sais les comprendre, les réparer et parfois en créer de nouvelles.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Ingénierie, Utilisation d'équipement lourd ou Exploitation de systèmes.</em></p>"
   },
   "folder": null,
   "sort": 0,

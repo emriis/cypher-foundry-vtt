@@ -1,7 +1,7 @@
 {
   "_id": "XnMuTSynvAYo7w0R",
   "_key": "!items!XnMuTSynvAYo7w0R",
-  "name": "Curieux(se)",
+  "name": "Curieux·se",
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
@@ -10,12 +10,12 @@
     ],
     "statAmount": 2,
     "skillOptions": [
-      "Récolte d'informations",
       "Identification",
+      "Collecte d'informations",
       "",
       ""
     ],
-    "description": "<p>L'inconnu t'appelle, et tu prends soin d'être préparé(e) avant de partir en quête de réponses.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Récolte d'informations ou Identification.</em></p>"
+    "description": "<p>Tu ressens un appel profond à explorer, découvrir de nouveaux peuples et lieux. Tu prends des précautions pour être prêt·e.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Identification ou Collecte d'informations.</em></p>"
   },
   "folder": null,
   "sort": 0,

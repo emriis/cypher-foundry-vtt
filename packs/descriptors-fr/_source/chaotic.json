@@ -1,7 +1,7 @@
 {
   "_id": "F6Sn1Jr7JI9h2TzF",
   "_key": "!items!F6Sn1Jr7JI9h2TzF",
-  "name": "Chaotique",
+  "name": "Impulsif·ve",
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
@@ -11,11 +11,11 @@
     "statAmount": 2,
     "skillOptions": [
       "Initiative",
-      "Représentation",
+      "",
       "",
       ""
     ],
-    "description": "<p>Le danger t'effraie rarement, surtout parce que tu ne t'attardes pas sur les conséquences — l'imprévu te stimule.</p><p><em>Tu gagnes +2 à ta Réserve de Célérité, et un entrainement en Initiative ou Représentation.</em></p>"
+    "description": "<p>Le danger ne t'effraie guère. Tu aimes semer la surprise juste pour voir ce qui va se produire.</p><p><em>Tu gagnes +2 à ta Réserve de Célérité, et un entrainement en Initiative.</em></p>"
   },
   "folder": null,
   "sort": 0,

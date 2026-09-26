@@ -1,7 +1,7 @@
 {
   "_id": "6TDBWRLpwUGtakLU",
   "_key": "!items!6TDBWRLpwUGtakLU",
-  "name": "Studieux(se)",
+  "name": "Studieux·se",
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
@@ -11,11 +11,11 @@
     "statAmount": 2,
     "skillOptions": [
       "Histoire",
-      "Philosophie",
-      "Psychologie",
-      ""
+      "Connaissances religieuses",
+      "Identification",
+      "Mathématiques"
     ],
-    "description": "<p>Tu as passé bien plus de temps dans les livres que dans l'effort physique, et cela se voit à l'étendue de ton savoir.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Histoire, Philosophie ou Psychologie.</em></p>"
+    "description": "<p>Tu as passé ta vie à des activités intellectuelles. Tu maîtrises le monde universitaire mais as peu d'expérience physique.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Histoire, Connaissances religieuses, Identification ou Mathématiques.</em></p>"
   },
   "folder": null,
   "sort": 0,

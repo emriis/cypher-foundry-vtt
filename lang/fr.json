@@ -52,28 +52,28 @@
       "none": "Non spécifié",
       "realWorld": "Monde Réel",
       "fantasy": "Fantasy",
-      "sciFi": "Science-Fiction",
+      "sciFi": "Science Fiction",
       "superhero": "Super-héros",
       "custom": "Personnalisé (tous les champs)",
-      "RealWorldHint": "Monde Réel : pas de Type ni de Focus — un(e) Descripteur + Profession suffit. Par défaut, inaptitude aux armes moyennes/lourdes (sauf compétence de fond dédiée)."
+      "RealWorldHint": "Monde réel : pas de Type ni de Focus — un descripteur et une profession suffisent. Par défaut, les personnages sont inaptes à utiliser les armes moyennes et lourdes, sauf si une compétence de fond compense cette inaptitude."
     },
 
     "Superhero": {
       "Rank": "Rang du Type (1-5)",
       "PowerShifts": "Amplificateurs de Pouvoir",
-      "Hint": "Chaque catégorie est plafonnée à 3. Un amplificateur agit comme un niveau d'Effort gratuit et permanent pour les tâches concernées. Les tâches peuvent aller jusqu'à difficulté 15 dans ce genre."
+      "Hint": "Chaque catégorie est limitée à trois amplificateurs. En règle générale, un amplificateur équivaut à un niveau d'Effort gratuit et permanent pour les tâches concernées. Dans ce genre, les tâches peuvent atteindre la difficulté 15."
     },
 
     "PowerShift": {
-      "accuracy": "Précision (attaques)",
-      "dexterity": "Dextérité (esquive, initiative, acrobaties)",
+      "accuracy": "Précision (jets d'attaque)",
+      "dexterity": "Dextérité (esquive, défense de Célérité, mouvement, acrobaties, initiative)",
       "flight": "Vol",
-      "healing": "Guérison (récupération bonus)",
+      "healing": "Guérison (une récupération supplémentaire d'une action par jour)",
       "increasedRange": "Portée accrue",
-      "intelligence": "Intelligence (défense Int., savoirs)",
-      "power": "Puissance (effets/dégâts d'une capacité)",
-      "prodigy": "Prodige (échange de capacités)",
-      "resilience": "Résilience (blocage, défense Puissance)",
+      "intelligence": "Intelligence (défense d'Intellect, connaissances)",
+      "power": "Puissance (effets et dégâts d'une aptitude)",
+      "prodigy": "Prodige (échange d'aptitudes de Focus)",
+      "resilience": "Résilience (blocage, défense de Puissance)",
       "savant": "Savant (deux compétences précises)",
       "singleAttack": "Attaque unique (un type d'attaque précis)",
       "strength": "Force (athlétisme, dégâts de mêlée)"
@@ -100,12 +100,12 @@
       "medium": "Moyenne",
       "heavy": "Lourde",
       "FreelyUsable": "Utilisation libre (autorisée par le Type)",
-      "BlockEase": "Facilite le Blocage (1 palier)",
-      "DodgeHinder": "Entrave l'Esquive (1 palier)",
+      "BlockEase": "Facilite le Blocage (paliers)",
+      "DodgeHinder": "Entrave l'Esquive (paliers)",
       "AppliesToAllSpeed": "s'applique à toutes les tâches de Célérité — armure non utilisable librement",
       "BaseWas": "base :",
       "Damage": "Endommager (intrusion MJ)",
-      "DamageHint": "Une attaque spéciale ou une intrusion du MJ réduit d'1 palier le bonus de Blocage de l'armure — jamais son entrave à l'Esquive.",
+      "DamageHint": "Une attaque spéciale ou une intrusion du MJ réduit d'un palier le bonus de Blocage de l'armure — jamais son entrave à l'Esquive.",
       "Damaged": "Armure endommagée",
       "DamagedNote": "L'armure de {name} est endommagée : son bonus de Blocage est réduit.",
       "DamagedBanner": "Armure endommagée — bonus de Blocage réduit",
@@ -126,10 +126,10 @@
       "major": "Majeure",
       "Rally": "Se reprendre (dépenser des points de Puissance pour retirer cette blessure)",
       "RallyMajorSuperhero": "Se reprendre (10 Puissance — réservé au genre Super-héros)",
-      "Hint": "3 cases par niveau de sévérité par défaut. Modérée pleine = toutes les actions entravées. Chaque blessure majeure entrave d'1 palier supplémentaire. 3 blessures majeures = mort.",
-      "HinderedBanner": "Personnage handicapé",
+      "Hint": "Trois cases par sévérité par défaut. Quand les blessures modérées sont au maximum, toutes les tâches sont entravées. Chaque blessure majeure ajoute un palier d'entrave à toutes les tâches. Trois blessures majeures entraînent la mort.",
+      "HinderedBanner": "Personnage entravé",
       "DeadBanner": "Personnage mort",
-      "HinderedStatus": "Handicapé",
+      "HinderedStatus": "Entravé",
       "DeadStatus": "Mort"
     },
 
@@ -146,12 +146,12 @@
 
     "Skill": {
       "New": "Nouvelle compétence",
-      "Level": "Niveau d'entrainement"
+      "Level": "Niveau d'entraînement"
     },
     "SkillLevel": {
       "inability": "Inaptitude",
       "none": "Aucun",
-      "trained": "Entrainé(e)",
+      "trained": "Entraîné(e)",
       "specialized": "Spécialisé(e)",
       "expert": "Expert(e)"
     },
@@ -230,7 +230,7 @@
     "Attack": {
       "Title": "Attaques",
       "Type": "Type d'attaque",
-      "FreelyUsable": "Arme utilisable librement (sinon entrave de 1 palier)"
+      "FreelyUsable": "Arme utilisable librement (sinon, attaque entravée d'un palier)"
     },
     "AttackType": {
       "light": "Légère (2 dégâts)",
@@ -252,12 +252,12 @@
       "ApplyPrompt": "Applique le descripteur {name} à ce personnage.",
       "ApplyTitle": "Appliquer le Descripteur : {name}",
       "ChooseStat": "Ajouter le bonus à",
-      "ChooseSkill": "Devenir entrainé(e) en",
+      "ChooseSkill": "Devenir entraîné(e) en",
       "SkillCustomOption": "Autre (préciser ci-dessous)",
       "SkillCustomLabel": "Nom de la compétence",
       "Applied": "Descripteur appliqué : {name}",
       "StatNote": "+{amount} à la Réserve de {stat}.",
-      "SkillGranted": "Entrainé(e) en {name}.",
+      "SkillGranted": "Entraîné(e) en {name}.",
       "SkillUpgraded": "{name} est maintenant au niveau : {level}.",
       "GrantedFrom": "Accordé par le Descripteur : {name}"
     },
@@ -269,7 +269,7 @@
       "AlreadyApplied": "Un Type a déjà été appliqué à ce personnage.",
       "ApplyTitle": "Appliquer le Type : {name}",
       "ApplyPrompt": "Appliquer les effets mécaniques de {name} à ce personnage ?",
-      "ChooseEdgeStat": "Réserve recevant le bonus d’Edge",
+      "ChooseEdgeStat": "Réserve recevant le bonus d’Avantage",
       "ChooseSkill": "Compétence accordée",
       "Applied": "Type appliqué : {name}",
       "GrantedFrom": "Accordé par le Type : {name}",
@@ -315,10 +315,10 @@
       "MinorEffect": "effet mineur (19 naturel)",
       "MajorEffect": "effet majeur (20 naturel)",
       "GMIntrusionFree": "intrusion du MJ gratuite (1 naturel)",
-      "WoundHinder": "Entravé de {steps} palier(s) à cause des blessures",
-      "ExtraHinder": "Entrave supplémentaire de {steps} palier(s) (coup de chance / arme non maîtrisée)",
+      "WoundHinder": "Entrave due aux blessures : {steps} palier(s)",
+      "ExtraHinder": "Entrave supplémentaire de {steps} palier(s) (coup de chance / arme non utilisable librement)",
       "ArmorModifier": "Modificateur d'armure : {steps} palier(s)",
-      "ArmorSpeedHinder": "Entravé de {steps} palier(s) (armure non maîtrisée)",
+      "ArmorSpeedHinder": "Tâche entravée de {steps} palier(s) parce que l'armure n'est pas utilisable librement",
       "CostRefunded": "Le coût de l'action a été remboursé (20 naturel).",
       "Rallied": "{name} se reprend et retire une blessure {severity}."
     },
@@ -350,9 +350,9 @@
       "Reroll": "Relancer",
       "RerollResult": "Résultat de la relance",
       "RerollCompare": "Ancien résultat : {old} — Nouveau : {new} — Meilleur des deux : {final}",
-      "RerollHint": "Relance (1 XP) : clique sur le bouton qui apparaît sous n'importe quel jet dans le tchat, immédiatement après le jet (le tien ou celui d'un autre joueur).",
+      "RerollHint": "Relance (1 XP) : clique sur le bouton qui apparaît sous un jet dans le chat, juste après celui-ci (le tien ou celui d'un·e autre joueur·euse).",
       "EditInHeader": "Modifie la valeur des XP directement dans l'en-tête de la fiche, en haut.",
-      "PlayerIntrusion": "Intrusion joueur",
+      "PlayerIntrusion": "Intrusion de joueur·euse",
       "PlayerIntrusionPrompt": "Décris comment tu modifies la situation en ta faveur",
       "LuckyShot": "Coup de chance",
       "LuckyShotHint": "entravé de 4 paliers",
@@ -360,15 +360,15 @@
     },
 
     "Advancement": {
-      "Title": "Avancement de personnage",
-      "Hint": "Choisis un avancement pour chacun des 4 emplacements du rang courant, puis achète-les un par un (4 XP chacun). Une fois les 4 achetés, le personnage passe automatiquement au rang suivant.",
+      "Title": "Avancement du personnage",
+      "Hint": "Choisis un type d'avancement pour chacun des quatre emplacements du rang actuel, puis achète-les (4 XP chacun). Une fois les quatre avancements achetés, le personnage passe automatiquement au rang suivant.",
       "Slot": "Emplacement",
       "Bought": "Acheté",
       "Buy": "Acheter",
-      "capabilities": "Aptitudes accrues (+4 aux Réserves)",
-      "perfection": "Vers la perfection (+1 Marge)",
+      "capabilities": "Augmenter les capacités (+4 points aux Réserves)",
+      "perfection": "Tendre vers la perfection (+1 Avantage)",
       "effort": "Effort supplémentaire (+1, max 6)",
-      "skill": "Compétence (formation/spécialisation)",
+      "skill": "Compétence (entraînement/spécialisation)",
       "other": "Autre",
       "other-recovery": "Autre : Récupération (+2 permanent)",
       "other-focus": "Autre : Nouveau Focus",
@@ -377,12 +377,12 @@
       "other-genre": "Autre : Aptitude de Genre supplémentaire",
       "CapabilitiesDialogHint": "Répartis 4 points entre tes trois Réserves (le total doit faire exactement 4).",
       "CapabilitiesNote": "Les points de Réserve ont été répartis.",
-      "PerfectionNote": "Marge de {stat} augmentée de 1.",
+      "PerfectionNote": "Avantage de {stat} augmenté de 1.",
       "EffortNote": "Effort augmenté de 1.",
       "PickExistingSkill": "Compétence existante à améliorer",
-      "OrNewSkillName": "...ou nom d'une nouvelle compétence entrainée/spécialisée.",
+      "OrNewSkillName": "...ou nom d'une nouvelle compétence entraînée/spécialisée.",
       "SkillNote": "{name} est maintenant au niveau : {level}.",
-      "OtherRecoveryNote": "Bonus de récupération permanent +2.",
+      "OtherRecoveryNote": "Bonus permanent de +2 aux récupérations.",
       "OtherFocusNote": "Choisis une nouvelle aptitude de Focus (à ajouter manuellement dans l'onglet Aptitudes).",
       "OtherArmorNote": "Le personnage peut désormais utiliser librement toutes les catégories d'armure.",
       "OtherWeaponsNote": "Le personnage peut désormais utiliser librement toutes les armes.",

@@ -1,7 +1,7 @@
 {
   "_id": "dmRoMq0zjc9gNsX2",
   "_key": "!items!dmRoMq0zjc9gNsX2",
-  "name": "Endurant(e)",
+  "name": "Robuste",
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
@@ -11,11 +11,11 @@
     "statAmount": 2,
     "skillOptions": [
       "Athlétisme",
-      "Survie en extérieur",
-      "",
+      "Soin",
+      "Survie en plein air",
       ""
     ],
-    "description": "<p>Tu encaisses des coups qui ralentiraient la plupart des gens, et tu continues d'avancer malgré tout.</p><p><em>Tu gagnes +2 à ta Réserve de Puissance, et un entrainement en Athlétisme ou Survie en extérieur.</em></p>"
+    "description": "<p>Tu es fort·e et peux encaisser des coups violents. Tu continues d'avancer sans te soucier des douleurs qui mettraient d'autres hors d'état.</p><p><em>Tu gagnes +2 à ta Réserve de Puissance, et un entrainement en Athlétisme, Soin ou Survie en plein air.</em></p>"
   },
   "folder": null,
   "sort": 0,
