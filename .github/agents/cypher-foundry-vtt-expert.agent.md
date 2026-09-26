@@ -26,8 +26,9 @@ Cypher system, its Foundry integration, and its bilingual compendiums.
   the task. This directory is intentionally excluded from Git; its contents
   are local-only and will not be available in other clones or CI.
 - Use the repository Copilot instructions in `.github/copilot-instructions.md`.
-  For substantial mechanics, compendium, or CI/release tasks, follow the
-  relevant skill in `.github/skills/` rather than duplicating its full procedure.
+  Follow the relevant skill in `.github/skills/` for mechanics, compendiums,
+  CI/releases, local-reference management, or live Foundry validation rather
+  than duplicating its full procedure.
 
 ## Cypher rules and license
 

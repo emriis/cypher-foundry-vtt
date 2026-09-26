@@ -3,6 +3,12 @@
 - Read `README.md`, `CONTRIBUTING.md`, and `docs/development.md` before
   substantial work; check `docs/local/` for relevant user-provided references.
   `docs/local/` is ignored by Git and is not available to other clones or CI.
+  Treat it as user-owned private data: it may be a junction or symlink to storage
+  outside the repository. Preserve the path and target; never add, stage, force-
+  add, move, replace, or delete its contents or link unless explicitly asked.
+  Do not run cleanup commands that remove ignored files (such as `git clean -fdX`
+  or `git clean -fdx`) without explicit approval. If it is missing or
+  inaccessible, report that rather than recreating or replacing it.
 - Follow the repository's existing Foundry VTT V13/V14 architecture and the
   Cypher Open License notices. Do not guess at version-sensitive Foundry APIs
   or reproduce substantial copyrighted reference text.
