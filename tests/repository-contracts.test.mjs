@@ -22,6 +22,8 @@ test("Foundry manifest points to existing system entry points, locales, and pack
   const manifest = readJson("system.json");
 
   assert.equal(manifest.id, "cypher");
+  assert.equal(manifest.manifest, `${manifest.url}/releases/latest/download/system.json`);
+  assert.equal(manifest.download, `${manifest.url}/releases/download/v${manifest.version}/system.zip`);
   for (const file of [...manifest.esmodules, ...manifest.styles, ...manifest.languages.map(language => language.path)]) {
     assert.ok(fs.existsSync(path.join(root, file)), `Manifest resource does not exist: ${file}`);
   }

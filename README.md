@@ -176,7 +176,7 @@ silencieusement.)
 ### Compendiums de Types (FR/EN)
 
 Les Types du document de référence sont générés dans deux compendiums bilingues, regroupés dans
-les dossiers de langue `Français` et `English` grâce à `packFolders`. Les 56 Types couvrent les
+les dossiers de langue `Français` et `English` grâce à `packFolders`. Les 55 Types couvrent les
 sections Fantasy, Science-fiction et Super-héros du document, avec leurs variantes de sous-genre.
 Les noms français sont des traductions de travail à relire ; les descriptions sont des résumés
 originaux et non une copie du document source.

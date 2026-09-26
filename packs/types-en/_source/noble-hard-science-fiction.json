@@ -1,32 +1,63 @@
 {
   "_id": "bHwyuPOyc6pSNInn",
   "_key": "!items!bHwyuPOyc6pSNInn",
-  "name": "Noble (Hard Science Fiction)",
+  "name": "Noble",
   "type": "type",
-  "img": "icons/svg/upgrade.svg",
+  "img": "systems/cypher/assets/types/noble.webp",
   "system": {
     "tier": 1,
     "genre": "Science Fiction",
     "subgenre": "Hard Science Fiction",
     "poolBonuses": {
-      "might": 0,
-      "speed": 0,
-      "intellect": 0
+      "might": 1,
+      "speed": 1,
+      "intellect": 2
     },
-    "edgeChoice": 0,
+    "edgeChoice": 1,
     "woundBonuses": {
-      "minor": 0,
-      "moderate": 0,
+      "minor": 2,
+      "moderate": 1,
       "major": 0
     },
     "freeWeapons": false,
-    "freeArmor": false,
+    "freeArmor": true,
     "skillOptions": [],
-    "abilities": [],
+    "abilities": [
+      {
+        "name": "Exorbitant Reach",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "You have an exorbitant item of your choice, such as a personal force field or a small spaceship. Work with your GM to determine something appropriate for the setting."
+      },
+      {
+        "name": "Retainer",
+        "tier": 3,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "You enjoy the services of a loyal level 2 follower who looks after your affairs, accounts, meals, clothing, and other trivial needs so you don’t have to. Work with your GM to flesh out the details of your retainer."
+      },
+      {
+        "name": "At higher tiers",
+        "tier": 5,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Your follower improves when you reach tier 3 and again at tier 5 (this is explained in the section about followers)."
+      }
+    ],
     "statOptions": [
       "intellect"
     ],
-    "description": "<p>A Hard Science Fiction Type focused on noble (hard science fiction) archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Science Fiction. Subgenre: Hard Science Fiction. Primary Pools: intellect.</em></p>"
+    "description": "<p>A Hard Science Fiction Type focused on noble archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Science Fiction. Subgenre: Hard Science Fiction. Primary Pools: intellect.</em></p>"
   },
   "folder": "t6C5D0PsA9y7RaFQ",
   "sort": 0,

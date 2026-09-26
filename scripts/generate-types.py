@@ -45,7 +45,6 @@ TYPES = [
     ("Swashbuckler", "Bretteur·euse", "Fantasy", "Epic Fantasy", ["speed", "intellect"]),
     ("Warrior", "Guerrier·ère", "Fantasy", "Epic Fantasy", ["might", "speed"]),
     ("Wizard", "Magicien·ne", "Fantasy", "Epic Fantasy", ["intellect"]),
-    ("Soldier (Hard Science Fiction)", "Soldat·e (SF dure)", "Science Fiction", "Hard Science Fiction", ["might", "speed"]),
     ("Diplomat", "Diplomate", "Science Fiction", "Hard Science Fiction", ["intellect"]),
     ("Engineer", "Ingénieur·e", "Science Fiction", "Hard Science Fiction", ["intellect"]),
     ("Medic", "Toubib", "Science Fiction", "Hard Science Fiction", ["intellect"]),
@@ -56,7 +55,7 @@ TYPES = [
     ("Android", "Androïde", "Science Fiction", "Space Opera", ["might", "intellect"]),
     ("Diplomat (Space Opera)", "Diplomate (de SF dure)", "Science Fiction", "Space Opera", ["intellect"]),
     ("Medic (Space Opera)", "Toubib (de SF dure)", "Science Fiction", "Space Opera", ["intellect"]),
-    ("Noble", "Noble (Space Opera)", "Science Fiction", "Space Opera", ["intellect"]),
+    ("Noble", "Noble", "Science Fiction", "Space Opera", ["intellect"]),
     ("Psion", "Psion·ne", "Science Fiction", "Space Opera", ["intellect"]),
     ("Scoundrel", "Fripouille", "Science Fiction", "Space Opera", ["speed", "intellect"]),
     ("Soldier (Space Opera)", "Soldat·e (de SF dure)", "Science Fiction", "Space Opera", ["might", "speed"]),
@@ -75,6 +74,15 @@ TYPES = [
     ("Powerhouse (Rank 4)", "Colosse", "Superheroes", "Superheroes", ["might"]),
     ("Living God (Rank 5)", "Dieu Vivant", "Superheroes", "Superheroes", ["might", "intellect"]),
 ]
+TYPE_SOURCE_NAMES = {
+    "Barbarian (Swords & Sorcery)": "Barbarian",
+    "Archer (Epic Fantasy)": "Archer",
+    "Soldier (Space Opera)": "Soldier",
+    "Diplomat (Space Opera)": "Diplomat",
+    "Medic (Space Opera)": "Medic",
+    "Noble (Hard Science Fiction)": "Noble",
+}
+DEFAULT_TYPE_IMAGE = "icons/svg/upgrade.svg"
 
 GENRE_LABELS = {
     "en": {"Fantasy": "Fantasy", "Science Fiction": "Science Fiction", "Superheroes": "Superheroes"},
@@ -101,6 +109,14 @@ def stable_id(language, slug):
 
 def slugify(name):
     return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+
+
+def type_image_path(name):
+    image_slug = re.sub(r"-rank-\d+$", "", slugify(name))
+    filename = f"{image_slug}.webp"
+    if os.path.isfile(os.path.join(ROOT, "assets", "types", filename)):
+        return f"systems/cypher/assets/types/{filename}"
+    return DEFAULT_TYPE_IMAGE
 
 
 def genre_folder_id(language, genre):
@@ -239,8 +255,8 @@ def extract_rules(paragraphs, name, subgenre):
     return rules
 
 
-def write_item(language, name, name_fr, genre, subgenre, stats, rules):
-    localized_name = name if language == "en" else name_fr
+def write_item(language, name, name_fr, genre, subgenre, stats, rules, display_name, display_name_fr, image):
+    localized_name = display_name if language == "en" else display_name_fr
     genre_label = GENRE_LABELS[language][genre]
     subgenre_label = SUBGENRE_LABELS[language][subgenre]
     if language == "en":
@@ -252,7 +268,7 @@ def write_item(language, name, name_fr, genre, subgenre, stats, rules):
     item_id = stable_id(language, slug)
     return {
         "_id": item_id, "_key": f"!items!{item_id}", "name": localized_name,
-        "type": "type", "img": "icons/svg/upgrade.svg", "system": {
+        "type": "type", "img": image, "system": {
             "tier": 1, "genre": genre, "subgenre": subgenre,
             **rules, "statOptions": stats,
             "description": description
@@ -290,7 +306,19 @@ def main():
                 json.dump(folder, output, ensure_ascii=False, indent=2)
                 output.write("\n")
         for entry in TYPES:
-            item = write_item(language, *entry, extract_rules(reference_paragraphs, entry[0], entry[3]))
+            source_entry = next(
+                (candidate for candidate in TYPES if candidate[0] == TYPE_SOURCE_NAMES.get(entry[0], entry[0])),
+                entry
+            )
+            item = write_item(
+                language,
+                *entry[:4],
+                source_entry[4],
+                extract_rules(reference_paragraphs, source_entry[0], source_entry[3]),
+                source_entry[0],
+                source_entry[1],
+                type_image_path(source_entry[0])
+            )
             with open(os.path.join(target, f"{slugify(entry[0])}.json"), "w", encoding="utf-8") as output:
                 json.dump(item, output, ensure_ascii=False, indent=2)
                 output.write("\n")
