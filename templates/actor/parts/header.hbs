@@ -24,7 +24,7 @@
     {{#if system.isRealWorld}}
     <div class="descriptor-line">
       <span>{{localize 'CYPHER.CharacterLine.Prefix'}}</span>
-      <input name="system.descriptor" type="text" value="{{system.descriptor}}" placeholder="{{localize 'CYPHER.Descriptor'}}"/>
+      <input name="system.descriptor" type="text" value="{{system.descriptor}}" placeholder="{{localize 'CYPHER.Descriptor.Label'}}"/>
 
       {{#if system.hasSecondDescriptor}}
       <span class="and-joiner">{{localize 'CYPHER.CharacterLine.And'}}</span>
@@ -40,7 +40,7 @@
     {{else}}
     <div class="descriptor-line">
       <span>{{localize 'CYPHER.CharacterLine.Prefix'}}</span>
-      <input name="system.descriptor" type="text" value="{{system.descriptor}}" placeholder="{{localize 'CYPHER.Descriptor'}}"/>
+      <input name="system.descriptor" type="text" value="{{system.descriptor}}" placeholder="{{localize 'CYPHER.Descriptor.Label'}}"/>
 
       {{#if system.hasSecondDescriptor}}
       <span class="and-joiner">{{localize 'CYPHER.CharacterLine.And'}}</span>
@@ -51,7 +51,7 @@
       {{/if}}
 
       <span>{{localize 'CYPHER.CharacterLine.Middle'}}</span>
-      <input name="system.type" type="text" value="{{system.type}}" placeholder="{{localize 'CYPHER.Type'}}"/>
+      <input name="system.type" type="text" value="{{system.type}}" placeholder="{{localize 'CYPHER.Type.Label'}}"/>
       <span>{{localize 'CYPHER.CharacterLine.Who'}}</span>
       <input name="system.focus" type="text" value="{{system.focus}}" placeholder="{{localize 'CYPHER.Focus'}}"/>
 
@@ -96,7 +96,7 @@
       <label>{{localize 'CYPHER.Effort'}}
         <input name="system.effort" type="number" value="{{system.effort}}" min="1"/>
       </label>
-      <label>{{localize 'CYPHER.XP'}}
+      <label>{{localize 'CYPHER.XP.Label'}}
         <input name="system.xp" type="number" value="{{system.xp}}" min="0"/>
       </label>
       <label>{{localize 'CYPHER.ResourcePoints'}}

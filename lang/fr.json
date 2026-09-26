@@ -7,7 +7,6 @@
     "Tier": "Rang",
     "Effort": "Effort",
     "Edge": "Avantage",
-    "XP": "XP",
     "Level": "Niveau",
     "Damage": "Dégâts",
     "Equipped": "Équipé",
@@ -40,9 +39,7 @@
       "AddSecondFocus": "Ajouter un second focus",
       "RemoveSecondFocus": "Retirer le second focus"
     },
-    "Descriptor": "Descripteur",
     "Descriptor2": "Second descripteur",
-    "Type": "Type",
     "Focus": "Focus",
     "Focus2": "Second focus",
     "Profession": "Profession",
@@ -246,6 +243,7 @@
     },
 
     "Descriptor": {
+      "Label": "Descripteur",
       "StatOptions": "Choix de caractéristique",
       "StatOptionsHint": "Réserve(s) auxquelles ce Descripteur peut ajouter son bonus. Coche deux caractéristiques (ex. Célérité ou Puissance) si le texte du CRD propose un choix.",
       "StatAmount": "Bonus de Réserve",
@@ -264,6 +262,7 @@
       "GrantedFrom": "Accordé par le Descripteur : {name}"
     },
     "Type": {
+      "Label": "Type",
       "Genre": "Genre",
       "Subgenre": "Sous-genre",
       "StatOptions": "Réserves principales",
@@ -346,6 +345,7 @@
     },
 
     "XP": {
+      "Label": "XP",
       "Title": "Points d'Expérience",
       "Reroll": "Relancer",
       "RerollResult": "Résultat de la relance",
