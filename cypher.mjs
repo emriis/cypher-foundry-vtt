@@ -82,12 +82,12 @@ Hooks.once("init", () => {
   /* -------------------------------------------- */
   /*  World settings                               */
   /* -------------------------------------------- */
-  // Stored schema version for migration; hidden from the configuration UI.
+  // The initial schema baseline prevents new worlds from being treated as legacy data.
   game.settings.register("cypher", "schemaVersion", {
     scope: "world",
     config: false,
     type: String,
-    default: "0.0.0"
+    default: "0.1.0"
   });
 
   /* -------------------------------------------- */

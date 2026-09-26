@@ -18,6 +18,11 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 - JSDoc convention clarified: JSDoc blocks (`/** ... */`) are English-only across all `.mjs`
   files. See `CONTRIBUTING.md` for the full convention and its rationale.
 
+### Fixed
+
+- New worlds no longer trigger the legacy-data migration warning: the default schema version
+  now matches the initial supported migration baseline.
+
 ## [0.1.1]
 
 First documented state of the system.
