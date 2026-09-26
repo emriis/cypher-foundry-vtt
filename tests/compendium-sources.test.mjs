@@ -9,11 +9,18 @@ for (const language of ["en", "fr"]) {
   test(`type sources contain all generated ${language} entries`, () => {
     const directory = path.join(root, "packs", `types-${language}`, "_source");
     const files = fs.readdirSync(directory).filter(file => file.endsWith(".json"));
-    const entries = files.map(file => JSON.parse(fs.readFileSync(path.join(directory, file), "utf8")));
+    const sources = files.map(file => ({
+      file,
+      item: JSON.parse(fs.readFileSync(path.join(directory, file), "utf8"))
+    }));
+    const entries = sources.map(source => source.item);
     const items = entries.filter(item => item._key.startsWith("!items!"));
     const folders = entries.filter(item => item._key.startsWith("!folders!"));
+    const slugsById = new Map(sources
+      .filter(source => source.item._key.startsWith("!items!"))
+      .map(source => [source.item._id, path.basename(source.file, ".json")]));
 
-    assert.equal(items.length, 56);
+    assert.equal(items.length, 55);
     assert.equal(folders.length, 9);
     for (const item of items) {
       assert.equal(item.type, "type");
@@ -23,6 +30,24 @@ for (const language of ["en", "fr"]) {
       assert.ok(item.system.subgenre);
       assert.ok(item.system.description);
       assert.ok(item.system.statOptions.length > 0);
+    }
+
+    const canonicalSlugs = {
+      "barbarian-swords-sorcery": "barbarian",
+      "archer-epic-fantasy": "archer",
+      "soldier-space-opera": "soldier",
+      "diplomat-space-opera": "diplomat",
+      "medic-space-opera": "medic",
+      "noble-hard-science-fiction": "noble"
+    };
+    for (const item of items) {
+      const slug = slugsById.get(item._id);
+      const imageSlug = canonicalSlugs[slug] ?? slug.replace(/-rank-\d+$/, "");
+      const imageFilename = `${imageSlug}.webp`;
+      const expectedPath = fs.existsSync(path.join(root, "assets", "types", imageFilename))
+        ? `systems/cypher/assets/types/${imageFilename}`
+        : "icons/svg/upgrade.svg";
+      assert.equal(item.img, expectedPath, item.name);
     }
   });
 
@@ -34,6 +59,32 @@ for (const language of ["en", "fr"]) {
     assert.equal(barbarian.system.edgeChoice, 1);
     assert.equal(barbarian.system.freeWeapons, true);
     assert.equal(barbarian.system.freeArmor, true);
+
+    const readType = filename => JSON.parse(fs.readFileSync(path.join(directory, filename), "utf8"));
+    const mechanics = item => ({
+      poolBonuses: item.system.poolBonuses,
+      edgeChoice: item.system.edgeChoice,
+      woundBonuses: item.system.woundBonuses,
+      freeWeapons: item.system.freeWeapons,
+      freeArmor: item.system.freeArmor,
+      skillOptions: item.system.skillOptions,
+      abilities: item.system.abilities,
+      statOptions: item.system.statOptions
+    });
+    const canonicalPairs = [
+      ["barbarian-swords-sorcery.json", "barbarian.json"],
+      ["archer-epic-fantasy.json", "archer.json"],
+      ["soldier-space-opera.json", "soldier.json"],
+      ["noble-hard-science-fiction.json", "noble.json"],
+      ["medic-space-opera.json", "medic.json"],
+      ["diplomat-space-opera.json", "diplomat.json"]
+    ];
+    for (const [variant, canonical] of canonicalPairs) {
+      assert.deepEqual(mechanics(readType(variant)), mechanics(readType(canonical)), variant);
+      assert.equal(readType(variant).name, readType(canonical).name, variant);
+    }
+    assert.equal(readType("soldier.json").system.subgenre, "Hard Science Fiction");
+    assert.equal(readType("soldier-space-opera.json").system.subgenre, "Space Opera");
 
     const crimefighter = JSON.parse(fs.readFileSync(path.join(directory, "crimefighter-rank-1.json"), "utf8"));
     assert.deepEqual(crimefighter.system.poolBonuses, { might: 2, speed: 3, intellect: 5 });
@@ -173,12 +224,13 @@ test("French Type names use the Character Book terminology", () => {
   const expectedNames = {
     fighter: "Combattant",
     archer: "Archer·ère",
-    "barbarian-swords-sorcery": "Barbare (Sword & Sorcery)",
+    "barbarian-swords-sorcery": "Barbare",
     "sword-fighter": "Combattant·e à l’épée",
     "noble-warrior": "Noble guerrier·ère",
-    "soldier-hard-science-fiction": "Soldat·e (SF dure)",
     medic: "Toubib",
-    "diplomat-space-opera": "Diplomate (de SF dure)",
+    "diplomat-space-opera": "Diplomate",
+    "medic-space-opera": "Toubib",
+    "noble-hard-science-fiction": "Noble",
     "dealer": "Magouilleur·euse",
     heavy: "Bourrin·e",
     "crimefighter-rank-1": "Justicier·ère",

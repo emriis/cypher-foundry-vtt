@@ -1,32 +1,63 @@
 {
   "_id": "WDWLWNzvHLjYXaWi",
   "_key": "!items!WDWLWNzvHLjYXaWi",
-  "name": "Toubib (de SF dure)",
+  "name": "Toubib",
   "type": "type",
-  "img": "icons/svg/upgrade.svg",
+  "img": "systems/cypher/assets/types/medic.webp",
   "system": {
     "tier": 1,
     "genre": "Science Fiction",
     "subgenre": "Space Opera",
     "poolBonuses": {
       "might": 0,
-      "speed": 0,
-      "intellect": 0
+      "speed": 1,
+      "intellect": 3
     },
-    "edgeChoice": 0,
+    "edgeChoice": 1,
     "woundBonuses": {
-      "minor": 0,
-      "moderate": 0,
+      "minor": 2,
+      "moderate": 1,
       "major": 0
     },
     "freeWeapons": false,
-    "freeArmor": false,
+    "freeArmor": true,
     "skillOptions": [],
-    "abilities": [],
+    "abilities": [
+      {
+        "name": "Effort",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Instead make the creature unconscious until you use a recovery (requires two levels of Effort)."
+      },
+      {
+        "name": "Expert Doctor",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "You are trained in healing."
+      },
+      {
+        "name": "Prepared Medic",
+        "tier": 6,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2
+        },
+        "description": "With access to a medical field kit (or similar equipment), you can use treatment in half the normal amount of time or treat twice as many wounds for one character in the normal time. Enabler."
+      }
+    ],
     "statOptions": [
       "intellect"
     ],
-    "description": "<p>Un Type de Space Opera centré sur l'archétype toubib (de sf dure), tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Science-fiction. Sous-genre : Space Opera. Réserves principales : Intellect.</em></p>"
+    "description": "<p>Un Type de Space Opera centré sur l'archétype toubib, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Science-fiction. Sous-genre : Space Opera. Réserves principales : Intellect.</em></p>"
   },
   "folder": "DNZXZoUQ1z24nS44",
   "sort": 0,

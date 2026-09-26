@@ -1,32 +1,74 @@
 {
   "_id": "ANYE3VQN69SexFcS",
   "_key": "!items!ANYE3VQN69SexFcS",
-  "name": "Barbare (Sword & Sorcery)",
+  "name": "Barbare",
   "type": "type",
-  "img": "icons/svg/upgrade.svg",
+  "img": "systems/cypher/assets/types/barbarian.webp",
   "system": {
     "tier": 1,
     "genre": "Fantasy",
     "subgenre": "Swords & Sorcery",
     "poolBonuses": {
-      "might": 0,
-      "speed": 0,
+      "might": 3,
+      "speed": 1,
       "intellect": 0
     },
-    "edgeChoice": 0,
+    "edgeChoice": 1,
     "woundBonuses": {
-      "minor": 0,
-      "moderate": 0,
+      "minor": 3,
+      "moderate": 1,
       "major": 0
     },
-    "freeWeapons": false,
-    "freeArmor": false,
+    "freeWeapons": true,
+    "freeArmor": true,
     "skillOptions": [],
-    "abilities": [],
-    "statOptions": [
-      "might"
+    "abilities": [
+      {
+        "name": "Frenzy",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1
+        },
+        "description": "While in combat, you can enter a state of frenzy. While in this state, you can’t use Intellect points, but you add +1 to your Might Edge and your Speed Edge. This effect lasts as long as you wish, but it ends if no combat is taking place within range of your senses."
+      },
+      {
+        "name": "Effort",
+        "tier": 1,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Ease your allies’ attacks against one foe of your choice for the rest of the combat."
+      },
+      {
+        "name": "Wilderness Survival",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "You know how to survive in unpeopled lands. After spending at least ten minutes in the wilderness and succeeding on a difficulty 2 outdoor survival task (or a difficulty your GM determines is appropriate to the area), you find something useful you were seeking. The useful thing might be shelter in the form of a cave or tree hollow, all the makings necessary to start a fire, a game animal you bring down with ease, or berries, mushrooms, root vegetables, or other food. You know how to best prepare any game or vegetation you find and are able to feed yourself and up to five allies."
+      },
+      {
+        "name": "Wounded Fury",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "While you have at least three moderate wounds or at least one major wound, you gain one free level of Effort you can apply to one of your attacks each round. Enabler."
+      }
     ],
-    "description": "<p>Un Type de Épées & Sorcellerie centré sur l'archétype barbare (sword & sorcery), tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Épées & Sorcellerie. Réserves principales : Puissance.</em></p>"
+    "statOptions": [
+      "might",
+      "speed"
+    ],
+    "description": "<p>Un Type de Épées & Sorcellerie centré sur l'archétype barbare, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Épées & Sorcellerie. Réserves principales : Puissance, Célérité.</em></p>"
   },
   "folder": "Mqh1tXdDDqH3lySK",
   "sort": 0,

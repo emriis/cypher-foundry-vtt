@@ -98,7 +98,9 @@ ignored as generated or transient files.
 
 The release workflow follows the Foundry history-friendly release model:
 
-1. Update `system.json` `version` and its versioned `download` URL together.
+1. Update `system.json` `version` and its versioned `download` URL together. The download URL
+	must use the matching `v<version>` release tag, for example
+	`/releases/download/v0.1.3/system.zip` for version `0.1.3`.
 2. Run `npm test` and `npm run package` locally.
 3. Inspect `dist/system.json` and `dist/system.zip`.
 4. Commit the manifest and implementation/content changes.

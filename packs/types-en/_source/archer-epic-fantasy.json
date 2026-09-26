@@ -1,32 +1,43 @@
 {
   "_id": "WViQX05LUq5DD9c8",
   "_key": "!items!WViQX05LUq5DD9c8",
-  "name": "Archer (Epic Fantasy)",
+  "name": "Archer",
   "type": "type",
-  "img": "icons/svg/upgrade.svg",
+  "img": "systems/cypher/assets/types/archer.webp",
   "system": {
     "tier": 1,
     "genre": "Fantasy",
     "subgenre": "Epic Fantasy",
     "poolBonuses": {
       "might": 0,
-      "speed": 0,
+      "speed": 4,
       "intellect": 0
     },
-    "edgeChoice": 0,
+    "edgeChoice": 1,
     "woundBonuses": {
-      "minor": 0,
-      "moderate": 0,
+      "minor": 2,
+      "moderate": 1,
       "major": 0
     },
     "freeWeapons": false,
-    "freeArmor": false,
+    "freeArmor": true,
     "skillOptions": [],
-    "abilities": [],
+    "abilities": [
+      {
+        "name": "Expert Combatant",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on."
+      }
+    ],
     "statOptions": [
       "speed"
     ],
-    "description": "<p>A Epic Fantasy Type focused on archer (epic fantasy) archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Epic Fantasy. Primary Pools: speed.</em></p>"
+    "description": "<p>A Epic Fantasy Type focused on archer archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Epic Fantasy. Primary Pools: speed.</em></p>"
   },
   "folder": "406V7PHmM8qHDb1x",
   "sort": 0,

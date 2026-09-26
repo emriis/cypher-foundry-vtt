@@ -14,7 +14,7 @@ if ([string]::IsNullOrWhiteSpace($manifest.version)) {
   throw "system.json must define a version."
 }
 
-$expectedDownloadPath = "/releases/download/$($manifest.version)/system.zip"
+$expectedDownloadPath = "/releases/download/v$($manifest.version)/system.zip"
 if ($manifest.download -notlike "*$expectedDownloadPath") {
   throw "system.json download must end with '$expectedDownloadPath'."
 }
@@ -23,7 +23,7 @@ $outputPath = Join-Path $repositoryRoot $OutputDirectory
 $stagingPath = Join-Path ([System.IO.Path]::GetTempPath()) "cypher-package-$([guid]::NewGuid())"
 $zipPath = Join-Path $outputPath "system.zip"
 $releaseManifestPath = Join-Path $outputPath "system.json"
-$includedPaths = @("system.json", "cypher.mjs", "module", "templates", "css", "lang", "packs", "LICENSE.txt", "README.md")
+$includedPaths = @("system.json", "cypher.mjs", "module", "templates", "css", "lang", "packs", "assets", "LICENSE.txt", "README.md")
 
 try {
   New-Item -ItemType Directory -Force -Path $outputPath | Out-Null

@@ -9,6 +9,22 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ## [Unreleased]
 
+## [0.1.4] - 2026-09-26
+
+### Added
+
+- WebP illustrations for the Type compendiums.
+
+### Changed
+
+- Cross-subgenre Type entries now use their canonical names and mechanics, with a single Soldier
+  entry in Hard Science Fiction and its matching entry in Space Opera.
+
+### Fixed
+
+- Pinned the Foundry download URL to the `v<version>` GitHub release tag and made package
+  validation enforce that format.
+
 ## [0.1.3] - 2026-09-26
 
 ### Added
