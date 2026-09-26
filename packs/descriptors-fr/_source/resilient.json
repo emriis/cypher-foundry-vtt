@@ -1,7 +1,7 @@
 {
   "_id": "FsiNF13p9Q8gR1zJ",
   "_key": "!items!FsiNF13p9Q8gR1zJ",
-  "name": "Résilient(e)",
+  "name": "Résilient·e",
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
@@ -10,12 +10,12 @@
     ],
     "statAmount": 2,
     "skillOptions": [
-      "Athlétisme",
       "Évasion",
+      "",
       "",
       ""
     ],
-    "description": "<p>Tu es plus coriace qu'il n'y paraît, capable d'encaisser sans jamais paniquer.</p><p><em>Tu gagnes +2 à ta Réserve de Puissance, et un entrainement en Athlétisme ou Évasion.</em></p>"
+    "description": "<p>Tu es plus résistant·e que la plupart. Tu encaisses les coups et tu sais comment te sortir d'une mauvaise passe.</p><p><em>Tu gagnes +2 à ta Réserve de Puissance, et un entrainement en Évasion.</em></p>"
   },
   "folder": null,
   "sort": 0,

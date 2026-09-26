@@ -1,7 +1,7 @@
 {
   "_id": "SClg01Q5cDnb4yDR",
   "_key": "!items!SClg01Q5cDnb4yDR",
-  "name": "Gracieux(se)",
+  "name": "Gracieux·se",
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
@@ -11,11 +11,11 @@
     "statAmount": 2,
     "skillOptions": [
       "Gymnastique",
-      "Initiative",
+      "",
       "",
       ""
     ],
-    "description": "<p>Tu te déplaces avec une élégance fluide et posée, que ce soit en dansant, en combattant, ou en traversant simplement une pièce.</p><p><em>Tu gagnes +2 à ta Réserve de Célérité, et un entrainement en Gymnastique ou Initiative.</em></p>"
+    "description": "<p>Tu as un sens de l'équilibre parfait. Tes mouvements sont empreints de grâce et d'élégance.</p><p><em>Tu gagnes +2 à ta Réserve de Célérité, et un entrainement en Gymnastique.</em></p>"
   },
   "folder": null,
   "sort": 0,

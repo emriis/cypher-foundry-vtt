@@ -1,7 +1,7 @@
 {
   "_id": "BFYmr6bxVajuiyTo",
   "_key": "!items!BFYmr6bxVajuiyTo",
-  "name": "Prudent(e)",
+  "name": "Prudent·e",
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
@@ -10,12 +10,12 @@
     ],
     "statAmount": 2,
     "skillOptions": [
-      "Récolte d'informations",
       "Perception",
+      "",
       "",
       ""
     ],
-    "description": "<p>Tu étudies une situation avec soin avant de t'y engager, préférant la préparation à l'imprudence.</p><p><em>Tu gagnes +2 à ta Réserve de Célérité, et un entrainement en Récolte d'informations ou Perception.</em></p>"
+    "description": "<p>Tu ne te lances jamais tête baissée. Tu prends le temps de tout analyser avant d'agir.</p><p><em>Tu gagnes +2 à ta Réserve de Célérité, et un entrainement en Perception.</em></p>"
   },
   "folder": null,
   "sort": 0,

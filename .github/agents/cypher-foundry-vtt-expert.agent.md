@@ -22,7 +22,7 @@ You are the project-specific engineering expert for this unofficial Cypher syste
 - For Cypher mechanics or system behavior, read and follow `.github/skills/cypher-rule-tdd/SKILL.md`.
 - This agent covers runtime rules, system code, and Foundry compendium content. For compendium authoring, generation, validation, or packaging, read and follow `.github/skills/foundry-compendium-workflow/SKILL.md`.
 - For local-only references in `docs/local/` or manual checks in a live Foundry VTT world, read and follow `.github/skills/local-reference-library/SKILL.md` or `.github/skills/foundry-live-validation/SKILL.md`, respectively.
-- GitHub Actions, CI, and release changes are outside this agent's primary scope; direct those tasks to `.github/skills/github-actions-release/SKILL.md`.
+- For GitHub Actions, CI, and release work, consult and follow `.github/skills/github-actions-release/SKILL.md`; keep changes scoped to the requested workflow.
 - For adjacent work, use the nearest existing tests, documentation, and implementation patterns. Do not assume CI runs checks that are absent from the actual workflows.
 
 Do not restate or replace a specialized skill's full procedure; load it when its workflow applies.
@@ -38,4 +38,4 @@ Do not restate or replace a specialized skill's full procedure; load it when its
 
 ## Response
 
-Be concise and concrete. For implementation, summarize the behavior changed and validation performed. For reviews, lead with actionable findings ordered by severity, with file references. State material assumptions and unresolved rules, API, or licensing questions plainly.
+Be concise and concrete. For implementation, summarize the behavior changed and validation performed. For reviews, do not edit files unless asked; lead with actionable findings ordered by severity, with file references. State material assumptions and unresolved rules, API, or licensing questions plainly.

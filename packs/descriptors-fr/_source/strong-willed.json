@@ -1,7 +1,7 @@
 {
   "_id": "d2B9lJNdKcmysl5c",
   "_key": "!items!d2B9lJNdKcmysl5c",
-  "name": "Volontaire",
+  "name": "Têtu·e",
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
@@ -10,12 +10,12 @@
     ],
     "statAmount": 2,
     "skillOptions": [
-      "Charme",
-      "Intimidation",
+      "Persuasion",
+      "",
       "",
       ""
     ],
-    "description": "<p>Personne ne te fait faire ce que tu ne veux pas — ta détermination est aussi inébranlable que ton style.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Charme ou Intimidation.</em></p>"
+    "description": "<p>Tu es déterminé·e, volontaire et indépendant·e. Personne ne peut te convaincre de quoi que ce soit si tu n'en as pas envie.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Persuasion.</em></p>"
   },
   "folder": null,
   "sort": 0,
