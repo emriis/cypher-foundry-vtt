@@ -3,6 +3,17 @@
 This repository has four separate areas of work. Use the workflow that matches
 the change; do not edit generated release artifacts in `dist/`.
 
+## Copilot support
+
+Repository-wide Copilot guidance lives in `.github/copilot-instructions.md`.
+The project-specific `Cypher Foundry VTT Expert` agent is defined in
+`.github/agents/`; reusable procedures for rule TDD, compendium changes, and
+GitHub Actions/releases live in `.github/skills/`.
+
+Optional user-provided reference documents can be placed in `docs/local/`.
+That directory is excluded from Git, so its contents are available only in the
+local checkout and are not included in pull requests or CI.
+
 ## 1. System implementation
 
 Use this flow when changing a Foundry feature or a game rule.

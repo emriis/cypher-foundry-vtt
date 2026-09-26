@@ -7,7 +7,6 @@
     "Tier": "Tier",
     "Effort": "Effort",
     "Edge": "Edge",
-    "XP": "XP",
     "Level": "Level",
     "Damage": "Damage",
     "Equipped": "Equipped",
@@ -40,9 +39,7 @@
       "AddSecondFocus": "Add a second focus",
       "RemoveSecondFocus": "Remove the second focus"
     },
-    "Descriptor": "Descriptor",
     "Descriptor2": "Second Descriptor",
-    "Type": "Type",
     "Focus": "Focus",
     "Focus2": "Second Focus",
     "Profession": "Profession",
@@ -246,6 +243,7 @@
     },
 
     "Descriptor": {
+      "Label": "Descriptor",
       "StatOptions": "Stat Choices",
       "StatOptionsHint": "Which Pool(s) this Descriptor can add its bonus to. Pick two (e.g. Speed or Might) if the CRD text offers a choice.",
       "StatAmount": "Pool Bonus",
@@ -264,6 +262,7 @@
       "GrantedFrom": "Granted from Descriptor: {name}"
     },
     "Type": {
+      "Label": "Type",
       "Genre": "Genre",
       "Subgenre": "Subgenre",
       "StatOptions": "Primary Pools",
@@ -346,6 +345,7 @@
     },
 
     "XP": {
+      "Label": "XP",
       "Title": "Experience Points",
       "Reroll": "Reroll",
       "RerollResult": "Reroll Result",

@@ -1,6 +1,9 @@
 # Generated release artifacts
 /dist/
 
+# Documents de référence locaux, non destinés au dépôt
+/docs/local/
+
 # Transient LevelDB files created while editing Foundry compendium packs
 /packs/**/LOCK
 /packs/**/LOG
@@ -30,6 +33,5 @@ __pycache__/
 # Scratch local / fichiers de test ponctuels non destinés au dépôt
 # Local scratch / one-off test files not meant for the repo
 *.local.json
-
 
 
