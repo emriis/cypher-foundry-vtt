@@ -11,6 +11,8 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 - `CONTRIBUTING.md` describing the project's coding conventions, pack-build procedure, and PR
   process.
+- Automated tests for task-roll resolution, recovery and rally behavior, schema migrations,
+  Foundry manifest resources, localized keys, and compendium source integrity.
 - This changelog.
 
 ### Changed

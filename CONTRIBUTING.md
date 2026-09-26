@@ -23,9 +23,9 @@ consistent as more people touch it.
 2. No build step is required to run the system — `.mjs` modules are loaded directly by Foundry.
    A build step (`@foundryvtt/foundryvtt-cli`) is only needed when regenerating compendium
    packs; see [Rebuilding compendium packs](#rebuilding-compendium-packs).
-3. There is currently no automated test suite. Changes should be manually verified in a live
-   Foundry world before opening a PR — see the [known limitation](CHANGELOG.md#known-limitations)
-   noted in the changelog.
+3. Run the automated suite with `npm test`. Changes that depend on Foundry runtime behavior
+   should also be manually verified in a live Foundry world before opening a PR — see the
+   [known limitation](CHANGELOG.md#known-limitations) noted in the changelog.
 
 ## Coding conventions
 
@@ -110,8 +110,8 @@ every commit.
   `Added` / `Changed` / `Fixed` heading.
 - If the change affects both languages (a new sheet field, a new mechanic), update `lang/en.json`
   and `lang/fr.json` together.
-- Describe how the change was tested (which sheet, which action) given the lack of an automated
-  test suite.
+- Describe how the change was tested (for example, the focused test command and, where needed,
+  which sheet and action were checked in a live Foundry world).
 
 ## Reporting bugs
 
