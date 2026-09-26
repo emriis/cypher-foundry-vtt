@@ -110,6 +110,12 @@ every commit.
   `Added` / `Changed` / `Fixed` heading.
 - If the change affects both languages (a new sheet field, a new mechanic), update `lang/en.json`
   and `lang/fr.json` together.
+- Before committing a runtime-affecting change, follow
+  `.github/skills/foundry-live-validation/SKILL.md`: test in a disposable world
+  using the changed checkout and record the exact Foundry version/build. Update
+  `system.json` `compatibility.verified` only after that live test succeeds on
+  a version newer than the current value; do not bump it based on installation
+  alone. Cancel unreviewed or non-reversible migration prompts.
 - Describe how the change was tested (for example, the focused test command and, where needed,
   which sheet and action were checked in a live Foundry world).
 

@@ -19,6 +19,12 @@
 - For behavior changes, use TDD and run focused tests followed by `npm test`.
   Report checks that were not run, including any required live-Foundry
   verification.
+- Before preparing a commit with runtime-affecting changes, follow
+  `.github/skills/foundry-live-validation/SKILL.md`: verify the exact local
+  Foundry version in a disposable world using this checkout, and update
+  `system.json` `compatibility.verified` only after a successful live test on a
+  newer version. If live testing is unavailable or fails, leave it unchanged
+  and report the gap; cancel unreviewed or non-reversible migrations.
 - Do not assume CI runs checks that are absent from `.github/workflows/`.
   Preserve least-privilege permissions and never expose secrets in logs or
   untrusted pull-request code.

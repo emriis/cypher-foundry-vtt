@@ -1,6 +1,6 @@
 ---
 name: foundry-live-validation
-description: 'Use when manually smoke-testing this Cypher system in a local Foundry VTT installation, validating UI or lifecycle behavior, checking compendium packs in game, or verifying compatibility with Foundry V13/V14.'
+description: 'Use when manually smoke-testing this Cypher system in a local Foundry VTT installation, preparing a commit with runtime changes, checking compendium packs in game, or verifying compatibility with Foundry V13/V14.'
 ---
 
 # Foundry live validation
@@ -50,6 +50,30 @@ Select only the cases affected by the change:
 
 Do not expand into a full-system regression pass unless the change has a broad
 impact or a focused check exposes a related issue.
+
+## Commit gate and verified version
+
+Use this gate before committing a runtime-affecting change, including changes
+to system behavior, sheets/templates, data models, migrations, or compendium
+packs.
+
+1. Run the focused automated test and `npm test`.
+2. In the local Foundry UI, read the exact version/build and open a disposable
+  test world that loads the checkout being changed. A version shown only on
+  the setup screen, or a different packaged copy of the system, is not a live
+  compatibility check.
+3. Run the relevant focused smoke test above. If Foundry warns that loading the
+  world will perform an unreviewed or non-reversible migration, cancel and use
+  a disposable world copy instead.
+4. Only after the smoke test succeeds, compare the tested Foundry version with
+  `system.json`'s `compatibility.verified`. If the tested version is newer,
+  update that field to the exact tested version, using the manifest's existing
+  format (for example, `14.360`). Do not raise it merely because that version
+  is installed, and do not lower it after testing an older version.
+5. If live testing is unavailable or fails, leave `compatibility.verified`
+  unchanged and report that the commit is not verified on the local runtime.
+  Documentation-only and test-only changes do not require a compatibility
+  version update.
 
 ## Evidence and reporting
 
