@@ -64,6 +64,12 @@ test("each declared pack has a corresponding language-specific source set", () =
 
     for (const file of sourceFiles) {
       const item = JSON.parse(fs.readFileSync(path.join(sourceDirectory, file), "utf8"));
+      if (item._key.startsWith("!folders!")) {
+        assert.match(item._key, /^!folders![A-Za-z0-9]{16}$/);
+        assert.equal(item.type, "Item");
+        assert.ok(item.name);
+        continue;
+      }
       assert.ok(manifest.documentTypes.Item[item.type], `${pack.name}/${file} has an undeclared Item type`);
       assert.match(item._key, /^!items![A-Za-z0-9]{16}$/, `${pack.name}/${file} has an invalid compendium key`);
     }

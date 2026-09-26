@@ -1,7 +1,7 @@
 {
   "_id": "aR7nhfar2WvpScbV",
   "_key": "!items!aR7nhfar2WvpScbV",
-  "name": "Furtif(ve)",
+  "name": "Furtif·ve",
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
@@ -10,12 +10,12 @@
     ],
     "statAmount": 2,
     "skillOptions": [
+      "Furtivité",
       "Vol à la tire",
-      "Discrétion",
-      "",
+      "Crochetage",
       ""
     ],
-    "description": "<p>Rapide et silencieux(se), tu sais utiliser l'ombre et la distraction pour te déplacer sans être vu(e) ni entendu(e).</p><p><em>Tu gagnes +2 à ta Réserve de Célérité, et un entrainement en Vol à la tire ou Discrétion.</em></p>"
+    "description": "<p>Tu es furtif·ve, insaisissable et rapide. Tu sais utiliser les ombres et les abris pour rester invisible et inaudible.</p><p><em>Tu gagnes +2 à ta Réserve de Célérité, et un entrainement en Furtivité, Vol à la tire ou Crochetage.</em></p>"
   },
   "folder": null,
   "sort": 0,

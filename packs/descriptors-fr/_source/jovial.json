@@ -1,7 +1,7 @@
 {
   "_id": "WzFulfYYtGYfFbNE",
   "_key": "!items!WzFulfYYtGYfFbNE",
-  "name": "Jovial(e)",
+  "name": "Passionné·e",
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
@@ -10,12 +10,12 @@
     ],
     "statAmount": 2,
     "skillOptions": [
-      "Charme",
       "Représentation",
+      "",
       "",
       ""
     ],
-    "description": "<p>Enjoué(e) et sociable, tu mets les gens à l'aise avec une blague et un sourire chaleureux.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Charme ou Représentation.</em></p>"
+    "description": "<p>Tu vis les émotions de façon intense. Tes passions guident tes actions et les autres voient en toi quelqu'un de profondément sincère.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Représentation.</em></p>"
   },
   "folder": null,
   "sort": 0,

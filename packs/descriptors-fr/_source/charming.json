@@ -1,7 +1,7 @@
 {
   "_id": "8QdEQYV0Sb08jLoA",
   "_key": "!items!8QdEQYV0Sb08jLoA",
-  "name": "Charmeur(se)",
+  "name": "Charmeur·euse",
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
@@ -10,12 +10,12 @@
     ],
     "statAmount": 2,
     "skillOptions": [
-      "Charme",
-      "Tromperie",
+      "Persuasion",
+      "",
       "",
       ""
     ],
-    "description": "<p>Beau parleur au sourire facile, tu as le don de faire voir les choses à ta manière.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Charme ou Tromperie.</em></p>"
+    "description": "<p>Tu as un don pour la parole et un charme irrésistible. Tu sais convaincre les autres de faire ce que tu veux.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Persuasion.</em></p>"
   },
   "folder": null,
   "sort": 0,

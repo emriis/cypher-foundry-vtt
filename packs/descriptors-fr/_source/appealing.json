@@ -1,7 +1,7 @@
 {
   "_id": "f1AtVgy9W1XhKBh2",
   "_key": "!items!f1AtVgy9W1XhKBh2",
-  "name": "Séduisant(e)",
+  "name": "Attrayant·e",
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
@@ -10,12 +10,12 @@
     ],
     "statAmount": 2,
     "skillOptions": [
-      "Charme",
-      "Déceler les intentions",
+      "Persuasion",
+      "",
       "",
       ""
     ],
-    "description": "<p>Tu dégages un charisme naturel et sympathique qui met les inconnus à l'aise et attire les alliés.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Charme ou Déceler les intentions.</em></p>"
+    "description": "<p>Tu es naturellement attirant·e et charismatique. Les gens t'apprécient, veulent t'aider et devenir ton ami·e.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Persuasion.</em></p>"
   },
   "folder": null,
   "sort": 0,
