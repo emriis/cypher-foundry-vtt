@@ -76,9 +76,10 @@ export default class CypherActor extends Actor {
     const skillSteps = skillItem ? skillItem.system.stepModifier : 0;
 
     const edge = statData.edge ?? 0;
+    const poolValue = statData.pool.value;
     const totalCost = CypherActor.computeEffortCost(effortLevels, edge);
 
-    if (totalCost > statData.pool.value) {
+    if (totalCost > poolValue) {
       ui.notifications.error(game.i18n.format("CYPHER.Warning.NotEnoughPool", { stat: statLabel }));
       return null;
     }
@@ -99,7 +100,7 @@ export default class CypherActor extends Actor {
 
     // Spend the Pool points.
     if (totalCost > 0) {
-      await this.update({ [`${resolved.path}.pool.value`]: statData.pool.value - totalCost });
+      await this.update({ [`${resolved.path}.pool.value`]: poolValue - totalCost });
     }
 
     const roll = await new Roll("1d20").evaluate();
@@ -127,8 +128,7 @@ export default class CypherActor extends Actor {
 
     // A natural 20 refunds the action's point cost.
     if (refund && totalCost > 0) {
-      const afterSpend = statData.pool.value - totalCost;
-      await this.update({ [`${resolved.path}.pool.value`]: Math.min(statData.pool.max, afterSpend + totalCost) });
+      await this.update({ [`${resolved.path}.pool.value`]: Math.min(statData.pool.max, poolValue) });
     }
 
     const totalDamage = isAttack ? baseDamage + damageBonus : 0;
