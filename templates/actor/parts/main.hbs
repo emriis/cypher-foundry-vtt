@@ -3,11 +3,16 @@
   <div class="stats-row">
     {{#each system.stats as |stat key|}}
     <div class="stat-block stat-{{key}}">
-      <h3>{{localize (concat "CYPHER.Stat." key)}}</h3>
+      <div class="stat-block-header">
+        <h3>{{localize (concat "CYPHER.Stat." key)}}</h3>
+        <i class="fa-solid fa-dice-d20 stat-die-icon" aria-hidden="true"></i>
+      </div>
       <div class="pool-row">
-        <input class="pool-value" name="system.stats.{{key}}.pool.value" type="number" value="{{stat.pool.value}}" min="0"/>
-        <span>/</span>
-        <input class="pool-max" name="system.stats.{{key}}.pool.max" type="number" value="{{stat.pool.max}}" min="0"/>
+        <label class="sr-only" for="pool-value-{{key}}">{{localize (concat "CYPHER.Stat." key)}} — {{localize 'CYPHER.Stat.PoolValue'}}</label>
+        <input id="pool-value-{{key}}" class="pool-value" name="system.stats.{{key}}.pool.value" type="number" value="{{stat.pool.value}}" min="0"/>
+        <span class="pool-separator" aria-hidden="true">/</span>
+        <label class="sr-only" for="pool-max-{{key}}">{{localize (concat "CYPHER.Stat." key)}} — {{localize 'CYPHER.Stat.PoolMax'}}</label>
+        <input id="pool-max-{{key}}" class="pool-max" name="system.stats.{{key}}.pool.max" type="number" value="{{stat.pool.max}}" min="0"/>
       </div>
       <label class="edge-row">{{localize 'CYPHER.Edge'}}
         <input name="system.stats.{{key}}.edge" type="number" value="{{stat.edge}}" min="0"/>
@@ -23,9 +28,10 @@
   <div class="stats-row custom-stats-row">
     {{#each system.customStats as |stat|}}
     <div class="stat-block stat-custom" data-stat-id="{{stat.id}}">
-      <h3>{{stat.label}}
+      <div class="stat-block-header">
+        <h3>{{stat.label}}</h3>
         <a class="remove-custom-stat" data-action="deleteCustomStat" title="{{localize 'CYPHER.Stat.RemoveCustom'}}"><i class="fa-solid fa-xmark"></i></a>
-      </h3>
+      </div>
       <!-- Champs cachés : préservent id/label lors de la soumission du formulaire entier.
            Un ArrayField est TOUJOURS remplacé en bloc par Foundry — tout champ d'un élément
            qui n'est pas présent comme <input> nommé serait sinon perdu à chaque soumission.
@@ -35,9 +41,11 @@
       <input type="hidden" name="system.customStats.{{@index}}.id" value="{{stat.id}}"/>
       <input type="hidden" name="system.customStats.{{@index}}.label" value="{{stat.label}}"/>
       <div class="pool-row">
-        <input class="pool-value" name="system.customStats.{{@index}}.pool.value" type="number" value="{{stat.pool.value}}" min="0"/>
-        <span>/</span>
-        <input class="pool-max" name="system.customStats.{{@index}}.pool.max" type="number" value="{{stat.pool.max}}" min="0"/>
+        <label class="sr-only" for="custom-pool-value-{{stat.id}}">{{stat.label}} — {{localize 'CYPHER.Stat.PoolValue'}}</label>
+        <input id="custom-pool-value-{{stat.id}}" class="pool-value" name="system.customStats.{{@index}}.pool.value" type="number" value="{{stat.pool.value}}" min="0"/>
+        <span class="pool-separator" aria-hidden="true">/</span>
+        <label class="sr-only" for="custom-pool-max-{{stat.id}}">{{stat.label}} — {{localize 'CYPHER.Stat.PoolMax'}}</label>
+        <input id="custom-pool-max-{{stat.id}}" class="pool-max" name="system.customStats.{{@index}}.pool.max" type="number" value="{{stat.pool.max}}" min="0"/>
       </div>
       <label class="edge-row">{{localize 'CYPHER.Edge'}}
         <input name="system.customStats.{{@index}}.edge" type="number" value="{{stat.edge}}" min="0"/>
@@ -65,31 +73,51 @@
   <p class="dead-banner"><i class="fa-solid fa-skull"></i> {{localize 'CYPHER.Wound.DeadBanner'}}</p>
   {{/if}}
 
-  <div class="wounds-block">
-    <h3>{{localize 'CYPHER.Wound.Title'}}</h3>
-    <div class="wounds-row">
-      {{#each system.wounds as |wound severity|}}
-      <div class="wound-severity wound-{{severity}}">
-        <label>{{localize (concat "CYPHER.Wound." severity)}}</label>
-        <div class="wound-boxes">
-          <input name="system.wounds.{{severity}}.current" type="number" value="{{wound.current}}" min="0" max="{{wound.max}}"/>
-          <span>/ {{wound.max}}</span>
-        </div>
-        {{#ifNotEquals severity "major"}}
-        <button type="button" data-action="rallyWound" data-severity="{{severity}}" title="{{localize 'CYPHER.Wound.Rally'}}">
-          <i class="fa-solid fa-heart-pulse"></i>
-        </button>
-        {{else}}
-          {{#if ../system.canRallyMajor}}
-          <button type="button" data-action="rallyWound" data-severity="major" title="{{localize 'CYPHER.Wound.RallyMajorSuperhero'}}">
-            <i class="fa-solid fa-heart-pulse"></i>
+  <div class="vitals-row">
+
+    <div class="wounds-block">
+      <h3>{{localize 'CYPHER.Wound.Title'}}</h3>
+      <div class="wounds-row">
+        {{#each system.wounds as |wound severity|}}
+        <div class="wound-severity wound-{{severity}}">
+          <label class="wound-severity-label" for="wound-current-{{severity}}">{{localize (concat "CYPHER.Wound." severity)}}</label>
+          <div class="wound-boxes">
+            <label class="sr-only" for="wound-current-{{severity}}">{{localize (concat "CYPHER.Wound." severity)}} — {{localize 'CYPHER.Wound.CurrentLabel'}}</label>
+            <input id="wound-current-{{severity}}" name="system.wounds.{{severity}}.current" type="number" value="{{wound.current}}" min="0" max="{{wound.max}}"/>
+            <span class="wound-max-note">/ {{wound.max}}</span>
+          </div>
+          {{#ifNotEquals severity "major"}}
+          <button type="button" data-action="rallyWound" data-severity="{{severity}}" title="{{localize 'CYPHER.Wound.Rally'}}">
+            <i class="fa-solid fa-heart-pulse"></i> {{localize 'CYPHER.Wound.Rally'}}
           </button>
-          {{/if}}
-        {{/ifNotEquals}}
+          {{else}}
+            {{#if ../system.canRallyMajor}}
+            <button type="button" data-action="rallyWound" data-severity="major" title="{{localize 'CYPHER.Wound.RallyMajorSuperhero'}}">
+              <i class="fa-solid fa-heart-pulse"></i> {{localize 'CYPHER.Wound.RallyMajorSuperhero'}}
+            </button>
+            {{/if}}
+          {{/ifNotEquals}}
+        </div>
+        {{/each}}
       </div>
-      {{/each}}
+      <p class="wound-hint">{{localize 'CYPHER.Wound.Hint'}}</p>
     </div>
-    <p class="wound-hint">{{localize 'CYPHER.Wound.Hint'}}</p>
+
+    <div class="recoveries-block">
+      <h3>{{localize 'CYPHER.Recovery.Title'}}</h3>
+      <div class="recovery-row">
+        {{#each system.recoveries as |checked key|}}
+        <label class="recovery-item">
+          <input type="checkbox" name="system.recoveries.{{key}}" {{#if checked}}checked{{/if}}/>
+          {{localize (concat "CYPHER.Recovery." key)}}
+          <button type="button" data-action="rollRecovery" data-interval="{{key}}" title="{{localize 'CYPHER.Roll.Recovery'}}">
+            <i class="fa-solid fa-dice-d6"></i>
+          </button>
+        </label>
+        {{/each}}
+      </div>
+    </div>
+
   </div>
 
   <div class="armor-block">
@@ -131,21 +159,6 @@
       <button type="button" data-action="rollDefense" data-defense-type="dodge">
         <i class="fa-solid fa-person-running"></i> {{localize 'CYPHER.Defense.Dodge'}}
       </button>
-    </div>
-  </div>
-
-  <div class="recoveries-block">
-    <h3>{{localize 'CYPHER.Recovery.Title'}}</h3>
-    <div class="recovery-row">
-      {{#each system.recoveries as |checked key|}}
-      <label class="recovery-item">
-        <input type="checkbox" name="system.recoveries.{{key}}" {{#if checked}}checked{{/if}}/>
-        {{localize (concat "CYPHER.Recovery." key)}}
-        <button type="button" data-action="rollRecovery" data-interval="{{key}}" title="{{localize 'CYPHER.Roll.Recovery'}}">
-          <i class="fa-solid fa-dice-d6"></i>
-        </button>
-      </label>
-      {{/each}}
     </div>
   </div>
 
