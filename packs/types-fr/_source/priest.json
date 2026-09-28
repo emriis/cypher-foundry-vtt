@@ -24,34 +24,34 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Cypher Use",
+        "name": "Utilisation des Cyphers",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You can bear one additional cypher at a time."
+        "description": "Tu peux porter **un cypher supplémentaire** à la fois."
       },
       {
-        "name": "Idol",
+        "name": "Idole",
         "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "intellect",
           "amount": 3
         },
-        "description": "At the conclusion of a ten-minute ritual, you create an idol that persists until its magic is exhausted. The idol could be a symbol etched in stone, a figurine woven from twigs, a small carving, or something similar. The idol must be set on a solid surface with a nod toward being protected from the elements, such as being set in a tree hollow, at the base of a wall, or inside a structure."
+        "description": "Au terme d’un rituel de dix minutes, tu crées une **idole** qui persiste tant que sa magie n’est pas épuisée. L’idole peut être un symbole gravé dans la pierre, une figurine tressée en brindilles, une petite sculpture, etc. Elle doit être placée sur une **surface solide**, idéalement protégée des éléments : dans un creux d’arbre, au pied d’un mur, à l’intérieur d’une structure… Effort : Tu peux porter l’idole avec toi. L’idole est connectée au sacré et offre un seul bénéfice fixe de ton choix. Quiconque prie l’idole en utilisant son action reçoit ce bénéfice, que tu sois présent·e ou non. L’idole a un épuisement de 1–2 sur 1d6 : lance ce dé chaque fois qu’elle accorde son bénéfice. Fureur Bestiale : Le suppliant est imprégné d’un esprit latent de fureur bestiale. La fureur se déclenche lorsqu’iel perd son sang‑froid ou choisit de l’éveiller en tant qu’action supplémentaire. Quand la fureur éclate, le suppliant se transforme visiblement : corps gonflé, traits déformés par la rage. Tant qu’iel est furieux, Iel ne peut pas dépenser de points d’Intellect sauf pour tenter de reprendre son calme. Iel attaque toute créature vivante à courte portée, lance deux jets pour chaque attaque et choisit le meilleur. L’état furieux dure jusqu’à une récupération de dix minutes ou plus, ou jusqu’à ce qu’iel réussisse une tâche d’Intellect de difficulté 2. Lorsque la fureur cesse, le contrecoup physique inflige deux blessures modérées. (Un·e PNJ furieux·se est considéré·e comme ayant +1 niveau et subit 6 dégâts quand la fureur prend fin.) Guérison : La gravité d’une blessure du suppliant est réduite d’un niveau. Purification Spirituelle : Le suppliant est libéré·e d’une malédiction, d’une possession démoniaque ou d’une affliction spirituelle similaire de niveau 5 ou moins. Dix minutes pour initier."
       },
       {
-        "name": "Bestial Fury",
+        "name": "Rétribution",
         "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "The supplicant is infused with a latent spirit of bestial fury. The fury activates when the supplicant loses their temper or they choose to rouse it as an extra action on their turn."
+        "description": "Tu invoques les pouvoirs d’une divinité pour frapper un ennemi à **courte portée** que tu peux voir. Si ton attaque d’**Intellect** réussit, la cible subit **3 dégâts** et elle est marquée d’un **signe évident** lié à cette divinité jusqu’à ta prochaine récupération de dix minutes ou plus. Par exemple, la rétribution de Thesk, Seigneur des Serpents, prend la forme de serpents éthérés mordant ta cible, qui se retrouve frappée d’un symbole luisant de crocs ou d’une tête de serpent. Au rang 3, la rétribution inflige 5 dégâts. Dernière action"
       },
       {
         "name": "Healing",
@@ -71,17 +71,17 @@
           "stat": "none",
           "amount": 0
         },
-        "description": "The supplicant is freed from one curse, demonic possession, or similar spiritual affliction of level 5 or less."
+        "description": "The supplicant is freed from one curse, demonic possession, or similar spiritual affliction of level 5 or less. Effort: You can carry the idol with you. Ten minutes to initiate."
       },
       {
-        "name": "Effort",
+        "name": "Retribution",
         "tier": 1,
         "enabler": false,
         "cost": {
-          "stat": "none",
-          "amount": 0
+          "stat": "intellect",
+          "amount": 1
         },
-        "description": "You can carry the idol with you."
+        "description": "You call forth the powers of a deity to assail a foe within short range that you can see. If your Intellect attack hits, the target takes 3 damage; they are also marked with an obvious sign relating to that deity until you take a ten-minute or longer recovery. For example, if you call for the retribution of Thesk the Serpent Lord, the attack looks like ephemeral snakes twining around and biting your foe, and they are marked on their forehead or another obvious location with glowing fangs or a snake’s head. Last action. At tier 3: The retribution increases to 5 damage."
       }
     ],
     "statOptions": [

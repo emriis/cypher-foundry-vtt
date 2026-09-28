@@ -26,42 +26,32 @@
       {
         "name": "Despite My Wounds",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "While you have two or more moderate wounds or one major wound, you get a free reroll on one action each round (as if you had spent 1 XP). Enabler."
+        "description": "While you have two or more moderate wounds or one major wound, you get a free reroll on one action each round (as if you had spent 1 XP)."
       },
       {
         "name": "Enhanced Scavenging",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "intellect",
           "amount": 2
         },
-        "description": "When you roll to scavenge the postapocalyptic landscape for something useful and your roll is less than a 9, treat the roll as a 9. (This means you don’t get a GM intrusion if you roll a 1.) Your enhanced effect persists until you take a ten-minute or longer recovery."
+        "description": "When you roll to scavenge the postapocalyptic landscape for something useful and your roll is less than a 9, treat the roll as a 9. (This means you don’t get a GM intrusion if you roll a 1.) Your enhanced effect persists until you take a ten-minute or longer recovery. Effort: Increase the minimum number rolled for this ability by 3. At tier 3: The minimum number rolled for this ability increases to 12."
       },
       {
-        "name": "Effort",
+        "name": "Get Out",
         "tier": 1,
         "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "Increase the minimum number rolled for this ability by 3."
-      },
-      {
-        "name": "Get Out",
-        "tier": 3,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0
-        },
-        "description": "If you move at least an immediate distance away from the most obvious threat or toward what promises to offer safety, one task you attempt next round is eased. Enabler."
+        "description": "If you move at least an immediate distance away from the most obvious threat or toward what promises to offer safety, one task you attempt next round is eased."
       }
     ],
     "statOptions": [

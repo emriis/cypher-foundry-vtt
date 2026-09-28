@@ -31,17 +31,27 @@
           "stat": "none",
           "amount": 0
         },
-        "description": "Increase the minimum number rolled for this ability by 3."
+        "description": "Increase the minimum number rolled for this ability by 3. Action. At tier 3: The minimum number rolled for this ability increases to 12."
       },
       {
         "name": "Ferocious When Cornered",
-        "tier": 3,
-        "enabler": false,
+        "tier": 1,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "While you have at least three minor wounds, at least two moderate wounds, or at least one major wound, you gain one free level of Effort you can apply to one of your attacks each round. Enabler."
+        "description": "While you have at least three minor wounds, at least two moderate wounds, or at least one major wound, you gain one free level of Effort you can apply to one of your attacks each round. At tier 3: The benefit increases to two free levels of Effort."
+      },
+      {
+        "name": "Sneak Attack",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 1
+        },
+        "description": "If you use a light weapon to attack a foe under one of the following conditions, your attack inflicts +5 damage. (This ability doesn’t work with medium or heavy weapons.) You attack with surprise. An ally uses their action to ease your attack. Your foe’s defenses are hindered due to some other ongoing direct distraction. Your foe is unable to take their next turn due to some disabling attack or situation. First action."
       }
     ],
     "statOptions": [

@@ -24,14 +24,34 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "When the Deal Bombs",
+        "name": "Fast Talk",
         "tier": 1,
         "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1
+        },
+        "description": "When speaking with an intelligent creature who can understand you and isn’t hostile, you convince them to take one reasonable action in the next round. A reasonable action must be agreed upon by your GM; it should not put the creature or its allies in obvious danger or be wildly out of character. Action."
+      },
+      {
+        "name": "Sneak Attack",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 1
+        },
+        "description": "If you use a light weapon to attack a foe under one of the following conditions, your attack inflicts +5 damage. (This ability doesn’t work with medium or heavy weapons.) You attack with surprise. An ally uses their action to ease your attack. Your foe’s defenses are hindered due to some other ongoing direct distraction. Your foe is unable to take their next turn due to some disabling attack or situation. First action."
+      },
+      {
+        "name": "When the Deal Bombs",
+        "tier": 1,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "There’s always a risk that someone you deal with will try to turn on you. After successfully charming, deceiving, interacting positively with, or using Fast Talk or a similar ability on a creature, if they become hostile to you within a day or so, you automatically reduce the wound severity of their first successful attack against you by one step. Enabler."
+        "description": "There’s always a risk that someone you deal with will try to turn on you. After successfully charming, deceiving, interacting positively with, or using Fast Talk or a similar ability on a creature, if they become hostile to you within a day or so, you automatically reduce the wound severity of their first successful attack against you by one step. At tier 3: Instead of reducing the wound’s severity, you ignore it completely (no damage)."
       }
     ],
     "statOptions": [

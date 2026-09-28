@@ -59,6 +59,14 @@ for (const language of ["en", "fr"]) {
     assert.equal(barbarian.system.edgeChoice, 1);
     assert.equal(barbarian.system.freeWeapons, true);
     assert.equal(barbarian.system.freeArmor, true);
+    assert.deepEqual(
+      barbarian.system.abilities.map(ability => [ability.name, ability.enabler]),
+      [
+        [language === "en" ? "Frenzy" : "Frénésie", true],
+        [language === "en" ? "Wilderness Survival" : "Instinct de survie", language === "fr"],
+        [language === "en" ? "Wounded Fury" : "Fureur du blessé", true]
+      ]
+    );
 
     const readType = filename => JSON.parse(fs.readFileSync(path.join(directory, filename), "utf8"));
     const mechanics = item => ({
@@ -89,7 +97,7 @@ for (const language of ["en", "fr"]) {
     const crimefighter = JSON.parse(fs.readFileSync(path.join(directory, "crimefighter-rank-1.json"), "utf8"));
     assert.deepEqual(crimefighter.system.poolBonuses, { might: 2, speed: 3, intellect: 5 });
     assert.deepEqual(crimefighter.system.woundBonuses, { minor: 3, moderate: 1, major: 0 });
-    assert.equal(crimefighter.system.abilities.length, 3);
+    assert.equal(crimefighter.system.abilities.length, 4);
   });
 
   test(`generated ${language} Type abilities have valid item data`, () => {

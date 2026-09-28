@@ -24,34 +24,34 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Beast Companion",
+        "name": "Compagnon animal",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You gain a follower that is a level 2 beast of your size or smaller that accompanies you and follows your instructions. You and your GM must work out the appearance and personality of your beast. Its movement is based on its creature type (avian, swimmer, and so on)."
+        "description": "Tu gagnes un **suivant** : une bête de niveau 2, de ta taille ou plus petite, qui t’accompagne fidèlement et suit tes instructions. Avec ton MJ, définissez son apparence, sa personnalité et son mode de déplacement (oiseau, reptile, nageur, quadrupède, etc.). Si ton compagnon meurt, tu peux utiliser tes points de ressources pour le ramener à la vie ou, en passant quelques jours à explorer la nature, trouver et apprivoiser un nouveau compagnon."
       },
       {
-        "name": "Friend to Small Creatures",
+        "name": "Ami des Petites Créatures",
         "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "intellect",
           "amount": 1
         },
-        "description": "A type of small creature you name that exists in the surrounding environment (such as insects, rats, bats, or birds) comes under your influence if you succeed on a difficulty 2 Intellect task for outdoor survival. Affected creatures within short range will not harm you or those you designate as allies until you use a ten-minute or longer recovery."
+        "description": "Tu choisis un type de petites créatures présentes dans l’environnement (insectes, rats, oiseaux, chauves‑souris, etc.). Si tu réussis une tâche d’Intellect de difficulté 2 liée à la survie en extérieur, Les créatures choisies situées à courte portée se placent sous ton influence : elles ne t’attaquent pas, ni toi, ni les personnes que tu désignes comme allié·es, jusqu’à ta prochaine récupération de dix minutes ou plus. Cette aptitude ne fonctionne pas sur les essaims hostiles de niveau 3 ou plus. Même les créatures de niveau 0 peuvent se rassembler en quantité suffisante pour entraver les attaques ou défenses d’une cible, ou accomplir d’autres actions utiles. Tu peux également employer cette aptitude pour calmer ou influencer des plantes proches : racines, lianes, fougères, branches… Effort : Tes petites créatures peuvent agir collectivement comme un PNJ allié. Action"
       },
       {
-        "name": "Effort",
+        "name": "Graines de Fureur",
         "tier": 1,
         "enabler": false,
         "cost": {
-          "stat": "none",
-          "amount": 0
+          "stat": "intellect",
+          "amount": 1
         },
-        "description": "Your creatures collectively respond to your commands as an NPC ally."
+        "description": "Tu projettes une poignée de graines qui s’enflamment en plein air puis filent vers une cible à longue portée, laissant derrière elles une traînée de fumée. Une attaque réussie inflige 3 dégâts et met la cible en feu, provoquant +1 dégât par round jusqu’à ce qu’elle utilise une action pour éteindre les flammes ou jusqu’à ta prochaine récupération. Action"
       }
     ],
     "statOptions": [

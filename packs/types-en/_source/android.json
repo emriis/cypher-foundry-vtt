@@ -26,42 +26,32 @@
       {
         "name": "Built to Hack",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "intellect",
           "amount": 2
         },
-        "description": "When you roll to hack an unintelligent computer or machine and your roll is less than a 9, treat the roll as a 9. (This means you don’t get a GM intrusion if you roll a 1.) Hacking tasks—which you can initiate using your ability to wirelessly network or by directly connecting to the target machine—include breaking into secure databases, taking temporary control of remote turrets, unlocking electronically secured entrances, and so on."
+        "description": "When you roll to hack an unintelligent computer or machine and your roll is less than a 9, treat the roll as a 9. (This means you don’t get a GM intrusion if you roll a 1.) Hacking tasks—which you can initiate using your ability to wirelessly network or by directly connecting to the target machine—include breaking into secure databases, taking temporary control of remote turrets, unlocking electronically secured entrances, and so on. Effort: Increase the minimum number rolled for this ability by 3. At tier 3: The minimum number rolled for this ability increases to 12."
       },
       {
-        "name": "Effort",
+        "name": "Flex Skill",
         "tier": 1,
         "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "Increase the minimum number rolled for this ability by 3."
-      },
-      {
-        "name": "Flex Skill",
-        "tier": 3,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0
-        },
-        "description": "Choose one task (other than an attack or defense skill) on which you will concentrate. For the rest of the day, you’re trained in that task. You can’t use this ability with a skill in which you’re already trained to become specialized. This ability refreshes when you use a ten-hour recovery. Enabler."
+        "description": "Choose one task (other than an attack or defense skill) on which you will concentrate. For the rest of the day, you’re trained in that task. You can’t use this ability with a skill in which you’re already trained to become specialized. This ability refreshes when you use a ten-hour recovery. Androids using Flex Skill usually accomplish the training by expanding data they already downloaded, compressed, and stored in their system, though in some cases accessing a specialized skill might require connecting to an external data hub."
       },
       {
         "name": "Machine Not Flesh",
-        "tier": 3,
+        "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You are a sophisticated, intelligent machine with a generally humanoid shape; work with your GM to determine specifics. This gives you the following benefits:"
+        "description": "You are a sophisticated, intelligent machine with a generally humanoid shape; work with your GM to determine specifics. This gives you the following benefits: You gain an additional +4 points to permanently distribute among your Pools. You gain an additional +1 Edge in one Pool of your choice. Your nonbiological body is immune to standard poisons, diseases, and the vacuum of space, and you do not need to eat, drink, or breathe (though you must still rest and take recoveries). If you can connect to an electrical conduit, charging station, or similar location that can provide you with power, you can take an extra one-action recovery each day. You ease any hacking tasks you attempt. Your machine nature also comes with some downsides. Instead of using healing, treatment of your wounds requires engineering. Accelerated healing methods developed for biological creatures (such as the Prepared Medic ability from the Medic type) don’t work on you at all. Repair tasks to successfully treat (remove) your minor, moderate, and major wounds are level 1, level 3, and level 5, respectively. If you cannot connect to a suitable power supply during your ten-hour recovery, you lose your normal one-action recovery and your bonus (connected to power) recovery until you do so. Some biologicals look down on androids. At the GM’s discretion, your positive interaction tasks with such individuals are hindered."
       }
     ],
     "statOptions": [

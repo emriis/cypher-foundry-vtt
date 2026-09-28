@@ -24,24 +24,24 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Desperate Defense",
-        "tier": 1,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0
-        },
-        "description": "While you have at least one moderate or one major wound, you can choose to enter a state of heightened awareness against threats. While in this state, you can’t use points from your Intellect Pool, but you add +1 to your Speed Edge and gain two assets to block and dodge tasks. If you choose to end the heightened state while you remain wounded, you can’t resume it again until after you use a recovery. Enabler."
-      },
-      {
-        "name": "Effort",
+        "name": "Défense Désespérée",
         "tier": 1,
         "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "Increase the minimum number rolled for this ability by 3."
+        "description": "Tant que tu as **au moins une blessure modérée ou majeure**, tu peux entrer dans un état d’hypervigilance face au danger. Dans cet état, tu **ne peux pas** utiliser de points de ta Réserve d’Intellect, tu ajoutes **+1 à ton Avantage de Célérité**, tu gagnes **deux atouts** pour les tâches de blocage et d’esquive. Si tu mets fin volontairement à cet état alors que tu es encore blessé·e, tu ne peux pas y revenir avant d’avoir effectué une **récupération**."
+      },
+      {
+        "name": "Baratin",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1
+        },
+        "description": "En parlant avec une créature intelligente qui peut te comprendre et qui n’est pas hostile, tu la convaincs d’entreprendre **une action raisonnable** lors du prochain round. Une action raisonnable doit être approuvée par ton·ta MJ : elle ne doit pas mettre la cible ou ses allié·es en danger évident, ni être totalement incohérente avec son comportement. Action"
       }
     ],
     "statOptions": [

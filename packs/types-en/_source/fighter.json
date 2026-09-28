@@ -31,17 +31,17 @@
           "stat": "none",
           "amount": 0
         },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks, such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on."
+        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks, such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you’re already specialized in), but you must gain the skill normally."
       },
       {
         "name": "Press Advantage",
-        "tier": 6,
-        "enabler": false,
+        "tier": 1,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "When your damage‑dealing attack roll is 17 or higher, you deal +1 damage with the attack. If you roll a 19 or 20, you inflict the extra damage regardless of whether you choose to deal additional damage or take a special minor or major effect."
+        "description": "When your damage‑dealing attack roll is 17 or higher, you deal +1 damage with the attack. If you roll a 19 or 20, you inflict the extra damage regardless of whether you choose to deal additional damage or take a special minor or major effect. Successive Attack (2 Speed or Might): Once per turn if you take down a foe, you can immediately make another attack on that same turn against a new foe within your reach as an extra action on your turn. You can use this ability with melee attacks and ranged attacks."
       }
     ],
     "statOptions": [

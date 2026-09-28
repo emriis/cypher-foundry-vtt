@@ -24,34 +24,34 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Effort",
+        "name": "Mauvais Remède (2+ Intellect ou Célérité)",
         "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "Instead make the creature unconscious until you use a recovery (requires two levels of Effort)."
+        "description": "Avec accès à une **Trousse médicale de terrain** (ou à un équipement similaire), tu détournes volontairement un médicament normalement destiné à soigner — spray cutané, injecteur, etc. Tu effectues une attaque contre une créature à portée immédiate ; le dispositif médical compte comme une **arme légère**, ce qui **facilite** l’attaque. Si tu réussis, la cible **ne peut entreprendre aucune action** à son prochain tour. Effort : Tu peux à la place rendre la créature inconsciente jusqu’à ta prochaine récupération (nécessite deux niveaux d’Effort). Action."
       },
       {
-        "name": "Expert Doctor",
+        "name": "Médecin Expert·e",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You are trained in healing."
+        "description": "Tu es **entraîné·e** en soins. Au rang 6, tu peux devenir expert·e en soins si tu es déjà spécialisé·e, mais tu dois acquérir la compétence normalement. Toubib Préparé·e (2+ Intellect) : Avec accès à une trousse médicale de terrain (ou équipement comparable), tu peux utiliser un traitement en deux fois moins de temps que la normale, ou traiter deux fois plus de blessures pour un même personnage dans la durée habituelle."
       },
       {
         "name": "Prepared Medic",
-        "tier": 6,
-        "enabler": false,
+        "tier": 1,
+        "enabler": true,
         "cost": {
           "stat": "intellect",
           "amount": 2
         },
-        "description": "With access to a medical field kit (or similar equipment), you can use treatment in half the normal amount of time or treat twice as many wounds for one character in the normal time. Enabler."
+        "description": "With access to a medical field kit (or similar equipment), you can use treatment in half the normal amount of time or treat twice as many wounds for one character in the normal time."
       }
     ],
     "statOptions": [

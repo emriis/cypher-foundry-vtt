@@ -22,7 +22,28 @@
     "freeWeapons": false,
     "freeArmor": true,
     "skillOptions": [],
-    "abilities": [],
+    "abilities": [
+      {
+        "name": "Déjouer le Danger",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2
+        },
+        "description": "Si tu es conscient·e d’un danger à portée immédiate et que tu réussis un jet d’Intellect contre son niveau, tu **annules ce danger pendant un round**. Il peut s’agir : d’un élément du terrain (flaque d’acide, fosse boueuse, etc.), d’un piège, d’une capacité naturelle d’une créature (venin, radiation, etc.) ou même de l’attaque/action d’un adversaire (tir d’arme, activation d’un interrupteur…). Action"
+      },
+      {
+        "name": "Suggestion Inspirante",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2
+        },
+        "description": "En faisant une suggestion utile à un·e allié·e pouvant te voir et te comprendre, tu augmentes ses chances de réussite. Choisis un·e allié·e et propose-lui une **action précise** : « attaque le chef », « grimpe ce mur », etc. S’iel effectue **exactement** cette action, iel gagne **deux atouts** pour cette tâche. Première action"
+      }
+    ],
     "statOptions": [
       "intellect"
     ],

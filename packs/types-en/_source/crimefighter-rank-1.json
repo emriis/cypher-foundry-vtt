@@ -31,27 +31,37 @@
           "stat": "none",
           "amount": 0
         },
-        "description": "You build a single-use technological device. You can choose its effect from the Low-Power Manifest Cyphers table. Your device cypher counts toward your cypher limit (or to the limit of anyone you give the device to). If you are already at your cypher limit, your choice of one of your current cyphers shorts out, had to be salvaged for parts to create the new device, or something similar, and the new device takes its place. Ten minutes to build."
+        "description": "You build a single-use technological device. You can choose its effect from the Low-Power Manifest Cyphers table. Your device cypher counts toward your cypher limit (or to the limit of anyone you give the device to). If you are already at your cypher limit, your choice of one of your current cyphers shorts out, had to be salvaged for parts to create the new device, or something similar, and the new device takes its place. Ten minutes to build. At tier 3: You can choose a low or medium-power manifest cypher as a single-use device. At tier 6: You can choose a low, medium-, or advanced-power manifest cypher as a single-use device. Each time you use Always Tinkering, you can choose a different manifest cypher you want to build."
+      },
+      {
+        "name": "Sleuthing",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3
+        },
+        "description": "When you’re tracking a target, looking for anything out of the ordinary (such as a clue or a single piece of evidence) at the scene of interest, or otherwise attempting to learn something about a mystery, you can ask your GM one question about the task and get a very short, helpful answer that might be obvious to your character, but not to the player who doesn’t have their character’s experience. Action."
       },
       {
         "name": "Super Combatant",
-        "tier": 6,
+        "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You are trained in a specific attack of your choice, such as eye lasers, punches, or guns; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on."
+        "description": "You are trained in a specific attack of your choice, such as eye lasers, punches, or guns; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you’re already specialized in), but you must gain the skill normally."
       },
       {
         "name": "Superheroics",
-        "tier": 6,
+        "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "Choose one Pool: Might, Speed, or Intellect. For tasks using your chosen Pool, add your rank to the amount of Effort you can apply, allowing you to apply additional levels of Effort to tasks in that Pool."
+        "description": "Choose one Pool: Might, Speed, or Intellect. For tasks using your chosen Pool, add your rank to the amount of Effort you can apply, allowing you to apply additional levels of Effort to tasks in that Pool. In addition, you can choose to push yourself so hard that you take a moderate wound in exchange for two free levels of Effort you can apply to tasks in your chosen Pool (as long as this doesn’t push you past your Effort limit for that Pool). Finally, add your rank as a bonus to your recovery, with those points going only into the Pool you have chosen. Vigilante (Rank 1) You use your fists, your agility, and your speed to bring justice to the streets, even if that means operating outside the law. You’re driven by a personal code, and maybe a tragedy from your past that yet lingers. You probably have no inherent superpowers, but instead rely on extensive conditioning, relentless martial arts training, and an unwavering desire to eliminate corruption and protect the innocent. When you team up with other heroes for jobs that are too big for you to tackle alone, you make an ideal choice for scouting, getting in and out of places before anyone even realizes you’re there. But if your foes do notice you, you’re usually the first to react. And if a stand-up fight against villains is unavoidable, well, your entire body is a honed instrument of justice. Background Your grandfather was a victim of a criminal gang. You’ve sworn never to rest until they’re all dealt with. Last week your old crimefighting partner disappeared. Maybe they went undercover? The villain you unmasked two months ago was a prominent philanthropist beloved by many. The bomb killed everyone you loved. Now you track down terrorists and other lowlifes and stop them before they can hurt others. You recently discovered an ancient ninja order is establishing new influence in the area. When you nearly lost your life due to corrupt business dealings by your former employer, you swore to take matters into your own hands, and you haven’t stopped since. You saved another hero from captivity last year, and they still seem angry about it. A crime boss you helped put behind bars a few years ago is back in business."
       }
     ],
     "statOptions": [

@@ -24,6 +24,16 @@
     "skillOptions": [],
     "abilities": [
       {
+        "name": "Hover",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2
+        },
+        "description": "You float slowly into the air. If you concentrate, you can control your movement to remain motionless in the air or float up to a short distance as your action; otherwise, you drift with the wind or with any momentum you have gained. This effect lasts until you use a ten‑minute or longer recovery. Action."
+      },
+      {
         "name": "Push on Through",
         "tier": 1,
         "enabler": false,
@@ -31,7 +41,7 @@
           "stat": "none",
           "amount": 0
         },
-        "description": "Instead of a ten-minute recovery, you have a second one-action recovery. Thus, your first two recoveries are one action, the third is one hour, and the fourth is ten hours."
+        "description": "Instead of a ten-minute recovery, you have a second one-action recovery. Thus, your first two recoveries are one action, the third is one hour, and the fourth is ten hours. You can take one more moderate wound than normal. You can use one of your one-action recoveries to allow an ally to use one of their ten-minute recoveries as an action."
       },
       {
         "name": "Second Focus",
@@ -51,17 +61,17 @@
           "stat": "none",
           "amount": 0
         },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on."
+        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you’re already specialized in), but you must gain the skill normally."
       },
       {
         "name": "Superheroics",
-        "tier": 6,
+        "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "Choose one Pool: Might, Speed, or Intellect. For tasks using your chosen Pool, add your rank to the amount of Effort you can apply, allowing you to apply additional levels of Effort to tasks in that Pool."
+        "description": "Choose one Pool: Might, Speed, or Intellect. For tasks using your chosen Pool, add your rank to the amount of Effort you can apply, allowing you to apply additional levels of Effort to tasks in that Pool. In addition, you can choose to push yourself so hard that you take a moderate wound in exchange for two free levels of Effort you can apply to tasks in your chosen Pool (as long as this doesn’t push you past your Effort limit for that Pool). Finally, add your rank as a bonus to your recovery, with those points going only into the Pool you have chosen. Really Impossible Tasks In superhero games, due to conventions of the genre, difficulty caps at 15 instead of 10. In a regular Cypher game, difficulty 10 is labeled “impossible,” but that label is for regular folks. For superpowered characters, “impossible” means something different, thanks to power shifts. Think of each difficulty above 10 as being one more step beyond impossible. Although a GM in another genre would say there’s no chance that you could leap 100 feet (30 m) from one rooftop to another, in a superhero game, that might just be difficulty 11. Picking up a city bus isn’t something normal characters could do, but for a strong superhero, it might be difficulty 12. In theory, NPCs in such a game can go up to level 15 as well. Levels above 10 represent opponents that only a superhero would consider taking on: a robot that’s 1,000 feet (300 m) tall (level 11); Galashal, Empress of Twelve Dimensions (level 14); or a space monster the size of the moon (level 15). Normally, characters are limited to six levels of Effort on any task (from spending Pool points and using free levels of Effort). Superheroes have an ability called Superheroics that allows them to exceed that limit and reach for really high difficulties. More guidance on this topic can be found in the Cypher GM’s Guide."
       }
     ],
     "statOptions": [

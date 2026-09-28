@@ -24,34 +24,34 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Drain Life",
+        "name": "Nécromancie de Base",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3
+        },
+        "description": "Tu animes le corps d’une créature morte d’une taille égale ou inférieure à la tienne dans ta portée immédiate, créant un **suivant** de niveau 1 sous forme de mort‑vivant. Il n’a ni intelligence, ni souvenirs, ni aptitudes spéciales de son vivant. Il obéit à tes ordres verbaux jusqu’à ce que tu effectues une récupération d’une heure ou plus, après quoi il redevient un cadavre inerte. À moins qu’il ne soit détruit par des dégâts, tu peux le réanimer à nouveau lorsque son temps expire — il conserve les dégâts subis. Si tu utilises  Nécromancie de Base pour animer un deuxième corps avec cette aptitude, tout corps déjà animé redevient immédiatement inerte. Action pour animer"
+      },
+      {
+        "name": "Drain de Vie",
         "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "intellect",
           "amount": 1
         },
-        "description": "You send forth an ashy tendril reaching up to short range, inflicting 2 damage to a living target with a successful Intellect attack roll. You benefit from their drained life, healing a minor wound from yourself or an ally within immediate range. Action."
+        "description": "Tu projettes une vrille cendreuse jusqu’à une courte portée, infligeant **2 dégâts** à une cible vivante avec un jet d’attaque d’Intellect réussi. Tu bénéficies de l’énergie drainée en soignant une **blessure mineure** chez toi ou un·e allié·e à portée immédiate. Au rang 3, si tu consacres deux niveaux d’Effort, une attaque réussie inflige 5 dégâts et soigne une blessure modérée ou mineure pour toi ou un allié à portée immédiate . Action"
       },
       {
         "name": "Tribulation",
-        "tier": 3,
+        "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "intellect",
           "amount": 1
         },
-        "description": "You conjure pure spiritual energy to blast up to five undead, demons, and creatures of similar ilk of level 2 or less within short range. If you succeed on a separate Intellect attack against each foe, you choose whether they spend their next turn fleeing or lose their next turn."
-      },
-      {
-        "name": "Effort",
-        "tier": 3,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0
-        },
-        "description": "Increase the maximum level of the foe you can affect by 1. Specify some other action for the creatures to perform for one round, such as attacking a foe of your choice."
+        "description": "Tu invoques une énergie spirituelle pure pour frapper jusqu’à **cinq morts‑vivants, démons ou créatures similaires** de niveau 2 ou moins dans une courte portée. Tu effectues un jet d’attaque d’Intellect séparé contre chaque cible. Pour chaque réussite, tu choisis si elle fuit ou perd son prochain tour. Effort :  Augmente le niveau maximum des cibles affectées de 1 ou tu peux aussi imposer une autre action à effectuer pendant un round (par exemple attaquer un ennemi de ton choix). Dernière action"
       }
     ],
     "statOptions": [

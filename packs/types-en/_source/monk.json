@@ -24,8 +24,28 @@
     "skillOptions": [],
     "abilities": [
       {
+        "name": "Flurry",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 2
+        },
+        "description": "After making a light unarmed attack, as an extra action on your turn you make another light unarmed attack against the same target or a different one. Action. At tier 3: You can make a third light unarmed attack as a third action on your turn. A few character abilities allow you to treat your unarmed attack as a medium weapon instead of a light weapon. You can’t use Flurry with a medium unarmed attack."
+      },
+      {
+        "name": "Nimble",
+        "tier": 1,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 2
+        },
+        "description": "As a First action, you move up to a short distance and then can take another First action, such as attacking with a light weapon or opening a door (the movement happens before the First action, not the other way around). Unlike a normal situation of taking an action and moving a short distance, this movement doesn’t hinder your tasks."
+      },
+      {
         "name": "No Need for Weapons",
-        "tier": 3,
+        "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",

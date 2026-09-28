@@ -51,17 +51,7 @@
           "stat": "none",
           "amount": 0
         },
-        "description": "A target within short range is charged with benevolent divine grace. At any point before they’ve taken their next ten-minute or longer recovery, they gain an asset to one action."
-      },
-      {
-        "name": "Effort",
-        "tier": 1,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0
-        },
-        "description": "Affect two additional targets."
+        "description": "A target within short range is charged with benevolent divine grace. At any point before they’ve taken their next ten-minute or longer recovery, they gain an asset to one action. Effort: Affect two additional targets. Action."
       },
       {
         "name": "Turn Undead",
@@ -71,27 +61,17 @@
           "stat": "none",
           "amount": 0
         },
-        "description": "Up to five undead creatures of level 2 or less within short range are blasted by divine radiance (make separate Intellect attack rolls against each target). Affected targets are repulsed and must spend their next turn fleeing your presence."
-      },
-      {
-        "name": "Effort",
-        "tier": 1,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0
-        },
-        "description": "Affect two additional targets. Increase the maximum level of undead you can affect by 1."
+        "description": "Up to five undead creatures of level 2 or less within short range are blasted by divine radiance (make separate Intellect attack rolls against each target). Affected targets are repulsed and must spend their next turn fleeing your presence. Depending on the game, your GM may decide Turn Undead works on demons or creatures of similar ilk instead of (or in addition to) undead. Effort: Affect two additional targets. Increase the maximum level of undead you can affect by 1. Action. At tier 3: Instead of causing affected targets to flee, you can make them unable to take actions for one turn. When an ability or effect lets you attack multiple creatures on your turn, each attack after the first one is an extra action on your turn. An attack made as an extra action on your turn counts as a separate action for the purposes of modifying the task with Effort."
       },
       {
         "name": "Healing Hand",
-        "tier": 3,
+        "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "intellect",
           "amount": 1
         },
-        "description": "With a touch, you reduce one wound’s severity. A healed minor wound is gone completely, one moderate wound becomes a minor wound, or one major wound becomes a moderate wound. (If the character is at their limit of lower-severity wounds, you can’t use this ability to reduce the severity of their wounds.)"
+        "description": "With a touch, you reduce one wound’s severity. A healed minor wound is gone completely, one moderate wound becomes a minor wound, or one major wound becomes a moderate wound. (If the character is at their limit of lower-severity wounds, you can’t use this ability to reduce the severity of their wounds.) Each time you use Healing Hand, the Intellect cost increases by 1. The cost returns to 1 after you take a recovery. Last action. An NPC recipient of Healing Hand regains 5 health."
       }
     ],
     "statOptions": [

@@ -24,34 +24,34 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Always Tinkering",
+        "name": "Toujours en Train de Bricoler",
         "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You build a single-use technological device. You can choose its effect from the Low-Power Manifest Cyphers table. Your device counts toward your cypher limit (or the limit of anyone you give the device to). If you are already at your cypher limit, your choice of one of your current cyphers shorts out, had to be salvaged for parts to create the new device, or something similar, and the new device takes its place."
+        "description": "Tu fabriques un **dispositif technologique à usage unique**. Tu choisis son effet dans la table des **cyphers manifestés de faible puissance**. Le dispositif **compte dans ta limite de cyphers** (ou celle de la personne à qui tu le donnes). Si tu es déjà à ta limite, l’un de tes cyphers actuels cesse de fonctionner, ou doit être démonté pour pièces, et le nouveau dispositif prend sa place. Au rang 3, tu peux choisir un cypher manifesté de puissance faible ou moyenne. Au rang 6, tu peux choisir un cypher manifesté faible, moyen ou avancé. 10 minutes pour fabriquer."
       },
       {
-        "name": "Craft Device",
-        "tier": 6,
+        "name": "Fabriquer un Dispositif",
+        "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "intellect",
           "amount": 5
         },
-        "description": "You build a new—but somewhat fragile—device if you succeed at a difficulty 3 engineering task. You can choose its effect from the Low-Power Manifest Cyphers table. The resulting device is not a cypher, doesn’t count toward your cypher limit, and usually isn’t limited to one use; instead, it has a depletion of 1 in 1d6. The device is small enough that you can carry it."
+        "description": "Tu construis un **nouveau dispositif**, fragile mais fonctionnel, en réussissant une tâche d’ingénierie de difficulté **3**. Tu choisis son effet dans la table des **cyphers manifestés de faible puissance**. Ce dispositif **n’est pas un cypher**. Il **ne compte pas** dans ta limite de cyphers. Il n’est généralement **pas limité à un seul usage** : il possède un **déchargement** de **1 sur 1d6**. Il est assez petit pour être transporté. Au rang 3, en dépensant 1 niveau d’Effort, tu peux fabriquer un dispositif basé sur un cypher manifestés de puissance moyenne. Au rang 6, en dépensant 2 niveaux d’Effort, tu peux fabriquer un dispositif basé sur un cypher manifestés de puissance avancée. 1 heure pour fabriquer."
       },
       {
-        "name": "Cypher Use",
-        "tier": 6,
-        "enabler": false,
+        "name": "Utilisation de Cyphers",
+        "tier": 1,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You can bear one additional cypher at a time."
+        "description": "Tu peux porter **un cypher supplémentaire**."
       }
     ],
     "statOptions": [

@@ -24,34 +24,34 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Combat Prowess",
+        "name": "Expert·e combattant·e",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You add +1 damage to one type of weapon attack of your choice: melee weapon attacks or ranged weapon attacks."
+        "description": "Tu es **entraîné·e** dans un type d’attaque d’arme spécifique (épées, haches, arcs…) ou une catégorie plus large : armes contondantes légères, armes tranchantes légères, armes à distance légères, armes contondantes moyennes, armes tranchantes moyennes, armes à distance moyennes, etc. Au rang 2, tu peux devenir spécialisé·e dans le même type d’attaque, mais tu dois obtenir la compétence normalement. Au rang 6, tu peux devenir expert·e dans ce type d’attaque (ou un autre dans lequel tu es déjà spécialisé·e), mais tu dois obtenir la compétence normalement."
       },
       {
-        "name": "Despite My Wounds",
+        "name": "Noble défenseur·euse (2 Puissance ou 2 Célérité)",
         "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "While you have two or more moderate wounds or one major wound, you get a free reroll on one action each round (as if you had spent 1 XP). Enabler."
+        "description": "Choisis un personnage que tu peux voir : il passe **sous ta protection**. Tu gagnes un **atout** pour toutes les tâches visant à : le trouver, le soigner, interagir avec lui, le protéger. Lorsque tu utilises l’action **aider** pour faciliter son **blocage** ou son **esquive**, tu lui accordes **deux atouts** au lieu d’un. Tu peux aussi utiliser l’action aider pour faciliter sa **défense d’Intellect** (peur, contrôle mental, persuasion, intimidation…), et tu lui accordes **deux atouts** dans ces cas également. Tu ne peux protéger **qu’un seul personnage à la fois**. Au rang 3, tu peux protéger deux personnages simultanément. Première action"
       },
       {
-        "name": "Expert Combatant",
+        "name": "Noble sacrifice (2 Puissance ou Célérité)",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on."
+        "description": "Lorsque tu **prends l’attaque** destinée à un·e autre, tu bénéficies d’un regain immédiat pour ta bravoure. L’attaque **te touche automatiquement** et inflige ses dégâts normaux (plus la blessure mineure supplémentaire liée à l’interception). Tu peux **riposter immédiatement** par une attaque contre un ennemi à portée. Si tu as pris l’attaque pour une personne que tu protèges via **Noble défenseur·euse**, cette contre‑attaque est **facilitée**."
       }
     ],
     "statOptions": [

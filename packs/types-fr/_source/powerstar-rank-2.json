@@ -24,44 +24,44 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Enhanced Energy",
+        "name": "Énergie Amplifiée",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "When you succeed on an important task using your powers as determined by your GM, you regain 4 points to your Intellect Pool. Each time you do, you regain 1 less point. This ability renews after you take a ten-hour recovery. Enabler."
+        "description": "Lorsque tu réussis une tâche importante en utilisant **tes pouvoirs** (à la discrétion du·de la MJ), tu récupères **4 points d’Intellect**. Chaque fois que tu utilises cette aptitude, tu récupères **1 point de moins** que la fois précédente. L’aptitude se renouvelle après une **récupération de dix heures**."
       },
       {
-        "name": "Power Prowess",
+        "name": "Maîtrise de Puissance",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You inflict +1 damage with any attack you make involving your powers."
+        "description": "Tu infliges **+1 dégât** avec toute attaque impliquant **tes pouvoirs**."
       },
       {
-        "name": "Superheroics",
+        "name": "Usage Étendu",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "Choose one Pool: Might, Speed, or Intellect. For tasks using your chosen Pool, add your rank to the amount of Effort you can apply, allowing you to apply additional levels of Effort to tasks in that Pool."
+        "description": "Lorsque tu choisis ton focus, en plus de sélectionner **deux aptitudes de rang 1**, tu choisis également **une aptitude de rang 2**."
       },
       {
-        "name": "Wider Use",
+        "name": "Superhéroïsme",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "When you pick your focus, in addition to choosing two tier 1 abilities, you also choose one tier 2 ability."
+        "description": "Choisis une **Réserve** : Puissance, Célérité ou Intellect. Pour les tâches utilisant cette Réserve, ajoute ton **rang** au nombre de niveaux d’Effort que tu peux appliquer. De plus, tu peux te surmener : subir une blessure modérée pour obtenir deux niveaux d’Effort gratuits pour une tâche de cette Réserve (sans dépasser la limite d’Effort maximale pour cette Réserve). À chaque récupération, ajoute ton rang en points supplémentaires dans cette même Réserve. # Surhumain·e (Rang 3) Tu possèdes une panoplie de pouvoirs extraordinaires qui te place bien au‑dessus des capacités humaines. Tu peux combiner plusieurs attributs incroyables : force et endurance accrues, capables d’encaisser des impacts colossaux et de soulever des masses inimaginables, super-vitesse, offrant des déplacements fulgurants et des réflexes surhumains ou encore des capacités plus exotiques : vol, manipulation d’énergie, télépathie avancée, etc. Les Surhumain·es sont efficaces dans de nombreuses situations, même si ton domaine particulier déterminera de combien de manières tu pourras aider ton équipe lors d’un team‑up. ### Options d’historique Tu as découvert très jeune que si tu n’utilisais pas régulièrement tes pouvoirs, ils s’accumulaient jusqu’à exploser hors de contrôle. Devenir “superhéros” était une nécessité, pas un choix — tout autre mode de vie mettrait les autres en danger. Ton ami·e d’université brigue un poste de sénateur… sur une plateforme anti‑surhumain·es. Tu as décidé que la ville (ou l’État) est corrompu, et que c’est à toi de redresser la situation. Tu as récemment sauvé des centaines de personnes en maintenant un immeuble en train de s’effondrer juste assez longtemps pour permettre l’évacuation. Quand le kaiju furieux a débarqué sur la côte la semaine dernière, tu as été l’un·e des défenseurs de la ville. Tu as grandi dans un laboratoire, sous surveillance stricte. Un jour, les chercheurs t’ont relâché·e avant de disparaître. Depuis, tu cherches à les retrouver — ainsi que ceux qui les finançaient. Il y a quelques semaines, tu as reçu un message d’un parent que tu pensais mort depuis ton enfance. Un vilain capable de contrôler les insectes t’a juré destruction… mais cela remonte à plusieurs mois. ### Capacités de Surhumain·e Tu gagnes tous les bénéfices suivants : Tu peux encaisser trois blessures mineures supplémentaires et une blessure modérée supplémentaire. Ajoute +6 à ta Réserve de Puissance. Ajoute +6 à ta Réserve de Célérité. Ajoute +6 à ta Réserve d’Intellect. Ajoute +4 dans la Réserve choisie pour ton aptitude Superhéroïsme. Ajoute +1 d’Avantage dans la Réserve de ton choix. Utilisation libre de toutes les armes. Utilisation libre de toutes les armures. Tu disposes de quatre amplificateurs de pouvoir. Tu gagnes une aptitude d’origine superhéroïque. Aux rangs 3 et 6, choisis une aptitude appropriée dans les Aptitudes de genre Science‑Fiction ou Fantasy."
       }
     ],
     "statOptions": [

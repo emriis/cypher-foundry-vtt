@@ -24,24 +24,24 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Expert Combatant",
+        "name": "Combattant Expert",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks, such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on."
+        "description": "Tu es **entraîné·e** dans un type d’attaque d’arme spécifique de ton choix (épées, haches, arcs…) ou dans une catégorie plus large : armes contondantes légères, armes tranchantes légères, armes à distance légères, armes contondantes moyennes, armes tranchantes moyennes, armes à distance moyennes, etc. Au rang 2, tu peux devenir spécialisé·e dans la même méthode d’attaque choisie au rang 1, mais tu dois acquérir la compétence normalement. Au rang 6, tu peux devenir expert·e dans une méthode d’attaque spécifique (celle choisie au rang 1 ou une autre dans laquelle tu es déjà spécialisé·e), mais tu dois acquérir la compétence normalement."
       },
       {
-        "name": "Press Advantage",
-        "tier": 6,
-        "enabler": false,
+        "name": "Mettre la pression",
+        "tier": 1,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "When your damage‑dealing attack roll is 17 or higher, you deal +1 damage with the attack. If you roll a 19 or 20, you inflict the extra damage regardless of whether you choose to deal additional damage or take a special minor or major effect."
+        "description": "Lorsque ton jet d’attaque infligeant des dégâts est de **17 ou plus**, tu infliges **+1 dégât**. Si tu obtiens **19 ou 20**, tu infliges ce dégât supplémentaire **même si tu choisis un effet mineur ou majeur** au lieu de dégâts additionnels."
       }
     ],
     "statOptions": [

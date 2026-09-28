@@ -24,34 +24,34 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Combat Prowess",
+        "name": "Prouesse de Combat",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You add +1 damage to one type of weapon attack of your choice: melee weapon attacks or ranged weapon attacks."
+        "description": "Tu ajoutes **+1 dégât** à un type d’attaque d’arme de ton choix : **attaque de mêlée**, ou **attaque à distance**."
       },
       {
-        "name": "Desperate Feat",
+        "name": "Exploit Désespéré",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "While you have at least one moderate or major wound, you add +1 Edge to the Pool of your choice. Enabler."
+        "description": "Tant que tu as **au moins une blessure modérée ou majeure**, tu ajoutes **+1 d’Avantage** dans la Réserve de ton choix."
       },
       {
-        "name": "Expert Combatant",
+        "name": "Combattant·e Expert·e",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on."
+        "description": "Tu es **entraîné·e** dans un type spécifique d’attaque d’arme, par exemple : épées, haches, arcs, ou une catégorie complète : armes contondantes légères, armes tranchantes légères, armes à distance légères, armes contondantes moyennes, armes tranchantes moyennes, armes à distance moyennes, etc. Au rang 2, tu peux devenir spécialisé·e dans cette même méthode d’attaque (en acquérant la compétence normalement). Au rang 6, tu peux devenir expert·e dans une méthode d’attaque (celle choisie au rang 1 ou une autre dans laquelle tu es déjà spécialisé·e)."
       }
     ],
     "statOptions": [

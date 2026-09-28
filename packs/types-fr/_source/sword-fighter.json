@@ -24,28 +24,38 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Combat Prowess",
+        "name": "Prouesse Martiale",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You add +1 damage to one type of weapon attack of your choice: melee weapon attacks or ranged weapon attacks."
+        "description": "Tu ajoutes **+1 dégât** à un type d’attaque avec arme de ton choix : attaques de **mêlée** ou attaques **à distance**."
       },
       {
-        "name": "Expert Combatant",
+        "name": "Expert·e combattant·e",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on."
+        "description": "Tu es **entraîné·e** dans un type d’attaque d’arme spécifique (épées, haches, arcs, etc.), ou dans une catégorie plus large : armes contondantes légères, armes tranchantes légères, armes à distance légères, armes contondantes moyennes, armes tranchantes moyennes, armes à distance moyennes, etc. Au rang 2, tu peux devenir spécialisé·e dans le même type d’attaque choisi au rang 1, mais tu dois obtenir la compétence normalement. Au rang 6, tu peux devenir expert·e dans ce type d’attaque ou dans un autre dans lequel tu es déjà spécialisé·e, mais tu dois obtenir la compétence normalement."
+      },
+      {
+        "name": "Frappe Tournoyante (1 Célérité)",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 1
+        },
+        "description": "Tu attaques avec une épée d’une manière plus risquée, mais permettant un avantage supplémentaire. Ton seuil d’**intrusion du·de la MJ** pour cette attaque augmente de **2** (de 1 naturel à 1–3 sur 1d20). Si tu touches, choisis l’un des effets suivants : Goûte l’Acier : l’ennemi subit +2 dégâts supplémentaires. Tranche et Recul : tu te repositionnes ou repositionnes ton ennemi d’une distance immédiate, facilitant ton attaque à ton prochain tour (contre cette cible ou une autre). Action"
       },
       {
         "name": "Eat Steel",
-        "tier": 6,
+        "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
@@ -55,17 +65,17 @@
       },
       {
         "name": "Slice and Step",
-        "tier": 6,
+        "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You reposition your foe or yourself an immediate distance away, easing your attack on your next turn (whether against that foe or a different one)."
+        "description": "You reposition your foe or yourself an immediate distance away, easing your attack on your next turn (whether against that foe or a different one). Action."
       },
       {
         "name": "Swing Through GM intrusions",
-        "tier": 6,
+        "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",

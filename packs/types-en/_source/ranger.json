@@ -31,17 +31,27 @@
           "stat": "none",
           "amount": 0
         },
-        "description": "You are trained in tracking."
+        "description": "You are trained in tracking. At tier 6: You can become an expert in tracking if you are already specialized, but you must gain the skill normally (such as from a character advancement)."
       },
       {
         "name": "Find the Way",
-        "tier": 6,
+        "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
           "amount": 0
         },
         "description": "When you are tracking a creature, have gotten lost, don’t know the first step to take to begin a journey, or are attempting to choose between two or more routes to take, you can ask your GM one question about the task and get a very short, helpful answer. Once you use this ability, you can’t use it again until after your next recovery. Action."
+      },
+      {
+        "name": "Quarry",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2
+        },
+        "description": "Choose one creature you can see to be your quarry. You gain an asset on all tasks involving following, understanding, interacting with, attacking, or defending against your quarry. Your attacks against your quarry deal +1 damage. This benefit encompasses hunting-related tasks, if appropriate, such as skinning, dressing, the best way to prepare and preserve any resulting game meat, and so on. You can have only one quarry at a time. Action. At tier 3: You can have two quarries at a time."
       }
     ],
     "statOptions": [

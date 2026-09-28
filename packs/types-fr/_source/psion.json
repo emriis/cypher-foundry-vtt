@@ -22,7 +22,38 @@
     "freeWeapons": false,
     "freeArmor": false,
     "skillOptions": [],
-    "abilities": [],
+    "abilities": [
+      {
+        "name": "Lecture Mentale",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2
+        },
+        "description": "Tu peux lire les pensées superficielles d’une créature que tu vois à courte portée. Si la cible n’est pas consentante, tu dois réussir une **attaque d’Intellect** pour lire son esprit. Une fois le contact établi, tu peux continuer à lire ses pensées jusqu’à ta prochaine **récupération de dix minutes ou plus**. Action"
+      },
+      {
+        "name": "Assaut Psychique",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1
+        },
+        "description": "Tu attaques un adversaire en utilisant des énergies visant soit son corps, soit son esprit. Tu dois pouvoir le voir. **Attaque physique :** tu émets un rayon de force à courte portée qui inflige **4 dégâts**. **Attaque mentale :** tu tranches dans ses pensées par une onde psychique infligeant **2 dégâts d’Intellect**, ignorant l’armure. Certaines créatures dépourvues d’esprit (comme les robots) peuvent être immunisées. Au rang 3, tes attaques d’Assaut Psychique infligent +1 dégât. Action"
+      },
+      {
+        "name": "Voile Psychique",
+        "tier": 1,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1
+        },
+        "description": "Ton apparence devient floue, comme vue à travers l’aura visuelle d’une migraine, jusqu’à ta prochaine **récupération de dix minutes ou plus**. Ce voile ne gêne pas tes actions, mais **tes jets d’Esquive et de défense d’Intellect sont facilités**. Tant que le voile est actif, il t’offre une **protection mentale** : les attaques psychiques que tu subis voient leur gravité réduite d’un palier (majeure → modérée, modérée → mineure, mineure → aucune). Par exemple : Si une attaque psychique devrait te causer une blessure modérée, tu ne subis qu’une blessure mineure."
+      }
+    ],
     "statOptions": [
       "intellect"
     ],

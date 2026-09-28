@@ -9,6 +9,12 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ## [Unreleased]
 
+### Fixed
+
+- Type compendium generation now keeps ability blocks bounded to their authoritative CRD Type
+  section, including Effort and Enabler text, while retaining canonical CRD copies for Type
+  variants and Character Book French ability localization.
+
 ## [0.1.4] - 2026-09-26
 
 ### Added

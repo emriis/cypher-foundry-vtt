@@ -24,24 +24,44 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Super Combatant",
+        "name": "Agile (2 Célérité)",
+        "tier": 1,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 2
+        },
+        "description": "En tant que **première action**, tu te déplaces jusqu’à une distance **courte**, puis tu peux effectuer une **autre première action**, comme attaquer avec une arme légère ou ouvrir une porte. (Le déplacement se produit **avant** l’action.)"
+      },
+      {
+        "name": "Attaque Furtive (1 Célérité)",
         "tier": 1,
         "enabler": false,
         "cost": {
-          "stat": "none",
-          "amount": 0
+          "stat": "speed",
+          "amount": 1
         },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on."
+        "description": "Si tu attaques avec une **arme légère** dans l’une des situations suivantes, tu infliges **+5 dégâts** : Tu attaques par surprise. Un·e allié·e utilise son action pour faciliter ton attaque. Les défenses de ton adversaire sont entravées par une distraction directe. Ton adversaire ne peut pas agir à son prochain tour. Première action"
       },
       {
-        "name": "Superheroics",
-        "tier": 6,
-        "enabler": false,
+        "name": "Super‑Combattant·e",
+        "tier": 1,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "Choose one Pool: Might, Speed, or Intellect. For tasks using your chosen Pool, add your rank to the amount of Effort you can apply, allowing you to apply additional levels of Effort to tasks in that Pool."
+        "description": "Tu es **entraîné·e** dans un type d’attaque particulier (poings, armes blanches, armes à feu…) ou une catégorie complète (armes contondantes légères, armes tranchantes légères, à distance légères/moyennes, etc.). Au rang 2, tu peux devenir spécialisé·e (en acquérant normalement la compétence). Au rang 6, tu peux devenir expert·e dans cette méthode d’attaque ou une autre dont tu es spécialisé·e."
+      },
+      {
+        "name": "Superhéroïsme",
+        "tier": 1,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Choisis une **Réserve** : Puissance, Célérité ou Intellect. Pour les tâches utilisant cette Réserve, ajoute ton **rang** au nombre de niveaux d’Effort que tu peux appliquer. De plus, tu peux te surmener : subir une blessure modérée pour obtenir deux niveaux d’Effort gratuits pour une tâche de cette Réserve (sans dépasser la limite d’Effort maximale pour cette Réserve). À chaque récupération, ajoute ton rang aux points que tu récupères mais seulement pour les affecter dans la Réserve que tu as choisi. # Héros·ïne Augmenté·e (Rang 2) Tu es plus qu’humain·e. Quelque chose t’a transformé·e — un accident impliquant des énergies exotiques ou des produits chimiques, une cybernétique de pointe, un sérum expérimental, une thérapie génétique débloquant un potentiel latent, un artefact alien, une relique mystique ancestrale… ou tout autre événement extraordinaire. Quelle qu’en soit la source, ton augmentation te permet d’accomplir ce qui est impossible pour les gens ordinaires. Tes pouvoirs offrent à la fois mobilité, résistance, vitesse, ou puissance brute, et se prêtent particulièrement bien au combat. Cela signifie que, lorsque tu fais équipe avec d’autres héros, tu te retrouves souvent à encaisser les coups, protégeant tes allié·es dont les améliorations ne sont pas aussi impressionnantes que les tiennes. ### Options d’historique Lorsque toi et tes ami·es avez percuté un camion transportant illégalement des déchets toxiques, tu as été augmenté·e. Eux sont mort·es. Tu utilises aujourd’hui tes pouvoirs en leur nom. Récemment, ton augmentation a brièvement déchaîné une puissance incontrôlable. On t’a attaqué·e pour t’arracher ce qui te rend spécial·e. Tu as juré de te défendre — et de traquer tous ceux qui partagent ces motivations criminelles. Le·la scientifique qui étudiait tes pouvoirs est mort·e il y a trois semaines. Ton frère ou ta sœur, séparé·e de toi depuis longtemps, incapable de supporter ta transformation, vient de te recontacter. Tu as vu trop de souffrance. Tu combats désormais pour montrer qu’un avenir meilleur est possible. Tu as accidentellement tué un vilain il y a un an, alors que tu tentais de faire justice. Tu as appris qu’une autre personne possède une augmentation identique à la tienne — mais c’est un·e vilain·e. ### Capacités de Héros·ïne Augmenté·e Tu gagnes tous les bénéfices suivants : Tu peux encaisser trois blessures mineures supplémentaires et une blessure modérée supplémentaire. Ajoute +6 à ta Réserve de Puissance. Ajoute +6 à ta Réserve de Célérité. Ajoute +2 à ta Réserve d’Intellect. Ajoute +2 dans la Réserve que tu as choisie pour ton aptitude Superhéroïsme. Ajoute +1 d’Avantage dans la Réserve de ton choix. Utilisation libre de toutes les armes. Utilisation libre de toutes les armures. Tu disposes de trois amplificateurs de pouvoir. Tu gagnes une aptitude d’origine superhéroïque. Aux rangs 3 et 6, choisis une aptitude appropriée dans les Aptitudes de genre Science‑Fiction ou Fantasy."
       }
     ],
     "statOptions": [
