@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "statAmount": 2,
-    "skillOptions": [
-      "Soin",
-      "",
-      "",
-      ""
-    ],
+    "skillOptions": ["Soin", "", "", ""],
     "description": "<p>Aider les autres est ta vocation. Ta générosité naturelle apporte de la joie à autrui.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Soin.</em></p>"
   },
   "folder": null,

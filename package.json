@@ -4,7 +4,6 @@
   "type": "module",
   "scripts": {
     "test": "node --test",
-    "generate-types": "python scripts/generate-types.py",
     "package": "pwsh -File scripts/package.ps1"
   }
 }

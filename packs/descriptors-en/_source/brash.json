@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "speed"
-    ],
+    "statOptions": ["speed"],
     "statAmount": 2,
-    "skillOptions": [
-      "Hacking",
-      "Initiative",
-      "",
-      ""
-    ],
+    "skillOptions": ["Hacking", "Initiative", "", ""],
     "description": "<p>You're bold, energetic, and a little irreverent — quick to act and quick to speak your mind.</p><p><em>You gain +2 to your Speed Pool, and training in Hacking or Initiative.</em></p>"
   },
   "folder": null,

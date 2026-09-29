@@ -24,39 +24,37 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Dual Wield",
+        "name": "Combat à Deux Armes",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You can use two light melee weapons at the same time or one light melee weapon and one medium melee weapon at the same time. You can make an attack with either one as your action, then attack with the other weapon as an extra action on your turn. Enabler."
+        "description": "Tu peux utiliser **deux armes de mêlée légères** simultanément, ou **une arme légère et une arme moyenne**. Tu peux attaquer avec l’une ou l’autre en tant qu’action, puis **attaquer avec l’autre comme action supplémentaire pendant ton tour**. Au rang 3, tu peux choisir d’utiliser deux armes de mêlée moyennes en même temps."
       },
       {
-        "name": "Expert Combatant",
-        "tier": 3,
-        "enabler": false,
+        "name": "Expert·e combattant·e",
+        "tier": 1,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on."
+        "description": "Tu es **entraîné·e** dans un type d’attaque d’arme spécifique (épées, haches, arcs…) ou une catégorie plus large : armes contondantes légères, armes tranchantes légères, armes à distance légères, armes contondantes moyennes, armes tranchantes moyennes, armes à distance moyennes, etc. Au rang 2, tu peux devenir spécialisé·e dans le même type d’attaque, mais tu dois obtenir la compétence normalement. Au rang 6, tu peux devenir expert·e dans ce type d’attaque (ou un autre dans lequel tu es déjà spécialisé·e), mais tu dois obtenir la compétence normalement."
       },
       {
-        "name": "Weapon Switch",
-        "tier": 6,
-        "enabler": false,
+        "name": "Changement d’Arme",
+        "tier": 1,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "As an extra action on your turn, you change which weapons you’re holding in each hand. This might entail swapping your left and right weapons, sheathing them and drawing new ones, flipping and catching one or both of them, dropping one to switch to a two-handed grip, or something similar. This maneuver is so startling, unexpected, and impressive that your next attack is eased by two steps. Once you use this ability, you can’t use it again until after your next recovery. Enabler."
+        "description": "En tant qu’**action supplémentaire pendant ton tour**, tu modifies la manière dont tu tiens tes armes : les changer de mains, les rengainer pour en dégainer d’autres, faire tournoyer une lame, lâcher une arme pour saisir l’autre à deux mains, etc. Cette manœuvre est si **spectaculaire et inattendue** que ta **prochaine attaque est facilitée de deux paliers**. Une fois cette aptitude utilisée, tu dois attendre **ta prochaine récupération** pour l’utiliser de nouveau."
       }
     ],
-    "statOptions": [
-      "speed"
-    ],
+    "statOptions": ["speed"],
     "description": "<p>Un Type de Épées & Sorcellerie centré sur l'archétype combattant·e à deux armes, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Épées & Sorcellerie. Réserves principales : Célérité.</em></p>"
   },
   "folder": "Mqh1tXdDDqH3lySK",

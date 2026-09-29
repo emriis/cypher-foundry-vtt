@@ -1,0 +1,174 @@
+{
+  "_id": "F1ghtsPanache26X",
+  "_key": "!items!F1ghtsPanache26X",
+  "name": "Combat avec panache",
+  "type": "focus",
+  "img": "icons/skills/melee/sword-parry.webp",
+  "system": {
+    "description": "<p>Un Focus pour une personne flamboyante qui se bat avec audace et style, au point d’être divertissante à regarder.</p>",
+    "abilities": [
+      {
+        "id": "attack-flourish",
+        "name": "Attaque flamboyante",
+        "tier": 1,
+        "prerequisites": ["roguish-smile"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Tes mouvements stylés et tes réparties donnent un atout à la prochaine tâche d’un observateur proche."
+      },
+      {
+        "id": "roguish-smile",
+        "name": "Sourire canaille",
+        "tier": 1,
+        "prerequisites": ["taunting-defense"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "description": "Tu effaces le dernier round de la mémoire d’une cible proche de niveau 3 ou moins; l’Effort augmente le niveau maximal."
+      },
+      {
+        "id": "taunting-defense",
+        "name": "Défense moqueuse",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Tu entraves une attaque de mêlée contre toi, mais une réussite inflige une blessure mineure supplémentaire."
+      },
+      {
+        "id": "dashing-defense",
+        "name": "Défense virevoltante",
+        "tier": 2,
+        "prerequisites": ["attack-flourish"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Avec une arme légère ou moyenne, tu peux tenter un Blocage après avoir échoué à Esquiver une attaque."
+      },
+      {
+        "id": "fast-kill",
+        "name": "Tuer vite",
+        "tier": 2,
+        "prerequisites": ["roguish-smile"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "choice",
+          "amount": 2,
+          "options": ["might", "speed"]
+        },
+        "description": "Une attaque de mêlée ou à distance réussie inflige 4 dégâts supplémentaires, mais pas deux rounds de suite."
+      },
+      {
+        "id": "wounded-fury",
+        "name": "Fureur blessée",
+        "tier": 2,
+        "prerequisites": ["taunting-defense"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Avec des blessures graves, tu gagnes un niveau d’Effort gratuit sur une attaque par round; au rang 3, tu en gagnes deux."
+      },
+      {
+        "id": "acrobatic-attack",
+        "name": "Attaque acrobatique",
+        "tier": 3,
+        "prerequisites": ["dashing-defense"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "speed", "amount": 1, "options": [] },
+        "description": "Une attaque acrobatique donne un niveau d’Effort gratuit si tu dépenses de l’Effort sur son jet; un 17 ou 18 naturel peut créer un effet mineur."
+      },
+      {
+        "id": "flamboyant-boast",
+        "name": "Vantardise flamboyante",
+        "tier": 3,
+        "prerequisites": ["wounded-fury"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "description": "Tu annonces un exploit difficile; sa réussite entrave le prochain tour des témoins, tandis que son échec entrave tes tentatives de les influencer."
+      },
+      {
+        "id": "quick-adjustment",
+        "name": "Ajustement rapide",
+        "tier": 3,
+        "prerequisites": ["fast-kill"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "speed", "amount": 2, "options": [] },
+        "description": "Une attaque non létale devient une Première action."
+      },
+      {
+        "id": "improved-dashing-defense",
+        "name": "Défense virevoltante améliorée",
+        "tier": 4,
+        "prerequisites": ["dashing-defense"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Un·e allié·e proche qui manie une arme légère ou moyenne bénéficie de Défense virevoltante jusqu’à ton prochain tour."
+      },
+      {
+        "id": "misdirect",
+        "name": "Redirection",
+        "tier": 4,
+        "prerequisites": ["quick-adjustment"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "speed", "amount": 3, "options": [] },
+        "description": "Quand un adversaire te rate, redirige son attaque vers une autre cible proche avec un jet d’attaque non modifié."
+      },
+      {
+        "id": "agile-wit",
+        "name": "Esprit agile",
+        "tier": 5,
+        "prerequisites": ["improved-dashing-defense"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Tu peux traiter les tâches de Célérité et leur coût d’Effort comme des tâches d’Intellect si tu le souhaites."
+      },
+      {
+        "id": "using-the-environment",
+        "name": "Utiliser l’environnement",
+        "tier": 5,
+        "prerequisites": ["misdirect"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "description": "Une couverture proche t’accorde couverture et atout en mêlée; tu franchis librement obstacles et terrain difficile jusqu’à une récupération."
+      },
+      {
+        "id": "again-and-again",
+        "name": "Encore et encore",
+        "tier": 6,
+        "prerequisites": ["agile-wit"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "speed", "amount": 6, "options": [] },
+        "description": "Tu effectues une action supplémentaire à ton tour."
+      },
+      {
+        "id": "return-to-sender",
+        "name": "Renvoi à l’expéditeur",
+        "tier": 6,
+        "prerequisites": ["using-the-environment"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "speed", "amount": 3, "options": [] },
+        "description": "Après avoir réussi un Blocage ou une Esquive contre une attaque de mêlée, tu attaques immédiatement sa source; attends ton prochain tour normal pour réutiliser cette aptitude."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document; créé sous la Cypher Open License."
+    }
+  }
+}

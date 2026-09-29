@@ -22,10 +22,39 @@
     "freeWeapons": false,
     "freeArmor": false,
     "skillOptions": [],
-    "abilities": [],
-    "statOptions": [
-      "intellect"
+    "abilities": [
+      {
+        "name": "Mind Reading",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2
+        },
+        "description": "You can read the surface thoughts of a creature you can see within short range. If the creature is unwilling, you must make an Intellect attack against them to read their thoughts. Once you have established contact, you can read the target’s thoughts until you use aten-minute or longer recovery. Action."
+      },
+      {
+        "name": "Onslaught",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1
+        },
+        "description": "You attack a foe using energies that assail either their physical form or their mind. In either case, you must be able to see your target. If the attack is physical, you emit a short-range ray of force that inflicts 4 damage. If the attack is mental, you focus your mental energy to blast their thought processes with a mindslice that inflicts 2 Intellect damage (ignores armor). Some creatures without minds (such as robots) might be immune to your mindslice. Action. At tier 3: You deal 1 additional damage with Onslaught."
+      },
+      {
+        "name": "Psychic Veil",
+        "tier": 1,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1
+        },
+        "description": "Your appearance is distorted as if viewed through the visual aura of a migraine until you take a ten-minute or longer recovery. The distortion doesn’t interfere with your actions, but your dodge and Intellect defense rolls are eased. While active, the distortion protects you from mental attacks, reducing their wound severity by one step (major to moderate, moderate to minor, minor to none). For example, if you are hit by a psychic blast attack that causes a moderate wound, you instead take a minor wound."
+      }
     ],
+    "statOptions": ["intellect"],
     "description": "<p>A Space Opera Type focused on psion archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Science Fiction. Subgenre: Space Opera. Primary Pools: intellect.</em></p>"
   },
   "folder": "AxljvbOd6vL9wkut",

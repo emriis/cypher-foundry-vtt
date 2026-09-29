@@ -31,43 +31,30 @@
           "stat": "intellect",
           "amount": 2
         },
-        "description": "When you roll to pilot a spacecraft and your roll is less than a 9, treat the roll as a 9. (This means you don’t get a GM intrusion if you roll a 1.) Spacecraft piloting tasks include specific maneuvers like safely docking the craft, turning or accelerating the ship gradually enough to avoid dangerously high gravity for sustained periods, noticing something unusual come up on the sensors, and so on."
+        "description": "When you roll to pilot a spacecraft and your roll is less than a 9, treat the roll as a 9. (This means you don’t get a GM intrusion if you roll a 1.) Spacecraft piloting tasks include specific maneuvers like safely docking the craft, turning or accelerating the ship gradually enough to avoid dangerously high gravity for sustained periods, noticing something unusual come up on the sensors, and so on. Effort: Increase the minimum number rolled for this ability by 3. This ability renews when you take a recovery. Action. At tier 3: The minimum number rolled for this ability increases to 12."
       },
       {
-        "name": "Effort",
+        "name": "Expert Space Pilot",
         "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "Increase the minimum number rolled for this ability by 3."
-      },
-      {
-        "name": "Expert Space Pilot",
-        "tier": 3,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0
-        },
-        "description": "You are trained in piloting spacecraft."
+        "description": "You are trained in piloting spacecraft. At tier 6: You can become an expert in piloting spacecraft if you are already specialized, but you must gain the skill normally (such as from a character advancement)."
       },
       {
         "name": "Piloting Flourish",
-        "tier": 6,
+        "tier": 1,
         "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "When you handle a spacecraft, your impressive piloting chops, your diverting quips, and/or a certain something in the way you accomplish a maneuver entertains or impresses others. One creature you choose on or near the spacecraft who can see you or is otherwise aware of your maneuver gains an asset to their next task if taken within a round or two."
+        "description": "When you handle a spacecraft, your impressive piloting chops, your diverting quips, and/or a certain something in the way you accomplish a maneuver entertains or impresses others. One creature you choose on or near the spacecraft who can see you or is otherwise aware of your maneuver gains an asset to their next task if taken within a round or two. At tier 3: You can impress up to three chosen creatures simultaneously."
       }
     ],
-    "statOptions": [
-      "speed",
-      "intellect"
-    ],
+    "statOptions": ["speed", "intellect"],
     "description": "<p>A Hard Science Fiction Type focused on pilot archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Science Fiction. Subgenre: Hard Science Fiction. Primary Pools: speed, intellect.</em></p>"
   },
   "folder": "t6C5D0PsA9y7RaFQ",

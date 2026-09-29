@@ -24,39 +24,57 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Expert Engineer",
+        "name": "Connaissances Connectées",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1
+        },
+        "description": "Tu peux accéder à des données restreintes (via un implant, un appareil portatif, un drone assistant, ou autre) qui ne sont pas accessibles au public. Pose une question à ton MJ et obtiens une réponse courte mais exacte si tu réussis une tâche d’Intellect. La difficulté est **routine** si c’est une information accessible par d’autres moyens. **Niveau 3** si le sujet sensible concerne surtout l’ingénierie ou la science. **Niveau 5 ou plus** si l’information est particulièrement sensible, qu’elle soit scientifique ou non. Dernière action"
+      },
+      {
+        "name": "Ingénieur·e Expert·e",
+        "tier": 1,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Tu es **entraîné·e** en ingénierie. Au rang 6, tu peux devenir expert·e en ingénierie si tu es déjà spécialisé·e, mais tu dois obtenir la compétence normalement."
+      },
+      {
+        "name": "Modifier un Dispositif",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3
+        },
+        "description": "Tu improvises rapidement une réparation ou une amélioration sur un équipement ou une source d’énergie. Tu as besoin de pièces et d’outils appropriés. Réparation : Si tu réussis une tâche d’ingénierie (difficulté = niveau de l’objet + 1), tu répares temporairement un équipement cassé ou une source d’énergie inactive pour en obtenir quelques utilisations supplémentaires. Amélioration : Si tu réussis une tâche d’ingénierie de difficulté 3, tu fais fonctionner l’appareil environ 25 % au‑dessus de ses spécifications. Lors de ta récupération de dix heures, l’appareil se brise et nécessite une vraie réparation (et non une nouvelle utilisation de Modifier un Dispositif) pour retrouver son fonctionnement normal. Exemples : surcadencer un blaster moyen pour infliger +1 dégât supplémentaire, améliorer une imprimante alimentaire pour un meilleur rendu, optimiser un moteur de vaisseau pour +25 % d’accélération, etc. Dans tous les cas, le dispositif modifié gagne un déchargement de 1–6 sur un d20 (à vérifier à chaque utilisation). Au rang 3, ce déchargement s’améliore à 1–2 sur un d20. 10 minutes pour compléter."
+      },
+      {
+        "name": "Repair",
         "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You are trained in engineering."
-      },
-      {
-        "name": "Repair",
-        "tier": 6,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0
-        },
-        "description": "If you succeed on an engineering task (difficulty equal to the device’s level + 1), you temporarily repair a piece of broken equipment or an inactive power source to get a few more uses out of it."
+        "description": "If you succeed on an engineering task (difficulty equal to the device’s level + 1), you temporarily repair a piece of broken equipment or an inactive power source to get a few more uses out of it. Fully repairing a device—as opposed to the jury-rigged repair of Modify Device—is often possible, but usually requires at least a few days, specialized tools and parts, and the application of resource points )."
       },
       {
         "name": "Upgrade",
-        "tier": 6,
+        "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "If you succeed at a difficulty 3 engineering task, you make the device function about 25 percent above its rated specifications. When you take a ten-hour recovery, the device breaks, requiring a full repair (as opposed to another Modify Device task) to regain its original, unmodified function. For example, you could overclock a medium blaster so that it deals 1 additional damage, modify a food printer so that each cup of coffee made with it tastes better, modify a spacecraft’s engine so that its acceleration is improved by 25 percent, and so on."
+        "description": "If you succeed at a difficulty 3 engineering task, you make the device function about 25 percent above its rated specifications. When you take a ten-hour recovery, the device breaks, requiring a full repair (as opposed to another Modify Device task) to regain its original, unmodified function. For example, you could overclock a medium blaster so that it deals 1 additional damage, modify a food printer so that each cup of coffee made with it tastes better, modify a spacecraft’s engine so that its acceleration is improved by 25 percent, and so on. Whether you repair or upgrade the device, it now has a depletion of 1–6 on a d20 (check each use). Ten minutes to complete. At tier 3: The modified device’s depletion improves to 1–2 on a d20."
       }
     ],
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "description": "<p>Un Type de Science-fiction dure centré sur l'archétype ingénieur·e, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Science-fiction. Sous-genre : Science-fiction dure. Réserves principales : Intellect.</em></p>"
   },
   "folder": "C6ZFx2IjshXiDYap",

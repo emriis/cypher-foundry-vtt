@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "statAmount": 2,
-    "skillOptions": [
-      "Charm",
-      "Skilled Trade",
-      "",
-      ""
-    ],
+    "skillOptions": ["Charm", "Skilled Trade", "", ""],
     "description": "<p>Little rattles you. You favor an inner stillness that lets you think clearly under pressure.</p><p><em>You gain +2 to your Intellect Pool, and training in Charm or Skilled Trade.</em></p>"
   },
   "folder": null,

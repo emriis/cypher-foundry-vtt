@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "might"
-    ],
+    "statOptions": ["might"],
     "statAmount": 2,
-    "skillOptions": [
-      "Athlétisme",
-      "",
-      "",
-      ""
-    ],
+    "skillOptions": ["Athlétisme", "", "", ""],
     "description": "<p>Tu es extrêmement fort·e physiquement. Tu exploites ces qualités à merveille, que ce soit au combat ou lors de prouesses athlétiques.</p><p><em>Tu gagnes +2 à ta Réserve de Puissance, et un entrainement en Athlétisme.</em></p>"
   },
   "folder": null,

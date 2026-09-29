@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "speed"
-    ],
+    "statOptions": ["speed"],
     "statAmount": 2,
-    "skillOptions": [
-      "Initiative",
-      "Performance",
-      "",
-      ""
-    ],
+    "skillOptions": ["Initiative", "Performance", "", ""],
     "description": "<p>Danger rarely fazes you, mostly because you don't dwell on consequences — you thrive on the unexpected.</p><p><em>You gain +2 to your Speed Pool, and training in Initiative or Performance.</em></p>"
   },
   "folder": null,

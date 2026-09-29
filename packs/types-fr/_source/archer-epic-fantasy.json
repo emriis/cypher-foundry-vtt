@@ -31,12 +31,30 @@
           "stat": "none",
           "amount": 0
         },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on."
+        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you’re already specialized in), but you must gain the skill normally."
+      },
+      {
+        "name": "Overwatch",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 2
+        },
+        "description": "You use a ranged weapon to target a limited area (such as a doorway, a hallway, or the eastern side of the clearing you’re in); as soon as a viable target enters the area, you can attack them. This works like delaying, but you also negate any benefit the target would have from cover, position, surprise, range, illumination, or visibility. Your attack inflicts +1 damage. You can remain on overwatch as long as you wish, within reason. Alternatively, you can use this ability against a target already in the limited area on your turn. Action."
+      },
+      {
+        "name": "Quick Draw",
+        "tier": 1,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 2
+        },
+        "description": "Once per turn if you take down a foe with your medium or heavy ranged attack, you can immediately make another attack on that same turn against a new foe within short range as an extra action on your turn."
       }
     ],
-    "statOptions": [
-      "speed"
-    ],
+    "statOptions": ["speed"],
     "description": "<p>Un Type de Fantasy épique centré sur l'archétype archer·ère, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Fantasy épique. Réserves principales : Célérité.</em></p>"
   },
   "folder": "hprdGeaH0YyHvS4S",

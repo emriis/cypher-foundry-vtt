@@ -1,0 +1,174 @@
+{
+  "_id": "Focu5Ab1de5St0ne",
+  "_key": "!items!Focu5Ab1de5St0ne",
+  "name": "Abides in Stone",
+  "type": "focus",
+  "img": "icons/magic/earth/construct-stone.webp",
+  "system": {
+    "description": "<p>A Focus for a resilient mineral-bodied character who channels stone, endurance, and crushing force.</p>",
+    "abilities": [
+      {
+        "id": "intimidating-presence",
+        "name": "Intimidating Presence",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Your formidable mineral appearance supports intimidation attempts."
+      },
+      {
+        "id": "stone-body",
+        "name": "Stone Body",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Your mineral form improves resilience and unarmed force, while making evasive movement harder."
+      },
+      {
+        "id": "stoneknowing",
+        "name": "Stoneknowing",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "description": "Study touched stone or crystal to learn useful structural facts."
+      },
+      {
+        "id": "stone-bash",
+        "name": "Stone Bash",
+        "tier": 2,
+        "prerequisites": ["intimidating-presence", "stone-body"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "A carefully timed unarmed strike hits harder."
+      },
+      {
+        "id": "golem-grip",
+        "name": "Golem Grip",
+        "tier": 2,
+        "prerequisites": ["stone-body"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "might", "amount": 3, "options": [] },
+        "description": "Seize and restrain a foe with powerful stone hands."
+      },
+      {
+        "id": "field-of-stones",
+        "name": "Field of Stones",
+        "tier": 2,
+        "prerequisites": ["stone-body", "stoneknowing"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Blend into natural terrain as a rock formation."
+      },
+      {
+        "id": "improved-stone-body",
+        "name": "Improved Stone Body",
+        "tier": 3,
+        "prerequisites": ["stone-bash", "golem-grip"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Your mineral body withstands an additional moderate wound."
+      },
+      {
+        "id": "golem-stomp",
+        "name": "Golem Stomp",
+        "tier": 3,
+        "prerequisites": ["golem-grip", "field-of-stones"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "might", "amount": 4, "options": [] },
+        "description": "Create a close shock wave that harms and displaces several foes."
+      },
+      {
+        "id": "heavy-hands",
+        "name": "Heavy Hands",
+        "tier": 4,
+        "prerequisites": ["improved-stone-body"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Your unarmed attacks gain additional force."
+      },
+      {
+        "id": "deep-reserves",
+        "name": "Deep Reserves",
+        "tier": 4,
+        "prerequisites": ["improved-stone-body", "golem-stomp"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Redistribute a limited amount between your Pools during a demanding recovery cycle."
+      },
+      {
+        "id": "rolling-stone",
+        "name": "Rolling Stone",
+        "tier": 4,
+        "prerequisites": ["golem-stomp"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "might", "amount": 5, "options": [] },
+        "description": "Curl into a charging boulder to strike several foes across a long movement."
+      },
+      {
+        "id": "still-as-a-statue",
+        "name": "Still As a Statue",
+        "tier": 5,
+        "prerequisites": ["heavy-hands"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "might", "amount": 5, "options": [] },
+        "description": "Enter an inert stone state that trades awareness and movement for exceptional recovery and protection."
+      },
+      {
+        "id": "structural-brace",
+        "name": "Structural Brace",
+        "tier": 5,
+        "prerequisites": ["deep-reserves", "rolling-stone"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "might", "amount": 5, "options": [] },
+        "description": "Become a living support capable of holding a threatened structure or immense weight."
+      },
+      {
+        "id": "mineralization",
+        "name": "Mineralization",
+        "tier": 6,
+        "prerequisites": ["still-as-a-statue"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Your mineral nature lets you withstand an additional major wound."
+      },
+      {
+        "id": "earthshake",
+        "name": "Earthshake",
+        "tier": 6,
+        "prerequisites": ["structural-brace"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "choice",
+          "amount": 7,
+          "options": ["might", "intellect"]
+        },
+        "description": "Trigger a violent earth movement that damages terrain and endangers creatures in an area."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

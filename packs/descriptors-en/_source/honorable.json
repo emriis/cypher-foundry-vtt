@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "might"
-    ],
+    "statOptions": ["might"],
     "statAmount": 2,
-    "skillOptions": [
-      "Charm",
-      "Philosophy",
-      "",
-      ""
-    ],
+    "skillOptions": ["Charm", "Philosophy", "", ""],
     "description": "<p>Trustworthy and forthright, you try to do what's right even when it costs you something.</p><p><em>You gain +2 to your Might Pool, and training in Charm or Philosophy.</em></p>"
   },
   "folder": null,

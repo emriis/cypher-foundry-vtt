@@ -24,39 +24,37 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "A Smile and a Word",
-        "tier": 1,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0
-        },
-        "description": "When you successfully interact with a creature by succeeding on a charm, deception, or intimidation task—even those having to do with calming animals or communicating with someone or something whose language you do not speak—you also learn one small useful or at least interesting bit of information. For instance, if you convince the guard to let you pass, you might also learn that their supervisor is due back in ten minutes. Action."
-      },
-      {
-        "name": "Smooth Operator",
+        "name": "Baratin",
         "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 2
+          "amount": 1
         },
-        "description": "You purchase an expensive item for the cost of a moderately priced item. You can only use this ability in a location where services and items are routinely bought and sold."
+        "description": "En parlant avec une créature intelligente qui peut te comprendre et qui n’est pas hostile, tu la convaincs d’entreprendre **une action raisonnable** au prochain round. Une action raisonnable doit être approuvée par ton·ta MJ ; elle ne doit pas mettre la cible ou ses allié·es en danger, ni être totalement incohérente. Action"
       },
       {
-        "name": "Effort",
+        "name": "Un Sourire et un Mot",
         "tier": 1,
-        "enabler": true,
+        "enabler": false,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "Purchase a very expensive item for the cost of an expensive item (this requires two levels of Effort). Purchase an exorbitant item for the cost of a very expensive item (this requires four levels of Effort)."
+        "description": "Lorsque tu interagis avec une créature en réussissant une tâche de persuasion, de tromperie ou d’intimidation — y compris pour calmer des animaux ou communiquer malgré la barrière de la langue — tu apprends également **une petite information utile ou au moins intéressante**. Exemples : Si tu convaincs un garde de te laisser passer, tu apprends peut‑être que sa supérieure revient dans dix minutes. Action"
+      },
+      {
+        "name": "Opérateur·rice du Commerce",
+        "tier": 1,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2
+        },
+        "description": "Tu peux acheter **un objet coûteux** pour le **prix d’un objet modérément cher**. Tu ne peux utiliser cette aptitude qu’en un lieu où des services et marchandises sont régulièrement achetés/vendus. Effort : Acheter un objet très coûteux pour le prix d’un objet coûteux (2 niveaux d’Effort). Acheter un objet exorbitant pour le prix d’un objet très coûteux (4 niveaux d’Effort). Cette aptitude se renouvelle lorsque tu accèdes à un nouveau marché ou qu’un mois s’est écoulé dans le même marché. Au rang 3, tu peux utiliser cette aptitude deux fois avant de devoir la renouveler."
       }
     ],
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "description": "<p>Un Type de Space Opera centré sur l'archétype marchand·e, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Science-fiction. Sous-genre : Space Opera. Réserves principales : Intellect.</em></p>"
   },
   "folder": "DNZXZoUQ1z24nS44",

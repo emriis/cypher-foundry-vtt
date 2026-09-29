@@ -34,7 +34,8 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       rollDefense: CypherPCSheet.#onRollDefense,
       damageArmor: CypherPCSheet.#onDamageArmor,
       repairArmor: CypherPCSheet.#onRepairArmor,
-      rollDepletion: CypherPCSheet.#onRollDepletion
+      rollDepletion: CypherPCSheet.#onRollDepletion,
+      chooseFocusAbility: CypherPCSheet.#onChooseFocusAbility
     },
     form: { submitOnChange: true }
   };
@@ -78,6 +79,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     const context = await super._prepareContext(options);
     context.system = this.actor.system;
     context.actor = this.actor;
+    context.focusAbilityPendingTier = this.actor.getFlag("cypher", "focusAbilityPendingTier");
     context.config = CONFIG.CYPHER;
     context.items = {
       skills: this.actor.items.filter(i => i.type === "skill"),
@@ -221,6 +223,36 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
   static async #onRollDepletion(event, target) {
     const item = this.actor.items.get(target.dataset.itemId);
     await item?.rollDepletion();
+  }
+
+  /**
+   * Prompts for the single Focus ability made available by a tier advancement.
+   *
+   * @param {PointerEvent} event Action event.
+   * @param {HTMLElement} target Action target element.
+   */
+  static async #onChooseFocusAbility(event, target) {
+    const actor = this.actor;
+    const pendingTier = actor.getFlag("cypher", "focusAbilityPendingTier");
+    const focus = actor.getFlag("cypher", "appliedFocusGraph");
+    if (!pendingTier || !focus) return;
+
+    const selected = actor.getFlag("cypher", "focusAbilityIds") ?? [];
+    const abilities = actor.constructor.getEligibleFocusAbilities(focus, selected, actor.system.tier);
+    if (!abilities.length) return;
+
+    const abilityId = await foundry.applications.api.DialogV2.prompt({
+      window: { title: game.i18n.localize("CYPHER.FocusSelection.ChooseAbilityTitle") },
+      content: `<p>${game.i18n.format("CYPHER.FocusSelection.ChooseAbilityPrompt", { tier: pendingTier })}</p>
+        <div class="form-group"><label>${game.i18n.localize("CYPHER.FocusSelection.ChooseAbility")}</label>
+          <select name="abilityId">${abilities.map(ability => `<option value="${ability.id}">${ability.name}</option>`).join("")}</select>
+        </div>`,
+      ok: {
+        label: game.i18n.localize("CYPHER.Confirm.Add"),
+        callback: (event, button) => button.form.abilityId.value
+      }
+    });
+    if (abilityId) await actor.selectFocusAbility(abilityId);
   }
 
   /**
@@ -674,7 +706,47 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       await CypherPCSheet.#applyDroppedType(this.actor, item);
       return;
     }
+    if (item?.type === "focus") {
+      await CypherPCSheet.#applyDroppedFocus(this.actor, item);
+      return;
+    }
     return super._onDropItem(event, data);
+  }
+
+  /**
+   * Applies a dropped Focus after requiring exactly two tier-1 ability choices.
+   *
+   * @param {Actor} actor PC actor receiving the Focus.
+   * @param {Item} item Focus compendium item.
+   */
+  static async #applyDroppedFocus(actor, item) {
+    if (actor.type !== "pc") {
+      ui.notifications.warn(game.i18n.localize("CYPHER.Warning.NotPC"));
+      return;
+    }
+    if (actor.getFlag("cypher", "appliedFocusId")) {
+      ui.notifications.warn(game.i18n.localize("CYPHER.FocusSelection.AlreadyApplied"));
+      return;
+    }
+
+    const tierOneAbilities = actor.constructor.getEligibleFocusAbilities(item.system, [], 1);
+    const choices = tierOneAbilities.map(ability => `
+      <label class="checkbox"><input type="checkbox" name="abilityId" value="${ability.id}"/> ${ability.name}</label>`).join("");
+    const selectedIds = await foundry.applications.api.DialogV2.prompt({
+      window: { title: game.i18n.format("CYPHER.FocusSelection.ApplyTitle", { name: item.name }) },
+      content: `<p>${game.i18n.format("CYPHER.FocusSelection.ApplyPrompt", { name: item.name })}</p>
+        <p>${game.i18n.localize("CYPHER.FocusSelection.ChooseTwo")}</p>${choices}`,
+      ok: {
+        label: game.i18n.localize("CYPHER.Confirm.Add"),
+        callback: (event, button) => [...button.form.querySelectorAll("input[name=abilityId]:checked")].map(input => input.value)
+      }
+    });
+    if (!selectedIds) return;
+    if (selectedIds.length !== 2) {
+      ui.notifications.warn(game.i18n.localize("CYPHER.FocusSelection.ChooseExactlyTwo"));
+      return;
+    }
+    await actor.applyFocus(item, selectedIds);
   }
 
   static async #applyDroppedType(actor, item) {

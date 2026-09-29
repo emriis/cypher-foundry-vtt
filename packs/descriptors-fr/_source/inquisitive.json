@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "statAmount": 2,
-    "skillOptions": [
-      "Identification",
-      "Collecte d'informations",
-      "",
-      ""
-    ],
+    "skillOptions": ["Identification", "Collecte d'informations", "", ""],
     "description": "<p>Tu ressens un appel profond à explorer, découvrir de nouveaux peuples et lieux. Tu prends des précautions pour être prêt·e.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Identification ou Collecte d'informations.</em></p>"
   },
   "folder": null,

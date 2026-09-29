@@ -24,30 +24,37 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Combat Prowess",
+        "name": "Prouesse Martiale",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You add +1 damage to one type of weapon attack of your choice: melee weapon attacks or ranged weapon attacks."
+        "description": "Tu ajoutes **+1 dégât** à un type d’attaque avec arme de ton choix : attaques avec armes de mêlée ou attaques avec armes à distance."
       },
       {
-        "name": "Holy Succor",
+        "name": "Secours Sacré",
         "tier": 1,
         "enabler": true,
         "cost": {
           "stat": "intellect",
           "amount": 1
         },
-        "description": "While an ally within immediate range of you has at least three moderate wounds or at least one major wound, you can extend your divine grace, granting them one free level of Effort they can apply each round to an attack or defense roll. The divine grace they are afforded lasts until the wounds are healed or they use a ten-minute or longer recovery."
+        "description": "Lorsqu’un·e allié·e à portée immédiate possède au moins **trois blessures modérées** ou **une blessure majeure**, tu peux lui accorder ta grâce divine, lui offrant **un niveau d’Effort gratuit** applicable chaque round à un jet d’attaque ou de défense. La grâce divine persiste jusqu’à ce que les blessures soient soignées ou que l’allié·e utilise une récupération de dix minutes ou plus. Chaque fois que tu utilises Secours Sacré, son coût augmente de +1 Intellect. Le coût revient à 1 après une récupération."
+      },
+      {
+        "name": "Châtiment Sacré",
+        "tier": 1,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2
+        },
+        "description": "Choisis une créature que tu peux voir et que tu souhaites punir pour ses transgressions. Tant que tu n’attaques pas une autre cible, tes attaques contre cette créature infligent **+1 dégât** grâce à l’nergie divine qui traverse ton arme ****, qu’il s’agisse d’une attaque de mêlée ou à distance. Si la cible est un mort‑vivant, un démon ou une créature similaire (au choix de ton·ta MJ), tu choisis si ton attaque réussie inflige **+2 dégâts** ou si la créature doit **fuir pendant un tour**. Au rang 3, le bonus de dégâts contre les morts-vivants, démons et créatures similaires  passe à +3."
       }
     ],
-    "statOptions": [
-      "might",
-      "intellect"
-    ],
+    "statOptions": ["might", "intellect"],
     "description": "<p>Un Type de Dungeon Fantasy centré sur l'archétype paladin, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Dungeon Fantasy. Réserves principales : Puissance, Intellect.</em></p>"
   },
   "folder": "N6LoBZte2sRtJhu7",

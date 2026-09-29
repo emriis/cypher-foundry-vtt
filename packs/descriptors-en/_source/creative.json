@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "statAmount": 2,
-    "skillOptions": [
-      "Performance",
-      "Publishing",
-      "",
-      ""
-    ],
+    "skillOptions": ["Performance", "Publishing", "", ""],
     "description": "<p>Ideas come easily to you, whether you write them down, perform them, or build them from scratch.</p><p><em>You gain +2 to your Intellect Pool, and training in Performance or Publishing.</em></p>"
   },
   "folder": null,

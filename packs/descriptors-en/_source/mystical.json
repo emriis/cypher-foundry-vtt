@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "statAmount": 2,
-    "skillOptions": [
-      "Magic Lore",
-      "Psychic Lore",
-      "Religious Lore",
-      ""
-    ],
+    "skillOptions": ["Magic Lore", "Psychic Lore", "Religious Lore", ""],
     "description": "<p>You are attuned to the mysterious and the paranormal, drawn to ancient lore and hidden truths.</p><p><em>You gain +2 to your Intellect Pool, and training in Magic Lore, Psychic Lore or Religious Lore.</em></p>"
   },
   "folder": null,

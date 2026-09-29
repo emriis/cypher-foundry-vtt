@@ -42,6 +42,16 @@
     "Descriptor2": "Second Descriptor",
     "Focus": "Focus",
     "Focus2": "Second Focus",
+    "FocusSelection": {
+      "AlreadyApplied": "A Focus has already been applied to this character.",
+      "ApplyTitle": "Apply Focus: {name}",
+      "ApplyPrompt": "Apply {name} and choose its two initial tier-1 abilities.",
+      "ChooseTwo": "Choose two tier-1 abilities.",
+      "ChooseExactlyTwo": "Choose exactly two tier-1 Focus abilities.",
+      "ChooseAbility": "Choose Focus Ability",
+      "ChooseAbilityTitle": "Choose Focus Ability",
+      "ChooseAbilityPrompt": "Choose the Focus ability gained at tier {tier}."
+    },
     "Profession": "Profession",
     "Species": "Species",
     "SpeciesPlaceholder": "e.g. Human, Elf, Cyborg... (optional)",

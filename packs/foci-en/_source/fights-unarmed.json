@@ -1,0 +1,154 @@
+{
+  "_id": "F1ghtsUnarmed26X",
+  "_key": "!items!F1ghtsUnarmed26X",
+  "name": "Fights Unarmed",
+  "type": "focus",
+  "img": "icons/skills/melee/unarmed-punch-fist.webp",
+  "system": {
+    "description": "<p>A Focus for a scrapper who turns punches, kicks, and full-body movement into a fighting style.</p>",
+    "abilities": [
+      {
+        "id": "body-as-a-tool",
+        "name": "Body as a Tool",
+        "tier": 1,
+        "prerequisites": ["no-need-for-weapons"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Your body is also a useful tool, granting an asset to athletics and gymnastics tasks."
+      },
+      {
+        "id": "no-need-for-weapons",
+        "name": "No Need for Weapons",
+        "tier": 1,
+        "prerequisites": ["resilience"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "You are practiced in unarmed combat, and your unarmed attacks inflict 2 additional damage."
+      },
+      {
+        "id": "resilience",
+        "name": "Resilience",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "You can take one more moderate wound than normal."
+      },
+      {
+        "id": "advantage-to-disadvantage",
+        "name": "Advantage to Disadvantage",
+        "tier": 2,
+        "prerequisites": ["body-as-a-tool"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "speed", "amount": 3, "options": [] },
+        "description": "Make a hindered flurry against an armed foe; on a hit, deal damage, disarm them, and gain an intimidation asset against them for the encounter."
+      },
+      {
+        "id": "fearsome-reputation",
+        "name": "Fearsome Reputation",
+        "tier": 2,
+        "prerequisites": ["no-need-for-weapons"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "choice",
+          "amount": 3,
+          "options": ["might", "intellect"]
+        },
+        "description": "Announce yourself to foes who can hear and understand you; successful Intellect attacks make them afraid and ease your tasks against them."
+      },
+      {
+        "id": "high-and-low",
+        "name": "High and Low",
+        "tier": 2,
+        "prerequisites": ["no-need-for-weapons"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "When you and an ally hit the same foe with melee attacks in one turn, your attack deals 2 additional damage."
+      },
+      {
+        "id": "moving-like-water",
+        "name": "Moving Like Water",
+        "tier": 3,
+        "prerequisites": ["advantage-to-disadvantage"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "speed", "amount": 3, "options": [] },
+        "description": "Until a ten-minute recovery, you can attempt a hindered block after failing to dodge an attack."
+      },
+      {
+        "id": "throw",
+        "name": "Throw",
+        "tier": 3,
+        "prerequisites": ["high-and-low"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "might", "amount": 2, "options": [] },
+        "description": "When an unarmed attack damages a creature your size or smaller, throw it 1d20 feet; it lands prone."
+      },
+      {
+        "id": "divert-attacks",
+        "name": "Divert Attacks",
+        "tier": 4,
+        "prerequisites": ["moving-like-water"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "speed", "amount": 4, "options": [] },
+        "description": "Until a ten-minute recovery, automatically deflect, block, or dodge ranged projectile attacks, but your other actions are hindered after such an attack."
+      },
+      {
+        "id": "knock-out",
+        "name": "Knock Out",
+        "tier": 4,
+        "prerequisites": ["fearsome-reputation"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "might", "amount": 5, "options": [] },
+        "description": "A hindered melee attack can knock a level 3 or lower foe unconscious instead of dealing damage. Effort raises the maximum level by 1."
+      },
+      {
+        "id": "stunning-attack",
+        "name": "Stunning Attack",
+        "tier": 5,
+        "prerequisites": ["throw"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Hinder an unarmed attack; on a hit, the foe also loses their next turn."
+      },
+      {
+        "id": "lethal-capability",
+        "name": "Lethal Capability",
+        "tier": 6,
+        "prerequisites": ["knock-out"],
+        "repeatable": true,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Choose one specific attack type; attacks of that type inflict 5 additional damage. You can choose this ability more than once."
+      },
+      {
+        "id": "master-of-unarmed-fighting-style",
+        "name": "Master of Unarmed Fighting Style",
+        "tier": 6,
+        "prerequisites": ["stunning-attack"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Your unarmed attacks inflict 3 additional damage, and a successful Might block against an unarmed attack reduces its severity by two steps."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

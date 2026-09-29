@@ -24,49 +24,67 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Expert Combatant",
+        "name": "Expert·e combattant·e",
+        "tier": 1,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Tu es **entraîné·e** dans une attaque d’arme spécifique de ton choix — comme les épées, les haches ou les arcs — ou dans une catégorie d’attaques plus large : armes contondantes légères, armes tranchantes légères, armes à distance légères, armes contondantes moyennes, armes tranchantes moyennes, armes à distance moyennes, etc. Au rang 2, tu peux devenir spécialisé·e dans le même type d'attaque choisi au rang 1, mais tu dois obtenir la compétence normalement. Au rang 6, tu peux devenir expert·e dans ce type d’attaque spécifique (ou dans une autre compétence martiale dans laquelle tu es déjà spécialisé·e), mais tu dois obtenir la compétence normalement."
+      },
+      {
+        "name": "Éventrement (1 Célérité)",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 1
+        },
+        "description": "Tu attaques avec un couteau d’une manière plus risquée, mais offrant un bénéfice supplémentaire. Ton seuil d’**intrusion du·de la MJ** augmente de **2** (de 1 naturel à 1–3 sur 1d20). Si tu touches, choisis l’un des effets suivants : Entaille profonde : l’ennemi subit +2 dégâts. Laisser saigner : la blessure saigne ; à ton prochain tour, l’ennemi subit 2 dégâts qui ignorent l’armure. Action"
+      },
+      {
+        "name": "Lancer Entravant (3 Célérité)",
         "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on."
-      },
-      {
-        "name": "Deep Slice",
-        "tier": 6,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0
-        },
-        "description": "The foe takes +2 damage."
+        "description": "Ton attaque à distance au couteau est réussie. Il se plante dans la cible, s’accrochant à ses vêtements, sa chair, le sol ou une surface proche. L’attaque inflige ses **dégâts normaux** et **entrave** les tâches de la cible lors de son prochain tour. Action"
       },
       {
         "name": "Let Them Bleed",
-        "tier": 6,
+        "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "The wound bleeds; on your next turn, the foe takes 2 damage that ignores armor."
+        "description": "The wound bleeds; on your next turn, the foe takes 2 damage that ignores armor. Action."
       },
       {
         "name": "Gut Ripper GM intrusions",
-        "tier": 6,
+        "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
           "amount": 0
         },
         "description": "Your knife gets stuck in your foe and slips from your grasp. Instead of hurting your foe, you accidentally inflict a minor wound on yourself. Your knife sheath is empty and you can’t complete the attack."
+      },
+      {
+        "name": "Hindering Throw",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 3
+        },
+        "description": "Your successful ranged knife attack sticks in the target, catching in their clothing, their flesh, the floor, or another adjacent surface in a way that deals normal damage and hinders their tasks on their next turn. Action."
       }
     ],
-    "statOptions": [
-      "speed"
-    ],
+    "statOptions": ["speed"],
     "description": "<p>Un Type de Épées & Sorcellerie centré sur l'archétype combattant·e au couteau, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Épées & Sorcellerie. Réserves principales : Célérité.</em></p>"
   },
   "folder": "Mqh1tXdDDqH3lySK",

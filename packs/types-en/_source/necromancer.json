@@ -24,6 +24,16 @@
     "skillOptions": [],
     "abilities": [
       {
+        "name": "Basic Necromancy",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3
+        },
+        "description": "You animate the body of a dead creature of approximately your size or smaller within immediate range, creating a level 1 follower that is an undead creature. It has none of the intelligence, memories, or special abilities that it had in life. The creature follows your verbal commands until you use a one-hour or longer recovery, after which it becomes an inert corpse. Unless the creature is killed by damage, you can reanimate it again when its time expires, but any damage it had when it became inert applies to its newly reanimated state. If you use Basic Necromancy to animate a second body, any body you’ve already animated with this ability becomes an inert corpse again. Action to animate."
+      },
+      {
         "name": "Drain Life",
         "tier": 1,
         "enabler": false,
@@ -31,32 +41,20 @@
           "stat": "intellect",
           "amount": 1
         },
-        "description": "You send forth an ashy tendril reaching up to short range, inflicting 2 damage to a living target with a successful Intellect attack roll. You benefit from their drained life, healing a minor wound from yourself or an ally within immediate range. Action."
+        "description": "You send forth an ashy tendril reaching up to short range, inflicting 2 damage to a living target with a successful Intellect attack roll. You benefit from their drained life, healing a minor wound from yourself or an ally within immediate range. Action. At tier 3: If you apply two levels of Effort, a successful attack inflicts 5 damage and heals a moderate or minor wound from yourself or an ally within immediate range."
       },
       {
         "name": "Tribulation",
-        "tier": 3,
+        "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "intellect",
           "amount": 1
         },
-        "description": "You conjure pure spiritual energy to blast up to five undead, demons, and creatures of similar ilk of level 2 or less within short range. If you succeed on a separate Intellect attack against each foe, you choose whether they spend their next turn fleeing or lose their next turn."
-      },
-      {
-        "name": "Effort",
-        "tier": 3,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0
-        },
-        "description": "Increase the maximum level of the foe you can affect by 1. Specify some other action for the creatures to perform for one round, such as attacking a foe of your choice."
+        "description": "You conjure pure spiritual energy to blast up to five undead, demons, and creatures of similar ilk of level 2 or less within short range. If you succeed on a separate Intellect attack against each foe, you choose whether they spend their next turn fleeing or lose their next turn. Effort: Increase the maximum level of the foe you can affect by 1. Specify some other action for the creatures to perform for one round, such as attacking a foe of your choice. Last action."
       }
     ],
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "description": "<p>A Dungeon Fantasy Type focused on necromancer archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Dungeon Fantasy. Primary Pools: intellect.</em></p>"
   },
   "folder": "pQTzt4j9XPpLBpKm",

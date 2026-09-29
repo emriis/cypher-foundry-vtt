@@ -24,50 +24,37 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Born to Pilot",
+        "name": "Né·e pour Piloter",
         "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "intellect",
           "amount": 2
         },
-        "description": "When you roll to pilot a spacecraft and your roll is less than a 9, treat the roll as a 9. (This means you don’t get a GM intrusion if you roll a 1.) Spacecraft piloting tasks include specific maneuvers like safely docking the craft, turning or accelerating the ship gradually enough to avoid dangerously high gravity for sustained periods, noticing something unusual come up on the sensors, and so on."
+        "description": "Quand tu fais un jet pour piloter un vaisseau spatial et que le résultat est **inférieur à 9**, considère que tu as obtenu **9**. (Cela signifie que tu n’obtiens pas d’intrusion du·de la MJ sur un 1.) Les tâches de pilotage comprennent des manœuvres précises : arrimer un vaisseau en toute sécurité, tourner ou accélérer progressivement pour éviter des niveaux dangereux de gravité prolongée, remarquer une anomalie sur les capteurs, etc. Au rang 3, le minimum devient 12. Effort : Augmente le minimum obtenu grâce à cette aptitude de +3. Cette aptitude se renouvelle après une récupération. Action"
       },
       {
-        "name": "Effort",
+        "name": "Pilote Spatial·e Expert·e",
         "tier": 1,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0
-        },
-        "description": "Increase the minimum number rolled for this ability by 3."
-      },
-      {
-        "name": "Expert Space Pilot",
-        "tier": 3,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0
-        },
-        "description": "You are trained in piloting spacecraft."
-      },
-      {
-        "name": "Piloting Flourish",
-        "tier": 6,
         "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "When you handle a spacecraft, your impressive piloting chops, your diverting quips, and/or a certain something in the way you accomplish a maneuver entertains or impresses others. One creature you choose on or near the spacecraft who can see you or is otherwise aware of your maneuver gains an asset to their next task if taken within a round or two."
+        "description": "Tu es **entraîné·e** en pilotage de vaisseaux spatiaux. Au rang 6, tu peux devenir expert·e si tu es déjà spécialisé·e, mais tu dois acquérir la compétence normalement."
+      },
+      {
+        "name": "Panache du Pilote",
+        "tier": 1,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Lorsque tu pilotes un vaisseau spatial, tes manœuvres impressionnantes, tes remarques pince‑sans‑rire ou ta façon d’exécuter une action peuvent **impressionner ou divertir** d’autres personnes. Une créature de ton choix, à bord ou proche du vaisseau, qui peut te voir ou être consciente de ta manœuvre, gagne **un atout** à sa prochaine tâche (si elle l’accomplit dans un round ou deux). Au rang 3, tu peux impressionner jusqu’à trois créatures choisies simultanément."
       }
     ],
-    "statOptions": [
-      "speed",
-      "intellect"
-    ],
+    "statOptions": ["speed", "intellect"],
     "description": "<p>Un Type de Science-fiction dure centré sur l'archétype pilote, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Science-fiction. Sous-genre : Science-fiction dure. Réserves principales : Célérité, Intellect.</em></p>"
   },
   "folder": "C6ZFx2IjshXiDYap",

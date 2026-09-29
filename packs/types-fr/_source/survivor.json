@@ -24,50 +24,37 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Despite My Wounds",
-        "tier": 1,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0
-        },
-        "description": "While you have two or more moderate wounds or one major wound, you get a free reroll on one action each round (as if you had spent 1 XP). Enabler."
-      },
-      {
-        "name": "Enhanced Scavenging",
-        "tier": 1,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2
-        },
-        "description": "When you roll to scavenge the postapocalyptic landscape for something useful and your roll is less than a 9, treat the roll as a 9. (This means you don’t get a GM intrusion if you roll a 1.) Your enhanced effect persists until you take a ten-minute or longer recovery."
-      },
-      {
-        "name": "Effort",
+        "name": "Malgré Mes Blessures",
         "tier": 1,
         "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "Increase the minimum number rolled for this ability by 3."
+        "description": "Tant que tu as **deux blessures modérées** ou **une blessure majeure**, tu obtiens **un relance gratuite** par round sur **une action** de ton choix (comme si tu avais dépensé 1 XP)."
       },
       {
-        "name": "Get Out",
-        "tier": 3,
-        "enabler": false,
+        "name": "Fouilles Améliorées",
+        "tier": 1,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2
+        },
+        "description": "Lorsque tu fais un jet pour **fouiller** les terres postapocalyptiques à la recherche de quelque chose d’utile et que le résultat est **inférieur à 9**, considère que tu as obtenu **9**. *(Tu n’obtiens donc pas d’intrusion du·de la MJ sur un 1.)* L’effet reste actif jusqu’à ta prochaine **récupération de dix minutes ou plus**. Au rang 3, le minimum devient 12. Effort : Augmente le minimum obtenu de +3."
+      },
+      {
+        "name": "Dégage",
+        "tier": 1,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "If you move at least an immediate distance away from the most obvious threat or toward what promises to offer safety, one task you attempt next round is eased. Enabler."
+        "description": "Si tu te déplaces d’au moins une **distance immédiate** loin de la menace la plus évidente — ou vers ce qui semble t’offrir sécurité — **une tâche** que tu entreprends au round suivant est **facilitée**."
       }
     ],
-    "statOptions": [
-      "might",
-      "speed"
-    ],
+    "statOptions": ["might", "speed"],
     "description": "<p>Un Type de Postapocalyptique centré sur l'archétype survivant·e, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Science-fiction. Sous-genre : Postapocalyptique. Réserves principales : Puissance, Célérité.</em></p>"
   },
   "folder": "mhEicDpOMODfF21T",

@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "might"
-    ],
+    "statOptions": ["might"],
     "statAmount": 2,
-    "skillOptions": [
-      "Évasion",
-      "",
-      "",
-      ""
-    ],
+    "skillOptions": ["Évasion", "", "", ""],
     "description": "<p>Tu es plus résistant·e que la plupart. Tu encaisses les coups et tu sais comment te sortir d'une mauvaise passe.</p><p><em>Tu gagnes +2 à ta Réserve de Puissance, et un entrainement en Évasion.</em></p>"
   },
   "folder": null,

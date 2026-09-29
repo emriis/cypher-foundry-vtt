@@ -26,27 +26,35 @@
       {
         "name": "Connected",
         "tier": 1,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2
+        },
+        "description": "You know people who get things done—not just respected people in positions of authority, but also a variety of online hackers and regular street criminals. These people are not necessarily your friends and might not be trustworthy, but they owe you a favor or two. When you use this ability, you remember or otherwise establish a level 2 contact you can reach out to in a specific location. You and your GM can work out the specifics. Effort: Increase the level of the new contact by 1. This ability renews when you access a new location or when at least a month has elapsed in the same location where you last used this ability. At tier 3: You can establish two contacts in a specific location simultaneously."
+      },
+      {
+        "name": "Fast Talk",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1
+        },
+        "description": "When speaking with an intelligent creature who can understand you and isn’t hostile, you convince them to take one reasonable action in the next round. A reasonable action must be agreed upon by your GM; it should not put the creature or its allies in obvious danger or be wildly out of character. Action."
+      },
+      {
+        "name": "Inspiring Suggestion",
+        "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "intellect",
           "amount": 2
         },
-        "description": "You know people who get things done—not just respected people in positions of authority, but also a variety of online hackers and regular street criminals. These people are not necessarily your friends and might not be trustworthy, but they owe you a favor or two. When you use this ability, you remember or otherwise establish a level 2 contact you can reach out to in a specific location. You and your GM can work out the specifics."
-      },
-      {
-        "name": "Effort",
-        "tier": 1,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0
-        },
-        "description": "Increase the level of the new contact by 1."
+        "description": "Choose an ally who can see and easily understand you. Suggest a specific action for them to take, such as “attack the leader” or “climb the wall.” If the ally chooses to take that exact action on their next turn, they gain two assets on that task. First action."
       }
     ],
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "description": "<p>A Space Opera Type focused on diplomat archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Science Fiction. Subgenre: Space Opera. Primary Pools: intellect.</em></p>"
   },
   "folder": "AxljvbOd6vL9wkut",

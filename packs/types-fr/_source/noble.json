@@ -24,39 +24,47 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Exorbitant Reach",
+        "name": "Expert·e combattant·e",
+        "tier": 1,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Tu es **entraîné·e** dans un type d’attaque d’arme spécifique (épées, haches, arcs…) ou une catégorie plus large : armes contondantes légères, armes tranchantes légères, armes à distance légères, armes contondantes moyennes, armes tranchantes moyennes, armes à distance moyennes, etc. Au rang 2, tu peux devenir spécialisé·e dans le même type d’attaque, mais tu dois obtenir la compétence normalement. Au rang 6, tu peux devenir expert·e dans ce type d’attaque (ou un autre dans lequel tu es déjà spécialisé·e), mais tu dois obtenir la compétence normalement."
+      },
+      {
+        "name": "Noble défenseur·euse (2 Puissance ou 2 Célérité)",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2
+        },
+        "description": "Choisis un personnage que tu peux voir : il passe **sous ta protection**. Tu gagnes un **atout** pour toutes les tâches visant à : le trouver, le soigner, interagir avec lui, le protéger. Lorsque tu utilises l’action **aider** pour faciliter son **blocage** ou son **esquive**, tu lui accordes **deux atouts** au lieu d’un. Tu peux aussi utiliser l’action aider pour faciliter sa **défense d’Intellect** (peur, contrôle mental, persuasion, intimidation…), et tu lui accordes **deux atouts** dans ces cas également. Tu ne peux protéger **qu’un seul personnage à la fois**. Au rang 3, tu peux protéger deux personnages simultanément. Première action"
+      },
+      {
+        "name": "Noble sacrifice (2 Puissance ou Célérité)",
+        "tier": 1,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Lorsque tu **prends l’attaque** destinée à un·e autre, tu bénéficies d’un regain immédiat pour ta bravoure. L’attaque **te touche automatiquement** et inflige ses dégâts normaux (plus la blessure mineure supplémentaire liée à l’interception). Tu peux **riposter immédiatement** par une attaque contre un ennemi à portée. Si tu as pris l’attaque pour une personne que tu protèges via **Noble défenseur·euse**, cette contre‑attaque est **facilitée**."
+      },
+      {
+        "name": "At higher tiers",
         "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You have an exorbitant item of your choice, such as a personal force field or a small spaceship. Work with your GM to determine something appropriate for the setting."
-      },
-      {
-        "name": "Retainer",
-        "tier": 3,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0
-        },
-        "description": "You enjoy the services of a loyal level 2 follower who looks after your affairs, accounts, meals, clothing, and other trivial needs so you don’t have to. Work with your GM to flesh out the details of your retainer."
-      },
-      {
-        "name": "At higher tiers",
-        "tier": 5,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0
-        },
-        "description": "Your follower improves when you reach tier 3 and again at tier 5 (this is explained in the section about followers)."
+        "description": "Your follower improves when you reach tier 3 and again at tier 5 (this is explained in the section about followers). Your retainer could be a robot or alien pet if you prefer."
       }
     ],
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "description": "<p>Un Type de Space Opera centré sur l'archétype noble, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Science-fiction. Sous-genre : Space Opera. Réserves principales : Intellect.</em></p>"
   },
   "folder": "DNZXZoUQ1z24nS44",

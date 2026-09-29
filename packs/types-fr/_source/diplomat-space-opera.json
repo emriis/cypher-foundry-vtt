@@ -24,29 +24,37 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Connected",
+        "name": "Connecté·e",
+        "tier": 1,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2
+        },
+        "description": "Tu connais des personnes qui savent obtenir des résultats — pas seulement des personnalités respectées occupant des postes d’autorité, mais aussi divers hackers en ligne et criminel·les de rue. Ces personnes ne sont pas nécessairement tes ami·es et ne sont pas toujours dignes de confiance, mais elles te doivent une faveur ou deux. Quand tu utilises cette aptitude, tu te remémores — ou tu établis — un **contact de niveau 2** que tu peux joindre **dans un lieu spécifique**. Avec ton MJ, définissez les détails. Cette aptitude **se renouvelle** quand tu accèdes à un **nouveau lieu**, ou **après au moins un mois** passé dans le même lieu où tu l’as utilisée pour la dernière fois. Au rang 3, tu peux établir deux contacts dans un lieu spécifique simultanément. Effort : Augmente le niveau du nouveau contact de +1."
+      },
+      {
+        "name": "Baratin",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1
+        },
+        "description": "Quand tu parles à une créature intelligente qui peut te comprendre et qui n’est pas hostile, tu la convaincs d’accomplir **une action raisonnable** au **prochain round**. Une action raisonnable doit être approuvée par ton MJ ; elle ne doit pas mettre la créature ou ses allié·es en danger évident ni être totalement incohérente avec son comportement. Action"
+      },
+      {
+        "name": "Suggestion inspirante",
         "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "intellect",
           "amount": 2
         },
-        "description": "You know people who get things done—not just respected people in positions of authority, but also a variety of online hackers and regular street criminals. These people are not necessarily your friends and might not be trustworthy, but they owe you a favor or two. When you use this ability, you remember or otherwise establish a level 2 contact you can reach out to in a specific location. You and your GM can work out the specifics."
-      },
-      {
-        "name": "Effort",
-        "tier": 1,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0
-        },
-        "description": "Increase the level of the new contact by 1."
+        "description": "Choisis un·e allié·e qui peut te voir et te comprendre facilement. Propose‑lui **une action précise** à entreprendre, par exemple « attaque le chef » ou « grimpe le mur ». Si l’allié·e choisit d’accomplir **exactement** cette action à son prochain tour, iel gagne **deux atouts** sur cette tâche. Première action"
       }
     ],
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "description": "<p>Un Type de Space Opera centré sur l'archétype diplomate, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Science-fiction. Sous-genre : Space Opera. Réserves principales : Intellect.</em></p>"
   },
   "folder": "DNZXZoUQ1z24nS44",

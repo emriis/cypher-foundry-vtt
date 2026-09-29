@@ -24,24 +24,34 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Attack Flourish",
+        "name": "Attaque foisonnante",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "When you attack, you add stylish moves, entertaining quips, or a certain something that entertains or impresses others. One creature you choose within short range who can see you gains an asset to their next task if taken within a round or two. Enabler."
+        "description": "Lorsque tu attaques, tu accompagnes tes gestes de mouvements élégants, de répliques spirituelles ou d’un panache irrésistible qui divertit ou impressionne. Une créature de ton choix, à **courte portée**, qui peut te voir, obtient **un atout** sur sa **prochaine tâche** (si elle l’accomplit dans un round ou deux)."
       },
       {
-        "name": "Daring Lunge",
+        "name": "Escrime Flamboyante (1 Célérité)",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 1
+        },
+        "description": "Tu attaques de manière plus risquée, mais aussi plus avantageuse. Ton seuil d’**intrusion du·de la MJ** augmente de **2** (de 1 naturel à 1–3 sur 1d20). Si tu touches, choisis l’un des effets suivants : Fente Audacieuse : l’ennemi subit +2 dégâts supplémentaires. Adresse Désarmante : l’attaque inflige 1 dégât de moins, mais ton adversaire lâche ce qu’iel tient dans une main (arme, bouclier…). Pour récupérer l’objet, la cible doit utiliser une action. Action."
+      },
+      {
+        "name": "Panache Romantique",
         "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "The foe takes +2 damage."
+        "description": "Ton charme éclatant, ta confiance assurée, ton salut parfaitement chorégraphié ou ton clin d’œil suggestif font que, si ton **jet pour persuader ou impressionner** est **inférieur à 9**, considère‑le comme **9**. (Ce qui signifie qu’un 1 **n’entraîne pas** d’intrusion du·de la MJ.) Au rang 3, le résultat minimum pour cette aptitude passe à 12. Effort : Augmente le résultat minimum de 3. Action"
       },
       {
         "name": "Disarming Agility",
@@ -51,7 +61,7 @@
           "stat": "none",
           "amount": 0
         },
-        "description": "The attack inflicts 1 less damage, but your foe drops something they are holding in one hand (such as a weapon or shield). To retrieve the dropped item, the foe must use an action."
+        "description": "The attack inflicts 1 less damage, but your foe drops something they are holding in one hand (such as a weapon or shield). To retrieve the dropped item, the foe must use an action. Action."
       },
       {
         "name": "Flamboyant Swordplay GM intrusions",
@@ -61,7 +71,7 @@
           "stat": "none",
           "amount": 0
         },
-        "description": "Your foe’s disarmed object strikes your ally for a minor wound. The tip of your weapon gets embedded in the floor or wall, requiring an action to free it. The attack impact jars you, hindering tasks with that hand until you use an action to shake it off."
+        "description": "Your foe’s disarmed object strikes your ally for a minor wound. The tip of your weapon gets embedded in the floor or wall, requiring an action to free it. The attack impact jars you, hindering tasks with that hand until you use an action to shake it off. A few abilities in this book include suggested GM intrusions because you’re more likely to trigger an intrusion when using those abilities, and having some options here makes it easier for the GM."
       },
       {
         "name": "Romantic Flair",
@@ -71,23 +81,10 @@
           "stat": "intellect",
           "amount": 2
         },
-        "description": "Your accompanying exuberant charm, bold confidence, perfectly timed bow, or suggestive wink means if your roll to charm or impress is less than a 9, treat the roll as a 9. (This means you don’t get a GM intrusion if you roll a 1.)"
-      },
-      {
-        "name": "Effort",
-        "tier": 1,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0
-        },
-        "description": "Increase the minimum number rolled for this ability by 3."
+        "description": "Your accompanying exuberant charm, bold confidence, perfectly timed bow, or suggestive wink means if your roll to charm or impress is less than a 9, treat the roll as a 9. (This means you don’t get a GM intrusion if you roll a 1.) Effort: Increase the minimum number rolled for this ability by 3. Action. At tier 3: The minimum number rolled for this ability increases to 12."
       }
     ],
-    "statOptions": [
-      "speed",
-      "intellect"
-    ],
+    "statOptions": ["speed", "intellect"],
     "description": "<p>Un Type de Fantasy épique centré sur l'archétype bretteur·euse, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Fantasy épique. Réserves principales : Célérité, Intellect.</em></p>"
   },
   "folder": "hprdGeaH0YyHvS4S",

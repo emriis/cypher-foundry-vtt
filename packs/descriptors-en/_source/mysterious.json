@@ -5,17 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "intellect",
-      "speed"
-    ],
+    "statOptions": ["intellect", "speed"],
     "statAmount": 2,
-    "skillOptions": [
-      "Deception",
-      "Stealth",
-      "",
-      ""
-    ],
+    "skillOptions": ["Deception", "Stealth", "", ""],
     "description": "<p>No one is quite sure where you came from or what you want, and you prefer to keep it that way.</p><p><em>You gain +2 to your Intellect or Speed Pool, and training in Deception or Stealth.</em></p>"
   },
   "folder": null,

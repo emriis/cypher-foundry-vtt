@@ -24,20 +24,37 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "When the Deal Bombs",
+        "name": "Baratin",
         "tier": 1,
         "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1
+        },
+        "description": "En parlant avec une créature intelligente qui peut te comprendre et qui n’est pas hostile, tu la convaincs d’accomplir **une action raisonnable** au prochain round. Une action raisonnable doit être approuvée par ton·ta MJ ; elle ne doit pas mettre la cible ou ses allié·es en danger évident, ni être incohérente avec son comportement. Action"
+      },
+      {
+        "name": "Attaque Furtive (1 Célérité)",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 1
+        },
+        "description": "Si tu utilises une **arme légère** pour attaquer un adversaire dans l’une des situations suivantes, ton attaque inflige **+5 dégâts** : Tu attaques par surprise. Un·e allié·e utilise son action pour faciliter ton attaque. Les défenses de ton adversaire sont entravées par une distraction directe. Ton adversaire ne peut pas agir à son prochain tour à cause d’une attaque ou d’une situation handicapante. Première action"
+      },
+      {
+        "name": "Quand le Deal Explose",
+        "tier": 1,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "There’s always a risk that someone you deal with will try to turn on you. After successfully charming, deceiving, interacting positively with, or using Fast Talk or a similar ability on a creature, if they become hostile to you within a day or so, you automatically reduce the wound severity of their first successful attack against you by one step. Enabler."
+        "description": "Il y a toujours un risque que quelqu’un à qui tu fais affaire se retourne contre toi. Après avoir **persuadé**, **trompé**, **interagi positivement**, ou utilisé **Baratin** (ou une aptitude similaire) avec succès sur une créature, si celle‑ci devient hostile dans les 24 heures, tu **réduis automatiquement la gravité** de la **première blessure** qu’elle t’inflige d’un palier. Au rang 3, tu ignores complètement cette blessure (aucun dégât)."
       }
     ],
-    "statOptions": [
-      "intellect",
-      "speed"
-    ],
+    "statOptions": ["intellect", "speed"],
     "description": "<p>Un Type de Postapocalyptique centré sur l'archétype magouilleur·euse, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Science-fiction. Sous-genre : Postapocalyptique. Réserves principales : Intellect, Célérité.</em></p>"
   },
   "folder": "mhEicDpOMODfF21T",

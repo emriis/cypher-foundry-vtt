@@ -41,11 +41,21 @@
           "stat": "none",
           "amount": 0
         },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on."
+        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you’re already specialized in), but you must gain the skill normally."
+      },
+      {
+        "name": "Swing Through",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 1
+        },
+        "description": "You attack with a sword in a way that has a greater risk of making an error but gains an additional benefit. Your GM intrusion range for this attack increases by 2 (from 1 on a d20 to 1–3 on a d20), but if you hit you can choose one of the following additional effects:"
       },
       {
         "name": "Eat Steel",
-        "tier": 6,
+        "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
@@ -55,17 +65,17 @@
       },
       {
         "name": "Slice and Step",
-        "tier": 6,
+        "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You reposition your foe or yourself an immediate distance away, easing your attack on your next turn (whether against that foe or a different one)."
+        "description": "You reposition your foe or yourself an immediate distance away, easing your attack on your next turn (whether against that foe or a different one). Action."
       },
       {
         "name": "Swing Through GM intrusions",
-        "tier": 6,
+        "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
@@ -74,10 +84,7 @@
         "description": "Your sword chips or bends, reducing its damage by 1 until repaired. Your sword goes flying, landing a short distance away. Your foe deflects your attack, and you inflict a moderate wound on yourself."
       }
     ],
-    "statOptions": [
-      "might",
-      "speed"
-    ],
+    "statOptions": ["might", "speed"],
     "description": "<p>A Swords & Sorcery Type focused on sword fighter archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Swords & Sorcery. Primary Pools: might, speed.</em></p>"
   },
   "folder": "zBqRagUFEUelogPi",

@@ -24,14 +24,14 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Push on Through",
+        "name": "Lévitation",
         "tier": 1,
         "enabler": false,
         "cost": {
-          "stat": "none",
-          "amount": 0
+          "stat": "intellect",
+          "amount": 2
         },
-        "description": "Instead of a ten-minute recovery, you have a second one-action recovery. Thus, your first two recoveries are one action, the third is one hour, and the fourth is ten hours."
+        "description": "Tu t’élèves lentement dans les airs. Si tu te concentres, tu peux : **rester immobile** ou flotter jusqu’à un **court déplacement** pendant ton action. Sans concentration, tu dérives avec le vent ou l’élan que tu as pris. L’effet dure jusqu’à ta prochaine **récupération de dix minutes ou plus**. Action"
       },
       {
         "name": "Second Focus",
@@ -41,33 +41,40 @@
           "stat": "none",
           "amount": 0
         },
-        "description": "You have two foci instead of one. At tier 1 you gain two abilities from each of them. When you advance to a new tier, you gain a new ability from each focus."
+        "description": "Tu possèdes **deux focus au lieu d’un seul**. Au rang 1, tu gagnes **deux aptitudes** pour chacun de ces deux focus. À chaque montée de rang, tu gagnes **une nouvelle aptitude dans chacun des deux focus**."
       },
       {
-        "name": "Super Combatant",
+        "name": "Tenir Bon",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on."
+        "description": "Au lieu d’une récupération de dix minutes, tu disposes d’une **deuxième récupération d’une action**. Ainsi, ta 1re récupération prend **1 action**, ta 2e récupération prend **1 action,** ta 3e récupération prend **1 heure** et ta 4e récupération prend **10 heures** De plus, tu peux encaisser une blessure modérée supplémentaire, et tu peux utiliser une de tes récupérations d’une action pour permettre à un·e allié·e d’utiliser une récupération de dix minutes comme action."
       },
       {
-        "name": "Superheroics",
-        "tier": 6,
-        "enabler": false,
+        "name": "Super‑Combattant·e",
+        "tier": 1,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "Choose one Pool: Might, Speed, or Intellect. For tasks using your chosen Pool, add your rank to the amount of Effort you can apply, allowing you to apply additional levels of Effort to tasks in that Pool."
+        "description": "Tu es **entraîné·e** dans un type d’attaque spécifique (épées, haches, arcs, rayons, poings, etc.) ou dans une catégorie complète d’attaques : armes légères contondantes/tranchantes/à distance, armes moyennes, etc. Au rang 2, tu peux devenir spécialisé·e (en acquérant l’aptitude normalement). Au rang 6, tu peux devenir expert·e dans cette méthode d’attaque (celle du rang 1 ou une autre dont tu es spécialisé·e)."
+      },
+      {
+        "name": "Superhéroïsme",
+        "tier": 1,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Choisis une **Réserve** : Puissance, Célérité ou Intellect. Pour les tâches utilisant cette Réserve, ajoute ton **rang** au nombre de niveaux d’Effort que tu peux appliquer. De plus, tu peux te surmener : subir une blessure modérée pour obtenir deux niveaux d’Effort gratuits pour une tâche de cette Réserve (sans dépasser la limite d’Effort maximale pour cette Réserve). À chaque récupération, ajoute ton rang en points supplémentaires dans cette même Réserve. # Aptitude d’origine de Superhéros"
       }
     ],
-    "statOptions": [
-      "might",
-      "intellect"
-    ],
+    "statOptions": ["might", "intellect"],
     "description": "<p>Un Type de Super-héros centré sur l'archétype dieu vivant, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Super-héros. Sous-genre : Super-héros. Réserves principales : Puissance, Intellect.</em></p>"
   },
   "folder": "rgUrIo08MxTkt23F",

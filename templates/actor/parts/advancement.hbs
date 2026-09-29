@@ -17,6 +17,12 @@
     <h3>{{localize 'CYPHER.Advancement.Title'}} — {{localize 'CYPHER.Tier'}} {{system.tier}}</h3>
     <p class="advancement-hint">{{localize 'CYPHER.Advancement.Hint'}}</p>
 
+    {{#if focusAbilityPendingTier}}
+    <button type="button" data-action="chooseFocusAbility">
+      <i class="fa-solid fa-diagram-project"></i> {{localize 'CYPHER.FocusSelection.ChooseAbility'}}
+    </button>
+    {{/if}}
+
     <div class="advancement-slots">
       {{#each system.advancementSlots as |slot|}}
       <div class="advancement-slot {{#if slot.bought}}bought{{/if}}">

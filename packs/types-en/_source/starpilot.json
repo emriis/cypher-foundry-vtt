@@ -24,6 +24,16 @@
     "skillOptions": [],
     "abilities": [
       {
+        "name": "Audacious Blast",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 1
+        },
+        "description": "You attack with a blaster (or other genre-appropriate ranged weapon) in a way that has a greater risk of making an error but gains an additional benefit. Your GM intrusion range for this attack increases by 2 (from 1 on a d20 to 1–3 on a d20), but if you hit you can choose one of the following additional effects:"
+      },
+      {
         "name": "Disarming Shot",
         "tier": 1,
         "enabler": false,
@@ -41,7 +51,7 @@
           "stat": "none",
           "amount": 0
         },
-        "description": "The foe takes +2 damage."
+        "description": "The foe takes +2 damage. Action."
       },
       {
         "name": "Audacious Blast GM intrusions",
@@ -61,7 +71,7 @@
           "stat": "none",
           "amount": 0
         },
-        "description": "You can bear one additional cypher at a time."
+        "description": "You can bear one additional cypher at a time. Redline Maneuver (1 Speed or Intellect): You attempt a risky maneuver piloting the starcraft, increasing the GM intrusion range by 2 on your task, and “redlining” the craft beyond its regular operating envelope. If you succeed on a difficulty 2 (or potentially higher, depending on your GM’s assessment of the situation) task, you can accomplish something normally ill-advised when flying a starcraft. For instance, you could fire its weapons as you put the entire ship into an accelerating spiral, possibly directly into the swarm of fighters as opposed to fleeing, hoping to shatter their coordination and maybe cause a couple of crashes in the process. You could try to graze a star’s corona (or even chromosphere) to lose pursuing ships. You could jump the starcraft to FTL more quickly than is usually possible, or closer to a gravitational source than is normally thinkable. Or you could move much farther or faster through FTL than normally works out well for the craft. Action."
       },
       {
         "name": "Redline Maneuver GM intrusions",
@@ -74,10 +84,7 @@
         "description": "The FTL engines fail. The ship takes significant damage. Someone’s console within the ship explodes, inflicting a moderate wound."
       }
     ],
-    "statOptions": [
-      "speed",
-      "intellect"
-    ],
+    "statOptions": ["speed", "intellect"],
     "description": "<p>A Space Opera Type focused on starpilot archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Science Fiction. Subgenre: Space Opera. Primary Pools: speed, intellect.</em></p>"
   },
   "folder": "AxljvbOd6vL9wkut",

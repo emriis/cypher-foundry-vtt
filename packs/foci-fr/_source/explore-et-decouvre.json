@@ -1,0 +1,150 @@
+{
+  "_id": "Expl0res2026WXYZ",
+  "_key": "!items!Expl0res2026WXYZ",
+  "name": "Explore et Découvre",
+  "type": "focus",
+  "img": "icons/environment/wilderness/terrain-rocks.webp",
+  "system": {
+    "description": "<p>Un Focus pour un·e explorateur·rice capable de découvrir, survivre et prospérer dans la nature.</p>",
+    "abilities": [
+      {
+        "id": "exploration-survivor",
+        "name": "Survie de l’explorateur·rice",
+        "tier": 1,
+        "prerequisites": ["tough"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Après avoir étudié une région et réussi une tâche de survie, trouve des ressources utiles, nourris tes allié·e·s et mémorise les lieux remarquables."
+      },
+      {
+        "id": "tough",
+        "name": "Robuste",
+        "tier": 1,
+        "prerequisites": ["untamed-recovery"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Tu peux encaisser une blessure mineure supplémentaire."
+      },
+      {
+        "id": "untamed-recovery",
+        "name": "Récupération sauvage",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Tu gagnes une récupération d’une action supplémentaire chaque jour."
+      },
+      {
+        "id": "beast-companion",
+        "name": "Compagnon animal",
+        "tier": 2,
+        "prerequisites": ["exploration-survivor"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Tu gagnes un·e suivant·e de niveau 2, une bête qui t’accompagne et suit tes instructions."
+      },
+      {
+        "id": "experienced-explorer",
+        "name": "Explorateur·rice expérimenté·e",
+        "tier": 2,
+        "prerequisites": ["exploration-survivor"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Tu résistes au poison, aux maladies, aux conditions sauvages et trouves de la nourriture et de l’eau dans la nature."
+      },
+      {
+        "id": "animal-senses-and-sensibilities",
+        "name": "Sens et instincts animaux",
+        "tier": 3,
+        "prerequisites": ["beast-companion"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Tu es averti·e de la plupart des embuscades et pièges proches de niveau 4 ou moins, sans accorder d’avantage de surprise aux assaillants."
+      },
+      {
+        "id": "wilderness-encouragement",
+        "name": "Encouragement sauvage",
+        "tier": 3,
+        "prerequisites": ["experienced-explorer"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "description": "Dans la nature, tu aides un·e allié·e à effectuer une récupération supplémentaire ou à retirer une blessure modérée."
+      },
+      {
+        "id": "wild-camouflage",
+        "name": "Camouflage sauvage",
+        "tier": 4,
+        "prerequisites": ["animal-senses-and-sensibilities"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "description": "Ta tenue, tes astuces de déguisement et ta connaissance du terrain te donnent deux atouts aux tâches de Célérité et de Discrétion dans la nature."
+      },
+      {
+        "id": "wilderness-awareness",
+        "name": "Conscience de la nature",
+        "tier": 4,
+        "prerequisites": ["wilderness-encouragement"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "description": "Tu étends tes sens dans la nature et poses au/à la MJ une question simple et générale sur la zone."
+      },
+      {
+        "id": "explorers-awareness",
+        "name": "Vigilance de l’explorateur·rice",
+        "tier": 5,
+        "prerequisites": ["wild-camouflage"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Tu gagnes deux niveaux d’Effort gratuits quand tu consacres de l’Effort à une tâche d’initiative ou de perception."
+      },
+      {
+        "id": "the-wild-is-on-your-side",
+        "name": "La nature est de ton côté",
+        "tier": 5,
+        "prerequisites": ["wilderness-awareness"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 5, "options": [] },
+        "description": "La nature entrave toutes les tâches des adversaires proches jusqu’à ta prochaine récupération de dix minutes."
+      },
+      {
+        "id": "one-with-the-wild",
+        "name": "Un·e avec la nature",
+        "tier": 6,
+        "prerequisites": ["explorers-awareness", "the-wild-is-on-your-side"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 6, "options": [] },
+        "description": "Tu partages avec tes allié·e·s un lien protecteur avec la nature: gain d’Avantage, récupérations doublées et protection contre les animaux et plantes naturels."
+      },
+      {
+        "id": "survivor",
+        "name": "Survivant·e",
+        "tier": 6,
+        "prerequisites": ["the-wild-is-on-your-side"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Tu peux te regrouper après une blessure mineure ou modérée sans dépenser de Puissance; l’aptitude se renouvelle après une récupération."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document; créé sous la Cypher Open License."
+    }
+  }
+}

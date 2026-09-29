@@ -24,50 +24,37 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Expert Interlocuter",
+        "name": "Interlocuteur expert",
+        "tier": 1,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Tu es **entraîné·e** dans la compétence de ton choix parmi **persuasion**, **tromperie** ou **intimidation**. Au rang 6, tu peux devenir expert·e dans cette même compétence si tu es déjà spécialisé·e, mais tu dois acquérir la compétence normalement."
+      },
+      {
+        "name": "Performance Inspirante",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2
+        },
+        "description": "Par un discours enflammé ou une musique inspirante, tu remontes le moral de **trois allié·es** qui peuvent te voir et t’entendre. Tant que tu continues à parler ou à jouer chaque round en tant qu’action, les allié·es affecté·es gagnent **un Atout** dans une tâche de ton choix (de combat ou non), liée à ta performance. Même après la fin de l’effet, les allié·es affecté·es restent si inspiré·es qu’ils ajoutent **+1 à leur prochaine récupération**. Au rang 3, ils ajoutent +2 à leur prochaine récupération. Effort : Affecte trois alliés supplémentaires. Action"
+      },
+      {
+        "name": "Un Sourire et un Mot",
         "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You are trained in your choice of charm, deception, or intimidation."
-      },
-      {
-        "name": "Inspiring Performance",
-        "tier": 6,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2
-        },
-        "description": "With a rousing speech or inspiring music, you lift the spirits of and inspire three allies who can hear and see you. While you continue to speak or perform each round as your action, affected allies gain an asset in a task you choose (combat or noncombat) related to your performance."
-      },
-      {
-        "name": "Effort",
-        "tier": 6,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0
-        },
-        "description": "Affect three additional allies."
-      },
-      {
-        "name": "A Smile and a Word",
-        "tier": 3,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0
-        },
-        "description": "When you successfully interact with a creature by succeeding on a charm, deception, or intimidation task—even those having to do with calming animals or communicating with someone or something whose language you do not speak—you also learn one small useful or at least interesting bit of information. For instance, if you convince the guard to let you pass, you might also learn that their supervisor is due back in ten minutes. Action."
+        "description": "Lorsque tu interagis avec succès avec une créature en réussissant une tâche de persuasion, de tromperie ou d’intimidation — y compris pour calmer des animaux ou communiquer avec quelqu’un (ou quelque chose) dont tu ne parles pas la langue — tu apprends également **une petite information utile ou au moins intéressante**. Par exemple, si tu convaincs un garde de te laisser passer, tu pourrais aussi apprendre que son supérieur revient dans dix minutes. Action"
       }
     ],
-    "statOptions": [
-      "speed",
-      "intellect"
-    ],
+    "statOptions": ["speed", "intellect"],
     "description": "<p>Un Type de Dungeon Fantasy centré sur l'archétype barde, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Dungeon Fantasy. Réserves principales : Célérité, Intellect.</em></p>"
   },
   "folder": "N6LoBZte2sRtJhu7",

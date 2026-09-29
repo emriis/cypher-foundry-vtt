@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "statAmount": 2,
-    "skillOptions": [
-      "Psychology",
-      "Recognizing Motive",
-      "",
-      ""
-    ],
+    "skillOptions": ["Psychology", "Recognizing Motive", "", ""],
     "description": "<p>You often sense what someone will do or say before they do it, as if a step ahead of the room.</p><p><em>You gain +2 to your Intellect Pool, and training in Psychology or Recognizing Motive.</em></p>"
   },
   "folder": null,

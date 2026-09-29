@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "speed"
-    ],
+    "statOptions": ["speed"],
     "statAmount": 2,
-    "skillOptions": [
-      "Perception",
-      "",
-      "",
-      ""
-    ],
+    "skillOptions": ["Perception", "", "", ""],
     "description": "<p>Tu ne te lances jamais tête baissée. Tu prends le temps de tout analyser avant d'agir.</p><p><em>Tu gagnes +2 à ta Réserve de Célérité, et un entrainement en Perception.</em></p>"
   },
   "folder": null,

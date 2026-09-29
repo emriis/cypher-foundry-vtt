@@ -30,7 +30,7 @@ test("Foundry manifest points to existing system entry points, locales, and pack
 
   const actorTypes = Object.keys(manifest.documentTypes.Actor);
   assert.deepEqual(actorTypes, ["pc", "npc", "community"]);
-  for (const type of ["skill", "ability", "cypher", "artifact", "oddity", "equipment", "attack", "armor", "shield", "descriptor", "type"]) {
+  for (const type of ["skill", "ability", "cypher", "artifact", "oddity", "equipment", "attack", "armor", "shield", "descriptor", "type", "focus"]) {
     assert.ok(manifest.documentTypes.Item[type], `Item type missing from manifest: ${type}`);
   }
 

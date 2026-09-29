@@ -24,30 +24,37 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Effort",
+        "name": "Détection des Pièges (2+ Célérité ou Intellect)",
         "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "Increase the minimum number rolled for this ability by 3."
+        "description": "Lorsque tu effectues un jet pour détecter un piège et que ton résultat est **inférieur à 9**, considère‑le comme étant **9**. (Cela signifie qu’un 1 **n’entraîne pas** d’intrusion du·de la MJ.) Tu conserves cette sensibilité accrue aux pièges jusqu’à une **récupération de dix minutes ou plus**. Au rang 3, le résultat minimum pour cette aptitude passe à 12. Effort : Augmente le résultat minimum obtenu de 3. Action"
       },
       {
-        "name": "Ferocious When Cornered",
-        "tier": 3,
-        "enabler": false,
+        "name": "Féroce quand acculé·e",
+        "tier": 1,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "While you have at least three minor wounds, at least two moderate wounds, or at least one major wound, you gain one free level of Effort you can apply to one of your attacks each round. Enabler."
+        "description": "Tant que tu as au moins **trois blessures mineures** ou au moins **deux blessures modérées** ou au moins **une blessure majeure**, tu gagnes **un niveau d’Effort gratuit** à appliquer à **une de tes attaques** chaque round. Au rang 3, ce bénéfice passe à deux niveaux d’Effort gratuits."
+      },
+      {
+        "name": "Attaque Sournoise (1 Célérité)",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 1
+        },
+        "description": "Si tu utilises une **arme légère** pour attaquer un ennemi dans l’une des situations suivantes, ton attaque inflige **+5 dégâts supplémentaires**. (Cette aptitude ne fonctionne **pas** avec des armes moyennes ou lourdes.) Tu attaques par surprise. Un·e allié·e utilise son action pour faciliter ton attaque. Les défenses de ton ennemi sont entravées par une distraction directe en cours. Ton ennemi est incapable d’agir à son prochain tour en raison d’une attaque ou d’un effet handicapant. Première action"
       }
     ],
-    "statOptions": [
-      "speed",
-      "intellect"
-    ],
+    "statOptions": ["speed", "intellect"],
     "description": "<p>Un Type de Épées & Sorcellerie centré sur l'archétype voleur·euse, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Épées & Sorcellerie. Réserves principales : Célérité, Intellect.</em></p>"
   },
   "folder": "Mqh1tXdDDqH3lySK",

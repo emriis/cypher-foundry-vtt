@@ -53,7 +53,8 @@
       "armor": {},
       "shield": {},
       "descriptor": {},
-      "type": {}
+      "type": {},
+      "focus": {}
     }
   },
   "packs": [
@@ -76,9 +77,27 @@
       "flags": {}
     },
     {
+      "name": "foci-fr",
+      "label": "Focus (FR)",
+      "path": "packs/foci-fr",
+      "type": "Item",
+      "system": "cypher",
+      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "flags": {}
+    },
+    {
       "name": "types-en",
       "label": "Types (EN)",
       "path": "packs/types-en",
+      "type": "Item",
+      "system": "cypher",
+      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "flags": {}
+    },
+    {
+      "name": "foci-en",
+      "label": "Foci (EN)",
+      "path": "packs/foci-en",
       "type": "Item",
       "system": "cypher",
       "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
@@ -98,12 +117,12 @@
     {
       "name": "Français",
       "sorting": "a",
-      "packs": ["descriptors-fr", "types-fr"]
+      "packs": ["descriptors-fr", "types-fr", "foci-fr"]
     },
     {
       "name": "English",
       "sorting": "a",
-      "packs": ["descriptors-en", "types-en"]
+      "packs": ["descriptors-en", "types-en", "foci-en"]
     }
   ],
   "primaryTokenAttribute": "stats.might.pool",

@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "speed"
-    ],
+    "statOptions": ["speed"],
     "statAmount": 2,
-    "skillOptions": [
-      "Pickpocketing",
-      "Stealth",
-      "",
-      ""
-    ],
+    "skillOptions": ["Pickpocketing", "Stealth", "", ""],
     "description": "<p>Quick and quiet, you know how to use shadows and distraction to move unseen and unheard.</p><p><em>You gain +2 to your Speed Pool, and training in Pickpocketing or Stealth.</em></p>"
   },
   "folder": null,
