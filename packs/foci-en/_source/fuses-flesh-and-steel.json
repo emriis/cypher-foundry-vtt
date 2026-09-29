@@ -1,0 +1,150 @@
+{
+  "_id": "FusesFlesh262XYZ",
+  "_key": "!items!FusesFlesh262XYZ",
+  "name": "Fuses Flesh and Steel",
+  "type": "focus",
+  "img": "icons/commodities/tech/circuit-board.webp",
+  "system": {
+    "description": "<p>A Focus for a character whose body is partly or fully machine.</p>",
+    "abilities": [
+      {
+        "id": "defensive-cybernetics",
+        "name": "Defensive Cybernetics",
+        "tier": 1,
+        "prerequisites": ["powered-cybernetics"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Durable mechanical parts let you rally to remove a minor or moderate wound without spending Might."
+      },
+      {
+        "id": "hidden-shield",
+        "name": "Hidden Shield",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "A concealed built-in shield works as a light melee weapon and can make a hindered extra attack."
+      },
+      {
+        "id": "powered-cybernetics",
+        "name": "Powered Cybernetics",
+        "tier": 1,
+        "prerequisites": ["hidden-shield"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "might", "amount": 2, "options": [] },
+        "description": "Physical tasks to carry, climb, jump, or smash count rolls below 9 as 9; Effort raises the minimum by 3 and it becomes 12 at tier 3."
+      },
+      {
+        "id": "high-speed-interface",
+        "name": "High-Speed Interface",
+        "tier": 2,
+        "prerequisites": ["powered-cybernetics"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Directly connect to a nearby machine to ease tasks to identify and operate it at machine speed."
+      },
+      {
+        "id": "hud",
+        "name": "HUD",
+        "tier": 2,
+        "prerequisites": ["hidden-shield"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "A heads-up display improves vision in darkness and obscuring conditions; Effort unlocks combat, magnifier, and scanner modes."
+      },
+      {
+        "id": "enhanced-self-repair",
+        "name": "Enhanced Self-Repair",
+        "tier": 3,
+        "prerequisites": ["defensive-cybernetics"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Reduce the Might cost of rallying to remove a wound by 2."
+      },
+      {
+        "id": "weaponization",
+        "name": "Weaponization",
+        "tier": 3,
+        "prerequisites": ["high-speed-interface"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Embed a light or medium one-handed weapon or a multitool; you are trained in the chosen equipment."
+      },
+      {
+        "id": "deep-reserves",
+        "name": "Deep Reserves",
+        "tier": 4,
+        "prerequisites": ["enhanced-self-repair"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Transfer up to 6 points among Pools at one point per round; renews after a ten-hour recovery."
+      },
+      {
+        "id": "fusion",
+        "name": "Fusion",
+        "tier": 4,
+        "prerequisites": ["weaponization"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Fuse manifest cyphers and artifacts with your body and use them as First actions."
+      },
+      {
+        "id": "bolts-of-power",
+        "name": "Bolts of Power",
+        "tier": 5,
+        "prerequisites": ["deep-reserves"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 5, "options": [] },
+        "description": "Release four lightning bolts against up to four targets in short range; missed targets still take 1 damage."
+      },
+      {
+        "id": "closed-loop-body",
+        "name": "Closed Loop Body",
+        "tier": 5,
+        "prerequisites": ["fusion"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "You do not need to eat or breathe and suffer no environmental effects from vacuum or extreme temperatures."
+      },
+      {
+        "id": "cybernetic-alacrity",
+        "name": "Cybernetic Alacrity",
+        "tier": 6,
+        "prerequisites": ["bolts-of-power"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Effort on a noncombat Speed task also grants a free Effort level or a minor effect."
+      },
+      {
+        "id": "embedded-drone",
+        "name": "Embedded Drone",
+        "tier": 6,
+        "prerequisites": ["closed-loop-body"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "description": "Launch and control a tiny built-in drone with manipulators and a firearm until a one-hour recovery."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

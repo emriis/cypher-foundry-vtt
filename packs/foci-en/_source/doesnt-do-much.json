@@ -1,0 +1,130 @@
+{
+  "_id": "D03sN0tMuch2026X",
+  "_key": "!items!D03sN0tMuch2026X",
+  "name": "Doesn't Do Much",
+  "type": "focus",
+  "img": "icons/skills/social/diplomacy-handshake.webp",
+  "system": {
+    "description": "<p>A Focus for a relaxed drifter who knows a little about a lot of things.</p>",
+    "abilities": [
+      {
+        "id": "joy-in-small-things",
+        "name": "Joy in Small Things",
+        "tier": 1,
+        "prerequisites": ["life-lessons"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Regain 4 Intellect points when you learn or figure out something important; later uses before a ten-hour recovery restore one fewer point each time."
+      },
+      {
+        "id": "life-lessons",
+        "name": "Life Lessons",
+        "tier": 1,
+        "prerequisites": ["joy-in-small-things"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Choose two noncombat skills; when you apply Effort to either, you gain one free level of Effort."
+      },
+      {
+        "id": "picking-up-the-slack",
+        "name": "Picking Up the Slack",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "description": "Fill in for a nearby skilled ally who cannot perform a specific task."
+      },
+      {
+        "id": "inspiring-ease",
+        "name": "Inspiring Ease",
+        "tier": 2,
+        "prerequisites": ["joy-in-small-things", "life-lessons"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "When you and allies share a ten-hour recovery, your stories, songs, or art grant each of you an additional recovery benefit."
+      },
+      {
+        "id": "totally-chill",
+        "name": "Totally Chill",
+        "tier": 2,
+        "prerequisites": ["life-lessons"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "A ten-minute recovery takes one action, and an hour-long recovery takes ten minutes."
+      },
+      {
+        "id": "extra-padding",
+        "name": "Extra Padding",
+        "tier": 3,
+        "prerequisites": ["picking-up-the-slack"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "might", "amount": 1, "options": [] },
+        "description": "Gain extra protection from physical threats and improve which wounds you can ignore with Effort."
+      },
+      {
+        "id": "improvise",
+        "name": "Improvise",
+        "tier": 3,
+        "prerequisites": ["life-lessons"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "description": "When untrained in a task, improvise a tool, insight, or lucky break to gain an asset."
+      },
+      {
+        "id": "agile-wit",
+        "name": "Agile Wit",
+        "tier": 4,
+        "prerequisites": ["improvise"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Spend Intellect points for Speed tasks, or Speed points for Intellect tasks, using the Edge of the Pool spent."
+      },
+      {
+        "id": "gather-your-strength",
+        "name": "Gather Your Strength",
+        "tier": 4,
+        "prerequisites": ["extra-padding"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Your attack deals 2 additional damage when made as a Last action."
+      },
+      {
+        "id": "attention-to-detail",
+        "name": "Attention to Detail",
+        "tier": 5,
+        "prerequisites": ["agile-wit", "gather-your-strength"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "A nonattack task gains an asset when attempted as a Last action."
+      },
+      {
+        "id": "drawing-on-life-experiences",
+        "name": "Drawing on Life's Experiences",
+        "tier": 6,
+        "prerequisites": ["attention-to-detail"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 6, "options": [] },
+        "description": "Ask the GM one question and receive a general answer whose detail depends on how obscure the knowledge is."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

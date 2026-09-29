@@ -14,6 +14,8 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 - Bilingual Focus compendiums, beginning with the complete `Abides in Stone` / `Se fond dans la
   pierre` CRD flowchart. Focus abilities retain their explicit prerequisite links, require two
   tier-1 choices when applied, and prompt for a valid linked ability after each tier advance.
+- Added the bilingual `Grows to Towering Heights` / `Deviens colossal` and `Howls at the Moon` /
+  `Hurle à la lune` Focus records, including their CRD flowchart prerequisites.
 
 ### Changed
 
