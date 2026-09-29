@@ -15,7 +15,8 @@
 - Keep player-facing strings localized in both `lang/en.json` and
   `lang/fr.json`; validate JSON and avoid duplicate keys.
 - Treat `packs/*/_source/` as editable sources and generated LevelDB packs as
-  build outputs. Use existing generators and documented packaging workflows.
+  build outputs. Edit paired English and French source records directly, then
+  use the documented validation and packaging workflows.
 - For behavior changes, use TDD and run focused tests followed by `npm test`.
   Report checks that were not run, including any required live-Foundry
   verification.

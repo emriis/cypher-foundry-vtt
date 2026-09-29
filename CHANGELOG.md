@@ -15,9 +15,14 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
   pierre` CRD flowchart. Focus abilities retain their explicit prerequisite links, require two
   tier-1 choices when applied, and prompt for a valid linked ability after each tier advance.
 
+### Changed
+
+- Type and Descriptor `_source` JSON files are now maintained directly as paired bilingual
+  records; the former content generators and `generate-types` npm command were removed.
+
 ### Fixed
 
-- Type compendium generation now keeps ability blocks bounded to their authoritative CRD Type
+- Type compendium sources keep ability blocks bounded to their authoritative CRD Type
   section, including Effort and Enabler text, while retaining canonical CRD copies for Type
   variants and Character Book French ability localization.
 

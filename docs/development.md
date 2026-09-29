@@ -44,29 +44,21 @@ Use this flow when adding or revising game content rather than system behavior.
 
 | Content form | Location | Ownership |
 | --- | --- | --- |
-| Editable descriptor sources | `packs/descriptors-{en,fr}/_source/` | Content author |
+| Editable Descriptor sources | `packs/descriptors-{en,fr}/_source/` | Source of truth |
 | Foundry-readable LevelDB packs | `packs/descriptors-{en,fr}/` | Generated package input |
-| Source generator | `scripts/generate-descriptors.py` | Content tooling |
-| Editable Type sources | `packs/types-{en,fr}/_source/` | Content author |
-| Type source generator | `scripts/generate-types.py` | Content tooling |
+| Editable Type sources | `packs/types-{en,fr}/_source/` | Source of truth |
+| Editable Focus sources | `packs/foci-{en,fr}/_source/` | Source of truth |
 
-Regenerate descriptor JSON after changing the generator:
-
-```powershell
-python scripts/generate-descriptors.py
-```
-
-For Types, regenerate both language sources with:
+Edit matching English and French JSON records directly. Preserve paired
+filenames, valid 16-character Foundry IDs and `_key` values, mechanical data,
+and the structure required by the relevant Item DataModel. Consult the current
+CRD for mechanics and the French Character Book for localization; if a required
+local reference is unavailable, stop rather than reconstructing content from
+memory.
 
 ```powershell
-npm run generate-types
+node --test tests/compendium-sources.test.mjs
 ```
-
-The Type generator reads `docs/local/Cypher-Reference-Document-2026-07-29.docx`. If that
-local-only directory is not available in the current worktree, set
-`CYPHER_REFERENCE_DOCUMENT` to the DOCX path before running the generator. It stops with an
-error if the reference is unavailable rather than generating Types without their extracted
-mechanics.
 
 Then rebuild each affected LevelDB pack with the Foundry CLI. The `_source/`
 JSON is the reviewable source of truth; the adjacent LevelDB files are what
@@ -99,8 +91,8 @@ ignored as generated or transient files.
 The release workflow follows the Foundry history-friendly release model:
 
 1. Update `system.json` `version` and its versioned `download` URL together. The download URL
-	must use the matching `v<version>` release tag, for example
-	`/releases/download/v0.1.3/system.zip` for version `0.1.3`.
+   must use the matching `v<version>` release tag, for example
+   `/releases/download/v0.1.3/system.zip` for version `0.1.3`.
 2. Run `npm test` and `npm run package` locally.
 3. Inspect `dist/system.json` and `dist/system.zip`.
 4. Commit the manifest and implementation/content changes.
