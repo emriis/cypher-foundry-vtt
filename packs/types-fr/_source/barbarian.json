@@ -24,50 +24,37 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Frenzy",
+        "name": "Frénésie",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "intellect",
           "amount": 1
         },
-        "description": "While in combat, you can enter a state of frenzy. While in this state, you can’t use Intellect points, but you add +1 to your Might Edge and your Speed Edge. This effect lasts as long as you wish, but it ends if no combat is taking place within range of your senses."
+        "description": "En combat, tu peux entrer dans un état de frénésie. Tant que tu es dans cet état, tu **ne peux pas utiliser de points d’Intellect**, mais tu ajoutes **+1 à ton Atout de Puissance et à ton Atout de Célérité**. Cet effet dure aussi longtemps que tu le souhaites, mais il prend fin dès qu’aucun combat n’a lieu à portée de tes sens. Effort :  Tu facilites les attaques de tes allié·es contre un adversaire de ton choix pour le reste du combat."
       },
       {
-        "name": "Effort",
+        "name": "Instinct de survie",
         "tier": 1,
         "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "Ease your allies’ attacks against one foe of your choice for the rest of the combat."
+        "description": "Tu sais survivre dans les terres inhabitées. Après avoir passé au moins dix minutes en pleine nature et réussi une tâche de *survie en plein air* de difficulté 2 (ou d’une difficulté que le MJ juge appropriée à la région), tu trouves quelque chose d’utile que tu recherchais. Cela peut être un abri sous la forme d’une grotte ou d’un creux d’arbre, de quoi allumer un feu, du gibier que tu abats sans difficulté, ou encore des baies, champignons, racines ou autres aliments. Tu sais également comment préparer au mieux tout gibier ou végétation récupéré et **tu peux nourrir jusqu’à cinq allié·es en plus de toi‑même**."
       },
       {
-        "name": "Wilderness Survival",
+        "name": "Fureur du blessé",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You know how to survive in unpeopled lands. After spending at least ten minutes in the wilderness and succeeding on a difficulty 2 outdoor survival task (or a difficulty your GM determines is appropriate to the area), you find something useful you were seeking. The useful thing might be shelter in the form of a cave or tree hollow, all the makings necessary to start a fire, a game animal you bring down with ease, or berries, mushrooms, root vegetables, or other food. You know how to best prepare any game or vegetation you find and are able to feed yourself and up to five allies."
-      },
-      {
-        "name": "Wounded Fury",
-        "tier": 1,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0
-        },
-        "description": "While you have at least three moderate wounds or at least one major wound, you gain one free level of Effort you can apply to one of your attacks each round. Enabler."
+        "description": "Tant que tu as **au moins trois blessures modérées ou au moins une blessure majeure**, tu bénéficies d’un **niveau gratuit d’Effort** que tu peux appliquer **à l’une de tes attaques** à chaque round. Au rang 3, ce bénéfice passe à deux niveaux gratuits d’Effort."
       }
     ],
-    "statOptions": [
-      "might",
-      "speed"
-    ],
+    "statOptions": ["might", "speed"],
     "description": "<p>Un Type de Dungeon Fantasy centré sur l'archétype barbare, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Dungeon Fantasy. Réserves principales : Puissance, Célérité.</em></p>"
   },
   "folder": "N6LoBZte2sRtJhu7",

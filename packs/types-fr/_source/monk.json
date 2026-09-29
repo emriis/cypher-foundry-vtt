@@ -24,20 +24,37 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "No Need for Weapons",
-        "tier": 3,
+        "name": "Déluge (2 Célérité)",
+        "tier": 1,
         "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 2
+        },
+        "description": "Après avoir effectué une attaque légère à mains nues, tu effectues, en tant qu’**action supplémentaire pendant ton tour**, une autre attaque légère à mains nues contre la même cible ou une autre. Au rang 3, tu peux effectuer une troisième attaque légère à mains nues en tant que troisième action pendant ton tour. Action"
+      },
+      {
+        "name": "Leste (2 Célérité)",
+        "tier": 1,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 2
+        },
+        "description": "En tant que **Première action**, tu te déplaces jusqu’à une courte distance, puis tu peux effectuer une autre Première action, comme attaquer avec une arme légère ou ouvrir une porte. Le déplacement se fait avant la Première action."
+      },
+      {
+        "name": "Pas besoin d’armes",
+        "tier": 1,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "Your unarmed attacks (such as punches, kicks, elbows, or knees) inflict an additional 2 damage."
+        "description": "Tes attaques à mains nues (coups de poing, de pied, de coude ou de genou) infligent **+2 dégâts supplémentaires**."
       }
     ],
-    "statOptions": [
-      "might",
-      "speed"
-    ],
+    "statOptions": ["might", "speed"],
     "description": "<p>Un Type de Dungeon Fantasy centré sur l'archétype moine, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Dungeon Fantasy. Réserves principales : Puissance, Célérité.</em></p>"
   },
   "folder": "N6LoBZte2sRtJhu7",

@@ -24,30 +24,37 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Effort",
+        "name": "Détection des Pièges (2+ Célérité ou Intellect)",
         "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "Increase the minimum number rolled for this ability by 3."
+        "description": "Lorsque tu effectues un jet pour détecter un piège et que ton résultat est **inférieur à 9**, considère‑le comme un **9**. (Cela signifie qu’un 1 n’entraîne **pas** d’intrusion du·de la MJ.) Chaque niveau d’Effort appliqué augmente ta sensibilité aux pièges jusqu’à ta prochaine récupération de dix minutes ou plus. Effort : Augmente le nombre minimum obtenu pour cette aptitude de 3. Au rang 3, le nombre minimum obtenu pour cette aptitude passe à 12. Action"
       },
       {
-        "name": "Expert Sneak",
-        "tier": 3,
-        "enabler": false,
+        "name": "Expert en Furtivité",
+        "tier": 1,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You are trained in stealth."
+        "description": "Tu es **entraîné·e** à la furtivité. Au rang 6, si tu es déjà spécialisé·e, tu peux devenir expert·e en furtivité, mais tu dois acquérir la compétence normalement."
+      },
+      {
+        "name": "Attaque Sournoise (1 Célérité)",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 1
+        },
+        "description": "Si tu utilises une **arme légère** pour attaquer un ennemi dans **l’une** des situations suivantes, ton attaque inflige **+5 dégâts**. (Cette aptitude ne fonctionne pas avec des armes moyennes ou lourdes.) Tu attaques par surprise. Un·e allié·e utilise son action pour faciliter ton attaque. Les défenses de ton ennemi sont entravées par une distraction directe en cours. Ton ennemi est incapable d’agir à son prochain tour en raison d’une attaque ou d’une situation handicapante. Première action"
       }
     ],
-    "statOptions": [
-      "speed",
-      "intellect"
-    ],
+    "statOptions": ["speed", "intellect"],
     "description": "<p>Un Type de Dungeon Fantasy centré sur l'archétype roublard, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Dungeon Fantasy. Réserves principales : Célérité, Intellect.</em></p>"
   },
   "folder": "N6LoBZte2sRtJhu7",

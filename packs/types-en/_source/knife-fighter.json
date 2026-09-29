@@ -31,11 +31,21 @@
           "stat": "none",
           "amount": 0
         },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on."
+        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you’re already specialized in), but you must gain the skill normally."
+      },
+      {
+        "name": "Gut Ripper",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 1
+        },
+        "description": "You attack with a knife in a way that has a greater risk of making an error but gains an additional benefit. Your GM intrusion range for this attack increases by 2 (from 1 on a d20 to 1–3 on a d20), but if you hit you can choose one of the following additional effects:"
       },
       {
         "name": "Deep Slice",
-        "tier": 6,
+        "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
@@ -45,28 +55,36 @@
       },
       {
         "name": "Let Them Bleed",
-        "tier": 6,
+        "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "The wound bleeds; on your next turn, the foe takes 2 damage that ignores armor."
+        "description": "The wound bleeds; on your next turn, the foe takes 2 damage that ignores armor. Action."
       },
       {
         "name": "Gut Ripper GM intrusions",
-        "tier": 6,
+        "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
           "amount": 0
         },
         "description": "Your knife gets stuck in your foe and slips from your grasp. Instead of hurting your foe, you accidentally inflict a minor wound on yourself. Your knife sheath is empty and you can’t complete the attack."
+      },
+      {
+        "name": "Hindering Throw",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 3
+        },
+        "description": "Your successful ranged knife attack sticks in the target, catching in their clothing, their flesh, the floor, or another adjacent surface in a way that deals normal damage and hinders their tasks on their next turn. Action."
       }
     ],
-    "statOptions": [
-      "speed"
-    ],
+    "statOptions": ["speed"],
     "description": "<p>A Swords & Sorcery Type focused on knife fighter archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Swords & Sorcery. Primary Pools: speed.</em></p>"
   },
   "folder": "zBqRagUFEUelogPi",

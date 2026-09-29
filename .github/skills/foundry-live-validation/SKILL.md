@@ -114,19 +114,12 @@ Select only the cases affected by the change:
 - **Migrations:** run only against a disposable world copy with representative
   old data; verify migrated values and unrelated data before and after reload.
 - **Compendiums:** rebuild affected packs first, then confirm they load in the
-  disposable world, inspect representative records, and test drag/drop when
-  relevant. For current Type packs, verify both language trees:
-  - FR: `Fantasy` > `Fantasy de donjon`, `Épées & Sorcellerie`, `Fantasy épique`;
-    `Science-fiction` > `Science-fiction dure`, `Space Opera`, `Postapocalyptique`;
-    `Super-héros` contains its Types directly.
-  - EN: `Fantasy` > `Dungeon Fantasy`, `Swords & Sorcery`, `Epic Fantasy`;
-    `Science Fiction` > `Hard Science Fiction`, `Space Opera`, `Postapocalypse`;
-    `Superheroes` contains its Types directly.
-  The current 56 records are 27 Fantasy, 22 Science Fiction, and 7 Superheroes;
-  the Real World chapter defines no separate Type family, so do not create an
-  empty Real World folder.
-  For Descriptor changes, drag `Attrayant·e` or `Appealing` onto a disposable PC
-  and verify the dialog and resulting +2 Intellect/Persuasion grant.
+  disposable world, inspect representative changed records in both affected
+  languages, verify the source-defined folder hierarchy, and test drag/drop
+  when relevant. For Focus changes, exercise initial ability selection and one
+  affected prerequisite path. For Descriptor or Type changes, verify the
+  source-defined choices and resulting grants rather than relying on a fixed
+  record count or named example.
 - **Localization:** repeat the affected interaction in French and English when
   player-facing text or formatting changed.
 

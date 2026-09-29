@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "statAmount": 2,
-    "skillOptions": [
-      "Persuasion",
-      "",
-      "",
-      ""
-    ],
+    "skillOptions": ["Persuasion", "", "", ""],
     "description": "<p>Tu as un don pour la parole et un charme irrésistible. Tu sais convaincre les autres de faire ce que tu veux.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Persuasion.</em></p>"
   },
   "folder": null,

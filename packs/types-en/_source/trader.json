@@ -24,6 +24,16 @@
     "skillOptions": [],
     "abilities": [
       {
+        "name": "Fast Talk",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1
+        },
+        "description": "When speaking with an intelligent creature who can understand you and isn’t hostile, you convince them to take one reasonable action in the next round. A reasonable action must be agreed upon by your GM; it should not put the creature or its allies in obvious danger or be wildly out of character. Action."
+      },
+      {
         "name": "A Smile and a Word",
         "tier": 1,
         "enabler": false,
@@ -36,27 +46,15 @@
       {
         "name": "Smooth Operator",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "intellect",
           "amount": 2
         },
-        "description": "You purchase an expensive item for the cost of a moderately priced item. You can only use this ability in a location where services and items are routinely bought and sold."
-      },
-      {
-        "name": "Effort",
-        "tier": 1,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0
-        },
-        "description": "Purchase a very expensive item for the cost of an expensive item (this requires two levels of Effort). Purchase an exorbitant item for the cost of a very expensive item (this requires four levels of Effort)."
+        "description": "You purchase an expensive item for the cost of a moderately priced item. You can only use this ability in a location where services and items are routinely bought and sold. Effort: Purchase a very expensive item for the cost of an expensive item (this requires two levels of Effort). Purchase an exorbitant item for the cost of a very expensive item (this requires four levels of Effort). This ability renews when you access a new market or when at least a month has elapsed at the same market where you last used this ability. At tier 3: You can use this ability twice before it must be renewed by going somewhere else or letting enough time pass."
       }
     ],
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "description": "<p>A Space Opera Type focused on trader archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Science Fiction. Subgenre: Space Opera. Primary Pools: intellect.</em></p>"
   },
   "folder": "AxljvbOd6vL9wkut",

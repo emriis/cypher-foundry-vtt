@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "might"
-    ],
+    "statOptions": ["might"],
     "statAmount": 2,
-    "skillOptions": [
-      "Soins aux animaux",
-      "Survie en plein air",
-      "",
-      ""
-    ],
+    "skillOptions": ["Soins aux animaux", "Survie en plein air", "", ""],
     "description": "<p>Tu es un·e amoureux·se de la nature, habitué·e à vivre dehors et à affronter les éléments.</p><p><em>Tu gagnes +2 à ta Réserve de Puissance, et un entrainement en Soins aux animaux ou Survie en plein air.</em></p>"
   },
   "folder": null,

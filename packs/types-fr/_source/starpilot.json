@@ -24,24 +24,34 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Disarming Shot",
+        "name": "Tir Audacieux (1 Célérité)",
         "tier": 1,
         "enabler": false,
         "cost": {
-          "stat": "none",
-          "amount": 0
+          "stat": "speed",
+          "amount": 1
         },
-        "description": "The attack inflicts 1 less damage, but your foe drops something they are holding in one hand (such as a weapon or shield). To retrieve the object, the foe must use an action."
+        "description": "Tu attaques avec un blaster (ou une autre arme à distance adaptée au genre) d’une manière plus risquée, mais offrant un bonus appréciable. La **plage d’intrusion du·de la MJ** pour cette attaque augmente de **2** (de 1 → 1‑3), mais si tu touches, choisis l’un des effets suivants : Tir Désarmant : L’attaque inflige 1 dégât de moins, mais la cible laisse tomber ce qu’elle tenait dans une main. Pour récupérer l’objet, elle doit utiliser une action. Précision Perforante : La cible subit +2 dégâts. Action"
       },
       {
-        "name": "Piercing Accuracy",
+        "name": "Utilisation Accrue de Cyphers",
+        "tier": 1,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Tu peux porter **un cypher supplémentaire**."
+      },
+      {
+        "name": "Manœuvre en Zone Rouge (1 Célérité ou Intellect)",
         "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "The foe takes +2 damage."
+        "description": "Tu tentes une manœuvre dangereuse en pilotant le vaisseau stellaire, ce qui augmente la **plage d’intrusion** du·de la MJ de **2** pour cette tâche. Si tu réussis une tâche de difficulté **2** (ou plus, selon ton·ta MJ), tu peux accomplir une action normalement imprudente : Tirer avec les armes **tout en plongeant le vaisseau dans une spirale accélérée**, Effleurer la **couronne d’une étoile** pour semer des poursuivants, Passer en **FTL plus vite que la normale**, Initier un saut FTL trop proche d’une source gravitationnelle, Parcourir une distance **bien plus grande** que ce que ton moteur FTL peut normalement supporter. Action"
       },
       {
         "name": "Audacious Blast GM intrusions",
@@ -61,7 +71,7 @@
           "stat": "none",
           "amount": 0
         },
-        "description": "You can bear one additional cypher at a time."
+        "description": "You can bear one additional cypher at a time. Redline Maneuver (1 Speed or Intellect): You attempt a risky maneuver piloting the starcraft, increasing the GM intrusion range by 2 on your task, and “redlining” the craft beyond its regular operating envelope. If you succeed on a difficulty 2 (or potentially higher, depending on your GM’s assessment of the situation) task, you can accomplish something normally ill-advised when flying a starcraft. For instance, you could fire its weapons as you put the entire ship into an accelerating spiral, possibly directly into the swarm of fighters as opposed to fleeing, hoping to shatter their coordination and maybe cause a couple of crashes in the process. You could try to graze a star’s corona (or even chromosphere) to lose pursuing ships. You could jump the starcraft to FTL more quickly than is usually possible, or closer to a gravitational source than is normally thinkable. Or you could move much farther or faster through FTL than normally works out well for the craft. Action."
       },
       {
         "name": "Redline Maneuver GM intrusions",
@@ -74,10 +84,7 @@
         "description": "The FTL engines fail. The ship takes significant damage. Someone’s console within the ship explodes, inflicting a moderate wound."
       }
     ],
-    "statOptions": [
-      "speed",
-      "intellect"
-    ],
+    "statOptions": ["speed", "intellect"],
     "description": "<p>Un Type de Space Opera centré sur l'archétype pilote spatial, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Science-fiction. Sous-genre : Space Opera. Réserves principales : Célérité, Intellect.</em></p>"
   },
   "folder": "DNZXZoUQ1z24nS44",

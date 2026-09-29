@@ -20,6 +20,41 @@ export default class CypherActor extends Actor {
     return total;
   }
 
+  /**
+   * Determines whether one Focus ability can be selected at the character's current tier.
+   * A non-tier-1 node requires at least one selected predecessor from its flowchart links.
+   *
+   * @param {object} focus Focus graph data.
+   * @param {string[]} selectedAbilityIds Previously selected Focus ability ids.
+   * @param {string} abilityId Focus ability id to evaluate.
+   * @param {number} tier Character tier.
+   * @returns {boolean} Whether the Focus ability can be selected.
+   */
+  static isFocusAbilityEligible(focus, selectedAbilityIds, abilityId, tier) {
+    const ability = focus?.abilities?.find(candidate => candidate.id === abilityId);
+    if (!ability || ability.tier > tier) return false;
+
+    const selected = new Set(selectedAbilityIds ?? []);
+    if (!ability.repeatable && selected.has(ability.id)) return false;
+    if (ability.tier === 1) return true;
+
+    return (ability.prerequisites ?? []).some(prerequisiteId => selected.has(prerequisiteId));
+  }
+
+  /**
+   * Lists Focus abilities currently selectable according to their flowchart links.
+   *
+   * @param {object} focus Focus graph data.
+   * @param {string[]} selectedAbilityIds Previously selected Focus ability ids.
+   * @param {number} tier Character tier.
+   * @returns {object[]} Eligible Focus abilities.
+   */
+  static getEligibleFocusAbilities(focus, selectedAbilityIds, tier) {
+    return (focus?.abilities ?? []).filter(ability =>
+      CypherActor.isFocusAbilityEligible(focus, selectedAbilityIds, ability.id, tier)
+    );
+  }
+
   /* -------------------------------------------- */
   /*  Stat resolution                                */
   /* -------------------------------------------- */
@@ -483,7 +518,13 @@ export default class CypherActor extends Actor {
       { type: "", otherType: "", bought: false },
       { type: "", otherType: "", bought: false }
     ];
-    await this.update({ "system.tier": newTier, "system.advancementSlots": freshSlots });
+    const updates = { "system.tier": newTier, "system.advancementSlots": freshSlots };
+    const focus = this.getFlag("cypher", "appliedFocusGraph");
+    const selectedFocusAbilities = this.getFlag("cypher", "focusAbilityIds") ?? [];
+    if (CypherActor.getEligibleFocusAbilities(focus, selectedFocusAbilities, newTier).length) {
+      updates["flags.cypher.focusAbilityPendingTier"] = newTier;
+    }
+    await this.update(updates);
 
     let note = game.i18n.format("CYPHER.Advancement.NewTierFocus", { tier: newTier });
     if (newTier === 3 || newTier === 6 || (newTier > 6 && (newTier - 6) % 3 === 0)) {
@@ -847,6 +888,82 @@ export default class CypherActor extends Actor {
       content: `<div class="cypher-roll-card"><h3>${game.i18n.format("CYPHER.Type.Applied", { name: typeItem.name })}</h3><p>${skillNote}</p></div>`
     });
     return true;
+  }
+
+  /* -------------------------------------------- */
+  /*  Focuses                                      */
+  /* -------------------------------------------- */
+
+  /**
+   * Applies a Focus and its two required tier-1 abilities to a PC.
+   *
+   * @param {Item} focusItem Focus compendium item.
+   * @param {string[]} abilityIds Two initial tier-1 Focus ability ids.
+   * @returns {Promise<boolean>} Whether the Focus was applied.
+   */
+  async applyFocus(focusItem, abilityIds) {
+    if (this.type !== "pc" || focusItem?.type !== "focus") return false;
+    if (this.getFlag("cypher", "appliedFocusId")) return false;
+
+    const selected = [...new Set(abilityIds ?? [])];
+    if (selected.length !== 2 || !selected.every(id => CypherActor.isFocusAbilityEligible(focusItem.system, [], id, 1))) {
+      return false;
+    }
+
+    await this.update({
+      "system.focus": focusItem.name,
+      "flags.cypher.appliedFocusId": focusItem.id ?? focusItem._id,
+      "flags.cypher.appliedFocusGraph": focusItem.system,
+      "flags.cypher.focusAbilityIds": selected
+    });
+    await this.createEmbeddedDocuments("Item", selected.map(abilityId =>
+      CypherActor._focusAbilityItemData(focusItem, focusItem.system.abilities.find(ability => ability.id === abilityId))
+    ));
+    return true;
+  }
+
+  /**
+   * Selects one additional Focus ability after a character reaches a new tier.
+   *
+   * @param {string} abilityId Focus ability id to select.
+   * @returns {Promise<boolean>} Whether the ability was selected.
+   */
+  async selectFocusAbility(abilityId) {
+    if (this.type !== "pc") return false;
+    const focus = this.getFlag("cypher", "appliedFocusGraph");
+    const selected = this.getFlag("cypher", "focusAbilityIds") ?? [];
+    if (!CypherActor.isFocusAbilityEligible(focus, selected, abilityId, this.system.tier)) return false;
+
+    const ability = focus.abilities.find(candidate => candidate.id === abilityId);
+    await this.update({
+      "flags.cypher.focusAbilityIds": [...selected, abilityId],
+      "flags.cypher.focusAbilityPendingTier": null
+    });
+    await this.createEmbeddedDocuments("Item", [CypherActor._focusAbilityItemData({ name: this.system.focus }, ability)]);
+    return true;
+  }
+
+  /**
+   * Creates the embedded Item data for one selected Focus ability.
+   *
+   * @param {Item|object} focus Focus item or focus-like source.
+   * @param {object} ability Focus ability graph node.
+   * @returns {object} Embedded ability item data.
+   */
+  static _focusAbilityItemData(focus, ability) {
+    return {
+      name: ability.name,
+      type: "ability",
+      system: {
+        source: focus.name,
+        focusAbilityId: ability.id,
+        tier: ability.tier,
+        enabler: ability.enabler,
+        cost: ability.cost,
+        action: "none",
+        description: ability.description
+      }
+    };
   }
 
   /* -------------------------------------------- */

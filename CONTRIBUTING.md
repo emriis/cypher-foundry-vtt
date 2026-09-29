@@ -94,9 +94,9 @@ Notes:
   `packs/<pack-name>/`, which is what `system.json` points to directly.
 - Every source file needs a `_key` field formatted as `!items!<_id>` (or `!actors!<_id>`, etc.)
   — the CLI silently skips files missing it.
-- When a generator script exists for a pack (e.g. `scripts/generate-descriptors.py` for
-  Descriptors), regenerate sources through the script rather than hand-editing the JSON, so the
-  script remains the single source of truth.
+- The `_source` JSON files are the authoring source of truth. Edit the matching English and
+  French records together, preserve their mechanical alignment, and run
+  `node --test tests/compendium-sources.test.mjs` before rebuilding the packs.
 
 ## Commit messages
 

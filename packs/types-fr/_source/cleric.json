@@ -24,44 +24,34 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Combat Prowess",
+        "name": "Prouesse Martiale",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You add +1 damage to one type of weapon attack of your choice: melee weapon attacks or ranged weapon attacks."
+        "description": "Tu ajoutes **+1 dégât** à un type d’attaque d’arme de ton choix : **attaque de mêlée** ou **attaque à distance**."
       },
       {
-        "name": "Divine Radiance",
+        "name": "Rayonnement Divin",
         "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "intellect",
           "amount": 1
         },
-        "description": "You channel divine influence to gain one of the following effects."
+        "description": "Tu canalises ton pouvoir sacré pour produire l’un des effets suivants : Bénédiction :  Une cible située à courte portée reçoit une bienveillance divine. À n’importe quel moment avant sa prochaine récupération de dix minutes ou plus, elle gagne un Atout sur une action de son choix. Effort : Affecte deux cibles supplémentaires. Action. Repousser les morts‑vivants :  Jusqu’à cinq morts‑vivants de niveau 2 ou moins à courte portée sont frappés par ta lumière sacrée (tu effectues un jet d’attaque d’Intellect pour chacun). Les cibles touchées sont forcées de battre en retraite et doivent consacrer leur prochain tour à fuir. Au rang 3, tu peux choisir de les rendre incapables d’agir pendant un tour plutôt que de les faire fuir. Effort : Affecte deux cibles supplémentaires. Augmente le niveau maximal des morts‑vivants affectés de 1. Action."
       },
       {
-        "name": "Blessing",
+        "name": "Main Guérisseuse",
         "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "A target within short range is charged with benevolent divine grace. At any point before they’ve taken their next ten-minute or longer recovery, they gain an asset to one action."
-      },
-      {
-        "name": "Effort",
-        "tier": 1,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0
-        },
-        "description": "Affect two additional targets."
+        "description": "Par un simple toucher, tu réduis la gravité d’une blessure : une blessure mineure est entièrement guérie, une blessure modérée devient mineure, une blessure majeure devient modérée. Chaque utilisation augmente le coût en Intellect de 1. Le coût revient à 1 après une récupération. Dernière action"
       },
       {
         "name": "Turn Undead",
@@ -71,33 +61,20 @@
           "stat": "none",
           "amount": 0
         },
-        "description": "Up to five undead creatures of level 2 or less within short range are blasted by divine radiance (make separate Intellect attack rolls against each target). Affected targets are repulsed and must spend their next turn fleeing your presence."
-      },
-      {
-        "name": "Effort",
-        "tier": 1,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0
-        },
-        "description": "Affect two additional targets. Increase the maximum level of undead you can affect by 1."
+        "description": "Up to five undead creatures of level 2 or less within short range are blasted by divine radiance (make separate Intellect attack rolls against each target). Affected targets are repulsed and must spend their next turn fleeing your presence. Depending on the game, your GM may decide Turn Undead works on demons or creatures of similar ilk instead of (or in addition to) undead. Effort: Affect two additional targets. Increase the maximum level of undead you can affect by 1. Action. At tier 3: Instead of causing affected targets to flee, you can make them unable to take actions for one turn. When an ability or effect lets you attack multiple creatures on your turn, each attack after the first one is an extra action on your turn. An attack made as an extra action on your turn counts as a separate action for the purposes of modifying the task with Effort."
       },
       {
         "name": "Healing Hand",
-        "tier": 3,
+        "tier": 1,
         "enabler": false,
         "cost": {
           "stat": "intellect",
           "amount": 1
         },
-        "description": "With a touch, you reduce one wound’s severity. A healed minor wound is gone completely, one moderate wound becomes a minor wound, or one major wound becomes a moderate wound. (If the character is at their limit of lower-severity wounds, you can’t use this ability to reduce the severity of their wounds.)"
+        "description": "With a touch, you reduce one wound’s severity. A healed minor wound is gone completely, one moderate wound becomes a minor wound, or one major wound becomes a moderate wound. (If the character is at their limit of lower-severity wounds, you can’t use this ability to reduce the severity of their wounds.) Each time you use Healing Hand, the Intellect cost increases by 1. The cost returns to 1 after you take a recovery. Last action. An NPC recipient of Healing Hand regains 5 health."
       }
     ],
-    "statOptions": [
-      "might",
-      "intellect"
-    ],
+    "statOptions": ["might", "intellect"],
     "description": "<p>Un Type de Dungeon Fantasy centré sur l'archétype clerc, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Dungeon Fantasy. Réserves principales : Puissance, Intellect.</em></p>"
   },
   "folder": "N6LoBZte2sRtJhu7",

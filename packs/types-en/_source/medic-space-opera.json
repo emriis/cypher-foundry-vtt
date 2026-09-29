@@ -31,7 +31,7 @@
           "stat": "none",
           "amount": 0
         },
-        "description": "Instead make the creature unconscious until you use a recovery (requires two levels of Effort)."
+        "description": "Instead make the creature unconscious until you use a recovery (requires two levels of Effort). Action to prepare medicine; action to attack. Bad Medicine doesn’t allow you to exceed your normal Effort limit."
       },
       {
         "name": "Expert Doctor",
@@ -41,22 +41,20 @@
           "stat": "none",
           "amount": 0
         },
-        "description": "You are trained in healing."
+        "description": "You are trained in healing. At tier 6: You can become an expert in healing if you are already specialized, but you must gain the skill normally (such as from a character advancement)."
       },
       {
         "name": "Prepared Medic",
-        "tier": 6,
-        "enabler": false,
+        "tier": 1,
+        "enabler": true,
         "cost": {
           "stat": "intellect",
           "amount": 2
         },
-        "description": "With access to a medical field kit (or similar equipment), you can use treatment in half the normal amount of time or treat twice as many wounds for one character in the normal time. Enabler."
+        "description": "With access to a medical field kit (or similar equipment), you can use treatment in half the normal amount of time or treat twice as many wounds for one character in the normal time."
       }
     ],
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "description": "<p>A Space Opera Type focused on medic archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Science Fiction. Subgenre: Space Opera. Primary Pools: intellect.</em></p>"
   },
   "folder": "AxljvbOd6vL9wkut",

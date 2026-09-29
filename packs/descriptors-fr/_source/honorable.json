@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "might"
-    ],
+    "statOptions": ["might"],
     "statAmount": 2,
-    "skillOptions": [
-      "Persuasion",
-      "",
-      "",
-      ""
-    ],
+    "skillOptions": ["Persuasion", "", "", ""],
     "description": "<p>Tu es digne de confiance, juste et franc·he. Tu t'efforces d'agir avec droiture et de traiter les autres correctement.</p><p><em>Tu gagnes +2 à ta Réserve de Puissance, et un entrainement en Persuasion.</em></p>"
   },
   "folder": null,

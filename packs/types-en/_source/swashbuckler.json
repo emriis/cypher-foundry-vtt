@@ -26,12 +26,22 @@
       {
         "name": "Attack Flourish",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "When you attack, you add stylish moves, entertaining quips, or a certain something that entertains or impresses others. One creature you choose within short range who can see you gains an asset to their next task if taken within a round or two. Enabler."
+        "description": "When you attack, you add stylish moves, entertaining quips, or a certain something that entertains or impresses others. One creature you choose within short range who can see you gains an asset to their next task if taken within a round or two."
+      },
+      {
+        "name": "Flamboyant Swordplay",
+        "tier": 1,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 1
+        },
+        "description": "You attack in a way that has a greater risk of making an error but gains an additional benefit. Your GM intrusion range for this attack increases by 2 (from 1 on a d20 to 1–3 on a d20), but if you hit you can choose one of the following additional effects:"
       },
       {
         "name": "Daring Lunge",
@@ -51,7 +61,7 @@
           "stat": "none",
           "amount": 0
         },
-        "description": "The attack inflicts 1 less damage, but your foe drops something they are holding in one hand (such as a weapon or shield). To retrieve the dropped item, the foe must use an action."
+        "description": "The attack inflicts 1 less damage, but your foe drops something they are holding in one hand (such as a weapon or shield). To retrieve the dropped item, the foe must use an action. Action."
       },
       {
         "name": "Flamboyant Swordplay GM intrusions",
@@ -61,7 +71,7 @@
           "stat": "none",
           "amount": 0
         },
-        "description": "Your foe’s disarmed object strikes your ally for a minor wound. The tip of your weapon gets embedded in the floor or wall, requiring an action to free it. The attack impact jars you, hindering tasks with that hand until you use an action to shake it off."
+        "description": "Your foe’s disarmed object strikes your ally for a minor wound. The tip of your weapon gets embedded in the floor or wall, requiring an action to free it. The attack impact jars you, hindering tasks with that hand until you use an action to shake it off. A few abilities in this book include suggested GM intrusions because you’re more likely to trigger an intrusion when using those abilities, and having some options here makes it easier for the GM."
       },
       {
         "name": "Romantic Flair",
@@ -71,23 +81,10 @@
           "stat": "intellect",
           "amount": 2
         },
-        "description": "Your accompanying exuberant charm, bold confidence, perfectly timed bow, or suggestive wink means if your roll to charm or impress is less than a 9, treat the roll as a 9. (This means you don’t get a GM intrusion if you roll a 1.)"
-      },
-      {
-        "name": "Effort",
-        "tier": 1,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0
-        },
-        "description": "Increase the minimum number rolled for this ability by 3."
+        "description": "Your accompanying exuberant charm, bold confidence, perfectly timed bow, or suggestive wink means if your roll to charm or impress is less than a 9, treat the roll as a 9. (This means you don’t get a GM intrusion if you roll a 1.) Effort: Increase the minimum number rolled for this ability by 3. Action. At tier 3: The minimum number rolled for this ability increases to 12."
       }
     ],
-    "statOptions": [
-      "speed",
-      "intellect"
-    ],
+    "statOptions": ["speed", "intellect"],
     "description": "<p>A Epic Fantasy Type focused on swashbuckler archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Epic Fantasy. Primary Pools: speed, intellect.</em></p>"
   },
   "folder": "406V7PHmM8qHDb1x",

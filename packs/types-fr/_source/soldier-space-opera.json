@@ -24,40 +24,37 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Effort",
+        "name": "Amélioration de Combat (2+ Célérité ou Intellect)",
         "tier": 1,
         "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "Increase the minimum number rolled for this ability by 3."
+        "description": "Ton amélioration militaire — implant nerveux, matériel sous‑cutané ou modification génétique — réduit ton temps de réaction face aux menaces inattendues, au point où **tu es presque impossible à surprendre**. Tu lances l’initiative normalement, mais si ton résultat est **inférieur à 15**, traite‑le comme **15**. (Cela signifie que tu n’obtiens pas d’intrusion du·de la MJ sur un 1.) Au rang 3, le minimum devient 18. Effort : Augmente le minimum obtenu grâce à cette aptitude de +3."
       },
       {
-        "name": "Expert Combatant",
-        "tier": 3,
-        "enabler": false,
+        "name": "Combattant·e Expert·e",
+        "tier": 1,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on."
+        "description": "Tu es **entraîné·e** dans un type spécifique d’attaque d’arme : épées, haches, arcs, ou une catégorie plus large : armes contondantes légères, armes tranchantes légères, armes à distance légères, armes contondantes moyennes, armes tranchantes moyennes, armes à distance moyennes, etc. Au rang 2, tu peux devenir spécialisé·e dans la même méthode d’attaque (à condition d’acquérir la compétence normalement). Au rang 6, tu peux devenir expert·e dans une méthode d’attaque (celle choisie au rang 1 ou une autre dans laquelle tu es déjà spécialisé·e)."
       },
       {
-        "name": "Push Implant",
-        "tier": 6,
-        "enabler": false,
+        "name": "Implant de Surpassement",
+        "tier": 1,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "After attacking, you can activate a combat implant to make an additional attack as an extra action on your turn. Doing this inflicts a moderate wound on yourself. Enabler."
+        "description": "Après avoir attaqué, tu peux activer un implant de combat pour effectuer **une attaque supplémentaire**, en tant qu’**action supplémentaire à ton tour**. Cette action te cause **une blessure modérée**. Cette aptitude se renouvelle après une **récupération de dix heures**."
       }
     ],
-    "statOptions": [
-      "might",
-      "speed"
-    ],
+    "statOptions": ["might", "speed"],
     "description": "<p>Un Type de Space Opera centré sur l'archétype soldat·e, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Science-fiction. Sous-genre : Space Opera. Réserves principales : Puissance, Célérité.</em></p>"
   },
   "folder": "DNZXZoUQ1z24nS44",

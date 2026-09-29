@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "statAmount": 2,
-    "skillOptions": [
-      "Deception",
-      "Disguise",
-      "",
-      ""
-    ],
+    "skillOptions": ["Deception", "Disguise", "", ""],
     "description": "<p>You keep your true self behind a mask, preferring to keep others at a careful distance.</p><p><em>You gain +2 to your Intellect Pool, and training in Deception or Disguise.</em></p>"
   },
   "folder": null,

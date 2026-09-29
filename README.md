@@ -9,7 +9,7 @@ compendiums, la CI et les releases, se trouve dans
 ## 🇫🇷 À propos
 
 Ce système est construit à partir du **Cypher Reference Document (CRD)** publié par
-Monte Cook Games sous la **Cypher Open License** (https://col.montecookgames.com), qui autorise
+Monte Cook Games sous la [**Cypher Open License**](https://col.montecookgames.com), qui autorise
 la création de jeux compatibles réutilisant les règles et le contenu du CRD. Pensez à respecter
 les conditions d'attribution de cette licence si vous distribuez ce système publiquement.
 
@@ -144,6 +144,7 @@ Un Descripteur n'est volontairement **pas un objet persistant** : le glisser sur
 Descripteur en propose plusieurs, ex. Gloomy/Sombre) et la compétence (parmi celles listées, ou
 un texte libre pour couvrir les formulations "...ou similaire" du CRD), puis applique directement
 l'effet via `CypherActor#applyDescriptor` :
+
 - +2 (ou le montant défini) à la Réserve choisie ;
 - création d'une Compétence entrainée correspondante, ou avancement d'une compétence existante du
   même nom (même logique de progression que l'avancement de personnage : inaptitude annulée,
@@ -156,12 +157,12 @@ Le texte descriptif ("flavor") de chaque entrée est une reformulation originale
 reproduction du texte du CRD ; seules les données mécaniques (bonus de Réserve, choix de
 compétences) suivent fidèlement le CRD, comme le permet la Cypher Open License.
 
-**Régénérer/étendre les sources** : `python3 scripts/generate-descriptors.py` régénère
-`packs/descriptors-{fr,en}/_source/*.json`. Pour recompiler en pack LevelDB chargeable par
-Foundry (nécessite `@foundryvtt/foundryvtt-cli`, installable via `npm install --no-save
-@foundryvtt/foundryvtt-cli`) :
+**Maintenir/étendre les sources** : modifiez directement les fichiers JSON appariés dans
+`packs/descriptors-{fr,en}/_source/`, puis exécutez les tests de compendium. Pour recompiler en
+pack LevelDB chargeable par Foundry (nécessite `@foundryvtt/foundryvtt-cli`, installable via
+`npm install --no-save @foundryvtt/foundryvtt-cli`) :
 
-```
+```powershell
 npx fvtt package pack -n descriptors-en --in packs/descriptors-en/_source --out /tmp/out-en
 cp /tmp/out-en/descriptors-en/* packs/descriptors-en/
 npx fvtt package pack -n descriptors-fr --in packs/descriptors-fr/_source --out /tmp/out-fr
@@ -175,16 +176,17 @@ silencieusement.)
 
 ### Compendiums de Types (FR/EN)
 
-Les Types du document de référence sont générés dans deux compendiums bilingues, regroupés dans
+Les Types du document de référence sont maintenus dans deux compendiums bilingues, regroupés dans
 les dossiers de langue `Français` et `English` grâce à `packFolders`. Les 55 Types couvrent les
 sections Fantasy, Science-fiction et Super-héros du document, avec leurs variantes de sous-genre.
 Les noms français sont des traductions de travail à relire ; les descriptions sont des résumés
 originaux et non une copie du document source.
 
-Pour régénérer les sources :
+Modifiez directement les paires correspondantes dans `packs/types-{fr,en}/_source/`, puis
+validez-les avec :
 
-```
-npm run generate-types
+```powershell
+node --test tests/compendium-sources.test.mjs
 ```
 
 Puis compiler les deux packs avec le CLI Foundry, en utilisant la même procédure que pour les
@@ -194,8 +196,8 @@ Descripteurs : `types-en` depuis `packs/types-en/_source` et `types-fr` depuis
 ### Ce qu'il reste à faire (V2)
 
 1. Tester la fiche de personnage en jeu, ajuster le layout/CSS selon vos goûts.
-2. Étendre le même principe (item "générateur" + compendium bilingue) aux **Foyers**, à partir
-  du CRD, en respectant la Cypher Open License.
+2. Compléter les compendiums bilingues de **Foyers** à partir du CRD, en respectant la Cypher
+  Open License.
 3. Ajouter des macros compendium pour automatiser des actions répétitives (application de dégâts
    de groupe, gestion des intrusions du MJ, etc.).
 4. Ajouter une feuille PNJ dédiée avec calcul automatique du nombre cible (niveau × 3).
@@ -212,7 +214,7 @@ Descripteurs : `types-en` depuis `packs/types-en/_source` et `types-fr` depuis
 ## 🇬🇧 About
 
 This system is built from the **Cypher Reference Document (CRD)** published by Monte Cook Games
-under the **Cypher Open License** (https://col.montecookgames.com), which permits building
+under the [**Cypher Open License**](https://col.montecookgames.com), which permits building
 compatible games that reuse CRD rules and content. Follow that license's attribution requirements
 if you distribute this system publicly.
 
@@ -382,16 +384,15 @@ Pool bonus, a newly trained (or advanced) Skill item, the Descriptor's name writ
 summarizing the grant. Flavor text is an original rewrite, not CRD text reproduction — only the
 mechanical data (Pool bonus, skill choices) follows the CRD, as the Cypher Open License allows.
 
-Regenerate the source JSON with `python3 scripts/generate-descriptors.py`, then recompile into a
-loadable LevelDB pack with the `@foundryvtt/foundryvtt-cli` package — see the French section above
-for the exact commands (each source file needs a `_key: "!items!<_id>"` field, or the CLI silently
-skips it).
+Edit the paired source JSON directly under `packs/descriptors-{en,fr}/_source/`, run
+`node --test tests/compendium-sources.test.mjs`, then recompile a loadable LevelDB pack with
+`@foundryvtt/foundryvtt-cli` — see the French section above for the exact commands (each source
+file needs a `_key: "!items!<_id>"` field, or the CLI silently skips it).
 
 ### Suggested next steps
 
-See the French section above — same roadmap: playtest the sheet, then extend the same
-generator-item + bilingual-compendium approach to Types and Foci, add automation macros, and a
-dedicated NPC sheet.
+See the French section above — same roadmap: playtest the sheet, complete the bilingual Focus
+compendiums, add automation macros, and a dedicated NPC sheet.
 
 ## Publier une version / Releasing a version
 

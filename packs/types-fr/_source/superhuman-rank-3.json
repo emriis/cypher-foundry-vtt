@@ -24,41 +24,47 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Push on Through",
+        "name": "Suggestion Inspirante",
         "tier": 1,
         "enabler": false,
         "cost": {
-          "stat": "none",
-          "amount": 0
+          "stat": "intellect",
+          "amount": 2
         },
-        "description": "Instead of a ten-minute recovery, you have a second one-action recovery. Thus, your first two recoveries are one action, the third is one hour, and the fourth is ten hours."
+        "description": "Choisis un·e allié·e pouvant te voir et te comprendre. Suggère‑lui une **action précise** : « attaque le chef », « grimpe ce mur », etc. Si l’allié·e réalise **exactement** l’action proposée, iel gagne **deux atouts** pour cette tâche. Première action"
       },
       {
-        "name": "Super Combatant",
+        "name": "Tenir Bon",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on."
+        "description": "Au lieu d’une récupération de dix minutes, tu disposes d’une **deuxième récupération d’une action**. Ainsi, ta 1re récupération prend **1 action**, ta 2e récupération prend **1 action,** ta 3e récupération prend **1 heure** et ta 4e récupération prend **10 heures** De plus, tu peux encaisser une blessure modérée supplémentaire, et tu peux utiliser une de tes récupérations d’une action pour permettre à un·e allié·e d’utiliser une récupération de dix minutes comme action."
       },
       {
-        "name": "Superheroics",
-        "tier": 6,
-        "enabler": false,
+        "name": "Attaque Successive (2 Célérité ou Puissance)",
+        "tier": 1,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "Choose one Pool: Might, Speed, or Intellect. For tasks using your chosen Pool, add your rank to the amount of Effort you can apply, allowing you to apply additional levels of Effort to tasks in that Pool."
+        "description": "Si tu mets un adversaire hors combat, tu peux immédiatement effectuer **une autre attaque** au même tour contre une nouvelle cible à portée, comme une **action supplémentaire à ton tour**. Tu peux utiliser cette aptitude en **mêlée** ou à **distance**."
+      },
+      {
+        "name": "Super‑Combattant·e",
+        "tier": 1,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0
+        },
+        "description": "Tu es **entraîné·e** dans un type d’attaque spécifique (épées, haches, arcs, rayons, poings, etc.) ou dans une catégorie complète d’attaques : armes légères contondantes/tranchantes/à distance, armes moyennes, etc. Au rang 2, tu peux devenir spécialisé·e (en acquérant l’aptitude normalement). Au rang 6, tu peux devenir expert·e dans cette méthode d’attaque (celle du rang 1 ou une autre dont tu es spécialisé·e)."
       }
     ],
-    "statOptions": [
-      "might",
-      "speed",
-      "intellect"
-    ],
+    "statOptions": ["might", "speed", "intellect"],
     "description": "<p>Un Type de Super-héros centré sur l'archétype surhumain·e, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Super-héros. Sous-genre : Super-héros. Réserves principales : Puissance, Célérité, Intellect.</em></p>"
   },
   "folder": "rgUrIo08MxTkt23F",

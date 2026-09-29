@@ -1,0 +1,150 @@
+{
+  "_id": "CntrlsB3ast2026E",
+  "_key": "!items!CntrlsB3ast2026E",
+  "name": "Controls Beasts",
+  "type": "focus",
+  "img": "icons/creatures/mammals/wolf-howl-moon-black.webp",
+  "system": {
+    "description": "<p>A Focus for a character whose bond with beasts is supernatural.</p>",
+    "abilities": [
+      {
+        "id": "animal-companion",
+        "name": "Animal Companion",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": true,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Gain a level 2 beast follower."
+      },
+      {
+        "id": "friend-to-small-creatures",
+        "name": "Friend to Small Creatures",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "description": "Influence a large group of small creatures or plants."
+      },
+      {
+        "id": "understand-beasts",
+        "name": "Understand Beasts",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Learn a nonhuman creature's level, nature, and special abilities."
+      },
+      {
+        "id": "beast-communication",
+        "name": "Beast Communication",
+        "tier": 2,
+        "prerequisites": ["friend-to-small-creatures", "understand-beasts"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Exchange simple concepts with a beast."
+      },
+      {
+        "id": "soothe-the-savage",
+        "name": "Soothe the Savage",
+        "tier": 2,
+        "prerequisites": ["friend-to-small-creatures", "understand-beasts"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Calm a nearby nonhuman beast."
+      },
+      {
+        "id": "mount",
+        "name": "Mount",
+        "tier": 3,
+        "prerequisites": ["animal-companion", "beast-communication"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Gain a level 3 beast mount or promote a companion."
+      },
+      {
+        "id": "stronger-together",
+        "name": "Stronger Together",
+        "tier": 3,
+        "prerequisites": ["beast-communication", "soothe-the-savage"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "You and a nearby animal ally gain offensive and defensive benefits."
+      },
+      {
+        "id": "beast-eyes",
+        "name": "Beast Eyes",
+        "tier": 4,
+        "prerequisites": ["mount", "stronger-together"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "description": "Perceive through a companion's senses."
+      },
+      {
+        "id": "improved-companion",
+        "name": "Improved Companion",
+        "tier": 4,
+        "prerequisites": ["mount", "stronger-together"],
+        "repeatable": true,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Increase a companion's level by 1."
+      },
+      {
+        "id": "animal-healing",
+        "name": "Animal Healing",
+        "tier": 5,
+        "prerequisites": ["beast-eyes", "improved-companion"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Recover extra Pool points near your animal companion."
+      },
+      {
+        "id": "call-the-beast",
+        "name": "Call the Beast",
+        "tier": 5,
+        "prerequisites": ["beast-eyes", "improved-companion"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 5, "options": [] },
+        "description": "Call a temporary level 4 beast or swarm."
+      },
+      {
+        "id": "beast-armor",
+        "name": "Beast Armor",
+        "tier": 6,
+        "prerequisites": ["animal-healing", "call-the-beast"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Increase your companion's Armor."
+      },
+      {
+        "id": "dominate-beast",
+        "name": "Dominate Beast",
+        "tier": 6,
+        "prerequisites": ["animal-healing", "call-the-beast"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 6, "options": [] },
+        "description": "Control a calmed nonhuman beast."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

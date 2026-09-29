@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "statAmount": 2,
-    "skillOptions": [
-      "Animal Care",
-      "Healing",
-      "",
-      ""
-    ],
+    "skillOptions": ["Animal Care", "Healing", "", ""],
     "description": "<p>Helping others is what drives you, and you're at your best tending to someone else's wounds or troubles.</p><p><em>You gain +2 to your Intellect Pool, and training in Animal Care or Healing.</em></p>"
   },
   "folder": null,

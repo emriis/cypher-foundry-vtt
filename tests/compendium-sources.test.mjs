@@ -5,8 +5,65 @@ import test from "node:test";
 
 const root = path.resolve(import.meta.dirname, "..");
 
+const knownTypeAbilityParityDebt = new Set([
+  "android.json",
+  "axe-fighter.json",
+  "barbarian-swords-sorcery.json",
+  "barbarian.json",
+  "bard.json",
+  "cleric.json",
+  "crimefighter-rank-1.json",
+  "druid.json",
+  "engineer.json",
+  "enhanced-hero-rank-2.json",
+  "fighter.json",
+  "heavy.json",
+  "knife-fighter.json",
+  "living-god-rank-5.json",
+  "medic-space-opera.json",
+  "medic.json",
+  "monk.json",
+  "noble-hard-science-fiction.json",
+  "noble.json",
+  "paladin.json",
+  "pilot.json",
+  "powerhouse-rank-4.json",
+  "powerstar-rank-2.json",
+  "priest.json",
+  "ranger.json",
+  "rogue.json",
+  "scoundrel.json",
+  "soldier-space-opera.json",
+  "soldier.json",
+  "sorcerer.json",
+  "starpilot.json",
+  "superhuman-rank-3.json",
+  "sword-fighter.json",
+  "tech.json",
+  "tender.json",
+  "two-weapon-fighter.json",
+  "vigilante-rank-1.json",
+  "warrior.json",
+  "witch.json"
+]);
+
+function readPackSources(packName) {
+  const directory = path.join(root, "packs", packName, "_source");
+  return new Map(fs.readdirSync(directory)
+    .filter(file => file.endsWith(".json"))
+    .map(file => [file, JSON.parse(fs.readFileSync(path.join(directory, file), "utf8"))]));
+}
+
+function assertDocumentIdentity(document, expectedType) {
+  assert.match(document._id, /^[A-Za-z0-9]{16}$/);
+  assert.equal(document._key, `!items!${document._id}`);
+  assert.equal(document.type, expectedType);
+  assert.ok(document.name);
+  assert.ok(document.system.description);
+}
+
 for (const language of ["en", "fr"]) {
-  test(`type sources contain all generated ${language} entries`, () => {
+  test(`type sources contain all directly maintained ${language} entries`, () => {
     const directory = path.join(root, "packs", `types-${language}`, "_source");
     const files = fs.readdirSync(directory).filter(file => file.endsWith(".json"));
     const sources = files.map(file => ({
@@ -51,7 +108,7 @@ for (const language of ["en", "fr"]) {
     }
   });
 
-  test(`generated ${language} Type mechanics stay tied to their source section`, () => {
+  test(`${language} Type mechanics stay tied to their source section`, () => {
     const directory = path.join(root, "packs", `types-${language}`, "_source");
     const barbarian = JSON.parse(fs.readFileSync(path.join(directory, language === "en" ? "barbarian.json" : "barbarian.json"), "utf8"));
     assert.deepEqual(barbarian.system.poolBonuses, { might: 3, speed: 1, intellect: 0 });
@@ -59,6 +116,14 @@ for (const language of ["en", "fr"]) {
     assert.equal(barbarian.system.edgeChoice, 1);
     assert.equal(barbarian.system.freeWeapons, true);
     assert.equal(barbarian.system.freeArmor, true);
+    assert.deepEqual(
+      barbarian.system.abilities.map(ability => [ability.name, ability.enabler]),
+      [
+        [language === "en" ? "Frenzy" : "Frénésie", true],
+        [language === "en" ? "Wilderness Survival" : "Instinct de survie", language === "fr"],
+        [language === "en" ? "Wounded Fury" : "Fureur du blessé", true]
+      ]
+    );
 
     const readType = filename => JSON.parse(fs.readFileSync(path.join(directory, filename), "utf8"));
     const mechanics = item => ({
@@ -89,10 +154,10 @@ for (const language of ["en", "fr"]) {
     const crimefighter = JSON.parse(fs.readFileSync(path.join(directory, "crimefighter-rank-1.json"), "utf8"));
     assert.deepEqual(crimefighter.system.poolBonuses, { might: 2, speed: 3, intellect: 5 });
     assert.deepEqual(crimefighter.system.woundBonuses, { minor: 3, moderate: 1, major: 0 });
-    assert.equal(crimefighter.system.abilities.length, 3);
+    assert.equal(crimefighter.system.abilities.length, 4);
   });
 
-  test(`generated ${language} Type abilities have valid item data`, () => {
+  test(`${language} Type abilities have valid item data`, () => {
     const directory = path.join(root, "packs", `types-${language}`, "_source");
     for (const file of fs.readdirSync(directory).filter(file => file.endsWith(".json"))) {
       const item = JSON.parse(fs.readFileSync(path.join(directory, file), "utf8"));
@@ -169,6 +234,55 @@ for (const language of ["en", "fr"]) {
     }
   });
 }
+
+test("Type sources are directly maintained as structurally aligned bilingual pairs", () => {
+  const enSources = readPackSources("types-en");
+  const frSources = readPackSources("types-fr");
+  const abilityParityDebt = [];
+  assert.deepEqual([...frSources.keys()].sort(), [...enSources.keys()].sort());
+
+  for (const [filename, en] of enSources) {
+    const fr = frSources.get(filename);
+    assert.equal(fr._key.startsWith("!folders!"), en._key.startsWith("!folders!"), filename);
+    if (en._key.startsWith("!folders!")) continue;
+
+    assertDocumentIdentity(en, "type");
+    assertDocumentIdentity(fr, "type");
+    for (const field of ["tier", "genre", "subgenre", "poolBonuses", "edgeChoice", "woundBonuses", "freeWeapons", "freeArmor", "statOptions"]) {
+      assert.deepEqual(fr.system[field], en.system[field], `${filename}/${field}`);
+    }
+    assert.equal(fr.system.abilities.length, en.system.abilities.length, `${filename}/abilities`);
+    const mechanics = item => item.system.abilities
+      .map(ability => JSON.stringify({ tier: ability.tier, enabler: ability.enabler, cost: ability.cost }))
+      .sort();
+    if (JSON.stringify(mechanics(fr)) !== JSON.stringify(mechanics(en))) abilityParityDebt.push(filename);
+  }
+
+  assert.deepEqual(
+    abilityParityDebt.sort(),
+    [...knownTypeAbilityParityDebt].sort(),
+    "Update the explicit legacy debt when bilingual Type ability mechanics are corrected"
+  );
+});
+
+test("Descriptor sources are directly maintained as valid bilingual pairs", () => {
+  const enSources = readPackSources("descriptors-en");
+  const frSources = readPackSources("descriptors-fr");
+  assert.deepEqual([...frSources.keys()].sort(), [...enSources.keys()].sort());
+
+  for (const [filename, en] of enSources) {
+    const fr = frSources.get(filename);
+    assertDocumentIdentity(en, "descriptor");
+    assertDocumentIdentity(fr, "descriptor");
+    assert.deepEqual(fr.system.statOptions, en.system.statOptions, `${filename}/statOptions`);
+    assert.equal(fr.system.statAmount, en.system.statAmount, `${filename}/statAmount`);
+    for (const document of [en, fr]) {
+      assert.ok(document.system.statOptions.length > 0, filename);
+      assert.ok(document.system.skillOptions.some(Boolean), filename);
+      assert.ok(document.system.skillOptions.every(option => typeof option === "string"), filename);
+    }
+  }
+});
 
 test("French descriptor sources match the Character Book translations", () => {
   const directory = path.join(root, "packs", "descriptors-fr", "_source");

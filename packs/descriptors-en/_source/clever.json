@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "statAmount": 2,
-    "skillOptions": [
-      "Deception",
-      "Recognizing Motive",
-      "",
-      ""
-    ],
+    "skillOptions": ["Deception", "Recognizing Motive", "", ""],
     "description": "<p>Quick-witted and observant, you size up people and situations almost instantly.</p><p><em>You gain +2 to your Intellect Pool, and training in Deception or Recognizing Motive.</em></p>"
   },
   "folder": null,

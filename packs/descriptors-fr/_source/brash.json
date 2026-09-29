@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "speed"
-    ],
+    "statOptions": ["speed"],
     "statAmount": 2,
-    "skillOptions": [
-      "Piratage informatique",
-      "Initiative",
-      "",
-      ""
-    ],
+    "skillOptions": ["Piratage informatique", "Initiative", "", ""],
     "description": "<p>Tu as un tempérament affirmé et une grande confiance en toi. Certain·es te trouvent courageux·se, d'autres prétentieux·se.</p><p><em>Tu gagnes +2 à ta Réserve de Célérité, et un entrainement en Piratage informatique ou Initiative.</em></p>"
   },
   "folder": null,

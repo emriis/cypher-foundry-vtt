@@ -5,17 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "speed",
-      "might"
-    ],
+    "statOptions": ["speed", "might"],
     "statAmount": 2,
-    "skillOptions": [
-      "History",
-      "Recognizing Motive",
-      "",
-      ""
-    ],
+    "skillOptions": ["History", "Recognizing Motive", "", ""],
     "description": "<p>You expect the worst as a matter of course, which means you're rarely disappointed when it happens.</p><p><em>You gain +2 to your Speed or Might Pool, and training in History or Recognizing Motive.</em></p>"
   },
   "folder": null,

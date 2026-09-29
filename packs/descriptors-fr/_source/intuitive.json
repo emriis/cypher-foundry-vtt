@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "statAmount": 2,
-    "skillOptions": [
-      "Discernement des motivations",
-      "",
-      "",
-      ""
-    ],
+    "skillOptions": ["Discernement des motivations", "", "", ""],
     "description": "<p>Tu éprouves souvent une étrange fascination pour le fait de savoir ce que quelqu'un va dire ou comment les événements vont se dérouler.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Discernement des motivations.</em></p>"
   },
   "folder": null,

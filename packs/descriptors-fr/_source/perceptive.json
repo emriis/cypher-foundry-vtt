@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "statAmount": 2,
-    "skillOptions": [
-      "Perception",
-      "Discernement des motivations",
-      "",
-      ""
-    ],
+    "skillOptions": ["Perception", "Discernement des motivations", "", ""],
     "description": "<p>Tu es très perspicace. Tu remarques les moindres détails et sais tirer des conclusions pertinentes.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Perception ou Discernement des motivations.</em></p>"
   },
   "folder": null,

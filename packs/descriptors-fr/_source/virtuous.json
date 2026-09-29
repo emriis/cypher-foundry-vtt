@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "might"
-    ],
+    "statOptions": ["might"],
     "statAmount": 2,
-    "skillOptions": [
-      "Discernement des motivations",
-      "",
-      "",
-      ""
-    ],
+    "skillOptions": ["Discernement des motivations", "", "", ""],
     "description": "<p>Faire ce qui est juste est pour toi un véritable mode de vie. Tu suis un code de conduite auquel tu te tiens quotidiennement.</p><p><em>Tu gagnes +2 à ta Réserve de Puissance, et un entrainement en Discernement des motivations.</em></p>"
   },
   "folder": null,

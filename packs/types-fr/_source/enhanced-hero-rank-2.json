@@ -24,40 +24,37 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "No Need for Weapons",
+        "name": "Pas Besoin d’Armes",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "Your unarmed attacks (such as punches, kicks, elbows, or knees) inflict an additional 2 damage."
+        "description": "Tes attaques à mains nues (coups de poing, pieds, genoux, coudes…) infligent **+2 dégâts**."
       },
       {
-        "name": "Press Advantage",
+        "name": "Pression Maintenue",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "When your damage-dealing attack roll is 17 or higher, you deal +1 damage with the attack. If you roll a 19 or 20, you inflict the extra damage regardless of whether you choose to deal additional damage or take a special minor or major effect."
+        "description": "Lorsque ton jet d’attaque infligeant des dégâts est **17 ou plus**, tu infliges **+1 dégât**. Si tu obtiens un **19 ou 20**, tu infliges ce dégât supplémentaire même si tu choisis d’appliquer un **effet mineur ou majeur** au lieu d’ajouter des dégâts normaux."
       },
       {
-        "name": "Superheroics",
+        "name": "Attaque Successive (2 Célérité ou Puissance)",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "Choose one Pool: Might, Speed, or Intellect. For tasks using your chosen Pool, add your rank to the amount of Effort you can apply, allowing you to apply additional levels of Effort to tasks in that Pool."
+        "description": "Si tu mets un adversaire hors combat, tu peux immédiatement effectuer **une autre attaque** au même tour contre une nouvelle cible à portée, comme une **action supplémentaire à ton tour**. Tu peux utiliser cette aptitude en **mêlée** ou à **distance**."
       }
     ],
-    "statOptions": [
-      "might",
-      "speed"
-    ],
+    "statOptions": ["might", "speed"],
     "description": "<p>Un Type de Super-héros centré sur l'archétype héros·ïne augmenté·e, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Super-héros. Sous-genre : Super-héros. Réserves principales : Puissance, Célérité.</em></p>"
   },
   "folder": "rgUrIo08MxTkt23F",

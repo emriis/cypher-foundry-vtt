@@ -24,40 +24,37 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Effort",
+        "name": "Cambriolage (2 Célérité)",
+        "tier": 1,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 2
+        },
+        "description": "Lorsque tu réussis une **tâche de furtivité**, tu peux également entreprendre **l’une** des tâches suivantes comme **action supplémentaire pendant ton tour**, même si cette tâche serait normalement une **dernière action** : tenter de **crocheter une serrure**, saisir un **objet non fixé** (jusqu’à un cinquième de ta taille) et le dissimuler sur toi, te déplacer jusqu’à une **longue portée**, attaquer une cible à **portée immédiate** avec une arme légère."
+      },
+      {
+        "name": "Évasion (2+ Célérité)",
         "tier": 1,
         "enabler": false,
         "cost": {
-          "stat": "none",
-          "amount": 0
+          "stat": "speed",
+          "amount": 2
         },
-        "description": "Increase the minimum number rolled for this ability by 3."
+        "description": "Lorsque tu effectues un jet pour **t’échapper** (te libérer de liens, te glisser entre des barreaux, échapper à la prise d’une créature, t’arracher à des sables mouvants, etc.) et que ton résultat est **inférieur à 9**, considère‑le comme un **9**. (Cela signifie qu’un 1 **n’entraîne pas** d’intrusion du·de la MJ.) Au rang 3, le résultat minimum pour cette aptitude passe à 12. Effort : Augmente le résultat minimum de 3. Action"
       },
       {
-        "name": "Slip Into Shadow",
-        "tier": 3,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0
-        },
-        "description": "Even if in full view of a creature, your successful stealth task allows you to slip away from that creature and hide from view in a nearby shadow, behind a tree or furnishing, or in the next room as your action."
-      },
-      {
-        "name": "Effort",
-        "tier": 3,
+        "name": "Se Fondre dans l’Ombre",
+        "tier": 1,
         "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "Attempt to slip away from one additional target looking directly at you (attempt a separate stealth task against each)."
+        "description": "Même si une créature t’a pleinement dans son champ de vision, une **tâche de furtivité réussie** te permet de **disparaître hors de sa vue** et de te cacher dans une ombre proche, derrière un arbre ou un meuble, ou dans la pièce voisine. Au rang 3, tu peux tenter de te cacher à l’égard de deux créatures supplémentaires, que tu utilises ou non l’Effort. Effort : Tente de te dérober à une cible supplémentaire qui te regarde directement (tu fais un jet séparé pour chaque créature)."
       }
     ],
-    "statOptions": [
-      "speed",
-      "intellect"
-    ],
+    "statOptions": ["speed", "intellect"],
     "description": "<p>Un Type de Fantasy épique centré sur l'archétype cambrioleur·euse, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Fantasy épique. Réserves principales : Célérité, Intellect.</em></p>"
   },
   "folder": "hprdGeaH0YyHvS4S",

@@ -41,7 +41,7 @@
           "stat": "intellect",
           "amount": 3
         },
-        "description": "At the conclusion of a ten-minute ritual, you create an idol that persists until its magic is exhausted. The idol could be a symbol etched in stone, a figurine woven from twigs, a small carving, or something similar. The idol must be set on a solid surface with a nod toward being protected from the elements, such as being set in a tree hollow, at the base of a wall, or inside a structure."
+        "description": "At the conclusion of a ten-minuteritual, you create an idol that persists until its magic is exhausted. The idol could be a symbol etched in stone, a figurine woven from twigs, a small carving, or something similar. The idol must be set on a solid surface with a nod toward being protected from the elements, such as being set in a tree hollow, at the base of a wall, or inside a structure. The idol’s holy connection to the ineffable provides your choice of one of the following fixed benefits. Whoever prays to the idol as their action gains this benefit whether you are present or not. The idol has a depletion of 1–2 in 1d6; roll each time it grants its benefit to someone."
       },
       {
         "name": "Bestial Fury",
@@ -51,7 +51,7 @@
           "stat": "none",
           "amount": 0
         },
-        "description": "The supplicant is infused with a latent spirit of bestial fury. The fury activates when the supplicant loses their temper or they choose to rouse it as an extra action on their turn."
+        "description": "The supplicant is infused with a latent spirit of bestial fury. The fury activates when the supplicant loses their temper or they choose to rouse it as an extra action on their turn. When the fury emerges, the character visibly changes into a swollen, rage-filled version of themselves. While furious, they can’t spend Intellect points for any reason other than to try to regain their composure. They attack any and every living creature within short range, rolling twice for each attack and taking the better result. The fury lasts until they use a ten-minute or longer recovery or they use an action to succeed on a difficulty 2 Intellect task. When the supplicant reverts to normal, the physical toll of the change deals two moderate wounds. (A furious NPC supplicant is effectively one level higher and takes 6 damage when the fury ends.)"
       },
       {
         "name": "Healing",
@@ -71,22 +71,20 @@
           "stat": "none",
           "amount": 0
         },
-        "description": "The supplicant is freed from one curse, demonic possession, or similar spiritual affliction of level 5 or less."
+        "description": "The supplicant is freed from one curse, demonic possession, or similar spiritual affliction of level 5 or less. Effort: You can carry the idol with you. Ten minutes to initiate."
       },
       {
-        "name": "Effort",
+        "name": "Retribution",
         "tier": 1,
         "enabler": false,
         "cost": {
-          "stat": "none",
-          "amount": 0
+          "stat": "intellect",
+          "amount": 1
         },
-        "description": "You can carry the idol with you."
+        "description": "You call forth the powers of a deity to assail a foe within short range that you can see. If your Intellect attack hits, the target takes3 damage; they are also marked with an obvious signrelating to that deity until you take a ten-minute or longer recovery. For example, if you call for the retribution of Thesk the Serpent Lord, the attack looks like ephemeral snakes twining around and biting your foe, and they are marked on their forehead or another obvious location with glowing fangs or a snake’s head. Last action. At tier 3: The retribution increases to 5 damage."
       }
     ],
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "description": "<p>A Swords & Sorcery Type focused on priest archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Swords & Sorcery. Primary Pools: intellect.</em></p>"
   },
   "folder": "zBqRagUFEUelogPi",

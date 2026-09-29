@@ -1,0 +1,158 @@
+{
+  "_id": "CrftIllus2026ENX",
+  "_key": "!items!CrftIllus2026ENX",
+  "name": "Crafts Illusions",
+  "type": "focus",
+  "img": "icons/magic/control/hypnosis-mesmerism-eye.webp",
+  "system": {
+    "description": "<p>A Focus for a character who shapes convincing images of light.</p>",
+    "abilities": [
+      {
+        "id": "hedge-magic",
+        "name": "Hedge Magic",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "description": "Perform a small, non-harmful magical trick."
+      },
+      {
+        "id": "minor-illusion",
+        "name": "Minor Illusion",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "description": "Create a small moving illusion or confusing visual pattern."
+      },
+      {
+        "id": "sense-magic",
+        "name": "Sense Magic",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "description": "Sense the presence of nearby magic."
+      },
+      {
+        "id": "illusory-disguise",
+        "name": "Illusory Disguise",
+        "tier": 2,
+        "prerequisites": ["hedge-magic", "minor-illusion"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Give yourself or another creature a sustained illusory appearance."
+      },
+      {
+        "id": "reveal-illusion",
+        "name": "Reveal Illusion",
+        "tier": 2,
+        "prerequisites": ["minor-illusion", "sense-magic"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Improve your ability to detect illusions and invisible targets."
+      },
+      {
+        "id": "project-illusions",
+        "name": "Project Illusions",
+        "tier": 3,
+        "prerequisites": [
+          "illusory-disguise",
+          "reveal-illusion",
+          "major-illusion"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Increase the range of your close-range illusions."
+      },
+      {
+        "id": "major-illusion",
+        "name": "Major Illusion",
+        "tier": 3,
+        "prerequisites": [
+          "illusory-disguise",
+          "reveal-illusion",
+          "project-illusions"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "description": "Create a complex, self-sustaining illusory scene."
+      },
+      {
+        "id": "illusory-cocoon",
+        "name": "Illusory Cocoon",
+        "tier": 4,
+        "prerequisites": ["project-illusions", "major-illusion"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "description": "Trap a target in a total sensory illusion."
+      },
+      {
+        "id": "illusory-duplicates",
+        "name": "Illusory Duplicates",
+        "tier": 4,
+        "prerequisites": ["project-illusions", "major-illusion"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "description": "Create four independently directed illusory doubles."
+      },
+      {
+        "id": "invisibility",
+        "name": "Invisibility",
+        "tier": 5,
+        "prerequisites": ["illusory-cocoon", "illusory-duplicates"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "description": "Cover yourself or another creature with an illusion of nothing."
+      },
+      {
+        "id": "terrifying-image",
+        "name": "Terrifying Image",
+        "tier": 5,
+        "prerequisites": ["illusory-cocoon", "illusory-duplicates"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 6, "options": [] },
+        "description": "Use foes' fears to drive several creatures away."
+      },
+      {
+        "id": "grand-illusion",
+        "name": "Grand Illusion",
+        "tier": 6,
+        "prerequisites": ["invisibility", "terrifying-image"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 8, "options": [] },
+        "description": "Create a vast, complex, responsive illusion."
+      },
+      {
+        "id": "permanent-illusion",
+        "name": "Permanent Illusion",
+        "tier": 6,
+        "prerequisites": ["invisibility", "terrifying-image"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "intellect", "amount": 9, "options": [] },
+        "description": "Make one small existing illusion permanent."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

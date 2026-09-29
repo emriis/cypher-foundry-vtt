@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "statAmount": 2,
-    "skillOptions": [
-      "Gathering Information",
-      "Identifying",
-      "",
-      ""
-    ],
+    "skillOptions": ["Gathering Information", "Identifying", "", ""],
     "description": "<p>The unknown calls to you, and you take care to be prepared before you go looking for answers.</p><p><em>You gain +2 to your Intellect Pool, and training in Gathering Information or Identifying.</em></p>"
   },
   "folder": null,

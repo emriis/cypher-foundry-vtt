@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "speed"
-    ],
+    "statOptions": ["speed"],
     "statAmount": 2,
-    "skillOptions": [
-      "Initiative",
-      "",
-      "",
-      ""
-    ],
+    "skillOptions": ["Initiative", "", "", ""],
     "description": "<p>Tu es vif·ve comme l'éclair. Rapide de corps, de mains, de pensée et de parole.</p><p><em>Tu gagnes +2 à ta Réserve de Célérité, et un entrainement en Initiative.</em></p>"
   },
   "folder": null,

@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "might"
-    ],
+    "statOptions": ["might"],
     "statAmount": 2,
-    "skillOptions": [
-      "Philosophy",
-      "Religious Lore",
-      "",
-      ""
-    ],
+    "skillOptions": ["Philosophy", "Religious Lore", "", ""],
     "description": "<p>You live by a code and hold yourself to it every day, correcting course whenever you slip.</p><p><em>You gain +2 to your Might Pool, and training in Philosophy or Religious Lore.</em></p>"
   },
   "folder": null,

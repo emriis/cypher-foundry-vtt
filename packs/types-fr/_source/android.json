@@ -24,50 +24,37 @@
     "skillOptions": [],
     "abilities": [
       {
-        "name": "Built to Hack",
+        "name": "Conçu·e pour Pirater",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "cost": {
           "stat": "intellect",
           "amount": 2
         },
-        "description": "When you roll to hack an unintelligent computer or machine and your roll is less than a 9, treat the roll as a 9. (This means you don’t get a GM intrusion if you roll a 1.) Hacking tasks—which you can initiate using your ability to wirelessly network or by directly connecting to the target machine—include breaking into secure databases, taking temporary control of remote turrets, unlocking electronically secured entrances, and so on."
+        "description": "Quand tu fais un jet pour pirater un ordinateur ou une machine non intelligente et que ton résultat est **inférieur à 9**, considère que tu as obtenu **9**. *(Cela signifie que tu n’obtiens pas d’intrusion du·de la MJ sur un 1.)* Les tâches de piratage incluent : pénétrer des bases de données sécurisées, prendre le contrôle de tourelles, ouvrir des accès verrouillés, etc. Au rang 3, le minimum devient 12. Effort : Augmente le minimum obtenu grâce à cette aptitude de +3."
       },
       {
-        "name": "Effort",
+        "name": "Compétence Flexible",
         "tier": 1,
         "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "Increase the minimum number rolled for this ability by 3."
+        "description": "Choisis une tâche (autre qu’une attaque ou une défense) sur laquelle tu te concentres. Pour le reste de la journée, **tu es entraîné·e** dans cette tâche. Tu ne peux pas utiliser cette aptitude pour devenir spécialisé·e dans une compétence dans laquelle tu es déjà entraîné·e. Cette aptitude se renouvelle après une **récupération de dix heures**."
       },
       {
-        "name": "Flex Skill",
-        "tier": 3,
-        "enabler": false,
+        "name": "Machine plutôt que Chair",
+        "tier": 1,
+        "enabler": true,
         "cost": {
           "stat": "none",
           "amount": 0
         },
-        "description": "Choose one task (other than an attack or defense skill) on which you will concentrate. For the rest of the day, you’re trained in that task. You can’t use this ability with a skill in which you’re already trained to become specialized. This ability refreshes when you use a ten-hour recovery. Enabler."
-      },
-      {
-        "name": "Machine Not Flesh",
-        "tier": 3,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0
-        },
-        "description": "You are a sophisticated, intelligent machine with a generally humanoid shape; work with your GM to determine specifics. This gives you the following benefits:"
+        "description": "Tu es une machine intelligente au corps humanoïde. Définis les détails avec ton·ta MJ. Tu gagnes les avantages suivants : +4 points à répartir définitivement dans tes Réserves. +1 d’Avantage supplémentaire dans une Réserve de ton choix. Ton corps non biologique est immunisé contre les poisons, maladies, et le vide spatial ; tu n’as pas besoin de manger, boire ou respirer. Si tu peux te connecter à une source d’énergie, tu peux effectuer une récupération supplémentaire d’une action par jour. Tu facilites toutes les tâches de piratage. Mais tu as aussi des inconvénients : Le traitement de tes blessures nécessite de l’ingénierie. Les méthodes biologiques ne fonctionnent pas sur toi. Sans accès à une source d’énergie lors de ta récupération de dix heures, tu perds ta récupération d’action normale et ta récupération bonus. Certaines personnes biologiques ont des préjugés contre les androïdes : tes interactions sociales positives peuvent être entravées à la discrétion du MJ."
       }
     ],
-    "statOptions": [
-      "might",
-      "intellect"
-    ],
+    "statOptions": ["might", "intellect"],
     "description": "<p>Un Type de Space Opera centré sur l'archétype androïde, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Science-fiction. Sous-genre : Space Opera. Réserves principales : Puissance, Intellect.</em></p>"
   },
   "folder": "DNZXZoUQ1z24nS44",

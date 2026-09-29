@@ -9,6 +9,25 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ## [Unreleased]
 
+### Added
+
+- Bilingual Focus compendiums, beginning with the complete `Abides in Stone` / `Se fond dans la
+  pierre` CRD flowchart. Focus abilities retain their explicit prerequisite links, require two
+  tier-1 choices when applied, and prompt for a valid linked ability after each tier advance.
+- Added the bilingual `Grows to Towering Heights` / `Deviens colossal` and `Howls at the Moon` /
+  `Hurle à la lune` Focus records, including their CRD flowchart prerequisites.
+
+### Changed
+
+- Type and Descriptor `_source` JSON files are now maintained directly as paired bilingual
+  records; the former content generators and `generate-types` npm command were removed.
+
+### Fixed
+
+- Type compendium sources keep ability blocks bounded to their authoritative CRD Type
+  section, including Effort and Enabler text, while retaining canonical CRD copies for Type
+  variants and Character Book French ability localization.
+
 ## [0.1.4] - 2026-09-26
 
 ### Added
