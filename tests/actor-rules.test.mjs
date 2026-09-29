@@ -19,6 +19,23 @@ test("computeEffortCost does not charge for zero or negative Effort", () => {
   assert.equal(CypherActor.computeEffortCost(-1), 0);
 });
 
+test("getEligibleFocusAbilities allows any linked prerequisite to unlock a higher-tier Focus ability", () => {
+  const focus = {
+    abilities: [
+      { id: "intimidating-presence", tier: 1, prerequisites: [], repeatable: false },
+      { id: "stone-body", tier: 1, prerequisites: [], repeatable: false },
+      { id: "stone-bash", tier: 2, prerequisites: ["intimidating-presence", "stone-body"], repeatable: false },
+      { id: "golem-grip", tier: 2, prerequisites: ["stone-body"], repeatable: false }
+    ]
+  };
+
+  const eligible = CypherActor.getEligibleFocusAbilities(focus, ["intimidating-presence"], 2);
+  assert.deepEqual(eligible.map(ability => ability.id), ["stone-body", "stone-bash"]);
+  assert.equal(CypherActor.isFocusAbilityEligible(focus, ["intimidating-presence"], "golem-grip", 2), false);
+  assert.equal(CypherActor.isFocusAbilityEligible(focus, ["stone-body"], "stone-bash", 2), true);
+  assert.equal(CypherActor.isFocusAbilityEligible(focus, ["intimidating-presence"], "stone-bash", 1), false);
+});
+
 test("reduceWoundSeverity lowers wounds by one tier", () => {
   const reduce = CypherActor.prototype._reduceWoundSeverity;
 
@@ -133,4 +150,110 @@ test("applyType applies pool, Edge, wound, and equipment benefits once", async (
   });
 
   assert.equal(await CypherActor.prototype.applyType.call(actor, typeItem), false);
+});
+
+test("applyFocus records two tier-1 selections and creates their ability items", async () => {
+  globalThis.game = { i18n: { localize: value => value, format: value => value } };
+  globalThis.ChatMessage = { getSpeaker: () => ({}), create: async () => {} };
+  const actor = {
+    type: "pc",
+    system: { tier: 1, focus: "" },
+    flags: {},
+    items: [],
+    getFlag(scope, key) { return this.flags[scope]?.[key]; },
+    async update(updates) {
+      for (const [path, value] of Object.entries(updates)) {
+        const segments = path.split(".");
+        let target = this;
+        for (const segment of segments.slice(0, -1)) target = target[segment] ??= {};
+        target[segments.at(-1)] = value;
+      }
+    },
+    async createEmbeddedDocuments(collection, documents) {
+      assert.equal(collection, "Item");
+      this.items.push(...documents);
+      return documents;
+    }
+  };
+  const focus = {
+    id: "abides-in-stone",
+    type: "focus",
+    name: "Abides in Stone",
+    system: {
+      abilities: [
+        { id: "intimidating-presence", name: "Intimidating Presence", tier: 1, prerequisites: [], repeatable: false, enabler: true, cost: { stat: "none", amount: 0 }, description: "" },
+        { id: "stone-body", name: "Stone Body", tier: 1, prerequisites: [], repeatable: false, enabler: true, cost: { stat: "none", amount: 0 }, description: "" },
+        { id: "stone-bash", name: "Stone Bash", tier: 2, prerequisites: ["intimidating-presence", "stone-body"], repeatable: false, enabler: true, cost: { stat: "none", amount: 0 }, description: "" }
+      ]
+    }
+  };
+
+  assert.equal(await CypherActor.prototype.applyFocus.call(actor, focus, ["intimidating-presence", "stone-body"]), true);
+  assert.equal(actor.system.focus, "Abides in Stone");
+  assert.deepEqual(actor.flags.cypher.focusAbilityIds, ["intimidating-presence", "stone-body"]);
+  assert.deepEqual(actor.items.map(item => item.system.focusAbilityId), ["intimidating-presence", "stone-body"]);
+});
+
+test("advancing a tier records a pending Focus selection when an ability becomes eligible", async () => {
+  globalThis.game = { i18n: { localize: value => value, format: value => value } };
+  globalThis.ChatMessage = { getSpeaker: () => ({}), create: async () => {} };
+  const actor = {
+    system: { tier: 1 },
+    flags: {
+      cypher: {
+        appliedFocusGraph: {
+          abilities: [
+            { id: "stone-body", tier: 1, prerequisites: [], repeatable: false },
+            { id: "golem-grip", tier: 2, prerequisites: ["stone-body"], repeatable: false }
+          ]
+        },
+        focusAbilityIds: ["stone-body"]
+      }
+    },
+    getFlag(scope, key) { return this.flags[scope]?.[key]; },
+    async update(updates) {
+      this.lastUpdate = updates;
+      this.system.tier = updates["system.tier"];
+    }
+  };
+
+  await CypherActor.prototype._advanceTier.call(actor);
+  assert.equal(actor.lastUpdate["system.tier"], 2);
+  assert.equal(actor.lastUpdate["flags.cypher.focusAbilityPendingTier"], 2);
+});
+
+test("selectFocusAbility stores and embeds the selected pending Focus ability", async () => {
+  const actor = {
+    type: "pc",
+    system: { tier: 2, focus: "Abides in Stone" },
+    flags: {
+      cypher: {
+        focusAbilityPendingTier: 2,
+        focusAbilityIds: ["stone-body"],
+        appliedFocusGraph: {
+          abilities: [
+            { id: "stone-body", name: "Stone Body", tier: 1, prerequisites: [], repeatable: false, enabler: true, cost: { stat: "none", amount: 0 }, description: "" },
+            { id: "golem-grip", name: "Golem Grip", tier: 2, prerequisites: ["stone-body"], repeatable: false, enabler: false, cost: { stat: "might", amount: 3 }, description: "" }
+          ]
+        }
+      }
+    },
+    getFlag(scope, key) { return this.flags[scope]?.[key]; },
+    async update(updates) {
+      this.lastUpdate = updates;
+      Object.assign(this.flags.cypher, {
+        focusAbilityIds: updates["flags.cypher.focusAbilityIds"],
+        focusAbilityPendingTier: updates["flags.cypher.focusAbilityPendingTier"]
+      });
+    },
+    async createEmbeddedDocuments(collection, documents) {
+      assert.equal(collection, "Item");
+      this.created = documents;
+    }
+  };
+
+  assert.equal(await CypherActor.prototype.selectFocusAbility.call(actor, "golem-grip"), true);
+  assert.deepEqual(actor.lastUpdate["flags.cypher.focusAbilityIds"], ["stone-body", "golem-grip"]);
+  assert.equal(actor.lastUpdate["flags.cypher.focusAbilityPendingTier"], null);
+  assert.equal(actor.created[0].system.focusAbilityId, "golem-grip");
 });

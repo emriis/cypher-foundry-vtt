@@ -54,10 +54,7 @@
         "description": "Choisis une créature que tu peux voir pour en faire ta **proie**. Tu obtiens +1 Atout pour toutes les tâches impliquant le suivi, la compréhension, l’interaction, l’attaque ou la défense contre elle. Tes attaques contre ta proie infligent +1 dégât. Cela inclut les tâches liées à la chasse si approprié (dépouiller, préparer, conserver la viande…). Tu ne peux avoir qu’une seule proie à la fois. Au rang 3, tu peux avoir deux proies simultanément. Action"
       }
     ],
-    "statOptions": [
-      "speed",
-      "intellect"
-    ],
+    "statOptions": ["speed", "intellect"],
     "description": "<p>Un Type de Dungeon Fantasy centré sur l'archétype rôdeur, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Dungeon Fantasy. Réserves principales : Célérité, Intellect.</em></p>"
   },
   "folder": "N6LoBZte2sRtJhu7",

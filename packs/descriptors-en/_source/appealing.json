@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "statAmount": 2,
-    "skillOptions": [
-      "Charm",
-      "Recognizing Motive",
-      "",
-      ""
-    ],
+    "skillOptions": ["Charm", "Recognizing Motive", "", ""],
     "description": "<p>You have an easy, likeable charisma that puts strangers at ease and draws allies to your side.</p><p><em>You gain +2 to your Intellect Pool, and training in Charm or Recognizing Motive.</em></p>"
   },
   "folder": null,

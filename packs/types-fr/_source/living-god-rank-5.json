@@ -74,10 +74,7 @@
         "description": "Choisis une **Réserve** : Puissance, Célérité ou Intellect. Pour les tâches utilisant cette Réserve, ajoute ton **rang** au nombre de niveaux d’Effort que tu peux appliquer. De plus, tu peux te surmener : subir une blessure modérée pour obtenir deux niveaux d’Effort gratuits pour une tâche de cette Réserve (sans dépasser la limite d’Effort maximale pour cette Réserve). À chaque récupération, ajoute ton rang en points supplémentaires dans cette même Réserve. # Aptitude d’origine de Superhéros"
       }
     ],
-    "statOptions": [
-      "might",
-      "intellect"
-    ],
+    "statOptions": ["might", "intellect"],
     "description": "<p>Un Type de Super-héros centré sur l'archétype dieu vivant, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Super-héros. Sous-genre : Super-héros. Réserves principales : Puissance, Intellect.</em></p>"
   },
   "folder": "rgUrIo08MxTkt23F",

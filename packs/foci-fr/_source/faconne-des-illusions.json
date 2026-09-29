@@ -1,0 +1,158 @@
+{
+  "_id": "FaconIllu2026FRX",
+  "_key": "!items!FaconIllu2026FRX",
+  "name": "Façonne des illusions",
+  "type": "focus",
+  "img": "icons/magic/control/hypnosis-mesmerism-eye.webp",
+  "system": {
+    "description": "<p>Un Focus pour un personnage qui façonne des images de lumière convaincantes.</p>",
+    "abilities": [
+      {
+        "id": "hedge-magic",
+        "name": "Magie mineure",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "description": "Accomplis un petit tour de magie inoffensif."
+      },
+      {
+        "id": "minor-illusion",
+        "name": "Petite illusion",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "description": "Crée une petite illusion mobile ou un motif visuel déroutant."
+      },
+      {
+        "id": "sense-magic",
+        "name": "Percevoir la magie",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "description": "Perçois la présence de magie à proximité."
+      },
+      {
+        "id": "illusory-disguise",
+        "name": "Déguisement illusoire",
+        "tier": 2,
+        "prerequisites": ["hedge-magic", "minor-illusion"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Donne une apparence illusoire durable à une créature."
+      },
+      {
+        "id": "reveal-illusion",
+        "name": "Révéler l'illusion",
+        "tier": 2,
+        "prerequisites": ["minor-illusion", "sense-magic"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Améliore ta détection des illusions et des cibles invisibles."
+      },
+      {
+        "id": "project-illusions",
+        "name": "Projeter les illusions",
+        "tier": 3,
+        "prerequisites": [
+          "illusory-disguise",
+          "reveal-illusion",
+          "major-illusion"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Augmente la portée de tes illusions à portée immédiate."
+      },
+      {
+        "id": "major-illusion",
+        "name": "Illusion majeure",
+        "tier": 3,
+        "prerequisites": [
+          "illusory-disguise",
+          "reveal-illusion",
+          "project-illusions"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "description": "Crée une scène illusoire complexe et autonome."
+      },
+      {
+        "id": "illusory-cocoon",
+        "name": "Cocon illusoire",
+        "tier": 4,
+        "prerequisites": ["project-illusions", "major-illusion"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "description": "Emprisonne une cible dans une illusion sensorielle totale."
+      },
+      {
+        "id": "illusory-duplicates",
+        "name": "Doubles illusoires",
+        "tier": 4,
+        "prerequisites": ["project-illusions", "major-illusion"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "description": "Crée quatre doubles illusoires indépendants."
+      },
+      {
+        "id": "invisibility",
+        "name": "Invisibilité",
+        "tier": 5,
+        "prerequisites": ["illusory-cocoon", "illusory-duplicates"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "description": "Recouvre une créature d'une illusion de rien."
+      },
+      {
+        "id": "terrifying-image",
+        "name": "Image terrifiante",
+        "tier": 5,
+        "prerequisites": ["illusory-cocoon", "illusory-duplicates"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 6, "options": [] },
+        "description": "Utilise les peurs ennemies pour faire fuir plusieurs créatures."
+      },
+      {
+        "id": "grand-illusion",
+        "name": "Illusion grandiose",
+        "tier": 6,
+        "prerequisites": ["invisibility", "terrifying-image"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 8, "options": [] },
+        "description": "Crée une illusion vaste, complexe et réactive."
+      },
+      {
+        "id": "permanent-illusion",
+        "name": "Illusion permanente",
+        "tier": 6,
+        "prerequisites": ["invisibility", "terrifying-image"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "intellect", "amount": 9, "options": [] },
+        "description": "Rends permanente une petite illusion existante."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

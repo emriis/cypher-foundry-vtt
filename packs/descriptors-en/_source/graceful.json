@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "speed"
-    ],
+    "statOptions": ["speed"],
     "statAmount": 2,
-    "skillOptions": [
-      "Gymnastics",
-      "Initiative",
-      "",
-      ""
-    ],
+    "skillOptions": ["Gymnastics", "Initiative", "", ""],
     "description": "<p>You move with a fluid, deliberate elegance, whether dancing, fighting, or simply crossing a room.</p><p><em>You gain +2 to your Speed Pool, and training in Gymnastics or Initiative.</em></p>"
   },
   "folder": null,

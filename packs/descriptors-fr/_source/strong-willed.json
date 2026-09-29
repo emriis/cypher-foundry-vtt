@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "statAmount": 2,
-    "skillOptions": [
-      "Persuasion",
-      "",
-      "",
-      ""
-    ],
+    "skillOptions": ["Persuasion", "", "", ""],
     "description": "<p>Tu es déterminé·e, volontaire et indépendant·e. Personne ne peut te convaincre de quoi que ce soit si tu n'en as pas envie.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Persuasion.</em></p>"
   },
   "folder": null,

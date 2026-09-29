@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "might"
-    ],
+    "statOptions": ["might"],
     "statAmount": 2,
-    "skillOptions": [
-      "Athletics",
-      "Intimidation",
-      "",
-      ""
-    ],
+    "skillOptions": ["Athletics", "Intimidation", "", ""],
     "description": "<p>Physically powerful and well aware of it, you put your strength to good use in nearly everything you do.</p><p><em>You gain +2 to your Might Pool, and training in Athletics or Intimidation.</em></p>"
   },
   "folder": null,

@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "speed"
-    ],
+    "statOptions": ["speed"],
     "statAmount": 2,
-    "skillOptions": [
-      "Furtivité",
-      "Vol à la tire",
-      "Crochetage",
-      ""
-    ],
+    "skillOptions": ["Furtivité", "Vol à la tire", "Crochetage", ""],
     "description": "<p>Tu es furtif·ve, insaisissable et rapide. Tu sais utiliser les ombres et les abris pour rester invisible et inaudible.</p><p><em>Tu gagnes +2 à ta Réserve de Célérité, et un entrainement en Furtivité, Vol à la tire ou Crochetage.</em></p>"
   },
   "folder": null,

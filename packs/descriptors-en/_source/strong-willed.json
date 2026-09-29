@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "statAmount": 2,
-    "skillOptions": [
-      "Charm",
-      "Intimidation",
-      "",
-      ""
-    ],
+    "skillOptions": ["Charm", "Intimidation", "", ""],
     "description": "<p>No one talks you into anything you don't want to do — your resolve is as unshakable as your style.</p><p><em>You gain +2 to your Intellect Pool, and training in Charm or Intimidation.</em></p>"
   },
   "folder": null,

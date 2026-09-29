@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "speed"
-    ],
+    "statOptions": ["speed"],
     "statAmount": 2,
-    "skillOptions": [
-      "Gymnastique",
-      "",
-      "",
-      ""
-    ],
+    "skillOptions": ["Gymnastique", "", "", ""],
     "description": "<p>Tu as un sens de l'équilibre parfait. Tes mouvements sont empreints de grâce et d'élégance.</p><p><em>Tu gagnes +2 à ta Réserve de Célérité, et un entrainement en Gymnastique.</em></p>"
   },
   "folder": null,

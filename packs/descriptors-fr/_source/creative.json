@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "statAmount": 2,
-    "skillOptions": [
-      "Représentation",
-      "Édition",
-      "",
-      ""
-    ],
+    "skillOptions": ["Représentation", "Édition", "", ""],
     "description": "<p>Tu es créatif·ve : tu écris, composes, sculptes, conçois, dessines ou inventes des récits qui captivent les autres.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Représentation ou Édition.</em></p>"
   },
   "folder": null,

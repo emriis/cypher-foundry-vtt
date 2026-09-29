@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "statAmount": 2,
-    "skillOptions": [
-      "Persuasion",
-      "",
-      "",
-      ""
-    ],
+    "skillOptions": ["Persuasion", "", "", ""],
     "description": "<p>Tu restes calme et posé·e face au stress et à l'adversité. Ta sérénité rassure ton entourage.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Persuasion.</em></p>"
   },
   "folder": null,

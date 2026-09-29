@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "might"
-    ],
+    "statOptions": ["might"],
     "statAmount": 2,
-    "skillOptions": [
-      "Animal Care",
-      "Outdoor Survival",
-      "",
-      ""
-    ],
+    "skillOptions": ["Animal Care", "Outdoor Survival", "", ""],
     "description": "<p>Years of living close to the land have left you weathered, capable, and at home in the wild.</p><p><em>You gain +2 to your Might Pool, and training in Animal Care or Outdoor Survival.</em></p>"
   },
   "folder": null,

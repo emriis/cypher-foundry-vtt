@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "statAmount": 2,
-    "skillOptions": [
-      "Gathering Information",
-      "Recognizing Motive",
-      "",
-      ""
-    ],
+    "skillOptions": ["Gathering Information", "Recognizing Motive", "", ""],
     "description": "<p>You read people easily, picking up on moods and motives that others miss entirely.</p><p><em>You gain +2 to your Intellect Pool, and training in Gathering Information or Recognizing Motive.</em></p>"
   },
   "folder": null,

@@ -1,0 +1,184 @@
+{
+  "_id": "Bu1ld5All13s2026",
+  "_key": "!items!Bu1ld5All13s2026",
+  "name": "Builds Allies",
+  "type": "focus",
+  "img": "icons/commodities/tech/ai-core.webp",
+  "system": {
+    "description": "<p>A Focus for a creator of helpful artificial allies.</p>",
+    "abilities": [
+      {
+        "id": "identify-machine",
+        "name": "Identify Machine",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "description": "Assess a nearby machine's purpose, level, and condition."
+      },
+      {
+        "id": "automaton-assistant",
+        "name": "Automaton Assistant",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "You have a level 2 automaton follower."
+      },
+      {
+        "id": "efficient-builder",
+        "name": "Efficient Builder",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Gain an extra resource point for building or repairs."
+      },
+      {
+        "id": "automaton-armor-upgrade",
+        "name": "Automaton Armor Upgrade",
+        "tier": 2,
+        "prerequisites": ["automaton-assistant"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "description": "An automaton can become freely usable light armor."
+      },
+      {
+        "id": "automaton-cypher-upgrade",
+        "name": "Automaton Cypher Upgrade",
+        "tier": 2,
+        "prerequisites": ["automaton-assistant"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "description": "An automaton temporarily increases your cypher limit."
+      },
+      {
+        "id": "charm-machine",
+        "name": "Charm Machine",
+        "tier": 2,
+        "prerequisites": ["automaton-assistant"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Convince a nearby non-intelligent machine to avoid harming you."
+      },
+      {
+        "id": "expert-automaton",
+        "name": "Expert Automaton",
+        "tier": 3,
+        "prerequisites": [
+          "automaton-armor-upgrade",
+          "automaton-cypher-upgrade",
+          "quick-control"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Build or improve an automaton follower."
+      },
+      {
+        "id": "quick-control",
+        "name": "Quick Control",
+        "tier": 3,
+        "prerequisites": [
+          "automaton-cypher-upgrade",
+          "charm-machine",
+          "expert-automaton"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "description": "Compel a machine to take one action."
+      },
+      {
+        "id": "automaton-flight-upgrade",
+        "name": "Automaton Flight Upgrade",
+        "tier": 4,
+        "prerequisites": ["expert-automaton", "quick-control"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Give an automaton sustained flight."
+      },
+      {
+        "id": "automaton-turret-upgrade",
+        "name": "Automaton Turret Upgrade",
+        "tier": 4,
+        "prerequisites": ["expert-automaton", "quick-control"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Reconfigure an automaton as an energy turret."
+      },
+      {
+        "id": "automaton-fleet",
+        "name": "Automaton Fleet",
+        "tier": 5,
+        "prerequisites": [
+          "automaton-flight-upgrade",
+          "automaton-turret-upgrade",
+          "automaton-force-field-upgrade"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "You have four level 2 automaton followers."
+      },
+      {
+        "id": "automaton-force-field-upgrade",
+        "name": "Automaton Force Field Upgrade",
+        "tier": 5,
+        "prerequisites": [
+          "automaton-flight-upgrade",
+          "automaton-turret-upgrade",
+          "automaton-fleet"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "An automaton projects a protective force field."
+      },
+      {
+        "id": "automaton-evolution",
+        "name": "Automaton Evolution",
+        "tier": 6,
+        "prerequisites": [
+          "automaton-fleet",
+          "automaton-force-field-upgrade",
+          "automaton-heavy-armor-upgrade"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Increase one automaton's level."
+      },
+      {
+        "id": "automaton-heavy-armor-upgrade",
+        "name": "Automaton Heavy Armor Upgrade",
+        "tier": 6,
+        "prerequisites": [
+          "automaton-fleet",
+          "automaton-force-field-upgrade",
+          "automaton-evolution"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "intellect", "amount": 6, "options": [] },
+        "description": "An automaton can become freely usable heavy armor."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

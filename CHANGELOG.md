@@ -9,6 +9,12 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ## [Unreleased]
 
+### Added
+
+- Bilingual Focus compendiums, beginning with the complete `Abides in Stone` / `Se fond dans la
+  pierre` CRD flowchart. Focus abilities retain their explicit prerequisite links, require two
+  tier-1 choices when applied, and prompt for a valid linked ability after each tier advance.
+
 ### Fixed
 
 - Type compendium generation now keeps ability blocks bounded to their authoritative CRD Type

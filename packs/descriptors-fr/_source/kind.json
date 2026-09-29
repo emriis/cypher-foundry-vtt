@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "statAmount": 2,
-    "skillOptions": [
-      "Persuasion",
-      "",
-      "",
-      ""
-    ],
+    "skillOptions": ["Persuasion", "", "", ""],
     "description": "<p>Tu te mets facilement à la place des autres. Tu appliques le vieux proverbe : on attrape plus facilement les mouches avec du miel.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Persuasion.</em></p>"
   },
   "folder": null,

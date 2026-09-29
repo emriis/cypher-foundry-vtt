@@ -19,3 +19,4 @@ export { default as CypherAttackData } from "./item-attack.mjs";
 export { default as CypherShieldData } from "./item-shield.mjs";
 export { default as CypherDescriptorData } from "./item-descriptor.mjs";
 export { default as CypherTypeData } from "./item-type.mjs";
+export { default as CypherFocusData } from "./item-focus.mjs";

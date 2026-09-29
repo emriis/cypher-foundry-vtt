@@ -42,6 +42,16 @@
     "Descriptor2": "Second descripteur",
     "Focus": "Focus",
     "Focus2": "Second focus",
+    "FocusSelection": {
+      "AlreadyApplied": "Un Focus a déjà été appliqué à ce personnage.",
+      "ApplyTitle": "Appliquer le Focus : {name}",
+      "ApplyPrompt": "Applique {name} et choisis ses deux aptitudes initiales de rang 1.",
+      "ChooseTwo": "Choisis deux aptitudes de rang 1.",
+      "ChooseExactlyTwo": "Choisis exactement deux aptitudes de Focus de rang 1.",
+      "ChooseAbility": "Choisir une aptitude de Focus",
+      "ChooseAbilityTitle": "Choisir une aptitude de Focus",
+      "ChooseAbilityPrompt": "Choisis l'aptitude de Focus gagnée au rang {tier}."
+    },
     "Profession": "Profession",
     "Species": "Espèce",
     "SpeciesPlaceholder": "ex. Humain, Elfe, Cyborg... (optionnel)",

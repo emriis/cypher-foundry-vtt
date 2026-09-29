@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "statAmount": 2,
-    "skillOptions": [
-      "History",
-      "Philosophy",
-      "Psychology",
-      ""
-    ],
+    "skillOptions": ["History", "Philosophy", "Psychology", ""],
     "description": "<p>You have spent far more time with books and study than with physical pursuits, and it shows in how much you know.</p><p><em>You gain +2 to your Intellect Pool, and training in History, Philosophy or Psychology.</em></p>"
   },
   "folder": null,

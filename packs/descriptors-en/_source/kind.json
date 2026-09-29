@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "statAmount": 2,
-    "skillOptions": [
-      "Charm",
-      "Healing",
-      "",
-      ""
-    ],
+    "skillOptions": ["Charm", "Healing", "", ""],
     "description": "<p>You see things from other people's point of view easily, and treat them with patience because of it.</p><p><em>You gain +2 to your Intellect Pool, and training in Charm or Healing.</em></p>"
   },
   "folder": null,

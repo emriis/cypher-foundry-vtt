@@ -1,0 +1,168 @@
+{
+  "_id": "Chang3Shap32026X",
+  "_key": "!items!Chang3Shap32026X",
+  "name": "Changes Shape",
+  "type": "focus",
+  "img": "icons/magic/nature/wolf-paw-glow-brown.webp",
+  "system": {
+    "description": "<p>A Focus for a character who takes on animal forms and their natural gifts.</p>",
+    "abilities": [
+      {
+        "id": "keen-eye",
+        "name": "Keen Eye",
+        "tier": 1,
+        "prerequisites": ["animal-shape"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "See farther and ignore common visibility penalties."
+      },
+      {
+        "id": "animal-shape",
+        "name": "Animal Shape",
+        "tier": 1,
+        "prerequisites": ["keen-eye", "scent-transformation"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "description": "Assume a small or human-sized animal form."
+      },
+      {
+        "id": "scent-transformation",
+        "name": "Scent Transformation",
+        "tier": 1,
+        "prerequisites": ["animal-shape"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "description": "Alter your scent to resemble a chosen animal."
+      },
+      {
+        "id": "beast-communication",
+        "name": "Beast Communication",
+        "tier": 2,
+        "prerequisites": ["animal-shape"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Exchange simple concepts with an animal."
+      },
+      {
+        "id": "soothe-the-savage",
+        "name": "Soothe the Savage",
+        "tier": 2,
+        "prerequisites": ["animal-shape"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Calm a nearby nonhuman beast."
+      },
+      {
+        "id": "bigger-animal-shape",
+        "name": "Bigger Animal Shape",
+        "tier": 3,
+        "prerequisites": ["beast-communication", "soothe-the-savage"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Your animal form can grow to twice your size."
+      },
+      {
+        "id": "shapechanger-healing",
+        "name": "Shapechanger Healing",
+        "tier": 3,
+        "prerequisites": ["beast-communication", "soothe-the-savage"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Changing shape heals one wound after a long recovery."
+      },
+      {
+        "id": "movement-adaptation",
+        "name": "Movement Adaptation",
+        "tier": 4,
+        "prerequisites": ["bigger-animal-shape", "animal-scrying"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "might", "amount": 4, "options": [] },
+        "description": "Adapt your animal form for flight or aquatic movement."
+      },
+      {
+        "id": "animal-scrying",
+        "name": "Animal Scrying",
+        "tier": 4,
+        "prerequisites": [
+          "bigger-animal-shape",
+          "shapechanger-healing",
+          "movement-adaptation"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "description": "Perceive through a friendly animal's senses."
+      },
+      {
+        "id": "enhanced-animal-shape",
+        "name": "Enhanced Animal Shape",
+        "tier": 5,
+        "prerequisites": ["movement-adaptation", "not-dead-yet"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Your animal form gains Pool and physical-wound benefits."
+      },
+      {
+        "id": "not-dead-yet",
+        "name": "Not Dead Yet",
+        "tier": 5,
+        "prerequisites": [
+          "movement-adaptation",
+          "animal-scrying",
+          "enhanced-animal-shape"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Survive a death once before your next long recovery."
+      },
+      {
+        "id": "lend-animal-shape",
+        "name": "Lend Animal Shape",
+        "tier": 6,
+        "prerequisites": ["enhanced-animal-shape"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 6, "options": [] },
+        "description": "Share your animal transformation with a willing nearby creature."
+      },
+      {
+        "id": "lethal-capability",
+        "name": "Lethal Capability",
+        "tier": 6,
+        "prerequisites": ["enhanced-animal-shape", "not-dead-yet"],
+        "repeatable": true,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Gain major damage with a chosen attack type."
+      },
+      {
+        "id": "hard-to-see",
+        "name": "Hard to See",
+        "tier": 6,
+        "prerequisites": ["enhanced-animal-shape", "not-dead-yet"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Rapid movement greatly eases Dodge and stealth."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

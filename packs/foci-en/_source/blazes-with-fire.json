@@ -1,0 +1,170 @@
+{
+  "_id": "Blaz3W1thF1re23X",
+  "_key": "!items!Blaz3W1thF1re23X",
+  "name": "Blazes With Fire",
+  "type": "focus",
+  "img": "icons/magic/fire/projectile-fireball-orange.webp",
+  "system": {
+    "description": "<p>A Focus for a character who surrounds themself with protective, destructive flame.</p>",
+    "abilities": [
+      {
+        "id": "warm-air",
+        "name": "Warm Air",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Your active Shroud of Flame cushions short falls."
+      },
+      {
+        "id": "shroud-of-flame",
+        "name": "Shroud of Flame",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "description": "Surround yourself with fire that protects against heat and burns close attackers."
+      },
+      {
+        "id": "gentle-warmth",
+        "name": "Gentle Warmth",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "description": "Protect nearby creatures or objects from environmental cold."
+      },
+      {
+        "id": "hurl-flame",
+        "name": "Hurl Flame",
+        "tier": 2,
+        "prerequisites": ["shroud-of-flame"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Throw fire from your active shroud at a nearby target."
+      },
+      {
+        "id": "flameblade",
+        "name": "Flameblade",
+        "tier": 2,
+        "prerequisites": ["shroud-of-flame"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Channel shroud fire through a held weapon or your unarmed attacks."
+      },
+      {
+        "id": "spreading-fire",
+        "name": "Spreading Fire",
+        "tier": 2,
+        "prerequisites": ["shroud-of-flame"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "After defeating a foe with fire, make another fire attack against a nearby enemy."
+      },
+      {
+        "id": "wings-of-fire",
+        "name": "Wings of Fire",
+        "tier": 3,
+        "prerequisites": ["hurl-flame", "flameblade", "desperate-flame"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "description": "Form fiery wings for sustained flight while your shroud is active."
+      },
+      {
+        "id": "desperate-flame",
+        "name": "Desperate Flame",
+        "tier": 3,
+        "prerequisites": [
+          "hurl-flame",
+          "flameblade",
+          "spreading-fire",
+          "wings-of-fire",
+          "fiery-hand-of-doom"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Serious wounds fuel free Effort for a fire attack each round."
+      },
+      {
+        "id": "fiery-hand-of-doom",
+        "name": "Fiery Hand of Doom",
+        "tier": 3,
+        "prerequisites": ["flameblade", "spreading-fire", "desperate-flame"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "description": "Create and command a mobile hand of living flame."
+      },
+      {
+        "id": "enhanced-flames",
+        "name": "Enhanced Flames",
+        "tier": 4,
+        "prerequisites": [
+          "wings-of-fire",
+          "desperate-flame",
+          "fiery-hand-of-doom"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Your Focus fire attacks inflict additional damage."
+      },
+      {
+        "id": "plasma-field",
+        "name": "Plasma Field",
+        "tier": 5,
+        "prerequisites": ["enhanced-flames"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "intellect", "amount": 5, "options": [] },
+        "description": "For a round, your shroud incinerates incoming ranged attacks you perceive."
+      },
+      {
+        "id": "fire-tendrils",
+        "name": "Fire Tendrils",
+        "tier": 5,
+        "prerequisites": ["enhanced-flames"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 5, "options": [] },
+        "description": "Create three fiery tendrils that can attack while your shroud is active."
+      },
+      {
+        "id": "inferno-trail",
+        "name": "Inferno Trail",
+        "tier": 6,
+        "prerequisites": ["plasma-field"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 6, "options": [] },
+        "description": "Leave a wall-like trail of fire that harms creatures crossing it."
+      },
+      {
+        "id": "fire-servant",
+        "name": "Fire Servant",
+        "tier": 6,
+        "prerequisites": ["fire-tendrils"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 6, "options": [] },
+        "description": "Create and direct a temporary allied fire automaton."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

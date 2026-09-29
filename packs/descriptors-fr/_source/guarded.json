@@ -5,16 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": [
-      "intellect"
-    ],
+    "statOptions": ["intellect"],
     "statAmount": 2,
-    "skillOptions": [
-      "Tromperie",
-      "Discernement des motivations",
-      "",
-      ""
-    ],
+    "skillOptions": ["Tromperie", "Discernement des motivations", "", ""],
     "description": "<p>Tu dissimules ta véritable nature et rechignes à laisser quiconque entrevoir qui tu es vraiment.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Tromperie ou Discernement des motivations.</em></p>"
   },
   "folder": null,
