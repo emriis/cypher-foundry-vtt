@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/svg/wind.svg",
   "system": {
-    "description": "<p>Un Focus pour se déplacer à une vitesse extraordinaire.</p>",
+    "description": "<p>You are an incredibly fast runner, whether moving toward a foe or away from danger.</p>",
     "abilities": [
       {
         "id": "recover-faster",
@@ -19,7 +19,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Gagne une action supplémentaire réservée au déplacement lorsque tu te reprends."
+        "description": "Quand tu utilises une action pour te reprendre, tu gagnes une action supplémentaire durant ce tour, utilisable uniquement pour te déplacer."
       },
       {
         "id": "fleet-of-foot",
@@ -33,7 +33,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Se déplace d’une courte portée comme action supplémentaire, ou d’une longue portée avec de l’Effort."
+        "description": "Ce tour‑ci, tu peux te déplacer jusqu’à courte portée comme action supplémentaire. Effort : Ce tour‑ci, tu peux te déplacer jusqu’à longue portée comme action supplémentaire au lieu de courte portée."
       },
       {
         "id": "get-out",
@@ -47,7 +47,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Se diriger vers la sécurité facilite une tâche tentée au round suivant."
+        "description": "If you move at least an immediate distance away from the most obvious threat or toward what promises to offer safety, one task you attempt next round is eased. Enabler."
       },
       {
         "id": "obstacle-running",
@@ -63,7 +63,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "Se déplace normalement sur les terrains difficiles et facilite les tâches liées aux obstacles."
+        "description": "Tout déplacement que tu fais ce round ignore la plupart des terrains difficiles qui ralentiraient normalement ton mouvement : gravats, clôtures, tables, obstacles divers. Tu te déplaces à vitesse normale en glissant sur une rambarde, en courant brièvement sur un mur ou en prenant appui sur une créature. Si un obstacle nécessite normalement une tâche de Puissance ou de Célérité (corde, équilibre, saut…), la tâche est facilitée."
       },
       {
         "id": "escape",
@@ -80,7 +80,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Considère comme 9 un jet d’évasion inférieur à 9, avec un minimum augmenté par l’Effort."
+        "description": "When you roll to escape (such as slipping your restraints, squeezing through the bars, breaking the grip of a creature holding you, or pulling free from sucking quicksand) and your roll is less than a 9, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) Effort: Increase the minimum number rolled for this ability by 3. Action. At tier 3: The minimum number rolled for this ability increases to 12."
       },
       {
         "id": "incredible-running-speed",
@@ -96,7 +96,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Double les distances parcourues avec Pied léger et permet de courir jusqu’à 150 m à pleine vitesse."
+        "description": "Tu te déplaces beaucoup plus loin que la normale en un round. Quand tu utilises Pied léger, toutes les distances que tu parcours sont doublées. De plus, si tu réussis une tâche de course de difficulté 4 en utilisant une Dernière action pour courir à pleine vitesse, tu peux parcourir jusqu’à 150 m."
       },
       {
         "id": "speedy-threat",
@@ -113,7 +113,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Se déplacer d’au moins une portée immédiate accorde un atout à l’attaque de mêlée."
+        "description": "Tu tournoies et te déplaces si vite que tes attaques profitent de ton élan. Si tu te déplaces d’au moins portée immédiate pendant ton tour, ton attaque de mêlée ce tour‑ci gagne un atout."
       },
       {
         "id": "blink-of-an-eye",
@@ -129,7 +129,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Se déplace jusqu’à 300 m comme Dernière action."
+        "description": "Tu te déplaces jusqu’à 300 m."
       },
       {
         "id": "increasing-determination",
@@ -146,7 +146,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Une tâche physique hors combat échouée est facilitée lorsqu’elle est retentée une fois."
+        "description": "If you fail at a noncombat physical task (such as pushing open a door or climbing a cliff) and then retry the task, the task is eased. If you fail again, you gain no special benefits. Enabler."
       },
       {
         "id": "speed-for-mind",
@@ -162,7 +162,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Dépense de l’Intellect pour les tâches de Célérité, et de la Célérité pour celles d’Intellect."
+        "description": "Quand tu tentes une tâche de Célérité, tu peux dépenser des points de ta Réserve d’Intellect au lieu de ta Réserve de Célérité — et inversement. Utilise l’Avantage de la Réserve dont tu dépenses les points."
       },
       {
         "id": "hard-to-see",
@@ -179,7 +179,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Devient une traînée floue à grande vitesse et facilite Esquive et Discrétion en mouvement."
+        "description": "When you move, you are a blur. It is impossible to make out your identity as you pass by someone at speed. In addition, if you do nothing but move on your turn, your dodge and stealth tasks are eased by three steps until your next turn. Enabler."
       },
       {
         "id": "go-to-ground",
@@ -196,7 +196,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Se déplace d’une longue portée puis se cache avec un atout à la tâche de Discrétion."
+        "description": "Comme action, tu te déplaces jusqu’à longue portée, puis tu tentes de te cacher. Tu gagnes un atout à ta tâche de Discrétion pour te fondre dans l’environnement, disparaître ou échapper aux sens de toutes les personnes conscientes de ta présence."
       },
       {
         "id": "speed-surge",
@@ -213,7 +213,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Récupère 1d6 + 6 points de Célérité, après une récupération de dix heures."
+        "description": "Tu récupères immédiatement 1d6 + 6 points dans ta Réserve de Célérité. L’aptitude se renouvelle après une récupération de dix heures."
       },
       {
         "id": "up-to-speed",
@@ -229,7 +229,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Après trois actions de déplacement, accélère à une vitesse extraordinaire pendant dix minutes."
+        "description": "Si tu ne fais que te déplacer pendant trois actions consécutives, tu accélères énormément et peux atteindre environ 300 km/h (environ 100 m par round) pendant dix minutes (environ 50 km), après quoi tu dois t’arrêter et effectuer une récupération."
       }
     ]
   },
@@ -240,7 +240,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/skills/melee/unarmed-punch-fist.webp",
   "system": {
-    "description": "<p>Un Focus pour une personne qui transforme coups de poing, coups de pied et mouvements du corps en style de combat.</p>",
+    "description": "<p>You're a scrapper and love a good fight. Punches, kicks, and full-body movements are your weapons.</p>",
     "abilities": [
       {
         "id": "body-as-a-tool",
@@ -21,7 +21,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Ton corps est aussi un outil utile, ce qui t’accorde un atout aux tâches d’athlétisme et de gymnastique."
+        "description": "En plus de faire de ton corps une arme, tu sais l’utiliser comme un outil. Tu gagnes un atout pour toutes les tâches d’athlétisme et de gymnastique."
       },
       {
         "id": "no-need-for-weapons",
@@ -37,7 +37,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Tu es entraîné·e au combat à mains nues, et tes attaques à mains nues infligent 2 dégâts supplémentaires."
+        "description": "Tes attaques à mains nues (poings, pieds, coudes, genoux…) infligent +2 dégâts supplémentaires."
       },
       {
         "id": "resilience",
@@ -51,7 +51,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Tu peux subir une blessure modérée supplémentaire."
+        "description": "Tu peux encaisser une blessure modérée supplémentaire."
       },
       {
         "id": "advantage-to-disadvantage",
@@ -67,7 +67,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "Tu fais une attaque entravée contre un adversaire armé; si tu touches, tu infliges les dégâts, le désarmes et gagnes un atout en intimidation contre lui pour le combat."
+        "description": "Tu fais une attaque entravée, en multipliant les gestes rapides contre un adversaire armé. Si tu touches, tu infliges les dégâts et tu le désarmes. Tu choisis si l’arme tombe dans ta main ou au sol à 3,5 m. Pour le reste du combat, tu gagnes un atout à tes tâches d’intimidation contre cet adversaire."
       },
       {
         "id": "fearsome-reputation",
@@ -86,7 +86,7 @@
             "intellect"
           ]
         },
-        "description": "Tu te présentes aux adversaires qui t’entendent et te comprennent; les attaques d’Intellect réussies les effraient et facilitent tes tâches contre eux."
+        "description": "Tu t’annonces (par exemple en citant un exploit intimidant) à tous les adversaires à portée longue qui peuvent t’entendre et te comprendre. Fais un jet d’attaque d’Intellect séparé pour chaque adversaire. En cas de réussite, iel a peur de toi, facilitant toutes tes tâches contre ellui jusqu’à ta prochaine récupération de dix minutes ou plus."
       },
       {
         "id": "high-and-low",
@@ -102,7 +102,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Quand toi et un·e allié·e touchez la même cible avec des attaques de mêlée pendant un tour, ton attaque inflige 2 dégâts supplémentaires."
+        "description": "Toi et un·e allié·e jouez en duo contre une même cible pour plus d’efficacité. Choisis un·e allié·e que tu vois. Si tu touches un adversaire qu’iel a déjà touché au corps à corps ce tour, ton attaque inflige +2 dégâts supplémentaires."
       },
       {
         "id": "moving-like-water",
@@ -118,7 +118,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "Jusqu’à une récupération de dix minutes, tu peux tenter un Blocage entravé après avoir échoué à Esquiver une attaque."
+        "description": "Jusqu’à ta prochaine récupération de dix minutes ou plus, si tu rates une Esquive, tu peux quand même tenter un Blocage, mais celui‑ci est entravé."
       },
       {
         "id": "throw",
@@ -134,7 +134,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Quand une attaque à mains nues inflige des dégâts à une créature de ta taille ou plus petite, tu la projettes à 1d20 pieds; elle atterrit à terre."
+        "description": "When your unarmed attack damages a creature of your size or smaller, you throw that creature 1d20 feet away from you. The creature lands prone. Enabler."
       },
       {
         "id": "divert-attacks",
@@ -150,7 +150,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Jusqu’à une récupération de dix minutes, tu dévies, bloques ou esquives automatiquement les projectiles, mais tes autres actions sont entravées après une telle attaque."
+        "description": "Until you use a ten-minute or longer recovery, you automatically deflect, block, or dodge any ranged projectile attacks (no roll required). However, on your next turn after you're attacked with ranged projectiles, all your other actions are hindered. Action to initiate."
       },
       {
         "id": "knock-out",
@@ -166,7 +166,7 @@
           "amount": 5,
           "options": []
         },
-        "description": "Une attaque de mêlée entravée peut assommer une cible de niveau 3 ou moins au lieu de lui infliger des dégâts. L’Effort augmente le niveau maximal de 1."
+        "description": "Make a hindered melee attack against a foe of level 3 or lower. If the attack hits, instead of inflicting damage you knock them unconscious until you use a ten-minute or longer recovery (or someone uses an action to bring them back around). Effort: Increase the maximum level of the foe you can affect by 1. Action."
       },
       {
         "id": "stunning-attack",
@@ -182,7 +182,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Tu peux entraver une attaque à mains nues; si elle touche, la cible perd aussi son prochain tour."
+        "description": "Quand tu fais une attaque à mains nues, tu peux choisir d’entraver ton jet. Si tu touches, en plus des dégâts normaux, la cible perd son prochain tour."
       },
       {
         "id": "lethal-capability",
@@ -198,7 +198,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Choisis un type d’attaque précis; les attaques de ce type infligent 5 dégâts supplémentaires. Tu peux choisir cette aptitude plusieurs fois."
+        "description": "You've mastered how to kill with a particular attack. You inflict an additional 5 damage with attacks of one specific type, such as unarmed attacks, or some other specific attack you prefer. You can gain this ability more than once. Each time you do, choose a different specific attack."
       },
       {
         "id": "master-of-unarmed-fighting-style",
@@ -214,7 +214,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Tes attaques à mains nues infligent 3 dégâts supplémentaires et un Blocage de Puissance réussi contre une attaque à mains nues réduit sa sévérité de deux paliers."
+        "description": "Tes attaques à mains nues infligent +3 dégâts supplémentaires. Quand tu réussis une défense de Blocage de Puissance contre une attaque à mains nues, tu réduis sa sévérité de deux paliers au lieu d’un : - majeure → mineure, - modérée → aucune, - mineure → aucune."
       }
     ]
   },
@@ -225,7 +225,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document; créé sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

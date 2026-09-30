@@ -24,38 +24,53 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "built-to-hack",
         "name": "Built to Hack",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "intellect",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
-        "description": "When you roll to hack an unintelligent computer or machine and your roll is less than a 9, treat the roll as a 9. (This means you don’t get a GM intrusion if you roll a 1.) Hacking tasks—which you can initiate using your ability to wirelessly network or by directly connecting to the target machine—include breaking into secure databases, taking temporary control of remote turrets, unlocking electronically secured entrances, and so on. Effort: Increase the minimum number rolled for this ability by 3. At tier 3: The minimum number rolled for this ability increases to 12."
+        "description": "When you roll to hack an unintelligent computer or machine and your roll is less than a 9, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) Hacking tasks—which you can initiate using your ability to wirelessly network or by directly connecting to the target machine—include breaking into secure databases, taking temporary control of remote turrets, unlocking electronically secured entrances, and so on. Effort: Increase the minimum number rolled for this ability by 3. Enabler. At tier 3: The minimum number rolled for this ability increases to 12."
       },
       {
+        "id": "flex-skill",
         "name": "Flex Skill",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Choose one task (other than an attack or defense skill) on which you will concentrate. For the rest of the day, you’re trained in that task. You can’t use this ability with a skill in which you’re already trained to become specialized. This ability refreshes when you use a ten-hour recovery. Androids using Flex Skill usually accomplish the training by expanding data they already downloaded, compressed, and stored in their system, though in some cases accessing a specialized skill might require connecting to an external data hub."
+        "description": "Choose one task (other than an attack or defense skill) on which you will concentrate. For the rest of the day, you're trained in that task. You can't use this ability with a skill in which you're already trained to become specialized. This ability refreshes when you use a ten-hour recovery. Enabler. Androids using Flex Skill usually accomplish the training by expanding data they already downloaded, compressed, and stored in their system, though in some cases accessing a specialized skill might require connecting to an external data hub."
       },
       {
+        "id": "machine-not-flesh",
         "name": "Machine Not Flesh",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "You are a sophisticated, intelligent machine with a generally humanoid shape; work with your GM to determine specifics. This gives you the following benefits: You gain an additional +4 points to permanently distribute among your Pools. You gain an additional +1 Edge in one Pool of your choice. Your nonbiological body is immune to standard poisons, diseases, and the vacuum of space, and you do not need to eat, drink, or breathe (though you must still rest and take recoveries). If you can connect to an electrical conduit, charging station, or similar location that can provide you with power, you can take an extra one-action recovery each day. You ease any hacking tasks you attempt. Your machine nature also comes with some downsides. Instead of using healing, treatment of your wounds requires engineering. Accelerated healing methods developed for biological creatures (such as the Prepared Medic ability from the Medic type) don’t work on you at all. Repair tasks to successfully treat (remove) your minor, moderate, and major wounds are level 1, level 3, and level 5, respectively. If you cannot connect to a suitable power supply during your ten-hour recovery, you lose your normal one-action recovery and your bonus (connected to power) recovery until you do so. Some biologicals look down on androids. At the GM’s discretion, your positive interaction tasks with such individuals are hindered."
+        "description": "You are a sophisticated, intelligent machine with a generally humanoid shape; work with your GM to determine specifics. This gives you the following benefits: You gain an additional +4 points to permanently distribute among your Pools. You gain an additional +1 Edge in one Pool of your choice. Your nonbiological body is immune to standard poisons, diseases, and the vacuum of space, and you do not need to eat, drink, or breathe (though you must still rest and take recoveries). If you can connect to an electrical conduit, charging station, or similar location that can provide you with power, you can take an extra one-action recovery each day. You ease any hacking tasks you attempt. Your machine nature also comes with some downsides. Instead of using healing, treatment of your wounds requires engineering. Accelerated healing methods developed for biological creatures (such as the Prepared Medic ability from the Medic type) don't work on you at all. Repair tasks to successfully treat (remove) your minor, moderate, and major wounds are level 1, level 3, and level 5, respectively. If you cannot connect to a suitable power supply during your ten-hour recovery, you lose your normal one-action recovery and your bonus (connected to power) recovery until you do so. Some biologicals look down on androids. At the GM's discretion, your positive interaction tasks with such individuals are hindered."
       }
     ],
-    "statOptions": ["might", "intellect"],
-    "description": "<p>A Space Opera Type focused on android archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Science Fiction. Subgenre: Space Opera. Primary Pools: might, intellect.</em></p>"
+    "statOptions": [
+      "might",
+      "intellect"
+    ],
+    "description": "<p>You were manufactured, not born. Some might say that makes you superior to living people, especially those born without the benefit of strict genetic oversight. And even people who have used genetic engineering lack your ability to upgrade yourself as needed to deal with new situations, new jobs, and wherever your curiosity might lead. Your integument and frame are tougher than skin and bones, and you have a way with other machines that most living things never will. As adaptable as you are, you can take multiple different roles on your team over time, including serving as a frontline combatant. You're equally useful in other situations, especially when interfacing with nearby machines. But even that pales in comparison to your android capacity to dump old skills and take on new training in something important to an emerging situation or upcoming mission.</p>"
   },
   "folder": "AxljvbOd6vL9wkut",
   "sort": 0,
@@ -64,7 +79,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

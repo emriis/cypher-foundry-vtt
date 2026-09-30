@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/skills/melee/unarmed-punch-fist.webp",
   "system": {
-    "description": "<p>A Focus for a scrapper who turns punches, kicks, and full-body movement into a fighting style.</p>",
+    "description": "<p>You're a scrapper and love a good fight. Punches, kicks, and full-body movements are your weapons.</p>",
     "abilities": [
       {
         "id": "body-as-a-tool",
@@ -21,7 +21,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Your body is also a useful tool, granting an asset to athletics and gymnastics tasks."
+        "description": "In addition to making your body a weapon, you can use it as a tool. You gain an asset to athletics and gymnastics tasks."
       },
       {
         "id": "no-need-for-weapons",
@@ -37,7 +37,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "You are practiced in unarmed combat, and your unarmed attacks inflict 2 additional damage."
+        "description": "You inflict an additional 2 damage with unarmed attacks."
       },
       {
         "id": "resilience",
@@ -67,7 +67,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "Make a hindered flurry against an armed foe; on a hit, deal damage, disarm them, and gain an intimidation asset against them for the encounter."
+        "description": "You make a hindered attack featuring several quick moves against an armed foe. If you hit, you inflict damage and disarm them—choose whether you want to be holding their weapon or it is knocked to the ground 10 feet (3.5 m) away. For the rest of the combat encounter, you gain an asset on intimidation tasks against your foe. First action."
       },
       {
         "id": "fearsome-reputation",
@@ -86,7 +86,7 @@
             "intellect"
           ]
         },
-        "description": "Announce yourself to foes who can hear and understand you; successful Intellect attacks make them afraid and ease your tasks against them."
+        "description": "You announce yourself (perhaps mentioning one of your intimidating deeds) to all foes within long range who can hear and understand you. Make a separate Intellect attack roll for each foe. Success means they are afraid of you, easing your tasks against them until you use a ten-minute or longer recovery. Action."
       },
       {
         "id": "high-and-low",
@@ -102,7 +102,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "When you and an ally hit the same foe with melee attacks in one turn, your attack deals 2 additional damage."
+        "description": "You and an ally tag-team a foe for greater effectiveness. Choose one ally you can see. If you hit a foe that they've hit with a melee attack this turn, your attack inflicts an additional 2 damage. Enabler."
       },
       {
         "id": "moving-like-water",
@@ -118,7 +118,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "Until a ten-minute recovery, you can attempt a hindered block after failing to dodge an attack."
+        "description": "Until you use a ten-minute or longer recovery, if you fail to dodge an attack, you can still attempt to block it, but the block task is hindered. Enabler."
       },
       {
         "id": "throw",
@@ -134,7 +134,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "When an unarmed attack damages a creature your size or smaller, throw it 1d20 feet; it lands prone."
+        "description": "When your unarmed attack damages a creature of your size or smaller, you throw that creature 1d20 feet away from you. The creature lands prone. Enabler."
       },
       {
         "id": "divert-attacks",
@@ -150,7 +150,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Until a ten-minute recovery, automatically deflect, block, or dodge ranged projectile attacks, but your other actions are hindered after such an attack."
+        "description": "Until you use a ten-minute or longer recovery, you automatically deflect, block, or dodge any ranged projectile attacks (no roll required). However, on your next turn after you're attacked with ranged projectiles, all your other actions are hindered. Action to initiate."
       },
       {
         "id": "knock-out",
@@ -166,7 +166,7 @@
           "amount": 5,
           "options": []
         },
-        "description": "A hindered melee attack can knock a level 3 or lower foe unconscious instead of dealing damage. Effort raises the maximum level by 1."
+        "description": "Make a hindered melee attack against a foe of level 3 or lower. If the attack hits, instead of inflicting damage you knock them unconscious until you use a ten-minute or longer recovery (or someone uses an action to bring them back around). Effort: Increase the maximum level of the foe you can affect by 1. Action."
       },
       {
         "id": "stunning-attack",
@@ -182,7 +182,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Hinder an unarmed attack; on a hit, the foe also loses their next turn."
+        "description": "When making an unarmed attack, you can choose to have the attack roll be hindered; if you hit, in addition to the normal effect of the attack, the foe loses their next turn. Enabler."
       },
       {
         "id": "lethal-capability",
@@ -198,7 +198,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Choose one specific attack type; attacks of that type inflict 5 additional damage. You can choose this ability more than once."
+        "description": "You've mastered how to kill with a particular attack. You inflict an additional 5 damage with attacks of one specific type, such as unarmed attacks, or some other specific attack you prefer. You can gain this ability more than once. Each time you do, choose a different specific attack."
       },
       {
         "id": "master-of-unarmed-fighting-style",
@@ -214,7 +214,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Your unarmed attacks inflict 3 additional damage, and a successful Might block against an unarmed attack reduces its severity by two steps."
+        "description": "You inflict an additional 3 damage with unarmed attacks. When you succeed on a Might defense roll to block an unarmed attack against you, reduce its severity by two steps instead of one (major to minor, moderate and minor to none). Enabler."
       }
     ]
   },
@@ -225,7 +225,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

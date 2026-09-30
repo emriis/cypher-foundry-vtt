@@ -24,38 +24,52 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "expert-combatant",
         "name": "Expert Combatant",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you’re already specialized in), but you must gain the skill normally."
+        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you're already specialized in), but you must gain the skill normally."
       },
       {
+        "id": "overwatch",
         "name": "Overwatch",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "speed",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
-        "description": "You use a ranged weapon to target a limited area (such as a doorway, a hallway, or the eastern side of the clearing you’re in); as soon as a viable target enters the area, you can attack them. This works like delaying, but you also negate any benefit the target would have from cover, position, surprise, range, illumination, or visibility. Your attack inflicts +1 damage. You can remain on overwatch as long as you wish, within reason. Alternatively, you can use this ability against a target already in the limited area on your turn. Action."
+        "description": "You use a ranged weapon to target a limited area (such as a doorway, a hallway, or the eastern side of the clearing you're in); as soon as a viable target enters the area, you can attack them. This works like delaying, but you also negate any benefit the target would have from cover, position, surprise, range, illumination, or visibility. Your attack inflicts +1 damage. You can remain on overwatch as long as you wish, within reason. Alternatively, you can use this ability against a target already in the limited area on your turn. Action."
       },
       {
+        "id": "quick-draw",
         "name": "Quick Draw",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "speed",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
-        "description": "Once per turn if you take down a foe with your medium or heavy ranged attack, you can immediately make another attack on that same turn against a new foe within short range as an extra action on your turn."
+        "description": "Once per turn if you take down a foe with your medium or heavy ranged attack, you can immediately make another attack on that same turn against a new foe within short range as an extra action on your turn. Enabler."
       }
     ],
-    "statOptions": ["speed"],
-    "description": "<p>A Epic Fantasy Type focused on archer archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Epic Fantasy. Primary Pools: speed.</em></p>"
+    "statOptions": [
+      "speed"
+    ],
+    "description": "<p>You're a War Arrow, a Hawkeye, a Death Whisper—or, as they sometimes call those like you, an Archer. You down your foes from afar with whistling bolts, one shot after another, before they have a chance to close. Even when foes bite, hew, and curse you in turn, your steady hand and long experience wielding a bow in combat allow your aim to remain true. You excel at ranged support for your allies, or sometimes downing foes from afar before hostilities have a chance to truly begin. You're also adept at watching over an area for your next target, protecting others in your band with the threat of your nocked arrow.</p>"
   },
   "folder": "406V7PHmM8qHDb1x",
   "sort": 0,
@@ -64,7 +78,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

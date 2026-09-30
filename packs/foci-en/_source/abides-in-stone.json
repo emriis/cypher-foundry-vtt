@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/magic/earth/construct-stone.webp",
   "system": {
-    "description": "<p>A Focus for a resilient mineral-bodied character who channels stone, endurance, and crushing force.</p>",
+    "description": "<p>Your flesh is made of hard mineral, making you a hulking, difficult-to-harm humanoid.</p>",
     "abilities": [
       {
         "id": "intimidating-presence",
@@ -19,7 +19,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Your formidable mineral appearance supports intimidation attempts."
+        "description": "Because of your stony presence, you gain an asset on all attempts to intimidate."
       },
       {
         "id": "stone-body",
@@ -33,7 +33,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Your mineral form improves resilience and unarmed force, while making evasive movement harder."
+        "description": "Your body is made of a hard substance like stone or crystal. Work with your GM to decide your exact form, though it is likely about the shape and size of a humanoid. You do not need to eat, drink, or breathe (though you do need rest and sleep). As a being of mineral, you can take two more minor wounds than normal and ease block rolls, and your unarmed attacks deal an additional 2 damage. Due to your relative mineral inflexibility, you have an inability in dodge tasks."
       },
       {
         "id": "stoneknowing",
@@ -47,7 +47,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Study touched stone or crystal to learn useful structural facts."
+        "description": "You are trained in working any kind of stone. In addition, if you touch a crystal or stone object or structure and concentrate, you learn its level and perhaps some relevant facts about its materials and structure. For example, you could learn that a brick wall is level 3 and conceals a hidden space behind it or that a boulder is level 5 and contains iron ore. Your GM may require an Intellect task for you to learn something especially subtle or secret. Last action."
       },
       {
         "id": "stone-bash",
@@ -64,7 +64,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "A carefully timed unarmed strike hits harder."
+        "description": "Your unarmed attack this round inflicts an additional 2 damage if you make it as a Last action."
       },
       {
         "id": "golem-grip",
@@ -80,7 +80,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "Seize and restrain a foe with powerful stone hands."
+        "description": "You can easily grab foes with your stone fists. Make an eased attack against a foe. If you succeed, you restrict their movement, preventing them from moving away and hindering their physical attacks and attempts to break free. If the target attempts to break free as their action, you must make a Might roll to continue holding them. If you are holding a target, you can squeeze them automatically on your turn (no roll required), inflicting 4 damage. Action."
       },
       {
         "id": "field-of-stones",
@@ -97,7 +97,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Blend into natural terrain as a rock formation."
+        "description": "You can attempt to hide in natural terrain, appearing as a natural rock formation. If the terrain is rocky and your stealth roll is a 15 or less, you can treat the roll as a 15. (This means you don't get a GM intrusion if you roll a 1.) In other terrain, your stealth task to blend in as rocks is eased by two steps. At tier 3: The minimum number rolled for this ability increases to 18."
       },
       {
         "id": "improved-stone-body",
@@ -114,7 +114,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Your mineral body withstands an additional moderate wound."
+        "description": "You can take one more moderate wound than normal."
       },
       {
         "id": "golem-stomp",
@@ -131,7 +131,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Create a close shock wave that harms and displaces several foes."
+        "description": "You stomp on the ground with all of your strength, creating a shock wave. Make separate attacks against three creatures in immediate range. Each creature you hit takes 3 damage and you choose if they are pushed out of immediate range or are knocked prone. Action."
       },
       {
         "id": "heavy-hands",
@@ -147,7 +147,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Your unarmed attacks gain additional force."
+        "description": "Your unarmed attacks deal an additional 2 damage."
       },
       {
         "id": "deep-reserves",
@@ -164,7 +164,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Redistribute a limited amount between your Pools during a demanding recovery cycle."
+        "description": "When others are exhausted, you can push through. You can transfer up to 6 points among your Pools in any combination, at a rate of 1 point per round. For example, you could transfer 3 points of Speed to Might and 3 points of Intellect to Might, which would take a total of six rounds. This ability renews when you take a ten-hour recovery. Action."
       },
       {
         "id": "rolling-stone",
@@ -180,7 +180,7 @@
           "amount": 5,
           "options": []
         },
-        "description": "Curl into a charging boulder to strike several foes across a long movement."
+        "description": "You can dive forward and contract your limbs, becoming a careening boulder moving up to a long distance. During this movement you can attack three foes by colliding with them. Make separate attack rolls for each; success means you inflict 6 damage. Last action."
       },
       {
         "id": "still-as-a-statue",
@@ -196,7 +196,7 @@
           "amount": 5,
           "options": []
         },
-        "description": "Enter an inert stone state that trades awareness and movement for exceptional recovery and protection."
+        "description": "You freeze in place, burying your essence deep in your stone core. During this time, you lose all mobility as well as the ability to take physical actions. You cannot sense what's happening around you, and no time seems to pass for you. While using this ability, any wounds you take are reduced in severity by two steps. You rouse to normal wakefulness and mobility 24 hours later, removing three wounds of any severity. If an ally shakes you hard enough (with a minimum cost of 2 Might on their part), you rouse earlier, but no wounds (if you have any) are removed. Action to initiate."
       },
       {
         "id": "structural-brace",
@@ -213,7 +213,7 @@
           "amount": 5,
           "options": []
         },
-        "description": "Become a living support capable of holding a threatened structure or immense weight."
+        "description": "You serve as a structural brace, additional pillar, or other support buttress for a structure in danger of collapsing. If you need to roll to prevent the structure from collapsing and your roll is 18 or less, treat the roll as an 18. (This means you don't get a GM intrusion if you roll a 1.) While serving as a brace, you cannot move from where you are and you automatically fail dodge tasks. You can take an extra action on your turn to end the effect early; otherwise it ends when you take a ten-hour recovery. Alternatively, you can simply hold up a mighty weight of up to 50 tons (45 tonnes) or use this ability to hold a door or gate shut (treating a roll of 18 or less as an 18, or higher with Effort). Effort: Increase the minimum number rolled for this ability by 3. Increase the weight you can hold by 10 tons (9 tonnes). Action to initiate."
       },
       {
         "id": "mineralization",
@@ -229,7 +229,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Your mineral nature lets you withstand an additional major wound."
+        "description": "You can take one more major wound than normal."
       },
       {
         "id": "earthshake",
@@ -248,7 +248,7 @@
             "intellect"
           ]
         },
-        "description": "Trigger a violent earth movement that damages terrain and endangers creatures in an area."
+        "description": "You trigger a violent earth movement in a short area within very long range. Buildings and terrain features are damaged, reducing their levels by 1 to 3, shedding debris and rubble. Creatures in the area take 6 damage from shaking and/or falling debris (roll a separate attack roll against each). Even on a failed attack, creatures in the area still take 3 damage. Action."
       }
     ]
   },
@@ -259,7 +259,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

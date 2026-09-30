@@ -24,58 +24,80 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "connected-knowledge",
         "name": "Connected Knowledge",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "You can connect to restricted data (via an implant, a handheld device, a robotic drone assistant, or the like) that isn’t publicly accessible. Ask your GM a question and get a short but accurate answer if you succeed on an Intellect task. The difficulty is routine if it’s something anyone could learn via their own method of access, level 3 if the sensitive or secret knowledge is primarily an engineering or scientific topic, and level 5 or higher if your GM decides the information is particularly sensitive or secret, whether scientific in nature or not. Last action."
+        "description": "You can connect to restricted data (via an implant, a handheld device, a robotic drone assistant, or the like) that isn't publicly accessible. Ask your GM a question and get a short but accurate answer if you succeed on an Intellect task. The difficulty is routine if it's something anyone could learn via their own method of access, level 3 if the sensitive or secret knowledge is primarily an engineering or scientific topic, and level 5 or higher if your GM decides the information is particularly sensitive or secret, whether scientific in nature or not. Last action."
       },
       {
+        "id": "expert-engineer",
         "name": "Expert Engineer",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
         "description": "You are trained in engineering. At tier 6: You can become an expert in engineering if you are already specialized, but you must gain the skill normally (such as from a character advancement)."
       },
       {
+        "id": "modify-device",
         "name": "Modify Device",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 3
+          "amount": 3,
+          "options": []
         },
         "description": "You quickly jury-rig a piece of equipment or a power source in order to repair or upgrade it. This requires access to appropriate parts and tools."
       },
       {
+        "id": "repair",
         "name": "Repair",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "If you succeed on an engineering task (difficulty equal to the device’s level + 1), you temporarily repair a piece of broken equipment or an inactive power source to get a few more uses out of it. Fully repairing a device—as opposed to the jury-rigged repair of Modify Device—is often possible, but usually requires at least a few days, specialized tools and parts, and the application of resource points )."
+        "description": "If you succeed on an engineering task (difficulty equal to the device's level + 1), you temporarily repair a piece of broken equipment or an inactive power source to get a few more uses out of it. Fully repairing a device—as opposed to the jury-rigged repair of Modify Device—is often possible, but usually requires at least a few days, specialized tools and parts, and the application of resource points )."
       },
       {
+        "id": "upgrade",
         "name": "Upgrade",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "If you succeed at a difficulty 3 engineering task, you make the device function about 25 percent above its rated specifications. When you take a ten-hour recovery, the device breaks, requiring a full repair (as opposed to another Modify Device task) to regain its original, unmodified function. For example, you could overclock a medium blaster so that it deals 1 additional damage, modify a food printer so that each cup of coffee made with it tastes better, modify a spacecraft’s engine so that its acceleration is improved by 25 percent, and so on. Whether you repair or upgrade the device, it now has a depletion of 1–6 on a d20 (check each use). Ten minutes to complete. At tier 3: The modified device’s depletion improves to 1–2 on a d20."
+        "description": "If you succeed at a difficulty 3 engineering task, you make the device function about 25 percent above its rated specifications. When you take a ten-hour recovery, the device breaks, requiring a full repair (as opposed to another Modify Device task) to regain its original, unmodified function. For example, you could overclock a medium blaster so that it deals 1 additional damage, modify a food printer so that each cup of coffee made with it tastes better, modify a spacecraft's engine so that its acceleration is improved by 25 percent, and so on. Whether you repair or upgrade the device, it now has a depletion of 1–6 on a d20 (check each use). Ten minutes to complete. At tier 3: The modified device's depletion improves to 1–2 on a d20."
       }
     ],
-    "statOptions": ["intellect"],
-    "description": "<p>A Hard Science Fiction Type focused on engineer archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Science Fiction. Subgenre: Hard Science Fiction. Primary Pools: intellect.</em></p>"
+    "statOptions": [
+      "intellect"
+    ],
+    "description": "<p>Listen to those engines hum! Wait, are those harmonics in spec? For you, every machine is a potential opportunity to learn something, to fix something, or maybe even to make something new—however temporary—from its parts. If you don't know something, you know what archives are most likely to contain the blueprints or other answers you need, even if that knowledge is encoded in restricted databases. You're a maker, a fixer, and a hard-edged knowledge worker with real-world experience in all kinds of scenarios. Because of your presence, your team's mission is more likely to succeed, rather than fail for want of a turbo encabulator.</p>"
   },
   "folder": "t6C5D0PsA9y7RaFQ",
   "sort": 0,
@@ -84,7 +106,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

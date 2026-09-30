@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/commodities/tech/ai-core.webp",
   "system": {
-    "description": "<p>Un Focus pour un créateur ou une créatrice d'alliés artificiels.</p>",
+    "description": "<p>You create automatons, robots, constructs, or other artificial creatures that do as you command.</p>",
     "abilities": [
       {
         "id": "identify-machine",
@@ -19,7 +19,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Évalue la fonction, le niveau et l'état d'une machine proche."
+        "description": "Tu comprends la fonction, l’usage, le niveau et l’état d’une machine ou d’un robot à portée immédiate."
       },
       {
         "id": "automaton-assistant",
@@ -33,7 +33,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Tu possèdes un automate suivant de niveau 2."
+        "description": "You have built a level 2 automaton follower of your size or smaller that accompanies you and follows your instructions. You and the GM must work out the details of your automaton's appearance and personality. If the automaton is damaged, a few minutes of your attention mends it—the automaton regains 2 health. If the automaton is destroyed, it can be restored using your resources if you spend a few days tinkering. Depending on the genre, your automatons might be metallic robots, animated objects, organic androids, magical golems, steampunk constructs, awakened statues, or something else entirely."
       },
       {
         "id": "efficient-builder",
@@ -47,7 +47,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Gagne un point de ressource supplémentaire pour construire ou réparer."
+        "description": "Anytime you gain resource points, you gain 1 additional point, but that point can be spent only on repairing or crafting."
       },
       {
         "id": "automaton-armor-upgrade",
@@ -63,7 +63,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "Un automate peut devenir une armure légère utilisable librement."
+        "description": "You've built a new capability into one of your automatons—it can use its action to transform into an armored suit that you wear until you use a one-hour or longer recovery. If you are within an immediate distance when it transforms, it automatically forms itself around you. The transformed automaton acts as light armor; because it anticipates and reacts to your movements, you can freely use this armor. Enabler."
       },
       {
         "id": "automaton-cypher-upgrade",
@@ -79,7 +79,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "Un automate augmente temporairement ta limite de Cyphers."
+        "description": "You've built a new capability into one of your automatons—for one day, the automaton increases your cypher limit by one. Enabler."
       },
       {
         "id": "charm-machine",
@@ -95,7 +95,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Convaincs une machine proche d'éviter de te nuire."
+        "description": "Tu convaincs une machine ou un automate non intelligent à portée immédiate de « t’apprécier », via une attaque d’Intellect réussie. Une machine qui t’apprécie a 50 % de chances de ne pas fonctionner si cela te causerait du tort."
       },
       {
         "id": "expert-automaton",
@@ -113,7 +113,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Construis ou améliore un automate suivant."
+        "description": "Tu construis un suivant automate de niveau 3. À la place, tu peux augmenter ton automate existant au niveau 3 et obtenir un nouvel automate de niveau 2. Tu peux prendre cette aptitude plusieurs fois."
       },
       {
         "id": "quick-control",
@@ -131,7 +131,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Oblige une machine à accomplir une action."
+        "description": "A successful Intellect attack allows you to command a machine or automaton (intelligent or not) within short range to take one action within its capabilities on its next turn, regardless of its normal programming or attitudes. If this action would cause the machine or automaton direct harm to itself or its allies, your Intellect attack against it is hindered. (If you use this ability to command an intelligent machine or automaton, it likely becomes hostile to you afterward.) Action."
       },
       {
         "id": "automaton-flight-upgrade",
@@ -148,7 +148,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Donne le vol durable à un automate."
+        "description": "You've built a new capability into one of your automatons—as its normal movement, it can fly up to a long distance. If you wish, it can carry you but can only move at a rate of up to 20 feet (6 m) per round in any direction while doing so."
       },
       {
         "id": "automaton-turret-upgrade",
@@ -165,7 +165,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Reconfigure un automate en tourelle énergétique."
+        "description": "You've built a new capability into one of your automatons—it can reconfigure itself and become an immobile energy weapon on a gimbal mount. The turret is a heavy weapon with very long range that inflicts 7 damage. If you have the automaton act on its own, it makes one hindered attack per round. If you or an ally use the turret as a weapon, attacks with it are eased. Action to change the automaton's configuration; Last action to attack with turret. In a fantasy setting, the automaton turret probably shoots fire or lightning. In a science fiction setting, it probably shoots lasers."
       },
       {
         "id": "automaton-fleet",
@@ -183,7 +183,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Tu possèdes quatre automates suivants de niveau 2."
+        "description": "You've built four level 2 automaton followers, each no larger than yourself. You and the GM must work out the details of each automaton's appearance and personality. If one of these automatons is destroyed, it can be restored using your resources after a few days of labor."
       },
       {
         "id": "automaton-force-field-upgrade",
@@ -201,7 +201,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Un automate projette un champ de force protecteur."
+        "description": "You've built a new capability into one of your automatons—it can erect a translucent level 5 force field around itself and anyone within immediate range of it until you use a ten-minute or longer recovery. Any creature protected by the field reduces incoming wounds by one severity (NPCs take 3 less damage). Enabler."
       },
       {
         "id": "automaton-evolution",
@@ -219,7 +219,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Augmente le niveau d'un automate."
+        "description": "One of your automaton followers is upgraded, increasing its level by 1. You can select this ability multiple times. Each time, the level of one of your automatons increases by 1."
       },
       {
         "id": "automaton-heavy-armor-upgrade",
@@ -237,7 +237,7 @@
           "amount": 6,
           "options": []
         },
-        "description": "Un automate peut devenir une armure lourde utilisable librement."
+        "description": "You've built a new capability into one of your automatons—the robot can use its action to transform into an armored suit that you wear until you use a one-hour or longer recovery. If you are within an immediate distance when it transforms, it automatically forms itself around you. The transformed automaton acts as heavy armor; because it anticipates and reacts to your movements, you can freely use this armor. Enabler."
       }
     ]
   },
@@ -248,7 +248,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

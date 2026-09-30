@@ -24,58 +24,80 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "always-mighty",
         "name": "Always Mighty",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Every time you use a recovery, if your Might Pool isn’t already full, you get 1 extra point to restore to your Might Pool. You can select this ability up to three times. One way you could choose Always Mighty again is if your focus is Performs Feats of Strength, which includes this ability as an option."
+        "description": "Every time you use a recovery, if your Might Pool isn't already full, you get 1 extra point to restore to your Might Pool. You can select this ability up to three times. One way you could choose Always Mighty again is if your focus is Performs Feats of Strength, which includes this ability as an option."
       },
       {
+        "id": "enhanced-energy",
         "name": "Enhanced Energy",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
         "description": "When you succeed on an important task using your powers as determined by your GM, you regain 4 points to your Intellect Pool. Each time you do, you regain 1 less point. This ability renews after you take a ten-hour recovery."
       },
       {
+        "id": "push-on-through",
         "name": "Push on Through",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
         "description": "Instead of a ten-minute recovery, you have a second one-action recovery. Thus, your first two recoveries are one action, the third is one hour, and the fourth is ten hours. You can take one more moderate wound than normal. You can use one of your one-action recoveries to allow an ally to use one of their ten-minute recoveries as an action."
       },
       {
+        "id": "super-combatant",
         "name": "Super Combatant",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you’re already specialized in), but you must gain the skill normally."
+        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you're already specialized in), but you must gain the skill normally."
       },
       {
+        "id": "superheroics",
         "name": "Superheroics",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Choose one Pool: Might, Speed, or Intellect. For tasks using your chosen Pool, add your rank to the amount of Effort you can apply, allowing you to apply additional levels of Effort to tasks in that Pool. In addition, you can choose to push yourself so hard that you take a moderate wound in exchange for two free levels of Effort you can apply to tasks in your chosen Pool (as long as this doesn’t push you past your Effort limit for that Pool). Finally, add your rank as a bonus to your recovery, with those points going only into the Pool you have chosen. Living God (Rank 5) Literally a divine being and part of a divine pantheon (or this powerful for some other reason), you use your amazing abilities to end injustice and defeat evil. Whether you’re a child of Mount Olympus, Asgard, or some other mythology; from a distant dimension or star; or the result of an experiment or process that bequeathed you unbelievable power, you’ve thrown in your lot with regular people, at least for now. What can’t a living god do, or at least credibly attempt? Your presence on a team almost ensures its eventual success, assuming the foes you face aren’t also gods. The rank 5 Living God type is extremely powerful, allowing PCs who emulate superheroes along the lines of Thor, Superman, and similar ultrapowerful beings. Background Some time ago, your powers were stripped from you because of your selfish, cruel ways. Over the subsequent years, you matured and dedicated yourself to being a better, kinder person who helps others. Eventually, your powers returned. You hope your selfish ways never do. Three months ago you learned you might not be the only member of your family still alive. You’re an alien raised by humans, and despite your differences (and amazing abilities), you see humans as your people and you’ll do anything to protect them. The head of your pantheon called you back to the realm a year ago but you refused. Born of humans and another, stranger realm, you’ve dedicated yourself to protecting both, even though both humans and those of the other realm sometimes treat you unfairly. The anniversary of the alien invasion you helped defeat last year is coming up. You recently learned of a (luckily rare) substance that severely weakens you when it’s nearby. Your secret identity was the target of identity theft, threatening your finances and, more importantly, your friends and found family among normal people."
+        "description": "Choose one Pool: Might, Speed, or Intellect. For tasks using your chosen Pool, add your rank to the amount of Effort you can apply, allowing you to apply additional levels of Effort to tasks in that Pool. In addition, you can choose to push yourself so hard that you take a moderate wound in exchange for two free levels of Effort you can apply to tasks in your chosen Pool (as long as this doesn't push you past your Effort limit for that Pool). Finally, add your rank as a bonus to your recovery, with those points going only into the Pool you have chosen."
       }
     ],
-    "statOptions": ["might"],
-    "description": "<p>A Superheroes Type focused on powerhouse (rank 4) archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Superheroes. Subgenre: Superheroes. Primary Pools: might.</em></p>"
+    "statOptions": [
+      "might"
+    ],
+    "description": "<p>You embody raw, overwhelming power, making you a one-person force to be reckoned with. You have a formidable array of abilities, starting with amazing stamina, fluid dexterity, and a cutting intellect. But that's the least amazing thing about you—few can stand against you unless they are literal gods. And even those may fear your wrath. Powerhouses are effective in almost every situation, though your particular suite of abilities could provide even more amazing aid to your allies, depending on the circumstances.</p>"
   },
   "folder": "jyQmvn0EhqJ84yoX",
   "sort": 0,
@@ -84,7 +106,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

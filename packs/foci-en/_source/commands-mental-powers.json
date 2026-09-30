@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/magic/perception/third-eye-blue-red.webp",
   "system": {
-    "description": "<p>A Focus for a character who communicates, perceives, and acts through mental power.</p>",
+    "description": "<p>You can send and receive thoughts as easily as communicating by voice.</p>",
     "abilities": [
       {
         "id": "empathic-sense",
@@ -19,11 +19,11 @@
           "amount": 0,
           "options": []
         },
-        "description": "Sense a nearby being's general emotional state."
+        "description": "You sense the general mental state of a being within short range. You can sense their general emotion, and in particular how they feel about you. Last action. Sense Psionics (1 Intellect): If there are mental powers, psionic abilities, or other psychic phenomena at work within short range, you are aware of that fact (but not the specifics). Last action. Telepathic (1+ Intellect): You can speak telepathically with others who are within long range. Communication is two-way, but the other party must be willing and able to communicate. You don't have to see the target, but you must know that they're within range. You can have more than one active contact at once, but you must establish contact with each target individually. Each contact lasts until you use a ten-minute or longer recovery. Effort: Increase the duration so it lasts until you use a ten-hour recovery. Action to establish contact."
       },
       {
-        "id": "psionic-sense",
-        "name": "Psionic Sense",
+        "id": "sense-psionics",
+        "name": "Sense Psionics",
         "tier": 1,
         "prerequisites": [],
         "repeatable": false,
@@ -33,11 +33,11 @@
           "amount": 1,
           "options": []
         },
-        "description": "Sense active nearby mental or psychic phenomena."
+        "description": "If there are mental powers, psionic abilities, or other psychic phenomena at work within short range, you are aware of that fact (but not the specifics). Last action."
       },
       {
-        "id": "telepathy",
-        "name": "Telepathy",
+        "id": "telepathic",
+        "name": "Telepathic",
         "tier": 1,
         "prerequisites": [],
         "repeatable": false,
@@ -47,16 +47,16 @@
           "amount": 1,
           "options": []
         },
-        "description": "Establish willing two-way communication at long range."
+        "description": "You can speak telepathically with others who are within long range. Communication is two-way, but the other party must be willing and able to communicate. You don’t have to see the target, but you must know that it’s within range. You can have more than one active contact at once, but you must establish contact with each target individually. Each contact lasts until you use a ten-minute or longer recovery. Effort: Increase the duration so it lasts until you make a ten-hour recovery. Action to establish contact."
       },
       {
-        "id": "telepathic-link",
-        "name": "Telepathic Link",
+        "id": "telepathic-bond",
+        "name": "Telepathic Bond",
         "tier": 2,
         "prerequisites": [
           "empathic-sense",
-          "psionic-sense",
-          "telepathy"
+          "sense-psionics",
+          "telepathic"
         ],
         "repeatable": false,
         "enabler": false,
@@ -65,15 +65,15 @@
           "amount": 2,
           "options": []
         },
-        "description": "Create a durable mental link with one willing creature."
+        "description": "You create a bond between yourself and another creature, allowing the two of you to communicate mentally at will. You must touch the creature to activate this and they must be willing. Either of you can dissolve the bond as a Last action. You two can speak telepathically with each other at any time as long as you are both willing and are within 100 miles (160 km) of each other. You can have only one telepathic bond at a time. Last action to form bond or dissolve it."
       },
       {
         "id": "identify-psionics",
         "name": "Identify Psionics",
         "tier": 3,
         "prerequisites": [
-          "psionic-sense",
-          "telepathic-link"
+          "sense-psionics",
+          "telepathic-bond"
         ],
         "repeatable": false,
         "enabler": false,
@@ -82,15 +82,15 @@
           "amount": 3,
           "options": []
         },
-        "description": "Learn the level, source, and general effects of sensed psionics."
+        "description": "If you have sensed psionics using the tier 1 ability, you can gain more specifics about what you sense: the level of the effect, the source of the effect (a creature or an ongoing psychic effect), and the general effects of the psionics at play. Last action."
       },
       {
-        "id": "read-thoughts",
-        "name": "Read Thoughts",
+        "id": "mind-reading",
+        "name": "Mind Reading",
         "tier": 3,
         "prerequisites": [
           "empathic-sense",
-          "telepathic-link",
+          "telepathic-bond",
           "psychic-suggestion"
         ],
         "repeatable": false,
@@ -100,15 +100,15 @@
           "amount": 2,
           "options": []
         },
-        "description": "Read a creature's surface thoughts."
+        "description": "You can read the surface thoughts of a creature you can see within short range. If the creature is unwilling, you must make an Intellect attack against them to read their thoughts. Once you have established contact, you can read the target’s thoughts until you use a ten-minute or longer recovery. Action to initiate."
       },
       {
         "id": "psychic-burst",
         "name": "Psychic Burst",
         "tier": 3,
         "prerequisites": [
-          "psionic-sense",
-          "telepathy",
+          "sense-psionics",
+          "telepathic",
           "psychic-suggestion"
         ],
         "repeatable": false,
@@ -118,15 +118,15 @@
           "amount": 3,
           "options": []
         },
-        "description": "Assault the minds of several nearby targets."
+        "description": "You blast waves of mental force into the minds of three targets within short range (make an Intellect roll against each target). This burst inflicts 3 Intellect damage (ignores armor). Effort: Attack an additional target. Action."
       },
       {
         "id": "psychic-suggestion",
         "name": "Psychic Suggestion",
         "tier": 3,
         "prerequisites": [
-          "telepathy",
-          "read-thoughts",
+          "telepathic",
+          "mind-reading",
           "psychic-burst"
         ],
         "repeatable": false,
@@ -136,7 +136,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Compel a target to take one indicated action."
+        "description": "You attempt to make a foe within short range take the action you indicate on their next turn. Make an Intellect attack against the foe. If the action would cause direct harm to themself or their allies, the mental attack is hindered. Action."
       },
       {
         "id": "extended-range",
@@ -144,7 +144,7 @@
         "tier": 4,
         "prerequisites": [
           "identify-psionics",
-          "read-thoughts",
+          "mind-reading",
           "psychic-burst"
         ],
         "repeatable": true,
@@ -154,14 +154,14 @@
           "amount": 0,
           "options": []
         },
-        "description": "Increase the range of a mental Focus ability."
+        "description": "You increase how far one of your mental abilities can reach. Choose one of your focus abilities that affects another creature. Your range for this ability increases by one range category (touch to immediate, then short, long, very long, 1 mile, 100 miles, and finally anywhere on the same planet). You can choose this ability multiple times, each time increasing the range of that ability or another ability by an additional range category. Use Senses of Others (4 Intellect): You can see, hear, smell, touch, and taste through the senses of another creature within long range. You don't need to see the creature, but you must know that they are within range, and if they are intelligent and unwilling, you must succeed on an Intellect attack to begin sensing through their senses. Your shared senses last until you use a ten-minute or longer recovery. Action to establish."
       },
       {
-        "id": "use-another-senses",
-        "name": "Use Another's Senses",
+        "id": "use-senses-of-others",
+        "name": "Use Senses of Others",
         "tier": 4,
         "prerequisites": [
-          "read-thoughts",
+          "mind-reading",
           "psychic-suggestion",
           "extended-range"
         ],
@@ -172,7 +172,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Perceive through another creature's senses."
+        "description": "You can see, hear, smell, touch, and taste through the senses of another creature within long range. You don’t need to see the creature, but you must know that they are within range, and if they are intelligent and unwilling, you must succeed on an Intellect attack to begin sensing through their senses. Your shared senses last until you use a ten-minute or longer recovery. Action to establish."
       },
       {
         "id": "precognition",
@@ -180,7 +180,7 @@
         "tier": 5,
         "prerequisites": [
           "extended-range",
-          "use-another-senses"
+          "use-senses-of-others"
         ],
         "repeatable": false,
         "enabler": true,
@@ -189,7 +189,7 @@
           "amount": 6,
           "options": []
         },
-        "description": "Gain brief foreknowledge that aids defense, awareness, and interaction."
+        "description": "You dimly sense the future. Until you use a ten-minute or longer recovery, you gain the following benefits: You gain an asset on defense tasks. You can predict the actions of those around you. You gain an asset to seeing through deceptions and attempts to betray you as well as avoiding traps and ambushes. You know what people are probably thinking and what they will say before they say it. You gain an asset to all interaction tasks. Enabler."
       },
       {
         "id": "mind-control",
@@ -205,7 +205,7 @@
           "amount": 6,
           "options": []
         },
-        "description": "Control a touched low-level creature's actions."
+        "description": "You control the actions of another creature you touch. The creature must be level 2 or lower and you must succeed at an Intellect attack against them. Control lasts until you use a ten-minute or longer recovery. While you have control, you maintain mental contact with the target and sense what they sense. You decide on a case-by-case basis if they follow your orders or if they can act freely. When the duration ends, the creature doesn't remember being controlled or anything it did while under your command. Effort: Increase the maximum level of the target you can affect by 1. Action to initiate."
       },
       {
         "id": "telepathic-network",
@@ -221,7 +221,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Create a telepathic network among willing creatures."
+        "description": "You create a telepathic network between yourself and ten willing creatures you know, no matter where they are. All creatures in the network are linked and can communicate telepathically with one another. They can also “overhear” anything said in the network. Activating or using this ability doesn't require an action and doesn't cost Intellect points; to you, it's as easy as speaking out loud. The network lasts until you choose to end it. Effort: Increase the base number of people in the network to twenty (5 Intellect), lasting until you use a ten-minute or longer recovery; each additional ten people costs 1 Intellect. Enabler to create a network; action to create an expanded network (twenty or more people)."
       }
     ]
   },
@@ -232,7 +232,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

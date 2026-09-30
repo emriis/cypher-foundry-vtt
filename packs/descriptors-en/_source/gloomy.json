@@ -5,10 +5,18 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": ["speed", "might"],
+    "statOptions": [
+      "speed",
+      "might"
+    ],
     "statAmount": 2,
-    "skillOptions": ["History", "Recognizing Motive", "", ""],
-    "description": "<p>You expect the worst as a matter of course, which means you're rarely disappointed when it happens.</p><p><em>You gain +2 to your Speed or Might Pool, and training in History or Recognizing Motive.</em></p>"
+    "skillOptions": [
+      "History",
+      "Recognizing Motive",
+      "",
+      ""
+    ],
+    "description": "<p>You suspect that fate is, if not actively leading you to a terrible end, at least determined to show you the world's underbelly through a series of unfortunate events. Maybe you alone feel targeted, or maybe it's the entire world. It's easier to expect the worst and be surprised when things don't turn out terribly than the other way around.</p>"
   },
   "folder": null,
   "sort": 0,
@@ -17,7 +25,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

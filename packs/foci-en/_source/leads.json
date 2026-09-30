@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/svg/crown.svg",
   "system": {
-    "description": "<p>A Focus for a leader who commands allies and followers.</p>",
+    "description": "<p>Your natural leadership capability allows you to command others, including a loyal band of followers.</p>",
     "abilities": [
       {
         "id": "always-witty",
@@ -19,7 +19,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Restore 1 extra Intellect whenever you recover."
+        "description": "Every time you use a recovery, if your Intellect Pool isn't already full, you get 1 extra point to restore to your Intellect Pool. You can select this ability up to three times."
       },
       {
         "id": "inspiring-suggestion",
@@ -33,7 +33,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "An ally following your specific suggestion gains two assets."
+        "description": "When you make a helpful suggestion to an ally, they have a better chance of succeeding at what they're doing. Choose an ally who can see and understand you, then suggest a specific action for them to take, such as “attack the leader” or “climb the wall.” If the ally chooses to take that exact action, they gain two assets on that task. First action."
       },
       {
         "id": "lighting-a-fire-under-them",
@@ -47,7 +47,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Make an ally's next action a First action."
+        "description": "You issue a command to a follower or ally within short range and that person's next action is a First action (if the action would have been Last, it happens normally). You can't use this ability again until after your next ten-minute or longer recovery. Last action."
       },
       {
         "id": "basic-follower",
@@ -64,7 +64,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Gain a level 2 follower with two level 3 modifications."
+        "description": "You gain a level 2 follower who has two level 3 modifications (one of which is charm). You can take this ability multiple times, each time gaining another follower."
       },
       {
         "id": "natural-leader",
@@ -81,7 +81,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "Social rolls below 9 count as 9; Effort raises that minimum."
+        "description": "When you roll to bargain, bluff, charm, interrogate, or intimidate a character and your roll is less than a 9, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) This ability renews when you take a recovery. Effort: Increase the minimum number rolled for this ability by 3. Enabler. At tier 3: The minimum number rolled for this ability increases to 12. A person manipulated by Natural Leader becomes more difficult to work with; the GM should treat them as one level higher for later uses of the ability."
       },
       {
         "id": "advanced-command",
@@ -97,7 +97,7 @@
           "amount": 7,
           "options": []
         },
-        "description": "Command a creature after a successful Intellect roll."
+        "description": "You give a command to a creature within short range who can hear and understand you. If you succeed at an Intellect roll against them, they obey that command for one round. If the command would cause direct harm to them or their allies, the attack is hindered. Effort: Attempt to give them one command each following round (make an Intellect attack for each additional command); the ability ends when you fail the attack. Action."
       },
       {
         "id": "expert-follower",
@@ -113,7 +113,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Gain or improve a level 3 follower with three level 4 modifications."
+        "description": "You gain a level 3 follower who has three level 4 modifications of your choice. Instead of gaining a new level 3 follower, you can advance an existing follower to level 3 and gain a new level 2 follower. You can take this ability multiple times, each time gaining another follower."
       },
       {
         "id": "calm",
@@ -129,7 +129,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "Prevent a living foe from attacking for one round."
+        "description": "Through jokes, song, or other art, you prevent a living foe from attacking anyone or anything for one round. Action."
       },
       {
         "id": "captivate-or-inspire",
@@ -145,7 +145,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Hold an audience's attention or improve its effective level."
+        "description": "You can use this ability in one of two ways. Captivate: Your words keep the attention of all NPCs that hear them for as long as you speak. Inspire: Your words inspire all NPCs that hear them, allowing them to perform tasks as if one level higher until you use a one-hour or longer recovery. In either case, you choose which NPCs are affected. If anyone in the crowd is attacked while you're trying to speak to them, you lose the crowd's attention. Action to initiate."
       },
       {
         "id": "improved-follower",
@@ -161,7 +161,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Improve one follower's level and modifications."
+        "description": "One of your followers increases their overall power, knowledge, and ability. Choose one of your followers. Their level increases by 1, their existing modifications each increase by 1, and they gain a new modification (equal to their base level plus 1). You can take this ability once per tier, each time improving a follower (the same one or a different one)."
       },
       {
         "id": "band-of-followers",
@@ -177,7 +177,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Gain or advance a band of capable followers."
+        "description": "You gain four level 3 followers, each with three level 4 modifications of your choice. Instead of gaining four new level 3 followers, you can advance four existing level 2 followers to level 3 and gain a new level 2 follower in place of each of them."
       },
       {
         "id": "mind-of-a-leader",
@@ -193,7 +193,7 @@
           "amount": 6,
           "options": []
         },
-        "description": "Plan ahead to gain guidance and an asset for each informed ally."
+        "description": "When you develop a course of action to deal with a future situation, you can ask the GM one very general question about what is likely to happen if you carry out the plan, and you will get a simple, brief answer. Each of the allies who know the plan (including you) gain an asset to one roll of their choice related to that future situation, as long as the situation occurs within a few days of creating the plan. Action to initiate planning; enabler for asset."
       },
       {
         "id": "stimulate",
@@ -209,7 +209,7 @@
           "amount": 6,
           "options": []
         },
-        "description": "Ease a nearby target's next action by three steps."
+        "description": "Your words encourage a target in immediate range who can understand you. The next action they take is eased by three steps. (For this task, the asset limit is three instead of two.) Action."
       }
     ]
   },
@@ -220,7 +220,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

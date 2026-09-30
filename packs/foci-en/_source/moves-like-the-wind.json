@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/svg/wind.svg",
   "system": {
-    "description": "<p>A Focus for moving with extraordinary speed.</p>",
+    "description": "<p>You are an incredibly fast runner, whether moving toward a foe or away from danger.</p>",
     "abilities": [
       {
         "id": "recover-faster",
@@ -19,7 +19,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Gain a movement-only extra action when you rally."
+        "description": "When you rally as your action, you gain an extra action on your turn that you can only use for moving. Enabler."
       },
       {
         "id": "fleet-of-foot",
@@ -33,7 +33,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Move a short distance as an extra action, or spend Effort to move long."
+        "description": "As an extra action on this turn you can move up to a short distance. (This movement doesn't hinder your tasks.) Effort: As an extra action on this turn you can move up to a long distance (instead of a short distance); this movement doesn't hinder your tasks. Enabler."
       },
       {
         "id": "get-out",
@@ -47,7 +47,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Moving toward safety eases one task you attempt next round."
+        "description": "If you move at least an immediate distance away from the most obvious threat or toward what promises to offer safety, one task you attempt next round is eased. Enabler."
       },
       {
         "id": "obstacle-running",
@@ -63,7 +63,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "Move normally through difficult terrain and gain ease on movement obstacles."
+        "description": "Any movement you take this round ignores most difficult terrain that would otherwise slow your movement, allowing you to travel at normal speed through areas with rubble, fences, tables, and similar objects that you would have to climb over or move around. This movement might include sliding on a railing, briefly running along a wall, or even stepping on a creature to boost yourself over something. If an obstacle would normally require a Might or Speed task to overcome, such as swinging on a rope, balancing on a rope, or jumping over a hole, the task is eased. Enabler."
       },
       {
         "id": "escape",
@@ -80,7 +80,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Treat an escape roll below 9 as a 9, increasing the minimum with Effort."
+        "description": "When you roll to escape (such as slipping your restraints, squeezing through the bars, breaking the grip of a creature holding you, or pulling free from sucking quicksand) and your roll is less than a 9, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) Effort: Increase the minimum number rolled for this ability by 3. Action. At tier 3: The minimum number rolled for this ability increases to 12."
       },
       {
         "id": "incredible-running-speed",
@@ -96,7 +96,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Double distances moved with Fleet of Foot and run up to 500 feet at full speed."
+        "description": "You move much farther than normal in a round. When using Fleet of Foot, all distances you move are doubled. If you run a long distance as your entire action, all your tasks are hindered by one step until the end of your next turn (instead of two steps). As a Last action, you can run up to 500 feet (150 m), but all your tasks are hindered by two steps until the end of your next turn. Enabler."
       },
       {
         "id": "speedy-threat",
@@ -113,7 +113,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Moving at least an immediate distance grants an asset to your melee attack."
+        "description": "You spin and move such that your attacks are aided by your quick motion. If you move at least an immediate distance on your turn, your melee attack that turn gains an asset. Enabler."
       },
       {
         "id": "blink-of-an-eye",
@@ -129,7 +129,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Move up to 1,000 feet as a Last action."
+        "description": "You move up to 1,000 feet (300 m). (This movement doesn't hinder your tasks.) Last action."
       },
       {
         "id": "increasing-determination",
@@ -146,7 +146,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "A failed noncombat physical task becomes easier when retried once."
+        "description": "If you fail at a noncombat physical task (such as pushing open a door or climbing a cliff) and then retry the task, the task is eased. If you fail again, you gain no special benefits. Enabler."
       },
       {
         "id": "speed-for-mind",
@@ -162,7 +162,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Spend Intellect points for Speed tasks and Speed points for Intellect tasks."
+        "description": "When attempting a Speed task, you can spend points from your Intellect Pool instead of your Speed Pool, and vice versa. Use the Edge stat for the Pool you're spending points from. Enabler."
       },
       {
         "id": "hard-to-see",
@@ -179,7 +179,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Become indistinct at speed, and ease Dodge and Stealth when only moving."
+        "description": "When you move, you are a blur. It is impossible to make out your identity as you pass by someone at speed. In addition, if you do nothing but move on your turn, your dodge and stealth tasks are eased by three steps until your next turn. Enabler."
       },
       {
         "id": "go-to-ground",
@@ -196,7 +196,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Move a long distance, then hide with an asset on the Stealth task."
+        "description": "As your action, you move up to a long distance and then attempt to hide. You gain an asset on the stealth task to blend in, disappear, or otherwise escape the senses of everyone previously aware of your presence (this movement doesn't hinder your stealth task). Action."
       },
       {
         "id": "speed-surge",
@@ -213,7 +213,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Recover 1d6 + 6 Speed points, renewing after a ten-hour recovery."
+        "description": "You immediately recover 1d6 + 6 points to your Speed Pool. This ability renews when you make a ten-hour recovery. Enabler."
       },
       {
         "id": "up-to-speed",
@@ -229,7 +229,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "After three movement actions, accelerate to extraordinary speed for ten minutes."
+        "description": "If you do nothing but move for three actions in a row, you accelerate greatly and can move up to about 200 mph (320 km/h)—about 2000 feet (600 m) each round—for ten minutes or about 35 miles (60 km). After this you must stop and take a recovery. Enabler."
       }
     ]
   },
@@ -240,7 +240,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

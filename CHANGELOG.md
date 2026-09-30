@@ -34,8 +34,15 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ### Changed
 
+- Harmonized Type abilities with the shared Focus ability schema and corrected 28 bilingual
+  Focus ability IDs and prerequisite references to their canonical English CRD slugs.
+- Synchronized 22 English and French Focus ability descriptions and corrected affected Type
+  ability names and translations against the local CRD and Character Book sources.
 - Type and Descriptor `_source` JSON files are now maintained directly as paired bilingual
   records; the former content generators and `generate-types` npm command were removed.
+- Compendium descriptions now use complete English CRD text under the Cypher Open License; French
+  sources use complete Character Book translations when available and otherwise copy the English
+  text verbatim.
 
 ### Fixed
 

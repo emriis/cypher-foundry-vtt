@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/creatures/mammals/wolf-howl-moon.webp",
   "system": {
-    "description": "<p>Un Focus pour une personne qui devient une créature redoutable et difficile à contrôler.</p>",
+    "description": "<p>For brief periods, you become a fearsome and powerful creature with control issues.</p>",
     "abilities": [
       {
         "id": "beast-form",
@@ -19,7 +19,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Cinq nuits consécutives par mois, tu te transformes en bête monstrueuse avec des Réserves de Puissance et de Célérité renforcées, une meilleure résistance et des attaques à mains nues polyvalentes."
+        "description": "Cinq nuits consécutives chaque mois, tu te transformes involontairement en une bête monstrueuse jusqu’aux premières lueurs de l’aube ou jusqu’au coucher de la lune (voir ci‑dessous). Décide avec le·la MJ des détails de cette forme. Dans cette forme, tu gagnes : +4 à ta Réserve de Puissance, +1 en Avantage de Puissance, +2 à ta Réserve de Célérité, +1 en Avantage de Célérité, tu ignores la première blessure modérée que tu subis, tu peux utiliser librement tes attaques à mains nues comme armes légères (attaque facilitée, 2 dégâts) ou armes moyennes (attaque normale, 4 dégâts), selon ce qui convient à l’attaque. Sous forme bestiale : tu ne peux pas dépenser de points d’Intellect, sauf pour tenter de reprendre ta forme normale avant la fin (tâche d’Intellect de difficulté 4), tu attaques toute créature vivante à portée courte, sans distinction. Après être redevenu·e normal·e, toutes tes tâches sont entravées jusqu’à ta prochaine récupération d’une heure ou plus. Si tu n’as pas tué et mangé au moins une créature substantielle pendant ta forme bestiale, l’entrave est de deux paliers et dure jusqu’à une récupération de dix heures."
       },
       {
         "id": "call-upon-the-beast",
@@ -35,7 +35,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Tu manifestes brièvement ta nature bestiale pour gagner un niveau d’Effort gratuit sur une tâche d’Intimidation."
+        "description": "Quand tu n’est pas sousa forme bestiale, tu peux invoquer brièvement ta nature animale : grognement menaçant, regard bestial… Tu gagnes un niveau d’Effort gratuit sur une tâche d’intimidation."
       },
       {
         "id": "keen-eye",
@@ -51,7 +51,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Tu vois une fois et demie plus loin et ignores les malus d’attaque et de perception dus à la mauvaise visibilité."
+        "description": "You can see perfectly well half again as far as normal. You ignore attack and perception penalties for fog, smoke, mist, dim light, and very dim light."
       },
       {
         "id": "scales",
@@ -67,7 +67,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Tu fais pousser des écailles jusqu’à une récupération de dix minutes, ce qui facilite tes tâches de Blocage."
+        "description": "Tu fais pousser des écailles sur tout ton corps jusqu’à ta prochaine récupération de dix minutes ou plus, facilitant tes tâches de Blocage."
       },
       {
         "id": "beast-senses",
@@ -83,7 +83,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Tu gagnes des atouts en perception et en initiative ; sous forme bestiale, un assaillant inconscient ne bénéficie pas de la surprise."
+        "description": "Tes sens sont exacerbés : tu gagnes un atout aux tâches de perception et initiative. Sous forme bestiale, tu gagnes deux atouts, et même si tu ignores une attaque imminente, l’assaillant n’obtient aucun avantage (pas d’atout dû à la surprise)."
       },
       {
         "id": "controlled-change",
@@ -99,7 +99,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Tu peux tenter une tâche d’Intellect de difficulté 4 pour te transformer n’importe quelle nuit, en plus des transformations involontaires."
+        "description": "Tu peux tenter d’utiliser Forme bestiale pour te transformer n’importe quelle nuit (tâche d’Intellect de difficulté 4). Ces transformations s’ajoutent aux cinq nuits mensuelles obligatoires."
       },
       {
         "id": "talons-or-claws",
@@ -115,7 +115,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Tu fais pousser des serres ou des griffes jusqu’à une récupération de dix minutes ; tes attaques à mains nues infligent 1 dégât supplémentaire."
+        "description": "Le bout de tes doigts s’allongent en serres ou griffes (selon ta forme bestiale) jusqu’à ta prochaine récupération de dix minutes ou plus. Tes attaques à mains nues infligent +1 dégât supplémentaire."
       },
       {
         "id": "wounded-fury",
@@ -131,7 +131,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Avec au moins trois blessures modérées ou une blessure majeure, tu gagnes deux niveaux d’Effort gratuits pour une attaque chaque round jusqu’à récupération ou guérison."
+        "description": "While you have at least three moderate wounds or at least one major wound, you gain two free levels of Effort you can apply to an attack each round. This benefit lasts until you take your next ten-minute or longer recovery (or you no longer suffer from those wounds). Enabler."
       },
       {
         "id": "bigger-beast-form",
@@ -147,7 +147,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Forme bestiale atteint 4 mètres, gagne en résistance et un atout à l’attaque, peut utiliser des attaques lourdes et entrave les esquives."
+        "description": "Quand tu utilises Forme bestiale, tu deviens plus grand·e, atteignant 4 m de haut. Ta forme bestiale gagne alors : tu ignores une blessure modérée supplémentaire, tes attaques à mains nues ont un atout, tu peux librement utiliser tes attaques à mains nues comme armes lourdes (6 dégâts), tu gagnes un atout aux tâches facilitées par une grande taille (grimper, traverser un cours d’eau…) mais tes tâches d’Esquive sont entravées."
       },
       {
         "id": "sleeker-beast-form",
@@ -163,7 +163,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Forme bestiale accorde aussi +1 en Avantage de Puissance, +2 à la Réserve de Célérité et +1 en Avantage de Célérité."
+        "description": "Quand tu utilises Forme bestiale, tu gagnes en plus : +1 en Avantage de Puissance, +2 à ta Réserve de Célérité, +1 en Avantage de Célérité."
       },
       {
         "id": "beast-healing",
@@ -179,7 +179,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "La transformation en forme bestiale soigne immédiatement une blessure ; le bénéfice se renouvelle après une récupération de dix heures."
+        "description": "Quand tu te transformes en forme bestiale, tu es immédiatement soigné·e d’une blessure, quelle qu’en soit la sévérité. L’aptitude se renouvelle après une récupération de dix heures."
       },
       {
         "id": "greater-controlled-change",
@@ -211,7 +211,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Tu fais pousser des crocs pour des morsures légères empoisonnées, infligeant 5 dégâts supplémentaires sans tenir compte de l’Armure et entravant la cible un round."
+        "description": "Tu fais pousser des crocs et une mâchoire allongée, te permettant d’effectuer des attaques de morsure empoisonnées comme des attaques légères (attaque facilitée, 2 dégâts) jusqu’à ta prochaine récupération de dix minutes ou plus. Si l’attaque de morsure réussit : la cible subit +5 dégâts supplémentaires (ignore l’Armure) à cause du poison et toutes ses tâches sont entravées pendant un round."
       },
       {
         "id": "brute-squad",
@@ -227,7 +227,7 @@
           "amount": 8,
           "options": []
         },
-        "description": "Tu effectues deux tâches de Puissance ce tour : une avec ton action normale et une avec une action supplémentaire."
+        "description": "You can perform two Might tasks on this turn, one with your normal action and one with an extra action. For example, you could make a melee attack and smash open a door, throw a heavy couch and jump over a wall, or make two melee attacks. Enabler."
       },
       {
         "id": "enhanced-beast-form",
@@ -243,7 +243,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Forme bestiale accorde +3 à la Réserve de Puissance, +2 à la Réserve de Célérité et ignore les blessures mineures des attaques physiques."
+        "description": "Quand tu utilises Forme bestiale, tu gagnes en plus : +3 à ta Réserve de Puissance, +2 à ta Réserve de Célérité, tu ignores toutes les blessures mineures provenant d’attaques physiques."
       },
       {
         "id": "constrict",
@@ -259,7 +259,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Sous forme bestiale, une attaque à mains nues en Dernière action saisit une cible avec 2 dégâts de moins et inflige 5 dégâts par round avec une action."
+        "description": "En forme bestiale, si tu fais une attaque à mains nues en tant que Dernière action, ton attaque inflige 2 dégâts de moins, mais tu saisis la cible (en l’enserrant avec ton corps, par exemple). Toutes ses tâches sont entravées, y compris pour tenter de se libérer. Chaque round où elle reste saisie, tu peux utiliser ton action pour lui infliger 5 dégâts (sans jet)."
       },
       {
         "id": "perfect-control",
@@ -275,7 +275,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Tu te transformes ou reprends ta forme normale comme action, sans tâche d’Intellect, et n’as plus besoin de manger une créature pour éviter l’entrave après transformation."
+        "description": "Tu n’as plus besoin de faire de tâche d’Intellect pour utiliser Forme bestiale ou revenir à la normale. Tu peux changer librement comme action. En forme bestiale, tu n’as plus besoin de manger une créature pour éviter l’entrave après la transformation."
       },
       {
         "id": "lethal-capability",
@@ -291,7 +291,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Choisis une attaque précise, comme les griffes ou la morsure ; elle inflige 5 dégâts supplémentaires. Choisis une attaque différente à chaque sélection."
+        "description": "You've mastered how to kill with a particular attack. You inflict an additional 5 damage with your claws, your bite, or some other specific attack you prefer. You can gain this ability more than once. Each time you do, choose a different specific attack."
       }
     ]
   },
@@ -302,7 +302,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

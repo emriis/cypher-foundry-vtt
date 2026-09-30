@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/skills/social/diplomacy-handshake.webp",
   "system": {
-    "description": "<p>Un Focus pour une personne nonchalante qui connaît un peu de tout.</p>",
+    "description": "<p>You're a slacker, but you know a little about a lot of things.</p>",
     "abilities": [
       {
         "id": "joy-in-small-things",
@@ -21,7 +21,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Quand tu apprends ou comprends quelque chose d’important, tu récupères 4 points dans ta Réserve d’Intellect; les utilisations suivantes avant une récupération de dix heures récupèrent chaque fois un point de moins."
+        "description": "Quand tu apprends ou comprends quelque chose d’important (déterminé par le·la MJ), tu récupères 4 points dans ta Réserve d’Intellect. Chaque utilisation suivante dans la même période restaure 1 point de moins. Ce compteur se réinitialise après une récupération de dix heures."
       },
       {
         "id": "life-lessons",
@@ -37,7 +37,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Choisis deux compétences non liées au combat; quand tu consacres de l’Effort à l’une d’elles, tu obtiens un niveau d’Effort gratuit."
+        "description": "Tu as appris des petits trucs à droite à gauche et tu as du talent pour accomplir les choses. Choisis deux compétences non liées au combat. Quand tu consacres de l’Effort à l’une de ces compétences, tu obtiens un niveau d’Effort gratuit."
       },
       {
         "id": "picking-up-the-slack",
@@ -51,7 +51,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Tu peux remplacer un allié entraîné à proximité qui ne peut pas effectuer une tâche précise."
+        "description": "You can fill in for a skilled ally when they're unable to perform a specific task. If an ally within long range is trained (or more) in a skill but can't attempt the task (such as if there's a lock to be picked, but the skilled ally is unconscious or too far away), you gain an asset on that task. You cannot use this ability if you are trained (or better) in that skill. Enabler."
       },
       {
         "id": "inspiring-ease",
@@ -68,7 +68,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Quand toi et tes allié·e·s partagez une récupération de dix heures, tes histoires, chansons ou œuvres accordent à chacun un bénéfice supplémentaire."
+        "description": "Through stories, songs, art, or other forms of entertainment, you inspire your allies. When you and any number of allies spend a ten-hour recovery together (yours or theirs), the allies are inspired by you. Once per day, each inspired ally can ease one task. This inspiration remains while you remain within a long distance of them. The inspiration is suspended at greater distances, but resumes automatically if you get within range. The inspiration ends if you use a ten-hour recovery while away from the ally. Ten-hour recovery to initiate."
       },
       {
         "id": "totally-chill",
@@ -100,7 +100,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Tu bénéficies d’une protection supplémentaire contre les menaces physiques et tu peux ignorer des blessures plus graves avec de l’Effort."
+        "description": "Tu traînes un peu plus de masse que la moyenne — muscles, graisse, ou les deux. Cette « protection naturelle » te permet d’ignorer une blessure mineure que tu viens de subir (ne note pas la blessure sur ta fiche). L’aptitude se renouvelle après une récupération de dix heures. Effort : ignorer une blessure modérée plutôt qu’une mineure ou ignorer une blessure majeure plutôt qu’une mineure (nécessite 2 Efforts)."
       },
       {
         "id": "improvise",
@@ -116,7 +116,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "Quand tu n’es pas entraîné·e dans une tâche, tu improvises un outil, une intuition ou un coup de chance pour gagner un atout."
+        "description": "(3 Intellect): If you aren't trained in a task, you can improvise to gain an asset on that task—a tool you cobble together, sudden insight, or just dumb luck. The asset lasts until you use a ten-minute or longer recovery. Enabler."
       },
       {
         "id": "agile-wit",
@@ -132,7 +132,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Tu dépenses des points d’Intellect pour les tâches de Vitesse, ou des points de Vitesse pour les tâches d’Intellect, en utilisant l’Avantage de la Réserve dépensée."
+        "description": "When attempting a Speed task, you can spend points from your Intellect Pool instead of your Speed Pool, and vice versa. Use the Edge stat for the Pool you're spending points from."
       },
       {
         "id": "gather-your-strength",
@@ -148,7 +148,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Ton attaque inflige 2 dégâts supplémentaires si tu la fais en tant que Dernière action."
+        "description": "Ton attaque de ce round inflige +2 dégâts supplémentaires si tu la fais en tant que Dernière action, au lieu d’une Action ou d’une Première action."
       },
       {
         "id": "attention-to-detail",
@@ -165,10 +165,10 @@
           "amount": 0,
           "options": []
         },
-        "description": "Ta tâche de ce round, hors attaque, bénéficie d’un atout si tu l’accomplis comme Dernière action."
+        "description": "Ta tâche de ce round (hors attaque) bénéficie d’un atout si tu l’accomplis comme Dernière action plutôt que comme Action ou Première action."
       },
       {
-        "id": "drawing-on-life-experiences",
+        "id": "drawing-on-life-s-experiences",
         "name": "Puiser dans l’expérience de toute une vie",
         "tier": 6,
         "prerequisites": [
@@ -181,7 +181,7 @@
           "amount": 6,
           "options": []
         },
-        "description": "Pose une question au/à la MJ et reçois une réponse générale dont le niveau de détail dépend du caractère plus ou moins obscur de la connaissance."
+        "description": "Tu as vécu beaucoup de choses, et ton expérience te sert. Tu poses une question au/à la MJ et reçois une réponse générale. Le·La MJ donne un niveau à la question : connaissances trouvables ailleurs qu’ici : niveau 1, connaissance obscure du passé : niveau 7."
       }
     ]
   },
@@ -192,7 +192,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document; créé sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

@@ -24,38 +24,52 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "dual-wield",
         "name": "Dual Wield",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "You can use two light melee weapons at the same time or one light melee weapon and one medium melee weapon at the same time. You can make an attack with either one as your action, then attack with the other weapon as an extra action on your turn. At tier 3: You can choose to use two medium melee weapons at the same time. When using Dual Wield to attack twice on your turn, you can’t use a First action to attack with a light melee weapon and then attack again with your other weapon as an action; instead, your two actions take place in regular initiative order."
+        "description": "You can use two light melee weapons at the same time or one light melee weapon and one medium melee weapon at the same time. You can make an attack with either one as your action, then attack with the other weapon as an extra action on your turn. Enabler. At tier 3: You can choose to use two medium melee weapons at the same time. When using Dual Wield to attack twice on your turn, you can't use a First action to attack with a light melee weapon and then attack again with your other weapon as an action; instead, your two actions take place in regular initiative order."
       },
       {
+        "id": "expert-combatant",
         "name": "Expert Combatant",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you’re already specialized in), but you must gain the skill normally."
+        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you're already specialized in), but you must gain the skill normally."
       },
       {
+        "id": "weapon-switch",
         "name": "Weapon Switch",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "As an extra action on your turn, you change which weapons you’re holding in each hand. This might entail swapping your left and right weapons, sheathing them and drawing new ones, flipping and catching one or both of them, dropping one to switch to a two-handed grip, or something similar. This maneuver is so startling, unexpected, and impressive that your next attack is eased by two steps. Once you use this ability, you can’t use it again until after your next recovery."
+        "description": "As an extra action on your turn, you change which weapons you're holding in each hand. This might entail swapping your left and right weapons, sheathing them and drawing new ones, flipping and catching one or both of them, dropping one to switch to a two-handed grip, or something similar. This maneuver is so startling, unexpected, and impressive that your next attack is eased by two steps. Once you use this ability, you can't use it again until after your next recovery. Enabler."
       }
     ],
-    "statOptions": ["speed"],
-    "description": "<p>A Swords & Sorcery Type focused on two-weapon fighter archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Swords & Sorcery. Primary Pools: speed.</em></p>"
+    "statOptions": [
+      "speed"
+    ],
+    "description": "<p>In some lands they call you a Twin Fang; in others, a Blade Dancer. These and other names illustrate your fighting style. A weapon clutched in each hand, you crash into your foes, attacking as if two people in one body. You deal out death to monsters of the wild lands and dark places, enemies, and whoever chooses to match themselves against you. So far, you've been the victor. Your weaponplay is among the most conspicuous in your group, so foes may be drawn to you over the other warriors in your band. That's how you like it. You're a bit more specialized than they are, but that sacrifice in versatility means you're doubly armed and ready to meet whatever the fates throw your way.</p>"
   },
   "folder": "zBqRagUFEUelogPi",
   "sort": 0,
@@ -64,7 +78,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

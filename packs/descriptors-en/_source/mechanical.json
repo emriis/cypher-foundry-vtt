@@ -5,7 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": ["intellect"],
+    "statOptions": [
+      "intellect"
+    ],
     "statAmount": 2,
     "skillOptions": [
       "Engineering",
@@ -13,7 +15,7 @@
       "Systems Operation",
       ""
     ],
-    "description": "<p>You have a natural talent with machines of all kinds, understanding and repairing them with ease.</p><p><em>You gain +2 to your Intellect Pool, and training in Engineering, Heavy Equipment Operation or Systems Operation.</em></p>"
+    "description": "<p>You have a special talent with machines of all kinds, and you're adept at understanding and, if need be, repairing them. Perhaps you're a bit of an inventor, creating new machines from time to time. You get called “techie,” “tech,” “mech,” “gearhead,” “motorhead,” or any of a number of other nicknames. Mechanics usually wear practical work clothes and carry around a lot of tools.</p>"
   },
   "folder": null,
   "sort": 0,
@@ -22,7 +24,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

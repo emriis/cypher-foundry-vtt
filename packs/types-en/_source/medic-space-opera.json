@@ -24,38 +24,52 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "effort",
         "name": "Effort",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Instead make the creature unconscious until you use a recovery (requires two levels of Effort). Action to prepare medicine; action to attack. Bad Medicine doesn’t allow you to exceed your normal Effort limit."
+        "description": "Instead make the creature unconscious until you use a recovery (requires two levels of Effort). Action to prepare medicine; action to attack. Bad Medicine doesn't allow you to exceed your normal Effort limit."
       },
       {
+        "id": "expert-doctor",
         "name": "Expert Doctor",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
         "description": "You are trained in healing. At tier 6: You can become an expert in healing if you are already specialized, but you must gain the skill normally (such as from a character advancement)."
       },
       {
+        "id": "prepared-medic",
         "name": "Prepared Medic",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "intellect",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
-        "description": "With access to a medical field kit (or similar equipment), you can use treatment in half the normal amount of time or treat twice as many wounds for one character in the normal time."
+        "description": "With access to a medical field kit (or similar equipment), you can use treatment in half the normal amount of time or treat twice as many wounds for one character in the normal time. Enabler."
       }
     ],
-    "statOptions": ["intellect"],
-    "description": "<p>A Space Opera Type focused on medic archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Science Fiction. Subgenre: Space Opera. Primary Pools: intellect.</em></p>"
+    "statOptions": [
+      "intellect"
+    ],
+    "description": "<p>You fix people, reknitting their flesh, patching their ruptured organs, and coaxing their shattered bones back together. Your bedside manner doesn't really matter, especially when your skills are called on during disaster or war. And your comportment matters even less in situations when you use your medical knowledge and supplies to disable foes—sometimes, no one expects a medic to fight back. Your role on a team that routinely encounters challenging environments or conflict is crucial. Without your expertise and care, the group's next job could prove its last. Luckily, you can also handle yourself in a fight. In fact, either hard experience or professional training means you're not someone who needs protection when the situation sours.</p>"
   },
   "folder": "AxljvbOd6vL9wkut",
   "sort": 0,
@@ -64,7 +78,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

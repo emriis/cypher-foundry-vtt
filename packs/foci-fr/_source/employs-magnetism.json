@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/magic/lightning/bolt-strike-blue.webp",
   "system": {
-    "description": "<p>Un Focus pour un personnage qui commande le métal et la force magnétique.</p>",
+    "description": "<p>You command metal and the power of magnetism.</p>",
     "abilities": [
       {
         "id": "craft-metal",
@@ -21,7 +21,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Tu façonnes le métal sans chaleur et gagnes un atout pour les tâches liées au travail du métal."
+        "description": "Tu peux manipuler le métal sans effort, te permettant de façonner des objets métalliques sans chaleur. Tu gagnes aussi un atout pour toutes les tâches liées au travail du métal."
       },
       {
         "id": "move-metal",
@@ -37,7 +37,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Tu exerces une force sur le métal à portée courte ou perturbes les appareils électroniques et machines-créatures."
+        "description": "Jusqu’à ta prochaine récupération d’une heure ou plus, tu peux exercer une force sur les objets métalliques à portée courte, comme action. Chaque utilisation nécessite une action et te permet de déplacer un objet fait de métal ou qui en contient à distance. Tu ne peux déplacer que ce que tu pourrais physiquement manipuler avec tes mains : soulever un petit objet métallique, tirer un objet vers toi, déplacer un objet lourd (comme un meuble) d’une distance immédiate, etc. Ce pouvoir manque d’un contrôle fin permettant l’utilisation d’une arme ou pour déplacer des objets avec suffisament de vitesse pour pouvoir en faire une attaque directe. Cependant tu peux : saisir un objet métallique dans la main d’une créature, pousser une créature portant une armure métallique d’une distance immédiate, entraver ses attaques ou défenses en appliquant une pression sur ses membres ou armes métalliques. Affecter une créature réticente (ou son équipement) nécessite une attaque d’Intellect. Tu peux aussi créer une perturbation magnétique à portée courte, entravant de deux paliers les appareils électroniques, machines électriques ou machines‑créatures (robots) pendant un round."
       },
       {
         "id": "sense-metal",
@@ -51,7 +51,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Tu détectes le métal ferromagnétique à portée courte, ainsi que sa quantité, son type et sa localisation générale."
+        "description": "Tu sais immédiatement s’il existe du métal ferromagnétique à portée courte, ainsi que la quantité, le type et la localisation générale."
       },
       {
         "id": "electromagnetic-eyes",
@@ -67,7 +67,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Tu perçois les champs électromagnétiques pour voir dans l’obscurité et repérer à longue portée créatures cachées, métal et appareils électriques."
+        "description": "Tu perçois ton environnement grâce aux champs électromagnétiques qui remplissent invisiblement chaque lieu. Tu peux « voir » jusqu’à portée longue, même dans l’obscurité totale. Tu gagnes un atout pour les tâches de perception pour : repérer des créatures cachées (leurs corps produisent un champ), repérer objets métalliques, champs magnétiques, dispositifs électriques, voir normalement les créatures autrement invisibles. Tu sais toujours où se trouve le nord (si ta planète a des pôles magnétiques). L’effet dure jusqu’à ta prochaine récupération de dix minutes ou plus."
       },
       {
         "id": "electromagnetically-charge",
@@ -83,7 +83,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Tu canalises l’énergie électromagnétique pour réduire une blessure ou recharger un appareil électrique; le coût augmente jusqu’à une récupération."
+        "description": "Tu canalises l’énergie magnétique ambiante pour te soigner, réduisant une blessure : tu soignes une blessure mineure ou réduis une blessure modérée → mineure ou une blessure majeure → modérée. Alternativement, tu peux également recharger un appareil électrique portable (téléphone, radio, etc.) dont la batterie est à plat avec cette aptitude. À chaque utilisation de cette aptitude, le coût augmente de +1 Intellect, puis revient à 1 après une récupération."
       },
       {
         "id": "repel-metal",
@@ -99,7 +99,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Tu gagnes un atout pour Bloquer ou Esquiver les attaques contenant du métal."
+        "description": "Grâce à ta maîtrise du magnétisme, tu as un atout pour toutes les tâches de Blocage ou Esquive contre les attaques contenant du métal : balles, couteaux lancés, flèches ou carreaux métalliques, etc."
       },
       {
         "id": "guide-bolt",
@@ -116,7 +116,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "Tu guides une munition métallique pour gagner un atout et infliger 3 dégâts supplémentaires une fois par round."
+        "description": "Lorsque tu fais une attaque utilisant une munition métallique (balle, couteau lancé, carreau, flèche à pointe métallique…) sur une cible à portée courte, tu peux en corriger la trajectoire et en augmenter la vitesse : gain d’un atout, +3 dégâts supplémentaires. Tu peux utiliser cette aptitude une fois par round. Effort : Affecter l’attaque d’un·e allié·e si elle passe à portée courte de toi."
       },
       {
         "id": "rend-metal",
@@ -133,7 +133,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "Tu détruis un objet métallique visible jusqu’au niveau 3, avec une attaque facilitée contre l’équipement réticent."
+        "description": "Tu déchires, perce ou fais éclater instantanément un objet métallique jusqu’à niveau 3, à portée courte. Tu dois voir l’objet et il ne peut pas dépasser la moitié de ta taille (ou être une portion de cette taille maximum contenu dans un objet plus grand). Tu détruis l’objet. Optionnellement, il explose en shrapnel, infligeant 1 dégât par niveau à toutes les créatures à portée immédiate (jets séparés d’attaque d’Intellect). Affecter l’équipement d’une créature réticente nécessite une attaque d’Intellect, facilitée de deux paliers. Effort : augmenter le niveau maximal destructible de +1."
       },
       {
         "id": "magnetic-field",
@@ -150,7 +150,7 @@
           "amount": 5,
           "options": []
         },
-        "description": "Tu projettes au sol les projectiles métalliques et disperses les attaques d’énergie électromagnétique pendant un round."
+        "description": "Un champ magnétique autour de toi projette au sol tous les projectiles métalliques à distance : flèches, balles, couteaux, carreaux, etc. Il disperse aussi les attaques d’énergie du spectre électromagnétique : électricité, rayons X, lasers… Tu es immunisé·e à ces attaques pendant un round. Tu dois être conscient·e de l’attaque pour la contrer."
       },
       {
         "id": "magnetize",
@@ -166,7 +166,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Tu magnétises ou démagnétises définitivement un objet touché, ou crées un champ qui repousse les objets métalliques de faible niveau."
+        "description": "Tu touches un objet (métallique ou non) pas plus grand que toi pour le magnétiser définitivement avec une force niveau 5, ou démagnétiser un objet de force magnétique niveau 5 ou moins. Un objet magnétisé attire tout métal à moins de 30 cm. Arracher cet objet une fois attiré nécessite une tâche de Puissance réussie. Magnétiser ou démagnétiser un appareil électronique le détruit s’il est de niveau 5 ou moins. Tu peux utiliser tes aptitudes (comme Déplacer le métal, Commander le métal) sur un objet magnétisé. Alternativement, tu peux créer un champ répulsif qui repousse les objets métalliques de niveau 3 ou moins (un champ de force pour le métal). Effort : augmenter le niveau d’une nouvelle force magnétique de +1 ou augmenter le niveau maximal que tu peux démagnétiser de +1."
       },
       {
         "id": "command-metal",
@@ -183,7 +183,7 @@
           "amount": 5,
           "options": []
         },
-        "description": "Tu remodèles le métal à portée courte, fusionnes des objets, déplaces le résultat ou attaques une cible pour 7 dégâts."
+        "description": "Tu remodèles selon tes souhaits n’importe quel objet métallique à portée courte. Sa masse totale peut dépasser la tienne. Tu peux modeler plusieurs objets tant que leur masse combinée reste ≤ la tienne. Tu peux aussi les fusionner. Tu peux : détruire un objet métallique (comme avec Déchirer le métal) ou le refaçonner grossièrement (avec plus de délicatesse et de précision si tu réussis une tâche d’artisanat). Tu peux ensuite déplacer l’objet remodelé où tu veux dans la portée. Par exemple, tu peux utiliser plusieurs boucliers ou panneaux métallique, les fusionner et utiliser le résultat pour bloquer une ouverture. Tu peux aussi attaquer une créature à portée courte : armure qui se resserre, fragments métalliques projetés, etc. Indépendamment de la forme qu’elle prend, l’attaque est une attaque d’Intellect infligeant 7 dégâts."
       },
       {
         "id": "iron-in-the-blood",
@@ -200,7 +200,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Tu détectes et manipules le fer présent dans la chair et le sang pour déplacer ou attaquer des créatures avec tes pouvoirs métalliques."
+        "description": "Tu as affiné ton sens magnétique au point de sentir et manipuler le fer présent dans la chair et le sang. Tu peux maintenant : déplacer des créatures avec Déplacer le métal, les attaquer directement avec Déchirer le métal (5 dégâts) ou Commander le métal (7 dégâts). Tes attaques d’Intellect sont entravées lorsque tu fais cela."
       },
       {
         "id": "diamagnetism",
@@ -217,7 +217,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Tu rends les objets non métalliques à portée courte sensibles à tes autres pouvoirs magnétiques comme s’ils étaient magnétisés."
+        "description": "Tu magnétises n’importe quel objet non métallique à portée courte afin de le rendre sensible à toutes tes autres aptitudes magnétiques, comme si tu utilisais Magnétiser à distance et instantanément. (magnétisation permanente possible en dépensant le coût d’Intellect normal de Magnétiser). Ainsi : avec Déplacer le métal, tu peux déplacer n’importe quel objet, avec Repousser le métal, tu as un atout pour tous les jets de Blocage et d’Esquive, même contre des attaques sans métal (les attaques d’énergie se courbent). Et ainsi de suite."
       },
       {
         "id": "iron-punch",
@@ -234,7 +234,7 @@
           "amount": 8,
           "options": []
         },
-        "description": "Tu projettes un objet métallique lourd sur une cible proche pour infliger 10 dégâts avec une attaque d’Intellect réussie."
+        "description": "Tes attaques à mains nues infligent +3 dégâts."
       }
     ]
   },
@@ -245,7 +245,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document; créé sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

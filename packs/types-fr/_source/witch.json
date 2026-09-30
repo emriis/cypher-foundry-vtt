@@ -24,38 +24,52 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "brew-potion",
         "name": "Brassage de Potion",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Tu brasses une **potion**. Tu choisis son effet dans la table des **cyphers manifestes de faible puissance**. La potion ainsi créée compte dans ta limite de cyphers (ou dans celle de la personne à qui tu la donnes), en plus des cyphers supplémentaires accordés par **Potion Cyphers**. Si tu es déjà à ta **limite de cyphers**, tu dois choisir l’un de tes cyphers actuels, qui **perd sa magie**, pour faire place à la nouvelle potion. Au rang 3, tu peux choisir un cypher manifeste de faible ou de puissance moyenne. Au rang 6, tu peux choisir un cypher manifeste de faible, moyenne ou de puissance avancée. Dix minutes pour brasser."
+        "description": "Tu brasses une potion. Tu choisis son effet dans la table des cyphers manifestes de faible puissance. La potion ainsi créée compte dans ta limite de cyphers. Si tu es déjà à ta limite de cyphers, tu dois choisir l'un de tes cyphers actuels, qui perd sa magie, pour faire place à la nouvelle potion. Au rang 3, tu peux choisir un cypher manifeste de faible ou de puissance moyenne. Au rang 6, tu peux choisir un cypher manifeste de faible, moyenne ou de puissance avancée."
       },
       {
+        "id": "evil-eye",
         "name": "Mauvais Œil",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "Tu traces le signe du **mauvais œil**, ciblant une créature à **courte portée** avec une attaque d’Intellect. En cas de réussite, elle est affligée par un esprit de **malchance** pour environ une journée. Pendant cette période, le·la MJ l’afflige d’événements gênants : trébucher, perdre un objet, manquer un rendez‑vous, etc. (Sur un·e PJ, cela se manifeste comme une **intrusion du·de la MJ**.) Effort : Prolonge la durée jusqu’à ta prochaine récupération de dix heures ou Inflige 2 dégâts d’Intellect par niveau d’Effort, en plus de la malchance. Au rang 3, tu peux utiliser deux niveaux d’Effort pour rendre la malchance permanente. C’est alors une malédiction de niveau 4 pour les aptitudes qui retirent les afflictions. Dernière action"
+        "description": "Tu traces le signe du mauvais œil, ciblant une créature à courte portée avec une attaque d'Intellect. En cas de réussite, elle est affligée par un esprit de malchance pour environ une journée. Le MJ l'afflige d'événements gênants : trébucher, perdre un objet, manquer un rendez-vous, etc. Sur un PJ, cela se manifeste comme une intrusion du MJ. Effort : Prolonge la durée jusqu'à ta prochaine récupération de dix heures OU inflige 2 dégâts d'Intellect par niveau d'Effort, en plus de la malchance. Au rang 3 avec deux niveaux d'Effort : la malchance devient permanente (malédiction de niveau 4)."
       },
       {
+        "id": "potion-cyphers",
         "name": "Cyphers de Potions",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Tu peux porter **deux cyphers supplémentaires**, tant qu’il s’agit de cyphers que **tu as toi‑même créés** avec *Brassage de Potion*."
+        "description": "Tu peux porter deux cyphers supplémentaires, tant qu'il s'agit de cyphers que tu as toi-même créés avec Brassage de Potion."
       }
     ],
-    "statOptions": ["intellect"],
-    "description": "<p>Un Type de Épées & Sorcellerie centré sur l'archétype sorcier·ère, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Épées & Sorcellerie. Réserves principales : Intellect.</em></p>"
+    "statOptions": [
+      "intellect"
+    ],
+    "description": "<p>You are a master of potions, using herbs, minerals, and even bits and pieces such as frog eyes and dragon scales as your metaphorical canvas and paint. When you work with these materials to brew potions, you imagine and create new substances imbued with wondrous and magical effects. But your magical talents extend beyond potioncraft—you can call down curses on your foes with very real effects and, depending on your choices as you continue to study and explore, eventually learn all manner of other spells. You are one of the most versatile members of your group, given that you can brew a potion for almost any need—healing, hiding, empowering, or straight-up blasting. When facing conflict, you prefer to let others take the brunt, but you're not inexperienced when it comes to weapons, and can give as good as you get if the need arises.</p>"
   },
   "folder": "Mqh1tXdDDqH3lySK",
   "sort": 0,
@@ -64,7 +78,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

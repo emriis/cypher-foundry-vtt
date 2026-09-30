@@ -5,10 +5,17 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": ["might"],
+    "statOptions": [
+      "might"
+    ],
     "statAmount": 2,
-    "skillOptions": ["Athletics", "Outdoor Survival", "", ""],
-    "description": "<p>You shrug off punishment that would slow down most people, and keep moving forward regardless.</p><p><em>You gain +2 to your Might Pool, and training in Athletics or Outdoor Survival.</em></p>"
+    "skillOptions": [
+      "Athletics",
+      "Outdoor Survival",
+      "",
+      ""
+    ],
+    "description": "<p>You're strong and can take extra physical punishment—you keep going, shrugging off hurts and injuries that might slow or incapacitate a lesser person. You might have a large frame and a square jaw. Tough characters frequently have visible scars.</p>"
   },
   "folder": null,
   "sort": 0,
@@ -17,7 +24,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

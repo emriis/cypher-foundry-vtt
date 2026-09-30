@@ -5,10 +5,17 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": ["speed"],
+    "statOptions": [
+      "speed"
+    ],
     "statAmount": 2,
-    "skillOptions": ["Deception", "Initiative", "", ""],
-    "description": "<p>Quick of foot, quick of hand, and quick of tongue, you simply do everything a beat faster than most.</p><p><em>You gain +2 to your Speed Pool, and training in Deception or Initiative.</em></p>"
+    "skillOptions": [
+      "Deception",
+      "Initiative",
+      "",
+      ""
+    ],
+    "description": "<p>You're fleet of foot. Because you're quick, you can accomplish tasks more rapidly than others can. You're not just quick on your feet, however—you're quick with your hands, and you think and react quickly. You even talk quickly.</p>"
   },
   "folder": null,
   "sort": 0,
@@ -17,7 +24,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

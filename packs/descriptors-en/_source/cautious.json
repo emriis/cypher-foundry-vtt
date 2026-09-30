@@ -5,10 +5,17 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": ["speed"],
+    "statOptions": [
+      "speed"
+    ],
     "statAmount": 2,
-    "skillOptions": ["Gathering Information", "Perception", "", ""],
-    "description": "<p>You study a situation carefully before committing to it, preferring preparation over recklessness.</p><p><em>You gain +2 to your Speed Pool, and training in Gathering Information or Perception.</em></p>"
+    "skillOptions": [
+      "Gathering Information",
+      "Perception",
+      "",
+      ""
+    ],
+    "description": "<p>You don't charge into new situations without due consideration. You're afraid of what will happen if you don't carefully study the particulars of a new job, opportunity, or investigation. Those burdened with less vigilance than you might call you timid, but you suspect bravery is just another word for foolhardiness.</p>"
   },
   "folder": null,
   "sort": 0,
@@ -17,7 +24,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

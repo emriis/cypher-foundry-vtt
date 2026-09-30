@@ -24,38 +24,53 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "effort",
         "name": "Effort",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
         "description": "Increase the minimum number rolled for this ability by 3. Action. At tier 3: The minimum number rolled for this ability increases to 12."
       },
       {
+        "id": "expert-sneak",
         "name": "Expert Sneak",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
         "description": "You are trained in stealth. At tier 6: You can become an expert in stealth if you are already specialized, but you must gain the skill normally (such as from a character advancement)."
       },
       {
+        "id": "sneak-attack",
         "name": "Sneak Attack",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "speed",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "If you use a light weapon to attack a foe under one of the following conditions, your attack inflicts +5 damage. (This ability doesn’t work with medium or heavy weapons.) You attack with surprise. An ally uses their action to ease your attack. Your foe’s defenses are hindered due to some other ongoing direct distraction. Your foe is unable to take their next turn due to some disabling attack or situation. First action."
+        "description": "If you use a light weapon to attack a foe under one of the following conditions, your attack inflicts +5 damage. (This ability doesn't work with medium or heavy weapons.) You attack with surprise. An ally uses their action to ease your attack. Your foe's defenses are hindered due to some other ongoing direct distraction. Your foe is unable to take their next turn due to some disabling attack or situation. First action."
       }
     ],
-    "statOptions": ["speed", "intellect"],
-    "description": "<p>A Dungeon Fantasy Type focused on rogue archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Dungeon Fantasy. Primary Pools: speed, intellect.</em></p>"
+    "statOptions": [
+      "speed",
+      "intellect"
+    ],
+    "description": "<p>You're crafty; some might even say shady. That's because you survive risky endeavors with stealth, skill, and the grace that comes with quick reflexes. You size up the vulnerabilities of others with a glance, and when it's in your best interest, exploit opportunities to their fullest. What you lack in brawn you more than make up for in guile, furtiveness, and maybe a little bit of luck. You prefer letting someone else in your group charge head-first into conflict, allowing you to slip past unnoticed, possibly so you can stick a dagger in an enemy's back. When danger isn't imminent, you're among the best suited to carefully examine a new location and, if necessary, remediate traps and unlock vaults.</p>"
   },
   "folder": "pQTzt4j9XPpLBpKm",
   "sort": 0,
@@ -64,7 +79,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

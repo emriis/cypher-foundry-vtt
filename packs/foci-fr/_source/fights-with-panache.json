@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/skills/melee/sword-parry.webp",
   "system": {
-    "description": "<p>Un Focus pour une personne flamboyante qui se bat avec audace et style, au point d’être divertissante à regarder.</p>",
+    "description": "<p>You're a swashbuckling daredevil who fights with a flamboyant style that's entertaining to watch.</p>",
     "abilities": [
       {
         "id": "attack-flourish",
@@ -21,7 +21,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Tes mouvements stylés et tes réparties donnent un atout à la prochaine tâche d’un observateur proche."
+        "description": "Lorsque tu attaques, tu ajoutes des mouvements stylés, une pirouette, une répartie brillante ou un geste théâtral. Une créature de ton choix à portée courte qui peut te voir gagne un atout à sa prochaine tâche si elle l’effectue dans un ou deux rounds."
       },
       {
         "id": "roguish-smile",
@@ -37,7 +37,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Tu effaces le dernier round de la mémoire d’une cible proche de niveau 3 ou moins; l’Effort augmente le niveau maximal."
+        "description": "Avec un sourire charmeur — et peut‑être un clin d’œil — tu effaces le dernier round de la mémoire d’une cible de niveau 3 ou moins à portée immédiate (attaque d’Intellect requise). Effort : augmenter le niveau maximal affecté de +1."
       },
       {
         "id": "taunting-defense",
@@ -51,7 +51,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Tu entraves une attaque de mêlée contre toi, mais une réussite inflige une blessure mineure supplémentaire."
+        "description": "Quand tu te défends contre une attaque de mêlée, tes piques, moqueries ou mouvements provocateurs attirent la colère de l’adversaire. L’attaque de ton adversaire est entravée, mais s’iel te touche, l’attaque inflige une blessure mineure supplémentaire."
       },
       {
         "id": "dashing-defense",
@@ -67,7 +67,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Avec une arme légère ou moyenne, tu peux tenter un Blocage après avoir échoué à Esquiver une attaque."
+        "description": "Lorsque tu manies une arme légère ou moyenne contre un adversaire de ta taille ou plus petit·e, si tu rates une Esquive, tu peux quand même tenter un Blocage."
       },
       {
         "id": "fast-kill",
@@ -86,7 +86,7 @@
             "speed"
           ]
         },
-        "description": "Une attaque de mêlée ou à distance réussie inflige 4 dégâts supplémentaires, mais pas deux rounds de suite."
+        "description": "When you hit with a melee or ranged attack, you deal an additional 4 damage. You can't use this ability in two consecutive rounds. Enabler."
       },
       {
         "id": "wounded-fury",
@@ -102,7 +102,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Avec des blessures graves, tu gagnes un niveau d’Effort gratuit sur une attaque par round; au rang 3, tu en gagnes deux."
+        "description": "While you have at least three moderate wounds or at least one major wound, you gain one free level of Effort you can apply to your attack each round (easing your chance to hit or dealing 3 extra damage). This benefit lasts until you take your next ten-minute or longer recovery (or you no longer suffer from those wounds) At tier 3: The benefit increases to two free levels of Effort. Enabler."
       },
       {
         "id": "acrobatic-attack",
@@ -118,7 +118,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Une attaque acrobatique donne un niveau d’Effort gratuit si tu dépenses de l’Effort sur son jet; un 17 ou 18 naturel peut créer un effet mineur."
+        "description": "You leap into the attack, twisting or flipping through the air. If you use Effort on the attack roll, you get a free level of Effort on it. If you roll a natural 17 or 18, instead of inflicting extra damage you can choose to have a minor effect. You can't use this ability if you can't freely use the armor you're wearing. Enabler."
       },
       {
         "id": "flamboyant-boast",
@@ -134,7 +134,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Tu annonces un exploit difficile; sa réussite entrave le prochain tour des témoins, tandis que son échec entrave tes tentatives de les influencer."
+        "description": "Tu décris bruyamment un exploit que tu vas réaliser, puis, comme action supplémentaire, tu essaies de le faire. Si l’action serait difficile (ou impossible) pour une personne moyenne et que tu réussis, les non-alliés témoins sont tellement étonné·e·s que toutes leurs actions sont entravées à leur prochain tour. Le·La MJ détermine si ta vantardise est réellement impressionnante. Si tu échoues, jusqu’à ta prochaine récupération de dix minutes ou plus, toutes tes tentatives pour influencer les témoins (attaques, aptitudes, interactions) sont entravées."
       },
       {
         "id": "quick-adjustment",
@@ -150,7 +150,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Une attaque non létale devient une Première action."
+        "description": "Ton attaque non létale (désarmement, briser un objet, assommer…) devient une Première action."
       },
       {
         "id": "improved-dashing-defense",
@@ -166,7 +166,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Un·e allié·e proche qui manie une arme légère ou moyenne bénéficie de Défense virevoltante jusqu’à ton prochain tour."
+        "description": "Un·e allié·e à portée immédiate, maniant une arme légère ou moyenne, bénéficie de Défense virevoltante jusqu’à ton prochain tour."
       },
       {
         "id": "misdirect",
@@ -182,7 +182,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "Quand un adversaire te rate, redirige son attaque vers une autre cible proche avec un jet d’attaque non modifié."
+        "description": "Lorsqu’un adversaire te rate, tu peux rediriger son attaque vers une autre cible à portée immédiate. Fais un jet d’attaque non modifié contre cette nouvelle cible (tu peux ajouter de l’Effort pour viser). En cas de réussite, la cible subit des dégâts égaux au niveau de l’attaquant d’origine."
       },
       {
         "id": "agile-wit",
@@ -198,7 +198,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Tu peux traiter les tâches de Célérité et leur coût d’Effort comme des tâches d’Intellect si tu le souhaites."
+        "description": "When attempting a Speed task, you can spend points from your Intellect Pool instead of your Speed Pool, and vice versa. Use the Edge stat for the Pool you're spending points from."
       },
       {
         "id": "using-the-environment",
@@ -214,7 +214,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Une couverture proche t’accorde couverture et atout en mêlée; tu franchis librement obstacles et terrain difficile jusqu’à une récupération."
+        "description": "Tu utilises le décor à ton avantage. Si quelque chose à portée immédiate peut plausiblement servir de couverture (table, lustre, rampe, un autre adversaire, etc.), tu obtiens une couverture et un atout sur tes attaques de mêlée. Il s’agit d’une tâche de routine qui ne nécessite donc pas de jet pour se déplacer partout où c’est physiquement possible tant que tu pourrais rejoindre cet endroit avec un mouvement normal, de l’escalade, un saut (de plus tu ignores les obstacles et le terrain difficile quand tu le fais). Par exemple : escalader une tenture jusqu’à un balcon, glisser le long d’une voile, etc. Impossible cependant de passer par une meurtrière ou d’entrer dans une cage fermée. L’effet dure jusqu’à ta prochaine récupération de dix minutes ou plus."
       },
       {
         "id": "again-and-again",
@@ -230,7 +230,7 @@
           "amount": 6,
           "options": []
         },
-        "description": "Tu effectues une action supplémentaire à ton tour."
+        "description": "You can take an extra action on your turn. Enabler."
       },
       {
         "id": "return-to-sender",
@@ -246,7 +246,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "Après avoir réussi un Blocage ou une Esquive contre une attaque de mêlée, tu attaques immédiatement sa source; attends ton prochain tour normal pour réutiliser cette aptitude."
+        "description": "Si tu réussis un Blocage ou une Esquive contre une attaque de mêlée, tu peux immédiatement faire une attaque de mêlée contre l’assaillant. Tu ne peux pas réutiliser cette aptitude avant ton prochain tour normal."
       }
     ]
   },
@@ -257,7 +257,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document; créé sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

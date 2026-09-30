@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/svg/star.svg",
   "system": {
-    "description": "<p>A Focus for studying a mystical power that unites all things across galactic distances.</p>",
+    "description": "<p>You are a member of a religious order that studies the mystical power that unites all things across galactic distances, granting you psychic and physical abilities.</p>",
     "abilities": [
       {
         "id": "defensive-precognition",
@@ -19,7 +19,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Automatically dodge ranged attacks, but hinder your other actions on the next turn after being attacked from range."
+        "description": "You automatically dodge all ranged attacks (no roll required). However, on your next turn after you're attacked with a ranged attack, all your other actions are hindered. This ability lasts until you use a ten-minute or longer recovery. Action to initiate."
       },
       {
         "id": "push",
@@ -33,7 +33,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Telekinetically push a visible creature your size or smaller an immediate distance within short range."
+        "description": "You telekinetically push a target within short range an immediate distance in any direction. You must be able to see the target, it must be your size or smaller, and it must not be affixed to anything. The push is quick, and the force is about as direct and crude as a kick or punch. Action."
       },
       {
         "id": "use-the-force",
@@ -47,7 +47,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Gain an asset on one noncombat task this turn; you cannot use this ability again until a recovery action."
+        "description": "You gain an asset on a single noncombat task you attempt this turn. You cannot use this ability again until after you take a recovery. Enabler."
       },
       {
         "id": "telepathic-message",
@@ -64,7 +64,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Send a one-way telepathic message to a target you have seen on the same planet, extending its range with Effort."
+        "description": "You can send a one-way telepathic message lasting about a minute. You must have at least seen the target before, and they must be on the same planet as you. The target recognizes the contact as a telepathic message and may recognize your mental “voice.” Effort: Increase the range to anywhere in the same star system. Increase the range to anywhere in the same galaxy (this requires three levels of Effort). Action to initiate."
       },
       {
         "id": "desperate-feat",
@@ -80,7 +80,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "While you have a moderate or major wound, gain 1 Edge in a Pool of your choice."
+        "description": "While you have at least one moderate or major wound, you add +1 Edge to the Pool of your choice. Enabler."
       },
       {
         "id": "telekinesis",
@@ -96,7 +96,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Telekinetically manipulate a visible object within long range over one round, including moving or hindering a creature."
+        "description": "You telekinetically affect an object you can see within long range that is not too heavy for you to physically affect if you were standing next to it and could use your hands normally. Options include closing or opening a door, writing a simple symbol or a few words with a writing instrument, transferring an object a short distance, wresting an object from another creature's grasp (on a successful Intellect roll versus their level), pushing a creature an immediate distance (with a successful attack roll), or even hindering a creature's attack or defense by applying restraining pressure to a leg or arm (with a successful attack roll). In all cases, the effect must occur over the course of one round. Action."
       },
       {
         "id": "psychic-suggestion",
@@ -113,7 +113,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "On a successful Intellect attack, make a nearby target take an indicated action on its next turn."
+        "description": "If your Intellect attack succeeds, a target within short range takes the action you indicate on their next turn. If this action would cause direct harm to the creature or their allies, your mental attack is hindered. Action."
       },
       {
         "id": "acrobatic-attack",
@@ -130,7 +130,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Leap into an attack and gain a free Effort level when spending Effort on the attack roll; a natural 17 or 18 can produce a minor effect instead of extra damage."
+        "description": "You leap into the attack, twisting or flipping through the air. If you use Effort on the attack roll, you get a free level of Effort on it. If you roll a natural 17 or 18, instead of inflicting extra damage you can choose to have a minor effect. You can't use this ability if your physical actions are hindered from wearing armor. Enabler."
       },
       {
         "id": "unbalancing-strike",
@@ -147,7 +147,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Make an eased melee attack that hinders all of the target’s actions on its next turn if it hits."
+        "description": "Make a melee attack to knock your foe off balance. This attack is eased by two steps. If you succeed, you inflict damage and all actions they attempt on their next turn are hindered. Action."
       },
       {
         "id": "telekinetic-crush",
@@ -164,7 +164,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Make a hindered Intellect attack against a nonliving foe to crush it for 6 damage."
+        "description": "Make a hindered Intellect attack against a nonliving foe (such as a robot or zombie). If you succeed, you crush them, inflicting 6 damage. Action."
       },
       {
         "id": "total-awareness",
@@ -180,7 +180,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Your special senses make you difficult to surprise or hide from, and Effort on initiative or perception gains two free levels."
+        "description": "You automatically and frequently use your special senses to check your immediate vicinity, making it very difficult to surprise, hide from, or sneak up on you. When you use Effort on initiative and perception tasks, you gain two free levels of Effort. Enabler."
       },
       {
         "id": "telekinetic-throw",
@@ -196,7 +196,7 @@
           "amount": 5,
           "options": []
         },
-        "description": "Hurl an object at a nearby target with an Intellect attack to deal 6 damage on a hit."
+        "description": "You telekinetically grab an object within short range and hurl it at a target within short range. (To throw a creature instead of an object, you first have to telekinetically grab them with a successful Intellect attack.) Make an Intellect attack against your target. If you succeed, your target and whatever you throw each take 6 damage. Action."
       },
       {
         "id": "lethal-capability",
@@ -213,7 +213,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Choose a specific attack type to deal 5 additional damage; you can select this ability more than once with a different attack each time."
+        "description": "You inflict an additional 5 damage with attacks of one specific type, such as a thrown knife, a shot with a blaster, unarmed attacks, or some other specific attack you prefer. You can gain this ability more than once. Each time you do, choose a different specific attack."
       },
       {
         "id": "return-to-sender",
@@ -230,7 +230,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "After successfully blocking or dodging a melee attack, immediately make a melee attack against the attacker."
+        "description": "If you successfully block or dodge a melee attack, you can immediately make a melee attack against the attacking foe. You can't use this ability again until after you take your normal turn. Enabler."
       }
     ]
   },
@@ -241,7 +241,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

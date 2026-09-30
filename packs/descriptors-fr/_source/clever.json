@@ -5,7 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": ["intellect"],
+    "statOptions": [
+      "intellect"
+    ],
     "statAmount": 2,
     "skillOptions": [
       "Tromperie",
@@ -13,7 +15,7 @@
       "Persuasion",
       "Discernement des motivations"
     ],
-    "description": "<p>Tu es vif·ve d'esprit et tu as le sens de la répartie. Tu comprends les gens, ce qui te permet de les duper.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Tromperie, Piratage informatique, Persuasion ou Discernement des motivations.</em></p>"
+    "description": "<p>Tu es vif·ve d'esprit et tu as le sens de la répartie. Tu comprends les gens, ce qui te permet de les duper.</p>"
   },
   "folder": null,
   "sort": 0,
@@ -22,7 +24,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Construit sous la Cypher Open License à partir du contenu du Cypher Reference Document (CRD)."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

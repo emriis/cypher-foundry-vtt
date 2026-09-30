@@ -24,38 +24,53 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "expert-interlocuter",
         "name": "Expert Interlocuter",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
         "description": "You are trained in your choice of charm, deception, or intimidation. At tier 6: You can become an expert in that same skill if you are already specialized, but you must gain the skill normally (such as from a character advancement)."
       },
       {
+        "id": "inspiring-performance",
         "name": "Inspiring Performance",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
         "description": "With a rousing speech or inspiring music, you lift the spirits of and inspire three allies who can hear and see you. While you continue to speak or perform each round as your action, affected allies gain an asset in a task you choose (combat or noncombat) related to your performance. Even after the effect ends, affected allies are so inspired that they add +1 to their next recovery. Effort: Affect three additional allies. Action. At tier 3: Affected allies add +2 to their next recovery."
       },
       {
+        "id": "a-smile-and-a-word",
         "name": "A Smile and a Word",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
         "description": "When you successfully interact with a creature by succeeding on a charm, deception, or intimidation task—even those having to do with calming animals or communicating with someone or something whose language you do not speak—you also learn one small useful or at least interesting bit of information. For instance, if you convince the guard to let you pass, you might also learn that their supervisor is due back in ten minutes. Action."
       }
     ],
-    "statOptions": ["speed", "intellect"],
-    "description": "<p>A Dungeon Fantasy Type focused on bard archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Dungeon Fantasy. Primary Pools: speed, intellect.</em></p>"
+    "statOptions": [
+      "speed",
+      "intellect"
+    ],
+    "description": "<p>You're an entertainer: a singer, dancer, poet, storyteller, or something similar. Naturally charismatic and talented, your diligence and study have only improved your art. You know old poems, songs, jokes, and stories, and you're skilled at creating new ones, too. Your seemingly beneficent nature puts others at their ease, and your performances lift spirits, ease mental burdens, and may even inspire. Most characters on your team probably look to you for help, advice, and, if nothing else, a rousing performance to spark courage. Those same talents are useful when your group tries diplomacy. Whether you're relying on the truth or attempting a deception, your ability to flatter, smile, and delight others may open places that swords and spells can't.</p>"
   },
   "folder": "pQTzt4j9XPpLBpKm",
   "sort": 0,
@@ -64,7 +79,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

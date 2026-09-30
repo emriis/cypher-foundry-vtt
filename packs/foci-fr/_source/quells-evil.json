@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/svg/holy-symbol.svg",
   "system": {
-    "description": "<p>Un Focus pour trouver, détruire et bannir les mort-vivant·e·s, les démons et les créatures similaires.</p>",
+    "description": "<p>You are skilled in finding, destroying, and banishing undead, demons, and creatures of similar ilk.</p>",
     "abilities": [
       {
         "id": "sense-evil",
@@ -19,7 +19,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Perçois les mort-vivant·e·s, démons et créatures similaires proches avec un résultat minimal de 9; ce minimum passe à 12 au rang 3."
+        "description": "En utilisant une action pour percevoir les mort‑vivant·e·s, les démons (ou les créatures possédées par des démons), ou les créatures du même acabit à portée immédiate, si ton jet est inférieur à 9, considère que tu as obtenu 9. (Tu évites ainsi une Intrusion du·de la MJ si tu fais un 1.) Au rang 3, le minimum passe à 12. Effort : augmenter le minimum obtenu de +3 ou L’effet dure jusqu’à ta prochaine récupération de dix minutes ou plus."
       },
       {
         "id": "inspiring-trust",
@@ -47,7 +47,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Attaque jusqu’à cinq créatures surnaturelles maléfiques proches de niveau 2 ou moins pour les étourdir ou les repousser."
+        "description": "Tu canalises une énergie spirituelle pour étourdir ou repousser les créatures surnaturelles maléfiques. Choisis jusqu’à cinq mort‑vivant·e·s, démons ou créatures du même acabit de niveau 2 ou moins à courte portée, et fais un jet d’attaque d’Intellect séparé pour chacun·e. En cas de réussite, tu choisis si iels perdent leur prochain tour ou fuient ta présence pendant un round. Effort : imposer une autre action à effectuer pendant un round (attaquer un ennemi de ton choix, etc.) ou augmenter le niveau maximal affecté de +1. Dernière action."
       },
       {
         "id": "shield-against-evil",
@@ -64,7 +64,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Protège le personnage ou un·e allié·e touché·e contre les créatures maléfiques spécifiées, facilite la défense et immunise contre l’influence mentale, la peur et la possession."
+        "description": "Tu bénis toi‑même ou un·e allié·e touché·e, gagnant une protection contre les mort‑vivant·e·s, démons et créatures du même acabit jusqu’à ta prochaine récupération de dix minutes ou plus. La protection facilite les jets de défense contre ces créatures et accorde une immunité contre l’influence mentale, la peur et la possession (provenant de n’importe quelle source)."
       },
       {
         "id": "invisibility-to-evil",
@@ -81,7 +81,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Rend un·e allié·e touché·e effectivement invisible aux créatures maléfiques de niveau 3 ou moins jusqu’à une récupération de dix minutes."
+        "description": "Un·e allié·e touché·e devient effectivement invisible pour les mort‑vivant·e·s, démons et créatures du même acabit de niveau 3 ou moins, jusqu’à ta prochaine récupération de dix minutes ou plus. L’effet cesse si la cible révèle sa présence (attaque, aptitude, déplacement d’un gros objet…). Effort : augmenter le niveau maximal des créatures incapables de percevoir la cible de +1."
       },
       {
         "id": "unearth-evil",
@@ -97,7 +97,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Crée une carte thermique mentale des créatures maléfiques concernées dans un rayon de 15 km et conserve leur position avec de l’Effort supplémentaire."
+        "description": "Tu détectes la présence des mort‑vivant·e·s, démons et créatures du même acabit à grande distance. Tu génères une « carte thermique » mentale des créatures concernées dans un rayon de 15 km. La position des créatures affectées est précise à environ 30 m. Le processus prend d’une heure à une journée entière de concentration, selon les circonstances (distance, interférences, etc.). Tu ne sais pas à l’avance combien de temps cela prendra. Les créatures de niveau 4+ sentent qu’on les a remarquées, sans forcément comprendre comment. Effort : après avoir localisé les cibles, tu gardes leur position en tête (même si elles se déplacent) jusqu’à ta prochaine récupération d’une heure ou plus (nécessite 2 niveaux d’Effort)."
       },
       {
         "id": "blast-evil",
@@ -113,7 +113,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Purifie une zone immédiate adjacente pour infliger 3 dégâts, ou 6 dégâts aux mort-vivant·e·s, démons et créatures similaires."
+        "description": "Tu purifies une zone immédiate adjacente d’un éclat radiant, infligeant 3 dégâts à jusqu’à trois cibles (jet séparé pour chacune). Si les cibles sont des mort‑vivant·e·s, démons ou créatures du même acabit, elles subissent 6 dégâts à la place. Si une cible est possédée, elle obtient une nouvelle chance de résister et d’expulser son possesseur."
       },
       {
         "id": "righteous-cloak",
@@ -129,7 +129,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Rayonne d’une lumière pure qui inflige automatiquement 4 dégâts à quiconque te touche ou t’attaque en mêlée."
+        "description": "Tu rayonnes d’une lumière pure, infligeant automatiquement 4 dégâts (sans jet) à quiconque te touche ou t’attaque en mêlée. Tu peux aussi illuminer une zone courte autour de toi. L’effet dure jusqu’à ta prochaine récupération de dix minutes ou plus."
       },
       {
         "id": "rebuke-evil",
@@ -145,7 +145,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Ordonne à une créature maléfique touchée par une attaque d’Intellect d’accomplir un objectif, même s’il lui nuit ou nuit à ses allié·e·s."
+        "description": "Tu réprimandes un mort‑vivant·e·s, un démon ou une créature du même acabit à courte portée en réussissant une attaque d’Intellect. La créature fait alors de son mieux pour accomplir l’ordre que tu lui donnes, même si cela lui nuit ou nuit à ses allié·e·s, jusqu’à ta prochaine récupération de dix minutes ou plus. Effort : affecter une cible supplémentaire (jet séparé pour chaque), avec le même ordre pour toutes."
       },
       {
         "id": "shrug-off-evil",
@@ -162,7 +162,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Devient immunisé·e à l’influence mentale, la peur et la possession, et ignore une blessure infligée par une créature maléfique jusqu’à une récupération de dix heures."
+        "description": "Tu es immunisé·e à l’influence mentale, la peur et la possession (de n’importe quelle source). Tu ignores une blessure infligée par un mort‑vivant·e·s, un démon ou une créature du même acabit. Ce deuxième effet de l’aptitude se renouvelle après une récupération de dix heures."
       },
       {
         "id": "fence-out-evil",
@@ -178,7 +178,7 @@
           "amount": 6,
           "options": []
         },
-        "description": "Entoure une zone courte de lumière purificatrice qui inflige des dégâts aux créatures maléfiques chaque round et peut les réprimander."
+        "description": "Tu entoures une zone courte d’un mur immatériel de lumière purificatrice jusqu’à ta prochaine récupération de dix minutes ou plus. À l’apparition du mur, puis à chaque round : chaque mort‑vivant·e·s, démon ou créature du même acabit dans la zone (ou entrant dans la zone) subit 3 dégâts (ignore l’Armure), sans jet. De plus, tu peux faire une attaque d’Intellect contre une créature qualifiée dans la zone ; en cas de réussite, elle est affectée comme par Réprimande sacrée."
       },
       {
         "id": "retribution",
@@ -194,7 +194,7 @@
           "amount": 8,
           "options": []
         },
-        "description": "Fait tomber des flammes radiantes sur une zone immédiate à longue portée, blessant chaque créature et plus gravement une cible choisie."
+        "description": "Call radiant flame onto an immediate area at long range, damaging every creature and one chosen creature more severely."
       }
     ]
   },
@@ -205,7 +205,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

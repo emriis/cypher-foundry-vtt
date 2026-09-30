@@ -97,6 +97,11 @@ Notes:
 - The `_source` JSON files are the authoring source of truth. Edit the matching English and
   French records together, preserve their mechanical alignment, and run
   `node --test tests/compendium-sources.test.mjs` before rebuilding the packs.
+- The English CRD is the absolute authority for compendium description text. Under the Cypher
+  Open License, store the complete CRD text rather than a summary. For French records, use the
+  complete matching Character Book translation when available; otherwise copy the English text
+  verbatim. Never infer an unresolved translation or alter names, IDs, or mechanics to force a
+  match. Keep `docs/local/` private and read-only; it is not a source file to stage or package.
 
 ## Commit messages
 

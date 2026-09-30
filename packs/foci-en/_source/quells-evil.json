@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/svg/holy-symbol.svg",
   "system": {
-    "description": "<p>A Focus for finding, destroying, and banishing undead, demons, and similar evil creatures.</p>",
+    "description": "<p>You are skilled in finding, destroying, and banishing undead, demons, and creatures of similar ilk.</p>",
     "abilities": [
       {
         "id": "sense-evil",
@@ -19,7 +19,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Perceive nearby undead, demons, or similar creatures with a minimum roll of 9; the minimum rises to 12 at tier 3."
+        "description": "When you use an action to perceive undead, demons (or creatures possessed by demons), or creatures of similar ilk within immediate range, if you roll a 9 or less, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) This ability lasts until you use a ten-minute or longer recovery. Effort: Increase the minimum number rolled for this ability by 3. Action to initiate. At tier 3: The minimum number rolled for this ability increases to 12."
       },
       {
         "id": "inspiring-trust",
@@ -33,7 +33,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Allies who share your sense of good and evil gain +1 to their recoveries while in your presence."
+        "description": "Allies in your presence that share your sense of good versus evil add +1 to their recoveries. Enabler."
       },
       {
         "id": "tribulation",
@@ -47,7 +47,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Attack up to five nearby evil supernatural creatures of level 2 or less to stun or repel them."
+        "description": "You conjure pure spiritual energy to blast up to five undead, demons, and creatures of similar ilk of level 2 or less within short range. If you succeed on a separate Intellect attack against each foe, you choose whether they spend their next turn fleeing or lose their next turn. Effort: Increase the maximum level of the foe you can affect by 1. Specify some other action for the creatures to perform for one round, such as attacking a foe of your choice. Last action. “Creatures of similar ilk” could include additional categories of ineffably evil entities, depending on the campaign. Work with your GM to determine the details if there are any questions. For instance, other hellish creatures, fallen angels, Lovecraftian creatures, creatures from the “Crawling Deeps,” or creatures born of “the Strange” might be just as anathematic as undead and demons."
       },
       {
         "id": "shield-against-evil",
@@ -64,7 +64,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Protect yourself or a touched ally against specified evil creatures, easing defense and granting immunity to mental influence, fear, and possession."
+        "description": "You bless yourself or a touched ally with protection against undead, demons, or creatures of similar ilk until you use a ten-minute or longer recovery. The protection eases defense rolls against the specified creature variety and grants immunity against mental influence, fear, and possession (from any source). Action."
       },
       {
         "id": "invisibility-to-evil",
@@ -81,7 +81,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Make a touched ally effectively invisible to evil creatures of level 3 or less until a ten-minute recovery."
+        "description": "You or a touched ally become becomes effectively invisible to undead, demons, or creatures of similar ilk of level 3 or less until you use a ten-minute or longer recovery. This effect ends if the target does something to reveal their presence or position—attacking, using an ability, moving a large object, and so on. Effort: Increase the maximum level of foes who can't perceive the invisible target by 1. Action to initiate."
       },
       {
         "id": "unearth-evil",
@@ -97,7 +97,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Create a mental heat map of qualifying evil creatures within 10 miles and retain awareness of their locations with additional Effort."
+        "description": "You detect the faint whiff of undead, demons, and similar ilk from a great distance. When you use this ability, you generate a mental “heat map” of qualifying creatures within a 10-mile (16 km) radius. Affected creature locations are accurate to within about 100 feet (30 m). This takes anywhere from an hour to a full day of concentration, depending on what the GM feels is appropriate due to time, distance, or other mitigating circumstances. However, you don't know in advance how long it will take. Creatures of level 4 or higher are aware that something has noticed them, but they don't necessarily realize what. Effort: Once you have established where each qualifying target is located, you retain a sense of their locations (so if they move, you are aware of their new position) until you use a one-hour or longer recovery (this requires two levels of Effort). Action to initiate. A heat map is a simple map of an area using colors to show the intensity of something in a visual way, like showing where things are “hot” or “cold”—or, in this case, “evil.”"
       },
       {
         "id": "blast-evil",
@@ -113,7 +113,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Blast an adjacent immediate area for 3 damage, or 6 damage against undead, demons, and similar creatures."
+        "description": "You blast an adjacent immediate area with cleansing radiance, inflicting 3 damage on up to three targets in the area—make a separate attack roll against each. If the targets are undead, demons, or creatures of similar ilk, they take 6 damage instead. If any targets are possessed by a spirit, demon, or similar entity, they gain another opportunity to resist the effect and eject their possessor. Action."
       },
       {
         "id": "righteous-cloak",
@@ -129,7 +129,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Radiate wholesome light that automatically deals 4 damage to anyone who touches or makes a melee attack against you."
+        "description": "You shine with wholesome light, automatically inflicting 4 damage (no roll needed) on anyone who tries to touch you or strike you with a melee attack. While Righteous Cloak is active, bright light illuminates a short area around you if you wish. This ability lasts until you use a ten-minute or longer recovery. Enabler."
       },
       {
         "id": "rebuke-evil",
@@ -145,7 +145,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Command an evil creature you hit with an Intellect attack to pursue a goal, even one that harms it or its allies."
+        "description": "You rebuke one undead, demon, or creature of similar ilk within short range that you make a successful Intellect attack against. The affected creature does their best to accomplish a goal you specify in your rebuke, even if it would cause them or their allies harm, until you use a ten-minute or longer recovery. Effort: Affect an additional foe (make a separate attack roll against each foe); you must give the same command to all affected creatures. Last action."
       },
       {
         "id": "shrug-off-evil",
@@ -162,7 +162,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Become immune to mental influence, fear, and possession, and ignore one wound from an evil creature until a ten-hour recovery."
+        "description": "You are immune to mental influence, fear, and possession (from any source). You ignore one wound inflicted by undead, demons, or creatures of similar ilk. This aspect of this ability renews after you take a ten-hour recovery. Enabler."
       },
       {
         "id": "fence-out-evil",
@@ -178,7 +178,7 @@
           "amount": 6,
           "options": []
         },
-        "description": "Surround a short area with cleansing light that damages evil creatures each round and can rebuke them."
+        "description": "You encircle a short area in a transparent, immaterial wall of cleansing light until you use a ten-minute or longer recovery. When the wall appears, each undead, demon, or creature of similar ilk within its area—or that enters the area—automatically takes 3 damage (ignores armor) from the light (no attack roll required) each round. In addition, you can attempt an Intellect attack against a qualifying creature in the area each round as your action. If you succeed, that creature is affected as if you successfully used Rebuke Evil against them. Action to initiate; action for each targeted use. Supreme Retribution (8 Intellect): You call down a shaft of roaring radiant flame in an immediate area within long range. Make separate Intellect attacks against each creature in the area. Success means you inflict 4 damage; all creatures take 1 damage even on a failed attack roll. Choose one creature in the area to take an additional 3 damage regardless of whether your attack succeeded or failed. Action."
       },
       {
         "id": "retribution",
@@ -194,7 +194,7 @@
           "amount": 8,
           "options": []
         },
-        "description": "Call radiant flame onto an immediate area at long range, damaging every creature and one chosen creature more severely."
+        "description": "You call down a shaft of roaring radiant flame in an immediate area within long range. Make separate Intellect attacks against each creature in the area. Success means you inflict 4 damage; all creatures take 1 damage even on a failed attack roll. Choose one creature in the area to take an additional 3 damage regardless of whether your attack succeeded or failed. Action."
       }
     ]
   },
@@ -205,7 +205,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

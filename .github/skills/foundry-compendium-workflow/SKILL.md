@@ -19,8 +19,11 @@ item DataModel, paired `_source` entries, and tests before editing. Check
   DataModel and existing naming/ID conventions.
 - Every source record needs its Foundry `_key` in the documented form, such as
   `!items!<_id>`. Check for uniqueness and valid document type/ID.
-- Write original descriptions and summaries. Preserve required Cypher Open
-  License attribution; do not copy substantial CRD text.
+- The English CRD is the absolute authority for descriptions. Under the Cypher Open License,
+   store its complete text rather than summaries. Use the complete matching Character Book
+   translation for French when available; otherwise copy the English text verbatim. If a match is
+   ambiguous, do not guess: retain the unresolved report and leave names, IDs, and mechanics
+   unchanged. Preserve the required Cypher Open License attribution.
 
 ## Validation and packaging
 

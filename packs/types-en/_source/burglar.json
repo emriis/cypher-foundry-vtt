@@ -24,38 +24,53 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "burgle",
         "name": "Burgle",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "speed",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
-        "description": "When you succeed on a stealth task, you can also undertake one of the following tasks as an extra action on your turn, even if the task is usually a Last action: attempt to pick a lock, grab a loose object up to a fifth of your size and conceal it on your person, move up to a long distance, or attack a target in immediate range with a light weapon."
+        "description": "When you succeed on a stealth task, you can also undertake one of the following tasks as an extra action on your turn, even if the task is usually a Last action: attempt to pick a lock, grab a loose object up to a fifth of your size and conceal it on your person, move up to a long distance, or attack a target in immediate range with a light weapon. Enabler."
       },
       {
+        "id": "escape",
         "name": "Escape",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "speed",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
-        "description": "When you roll to escape (such as slipping your restraints, squeezing through the bars, breaking the grip of a creature holding you, or pulling free from sucking quicksand) and your roll is less than a 9, treat the roll as a 9. (This means you don’t get a GM intrusion if you roll a 1.) Action. Effort: Increase the minimum number rolled for this ability by 3. At tier 3: The minimum number rolled for this ability increases to 12."
+        "description": "When you roll to escape (such as slipping your restraints, squeezing through the bars, breaking the grip of a creature holding you, or pulling free from sucking quicksand) and your roll is less than a 9, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) Action. Effort: Increase the minimum number rolled for this ability by 3. At tier 3: The minimum number rolled for this ability increases to 12."
       },
       {
+        "id": "slip-into-shadow",
         "name": "Slip Into Shadow",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Even if in full view of a creature, your successful stealth task allows you to slip away from that creature and hide from view in a nearby shadow, behind a tree or furnishing, or in the next room as your action. Effort: Attempt to slip away from one additional target looking directly at you (attempt a separate stealth task against each). At tier 3: You can attempt to hide from two additional creatures, whether or not you use Effort."
+        "description": "Even if in full view of a creature, your successful stealth task allows you to slip away from that creature and hide from view in a nearby shadow, behind a tree or furnishing, or in the next room as your action. Effort: Attempt to slip away from one additional target looking directly at you (attempt a separate stealth task against each). Enabler. At tier 3: You can attempt to hide from two additional creatures, whether or not you use Effort."
       }
     ],
-    "statOptions": ["speed", "intellect"],
-    "description": "<p>A Epic Fantasy Type focused on burglar archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Epic Fantasy. Primary Pools: speed, intellect.</em></p>"
+    "statOptions": [
+      "speed",
+      "intellect"
+    ],
+    "description": "<p>Who would've thought that you'd one day be capably sneaking through goblin warrens and escaping dragons? Certainly not you. But necessity is the best teacher, and you've learned that shadows are your friends when you need somewhere to hide, sneaking is more than its own reward if you need to accomplish something quickly when no one's watching, and escaping a foe is almost always the right choice, even if it's so you can circle around and attack them by surprise. You prefer letting someone else in your group begin conflicts, allowing you to slip past unnoticed, possibly so you can avoid the combat altogether. When danger isn't imminent, you're among the best suited to carefully examine a new location and, when possible, steal whatever isn't spiked down.</p>"
   },
   "folder": "406V7PHmM8qHDb1x",
   "sort": 0,
@@ -64,7 +79,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

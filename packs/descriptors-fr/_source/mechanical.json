@@ -5,7 +5,9 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": ["intellect"],
+    "statOptions": [
+      "intellect"
+    ],
     "statAmount": 2,
     "skillOptions": [
       "Ingénierie",
@@ -13,7 +15,7 @@
       "Exploitation de systèmes",
       ""
     ],
-    "description": "<p>Tu as un don pour les machines. Tu sais les comprendre, les réparer et parfois en créer de nouvelles.</p><p><em>Tu gagnes +2 à ta Réserve de Intellect, et un entrainement en Ingénierie, Utilisation d'équipement lourd ou Exploitation de systèmes.</em></p>"
+    "description": "<p>Tu as un don pour les machines. Tu sais les comprendre, les réparer et parfois en créer de nouvelles.</p>"
   },
   "folder": null,
   "sort": 0,
@@ -22,7 +24,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Construit sous la Cypher Open License à partir du contenu du Cypher Reference Document (CRD)."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

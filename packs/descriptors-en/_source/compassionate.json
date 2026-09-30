@@ -5,10 +5,17 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": ["intellect"],
+    "statOptions": [
+      "intellect"
+    ],
     "statAmount": 2,
-    "skillOptions": ["Animal Care", "Healing", "", ""],
-    "description": "<p>Helping others is what drives you, and you're at your best tending to someone else's wounds or troubles.</p><p><em>You gain +2 to your Intellect Pool, and training in Animal Care or Healing.</em></p>"
+    "skillOptions": [
+      "Animal Care",
+      "Healing",
+      "",
+      ""
+    ],
+    "description": "<p>Helping others is your calling. It's why you're here. Others delight in your outgoing and charitable nature, and you delight in their happiness. You're at your best when you're aiding others, whether by treating their injuries, helping them with a task, or putting the best face on a bad situation for the sake of morale.</p>"
   },
   "folder": null,
   "sort": 0,
@@ -17,7 +24,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

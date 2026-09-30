@@ -24,28 +24,39 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "desperate-defense",
         "name": "Desperate Defense",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "While you have at least one moderate or one major wound, you can choose to enter a state of heightened awareness against threats. While in this state, you can’t use points from your Intellect Pool, but you add +1 to your Speed Edge and gain two assets to block and dodge tasks. If you choose to end the heightened state while you remain wounded, you can’t resume it again until after you use a recovery."
+        "description": "While you have at least one moderate or one major wound, you can choose to enter a state of heightened awareness against threats. While in this state, you can't use points from your Intellect Pool, but you add +1 to your Speed Edge and gain two assets to block and dodge tasks. If you choose to end the heightened state while you remain wounded, you can't resume it again until after you use a recovery. Enabler."
       },
       {
+        "id": "fast-talk",
         "name": "Fast Talk",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "intellect",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "When speaking with an intelligent creature who can understand you and isn’t hostile, you convince them to take one reasonable action in the next round. A reasonable action must be agreed upon by your GM; it should not put the creature or its allies in obvious danger or be wildly out of character. Action. Hand to Eye (2 Speed or Intellect): When you roll to accomplish a task involving manual dexterity or mental agility—pickpocketing, lockpicking, games involving agility, and so on—and your roll is less than a 9, treat the roll as a 9. (This means you don’t get a GM intrusion if you roll a 1.) Effort: Increase the minimum number rolled for this ability by 3. At tier 3: The minimum number rolled for this ability increases to 12."
+        "description": "When speaking with an intelligent creature who can understand you and isn't hostile, you convince them to take one reasonable action in the next round. A reasonable action must be agreed upon by your GM; it should not put the creature or its allies in obvious danger or be wildly out of character. Action. Hand to Eye (2 Speed or Intellect): When you roll to accomplish a task involving manual dexterity or mental agility—pickpocketing, lockpicking, games involving agility, and so on—and your roll is less than a 9, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) Effort: Increase the minimum number rolled for this ability by 3. Enabler. At tier 3: The minimum number rolled for this ability increases to 12."
       }
     ],
-    "statOptions": ["speed", "intellect"],
-    "description": "<p>A Space Opera Type focused on scoundrel archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Science Fiction. Subgenre: Space Opera. Primary Pools: speed, intellect.</em></p>"
+    "statOptions": [
+      "speed",
+      "intellect"
+    ],
+    "description": "<p>You find that shading the truth, more often than not, benefits your endeavors. You've even pulled off one or more lucrative confidence games during your career, bilking the gullible of their resources for your own benefit. This kind of behavior tends to catch up with a person, so you probably move around a lot, hoping to stay ahead of unfortunate realizations and subsequent reprisal. Your group might lean on you when it comes to breaking into places without proper authorization or for distracting guards, officials, or foes with your capacity to make almost anything sound plausible even if it's a complete web of lies. If you're forced into armed conflict, you'll fight, but you're also remarkably good at seeing to your own welfare first.</p>"
   },
   "folder": "AxljvbOd6vL9wkut",
   "sort": 0,
@@ -54,7 +65,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

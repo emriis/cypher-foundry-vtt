@@ -5,10 +5,17 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": ["speed"],
+    "statOptions": [
+      "speed"
+    ],
     "statAmount": 2,
-    "skillOptions": ["Pickpocketing", "Stealth", "", ""],
-    "description": "<p>Quick and quiet, you know how to use shadows and distraction to move unseen and unheard.</p><p><em>You gain +2 to your Speed Pool, and training in Pickpocketing or Stealth.</em></p>"
+    "skillOptions": [
+      "Pickpocketing",
+      "Stealth",
+      "",
+      ""
+    ],
+    "description": "<p>You're sneaky, slippery, and fast. These talents help you hide, move quietly, and stay unseen. It might be that you're wiry and small. What's more important is that you understand how to use shadows, cover, and distraction to remain unseen and unheard, and how to make movements fluid and deliberate. Whatever the case, your expertise gives you better odds when you wish to sneakily observe, infiltrate, or ambush. Or maybe just to attempt sleight of hand and relieve someone of their valuables.</p>"
   },
   "folder": null,
   "sort": 0,
@@ -17,7 +24,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

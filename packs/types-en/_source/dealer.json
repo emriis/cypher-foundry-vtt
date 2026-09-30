@@ -24,38 +24,53 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "fast-talk",
         "name": "Fast Talk",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "When speaking with an intelligent creature who can understand you and isn’t hostile, you convince them to take one reasonable action in the next round. A reasonable action must be agreed upon by your GM; it should not put the creature or its allies in obvious danger or be wildly out of character. Action."
+        "description": "When speaking with an intelligent creature who can understand you and isn't hostile, you convince them to take one reasonable action in the next round. A reasonable action must be agreed upon by your GM; it should not put the creature or its allies in obvious danger or be wildly out of character. Action."
       },
       {
+        "id": "sneak-attack",
         "name": "Sneak Attack",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "speed",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "If you use a light weapon to attack a foe under one of the following conditions, your attack inflicts +5 damage. (This ability doesn’t work with medium or heavy weapons.) You attack with surprise. An ally uses their action to ease your attack. Your foe’s defenses are hindered due to some other ongoing direct distraction. Your foe is unable to take their next turn due to some disabling attack or situation. First action."
+        "description": "If you use a light weapon to attack a foe under one of the following conditions, your attack inflicts +5 damage. (This ability doesn't work with medium or heavy weapons.) You attack with surprise. An ally uses their action to ease your attack. Your foe's defenses are hindered due to some other ongoing direct distraction. Your foe is unable to take their next turn due to some disabling attack or situation. First action."
       },
       {
+        "id": "when-the-deal-bombs",
         "name": "When the Deal Bombs",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "There’s always a risk that someone you deal with will try to turn on you. After successfully charming, deceiving, interacting positively with, or using Fast Talk or a similar ability on a creature, if they become hostile to you within a day or so, you automatically reduce the wound severity of their first successful attack against you by one step. At tier 3: Instead of reducing the wound’s severity, you ignore it completely (no damage)."
+        "description": "There's always a risk that someone you deal with will try to turn on you. After successfully charming, deceiving, interacting positively with, or using Fast Talk or a similar ability on a creature, if they become hostile to you within a day or so, you automatically reduce the wound severity of their first successful attack against you by one step. Enabler. At tier 3: Instead of reducing the wound's severity, you ignore it completely (no damage)."
       }
     ],
-    "statOptions": ["intellect", "speed"],
-    "description": "<p>A Postapocalypse Type focused on dealer archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Science Fiction. Subgenre: Postapocalypse. Primary Pools: intellect, speed.</em></p>"
+    "statOptions": [
+      "intellect",
+      "speed"
+    ],
+    "description": "<p>You make your way through civilization's ruins as best you know how, trading for supplies with your natural talent for bullshit. When things go south, you run away, or maybe plant a knife in your would-be trading partner's back. You have a way of connecting people to the things they want—or at least promising to do so—and folks sometimes call you a Fixer or Supplier. And though you might be moved to help others with their needs, if we're being honest, your own skin is your most important commodity. You're adept at talking, so you're probably one of the people your band relies on to deal with strangers, allies, and potential foes for as long as words serve the situation. Others in your band also benefit from your trading prowess, such as it is. But when the situation turns ugly, you're ready to dance away from a double-cross, or maybe instigate the same yourself.</p>"
   },
   "folder": "UwhTFa2lNkjiyB2j",
   "sort": 0,
@@ -64,7 +79,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

@@ -5,10 +5,17 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": ["might"],
+    "statOptions": [
+      "might"
+    ],
     "statAmount": 2,
-    "skillOptions": ["Animal Care", "Outdoor Survival", "", ""],
-    "description": "<p>Years of living close to the land have left you weathered, capable, and at home in the wild.</p><p><em>You gain +2 to your Might Pool, and training in Animal Care or Outdoor Survival.</em></p>"
+    "skillOptions": [
+      "Animal Care",
+      "Outdoor Survival",
+      "",
+      ""
+    ],
+    "description": "<p>You're a nature lover accustomed to living rough, pitting your wits against the elements. Most likely, you're a skilled hunter, gatherer, or naturalist. Years of living in the wild have left their mark with a worn countenance, wild hair, or scars. Your clothing is probably much less refined than the garments worn by city dwellers.</p>"
   },
   "folder": null,
   "sort": 0,
@@ -17,7 +24,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

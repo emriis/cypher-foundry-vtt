@@ -24,58 +24,81 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "combat-prowess",
         "name": "Combat Prowess",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
         "description": "You add +1 damage to one type of weapon attack of your choice: melee weapon attacks or ranged weapon attacks."
       },
       {
+        "id": "divine-radiance",
         "name": "Divine Radiance",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
         "description": "You channel divine influence to gain one of the following effects."
       },
       {
+        "id": "blessing",
         "name": "Blessing",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "A target within short range is charged with benevolent divine grace. At any point before they’ve taken their next ten-minute or longer recovery, they gain an asset to one action. Effort: Affect two additional targets. Action."
+        "description": "A target within short range is charged with benevolent divine grace. At any point before they've taken their next ten-minute or longer recovery, they gain an asset to one action. Effort: Affect two additional targets. Action."
       },
       {
+        "id": "turn-undead",
         "name": "Turn Undead",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
         "description": "Up to five undead creatures of level 2 or less within short range are blasted by divine radiance (make separate Intellect attack rolls against each target). Affected targets are repulsed and must spend their next turn fleeing your presence. Depending on the game, your GM may decide Turn Undead works on demons or creatures of similar ilk instead of (or in addition to) undead. Effort: Affect two additional targets. Increase the maximum level of undead you can affect by 1. Action. At tier 3: Instead of causing affected targets to flee, you can make them unable to take actions for one turn. When an ability or effect lets you attack multiple creatures on your turn, each attack after the first one is an extra action on your turn. An attack made as an extra action on your turn counts as a separate action for the purposes of modifying the task with Effort."
       },
       {
+        "id": "healing-hand",
         "name": "Healing Hand",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "With a touch, you reduce one wound’s severity. A healed minor wound is gone completely, one moderate wound becomes a minor wound, or one major wound becomes a moderate wound. (If the character is at their limit of lower-severity wounds, you can’t use this ability to reduce the severity of their wounds.) Each time you use Healing Hand, the Intellect cost increases by 1. The cost returns to 1 after you take a recovery. Last action. An NPC recipient of Healing Hand regains 5 health."
+        "description": "With a touch, you reduce one wound's severity. A healed minor wound is gone completely, one moderate wound becomes a minor wound, or one major wound becomes a moderate wound. (If the character is at their limit of lower-severity wounds, you can't use this ability to reduce the severity of their wounds.) Each time you use Healing Hand, the Intellect cost increases by 1. The cost returns to 1 after you take a recovery. Last action. An NPC recipient of Healing Hand regains 5 health."
       }
     ],
-    "statOptions": ["might", "intellect"],
-    "description": "<p>A Dungeon Fantasy Type focused on cleric archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Dungeon Fantasy. Primary Pools: might, intellect.</em></p>"
+    "statOptions": [
+      "might",
+      "intellect"
+    ],
+    "description": "<p>You follow a divine being and serve as their representative among mortals. The power of your deity (or deities) allows you to perform minor “miracles” on their behalf. How well or poorly you follow the teachings of your deity is up to you, but their main area of interest greatly influences how you see the world. For instance, a Cleric serving a god of fire may have different priorities than one who serves a goddess of the sea. But almost all deities agree on one thing: healing and blessing others is a good way to extend their influence in the world. Your allies may see you as a vital support with your ability to bless their actions and heal their wounds after (or during!) a fight. But the truth is that you're a capable warrior in your own right, armed and armored nearly as well as front-rank fighters, and with the added capability of being able to turn away your god's most hated foes—usually the reanimated dead.</p>"
   },
   "folder": "pQTzt4j9XPpLBpKm",
   "sort": 0,
@@ -84,7 +107,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

@@ -24,38 +24,53 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "born-to-pilot",
         "name": "Born to Pilot",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
-        "description": "When you roll to pilot a spacecraft and your roll is less than a 9, treat the roll as a 9. (This means you don’t get a GM intrusion if you roll a 1.) Spacecraft piloting tasks include specific maneuvers like safely docking the craft, turning or accelerating the ship gradually enough to avoid dangerously high gravity for sustained periods, noticing something unusual come up on the sensors, and so on. Effort: Increase the minimum number rolled for this ability by 3. This ability renews when you take a recovery. Action. At tier 3: The minimum number rolled for this ability increases to 12."
+        "description": "When you roll to pilot a spacecraft and your roll is less than a 9, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) Spacecraft piloting tasks include specific maneuvers like safely docking the craft, turning or accelerating the ship gradually enough to avoid dangerously high gravity for sustained periods, noticing something unusual come up on the sensors, and so on. Effort: Increase the minimum number rolled for this ability by 3. This ability renews when you take a recovery. Action. At tier 3: The minimum number rolled for this ability increases to 12."
       },
       {
+        "id": "expert-space-pilot",
         "name": "Expert Space Pilot",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
         "description": "You are trained in piloting spacecraft. At tier 6: You can become an expert in piloting spacecraft if you are already specialized, but you must gain the skill normally (such as from a character advancement)."
       },
       {
+        "id": "piloting-flourish",
         "name": "Piloting Flourish",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "When you handle a spacecraft, your impressive piloting chops, your diverting quips, and/or a certain something in the way you accomplish a maneuver entertains or impresses others. One creature you choose on or near the spacecraft who can see you or is otherwise aware of your maneuver gains an asset to their next task if taken within a round or two. At tier 3: You can impress up to three chosen creatures simultaneously."
+        "description": "When you handle a spacecraft, your impressive piloting chops, your diverting quips, and/or a certain something in the way you accomplish a maneuver entertains or impresses others. One creature you choose on or near the spacecraft who can see you or is otherwise aware of your maneuver gains an asset to their next task if taken within a round or two. At tier 3: You can impress up to three chosen creatures simultaneously. Enabler."
       }
     ],
-    "statOptions": ["speed", "intellect"],
-    "description": "<p>A Hard Science Fiction Type focused on pilot archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Science Fiction. Subgenre: Hard Science Fiction. Primary Pools: speed, intellect.</em></p>"
+    "statOptions": [
+      "speed",
+      "intellect"
+    ],
+    "description": "<p>You're sensitive to the slightest vibration and yaw of ion, nuclear, and chemical rocket-propelled spacecraft, honed during many hundreds of hours of test flights, combat missions, and your personal zeal for piloting interplanetary craft between moons and planets. Your job combines sophisticated course plotting, long periods of gradual acceleration and deceleration, and, sometimes, intense moments of action where your reaction times make the difference between arriving at your destination and your spacecraft becoming one more drifting hulk in a decaying orbit. If the team's mission requires an interplanetary trip, it's your job to get everyone there. Should enemy craft threaten the trip, your superior piloting skills help keep everyone alive, up to and including the Soldiers who, scary as they may be, probably couldn't last ten seconds piloting through an interplanetary naval engagement.</p>"
   },
   "folder": "t6C5D0PsA9y7RaFQ",
   "sort": 0,
@@ -64,7 +79,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

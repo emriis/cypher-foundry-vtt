@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/weapons/guns/gun-pistol.webp",
   "system": {
-    "description": "<p>Un Focus pour un utilisateur ou une utilisatrice aguerri(e) d'arme à feu.</p>",
+    "description": "<p>You carry a firearm (whether a conventional gunpowder pistol or some kind of blaster or energy weapon) and you know how to use it in a fight.</p>",
     "abilities": [
       {
         "id": "keen-eye",
@@ -19,7 +19,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Vois plus loin et ignore des pénalités courantes de visibilité."
+        "description": "Tu vois parfaitement à une distance équivalente à 1,5× la distance normale. Tu ignores les pénalités d’attaque et de perception dues au brouillard, à la fumée, à la brume, à la faible luminosité ou à une très faible luminosité."
       },
       {
         "id": "concealed-carry",
@@ -33,7 +33,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Cache, dégaine et manipule une arme à feu à une main."
+        "description": "Tu peux facilement cacher une arme à feu à une main sur toi et la dégainer ou la rengainer en utilisant une Première action) pendant ton tour. Les tâches pour dissimuler cette arme (que quelqu’un te regarde ou te fouille) sont facilitées de deux paliers. Tu gagnes un atout pour toute tâche consistant à faire tourner, jongler, dégainer rapidement ou réaliser un tour d’adresse avec ton arme et son holster. Tu peux effectuer des manipulations expertes avec ton arme : jongler avec, faire tourner le canon autour d’un doigt, tirer sur une icône d’une carte à longue portée, tirer sur un objet tenu dans la main de quelqu’un à longue portée, toucher une pièce lancée en l’air à longue portée, etc., puis rengainer l’arme en un clin d’œil. Ces actions ne peuvent pas blesser une créature (ni son équipement). Cependant, si tu les utilises pour impressionner ou intimider un·e adversaire, la tâche est facilitée."
       },
       {
         "id": "excellent-gunner",
@@ -47,7 +47,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Utilise librement les armes à feu et inflige plus de dégâts."
+        "description": "You can freely use firearms and suffer no penalty when using one. You inflict an additional 1 damage with firearms. For one attack you make with a firearm, you can roll twice and use the better result. This ability renews when you make a ten-minute or longer recovery. Enabler."
       },
       {
         "id": "careful-shot",
@@ -65,7 +65,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Utilise l'Effort de Célérité ou d'Intellect pour augmenter les dégâts à distance."
+        "description": "You can use Speed Effort or Intellect Effort to increase your ranged weapon damage. In addition, if you use an action to line up your shot, the attack on your next turn inflicts 2 additional damage per level of Effort applied to increase damage (5 damage total per level of Effort). Enabler."
       },
       {
         "id": "reload",
@@ -83,7 +83,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Recharge une arme à feu par une action supplémentaire."
+        "description": "Tu peux recharger une arme à feu en utilisant une action supplémentaire à ton tour."
       },
       {
         "id": "sneak-attack",
@@ -100,7 +100,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Une attaque légère inflige plus de dégâts contre une cible vulnérable."
+        "description": "If you attack a foe under one of the following conditions, your light melee or light ranged weapon attack inflicts an additional 5 damage on a successful hit. (This ability doesn't work with medium or heavy weapons.) You attack with surprise. An ally uses their action to ease your attack. Your foe's defenses are hindered due to some other ongoing direct distraction. Your foe is unable to take their next turn due to some disabling attack or situation. First action."
       },
       {
         "id": "damage-dealer",
@@ -118,7 +118,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Tes attaques à l'arme à feu infligent davantage de dégâts."
+        "description": "You've become better at killing with firearms, inflicting an additional 3 damage with them."
       },
       {
         "id": "spray",
@@ -136,7 +136,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Échange des dégâts contre une attaque facilitée avec une arme à tir rapide."
+        "description": "If a weapon has the ability to fire rapid shots without reloading (usually called a rapid-fire weapon, such as a crank crossbow or submachine gun), you can spray multiple shots around your target to increase the chance of hitting, gaining an asset to the attack. This ability uses 1d6 + 1 attacks' worth of ammunition or power (or all of the weapon's stores, if it has less ammo or power than the number rolled). If the attack is successful, it deals 1 less damage than normal. You can also use this ability on multiple thrown weapons (such as stones, shuriken, daggers, and so on) if you're carrying them on your person or they are all within reach. Action."
       },
       {
         "id": "special-shot",
@@ -153,7 +153,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Réduis les dégâts pour produire un effet précis."
+        "description": "When you hit a target with a firearm attack, you can choose to reduce the damage by 1 point but hit the target in a precise spot. Some of the possible effects include (but are not limited to) the following: Shoot an object out of someone's hand. Shoot the target's leg, wing, or other limb they use to move, reducing their maximum movement speed to immediate for a few days or until they receive expert medical care. Shoot a strap holding a backpack, armor, or a similarly strapped-on item so that it falls off. Enabler."
       },
       {
         "id": "snap-shot",
@@ -170,7 +170,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Effectue une seconde attaque à l'arme à feu entravée."
+        "description": "You can attack with your firearm and then attack again as an extra action on your turn. The second attack is hindered by two steps. Enabler."
       },
       {
         "id": "arc-spray",
@@ -187,7 +187,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "Attaque trois cibles adjacentes avec une arme à tir rapide."
+        "description": "If a weapon has the ability to fire rapid shots without reloading (usually called a rapid-fire weapon, such as a crank crossbow or submachine gun), you can fire your weapon at three targets (all next to one another) at once. Make a separate hindered attack roll against each target. Action."
       },
       {
         "id": "sniper",
@@ -204,7 +204,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Double la portée des armes à feu."
+        "description": "You are effective at much longer range than normal. Double the range of any firearm in your hands. If making a shot at very long range (or longer), you inflict an additional 1 damage."
       },
       {
         "id": "lethal-capability",
@@ -222,7 +222,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Gagne des dégâts importants avec un type d'attaque choisi."
+        "description": "You've mastered how to kill with a particular attack. You inflict an additional 5 damage with attacks of one specific type, such as your firearm, or some other specific attack you prefer. You can gain this ability more than once. Each time you do, choose a different specific attack."
       },
       {
         "id": "shot-collision",
@@ -240,7 +240,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Tire sur un projectile entrant pour l'écarter."
+        "description": "Once per round, if someone attacks you with a firearm, thrown weapon, or other physical projectile (such as an arrow, bullet, or crossbow bolt), instead of attempting a defense task, you can attempt to shoot the projectile out of the air. Make an attack against the projectile at the same difficulty as the defense task. If you hit, your shot deflects, destroys, or otherwise prevents the projectile from hitting you. If you wish, the successfully deflected object explosively shatters in an immediate radius you select between you and the attacker, dealing 2 damage to all creatures and objects in the area (roll a separate attack against each). If you apply Effort to increase the damage, you deal 2 additional damage per level of Effort (instead of 3); targets in the area take 1 damage even if you fail the attack roll. Enabler."
       }
     ]
   },
@@ -251,7 +251,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

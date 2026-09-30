@@ -24,48 +24,67 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "always-tinkering",
         "name": "Toujours en Train de Bricoler",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Tu construis un **dispositif technologique à usage unique**. Tu choisis son effet dans la table des **manifest cyphers de faible puissance**. Ce dispositif **compte dans ta limite de cyphers** (ou celle de son porteur si tu le donnes). Si tu es déjà à ta **limite de cyphers**, l’un de tes cyphers actuels tombe en panne ou doit être démonté pour pièces afin de créer le nouveau dispositif, et celui‑ci le remplace. Au rang 3, tu peux choisir un manifest cypher de puissance faible ou moyenne. Au rang 6, tu peux choisir un cypher faible, moyen ou avancé. 10 minutes pour fabriquer."
+        "description": "Tu fabriques un dispositif technologique à usage unique dont tu choisis l'effet dans la table des cyphers manifestés de faible puissance. Le dispositif compte dans ta limite de cyphers. Si tu es déjà à ta limite, l'un de tes cyphers actuels cesse de fonctionner. Au rang 3, tu peux choisir un cypher de puissance faible ou moyenne. Au rang 6, tu peux choisir un cypher faible, moyen ou avancé. A chaque utilisation, tu peux choisir un cypher différent."
       },
       {
+        "id": "sleuthing",
         "name": "Investigation",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 3
+          "amount": 3,
+          "options": []
         },
-        "description": "Lorsque tu poursuis une cible, cherches quelque chose d’inhabituel sur une scène (indice, trace, détail isolé), ou tentes de comprendre un mystère, tu peux poser **une question** à ton·ta MJ sur ta tâche et obtenir une **réponse courte mais utile**, évidente pour ton personnage mais pas forcément pour toi. Action"
+        "description": "Lorsque tu poursuis une cible, cherches quelque chose d'inhabituel sur une scène (indice, trace, détail isolé), ou tentes de comprendre un mystère, tu peux poser une question à ton MJ sur ta tâche et obtenir une réponse courte mais utile, évidente pour ton personnage mais pas forcément pour toi."
       },
       {
+        "id": "super-combatant",
         "name": "Super‑Combattant·e",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Tu es **entraîné·e** dans une forme d’attaque spécifique (rayons oculaires, coups de poing, armes à feu…) ou dans une catégorie plus large : armes contondantes légères, armes tranchantes légères, armes à distance légères, armes moyennes, etc. Au rang 2, tu peux devenir spécialisé·e dans cette attaque. Au rang 6, tu peux devenir expert·e dans cette méthode d’attaque (celle du rang 1 ou une autre dont tu es déjà spécialisé·e)."
+        "description": "You are trained in a specific attack of your choice, such as eye lasers, punches, or guns; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you're already specialized in), but you must gain the skill normally."
       },
       {
+        "id": "superheroics",
         "name": "Superhéroïsme",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Choisis une **Réserve** : Puissance, Célérité ou Intellect. Pour les tâches utilisant cette Réserve, ajoute ton **rang** au nombre de niveaux d’Effort que tu peux appliquer. De plus, tu peux te surmener : subir une blessure modérée pour obtenir deux niveaux d’Effort gratuits pour une tâche de cette Réserve (sans dépasser la limite d’Effort maximale pour cette Réserve). À chaque récupération, ajoute ton rang en points supplémentaires dans cette même Réserve. # Vengeur·euse (Rang 1) Tu utilises tes poings, ton agilité et ta vitesse pour rendre justice dans les rues, même si cela signifie agir en dehors de la loi. Tu es guidé·e par un code personnel, peut‑être par une tragédie qui continue de hanter ton passé. Tu n’as probablement aucun superpouvoir inné, mais tu compenses par un entraînement intensif, une maîtrise avancée des arts martiaux, une condition physique implacable, et une détermination sans faille à éliminer la corruption et protéger les innocents. Quand tu rejoins d’autres héros pour des missions trop grandes pour toi seul·e, tu deviens un choix idéal pour l’infiltration, la reconnaissance, et les manœuvres rapides — entrer et sortir sans être vu·e. Et si on te repère ? Tu es généralement la première à réagir. Et si un combat frontal devient inévitable, ton corps tout entier devient un instrument affûté de justice. ### Options d’historique Ton grand‑père a été victime d’un gang criminel. Tu as juré de ne jamais te reposer tant qu’ils ne seront pas tous neutralisés. La semaine dernière, ton ancien partenaire de lutte contre le crime a disparu. Sous couverture ? Enlevé·e ? Tu dois savoir. Le vilain que tu as démasqué il y a deux mois était un philanthrope adoré du public. La bombe a tué toutes les personnes que tu aimais. Tu traques désormais terroristes et raclures pour les stopper avant qu’ils ne fassent du mal à d’autres. Tu viens de découvrir qu’un ancien ordre ninja gagne en influence dans la région. Lorsque tu as failli mourir à cause d’affaires corrompues menées par ton ancien employeur, tu as juré de faire justice toi‑même — et tu ne t’es plus arrêté·e depuis. Tu as sauvé un·e autre héros·ïne de captivité l’an dernier… et cette personne semble étrangement rancunière. Un baron du crime que tu avais fait emprisonner il y a quelques années est de retour en scène. ### Capacités de Vengeur·euse Tu gagnes tous les bénéfices suivants : Tu peux encaisser trois blessures mineures supplémentaires et une blessure modérée supplémentaire. Ajoute +5 à ta Réserve de Puissance. Ajoute +3 à ta Réserve de Célérité. Ajoute +2 à ta Réserve d’Intellect. Ajoute +1 d’Avantage dans la Réserve de ton choix. Utilisation libre de toutes les armes. Utilisation libre de toutes les armures. Tu possèdes deux amplificateurs de pouvoir. Tu gagnes une aptitude d’origine superhéroïque. Aux rangs 3 et 6, choisis une aptitude appropriée dans les Aptitudes de genre Science‑Fiction ou Fantasy."
+        "description": "Choisis une Réserve : Puissance, Célérité ou Intellect. Pour les tâches utilisant cette Réserve, ajoute ton rang au nombre de niveaux d'Effort que tu peux appliquer. Tu peux te surmener : subir une blessure modérée pour obtenir deux niveaux d'Effort gratuits pour une tâche de cette Réserve (sans dépasser la limite d'Effort maximale). À chaque récupération, ajoute ton rang en points supplémentaires dans cette même Réserve."
       }
     ],
-    "statOptions": ["speed", "intellect"],
-    "description": "<p>Un Type de Super-héros centré sur l'archétype justicier·ère, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Super-héros. Sous-genre : Super-héros. Réserves principales : Célérité, Intellect.</em></p>"
+    "statOptions": [
+      "speed",
+      "intellect"
+    ],
+    "description": "<p>You apply your keen intelligence to outwit the dark forces, reveal corruption, and put a stop to illegal activities. Though some see you as a super-detective able to piece together fragmented clues and unravel complex mysteries that stump the police, you can also hold your own in a fight. You might be skilled in various martial arts, tactical combat, and/or strategic use of nonlethal gadgets, ensuring you can subdue opponents of all kinds. You often work alone in the shadows, but sometimes you join other heroes, especially when they are looking for a way forward against a particularly cunning villain. You being part of the team means they gain something of your reputation—a terrifying enigma who will pursue criminals wherever they might lead.</p>"
   },
   "folder": "rgUrIo08MxTkt23F",
   "sort": 0,
@@ -74,7 +93,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

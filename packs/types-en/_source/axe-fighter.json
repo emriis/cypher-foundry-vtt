@@ -24,68 +24,94 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "axe-hook",
         "name": "Axe Hook",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "might",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "This is an axe attack that relies on your axe’s “beard” (the portion of the blade directly below the axe’s cutting edge) to hook a target’s weapon or shield. A successful attack deals 2 less damage than normal but causes them to drop one or the other. To retrieve their weapon or shield, the target must use an action. Alternatively, you can hook a limb to pull your target off balance. This attack deals 1 less damage than normal but hinders your target’s tasks until your next turn. Action."
+        "description": "This is an axe attack that relies on your axe's “beard” (the portion of the blade directly below the axe's cutting edge) to hook a target's weapon or shield. A successful attack deals 2 less damage than normal but causes them to drop one or the other. To retrieve their weapon or shield, the target must use an action. Alternatively, you can hook a limb to pull your target off balance. This attack deals 1 less damage than normal but hinders your target's tasks until your next turn. Action."
       },
       {
+        "id": "expert-combatant",
         "name": "Expert Combatant",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you’re already specialized in), but you must gain the skill normally."
+        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you're already specialized in), but you must gain the skill normally."
       },
       {
+        "id": "split-skull",
         "name": "Split Skull",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "might",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
         "description": "You attack with an axe in a way that has a greater risk of making an error but gains an additional benefit. Your GM intrusion range for this attack increases by 2 (from 1 on a d20 to 1–3 on a d20), but if you hit you can choose one of the following additional effects:"
       },
       {
+        "id": "brute-force",
         "name": "Brute Force",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
         "description": "The foe takes +2 damage."
       },
       {
+        "id": "head-trauma",
         "name": "Head Trauma",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "The attack inflicts 1 less damage, but the foe’s actions are hindered until they use an action to recover. Action."
+        "description": "The attack inflicts 1 less damage, but the foe's actions are hindered until they use an action to recover. Action. Split SkullGM intrusions: Your axe flies out of your hand, landing a short distance away. Your axe head becomes stuck in the foe and pulls free of your grasp. Your axe haft splinters or breaks, making it unusable until repaired. Your axe ricochets and you inflict a moderate wound on yourself."
       },
       {
+        "id": "split-skull-gm-intrusions",
         "name": "Split Skull GM intrusions",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
         "description": "Your axe flies out of your hand, landing a short distance away. Your axe head becomes stuck in the foe and pulls free of your grasp. Your axe haft splinters or breaks, making it unusable until repaired. Your axe ricochets and you inflict a moderate wound on yourself."
       }
     ],
-    "statOptions": ["might"],
-    "description": "<p>A Swords & Sorcery Type focused on axe fighter archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Swords & Sorcery. Primary Pools: might.</em></p>"
+    "statOptions": [
+      "might"
+    ],
+    "description": "<p>When combat calls, your chosen weapon is a sturdy axe—maybe a handaxe, a battleaxe, or even a greataxe. Thus, they name you Deathhew, Axe Reaver, or maybe just what you are: an Axe Fighter. You've split many skulls with your axe, and if the gods continue to watch over you, many more will fall before you in the years ahead. Like others in your band, you're ready for combat. You don't mind if an ally gets in the first blow against cursed creatures you often face, because you know you're more than capable of finishing the job with a final, sundering swing of your blade.</p>"
   },
   "folder": "zBqRagUFEUelogPi",
   "sort": 0,
@@ -94,7 +120,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

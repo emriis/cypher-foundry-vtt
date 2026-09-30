@@ -24,38 +24,53 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "flurry",
         "name": "Déluge (2 Célérité)",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "speed",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
-        "description": "Après avoir effectué une attaque légère à mains nues, tu effectues, en tant qu’**action supplémentaire pendant ton tour**, une autre attaque légère à mains nues contre la même cible ou une autre. Au rang 3, tu peux effectuer une troisième attaque légère à mains nues en tant que troisième action pendant ton tour. Action"
+        "description": "After making a light unarmed attack, as an extra action on your turn you make another light unarmed attack against the same target or a different one. Action. At tier 3: You can make a third light unarmed attack as a third action on your turn. A few character abilities allow you to treat your unarmed attack as a medium weapon instead of a light weapon. You can't use Flurry with a medium unarmed attack."
       },
       {
+        "id": "nimble",
         "name": "Leste (2 Célérité)",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "speed",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
-        "description": "En tant que **Première action**, tu te déplaces jusqu’à une courte distance, puis tu peux effectuer une autre Première action, comme attaquer avec une arme légère ou ouvrir une porte. Le déplacement se fait avant la Première action."
+        "description": "As a First action, you move up to a short distance and then can take another First action, such as attacking with a light weapon or opening a door (the movement happens before the First action, not the other way around). Unlike a normal situation of taking an action and moving a short distance, this movement doesn't hinder your tasks. Enabler."
       },
       {
+        "id": "no-need-for-weapons",
         "name": "Pas besoin d’armes",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Tes attaques à mains nues (coups de poing, de pied, de coude ou de genou) infligent **+2 dégâts supplémentaires**."
+        "description": "Tes attaques à mains nues (poings, pieds, coudes, genoux…) infligent +2 dégâts supplémentaires."
       }
     ],
-    "statOptions": ["might", "speed"],
-    "description": "<p>Un Type de Dungeon Fantasy centré sur l'archétype moine, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Dungeon Fantasy. Réserves principales : Puissance, Célérité.</em></p>"
+    "statOptions": [
+      "might",
+      "speed"
+    ],
+    "description": "<p>You don't use weapons—you are a weapon. With powerful punches, kicks, and full-body moves, you inflict incredible damage on your foes. By focusing your energy (sometimes called chi, ki, or just “grit”), you magnify your power and speed. You probably gained your skills through intense training, fighting in real-world tournaments against your peers and betters, and, more recently, putting your unique skills to use in adventuring. Weaponless martial artists are both feared and revered, which means your role in your group is likely unique in one sense. However, you join any other frontline warriors on your team, using your weapons of hand, foot, knee, and elbow far more nimbly than someone swinging around a bulky slab of metal.</p>"
   },
   "folder": "N6LoBZte2sRtJhu7",
   "sort": 0,
@@ -64,7 +79,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

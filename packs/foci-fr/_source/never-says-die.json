@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/svg/heart.svg",
   "system": {
-    "description": "<p>Un Focus pour encaisser les épreuves et revenir au combat.</p>",
+    "description": "<p>You never quit, can shrug off a beating, and always come back for more.</p>",
     "abilities": [
       {
         "id": "determination",
@@ -19,7 +19,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Gagne un niveau d’Effort gratuit en retentant une tâche échouée, jusqu’à la prochaine récupération."
+        "description": "Quand tu réessaies une tâche que tu as échouée, en plus du niveau d’Effort requis pour retenter, tu gagnes un niveau d’Effort gratuit. Tu ne peux pas réutiliser cette aptitude avant d’avoir effectué une récupération."
       },
       {
         "id": "push-on-through",
@@ -33,7 +33,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Remplace une récupération de dix minutes par une seconde récupération d’une action et encaisse une blessure modérée supplémentaire."
+        "description": "Au lieu d’une récupération de dix minutes, tu disposes d’une deuxième récupération d’une action — tes deux premières récupérations sont d’une action, la troisième dure une heure, la quatrième dix heures. Tu peux encaisser une blessure modérée supplémentaire. Tu peux utiliser l’une de tes récupérations d’une action pour permettre à un·e allié·e d’utiliser l’une de ses récupérations de dix minutes comme action."
       },
       {
         "id": "safe-fall",
@@ -47,7 +47,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Ignore une blessure causée par une chute."
+        "description": "Tu ignores une blessure provenant d’une chute."
       },
       {
         "id": "always-mighty",
@@ -64,7 +64,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Récupère un point de Puissance supplémentaire lorsqu’une récupération en rend, jusqu’à trois choix."
+        "description": "Chaque fois que tu fais une récupération, si ta Réserve de Puissance n’est pas déjà pleine, tu récupères 1 point supplémentaire dans cette Réserve. Tu peux choisir cette aptitude jusqu’à trois fois."
       },
       {
         "id": "ignore-the-pain",
@@ -81,7 +81,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Ignore un palier d’entrave dû aux blessures, les choix supplémentaires en ignorant davantage."
+        "description": "Tu ignores un palier d’entrave provenant soit d’une blessure majeure, soit du fait d’avoir subi toutes tes blessures modérées. Tu peux choisir cette aptitude jusqu’à trois fois. Chaque fois, tu ignores un palier supplémentaire d’entrave due aux blessures."
       },
       {
         "id": "hidden-reserves",
@@ -97,7 +97,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Une récupération d’une action accorde +1 en Avantage de Puissance et de Célérité jusqu’à une récupération plus longue."
+        "description": "Quand tu utilises une récupération d’une action, tu gagnes +1 en Avantage de Puissance et +1 en Avantage de Célérité jusqu’à ta prochaine récupération de dix minutes ou plus."
       },
       {
         "id": "blood-fever",
@@ -113,7 +113,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Quand une Réserve est vide ou que les blessures sont graves, gagne un atout aux attaques, défenses et intimidations."
+        "description": "Tant qu’au moins une de tes Réserves est vide, ou tant que tu as au moins deux blessures modérées ou une blessure majeure, tu gagnes un atout à tes attaques ou à tes défenses (au choix), ainsi qu’aux tâches d’intimidation."
       },
       {
         "id": "outlast-the-foe",
@@ -129,7 +129,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Après cinq rounds complets de combat, gagne un atout à toutes les tâches et inflige 1 dégât de plus par attaque."
+        "description": "Si tu es en combat depuis cinq rounds complets, tu gagnes un atout à toutes tes tâches pour le reste du combat, et tu infliges +1 dégât supplémentaire à chaque attaque."
       },
       {
         "id": "increasing-determination",
@@ -145,7 +145,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Une tâche physique hors combat échouée est facilitée lorsqu’elle est retentée une fois."
+        "description": "If you fail at a noncombat physical task (pushing open a door or climbing a cliff, for example) and then retry the task, the task is eased. If you fail again, you gain no special benefits. Enabler."
       },
       {
         "id": "not-dead-yet",
@@ -162,7 +162,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Survit à un coup normalement fatal, se réveille après un round, récupère des points et retire des blessures."
+        "description": "When you would normally be dead, you instead fall unconscious for one round and then awaken. When you awaken this way, you immediately gain 1d6 + 6 points to restore your stat Pools, and you remove one moderate wound and one major wound. Once you use this ability, your tasks are hindered until you use a ten-hour recovery. If you die again before you make your ten-hour recovery, you are truly dead. You can select this ability twice. The second time you select it, the healing increases to 1d6 + 12 and you remove double the number of wounds."
       },
       {
         "id": "final-defiance",
@@ -178,7 +178,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Reste conscient·e un round après la mort et lutte pour rester en vie."
+        "description": "Quand tu devrais normalement mourir, tu restes conscient·e et actif·ive pendant un round supplémentaire. (Cette aptitude s’active avant Pas mort·e encore.) À chaque round suivant, en tant qu’action supplémentaire, tu peux tenter une tâche de Puissance de difficulté 5 pour rester en vie un round de plus. Pendant ces rounds supplémentaires, toutes tes tâches sont entravées. Si, au dernier round où tu restes en vie, tu ne reçois aucun soin, aucun point dans une Réserve, ou ne retires pas la blessure qui t’a tué, alors Pas encore mort·e s’active."
       },
       {
         "id": "ignore-affliction",
@@ -194,7 +194,7 @@
           "amount": 5,
           "options": []
         },
-        "description": "Ignore une condition ou affliction indésirable jusqu’à une récupération d’une heure."
+        "description": "Jusqu’à ta prochaine récupération d’une heure ou plus, tu ignores toute condition ou affliction indésirable (maladie, paralysie, contrôle mental, membre brisé, etc., mais pas les dégâts) et tu agis comme si elle ne t’affectait pas. Si la condition durerait normalement moins d’une heure, elle est entièrement annulée. Tu peux utiliser cette aptitude même si la condition t’empêche normalement d’agir."
       }
     ]
   },
@@ -205,7 +205,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

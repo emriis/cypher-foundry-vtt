@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/creatures/mammals/ox-bull-horned-glowing.webp",
   "system": {
-    "description": "<p>A Focus for a character whose growth turns them into a towering force.</p>",
+    "description": "<p>You can grow larger and, with enough experience, to towering heights.</p>",
     "abilities": [
       {
         "id": "enlarge",
@@ -19,7 +19,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Grow to 3 meters, gaining Might resilience and stronger unarmed attacks while making dodges harder. The Might cost rises with each use until recovery."
+        "description": "You grow to a height of 9 feet (3 m) until you use a recovery. Your equipment increases size with you. While enlarged, you add +1 to your Might Edge, you can ignore the first moderate wound you take, and your unarmed attacks inflict 4 damage. While enlarged, your dodge tasks are hindered. Each time you use Enlarge, the Might cost increases by 1. The cost resets after you take a recovery. Last action; enabler to use again to remain enlarged. If you have multiple abilities that let you grow to a larger size, their effects don't add together—you just get the benefits from the biggest one."
       },
       {
         "id": "mighty-leap",
@@ -35,7 +35,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "When larger than normal, jump twice the usual horizontal or vertical distance."
+        "description": "When you are larger than normal and jump, you move twice as far as normal, either horizontally or vertically. Enabler."
       },
       {
         "id": "longstrider",
@@ -51,7 +51,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "When larger than normal, double your travel speed over journeys lasting at least a minute."
+        "description": "When you are larger than normal, your long-term movement speed (not your movement each round, but when walking, running, or hiking over a minute or longer) is doubled thanks to your bigger stride and your greater endurance."
       },
       {
         "id": "preternaturally-strong",
@@ -67,7 +67,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Carrying, climbing, jumping, or smashing rolls below 9 count as 9; greater sizes raise that minimum. The benefit renews after recovery."
+        "description": "When you roll for a carrying, climbing, jumping, or smashing task and your roll is less than a 9, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) While bigger than normal, each size increment (Enlarge, Bigger, Huge, Gargantuan, and Colossal) increases this minimum number rolled by 3. This ability renews when you take a recovery. Enabler. At tier 3: The minimum number rolled for this ability increases to 12."
       },
       {
         "id": "scary-big",
@@ -83,7 +83,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Gain an asset on persuasion and intimidation, or two assets while larger than normal."
+        "description": "Even when you're not larger than normal, your presence is compelling; you have an asset to charm and intimidation tasks. If you have grown larger than your normal size, you have two assets. Enabler."
       },
       {
         "id": "bigger",
@@ -99,7 +99,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Spend extra Might with Enlarge to reach 4 meters, ignore two moderate wounds, and deal 6 unarmed damage."
+        "description": "When you use Enlarge, if you spend an additional 1 Might, you grow to a height of 12 feet (4 m). While bigger, you add +1 to your Might Edge, you can ignore the first two moderate wounds you take, your unarmed attacks inflict 6 damage, and you gain an asset to tasks that are easier for a larger creature to perform (like climbing or wading). While bigger, your dodge tasks are hindered by two steps. Enabler. When you spend extra Might to use Bigger, Huge, Gargantuan, or Colossal, the benefits from those abilities replace the benefits you get from Enlarge."
       },
       {
         "id": "towering-throw",
@@ -115,7 +115,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "When an unarmed attack damages a creature your size or smaller, throw it 1d20 feet and knock it prone."
+        "description": "When you deal damage to a creature of your size or smaller with an unarmed attack, you throw that creature 1d20 feet away from you. The creature lands prone. While bigger than normal, each increment (Enlarge, Bigger, Huge, Gargantuan, and Colossal) increases the distance you throw the creature by another 1d6 feet and deals an additional 1 damage upon their impact. Enabler."
       },
       {
         "id": "huge",
@@ -131,7 +131,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Spend extra Might with Enlarge to reach 5 meters, ignore three moderate wounds, and deal 7 unarmed damage."
+        "description": "When you use Enlarge, if you spend an additional 2 Might, you grow to a height of 16 feet (5 m). While huge, you add +1 to your Might Edge, you can ignore the first three moderate wounds you take, your unarmed attacks inflict 7 damage, and you gain an asset to tasks that are easier for a larger creature to perform (like climbing or wading). While huge, your dodge tasks are hindered by two steps. Enabler."
       },
       {
         "id": "towering-strike",
@@ -147,7 +147,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "A successful Might attack deals 4 extra damage, plus 1 more for each larger size increment."
+        "description": "When you hit with a Might attack, you deal an additional 4 damage. While bigger than normal, each increment (Enlarge, Bigger, Huge, Gargantuan, and Colossal) inflicts an additional 1 damage. This ability renews after you take a recovery. Enabler."
       },
       {
         "id": "gargantuan",
@@ -163,7 +163,7 @@
           "amount": 5,
           "options": []
         },
-        "description": "Spend extra Might with Enlarge to reach 9 meters, gain greater resilience and damage, and attack every creature in an immediate area."
+        "description": "When you use Enlarge, if you spend an additional 5 Might, you can grow to a height of 30 feet (9 m). While gargantuan, you add +2 to your Might Edge, you can ignore the first three moderate wounds and first major wound you take, your unarmed attacks inflict 8 damage, and you gain two assets to tasks that are easier for a larger creature to perform (like climbing or wading). You can make an unarmed attack against all creatures in an immediate area (make separate attack rolls for each). While gargantuan, your dodge tasks are hindered by three steps. If you fall prone while gargantuan, you take a moderate wound and require a Last action to get up. Enabler."
       },
       {
         "id": "might-for-mind",
@@ -179,7 +179,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Spend Intellect instead of Might for a task, or Might instead of Intellect."
+        "description": "When performing a task that would normally require spending points from your Might Pool, you can spend points from your Intellect Pool instead, and vice versa."
       },
       {
         "id": "colossal",
@@ -195,7 +195,7 @@
           "amount": 7,
           "options": []
         },
-        "description": "Spend extra Might with Enlarge to reach 18 meters, gaining the Focus's greatest size benefits and making smaller creatures unable to dodge effectively."
+        "description": "When you use Enlarge, if you spend an additional 7 Might, you grow to a height of 60 feet (18 m). While colossal, you add +2 to your Might Edge, you can ignore the first three moderate wounds and first two major wounds you take, your unarmed attacks inflict 9 damage, and you gain two assets to tasks that are easier for a larger creature to perform (like climbing or wading). You can make an unarmed attack against all creatures in an immediate area (make separate attack rolls for each). While colossal, you can't effectively dodge attacks from creatures one-quarter your size or smaller (attacks from such creatures automatically hit you). If you fall prone while colossal, you take a moderate wound and require a Last action to get up. Enabler."
       },
       {
         "id": "grab",
@@ -211,7 +211,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Use a Last action and an unarmed attack to grab a target, hinder its tasks, and squeeze it for damage with an action."
+        "description": "If you make an unarmed attack as a Last action, your attack deals 2 less damage and the target is grabbed. All the grabbed target's tasks are hindered, including any attempts to escape your grip. As an attack, you can deal 4 damage to your grabbed foe (no attack roll required). While bigger than normal, each increment (Enlarge, Bigger, Huge, Gargantuan, and Colossal) hinders the target's escape attempts by an additional step and increases your grip damage by 1. Last action to initiate; action to squeeze grabbed targets."
       }
     ]
   },
@@ -222,7 +222,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

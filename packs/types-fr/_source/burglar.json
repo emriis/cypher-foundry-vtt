@@ -24,38 +24,53 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "burgle",
         "name": "Cambriolage (2 Célérité)",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "speed",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
-        "description": "Lorsque tu réussis une **tâche de furtivité**, tu peux également entreprendre **l’une** des tâches suivantes comme **action supplémentaire pendant ton tour**, même si cette tâche serait normalement une **dernière action** : tenter de **crocheter une serrure**, saisir un **objet non fixé** (jusqu’à un cinquième de ta taille) et le dissimuler sur toi, te déplacer jusqu’à une **longue portée**, attaquer une cible à **portée immédiate** avec une arme légère."
+        "description": "When you succeed on a stealth task, you can also undertake one of the following tasks as an extra action on your turn, even if the task is usually a Last action: attempt to pick a lock, grab a loose object up to a fifth of your size and conceal it on your person, move up to a long distance, or attack a target in immediate range with a light weapon. Enabler."
       },
       {
+        "id": "escape",
         "name": "Évasion (2+ Célérité)",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "speed",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
-        "description": "Lorsque tu effectues un jet pour **t’échapper** (te libérer de liens, te glisser entre des barreaux, échapper à la prise d’une créature, t’arracher à des sables mouvants, etc.) et que ton résultat est **inférieur à 9**, considère‑le comme un **9**. (Cela signifie qu’un 1 **n’entraîne pas** d’intrusion du·de la MJ.) Au rang 3, le résultat minimum pour cette aptitude passe à 12. Effort : Augmente le résultat minimum de 3. Action"
+        "description": "When you roll to escape (such as slipping your restraints, squeezing through the bars, breaking the grip of a creature holding you, or pulling free from sucking quicksand) and your roll is less than a 9, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) Action. Effort: Increase the minimum number rolled for this ability by 3. At tier 3: The minimum number rolled for this ability increases to 12."
       },
       {
+        "id": "slip-into-shadow",
         "name": "Se Fondre dans l’Ombre",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Même si une créature t’a pleinement dans son champ de vision, une **tâche de furtivité réussie** te permet de **disparaître hors de sa vue** et de te cacher dans une ombre proche, derrière un arbre ou un meuble, ou dans la pièce voisine. Au rang 3, tu peux tenter de te cacher à l’égard de deux créatures supplémentaires, que tu utilises ou non l’Effort. Effort : Tente de te dérober à une cible supplémentaire qui te regarde directement (tu fais un jet séparé pour chaque créature)."
+        "description": "Even if in full view of a creature, your successful stealth task allows you to slip away from that creature and hide from view in a nearby shadow, behind a tree or furnishing, or in the next room as your action. Effort: Attempt to slip away from one additional target looking directly at you (attempt a separate stealth task against each). Enabler. At tier 3: You can attempt to hide from two additional creatures, whether or not you use Effort."
       }
     ],
-    "statOptions": ["speed", "intellect"],
-    "description": "<p>Un Type de Fantasy épique centré sur l'archétype cambrioleur·euse, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Fantasy épique. Réserves principales : Célérité, Intellect.</em></p>"
+    "statOptions": [
+      "speed",
+      "intellect"
+    ],
+    "description": "<p>Who would've thought that you'd one day be capably sneaking through goblin warrens and escaping dragons? Certainly not you. But necessity is the best teacher, and you've learned that shadows are your friends when you need somewhere to hide, sneaking is more than its own reward if you need to accomplish something quickly when no one's watching, and escaping a foe is almost always the right choice, even if it's so you can circle around and attack them by surprise. You prefer letting someone else in your group begin conflicts, allowing you to slip past unnoticed, possibly so you can avoid the combat altogether. When danger isn't imminent, you're among the best suited to carefully examine a new location and, when possible, steal whatever isn't spiked down.</p>"
   },
   "folder": "hprdGeaH0YyHvS4S",
   "sort": 0,
@@ -64,7 +79,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

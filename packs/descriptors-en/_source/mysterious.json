@@ -5,10 +5,18 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": ["intellect", "speed"],
+    "statOptions": [
+      "intellect",
+      "speed"
+    ],
     "statAmount": 2,
-    "skillOptions": ["Deception", "Stealth", "", ""],
-    "description": "<p>No one is quite sure where you came from or what you want, and you prefer to keep it that way.</p><p><em>You gain +2 to your Intellect or Speed Pool, and training in Deception or Stealth.</em></p>"
+    "skillOptions": [
+      "Deception",
+      "Stealth",
+      "",
+      ""
+    ],
+    "description": "<p>The dark figure lurking silently in the corner? That's you. No one really knows where you came from or what your motives are—you play things close to the vest. Your manner perplexes and confounds others, but that doesn't make you a poor friend or ally. You're just good at keeping things to yourself, moving about unseen, and concealing your presence and identity.</p>"
   },
   "folder": null,
   "sort": 0,
@@ -17,7 +25,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

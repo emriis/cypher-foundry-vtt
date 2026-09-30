@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/commodities/tech/circuit-board.webp",
   "system": {
-    "description": "<p>A Focus for a character whose body is partly or fully machine.</p>",
+    "description": "<p>Your body is partly or fully machine.</p>",
     "abilities": [
       {
         "id": "defensive-cybernetics",
@@ -21,7 +21,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Durable mechanical parts let you rally to remove a minor or moderate wound without spending Might."
+        "description": "Some of your body is made of durable machine parts, some internal, some external. Work with your GM to decide your exact form and configuration. If you have a minor or moderate wound, you can rally to remove it as an action without using any Might points. This ability renews each time you take a recovery."
       },
       {
         "id": "hidden-shield",
@@ -35,7 +35,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "A concealed built-in shield works as a light melee weapon and can make a hindered extra attack."
+        "description": "You have a shield built into your body (probably your arm) made of a composite of metal and advanced polymers. The shield is concealed until you wish to use it. You can freely use the shield in one hand as a light melee weapon. As an extra action on your turn, you can make a melee attack with the shield, but if you do so the main attack and shield attack are both hindered. If your shield is destroyed due to blocking wounds, you cannot use it until you use your resources to repair it, taking about one day."
       },
       {
         "id": "powered-cybernetics",
@@ -51,7 +51,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Physical tasks to carry, climb, jump, or smash count rolls below 9 as 9; Effort raises the minimum by 3 and it becomes 12 at tier 3."
+        "description": "You can use your cybernetics to support and enhance your physical actions. When you roll on a task to carry, climb, jump, or smash and your roll is less than a 9, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) This ability renews when you take a recovery. Enabler; action to carry, climb, jump, or smash. Effort: Increase the minimum number rolled for this ability by 3. At tier 3: The minimum number rolled for this ability increases to 12."
       },
       {
         "id": "high-speed-interface",
@@ -67,7 +67,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Directly connect to a nearby machine to ease tasks to identify and operate it at machine speed."
+        "description": "By directly plugging into a machine or device within immediate range, you ease tasks to identify and operate it. The interface allows you to interact with the device as fast as it can process information, which is usually faster than a regular person could manipulate the device (such as through a keyboard or voice interface)."
       },
       {
         "id": "hud",
@@ -83,7 +83,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "A heads-up display improves vision in darkness and obscuring conditions; Effort unlocks combat, magnifier, and scanner modes."
+        "description": "You have a heads-up display (HUD) system that helps you perceive your environment. You can see in very dim light as though it were bright light. You can see in total darkness as if it were very dim light. You can see up to a short distance through fog, smoke, and other obscuring phenomena. Effort: You can use Effort in varying amounts to gain alternate effects as follows: Combat HUD: If you use two levels of Effort, the HUD outlines your foes and predicts their attacks this round, giving you an asset on your next block or dodge task. Magnifier HUD: If you use one level of Effort, for the next two rounds the HUD magnifies your vision range to 5 miles (8 km) and allows you to see through level 4 or lower basic materials (such as wood, concrete, plastic, and stone) to a short distance in false color images. Scanner HUD: If you use two levels of Effort, for the next two rounds the HUD lets you see through level 4 or lower special materials (such as solid lead or an opaque force field) to an immediate distance in false color images. If you succeed on an Intellect task, you can see through level 5 or higher materials. Enabler."
       },
       {
         "id": "enhanced-self-repair",
@@ -99,7 +99,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Reduce the Might cost of rallying to remove a wound by 2."
+        "description": "You reduce the Might cost of rallying to remove wounds by 2."
       },
       {
         "id": "weaponization",
@@ -115,7 +115,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Embed a light or medium one-handed weapon or a multitool; you are trained in the chosen equipment."
+        "description": "You have a weapon built into your body. Choose one light or medium one-handed weapon, such as a broadsword, baton, or medium pistol. You are trained in this weapon. You can hide or reveal this weapon as an extra action on your turn. If your embedded weapon is a firearm, it reloads through a slot in your arm, can hold ten shots, and fires through a disguised barrel in the center of the palm of your hand. Instead of embedding a weapon, you can embed a multitool that counts as either a set of light tools or a set of heavy tools (your choice when you gain this ability)."
       },
       {
         "id": "deep-reserves",
@@ -131,7 +131,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Transfer up to 6 points among Pools at one point per round; renews after a ten-hour recovery."
+        "description": "When others are exhausted, you can push through. You can transfer up to 6 points among your Pools in any combination, at a rate of 1 point per round. For example, you could transfer 3 points of Speed to Might and 3 points of Intellect to Might, which would take a total of six rounds. This ability renews when you use a  ten-hour recovery. Action."
       },
       {
         "id": "fusion",
@@ -147,7 +147,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Fuse manifest cyphers and artifacts with your body and use them as First actions."
+        "description": "You can fuse your manifest cyphers and artifacts with your body. You can use these fused devices with First actions (assuming their normal use requires a regular action). Action to fuse item with your body or detach it."
       },
       {
         "id": "bolts-of-power",
@@ -163,7 +163,7 @@
           "amount": 5,
           "options": []
         },
-        "description": "Release four lightning bolts against up to four targets in short range; missed targets still take 1 damage."
+        "description": "You simultaneously unleash four lightning bolts, making four separate attacks against targets within short range. Each bolt inflicts 4 damage, or 1 damage on a failed attack roll. Action."
       },
       {
         "id": "closed-loop-body",
@@ -179,7 +179,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "You do not need to eat or breathe and suffer no environmental effects from vacuum or extreme temperatures."
+        "description": "You don't need to eat or breathe, and you suffer no ill effects from vacuum or extreme temperatures (though fire, cold, and other attacks are suffered normally)."
       },
       {
         "id": "cybernetic-alacrity",
@@ -195,7 +195,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Effort on a noncombat Speed task also grants a free Effort level or a minor effect."
+        "description": "Any time you use Effort on a noncombat Speed task, add your choice of the following options: a free level of Effort on the action or a minor effect on the action. Enabler."
       },
       {
         "id": "embedded-drone",
@@ -211,7 +211,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "Launch and control a tiny built-in drone with manipulators and a firearm until a one-hour recovery."
+        "description": "You have an embedded drone built into your body that you can launch and control until you use a one-hour or longer recovery (at which time it returns to you). The drone is no larger than 1 foot (30 cm) on a side. It has manipulators, allowing it to attempt to accomplish physical tasks, and a built-in firearm that it can use to make attacks. The drone can immediately take an action on the turn that you launch it. If the drone is destroyed, you can use your resources to restore it over several days. Action to initiate. Embedded drone: level 4; long-range embedded pistol inflicts 4 damage; flies a short distance each round"
       }
     ]
   },
@@ -222,7 +222,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }
