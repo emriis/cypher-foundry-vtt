@@ -37,6 +37,7 @@
 
   --cypher-radius-sm: 4px;
   --cypher-radius-md: 6px;
+  --cypher-radius-lg: 10px;
 
   /* ---- Cible cliquable minimale (icônes seules) / Minimum click target (icon-only) ----
      Recommandation AAA (2.5.5) : 44px. On vise un compromis raisonnable pour
@@ -178,71 +179,237 @@
   background: var(--cypher-color-bg-hover);
 }
 
+/* Utilitaire "visible seulement par un lecteur d'écran" — pour les libellés
+   qui n'ont pas besoin d'être vus (le contexte visuel suffit : bloc "Might"
+   contenant déjà "Pool"/"Max" implicitement) mais doivent rester annoncés.
+   "Screen-reader only" utility — for labels that don't need to be seen (the
+   visual context already implies "Pool"/"Max" inside the "Might" block) but
+   must still be announced. */
+.cypher.sheet .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* ================================================================
    En-tête / Header
    ================================================================ */
 
 .cypher .sheet-header {
   display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding-bottom: var(--cypher-space-md);
+  flex-direction: column;
+  gap: var(--cypher-space-md);
+  padding-bottom: var(--cypher-space-lg);
   border-bottom: 2px solid var(--cypher-color-border);
 }
 
+.cypher .header-top {
+  display: flex;
+  align-items: center;
+  gap: var(--cypher-space-lg);
+}
+
+/* Badge du logo "Cypher Compatible" — fond clair fixe (jamais un jeton de
+   thème) car le logo est noir/rouge sur fond transparent : sur le thème
+   sombre, un fond transparent rendrait les traits noirs illisibles.
+   "Cypher Compatible" logo badge — fixed light background (never a theme
+   token) because the logo is black/red on a transparent background: on the
+   dark theme, a transparent background would make the black lines unreadable. */
+.cypher .cypher-logo-badge {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  padding: 4px;
+  background: #fffdfa;
+  border: 1px solid var(--cypher-color-border-soft);
+  border-radius: 50%;
+}
+
+.cypher .cypher-logo-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .cypher .sheet-header .profile-img {
-  width: 80px;
-  height: 80px;
+  flex: 0 0 auto;
+  width: 64px;
+  height: 64px;
   border: 2px solid var(--cypher-color-border);
   border-radius: var(--cypher-radius-sm);
   object-fit: cover;
+  cursor: pointer;
 }
 
-.cypher .header-fields {
+.cypher .name-field {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: var(--cypher-space-sm);
+  gap: var(--cypher-space-xs);
+  min-width: 0;
 }
 
-.cypher .header-fields input[name="name"] {
+.cypher .name-field input {
   font-size: var(--cypher-font-size-xl);
   font-weight: bold;
   border: none;
   border-bottom: 1px solid var(--cypher-color-border-soft);
   background: transparent;
   color: var(--cypher-color-text);
+  padding: var(--cypher-space-xs) 0;
 }
 
-.cypher .descriptor-line {
+/* Libellé visible court, au-dessus du champ — remplace le placeholder seul
+   (qui disparaît à la saisie et n'est pas une étiquette accessible fiable).
+   Short visible caption above the field — replaces relying on the
+   placeholder alone (which disappears on input and is not a reliable
+   accessible label). */
+.cypher .field-caption {
+  font-size: var(--cypher-font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--cypher-color-text-muted);
+  font-weight: 600;
+}
+
+/* ---- Carte "identité" : genre, espèce, phrase de personnage ----
+   ---- "Identity" card: genre, species, character sentence ---- */
+.cypher .identity-card {
   display: flex;
-  align-items: center;
-  gap: var(--cypher-space-sm);
-  flex-wrap: wrap;
-  font-size: var(--cypher-font-size-sm);
+  flex-direction: column;
+  gap: var(--cypher-space-md);
+  background: var(--cypher-color-bg-card);
+  border: 1px solid var(--cypher-color-border-faint);
+  border-radius: var(--cypher-radius-lg);
+  padding: var(--cypher-space-lg);
 }
 
-.cypher .descriptor-line input {
-  flex: 1;
-  min-width: 80px;
-}
-
-.cypher .header-stats-row {
+.cypher .genre-species-row {
   display: flex;
   gap: var(--cypher-space-lg);
   flex-wrap: wrap;
 }
 
-.cypher .header-stats-row label {
+.cypher .genre-species-row .field-group select,
+.cypher .genre-species-row .field-group input {
+  min-width: 160px;
+}
+
+.cypher .field-group {
   display: flex;
   flex-direction: column;
-  font-size: var(--cypher-font-size-xs);
-  text-transform: uppercase;
+  gap: var(--cypher-space-xs);
+}
+
+.cypher .field-group.inline {
+  display: inline-flex;
+}
+
+.cypher .field-group input,
+.cypher .field-group select {
+  background: var(--cypher-color-bg-sheet);
+  border: 1px solid var(--cypher-color-border-soft);
+  border-radius: var(--cypher-radius-sm);
+  padding: 4px var(--cypher-space-sm);
+  color: var(--cypher-color-text);
+}
+
+/* La "phrase de personnage" (Descripteur, Type, Focus...) reste sur une
+   ligne fluide façon texte, mais chaque champ porte désormais son propre
+   libellé visible au lieu de dépendre seulement du placeholder.
+   The "character sentence" (Descriptor, Type, Focus...) still flows as a
+   line of text, but each field now carries its own visible caption instead
+   of relying on the placeholder alone. */
+.cypher .descriptor-line {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--cypher-space-sm);
+  flex-wrap: wrap;
+  font-size: var(--cypher-font-size-sm);
+}
+
+.cypher .descriptor-line .field-group input {
+  min-width: 120px;
+}
+
+.cypher .sentence-word {
+  padding-bottom: 6px;
+  color: var(--cypher-color-text-muted);
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.cypher .and-joiner {
+  padding-bottom: 6px;
+  font-style: italic;
   color: var(--cypher-color-text-muted);
 }
 
+.cypher .add-optional,
+.cypher .remove-optional {
+  align-self: flex-end;
+  margin-bottom: 2px;
+  cursor: pointer;
+  color: var(--cypher-color-accent);
+  font-size: var(--cypher-font-size-md);
+}
+
+.cypher .remove-optional {
+  color: var(--cypher-color-danger);
+}
+
+.cypher .genre-hint {
+  font-size: var(--cypher-font-size-xs);
+  color: var(--cypher-color-text-muted);
+  font-style: italic;
+  margin: 0;
+}
+
+.cypher .custom-genre-extra-row {
+  display: flex;
+}
+
+/* ---- Carte "progression" : rang, effort, XP, PR, limite de cyphers ----
+   ---- "Progression" card: tier, effort, XP, RP, cypher limit ---- */
+.cypher .progression-card.header-stats-row {
+  display: flex;
+  gap: var(--cypher-space-xl);
+  flex-wrap: wrap;
+  background: var(--cypher-color-bg-card);
+  border: 1px solid var(--cypher-color-border-faint);
+  border-radius: var(--cypher-radius-lg);
+  padding: var(--cypher-space-md) var(--cypher-space-lg);
+}
+
+.cypher .header-stats-row label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cypher-space-xs);
+  font-size: var(--cypher-font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--cypher-color-text-muted);
+  font-weight: 600;
+}
+
 .cypher .header-stats-row input {
-  width: 50px;
+  width: 56px;
+  font-size: var(--cypher-font-size-md);
+  font-weight: bold;
+  color: var(--cypher-color-text);
+  background: var(--cypher-color-bg-sheet);
+  border: 1px solid var(--cypher-color-border-soft);
+  border-radius: var(--cypher-radius-sm);
+  padding: 3px 6px;
 }
 
 /* ================================================================
@@ -253,10 +420,11 @@
   display: flex;
   gap: 10px;
   margin: 10px 0;
+  flex-wrap: wrap;
 }
 
 .cypher .stat-block {
-  flex: 1;
+  flex: 1 1 160px;
   border: 1px solid var(--cypher-color-border-soft);
   border-radius: var(--cypher-radius-md);
   padding: var(--cypher-space-md);
@@ -264,11 +432,24 @@
   background: var(--cypher-color-bg-card);
 }
 
-.cypher .stat-block h3 {
+.cypher .stat-block-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
   margin: 0 0 6px;
+}
+
+.cypher .stat-block-header h3 {
+  margin: 0;
   border: none;
   font-size: var(--cypher-font-size-md);
   color: var(--cypher-color-text);
+}
+
+.cypher .stat-die-icon {
+  color: var(--cypher-color-accent);
+  font-size: var(--cypher-font-size-sm);
 }
 
 .cypher .pool-row {
@@ -283,6 +464,10 @@
   width: 50px;
   text-align: center;
   font-weight: bold;
+}
+
+.cypher .pool-separator {
+  color: var(--cypher-color-text-muted);
 }
 
 .cypher .edge-row {
@@ -308,20 +493,50 @@
 }
 
 /* ================================================================
+   Vitals : Blessures + Récupérations côte à côte / Wounds + Recoveries side by side
+   ================================================================ */
+
+.cypher .vitals-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 10px;
+  align-items: start;
+}
+
+@media (max-width: 640px) {
+  .cypher .vitals-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cypher .wounds-block,
+.cypher .recoveries-block {
+  border: 1px solid var(--cypher-color-border-faint);
+  border-radius: var(--cypher-radius-lg);
+  padding: var(--cypher-space-md) var(--cypher-space-lg);
+  background: var(--cypher-color-bg-card);
+}
+
+.cypher .wounds-block h3,
+.cypher .recoveries-block h3,
+.cypher .armor-block h3,
+.cypher .additional-abilities-block h3,
+.cypher .custom-fields-block h3 {
+  margin: 0 0 var(--cypher-space-sm);
+  border-bottom: 1px solid var(--cypher-color-border-soft);
+  padding-bottom: 4px;
+  font-size: var(--cypher-font-size-md);
+}
+
+/* ================================================================
    Armure / Suivi (bloc générique) / Armor / Track (generic block)
    ================================================================ */
 
-.cypher .armor-damagetrack-row {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.cypher .armor-block, .cypher .damage-track-block {
-  flex: 1;
+.cypher .armor-block {
   border: 1px solid var(--cypher-color-border-faint);
-  border-radius: var(--cypher-radius-md);
-  padding: 6px var(--cypher-space-md);
+  border-radius: var(--cypher-radius-lg);
+  padding: var(--cypher-space-md) var(--cypher-space-lg);
+  margin-top: 10px;
 }
 
 .cypher .step-modifier-note {
@@ -336,8 +551,8 @@
 
 .cypher .recovery-row {
   display: flex;
-  gap: var(--cypher-space-lg);
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: var(--cypher-space-md);
 }
 
 .cypher .recovery-item {
@@ -540,6 +755,7 @@
   border-radius: var(--cypher-radius-md);
   padding: 6px var(--cypher-space-md);
   text-align: center;
+  background: var(--cypher-color-bg-sheet);
 }
 
 /* Accent de couleur par sévérité — un COMPLÉMENT au texte du libellé,
@@ -556,6 +772,12 @@
   border-color: var(--cypher-color-danger);
 }
 
+.cypher .wound-severity-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
 .cypher .wound-boxes {
   display: flex;
   align-items: center;
@@ -566,6 +788,18 @@
 .cypher .wound-boxes input {
   width: 40px;
   text-align: center;
+}
+
+.cypher .wound-max-note {
+  color: var(--cypher-color-text-muted);
+}
+
+.cypher .wound-severity button {
+  margin-top: 6px;
+  width: 100%;
+  min-height: var(--cypher-target-size);
+  font-size: var(--cypher-font-size-xs);
+  cursor: pointer;
 }
 
 .cypher .wound-hint, .cypher .armor-hint {
@@ -590,37 +824,11 @@
 }
 
 /* ================================================================
-   Bascules descripteur/foyer optionnels / Optional descriptor/focus toggles
-   ================================================================ */
-
-.cypher .and-joiner {
-  font-style: italic;
-  color: var(--cypher-color-text-muted);
-}
-
-.cypher .add-optional, .cypher .remove-optional {
-  cursor: pointer;
-  color: var(--cypher-color-accent);
-  font-size: var(--cypher-font-size-md);
-}
-
-.cypher .remove-optional {
-  color: var(--cypher-color-danger);
-}
-
-/* ================================================================
    Statistiques personnalisées / Custom stats
    ================================================================ */
 
 .cypher .custom-stats-row {
   margin-top: var(--cypher-space-sm);
-}
-
-.cypher .stat-custom h3 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
 }
 
 .cypher .remove-custom-stat {
@@ -639,33 +847,11 @@
    Genre & bloc super-héros / Genre & superhero block
    ================================================================ */
 
-.cypher .genre-species-row {
-  display: flex;
-  gap: var(--cypher-space-lg);
-  align-items: flex-end;
-  margin-bottom: var(--cypher-space-sm);
-}
-
-.cypher .genre-species-row label {
-  display: flex;
-  flex-direction: column;
-  font-size: var(--cypher-font-size-xs);
-  text-transform: uppercase;
-  color: var(--cypher-color-text-muted);
-}
-
-.cypher .genre-hint {
-  font-size: var(--cypher-font-size-xs);
-  color: var(--cypher-color-text-muted);
-  margin: 2px 0 var(--cypher-space-sm);
-  font-style: italic;
-}
-
 .cypher .superhero-block {
   border: 1px solid var(--cypher-color-border-faint);
-  border-radius: var(--cypher-radius-md);
-  padding: 6px var(--cypher-space-md);
-  margin: var(--cypher-space-sm) 0;
+  border-radius: var(--cypher-radius-lg);
+  background: var(--cypher-color-bg-card);
+  padding: var(--cypher-space-md) var(--cypher-space-lg);
 }
 
 .cypher .rank-field {
@@ -706,24 +892,12 @@
 }
 
 /* ================================================================
-   Genre personnalisé / Custom genre extra row
-   ================================================================ */
-
-.cypher .custom-genre-extra-row {
-  margin-top: var(--cypher-space-sm);
-}
-
-.cypher .custom-genre-extra-row label {
-  display: flex;
-  flex-direction: column;
-  font-size: var(--cypher-font-size-xs);
-  text-transform: uppercase;
-  color: var(--cypher-color-text-muted);
-}
-
-/* ================================================================
    Champs libres / Custom fields
    ================================================================ */
+
+.cypher .custom-fields-block {
+  margin-top: 10px;
+}
 
 .cypher .custom-fields-hint {
   font-size: var(--cypher-font-size-xs);
@@ -763,6 +937,22 @@
 .cypher .add-custom-field {
   cursor: pointer;
   min-height: var(--cypher-target-size);
+}
+
+/* ================================================================
+   Aptitudes additionnelles / Additional abilities
+   ================================================================ */
+
+.cypher .additional-abilities-block {
+  border: 1px solid var(--cypher-color-border-faint);
+  border-radius: var(--cypher-radius-lg);
+  padding: var(--cypher-space-md) var(--cypher-space-lg);
+  margin-top: 10px;
+}
+
+.cypher .additional-abilities-block textarea {
+  width: 100%;
+  min-height: 70px;
 }
 
 /* ================================================================

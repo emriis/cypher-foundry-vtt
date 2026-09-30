@@ -1,10 +1,20 @@
 <header class="sheet-header">
-  <img class="profile-img" src="{{actor.img}}" data-action="editImage" data-edit="img" alt="{{actor.name}}"/>
-  <div class="header-fields">
-    <input name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'CYPHER.Name'}}"/>
 
+  <div class="header-top">
+    <div class="cypher-logo-badge" aria-hidden="true">
+      <img src="systems/cypher/assets/cypher-compatible-logo.png" alt=""/>
+    </div>
+    <img class="profile-img" src="{{actor.img}}" data-action="editImage" data-edit="img" alt="{{actor.name}}"/>
+    <label class="name-field">
+      <span class="field-caption">{{localize 'CYPHER.Name'}}</span>
+      <input name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'CYPHER.Name'}}"/>
+    </label>
+  </div>
+
+  <div class="identity-card">
     <div class="genre-species-row">
-      <label>{{localize 'CYPHER.Genre.Label'}}
+      <label class="field-group">
+        <span class="field-caption">{{localize 'CYPHER.Genre.Label'}}</span>
         <select name="system.genre">
           <option value="none" {{#ifEquals system.genre "none"}}selected{{/ifEquals}}>{{localize 'CYPHER.Genre.none'}}</option>
           <option value="realWorld" {{#ifEquals system.genre "realWorld"}}selected{{/ifEquals}}>{{localize 'CYPHER.Genre.realWorld'}}</option>
@@ -15,7 +25,8 @@
         </select>
       </label>
       {{#unless system.isRealWorld}}
-      <label>{{localize 'CYPHER.Species'}}
+      <label class="field-group">
+        <span class="field-caption">{{localize 'CYPHER.Species'}}</span>
         <input name="system.species" type="text" value="{{system.species}}" placeholder="{{localize 'CYPHER.SpeciesPlaceholder'}}"/>
       </label>
       {{/unless}}
@@ -23,41 +34,65 @@
 
     {{#if system.isRealWorld}}
     <div class="descriptor-line">
-      <span>{{localize 'CYPHER.CharacterLine.Prefix'}}</span>
-      <input name="system.descriptor" type="text" value="{{system.descriptor}}" placeholder="{{localize 'CYPHER.Descriptor.Label'}}"/>
+      <span class="sentence-word">{{localize 'CYPHER.CharacterLine.Prefix'}}</span>
+      <label class="field-group inline">
+        <span class="field-caption">{{localize 'CYPHER.Descriptor.Label'}}</span>
+        <input name="system.descriptor" type="text" value="{{system.descriptor}}" placeholder="{{localize 'CYPHER.Descriptor.Label'}}"/>
+      </label>
 
       {{#if system.hasSecondDescriptor}}
       <span class="and-joiner">{{localize 'CYPHER.CharacterLine.And'}}</span>
-      <input name="system.descriptor2" type="text" value="{{system.descriptor2}}" placeholder="{{localize 'CYPHER.Descriptor2'}}"/>
+      <label class="field-group inline">
+        <span class="field-caption">{{localize 'CYPHER.Descriptor2'}}</span>
+        <input name="system.descriptor2" type="text" value="{{system.descriptor2}}" placeholder="{{localize 'CYPHER.Descriptor2'}}"/>
+      </label>
       <a class="remove-optional" data-action="toggleSecondDescriptor" title="{{localize 'CYPHER.CharacterLine.RemoveSecondDescriptor'}}"><i class="fa-solid fa-circle-minus"></i></a>
       {{else}}
       <a class="add-optional" data-action="toggleSecondDescriptor" title="{{localize 'CYPHER.CharacterLine.AddSecondDescriptor'}}"><i class="fa-solid fa-circle-plus"></i></a>
       {{/if}}
 
-      <input name="system.profession" type="text" value="{{system.profession}}" placeholder="{{localize 'CYPHER.Profession'}}"/>
+      <label class="field-group inline">
+        <span class="field-caption">{{localize 'CYPHER.Profession'}}</span>
+        <input name="system.profession" type="text" value="{{system.profession}}" placeholder="{{localize 'CYPHER.Profession'}}"/>
+      </label>
     </div>
     <p class="genre-hint">{{localize 'CYPHER.Genre.RealWorldHint'}}</p>
     {{else}}
     <div class="descriptor-line">
-      <span>{{localize 'CYPHER.CharacterLine.Prefix'}}</span>
-      <input name="system.descriptor" type="text" value="{{system.descriptor}}" placeholder="{{localize 'CYPHER.Descriptor.Label'}}"/>
+      <span class="sentence-word">{{localize 'CYPHER.CharacterLine.Prefix'}}</span>
+      <label class="field-group inline">
+        <span class="field-caption">{{localize 'CYPHER.Descriptor.Label'}}</span>
+        <input name="system.descriptor" type="text" value="{{system.descriptor}}" placeholder="{{localize 'CYPHER.Descriptor.Label'}}"/>
+      </label>
 
       {{#if system.hasSecondDescriptor}}
       <span class="and-joiner">{{localize 'CYPHER.CharacterLine.And'}}</span>
-      <input name="system.descriptor2" type="text" value="{{system.descriptor2}}" placeholder="{{localize 'CYPHER.Descriptor2'}}"/>
+      <label class="field-group inline">
+        <span class="field-caption">{{localize 'CYPHER.Descriptor2'}}</span>
+        <input name="system.descriptor2" type="text" value="{{system.descriptor2}}" placeholder="{{localize 'CYPHER.Descriptor2'}}"/>
+      </label>
       <a class="remove-optional" data-action="toggleSecondDescriptor" title="{{localize 'CYPHER.CharacterLine.RemoveSecondDescriptor'}}"><i class="fa-solid fa-circle-minus"></i></a>
       {{else}}
       <a class="add-optional" data-action="toggleSecondDescriptor" title="{{localize 'CYPHER.CharacterLine.AddSecondDescriptor'}}"><i class="fa-solid fa-circle-plus"></i></a>
       {{/if}}
 
-      <span>{{localize 'CYPHER.CharacterLine.Middle'}}</span>
-      <input name="system.type" type="text" value="{{system.type}}" placeholder="{{localize 'CYPHER.Type.Label'}}"/>
-      <span>{{localize 'CYPHER.CharacterLine.Who'}}</span>
-      <input name="system.focus" type="text" value="{{system.focus}}" placeholder="{{localize 'CYPHER.Focus'}}"/>
+      <span class="sentence-word">{{localize 'CYPHER.CharacterLine.Middle'}}</span>
+      <label class="field-group inline">
+        <span class="field-caption">{{localize 'CYPHER.Type.Label'}}</span>
+        <input name="system.type" type="text" value="{{system.type}}" placeholder="{{localize 'CYPHER.Type.Label'}}"/>
+      </label>
+      <span class="sentence-word">{{localize 'CYPHER.CharacterLine.Who'}}</span>
+      <label class="field-group inline">
+        <span class="field-caption">{{localize 'CYPHER.Focus'}}</span>
+        <input name="system.focus" type="text" value="{{system.focus}}" placeholder="{{localize 'CYPHER.Focus'}}"/>
+      </label>
 
       {{#if system.hasSecondFocus}}
       <span class="and-joiner">{{localize 'CYPHER.CharacterLine.And'}}</span>
-      <input name="system.focus2" type="text" value="{{system.focus2}}" placeholder="{{localize 'CYPHER.Focus2'}}"/>
+      <label class="field-group inline">
+        <span class="field-caption">{{localize 'CYPHER.Focus2'}}</span>
+        <input name="system.focus2" type="text" value="{{system.focus2}}" placeholder="{{localize 'CYPHER.Focus2'}}"/>
+      </label>
       <a class="remove-optional" data-action="toggleSecondFocus" title="{{localize 'CYPHER.CharacterLine.RemoveSecondFocus'}}"><i class="fa-solid fa-circle-minus"></i></a>
       {{else}}
       <a class="add-optional" data-action="toggleSecondFocus" title="{{localize 'CYPHER.CharacterLine.AddSecondFocus'}}"><i class="fa-solid fa-circle-plus"></i></a>
@@ -65,46 +100,47 @@
     </div>
     {{#if system.isCustomGenre}}
     <div class="custom-genre-extra-row">
-      <label>{{localize 'CYPHER.Profession'}}
+      <label class="field-group">
+        <span class="field-caption">{{localize 'CYPHER.Profession'}}</span>
         <input name="system.profession" type="text" value="{{system.profession}}" placeholder="{{localize 'CYPHER.Profession'}}"/>
       </label>
     </div>
     {{/if}}
     {{/if}}
+  </div>
 
-    {{#if system.showSuperheroBlock}}
-    <div class="superhero-block">
-      <label class="rank-field">{{localize 'CYPHER.Superhero.Rank'}}
-        <input name="system.rank" type="number" value="{{system.rank}}" min="1" max="5"/>
+  {{#if system.showSuperheroBlock}}
+  <div class="superhero-block">
+    <label class="rank-field">{{localize 'CYPHER.Superhero.Rank'}}
+      <input name="system.rank" type="number" value="{{system.rank}}" min="1" max="5"/>
+    </label>
+    <div class="power-shifts">
+      <span class="power-shifts-label">{{localize 'CYPHER.Superhero.PowerShifts'}} ({{system.powerShiftTotal}})</span>
+      {{#each system.powerShifts as |value category|}}
+      <label class="power-shift-item">{{localize (concat "CYPHER.PowerShift." category)}}
+        <input name="system.powerShifts.{{category}}" type="number" value="{{value}}" min="0" max="3"/>
       </label>
-      <div class="power-shifts">
-        <span class="power-shifts-label">{{localize 'CYPHER.Superhero.PowerShifts'}} ({{system.powerShiftTotal}})</span>
-        {{#each system.powerShifts as |value category|}}
-        <label class="power-shift-item">{{localize (concat "CYPHER.PowerShift." category)}}
-          <input name="system.powerShifts.{{category}}" type="number" value="{{value}}" min="0" max="3"/>
-        </label>
-        {{/each}}
-      </div>
-      <p class="genre-hint">{{localize 'CYPHER.Superhero.Hint'}}</p>
+      {{/each}}
     </div>
-    {{/if}}
+    <p class="genre-hint">{{localize 'CYPHER.Superhero.Hint'}}</p>
+  </div>
+  {{/if}}
 
-    <div class="header-stats-row">
-      <label>{{localize 'CYPHER.Tier'}}
-        <input name="system.tier" type="number" value="{{system.tier}}" min="1" max="6"/>
-      </label>
-      <label>{{localize 'CYPHER.Effort'}}
-        <input name="system.effort" type="number" value="{{system.effort}}" min="1"/>
-      </label>
-      <label>{{localize 'CYPHER.XP.Label'}}
-        <input name="system.xp" type="number" value="{{system.xp}}" min="0"/>
-      </label>
-      <label>{{localize 'CYPHER.ResourcePoints'}}
-        <input name="system.resourcePoints" type="number" value="{{system.resourcePoints}}" min="0"/>
-      </label>
-      <label>{{localize 'CYPHER.CypherLimit'}}
-        <input name="system.cypherLimit" type="number" value="{{system.cypherLimit}}" min="0"/>
-      </label>
-    </div>
+  <div class="progression-card header-stats-row">
+    <label>{{localize 'CYPHER.Tier'}}
+      <input name="system.tier" type="number" value="{{system.tier}}" min="1" max="6"/>
+    </label>
+    <label>{{localize 'CYPHER.Effort'}}
+      <input name="system.effort" type="number" value="{{system.effort}}" min="1"/>
+    </label>
+    <label>{{localize 'CYPHER.XP.Label'}}
+      <input name="system.xp" type="number" value="{{system.xp}}" min="0"/>
+    </label>
+    <label>{{localize 'CYPHER.ResourcePoints'}}
+      <input name="system.resourcePoints" type="number" value="{{system.resourcePoints}}" min="0"/>
+    </label>
+    <label>{{localize 'CYPHER.CypherLimit'}}
+      <input name="system.cypherLimit" type="number" value="{{system.cypherLimit}}" min="0"/>
+    </label>
   </div>
 </header>
