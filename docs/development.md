@@ -60,9 +60,10 @@ memory.
 node --test tests/compendium-sources.test.mjs
 ```
 
-Then rebuild each affected LevelDB pack with the Foundry CLI. The `_source/`
-JSON is the reviewable source of truth; the adjacent LevelDB files are what
-Foundry loads because `system.json` declares them directly.
+Then rebuild each affected LevelDB pack with `npm run build:packs`. The build script compiles all six
+packs from their `_source/` directories and replaces only their generated database files. The
+`_source/` JSON is the reviewable source of truth; the adjacent LevelDB files are what Foundry
+loads because `system.json` declares them directly.
 
 The Type list follows the genre and subgenre headings in the local Reference
 Document. Each language pack groups Types under genre folders and, where the
@@ -81,11 +82,14 @@ Development tooling belongs in `scripts/`; GitHub automation belongs in
 | Automation | Trigger | Purpose |
 | --- | --- | --- |
 | `.github/workflows/test.yml` | Push and pull request | Runs `npm test` |
+| `.github/workflows/build-packs.yml` | Pack source/build changes | Rebuilds and commits LevelDB compendium packs |
 | `.github/workflows/release.yml` | Tag matching `v*` | Tests, checks version/tag parity, packages, publishes GitHub release |
+| `scripts/build-packs.mjs` | `npm run build:packs` | Compiles all six LevelDB packs from `_source/` |
 | `scripts/package.ps1` | `npm run package` | Creates local release artifacts in `dist/` |
 
-Do not commit `dist/`, lock files, or LevelDB logs. They are intentionally
-ignored as generated or transient files.
+Do not commit `dist/`, lock files, or LevelDB logs. The compiled LevelDB database files in
+`packs/<pack-name>/` are generated but intentionally tracked because Foundry loads those files
+at runtime.
 
 ## 4. Release checklist
 

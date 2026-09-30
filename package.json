@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "test": "node --test",
-    "package": "pwsh -File scripts/package.ps1"
+    "build:packs": "node scripts/build-packs.mjs",
+    "package": "npm run build:packs && pwsh -File scripts/package.ps1"
   }
 }

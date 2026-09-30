@@ -79,19 +79,14 @@ Compendium sources live as individual JSON files under `packs/<pack-name>/_sourc
 them into the LevelDB format Foundry actually loads:
 
 ```sh
-npm install --no-save @foundryvtt/foundryvtt-cli
-
-npx fvtt package pack -n descriptors-en --in packs/descriptors-en/_source --out /tmp/out-en
-cp /tmp/out-en/descriptors-en/* packs/descriptors-en/
-
-npx fvtt package pack -n descriptors-fr --in packs/descriptors-fr/_source --out /tmp/out-fr
-cp /tmp/out-fr/descriptors-fr/* packs/descriptors-fr/
+npm install --no-save @foundryvtt/foundryvtt-cli@3.0.4
+npm run build:packs
 ```
 
 Notes:
 
-- The CLI nests its output under `<out>/<pack-name>/`; move its contents up to
-  `packs/<pack-name>/`, which is what `system.json` points to directly.
+- `npm run build:packs` compiles all six declared packs and writes the generated LevelDB files
+  directly under `packs/<pack-name>/`, which is what `system.json` points to.
 - Every source file needs a `_key` field formatted as `!items!<_id>` (or `!actors!<_id>`, etc.)
   — the CLI silently skips files missing it.
 - The `_source` JSON files are the authoring source of truth. Edit the matching English and

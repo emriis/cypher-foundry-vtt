@@ -49,6 +49,9 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 - Type compendium sources keep ability blocks bounded to their authoritative CRD Type
   section, including Effort and Enabler text, while retaining canonical CRD copies for Type
   variants and Character Book French ability localization.
+- Compendium folders no longer appear empty when the repository is installed directly in Foundry:
+  all six bilingual Descriptor, Type, and Focus packs are now compiled as LevelDB databases before
+  release packaging, with CI rebuilding generated packs when their sources change.
 
 ## [0.1.4] - 2026-09-26
 
