@@ -1,0 +1,30 @@
+{
+  "_id": "K03M1ytOwmfO6ROa",
+  "_key": "!items!K03M1ytOwmfO6ROa",
+  "name": "Empathique",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Discernement des motivations",
+      "",
+      "",
+      ""
+    ],
+    "description": "<p>Tu sais décrypter les signaux non verbaux et percevoir les émotions d'autrui. Tu gères bien les situations sociales.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

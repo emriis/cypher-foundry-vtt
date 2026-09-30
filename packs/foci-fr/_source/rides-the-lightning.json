@@ -1,0 +1,247 @@
+{
+  "_id": "ridestheliA835CF",
+  "_key": "!items!ridestheliA835CF",
+  "name": "Chevauche la foudre",
+  "type": "focus",
+  "img": "icons/svg/lightning.svg",
+  "system": {
+    "description": "<p>You emit and manipulate lightning and thunder.</p>",
+    "abilities": [
+      {
+        "id": "control-electric-device",
+        "name": "Contrôle des appareils électriques",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Tu tentes de contrôler ou perturber un appareil électrique (machine ou dispositif non intelligent alimenté par électricité) à portée longue. Fais une attaque d’Intellect contre l’appareil. Si ton jet est inférieur à 12, considère-le comme 12. (Tu évites ainsi une Intrusion du·de la MJ si tu fais un 1.) En cas de réussite tu contrôles l’appareil comme si tu étais juste à côté, même si cela nécessiterait normalement de le toucher, lire un écran ou manipuler des commandes. Si l’appareil est protégé par des mesures de sécurité, tes tâches pour les contourner sont entravées tant que tu n’es pas à portée immédiate. S’il est tenu par une créature, tu dois réussir contre son niveau ou celui de l’objet (le plus élevé). Si tu essayes de déstabiliser l’appareil, une réussite signifie qu’il subit un court‑circuit et si tu le souhaite, il explose dans une zone immédiate, infligeant 1 dégât à toutes les créatures (fait un jet d’attaque d’Intellect différent pour chaque créature). Au rang 3, le minimum automatique passe à 15. Effort : augmente ce minimum de +3."
+      },
+      {
+        "id": "lightning-hand",
+        "name": "Main électrique",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Tes mains crépitent d’électricité, te permettant soit une attaque de contact, soit une attaque à longue portée de foudre infligeant 4 dégâts. Sinon, si tu tiens une arme, elle crépite d’électricité et inflige +1 dégât jusqu’à ta prochaine récupération de dix minutes ou plus."
+      },
+      {
+        "id": "thunder-crash",
+        "name": "Fracas de tonnerre",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Tu affects une cible à portée longue par un choc de tonnerre. Fais une attaque de Célérité. en cas de réussite, tu infliges 2 dégâts et la cible subit un tremblement interne destructeur. Chaque round suivant cette attaque, en tant qu’action supplémentaire, tu peux tenter une nouveau jet d’attaque lié au tremblement pour infliger +1 dégât supplémentaire à la cible. En cas d’échec, le tremblement cesse."
+      },
+      {
+        "id": "resist-the-storm",
+        "name": "Résister à la tempête",
+        "tier": 2,
+        "prerequisites": [
+          "thunder-crash",
+          "lightning-hand"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu es résistant·e aux dangers naturels des tempêtes. Choisis entre l’électricité ou l’énergie phonique (onde sonore). Les attaques de ce type réduisent leur niveau de blessure d’un palier (majeure→modérée, modérée→mineure, mineure→aucune). Tu peux prendre cette aptitude deux fois,en choisissant une énergie différente."
+      },
+      {
+        "id": "bolt-rider",
+        "name": "Cavalier de l’éclair",
+        "tier": 2,
+        "prerequisites": [
+          "lightning-hand",
+          "control-electric-device"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Tu te déplaces d’une longue distance instantanément, porté·e par un éclair. Tu dois voir l’emplacement et aucune barrière ne doit t’en séparer."
+      },
+      {
+        "id": "radiohead",
+        "name": "Radio incarnée",
+        "tier": 2,
+        "prerequisites": [
+          "control-electric-device"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu peux émettre et recevoir des transmissions radio sur un large spectre. Tu peux garder la communication privée ou la relayer de façon audible comme si tu étais une radio normale. Si tu tentes d’accéder à un signal radio crypté, tu dois réussir une tâche d’Intellect contre son niveau de cryptage. Ce mode de communication est aussi naturel que parler, cela signifie que parfois tu peux entendre des choses intéressantes sans le vouloir."
+      },
+      {
+        "id": "deafening-bolt",
+        "name": "Éclair assourdissant",
+        "tier": 3,
+        "prerequisites": [
+          "resist-the-storm",
+          "bolt-rider"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Tu projettes un éclair sur une cible à portée longue. Fais une attaque de Célérité. En cas de réussite la cible subit 5 dégâts et est assourdie (défenses entravées, n’entend plus rien) jusqu’à ta prochaine récupération de dix minutes ou plus."
+      },
+      {
+        "id": "electric-armor",
+        "name": "Armure électrique",
+        "tier": 3,
+        "prerequisites": [
+          "bolt-rider",
+          "radiohead"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Ton corps est parcouru d’électricité jusqu’à ta prochaine récupération de dix minutes ou plus. L’électricité ne te blesse pas et toute créature te touchant ou t’attaquant en mêlée subit 3 dégâts automatiquement (pas de jet nécessaire). Tant que l’aptitude est active, tu ignores les blessures mineures et modérées provenant de l’électricité et tu peux faire une attaque de contact infligeant 2 dégâts électriques."
+      },
+      {
+        "id": "bolts-of-power",
+        "name": "Éclairs de puissance",
+        "tier": 4,
+        "prerequisites": [
+          "deafening-bolt",
+          "electric-armor"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "You simultaneously unleash four lightning bolts, dealing 4 damage to up to four targets in short range; roll separately against each target. Even on a miss, your target still takes 1 damage. Action."
+      },
+      {
+        "id": "subsonic-rumble",
+        "name": "Vibration subsonique",
+        "tier": 4,
+        "prerequisites": [
+          "electric-armor"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Tu émets un grondement subsonique que peu de créatures entendent, mais qui les affecte toutes. Les créatures à portée courte voient leurs défenses entravées de deux paliers contre les tâches visant à les persuader, les intimider, leur faire peur. L’effet dure jusqu’à ta prochaine récupération de dix minutes ou plus."
+      },
+      {
+        "id": "discharge",
+        "name": "Décharge",
+        "tier": 5,
+        "prerequisites": [
+          "bolts-of-power"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "You take on a visible shine, tone, or crackling energy discharge. This is harmless unless you choose to direct it outward. While this ability is active, as an action you can strike up to three targets in short range (make separate Intellect attack rolls). Success means you inflict 4 damage. This ability lasts until you use a ten-minute or longer recovery. Effort: Increase the effect on a target so that in addition to taking damage, they lose their next turn. Action to initiate."
+      },
+      {
+        "id": "electric-flight",
+        "name": "Vol électrique",
+        "tier": 5,
+        "prerequisites": [
+          "subsonic-rumble"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tant que Armure électrique est active, tu peux voler. Tu peux te déplacer d’une courte distance et entreprendre une action ou te déplacer d’une longue distance comme action. Tu peux porter une créature de ta taille ou plus petite — elle n’est pas blessée par ton armure. Effort : protéger un·e passager·ère avec Armure électrique comme s’iel était toi."
+      },
+      {
+        "id": "flash-across-the-miles",
+        "name": "Voyage fulgurant",
+        "tier": 6,
+        "prerequisites": [
+          "discharge",
+          "electric-flight"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "Tu te déplaces comme un éclair presque instantanément jusqu’à un lieu que tu connais bien, n’importe où sur la même planète. Ce lieux doit être en extérieur ou ouvert sur le ciel. Effort : tu peux atteindre un lieu intérieur si une route est dégagée et qu’un éclair pourrait raisonnablement y entrer (fenêtre, porte, trou…)."
+      },
+      {
+        "id": "wall-of-lightning",
+        "name": "Mur d’éclairs",
+        "tier": 6,
+        "prerequisites": [
+          "discharge",
+          "electric-flight"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 8,
+          "options": []
+        },
+        "description": "Tu crées un mur d’électricité crépitante composé de six panneaux de 3,5 m × 3,5 m, arrangés comme tu le souhaites. Le mur est une barrière de niveau 7. Un ou deux côtés sont électrifiés, toute créature à portée immédiate subit 10 dégâts (aucun jet requis), traverser le mur inflige le double des dégâts . Le mur dure jusqu’à ta prochaine récupération de dix minutes ou plus."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

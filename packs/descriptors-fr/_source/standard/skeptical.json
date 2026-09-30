@@ -1,0 +1,30 @@
+{
+  "_id": "hhIROzdnHi0pItfs",
+  "_key": "!items!hhIROzdnHi0pItfs",
+  "name": "Sceptique",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Identification",
+      "Discernement des motivations",
+      "",
+      ""
+    ],
+    "description": "<p>Tu as un esprit critique face aux affirmations qu'on considère souvent comme acquises.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

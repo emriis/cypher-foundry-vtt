@@ -1,0 +1,30 @@
+{
+  "_id": "uecCMuu2u8K2nmvD",
+  "_key": "!items!uecCMuu2u8K2nmvD",
+  "name": "Intelligent",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Chemistry",
+      "Engineering",
+      "Mathematics",
+      ""
+    ],
+    "description": "<p>You're quite smart. Your memory is sharp, and you easily grasp concepts that others might struggle with. This aptitude doesn't necessarily mean that you've had years of formal education, but you have learned a great deal in your life, primarily because you pick things up quickly and retain so much.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

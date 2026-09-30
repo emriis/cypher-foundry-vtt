@@ -272,7 +272,11 @@
       "StatNote": "+{amount} à la Réserve de {stat}.",
       "SkillGranted": "Entraîné(e) en {name}.",
       "SkillUpgraded": "{name} est maintenant au niveau : {level}.",
-      "GrantedFrom": "Accordé par le Descripteur : {name}"
+      "GrantedFrom": "Accordé par le Descripteur : {name}",
+      "AlreadyApplied": "Un descripteur a déjà été appliqué à ce personnage.",
+      "SpeciesApplied": "Espèce appliquée : {name}",
+      "SpeciesAlreadyApplied": "Une espèce a déjà été appliquée à ce personnage.",
+      "SpeciesWrongGenre": "Cette espèce n'est pas disponible pour le genre du personnage."
     },
     "Type": {
       "Label": "Type",

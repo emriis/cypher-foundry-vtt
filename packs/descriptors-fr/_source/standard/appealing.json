@@ -1,0 +1,30 @@
+{
+  "_id": "f1AtVgy9W1XhKBh2",
+  "_key": "!items!f1AtVgy9W1XhKBh2",
+  "name": "Attrayant·e",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Persuasion",
+      "",
+      "",
+      ""
+    ],
+    "description": "<p>Tu es naturellement attirant·e et charismatique. Les gens t'apprécient, veulent t'aider et devenir ton ami·e.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

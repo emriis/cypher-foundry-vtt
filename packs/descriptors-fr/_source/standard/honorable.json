@@ -1,0 +1,30 @@
+{
+  "_id": "XHz48fN1vyjBAvvr",
+  "_key": "!items!XHz48fN1vyjBAvvr",
+  "name": "Honorable",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "might"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Persuasion",
+      "",
+      "",
+      ""
+    ],
+    "description": "<p>Tu es digne de confiance, juste et franc·he. Tu t'efforces d'agir avec droiture et de traiter les autres correctement.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

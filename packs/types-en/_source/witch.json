@@ -24,32 +24,44 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "brew-potion",
         "name": "Brew Potion",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "You brew a potion. You can choose its effect from the Low-Power Manifest Cyphers table. Your brewed potion cypher counts toward your cypher limit (or to the limit of anyone you give the potion to), plus the allowance granted by Potion Cyphers. If you are already at your cypher limit, your choice of one of your current cyphers loses its magic so you can have the new potion cypher. Ten minutes to brew. At tier 3: You can choose a low or medium‑power manifest cypher as your brewed potion. At tier 6: You can choose a low, medium-, or advanced-power manifest cypher as your brewed potion."
+        "description": "You brew a potion. You can choose its effect from the Low-Power Manifest Cyphers table. Your brewed potion cypher counts toward your cypher limit (or to the limit of anyone you give the potion to), plus the allowance granted by Potion Cyphers. If you are already at your cypher limit, your choice of one of your current cyphers loses its magic so you can have the new potion cypher. Ten minutes to brew. At tier 3: You can choose a low or medium-power manifest cypher as your brewed potion. At tier 6: You can choose a low, medium-, or advanced-power manifest cypher as your brewed potion."
       },
       {
+        "id": "evil-eye",
         "name": "Evil Eye",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "You make the sign of the evil eye, targeting a creature within short range with your Intellect attack. On a success, they are afflicted by a spirit of misfortune until you use a one-hour recovery. During this period, the GM afflicts them by introducing (or intruding, if against a PC) inconvenient events such as tripping, losing an item, missing an appointment, and so on. Effort: Increase the misfortune duration so it lasts until you use a ten-hour recovery. Inflict2 Intellect damage per level of Effort on a successful attack (in addition to the misfortune aspect of the ability). Last action. At tier 3: You can use two levels of Effort to make the misfortune permanent; it is a level 4 curse for the purpose of abilities that remove afflictions."
+        "description": "You make the sign of the evil eye, targeting a creature within short range with your Intellect attack. On a success, they are afflicted by a spirit of misfortune until you use a one-hour recovery. During this period, the GM afflicts them by introducing (or intruding, if against a PC) inconvenient events such as tripping, losing an item, missing an appointment, and so on. Effort: Increase the misfortune duration so it lasts until you use a ten-hour recovery. Inflict 2 Intellect damage per level of Effort on a  successful attack (in addition to the misfortune aspect of the ability). Last action. At tier 3: You can use two levels of Effort to make the misfortune permanent; it is a level 4 curse for the purpose of abilities that remove afflictions."
       },
       {
+        "id": "potion-cyphers",
         "name": "Potion Cyphers",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
         "description": "You can bear two additional cyphers at a time as long as they are cyphers you created with Brew Potion."
       }
@@ -57,7 +69,7 @@
     "statOptions": [
       "intellect"
     ],
-    "description": "<p>A Swords & Sorcery Type focused on witch archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Swords & Sorcery. Primary Pools: intellect.</em></p>"
+    "description": "<p>You are a master of potions, using herbs, minerals, and even bits and pieces such as frog eyes and dragon scales as your metaphorical canvas and paint. When you work with these materials to brew potions, you imagine and create new substances imbued with wondrous and magical effects. But your magical talents extend beyond potioncraft—you can call down curses on your foes with very real effects and, depending on your choices as you continue to study and explore, eventually learn all manner of other spells. You are one of the most versatile members of your group, given that you can brew a potion for almost any need—healing, hiding, empowering, or straight-up blasting. When facing conflict, you prefer to let others take the brunt, but you're not inexperienced when it comes to weapons, and can give as good as you get if the need arises.</p>"
   },
   "folder": "zBqRagUFEUelogPi",
   "sort": 0,
@@ -66,7 +78,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

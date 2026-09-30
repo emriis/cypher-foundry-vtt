@@ -24,28 +24,38 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "lightning-bolt",
         "name": "Éclair",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "Tu libères un **éclair de foudre** vers une cible à **longue portée**, infligeant **6 dégâts** si ton attaque réussit. Tu peux aussi ajuster le type d’énergie du sort avec ton·ta MJ si tu veux qu’il corresponde à ton focus. Par exemple, si ton focus est **Flamboie de Feu**, l’aptitude peut devenir un **Rayon de Feu**. Au rang 3, l’éclair se divise, attaquant une seconde cible à courte portée de la première (effectue un jet séparé pour chaque cible). Dernière action"
+        "description": "Tu libères un éclair de foudre vers une cible à longue portée, infligeant 6 dégâts si ton attaque réussit. Tu peux aussi ajuster le type d'énergie du sort avec ton MJ si tu veux qu'il corresponde à ton focus. Au rang 3, l'éclair se divise, attaquant une seconde cible à courte portée de la première (effectue un jet séparé pour chaque cible)."
       },
       {
+        "id": "prepare-spell",
         "name": "Préparer un Sort",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Chaque jour, tu peux choisir un **effet magique différent** et l’utiliser comme un sort. Choisis un **cypher manifesté de faible puissance**. Après **dix minutes de préparation**, tu gagnes **cet effet comme un sort** (une aptitude de personnage). Tu peux lancer ce sort en tant qu'**action**, pour un coût de **2 Intellect**. Ce sort **ne compte pas** dans ta limite de cyphers. Contrairement à un cypher, le sort **ne disparaît pas** après usage. Lors de ta **récupération de dix heures**, tu peux changer le cypher choisi comme sort."
+        "description": "Chaque jour, tu peux choisir un effet magique différent et l'utiliser comme un sort. Choisis un cypher manifesté de faible puissance. Après dix minutes de préparation, tu gagnes cet effet comme un sort (une aptitude de personnage). Tu peux lancer ce sort en tant qu'action, pour un coût de 2 Intellect. Ce sort ne compte pas dans ta limite de cyphers. Contrairement à un cypher, le sort ne disparaît pas après usage. Lors de ta récupération de dix heures, tu peux changer le cypher choisi. Au rang 3 : cypher de puissance faible ou moyenne (coût 4 Intellect). Au rang 6 : cypher de faible, moyenne ou puissance avancée (coût 6 Intellect). Tu peux choisir cette aptitude jusqu'à trois fois."
       }
     ],
-    "statOptions": ["intellect"],
-    "description": "<p>Un Type de Fantasy épique centré sur l'archétype magicien·ne, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Fantasy épique. Réserves principales : Intellect.</em></p>"
+    "statOptions": [
+      "intellect"
+    ],
+    "description": "<p>Your conjured lightning, flashing displays, and wizardly spells are just part of what makes you a wizard. With your wisdom and knowledge, you have the opportunity to guide others to a larger goal, to learn ancient secrets, discover new truths, and maybe even become a major figure as history unfolds. You may see your role as the voice of wisdom and reason in your company. More tactically, your spells aren't as quick as a flashing sword or swift-flying arrow, so you appreciate others in your fellowship who have the physical presence to keep aggressors away from you a few extra moments while you prepare one of your magical effects. And anytime enemy magic is found, you have the best chance to deal with and perhaps even counter it.</p>"
   },
   "folder": "hprdGeaH0YyHvS4S",
   "sort": 0,
@@ -54,7 +64,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

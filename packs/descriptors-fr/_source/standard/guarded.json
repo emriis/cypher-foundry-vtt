@@ -1,0 +1,30 @@
+{
+  "_id": "qgVHqF5nAdDNyoEd",
+  "_key": "!items!qgVHqF5nAdDNyoEd",
+  "name": "Méfiant·e",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Tromperie",
+      "Discernement des motivations",
+      "",
+      ""
+    ],
+    "description": "<p>Tu dissimules ta véritable nature et rechignes à laisser quiconque entrevoir qui tu es vraiment.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "_id": "7qYcgtmcWNMTt6pl",
+  "_key": "!items!7qYcgtmcWNMTt6pl",
+  "name": "Empathic",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Gathering Information",
+      "Recognizing Motive",
+      "",
+      ""
+    ],
+    "description": "<p>Other people are open books to you. You may have a knack for reading a person's tells, those subtle movements that convey an individual's mood and disposition. Or you may receive information in a more direct way, feeling a person's emotions as if they were tangible things, sensations that lightly brush against your mind. Your gift for empathy helps you navigate social situations and control them to avoid misunderstandings and prevent useless conflicts from erupting.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

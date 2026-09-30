@@ -1,0 +1,30 @@
+{
+  "_id": "I6KUMGwxYlDQSkWJ",
+  "_key": "!items!I6KUMGwxYlDQSkWJ",
+  "name": "Creative",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Performance",
+      "Publishing",
+      "",
+      ""
+    ],
+    "description": "<p>Maybe you have a notebook where you write down ideas so you can develop them later. Perhaps you email yourself ideas that strike you out of the blue so you can sort them in an electronic document. Or maybe you just sit down, stare at the blank page or screen, and, by indomitable force of will, produce something from nothing. However your gift works, you're creative—you write, compose, sculpt, design, direct, code, or otherwise create narratives that enthrall other people with your vision.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

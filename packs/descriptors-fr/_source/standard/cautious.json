@@ -1,0 +1,30 @@
+{
+  "_id": "BFYmr6bxVajuiyTo",
+  "_key": "!items!BFYmr6bxVajuiyTo",
+  "name": "Prudent·e",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "speed"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Perception",
+      "",
+      "",
+      ""
+    ],
+    "description": "<p>Tu ne te lances jamais tête baissée. Tu prends le temps de tout analyser avant d'agir.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

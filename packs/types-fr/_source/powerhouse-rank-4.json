@@ -24,58 +24,80 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "always-mighty",
         "name": "Toujours Puissant·e",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Chaque fois que tu effectues une récupération, si ta Réserve de Puissance n’est pas déjà pleine, tu récupères **1 point supplémentaire** dans ta Réserve de Puissance. Tu peux choisir cette aptitude jusqu’à **trois fois**."
+        "description": "Chaque fois que tu effectues une récupération, si ta Réserve de Puissance n'est pas déjà pleine, tu récupères 1 point supplémentaire dans ta Réserve de Puissance. Tu peux choisir cette aptitude jusqu'à trois fois."
       },
       {
+        "id": "enhanced-energy",
         "name": "Énergie Amplifiée",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Lorsque tu réussis une tâche importante en utilisant **tes pouvoirs** (à la discrétion du·de la MJ), tu récupères **4 points d’Intellect**. Chaque fois que tu utilises cette aptitude, tu récupères **1 point de moins** que la fois précédente. L’aptitude se renouvelle après une **récupération de dix heures**."
+        "description": "Lorsque tu réussis une tâche importante en utilisant tes pouvoirs (à la discrétion du MJ), tu récupères 4 points d'Intellect. Chaque fois que tu utilises cette aptitude, tu récupères 1 point de moins que la fois précédente. L'aptitude se renouvelle après une récupération de dix heures."
       },
       {
+        "id": "push-on-through",
         "name": "Tenir Bon",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Au lieu d’une récupération de dix minutes, tu disposes d’une **deuxième récupération d’une action**. Ainsi, ta 1re récupération prend **1 action**, ta 2e récupération prend **1 action,** ta 3e récupération prend **1 heure** et ta 4e récupération prend **10 heures** De plus, tu peux encaisser une blessure modérée supplémentaire, et tu peux utiliser une de tes récupérations d’une action pour permettre à un·e allié·e d’utiliser une récupération de dix minutes comme action."
+        "description": "Au lieu d'une récupération de dix minutes, tu disposes d'une deuxième récupération d'une action. Ainsi, ta 1re récupération prend 1 action, ta 2e récupération prend 1 action, ta 3e récupération prend 1 heure et ta 4e récupération prend 10 heures. Tu peux encaisser une blessure modérée supplémentaire, et tu peux utiliser une de tes récupérations d'une action pour permettre à un allié d'utiliser une récupération de dix minutes comme action. Toute durée qui se termine normalement à la prochaine récupération de dix minutes se termine pour toi lorsque tu effectues ta deuxième récupération d'une action."
       },
       {
+        "id": "super-combatant",
         "name": "Super‑Combattant·e",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Tu es **entraîné·e** dans un type d’attaque spécifique (épées, haches, arcs, rayons, poings, etc.) ou dans une catégorie complète d’attaques : armes légères contondantes/tranchantes/à distance, armes moyennes, etc. Au rang 2, tu peux devenir spécialisé·e (en acquérant l’aptitude normalement). Au rang 6, tu peux devenir expert·e dans cette méthode d’attaque (celle du rang 1 ou une autre dont tu es spécialisé·e)."
+        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you're already specialized in), but you must gain the skill normally."
       },
       {
+        "id": "superheroics",
         "name": "Superhéroïsme",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Choisis une **Réserve** : Puissance, Célérité ou Intellect. Pour les tâches utilisant cette Réserve, ajoute ton **rang** au nombre de niveaux d’Effort que tu peux appliquer. De plus, tu peux te surmener : subir une blessure modérée pour obtenir deux niveaux d’Effort gratuits pour une tâche de cette Réserve (sans dépasser la limite d’Effort maximale pour cette Réserve). À chaque récupération, ajoute ton rang en points supplémentaires dans cette même Réserve. # Dieu Vivant (Rang 5) Tu es littéralement un être divin, issu d’un panthéon céleste (ou bien tu possèdes une puissance équivalente pour une autre raison). Qu’importe ton origine — enfant de l’Olympe, d’Asgard, d’un autre mythe, venu·e d’une dimension lointaine, d’une étoile inconnue, ou création d’un processus extraordinaire t’ayant conféré une puissance inimaginable — tu as choisi de te ranger du côté des mortels, du moins pour l’instant. Que ne peut accomplir un dieu vivant ? Ou du moins tenter de manière crédible ? Ta présence dans une équipe garantit presque sa victoire, tant que les adversaires rencontrés ne sont pas eux‑mêmes des divinités. ### Options d’historique Autrefois, tes pouvoirs t’ont été retirés à cause de ta cruauté et de ton égoïsme. Les années t’ont mûri, et tu t’es consacré·e à devenir quelqu’un de meilleur, prêt·e à aider les autres. Finalement, tes pouvoirs sont revenus — tu espères que tes anciennes faiblesses, elles, ne reviendront jamais. Il y a trois mois, tu as appris que tu n’étais peut‑être pas le dernier membre vivant de ta famille. Tu es un·e alien élevé·e par des humains. Malgré tes différences (et ton pouvoir incroyable), tu considères les humains comme ton peuple, et tu feras tout pour les protéger. Le chef de ton panthéon t’a rappelé·e au royaume divin il y a un an… tu as refusé. Né·e de parents humains et d’un autre royaume plus étrange encore, tu t’es juré·e de protéger les deux — même si humain·es et êtres de l’autre royaume te traitent parfois injustement. L’anniversaire de l’invasion alien que tu as aidé à repousser l’année dernière approche. Tu as appris récemment l’existence d’une substance rare capable de t’affaiblir sévèrement si elle se trouve à proximité. Ta véritable identité a été volée, mettant en péril tes finances et, plus grave encore, les personnes que tu aimes dans le monde des mortels. ### Capacités de Dieu Vivant Tu gagnes tous les bénéfices suivants : Tu peux encaisser trois blessures mineures supplémentaires et une blessure modérée supplémentaire. Ajoute +10 à ta Réserve de Puissance. Ajoute +10 à ta Réserve de Célérité. Ajoute +10 à ta Réserve d’Intellect. Ajoute +8 dans la Réserve choisie pour ton aptitude Superhéroïsme. Ajoute +1 d’Avantage dans la Réserve de ton choix. Utilisation libre de toutes les armes. Utilisation libre de toutes les armures. Tu disposes de six amplificateurs de pouvoir. Tu gagnes une aptitude d’origine superhéroïque. Aux rangs 3 et 6, choisis une aptitude appropriée dans les Aptitudes de genre Science‑Fiction ou Fantasy."
+        "description": "Choisis une Réserve : Puissance, Célérité ou Intellect. Pour les tâches utilisant cette Réserve, ajoute ton rang au nombre de niveaux d'Effort que tu peux appliquer. Tu peux te surmener : subir une blessure modérée pour obtenir deux niveaux d'Effort gratuits pour une tâche de cette Réserve (sans dépasser la limite d'Effort maximale). À chaque récupération, ajoute ton rang en points supplémentaires dans cette même Réserve."
       }
     ],
-    "statOptions": ["might"],
-    "description": "<p>Un Type de Super-héros centré sur l'archétype colosse, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Super-héros. Sous-genre : Super-héros. Réserves principales : Puissance.</em></p>"
+    "statOptions": [
+      "might"
+    ],
+    "description": "<p>You embody raw, overwhelming power, making you a one-person force to be reckoned with. You have a formidable array of abilities, starting with amazing stamina, fluid dexterity, and a cutting intellect. But that's the least amazing thing about you—few can stand against you unless they are literal gods. And even those may fear your wrath. Powerhouses are effective in almost every situation, though your particular suite of abilities could provide even more amazing aid to your allies, depending on the circumstances.</p>"
   },
   "folder": "rgUrIo08MxTkt23F",
   "sort": 0,
@@ -84,7 +106,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

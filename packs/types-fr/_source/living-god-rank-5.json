@@ -24,58 +24,81 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "hover",
         "name": "Lévitation",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
-        "description": "Tu t’élèves lentement dans les airs. Si tu te concentres, tu peux : **rester immobile** ou flotter jusqu’à un **court déplacement** pendant ton action. Sans concentration, tu dérives avec le vent ou l’élan que tu as pris. L’effet dure jusqu’à ta prochaine **récupération de dix minutes ou plus**. Action"
+        "description": "Tu t'élèves lentement dans les airs. Si tu te concentres, tu peux rester immobile ou flotter jusqu'à un court déplacement pendant ton action. Sans concentration, tu dérives avec le vent ou l'élan que tu as pris. L'effet dure jusqu'à ta prochaine récupération de dix minutes ou plus."
       },
       {
+        "id": "push-on-through",
         "name": "Second Focus",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Tu possèdes **deux focus au lieu d’un seul**. Au rang 1, tu gagnes **deux aptitudes** pour chacun de ces deux focus. À chaque montée de rang, tu gagnes **une nouvelle aptitude dans chacun des deux focus**."
+        "description": "Tu possèdes deux focus au lieu d'un seul. Au rang 1, tu gagnes deux aptitudes pour chacun de ces deux focus. À chaque montée de rang, tu gagnes une nouvelle aptitude dans chacun des deux focus."
       },
       {
+        "id": "second-focus",
         "name": "Tenir Bon",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Au lieu d’une récupération de dix minutes, tu disposes d’une **deuxième récupération d’une action**. Ainsi, ta 1re récupération prend **1 action**, ta 2e récupération prend **1 action,** ta 3e récupération prend **1 heure** et ta 4e récupération prend **10 heures** De plus, tu peux encaisser une blessure modérée supplémentaire, et tu peux utiliser une de tes récupérations d’une action pour permettre à un·e allié·e d’utiliser une récupération de dix minutes comme action."
+        "description": "Au lieu d'une récupération de dix minutes, tu disposes d'une deuxième récupération d'une action. Ainsi, ta 1re récupération prend 1 action, ta 2e récupération prend 1 action, ta 3e récupération prend 1 heure et ta 4e récupération prend 10 heures. Tu peux encaisser une blessure modérée supplémentaire, et tu peux utiliser une de tes récupérations d'une action pour permettre à un allié d'utiliser une récupération de dix minutes comme action. Toute durée qui se termine normalement à la prochaine récupération de dix minutes se termine pour toi lorsque tu effectues ta deuxième récupération d'une action."
       },
       {
+        "id": "super-combatant",
         "name": "Super‑Combattant·e",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Tu es **entraîné·e** dans un type d’attaque spécifique (épées, haches, arcs, rayons, poings, etc.) ou dans une catégorie complète d’attaques : armes légères contondantes/tranchantes/à distance, armes moyennes, etc. Au rang 2, tu peux devenir spécialisé·e (en acquérant l’aptitude normalement). Au rang 6, tu peux devenir expert·e dans cette méthode d’attaque (celle du rang 1 ou une autre dont tu es spécialisé·e)."
+        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you're already specialized in), but you must gain the skill normally."
       },
       {
+        "id": "superheroics",
         "name": "Superhéroïsme",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Choisis une **Réserve** : Puissance, Célérité ou Intellect. Pour les tâches utilisant cette Réserve, ajoute ton **rang** au nombre de niveaux d’Effort que tu peux appliquer. De plus, tu peux te surmener : subir une blessure modérée pour obtenir deux niveaux d’Effort gratuits pour une tâche de cette Réserve (sans dépasser la limite d’Effort maximale pour cette Réserve). À chaque récupération, ajoute ton rang en points supplémentaires dans cette même Réserve. # Aptitude d’origine de Superhéros"
+        "description": "Choisis une Réserve : Puissance, Célérité ou Intellect. Pour les tâches utilisant cette Réserve, ajoute ton rang au nombre de niveaux d'Effort que tu peux appliquer. Tu peux te surmener : subir une blessure modérée pour obtenir deux niveaux d'Effort gratuits pour une tâche de cette Réserve (sans dépasser la limite d'Effort maximale). À chaque récupération, ajoute ton rang en points supplémentaires dans cette même Réserve."
       }
     ],
-    "statOptions": ["might", "intellect"],
-    "description": "<p>Un Type de Super-héros centré sur l'archétype dieu vivant, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Super-héros. Sous-genre : Super-héros. Réserves principales : Puissance, Intellect.</em></p>"
+    "statOptions": [
+      "might",
+      "intellect"
+    ],
+    "description": "<p>Literally a divine being and part of a divine pantheon (or this powerful for some other reason), you use your amazing abilities to end injustice and defeat evil. Whether you're a child of Mount Olympus, Asgard, or some other mythology; from a distant dimension or star; or the result of an experiment or process that bequeathed you unbelievable power, you've thrown in your lot with regular people, at least for now. What can't a living god do, or at least credibly attempt? Your presence on a team almost ensures its eventual success, assuming the foes you face aren't also gods.</p>"
   },
   "folder": "rgUrIo08MxTkt23F",
   "sort": 0,
@@ -84,7 +107,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

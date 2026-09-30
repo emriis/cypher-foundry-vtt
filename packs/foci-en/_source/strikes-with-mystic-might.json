@@ -1,0 +1,212 @@
+{
+  "_id": "strikeswit88C320",
+  "_key": "!items!strikeswit88C320",
+  "name": "Strikes With Mystic Might",
+  "type": "focus",
+  "img": "icons/skills/melee/unarmed-punch-fist.webp",
+  "system": {
+    "description": "<p>Your unarmed techniques are infused with otherworldly energies, enabling you to move beyond the merely physical.</p>",
+    "abilities": [
+      {
+        "id": "no-need-for-weapons",
+        "name": "No Need for Weapons",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Your unarmed attacks (such as punches, kicks, elbows, or knees) inflict an additional 2 damage."
+      },
+      {
+        "id": "mystic-hand",
+        "name": "Mystic Hand",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 3,
+          "options": []
+        },
+        "description": "You inflict an additional 1 damage with unarmed attacks with your mystic source. Once per round, if you take a wound and are not helpless, you can spend 3 Speed to reduce the wound's severity by one step. Enabler."
+      },
+      {
+        "id": "supernatural-leap",
+        "name": "Supernatural Leap",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "When you jump, you move twice as far as normal, either horizontally or vertically. Enabler."
+      },
+      {
+        "id": "safe-fall",
+        "name": "Safe Fall",
+        "tier": 2,
+        "prerequisites": [
+          "no-need-for-weapons",
+          "mystic-hand"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "When you take a wound from a fall, reduce its severity by one step. Enabler."
+      },
+      {
+        "id": "surging-hand",
+        "name": "Surging Hand",
+        "tier": 2,
+        "prerequisites": [
+          "mystic-hand",
+          "supernatural-leap"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 2,
+          "options": []
+        },
+        "description": "You call upon your mystic source and project it at a target within short range, inflicting 4 damage with a successful Speed attack. Action."
+      },
+      {
+        "id": "perfecting-the-body",
+        "name": "Perfecting the Body",
+        "tier": 3,
+        "prerequisites": [
+          "safe-fall"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Your daily kata infuse and protect you, granting you immunity from the effects of fear, mental control, disease, and poison."
+      },
+      {
+        "id": "mystic-flurry",
+        "name": "Mystic Flurry",
+        "tier": 3,
+        "prerequisites": [
+          "surging-hand"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You inflict an additional 1 damage with unarmed attacks with your mystic source."
+      },
+      {
+        "id": "mystic-step",
+        "name": "Mystic Step",
+        "tier": 4,
+        "prerequisites": [
+          "perfecting-the-body",
+          "mystic-flurry"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 4,
+          "options": []
+        },
+        "description": "You harness your mystic source to instantly transport yourself to a new location you can see within long range. If you appear within immediate range of a foe, you can make one unarmed attack against them as an extra action. Effort: Reach a location within range that you can't see directly because it's blocked by a wall or structure. First action. If you try to use Mystic Step to reach a location that has no room for you, the ability automatically fails and you don't leave your original location."
+      },
+      {
+        "id": "exploding-hand",
+        "name": "Exploding Hand",
+        "tier": 5,
+        "prerequisites": [
+          "mystic-step"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 5,
+          "options": []
+        },
+        "description": "You call upon your mystic source and project it at a target within long range and two additional targets within immediate range of the first target. Make separate attacks against each. A successful attack inflicts 4 damage; even on a miss you still inflict 1 damage. Action."
+      },
+      {
+        "id": "resonant-palm",
+        "name": "Resonant Palm",
+        "tier": 5,
+        "prerequisites": [
+          "mystic-step"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 7,
+          "options": []
+        },
+        "description": "You forge a mystic connection with a willing creature you touch or a foe you successfully attack (this attack deals 2 less damage than normal). At any point within the next ten days, you can attempt to affect the target in one of the following ways, no matter how far you are from them. This connection breaks once you make this attempt, you force a connection with a different creature, or ten days pass. Transfer one wound from the creature to yourself. No abilities, effects, or equipment can reduce the severity of this wound, but you can rally or attempt to heal it using normal methods. Make an eased unarmed attack against the target or an eased attack against them with one of your abilities, as if they were in range. Last action to initiate; action to heal or attack the creature."
+      },
+      {
+        "id": "perfected-form",
+        "name": "Perfected Form",
+        "tier": 6,
+        "prerequisites": [
+          "exploding-hand"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Your mystic source infuses you until you use a one-hour or longer recovery, granting you 3 points that you can add to any of your Pools, even if that would exceed their normal maximums. The points remain until you spend them or the duration expires. In addition, while the duration lasts, your eyes and hands glow with the power of your mystic source, and you inflict an additional 3 damage with your unarmed attacks. This ability renews after your next one-hour or longer recovery. Last action."
+      },
+      {
+        "id": "lethal-strike",
+        "name": "Lethal Strike",
+        "tier": 6,
+        "prerequisites": [
+          "exploding-hand",
+          "resonant-palm"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 6,
+          "options": []
+        },
+        "description": "With a swift and sudden melee or ranged weapon attack, you strike a foe in a vital spot. If you hit, you inflict an additional 7 damage. Action."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

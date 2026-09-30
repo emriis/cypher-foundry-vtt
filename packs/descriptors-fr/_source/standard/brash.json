@@ -1,0 +1,30 @@
+{
+  "_id": "sbpHDvu8sG6OF0My",
+  "_key": "!items!sbpHDvu8sG6OF0My",
+  "name": "Audacieux·se",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "speed"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Piratage informatique",
+      "Initiative",
+      "",
+      ""
+    ],
+    "description": "<p>Tu as un tempérament affirmé et une grande confiance en toi. Certain·es te trouvent courageux·se, d'autres prétentieux·se.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

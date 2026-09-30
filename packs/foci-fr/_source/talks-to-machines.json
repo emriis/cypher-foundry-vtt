@@ -1,0 +1,225 @@
+{
+  "_id": "talkstomac4E0F3A",
+  "_key": "!items!talkstomac4E0F3A",
+  "name": "Parle aux machines",
+  "type": "focus",
+  "img": "icons/commodities/tech/circuit-board.webp",
+  "system": {
+    "description": "<p>You use your brain like a computer, interfacing “wirelessly” with any electronic device. You can control and influence them in ways that others can't.</p>",
+    "abilities": [
+      {
+        "id": "charm-machine",
+        "name": "Charmer la machine",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Tu convaincs une machine ou un robot non intelligent à portée immédiate de « t’apprécier » grâce à une attaque d’Intellect réussie. Une machine qui t’apprécie a 50 % de chances de ne pas fonctionner si son action te causerait du tort. Exemple : si un ennemi tente de déclencher une bombe via un détonateur qui t’apprécie, il y a 50 % de chances qu’elle n’explose pas."
+      },
+      {
+        "id": "control-electric-device",
+        "name": "Contrôler un appareil électrique",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Tu tentes de contrôler ou perturber un appareil électrique (machine non intelligente alimentée par électricité) à longue portée. Fais une attaque d’Intellect contre l’appareil. Si ton jet est inférieur à 12, considère que tu as obtenu 12. (Tu évites ainsi une Intrusion du·de la MJ si tu fais un 1.) En cas de réussite tu contrôles l’appareil comme si tu étais à côté, même si tu devrais normalement le toucher, lire un écran ou l’opérer manuellement, si l’appareil est protégé par une sécurité, tes tâches pour la contourner sont entravées sauf si tu es à portée immédiate, si l’appareil est tenu par une créature, tu dois réussir contre le niveau le plus élevé entre la créature et l’appareil. Si tu tentes de perturber l’appareil il grille et si tu le souhaites, il explose dans une zone immédiate, infligeant 1 dégât à chaque créature (attaque d’Intellect séparée pour chaque). Au rang 3, le minimum passe à 15. Effort : augmenter le minimum obtenu de +3."
+      },
+      {
+        "id": "friend-to-intelligent-machines",
+        "name": "Ami·e des machines intelligentes",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu gagnes un atout aux tâches pour persuader ou interagir positivement avec les machines intelligentes. Tu peux utiliser cet atout pour tenter de les pirater ou de les contrôler (même si tu ignores qu’elles sont intelligentes), mais une seule fois par machine, réussite ou échec."
+      },
+      {
+        "id": "coaxing-power",
+        "name": "Forcer la puissance",
+        "tier": 2,
+        "prerequisites": [
+          "charm-machine"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Tu augmentes la puissance ou la fonction d’une machine, la faisant fonctionner un niveau au‑dessus de la normale, jusqu’à ta prochaine récupération d’une heure ou plus."
+      },
+      {
+        "id": "locate-machine",
+        "name": "Localiser une machine",
+        "tier": 2,
+        "prerequisites": [
+          "control-electric-device"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Tu peux retrouver une machine à des kilomètres. Choisis une machine, un robot ou une machine intelligente que tu as identifiée (soit en trouvant des informations permettant de les identifier grâce à des recherches réseau, soit parce que tu as déjà interagi personnellement avec elles). Si ton attaque d’Intellect réussit, tu peux percevoir sa direction ou sa distance tant qu’elle est dans un rayon de 16 km, en consacrant une action pour te concentrer ou consulter ton appareil. Au‑delà, tu ne perçois que la direction. Si la machine détecte ta trace, elle tente de la supprimer : tu dois réussir une nouvelle attaque d’Intellect toutes les dix heures pour maintenir la trace."
+      },
+      {
+        "id": "machine-control",
+        "name": "Contrôle machine",
+        "tier": 2,
+        "prerequisites": [
+          "friend-to-intelligent-machines"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Tu utilises tes connaissances des commandes robotiques contre un robot, un système mécanisé ou une machine intelligente à courte portée (ou à portée d’un appareil capable de transmettre des signaux). Choisis si tu préfères commander une créature ou désactiver plusieurs créatures, puis fais une attaque d’Intellect séparée pour chaque cible. Si ton jet est inférieur à 6, considère que tu as obtenu 6. (Tu évites ainsi une Intrusion du·de la MJ si tu fais un 1.) - Commander : tu prends le contrôle actif de la cible jusqu’à ta prochaine récupération de dix minutes ou plus, en lui donnant des tâches simples. - Désactiver : la cible ne peut plus agir tant que tu te concentres. Au rang 3, le minimum passe à 9. Effort : augmenter le minimum obtenu de +3."
+      },
+      {
+        "id": "disable-mechanism",
+        "name": "Désactiver un mécanisme",
+        "tier": 3,
+        "prerequisites": [
+          "coaxing-power"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Avec une attaque d’Intellect réussie contre une machine, un robot ou un appareil (intelligent ou non) à portée immédiate, tu le perturbes de l’une des façons suivantes : - toutes ses tâches sont entravées jusqu’à ta prochaine récupération de dix minutes ou plus, - sa vitesse est réduite de moitié, - iel ne peut pas agir pendant un round, - iel inflige 2 dégâts de moins (minimum 1) jusqu’à ta prochaine récupération de dix minutes ou plus. Tu dois toucher la machine pour la perturber (si c’est une attaque, elle n’inflige pas de dégâts). Effort : augmenter la portée jusqu’à ce que tu peux voir directement ou cibler une machine via un réseau auquel tu as un accès illimité (nécessite 2 niveaux d’Effort)."
+      },
+      {
+        "id": "quick-control",
+        "name": "Contrôle rapide",
+        "tier": 3,
+        "prerequisites": [
+          "locate-machine"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "A successful Intellect attack allows you to command a machine (intelligent or not) within short range to take one action within its capabilities on its next turn, regardless of its normal programming or attitudes. If this action would cause the machine direct harm to itself or its allies, your Intellect attack against it is hindered. (If you use this ability to command an intelligent machine, it likely becomes hostile to you afterward.) Action."
+      },
+      {
+        "id": "compile-robotic-offense",
+        "name": "Compilation robotique offensive",
+        "tier": 4,
+        "prerequisites": [
+          "disable-mechanism"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Ton attaque contre un robot ou une machine intelligente gagne un atout si tu l’effectues comme Dernière action plutôt qu’en action ou Première action."
+      },
+      {
+        "id": "machine-companion",
+        "name": "Compagnon mécanique",
+        "tier": 4,
+        "prerequisites": [
+          "quick-control"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu crées, trouves ou acquiers un·e suivant·e machine intelligent·e de niveau 3 qui t’accompagne et agit selon tes directives. Si iel est détruit·e, tu peux le·la restaurer avec tes ressources après quelques jours de bricolage."
+      },
+      {
+        "id": "information-gathering",
+        "name": "Collecte d’informations",
+        "tier": 5,
+        "prerequisites": [
+          "compile-robotic-offense",
+          "machine-companion"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Tu communiques sans fil avec toutes les machines non intelligentes dans un rayon de 1,5 km. Tu peux poser une question simple sur elles‑mêmes ou sur ce qui se passe près d’elles, et recevoir une réponse simple. Exemple : dans une zone remplie de machines, tu peux demander la localisation d’une personne ; si elle est dans la portée, une ou plusieurs machines te répondront probablement."
+      },
+      {
+        "id": "improved-machine-companion",
+        "name": "Compagnon mécanique amélioré",
+        "tier": 6,
+        "prerequisites": [
+          "information-gathering"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu crées, trouves ou acquiers un·e suivant·e machine intelligent·e de niveau 5. Si tu as déjà un compagnon de niveau inférieur, tu choisis de l’améliorer au niveau 5 ou garder le niveau 3 et obtenir un nouveau niveau 5. Si iel est détruit·e, tu peux le·la restaurer avec tes ressources après quelques jours."
+      },
+      {
+        "id": "recompile-machine",
+        "name": "Recompiler une machine",
+        "tier": 6,
+        "prerequisites": [
+          "information-gathering"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 8,
+          "options": []
+        },
+        "description": "Avec une attaque d’Intellect réussie contre une machine (intelligente ou non) de niveau 4 ou moins à longue portée, tu te connectes à son système central. Choisis l’un des effets : - la machine cesse toute fonction (elle est « briquée »), - la machine redémarre après quelques rounds et devient un compagnon machine supplémentaire pendant environ un jour ; après une récupération de dix heures, tu dois réutiliser cette aptitude pour éviter qu’elle ne revienne à sa programmation d’origine, - la machine explose, infligeant 4 dégâts à toutes les créatures à portée immédiate (attaque d’Intellect séparée pour chaque). Effort : augmenter le niveau maximal affecté de +1."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

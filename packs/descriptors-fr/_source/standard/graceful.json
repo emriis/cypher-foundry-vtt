@@ -1,0 +1,30 @@
+{
+  "_id": "SClg01Q5cDnb4yDR",
+  "_key": "!items!SClg01Q5cDnb4yDR",
+  "name": "Gracieux·se",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "speed"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Gymnastique",
+      "",
+      "",
+      ""
+    ],
+    "description": "<p>Tu as un sens de l'équilibre parfait. Tes mouvements sont empreints de grâce et d'élégance.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

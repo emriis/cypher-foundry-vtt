@@ -24,38 +24,52 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "combat-prowess",
         "name": "Combat Prowess",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
         "description": "You add +1 damage to one type of weapon attack of your choice: melee weapon attacks or ranged weapon attacks."
       },
       {
+        "id": "desperate-feat",
         "name": "Desperate Feat",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "While you have at least one moderate or major wound, you add +1 Edge to the Pool of your choice."
+        "description": "While you have at least one moderate or major wound, you add +1 Edge to the Pool of your choice. Enabler."
       },
       {
+        "id": "expert-combatant",
         "name": "Expert Combatant",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you’re already specialized in), but you must gain the skill normally. For a Heavy, Expert Combatant also means choosing training in weapons appropriate to the genre, such as pistols and rifles."
+        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you're already specialized in), but you must gain the skill normally. For a Heavy, Expert Combatant also means choosing training in weapons appropriate to the genre, such as pistols and rifles."
       }
     ],
-    "statOptions": ["might"],
-    "description": "<p>A Postapocalypse Type focused on heavy archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Science Fiction. Subgenre: Postapocalypse. Primary Pools: might.</em></p>"
+    "statOptions": [
+      "might"
+    ],
+    "description": "<p>War never changes—it only changes people like you who have to fight in it or, after the war is lost, battle for survival in a world broken by conflict. For you, the only way forward is to crush even potential enemies so quickly and violently that they'll never threaten you or that which you cherish again. In an often violent postapocalyptic world, your allies appreciate your protection and, when necessary, your aggressive nature when you must force your way into a location that may contain the resources required to survive another day.</p>"
   },
   "folder": "UwhTFa2lNkjiyB2j",
   "sort": 0,
@@ -64,7 +78,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

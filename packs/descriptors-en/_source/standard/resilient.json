@@ -1,0 +1,30 @@
+{
+  "_id": "Y6RbEJQz3qECQTeQ",
+  "_key": "!items!Y6RbEJQz3qECQTeQ",
+  "name": "Resilient",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "might"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Athletics",
+      "Escaping",
+      "",
+      ""
+    ],
+    "description": "<p>You're tougher than most, which means you can take some punishment and come back for more. But if events do overtake you, you don't panic—you just concentrate on getting out of whatever's constraining you. Being resilient is at least partly about knowing how to get out of a bad situation.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

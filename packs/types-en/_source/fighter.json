@@ -24,28 +24,39 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "expert-combatant",
         "name": "Expert Combatant",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks, such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you’re already specialized in), but you must gain the skill normally."
+        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks, such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you're already specialized in), but you must gain the skill normally."
       },
       {
+        "id": "press-advantage",
         "name": "Press Advantage",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "When your damage‑dealing attack roll is 17 or higher, you deal +1 damage with the attack. If you roll a 19 or 20, you inflict the extra damage regardless of whether you choose to deal additional damage or take a special minor or major effect. Successive Attack (2 Speed or Might): Once per turn if you take down a foe, you can immediately make another attack on that same turn against a new foe within your reach as an extra action on your turn. You can use this ability with melee attacks and ranged attacks."
+        "description": "When your damage-dealing attack roll is 17 or higher, you deal +1 damage with the attack. If you roll a 19 or 20, you inflict the extra damage regardless of whether you choose to deal additional damage or take a special minor or major effect. Successive Attack (2 Speed or Might): Once per turn if you take down a foe, you can immediately make another attack on that same turn against a new foe within your reach as an extra action on your turn. You can use this ability with melee attacks and ranged attacks. Enabler."
       }
     ],
-    "statOptions": ["might", "speed"],
-    "description": "<p>A Dungeon Fantasy Type focused on fighter archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Dungeon Fantasy. Primary Pools: might, speed.</em></p>"
+    "statOptions": [
+      "might",
+      "speed"
+    ],
+    "description": "<p>Weapon tightly gripped, you charge your monstrous foes. Anyone willing to hold a sword might be called a “fighter,” but you're a cut above most. Less well-trained warriors may serve as soldiers, guards, and muscle in a tavern, but a Fighter truly understands conflict and battlefield control. You've trained in specific weapons and methods of defense, have scars from past fights, and probably look forward to your next descent into an ancient ruin or enemy's outpost, if only so you can match your weapon against a foe's blade or spell. In your group, you're usually the most physically capable, the most durable, and the most ready to meet danger head-on. This attribute probably leads to a role as a protector of your friends—particularly the least sturdy among them. If someone has to take the lead when entering the monster's den, you're among the first to charge in.</p>"
   },
   "folder": "pQTzt4j9XPpLBpKm",
   "sort": 0,
@@ -54,7 +65,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

@@ -1,0 +1,30 @@
+{
+  "_id": "N2dCTPmmTcAtrYjT",
+  "_key": "!items!N2dCTPmmTcAtrYjT",
+  "name": "Aimable",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Persuasion",
+      "",
+      "",
+      ""
+    ],
+    "description": "<p>Tu te mets facilement à la place des autres. Tu appliques le vieux proverbe : on attrape plus facilement les mouches avec du miel.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

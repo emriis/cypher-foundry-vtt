@@ -1,0 +1,247 @@
+{
+  "_id": "reveresasuB73D53",
+  "_key": "!items!reveresasuB73D53",
+  "name": "Reveres a Supernatural Force",
+  "type": "focus",
+  "img": "icons/svg/star.svg",
+  "system": {
+    "description": "<p>You are a member of a religious order that studies the mystical power that unites all things across galactic distances, granting you psychic and physical abilities.</p>",
+    "abilities": [
+      {
+        "id": "defensive-precognition",
+        "name": "Defensive Precognition",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "You automatically dodge all ranged attacks (no roll required). However, on your next turn after you're attacked with a ranged attack, all your other actions are hindered. This ability lasts until you use a ten-minute or longer recovery. Action to initiate."
+      },
+      {
+        "id": "push",
+        "name": "Push",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "You telekinetically push a target within short range an immediate distance in any direction. You must be able to see the target, it must be your size or smaller, and it must not be affixed to anything. The push is quick, and the force is about as direct and crude as a kick or punch. Action."
+      },
+      {
+        "id": "use-the-force",
+        "name": "Use the Force",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "You gain an asset on a single noncombat task you attempt this turn. You cannot use this ability again until after you take a recovery. Enabler."
+      },
+      {
+        "id": "telepathic-message",
+        "name": "Telepathic Message",
+        "tier": 2,
+        "prerequisites": [
+          "defensive-precognition",
+          "use-the-force"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "You can send a one-way telepathic message lasting about a minute. You must have at least seen the target before, and they must be on the same planet as you. The target recognizes the contact as a telepathic message and may recognize your mental “voice.” Effort: Increase the range to anywhere in the same star system. Increase the range to anywhere in the same galaxy (this requires three levels of Effort). Action to initiate."
+      },
+      {
+        "id": "desperate-feat",
+        "name": "Desperate Feat",
+        "tier": 2,
+        "prerequisites": [
+          "use-the-force"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "While you have at least one moderate or major wound, you add +1 Edge to the Pool of your choice. Enabler."
+      },
+      {
+        "id": "telekinesis",
+        "name": "Telekinesis",
+        "tier": 2,
+        "prerequisites": [
+          "push"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "You telekinetically affect an object you can see within long range that is not too heavy for you to physically affect if you were standing next to it and could use your hands normally. Options include closing or opening a door, writing a simple symbol or a few words with a writing instrument, transferring an object a short distance, wresting an object from another creature's grasp (on a successful Intellect roll versus their level), pushing a creature an immediate distance (with a successful attack roll), or even hindering a creature's attack or defense by applying restraining pressure to a leg or arm (with a successful attack roll). In all cases, the effect must occur over the course of one round. Action."
+      },
+      {
+        "id": "psychic-suggestion",
+        "name": "Psychic Suggestion",
+        "tier": 3,
+        "prerequisites": [
+          "telepathic-message",
+          "desperate-feat"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "If your Intellect attack succeeds, a target within short range takes the action you indicate on their next turn. If this action would cause direct harm to the creature or their allies, your mental attack is hindered. Action."
+      },
+      {
+        "id": "acrobatic-attack",
+        "name": "Acrobatic Attack",
+        "tier": 3,
+        "prerequisites": [
+          "desperate-feat",
+          "telekinesis"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 1,
+          "options": []
+        },
+        "description": "You leap into the attack, twisting or flipping through the air. If you use Effort on the attack roll, you get a free level of Effort on it. If you roll a natural 17 or 18, instead of inflicting extra damage you can choose to have a minor effect. You can't use this ability if your physical actions are hindered from wearing armor. Enabler."
+      },
+      {
+        "id": "unbalancing-strike",
+        "name": "Unbalancing Strike",
+        "tier": 4,
+        "prerequisites": [
+          "psychic-suggestion",
+          "acrobatic-attack"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Make a melee attack to knock your foe off balance. This attack is eased by two steps. If you succeed, you inflict damage and all actions they attempt on their next turn are hindered. Action."
+      },
+      {
+        "id": "telekinetic-crush",
+        "name": "Telekinetic Crush",
+        "tier": 4,
+        "prerequisites": [
+          "psychic-suggestion",
+          "acrobatic-attack"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Make a hindered Intellect attack against a nonliving foe (such as a robot or zombie). If you succeed, you crush them, inflicting 6 damage. Action."
+      },
+      {
+        "id": "total-awareness",
+        "name": "Total Awareness",
+        "tier": 5,
+        "prerequisites": [
+          "unbalancing-strike"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You automatically and frequently use your special senses to check your immediate vicinity, making it very difficult to surprise, hide from, or sneak up on you. When you use Effort on initiative and perception tasks, you gain two free levels of Effort. Enabler."
+      },
+      {
+        "id": "telekinetic-throw",
+        "name": "Telekinetic Throw",
+        "tier": 5,
+        "prerequisites": [
+          "telekinetic-crush"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "You telekinetically grab an object within short range and hurl it at a target within short range. (To throw a creature instead of an object, you first have to telekinetically grab them with a successful Intellect attack.) Make an Intellect attack against your target. If you succeed, your target and whatever you throw each take 6 damage. Action."
+      },
+      {
+        "id": "lethal-capability",
+        "name": "Lethal Capability",
+        "tier": 6,
+        "prerequisites": [
+          "total-awareness",
+          "telekinetic-throw"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You inflict an additional 5 damage with attacks of one specific type, such as a thrown knife, a shot with a blaster, unarmed attacks, or some other specific attack you prefer. You can gain this ability more than once. Each time you do, choose a different specific attack."
+      },
+      {
+        "id": "return-to-sender",
+        "name": "Return to Sender",
+        "tier": 6,
+        "prerequisites": [
+          "total-awareness",
+          "telekinetic-throw"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 3,
+          "options": []
+        },
+        "description": "If you successfully block or dodge a melee attack, you can immediately make a melee attack against the attacking foe. You can't use this ability again until after you take your normal turn. Enabler."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

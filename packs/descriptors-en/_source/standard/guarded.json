@@ -1,0 +1,30 @@
+{
+  "_id": "ye1f2i9KzL9hyC4J",
+  "_key": "!items!ye1f2i9KzL9hyC4J",
+  "name": "Guarded",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Deception",
+      "Disguise",
+      "",
+      ""
+    ],
+    "description": "<p>You conceal your true nature behind a mask and are loath to let anyone see who you really are. Protecting yourself, physically and emotionally, is what you care about most, and you prefer to keep everyone else at a safe distance. You may be suspicious of everyone you meet, expecting the worst from people so you won't be surprised when they prove you right. Or you might just be a bit reserved, careful about letting people through your gruff exterior to the person you really are.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

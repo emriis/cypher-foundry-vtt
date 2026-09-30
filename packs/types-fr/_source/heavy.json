@@ -24,38 +24,52 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "combat-prowess",
         "name": "Prouesse de Combat",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Tu ajoutes **+1 dégât** à un type d’attaque d’arme de ton choix : **attaque de mêlée**, ou **attaque à distance**."
+        "description": "Tu ajoutes +1 dégât à un type d’attaque d’arme de ton choix : attaque de mêlée ou attaque à distance."
       },
       {
+        "id": "desperate-feat",
         "name": "Exploit Désespéré",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Tant que tu as **au moins une blessure modérée ou majeure**, tu ajoutes **+1 d’Avantage** dans la Réserve de ton choix."
+        "description": "Tant que tu as au moins une blessure modérée ou majeure, tu ajoutes +1 d'Avantage dans la Réserve de ton choix."
       },
       {
+        "id": "expert-combatant",
         "name": "Combattant·e Expert·e",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Tu es **entraîné·e** dans un type spécifique d’attaque d’arme, par exemple : épées, haches, arcs, ou une catégorie complète : armes contondantes légères, armes tranchantes légères, armes à distance légères, armes contondantes moyennes, armes tranchantes moyennes, armes à distance moyennes, etc. Au rang 2, tu peux devenir spécialisé·e dans cette même méthode d’attaque (en acquérant la compétence normalement). Au rang 6, tu peux devenir expert·e dans une méthode d’attaque (celle choisie au rang 1 ou une autre dans laquelle tu es déjà spécialisé·e)."
+        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you're already specialized in), but you must gain the skill normally. For a Heavy, Expert Combatant also means choosing training in weapons appropriate to the genre, such as pistols and rifles."
       }
     ],
-    "statOptions": ["might"],
-    "description": "<p>Un Type de Postapocalyptique centré sur l'archétype bourrin·e, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Science-fiction. Sous-genre : Postapocalyptique. Réserves principales : Puissance.</em></p>"
+    "statOptions": [
+      "might"
+    ],
+    "description": "<p>War never changes—it only changes people like you who have to fight in it or, after the war is lost, battle for survival in a world broken by conflict. For you, the only way forward is to crush even potential enemies so quickly and violently that they'll never threaten you or that which you cherish again. In an often violent postapocalyptic world, your allies appreciate your protection and, when necessary, your aggressive nature when you must force your way into a location that may contain the resources required to survive another day.</p>"
   },
   "folder": "mhEicDpOMODfF21T",
   "sort": 0,
@@ -64,7 +78,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

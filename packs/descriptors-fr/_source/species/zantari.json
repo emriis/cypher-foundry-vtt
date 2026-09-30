@@ -1,0 +1,12 @@
+{
+  "_id": "Z6aN3tK9pM5vR2cB", "_key": "!items!Z6aN3tK9pM5vR2cB", "name": "Zantari·e", "type": "descriptor", "img": "icons/svg/aura.svg",
+  "system": {
+    "category": "species", "genres": ["sciFi"], "grantsSecondDescriptor": false, "statOptions": [], "statAmount": 0, "skillOptions": ["Perception"],
+    "benefits": [
+      { "name": "Résistance aux blessures de froid et de glace", "description": "<p>Tu réduis la gravité des blessures causées par le froid ou la glace d'un palier.</p>" },
+      { "name": "Dégâts d'armes à énergie à distance", "description": "<p>Tu infliges +1 dégât avec les armes à énergie à distance.</p>" }
+    ],
+    "description": "<p>Tes antennes t'offrent des <strong>sens améliorés</strong>, et ta peau épaisse te protège du froid extrême de la <strong>lune glacée</strong> où vit ton peuple. Pour le reste, tu sembles humanoïde... mais cela peut tromper : les Zantaris possèdent <strong>cinq genres</strong>, distinctions que les étrangers ont beaucoup de mal à identifier. En tant que Zantari·e, tu accordes de l'importance à <strong>l'honneur</strong>, au <strong>combat rituel</strong>, au <strong>service militaire</strong>, mais aussi à <strong>l'art</strong>. Certain·es te décrivent comme trop émotif·ve - mais pour toi, c'est un compliment : <strong>sans passion, quelle valeur à la vie ?</strong></p><p><strong>Tu obtiens les caractéristiques suivantes :</strong></p><ul><li>Tu réduis la <strong>gravité des blessures causées par le froid ou la glace</strong> d'un palier.</li><li>Tu es <strong>entraîné·e en perception</strong>.</li><li>Tu infliges <strong>+1 dégât</strong> avec les <strong>armes à énergie à distance</strong>.</li></ul>"
+  }, "folder": null, "sort": 0, "ownership": { "default": 0 },
+  "flags": { "cypher": { "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License." } }
+}

@@ -1,0 +1,30 @@
+{
+  "_id": "PZpHKR53zo3TSUVU",
+  "_key": "!items!PZpHKR53zo3TSUVU",
+  "name": "Fast",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "speed"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Deception",
+      "Initiative",
+      "",
+      ""
+    ],
+    "description": "<p>You're fleet of foot. Because you're quick, you can accomplish tasks more rapidly than others can. You're not just quick on your feet, however—you're quick with your hands, and you think and react quickly. You even talk quickly.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

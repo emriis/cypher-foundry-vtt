@@ -24,38 +24,53 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "combat-prowess",
         "name": "Prouesse Martiale",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Tu ajoutes **+1 dégât** à un type d’attaque avec arme de ton choix : attaques avec armes de mêlée ou attaques avec armes à distance."
+        "description": "Tu ajoutes +1 dégât à un type d'attaque d'arme de ton choix : attaque de mêlée ou attaque à distance."
       },
       {
+        "id": "holy-succor",
         "name": "Secours Sacré",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "intellect",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "Lorsqu’un·e allié·e à portée immédiate possède au moins **trois blessures modérées** ou **une blessure majeure**, tu peux lui accorder ta grâce divine, lui offrant **un niveau d’Effort gratuit** applicable chaque round à un jet d’attaque ou de défense. La grâce divine persiste jusqu’à ce que les blessures soient soignées ou que l’allié·e utilise une récupération de dix minutes ou plus. Chaque fois que tu utilises Secours Sacré, son coût augmente de +1 Intellect. Le coût revient à 1 après une récupération."
+        "description": "Lorsqu'un allié à portée immédiate possède au moins trois blessures modérées ou une blessure majeure, tu peux lui accorder ta grâce divine, lui offrant un niveau d'Effort gratuit applicable chaque round à un jet d'attaque ou de défense. La grâce divine persiste jusqu'à ce que les blessures soient soignées ou que l'allié utilise une récupération de dix minutes ou plus. Chaque fois que tu utilises Secours Sacré, son coût augmente de +1 Intellect. Le coût revient à 1 après une récupération."
       },
       {
+        "id": "sacred-smite",
         "name": "Châtiment Sacré",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "intellect",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
-        "description": "Choisis une créature que tu peux voir et que tu souhaites punir pour ses transgressions. Tant que tu n’attaques pas une autre cible, tes attaques contre cette créature infligent **+1 dégât** grâce à l’nergie divine qui traverse ton arme ****, qu’il s’agisse d’une attaque de mêlée ou à distance. Si la cible est un mort‑vivant, un démon ou une créature similaire (au choix de ton·ta MJ), tu choisis si ton attaque réussie inflige **+2 dégâts** ou si la créature doit **fuir pendant un tour**. Au rang 3, le bonus de dégâts contre les morts-vivants, démons et créatures similaires  passe à +3."
+        "description": "Choisis une créature que tu peux voir et que tu souhaites punir pour ses transgressions. Tant que tu n'attaques pas une autre cible, tes attaques contre cette créature infligent +1 dégât grâce à l'énergie divine qui traverse ton arme, qu'il s'agisse d'une attaque de mêlée ou à distance. Si la cible est un mort-vivant, un démon ou une créature similaire, tu choisis si ton attaque réussie inflige +2 dégâts ou si la créature doit fuir pendant un tour. Au rang 3, le bonus de dégâts contre les morts-vivants, démons et créatures similaires passe à +3."
       }
     ],
-    "statOptions": ["might", "intellect"],
-    "description": "<p>Un Type de Dungeon Fantasy centré sur l'archétype paladin, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Dungeon Fantasy. Réserves principales : Puissance, Intellect.</em></p>"
+    "statOptions": [
+      "might",
+      "intellect"
+    ],
+    "description": "<p>By the power granted to you through righteous divine will, you protect and heal the innocent, drive out and destroy the servants of evil, and strive to live up to your oaths of honor and service. As witnessed before your god, you stand for justice and against the forces of corruption—usually delivered by the holy power you channel through your weapon. You're among the first in your group to face your foes, seemingly fearless. You're most effective in situations where your presence can draw the attention of your foes away from your allies, especially as your gods-given power can serve as a proactive defense.</p>"
   },
   "folder": "N6LoBZte2sRtJhu7",
   "sort": 0,
@@ -64,7 +79,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

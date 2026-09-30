@@ -1,0 +1,30 @@
+{
+  "_id": "oq4isaNxDGmSTpLG",
+  "_key": "!items!oq4isaNxDGmSTpLG",
+  "name": "Honorable",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "might"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Charm",
+      "Philosophy",
+      "",
+      ""
+    ],
+    "description": "<p>You are trustworthy, fair, and forthright. You try to do what is right, to help others, and to treat them well. Lying and cheating are no way to get ahead—these things are for the weak, the lazy, or the despicable. You probably spend a lot of time thinking about your personal honor, how best to maintain it, and how to defend it if challenged. In combat, you are straightforward and offer quarter to any foe.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

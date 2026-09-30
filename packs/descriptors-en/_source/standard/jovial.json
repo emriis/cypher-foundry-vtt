@@ -1,0 +1,30 @@
+{
+  "_id": "1EgOEyA7FVGTaAJ9",
+  "_key": "!items!1EgOEyA7FVGTaAJ9",
+  "name": "Jovial",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Charm",
+      "Performance",
+      "",
+      ""
+    ],
+    "description": "<p>You're cheerful, friendly, and outgoing. You put others at ease with a big smile and a joke, possibly one at your own expense, though lightly ribbing your companions who can take it is also one of your favorite pastimes. Sometimes people say you never take anything seriously. That's not true, of course, but you have learned that to dwell on the bad too long quickly robs the world of joy. You've always got a new joke in your back pocket because you collect them like some people collect bottles of wine.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

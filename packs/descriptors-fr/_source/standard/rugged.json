@@ -1,0 +1,30 @@
+{
+  "_id": "5ujlWrJwT7GZScSo",
+  "_key": "!items!5ujlWrJwT7GZScSo",
+  "name": "Sauvage",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "might"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Soins aux animaux",
+      "Survie en plein air",
+      "",
+      ""
+    ],
+    "description": "<p>Tu es un·e amoureux·se de la nature, habitué·e à vivre dehors et à affronter les éléments.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

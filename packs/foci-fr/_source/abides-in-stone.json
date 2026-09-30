@@ -1,0 +1,265 @@
+{
+  "_id": "abidesinstC609BA",
+  "_key": "!items!abidesinstC609BA",
+  "name": "Se fond dans la pierre",
+  "type": "focus",
+  "img": "icons/magic/earth/construct-stone.webp",
+  "system": {
+    "description": "<p>Your flesh is made of hard mineral, making you a hulking, difficult-to-harm humanoid.</p>",
+    "abilities": [
+      {
+        "id": "intimidating-presence",
+        "name": "Présence intimidante",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Grâce à ton apparence rocheuse, tu bénéficies d’un Atout sur toutes tes tentatives d’intimidation."
+      },
+      {
+        "id": "stone-body",
+        "name": "Corps de pierre",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Ton corps est constitué d’une substance aussi dure que la pierre ou le cristal. Détermine avec ton·ta MJ ta forme exacte, bien qu’elle soit probablement de taille et de forme humanoïdes. Tu n’as pas besoin de manger, boire ou respirer, mais tu dois toujours te reposer et dormir. En tant qu’être minéral : - Tu peux subir deux blessures mineures supplémentaires par rapport à la normale - Tes jets pour bloquer sont facilités - Tes attaques à mains nues infligent +2 dégâts"
+      },
+      {
+        "id": "stoneknowing",
+        "name": "Connaissance de la pierre",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Tu es entraîné·e pour travailler n’importe quel type de pierre. De plus, si tu touches un objet ou une structure en pierre ou en cristal et que tu te concentres, tu apprends son niveau et éventuellement des informations pertinentes concernant sa matière et sa structure. Exemples : - apprendre qu’un mur de briques est niveau 3 et dissimule un espace caché, - qu’un rocher est niveau 5 et contient du minerai de fer. Ton·ta MJ peut demander une Tâche d’Intellect pour des informations très subtiles ou secrètes"
+      },
+      {
+        "id": "stone-bash",
+        "name": "Coup de pierre",
+        "tier": 2,
+        "prerequisites": [
+          "intimidating-presence",
+          "stone-body"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Ton attaque à mains nues ce tour inflige 2 points de dégâts supplémentaires si tu la réalises en tant que dernière action."
+      },
+      {
+        "id": "golem-grip",
+        "name": "Poigne de golem",
+        "tier": 2,
+        "prerequisites": [
+          "stone-body"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "might",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Tu peux facilement saisir tes ennemis avec tes poings de pierre. Fais une attaque facilitée contre un adversaire. Si tu réussis, tu limites ses mouvements, l’empêchant de s’éloigner et gênant ses attaques physiques ainsi que ses tentatives pour se libérer. Si la cible tente de se libérer lors de son action, tu dois réussir un jet de Puissance pour continuer à la maintenir. Si tu retiens une cible, tu peux la serrer automatiquement à ton tour (sans jet requis), infligeant 4 points de dégâts."
+      },
+      {
+        "id": "field-of-stones",
+        "name": "Champ de pierres",
+        "tier": 2,
+        "prerequisites": [
+          "stone-body",
+          "stoneknowing"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu peux tenter de te cacher dans un terrain naturel en prenant l’apparence d’une formation rocheuse. Si le terrain est rocailleux et que ton jet de discrétion est inférieur ou égal à 15, considère ton résultat comme un 15. (Tu évites ainsi une Intrusion du·de la MJ si tu fais un 1.) Dans un autre type de terrain, ta tâche pour te fondre dans les rochers est facilitée de deux paliers. Au rang 3, le minimum automatique passe à 18."
+      },
+      {
+        "id": "improved-stone-body",
+        "name": "Corps de pierre amélioré",
+        "tier": 3,
+        "prerequisites": [
+          "stone-bash",
+          "golem-grip"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu peux subir une blessure modérée supplémentaire par rapport à la normale."
+      },
+      {
+        "id": "golem-stomp",
+        "name": "Piétinement de golem",
+        "tier": 3,
+        "prerequisites": [
+          "golem-grip",
+          "field-of-stones"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "might",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Tu frappes le sol de toute ta force, créant une onde de choc. Fais des attaques séparées contre trois créatures à portée immédiate. Chaque créature touchée subit 3 points de dégâts et tu choisis si elle est repoussée hors de portée immédiate ou renversée."
+      },
+      {
+        "id": "heavy-hands",
+        "name": "Mains lourdes",
+        "tier": 4,
+        "prerequisites": [
+          "improved-stone-body"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tes attaques à mains nues infligent 2 points de dégâts supplémentaires."
+      },
+      {
+        "id": "deep-reserves",
+        "name": "Réserves profondes",
+        "tier": 4,
+        "prerequisites": [
+          "improved-stone-body",
+          "golem-stomp"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "When others are exhausted, you can push through. You can transfer up to 6 points among your Pools in any combination, at a rate of 1 point per round. For example, you could transfer 3 points of Speed to Might and 3 points of Intellect to Might, which would take a total of six rounds. This ability renews when you take a ten-hour recovery. Action."
+      },
+      {
+        "id": "rolling-stone",
+        "name": "Pierre qui roule",
+        "tier": 4,
+        "prerequisites": [
+          "golem-stomp"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "might",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Tu plonges en avant et replie tes membres, devenant un rocher roulant parcourant jusqu’à une longue distance. Pendant ce mouvement, tu peux attaquer trois ennemis en les percutant. Fais des jets d’attaque séparés pour chacun ; en cas de succès, tu infliges 6 points de dégâts."
+      },
+      {
+        "id": "still-as-a-statue",
+        "name": "Immobile comme une statue",
+        "tier": 5,
+        "prerequisites": [
+          "heavy-hands"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "might",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Tu te figes, enfouissant ton essence au cœur de la pierre. Pendant ce temps, tu perds toute mobilité ainsi que la capacité d’effectuer des actions physiques. Tu ne peux pas percevoir ce qui se passe autour de toi, et le temps ne semble pas s’écouler. Tant que tu utilises cette aptitude, toute blessure subie est réduite de deux niveaux de gravité. Tu te réveilles normalement et retrouves ta mobilité au bout de 24 heures, en supprimant trois blessures de n’importe quelle gravité. Si un allié te secoue suffisamment fort (au coût minimum de 2 points de Puissance pour lui), tu te réveilles plus tôt, mais aucune blessure (si tu en as) n’est supprimée."
+      },
+      {
+        "id": "structural-brace",
+        "name": "Renfort structurel",
+        "tier": 5,
+        "prerequisites": [
+          "deep-reserves",
+          "rolling-stone"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "might",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Tu sers de renfort structurel, de pilier supplémentaire ou de contrefort pour une structure menacée d’effondrement. Si tu dois faire un jet pour empêcher la structure de s’effondrer et que ton résultat est de 18 ou moins, considère ton résultat comme un 18. (Tu évites ainsi une Intrusion du·de la MJ si tu fais un 1.) Pendant que tu sers de renfort, tu ne peux pas bouger et tu échoues automatiquement aux tâches d’esquive. Tu peux effectuer une action supplémentaire à ton tour pour mettre fin à l’effet plus tôt ; sinon, il prend fin lorsque tu effectues une récupération de dix heures. Alternativement, tu peux simplement soutenir un poids énorme allant jusqu’à 50 tonnes ou utiliser cette aptitude pour maintenir une porte ou une grille fermée (en considérant un jet de 18 ou moins comme un 18, ou plus avec Effort). Effort : Augmente le nombre minimum obtenu pour cette aptitude de 3 ou augmente le poids que tu peux soutenir de 10 tonnes."
+      },
+      {
+        "id": "mineralization",
+        "name": "Minéralisation",
+        "tier": 6,
+        "prerequisites": [
+          "still-as-a-statue"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu peux subir une blessure majeure supplémentaire par rapport à la normale."
+      },
+      {
+        "id": "earthshake",
+        "name": "Secousse terrestre",
+        "tier": 6,
+        "prerequisites": [
+          "structural-brace"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "choice",
+          "amount": 7,
+          "options": [
+            "might",
+            "intellect"
+          ]
+        },
+        "description": "Vous déclenchez un violent mouvement de terre dans une zone courte à très longue portée. Les bâtiments et éléments du terrain sont endommagés, réduisant leur niveau de 1 à 3, et produisent des débris et des gravats. Les créatures dans la zone subissent 6 points de dégâts dus aux secousses et/ou aux chutes de débris (faites un jet d’attaque séparé contre chacune). Même en cas d’échec, les créatures subissent 3 points de dégâts."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

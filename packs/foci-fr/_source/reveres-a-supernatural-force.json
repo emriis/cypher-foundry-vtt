@@ -1,0 +1,247 @@
+{
+  "_id": "reveresasuB73D53",
+  "_key": "!items!reveresasuB73D53",
+  "name": "Vénère une force surnaturelle",
+  "type": "focus",
+  "img": "icons/svg/star.svg",
+  "system": {
+    "description": "<p>You are a member of a religious order that studies the mystical power that unites all things across galactic distances, granting you psychic and physical abilities.</p>",
+    "abilities": [
+      {
+        "id": "defensive-precognition",
+        "name": "Précognition défensive",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Tu esquives automatiquement toutes les attaques à distance (aucun jet requis). Cependant, au tour suivant après avoir été attaqué·e à distance, toutes tes autres actions sont entravées. L’effet dure jusqu’à ta prochaine récupération de dix minutes ou plus."
+      },
+      {
+        "id": "push",
+        "name": "Poussée",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Tu repousses télékinétiquement une cible à courte portée d’une portée immédiate dans n’importe quelle direction. Tu dois voir la cible, elle doit être de ta taille ou plus petite, et ne pas être fixée à quoi que ce soit. La poussée est rapide et aussi brutale qu’un coup de pied ou de poing."
+      },
+      {
+        "id": "use-the-force",
+        "name": "Utiliser la Force",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Tu gagnes un atout sur une tâche hors combat que tu tentes ce tour‑ci. Tu ne peux pas réutiliser cette aptitude avant d’avoir effectué une action de récupération."
+      },
+      {
+        "id": "telepathic-message",
+        "name": "Message télépathique",
+        "tier": 2,
+        "prerequisites": [
+          "defensive-precognition",
+          "use-the-force"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Tu envoies un message télépathique unidirectionnel d’environ une minute. Tu dois avoir déjà vu la cible, et elle doit être sur la même planète. La cible reconnaît le message et peut reconnaître ta « voix mentale ». Effort : augmenter la portée à tout le système stellaire ou augmenter la portée à toute la galaxie (nécessite 3 niveaux d’Effort)."
+      },
+      {
+        "id": "desperate-feat",
+        "name": "Exploit désespéré",
+        "tier": 2,
+        "prerequisites": [
+          "use-the-force"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tant que tu as au moins une blessure modérée ou majeure, tu gagnes +1 en Avantage dans la Réserve de ton choix."
+      },
+      {
+        "id": "telekinesis",
+        "name": "Télékinésie",
+        "tier": 2,
+        "prerequisites": [
+          "push"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "You telekinetically affect an object you can see within long range that is not too heavy for you to physically affect if you were standing next to it and could use your hands normally. Options include closing or opening a door, writing a simple symbol or a few words with a writing instrument, transferring an object a short distance, wresting an object from another creature's grasp (on a successful Intellect roll versus their level), pushing a creature an immediate distance (with a successful attack roll), or even hindering a creature's attack or defense by applying restraining pressure to a leg or arm (with a successful attack roll). In all cases, the effect must occur over the course of one round. Action."
+      },
+      {
+        "id": "psychic-suggestion",
+        "name": "Suggestion psychique",
+        "tier": 3,
+        "prerequisites": [
+          "telepathic-message",
+          "desperate-feat"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "If your Intellect attack succeeds, a target within short range takes the action you indicate on their next turn. If this action would cause direct harm to the creature or their allies, your mental attack is hindered. Action."
+      },
+      {
+        "id": "acrobatic-attack",
+        "name": "Attaque acrobatique",
+        "tier": 3,
+        "prerequisites": [
+          "desperate-feat",
+          "telekinesis"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 1,
+          "options": []
+        },
+        "description": "You leap into the attack, twisting or flipping through the air. If you use Effort on the attack roll, you get a free level of Effort on it. If you roll a natural 17 or 18, instead of inflicting extra damage you can choose to have a minor effect. You can't use this ability if your physical actions are hindered from wearing armor. Enabler."
+      },
+      {
+        "id": "unbalancing-strike",
+        "name": "Coup déséquilibrant",
+        "tier": 4,
+        "prerequisites": [
+          "psychic-suggestion",
+          "acrobatic-attack"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Make a melee attack to knock your foe off balance. This attack is eased by two steps. If you succeed, you inflict damage and all actions they attempt on their next turn are hindered. Action."
+      },
+      {
+        "id": "telekinetic-crush",
+        "name": "Écrasement télékinétique",
+        "tier": 4,
+        "prerequisites": [
+          "psychic-suggestion",
+          "acrobatic-attack"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Fais une attaque d’Intellect entravée contre une cible non vivante (robot, zombie…). En cas de réussite, tu l’écrases et lui infliges 6 dégâts."
+      },
+      {
+        "id": "total-awareness",
+        "name": "Conscience totale",
+        "tier": 5,
+        "prerequisites": [
+          "unbalancing-strike"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu utilises constamment tes sens spéciaux pour surveiller ton environnement immédiat, rendant très difficile toute tentative de te surprendre ou de se cacher de toi. Quand tu consacres de l’Effort aux tâches d’initiative et de perception, tu gagnes deux niveaux d’Effort gratuits."
+      },
+      {
+        "id": "telekinetic-throw",
+        "name": "Projection télékinétique",
+        "tier": 5,
+        "prerequisites": [
+          "telekinetic-crush"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Tu saisis télékinétiquement un objet à courte portée et tu le lances sur une cible à courte portée. (Pour lancer une créature, tu dois d’abord la saisir télékinétiquement via une attaque d’Intellect réussie.) Fais une attaque d’Intellect contre la cible. En cas de réussite, la cible subissent 6 dégâts."
+      },
+      {
+        "id": "lethal-capability",
+        "name": "Capacité létale",
+        "tier": 6,
+        "prerequisites": [
+          "total-awareness",
+          "telekinetic-throw"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You inflict an additional 5 damage with attacks of one specific type, such as a thrown knife, a shot with a blaster, unarmed attacks, or some other specific attack you prefer. You can gain this ability more than once. Each time you do, choose a different specific attack."
+      },
+      {
+        "id": "return-to-sender",
+        "name": "Retour à l’expéditeur",
+        "tier": 6,
+        "prerequisites": [
+          "total-awareness",
+          "telekinetic-throw"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Si tu réussis un Blocage ou une Esquive contre une attaque de mêlée, tu peux immédiatement faire une attaque de mêlée contre l’assaillant. Tu ne peux pas réutiliser cette aptitude avant ton prochain tour normal."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

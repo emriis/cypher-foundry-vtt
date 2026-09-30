@@ -1,11 +1,11 @@
 {
-  "_id": "Cnsrt5D3ad2026EN",
-  "_key": "!items!Cnsrt5D3ad2026EN",
+  "_id": "consortswiF70F00",
+  "_key": "!items!consortswiF70F00",
   "name": "Consorts With the Dead",
   "type": "focus",
   "img": "icons/magic/death/skull-humanoid-crown-white.webp",
   "system": {
-    "description": "<p>A Focus for a character who speaks with and commands the dead.</p>",
+    "description": "<p>The dead answer your questions, and their reanimated corpses serve you.</p>",
     "abilities": [
       {
         "id": "basic-necromancy",
@@ -14,82 +14,127 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 3, "options": [] },
-        "description": "Reanimate a small corpse as a level 1 undead follower."
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "You animate the body of a dead creature of approximately your size or smaller within immediate range, creating a level 1 follower that is an undead creature. It has none of the intelligence, memories, or special abilities that it had in life. The creature follows your verbal commands until you use a one-hour or longer recovery, at which point it becomes an inert corpse. You can reanimate it again when it becomes inert or if it is “killed” by damage (though you may have to spend a few minutes with a needle and thread to reattach detached or loose parts). Last action to animate. Bone Lore (1 Intellect): With a touch, you ascertain the cause of death of a corpse, how long since its death, and its species when it was alive. Last action. Speaker for the Dead (2 Intellect): You touch a corpse of a dead being and ask it a question. It can't answer questions that it wouldn't have understood in life, and it can't provide answers that it wouldn't have known in life. The dead being is not compelled to answer you at all, so you might need to interact with it in a way that would have convinced it to answer while it was alive. For example, you might promise to give the corpse a proper burial, avenge their death, or carry a message to someone they knew when they were alive. This probably requires an interaction roll (typically charm or intimidation). Action."
       },
       {
-        "id": "bone-knowledge",
-        "name": "Bone Knowledge",
+        "id": "bone-lore",
+        "name": "Bone Lore",
         "tier": 1,
         "prerequisites": [],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 1, "options": [] },
-        "description": "Learn a corpse's cause and time of death and its species."
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "With a touch, you ascertain the cause of death of a corpse, how long since its death, and its species when it was alive. Last action."
       },
       {
-        "id": "speaks-with-dead",
-        "name": "Speaks With the Dead",
+        "id": "speaker-for-the-dead",
+        "name": "Speaker for the Dead",
         "tier": 1,
         "prerequisites": [],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 2, "options": [] },
-        "description": "Ask a corpse one question it could have answered in life."
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "You touch a corpse of a dead being and ask it a question. It can’t answer questions that it wouldn’t have understood in life, and it can’t provide answers that it wouldn’t have known in life. The dead being is not compelled to answer you at all, so you might need to interact with it in a way that would have convinced it to answer while it was alive. For example, you might promise to give the corpse a proper burial, avenge their death, or carry a message to someone they knew when they were alive. This probably requires an interaction roll (typically persuasion or intimidation). Action."
       },
       {
-        "id": "blood-magic",
-        "name": "Blood Magic",
+        "id": "blood-sorcery",
+        "name": "Blood Sorcery",
         "tier": 2,
-        "prerequisites": ["basic-necromancy", "bone-knowledge"],
+        "prerequisites": [
+          "basic-necromancy",
+          "bone-lore"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "Sustain a moderate wound for Edge in one chosen Pool."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You draw upon your own blood, spirit, or life energy to power your abilities. You take a moderate wound and add +1 Edge to the Pool of your choice while you retain that wound. Enabler."
       },
       {
         "id": "improved-necromancy",
         "name": "Improved Necromancy",
         "tier": 2,
-        "prerequisites": ["basic-necromancy", "blood-magic"],
+        "prerequisites": [
+          "basic-necromancy",
+          "blood-sorcery"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "Reanimate multiple corpses at increased range."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You can use Basic Necromancy to animate multiple bodies at the same time. Each animated creature beyond the first costs 1 additional Intellect point (so 4 points for two bodies, 5 points for three, and so on). Your range for Basic Necromancy (including when animating multiple bodies) increases to short."
       },
       {
         "id": "improved-speaker",
         "name": "Improved Speaker",
         "tier": 2,
-        "prerequisites": ["bone-knowledge", "speaks-with-dead"],
+        "prerequisites": [
+          "bone-lore",
+          "speaker-for-the-dead"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "Ask additional questions of the dead by spending more Intellect."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "When using Speaker for the Dead, for each additional Intellect point you spend beyond the initial ability cost, you can ask one additional question. Enabler."
       },
       {
-        "id": "sense-the-mood",
-        "name": "Sense the Mood",
-        "tier": 3,
-        "prerequisites": ["blood-magic", "improved-speaker", "flesh-mending"],
-        "repeatable": false,
-        "enabler": false,
-        "cost": { "stat": "intellect", "amount": 3, "options": [] },
-        "description": "Question lingering dead energies about a place."
-      },
-      {
-        "id": "flesh-mending",
-        "name": "Flesh Mending",
+        "id": "reading-the-room",
+        "name": "Reading the Room",
         "tier": 3,
         "prerequisites": [
-          "blood-magic",
-          "improved-necromancy",
-          "sense-the-mood"
+          "blood-sorcery",
+          "improved-speaker",
+          "repair-flesh"
         ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 3, "options": [] },
-        "description": "Mend a wound or restore a living or undead NPC's health."
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "You gain knowledge about an area by speaking with dead spirits or their residual energies. You may ask the GM one question, which must be simple and matter-of-fact. You must succeed at an Intellect roll against the difficulty of the question, as set by the GM. “What killed the cattle in this barn?” is a good example of a simple question. “Why were these cattle killed?” is not an appropriate question because it has more to do with the mindset of the killer than the barn. Simple questions usually have a difficulty of 2, but extremely technical questions or those that involve facts meant to be kept secret can have a much higher difficulty. Action."
+      },
+      {
+        "id": "repair-flesh",
+        "name": "Repair Flesh",
+        "tier": 3,
+        "prerequisites": [
+          "blood-sorcery",
+          "improved-necromancy",
+          "reading-the-room"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "You can knit back together damaged flesh with a touch. You can reduce a wound by one severity: major to moderate, moderate to minor, or minor to none. Instead of curing a wound, you can enhance a character’s next recovery by +2 Pool points. If used on a living or undead NPC, you restore 3 health. Action."
       },
       {
         "id": "greater-necromancy",
@@ -97,76 +142,114 @@
         "tier": 4,
         "prerequisites": [
           "improved-necromancy",
-          "flesh-mending",
-          "spectral-cloak"
+          "repair-flesh",
+          "wraith-cloak"
         ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 5, "options": [] },
-        "description": "Reanimate a larger corpse as a level 3 undead follower."
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "You animate the body of a dead creature up to twice your size within short range, creating a level 3 follower that is an undead creature. It has none of the intelligence, memories, or special abilities that it had in life. The creature follows your verbal commands until you use a one-hour or longer recovery, at which time it becomes an inert corpse. You can reanimate it again when it becomes inert, or if it is “killed” by damage (though you may have to spend some time with a needle and thread to reattach detached or loose parts). Each animated creature beyond the first costs 2 additional Intellect points (so 7 points for two bodies, 9 points for three, and so on). Action to animate. Wraith Cloak (4 Intellect): At your command, a nearby undead spirit wraps itself around you until you use a ten-minute or longer recovery. The spirit is empowered during this period, automatically inflicting 4 damage (no roll required) to anyone who tries to touch you or strike you with a melee attack. While the wraith cloak is active, all your stealth tasks are eased. Enabler."
       },
       {
-        "id": "spectral-cloak",
-        "name": "Spectral Cloak",
+        "id": "wraith-cloak",
+        "name": "Wraith Cloak",
         "tier": 4,
         "prerequisites": [
-          "sense-the-mood",
-          "flesh-mending",
+          "reading-the-room",
+          "repair-flesh",
           "greater-necromancy"
         ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "intellect", "amount": 4, "options": [] },
-        "description": "Wrap yourself in an undead spirit that harms close attackers."
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "At your command, a nearby undead spirit wraps itself around you until you use a ten-minute or longer recovery. The spirit is empowered during this period, automatically inflicting 4 damage (no roll required) to anyone who tries to touch you or strike you with a melee attack. While the wraith cloak is active, all your stealth tasks are eased. Enabler."
       },
       {
         "id": "terrifying-gaze",
         "name": "Terrifying Gaze",
         "tier": 5,
-        "prerequisites": ["greater-necromancy", "wall-of-bones"],
+        "prerequisites": [
+          "greater-necromancy",
+          "wall-of-bones"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 6, "options": [] },
-        "description": "Freeze several living creatures with fear."
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "You project a fearsome gaze at up to five living creatures within short range who can see you. Make a separate Intellect attack roll for each creature. Success means that the creature is frozen in fear, not moving or taking actions until you use a ten-minute or longer recovery, they are attacked, or you leave their field of view. Some creatures without minds (such as slime monsters or animated statues) might be immune to Terrifying Gaze. Action."
       },
       {
         "id": "wall-of-bones",
         "name": "Wall of Bones",
         "tier": 5,
-        "prerequisites": ["spectral-cloak", "terrifying-gaze"],
+        "prerequisites": [
+          "wraith-cloak",
+          "terrifying-gaze"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 5, "options": [] },
-        "description": "Create a damaging wall of necrotic bones."
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "You create a barrier of bones tainted with undeath composed of four 10-foot by 10-foot (3.5 m by 3.5 m) squares, each 1 inch (2.5 cm) thick, arranged as you wish. The wall is a level 5 barrier. One or both sides emanate necrotic energy; anyone within immediate distance of such a side takes 5 damage (no rolls required) or double that if they pass through. The wall lasts until you use a ten-minute or longer recovery. Action to create."
       },
       {
         "id": "true-necromancy",
         "name": "True Necromancy",
         "tier": 6,
-        "prerequisites": ["terrifying-gaze", "wall-of-bones"],
+        "prerequisites": [
+          "terrifying-gaze",
+          "wall-of-bones"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 8, "options": [] },
-        "description": "Reanimate a larger corpse as a level 5 undead follower."
+        "cost": {
+          "stat": "intellect",
+          "amount": 8,
+          "options": []
+        },
+        "description": "You animate the body of a dead creature up to twice your size within short range, creating a level 5 follower that is an undead creature. It has none of the intelligence, memories, or special abilities that it had in life. The creature follows your verbal commands until you use a one-hour or longer recovery, at which time it becomes an inert corpse. You can reanimate it again when it becomes inert or if it is “killed” by damage (though you may have to spend some time with a needle and thread to reattach detached or loose parts). Each animated creature beyond the first costs 3 additional Intellect points (so 11 points for two bodies, 14 points for three, and so on). Action to animate."
       },
       {
         "id": "word-of-death",
         "name": "Word of Death",
         "tier": 6,
-        "prerequisites": ["terrifying-gaze", "wall-of-bones"],
+        "prerequisites": [
+          "terrifying-gaze",
+          "wall-of-bones"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 6, "options": [] },
-        "description": "Speak a lethal magical word against a nearby enemy."
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "You speak a magic word so potent that it can instantly kill a foe. Make an Intellect attack against a foe within short range. If you succeed, you inflict 10 damage. Action."
       }
     ]
   },
   "folder": null,
   "sort": 0,
-  "ownership": { "default": 0 },
+  "ownership": {
+    "default": 0
+  },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

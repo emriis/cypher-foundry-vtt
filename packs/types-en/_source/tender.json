@@ -24,28 +24,38 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "foil-danger",
         "name": "Foil Danger",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
-        "description": "If you are aware of a danger within immediate distance and succeed on an Intellect roll against its level, you negate that danger for one round. For instance, the danger could be a feature of the landscape like a mud or acid pit, a trap triggered by a wire, or a creature’s natural ability (like a snake’s venom or a radiation blast from a glowing roach). It could even be a foe’s mundane attack or action (such as a weapon attack or their attempt to flip a switch), in which case this ability means they can’t take that action on their next turn. Action. Inspiring Suggestion(2 Intellect): When you make a helpful suggestion to an ally, they have a better chance of succeeding at what they’re doing. Choose an ally who can see and understand you, then suggest a specific action for them to take, such as “attack the leader” or “climb the wall.” If the ally chooses to take that exact action, they gain two assets on that task. First action."
+        "description": "If you are aware of a danger within immediate distance and succeed on an Intellect roll against its level, you negate that danger for one round. For instance, the danger could be a feature of the landscape like a mud or acid pit, a trap triggered by a wire, or a creature's natural ability (like a snake's venom or a radiation blast from a glowing roach). It could even be a foe's mundane attack or action (such as a weapon attack or their attempt to flip a switch), in which case this ability means they can't take that action on their next turn. Action. Inspiring Suggestion (2 Intellect): When you make a helpful suggestion to an ally, they have a better chance of succeeding at what they're doing. Choose an ally who can see and understand you, then suggest a specific action for them to take, such as “attack the leader” or “climb the wall.” If the ally chooses to take that exact action, they gain two assets on that task. First action."
       },
       {
+        "id": "wasteland-healer",
         "name": "Wasteland Healer",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "intellect",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
-        "description": "With access to a scavenged doctor’s bag (or similar equipment), you can use treatment in half the normal amount of time or treat twice as many wounds for one character in the normal time."
+        "description": "With access to a scavenged doctor's bag (or similar equipment), you can use treatment in half the normal amount of time or treat twice as many wounds for one character in the normal time. Enabler."
       }
     ],
-    "statOptions": ["intellect"],
-    "description": "<p>A Postapocalypse Type focused on tender archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Science Fiction. Subgenre: Postapocalypse. Primary Pools: intellect.</em></p>"
+    "statOptions": [
+      "intellect"
+    ],
+    "description": "<p>Even under the worst possible circumstances, you usually feel that your life—whatever remains of it—is best lived in service to others. Depending on how you tend to others' needs, they might know you as a Sage, Doctor, Responder, or Minister. But names don't matter. You just want to help others survive, heal their hurts, and, if nothing else can be done for them, see that their ends are humane and painless. Everyone probably welcomes your presence, or at least your skills, especially those in your group. Without your care and knowledge, their lives could come to a brutal, painful end. If conflict kicks off, you can handle a weapon, but you prefer trying to counteract the threat so you and your allies aren't hurt in the first place.</p>"
   },
   "folder": "UwhTFa2lNkjiyB2j",
   "sort": 0,
@@ -54,7 +64,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

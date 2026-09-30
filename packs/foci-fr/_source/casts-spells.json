@@ -1,0 +1,318 @@
+{
+  "_id": "castsspell489030",
+  "_key": "!items!castsspell489030",
+  "name": "Lance des sorts",
+  "type": "focus",
+  "img": "icons/magic/symbols/runes-carved-stone-purple.webp",
+  "system": {
+    "description": "<p>You have a book of various spells and can change which ones you have ready to cast each day—blasts of energy, summoning monsters, magical flight, teleportation, and copying cyphers can all be part of your repertoire.</p>",
+    "abilities": [
+      {
+        "id": "blast",
+        "name": "Décharge",
+        "tier": 1,
+        "prerequisites": [
+          "prepare-spell"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "You emit a short-range blast of energy inflicting 4 damage on a target with a successful attack roll. Work with the GM to determine the type of energy comprising your blast. You can tune the effect to make it hot enough to slice through material of up to level 5 that's no more than 1 foot (30 cm) thick if given a few rounds to concentrate on doing so. If you have another damaging attack ability (from this focus or your type), you can use Blast to augment that ability, increasing its damage by 1. You can change the name of the Blast ability so it relates to the kind of energy you create, such as Blast of Fire, or something more evocative suggesting the name of the spellcaster who created it, such as Malhavoc's Destructive Blast. Effort: Gain fine control over the effect until you use a ten-minute or longer recovery, varying the intensity as you wish within immediate range; for instance, you could use it to warm the area, cook food without burning it, provide bright light in the area, and so on. Increase the maximum level of material that you can cut through by 1. Action to attack; Last action to initiate fine control; enabler to augment another attack ability."
+      },
+      {
+        "id": "prepare-spell",
+        "name": "Préparer un sort",
+        "tier": 1,
+        "prerequisites": [
+          "blast",
+          "hedge-magic"
+        ],
+        "repeatable": true,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Chaque jour, tu peux choisir un effet magique différent et l’utiliser en tant que sort. Choisis un cypher manifesté de faible niveau. Après dix minutes de préparation, tu gagnes cet effet en tant que sort (comme aptitude spéciale de personnage). Tu peux lancer ce sort au prix d’une action au prix de 2 Intellect. Ce sort ne compte pas dans ta limite de Cyphers et tu ne le perds pas après utilisation. Chaque récupération de dix heures te permet de changer le Cypher choisi. - Rang 3 : tu peux choisir un Cypher de puissance faible ou moyenne (sort lancé pour 4 Intellect). - Rang 6 : tu peux choisir un Cypher de puissance faible, moyenne ou avancée (sort lancé pour 6 Intellect). Tu peux sélectionner cette aptitude jusqu’à trois fois (un, deux ou trois sorts quotidiens)."
+      },
+      {
+        "id": "hedge-magic",
+        "name": "Magie mineure",
+        "tier": 1,
+        "prerequisites": [
+          "prepare-spell",
+          "sense-magic"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "You can perform small tricks: temporarily change the color or basic appearance of a small object, cause small objects to float through the air, clean a small area, mend a broken object, prepare (but not create) food, and so on. You can't use Hedge Magic to harm another creature or object. Action."
+      },
+      {
+        "id": "sense-magic",
+        "name": "Percevoir la magie",
+        "tier": 1,
+        "prerequisites": [
+          "hedge-magic"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "If there is magic of any kind at work within short range, you are aware of that fact (but not the specifics). Last action."
+      },
+      {
+        "id": "enchant-object",
+        "name": "Enchantement d'objet",
+        "tier": 2,
+        "prerequisites": [
+          "blast",
+          "prepare-spell",
+          "hedge-magic",
+          "confusion-ray"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "You imbue a weapon, tool, or other usable item with magic that enhances its performance, lasting until you (or the user of the object) use a ten-minute or longer recovery. At any point while the ability is active, the creature using the object gains an asset to one action requiring the object. You decide if the object looks the same, glows like a candle, or gains a magical rune for the duration of the spell. Action."
+      },
+      {
+        "id": "confusion-ray",
+        "name": "Rayon de confusion",
+        "tier": 2,
+        "prerequisites": [
+          "prepare-spell",
+          "hedge-magic",
+          "enchant-object",
+          "hover"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Tu projettes un rayon gris perturbant l’esprit d’une créature à portée courte. Attaque d’Intellect : en cas de succès, tu infliges 1 dégât ignorant l’Armure et les tâches de la cible sont entravées jusqu’à ton prochain tour."
+      },
+      {
+        "id": "hover",
+        "name": "Léviter",
+        "tier": 2,
+        "prerequisites": [
+          "prepare-spell",
+          "hedge-magic",
+          "sense-magic",
+          "confusion-ray"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Tu t’élèves lentement dans les airs. En te concentrant, tu peux rester immobile ou te déplacer d’une courte distance comme action. Sinon, tu dérives au gré du vent ou de ton élan. L’effet dure jusqu’à ta prochaine récupération de dix minutes ou plus."
+      },
+      {
+        "id": "summon-giant-spider",
+        "name": "Invocation d'araignée géante",
+        "tier": 3,
+        "prerequisites": [
+          "enchant-object",
+          "fireball"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "You conjure a giant spider, which appears within immediate range. The spider acts according to its nature, attacking a nearby creature that looks like suitable prey. The spider remains until you use a ten-minute or longer recovery, then fades away. Effort: Make the spider understand you and obey your verbal instructions. Action to initiate. Giant spider: level 3, perception as level 5, Speed defense as level 4 due to quickness; health 12; bite inflicts 3 damage plus 1 Speed damage from poison (ignores armor); moves a long distance each round when on webs"
+      },
+      {
+        "id": "fireball",
+        "name": "Boule de feu",
+        "tier": 3,
+        "prerequisites": [
+          "enchant-object",
+          "confusion-ray",
+          "summon-giant-spider"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Tu crées une explosion de feu à portée longue, remplissant une zone immédiate. Tu fais un jet contre chaque créature : - réussite : 3 dégâts - échec : 1 dégât Les objets inflammables peuvent prendre feu. Chaque niveau d’Effort appliqué pour augmenter les dégâts ajoute +2 (au lieu de +3)."
+      },
+      {
+        "id": "arcane-flight",
+        "name": "Vol arcanique",
+        "tier": 3,
+        "prerequisites": [
+          "confusion-ray",
+          "hover",
+          "identify-magic"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Tu peux flotter et voler à ta vitesse terrestre normale jusqu’à ta prochaine récupération de dix minutes ou plus. En déplacement de longue durée : une créature volante se déplace à environ 30 km/h, sans être ralenti·e par le terrain. Effort : affecte une créature touchée supplémentaire (taille égale ou plus petite), que tu diriges ; elle doit rester dans ton champ visuel."
+      },
+      {
+        "id": "identify-magic",
+        "name": "Identifier la magie",
+        "tier": 3,
+        "prerequisites": [
+          "confusion-ray",
+          "hover",
+          "arcane-flight"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Si tu as détecté la magie avec l’aptitude de rang 1, tu peux en apprendre davantage : niveau, source, nature, effets généraux."
+      },
+      {
+        "id": "soul-interrogation",
+        "name": "Interrogation de l'âme",
+        "tier": 4,
+        "prerequisites": [
+          "fireball",
+          "arcane-flight"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "You attempt to learn secret information about a foe that you can use against them. Make an Intellect attack against a creature within long range. Success means you learn their level, basic abilities, and obvious weaknesses (such as a vulnerability to fire or silver), as well as their mannerisms and personal qualities that you could discover by conversing with them for an extended time. For the next few months, your actions against them are eased. Action."
+      },
+      {
+        "id": "arcane-teleportation",
+        "name": "Téléportation arcanique",
+        "tier": 4,
+        "prerequisites": [
+          "fireball",
+          "arcane-flight"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Tu te téléportes instantanément vers un endroit visible à portée courte."
+      },
+      {
+        "id": "divination",
+        "name": "Divination",
+        "tier": 5,
+        "prerequisites": [
+          "soul-interrogation",
+          "granite-wall"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "Tu contactes une entité puissante (divinité, démon, être extradimensionnel), poses une question, et reçois une réponse générale. Le·la MJ attribue un niveau à la question (plus la réponse est obscure, plus la tâche est difficile) : - informations trouvables ailleurs qu’ici : niveau 1 - connaissance obscure du passé : niveau 7 - connaître précisément l’avenir au‑delà de quelques minutes : impossible"
+      },
+      {
+        "id": "granite-wall",
+        "name": "Mur de granit",
+        "tier": 5,
+        "prerequisites": [
+          "arcane-teleportation",
+          "divination"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Tu crées un mur de granit niveau 5 à portée courte. Il se compose de quatre carrés de 3,5 m × 3,5 m, arrangés comme tu veux. Il dure jusqu’à ta prochaine récupération d’une heure ou plus, où il se désagrège. Effort : prolonger la durée jusqu’à une récupération de dix heures ou rendre le mur permanent (nécessite 3 Efforts)"
+      },
+      {
+        "id": "word-of-death",
+        "name": "Mot de mort",
+        "tier": 6,
+        "prerequisites": [
+          "divination",
+          "granite-wall"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "You speak a magic word so potent that it can instantly kill a foe. Make an Intellect attack against a foe within short range. If you succeed, you inflict 10 damage. Action."
+      },
+      {
+        "id": "conjure-supernatural-creature",
+        "name": "Invocation de créature surnaturelle",
+        "tier": 6,
+        "prerequisites": [
+          "divination",
+          "granite-wall"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 7,
+          "options": []
+        },
+        "description": "Une créature surnaturelle (ange, démon, élémentaire) se manifeste à portée immédiate. Elle agit selon sa nature, généralement en attaquant un ennemi opposé à son ethos (un ange attaquerait un démon ou un nécromancien, un démon attaquerait un innocent ou un prêtre sacré et un élémentaire attaquerait une créature de l’élément opposé). Elle reste jusqu’à ta prochaine récupération de dix minutes ou plus. Effort : la créature te comprend et t’obéit."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,31 +1,43 @@
 {
-  "_id": "Emp1oyMagn3t2026",
-  "_key": "!items!Emp1oyMagn3t2026",
+  "_id": "employsmagFC84B3",
+  "_key": "!items!employsmagFC84B3",
   "name": "Employs Magnetism",
   "type": "focus",
   "img": "icons/magic/lightning/bolt-strike-blue.webp",
   "system": {
-    "description": "<p>A Focus for a character who commands metal and magnetic force.</p>",
+    "description": "<p>You command metal and the power of magnetism.</p>",
     "abilities": [
       {
         "id": "craft-metal",
         "name": "Craft Metal",
         "tier": 1,
-        "prerequisites": ["sense-metal"],
+        "prerequisites": [
+          "sense-metal"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "Shape metal without heat and gain an asset for tasks involving metalworking."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You can manipulate metal easily, allowing you to craft metal objects without heat. You also gain an asset to all tasks involving crafting metal."
       },
       {
         "id": "move-metal",
         "name": "Move Metal",
         "tier": 1,
-        "prerequisites": ["move-metal"],
+        "prerequisites": [
+          "move-metal"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 1, "options": [] },
-        "description": "Exert force on nearby metal or disrupt electronics and machine creatures."
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Until you use a one-hour or longer recovery, you can exert force on metal objects within short range as your action. Each use of this ability requires an action, allowing you to move an object at a distance if it contains metal or is made of metal. You can only move or manipulate an object if you could physically do so with your own hands. For example, you could lift and pull a light metal object anywhere within range to yourself or move a heavy object (like a piece of furniture) an immediate distance. This power lacks the fine control to wield a weapon or move objects with much speed, so in most situations, it's not a means of direct attack; however, you could pull a metallic object from another creature's grasp, push a creature in metallic armor an immediate distance, or hinder a creature's attack or defense by applying restraining pressure to an armored leg or arm or to a metallic weapon. Affecting an unwilling creature or their equipment requires an Intellect attack roll. You can use your action to create a magnetic disruption within short range, hindering electronic devices, electronic machines, and machine creatures (such as robots) by two steps for one round. Action to initiate; action to move metal or disrupt electronics."
       },
       {
         "id": "sense-metal",
@@ -34,127 +46,206 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 1, "options": [] },
-        "description": "Detect nearby ferromagnetic metal, including its amount, type, and general location."
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "If there is ferromagnetic metal of any kind within short range, you are aware of that fact, as well as the amount, type, and general location. Last action."
       },
       {
         "id": "electromagnetic-eyes",
         "name": "Electromagnetic Eyes",
         "tier": 2,
-        "prerequisites": ["sense-metal"],
+        "prerequisites": [
+          "sense-metal"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 2, "options": [] },
-        "description": "Sense electromagnetic fields to see in darkness and perceive hidden creatures, metal, and electronics at long range."
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "You sense your environment using the electromagnetic fields that invisibly fill most locations—invisible to others, but not to you. You can “see” up to long range even in complete darkness, and you have an asset on perception tasks related to noticing hiding living creatures (which have their own electromagnetic fields) as well as metal and magnetic objects and powered devices. You can see otherwise invisible creatures normally. You always know which way is north (assuming you're on a planet with magnetic poles). This ability lasts until you use a ten-minute or longer recovery. Action to initiate."
       },
       {
         "id": "electromagnetically-charge",
         "name": "Electromagnetically Charge",
         "tier": 2,
-        "prerequisites": ["move-metal"],
+        "prerequisites": [
+          "move-metal"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 1, "options": [] },
-        "description": "Draw on ambient electromagnetic energy to reduce a wound or recharge a mundane electrical device; the cost increases until recovery."
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "You gather energy from the electromagnetic fields that invisibly fill most locations, then use it to heal yourself, reducing the severity of one of your wounds. You are healed of a minor wound, reduce a moderate wound to a minor wound, or reduce a major wound to a moderate wound. Alternatively, you can use this ability to restore charge to a mundane handheld device, such as a cell phone or small radio, that uses electricity and has lost its charge or whose batteries have been exhausted. Each time you use this ability, the Intellect point cost increases by 1. The cost returns to 1 after you take a recovery. Last action."
       },
       {
         "id": "repel-metal",
         "name": "Repel Metal",
         "tier": 2,
-        "prerequisites": ["craft-metal"],
+        "prerequisites": [
+          "craft-metal"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "Gain an asset to block or dodge attacks that include metal."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "By manipulating magnetism, you have an asset to block and dodge rolls against attacks that include metal, such as bullets, thrown knives, metal-tipped arrows and crossbow bolts, and so on."
       },
       {
         "id": "guide-bolt",
         "name": "Guide Bolt",
         "tier": 3,
-        "prerequisites": ["move-metal", "repel-metal"],
+        "prerequisites": [
+          "move-metal",
+          "repel-metal"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "intellect", "amount": 3, "options": [] },
-        "description": "Guide metallic ammunition to gain an asset and deal 3 additional damage once per round."
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "When you make an attack with metallic ammunition—including bullets, thrown knives, metallic bolts, or metal-tipped arrows—on a target within short range, you can improve the attack's aim and velocity, which grants an asset to the attack and inflicts an additional 3 damage. You can use this ability only once per round. Effort: Affect an ally's attack instead of your own if their attack passes within short range. Enabler."
       },
       {
         "id": "rend-metal",
         "name": "Rend Metal",
         "tier": 3,
-        "prerequisites": ["move-metal", "craft-metal"],
+        "prerequisites": [
+          "move-metal",
+          "craft-metal"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 3, "options": [] },
-        "description": "Tear apart a visible metal object of up to level 3, with an eased attack against unwilling equipment."
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "You instantly tear, rip, or burst a metal object of up to level 3 that is within short range. You must be able to see the object and it can't be bigger than half your size (or, if part of a larger object like a wall, a section that is no bigger than half your size). The affected object is destroyed; optionally, it also expels shrapnel, inflicting 1 damage per level on all creatures in immediate range (make separate Intellect attack rolls). Affecting an unwilling creature's equipment requires an Intellect attack roll, but the roll is eased by two steps. Effort: Increase the maximum level of the metal object you can affect by 1. Action."
       },
       {
         "id": "magnetic-field",
         "name": "Magnetic Field",
         "tier": 4,
-        "prerequisites": ["repel-metal", "guide-bolt"],
+        "prerequisites": [
+          "repel-metal",
+          "guide-bolt"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 5, "options": [] },
-        "description": "Pull incoming metallic projectiles to the ground and disperse electromagnetic energy attacks for one round."
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "A field of magnetism around you pulls incoming, ranged, metallic projectile attacks (such as arrows, bullets, a thrown metal knife, and so on) to the ground. It also disperses energy attacks such as electricity, x-rays, lasers, and other attacks that are part of the electromagnetic spectrum. You are immune to such attacks for one round. You must be aware of an attack to foil it. Enabler."
       },
       {
         "id": "magnetize",
         "name": "Magnetize",
         "tier": 4,
-        "prerequisites": ["rend-metal"],
+        "prerequisites": [
+          "rend-metal"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 4, "options": [] },
-        "description": "Permanently magnetize or demagnetize a touched object, or create a field that repels low-level metal."
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Your touch permanently magnetizes an object (regardless of whether it is metallic) no larger than you with a level 5 magnetic force, or demagnetizes an object no larger than you whose magnetic force is level 5 or less. A magnetized object attracts metal brought within 1 foot (30 cm) of it. Pulling the metal away requires a successful Might task. Magnetizing or demagnetizing electronic equipment destroys it if its level is 5 or less. You can use magnetic abilities (such as Move Metal and Command Metal) on a magnetized object. Alternatively, you can create a magnetic field that repels metal objects of level 3 or less (in effect, this is much like a force field that only affects metal things). Effort: Increase the level of a new magnetic force by 1. Increase the maximum level of an existing magnetic force you want to demagnetize by 1. Action."
       },
       {
         "id": "command-metal",
         "name": "Command Metal",
         "tier": 5,
-        "prerequisites": ["magnetize", "rend-metal"],
+        "prerequisites": [
+          "magnetize",
+          "rend-metal"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 5, "options": [] },
-        "description": "Reshape nearby metal, combine objects, move the result, or attack a target for 7 damage."
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "You reshape a metallic object you can see in short range as you desire. The item's mass can be no greater than your own. You can affect multiple items at once as long as their combined mass does not exceed yours. You can fuse multiple items together. You can use this power to destroy a metal object (as the Rend Metal ability), or you can craft it into another desired shape (crudely, unless you succeed on a sculpting or crafting task). You can then move the new object anywhere within range. For example, you could take a few metal shields or panels, fuse them together, and use the resulting shape to block a doorway. You can use this ability to attack one target within short range, causing a foe's armor to constrict, rendering a metal item into shards that you fling across the battlefield, and so on. Regardless of the form of the attack, it is an Intellect attack that deals 7 damage. Last action; action to attack."
       },
       {
         "id": "iron-in-the-blood",
         "name": "Iron in the Blood",
         "tier": 5,
-        "prerequisites": ["move-metal", "rend-metal"],
+        "prerequisites": [
+          "move-metal",
+          "rend-metal"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "Sense and manipulate trace iron in flesh and blood to move or attack creatures with your metal powers."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You have honed your magnetic senses, allowing you to sense and manipulate the trace amounts of iron in flesh and blood. You can now move creatures with Move Metal and attack them directly with Rend Metal (inflicting 5 damage with a successful attack) and Command Metal (inflicting 7 damage), although your Intellect attack is hindered when doing so."
       },
       {
         "id": "diamagnetism",
         "name": "Diamagnetism",
         "tier": 6,
-        "prerequisites": ["magnetize", "iron-in-the-blood"],
+        "prerequisites": [
+          "magnetize",
+          "iron-in-the-blood"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "Make nearby nonmetallic objects respond to your other magnetic powers as though magnetized."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You magnetize any nonmetallic object within short range so that it can be affected by your other magnetic powers, as if using Magnetize at range and on the fly (to permanently magnetize an object, you must spend Intellect as noted for Magnetize). Therefore, with Move Metal, you can move any object you can see. With Repel Metal, you have an asset to all block and dodge rolls, regardless of whether the incoming attack uses metal (even pure energy attacks bend slightly to your will). And so on."
       },
       {
         "id": "iron-punch",
         "name": "Iron Punch",
         "tier": 6,
-        "prerequisites": ["command-metal", "iron-in-the-blood"],
+        "prerequisites": [
+          "command-metal",
+          "iron-in-the-blood"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "intellect", "amount": 8, "options": [] },
-        "description": "Hurl a heavy metal object at a nearby target for 10 damage on a successful Intellect attack."
+        "cost": {
+          "stat": "intellect",
+          "amount": 8,
+          "options": []
+        },
+        "description": "You magnetically pick up a heavy metallic object within short range and hurl it at a target within short range. With a successful Intellect attack, you deal 10 damage to the target and the object. Effort: Affect an additional target that is adjacent to the first target. Action. Diamagnetism supersedes Magnetize, so if you have both, you can exchange Magnetize for another equal or lower-tier ability from this focus."
       }
     ]
   },
   "folder": null,
   "sort": 0,
-  "ownership": { "default": 0 },
+  "ownership": {
+    "default": 0
+  },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

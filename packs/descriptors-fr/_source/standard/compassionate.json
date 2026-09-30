@@ -1,0 +1,30 @@
+{
+  "_id": "V2iHyTfmu1mkAXJc",
+  "_key": "!items!V2iHyTfmu1mkAXJc",
+  "name": "Bienveillant·e",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Soin",
+      "",
+      "",
+      ""
+    ],
+    "description": "<p>Aider les autres est ta vocation. Ta générosité naturelle apporte de la joie à autrui.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

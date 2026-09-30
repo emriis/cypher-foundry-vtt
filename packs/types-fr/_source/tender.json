@@ -24,28 +24,38 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "foil-danger",
         "name": "Déjouer le Danger",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
-        "description": "Si tu es conscient·e d’un danger à portée immédiate et que tu réussis un jet d’Intellect contre son niveau, tu **annules ce danger pendant un round**. Il peut s’agir : d’un élément du terrain (flaque d’acide, fosse boueuse, etc.), d’un piège, d’une capacité naturelle d’une créature (venin, radiation, etc.) ou même de l’attaque/action d’un adversaire (tir d’arme, activation d’un interrupteur…). Action"
+        "description": "Si tu es conscient·e d'un danger à portée immédiate et que tu réussis un jet d'Intellect contre son niveau, tu annules ce danger pendant un round. Il peut s'agir d'un élément du terrain (flaque d'acide, fosse boueuse, etc.), d'un piège, d'une capacité naturelle d'une créature (venin, radiation, etc.) ou même de l'attaque ou de l'action d'un adversaire."
       },
       {
+        "id": "wasteland-healer",
         "name": "Suggestion Inspirante",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
-        "description": "En faisant une suggestion utile à un·e allié·e pouvant te voir et te comprendre, tu augmentes ses chances de réussite. Choisis un·e allié·e et propose-lui une **action précise** : « attaque le chef », « grimpe ce mur », etc. S’iel effectue **exactement** cette action, iel gagne **deux atouts** pour cette tâche. Première action"
+        "description": "With access to a scavenged doctor's bag (or similar equipment), you can use treatment in half the normal amount of time or treat twice as many wounds for one character in the normal time. Enabler."
       }
     ],
-    "statOptions": ["intellect"],
-    "description": "<p>Un Type de Postapocalyptique centré sur l'archétype soigneur, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Science-fiction. Sous-genre : Postapocalyptique. Réserves principales : Intellect.</em></p>"
+    "statOptions": [
+      "intellect"
+    ],
+    "description": "<p>Even under the worst possible circumstances, you usually feel that your life—whatever remains of it—is best lived in service to others. Depending on how you tend to others' needs, they might know you as a Sage, Doctor, Responder, or Minister. But names don't matter. You just want to help others survive, heal their hurts, and, if nothing else can be done for them, see that their ends are humane and painless. Everyone probably welcomes your presence, or at least your skills, especially those in your group. Without your care and knowledge, their lives could come to a brutal, painful end. If conflict kicks off, you can handle a weapon, but you prefer trying to counteract the threat so you and your allies aren't hurt in the first place.</p>"
   },
   "folder": "mhEicDpOMODfF21T",
   "sort": 0,
@@ -54,7 +64,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

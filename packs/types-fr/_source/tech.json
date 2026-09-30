@@ -24,38 +24,52 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "always-tinkering",
         "name": "Toujours en Train de Bricoler",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Tu fabriques un **dispositif technologique à usage unique**. Tu choisis son effet dans la table des **cyphers manifestés de faible puissance**. Le dispositif **compte dans ta limite de cyphers** (ou celle de la personne à qui tu le donnes). Si tu es déjà à ta limite, l’un de tes cyphers actuels cesse de fonctionner, ou doit être démonté pour pièces, et le nouveau dispositif prend sa place. Au rang 3, tu peux choisir un cypher manifesté de puissance faible ou moyenne. Au rang 6, tu peux choisir un cypher manifesté faible, moyen ou avancé. 10 minutes pour fabriquer."
+        "description": "Tu fabriques un dispositif technologique à usage unique dont tu choisis l'effet dans la table des cyphers manifestés de faible puissance. Le dispositif compte dans ta limite de cyphers. Si tu es déjà à ta limite, l'un de tes cyphers actuels cesse de fonctionner. Au rang 3, tu peux choisir un cypher de puissance faible ou moyenne. Au rang 6, tu peux choisir un cypher faible, moyen ou avancé. A chaque utilisation, tu peux choisir un cypher différent."
       },
       {
+        "id": "craft-device",
         "name": "Fabriquer un Dispositif",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 5
+          "amount": 5,
+          "options": []
         },
-        "description": "Tu construis un **nouveau dispositif**, fragile mais fonctionnel, en réussissant une tâche d’ingénierie de difficulté **3**. Tu choisis son effet dans la table des **cyphers manifestés de faible puissance**. Ce dispositif **n’est pas un cypher**. Il **ne compte pas** dans ta limite de cyphers. Il n’est généralement **pas limité à un seul usage** : il possède un **déchargement** de **1 sur 1d6**. Il est assez petit pour être transporté. Au rang 3, en dépensant 1 niveau d’Effort, tu peux fabriquer un dispositif basé sur un cypher manifestés de puissance moyenne. Au rang 6, en dépensant 2 niveaux d’Effort, tu peux fabriquer un dispositif basé sur un cypher manifestés de puissance avancée. 1 heure pour fabriquer."
+        "description": "Tu construis un nouveau dispositif, fragile mais fonctionnel, en réussissant une tâche d'ingénierie de difficulté 3. Tu choisis son effet dans la table des cyphers manifestés de faible puissance. Ce dispositif n'est pas un cypher, ne compte pas dans ta limite de cyphers, n'est généralement pas limité à un seul usage (déchargement de 1 sur 1d6) et est assez petit pour être transporté. Au rang 3, en dépensant 1 niveau d'Effort, tu peux fabriquer un dispositif basé sur un cypher de puissance moyenne. Au rang 6, en dépensant 2 niveaux d'Effort, tu peux fabriquer un dispositif basé sur un cypher de puissance avancée."
       },
       {
+        "id": "cypher-use",
         "name": "Utilisation de Cyphers",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Tu peux porter **un cypher supplémentaire**."
+        "description": "You can bear one additional cypher at a time."
       }
     ],
-    "statOptions": ["intellect"],
-    "description": "<p>Un Type de Space Opera centré sur l'archétype tech, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Science-fiction. Sous-genre : Space Opera. Réserves principales : Intellect.</em></p>"
+    "statOptions": [
+      "intellect"
+    ],
+    "description": "<p>You're not simply good with machines; you're a galactic-level genius. Where others see a pile of junk, a boring appliance, or a simple device, you see potential—circuits, energy conduits, and power cells enabling you to build an explosive, repair a weapon, fashion a new custom-built device, or keep a starship limping along when by all rights that last enemy disintegration beam should have spelled the end. Others on your team probably celebrate your technical know-how, especially as it usually falls to you to bypass dumb devices like surveillance monitors and force screens. And if they can protect you from direct enemy action, you can produce a gadget that might just be the key to accomplishing the overall objective.</p>"
   },
   "folder": "DNZXZoUQ1z24nS44",
   "sort": 0,
@@ -64,7 +78,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

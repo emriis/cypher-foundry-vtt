@@ -1,11 +1,11 @@
 {
-  "_id": "HowlsAtMoonFocus",
-  "_key": "!items!HowlsAtMoonFocus",
+  "_id": "howlsatthe8892A3",
+  "_key": "!items!howlsatthe8892A3",
   "name": "Howls at the Moon",
   "type": "focus",
   "img": "icons/creatures/mammals/wolf-howl-moon.webp",
   "system": {
-    "description": "<p>A Focus for a character who becomes a fearsome creature with control issues.</p>",
+    "description": "<p>For brief periods, you become a fearsome and powerful creature with control issues.</p>",
     "abilities": [
       {
         "id": "beast-form",
@@ -14,187 +14,295 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "On five consecutive nights each month, transform into a monstrous beast with enhanced Might and Speed, resilient wounds, and flexible unarmed attacks."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "On five consecutive nights each month, you uncontrollably change into a monstrous beast until the first hint of dawn or the moon sets (but see below). Work with your GM to determine the details of this form. In this new form, you add +4 to your Might Pool, +1 to your Might Edge, +2 to your Speed Pool, and +1 to your Speed Edge; you ignore the first moderate wound you take; and you can freely use your unarmed attacks as light weapons (eased attack, 2 damage) or medium weapons (unmodified attack, 4 damage), whichever seems appropriate for that attack. While in beast form, you can't spend Intellect points for any reason other than to try to change to your normal form before the duration is over (a difficulty 4 task). In addition, you attack any and every living creature within short range. After you revert to your normal form, all your tasks are hindered until you use a one-hour or longer recovery. If you did not kill and eat at least one substantial creature while in beast form, the hindrance is two steps instead of one and lasts until you use a ten-hour recovery. Effort: You can intentionally change into your beast form if you succeed at a difficulty 4 Intellect task. If you fail, you can keep trying each round (at no additional Might cost to activate this ability) until you succeed or decide to give up. Enabler to involuntarily change into beast form; action to voluntarily change into beast form; action to change back to your normal form. A PC in beast form usually loses or at least leaves behind their regular-sized clothing and armor."
       },
       {
         "id": "call-upon-the-beast",
         "name": "Call Upon the Beast",
         "tier": 1,
-        "prerequisites": ["beast-form"],
+        "prerequisites": [
+          "beast-form"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "intellect", "amount": 1, "options": [] },
-        "description": "Briefly show your beastly nature to gain a free level of Effort on an Intimidation task."
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "While not in beast form, you can call upon your beastly nature for a moment and give a menacing growl or have your eyes become more animal-like. If you do this, you gain a free level of Effort on an intimidation task. Enabler."
       },
       {
         "id": "keen-eye",
         "name": "Keen Eye",
         "tier": 1,
-        "prerequisites": ["beast-form"],
+        "prerequisites": [
+          "beast-form"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "See one and a half times farther and ignore attack and perception penalties from poor visibility."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You can see perfectly well half again as far as normal. You ignore attack and perception penalties for fog, smoke, mist, dim light, and very dim light."
       },
       {
         "id": "scales",
         "name": "Scales",
         "tier": 2,
-        "prerequisites": ["beast-form"],
+        "prerequisites": [
+          "beast-form"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "might", "amount": 2, "options": [] },
-        "description": "Grow protective scales until a ten-minute recovery, easing your block tasks."
+        "cost": {
+          "stat": "might",
+          "amount": 2,
+          "options": []
+        },
+        "description": "You grow scales all across your body until you use a ten-minute or longer recovery, during which time your block tasks are eased. Action when in your normal form; enabler when using Beast Form."
       },
       {
         "id": "beast-senses",
         "name": "Beast Senses",
         "tier": 2,
-        "prerequisites": ["beast-form"],
+        "prerequisites": [
+          "beast-form"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "Gain assets on perception and initiative; in beast form, unaware attackers gain no surprise advantage."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You have heightened senses; you have an asset to perception and initiative tasks. If you are in beast form, you have two assets, and even if you are unaware of an incoming attack, the attacker doesn't gain any advantage against you, such as from surprise."
       },
       {
         "id": "controlled-change",
         "name": "Controlled Change",
         "tier": 2,
-        "prerequisites": ["beast-form"],
+        "prerequisites": [
+          "beast-form"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "Attempt a difficulty 4 Intellect task to transform on any night in addition to the involuntary changes."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You can try to use your Beast Form ability to change into your beast form on any night (a difficulty 4 Intellect task). Any transformations you make using this power are in addition to the five nights per month that you change involuntarily. Action to change."
       },
       {
         "id": "talons-or-claws",
         "name": "Talons or Claws",
         "tier": 2,
-        "prerequisites": ["beast-form"],
+        "prerequisites": [
+          "beast-form"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "might", "amount": 1, "options": [] },
-        "description": "Grow talons or claws until a ten-minute recovery; your unarmed attacks deal 1 additional damage."
+        "cost": {
+          "stat": "might",
+          "amount": 1,
+          "options": []
+        },
+        "description": "You can make your fingertips grow sharp talons or claws (whichever matches your beast form) until you use a ten-minute or longer recovery, during which time your unarmed attacks deal an additional 1 damage. Action when in your normal form; enabler when using Beast Form."
       },
       {
         "id": "wounded-fury",
         "name": "Wounded Fury",
         "tier": 3,
-        "prerequisites": ["scales"],
+        "prerequisites": [
+          "scales"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "With at least three moderate wounds or one major wound, gain two free Effort levels for an attack each round until recovery or healing."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "While you have at least three moderate wounds or at least one major wound, you gain two free levels of Effort you can apply to an attack each round. This benefit lasts until you take your next ten-minute or longer recovery (or you no longer suffer from those wounds). Enabler."
       },
       {
         "id": "bigger-beast-form",
         "name": "Bigger Beast Form",
         "tier": 3,
-        "prerequisites": ["beast-senses"],
+        "prerequisites": [
+          "beast-senses"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "Beast Form reaches 4 meters, gains resilience and an attack asset, can use heavy unarmed attacks, and hinders dodges."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "When you use Beast Form, you grow larger, during which time you achieve a height of 12 feet (4 m). Being so large, your beast form gains the following additional benefits: you can ignore the first moderate wound you take, your unarmed attack rolls have an asset, you can freely use your unarmed attacks as heavy weapons (6 damage), and you gain an asset to tasks that are easier for a larger creature to perform (like climbing or wading). While in your bigger beast form, your dodge tasks are hindered. Enabler."
       },
       {
         "id": "sleeker-beast-form",
         "name": "Sleeker Beast Form",
         "tier": 3,
-        "prerequisites": ["talons-or-claws"],
+        "prerequisites": [
+          "talons-or-claws"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "Beast Form grants +1 Might Edge, +2 Speed Pool, and +1 Speed Edge."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "When you use Beast Form, your beast form gains the following additional bonuses: +1 to your Might Edge, +2 to your Speed Pool, and +1 to your Speed Edge. Enabler."
       },
       {
         "id": "beast-healing",
         "name": "Beast Healing",
         "tier": 4,
-        "prerequisites": ["bigger-beast-form"],
+        "prerequisites": [
+          "bigger-beast-form"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "Changing into beast form immediately heals one wound; the benefit renews after a ten-hour recovery."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "When you change into your beast form, you are immediately healed of one wound of any severity. This ability renews after you take a ten-hour recovery. Enabler."
       },
       {
         "id": "greater-controlled-change",
         "name": "Greater Controlled Change",
         "tier": 4,
-        "prerequisites": ["controlled-change"],
+        "prerequisites": [
+          "controlled-change"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "Transforming into or out of Beast Form becomes a difficulty 2 Intellect task."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "It's easier to change into and out of the shape granted by your Beast Form ability. Transforming either way is now a difficulty 2 Intellect task."
       },
       {
         "id": "poison-bite",
         "name": "Poison Bite",
         "tier": 4,
-        "prerequisites": ["sleeker-beast-form"],
+        "prerequisites": [
+          "sleeker-beast-form"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "might", "amount": 4, "options": [] },
-        "description": "Grow poisonous fangs for light unarmed bite attacks that add 5 Armor-ignoring damage and hinder the target for one round."
+        "cost": {
+          "stat": "might",
+          "amount": 4,
+          "options": []
+        },
+        "description": "You grow fangs and an extended overbite or underbite, allowing you to make poisonous bite attacks as light unarmed attacks (eased attack, 2 damage) until you use a ten-minute or longer recovery. If your bite attack succeeds, the target takes an additional 5 damage (ignores armor) from poison and their tasks are hindered for one round. Action when in your normal form; enabler when using Beast Form. Wings(4 Might): You sprout wings massive enough to give you the power to fly up to a long distance each round. You can carry a creature your size or smaller (if using Bigger Beast Form, you can carry up to three creatures of your normal size or smaller). Action when in your normal form; enabler when using Beast Form."
       },
       {
         "id": "brute-squad",
         "name": "Brute Squad",
         "tier": 5,
-        "prerequisites": ["beast-healing"],
+        "prerequisites": [
+          "beast-healing"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "might", "amount": 8, "options": [] },
-        "description": "Perform two Might tasks this turn, one with your normal action and one with an extra action."
+        "cost": {
+          "stat": "might",
+          "amount": 8,
+          "options": []
+        },
+        "description": "You can perform two Might tasks on this turn, one with your normal action and one with an extra action. For example, you could make a melee attack and smash open a door, throw a heavy couch and jump over a wall, or make two melee attacks. Enabler."
       },
       {
         "id": "enhanced-beast-form",
         "name": "Enhanced Beast Form",
         "tier": 5,
-        "prerequisites": ["beast-healing"],
+        "prerequisites": [
+          "beast-healing"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "Beast Form grants +3 Might Pool, +2 Speed Pool, and ignores minor wounds from physical attacks."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "When you use Beast Form, your beast form gains the following additional bonuses: +3 to your Might Pool, +2 to your Speed Pool, and you can ignore all minor wounds from physical attacks."
       },
       {
         "id": "constrict",
         "name": "Constrict",
         "tier": 6,
-        "prerequisites": ["enhanced-beast-form"],
+        "prerequisites": [
+          "enhanced-beast-form"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "In beast form, make a reduced-damage Last action unarmed attack to grab a target and inflict 5 damage each round with an action."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "While in beast form, if you make an unarmed attack as a Last action, your attack deals 2 less damage and you grab the target, possibly by wrapping part of your body around them. All the grabbed target's tasks are hindered, including any attempts to escape. Each round they remain grabbed, you can use your action to inflict 5 damage on them (no roll required). Last action to initiate; action to constrict a grabbed target."
       },
       {
         "id": "perfect-control",
         "name": "Perfect Control",
         "tier": 6,
-        "prerequisites": ["greater-controlled-change"],
+        "prerequisites": [
+          "greater-controlled-change"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "Change into or out of Beast Form as an action without an Intellect task, and no longer need to eat a creature to avoid post-transformation hindrance."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You no longer need to attempt an Intellect task to use Beast Form or revert back to your normal form. You can change back and forth as your action. While in beast form, you no longer have to eat a creature to avoid being hindered after you revert to normal."
       },
       {
         "id": "lethal-capability",
         "name": "Lethal Capability",
         "tier": 6,
-        "prerequisites": ["poison-bite"],
+        "prerequisites": [
+          "poison-bite"
+        ],
         "repeatable": true,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "Choose one specific attack, such as claws or bite; it deals 5 additional damage. Choose a different attack each time."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You've mastered how to kill with a particular attack. You inflict an additional 5 damage with your claws, your bite, or some other specific attack you prefer. You can gain this ability more than once. Each time you do, choose a different specific attack."
       }
     ]
   },
   "folder": null,
   "sort": 0,
-  "ownership": { "default": 0 },
+  "ownership": {
+    "default": 0
+  },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

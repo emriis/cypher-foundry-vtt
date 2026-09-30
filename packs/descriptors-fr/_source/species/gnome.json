@@ -1,0 +1,34 @@
+{
+  "_id": "SpcFntGnm0000001",
+  "_key": "!items!SpcFntGnm0000001",
+  "name": "Gnome",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "category": "species",
+    "genres": ["fantasy"],
+    "grantsSecondDescriptor": false,
+    "statOptions": [],
+    "statAmount": 0,
+    "skillOptions": ["Artisanat"],
+    "benefits": [
+      {
+        "name": "Pas d'intrusion du MJ à l'esquive",
+        "description": "<p>Tu ne subis pas d'intrusion du MJ si tu fais un 1 sur un jet d'esquive.</p>"
+      },
+      {
+        "name": "Dégâts de mêlée légère",
+        "description": "<p>Tu infliges +1 dégât avec les armes de mêlée légères.</p>"
+      }
+    ],
+    "description": "<p>Tu es curieux et tu adores découvrir comment transformer ce que tu trouves en art, en outils ou en armes.</p><p><strong>Tu obtiens les caractéristiques suivantes :</strong></p><ul><li>Tu ne subis pas d'intrusion du MJ si tu fais un 1 sur un jet d'esquive.</li><li>Tu es entraîné en artisanat.</li><li>Tu infliges +1 dégât avec les armes de mêlée légères.</li></ul>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "_id": "walksthrou280AD5",
+  "_key": "!items!walksthrou280AD5",
+  "name": "Traverse les murs",
+  "type": "focus",
+  "img": "icons/magic/movement/abstract-runes-circle.webp",
+  "system": {
+    "description": "<p>A bit translucent when you want to be, you can move through solid objects.</p>",
+    "abilities": [
+      {
+        "id": "light-step",
+        "name": "Pas léger",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu peux réduire le poids de tes pas jusqu’à celui d’une feuille de papier, ce qui t’empêche d’activer des plaques de pression ou autres dispositifs basés sur le poids. Tu réduis également les dégâts de chute d’un palier de blessure."
+      },
+      {
+        "id": "soft-whisper",
+        "name": "Murmure doux",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Tu peux dire quelque chose à une créature à portée immédiate sans que personne d’autre ne l’entende."
+      },
+      {
+        "id": "walk-through-walls",
+        "name": "Traverser les murs",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Tu peux traverser lentement des barrières physiques de niveau 5 ou moins, à raison de 30 cm par round (minimum : une Dernière action pour traverser n’importe quelle barrière). Tu peux percevoir ton environnement pendant que tu es en phase dans un objet ou un mur, ce qui te permet de regarder à travers. Tu ne peux pas utiliser cette aptitude pour traverser des barrières d’énergie. Effort : augmenter le niveau maximal de la barrière de +1."
+      },
+      {
+        "id": "defensive-phasing",
+        "name": "Phasage défensif",
+        "tier": 2,
+        "prerequisites": [
+          "light-step"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "choice",
+          "amount": 2,
+          "options": [
+            "intellect",
+            "speed"
+          ]
+        },
+        "description": "Jusqu’à ta prochaine récupération de dix minutes ou plus, tu gagnes un atout à tes tâches d’Esquive, en modifiant sélectivement ta phase pour laisser passer certaines attaques à travers toi."
+      },
+      {
+        "id": "phase-grasp",
+        "name": "Prise phasée",
+        "tier": 2,
+        "prerequisites": [
+          "soft-whisper"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Tu phases un objet à longue portée pour le faire disparaître et réapparaître dans tes mains ou à portée immédiate. Tu dois voir l’objet, et il doit être transportable à deux mains. S’il est tenu par une créature ou derrière une barrière, tu dois réussir une attaque d’Intellect contre le niveau de la créature ou de la barrière."
+      },
+      {
+        "id": "slip-into-shadow",
+        "name": "Glisser dans l'ombre",
+        "tier": 2,
+        "prerequisites": [
+          "walk-through-walls"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Even if in full view of a target, your successful stealth task allows you to slip away from that creature and hide from view in a nearby shadow, behind a tree or furnishing, or in the next room as your action. Effort: Increase the number of creatures you can hide from by one (attempt a separate stealth task against each). Enabler. At tier 3: The base number of targets you can attempt to hide from increases to three. Slipping into shadow and other stealth-based tasks for someone who Walks Through Walls is partly enabled by their ability to phase into translucence."
+      },
+      {
+        "id": "faster-phase",
+        "name": "Phasage accéléré",
+        "tier": 3,
+        "prerequisites": [
+          "defensive-phasing",
+          "phase-grasp"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Quand tu utilises Traverser les murs, tu traverses les barrières physiques plus vite, augmentant ta vitesse de 1 m par round. De plus, l’action devient une action normale au lieu d’une Dernière action (tu peux te déplacer normalement avant ou après avoir utilisé ton action de phasage)."
+      },
+      {
+        "id": "phased-attack",
+        "name": "Attaque phasée",
+        "tier": 3,
+        "prerequisites": [
+          "phase-grasp",
+          "slip-into-shadow"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Les attaques que tu fais ce tour‑ci ignorent l’Armure de ton adversaire."
+      },
+      {
+        "id": "phase-door",
+        "name": "Porte de phase",
+        "tier": 4,
+        "prerequisites": [
+          "faster-phase"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Tu peux te phaser dans un objet solide adjacent, puis ressortir de n’importe quel autre objet solide à longue portée, même s’ils ne sont pas connectés. Il ne doit y avoir aucune barrière intermédiaire, et tu dois connaître ou voir l’objet de destination. Effort : augmenter la portée de déplacement d’une portée longue supplémentaire."
+      },
+      {
+        "id": "phase-friend",
+        "name": "Ami·e en phase",
+        "tier": 4,
+        "prerequisites": [
+          "phased-attack"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Quand tu utilises une aptitude de phasage, tu peux emmener un·e allié·e à portée immédiate avec toi. Effort : emmener un·e allié·e supplémentaire."
+      },
+      {
+        "id": "quick-phase",
+        "name": "Phasage rapide",
+        "tier": 5,
+        "prerequisites": [
+          "phase-friend"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Quand tu utilises Traverser les murs, tu traverses les barrières beaucoup plus vite, augmentant ta vitesse de 3,5 m par round. Ou bien, tu peux te phaser jusqu’à 3,5 m comme Première action."
+      },
+      {
+        "id": "untouchable",
+        "name": "Intouchable",
+        "tier": 5,
+        "prerequisites": [
+          "phase-door"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "Tu modifies ta phase pour ne plus pouvoir affecter ou être affecté·e par la matière ou l’énergie normales. Seules les attaques mentales ou les énergies/trans‑dimensions spéciales peuvent t’atteindre. De même, tu ne peux plus attaquer ou toucher quoi que ce soit physiquement. L’effet dure jusqu’à ta prochaine récupération de dix minutes ou plus."
+      },
+      {
+        "id": "phase-foe",
+        "name": "Phaser un ennemi",
+        "tier": 6,
+        "prerequisites": [
+          "untouchable"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 8,
+          "options": []
+        },
+        "description": "Tu concentres une énergie perturbatrice dans ton doigt et touches une créature. Si ton attaque réussit, elle est phasée comme si tu utilisais Intouchable sur elle. Cependant, à moins qu’elle ne sache contrôler son mouvement en phase (ce qui est rare), elle tombe à travers le sol ou d’autres matières solides. Si elle ne parvient pas à reprendre le contrôle ou à mettre fin à l’effet, elle peut être perdue à jamais, car elle redeviendra solide après une minute — probablement sous terre. Tu ne peux utiliser cette aptitude que contre une créature de niveau 4 ou moins. Effort : augmenter le niveau maximal de la cible de +1."
+      },
+      {
+        "id": "selective-phase-attack",
+        "name": "Attaque de phase sélective",
+        "tier": 6,
+        "prerequisites": [
+          "quick-phase"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Une fois par round, une attaque utilisant Attaque phasée inflige +5 dégâts."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

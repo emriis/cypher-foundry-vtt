@@ -24,38 +24,53 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "effort",
         "name": "Amélioration de Combat (2+ Célérité ou Intellect)",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Ton amélioration militaire — implant nerveux, matériel sous‑cutané ou modification génétique — réduit ton temps de réaction face aux menaces inattendues, au point où **tu es presque impossible à surprendre**. Tu lances l’initiative normalement, mais si ton résultat est **inférieur à 15**, traite‑le comme **15**. (Cela signifie que tu n’obtiens pas d’intrusion du·de la MJ sur un 1.) Au rang 3, le minimum devient 18. Effort : Augmente le minimum obtenu grâce à cette aptitude de +3."
+        "description": "Increase the minimum number rolled for this ability by 3. Enabler. At tier 3: The minimum number rolled for this ability increases to 18."
       },
       {
+        "id": "expert-combatant",
         "name": "Combattant·e Expert·e",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Tu es **entraîné·e** dans un type spécifique d’attaque d’arme : épées, haches, arcs, ou une catégorie plus large : armes contondantes légères, armes tranchantes légères, armes à distance légères, armes contondantes moyennes, armes tranchantes moyennes, armes à distance moyennes, etc. Au rang 2, tu peux devenir spécialisé·e dans la même méthode d’attaque (à condition d’acquérir la compétence normalement). Au rang 6, tu peux devenir expert·e dans une méthode d’attaque (celle choisie au rang 1 ou une autre dans laquelle tu es déjà spécialisé·e)."
+        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you're already specialized in), but you must gain the skill normally. For a Soldier, Expert Combatant means choosing training in weapons appropriate to the genre, such as laser pistols or rail guns (if available), or firing specific spacecraft weapons, such as point defense cannons, torpedo tubes, plasma casters, or something similar."
       },
       {
+        "id": "push-implant",
         "name": "Implant de Surpassement",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Après avoir attaqué, tu peux activer un implant de combat pour effectuer **une attaque supplémentaire**, en tant qu’**action supplémentaire à ton tour**. Cette action te cause **une blessure modérée**. Cette aptitude se renouvelle après une **récupération de dix heures**."
+        "description": "Après avoir attaqué, tu peux activer un implant de combat pour effectuer une attaque supplémentaire en tant qu'action supplémentaire à ton tour. Cette action te cause une blessure modérée. Cette aptitude se renouvelle après une récupération de dix heures."
       }
     ],
-    "statOptions": ["might", "speed"],
-    "description": "<p>Un Type de Science-fiction dure centré sur l'archétype soldat·e, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Science-fiction. Sous-genre : Science-fiction dure. Réserves principales : Puissance, Célérité.</em></p>"
+    "statOptions": [
+      "might",
+      "speed"
+    ],
+    "description": "<p>You've seen things civilians wouldn't believe: attack ships shattering Mars domes with mini-nukes; fellow soldiers disintegrated by stray linear accelerator fire, floating ashes their only grave marker; gravity-dropping through the silent void, praying your lidar warns you quickly enough to pop your brake rockets before you slam into the unlit enemy asteroid. The adrenaline kick of a firefight is like nothing else, but better yet is the fizzy exhilaration of another mission survived. Made for combat, you're probably among the first on your team to confront armed foes. Your allies with other specialties are probably happy to let you; not everyone can rely on combat enhancements when adversaries begin firing kinetic weapons.</p>"
   },
   "folder": "C6ZFx2IjshXiDYap",
   "sort": 0,
@@ -64,7 +79,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

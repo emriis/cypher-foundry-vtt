@@ -24,38 +24,52 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "fast-talk",
         "name": "Fast Talk",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "When speaking with an intelligent creature who can understand you and isn’t hostile, you convince them to take one reasonable action in the next round. A reasonable action must be agreed upon by your GM; it should not put the creature or its allies in obvious danger or be wildly out of character. Action."
+        "description": "When speaking with an intelligent creature who can understand you and isn't hostile, you convince them to take one reasonable action in the next round. A reasonable action must be agreed upon by your GM; it should not put the creature or its allies in obvious danger or be wildly out of character. Action."
       },
       {
+        "id": "a-smile-and-a-word",
         "name": "A Smile and a Word",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
         "description": "When you successfully interact with a creature by succeeding on a charm, deception, or intimidation task—even those having to do with calming animals or communicating with someone or something whose language you do not speak—you also learn one small useful or at least interesting bit of information. For instance, if you convince the guard to let you pass, you might also learn that their supervisor is due back in ten minutes. Action."
       },
       {
+        "id": "smooth-operator",
         "name": "Smooth Operator",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "intellect",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
-        "description": "You purchase an expensive item for the cost of a moderately priced item. You can only use this ability in a location where services and items are routinely bought and sold. Effort: Purchase a very expensive item for the cost of an expensive item (this requires two levels of Effort). Purchase an exorbitant item for the cost of a very expensive item (this requires four levels of Effort). This ability renews when you access a new market or when at least a month has elapsed at the same market where you last used this ability. At tier 3: You can use this ability twice before it must be renewed by going somewhere else or letting enough time pass."
+        "description": "You purchase an expensive item for the cost of a moderately priced item. You can only use this ability in a location where services and items are routinely bought and sold. Effort: Purchase a very expensive item for the cost of an expensive item (this requires two levels of Effort). Purchase an exorbitant item for the cost of a very expensive item (this requires four levels of Effort). This ability renews when you access a new market or when at least a month has elapsed at the same market where you last used this ability. Enabler. At tier 3: You can use this ability twice before it must be renewed by going somewhere else or letting enough time pass."
       }
     ],
-    "statOptions": ["intellect"],
-    "description": "<p>A Space Opera Type focused on trader archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Science Fiction. Subgenre: Space Opera. Primary Pools: intellect.</em></p>"
+    "statOptions": [
+      "intellect"
+    ],
+    "description": "<p>You know commerce, which means you know people. Your ability to both charm strangers and talk your way around unfortunate facts, combined with your knowledge of the best trade routes and berth rates, gives you a leg up when acquiring goods at a steep discount, only to sell them at a profit on some other moon or planet. You try to make your clients at least feel like they've just struck the deal of their life, even when nothing could be further from the truth. You're someone who can open doors to new opportunities for the whole team. Your talent applies both broadly speaking, when it comes to finding new jobs and maybe more chances for a payout, but also simply when it comes to negotiating with potential foes, talking your way out of trouble, or, if there's nothing else for it, shooting your way out.</p>"
   },
   "folder": "AxljvbOd6vL9wkut",
   "sort": 0,
@@ -64,7 +78,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

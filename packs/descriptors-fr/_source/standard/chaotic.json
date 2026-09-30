@@ -1,0 +1,30 @@
+{
+  "_id": "F6Sn1Jr7JI9h2TzF",
+  "_key": "!items!F6Sn1Jr7JI9h2TzF",
+  "name": "Impulsif·ve",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "speed"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Initiative",
+      "",
+      "",
+      ""
+    ],
+    "description": "<p>Le danger ne t'effraie guère. Tu aimes semer la surprise juste pour voir ce qui va se produire.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

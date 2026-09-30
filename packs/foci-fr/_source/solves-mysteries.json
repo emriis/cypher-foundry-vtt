@@ -1,0 +1,215 @@
+{
+  "_id": "solvesmyst69025C",
+  "_key": "!items!solvesmyst69025C",
+  "name": "Résout des mystères",
+  "type": "focus",
+  "img": "icons/sundries/books/book-embossed-skull.webp",
+  "system": {
+    "description": "<p>You're a master of deduction, using evidence to find the answer.</p>",
+    "abilities": [
+      {
+        "id": "investigative-knack",
+        "name": "Flair pour l’enquête",
+        "tier": 1,
+        "prerequisites": [
+          "sleuthing",
+          "sense-weakness"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Tu as l’œil pour les détails subtils — ceux qui révèlent un mensonge ou une rétention d’information. Lorsque tu examines une zone à la recherche d’indices, ou que tu discutes/interroges quelqu’un, si ton jet de perception, interaction ou détection de mensonge est inférieur à 9, considère‑le comme 9. (Un 1 naturel n’entraîne pas d’intrusion du·de la MJ.) L’effet dure jusqu’à ta prochaine récupération de dix minutes ou plus. Au rang 3, le minimum passe à 12. Effort : augmente le minimum obtenu de +3."
+      },
+      {
+        "id": "sense-weakness",
+        "name": "Déceler la faiblesse",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Après avoir observé une créature pendant un round, tu connais toutes ses faiblesses particulières, et tes attaques lui infligent +1 dégât supplémentaire."
+      },
+      {
+        "id": "sleuthing",
+        "name": "Investigation active",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Lorsque tu poursuis une cible, recherches quelque chose d’anormal (indice, preuve unique) ou tentes d’en apprendre davantage sur un mystère, tu peux poser une question au/à la MJ sur la tâche en cours et obtenir une réponse courte mais utile, évidente pour ton personnage mais pas forcément pour le joueur."
+      },
+      {
+        "id": "master-of-disguise",
+        "name": "Maître du déguisement",
+        "tier": 2,
+        "prerequisites": [
+          "investigative-knack"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Tu peux créer un déguisement en tant que Dernière action, au lieu de la minute ou plus normalement requise. Si ton jet de déguisement est inférieur à 6, considère que tu as obtenu 6. (Un 1 naturel n’entraîne pas d’intrusion du·de la MJ.) L’effet se renouvelle après une récupération. Au rang 3, le minimum passe à 9. Effort : augmente le minimum obtenu de +3."
+      },
+      {
+        "id": "out-of-harm-s-way",
+        "name": "Hors d’atteinte",
+        "tier": 2,
+        "prerequisites": [
+          "investigative-knack"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Lorsque tu réussis une esquive, tu peux immédiatement te déplacer d’une distance immédiate, même si ce n’est pas ton tour."
+      },
+      {
+        "id": "combat-prowess",
+        "name": "Prouesse martiale",
+        "tier": 3,
+        "prerequisites": [
+          "out-of-harm-s-way"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu ajoutes +1 dégât à un type d’attaque avec arme de ton choix : attaques de mêlée ou à distance."
+      },
+      {
+        "id": "ditch-assumption",
+        "name": "Abandonner une fausse piste",
+        "tier": 3,
+        "prerequisites": [
+          "master-of-disguise"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Après une observation et une enquête approfondies (questions à des PNJ, fouille, réévaluation d’indices…), tu reçois une clarification du·de la MJ : Iel identifie une hypothèse erronée que tu avais ou iel élimine un suspect parmi les possibilités. Si rien n’est faux ou trompeur, tu n’apprends rien. Se renouvelle après une récupération de dix heures."
+      },
+      {
+        "id": "defend-and-respond",
+        "name": "Défendre et riposter",
+        "tier": 4,
+        "prerequisites": [
+          "combat-prowess"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "choice",
+          "amount": 3,
+          "options": [
+            "might",
+            "speed"
+          ]
+        },
+        "description": "If you block or dodge a melee attack, you can immediately make a melee attack against your attacker. You can't use this ability more than once per turn. Enabler."
+      },
+      {
+        "id": "lead-by-inquiry",
+        "name": "Diriger par l’investigation",
+        "tier": 4,
+        "prerequisites": [
+          "ditch-assumption"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Lorsque tu prends une récupération de dix heures avec un ou plusieurs allié·e·s, ces allié·e·s sont considérés comme entraîné·e·s en perception et en détection de mensonge. L’effet persiste tant que tu restes à courte portée d’eux. Il cesse si vous vous séparez d’une plus grande distance mais revient si vous revenez à portée. Le bénéfice s’arrête si tu fais une récupération de dix heures sans eux."
+      },
+      {
+        "id": "defuse-situation",
+        "name": "Désamorcer une situation",
+        "tier": 5,
+        "prerequisites": [
+          "defend-and-respond",
+          "lead-by-inquiry"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Pendant une enquête, si tes questions provoquent une réaction agressive ou violente, tu peux — par la distraction, le baratin, la désescalade ou toute approche sociale — empêcher une créature vivante d’attaquer quiconque pendant un round, si ton jet d’interaction réussit."
+      },
+      {
+        "id": "infer-thoughts",
+        "name": "Lire les pensées de surface",
+        "tier": 6,
+        "prerequisites": [
+          "defuse-situation"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "En observant ou en interagissant avec une cible de niveau 4 ou moins pendant un round, tu obtiens une lecture claire de ses pensées de surface, même si elle résiste (aucun jet requis). Tu dois être capable de voir la cible. Tant que tu à un accès à ses pensées que ce soit par le langage corporel, sa parole et donc ce que cela dit ou ne dit pas, tu peux continuer à lire ses pensées jusqu’à ta prochaine récupération de dix minutes ou plus. Effort : augmente le niveau maximum affecté de +1."
+      },
+      {
+        "id": "knowing-the-unknown",
+        "name": "Connaître l’inconnu",
+        "tier": 6,
+        "prerequisites": [
+          "defuse-situation"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "En utilisant les ressources appropriées à ton personnage, tu poses une question au/à la MJ et reçois une réponse générale. Le·la MJ attribue un niveau à ta question : - information triviale et disponible ailleurs → niveau 1, - savoir obscur du passé → niveau 7, - futur → impossible."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

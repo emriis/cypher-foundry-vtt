@@ -1,51 +1,77 @@
 {
-  "_id": "Ca5t5Sp3ll52026X",
-  "_key": "!items!Ca5t5Sp3ll52026X",
+  "_id": "castsspell489030",
+  "_key": "!items!castsspell489030",
   "name": "Casts Spells",
   "type": "focus",
   "img": "icons/magic/symbols/runes-carved-stone-purple.webp",
   "system": {
-    "description": "<p>A Focus for a character who prepares and casts a versatile repertoire of magic.</p>",
+    "description": "<p>You have a book of various spells and can change which ones you have ready to cast each day—blasts of energy, summoning monsters, magical flight, teleportation, and copying cyphers can all be part of your repertoire.</p>",
     "abilities": [
       {
         "id": "blast",
         "name": "Blast",
         "tier": 1,
-        "prerequisites": ["prepare-spell"],
+        "prerequisites": [
+          "prepare-spell"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 1, "options": [] },
-        "description": "Project destructive energy or shape it with Effort."
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "You emit a short-range blast of energy inflicting 4 damage on a target with a successful attack roll. Work with the GM to determine the type of energy comprising your blast. You can tune the effect to make it hot enough to slice through material of up to level 5 that's no more than 1 foot (30 cm) thick if given a few rounds to concentrate on doing so. If you have another damaging attack ability (from this focus or your type), you can use Blast to augment that ability, increasing its damage by 1. You can change the name of the Blast ability so it relates to the kind of energy you create, such as Blast of Fire, or something more evocative suggesting the name of the spellcaster who created it, such as Malhavoc's Destructive Blast. Effort: Gain fine control over the effect until you use a ten-minute or longer recovery, varying the intensity as you wish within immediate range; for instance, you could use it to warm the area, cook food without burning it, provide bright light in the area, and so on. Increase the maximum level of material that you can cut through by 1. Action to attack; Last action to initiate fine control; enabler to augment another attack ability."
       },
       {
         "id": "prepare-spell",
         "name": "Prepare Spell",
         "tier": 1,
-        "prerequisites": ["blast", "hedge-magic"],
+        "prerequisites": [
+          "blast",
+          "hedge-magic"
+        ],
         "repeatable": true,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 2, "options": [] },
-        "description": "Prepare one manifested cypher effect as a daily spell."
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Each day you can pick a different magical effect and cast it as a spell. Choose a low-power manifest cypher. You gain that cypher's effect as a spell (a character special ability) after spending ten minutes preparing. You can cast that spell as an action, costing 2 Intellect. This spell does not count toward your cypher limit. Unlike when using a cypher, you do not lose this spell after casting it. Whenever you take a ten-hour recovery, you can change which cypher you've taken as a spell. Changing which cypher you have prepared as a spell ends all of your durations of the previous prepared spell. You can select this ability up to three times, allowing you to choose one, two, or three cyphers each day as spells. Ten minutes to complete preparing a cypher as a spell; action to cast a cypher as a spell. At tier 3: You can use this ability to choose a low- or medium-power cypher as a spell. You can cast a medium-power cypher spell as an action, costing 4 Intellect. At tier 6: You can use this ability to choose a low-, medium-, or advanced-power cypher as a spell. You can cast an advanced-power cypher spell as an action, costing 6 Intellect."
       },
       {
         "id": "hedge-magic",
         "name": "Hedge Magic",
         "tier": 1,
-        "prerequisites": ["prepare-spell", "sense-magic"],
+        "prerequisites": [
+          "prepare-spell",
+          "sense-magic"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 1, "options": [] },
-        "description": "Perform a small, non-harmful magical trick."
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "You can perform small tricks: temporarily change the color or basic appearance of a small object, cause small objects to float through the air, clean a small area, mend a broken object, prepare (but not create) food, and so on. You can't use Hedge Magic to harm another creature or object. Action."
       },
       {
         "id": "sense-magic",
         "name": "Sense Magic",
         "tier": 1,
-        "prerequisites": ["hedge-magic"],
+        "prerequisites": [
+          "hedge-magic"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 1, "options": [] },
-        "description": "Sense the presence of nearby magic."
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "If there is magic of any kind at work within short range, you are aware of that fact (but not the specifics). Last action."
       },
       {
         "id": "enchant-object",
@@ -59,8 +85,12 @@
         ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 2, "options": [] },
-        "description": "Temporarily enchant a useful object."
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "You imbue a weapon, tool, or other usable item with magic that enhances its performance, lasting until you (or the user of the object) use a ten-minute or longer recovery. At any point while the ability is active, the creature using the object gains an asset to one action requiring the object. You decide if the object looks the same, glows like a candle, or gains a magical rune for the duration of the spell. Action."
       },
       {
         "id": "confusion-ray",
@@ -74,8 +104,12 @@
         ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 2, "options": [] },
-        "description": "Hinder a target with a disruptive mental ray."
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "You project a grey beam of disruptive mental energy at a creature within short range. Make an Intellect attack against your foe; success means you deal 1 damage (ignores armor) and their tasks are hindered until your next turn. Action."
       },
       {
         "id": "hover",
@@ -89,18 +123,29 @@
         ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 2, "options": [] },
-        "description": "Levitate and drift or move slowly through the air."
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "You float slowly into the air. If you concentrate, you can control your movement to remain motionless in the air or float up to a short distance as your action; otherwise, you drift with the wind or with any momentum you have gained. This effect lasts until you use a ten-minute or longer recovery. Action to initiate."
       },
       {
         "id": "summon-giant-spider",
         "name": "Summon Giant Spider",
         "tier": 3,
-        "prerequisites": ["enchant-object", "fireball"],
+        "prerequisites": [
+          "enchant-object",
+          "fireball"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 4, "options": [] },
-        "description": "Summon a temporary giant spider."
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "You conjure a giant spider, which appears within immediate range. The spider acts according to its nature, attacking a nearby creature that looks like suitable prey. The spider remains until you use a ten-minute or longer recovery, then fades away. Effort: Make the spider understand you and obey your verbal instructions. Action to initiate. Giant spider: level 3, perception as level 5, Speed defense as level 4 due to quickness; health 12; bite inflicts 3 damage plus 1 Speed damage from poison (ignores armor); moves a long distance each round when on webs"
       },
       {
         "id": "fireball",
@@ -113,97 +158,161 @@
         ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 4, "options": [] },
-        "description": "Explode fire across a small area at long range."
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "You create a burst of fire within long range, filling an immediate area. Roll against each creature in the area; you inflict 3 damage on a success, or 1 damage on a failure. Flammable objects may catch fire. Each level of Effort applied to increase damage adds 2 damage to each target (instead of 3). Action."
       },
       {
         "id": "arcane-flight",
         "name": "Arcane Flight",
         "tier": 3,
-        "prerequisites": ["confusion-ray", "hover", "identify-magic"],
+        "prerequisites": [
+          "confusion-ray",
+          "hover",
+          "identify-magic"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 3, "options": [] },
-        "description": "Fly at your normal speed for an extended time."
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "You can float and fly through the air at your normal land speed until you use a ten-minute or longer recovery. In terms of overland movement, a flying creature moves about 20 miles (32 km) per hour and is not affected by terrain. Effort: Affect one additional touched creature of your size or smaller; you direct their movement and they must remain within sight of you or they fall. Action to initiate. Arcane Flight is better than Hover, so if you have both, you can exchange Hover for another tier 2 or lower ability from the Casts Spells focus."
       },
       {
         "id": "identify-magic",
         "name": "Identify Magic",
         "tier": 3,
-        "prerequisites": ["confusion-ray", "hover", "arcane-flight"],
+        "prerequisites": [
+          "confusion-ray",
+          "hover",
+          "arcane-flight"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 3, "options": [] },
-        "description": "Learn a sensed magical effect's level, source, nature, and general effects."
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "If you have sensed magic using the tier 1 ability, you can gain more specifics about what you sense: the level of the magic, the source of the magic (a spellcaster, a magical creature, an ongoing magical effect, or an enchanted object), and the general effects of the magic at play. Last action."
       },
       {
         "id": "soul-interrogation",
         "name": "Soul Interrogation",
         "tier": 4,
-        "prerequisites": ["fireball", "arcane-flight"],
+        "prerequisites": [
+          "fireball",
+          "arcane-flight"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 5, "options": [] },
-        "description": "Learn exploitable secrets about a distant opponent."
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "You attempt to learn secret information about a foe that you can use against them. Make an Intellect attack against a creature within long range. Success means you learn their level, basic abilities, and obvious weaknesses (such as a vulnerability to fire or silver), as well as their mannerisms and personal qualities that you could discover by conversing with them for an extended time. For the next few months, your actions against them are eased. Action."
       },
       {
         "id": "arcane-teleportation",
         "name": "Arcane Teleportation",
         "tier": 4,
-        "prerequisites": ["fireball", "arcane-flight"],
+        "prerequisites": [
+          "fireball",
+          "arcane-flight"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 4, "options": [] },
-        "description": "Teleport yourself and, with Effort, other creatures."
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "You instantly teleport to any location within a short distance that you can see. Effort: Increase your range by a short distance. Teleport to a location you can't see. Bring one creature (of your size or smaller) with you. At tier 5: If you spend 5 Intellect, your base distance and distance increment for Effort increase to long range, and each level of Effort applied lets you bring two people with you. At tier 6: If you spend 6 Intellect, your base distance increases to anywhere on the same planet, and each level of Effort used lets you bring three people with you. Action."
       },
       {
         "id": "divination",
         "name": "Divination",
         "tier": 5,
-        "prerequisites": ["soul-interrogation", "granite-wall"],
+        "prerequisites": [
+          "soul-interrogation",
+          "granite-wall"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 6, "options": [] },
-        "description": "Ask a powerful entity one question."
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "You contact a powerful entity (such as a deity, demon lord, or creature from a dimension of knowledge), ask one question, and get a general answer. The GM assigns a level to the question, so the more obscure the answer, the more difficult the task. Generally, knowledge that you could find by looking somewhere  other than your current location is level 1, obscure knowledge of the past is level 7, and specific knowledge of future events beyond the next few minutes is impossible. Action."
       },
       {
         "id": "granite-wall",
         "name": "Granite Wall",
         "tier": 5,
-        "prerequisites": ["arcane-teleportation", "divination"],
+        "prerequisites": [
+          "arcane-teleportation",
+          "divination"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 5, "options": [] },
-        "description": "Create a durable wall of granite."
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "You create a level 5 granite wall within short range. The wall is four 10-foot by 10-foot (3.5 m by 3.5 m) squares, each 1 inch (2.5 cm) thick, arranged as you wish. The wall lasts until you use a one-hour or longer recovery, after which it crumbles to dust. Effort: Increase the duration to until you use a ten-hour recovery. Make the duration permanent (this requires three levels of Effort). Action."
       },
       {
         "id": "word-of-death",
         "name": "Word of Death",
         "tier": 6,
-        "prerequisites": ["divination", "granite-wall"],
+        "prerequisites": [
+          "divination",
+          "granite-wall"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 6, "options": [] },
-        "description": "Speak a deadly word against a nearby target."
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "You speak a magic word so potent that it can instantly kill a foe. Make an Intellect attack against a foe within short range. If you succeed, you inflict 10 damage. Action."
       },
       {
         "id": "conjure-supernatural-creature",
         "name": "Conjure Supernatural Creature",
         "tier": 6,
-        "prerequisites": ["divination", "granite-wall"],
+        "prerequisites": [
+          "divination",
+          "granite-wall"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 7, "options": [] },
-        "description": "Summon a temporary angel, demon, or elemental."
+        "cost": {
+          "stat": "intellect",
+          "amount": 7,
+          "options": []
+        },
+        "description": "A supernatural creature from another dimension such as an angel, demon, or elemental manifests in a physical form within immediate range. The creature acts according to its nature, usually by attacking a nearby foe that is opposed to its own ethos (an angel would attack a demon or necromancer, a demon would attack an innocent or a holy priest, and an elemental would attack a creature of the opposing element). The creature remains until you use a ten-minute or longer recovery, then fades away (although a demon or elemental might remain for a while to cause trouble). Effort: Make the supernatural creature understand you and obey your verbal instructions. Action to initiate. Angel: level 5; health 15; physical, magical, or energy attack inflicts 6 damage; flies a short distance each round Demon: level 5; health 25; physical, magical, or energy attack inflicts 6 damage; flies a short distance each round Elemental: level 5; health 25; physical or energy attack inflicts 5 damage; amorphous form can pass through spaces as small as 1 foot (30 cm); air elemental flies a long distance each round; earth elemental has Armor 3; fire elemental has Armor 10 against fire; water elemental swims a long distance each round"
       }
     ]
   },
   "folder": null,
   "sort": 0,
-  "ownership": { "default": 0 },
+  "ownership": {
+    "default": 0
+  },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

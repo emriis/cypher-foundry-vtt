@@ -1,0 +1,251 @@
+{
+  "_id": "employsmagFC84B3",
+  "_key": "!items!employsmagFC84B3",
+  "name": "Manipule le Magnétisme",
+  "type": "focus",
+  "img": "icons/magic/lightning/bolt-strike-blue.webp",
+  "system": {
+    "description": "<p>You command metal and the power of magnetism.</p>",
+    "abilities": [
+      {
+        "id": "craft-metal",
+        "name": "Façonneur·euse de métal",
+        "tier": 1,
+        "prerequisites": [
+          "sense-metal"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu peux manipuler le métal sans effort, te permettant de façonner des objets métalliques sans chaleur. Tu gagnes aussi un atout pour toutes les tâches liées au travail du métal."
+      },
+      {
+        "id": "move-metal",
+        "name": "Déplacer le métal",
+        "tier": 1,
+        "prerequisites": [
+          "move-metal"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Jusqu’à ta prochaine récupération d’une heure ou plus, tu peux exercer une force sur les objets métalliques à portée courte, comme action. Chaque utilisation nécessite une action et te permet de déplacer un objet fait de métal ou qui en contient à distance. Tu ne peux déplacer que ce que tu pourrais physiquement manipuler avec tes mains : soulever un petit objet métallique, tirer un objet vers toi, déplacer un objet lourd (comme un meuble) d’une distance immédiate, etc. Ce pouvoir manque d’un contrôle fin permettant l’utilisation d’une arme ou pour déplacer des objets avec suffisament de vitesse pour pouvoir en faire une attaque directe. Cependant tu peux : saisir un objet métallique dans la main d’une créature, pousser une créature portant une armure métallique d’une distance immédiate, entraver ses attaques ou défenses en appliquant une pression sur ses membres ou armes métalliques. Affecter une créature réticente (ou son équipement) nécessite une attaque d’Intellect. Tu peux aussi créer une perturbation magnétique à portée courte, entravant de deux paliers les appareils électroniques, machines électriques ou machines‑créatures (robots) pendant un round."
+      },
+      {
+        "id": "sense-metal",
+        "name": "Détecter le métal",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Tu sais immédiatement s’il existe du métal ferromagnétique à portée courte, ainsi que la quantité, le type et la localisation générale."
+      },
+      {
+        "id": "electromagnetic-eyes",
+        "name": "Yeux électromagnétiques",
+        "tier": 2,
+        "prerequisites": [
+          "sense-metal"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Tu perçois ton environnement grâce aux champs électromagnétiques qui remplissent invisiblement chaque lieu. Tu peux « voir » jusqu’à portée longue, même dans l’obscurité totale. Tu gagnes un atout pour les tâches de perception pour : repérer des créatures cachées (leurs corps produisent un champ), repérer objets métalliques, champs magnétiques, dispositifs électriques, voir normalement les créatures autrement invisibles. Tu sais toujours où se trouve le nord (si ta planète a des pôles magnétiques). L’effet dure jusqu’à ta prochaine récupération de dix minutes ou plus."
+      },
+      {
+        "id": "electromagnetically-charge",
+        "name": "Charge électromagnétique",
+        "tier": 2,
+        "prerequisites": [
+          "move-metal"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Tu canalises l’énergie magnétique ambiante pour te soigner, réduisant une blessure : tu soignes une blessure mineure ou réduis une blessure modérée → mineure ou une blessure majeure → modérée. Alternativement, tu peux également recharger un appareil électrique portable (téléphone, radio, etc.) dont la batterie est à plat avec cette aptitude. À chaque utilisation de cette aptitude, le coût augmente de +1 Intellect, puis revient à 1 après une récupération."
+      },
+      {
+        "id": "repel-metal",
+        "name": "Repousser le métal",
+        "tier": 2,
+        "prerequisites": [
+          "craft-metal"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Grâce à ta maîtrise du magnétisme, tu as un atout pour toutes les tâches de Blocage ou Esquive contre les attaques contenant du métal : balles, couteaux lancés, flèches ou carreaux métalliques, etc."
+      },
+      {
+        "id": "guide-bolt",
+        "name": "Projectiles guidés",
+        "tier": 3,
+        "prerequisites": [
+          "move-metal",
+          "repel-metal"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Lorsque tu fais une attaque utilisant une munition métallique (balle, couteau lancé, carreau, flèche à pointe métallique…) sur une cible à portée courte, tu peux en corriger la trajectoire et en augmenter la vitesse : gain d’un atout, +3 dégâts supplémentaires. Tu peux utiliser cette aptitude une fois par round. Effort : Affecter l’attaque d’un·e allié·e si elle passe à portée courte de toi."
+      },
+      {
+        "id": "rend-metal",
+        "name": "Déchirer le métal",
+        "tier": 3,
+        "prerequisites": [
+          "move-metal",
+          "craft-metal"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Tu déchires, perce ou fais éclater instantanément un objet métallique jusqu’à niveau 3, à portée courte. Tu dois voir l’objet et il ne peut pas dépasser la moitié de ta taille (ou être une portion de cette taille maximum contenu dans un objet plus grand). Tu détruis l’objet. Optionnellement, il explose en shrapnel, infligeant 1 dégât par niveau à toutes les créatures à portée immédiate (jets séparés d’attaque d’Intellect). Affecter l’équipement d’une créature réticente nécessite une attaque d’Intellect, facilitée de deux paliers. Effort : augmenter le niveau maximal destructible de +1."
+      },
+      {
+        "id": "magnetic-field",
+        "name": "Champ magnétique",
+        "tier": 4,
+        "prerequisites": [
+          "repel-metal",
+          "guide-bolt"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Un champ magnétique autour de toi projette au sol tous les projectiles métalliques à distance : flèches, balles, couteaux, carreaux, etc. Il disperse aussi les attaques d’énergie du spectre électromagnétique : électricité, rayons X, lasers… Tu es immunisé·e à ces attaques pendant un round. Tu dois être conscient·e de l’attaque pour la contrer."
+      },
+      {
+        "id": "magnetize",
+        "name": "Magnétiser",
+        "tier": 4,
+        "prerequisites": [
+          "rend-metal"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Tu touches un objet (métallique ou non) pas plus grand que toi pour le magnétiser définitivement avec une force niveau 5, ou démagnétiser un objet de force magnétique niveau 5 ou moins. Un objet magnétisé attire tout métal à moins de 30 cm. Arracher cet objet une fois attiré nécessite une tâche de Puissance réussie. Magnétiser ou démagnétiser un appareil électronique le détruit s’il est de niveau 5 ou moins. Tu peux utiliser tes aptitudes (comme Déplacer le métal, Commander le métal) sur un objet magnétisé. Alternativement, tu peux créer un champ répulsif qui repousse les objets métalliques de niveau 3 ou moins (un champ de force pour le métal). Effort : augmenter le niveau d’une nouvelle force magnétique de +1 ou augmenter le niveau maximal que tu peux démagnétiser de +1."
+      },
+      {
+        "id": "command-metal",
+        "name": "Commander le métal",
+        "tier": 5,
+        "prerequisites": [
+          "magnetize",
+          "rend-metal"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Tu remodèles selon tes souhaits n’importe quel objet métallique à portée courte. Sa masse totale peut dépasser la tienne. Tu peux modeler plusieurs objets tant que leur masse combinée reste ≤ la tienne. Tu peux aussi les fusionner. Tu peux : détruire un objet métallique (comme avec Déchirer le métal) ou le refaçonner grossièrement (avec plus de délicatesse et de précision si tu réussis une tâche d’artisanat). Tu peux ensuite déplacer l’objet remodelé où tu veux dans la portée. Par exemple, tu peux utiliser plusieurs boucliers ou panneaux métallique, les fusionner et utiliser le résultat pour bloquer une ouverture. Tu peux aussi attaquer une créature à portée courte : armure qui se resserre, fragments métalliques projetés, etc. Indépendamment de la forme qu’elle prend, l’attaque est une attaque d’Intellect infligeant 7 dégâts."
+      },
+      {
+        "id": "iron-in-the-blood",
+        "name": "Fer dans le sang",
+        "tier": 5,
+        "prerequisites": [
+          "move-metal",
+          "rend-metal"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu as affiné ton sens magnétique au point de sentir et manipuler le fer présent dans la chair et le sang. Tu peux maintenant : déplacer des créatures avec Déplacer le métal, les attaquer directement avec Déchirer le métal (5 dégâts) ou Commander le métal (7 dégâts). Tes attaques d’Intellect sont entravées lorsque tu fais cela."
+      },
+      {
+        "id": "diamagnetism",
+        "name": "Diamagnétisme",
+        "tier": 6,
+        "prerequisites": [
+          "magnetize",
+          "iron-in-the-blood"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu magnétises n’importe quel objet non métallique à portée courte afin de le rendre sensible à toutes tes autres aptitudes magnétiques, comme si tu utilisais Magnétiser à distance et instantanément. (magnétisation permanente possible en dépensant le coût d’Intellect normal de Magnétiser). Ainsi : avec Déplacer le métal, tu peux déplacer n’importe quel objet, avec Repousser le métal, tu as un atout pour tous les jets de Blocage et d’Esquive, même contre des attaques sans métal (les attaques d’énergie se courbent). Et ainsi de suite."
+      },
+      {
+        "id": "iron-punch",
+        "name": "Poing de fer",
+        "tier": 6,
+        "prerequisites": [
+          "command-metal",
+          "iron-in-the-blood"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 8,
+          "options": []
+        },
+        "description": "Tes attaques à mains nues infligent +3 dégâts."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

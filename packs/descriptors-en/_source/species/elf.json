@@ -1,0 +1,34 @@
+{
+  "_id": "SpcFntElf0000001",
+  "_key": "!items!SpcFntElf0000001",
+  "name": "Elf",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "category": "species",
+    "genres": ["fantasy"],
+    "grantsSecondDescriptor": false,
+    "statOptions": [],
+    "statAmount": 0,
+    "skillOptions": ["Stealth"],
+    "benefits": [
+      {
+        "name": "No GM Intrusion on Intellect Defense",
+        "description": "<p>You don't get a GM intrusion if you roll a 1 on an Intellect defense roll.</p>"
+      },
+      {
+        "name": "Bow Damage",
+        "description": "<p>You inflict +1 damage with bows.</p>"
+      }
+    ],
+    "description": "<p>You haunt the woodlands and deep, natural realms, as your people have for millennia.</p><p><strong>You gain the following characteristics:</strong></p><ul><li>You don't get a GM intrusion if you roll a 1 on an Intellect defense roll.</li><li>You are trained in stealth (if in forested areas).</li><li>You inflict +1 damage with bows.</li></ul>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

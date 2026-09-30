@@ -24,38 +24,52 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "blast",
         "name": "Décharge",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "Tu émets une décharge d’énergie à courte portée, infligeant **4 dégâts** à une cible avec un jet d’attaque d’Intellect réussi. Détermine avec ton·ta MJ le **type d’énergie** (feu, froid, électricité, etc.). En te concentrant quelques rounds, tu peux utiliser cette énergie pour découper un matériau de niveau 5 ou moins, d’au plus 30 cm d’épaisseur. Chaque niveau d’Effort augmente de 1 le niveau du matériau que tu peux trancher. Effort : Tu obtiens un contrôle précis de l’effet, te permettant d’en moduler l’intensité dans la portée immédiate (réchauffer une zone, cuire un aliment sans le brûler, produire une lumière vive…). Le contrôle dure jusqu’à ta prochaine récupération de dix minutes ou plus. Action pour attaquer ; Dernière action pour initier le contrôle précis ou la découpe."
+        "description": "You emit a short-range blast of energy inflicting 4 damage on a target with a successful attack roll. Work with the GM to determine the type of energy comprising your blast. You can tune the effect to make it hot enough to slice through material of up to level 5 that's no more than 1 foot (30 cm) thick if given a few rounds to concentrate on doing so. If you have another damaging attack ability (from your focus or your type), you can use Blast to augment that ability, increasing its damage by 1. Effort: Gain fine control over the effect until you use a ten-minute or longer recovery, varying the intensity as you wish within immediate range; for instance, you could use it to warm the area, cook food without burning it, provide bright light in the area, and so on. Increase the maximum level of material that you can cut through by 1. Action to attack; Last action to initiate fine control; enabler to augment another attack ability. The type of energy you release could be fire, in which case you might call this ability Blast of Fire. Alternatively, your focus might suggest the energy type. For instance, this ability could produce a ray of electricity—especially if your focus is Rides the Lightning—and be called Blast of Lightning."
       },
       {
+        "id": "mage-armor",
         "name": "Armure de Mage",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "Un champ d’énergie invisible t’entoure jusqu’à ta prochaine récupération de dix heures. Tu peux tenter de bloquer une attaque avec un **jet de défense d’Intellect facilité**, au lieu d’un jet de défense de Puissance. En cas de réussite, tu réduis la gravité de la blessure d’un niveau. Au rang 3, ton jet de défense d’Intellect est facilité de deux paliers au total. Action"
+        "description": "Un champ d'énergie invisible t'entoure jusqu'à ta prochaine récupération de dix heures. Tu peux tenter de bloquer une attaque avec un jet de défense d'Intellect facilité, au lieu d'un jet de défense de Puissance. En cas de réussite, tu réduis la gravité de la blessure d'un niveau. Au rang 3, ton jet de défense d'Intellect est facilité de deux paliers au total."
       },
       {
+        "id": "prepare-spell",
         "name": "Préparation de Sort",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Chaque jour, tu peux choisir un effet magique différent et le lancer comme un sort. Choisis un **cypher manifesté de faible puissance**. Après dix minutes de préparation, tu gagnes l’effet de ce cypher sous forme de sort (une Aptitude de personnage). Tu peux lancer ce sort en **action**, pour un coût de **2 Intellect**. Ce sort **ne compte pas** dans ta limite de cyphers et **n’est pas perdu** après utilisation. Lors d’une récupération de dix heures, tu peux changer le cypher choisi. Au rang 3, tu peux choisir un cypher de faible ou moyenne puissance. Lancer un sort de cypher moyen coûte 4 Intellect. Au rang 6, tu peux choisir un cypher de faible, moyenne ou grande puissance. Lancer un sort de cypher puissant coûte 6 Intellect. Tu peux sélectionner cette aptitude jusqu’à trois fois, te permettant de préparer un, deux ou trois cyphers par jour sous forme de sorts. Dix minutes pour préparer un cypher en sort ; Action pour lancer le sort."
+        "description": "Chaque jour, tu peux choisir un effet magique différent et le lancer comme un sort. Choisis un cypher manifesté de faible puissance. Après dix minutes de préparation, tu gagnes l'effet de ce cypher sous forme de sort (une Aptitude de personnage). Tu peux lancer ce sort en action, pour un coût de 2 Intellect. Ce sort ne compte pas dans ta limite de cyphers et n'est pas perdu après utilisation. Lors d'une récupération de dix heures, tu peux changer le cypher choisi. Au rang 3 : cypher de faible ou moyenne puissance (coût 4 Intellect). Au rang 6 : cypher de faible, moyenne ou grande puissance (coût 6 Intellect). Tu peux sélectionner cette aptitude jusqu'à trois fois."
       }
     ],
-    "statOptions": ["intellect"],
-    "description": "<p>Un Type de Dungeon Fantasy centré sur l'archétype mage, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Dungeon Fantasy. Réserves principales : Intellect.</em></p>"
+    "statOptions": [
+      "intellect"
+    ],
+    "description": "<p>You cast spells of blasting fire, magical protection, and force at a distance. As a spellcaster, you're always on the lookout for new arcane secrets, magic lore, and spells you can add to your repertoire. You understand that the most powerful spells—those that can alter a creature's form, open pathways to other worlds, or kill with a single word—are jealously guarded secrets even among friendly spellcasters, including between master and apprentice. But that only makes you willing to brave nearly any threat to search for such things, even in dangerous locations far below ground. You're happy to rely on the physical protection provided by others in your group who are more armed and armored, leaving more esoteric threats and puzzles to your elevated talents. And any time potentially enchanted loot or treasure is discovered, others in the group are likely hoping you, with your intelligence and experience, can explain their function. That's not to say you're not a threat in your own right—you know at least one spell capable of magically blasting foes, and if you survive, you hope to learn even more.</p>"
   },
   "folder": "N6LoBZte2sRtJhu7",
   "sort": 0,
@@ -64,7 +78,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

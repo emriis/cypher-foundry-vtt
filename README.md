@@ -153,9 +153,10 @@ l'effet via `CypherActor#applyDescriptor` :
   personnage de l'en-tête ;
 - un message de tchat récapitule ce qui a été accordé.
 
-Le texte descriptif ("flavor") de chaque entrée est une reformulation originale et non une
-reproduction du texte du CRD ; seules les données mécaniques (bonus de Réserve, choix de
-compétences) suivent fidèlement le CRD, comme le permet la Cypher Open License.
+Le texte descriptif de chaque entrée reprend le texte intégral correspondant du CRD anglais,
+sous la Cypher Open License. En français, la traduction complète du Character Book est utilisée
+lorsqu'elle existe ; sinon, le texte anglais est recopié à l'identique. Les données mécaniques,
+noms et identifiants restent alignés entre les deux langues.
 
 **Maintenir/étendre les sources** : modifiez directement les fichiers JSON appariés dans
 `packs/descriptors-{fr,en}/_source/`, puis exécutez les tests de compendium. Pour recompiler en
@@ -179,8 +180,10 @@ silencieusement.)
 Les Types du document de référence sont maintenus dans deux compendiums bilingues, regroupés dans
 les dossiers de langue `Français` et `English` grâce à `packFolders`. Les 55 Types couvrent les
 sections Fantasy, Science-fiction et Super-héros du document, avec leurs variantes de sous-genre.
-Les noms français sont des traductions de travail à relire ; les descriptions sont des résumés
-originaux et non une copie du document source.
+Le CRD anglais est l'autorité absolue pour le texte intégral des descriptions. En français, une
+traduction complète du Character Book est utilisée lorsqu'elle existe ; sinon, le texte anglais
+est recopié à l'identique. Les noms, identifiants et données mécaniques ne sont pas modifiés par
+la traduction.
 
 Modifiez directement les paires correspondantes dans `packs/types-{fr,en}/_source/`, puis
 validez-les avec :
@@ -381,8 +384,10 @@ one, e.g. Gloomy) and the skill (from the listed options, or free text to cover 
 "...or similar" wording), then applies the effect directly via `CypherActor#applyDescriptor`: a
 Pool bonus, a newly trained (or advanced) Skill item, the Descriptor's name written into
 `system.descriptor` (already shown in the header's character sentence), and a chat message
-summarizing the grant. Flavor text is an original rewrite, not CRD text reproduction — only the
-mechanical data (Pool bonus, skill choices) follows the CRD, as the Cypher Open License allows.
+summarizing the grant. Descriptions use the complete corresponding English CRD text under the
+Cypher Open License. The French pack uses the complete Character Book translation when available;
+otherwise it stores the English text verbatim. Names, identifiers, and mechanical data remain
+aligned between languages.
 
 Edit the paired source JSON directly under `packs/descriptors-{en,fr}/_source/`, run
 `node --test tests/compendium-sources.test.mjs`, then recompile a loadable LevelDB pack with

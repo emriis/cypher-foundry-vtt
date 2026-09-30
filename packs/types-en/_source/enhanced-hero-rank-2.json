@@ -24,38 +24,53 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "no-need-for-weapons",
         "name": "No Need for Weapons",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
         "description": "Your unarmed attacks (such as punches, kicks, elbows, or knees) inflict an additional 2 damage."
       },
       {
+        "id": "press-advantage",
         "name": "Press Advantage",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "When your damage-dealing attack roll is 17 or higher, you deal +1 damage with the attack. If you roll a 19 or 20, you inflict the extra damage regardless of whether you choose to deal additional damage or take a special minor or major effect. Successive Attack (2 Speed or Might): Once per turn if you take down a foe, you can immediately make another attack on that same turn against a new foe within your reach as an extra action on your turn. You can use this ability with melee attacks and ranged attacks."
+        "description": "When your damage-dealing attack roll is 17 or higher, you deal +1 damage with the attack. If you roll a 19 or 20, you inflict the extra damage regardless of whether you choose to deal additional damage or take a special minor or major effect. Successive Attack (2 Speed or Might): Once per turn if you take down a foe, you can immediately make another attack on that same turn against a new foe within your reach as an extra action on your turn. You can use this ability with melee attacks and ranged attacks. Enabler."
       },
       {
+        "id": "superheroics",
         "name": "Superheroics",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Choose one Pool: Might, Speed, or Intellect. For tasks using your chosen Pool, add your rank to the amount of Effort you can apply, allowing you to apply additional levels of Effort to tasks in that Pool. In addition, you can choose to push yourself so hard that you take a moderate wound in exchange for two free levels of Effort you can apply to tasks in your chosen Pool (as long as this doesn’t push you past your Effort limit for that Pool). Finally, add your rank as a bonus to your recovery, with those points going only into the Pool you have chosen. Powerstar (Rank 2) You have a single, often spectacular, core superpower. Beams of energy shoot from your eyes, the power of magnetism is yours to command, your flesh can burst into flames, you can generate lightning, or something equally amazing. This ability forms the backbone of your heroic identity, allowing you to attempt incredible feats, though sometimes posing unique challenges in controlling your gift in all circumstances. With a Powerstar on the team, the obstacles villains throw your way are easier to break, burn, or otherwise demolish. Most heroes welcome you into their ranks (or in a temporary team-up), as long as you can keep your volatile abilities leashed. Background Thinking it was your patriotic duty to help round up unregistered superhumans, you did your part. Then you discovered you were probably on the wrong side of history, and now you work against the agencies targeting those with abilities. Your secret identity was discovered by a journalist a month ago, but they’ve kept quiet so far. When the war broke out, it was your patriotic duty to serve. The war’s long over, but you still feel a duty to protect. A year ago your power flared out of control and you nearly hurt innocent bystanders. After almost losing your abilities through disuse, you swore to yourself to get out there, make a difference, and, most importantly, use your power well (and often). The only way to stop a villain you fought recently was to kill them. But you never found the body. You were part of a superteam that disbanded after a series of setbacks six months earlier. Your sibling’s child is showing signs of manifesting powers akin to your own."
+        "description": "Choose one Pool: Might, Speed, or Intellect. For tasks using your chosen Pool, add your rank to the amount of Effort you can apply, allowing you to apply additional levels of Effort to tasks in that Pool. In addition, you can choose to push yourself so hard that you take a moderate wound in exchange for two free levels of Effort you can apply to tasks in your chosen Pool (as long as this doesn't push you past your Effort limit for that Pool). Finally, add your rank as a bonus to your recovery, with those points going only into the Pool you have chosen."
       }
     ],
-    "statOptions": ["might", "speed"],
-    "description": "<p>A Superheroes Type focused on enhanced hero (rank 2) archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Superheroes. Subgenre: Superheroes. Primary Pools: might, speed.</em></p>"
+    "statOptions": [
+      "might",
+      "speed"
+    ],
+    "description": "<p>You're more than human. Something made you that way—your abilities might be due to cutting-edge cybernetics; a freak accident, such as exposure to exotic energies or chemicals; an experimental serum or genetic therapy, unlocking latent potential or rewriting your very DNA; an alien artifact or mystical ancient relic; or something else. Whatever the source of your enhancement, your abilities allow you to perform feats that are impossible for normal people. Your abilities include those that lend themselves to combat, which means that a team-up with others usually has you among those taking the brunt of any hostilities, protecting allies whose enhancements aren't quite as fearsome as your own.</p>"
   },
   "folder": "jyQmvn0EhqJ84yoX",
   "sort": 0,
@@ -64,7 +79,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

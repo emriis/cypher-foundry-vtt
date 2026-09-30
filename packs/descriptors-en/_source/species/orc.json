@@ -1,0 +1,34 @@
+{
+  "_id": "SpcFntOrc0000001",
+  "_key": "!items!SpcFntOrc0000001",
+  "name": "Orc",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "category": "species",
+    "genres": ["fantasy"],
+    "grantsSecondDescriptor": false,
+    "statOptions": [],
+    "statAmount": 0,
+    "skillOptions": ["Intimidation"],
+    "benefits": [
+      {
+        "name": "Extra Minor Wound",
+        "description": "<p>You can take one more minor wound than normal.</p>"
+      },
+      {
+        "name": "Heavy Melee Damage",
+        "description": "<p>You inflict +1 damage with heavy melee weapons.</p>"
+      }
+    ],
+    "description": "<p>Orcs are a proud, if aggressive, people with a sense of honor.</p><p><strong>You gain the following characteristics:</strong></p><ul><li>You can take one more minor wound than normal.</li><li>You are trained in intimidation (except against other orcs).</li><li>You inflict +1 damage with heavy melee weapons.</li></ul>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}
