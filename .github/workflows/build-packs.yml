@@ -26,7 +26,7 @@ jobs:
           node-version: 22
 
       - name: Install Foundry CLI
-        run: npm install --no-save @foundryvtt/foundryvtt-cli
+        run: npm install --no-save @foundryvtt/foundryvtt-cli@3.0.4
 
       - name: Validate compendium sources
         run: node --test tests/compendium-sources.test.mjs
