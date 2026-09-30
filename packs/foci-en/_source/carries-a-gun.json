@@ -1,6 +1,6 @@
 {
-  "_id": "Carr135AGun2026X",
-  "_key": "!items!Carr135AGun2026X",
+  "_id": "carriesaguA8BEFF",
+  "_key": "!items!carriesaguA8BEFF",
   "name": "Carries a Gun",
   "type": "focus",
   "img": "icons/weapons/guns/gun-pistol.webp",
@@ -14,7 +14,11 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "See farther and ignore common visibility penalties."
       },
       {
@@ -24,7 +28,11 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Hide, draw, and perform tricks with a one-handed firearm."
       },
       {
@@ -34,124 +42,213 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Use guns freely and deal extra damage."
       },
       {
         "id": "careful-shot",
         "name": "Careful Shot",
         "tier": 2,
-        "prerequisites": ["keen-eye", "concealed-carry", "excellent-gunner"],
+        "prerequisites": [
+          "keen-eye",
+          "concealed-carry",
+          "excellent-gunner"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Use Speed or Intellect Effort to increase ranged damage."
       },
       {
         "id": "reload",
         "name": "Reload",
         "tier": 2,
-        "prerequisites": ["keen-eye", "concealed-carry", "excellent-gunner"],
+        "prerequisites": [
+          "keen-eye",
+          "concealed-carry",
+          "excellent-gunner"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "speed", "amount": 1, "options": [] },
+        "cost": {
+          "stat": "speed",
+          "amount": 1,
+          "options": []
+        },
         "description": "Reload a firearm as an extra action."
       },
       {
         "id": "sneak-attack",
         "name": "Sneak Attack",
         "tier": 2,
-        "prerequisites": ["concealed-carry", "excellent-gunner"],
+        "prerequisites": [
+          "concealed-carry",
+          "excellent-gunner"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "speed", "amount": 1, "options": [] },
+        "cost": {
+          "stat": "speed",
+          "amount": 1,
+          "options": []
+        },
         "description": "A light weapon attack gains damage against a vulnerable foe."
       },
       {
         "id": "damage-dealer",
         "name": "Damage Dealer",
         "tier": 3,
-        "prerequisites": ["careful-shot", "reload", "spray"],
+        "prerequisites": [
+          "careful-shot",
+          "reload",
+          "spray"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Gun attacks deal additional damage."
       },
       {
         "id": "spray",
         "name": "Spray",
         "tier": 3,
-        "prerequisites": ["reload", "sneak-attack", "damage-dealer"],
+        "prerequisites": [
+          "reload",
+          "sneak-attack",
+          "damage-dealer"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "speed", "amount": 2, "options": [] },
+        "cost": {
+          "stat": "speed",
+          "amount": 2,
+          "options": []
+        },
         "description": "Trade damage for an eased attack with a rapid-fire weapon."
       },
       {
         "id": "special-shot",
         "name": "Special Shot",
         "tier": 4,
-        "prerequisites": ["damage-dealer", "spray"],
+        "prerequisites": [
+          "damage-dealer",
+          "spray"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Reduce gun damage to create a precise special effect."
       },
       {
         "id": "snap-shot",
         "name": "Snap Shot",
         "tier": 4,
-        "prerequisites": ["damage-dealer", "spray"],
+        "prerequisites": [
+          "damage-dealer",
+          "spray"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Make a hindered second firearm attack."
       },
       {
         "id": "arc-spray",
         "name": "Arc Spray",
         "tier": 5,
-        "prerequisites": ["special-shot", "sniper"],
+        "prerequisites": [
+          "special-shot",
+          "sniper"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "speed", "amount": 3, "options": [] },
+        "cost": {
+          "stat": "speed",
+          "amount": 3,
+          "options": []
+        },
         "description": "Attack three adjacent targets with a rapid-fire weapon."
       },
       {
         "id": "sniper",
         "name": "Sniper",
         "tier": 5,
-        "prerequisites": ["snap-shot", "arc-spray"],
+        "prerequisites": [
+          "snap-shot",
+          "arc-spray"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Double gun range and improve damage at extreme distance."
       },
       {
         "id": "lethal-capability",
         "name": "Lethal Capability",
         "tier": 6,
-        "prerequisites": ["arc-spray", "sniper", "shot-collision"],
+        "prerequisites": [
+          "arc-spray",
+          "sniper",
+          "shot-collision"
+        ],
         "repeatable": true,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Gain major damage with one chosen attack type."
       },
       {
         "id": "shot-collision",
         "name": "Shot Collision",
         "tier": 6,
-        "prerequisites": ["arc-spray", "sniper", "lethal-capability"],
+        "prerequisites": [
+          "arc-spray",
+          "sniper",
+          "lethal-capability"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "speed", "amount": 4, "options": [] },
+        "cost": {
+          "stat": "speed",
+          "amount": 4,
+          "options": []
+        },
         "description": "Shoot down an incoming projectile."
       }
     ]
   },
   "folder": null,
   "sort": 0,
-  "ownership": { "default": 0 },
+  "ownership": {
+    "default": 0
+  },
   "flags": {
     "cypher": {
       "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."

@@ -1,0 +1,150 @@
+{
+  "_id": "talkstomac4E0F3A",
+  "_key": "!items!talkstomac4E0F3A",
+  "name": "Parle aux machines",
+  "type": "focus",
+  "img": "icons/commodities/tech/circuit-board.webp",
+  "system": {
+    "description": "<p>Un Focus pour un personnage qui s’interface avec les appareils électroniques et commande les machines par télépathie sans fil.</p>",
+    "abilities": [
+      {
+        "id": "charm-machine",
+        "name": "Charmer la machine",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Convaincs une machine non intelligente à portée immédiate de t’apprécier grâce à une attaque d’Intellect réussie."
+      },
+      {
+        "id": "control-electric-device",
+        "name": "Contrôler un appareil électrique",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Contrôle ou perturbe un appareil électrique à longue portée, en considérant tout jet d’Intellect inférieur à 12 comme un 12."
+      },
+      {
+        "id": "friend-to-intelligent-machines",
+        "name": "Ami·e des machines intelligentes",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Gagne un atout pour persuader, interagir positivement avec ou pirater une machine intelligente, une fois par machine."
+      },
+      {
+        "id": "coaxing-power",
+        "name": "Forcer la puissance",
+        "tier": 2,
+        "prerequisites": ["charm-machine"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Augmente la puissance ou la fonction d’une machine d’un niveau jusqu’à une récupération d’une heure."
+      },
+      {
+        "id": "locate-machine",
+        "name": "Localiser une machine",
+        "tier": 2,
+        "prerequisites": ["control-electric-device"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Retrouve une machine identifiée à distance et perçois sa direction ou sa distance en maintenant régulièrement la trace."
+      },
+      {
+        "id": "machine-control",
+        "name": "Contrôle machine",
+        "tier": 2,
+        "prerequisites": ["friend-to-intelligent-machines"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Commande une machine ou en désactive plusieurs avec des attaques d’Intellect séparées, en considérant tout jet inférieur à 6 comme un 6."
+      },
+      {
+        "id": "disable-mechanism",
+        "name": "Désactiver un mécanisme",
+        "tier": 3,
+        "prerequisites": ["coaxing-power"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "description": "Pirate une machine proche pour entraver ses tâches, réduire sa vitesse, l’empêcher d’agir un round ou réduire ses dégâts."
+      },
+      {
+        "id": "quick-control",
+        "name": "Contrôle rapide",
+        "tier": 3,
+        "prerequisites": ["locate-machine"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "description": "Ordonne à une machine d’accomplir une action à son prochain tour grâce à une attaque d’Intellect."
+      },
+      {
+        "id": "compile-robotic-offense",
+        "name": "Compilation robotique offensive",
+        "tier": 4,
+        "prerequisites": ["disable-mechanism"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Gagne un atout à une attaque contre un robot ou une machine intelligente si tu l’effectues comme Dernière action."
+      },
+      {
+        "id": "machine-companion",
+        "name": "Compagnon mécanique",
+        "tier": 4,
+        "prerequisites": ["quick-control"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Acquiers un suivant machine intelligent de niveau 3 qui agit selon tes directives et peut être restauré avec tes ressources."
+      },
+      {
+        "id": "information-gathering",
+        "name": "Collecte d’informations",
+        "tier": 5,
+        "prerequisites": ["compile-robotic-offense", "machine-companion"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 5, "options": [] },
+        "description": "Communique sans fil avec les machines non intelligentes dans un rayon de 1,5 km et pose-leur une question simple."
+      },
+      {
+        "id": "improved-machine-companion",
+        "name": "Compagnon mécanique amélioré",
+        "tier": 6,
+        "prerequisites": ["information-gathering"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Acquiers un suivant machine intelligent de niveau 5, en améliorant ou conservant un compagnon inférieur selon ton choix."
+      },
+      {
+        "id": "recompile-machine",
+        "name": "Recompiler une machine",
+        "tier": 6,
+        "prerequisites": ["information-gathering"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 8, "options": [] },
+        "description": "Pirate à longue portée une machine de niveau 4 ou moins pour la briquer, la recruter temporairement ou la faire exploser."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original fondé sur le Cypher Reference Document, créé sous la Cypher Open License."
+    }
+  }
+}

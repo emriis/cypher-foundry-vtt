@@ -1,6 +1,6 @@
 {
-  "_id": "F1ghtsD1rty26XYZ",
-  "_key": "!items!F1ghtsD1rty26XYZ",
+  "_id": "fightsdirtFF551D",
+  "_key": "!items!fightsdirtFF551D",
   "name": "Fights Dirty",
   "type": "focus",
   "img": "icons/skills/melee/strike-dagger-blood-red.webp",
@@ -11,20 +11,32 @@
         "id": "dirty-trick",
         "name": "Dirty Trick",
         "tier": 1,
-        "prerequisites": ["dirty-trick"],
+        "prerequisites": [
+          "dirty-trick"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
         "description": "Distract a foe so their defense against your follow-up melee attack is hindered, or conceal another action with a bluff."
       },
       {
         "id": "go-for-the-eyes",
         "name": "Go for the Eyes",
         "tier": 1,
-        "prerequisites": ["go-for-the-eyes"],
+        "prerequisites": [
+          "go-for-the-eyes"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "speed", "amount": 2, "options": [] },
+        "cost": {
+          "stat": "speed",
+          "amount": 2,
+          "options": []
+        },
         "description": "Make a hindered melee attack to impair a foe's vision until their next ten-minute recovery."
       },
       {
@@ -34,50 +46,77 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "speed", "amount": 1, "options": [] },
+        "cost": {
+          "stat": "speed",
+          "amount": 1,
+          "options": []
+        },
         "description": "Your melee attacks deal 1 additional damage through scratching, kicking, or biting."
       },
       {
         "id": "despite-my-wounds",
         "name": "Despite My Wounds",
         "tier": 2,
-        "prerequisites": ["go-for-the-eyes"],
+        "prerequisites": [
+          "go-for-the-eyes"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "While badly wounded, gain one free reroll on an action each round."
       },
       {
         "id": "sneak-attack",
         "name": "Sneak Attack",
         "tier": 2,
-        "prerequisites": ["dirty-trick"],
+        "prerequisites": [
+          "dirty-trick"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "speed", "amount": 1, "options": [] },
+        "cost": {
+          "stat": "speed",
+          "amount": 1,
+          "options": []
+        },
         "description": "A light weapon attack gains 5 additional damage when the target is surprised, distracted, or unable to act."
       },
       {
         "id": "when-the-deal-bombs",
         "name": "When the Deal Bombs",
         "tier": 2,
-        "prerequisites": ["dirty-trick"],
+        "prerequisites": [
+          "dirty-trick"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Reduce the first wound from someone who turns hostile after a successful positive interaction; at tier 3, ignore it entirely."
       },
       {
         "id": "fast-kill",
         "name": "Fast Kill",
         "tier": 3,
-        "prerequisites": ["sneak-attack"],
+        "prerequisites": [
+          "sneak-attack"
+        ],
         "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "choice",
           "amount": 2,
-          "options": ["might", "speed"]
+          "options": [
+            "might",
+            "speed"
+          ]
         },
         "description": "A successful melee or ranged attack deals 4 additional damage, but cannot be used in consecutive rounds."
       },
@@ -85,77 +124,124 @@
         "id": "incapacitating-attack",
         "name": "Incapacitating Attack",
         "tier": 3,
-        "prerequisites": ["go-for-the-eyes"],
+        "prerequisites": [
+          "go-for-the-eyes"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "speed", "amount": 4, "options": [] },
+        "cost": {
+          "stat": "speed",
+          "amount": 4,
+          "options": []
+        },
         "description": "A successful attack leaves the target prone, hindered, and barely mobile until recovery or aid."
       },
       {
         "id": "feint",
         "name": "Feint",
         "tier": 4,
-        "prerequisites": ["dirty-trick", "sneak-attack"],
+        "prerequisites": [
+          "dirty-trick",
+          "sneak-attack"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "speed", "amount": 2, "options": [] },
+        "cost": {
+          "stat": "speed",
+          "amount": 2,
+          "options": []
+        },
         "description": "Create a diversion to gain an asset and deal 4 additional damage with a melee attack next round."
       },
       {
         "id": "mind-games",
         "name": "Mind Games",
         "tier": 4,
-        "prerequisites": ["when-the-deal-bombs"],
+        "prerequisites": [
+          "when-the-deal-bombs"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
         "description": "Use lies, mockery, and vicious language to make a foe lose their next turn and hinder their following tasks."
       },
       {
         "id": "knock-out",
         "name": "Knock Out",
         "tier": 5,
-        "prerequisites": ["incapacitating-attack"],
+        "prerequisites": [
+          "incapacitating-attack"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "might", "amount": 5, "options": [] },
+        "cost": {
+          "stat": "might",
+          "amount": 5,
+          "options": []
+        },
         "description": "A hindered melee attack can render a level 3 or lower foe unconscious instead of dealing damage."
       },
       {
         "id": "using-the-environment",
         "name": "Using the Environment",
         "tier": 5,
-        "prerequisites": ["feint"],
+        "prerequisites": [
+          "feint"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
         "description": "Turn nearby cover and terrain into an asset, move freely across reachable obstacles, and gain a melee attack benefit."
       },
       {
         "id": "lethal-strike",
         "name": "Lethal Strike",
         "tier": 6,
-        "prerequisites": ["fast-kill", "knock-out"],
+        "prerequisites": [
+          "fast-kill",
+          "knock-out"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "speed", "amount": 6, "options": [] },
+        "cost": {
+          "stat": "speed",
+          "amount": 6,
+          "options": []
+        },
         "description": "A swift melee or ranged attack to a vital spot deals 7 additional damage."
       },
       {
         "id": "twisting-the-knife",
         "name": "Twisting the Knife",
         "tier": 6,
-        "prerequisites": ["mind-games", "using-the-environment"],
+        "prerequisites": [
+          "mind-games",
+          "using-the-environment"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "speed", "amount": 4, "options": [] },
+        "cost": {
+          "stat": "speed",
+          "amount": 4,
+          "options": []
+        },
         "description": "After hitting a foe with a melee weapon, automatically hit them again with that weapon for normal damage."
       }
     ]
   },
   "folder": null,
   "sort": 0,
-  "ownership": { "default": 0 },
+  "ownership": {
+    "default": 0
+  },
   "flags": {
     "cypher": {
       "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."

@@ -1,6 +1,6 @@
 {
-  "_id": "Ca5t5Sp3ll52026X",
-  "_key": "!items!Ca5t5Sp3ll52026X",
+  "_id": "castsspell489030",
+  "_key": "!items!castsspell489030",
   "name": "Casts Spells",
   "type": "focus",
   "img": "icons/magic/symbols/runes-carved-stone-purple.webp",
@@ -11,40 +11,66 @@
         "id": "blast",
         "name": "Blast",
         "tier": 1,
-        "prerequisites": ["prepare-spell"],
+        "prerequisites": [
+          "prepare-spell"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
         "description": "Project destructive energy or shape it with Effort."
       },
       {
         "id": "prepare-spell",
         "name": "Prepare Spell",
         "tier": 1,
-        "prerequisites": ["blast", "hedge-magic"],
+        "prerequisites": [
+          "blast",
+          "hedge-magic"
+        ],
         "repeatable": true,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
         "description": "Prepare one manifested cypher effect as a daily spell."
       },
       {
         "id": "hedge-magic",
         "name": "Hedge Magic",
         "tier": 1,
-        "prerequisites": ["prepare-spell", "sense-magic"],
+        "prerequisites": [
+          "prepare-spell",
+          "sense-magic"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
         "description": "Perform a small, non-harmful magical trick."
       },
       {
         "id": "sense-magic",
         "name": "Sense Magic",
         "tier": 1,
-        "prerequisites": ["hedge-magic"],
+        "prerequisites": [
+          "hedge-magic"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
         "description": "Sense the presence of nearby magic."
       },
       {
@@ -59,7 +85,11 @@
         ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
         "description": "Temporarily enchant a useful object."
       },
       {
@@ -74,7 +104,11 @@
         ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
         "description": "Hinder a target with a disruptive mental ray."
       },
       {
@@ -89,17 +123,28 @@
         ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
         "description": "Levitate and drift or move slowly through the air."
       },
       {
         "id": "summon-giant-spider",
         "name": "Summon Giant Spider",
         "tier": 3,
-        "prerequisites": ["enchant-object", "fireball"],
+        "prerequisites": [
+          "enchant-object",
+          "fireball"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
         "description": "Summon a temporary giant spider."
       },
       {
@@ -113,94 +158,158 @@
         ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
         "description": "Explode fire across a small area at long range."
       },
       {
         "id": "arcane-flight",
         "name": "Arcane Flight",
         "tier": 3,
-        "prerequisites": ["confusion-ray", "hover", "identify-magic"],
+        "prerequisites": [
+          "confusion-ray",
+          "hover",
+          "identify-magic"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
         "description": "Fly at your normal speed for an extended time."
       },
       {
         "id": "identify-magic",
         "name": "Identify Magic",
         "tier": 3,
-        "prerequisites": ["confusion-ray", "hover", "arcane-flight"],
+        "prerequisites": [
+          "confusion-ray",
+          "hover",
+          "arcane-flight"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
         "description": "Learn a sensed magical effect's level, source, nature, and general effects."
       },
       {
         "id": "soul-interrogation",
         "name": "Soul Interrogation",
         "tier": 4,
-        "prerequisites": ["fireball", "arcane-flight"],
+        "prerequisites": [
+          "fireball",
+          "arcane-flight"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 5, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
         "description": "Learn exploitable secrets about a distant opponent."
       },
       {
         "id": "arcane-teleportation",
         "name": "Arcane Teleportation",
         "tier": 4,
-        "prerequisites": ["fireball", "arcane-flight"],
+        "prerequisites": [
+          "fireball",
+          "arcane-flight"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
         "description": "Teleport yourself and, with Effort, other creatures."
       },
       {
         "id": "divination",
         "name": "Divination",
         "tier": 5,
-        "prerequisites": ["soul-interrogation", "granite-wall"],
+        "prerequisites": [
+          "soul-interrogation",
+          "granite-wall"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 6, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
         "description": "Ask a powerful entity one question."
       },
       {
         "id": "granite-wall",
         "name": "Granite Wall",
         "tier": 5,
-        "prerequisites": ["arcane-teleportation", "divination"],
+        "prerequisites": [
+          "arcane-teleportation",
+          "divination"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 5, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
         "description": "Create a durable wall of granite."
       },
       {
         "id": "word-of-death",
         "name": "Word of Death",
         "tier": 6,
-        "prerequisites": ["divination", "granite-wall"],
+        "prerequisites": [
+          "divination",
+          "granite-wall"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 6, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
         "description": "Speak a deadly word against a nearby target."
       },
       {
         "id": "conjure-supernatural-creature",
         "name": "Conjure Supernatural Creature",
         "tier": 6,
-        "prerequisites": ["divination", "granite-wall"],
+        "prerequisites": [
+          "divination",
+          "granite-wall"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 7, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 7,
+          "options": []
+        },
         "description": "Summon a temporary angel, demon, or elemental."
       }
     ]
   },
   "folder": null,
   "sort": 0,
-  "ownership": { "default": 0 },
+  "ownership": {
+    "default": 0
+  },
   "flags": {
     "cypher": {
       "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."

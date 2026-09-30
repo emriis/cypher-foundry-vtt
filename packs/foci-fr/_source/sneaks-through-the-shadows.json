@@ -1,0 +1,229 @@
+{
+  "_id": "sneaksthroA199BB",
+  "_key": "!items!sneaksthroA199BB",
+  "name": "Se faufile dans les ombres",
+  "type": "focus",
+  "img": "icons/svg/eye.svg",
+  "system": {
+    "description": "<p>Un Focus pour utiliser les ombres et l’obscurité afin de se déplacer sans être vu·e, rapidement et avec fluidité.</p>",
+    "abilities": [
+      {
+        "id": "always-speedy",
+        "name": "Toujours vif·ve",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Récupère un point de Célérité supplémentaire lorsqu’une récupération en rend, jusqu’à trois choix."
+      },
+      {
+        "id": "natural-sneak",
+        "name": "Furtivité naturelle",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Traite comme un 6 tout résultat inférieur à 6 en crochetage, perception, pickpocket ou furtivité; le minimum passe à 9 au rang 3."
+      },
+      {
+        "id": "eyes-adjusted",
+        "name": "Yeux habitués",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Voit en très faible luminosité comme en pleine lumière et dans l’obscurité totale comme en très faible lumière."
+      },
+      {
+        "id": "underworld-contacts",
+        "name": "Contacts de la pègre",
+        "tier": 2,
+        "prerequisites": [
+          "always-speedy",
+          "natural-sneak"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Connaît des personnes impliquées dans des activités illégales qui te reconnaissent comme un pair, sans être forcément tes ami·e·s ni fiables."
+      },
+      {
+        "id": "safe-fall",
+        "name": "Chute sans dommage",
+        "tier": 2,
+        "prerequisites": [
+          "natural-sneak",
+          "eyes-adjusted"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Ignore une blessure provenant d’une chute."
+      },
+      {
+        "id": "retaliatory-swipe",
+        "name": "Représailles éclair",
+        "tier": 3,
+        "prerequisites": [
+          "underworld-contacts"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Après avoir été touché·e par une attaque de mêlée, effectue immédiatement une attaque de mêlée contre l’assaillant·e, une fois par tour."
+      },
+      {
+        "id": "nine-lives",
+        "name": "Neuf vies",
+        "tier": 3,
+        "prerequisites": [
+          "safe-fall"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Peut consacrer de l’Effort de Puissance ou de Célérité sur les jets de Blocage."
+      },
+      {
+        "id": "unbalancing-strike",
+        "name": "Coup déséquilibrant",
+        "tier": 4,
+        "prerequisites": [
+          "retaliatory-swipe",
+          "nine-lives"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Effectue une attaque de mêlée facilitée qui entrave toutes les actions de la cible à son prochain tour si elle touche."
+      },
+      {
+        "id": "hard-won-resilience",
+        "name": "Résilience chèrement acquise",
+        "tier": 4,
+        "prerequisites": [
+          "nine-lives"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Peut subir une blessure modérée supplémentaire par rapport à la normale."
+      },
+      {
+        "id": "dirty-fighter",
+        "name": "Coup de traîtrise",
+        "tier": 5,
+        "prerequisites": [
+          "unbalancing-strike"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Effectue une attaque de Célérité contre un ennemi à longue portée pour entraver ses attaques et défenses jusqu’à une récupération de dix minutes."
+      },
+      {
+        "id": "slippery-customer",
+        "name": "Insaisissable",
+        "tier": 5,
+        "prerequisites": [
+          "hard-won-resilience"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Ignore les malus d’obscurité et d’espaces exigus, et gagne un atout en furtivité dans la pénombre ou l’obscurité."
+      },
+      {
+        "id": "again-and-again",
+        "name": "Encore et encore",
+        "tier": 6,
+        "prerequisites": [
+          "dirty-fighter",
+          "slippery-customer"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 6,
+          "options": []
+        },
+        "description": "Effectue une action supplémentaire pendant ton tour."
+      },
+      {
+        "id": "alley-rat",
+        "name": "Rat des ruelles",
+        "tier": 6,
+        "prerequisites": [
+          "dirty-fighter",
+          "slippery-customer"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "En ville, trouve ou crée un raccourci, une entrée secrète ou un passage d’évasion grâce à une tâche d’Intellect."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

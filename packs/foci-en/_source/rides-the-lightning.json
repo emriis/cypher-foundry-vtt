@@ -1,0 +1,247 @@
+{
+  "_id": "ridestheliA835CF",
+  "_key": "!items!ridestheliA835CF",
+  "name": "Rides the Lightning",
+  "type": "focus",
+  "img": "icons/svg/lightning.svg",
+  "system": {
+    "description": "<p>A Focus for emitting and manipulating lightning and thunder.</p>",
+    "abilities": [
+      {
+        "id": "control-electric-device",
+        "name": "Control Electric Device",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Control or disrupt a non-intelligent electrical device at long range, treating an attack roll below 12 as a 12."
+      },
+      {
+        "id": "lightning-hand",
+        "name": "Lightning Hand",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Make a touch or long-range lightning attack for 4 damage, or charge a weapon to deal 1 additional damage."
+      },
+      {
+        "id": "thunder-crash",
+        "name": "Thunder Crash",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Strike a long-range target with thunder for 2 damage and a continuing tremor that can deal 1 damage each round."
+      },
+      {
+        "id": "resist-the-storm",
+        "name": "Resist the Storm",
+        "tier": 2,
+        "prerequisites": [
+          "thunder-crash",
+          "lightning-hand"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Choose electricity or sonic energy and reduce wounds from that energy by one step; choose the other energy if selected again."
+      },
+      {
+        "id": "bolt-rider",
+        "name": "Bolt Rider",
+        "tier": 2,
+        "prerequisites": [
+          "lightning-hand",
+          "control-electric-device"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Move a long distance almost instantly as a bolt of lightning to a visible location without intervening barriers."
+      },
+      {
+        "id": "radiohead",
+        "name": "Radiohead",
+        "tier": 2,
+        "prerequisites": [
+          "control-electric-device"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Transmit and receive radio communications across a broad range of frequencies, including encrypted signals with an Intellect task."
+      },
+      {
+        "id": "deafening-bolt",
+        "name": "Deafening Bolt",
+        "tier": 3,
+        "prerequisites": [
+          "resist-the-storm",
+          "bolt-rider"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Strike a long-range target with lightning for 5 damage and deafen it until a ten-minute recovery."
+      },
+      {
+        "id": "electric-armor",
+        "name": "Electric Armor",
+        "tier": 3,
+        "prerequisites": [
+          "bolt-rider",
+          "radiohead"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Surround yourself with electricity that damages melee attackers, ignores minor and moderate electrical wounds, and enables a 2-damage touch attack."
+      },
+      {
+        "id": "bolts-of-power",
+        "name": "Bolts of Power",
+        "tier": 4,
+        "prerequisites": [
+          "deafening-bolt",
+          "electric-armor"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Launch four lightning bolts at up to four nearby targets for 4 damage each, dealing 1 damage even on a miss."
+      },
+      {
+        "id": "subsonic-rumble",
+        "name": "Subsonic Rumble",
+        "tier": 4,
+        "prerequisites": [
+          "electric-armor"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Emit a subsonic rumble that hinders nearby creatures by two steps on persuasion, intimidation, and fear tasks."
+      },
+      {
+        "id": "discharge",
+        "name": "Discharge",
+        "tier": 5,
+        "prerequisites": [
+          "bolts-of-power"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Project visible energy at up to three nearby targets for 4 damage each, with Effort able to remove a target’s next turn."
+      },
+      {
+        "id": "electric-flight",
+        "name": "Electric Flight",
+        "tier": 5,
+        "prerequisites": [
+          "subsonic-rumble"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "While Electric Armor is active, fly a short distance and act or move a long distance, carrying one creature safely."
+      },
+      {
+        "id": "flash-across-the-miles",
+        "name": "Flash Across the Miles",
+        "tier": 6,
+        "prerequisites": [
+          "discharge",
+          "electric-flight"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "Travel almost instantly as lightning to a familiar outdoor or sky-open location on the same planet."
+      },
+      {
+        "id": "wall-of-lightning",
+        "name": "Wall of Lightning",
+        "tier": 6,
+        "prerequisites": [
+          "discharge",
+          "electric-flight"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 8,
+          "options": []
+        },
+        "description": "Create a six-panel barrier of crackling electricity that deals 10 damage nearby and double damage when crossed."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

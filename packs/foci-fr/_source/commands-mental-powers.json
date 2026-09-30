@@ -1,0 +1,238 @@
+{
+  "_id": "commandsme2D0A3B",
+  "_key": "!items!commandsme2D0A3B",
+  "name": "Commande des pouvoirs mentaux",
+  "type": "focus",
+  "img": "icons/magic/perception/third-eye-blue-red.webp",
+  "system": {
+    "description": "<p>Un Focus pour un personnage qui communique, perçoit et agit grâce à ses pouvoirs mentaux.</p>",
+    "abilities": [
+      {
+        "id": "empathic-sense",
+        "name": "Sens empathique",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Perçois l'état émotionnel général d'un être proche."
+      },
+      {
+        "id": "psionic-sense",
+        "name": "Détection psionique",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Perçois les phénomènes mentaux ou psychiques actifs à proximité."
+      },
+      {
+        "id": "telepathy",
+        "name": "Télépathie",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Établis une communication réciproque consentie à longue portée."
+      },
+      {
+        "id": "telepathic-link",
+        "name": "Lien télépathique",
+        "tier": 2,
+        "prerequisites": [
+          "empathic-sense",
+          "psionic-sense",
+          "telepathy"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Crée un lien mental durable avec une créature consentante."
+      },
+      {
+        "id": "identify-psionics",
+        "name": "Identifier les psioniques",
+        "tier": 3,
+        "prerequisites": [
+          "psionic-sense",
+          "telepathic-link"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Apprends le niveau, la source et les effets généraux de psioniques perçus."
+      },
+      {
+        "id": "read-thoughts",
+        "name": "Lecture de pensées",
+        "tier": 3,
+        "prerequisites": [
+          "empathic-sense",
+          "telepathic-link",
+          "psychic-suggestion"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Lis les pensées superficielles d'une créature."
+      },
+      {
+        "id": "psychic-burst",
+        "name": "Explosion psychique",
+        "tier": 3,
+        "prerequisites": [
+          "psionic-sense",
+          "telepathy",
+          "psychic-suggestion"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Assaille l'esprit de plusieurs cibles proches."
+      },
+      {
+        "id": "psychic-suggestion",
+        "name": "Suggestion psychique",
+        "tier": 3,
+        "prerequisites": [
+          "telepathy",
+          "read-thoughts",
+          "psychic-burst"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Contraint une cible à accomplir une action indiquée."
+      },
+      {
+        "id": "extended-range",
+        "name": "Portée étendue",
+        "tier": 4,
+        "prerequisites": [
+          "identify-psionics",
+          "read-thoughts",
+          "psychic-burst"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Augmente la portée d'une aptitude mentale de Focus."
+      },
+      {
+        "id": "use-another-senses",
+        "name": "Utiliser les sens d'autrui",
+        "tier": 4,
+        "prerequisites": [
+          "read-thoughts",
+          "psychic-suggestion",
+          "extended-range"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Perçois par les sens d'une autre créature."
+      },
+      {
+        "id": "precognition",
+        "name": "Précognition",
+        "tier": 5,
+        "prerequisites": [
+          "extended-range",
+          "use-another-senses"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "Gagne une connaissance brève de l'avenir qui aide défense, vigilance et interaction."
+      },
+      {
+        "id": "mind-control",
+        "name": "Contrôle mental",
+        "tier": 6,
+        "prerequisites": [
+          "precognition"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "Contrôle les actions d'une créature touchée de faible niveau."
+      },
+      {
+        "id": "telepathic-network",
+        "name": "Réseau télépathique",
+        "tier": 6,
+        "prerequisites": [
+          "precognition"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Crée un réseau télépathique entre créatures consentantes."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

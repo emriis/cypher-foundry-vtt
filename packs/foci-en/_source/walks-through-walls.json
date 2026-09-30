@@ -1,0 +1,30 @@
+{
+  "_id": "walksthrou280AD5",
+  "_key": "!items!walksthrou280AD5",
+  "name": "Walks Through Walls",
+  "type": "focus",
+  "img": "icons/magic/movement/abstract-runes-circle.webp",
+  "system": {
+    "description": "<p>A Focus for a character who can become translucent and move through solid objects.</p>",
+    "abilities": [
+      { "id": "light-step", "name": "Light Step", "tier": 1, "prerequisites": [], "repeatable": false, "enabler": true, "cost": { "stat": "none", "amount": 0, "options": [] }, "description": "Reduce the weight of your footprints enough to avoid pressure plates, and reduce falling damage by one wound severity." },
+      { "id": "soft-whisper", "name": "Soft Whisper", "tier": 1, "prerequisites": [], "repeatable": false, "enabler": true, "cost": { "stat": "intellect", "amount": 1, "options": [] }, "description": "Say something to a being within immediate range without anyone else hearing it." },
+      { "id": "walk-through-walls", "name": "Walk Through Walls", "tier": 1, "prerequisites": [], "repeatable": false, "enabler": false, "cost": { "stat": "intellect", "amount": 2, "options": [] }, "description": "Slowly pass through physical barriers of level 5 or lower, perceiving while phased but unable to pass through energy barriers. Effort raises the maximum barrier level. Last action." },
+      { "id": "defensive-phasing", "name": "Defensive Phasing", "tier": 2, "prerequisites": ["light-step"], "repeatable": false, "enabler": false, "cost": { "stat": "choice", "amount": 2, "options": ["intellect", "speed"] }, "description": "Until a ten-minute recovery, gain an asset to dodge tasks as some attacks pass harmlessly through you. Action to initiate." },
+      { "id": "phase-grasp", "name": "Phase Grasp", "tier": 2, "prerequisites": ["soft-whisper"], "repeatable": false, "enabler": false, "cost": { "stat": "intellect", "amount": 3, "options": [] }, "description": "Phase a visible object within long range into your hands or immediate range; an object held or behind a barrier requires an Intellect attack. Action." },
+      { "id": "slip-into-shadow", "name": "Slip Into Shadow", "tier": 2, "prerequisites": ["walk-through-walls"], "repeatable": false, "enabler": true, "cost": { "stat": "none", "amount": 0, "options": [] }, "description": "Use a successful stealth task to hide from a creature nearby. Effort hides from more creatures, and at tier 3 the base number of targets is three." },
+      { "id": "faster-phase", "name": "Faster Phase", "tier": 3, "prerequisites": ["defensive-phasing", "phase-grasp"], "repeatable": false, "enabler": true, "cost": { "stat": "none", "amount": 0, "options": [] }, "description": "Walk Through Walls becomes faster and uses a normal action instead of a Last action." },
+      { "id": "phased-attack", "name": "Phased Attack", "tier": 3, "prerequisites": ["phase-grasp", "slip-into-shadow"], "repeatable": false, "enabler": true, "cost": { "stat": "intellect", "amount": 3, "options": [] }, "description": "Your attacks this turn ignore the foe's Armor; against a PC, their block attempts fail." },
+      { "id": "phase-door", "name": "Phase Door", "tier": 4, "prerequisites": ["faster-phase"], "repeatable": false, "enabler": false, "cost": { "stat": "intellect", "amount": 4, "options": [] }, "description": "Phase through adjacent and distant solid objects to travel within long range when no intervening barriers block the route. Effort extends the travel range. Action." },
+      { "id": "phase-friend", "name": "Phase Friend", "tier": 4, "prerequisites": ["phased-attack"], "repeatable": false, "enabler": true, "cost": { "stat": "intellect", "amount": 4, "options": [] }, "description": "Bring an ally within immediate range with you when using a phasing ability. Effort brings another ally." },
+      { "id": "quick-phase", "name": "Quick Phase", "tier": 5, "prerequisites": ["phase-friend"], "repeatable": false, "enabler": true, "cost": { "stat": "none", "amount": 0, "options": [] }, "description": "Walk Through Walls becomes much faster, or lets you phase up to 10 feet as a First action." },
+      { "id": "untouchable", "name": "Untouchable", "tier": 5, "prerequisites": ["phase-door"], "repeatable": false, "enabler": false, "cost": { "stat": "intellect", "amount": 6, "options": [] }, "description": "Become unable to affect or be affected by normal matter or energy until a ten-minute recovery. Action to initiate." },
+      { "id": "phase-foe", "name": "Phase Foe", "tier": 6, "prerequisites": ["untouchable"], "repeatable": false, "enabler": false, "cost": { "stat": "intellect", "amount": 8, "options": [] }, "description": "Touch and phase a creature of level 4 or lower as if using Untouchable. Effort raises the maximum target level. Action." },
+      { "id": "selective-phase-attack", "name": "Selective Phase Attack", "tier": 6, "prerequisites": ["quick-phase"], "repeatable": false, "enabler": true, "cost": { "stat": "none", "amount": 0, "options": [] }, "description": "Once each round, an attack using Phased Attack deals +5 damage." }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": { "cypher": { "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License." } }
+}

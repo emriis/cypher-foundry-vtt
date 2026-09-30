@@ -1,0 +1,178 @@
+{
+  "_id": "standslikeBF0452",
+  "_key": "!items!standslikeBF0452",
+  "name": "Stands Like A Bastion",
+  "type": "focus",
+  "img": "icons/equipment/shield/heater-steel.webp",
+  "system": {
+    "description": "<p>A Focus for a heavily armored defender who is difficult to move or hurt.</p>",
+    "abilities": [
+      {
+        "id": "battle-competence",
+        "name": "Battle Competence",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Use all weapons and armor freely, and use an action to learn the levels of up to three nearby creatures."
+      },
+      {
+        "id": "imperturbable",
+        "name": "Imperturbable",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "You cannot be forced to flee, and nearby allies gain an eased defense against effects that would make them flee."
+      },
+      {
+        "id": "nothing-but-defend",
+        "name": "Nothing but Defend",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "If you do nothing but defend on your turn, gain an asset to all defense tasks for one round."
+      },
+      {
+        "id": "resist-the-elements",
+        "name": "Resist the Elements",
+        "tier": 2,
+        "prerequisites": ["imperturbable", "battle-competence"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Choose a harmful energy type and reduce wounds from it by one severity step."
+      },
+      {
+        "id": "shield-master",
+        "name": "Shield Master",
+        "tier": 2,
+        "prerequisites": ["battle-competence", "nothing-but-defend"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Your shield can take one additional moderate wound before it is destroyed."
+      },
+      {
+        "id": "defend-and-respond",
+        "name": "Defend and Respond",
+        "tier": 3,
+        "prerequisites": ["resist-the-elements"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "choice",
+          "amount": 3,
+          "options": ["might", "speed"]
+        },
+        "description": "After blocking or dodging a melee attack, immediately make a melee attack against the attacker once per turn."
+      },
+      {
+        "id": "throw-shield",
+        "name": "Throw Shield",
+        "tier": 3,
+        "prerequisites": ["shield-master"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Throw your shield as a short-range light weapon; it returns to you after a successful difficulty 2 Speed task."
+      },
+      {
+        "id": "unmovable",
+        "name": "Unmovable",
+        "tier": 3,
+        "prerequisites": ["shield-master", "resist-the-elements"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "might", "amount": 3, "options": [] },
+        "description": "You cannot be knocked down, pushed back, or moved against your will while upright and able to act."
+      },
+      {
+        "id": "hard-won-resilience",
+        "name": "Hard-Won Resilience",
+        "tier": 4,
+        "prerequisites": ["unmovable"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "You can take one additional moderate wound before you are incapacitated."
+      },
+      {
+        "id": "inspiring-defense",
+        "name": "Inspiring Defense",
+        "tier": 4,
+        "prerequisites": ["throw-shield"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "After an especially powerful attack fails against your defense, regain 4 Might, with later uses restoring one fewer point until a ten-hour recovery."
+      },
+      {
+        "id": "tower-of-will",
+        "name": "Tower of Will",
+        "tier": 5,
+        "prerequisites": ["inspiring-defense"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Gain an asset to Intellect defense tasks and add 3 points to your Intellect Pool."
+      },
+      {
+        "id": "weave-an-iron-wall",
+        "name": "Weave an Iron Wall",
+        "tier": 5,
+        "prerequisites": ["inspiring-defense", "hard-won-resilience"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "choice",
+          "amount": 5,
+          "options": ["might", "speed"]
+        },
+        "description": "Create a maintained weapon barrier across an immediate area that deals 10 damage to creatures crossing it."
+      },
+      {
+        "id": "attenuate-threat",
+        "name": "Attenuate Threat",
+        "tier": 6,
+        "prerequisites": ["tower-of-will"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "When attacking as a Last action, ignore one wound taken before the beginning of your next turn."
+      },
+      {
+        "id": "bouncing-shield",
+        "name": "Bouncing Shield",
+        "tier": 6,
+        "prerequisites": ["tower-of-will"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "speed", "amount": 3, "options": [] },
+        "description": "Throw your shield at a foe; it rebounds to attack two additional targets before returning or landing nearby."
+      },
+      {
+        "id": "lethal-capability",
+        "name": "Lethal Capability",
+        "tier": 6,
+        "prerequisites": ["weave-an-iron-wall"],
+        "repeatable": true,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Choose a specific attack type; attacks of that type inflict 5 additional damage. You can choose this ability again for a different attack."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

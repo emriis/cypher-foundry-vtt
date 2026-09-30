@@ -1,6 +1,6 @@
 {
-  "_id": "FusesMindMachine",
-  "_key": "!items!FusesMindMachine",
+  "_id": "fusesminda11815F",
+  "_key": "!items!fusesminda11815F",
   "name": "Fuses Mind and Machine",
   "type": "focus",
   "img": "icons/commodities/tech/circuit-board-chip.webp",
@@ -14,124 +14,196 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
         "description": "Temporarily become trained in one Intellect skill; Effort increases the number of temporary trained skills."
       },
       {
         "id": "think-fast",
         "name": "Think Fast",
         "tier": 1,
-        "prerequisites": ["data-processor"],
+        "prerequisites": [
+          "data-processor"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "You are trained in Intellect defense tasks."
       },
       {
         "id": "wireless-interface",
         "name": "Wireless Interface",
         "tier": 1,
-        "prerequisites": ["data-processor"],
+        "prerequisites": [
+          "data-processor"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
         "description": "Communicate mentally with willing machines in short range; contacts make their tasks faster and last until recovery."
       },
       {
         "id": "analytic-processor",
         "name": "Analytic Processor",
         "tier": 2,
-        "prerequisites": ["data-processor"],
+        "prerequisites": [
+          "data-processor"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
         "description": "Ask the GM a question and attempt an Intellect task for a short answer; failure causes 4 Intellect damage."
       },
       {
         "id": "machine-reading",
         "name": "Machine Reading",
         "tier": 2,
-        "prerequisites": ["wireless-interface"],
+        "prerequisites": [
+          "wireless-interface"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
         "description": "Read the surface thoughts of a visible machine in short range until recovery."
       },
       {
         "id": "action-processor",
         "name": "Action Processor",
         "tier": 3,
-        "prerequisites": ["data-processor"],
+        "prerequisites": [
+          "data-processor"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
         "description": "Data Processor can also grant training in physical skills and a specific weapon attack."
       },
       {
         "id": "awareness",
         "name": "Awareness",
         "tier": 3,
-        "prerequisites": ["think-fast"],
+        "prerequisites": [
+          "think-fast"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
         "description": "Sense living and thinking machines at long range and study one target's health and power."
       },
       {
         "id": "expanded-wireless",
         "name": "Expanded Wireless",
         "tier": 4,
-        "prerequisites": ["wireless-interface"],
+        "prerequisites": [
+          "wireless-interface"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Wireless Interface reaches anywhere on the planet."
       },
       {
         "id": "locked-skill",
         "name": "Locked Skill",
         "tier": 4,
-        "prerequisites": ["action-processor"],
+        "prerequisites": [
+          "action-processor"
+        ],
         "repeatable": true,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Lock one Data Processor skill until a ten-hour recovery; you can select this ability up to three times."
       },
       {
         "id": "precognition",
         "name": "Precognition",
         "tier": 5,
-        "prerequisites": ["awareness"],
+        "prerequisites": [
+          "awareness"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "intellect", "amount": 6, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
         "description": "Gain assets on defense, detecting deception and traps, and interaction tasks until recovery."
       },
       {
         "id": "machine-enhancement",
         "name": "Machine Enhancement",
         "tier": 6,
-        "prerequisites": ["locked-skill"],
+        "prerequisites": [
+          "locked-skill"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Effort on an Intellect action also grants a free Effort level or a minor effect."
       },
       {
         "id": "mind-surge",
         "name": "Mind Surge",
         "tier": 6,
-        "prerequisites": ["precognition"],
+        "prerequisites": [
+          "precognition"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Gain one extra one-action recovery each day that replenishes only Intellect."
       }
     ]
   },
   "folder": null,
   "sort": 0,
-  "ownership": { "default": 0 },
+  "ownership": {
+    "default": 0
+  },
   "flags": {
     "cypher": {
       "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."

@@ -1,0 +1,229 @@
+{
+  "_id": "sneaksthroA199BB",
+  "_key": "!items!sneaksthroA199BB",
+  "name": "Sneaks Through the Shadows",
+  "type": "focus",
+  "img": "icons/svg/eye.svg",
+  "system": {
+    "description": "<p>A Focus for using shadows and darkness to move unseen, quickly, and smoothly.</p>",
+    "abilities": [
+      {
+        "id": "always-speedy",
+        "name": "Always Speedy",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Restore one extra Speed point whenever a recovery restores Speed, up to three selections."
+      },
+      {
+        "id": "natural-sneak",
+        "name": "Natural Sneak",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Treat a lockpicking, perception, pickpocketing, or stealth roll below 6 as a 6; the minimum rises to 9 at tier 3."
+      },
+      {
+        "id": "eyes-adjusted",
+        "name": "Eyes Adjusted",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "See in very dim light as bright light and in total darkness as very dim light."
+      },
+      {
+        "id": "underworld-contacts",
+        "name": "Underworld Contacts",
+        "tier": 2,
+        "prerequisites": [
+          "always-speedy",
+          "natural-sneak"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Know people involved in illegal activities who recognize you as a peer, though they may not be friends or trustworthy."
+      },
+      {
+        "id": "safe-fall",
+        "name": "Safe Fall",
+        "tier": 2,
+        "prerequisites": [
+          "natural-sneak",
+          "eyes-adjusted"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Ignore one wound from a fall."
+      },
+      {
+        "id": "retaliatory-swipe",
+        "name": "Retaliatory Swipe",
+        "tier": 3,
+        "prerequisites": [
+          "underworld-contacts"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 3,
+          "options": []
+        },
+        "description": "After a melee attack hits you, immediately make a melee attack against the attacker, once per turn."
+      },
+      {
+        "id": "nine-lives",
+        "name": "Nine Lives",
+        "tier": 3,
+        "prerequisites": [
+          "safe-fall"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Use Might or Speed Effort on block rolls."
+      },
+      {
+        "id": "unbalancing-strike",
+        "name": "Unbalancing Strike",
+        "tier": 4,
+        "prerequisites": [
+          "retaliatory-swipe",
+          "nine-lives"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Make an eased melee attack that hinders all of the target’s actions on its next turn if it hits."
+      },
+      {
+        "id": "hard-won-resilience",
+        "name": "Hard-Won Resilience",
+        "tier": 4,
+        "prerequisites": [
+          "nine-lives"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You can sustain one more moderate wound than normal."
+      },
+      {
+        "id": "dirty-fighter",
+        "name": "Dirty Fighter",
+        "tier": 5,
+        "prerequisites": [
+          "unbalancing-strike"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Make a Speed attack against a distant foe to hinder its attacks and defenses until a ten-minute recovery."
+      },
+      {
+        "id": "slippery-customer",
+        "name": "Slippery Customer",
+        "tier": 5,
+        "prerequisites": [
+          "hard-won-resilience"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Ignore penalties from darkness and cramped spaces, and gain an asset on stealth tasks in dim light or darkness."
+      },
+      {
+        "id": "again-and-again",
+        "name": "Again and Again",
+        "tier": 6,
+        "prerequisites": [
+          "dirty-fighter",
+          "slippery-customer"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 6,
+          "options": []
+        },
+        "description": "Take an extra action on your turn."
+      },
+      {
+        "id": "alley-rat",
+        "name": "Alley Rat",
+        "tier": 6,
+        "prerequisites": [
+          "dirty-fighter",
+          "slippery-customer"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "In a city, find or create a significant shortcut, secret entrance, or emergency escape route with an Intellect task."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

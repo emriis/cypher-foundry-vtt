@@ -1,0 +1,28 @@
+{
+  "_id": "strikeswit88C320",
+  "_key": "!items!strikeswit88C320",
+  "name": "Strikes With Mystic Might",
+  "type": "focus",
+  "img": "icons/skills/melee/unarmed-punch-fist.webp",
+  "system": {
+    "description": "<p>A Focus for a mystic whose unarmed techniques draw on an otherworldly source of power.</p>",
+    "abilities": [
+      { "id": "no-need-for-weapons", "name": "No Need for Weapons", "tier": 1, "prerequisites": [], "repeatable": false, "enabler": true, "cost": { "stat": "none", "amount": 0, "options": [] }, "description": "Your unarmed attacks inflict 2 additional damage." },
+      { "id": "mystic-hand", "name": "Mystic Hand", "tier": 1, "prerequisites": [], "repeatable": false, "enabler": true, "cost": { "stat": "speed", "amount": 3, "options": [] }, "description": "Your mystic-source unarmed attacks deal 1 additional damage; once per round, spend 3 Speed to reduce a wound by one step." },
+      { "id": "supernatural-leap", "name": "Supernatural Leap", "tier": 1, "prerequisites": [], "repeatable": false, "enabler": true, "cost": { "stat": "none", "amount": 0, "options": [] }, "description": "When you jump, move twice as far as normal horizontally or vertically." },
+      { "id": "safe-fall", "name": "Safe Fall", "tier": 2, "prerequisites": ["no-need-for-weapons", "mystic-hand"], "repeatable": false, "enabler": true, "cost": { "stat": "none", "amount": 0, "options": [] }, "description": "Ignore one wound caused by a fall." },
+      { "id": "surging-hand", "name": "Surging Hand", "tier": 2, "prerequisites": ["mystic-hand", "supernatural-leap"], "repeatable": false, "enabler": false, "cost": { "stat": "speed", "amount": 2, "options": [] }, "description": "Project your mystic source at a target within short range with a Speed attack that deals 4 damage on a success." },
+      { "id": "perfecting-the-body", "name": "Perfecting the Body", "tier": 3, "prerequisites": ["safe-fall"], "repeatable": false, "enabler": true, "cost": { "stat": "none", "amount": 0, "options": [] }, "description": "Your daily kata grant immunity to fear, mental control, disease, and poison." },
+      { "id": "mystic-flurry", "name": "Mystic Flurry", "tier": 3, "prerequisites": ["surging-hand"], "repeatable": false, "enabler": true, "cost": { "stat": "none", "amount": 0, "options": [] }, "description": "Your unarmed attacks infused with your mystic source deal 1 additional damage." },
+      { "id": "mystic-step", "name": "Mystic Step", "tier": 4, "prerequisites": ["perfecting-the-body", "mystic-flurry"], "repeatable": false, "enabler": false, "cost": { "stat": "speed", "amount": 4, "options": [] }, "description": "Instantly transport yourself to a visible location within long range, with an extra unarmed attack if you appear near a foe." },
+      { "id": "exploding-hand", "name": "Exploding Hand", "tier": 5, "prerequisites": ["mystic-step"], "repeatable": false, "enabler": false, "cost": { "stat": "speed", "amount": 5, "options": [] }, "description": "Attack a target within long range and two nearby additional targets with your mystic source, dealing 4 damage on a hit or 1 on a miss." },
+      { "id": "resonant-palm", "name": "Resonant Palm", "tier": 5, "prerequisites": ["mystic-step"], "repeatable": false, "enabler": false, "cost": { "stat": "speed", "amount": 7, "options": [] }, "description": "Forge a ten-day mystic connection that lets you transfer a wound or make an eased attack against the linked creature." },
+      { "id": "perfected-form", "name": "Perfected Form", "tier": 6, "prerequisites": ["exploding-hand"], "repeatable": false, "enabler": false, "cost": { "stat": "none", "amount": 0, "options": [] }, "description": "Until a one-hour recovery, gain 3 points to distribute among your Pools and deal 3 additional damage with unarmed attacks." },
+      { "id": "lethal-strike", "name": "Lethal Strike", "tier": 6, "prerequisites": ["exploding-hand", "resonant-palm"], "repeatable": false, "enabler": false, "cost": { "stat": "speed", "amount": 6, "options": [] }, "description": "A swift melee or ranged weapon attack deals 7 additional damage on a hit." }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": { "cypher": { "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License." } }
+}

@@ -1,0 +1,246 @@
+{
+  "_id": "movesliket07248B",
+  "_key": "!items!movesliket07248B",
+  "name": "File comme le vent",
+  "type": "focus",
+  "img": "icons/svg/wind.svg",
+  "system": {
+    "description": "<p>Un Focus pour se déplacer à une vitesse extraordinaire.</p>",
+    "abilities": [
+      {
+        "id": "recover-faster",
+        "name": "Récupération accélérée",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Gagne une action supplémentaire réservée au déplacement lorsque tu te reprends."
+      },
+      {
+        "id": "fleet-of-foot",
+        "name": "Pied léger",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Se déplace d’une courte portée comme action supplémentaire, ou d’une longue portée avec de l’Effort."
+      },
+      {
+        "id": "get-out",
+        "name": "Dégage",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Se diriger vers la sécurité facilite une tâche tentée au round suivant."
+      },
+      {
+        "id": "obstacle-running",
+        "name": "Course d’obstacles",
+        "tier": 2,
+        "prerequisites": [
+          "fleet-of-foot"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Se déplace normalement sur les terrains difficiles et facilite les tâches liées aux obstacles."
+      },
+      {
+        "id": "escape",
+        "name": "Évasion",
+        "tier": 2,
+        "prerequisites": [
+          "fleet-of-foot",
+          "get-out"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Considère comme 9 un jet d’évasion inférieur à 9, avec un minimum augmenté par l’Effort."
+      },
+      {
+        "id": "incredible-running-speed",
+        "name": "Vitesse de course incroyable",
+        "tier": 3,
+        "prerequisites": [
+          "obstacle-running"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Double les distances parcourues avec Pied léger et permet de courir jusqu’à 150 m à pleine vitesse."
+      },
+      {
+        "id": "speedy-threat",
+        "name": "Menace fulgurante",
+        "tier": 3,
+        "prerequisites": [
+          "obstacle-running",
+          "escape"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Se déplacer d’au moins une portée immédiate accorde un atout à l’attaque de mêlée."
+      },
+      {
+        "id": "blink-of-an-eye",
+        "name": "En un clin d’œil",
+        "tier": 4,
+        "prerequisites": [
+          "incredible-running-speed"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Se déplace jusqu’à 300 m comme Dernière action."
+      },
+      {
+        "id": "increasing-determination",
+        "name": "Détermination croissante",
+        "tier": 4,
+        "prerequisites": [
+          "incredible-running-speed",
+          "speedy-threat"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Une tâche physique hors combat échouée est facilitée lorsqu’elle est retentée une fois."
+      },
+      {
+        "id": "speed-for-mind",
+        "name": "Célérité pour l’esprit",
+        "tier": 4,
+        "prerequisites": [
+          "speedy-threat"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Dépense de l’Intellect pour les tâches de Célérité, et de la Célérité pour celles d’Intellect."
+      },
+      {
+        "id": "hard-to-see",
+        "name": "Difficile à voir",
+        "tier": 5,
+        "prerequisites": [
+          "blink-of-an-eye",
+          "increasing-determination"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Devient une traînée floue à grande vitesse et facilite Esquive et Discrétion en mouvement."
+      },
+      {
+        "id": "go-to-ground",
+        "name": "Se fondre dans le décor",
+        "tier": 5,
+        "prerequisites": [
+          "increasing-determination",
+          "speed-for-mind"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Se déplace d’une longue portée puis se cache avec un atout à la tâche de Discrétion."
+      },
+      {
+        "id": "speed-surge",
+        "name": "Surtension de vitesse",
+        "tier": 6,
+        "prerequisites": [
+          "hard-to-see",
+          "go-to-ground"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Récupère 1d6 + 6 points de Célérité, après une récupération de dix heures."
+      },
+      {
+        "id": "up-to-speed",
+        "name": "À pleine vitesse",
+        "tier": 6,
+        "prerequisites": [
+          "hard-to-see"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Après trois actions de déplacement, accélère à une vitesse extraordinaire pendant dix minutes."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

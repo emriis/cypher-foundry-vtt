@@ -1,0 +1,247 @@
+{
+  "_id": "reveresasuB73D53",
+  "_key": "!items!reveresasuB73D53",
+  "name": "Vénère une force surnaturelle",
+  "type": "focus",
+  "img": "icons/svg/star.svg",
+  "system": {
+    "description": "<p>Un Focus pour étudier une force mystique reliant toutes choses à travers les distances galactiques.</p>",
+    "abilities": [
+      {
+        "id": "defensive-precognition",
+        "name": "Précognition défensive",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Esquive automatiquement les attaques à distance, mais entrave les autres actions au tour suivant après une attaque à distance."
+      },
+      {
+        "id": "push",
+        "name": "Poussée",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Repousse télékinétiquement d’une portée immédiate une créature visible de ta taille ou plus petite à courte portée."
+      },
+      {
+        "id": "use-the-force",
+        "name": "Utiliser la Force",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Gagne un atout à une tâche hors combat ce tour-ci; cette aptitude ne peut être réutilisée avant une action de récupération."
+      },
+      {
+        "id": "telepathic-message",
+        "name": "Message télépathique",
+        "tier": 2,
+        "prerequisites": [
+          "defensive-precognition",
+          "use-the-force"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Envoie un message télépathique unidirectionnel à une cible déjà vue sur la même planète, avec une portée augmentée par l’Effort."
+      },
+      {
+        "id": "desperate-feat",
+        "name": "Exploit désespéré",
+        "tier": 2,
+        "prerequisites": [
+          "use-the-force"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tant que tu as une blessure modérée ou majeure, gagne 1 en Avantage dans la Réserve de ton choix."
+      },
+      {
+        "id": "telekinesis",
+        "name": "Télékinésie",
+        "tier": 2,
+        "prerequisites": [
+          "push"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Manipule télékinétiquement un objet visible à longue portée en un round, notamment pour le déplacer ou entraver une créature."
+      },
+      {
+        "id": "psychic-suggestion",
+        "name": "Suggestion psychique",
+        "tier": 3,
+        "prerequisites": [
+          "telepathic-message",
+          "desperate-feat"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Après une attaque d’Intellect réussie, fait accomplir à une cible proche l’action indiquée à son prochain tour."
+      },
+      {
+        "id": "acrobatic-attack",
+        "name": "Attaque acrobatique",
+        "tier": 3,
+        "prerequisites": [
+          "desperate-feat",
+          "telekinesis"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Bondit dans l’attaque et gagne un niveau d’Effort gratuit lorsqu’un Effort est consacré au jet; un 17 ou 18 naturel peut produire un effet mineur au lieu des dégâts supplémentaires."
+      },
+      {
+        "id": "unbalancing-strike",
+        "name": "Coup déséquilibrant",
+        "tier": 4,
+        "prerequisites": [
+          "psychic-suggestion",
+          "acrobatic-attack"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Effectue une attaque de mêlée facilitée qui entrave toutes les actions de la cible à son prochain tour si elle touche."
+      },
+      {
+        "id": "telekinetic-crush",
+        "name": "Écrasement télékinétique",
+        "tier": 4,
+        "prerequisites": [
+          "psychic-suggestion",
+          "acrobatic-attack"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Effectue une attaque d’Intellect entravée contre une cible non vivante pour lui infliger 6 dégâts."
+      },
+      {
+        "id": "total-awareness",
+        "name": "Conscience totale",
+        "tier": 5,
+        "prerequisites": [
+          "unbalancing-strike"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tes sens spéciaux rendent les surprises et les embuscades difficiles, et l’Effort aux tâches d’initiative ou de perception gagne deux niveaux gratuits."
+      },
+      {
+        "id": "telekinetic-throw",
+        "name": "Projection télékinétique",
+        "tier": 5,
+        "prerequisites": [
+          "telekinetic-crush"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Lance télékinétiquement un objet sur une cible proche avec une attaque d’Intellect pour infliger 6 dégâts en cas de réussite."
+      },
+      {
+        "id": "lethal-capability",
+        "name": "Capacité létale",
+        "tier": 6,
+        "prerequisites": [
+          "total-awareness",
+          "telekinetic-throw"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Choisis un type d’attaque spécifique pour infliger 5 dégâts supplémentaires; tu peux choisir cette aptitude plusieurs fois avec une attaque différente."
+      },
+      {
+        "id": "return-to-sender",
+        "name": "Retour à l’expéditeur",
+        "tier": 6,
+        "prerequisites": [
+          "total-awareness",
+          "telekinetic-throw"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Après avoir réussi un Blocage ou une Esquive contre une attaque de mêlée, effectue immédiatement une attaque de mêlée contre l’assaillant."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

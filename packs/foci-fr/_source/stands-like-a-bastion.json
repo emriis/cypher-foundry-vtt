@@ -1,0 +1,178 @@
+{
+  "_id": "standslikeBF0452",
+  "_key": "!items!standslikeBF0452",
+  "name": "Est un rempart vivant",
+  "type": "focus",
+  "img": "icons/equipment/shield/heater-steel.webp",
+  "system": {
+    "description": "<p>Un Focus pour un défenseur lourdement armé, difficile à déplacer ou à blesser.</p>",
+    "abilities": [
+      {
+        "id": "battle-competence",
+        "name": "Compétence martiale",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Utilise librement toutes les armes et armures, et apprends le niveau de jusqu'à trois créatures proches avec une action."
+      },
+      {
+        "id": "imperturbable",
+        "name": "Imperturbable",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Tu ne peux pas être forcé·e de fuir et les allié·e·s proches bénéficient de défenses facilitées contre les effets qui les feraient fuir."
+      },
+      {
+        "id": "nothing-but-defend",
+        "name": "Rien que défendre",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Si tu ne fais que te défendre pendant ton tour, tu gagnes un atout à toutes tes tâches de défense pendant un round."
+      },
+      {
+        "id": "resist-the-elements",
+        "name": "Résister aux éléments",
+        "tier": 2,
+        "prerequisites": ["imperturbable", "battle-competence"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Choisis un type d'énergie nocive et réduis d'un palier les blessures qu'il inflige."
+      },
+      {
+        "id": "shield-master",
+        "name": "Maître·sse du bouclier",
+        "tier": 2,
+        "prerequisites": ["battle-competence", "nothing-but-defend"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Ton bouclier peut encaisser une blessure modérée supplémentaire avant d'être détruit."
+      },
+      {
+        "id": "defend-and-respond",
+        "name": "Défendre et riposter",
+        "tier": 3,
+        "prerequisites": ["resist-the-elements"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "choice",
+          "amount": 3,
+          "options": ["might", "speed"]
+        },
+        "description": "Après un Blocage ou une Esquive contre une attaque de mêlée, attaque immédiatement l'assaillant une fois par tour."
+      },
+      {
+        "id": "throw-shield",
+        "name": "Lancer de bouclier",
+        "tier": 3,
+        "prerequisites": ["shield-master"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Lance ton bouclier comme une arme légère à courte portée; il revient après une tâche de Célérité de difficulté 2 réussie."
+      },
+      {
+        "id": "unmovable",
+        "name": "Inébranlable",
+        "tier": 3,
+        "prerequisites": ["shield-master", "resist-the-elements"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "might", "amount": 3, "options": [] },
+        "description": "Tu ne peux pas être renversé·e, repoussé·e ou déplacé·e contre ta volonté tant que tu es debout et capable d'agir."
+      },
+      {
+        "id": "hard-won-resilience",
+        "name": "Résilience chèrement acquise",
+        "tier": 4,
+        "prerequisites": ["unmovable"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Tu peux encaisser une blessure modérée supplémentaire avant d'être neutralisé·e."
+      },
+      {
+        "id": "inspiring-defense",
+        "name": "Défense inspirante",
+        "tier": 4,
+        "prerequisites": ["throw-shield"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Après avoir résisté à une attaque particulièrement puissante, récupère 4 points de Puissance, puis un point de moins à chaque usage jusqu'à une récupération de dix heures."
+      },
+      {
+        "id": "tower-of-will",
+        "name": "Tour de volonté",
+        "tier": 5,
+        "prerequisites": ["inspiring-defense"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Gagne un atout aux tâches de défense d'Intellect et ajoute 3 points à ta Réserve d'Intellect."
+      },
+      {
+        "id": "weave-an-iron-wall",
+        "name": "Tisser un mur de fer",
+        "tier": 5,
+        "prerequisites": ["inspiring-defense", "hard-won-resilience"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "choice",
+          "amount": 5,
+          "options": ["might", "speed"]
+        },
+        "description": "Crée une barrière d'armes maintenue dans une zone immédiate, infligeant 10 dégâts aux créatures qui la traversent."
+      },
+      {
+        "id": "attenuate-threat",
+        "name": "Atténuer la menace",
+        "tier": 6,
+        "prerequisites": ["tower-of-will"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "En attaquant comme Dernière action, ignore une blessure subie avant ton prochain tour."
+      },
+      {
+        "id": "bouncing-shield",
+        "name": "Bouclier ricochet",
+        "tier": 6,
+        "prerequisites": ["tower-of-will"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "speed", "amount": 3, "options": [] },
+        "description": "Lance ton bouclier sur une cible; il rebondit vers deux cibles supplémentaires avant de revenir ou de tomber à proximité."
+      },
+      {
+        "id": "lethal-capability",
+        "name": "Capacité létale",
+        "tier": 6,
+        "prerequisites": ["weave-an-iron-wall"],
+        "repeatable": true,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Choisis un type d'attaque précis; tes attaques de ce type infligent 5 dégâts supplémentaires. Tu peux choisir cette aptitude à nouveau pour un autre type."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original fondé sur le Cypher Reference Document, créé sous la Cypher Open License."
+    }
+  }
+}

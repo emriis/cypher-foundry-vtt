@@ -1,6 +1,6 @@
 {
-  "_id": "GrowsTowering16X",
-  "_key": "!items!GrowsTowering16X",
+  "_id": "growstotow738FB1",
+  "_key": "!items!growstotow738FB1",
   "name": "Grows to Towering Heights",
   "type": "focus",
   "img": "icons/creatures/mammals/ox-bull-horned-glowing.webp",
@@ -14,134 +14,212 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "might", "amount": 1, "options": [] },
+        "cost": {
+          "stat": "might",
+          "amount": 1,
+          "options": []
+        },
         "description": "Grow to 3 meters, gaining Might resilience and stronger unarmed attacks while making dodges harder. The Might cost rises with each use until recovery."
       },
       {
         "id": "mighty-leap",
         "name": "Mighty Leap",
         "tier": 1,
-        "prerequisites": ["enlarge"],
+        "prerequisites": [
+          "enlarge"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "might", "amount": 1, "options": [] },
+        "cost": {
+          "stat": "might",
+          "amount": 1,
+          "options": []
+        },
         "description": "When larger than normal, jump twice the usual horizontal or vertical distance."
       },
       {
         "id": "longstrider",
         "name": "Longstrider",
         "tier": 1,
-        "prerequisites": ["enlarge"],
+        "prerequisites": [
+          "enlarge"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "When larger than normal, double your travel speed over journeys lasting at least a minute."
       },
       {
         "id": "preternaturally-strong",
         "name": "Preternaturally Strong",
         "tier": 2,
-        "prerequisites": ["enlarge"],
+        "prerequisites": [
+          "enlarge"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "might", "amount": 2, "options": [] },
+        "cost": {
+          "stat": "might",
+          "amount": 2,
+          "options": []
+        },
         "description": "Carrying, climbing, jumping, or smashing rolls below 9 count as 9; greater sizes raise that minimum. The benefit renews after recovery."
       },
       {
         "id": "scary-big",
         "name": "Scary Big",
         "tier": 2,
-        "prerequisites": ["enlarge"],
+        "prerequisites": [
+          "enlarge"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Gain an asset on persuasion and intimidation, or two assets while larger than normal."
       },
       {
         "id": "bigger",
         "name": "Bigger",
         "tier": 3,
-        "prerequisites": ["enlarge"],
+        "prerequisites": [
+          "enlarge"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "might", "amount": 1, "options": [] },
+        "cost": {
+          "stat": "might",
+          "amount": 1,
+          "options": []
+        },
         "description": "Spend extra Might with Enlarge to reach 4 meters, ignore two moderate wounds, and deal 6 unarmed damage."
       },
       {
         "id": "towering-throw",
         "name": "Towering Throw",
         "tier": 3,
-        "prerequisites": ["bigger"],
+        "prerequisites": [
+          "bigger"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "might", "amount": 2, "options": [] },
+        "cost": {
+          "stat": "might",
+          "amount": 2,
+          "options": []
+        },
         "description": "When an unarmed attack damages a creature your size or smaller, throw it 1d20 feet and knock it prone."
       },
       {
         "id": "huge",
         "name": "Huge",
         "tier": 4,
-        "prerequisites": ["bigger"],
+        "prerequisites": [
+          "bigger"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "might", "amount": 2, "options": [] },
+        "cost": {
+          "stat": "might",
+          "amount": 2,
+          "options": []
+        },
         "description": "Spend extra Might with Enlarge to reach 5 meters, ignore three moderate wounds, and deal 7 unarmed damage."
       },
       {
         "id": "towering-strike",
         "name": "Towering Strike",
         "tier": 4,
-        "prerequisites": ["bigger"],
+        "prerequisites": [
+          "bigger"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "might", "amount": 3, "options": [] },
+        "cost": {
+          "stat": "might",
+          "amount": 3,
+          "options": []
+        },
         "description": "A successful Might attack deals 4 extra damage, plus 1 more for each larger size increment."
       },
       {
         "id": "gargantuan",
         "name": "Gargantuan",
         "tier": 5,
-        "prerequisites": ["huge"],
+        "prerequisites": [
+          "huge"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "might", "amount": 5, "options": [] },
+        "cost": {
+          "stat": "might",
+          "amount": 5,
+          "options": []
+        },
         "description": "Spend extra Might with Enlarge to reach 9 meters, gain greater resilience and damage, and attack every creature in an immediate area."
       },
       {
         "id": "might-for-mind",
         "name": "Might for Mind",
         "tier": 5,
-        "prerequisites": ["gargantuan"],
+        "prerequisites": [
+          "gargantuan"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Spend Intellect instead of Might for a task, or Might instead of Intellect."
       },
       {
         "id": "colossal",
         "name": "Colossal",
         "tier": 6,
-        "prerequisites": ["gargantuan"],
+        "prerequisites": [
+          "gargantuan"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "might", "amount": 7, "options": [] },
+        "cost": {
+          "stat": "might",
+          "amount": 7,
+          "options": []
+        },
         "description": "Spend extra Might with Enlarge to reach 18 meters, gaining the Focus's greatest size benefits and making smaller creatures unable to dodge effectively."
       },
       {
         "id": "grab",
         "name": "Grab",
         "tier": 6,
-        "prerequisites": ["colossal"],
+        "prerequisites": [
+          "colossal"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Use a Last action and an unarmed attack to grab a target, hinder its tasks, and squeeze it for damage with an action."
       }
     ]
   },
   "folder": null,
   "sort": 0,
-  "ownership": { "default": 0 },
+  "ownership": {
+    "default": 0
+  },
   "flags": {
     "cypher": {
       "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."

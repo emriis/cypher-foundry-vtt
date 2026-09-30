@@ -1,6 +1,6 @@
 {
-  "_id": "Expl0res2026WXYZ",
-  "_key": "!items!Expl0res2026WXYZ",
+  "_id": "exploresxx24D578",
+  "_key": "!items!exploresxx24D578",
   "name": "Explores",
   "type": "focus",
   "img": "icons/environment/wilderness/terrain-rocks.webp",
@@ -11,20 +11,32 @@
         "id": "exploration-survivor",
         "name": "Exploration Survivor",
         "tier": 1,
-        "prerequisites": ["tough"],
+        "prerequisites": [
+          "tough"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "After studying a new region and succeeding at survival, find useful supplies, feed allies, and remember notable locations."
       },
       {
         "id": "tough",
         "name": "Tough",
         "tier": 1,
-        "prerequisites": ["untamed-recovery"],
+        "prerequisites": [
+          "untamed-recovery"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "You can take one additional minor wound."
       },
       {
@@ -34,114 +46,181 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Gain one additional one-action recovery each day."
       },
       {
         "id": "beast-companion",
         "name": "Beast Companion",
         "tier": 2,
-        "prerequisites": ["exploration-survivor"],
+        "prerequisites": [
+          "exploration-survivor"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Gain a level 2 beast follower that accompanies you and follows your instructions."
       },
       {
         "id": "experienced-explorer",
         "name": "Experienced Explorer",
         "tier": 2,
-        "prerequisites": ["exploration-survivor"],
+        "prerequisites": [
+          "exploration-survivor"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Gain protection from poison, disease, harsh wilderness conditions, and find food and water in the wild."
       },
       {
         "id": "animal-senses-and-sensibilities",
         "name": "Animal Senses and Sensibilities",
         "tier": 3,
-        "prerequisites": ["beast-companion"],
+        "prerequisites": [
+          "beast-companion"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Receive warning before most nearby level 4 or lower ambushes and traps, without granting attackers an advantage from surprise."
       },
       {
         "id": "wilderness-encouragement",
         "name": "Wilderness Encouragement",
         "tier": 3,
-        "prerequisites": ["experienced-explorer"],
+        "prerequisites": [
+          "experienced-explorer"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
         "description": "In the wilderness, help an ally take an extra recovery or remove a moderate wound."
       },
       {
         "id": "wild-camouflage",
         "name": "Wild Camouflage",
         "tier": 4,
-        "prerequisites": ["animal-senses-and-sensibilities"],
+        "prerequisites": [
+          "animal-senses-and-sensibilities"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
         "description": "Use clothing, disguise, and terrain knowledge to gain two assets to Speed and stealth tasks in the wild."
       },
       {
         "id": "wilderness-awareness",
         "name": "Wilderness Awareness",
         "tier": 4,
-        "prerequisites": ["wilderness-encouragement"],
+        "prerequisites": [
+          "wilderness-encouragement"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
         "description": "Extend your senses across the wilderness and ask the GM one simple general question about the area."
       },
       {
         "id": "explorers-awareness",
         "name": "Explorer's Awareness",
         "tier": 5,
-        "prerequisites": ["wild-camouflage"],
+        "prerequisites": [
+          "wild-camouflage"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Gain two free levels of Effort when applying Effort to initiative or perception tasks."
       },
       {
         "id": "the-wild-is-on-your-side",
         "name": "The Wild Is on Your Side",
         "tier": 5,
-        "prerequisites": ["wilderness-awareness"],
+        "prerequisites": [
+          "wilderness-awareness"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 5, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
         "description": "Nature interferes with nearby foes, hindering all their tasks until your next ten-minute recovery."
       },
       {
         "id": "one-with-the-wild",
         "name": "One With the Wild",
         "tier": 6,
-        "prerequisites": ["explorers-awareness", "the-wild-is-on-your-side"],
+        "prerequisites": [
+          "explorers-awareness",
+          "the-wild-is-on-your-side"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 6, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
         "description": "Share a protective bond with the wilderness: allies gain Edge, recover twice as many points, and natural life will not knowingly harm them."
       },
       {
         "id": "survivor",
         "name": "Survivor",
         "tier": 6,
-        "prerequisites": ["the-wild-is-on-your-side"],
+        "prerequisites": [
+          "the-wild-is-on-your-side"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Rally from a minor or moderate wound without spending Might; the ability renews after recovery."
       }
     ]
   },
   "folder": null,
   "sort": 0,
-  "ownership": { "default": 0 },
+  "ownership": {
+    "default": 0
+  },
   "flags": {
     "cypher": {
       "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."

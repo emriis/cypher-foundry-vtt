@@ -1,0 +1,140 @@
+{
+  "_id": "worksforal856231",
+  "_key": "!items!worksforal856231",
+  "name": "Works for a Living",
+  "type": "focus",
+  "img": "icons/tools/hand/hammer-steel.webp",
+  "system": {
+    "description": "<p>A Focus for a character who earns a living through practical work, resilience, and useful expertise.</p>",
+    "abilities": [
+      {
+        "id": "fitting-in",
+        "name": "Fitting In",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Blend into a community of ordinary intelligent creatures so you attract little notice until you draw attention to yourself."
+      },
+      {
+        "id": "handy",
+        "name": "Handy",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "You are trained in crafting and gain one extra resource point whenever you gain resources, usable only for crafting or repairs."
+      },
+      {
+        "id": "muscles-of-iron",
+        "name": "Muscles of Iron",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "might", "amount": 2, "options": [] },
+        "description": "Until a ten-minute or longer recovery, ease all Might actions other than attacks."
+      },
+      {
+        "id": "danger-instinct",
+        "name": "Danger Instinct",
+        "tier": 2,
+        "prerequisites": ["fitting-in", "muscles-of-iron"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "speed", "amount": 3, "options": [] },
+        "description": "When surprised by an attack or hazard, move an immediate distance before it occurs; if it still reaches you, ease your defense."
+      },
+      {
+        "id": "endurance",
+        "name": "Endurance",
+        "tier": 2,
+        "prerequisites": ["fitting-in", "handy"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Double or halve physical-action durations, whichever benefits you, with harmful effects lasting at least one round."
+      },
+      {
+        "id": "eye-for-detail",
+        "name": "Eye for Detail",
+        "tier": 3,
+        "prerequisites": ["danger-instinct"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "After carefully exploring a nearby area or accessible object for about five minutes, ask the GM one question and receive a truthful answer."
+      },
+      {
+        "id": "improvise",
+        "name": "Improvise",
+        "tier": 3,
+        "prerequisites": ["endurance"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "description": "When attempting an untrained task, improvise a tool, insight, or lucky break to gain an asset."
+      },
+      {
+        "id": "device-insight",
+        "name": "Device Insight",
+        "tier": 4,
+        "prerequisites": ["eye-for-detail"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "description": "Ask the GM one question about an unfamiliar or advanced device's capabilities, operation, weaknesses, or repair."
+      },
+      {
+        "id": "hard-won-resilience",
+        "name": "Hard-Won Resilience",
+        "tier": 4,
+        "prerequisites": ["improvise"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Your difficult experiences grant you enough resilience to withstand one additional moderate wound."
+      },
+      {
+        "id": "polymath",
+        "name": "Polymath",
+        "tier": 5,
+        "prerequisites": ["device-insight", "hard-won-resilience"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "When rolling a trained non-attack, non-defense task below 12, treat the result as 12."
+      },
+      {
+        "id": "expert-handyman",
+        "name": "Expert Handyman",
+        "tier": 6,
+        "prerequisites": ["polymath"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Objects you craft, repair, or build with resources are superior, typically functioning as if two levels higher."
+      },
+      {
+        "id": "on-the-crew",
+        "name": "On the Crew",
+        "tier": 6,
+        "prerequisites": ["polymath"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "description": "With at least two allies, give the team a short pep talk that grants a temporary group benefit until a ten-minute or longer recovery."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

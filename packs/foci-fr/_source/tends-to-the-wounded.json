@@ -1,0 +1,150 @@
+{
+  "_id": "tendstotheE5D9C7",
+  "_key": "!items!tendstotheE5D9C7",
+  "name": "Soigne les blessé·e·s",
+  "type": "focus",
+  "img": "icons/magic/life/heart-cross-strong-flame-blue.webp",
+  "system": {
+    "description": "<p>Un focus pour un personnage qui soigne ses allié·e·s, restaure leur énergie et peut modifier le temps pour les aider.</p>",
+    "abilities": [
+      {
+        "id": "easing-the-pain",
+        "name": "Soulagement de la douleur",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Les allié·e·s à portée immédiate ajoutent +1 à leurs jets de récupération."
+      },
+      {
+        "id": "healing-hand",
+        "name": "Main guérisseuse",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "description": "D'un toucher, réduis la sévérité d'une blessure. Le coût en Intellect augmente à chaque utilisation et revient à sa valeur de base après une récupération. Dernière action."
+      },
+      {
+        "id": "resilience",
+        "name": "Résilience",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Tu peux subir une blessure modérée supplémentaire."
+      },
+      {
+        "id": "alleviate-malady",
+        "name": "Soulager le mal",
+        "tier": 2,
+        "prerequisites": ["healing-hand", "resilience"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "description": "Touche une créature et réussis un jet d'Intellect pour annuler ou guérir une maladie, un poison ou un mal similaire. Action."
+      },
+      {
+        "id": "healing-beacon",
+        "name": "Balise de guérison",
+        "tier": 2,
+        "prerequisites": ["easing-the-pain", "healing-hand"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "description": "Choisis un·e allié·e à courte portée qui peut réduire une de ses blessures lorsque tu utilises Main guérisseuse ou une aptitude de soin similaire. Action pour initier."
+      },
+      {
+        "id": "font-of-healing",
+        "name": "Source de guérison",
+        "tier": 3,
+        "prerequisites": ["healing-beacon"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Un·e allié·e qui te touche peut dépenser de l'Intellect pour soigner deux blessures légères, une modérée ou une grave. Chaque allié·e ne peut l'utiliser qu'une fois par récupération de dix heures."
+      },
+      {
+        "id": "font-of-recovery",
+        "name": "Source de récupération",
+        "tier": 3,
+        "prerequisites": ["alleviate-malady"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Un·e allié·e qui te touche peut dépenser 1 Intellect pour récupérer 1d6 points de Puissance ou de Célérité. Chaque allié·e ne peut l'utiliser qu'une fois par récupération de dix heures."
+      },
+      {
+        "id": "healing-shield",
+        "name": "Bouclier guérisseur",
+        "tier": 4,
+        "prerequisites": ["font-of-healing"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Donne à un·e allié·e à courte portée un atout pour un jet de blocage. L'aptitude se renouvelle après une récupération."
+      },
+      {
+        "id": "resuscitate",
+        "name": "Réanimer",
+        "tier": 4,
+        "prerequisites": ["font-of-recovery"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 5, "options": [] },
+        "description": "Touche un PJ blessé pour soigner une blessure grave, une modérée ou trois légères ; tu peux aussi ranimer une créature morte récemment selon les conditions indiquées. Action."
+      },
+      {
+        "id": "ranged-healer",
+        "name": "Soignant·e à distance",
+        "tier": 5,
+        "prerequisites": ["resuscitate"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Tes aptitudes de soin à courte portée fonctionnent à longue portée, et tes aptitudes au toucher fonctionnent à courte portée."
+      },
+      {
+        "id": "rewind-time",
+        "name": "Rembobiner le temps",
+        "tier": 5,
+        "prerequisites": ["healing-shield"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "intellect", "amount": 5, "options": [] },
+        "description": "Rembobine quelques secondes pour une créature à courte portée afin qu'elle répète ou modifie sa dernière action. Se renouvelle après une récupération."
+      },
+      {
+        "id": "greater-healing-hand",
+        "name": "Grande main guérisseuse",
+        "tier": 6,
+        "prerequisites": ["rewind-time"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "description": "Supprime toutes les blessures légères d'un personnage touché, ou réduit deux blessures modérées ou deux graves. Le coût en Intellect augmente à chaque utilisation et revient à sa valeur de base après une récupération."
+      },
+      {
+        "id": "superior-healer",
+        "name": "Guérisseur·euse supérieur·e",
+        "tier": 6,
+        "prerequisites": ["ranged-healer"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Double le bénéfice des aptitudes Source, de Réanimer ou du Bouclier guérisseur selon le cas. L'Effort peut étendre la limite de temps de Réanimer."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original fondé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

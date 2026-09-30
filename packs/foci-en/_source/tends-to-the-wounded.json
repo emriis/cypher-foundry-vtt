@@ -1,0 +1,150 @@
+{
+  "_id": "tendstotheE5D9C7",
+  "_key": "!items!tendstotheE5D9C7",
+  "name": "Tends to the Wounded",
+  "type": "focus",
+  "img": "icons/magic/life/heart-cross-strong-flame-blue.webp",
+  "system": {
+    "description": "<p>A Focus for a character who heals allies, restores their strength, and can bend time to help them.</p>",
+    "abilities": [
+      {
+        "id": "easing-the-pain",
+        "name": "Easing the Pain",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Allies within immediate range add +1 to recovery rolls."
+      },
+      {
+        "id": "healing-hand",
+        "name": "Healing Hand",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "description": "Touch a creature to reduce the severity of one wound. The Intellect cost increases with each use and resets after a recovery. Last action."
+      },
+      {
+        "id": "resilience",
+        "name": "Resilience",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "You can take one additional moderate wound."
+      },
+      {
+        "id": "alleviate-malady",
+        "name": "Alleviate Malady",
+        "tier": 2,
+        "prerequisites": ["healing-hand", "resilience"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "description": "Touch a creature and attempt an Intellect roll to cancel or cure a disease, poison, or similar malady. Action."
+      },
+      {
+        "id": "healing-beacon",
+        "name": "Healing Beacon",
+        "tier": 2,
+        "prerequisites": ["easing-the-pain", "healing-hand"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "description": "Choose an ally within short range to reduce one of their wounds whenever you use Healing Hand or a similar healing ability. Action to initiate."
+      },
+      {
+        "id": "font-of-healing",
+        "name": "Font of Healing",
+        "tier": 3,
+        "prerequisites": ["healing-beacon"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "An ally touching you can spend Intellect to heal two minor wounds, one moderate wound, or one major wound. Each ally can use this once per ten-hour recovery."
+      },
+      {
+        "id": "font-of-recovery",
+        "name": "Font of Recovery",
+        "tier": 3,
+        "prerequisites": ["alleviate-malady"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "An ally touching you can spend 1 Intellect to regain 1d6 Might or Speed. Each ally can use this once per ten-hour recovery."
+      },
+      {
+        "id": "healing-shield",
+        "name": "Healing Shield",
+        "tier": 4,
+        "prerequisites": ["font-of-healing"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Give an ally within short range an asset for one block roll. The ability renews after a recovery."
+      },
+      {
+        "id": "resuscitate",
+        "name": "Resuscitate",
+        "tier": 4,
+        "prerequisites": ["font-of-recovery"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 5, "options": [] },
+        "description": "Touch an injured PC to heal one major wound, one moderate wound, or three minor wounds; you can also revive a recently dead creature under the stated conditions. Action."
+      },
+      {
+        "id": "ranged-healer",
+        "name": "Ranged Healer",
+        "tier": 5,
+        "prerequisites": ["resuscitate"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Your short-range healing abilities work at long range, and your touch abilities work at short range."
+      },
+      {
+        "id": "rewind-time",
+        "name": "Rewind Time",
+        "tier": 5,
+        "prerequisites": ["healing-shield"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "intellect", "amount": 5, "options": [] },
+        "description": "Rewind a few seconds for a creature within short range so it can repeat or change its most recent action. Renews after a recovery."
+      },
+      {
+        "id": "greater-healing-hand",
+        "name": "Greater Healing Hand",
+        "tier": 6,
+        "prerequisites": ["rewind-time"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "description": "Remove all minor wounds from a touched character, or reduce two moderate or two major wounds. The Intellect cost increases with each use and resets after a recovery."
+      },
+      {
+        "id": "superior-healer",
+        "name": "Superior Healer",
+        "tier": 6,
+        "prerequisites": ["ranged-healer"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Double the benefit of Font abilities, Resuscitate, or Healing Shield as applicable. Effort can extend Resuscitate's death time limit."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

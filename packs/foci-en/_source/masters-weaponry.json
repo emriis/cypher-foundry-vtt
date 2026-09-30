@@ -1,0 +1,306 @@
+{
+  "_id": "mastersweaD08626",
+  "_key": "!items!mastersweaD08626",
+  "name": "Masters Weaponry",
+  "type": "focus",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "<p>A Focus for mastering a chosen kind of weapon.</p>",
+    "abilities": [
+      {
+        "id": "battle-competence",
+        "name": "Battle Competence",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Use all weapons and armor freely, and assess the level of creatures nearby."
+      },
+      {
+        "id": "display-of-skill",
+        "name": "Display of Skill",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "A striking display grants an ally free Effort or gives you an intimidation advantage."
+      },
+      {
+        "id": "weapon-master",
+        "name": "Weapon Master",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Master one weapon type, avoid its penalties, deal 1 extra damage, and craft it."
+      },
+      {
+        "id": "careful-shot",
+        "name": "Careful Shot",
+        "tier": 2,
+        "prerequisites": [
+          "weapon-master"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "choice",
+          "amount": 0,
+          "options": [
+            "speed",
+            "intellect"
+          ]
+        },
+        "description": "Use Speed or Intellect Effort to increase ranged damage, with extra damage after aiming."
+      },
+      {
+        "id": "throw-weapon",
+        "name": "Throw Weapon",
+        "tier": 2,
+        "prerequisites": [
+          "display-of-skill"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Throw a melee weapon and call it back after a recovery task."
+      },
+      {
+        "id": "perfect-attack",
+        "name": "Perfect Attack",
+        "tier": 2,
+        "prerequisites": [
+          "battle-competence"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "choice",
+          "amount": 2,
+          "options": [
+            "might",
+            "speed"
+          ]
+        },
+        "description": "Make a chosen-weapon attack with a minimum roll of 9 until your next recovery."
+      },
+      {
+        "id": "rapid-attack",
+        "name": "Rapid Attack",
+        "tier": 3,
+        "prerequisites": [
+          "careful-shot",
+          "throw-weapon",
+          "perfect-attack"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Make one additional chosen-weapon attack on your turn once per round."
+      },
+      {
+        "id": "spray",
+        "name": "Spray",
+        "tier": 3,
+        "prerequisites": [
+          "careful-shot"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Spray rapid-fire or nearby thrown weapons to gain an attack asset at reduced damage."
+      },
+      {
+        "id": "disarming-strike",
+        "name": "Disarming Strike",
+        "tier": 3,
+        "prerequisites": [
+          "perfect-attack"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Strike to knock away an enemy weapon, with special options for whips and bows."
+      },
+      {
+        "id": "special-shot",
+        "name": "Special Shot",
+        "tier": 4,
+        "prerequisites": [
+          "spray",
+          "rapid-attack"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Trade 1 firearm damage to hit a precise object, limb, or strap."
+      },
+      {
+        "id": "rival-talent",
+        "name": "Rival Talent",
+        "tier": 4,
+        "prerequisites": [
+          "rapid-attack"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Ease every task against foes using the same weapon type as your chosen weapon."
+      },
+      {
+        "id": "never-fumble",
+        "name": "Never Fumble",
+        "tier": 4,
+        "prerequisites": [
+          "disarming-strike"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Ignore an intrusion on a natural 1 and never accidentally drop or lose your chosen weapon."
+      },
+      {
+        "id": "arc-spray",
+        "name": "Arc Spray",
+        "tier": 5,
+        "prerequisites": [
+          "special-shot",
+          "rival-talent"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Fire at three adjacent targets with separate hindered attacks."
+      },
+      {
+        "id": "that-was-a-feint",
+        "name": "That Was a Feint",
+        "tier": 5,
+        "prerequisites": [
+          "rival-talent",
+          "never-fumble"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "choice",
+          "amount": 5,
+          "options": [
+            "might",
+            "speed"
+          ]
+        },
+        "description": "Retry a failed chosen-weapon attack with an asset."
+      },
+      {
+        "id": "shot-collision",
+        "name": "Shot Collision",
+        "tier": 6,
+        "prerequisites": [
+          "arc-spray"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Shoot an incoming projectile out of the air and optionally make it explode."
+      },
+      {
+        "id": "lethal-strike",
+        "name": "Lethal Strike",
+        "tier": 6,
+        "prerequisites": [
+          "arc-spray",
+          "that-was-a-feint"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 6,
+          "options": []
+        },
+        "description": "A swift weapon attack deals 7 additional damage on a hit."
+      },
+      {
+        "id": "perfect-follow-through",
+        "name": "Perfect Follow-Through",
+        "tier": 6,
+        "prerequisites": [
+          "that-was-a-feint"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "choice",
+          "amount": 8,
+          "options": [
+            "might",
+            "speed"
+          ]
+        },
+        "description": "Attack with your chosen weapon and take another action as an extra action."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

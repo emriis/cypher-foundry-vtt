@@ -1,6 +1,6 @@
 {
-  "_id": "Bu1ld5All13s2026",
-  "_key": "!items!Bu1ld5All13s2026",
+  "_id": "buildsalliE105E2",
+  "_key": "!items!buildsalliE105E2",
   "name": "Builds Allies",
   "type": "focus",
   "img": "icons/commodities/tech/ai-core.webp",
@@ -14,7 +14,11 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
         "description": "Assess a nearby machine's purpose, level, and condition."
       },
       {
@@ -24,7 +28,11 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "You have a level 2 automaton follower."
       },
       {
@@ -34,37 +42,59 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Gain an extra resource point for building or repairs."
       },
       {
         "id": "automaton-armor-upgrade",
         "name": "Automaton Armor Upgrade",
         "tier": 2,
-        "prerequisites": ["automaton-assistant"],
+        "prerequisites": [
+          "automaton-assistant"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
         "description": "An automaton can become freely usable light armor."
       },
       {
         "id": "automaton-cypher-upgrade",
         "name": "Automaton Cypher Upgrade",
         "tier": 2,
-        "prerequisites": ["automaton-assistant"],
+        "prerequisites": [
+          "automaton-assistant"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
         "description": "An automaton temporarily increases your cypher limit."
       },
       {
         "id": "charm-machine",
         "name": "Charm Machine",
         "tier": 2,
-        "prerequisites": ["automaton-assistant"],
+        "prerequisites": [
+          "automaton-assistant"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
         "description": "Convince a nearby non-intelligent machine to avoid harming you."
       },
       {
@@ -78,7 +108,11 @@
         ],
         "repeatable": true,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Build or improve an automaton follower."
       },
       {
@@ -92,27 +126,45 @@
         ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
         "description": "Compel a machine to take one action."
       },
       {
         "id": "automaton-flight-upgrade",
         "name": "Automaton Flight Upgrade",
         "tier": 4,
-        "prerequisites": ["expert-automaton", "quick-control"],
+        "prerequisites": [
+          "expert-automaton",
+          "quick-control"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Give an automaton sustained flight."
       },
       {
         "id": "automaton-turret-upgrade",
         "name": "Automaton Turret Upgrade",
         "tier": 4,
-        "prerequisites": ["expert-automaton", "quick-control"],
+        "prerequisites": [
+          "expert-automaton",
+          "quick-control"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Reconfigure an automaton as an energy turret."
       },
       {
@@ -126,7 +178,11 @@
         ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "You have four level 2 automaton followers."
       },
       {
@@ -140,7 +196,11 @@
         ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "An automaton projects a protective force field."
       },
       {
@@ -154,7 +214,11 @@
         ],
         "repeatable": true,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Increase one automaton's level."
       },
       {
@@ -168,14 +232,20 @@
         ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "intellect", "amount": 6, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
         "description": "An automaton can become freely usable heavy armor."
       }
     ]
   },
   "folder": null,
   "sort": 0,
-  "ownership": { "default": 0 },
+  "ownership": {
+    "default": 0
+  },
   "flags": {
     "cypher": {
       "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."

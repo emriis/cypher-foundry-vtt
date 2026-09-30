@@ -1,0 +1,130 @@
+{
+  "_id": "wearsashee6F9BB4",
+  "_key": "!items!wearsashee6F9BB4",
+  "name": "Revêt un voile de glace",
+  "type": "focus",
+  "img": "icons/magic/water/iceberg-glacier-blue.webp",
+  "system": {
+    "description": "<p>Un focus pour un personnage qui commande la puissance hivernale du froid et de la glace.</p>",
+    "abilities": [
+      {
+        "id": "cool-water",
+        "name": "Eau fraîche",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "description": "Condense l'humidité de l'air pour créer assez d'eau potable froide pour cinq créatures pendant un jour. Action."
+      },
+      {
+        "id": "ice-armor",
+        "name": "Armure de glace",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "description": "Recouvre-toi de glace jusqu'à une récupération de dix minutes, facilite tes défenses de Puissance pour Bloquer, réduit les blessures de froid d'un palier et permet un toucher glacé infligeant 2 dégâts."
+      },
+      {
+        "id": "lower-temperature",
+        "name": "Abaisser la température",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "description": "Refroidis une zone immédiate de 20 degrés au maximum jusqu'à une récupération de dix minutes. Action pour initier."
+      },
+      {
+        "id": "frost-bolt",
+        "name": "Trait de givre",
+        "tier": 2,
+        "prerequisites": ["ice-armor"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Émets un rayon de froid contre une cible à courte portée pour 4 dégâts, ou intensifie l'Armure de glace pour ajouter 2 dégâts jusqu'à une récupération de dix minutes. Action."
+      },
+      {
+        "id": "ice-slide",
+        "name": "Glissade de glace",
+        "tier": 2,
+        "prerequisites": ["ice-armor"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Crée une piste de glace jusqu'à une destination à longue portée et glisse sans danger le long d'un trajet dégagé. Action."
+      },
+      {
+        "id": "ice-creation",
+        "name": "Création de glace",
+        "tier": 3,
+        "prerequisites": ["ice-slide"],
+        "repeatable": true,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "description": "Crée un objet grossier de glace de niveau 3, de ta taille au maximum ; chaque choix supplémentaire double sa taille de base. L'Effort peut doubler sa taille ou étendre sa distance. Action."
+      },
+      {
+        "id": "winters-grip",
+        "name": "Étreinte hivernale",
+        "tier": 3,
+        "prerequisites": ["frost-bolt"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "description": "Fais une attaque d'Intellect contre une cible à courte portée pour l'immobiliser dans la glace. L'Effort peut ajouter 3 dégâts de froid. Action."
+      },
+      {
+        "id": "improved-ice-armor",
+        "name": "Armure de glace améliorée",
+        "tier": 4,
+        "prerequisites": ["ice-creation", "winters-grip"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "L'Armure de glace facilite les défenses de Puissance pour Bloquer d'un palier supplémentaire, et son toucher glacé, le Trait de givre et l'Étreinte hivernale infligent +1 dégât."
+      },
+      {
+        "id": "cold-burst",
+        "name": "Explosion de froid",
+        "tier": 5,
+        "prerequisites": ["improved-ice-armor"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 5, "options": [] },
+        "description": "Fais une attaque d'Intellect contre toute créature à courte portée pour 5 dégâts de froid. L'Effort augmente les dégâts ou peut aveugler les cibles touchées. Action."
+      },
+      {
+        "id": "ice-monster",
+        "name": "Monstre de glace",
+        "tier": 6,
+        "prerequisites": ["cold-burst"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 6, "options": [] },
+        "description": "Crée un automate allié de niveau 5 fait de neige ou de glace, qui agit selon tes ordres jusqu'à une récupération de dix minutes. Action pour créer et action pour diriger."
+      },
+      {
+        "id": "winter-gauntlets",
+        "name": "Gantelets d'hiver",
+        "tier": 6,
+        "prerequisites": ["cold-burst"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Le Trait de givre et les attaques améliorées par le froid infligent +3 dégâts et immobilisent les créatures touchées comme avec l'Étreinte hivernale."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original fondé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

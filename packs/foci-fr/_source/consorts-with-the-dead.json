@@ -1,0 +1,255 @@
+{
+  "_id": "consortswiF70F00",
+  "_key": "!items!consortswiF70F00",
+  "name": "Fréquente les morts",
+  "type": "focus",
+  "img": "icons/magic/death/skull-humanoid-crown-white.webp",
+  "system": {
+    "description": "<p>Un Focus pour un personnage qui parle avec les morts et commande leurs corps.</p>",
+    "abilities": [
+      {
+        "id": "basic-necromancy",
+        "name": "Nécromancie de base",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Réanime un petit cadavre comme suivant mort-vivant de niveau 1."
+      },
+      {
+        "id": "bone-knowledge",
+        "name": "Connaissance des os",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Apprends la cause, la date de mort et l'espèce d'un cadavre."
+      },
+      {
+        "id": "speaks-with-dead",
+        "name": "Porte-parole des morts",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Pose à un cadavre une question à laquelle il aurait pu répondre vivant."
+      },
+      {
+        "id": "blood-magic",
+        "name": "Magie du sang",
+        "tier": 2,
+        "prerequisites": [
+          "basic-necromancy",
+          "bone-knowledge"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Conserve une blessure modérée pour gagner un Avantage dans une Réserve."
+      },
+      {
+        "id": "improved-necromancy",
+        "name": "Nécromancie améliorée",
+        "tier": 2,
+        "prerequisites": [
+          "basic-necromancy",
+          "blood-magic"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Réanime plusieurs corps à portée augmentée."
+      },
+      {
+        "id": "improved-speaker",
+        "name": "Porte-parole amélioré",
+        "tier": 2,
+        "prerequisites": [
+          "bone-knowledge",
+          "speaks-with-dead"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Pose plus de questions aux morts en dépensant davantage d'Intellect."
+      },
+      {
+        "id": "sense-the-mood",
+        "name": "Ressentir l'ambiance",
+        "tier": 3,
+        "prerequisites": [
+          "blood-magic",
+          "improved-speaker",
+          "flesh-mending"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Interroge les énergies résiduelles d'un lieu."
+      },
+      {
+        "id": "flesh-mending",
+        "name": "Réparation de la chair",
+        "tier": 3,
+        "prerequisites": [
+          "blood-magic",
+          "improved-necromancy",
+          "sense-the-mood"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Soigne une blessure ou rends de la santé à un PNJ vivant ou mort-vivant."
+      },
+      {
+        "id": "greater-necromancy",
+        "name": "Nécromancie supérieure",
+        "tier": 4,
+        "prerequisites": [
+          "improved-necromancy",
+          "flesh-mending",
+          "spectral-cloak"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Réanime un grand cadavre comme suivant mort-vivant de niveau 3."
+      },
+      {
+        "id": "spectral-cloak",
+        "name": "Manteau spectral",
+        "tier": 4,
+        "prerequisites": [
+          "sense-the-mood",
+          "flesh-mending",
+          "greater-necromancy"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Un esprit mort-vivant t'enveloppe et nuit aux assaillants proches."
+      },
+      {
+        "id": "terrifying-gaze",
+        "name": "Regard terrifiant",
+        "tier": 5,
+        "prerequisites": [
+          "greater-necromancy",
+          "wall-of-bones"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "Fige plusieurs créatures vivantes par la peur."
+      },
+      {
+        "id": "wall-of-bones",
+        "name": "Mur d'ossements",
+        "tier": 5,
+        "prerequisites": [
+          "spectral-cloak",
+          "terrifying-gaze"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Crée un mur d'ossements nécrotiques blessant."
+      },
+      {
+        "id": "true-necromancy",
+        "name": "Vraie nécromancie",
+        "tier": 6,
+        "prerequisites": [
+          "terrifying-gaze",
+          "wall-of-bones"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 8,
+          "options": []
+        },
+        "description": "Réanime un grand cadavre comme suivant mort-vivant de niveau 5."
+      },
+      {
+        "id": "word-of-death",
+        "name": "Mot de mort",
+        "tier": 6,
+        "prerequisites": [
+          "terrifying-gaze",
+          "wall-of-bones"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "Prononce un mot magique mortel contre un ennemi proche."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

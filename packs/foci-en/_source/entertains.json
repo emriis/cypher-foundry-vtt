@@ -1,6 +1,6 @@
 {
-  "_id": "Ent3rtains2026XY",
-  "_key": "!items!Ent3rtains2026XY",
+  "_id": "entertains1AA590",
+  "_key": "!items!entertains1AA590",
   "name": "Entertains",
   "type": "focus",
   "img": "icons/tools/instruments/harp.webp",
@@ -11,20 +11,32 @@
         "id": "anecdote",
         "name": "Anecdote",
         "tier": 1,
-        "prerequisites": ["knowing-the-audience"],
+        "prerequisites": [
+          "knowing-the-audience"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
         "description": "Use an uplifting story to train listeners in a related task or make a neutral nearby group friendly."
       },
       {
         "id": "inspiring-suggestion",
         "name": "Inspiring Suggestion",
         "tier": 1,
-        "prerequisites": ["inspiring-suggestion"],
+        "prerequisites": [
+          "inspiring-suggestion"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
         "description": "Give a visible, understanding ally a specific helpful suggestion; following it grants two assets."
       },
       {
@@ -34,104 +46,167 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
         "description": "Read a nearby group's mood and gain an asset to investigate an individual's motivation next round."
       },
       {
         "id": "inspiring-ease",
         "name": "Inspiring Ease",
         "tier": 2,
-        "prerequisites": ["anecdote"],
+        "prerequisites": [
+          "anecdote"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "After a shared ten-hour recovery, your stories, songs, or art inspire allies to ease one task each day."
       },
       {
         "id": "rising-courage",
         "name": "Rising Courage",
         "tier": 2,
-        "prerequisites": ["inspiring-suggestion"],
+        "prerequisites": [
+          "inspiring-suggestion"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
         "description": "Grant a nearby target an asset to their next Intellect defense and initiative tasks."
       },
       {
         "id": "find-motivation",
         "name": "Find Motivation",
         "tier": 3,
-        "prerequisites": ["rising-courage"],
+        "prerequisites": [
+          "rising-courage"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
         "description": "Ignore a negative mental effect of level 4 or less, increasing the limit with Effort."
       },
       {
         "id": "perfect-stranger",
         "name": "Perfect Stranger",
         "tier": 3,
-        "prerequisites": ["knowing-the-audience"],
+        "prerequisites": [
+          "knowing-the-audience"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
         "description": "Adopt an almost unrecognizable role, easing impersonation tasks and rewarding related Effort."
       },
       {
         "id": "calm",
         "name": "Calm",
         "tier": 4,
-        "prerequisites": ["find-motivation"],
+        "prerequisites": [
+          "find-motivation"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
         "description": "An Intellect attack using your performance prevents a living foe from attacking for one round."
       },
       {
         "id": "captivate-or-inspire",
         "name": "Captivate or Inspire",
         "tier": 4,
-        "prerequisites": ["inspiring-ease", "perfect-stranger"],
+        "prerequisites": [
+          "inspiring-ease",
+          "perfect-stranger"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Hold nearby NPCs' attention while speaking, or let chosen listeners perform as if one level higher."
       },
       {
         "id": "willing-sacrifice",
         "name": "Willing Sacrifice",
         "tier": 5,
-        "prerequisites": ["calm"],
+        "prerequisites": [
+          "calm"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "When intercepting an attack for another, reduce the resulting wound's severity by one step."
       },
       {
         "id": "master-entertainer",
         "name": "Master Entertainer",
         "tier": 6,
-        "prerequisites": ["inspiring-ease", "captivate-or-inspire"],
+        "prerequisites": [
+          "inspiring-ease",
+          "captivate-or-inspire"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Allies affected by Inspiring Ease can ease a second task daily or ease one task by two steps."
       },
       {
         "id": "vindictive-performance",
         "name": "Vindictive Performance",
         "tier": 6,
-        "prerequisites": ["captivate-or-inspire", "willing-sacrifice"],
+        "prerequisites": [
+          "captivate-or-inspire",
+          "willing-sacrifice"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 5, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
         "description": "Deliver a disguised performance that deals 6 Intellect damage and costs its target their next turn."
       }
     ]
   },
   "folder": null,
   "sort": 0,
-  "ownership": { "default": 0 },
+  "ownership": {
+    "default": 0
+  },
   "flags": {
     "cypher": {
       "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."

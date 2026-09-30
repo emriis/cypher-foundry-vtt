@@ -1,0 +1,246 @@
+{
+  "_id": "movesliket07248B",
+  "_key": "!items!movesliket07248B",
+  "name": "Moves Like the Wind",
+  "type": "focus",
+  "img": "icons/svg/wind.svg",
+  "system": {
+    "description": "<p>A Focus for moving with extraordinary speed.</p>",
+    "abilities": [
+      {
+        "id": "recover-faster",
+        "name": "Recover Faster",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Gain a movement-only extra action when you rally."
+      },
+      {
+        "id": "fleet-of-foot",
+        "name": "Fleet of Foot",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Move a short distance as an extra action, or spend Effort to move long."
+      },
+      {
+        "id": "get-out",
+        "name": "Get Out",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Moving toward safety eases one task you attempt next round."
+      },
+      {
+        "id": "obstacle-running",
+        "name": "Obstacle Running",
+        "tier": 2,
+        "prerequisites": [
+          "fleet-of-foot"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Move normally through difficult terrain and gain ease on movement obstacles."
+      },
+      {
+        "id": "escape",
+        "name": "Escape",
+        "tier": 2,
+        "prerequisites": [
+          "fleet-of-foot",
+          "get-out"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Treat an escape roll below 9 as a 9, increasing the minimum with Effort."
+      },
+      {
+        "id": "incredible-running-speed",
+        "name": "Incredible Running Speed",
+        "tier": 3,
+        "prerequisites": [
+          "obstacle-running"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Double distances moved with Fleet of Foot and run up to 500 feet at full speed."
+      },
+      {
+        "id": "speedy-threat",
+        "name": "Speedy Threat",
+        "tier": 3,
+        "prerequisites": [
+          "obstacle-running",
+          "escape"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Moving at least an immediate distance grants an asset to your melee attack."
+      },
+      {
+        "id": "blink-of-an-eye",
+        "name": "Blink of an Eye",
+        "tier": 4,
+        "prerequisites": [
+          "incredible-running-speed"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Move up to 1,000 feet as a Last action."
+      },
+      {
+        "id": "increasing-determination",
+        "name": "Increasing Determination",
+        "tier": 4,
+        "prerequisites": [
+          "incredible-running-speed",
+          "speedy-threat"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "A failed noncombat physical task becomes easier when retried once."
+      },
+      {
+        "id": "speed-for-mind",
+        "name": "Speed for Mind",
+        "tier": 4,
+        "prerequisites": [
+          "speedy-threat"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Spend Intellect points for Speed tasks and Speed points for Intellect tasks."
+      },
+      {
+        "id": "hard-to-see",
+        "name": "Hard to See",
+        "tier": 5,
+        "prerequisites": [
+          "blink-of-an-eye",
+          "increasing-determination"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Become indistinct at speed, and ease Dodge and Stealth when only moving."
+      },
+      {
+        "id": "go-to-ground",
+        "name": "Go to Ground",
+        "tier": 5,
+        "prerequisites": [
+          "increasing-determination",
+          "speed-for-mind"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Move a long distance, then hide with an asset on the Stealth task."
+      },
+      {
+        "id": "speed-surge",
+        "name": "Speed Surge",
+        "tier": 6,
+        "prerequisites": [
+          "hard-to-see",
+          "go-to-ground"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Recover 1d6 + 6 Speed points, renewing after a ten-hour recovery."
+      },
+      {
+        "id": "up-to-speed",
+        "name": "Up to Speed",
+        "tier": 6,
+        "prerequisites": [
+          "hard-to-see"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "After three movement actions, accelerate to extraordinary speed for ten minutes."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

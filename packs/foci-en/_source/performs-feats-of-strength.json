@@ -1,0 +1,229 @@
+{
+  "_id": "performsfeB8CCF4",
+  "_key": "!items!performsfeB8CCF4",
+  "name": "Performs Feats of Strength",
+  "type": "focus",
+  "img": "icons/svg/hand.svg",
+  "system": {
+    "description": "<p>A Focus for incredible physical strength, powerful leaps, and smashing through obstacles.</p>",
+    "abilities": [
+      {
+        "id": "always-mighty",
+        "name": "Always Mighty",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Restore one extra Might point whenever a recovery restores Might, up to three selections."
+      },
+      {
+        "id": "hitting-harder",
+        "name": "Hitting Harder",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Your unarmed attacks deal 1 additional damage."
+      },
+      {
+        "id": "inspiring-display",
+        "name": "Inspiring Display",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 2,
+          "options": []
+        },
+        "description": "After succeeding at a brute-force task, restore 2 points to an ally’s Pool or 2 health to an NPC ally who saw you."
+      },
+      {
+        "id": "feat-of-strength",
+        "name": "Feat of Strength",
+        "tier": 2,
+        "prerequisites": [
+          "always-mighty"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 1,
+          "options": []
+        },
+        "description": "After a successful brute-force task, ease an ally’s next task or hinder or intimidate a foe who saw you."
+      },
+      {
+        "id": "desperate-feat",
+        "name": "Desperate Feat",
+        "tier": 2,
+        "prerequisites": [
+          "always-mighty",
+          "hitting-harder",
+          "inspiring-display"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "While you have a moderate or major wound, gain 1 Edge in a Pool of your choice."
+      },
+      {
+        "id": "naturally-strong",
+        "name": "Naturally Strong",
+        "tier": 2,
+        "prerequisites": [
+          "inspiring-display"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 2,
+          "options": []
+        },
+        "description": "On a carry, climb, jump, or smash task, treat a roll below 9 as a 9; the minimum rises to 12 at tier 3. Renews after a recovery."
+      },
+      {
+        "id": "deep-reserves",
+        "name": "Deep Reserves",
+        "tier": 3,
+        "prerequisites": [
+          "feat-of-strength",
+          "desperate-feat"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Transfer up to 6 points among your Pools at 1 point per round; the ability renews after a ten-hour recovery."
+      },
+      {
+        "id": "iron-fist",
+        "name": "Iron Fist",
+        "tier": 3,
+        "prerequisites": [
+          "desperate-feat",
+          "naturally-strong"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Your unarmed attacks deal 3 additional damage."
+      },
+      {
+        "id": "amazing-strength",
+        "name": "Amazing Strength",
+        "tier": 4,
+        "prerequisites": [
+          "deep-reserves"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "When you use Might Effort on a noncombat task, gain one free level of Effort."
+      },
+      {
+        "id": "throw",
+        "name": "Throw",
+        "tier": 4,
+        "prerequisites": [
+          "iron-fist"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 2,
+          "options": []
+        },
+        "description": "When your unarmed attack damages a creature your size or smaller, throw it 1d20 feet and leave it prone."
+      },
+      {
+        "id": "brute-strike",
+        "name": "Brute Strike",
+        "tier": 5,
+        "prerequisites": [
+          "amazing-strength",
+          "throw"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 4,
+          "options": []
+        },
+        "description": "When you hit with a Might attack, deal 6 additional damage; you cannot use this in consecutive rounds."
+      },
+      {
+        "id": "brute-squad",
+        "name": "Brute Squad",
+        "tier": 6,
+        "prerequisites": [
+          "brute-strike"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 8,
+          "options": []
+        },
+        "description": "Perform two Might tasks this turn, one with your normal action and one with an extra action."
+      },
+      {
+        "id": "jump-attack",
+        "name": "Jump Attack",
+        "tier": 6,
+        "prerequisites": [
+          "brute-strike"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "might",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Jump up to 4 feet and make a melee attack; on a hit, you can deal 4 extra damage and knock the target prone."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

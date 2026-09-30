@@ -1,0 +1,247 @@
+{
+  "_id": "reveresasuB73D53",
+  "_key": "!items!reveresasuB73D53",
+  "name": "Reveres a Supernatural Force",
+  "type": "focus",
+  "img": "icons/svg/star.svg",
+  "system": {
+    "description": "<p>A Focus for studying a mystical power that unites all things across galactic distances.</p>",
+    "abilities": [
+      {
+        "id": "defensive-precognition",
+        "name": "Defensive Precognition",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Automatically dodge ranged attacks, but hinder your other actions on the next turn after being attacked from range."
+      },
+      {
+        "id": "push",
+        "name": "Push",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Telekinetically push a visible creature your size or smaller an immediate distance within short range."
+      },
+      {
+        "id": "use-the-force",
+        "name": "Use the Force",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Gain an asset on one noncombat task this turn; you cannot use this ability again until a recovery action."
+      },
+      {
+        "id": "telepathic-message",
+        "name": "Telepathic Message",
+        "tier": 2,
+        "prerequisites": [
+          "defensive-precognition",
+          "use-the-force"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Send a one-way telepathic message to a target you have seen on the same planet, extending its range with Effort."
+      },
+      {
+        "id": "desperate-feat",
+        "name": "Desperate Feat",
+        "tier": 2,
+        "prerequisites": [
+          "use-the-force"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "While you have a moderate or major wound, gain 1 Edge in a Pool of your choice."
+      },
+      {
+        "id": "telekinesis",
+        "name": "Telekinesis",
+        "tier": 2,
+        "prerequisites": [
+          "push"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Telekinetically manipulate a visible object within long range over one round, including moving or hindering a creature."
+      },
+      {
+        "id": "psychic-suggestion",
+        "name": "Psychic Suggestion",
+        "tier": 3,
+        "prerequisites": [
+          "telepathic-message",
+          "desperate-feat"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "On a successful Intellect attack, make a nearby target take an indicated action on its next turn."
+      },
+      {
+        "id": "acrobatic-attack",
+        "name": "Acrobatic Attack",
+        "tier": 3,
+        "prerequisites": [
+          "desperate-feat",
+          "telekinesis"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Leap into an attack and gain a free Effort level when spending Effort on the attack roll; a natural 17 or 18 can produce a minor effect instead of extra damage."
+      },
+      {
+        "id": "unbalancing-strike",
+        "name": "Unbalancing Strike",
+        "tier": 4,
+        "prerequisites": [
+          "psychic-suggestion",
+          "acrobatic-attack"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Make an eased melee attack that hinders all of the target’s actions on its next turn if it hits."
+      },
+      {
+        "id": "telekinetic-crush",
+        "name": "Telekinetic Crush",
+        "tier": 4,
+        "prerequisites": [
+          "psychic-suggestion",
+          "acrobatic-attack"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Make a hindered Intellect attack against a nonliving foe to crush it for 6 damage."
+      },
+      {
+        "id": "total-awareness",
+        "name": "Total Awareness",
+        "tier": 5,
+        "prerequisites": [
+          "unbalancing-strike"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Your special senses make you difficult to surprise or hide from, and Effort on initiative or perception gains two free levels."
+      },
+      {
+        "id": "telekinetic-throw",
+        "name": "Telekinetic Throw",
+        "tier": 5,
+        "prerequisites": [
+          "telekinetic-crush"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Hurl an object at a nearby target with an Intellect attack to deal 6 damage on a hit."
+      },
+      {
+        "id": "lethal-capability",
+        "name": "Lethal Capability",
+        "tier": 6,
+        "prerequisites": [
+          "total-awareness",
+          "telekinetic-throw"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Choose a specific attack type to deal 5 additional damage; you can select this ability more than once with a different attack each time."
+      },
+      {
+        "id": "return-to-sender",
+        "name": "Return to Sender",
+        "tier": 6,
+        "prerequisites": [
+          "total-awareness",
+          "telekinetic-throw"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 3,
+          "options": []
+        },
+        "description": "After successfully blocking or dodging a melee attack, immediately make a melee attack against the attacker."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}
