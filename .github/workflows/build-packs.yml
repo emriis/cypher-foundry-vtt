@@ -1,0 +1,48 @@
+name: Build Compendium Packs
+
+on:
+  push:
+    branches:
+      - "**"
+    paths:
+      - "packs/**/_source/**"
+      - "scripts/build-packs.mjs"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/build-packs.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Foundry CLI
+        run: npm install --no-save @foundryvtt/foundryvtt-cli
+
+      - name: Validate compendium sources
+        run: node --test tests/compendium-sources.test.mjs
+
+      - name: Build LevelDB packs
+        run: npm run build:packs
+
+      - name: Commit generated packs
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- packs; then
+            echo "No generated pack changes."
+            exit 0
+          fi
+          git add packs
+          git commit -m "Build compendium packs [skip ci]"
+          git push
