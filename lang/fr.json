@@ -99,7 +99,9 @@
       "RemoveCustom": "Retirer cette caractéristique",
       "CustomName": "Nom de la caractéristique",
       "CustomNamePlaceholder": "ex. Chance, Foi, Volonté...",
-      "ConfirmDeleteCustom": "Retirer définitivement cette caractéristique personnalisée ?"
+      "ConfirmDeleteCustom": "Retirer définitivement cette caractéristique personnalisée ?",
+      "PoolValue": "Valeur actuelle",
+      "PoolMax": "Maximum"
     },
 
     "Armor": {
@@ -134,6 +136,7 @@
       "minor": "Mineure",
       "moderate": "Modérée",
       "major": "Majeure",
+      "CurrentLabel": "actuelles",
       "Rally": "Se reprendre (dépenser des points de Puissance pour retirer cette blessure)",
       "RallyMajorSuperhero": "Se reprendre (10 Puissance — réservé au genre Super-héros)",
       "Hint": "Trois cases par sévérité par défaut. Quand les blessures modérées sont au maximum, toutes les tâches sont entravées. Chaque blessure majeure ajoute un palier d'entrave à toutes les tâches. Trois blessures majeures entraînent la mort.",
