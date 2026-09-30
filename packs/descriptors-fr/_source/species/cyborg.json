@@ -1,0 +1,12 @@
+{
+  "_id": "C8yB4rG2tW7kH9sD", "_key": "!items!C8yB4rG2tW7kH9sD", "name": "Cyborg", "type": "descriptor", "img": "icons/svg/aura.svg",
+  "system": {
+    "category": "species", "genres": ["sciFi"], "grantsSecondDescriptor": false, "statOptions": [], "statAmount": 0, "skillOptions": ["Piratage"],
+    "benefits": [
+      { "name": "Pas d'intrusion du MJ à la défense de Puissance", "description": "<p>Tu n'obtiens pas d'intrusion du·de la MJ si tu fais un 1 sur un jet de défense de Puissance.</p>" },
+      { "name": "Électricité canalisée", "description": "<p>Tu infliges +1 dégât en mêlée grâce à l'électricité canalisée via tes implants.</p>" }
+    ],
+    "description": "<p>Tu portes divers implants cybernétiques, certains remplaçant des organes que tu aurais eus si tu étais humain·e, d'autres destinés à <strong>améliorer ce qu'il reste de ta biologie</strong>. Peut-être es-tu né·e via un processus standard de ta colonie ; peut-être as-tu été augmenté·e volontairement durant un service militaire ; peut-être encore as-tu été assimilé·e contre ton gré dans un collectif cybernétique avant de t'en échapper. Ou peut-être n'as-tu aucune idée de la raison pour laquelle tu es à moitié machine. La plupart du temps, tu te dis que ça n'a pas d'importance : ce qui compte, ce sont tes actes.</p><p><strong>Tu obtiens les caractéristiques suivantes :</strong></p><ul><li>Tu <strong>n'obtiens pas d'intrusion du·de la MJ</strong> si tu fais un <strong>1</strong> sur un jet de défense de Puissance.</li><li>Tu es <strong>entraîné·e en piratage</strong>.</li><li>Tu infliges <strong>+1 dégât en mêlée</strong> grâce à l'<strong>électricité canalisée</strong> via tes implants.</li></ul>"
+  }, "folder": null, "sort": 0, "ownership": { "default": 0 },
+  "flags": { "cypher": { "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License." } }
+}

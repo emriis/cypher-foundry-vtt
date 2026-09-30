@@ -1,0 +1,17 @@
+{
+  "_id": "C8yB4rG2tW7kH9sD",
+  "_key": "!items!C8yB4rG2tW7kH9sD",
+  "name": "Cyborg",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "category": "species", "genres": ["sciFi"], "grantsSecondDescriptor": false, "statOptions": [], "statAmount": 0,
+    "skillOptions": ["Hacking"],
+    "benefits": [
+      { "name": "No GM Intrusion on Might Defense", "description": "<p>You don't get a GM intrusion if you roll a 1 on a Might defense task.</p>" },
+      { "name": "Conducted Electricity", "description": "<p>You inflict +1 damage with melee attacks via conducted electricity.</p>" }
+    ],
+    "description": "<p>You sport a variety of cybernetic implants, some of which replace missing organs you would have had if you were a human, with others designed to enhance whatever biology you still possess. You might have been born of a birthing process all the people of your colony undergo, willingly augmented as part of a stint of military service, or assimilated into a cybernetic collective against your will (from which you later escaped)-or you might be ignorant of why you're half machine. Most days, you figure it doesn't matter. It's not what you're made of that counts; it's your actions.</p><p><strong>You gain the following characteristics:</strong></p><ul><li>You don't get a GM intrusion if you roll a 1 on a Might defense task.</li><li>You are trained in hacking.</li><li>You inflict +1 damage with melee attacks via conducted electricity.</li></ul>"
+  }, "folder": null, "sort": 0, "ownership": { "default": 0 },
+  "flags": { "cypher": { "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License." } }
+}

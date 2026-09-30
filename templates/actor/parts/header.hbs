@@ -24,12 +24,12 @@
           <option value="custom" {{#ifEquals system.genre "custom"}}selected{{/ifEquals}}>{{localize 'CYPHER.Genre.custom'}}</option>
         </select>
       </label>
-      {{#unless system.isRealWorld}}
+      {{#if system.supportsSpecies}}
       <label class="field-group">
-        <span class="field-caption">{{localize 'CYPHER.Species'}}</span>
+          <span class="field-caption">{{localize 'CYPHER.Species'}}</span>
         <input name="system.species" type="text" value="{{system.species}}" placeholder="{{localize 'CYPHER.SpeciesPlaceholder'}}"/>
       </label>
-      {{/unless}}
+      {{/if}}
     </div>
 
     {{#if system.isRealWorld}}
@@ -42,13 +42,17 @@
 
       {{#if system.hasSecondDescriptor}}
       <span class="and-joiner">{{localize 'CYPHER.CharacterLine.And'}}</span>
-      <label class="field-group inline">
-        <span class="field-caption">{{localize 'CYPHER.Descriptor2'}}</span>
-        <input name="system.descriptor2" type="text" value="{{system.descriptor2}}" placeholder="{{localize 'CYPHER.Descriptor2'}}"/>
-      </label>
+      label class="field-group inline">
+              <span class="field-caption">{{localize 'CYPHER.Descriptor2'}}</span>
+              <input name="system.descriptor2" type="text" value="{{system.descriptor2}}" placeholder="{{localize 'CYPHER.Descriptor2'}}"/>
+            </label>
+      {{#if system.isCustomGenre}}
       <a class="remove-optional" data-action="toggleSecondDescriptor" title="{{localize 'CYPHER.CharacterLine.RemoveSecondDescriptor'}}"><i class="fa-solid fa-circle-minus"></i></a>
+      {{/if}}
       {{else}}
+      {{#if system.isCustomGenre}}
       <a class="add-optional" data-action="toggleSecondDescriptor" title="{{localize 'CYPHER.CharacterLine.AddSecondDescriptor'}}"><i class="fa-solid fa-circle-plus"></i></a>
+      {{/if}}
       {{/if}}
 
       <label class="field-group inline">
@@ -68,12 +72,16 @@
       {{#if system.hasSecondDescriptor}}
       <span class="and-joiner">{{localize 'CYPHER.CharacterLine.And'}}</span>
       <label class="field-group inline">
-        <span class="field-caption">{{localize 'CYPHER.Descriptor2'}}</span>
-        <input name="system.descriptor2" type="text" value="{{system.descriptor2}}" placeholder="{{localize 'CYPHER.Descriptor2'}}"/>
-      </label>
+              <span class="field-caption">{{localize 'CYPHER.Descriptor2'}}</span>
+              <input name="system.descriptor2" type="text" value="{{system.descriptor2}}" placeholder="{{localize 'CYPHER.Descriptor2'}}"/>
+            </label>
+      {{#if system.isCustomGenre}}
       <a class="remove-optional" data-action="toggleSecondDescriptor" title="{{localize 'CYPHER.CharacterLine.RemoveSecondDescriptor'}}"><i class="fa-solid fa-circle-minus"></i></a>
+      {{/if}}
       {{else}}
+      {{#if system.isCustomGenre}}
       <a class="add-optional" data-action="toggleSecondDescriptor" title="{{localize 'CYPHER.CharacterLine.AddSecondDescriptor'}}"><i class="fa-solid fa-circle-plus"></i></a>
+      {{/if}}
       {{/if}}
 
       <span class="sentence-word">{{localize 'CYPHER.CharacterLine.Middle'}}</span>

@@ -1,0 +1,12 @@
+{
+  "_id": "M6uT2nB9qR4vK7cP", "_key": "!items!M6uT2nB9qR4vK7cP", "name": "Mutant", "type": "descriptor", "img": "icons/svg/aura.svg",
+  "system": {
+    "category": "species", "genres": ["sciFi"], "grantsSecondDescriptor": false, "statOptions": [], "statAmount": 0, "skillOptions": [],
+    "benefits": [
+      { "name": "No GM Intrusion on Might Defense", "description": "<p>You don't get a GM intrusion if you roll a 1 on a Might defense task.</p>" },
+      { "name": "Mutation", "description": "<p>Choose any tier 1 ability from any focus; work with your GM to adapt that ability as your mutation.</p>" }
+    ],
+    "description": "<p>Savage forces strong enough to destroy a world left you transformed. Perhaps through latent mutations passed down from ancestors that survived the apocalypse, or because something about you reacts when exposed to radiation or some other mutagenic source, you've gained mutations. You might look relatively similar to others of your species, or you might have one or more obvious physical differences that make it hard to disguise your nature-work with your GM to decide your specific features. Not that you necessarily want to hide what you are; you might wish to proudly display what makes you different and, to your mind, better.</p><p><strong>You gain the following characteristics:</strong></p><ul><li>You don't get a GM intrusion if you roll a 1 on a Might defense task.</li><li>Choose any tier 1 ability from any focus; work with your GM to adapt that ability as your mutation.</li></ul>"
+  }, "folder": null, "sort": 0, "ownership": { "default": 0 },
+  "flags": { "cypher": { "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License." } }
+}

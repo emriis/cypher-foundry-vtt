@@ -12,7 +12,7 @@ function slug(value) {
 
 function readPackSources(packName) {
   const directory = path.join(root, "packs", packName, "_source");
-  return new Map(fs.readdirSync(directory)
+  return new Map(fs.readdirSync(directory, { recursive: true })
     .filter(file => file.endsWith(".json"))
     .map(file => [file, JSON.parse(fs.readFileSync(path.join(directory, file), "utf8"))]));
 }
@@ -243,18 +243,24 @@ test("Descriptor sources are directly maintained as valid bilingual pairs", () =
     const fr = frSources.get(filename);
     assertDocumentIdentity(en, "descriptor");
     assertDocumentIdentity(fr, "descriptor");
+    assert.equal(fr.system.category ?? "descriptor", en.system.category ?? "descriptor", `${filename}/category`);
+    assert.deepEqual(fr.system.genres ?? [], en.system.genres ?? [], `${filename}/genres`);
+    assert.equal(fr.system.grantsSecondDescriptor ?? false, en.system.grantsSecondDescriptor ?? false, `${filename}/grantsSecondDescriptor`);
     assert.deepEqual(fr.system.statOptions, en.system.statOptions, `${filename}/statOptions`);
     assert.equal(fr.system.statAmount, en.system.statAmount, `${filename}/statAmount`);
     for (const document of [en, fr]) {
-      assert.ok(document.system.statOptions.length > 0, filename);
-      assert.ok(document.system.skillOptions.some(Boolean), filename);
+      const category = document.system.category ?? "descriptor";
+      if (category === "descriptor") {
+        assert.ok(document.system.statOptions.length > 0, filename);
+        assert.ok(document.system.skillOptions.some(Boolean), filename);
+      }
       assert.ok(document.system.skillOptions.every(option => typeof option === "string"), filename);
     }
   }
 });
 
 test("French descriptor sources match the Character Book translations", () => {
-  const directory = path.join(root, "packs", "descriptors-fr", "_source");
+  const directory = path.join(root, "packs", "descriptors-fr", "_source", "standard");
   const expectedNames = {
     appealing: "Attrayant·e",
     bookish: "Studieux·se",
@@ -300,6 +306,28 @@ test("French descriptor sources match the Character Book translations", () => {
   const appealing = JSON.parse(fs.readFileSync(path.join(directory, "appealing.json"), "utf8"));
   assert.deepEqual(appealing.system.skillOptions.filter(Boolean), ["Persuasion"]);
   assert.match(appealing.system.description, /Tu es naturellement attirant·e et charismatique/);
+});
+
+test("Human is a bilingual species descriptor that grants a second descriptor", () => {
+  for (const language of ["en", "fr"]) {
+    const human = JSON.parse(fs.readFileSync(path.join(root, "packs", `descriptors-${language}`, "_source", "species", "human.json"), "utf8"));
+    assertDocumentIdentity(human, "descriptor");
+    assert.equal(human.system.category, "species");
+    assert.deepEqual(human.system.genres, ["fantasy", "sciFi"]);
+    assert.equal(human.system.grantsSecondDescriptor, true);
+  }
+});
+
+test("Dragonfolk keeps its trained skill separate from its species abilities", () => {
+  for (const language of ["en", "fr"]) {
+    const dragonfolk = JSON.parse(fs.readFileSync(path.join(root, "packs", `descriptors-${language}`, "_source", "species", "dragonfolk.json"), "utf8"));
+    assert.equal(dragonfolk.system.category, "species");
+    assert.deepEqual(dragonfolk.system.skillOptions, [language === "en" ? "Intimidation" : "Intimidation"]);
+    assert.equal(dragonfolk.system.benefits.length, 2);
+    assert.deepEqual(dragonfolk.system.benefits.map(benefit => benefit.name), language === "en"
+      ? ["No GM Intrusion on Block", "Energy Attack Damage"]
+      : ["Pas d'intrusion du MJ au blocage", "Dégâts d'attaque d'énergie"]);
+  }
 });
 
 test("French Type names use the Character Book terminology", () => {

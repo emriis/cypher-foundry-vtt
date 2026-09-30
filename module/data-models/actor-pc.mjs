@@ -187,6 +187,7 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
     this.isSuperhero = this.genre === "superhero";
     this.isRealWorld = this.genre === "realWorld";
     this.isCustomGenre = this.genre === "custom";
+    this.supportsSpecies = ["fantasy", "sciFi", "custom"].includes(this.genre);
     this.usesTypeAndFocus = this.genre !== "realWorld";
     // The Custom genre exposes both the Real-World profession field and the
     // Superhero block in addition to the standard character fields.
@@ -244,6 +245,7 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
     this.isSuperhero ??= false;
     this.isRealWorld ??= false;
     this.isCustomGenre ??= false;
+    this.supportsSpecies ??= false;
     this.usesTypeAndFocus ??= true;
     this.showProfession ??= false;
     this.showSuperheroBlock ??= false;

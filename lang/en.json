@@ -272,7 +272,11 @@
       "StatNote": "+{amount} to the {stat} Pool.",
       "SkillGranted": "Trained in {name}.",
       "SkillUpgraded": "{name} is now at level: {level}.",
-      "GrantedFrom": "Granted from Descriptor: {name}"
+      "GrantedFrom": "Granted from Descriptor: {name}",
+      "AlreadyApplied": "A descriptor has already been applied to this character.",
+      "SpeciesApplied": "Species applied: {name}",
+      "SpeciesAlreadyApplied": "A species has already been applied to this character.",
+      "SpeciesWrongGenre": "This species is not available for the character's genre."
     },
     "Type": {
       "Label": "Type",

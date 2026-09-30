@@ -1,0 +1,12 @@
+{
+  "_id": "S5tE8lQ1vK7mR3pN", "_key": "!items!S5tE8lQ1vK7mR3pN", "name": "Stelain·e", "type": "descriptor", "img": "icons/svg/aura.svg",
+  "system": {
+    "category": "species", "genres": ["sciFi"], "grantsSecondDescriptor": false, "statOptions": [], "statAmount": 0, "skillOptions": ["Collecte d'informations"],
+    "benefits": [
+      { "name": "Pas d'intrusion du MJ à la défense d'Intellect", "description": "<p>Tu n'obtiens pas d'intrusion du·de la MJ si tu fais un 1 sur un jet de défense d'Intellect.</p>" },
+      { "name": "Étourdissement à mains nues", "description": "<p>Lors d'une attaque à mains nues réussie, tu peux choisir de faire perdre son prochain tour à ta cible au lieu d'infliger des dégâts.</p>" }
+    ],
+    "description": "<p>Si ce n'était la géométrie plus anguleuse de tes traits, on te confondrait aisément avec un·e humain·e. C'est ta <strong>différence de tempérament</strong> qui saute aux yeux : les Stelain·es valorisent <strong>la pensée rationnelle avant tout</strong>, se méfient des intuitions, rejettent les émotions envahissantes, et accordent peu d'intérêt aux anecdotes face à une base de données solidement compilée.</p><p><strong>Tu obtiens les caractéristiques suivantes :</strong></p><ul><li>Tu <strong>n'obtiens pas d'intrusion du·de la MJ</strong> si tu fais un <strong>1</strong> sur un jet de défense d'Intellect.</li><li>Tu es <strong>entraîné·e en collecte d'informations</strong>.</li><li>Lors d'une <strong>attaque à mains nues réussie</strong>, tu peux choisir de <strong>faire perdre son prochain tour à ta cible</strong> au lieu d'infliger des dégâts.</li></ul>"
+  }, "folder": null, "sort": 0, "ownership": { "default": 0 },
+  "flags": { "cypher": { "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License." } }
+}
