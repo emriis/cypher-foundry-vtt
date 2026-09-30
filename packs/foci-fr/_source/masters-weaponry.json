@@ -1,0 +1,306 @@
+{
+  "_id": "mastersweaD08626",
+  "_key": "!items!mastersweaD08626",
+  "name": "Maîtrise les armes",
+  "type": "focus",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "<p>Un Focus pour maîtriser un type d'arme choisi.</p>",
+    "abilities": [
+      {
+        "id": "battle-competence",
+        "name": "Compétence martiale",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Utilise librement toutes les armes et armures, et évalue le niveau de créatures proches."
+      },
+      {
+        "id": "display-of-skill",
+        "name": "Démonstration d’adresse",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Une démonstration spectaculaire accorde de l’Effort gratuit à un allié ou un avantage d’intimidation."
+      },
+      {
+        "id": "weapon-master",
+        "name": "Maître·sse d’arme",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Maîtrise un type d’arme, évite ses pénalités, inflige 1 dégât de plus et sait le fabriquer."
+      },
+      {
+        "id": "careful-shot",
+        "name": "Tir précis",
+        "tier": 2,
+        "prerequisites": [
+          "weapon-master"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "choice",
+          "amount": 0,
+          "options": [
+            "speed",
+            "intellect"
+          ]
+        },
+        "description": "Utilise l’Effort de Célérité ou d’Intellect pour augmenter les dégâts à distance, avec un bonus après avoir visé."
+      },
+      {
+        "id": "throw-weapon",
+        "name": "Lancer d’arme",
+        "tier": 2,
+        "prerequisites": [
+          "display-of-skill"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Lance une arme de mêlée et la rappelle après une tâche de récupération."
+      },
+      {
+        "id": "perfect-attack",
+        "name": "Attaque parfaite",
+        "tier": 2,
+        "prerequisites": [
+          "battle-competence"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "choice",
+          "amount": 2,
+          "options": [
+            "might",
+            "speed"
+          ]
+        },
+        "description": "Effectue une attaque avec l’arme de prédilection, avec un jet minimal de 9 jusqu’à la prochaine récupération."
+      },
+      {
+        "id": "rapid-attack",
+        "name": "Attaque rapide",
+        "tier": 3,
+        "prerequisites": [
+          "careful-shot",
+          "throw-weapon",
+          "perfect-attack"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Effectue une attaque supplémentaire avec l’arme de prédilection, une fois par round."
+      },
+      {
+        "id": "spray",
+        "name": "Rafale",
+        "tier": 3,
+        "prerequisites": [
+          "careful-shot"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Tire en rafale ou utilise plusieurs armes de jet pour gagner un atout, au prix d’un dégât."
+      },
+      {
+        "id": "disarming-strike",
+        "name": "Coup désarmant",
+        "tier": 3,
+        "prerequisites": [
+          "perfect-attack"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Frappe pour faire tomber l’arme adverse, avec des options spéciales pour le fouet et l’arc."
+      },
+      {
+        "id": "special-shot",
+        "name": "Tir spécial",
+        "tier": 4,
+        "prerequisites": [
+          "spray",
+          "rapid-attack"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Réduit de 1 les dégâts d’une arme à feu pour toucher précisément un objet, un membre ou une sangle."
+      },
+      {
+        "id": "rival-talent",
+        "name": "Talent rival",
+        "tier": 4,
+        "prerequisites": [
+          "rapid-attack"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Facilite toutes les tâches contre les adversaires utilisant le même type d’arme."
+      },
+      {
+        "id": "never-fumble",
+        "name": "Jamais maladroit·e",
+        "tier": 4,
+        "prerequisites": [
+          "disarming-strike"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Ignore une intrusion sur un 1 naturel et ne laisse jamais tomber l’arme de prédilection par accident."
+      },
+      {
+        "id": "arc-spray",
+        "name": "Rafale en arc",
+        "tier": 5,
+        "prerequisites": [
+          "special-shot",
+          "rival-talent"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Tire sur trois cibles adjacentes avec des attaques entravées distinctes."
+      },
+      {
+        "id": "that-was-a-feint",
+        "name": "C’était une feinte",
+        "tier": 5,
+        "prerequisites": [
+          "rival-talent",
+          "never-fumble"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "choice",
+          "amount": 5,
+          "options": [
+            "might",
+            "speed"
+          ]
+        },
+        "description": "Retente une attaque ratée avec l’arme de prédilection et gagne un atout."
+      },
+      {
+        "id": "shot-collision",
+        "name": "Collision de tir",
+        "tier": 6,
+        "prerequisites": [
+          "arc-spray"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Tire sur un projectile en vol pour le dévier, le détruire ou le faire exploser."
+      },
+      {
+        "id": "lethal-strike",
+        "name": "Frappe létale",
+        "tier": 6,
+        "prerequisites": [
+          "arc-spray",
+          "that-was-a-feint"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 6,
+          "options": []
+        },
+        "description": "Une attaque rapide avec une arme inflige 7 dégâts supplémentaires si elle touche."
+      },
+      {
+        "id": "perfect-follow-through",
+        "name": "Suivi parfait",
+        "tier": 6,
+        "prerequisites": [
+          "that-was-a-feint"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "choice",
+          "amount": 8,
+          "options": [
+            "might",
+            "speed"
+          ]
+        },
+        "description": "Attaque avec l’arme de prédilection puis effectue une autre action supplémentaire."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

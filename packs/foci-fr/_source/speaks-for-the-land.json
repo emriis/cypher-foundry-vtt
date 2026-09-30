@@ -1,0 +1,28 @@
+{
+  "_id": "speaksfort77CB10",
+  "_key": "!items!speaksfort77CB10",
+  "name": "Parle pour la terre",
+  "type": "focus",
+  "img": "icons/environment/wilderness/tree-oak.webp",
+  "system": {
+    "description": "<p>Un Focus pour un mystique dont le lien avec la nature permet de soigner, protéger et commander au monde sauvage.</p>",
+    "abilities": [
+      { "id": "healing-fruit", "name": "Fruit guérisseur", "tier": 1, "prerequisites": [], "repeatable": false, "enabler": false, "cost": { "stat": "intellect", "amount": 1, "options": [] }, "description": "Insuffle une magie curative dans un fruit ou une graine afin qu'une créature récupère 1d6 points d'une Réserve ou retire une blessure mineure." },
+      { "id": "seeds-of-fury", "name": "Graines de fureur", "tier": 1, "prerequisites": [], "repeatable": false, "enabler": false, "cost": { "stat": "intellect", "amount": 1, "options": [] }, "description": "Projette des graines enflammées sur une cible à longue portée; une attaque réussie inflige 3 dégâts et met le feu à la cible." },
+      { "id": "wild-affinity", "name": "Affinité sauvage", "tier": 1, "prerequisites": [], "repeatable": false, "enabler": true, "cost": { "stat": "none", "amount": 0, "options": [] }, "description": "Un animal sauvage sain d'esprit et dans son environnement naturel ne t'attaque pas, sauf provocation ou contrôle." },
+      { "id": "communication", "name": "Communication", "tier": 2, "prerequisites": ["healing-fruit", "wild-affinity"], "repeatable": false, "enabler": false, "cost": { "stat": "intellect", "amount": 2, "options": [] }, "description": "Transmets un concept simple à une créature incapable de parler ou de comprendre le langage, qui peut répondre simplement." },
+      { "id": "wilderness-experience", "name": "Expérience des étendues sauvages", "tier": 2, "prerequisites": ["wild-affinity", "seeds-of-fury"], "repeatable": false, "enabler": true, "cost": { "stat": "none", "amount": 0, "options": [] }, "description": "Trouve nourriture et eau potable dans la nature, résiste au poison et aux maladies naturelles et ignores les malus du terrain naturel." },
+      { "id": "natures-grip", "name": "Étreinte de la nature", "tier": 3, "prerequisites": ["communication"], "repeatable": false, "enabler": false, "cost": { "stat": "intellect", "amount": 3, "options": [] }, "description": "Immobilise une cible avec la végétation naturelle grâce à une attaque d'Intellect, ou écarte les plantes entravantes d'une zone immédiate." },
+      { "id": "natures-voice", "name": "Voix de la nature", "tier": 3, "prerequisites": ["wilderness-experience"], "repeatable": false, "enabler": false, "cost": { "stat": "intellect", "amount": 3, "options": [] }, "description": "Calme une créature non humaine à longue portée qui peut te voir." },
+      { "id": "moon-shape", "name": "Forme lunaire", "tier": 4, "prerequisites": ["natures-grip"], "repeatable": false, "enabler": false, "cost": { "stat": "intellect", "amount": 4, "options": [] }, "description": "Deviens une bête primale sous la lumière de la lune et gagne des points et Avantages en Puissance et Célérité." },
+      { "id": "wilderness-encouragement", "name": "Encouragement sauvage", "tier": 4, "prerequisites": ["natures-voice"], "repeatable": false, "enabler": false, "cost": { "stat": "intellect", "amount": 3, "options": [] }, "description": "Aide un allié à courte portée à récupérer ou retire une blessure modérée dans la nature ou en parlant de celle-ci." },
+      { "id": "insect-eruption", "name": "Éruption d'insectes", "tier": 5, "prerequisites": ["moon-shape", "wilderness-encouragement"], "repeatable": false, "enabler": false, "cost": { "stat": "intellect", "amount": 6, "options": [] }, "description": "Invoque un essaim surnaturel qui entrave les ennemis et peut attaquer ou accomplir les tâches d'un tel essaim." },
+      { "id": "call-the-storm", "name": "Appel de la tempête", "tier": 6, "prerequisites": ["insect-eruption"], "repeatable": false, "enabler": false, "cost": { "stat": "intellect", "amount": 7, "options": [] }, "description": "Invoque des nuages d'orage sur une zone très vaste et appelle la foudre sur les adversaires." },
+      { "id": "earthshake", "name": "Fracas tellurique", "tier": 6, "prerequisites": ["insect-eruption"], "repeatable": false, "enabler": false, "cost": { "stat": "choice", "amount": 8, "options": ["might", "intellect"] }, "description": "Déclenche un séisme dans une zone courte à très longue portée, endommageant le terrain et les créatures." }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": { "cypher": { "sourceLicense": "Résumé original fondé sur le Cypher Reference Document, créé sous la Cypher Open License." } }
+}

@@ -1,0 +1,211 @@
+{
+  "_id": "neversaysd0738A3",
+  "_key": "!items!neversaysd0738A3",
+  "name": "Ne renonce jamais",
+  "type": "focus",
+  "img": "icons/svg/heart.svg",
+  "system": {
+    "description": "<p>Un Focus pour encaisser les épreuves et revenir au combat.</p>",
+    "abilities": [
+      {
+        "id": "determination",
+        "name": "Détermination",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Gagne un niveau d’Effort gratuit en retentant une tâche échouée, jusqu’à la prochaine récupération."
+      },
+      {
+        "id": "push-on-through",
+        "name": "Tenir bon",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Remplace une récupération de dix minutes par une seconde récupération d’une action et encaisse une blessure modérée supplémentaire."
+      },
+      {
+        "id": "safe-fall",
+        "name": "Chute sans danger",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Ignore une blessure causée par une chute."
+      },
+      {
+        "id": "always-mighty",
+        "name": "Toujours sous le pied",
+        "tier": 2,
+        "prerequisites": [
+          "push-on-through",
+          "determination"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Récupère un point de Puissance supplémentaire lorsqu’une récupération en rend, jusqu’à trois choix."
+      },
+      {
+        "id": "ignore-the-pain",
+        "name": "Ignorer la douleur",
+        "tier": 2,
+        "prerequisites": [
+          "determination",
+          "safe-fall"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Ignore un palier d’entrave dû aux blessures, les choix supplémentaires en ignorant davantage."
+      },
+      {
+        "id": "hidden-reserves",
+        "name": "Réserves cachées",
+        "tier": 3,
+        "prerequisites": [
+          "always-mighty"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Une récupération d’une action accorde +1 en Avantage de Puissance et de Célérité jusqu’à une récupération plus longue."
+      },
+      {
+        "id": "blood-fever",
+        "name": "Fièvre de sang",
+        "tier": 3,
+        "prerequisites": [
+          "ignore-the-pain"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Quand une Réserve est vide ou que les blessures sont graves, gagne un atout aux attaques, défenses et intimidations."
+      },
+      {
+        "id": "outlast-the-foe",
+        "name": "Tenir plus longtemps que l’ennemi",
+        "tier": 4,
+        "prerequisites": [
+          "hidden-reserves"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Après cinq rounds complets de combat, gagne un atout à toutes les tâches et inflige 1 dégât de plus par attaque."
+      },
+      {
+        "id": "increasing-determination",
+        "name": "Détermination croissante",
+        "tier": 4,
+        "prerequisites": [
+          "blood-fever"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Une tâche physique hors combat échouée est facilitée lorsqu’elle est retentée une fois."
+      },
+      {
+        "id": "not-dead-yet",
+        "name": "Pas encore mort·e",
+        "tier": 5,
+        "prerequisites": [
+          "outlast-the-foe",
+          "increasing-determination"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Survit à un coup normalement fatal, se réveille après un round, récupère des points et retire des blessures."
+      },
+      {
+        "id": "final-defiance",
+        "name": "Défi final",
+        "tier": 6,
+        "prerequisites": [
+          "not-dead-yet"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Reste conscient·e un round après la mort et lutte pour rester en vie."
+      },
+      {
+        "id": "ignore-affliction",
+        "name": "Ignorer l’affliction",
+        "tier": 6,
+        "prerequisites": [
+          "not-dead-yet"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "might",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Ignore une condition ou affliction indésirable jusqu’à une récupération d’une heure."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

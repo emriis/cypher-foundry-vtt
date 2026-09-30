@@ -1,0 +1,140 @@
+{
+  "_id": "worksforal856231",
+  "_key": "!items!worksforal856231",
+  "name": "Travaille pour vivre",
+  "type": "focus",
+  "img": "icons/tools/hand/hammer-steel.webp",
+  "system": {
+    "description": "<p>Un Foyer pour un personnage qui gagne sa vie par le travail pratique, la résistance et une expertise utile.</p>",
+    "abilities": [
+      {
+        "id": "fitting-in",
+        "name": "Se fondre dans la masse",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Vous vous fondez parmi les créatures intelligentes ordinaires et attirez peu l'attention, jusqu'à ce que vous vous fassiez remarquer."
+      },
+      {
+        "id": "handy",
+        "name": "Bricoleur·euse",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Vous êtes entraîné·e à fabriquer et gagnez un point de ressource supplémentaire, utilisable uniquement pour fabriquer ou réparer."
+      },
+      {
+        "id": "muscles-of-iron",
+        "name": "Muscles de fer",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "might", "amount": 2, "options": [] },
+        "description": "Jusqu'à une récupération d'au moins dix minutes, toutes vos actions de Puissance autres que les attaques sont facilitées."
+      },
+      {
+        "id": "danger-instinct",
+        "name": "Instinct du Danger",
+        "tier": 2,
+        "prerequisites": ["fitting-in", "muscles-of-iron"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "speed", "amount": 3, "options": [] },
+        "description": "Quand une attaque ou un danger vous surprend, vous pouvez vous déplacer d'une distance immédiate avant qu'il ne survienne ; si vous restez exposé·e, votre défense est facilitée."
+      },
+      {
+        "id": "endurance",
+        "name": "Endurance",
+        "tier": 2,
+        "prerequisites": ["fitting-in", "handy"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Les durées liées aux actions physiques sont doublées ou réduites de moitié, selon ce qui vous avantage, avec un minimum d'un round pour les effets nuisibles."
+      },
+      {
+        "id": "eye-for-detail",
+        "name": "Œil du détail",
+        "tier": 3,
+        "prerequisites": ["danger-instinct"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Après avoir examiné pendant environ cinq minutes une zone proche ou un objet accessible, posez une question au MJ et recevez une réponse honnête."
+      },
+      {
+        "id": "improvise",
+        "name": "Improviser",
+        "tier": 3,
+        "prerequisites": ["endurance"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "description": "Pour une tâche dans laquelle vous n'êtes pas entraîné·e, improvisez un outil, une idée ou un coup de chance afin d'obtenir un atout."
+      },
+      {
+        "id": "device-insight",
+        "name": "Intuition mécanique",
+        "tier": 4,
+        "prerequisites": ["eye-for-detail"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "description": "Posez une question au MJ sur les capacités, le fonctionnement, les faiblesses ou la réparation d'un dispositif inconnu ou avancé."
+      },
+      {
+        "id": "hard-won-resilience",
+        "name": "Résilience durement acquise",
+        "tier": 4,
+        "prerequisites": ["improvise"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Vos expériences difficiles vous donnent assez de résistance pour subir une blessure modérée supplémentaire."
+      },
+      {
+        "id": "polymath",
+        "name": "Polymathe",
+        "tier": 5,
+        "prerequisites": ["device-insight", "hard-won-resilience"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Pour une tâche entraînée qui n'est ni une attaque ni une défense, traitez tout résultat inférieur à 12 comme un résultat de 12."
+      },
+      {
+        "id": "expert-handyman",
+        "name": "Artisan·e expert·e",
+        "tier": 6,
+        "prerequisites": ["polymath"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Les objets que vous fabriquez, réparez ou construisez avec des ressources sont supérieurs, généralement comme s'ils étaient de deux niveaux plus élevés."
+      },
+      {
+        "id": "on-the-crew",
+        "name": "Avec l'équipe",
+        "tier": 6,
+        "prerequisites": ["polymath"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "description": "Avec au moins deux allié·e·s, un bref discours d'encouragement accorde à l'équipe un avantage temporaire jusqu'à une récupération d'au moins dix minutes."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; créé sous la Cypher Open License."
+    }
+  }
+}

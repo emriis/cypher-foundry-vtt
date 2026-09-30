@@ -1,0 +1,262 @@
+{
+  "_id": "huntsxxxxxD663B1",
+  "_key": "!items!huntsxxxxxD663B1",
+  "name": "Hunts",
+  "type": "focus",
+  "img": "icons/svg/target.svg",
+  "system": {
+    "description": "<p>A Focus for a relentless hunter who chooses, tracks, and defeats a quarry.</p>",
+    "abilities": [
+      {
+        "id": "hunters-determination",
+        "name": "Hunter's Determination",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Miss a foe to gain assets against that foe until the fight ends or you change targets."
+      },
+      {
+        "id": "knowledge-of-nature",
+        "name": "Knowledge of Nature",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Find food, water, and remedies in the wilderness when they are available."
+      },
+      {
+        "id": "sneak-attack",
+        "name": "Sneak Attack",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Under a qualifying distraction or surprise, a light weapon attack deals 5 additional damage."
+      },
+      {
+        "id": "fast-kill",
+        "name": "Fast Kill",
+        "tier": 2,
+        "prerequisites": [
+          "knowledge-of-nature",
+          "sneak-attack"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "choice",
+          "amount": 2,
+          "options": [
+            "might",
+            "speed"
+          ]
+        },
+        "description": "Deal 4 additional damage on a melee or ranged hit, but not in consecutive rounds."
+      },
+      {
+        "id": "quarry",
+        "name": "Quarry",
+        "tier": 2,
+        "prerequisites": [
+          "hunters-determination",
+          "knowledge-of-nature"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Choose one visible quarry and gain an asset on tasks involving it."
+      },
+      {
+        "id": "poison-crafter",
+        "name": "Poison Crafter",
+        "tier": 3,
+        "prerequisites": [
+          "quarry"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Craft and handle poison effectively, including defenses against it."
+      },
+      {
+        "id": "horde-fighting",
+        "name": "Horde Fighting",
+        "tier": 3,
+        "prerequisites": [
+          "quarry",
+          "fast-kill"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "When surrounded in melee, choose an asset to attack or defend against the group."
+      },
+      {
+        "id": "awareness",
+        "name": "Awareness",
+        "tier": 3,
+        "prerequisites": [
+          "fast-kill"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Sense living creatures at long range until a recovery."
+      },
+      {
+        "id": "better-sneak-attack",
+        "name": "Better Sneak Attack",
+        "tier": 4,
+        "prerequisites": [
+          "sneak-attack"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Sneak Attack gains an asset and can cause delayed Armor-ignoring damage."
+      },
+      {
+        "id": "sprint-and-grab",
+        "name": "Sprint and Grab",
+        "tier": 4,
+        "prerequisites": [
+          "horde-fighting"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Move a short distance and grab a foe of your size or smaller."
+      },
+      {
+        "id": "damage-dealer",
+        "name": "Damage Dealer",
+        "tier": 5,
+        "prerequisites": [
+          "better-sneak-attack"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Choose a weapon to deal 3 additional damage with it; this can be chosen twice."
+      },
+      {
+        "id": "hunters-drive",
+        "name": "Hunter's Drive",
+        "tier": 5,
+        "prerequisites": [
+          "quarry"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Double movement while reaching your quarry and gain another related asset."
+      },
+      {
+        "id": "multiple-quarries",
+        "name": "Multiple Quarries",
+        "tier": 6,
+        "prerequisites": [
+          "hunters-drive"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Quarry can target up to four visible creatures for an increased Intellect cost."
+      },
+      {
+        "id": "lethal-strike",
+        "name": "Lethal Strike",
+        "tier": 6,
+        "prerequisites": [
+          "damage-dealer"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 6,
+          "options": []
+        },
+        "description": "A successful swift weapon attack deals 7 additional damage."
+      },
+      {
+        "id": "escape-plan",
+        "name": "Escape Plan",
+        "tier": 6,
+        "prerequisites": [
+          "damage-dealer"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "After killing a foe, attempt a stealth task as an extra action."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

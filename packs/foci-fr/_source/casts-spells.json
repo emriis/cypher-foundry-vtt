@@ -1,0 +1,318 @@
+{
+  "_id": "castsspell489030",
+  "_key": "!items!castsspell489030",
+  "name": "Lance des sorts",
+  "type": "focus",
+  "img": "icons/magic/symbols/runes-carved-stone-purple.webp",
+  "system": {
+    "description": "<p>Un Focus pour un personnage qui prépare et lance un répertoire de magie polyvalent.</p>",
+    "abilities": [
+      {
+        "id": "blast",
+        "name": "Décharge",
+        "tier": 1,
+        "prerequisites": [
+          "prepare-spell"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Projette une énergie destructrice ou la façonne avec de l'Effort."
+      },
+      {
+        "id": "prepare-spell",
+        "name": "Préparer un sort",
+        "tier": 1,
+        "prerequisites": [
+          "blast",
+          "hedge-magic"
+        ],
+        "repeatable": true,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Prépare un effet de cypher manifesté comme sort quotidien."
+      },
+      {
+        "id": "hedge-magic",
+        "name": "Magie mineure",
+        "tier": 1,
+        "prerequisites": [
+          "prepare-spell",
+          "sense-magic"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Accomplis un petit tour de magie inoffensif."
+      },
+      {
+        "id": "sense-magic",
+        "name": "Percevoir la magie",
+        "tier": 1,
+        "prerequisites": [
+          "hedge-magic"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Perçois la présence de magie à proximité."
+      },
+      {
+        "id": "enchant-object",
+        "name": "Enchantement d'objet",
+        "tier": 2,
+        "prerequisites": [
+          "blast",
+          "prepare-spell",
+          "hedge-magic",
+          "confusion-ray"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Enchante temporairement un objet utile."
+      },
+      {
+        "id": "confusion-ray",
+        "name": "Rayon de confusion",
+        "tier": 2,
+        "prerequisites": [
+          "prepare-spell",
+          "hedge-magic",
+          "enchant-object",
+          "hover"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Entrave une cible avec un rayon mental perturbant."
+      },
+      {
+        "id": "hover",
+        "name": "Léviter",
+        "tier": 2,
+        "prerequisites": [
+          "prepare-spell",
+          "hedge-magic",
+          "sense-magic",
+          "confusion-ray"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Lévite et dérive ou te déplace lentement dans les airs."
+      },
+      {
+        "id": "summon-giant-spider",
+        "name": "Invocation d'araignée géante",
+        "tier": 3,
+        "prerequisites": [
+          "enchant-object",
+          "fireball"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Invoque temporairement une araignée géante."
+      },
+      {
+        "id": "fireball",
+        "name": "Boule de feu",
+        "tier": 3,
+        "prerequisites": [
+          "enchant-object",
+          "confusion-ray",
+          "summon-giant-spider"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Fais exploser du feu dans une petite zone à longue portée."
+      },
+      {
+        "id": "arcane-flight",
+        "name": "Vol arcanique",
+        "tier": 3,
+        "prerequisites": [
+          "confusion-ray",
+          "hover",
+          "identify-magic"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Vole à ta vitesse normale pendant une durée prolongée."
+      },
+      {
+        "id": "identify-magic",
+        "name": "Identifier la magie",
+        "tier": 3,
+        "prerequisites": [
+          "confusion-ray",
+          "hover",
+          "arcane-flight"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Apprends le niveau, la source, la nature et les effets généraux d'une magie perçue."
+      },
+      {
+        "id": "soul-interrogation",
+        "name": "Interrogation de l'âme",
+        "tier": 4,
+        "prerequisites": [
+          "fireball",
+          "arcane-flight"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Apprends des secrets exploitables sur un adversaire distant."
+      },
+      {
+        "id": "arcane-teleportation",
+        "name": "Téléportation arcanique",
+        "tier": 4,
+        "prerequisites": [
+          "fireball",
+          "arcane-flight"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Téléporte-toi et, avec de l'Effort, d'autres créatures."
+      },
+      {
+        "id": "divination",
+        "name": "Divination",
+        "tier": 5,
+        "prerequisites": [
+          "soul-interrogation",
+          "granite-wall"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "Pose une question à une entité puissante."
+      },
+      {
+        "id": "granite-wall",
+        "name": "Mur de granit",
+        "tier": 5,
+        "prerequisites": [
+          "arcane-teleportation",
+          "divination"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Crée un mur de granit durable."
+      },
+      {
+        "id": "word-of-death",
+        "name": "Mot de mort",
+        "tier": 6,
+        "prerequisites": [
+          "divination",
+          "granite-wall"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "Prononce un mot mortel contre une cible proche."
+      },
+      {
+        "id": "conjure-supernatural-creature",
+        "name": "Invocation de créature surnaturelle",
+        "tier": 6,
+        "prerequisites": [
+          "divination",
+          "granite-wall"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 7,
+          "options": []
+        },
+        "description": "Invoque temporairement un ange, un démon ou un élémentaire."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

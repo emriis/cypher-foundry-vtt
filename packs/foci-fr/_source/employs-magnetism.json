@@ -1,0 +1,251 @@
+{
+  "_id": "employsmagFC84B3",
+  "_key": "!items!employsmagFC84B3",
+  "name": "Manipule le Magnétisme",
+  "type": "focus",
+  "img": "icons/magic/lightning/bolt-strike-blue.webp",
+  "system": {
+    "description": "<p>Un Focus pour un personnage qui commande le métal et la force magnétique.</p>",
+    "abilities": [
+      {
+        "id": "craft-metal",
+        "name": "Façonneur·euse de métal",
+        "tier": 1,
+        "prerequisites": [
+          "sense-metal"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu façonnes le métal sans chaleur et gagnes un atout pour les tâches liées au travail du métal."
+      },
+      {
+        "id": "move-metal",
+        "name": "Déplacer le métal",
+        "tier": 1,
+        "prerequisites": [
+          "move-metal"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Tu exerces une force sur le métal à portée courte ou perturbes les appareils électroniques et machines-créatures."
+      },
+      {
+        "id": "sense-metal",
+        "name": "Détecter le métal",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Tu détectes le métal ferromagnétique à portée courte, ainsi que sa quantité, son type et sa localisation générale."
+      },
+      {
+        "id": "electromagnetic-eyes",
+        "name": "Yeux électromagnétiques",
+        "tier": 2,
+        "prerequisites": [
+          "sense-metal"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Tu perçois les champs électromagnétiques pour voir dans l’obscurité et repérer à longue portée créatures cachées, métal et appareils électriques."
+      },
+      {
+        "id": "electromagnetically-charge",
+        "name": "Charge électromagnétique",
+        "tier": 2,
+        "prerequisites": [
+          "move-metal"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Tu canalises l’énergie électromagnétique pour réduire une blessure ou recharger un appareil électrique; le coût augmente jusqu’à une récupération."
+      },
+      {
+        "id": "repel-metal",
+        "name": "Repousser le métal",
+        "tier": 2,
+        "prerequisites": [
+          "craft-metal"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu gagnes un atout pour Bloquer ou Esquiver les attaques contenant du métal."
+      },
+      {
+        "id": "guide-bolt",
+        "name": "Projectiles guidés",
+        "tier": 3,
+        "prerequisites": [
+          "move-metal",
+          "repel-metal"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Tu guides une munition métallique pour gagner un atout et infliger 3 dégâts supplémentaires une fois par round."
+      },
+      {
+        "id": "rend-metal",
+        "name": "Déchirer le métal",
+        "tier": 3,
+        "prerequisites": [
+          "move-metal",
+          "craft-metal"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Tu détruis un objet métallique visible jusqu’au niveau 3, avec une attaque facilitée contre l’équipement réticent."
+      },
+      {
+        "id": "magnetic-field",
+        "name": "Champ magnétique",
+        "tier": 4,
+        "prerequisites": [
+          "repel-metal",
+          "guide-bolt"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Tu projettes au sol les projectiles métalliques et disperses les attaques d’énergie électromagnétique pendant un round."
+      },
+      {
+        "id": "magnetize",
+        "name": "Magnétiser",
+        "tier": 4,
+        "prerequisites": [
+          "rend-metal"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Tu magnétises ou démagnétises définitivement un objet touché, ou crées un champ qui repousse les objets métalliques de faible niveau."
+      },
+      {
+        "id": "command-metal",
+        "name": "Commander le métal",
+        "tier": 5,
+        "prerequisites": [
+          "magnetize",
+          "rend-metal"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Tu remodèles le métal à portée courte, fusionnes des objets, déplaces le résultat ou attaques une cible pour 7 dégâts."
+      },
+      {
+        "id": "iron-in-the-blood",
+        "name": "Fer dans le sang",
+        "tier": 5,
+        "prerequisites": [
+          "move-metal",
+          "rend-metal"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu détectes et manipules le fer présent dans la chair et le sang pour déplacer ou attaquer des créatures avec tes pouvoirs métalliques."
+      },
+      {
+        "id": "diamagnetism",
+        "name": "Diamagnétisme",
+        "tier": 6,
+        "prerequisites": [
+          "magnetize",
+          "iron-in-the-blood"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu rends les objets non métalliques à portée courte sensibles à tes autres pouvoirs magnétiques comme s’ils étaient magnétisés."
+      },
+      {
+        "id": "iron-punch",
+        "name": "Poing de fer",
+        "tier": 6,
+        "prerequisites": [
+          "command-metal",
+          "iron-in-the-blood"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 8,
+          "options": []
+        },
+        "description": "Tu projettes un objet métallique lourd sur une cible proche pour infliger 10 dégâts avec une attaque d’Intellect réussie."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document; créé sous la Cypher Open License."
+    }
+  }
+}

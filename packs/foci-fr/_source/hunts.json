@@ -1,0 +1,262 @@
+{
+  "_id": "huntsxxxxxD663B1",
+  "_key": "!items!huntsxxxxxD663B1",
+  "name": "Chasse",
+  "type": "focus",
+  "img": "icons/svg/target.svg",
+  "system": {
+    "description": "<p>Un Focus pour un chasseur tenace qui choisit, piste et abat sa proie.</p>",
+    "abilities": [
+      {
+        "id": "hunters-determination",
+        "name": "Détermination du chasseur",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Rater un adversaire accorde des atouts contre lui jusqu'à la fin du combat ou au changement de cible."
+      },
+      {
+        "id": "knowledge-of-nature",
+        "name": "Connaissance de la nature",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Trouve nourriture, eau et remèdes disponibles en pleine nature."
+      },
+      {
+        "id": "sneak-attack",
+        "name": "Attaque sournoise",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Dans une situation favorable, une attaque avec arme légère inflige 5 dégâts supplémentaires."
+      },
+      {
+        "id": "fast-kill",
+        "name": "Tuer vite",
+        "tier": 2,
+        "prerequisites": [
+          "knowledge-of-nature",
+          "sneak-attack"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "choice",
+          "amount": 2,
+          "options": [
+            "might",
+            "speed"
+          ]
+        },
+        "description": "Inflige 4 dégâts supplémentaires avec une attaque, sans pouvoir le faire deux rounds de suite."
+      },
+      {
+        "id": "quarry",
+        "name": "Proie",
+        "tier": 2,
+        "prerequisites": [
+          "hunters-determination",
+          "knowledge-of-nature"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Désigne une proie visible et gagne un atout pour les tâches qui la concernent."
+      },
+      {
+        "id": "poison-crafter",
+        "name": "Fabricant·e de poison",
+        "tier": 3,
+        "prerequisites": [
+          "quarry"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Fabrique et manipule efficacement du poison, y compris pour s'en défendre."
+      },
+      {
+        "id": "horde-fighting",
+        "name": "Combat contre la horde",
+        "tier": 3,
+        "prerequisites": [
+          "quarry",
+          "fast-kill"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Face à plusieurs adversaires de mêlée, gagne un atout à l'attaque ou à la défense."
+      },
+      {
+        "id": "awareness",
+        "name": "Hypervigilance",
+        "tier": 3,
+        "prerequisites": [
+          "fast-kill"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Perçoit les êtres vivants à longue portée jusqu'à une récupération."
+      },
+      {
+        "id": "better-sneak-attack",
+        "name": "Attaque sournoise améliorée",
+        "tier": 4,
+        "prerequisites": [
+          "sneak-attack"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Attaque sournoise gagne un atout et peut causer des dégâts différés ignorant l'Armure."
+      },
+      {
+        "id": "sprint-and-grab",
+        "name": "S'élancer et saisir",
+        "tier": 4,
+        "prerequisites": [
+          "horde-fighting"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Se déplace d'une courte distance puis saisit un adversaire de taille égale ou inférieure."
+      },
+      {
+        "id": "damage-dealer",
+        "name": "Tueur spécialisé",
+        "tier": 5,
+        "prerequisites": [
+          "better-sneak-attack"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Choisit une arme qui inflige 3 dégâts supplémentaires ; l'aptitude peut être choisie deux fois."
+      },
+      {
+        "id": "hunters-drive",
+        "name": "Volonté du chasseur",
+        "tier": 5,
+        "prerequisites": [
+          "quarry"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Double le déplacement vers la proie et accorde un atout supplémentaire aux tâches associées."
+      },
+      {
+        "id": "multiple-quarries",
+        "name": "Multiples proies",
+        "tier": 6,
+        "prerequisites": [
+          "hunters-drive"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Proie peut désigner jusqu'à quatre créatures visibles, pour un coût d'Intellect augmenté."
+      },
+      {
+        "id": "lethal-strike",
+        "name": "Frappe létale",
+        "tier": 6,
+        "prerequisites": [
+          "damage-dealer"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 6,
+          "options": []
+        },
+        "description": "Une attaque rapide réussie inflige 7 dégâts supplémentaires."
+      },
+      {
+        "id": "escape-plan",
+        "name": "Plan d'évasion",
+        "tier": 6,
+        "prerequisites": [
+          "damage-dealer"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Après avoir tué un adversaire, tente une tâche de Discrétion comme action supplémentaire."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

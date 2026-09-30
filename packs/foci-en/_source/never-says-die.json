@@ -1,0 +1,211 @@
+{
+  "_id": "neversaysd0738A3",
+  "_key": "!items!neversaysd0738A3",
+  "name": "Never Says Die",
+  "type": "focus",
+  "img": "icons/svg/heart.svg",
+  "system": {
+    "description": "<p>A Focus for enduring hardship and returning to the fight.</p>",
+    "abilities": [
+      {
+        "id": "determination",
+        "name": "Determination",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Gain a free Effort level when retrying a failed task until your next recovery."
+      },
+      {
+        "id": "push-on-through",
+        "name": "Push on Through",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Replace a ten-minute recovery with a second one-action recovery and endure one extra moderate wound."
+      },
+      {
+        "id": "safe-fall",
+        "name": "Safe Fall",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Ignore one wound caused by a fall."
+      },
+      {
+        "id": "always-mighty",
+        "name": "Always Mighty",
+        "tier": 2,
+        "prerequisites": [
+          "push-on-through",
+          "determination"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Restore one extra Might point whenever a recovery restores Might, up to three selections."
+      },
+      {
+        "id": "ignore-the-pain",
+        "name": "Ignore the Pain",
+        "tier": 2,
+        "prerequisites": [
+          "determination",
+          "safe-fall"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Ignore one step of wound hindrance, with additional selections ignoring more."
+      },
+      {
+        "id": "hidden-reserves",
+        "name": "Hidden Reserves",
+        "tier": 3,
+        "prerequisites": [
+          "always-mighty"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "A one-action recovery grants +1 Might Edge and Speed Edge until a longer recovery."
+      },
+      {
+        "id": "blood-fever",
+        "name": "Blood Fever",
+        "tier": 3,
+        "prerequisites": [
+          "ignore-the-pain"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "When depleted or badly wounded, gain an asset on attacks or defense and intimidation."
+      },
+      {
+        "id": "outlast-the-foe",
+        "name": "Outlast the Foe",
+        "tier": 4,
+        "prerequisites": [
+          "hidden-reserves"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "After five full combat rounds, gain an asset on all tasks and deal 1 extra damage per attack."
+      },
+      {
+        "id": "increasing-determination",
+        "name": "Increasing Determination",
+        "tier": 4,
+        "prerequisites": [
+          "blood-fever"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "A failed noncombat physical task becomes easier when retried once."
+      },
+      {
+        "id": "not-dead-yet",
+        "name": "Not Dead Yet",
+        "tier": 5,
+        "prerequisites": [
+          "outlast-the-foe",
+          "increasing-determination"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Survive a normally fatal blow, wake after a round, restore Pools, and remove wounds."
+      },
+      {
+        "id": "final-defiance",
+        "name": "Final Defiance",
+        "tier": 6,
+        "prerequisites": [
+          "not-dead-yet"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Remain conscious for another round after death and struggle to stay alive."
+      },
+      {
+        "id": "ignore-affliction",
+        "name": "Ignore Affliction",
+        "tier": 6,
+        "prerequisites": [
+          "not-dead-yet"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "might",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Ignore an unwanted condition or affliction until a one-hour recovery."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

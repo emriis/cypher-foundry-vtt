@@ -1,0 +1,210 @@
+{
+  "_id": "masterstelE70965",
+  "_key": "!items!masterstelE70965",
+  "name": "Masters Telekinesis",
+  "type": "focus",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "description": "<p>A Focus for moving objects with the mind.</p>",
+    "abilities": [
+      {
+        "id": "push",
+        "name": "Push",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Push a visible target."
+      },
+      {
+        "id": "steady-hand",
+        "name": "Steady Hand",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Gain free Effort for a physical task."
+      },
+      {
+        "id": "telekinesis",
+        "name": "Telekinesis",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Manipulate a distant object."
+      },
+      {
+        "id": "deflect-attacks",
+        "name": "Deflect Attacks",
+        "tier": 2,
+        "prerequisites": [
+          "push",
+          "steady-hand"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Deflect projectiles."
+      },
+      {
+        "id": "energize-object",
+        "name": "Energize Object",
+        "tier": 2,
+        "prerequisites": [
+          "telekinesis"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Empower an object."
+      },
+      {
+        "id": "armoring-debris",
+        "name": "Armoring Debris",
+        "tier": 3,
+        "prerequisites": [
+          "deflect-attacks"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Ease blocking with debris."
+      },
+      {
+        "id": "enhance-strength",
+        "name": "Enhance Strength",
+        "tier": 3,
+        "prerequisites": [
+          "energize-object"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Enhance brute-force tasks."
+      },
+      {
+        "id": "apportation",
+        "name": "Apportation",
+        "tier": 4,
+        "prerequisites": [
+          "armoring-debris"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Call an object to you."
+      },
+      {
+        "id": "mind-for-speed",
+        "name": "Mind for Speed",
+        "tier": 4,
+        "prerequisites": [
+          "enhance-strength"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Exchange Intellect and Speed costs."
+      },
+      {
+        "id": "psychokinetic-attack",
+        "name": "Psychokinetic Attack",
+        "tier": 5,
+        "prerequisites": [
+          "apportation",
+          "mind-for-speed"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Throw or shatter with the mind."
+      },
+      {
+        "id": "improved-apportation",
+        "name": "Improved Apportation",
+        "tier": 6,
+        "prerequisites": [
+          "psychokinetic-attack"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "Call a creature to you."
+      },
+      {
+        "id": "reshape",
+        "name": "Reshape",
+        "tier": 6,
+        "prerequisites": [
+          "psychokinetic-attack"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Reshape nearby matter."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

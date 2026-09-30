@@ -1,0 +1,229 @@
+{
+  "_id": "performsfeB8CCF4",
+  "_key": "!items!performsfeB8CCF4",
+  "name": "Accomplit des exploits de force",
+  "type": "focus",
+  "img": "icons/svg/hand.svg",
+  "system": {
+    "description": "<p>Un Focus pour déployer une force physique incroyable, bondir et défoncer les obstacles.</p>",
+    "abilities": [
+      {
+        "id": "always-mighty",
+        "name": "Toujours puissant·e",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Récupère un point de Puissance supplémentaire lorsqu’une récupération en rend, jusqu’à trois choix."
+      },
+      {
+        "id": "hitting-harder",
+        "name": "Frapper plus fort",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tes attaques à mains nues infligent 1 dégât supplémentaire."
+      },
+      {
+        "id": "inspiring-display",
+        "name": "Démonstration inspirante",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Après une tâche réussie reposant sur la force brute, rends 2 points à la Réserve d’un·e allié·e ou 2 points de santé à un·e PNJ allié·e qui t’a vu·e."
+      },
+      {
+        "id": "feat-of-strength",
+        "name": "Exploit de force",
+        "tier": 2,
+        "prerequisites": [
+          "always-mighty"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Après une tâche réussie reposant sur la force brute, facilite la prochaine tâche d’un·e allié·e ou entrave ou intimide un adversaire qui t’a vu·e."
+      },
+      {
+        "id": "desperate-feat",
+        "name": "Exploit désespéré",
+        "tier": 2,
+        "prerequisites": [
+          "always-mighty",
+          "hitting-harder",
+          "inspiring-display"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tant que tu as une blessure modérée ou majeure, gagne 1 en Avantage dans la Réserve de ton choix."
+      },
+      {
+        "id": "naturally-strong",
+        "name": "Naturellement fort·e",
+        "tier": 2,
+        "prerequisites": [
+          "inspiring-display"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Pour porter, grimper, sauter ou briser, considère tout résultat inférieur à 9 comme un 9; le minimum passe à 12 au rang 3. Se renouvelle après une récupération."
+      },
+      {
+        "id": "deep-reserves",
+        "name": "Réserves profondes",
+        "tier": 3,
+        "prerequisites": [
+          "feat-of-strength",
+          "desperate-feat"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Transfère jusqu’à 6 points entre tes Réserves, à raison d’un point par round; l’aptitude se renouvelle après une récupération de dix heures."
+      },
+      {
+        "id": "iron-fist",
+        "name": "Poing de fer",
+        "tier": 3,
+        "prerequisites": [
+          "desperate-feat",
+          "naturally-strong"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tes attaques à mains nues infligent 3 dégâts supplémentaires."
+      },
+      {
+        "id": "amazing-strength",
+        "name": "Force prodigieuse",
+        "tier": 4,
+        "prerequisites": [
+          "deep-reserves"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Quand tu consacres de l’Effort de Puissance à une tâche hors combat, gagne un niveau d’Effort gratuit."
+      },
+      {
+        "id": "throw",
+        "name": "Projection",
+        "tier": 4,
+        "prerequisites": [
+          "iron-fist"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Quand ton attaque à mains nues inflige des dégâts à une créature de ta taille ou plus petite, projette-la à 1d20 pieds et mets-la à terre."
+      },
+      {
+        "id": "brute-strike",
+        "name": "Frappe brutale",
+        "tier": 5,
+        "prerequisites": [
+          "amazing-strength",
+          "throw"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Quand tu touches avec une attaque de Puissance, inflige 6 dégâts supplémentaires; impossible à utiliser deux rounds d’affilée."
+      },
+      {
+        "id": "brute-squad",
+        "name": "Escouade brutale",
+        "tier": 6,
+        "prerequisites": [
+          "brute-strike"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 8,
+          "options": []
+        },
+        "description": "Effectue deux tâches de Puissance ce tour, l’une avec ton action normale et l’autre avec une action supplémentaire."
+      },
+      {
+        "id": "jump-attack",
+        "name": "Attaque bondissante",
+        "tier": 6,
+        "prerequisites": [
+          "brute-strike"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "might",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Saute jusqu’à 1 mètre et effectue une attaque de mêlée; si elle touche, tu peux infliger 4 dégâts supplémentaires et mettre la cible à terre."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

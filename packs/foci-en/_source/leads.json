@@ -1,0 +1,226 @@
+{
+  "_id": "leadsxxxxxAEF450",
+  "_key": "!items!leadsxxxxxAEF450",
+  "name": "Leads",
+  "type": "focus",
+  "img": "icons/svg/crown.svg",
+  "system": {
+    "description": "<p>A Focus for a leader who commands allies and followers.</p>",
+    "abilities": [
+      {
+        "id": "always-witty",
+        "name": "Always Witty",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Restore 1 extra Intellect whenever you recover."
+      },
+      {
+        "id": "inspiring-suggestion",
+        "name": "Inspiring Suggestion",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "An ally following your specific suggestion gains two assets."
+      },
+      {
+        "id": "lighting-a-fire-under-them",
+        "name": "Lighting a Fire Under Them",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Make an ally's next action a First action."
+      },
+      {
+        "id": "basic-follower",
+        "name": "Basic Follower",
+        "tier": 2,
+        "prerequisites": [
+          "always-witty",
+          "inspiring-suggestion"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Gain a level 2 follower with two level 3 modifications."
+      },
+      {
+        "id": "natural-leader",
+        "name": "Natural Leader",
+        "tier": 2,
+        "prerequisites": [
+          "inspiring-suggestion",
+          "lighting-a-fire-under-them"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Social rolls below 9 count as 9; Effort raises that minimum."
+      },
+      {
+        "id": "advanced-command",
+        "name": "Advanced Command",
+        "tier": 3,
+        "prerequisites": [
+          "natural-leader"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 7,
+          "options": []
+        },
+        "description": "Command a creature after a successful Intellect roll."
+      },
+      {
+        "id": "expert-follower",
+        "name": "Expert Follower",
+        "tier": 3,
+        "prerequisites": [
+          "basic-follower"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Gain or improve a level 3 follower with three level 4 modifications."
+      },
+      {
+        "id": "calm",
+        "name": "Calm",
+        "tier": 4,
+        "prerequisites": [
+          "advanced-command"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Prevent a living foe from attacking for one round."
+      },
+      {
+        "id": "captivate-or-inspire",
+        "name": "Captivate or Inspire",
+        "tier": 4,
+        "prerequisites": [
+          "expert-follower"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Hold an audience's attention or improve its effective level."
+      },
+      {
+        "id": "improved-follower",
+        "name": "Improved Follower",
+        "tier": 5,
+        "prerequisites": [
+          "expert-follower"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Improve one follower's level and modifications."
+      },
+      {
+        "id": "band-of-followers",
+        "name": "Band of Followers",
+        "tier": 6,
+        "prerequisites": [
+          "improved-follower"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Gain or advance a band of capable followers."
+      },
+      {
+        "id": "mind-of-a-leader",
+        "name": "Mind of a Leader",
+        "tier": 6,
+        "prerequisites": [
+          "calm"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "Plan ahead to gain guidance and an asset for each informed ally."
+      },
+      {
+        "id": "stimulate",
+        "name": "Stimulate",
+        "tier": 6,
+        "prerequisites": [
+          "captivate-or-inspire"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "Ease a nearby target's next action by three steps."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
-  "_id": "Cnsrt5D3ad2026EN",
-  "_key": "!items!Cnsrt5D3ad2026EN",
+  "_id": "consortswiF70F00",
+  "_key": "!items!consortswiF70F00",
   "name": "Consorts With the Dead",
   "type": "focus",
   "img": "icons/magic/death/skull-humanoid-crown-white.webp",
@@ -14,7 +14,11 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
         "description": "Reanimate a small corpse as a level 1 undead follower."
       },
       {
@@ -24,7 +28,11 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
         "description": "Learn a corpse's cause and time of death and its species."
       },
       {
@@ -34,47 +42,80 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
         "description": "Ask a corpse one question it could have answered in life."
       },
       {
         "id": "blood-magic",
         "name": "Blood Magic",
         "tier": 2,
-        "prerequisites": ["basic-necromancy", "bone-knowledge"],
+        "prerequisites": [
+          "basic-necromancy",
+          "bone-knowledge"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Sustain a moderate wound for Edge in one chosen Pool."
       },
       {
         "id": "improved-necromancy",
         "name": "Improved Necromancy",
         "tier": 2,
-        "prerequisites": ["basic-necromancy", "blood-magic"],
+        "prerequisites": [
+          "basic-necromancy",
+          "blood-magic"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Reanimate multiple corpses at increased range."
       },
       {
         "id": "improved-speaker",
         "name": "Improved Speaker",
         "tier": 2,
-        "prerequisites": ["bone-knowledge", "speaks-with-dead"],
+        "prerequisites": [
+          "bone-knowledge",
+          "speaks-with-dead"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Ask additional questions of the dead by spending more Intellect."
       },
       {
         "id": "sense-the-mood",
         "name": "Sense the Mood",
         "tier": 3,
-        "prerequisites": ["blood-magic", "improved-speaker", "flesh-mending"],
+        "prerequisites": [
+          "blood-magic",
+          "improved-speaker",
+          "flesh-mending"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
         "description": "Question lingering dead energies about a place."
       },
       {
@@ -88,7 +129,11 @@
         ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
         "description": "Mend a wound or restore a living or undead NPC's health."
       },
       {
@@ -102,7 +147,11 @@
         ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 5, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
         "description": "Reanimate a larger corpse as a level 3 undead follower."
       },
       {
@@ -116,54 +165,88 @@
         ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
         "description": "Wrap yourself in an undead spirit that harms close attackers."
       },
       {
         "id": "terrifying-gaze",
         "name": "Terrifying Gaze",
         "tier": 5,
-        "prerequisites": ["greater-necromancy", "wall-of-bones"],
+        "prerequisites": [
+          "greater-necromancy",
+          "wall-of-bones"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 6, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
         "description": "Freeze several living creatures with fear."
       },
       {
         "id": "wall-of-bones",
         "name": "Wall of Bones",
         "tier": 5,
-        "prerequisites": ["spectral-cloak", "terrifying-gaze"],
+        "prerequisites": [
+          "spectral-cloak",
+          "terrifying-gaze"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 5, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
         "description": "Create a damaging wall of necrotic bones."
       },
       {
         "id": "true-necromancy",
         "name": "True Necromancy",
         "tier": 6,
-        "prerequisites": ["terrifying-gaze", "wall-of-bones"],
+        "prerequisites": [
+          "terrifying-gaze",
+          "wall-of-bones"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 8, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 8,
+          "options": []
+        },
         "description": "Reanimate a larger corpse as a level 5 undead follower."
       },
       {
         "id": "word-of-death",
         "name": "Word of Death",
         "tier": 6,
-        "prerequisites": ["terrifying-gaze", "wall-of-bones"],
+        "prerequisites": [
+          "terrifying-gaze",
+          "wall-of-bones"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 6, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
         "description": "Speak a lethal magical word against a nearby enemy."
       }
     ]
   },
   "folder": null,
   "sort": 0,
-  "ownership": { "default": 0 },
+  "ownership": {
+    "default": 0
+  },
   "flags": {
     "cypher": {
       "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."

@@ -1,0 +1,308 @@
+{
+  "_id": "howlsatthe8892A3",
+  "_key": "!items!howlsatthe8892A3",
+  "name": "Hurle à la lune",
+  "type": "focus",
+  "img": "icons/creatures/mammals/wolf-howl-moon.webp",
+  "system": {
+    "description": "<p>Un Focus pour une personne qui devient une créature redoutable et difficile à contrôler.</p>",
+    "abilities": [
+      {
+        "id": "beast-form",
+        "name": "Forme bestiale",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Cinq nuits consécutives par mois, tu te transformes en bête monstrueuse avec des Réserves de Puissance et de Célérité renforcées, une meilleure résistance et des attaques à mains nues polyvalentes."
+      },
+      {
+        "id": "call-upon-the-beast",
+        "name": "Appel à la bête",
+        "tier": 1,
+        "prerequisites": [
+          "beast-form"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Tu manifestes brièvement ta nature bestiale pour gagner un niveau d’Effort gratuit sur une tâche d’Intimidation."
+      },
+      {
+        "id": "keen-eye",
+        "name": "Œil perçant",
+        "tier": 1,
+        "prerequisites": [
+          "beast-form"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu vois une fois et demie plus loin et ignores les malus d’attaque et de perception dus à la mauvaise visibilité."
+      },
+      {
+        "id": "scales",
+        "name": "Écailles",
+        "tier": 2,
+        "prerequisites": [
+          "beast-form"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "might",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Tu fais pousser des écailles jusqu’à une récupération de dix minutes, ce qui facilite tes tâches de Blocage."
+      },
+      {
+        "id": "beast-senses",
+        "name": "Sens bestiaux",
+        "tier": 2,
+        "prerequisites": [
+          "beast-form"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu gagnes des atouts en perception et en initiative ; sous forme bestiale, un assaillant inconscient ne bénéficie pas de la surprise."
+      },
+      {
+        "id": "controlled-change",
+        "name": "Transformation contrôlée",
+        "tier": 2,
+        "prerequisites": [
+          "beast-form"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu peux tenter une tâche d’Intellect de difficulté 4 pour te transformer n’importe quelle nuit, en plus des transformations involontaires."
+      },
+      {
+        "id": "talons-or-claws",
+        "name": "Serres ou griffes",
+        "tier": 2,
+        "prerequisites": [
+          "beast-form"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "might",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Tu fais pousser des serres ou des griffes jusqu’à une récupération de dix minutes ; tes attaques à mains nues infligent 1 dégât supplémentaire."
+      },
+      {
+        "id": "wounded-fury",
+        "name": "Fureur blessée",
+        "tier": 3,
+        "prerequisites": [
+          "scales"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Avec au moins trois blessures modérées ou une blessure majeure, tu gagnes deux niveaux d’Effort gratuits pour une attaque chaque round jusqu’à récupération ou guérison."
+      },
+      {
+        "id": "bigger-beast-form",
+        "name": "Forme bestiale agrandie",
+        "tier": 3,
+        "prerequisites": [
+          "beast-senses"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Forme bestiale atteint 4 mètres, gagne en résistance et un atout à l’attaque, peut utiliser des attaques lourdes et entrave les esquives."
+      },
+      {
+        "id": "sleeker-beast-form",
+        "name": "Forme bestiale affinée",
+        "tier": 3,
+        "prerequisites": [
+          "talons-or-claws"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Forme bestiale accorde aussi +1 en Avantage de Puissance, +2 à la Réserve de Célérité et +1 en Avantage de Célérité."
+      },
+      {
+        "id": "beast-healing",
+        "name": "Guérison bestiale",
+        "tier": 4,
+        "prerequisites": [
+          "bigger-beast-form"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "La transformation en forme bestiale soigne immédiatement une blessure ; le bénéfice se renouvelle après une récupération de dix heures."
+      },
+      {
+        "id": "greater-controlled-change",
+        "name": "Transformation mieux contrôlée",
+        "tier": 4,
+        "prerequisites": [
+          "controlled-change"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Se transformer dans un sens ou dans l’autre via Forme bestiale devient une tâche d’Intellect de difficulté 2."
+      },
+      {
+        "id": "poison-bite",
+        "name": "Morsure venimeuse",
+        "tier": 4,
+        "prerequisites": [
+          "sleeker-beast-form"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "might",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Tu fais pousser des crocs pour des morsures légères empoisonnées, infligeant 5 dégâts supplémentaires sans tenir compte de l’Armure et entravant la cible un round."
+      },
+      {
+        "id": "brute-squad",
+        "name": "Escouade brutale",
+        "tier": 5,
+        "prerequisites": [
+          "beast-healing"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 8,
+          "options": []
+        },
+        "description": "Tu effectues deux tâches de Puissance ce tour : une avec ton action normale et une avec une action supplémentaire."
+      },
+      {
+        "id": "enhanced-beast-form",
+        "name": "Forme bestiale améliorée",
+        "tier": 5,
+        "prerequisites": [
+          "beast-healing"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Forme bestiale accorde +3 à la Réserve de Puissance, +2 à la Réserve de Célérité et ignore les blessures mineures des attaques physiques."
+      },
+      {
+        "id": "constrict",
+        "name": "Constriction",
+        "tier": 6,
+        "prerequisites": [
+          "enhanced-beast-form"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Sous forme bestiale, une attaque à mains nues en Dernière action saisit une cible avec 2 dégâts de moins et inflige 5 dégâts par round avec une action."
+      },
+      {
+        "id": "perfect-control",
+        "name": "Contrôle parfait",
+        "tier": 6,
+        "prerequisites": [
+          "greater-controlled-change"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu te transformes ou reprends ta forme normale comme action, sans tâche d’Intellect, et n’as plus besoin de manger une créature pour éviter l’entrave après transformation."
+      },
+      {
+        "id": "lethal-capability",
+        "name": "Capacité létale",
+        "tier": 6,
+        "prerequisites": [
+          "poison-bite"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Choisis une attaque précise, comme les griffes ou la morsure ; elle inflige 5 dégâts supplémentaires. Choisis une attaque différente à chaque sélection."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

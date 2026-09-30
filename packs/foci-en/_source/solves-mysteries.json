@@ -1,0 +1,140 @@
+{
+  "_id": "solvesmyst69025C",
+  "_key": "!items!solvesmyst69025C",
+  "name": "Solves Mysteries",
+  "type": "focus",
+  "img": "icons/sundries/books/book-embossed-skull.webp",
+  "system": {
+    "description": "<p>A Focus for a master of deduction who uses evidence to find the truth.</p>",
+    "abilities": [
+      {
+        "id": "investigative-knack",
+        "name": "Investigative Knack",
+        "tier": 1,
+        "prerequisites": ["sleuthing", "sense-weakness"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Initiate a period of investigation during which low perception, interaction, or lie-detection results are treated as 9, increasing to 12 at tier 3."
+      },
+      {
+        "id": "sense-weakness",
+        "name": "Sense Weakness",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "After observing a creature for a round, learn its special weaknesses and deal it 1 additional damage with attacks."
+      },
+      {
+        "id": "sleuthing",
+        "name": "Sleuthing",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "description": "While pursuing a target or investigating a mystery, ask the GM one question about the task and receive a short helpful answer."
+      },
+      {
+        "id": "master-of-disguise",
+        "name": "Master of Disguise",
+        "tier": 2,
+        "prerequisites": ["investigative-knack"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Create a disguise as a Last action, and treat a disguise roll below 6 as a 6, increasing to 9 at tier 3."
+      },
+      {
+        "id": "out-of-harms-way",
+        "name": "Out of Harm's Way",
+        "tier": 2,
+        "prerequisites": ["investigative-knack"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "speed", "amount": 2, "options": [] },
+        "description": "After succeeding on a dodge task, immediately move an immediate distance even when it is not your turn."
+      },
+      {
+        "id": "combat-prowess",
+        "name": "Combat Prowess",
+        "tier": 3,
+        "prerequisites": ["out-of-harms-way"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Choose melee or ranged weapon attacks; attacks of that type deal 1 additional damage."
+      },
+      {
+        "id": "ditch-assumption",
+        "name": "Ditch Assumption",
+        "tier": 3,
+        "prerequisites": ["master-of-disguise"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "description": "After careful investigation, learn one false assumption in the current investigation or eliminate one suspect from several possibilities."
+      },
+      {
+        "id": "defend-and-respond",
+        "name": "Defend and Respond",
+        "tier": 4,
+        "prerequisites": ["combat-prowess"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "choice", "amount": 3, "options": ["might", "speed"] },
+        "description": "After blocking or dodging a melee attack, immediately make a melee attack against the attacker, once per turn."
+      },
+      {
+        "id": "lead-by-inquiry",
+        "name": "Lead by Inquiry",
+        "tier": 4,
+        "prerequisites": ["ditch-assumption"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Allies who take a ten-hour recovery with you are trained in perception and lie detection while they remain within long range."
+      },
+      {
+        "id": "defuse-situation",
+        "name": "Defuse Situation",
+        "tier": 5,
+        "prerequisites": ["defend-and-respond", "lead-by-inquiry"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "description": "Through social misdirection, prevent a living foe from attacking anyone or anything for one round after a successful interaction task."
+      },
+      {
+        "id": "infer-thoughts",
+        "name": "Infer Thoughts",
+        "tier": 6,
+        "prerequisites": ["defuse-situation"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "description": "After observing or interacting with a level 4 or lower target for a round, read its surface thoughts while you can see and hear it."
+      },
+      {
+        "id": "knowing-the-unknown",
+        "name": "Knowing the Unknown",
+        "tier": 6,
+        "prerequisites": ["defuse-situation"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 6, "options": [] },
+        "description": "Use appropriate resources to ask the GM one question and receive a general answer whose difficulty reflects how obscure it is."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

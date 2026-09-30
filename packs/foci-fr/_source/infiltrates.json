@@ -1,0 +1,246 @@
+{
+  "_id": "infiltrate6C997E",
+  "_key": "!items!infiltrate6C997E",
+  "name": "S’infiltre",
+  "type": "focus",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "description": "<p>Un Focus pour une personne subtile qui va là où les autres ne peuvent pas.</p>",
+    "abilities": [
+      {
+        "id": "fast-talk",
+        "name": "Baratin",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Convainc une créature intelligente non hostile d'accomplir une action raisonnable."
+      },
+      {
+        "id": "letting-their-guard-down",
+        "name": "Faire baisser la garde",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Un déguisement ou une tromperie réussie révèle une information mineure utile."
+      },
+      {
+        "id": "master-of-disguise",
+        "name": "Maître·sse du déguisement",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Se déguise rapidement et obtient un atout supplémentaire quand le déguisement est examiné."
+      },
+      {
+        "id": "natural-sneak",
+        "name": "Infiltré·e né·e",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Les faibles résultats aux tâches d'infiltration comptent comme 6 ; l'Effort augmente ce minimum."
+      },
+      {
+        "id": "awareness",
+        "name": "Hypervigilance",
+        "tier": 2,
+        "prerequisites": [
+          "fast-talk",
+          "letting-their-guard-down"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Perçoit les êtres vivants à longue portée jusqu'à une récupération."
+      },
+      {
+        "id": "flight-not-fight",
+        "name": "Fuir plutôt que combattre",
+        "tier": 2,
+        "prerequisites": [
+          "master-of-disguise",
+          "natural-sneak"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Utiliser son action uniquement pour se déplacer facilite les Esquives jusqu'au prochain tour."
+      },
+      {
+        "id": "blend-in",
+        "name": "Se fondre dans la masse",
+        "tier": 3,
+        "prerequisites": [
+          "awareness"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Semble insignifiant·e et gagne deux atouts aux tâches d'Esquive et de Discrétion."
+      },
+      {
+        "id": "defend-and-respond",
+        "name": "Défendre et riposter",
+        "tier": 3,
+        "prerequisites": [
+          "awareness",
+          "flight-not-fight"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "choice",
+          "amount": 3,
+          "options": [
+            "might",
+            "speed"
+          ]
+        },
+        "description": "Après avoir bloqué ou esquivé une attaque de mêlée, effectue une attaque de mêlée immédiate."
+      },
+      {
+        "id": "scrutinize-defenses",
+        "name": "Analyser les défenses",
+        "tier": 3,
+        "prerequisites": [
+          "flight-not-fight"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Étudie une zone pour poser des questions vraies sur ses défenses."
+      },
+      {
+        "id": "convenient-device",
+        "name": "Objet providentiel",
+        "tier": 4,
+        "prerequisites": [
+          "blend-in",
+          "defend-and-respond",
+          "scrutinize-defenses"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Produit un outil à usage unique qui retire un état négatif ; son coût dépend de l'effet."
+      },
+      {
+        "id": "invisibility",
+        "name": "Invisibilité",
+        "tier": 5,
+        "prerequisites": [
+          "convenient-device"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Devient invisible jusqu'à révéler sa position ; l'Effort peut affecter une créature touchée."
+      },
+      {
+        "id": "persistence-training",
+        "name": "Entraînement à la persistance",
+        "tier": 5,
+        "prerequisites": [
+          "convenient-device"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Met fin à un contrôle mental ou effet affaiblissant ; l'Effort peut aider un·e allié·e."
+      },
+      {
+        "id": "brainwashing",
+        "name": "Lavage de cerveau",
+        "tier": 6,
+        "prerequisites": [
+          "invisibility"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "Contrôle une créature touchée de niveau 3 ou moins après une attaque d'Intellect réussie."
+      },
+      {
+        "id": "spring-away",
+        "name": "Bond arrière",
+        "tier": 6,
+        "prerequisites": [
+          "persistence-training"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Après avoir esquivé un danger, se déplace immédiatement d'une courte distance."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,211 @@
+{
+  "_id": "quellsevil7D0321",
+  "_key": "!items!quellsevil7D0321",
+  "name": "Etouffe le mal",
+  "type": "focus",
+  "img": "icons/svg/holy-symbol.svg",
+  "system": {
+    "description": "<p>Un Focus pour trouver, détruire et bannir les mort-vivant·e·s, les démons et les créatures similaires.</p>",
+    "abilities": [
+      {
+        "id": "sense-evil",
+        "name": "Détection du mal",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Perçois les mort-vivant·e·s, démons et créatures similaires proches avec un résultat minimal de 9; ce minimum passe à 12 au rang 3."
+      },
+      {
+        "id": "inspiring-trust",
+        "name": "Confiance inspirante",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Les allié·e·s présent·e·s qui partagent ton sens du bien et du mal gagnent +1 à leurs récupérations."
+      },
+      {
+        "id": "tribulation",
+        "name": "Tribulation",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Attaque jusqu’à cinq créatures surnaturelles maléfiques proches de niveau 2 ou moins pour les étourdir ou les repousser."
+      },
+      {
+        "id": "shield-against-evil",
+        "name": "Bouclier contre le mal",
+        "tier": 2,
+        "prerequisites": [
+          "sense-evil",
+          "inspiring-trust"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Protège le personnage ou un·e allié·e touché·e contre les créatures maléfiques spécifiées, facilite la défense et immunise contre l’influence mentale, la peur et la possession."
+      },
+      {
+        "id": "invisibility-to-evil",
+        "name": "Invisibilité face au mal",
+        "tier": 2,
+        "prerequisites": [
+          "inspiring-trust",
+          "tribulation"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Rend un·e allié·e touché·e effectivement invisible aux créatures maléfiques de niveau 3 ou moins jusqu’à une récupération de dix minutes."
+      },
+      {
+        "id": "unearth-evil",
+        "name": "Déterrer le mal",
+        "tier": 3,
+        "prerequisites": [
+          "shield-against-evil"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Crée une carte thermique mentale des créatures maléfiques concernées dans un rayon de 15 km et conserve leur position avec de l’Effort supplémentaire."
+      },
+      {
+        "id": "blast-evil",
+        "name": "Frappe sacrée",
+        "tier": 3,
+        "prerequisites": [
+          "invisibility-to-evil"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Purifie une zone immédiate adjacente pour infliger 3 dégâts, ou 6 dégâts aux mort-vivant·e·s, démons et créatures similaires."
+      },
+      {
+        "id": "righteous-cloak",
+        "name": "Manteau vertueux",
+        "tier": 4,
+        "prerequisites": [
+          "unearth-evil"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Rayonne d’une lumière pure qui inflige automatiquement 4 dégâts à quiconque te touche ou t’attaque en mêlée."
+      },
+      {
+        "id": "rebuke-evil",
+        "name": "Réprimande sacrée",
+        "tier": 4,
+        "prerequisites": [
+          "blast-evil"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Ordonne à une créature maléfique touchée par une attaque d’Intellect d’accomplir un objectif, même s’il lui nuit ou nuit à ses allié·e·s."
+      },
+      {
+        "id": "shrug-off-evil",
+        "name": "Résister au mal",
+        "tier": 5,
+        "prerequisites": [
+          "righteous-cloak",
+          "rebuke-evil"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Devient immunisé·e à l’influence mentale, la peur et la possession, et ignore une blessure infligée par une créature maléfique jusqu’à une récupération de dix heures."
+      },
+      {
+        "id": "fence-out-evil",
+        "name": "Mur de lumière sacrée",
+        "tier": 6,
+        "prerequisites": [
+          "shrug-off-evil"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "Entoure une zone courte de lumière purificatrice qui inflige des dégâts aux créatures maléfiques chaque round et peut les réprimander."
+      },
+      {
+        "id": "retribution",
+        "name": "Rétribution",
+        "tier": 6,
+        "prerequisites": [
+          "shrug-off-evil"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 8,
+          "options": []
+        },
+        "description": "Fait tomber des flammes radiantes sur une zone immédiate à longue portée, blessant chaque créature et plus gravement une cible choisie."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

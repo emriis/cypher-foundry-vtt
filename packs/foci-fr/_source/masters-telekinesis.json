@@ -1,0 +1,210 @@
+{
+  "_id": "masterstelE70965",
+  "_key": "!items!masterstelE70965",
+  "name": "Maîtrise la télékinésie",
+  "type": "focus",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "description": "<p>Un Focus pour déplacer des objets par la pensée.</p>",
+    "abilities": [
+      {
+        "id": "push",
+        "name": "Pousser",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Repousse une cible visible."
+      },
+      {
+        "id": "steady-hand",
+        "name": "Main ferme",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Gagne de l'Effort gratuit."
+      },
+      {
+        "id": "telekinesis",
+        "name": "Télékinésie",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Manipule un objet distant."
+      },
+      {
+        "id": "deflect-attacks",
+        "name": "Détourner les attaques",
+        "tier": 2,
+        "prerequisites": [
+          "push",
+          "steady-hand"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Dévie les projectiles."
+      },
+      {
+        "id": "energize-object",
+        "name": "Énergiser un objet",
+        "tier": 2,
+        "prerequisites": [
+          "telekinesis"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Infuse un objet d'énergie."
+      },
+      {
+        "id": "armoring-debris",
+        "name": "Débris protecteurs",
+        "tier": 3,
+        "prerequisites": [
+          "deflect-attacks"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Protège avec des débris."
+      },
+      {
+        "id": "enhance-strength",
+        "name": "Force amplifiée",
+        "tier": 3,
+        "prerequisites": [
+          "energize-object"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Amplifie la force."
+      },
+      {
+        "id": "apportation",
+        "name": "Attirer",
+        "tier": 4,
+        "prerequisites": [
+          "armoring-debris"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Attire un objet."
+      },
+      {
+        "id": "mind-for-speed",
+        "name": "Esprit vif",
+        "tier": 4,
+        "prerequisites": [
+          "enhance-strength"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Échange les coûts."
+      },
+      {
+        "id": "psychokinetic-attack",
+        "name": "Attaque psychokinétique",
+        "tier": 5,
+        "prerequisites": [
+          "apportation",
+          "mind-for-speed"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Lance ou brise par la pensée."
+      },
+      {
+        "id": "improved-apportation",
+        "name": "Mieux attirer",
+        "tier": 6,
+        "prerequisites": [
+          "psychokinetic-attack"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "Attire une créature."
+      },
+      {
+        "id": "reshape",
+        "name": "Restructurer la matière",
+        "tier": 6,
+        "prerequisites": [
+          "psychokinetic-attack"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Remodèle la matière."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

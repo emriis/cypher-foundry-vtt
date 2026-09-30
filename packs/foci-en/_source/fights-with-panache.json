@@ -1,6 +1,6 @@
 {
-  "_id": "F1ghtsPanache26X",
-  "_key": "!items!F1ghtsPanache26X",
+  "_id": "fightswithC3802D",
+  "_key": "!items!fightswithC3802D",
   "name": "Fights With Panache",
   "type": "focus",
   "img": "icons/skills/melee/sword-parry.webp",
@@ -11,20 +11,32 @@
         "id": "attack-flourish",
         "name": "Attack Flourish",
         "tier": 1,
-        "prerequisites": ["roguish-smile"],
+        "prerequisites": [
+          "roguish-smile"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Stylish moves and quips give a nearby observer an asset on their next task."
       },
       {
         "id": "roguish-smile",
         "name": "Roguish Smile",
         "tier": 1,
-        "prerequisites": ["taunting-defense"],
+        "prerequisites": [
+          "taunting-defense"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
         "description": "Erase the last round from the memory of a nearby level 3 or lower target; Effort raises the maximum level."
       },
       {
@@ -34,30 +46,45 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
         "description": "Hinder a melee attack against you, but a hit inflicts one additional minor wound."
       },
       {
         "id": "dashing-defense",
         "name": "Dashing Defense",
         "tier": 2,
-        "prerequisites": ["attack-flourish"],
+        "prerequisites": [
+          "attack-flourish"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "When using a light or medium weapon, attempt a block after failing to dodge an attack."
       },
       {
         "id": "fast-kill",
         "name": "Fast Kill",
         "tier": 2,
-        "prerequisites": ["roguish-smile"],
+        "prerequisites": [
+          "roguish-smile"
+        ],
         "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "choice",
           "amount": 2,
-          "options": ["might", "speed"]
+          "options": [
+            "might",
+            "speed"
+          ]
         },
         "description": "A successful melee or ranged attack deals 4 additional damage, but not in consecutive rounds."
       },
@@ -65,107 +92,169 @@
         "id": "wounded-fury",
         "name": "Wounded Fury",
         "tier": 2,
-        "prerequisites": ["taunting-defense"],
+        "prerequisites": [
+          "taunting-defense"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "With severe wounds, gain one free level of Effort on an attack each round; at tier 3, gain two."
       },
       {
         "id": "acrobatic-attack",
         "name": "Acrobatic Attack",
         "tier": 3,
-        "prerequisites": ["dashing-defense"],
+        "prerequisites": [
+          "dashing-defense"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "speed", "amount": 1, "options": [] },
+        "cost": {
+          "stat": "speed",
+          "amount": 1,
+          "options": []
+        },
         "description": "An acrobatic attack grants a free Effort level when you spend Effort on its roll, and a natural 17 or 18 can create a minor effect."
       },
       {
         "id": "flamboyant-boast",
         "name": "Flamboyant Boast",
         "tier": 3,
-        "prerequisites": ["wounded-fury"],
+        "prerequisites": [
+          "wounded-fury"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
         "description": "Boast about a difficult deed; success hinders witnesses' next turns, while failure hinders your attempts to influence them."
       },
       {
         "id": "quick-adjustment",
         "name": "Quick Adjustment",
         "tier": 3,
-        "prerequisites": ["fast-kill"],
+        "prerequisites": [
+          "fast-kill"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "speed", "amount": 2, "options": [] },
+        "cost": {
+          "stat": "speed",
+          "amount": 2,
+          "options": []
+        },
         "description": "A nonlethal attack becomes a First action."
       },
       {
         "id": "improved-dashing-defense",
         "name": "Improved Dashing Defense",
         "tier": 4,
-        "prerequisites": ["dashing-defense"],
+        "prerequisites": [
+          "dashing-defense"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "An ally nearby using a light or medium weapon gains Dashing Defense until your next turn."
       },
       {
         "id": "misdirect",
         "name": "Misdirect",
         "tier": 4,
-        "prerequisites": ["quick-adjustment"],
+        "prerequisites": [
+          "quick-adjustment"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "speed", "amount": 3, "options": [] },
+        "cost": {
+          "stat": "speed",
+          "amount": 3,
+          "options": []
+        },
         "description": "When an opponent misses, redirect the attack to another nearby target with an unmodified attack roll."
       },
       {
         "id": "agile-wit",
         "name": "Agile Wit",
         "tier": 5,
-        "prerequisites": ["improved-dashing-defense"],
+        "prerequisites": [
+          "improved-dashing-defense"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Treat Speed tasks and their Effort costs as Intellect tasks when you choose."
       },
       {
         "id": "using-the-environment",
         "name": "Using the Environment",
         "tier": 5,
-        "prerequisites": ["misdirect"],
+        "prerequisites": [
+          "misdirect"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
         "description": "Nearby cover grants cover and a melee asset; move across reachable obstacles and difficult terrain freely until recovery."
       },
       {
         "id": "again-and-again",
         "name": "Again and Again",
         "tier": 6,
-        "prerequisites": ["agile-wit"],
+        "prerequisites": [
+          "agile-wit"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "speed", "amount": 6, "options": [] },
+        "cost": {
+          "stat": "speed",
+          "amount": 6,
+          "options": []
+        },
         "description": "Take an extra action on your turn."
       },
       {
         "id": "return-to-sender",
         "name": "Return to Sender",
         "tier": 6,
-        "prerequisites": ["using-the-environment"],
+        "prerequisites": [
+          "using-the-environment"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "speed", "amount": 3, "options": [] },
+        "cost": {
+          "stat": "speed",
+          "amount": 3,
+          "options": []
+        },
         "description": "After successfully blocking or dodging a melee attack, immediately attack its source; wait until after your normal turn to use this again."
       }
     ]
   },
   "folder": null,
   "sort": 0,
-  "ownership": { "default": 0 },
+  "ownership": {
+    "default": 0
+  },
   "flags": {
     "cypher": {
       "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."

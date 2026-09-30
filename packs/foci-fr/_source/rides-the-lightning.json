@@ -1,0 +1,247 @@
+{
+  "_id": "ridestheliA835CF",
+  "_key": "!items!ridestheliA835CF",
+  "name": "Chevauche la foudre",
+  "type": "focus",
+  "img": "icons/svg/lightning.svg",
+  "system": {
+    "description": "<p>Un Focus pour émettre et manipuler la foudre et le tonnerre.</p>",
+    "abilities": [
+      {
+        "id": "control-electric-device",
+        "name": "Contrôle des appareils électriques",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Contrôle ou perturbe un appareil électrique non intelligent à longue portée, avec un résultat d’attaque inférieur à 12 traité comme 12."
+      },
+      {
+        "id": "lightning-hand",
+        "name": "Main électrique",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Effectue une attaque de contact ou de foudre à longue portée pour 4 dégâts, ou charge une arme pour infliger 1 dégât supplémentaire."
+      },
+      {
+        "id": "thunder-crash",
+        "name": "Fracas de tonnerre",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Frappe une cible à longue portée avec le tonnerre pour 2 dégâts et un tremblement qui peut infliger 1 dégât par round."
+      },
+      {
+        "id": "resist-the-storm",
+        "name": "Résister à la tempête",
+        "tier": 2,
+        "prerequisites": [
+          "thunder-crash",
+          "lightning-hand"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Choisis l’électricité ou l’énergie phonique et réduis d’un palier les blessures de cette énergie; le second choix couvre l’autre énergie."
+      },
+      {
+        "id": "bolt-rider",
+        "name": "Cavalier de l’éclair",
+        "tier": 2,
+        "prerequisites": [
+          "lightning-hand",
+          "control-electric-device"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Se déplace presque instantanément d’une longue distance comme un éclair vers un lieu visible sans barrière."
+      },
+      {
+        "id": "radiohead",
+        "name": "Radio incarnée",
+        "tier": 2,
+        "prerequisites": [
+          "control-electric-device"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Émet et reçoit des communications radio sur un large spectre, y compris les signaux cryptés avec une tâche d’Intellect."
+      },
+      {
+        "id": "deafening-bolt",
+        "name": "Éclair assourdissant",
+        "tier": 3,
+        "prerequisites": [
+          "resist-the-storm",
+          "bolt-rider"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Projette un éclair à longue portée pour infliger 5 dégâts et assourdir la cible jusqu’à une récupération de dix minutes."
+      },
+      {
+        "id": "electric-armor",
+        "name": "Armure électrique",
+        "tier": 3,
+        "prerequisites": [
+          "bolt-rider",
+          "radiohead"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "S’entoure d’électricité qui blesse les attaquants en mêlée, ignore les blessures électriques mineures et modérées et permet une attaque de contact à 2 dégâts."
+      },
+      {
+        "id": "bolts-of-power",
+        "name": "Éclairs de puissance",
+        "tier": 4,
+        "prerequisites": [
+          "deafening-bolt",
+          "electric-armor"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Libère quatre éclairs sur jusqu’à quatre cibles proches pour 4 dégâts chacune, avec 1 dégât même en cas d’échec."
+      },
+      {
+        "id": "subsonic-rumble",
+        "name": "Vibration subsonique",
+        "tier": 4,
+        "prerequisites": [
+          "electric-armor"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Émet un grondement subsonique qui entrave de deux paliers les tâches proches de persuasion, d’intimidation et de peur."
+      },
+      {
+        "id": "discharge",
+        "name": "Décharge",
+        "tier": 5,
+        "prerequisites": [
+          "bolts-of-power"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Projette une énergie visible sur jusqu’à trois cibles proches pour 4 dégâts chacune; l’Effort peut faire perdre son prochain tour à une cible."
+      },
+      {
+        "id": "electric-flight",
+        "name": "Vol électrique",
+        "tier": 5,
+        "prerequisites": [
+          "subsonic-rumble"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tant que l’Armure électrique est active, vole sur une courte distance puis agit ou se déplace sur une longue distance, avec un passager protégé."
+      },
+      {
+        "id": "flash-across-the-miles",
+        "name": "Voyage fulgurant",
+        "tier": 6,
+        "prerequisites": [
+          "discharge",
+          "electric-flight"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "Voyage presque instantanément comme un éclair vers un lieu extérieur connu ou ouvert sur le ciel, sur la même planète."
+      },
+      {
+        "id": "wall-of-lightning",
+        "name": "Mur d’éclairs",
+        "tier": 6,
+        "prerequisites": [
+          "discharge",
+          "electric-flight"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 8,
+          "options": []
+        },
+        "description": "Crée une barrière de six panneaux d’électricité crépitante qui inflige 10 dégâts à proximité et le double en la traversant."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,226 @@
+{
+  "_id": "leadsxxxxxAEF450",
+  "_key": "!items!leadsxxxxxAEF450",
+  "name": "Dirige",
+  "type": "focus",
+  "img": "icons/svg/crown.svg",
+  "system": {
+    "description": "<p>Un Focus pour une personne qui dirige ses allié·e·s et suivant·e·s.</p>",
+    "abilities": [
+      {
+        "id": "always-witty",
+        "name": "Toujours inspiré·e",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Récupère 1 Intellect supplémentaire à chaque récupération."
+      },
+      {
+        "id": "inspiring-suggestion",
+        "name": "Suggestion inspirante",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Un·e allié·e suivant la suggestion reçoit deux atouts."
+      },
+      {
+        "id": "lighting-a-fire-under-them",
+        "name": "Mettre le feu sous leurs pieds",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "La prochaine action d'un·e allié·e devient une Première action."
+      },
+      {
+        "id": "basic-follower",
+        "name": "Suivant·e de base",
+        "tier": 2,
+        "prerequisites": [
+          "always-witty",
+          "inspiring-suggestion"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Gagne un·e suivant·e de niveau 2 doté·e de deux modifications de niveau 3."
+      },
+      {
+        "id": "natural-leader",
+        "name": "Leader né·e",
+        "tier": 2,
+        "prerequisites": [
+          "inspiring-suggestion",
+          "lighting-a-fire-under-them"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Les jets sociaux inférieurs à 9 comptent comme 9 ; l'Effort augmente ce minimum."
+      },
+      {
+        "id": "advanced-command",
+        "name": "Commandement avancé",
+        "tier": 3,
+        "prerequisites": [
+          "natural-leader"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 7,
+          "options": []
+        },
+        "description": "Commande une créature après une tâche d'Intellect réussie."
+      },
+      {
+        "id": "expert-follower",
+        "name": "Suivant·e expert·e",
+        "tier": 3,
+        "prerequisites": [
+          "basic-follower"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Gagne ou améliore un·e suivant·e de niveau 3 avec trois modifications de niveau 4."
+      },
+      {
+        "id": "calm",
+        "name": "Apaiser",
+        "tier": 4,
+        "prerequisites": [
+          "advanced-command"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Empêche un adversaire vivant d'attaquer pendant un round."
+      },
+      {
+        "id": "captivate-or-inspire",
+        "name": "Captiver ou inspirer",
+        "tier": 4,
+        "prerequisites": [
+          "expert-follower"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Capte l'attention d'un public ou améliore son niveau effectif."
+      },
+      {
+        "id": "improved-follower",
+        "name": "Suivant·e amélioré·e",
+        "tier": 5,
+        "prerequisites": [
+          "expert-follower"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Améliore le niveau et les modifications d'un·e suivant·e."
+      },
+      {
+        "id": "band-of-followers",
+        "name": "Bande de suivant·e·s",
+        "tier": 6,
+        "prerequisites": [
+          "improved-follower"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Gagne ou améliore une bande de suivant·e·s compétent·e·s."
+      },
+      {
+        "id": "mind-of-a-leader",
+        "name": "Esprit de meneur·euse",
+        "tier": 6,
+        "prerequisites": [
+          "calm"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "Prépare un plan pour obtenir un indice et un atout aux allié·e·s informé·e·s."
+      },
+      {
+        "id": "stimulate",
+        "name": "Stimulation",
+        "tier": 6,
+        "prerequisites": [
+          "captivate-or-inspire"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "Facilite de trois paliers la prochaine action d'une cible proche."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

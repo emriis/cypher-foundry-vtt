@@ -1,0 +1,215 @@
+{
+  "_id": "entertains1AA590",
+  "_key": "!items!entertains1AA590",
+  "name": "Divertit",
+  "type": "focus",
+  "img": "icons/tools/instruments/harp.webp",
+  "system": {
+    "description": "<p>Un Focus pour une personne qui divertit, influence et fédère un public.</p>",
+    "abilities": [
+      {
+        "id": "anecdote",
+        "name": "Anecdote",
+        "tier": 1,
+        "prerequisites": [
+          "knowing-the-audience"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Une histoire inspirante entraîne les personnes qui l’écoutent dans une tâche liée ou rend amical un groupe neutre à proximité."
+      },
+      {
+        "id": "inspiring-suggestion",
+        "name": "Suggestion inspirante",
+        "tier": 1,
+        "prerequisites": [
+          "inspiring-suggestion"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Une suggestion précise et utile accordée à un·e allié·e visible qui te comprend lui procure deux atouts s’iel la suit."
+      },
+      {
+        "id": "knowing-the-audience",
+        "name": "Comprendre le public",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Tu lis l’humeur d’un groupe proche et gagnes un atout pour examiner la motivation d’une personne au round suivant."
+      },
+      {
+        "id": "inspiring-ease",
+        "name": "Facilitation inspirante",
+        "tier": 2,
+        "prerequisites": [
+          "anecdote"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Après une récupération de dix heures partagée, tes histoires, chansons ou œuvres inspirent les allié·e·s qui peuvent faciliter une tâche par jour."
+      },
+      {
+        "id": "rising-courage",
+        "name": "Courage grandissant",
+        "tier": 2,
+        "prerequisites": [
+          "inspiring-suggestion"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Tu accordes à une cible proche un atout pour sa prochaine défense d’Intellect et sa prochaine initiative."
+      },
+      {
+        "id": "find-motivation",
+        "name": "Trouver la motivation",
+        "tier": 3,
+        "prerequisites": [
+          "rising-courage"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Tu ignores un effet mental négatif de niveau 4 ou moins, et peux augmenter cette limite avec de l’Effort."
+      },
+      {
+        "id": "perfect-stranger",
+        "name": "Inconnu·e parfait·e",
+        "tier": 3,
+        "prerequisites": [
+          "knowing-the-audience"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Tu adoptes un rôle presque méconnaissable, ce qui facilite les tâches d’imitation et récompense l’Effort associé."
+      },
+      {
+        "id": "calm",
+        "name": "Apaiser",
+        "tier": 4,
+        "prerequisites": [
+          "find-motivation"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Une attaque d’Intellect fondée sur ta prestation empêche un adversaire vivant d’attaquer pendant un round."
+      },
+      {
+        "id": "captivate-or-inspire",
+        "name": "Captiver ou inspirer",
+        "tier": 4,
+        "prerequisites": [
+          "inspiring-ease",
+          "perfect-stranger"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu retiens l’attention de PNJ proches pendant que tu parles, ou permets aux personnes choisies d’agir comme si elles avaient un niveau de plus."
+      },
+      {
+        "id": "willing-sacrifice",
+        "name": "Sacrifice consenti",
+        "tier": 5,
+        "prerequisites": [
+          "calm"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Quand tu interceptes une attaque destinée à autrui, tu réduis la sévérité de la blessure d’un palier."
+      },
+      {
+        "id": "master-entertainer",
+        "name": "Maître·sse de l’art",
+        "tier": 6,
+        "prerequisites": [
+          "inspiring-ease",
+          "captivate-or-inspire"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Les allié·e·s affecté·e·s par Facilitation inspirante peuvent faciliter une deuxième tâche par jour ou une tâche de deux paliers."
+      },
+      {
+        "id": "vindictive-performance",
+        "name": "Performance vengeresse",
+        "tier": 6,
+        "prerequisites": [
+          "captivate-or-inspire",
+          "willing-sacrifice"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Une performance indirecte inflige 6 dégâts d’Intellect à une cible et lui fait perdre son prochain tour."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document; créé sous la Cypher Open License."
+    }
+  }
+}

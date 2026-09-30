@@ -1,0 +1,246 @@
+{
+  "_id": "infiltrate6C997E",
+  "_key": "!items!infiltrate6C997E",
+  "name": "Infiltrates",
+  "type": "focus",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "description": "<p>A Focus for a subtle operative who gets where others cannot.</p>",
+    "abilities": [
+      {
+        "id": "fast-talk",
+        "name": "Fast Talk",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Convince a nonhostile intelligent creature to take one reasonable action."
+      },
+      {
+        "id": "letting-their-guard-down",
+        "name": "Letting Their Guard Down",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Successful disguise or deception reveals useful minor information."
+      },
+      {
+        "id": "master-of-disguise",
+        "name": "Master of Disguise",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Create and maintain a disguise quickly, with an extra asset under scrutiny."
+      },
+      {
+        "id": "natural-sneak",
+        "name": "Natural Sneak",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Low rolls on infiltration tasks count as 6; Effort raises that minimum."
+      },
+      {
+        "id": "awareness",
+        "name": "Awareness",
+        "tier": 2,
+        "prerequisites": [
+          "fast-talk",
+          "letting-their-guard-down"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Sense living creatures at long range until a recovery."
+      },
+      {
+        "id": "flight-not-fight",
+        "name": "Flight Not Fight",
+        "tier": 2,
+        "prerequisites": [
+          "master-of-disguise",
+          "natural-sneak"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Using an action only to move eases dodges until your next turn."
+      },
+      {
+        "id": "blend-in",
+        "name": "Blend In",
+        "tier": 3,
+        "prerequisites": [
+          "awareness"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Appear unimportant and gain two assets to dodge and stealth while unnoticed."
+      },
+      {
+        "id": "defend-and-respond",
+        "name": "Defend and Respond",
+        "tier": 3,
+        "prerequisites": [
+          "awareness",
+          "flight-not-fight"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "choice",
+          "amount": 3,
+          "options": [
+            "might",
+            "speed"
+          ]
+        },
+        "description": "After blocking or dodging a melee attack, make an immediate melee attack."
+      },
+      {
+        "id": "scrutinize-defenses",
+        "name": "Scrutinize Defenses",
+        "tier": 3,
+        "prerequisites": [
+          "flight-not-fight"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Study an area to ask the GM truthful questions about its defenses."
+      },
+      {
+        "id": "convenient-device",
+        "name": "Convenient Device",
+        "tier": 4,
+        "prerequisites": [
+          "blend-in",
+          "defend-and-respond",
+          "scrutinize-defenses"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Produce a one-use tool that removes a harmful condition; its cost matches the effect."
+      },
+      {
+        "id": "invisibility",
+        "name": "Invisibility",
+        "tier": 5,
+        "prerequisites": [
+          "convenient-device"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Become invisible until you reveal your position; Effort can affect a creature you touch."
+      },
+      {
+        "id": "persistence-training",
+        "name": "Persistence Training",
+        "tier": 5,
+        "prerequisites": [
+          "convenient-device"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 5,
+          "options": []
+        },
+        "description": "End mind control or a disabling effect affecting you; Effort can help an ally."
+      },
+      {
+        "id": "brainwashing",
+        "name": "Brainwashing",
+        "tier": 6,
+        "prerequisites": [
+          "invisibility"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "Control a touched creature of level 3 or lower after a successful Intellect attack."
+      },
+      {
+        "id": "spring-away",
+        "name": "Spring Away",
+        "tier": 6,
+        "prerequisites": [
+          "persistence-training"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 5,
+          "options": []
+        },
+        "description": "After dodging danger, immediately move a short distance."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

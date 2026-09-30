@@ -1,0 +1,150 @@
+{
+  "_id": "talkstomac4E0F3A",
+  "_key": "!items!talkstomac4E0F3A",
+  "name": "Talks to Machines",
+  "type": "focus",
+  "img": "icons/commodities/tech/circuit-board.webp",
+  "system": {
+    "description": "<p>A Focus for a character who interfaces with electronic devices and commands machines through a wireless mind.</p>",
+    "abilities": [
+      {
+        "id": "charm-machine",
+        "name": "Charm Machine",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Convince an unintelligent machine within immediate range to like you with a successful Intellect attack."
+      },
+      {
+        "id": "control-electric-device",
+        "name": "Control Electric Device",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Control or disrupt an electrical device at long range, treating an Intellect roll below 12 as 12."
+      },
+      {
+        "id": "friend-to-intelligent-machines",
+        "name": "Friend to Intelligent Machines",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Gain an asset to persuade, positively interact with, or attempt to hack an intelligent machine, once per machine."
+      },
+      {
+        "id": "coaxing-power",
+        "name": "Coaxing Power",
+        "tier": 2,
+        "prerequisites": ["charm-machine"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Boost a machine's power or function so it operates one level higher until a one-hour recovery."
+      },
+      {
+        "id": "locate-machine",
+        "name": "Locate Machine",
+        "tier": 2,
+        "prerequisites": ["control-electric-device"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Track an identified machine from afar and sense its direction or distance, maintaining the trace with periodic attacks."
+      },
+      {
+        "id": "machine-control",
+        "name": "Machine Control",
+        "tier": 2,
+        "prerequisites": ["friend-to-intelligent-machines"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Command one machine or deactivate several with separate Intellect attacks, treating a roll below 6 as 6."
+      },
+      {
+        "id": "disable-mechanism",
+        "name": "Disable Mechanism",
+        "tier": 3,
+        "prerequisites": ["coaxing-power"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "description": "Hack a nearby machine to hinder its tasks, halve its speed, prevent one round of action, or reduce its damage."
+      },
+      {
+        "id": "quick-control",
+        "name": "Quick Control",
+        "tier": 3,
+        "prerequisites": ["locate-machine"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "description": "Use an Intellect attack to command a machine to take one action on its next turn."
+      },
+      {
+        "id": "compile-robotic-offense",
+        "name": "Compile Robotic Offense",
+        "tier": 4,
+        "prerequisites": ["disable-mechanism"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Gain an asset to an attack against a robot or intelligent machine when making it as a Last action."
+      },
+      {
+        "id": "machine-companion",
+        "name": "Machine Companion",
+        "tier": 4,
+        "prerequisites": ["quick-control"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Acquire a level 3 intelligent machine follower that acts as you direct and can be restored with resources."
+      },
+      {
+        "id": "information-gathering",
+        "name": "Information Gathering",
+        "tier": 5,
+        "prerequisites": ["compile-robotic-offense", "machine-companion"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 5, "options": [] },
+        "description": "Speak wirelessly with non-intelligent machines within 1 mile and ask them one basic question."
+      },
+      {
+        "id": "improved-machine-companion",
+        "name": "Improved Machine Companion",
+        "tier": 6,
+        "prerequisites": ["information-gathering"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Acquire a level 5 intelligent machine follower, upgrading or retaining a lower-level companion as you choose."
+      },
+      {
+        "id": "recompile-machine",
+        "name": "Recompile Machine",
+        "tier": 6,
+        "prerequisites": ["information-gathering"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 8, "options": [] },
+        "description": "Hack a level 4 or lower machine at long range to brick it, temporarily recruit it, or make it explode."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

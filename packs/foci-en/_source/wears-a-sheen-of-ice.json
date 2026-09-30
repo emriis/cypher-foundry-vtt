@@ -1,0 +1,130 @@
+{
+  "_id": "wearsashee6F9BB4",
+  "_key": "!items!wearsashee6F9BB4",
+  "name": "Wears a Sheen of Ice",
+  "type": "focus",
+  "img": "icons/magic/water/iceberg-glacier-blue.webp",
+  "system": {
+    "description": "<p>A Focus for a character who commands the wintry power of cold and ice.</p>",
+    "abilities": [
+      {
+        "id": "cool-water",
+        "name": "Cool Water",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "description": "Condense water from the air, creating enough potable cold water to sustain five creatures for one day. Action."
+      },
+      {
+        "id": "ice-armor",
+        "name": "Ice Armor",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "description": "Cover yourself in ice until a ten-minute recovery, easing Might defense rolls to block attacks, reducing cold wounds by one step, and granting a 2-damage cold touch."
+      },
+      {
+        "id": "lower-temperature",
+        "name": "Lower Temperature",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "description": "Make an immediate area up to 20 degrees cooler until a ten-minute recovery. Action to initiate."
+      },
+      {
+        "id": "frost-bolt",
+        "name": "Frost Bolt",
+        "tier": 2,
+        "prerequisites": ["ice-armor"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Emit a ray of cold at a foe within short range for 4 cold damage, or intensify Ice Armor to add 2 damage to its touch and your weapon attacks until a ten-minute recovery. Action."
+      },
+      {
+        "id": "ice-slide",
+        "name": "Ice Slide",
+        "tier": 2,
+        "prerequisites": ["ice-armor"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Create a smooth ice path to a location within long range and slide there safely along a clear route. Action."
+      },
+      {
+        "id": "ice-creation",
+        "name": "Ice Creation",
+        "tier": 3,
+        "prerequisites": ["ice-slide"],
+        "repeatable": true,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "description": "Create a crude level 3 ice object no larger than yourself; each additional selection doubles its base size. Effort can double its size or extend its distance. Action."
+      },
+      {
+        "id": "winters-grip",
+        "name": "Winter's Grip",
+        "tier": 3,
+        "prerequisites": ["frost-bolt"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "description": "Make an Intellect attack against a foe within short range to restrain them in ice. Effort can add 3 cold damage. Action."
+      },
+      {
+        "id": "improved-ice-armor",
+        "name": "Improved Ice Armor",
+        "tier": 4,
+        "prerequisites": ["ice-creation", "winters-grip"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Ice Armor eases Might defense rolls to block attacks by another step, and its cold touch, Frost Bolt, and Winter's Grip deal +1 damage."
+      },
+      {
+        "id": "cold-burst",
+        "name": "Cold Burst",
+        "tier": 5,
+        "prerequisites": ["improved-ice-armor"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 5, "options": [] },
+        "description": "Make an Intellect attack against any number of creatures within short range for 5 cold damage. Effort increases damage or can blind successful targets. Action."
+      },
+      {
+        "id": "ice-monster",
+        "name": "Ice Monster",
+        "tier": 6,
+        "prerequisites": ["cold-burst"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 6, "options": [] },
+        "description": "Create a level 5 snow or ice automaton ally that acts on your commands until a ten-minute recovery. Action to create and action to direct."
+      },
+      {
+        "id": "winter-gauntlets",
+        "name": "Winter Gauntlets",
+        "tier": 6,
+        "prerequisites": ["cold-burst"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Frost Bolt and cold-enhanced attacks deal +3 damage and restrain creatures hit as with Winter's Grip."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

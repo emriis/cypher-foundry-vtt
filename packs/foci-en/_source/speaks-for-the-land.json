@@ -1,0 +1,28 @@
+{
+  "_id": "speaksfort77CB10",
+  "_key": "!items!speaksfort77CB10",
+  "name": "Speaks for the Land",
+  "type": "focus",
+  "img": "icons/environment/wilderness/tree-oak.webp",
+  "system": {
+    "description": "<p>A Focus for a mystic whose bond with nature grants healing, protection, and command over the wild.</p>",
+    "abilities": [
+      { "id": "healing-fruit", "name": "Healing Fruit", "tier": 1, "prerequisites": [], "repeatable": false, "enabler": false, "cost": { "stat": "intellect", "amount": 1, "options": [] }, "description": "Infuse a fruit or seed so that a creature can recover 1d6 from a Pool of its choice or recover a minor wound." },
+      { "id": "seeds-of-fury", "name": "Seeds of Fury", "tier": 1, "prerequisites": [], "repeatable": false, "enabler": false, "cost": { "stat": "intellect", "amount": 1, "options": [] }, "description": "Launch burning seeds at a target within long range; a successful attack deals 3 damage and sets the target alight." },
+      { "id": "wild-affinity", "name": "Wild Affinity", "tier": 1, "prerequisites": [], "repeatable": false, "enabler": true, "cost": { "stat": "none", "amount": 0, "options": [] }, "description": "A sane wild animal in its natural environment will not attack you unless provoked or controlled." },
+      { "id": "communication", "name": "Communication", "tier": 2, "prerequisites": ["healing-fruit", "wild-affinity"], "repeatable": false, "enabler": false, "cost": { "stat": "intellect", "amount": 2, "options": [] }, "description": "Convey a basic concept to a creature that cannot speak or understand speech, and receive a very basic answer." },
+      { "id": "wilderness-experience", "name": "Wilderness Experience", "tier": 2, "prerequisites": ["wild-affinity", "seeds-of-fury"], "repeatable": false, "enabler": true, "cost": { "stat": "none", "amount": 0, "options": [] }, "description": "Find food and potable water in the wilderness, resist poison and natural disease, and ignore natural terrain penalties." },
+      { "id": "natures-grip", "name": "Nature's Grip", "tier": 3, "prerequisites": ["communication"], "repeatable": false, "enabler": false, "cost": { "stat": "intellect", "amount": 3, "options": [] }, "description": "Use an Intellect attack to hold a foe in nearby natural foliage or clear entangling plants from an immediate area." },
+      { "id": "natures-voice", "name": "Nature's Voice", "tier": 3, "prerequisites": ["wilderness-experience"], "repeatable": false, "enabler": false, "cost": { "stat": "intellect", "amount": 3, "options": [] }, "description": "Calm a nonhuman beast within long range that can see you." },
+      { "id": "moon-shape", "name": "Moon Shape", "tier": 4, "prerequisites": ["natures-grip"], "repeatable": false, "enabler": false, "cost": { "stat": "intellect", "amount": 4, "options": [] }, "description": "Become a primal beast under moonlight, gaining Might and Speed until a one-hour recovery." },
+      { "id": "wilderness-encouragement", "name": "Wilderness Encouragement", "tier": 4, "prerequisites": ["natures-voice"], "repeatable": false, "enabler": false, "cost": { "stat": "intellect", "amount": 3, "options": [] }, "description": "Help an ally in short range immediately recover or remove a moderate wound while in the wilderness or discussing it." },
+      { "id": "insect-eruption", "name": "Insect Eruption", "tier": 5, "prerequisites": ["moon-shape", "wilderness-encouragement"], "repeatable": false, "enabler": false, "cost": { "stat": "intellect", "amount": 6, "options": [] }, "description": "Summon a supernatural insect swarm that hinders foes and can attack or perform suitable tasks." },
+      { "id": "call-the-storm", "name": "Call the Storm", "tier": 6, "prerequisites": ["insect-eruption"], "repeatable": false, "enabler": false, "cost": { "stat": "intellect", "amount": 7, "options": [] }, "description": "Create storm clouds over a very long area and call lightning down on foes." },
+      { "id": "earthshake", "name": "Earthshake", "tier": 6, "prerequisites": ["insect-eruption"], "repeatable": false, "enabler": false, "cost": { "stat": "choice", "amount": 8, "options": ["might", "intellect"] }, "description": "Trigger a violent earth movement in a short area within very long range, damaging terrain and creatures." }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": { "cypher": { "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License." } }
+}

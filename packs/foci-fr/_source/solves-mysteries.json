@@ -1,0 +1,140 @@
+{
+  "_id": "solvesmyst69025C",
+  "_key": "!items!solvesmyst69025C",
+  "name": "Résout des mystères",
+  "type": "focus",
+  "img": "icons/sundries/books/book-embossed-skull.webp",
+  "system": {
+    "description": "<p>Un Focus pour un·e maître·sse de la déduction qui utilise les preuves et les indices pour trouver la vérité.</p>",
+    "abilities": [
+      {
+        "id": "investigative-knack",
+        "name": "Flair pour l’enquête",
+        "tier": 1,
+        "prerequisites": ["sleuthing", "sense-weakness"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Initie une période d’enquête durant laquelle les faibles résultats de perception, d’interaction ou de détection de mensonge sont traités comme des 9, puis des 12 au rang 3."
+      },
+      {
+        "id": "sense-weakness",
+        "name": "Déceler la faiblesse",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Après avoir observé une créature pendant un round, découvre ses faiblesses particulières et inflige-lui 1 dégât supplémentaire avec tes attaques."
+      },
+      {
+        "id": "sleuthing",
+        "name": "Investigation active",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "description": "En poursuivant une cible ou en enquêtant sur un mystère, pose une question au·à la MJ sur la tâche et reçois une réponse courte mais utile."
+      },
+      {
+        "id": "master-of-disguise",
+        "name": "Maître du déguisement",
+        "tier": 2,
+        "prerequisites": ["investigative-knack"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "description": "Crée un déguisement en Dernière action et traite comme un 6 tout résultat inférieur à 6, puis comme un 9 au rang 3."
+      },
+      {
+        "id": "out-of-harms-way",
+        "name": "Hors d’atteinte",
+        "tier": 2,
+        "prerequisites": ["investigative-knack"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "speed", "amount": 2, "options": [] },
+        "description": "Après avoir réussi une esquive, déplace-toi immédiatement d’une distance immédiate, même si ce n’est pas ton tour."
+      },
+      {
+        "id": "combat-prowess",
+        "name": "Prouesse martiale",
+        "tier": 3,
+        "prerequisites": ["out-of-harms-way"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Choisis les attaques d’armes de mêlée ou à distance; les attaques de ce type infligent 1 dégât supplémentaire."
+      },
+      {
+        "id": "ditch-assumption",
+        "name": "Abandonner une fausse piste",
+        "tier": 3,
+        "prerequisites": ["master-of-disguise"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "description": "Après une enquête approfondie, découvre une hypothèse erronée de l’enquête ou élimine un suspect parmi plusieurs possibilités."
+      },
+      {
+        "id": "defend-and-respond",
+        "name": "Défendre et riposter",
+        "tier": 4,
+        "prerequisites": ["combat-prowess"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "choice", "amount": 3, "options": ["might", "speed"] },
+        "description": "Après avoir bloqué ou esquivé une attaque de mêlée, effectue immédiatement une attaque de mêlée contre l’assaillant·e, une fois par tour."
+      },
+      {
+        "id": "lead-by-inquiry",
+        "name": "Diriger par l’investigation",
+        "tier": 4,
+        "prerequisites": ["ditch-assumption"],
+        "repeatable": false,
+        "enabler": true,
+        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "description": "Les allié·e·s qui effectuent une récupération de dix heures avec toi sont entraîné·e·s en perception et en détection de mensonge tant qu’ils restent à portée longue."
+      },
+      {
+        "id": "defuse-situation",
+        "name": "Désamorcer une situation",
+        "tier": 5,
+        "prerequisites": ["defend-and-respond", "lead-by-inquiry"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "description": "Par la diversion sociale, empêche une créature vivante d’attaquer quiconque pendant un round après une tâche d’interaction réussie."
+      },
+      {
+        "id": "infer-thoughts",
+        "name": "Lire les pensées de surface",
+        "tier": 6,
+        "prerequisites": ["defuse-situation"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "description": "Après avoir observé ou étudié pendant un round une cible de niveau 4 ou moins, lis ses pensées de surface tant que tu peux la voir et l’entendre."
+      },
+      {
+        "id": "knowing-the-unknown",
+        "name": "Connaître l’inconnu",
+        "tier": 6,
+        "prerequisites": ["defuse-situation"],
+        "repeatable": false,
+        "enabler": false,
+        "cost": { "stat": "intellect", "amount": 6, "options": [] },
+        "description": "Utilise les ressources appropriées pour poser une question à la MJ et recevoir une réponse générale selon le degré d’obscurité de l’information."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+    }
+  }
+}

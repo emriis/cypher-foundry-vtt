@@ -1,0 +1,30 @@
+{
+  "_id": "walksthrou280AD5",
+  "_key": "!items!walksthrou280AD5",
+  "name": "Traverse les murs",
+  "type": "focus",
+  "img": "icons/magic/movement/abstract-runes-circle.webp",
+  "system": {
+    "description": "<p>Un focus pour un personnage qui peut devenir translucide et traverser la matière solide.</p>",
+    "abilities": [
+      { "id": "light-step", "name": "Pas léger", "tier": 1, "prerequisites": [], "repeatable": false, "enabler": true, "cost": { "stat": "none", "amount": 0, "options": [] }, "description": "Réduis le poids de tes pas pour éviter les plaques de pression et réduis les dégâts de chute d'un palier de blessure." },
+      { "id": "soft-whisper", "name": "Murmure doux", "tier": 1, "prerequisites": [], "repeatable": false, "enabler": true, "cost": { "stat": "intellect", "amount": 1, "options": [] }, "description": "Dis quelque chose à une créature à portée immédiate sans que personne d'autre ne l'entende." },
+      { "id": "walk-through-walls", "name": "Traverser les murs", "tier": 1, "prerequisites": [], "repeatable": false, "enabler": false, "cost": { "stat": "intellect", "amount": 2, "options": [] }, "description": "Traverse lentement les barrières physiques de niveau 5 ou moins, en percevant ton environnement pendant le phasage, mais sans traverser les barrières d'énergie. L'Effort augmente le niveau maximal. Dernière action." },
+      { "id": "defensive-phasing", "name": "Phasage défensif", "tier": 2, "prerequisites": ["light-step"], "repeatable": false, "enabler": false, "cost": { "stat": "choice", "amount": 2, "options": ["intellect", "speed"] }, "description": "Jusqu'à une récupération de dix minutes, gagne un atout aux tâches d'Esquive tandis que certaines attaques te traversent sans effet. Action pour initier." },
+      { "id": "phase-grasp", "name": "Prise phasée", "tier": 2, "prerequisites": ["soft-whisper"], "repeatable": false, "enabler": false, "cost": { "stat": "intellect", "amount": 3, "options": [] }, "description": "Phase un objet visible à longue portée pour le faire apparaître dans tes mains ou à portée immédiate ; un objet tenu ou derrière une barrière exige une attaque d'Intellect. Action." },
+      { "id": "slip-into-shadow", "name": "Glisser dans l'ombre", "tier": 2, "prerequisites": ["walk-through-walls"], "repeatable": false, "enabler": true, "cost": { "stat": "none", "amount": 0, "options": [] }, "description": "Réussis une tâche de Discrétion pour te cacher d'une créature proche. L'Effort permet de viser davantage de créatures et, au rang 3, le nombre de cibles de base est de trois." },
+      { "id": "faster-phase", "name": "Phasage accéléré", "tier": 3, "prerequisites": ["defensive-phasing", "phase-grasp"], "repeatable": false, "enabler": true, "cost": { "stat": "none", "amount": 0, "options": [] }, "description": "Traverser les murs devient plus rapide et utilise une action normale au lieu d'une Dernière action." },
+      { "id": "phased-attack", "name": "Attaque phasée", "tier": 3, "prerequisites": ["phase-grasp", "slip-into-shadow"], "repeatable": false, "enabler": true, "cost": { "stat": "intellect", "amount": 3, "options": [] }, "description": "Tes attaques ignorent l'Armure de l'adversaire ce tour-ci ; contre un PJ, ses tentatives de Blocage échouent." },
+      { "id": "phase-door", "name": "Porte de phase", "tier": 4, "prerequisites": ["faster-phase"], "repeatable": false, "enabler": false, "cost": { "stat": "intellect", "amount": 4, "options": [] }, "description": "Phase à travers des objets solides adjacents et distants pour voyager à longue portée lorsqu'aucune barrière intermédiaire ne bloque le trajet. L'Effort augmente la portée. Action." },
+      { "id": "phase-friend", "name": "Ami·e en phase", "tier": 4, "prerequisites": ["phased-attack"], "repeatable": false, "enabler": true, "cost": { "stat": "intellect", "amount": 4, "options": [] }, "description": "Emmène un·e allié·e à portée immédiate avec toi lorsque tu utilises une aptitude de phasage. L'Effort permet d'emmener un·e allié·e supplémentaire." },
+      { "id": "quick-phase", "name": "Phasage rapide", "tier": 5, "prerequisites": ["phase-friend"], "repeatable": false, "enabler": true, "cost": { "stat": "none", "amount": 0, "options": [] }, "description": "Traverser les murs devient beaucoup plus rapide, ou te permet de te phaser jusqu'à 3,5 m comme Première action." },
+      { "id": "untouchable", "name": "Intouchable", "tier": 5, "prerequisites": ["phase-door"], "repeatable": false, "enabler": false, "cost": { "stat": "intellect", "amount": 6, "options": [] }, "description": "Deviens incapable d'affecter ou d'être affecté·e par la matière ou l'énergie normales jusqu'à une récupération de dix minutes. Action pour initier." },
+      { "id": "phase-foe", "name": "Phaser un ennemi", "tier": 6, "prerequisites": ["untouchable"], "repeatable": false, "enabler": false, "cost": { "stat": "intellect", "amount": 8, "options": [] }, "description": "Touche et phase une créature de niveau 4 ou moins comme avec Intouchable. L'Effort augmente le niveau maximal de la cible. Action." },
+      { "id": "selective-phase-attack", "name": "Attaque de phase sélective", "tier": 6, "prerequisites": ["quick-phase"], "repeatable": false, "enabler": true, "cost": { "stat": "none", "amount": 0, "options": [] }, "description": "Une fois par round, une attaque utilisant Attaque phasée inflige +5 dégâts." }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": { "cypher": { "sourceLicense": "Résumé original fondé sur le Cypher Reference Document ; construit sous la Cypher Open License." } }
+}

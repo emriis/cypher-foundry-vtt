@@ -1,6 +1,6 @@
 {
-  "_id": "HowlsAtMoonFocus",
-  "_key": "!items!HowlsAtMoonFocus",
+  "_id": "howlsatthe8892A3",
+  "_key": "!items!howlsatthe8892A3",
   "name": "Howls at the Moon",
   "type": "focus",
   "img": "icons/creatures/mammals/wolf-howl-moon.webp",
@@ -14,184 +14,292 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "On five consecutive nights each month, transform into a monstrous beast with enhanced Might and Speed, resilient wounds, and flexible unarmed attacks."
       },
       {
         "id": "call-upon-the-beast",
         "name": "Call Upon the Beast",
         "tier": 1,
-        "prerequisites": ["beast-form"],
+        "prerequisites": [
+          "beast-form"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
         "description": "Briefly show your beastly nature to gain a free level of Effort on an Intimidation task."
       },
       {
         "id": "keen-eye",
         "name": "Keen Eye",
         "tier": 1,
-        "prerequisites": ["beast-form"],
+        "prerequisites": [
+          "beast-form"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "See one and a half times farther and ignore attack and perception penalties from poor visibility."
       },
       {
         "id": "scales",
         "name": "Scales",
         "tier": 2,
-        "prerequisites": ["beast-form"],
+        "prerequisites": [
+          "beast-form"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "might", "amount": 2, "options": [] },
+        "cost": {
+          "stat": "might",
+          "amount": 2,
+          "options": []
+        },
         "description": "Grow protective scales until a ten-minute recovery, easing your block tasks."
       },
       {
         "id": "beast-senses",
         "name": "Beast Senses",
         "tier": 2,
-        "prerequisites": ["beast-form"],
+        "prerequisites": [
+          "beast-form"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Gain assets on perception and initiative; in beast form, unaware attackers gain no surprise advantage."
       },
       {
         "id": "controlled-change",
         "name": "Controlled Change",
         "tier": 2,
-        "prerequisites": ["beast-form"],
+        "prerequisites": [
+          "beast-form"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Attempt a difficulty 4 Intellect task to transform on any night in addition to the involuntary changes."
       },
       {
         "id": "talons-or-claws",
         "name": "Talons or Claws",
         "tier": 2,
-        "prerequisites": ["beast-form"],
+        "prerequisites": [
+          "beast-form"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "might", "amount": 1, "options": [] },
+        "cost": {
+          "stat": "might",
+          "amount": 1,
+          "options": []
+        },
         "description": "Grow talons or claws until a ten-minute recovery; your unarmed attacks deal 1 additional damage."
       },
       {
         "id": "wounded-fury",
         "name": "Wounded Fury",
         "tier": 3,
-        "prerequisites": ["scales"],
+        "prerequisites": [
+          "scales"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "With at least three moderate wounds or one major wound, gain two free Effort levels for an attack each round until recovery or healing."
       },
       {
         "id": "bigger-beast-form",
         "name": "Bigger Beast Form",
         "tier": 3,
-        "prerequisites": ["beast-senses"],
+        "prerequisites": [
+          "beast-senses"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Beast Form reaches 4 meters, gains resilience and an attack asset, can use heavy unarmed attacks, and hinders dodges."
       },
       {
         "id": "sleeker-beast-form",
         "name": "Sleeker Beast Form",
         "tier": 3,
-        "prerequisites": ["talons-or-claws"],
+        "prerequisites": [
+          "talons-or-claws"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Beast Form grants +1 Might Edge, +2 Speed Pool, and +1 Speed Edge."
       },
       {
         "id": "beast-healing",
         "name": "Beast Healing",
         "tier": 4,
-        "prerequisites": ["bigger-beast-form"],
+        "prerequisites": [
+          "bigger-beast-form"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Changing into beast form immediately heals one wound; the benefit renews after a ten-hour recovery."
       },
       {
         "id": "greater-controlled-change",
         "name": "Greater Controlled Change",
         "tier": 4,
-        "prerequisites": ["controlled-change"],
+        "prerequisites": [
+          "controlled-change"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Transforming into or out of Beast Form becomes a difficulty 2 Intellect task."
       },
       {
         "id": "poison-bite",
         "name": "Poison Bite",
         "tier": 4,
-        "prerequisites": ["sleeker-beast-form"],
+        "prerequisites": [
+          "sleeker-beast-form"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "might", "amount": 4, "options": [] },
+        "cost": {
+          "stat": "might",
+          "amount": 4,
+          "options": []
+        },
         "description": "Grow poisonous fangs for light unarmed bite attacks that add 5 Armor-ignoring damage and hinder the target for one round."
       },
       {
         "id": "brute-squad",
         "name": "Brute Squad",
         "tier": 5,
-        "prerequisites": ["beast-healing"],
+        "prerequisites": [
+          "beast-healing"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "might", "amount": 8, "options": [] },
+        "cost": {
+          "stat": "might",
+          "amount": 8,
+          "options": []
+        },
         "description": "Perform two Might tasks this turn, one with your normal action and one with an extra action."
       },
       {
         "id": "enhanced-beast-form",
         "name": "Enhanced Beast Form",
         "tier": 5,
-        "prerequisites": ["beast-healing"],
+        "prerequisites": [
+          "beast-healing"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Beast Form grants +3 Might Pool, +2 Speed Pool, and ignores minor wounds from physical attacks."
       },
       {
         "id": "constrict",
         "name": "Constrict",
         "tier": 6,
-        "prerequisites": ["enhanced-beast-form"],
+        "prerequisites": [
+          "enhanced-beast-form"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "In beast form, make a reduced-damage Last action unarmed attack to grab a target and inflict 5 damage each round with an action."
       },
       {
         "id": "perfect-control",
         "name": "Perfect Control",
         "tier": 6,
-        "prerequisites": ["greater-controlled-change"],
+        "prerequisites": [
+          "greater-controlled-change"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Change into or out of Beast Form as an action without an Intellect task, and no longer need to eat a creature to avoid post-transformation hindrance."
       },
       {
         "id": "lethal-capability",
         "name": "Lethal Capability",
         "tier": 6,
-        "prerequisites": ["poison-bite"],
+        "prerequisites": [
+          "poison-bite"
+        ],
         "repeatable": true,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Choose one specific attack, such as claws or bite; it deals 5 additional damage. Choose a different attack each time."
       }
     ]
   },
   "folder": null,
   "sort": 0,
-  "ownership": { "default": 0 },
+  "ownership": {
+    "default": 0
+  },
   "flags": {
     "cypher": {
       "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."

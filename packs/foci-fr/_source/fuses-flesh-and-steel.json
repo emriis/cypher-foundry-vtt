@@ -1,0 +1,228 @@
+{
+  "_id": "fusesflesh7A8E2C",
+  "_key": "!items!fusesflesh7A8E2C",
+  "name": "Fusionne chair et acier",
+  "type": "focus",
+  "img": "icons/commodities/tech/circuit-board.webp",
+  "system": {
+    "description": "<p>Un Focus pour une personne dont le corps est en partie ou entièrement mécanique.</p>",
+    "abilities": [
+      {
+        "id": "defensive-cybernetics",
+        "name": "Cybernétique défensive",
+        "tier": 1,
+        "prerequisites": [
+          "powered-cybernetics"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Des éléments mécaniques durables permettent de te reprendre pour retirer une blessure mineure ou modérée sans dépenser de Puissance."
+      },
+      {
+        "id": "hidden-shield",
+        "name": "Bouclier caché",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Un bouclier intégré et dissimulé fonctionne comme une arme légère de mêlée et peut effectuer une attaque supplémentaire entravée."
+      },
+      {
+        "id": "powered-cybernetics",
+        "name": "Cybernétique assistée",
+        "tier": 1,
+        "prerequisites": [
+          "hidden-shield"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Les tâches pour porter, grimper, sauter ou briser obtiennent au minimum 9; l’Effort augmente ce minimum de 3, puis il passe à 12 au rang 3."
+      },
+      {
+        "id": "high-speed-interface",
+        "name": "Interface haute vitesse",
+        "tier": 2,
+        "prerequisites": [
+          "powered-cybernetics"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Une connexion directe à une machine proche facilite les tâches pour l’identifier et l’utiliser à sa vitesse de traitement."
+      },
+      {
+        "id": "hud",
+        "name": "HUD",
+        "tier": 2,
+        "prerequisites": [
+          "hidden-shield"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Un affichage tête haute améliore la vision dans l’obscurité et les phénomènes occultants; l’Effort active des modes combat, grossissant et scanner."
+      },
+      {
+        "id": "enhanced-self-repair",
+        "name": "Auto-réparation améliorée",
+        "tier": 3,
+        "prerequisites": [
+          "defensive-cybernetics"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Réduis de 2 le coût en Puissance pour te reprendre et retirer une blessure."
+      },
+      {
+        "id": "weaponization",
+        "name": "Arme intégrée",
+        "tier": 3,
+        "prerequisites": [
+          "high-speed-interface"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Intègre une arme légère ou moyenne à une main, ou un outil polyvalent; tu es entraîné·e avec l’équipement choisi."
+      },
+      {
+        "id": "deep-reserves",
+        "name": "Réserves profondes",
+        "tier": 4,
+        "prerequisites": [
+          "enhanced-self-repair"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Transfère jusqu’à 6 points entre tes Réserves, à raison d’un point par round; l’aptitude revient après une récupération de dix heures."
+      },
+      {
+        "id": "fusion",
+        "name": "Fusion",
+        "tier": 4,
+        "prerequisites": [
+          "weaponization"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Fusionne des cyphers manifestes et des artefacts avec ton corps pour les utiliser comme Premières actions."
+      },
+      {
+        "id": "bolts-of-power",
+        "name": "Éclairs de puissance",
+        "tier": 5,
+        "prerequisites": [
+          "deep-reserves"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Libère quatre éclairs contre jusqu’à quatre cibles à portée courte; les cibles ratées subissent quand même 1 dégât."
+      },
+      {
+        "id": "closed-loop-body",
+        "name": "Corps en circuit fermé",
+        "tier": 5,
+        "prerequisites": [
+          "fusion"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu n’as besoin ni de manger ni de respirer et tu ne subis pas les effets du vide ou des températures extrêmes."
+      },
+      {
+        "id": "cybernetic-alacrity",
+        "name": "Vivacité cybernétique",
+        "tier": 6,
+        "prerequisites": [
+          "bolts-of-power"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "L’Effort consacré à une tâche de Célérité hors combat accorde aussi un niveau d’Effort gratuit ou un effet mineur."
+      },
+      {
+        "id": "embedded-drone",
+        "name": "Drone intégré",
+        "tier": 6,
+        "prerequisites": [
+          "closed-loop-body"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Lance et contrôle un petit drone intégré doté de manipulateurs et d’une arme à feu jusqu’à une récupération d’une heure."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Résumé original basé sur le Cypher Reference Document; créé sous la Cypher Open License."
+    }
+  }
+}

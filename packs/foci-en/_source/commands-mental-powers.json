@@ -1,6 +1,6 @@
 {
-  "_id": "CmdMntlPwr2026EN",
-  "_key": "!items!CmdMntlPwr2026EN",
+  "_id": "commandsme2D0A3B",
+  "_key": "!items!commandsme2D0A3B",
   "name": "Commands Mental Powers",
   "type": "focus",
   "img": "icons/magic/perception/third-eye-blue-red.webp",
@@ -14,7 +14,11 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Sense a nearby being's general emotional state."
       },
       {
@@ -24,7 +28,11 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
         "description": "Sense active nearby mental or psychic phenomena."
       },
       {
@@ -34,27 +42,46 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
         "description": "Establish willing two-way communication at long range."
       },
       {
         "id": "telepathic-link",
         "name": "Telepathic Link",
         "tier": 2,
-        "prerequisites": ["empathic-sense", "psionic-sense", "telepathy"],
+        "prerequisites": [
+          "empathic-sense",
+          "psionic-sense",
+          "telepathy"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
         "description": "Create a durable mental link with one willing creature."
       },
       {
         "id": "identify-psionics",
         "name": "Identify Psionics",
         "tier": 3,
-        "prerequisites": ["psionic-sense", "telepathic-link"],
+        "prerequisites": [
+          "psionic-sense",
+          "telepathic-link"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
         "description": "Learn the level, source, and general effects of sensed psionics."
       },
       {
@@ -68,27 +95,47 @@
         ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
         "description": "Read a creature's surface thoughts."
       },
       {
         "id": "psychic-burst",
         "name": "Psychic Burst",
         "tier": 3,
-        "prerequisites": ["psionic-sense", "telepathy", "psychic-suggestion"],
+        "prerequisites": [
+          "psionic-sense",
+          "telepathy",
+          "psychic-suggestion"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
         "description": "Assault the minds of several nearby targets."
       },
       {
         "id": "psychic-suggestion",
         "name": "Psychic Suggestion",
         "tier": 3,
-        "prerequisites": ["telepathy", "read-thoughts", "psychic-burst"],
+        "prerequisites": [
+          "telepathy",
+          "read-thoughts",
+          "psychic-burst"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
         "description": "Compel a target to take one indicated action."
       },
       {
@@ -102,7 +149,11 @@
         ],
         "repeatable": true,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Increase the range of a mental Focus ability."
       },
       {
@@ -116,44 +167,69 @@
         ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
         "description": "Perceive through another creature's senses."
       },
       {
         "id": "precognition",
         "name": "Precognition",
         "tier": 5,
-        "prerequisites": ["extended-range", "use-another-senses"],
+        "prerequisites": [
+          "extended-range",
+          "use-another-senses"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "intellect", "amount": 6, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
         "description": "Gain brief foreknowledge that aids defense, awareness, and interaction."
       },
       {
         "id": "mind-control",
         "name": "Mind Control",
         "tier": 6,
-        "prerequisites": ["precognition"],
+        "prerequisites": [
+          "precognition"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 6, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
         "description": "Control a touched low-level creature's actions."
       },
       {
         "id": "telepathic-network",
         "name": "Telepathic Network",
         "tier": 6,
-        "prerequisites": ["precognition"],
+        "prerequisites": [
+          "precognition"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Create a telepathic network among willing creatures."
       }
     ]
   },
   "folder": null,
   "sort": 0,
-  "ownership": { "default": 0 },
+  "ownership": {
+    "default": 0
+  },
   "flags": {
     "cypher": {
       "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."

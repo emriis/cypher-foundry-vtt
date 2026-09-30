@@ -1,0 +1,211 @@
+{
+  "_id": "quellsevil7D0321",
+  "_key": "!items!quellsevil7D0321",
+  "name": "Quells Evil",
+  "type": "focus",
+  "img": "icons/svg/holy-symbol.svg",
+  "system": {
+    "description": "<p>A Focus for finding, destroying, and banishing undead, demons, and similar evil creatures.</p>",
+    "abilities": [
+      {
+        "id": "sense-evil",
+        "name": "Sense Evil",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Perceive nearby undead, demons, or similar creatures with a minimum roll of 9; the minimum rises to 12 at tier 3."
+      },
+      {
+        "id": "inspiring-trust",
+        "name": "Inspiring Trust",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Allies who share your sense of good and evil gain +1 to their recoveries while in your presence."
+      },
+      {
+        "id": "tribulation",
+        "name": "Tribulation",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Attack up to five nearby evil supernatural creatures of level 2 or less to stun or repel them."
+      },
+      {
+        "id": "shield-against-evil",
+        "name": "Shield Against Evil",
+        "tier": 2,
+        "prerequisites": [
+          "sense-evil",
+          "inspiring-trust"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Protect yourself or a touched ally against specified evil creatures, easing defense and granting immunity to mental influence, fear, and possession."
+      },
+      {
+        "id": "invisibility-to-evil",
+        "name": "Invisibility to Evil",
+        "tier": 2,
+        "prerequisites": [
+          "inspiring-trust",
+          "tribulation"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Make a touched ally effectively invisible to evil creatures of level 3 or less until a ten-minute recovery."
+      },
+      {
+        "id": "unearth-evil",
+        "name": "Unearth Evil",
+        "tier": 3,
+        "prerequisites": [
+          "shield-against-evil"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Create a mental heat map of qualifying evil creatures within 10 miles and retain awareness of their locations with additional Effort."
+      },
+      {
+        "id": "blast-evil",
+        "name": "Blast Evil",
+        "tier": 3,
+        "prerequisites": [
+          "invisibility-to-evil"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Blast an adjacent immediate area for 3 damage, or 6 damage against undead, demons, and similar creatures."
+      },
+      {
+        "id": "righteous-cloak",
+        "name": "Righteous Cloak",
+        "tier": 4,
+        "prerequisites": [
+          "unearth-evil"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Radiate wholesome light that automatically deals 4 damage to anyone who touches or makes a melee attack against you."
+      },
+      {
+        "id": "rebuke-evil",
+        "name": "Rebuke Evil",
+        "tier": 4,
+        "prerequisites": [
+          "blast-evil"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Command an evil creature you hit with an Intellect attack to pursue a goal, even one that harms it or its allies."
+      },
+      {
+        "id": "shrug-off-evil",
+        "name": "Shrug Off Evil",
+        "tier": 5,
+        "prerequisites": [
+          "righteous-cloak",
+          "rebuke-evil"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Become immune to mental influence, fear, and possession, and ignore one wound from an evil creature until a ten-hour recovery."
+      },
+      {
+        "id": "fence-out-evil",
+        "name": "Fence Out Evil",
+        "tier": 6,
+        "prerequisites": [
+          "shrug-off-evil"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "Surround a short area with cleansing light that damages evil creatures each round and can rebuke them."
+      },
+      {
+        "id": "retribution",
+        "name": "Retribution",
+        "tier": 6,
+        "prerequisites": [
+          "shrug-off-evil"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 8,
+          "options": []
+        },
+        "description": "Call radiant flame onto an immediate area at long range, damaging every creature and one chosen creature more severely."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+    }
+  }
+}

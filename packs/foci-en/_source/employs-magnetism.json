@@ -1,6 +1,6 @@
 {
-  "_id": "Emp1oyMagn3t2026",
-  "_key": "!items!Emp1oyMagn3t2026",
+  "_id": "employsmagFC84B3",
+  "_key": "!items!employsmagFC84B3",
   "name": "Employs Magnetism",
   "type": "focus",
   "img": "icons/magic/lightning/bolt-strike-blue.webp",
@@ -11,20 +11,32 @@
         "id": "craft-metal",
         "name": "Craft Metal",
         "tier": 1,
-        "prerequisites": ["sense-metal"],
+        "prerequisites": [
+          "sense-metal"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Shape metal without heat and gain an asset for tasks involving metalworking."
       },
       {
         "id": "move-metal",
         "name": "Move Metal",
         "tier": 1,
-        "prerequisites": ["move-metal"],
+        "prerequisites": [
+          "move-metal"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
         "description": "Exert force on nearby metal or disrupt electronics and machine creatures."
       },
       {
@@ -34,124 +46,203 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
         "description": "Detect nearby ferromagnetic metal, including its amount, type, and general location."
       },
       {
         "id": "electromagnetic-eyes",
         "name": "Electromagnetic Eyes",
         "tier": 2,
-        "prerequisites": ["sense-metal"],
+        "prerequisites": [
+          "sense-metal"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 2, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
         "description": "Sense electromagnetic fields to see in darkness and perceive hidden creatures, metal, and electronics at long range."
       },
       {
         "id": "electromagnetically-charge",
         "name": "Electromagnetically Charge",
         "tier": 2,
-        "prerequisites": ["move-metal"],
+        "prerequisites": [
+          "move-metal"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 1, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
         "description": "Draw on ambient electromagnetic energy to reduce a wound or recharge a mundane electrical device; the cost increases until recovery."
       },
       {
         "id": "repel-metal",
         "name": "Repel Metal",
         "tier": 2,
-        "prerequisites": ["craft-metal"],
+        "prerequisites": [
+          "craft-metal"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Gain an asset to block or dodge attacks that include metal."
       },
       {
         "id": "guide-bolt",
         "name": "Guide Bolt",
         "tier": 3,
-        "prerequisites": ["move-metal", "repel-metal"],
+        "prerequisites": [
+          "move-metal",
+          "repel-metal"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
         "description": "Guide metallic ammunition to gain an asset and deal 3 additional damage once per round."
       },
       {
         "id": "rend-metal",
         "name": "Rend Metal",
         "tier": 3,
-        "prerequisites": ["move-metal", "craft-metal"],
+        "prerequisites": [
+          "move-metal",
+          "craft-metal"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 3, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
         "description": "Tear apart a visible metal object of up to level 3, with an eased attack against unwilling equipment."
       },
       {
         "id": "magnetic-field",
         "name": "Magnetic Field",
         "tier": 4,
-        "prerequisites": ["repel-metal", "guide-bolt"],
+        "prerequisites": [
+          "repel-metal",
+          "guide-bolt"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 5, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
         "description": "Pull incoming metallic projectiles to the ground and disperse electromagnetic energy attacks for one round."
       },
       {
         "id": "magnetize",
         "name": "Magnetize",
         "tier": 4,
-        "prerequisites": ["rend-metal"],
+        "prerequisites": [
+          "rend-metal"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 4, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
         "description": "Permanently magnetize or demagnetize a touched object, or create a field that repels low-level metal."
       },
       {
         "id": "command-metal",
         "name": "Command Metal",
         "tier": 5,
-        "prerequisites": ["magnetize", "rend-metal"],
+        "prerequisites": [
+          "magnetize",
+          "rend-metal"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 5, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
         "description": "Reshape nearby metal, combine objects, move the result, or attack a target for 7 damage."
       },
       {
         "id": "iron-in-the-blood",
         "name": "Iron in the Blood",
         "tier": 5,
-        "prerequisites": ["move-metal", "rend-metal"],
+        "prerequisites": [
+          "move-metal",
+          "rend-metal"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Sense and manipulate trace iron in flesh and blood to move or attack creatures with your metal powers."
       },
       {
         "id": "diamagnetism",
         "name": "Diamagnetism",
         "tier": 6,
-        "prerequisites": ["magnetize", "iron-in-the-blood"],
+        "prerequisites": [
+          "magnetize",
+          "iron-in-the-blood"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
         "description": "Make nearby nonmetallic objects respond to your other magnetic powers as though magnetized."
       },
       {
         "id": "iron-punch",
         "name": "Iron Punch",
         "tier": 6,
-        "prerequisites": ["command-metal", "iron-in-the-blood"],
+        "prerequisites": [
+          "command-metal",
+          "iron-in-the-blood"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "intellect", "amount": 8, "options": [] },
+        "cost": {
+          "stat": "intellect",
+          "amount": 8,
+          "options": []
+        },
         "description": "Hurl a heavy metal object at a nearby target for 10 damage on a successful Intellect attack."
       }
     ]
   },
   "folder": null,
   "sort": 0,
-  "ownership": { "default": 0 },
+  "ownership": {
+    "default": 0
+  },
   "flags": {
     "cypher": {
       "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
