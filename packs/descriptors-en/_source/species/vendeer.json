@@ -1,0 +1,12 @@
+{
+  "_id": "V9eN2dL6wC4rT8aP", "_key": "!items!V9eN2dL6wC4rT8aP", "name": "Vendeer", "type": "descriptor", "img": "icons/svg/aura.svg",
+  "system": {
+    "category": "species", "genres": ["sciFi"], "grantsSecondDescriptor": false, "statOptions": [], "statAmount": 0, "skillOptions": ["Perception"],
+    "benefits": [
+      { "name": "No GM Intrusion on Recognizing Motive", "description": "<p>You don't get a GM intrusion if you roll a 1 on a recognizing motive task.</p>" },
+      { "name": "Spear Damage", "description": "<p>You inflict +1 damage with spears (or high-tech versions of the same).</p>" }
+    ],
+    "description": "<p>You are a vendeer, which means that you are 9 feet (2.5 m) tall, slender, and purple-skinned. Your mane-like \"hair\" makes you slightly more sensitive to psychic phenomena, especially the thoughts and emotions of other creatures, intelligent or not. Vendeer are native to a lush forest moon, and though not technically advanced, your kin enjoy rich cultural and spiritual lives. But the lure of other planets and stars pulled you far from home, and now you pursue a life far different than that of the hunter-gatherers you left behind.</p><p><strong>You gain the following characteristics:</strong></p><ul><li>You don't get a GM intrusion if you roll a 1 on a recognizing motive task.</li><li>You are trained in perception.</li><li>You inflict +1 damage with spears (or high-tech versions of the same).</li></ul>"
+  }, "folder": null, "sort": 0, "ownership": { "default": 0 },
+  "flags": { "cypher": { "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License." } }
+}

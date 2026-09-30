@@ -1,0 +1,12 @@
+{
+  "_id": "R7iG4lM9pV2xT6aC", "_key": "!items!R7iG4lM9pV2xT6aC", "name": "Rigellien·e", "type": "descriptor", "img": "icons/svg/aura.svg",
+  "system": {
+    "category": "species", "genres": ["sciFi"], "grantsSecondDescriptor": false, "statOptions": [], "statAmount": 0, "skillOptions": ["Opération de systèmes"],
+    "benefits": [
+      { "name": "Pas d'intrusion du MJ à l'athlétisme", "description": "<p>Tu n'obtiens pas d'intrusion du·de la MJ si tu fais un 1 sur un jet d'athlétisme.</p>" },
+      { "name": "Dégâts d'armes à projectiles à distance", "description": "<p>Tu infliges +1 dégât avec les armes à projectiles à distance.</p>" }
+    ],
+    "description": "<p>En tant que Rigellien·ne, tu es un·e humanoïde de <strong>2 m</strong> de haut, recouvert·e d'une fourrure épaisse. Ton peuple est connu pour sa <strong>force</strong>, sa <strong>loyauté</strong> et son <strong>langage tonitruant</strong>. La plupart des Rigelliens vivent paisiblement sur un monde natal technologiquement avancé, en orbite autour d'une <strong>supergéante bleue lointaine</strong>. Même si tu partages probablement le <strong>sens de l'honneur</strong> propre à ton espèce, tu as quitté ton foyer pour chercher l'aventure dans la vaste galaxie.</p><p><strong>Tu obtiens les caractéristiques suivantes :</strong></p><ul><li>Tu <strong>n'obtiens pas d'intrusion du·de la MJ</strong> si tu fais un <strong>1</strong> sur un jet d'athlétisme.</li><li>Tu es <strong>entraîné·e en opération de systèmes</strong>.</li><li>Tu infliges <strong>+1 dégât</strong> avec les <strong>armes à projectiles à distance</strong>.</li></ul>"
+  }, "folder": null, "sort": 0, "ownership": { "default": 0 },
+  "flags": { "cypher": { "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License." } }
+}

@@ -14,11 +14,11 @@
           <option value="custom" {{#ifEquals system.genre "custom"}}selected{{/ifEquals}}>{{localize 'CYPHER.Genre.custom'}}</option>
         </select>
       </label>
-      {{#unless system.isRealWorld}}
+      {{#if system.supportsSpecies}}
       <label>{{localize 'CYPHER.Species'}}
         <input name="system.species" type="text" value="{{system.species}}" placeholder="{{localize 'CYPHER.SpeciesPlaceholder'}}"/>
       </label>
-      {{/unless}}
+      {{/if}}
     </div>
 
     {{#if system.isRealWorld}}
@@ -29,9 +29,13 @@
       {{#if system.hasSecondDescriptor}}
       <span class="and-joiner">{{localize 'CYPHER.CharacterLine.And'}}</span>
       <input name="system.descriptor2" type="text" value="{{system.descriptor2}}" placeholder="{{localize 'CYPHER.Descriptor2'}}"/>
+      {{#if system.isCustomGenre}}
       <a class="remove-optional" data-action="toggleSecondDescriptor" title="{{localize 'CYPHER.CharacterLine.RemoveSecondDescriptor'}}"><i class="fa-solid fa-circle-minus"></i></a>
+      {{/if}}
       {{else}}
+      {{#if system.isCustomGenre}}
       <a class="add-optional" data-action="toggleSecondDescriptor" title="{{localize 'CYPHER.CharacterLine.AddSecondDescriptor'}}"><i class="fa-solid fa-circle-plus"></i></a>
+      {{/if}}
       {{/if}}
 
       <input name="system.profession" type="text" value="{{system.profession}}" placeholder="{{localize 'CYPHER.Profession'}}"/>
@@ -45,9 +49,13 @@
       {{#if system.hasSecondDescriptor}}
       <span class="and-joiner">{{localize 'CYPHER.CharacterLine.And'}}</span>
       <input name="system.descriptor2" type="text" value="{{system.descriptor2}}" placeholder="{{localize 'CYPHER.Descriptor2'}}"/>
+      {{#if system.isCustomGenre}}
       <a class="remove-optional" data-action="toggleSecondDescriptor" title="{{localize 'CYPHER.CharacterLine.RemoveSecondDescriptor'}}"><i class="fa-solid fa-circle-minus"></i></a>
+      {{/if}}
       {{else}}
+      {{#if system.isCustomGenre}}
       <a class="add-optional" data-action="toggleSecondDescriptor" title="{{localize 'CYPHER.CharacterLine.AddSecondDescriptor'}}"><i class="fa-solid fa-circle-plus"></i></a>
+      {{/if}}
       {{/if}}
 
       <span>{{localize 'CYPHER.CharacterLine.Middle'}}</span>

@@ -1,0 +1,12 @@
+{
+  "_id": "D7rA3kV8pM2xC6tL", "_key": "!items!D7rA3kV8pM2xC6tL", "name": "Drakain·e", "type": "descriptor", "img": "icons/svg/aura.svg",
+  "system": {
+    "category": "species", "genres": ["sciFi"], "grantsSecondDescriptor": false, "statOptions": [], "statAmount": 0, "skillOptions": ["Intimidation"],
+    "benefits": [
+      { "name": "Blessure mineure supplémentaire", "description": "<p>Tu peux encaisser une blessure mineure supplémentaire par rapport à la normale.</p>" },
+      { "name": "Dégâts d'armes tranchantes", "description": "<p>Tu infliges +1 dégât avec les armes tranchantes (ou leurs équivalents technologiques).</p>" }
+    ],
+    "description": "<p>Ta peau est parcourue de <strong>crêtes osseuses</strong>, et tu mesures probablement au moins <strong>2 m</strong>. Certain·es pourraient comparer les Drakain·es aux humain·es - mais seul·es les inconscient·es le feraient à voix haute. Ton peuple accorde une immense importance au <strong>combat</strong> et à l'<strong>honneur</strong>, considérant la mort au combat comme l'une des fins les plus glorieuses. Les Drakain·es ont bâti de grands empires grâce à leur puissance martiale, et tu es fier·ère de cet héritage. Pourtant, cela ne t'empêche ni de te lier d'amitié avec d'autres espèces, ni de poursuivre les opportunités passionnantes qui se présentent à toi.</p><p><strong>Tu obtiens les caractéristiques suivantes :</strong></p><ul><li>Tu peux encaisser <strong>une blessure mineure supplémentaire</strong> par rapport à la normale.</li><li>Tu es <strong>entraîné·e en intimidation</strong> (mais <strong>pas</strong> contre d'autres Drakain·es).</li><li>Tu infliges <strong>+1 dégât</strong> avec les <strong>armes tranchantes</strong> (ou leurs équivalents technologiques).</li></ul>"
+  }, "folder": null, "sort": 0, "ownership": { "default": 0 },
+  "flags": { "cypher": { "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License." } }
+}

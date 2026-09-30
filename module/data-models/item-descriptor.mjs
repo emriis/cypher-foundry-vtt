@@ -1,4 +1,4 @@
-const { StringField, NumberField, HTMLField, ArrayField } = foundry.data.fields;
+const { StringField, NumberField, HTMLField, ArrayField, BooleanField, SchemaField } = foundry.data.fields;
 
 /**
  * Un Descripteur du CRD (ex. "Compatissant", "Fourbe"...) : un paquet de traits à usage
@@ -18,6 +18,12 @@ const { StringField, NumberField, HTMLField, ArrayField } = foundry.data.fields;
 export default class CypherDescriptorData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     return {
+      category: new StringField({ required: true, initial: "descriptor", choices: ["descriptor", "species"] }),
+      genres: new ArrayField(
+        new StringField({ required: true, choices: ["fantasy", "sciFi"] }),
+        { required: true, initial: [] }
+      ),
+      grantsSecondDescriptor: new BooleanField({ required: true, initial: false }),
       // Une ou deux stats au choix (ex. Gloomy : Vitesse OU Puissance). Si un seul élément,
       // aucun choix n'est proposé au moment de l'application.
       // One or two stat options to choose from (e.g. Gloomy: Speed OR Might). If only one
@@ -26,7 +32,7 @@ export default class CypherDescriptorData extends foundry.abstract.TypeDataModel
         new StringField({ required: true, choices: ["might", "speed", "intellect"] }),
         { required: true, initial: ["intellect"] }
       ),
-      statAmount: new NumberField({ required: true, integer: true, initial: 2, min: 1 }),
+      statAmount: new NumberField({ required: true, integer: true, initial: 2, min: 0 }),
 
       // Noms de compétences au choix (2 à 4 en général). Une entrée "Autre (préciser)" est
       // toujours proposée en plus lors de l'application, pour couvrir les libellés du CRD
@@ -39,6 +45,14 @@ export default class CypherDescriptorData extends foundry.abstract.TypeDataModel
       // filtered out by CypherActor#applyDescriptor.
       skillOptions: new ArrayField(new StringField({ required: true, blank: true }), { required: true, initial: [] }),
 
+      // Fixed trained skills granted in addition to an optional skill choice. This supports
+      // species such as Naron, which grant one chosen skill and one fixed trained skill.
+      grantedSkills: new ArrayField(new StringField({ required: true, blank: false }), { required: true, initial: [] }),
+
+      benefits: new ArrayField(new SchemaField({
+        name: new StringField({ required: true, blank: false }),
+        description: new HTMLField({ required: true, blank: false })
+      }), { required: true, initial: [] }),
       description: new HTMLField({ required: true, blank: true })
     };
   }

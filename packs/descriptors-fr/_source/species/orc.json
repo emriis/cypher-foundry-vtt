@@ -1,0 +1,34 @@
+{
+  "_id": "SpcFntOrc0000001",
+  "_key": "!items!SpcFntOrc0000001",
+  "name": "Orque",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "category": "species",
+    "genres": ["fantasy"],
+    "grantsSecondDescriptor": false,
+    "statOptions": [],
+    "statAmount": 0,
+    "skillOptions": ["Intimidation"],
+    "benefits": [
+      {
+        "name": "Blessure mineure supplémentaire",
+        "description": "<p>Tu peux encaisser une blessure mineure de plus que la normale.</p>"
+      },
+      {
+        "name": "Dégâts de mêlée lourde",
+        "description": "<p>Tu infliges +1 dégât avec les armes de mêlée lourdes.</p>"
+      }
+    ],
+    "description": "<p>Les orques forment un peuple fier, quoique agressif, doté d'un sens de l'honneur.</p><p><strong>Tu obtiens les caractéristiques suivantes :</strong></p><ul><li>Tu peux encaisser une blessure mineure de plus que la normale.</li><li>Tu es entraîné en intimidation (sauf contre les autres orques).</li><li>Tu infliges +1 dégât avec les armes de mêlée lourdes.</li></ul>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "_id": "M6uT2nB9qR4vK7cP", "_key": "!items!M6uT2nB9qR4vK7cP", "name": "Mutant·e", "type": "descriptor", "img": "icons/svg/aura.svg",
+  "system": {
+    "category": "species", "genres": ["sciFi"], "grantsSecondDescriptor": false, "statOptions": [], "statAmount": 0, "skillOptions": [],
+    "benefits": [
+      { "name": "Pas d'intrusion du MJ à la défense de Puissance", "description": "<p>Tu n'obtiens pas d'intrusion du·de la MJ si tu fais un 1 sur un jet de défense de Puissance.</p>" },
+      { "name": "Mutation", "description": "<p>Choisis une aptitude de rang 1 issue de n'importe quel focus ; travaille avec ton·ta MJ pour l'adapter comme mutation.</p>" }
+    ],
+    "description": "<p>Des forces sauvages assez puissantes pour ravager un monde t'ont transformé·e. Peut-être s'agit-il de mutations latentes transmises par tes ancêtres ayant survécu à un cataclysme, ou peut-être ton organisme réagit-il à la radiation ou à un autre agent mutagène. Tu peux ressembler presque entièrement à ton espèce d'origine... ou exhiber des différences physiques visibles impossibles à dissimuler. Travaille avec ton·ta MJ pour définir tes traits. Tu peux aussi <strong>assumer fièrement</strong> ce que tu es : pour toi, c'est peut-être une supériorité.</p><p><strong>Tu obtiens les caractéristiques suivantes :</strong></p><ul><li>Tu <strong>n'obtiens pas d'intrusion du·de la MJ</strong> si tu fais un <strong>1</strong> sur un jet de défense de Puissance.</li><li>Choisis <strong>une aptitude de rang 1</strong> issue de <strong>n'importe quel focus</strong> ; travaille avec ton·ta MJ pour l'adapter comme <strong>mutation</strong>.</li></ul>"
+  }, "folder": null, "sort": 0, "ownership": { "default": 0 },
+  "flags": { "cypher": { "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License." } }
+}

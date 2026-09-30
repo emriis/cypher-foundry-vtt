@@ -1,0 +1,34 @@
+{
+  "_id": "SpcFntHlf0000001",
+  "_key": "!items!SpcFntHlf0000001",
+  "name": "Halfling",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "category": "species",
+    "genres": ["fantasy"],
+    "grantsSecondDescriptor": false,
+    "statOptions": [],
+    "statAmount": 0,
+    "skillOptions": ["Escaping"],
+    "benefits": [
+      {
+        "name": "No GM Intrusion on Stealth",
+        "description": "<p>You don't get a GM intrusion if you roll a 1 on a stealth task.</p>"
+      },
+      {
+        "name": "Light Thrown Weapon Damage",
+        "description": "<p>You inflict +1 damage with light thrown weapons.</p>"
+      }
+    ],
+    "description": "<p>Three feet tall and proud of every inch, you are fond of the comforts of home but itching for a little adventure now and then.</p><p><strong>You gain the following characteristics:</strong></p><ul><li>You don't get a GM intrusion if you roll a 1 on a stealth task.</li><li>You are trained in escaping.</li><li>You inflict +1 damage with light thrown weapons.</li></ul>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": { "default": 0 },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}
