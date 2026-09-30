@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/commodities/tech/circuit-board-chip.webp",
   "system": {
-    "description": "<p>Un Focus pour une personne dont les implants électroniques font une véritable puissance mentale.</p>",
+    "description": "<p>Electronic aids implanted in your brain make you a mental powerhouse.</p>",
     "abilities": [
       {
         "id": "data-processor",
@@ -19,7 +19,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Tu deviens temporairement entraîné·e dans une compétence d’Intellect; l’Effort augmente le nombre de compétences temporaires."
+        "description": "En puisant dans des informations stockées et dans ta capacité à traiter les données à une vitesse incroyable, tu deviens temporairement entraîné·e dans une tâche mentale. À chaque activation, choisis une compétence d’Intellect (piratage, défense d’Intellect, compétence de connaissance, perception…). Tu es entraîné·e dans cette compétence jusqu’à ta prochaine récupération de dix minutes ou plus. Normalement, tu ne peux être entraîné·e que dans une seule compétence à la fois via cette aptitude ; l’activer de nouveau remplace la compétence précédente. Effort : augmenter ton nombre maximal de compétences temporairement entraînées de +1."
       },
       {
         "id": "think-fast",
@@ -35,7 +35,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Tu es entraîné·e aux tâches de défense d’Intellect."
+        "description": "Ton esprit est vif et insaisissable. Tu es entraîné·e aux tâches de défense d’Intellect."
       },
       {
         "id": "wireless-interface",
@@ -51,7 +51,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Tu communiques mentalement avec des machines disposées à portée courte; les contacts accélèrent leurs tâches et durent jusqu’à une récupération."
+        "description": "Tu peux communiquer mentalement avec des machines à portée courte. La communication est bidirectionnelle, mais la machine doit être disposée et capable de communiquer. Tu n’as pas besoin de la voir, mais tu dois savoir qu’elle est dans la portée. Tu peux maintenir plusieurs contacts simultanés, mais tu dois établir chaque contact séparément. Une fois le contact établi : les tâches impliquant cette machine prennent la moitié du temps normal et les tâches nécessitant une action deviennent des Premières actions. Chaque contact dure jusqu’à ta prochaine récupération de dix minutes ou plus. Effort : prolonger la durée jusqu’à une récupération d’une heure ou plus ; augmenter la portée d’un palier (longue, très longue, 1,5 km, 15 km, ou n’importe où sur la planète)."
       },
       {
         "id": "analytic-processor",
@@ -67,7 +67,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Pose une question à la MJ et tente une tâche d’Intellect pour obtenir une réponse courte; un échec inflige 4 dégâts d’Intellect."
+        "description": "Pose au/à la MJ une question dont tu veux la réponse. Le·La MJ fixe une difficulté selon la rareté ou la complexité de l’information. Si tu réussis une tâche d’Intellect contre cette difficulté, tu obtiens une réponse courte. En cas d’échec, tu subis 4 dégâts d’Intellect dus au contrecoup numérique."
       },
       {
         "id": "machine-reading",
@@ -83,7 +83,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Lis les pensées superficielles d’une machine visible à portée courte jusqu’à une récupération."
+        "description": "Tu peux lire les « pensées » superficielles d’une machine à portée courte, même si elle ne le souhaite pas. Tu dois pouvoir la voir. Une fois le contact établi, tu peux lire ses pensées jusqu’à ta prochaine récupération de dix minutes ou plus."
       },
       {
         "id": "action-processor",
@@ -99,7 +99,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Processeur de données peut aussi entraîner à des compétences physiques et aux attaques avec une arme précise."
+        "description": "Ton aptitude Processeur de données peut désormais t’accorder un entraînement dans des compétences physiques : athlétisme, acrobaties, Esquive ou Blocage, ou pour les attaques avec une arme spécifique. Cela ne change pas le nombre maximal de compétences que Processeur de données peut t’accorder simultanément."
       },
       {
         "id": "awareness",
@@ -115,7 +115,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "Perçois les êtres vivants et les machines pensantes à portée longue, puis étudie la santé et la puissance d’une cible."
+        "description": "You become hyperaware of your surroundings until you use a ten-minute or longer recovery. You are aware of all living things within long range (including their general position). By using an action to concentrate, you can choose one of them and attempt to learn their general health and power level. Action. When you use Awareness, you are also aware of thinking machines in long range."
       },
       {
         "id": "expanded-wireless",
@@ -131,7 +131,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Interface sans fil atteint n’importe où sur la planète."
+        "description": "La portée de base de ton aptitude Interface sans fil devient n’importe où sur la planète."
       },
       {
         "id": "locked-skill",
@@ -147,7 +147,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Verrouille une compétence de Processeur de données jusqu’à une récupération de dix heures; tu peux choisir cette aptitude jusqu’à trois fois."
+        "description": "Quand tu actives Processeur de données, choisis l’une des compétences qu’il t’accorde : elle devient ta compétence verrouillée. Tu restes entraîné·e dans cette compétence jusqu’à ta prochaine récupération de dix heures. Si tu réactives Processeur de données avant cette récupération, tu peux réinitialiser la durée ou choisir une nouvelle compétence verrouillée. Tu peux choisir cette aptitude jusqu’à trois fois. Chaque fois, ton nombre maximal de compétences verrouillées augmente de +1."
       },
       {
         "id": "precognition",
@@ -163,7 +163,7 @@
           "amount": 6,
           "options": []
         },
-        "description": "Gagne des atouts en défense, pour déceler tromperies et pièges, et dans les interactions jusqu’à une récupération."
+        "description": "You dimly sense the future until you use a ten-minute or longer recovery. During this time, you gain the following benefits: You gain an asset on defense tasks. You can predict the actions of those around you. You gain an asset to seeing through deceptions and attempts to betray you as well as avoiding traps and ambushes. You know what people are probably thinking and what they will say before they say it. You gain an asset to all interaction tasks. Enabler."
       },
       {
         "id": "machine-enhancement",
@@ -179,7 +179,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "L’Effort sur une action d’Intellect accorde aussi un niveau d’Effort gratuit ou un effet mineur."
+        "description": "Chaque fois que tu consacres de l’Effort à une action d’Intellect, ajoute au choix : un niveau d’Effort gratuit ou un effet mineur sur l’action."
       },
       {
         "id": "mind-surge",
@@ -195,7 +195,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Gagne une récupération supplémentaire d’une action par jour, utilisable uniquement pour restaurer l’Intellect."
+        "description": "Tu disposes d’une récupération supplémentaire d’une action chaque jour, utilisable uniquement pour restaurer ta Réserve d’Intellect."
       }
     ]
   },
@@ -206,7 +206,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document; créé sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

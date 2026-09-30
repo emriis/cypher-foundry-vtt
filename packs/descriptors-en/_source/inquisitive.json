@@ -5,10 +5,17 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": ["intellect"],
+    "statOptions": [
+      "intellect"
+    ],
     "statAmount": 2,
-    "skillOptions": ["Gathering Information", "Identifying", "", ""],
-    "description": "<p>The unknown calls to you, and you take care to be prepared before you go looking for answers.</p><p><em>You gain +2 to your Intellect Pool, and training in Gathering Information or Identifying.</em></p>"
+    "skillOptions": [
+      "Gathering Information",
+      "Identifying",
+      "",
+      ""
+    ],
+    "description": "<p>The world is vast and mysterious, with wonders and secrets to keep you amazed for several lifetimes. You feel the tugging on your heart, the call to explore the wreckage of past civilizations, to discover new peoples, new places, and whatever bizarre wonders you might find along the way. However, as strongly as you feel the pull to roam the world, you know there is danger aplenty, and you take precautions to ensure that you are prepared for any eventuality. Research, preparation, and readiness will help you live long enough to see everything you want to see and do everything you want to do.</p>"
   },
   "folder": null,
   "sort": 0,
@@ -17,7 +24,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

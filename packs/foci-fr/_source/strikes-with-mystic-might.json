@@ -5,24 +5,208 @@
   "type": "focus",
   "img": "icons/skills/melee/unarmed-punch-fist.webp",
   "system": {
-    "description": "<p>Un Focus pour un mystique dont les techniques à mains nues puisent dans une source de pouvoir surnaturelle.</p>",
+    "description": "<p>Your unarmed techniques are infused with otherworldly energies, enabling you to move beyond the merely physical.</p>",
     "abilities": [
-      { "id": "no-need-for-weapons", "name": "Pas besoin d’armes", "tier": 1, "prerequisites": [], "repeatable": false, "enabler": true, "cost": { "stat": "none", "amount": 0, "options": [] }, "description": "Tes attaques à mains nues infligent 2 dégâts supplémentaires." },
-      { "id": "mystic-hand", "name": "Main mystique", "tier": 1, "prerequisites": [], "repeatable": false, "enabler": true, "cost": { "stat": "speed", "amount": 3, "options": [] }, "description": "Tes attaques à mains nues imprégnées de ta source infligent 1 dégât supplémentaire; une fois par round, dépense 3 Célérité pour réduire une blessure d’un palier." },
-      { "id": "supernatural-leap", "name": "Saut surnaturel", "tier": 1, "prerequisites": [], "repeatable": false, "enabler": true, "cost": { "stat": "none", "amount": 0, "options": [] }, "description": "Quand tu sautes, tu parcours deux fois la distance normale, horizontalement ou verticalement." },
-      { "id": "safe-fall", "name": "Chute sans danger", "tier": 2, "prerequisites": ["no-need-for-weapons", "mystic-hand"], "repeatable": false, "enabler": true, "cost": { "stat": "none", "amount": 0, "options": [] }, "description": "Ignore une blessure provenant d’une chute." },
-      { "id": "surging-hand", "name": "Main jaillissante", "tier": 2, "prerequisites": ["mystic-hand", "supernatural-leap"], "repeatable": false, "enabler": false, "cost": { "stat": "speed", "amount": 2, "options": [] }, "description": "Projette ta source mystique sur une cible à courte portée avec une attaque de Célérité qui inflige 4 dégâts en cas de réussite." },
-      { "id": "perfecting-the-body", "name": "Perfection du corps", "tier": 3, "prerequisites": ["safe-fall"], "repeatable": false, "enabler": true, "cost": { "stat": "none", "amount": 0, "options": [] }, "description": "Tes katas quotidiens t’accordent l’immunité contre la peur, le contrôle mental, la maladie et le poison." },
-      { "id": "mystic-flurry", "name": "Déluge mystique", "tier": 3, "prerequisites": ["surging-hand"], "repeatable": false, "enabler": true, "cost": { "stat": "none", "amount": 0, "options": [] }, "description": "Tes attaques à mains nues imprégnées de ta source mystique infligent 1 dégât supplémentaire." },
-      { "id": "mystic-step", "name": "Pas mystique", "tier": 4, "prerequisites": ["perfecting-the-body", "mystic-flurry"], "repeatable": false, "enabler": false, "cost": { "stat": "speed", "amount": 4, "options": [] }, "description": "Téléporte-toi instantanément vers un endroit visible à longue portée; si tu apparais près d’un ennemi, tu peux l’attaquer à mains nues comme action supplémentaire." },
-      { "id": "exploding-hand", "name": "Main explosive", "tier": 5, "prerequisites": ["mystic-step"], "repeatable": false, "enabler": false, "cost": { "stat": "speed", "amount": 5, "options": [] }, "description": "Projette ta source sur une cible à longue portée et deux cibles proches supplémentaires; inflige 4 dégâts en cas de réussite ou 1 en cas d’échec." },
-      { "id": "resonant-palm", "name": "Paume résonante", "tier": 5, "prerequisites": ["mystic-step"], "repeatable": false, "enabler": false, "cost": { "stat": "speed", "amount": 7, "options": [] }, "description": "Crée un lien mystique de dix jours permettant de transférer une blessure ou de faire une attaque facilitée contre la créature liée." },
-      { "id": "perfected-form", "name": "Forme parfaite", "tier": 6, "prerequisites": ["exploding-hand"], "repeatable": false, "enabler": false, "cost": { "stat": "none", "amount": 0, "options": [] }, "description": "Jusqu’à une récupération d’une heure, gagne 3 points à répartir dans tes Réserves et inflige 3 dégâts supplémentaires à mains nues." },
-      { "id": "lethal-strike", "name": "Frappe létale", "tier": 6, "prerequisites": ["exploding-hand", "resonant-palm"], "repeatable": false, "enabler": false, "cost": { "stat": "speed", "amount": 6, "options": [] }, "description": "Une attaque rapide de mêlée ou à distance inflige 7 dégâts supplémentaires en cas de réussite." }
+      {
+        "id": "no-need-for-weapons",
+        "name": "Pas besoin d’armes",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tes attaques à mains nues (poings, pieds, coudes, genoux…) infligent +2 dégâts supplémentaires."
+      },
+      {
+        "id": "mystic-hand",
+        "name": "Main mystique",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Tes attaques à mains nues infligent +1 dégât supplémentaire grâce à ta source mystique. Une fois par round, si tu subis une blessure et que tu n’es pas incapable d’agir, tu peux dépenser 3 Célérité pour réduire la sévérité de la blessure d’un palier."
+      },
+      {
+        "id": "supernatural-leap",
+        "name": "Saut surnaturel",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Quand tu sautes, tu parcours deux fois la distance normale, horizontalement ou verticalement."
+      },
+      {
+        "id": "safe-fall",
+        "name": "Chute sans danger",
+        "tier": 2,
+        "prerequisites": [
+          "no-need-for-weapons",
+          "mystic-hand"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu ignores une blessure provenant d’une chute."
+      },
+      {
+        "id": "surging-hand",
+        "name": "Main jaillissante",
+        "tier": 2,
+        "prerequisites": [
+          "mystic-hand",
+          "supernatural-leap"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Tu invoques ta source mystique et la projettes sur une cible à courte portée, infligeant 4 dégâts avec une attaque de Célérité réussie."
+      },
+      {
+        "id": "perfecting-the-body",
+        "name": "Perfection du corps",
+        "tier": 3,
+        "prerequisites": [
+          "safe-fall"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tes katas quotidiens t’infusent et te protègent, t’accordant une immunité contre la peur, le contrôle mental, la maladie et le poison."
+      },
+      {
+        "id": "mystic-flurry",
+        "name": "Déluge mystique",
+        "tier": 3,
+        "prerequisites": [
+          "surging-hand"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tes attaques à mains nues imprégnées de ta source mystique infligent +1 dégât supplémentaire."
+      },
+      {
+        "id": "mystic-step",
+        "name": "Pas mystique",
+        "tier": 4,
+        "prerequisites": [
+          "perfecting-the-body",
+          "mystic-flurry"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Tu canalises ta source mystique pour te téléporter instantanément vers un endroit que tu vois à longue portée. Si tu apparais à portée immédiate d’un ennemi, tu peux faire une attaque à mains nues comme action supplémentaire. Effort : atteindre un endroit dans la portée mais hors de vue directe (derrière un mur, une structure…)."
+      },
+      {
+        "id": "exploding-hand",
+        "name": "Main explosive",
+        "tier": 5,
+        "prerequisites": [
+          "mystic-step"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Tu invoques ta source mystique et la projettes sur une cible à longue portée, puis deux cibles supplémentaires à portée immédiate de la première. Fais un jet séparé pour chaque cible. En cas de réussite, tu infliges 4 dégâts et en cas d’échec tu infliges quand même 1 dégât."
+      },
+      {
+        "id": "resonant-palm",
+        "name": "Paume résonante",
+        "tier": 5,
+        "prerequisites": [
+          "mystic-step"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 7,
+          "options": []
+        },
+        "description": "Tu crées un lien mystique avec une créature consentante que tu touches, ou un ennemi que tu touches via une attaque réussie (cette attaque inflige 2 dégâts de moins). Pendant les dix prochains jours, peu importe la distance, tu peux : - Transférer une blessure de la créature vers toi. (Aucune aptitude ou équipement ne peut réduire la sévérité de cette blessure, mais tu peux te reprendre ou la traiter normalement.) - Faire une attaque à mains nues facilitée contre la cible, ou une attaque facilitée avec l’une de tes aptitudes, comme si elle était à portée. Le lien se brise après ton utilisation, si tu en crées un nouveau ou après dix jours."
+      },
+      {
+        "id": "perfected-form",
+        "name": "Forme parfaite",
+        "tier": 6,
+        "prerequisites": [
+          "exploding-hand"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Ta source mystique t’infuse jusqu’à ta prochaine récupération d’une heure ou plus, t’accordant 3 points que tu peux ajouter à n’importe laquelle de tes Réserves, même au‑delà de leur maximum. Ces points restent jusqu’à être dépensés ou jusqu’à la fin de la durée. De plus, pendant toute la durée : tes yeux et tes mains luisent de ta source mystique, tes attaques à mains nues infligent +3 dégâts. L’aptitude se renouvelle après ta prochaine récupération d’une heure ou plus."
+      },
+      {
+        "id": "lethal-strike",
+        "name": "Frappe létale",
+        "tier": 6,
+        "prerequisites": [
+          "exploding-hand",
+          "resonant-palm"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 6,
+          "options": []
+        },
+        "description": "With a swift and sudden melee or ranged weapon attack, you strike a foe in a vital spot. If you hit, you inflict an additional 7 damage. Action."
+      }
     ]
   },
   "folder": null,
   "sort": 0,
-  "ownership": { "default": 0 },
-  "flags": { "cypher": { "sourceLicense": "Résumé original fondé sur le Cypher Reference Document, créé sous la Cypher Open License." } }
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
 }

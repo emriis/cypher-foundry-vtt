@@ -24,38 +24,53 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "beast-companion",
         "name": "Beast Companion",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "You gain a follower that is a level 2 beast of your size or smaller that accompanies you and follows your instructions. You and your GM must work out the appearance and personality of your beast. Its movement is based on its creature type (avian, swimmer, and so on). If your beast companion dies, you can use your resource points to revive them or (by hunting in the wild for a few days) locate and befriend a new one. When working out the details of your follower, you might decide you’d like an animated plant companion rather than an animal."
+        "description": "You gain a follower that is a level 2 beast of your size or smaller that accompanies you and follows your instructions. You and your GM must work out the appearance and personality of your beast. Its movement is based on its creature type (avian, swimmer, and so on). If your beast companion dies, you can use your resource points to revive them or (by hunting in the wild for a few days) locate and befriend a new one. When working out the details of your follower, you might decide you'd like an animated plant companion rather than an animal."
       },
       {
+        "id": "friend-to-small-creatures",
         "name": "Friend to Small Creatures",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "A type of small creature you name that exists in the surrounding environment (such as insects, rats, bats, or birds) comes under your influence if you succeed on a difficulty 2 Intellect task for outdoor survival. Affected creatures within short range will not harm you or those you designate as allies until you use a ten-minute or longer recovery. This ability doesn’t work against hostile swarms of creatures of level 3 or higher. Your creatures—even common insects (level 0)—can swarm in large-enough numbers to hinder the attacks or defenses of a single target, or take some other action. You can use this ability to calm or command vines, grass blades, creepers, roots, or branches of nearby plants instead of animals. Effort: Your creatures collectively respond to your commands as an NPC ally. Action. An NPC ally can provide an asset to one task each round, like perception or defense, unless your GM decides the ally isn’t capable of providing that kind of asset."
+        "description": "A type of small creature you name that exists in the surrounding environment (such as insects, rats, bats, or birds) comes under your influence if you succeed on a difficulty 2 Intellect task for outdoor survival. Affected creatures within short range will not harm you or those you designate as allies until you use a ten-minute or longer recovery. This ability doesn't work against hostile swarms of creatures of level 3 or higher. Your creatures—even common insects (level 0)—can swarm in large-enough numbers to hinder the attacks or defenses of a single target, or take some other action. You can use this ability to calm or command vines, grass blades, creepers, roots, or branches of nearby plants instead of animals. Effort: Your creatures collectively respond to your commands as an NPC ally. Action. An NPC ally can provide an asset to one task each round, like perception or defense, unless your GM decides the ally isn't capable of providing that kind of asset."
       },
       {
+        "id": "seeds-of-fury",
         "name": "Seeds of Fury",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "You throw a handful of seeds in the air that ignite and speed toward a target within long range, scorching the air with twisting smoke trails. A successful attack deals 3 damage and catches the target on fire, inflicting +1 damage per round until the target uses an action to douse the flames or until you’ve taken your next recovery. Action."
+        "description": "You throw a handful of seeds in the air that ignite and speed toward a target within long range, scorching the air with twisting smoke trails. A successful attack deals 3 damage and catches the target on fire, inflicting +1 damage per round until the target uses an action to douse the flames or until you've taken your next recovery. Action."
       }
     ],
-    "statOptions": ["might", "intellect"],
-    "description": "<p>A Dungeon Fantasy Type focused on druid archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Dungeon Fantasy. Primary Pools: might, intellect.</em></p>"
+    "statOptions": [
+      "might",
+      "intellect"
+    ],
+    "description": "<p>You have a magical affinity for animals and the landscapes they inhabit. Sometimes you serve as a protector of forests, grasslands, seas, or some other region natural creatures need to survive and thrive; other times you rely on your connection to such places to protect and empower yourself. You might be part of an ancient, far-flung priesthood or a self-taught celebrant channeling the magic of the forest, moon, storm, and beast. Your expertise provides your group both offensive might and more discreet or tactful possibilities when you're traveling through or exploring wild environments. Your beast companion aids you and your allies in combat, and it also performs other tasks such as surveillance, distraction, tracking, reaching a location large creatures can't, and so on.</p>"
   },
   "folder": "pQTzt4j9XPpLBpKm",
   "sort": 0,
@@ -64,7 +79,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

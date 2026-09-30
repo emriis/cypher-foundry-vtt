@@ -24,38 +24,52 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "connected",
         "name": "Connecté·e",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "intellect",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
-        "description": "Tu connais des personnes qui savent obtenir des résultats — pas seulement des personnalités respectées occupant des postes d’autorité, mais aussi divers hackers en ligne et criminel·les de rue. Ces personnes ne sont pas nécessairement tes ami·es et ne sont pas toujours dignes de confiance, mais elles te doivent une faveur ou deux. Quand tu utilises cette aptitude, tu te remémores — ou tu établis — un **contact de niveau 2** que tu peux joindre **dans un lieu spécifique**. Avec ton MJ, définissez les détails. Cette aptitude **se renouvelle** quand tu accèdes à un **nouveau lieu**, ou **après au moins un mois** passé dans le même lieu où tu l’as utilisée pour la dernière fois. Au rang 3, tu peux établir deux contacts dans un lieu spécifique simultanément. Effort : Augmente le niveau du nouveau contact de +1."
+        "description": "Tu connais des personnes qui savent obtenir des résultats — hackers, criminels de rue, personnalités respectées. Ces contacts ne sont pas nécessairement amis ou dignes de confiance, mais te doivent une faveur. Quand tu utilises cette aptitude, tu te remémores ou établis un contact de niveau 2 que tu peux joindre dans un lieu spécifique. Cette aptitude se renouvelle quand tu accèdes à un nouveau lieu, ou après au moins un mois dans le même lieu. Au rang 3, tu peux établir deux contacts simultanément. Effort : Augmente le niveau du nouveau contact de +1."
       },
       {
+        "id": "fast-talk",
         "name": "Baratin",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "Quand tu parles à une créature intelligente qui peut te comprendre et qui n’est pas hostile, tu la convaincs d’accomplir **une action raisonnable** au **prochain round**. Une action raisonnable doit être approuvée par ton MJ ; elle ne doit pas mettre la créature ou ses allié·es en danger évident ni être totalement incohérente avec son comportement. Action"
+        "description": "Quand tu parles à une créature intelligente capable de te comprendre et qui n’est pas hostile, tu la convaincs d’accomplir une action raisonnable lors du prochain round. Cette action doit être validée par le·la MJ : elle ne doit pas être dangereuse pour la créature ou ses allié·e·s, ni contraire à sa nature."
       },
       {
+        "id": "inspiring-suggestion",
         "name": "Suggestion inspirante",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
-        "description": "Choisis un·e allié·e qui peut te voir et te comprendre facilement. Propose‑lui **une action précise** à entreprendre, par exemple « attaque le chef » ou « grimpe le mur ». Si l’allié·e choisit d’accomplir **exactement** cette action à son prochain tour, iel gagne **deux atouts** sur cette tâche. Première action"
+        "description": "Choose an ally who can see and easily understand you. Suggest a specific action for them to take, such as “attack the leader” or “climb the wall.” If the ally chooses to take that exact action on their next turn, they gain two assets on that task. First action."
       }
     ],
-    "statOptions": ["intellect"],
-    "description": "<p>Un Type de Space Opera centré sur l'archétype diplomate, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Science-fiction. Sous-genre : Space Opera. Réserves principales : Intellect.</em></p>"
+    "statOptions": [
+      "intellect"
+    ],
+    "description": "<p>You play the long game while everyone else is reacting to the latest provocation. You know how to smile, flatter, and offer gifts to your potential new ally, even when you'd prefer to jump across the table and strangle them. Sometimes less obvious means are required for negotiation. When possible, you try to discover as much as you can about who you'll be talking to. If they won't do as you ask initially, perhaps they'll make a deal in light of something they need that you can help arrange—or, if you're not above making veiled threats, because you know something they'd prefer not come out. You understand others, so you're probably someone who can advise and assist teammates and serve as an intermediary between your allies and strangers. Many times, a bit of diplomacy—or a bit of distraction through verbal diversion—is what allows the rest of the team to reach a sensitive location, talk your way out of the same, or, when the stakes are really high, avoid escalating tensions.</p>"
   },
   "folder": "DNZXZoUQ1z24nS44",
   "sort": 0,
@@ -64,7 +78,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

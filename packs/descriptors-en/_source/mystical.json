@@ -5,10 +5,17 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": ["intellect"],
+    "statOptions": [
+      "intellect"
+    ],
     "statAmount": 2,
-    "skillOptions": ["Magic Lore", "Psychic Lore", "Religious Lore", ""],
-    "description": "<p>You are attuned to the mysterious and the paranormal, drawn to ancient lore and hidden truths.</p><p><em>You gain +2 to your Intellect Pool, and training in Magic Lore, Psychic Lore or Religious Lore.</em></p>"
+    "skillOptions": [
+      "Magic Lore",
+      "Psychic Lore",
+      "Religious Lore",
+      ""
+    ],
+    "description": "<p>You think of yourself as mystical, attuned with the mysterious and the paranormal. Your true talents lie with the supernatural. You likely have experience with ancient lore, and you can sense and wield the supernatural—though whether that means “magic,” “psychic phenomena,” or something else is up to you (and probably up to those around you as well). Mystical characters often wear jewelry, such as a ring or an amulet, or have tattoos or other marks that show their interests.</p>"
   },
   "folder": null,
   "sort": 0,
@@ -17,7 +24,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

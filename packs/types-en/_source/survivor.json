@@ -24,38 +24,53 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "despite-my-wounds",
         "name": "Despite My Wounds",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "While you have two or more moderate wounds or one major wound, you get a free reroll on one action each round (as if you had spent 1 XP)."
+        "description": "While you have two or more moderate wounds or one major wound, you get a free reroll on one action each round (as if you had spent 1 XP). Enabler."
       },
       {
+        "id": "enhanced-scavenging",
         "name": "Enhanced Scavenging",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "intellect",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
-        "description": "When you roll to scavenge the postapocalyptic landscape for something useful and your roll is less than a 9, treat the roll as a 9. (This means you don’t get a GM intrusion if you roll a 1.) Your enhanced effect persists until you take a ten-minute or longer recovery. Effort: Increase the minimum number rolled for this ability by 3. At tier 3: The minimum number rolled for this ability increases to 12."
+        "description": "When you roll to scavenge the postapocalyptic landscape for something useful and your roll is less than a 9, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) Your enhanced effect persists until you take a ten-minute or longer recovery. Effort: Increase the minimum number rolled for this ability by 3. Enabler. At tier 3: The minimum number rolled for this ability increases to 12."
       },
       {
+        "id": "get-out",
         "name": "Get Out",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "If you move at least an immediate distance away from the most obvious threat or toward what promises to offer safety, one task you attempt next round is eased."
+        "description": "If you move at least an immediate distance away from the most obvious threat or toward what promises to offer safety, one task you attempt next round is eased. Enabler."
       }
     ],
-    "statOptions": ["might", "speed"],
-    "description": "<p>A Postapocalypse Type focused on survivor archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Science Fiction. Subgenre: Postapocalypse. Primary Pools: might, speed.</em></p>"
+    "statOptions": [
+      "might",
+      "speed"
+    ],
+    "description": "<p>You get by, but sometimes only just. Surviving means enduring situations that may seem unbearable. Sustaining yourself could mean you've had to harden your heart; with limited resources, even others who initially survived the apocalypse might have only put off the inevitable. But not you—you know how to find needful things among the remains of the past, you have the reflexes to avoid danger, and you have the flexibility required to prevail during the most difficult times. You help your team survive, mainly through your expertise in scavenging for food, shelter, and useful things. You're also reasonably good in a fight, though running away (at least a little bit) from immediate danger always gives you an edge in what happens next, which could be to help an ally.</p>"
   },
   "folder": "UwhTFa2lNkjiyB2j",
   "sort": 0,
@@ -64,7 +79,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

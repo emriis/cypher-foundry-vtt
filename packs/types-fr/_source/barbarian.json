@@ -24,38 +24,53 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "frenzy",
         "name": "Frénésie",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "intellect",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "En combat, tu peux entrer dans un état de frénésie. Tant que tu es dans cet état, tu **ne peux pas utiliser de points d’Intellect**, mais tu ajoutes **+1 à ton Atout de Puissance et à ton Atout de Célérité**. Cet effet dure aussi longtemps que tu le souhaites, mais il prend fin dès qu’aucun combat n’a lieu à portée de tes sens. Effort :  Tu facilites les attaques de tes allié·es contre un adversaire de ton choix pour le reste du combat."
+        "description": "En combat, tu peux entrer dans un état de frénésie. Tant que tu es dans cet état, tu ne peux pas utiliser de points d'Intellect, mais tu ajoutes +1 à ton Atout de Puissance et à ton Atout de Célérité. Cet effet dure aussi longtemps que tu le souhaites, mais il prend fin dès qu'aucun combat n'a lieu à portée de tes sens. Effort : Tu facilites les attaques de tes alliés contre un adversaire de ton choix pour le reste du combat."
       },
       {
+        "id": "wilderness-survival",
         "name": "Instinct de survie",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Tu sais survivre dans les terres inhabitées. Après avoir passé au moins dix minutes en pleine nature et réussi une tâche de *survie en plein air* de difficulté 2 (ou d’une difficulté que le MJ juge appropriée à la région), tu trouves quelque chose d’utile que tu recherchais. Cela peut être un abri sous la forme d’une grotte ou d’un creux d’arbre, de quoi allumer un feu, du gibier que tu abats sans difficulté, ou encore des baies, champignons, racines ou autres aliments. Tu sais également comment préparer au mieux tout gibier ou végétation récupéré et **tu peux nourrir jusqu’à cinq allié·es en plus de toi‑même**."
+        "description": "Tu sais survivre dans les terres inhabitées. Après avoir passé au moins dix minutes en pleine nature et réussi une tâche de survie en plein air de difficulté 2, tu trouves quelque chose d'utile que tu recherchais : abri, feu, gibier, baies, champignons, racines ou autres aliments. Tu sais également préparer au mieux tout gibier ou végétation récupéré et tu peux nourrir jusqu'à cinq alliés en plus de toi-même."
       },
       {
+        "id": "wounded-fury",
         "name": "Fureur du blessé",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Tant que tu as **au moins trois blessures modérées ou au moins une blessure majeure**, tu bénéficies d’un **niveau gratuit d’Effort** que tu peux appliquer **à l’une de tes attaques** à chaque round. Au rang 3, ce bénéfice passe à deux niveaux gratuits d’Effort."
+        "description": "Tant que tu as au moins trois blessures modérées ou au moins une blessure majeure, tu bénéficies d'un niveau gratuit d'Effort que tu peux appliquer à l'une de tes attaques à chaque round. Au rang 3, ce bénéfice passe à deux niveaux gratuits d'Effort."
       }
     ],
-    "statOptions": ["might", "speed"],
-    "description": "<p>Un Type de Dungeon Fantasy centré sur l'archétype barbare, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Dungeon Fantasy. Réserves principales : Puissance, Célérité.</em></p>"
+    "statOptions": [
+      "might",
+      "speed"
+    ],
+    "description": "<p>For you, every day is another chance to spill blood, drink ale, or both—and pick up a scar or two to commemorate the day. Born an outlander and a wanderer at heart, you've become an adventurer more by accident than design. They say you're savage, but only behind your back, lest they face your fury. Out of everyone in your group, you tend to draw the most attention from foes because you give up trepidation for rage. Fears fall away when your blood is up; all you see is red. Frenzy gives you strength, battle-minded purpose, and, more times than not, a path to victory. But when your battle fever passes, your lore of the wild places helps guide you and your allies through uncivilized lands where monsters, bandits, and other barbarians roam.</p>"
   },
   "folder": "N6LoBZte2sRtJhu7",
   "sort": 0,
@@ -64,7 +79,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

@@ -5,10 +5,17 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": ["intellect"],
+    "statOptions": [
+      "intellect"
+    ],
     "statAmount": 2,
-    "skillOptions": ["History", "Philosophy", "Psychology", ""],
-    "description": "<p>You have spent far more time with books and study than with physical pursuits, and it shows in how much you know.</p><p><em>You gain +2 to your Intellect Pool, and training in History, Philosophy or Psychology.</em></p>"
+    "skillOptions": [
+      "History",
+      "Philosophy",
+      "Psychology",
+      ""
+    ],
+    "description": "<p>You've spent most of your life in sedentary pursuits—reading books, watching the stars, writing poetry, and so on—rather than active ones. You're well-versed in all manner of academia or other intellectual pursuits. You're not necessarily weak or feeble (although this is a good descriptor for characters who are elderly), but you have no experience in more physical activities.</p>"
   },
   "folder": null,
   "sort": 0,
@@ -17,7 +24,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

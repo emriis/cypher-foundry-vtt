@@ -5,10 +5,17 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": ["speed"],
+    "statOptions": [
+      "speed"
+    ],
     "statAmount": 2,
-    "skillOptions": ["Hacking", "Initiative", "", ""],
-    "description": "<p>You're bold, energetic, and a little irreverent — quick to act and quick to speak your mind.</p><p><em>You gain +2 to your Speed Pool, and training in Hacking or Initiative.</em></p>"
+    "skillOptions": [
+      "Hacking",
+      "Initiative",
+      "",
+      ""
+    ],
+    "description": "<p>You're a self-assertive sort, confident in your abilities, energetic, and perhaps a bit irreverent toward ideas that you don't agree with. Some people call you bold and brave, but those you've put in their place might call you puffed up and arrogant. Whatever. It's not in your nature to care what other people think about you, unless those people are your friends or family. Even someone as brash as you knows that friends sometimes have to come first.</p>"
   },
   "folder": null,
   "sort": 0,
@@ -17,7 +24,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

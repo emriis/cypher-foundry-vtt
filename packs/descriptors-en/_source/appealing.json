@@ -5,10 +5,17 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": ["intellect"],
+    "statOptions": [
+      "intellect"
+    ],
     "statAmount": 2,
-    "skillOptions": ["Charm", "Recognizing Motive", "", ""],
-    "description": "<p>You have an easy, likeable charisma that puts strangers at ease and draws allies to your side.</p><p><em>You gain +2 to your Intellect Pool, and training in Charm or Recognizing Motive.</em></p>"
+    "skillOptions": [
+      "Charm",
+      "Recognizing Motive",
+      "",
+      ""
+    ],
+    "description": "<p>You're attractive to others, but perhaps more important, you are likeable and charismatic. You've got that “special something” that draws others to you. You often know just the right thing to say to make someone laugh, put them at ease, or spur them to action. People like you, want to help you, and want to be your friend.</p>"
   },
   "folder": null,
   "sort": 0,
@@ -17,7 +24,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

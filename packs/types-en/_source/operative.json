@@ -24,38 +24,53 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "escape",
         "name": "Escape",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "speed",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
-        "description": "When you roll to escape (such as slipping your restraints, squeezing through the bars, breaking the grip of a creature holding you, or pulling free from sucking quicksand) and your roll is less than a 9, treat the roll as a 9. (This means you don’t get a GM intrusion if you roll a 1.) Effort: Increase the minimum number rolled for this ability by 3. Action. At tier 3: The minimum number rolled for this ability increases to 12."
+        "description": "When you roll to escape (such as slipping your restraints, squeezing through the bars, breaking the grip of a creature holding you, or pulling free from sucking quicksand) and your roll is less than a 9, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) Effort: Increase the minimum number rolled for this ability by 3. Action. At tier 3: The minimum number rolled for this ability increases to 12."
       },
       {
+        "id": "sneak-attack",
         "name": "Sneak Attack",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "speed",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "If you use a light weapon to attack a foe under one of the following conditions, your attack inflicts +5 damage. (This ability doesn’t work with medium or heavy weapons.) You attack with surprise. An ally uses their action to ease your attack. Your foe’s defenses are hindered due to some other ongoing direct distraction. Your foe is unable to take their next turn due to some disabling attack or situation. First action."
+        "description": "If you use a light weapon to attack a foe under one of the following conditions, your attack inflicts +5 damage. (This ability doesn't work with medium or heavy weapons.) You attack with surprise. An ally uses their action to ease your attack. Your foe's defenses are hindered due to some other ongoing direct distraction. Your foe is unable to take their next turn due to some disabling attack or situation. First action."
       },
       {
+        "id": "spin-identity",
         "name": "Spin Identity",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
-        "description": "When you roll to convince an intelligent creature (including computers and surveillance systems) that you are someone or something other than who you actually are, and your roll is less than a 6, treat the roll as a 6. (This means you don’t get a GM intrusion if you roll a 1.) This ability doesn’t let you impersonate a specific individual. Instead, you convince onlookers that you are someone they do not know belonging to a certain category of people. “I’m with the government.” “I’m just a simple traveler going about my business.” “Your commander sent me.” Successful uses of Spin Identity persist until you use a ten-minute or longer recovery, unless your actions or other circumstances reveal your true identity earlier. Effort: Increase the minimum number rolled for this ability by 3. Action. At tier 3: The minimum number rolled for this ability increases to 12."
+        "description": "When you roll to convince an intelligent creature (including computers and surveillance systems) that you are someone or something other than who you actually are, and your roll is less than a 6, treat the roll as a 6. (This means you don't get a GM intrusion if you roll a 1.) This ability doesn't let you impersonate a specific individual. Instead, you convince onlookers that you are someone they do not know belonging to a certain category of people. “I'm with the government.” “I'm just a simple traveler going about my business.” “Your commander sent me.” Successful uses of Spin Identity persist until you use a ten-minute or longer recovery, unless your actions or other circumstances reveal your true identity earlier. Effort: Increase the minimum number rolled for this ability by 3. Action. At tier 3: The minimum number rolled for this ability increases to 12."
       }
     ],
-    "statOptions": ["speed", "intellect"],
-    "description": "<p>A Hard Science Fiction Type focused on operative archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Science Fiction. Subgenre: Hard Science Fiction. Primary Pools: speed, intellect.</em></p>"
+    "statOptions": [
+      "speed",
+      "intellect"
+    ],
+    "description": "<p>You imagine yourself as the glitch in the system, or the “ghost in the machine” that gets in and then out without alerting automated surveillance until you're already elsewhere. As far as your foes are concerned, you're one of them, blending in with everyone else so that no one suspects you're an operative working for the enemy. But if you are caught out, you don't hesitate—you eliminate those who recognize you so quickly that they can't raise the alarm. Some situations would benefit from having someone on your team already on the inside, which is perfect for you. Or at least someone who doesn't draw enemy fire until you can slip past perimeter security to shut down surveillance and/or take out guards who don't realize you're a foe.</p>"
   },
   "folder": "t6C5D0PsA9y7RaFQ",
   "sort": 0,
@@ -64,7 +79,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

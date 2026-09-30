@@ -5,10 +5,18 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": ["speed", "might"],
+    "statOptions": [
+      "speed",
+      "might"
+    ],
     "statAmount": 2,
-    "skillOptions": ["Discernement des motivations", "", "", ""],
-    "description": "<p>Tu t'attends souvent au pire. Il t'est plus facile d'anticiper les problèmes et d'être surpris quand les choses se passent bien.</p><p><em>Tu gagnes +2 à ta Réserve de Célérité ou Puissance, et un entrainement en Discernement des motivations.</em></p>"
+    "skillOptions": [
+      "Discernement des motivations",
+      "",
+      "",
+      ""
+    ],
+    "description": "<p>Tu t'attends souvent au pire. Il t'est plus facile d'anticiper les problèmes et d'être surpris quand les choses se passent bien.</p>"
   },
   "folder": null,
   "sort": 0,
@@ -17,7 +25,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Construit sous la Cypher Open License à partir du contenu du Cypher Reference Document (CRD)."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

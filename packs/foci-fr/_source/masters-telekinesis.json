@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/svg/aura.svg",
   "system": {
-    "description": "<p>Un Focus pour déplacer des objets par la pensée.</p>",
+    "description": "<p>You can telekinetically move objects with your mind without physically touching them.</p>",
     "abilities": [
       {
         "id": "push",
@@ -19,7 +19,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Repousse une cible visible."
+        "description": "Tu repousses télékinétiquement une cible à portée courte d’une distance immédiate, dans n’importe quelle direction. Tu dois voir la cible ; elle doit être de ta taille ou plus petite, et ne pas être fixée. La poussée est brusque, comparable à un coup de pied ou de poing."
       },
       {
         "id": "steady-hand",
@@ -33,7 +33,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Gagne de l'Effort gratuit."
+        "description": "Tu utilises ta télékinésie pour te stabiliser ou améliorer ta prise, ce qui te donne un niveau d’Effort gratuit pour une tâche physique non liée au combat. Tu ne peux pas réutiliser cette aptitude avant une récupération."
       },
       {
         "id": "telekinesis",
@@ -47,7 +47,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Manipule un objet distant."
+        "description": "You telekinetically affect an object you can see within long range that is not too heavy for you to physically affect if you were standing next to it and could use your hands normally. Options include closing or opening a door, writing a simple symbol or a few words with a writing instrument, transferring an object a short distance, wresting an object from another creature's grasp (on a successful Intellect roll versus their level), pushing a creature an immediate distance (with a successful attack roll), or even hindering a creature's attack or defense by applying restraining pressure to a leg or arm (with a successful attack roll). In all cases, the effect must occur over the course of one round. Action."
       },
       {
         "id": "deflect-attacks",
@@ -64,7 +64,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Dévie les projectiles."
+        "description": "You automatically block, deflect, or dodge any ranged projectile attacks (no roll required). However, on your next turn after you're attacked with ranged projectiles, all your other actions are hindered. This ability lasts until you use a ten-minute or longer recovery. Action to initiate."
       },
       {
         "id": "energize-object",
@@ -80,7 +80,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Infuse un objet d'énergie."
+        "description": "Tu infuses un objet (arme de mêlée ou à distance) d’une énergie psychokinétique. Jusqu’à ta prochaine récupération d’une heure ou plus, tes attaques avec cet objet infligent +1 dégât supplémentaire d’énergie (si l’arme tire des projectiles comme des balles pour un fusil, ce dégât supplémentaire s’applique aux projectiles). L’énergie disparaît si tu cesses de tenir l’objet — mais tu peux, en action supplémentaire à ton tour, énergiser un autre objet."
       },
       {
         "id": "armoring-debris",
@@ -96,7 +96,7 @@
           "amount": 5,
           "options": []
         },
-        "description": "Protège avec des débris."
+        "description": "Tu fais léviter de petits objets se trouvant autour de toi (rochers, morceaux brisés, mottes de terre…) pour intercepter les attaques jusqu’à ta prochaine récupération de dix minutes ou plus. Tes tâches de Blocage sont facilitées d’un palier (Esquive inchangée)."
       },
       {
         "id": "enhance-strength",
@@ -112,7 +112,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "Amplifie la force."
+        "description": "Jusqu’à ta prochaine récupération de dix minutes ou plus, tu utilises ta télékinésie pour amplifier tes actions physiques. Pour toute tâche de force brute (ouvrir une porte verrouillée, porter un poids, attaquer avec une arme de mêlée ou de jet…), si ton résultat est inférieur à 9, considère qu’il est de 9. (Tu évites ainsi une Intrusion du·de la MJ si tu fais un 1.) Au rang 3, le minimum passe à 12. Effort : augmenter le minimum de +3."
       },
       {
         "id": "apportation",
@@ -128,7 +128,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Attire un objet."
+        "description": "Tu attires à toi un objet physique depuis presque n’importe quelle distance. Tu peux choisir n’importe quel objet d’équipement standard de ton genre ou une fois par récupération de dix heures, laisser le·la MJ tirer un objet aléatoire. Tu ne peux pas récupérer un objet tenu par quelqu’un. L’objet apparaît à côté de toi."
       },
       {
         "id": "mind-for-speed",
@@ -144,7 +144,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Échange les coûts."
+        "description": "Pour une tâche qui exigerait normalement de dépenser des points d’Intellect, tu peux dépenser des points de Célérité, et vice versa."
       },
       {
         "id": "psychokinetic-attack",
@@ -161,7 +161,7 @@
           "amount": 5,
           "options": []
         },
-        "description": "Lance ou brise par la pensée."
+        "description": "Tu peux utiliser cette aptitude de deux façons : - Lancer lourd : Tu saisis télékinétiquement un objet à portée courte et le jettes sur une cible à portée courte. (Pour lancer une créature au lieu d’un objet, tu dois d’abord la saisir via une attaque d’Intellect.) Si tu réussis l’attaque, la cible subit 6 dégâts. - Explosion fracturante : Tu brises par pure force psychique un objet à portée courte d’une taille allant jusqu’à la moitié de la tienne. Ton attaque d’Intellect est facilitée de trois paliers par rapport à un coup physique. En cas de réussite, l’objet est détruit."
       },
       {
         "id": "improved-apportation",
@@ -177,7 +177,7 @@
           "amount": 6,
           "options": []
         },
-        "description": "Attire une créature."
+        "description": "Tu attires à toi une créature de niveau 3 ou moins depuis presque n’importe quelle distance. Tu peux choisir un type de créature que tu as déjà rencontré ou laisser le·la MJ en déterminer une au hasard (une fois par récupération de dix heures). La créature apparaît à côté de toi, sans souvenir de sa vie passée, mais avec les connaissances générales de son espèce. Elle est ouverte à la communication et à l’aide."
       },
       {
         "id": "reshape",
@@ -193,7 +193,7 @@
           "amount": 5,
           "options": []
         },
-        "description": "Remodèle la matière."
+        "description": "Tu remodèles la matière dans une zone d’un cube de 1,5 m à portée courte. Avec une seule action : la forme est grossière au mieux. Avec 10 minutes et une tâche d’artisanat entravée, tu peux faire des formes complexes. Tu ne modifies pas la nature du matériau, seulement sa forme. Exemples : percer un mur ou le sol, sceller un trou, forger une épée à partir d’un lingot, casser ou réparer une chaîne. En répétant l’aptitude, tu peux créer de plus grandes structures (murs, ponts, etc.)."
       }
     ]
   },
@@ -204,7 +204,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

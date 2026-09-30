@@ -5,10 +5,17 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": ["might"],
+    "statOptions": [
+      "might"
+    ],
     "statAmount": 2,
-    "skillOptions": ["Athletics", "Escaping", "", ""],
-    "description": "<p>You're tougher than you look, able to take a beating and keep going without panic.</p><p><em>You gain +2 to your Might Pool, and training in Athletics or Escaping.</em></p>"
+    "skillOptions": [
+      "Athletics",
+      "Escaping",
+      "",
+      ""
+    ],
+    "description": "<p>You're tougher than most, which means you can take some punishment and come back for more. But if events do overtake you, you don't panic—you just concentrate on getting out of whatever's constraining you. Being resilient is at least partly about knowing how to get out of a bad situation.</p>"
   },
   "folder": null,
   "sort": 0,
@@ -17,7 +24,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

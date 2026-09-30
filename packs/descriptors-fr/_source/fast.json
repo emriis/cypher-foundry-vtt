@@ -5,10 +5,17 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": ["speed"],
+    "statOptions": [
+      "speed"
+    ],
     "statAmount": 2,
-    "skillOptions": ["Initiative", "", "", ""],
-    "description": "<p>Tu es vif·ve comme l'éclair. Rapide de corps, de mains, de pensée et de parole.</p><p><em>Tu gagnes +2 à ta Réserve de Célérité, et un entrainement en Initiative.</em></p>"
+    "skillOptions": [
+      "Initiative",
+      "",
+      "",
+      ""
+    ],
+    "description": "<p>Tu es vif·ve comme l'éclair. Rapide de corps, de mains, de pensée et de parole.</p>"
   },
   "folder": null,
   "sort": 0,
@@ -17,7 +24,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Construit sous la Cypher Open License à partir du contenu du Cypher Reference Document (CRD)."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

@@ -24,68 +24,94 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "cypher-use",
         "name": "Cypher Use",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
         "description": "You can bear one additional cypher at a time."
       },
       {
+        "id": "idol",
         "name": "Idol",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 3
+          "amount": 3,
+          "options": []
         },
-        "description": "At the conclusion of a ten-minuteritual, you create an idol that persists until its magic is exhausted. The idol could be a symbol etched in stone, a figurine woven from twigs, a small carving, or something similar. The idol must be set on a solid surface with a nod toward being protected from the elements, such as being set in a tree hollow, at the base of a wall, or inside a structure. The idol’s holy connection to the ineffable provides your choice of one of the following fixed benefits. Whoever prays to the idol as their action gains this benefit whether you are present or not. The idol has a depletion of 1–2 in 1d6; roll each time it grants its benefit to someone."
+        "description": "At the conclusion of a ten-minute ritual, you create an idol that persists until its magic is exhausted. The idol could be a symbol etched in stone, a figurine woven from twigs, a small carving, or something similar. The idol must be set on a solid surface with a nod toward being protected from the elements, such as being set in a tree hollow, at the base of a wall, or inside a structure. The idol's holy connection to the ineffable provides your choice of one of the following fixed benefits. Whoever prays to the idol as their action gains this benefit whether you are present or not. The idol has a depletion of 1–2 in 1d6; roll each time it grants its benefit to someone."
       },
       {
+        "id": "bestial-fury",
         "name": "Bestial Fury",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "The supplicant is infused with a latent spirit of bestial fury. The fury activates when the supplicant loses their temper or they choose to rouse it as an extra action on their turn. When the fury emerges, the character visibly changes into a swollen, rage-filled version of themselves. While furious, they can’t spend Intellect points for any reason other than to try to regain their composure. They attack any and every living creature within short range, rolling twice for each attack and taking the better result. The fury lasts until they use a ten-minute or longer recovery or they use an action to succeed on a difficulty 2 Intellect task. When the supplicant reverts to normal, the physical toll of the change deals two moderate wounds. (A furious NPC supplicant is effectively one level higher and takes 6 damage when the fury ends.)"
+        "description": "The supplicant is infused with a latent spirit of bestial fury. The fury activates when the supplicant loses their temper or they choose to rouse it as an extra action on their turn. When the fury emerges, the character visibly changes into a swollen, rage-filled version of themselves. While furious, they can't spend Intellect points for any reason other than to try to regain their composure. They attack any and every living creature within short range, rolling twice for each attack and taking the better result. The fury lasts until they use a ten-minute or longer recovery or they use an action to succeed on a difficulty 2 Intellect task. When the supplicant reverts to normal, the physical toll of the change deals two moderate wounds. (A furious NPC supplicant is effectively one level higher and takes 6 damage when the fury ends.)"
       },
       {
+        "id": "healing",
         "name": "Healing",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "The severity of one of the supplicant’s wounds is reduced by one step."
+        "description": "The severity of one of the supplicant's wounds is reduced by one step."
       },
       {
+        "id": "spiritual-cleanse",
         "name": "Spiritual Cleanse",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
         "description": "The supplicant is freed from one curse, demonic possession, or similar spiritual affliction of level 5 or less. Effort: You can carry the idol with you. Ten minutes to initiate."
       },
       {
+        "id": "retribution",
         "name": "Retribution",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "You call forth the powers of a deity to assail a foe within short range that you can see. If your Intellect attack hits, the target takes3 damage; they are also marked with an obvious signrelating to that deity until you take a ten-minute or longer recovery. For example, if you call for the retribution of Thesk the Serpent Lord, the attack looks like ephemeral snakes twining around and biting your foe, and they are marked on their forehead or another obvious location with glowing fangs or a snake’s head. Last action. At tier 3: The retribution increases to 5 damage."
+        "description": "You call forth the powers of a deity to assail a foe within short range that you can see. If your Intellect attack hits, the target takes 3 damage; they are also marked with an obvious sign relating to that deity until you take a ten-minute or longer recovery. For example, if you call for the retribution of Thesk the Serpent Lord, the attack looks like ephemeral snakes twining around and biting your foe, and they are marked on their forehead or another obvious location with glowing fangs or a snake's head. Last action. At tier 3: The retribution increases to 5 damage."
       }
     ],
-    "statOptions": ["intellect"],
-    "description": "<p>A Swords & Sorcery Type focused on priest archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Swords & Sorcery. Primary Pools: intellect.</em></p>"
+    "statOptions": [
+      "intellect"
+    ],
+    "description": "<p>You propitiate the dark ones, ancient entities, or possibly a very real and present god who will punish you if you fail to continue singing their praises and offering sacrifices. But in return for your worship and idolatry, you can call upon their antediluvian aid, allowing you to manifest inexplicable powers to heal, enhance, cleanse, or punish. Your allies count on you to interpret strange dreams, identify lost gods and their works, heal and ward them against malign influences, and, when it matters most, step into a fight with your magic or weapon. You've journeyed long and far enough to know that the capacity to strike a foe down with an axe or sword is just as much a blessing as magic, as long as thanks are given afterward.</p>"
   },
   "folder": "zBqRagUFEUelogPi",
   "sort": 0,
@@ -94,7 +120,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

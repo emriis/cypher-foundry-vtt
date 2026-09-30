@@ -5,10 +5,10 @@
   "type": "focus",
   "img": "icons/creatures/mammals/wolf-howl-moon-black.webp",
   "system": {
-    "description": "<p>Un Focus pour un personnage dont le lien avec les bêtes est surnaturel.</p>",
+    "description": "<p>Your ability to communicate and lead beasts is uncanny.</p>",
     "abilities": [
       {
-        "id": "animal-companion",
+        "id": "beast-companion",
         "name": "Compagnon animal",
         "tier": 1,
         "prerequisites": [],
@@ -19,7 +19,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Gagne un suivant bête de niveau 2."
+        "description": "Tu gagnes un·e suivant·e de niveau 2, une bête de ta taille ou plus petite, qui t’accompagne et suit tes instructions. Toi et le·la MJ définissez son apparence et sa personnalité. Son déplacement dépend de son type (oiseau, nageur·euse, etc.). Si ton compagnon animal meurt, tu peux utiliser tes ressources pour chasser quelques jours dans la nature afin d’en trouver un·e nouveau·elle et l’apprivoiser. Facilitateur."
       },
       {
         "id": "friend-to-small-creatures",
@@ -33,10 +33,10 @@
           "amount": 1,
           "options": []
         },
-        "description": "Influence un grand groupe de petites créatures ou de plantes."
+        "description": "A broad type of small creature you name that exists in the surrounding environment (such as insects, rats, bats, or birds) comes under your influence if you succeed on a difficulty 2 Intellect task for outdoor survival. Affected creatures within short range will not harm you or those you designate as allies until you use a ten-minute or longer recovery. This ability doesn't work against hostile  swarms of creatures of level 3 or higher. Your creatures—even common insects (level 0)—can swarm in large-enough numbers to hinder the attacks or defenses of a single target, or take some other action. This ability could instead be used to calm or command vines, grass blades, creepers, roots, or branches of nearby plants rather than animals or insects. Effort: Your creatures respond to your commands as NPC allies. Action to initiate. Understand Beast (2 Intellect): You sense the level, the nature, and any special abilities of a nonhuman creature within immediate range. Last action. The GM has final say over what counts as a nonhuman beast. Unless some kind of deception is at work, you should know whether you can affect a creature before you attempt to use Soothe the Savage on them. Aliens, extradimensional entities, very intelligent creatures, and robots never count."
       },
       {
-        "id": "understand-beasts",
+        "id": "understand-beast",
         "name": "Comprendre les bêtes",
         "tier": 1,
         "prerequisites": [],
@@ -47,7 +47,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Apprends le niveau, la nature et les aptitudes spéciales d'une créature non humaine."
+        "description": "Tu perçois le niveau, la nature et les aptitudes spéciales d’une créature non humaine à portée immédiate. Dernière action."
       },
       {
         "id": "beast-communication",
@@ -55,7 +55,7 @@
         "tier": 2,
         "prerequisites": [
           "friend-to-small-creatures",
-          "understand-beasts"
+          "understand-beast"
         ],
         "repeatable": false,
         "enabler": false,
@@ -64,7 +64,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Échange des concepts simples avec une bête."
+        "description": "Tu transmets un concept simple à une créature qui ne parle pas et ne comprend pas la parole. Elle peut aussi te donner une réponse très simple à une question simple."
       },
       {
         "id": "soothe-the-savage",
@@ -72,7 +72,7 @@
         "tier": 2,
         "prerequisites": [
           "friend-to-small-creatures",
-          "understand-beasts"
+          "understand-beast"
         ],
         "repeatable": false,
         "enabler": false,
@@ -81,14 +81,14 @@
           "amount": 2,
           "options": []
         },
-        "description": "Apaise une bête non humaine proche."
+        "description": "Fais un jet d’attaque d’Intellect pour apaiser une bête non humaine à portée courte qui peut te voir. Tu dois lui parler (même si elle n’a pas besoin de comprendre tes paroles). Elle reste calme jusqu’à ta prochaine récupération de dix minutes ou plus, ou aussi longtemps que tu continues à utiliser ton action pour l’apaiser. Action."
       },
       {
         "id": "mount",
         "name": "Monture",
         "tier": 3,
         "prerequisites": [
-          "animal-companion",
+          "beast-companion",
           "beast-communication"
         ],
         "repeatable": false,
@@ -98,7 +98,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Gagne une monture bête de niveau 3 ou promeut un compagnon."
+        "description": "Tu gagnes un·e suivant·e animal·e de niveau 3 qui te sert de monture. Tu définis avec le·la MJ son apparence et sa personnalité. Son déplacement dépend de son type (oiseau, nageur·euse, etc.). À la place d’obtenir une nouvelle monture, ton compagnon animal peut devenir ta monture (via une croissance ou évolution), ce qui augmente son niveau à 3, et tu gagnes alors un nouveau compagnon animal de niveau 2. Lorsque tu chevauche ta monture : elle peut se déplacer pendant ton tour et tu peux attaquer en bénéficiant d’un atout sur l’attaque. (Il s’agit d’une exception spéciale : les suivant·e·s n’apportent normalement pas d’atout offensif.) Toute aptitude affectant ton compagnon animal (comme Yeux de bête ou Compagnon amélioré) peut affecter ta monture à la place. Si ta monture meurt, tu peux utiliser tes ressources pour chasser dans la nature pendant environ une semaine et en apprivoiser une nouvelle."
       },
       {
         "id": "stronger-together",
@@ -115,7 +115,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Toi et un allié animal proche gagnez des bénéfices offensifs et défensifs."
+        "description": "Lorsque toi et ton compagnon animal (ou une bête apaisée via Apaiser la bête) êtes à portée immédiate l’un·e de l’autre, tu infliges 2 dégâts supplémentaires quand tu attaques et vous obtenez tous·tes les deux un atout aux tâches de défense. Facilitateur."
       },
       {
         "id": "beast-eyes",
@@ -132,7 +132,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "Perçois par les sens d'un compagnon."
+        "description": "Tu lies ton esprit à celui de ton compagnon animal (ou une bête apaisée via Apaiser la bête, tant qu’elle reste bien disposée). Tu perçois par ses sens tant qu’il est à 1,5 km de toi. L’effet dure jusqu’à ta prochaine récupération de dix minutes ou plus."
       },
       {
         "id": "improved-companion",
@@ -149,10 +149,10 @@
           "amount": 0,
           "options": []
         },
-        "description": "Augmente le niveau d'un compagnon de 1."
+        "description": "Augmente le niveau de ton compagnon animal (et ses modificateurs, si applicables) de 1. Tu peux prendre cette aptitude trois fois. À chaque fois, ton compagnon animal gagne +1 niveau."
       },
       {
-        "id": "animal-healing",
+        "id": "beast-betterment",
         "name": "Guérison animale",
         "tier": 5,
         "prerequisites": [
@@ -166,10 +166,10 @@
           "amount": 0,
           "options": []
         },
-        "description": "Récupère des points de Réserve supplémentaires près de ton compagnon."
+        "description": "Lorsque tu fais une récupération à portée immédiate de ton compagnon animal, tu gagnes 3 points de Réserve supplémentaires. Facilitateur."
       },
       {
-        "id": "call-the-beast",
+        "id": "beast-call",
         "name": "Appel de la bête",
         "tier": 5,
         "prerequisites": [
@@ -183,15 +183,15 @@
           "amount": 5,
           "options": []
         },
-        "description": "Appelle temporairement une bête ou une nuée de niveau 4."
+        "description": "Tu invoques temporairement : une bête de niveau 4, ou une nuée de petites bêtes (fonctionnant collectivement comme une créature de niveau 4) pour t’aider. La ou les bêtes t’obéissent tant que tu te concentres sur elles, mais tu dois utiliser ton action chaque round pour les diriger. Les bêtes sont natives de la zone et viennent par leurs propres moyens ; si l’endroit est inaccessible, l’aptitude échoue. Action."
       },
       {
-        "id": "beast-armor",
+        "id": "armored-beast",
         "name": "Armure de la bête",
         "tier": 6,
         "prerequisites": [
-          "animal-healing",
-          "call-the-beast"
+          "beast-betterment",
+          "beast-call"
         ],
         "repeatable": false,
         "enabler": true,
@@ -200,15 +200,15 @@
           "amount": 0,
           "options": []
         },
-        "description": "Augmente l'Armure de ton compagnon."
+        "description": "L’Armure de ton compagnon animal augmente de 2. Facilitateur."
       },
       {
-        "id": "dominate-beast",
+        "id": "control-the-savage",
         "name": "Dominer la bête",
         "tier": 6,
         "prerequisites": [
-          "animal-healing",
-          "call-the-beast"
+          "beast-betterment",
+          "beast-call"
         ],
         "repeatable": false,
         "enabler": false,
@@ -217,7 +217,7 @@
           "amount": 6,
           "options": []
         },
-        "description": "Contrôle une bête non humaine apaisée."
+        "description": "Tu fais une attaque d’Intellect pour contrôler une bête non humaine calme à portée courte. Tu la contrôles tant que tu utilises ton action chaque round pour te concentrer sur la cible. Action."
       }
     ]
   },
@@ -228,7 +228,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

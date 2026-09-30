@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/svg/crown.svg",
   "system": {
-    "description": "<p>Un Focus pour une personne qui dirige ses allié·e·s et suivant·e·s.</p>",
+    "description": "<p>Your natural leadership capability allows you to command others, including a loyal band of followers.</p>",
     "abilities": [
       {
         "id": "always-witty",
@@ -19,7 +19,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Récupère 1 Intellect supplémentaire à chaque récupération."
+        "description": "Chaque fois que tu fais une récupération, si ta Réserve d’Intellect n’est pas déjà pleine, tu récupères 1 point d’Intellect supplémentaire. Tu peux sélectionner cette aptitude jusqu’à trois fois."
       },
       {
         "id": "inspiring-suggestion",
@@ -33,7 +33,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Un·e allié·e suivant la suggestion reçoit deux atouts."
+        "description": "When you make a helpful suggestion to an ally, they have a better chance of succeeding at what they're doing. Choose an ally who can see and understand you, then suggest a specific action for them to take, such as “attack the leader” or “climb the wall.” If the ally chooses to take that exact action, they gain two assets on that task. First action."
       },
       {
         "id": "lighting-a-fire-under-them",
@@ -47,7 +47,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "La prochaine action d'un·e allié·e devient une Première action."
+        "description": "Tu donnes un ordre à un·e allié·e ou à un·e suivant·e à portée courte, et sa prochaine action devient une Première action (si elle avait été une Dernière action, elle agit normalement). Tu ne peux réutiliser cette aptitude qu’après ta prochaine récupération de dix minutes ou plus."
       },
       {
         "id": "basic-follower",
@@ -64,7 +64,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Gagne un·e suivant·e de niveau 2 doté·e de deux modifications de niveau 3."
+        "description": "Tu gagnes un·e suivant·e de niveau 2, doté·e de deux modifications de niveau 3 (dont une en persuasion). Tu peux prendre cette aptitude autant de fois que tu veux, gagnant un·e nouveau·elle suivant·e à chaque fois."
       },
       {
         "id": "natural-leader",
@@ -81,7 +81,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "Les jets sociaux inférieurs à 9 comptent comme 9 ; l'Effort augmente ce minimum."
+        "description": "Quand tu fais un jet pour marchander, tromper, charmer, interroger, intimider ou persuader, si ton résultat est inférieur à 9, considère qu’il est de 9. (Tu évites ainsi une Intrusion du·de la MJ si tu fais un 1.) Cet effet se réinitialise à chaque récupération. Au rang 3, le minimum passe à 12. Effort : augmenter le minimum de +3."
       },
       {
         "id": "advanced-command",
@@ -97,7 +97,7 @@
           "amount": 7,
           "options": []
         },
-        "description": "Commande une créature après une tâche d'Intellect réussie."
+        "description": "Tu donnes un ordre à une créature à portée courte qui peut t’entendre et te comprendre. Avec un jet d’attaque d’Intellect réussi, elle obéit. Tu peux continuer à lui donner un ordre à chaque tour comme action : chaque ordre nécessite un jet d’Intellect réussi mais aucun coût supplémentaire n’est requis. L’effet cesse si tu arrêtes de donner des ordres, la créature sort de portée ou elle ne peut plus te comprendre."
       },
       {
         "id": "expert-follower",
@@ -113,7 +113,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Gagne ou améliore un·e suivant·e de niveau 3 avec trois modifications de niveau 4."
+        "description": "Tu gagnes un·e suivant·e de niveau 3, doté·e de trois modifications de niveau 4 de ton choix. À la place, tu peux améliorer un·e suivant·e existant·e au niveau 3 et gagner un·e nouveau·elle suivant·e de niveau 2. Tu peux prendre cette aptitude plusieurs fois."
       },
       {
         "id": "calm",
@@ -129,7 +129,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "Empêche un adversaire vivant d'attaquer pendant un round."
+        "description": "Through jokes, song, or other art, you prevent a living foe from attacking anyone or anything for one round. Action."
       },
       {
         "id": "captivate-or-inspire",
@@ -145,7 +145,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Capte l'attention d'un public ou améliore son niveau effectif."
+        "description": "You can use this ability in one of two ways. Captivate: Your words keep the attention of all NPCs that hear them for as long as you speak. Inspire: Your words inspire all NPCs that hear them, allowing them to perform tasks as if one level higher until you use a one-hour or longer recovery. In either case, you choose which NPCs are affected. If anyone in the crowd is attacked while you're trying to speak to them, you lose the crowd's attention. Action to initiate."
       },
       {
         "id": "improved-follower",
@@ -161,7 +161,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Améliore le niveau et les modifications d'un·e suivant·e."
+        "description": "Choisis un·e de tes suivant·e·s : son niveau augmente de 1, toutes ses modifications augmentent de +1, iel gagne une nouvelle modification (de niveau = niveau de base + 1). Tu peux prendre cette aptitude une fois par rang, pour améliorer le même suivant ou un autre."
       },
       {
         "id": "band-of-followers",
@@ -177,7 +177,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Gagne ou améliore une bande de suivant·e·s compétent·e·s."
+        "description": "Tu gagnes quatre suivant·e·s de niveau 3, chacun·e disposant de trois modifications de niveau 4. À la place, tu peux améliorer quatre suivant·e·s de niveau 2 au niveau 3 et gagner un·e nouveau·elle suivant·e de niveau 2 pour chacun d’eux."
       },
       {
         "id": "mind-of-a-leader",
@@ -193,7 +193,7 @@
           "amount": 6,
           "options": []
         },
-        "description": "Prépare un plan pour obtenir un indice et un atout aux allié·e·s informé·e·s."
+        "description": "Lorsque tu prépares un plan pour une situation future, tu peux poser une question très générale au/à la MJ sur ce qui risque d’arriver si tu exécutes ce plan. Tu obtiens une réponse simple et brève. Chaque allié·e connaissant le plan (toi inclus·e) gagne un atout pour un jet de son choix lié à cette situation, tant qu’elle survient dans les quelques jours suivants."
       },
       {
         "id": "stimulate",
@@ -209,7 +209,7 @@
           "amount": 6,
           "options": []
         },
-        "description": "Facilite de trois paliers la prochaine action d'une cible proche."
+        "description": "Tes paroles motivent une créature à portée immédiate qui peut te comprendre. Sa prochaine action est facilitée de trois paliers. (Pour cette tâche, la limite d’atouts est 3 au lieu de 2.)"
       }
     ]
   },
@@ -220,7 +220,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

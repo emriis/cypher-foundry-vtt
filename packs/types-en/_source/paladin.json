@@ -24,38 +24,53 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "combat-prowess",
         "name": "Combat Prowess",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
         "description": "You add +1 damage to one type of weapon attack of your choice: melee weapon attacks or ranged weapon attacks."
       },
       {
+        "id": "holy-succor",
         "name": "Holy Succor",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "intellect",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "While an allywithin immediate range of you has at least three moderate wounds or at least onemajor wound, you can extend your divine grace, granting them one free level of Effort they can apply each round to an attack or defense roll. The divine grace they are afforded lasts until the wounds are healed or they use a ten-minute or longer recovery. Each time you use Holy Succor, the Intellect cost increases by 1. The cost returns to 1 after you take a recovery."
+        "description": "While an ally within immediate range of you has at least three moderate wounds or at least one major wound, you can extend your divine grace, granting them one free level of Effort they can apply each round to an attack or defense roll. The divine grace they are afforded lasts until the wounds are healed or they use a ten-minute or longer recovery. Each time you use Holy Succor, the Intellect cost increases by 1. The cost returns to 1 after you take a recovery. Enabler."
       },
       {
+        "id": "sacred-smite",
         "name": "Sacred Smite",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "intellect",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
-        "description": "Choose one creature you can see that you want to be punished for their transgressions. Until you attack a different creature, your attacks against that creature deal +1 damage from divine energy coursing through your melee or ranged weapon. If the target is an undead creature, a demon, or of similar ilk as designated by your GM, you choose whether your successful attack inflicts +2 damage or your foe must flee from you for one turn. At tier 3: The bonus damage against undead, demons, and similar ilk increases to +3."
+        "description": "Choose one creature you can see that you want to be punished for their transgressions. Until you attack a different creature, your attacks against that creature deal +1 damage from divine energy coursing through your melee or ranged weapon. If the target is an undead creature, a demon, or of similar ilk as designated by your GM, you choose whether your successful attack inflicts +2 damage or your foe must flee from you for one turn. Enabler. At tier 3: The bonus damage against undead, demons, and similar ilk increases to +3."
       }
     ],
-    "statOptions": ["might", "intellect"],
-    "description": "<p>A Dungeon Fantasy Type focused on paladin archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Dungeon Fantasy. Primary Pools: might, intellect.</em></p>"
+    "statOptions": [
+      "might",
+      "intellect"
+    ],
+    "description": "<p>By the power granted to you through righteous divine will, you protect and heal the innocent, drive out and destroy the servants of evil, and strive to live up to your oaths of honor and service. As witnessed before your god, you stand for justice and against the forces of corruption—usually delivered by the holy power you channel through your weapon. You're among the first in your group to face your foes, seemingly fearless. You're most effective in situations where your presence can draw the attention of your foes away from your allies, especially as your gods-given power can serve as a proactive defense.</p>"
   },
   "folder": "pQTzt4j9XPpLBpKm",
   "sort": 0,
@@ -64,7 +79,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

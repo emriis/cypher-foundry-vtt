@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/svg/eye.svg",
   "system": {
-    "description": "<p>Un Focus pour utiliser les ombres et l’obscurité afin de se déplacer sans être vu·e, rapidement et avec fluidité.</p>",
+    "description": "<p>You use shadows and darkness to make your way unseen, moving quickly and smoothly, and you never seem to be where danger is. Maybe you use these abilities to hunt treasures, or maybe just to steal.</p>",
     "abilities": [
       {
         "id": "always-speedy",
@@ -19,7 +19,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Récupère un point de Célérité supplémentaire lorsqu’une récupération en rend, jusqu’à trois choix."
+        "description": "À chaque récupération, si ta Réserve de Célérité n’est pas déjà pleine, tu récupères 1 point supplémentaire dans cette Réserve. Tu peux sélectionner cette aptitude jusqu’à trois fois."
       },
       {
         "id": "natural-sneak",
@@ -33,7 +33,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Traite comme un 6 tout résultat inférieur à 6 en crochetage, perception, pickpocket ou furtivité; le minimum passe à 9 au rang 3."
+        "description": "Lorsque tu fais un jet de crochetage, de perception, de pickpocket, ou de furtivité, et que ton résultat est inférieur à 6, considère que tu as obtenu 6. (Un 1 naturel n’entraîne donc pas d’intrusion du·de la MJ.) L’aptitude se renouvelle lorsque tu fais une récupération. Au rang 3, le minimum passe à 9. Effort : augmente le minimum obtenu de +3."
       },
       {
         "id": "eyes-adjusted",
@@ -47,7 +47,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Voit en très faible luminosité comme en pleine lumière et dans l’obscurité totale comme en très faible lumière."
+        "description": "Tu vois dans en très faible luminosité comme s’il s’agissait de pleine lumière. Tu vois dans l’obscurité totale comme s’il s’agissait d’une très faible lumière."
       },
       {
         "id": "underworld-contacts",
@@ -64,7 +64,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Connaît des personnes impliquées dans des activités illégales qui te reconnaissent comme un pair, sans être forcément tes ami·e·s ni fiables."
+        "description": "Tu connais de nombreuses personnes, dans divers milieux, impliquées dans des activités illégales. Ce ne sont pas nécessairement tes ami·e·s, ni des gens fiables, mais iels te reconnaissent comme un pair. Toi et ton·ta MJ devez définir les détails de ces contacts."
       },
       {
         "id": "safe-fall",
@@ -81,7 +81,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Ignore une blessure provenant d’une chute."
+        "description": "Tu ignores une blessure provenant d’une chute."
       },
       {
         "id": "retaliatory-swipe",
@@ -97,7 +97,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "Après avoir été touché·e par une attaque de mêlée, effectue immédiatement une attaque de mêlée contre l’assaillant·e, une fois par tour."
+        "description": "Lorsqu’une attaque de mêlée te touche, tu peux immédiatement effectuer une attaque de mêlée contre l’assaillant·e. Tu ne peux utiliser cette aptitude qu’une fois par tour."
       },
       {
         "id": "nine-lives",
@@ -113,7 +113,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Peut consacrer de l’Effort de Puissance ou de Célérité sur les jets de Blocage."
+        "description": "Tu peux consacrer de l’Effort de Puissance ou de Célérité sur des jets de blocage."
       },
       {
         "id": "unbalancing-strike",
@@ -130,7 +130,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Effectue une attaque de mêlée facilitée qui entrave toutes les actions de la cible à son prochain tour si elle touche."
+        "description": "Make a melee attack to knock your foe off balance. This attack is eased by two steps. If you succeed, you inflict damage and all actions they attempt on their next turn are hindered. Action."
       },
       {
         "id": "hard-won-resilience",
@@ -146,7 +146,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Peut subir une blessure modérée supplémentaire par rapport à la normale."
+        "description": "Due to your experiences, you've been exposed to all sorts of terrible things and are developing a general resistance. You can take one more moderate wound than normal."
       },
       {
         "id": "dirty-fighter",
@@ -162,7 +162,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Effectue une attaque de Célérité contre un ennemi à longue portée pour entraver ses attaques et défenses jusqu’à une récupération de dix minutes."
+        "description": "Fais une attaque de Célérité contre un ennemi à longue portée que tu souhaites distraitre, aveugler, irriter ou gêner. En cas de réussite, tu entraves ses attaques et ses défenses jusqu’à ta prochaine récupération de dix minutes ou plus."
       },
       {
         "id": "slippery-customer",
@@ -178,7 +178,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Ignore les malus d’obscurité et d’espaces exigus, et gagne un atout en furtivité dans la pénombre ou l’obscurité."
+        "description": "Tu ignores tous les malus liés à la très faible lumière ou à l’obscurité. Tu ignores les malus dus à des espaces exigus. Tu gagnes un atout sur les tâches de furtivité en faible lumière, très faible lumière ou obscurité."
       },
       {
         "id": "again-and-again",
@@ -195,7 +195,7 @@
           "amount": 6,
           "options": []
         },
-        "description": "Effectue une action supplémentaire pendant ton tour."
+        "description": "You can take an extra action on your turn. Enabler."
       },
       {
         "id": "alley-rat",
@@ -212,7 +212,7 @@
           "amount": 6,
           "options": []
         },
-        "description": "En ville, trouve ou crée un raccourci, une entrée secrète ou un passage d’évasion grâce à une tâche d’Intellect."
+        "description": "En ville, tu peux tenter de trouver ou créer un raccourci, une entrée secrète, ou un passage d’évasion là où il semblait n’y avoir aucune issue. Pour réussir, tu dois effectuer une tâche d’Intellect dont la difficulté dépend de la situation (définie par le·la MJ). Le passage ainsi découvert doit te permettre d’avancer ou de t’éloigner d’au moins une courte distance."
       }
     ]
   },
@@ -223,7 +223,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

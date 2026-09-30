@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/svg/heart.svg",
   "system": {
-    "description": "<p>A Focus for enduring hardship and returning to the fight.</p>",
+    "description": "<p>You never quit, can shrug off a beating, and always come back for more.</p>",
     "abilities": [
       {
         "id": "determination",
@@ -19,7 +19,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Gain a free Effort level when retrying a failed task until your next recovery."
+        "description": "When you retry a failed task, in addition to the required level of Effort you must use, you gain a free level of Effort. You cannot use this ability again until after you have taken a recovery. Enabler."
       },
       {
         "id": "push-on-through",
@@ -33,7 +33,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Replace a ten-minute recovery with a second one-action recovery and endure one extra moderate wound."
+        "description": "Instead of a ten-minute recovery, you have a second one-action recovery—your first two recoveries are one action, the third is one hour, and the fourth is ten hours. You can take one more moderate wound than normal. You can use one of your one-action recoveries to allow an ally to use one of their ten-minute recoveries as an action."
       },
       {
         "id": "safe-fall",
@@ -47,7 +47,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Ignore one wound caused by a fall."
+        "description": "When you take a wound from a fall, reduce its severity by one step. Enabler."
       },
       {
         "id": "always-mighty",
@@ -64,7 +64,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Restore one extra Might point whenever a recovery restores Might, up to three selections."
+        "description": "Every time you use a recovery, if your Might Pool isn't already full, you get 1 extra point to restore to your Might Pool. You can select this ability up to three times."
       },
       {
         "id": "ignore-the-pain",
@@ -81,7 +81,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Ignore one step of wound hindrance, with additional selections ignoring more."
+        "description": "You ignore one step of hindrance from one major wound or from having taken all your moderate wounds. You can choose this ability up to three times. Each time you choose it, it allows you to ignore another step of hindrance caused by wounds. Enabler."
       },
       {
         "id": "hidden-reserves",
@@ -97,7 +97,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "A one-action recovery grants +1 Might Edge and Speed Edge until a longer recovery."
+        "description": "When you use a one-action recovery, you add +1 to your Might Edge and your Speed Edge until you use a ten-minute or longer recovery. Enabler."
       },
       {
         "id": "blood-fever",
@@ -113,7 +113,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "When depleted or badly wounded, gain an asset on attacks or defense and intimidation."
+        "description": "While at least one of your Pools has no points, or while you have at least two moderate wounds or one major wound, you gain an asset to attacks or defense rolls (your choice), as well as to intimidation rolls. Enabler."
       },
       {
         "id": "outlast-the-foe",
@@ -129,7 +129,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "After five full combat rounds, gain an asset on all tasks and deal 1 extra damage per attack."
+        "description": "If you have been in combat for five full rounds, you have an asset for all tasks in the remainder of the combat, and you deal an additional 1 damage per attack. Enabler."
       },
       {
         "id": "increasing-determination",
@@ -145,7 +145,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "A failed noncombat physical task becomes easier when retried once."
+        "description": "If you fail at a noncombat physical task (pushing open a door or climbing a cliff, for example) and then retry the task, the task is eased. If you fail again, you gain no special benefits. Enabler."
       },
       {
         "id": "not-dead-yet",
@@ -162,7 +162,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Survive a normally fatal blow, wake after a round, restore Pools, and remove wounds."
+        "description": "When you would normally be dead, you instead fall unconscious for one round and then awaken. When you awaken this way, you immediately gain 1d6 + 6 points to restore your stat Pools, and you remove one moderate wound and one major wound. Once you use this ability, your tasks are hindered until you use a ten-hour recovery. If you die again before you make your ten-hour recovery, you are truly dead. You can select this ability twice. The second time you select it, the healing increases to 1d6 + 12 and you remove double the number of wounds."
       },
       {
         "id": "final-defiance",
@@ -178,7 +178,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Remain conscious for another round after death and struggle to stay alive."
+        "description": "When you would normally be dead, you instead remain conscious and active for one more round. (This ability activates before Not Dead Yet activates.) As an extra action on your turn each round thereafter, you can attempt a difficulty 5 Might task to remain alive for one additional round. During these extra rounds of life, all your tasks are hindered. If by the last round you're alive you do not receive healing, gain points in a Pool, or otherwise rally or remove a wound that killed you, Not Dead Yet activates. Enabler."
       },
       {
         "id": "ignore-affliction",
@@ -194,7 +194,7 @@
           "amount": 5,
           "options": []
         },
-        "description": "Ignore an unwanted condition or affliction until a one-hour recovery."
+        "description": "Until you use a one-hour or longer recovery, you ignore any unwanted condition or affliction (such as disease, paralysis, mind control, broken limb, and so on, but not damage) and act as if it does not affect you. If the condition would normally last less than an hour, it is entirely negated. You can use this ability even if the condition prevents you from taking actions. Action."
       }
     ]
   },
@@ -205,7 +205,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

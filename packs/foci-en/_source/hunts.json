@@ -5,10 +5,10 @@
   "type": "focus",
   "img": "icons/svg/target.svg",
   "system": {
-    "description": "<p>A Focus for a relentless hunter who chooses, tracks, and defeats a quarry.</p>",
+    "description": "<p>You are a stalking hunter who excels at bringing down your selected quarry, whether person or beast.</p>",
     "abilities": [
       {
-        "id": "hunters-determination",
+        "id": "hunter-s-determination",
         "name": "Hunter's Determination",
         "tier": 1,
         "prerequisites": [],
@@ -19,7 +19,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Miss a foe to gain assets against that foe until the fight ends or you change targets."
+        "description": "When you attack a foe and miss, you gain an asset on your attacks and defenses against that foe. If you miss them again, you gain a second asset against them. You lose these assets if you change targets or the combat ends. Enabler."
       },
       {
         "id": "knowledge-of-nature",
@@ -33,7 +33,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Find food, water, and remedies in the wilderness when they are available."
+        "description": "While in the wilderness, you can always find edible food of some kind and potable water if it exists. Likewise, you can find medicinal herbs or natural remedies that grant you an asset on treatments to heal wounds, disease, or poison."
       },
       {
         "id": "sneak-attack",
@@ -47,7 +47,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Under a qualifying distraction or surprise, a light weapon attack deals 5 additional damage."
+        "description": "If you attack a foe under one of the following conditions, your light melee or light ranged weapon attack inflicts an additional 5 damage on a successful hit. (This ability doesn't work with medium or heavy weapons.) You attack with surprise. An ally uses their action to ease your attack. Your foe's defenses are hindered due to some other ongoing direct distraction. Your foe is unable to take their next turn due to some disabling attack or situation. First action."
       },
       {
         "id": "fast-kill",
@@ -67,14 +67,14 @@
             "speed"
           ]
         },
-        "description": "Deal 4 additional damage on a melee or ranged hit, but not in consecutive rounds."
+        "description": "When you hit with a melee or ranged attack, you deal an additional 4 damage. You can't use this ability in two consecutive rounds. Enabler."
       },
       {
         "id": "quarry",
         "name": "Quarry",
         "tier": 2,
         "prerequisites": [
-          "hunters-determination",
+          "hunter-s-determination",
           "knowledge-of-nature"
         ],
         "repeatable": false,
@@ -84,7 +84,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Choose one visible quarry and gain an asset on tasks involving it."
+        "description": "You pick a creature and focus your intention on pursuing them.  Choose one creature you can see to become your quarry. You gain an asset on all tasks involving following, understanding, interacting with, attacking, or defending against your quarry. This asset includes hunting-related tasks, if appropriate, such as skinning, dressing, the best way to prepare and preserve any resulting game meat, and so on. You can have only one quarry at a time. Action to initiate."
       },
       {
         "id": "poison-crafter",
@@ -100,7 +100,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Craft and handle poison effectively, including defenses against it."
+        "description": "If you have about an hour, you can use your resources to craft one dose of poison you can use as a contact poison on a weapon. A weapon coated with the poison (requiring a Last action to carefully apply) inflicts an additional 2 damage until you use a one-hour or longer recovery. Your experience with poison gives you some additional related benefits. You gain an asset on detecting, identifying, and resisting poison. Your defense rolls against poison are eased, and you take 2 less Speed damage from poison (if the poison inflicts Speed damage) or reduce wounds from poison by one step (major to moderate, moderate to minor, minor to none). For example, if you are hit by an attack that adds a moderate wound from poison, you only take a minor wound from the poison. Poison crafting uses resource points—in this case, use Craft Cypher and the weapon augmentation cypher to create a poison you can apply to your weapon. The poison, a manifest cypher, applies toward your cypher limit."
       },
       {
         "id": "horde-fighting",
@@ -117,7 +117,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "When surrounded in melee, choose an asset to attack or defend against the group."
+        "description": "When two or more foes attack you at once in melee, you can use them against each other. Each round, choose whether you gain an asset to block and dodge rolls against them or to attack rolls against them. Enabler."
       },
       {
         "id": "awareness",
@@ -133,7 +133,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "Sense living creatures at long range until a recovery."
+        "description": "You become hyperaware of your surroundings until you use a ten-minute or longer recovery. You are aware of all living things within long range (including their general position). By using an action to concentrate, you can choose one of them and attempt to learn their general health and power level. Action."
       },
       {
         "id": "better-sneak-attack",
@@ -149,7 +149,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Sneak Attack gains an asset and can cause delayed Armor-ignoring damage."
+        "description": "When using Sneak Attack, you gain an asset on the attack. On your next turn, your target takes an additional 5 damage (ignores armor). The target can prevent this additional damage by taking a recovery, using any ability that heals it, or using its action to attend to the injury. Enabler."
       },
       {
         "id": "sprint-and-grab",
@@ -165,7 +165,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Move a short distance and grab a foe of your size or smaller."
+        "description": "You move a short distance and make a melee attack to grab a foe of your size or smaller. (Unlike a normal situation of taking an action and moving a short distance, this doesn't hinder your tasks.) A successful attack means you grab the foe and bring it to a halt if it was moving (this can be treated as a tackle, if appropriate). Action."
       },
       {
         "id": "damage-dealer",
@@ -181,10 +181,10 @@
           "amount": 0,
           "options": []
         },
-        "description": "Choose a weapon to deal 3 additional damage with it; this can be chosen twice."
+        "description": "You've become better at killing with one kind of weapon. Choose one melee or ranged weapon. You inflict an additional 3 damage with this weapon. You can select this ability up to two times for any particular weapon (for a total of 6 damage)."
       },
       {
-        "id": "hunters-drive",
+        "id": "hunter-s-drive",
         "name": "Hunter's Drive",
         "tier": 5,
         "prerequisites": [
@@ -197,14 +197,14 @@
           "amount": 5,
           "options": []
         },
-        "description": "Double movement while reaching your quarry and gain another related asset."
+        "description": "You gain greater prowess in the hunt. If your quarry is within 10 miles (16 km) of you, your movement rate is doubled if you are trying to reach them. You gain an additional asset on tasks related to your quarry. This ability lasts until you use a ten-minute or longer recovery. Enabler."
       },
       {
         "id": "multiple-quarries",
         "name": "Multiple Quarries",
         "tier": 6,
         "prerequisites": [
-          "hunters-drive"
+          "hunter-s-drive"
         ],
         "repeatable": false,
         "enabler": true,
@@ -213,7 +213,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Quarry can target up to four visible creatures for an increased Intellect cost."
+        "description": "When you activate Quarry, you can select four creatures you can see to be your quarry instead of just one. Each additional quarry you select adds 2 Intellect to the cost of Quarry. Enabler."
       },
       {
         "id": "lethal-strike",
@@ -229,7 +229,7 @@
           "amount": 6,
           "options": []
         },
-        "description": "A successful swift weapon attack deals 7 additional damage."
+        "description": "With a swift and sudden melee or ranged weapon attack, you strike a foe in a vital spot. If you hit, you inflict an additional 7 damage. Action."
       },
       {
         "id": "escape-plan",
@@ -245,7 +245,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "After killing a foe, attempt a stealth task as an extra action."
+        "description": "When you kill a foe, you can attempt a stealth task as an extra action on your turn to hide from anyone around, assuming that a suitable hiding place is nearby. Enabler."
       }
     ]
   },
@@ -256,7 +256,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

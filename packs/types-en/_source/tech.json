@@ -24,38 +24,52 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "always-tinkering",
         "name": "Always Tinkering",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
         "description": "You build a single-use technological device. You can choose its effect from the Low-Power Manifest Cyphers table. Your device counts toward your cypher limit (or the limit of anyone you give the device to). If you are already at your cypher limit, your choice of one of your current cyphers shorts out, had to be salvaged for parts to create the new device, or something similar, and the new device takes its place. Ten minutes to build. At tier 3: You can choose a low or medium-power manifest cypher as a single-use device. At tier 6: You can choose a low, medium-, or advanced-power manifest cypher as a single-use device. Each time you use Always Tinkering, you can choose a different manifest cypher you want to build."
       },
       {
+        "id": "craft-device",
         "name": "Craft Device",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 5
+          "amount": 5,
+          "options": []
         },
-        "description": "You build a new—but somewhat fragile—device if you succeed at a difficulty 3 engineering task. You can choose its effect from the Low-Power Manifest Cyphers table. The resulting device is not a cypher, doesn’t count toward your cypher limit, and usually isn’t limited to one use; instead, it has a depletion of 1 in 1d6. The device is small enough that you can carry it. One hour to build. At tier 3: If you apply a level of Effort to this ability you can choose a medium-power manifest cypher as your device. At tier 6: If you apply two levels of Effort to this ability you can choose an advanced-power manifest cypher as your device."
+        "description": "You build a new—but somewhat fragile—device if you succeed at a difficulty 3 engineering task. You can choose its effect from the Low-Power Manifest Cyphers table. The resulting device is not a cypher, doesn't count toward your cypher limit, and usually isn't limited to one use; instead, it has a depletion of 1 in 1d6. The device is small enough that you can carry it. One hour to build. At tier 3: If you apply a level of Effort to this ability you can choose a medium-power manifest cypher as your device. At tier 6: If you apply two levels of Effort to this ability you can choose an advanced-power manifest cypher as your device."
       },
       {
+        "id": "cypher-use",
         "name": "Cypher Use",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
         "description": "You can bear one additional cypher at a time."
       }
     ],
-    "statOptions": ["intellect"],
-    "description": "<p>A Space Opera Type focused on tech archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Science Fiction. Subgenre: Space Opera. Primary Pools: intellect.</em></p>"
+    "statOptions": [
+      "intellect"
+    ],
+    "description": "<p>You're not simply good with machines; you're a galactic-level genius. Where others see a pile of junk, a boring appliance, or a simple device, you see potential—circuits, energy conduits, and power cells enabling you to build an explosive, repair a weapon, fashion a new custom-built device, or keep a starship limping along when by all rights that last enemy disintegration beam should have spelled the end. Others on your team probably celebrate your technical know-how, especially as it usually falls to you to bypass dumb devices like surveillance monitors and force screens. And if they can protect you from direct enemy action, you can produce a gadget that might just be the key to accomplishing the overall objective.</p>"
   },
   "folder": "AxljvbOd6vL9wkut",
   "sort": 0,
@@ -64,7 +78,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

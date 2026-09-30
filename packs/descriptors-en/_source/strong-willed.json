@@ -5,10 +5,17 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": ["intellect"],
+    "statOptions": [
+      "intellect"
+    ],
     "statAmount": 2,
-    "skillOptions": ["Charm", "Intimidation", "", ""],
-    "description": "<p>No one talks you into anything you don't want to do — your resolve is as unshakable as your style.</p><p><em>You gain +2 to your Intellect Pool, and training in Charm or Intimidation.</em></p>"
+    "skillOptions": [
+      "Charm",
+      "Intimidation",
+      "",
+      ""
+    ],
+    "description": "<p>You're tough-minded, willful, and independent. No one can talk you into anything or change your mind when you don't want it changed. This quality doesn't necessarily make you smart, but it does make you a bastion of willpower and resolve. You likely dress and act with unique style and flair, not caring what others think.</p>"
   },
   "folder": null,
   "sort": 0,
@@ -17,7 +24,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

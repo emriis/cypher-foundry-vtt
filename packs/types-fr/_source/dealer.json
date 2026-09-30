@@ -24,38 +24,53 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "fast-talk",
         "name": "Baratin",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "En parlant avec une créature intelligente qui peut te comprendre et qui n’est pas hostile, tu la convaincs d’accomplir **une action raisonnable** au prochain round. Une action raisonnable doit être approuvée par ton·ta MJ ; elle ne doit pas mettre la cible ou ses allié·es en danger évident, ni être incohérente avec son comportement. Action"
+        "description": "Quand tu parles à une créature intelligente capable de te comprendre et qui n’est pas hostile, tu la convaincs d’accomplir une action raisonnable lors du prochain round. Cette action doit être validée par le·la MJ : elle ne doit pas être dangereuse pour la créature ou ses allié·e·s, ni contraire à sa nature."
       },
       {
+        "id": "sneak-attack",
         "name": "Attaque Furtive (1 Célérité)",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "speed",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "Si tu utilises une **arme légère** pour attaquer un adversaire dans l’une des situations suivantes, ton attaque inflige **+5 dégâts** : Tu attaques par surprise. Un·e allié·e utilise son action pour faciliter ton attaque. Les défenses de ton adversaire sont entravées par une distraction directe. Ton adversaire ne peut pas agir à son prochain tour à cause d’une attaque ou d’une situation handicapante. Première action"
+        "description": "If you use a light weapon to attack a foe under one of the following conditions, your attack inflicts +5 damage. (This ability doesn't work with medium or heavy weapons.) You attack with surprise. An ally uses their action to ease your attack. Your foe's defenses are hindered due to some other ongoing direct distraction. Your foe is unable to take their next turn due to some disabling attack or situation. First action."
       },
       {
+        "id": "when-the-deal-bombs",
         "name": "Quand le Deal Explose",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Il y a toujours un risque que quelqu’un à qui tu fais affaire se retourne contre toi. Après avoir **persuadé**, **trompé**, **interagi positivement**, ou utilisé **Baratin** (ou une aptitude similaire) avec succès sur une créature, si celle‑ci devient hostile dans les 24 heures, tu **réduis automatiquement la gravité** de la **première blessure** qu’elle t’inflige d’un palier. Au rang 3, tu ignores complètement cette blessure (aucun dégât)."
+        "description": "Après avoir persuadé, trompé, interagi positivement, ou utilisé Baratin avec succès sur une créature, si celle-ci devient hostile dans les 24 heures, tu réduis automatiquement la gravité de la première blessure qu'elle t'inflige d'un palier. Au rang 3, tu ignores complètement cette blessure (aucun dégât)."
       }
     ],
-    "statOptions": ["intellect", "speed"],
-    "description": "<p>Un Type de Postapocalyptique centré sur l'archétype magouilleur·euse, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Science-fiction. Sous-genre : Postapocalyptique. Réserves principales : Intellect, Célérité.</em></p>"
+    "statOptions": [
+      "intellect",
+      "speed"
+    ],
+    "description": "<p>You make your way through civilization's ruins as best you know how, trading for supplies with your natural talent for bullshit. When things go south, you run away, or maybe plant a knife in your would-be trading partner's back. You have a way of connecting people to the things they want—or at least promising to do so—and folks sometimes call you a Fixer or Supplier. And though you might be moved to help others with their needs, if we're being honest, your own skin is your most important commodity. You're adept at talking, so you're probably one of the people your band relies on to deal with strangers, allies, and potential foes for as long as words serve the situation. Others in your band also benefit from your trading prowess, such as it is. But when the situation turns ugly, you're ready to dance away from a double-cross, or maybe instigate the same yourself.</p>"
   },
   "folder": "mhEicDpOMODfF21T",
   "sort": 0,
@@ -64,7 +79,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

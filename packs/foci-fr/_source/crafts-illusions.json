@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/magic/control/hypnosis-mesmerism-eye.webp",
   "system": {
-    "description": "<p>Un Focus pour un personnage qui façonne des images de lumière convaincantes.</p>",
+    "description": "<p>You fashion images from light that are so perfect they seem real.</p>",
     "abilities": [
       {
         "id": "hedge-magic",
@@ -19,7 +19,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Accomplis un petit tour de magie inoffensif."
+        "description": "Tu peux effectuer de petits tours : changer temporairement la couleur ou l’apparence générale d’un petit objet, faire flotter de petits objets, nettoyer une petite zone, réparer un objet cassé, préparer (mais pas créer) de la nourriture, etc. Tu ne peux pas utiliser Magie mineure pour blesser une autre créature ou un autre objet. Action."
       },
       {
         "id": "minor-illusion",
@@ -33,7 +33,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Crée une petite illusion mobile ou un motif visuel déroutant."
+        "description": "Tu crées une image unique d’une créature ou d’un objet à portée immédiate. L’image doit tenir dans une zone immédiate. Elle peut bouger (par exemple, tu peux créer l’illusion d’une personne qui marche ou attaque…), mais ne peut pas quitter la zone définie par le cube. L’illusion inclut le son, mais pas l’odeur. Elle dure jusqu’à ta prochaine récupération de dix minutes ou plus. Si tu veux modifier significativement l’illusion — par ex. la faire paraître blessée — tu dois utiliser une action pour te reconcentrer. Si tu sors de portée, l’illusion disparaît. À la place d’une illusion réaliste, tu peux créer un motif d’images déroutantes autour d’une créature à portée courte : tant que tu utilises ton action chaque round pour changer le motif, ses attaques et défenses sont entravées (aucun jet d’attaque requis)."
       },
       {
         "id": "sense-magic",
@@ -47,7 +47,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Perçois la présence de magie à proximité."
+        "description": "Si une magie quelconque est à l’œuvre à portée courte, tu en es conscient·e (mais tu n’en connais pas les détails). Dernière action."
       },
       {
         "id": "illusory-disguise",
@@ -64,7 +64,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Donne une apparence illusoire durable à une créature."
+        "description": "Tu prends l’apparence de quelqu’un ou de quelque chose d’autre, de taille et de forme approximativement similaires, jusqu’à ta prochaine récupération d’une heure ou plus. Une fois créé, le déguisement ne demande aucune concentration. Effort : Déguiser une créature supplémentaire (1 Intellect). Si tu perds une créature de vue, elle perd son déguisement."
       },
       {
         "id": "reveal-illusion",
@@ -81,10 +81,10 @@
           "amount": 2,
           "options": []
         },
-        "description": "Améliore ta détection des illusions et des cibles invisibles."
+        "description": "Quand tu fais un jet pour trouver une illusion ou une cible invisible à portée courte et que ton résultat est inférieur à 12, considère que tu as obtenu 12. (Tu évites ainsi une Intrusion du·de la MJ si tu fais un 1.) Cette aptitude dure jusqu’à ta prochaine récupération de dix minutes ou plus. Action pour commencer. Effort : augmente le résultat minimal de cette aptitude de 3. Au rang 3 : le résultat minimal de cette aptitude passe à 15."
       },
       {
-        "id": "project-illusions",
+        "id": "cast-illusion",
         "name": "Projeter les illusions",
         "tier": 3,
         "prerequisites": [
@@ -99,7 +99,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Augmente la portée de tes illusions à portée immédiate."
+        "description": "La portée de toutes tes illusions à portée immédiate (telles que Petite illusion, Illusion majeure, Illusion grandiose) augmente à portée courte. Les déguisements créés par Déguisement illusoire durent environ une minute après que la créature sorte de ton champ de vision."
       },
       {
         "id": "major-illusion",
@@ -108,7 +108,7 @@
         "prerequisites": [
           "illusory-disguise",
           "reveal-illusion",
-          "project-illusions"
+          "cast-illusion"
         ],
         "repeatable": false,
         "enabler": false,
@@ -117,14 +117,14 @@
           "amount": 3,
           "options": []
         },
-        "description": "Crée une scène illusoire complexe et autonome."
+        "description": "Tu crées une scène complexe d’images à portée immédiate. Toute la scène doit tenir dans une zone longue. Les images peuvent bouger, mais pas sortir du cube. L’illusion inclut son et odeur. Elle dure jusqu’à ta prochaine récupération de dix minutes ou plus, et change selon ta volonté (sans concentration). Si tu t’éloignes au-delà d’une portée immédiate du cube, l’illusion disparaît. À la place d’une scène réaliste, tu peux créer des images déroutantes autour d’une créature à portée courte, entravant ses attaques et défenses jusqu’à ta prochaine récupération de dix minutes ou plus, sans que tu aies besoin d’utiliser ton action à chaque tour pour maintenire l’effet. Effort : Affecter une créature supplémentaire."
       },
       {
-        "id": "illusory-cocoon",
+        "id": "illusion-cocoon",
         "name": "Cocon illusoire",
         "tier": 4,
         "prerequisites": [
-          "project-illusions",
+          "cast-illusion",
           "major-illusion"
         ],
         "repeatable": false,
@@ -134,14 +134,14 @@
           "amount": 4,
           "options": []
         },
-        "description": "Emprisonne une cible dans une illusion sensorielle totale."
+        "description": "Tu fais une attaque d’Intellect réussie pour envelopper une créature à portée longue dans une illusion sensorielle totale. La cible est rendue impuissante, perdant son tour à chaque round, jusqu’à ta prochaine récupération de dix minutes ou plus, ou qu’elle subisse des dégâts directs."
       },
       {
-        "id": "illusory-duplicates",
+        "id": "illusory-selves",
         "name": "Doubles illusoires",
         "tier": 4,
         "prerequisites": [
-          "project-illusions",
+          "cast-illusion",
           "major-illusion"
         ],
         "repeatable": false,
@@ -151,15 +151,15 @@
           "amount": 4,
           "options": []
         },
-        "description": "Crée quatre doubles illusoires indépendants."
+        "description": "Tu crées quatre illusions de toi-même à portée courte. Elles durent jusqu’à ta prochaine récupération de dix minutes ou plus. Tu diriges leurs actions mentalement (elles ne sont pas des reflets et peuvent chacune faire des choses différentes). Si une illusion est frappée violemment, tu choisis si elle se fige ou disparaît de façon permanente."
       },
       {
         "id": "invisibility",
         "name": "Invisibilité",
         "tier": 5,
         "prerequisites": [
-          "illusory-cocoon",
-          "illusory-duplicates"
+          "illusion-cocoon",
+          "illusory-selves"
         ],
         "repeatable": false,
         "enabler": false,
@@ -168,15 +168,15 @@
           "amount": 4,
           "options": []
         },
-        "description": "Recouvre une créature d'une illusion de rien."
+        "description": "Tu deviens invisible. Cet effet prend fin si tu fais quelque chose qui révèle ta présence ou ta position (attaquer, utiliser une aptitude, déplacer un gros objet, etc.), ou si tu fais une récupération de dix minutes ou plus. Effort : utilise cette aptitude sur une créature que tu touches plutôt que sur toi-même ; elle reste invisible jusqu’à ce qu’elle agisse précipitamment ou que toi ou elle fassiez une récupération de dix minutes ou plus. Action pour commencer. L’attaque d’un personnage invisible est facilitée de deux paliers. Les attaques contre un personnage invisible sont entravées de quatre paliers, ou presque impossibles si l’attaquant ignore où il peut se trouver."
       },
       {
         "id": "terrifying-image",
         "name": "Image terrifiante",
         "tier": 5,
         "prerequisites": [
-          "illusory-cocoon",
-          "illusory-duplicates"
+          "illusion-cocoon",
+          "illusory-selves"
         ],
         "repeatable": false,
         "enabler": false,
@@ -185,7 +185,7 @@
           "amount": 6,
           "options": []
         },
-        "description": "Utilise les peurs ennemies pour faire fuir plusieurs créatures."
+        "description": "Tu effraies des adversaires grâce à des illusions créées à partir de leurs propres peurs. Fais une attaque d’Intellect séparée contre un groupe allant jusqu’à cinq créatures à portée longue. En cas de réussite : la créature fuit terrifiée jusqu’à parcourir au moins une très longue distance ou jusqu’à ta prochaine récupération de dix minutes ou plus. En cas d’échec : elle ignore l’illusion, ce qui fait qu’elle n’est pas gênée du tout."
       },
       {
         "id": "grand-illusion",
@@ -202,7 +202,7 @@
           "amount": 8,
           "options": []
         },
-        "description": "Crée une illusion vaste, complexe et réactive."
+        "description": "Tu crées une scène illusoire immensément complexe, occupant un cube de 1,5 km dont la face la plus proche doit être à portée immédiate de toi. Tu dois voir la zone au moment de la création. Les images peuvent se déplacer librement dans le cube, se comportent logiquement (réagissent au feu, aux attaques, etc.) même sans ton regard. L’illusion inclue son et odeur. Exemples : armées en bataille, créatures volantes, machines aériennes, paysage illusoire… L’illusion dure tant que tu te concentres (en utilisant ton action), ou jusqu’à ta prochaine récupération d’une heure ou plus."
       },
       {
         "id": "permanent-illusion",
@@ -219,7 +219,7 @@
           "amount": 9,
           "options": []
         },
-        "description": "Rends permanente une petite illusion existante."
+        "description": "Tu rends permanente l’une de tes illusions en cours. Choisis une illusion (ou une partie d’une illusion) que tu as créée. Elle doit tenir dans une zone immédiate et reste en place à cet endroit pour toujours, sans ton attention ni ta présence. Tu peux la dissiper définitivement en utilisant une action. Toute autre personne souhaitant la faire disparaitre doit faire preuve d’une ingéniosité exceptionnelle pour empêcher l’illusion de se régénérer au bout d’un moment."
       }
     ]
   },
@@ -230,7 +230,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

@@ -5,10 +5,17 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": ["intellect"],
+    "statOptions": [
+      "intellect"
+    ],
     "statAmount": 2,
-    "skillOptions": ["Gathering Information", "Recognizing Motive", "", ""],
-    "description": "<p>You read people easily, picking up on moods and motives that others miss entirely.</p><p><em>You gain +2 to your Intellect Pool, and training in Gathering Information or Recognizing Motive.</em></p>"
+    "skillOptions": [
+      "Gathering Information",
+      "Recognizing Motive",
+      "",
+      ""
+    ],
+    "description": "<p>Other people are open books to you. You may have a knack for reading a person's tells, those subtle movements that convey an individual's mood and disposition. Or you may receive information in a more direct way, feeling a person's emotions as if they were tangible things, sensations that lightly brush against your mind. Your gift for empathy helps you navigate social situations and control them to avoid misunderstandings and prevent useless conflicts from erupting.</p>"
   },
   "folder": null,
   "sort": 0,
@@ -17,7 +24,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

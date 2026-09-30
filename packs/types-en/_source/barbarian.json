@@ -24,38 +24,53 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "frenzy",
         "name": "Frenzy",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "intellect",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "While in combat, you can enter a state of frenzy. While in this state, you can’t use Intellect points, but you add +1 to your Might Edge and your Speed Edge. This effect lasts as long as you wish, but it ends if no combat is taking place within range of your senses. Effort: Ease your allies’ attacks against one foe of your choice for the rest of the combat."
+        "description": "While in combat, you can enter a state of frenzy. While in this state, you can't use Intellect points, but you add +1 to your Might Edge and your Speed Edge. This effect lasts as long as you wish, but it ends if no combat is taking place within range of your senses. Effort: Ease your allies' attacks against one foe of your choice for the rest of the combat. Enabler."
       },
       {
+        "id": "wilderness-survival",
         "name": "Wilderness Survival",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
         "description": "You know how to survive in unpeopled lands. After spending at least ten minutes in the wilderness and succeeding on a difficulty 2 outdoor survival task (or a difficulty your GM determines is appropriate to the area), you find something useful you were seeking. The useful thing might be shelter in the form of a cave or tree hollow, all the makings necessary to start a fire, a game animal you bring down with ease, or berries, mushrooms, root vegetables, or other food. You know how to best prepare any game or vegetation you find and are able to feed yourself and up to five allies."
       },
       {
+        "id": "wounded-fury",
         "name": "Wounded Fury",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "While you have at least three moderate wounds or at least one major wound, you gain one free level of Effort you can apply to one of your attacks each round. At tier 3: The benefit increases to two free levels of Effort."
+        "description": "While you have at least three moderate wounds or at least one major wound, you gain one free level of Effort you can apply to one of your attacks each round. Enabler. At tier 3: The benefit increases to two free levels of Effort."
       }
     ],
-    "statOptions": ["might", "speed"],
-    "description": "<p>A Dungeon Fantasy Type focused on barbarian archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Fantasy. Subgenre: Dungeon Fantasy. Primary Pools: might, speed.</em></p>"
+    "statOptions": [
+      "might",
+      "speed"
+    ],
+    "description": "<p>For you, every day is another chance to spill blood, drink ale, or both—and pick up a scar or two to commemorate the day. Born an outlander and a wanderer at heart, you've become an adventurer more by accident than design. They say you're savage, but only behind your back, lest they face your fury. Out of everyone in your group, you tend to draw the most attention from foes because you give up trepidation for rage. Fears fall away when your blood is up; all you see is red. Frenzy gives you strength, battle-minded purpose, and, more times than not, a path to victory. But when your battle fever passes, your lore of the wild places helps guide you and your allies through uncivilized lands where monsters, bandits, and other barbarians roam.</p>"
   },
   "folder": "pQTzt4j9XPpLBpKm",
   "sort": 0,
@@ -64,7 +79,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/skills/melee/sword-parry.webp",
   "system": {
-    "description": "<p>A Focus for a swashbuckling daredevil whose flamboyant fighting style is entertaining to watch.</p>",
+    "description": "<p>You're a swashbuckling daredevil who fights with a flamboyant style that's entertaining to watch.</p>",
     "abilities": [
       {
         "id": "attack-flourish",
@@ -21,7 +21,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Stylish moves and quips give a nearby observer an asset on their next task."
+        "description": "When you attack, you add stylish moves, entertaining quips, or a certain something that entertains or impresses others. One creature you choose within short range who can see you gains an asset to their next task if taken within a round or two. Enabler."
       },
       {
         "id": "roguish-smile",
@@ -37,7 +37,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Erase the last round from the memory of a nearby level 3 or lower target; Effort raises the maximum level."
+        "description": "With a smile and perhaps a wink, you erase the last round from the memory of a target of level 3 or less within immediate distance (make an Intellect attack against them to succeed). Effort: Increase the maximum level of the foe you can affect by 1. Action."
       },
       {
         "id": "taunting-defense",
@@ -51,7 +51,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Hinder a melee attack against you, but a hit inflicts one additional minor wound."
+        "description": "When you defend against a melee attack, your mocking moves, entertaining quips at your foe's expense, or a certain something draws out your foe's anger. Your foe's attack is hindered, but if they hit, they deal an additional minor wound. Enabler."
       },
       {
         "id": "dashing-defense",
@@ -67,7 +67,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "When using a light or medium weapon, attempt a block after failing to dodge an attack."
+        "description": "When wielding a light or medium weapon against a foe of your size or smaller, if you fail to dodge an attack, you can still attempt to block it. Enabler."
       },
       {
         "id": "fast-kill",
@@ -86,7 +86,7 @@
             "speed"
           ]
         },
-        "description": "A successful melee or ranged attack deals 4 additional damage, but not in consecutive rounds."
+        "description": "When you hit with a melee or ranged attack, you deal an additional 4 damage. You can't use this ability in two consecutive rounds. Enabler."
       },
       {
         "id": "wounded-fury",
@@ -102,7 +102,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "With severe wounds, gain one free level of Effort on an attack each round; at tier 3, gain two."
+        "description": "While you have at least three moderate wounds or at least one major wound, you gain one free level of Effort you can apply to your attack each round (easing your chance to hit or dealing 3 extra damage). This benefit lasts until you take your next ten-minute or longer recovery (or you no longer suffer from those wounds) At tier 3: The benefit increases to two free levels of Effort. Enabler."
       },
       {
         "id": "acrobatic-attack",
@@ -118,7 +118,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "An acrobatic attack grants a free Effort level when you spend Effort on its roll, and a natural 17 or 18 can create a minor effect."
+        "description": "You leap into the attack, twisting or flipping through the air. If you use Effort on the attack roll, you get a free level of Effort on it. If you roll a natural 17 or 18, instead of inflicting extra damage you can choose to have a minor effect. You can't use this ability if you can't freely use the armor you're wearing. Enabler."
       },
       {
         "id": "flamboyant-boast",
@@ -134,7 +134,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Boast about a difficult deed; success hinders witnesses' next turns, while failure hinders your attempts to influence them."
+        "description": "You boastfully describe an act that you will accomplish, and then as an extra action on your turn, you attempt it. If an average person would find the action difficult (or impossible) and you succeed on it, non-allies who witnessed it are so amazed and confused that all actions they attempt on their next turn are hindered. The GM will help you determine whether your boast is something that would significantly impress onlookers. If you fail the boasted task, until you use a ten-minute or longer recovery your attempts to affect witnesses (with attacks, special abilities, or skills) are hindered. Enabler."
       },
       {
         "id": "quick-adjustment",
@@ -150,7 +150,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "A nonlethal attack becomes a First action."
+        "description": "Your nonlethal attack (an attempt to disarm, an attack against an inanimate object, or an attack to subdue) is a First action. Enabler."
       },
       {
         "id": "improved-dashing-defense",
@@ -166,7 +166,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "An ally nearby using a light or medium weapon gains Dashing Defense until your next turn."
+        "description": "One ally within immediate range who is using a light or medium weapon gains the benefit of Dashing Defense until your next turn. Enabler."
       },
       {
         "id": "misdirect",
@@ -182,7 +182,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "When an opponent misses, redirect the attack to another nearby target with an unmodified attack roll."
+        "description": "When an opponent misses you, you can redirect their attack to another target of your choosing that's within immediate range of you. Make an unmodified attack roll against the new target (do not use any of your or the opponent's modifiers to the attack roll, but you can apply Effort for accuracy). If the attack hits, the target takes damage equal to the attacking foe's level. Enabler."
       },
       {
         "id": "agile-wit",
@@ -198,7 +198,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Treat Speed tasks and their Effort costs as Intellect tasks when you choose."
+        "description": "When attempting a Speed task, you can spend points from your Intellect Pool instead of your Speed Pool, and vice versa. Use the Edge stat for the Pool you're spending points from."
       },
       {
         "id": "using-the-environment",
@@ -214,7 +214,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Nearby cover grants cover and a melee asset; move across reachable obstacles and difficult terrain freely until recovery."
+        "description": "You can use the environment to your advantage. If there is something within immediate distance that plausibly could provide cover (a table, chandelier, banister, second foe, and so on), you have cover and an asset on your melee attacks. It is a routine task for you to move anywhere that it is physically possible for you to reach as part of normal movement, climbing, or jumping, and you ignore obstacles and difficult terrain when you do so. For example, you could climb up a tapestry to a balcony or slide down a ship's sail, but not slip through an arrow slit or enter a locked cage. This ability lasts until you use a ten-minute or longer recovery. Enabler."
       },
       {
         "id": "again-and-again",
@@ -230,7 +230,7 @@
           "amount": 6,
           "options": []
         },
-        "description": "Take an extra action on your turn."
+        "description": "You can take an extra action on your turn. Enabler."
       },
       {
         "id": "return-to-sender",
@@ -246,7 +246,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "After successfully blocking or dodging a melee attack, immediately attack its source; wait until after your normal turn to use this again."
+        "description": "If you successfully block or dodge a melee attack, you can immediately make a melee attack against the attacking foe. You can't use this ability again until after you take your normal turn. Enabler."
       }
     ]
   },
@@ -257,7 +257,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

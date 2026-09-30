@@ -24,48 +24,66 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "exorbitant-reach",
         "name": "Exorbitant Reach",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
         "description": "You have an exorbitant item of your choice, such as a personal force field or a small spaceship. Work with your GM to determine something appropriate for the setting. At tier 3: You gain another exorbitant item."
       },
       {
+        "id": "noble-bearing",
         "name": "Noble Bearing",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "intellect",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
-        "description": "You are adept at claiming the rewards that a noble background can generate. When you use this ability, strangers who are not already attacking give you at least a round to have your say. Alternatively, you can secure a place to stay somewhere that provides accommodations (even if that means others are turned out), get into a restricted area, ignore rules (minor ones, anyway), get in to see and speak with an important person, or gain some similar benefit without needing to succeed on an interaction task (unless your GM determines special circumstances apply, in which case you gain an asset to the task)."
+        "description": "You are adept at claiming the rewards that a noble background can generate. When you use this ability, strangers who are not already attacking give you at least a round to have your say. Alternatively, you can secure a place to stay somewhere that provides accommodations (even if that means others are turned out), get into a restricted area, ignore rules (minor ones, anyway), get in to see and speak with an important person, or gain some similar benefit without needing to succeed on an interaction task (unless your GM determines special circumstances apply, in which case you gain an asset to the task). Enabler."
       },
       {
+        "id": "retainer",
         "name": "Retainer",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "You enjoy the services of a loyal level 2 follower who looks after your affairs, accounts, meals, clothing, and other trivial needs so you don’t have to. Work with your GM to flesh out the details of your retainer. By spending 2 Intellect, you can have your retainer take the attack meant for you. If the attack brings them to 0 health, they are unconscious but not dead and can be restored by using your resource points and arranging or providing for a few days of care."
+        "description": "You enjoy the services of a loyal level 2 follower who looks after your affairs, accounts, meals, clothing, and other trivial needs so you don't have to. Work with your GM to flesh out the details of your retainer. By spending 2 Intellect, you can have your retainer take the attack meant for you. If the attack brings them to 0 health, they are unconscious but not dead and can be restored by using your resource points and arranging or providing for a few days of care."
       },
       {
+        "id": "at-higher-tiers",
         "name": "At higher tiers",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
         "description": "Your follower improves when you reach tier 3 and again at tier 5 (this is explained in the section about followers). Your retainer could be a robot or alien pet if you prefer."
       }
     ],
-    "statOptions": ["intellect"],
-    "description": "<p>A Hard Science Fiction Type focused on noble archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Science Fiction. Subgenre: Hard Science Fiction. Primary Pools: intellect.</em></p>"
+    "statOptions": [
+      "intellect"
+    ],
+    "description": "<p>You descend from privilege, wealth, and power. Your family owns significant property, wields political control, and/or has vast wealth—or once did. You've stepped away from that somewhat, though you still carry a noble title, whether you want to or not. People recognize you in certain circles, especially those who've had dealings with your family. With access to the privileges your title can command, you might be able and willing to pay for your group's passage on a starship, or even provide them with passage outright if your family's resources are extensive enough (assuming you are on good terms with your siblings and parents). But even if your title is more of an honorific handed down from better times, your nobility still grants access that you and your friends might not otherwise be able to attain.</p>"
   },
   "folder": "t6C5D0PsA9y7RaFQ",
   "sort": 0,
@@ -74,7 +92,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

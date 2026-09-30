@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/equipment/shield/heater-steel.webp",
   "system": {
-    "description": "<p>A Focus for a heavily armored defender who is difficult to move or hurt.</p>",
+    "description": "<p>Your armor, along with your size, strength, incredible training, or machine enhancement, makes you difficult to move or hurt.</p>",
     "abilities": [
       {
         "id": "battle-competence",
@@ -14,8 +14,12 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "Use all weapons and armor freely, and use an action to learn the levels of up to three nearby creatures."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You can freely use all weapons and all armor. As an action, you learn the level of up to three creatures that you can see within short range. This ability can be foiled by disguises or shapechanging. Enabler for weapon use; action for evaluating creatures."
       },
       {
         "id": "imperturbable",
@@ -24,8 +28,12 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "You cannot be forced to flee, and nearby allies gain an eased defense against effects that would make them flee."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You have a sense of calm around you that affects others as well. You cannot be forced to flee against your will (such as from magical fear) and the defense rolls of allies within immediate range against such attacks are eased."
       },
       {
         "id": "nothing-but-defend",
@@ -34,145 +42,225 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "If you do nothing but defend on your turn, gain an asset to all defense tasks for one round."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "When guarding, you gain an asset to all defense tasks. Action."
       },
       {
         "id": "resist-the-elements",
         "name": "Resist the Elements",
         "tier": 2,
-        "prerequisites": ["imperturbable", "battle-competence"],
+        "prerequisites": [
+          "imperturbable",
+          "battle-competence"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "Choose a harmful energy type and reduce wounds from it by one severity step."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You become resistant to one type of harmful energy.  Choose one kind of energy, such as fire or electricity. Reduce the severity of wounds from that energy by one step (major to moderate, moderate to minor, minor to none)."
       },
       {
         "id": "shield-master",
         "name": "Shield Master",
         "tier": 2,
-        "prerequisites": ["battle-competence", "nothing-but-defend"],
+        "prerequisites": [
+          "battle-competence",
+          "nothing-but-defend"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "Your shield can take one additional moderate wound before it is destroyed."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "When you use a shield, it can take one more moderate wound than normal before being destroyed."
       },
       {
         "id": "defend-and-respond",
         "name": "Defend and Respond",
         "tier": 3,
-        "prerequisites": ["resist-the-elements"],
+        "prerequisites": [
+          "resist-the-elements"
+        ],
         "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "choice",
           "amount": 3,
-          "options": ["might", "speed"]
+          "options": [
+            "might",
+            "speed"
+          ]
         },
-        "description": "After blocking or dodging a melee attack, immediately make a melee attack against the attacker once per turn."
+        "description": "If you block or dodge a melee attack, you can immediately make a melee attack against your attacker. You can't use this ability more than once per turn. Enabler."
       },
       {
         "id": "throw-shield",
         "name": "Throw Shield",
         "tier": 3,
-        "prerequisites": ["shield-master"],
+        "prerequisites": [
+          "shield-master"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "Throw your shield as a short-range light weapon; it returns to you after a successful difficulty 2 Speed task."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You throw your shield as a short-range light weapon. Whether the shield hits or misses, it bounces back to your grasp if you succeed on a difficulty 2 Speed task. Effort: A successful hit with the shield also hinders the target for one round. Action. When using Throw Shield, if you throw your shield and fail to catch it when it rebounds, it most likely ends up a short distance from you."
       },
       {
         "id": "unmovable",
         "name": "Unmovable",
         "tier": 3,
-        "prerequisites": ["shield-master", "resist-the-elements"],
+        "prerequisites": [
+          "shield-master",
+          "resist-the-elements"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "might", "amount": 3, "options": [] },
-        "description": "You cannot be knocked down, pushed back, or moved against your will while upright and able to act."
+        "cost": {
+          "stat": "might",
+          "amount": 3,
+          "options": []
+        },
+        "description": "You avoid being knocked down, pushed back, or moved against your will as long as you are upright and able to take actions. Enabler."
       },
       {
         "id": "hard-won-resilience",
         "name": "Hard-Won Resilience",
         "tier": 4,
-        "prerequisites": ["unmovable"],
+        "prerequisites": [
+          "unmovable"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "You can take one additional moderate wound before you are incapacitated."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Due to your experiences, you've been exposed to all sorts of terrible things and are developing a general resistance. You can take one more moderate wound than normal. Enabler."
       },
       {
         "id": "inspiring-defense",
         "name": "Inspiring Defense",
         "tier": 4,
-        "prerequisites": ["throw-shield"],
+        "prerequisites": [
+          "throw-shield"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "After an especially powerful attack fails against your defense, regain 4 Might, with later uses restoring one fewer point until a ten-hour recovery."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "When you succeed on a defense roll against an attack that would have dealt you an especially powerful blow or effect as determined by your GM, you regain 4 points to your Might Pool. Each use of this ability after the first time restores 1 fewer Pool point; this renews after you take a ten-hour recovery. Enabler."
       },
       {
         "id": "tower-of-will",
         "name": "Tower of Will",
         "tier": 5,
-        "prerequisites": ["inspiring-defense"],
+        "prerequisites": [
+          "inspiring-defense"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "Gain an asset to Intellect defense tasks and add 3 points to your Intellect Pool."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You have an asset to Intellect defense tasks and add +3 points to your Intellect Pool. Enabler."
       },
       {
         "id": "weave-an-iron-wall",
         "name": "Weave an Iron Wall",
         "tier": 5,
-        "prerequisites": ["inspiring-defense", "hard-won-resilience"],
+        "prerequisites": [
+          "inspiring-defense",
+          "hard-won-resilience"
+        ],
         "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "choice",
           "amount": 5,
-          "options": ["might", "speed"]
+          "options": [
+            "might",
+            "speed"
+          ]
         },
-        "description": "Create a maintained weapon barrier across an immediate area that deals 10 damage to creatures crossing it."
+        "description": "You slash and weave your weapons so quickly, they almost resemble a wall. This barrier is large enough to block access through an immediate area. You must use your action every round to maintain the barrier. Any creature that attempts to cross through your barrier takes 10 damage (no roll needed); as an extra action you can attempt a melee attack against them, pushing them back if you succeed. Action to initiate."
       },
       {
         "id": "attenuate-threat",
         "name": "Attenuate Threat",
         "tier": 6,
-        "prerequisites": ["tower-of-will"],
+        "prerequisites": [
+          "tower-of-will"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "When attacking as a Last action, ignore one wound taken before the beginning of your next turn."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "If you make your attack this round as a Last action instead of as an action or a First action, you can ignore one wound you take before the beginning of your next turn. Enabler."
       },
       {
         "id": "bouncing-shield",
         "name": "Bouncing Shield",
         "tier": 6,
-        "prerequisites": ["tower-of-will"],
+        "prerequisites": [
+          "tower-of-will"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "speed", "amount": 3, "options": [] },
-        "description": "Throw your shield at a foe; it rebounds to attack two additional targets before returning or landing nearby."
+        "cost": {
+          "stat": "speed",
+          "amount": 3,
+          "options": []
+        },
+        "description": "You throw your shield as a light weapon at a foe in short range. Whether the shield hits or misses, it rebounds to attack two additional targets (the third target can be the same as the first target). Make separate attacks against each target. At the end of these attacks, the shield bounces back to your grasp if you succeed on a difficulty 2 Speed task; otherwise it lands within immediate range of you. Effort: A successful hit with the shield hinders the target for one round. Action."
       },
       {
         "id": "lethal-capability",
         "name": "Lethal Capability",
         "tier": 6,
-        "prerequisites": ["weave-an-iron-wall"],
+        "prerequisites": [
+          "weave-an-iron-wall"
+        ],
         "repeatable": true,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "Choose a specific attack type; attacks of that type inflict 5 additional damage. You can choose this ability again for a different attack."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You've mastered how to kill with a particular attack. You inflict an additional 5 damage with attacks of one specific type, such as a thrown knife, a shot with a firearm, a swing of an axe, unarmed attacks, or some other specific attack you prefer. You can gain this ability more than once. Each time you do, choose a different specific attack."
       }
     ]
   },
   "folder": null,
   "sort": 0,
-  "ownership": { "default": 0 },
+  "ownership": {
+    "default": 0
+  },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

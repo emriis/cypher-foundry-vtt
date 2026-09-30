@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/svg/mystery-man.svg",
   "system": {
-    "description": "<p>A Focus for a subtle operative who gets where others cannot.</p>",
+    "description": "<p>Subtlety, guile, and stealth allow you to get in where others can't.</p>",
     "abilities": [
       {
         "id": "fast-talk",
@@ -19,7 +19,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Convince a nonhostile intelligent creature to take one reasonable action."
+        "description": "When speaking with an intelligent creature who can understand you and isn't hostile, you convince that creature to take one reasonable action in the next round. A reasonable action must be agreed upon by the GM; it should not put the creature or its allies in obvious danger or be wildly out of character. Action."
       },
       {
         "id": "letting-their-guard-down",
@@ -33,7 +33,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Successful disguise or deception reveals useful minor information."
+        "description": "If you interact with an intelligent NPC and successfully use disguise or deception against them, they reveal some minor additional information, such as which door is never locked, how many guards are on the upper level, or which way the king plans on ruling on a matter before him. Enabler."
       },
       {
         "id": "master-of-disguise",
@@ -47,7 +47,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Create and maintain a disguise quickly, with an extra asset under scrutiny."
+        "description": "You disguise yourself in well under half the time—one Last action—rather than the minute or more normally required when attempting a disguise task, and if the disguise comes under direct scrutiny or challenge, you gain an additional asset to your disguise tasks to maintain the deception. Last action."
       },
       {
         "id": "natural-sneak",
@@ -61,7 +61,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Low rolls on infiltration tasks count as 6; Effort raises that minimum."
+        "description": "When you roll for a lockpicking, perception, pickpocketing, or stealth task and your roll is less than a 6, treat the roll as a 6. (This means you don't get a GM intrusion if you roll a 1.) This ability renews when you take a recovery. Effort: Increase the minimum number rolled for this ability by 3. Enabler. At tier 3: The minimum number rolled for this ability increases to 9."
       },
       {
         "id": "awareness",
@@ -78,7 +78,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "Sense living creatures at long range until a recovery."
+        "description": "You become hyperaware of your surroundings until you use a ten-minute or longer recovery. You are aware of all living things within long range (including their general position). By using an action to concentrate, you can choose one of them and attempt to learn their general health and power level. Action."
       },
       {
         "id": "flight-not-fight",
@@ -95,7 +95,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Using an action only to move eases dodges until your next turn."
+        "description": "If you use your action only to move, your dodge tasks are eased until your next turn. Enabler."
       },
       {
         "id": "blend-in",
@@ -111,7 +111,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Appear unimportant and gain two assets to dodge and stealth while unnoticed."
+        "description": "By changing your posture, your facial expression, and perhaps your clothing, you make yourself appear unimportant but not out of place for wherever you are. For example, you could look like a janitor in an office building, an orderly in a hospital, or a clerk in a police station. People can still see you, but those of level 3 or less attach no importance to your presence. If a higher-level creature notices you, you can attempt an Intellect task against their level to retain your unimportant-seeming status. While blending in, you gain two assets to dodge and stealth tasks. This effect ends if you do something to call attention to your presence or position—attacking, using an ability, moving a large object, and so on—or if you use a ten-minute or longer recovery. This ability works even if the NPC observes you through a security camera or similar device. Attempting to fool an animal (such as a guard dog or police dog) is hindered. Action to initiate."
       },
       {
         "id": "defend-and-respond",
@@ -131,7 +131,7 @@
             "speed"
           ]
         },
-        "description": "After blocking or dodging a melee attack, make an immediate melee attack."
+        "description": "If you block or dodge a melee attack, you can immediately make a melee attack against your attacker. You can't use this ability more than once per round. Enabler."
       },
       {
         "id": "scrutinize-defenses",
@@ -147,7 +147,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "Study an area to ask the GM truthful questions about its defenses."
+        "description": "When you spend an hour or so thoroughly exploring an area (whether directly, through surveillance footage or a blueprint, or questioning people familiar with the area) no larger than a long distance in diameter, you can ask the GM one question about the area's defensive systems and procedures. The GM must answer you truthfully. For example, you could ask how often guards pass by a particular spot, what the guards are armed with (if anything), or if there are electronic or magical alarms. This ability resets when you use a ten-hour recovery. Effort: Ask an additional question. Action to initiate; one hour to complete."
       },
       {
         "id": "convenient-device",
@@ -165,7 +165,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Produce a one-use tool that removes a harmful condition; its cost matches the effect."
+        "description": "Because you planned ahead or were given a special tool to overcome an obstacle, you produce a piece of equipment that removes one harmful or negative condition affecting you or an ally within immediate range. For example, if you are poisoned, you have an antidote. If an ally is blinded by pepper spray, you have a salve that negates the irritant. If you are handcuffed, you have a miniature lockpick or a pen laser that cuts metal. The device works only once (but you can use this ability again to produce another one). The Intellect cost for using this ability is equal to the level of the effect you're trying to overcome. Action."
       },
       {
         "id": "invisibility",
@@ -181,7 +181,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Become invisible until you reveal your position; Effort can affect a creature you touch."
+        "description": "You become invisible. This effect ends if you do something to reveal your presence or position—attacking, using an ability, moving a large object, and so on. Effort: Use this ability on a creature you touch instead of yourself; it lasts until they do something to reveal their presence or until you (not they) use a ten-minute or longer recovery. Action to initiate. An invisible character's attack is eased by two steps. Attacks on an invisible character are hindered by four steps or are nearly impossible if the attacker has no idea where they might be."
       },
       {
         "id": "persistence-training",
@@ -197,7 +197,7 @@
           "amount": 5,
           "options": []
         },
-        "description": "End mind control or a disabling effect affecting you; Effort can help an ally."
+        "description": "You immediately end mind control affecting you. You also regain your ability to take your next turn normally and/or take it without hindrance by shaking off a lingering disabling effect. Effort: Use this ability on an ally within immediate range instead of yourself. Enabler for yourself; action for another."
       },
       {
         "id": "brainwashing",
@@ -213,7 +213,7 @@
           "amount": 6,
           "options": []
         },
-        "description": "Control a touched creature of level 3 or lower after a successful Intellect attack."
+        "description": "You use trickery, well-spoken lies, and mind-affecting chemicals (or other means, like magic or high technology, as appropriate to your genre) to control the actions of another creature you touch. The creature must be level 3 or lower and you must succeed at an Intellect attack against them. Control lasts until you use a ten-minute or longer recovery, and if you can see them you decide on a case-by-case basis if they follow your orders or if they can act freely. When the duration ends, the creature doesn't remember being controlled or anything it did while under your command. Effort: Increase the maximum level of the creature you can affect by 1. Action to initiate."
       },
       {
         "id": "spring-away",
@@ -229,7 +229,7 @@
           "amount": 5,
           "options": []
         },
-        "description": "After dodging danger, immediately move a short distance."
+        "description": "After successfully dodging an attack or some other danger, you can immediately move up to a short distance. (This movement doesn't hinder your tasks.) Once you use this ability, you can't use it again until your next turn. Enabler."
       }
     ]
   },
@@ -240,7 +240,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/commodities/tech/circuit-board.webp",
   "system": {
-    "description": "<p>Un Focus pour une personne dont le corps est en partie ou entièrement mécanique.</p>",
+    "description": "<p>Your body is partly or fully machine.</p>",
     "abilities": [
       {
         "id": "defensive-cybernetics",
@@ -21,7 +21,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Des éléments mécaniques durables permettent de te reprendre pour retirer une blessure mineure ou modérée sans dépenser de Puissance."
+        "description": "Une partie de ton corps est constituée d’éléments mécaniques persistants, internes et/ou externes. Décide avec le·la MJ de ta forme et de ta configuration exactes. Si tu as une blessure mineure ou modérée, tu peux te reprendre pour la retirer sans dépenser de Puissance, en utilisant simplement une action. L’aptitude se renouvelle à chaque récupération."
       },
       {
         "id": "hidden-shield",
@@ -35,7 +35,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Un bouclier intégré et dissimulé fonctionne comme une arme légère de mêlée et peut effectuer une attaque supplémentaire entravée."
+        "description": "Tu possèdes un bouclier intégré à ton corps (probablement dans ton bras), composé d’un alliage de métal et de polymères avancés. Le bouclier reste dissimulé tant que tu ne souhaites pas l’utiliser. Tu peux utiliser librement ce bouclier dans une main comme une arme légère de mêlée. Au prix d’une action supplémentaire à ton tour, tu peux faire une attaque de mêlée avec le bouclier, mais si tu le fais, ton attaque principale et l’attaque au bouclier sont toutes deux entravées. Si ton bouclier est détruit en encaissant des blessures, tu ne peux plus l’utiliser tant que tu n’as pas dépensé des ressources pour le réparer, ce qui prend environ une journée."
       },
       {
         "id": "powered-cybernetics",
@@ -51,7 +51,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Les tâches pour porter, grimper, sauter ou briser obtiennent au minimum 9; l’Effort augmente ce minimum de 3, puis il passe à 12 au rang 3."
+        "description": "Tu peux utiliser ta cybernétique pour soutenir et amplifier tes actions physiques. Quand tu fais un jet pour porter, grimper, sauter ou briser, et que ton résultat est inférieur à 9, considère que tu as obtenu 9. (Tu évites ainsi une Intrusion du·de la MJ si tu fais un 1.) L’aptitude se renouvelle à chaque récupération. Au rang 3, le minimum obtenu passe à 12. Effort : augmenter le minimum obtenu de +3."
       },
       {
         "id": "high-speed-interface",
@@ -67,7 +67,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Une connexion directe à une machine proche facilite les tâches pour l’identifier et l’utiliser à sa vitesse de traitement."
+        "description": "En te branchant directement à une machine ou un dispositif à portée immédiate, tu facilites les tâches pour l’identifier et l’utiliser. L’interface te permet d’interagir avec l’appareil aussi vite qu’il peut traiter l’information, ce qui est généralement plus rapide qu’une manipulation humaine (clavier, commandes vocales, etc.)."
       },
       {
         "id": "hud",
@@ -83,7 +83,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Un affichage tête haute améliore la vision dans l’obscurité et les phénomènes occultants; l’Effort active des modes combat, grossissant et scanner."
+        "description": "Tu disposes d’un système d’affichage tête haute (HUD/ATH) qui améliore ta perception de l’environnement. Tu vois dans une faible luminosité comme s’il faisait jour. Tu vois dans l’obscurité totale comme s’il c’était de la faible luminosité. Tu peux voir jusqu’à courte portée à travers le brouillard, la fumée ou d’autres phénomènes occultants. Effort : Tu peux consacrer de l’Effort pour obtenir des effets alternatifs : - HUD de combat : Avec 2 niveaux d’Effort, le HUD souligne tes adversaires et anticipe leurs attaques ce round, t’accordant un atout à ton prochain Blocage ou Esquive. - HUD grossissant : Avec 1 niveau d’Effort, pendant deux rounds, le HUD augmente ta portée visuelle jusqu’à 10 km et te permet de voir à courte portée à travers des matériaux simples de niveau 4 ou moins (bois, béton, plastique, pierre) en fausses couleurs. - HUD scanner : Avec 2 niveaux d’Effort, pendant deux rounds, le HUD te permet de voir à portée immédiate à travers des matériaux spéciaux de niveau 4 ou moins (plomb solide, champ de force opaque) en fausses couleurs. Si le matériau spécial est niveau 6+, tu dois réussir une tâche d’Intellect pour voir à travers."
       },
       {
         "id": "enhanced-self-repair",
@@ -99,7 +99,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Réduis de 2 le coût en Puissance pour te reprendre et retirer une blessure."
+        "description": "You reduce the Might cost of rallying to remove wounds by 2."
       },
       {
         "id": "weaponization",
@@ -115,7 +115,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Intègre une arme légère ou moyenne à une main, ou un outil polyvalent; tu es entraîné·e avec l’équipement choisi."
+        "description": "Tu possèdes une arme intégrée dans ton corps. Choisis une arme légère ou moyenne à une main (épée large, matraque, pistolet moyen…). Tu es entraîné·e avec cette arme. Tu peux la révéler ou la dissimuler comme action supplémentaire. Si ton arme intégrée est une arme à feu, elle se recharge via une fente dans ton bras, contient 10 tirs, et tire par un canon dissimulé au centre de ta paume. À la place d’une arme, tu peux intégrer un outil polyvalent comptant comme un ensemble d’outils légers ou lourds (à ton choix quand tu obtiens l’aptitude)."
       },
       {
         "id": "deep-reserves",
@@ -131,7 +131,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Transfère jusqu’à 6 points entre tes Réserves, à raison d’un point par round; l’aptitude revient après une récupération de dix heures."
+        "description": "When others are exhausted, you can push through. You can transfer up to 6 points among your Pools in any combination, at a rate of 1 point per round. For example, you could transfer 3 points of Speed to Might and 3 points of Intellect to Might, which would take a total of six rounds. This ability renews when you use a  ten-hour recovery. Action."
       },
       {
         "id": "fusion",
@@ -147,7 +147,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Fusionne des cyphers manifestes et des artefacts avec ton corps pour les utiliser comme Premières actions."
+        "description": "Tu peux fusionner tes cyphers manifestes et artefacts avec ton corps. Tu peux utiliser ces objets fusionnés comme des Premières actions (si leur utilisation normale demande une action)."
       },
       {
         "id": "bolts-of-power",
@@ -163,7 +163,7 @@
           "amount": 5,
           "options": []
         },
-        "description": "Libère quatre éclairs contre jusqu’à quatre cibles à portée courte; les cibles ratées subissent quand même 1 dégât."
+        "description": "You simultaneously unleash four lightning bolts, making four separate attacks against targets within short range. Each bolt inflicts 4 damage, or 1 damage on a failed attack roll. Action."
       },
       {
         "id": "closed-loop-body",
@@ -179,7 +179,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Tu n’as besoin ni de manger ni de respirer et tu ne subis pas les effets du vide ou des températures extrêmes."
+        "description": "Tu n’as pas besoin de manger ni de respirer, et tu ne subis aucun effet néfaste du vide ou des températures extrêmes (mais tu subis normalement les attaques de feu, froid, etc.)."
       },
       {
         "id": "cybernetic-alacrity",
@@ -195,7 +195,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "L’Effort consacré à une tâche de Célérité hors combat accorde aussi un niveau d’Effort gratuit ou un effet mineur."
+        "description": "Chaque fois que tu consacres de l’Effort à une tâche de Célérité hors combat, ajoute au choix : un niveau d’Effort gratuit ou un effet mineur sur l’action."
       },
       {
         "id": "embedded-drone",
@@ -211,7 +211,7 @@
           "amount": 3,
           "options": []
         },
-        "description": "Lance et contrôle un petit drone intégré doté de manipulateurs et d’une arme à feu jusqu’à une récupération d’une heure."
+        "description": "Tu possèdes un drone intégré dans ton corps, que tu peux lancer et contrôler jusqu’à ta prochaine récupération d’une heure ou plus (moment où il revient automatiquement). Le drone mesure 30 cm de côté, possède des manipulateurs pour accomplir des tâches physiques et une arme à feu intégrée pour attaquer. Il peut agir immédiatement au tour où tu le lances. S’il est détruit, tu peux utiliser tes ressources pour le restaurer en quelques jours."
       }
     ]
   },
@@ -222,7 +222,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document; créé sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

@@ -5,10 +5,17 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": ["speed"],
+    "statOptions": [
+      "speed"
+    ],
     "statAmount": 2,
-    "skillOptions": ["Gymnastics", "Initiative", "", ""],
-    "description": "<p>You move with a fluid, deliberate elegance, whether dancing, fighting, or simply crossing a room.</p><p><em>You gain +2 to your Speed Pool, and training in Gymnastics or Initiative.</em></p>"
+    "skillOptions": [
+      "Gymnastics",
+      "Initiative",
+      "",
+      ""
+    ],
+    "description": "<p>You have a perfect sense of balance, moving and speaking with grace and beauty. You're quick, lithe, flexible, and dexterous. Your body is perfectly suited to dance, and you use that advantage in combat to dodge blows. You might wear garments that enhance your agile movement and sense of style.</p>"
   },
   "folder": null,
   "sort": 0,
@@ -17,7 +24,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

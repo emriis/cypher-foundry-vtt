@@ -68,8 +68,9 @@ The Type list follows the genre and subgenre headings in the local Reference
 Document. Each language pack groups Types under genre folders and, where the
 genre has distinct subgenres, nested subgenre folders. Superhero Types are
 directly in their genre folder because their genre and subgenre are the same.
-French names and descriptions are working translations for review; the
-descriptions are original summaries. Compile `types-en` and `types-fr` from
+French names are working translations for review. The English CRD text is authoritative and is
+stored in full. French uses the complete Character Book translation when available; otherwise
+the English description is copied verbatim. Compile `types-en` and `types-fr` from
 their respective `_source/` directories before distributing a release.
 
 ## 3. Development and CI

@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/skills/melee/strike-dagger-blood-red.webp",
   "system": {
-    "description": "<p>Un Focus pour une personne qui utilise toutes les ruses, distractions et fourberies possibles pour gagner un combat.</p>",
+    "description": "<p>You'll do anything to win a fight: bite, scratch, kick, trick, and worse.</p>",
     "abilities": [
       {
         "id": "dirty-trick",
@@ -21,7 +21,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Tu distrais un adversaire pour entraver sa défense contre ton attaque de mêlée suivante, ou dissimules une autre action grâce à un bluff."
+        "description": "Tu tentes de distraire ton adversaire (le faire regarder ailleurs, feindre maladroitement pour préparer ton vrai coup, etc.) afin d’enchaîner avec une attaque. Fais une attaque d’Intellect pour tromper l’adversaire ; en cas de réussite, sa défense contre ton attaque de mêlée ce round est entravée. Comme tes adversaires comprennent vite que tu es fourbe, chaque utilisation après la première dans un même combat entrave ton attaque d’Intellect d’un palier supplémentaire. À la place d’une attaque, tu peux enchaîner par une autre action : si tu réussis une tâche de bluff facilitée, la cible ne se rend même pas compte de ce que tu as fait. Exemples : ouvrir les cages d’un zoo, te débarrasser discrètement d’un objet compromettant, tenter de voler ton adversaire…"
       },
       {
         "id": "go-for-the-eyes",
@@ -37,7 +37,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Une attaque de mêlée entravée altère la vision d’un adversaire jusqu’à sa prochaine récupération de dix minutes ou plus."
+        "description": "Tu tentes d’endommager l’œil d’un adversaire (en le frappant, en lançant de la poussière, etc.). Fais une attaque de mêlée entravée ; en cas de réussite, sa vision est altérée jusqu’à ta prochaine récupération de dix minutes ou plus, entravant toutes ses tâches dépendant de la vue (pratiquement toutes)."
       },
       {
         "id": "scratching-and-kicking",
@@ -51,7 +51,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Tes attaques de mêlée infligent 1 dégât supplémentaire grâce aux coups de pied, griffures ou morsures."
+        "description": "Tes attaques de mêlée infligent +1 dégât, car elles incluent coups de pied, griffures ou morsures."
       },
       {
         "id": "despite-my-wounds",
@@ -67,7 +67,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Quand tu es gravement blessé·e, tu obtiens une relance gratuite sur une action par round."
+        "description": "Tant que tu as deux blessures modérées ou une blessure majeure, tu obtiens un jet gratuit de relance sur une action par round (comme si tu dépensais 1 XP)."
       },
       {
         "id": "sneak-attack",
@@ -83,7 +83,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Une attaque avec une arme légère inflige 5 dégâts supplémentaires si la cible est surprise, distraite ou incapable d’agir."
+        "description": "If you attack a foe under one of the following conditions, your light melee or light ranged weapon attack inflicts an additional 5 damage on a successful hit. (This ability doesn't work with medium or heavy weapons.) You attack with surprise. An ally uses their action to ease your attack. Your foe's defenses are hindered due to some other ongoing direct distraction. Your foe is unable to take their next turn due to some disabling attack or situation. First action."
       },
       {
         "id": "when-the-deal-bombs",
@@ -99,7 +99,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Tu réduis la première blessure infligée par une personne devenue hostile après une interaction positive réussie; au rang 3, tu l’ignores entièrement."
+        "description": "Il y a toujours un risque qu’un individu à qui tu viens de parler se retourne contre toi. Après avoir réussi une persuasion, une tromperie, une interaction positive ou une aptitude similaire (comme Baratin), si la personne devient hostile dans la journée : sa première attaque réussie contre toi a sa blessure réduite d’un niveau. Au rang 3, tu ignores complètement la blessure (aucun dégât)."
       },
       {
         "id": "fast-kill",
@@ -118,7 +118,7 @@
             "speed"
           ]
         },
-        "description": "Une attaque de mêlée ou à distance réussie inflige 4 dégâts supplémentaires, mais pas deux rounds consécutifs."
+        "description": "Tes attaques à mains nues infligent +1 dégât."
       },
       {
         "id": "incapacitating-attack",
@@ -134,7 +134,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Une attaque réussie laisse la cible à terre, entravée et presque immobile jusqu’à une récupération ou une aide."
+        "description": "Ton attaque réussie incapacite brièvement la cible. Jusqu’à ta prochaine récupération de dix minutes ou plus (ou jusqu’à ce qu’on l’aide), la cible est à terre, ne peut pas se lever, ne peut se déplacer que d’une distance immédiate par round et ses défenses sont entravées."
       },
       {
         "id": "feint",
@@ -151,7 +151,7 @@
           "amount": 2,
           "options": []
         },
-        "description": "Tu crées une diversion pour gagner un atout et infliger 4 dégâts supplémentaires avec une attaque de mêlée au round suivant."
+        "description": "Si tu utilises une action pour créer une diversion, au round suivant tu profites de la faiblesse défensive de ton adversaire. Tu fais une attaque de mêlée avec un atout et si l’attaque réussit, tu infliges +4 dégâts supplémentaires."
       },
       {
         "id": "mind-games",
@@ -167,7 +167,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Mensonges, sarcasmes et insultes acerbes font perdre son prochain tour à une cible et entravent ses tâches suivantes."
+        "description": "Par mensonges, provocations, sarcasmes, ou insultes acerbes ou obscènes contre un adversaire capable de te comprendre, tu le perturbes mentalement. En cas de réussite de la tâche d’Intellect : la cible perd son prochain tour et au tour suivant, toutes ses tâches sont entravées."
       },
       {
         "id": "knock-out",
@@ -183,7 +183,7 @@
           "amount": 5,
           "options": []
         },
-        "description": "Une attaque de mêlée entravée peut assommer une cible de niveau 3 ou moins au lieu de lui infliger des dégâts."
+        "description": "Make a hindered melee attack against a foe of level 3 or lower. If the attack hits, instead of inflicting damage you knock them unconscious until you use a ten-minute or longer recovery (or someone uses an action to bring them back around). Effort: Increase the maximum level of the foe you can affect by 1. Action."
       },
       {
         "id": "using-the-environment",
@@ -199,7 +199,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Tu transformes le décor et le terrain en atout, franchis librement les obstacles accessibles et gagnes un avantage en mêlée."
+        "description": "Tu utilises le décor à ton avantage. Si quelque chose à portée immédiate peut plausiblement servir de couverture (table, lustre, rampe, un autre adversaire, etc.), tu obtiens une couverture et un atout sur tes attaques de mêlée. Il s’agit d’une tâche de routine qui ne nécessite donc pas de jet pour se déplacer partout où c’est physiquement possible tant que tu pourrais rejoindre cet endroit avec un mouvement normal, de l’escalade, un saut (de plus tu ignores les obstacles et le terrain difficile quand tu le fais). Par exemple : escalader une tenture jusqu’à un balcon, glisser le long d’une voile, etc. Impossible cependant de passer par une meurtrière ou d’entrer dans une cage fermée. L’effet dure jusqu’à ta prochaine récupération de dix minutes ou plus."
       },
       {
         "id": "lethal-strike",
@@ -216,7 +216,7 @@
           "amount": 6,
           "options": []
         },
-        "description": "Une attaque rapide et précise de mêlée ou à distance inflige 7 dégâts supplémentaires à un point vital."
+        "description": "With a swift and sudden melee or ranged weapon attack, you strike a foe in a vital spot. If you hit, you inflict an additional 7 damage. Action."
       },
       {
         "id": "twisting-the-knife",
@@ -233,7 +233,7 @@
           "amount": 4,
           "options": []
         },
-        "description": "Après avoir touché un adversaire avec une arme de mêlée, tu le touches automatiquement une seconde fois avec cette arme."
+        "description": "Si tu as touché un adversaire avec une arme de mêlée durant ce combat, tu le touches automatiquement une seconde fois (aucun jet), infligeant les dégâts normaux. Tu ne peux pas utiliser cette aptitude : avec une attaque spéciale, ni si tu veux utiliser de l’Effort pour augmenter les dégâts. Les aptitudes qui augmentent automatiquement les dégâts s’appliquent néanmoins."
       }
     ]
   },
@@ -244,7 +244,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document; créé sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

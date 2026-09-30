@@ -5,10 +5,17 @@
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
-    "statOptions": ["intellect"],
+    "statOptions": [
+      "intellect"
+    ],
     "statAmount": 2,
-    "skillOptions": ["Deception", "Recognizing Motive", "", ""],
-    "description": "<p>Quick-witted and observant, you size up people and situations almost instantly.</p><p><em>You gain +2 to your Intellect Pool, and training in Deception or Recognizing Motive.</em></p>"
+    "skillOptions": [
+      "Deception",
+      "Recognizing Motive",
+      "",
+      ""
+    ],
+    "description": "<p>You're quick-witted, thinking well on your feet. You understand people, so you can fool them but are rarely fooled. Because you easily see things for what they are, you get the lay of the land swiftly, size up threats and allies, and assess situations with accuracy. Perhaps you're physically attractive, maybe you use your wit to overcome any physical or mental imperfections, or perhaps you have turned your mind to compromising digital devices because you're just that clever.</p>"
   },
   "folder": null,
   "sort": 0,
@@ -17,7 +24,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD)."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }
