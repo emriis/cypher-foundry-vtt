@@ -1,0 +1,210 @@
+{
+  "_id": "masterstelE70965",
+  "_key": "!items!masterstelE70965",
+  "name": "Masters Telekinesis",
+  "type": "focus",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "description": "<p>You can telekinetically move objects with your mind without physically touching them.</p>",
+    "abilities": [
+      {
+        "id": "push",
+        "name": "Push",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "You telekinetically push a target within short range an immediate distance in any direction. You must be able to see the target, it must be your size or smaller, and it must not be affixed to anything. The push is quick, and the force is about as direct and crude as a kick or punch. Action."
+      },
+      {
+        "id": "steady-hand",
+        "name": "Steady Hand",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Using your telekinesis to stabilize yourself or improve your grip, you gain a free level of Effort to use on one physical noncombat task. You can't use this ability again until after you take a recovery action. Enabler."
+      },
+      {
+        "id": "telekinesis",
+        "name": "Telekinesis",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "You telekinetically affect an object you can see within long range that is not too heavy for you to physically affect if you were standing next to it and could use your hands normally. Options include closing or opening a door, writing a simple symbol or a few words with a writing instrument, transferring an object a short distance, wresting an object from another creature's grasp (on a successful Intellect roll versus their level), pushing a creature an immediate distance (with a successful attack roll), or even hindering a creature's attack or defense by applying restraining pressure to a leg or arm (with a successful attack roll). In all cases, the effect must occur over the course of one round. Action."
+      },
+      {
+        "id": "deflect-attacks",
+        "name": "Deflect Attacks",
+        "tier": 2,
+        "prerequisites": [
+          "push",
+          "steady-hand"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "You automatically block, deflect, or dodge any ranged projectile attacks (no roll required). However, on your next turn after you're attacked with ranged projectiles, all your other actions are hindered. This ability lasts until you use a ten-minute or longer recovery. Action to initiate."
+      },
+      {
+        "id": "energize-object",
+        "name": "Energize Object",
+        "tier": 2,
+        "prerequisites": [
+          "telekinesis"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "You channel energy into an object (like a melee or ranged weapon). Until you use a one-hour or longer recovery, any attack you make with the energized object inflicts an additional 1 damage from energy (if the weapon fires projectiles, such as bullets from a rifle, this damage applies to the projectiles). The energy drains out if you stop holding or carrying the object, but as an extra action on your turn, you can energize a different object. Action. When you energize an object, you use psychokinetic energy, which tends to give affected weapons a subtle purple glimmer."
+      },
+      {
+        "id": "armoring-debris",
+        "name": "Armoring Debris",
+        "tier": 3,
+        "prerequisites": [
+          "deflect-attacks"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "You use nearby small objects from the environment (rocks, broken items, clumps of dirt, and so on) to intercept incoming attacks until you use a ten-minute or longer recovery. This allows you to attempt to better block wounds (block tasks are eased by one additional step; dodge tasks are unaffected). Action to initiate."
+      },
+      {
+        "id": "enhance-strength",
+        "name": "Enhance Strength",
+        "tier": 3,
+        "prerequisites": [
+          "energize-object"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Until you use a ten-minute or longer recovery, you use your telekinesis to augment your physical actions. When you roll on a task using brute force, such as moving a heavy object or smashing down a door, and your roll is less than a 9, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) Effort: Increase the minimum number rolled for this ability by 3. Action to initiate."
+      },
+      {
+        "id": "apportation",
+        "name": "Apportation",
+        "tier": 4,
+        "prerequisites": [
+          "armoring-debris"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "You pull a physical object to you across almost any distance. You can choose any piece of normal equipment on the equipment list for your genre, or (once between each ten-hour recovery) you can let the GM randomly determine what object appears. You can't use this ability to take an item held by another creature. The object appears next to you. Action. Random Object d20 Results 1–10 Standard equipment 11–12 Manifest cypher 13–20 Worthless junk"
+      },
+      {
+        "id": "mind-for-speed",
+        "name": "Mind for Speed",
+        "tier": 4,
+        "prerequisites": [
+          "enhance-strength"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "When performing a task that would normally require spending points from your Intellect Pool, you can spend points from your Speed Pool instead, and vice versa."
+      },
+      {
+        "id": "psychokinetic-attack",
+        "name": "Psychokinetic Attack",
+        "tier": 5,
+        "prerequisites": [
+          "apportation",
+          "mind-for-speed"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "You can use this ability in one of two ways. Heavy Throw: You telekinetically grab an object within short range and hurl it at a target within short range. (To throw a creature instead of an object, you first have to telekinetically grab them with a successful Intellect attack.) Make an Intellect attack against your target. If you succeed, your target and whatever you throw take 6 damage. Shattering Burst: You unleash your power directly against an object up to half your size within short range. Make an Intellect attack (this is eased by three steps compared to using physical strength to attack the object). If you succeed, you instantly destroy the object. Action."
+      },
+      {
+        "id": "improved-apportation",
+        "name": "Improved Apportation",
+        "tier": 6,
+        "prerequisites": [
+          "psychokinetic-attack"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "You pull a creature of level 3 or lower to you across almost any distance. You can choose a kind of creature that you've already encountered, or (once between each ten-hour recovery) you can let the GM randomly determine what creature appears. The creature appears next to you. They have no memory of anything before being called by you, but they have the general knowledge of a typical creature of their type. The creature is open to communicating and helping you. Action. Random Creature d20 Results 1–16 Level 3 17–18 Level 4 19–20 Level 5"
+      },
+      {
+        "id": "reshape",
+        "name": "Reshape",
+        "tier": 6,
+        "prerequisites": [
+          "psychokinetic-attack"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "You reshape matter within short range in an area no larger than a 5-foot (1.5 m) cube. If you use only one action on this ability, the changes you make are crude at best. If you spend at least ten minutes and succeed at an appropriate hindered crafting task, you can make complex changes to the material. You can't change the nature of the material, only its shape. For example, you can make a hole in a wall or floor, seal up a hole, create a sword from a piece of iron, or break or repair a chain. Using this ability multiple times lets you make larger changes, such as building a wall, bridge, or similar structure. Action."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

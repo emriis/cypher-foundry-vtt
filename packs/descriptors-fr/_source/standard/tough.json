@@ -1,0 +1,30 @@
+{
+  "_id": "dmRoMq0zjc9gNsX2",
+  "_key": "!items!dmRoMq0zjc9gNsX2",
+  "name": "Robuste",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "might"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Athlétisme",
+      "Soin",
+      "Survie en plein air",
+      ""
+    ],
+    "description": "<p>You're strong and can take extra physical punishment—you keep going, shrugging off hurts and injuries that might slow or incapacitate a lesser person. You might have a large frame and a square jaw. Tough characters frequently have visible scars.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

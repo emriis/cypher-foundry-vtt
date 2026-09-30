@@ -1,0 +1,30 @@
+{
+  "_id": "kbtMC8Hz7gUzthLo",
+  "_key": "!items!kbtMC8Hz7gUzthLo",
+  "name": "Bookish",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "History",
+      "Philosophy",
+      "Psychology",
+      ""
+    ],
+    "description": "<p>You've spent most of your life in sedentary pursuits—reading books, watching the stars, writing poetry, and so on—rather than active ones. You're well-versed in all manner of academia or other intellectual pursuits. You're not necessarily weak or feeble (although this is a good descriptor for characters who are elderly), but you have no experience in more physical activities.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

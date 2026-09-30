@@ -22,12 +22,19 @@ export default class CypherTypeData extends foundry.abstract.TypeDataModel {
       freeArmor: new BooleanField({ required: true, initial: false }),
       skillOptions: new ArrayField(new StringField({ required: true, blank: true }), { required: true, initial: [] }),
       abilities: new ArrayField(new SchemaField({
+        id: new StringField({ required: true, blank: false }),
         name: new StringField({ required: true, blank: false }),
         tier: new NumberField({ required: true, integer: true, initial: 1, min: 1, max: 6 }),
+        prerequisites: new ArrayField(new StringField({ required: true, blank: false }), { required: true, initial: [] }),
+        repeatable: new BooleanField({ required: true, initial: false }),
         enabler: new BooleanField({ required: true, initial: false }),
         cost: new SchemaField({
-          stat: new StringField({ required: true, initial: "none" }),
-          amount: new NumberField({ required: true, integer: true, initial: 0, min: 0 })
+          stat: new StringField({ required: true, initial: "none", choices: ["might", "speed", "intellect", "choice", "none"] }),
+          amount: new NumberField({ required: true, integer: true, initial: 0, min: 0 }),
+          options: new ArrayField(
+            new StringField({ required: true, choices: ["might", "speed", "intellect"] }),
+            { required: true, initial: [] }
+          )
         }),
         description: new HTMLField({ required: true, blank: true })
       }), { required: true, initial: [] }),

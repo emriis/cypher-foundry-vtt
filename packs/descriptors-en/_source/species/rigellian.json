@@ -1,0 +1,12 @@
+{
+  "_id": "R7iG4lM9pV2xT6aC", "_key": "!items!R7iG4lM9pV2xT6aC", "name": "Rigellian", "type": "descriptor", "img": "icons/svg/aura.svg",
+  "system": {
+    "category": "species", "genres": ["sciFi"], "grantsSecondDescriptor": false, "statOptions": [], "statAmount": 0, "skillOptions": ["Systems Operation"],
+    "benefits": [
+      { "name": "No GM Intrusion on Athletics", "description": "<p>You don't get a GM intrusion if you roll a 1 on an athletics task.</p>" },
+      { "name": "Projectile Weapon Damage", "description": "<p>You inflict +1 damage with ranged projectile weapons.</p>" }
+    ],
+    "description": "<p>As a rigellian, you are a 7-foot (2 m) tall humanoid covered in thick fur. Rigellians are renowned for their strength, loyalty, and roaring language. Most rigellians are peaceful and enjoy life on a technologically advanced homeworld orbiting a distant blue supergiant star. While you may share the sense of honor most of your kind possess, you've probably left home behind to pursue adventure in the wider galaxy.</p><p><strong>You gain the following characteristics:</strong></p><ul><li>You don't get a GM intrusion if you roll a 1 on an athletics task.</li><li>You are trained in systems operation.</li><li>You inflict +1 damage with ranged projectile weapons.</li></ul>"
+  }, "folder": null, "sort": 0, "ownership": { "default": 0 },
+  "flags": { "cypher": { "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License." } }
+}

@@ -1,0 +1,228 @@
+{
+  "_id": "growstotow738FB1",
+  "_key": "!items!growstotow738FB1",
+  "name": "Deviens colossal",
+  "type": "focus",
+  "img": "icons/creatures/mammals/ox-bull-horned-glowing.webp",
+  "system": {
+    "description": "<p>You can grow larger and, with enough experience, to towering heights.</p>",
+    "abilities": [
+      {
+        "id": "enlarge",
+        "name": "Agrandissement",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "might",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Tu grandis jusqu’à atteindre 3 m de haut, jusqu’à ta prochaine récupération d’une action ou plus. Ton équipement grandit avec toi. Pendant que tu es agrandi·e : tu gagnes +1 en Avantage de Puissance, tu peux ignorer la première blessure modérée que tu subis, tes attaques à mains nues infligent 4 dégâts mais tes tâches d’Esquive sont entravées. Chaque utilisation augmente le coût en Puissance de +1. Le coût se réinitialise après une récupération."
+      },
+      {
+        "id": "mighty-leap",
+        "name": "Saut puissant",
+        "tier": 1,
+        "prerequisites": [
+          "enlarge"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Quand tu es plus grand·e que la normale et que tu sautes, tu parcours deux fois la distance normale, horizontalement ou verticalement."
+      },
+      {
+        "id": "longstrider",
+        "name": "Grand·e marcheur·euse",
+        "tier": 1,
+        "prerequisites": [
+          "enlarge"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Quand tu es plus grand·e que la normale, ta vitesse de déplacement sur la durée (pas ton déplacement par round, mais plutôt quand tu marches, cours, randonnes pendant au moins une minute) est doublée grâce à ta foulée élargie et ton endurance accrue."
+      },
+      {
+        "id": "preternaturally-strong",
+        "name": "Force surnaturelle",
+        "tier": 2,
+        "prerequisites": [
+          "enlarge"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "might",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Quand tu fais un jet pour porter, grimper, sauter ou briser, et que ton résultat est inférieur à 9, considère que tu as obtenu 9. (Tu évites ainsi une Intrusion du·de la MJ si tu fais un 1.) Quand tu es plus grand·e que la normale, chaque palier de taille (Agrandissement, Encore plus grand·e, Énorme, Gigantesque, Colossal·e) augmente ce minimum de +3. L’aptitude se renouvelle après une récupération. Au rang 3, le minimum passe à 12."
+      },
+      {
+        "id": "scary-big",
+        "name": "Terrifiant·e même à taille normale",
+        "tier": 2,
+        "prerequisites": [
+          "enlarge"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Même sans être agrandi·e, ta présence est impressionnante : tu gagnes un atout aux tâches de persuasion et intimidation. Si tu es plus grand·e que ta taille normale, tu gagnes deux atouts."
+      },
+      {
+        "id": "bigger",
+        "name": "Encore plus grand·e",
+        "tier": 3,
+        "prerequisites": [
+          "enlarge"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Quand tu utilises Agrandissement, si tu dépenses 1 Puissance supplémentaire, tu atteins 4 m de haut. Pendant que tu es encore plus grand·e : tu gagnes +1 en Avantage de Puissance, tu peux ignorer les deux premières blessures modérées, tes attaques à mains nues infligent 6 dégâts, tu gagnes un atout aux tâches facilitées par une grande taille (grimper, traverser un cours d’eau…) mais tes tâches d’Esquive sont entravées de deux paliers."
+      },
+      {
+        "id": "towering-throw",
+        "name": "Projection titanesque",
+        "tier": 3,
+        "prerequisites": [
+          "bigger"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Quand tu infliges des dégâts à une créature de ta taille ou plus petite avec une attaque à mains nues, tu la projettes à 1d20 × 30 cm. Elle atterrit à terre. Quand tu es plus grand·e que la normale, chaque palier de taille (Agrandissement, Encore plus grand·e, Énorme, Gigantesque, Colossal·e) augmente : la distance projetée de +1d6 x 30cm et infligent des dégâts d’impact supplémentaires de +1."
+      },
+      {
+        "id": "huge",
+        "name": "Énorme",
+        "tier": 4,
+        "prerequisites": [
+          "bigger"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Quand tu utilises Agrandissement, si tu dépenses 2 Puissance supplémentaires, tu atteins 5 m de haut. Tant que tu es énorme : tu gagnes +1 en Avantage de Puissance, tu peux ignorer les trois premières blessures modérées, tes attaques à mains nues infligent 7 dégâts, tu gagnes un atout aux tâches facilitées par une grande taille mais tes tâches d’Esquive sont entravées de deux paliers."
+      },
+      {
+        "id": "towering-strike",
+        "name": "Frappe démesurée",
+        "tier": 4,
+        "prerequisites": [
+          "bigger"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Quand tu touches avec une attaque de Puissance, tu infliges +4 dégâts supplémentaires. Quand tu es plus grand·e que la normale, chaque palier de taille (Agrandissement, Encore plus grand·e, Énorme, Gigantesque, Colossal·e) ajoute +1 dégât supplémentaire. L’aptitude se renouvelle après une récupération."
+      },
+      {
+        "id": "gargantuan",
+        "name": "Gigantesque",
+        "tier": 5,
+        "prerequisites": [
+          "huge"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Quand tu utilises Agrandissement, si tu dépenses 5 Puissance supplémentaires, tu atteins 9 m de haut. Pendant que tu es gigantesque : tu gagnes +2 en Avantage de Puissance, tu peux ignorer trois blessures modérées et une blessure majeure, tes attaques à mains nues infligent 8 dégâts, tu gagnes deux atouts aux tâches facilitées par une grande taille, tu peux, comme action, faire une attaque à mains nues contre toutes les créatures dans une zone immédiate (jet séparé pour chaque cible) mais tes tâches d’Esquive sont entravées de trois paliers. Si tu tombes à terre en étant gigantesque, tu subis une blessure modérée et tu dois utiliser une Dernière action pour te relever."
+      },
+      {
+        "id": "might-for-mind",
+        "name": "Puissance pour l’esprit",
+        "tier": 5,
+        "prerequisites": [
+          "gargantuan"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Quand tu effectues une tâche qui exigerait normalement de dépenser des points de ta Réserve de Puissance, tu peux dépenser des points de ta Réserve d’Intellect à la place — et inversement."
+      },
+      {
+        "id": "colossal",
+        "name": "Colossal·e",
+        "tier": 6,
+        "prerequisites": [
+          "gargantuan"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 7,
+          "options": []
+        },
+        "description": "Quand tu utilises Agrandissement, si tu dépenses 7 Puissance supplémentaires, tu atteins 18 m de haut. Pendant que tu es colossal·e : tu gagnes +2 en Avantage de Puissance, tu peux ignorer trois blessures modérées et deux blessures majeures, tes attaques à mains nues infligent 9 dégâts, tu gagnes deux atouts aux tâches facilitées par une grande taille, tu peux, comme action, faire une attaque à mains nues contre toutes les créatures dans une zone immédiate (jet séparé pour chaque cible), tu ne peux pas esquiver efficacement les attaques de créatures faisant un quart de ta taille ou moins (leurs attaques te touchent automatiquement). Si tu tombes à terre en étant colossal·e, tu subis une blessure modérée et tu dois utiliser une Dernière action pour te relever."
+      },
+      {
+        "id": "grab",
+        "name": "Saisie colossale",
+        "tier": 6,
+        "prerequisites": [
+          "colossal"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Si tu fais une attaque à mains nues comme Dernière action, ton attaque inflige 2 dégâts de moins, mais la cible est saisie. Toutes ses tâches sont entravées, y compris pour tenter de se libérer. En tant qu’attaque, tu peux infliger 4 dégâts à la cible saisie (sans jet). Quand tu es plus grand·e que la normale, chaque palier de taille (Agrandissement, Encore plus grand·e, Énorme, Gigantesque, Colossal·e) entrave les tentatives d’évasion de la cible de +1 palier et augmente tes dégâts d’écrasement de +1."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

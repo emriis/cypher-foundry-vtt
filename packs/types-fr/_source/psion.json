@@ -24,38 +24,52 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "mind-reading",
         "name": "Lecture Mentale",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
-        "description": "Tu peux lire les pensées superficielles d’une créature que tu vois à courte portée. Si la cible n’est pas consentante, tu dois réussir une **attaque d’Intellect** pour lire son esprit. Une fois le contact établi, tu peux continuer à lire ses pensées jusqu’à ta prochaine **récupération de dix minutes ou plus**. Action"
+        "description": "You can read the surface thoughts of a creature you can see within short range. If the creature is unwilling, you must make an Intellect attack against them to read their thoughts. Once you have established contact, you can read the target's thoughts until you use a ten-minute or longer recovery. Action."
       },
       {
+        "id": "onslaught",
         "name": "Assaut Psychique",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "Tu attaques un adversaire en utilisant des énergies visant soit son corps, soit son esprit. Tu dois pouvoir le voir. **Attaque physique :** tu émets un rayon de force à courte portée qui inflige **4 dégâts**. **Attaque mentale :** tu tranches dans ses pensées par une onde psychique infligeant **2 dégâts d’Intellect**, ignorant l’armure. Certaines créatures dépourvues d’esprit (comme les robots) peuvent être immunisées. Au rang 3, tes attaques d’Assaut Psychique infligent +1 dégât. Action"
+        "description": "Tu attaques un adversaire que tu peux voir en utilisant des énergies visant soit son corps, soit son esprit. Attaque physique : tu émets un rayon de force à courte portée qui inflige 4 dégâts. Attaque mentale : tu tranches dans ses pensées par une onde psychique infligeant 2 dégâts d'Intellect, ignorant l'armure. Certaines créatures dépourvues d'esprit (comme les robots) peuvent être immunisées. Au rang 3, tes attaques infligent +1 dégât."
       },
       {
+        "id": "psychic-veil",
         "name": "Voile Psychique",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "intellect",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "Ton apparence devient floue, comme vue à travers l’aura visuelle d’une migraine, jusqu’à ta prochaine **récupération de dix minutes ou plus**. Ce voile ne gêne pas tes actions, mais **tes jets d’Esquive et de défense d’Intellect sont facilités**. Tant que le voile est actif, il t’offre une **protection mentale** : les attaques psychiques que tu subis voient leur gravité réduite d’un palier (majeure → modérée, modérée → mineure, mineure → aucune). Par exemple : Si une attaque psychique devrait te causer une blessure modérée, tu ne subis qu’une blessure mineure."
+        "description": "Ton apparence devient floue jusqu'à ta prochaine récupération de dix minutes ou plus. Ce voile ne gêne pas tes actions, mais tes jets d'Esquive et de défense d'Intellect sont facilités. Tant que le voile est actif, les attaques psychiques que tu subis voient leur gravité réduite d'un palier (majeure vers modérée, modérée vers mineure, mineure vers aucune)."
       }
     ],
-    "statOptions": ["intellect"],
-    "description": "<p>Un Type de Space Opera centré sur l'archétype psion·ne, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Science-fiction. Sous-genre : Space Opera. Réserves principales : Intellect.</em></p>"
+    "statOptions": [
+      "intellect"
+    ],
+    "description": "<p>Your latent psychic talents were coaxed forth via study, specialized training, and perhaps even genetic manipulation and/or cranial implants. Now you routinely tap into another fundamental force of the universe, possibly an extradimensional energy field that gives you a mental connection to both the physical world and the minds of other creatures. How you choose to use your somewhat rare abilities depends on your circumstances and ambitions. With your ability to peer into the minds of others, you can help your team avoid conflict. Your allies benefit from letting you help mediate situations, since you might gain an insight into the secret hearts of the other negotiators. But should you fail to read their thoughts (or dislike what you find), you're also a capable combatant, able to veil yourself in mental distortion while peppering foes with psychic violence.</p>"
   },
   "folder": "DNZXZoUQ1z24nS44",
   "sort": 0,
@@ -64,7 +78,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

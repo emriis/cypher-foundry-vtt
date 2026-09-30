@@ -1,0 +1,30 @@
+{
+  "_id": "aR7nhfar2WvpScbV",
+  "_key": "!items!aR7nhfar2WvpScbV",
+  "name": "Furtif·ve",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "speed"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Furtivité",
+      "Vol à la tire",
+      "Crochetage",
+      ""
+    ],
+    "description": "<p>Tu es furtif·ve, insaisissable et rapide. Tu sais utiliser les ombres et les abris pour rester invisible et inaudible.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

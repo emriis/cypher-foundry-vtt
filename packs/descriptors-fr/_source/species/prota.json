@@ -1,0 +1,12 @@
+{
+  "_id": "P3rO9tF2wK6nB8sD", "_key": "!items!P3rO9tF2wK6nB8sD", "name": "Prota", "type": "descriptor", "img": "icons/svg/aura.svg",
+  "system": {
+    "category": "species", "genres": ["sciFi"], "grantsSecondDescriptor": false, "statOptions": [], "statAmount": 0, "skillOptions": ["Persuasion"],
+    "benefits": [
+      { "name": "Blessure mineure supplémentaire", "description": "<p>Tu peux encaisser une blessure mineure supplémentaire par rapport à la normale.</p>" },
+      { "name": "Corps modelé", "description": "<p>Tu gagnes un atout à une tâche spécifique pour laquelle tu as modelé ton corps.</p>" }
+    ],
+    "description": "<p>Ta chair ressemble à de l'argile extensible : tu peux modifier ta forme générale, passant d'une <strong>masse limace</strong> (ou sphérique) à une silhouette dotée de plusieurs pseudopodes faisant office de bras et de jambes. Ton contrôle reste limité : tu ne peux pas imiter parfaitement une autre créature ou un objet, mais tu peux en <strong>évoquer grossièrement la forme</strong>, ce qui te demande environ <strong>dix minutes</strong> à chaque réagencement. Les Protas sont rares - ton monde natal a été <strong>détruit par la guerre</strong> bien avant ta naissance. Tu rencontres rarement d'autres membres de ton espèce, et tu as appris à vivre parmi les autres, dont certain·es sont devenu·es tes ami·es ou ta famille de cœur.</p><p><strong>Tu obtiens les caractéristiques suivantes :</strong></p><ul><li>Tu peux encaisser <strong>une blessure mineure supplémentaire</strong> par rapport à la normale.</li><li>Tu es <strong>entraîné·e en persuasion</strong>.</li><li>Tu gagnes <strong>un atout à une tâche spécifique</strong> pour laquelle tu as <strong>modelé ton corps</strong>.</li></ul><p>Exemples de tâches pour lesquelles un·e Prota peut obtenir un atout, après dix minutes de remodelage : se cacher dans un endroit précis, se faufiler dans une ouverture étroite, escalader un mur particulier, viser un emplacement précis, porter une charge exceptionnellement lourde, etc.</p>"
+  }, "folder": null, "sort": 0, "ownership": { "default": 0 },
+  "flags": { "cypher": { "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License." } }
+}

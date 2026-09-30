@@ -1,0 +1,255 @@
+{
+  "_id": "consortswiF70F00",
+  "_key": "!items!consortswiF70F00",
+  "name": "Fréquente les morts",
+  "type": "focus",
+  "img": "icons/magic/death/skull-humanoid-crown-white.webp",
+  "system": {
+    "description": "<p>The dead answer your questions, and their reanimated corpses serve you.</p>",
+    "abilities": [
+      {
+        "id": "basic-necromancy",
+        "name": "Nécromancie de base",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Tu réanimes le corps d’une créature morte faisant approximativement votre taille ou plus petite à portée immédiate, créant ainsi un·e suivant·e mort‑vivant·e de niveau 1. Iel n’a aucune intelligence, mémoires ou aptitudes spéciales qu’il pouvait posséder de son vivant. La créature suit tes ordres verbaux avant de redevenir inerte au moment où tu utilises ta récupération d’une heure ou plus. Tu peux la réanimer à nouveau après qu’elle soit redevenu inerte ou qu’elle ait été “tuée” par dégâts (tu devras peut être passer quelques minutes avec une aiguille et du fil pour rattacher les morceaux détachés ou tombés)."
+      },
+      {
+        "id": "bone-lore",
+        "name": "Connaissance des os",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "En touchant un corps, tu peux établir la cause de la mort, depuis combien de temps la créature est morte et son espèce lorsqu’elle était vivante. Dernière action."
+      },
+      {
+        "id": "speaker-for-the-dead",
+        "name": "Porte parole des Morts",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Tu touches le corps d’un être mort et lui poses une question. Il ne peut pas répondre à des questions qu’il n’aurait pas comprises de son vivant, ni fournir des informations qu’il n’avait pas à l’époque. L’être mort n’est pas obligé de te répondre. Tu dois interagir avec lui comme tu l’aurais convaincu de son vivant : promettre des funérailles, venger sa mort, transmettre un message, etc. Cela nécessite généralement un jet d’interaction (persuasion ou intimidation). Action."
+      },
+      {
+        "id": "blood-sorcery",
+        "name": "Magie du sang",
+        "tier": 2,
+        "prerequisites": [
+          "basic-necromancy",
+          "bone-lore"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu utilises ton propre sang, esprit ou énergie vitale pour alimenter tes aptitudes. Tu subis une blessure modérée et gagnes +1 d’Avantage dans la Réserve de ton choix tant que tu conserves cette blessure. Facilitateur."
+      },
+      {
+        "id": "improved-necromancy",
+        "name": "Nécromancie améliorée",
+        "tier": 2,
+        "prerequisites": [
+          "basic-necromancy",
+          "blood-sorcery"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu peux utiliser Nécromancie de base pour réanimer plusieurs corps en même temps.. Chaque créature réanimée au-delà de la première coûte 1 point d’Intellect supplémentaire (donc 4 points pour deux corps, 5 points pour trois etc…) La portée de Nécromancie de base (y compris quand tu réanimes plusieurs corps) augmente à court."
+      },
+      {
+        "id": "improved-speaker",
+        "name": "Porte-parole amélioré",
+        "tier": 2,
+        "prerequisites": [
+          "bone-lore",
+          "speaker-for-the-dead"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Quand tu utilises Porte‑parole des morts, pour chaque point d’Intellect supplémentaire dépensé dans le coût initial, tu peux poser une question supplémentaire."
+      },
+      {
+        "id": "reading-the-room",
+        "name": "Ressentir l’ambiance",
+        "tier": 3,
+        "prerequisites": [
+          "blood-sorcery",
+          "improved-speaker",
+          "repair-flesh"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Tu obtiens des connaissances sur une zone en parlant avec les esprits des morts ou leurs énergies résiduelles. Tu poses une question simple et factuelle au·à la MJ. Tu dois réussir un jet d’Intellect dont la difficulté dépend de la question et donc de l’évaluation du·de la MJ. “Qu’est-ce qui a tué la vache dans cette étable ?” est un bon exemple de question simple. “Pourquoi ces vaches ont-elles été tuées ?” n’est pas une question appropriée car cela a plus à voir avec l’état d’esprit du tueur que l’ambiance de l’étable. Les questions simples sont en général de difficulté 3, mais les questions très techniques ou impliquant des secrets peuvent être plus difficiles. Action."
+      },
+      {
+        "id": "repair-flesh",
+        "name": "Réparation de la chair",
+        "tier": 3,
+        "prerequisites": [
+          "blood-sorcery",
+          "improved-necromancy",
+          "reading-the-room"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Par un simple toucher, tu rafistoles la chair blessée. Tu soignes une blessure mineure ou réduis une blessure modérée à mineure ou une blessure majeure à modérée. Au lieu de s’occuper d’une blessure, tu peux améliorer la prochaine récupération d’un personnage de +2 points de Réserve supplémentaires. Si tu l’utilises sur un·e PNJ vivant ou mort-vivant, tu lui redonnes 3 points de santé. Action."
+      },
+      {
+        "id": "greater-necromancy",
+        "name": "Nécromancie supérieure",
+        "tier": 4,
+        "prerequisites": [
+          "improved-necromancy",
+          "repair-flesh",
+          "wraith-cloak"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Tu réanimes le corps d’une créature morte jusqu’à deux fois ta taille à portée courte, créant un·e suivant·e mort‑vivant·e de niveau 3. Iel n’a aucune intelligence, mémoire ou aptitude spéciale de son vivant. La créature te suit jusqu’à ta prochaine récupération d’une heure ou plus, où elle redevient inerte. Tu peux la réanimer à nouveau lorsqu’elle redevient inerte ou si elle est « tuée » par dégâts (tu devras peut être passer quelques minutes avec une aiguille et du fil pour rattacher les morceaux détachés ou tombés). Chaque créature supplémentaire réanimée au‑delà de la première coûte +2 Intellect (7 points pour deux corps, 9 points pour trois, etc.)."
+      },
+      {
+        "id": "wraith-cloak",
+        "name": "Manteau spectral",
+        "tier": 4,
+        "prerequisites": [
+          "reading-the-room",
+          "repair-flesh",
+          "greater-necromancy"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "À ton commandement, un esprit mort‑vivant proche s’enroule autour de toi jusqu’à ta prochaine récupération de dix minutes ou plus. Pendant cette durée : toute créature qui tente de te toucher ou de t’attaquer au corps à corps subit automatiquement 4 dégâts (pas besoin de jet), toutes tes tâches de Discrétion sont facilitées. Facilitateur."
+      },
+      {
+        "id": "terrifying-gaze",
+        "name": "Regard terrifiant",
+        "tier": 5,
+        "prerequisites": [
+          "greater-necromancy",
+          "wall-of-bones"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "Tu projettes un regard effroyable sur jusqu’à cinq créatures vivantes à portée courte qui peuvent te voir. Tu fais un jet d’attaque d’Intellect séparé pour chaque créature. En cas de succès, la créature est figée de peur, incapable de se déplacer ou d’agir jusqu’à ce que : tu fasses une récupération de dix minutes ou plus, elle soit attaquée, tu quittes son champ de vision. Certaines créatures sans esprit (slimes, statues animées…) sont immunisées contre cette aptitude."
+      },
+      {
+        "id": "wall-of-bones",
+        "name": "Mur d'ossements",
+        "tier": 5,
+        "prerequisites": [
+          "wraith-cloak",
+          "terrifying-gaze"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "You create a barrier of bones tainted with undeath composed of four 10-foot by 10-foot (3.5 m by 3.5 m) squares, each 1 inch (2.5 cm) thick, arranged as you wish. The wall is a level 5 barrier. One or both sides emanate necrotic energy; anyone within immediate distance of such a side takes 5 damage (no rolls required) or double that if they pass through. The wall lasts until you use a ten-minute or longer recovery. Action to create."
+      },
+      {
+        "id": "true-necromancy",
+        "name": "Vraie nécromancie",
+        "tier": 6,
+        "prerequisites": [
+          "terrifying-gaze",
+          "wall-of-bones"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 8,
+          "options": []
+        },
+        "description": "Tu réanimes le corps d’une créature morte jusqu’à deux fois ta taille à portée courte, créant un·e suivant·e mort‑vivant·e de niveau 5. Iel n’a aucune intelligence, mémoire ou aptitude spéciale de son vivant. La créature te suit jusqu’à ta prochaine récupération d’une heure ou plus, où elle redevient inerte. Tu peux la réanimer à nouveau lorsqu’elle redevient inerte ou si elle est « tuée » par dégâts (tu devras peut être passer quelques minutes avec une aiguille et du fil pour rattacher les morceaux détachés ou tombés). Chaque créature supplémentaire au‑delà de la première coûte +3 Intellect (11 points pour deux corps, 14 points pour trois, etc.)."
+      },
+      {
+        "id": "word-of-death",
+        "name": "Mot de mort",
+        "tier": 6,
+        "prerequisites": [
+          "terrifying-gaze",
+          "wall-of-bones"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "You speak a magic word so potent that it can instantly kill a foe. Make an Intellect attack against a foe within short range. If you succeed, you inflict 10 damage. Action."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

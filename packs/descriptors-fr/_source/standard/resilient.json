@@ -1,0 +1,30 @@
+{
+  "_id": "FsiNF13p9Q8gR1zJ",
+  "_key": "!items!FsiNF13p9Q8gR1zJ",
+  "name": "Résilient·e",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "might"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Évasion",
+      "",
+      "",
+      ""
+    ],
+    "description": "<p>Tu es plus résistant·e que la plupart. Tu encaisses les coups et tu sais comment te sortir d'une mauvaise passe.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,231 @@
+{
+  "_id": "fightsunar882F49",
+  "_key": "!items!fightsunar882F49",
+  "name": "Combat à mains nues",
+  "type": "focus",
+  "img": "icons/skills/melee/unarmed-punch-fist.webp",
+  "system": {
+    "description": "<p>You're a scrapper and love a good fight. Punches, kicks, and full-body movements are your weapons.</p>",
+    "abilities": [
+      {
+        "id": "body-as-a-tool",
+        "name": "Le corps comme outil",
+        "tier": 1,
+        "prerequisites": [
+          "no-need-for-weapons"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "En plus de faire de ton corps une arme, tu sais l’utiliser comme un outil. Tu gagnes un atout pour toutes les tâches d’athlétisme et de gymnastique."
+      },
+      {
+        "id": "no-need-for-weapons",
+        "name": "Pas besoin d’armes",
+        "tier": 1,
+        "prerequisites": [
+          "resilience"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tes attaques à mains nues (poings, pieds, coudes, genoux…) infligent +2 dégâts supplémentaires."
+      },
+      {
+        "id": "resilience",
+        "name": "Résilience",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu peux encaisser une blessure modérée supplémentaire."
+      },
+      {
+        "id": "advantage-to-disadvantage",
+        "name": "Avantage au désavantage",
+        "tier": 2,
+        "prerequisites": [
+          "body-as-a-tool"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Tu fais une attaque entravée, en multipliant les gestes rapides contre un adversaire armé. Si tu touches, tu infliges les dégâts et tu le désarmes. Tu choisis si l’arme tombe dans ta main ou au sol à 3,5 m. Pour le reste du combat, tu gagnes un atout à tes tâches d’intimidation contre cet adversaire."
+      },
+      {
+        "id": "fearsome-reputation",
+        "name": "Réputation terrifiante",
+        "tier": 2,
+        "prerequisites": [
+          "no-need-for-weapons"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "choice",
+          "amount": 3,
+          "options": [
+            "might",
+            "intellect"
+          ]
+        },
+        "description": "Tu t’annonces (par exemple en citant un exploit intimidant) à tous les adversaires à portée longue qui peuvent t’entendre et te comprendre. Fais un jet d’attaque d’Intellect séparé pour chaque adversaire. En cas de réussite, iel a peur de toi, facilitant toutes tes tâches contre ellui jusqu’à ta prochaine récupération de dix minutes ou plus."
+      },
+      {
+        "id": "high-and-low",
+        "name": "Haut et bas",
+        "tier": 2,
+        "prerequisites": [
+          "no-need-for-weapons"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Toi et un·e allié·e jouez en duo contre une même cible pour plus d’efficacité. Choisis un·e allié·e que tu vois. Si tu touches un adversaire qu’iel a déjà touché au corps à corps ce tour, ton attaque inflige +2 dégâts supplémentaires."
+      },
+      {
+        "id": "moving-like-water",
+        "name": "Se mouvoir comme l’eau",
+        "tier": 3,
+        "prerequisites": [
+          "advantage-to-disadvantage"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Jusqu’à ta prochaine récupération de dix minutes ou plus, si tu rates une Esquive, tu peux quand même tenter un Blocage, mais celui‑ci est entravé."
+      },
+      {
+        "id": "throw",
+        "name": "Projection",
+        "tier": 3,
+        "prerequisites": [
+          "high-and-low"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 2,
+          "options": []
+        },
+        "description": "When your unarmed attack damages a creature of your size or smaller, you throw that creature 1d20 feet away from you. The creature lands prone. Enabler."
+      },
+      {
+        "id": "divert-attacks",
+        "name": "Détourner les attaques",
+        "tier": 4,
+        "prerequisites": [
+          "moving-like-water"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Until you use a ten-minute or longer recovery, you automatically deflect, block, or dodge any ranged projectile attacks (no roll required). However, on your next turn after you're attacked with ranged projectiles, all your other actions are hindered. Action to initiate."
+      },
+      {
+        "id": "knock-out",
+        "name": "Assommer",
+        "tier": 4,
+        "prerequisites": [
+          "fearsome-reputation"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "might",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Make a hindered melee attack against a foe of level 3 or lower. If the attack hits, instead of inflicting damage you knock them unconscious until you use a ten-minute or longer recovery (or someone uses an action to bring them back around). Effort: Increase the maximum level of the foe you can affect by 1. Action."
+      },
+      {
+        "id": "stunning-attack",
+        "name": "Attaque étourdissante",
+        "tier": 5,
+        "prerequisites": [
+          "throw"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Quand tu fais une attaque à mains nues, tu peux choisir d’entraver ton jet. Si tu touches, en plus des dégâts normaux, la cible perd son prochain tour."
+      },
+      {
+        "id": "lethal-capability",
+        "name": "Capacité létale",
+        "tier": 6,
+        "prerequisites": [
+          "knock-out"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You've mastered how to kill with a particular attack. You inflict an additional 5 damage with attacks of one specific type, such as unarmed attacks, or some other specific attack you prefer. You can gain this ability more than once. Each time you do, choose a different specific attack."
+      },
+      {
+        "id": "master-of-unarmed-fighting-style",
+        "name": "Maître·sse du combat à mains nues",
+        "tier": 6,
+        "prerequisites": [
+          "stunning-attack"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tes attaques à mains nues infligent +3 dégâts supplémentaires. Quand tu réussis une défense de Blocage de Puissance contre une attaque à mains nues, tu réduis sa sévérité de deux paliers au lieu d’un : - majeure → mineure, - modérée → aucune, - mineure → aucune."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

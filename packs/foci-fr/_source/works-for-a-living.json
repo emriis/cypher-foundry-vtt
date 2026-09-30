@@ -1,0 +1,211 @@
+{
+  "_id": "worksforal856231",
+  "_key": "!items!worksforal856231",
+  "name": "Travaille pour vivre",
+  "type": "focus",
+  "img": "icons/tools/hand/hammer-steel.webp",
+  "system": {
+    "description": "<p>You take great satisfaction in a job well done, whether it's coding, building houses, or mining asteroids.</p>",
+    "abilities": [
+      {
+        "id": "fitting-in",
+        "name": "Se fondre dans la masse",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "You can blend in among any intelligent creatures other than the upper classes or the authorities. Working or common people can still see you, but those of level 3 or less attach no importance to your presence. If a higher-level creature notices you, you can attempt an Intellect task against their level to retain your unimportant-seeming status. This effect ends if you do something to call attention to your presence or position—attacking, using an ability, moving a large object, and so on—or if you use a ten-minute or longer recovery. Action to initiate."
+      },
+      {
+        "id": "handy",
+        "name": "Bricoleur·euse",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu es entraîné·e en artisanat. Chaque fois que tu gagnes des points de ressources, tu gagnes 1 point supplémentaire, utilisable uniquement pour réparer ou fabriquer."
+      },
+      {
+        "id": "muscles-of-iron",
+        "name": "Muscles de fer",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Jusqu’à ta prochaine récupération de dix minutes ou plus, toutes tes tâches de Puissance (sauf les attaques) sont facilitées."
+      },
+      {
+        "id": "danger-instinct",
+        "name": "Instinct du Danger",
+        "tier": 2,
+        "prerequisites": [
+          "fitting-in",
+          "muscles-of-iron"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "speed",
+          "amount": 3,
+          "options": []
+        },
+        "description": "If you are attacked by surprise, whether by a creature, a device, or simply an environmental hazard (such as a tree falling on you), you can move an immediate distance before the attack occurs. If moving prevents the attack, you are safe. If the attack can still potentially affect you—if the attacking creature can move to keep pace, if the attack fills an area too big to escape, and so on—your defense against it is eased. Enabler."
+      },
+      {
+        "id": "endurance",
+        "name": "Endurance",
+        "tier": 2,
+        "prerequisites": [
+          "fitting-in",
+          "handy"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Toute durée liée à une action physique est doublée ou réduite de moitié, selon ce qui t’avantage. Exemples : si une personne normale peut retenir son souffle 30 secondes, tu peux le faire 1 minute, si une personne normale peut marcher 4 heures sans pause, tu peux marcher 8 heures, si un poison paralyse pendant 1 minute, tu es paralysé·e 30 secondes. La durée minimale reste un round."
+      },
+      {
+        "id": "eye-for-detail",
+        "name": "Œil du détail",
+        "tier": 3,
+        "prerequisites": [
+          "danger-instinct"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Après avoir passé 5 minutes à examiner soigneusement une zone d’un diamètre de courte portée ou un objet auquel tu as accès direct, tu peux poser une question au/à la MJ sur la zone ou l’objet. Le·La MJ doit te répondre honnêtement. L’aptitude se réinitialise après une récupération de dix heures."
+      },
+      {
+        "id": "improvise",
+        "name": "Improviser",
+        "tier": 3,
+        "prerequisites": [
+          "endurance"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "If you aren't trained in a task, you can improvise to gain an asset on that task—a tool you cobble together, sudden insight, or just dumb luck. The asset lasts until you use a ten-minute or longer recovery. Enabler."
+      },
+      {
+        "id": "device-insight",
+        "name": "Intuition mécanique",
+        "tier": 4,
+        "prerequisites": [
+          "eye-for-detail"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "En examinant un appareil inconnu, alien, surnaturel ou de haute technologie, tu peux poser une question au/à la MJ pour comprendre ses capacités, son fonctionnement, comment l’activer ou le désactiver, ses faiblesses, comment le réparer ou toute question similaire. Cette aptitude sert pour les choses difficiles ou étranges, au‑delà de ce qu’une compétence technique normale permettrait d’identifier."
+      },
+      {
+        "id": "hard-won-resilience",
+        "name": "Résilience durement acquise",
+        "tier": 4,
+        "prerequisites": [
+          "improvise"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Grâce à ton expérience, tu peux encaisser une blessure modérée supplémentaire."
+      },
+      {
+        "id": "polymath",
+        "name": "Polymathe",
+        "tier": 5,
+        "prerequisites": [
+          "device-insight",
+          "hard-won-resilience"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Quand tu fais un jet pour une tâche dans laquelle tu es entraîné·e (hors attaque ou défense) et que ton résultat est inférieur à 12, considère que tu as obtenu 12. (Tu n’obtiens donc pas d’intrusion du·de la MJ sur un 1.) Au rang 3, le minimum passe à 15. Effort : augmenter le minimum obtenu de +3."
+      },
+      {
+        "id": "expert-handyman",
+        "name": "Artisan·e expert·e",
+        "tier": 6,
+        "prerequisites": [
+          "polymath"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Quand tu utilises des points de ressources pour fabriquer, réparer ou construire quelque chose, l’objet obtenu est supérieur aux objets similaires. Décide avec le·la MJ comment cela se manifeste, mais typiquement l’objet est de 2 niveaux plus élevé que la normale."
+      },
+      {
+        "id": "on-the-crew",
+        "name": "Avec l'équipe",
+        "tier": 6,
+        "prerequisites": [
+          "polymath"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "While you are working with a team of at least two other allies, you give them a short pep talk and grant yourself and them one of the following abilities until you use a ten-minute or longer recovery. +1 damage on attacks Ignore the first minor wound taken Add +6 to next recovery Last action to initiate."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

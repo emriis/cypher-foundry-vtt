@@ -24,68 +24,94 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "expert-combatant",
         "name": "Expert·e combattant·e",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Tu es **entraîné·e** dans une attaque d’arme spécifique de ton choix — comme les épées, les haches ou les arcs — ou dans une catégorie d’attaques plus large : armes contondantes légères, armes tranchantes légères, armes à distance légères, armes contondantes moyennes, armes tranchantes moyennes, armes à distance moyennes, etc. Au rang 2, tu peux devenir spécialisé·e dans le même type d'attaque choisi au rang 1, mais tu dois obtenir la compétence normalement. Au rang 6, tu peux devenir expert·e dans ce type d’attaque spécifique (ou dans une autre compétence martiale dans laquelle tu es déjà spécialisé·e), mais tu dois obtenir la compétence normalement."
+        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you're already specialized in), but you must gain the skill normally."
       },
       {
+        "id": "gut-ripper",
         "name": "Éventrement (1 Célérité)",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "speed",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "Tu attaques avec un couteau d’une manière plus risquée, mais offrant un bénéfice supplémentaire. Ton seuil d’**intrusion du·de la MJ** augmente de **2** (de 1 naturel à 1–3 sur 1d20). Si tu touches, choisis l’un des effets suivants : Entaille profonde : l’ennemi subit +2 dégâts. Laisser saigner : la blessure saigne ; à ton prochain tour, l’ennemi subit 2 dégâts qui ignorent l’armure. Action"
+        "description": "You attack with a knife in a way that has a greater risk of making an error but gains an additional benefit. Your GM intrusion range for this attack increases by 2 (from 1 on a d20 to 1–3 on a d20), but if you hit you can choose one of the following additional effects:"
       },
       {
+        "id": "deep-slice",
         "name": "Lancer Entravant (3 Célérité)",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Ton attaque à distance au couteau est réussie. Il se plante dans la cible, s’accrochant à ses vêtements, sa chair, le sol ou une surface proche. L’attaque inflige ses **dégâts normaux** et **entrave** les tâches de la cible lors de son prochain tour. Action"
+        "description": "The foe takes +2 damage."
       },
       {
+        "id": "let-them-bleed",
         "name": "Let Them Bleed",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "The wound bleeds; on your next turn, the foe takes 2 damage that ignores armor. Action."
+        "description": "The wound bleeds; on your next turn, the foe takes 2 damage that ignores armor. Action. Gut RipperGM intrusions: Your knife gets stuck in your foe and slips from your grasp. Instead of hurting your foe, you accidentally inflict a minor wound on yourself. Your knife sheath is empty and you can't complete the attack."
       },
       {
-        "name": "Gut Ripper GM intrusions",
+        "id": "gut-ripper-gm-intrusions",
+        "name": "Intrusions MJ pour Éventrement",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Your knife gets stuck in your foe and slips from your grasp. Instead of hurting your foe, you accidentally inflict a minor wound on yourself. Your knife sheath is empty and you can’t complete the attack."
+        "description": "Ton couteau reste coincé dans ton ennemi et t’est arraché des mains. Au lieu de blesser ton ennemi, tu te causes une blessure mineure par accident. Ton fourreau est vide et tu ne peux pas accomplir ton attaque."
       },
       {
+        "id": "hindering-throw",
         "name": "Hindering Throw",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "speed",
-          "amount": 3
+          "amount": 3,
+          "options": []
         },
         "description": "Your successful ranged knife attack sticks in the target, catching in their clothing, their flesh, the floor, or another adjacent surface in a way that deals normal damage and hinders their tasks on their next turn. Action."
       }
     ],
-    "statOptions": ["speed"],
-    "description": "<p>Un Type de Épées & Sorcellerie centré sur l'archétype combattant·e au couteau, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Épées & Sorcellerie. Réserves principales : Célérité.</em></p>"
+    "statOptions": [
+      "speed"
+    ],
+    "description": "<p>Adversaries (especially those who are sword trained) often underestimate someone armed only with daggers. If they challenge you, they learn their error when you flick a knife into their eye before they can even draw their oversized weapons. Maybe you prefer to be called a Quicksteel or a Shank, like some of your fellow students of the dagger, but in the end, Knife Fighter describes what you are as expeditiously as a knife thrust. You're probably one more combatant in your group, though your ability to be among the first in a conflict to draw blood gives your comrades cover as they make their own attacks. It's especially useful if you can pin a foe to the wall or floor for a moment, because that could signal to your allies who they should attack next.</p>"
   },
   "folder": "Mqh1tXdDDqH3lySK",
   "sort": 0,
@@ -94,7 +120,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

@@ -5,51 +5,14 @@ import test from "node:test";
 
 const root = path.resolve(import.meta.dirname, "..");
 
-const knownTypeAbilityParityDebt = new Set([
-  "android.json",
-  "axe-fighter.json",
-  "barbarian-swords-sorcery.json",
-  "barbarian.json",
-  "bard.json",
-  "cleric.json",
-  "crimefighter-rank-1.json",
-  "druid.json",
-  "engineer.json",
-  "enhanced-hero-rank-2.json",
-  "fighter.json",
-  "heavy.json",
-  "knife-fighter.json",
-  "living-god-rank-5.json",
-  "medic-space-opera.json",
-  "medic.json",
-  "monk.json",
-  "noble-hard-science-fiction.json",
-  "noble.json",
-  "paladin.json",
-  "pilot.json",
-  "powerhouse-rank-4.json",
-  "powerstar-rank-2.json",
-  "priest.json",
-  "ranger.json",
-  "rogue.json",
-  "scoundrel.json",
-  "soldier-space-opera.json",
-  "soldier.json",
-  "sorcerer.json",
-  "starpilot.json",
-  "superhuman-rank-3.json",
-  "sword-fighter.json",
-  "tech.json",
-  "tender.json",
-  "two-weapon-fighter.json",
-  "vigilante-rank-1.json",
-  "warrior.json",
-  "witch.json"
-]);
+function slug(value) {
+  return value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
 
 function readPackSources(packName) {
   const directory = path.join(root, "packs", packName, "_source");
-  return new Map(fs.readdirSync(directory)
+  return new Map(fs.readdirSync(directory, { recursive: true })
     .filter(file => file.endsWith(".json"))
     .map(file => [file, JSON.parse(fs.readFileSync(path.join(directory, file), "utf8"))]));
 }
@@ -163,9 +126,17 @@ for (const language of ["en", "fr"]) {
       const item = JSON.parse(fs.readFileSync(path.join(directory, file), "utf8"));
       if (item._key.startsWith("!folders!")) continue;
       const abilityNames = new Set();
+      const abilityIds = new Set();
       for (const ability of item.system.abilities) {
         assert.ok(ability.name);
-        const abilityKey = `${ability.name}|${ability.tier}|${ability.description}`;
+        assert.match(ability.id, /^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+        assert.equal(abilityIds.has(ability.id), false);
+        abilityIds.add(ability.id);
+        assert.deepEqual(Object.keys(ability).sort(), ["cost", "description", "enabler", "id", "name", "prerequisites", "repeatable", "tier"]);
+        assert.deepEqual(ability.prerequisites, []);
+        assert.equal(ability.repeatable, false);
+        assert.deepEqual(ability.cost.options, []);
+        const abilityKey = `${ability.id}|${ability.name}|${ability.tier}|${ability.description}`;
         assert.equal(abilityNames.has(abilityKey), false);
         abilityNames.add(abilityKey);
         assert.ok(ability.tier >= 1 && ability.tier <= 6);
@@ -238,7 +209,6 @@ for (const language of ["en", "fr"]) {
 test("Type sources are directly maintained as structurally aligned bilingual pairs", () => {
   const enSources = readPackSources("types-en");
   const frSources = readPackSources("types-fr");
-  const abilityParityDebt = [];
   assert.deepEqual([...frSources.keys()].sort(), [...enSources.keys()].sort());
 
   for (const [filename, en] of enSources) {
@@ -252,17 +222,16 @@ test("Type sources are directly maintained as structurally aligned bilingual pai
       assert.deepEqual(fr.system[field], en.system[field], `${filename}/${field}`);
     }
     assert.equal(fr.system.abilities.length, en.system.abilities.length, `${filename}/abilities`);
-    const mechanics = item => item.system.abilities
-      .map(ability => JSON.stringify({ tier: ability.tier, enabler: ability.enabler, cost: ability.cost }))
-      .sort();
-    if (JSON.stringify(mechanics(fr)) !== JSON.stringify(mechanics(en))) abilityParityDebt.push(filename);
+    for (let index = 0; index < en.system.abilities.length; index += 1) {
+      const enAbility = en.system.abilities[index];
+      const frAbility = fr.system.abilities[index];
+      assert.equal(frAbility.id, enAbility.id, `${filename}/ability-${index}/id`);
+      assert.deepEqual(frAbility.prerequisites, enAbility.prerequisites, `${filename}/ability-${index}/prerequisites`);
+      assert.equal(frAbility.repeatable, enAbility.repeatable, `${filename}/ability-${index}/repeatable`);
+      assert.deepEqual(frAbility.cost, enAbility.cost, `${filename}/ability-${index}/cost`);
+      assert.equal(enAbility.id, slug(enAbility.name), `${filename}/ability-${index}/slug`);
+    }
   }
-
-  assert.deepEqual(
-    abilityParityDebt.sort(),
-    [...knownTypeAbilityParityDebt].sort(),
-    "Update the explicit legacy debt when bilingual Type ability mechanics are corrected"
-  );
 });
 
 test("Descriptor sources are directly maintained as valid bilingual pairs", () => {
@@ -274,18 +243,24 @@ test("Descriptor sources are directly maintained as valid bilingual pairs", () =
     const fr = frSources.get(filename);
     assertDocumentIdentity(en, "descriptor");
     assertDocumentIdentity(fr, "descriptor");
+    assert.equal(fr.system.category ?? "descriptor", en.system.category ?? "descriptor", `${filename}/category`);
+    assert.deepEqual(fr.system.genres ?? [], en.system.genres ?? [], `${filename}/genres`);
+    assert.equal(fr.system.grantsSecondDescriptor ?? false, en.system.grantsSecondDescriptor ?? false, `${filename}/grantsSecondDescriptor`);
     assert.deepEqual(fr.system.statOptions, en.system.statOptions, `${filename}/statOptions`);
     assert.equal(fr.system.statAmount, en.system.statAmount, `${filename}/statAmount`);
     for (const document of [en, fr]) {
-      assert.ok(document.system.statOptions.length > 0, filename);
-      assert.ok(document.system.skillOptions.some(Boolean), filename);
+      const category = document.system.category ?? "descriptor";
+      if (category === "descriptor") {
+        assert.ok(document.system.statOptions.length > 0, filename);
+        assert.ok(document.system.skillOptions.some(Boolean), filename);
+      }
       assert.ok(document.system.skillOptions.every(option => typeof option === "string"), filename);
     }
   }
 });
 
 test("French descriptor sources match the Character Book translations", () => {
-  const directory = path.join(root, "packs", "descriptors-fr", "_source");
+  const directory = path.join(root, "packs", "descriptors-fr", "_source", "standard");
   const expectedNames = {
     appealing: "Attrayant·e",
     bookish: "Studieux·se",
@@ -333,6 +308,28 @@ test("French descriptor sources match the Character Book translations", () => {
   assert.match(appealing.system.description, /Tu es naturellement attirant·e et charismatique/);
 });
 
+test("Human is a bilingual species descriptor that grants a second descriptor", () => {
+  for (const language of ["en", "fr"]) {
+    const human = JSON.parse(fs.readFileSync(path.join(root, "packs", `descriptors-${language}`, "_source", "species", "human.json"), "utf8"));
+    assertDocumentIdentity(human, "descriptor");
+    assert.equal(human.system.category, "species");
+    assert.deepEqual(human.system.genres, ["fantasy", "sciFi"]);
+    assert.equal(human.system.grantsSecondDescriptor, true);
+  }
+});
+
+test("Dragonfolk keeps its trained skill separate from its species abilities", () => {
+  for (const language of ["en", "fr"]) {
+    const dragonfolk = JSON.parse(fs.readFileSync(path.join(root, "packs", `descriptors-${language}`, "_source", "species", "dragonfolk.json"), "utf8"));
+    assert.equal(dragonfolk.system.category, "species");
+    assert.deepEqual(dragonfolk.system.skillOptions, [language === "en" ? "Intimidation" : "Intimidation"]);
+    assert.equal(dragonfolk.system.benefits.length, 2);
+    assert.deepEqual(dragonfolk.system.benefits.map(benefit => benefit.name), language === "en"
+      ? ["No GM Intrusion on Block", "Energy Attack Damage"]
+      : ["Pas d'intrusion du MJ au blocage", "Dégâts d'attaque d'énergie"]);
+  }
+});
+
 test("French Type names use the Character Book terminology", () => {
   const directory = path.join(root, "packs", "types-fr", "_source");
   const expectedNames = {
@@ -360,4 +357,44 @@ test("French Type names use the Character Book terminology", () => {
     const item = JSON.parse(fs.readFileSync(path.join(directory, `${slug}.json`), "utf8"));
     assert.equal(item.name, expectedName, slug);
   }
+});
+
+test("Compendium descriptions preserve complete CRD text and explicit French fallback", () => {
+  const english = JSON.parse(fs.readFileSync(
+    path.join(root, "packs", "foci-en", "_source", "abides-in-stone.json"),
+    "utf8"
+  ));
+  const french = JSON.parse(fs.readFileSync(
+    path.join(root, "packs", "foci-fr", "_source", "abides-in-stone.json"),
+    "utf8"
+  ));
+  const englishStoneknowing = english.system.abilities.find(ability => ability.id === "stoneknowing");
+  const frenchStoneknowing = french.system.abilities.find(ability => ability.id === "stoneknowing");
+
+  assert.match(english.system.description, /Your flesh is made of hard mineral, making you a hulking, difficult-to-harm humanoid\./);
+  assert.match(englishStoneknowing.description, /Your GM may require an Intellect task for you to learn something especially subtle or secret\. Last action\./);
+  assert.doesNotMatch(english.system.description, /resilient mineral-bodied character who channels stone/);
+  assert.doesNotMatch(englishStoneknowing.description, /Study touched stone or crystal to learn useful structural facts/);
+
+  assert.equal(french.system.description, english.system.description);
+  assert.match(frenchStoneknowing.description, /Tu es entraîné·e pour travailler n’importe quel type de pierre\./);
+  assert.doesNotMatch(frenchStoneknowing.description, /Étudie une pierre ou un cristal touché pour en tirer des informations structurelles/);
+});
+
+test("Resolved compendium abilities keep CRD titles when local names were summaries", () => {
+  const focus = JSON.parse(fs.readFileSync(
+    path.join(root, "packs", "foci-en", "_source", "commands-mental-powers.json"),
+    "utf8"
+  ));
+  const sensePsionics = focus.system.abilities.find(ability => ability.id === "sense-psionics");
+  assert.equal(sensePsionics.name, "Sense Psionics");
+  assert.match(sensePsionics.description, /If there are mental powers, psionic abilities, or other psychic phenomena/);
+
+  const frenchType = JSON.parse(fs.readFileSync(
+    path.join(root, "packs", "types-fr", "_source", "axe-fighter.json"),
+    "utf8"
+  ));
+  const axeIntrusions = frenchType.system.abilities.find(ability => ability.name === "Intrusions MJ pour Crâne fendu");
+  assert.equal(axeIntrusions.name, "Intrusions MJ pour Crâne fendu");
+  assert.match(axeIntrusions.description, /Ta hache t’échappe et tombe à proximité/);
 });

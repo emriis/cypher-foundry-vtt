@@ -793,10 +793,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       </div>` : "";
 
     const skillSelectOptions = skillOptions.map(s => `<option value="${s}">${s}</option>`).join("");
-
-    const content = `
-      <p>${game.i18n.format("CYPHER.Descriptor.ApplyPrompt", { name: item.name })}</p>
-      ${statField}
+    const skillField = skillOptions.length ? `
       <div class="form-group">
         <label>${game.i18n.localize("CYPHER.Descriptor.ChooseSkill")}</label>
         <select name="skillChoice">
@@ -807,7 +804,12 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       <div class="form-group">
         <label>${game.i18n.localize("CYPHER.Descriptor.SkillCustomLabel")}</label>
         <input type="text" name="skillCustom" placeholder="${game.i18n.localize("CYPHER.Descriptor.SkillCustomLabel")}"/>
-      </div>`;
+      </div>` : "";
+
+    const content = `
+      <p>${game.i18n.format("CYPHER.Descriptor.ApplyPrompt", { name: item.name })}</p>
+      ${statField}
+      ${skillField}`;
 
     const result = await foundry.applications.api.DialogV2.prompt({
       window: { title: game.i18n.format("CYPHER.Descriptor.ApplyTitle", { name: item.name }) },
@@ -817,7 +819,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
         callback: (event, button) => {
           const form = button.form;
           const skillChoice = form.skillChoice?.value;
-          const skillName = (!skillChoice || skillChoice === "__other__") ? form.skillCustom.value : skillChoice;
+          const skillName = (!skillChoice || skillChoice === "__other__") ? form.skillCustom?.value : skillChoice;
           return {
             stat: form.stat?.value ?? statOptions[0],
             skillName
@@ -826,7 +828,6 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       }
     });
 
-    if (!result?.skillName?.trim()) return;
     await actor.applyDescriptor(item, result);
   }
 }

@@ -61,7 +61,7 @@ test("each declared pack has a corresponding language-specific source set", () =
 
   for (const pack of manifest.packs) {
     const sourceDirectory = path.join(root, pack.path, "_source");
-    const sourceFiles = fs.readdirSync(sourceDirectory).filter(file => file.endsWith(".json"));
+    const sourceFiles = fs.readdirSync(sourceDirectory, { recursive: true }).filter(file => file.endsWith(".json"));
     assert.ok(sourceFiles.length > 0, `Pack has no JSON source files: ${pack.name}`);
 
     for (const file of sourceFiles) {

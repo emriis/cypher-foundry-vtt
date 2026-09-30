@@ -1,31 +1,43 @@
 {
-  "_id": "F1ghtsD1rty26XYZ",
-  "_key": "!items!F1ghtsD1rty26XYZ",
+  "_id": "fightsdirtFF551D",
+  "_key": "!items!fightsdirtFF551D",
   "name": "Fights Dirty",
   "type": "focus",
   "img": "icons/skills/melee/strike-dagger-blood-red.webp",
   "system": {
-    "description": "<p>A Focus for a fighter who uses every trick, distraction, and dirty advantage available.</p>",
+    "description": "<p>You'll do anything to win a fight: bite, scratch, kick, trick, and worse.</p>",
     "abilities": [
       {
         "id": "dirty-trick",
         "name": "Dirty Trick",
         "tier": 1,
-        "prerequisites": ["dirty-trick"],
+        "prerequisites": [
+          "dirty-trick"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "intellect", "amount": 1, "options": [] },
-        "description": "Distract a foe so their defense against your follow-up melee attack is hindered, or conceal another action with a bluff."
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "You attempt to distract your foe (by getting them to look elsewhere, making a clumsy feint to set up your real strike, and so on) so you can follow up with an attack. Make an Intellect attack to deceive your foe; success means their defense against your melee attack this round is hindered. Because your foes catch on that you're tricky, each time after the first that you use this ability in a combat encounter, the Intellect attack is hindered by one step. Instead of following up with an attack, you can follow up with some other action, and if you succeed at an eased bluffing task against them, they don't realize what you did. For example, you could distract a foe and then press the button that opens all of the lion cages, throw an incriminating object into a trash can, or even attempt to pickpocket them. Enabler."
       },
       {
         "id": "go-for-the-eyes",
         "name": "Go for the Eyes",
         "tier": 1,
-        "prerequisites": ["go-for-the-eyes"],
+        "prerequisites": [
+          "go-for-the-eyes"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "speed", "amount": 2, "options": [] },
-        "description": "Make a hindered melee attack to impair a foe's vision until their next ten-minute recovery."
+        "cost": {
+          "stat": "speed",
+          "amount": 2,
+          "options": []
+        },
+        "description": "You attempt to injure your foe's eye, such as by gouging it or throwing dirt in their face. Make a hindered melee attack; success means their vision is impaired until you use a ten-minute or longer recovery, hindering their tasks that rely on sight (which is most tasks). Action."
       },
       {
         "id": "scratching-and-kicking",
@@ -34,131 +46,205 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "speed", "amount": 1, "options": [] },
-        "description": "Your melee attacks deal 1 additional damage through scratching, kicking, or biting."
+        "cost": {
+          "stat": "speed",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Your melee attack deals an additional 1 damage due to it including some combination of scratching, kicking, and/or biting. Enabler."
       },
       {
         "id": "despite-my-wounds",
         "name": "Despite My Wounds",
         "tier": 2,
-        "prerequisites": ["go-for-the-eyes"],
+        "prerequisites": [
+          "go-for-the-eyes"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "While badly wounded, gain one free reroll on an action each round."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "While you have two or more moderate wounds or one major wound, you get a free reroll on one action each round (as if you had spent 1 XP). Enabler."
       },
       {
         "id": "sneak-attack",
         "name": "Sneak Attack",
         "tier": 2,
-        "prerequisites": ["dirty-trick"],
+        "prerequisites": [
+          "dirty-trick"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "speed", "amount": 1, "options": [] },
-        "description": "A light weapon attack gains 5 additional damage when the target is surprised, distracted, or unable to act."
+        "cost": {
+          "stat": "speed",
+          "amount": 1,
+          "options": []
+        },
+        "description": "If you attack a foe under one of the following conditions, your light melee or light ranged weapon attack inflicts an additional 5 damage on a successful hit. (This ability doesn't work with medium or heavy weapons.) You attack with surprise. An ally uses their action to ease your attack. Your foe's defenses are hindered due to some other ongoing direct distraction. Your foe is unable to take their next turn due to some disabling attack or situation. First action."
       },
       {
         "id": "when-the-deal-bombs",
         "name": "When the Deal Bombs",
         "tier": 2,
-        "prerequisites": ["dirty-trick"],
+        "prerequisites": [
+          "dirty-trick"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "Reduce the first wound from someone who turns hostile after a successful positive interaction; at tier 3, ignore it entirely."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "There's always a risk that someone you deal with will try to turn on you. After successfully charming, deceiving, interacting positively with, or using Fast Talk or a similar ability on a creature, if they become hostile to you within a day or so, you automatically reduce the wound severity of their first successful attack against you by one step. Enabler. At tier 3: Instead of reducing the wound's severity, you ignore it completely (no damage)."
       },
       {
         "id": "fast-kill",
         "name": "Fast Kill",
         "tier": 3,
-        "prerequisites": ["sneak-attack"],
+        "prerequisites": [
+          "sneak-attack"
+        ],
         "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "choice",
           "amount": 2,
-          "options": ["might", "speed"]
+          "options": [
+            "might",
+            "speed"
+          ]
         },
-        "description": "A successful melee or ranged attack deals 4 additional damage, but cannot be used in consecutive rounds."
+        "description": "When you hit with a melee or ranged attack, you deal an additional 4 damage. You can't use this ability in two consecutive rounds. Enabler."
       },
       {
         "id": "incapacitating-attack",
         "name": "Incapacitating Attack",
         "tier": 3,
-        "prerequisites": ["go-for-the-eyes"],
+        "prerequisites": [
+          "go-for-the-eyes"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "speed", "amount": 4, "options": [] },
-        "description": "A successful attack leaves the target prone, hindered, and barely mobile until recovery or aid."
+        "cost": {
+          "stat": "speed",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Your successful attack also briefly incapacitates the target. Until you use a ten-minute or longer recovery (or until someone uses an action to give them aid), they are prone, unable to stand or crawl more than an immediate distance each round, and their defenses are hindered. Enabler."
       },
       {
         "id": "feint",
         "name": "Feint",
         "tier": 4,
-        "prerequisites": ["dirty-trick", "sneak-attack"],
+        "prerequisites": [
+          "dirty-trick",
+          "sneak-attack"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "speed", "amount": 2, "options": [] },
-        "description": "Create a diversion to gain an asset and deal 4 additional damage with a melee attack next round."
+        "cost": {
+          "stat": "speed",
+          "amount": 2,
+          "options": []
+        },
+        "description": "If you use one action creating a misdirection or diversion, in the next round you can take advantage of your opponent's lowered defenses. Make a melee attack roll against that opponent. You gain an asset on this attack. If your attack is successful, it inflicts an additional 4 damage. Action."
       },
       {
         "id": "mind-games",
         "name": "Mind Games",
         "tier": 4,
-        "prerequisites": ["when-the-deal-bombs"],
+        "prerequisites": [
+          "when-the-deal-bombs"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 4, "options": [] },
-        "description": "Use lies, mockery, and vicious language to make a foe lose their next turn and hinder their following tasks."
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "You use lies and trickery, mockery, and perhaps even hateful, obscene language against a foe that can understand you. If you succeed, the foe is confused, enraged, or otherwise distracted enough that they lose their next turn, and on the turn thereafter, their tasks are hindered. Action."
       },
       {
         "id": "knock-out",
         "name": "Knock Out",
         "tier": 5,
-        "prerequisites": ["incapacitating-attack"],
+        "prerequisites": [
+          "incapacitating-attack"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "might", "amount": 5, "options": [] },
-        "description": "A hindered melee attack can render a level 3 or lower foe unconscious instead of dealing damage."
+        "cost": {
+          "stat": "might",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Make a hindered melee attack against a foe of level 3 or lower. If the attack hits, instead of inflicting damage you knock them unconscious until you use a ten-minute or longer recovery (or someone uses an action to bring them back around). Effort: Increase the maximum level of the foe you can affect by 1. Action."
       },
       {
         "id": "using-the-environment",
         "name": "Using the Environment",
         "tier": 5,
-        "prerequisites": ["feint"],
+        "prerequisites": [
+          "feint"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "intellect", "amount": 4, "options": [] },
-        "description": "Turn nearby cover and terrain into an asset, move freely across reachable obstacles, and gain a melee attack benefit."
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "You can use the environment to your advantage. If there is something within immediate distance that plausibly could provide cover (a table, chandelier, banister, second foe, and so on), you have cover and an asset on your melee attacks. It is a routine task (no roll required) for you to move anywhere that it is physically possible for you to reach as part of normal movement, climbing, or jumping, and you ignore obstacles and difficult terrain when you do so. For example, you could climb up a tapestry to a balcony or slide down a ship's sail, but not slip through an arrow slit or enter a locked cage. This ability lasts until you use a ten-minute or longer recovery. Enabler."
       },
       {
         "id": "lethal-strike",
         "name": "Lethal Strike",
         "tier": 6,
-        "prerequisites": ["fast-kill", "knock-out"],
+        "prerequisites": [
+          "fast-kill",
+          "knock-out"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "speed", "amount": 6, "options": [] },
-        "description": "A swift melee or ranged attack to a vital spot deals 7 additional damage."
+        "cost": {
+          "stat": "speed",
+          "amount": 6,
+          "options": []
+        },
+        "description": "With a swift and sudden melee or ranged weapon attack, you strike a foe in a vital spot. If you hit, you inflict an additional 7 damage. Action."
       },
       {
         "id": "twisting-the-knife",
         "name": "Twisting the Knife",
         "tier": 6,
-        "prerequisites": ["mind-games", "using-the-environment"],
+        "prerequisites": [
+          "mind-games",
+          "using-the-environment"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "speed", "amount": 4, "options": [] },
-        "description": "After hitting a foe with a melee weapon, automatically hit them again with that weapon for normal damage."
+        "cost": {
+          "stat": "speed",
+          "amount": 4,
+          "options": []
+        },
+        "description": "If you've hit a foe with a melee weapon in this combat, you automatically hit them again with that same weapon (no roll required), dealing normal damage. You can't use this ability with a special attack or if you want to use Effort to increase damage, but abilities that automatically affect your damage do apply to this attack. Action."
       }
     ]
   },
   "folder": null,
   "sort": 0,
-  "ownership": { "default": 0 },
+  "ownership": {
+    "default": 0
+  },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

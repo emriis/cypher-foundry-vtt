@@ -24,38 +24,52 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "basic-necromancy",
         "name": "Nécromancie de Base",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 3
+          "amount": 3,
+          "options": []
         },
-        "description": "Tu animes le corps d’une créature morte d’une taille égale ou inférieure à la tienne dans ta portée immédiate, créant un **suivant** de niveau 1 sous forme de mort‑vivant. Il n’a ni intelligence, ni souvenirs, ni aptitudes spéciales de son vivant. Il obéit à tes ordres verbaux jusqu’à ce que tu effectues une récupération d’une heure ou plus, après quoi il redevient un cadavre inerte. À moins qu’il ne soit détruit par des dégâts, tu peux le réanimer à nouveau lorsque son temps expire — il conserve les dégâts subis. Si tu utilises  Nécromancie de Base pour animer un deuxième corps avec cette aptitude, tout corps déjà animé redevient immédiatement inerte. Action pour animer"
+        "description": "Tu animes le corps d'une créature morte d'une taille égale ou inférieure à la tienne dans ta portée immédiate, créant un suivant de niveau 1 sous forme de mort-vivant. Il n'a ni intelligence, ni souvenirs, ni aptitudes spéciales de son vivant. Il obéit à tes ordres verbaux jusqu'à ce que tu effectues une récupération d'une heure ou plus, après quoi il redevient un cadavre inerte. Si tu animes un deuxième corps, tout corps déjà animé redevient immédiatement inerte."
       },
       {
+        "id": "drain-life",
         "name": "Drain de Vie",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "Tu projettes une vrille cendreuse jusqu’à une courte portée, infligeant **2 dégâts** à une cible vivante avec un jet d’attaque d’Intellect réussi. Tu bénéficies de l’énergie drainée en soignant une **blessure mineure** chez toi ou un·e allié·e à portée immédiate. Au rang 3, si tu consacres deux niveaux d’Effort, une attaque réussie inflige 5 dégâts et soigne une blessure modérée ou mineure pour toi ou un allié à portée immédiate . Action"
+        "description": "Tu projettes une vrille cendreuse jusqu'à une courte portée, infligeant 2 dégâts à une cible vivante avec un jet d'attaque d'Intellect réussi. Tu bénéficies de l'énergie drainée en soignant une blessure mineure chez toi ou un allié à portée immédiate. Au rang 3, si tu consacres deux niveaux d'Effort, une attaque réussie inflige 5 dégâts et soigne une blessure modérée ou mineure pour toi ou un allié à portée immédiate."
       },
       {
+        "id": "tribulation",
         "name": "Tribulation",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "Tu invoques une énergie spirituelle pure pour frapper jusqu’à **cinq morts‑vivants, démons ou créatures similaires** de niveau 2 ou moins dans une courte portée. Tu effectues un jet d’attaque d’Intellect séparé contre chaque cible. Pour chaque réussite, tu choisis si elle fuit ou perd son prochain tour. Effort :  Augmente le niveau maximum des cibles affectées de 1 ou tu peux aussi imposer une autre action à effectuer pendant un round (par exemple attaquer un ennemi de ton choix). Dernière action"
+        "description": "You conjure pure spiritual energy to blast up to five undead, demons, and creatures of similar ilk of level 2 or less within short range. If you succeed on a separate Intellect attack against each foe, you choose whether they spend their next turn fleeing or lose their next turn. Effort: Increase the maximum level of the foe you can affect by 1. Specify some other action for the creatures to perform for one round, such as attacking a foe of your choice. Last action."
       }
     ],
-    "statOptions": ["intellect"],
-    "description": "<p>Un Type de Dungeon Fantasy centré sur l'archétype nécromancien, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Dungeon Fantasy. Réserves principales : Intellect.</em></p>"
+    "statOptions": [
+      "intellect"
+    ],
+    "description": "<p>Decomposing flesh radiates fading life force. You know how to siphon that power, twist and shape it, then reinfuse the dead with it to return them to ambulatory service. You can also draw that energy directly from them to heal your own rent flesh or anyone near you. In fact, your necromantic prowess gives you a degree of control over undead of all sorts, allowing you to daze and repel them, or even briefly command their service. Because your abilities are so directly tethered to death, many people fear and hate you regardless of your deeds and true motivation. Your animated helpers can aid whoever you command, including any allies willing to accept help from a corpse. Likewise, your ability to drain life from your foes to heal your flesh can also provide balm to allies willing to accept it. And should your group face an external necromantic threat, you have the knowledge and power to help confront it.</p>"
   },
   "folder": "N6LoBZte2sRtJhu7",
   "sort": 0,
@@ -64,7 +78,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

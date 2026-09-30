@@ -24,28 +24,39 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "expert-combatant",
         "name": "Combattant Expert",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Tu es **entraîné·e** dans un type d’attaque d’arme spécifique de ton choix (épées, haches, arcs…) ou dans une catégorie plus large : armes contondantes légères, armes tranchantes légères, armes à distance légères, armes contondantes moyennes, armes tranchantes moyennes, armes à distance moyennes, etc. Au rang 2, tu peux devenir spécialisé·e dans la même méthode d’attaque choisie au rang 1, mais tu dois acquérir la compétence normalement. Au rang 6, tu peux devenir expert·e dans une méthode d’attaque spécifique (celle choisie au rang 1 ou une autre dans laquelle tu es déjà spécialisé·e), mais tu dois acquérir la compétence normalement."
+        "description": "Tu es entraîné·e dans un type d'attaque d'arme spécifique de ton choix (épées, haches, arcs…) ou dans une catégorie plus large : armes contondantes légères, armes tranchantes légères, armes à distance légères, armes contondantes moyennes, armes tranchantes moyennes, armes à distance moyennes, etc. Au rang 2, tu peux devenir spécialisé·e dans la même méthode d'attaque. Au rang 6, tu peux devenir expert·e dans une méthode d'attaque spécifique."
       },
       {
+        "id": "press-advantage",
         "name": "Mettre la pression",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Lorsque ton jet d’attaque infligeant des dégâts est de **17 ou plus**, tu infliges **+1 dégât**. Si tu obtiens **19 ou 20**, tu infliges ce dégât supplémentaire **même si tu choisis un effet mineur ou majeur** au lieu de dégâts additionnels."
+        "description": "Lorsque ton jet d'attaque infligeant des dégâts est de 17 ou plus, tu infliges +1 dégât. Si tu obtiens 19 ou 20, tu infliges ce dégât supplémentaire même si tu choisis un effet mineur ou majeur au lieu de dégâts additionnels."
       }
     ],
-    "statOptions": ["might", "speed"],
-    "description": "<p>Un Type de Dungeon Fantasy centré sur l'archétype combattant, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Dungeon Fantasy. Réserves principales : Puissance, Célérité.</em></p>"
+    "statOptions": [
+      "might",
+      "speed"
+    ],
+    "description": "<p>Weapon tightly gripped, you charge your monstrous foes. Anyone willing to hold a sword might be called a “fighter,” but you're a cut above most. Less well-trained warriors may serve as soldiers, guards, and muscle in a tavern, but a Fighter truly understands conflict and battlefield control. You've trained in specific weapons and methods of defense, have scars from past fights, and probably look forward to your next descent into an ancient ruin or enemy's outpost, if only so you can match your weapon against a foe's blade or spell. In your group, you're usually the most physically capable, the most durable, and the most ready to meet danger head-on. This attribute probably leads to a role as a protector of your friends—particularly the least sturdy among them. If someone has to take the lead when entering the monster's den, you're among the first to charge in.</p>"
   },
   "folder": "N6LoBZte2sRtJhu7",
   "sort": 0,
@@ -54,7 +65,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

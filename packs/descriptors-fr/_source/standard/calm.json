@@ -1,0 +1,30 @@
+{
+  "_id": "AZ12SoVjPpXRI3l9",
+  "_key": "!items!AZ12SoVjPpXRI3l9",
+  "name": "Serein·e",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Persuasion",
+      "",
+      "",
+      ""
+    ],
+    "description": "<p>Tu restes calme et posé·e face au stress et à l'adversité. Ta sérénité rassure ton entourage.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

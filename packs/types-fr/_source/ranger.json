@@ -24,38 +24,53 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "expert-tracker",
         "name": "Pisteur Expert",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Tu es **entraîné·e** au pistage. Au rang 6, si tu es déjà spécialisé·e, tu peux devenir expert·e en pistage, mais tu dois acquérir la compétence normalement."
+        "description": "Tu es entraîné·e au pistage. Au rang 6, si tu es déjà spécialisé·e, tu peux devenir expert·e en pistage, mais tu dois acquérir la compétence normalement."
       },
       {
+        "id": "find-the-way",
         "name": "Trouver la Voie",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Lorsque tu suis une créature, que tu es perdu·e, que tu ignores par où commencer un voyage, ou que tu dois choisir entre plusieurs routes, tu peux poser **une question** à ton·ta MJ liée à la tâche et obtenir une réponse **courte et utile**. Une fois utilisée, cette aptitude ne peut pas être réutilisée avant ta prochaine récupération. Action"
+        "description": "Lorsque tu suis une créature, que tu es perdu·e, que tu ignores par où commencer un voyage, ou que tu dois choisir entre plusieurs routes, tu peux poser une question à ton MJ liée à la tâche et obtenir une réponse courte et utile. Une fois utilisée, cette aptitude ne peut pas être réutilisée avant ta prochaine récupération."
       },
       {
+        "id": "quarry",
         "name": "Proie Désignée",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
-        "description": "Choisis une créature que tu peux voir pour en faire ta **proie**. Tu obtiens +1 Atout pour toutes les tâches impliquant le suivi, la compréhension, l’interaction, l’attaque ou la défense contre elle. Tes attaques contre ta proie infligent +1 dégât. Cela inclut les tâches liées à la chasse si approprié (dépouiller, préparer, conserver la viande…). Tu ne peux avoir qu’une seule proie à la fois. Au rang 3, tu peux avoir deux proies simultanément. Action"
+        "description": "Choisis une créature que tu peux voir pour en faire ta proie. Tu obtiens +1 Atout pour toutes les tâches impliquant le suivi, la compréhension, l'interaction, l'attaque ou la défense contre elle. Tes attaques contre ta proie infligent +1 dégât. Cela inclut les tâches liées à la chasse si approprié. Tu ne peux avoir qu'une seule proie à la fois. Au rang 3, tu peux avoir deux proies simultanément."
       }
     ],
-    "statOptions": ["speed", "intellect"],
-    "description": "<p>Un Type de Dungeon Fantasy centré sur l'archétype rôdeur, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Dungeon Fantasy. Réserves principales : Célérité, Intellect.</em></p>"
+    "statOptions": [
+      "speed",
+      "intellect"
+    ],
+    "description": "<p>You're adept at traveling through perilous places. Hard experience has taught you that trust is something to be offered only rarely, and even then, might have to be traded for enmity. You know how to think like, track, and, if need be, bring down your prey, whether your quarry is wild game or someone you've determined must be hunted. Your ability to navigate is important in any group where travel to distant unknown regions and/or through mazelike tunnels under the earth happens with any sort of regularity. Your skill in finding the right path makes you invaluable anytime your group needs to track a foe who's fled the scene and, once found, quickly dispatch them.</p>"
   },
   "folder": "N6LoBZte2sRtJhu7",
   "sort": 0,
@@ -64,7 +79,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

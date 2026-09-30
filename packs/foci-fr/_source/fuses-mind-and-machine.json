@@ -1,0 +1,212 @@
+{
+  "_id": "fusesminda11815F",
+  "_key": "!items!fusesminda11815F",
+  "name": "Fusionne l’esprit et la machine",
+  "type": "focus",
+  "img": "icons/commodities/tech/circuit-board-chip.webp",
+  "system": {
+    "description": "<p>Electronic aids implanted in your brain make you a mental powerhouse.</p>",
+    "abilities": [
+      {
+        "id": "data-processor",
+        "name": "Processeur de données",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "En puisant dans des informations stockées et dans ta capacité à traiter les données à une vitesse incroyable, tu deviens temporairement entraîné·e dans une tâche mentale. À chaque activation, choisis une compétence d’Intellect (piratage, défense d’Intellect, compétence de connaissance, perception…). Tu es entraîné·e dans cette compétence jusqu’à ta prochaine récupération de dix minutes ou plus. Normalement, tu ne peux être entraîné·e que dans une seule compétence à la fois via cette aptitude ; l’activer de nouveau remplace la compétence précédente. Effort : augmenter ton nombre maximal de compétences temporairement entraînées de +1."
+      },
+      {
+        "id": "think-fast",
+        "name": "Réflexion rapide",
+        "tier": 1,
+        "prerequisites": [
+          "data-processor"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Ton esprit est vif et insaisissable. Tu es entraîné·e aux tâches de défense d’Intellect."
+      },
+      {
+        "id": "wireless-interface",
+        "name": "Interface sans fil",
+        "tier": 1,
+        "prerequisites": [
+          "data-processor"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Tu peux communiquer mentalement avec des machines à portée courte. La communication est bidirectionnelle, mais la machine doit être disposée et capable de communiquer. Tu n’as pas besoin de la voir, mais tu dois savoir qu’elle est dans la portée. Tu peux maintenir plusieurs contacts simultanés, mais tu dois établir chaque contact séparément. Une fois le contact établi : les tâches impliquant cette machine prennent la moitié du temps normal et les tâches nécessitant une action deviennent des Premières actions. Chaque contact dure jusqu’à ta prochaine récupération de dix minutes ou plus. Effort : prolonger la durée jusqu’à une récupération d’une heure ou plus ; augmenter la portée d’un palier (longue, très longue, 1,5 km, 15 km, ou n’importe où sur la planète)."
+      },
+      {
+        "id": "analytic-processor",
+        "name": "Processeur analytique",
+        "tier": 2,
+        "prerequisites": [
+          "data-processor"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Pose au/à la MJ une question dont tu veux la réponse. Le·La MJ fixe une difficulté selon la rareté ou la complexité de l’information. Si tu réussis une tâche d’Intellect contre cette difficulté, tu obtiens une réponse courte. En cas d’échec, tu subis 4 dégâts d’Intellect dus au contrecoup numérique."
+      },
+      {
+        "id": "machine-reading",
+        "name": "Lecture machine",
+        "tier": 2,
+        "prerequisites": [
+          "wireless-interface"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Tu peux lire les « pensées » superficielles d’une machine à portée courte, même si elle ne le souhaite pas. Tu dois pouvoir la voir. Une fois le contact établi, tu peux lire ses pensées jusqu’à ta prochaine récupération de dix minutes ou plus."
+      },
+      {
+        "id": "action-processor",
+        "name": "Processeur d’action",
+        "tier": 3,
+        "prerequisites": [
+          "data-processor"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Ton aptitude Processeur de données peut désormais t’accorder un entraînement dans des compétences physiques : athlétisme, acrobaties, Esquive ou Blocage, ou pour les attaques avec une arme spécifique. Cela ne change pas le nombre maximal de compétences que Processeur de données peut t’accorder simultanément."
+      },
+      {
+        "id": "awareness",
+        "name": "Hyper-perception",
+        "tier": 3,
+        "prerequisites": [
+          "think-fast"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "You become hyperaware of your surroundings until you use a ten-minute or longer recovery. You are aware of all living things within long range (including their general position). By using an action to concentrate, you can choose one of them and attempt to learn their general health and power level. Action. When you use Awareness, you are also aware of thinking machines in long range."
+      },
+      {
+        "id": "expanded-wireless",
+        "name": "Interface étendue",
+        "tier": 4,
+        "prerequisites": [
+          "wireless-interface"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "La portée de base de ton aptitude Interface sans fil devient n’importe où sur la planète."
+      },
+      {
+        "id": "locked-skill",
+        "name": "Compétence verrouillée",
+        "tier": 4,
+        "prerequisites": [
+          "action-processor"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Quand tu actives Processeur de données, choisis l’une des compétences qu’il t’accorde : elle devient ta compétence verrouillée. Tu restes entraîné·e dans cette compétence jusqu’à ta prochaine récupération de dix heures. Si tu réactives Processeur de données avant cette récupération, tu peux réinitialiser la durée ou choisir une nouvelle compétence verrouillée. Tu peux choisir cette aptitude jusqu’à trois fois. Chaque fois, ton nombre maximal de compétences verrouillées augmente de +1."
+      },
+      {
+        "id": "precognition",
+        "name": "Précognition",
+        "tier": 5,
+        "prerequisites": [
+          "awareness"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "You dimly sense the future until you use a ten-minute or longer recovery. During this time, you gain the following benefits: You gain an asset on defense tasks. You can predict the actions of those around you. You gain an asset to seeing through deceptions and attempts to betray you as well as avoiding traps and ambushes. You know what people are probably thinking and what they will say before they say it. You gain an asset to all interaction tasks. Enabler."
+      },
+      {
+        "id": "machine-enhancement",
+        "name": "Amélioration machine",
+        "tier": 6,
+        "prerequisites": [
+          "locked-skill"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Chaque fois que tu consacres de l’Effort à une action d’Intellect, ajoute au choix : un niveau d’Effort gratuit ou un effet mineur sur l’action."
+      },
+      {
+        "id": "mind-surge",
+        "name": "Surtension mentale",
+        "tier": 6,
+        "prerequisites": [
+          "precognition"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu disposes d’une récupération supplémentaire d’une action chaque jour, utilisable uniquement pour restaurer ta Réserve d’Intellect."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

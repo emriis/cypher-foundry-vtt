@@ -1,0 +1,257 @@
+{
+  "_id": "changessha9EFDA0",
+  "_key": "!items!changessha9EFDA0",
+  "name": "Change de forme",
+  "type": "focus",
+  "img": "icons/magic/nature/wolf-paw-glow-brown.webp",
+  "system": {
+    "description": "<p>You can transform into various animals, gaining their natural abilities as if you were born with them.</p>",
+    "abilities": [
+      {
+        "id": "keen-eye",
+        "name": "Œil perçant",
+        "tier": 1,
+        "prerequisites": [
+          "animal-shape"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You can see perfectly well half again as far as normal. You ignore attack and perception penalties for fog, smoke, mist, dim light, and very dim light."
+      },
+      {
+        "id": "animal-shape",
+        "name": "Forme animale",
+        "tier": 1,
+        "prerequisites": [
+          "keen-eye",
+          "scent-transformation"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Tu te changes en un animal aussi petit qu’un rat ou jusqu’à ta taille (par exemple un grand chien ou un petit ours) jusqu’à ta prochaine récupération de dix minutes ou plus. À chaque transformation, tu peux choisir une forme animale différente. Ton équipement fait partie de la transformation et devient inutilisable sauf s’il a un effet passif (comme une armure). Dans cette forme, tes caractéristiques restent celles de ta forme normale, mais tu peux te déplacer et attaquer selon la forme animale choisie (les attaques de la plupart des animaux de cette taille sont des armes moyennes, que tu peux utiliser sans pénalité). Les tâches nécessitant des mains (ouvrir une porte, appuyer sur un bouton) sont entravées en forme animale. Tu ne peux pas parler mais tu peux utiliser des aptitudes qui ne reposent pas sur la parole humaine. Tu gagnes deux aptitudes mineures associées à la créature que tu deviens (voir le tableau Aptitudes mineures de forme animale). Devenir un animal parlant : ressemblant exactement à un animal normal, mais tu peux parler et utiliser des aptitudes reposant sur la parole. Prendre une forme hybride : C’est comme ta forme normale mais avec des traits animaliers, même si l’animal est beaucoup plus petit que toi (par ex. chauve‑souris ou rat). En forme hybride tu peux parler, utiliser toutes tes aptitudes, attaquer comme un animal et effectuer des tâches nécessitant des mains sans être entravé·e. Quiconque te voit clairement en forme hybride ne te confondra jamais avec un simple animal."
+      },
+      {
+        "id": "scent-transformation",
+        "name": "Transformation d'odeur",
+        "tier": 1,
+        "prerequisites": [
+          "animal-shape"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "You alter your scent so that you smell like an animal of your choosing until your next ten-minute or longer recovery. This can foil tracking attempts that are based on smell, and when attempting to interact with animals of your chosen type that rely heavily on smell, your tasks are eased by two steps. You can use this ability no matter what your shape is. Action to initiate."
+      },
+      {
+        "id": "beast-communication",
+        "name": "Communication bestiale",
+        "tier": 2,
+        "prerequisites": [
+          "animal-shape"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Tu peux transmettre un concept basique à une créature qui normalement ne parle pas et ne comprend pas la parole. La créature peut aussi te donner une réponse très simple à une question simple."
+      },
+      {
+        "id": "soothe-the-savage",
+        "name": "Apaiser la bête",
+        "tier": 2,
+        "prerequisites": [
+          "animal-shape"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Make an Intellect attack roll to calm a nonhuman beast within short range that can see you. You must speak to them (although they don't need to understand your words). They remain calm until you use a ten-minute or longer recovery or for as long as you keep using your action to calm them. Action."
+      },
+      {
+        "id": "bigger-animal-shape",
+        "name": "Forme animale agrandie",
+        "tier": 3,
+        "prerequisites": [
+          "beast-communication",
+          "soothe-the-savage"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Quand tu utilises Forme animale, tu peux grandir jusqu’au double de ta taille normale. En étant si grand·e, ta forme animale te donne les bénéfices suivants : tu ignores la première blessure modérée que tu subis, tes attaques non armées infligent +4 dégâts supplémentaires, et tu gagnes un Atout sur tes jets d’attaque non armés. En contrepartie, tes tâches de Esquive sont entravées."
+      },
+      {
+        "id": "shapechanger-healing",
+        "name": "Guérison du métamorphe",
+        "tier": 3,
+        "prerequisites": [
+          "beast-communication",
+          "soothe-the-savage"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "When you change into an animal form, you are healed of one wound of any severity. This ability renews after you take a ten-hour recovery. Enabler."
+      },
+      {
+        "id": "movement-adaptation",
+        "name": "Adaptation de mouvement",
+        "tier": 4,
+        "prerequisites": [
+          "bigger-animal-shape",
+          "animal-scrying"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "might",
+          "amount": 4,
+          "options": []
+        },
+        "description": "You can modify your animal shape, either growing wings so you can fly or becoming aquatic with fins and gills (for example, if you are in the form of a gorilla, you could become a winged gorilla or a fishlike gorilla). If you choose flight, you can fly a long distance each round. If you choose aquatic, you can breathe water and swim at your normal land speed. You can carry a creature of your size or smaller, or if affected by Bigger Animal Shape, three creatures of your regular size or smaller. If you use Animal Shape, you gain the benefit of this ability without having to spend an action to trigger it. Action; enabler when using Animal Shape."
+      },
+      {
+        "id": "animal-scrying",
+        "name": "Divination animale",
+        "tier": 4,
+        "prerequisites": [
+          "bigger-animal-shape",
+          "shapechanger-healing",
+          "movement-adaptation"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Si tu connais la localisation générale d’un animal qui t’est amical et qui se trouve à moins d’1,5 km, tu peux percevoir à travers ses sens jusqu’à ta prochaine récupération de dix minutes ou plus. Tu dois être sous forme animale ou dans une forme similaire à cet animal pour activer cette aptitude. Consacrer de l’Effort : Activer cette aptitude même si tu n’es pas en forme animale ou en une forme similaire."
+      },
+      {
+        "id": "enhanced-animal-shape",
+        "name": "Forme animale améliorée",
+        "tier": 5,
+        "prerequisites": [
+          "movement-adaptation",
+          "not-dead-yet"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Quand tu utilises Forme animale, ta forme gagne les bonus supplémentaires suivants : +3 à ta Réserve Puissance, +2 à ta Réserve Célérité, et tu peux ignorer les blessures mineures causées par des attaques physiques."
+      },
+      {
+        "id": "not-dead-yet",
+        "name": "Pas encore mort",
+        "tier": 5,
+        "prerequisites": [
+          "movement-adaptation",
+          "animal-scrying",
+          "enhanced-animal-shape"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "When you would normally be dead, you instead fall unconscious for one round and then awaken. When you awaken this way, you immediately gain 1d6 + 6 points to restore your stat Pools, and you remove one moderate wound and one major wound. Once you use this ability, your tasks are hindered until you use a ten-hour recovery. If you die again before you use your ten-hour recovery, you are truly dead. You can select this ability twice. The second time you select it, the healing increases to 1d6 + 12 and you remove double the number of wounds. Enabler."
+      },
+      {
+        "id": "lend-animal-shape",
+        "name": "Prêter Forme animale",
+        "tier": 6,
+        "prerequisites": [
+          "enhanced-animal-shape"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "Tu te changes en animal comme avec Forme animale, et une créature consentante à portée immédiate se transforme aussi en cet animal (ours, tigre, loup, etc.) jusqu’à ta prochaine récupération de dix minutes ou plus, comme si elle utilisait ton aptitude Forme animale. Toutes les créatures transformées doivent être de ta taille ou plus petites. Une créature peut revenir à sa forme normale au prix d’une action, mais elle ne peut pas reprendre forme animale ensuite. Une créature changeant de forme (que ce soit toi ou quelqu’un d’autre) n’affecte pas les autres créatures affectées par cette aptitude. Consacrer de l’Effort : Affecter une créature supplémentaire."
+      },
+      {
+        "id": "lethal-capability",
+        "name": "Capacité létale",
+        "tier": 6,
+        "prerequisites": [
+          "enhanced-animal-shape",
+          "not-dead-yet"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You've mastered how to kill with a particular attack. You inflict an additional 5 damage with attacks of one specific type, such as a claw, a bite, a tail slap, or some other specific attack you prefer. You can gain this ability more than once. Each time you do, choose a different specific attack."
+      },
+      {
+        "id": "hard-to-see",
+        "name": "Difficile à voir",
+        "tier": 6,
+        "prerequisites": [
+          "enhanced-animal-shape",
+          "not-dead-yet"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "When you move, you are a blur. It is impossible to make out your identity as you pass by someone at speed. In addition, if you do nothing but move on your turn, your dodge and stealth tasks are eased by three steps until your next turn."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

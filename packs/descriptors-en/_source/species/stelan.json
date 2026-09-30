@@ -1,0 +1,12 @@
+{
+  "_id": "S5tE8lQ1vK7mR3pN", "_key": "!items!S5tE8lQ1vK7mR3pN", "name": "Stelan", "type": "descriptor", "img": "icons/svg/aura.svg",
+  "system": {
+    "category": "species", "genres": ["sciFi"], "grantsSecondDescriptor": false, "statOptions": [], "statAmount": 0, "skillOptions": ["Gathering Information"],
+    "benefits": [
+      { "name": "No GM Intrusion on Intellect Defense", "description": "<p>You don't get a GM intrusion if you roll a 1 on an Intellect defense task.</p>" },
+      { "name": "Unarmed Stun", "description": "<p>You can choose to force your target to lose its next turn instead of dealing damage with a successful unarmed attack.</p>" }
+    ],
+    "description": "<p>If not for the angularity of your features compared with humans, outsiders would be hard-pressed to tell you apart. However, your difference in temperament is more obvious. It only takes a few minutes in your presence to understand that stelans prize rational thought above everything, having little use for gut feelings, emotions that cloud sound judgment, and the value of anecdote in the face of compiled data.</p><p><strong>You gain the following characteristics:</strong></p><ul><li>You don't get a GM intrusion if you roll a 1 on an Intellect defense task.</li><li>You are trained in gathering information.</li><li>You can choose to force your target to lose its next turn instead of dealing damage with a successful unarmed attack.</li></ul>"
+  }, "folder": null, "sort": 0, "ownership": { "default": 0 },
+  "flags": { "cypher": { "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License." } }
+}

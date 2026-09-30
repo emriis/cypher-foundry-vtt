@@ -24,28 +24,39 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "desperate-defense",
         "name": "Défense Désespérée",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Tant que tu as **au moins une blessure modérée ou majeure**, tu peux entrer dans un état d’hypervigilance face au danger. Dans cet état, tu **ne peux pas** utiliser de points de ta Réserve d’Intellect, tu ajoutes **+1 à ton Avantage de Célérité**, tu gagnes **deux atouts** pour les tâches de blocage et d’esquive. Si tu mets fin volontairement à cet état alors que tu es encore blessé·e, tu ne peux pas y revenir avant d’avoir effectué une **récupération**."
+        "description": "Tant que tu as au moins une blessure modérée ou majeure, tu peux entrer dans un état d'hypervigilance. Dans cet état, tu ne peux pas utiliser de points de ta Réserve d'Intellect, tu ajoutes +1 à ton Avantage de Célérité, tu gagnes deux atouts pour les tâches de blocage et d'esquive. Si tu mets fin volontairement à cet état alors que tu es encore blessé·e, tu ne peux pas y revenir avant d'avoir effectué une récupération."
       },
       {
+        "id": "fast-talk",
         "name": "Baratin",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "En parlant avec une créature intelligente qui peut te comprendre et qui n’est pas hostile, tu la convaincs d’entreprendre **une action raisonnable** lors du prochain round. Une action raisonnable doit être approuvée par ton·ta MJ : elle ne doit pas mettre la cible ou ses allié·es en danger évident, ni être totalement incohérente avec son comportement. Action"
+        "description": "Quand tu parles à une créature intelligente capable de te comprendre et qui n’est pas hostile, tu la convaincs d’accomplir une action raisonnable lors du prochain round. Cette action doit être validée par le·la MJ : elle ne doit pas être dangereuse pour la créature ou ses allié·e·s, ni contraire à sa nature."
       }
     ],
-    "statOptions": ["speed", "intellect"],
-    "description": "<p>Un Type de Space Opera centré sur l'archétype fripouille, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Science-fiction. Sous-genre : Space Opera. Réserves principales : Célérité, Intellect.</em></p>"
+    "statOptions": [
+      "speed",
+      "intellect"
+    ],
+    "description": "<p>You find that shading the truth, more often than not, benefits your endeavors. You've even pulled off one or more lucrative confidence games during your career, bilking the gullible of their resources for your own benefit. This kind of behavior tends to catch up with a person, so you probably move around a lot, hoping to stay ahead of unfortunate realizations and subsequent reprisal. Your group might lean on you when it comes to breaking into places without proper authorization or for distracting guards, officials, or foes with your capacity to make almost anything sound plausible even if it's a complete web of lies. If you're forced into armed conflict, you'll fight, but you're also remarkably good at seeing to your own welfare first.</p>"
   },
   "folder": "DNZXZoUQ1z24nS44",
   "sort": 0,
@@ -54,7 +65,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

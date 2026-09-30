@@ -24,38 +24,53 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "expert-interlocuter",
         "name": "Interlocuteur expert",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Tu es **entraîné·e** dans la compétence de ton choix parmi **persuasion**, **tromperie** ou **intimidation**. Au rang 6, tu peux devenir expert·e dans cette même compétence si tu es déjà spécialisé·e, mais tu dois acquérir la compétence normalement."
+        "description": "Tu es entraîné·e dans la compétence de ton choix parmi persuasion, tromperie ou intimidation. Au rang 6, tu peux devenir expert·e dans cette même compétence si tu es déjà spécialisé·e, mais tu dois acquérir la compétence normalement."
       },
       {
+        "id": "inspiring-performance",
         "name": "Performance Inspirante",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
-        "description": "Par un discours enflammé ou une musique inspirante, tu remontes le moral de **trois allié·es** qui peuvent te voir et t’entendre. Tant que tu continues à parler ou à jouer chaque round en tant qu’action, les allié·es affecté·es gagnent **un Atout** dans une tâche de ton choix (de combat ou non), liée à ta performance. Même après la fin de l’effet, les allié·es affecté·es restent si inspiré·es qu’ils ajoutent **+1 à leur prochaine récupération**. Au rang 3, ils ajoutent +2 à leur prochaine récupération. Effort : Affecte trois alliés supplémentaires. Action"
+        "description": "Par un discours enflammé ou une musique inspirante, tu remontes le moral de trois alliés qui peuvent te voir et t'entendre. Tant que tu continues à parler ou à jouer chaque round en tant qu'action, les alliés affectés gagnent un Atout dans une tâche de ton choix (de combat ou non), liée à ta performance. Même après la fin de l'effet, les alliés affectés ajoutent +1 à leur prochaine récupération. Au rang 3, ils ajoutent +2 à leur prochaine récupération. Effort : Affecte trois alliés supplémentaires."
       },
       {
+        "id": "a-smile-and-a-word",
         "name": "Un Sourire et un Mot",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Lorsque tu interagis avec succès avec une créature en réussissant une tâche de persuasion, de tromperie ou d’intimidation — y compris pour calmer des animaux ou communiquer avec quelqu’un (ou quelque chose) dont tu ne parles pas la langue — tu apprends également **une petite information utile ou au moins intéressante**. Par exemple, si tu convaincs un garde de te laisser passer, tu pourrais aussi apprendre que son supérieur revient dans dix minutes. Action"
+        "description": "Lorsque tu interagis avec succès avec une créature en réussissant une tâche de persuasion, de tromperie ou d'intimidation — y compris pour calmer des animaux ou communiquer avec quelqu'un dont tu ne parles pas la langue — tu apprends également une petite information utile ou au moins intéressante. Par exemple, si tu convaincs un garde de te laisser passer, tu pourrais aussi apprendre que son supérieur revient dans dix minutes."
       }
     ],
-    "statOptions": ["speed", "intellect"],
-    "description": "<p>Un Type de Dungeon Fantasy centré sur l'archétype barde, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Dungeon Fantasy. Réserves principales : Célérité, Intellect.</em></p>"
+    "statOptions": [
+      "speed",
+      "intellect"
+    ],
+    "description": "<p>You're an entertainer: a singer, dancer, poet, storyteller, or something similar. Naturally charismatic and talented, your diligence and study have only improved your art. You know old poems, songs, jokes, and stories, and you're skilled at creating new ones, too. Your seemingly beneficent nature puts others at their ease, and your performances lift spirits, ease mental burdens, and may even inspire. Most characters on your team probably look to you for help, advice, and, if nothing else, a rousing performance to spark courage. Those same talents are useful when your group tries diplomacy. Whether you're relying on the truth or attempting a deception, your ability to flatter, smile, and delight others may open places that swords and spells can't.</p>"
   },
   "folder": "N6LoBZte2sRtJhu7",
   "sort": 0,
@@ -64,7 +79,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

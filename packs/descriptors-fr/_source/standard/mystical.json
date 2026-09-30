@@ -1,0 +1,30 @@
+{
+  "_id": "3TpouYiiQy1XivmW",
+  "_key": "!items!3TpouYiiQy1XivmW",
+  "name": "Mystique",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Connaissances magiques",
+      "Connaissances psychiques",
+      "Connaissances religieuses",
+      ""
+    ],
+    "description": "<p>Tu te considères en harmonie avec le mystérieux et le paranormal. Tu connais des traditions anciennes et perçois des phénomènes surnaturels.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

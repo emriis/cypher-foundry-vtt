@@ -24,48 +24,68 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "inspiring-suggestion",
         "name": "Inspiring Suggestion",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
         "description": "Choose an ally who can see and easily understand you. Suggest a specific action for them to take, such as “attack the leader” or “climb the wall.” If the ally chooses to take that exact action, they gain two assets on that task. First action."
       },
       {
+        "id": "push-on-through",
         "name": "Push on Through",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Instead of a ten-minute recovery, you have a second one-action recovery. Thus, your first two recoveries are one action, the third is one hour, and the fourth is ten hours. You can take one more moderate wound than normal. You can use one of your one-action recoveries to allow an ally to use one of their ten-minute recoveries as an action. Successive Attack (2 Speed or Might): Once per turn if you take down a foe, you can immediately make another attack on that same turn against a new foe within your reach as an extra action on your turn. You can use this ability with melee attacks and ranged attacks."
+        "description": "Instead of a ten-minute recovery, you have a second one-action recovery. Thus, your first two recoveries are one action, the third is one hour, and the fourth is ten hours. You can take one more moderate wound than normal. You can use one of your one-action recoveries to allow an ally to use one of their ten-minute recoveries as an action. Successive Attack (2 Speed or Might): Once per turn if you take down a foe, you can immediately make another attack on that same turn against a new foe within your reach as an extra action on your turn. You can use this ability with melee attacks and ranged attacks. Enabler."
       },
       {
+        "id": "super-combatant",
         "name": "Super Combatant",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you’re already specialized in), but you must gain the skill normally."
+        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you're already specialized in), but you must gain the skill normally."
       },
       {
+        "id": "superheroics",
         "name": "Superheroics",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Choose one Pool: Might, Speed, or Intellect. For tasks using your chosen Pool, add your rank to the amount of Effort you can apply, allowing you to apply additional levels of Effort to tasks in that Pool. In addition, you can choose to push yourself so hard that you take a moderate wound in exchange for two free levels of Effort you can apply to tasks in your chosen Pool (as long as this doesn’t push you past your Effort limit for that Pool). Finally, add your rank as a bonus to your recovery, with those points going only into the Pool you have chosen. Powerhouse (Rank 4) You embody raw, overwhelming power, making you a one-person force to be reckoned with. You have a formidable array of abilities, starting with amazing stamina, fluid dexterity, and a cutting intellect. But that’s the least amazing thing about you—few can stand against you unless they are literal gods. And even those may fear your wrath. Powerhouses are effective in almost every situation, though your particular suite of abilities could provide even more amazing aid to your allies, depending on the circumstances. Background Although you almost never get involved when trouble strikes, something came along that was too important to ignore. When this is all done, you intend to permanently return to your “civilian” secret identity life. Your mentor survived a supervillain attack two years ago but remains bedridden to this day. You were bequeathed this power for a reason, so you’ve dedicated yourself to making things better however you can. Your job as a national hero endorsed by the government ended three years ago. The first time you publicly used your abilities to help, the crowds lauded and celebrated your name. That’s a feeling you’ll chase to your grave. Recently, your ugly breakup with another superhero was dissected by all the gossip sites. You used your abilities to save an entire bridge from collapsing during a villain conflict. Last month you were offered a spot on an up‑and-coming superteam, but you declined."
+        "description": "Choose one Pool: Might, Speed, or Intellect. For tasks using your chosen Pool, add your rank to the amount of Effort you can apply, allowing you to apply additional levels of Effort to tasks in that Pool. In addition, you can choose to push yourself so hard that you take a moderate wound in exchange for two free levels of Effort you can apply to tasks in your chosen Pool (as long as this doesn't push you past your Effort limit for that Pool). Finally, add your rank as a bonus to your recovery, with those points going only into the Pool you have chosen."
       }
     ],
-    "statOptions": ["might", "speed", "intellect"],
-    "description": "<p>A Superheroes Type focused on superhuman (rank 3) archetypal play, with clear room for a character's own story and abilities.</p><p><em>Genre: Superheroes. Subgenre: Superheroes. Primary Pools: might, speed, intellect.</em></p>"
+    "statOptions": [
+      "might",
+      "speed",
+      "intellect"
+    ],
+    "description": "<p>Your suite of extraordinary powers elevates you far beyond human capabilities. You might have a versatile combination of special attributes, possibly including enhanced strength and durability that allow you to withstand immense impacts and lift incredible weights, or super-speed for rapid movement and reaction, or even more exotic abilities like flight, energy manipulation, or advanced telepathy. Superhumans are capable in a variety of different situations, though your particular specialty will determine how many ways you can benefit your group or allies during a team-up.</p>"
   },
   "folder": "jyQmvn0EhqJ84yoX",
   "sort": 0,
@@ -74,7 +94,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

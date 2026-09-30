@@ -1,0 +1,30 @@
+{
+  "_id": "NZmxFxtY8d6TWgq0",
+  "_key": "!items!NZmxFxtY8d6TWgq0",
+  "name": "Rugged",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "might"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Animal Care",
+      "Outdoor Survival",
+      "",
+      ""
+    ],
+    "description": "<p>You're a nature lover accustomed to living rough, pitting your wits against the elements. Most likely, you're a skilled hunter, gatherer, or naturalist. Years of living in the wild have left their mark with a worn countenance, wild hair, or scars. Your clothing is probably much less refined than the garments worn by city dwellers.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

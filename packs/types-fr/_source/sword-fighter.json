@@ -24,68 +24,95 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "combat-prowess",
         "name": "Prouesse Martiale",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Tu ajoutes **+1 dégât** à un type d’attaque avec arme de ton choix : attaques de **mêlée** ou attaques **à distance**."
+        "description": "Tu ajoutes +1 dégât à un type d'attaque d'arme de ton choix : attaque de mêlée ou attaque à distance."
       },
       {
+        "id": "expert-combatant",
         "name": "Expert·e combattant·e",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Tu es **entraîné·e** dans un type d’attaque d’arme spécifique (épées, haches, arcs, etc.), ou dans une catégorie plus large : armes contondantes légères, armes tranchantes légères, armes à distance légères, armes contondantes moyennes, armes tranchantes moyennes, armes à distance moyennes, etc. Au rang 2, tu peux devenir spécialisé·e dans le même type d’attaque choisi au rang 1, mais tu dois obtenir la compétence normalement. Au rang 6, tu peux devenir expert·e dans ce type d’attaque ou dans un autre dans lequel tu es déjà spécialisé·e, mais tu dois obtenir la compétence normalement."
+        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you're already specialized in), but you must gain the skill normally."
       },
       {
+        "id": "swing-through",
         "name": "Frappe Tournoyante (1 Célérité)",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "speed",
-          "amount": 1
+          "amount": 1,
+          "options": []
         },
-        "description": "Tu attaques avec une épée d’une manière plus risquée, mais permettant un avantage supplémentaire. Ton seuil d’**intrusion du·de la MJ** pour cette attaque augmente de **2** (de 1 naturel à 1–3 sur 1d20). Si tu touches, choisis l’un des effets suivants : Goûte l’Acier : l’ennemi subit +2 dégâts supplémentaires. Tranche et Recul : tu te repositionnes ou repositionnes ton ennemi d’une distance immédiate, facilitant ton attaque à ton prochain tour (contre cette cible ou une autre). Action"
+        "description": "You attack with a sword in a way that has a greater risk of making an error but gains an additional benefit. Your GM intrusion range for this attack increases by 2 (from 1 on a d20 to 1–3 on a d20), but if you hit you can choose one of the following additional effects:"
       },
       {
+        "id": "eat-steel",
         "name": "Eat Steel",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
         "description": "The foe takes +2 damage."
       },
       {
+        "id": "slice-and-step",
         "name": "Slice and Step",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "You reposition your foe or yourself an immediate distance away, easing your attack on your next turn (whether against that foe or a different one). Action."
+        "description": "You reposition your foe or yourself an immediate distance away, easing your attack on your next turn (whether against that foe or a different one). Action. Swing ThroughGM intrusions: Your sword chips or bends, reducing its damage by 1 until repaired. Your sword goes flying, landing a short distance away. Your foe deflects your attack, and you inflict a moderate wound on yourself."
       },
       {
-        "name": "Swing Through GM intrusions",
+        "id": "swing-through-gm-intrusions",
+        "name": "Intrusions MJ pour Frappe Tournoyante",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Your sword chips or bends, reducing its damage by 1 until repaired. Your sword goes flying, landing a short distance away. Your foe deflects your attack, and you inflict a moderate wound on yourself."
+        "description": "Ton épée s’ébrèche ou se tord, réduisant ses dégâts de 1 jusqu’à réparation. Ton épée t’échappe et tombe à courte portée. Ton ennemi dévie ton attaque et tu te causes une blessure modérée."
       }
     ],
-    "statOptions": ["might", "speed"],
-    "description": "<p>Un Type de Épées & Sorcellerie centré sur l'archétype combattant·e à l’épée, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Fantasy. Sous-genre : Épées & Sorcellerie. Réserves principales : Puissance, Célérité.</em></p>"
+    "statOptions": [
+      "might",
+      "speed"
+    ],
+    "description": "<p>In some lands, you're known as a Swordsworn, a Steelhand, or a Blade Master. You don't care about a showy name—you just prefer to fight with a sword. You've fought with your sword for thousands of hours while training, in war, on expeditions, and during desperate battles in forgotten places of the world. Maybe you fight as a mercenary, for yourself, or as part of a group of adventurers. As long as you've got your sword, nothing can withstand you. You are up for a fight anytime, even when startled directly from sleep. Sword held high, you're ready to protect your allies, even if that means drawing your foes' attention. So be it; they'll meet you at your sword's edge.</p>"
   },
   "folder": "Mqh1tXdDDqH3lySK",
   "sort": 0,
@@ -94,7 +121,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

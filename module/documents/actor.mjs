@@ -982,52 +982,101 @@ export default class CypherActor extends Actor {
   * @param {string} [options.skillName] Chosen skill name (from skillOptions, or freely typed)
    */
   async applyDescriptor(descriptorItem, { stat = null, skillName = null } = {}) {
-    if (this.type !== "pc" || descriptorItem?.type !== "descriptor") return;
+    if (this.type !== "pc" || descriptorItem?.type !== "descriptor") return false;
+
+    const isSpecies = descriptorItem.system.category === "species";
+    const descriptorId = descriptorItem.id ?? descriptorItem._id;
+    if (isSpecies) {
+      const genres = descriptorItem.system.genres ?? [];
+      if (!genres.includes(this.system.genre)) {
+        ui.notifications.warn(game.i18n.localize("CYPHER.Descriptor.SpeciesWrongGenre"));
+        return false;
+      }
+      if (this.getFlag("cypher", "appliedSpeciesId")) {
+        ui.notifications.warn(game.i18n.localize("CYPHER.Descriptor.SpeciesAlreadyApplied"));
+        return false;
+      }
+    } else if (this.getFlag("cypher", "appliedDescriptorId")) {
+      if (!this.system.hasSecondDescriptor || this.getFlag("cypher", "appliedSecondDescriptorId")) {
+        ui.notifications.warn(game.i18n.localize("CYPHER.Descriptor.AlreadyApplied"));
+        return false;
+      }
+    }
 
     const statOptions = descriptorItem.system.statOptions ?? [];
     const chosenStat = stat && statOptions.includes(stat) ? stat : statOptions[0];
     const finalSkillName = skillName?.trim();
-    if (!chosenStat || !finalSkillName) return;
-
     const amount = descriptorItem.system.statAmount ?? 2;
-    await this.update({
-      "system.descriptor": descriptorItem.name,
-      [`system.stats.${chosenStat}.pool.max`]: this.system.stats[chosenStat].pool.max + amount,
-      [`system.stats.${chosenStat}.pool.value`]: this.system.stats[chosenStat].pool.value + amount
-    });
+    const applyingSecondDescriptor = !isSpecies && Boolean(this.getFlag("cypher", "appliedDescriptorId"));
+    const updates = isSpecies
+      ? {
+          "system.species": descriptorItem.name,
+          "system.hasSecondDescriptor": Boolean(descriptorItem.system.grantsSecondDescriptor),
+          "flags.cypher.appliedSpeciesId": descriptorId
+        }
+      : applyingSecondDescriptor
+        ? { "system.descriptor2": descriptorItem.name, "flags.cypher.appliedSecondDescriptorId": descriptorId }
+        : { "system.descriptor": descriptorItem.name, "flags.cypher.appliedDescriptorId": descriptorId };
+
+    if (chosenStat && amount > 0) {
+      updates[`system.stats.${chosenStat}.pool.max`] = this.system.stats[chosenStat].pool.max + amount;
+      updates[`system.stats.${chosenStat}.pool.value`] = this.system.stats[chosenStat].pool.value + amount;
+    }
+    await this.update(updates);
 
     // Advance an existing skill of the same name, or create a new trained skill, using the
     // same progression logic as purchaseAdvancementSlot's "skill" advancement.
     const order = ["inability", "none", "trained", "specialized", "expert"];
-    const existing = this.items.find(i => i.type === "skill" && i.name.toLowerCase() === finalSkillName.toLowerCase());
-    let chatNote;
+    const grantedSkills = (descriptorItem.system.grantedSkills ?? []).map(name => name.trim()).filter(Boolean);
+    const skillNames = [...new Set([finalSkillName, ...grantedSkills].filter(Boolean))];
+    const chatNotes = [];
 
-    if (existing) {
-      const newLevel = existing.system.level === "inability"
-        ? "trained"
-        : order[Math.min(order.length - 1, order.indexOf(existing.system.level) + 1)];
-      await existing.update({ "system.level": newLevel });
-      chatNote = game.i18n.format("CYPHER.Descriptor.SkillUpgraded", { name: existing.name, level: game.i18n.localize(`CYPHER.SkillLevel.${newLevel}`) });
-    } else {
-      const [created] = await this.createEmbeddedDocuments("Item", [{
-        name: finalSkillName,
-        type: "skill",
+    for (const grantedSkillName of skillNames) {
+      const existing = this.items.find(item => item.type === "skill" && item.name.toLowerCase() === grantedSkillName.toLowerCase());
+      if (existing) {
+        const newLevel = existing.system.level === "inability"
+          ? "trained"
+          : order[Math.min(order.length - 1, order.indexOf(existing.system.level) + 1)];
+        await existing.update({ "system.level": newLevel });
+        chatNotes.push(game.i18n.format("CYPHER.Descriptor.SkillUpgraded", { name: existing.name, level: game.i18n.localize(`CYPHER.SkillLevel.${newLevel}`) }));
+      } else {
+        const [created] = await this.createEmbeddedDocuments("Item", [{
+          name: grantedSkillName,
+          type: "skill",
+          system: {
+            level: "trained",
+            description: game.i18n.format("CYPHER.Descriptor.GrantedFrom", { name: descriptorItem.name })
+          }
+        }]);
+        chatNotes.push(game.i18n.format("CYPHER.Descriptor.SkillGranted", { name: created.name }));
+      }
+    }
+
+    const benefits = descriptorItem.system.benefits ?? [];
+    if (benefits.length) {
+      await this.createEmbeddedDocuments("Item", benefits.map(benefit => ({
+        name: benefit.name,
+        type: "ability",
         system: {
-          level: "trained",
-          description: game.i18n.format("CYPHER.Descriptor.GrantedFrom", { name: descriptorItem.name })
+          source: descriptorItem.name,
+          tier: 1,
+          enabler: true,
+          cost: { stat: "none", amount: 0, options: [] },
+          action: "none",
+          description: benefit.description
         }
-      }]);
-      chatNote = game.i18n.format("CYPHER.Descriptor.SkillGranted", { name: created.name });
+      })));
     }
 
     await ChatMessage.create({
       speaker: ChatMessage.getSpeaker({ actor: this }),
       content: `<div class="cypher-roll-card">
-        <h3>${game.i18n.format("CYPHER.Descriptor.Applied", { name: descriptorItem.name })}</h3>
-        <p>${game.i18n.format("CYPHER.Descriptor.StatNote", { amount, stat: game.i18n.localize(`CYPHER.Stat.${chosenStat}`) })}</p>
-        <p>${chatNote}</p>
+        <h3>${game.i18n.format(isSpecies ? "CYPHER.Descriptor.SpeciesApplied" : "CYPHER.Descriptor.Applied", { name: descriptorItem.name })}</h3>
+        ${chosenStat && amount > 0 ? `<p>${game.i18n.format("CYPHER.Descriptor.StatNote", { amount, stat: game.i18n.localize(`CYPHER.Stat.${chosenStat}`) })}</p>` : ""}
+        ${chatNotes.map(note => `<p>${note}</p>`).join("")}
       </div>`
     });
+    return true;
   }
 
   /** @override */

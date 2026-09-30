@@ -1,0 +1,30 @@
+{
+  "_id": "1nBhGThG70xSu3CU",
+  "_key": "!items!1nBhGThG70xSu3CU",
+  "name": "Créatif·ve",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Représentation",
+      "Édition",
+      "",
+      ""
+    ],
+    "description": "<p>Tu es créatif·ve : tu écris, composes, sculptes, conçois, dessines ou inventes des récits qui captivent les autres.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

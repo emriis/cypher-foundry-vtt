@@ -1,0 +1,229 @@
+{
+  "_id": "performsfeB8CCF4",
+  "_key": "!items!performsfeB8CCF4",
+  "name": "Performs Feats of Strength",
+  "type": "focus",
+  "img": "icons/svg/hand.svg",
+  "system": {
+    "description": "<p>A muscled prodigy, you can haul incredible weight, hurl your body through the air, and punch through doors.</p>",
+    "abilities": [
+      {
+        "id": "always-mighty",
+        "name": "Always Mighty",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Every time you use a recovery, if your Might Pool isn't already full, you get 1 extra point to restore to your Might Pool. You can select this ability up to three times."
+      },
+      {
+        "id": "hitting-harder",
+        "name": "Hitting Harder",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You inflict an additional 1 damage with unarmed attacks."
+      },
+      {
+        "id": "inspiring-display",
+        "name": "Inspiring Display",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 2,
+          "options": []
+        },
+        "description": "After succeeding at a task that depends on brute force (such as smashing down a barred door, tearing open a locked container, lifting or moving a heavy object, or striking someone with a melee weapon), choose an ally who saw you. A chosen PC regains 2 points to a Pool of their choice; a chosen NPC regains 2 health. Enabler."
+      },
+      {
+        "id": "feat-of-strength",
+        "name": "Feat of Strength",
+        "tier": 2,
+        "prerequisites": [
+          "always-mighty"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Your physical action is impressive, inspiring an ally or intimidating a foe. After succeeding at a task that depends on brute force (such as smashing down a barred door, tearing open a locked container, lifting or moving a heavy object, or striking someone with a melee weapon), choose a creature who saw you succeed. If they are an ally, you ease their next task. If they are a foe, you can either hinder one of their tasks on their next turn or immediately attempt an eased intimidation task against them. Enabler."
+      },
+      {
+        "id": "desperate-feat",
+        "name": "Desperate Feat",
+        "tier": 2,
+        "prerequisites": [
+          "always-mighty",
+          "hitting-harder",
+          "inspiring-display"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "While you have at least one moderate or major wound, you add +1 Edge to the Pool of your choice. Enabler."
+      },
+      {
+        "id": "naturally-strong",
+        "name": "Naturally Strong",
+        "tier": 2,
+        "prerequisites": [
+          "inspiring-display"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 2,
+          "options": []
+        },
+        "description": "When you roll on a task to carry, climb, jump, or smash, and your roll is less than a 9, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) This ability renews when you take a recovery. Effort: Increase the minimum number rolled for this ability by 3. Enabler. At tier 3: The minimum number rolled for this ability increases to 12."
+      },
+      {
+        "id": "deep-reserves",
+        "name": "Deep Reserves",
+        "tier": 3,
+        "prerequisites": [
+          "feat-of-strength",
+          "desperate-feat"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "When others are exhausted, you can push through. You can transfer up to 6 points among your Pools in any combination, at a rate of 1 point per round. For example, you could transfer 3 points of Speed to Might and 3 points of Intellect to Might, which would take a total of six rounds. This ability renews when you take a ten-hour recovery. Action."
+      },
+      {
+        "id": "iron-fist",
+        "name": "Iron Fist",
+        "tier": 3,
+        "prerequisites": [
+          "desperate-feat",
+          "naturally-strong"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You inflict an additional 3 damage with unarmed attacks."
+      },
+      {
+        "id": "amazing-strength",
+        "name": "Amazing Strength",
+        "tier": 4,
+        "prerequisites": [
+          "deep-reserves"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "When you use Effort from your Might Pool on a noncombat task, you get a free level of Effort on that task. Enabler."
+      },
+      {
+        "id": "throw",
+        "name": "Throw",
+        "tier": 4,
+        "prerequisites": [
+          "iron-fist"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 2,
+          "options": []
+        },
+        "description": "When your unarmed attack damages a creature of your size or smaller, you throw that creature 1d20 feet away from you. The creature lands prone. Enabler."
+      },
+      {
+        "id": "brute-strike",
+        "name": "Brute Strike",
+        "tier": 5,
+        "prerequisites": [
+          "amazing-strength",
+          "throw"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 4,
+          "options": []
+        },
+        "description": "When you hit with a Might attack, you deal an additional 6 damage. You can't use this ability in two consecutive rounds. Enabler."
+      },
+      {
+        "id": "brute-squad",
+        "name": "Brute Squad",
+        "tier": 6,
+        "prerequisites": [
+          "brute-strike"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "might",
+          "amount": 8,
+          "options": []
+        },
+        "description": "You can perform two Might tasks on this turn, one with your normal action and one with an extra action. For example, you could make a melee attack and smash open a door, throw a heavy couch and jump over a wall, or make two melee attacks. Enabler."
+      },
+      {
+        "id": "jump-attack",
+        "name": "Jump Attack",
+        "tier": 6,
+        "prerequisites": [
+          "brute-strike"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "might",
+          "amount": 5,
+          "options": []
+        },
+        "description": "You jump up to 4 feet (1 m) into the air and make a melee attack against a foe on the way up or down. If you hit, you inflict damage and can attempt a difficulty 4 Might roll to inflict an additional 4 damage and knock them prone. Effort: Add 2 feet to the jump height and an additional 2 damage to the attack (whether or not you knock the target prone). Action."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

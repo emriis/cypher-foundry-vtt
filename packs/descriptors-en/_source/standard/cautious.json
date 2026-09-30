@@ -1,0 +1,30 @@
+{
+  "_id": "Oyxmggw4InYRowGF",
+  "_key": "!items!Oyxmggw4InYRowGF",
+  "name": "Cautious",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "speed"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Gathering Information",
+      "Perception",
+      "",
+      ""
+    ],
+    "description": "<p>You don't charge into new situations without due consideration. You're afraid of what will happen if you don't carefully study the particulars of a new job, opportunity, or investigation. Those burdened with less vigilance than you might call you timid, but you suspect bravery is just another word for foolhardiness.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "_id": "lroE3X2lMJ7SU1Os",
+  "_key": "!items!lroE3X2lMJ7SU1Os",
+  "name": "Intuitif·ve",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Discernement des motivations",
+      "",
+      "",
+      ""
+    ],
+    "description": "<p>Tu éprouves souvent une étrange fascination pour le fait de savoir ce que quelqu'un va dire ou comment les événements vont se dérouler.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

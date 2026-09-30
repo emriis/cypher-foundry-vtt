@@ -1,0 +1,247 @@
+{
+  "_id": "ridestheliA835CF",
+  "_key": "!items!ridestheliA835CF",
+  "name": "Rides the Lightning",
+  "type": "focus",
+  "img": "icons/svg/lightning.svg",
+  "system": {
+    "description": "<p>You emit and manipulate lightning and thunder.</p>",
+    "abilities": [
+      {
+        "id": "control-electric-device",
+        "name": "Control Electric Device",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "You can attempt to control or disrupt an electric device  (in other words, a non-intelligent device or machine that is powered by electricity) at long range. Make an Intellect attack against the device. If your roll is less than a 12, treat the roll as a 12. (This means you don't get a GM intrusion if you roll a 1.) If you succeed, you can control the device as if you were next to it, even if normally you would have to touch it, read a screen, or manually operate it. If the machine is protected against casual access via some kind of security protocol, your tasks to hack or otherwise bypass that security are hindered unless you are within immediate range. If it is held by another creature, you must succeed against the creature's level or the device's level, whichever is higher. If attempting to disrupt the device, success means it shorts out and, if you wish, also explodes in an immediate radius, dealing 1 damage to all creatures in the area (make separate Intellect attack rolls against each creature). Effort: Increase the minimum number rolled for this ability by 3. Action. At tier 3: The minimum number rolled for this ability increases to 15."
+      },
+      {
+        "id": "lightning-hand",
+        "name": "Lightning Hand",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Your hands crackle with electricity, allowing you to make either one touch attack or one long-range lightning blast attack, inflicting 4 damage. Alternatively, if you wield a weapon, it crackles with electricity and inflicts an additional 1 damage. This version of the ability lasts until you use a  ten-minute or longer recovery. Action for touch; enabler for weapon. Touch attacks are effectively light unarmed attacks, and therefore are eased."
+      },
+      {
+        "id": "thunder-crash",
+        "name": "Thunder Crash",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "You affect a target in long range with overwhelming thunder. With a successful Speed attack, you inflict 2 damage and induce a tremor in their body. Each round after this initial attack, as an extra action on your turn you can make another attack roll for the destructive tremor to inflict an additional 1 damage on the target. If you fail this roll, the tremor ends. Action to initiate."
+      },
+      {
+        "id": "resist-the-storm",
+        "name": "Resist the Storm",
+        "tier": 2,
+        "prerequisites": [
+          "thunder-crash",
+          "lightning-hand"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You're resistant to the natural hazards of storms. Choose either electricity or sonic energy. If attacked with this kind of energy, reduce the severity of the wound by one step (major to moderate, moderate to minor, minor to none). You can take this ability twice, each time selecting a different kind of energy. Enabler."
+      },
+      {
+        "id": "bolt-rider",
+        "name": "Bolt Rider",
+        "tier": 2,
+        "prerequisites": [
+          "lightning-hand",
+          "control-electric-device"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "You can move a long distance from one location to another almost instantaneously, carried by a bolt of lightning. You must be able to see the new location, and there must be no intervening barriers. Action."
+      },
+      {
+        "id": "radiohead",
+        "name": "Radiohead",
+        "tier": 2,
+        "prerequisites": [
+          "control-electric-device"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You can transmit and receive radio transmissions across a broad range of frequencies. You can keep your radio communications entirely private, or relay them audibly as if you were a standard radio. If attempting to access an encrypted digital radio signal, you must succeed on an Intellect task against the encryption's level. Communicating this way is as natural for you as verbal speech, which means sometimes you may overhear something interesting over the radio even when not searching for it. Enabler."
+      },
+      {
+        "id": "deafening-bolt",
+        "name": "Deafening Bolt",
+        "tier": 3,
+        "prerequisites": [
+          "resist-the-storm",
+          "bolt-rider"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "You unleash a bolt of lightning at a target within long range. If your attack succeeds, the target takes 5 damage and is deafened until you use a ten-minute or longer recovery, during which time they can't hear anything and their defense tasks are hindered. Action."
+      },
+      {
+        "id": "electric-armor",
+        "name": "Electric Armor",
+        "tier": 3,
+        "prerequisites": [
+          "bolt-rider",
+          "radiohead"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Lightning crackles across your body until you use a ten-minute or longer recovery. The electricity doesn't harm you, but it automatically inflicts 3 damage on anyone who tries to touch you or strike you with a melee attack (no roll required). While this ability is active, you ignore moderate and minor wounds from electricity. While this ability is active, you can make a touch attack that inflicts 2 damage from electricity. Enabler."
+      },
+      {
+        "id": "bolts-of-power",
+        "name": "Bolts of Power",
+        "tier": 4,
+        "prerequisites": [
+          "deafening-bolt",
+          "electric-armor"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "You simultaneously unleash four lightning bolts, dealing 4 damage to up to four targets in short range; roll separately against each target. Even on a miss, your target still takes 1 damage. Action."
+      },
+      {
+        "id": "subsonic-rumble",
+        "name": "Subsonic Rumble",
+        "tier": 4,
+        "prerequisites": [
+          "electric-armor"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "You emit an unnerving subsonic rumble that most living creatures can't hear but that affects them all the same. For creatures within short range, attempts to charm them, intimidate them, or frighten them are eased by two steps. You continue to emit this rumble until you use a ten-minute or longer recovery. Action to initiate."
+      },
+      {
+        "id": "discharge",
+        "name": "Discharge",
+        "tier": 5,
+        "prerequisites": [
+          "bolts-of-power"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "You take on a visible shine, tone, or crackling energy discharge. This is harmless unless you choose to direct it outward. While this ability is active, as an action you can strike up to three targets in short range (make separate Intellect attack rolls). Success means you inflict 4 damage. This ability lasts until you use a ten-minute or longer recovery. Effort: Increase the effect on a target so that in addition to taking damage, they lose their next turn. Action to initiate."
+      },
+      {
+        "id": "electric-flight",
+        "name": "Electric Flight",
+        "tier": 5,
+        "prerequisites": [
+          "subsonic-rumble"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "While Electric Armor is active, you can fly. You can move a short distance and take an action, or move a long distance as your action. (Unlike a normal situation of taking an action and moving a short distance, this doesn't hinder your tasks.) You can carry one creature of your size or smaller with you. They aren't harmed by your Electric Armor. Effort: Cover and protect a passenger with Electric Armor as if they were you. Enabler."
+      },
+      {
+        "id": "flash-across-the-miles",
+        "name": "Flash Across the Miles",
+        "tier": 6,
+        "prerequisites": [
+          "discharge",
+          "electric-flight"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "You move as a bolt of lightning almost instantaneously to a location you're familiar with on the same planet. The location must be outdoors or open to the sky. Effort: Travel to an indoor location if a lightning bolt could find an open route to that spot from the outside (such as through a window or doorway). Action."
+      },
+      {
+        "id": "wall-of-lightning",
+        "name": "Wall of Lightning",
+        "tier": 6,
+        "prerequisites": [
+          "discharge",
+          "electric-flight"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 8,
+          "options": []
+        },
+        "description": "You create a barrier of crackling electricity composed of six 10-foot by 10-foot (3.5 m by 3.5 m) squares, each 1 inch (2.5 cm) thick, arranged as you wish. The wall is a level 7 barrier. One or both sides crackle with excess electricity; anyone within immediate distance of an energized side takes 10 damage (no rolls required), or double that if they pass through. The wall lasts until you use a ten-minute or longer recovery. Action to create."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

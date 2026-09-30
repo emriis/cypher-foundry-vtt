@@ -1,0 +1,262 @@
+{
+  "_id": "huntsxxxxxD663B1",
+  "_key": "!items!huntsxxxxxD663B1",
+  "name": "Chasse",
+  "type": "focus",
+  "img": "icons/svg/target.svg",
+  "system": {
+    "description": "<p>You are a stalking hunter who excels at bringing down your selected quarry, whether person or beast.</p>",
+    "abilities": [
+      {
+        "id": "hunter-s-determination",
+        "name": "Détermination du chasseur",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Quand tu attaques un·e adversaire et que tu rates, tu gagnes un atout pour tes attaques et défenses contre cet adversaire. Si tu rates encore, tu gagnes un deuxième atout contre ellui. Tu perds ces atouts si tu changes de cible ou si le combat se termine."
+      },
+      {
+        "id": "knowledge-of-nature",
+        "name": "Connaissance de la nature",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "En pleine nature, tu trouves toujours de la nourriture comestible et de l’eau potable si elles existent. De même, tu trouves des herbes médicinales ou remèdes naturels te donnant un atout pour traiter blessures, maladies ou poisons."
+      },
+      {
+        "id": "sneak-attack",
+        "name": "Attaque sournoise",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 1,
+          "options": []
+        },
+        "description": "If you attack a foe under one of the following conditions, your light melee or light ranged weapon attack inflicts an additional 5 damage on a successful hit. (This ability doesn't work with medium or heavy weapons.) You attack with surprise. An ally uses their action to ease your attack. Your foe's defenses are hindered due to some other ongoing direct distraction. Your foe is unable to take their next turn due to some disabling attack or situation. First action."
+      },
+      {
+        "id": "fast-kill",
+        "name": "Tuer vite",
+        "tier": 2,
+        "prerequisites": [
+          "knowledge-of-nature",
+          "sneak-attack"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "choice",
+          "amount": 2,
+          "options": [
+            "might",
+            "speed"
+          ]
+        },
+        "description": "When you hit with a melee or ranged attack, you deal an additional 4 damage. You can't use this ability in two consecutive rounds. Enabler."
+      },
+      {
+        "id": "quarry",
+        "name": "Proie",
+        "tier": 2,
+        "prerequisites": [
+          "hunter-s-determination",
+          "knowledge-of-nature"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Tu désignes une créature que tu vois comme ta proie. Tu gagnes un atout pour toutes les tâches visant à : suivre, comprendre, interagir avec, attaquer ou te défendre contre ta proie. Cela inclut les tâches liées à la chasse : dépouiller, préparer la viande, préserver les ressources, etc. Tu ne peux avoir qu’une seule proie à la fois."
+      },
+      {
+        "id": "poison-crafter",
+        "name": "Fabricant·e de poison",
+        "tier": 3,
+        "prerequisites": [
+          "quarry"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Si tu as environ une heure, tu peux utiliser tes ressources pour fabriquer une dose de poison à appliquer sur une arme (contact). Appliquer le poison nécessite une dernière action. L’arme ainsi enduite inflige +2 dégâts jusqu’à ta prochaine récupération d’une heure ou plus. Ton expérience des poisons t’accorde d’autres avantages. Un atout pour détecter, identifier et résister aux poisons. Tes jets de défense contre le poison sont facilités. Tu subis 2 dégâts de Célérité de moins provenant d’un poison (si le poison inflige des dégâts de Célérité) ou réduis les blessures du poison d’un palier (majeure → modérée, modérée → mineure, mineure → aucune)."
+      },
+      {
+        "id": "horde-fighting",
+        "name": "Combat contre la horde",
+        "tier": 3,
+        "prerequisites": [
+          "quarry",
+          "fast-kill"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Quand deux adversaires ou plus t’attaquent en mêlée, tu peux utiliser leur nombre contre eux. Chaque round, choisis soit un atout pour tes Blocages et Esquives contre eux ou un atout à tes attaques contre eux."
+      },
+      {
+        "id": "awareness",
+        "name": "Hypervigilance",
+        "tier": 3,
+        "prerequisites": [
+          "fast-kill"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "You become hyperaware of your surroundings until you use a ten-minute or longer recovery. You are aware of all living things within long range (including their general position). By using an action to concentrate, you can choose one of them and attempt to learn their general health and power level. Action."
+      },
+      {
+        "id": "better-sneak-attack",
+        "name": "Attaque sournoise améliorée",
+        "tier": 4,
+        "prerequisites": [
+          "sneak-attack"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Quand tu utilises Attaque sournoise, tu gagnes un atout supplémentaire sur l’attaque. Au prochain tour, ta cible subit +5 dégâts supplémentaires (ignore l’Armure) à moins qu’elle ne prenne une récupération, ne se soigne ou n’utilise son action pour traiter la blessure."
+      },
+      {
+        "id": "sprint-and-grab",
+        "name": "S'élancer et saisir",
+        "tier": 4,
+        "prerequisites": [
+          "horde-fighting"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 2,
+          "options": []
+        },
+        "description": "You move a short distance and make a melee attack to grab a foe of your size or smaller. (Unlike a normal situation of taking an action and moving a short distance, this doesn't hinder your tasks.) A successful attack means you grab the foe and bring it to a halt if it was moving (this can be treated as a tackle, if appropriate). Action."
+      },
+      {
+        "id": "damage-dealer",
+        "name": "Tueur spécialisé",
+        "tier": 5,
+        "prerequisites": [
+          "better-sneak-attack"
+        ],
+        "repeatable": true,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Tu deviens meilleur·e pour tuer avec un type d’arme spécifique. Choisis une arme de mêlée ou à distance : tu infliges +3 dégâts supplémentaires avec cette arme. Tu peux prendre cette aptitude deux fois pour la même arme (jusqu’à +6 dégâts)."
+      },
+      {
+        "id": "hunter-s-drive",
+        "name": "Volonté du chasseur",
+        "tier": 5,
+        "prerequisites": [
+          "quarry"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Tu deviens encore plus redoutable en chasse. Si ta proie est à moins de 15 km, ta vitesse de déplacement est doublée pour la rejoindre. Tu gagnes un atout supplémentaire pour toutes tes tâches liées à ta proie. Dure jusqu’à ta prochaine récupération de dix minutes ou plus."
+      },
+      {
+        "id": "multiple-quarries",
+        "name": "Multiples proies",
+        "tier": 6,
+        "prerequisites": [
+          "hunter-s-drive"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Quand tu actives Proie, tu peux sélectionner jusqu’à quatre créatures visibles pour être tes proies. Chaque proie supplémentaire augmente le coût de Proie de +2 Intellect."
+      },
+      {
+        "id": "lethal-strike",
+        "name": "Frappe létale",
+        "tier": 6,
+        "prerequisites": [
+          "damage-dealer"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "speed",
+          "amount": 6,
+          "options": []
+        },
+        "description": "With a swift and sudden melee or ranged weapon attack, you strike a foe in a vital spot. If you hit, you inflict an additional 7 damage. Action."
+      },
+      {
+        "id": "escape-plan",
+        "name": "Plan d'évasion",
+        "tier": 6,
+        "prerequisites": [
+          "damage-dealer"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "When you kill a foe, you can attempt a stealth task as an extra action on your turn to hide from anyone around, assuming that a suitable hiding place is nearby. Enabler."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

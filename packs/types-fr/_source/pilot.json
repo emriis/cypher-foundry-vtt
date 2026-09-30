@@ -24,38 +24,53 @@
     "skillOptions": [],
     "abilities": [
       {
+        "id": "born-to-pilot",
         "name": "Né·e pour Piloter",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": false,
         "cost": {
           "stat": "intellect",
-          "amount": 2
+          "amount": 2,
+          "options": []
         },
-        "description": "Quand tu fais un jet pour piloter un vaisseau spatial et que le résultat est **inférieur à 9**, considère que tu as obtenu **9**. (Cela signifie que tu n’obtiens pas d’intrusion du·de la MJ sur un 1.) Les tâches de pilotage comprennent des manœuvres précises : arrimer un vaisseau en toute sécurité, tourner ou accélérer progressivement pour éviter des niveaux dangereux de gravité prolongée, remarquer une anomalie sur les capteurs, etc. Au rang 3, le minimum devient 12. Effort : Augmente le minimum obtenu grâce à cette aptitude de +3. Cette aptitude se renouvelle après une récupération. Action"
+        "description": "Quand tu fais un jet pour piloter un vaisseau spatial et que le résultat est inférieur à 9, considère que tu as obtenu 9. Les tâches de pilotage comprennent des manoeuvres précises : arrimer un vaisseau, tourner ou accélérer progressivement, remarquer une anomalie sur les capteurs, etc. Au rang 3, le minimum devient 12. Effort : Augmente le minimum obtenu de +3. Cette aptitude se renouvelle après une récupération."
       },
       {
+        "id": "expert-space-pilot",
         "name": "Pilote Spatial·e Expert·e",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Tu es **entraîné·e** en pilotage de vaisseaux spatiaux. Au rang 6, tu peux devenir expert·e si tu es déjà spécialisé·e, mais tu dois acquérir la compétence normalement."
+        "description": "You are trained in piloting spacecraft. At tier 6: You can become an expert in piloting spacecraft if you are already specialized, but you must gain the skill normally (such as from a character advancement)."
       },
       {
+        "id": "piloting-flourish",
         "name": "Panache du Pilote",
         "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
         "enabler": true,
         "cost": {
           "stat": "none",
-          "amount": 0
+          "amount": 0,
+          "options": []
         },
-        "description": "Lorsque tu pilotes un vaisseau spatial, tes manœuvres impressionnantes, tes remarques pince‑sans‑rire ou ta façon d’exécuter une action peuvent **impressionner ou divertir** d’autres personnes. Une créature de ton choix, à bord ou proche du vaisseau, qui peut te voir ou être consciente de ta manœuvre, gagne **un atout** à sa prochaine tâche (si elle l’accomplit dans un round ou deux). Au rang 3, tu peux impressionner jusqu’à trois créatures choisies simultanément."
+        "description": "Lorsque tu pilotes un vaisseau spatial, tes manoeuvres impressionnantes, tes remarques pince-sans-rire ou ta façon d'exécuter une action peuvent impressionner ou divertir d'autres personnes. Une créature de ton choix à bord ou proche du vaisseau gagne un atout à sa prochaine tâche (si elle l'accomplit dans un round ou deux). Au rang 3, tu peux impressionner jusqu'à trois créatures choisies simultanément."
       }
     ],
-    "statOptions": ["speed", "intellect"],
-    "description": "<p>Un Type de Science-fiction dure centré sur l'archétype pilote, tout en laissant la place à l'histoire et aux capacités propres du personnage.</p><p><em>Genre : Science-fiction. Sous-genre : Science-fiction dure. Réserves principales : Célérité, Intellect.</em></p>"
+    "statOptions": [
+      "speed",
+      "intellect"
+    ],
+    "description": "<p>You're sensitive to the slightest vibration and yaw of ion, nuclear, and chemical rocket-propelled spacecraft, honed during many hundreds of hours of test flights, combat missions, and your personal zeal for piloting interplanetary craft between moons and planets. Your job combines sophisticated course plotting, long periods of gradual acceleration and deceleration, and, sometimes, intense moments of action where your reaction times make the difference between arriving at your destination and your spacecraft becoming one more drifting hulk in a decaying orbit. If the team's mission requires an interplanetary trip, it's your job to get everyone there. Should enemy craft threaten the trip, your superior piloting skills help keep everyone alive, up to and including the Soldiers who, scary as they may be, probably couldn't last ten seconds piloting through an interplanetary naval engagement.</p>"
   },
   "folder": "C6ZFx2IjshXiDYap",
   "sort": 0,
@@ -64,7 +79,7 @@
   },
   "flags": {
     "cypher": {
-      "sourceLicense": "Résumé original basé sur le Cypher Reference Document ; construit sous la Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

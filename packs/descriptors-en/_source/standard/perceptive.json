@@ -1,0 +1,30 @@
+{
+  "_id": "45NMNIM95pQXpeC9",
+  "_key": "!items!45NMNIM95pQXpeC9",
+  "name": "Perceptive",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Perception",
+      "Recognizing Motive",
+      "",
+      ""
+    ],
+    "description": "<p>You miss little. You pick out the small details in the world around you and are skilled at making deductions from the information you find. Your talents make you an exceptional sleuth or a talented scout.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

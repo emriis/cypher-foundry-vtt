@@ -1,0 +1,30 @@
+{
+  "_id": "gW98DVrzh0McJGEW",
+  "_key": "!items!gW98DVrzh0McJGEW",
+  "name": "Rapide",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "speed"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Initiative",
+      "",
+      "",
+      ""
+    ],
+    "description": "<p>Tu es vif·ve comme l'éclair. Rapide de corps, de mains, de pensée et de parole.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

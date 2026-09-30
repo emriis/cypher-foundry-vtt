@@ -1,0 +1,31 @@
+{
+  "_id": "hg31suU8V1SUNoMR",
+  "_key": "!items!hg31suU8V1SUNoMR",
+  "name": "Pessimiste",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "speed",
+      "might"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Discernement des motivations",
+      "",
+      "",
+      ""
+    ],
+    "description": "<p>Tu t'attends souvent au pire. Il t'est plus facile d'anticiper les problèmes et d'être surpris quand les choses se passent bien.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "_id": "wearsashee6F9BB4",
+  "_key": "!items!wearsashee6F9BB4",
+  "name": "Revêt un voile de glace",
+  "type": "focus",
+  "img": "icons/magic/water/iceberg-glacier-blue.webp",
+  "system": {
+    "description": "<p>You command the wintry power of cold and ice.</p>",
+    "abilities": [
+      {
+        "id": "cool-water",
+        "name": "Eau fraîche",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Tu condenses l’humidité de l’air pour créer suffisamment d’eau potable froide pour abreuver cinq créatures pendant un jour."
+      },
+      {
+        "id": "ice-armor",
+        "name": "Armure de glace",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Tu recouvres ton corps d’une pellicule de glace jusqu’à ta prochaine récupération de dix minutes ou plus, facilitant tes jets de défense de Blocage. De plus, tu réduis la sévérité des blessures causées par le froid ou la glace d’un palier (majeure → modérée, modérée → mineure, mineure → aucune). Exemple : un effet infligeant une blessure modérée ne t’inflige qu’une blessure mineure. Tu peux effectuer une attaque légère à mains nues de « toucher glacé » infligeant 2 dégâts de froid si l’attaque réussit."
+      },
+      {
+        "id": "lower-temperature",
+        "name": "Abaisser la température",
+        "tier": 1,
+        "prerequisites": [],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "Tu peux réduire la température d’une zone immédiate jusqu’à 20 degrés (Farenheit ou Celsius???) en dessous de la normale, jusqu’à ta prochaine récupération de dix minutes ou plus. L’effet est centré sur toi et te suit."
+      },
+      {
+        "id": "frost-bolt",
+        "name": "Trait de givre",
+        "tier": 2,
+        "prerequisites": [
+          "ice-armor"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Tu émets un rayon de froid intense sur une cible à courte portée. En cas de réussite, tu infliges 4 dégâts de froid. À la place, tu peux intensifier le froid de ton Armure de glace, ajoutant +2 dégâts à ton toucher glacé ainsi qu’à tes attaques de mêlée ou à distance. Cet effet dure jusqu’à ta prochaine récupération de dix minutes ou plus."
+      },
+      {
+        "id": "ice-slide",
+        "name": "Glissade de glace",
+        "tier": 2,
+        "prerequisites": [
+          "ice-armor"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "Tu crées une piste de glace lisse depuis toi jusqu’à un point à longue portée, et tu glisses en toute sécurité jusqu’à cet endroit. Le trajet doit être dégagé, mais peut être en hauteur, en contrebas ou traverser un vide. La glace fond après quelques secondes."
+      },
+      {
+        "id": "ice-creation",
+        "name": "Création de glace",
+        "tier": 3,
+        "prerequisites": [
+          "ice-slide"
+        ],
+        "repeatable": true,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "Tu crées un objet de ta taille ou plus petit, composé de glace de niveau 3. L’objet est grossier et sans pièces mobiles : épée, bouclier, petit mur, échelle courte, etc. Si tu t’éloignes à plus de courte portée, l’objet fond ou se brise dès que tu fais une récupération de dix minutes ou plus. Tu peux choisir cette aptitude plusieurs fois : chaque fois, tu doubles la taille de base de l’objet que tu peux créer. Effort : doubler la taille maximale de l’objet ou augmenter la distance maximale d’un palier de portée."
+      },
+      {
+        "id": "winter-s-grip",
+        "name": "Étreinte hivernale",
+        "tier": 3,
+        "prerequisites": [
+          "frost-bolt"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "Fais une attaque d’Intellect contre une cible à courte portée. En cas de réussite, elle est entravée par une couche de glace jusqu’à ta prochaine récupération de dix minutes ou plus, ou jusqu’à ce qu’elle utilise une action pour se libérer. Elle ne peut pas se déplacer et toutes ses tâches physiques (attaques, défenses…) sont entravées. Si ton Armure de glace est active et que tu touches la cible, l’attaque d’Intellect est facilitée, et tu ajoutes les 2 dégâts de ton toucher glacé. Effort : infliger 3 dégâts de froid au round où la cible est immobilisée."
+      },
+      {
+        "id": "improved-ice-armor",
+        "name": "Armure de glace améliorée",
+        "tier": 4,
+        "prerequisites": [
+          "ice-creation",
+          "winter-s-grip"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Ton Armure de glace facilite tes jets de défense de Blocage d’un palier supplémentaire. Les dégâts de ton toucher glacé, de Trait de givre et d’Étreinte hivernale augmentent de +1 dégât supplémentaire."
+      },
+      {
+        "id": "cold-burst",
+        "name": "Explosion de froid",
+        "tier": 5,
+        "prerequisites": [
+          "improved-ice-armor"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 5,
+          "options": []
+        },
+        "description": "Tu émets une explosion de froid dans toutes les directions, jusqu’à courte portée. Fais une attaque d’Intellect contre toute créature dans la zone. En cas de réussite elles encaissent 5 dégâts de froid. Chaque niveau d’Effort pour augmenter les dégâts ajoute +2 dégâts (ou +1 en cas d’échec). Effort : tenter d’aveugler les cibles touchées (un second jet réussi contre une cible l’aveugle, entravant toutes ses tâches basées sur la vision de deux paliers, jusqu’à ta prochaine récupération de dix minutes ou plus)."
+      },
+      {
+        "id": "ice-monster",
+        "name": "Monstre de glace",
+        "tier": 6,
+        "prerequisites": [
+          "cold-burst"
+        ],
+        "repeatable": false,
+        "enabler": false,
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "Tu crées un automate de neige ou de glace, de ta taille et de ta forme, qui dure jusqu’à ta prochaine récupération de dix minutes ou plus. Cet allié PNJ agit selon tes directives chaque round. Le diriger est une action, et tu ne peux le commander que si tu es à longue portée ou moins. Sans ordre, il continue la dernière instruction reçue. Tu peux aussi lui donner une routine simple (« Attends ici et attaque quiconque entre à courte portée jusqu’à ce qu’iel soit mort·e. »)."
+      },
+      {
+        "id": "winter-gauntlets",
+        "name": "Gantelets d'hiver",
+        "tier": 6,
+        "prerequisites": [
+          "cold-burst"
+        ],
+        "repeatable": false,
+        "enabler": true,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Your Frost Bolt ray inflicts an additional 3 damage, or an additional 3 damage as part of a touch or weapon attack. Any creature you hit with Frost Bolt, cold touch, or a cold-enhanced weapon attack is restrained in place (as Winter's Grip). Enabler."
+      }
+    ]
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

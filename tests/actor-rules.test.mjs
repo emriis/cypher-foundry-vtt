@@ -19,6 +19,177 @@ test("computeEffortCost does not charge for zero or negative Effort", () => {
   assert.equal(CypherActor.computeEffortCost(-1), 0);
 });
 
+test("applyDescriptor records an eligible species separately and enables its second descriptor", async () => {
+  globalThis.game = { i18n: { localize: value => value, format: value => value } };
+  globalThis.ui = { notifications: { warn() {} } };
+  globalThis.ChatMessage = { getSpeaker: () => ({}), create: async () => {} };
+  const actor = {
+    type: "pc",
+    system: {
+      genre: "fantasy",
+      descriptor: "Brash",
+      descriptor2: "",
+      species: "",
+      hasSecondDescriptor: false,
+      stats: {
+        might: { pool: { max: 8, value: 8 } },
+        speed: { pool: { max: 8, value: 8 } },
+        intellect: { pool: { max: 8, value: 8 } }
+      }
+    },
+    items: [],
+    flags: {},
+    getFlag(scope, key) { return this.flags[scope]?.[key]; },
+    async update(updates) {
+      for (const [path, value] of Object.entries(updates)) {
+        const segments = path.split(".");
+        let target = this;
+        for (const segment of segments.slice(0, -1)) target = target[segment] ??= {};
+        target[segments.at(-1)] = value;
+      }
+    },
+    async createEmbeddedDocuments(collection, documents) {
+      this.items.push(...documents);
+      return documents;
+    }
+  };
+  const human = {
+    id: "human-id",
+    type: "descriptor",
+    name: "Human",
+    system: {
+      category: "species",
+      genres: ["fantasy", "sciFi"],
+      grantsSecondDescriptor: true,
+      statOptions: [],
+      statAmount: 0,
+      skillOptions: [],
+      benefits: []
+    }
+  };
+
+  assert.equal(await CypherActor.prototype.applyDescriptor.call(actor, human), true);
+  assert.equal(actor.system.species, "Human");
+  assert.equal(actor.system.descriptor, "Brash");
+  assert.equal(actor.system.hasSecondDescriptor, true);
+  assert.equal(actor.flags.cypher.appliedSpeciesId, "human-id");
+  assert.equal(await CypherActor.prototype.applyDescriptor.call(actor, human), false);
+});
+
+test("applyDescriptor creates Dragonfolk benefits as abilities and Intimidation as a skill", async () => {
+  globalThis.game = { i18n: { localize: value => value, format: value => value } };
+  globalThis.ChatMessage = { getSpeaker: () => ({}), create: async () => {} };
+  const actor = {
+    type: "pc",
+    system: {
+      genre: "fantasy",
+      species: "",
+      hasSecondDescriptor: false,
+      stats: {
+        might: { pool: { max: 8, value: 8 } },
+        speed: { pool: { max: 8, value: 8 } },
+        intellect: { pool: { max: 8, value: 8 } }
+      }
+    },
+    items: [],
+    flags: {},
+    getFlag(scope, key) { return this.flags[scope]?.[key]; },
+    async update(updates) {
+      for (const [path, value] of Object.entries(updates)) {
+        const segments = path.split(".");
+        let target = this;
+        for (const segment of segments.slice(0, -1)) target = target[segment] ??= {};
+        target[segments.at(-1)] = value;
+      }
+    },
+    async createEmbeddedDocuments(collection, documents) {
+      this.items.push(...documents);
+      return documents;
+    }
+  };
+  const dragonfolk = {
+    id: "dragonfolk-id",
+    type: "descriptor",
+    name: "Dragonfolk",
+    system: {
+      category: "species",
+      genres: ["fantasy"],
+      grantsSecondDescriptor: false,
+      statOptions: [],
+      statAmount: 0,
+      skillOptions: ["Intimidation"],
+      benefits: [
+        { name: "No GM Intrusion on Block", description: "No GM intrusion on a block task." },
+        { name: "Energy Attack Damage", description: "+1 damage with a chosen energy." }
+      ]
+    }
+  };
+
+  assert.equal(await CypherActor.prototype.applyDescriptor.call(actor, dragonfolk, { skillName: "Intimidation" }), true);
+  assert.deepEqual(actor.items.filter(item => item.type === "skill").map(item => item.name), ["Intimidation"]);
+  assert.deepEqual(actor.items.filter(item => item.type === "ability").map(item => item.name), ["No GM Intrusion on Block", "Energy Attack Damage"]);
+  for (const ability of actor.items.filter(item => item.type === "ability")) {
+    assert.equal(ability.system.source, "Dragonfolk");
+    assert.equal(ability.system.enabler, true);
+    assert.deepEqual(ability.system.cost, { stat: "none", amount: 0, options: [] });
+    assert.equal(ability.system.action, "none");
+  }
+});
+
+test("applyDescriptor grants both Naron's selected and fixed trained skills", async () => {
+  globalThis.game = { i18n: { localize: value => value, format: value => value } };
+  globalThis.ChatMessage = { getSpeaker: () => ({}), create: async () => {} };
+  const actor = {
+    type: "pc",
+    system: {
+      genre: "sciFi",
+      species: "",
+      hasSecondDescriptor: false,
+      stats: {
+        might: { pool: { max: 8, value: 8 } },
+        speed: { pool: { max: 8, value: 8 } },
+        intellect: { pool: { max: 8, value: 8 } }
+      }
+    },
+    items: [],
+    flags: {},
+    getFlag(scope, key) { return this.flags[scope]?.[key]; },
+    async update(updates) {
+      for (const [path, value] of Object.entries(updates)) {
+        const segments = path.split(".");
+        let target = this;
+        for (const segment of segments.slice(0, -1)) target = target[segment] ??= {};
+        target[segments.at(-1)] = value;
+      }
+    },
+    async createEmbeddedDocuments(collection, documents) {
+      this.items.push(...documents);
+      return documents;
+    }
+  };
+  const naron = {
+    id: "naron-id",
+    type: "descriptor",
+    name: "Naron",
+    system: {
+      category: "species",
+      genres: ["sciFi"],
+      grantsSecondDescriptor: false,
+      statOptions: [],
+      statAmount: 0,
+      skillOptions: ["Persuasion", "Deception"],
+      grantedSkills: ["Recognizing Motive"],
+      benefits: []
+    }
+  };
+
+  assert.equal(await CypherActor.prototype.applyDescriptor.call(actor, naron, { skillName: "Persuasion" }), true);
+  assert.deepEqual(actor.items.map(item => [item.name, item.system.level]), [
+    ["Persuasion", "trained"],
+    ["Recognizing Motive", "trained"]
+  ]);
+});
+
 test("getEligibleFocusAbilities allows any linked prerequisite to unlock a higher-tier Focus ability", () => {
   const focus = {
     abilities: [

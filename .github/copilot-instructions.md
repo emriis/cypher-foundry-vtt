@@ -10,8 +10,12 @@
   or `git clean -fdx`) without explicit approval. If it is missing or
   inaccessible, report that rather than recreating or replacing it.
 - Follow the repository's existing Foundry VTT V13/V14 architecture and the
-  Cypher Open License notices. Do not guess at version-sensitive Foundry APIs
-  or reproduce substantial copyrighted reference text.
+  Cypher Open License notices. Do not guess at version-sensitive Foundry APIs.
+  For compendium descriptions, the English CRD is the absolute authority and
+  its complete text may be stored under the Cypher Open License; use a complete
+  matching Character Book translation in French when available, otherwise copy
+  the English text verbatim. Never guess an unresolved match or modify names,
+  IDs, or mechanics to force one.
 - Keep player-facing strings localized in both `lang/en.json` and
   `lang/fr.json`; validate JSON and avoid duplicate keys.
 - Treat `packs/*/_source/` as editable sources and generated LevelDB packs as

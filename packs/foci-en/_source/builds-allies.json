@@ -1,11 +1,11 @@
 {
-  "_id": "Bu1ld5All13s2026",
-  "_key": "!items!Bu1ld5All13s2026",
+  "_id": "buildsalliE105E2",
+  "_key": "!items!buildsalliE105E2",
   "name": "Builds Allies",
   "type": "focus",
   "img": "icons/commodities/tech/ai-core.webp",
   "system": {
-    "description": "<p>A Focus for a creator of helpful artificial allies.</p>",
+    "description": "<p>You create automatons, robots, constructs, or other artificial creatures that do as you command.</p>",
     "abilities": [
       {
         "id": "identify-machine",
@@ -14,8 +14,12 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 1, "options": [] },
-        "description": "Assess a nearby machine's purpose, level, and condition."
+        "cost": {
+          "stat": "intellect",
+          "amount": 1,
+          "options": []
+        },
+        "description": "You understand the purpose, function, level, and status of a single robot or powered device within immediate range. Last action."
       },
       {
         "id": "automaton-assistant",
@@ -24,8 +28,12 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "You have a level 2 automaton follower."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You have built a level 2 automaton follower of your size or smaller that accompanies you and follows your instructions. You and the GM must work out the details of your automaton's appearance and personality. If the automaton is damaged, a few minutes of your attention mends it—the automaton regains 2 health. If the automaton is destroyed, it can be restored using your resources if you spend a few days tinkering. Depending on the genre, your automatons might be metallic robots, animated objects, organic androids, magical golems, steampunk constructs, awakened statues, or something else entirely."
       },
       {
         "id": "efficient-builder",
@@ -34,38 +42,60 @@
         "prerequisites": [],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "Gain an extra resource point for building or repairs."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "Anytime you gain resource points, you gain 1 additional point, but that point can be spent only on repairing or crafting."
       },
       {
         "id": "automaton-armor-upgrade",
         "name": "Automaton Armor Upgrade",
         "tier": 2,
-        "prerequisites": ["automaton-assistant"],
+        "prerequisites": [
+          "automaton-assistant"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "intellect", "amount": 3, "options": [] },
-        "description": "An automaton can become freely usable light armor."
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "You've built a new capability into one of your automatons—it can use its action to transform into an armored suit that you wear until you use a one-hour or longer recovery. If you are within an immediate distance when it transforms, it automatically forms itself around you. The transformed automaton acts as light armor; because it anticipates and reacts to your movements, you can freely use this armor. Enabler."
       },
       {
         "id": "automaton-cypher-upgrade",
         "name": "Automaton Cypher Upgrade",
         "tier": 2,
-        "prerequisites": ["automaton-assistant"],
+        "prerequisites": [
+          "automaton-assistant"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "intellect", "amount": 3, "options": [] },
-        "description": "An automaton temporarily increases your cypher limit."
+        "cost": {
+          "stat": "intellect",
+          "amount": 3,
+          "options": []
+        },
+        "description": "You've built a new capability into one of your automatons—for one day, the automaton increases your cypher limit by one. Enabler."
       },
       {
         "id": "charm-machine",
         "name": "Charm Machine",
         "tier": 2,
-        "prerequisites": ["automaton-assistant"],
+        "prerequisites": [
+          "automaton-assistant"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 2, "options": [] },
-        "description": "Convince a nearby non-intelligent machine to avoid harming you."
+        "cost": {
+          "stat": "intellect",
+          "amount": 2,
+          "options": []
+        },
+        "description": "You convince an unintelligent machine or automaton within immediate range to “like” you with a successful Intellect attack roll. A machine that likes you is 50 percent less likely to function if said function would cause you harm. For example, if a foe attempts to detonate a bomb near you controlled by a detonator that likes you, there is a 50 percent chance that it won't explode. The target likes you until you use a ten-minute or longer recovery. Action to initiate."
       },
       {
         "id": "expert-automaton",
@@ -78,8 +108,12 @@
         ],
         "repeatable": true,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "Build or improve an automaton follower."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You've built a level 3 automaton follower. It otherwise functions much like your level 2 automaton from Automaton Assistant. Instead of gaining a new level 3 automaton, you can upgrade an existing level 2 or 3 automaton follower (increasing its level by 1) and gain a new level 2 automaton. You can take this ability multiple times, each time gaining another automaton."
       },
       {
         "id": "quick-control",
@@ -92,28 +126,46 @@
         ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "intellect", "amount": 4, "options": [] },
-        "description": "Compel a machine to take one action."
+        "cost": {
+          "stat": "intellect",
+          "amount": 4,
+          "options": []
+        },
+        "description": "A successful Intellect attack allows you to command a machine or automaton (intelligent or not) within short range to take one action within its capabilities on its next turn, regardless of its normal programming or attitudes. If this action would cause the machine or automaton direct harm to itself or its allies, your Intellect attack against it is hindered. (If you use this ability to command an intelligent machine or automaton, it likely becomes hostile to you afterward.) Action."
       },
       {
         "id": "automaton-flight-upgrade",
         "name": "Automaton Flight Upgrade",
         "tier": 4,
-        "prerequisites": ["expert-automaton", "quick-control"],
+        "prerequisites": [
+          "expert-automaton",
+          "quick-control"
+        ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "Give an automaton sustained flight."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You've built a new capability into one of your automatons—as its normal movement, it can fly up to a long distance. If you wish, it can carry you but can only move at a rate of up to 20 feet (6 m) per round in any direction while doing so."
       },
       {
         "id": "automaton-turret-upgrade",
         "name": "Automaton Turret Upgrade",
         "tier": 4,
-        "prerequisites": ["expert-automaton", "quick-control"],
+        "prerequisites": [
+          "expert-automaton",
+          "quick-control"
+        ],
         "repeatable": false,
         "enabler": false,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "Reconfigure an automaton as an energy turret."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You've built a new capability into one of your automatons—it can reconfigure itself and become an immobile energy weapon on a gimbal mount. The turret is a heavy weapon with very long range that inflicts 7 damage. If you have the automaton act on its own, it makes one hindered attack per round. If you or an ally use the turret as a weapon, attacks with it are eased. Action to change the automaton's configuration; Last action to attack with turret. In a fantasy setting, the automaton turret probably shoots fire or lightning. In a science fiction setting, it probably shoots lasers."
       },
       {
         "id": "automaton-fleet",
@@ -126,8 +178,12 @@
         ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "You have four level 2 automaton followers."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You've built four level 2 automaton followers, each no larger than yourself. You and the GM must work out the details of each automaton's appearance and personality. If one of these automatons is destroyed, it can be restored using your resources after a few days of labor."
       },
       {
         "id": "automaton-force-field-upgrade",
@@ -140,8 +196,12 @@
         ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "An automaton projects a protective force field."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "You've built a new capability into one of your automatons—it can erect a translucent level 5 force field around itself and anyone within immediate range of it until you use a ten-minute or longer recovery. Any creature protected by the field reduces incoming wounds by one severity (NPCs take 3 less damage). Enabler."
       },
       {
         "id": "automaton-evolution",
@@ -154,8 +214,12 @@
         ],
         "repeatable": true,
         "enabler": true,
-        "cost": { "stat": "none", "amount": 0, "options": [] },
-        "description": "Increase one automaton's level."
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": []
+        },
+        "description": "One of your automaton followers is upgraded, increasing its level by 1. You can select this ability multiple times. Each time, the level of one of your automatons increases by 1."
       },
       {
         "id": "automaton-heavy-armor-upgrade",
@@ -168,17 +232,23 @@
         ],
         "repeatable": false,
         "enabler": true,
-        "cost": { "stat": "intellect", "amount": 6, "options": [] },
-        "description": "An automaton can become freely usable heavy armor."
+        "cost": {
+          "stat": "intellect",
+          "amount": 6,
+          "options": []
+        },
+        "description": "You've built a new capability into one of your automatons—the robot can use its action to transform into an armored suit that you wear until you use a one-hour or longer recovery. If you are within an immediate distance when it transforms, it automatically forms itself around you. The transformed automaton acts as heavy armor; because it anticipates and reacts to your movements, you can freely use this armor. Enabler."
       }
     ]
   },
   "folder": null,
   "sort": 0,
-  "ownership": { "default": 0 },
+  "ownership": {
+    "default": 0
+  },
   "flags": {
     "cypher": {
-      "sourceLicense": "Original summary based on the Cypher Reference Document; built under the Cypher Open License."
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
     }
   }
 }

@@ -1,0 +1,30 @@
+{
+  "_id": "yOGJ87bXOz1QeJSG",
+  "_key": "!items!yOGJ87bXOz1QeJSG",
+  "name": "Compassionate",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "statOptions": [
+      "intellect"
+    ],
+    "statAmount": 2,
+    "skillOptions": [
+      "Animal Care",
+      "Healing",
+      "",
+      ""
+    ],
+    "description": "<p>Helping others is your calling. It's why you're here. Others delight in your outgoing and charitable nature, and you delight in their happiness. You're at your best when you're aiding others, whether by treating their injuries, helping them with a task, or putting the best face on a bad situation for the sake of morale.</p>"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}
