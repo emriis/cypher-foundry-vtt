@@ -88,12 +88,12 @@
           </div>
           {{#ifNotEquals severity "major"}}
           <button type="button" data-action="rallyWound" data-severity="{{severity}}" title="{{localize 'CYPHER.Wound.Rally'}}">
-            <i class="fa-solid fa-heart-pulse"></i> {{localize 'CYPHER.Wound.Rally'}}
+            <i class="fa-solid fa-heart-pulse"></i>
           </button>
           {{else}}
             {{#if ../system.canRallyMajor}}
             <button type="button" data-action="rallyWound" data-severity="major" title="{{localize 'CYPHER.Wound.RallyMajorSuperhero'}}">
-              <i class="fa-solid fa-heart-pulse"></i> {{localize 'CYPHER.Wound.RallyMajorSuperhero'}}
+              <i class="fa-solid fa-heart-pulse"></i>
             </button>
             {{/if}}
           {{/ifNotEquals}}
