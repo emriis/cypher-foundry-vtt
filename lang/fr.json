@@ -50,7 +50,10 @@
       "ChooseExactlyTwo": "Choisis exactement deux aptitudes de Focus de rang 1.",
       "ChooseAbility": "Choisir une aptitude de Focus",
       "ChooseAbilityTitle": "Choisir une aptitude de Focus",
-      "ChooseAbilityPrompt": "Choisis l'aptitude de Focus gagnée au rang {tier}."
+      "ChooseAbilityPrompt": "Choisis l'aptitude de Focus gagnée au rang {tier}.",
+      "ChooseWeaponCategoryTitle": "Choisir une catégorie d'arme",
+      "ChooseWeaponCategory": "Type d'arme à maîtriser",
+      "ArmorItemDescription": "Cette armure est utilisable librement uniquement lorsque l'aptitude de Focus correspondante est active."
     },
     "Profession": "Profession",
     "Species": "Espèce",
@@ -163,10 +166,18 @@
     },
     "SkillLevel": {
       "inability": "Inaptitude",
-      "practiced": "Exercé(e)",
+      "practiced": "Familier(e)",
       "trained": "Entraîné(e)",
       "specialized": "Spécialisé(e)",
       "expert": "Expert(e)"
+    },
+    "Proficiency": {
+      "Title": "Familiarité pratiquée",
+      "WeaponCategories": "Catégories d'armes",
+      "WeaponFamilies": "Types d'armes",
+      "ArmorCategories": "Catégories d'armures",
+      "Practiced": "Familier(e)",
+      "None": "Aucune"
     },
 
     "CustomField": {
@@ -243,7 +254,29 @@
     "Attack": {
       "Title": "Attaques",
       "Type": "Type d'attaque",
-      "FreelyUsable": "Arme utilisable librement (sinon, attaque entravée d'un palier)"
+      "FreelyUsable": "Cette arme précise est utilisable librement (exception)"
+    },
+    "WeaponFamily": {
+      "Label": "Famille d'arme",
+      "none": "Non précisée",
+      "axes": "Haches",
+      "knives": "Couteaux",
+      "swords": "Épées",
+      "firearms": "Armes à feu"
+    },
+    "AttackSkill": {
+      "Category": "Catégorie de compétence d'attaque",
+      "none": "Pas une compétence de catégorie d'attaque",
+      "lightBashing": "Contondante légère",
+      "lightBladed": "Tranchante légère",
+      "lightRanged": "À distance légère",
+      "mediumBashing": "Contondante moyenne",
+      "mediumBladed": "Tranchante moyenne",
+      "mediumRanged": "À distance moyenne",
+      "heavyBashing": "Contondante lourde",
+      "heavyBladed": "Tranchante lourde",
+      "heavyRanged": "À distance lourde",
+      "unarmed": "Attaques à mains nues"
     },
     "AttackType": {
       "light": "Légère (2 dégâts)",

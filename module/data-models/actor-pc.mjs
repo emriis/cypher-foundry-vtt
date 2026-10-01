@@ -105,6 +105,23 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
       // Advancement-derived permission to use all armor or weapon categories freely.
       canFreelyUseAllArmor: new BooleanField({ required: true, initial: false }),
       canFreelyUseAllWeapons: new BooleanField({ required: true, initial: false }),
+      // These lists represent fixed practiced-level familiarity, not advanceable Skills.
+      freeWeaponCategories: new ArrayField(
+        new StringField({ required: true, choices: CYPHER.weaponCategories }),
+        { required: true, initial: [...CYPHER.coreFreeWeaponCategories] }
+      ),
+      freeArmorCategories: new ArrayField(
+        new StringField({ required: true, choices: CYPHER.armorCategoryIds }),
+        { required: true, initial: [...CYPHER.coreFreeArmorCategories] }
+      ),
+      freeWeaponFamilies: new ArrayField(
+        new StringField({ required: true, choices: CYPHER.weaponFamilies }),
+        { required: true, initial: [] }
+      ),
+      freeWeaponSkillCategories: new ArrayField(
+        new StringField({ required: true, choices: CYPHER.attackSkillCategories }),
+        { required: true, initial: [] }
+      ),
 
       // Four advancement slots for the current tier. Completing all four advances
       // the character to the next tier and resets the slots.
@@ -211,7 +228,10 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
     const blockEaseDamage = equippedArmorItem?.system?.blockEaseDamage ?? 0;
     // Armor damage reduces the Block bonus but never changes Dodge hindrance.
     // Non-free armor applies its Dodge hindrance to all Speed tasks.
-    const freelyUsable = (equippedArmorItem?.system?.freelyUsable ?? false) || this.canFreelyUseAllArmor;
+    const freeArmorCategories = this.freeArmorCategories ?? CYPHER.coreFreeArmorCategories;
+    const freelyUsable = (equippedArmorItem?.system?.freelyUsable ?? false)
+      || this.canFreelyUseAllArmor
+      || freeArmorCategories.includes(category);
 
     this.armor = {
       itemId: equippedArmorItem?.id ?? null,

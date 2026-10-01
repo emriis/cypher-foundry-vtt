@@ -6,11 +6,15 @@
   "img": "icons/svg/aura.svg",
   "system": {
     "category": "species",
-    "genres": ["fantasy"],
+    "genres": [
+      "fantasy"
+    ],
     "grantsSecondDescriptor": false,
     "statOptions": [],
     "statAmount": 0,
-    "skillOptions": ["Connaissances magiques"],
+    "skillOptions": [
+      "Connaissances magiques"
+    ],
     "benefits": [
       {
         "name": "Résistance aux blessures de feu et de chaleur",
@@ -23,9 +27,11 @@
     ],
     "description": "<p>Partiellement humain et partiellement issu d'une autre dimension, tu pourrais être l'orphelin d'une liaison surnaturelle.</p><p><strong>Tu obtiens les caractéristiques suivantes :</strong></p><ul><li>Tu réduis d'un niveau la gravité des blessures que tu reçois provenant du feu ou de la chaleur.</li><li>Tu es entraîné en connaissances magiques.</li><li>Tu infliges +1 dégât avec les attaques à mains nues.</li></ul>"
   },
-  "folder": null,
+  "folder": "dscFantasyFr0001",
   "sort": 0,
-  "ownership": { "default": 0 },
+  "ownership": {
+    "default": 0
+  },
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."

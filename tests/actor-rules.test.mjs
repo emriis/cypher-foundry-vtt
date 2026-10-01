@@ -5,8 +5,18 @@ import test from "node:test";
 // The document class extends Foundry's global Actor, but these rule helpers do
 // not need a Foundry runtime.
 globalThis.Actor = class Actor {};
+class StubField {}
+globalThis.foundry = {
+  abstract: { TypeDataModel: class TypeDataModel {} },
+  data: {
+    fields: Object.fromEntries([
+      "SchemaField", "NumberField", "StringField", "HTMLField", "BooleanField", "ArrayField"
+    ].map(name => [name, StubField]))
+  }
+};
 
 const { default: CypherActor } = await import("../module/documents/actor.mjs");
+const { default: CypherPCData } = await import("../module/data-models/actor-pc.mjs");
 
 test("computeEffortCost charges the first level, additional levels, and Edge once", () => {
   assert.equal(CypherActor.computeEffortCost(1), 3);
@@ -217,6 +227,41 @@ test("reduceWoundSeverity lowers wounds by one tier", () => {
   assert.equal(reduce.call({}, "unknown"), null);
 });
 
+test("armor free use is checked against the equipped armor's exact category", () => {
+  const actorData = {
+    stats: {
+      might: { pool: { value: 8 } },
+      speed: { pool: { value: 8 } },
+      intellect: { pool: { value: 8 } }
+    },
+    customStats: [],
+    wounds: {
+      minor: { current: 0, max: 3 },
+      moderate: { current: 0, max: 3 },
+      major: { current: 0, max: 3 }
+    },
+    genre: "none",
+    powerShifts: {},
+    advancementSlots: [],
+    freeArmorCategories: ["light"],
+    canFreelyUseAllArmor: false,
+    parent: {
+      items: [{ type: "armor", id: "armor-id", name: "Chainmail", system: { equipped: true, category: "medium", blockEaseDamage: 0 } }]
+    }
+  };
+
+  CypherPCData.prototype._prepareDerivedDataUnsafe.call(actorData);
+  assert.equal(actorData.armor.freelyUsable, false);
+  assert.equal(actorData.armor.dodgeHinder, 2);
+  assert.equal(actorData.armor.speedTaskHinder, 2);
+
+  actorData.freeArmorCategories = ["light", "medium"];
+  CypherPCData.prototype._prepareDerivedDataUnsafe.call(actorData);
+  assert.equal(actorData.armor.freelyUsable, true);
+  assert.equal(actorData.armor.dodgeHinder, 2);
+  assert.equal(actorData.armor.speedTaskHinder, 0);
+});
+
 test("convertDamageToWound honors documented damage thresholds", () => {
   const convert = CypherActor.prototype._convertDamageToWound;
 
@@ -324,6 +369,110 @@ test("applyType applies pool, Edge, wound, and equipment benefits once", async (
   assert.equal(await CypherActor.prototype.applyType.call(actor, typeItem), false);
 });
 
+test("applyType preserves free-use categories instead of granting every category", async () => {
+  globalThis.ui = { notifications: { warn() {} } };
+  globalThis.game = {
+    i18n: {
+      localize: value => value,
+      format: value => value
+    }
+  };
+  globalThis.ChatMessage = { getSpeaker: () => ({}), create: async () => {} };
+
+  const actor = {
+    type: "pc",
+    id: "actor-id",
+    system: {
+      genre: "none",
+      stats: {
+        might: { pool: { max: 8, value: 8 }, edge: 0 },
+        speed: { pool: { max: 8, value: 8 }, edge: 0 },
+        intellect: { pool: { max: 8, value: 8 }, edge: 0 }
+      },
+      wounds: {
+        minor: { max: 3, current: 0 },
+        moderate: { max: 3, current: 0 },
+        major: { max: 3, current: 0 }
+      },
+      freeWeaponCategories: ["light"],
+      freeArmorCategories: [],
+      canFreelyUseAllWeapons: false,
+      canFreelyUseAllArmor: false
+    },
+    items: [],
+    flags: {},
+    async createEmbeddedDocuments(_collection, documents) { this.items.push(...documents); },
+    getFlag(scope, key) { return this.flags[scope]?.[key]; },
+    async update(updates) {
+      for (const [path, value] of Object.entries(updates)) {
+        if (path === "flags.cypher.appliedTypeId") {
+          this.flags.cypher ??= {};
+          this.flags.cypher.appliedTypeId = value;
+          continue;
+        }
+        const segments = path.split(".");
+        let target = this;
+        for (const segment of segments.slice(0, -1)) target = target[segment];
+        target[segments.at(-1)] = value;
+      }
+    }
+  };
+  const typeItem = {
+    id: "cleric-id",
+    name: "Cleric",
+    type: "type",
+    system: {
+      genre: "Fantasy",
+      poolBonuses: {},
+      woundBonuses: {},
+      freeWeaponCategories: ["light", "medium"],
+      freeArmorCategories: ["light", "medium", "heavy"],
+      freeWeaponFamilies: ["axes"],
+      freeWeapons: false,
+      freeArmor: false,
+      skillOptions: [],
+      abilities: []
+    }
+  };
+
+  assert.equal(await CypherActor.prototype.applyType.call(actor, typeItem), true);
+  assert.deepEqual(actor.system.freeWeaponCategories, ["light", "medium"]);
+  assert.deepEqual(actor.system.freeArmorCategories, ["light", "medium", "heavy"]);
+  assert.deepEqual(actor.system.freeWeaponFamilies, ["axes"]);
+  assert.equal(actor.system.canFreelyUseAllWeapons, false);
+  assert.equal(actor.system.canFreelyUseAllArmor, false);
+});
+
+test("all-category advancements store every weapon or armor category", async () => {
+  globalThis.game = { i18n: { localize: value => value, format: value => value } };
+  globalThis.ChatMessage = { getSpeaker: () => ({}), create: async () => {} };
+
+  for (const [otherType, expectedPath, expectedCategories] of [
+    ["weapons", "system.freeWeaponCategories", ["light", "medium", "heavy"]],
+    ["armor", "system.freeArmorCategories", ["light", "medium", "heavy"]]
+  ]) {
+    let changes;
+    const actor = {
+      type: "pc",
+      id: "actor-id",
+      system: {
+        advancementSlots: [{ type: "other", otherType, bought: false },
+          { type: "", otherType: "", bought: false },
+          { type: "", otherType: "", bought: false },
+          { type: "", otherType: "", bought: false }],
+        freeWeaponCategories: ["light"],
+        freeArmorCategories: [],
+        resourcePoints: 0
+      },
+      async spendXP() { return true; },
+      async update(update) { changes = update; }
+    };
+
+    await CypherActor.prototype.purchaseAdvancementSlot.call(actor, 0);
+    assert.deepEqual(changes[expectedPath], expectedCategories);
+  }
+});
+
 test("applyFocus records two tier-1 selections and creates their ability items", async () => {
   globalThis.game = { i18n: { localize: value => value, format: value => value } };
   globalThis.ChatMessage = { getSpeaker: () => ({}), create: async () => {} };
@@ -364,6 +513,51 @@ test("applyFocus records two tier-1 selections and creates their ability items",
   assert.equal(actor.system.focus, "Abides in Stone");
   assert.deepEqual(actor.flags.cypher.focusAbilityIds, ["intimidating-presence", "stone-body"]);
   assert.deepEqual(actor.items.map(item => item.system.focusAbilityId), ["intimidating-presence", "stone-body"]);
+});
+
+test("applyFocus applies only the selected abilities' free-use grants", async () => {
+  globalThis.game = { i18n: { localize: value => value, format: value => value } };
+  const actor = {
+    type: "pc",
+    system: {
+      tier: 1,
+      focus: "",
+      freeWeaponCategories: ["light"],
+      freeArmorCategories: [],
+      freeWeaponFamilies: []
+    },
+    flags: {},
+    items: [],
+    getFlag(scope, key) { return this.flags[scope]?.[key]; },
+    async update(updates) {
+      for (const [path, value] of Object.entries(updates)) {
+        const segments = path.split(".");
+        let target = this;
+        for (const segment of segments.slice(0, -1)) target = target[segment] ??= {};
+        target[segments.at(-1)] = value;
+      }
+    },
+    async createEmbeddedDocuments(_collection, documents) { this.items.push(...documents); }
+  };
+  const focus = {
+    id: "focus-id",
+    type: "focus",
+    name: "Test Focus",
+    system: {
+      abilities: [
+        { id: "chosen", name: "Chosen", tier: 1, prerequisites: [], repeatable: false, freeWeaponCategories: ["medium"], freeArmorCategories: ["light"], freeWeaponFamilies: ["firearms"], chooseWeaponAttackCategory: true, grantedArmorItemCategory: "light" },
+        { id: "also-chosen", name: "Also Chosen", tier: 1, prerequisites: [], repeatable: false, freeWeaponCategories: [], freeArmorCategories: [], freeWeaponFamilies: [] },
+        { id: "not-chosen", name: "Not Chosen", tier: 1, prerequisites: [], repeatable: false, freeWeaponCategories: ["heavy"], freeArmorCategories: ["heavy"], freeWeaponFamilies: ["swords"] }
+      ]
+    }
+  };
+
+  assert.equal(await CypherActor.prototype.applyFocus.call(actor, focus, ["chosen", "also-chosen"], { chosen: "mediumBladed" }), true);
+  assert.deepEqual(actor.system.freeWeaponCategories, ["light", "medium"]);
+  assert.deepEqual(actor.system.freeArmorCategories, ["light"]);
+  assert.deepEqual(actor.system.freeWeaponFamilies, ["firearms"]);
+  assert.deepEqual(actor.system.freeWeaponSkillCategories, ["mediumBladed"]);
+  assert.deepEqual(actor.items.filter(item => item.type === "armor").map(item => [item.system.category, item.system.freelyUsable]), [["light", true]]);
 });
 
 test("advancing a tier records a pending Focus selection when an ability becomes eligible", async () => {

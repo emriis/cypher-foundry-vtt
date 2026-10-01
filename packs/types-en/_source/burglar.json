@@ -20,7 +20,14 @@
       "major": 0
     },
     "freeWeapons": false,
-    "freeArmor": true,
+    "freeArmor": false,
+    "freeWeaponCategories": [
+      "light"
+    ],
+    "freeArmorCategories": [
+      "light"
+    ],
+    "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
       {

@@ -1,3 +1,5 @@
+import { CYPHER } from "../config.mjs";
+
 const { StringField, NumberField, HTMLField, ArrayField, BooleanField, SchemaField } = foundry.data.fields;
 
 /**
@@ -25,6 +27,18 @@ export default class CypherTypeData extends foundry.abstract.TypeDataModel {
       }),
       freeWeapons: new BooleanField({ required: true, initial: false }),
       freeArmor: new BooleanField({ required: true, initial: false }),
+      freeWeaponCategories: new ArrayField(
+        new StringField({ required: true, choices: CYPHER.weaponCategories }),
+        { required: true, initial: [] }
+      ),
+      freeArmorCategories: new ArrayField(
+        new StringField({ required: true, choices: CYPHER.armorCategoryIds }),
+        { required: true, initial: [] }
+      ),
+      freeWeaponFamilies: new ArrayField(
+        new StringField({ required: true, choices: CYPHER.weaponFamilies }),
+        { required: true, initial: [] }
+      ),
       skillOptions: new ArrayField(new StringField({ required: true, blank: true }), { required: true, initial: [] }),
       abilities: new ArrayField(new SchemaField({
         id: new StringField({ required: true, blank: false }),

@@ -6,11 +6,15 @@
   "img": "icons/svg/aura.svg",
   "system": {
     "category": "species",
-    "genres": ["fantasy"],
+    "genres": [
+      "fantasy"
+    ],
     "grantsSecondDescriptor": false,
     "statOptions": [],
     "statAmount": 0,
-    "skillOptions": ["Navigation"],
+    "skillOptions": [
+      "Navigation"
+    ],
     "benefits": [
       {
         "name": "Recovery Bonus",
@@ -23,9 +27,11 @@
     ],
     "description": "<p>You are a stocky, broad-shouldered native of the mountains and hills.</p><p><strong>You gain the following characteristics:</strong></p><ul><li>You add +1 on recoveries.</li><li>You are trained in navigation (if underground or in mountainous areas).</li><li>You inflict +1 damage with axes.</li></ul>"
   },
-  "folder": null,
+  "folder": "dscFantasyEn0001",
   "sort": 0,
-  "ownership": { "default": 0 },
+  "ownership": {
+    "default": 0
+  },
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."

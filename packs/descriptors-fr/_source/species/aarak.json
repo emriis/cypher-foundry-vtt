@@ -1,13 +1,42 @@
 {
-  "_id": "A2rK7mQ9vL3xN6pB", "_key": "!items!A2rK7mQ9vL3xN6pB", "name": "Aarak", "type": "descriptor", "img": "icons/svg/aura.svg",
+  "_id": "A2rK7mQ9vL3xN6pB",
+  "_key": "!items!A2rK7mQ9vL3xN6pB",
+  "name": "Aarak",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
   "system": {
-    "category": "species", "genres": ["sciFi"], "grantsSecondDescriptor": false, "statOptions": [], "statAmount": 0, "skillOptions": [],
+    "category": "species",
+    "genres": [
+      "sciFi"
+    ],
+    "grantsSecondDescriptor": false,
+    "statOptions": [],
+    "statAmount": 0,
+    "skillOptions": [],
     "benefits": [
-      { "name": "Vol plané", "description": "<p>En sautant d'une hauteur d'au moins 9 m au-dessus de ton environnement, tu peux planer sur une longue distance avant d'atterrir à un point plus bas dans la zone.</p>" },
-      { "name": "Dégâts de chute réduits", "description": "<p>Tu réduis la gravité d'une blessure d'un palier lorsque tu subis des dégâts de chute.</p>" },
-      { "name": "Pas d'intrusion du MJ à l'Esquive", "description": "<p>Tu n'obtiens pas d'intrusion du·de la MJ si tu fais un 1 sur un jet d'Esquive.</p>" }
+      {
+        "name": "Vol plané",
+        "description": "<p>En sautant d'une hauteur d'au moins 9 m au-dessus de ton environnement, tu peux planer sur une longue distance avant d'atterrir à un point plus bas dans la zone.</p>"
+      },
+      {
+        "name": "Dégâts de chute réduits",
+        "description": "<p>Tu réduis la gravité d'une blessure d'un palier lorsque tu subis des dégâts de chute.</p>"
+      },
+      {
+        "name": "Pas d'intrusion du MJ à l'Esquive",
+        "description": "<p>Tu n'obtiens pas d'intrusion du·de la MJ si tu fais un 1 sur un jet d'Esquive.</p>"
+      }
     ],
     "description": "<p>Les Aarak comme toi viennent d'un monde volcanique sculpté par des canyons, où les thermiques abondent : ascendances créées par les vents longeant les montagnes, courants chauds entre les crêtes, et « rues nuageuses » où des alignements de cumulus s'étirent parallèlement au vent. Plumé·e, léger·ère et décrit·e comme « avian·e » par certaines autres espèces, tu as quitté ton monde natal à la recherche d'aventures - et de nouvelles ascendances - sur d'autres planètes et habitats.</p><p><strong>Tu obtiens les caractéristiques suivantes :</strong></p><ul><li>En sautant d'une hauteur d'au moins <strong>9 m</strong> au-dessus de ton environnement, tu peux <strong>planer sur une longue distance</strong> avant d'atterrir à un point plus bas dans la zone.</li><li>Tu <strong>réduis la gravité d'une blessure d'un palier</strong> lorsque tu subis des dégâts de chute.</li><li>Tu <strong>n'obtiens pas d'intrusion du·de la MJ</strong> si tu fais un <strong>1</strong> sur un jet d'Esquive.</li></ul><p>Tu peux prolonger ton vol plané - et parfois augmenter sa distance - si tu trouves un courant thermique, une série de courants thermiques, ou un environnement à <strong>faible gravité</strong> capable de te maintenir plus longtemps en l'air. Travaille avec ton·ta MJ pour déterminer les conditions locales.</p>"
-  }, "folder": null, "sort": 0, "ownership": { "default": 0 },
-  "flags": { "cypher": { "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License." } }
+  },
+  "folder": "dscSciFiFr000001",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
 }
