@@ -1,3 +1,4 @@
+// Checks that Focus ability graphs have valid links and matching translated IDs.
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";

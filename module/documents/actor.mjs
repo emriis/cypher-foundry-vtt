@@ -2,6 +2,10 @@ import { CYPHER } from "../config.mjs";
 
 /**
  * Extends Foundry's Actor class with Cypher logic.
+ *
+ * Sheet actions call methods here to change actor data. For a task, the actor
+ * combines the selected stat, Effort, assets, skills, and hindrances, spends
+ * Pool points, rolls the die, posts the result, and then applies any wounds.
  */
 export default class CypherActor extends Actor {
 
@@ -459,7 +463,7 @@ export default class CypherActor extends Actor {
         if (extra.skillId) {
           const item = this.items.get(extra.skillId);
           if (item) {
-            const order = ["inability", "none", "trained", "specialized", "expert"];
+            const order = ["inability", "practiced", "trained", "specialized", "expert"];
             const newLevel = item.system.level === "inability"
               ? "trained"
               : order[Math.min(order.length - 1, order.indexOf(item.system.level) + 1)];
@@ -854,7 +858,7 @@ export default class CypherActor extends Actor {
     if (finalSkillName) {
       const existing = this.items.find(item => item.type === "skill" && item.name.toLowerCase() === finalSkillName.toLowerCase());
       if (existing) {
-        const order = ["inability", "none", "trained", "specialized", "expert"];
+        const order = ["inability", "practiced", "trained", "specialized", "expert"];
         const index = Math.max(0, order.indexOf(existing.system.level));
         const newLevel = order[Math.min(order.length - 1, index + 1)];
         await existing.update({ "system.level": newLevel });
@@ -1026,7 +1030,7 @@ export default class CypherActor extends Actor {
 
     // Advance an existing skill of the same name, or create a new trained skill, using the
     // same progression logic as purchaseAdvancementSlot's "skill" advancement.
-    const order = ["inability", "none", "trained", "specialized", "expert"];
+    const order = ["inability", "practiced", "trained", "specialized", "expert"];
     const grantedSkills = (descriptorItem.system.grantedSkills ?? []).map(name => name.trim()).filter(Boolean);
     const skillNames = [...new Set([finalSkillName, ...grantedSkills].filter(Boolean))];
     const chatNotes = [];

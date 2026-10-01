@@ -1,3 +1,4 @@
+// Exercises Actor and Item document actions with small Foundry API stubs.
 import assert from "node:assert/strict";
 import test from "node:test";
 

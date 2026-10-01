@@ -1,5 +1,11 @@
 import { CYPHER } from "../config.mjs";
 
+/**
+ * Data model for general equipment carried by an actor.
+ *
+ * Quantity and weight describe ordinary gear; optional depletion fields let
+ * CypherItem handle limited-use equipment in the same way as artifacts.
+ */
 const { StringField, NumberField, HTMLField, BooleanField } = foundry.data.fields;
 
 export default class CypherEquipmentData extends foundry.abstract.TypeDataModel {
@@ -9,8 +15,6 @@ export default class CypherEquipmentData extends foundry.abstract.TypeDataModel 
       weight: new StringField({ required: true, initial: "light", choices: ["none", "light", "medium", "heavy"] }),
       equipped: new BooleanField({ required: true, initial: false }),
 
-      // Certains équipements (trousse de secours, aspirine...) utilisent un épuisement au lieu
-      // d'une quantité fixe, comme dans le CRD. "none" = pas d'épuisement (comportement par défaut).
       // Some equipment (medical bag, aspirin...) uses depletion instead of a fixed quantity,
       // as in the CRD. "none" = no depletion (default behavior).
       depletionDie: new StringField({ required: true, initial: "none", choices: ["none", ...CYPHER.depletionDice] }),

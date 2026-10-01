@@ -1,3 +1,4 @@
+{{!-- XP and tier advancement controls; the sheet controller applies each selected advancement. --}}
 <section class="tab advancement {{tab.cssClass}}" data-group="primary" data-tab="advancement">
 
   <div class="xp-block">
@@ -28,22 +29,12 @@
       <div class="advancement-slot {{#if slot.bought}}bought{{/if}}">
         <span class="slot-number">{{localize 'CYPHER.Advancement.Slot'}} {{@index}}</span>
 
-        <!-- Champ caché : préserve "bought" lors de la soumission du formulaire entier, puisque
-             ce champ n'a aucun contrôle visible propre (bought.hbs affiche juste un badge texte).
-             Hidden field: preserves "bought" across whole-form submission, since it has no
-             visible control of its own (the template just shows a text badge for it). -->
+        <!-- Preserve "bought" on whole-form submission because the visible badge is not an input. -->
         <input type="hidden" name="system.advancementSlots.{{@index}}.bought" value="{{slot.bought}}"/>
 
-        <!-- Les select restent volontairement actifs même après achat (pas de "disabled") :
-             un <select disabled> est exclu de la soumission HTML, ce qui ferait perdre son
-             type au prochain changement ailleurs sur la fiche. Le bouton "Acheter" disparaît
-             déjà une fois l'emplacement acheté, donc rechoisir un type ici n'a plus d'effet
-             mécanique — seulement cosmétique.
-             The selects are intentionally left enabled even after purchase (no "disabled"):
-             a disabled <select> is excluded from HTML form submission, which would lose its
-             type on the next change made elsewhere on the sheet. The "Buy" button already
-             disappears once a slot is bought, so re-picking a type here has no more
-             mechanical effect — purely cosmetic. -->
+           <!-- Keep these selects enabled even after purchase. A disabled HTML control is omitted
+             from form submission, which would erase its value on the next sheet change.
+             The Buy button disappears after purchase, so changing the selection has no effect. -->
         <select name="system.advancementSlots.{{@index}}.type">
           <option value="">—</option>
           <option value="capabilities" {{#ifEquals slot.type "capabilities"}}selected{{/ifEquals}}>{{localize 'CYPHER.Advancement.capabilities'}}</option>
@@ -63,10 +54,7 @@
           <option value="genre" {{#ifEquals slot.otherType "genre"}}selected{{/ifEquals}}>{{localize 'CYPHER.Advancement.other-genre'}}</option>
         </select>
         {{else}}
-        <!-- otherType préservé même quand non affiché (type != "other"), pour ne pas le perdre
-             si l'utilisateur choisit "Autre" plus tard puis revient en arrière.
-             otherType preserved even when not shown (type != "other"), so it isn't lost if the
-             user picks "Other" later then switches back. -->
+        <!-- Preserve otherType while its select is hidden, so switching slot types does not erase it. -->
         <input type="hidden" name="system.advancementSlots.{{@index}}.otherType" value="{{slot.otherType}}"/>
         {{/ifEquals}}
 

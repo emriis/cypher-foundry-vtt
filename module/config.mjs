@@ -18,7 +18,7 @@ CYPHER.stats = ["might", "speed", "intellect"];
  */
 CYPHER.skillLevels = {
   inability: -1,
-  none: 0,
+  practiced: 0,
   trained: 1,
   specialized: 2,
   expert: 3
