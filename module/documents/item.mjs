@@ -42,7 +42,22 @@ export default class CypherItem extends Item {
   async rollAttack({ effortLevels = 0, assetSteps = 0, difficulty = 3, luckyShot = false, skillItemId = null } = {}) {
     if (this.type !== "attack" || !this.actor) return;
     const baseDamage = this.system.damage || CYPHER.weaponDamage[this.system.attackType] || 2;
-    const weaponHinder = (this.system.freelyUsable || this.actor.system.canFreelyUseAllWeapons) ? 0 : 1;
+    const freeWeaponCategories = this.actor.system.freeWeaponCategories ?? CYPHER.coreFreeWeaponCategories;
+    const freeWeaponFamilies = this.actor.system.freeWeaponFamilies ?? [];
+    const freeWeaponSkillCategories = this.actor.system.freeWeaponSkillCategories ?? [];
+    const selectedSkill = skillItemId ? this.actor.items.get(skillItemId) : null;
+    const practicedAttackSkill = this.system.attackSkillCategory
+      && selectedSkill?.type === "skill"
+      && selectedSkill.system.attackCategory === this.system.attackSkillCategory
+      && selectedSkill.system.level === "practiced";
+    const weaponIsFamiliar = this.system.freelyUsable
+      || this.actor.system.canFreelyUseAllWeapons
+      || freeWeaponCategories.includes(this.system.attackType)
+      || freeWeaponFamilies.includes(this.system.weaponFamily)
+      || freeWeaponSkillCategories.includes(this.system.attackSkillCategory)
+      || practicedAttackSkill;
+    const weaponHinder = weaponIsFamiliar ? 0 : 1;
+    const weaponEaseSteps = this.system.attackType === "light" ? 1 : 0;
 
     return this.actor.rollTask({
       stat: this.system.stat,
@@ -53,6 +68,7 @@ export default class CypherItem extends Item {
       isAttack: true,
       baseDamage,
       extraHinderSteps: weaponHinder,
+      extraEaseSteps: weaponEaseSteps,
       luckyShot,
       flavor: `${game.i18n.localize("CYPHER.Roll.Attack")}: ${this.name}`
     });

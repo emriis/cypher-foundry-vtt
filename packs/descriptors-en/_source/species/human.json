@@ -6,7 +6,10 @@
   "img": "icons/svg/aura.svg",
   "system": {
     "category": "species",
-    "genres": ["fantasy", "sciFi"],
+    "genres": [
+      "fantasy",
+      "sciFi"
+    ],
     "grantsSecondDescriptor": true,
     "statOptions": [],
     "statAmount": 0,
@@ -14,9 +17,11 @@
     "benefits": [],
     "description": "<p>Humans are among the youngest species, and perhaps that's why, when considered as a whole, they're more given to explore, conquer, and expand their communities, even if that means taking from other species or other humans.</p><p><strong>You gain the following characteristics:</strong></p><p>Choose a second descriptor and add its benefits to your regular descriptor.</p><p>In a game where everyone is human, using the Human species option may not make sense. Your GM might grant you the option to choose Human as a species only if other species are also part of the game.</p>"
   },
-  "folder": null,
+  "folder": "dscMixedEn000001",
   "sort": 0,
-  "ownership": { "default": 0 },
+  "ownership": {
+    "default": 0
+  },
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."

@@ -50,7 +50,10 @@
       "ChooseExactlyTwo": "Choose exactly two tier-1 Focus abilities.",
       "ChooseAbility": "Choose Focus Ability",
       "ChooseAbilityTitle": "Choose Focus Ability",
-      "ChooseAbilityPrompt": "Choose the Focus ability gained at tier {tier}."
+      "ChooseAbilityPrompt": "Choose the Focus ability gained at tier {tier}.",
+      "ChooseWeaponCategoryTitle": "Choose a weapon category",
+      "ChooseWeaponCategory": "Weapon kind to master",
+      "ArmorItemDescription": "This armor is freely usable only while the corresponding Focus ability is active."
     },
     "Profession": "Profession",
     "Species": "Species",
@@ -168,6 +171,14 @@
       "specialized": "Specialized",
       "expert": "Expert"
     },
+    "Proficiency": {
+      "Title": "Practiced Familiarity",
+      "WeaponCategories": "Weapon Categories",
+      "WeaponFamilies": "Weapon Kinds",
+      "ArmorCategories": "Armor Categories",
+      "Practiced": "Practiced",
+      "None": "None"
+    },
 
     "CustomField": {
       "Title": "Custom Fields",
@@ -243,7 +254,29 @@
     "Attack": {
       "Title": "Attacks",
       "Type": "Attack Type",
-      "FreelyUsable": "Freely usable weapon (otherwise hindered by 1 step)"
+      "FreelyUsable": "This specific weapon is freely usable (override)"
+    },
+    "WeaponFamily": {
+      "Label": "Weapon Family",
+      "none": "Unspecified",
+      "axes": "Axes",
+      "knives": "Knives",
+      "swords": "Swords",
+      "firearms": "Firearms"
+    },
+    "AttackSkill": {
+      "Category": "Attack Skill Category",
+      "none": "Not an attack-category skill",
+      "lightBashing": "Light bashing",
+      "lightBladed": "Light bladed",
+      "lightRanged": "Light ranged",
+      "mediumBashing": "Medium bashing",
+      "mediumBladed": "Medium bladed",
+      "mediumRanged": "Medium ranged",
+      "heavyBashing": "Heavy bashing",
+      "heavyBladed": "Heavy bladed",
+      "heavyRanged": "Heavy ranged",
+      "unarmed": "Unarmed attacks"
     },
     "AttackType": {
       "light": "Light (2 damage)",

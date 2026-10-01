@@ -114,6 +114,15 @@ CYPHER.otherAdvancementTypes = ["recovery", "focus", "armor", "weapons", "genre"
 
 /** Base damage by weapon category. */
 CYPHER.weaponDamage = { light: 2, medium: 4, heavy: 6 };
+CYPHER.weaponCategories = Object.keys(CYPHER.weaponDamage);
+CYPHER.coreFreeWeaponCategories = ["light"];
+CYPHER.coreFreeArmorCategories = [];
+CYPHER.weaponFamilies = ["axes", "knives", "swords", "firearms"];
+CYPHER.attackSkillCategories = [
+  "lightBashing", "lightBladed", "lightRanged",
+  "mediumBashing", "mediumBladed", "mediumRanged",
+  "heavyBashing", "heavyBladed", "heavyRanged", "unarmed"
+];
 
 /**
  * Armor categories and their defensive task modifiers.
@@ -124,6 +133,7 @@ CYPHER.armorCategories = {
   medium: { block: 2, dodge: 2 },
   heavy: { block: 3, dodge: 3 }
 };
+CYPHER.armorCategoryIds = Object.keys(CYPHER.armorCategories);
 
 /** Rally cost in Might points for removing minor and moderate wounds. */
 CYPHER.rallyCost = { minor: 2, moderate: 5 };

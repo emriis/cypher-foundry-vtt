@@ -1,12 +1,40 @@
 {
-  "_id": "D7rA3kV8pM2xC6tL", "_key": "!items!D7rA3kV8pM2xC6tL", "name": "Drakain", "type": "descriptor", "img": "icons/svg/aura.svg",
+  "_id": "D7rA3kV8pM2xC6tL",
+  "_key": "!items!D7rA3kV8pM2xC6tL",
+  "name": "Drakain",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
   "system": {
-    "category": "species", "genres": ["sciFi"], "grantsSecondDescriptor": false, "statOptions": [], "statAmount": 0, "skillOptions": ["Intimidation"],
+    "category": "species",
+    "genres": [
+      "sciFi"
+    ],
+    "grantsSecondDescriptor": false,
+    "statOptions": [],
+    "statAmount": 0,
+    "skillOptions": [
+      "Intimidation"
+    ],
     "benefits": [
-      { "name": "Extra Minor Wound", "description": "<p>You can take one more minor wound than normal.</p>" },
-      { "name": "Bladed Weapon Damage", "description": "<p>You inflict +1 damage with bladed weapons (or high-tech versions of the same).</p>" }
+      {
+        "name": "Extra Minor Wound",
+        "description": "<p>You can take one more minor wound than normal.</p>"
+      },
+      {
+        "name": "Bladed Weapon Damage",
+        "description": "<p>You inflict +1 damage with bladed weapons (or high-tech versions of the same).</p>"
+      }
     ],
     "description": "<p>Your skin is ridged with lines of bone and you likely stand at least 6 feet (2 m) tall. Some might compare drakain to humans, but only the foolish would do so aloud. You and other drakain deeply value combat and honor, believing that death in battle is among the most glorious of ends. After all, yours is a proud warrior people, and drakain have parlayed their prowess into great empires in the past. You cherish your birthright, but that doesn't keep you from befriending beings of other species and exploring opportunities that come your way.</p><p><strong>You gain the following characteristics:</strong></p><ul><li>You can take one more minor wound than normal.</li><li>You are trained in intimidation (except against other drakain).</li><li>You inflict +1 damage with bladed weapons (or high-tech versions of the same).</li></ul>"
-  }, "folder": null, "sort": 0, "ownership": { "default": 0 },
-  "flags": { "cypher": { "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License." } }
+  },
+  "folder": "dscSciFiEn000001",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
 }

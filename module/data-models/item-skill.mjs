@@ -17,6 +17,7 @@ export default class CypherSkillData extends foundry.abstract.TypeDataModel {
         initial: "trained",
         choices: Object.keys(CYPHER.skillLevels) // inability, practiced, trained, specialized, expert
       }),
+      attackCategory: new StringField({ required: true, initial: "", choices: ["", ...CYPHER.attackSkillCategories] }),
       description: new HTMLField({ required: true, blank: true })
     };
   }

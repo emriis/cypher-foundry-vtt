@@ -1,12 +1,40 @@
 {
-  "_id": "N4eC7sL2wF9hJ5uQ", "_key": "!items!N4eC7sL2wF9hJ5uQ", "name": "D'nec·que", "type": "descriptor", "img": "icons/svg/aura.svg",
+  "_id": "N4eC7sL2wF9hJ5uQ",
+  "_key": "!items!N4eC7sL2wF9hJ5uQ",
+  "name": "D'nec·que",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
   "system": {
-    "category": "species", "genres": ["sciFi"], "grantsSecondDescriptor": false, "statOptions": [], "statAmount": 0, "skillOptions": ["Opération de systèmes"],
+    "category": "species",
+    "genres": [
+      "sciFi"
+    ],
+    "grantsSecondDescriptor": false,
+    "statOptions": [],
+    "statAmount": 0,
+    "skillOptions": [
+      "Opération de systèmes"
+    ],
     "benefits": [
-      { "name": "Récupération d'Intellect", "description": "<p>Tu gagnes +1 point de Réserve d'Intellect à chaque fois que tu effectues une récupération.</p>" },
-      { "name": "Dégâts d'arme légère à énergie à distance", "description": "<p>Tu infliges +1 dégât avec les armes légères à énergie à distance.</p>" }
+      {
+        "name": "Récupération d'Intellect",
+        "description": "<p>Tu gagnes +1 point de Réserve d'Intellect à chaque fois que tu effectues une récupération.</p>"
+      },
+      {
+        "name": "Dégâts d'arme légère à énergie à distance",
+        "description": "<p>Tu infliges +1 dégât avec les armes légères à énergie à distance.</p>"
+      }
     ],
     "description": "<p>Comme les tien·nes, tu es un·e humanoïde d'environ un mètre de haut, aux <strong>yeux luminescents</strong>. Les D'nec·ques sont une espèce nomade spécialisée dans la réparation d'appareils cassés ou récupérés : électronique, moteurs, robots, dispositifs divers... qu'iels revendent ensuite reconditionnés sur divers marchés. Bien que tu aies été formé·e comme les autres D'nec·ques, tu as choisi de <strong>partir seul·e</strong>, à la recherche d'expériences et d'opportunités que la majorité de ton peuple n'imaginera jamais.</p><p><strong>Tu obtiens les caractéristiques suivantes :</strong></p><ul><li>Tu gagnes <strong>+1 point de Réserve d'Intellect</strong> à chaque fois que tu effectues une récupération.</li><li>Tu es <strong>entraîné·e</strong> en <strong>opération de systèmes</strong>.</li><li>Tu infliges <strong>+1 dégât</strong> avec les <strong>armes légères à énergie à distance</strong>.</li></ul>"
-  }, "folder": null, "sort": 0, "ownership": { "default": 0 },
-  "flags": { "cypher": { "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License." } }
+  },
+  "folder": "dscSciFiFr000001",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
 }

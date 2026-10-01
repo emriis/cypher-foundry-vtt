@@ -21,6 +21,12 @@
     },
     "freeWeapons": false,
     "freeArmor": false,
+    "freeWeaponCategories": [
+      "light",
+      "medium"
+    ],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
       {
