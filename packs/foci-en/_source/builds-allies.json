@@ -63,7 +63,8 @@
           "amount": 3,
           "options": []
         },
-        "description": "You've built a new capability into one of your automatons—it can use its action to transform into an armored suit that you wear until you use a one-hour or longer recovery. If you are within an immediate distance when it transforms, it automatically forms itself around you. The transformed automaton acts as light armor; because it anticipates and reacts to your movements, you can freely use this armor. Enabler."
+        "description": "You've built a new capability into one of your automatons—it can use its action to transform into an armored suit that you wear until you use a one-hour or longer recovery. If you are within an immediate distance when it transforms, it automatically forms itself around you. The transformed automaton acts as light armor; because it anticipates and reacts to your movements, you can freely use this armor. Enabler.",
+        "grantedArmorItemCategory": "light"
       },
       {
         "id": "automaton-cypher-upgrade",
@@ -237,7 +238,8 @@
           "amount": 6,
           "options": []
         },
-        "description": "You've built a new capability into one of your automatons—the robot can use its action to transform into an armored suit that you wear until you use a one-hour or longer recovery. If you are within an immediate distance when it transforms, it automatically forms itself around you. The transformed automaton acts as heavy armor; because it anticipates and reacts to your movements, you can freely use this armor. Enabler."
+        "description": "You've built a new capability into one of your automatons—the robot can use its action to transform into an armored suit that you wear until you use a one-hour or longer recovery. If you are within an immediate distance when it transforms, it automatically forms itself around you. The transformed automaton acts as heavy armor; because it anticipates and reacts to your movements, you can freely use this armor. Enabler.",
+        "grantedArmorItemCategory": "heavy"
       }
     ]
   },

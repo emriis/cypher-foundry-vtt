@@ -47,7 +47,10 @@
           "amount": 0,
           "options": []
         },
-        "description": "You can freely use firearms and suffer no penalty when using one. You inflict an additional 1 damage with firearms. For one attack you make with a firearm, you can roll twice and use the better result. This ability renews when you make a ten-minute or longer recovery. Enabler."
+        "description": "You can freely use firearms and suffer no penalty when using one. You inflict an additional 1 damage with firearms. For one attack you make with a firearm, you can roll twice and use the better result. This ability renews when you make a ten-minute or longer recovery. Enabler.",
+        "freeWeaponFamilies": [
+          "firearms"
+        ]
       },
       {
         "id": "careful-shot",

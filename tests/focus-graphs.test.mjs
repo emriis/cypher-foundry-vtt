@@ -55,3 +55,41 @@ test("Focus ability IDs align between languages and use English CRD slugs", () =
     }
   }
 });
+
+test("free-use Focus abilities scope their weapon and armor grants", () => {
+  const expected = {
+    "carries-a-gun.json": { "excellent-gunner": { freeWeaponFamilies: ["firearms"] } },
+    "masters-weaponry.json": {
+      "battle-competence": {
+        freeWeaponCategories: ["light", "medium", "heavy"],
+        freeArmorCategories: ["light", "medium", "heavy"]
+      },
+      "weapon-master": { chooseWeaponAttackCategory: true }
+    },
+    "stands-like-a-bastion.json": {
+      "battle-competence": {
+        freeWeaponCategories: ["light", "medium", "heavy"],
+        freeArmorCategories: ["light", "medium", "heavy"]
+      }
+    },
+    "builds-allies.json": {
+      "automaton-armor-upgrade": { grantedArmorItemCategory: "light" },
+      "automaton-heavy-armor-upgrade": { grantedArmorItemCategory: "heavy" }
+    }
+  };
+
+  for (const [filename, abilities] of Object.entries(expected)) {
+    const english = englishFoci.get(filename);
+    const french = JSON.parse(fs.readFileSync(path.join(root, "packs", "foci-fr", "_source", filename), "utf8"));
+    for (const [abilityId, fields] of Object.entries(abilities)) {
+      const englishAbility = english.system.abilities.find(ability => ability.id === abilityId);
+      const frenchAbility = french.system.abilities.find(ability => ability.id === abilityId);
+      assert.ok(englishAbility, `${filename}/${abilityId} missing in EN`);
+      assert.ok(frenchAbility, `${filename}/${abilityId} missing in FR`);
+      for (const [field, value] of Object.entries(fields)) {
+        assert.deepEqual(englishAbility[field], value, `${filename}/${abilityId}/${field}/EN`);
+        assert.deepEqual(frenchAbility[field], value, `${filename}/${abilityId}/${field}/FR`);
+      }
+    }
+  }
+});

@@ -6,20 +6,37 @@
   "img": "icons/svg/aura.svg",
   "system": {
     "category": "species",
-    "genres": ["sciFi"],
+    "genres": [
+      "sciFi"
+    ],
     "grantsSecondDescriptor": false,
     "statOptions": [],
     "statAmount": 0,
     "skillOptions": [],
     "benefits": [
-      { "name": "Glide", "description": "<p>If jumping from a height elevated by at least 30 feet (9 m) from your surroundings, you can glide a long distance before landing at some lower point in range.</p>" },
-      { "name": "Reduced Falling Damage", "description": "<p>You reduce your falling damage from a fall by one wound severity.</p>" },
-      { "name": "No GM Intrusion on Dodge", "description": "<p>You don't get a GM intrusion if you roll a 1 on a dodge roll.</p>" }
+      {
+        "name": "Glide",
+        "description": "<p>If jumping from a height elevated by at least 30 feet (9 m) from your surroundings, you can glide a long distance before landing at some lower point in range.</p>"
+      },
+      {
+        "name": "Reduced Falling Damage",
+        "description": "<p>You reduce your falling damage from a fall by one wound severity.</p>"
+      },
+      {
+        "name": "No GM Intrusion on Dodge",
+        "description": "<p>You don't get a GM intrusion if you roll a 1 on a dodge roll.</p>"
+      }
     ],
     "description": "<p>Aaraks like you hail from a canyon-carved volcanic world that enjoys an embarrassment of thermals, updrafts from when the wind streams over mountains and ridges, and \"cloud streets\" of aligned lanes of cumulus clouds running parallel to the wind. Feathered, light-boned, and described as \"avian\" by certain other species, you've left your homeworld, looking for adventures (and thermals!) on other planets and habitats.</p><p><strong>You gain the following characteristics:</strong></p><ul><li>If jumping from a height elevated by at least 30 feet (9 m) from your surroundings, you can glide a long distance before landing at some lower point in range.</li><li>You reduce your falling damage from a fall by one wound severity.</li><li>You don't get a GM intrusion if you roll a 1 on a dodge roll.</li></ul><p>You can extend your glide duration and perhaps distance if you find a thermal, a series of thermals, or a low-gravity environment that can keep you aloft longer. Work with your GM to determine what local conditions are like.</p>"
   },
-  "folder": null,
+  "folder": "dscSciFiEn000001",
   "sort": 0,
-  "ownership": { "default": 0 },
-  "flags": { "cypher": { "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License." } }
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
 }

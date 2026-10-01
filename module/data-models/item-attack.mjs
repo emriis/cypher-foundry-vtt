@@ -1,3 +1,5 @@
+import { CYPHER } from "../config.mjs";
+
 /**
  * Data model for a weapon or other attack item.
  *
@@ -13,9 +15,11 @@ export default class CypherAttackData extends foundry.abstract.TypeDataModel {
       range: new StringField({ required: true, initial: "immediate", choices: ["immediate", "short", "long"] }),
       damage: new NumberField({ required: true, integer: true, initial: 2, min: 0 }),
       stat: new StringField({ required: true, initial: "might", choices: ["might", "speed"] }),
+      weaponFamily: new StringField({ required: true, initial: "", choices: ["", ...CYPHER.weaponFamilies] }),
+      attackSkillCategory: new StringField({ required: true, initial: "", choices: ["", ...CYPHER.attackSkillCategories] }),
       // Can the character use this weapon without penalty? (determined by their Type, or by
       // the "Other: Weapons" advancement). Unchecked by default for Real World medium/heavy weapons.
-      freelyUsable: new BooleanField({ required: true, initial: true }),
+      freelyUsable: new BooleanField({ required: true, initial: false }),
       equipped: new BooleanField({ required: true, initial: false }),
       description: new HTMLField({ required: true, blank: true })
     };

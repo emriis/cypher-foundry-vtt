@@ -6,11 +6,15 @@
   "img": "icons/svg/aura.svg",
   "system": {
     "category": "species",
-    "genres": ["fantasy"],
+    "genres": [
+      "fantasy"
+    ],
     "grantsSecondDescriptor": false,
     "statOptions": [],
     "statAmount": 0,
-    "skillOptions": ["Discrétion"],
+    "skillOptions": [
+      "Discrétion"
+    ],
     "benefits": [
       {
         "name": "Pas d'intrusion du MJ en défense d'Intellect",
@@ -23,9 +27,11 @@
     ],
     "description": "<p>Tu hantes les forêts et les royaumes naturels profonds, comme ton peuple le fait depuis des millénaires.</p><p><strong>Tu obtiens les caractéristiques suivantes :</strong></p><ul><li>Tu ne subis pas d'intrusion du MJ si tu fais un 1 sur un jet de défense d'Intellect.</li><li>Tu es entraîné en discrétion (si tu te trouves en zone forestière).</li><li>Tu infliges +1 dégât avec les arcs.</li></ul>"
   },
-  "folder": null,
+  "folder": "dscFantasyFr0001",
   "sort": 0,
-  "ownership": { "default": 0 },
+  "ownership": {
+    "default": 0
+  },
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."

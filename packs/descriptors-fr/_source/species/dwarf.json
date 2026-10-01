@@ -6,11 +6,15 @@
   "img": "icons/svg/aura.svg",
   "system": {
     "category": "species",
-    "genres": ["fantasy"],
+    "genres": [
+      "fantasy"
+    ],
     "grantsSecondDescriptor": false,
     "statOptions": [],
     "statAmount": 0,
-    "skillOptions": ["Navigation"],
+    "skillOptions": [
+      "Navigation"
+    ],
     "benefits": [
       {
         "name": "Bonus de récupération",
@@ -23,9 +27,11 @@
     ],
     "description": "<p>Tu es un natif trapu, large d'épaules et barbu, issu des montagnes et des collines.</p><p><strong>Tu obtiens les caractéristiques suivantes :</strong></p><ul><li>Tu ajoutes +1 à tes récupérations.</li><li>Tu es entraîné en navigation (si tu te trouves sous terre ou en zone montagneuse).</li><li>Tu infliges +1 dégât avec les haches.</li></ul>"
   },
-  "folder": null,
+  "folder": "dscFantasyFr0001",
   "sort": 0,
-  "ownership": { "default": 0 },
+  "ownership": {
+    "default": 0
+  },
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."

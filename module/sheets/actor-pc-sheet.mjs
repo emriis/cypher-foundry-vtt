@@ -254,7 +254,30 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
         callback: (event, button) => button.form.abilityId.value
       }
     });
-    if (abilityId) await actor.selectFocusAbility(abilityId);
+    if (abilityId) {
+      const ability = abilities.find(candidate => candidate.id === abilityId);
+      const weaponSkillCategory = ability?.chooseWeaponAttackCategory
+        ? await CypherPCSheet.#promptWeaponAttackCategory()
+        : null;
+      if (ability?.chooseWeaponAttackCategory && !weaponSkillCategory) return;
+      await actor.selectFocusAbility(abilityId, weaponSkillCategory);
+    }
+  }
+
+  static async #promptWeaponAttackCategory() {
+    return foundry.applications.api.DialogV2.prompt({
+      window: { title: game.i18n.localize("CYPHER.FocusSelection.ChooseWeaponCategoryTitle") },
+      content: `<div class="form-group">
+        <label>${game.i18n.localize("CYPHER.FocusSelection.ChooseWeaponCategory")}</label>
+        <select name="weaponCategory">${CONFIG.CYPHER.attackSkillCategories.map(category =>
+          `<option value="${category}">${game.i18n.localize(`CYPHER.AttackSkill.${category}`)}</option>`
+        ).join("")}</select>
+      </div>`,
+      ok: {
+        label: game.i18n.localize("CYPHER.Confirm.Add"),
+        callback: (event, button) => button.form.weaponCategory.value
+      }
+    });
   }
 
   /**
@@ -744,7 +767,15 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       ui.notifications.warn(game.i18n.localize("CYPHER.FocusSelection.ChooseExactlyTwo"));
       return;
     }
-    await actor.applyFocus(item, selectedIds);
+    const weaponSkillCategories = {};
+    for (const abilityId of selectedIds) {
+      const ability = item.system.abilities.find(candidate => candidate.id === abilityId);
+      if (!ability?.chooseWeaponAttackCategory) continue;
+      const category = await CypherPCSheet.#promptWeaponAttackCategory();
+      if (!category) return;
+      weaponSkillCategories[abilityId] = category;
+    }
+    await actor.applyFocus(item, selectedIds, weaponSkillCategories);
   }
 
   static async #applyDroppedType(actor, item) {

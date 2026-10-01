@@ -3,6 +3,45 @@
   <button type="button" class="item-create" data-action="itemCreate" data-type="skill">
     <i class="fa-solid fa-plus"></i> {{localize 'CYPHER.Skill.New'}}
   </button>
+  <div class="proficiency-summary">
+    <h3>{{localize 'CYPHER.Proficiency.Title'}}</h3>
+    <div class="proficiency-groups">
+      <div>
+        <h4>{{localize 'CYPHER.Proficiency.WeaponCategories'}}</h4>
+        <ul>
+          {{#each system.freeWeaponCategories as |category|}}
+          <li>{{localize (concat 'CYPHER.AttackType.' category)}} — {{localize 'CYPHER.Proficiency.Practiced'}}</li>
+          {{/each}}
+          {{#each system.freeWeaponSkillCategories as |category|}}
+          <li>{{localize (concat 'CYPHER.AttackSkill.' category)}} — {{localize 'CYPHER.Proficiency.Practiced'}}</li>
+          {{/each}}
+          {{#unless system.freeWeaponCategories.length}}
+          {{#unless system.freeWeaponSkillCategories.length}}<li>{{localize 'CYPHER.Proficiency.None'}}</li>{{/unless}}
+          {{/unless}}
+        </ul>
+      </div>
+      <div>
+        <h4>{{localize 'CYPHER.Proficiency.WeaponFamilies'}}</h4>
+        <ul>
+          {{#each system.freeWeaponFamilies as |family|}}
+          <li>{{localize (concat 'CYPHER.WeaponFamily.' family)}} — {{localize 'CYPHER.Proficiency.Practiced'}}</li>
+          {{else}}
+          <li>{{localize 'CYPHER.Proficiency.None'}}</li>
+          {{/each}}
+        </ul>
+      </div>
+      <div>
+        <h4>{{localize 'CYPHER.Proficiency.ArmorCategories'}}</h4>
+        <ul>
+          {{#each system.freeArmorCategories as |category|}}
+          <li>{{localize (concat 'CYPHER.Armor.' category)}} — {{localize 'CYPHER.Proficiency.Practiced'}}</li>
+          {{else}}
+          <li>{{localize 'CYPHER.Proficiency.None'}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
   <ul class="item-list skills-list">
     <li class="item-list-header">
       <span class="skill-name">{{localize 'CYPHER.Name'}}</span>

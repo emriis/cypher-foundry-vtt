@@ -1,12 +1,40 @@
 {
-  "_id": "Z6aN3tK9pM5vR2cB", "_key": "!items!Z6aN3tK9pM5vR2cB", "name": "Zantari", "type": "descriptor", "img": "icons/svg/aura.svg",
+  "_id": "Z6aN3tK9pM5vR2cB",
+  "_key": "!items!Z6aN3tK9pM5vR2cB",
+  "name": "Zantari",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
   "system": {
-    "category": "species", "genres": ["sciFi"], "grantsSecondDescriptor": false, "statOptions": [], "statAmount": 0, "skillOptions": ["Perception"],
+    "category": "species",
+    "genres": [
+      "sciFi"
+    ],
+    "grantsSecondDescriptor": false,
+    "statOptions": [],
+    "statAmount": 0,
+    "skillOptions": [
+      "Perception"
+    ],
     "benefits": [
-      { "name": "Cold and Ice Wound Resistance", "description": "<p>Reduce the severity of wounds you receive from ice and cold by one step.</p>" },
-      { "name": "Ranged Energy Weapon Damage", "description": "<p>You inflict +1 damage with ranged energy weapons.</p>" }
+      {
+        "name": "Cold and Ice Wound Resistance",
+        "description": "<p>Reduce the severity of wounds you receive from ice and cold by one step.</p>"
+      },
+      {
+        "name": "Ranged Energy Weapon Damage",
+        "description": "<p>You inflict +1 damage with ranged energy weapons.</p>"
+      }
     ],
     "description": "<p>Your antennae give you improved senses and your thick skin helps insulate you against the cold of the icy moon your people call home, but otherwise you appear humanoid. However, appearances can be deceptive, as zantari have five genders, which outsiders find difficult to distinguish. As a zantari, you value honor, ritual combat, and military service, but also artistry. Others sometimes describe you as emotional, but for you that's a compliment-without intensity of feeling, how could life be worth living?</p><p><strong>You gain the following characteristics:</strong></p><ul><li>Reduce the severity of wounds you receive from ice and cold by one step.</li><li>You are trained in perception.</li><li>You inflict +1 damage with ranged energy weapons.</li></ul>"
-  }, "folder": null, "sort": 0, "ownership": { "default": 0 },
-  "flags": { "cypher": { "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License." } }
+  },
+  "folder": "dscSciFiEn000001",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
 }

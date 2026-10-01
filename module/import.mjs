@@ -103,8 +103,11 @@ export function buildActorData(jsonData) {
         major: wounds.major
       },
       cypherLimit: Number(src.equipment?.cypherLimit) || 2,
-      canFreelyUseAllWeapons: freely.weaponCats.size >= 3,
-      canFreelyUseAllArmor: freely.armorCats.size >= 3,
+      freeWeaponCategories: [...new Set([...CYPHER.coreFreeWeaponCategories, ...freely.weaponCats])],
+      freeArmorCategories: [...freely.armorCats],
+      freeWeaponFamilies: [],
+      canFreelyUseAllWeapons: false,
+      canFreelyUseAllArmor: false,
       biography: src.description ?? "",
       notes: src.gmNotes ?? ""
     }

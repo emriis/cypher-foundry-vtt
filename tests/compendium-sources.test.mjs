@@ -78,8 +78,10 @@ for (const language of ["en", "fr"]) {
     assert.deepEqual(barbarian.system.poolBonuses, { might: 3, speed: 1, intellect: 0 });
     assert.deepEqual(barbarian.system.woundBonuses, { minor: 3, moderate: 1, major: 0 });
     assert.equal(barbarian.system.edgeChoice, 1);
-    assert.equal(barbarian.system.freeWeapons, true);
-    assert.equal(barbarian.system.freeArmor, true);
+    assert.equal(barbarian.system.freeWeapons, false);
+    assert.equal(barbarian.system.freeArmor, false);
+    assert.deepEqual(barbarian.system.freeWeaponCategories, ["light", "medium", "heavy"]);
+    assert.deepEqual(barbarian.system.freeArmorCategories, ["light", "medium"]);
     assert.deepEqual(
       barbarian.system.abilities.map(ability => [ability.name, ability.enabler]),
       [
@@ -90,12 +92,25 @@ for (const language of ["en", "fr"]) {
     );
 
     const readType = filename => JSON.parse(fs.readFileSync(path.join(directory, filename), "utf8"));
+    const cleric = readType("cleric.json");
+    assert.deepEqual(cleric.system.freeWeaponCategories, ["light", "medium"]);
+    assert.deepEqual(cleric.system.freeArmorCategories, ["light", "medium", "heavy"]);
+    const axeFighter = readType("axe-fighter.json");
+    assert.deepEqual(axeFighter.system.freeWeaponCategories, ["light"]);
+    assert.deepEqual(axeFighter.system.freeWeaponFamilies, ["axes"]);
+    assert.deepEqual(axeFighter.system.freeArmorCategories, ["light", "medium", "heavy"]);
+    const mage = readType("mage.json");
+    assert.deepEqual(mage.system.freeWeaponCategories, ["light"]);
+    assert.deepEqual(mage.system.freeArmorCategories, []);
     const mechanics = item => ({
       poolBonuses: item.system.poolBonuses,
       edgeChoice: item.system.edgeChoice,
       woundBonuses: item.system.woundBonuses,
       freeWeapons: item.system.freeWeapons,
       freeArmor: item.system.freeArmor,
+      freeWeaponCategories: item.system.freeWeaponCategories,
+      freeArmorCategories: item.system.freeArmorCategories,
+      freeWeaponFamilies: item.system.freeWeaponFamilies,
       skillOptions: item.system.skillOptions,
       abilities: item.system.abilities,
       statOptions: item.system.statOptions
@@ -242,6 +257,8 @@ test("Descriptor sources are directly maintained as valid bilingual pairs", () =
 
   for (const [filename, en] of enSources) {
     const fr = frSources.get(filename);
+    assert.equal(fr._key.startsWith("!folders!"), en._key.startsWith("!folders!"), filename);
+    if (en._key.startsWith("!folders!")) continue;
     assertDocumentIdentity(en, "descriptor");
     assertDocumentIdentity(fr, "descriptor");
     assert.equal(fr.system.category ?? "descriptor", en.system.category ?? "descriptor", `${filename}/category`);
@@ -256,6 +273,45 @@ test("Descriptor sources are directly maintained as valid bilingual pairs", () =
         assert.ok(document.system.skillOptions.some(Boolean), filename);
       }
       assert.ok(document.system.skillOptions.every(option => typeof option === "string"), filename);
+    }
+  }
+});
+
+test("Descriptor packs group species and standard entries into separate folders", () => {
+  for (const language of ["en", "fr"]) {
+    const sources = readPackSources(`descriptors-${language}`);
+    const entries = [...sources.entries()].map(([filename, document]) => ({ filename, document }));
+    const folders = entries.filter(({ document }) => document._key.startsWith("!folders!"));
+    const items = entries.filter(({ document }) => document._key.startsWith("!items!"));
+    const expectedNames = language === "en"
+      ? { species: "Species", standard: "General Descriptors", fantasy: "Fantasy", sciFi: "Science Fiction", mixed: "Fantasy & Science Fiction" }
+      : { species: "Espèces", standard: "Descripteurs généraux", fantasy: "Fantasy", sciFi: "Science-fiction", mixed: "Fantasy et science-fiction" };
+    const folderByName = new Map(folders.map(({ document }) => [document.name, document]));
+
+    assert.equal(folders.length, 5, language);
+    for (const { document } of folders) {
+      assert.match(document._id, /^[A-Za-z0-9]{16}$/);
+      assert.equal(document._key, `!folders!${document._id}`);
+      assert.equal(document.type, "Item");
+    }
+    for (const name of Object.values(expectedNames)) {
+      assert.ok(folderByName.has(name), `${language}/${name}`);
+    }
+    assert.equal(folderByName.get(expectedNames.species).folder, null, `${language}/species root`);
+    assert.equal(folderByName.get(expectedNames.standard).folder, null, `${language}/general root`);
+    for (const name of [expectedNames.fantasy, expectedNames.sciFi, expectedNames.mixed]) {
+      assert.equal(folderByName.get(name).folder, folderByName.get(expectedNames.species)._id, `${language}/${name} parent`);
+    }
+    for (const { filename, document } of items) {
+      const category = document.system.category ?? "descriptor";
+      let expectedFolder = expectedNames.standard;
+      if (category === "species") {
+        const genres = document.system.genres ?? [];
+        expectedFolder = genres.length > 1
+          ? expectedNames.mixed
+          : genres[0] === "fantasy" ? expectedNames.fantasy : expectedNames.sciFi;
+      }
+      assert.equal(folderByName.get(expectedFolder)?._id, document.folder, `${language}/${filename}`);
     }
   }
 });

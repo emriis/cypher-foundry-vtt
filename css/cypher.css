@@ -604,6 +604,31 @@
   color: var(--cypher-color-accent);
 }
 
+.cypher .proficiency-summary {
+  border: 1px solid var(--cypher-color-border-faint);
+  border-radius: var(--cypher-radius-md);
+  background: var(--cypher-color-bg-card);
+  padding: var(--cypher-space-md) var(--cypher-space-lg);
+  margin-bottom: var(--cypher-space-lg);
+}
+
+.cypher .proficiency-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--cypher-space-lg);
+}
+
+.cypher .proficiency-groups h4 {
+  margin: 0 0 var(--cypher-space-sm);
+}
+
+.cypher .proficiency-groups ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: var(--cypher-font-size-sm);
+}
+
 .cypher .inventory-section h3 {
   border-bottom: 1px solid var(--cypher-color-border-soft);
   margin-bottom: var(--cypher-space-xs);

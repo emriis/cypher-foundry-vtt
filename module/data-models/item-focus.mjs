@@ -1,3 +1,5 @@
+import { CYPHER } from "../config.mjs";
+
 const { StringField, NumberField, HTMLField, ArrayField, BooleanField, SchemaField } = foundry.data.fields;
 
 /**
@@ -24,6 +26,24 @@ export default class CypherFocusData extends foundry.abstract.TypeDataModel {
             { required: true, initial: [] }
           )
         }),
+        freeWeaponCategories: new ArrayField(
+          new StringField({ required: true, choices: CYPHER.weaponCategories }),
+          { required: true, initial: [] }
+        ),
+        freeArmorCategories: new ArrayField(
+          new StringField({ required: true, choices: CYPHER.armorCategoryIds }),
+          { required: true, initial: [] }
+        ),
+        freeWeaponFamilies: new ArrayField(
+          new StringField({ required: true, choices: CYPHER.weaponFamilies }),
+          { required: true, initial: [] }
+        ),
+        freeWeaponSkillCategories: new ArrayField(
+          new StringField({ required: true, choices: CYPHER.attackSkillCategories }),
+          { required: true, initial: [] }
+        ),
+        chooseWeaponAttackCategory: new BooleanField({ required: true, initial: false }),
+        grantedArmorItemCategory: new StringField({ required: true, initial: "", choices: ["", ...CYPHER.armorCategoryIds] }),
         description: new HTMLField({ required: true, blank: true })
       }), { required: true, initial: [] }),
       description: new HTMLField({ required: true, blank: true })

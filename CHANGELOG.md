@@ -34,6 +34,10 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ### Changed
 
+- Descriptor compendiums now separate general Descriptors from species and group species by genre, with multi-genre species in a dedicated shared folder.
+- Weapon and armor familiarity now follows CRD categories instead of broad all-or-nothing Type flags. Core characters freely use light weapons but no armor; Focus grants apply only to selected abilities and their declared category or weapon family.
+- Attack rolls now ease light-weapon attacks, apply unfamiliar-weapon hindrance by category, and honor matching practiced attack skills without treating them as freely usable weapon grants.
+- Added a schema migration that converts legacy Type-wide free-use flags into exact category permissions while preserving purchased all-category advancements.
 - Harmonized Type abilities with the shared Focus ability schema and corrected 28 bilingual
   Focus ability IDs and prerequisite references to their canonical English CRD slugs.
 - Synchronized 22 English and French Focus ability descriptions and corrected affected Type
