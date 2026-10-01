@@ -6,11 +6,15 @@
   "img": "icons/svg/aura.svg",
   "system": {
     "category": "species",
-    "genres": ["fantasy"],
+    "genres": [
+      "fantasy"
+    ],
     "grantsSecondDescriptor": false,
     "statOptions": [],
     "statAmount": 0,
-    "skillOptions": ["Magic Lore"],
+    "skillOptions": [
+      "Magic Lore"
+    ],
     "benefits": [
       {
         "name": "Fire and Heat Wound Resistance",
@@ -23,9 +27,11 @@
     ],
     "description": "<p>Part human and part something from another dimension, you might be the orphan of a supernatural dalliance.</p><p><strong>You gain the following characteristics:</strong></p><ul><li>Reduce the severity of wounds you receive from fire and heat by one step.</li><li>You are trained in magic lore.</li><li>You inflict +1 damage with unarmed attacks.</li></ul>"
   },
-  "folder": null,
+  "folder": "dscFantasyEn0001",
   "sort": 0,
-  "ownership": { "default": 0 },
+  "ownership": {
+    "default": 0
+  },
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."

@@ -93,6 +93,96 @@ test("rollAttack delegates weapon familiarity and damage to the actor task roll"
   assert.equal(received.difficulty, 2);
 });
 
+test("light weapons use the Core Character baseline and ease their attack", async () => {
+  let received;
+  const item = {
+    type: "attack",
+    name: "Knife",
+    system: { damage: 2, attackType: "light", stat: "speed", freelyUsable: false },
+    actor: {
+      system: {
+        freeWeaponCategories: ["light"],
+        freeWeaponFamilies: [],
+        canFreelyUseAllWeapons: false
+      },
+      rollTask: async options => { received = options; return "rolled"; }
+    }
+  };
+
+  await CypherItem.prototype.rollAttack.call(item);
+
+  assert.equal(received.extraHinderSteps, 0);
+  assert.equal(received.extraEaseSteps, 1);
+  assert.equal(received.baseDamage, 2);
+});
+
+test("a practiced skill for the exact attack category cancels unfamiliar-weapon hindrance", async () => {
+  let received;
+  const item = {
+    type: "attack",
+    name: "Broadsword",
+    system: {
+      damage: 4,
+      attackType: "medium",
+      attackSkillCategory: "mediumBladed",
+      weaponFamily: "swords",
+      stat: "might",
+      freelyUsable: false
+    },
+    actor: {
+      system: {
+        freeWeaponCategories: ["light"],
+        freeWeaponFamilies: [],
+        canFreelyUseAllWeapons: false
+      },
+      items: new Map([[
+        "medium-blades",
+        { type: "skill", system: { level: "practiced", attackCategory: "mediumBladed", stepModifier: 0 } }
+      ]]),
+      rollTask: async options => { received = options; return "rolled"; }
+    }
+  };
+
+  await CypherItem.prototype.rollAttack.call(item, { skillItemId: "medium-blades" });
+
+  assert.equal(received.extraHinderSteps, 0);
+  assert.equal(received.extraEaseSteps, 0);
+});
+
+test("Weapon Master familiarity applies only to its selected attack category", async () => {
+  let received;
+  const actor = {
+    system: {
+      freeWeaponCategories: ["light"],
+      freeWeaponFamilies: [],
+      freeWeaponSkillCategories: ["mediumBladed"],
+      canFreelyUseAllWeapons: false
+    },
+    rollTask: async options => { received = options; return "rolled"; }
+  };
+  const item = {
+    type: "attack",
+    name: "Broadsword",
+    system: {
+      damage: 4,
+      attackType: "medium",
+      attackSkillCategory: "mediumBladed",
+      weaponFamily: "swords",
+      stat: "might",
+      freelyUsable: false
+    },
+    actor
+  };
+
+  await CypherItem.prototype.rollAttack.call(item);
+  assert.equal(received.extraHinderSteps, 0);
+
+  item.system.attackSkillCategory = "mediumRanged";
+  item.system.weaponFamily = "firearms";
+  await CypherItem.prototype.rollAttack.call(item);
+  assert.equal(received.extraHinderSteps, 1);
+});
+
 test("useCypher depletes the item and creates a chat message", async () => {
   let update;
   let message;

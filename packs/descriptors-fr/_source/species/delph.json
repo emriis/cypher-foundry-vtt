@@ -1,12 +1,38 @@
 {
-  "_id": "D5lP8vR1mK6qT3aN", "_key": "!items!D5lP8vR1mK6qT3aN", "name": "Delphe", "type": "descriptor", "img": "icons/svg/aura.svg",
+  "_id": "D5lP8vR1mK6qT3aN",
+  "_key": "!items!D5lP8vR1mK6qT3aN",
+  "name": "Delphe",
+  "type": "descriptor",
+  "img": "icons/svg/aura.svg",
   "system": {
-    "category": "species", "genres": ["sciFi"], "grantsSecondDescriptor": false, "statOptions": [], "statAmount": 0, "skillOptions": [],
+    "category": "species",
+    "genres": [
+      "sciFi"
+    ],
+    "grantsSecondDescriptor": false,
+    "statOptions": [],
+    "statAmount": 0,
+    "skillOptions": [],
     "benefits": [
-      { "name": "Phéromones", "description": "<p>Tu peux bénéficier d'un atout dans les interactions sociales positives (persuasion ou tromperie), si tes phéromones affectent la personne à qui tu t'adresses.</p>" },
-      { "name": "Camouflage cutané", "description": "<p>En prenant dix minutes pour adapter ta peau à un environnement, tu gagnes un atout aux tâches de discrétion dans cet environnement.</p>" }
+      {
+        "name": "Phéromones",
+        "description": "<p>Tu peux bénéficier d'un atout dans les interactions sociales positives (persuasion ou tromperie), si tes phéromones affectent la personne à qui tu t'adresses.</p>"
+      },
+      {
+        "name": "Camouflage cutané",
+        "description": "<p>En prenant dix minutes pour adapter ta peau à un environnement, tu gagnes un atout aux tâches de discrétion dans cet environnement.</p>"
+      }
     ],
     "description": "<p>Les Delphes comme toi sont bienvenu·es presque partout, souvent grâce à leur <strong>art cutané</strong> - la capacité métachrotique de ton peuple à créer des motifs colorés, uniques et changeants sur toute la surface de ton corps, y compris sur tes élégantes vrilles céphaliques. Lorsque tu t'appliques vraiment, tu peux produire des motifs d'une beauté saisissante... ou te <strong>camoufler</strong> efficacement dans certains environnements, à condition d'avoir environ dix minutes pour modifier ton apparence. Moins connu : les Delphes produisent aussi des <strong>phéromones intraspécifiques</strong> (que tu le veuilles ou non), que beaucoup - Delphes ou non - trouvent séduisantes, ou du moins agréables.</p><p><strong>Tu obtiens les caractéristiques suivantes :</strong></p><ul><li>Tu peux bénéficier d'<strong>un atout dans les interactions sociales positives</strong> (persuasion ou tromperie), si tes phéromones affectent la personne à qui tu t'adresses.</li><li>En prenant <strong>dix minutes</strong> pour adapter ta peau à un environnement, tu gagnes <strong>un atout aux tâches de discrétion</strong> dans cet environnement.</li></ul><p>Tes phéromones n'affectent pas les machines, et n'affectent peut-être pas toutes les espèces alien. Travaille avec ton·ta MJ pour déterminer quelles espèces réagissent positivement à ta présence.</p>"
-  }, "folder": null, "sort": 0, "ownership": { "default": 0 },
-  "flags": { "cypher": { "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License." } }
+  },
+  "folder": "dscSciFiFr000001",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
 }

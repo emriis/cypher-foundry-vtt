@@ -8,17 +8,26 @@
       <option value="might" {{#ifEquals system.stat "might"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.might'}}</option>
       <option value="speed" {{#ifEquals system.stat "speed"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.speed'}}</option>
       <option value="intellect" {{#ifEquals system.stat "intellect"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.intellect'}}</option>
-      <option value="none" {{#ifEquals system.stat "none"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.none'}}</option>
+      <option value="practiced" {{#ifEquals system.stat "practiced"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.practiced'}}</option>
     </select>
   </div>
   <div class="form-group">
     <label>{{localize 'CYPHER.Skill.Level'}}</label>
     <select name="system.level">
       <option value="inability" {{#ifEquals system.level "inability"}}selected{{/ifEquals}}>{{localize 'CYPHER.SkillLevel.inability'}}</option>
-      <option value="none" {{#ifEquals system.level "none"}}selected{{/ifEquals}}>{{localize 'CYPHER.SkillLevel.none'}}</option>
+      <option value="practiced" {{#ifEquals system.level "practiced"}}selected{{/ifEquals}}>{{localize 'CYPHER.SkillLevel.practiced'}}</option>
       <option value="trained" {{#ifEquals system.level "trained"}}selected{{/ifEquals}}>{{localize 'CYPHER.SkillLevel.trained'}}</option>
       <option value="specialized" {{#ifEquals system.level "specialized"}}selected{{/ifEquals}}>{{localize 'CYPHER.SkillLevel.specialized'}}</option>
       <option value="expert" {{#ifEquals system.level "expert"}}selected{{/ifEquals}}>{{localize 'CYPHER.SkillLevel.expert'}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>{{localize 'CYPHER.AttackSkill.Category'}}</label>
+    <select name="system.attackCategory">
+      <option value="" {{#ifEquals system.attackCategory ""}}selected{{/ifEquals}}>{{localize 'CYPHER.AttackSkill.none'}}</option>
+      {{#each config.attackSkillCategories as |category|}}
+      <option value="{{category}}" {{#ifEquals ../system.attackCategory category}}selected{{/ifEquals}}>{{localize (concat "CYPHER.AttackSkill." category)}}</option>
+      {{/each}}
     </select>
   </div>
   {{/ifEquals}}
@@ -35,7 +44,7 @@
   <div class="form-group inline">
     <label>{{localize 'CYPHER.Ability.CostStat'}}</label>
     <select name="system.cost.stat">
-      <option value="none" {{#ifEquals system.cost.stat "none"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.none'}}</option>
+      <option value="practiced" {{#ifEquals system.cost.stat "practiced"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.practiced'}}</option>
       <option value="might" {{#ifEquals system.cost.stat "might"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.might'}}</option>
       <option value="speed" {{#ifEquals system.cost.stat "speed"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.speed'}}</option>
       <option value="intellect" {{#ifEquals system.cost.stat "intellect"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.intellect'}}</option>
@@ -45,7 +54,7 @@
   <div class="form-group">
     <label>{{localize 'CYPHER.Ability.Action'}}</label>
     <select name="system.action">
-      <option value="none" {{#ifEquals system.action "none"}}selected{{/ifEquals}}>{{localize 'CYPHER.Ability.ActionNone'}}</option>
+      <option value="practiced" {{#ifEquals system.action "practiced"}}selected{{/ifEquals}}>{{localize 'CYPHER.Ability.ActionPracticed'}}</option>
       <option value="action" {{#ifEquals system.action "action"}}selected{{/ifEquals}}>{{localize 'CYPHER.Ability.ActionStandard'}}</option>
       <option value="movement" {{#ifEquals system.action "movement"}}selected{{/ifEquals}}>{{localize 'CYPHER.Ability.ActionMovement'}}</option>
     </select>
@@ -107,6 +116,25 @@
       <option value="light" {{#ifEquals system.attackType "light"}}selected{{/ifEquals}}>{{localize 'CYPHER.AttackType.light'}}</option>
       <option value="medium" {{#ifEquals system.attackType "medium"}}selected{{/ifEquals}}>{{localize 'CYPHER.AttackType.medium'}}</option>
       <option value="heavy" {{#ifEquals system.attackType "heavy"}}selected{{/ifEquals}}>{{localize 'CYPHER.AttackType.heavy'}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>{{localize 'CYPHER.WeaponFamily.Label'}}</label>
+    <select name="system.weaponFamily">
+      <option value="" {{#ifEquals system.weaponFamily ""}}selected{{/ifEquals}}>{{localize 'CYPHER.WeaponFamily.none'}}</option>
+      <option value="axes" {{#ifEquals system.weaponFamily "axes"}}selected{{/ifEquals}}>{{localize 'CYPHER.WeaponFamily.axes'}}</option>
+      <option value="knives" {{#ifEquals system.weaponFamily "knives"}}selected{{/ifEquals}}>{{localize 'CYPHER.WeaponFamily.knives'}}</option>
+      <option value="swords" {{#ifEquals system.weaponFamily "swords"}}selected{{/ifEquals}}>{{localize 'CYPHER.WeaponFamily.swords'}}</option>
+      <option value="firearms" {{#ifEquals system.weaponFamily "firearms"}}selected{{/ifEquals}}>{{localize 'CYPHER.WeaponFamily.firearms'}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>{{localize 'CYPHER.AttackSkill.Category'}}</label>
+    <select name="system.attackSkillCategory">
+      <option value="" {{#ifEquals system.attackSkillCategory ""}}selected{{/ifEquals}}>{{localize 'CYPHER.AttackSkill.none'}}</option>
+      {{#each config.attackSkillCategories as |category|}}
+      <option value="{{category}}" {{#ifEquals ../system.attackSkillCategory category}}selected{{/ifEquals}}>{{localize (concat "CYPHER.AttackSkill." category)}}</option>
+      {{/each}}
     </select>
   </div>
   <div class="form-group">

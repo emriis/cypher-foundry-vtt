@@ -87,7 +87,7 @@ export default class CypherActor extends Actor {
   async rollTask({
     stat = "might", difficulty = 3, effortLevels = 0, assetSteps = 0,
     skillItemId = null, isAttack = false, baseDamage = 0, flavor = "",
-    extraHinderSteps = 0, luckyShot = false,
+    extraHinderSteps = 0, extraEaseSteps = 0, luckyShot = false,
     defenseType = null, incomingSeverity = "minor", armorModifier = 0, shieldItemId = null
   } = {}) {
     if (this.type !== "pc") {
@@ -133,7 +133,7 @@ export default class CypherActor extends Actor {
       ? (this.system.armor?.speedTaskHinder ?? 0)
       : 0;
 
-    const totalSteps = effortLevels + assetSteps + skillSteps - woundHinder - extraHinderSteps + armorModifier - autoArmorSpeedHinder;
+    const totalSteps = effortLevels + assetSteps + skillSteps + extraEaseSteps - woundHinder - extraHinderSteps + armorModifier - autoArmorSpeedHinder;
     const effectiveDifficulty = Math.max(0, difficulty - totalSteps);
     const targetNumber = effectiveDifficulty * 3;
 
@@ -483,9 +483,11 @@ export default class CypherActor extends Actor {
         } else if (slot.otherType === "focus") {
           chatNote = game.i18n.localize("CYPHER.Advancement.OtherFocusNote");
         } else if (slot.otherType === "armor") {
+          updates["system.freeArmorCategories"] = [...CYPHER.armorCategoryIds];
           updates["system.canFreelyUseAllArmor"] = true;
           chatNote = game.i18n.localize("CYPHER.Advancement.OtherArmorNote");
         } else if (slot.otherType === "weapons") {
+          updates["system.freeWeaponCategories"] = [...CYPHER.weaponCategories];
           updates["system.canFreelyUseAllWeapons"] = true;
           chatNote = game.i18n.localize("CYPHER.Advancement.OtherWeaponsNote");
         } else if (slot.otherType === "genre") {
@@ -848,8 +850,28 @@ export default class CypherActor extends Actor {
       const amount = Number(woundBonuses[severity]) || 0;
       if (amount) updates[`system.wounds.${severity}.max`] = this.system.wounds[severity].max + amount;
     }
-    if (system.freeWeapons) updates["system.canFreelyUseAllWeapons"] = true;
-    if (system.freeArmor) updates["system.canFreelyUseAllArmor"] = true;
+    if (Array.isArray(system.freeWeaponCategories) && system.freeWeaponCategories.length) {
+      updates["system.freeWeaponCategories"] = [...new Set([
+        ...(this.system.freeWeaponCategories ?? []),
+        ...system.freeWeaponCategories
+      ])];
+    } else if (system.freeWeapons) {
+      updates["system.canFreelyUseAllWeapons"] = true;
+    }
+    if (Array.isArray(system.freeArmorCategories) && system.freeArmorCategories.length) {
+      updates["system.freeArmorCategories"] = [...new Set([
+        ...(this.system.freeArmorCategories ?? []),
+        ...system.freeArmorCategories
+      ])];
+    } else if (system.freeArmor) {
+      updates["system.canFreelyUseAllArmor"] = true;
+    }
+    if (Array.isArray(system.freeWeaponFamilies) && system.freeWeaponFamilies.length) {
+      updates["system.freeWeaponFamilies"] = [...new Set([
+        ...(this.system.freeWeaponFamilies ?? []),
+        ...system.freeWeaponFamilies
+      ])];
+    }
 
     await this.update(updates);
 
@@ -905,7 +927,7 @@ export default class CypherActor extends Actor {
    * @param {string[]} abilityIds Two initial tier-1 Focus ability ids.
    * @returns {Promise<boolean>} Whether the Focus was applied.
    */
-  async applyFocus(focusItem, abilityIds) {
+  async applyFocus(focusItem, abilityIds, weaponSkillCategories = {}) {
     if (this.type !== "pc" || focusItem?.type !== "focus") return false;
     if (this.getFlag("cypher", "appliedFocusId")) return false;
 
@@ -914,15 +936,45 @@ export default class CypherActor extends Actor {
       return false;
     }
 
+    const selectedAbilities = focusItem.system.abilities.filter(ability => selected.includes(ability.id));
+    if (selectedAbilities.some(ability =>
+      ability.chooseWeaponAttackCategory
+      && !CYPHER.attackSkillCategories.includes(weaponSkillCategories[ability.id])
+    )) return false;
+    const freeWeaponCategories = selectedAbilities.flatMap(ability => ability.freeWeaponCategories ?? []);
+    const freeArmorCategories = selectedAbilities.flatMap(ability => ability.freeArmorCategories ?? []);
+    const freeWeaponFamilies = selectedAbilities.flatMap(ability => ability.freeWeaponFamilies ?? []);
+    const freeWeaponSkillCategories = [
+      ...selectedAbilities.flatMap(ability => ability.freeWeaponSkillCategories ?? []),
+      ...Object.values(weaponSkillCategories)
+    ];
     await this.update({
       "system.focus": focusItem.name,
+      "system.freeWeaponCategories": [...new Set([
+        ...(this.system.freeWeaponCategories ?? CYPHER.coreFreeWeaponCategories),
+        ...freeWeaponCategories
+      ])],
+      "system.freeArmorCategories": [...new Set([
+        ...(this.system.freeArmorCategories ?? CYPHER.coreFreeArmorCategories),
+        ...freeArmorCategories
+      ])],
+      "system.freeWeaponFamilies": [...new Set([
+        ...(this.system.freeWeaponFamilies ?? []),
+        ...freeWeaponFamilies
+      ])],
+      "system.freeWeaponSkillCategories": [...new Set([
+        ...(this.system.freeWeaponSkillCategories ?? []),
+        ...freeWeaponSkillCategories
+      ])],
       "flags.cypher.appliedFocusId": focusItem.id ?? focusItem._id,
       "flags.cypher.appliedFocusGraph": focusItem.system,
       "flags.cypher.focusAbilityIds": selected
     });
-    await this.createEmbeddedDocuments("Item", selected.map(abilityId =>
-      CypherActor._focusAbilityItemData(focusItem, focusItem.system.abilities.find(ability => ability.id === abilityId))
-    ));
+    const selectedItems = selectedAbilities.map(ability => CypherActor._focusAbilityItemData(focusItem, ability));
+    const armorItems = selectedAbilities
+      .filter(ability => ability.grantedArmorItemCategory)
+      .map(ability => CypherActor._focusArmorItemData(focusItem, ability));
+    await this.createEmbeddedDocuments("Item", [...selectedItems, ...armorItems]);
     return true;
   }
 
@@ -932,18 +984,55 @@ export default class CypherActor extends Actor {
    * @param {string} abilityId Focus ability id to select.
    * @returns {Promise<boolean>} Whether the ability was selected.
    */
-  async selectFocusAbility(abilityId) {
+  async selectFocusAbility(abilityId, weaponSkillCategory = null) {
     if (this.type !== "pc") return false;
     const focus = this.getFlag("cypher", "appliedFocusGraph");
     const selected = this.getFlag("cypher", "focusAbilityIds") ?? [];
     if (!CypherActor.isFocusAbilityEligible(focus, selected, abilityId, this.system.tier)) return false;
 
     const ability = focus.abilities.find(candidate => candidate.id === abilityId);
-    await this.update({
+    if (ability.chooseWeaponAttackCategory && !CYPHER.attackSkillCategories.includes(weaponSkillCategory)) return false;
+    const updates = {
       "flags.cypher.focusAbilityIds": [...selected, abilityId],
       "flags.cypher.focusAbilityPendingTier": null
+    };
+    const freeWeaponCategories = ability.freeWeaponCategories ?? [];
+    const freeArmorCategories = ability.freeArmorCategories ?? [];
+    const freeWeaponFamilies = ability.freeWeaponFamilies ?? [];
+    const freeWeaponSkillCategories = [
+      ...(ability.freeWeaponSkillCategories ?? []),
+      ...(weaponSkillCategory ? [weaponSkillCategory] : [])
+    ];
+    if (freeWeaponCategories.length) {
+      updates["system.freeWeaponCategories"] = [...new Set([
+        ...(this.system.freeWeaponCategories ?? CYPHER.coreFreeWeaponCategories),
+        ...freeWeaponCategories
+      ])];
+    }
+    if (freeArmorCategories.length) {
+      updates["system.freeArmorCategories"] = [...new Set([
+        ...(this.system.freeArmorCategories ?? CYPHER.coreFreeArmorCategories),
+        ...freeArmorCategories
+      ])];
+    }
+    if (freeWeaponFamilies.length) {
+      updates["system.freeWeaponFamilies"] = [...new Set([
+        ...(this.system.freeWeaponFamilies ?? []),
+        ...freeWeaponFamilies
+      ])];
+    }
+    if (freeWeaponSkillCategories.length) {
+      updates["system.freeWeaponSkillCategories"] = [...new Set([
+        ...(this.system.freeWeaponSkillCategories ?? []),
+        ...freeWeaponSkillCategories
+      ])];
+    }
+    await this.update({
+      ...updates
     });
-    await this.createEmbeddedDocuments("Item", [CypherActor._focusAbilityItemData({ name: this.system.focus }, ability)]);
+    const items = [CypherActor._focusAbilityItemData({ name: this.system.focus }, ability)];
+    if (ability.grantedArmorItemCategory) items.push(CypherActor._focusArmorItemData({ name: this.system.focus }, ability));
+    await this.createEmbeddedDocuments("Item", items);
     return true;
   }
 
@@ -966,6 +1055,26 @@ export default class CypherActor extends Actor {
         cost: ability.cost,
         action: "none",
         description: ability.description
+      }
+    };
+  }
+
+  /**
+   * Creates the individual armor item granted by a Focus ability.
+   *
+   * This keeps a Focus-created suit's free use attached to that item instead
+   * of granting the same permission for every armor item of its category.
+   */
+  static _focusArmorItemData(focus, ability) {
+    return {
+      name: ability.name,
+      type: "armor",
+      system: {
+        category: ability.grantedArmorItemCategory,
+        freelyUsable: true,
+        equipped: false,
+        blockEaseDamage: 0,
+        description: game.i18n.format("CYPHER.FocusSelection.ArmorItemDescription", { name: focus.name })
       }
     };
   }

@@ -19,7 +19,17 @@
           "amount": 0,
           "options": []
         },
-        "description": "You can freely use all weapons and all armor. As an action, you learn the level of up to three creatures that you can see within short range. This ability can be foiled by disguises or shapechanging. Enabler for weapon use; action for evaluating creatures. The weapon use aspect of Battle Competence is a “catch up” ability for characters whose type doesn't give them the ability to use most weapons and armor, and they don't want to be limited to just their chosen weapon. Most characters with this focus won't need the catch-up aspect of Battle Competence at all."
+        "description": "You can freely use all weapons and all armor. As an action, you learn the level of up to three creatures that you can see within short range. This ability can be foiled by disguises or shapechanging. Enabler for weapon use; action for evaluating creatures. The weapon use aspect of Battle Competence is a “catch up” ability for characters whose type doesn't give them the ability to use most weapons and armor, and they don't want to be limited to just their chosen weapon. Most characters with this focus won't need the catch-up aspect of Battle Competence at all.",
+        "freeWeaponCategories": [
+          "light",
+          "medium",
+          "heavy"
+        ],
+        "freeArmorCategories": [
+          "light",
+          "medium",
+          "heavy"
+        ]
       },
       {
         "id": "display-of-skill",
@@ -47,7 +57,8 @@
           "amount": 0,
           "options": []
         },
-        "description": "Tu maîtrises un type d’arme (ex. lames moyennes, armes contondantes légères, armes lourdes à distance) qui t’était normalement inconnu. Tu peux utiliser librement ce type d’arme sans subir de pénalité. Tu infliges +1 dégât avec ce type d’arme. Tu es entraîné·e en artisanat pour ce type d’arme (tu peux les fabriquer et les réparer facilement via tes ressources). Tu peux prendre cette aptitude plusieurs fois, en choisissant un nouveau type d’arme à chaque fois."
+        "description": "Tu maîtrises un type d’arme (ex. lames moyennes, armes contondantes légères, armes lourdes à distance) qui t’était normalement inconnu. Tu peux utiliser librement ce type d’arme sans subir de pénalité. Tu infliges +1 dégât avec ce type d’arme. Tu es entraîné·e en artisanat pour ce type d’arme (tu peux les fabriquer et les réparer facilement via tes ressources). Tu peux prendre cette aptitude plusieurs fois, en choisissant un nouveau type d’arme à chaque fois.",
+        "chooseWeaponAttackCategory": true
       },
       {
         "id": "careful-shot",

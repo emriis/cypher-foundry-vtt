@@ -52,6 +52,22 @@ test("buildActorData creates a custom PC and maps pools and wounds", () => {
   assert.deepEqual(actor.system.wounds.minor, { current: 1, max: 3 });
 });
 
+test("buildActorData keeps the Core Character baseline and exact free-use categories", () => {
+  const actor = buildActorData({
+    name: "Test",
+    system: {},
+    items: [
+      { type: "skill", name: "Freely Use Medium Weapons" },
+      { type: "skill", name: "Freely Use Light Armor" }
+    ]
+  });
+
+  assert.deepEqual(actor.system.freeWeaponCategories, ["light", "medium"]);
+  assert.deepEqual(actor.system.freeArmorCategories, ["light"]);
+  assert.equal(actor.system.canFreelyUseAllWeapons, false);
+  assert.equal(actor.system.canFreelyUseAllArmor, false);
+});
+
 test("mapItems maps supported items and reports unsupported types", () => {
   const result = mapItems([
     { type: "skill", name: "Stealth", system: { basic: { rating: "specialized" }, description: "Quiet" } },

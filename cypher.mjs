@@ -95,7 +95,7 @@ Hooks.once("init", () => {
     scope: "world",
     config: false,
     type: String,
-    default: "0.1.0"
+    default: "0.1.7"
   });
 
   /* -------------------------------------------- */
