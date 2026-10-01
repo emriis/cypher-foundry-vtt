@@ -186,7 +186,7 @@ export function extractFreelyUsableCategories(rawItems) {
 
 const SKILL_LEVEL_MAP = {
   "inability": "inability",
-  "none": "none",
+  "practiced": "practiced",
   "trained": "trained",
   "specialized": "specialized",
   "expert": "expert"
@@ -204,7 +204,7 @@ function mapSkillLevel(rating) {
 function mapCostStat(pool) {
   const key = String(pool ?? "").toLowerCase();
   if (key === "might" || key === "speed" || key === "intellect") return key;
-  return "none";
+  return "practiced";
 }
 
 /**

@@ -1,3 +1,4 @@
+// Tests actor-owned Cypher rules with a minimal Actor stub instead of a live Foundry world.
 import assert from "node:assert/strict";
 import test from "node:test";
 

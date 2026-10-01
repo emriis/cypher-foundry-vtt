@@ -3,6 +3,10 @@
  *
  * Registers system configuration, custom documents, data models, sheets,
  * Handlebars helpers, world migrations, and document-level rules hooks.
+ *
+ * The other modules own the details: data models define saved fields,
+ * documents implement rules, and sheets connect player actions to those rules.
+ * This file is the wiring layer that tells Foundry which implementation to use.
  */
 import { CYPHER } from "./module/config.mjs";
 
@@ -15,6 +19,7 @@ import { importFromBuilder, openImportDialog, registerImportButton } from "./mod
 Hooks.once("init", () => {
   console.log("Cypher | Initialisation / Initializing");
 
+  // Publish shared configuration and macro entry points before sheets are opened.
   // Exposed for macro use, even if the sidebar button fails to find its
   // anchor point on a given Foundry version.
   game.cypher = { CYPHER, importFromBuilder, openImportDialog };
@@ -22,6 +27,7 @@ Hooks.once("init", () => {
 
   registerImportButton();
 
+  // Replace Foundry's generic Actor and Item documents with the system versions.
   /* -------------------------------------------- */
   /*  Document classes                              */
   /* -------------------------------------------- */
@@ -55,6 +61,7 @@ Hooks.once("init", () => {
   /* -------------------------------------------- */
   /*  Sheets                                       */
   /* -------------------------------------------- */
+  // A sheet is the user interface for one document type; each actor type gets its own layout.
   const DocumentSheetConfig = foundry.applications.apps.DocumentSheetConfig;
 
   DocumentSheetConfig.registerSheet(foundry.documents.Actor, "cypher", sheets.CypherPCSheet, {
@@ -125,6 +132,7 @@ Hooks.once("init", () => {
 
 Hooks.once("ready", async () => {
   console.log("Cypher | Prêt / Ready");
+  // Migrations run after world documents are available, so existing actors can be updated.
   await migrateWorld();
 });
 

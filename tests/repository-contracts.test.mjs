@@ -1,3 +1,4 @@
+// Checks repository-wide contracts such as manifest paths and matching locale keys.
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";

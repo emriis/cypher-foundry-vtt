@@ -6,6 +6,8 @@ const { ActorSheetV2 } = foundry.applications.sheets;
  *
  * Prepares template context and exposes UI actions for rolls, inventory,
  * advancement, recovery, and other player-character interactions.
+ * Templates display that context; their `data-action` attributes call the
+ * handlers below, which delegate rule changes to CypherActor or CypherItem.
  */
 export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
 
@@ -683,16 +685,12 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
   }
 
   /* -------------------------------------------- */
-  /*  Glisser-déposer / Drag & drop                 */
+  /*  Drag and drop                                 */
   /* -------------------------------------------- */
 
   /**
-   * Intercepte le dépôt d'un Descripteur (depuis un compendium ou le monde) pour appliquer
-   * ses effets plutôt que de l'intégrer tel quel comme un objet ordinaire — voir
-   * CypherActor#applyDescriptor pour le détail de ce qui est réellement créé/modifié.
-   * Intercepts dropping a Descriptor (from a compendium or the world) to apply its effects
-   * instead of embedding it as-is like a normal item — see CypherActor#applyDescriptor for
-   * what actually gets created/modified.
+  * Intercepts a dropped Descriptor and applies its benefits instead of embedding it as a
+  * normal item. CypherActor#applyDescriptor creates or updates the actor data that remains.
    *
    * @override
    */
