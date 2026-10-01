@@ -43,7 +43,7 @@ export default class CypherFocusData extends foundry.abstract.TypeDataModel {
           { required: true, initial: [] }
         ),
         chooseWeaponAttackCategory: new BooleanField({ required: true, initial: false }),
-        grantedArmorItemCategory: new StringField({ required: true, initial: "", choices: ["", ...CYPHER.armorCategoryIds] }),
+        grantedArmorItemCategory: new StringField({ required: true, initial: "", blank: true, choices: ["", ...CYPHER.armorCategoryIds] }),
         description: new HTMLField({ required: true, blank: true })
       }), { required: true, initial: [] }),
       description: new HTMLField({ required: true, blank: true })

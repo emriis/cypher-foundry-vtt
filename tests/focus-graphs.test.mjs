@@ -6,6 +6,42 @@ import test from "node:test";
 
 const root = path.resolve(import.meta.dirname, "..");
 
+class FieldDefinition {
+  constructor(options = {}) {
+    this.options = options;
+  }
+}
+
+class ArrayField extends FieldDefinition {
+  constructor(element, options = {}) {
+    super(options);
+    this.element = element;
+  }
+}
+
+class SchemaField extends FieldDefinition {
+  constructor(fields, options = {}) {
+    super(options);
+    this.fields = fields;
+  }
+}
+
+globalThis.foundry = {
+  abstract: { TypeDataModel: class {} },
+  data: {
+    fields: {
+      StringField: FieldDefinition,
+      NumberField: FieldDefinition,
+      HTMLField: FieldDefinition,
+      ArrayField,
+      BooleanField: FieldDefinition,
+      SchemaField
+    }
+  }
+};
+
+const { default: CypherFocusData } = await import("../module/data-models/item-focus.mjs");
+
 function slug(value) {
   return value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
     .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
@@ -14,6 +50,15 @@ function slug(value) {
 const englishFoci = new Map(fs.readdirSync(path.join(root, "packs", "foci-en", "_source"))
   .filter(file => file.endsWith(".json"))
   .map(file => [file, JSON.parse(fs.readFileSync(path.join(root, "packs", "foci-en", "_source", file), "utf8"))]));
+
+test("Focus abilities accept the blank default for an optional granted armor category", () => {
+  const schema = CypherFocusData.defineSchema();
+  const armorField = schema.abilities.element.fields.grantedArmorItemCategory;
+
+  assert.equal(armorField.options.initial, "");
+  assert.equal(armorField.options.blank, true);
+  assert.ok(armorField.options.choices.includes(""));
+});
 
 for (const language of ["en", "fr"]) {
   test(`${language} Focus sources use valid ability flowchart links`, () => {
