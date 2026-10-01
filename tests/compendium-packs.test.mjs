@@ -1,3 +1,4 @@
+// Verifies that each source pack has a compiled LevelDB directory for Foundry to load.
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";

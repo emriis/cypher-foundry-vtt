@@ -1,3 +1,4 @@
+{{!-- Main PC view for stat pools, wounds, armor, and quick task actions. --}}
 <section class="tab main {{tab.cssClass}}" data-group="primary" data-tab="main">
 
   <div class="stats-row">
@@ -32,12 +33,8 @@
         <h3>{{stat.label}}</h3>
         <a class="remove-custom-stat" data-action="deleteCustomStat" title="{{localize 'CYPHER.Stat.RemoveCustom'}}"><i class="fa-solid fa-xmark"></i></a>
       </div>
-      <!-- Champs cachés : préservent id/label lors de la soumission du formulaire entier.
-           Un ArrayField est TOUJOURS remplacé en bloc par Foundry — tout champ d'un élément
-           qui n'est pas présent comme <input> nommé serait sinon perdu à chaque soumission.
-           Hidden fields: preserve id/label across whole-form submission. An ArrayField is
-           ALWAYS replaced wholesale by Foundry — any element field not present as a named
-           <input> would otherwise be lost on every submit. -->
+       <!-- Preserve id and label on whole-form submission: Foundry replaces an ArrayField as a
+         whole, so any element field without a named input would otherwise be lost. -->
       <input type="hidden" name="system.customStats.{{@index}}.id" value="{{stat.id}}"/>
       <input type="hidden" name="system.customStats.{{@index}}.label" value="{{stat.label}}"/>
       <div class="pool-row">
@@ -175,10 +172,7 @@
       {{#each system.customFields as |field|}}
       <div class="custom-field-row" data-field-id="{{field.id}}">
         <label class="custom-field-label">{{field.label}}</label>
-        <!-- Champs cachés : préservent id/label/fieldType lors de la soumission du formulaire
-             entier (voir note équivalente sur les stats personnalisées plus haut).
-             Hidden fields: preserve id/label/fieldType across whole-form submission
-             (see equivalent note on custom stats above). -->
+        <!-- Preserve id, label, and fieldType on whole-form submission (see the custom-stat note). -->
         <input type="hidden" name="system.customFields.{{@index}}.id" value="{{field.id}}"/>
         <input type="hidden" name="system.customFields.{{@index}}.label" value="{{field.label}}"/>
         <input type="hidden" name="system.customFields.{{@index}}.fieldType" value="{{field.fieldType}}"/>

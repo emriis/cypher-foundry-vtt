@@ -1,3 +1,4 @@
+// Tests wound parsing separately because the Builder stores wounds in free-form notes.
 import assert from "node:assert/strict";
 import test from "node:test";
 

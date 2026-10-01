@@ -1,3 +1,4 @@
+// Tests task-roll calculations and outcomes with deterministic Foundry and dice stubs.
 import assert from "node:assert/strict";
 import test from "node:test";
 

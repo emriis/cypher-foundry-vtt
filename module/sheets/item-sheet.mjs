@@ -6,6 +6,8 @@ const { ItemSheetV2 } = foundry.applications.sheets;
  *
  * Supplies item data, shared configuration, and an enriched description to the
  * Handlebars templates while relying on ItemSheetV2 for common application behavior.
+ * Template inputs save to the registered Item data model, and sheet actions
+ * handle the item-specific choices that cannot be expressed as ordinary fields.
  */
 export default class CypherItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   /** Default application configuration for the item sheet. */
@@ -39,12 +41,8 @@ export default class CypherItemSheet extends HandlebarsApplicationMixin(ItemShee
       this.item.system.description ?? "", { relativeTo: this.item }
     );
 
-    // Dérivé en objet {might, speed, intellect} pour l'affichage en cases à cocher — le champ
-    // de données lui-même reste un tableau (statOptions), plus pratique pour la logique
-    // d'application (CypherActor#applyDescriptor).
-    // Derived into a {might, speed, intellect} object for checkbox display — the underlying
-    // data field itself stays an array (statOptions), which is more convenient for the
-    // application logic (CypherActor#applyDescriptor).
+    // The template needs a boolean per checkbox, while the data model stores a compact array
+    // of selected stat IDs for CypherActor#applyDescriptor.
     if (this.item.type === "descriptor") {
       const options = this.item.system.statOptions ?? [];
       context.statOptionsSet = {
@@ -58,8 +56,7 @@ export default class CypherItemSheet extends HandlebarsApplicationMixin(ItemShee
   }
 
   /**
-   * Ajoute ou retire une statistique de la liste des choix proposés par ce Descripteur.
-   * Adds or removes a stat from this Descriptor's list of offered choices.
+  * Adds or removes a stat from this Descriptor's list of offered choices.
    */
   static async #onToggleDescriptorStat(event, target) {
     const stat = target.dataset.stat;
@@ -69,8 +66,7 @@ export default class CypherItemSheet extends HandlebarsApplicationMixin(ItemShee
       : current.filter(s => s !== stat);
 
     if (next.length === 0) {
-      // Toujours garder au moins une statistique sélectionnée ; on annule la décoche.
-      // Always keep at least one stat selected; revert the uncheck.
+      // At least one stat must remain selectable, so restore the checkbox if this was the last one.
       target.checked = true;
       return;
     }
