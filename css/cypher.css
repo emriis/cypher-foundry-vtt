@@ -1,11 +1,6 @@
 /* ==================================================================
    CYPHER — Design System
    ==================================================================
-   Jetons de conception (variables CSS) centralisant couleurs, typo et
-   espacements. Objectif : cohérence visuelle, accessibilité (contrastes
-   WCAG AA vérifiés), et compatibilité avec les thèmes clair/sombre de
-   Foundry V13+ (classes .theme-light / .theme-dark posées par le cœur
-   du logiciel sur la fenêtre de la fiche).
    Design tokens (CSS variables) centralizing color, type, and spacing.
    Goal: visual consistency, accessibility (WCAG AA contrast verified),
    and compatibility with Foundry V13+'s light/dark themes (.theme-light
@@ -13,10 +8,7 @@
    ================================================================== */
 
 .cypher.sheet {
-  /* ---- Typographie / Typography ----
-     Signika est la police d'interface native de Foundry (lisible, humaniste,
-     sans-serif) — on la réutilise pour une cohérence visuelle avec le reste
-     du logiciel, avec une pile de secours système complète.
+  /* ---- Typography ----
      Signika is Foundry's own native UI font (legible, humanist sans-serif) —
      reused here for visual consistency with the rest of the software, with
      a full system fallback stack. */
@@ -28,7 +20,7 @@
   --cypher-font-size-lg: 1.2rem;
   --cypher-font-size-xl: 1.4rem;
 
-  /* ---- Espacement / Spacing ---- */
+  /* ---- Spacing ---- */
   --cypher-space-xs: 2px;
   --cypher-space-sm: 4px;
   --cypher-space-md: 8px;
@@ -39,19 +31,14 @@
   --cypher-radius-md: 6px;
   --cypher-radius-lg: 10px;
 
-  /* ---- Cible cliquable minimale (icônes seules) / Minimum click target (icon-only) ----
-     Recommandation AAA (2.5.5) : 44px. On vise un compromis raisonnable pour
-     une interface dense de fiche de personnage : 28px, largement supérieur
-     à la taille d'icône brute et confortable au clic/tap.
+  /* ---- Minimum click target for icon-only controls ----
      AAA recommendation (2.5.5): 44px. We aim for a reasonable compromise for
      a dense character sheet UI: 28px, well above raw icon size and
      comfortable to click/tap. */
   --cypher-target-size: 28px;
 
   /* ================================================================
-     THÈME CLAIR (par défaut) / LIGHT THEME (default)
-     Tous les ratios de contraste ci-dessous ont été vérifiés manuellement
-     (formule de luminance relative WCAG) contre leur fond réel d'usage.
+    LIGHT THEME (default)
      All contrast ratios below were manually verified (WCAG relative
      luminance formula) against their actual usage background.
      ================================================================ */
@@ -60,26 +47,26 @@
   --cypher-color-bg-card-alt: #e3f0e3;
   --cypher-color-bg-hover: #f0e6d4;
 
-  --cypher-color-text: #2a1e14;              /* 16.5:1 sur blanc / on white */
-  --cypher-color-text-muted: #5b4a3a;        /* 7.2:1 sur blanc / on white — remplace l'opacité pour garder un contraste garanti, replaces opacity to keep guaranteed contrast */
+  --cypher-color-text: #2a1e14;              /* 16.5:1 on white */
+  --cypher-color-text-muted: #5b4a3a;        /* 7.2:1 on white; avoids opacity that could reduce contrast. */
   --cypher-color-text-on-accent: #fffdfa;
 
   --cypher-color-border: #8a5a2c;
   --cypher-color-border-soft: rgba(138, 90, 44, 0.33);
   --cypher-color-border-faint: rgba(138, 90, 44, 0.2);
 
-  --cypher-color-accent: #8a5a2c;            /* 5.8:1 sur blanc / on white */
-  --cypher-color-accent-hover: #6e4722;      /* 8.0:1 sur blanc / on white */
+  --cypher-color-accent: #8a5a2c;            /* 5.8:1 on white */
+  --cypher-color-accent-hover: #6e4722;      /* 8.0:1 on white */
 
-  --cypher-color-success: #2f7a2f;           /* 5.4:1 sur blanc / on white */
-  --cypher-color-danger: #a11f1f;            /* 7.7:1 sur blanc / on white */
+  --cypher-color-success: #2f7a2f;           /* 5.4:1 on white */
+  --cypher-color-danger: #a11f1f;            /* 7.7:1 on white */
   --cypher-color-danger-bg: rgba(161, 31, 31, 0.08);
-  --cypher-color-info: #2f5a8a;              /* 7.1:1 sur blanc / on white */
+  --cypher-color-info: #2f5a8a;              /* 7.1:1 on white */
 
   --cypher-color-warning-bg: #f7e0c0;
-  --cypher-color-warning-text: #7a4a10;      /* 6.0:1 sur ce fond / on this bg */
+  --cypher-color-warning-text: #7a4a10;      /* 6.0:1 on this background */
   --cypher-color-danger-soft-bg: #f0c0c0;
-  --cypher-color-danger-soft-text: #7a1010;  /* 6.9:1 sur ce fond / on this bg */
+  --cypher-color-danger-soft-text: #7a1010;  /* 6.9:1 on this background */
 
   --cypher-focus-ring: #2f5a8a;
 
@@ -89,9 +76,7 @@
 }
 
 /* ================================================================
-   THÈME SOMBRE / DARK THEME
-   Activé automatiquement par Foundry (.theme-dark posé sur la fenêtre
-   selon le réglage du monde ou une surcharge par fiche).
+  DARK THEME
    Automatically activated by Foundry (.theme-dark applied to the window
    per world setting or a per-sheet override).
    ================================================================ */
@@ -101,15 +86,15 @@
   --cypher-color-bg-card-alt: #24361f;
   --cypher-color-bg-hover: #3a2f26;
 
-  --cypher-color-text: #f0e6d8;              /* 13.9:1 sur le fond sombre / on dark bg */
-  --cypher-color-text-muted: #c2b3a0;        /* ~9.6:1 sur le fond sombre / on dark bg */
+  --cypher-color-text: #f0e6d8;              /* 13.9:1 on the dark background */
+  --cypher-color-text-muted: #c2b3a0;        /* ~9.6:1 on the dark background */
   --cypher-color-text-on-accent: #211a14;
 
   --cypher-color-border: #a97c4a;
   --cypher-color-border-soft: rgba(201, 161, 90, 0.35);
   --cypher-color-border-faint: rgba(201, 161, 90, 0.22);
 
-  --cypher-color-accent: #c9a15a;            /* 7.1:1 sur le fond sombre / on dark bg */
+  --cypher-color-accent: #c9a15a;            /* 7.1:1 on the dark background */
   --cypher-color-accent-hover: #ddb877;
 
   --cypher-color-success: #6fcf6f;
@@ -126,13 +111,11 @@
 }
 
 /* ================================================================
-   Accessibilité transverse / Cross-cutting accessibility
+  Cross-cutting accessibility
    ================================================================ */
 
-/* Anneau de focus visible et cohérent sur tout élément interactif —
-   navigation clavier indispensable, absente jusqu'ici.
-   Visible, consistent focus ring on every interactive element —
-   essential keyboard navigation, previously absent entirely. */
+/* Use a visible, consistent focus ring on every interactive element so keyboard users can
+  identify which control is currently focused. */
 .cypher.sheet a:focus-visible,
 .cypher.sheet button:focus-visible,
 .cypher.sheet input:focus-visible,
@@ -144,8 +127,7 @@
   border-radius: var(--cypher-radius-sm);
 }
 
-/* Respecte la préférence système de réduction des animations.
-   Respects the system's reduced-motion preference. */
+/* Respect the user's system preference for reduced motion. */
 @media (prefers-reduced-motion: reduce) {
   .cypher.sheet * {
     transition: none !important;
@@ -153,10 +135,8 @@
   }
 }
 
-/* Cible cliquable minimale pour les icônes seules (édition, suppression,
-   bascules +/-) — évite les clics manqués, notamment tactiles.
-   Minimum click target for icon-only controls (edit, delete, +/- toggles)
-   — avoids missed clicks, especially on touch. */
+/* Give icon-only controls (edit, delete, and +/- toggles) a larger target to reduce missed
+  clicks, especially on touch screens. */
 .cypher.sheet .item-list a,
 .cypher.sheet .item-list button,
 .cypher.sheet .add-optional,
@@ -179,12 +159,8 @@
   background: var(--cypher-color-bg-hover);
 }
 
-/* Utilitaire "visible seulement par un lecteur d'écran" — pour les libellés
-   qui n'ont pas besoin d'être vus (le contexte visuel suffit : bloc "Might"
-   contenant déjà "Pool"/"Max" implicitement) mais doivent rester annoncés.
-   "Screen-reader only" utility — for labels that don't need to be seen (the
-   visual context already implies "Pool"/"Max" inside the "Might" block) but
-   must still be announced. */
+/* Keep labels available to screen readers when their meaning is clear from the visual context,
+  such as Pool and Max labels inside a stat block. */
 .cypher.sheet .sr-only {
   position: absolute;
   width: 1px;
@@ -198,7 +174,7 @@
 }
 
 /* ================================================================
-   En-tête / Header
+  Header
    ================================================================ */
 
 .cypher .sheet-header {
@@ -215,10 +191,7 @@
   gap: var(--cypher-space-lg);
 }
 
-/* Badge du logo "Cypher Compatible" — fond clair fixe (jamais un jeton de
-   thème) car le logo est noir/rouge sur fond transparent : sur le thème
-   sombre, un fond transparent rendrait les traits noirs illisibles.
-   "Cypher Compatible" logo badge — fixed light background (never a theme
+/* "Cypher Compatible" logo badge — fixed light background (never a theme
    token) because the logo is black/red on a transparent background: on the
    dark theme, a transparent background would make the black lines unreadable. */
 .cypher .cypher-logo-badge {
@@ -268,9 +241,7 @@
   padding: var(--cypher-space-xs) 0;
 }
 
-/* Libellé visible court, au-dessus du champ — remplace le placeholder seul
-   (qui disparaît à la saisie et n'est pas une étiquette accessible fiable).
-   Short visible caption above the field — replaces relying on the
+/* Short visible caption above the field — replaces relying on the
    placeholder alone (which disappears on input and is not a reliable
    accessible label). */
 .cypher .field-caption {
@@ -281,8 +252,7 @@
   font-weight: 600;
 }
 
-/* ---- Carte "identité" : genre, espèce, phrase de personnage ----
-   ---- "Identity" card: genre, species, character sentence ---- */
+/* ---- Identity card: genre, species, and character sentence ---- */
 .cypher .identity-card {
   display: flex;
   flex-direction: column;
@@ -323,10 +293,7 @@
   color: var(--cypher-color-text);
 }
 
-/* La "phrase de personnage" (Descripteur, Type, Focus...) reste sur une
-   ligne fluide façon texte, mais chaque champ porte désormais son propre
-   libellé visible au lieu de dépendre seulement du placeholder.
-   The "character sentence" (Descriptor, Type, Focus...) still flows as a
+/* The "character sentence" (Descriptor, Type, Focus...) still flows as a
    line of text, but each field now carries its own visible caption instead
    of relying on the placeholder alone. */
 .cypher .descriptor-line {
@@ -378,8 +345,7 @@
   display: flex;
 }
 
-/* ---- Carte "progression" : rang, effort, XP, PR, limite de cyphers ----
-   ---- "Progression" card: tier, effort, XP, RP, cypher limit ---- */
+/* ---- Progression card: tier, Effort, XP, recovery rolls, and cypher limit ---- */
 .cypher .progression-card.header-stats-row {
   display: flex;
   gap: var(--cypher-space-xl);
@@ -413,7 +379,7 @@
 }
 
 /* ================================================================
-   Statistiques / Stats
+  Stats
    ================================================================ */
 
 .cypher .stats-row {
@@ -493,7 +459,7 @@
 }
 
 /* ================================================================
-   Vitals : Blessures + Récupérations côte à côte / Wounds + Recoveries side by side
+  Wounds and recoveries side by side
    ================================================================ */
 
 .cypher .vitals-row {
@@ -529,7 +495,7 @@
 }
 
 /* ================================================================
-   Armure / Suivi (bloc générique) / Armor / Track (generic block)
+  Armor and generic tracks
    ================================================================ */
 
 .cypher .armor-block {
@@ -546,7 +512,7 @@
 }
 
 /* ================================================================
-   Récupérations / Recoveries
+  Recoveries
    ================================================================ */
 
 .cypher .recovery-row {
@@ -563,7 +529,7 @@
 }
 
 /* ================================================================
-   Listes d'objets / Item lists
+  Item lists
    ================================================================ */
 
 .cypher .item-list {
@@ -581,10 +547,10 @@
   border-bottom: 1px solid var(--cypher-color-border-faint);
 }
 
-/* Corrigé : l'opacité réduite (0.5) faisait tomber le contraste du texte
-   sous le seuil AA (~3.2:1). On garde le signal non-coloré (barré) et une
-   couleur de texte atténuée mais garantie lisible, plutôt qu'une simple
-   transparence.
+/* Reduced opacity (0.5) lowered text contrast below the AA threshold.
+  Keep a strikethrough as a non-color cue and use a readable muted color
+  instead of transparency, preserving both distinction and legibility.
+  This keeps depleted items recognizable without relying on color alone.
    Fixed: reduced opacity (0.5) dropped text contrast below the AA
    threshold (~3.2:1). We keep the non-color signal (strikethrough) and a
    muted-but-guaranteed-legible text color, instead of plain transparency. */
@@ -602,8 +568,8 @@
   font-weight: 600;
 }
 
-/* Alignement en colonnes pour les listes de Compétences/Capacités
-   Column alignment for Skill/Ability lists */
+/* Align Skill and Ability names and details in consistent columns.
+  This makes each row easier to scan. */
 .cypher .skill-name, .cypher .ability-name {
   flex: 1;
   font-weight: 600;
@@ -706,7 +672,7 @@
 }
 
 /* ================================================================
-   Résultats de jet (cartes de tchat) / Roll results (chat cards)
+  Roll results (chat cards)
    ================================================================ */
 
 .cypher .result.success, .cypher-roll-card .success {
@@ -758,9 +724,9 @@
   background: var(--cypher-color-bg-sheet);
 }
 
-/* Accent de couleur par sévérité — un COMPLÉMENT au texte du libellé,
-   jamais le seul indicateur (le nom "Mineure/Modérée/Majeure" reste le
-   signal principal, lisible même sans distinction chromatique).
+/* Use severity colors as a complement to the label, never as the only cue.
+  The severity name remains the primary signal for every user.
+  This keeps the wound track understandable without color perception.
    Color accent per severity — a COMPLEMENT to the label text, never the
    sole indicator (the "Minor/Moderate/Major" name remains the primary
    signal, legible even without color differentiation). */
@@ -824,7 +790,7 @@
 }
 
 /* ================================================================
-   Statistiques personnalisées / Custom stats
+  Custom stats
    ================================================================ */
 
 .cypher .custom-stats-row {
@@ -844,7 +810,7 @@
 }
 
 /* ================================================================
-   Genre & bloc super-héros / Genre & superhero block
+  Genre and superhero block
    ================================================================ */
 
 .cypher .superhero-block {
@@ -1052,7 +1018,7 @@
 }
 
 /* ================================================================
-   Boutons de défense / Defense buttons
+  Defense buttons
    ================================================================ */
 
 .cypher .defense-buttons {
@@ -1111,7 +1077,7 @@
 }
 
 /* ================================================================
-   Dégâts d'armure / Armor damage
+  Armor damage
    ================================================================ */
 
 .cypher .armor-damaged-note {
@@ -1141,7 +1107,7 @@
 }
 
 /* ================================================================
-   Épuisement / Depletion
+  Depletion
    ================================================================ */
 
 .cypher .depletion-hint {
@@ -1151,7 +1117,7 @@
 }
 
 /* ================================================================
-   Armure unifiée / Unified armor display
+  Unified armor display
    ================================================================ */
 
 .cypher .armor-active-name {
@@ -1185,7 +1151,7 @@
 }
 
 /* ================================================================
-   Fiche PNJ / Communauté / NPC / Community sheet
+  NPC and Community sheets
    ================================================================ */
 
 .cypher.sheet .npc-header .header-fields,
@@ -1254,9 +1220,9 @@
 }
 
 /* ================================================================
-   Défilement / Scrolling
-   Chaque section de contenu défile indépendamment de l'en-tête et de la
-   barre d'onglets, qui restent fixes en haut de la fenêtre.
+  Scrolling
+  Each content section scrolls independently from the fixed header and tab bar.
+  The header and tabs stay visible at the top of the window.
    Each content section scrolls independently of the header and tab bar,
    which stay fixed at the top of the window.
    ================================================================ */

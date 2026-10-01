@@ -1,3 +1,4 @@
+// Checks how Character Builder exports are translated into this system's Actor and Item data.
 import assert from "node:assert/strict";
 import test from "node:test";
 

@@ -1,5 +1,11 @@
 import { CYPHER } from "../config.mjs";
 
+/**
+ * Data model for an Artifact item.
+ *
+ * The schema stores its description and structured depletion settings, which
+ * CypherItem can use to automate depletion rolls.
+ */
 const { StringField, HTMLField, BooleanField, NumberField } = foundry.data.fields;
 
 export default class CypherArtifactData extends foundry.abstract.TypeDataModel {
@@ -8,8 +14,6 @@ export default class CypherArtifactData extends foundry.abstract.TypeDataModel {
       level: new StringField({ required: true, blank: true }),
       form: new StringField({ required: true, blank: true }),
       identified: new BooleanField({ required: true, initial: true }),
-      // L'épuisement est structuré (pas un simple texte) pour permettre le jet automatique :
-      // "1 en 1d20" → depletionDie: "d20", depletionThreshold: 1. "—" (n'épuise jamais) → "none".
       // Depletion is structured (not free text) to allow the automated roll:
       // "1 in 1d20" → depletionDie: "d20", depletionThreshold: 1. "—" (never depletes) → "none".
       depletionDie: new StringField({ required: true, initial: "d20", choices: ["none", ...CYPHER.depletionDice] }),
