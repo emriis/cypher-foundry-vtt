@@ -14,8 +14,13 @@
     "statOptions": [],
     "statAmount": 0,
     "skillOptions": [],
-    "benefits": [],
-    "description": "<p>Humans are among the youngest species, and perhaps that's why, when considered as a whole, they're more given to explore, conquer, and expand their communities, even if that means taking from other species or other humans.</p><p><strong>You gain the following characteristics:</strong></p><p>Choose a second descriptor and add its benefits to your regular descriptor.</p><p>In a game where everyone is human, using the Human species option may not make sense. Your GM might grant you the option to choose Human as a species only if other species are also part of the game.</p>"
+    "benefits": [ 
+      {
+        "name": "Second descriptor",
+        "description": "<p>Choose a second descriptor and add its benefits to your regular descriptor.</p>"
+      }
+    ],
+    "description": "<p>Humans are among the youngest species, and perhaps that’s why—when considered as a whole—they’re more given to explore, conquer, and expand their communities, even if that means taking from other species or other humans. Individually, humans couldn’t be more diverse. Which means you could be under 5 feet (150 cm) tall and barely 100 pounds (45 kg), or well over 6 feet (180 cm) tall and weigh in at 250 pounds (113 kg); have blue eyes or brown, black, green, or some other variation; have no hair, flowing golden locks, amazing dreads, a mohawk, or some other rakish cut; be all about your faith, exploring ancient places, keeping evil at bay, enriching yourself, or some other disposition; and so on. What’s definitely true is that you are not afraid to strive for what you want and believe in.</p>"
   },
   "folder": "dscMixedEn000001",
   "sort": 0,
