@@ -319,15 +319,15 @@ test("Descriptor packs group species and standard entries into separate folders"
 test("French descriptor sources match the Character Book translations", () => {
   const directory = path.join(root, "packs", "descriptors-fr", "_source", "standard");
   const expectedNames = {
-    appealing: "Attrayant·e",
+    appealing: "Attirant·e",
     bookish: "Studieux·se",
     brash: "Audacieux·se",
     calm: "Serein·e",
     cautious: "Prudent·e",
-    chaotic: "Impulsif·ve",
+    chaotic: "Chaotique",
     charming: "Charmeur·euse",
-    clever: "Rusé·e",
-    compassionate: "Bienveillant·e",
+    clever: "Malin·gne",
+    compassionate: "Compatissant·e",
     creative: "Créatif·ve",
     empathic: "Empathique",
     fast: "Rapide",
@@ -338,17 +338,17 @@ test("French descriptor sources match the Character Book translations", () => {
     inquisitive: "Curieux·se",
     intelligent: "Intelligent·e",
     intuitive: "Intuitif·ve",
-    jovial: "Passionné·e",
-    kind: "Aimable",
+    jovial: "Jovial·e",
+    kind: "Gentil·le",
     mechanical: "Mécanicien·ne",
     mysterious: "Mystérieux·se",
     mystical: "Mystique",
-    perceptive: "Observateur·rice",
+    perceptive: "Perceptif·ve",
     resilient: "Résilient·e",
     rugged: "Sauvage",
     skeptical: "Sceptique",
     stealthy: "Furtif·ve",
-    strong: "Fort·e",
+    strong: "Puissant·e",
     "strong-willed": "Têtu·e",
     tough: "Robuste",
     virtuous: "Vertueux·se"
@@ -361,8 +361,8 @@ test("French descriptor sources match the Character Book translations", () => {
   }
 
   const appealing = JSON.parse(fs.readFileSync(path.join(directory, "appealing.json"), "utf8"));
-  assert.deepEqual(appealing.system.skillOptions.filter(Boolean), ["Persuasion"]);
-  assert.match(appealing.system.description, /Tu es naturellement attirant·e et charismatique/);
+  assert.deepEqual(appealing.system.skillOptions.filter(Boolean), ['Charme', 'Discernement des motivations' ]);
+  assert.match(appealing.system.description, /Les autres te trouvent attirant·e — mais peut‑être plus important encore, tu es sympathique et charismatique. Tu as ce « petit truc » qui attire naturellement les autres. La plupart du temps, tu sais exactement quoi dire pour faire rire quelqu’un, le mettre à l’aise ou l’encourager à agir. Les gens t’apprécient, veulent t’aider et devenir ton ami·e./);
 });
 
 test("Human is a bilingual species descriptor that grants a second descriptor", () => {
