@@ -10,6 +10,8 @@ const { ItemSheetV2 } = foundry.applications.sheets;
  * Handlebars templates while relying on ItemSheetV2 for common application behavior.
  * Template inputs save to the registered Item data model, and sheet actions
  * handle the item-specific choices that cannot be expressed as ordinary fields.
+ * Template inputs save to the registered Item data model, and sheet actions
+ * handle the item-specific choices that cannot be expressed as ordinary fields.
  */
 export default class CypherItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   /** Default application configuration for the item sheet. */
@@ -207,6 +209,7 @@ export default class CypherItemSheet extends HandlebarsApplicationMixin(ItemShee
 
   /**
   * Adds or removes a stat from this Descriptor's list of offered choices.
+  * Adds or removes a stat from this Descriptor's list of offered choices.
    */
   static async #onToggleDescriptorStat(event, target) {
     const stat = target.dataset.stat;
@@ -216,6 +219,7 @@ export default class CypherItemSheet extends HandlebarsApplicationMixin(ItemShee
       : current.filter(s => s !== stat);
 
     if (next.length === 0) {
+      // At least one stat must remain selectable, so restore the checkbox if this was the last one.
       // At least one stat must remain selectable, so restore the checkbox if this was the last one.
       target.checked = true;
       return;

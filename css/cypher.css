@@ -9,6 +9,7 @@
 
 .cypher.sheet {
   /* ---- Typography ----
+  /* ---- Typography ----
      Signika is Foundry's own native UI font (legible, humanist sans-serif) —
      reused here for visual consistency with the rest of the software, with
      a full system fallback stack. */
@@ -21,6 +22,7 @@
   --cypher-font-size-lg: 1.2rem;
   --cypher-font-size-xl: 1.4rem;
 
+  /* ---- Spacing ---- */
   /* ---- Spacing ---- */
   --cypher-space-xs: 2px;
   --cypher-space-sm: 4px;
@@ -40,6 +42,7 @@
   --cypher-target-size: 28px;
 
   /* ================================================================
+    LIGHT THEME (default)
     LIGHT THEME (default)
      All contrast ratios below were manually verified (WCAG relative
      luminance formula) against their actual usage background.
@@ -65,12 +68,16 @@
 
   --cypher-color-success: #2f7a2f;           /* 5.4:1 on white */
   --cypher-color-danger: #a11f1f;            /* 7.7:1 on white */
+  --cypher-color-success: #2f7a2f;           /* 5.4:1 on white */
+  --cypher-color-danger: #a11f1f;            /* 7.7:1 on white */
   --cypher-color-danger-bg: rgba(161, 31, 31, 0.08);
+  --cypher-color-info: #2f5a8a;              /* 7.1:1 on white */
   --cypher-color-info: #2f5a8a;              /* 7.1:1 on white */
 
   --cypher-color-warning-bg: #ffddc2;
   --cypher-color-warning-text: #7a3d25;
   --cypher-color-danger-soft-bg: #f0c0c0;
+  --cypher-color-danger-soft-text: #7a1010;  /* 6.9:1 on this background */
   --cypher-color-danger-soft-text: #7a1010;  /* 6.9:1 on this background */
 
   --cypher-focus-ring: #2f5a8a;
@@ -98,6 +105,7 @@
 }
 
 /* ================================================================
+  DARK THEME
   DARK THEME
    Automatically activated by Foundry (.theme-dark applied to the window
    per world setting or a per-sheet override).
@@ -138,8 +146,11 @@
 
 /* ================================================================
   Cross-cutting accessibility
+  Cross-cutting accessibility
    ================================================================ */
 
+/* Use a visible, consistent focus ring on every interactive element so keyboard users can
+  identify which control is currently focused. */
 /* Use a visible, consistent focus ring on every interactive element so keyboard users can
   identify which control is currently focused. */
 .cypher.sheet a:focus-visible,
@@ -154,6 +165,7 @@
 }
 
 /* Respect the user's system preference for reduced motion. */
+/* Respect the user's system preference for reduced motion. */
 @media (prefers-reduced-motion: reduce) {
   .cypher.sheet * {
     transition: none !important;
@@ -161,6 +173,8 @@
   }
 }
 
+/* Give icon-only controls (edit, delete, and +/- toggles) a larger target to reduce missed
+  clicks, especially on touch screens. */
 /* Give icon-only controls (edit, delete, and +/- toggles) a larger target to reduce missed
   clicks, especially on touch screens. */
 .cypher.sheet .item-list a,
@@ -187,6 +201,8 @@
 
 /* Keep labels available to screen readers when their meaning is clear from the visual context,
   such as Pool and Max labels inside a stat block. */
+/* Keep labels available to screen readers when their meaning is clear from the visual context,
+  such as Pool and Max labels inside a stat block. */
 .cypher.sheet .sr-only {
   position: absolute;
   width: 1px;
@@ -200,6 +216,7 @@
 }
 
 /* ================================================================
+  Header
   Header
    ================================================================ */
 
@@ -217,6 +234,7 @@
   gap: var(--cypher-space-lg);
 }
 
+/* "Cypher Compatible" logo badge — fixed light background (never a theme
 /* "Cypher Compatible" logo badge — fixed light background (never a theme
    token) because the logo is black/red on a transparent background: on the
    dark theme, a transparent background would make the black lines unreadable. */

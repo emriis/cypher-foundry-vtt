@@ -1,7 +1,15 @@
 import { CYPHER } from "../config.mjs";
 
+import { CYPHER } from "../config.mjs";
+
 const { StringField, NumberField, HTMLField, ArrayField, BooleanField, SchemaField } = foundry.data.fields;
 
+/**
+ * Data model for a Focus compendium entry and its ability flowchart.
+ *
+ * The actor stores chosen ability IDs; prerequisite links here tell the actor
+ * document and sheet which ability can be selected next.
+ */
 /**
  * Data model for a Focus compendium entry and its ability flowchart.
  *
