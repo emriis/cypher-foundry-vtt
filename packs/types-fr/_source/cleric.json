@@ -59,8 +59,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "Tu canalises ton pouvoir sacré pour produire l'un des effets suivants : Bénédiction (une cible à courte portée gagne un Atout sur une action de son choix avant sa prochaine récupération de 10 min+. Effort : Affecte deux cibles supplémentaires.) ou Repousser les morts-vivants (jusqu'à cinq morts-vivants de niveau 2 ou moins à courte portée sont forcés de battre en retraite et consacrent leur prochain tour à fuir. Au rang 3, tu peux les rendre incapables d'agir pendant un tour. Effort : Affecte deux cibles supplémentaires, augmente le niveau max des morts-vivants affectés de 1.)"
-      },
+        "description": "Tu canalises l'influence divine pour produire l'un des effets suivants.\n\n**Bénédiction :** Une cible à portée courte reçoit une grâce divine bienveillante. À tout moment avant sa prochaine récupération de dix minutes ou plus, elle bénéficie d'un Atout pour une action. **Effort :** Affecte deux cibles supplémentaires. Action.\n\n**Repousser les morts-vivants :** Jusqu'à cinq créatures mortes-vivantes de niveau 2 ou moins à portée courte sont frappées par une radiance divine. Effectue un jet d'attaque d'Intellect séparé contre chaque cible. Les cibles affectées sont repoussées et doivent consacrer leur prochain tour à fuir ta présence. **Effort :** Affecte deux cibles supplémentaires et augmente de 1 le niveau maximal des morts-vivants affectables. Action.\n\n**Au rang 3 :** Au lieu de faire fuir les cibles affectées, tu peux les empêcher d'agir pendant un tour.\n\nLorsqu'une aptitude ou un effet te permet d'attaquer plusieurs créatures pendant ton tour, chaque attaque après la première constitue une action supplémentaire. Une attaque effectuée comme action supplémentaire compte comme une action distincte lorsqu'on modifie la tâche avec de l'Effort."      },
       {
         "id": "blessing",
         "name": "Main Guérisseuse",
