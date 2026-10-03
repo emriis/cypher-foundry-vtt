@@ -1,4 +1,11 @@
 {
+  "TYPES": {
+    "Item": {
+      "type": "Type",
+      "focus": "Focus",
+      "descriptor": "Descriptor"
+    }
+  },
   "CYPHER": {
     "Name": "Name",
     "Description": "Description",
@@ -201,9 +208,13 @@
       "Action": "Action Required",
       "ActionNone": "None",
       "ActionStandard": "Action",
-      "ActionMovement": "Movement"
+      "ActionMovement": "Movement",
+      "ChooseEffect": "Choose Effect",
+      "Effort": "Effort",
+      "RollTable": "Roll Table",
+      "InvalidRollTable": "Invalid ability roll table",
+      "NoRollTableResult": "No result matches the rolled value."
     },
-
     "Cypher": {
       "Title": "Cyphers",
       "Type": "Cypher Type",
@@ -290,6 +301,14 @@
 
     "Descriptor": {
       "Label": "Descriptor",
+      "StandardCategory": "Descriptor",
+      "SpeciesCategory": "Species",
+      "Genres": "Available genres",
+      "AllGenres": "All genres",
+      "SecondDescriptorGrant": "Grants a second Descriptor",
+      "Granted": "Granted",
+      "FixedSkills": "Granted skills",
+      "Benefits": "Species benefits",
       "StatOptions": "Stat Choices",
       "StatOptionsHint": "Which Pool(s) this Descriptor can add its bonus to. Pick two (e.g. Speed or Might) if the CRD text offers a choice.",
       "StatAmount": "Pool Bonus",
@@ -311,11 +330,59 @@
       "SpeciesAlreadyApplied": "A species has already been applied to this character.",
       "SpeciesWrongGenre": "This species is not available for the character's genre."
     },
+    "FocusSheet": {
+      "Label": "Focus",
+      "Abilities": "Abilities by tier",
+      "NoAbilities": "No abilities are stored on this Focus.",
+      "Tier": "Tier {tier}",
+      "AbilityTier": "Tier {tier}",
+      "AbilityCost": "{amount} {stat} Pool",
+      "AbilityCostOptions": "Eligible Pools: {options}",
+      "NoPoolCost": "No Pool cost",
+      "AnyPool": "a Pool of your choice",
+      "Enabler": "Enabler",
+      "Repeatable": "Repeatable",
+      "OnePrerequisite": "Requires one of",
+      "WeaponCategories": "Freely usable weapons",
+      "ArmorCategories": "Freely usable armor",
+      "WeaponFamilies": "Weapon families",
+      "WeaponSkills": "Weapon skills granted",
+      "ChooseWeaponAttackCategory": "Choose a weapon attack category when gaining this ability",
+      "GrantedArmor": "Armor granted"
+    },
     "Type": {
       "Label": "Type",
       "Genre": "Genre",
       "Subgenre": "Subgenre",
-      "StatOptions": "Primary Pools",
+      "StatOptions": "Pools eligible for the Edge bonus",
+      "PoolBonuses": "Pool bonuses",
+      "WoundBonuses": "Additional wound capacity",
+      "EdgeChoice": "to one eligible Pool",
+      "WeaponTraining": "Freely usable weapons",
+      "ArmorTraining": "Freely usable armor",
+      "WeaponFamilies": "Weapon families",
+      "SkillOptions": "Skill choices",
+      "Abilities": "Type abilities",
+      "AbilityTier": "Tier {tier}",
+      "AbilityCost": "{amount} {stat} Pool",
+      "AbilityCostOptions": "Eligible Pools: {options}",
+      "NoPoolCost": "No Pool cost",
+      "AnyPool": "a Pool of your choice",
+      "Enabler": "Enabler",
+      "Repeatable": "Repeatable",
+      "Prerequisites": "Prerequisites",
+      "AllWeaponCategory": "All weapon categories",
+      "AllArmorCategory": "All armor categories",
+      "WeaponCategory": {
+        "light": "Light weapons",
+        "medium": "Medium weapons",
+        "heavy": "Heavy weapons"
+      },
+      "ArmorCategory": {
+        "light": "Light armor",
+        "medium": "Medium armor",
+        "heavy": "Heavy armor"
+      },
       "AlreadyApplied": "A Type has already been applied to this character.",
       "ApplyTitle": "Apply Type: {name}",
       "ApplyPrompt": "Apply the mechanical benefits of {name} to this character?",

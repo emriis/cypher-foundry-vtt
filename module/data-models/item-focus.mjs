@@ -1,13 +1,8 @@
 import { CYPHER } from "../config.mjs";
+import { createAbilityEffectsField, createAbilityRollTablesField } from "./ability-fields.mjs";
 
 const { StringField, NumberField, HTMLField, ArrayField, BooleanField, SchemaField } = foundry.data.fields;
 
-/**
- * Data model for a Focus compendium entry and its ability flowchart.
- *
- * The actor stores chosen ability IDs; prerequisite links here tell the actor
- * document and sheet which ability can be selected next.
- */
 export default class CypherFocusData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     return {
@@ -43,8 +38,10 @@ export default class CypherFocusData extends foundry.abstract.TypeDataModel {
           { required: true, initial: [] }
         ),
         chooseWeaponAttackCategory: new BooleanField({ required: true, initial: false }),
-        grantedArmorItemCategory: new StringField({ required: true, initial: "", choices: ["", ...CYPHER.armorCategoryIds] }),
-        description: new HTMLField({ required: true, blank: true })
+        grantedArmorItemCategory: new StringField({ required: true, initial: "", blank: true, choices: ["", ...CYPHER.armorCategoryIds] }),
+        description: new HTMLField({ required: true, blank: true }),
+        effects: createAbilityEffectsField(),
+        rollTables: createAbilityRollTablesField()
       }), { required: true, initial: [] }),
       description: new HTMLField({ required: true, blank: true })
     };

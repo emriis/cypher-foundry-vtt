@@ -3,6 +3,11 @@
   <img class="profile-img" src="{{item.img}}" data-action="editImage" data-edit="img" alt="{{item.name}}"/>
   <div class="header-fields">
     <input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'CYPHER.Name'}}"/>
-    <p class="item-type-label">{{localize (concat "TYPES.Item." item.type)}}</p>
+    <p class="item-type-label">
+      {{#ifEquals item.type "type"}}{{localize 'CYPHER.Type.Label'}}{{else}}
+      {{#ifEquals item.type "focus"}}{{localize 'CYPHER.FocusSheet.Label'}}{{else}}
+      {{#ifEquals item.type "descriptor"}}{{localize 'CYPHER.Descriptor.Label'}}{{else}}{{localize (concat "TYPES.Item." item.type)}}{{/ifEquals}}
+      {{/ifEquals}}{{/ifEquals}}
+    </p>
   </div>
 </header>

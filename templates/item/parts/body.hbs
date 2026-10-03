@@ -1,6 +1,311 @@
-{{!-- Type-specific item fields; input names are paths into the registered Item data model. --}}
+{{!-- Item details are prepared by CypherItemSheet and rendered from their registered data models. --}}
 <section class="item-body">
 
+  {{#ifEquals item.type "type"}}
+  <div class="form-group description-group type-description">
+    <label>{{localize 'CYPHER.Description'}}</label>
+    <prose-mirror name="system.description" value="{{system.description}}"></prose-mirror>
+  </div>
+
+  <section class="type-classification" aria-label="{{localize 'CYPHER.Type.Label'}}">
+    <div class="type-meta-field">
+      <span>{{localize 'CYPHER.Tier'}}</span>
+      <strong>{{system.tier}}</strong>
+    </div>
+    <div class="type-meta-field">
+      <span>{{localize 'CYPHER.Type.Genre'}}</span>
+      <strong>{{typeView.genre}}</strong>
+    </div>
+    <div class="type-meta-field">
+      <span>{{localize 'CYPHER.Type.Subgenre'}}</span>
+      <strong>{{typeView.subgenre}}</strong>
+    </div>
+  </section>
+
+  <section class="type-benefits">
+    <h3>{{localize 'CYPHER.Type.PoolBonuses'}}</h3>
+    <dl class="type-value-grid">
+      {{#each typeView.poolBonuses as |bonus|}}
+      <div><dt>{{bonus.label}}</dt><dd>+{{bonus.value}}</dd></div>
+      {{/each}}
+    </dl>
+  </section>
+
+  <section class="type-benefits">
+    <h3>{{localize 'CYPHER.Type.WoundBonuses'}}</h3>
+    <dl class="type-value-grid">
+      {{#each typeView.woundBonuses as |bonus|}}
+      <div><dt>{{bonus.label}}</dt><dd>+{{bonus.value}}</dd></div>
+      {{/each}}
+    </dl>
+  </section>
+
+  {{#if typeView.edgeChoice}}
+  <section class="type-benefits type-choice-benefit">
+    <h3>{{localize 'CYPHER.Edge'}}</h3>
+    <p>+{{typeView.edgeChoice}} {{localize 'CYPHER.Type.EdgeChoice'}}</p>
+    {{#if typeView.statOptions.length}}
+    <ul class="type-chip-list">
+      {{#each typeView.statOptions as |stat|}}<li>{{stat}}</li>{{/each}}
+    </ul>
+    {{/if}}
+  </section>
+  {{/if}}
+
+  {{#if typeView.weaponCategories.length}}
+  <section class="type-benefits">
+    <h3>{{localize 'CYPHER.Type.WeaponTraining'}}</h3>
+    <ul class="type-chip-list">
+      {{#each typeView.weaponCategories as |category|}}<li>{{category}}</li>{{/each}}
+    </ul>
+  </section>
+  {{/if}}
+
+  {{#if typeView.armorCategories.length}}
+  <section class="type-benefits">
+    <h3>{{localize 'CYPHER.Type.ArmorTraining'}}</h3>
+    <ul class="type-chip-list">
+      {{#each typeView.armorCategories as |category|}}<li>{{category}}</li>{{/each}}
+    </ul>
+  </section>
+  {{/if}}
+
+  {{#if typeView.weaponFamilies.length}}
+  <section class="type-benefits">
+    <h3>{{localize 'CYPHER.Type.WeaponFamilies'}}</h3>
+    <ul class="type-chip-list">
+      {{#each typeView.weaponFamilies as |family|}}<li>{{family}}</li>{{/each}}
+    </ul>
+  </section>
+  {{/if}}
+
+  {{#if typeView.skillOptions.length}}
+  <section class="type-benefits">
+    <h3>{{localize 'CYPHER.Type.SkillOptions'}}</h3>
+    <ul class="type-detail-list">
+      {{#each typeView.skillOptions as |skill|}}<li>{{skill}}</li>{{/each}}
+    </ul>
+  </section>
+  {{/if}}
+
+  {{#if typeView.abilities.length}}
+  <section class="type-abilities">
+    <h3>{{localize 'CYPHER.Type.Abilities'}}</h3>
+    {{#each typeView.abilities as |ability|}}
+    <article class="type-ability">
+      <header>
+        <h4>{{ability.name}}</h4>
+        <span>{{ability.tierLabel}}</span>
+      </header>
+      <div class="type-ability-tags">
+        <span>{{ability.costLabel}}</span>
+        {{#if ability.costOptionsLabel}}<span>{{ability.costOptionsLabel}}</span>{{/if}}
+        {{#if ability.enabler}}<span>{{localize 'CYPHER.Type.Enabler'}}</span>{{/if}}
+        {{#if ability.repeatable}}<span>{{localize 'CYPHER.Type.Repeatable'}}</span>{{/if}}
+      </div>
+      {{#if ability.prerequisites.length}}
+      <p class="type-ability-prerequisites"><strong>{{localize 'CYPHER.Type.Prerequisites'}}:</strong> {{ability.prerequisitesLabel}}</p>
+      {{/if}}
+      <div class="type-ability-description">{{{ability.enrichedDescription}}}</div>
+    </article>
+    {{/each}}
+  </section>
+  {{/if}}
+
+  {{else}}
+  {{#ifEquals item.type "focus"}}
+  <div class="form-group description-group type-description">
+    <label>{{localize 'CYPHER.Description'}}</label>
+    <prose-mirror name="system.description" value="{{system.description}}"></prose-mirror>
+  </div>
+
+  <section class="focus-flowchart">
+    <h3>{{localize 'CYPHER.FocusSheet.Abilities'}}</h3>
+    {{#each focusView.tiers as |tier|}}
+    <section class="focus-tier">
+      <h4>{{tier.label}}</h4>
+      <div class="focus-tier-abilities">
+        {{#each tier.abilities as |ability|}}
+        <article class="type-ability">
+          <header>
+            <h4>{{ability.name}}</h4>
+            <span>{{ability.tierLabel}}</span>
+          </header>
+          <div class="type-ability-tags">
+            <span>{{ability.costLabel}}</span>
+            {{#if ability.costOptionsLabel}}<span>{{ability.costOptionsLabel}}</span>{{/if}}
+            {{#if ability.enabler}}<span>{{localize 'CYPHER.FocusSheet.Enabler'}}</span>{{/if}}
+            {{#if ability.repeatable}}<span>{{localize 'CYPHER.FocusSheet.Repeatable'}}</span>{{/if}}
+          </div>
+          {{#if ability.prerequisites.length}}
+          <div class="focus-prerequisites">
+            <strong>{{localize 'CYPHER.FocusSheet.OnePrerequisite'}}:</strong>
+            <ul class="type-chip-list">
+              {{#each ability.prerequisites as |prerequisite|}}<li>{{prerequisite}}</li>{{/each}}
+            </ul>
+          </div>
+          {{/if}}
+          {{#if ability.weaponCategories.length}}
+          <p class="focus-grant"><strong>{{localize 'CYPHER.FocusSheet.WeaponCategories'}}:</strong> {{ability.weaponCategoriesLabel}}</p>
+          {{/if}}
+          {{#if ability.armorCategories.length}}
+          <p class="focus-grant"><strong>{{localize 'CYPHER.FocusSheet.ArmorCategories'}}:</strong> {{ability.armorCategoriesLabel}}</p>
+          {{/if}}
+          {{#if ability.weaponFamilies.length}}
+          <p class="focus-grant"><strong>{{localize 'CYPHER.FocusSheet.WeaponFamilies'}}:</strong> {{ability.weaponFamiliesLabel}}</p>
+          {{/if}}
+          {{#if ability.weaponSkills.length}}
+          <p class="focus-grant"><strong>{{localize 'CYPHER.FocusSheet.WeaponSkills'}}:</strong> {{ability.weaponSkillsLabel}}</p>
+          {{/if}}
+          {{#if ability.chooseWeaponAttackCategory}}
+          <p class="focus-grant">{{localize 'CYPHER.FocusSheet.ChooseWeaponAttackCategory'}}</p>
+          {{/if}}
+          {{#if ability.grantedArmorCategory}}
+          <p class="focus-grant"><strong>{{localize 'CYPHER.FocusSheet.GrantedArmor'}}:</strong> {{ability.grantedArmorCategory}}</p>
+          {{/if}}
+          <div class="type-ability-description">{{{ability.enrichedDescription}}}</div>
+        </article>
+        {{/each}}
+      </div>
+    </section>
+    {{/each}}
+    {{#unless focusView.tiers.length}}
+    {{#if system.abilities.length}}
+    <div class="focus-tier-abilities">
+      {{#each system.abilities as |ability|}}
+      <article class="type-ability">
+        <header>
+          <h4>{{ability.name}}</h4>
+          <span>{{localize 'CYPHER.Tier'}} {{ability.tier}}</span>
+        </header>
+        <div class="type-ability-tags">
+          {{#if ability.cost.amount}}
+          <span>{{localize 'CYPHER.Ability.CostStat'}}: {{ability.cost.amount}}
+            {{#ifEquals ability.cost.stat "choice"}}{{localize 'CYPHER.FocusSheet.AnyPool'}}{{else}}{{localize (concat "CYPHER.Stat." ability.cost.stat)}}{{/ifEquals}}
+          </span>
+          {{else}}
+          <span>{{localize 'CYPHER.FocusSheet.NoPoolCost'}}</span>
+          {{/if}}
+          {{#if ability.enabler}}<span>{{localize 'CYPHER.FocusSheet.Enabler'}}</span>{{/if}}
+          {{#if ability.repeatable}}<span>{{localize 'CYPHER.FocusSheet.Repeatable'}}</span>{{/if}}
+        </div>
+        {{#if ability.prerequisites.length}}
+        <div class="focus-prerequisites">
+          <strong>{{localize 'CYPHER.FocusSheet.OnePrerequisite'}}:</strong>
+          <ul class="type-chip-list">
+            {{#each ability.prerequisites as |prerequisite|}}<li>{{prerequisite}}</li>{{/each}}
+          </ul>
+        </div>
+        {{/if}}
+        {{#if ability.freeWeaponCategories.length}}
+        <p class="focus-grant"><strong>{{localize 'CYPHER.FocusSheet.WeaponCategories'}}:</strong>
+          {{#each ability.freeWeaponCategories as |category|}}{{localize (concat "CYPHER.Type.WeaponCategory." category)}}{{#unless @last}}, {{/unless}}{{/each}}
+        </p>
+        {{/if}}
+        {{#if ability.freeArmorCategories.length}}
+        <p class="focus-grant"><strong>{{localize 'CYPHER.FocusSheet.ArmorCategories'}}:</strong>
+          {{#each ability.freeArmorCategories as |category|}}{{localize (concat "CYPHER.Type.ArmorCategory." category)}}{{#unless @last}}, {{/unless}}{{/each}}
+        </p>
+        {{/if}}
+        {{#if ability.freeWeaponFamilies.length}}
+        <p class="focus-grant"><strong>{{localize 'CYPHER.FocusSheet.WeaponFamilies'}}:</strong>
+          {{#each ability.freeWeaponFamilies as |family|}}{{localize (concat "CYPHER.WeaponFamily." family)}}{{#unless @last}}, {{/unless}}{{/each}}
+        </p>
+        {{/if}}
+        {{#if ability.freeWeaponSkillCategories.length}}
+        <p class="focus-grant"><strong>{{localize 'CYPHER.FocusSheet.WeaponSkills'}}:</strong>
+          {{#each ability.freeWeaponSkillCategories as |category|}}{{localize (concat "CYPHER.AttackSkill." category)}}{{#unless @last}}, {{/unless}}{{/each}}
+        </p>
+        {{/if}}
+        {{#if ability.chooseWeaponAttackCategory}}
+        <p class="focus-grant">{{localize 'CYPHER.FocusSheet.ChooseWeaponAttackCategory'}}</p>
+        {{/if}}
+        {{#if ability.grantedArmorItemCategory}}
+        <p class="focus-grant"><strong>{{localize 'CYPHER.FocusSheet.GrantedArmor'}}:</strong> {{localize (concat "CYPHER.Armor." ability.grantedArmorItemCategory)}}</p>
+        {{/if}}
+        <div class="type-ability-description">{{{ability.description}}}</div>
+      </article>
+      {{/each}}
+    </div>
+    {{else}}
+    <p class="focus-empty-state">{{localize 'CYPHER.FocusSheet.NoAbilities'}}</p>
+    {{/if}}
+    {{/unless}}
+  </section>
+
+  {{else}}
+  {{#ifEquals item.type "descriptor"}}
+  <div class="form-group description-group type-description">
+    <label>{{localize 'CYPHER.Description'}}</label>
+    <prose-mirror name="system.description" value="{{system.description}}"></prose-mirror>
+  </div>
+
+  <section class="type-classification descriptor-classification" aria-label="{{localize 'CYPHER.Descriptor.Label'}}">
+    <div class="type-meta-field">
+      <span>{{localize 'CYPHER.Descriptor.Label'}}</span>
+      <strong>{{descriptorView.category}}</strong>
+    </div>
+    {{#if descriptorView.genres.length}}
+    <div class="type-meta-field">
+      <span>{{localize 'CYPHER.Descriptor.Genres'}}</span>
+      <ul class="type-chip-list">
+        {{#each descriptorView.genres as |genre|}}<li>{{genre}}</li>{{/each}}
+      </ul>
+    </div>
+    {{else}}
+    <div class="type-meta-field">
+      <span>{{localize 'CYPHER.Descriptor.Genres'}}</span>
+      <strong>{{localize 'CYPHER.Descriptor.AllGenres'}}</strong>
+    </div>
+    {{/if}}
+    {{#if descriptorView.grantsSecondDescriptor}}
+    <div class="type-meta-field">
+      <span>{{localize 'CYPHER.Descriptor.SecondDescriptorGrant'}}</span>
+      <strong>{{localize 'CYPHER.Descriptor.Granted'}}</strong>
+    </div>
+    {{/if}}
+  </section>
+
+  {{#if descriptorView.statAmount}}
+  <section class="type-benefits">
+    <h3>{{localize 'CYPHER.Descriptor.StatAmount'}} +{{descriptorView.statAmount}}</h3>
+    <ul class="type-chip-list">
+      {{#each descriptorView.statOptions as |stat|}}<li>{{stat}}</li>{{/each}}
+    </ul>
+  </section>
+  {{/if}}
+
+  {{#if descriptorView.skillOptions.length}}
+  <section class="type-benefits">
+    <h3>{{localize 'CYPHER.Descriptor.SkillOptions'}}</h3>
+    <ul class="type-chip-list">
+      {{#each descriptorView.skillOptions as |skill|}}<li>{{skill}}</li>{{/each}}
+    </ul>
+  </section>
+  {{/if}}
+
+  {{#if descriptorView.grantedSkills.length}}
+  <section class="type-benefits">
+    <h3>{{localize 'CYPHER.Descriptor.FixedSkills'}}</h3>
+    <ul class="type-chip-list">
+      {{#each descriptorView.grantedSkills as |skill|}}<li>{{skill}}</li>{{/each}}
+    </ul>
+  </section>
+  {{/if}}
+
+  {{#if descriptorView.benefits.length}}
+  <section class="descriptor-benefits">
+    <h3>{{localize 'CYPHER.Descriptor.Benefits'}}</h3>
+    {{#each descriptorView.benefits as |benefit|}}
+    <article class="descriptor-benefit">
+      <h4>{{benefit.name}}</h4>
+      <div class="type-ability-description">{{{benefit.enrichedDescription}}}</div>
+    </article>
+    {{/each}}
+  </section>
+  {{/if}}
+
+  {{else}}
   {{#ifEquals item.type "skill"}}
   <div class="form-group">
     <label>{{localize 'CYPHER.Stat.Label'}}</label>
@@ -60,6 +365,35 @@
     </select>
   </div>
   {{/ifEquals}}
+
+  {{#if abilityView.effects.length}}
+  <section class="ability-effects">
+    <h3>{{localize 'CYPHER.Ability.ChooseEffect'}}</h3>
+    {{#each abilityView.effects as |effect|}}
+    <article class="ability-effect">
+      <h4>{{effect.name}}</h4>
+      <div>{{{effect.description}}}</div>
+      {{#if effect.effort}}<p><strong>{{localize 'CYPHER.Ability.Effort'}}:</strong> {{effect.effort}}</p>{{/if}}
+    </article>
+    {{/each}}
+  </section>
+  {{/if}}
+
+  {{#if abilityView.rollTables.length}}
+  <section class="ability-roll-tables">
+    <h3>{{localize 'CYPHER.Ability.RollTable'}}</h3>
+    {{#each abilityView.rollTables as |table|}}
+    <article class="ability-roll-table">
+      <h4>{{table.name}} <small>{{table.formula}}</small></h4>
+      <ul>
+        {{#each table.results as |result|}}
+        <li><strong>{{result.min}}–{{result.max}}</strong> {{result.description}}</li>
+        {{/each}}
+      </ul>
+    </article>
+    {{/each}}
+  </section>
+  {{/if}}
 
   {{#ifEquals item.type "cypher"}}
   <div class="form-group">
@@ -240,53 +574,12 @@
   {{/ifNotEquals}}
   {{/ifEquals}}
 
-  {{#ifEquals item.type "descriptor"}}
-  <div class="form-group">
-    <label>{{localize 'CYPHER.Descriptor.StatOptions'}}</label>
-    <div class="descriptor-stat-options">
-      <label><input type="checkbox" data-action="toggleDescriptorStat" data-stat="might" {{#if statOptionsSet.might}}checked{{/if}}/> {{localize 'CYPHER.Stat.might'}}</label>
-      <label><input type="checkbox" data-action="toggleDescriptorStat" data-stat="speed" {{#if statOptionsSet.speed}}checked{{/if}}/> {{localize 'CYPHER.Stat.speed'}}</label>
-      <label><input type="checkbox" data-action="toggleDescriptorStat" data-stat="intellect" {{#if statOptionsSet.intellect}}checked{{/if}}/> {{localize 'CYPHER.Stat.intellect'}}</label>
-    </div>
-    <p class="descriptor-hint">{{localize 'CYPHER.Descriptor.StatOptionsHint'}}</p>
-  </div>
-  <div class="form-group">
-    <label>{{localize 'CYPHER.Descriptor.StatAmount'}}</label>
-    <input name="system.statAmount" type="number" value="{{system.statAmount}}" min="1"/>
-  </div>
-  <div class="form-group">
-    <label>{{localize 'CYPHER.Descriptor.SkillOptions'}}</label>
-    <p class="descriptor-hint">{{localize 'CYPHER.Descriptor.SkillOptionsHint'}}</p>
-    <input name="system.skillOptions.0" type="text" value="{{lookup system.skillOptions 0}}"/>
-    <input name="system.skillOptions.1" type="text" value="{{lookup system.skillOptions 1}}"/>
-    <input name="system.skillOptions.2" type="text" value="{{lookup system.skillOptions 2}}"/>
-    <input name="system.skillOptions.3" type="text" value="{{lookup system.skillOptions 3}}"/>
-  </div>
-  {{/ifEquals}}
-
-  {{#ifEquals item.type "type"}}
-  <div class="form-group">
-    <label>{{localize 'CYPHER.Tier'}}</label>
-    <input name="system.tier" type="number" value="{{system.tier}}" min="1" max="6"/>
-  </div>
-  <div class="form-group">
-    <label>{{localize 'CYPHER.Type.Genre'}}</label>
-    <input name="system.genre" type="text" value="{{system.genre}}"/>
-  </div>
-  <div class="form-group">
-    <label>{{localize 'CYPHER.Type.Subgenre'}}</label>
-    <input name="system.subgenre" type="text" value="{{system.subgenre}}"/>
-  </div>
-  <div class="form-group">
-    <label>{{localize 'CYPHER.Type.StatOptions'}}</label>
-    <input name="system.statOptions" type="text" value="{{system.statOptions}}"/>
-  </div>
-  {{/ifEquals}}
-
-
   <div class="form-group description-group">
     <label>{{localize 'CYPHER.Description'}}</label>
     <prose-mirror name="system.description" value="{{system.description}}"></prose-mirror>
   </div>
+  {{/ifEquals}}
+  {{/ifEquals}}
+  {{/ifEquals}}
 
 </section>

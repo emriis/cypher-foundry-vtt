@@ -1,4 +1,11 @@
 {
+  "TYPES": {
+    "Item": {
+      "type": "Type",
+      "focus": "Focus",
+      "descriptor": "Descripteur"
+    }
+  },
   "CYPHER": {
     "Name": "Nom",
     "Description": "Description",
@@ -201,9 +208,13 @@
       "Action": "Action requise",
       "ActionNone": "Aucune",
       "ActionStandard": "Action",
-      "ActionMovement": "Mouvement"
+      "ActionMovement": "Mouvement",
+      "ChooseEffect": "Choisir un effet",
+      "Effort": "Effort",
+      "RollTable": "Table de résolution",
+      "InvalidRollTable": "Table de résolution d'aptitude invalide",
+      "NoRollTableResult": "Aucun résultat ne correspond au résultat du dé."
     },
-
     "Cypher": {
       "Title": "Cyphers",
       "Type": "Type de cypher",
@@ -290,6 +301,14 @@
 
     "Descriptor": {
       "Label": "Descripteur",
+      "StandardCategory": "Descripteur",
+      "SpeciesCategory": "Espèce",
+      "Genres": "Genres compatibles",
+      "AllGenres": "Tous les genres",
+      "SecondDescriptorGrant": "Accorde un second Descripteur",
+      "Granted": "Accordé",
+      "FixedSkills": "Compétences accordées",
+      "Benefits": "Avantages de l’espèce",
       "StatOptions": "Choix de caractéristique",
       "StatOptionsHint": "Réserve(s) auxquelles ce Descripteur peut ajouter son bonus. Coche deux caractéristiques (ex. Célérité ou Puissance) si le texte du CRD propose un choix.",
       "StatAmount": "Bonus de Réserve",
@@ -311,11 +330,59 @@
       "SpeciesAlreadyApplied": "Une espèce a déjà été appliquée à ce personnage.",
       "SpeciesWrongGenre": "Cette espèce n'est pas disponible pour le genre du personnage."
     },
+    "FocusSheet": {
+      "Label": "Focus",
+      "Abilities": "Aptitudes par rang",
+      "NoAbilities": "Aucune aptitude n’est enregistrée sur ce Focus.",
+      "Tier": "Rang {tier}",
+      "AbilityTier": "Rang {tier}",
+      "AbilityCost": "{amount} point(s) de Réserve de {stat}",
+      "AbilityCostOptions": "Réserves possibles : {options}",
+      "NoPoolCost": "Aucun coût de Réserve",
+      "AnyPool": "une Réserve au choix",
+      "Enabler": "Aide",
+      "Repeatable": "Peut être reprise",
+      "OnePrerequisite": "Nécessite l’un de ces prérequis",
+      "WeaponCategories": "Armes utilisables librement",
+      "ArmorCategories": "Armures utilisables librement",
+      "WeaponFamilies": "Familles d’armes",
+      "WeaponSkills": "Compétences d’armes accordées",
+      "ChooseWeaponAttackCategory": "Choisis une catégorie d’attaque d’arme en obtenant cette aptitude",
+      "GrantedArmor": "Armure accordée"
+    },
     "Type": {
       "Label": "Type",
       "Genre": "Genre",
       "Subgenre": "Sous-genre",
-      "StatOptions": "Réserves principales",
+      "StatOptions": "Réserves éligibles au bonus d’Avantage",
+      "PoolBonuses": "Bonus aux Réserves",
+      "WoundBonuses": "Capacité de blessures supplémentaire",
+      "EdgeChoice": "à une Réserve éligible",
+      "WeaponTraining": "Armes utilisables librement",
+      "ArmorTraining": "Armures utilisables librement",
+      "WeaponFamilies": "Familles d’armes",
+      "SkillOptions": "Choix de compétence",
+      "Abilities": "Aptitudes du Type",
+      "AbilityTier": "Rang {tier}",
+      "AbilityCost": "{amount} point(s) de Réserve de {stat}",
+      "AbilityCostOptions": "Réserves possibles : {options}",
+      "NoPoolCost": "Aucun coût de Réserve",
+      "AnyPool": "une Réserve au choix",
+      "Enabler": "Aide",
+      "Repeatable": "Peut être reprise",
+      "Prerequisites": "Prérequis",
+      "AllWeaponCategory": "Toutes les catégories d’armes",
+      "AllArmorCategory": "Toutes les catégories d’armures",
+      "WeaponCategory": {
+        "light": "Armes légères",
+        "medium": "Armes moyennes",
+        "heavy": "Armes lourdes"
+      },
+      "ArmorCategory": {
+        "light": "Armures légères",
+        "medium": "Armures moyennes",
+        "heavy": "Armures lourdes"
+      },
       "AlreadyApplied": "Un Type a déjà été appliqué à ce personnage.",
       "ApplyTitle": "Appliquer le Type : {name}",
       "ApplyPrompt": "Appliquer les effets mécaniques de {name} à ce personnage ?",

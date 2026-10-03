@@ -128,7 +128,8 @@
           "amount": 4,
           "options": []
         },
-        "description": "You pull a physical object to you across almost any distance. You can choose any piece of normal equipment on the equipment list for your genre, or (once between each ten-hour recovery) you can let the GM randomly determine what object appears. You can't use this ability to take an item held by another creature. The object appears next to you. Action. Random Object d20 Results 1–10 Standard equipment 11–12 Manifest cypher 13–20 Worthless junk"
+        "description": "You pull a physical object to you across almost any distance. You can choose any piece of normal equipment on the equipment list for your genre, or (once between each ten-hour recovery) you can let the GM randomly determine what object appears. You can't use this ability to take an item held by another creature. The object appears next to you. Action. Random Object d20 Results 1–10 Standard equipment 11–12 Manifest cypher 13–20 Worthless junk",
+        "rollTables": [{"id":"random-object","name":"Random Object","formula":"1d20","results":[{"min":1,"max":10,"description":"Standard equipment"},{"min":11,"max":12,"description":"Manifest cypher"},{"min":13,"max":20,"description":"Worthless junk"}]}]
       },
       {
         "id": "mind-for-speed",
@@ -177,7 +178,8 @@
           "amount": 6,
           "options": []
         },
-        "description": "You pull a creature of level 3 or lower to you across almost any distance. You can choose a kind of creature that you've already encountered, or (once between each ten-hour recovery) you can let the GM randomly determine what creature appears. The creature appears next to you. They have no memory of anything before being called by you, but they have the general knowledge of a typical creature of their type. The creature is open to communicating and helping you. Action. Random Creature d20 Results 1–16 Level 3 17–18 Level 4 19–20 Level 5"
+        "description": "You pull a creature of level 3 or lower to you across almost any distance. You can choose a kind of creature that you've already encountered, or (once between each ten-hour recovery) you can let the GM randomly determine what creature appears. The creature appears next to you. They have no memory of anything before being called by you, but they have the general knowledge of a typical creature of their type. The creature is open to communicating and helping you. Action. Random Creature d20 Results 1–16 Level 3 17–18 Level 4 19–20 Level 5",
+        "rollTables": [{"id":"random-creature","name":"Random Creature","formula":"1d20","results":[{"min":1,"max":16,"description":"Level 3"},{"min":17,"max":18,"description":"Level 4"},{"min":19,"max":20,"description":"Level 5"}]}]
       },
       {
         "id": "reshape",

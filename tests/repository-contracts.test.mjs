@@ -57,6 +57,16 @@ test("French and English locales expose the same keys and interpolation variable
   }
 });
 
+test("locale interpolation placeholders use Foundry's single-brace format", () => {
+  for (const file of ["lang/en.json", "lang/fr.json"]) {
+    const locale = readJson(file);
+    for (const key of flattenKeys(locale)) {
+      const value = key.split(".").reduce((entry, part) => entry[part], locale);
+      assert.doesNotMatch(value, /\{\{|\}\}/, `${file}/${key}`);
+    }
+  }
+});
+
 test("each declared pack has a corresponding language-specific source set", () => {
   const manifest = readJson("system.json");
 
