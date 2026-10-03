@@ -1,7 +1,7 @@
 {
   "_id": "V2iHyTfmu1mkAXJc",
   "_key": "!items!V2iHyTfmu1mkAXJc",
-  "name": "Bienveillant·e",
+  "name": "Compatissant·e",
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
@@ -10,12 +10,10 @@
     ],
     "statAmount": 2,
     "skillOptions": [
-      "Soin",
-      "",
-      "",
-      ""
+      "Soins aux animaux",
+      "Soin"
     ],
-    "description": "<p>Aider les autres est ta vocation. Ta générosité naturelle apporte de la joie à autrui.</p>"
+    "description": "<p>Aider les autres est ta vocation. C’est ta raison d’être. Ta générosité naturelle apporte de la joie à autrui, et leur bonheur te comble. Tu es à ton meilleur niveau lorsque tu aides : soigner des blessures, accompagner quelqu’un dans une tâche difficile ou maintenir le moral du groupe dans les moments compliqués.</p>"
   },
   "folder": "dscGeneralFr0001",
   "sort": 0,
