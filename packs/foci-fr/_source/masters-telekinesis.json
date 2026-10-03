@@ -128,7 +128,8 @@
           "amount": 4,
           "options": []
         },
-        "description": "Tu attires à toi un objet physique depuis presque n’importe quelle distance. Tu peux choisir n’importe quel objet d’équipement standard de ton genre ou une fois par récupération de dix heures, laisser le·la MJ tirer un objet aléatoire. Tu ne peux pas récupérer un objet tenu par quelqu’un. L’objet apparaît à côté de toi."
+        "description": "Tu attires à toi un objet physique depuis presque n’importe quelle distance. Tu peux choisir n’importe quel objet d’équipement standard de ton genre ou une fois par récupération de dix heures, laisser le·la MJ tirer un objet aléatoire. Tu ne peux pas récupérer un objet tenu par quelqu’un. L’objet apparaît à côté de toi.",
+        "rollTables": [{"id":"random-object","name":"Objet aléatoire","formula":"1d20","results":[{"min":1,"max":10,"description":"Équipement standard"},{"min":11,"max":12,"description":"Cypher manifeste"},{"min":13,"max":20,"description":"Objet sans valeur"}]}]
       },
       {
         "id": "mind-for-speed",
@@ -177,7 +178,8 @@
           "amount": 6,
           "options": []
         },
-        "description": "Tu attires à toi une créature de niveau 3 ou moins depuis presque n’importe quelle distance. Tu peux choisir un type de créature que tu as déjà rencontré ou laisser le·la MJ en déterminer une au hasard (une fois par récupération de dix heures). La créature apparaît à côté de toi, sans souvenir de sa vie passée, mais avec les connaissances générales de son espèce. Elle est ouverte à la communication et à l’aide."
+        "description": "Tu attires à toi une créature de niveau 3 ou moins depuis presque n’importe quelle distance. Tu peux choisir un type de créature que tu as déjà rencontré ou laisser le·la MJ en déterminer une au hasard (une fois par récupération de dix heures). La créature apparaît à côté de toi, sans souvenir de sa vie passée, mais avec les connaissances générales de son espèce. Elle est ouverte à la communication et à l’aide.",
+        "rollTables": [{"id":"random-creature","name":"Créature aléatoire","formula":"1d20","results":[{"min":1,"max":16,"description":"Niveau 3"},{"min":17,"max":18,"description":"Niveau 4"},{"min":19,"max":20,"description":"Niveau 5"}]}]
       },
       {
         "id": "reshape",

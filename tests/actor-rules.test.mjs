@@ -363,6 +363,8 @@ test("applyType applies pool, Edge, wound, and equipment benefits once", async (
     enabler: false,
     cost: { stat: "intellect", amount: 1 },
     action: "none",
+    effects: [],
+    rollTables: [],
     description: "Enter a state of frenzy."
   });
 

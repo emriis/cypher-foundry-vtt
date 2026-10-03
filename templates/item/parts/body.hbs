@@ -366,6 +366,35 @@
   </div>
   {{/ifEquals}}
 
+  {{#if abilityView.effects.length}}
+  <section class="ability-effects">
+    <h3>{{localize 'CYPHER.Ability.ChooseEffect'}}</h3>
+    {{#each abilityView.effects as |effect|}}
+    <article class="ability-effect">
+      <h4>{{effect.name}}</h4>
+      <div>{{{effect.description}}}</div>
+      {{#if effect.effort}}<p><strong>{{localize 'CYPHER.Ability.Effort'}}:</strong> {{effect.effort}}</p>{{/if}}
+    </article>
+    {{/each}}
+  </section>
+  {{/if}}
+
+  {{#if abilityView.rollTables.length}}
+  <section class="ability-roll-tables">
+    <h3>{{localize 'CYPHER.Ability.RollTable'}}</h3>
+    {{#each abilityView.rollTables as |table|}}
+    <article class="ability-roll-table">
+      <h4>{{table.name}} <small>{{table.formula}}</small></h4>
+      <ul>
+        {{#each table.results as |result|}}
+        <li><strong>{{result.min}}–{{result.max}}</strong> {{result.description}}</li>
+        {{/each}}
+      </ul>
+    </article>
+    {{/each}}
+  </section>
+  {{/if}}
+
   {{#ifEquals item.type "cypher"}}
   <div class="form-group">
     <label>{{localize 'CYPHER.Cypher.Type'}}</label>

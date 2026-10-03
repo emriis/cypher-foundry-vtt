@@ -1,13 +1,8 @@
 import { CYPHER } from "../config.mjs";
+import { createAbilityEffectsField, createAbilityRollTablesField } from "./ability-fields.mjs";
 
 const { StringField, NumberField, HTMLField, ArrayField, BooleanField, SchemaField } = foundry.data.fields;
 
-/**
- * Data model for a Type compendium entry.
- *
- * The sheet applies its pool, skill, and equipment benefits to the actor; the
- * Type remains a reusable source rather than actor state.
- */
 export default class CypherTypeData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     return {
@@ -55,7 +50,9 @@ export default class CypherTypeData extends foundry.abstract.TypeDataModel {
             { required: true, initial: [] }
           )
         }),
-        description: new HTMLField({ required: true, blank: true })
+        description: new HTMLField({ required: true, blank: true }),
+        effects: createAbilityEffectsField(),
+        rollTables: createAbilityRollTablesField()
       }), { required: true, initial: [] }),
       statOptions: new ArrayField(
         new StringField({ required: true, choices: ["might", "speed", "intellect"] }),
