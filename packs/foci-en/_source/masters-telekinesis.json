@@ -114,7 +114,8 @@
         },
         "description": "Until you use a ten-minute or longer recovery, you use your telekinesis to augment your physical actions. When you roll on a task using brute force, such as moving a heavy object or smashing down a door, and your roll is less than a 9, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) Effort: Increase the minimum number rolled for this ability by 3. Action to initiate."
       },
-      {
+      {,
+        "rollTables": [{"id":"random-object","name":"Random Object","formula":"1d20","results":[{"min":1,"max":10,"description":"Standard equipment"},{"min":11,"max":12,"description":"Manifest cypher"},{"min":13,"max":20,"description":"Worthless junk"}]}]
         "id": "apportation",
         "name": "Apportation",
         "tier": 4,
@@ -163,7 +164,8 @@
         },
         "description": "You can use this ability in one of two ways. Heavy Throw: You telekinetically grab an object within short range and hurl it at a target within short range. (To throw a creature instead of an object, you first have to telekinetically grab them with a successful Intellect attack.) Make an Intellect attack against your target. If you succeed, your target and whatever you throw take 6 damage. Shattering Burst: You unleash your power directly against an object up to half your size within short range. Make an Intellect attack (this is eased by three steps compared to using physical strength to attack the object). If you succeed, you instantly destroy the object. Action."
       },
-      {
+      {,
+        "rollTables": [{"id":"random-creature","name":"Random Creature","formula":"1d20","results":[{"min":1,"max":16,"description":"Level 3"},{"min":17,"max":18,"description":"Level 4"},{"min":19,"max":20,"description":"Level 5"}]}]
         "id": "improved-apportation",
         "name": "Improved Apportation",
         "tier": 6,

@@ -902,8 +902,10 @@ export default class CypherActor extends Actor {
         source: typeItem.name,
         tier: Number(ability.tier) || 1,
         enabler: Boolean(ability.enabler),
-        cost: ability.cost ?? { stat: "none", amount: 0 },
+        cost: ability.cost ?? { stat: "none", amount: 0, options: [] },
         action: "none",
+        effects: ability.effects ?? [],
+        rollTables: ability.rollTables ?? [],
         description: ability.description ?? ""
       }
     }));
@@ -1054,6 +1056,8 @@ export default class CypherActor extends Actor {
         enabler: ability.enabler,
         cost: ability.cost,
         action: "none",
+        effects: ability.effects ?? [],
+        rollTables: ability.rollTables ?? [],
         description: ability.description
       }
     };

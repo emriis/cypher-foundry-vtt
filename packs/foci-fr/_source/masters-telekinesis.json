@@ -114,7 +114,8 @@
         },
         "description": "Jusqu’à ta prochaine récupération de dix minutes ou plus, tu utilises ta télékinésie pour amplifier tes actions physiques. Pour toute tâche de force brute (ouvrir une porte verrouillée, porter un poids, attaquer avec une arme de mêlée ou de jet…), si ton résultat est inférieur à 9, considère qu’il est de 9. (Tu évites ainsi une Intrusion du·de la MJ si tu fais un 1.) Au rang 3, le minimum passe à 12. Effort : augmenter le minimum de +3."
       },
-      {
+      {,
+        "rollTables": [{"id":"random-object","name":"Objet aléatoire","formula":"1d20","results":[{"min":1,"max":10,"description":"Équipement standard"},{"min":11,"max":12,"description":"Cypher manifeste"},{"min":13,"max":20,"description":"Objet sans valeur"}]}]
         "id": "apportation",
         "name": "Attirer",
         "tier": 4,
@@ -163,7 +164,8 @@
         },
         "description": "Tu peux utiliser cette aptitude de deux façons : - Lancer lourd : Tu saisis télékinétiquement un objet à portée courte et le jettes sur une cible à portée courte. (Pour lancer une créature au lieu d’un objet, tu dois d’abord la saisir via une attaque d’Intellect.) Si tu réussis l’attaque, la cible subit 6 dégâts. - Explosion fracturante : Tu brises par pure force psychique un objet à portée courte d’une taille allant jusqu’à la moitié de la tienne. Ton attaque d’Intellect est facilitée de trois paliers par rapport à un coup physique. En cas de réussite, l’objet est détruit."
       },
-      {
+      {,
+        "rollTables": [{"id":"random-creature","name":"Créature aléatoire","formula":"1d20","results":[{"min":1,"max":16,"description":"Niveau 3"},{"min":17,"max":18,"description":"Niveau 4"},{"min":19,"max":20,"description":"Niveau 5"}]}]
         "id": "improved-apportation",
         "name": "Mieux attirer",
         "tier": 6,

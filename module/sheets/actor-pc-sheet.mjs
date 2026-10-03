@@ -37,6 +37,8 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       damageArmor: CypherPCSheet.#onDamageArmor,
       repairArmor: CypherPCSheet.#onRepairArmor,
       rollDepletion: CypherPCSheet.#onRollDepletion,
+      chooseAbilityEffect: CypherPCSheet.#onChooseAbilityEffect,
+      rollAbilityTable: CypherPCSheet.#onRollAbilityTable,
       chooseFocusAbility: CypherPCSheet.#onChooseFocusAbility
     },
     form: { submitOnChange: true }
@@ -225,6 +227,84 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
   static async #onRollDepletion(event, target) {
     const item = this.actor.items.get(target.dataset.itemId);
     await item?.rollDepletion();
+  }
+
+  /**
+   * Lets the player choose one structured effect from an ability.
+   *
+   * @param {PointerEvent} event Action event.
+   * @param {HTMLElement} target Action target element.
+   */
+  static async #onChooseAbilityEffect(event, target) {
+    const item = this.actor.items.get(target.closest("[data-item-id]")?.dataset.itemId);
+    const effects = item?.system.effects ?? [];
+    if (!item || !effects.length) return;
+
+    const effectId = await foundry.applications.api.DialogV2.prompt({
+      window: { title: item.name },
+      content: `<fieldset class="cypher-ability-effects">
+        <legend>${game.i18n.localize("CYPHER.Ability.ChooseEffect")}</legend>
+        ${effects.map((effect, index) => `
+          <label class="cypher-ability-effect-option">
+            <input type="radio" name="effectId" value="${effect.id}" ${index === 0 ? "checked" : ""}/>
+            <strong>${effect.name}</strong>
+            <span>${effect.description ?? ""}</span>
+            ${effect.effort ? `<em>${game.i18n.localize("CYPHER.Ability.Effort")}: ${effect.effort}</em>` : ""}
+          </label>
+        `).join("")}
+      </fieldset>`,
+      ok: {
+        label: game.i18n.localize("CYPHER.Confirm.Add"),
+        callback: (event, button) => button.form.querySelector("input[name=effectId]:checked")?.value ?? null
+      }
+    });
+    if (!effectId) return;
+
+    const effect = effects.find(candidate => candidate.id === effectId);
+    if (!effect) return;
+    const description = await foundry.applications.ux.TextEditor.implementation.enrichHTML(
+      effect.description ?? "", { relativeTo: item }
+    );
+    const effort = effect.effort
+      ? `<p><strong>${game.i18n.localize("CYPHER.Ability.Effort")}:</strong> ${effect.effort}</p>`
+      : "";
+    await ChatMessage.create({
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      content: `<div class="cypher-roll-card"><h3>${item.name}: ${effect.name}</h3>${description}${effort}</div>`
+    });
+  }
+
+  /**
+   * Rolls an inline ability table and posts the matching result to chat.
+   *
+   * @param {PointerEvent} event Action event.
+   * @param {HTMLElement} target Action target element.
+   */
+  static async #onRollAbilityTable(event, target) {
+    const item = this.actor.items.get(target.closest("[data-item-id]")?.dataset.itemId);
+    const tableId = target.dataset.tableId;
+    const table = item?.system.rollTables?.find(candidate => candidate.id === tableId);
+    if (!item || !table) return;
+
+    let roll;
+    try {
+      roll = await new Roll(table.formula).evaluate();
+    } catch (error) {
+      ui.notifications.error(`${game.i18n.localize("CYPHER.Ability.InvalidRollTable")}: ${error.message}`);
+      return;
+    }
+
+    const result = table.results.find(candidate => roll.total >= candidate.min && roll.total <= candidate.max);
+    const description = result
+      ? await foundry.applications.ux.TextEditor.implementation.enrichHTML(
+        result.description ?? "", { relativeTo: item }
+      )
+      : `<p>${game.i18n.localize("CYPHER.Ability.NoRollTableResult")}</p>`;
+
+    await roll.toMessage({
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      flavor: `<strong>${item.name}</strong> — ${table.name}<br>${description}`
+    });
   }
 
   /**

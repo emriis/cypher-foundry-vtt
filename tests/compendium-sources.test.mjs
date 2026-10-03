@@ -148,10 +148,30 @@ for (const language of ["en", "fr"]) {
         assert.match(ability.id, /^[a-z0-9]+(?:-[a-z0-9]+)*$/);
         assert.equal(abilityIds.has(ability.id), false);
         abilityIds.add(ability.id);
-        assert.deepEqual(Object.keys(ability).sort(), ["cost", "description", "enabler", "id", "name", "prerequisites", "repeatable", "tier"]);
+        const expectedKeys = ["cost", "description", "enabler", "id", "name", "prerequisites", "repeatable", "tier"];
+        const optionalKeys = ["effects", "rollTables"];
+        assert.ok(Object.keys(ability).every(key => expectedKeys.includes(key) || optionalKeys.includes(key)));
+        assert.deepEqual(Object.keys(ability).sort(), [...new Set([...expectedKeys, ...optionalKeys.filter(key => key in ability)])].sort());
         assert.deepEqual(ability.prerequisites, []);
         assert.equal(ability.repeatable, false);
         assert.deepEqual(ability.cost.options, []);
+        for (const effect of ability.effects ?? []) {
+          assert.match(effect.id, /^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+          assert.ok(effect.name);
+          assert.ok(effect.description !== undefined);
+          assert.ok(Array.isArray(effect.rollTables));
+        }
+        for (const table of ability.rollTables ?? []) {
+          assert.match(table.id, /^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+          assert.ok(table.name);
+          assert.match(table.formula, /^\\d+d\\d+$/);
+          assert.ok(table.results.length > 0);
+          for (const result of table.results) {
+            assert.ok(Number.isInteger(result.min) && Number.isInteger(result.max));
+            assert.ok(result.min <= result.max);
+            assert.ok(result.description !== undefined);
+          }
+        }
         const abilityKey = `${ability.id}|${ability.name}|${ability.tier}|${ability.description}`;
         assert.equal(abilityNames.has(abilityKey), false);
         abilityNames.add(abilityKey);
@@ -221,6 +241,45 @@ for (const language of ["en", "fr"]) {
     }
   });
 }
+
+test("Structured ability effects and roll tables preserve bilingual mechanics", () => {
+  const englishCleric = JSON.parse(fs.readFileSync(
+    path.join(root, "packs", "types-en", "_source", "cleric.json"), "utf8"
+  ));
+  const frenchCleric = JSON.parse(fs.readFileSync(
+    path.join(root, "packs", "types-fr", "_source", "cleric.json"), "utf8"
+  ));
+  const englishRadiance = englishCleric.system.abilities.find(
+    ability => ability.id === "divine-radiance"
+  );
+  const frenchRadiance = frenchCleric.system.abilities.find(
+    ability => ability.id === "divine-radiance"
+  );
+  assert.deepEqual(
+    frenchRadiance.effects.map(effect => effect.id),
+    englishRadiance.effects.map(effect => effect.id)
+  );
+  assert.deepEqual(frenchRadiance.effects.map(effect => effect.effort !== ""), englishRadiance.effects.map(effect => effect.effort !== ""));
+
+  const englishFocus = JSON.parse(fs.readFileSync(
+    path.join(root, "packs", "foci-en", "_source", "masters-telekinesis.json"), "utf8"
+  ));
+  const frenchFocus = JSON.parse(fs.readFileSync(
+    path.join(root, "packs", "foci-fr", "_source", "masters-telekinesis.json"), "utf8"
+  ));
+  for (const abilityId of ["apportation", "improved-apportation"]) {
+    const en = englishFocus.system.abilities.find(ability => ability.id === abilityId);
+    const fr = frenchFocus.system.abilities.find(ability => ability.id === abilityId);
+    assert.equal(en.rollTables.length, 1, abilityId);
+    assert.equal(fr.rollTables.length, 1, abilityId);
+    assert.equal(en.rollTables[0].formula, fr.rollTables[0].formula, abilityId);
+    assert.deepEqual(
+      fr.rollTables[0].results.map(result => [result.min, result.max]),
+      en.rollTables[0].results.map(result => [result.min, result.max]),
+      abilityId
+    );
+  }
+});
 
 test("Type sources are directly maintained as structurally aligned bilingual pairs", () => {
   const enSources = readPackSources("types-en");
