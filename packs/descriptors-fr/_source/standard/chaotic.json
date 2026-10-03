@@ -1,7 +1,7 @@
 {
   "_id": "F6Sn1Jr7JI9h2TzF",
   "_key": "!items!F6Sn1Jr7JI9h2TzF",
-  "name": "Impulsif·ve",
+  "name": "Chaotique",
   "type": "descriptor",
   "img": "icons/svg/aura.svg",
   "system": {
@@ -11,11 +11,9 @@
     "statAmount": 2,
     "skillOptions": [
       "Initiative",
-      "",
-      "",
-      ""
+      "Représentation"
     ],
-    "description": "<p>Le danger ne t'effraie guère. Tu aimes semer la surprise juste pour voir ce qui va se produire.</p>"
+    "description": "<p>Le danger ne t’effraie guère, principalement parce que tu te soucies peu des conséquences. Tu aimes semer la surprise, juste pour voir ce qui va se produire. Plus le résultat est inattendu, plus tu es satisfait·e. Parfois, tu te sens particulièrement exalté·e et, pour le bien de tes proches, tu te retiens d’entreprendre certaines actions dont tu sais pertinemment qu’elles échoueront.</p>"
   },
   "folder": "dscGeneralFr0001",
   "sort": 0,

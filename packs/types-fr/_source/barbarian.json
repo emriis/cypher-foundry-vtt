@@ -45,7 +45,7 @@
           "amount": 1,
           "options": []
         },
-        "description": "En combat, tu peux entrer dans un état de frénésie. Tant que tu es dans cet état, tu ne peux pas utiliser de points d'Intellect, mais tu ajoutes +1 à ton Atout de Puissance et à ton Atout de Célérité. Cet effet dure aussi longtemps que tu le souhaites, mais il prend fin dès qu'aucun combat n'a lieu à portée de tes sens. Effort : Tu facilites les attaques de tes alliés contre un adversaire de ton choix pour le reste du combat."
+        "description": "<p>En combat, tu peux entrer dans un état de frénésie. Tant que tu es dans cet état, tu ne peux pas utiliser de points d'Intellect, mais tu ajoutes +1 à ton Atout de Puissance et à ton Atout de Célérité. Cet effet dure aussi longtemps que tu le souhaites, mais il prend fin dès qu'aucun combat n'a lieu à portée de tes sens.</p><p>Effort : Tu facilites les attaques de tes alliés contre un adversaire de ton choix pour le reste du combat.</p>"
       },
       {
         "id": "wilderness-survival",
@@ -59,7 +59,7 @@
           "amount": 0,
           "options": []
         },
-        "description": "Tu sais survivre dans les terres inhabitées. Après avoir passé au moins dix minutes en pleine nature et réussi une tâche de survie en plein air de difficulté 2, tu trouves quelque chose d'utile que tu recherchais : abri, feu, gibier, baies, champignons, racines ou autres aliments. Tu sais également préparer au mieux tout gibier ou végétation récupéré et tu peux nourrir jusqu'à cinq alliés en plus de toi-même."
+        "description": "Tu sais survivre dans les terres inhabitées. Après avoir passé au moins dix minutes en pleine nature et réussi une tâche de survie en plein air de difficulté 2 (ou une difficulté évaluée par le MJ correspondante à la zone concernée), tu trouves quelque chose d'utile que tu recherchais : abri, feu, gibier, baies, champignons, racines ou autres aliments. Tu sais également préparer au mieux tout gibier ou végétation récupéré et tu peux nourrir jusqu'à cinq alliés en plus de toi-même."
       },
       {
         "id": "wounded-fury",
@@ -73,14 +73,14 @@
           "amount": 0,
           "options": []
         },
-        "description": "Tant que tu as au moins trois blessures modérées ou au moins une blessure majeure, tu bénéficies d'un niveau gratuit d'Effort que tu peux appliquer à l'une de tes attaques à chaque round. Au rang 3, ce bénéfice passe à deux niveaux gratuits d'Effort."
+        "description": "Tant que tu as au moins trois blessures modérées ou au moins une blessure majeure, tu bénéficies d'un niveau gratuit d'Effort que tu peux appliquer à l'une de tes attaques à chaque round. Au rang 3, ce bénéfice passe à deux niveaux d'Effort gratuits."
       }
     ],
     "statOptions": [
       "might",
       "speed"
     ],
-    "description": "<p>For you, every day is another chance to spill blood, drink ale, or both—and pick up a scar or two to commemorate the day. Born an outlander and a wanderer at heart, you've become an adventurer more by accident than design. They say you're savage, but only behind your back, lest they face your fury. Out of everyone in your group, you tend to draw the most attention from foes because you give up trepidation for rage. Fears fall away when your blood is up; all you see is red. Frenzy gives you strength, battle-minded purpose, and, more times than not, a path to victory. But when your battle fever passes, your lore of the wild places helps guide you and your allies through uncivilized lands where monsters, bandits, and other barbarians roam.</p>"
+    "description": "<p>Pour toi, chaque jour est une nouvelle occasion de répandre du sang, boire de la bière, ou les deux — et de récolter une cicatrice ou deux pour commémorer la journée. Né·e comme un·e étranger·ère aux terres civilisées et vagabond·e dans l’âme, tu es devenu·e aventurier·ère plus par accident que par choix. On dit que tu es sauvage, mais seulement dans ton dos, de peur d’affronter ta fureur.</p><p>Parmi tous les membres de ton groupe, tu es celle ou celui qui attire le plus l’attention des ennemis, car tu abandonnes la crainte au profit de la rage. Les peurs disparaissent lorsque ton sang s’échauffe ; tout ce que tu vois, c’est le rouge. La frénésie te donne de la force, un esprit tourné vers la bataille, et, la plupart du temps, un chemin vers la victoire. Mais lorsque ta fièvre guerrière retombe, ta connaissance des terres sauvages aide à guider tes allié·es et toi‑même à travers les contrées non civilisées où rôdent monstres, bandits et autres barbares.</p>"
   },
   "folder": "N6LoBZte2sRtJhu7",
   "sort": 0,

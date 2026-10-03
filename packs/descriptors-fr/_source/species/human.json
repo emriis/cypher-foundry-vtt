@@ -14,8 +14,13 @@
     "statOptions": [],
     "statAmount": 0,
     "skillOptions": [],
-    "benefits": [],
-    "description": "<p>Humans are among the youngest species, and perhaps that's why, when considered as a whole, they're more given to explore, conquer, and expand their communities, even if that means taking from other species or other humans.</p><p><strong>You gain the following characteristics:</strong></p><p>Choose a second descriptor and add its benefits to your regular descriptor.</p><p>In a game where everyone is human, using the Human species option may not make sense. Your GM might grant you the option to choose Human as a species only if other species are also part of the game.</p>"
+    "benefits": [
+      {
+        "name": "Deuxième descripteur",
+        "description": "<p>Choisis un deuxième descripteur et ajoute ses bénéfices à ton descripteur principal.</p>"
+      }
+    ],
+    "description": "<p>Les humain·es comptent parmi les espèces les plus jeunes, et peut‑être est‑ce pour cela que, collectivement, iels sont enclins à explorer, conquérir et étendre leurs communautés — quitte à s’en prendre à d’autres espèces… ou à d’autres humain·es.Individuellement, les humains sont extraordinairement variés. Tu peux mesurer moins d’1,50 m ou dépasser 1,80 m, avoir 45 kg ou peser plus de 110 kg, avoir les yeux bleus, bruns, noirs, verts, ou toute autre variation ; être chauve, avoir des tresses incroyables, une crête ou une coupe extravagante ; être guidé·e par ta foi, ton désir d’exploration, ta volonté de combattre le mal, d’amasser des richesses… Mais une chose est sûre : tu ne recules pas devant ce que tu veux ou ce en quoi tu crois. Mais une chose est sûre : tu ne recules pas devant ce que tu veux ou ce en quoi tu crois.</p>"
   },
   "folder": "dscMixedFr000001",
   "sort": 0,
