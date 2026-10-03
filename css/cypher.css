@@ -654,6 +654,30 @@
   color: var(--cypher-color-text-muted);
 }
 
+.cypher .abilities-list .item {
+  display: block;
+}
+
+.cypher .ability-header {
+  display: flex;
+  align-items: center;
+  gap: var(--cypher-space-md);
+}
+
+.cypher .ability-description {
+  margin-top: var(--cypher-space-sm);
+  padding: 0 var(--cypher-space-sm) var(--cypher-space-sm);
+  color: var(--cypher-color-text);
+}
+
+.cypher .ability-description > :first-child {
+  margin-top: 0;
+}
+
+.cypher .ability-description > :last-child {
+  margin-bottom: 0;
+}
+
 .cypher .ability-cost {
   flex: 0 0 90px;
   font-size: var(--cypher-font-size-sm);
