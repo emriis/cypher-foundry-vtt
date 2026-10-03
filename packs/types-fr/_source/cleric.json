@@ -59,35 +59,8 @@
           "amount": 1,
           "options": []
         },
-        "description": "Tu canalises ton pouvoir sacré pour produire l'un des effets suivants : Bénédiction (une cible à courte portée gagne un Atout sur une action de son choix avant sa prochaine récupération de 10 min+. Effort : Affecte deux cibles supplémentaires.) ou Repousser les morts-vivants (jusqu'à cinq morts-vivants de niveau 2 ou moins à courte portée sont forcés de battre en retraite et consacrent leur prochain tour à fuir. Au rang 3, tu peux les rendre incapables d'agir pendant un tour. Effort : Affecte deux cibles supplémentaires, augmente le niveau max des morts-vivants affectés de 1.)"
-      },
-      {
-        "id": "blessing",
-        "name": "Main Guérisseuse",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "A target within short range is charged with benevolent divine grace. At any point before they've taken their next ten-minute or longer recovery, they gain an asset to one action. Effort: Affect two additional targets. Action."
-      },
-      {
-        "id": "turn-undead",
-        "name": "Turn Undead",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Up to five undead creatures of level 2 or less within short range are blasted by divine radiance (make separate Intellect attack rolls against each target). Affected targets are repulsed and must spend their next turn fleeing your presence. Depending on the game, your GM may decide Turn Undead works on demons or creatures of similar ilk instead of (or in addition to) undead. Effort: Affect two additional targets. Increase the maximum level of undead you can affect by 1. Action. At tier 3: Instead of causing affected targets to flee, you can make them unable to take actions for one turn. When an ability or effect lets you attack multiple creatures on your turn, each attack after the first one is an extra action on your turn. An attack made as an extra action on your turn counts as a separate action for the purposes of modifying the task with Effort."
+        "description": "Tu canalises ton pouvoir sacré pour produire l’un des effets suivants.",
+        "effects": [{"id":"blessing","name":"Bénédiction","description":"Une cible à courte portée est chargée d’une grâce divine bienveillante. À tout moment avant sa prochaine récupération de dix minutes ou plus, elle gagne un Atout pour une action de son choix.","effort":"Affecte deux cibles supplémentaires.","rollTables":[]},{"id":"turn-undead","name":"Repousser les morts-vivants","description":"Jusqu’à cinq morts-vivants de niveau 2 ou moins à courte portée sont frappés par un rayonnement divin (effectue un jet d’attaque d’Intellect séparé contre chaque cible). Les cibles affectées sont repoussées et doivent consacrer leur prochain tour à fuir ta présence. Selon le cadre de jeu, le MJ peut décider que cette aptitude fonctionne sur les démons ou des créatures similaires à la place des morts-vivants, ou en plus d’eux. Au rang 3, au lieu de faire fuir les cibles affectées, tu peux les rendre incapables d’agir pendant un tour. Lorsqu’une aptitude ou un effet permet d’attaquer plusieurs créatures pendant ton tour, chaque attaque après la première est une action supplémentaire pendant ton tour. Une attaque effectuée comme action supplémentaire compte comme une action distincte pour déterminer les modifications apportées à la tâche par l’Effort.","effort":"Affecte deux cibles supplémentaires. Augmente de 1 le niveau maximal des morts-vivants que tu peux affecter.","rollTables":[]}]
       },
       {
         "id": "healing-hand",

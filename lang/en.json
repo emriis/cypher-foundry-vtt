@@ -208,9 +208,13 @@
       "Action": "Action Required",
       "ActionNone": "None",
       "ActionStandard": "Action",
-      "ActionMovement": "Movement"
+      "ActionMovement": "Movement",
+      "ChooseEffect": "Choose Effect",
+      "Effort": "Effort",
+      "RollTable": "Roll Table",
+      "InvalidRollTable": "Invalid ability roll table",
+      "NoRollTableResult": "No result matches the rolled value."
     },
-
     "Cypher": {
       "Title": "Cyphers",
       "Type": "Cypher Type",

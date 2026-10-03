@@ -1,3 +1,5 @@
+import { createAbilityEffectsField, createAbilityRollTablesField } from "./ability-fields.mjs";
+
 /**
  * Data model for a Cypher ability item.
  *
@@ -7,11 +9,6 @@
 const { StringField, NumberField, HTMLField, BooleanField, ArrayField, SchemaField } = foundry.data.fields;
 
 export default class CypherAbilityData extends foundry.abstract.TypeDataModel {
-  /**
-   * Defines the persisted schema for an ability item.
-   *
-   * @returns {object} Foundry data field definitions.
-   */
   static defineSchema() {
     return {
       source: new StringField({ required: true, blank: true }),
@@ -29,7 +26,8 @@ export default class CypherAbilityData extends foundry.abstract.TypeDataModel {
       }),
 
       action: new StringField({ required: true, initial: "none", choices: ["action", "movement", "none"] }),
-
+      effects: createAbilityEffectsField(),
+      rollTables: createAbilityRollTablesField(),
       description: new HTMLField({ required: true, blank: true })
     };
   }

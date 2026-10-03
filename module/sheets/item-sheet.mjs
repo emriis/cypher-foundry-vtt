@@ -45,6 +45,13 @@ export default class CypherItemSheet extends HandlebarsApplicationMixin(ItemShee
       this.item.system.description ?? "", { relativeTo: this.item }
     );
 
+    if (this.item.type === "ability") {
+      context.abilityView = {
+        effects: this.item.system.effects ?? [],
+        rollTables: this.item.system.rollTables ?? []
+      };
+    }
+
     if (this.item.type === "type") {
       const system = this.item.system;
       const localize = key => game.i18n.localize(key);
