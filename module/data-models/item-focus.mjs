@@ -1,7 +1,5 @@
 import { CYPHER } from "../config.mjs";
 
-import { CYPHER } from "../config.mjs";
-
 const { StringField, NumberField, HTMLField, ArrayField, BooleanField, SchemaField } = foundry.data.fields;
 
 /**
