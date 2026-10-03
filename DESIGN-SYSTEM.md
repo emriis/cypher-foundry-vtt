@@ -21,17 +21,20 @@ Toutes les couleurs de texte ont été vérifiées avec la formule de luminance 
 (contraste minimum visé : **4.5:1** pour le texte normal, niveau AA).
 
 | Jeton | Thème clair | Thème sombre | Usage | Contraste vérifié |
-|---|---|---|---|---|
-| `--cypher-color-bg-sheet` | `#fffdfa` | `#211a14` | Fond général de la fiche | — |
-| `--cypher-color-bg-card` | `#f7f0e4` | `#2f2620` | Fond des blocs (stats, emplacements) | — |
-| `--cypher-color-bg-card-alt` | `#e3f0e3` | `#24361f` | Fond des blocs "acheté/actif" | — |
-| `--cypher-color-text` | `#2a1e14` | `#f0e6d8` | Texte principal | 16.5:1 / 13.9:1 |
-| `--cypher-color-text-muted` | `#5b4a3a` | `#c2b3a0` | Texte secondaire, indices | 7.2:1 / ~9.6:1 |
-| `--cypher-color-accent` | `#8a5a2c` | `#c9a15a` | Liens, icônes, bordures actives | 5.8:1 / 7.1:1 |
+| --- | --- | --- | --- | --- |
+| `--cypher-color-bg-sheet` | `#f4e7e1` | `#241b1c` | Fond général de la fiche | — |
+| `--cypher-color-bg-card` | `#ffefe8` | `#332526` | Fond des blocs (stats, emplacements) | — |
+| `--cypher-color-bg-card-alt` | `#ffddc2` | `#513432` | Fond des blocs "acheté/actif" | — |
+| `--cypher-color-bg-field` | `#ffffff` | `#2a2021` | Champs de saisie | — |
+| `--cypher-color-text` | `#32312f` | `#f5ebe8` | Texte principal | 10.75:1 / 14.36:1 |
+| `--cypher-color-text-muted` | `#6d5d58` | `#d0bbb6` | Texte secondaire, indices | 5.17:1 / 9.18:1 |
+| `--cypher-color-accent` | `#732928` | `#df9a92` | Liens, icônes, bordures actives | 10.11:1 / 7.35:1 avec le texte associé |
 | `--cypher-color-success` | `#2f7a2f` | `#6fcf6f` | Réussite, gains | 5.4:1 |
 | `--cypher-color-danger` | `#a11f1f` | `#ef8a8a` | Échec, suppression, blessure majeure | 7.7:1 |
 | `--cypher-color-info` | `#2f5a8a` | `#8ec1f2` | Modificateurs d'armure | 7.1:1 |
 | `--cypher-focus-ring` | `#2f5a8a` | `#8ec1f2` | Anneau de focus clavier | — |
+
+Les fiches de personnage et d'objet partagent une palette ivoire rosé et bordeaux, des panneaux plats à coins discrets, des bandeaux pêche et des libellés condensés. Les mêmes jetons s'appliquent aux fenêtres d'objets ouvertes depuis les compendiums, tout en préservant le thème sombre de Foundry.
 
 **Règle d'or : ne jamais coder une couleur en dur.** Toute nouvelle règle doit utiliser
 `var(--cypher-color-xxx)`, jamais une valeur hexadécimale directe — c'est ce qui permet
@@ -61,8 +64,9 @@ du logiciel sur la fenêtre de la fiche).
 ### 3. Typographie
 
 | Jeton | Valeur | Usage |
-|---|---|---|
-| `--cypher-font-family` | Signika + repli système complet | Police de toute la fiche (cohérente avec l'interface native de Foundry) |
+| --- | --- | --- |
+| `--cypher-font-family` | Fira Sans, Signika et repli système | Texte courant, avec repli natif Foundry |
+| `--cypher-font-family-condensed` | Fira Sans Condensed, Fira Sans, Signika | Libellés, titres de blocs et actions |
 | `--cypher-font-size-xs` | `0.72rem` | Indices, notes de bas de bloc |
 | `--cypher-font-size-sm` | `0.8rem` | Texte secondaire, libellés de colonne |
 | `--cypher-font-size-base` | `0.9rem` | Texte courant |
@@ -119,17 +123,20 @@ All text colors were verified using the WCAG relative luminance formula (target 
 contrast: **4.5:1** for normal text, AA level).
 
 | Token | Light theme | Dark theme | Usage | Verified contrast |
-|---|---|---|---|---|
-| `--cypher-color-bg-sheet` | `#fffdfa` | `#211a14` | Sheet-wide background | — |
-| `--cypher-color-bg-card` | `#f7f0e4` | `#2f2620` | Card blocks (stats, slots) | — |
-| `--cypher-color-bg-card-alt` | `#e3f0e3` | `#24361f` | "Bought/active" block background | — |
-| `--cypher-color-text` | `#2a1e14` | `#f0e6d8` | Primary text | 16.5:1 / 13.9:1 |
-| `--cypher-color-text-muted` | `#5b4a3a` | `#c2b3a0` | Secondary text, hints | 7.2:1 / ~9.6:1 |
-| `--cypher-color-accent` | `#8a5a2c` | `#c9a15a` | Links, icons, active borders | 5.8:1 / 7.1:1 |
+| --- | --- | --- | --- | --- |
+| `--cypher-color-bg-sheet` | `#f4e7e1` | `#241b1c` | Sheet-wide background | — |
+| `--cypher-color-bg-card` | `#ffefe8` | `#332526` | Card blocks (stats, slots) | — |
+| `--cypher-color-bg-card-alt` | `#ffddc2` | `#513432` | "Bought/active" block background | — |
+| `--cypher-color-bg-field` | `#ffffff` | `#2a2021` | Form fields | — |
+| `--cypher-color-text` | `#32312f` | `#f5ebe8` | Primary text | 10.75:1 / 14.36:1 |
+| `--cypher-color-text-muted` | `#6d5d58` | `#d0bbb6` | Secondary text, hints | 5.17:1 / 9.18:1 |
+| `--cypher-color-accent` | `#732928` | `#df9a92` | Links, icons, active borders | 10.11:1 / 7.35:1 with paired text |
 | `--cypher-color-success` | `#2f7a2f` | `#6fcf6f` | Success, gains | 5.4:1 |
 | `--cypher-color-danger` | `#a11f1f` | `#ef8a8a` | Failure, delete, major wound | 7.7:1 |
 | `--cypher-color-info` | `#2f5a8a` | `#8ec1f2` | Armor modifiers | 7.1:1 |
 | `--cypher-focus-ring` | `#2f5a8a` | `#8ec1f2` | Keyboard focus ring | — |
+
+Character and item sheets share a rose-ivory and burgundy palette, flat panels with restrained corners, peach bands, and condensed labels. The same tokens cover item windows opened from compendiums while preserving Foundry's dark theme.
 
 **Golden rule: never hardcode a color.** Any new rule must use `var(--cypher-color-xxx)`,
 never a direct hex value — this is what enables automatic adaptation to Foundry's dark theme
@@ -157,8 +164,9 @@ never a direct hex value — this is what enables automatic adaptation to Foundr
 ### 3. Typography
 
 | Token | Value | Usage |
-|---|---|---|
-| `--cypher-font-family` | Signika + full system fallback | Font for the whole sheet (consistent with Foundry's native UI) |
+| --- | --- | --- |
+| `--cypher-font-family` | Fira Sans, Signika, then system fallback | Body text, with a Foundry-native fallback |
+| `--cypher-font-family-condensed` | Fira Sans Condensed, Fira Sans, Signika | Labels, section headings, and actions |
 | `--cypher-font-size-xs` | `0.72rem` | Hints, block footnotes |
 | `--cypher-font-size-sm` | `0.8rem` | Secondary text, column labels |
 | `--cypher-font-size-base` | `0.9rem` | Body text |

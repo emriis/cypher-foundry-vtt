@@ -9,10 +9,12 @@
 
 .cypher.sheet {
   /* ---- Typography ----
+  /* ---- Typography ----
      Signika is Foundry's own native UI font (legible, humanist sans-serif) —
      reused here for visual consistency with the rest of the software, with
      a full system fallback stack. */
-  --cypher-font-family: "Signika", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --cypher-font-family: "Fira Sans", "Signika", "Segoe UI", sans-serif;
+  --cypher-font-family-condensed: "Fira Sans Condensed", "Fira Sans", "Signika", sans-serif;
   --cypher-font-size-xs: 0.72rem;
   --cypher-font-size-sm: 0.8rem;
   --cypher-font-size-base: 0.9rem;
@@ -21,15 +23,17 @@
   --cypher-font-size-xl: 1.4rem;
 
   /* ---- Spacing ---- */
+  /* ---- Spacing ---- */
   --cypher-space-xs: 2px;
   --cypher-space-sm: 4px;
   --cypher-space-md: 8px;
   --cypher-space-lg: 12px;
   --cypher-space-xl: 16px;
 
-  --cypher-radius-sm: 4px;
-  --cypher-radius-md: 6px;
-  --cypher-radius-lg: 10px;
+  --cypher-radius-sm: 3px;
+  --cypher-radius-md: 4px;
+  --cypher-radius-lg: 8px;
+  --cypher-shadow-panel: 0 1px 0 rgba(115, 41, 40, 0.1);
 
   /* ---- Minimum click target for icon-only controls ----
      AAA recommendation (2.5.5): 44px. We aim for a reasonable compromise for
@@ -39,33 +43,41 @@
 
   /* ================================================================
     LIGHT THEME (default)
+    LIGHT THEME (default)
      All contrast ratios below were manually verified (WCAG relative
      luminance formula) against their actual usage background.
      ================================================================ */
-  --cypher-color-bg-sheet: #fffdfa;
-  --cypher-color-bg-card: #f7f0e4;
-  --cypher-color-bg-card-alt: #e3f0e3;
-  --cypher-color-bg-hover: #f0e6d4;
+  --cypher-color-bg-sheet: #f4e7e1;
+  --cypher-color-bg-card: #ffefe8;
+  --cypher-color-bg-card-alt: #ffddc2;
+  --cypher-color-bg-hover: #f1d7cc;
+  --cypher-color-bg-field: #ffffff;
+  --cypher-color-accent-soft: #ddb7ab;
+  --cypher-color-band: #ffddc2;
 
-  --cypher-color-text: #2a1e14;              /* 16.5:1 on white */
-  --cypher-color-text-muted: #5b4a3a;        /* 7.2:1 on white; avoids opacity that could reduce contrast. */
-  --cypher-color-text-on-accent: #fffdfa;
+  --cypher-color-text: #32312f;              /* 10.75:1 on the sheet background */
+  --cypher-color-text-muted: #6d5d58;        /* 5.17:1 on the sheet background */
+  --cypher-color-text-on-accent: #ffffff;
 
-  --cypher-color-border: #8a5a2c;
-  --cypher-color-border-soft: rgba(138, 90, 44, 0.33);
-  --cypher-color-border-faint: rgba(138, 90, 44, 0.2);
+  --cypher-color-border: #b07a68;
+  --cypher-color-border-soft: rgba(176, 122, 104, 0.42);
+  --cypher-color-border-faint: rgba(176, 122, 104, 0.24);
 
-  --cypher-color-accent: #8a5a2c;            /* 5.8:1 on white */
-  --cypher-color-accent-hover: #6e4722;      /* 8.0:1 on white */
+  --cypher-color-accent: #732928;            /* 10.11:1 with white text */
+  --cypher-color-accent-hover: #56201f;
 
+  --cypher-color-success: #2f7a2f;           /* 5.4:1 on white */
+  --cypher-color-danger: #a11f1f;            /* 7.7:1 on white */
   --cypher-color-success: #2f7a2f;           /* 5.4:1 on white */
   --cypher-color-danger: #a11f1f;            /* 7.7:1 on white */
   --cypher-color-danger-bg: rgba(161, 31, 31, 0.08);
   --cypher-color-info: #2f5a8a;              /* 7.1:1 on white */
+  --cypher-color-info: #2f5a8a;              /* 7.1:1 on white */
 
-  --cypher-color-warning-bg: #f7e0c0;
-  --cypher-color-warning-text: #7a4a10;      /* 6.0:1 on this background */
+  --cypher-color-warning-bg: #ffddc2;
+  --cypher-color-warning-text: #7a3d25;
   --cypher-color-danger-soft-bg: #f0c0c0;
+  --cypher-color-danger-soft-text: #7a1010;  /* 6.9:1 on this background */
   --cypher-color-danger-soft-text: #7a1010;  /* 6.9:1 on this background */
 
   --cypher-focus-ring: #2f5a8a;
@@ -75,27 +87,49 @@
   font-family: var(--cypher-font-family);
 }
 
+.cypher.sheet h1,
+.cypher.sheet h2,
+.cypher.sheet h3,
+.cypher.sheet h4,
+.cypher.sheet legend {
+  color: var(--cypher-color-text);
+}
+
+.cypher.sheet input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),
+.cypher.sheet select,
+.cypher.sheet textarea {
+  color: var(--cypher-color-text);
+  background: var(--cypher-color-bg-field);
+  border: 1px solid var(--cypher-color-border-soft);
+  border-radius: var(--cypher-radius-sm);
+}
+
 /* ================================================================
+  DARK THEME
   DARK THEME
    Automatically activated by Foundry (.theme-dark applied to the window
    per world setting or a per-sheet override).
    ================================================================ */
 .cypher.sheet.theme-dark {
-  --cypher-color-bg-sheet: #211a14;
-  --cypher-color-bg-card: #2f2620;
-  --cypher-color-bg-card-alt: #24361f;
-  --cypher-color-bg-hover: #3a2f26;
+  --cypher-color-bg-sheet: #241b1c;
+  --cypher-color-bg-card: #332526;
+  --cypher-color-bg-card-alt: #513432;
+  --cypher-color-bg-hover: #493233;
+  --cypher-color-bg-field: #2a2021;
+  --cypher-color-accent-soft: #8f5551;
+  --cypher-color-band: #4a3030;
+  --cypher-shadow-panel: 0 1px 0 rgba(0, 0, 0, 0.24);
 
-  --cypher-color-text: #f0e6d8;              /* 13.9:1 on the dark background */
-  --cypher-color-text-muted: #c2b3a0;        /* ~9.6:1 on the dark background */
-  --cypher-color-text-on-accent: #211a14;
+  --cypher-color-text: #f5ebe8;              /* 14.36:1 on the dark sheet background */
+  --cypher-color-text-muted: #d0bbb6;        /* 9.18:1 on the dark sheet background */
+  --cypher-color-text-on-accent: #241b1c;
 
-  --cypher-color-border: #a97c4a;
-  --cypher-color-border-soft: rgba(201, 161, 90, 0.35);
-  --cypher-color-border-faint: rgba(201, 161, 90, 0.22);
+  --cypher-color-border: #9b6863;
+  --cypher-color-border-soft: rgba(205, 139, 130, 0.4);
+  --cypher-color-border-faint: rgba(205, 139, 130, 0.22);
 
-  --cypher-color-accent: #c9a15a;            /* 7.1:1 on the dark background */
-  --cypher-color-accent-hover: #ddb877;
+  --cypher-color-accent: #df9a92;            /* 7.35:1 with dark text */
+  --cypher-color-accent-hover: #f2b5ac;
 
   --cypher-color-success: #6fcf6f;
   --cypher-color-danger: #ef8a8a;
@@ -112,8 +146,11 @@
 
 /* ================================================================
   Cross-cutting accessibility
+  Cross-cutting accessibility
    ================================================================ */
 
+/* Use a visible, consistent focus ring on every interactive element so keyboard users can
+  identify which control is currently focused. */
 /* Use a visible, consistent focus ring on every interactive element so keyboard users can
   identify which control is currently focused. */
 .cypher.sheet a:focus-visible,
@@ -128,6 +165,7 @@
 }
 
 /* Respect the user's system preference for reduced motion. */
+/* Respect the user's system preference for reduced motion. */
 @media (prefers-reduced-motion: reduce) {
   .cypher.sheet * {
     transition: none !important;
@@ -135,6 +173,8 @@
   }
 }
 
+/* Give icon-only controls (edit, delete, and +/- toggles) a larger target to reduce missed
+  clicks, especially on touch screens. */
 /* Give icon-only controls (edit, delete, and +/- toggles) a larger target to reduce missed
   clicks, especially on touch screens. */
 .cypher.sheet .item-list a,
@@ -161,6 +201,8 @@
 
 /* Keep labels available to screen readers when their meaning is clear from the visual context,
   such as Pool and Max labels inside a stat block. */
+/* Keep labels available to screen readers when their meaning is clear from the visual context,
+  such as Pool and Max labels inside a stat block. */
 .cypher.sheet .sr-only {
   position: absolute;
   width: 1px;
@@ -174,6 +216,7 @@
 }
 
 /* ================================================================
+  Header
   Header
    ================================================================ */
 
@@ -191,6 +234,7 @@
   gap: var(--cypher-space-lg);
 }
 
+/* "Cypher Compatible" logo badge — fixed light background (never a theme
 /* "Cypher Compatible" logo badge — fixed light background (never a theme
    token) because the logo is black/red on a transparent background: on the
    dark theme, a transparent background would make the black lines unreadable. */
@@ -247,9 +291,10 @@
 .cypher .field-caption {
   font-size: var(--cypher-font-size-xs);
   text-transform: uppercase;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.06em;
   color: var(--cypher-color-text-muted);
   font-weight: 600;
+  font-family: var(--cypher-font-family-condensed);
 }
 
 /* ---- Identity card: genre, species, and character sentence ---- */
@@ -261,6 +306,7 @@
   border: 1px solid var(--cypher-color-border-faint);
   border-radius: var(--cypher-radius-lg);
   padding: var(--cypher-space-lg);
+  box-shadow: var(--cypher-shadow-panel);
 }
 
 .cypher .genre-species-row {
@@ -365,6 +411,8 @@
   letter-spacing: 0.02em;
   color: var(--cypher-color-text-muted);
   font-weight: 600;
+  font-family: var(--cypher-font-family-condensed);
+  letter-spacing: 0.06em;
 }
 
 .cypher .header-stats-row input {
@@ -396,6 +444,7 @@
   padding: var(--cypher-space-md);
   text-align: center;
   background: var(--cypher-color-bg-card);
+  box-shadow: var(--cypher-shadow-panel);
 }
 
 .cypher .stat-block-header {
@@ -411,6 +460,9 @@
   border: none;
   font-size: var(--cypher-font-size-md);
   color: var(--cypher-color-text);
+  font-family: var(--cypher-font-family-condensed);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .cypher .stat-die-icon {
@@ -456,6 +508,18 @@
   width: 100%;
   min-height: var(--cypher-target-size);
   cursor: pointer;
+  color: var(--cypher-color-text-on-accent);
+  background: var(--cypher-color-accent);
+  border: 1px solid var(--cypher-color-accent);
+  border-radius: var(--cypher-radius-sm);
+  font-family: var(--cypher-font-family-condensed);
+  font-weight: 700;
+  transition: background-color 120ms ease, border-color 120ms ease;
+}
+
+.cypher button.roll-stat:hover {
+  background: var(--cypher-color-accent-hover);
+  border-color: var(--cypher-color-accent-hover);
 }
 
 /* ================================================================
@@ -481,6 +545,7 @@
   border-radius: var(--cypher-radius-lg);
   padding: var(--cypher-space-md) var(--cypher-space-lg);
   background: var(--cypher-color-bg-card);
+  box-shadow: var(--cypher-shadow-panel);
 }
 
 .cypher .wounds-block h3,
@@ -492,6 +557,9 @@
   border-bottom: 1px solid var(--cypher-color-border-soft);
   padding-bottom: 4px;
   font-size: var(--cypher-font-size-md);
+  font-family: var(--cypher-font-family-condensed);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 /* ================================================================
@@ -632,6 +700,19 @@
 .cypher .inventory-section h3 {
   border-bottom: 1px solid var(--cypher-color-border-soft);
   margin-bottom: var(--cypher-space-xs);
+  padding-bottom: var(--cypher-space-xs);
+  color: var(--cypher-color-accent);
+  font-family: var(--cypher-font-family-condensed);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.cypher .inventory-section {
+  border: 1px solid var(--cypher-color-border-soft);
+  border-radius: var(--cypher-radius-md);
+  background: var(--cypher-color-bg-card);
+  box-shadow: var(--cypher-shadow-panel);
+  padding: var(--cypher-space-md);
 }
 
 .cypher .item-create {
@@ -645,8 +726,33 @@
    ================================================================ */
 
 .cypher.item .item-header {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  align-items: center;
+  gap: var(--cypher-space-md);
   border-bottom: 2px solid var(--cypher-color-border);
   padding-bottom: var(--cypher-space-md);
+  background: var(--cypher-color-bg-card);
+  border-radius: var(--cypher-radius-md);
+  box-shadow: var(--cypher-shadow-panel);
+}
+
+.cypher.item .item-header .profile-img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+}
+
+.cypher.item .item-header .header-fields {
+  min-width: 0;
+}
+
+.cypher.item .item-header input[name="name"] {
+  min-width: 0;
+  width: 100%;
+  color: var(--cypher-color-text);
+  background: var(--cypher-color-bg-card);
+  border: 1px solid var(--cypher-color-border-soft);
 }
 
 .cypher .item-type-label {
@@ -654,6 +760,8 @@
   font-size: var(--cypher-font-size-xs);
   color: var(--cypher-color-text-muted);
   margin: 2px 0 0;
+  letter-spacing: 0.14em;
+  font-family: var(--cypher-font-family-condensed);
 }
 
 .cypher .form-group {
@@ -671,6 +779,218 @@
 
 .cypher .description-group prose-mirror {
   min-height: 150px;
+}
+
+.cypher .type-description {
+  margin-top: 0;
+  padding-bottom: var(--cypher-space-md);
+  border-bottom: 1px solid var(--cypher-color-border-soft);
+}
+
+.cypher .type-classification,
+.cypher .type-value-grid,
+.cypher .type-chip-list,
+.cypher .type-detail-list,
+.cypher .type-ability-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cypher-space-sm) var(--cypher-space-lg);
+  margin: 0;
+  padding: 0;
+}
+
+.cypher .type-classification {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: var(--cypher-space-md);
+  padding: var(--cypher-space-md) 0;
+  border-bottom: 1px solid var(--cypher-color-border-soft);
+}
+
+.cypher .type-meta-field {
+  display: grid;
+  gap: var(--cypher-space-xs);
+  min-width: 0;
+}
+
+.cypher .type-meta-field span,
+.cypher .type-value-grid dt {
+  color: var(--cypher-color-text-muted);
+  font-size: var(--cypher-font-size-sm);
+  font-family: var(--cypher-font-family-condensed);
+  letter-spacing: 0.04em;
+}
+
+.cypher .type-benefits,
+.cypher .type-abilities {
+  padding: var(--cypher-space-md) 0;
+  border-bottom: 1px solid var(--cypher-color-border-soft);
+}
+
+.cypher .type-benefits h3,
+.cypher .type-abilities h3 {
+  margin: 0 0 var(--cypher-space-sm);
+  font-size: var(--cypher-font-size-md);
+  color: var(--cypher-color-text);
+  font-family: var(--cypher-font-family-condensed);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.cypher .type-value-grid {
+  justify-content: space-between;
+  list-style: none;
+}
+
+.cypher .type-value-grid > div {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: var(--cypher-space-md);
+  min-width: 96px;
+}
+
+.cypher .type-value-grid dt,
+.cypher .type-value-grid dd {
+  margin: 0;
+}
+
+.cypher .type-value-grid dd {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.cypher .type-chip-list,
+.cypher .type-detail-list {
+  list-style: none;
+}
+
+.cypher .type-chip-list li {
+  padding: 2px var(--cypher-space-sm);
+  border: 1px solid var(--cypher-color-border-soft);
+  border-radius: var(--cypher-radius-sm);
+  background: var(--cypher-color-accent-soft);
+  color: var(--cypher-color-text);
+}
+
+.cypher .type-choice-benefit p {
+  margin: 0 0 var(--cypher-space-sm);
+}
+
+.cypher .type-ability {
+  padding: var(--cypher-space-md) 0;
+  border-top: 1px solid var(--cypher-color-border-faint);
+}
+
+.cypher .type-ability > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--cypher-space-xs) var(--cypher-space-md);
+}
+
+.cypher .type-ability h4 {
+  margin: 0;
+  font-size: var(--cypher-font-size-base);
+  font-family: var(--cypher-font-family-condensed);
+  font-weight: 700;
+}
+
+.cypher .type-ability > header > span,
+.cypher .type-ability-tags,
+.cypher .type-ability-prerequisites {
+  color: var(--cypher-color-text-muted);
+  font-size: var(--cypher-font-size-sm);
+}
+
+.cypher .type-ability-tags {
+  margin-top: var(--cypher-space-xs);
+}
+
+.cypher .type-ability-prerequisites {
+  margin: var(--cypher-space-sm) 0 0;
+}
+
+.cypher .type-ability-description {
+  margin-top: var(--cypher-space-sm);
+  overflow-wrap: anywhere;
+}
+
+.cypher .type-ability-description > :first-child {
+  margin-top: 0;
+}
+
+.cypher .type-ability-description > :last-child {
+  margin-bottom: 0;
+}
+
+.cypher .focus-flowchart,
+.cypher .descriptor-benefits {
+  padding: var(--cypher-space-md) 0;
+}
+
+.cypher .focus-flowchart > h3,
+.cypher .descriptor-benefits > h3 {
+  margin: 0 0 var(--cypher-space-md);
+  font-size: var(--cypher-font-size-md);
+  color: var(--cypher-color-text);
+}
+
+.cypher .focus-tier {
+  padding: var(--cypher-space-sm) 0;
+  border-top: 1px solid var(--cypher-color-border-soft);
+}
+
+.cypher .focus-tier > h4 {
+  margin: 0 0 var(--cypher-space-sm);
+  color: var(--cypher-color-accent);
+  background: var(--cypher-color-band);
+  border-left: 3px solid var(--cypher-color-accent);
+  border-radius: var(--cypher-radius-sm);
+  padding: var(--cypher-space-xs) var(--cypher-space-sm);
+  font-family: var(--cypher-font-family-condensed);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.cypher .focus-tier-abilities {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: var(--cypher-space-md);
+}
+
+.cypher .focus-tier .type-ability {
+  min-width: 0;
+  border-bottom: 1px solid var(--cypher-color-border-faint);
+}
+
+.cypher .focus-prerequisites,
+.cypher .focus-grant {
+  margin: var(--cypher-space-sm) 0 0;
+  font-size: var(--cypher-font-size-sm);
+}
+
+.cypher .focus-prerequisites .type-chip-list {
+  margin-top: var(--cypher-space-xs);
+}
+
+.cypher .descriptor-classification {
+  align-items: start;
+}
+
+.cypher .descriptor-classification .type-chip-list {
+  gap: var(--cypher-space-xs);
+}
+
+.cypher .descriptor-benefit {
+  padding: var(--cypher-space-md) 0;
+  border-top: 1px solid var(--cypher-color-border-faint);
+}
+
+.cypher .descriptor-benefit h4 {
+  margin: 0;
+  font-size: var(--cypher-font-size-base);
+  font-family: var(--cypher-font-family-condensed);
 }
 
 /* ================================================================
@@ -757,6 +1077,7 @@
    signal, legible even without color differentiation). */
 .cypher .wound-severity.wound-moderate {
   border-color: var(--cypher-color-warning-text);
+  background: var(--cypher-color-band);
 }
 
 .cypher .wound-severity.wound-major {
@@ -791,6 +1112,10 @@
   min-height: var(--cypher-target-size);
   font-size: var(--cypher-font-size-xs);
   cursor: pointer;
+  color: var(--cypher-color-text-on-accent);
+  background: var(--cypher-color-accent);
+  border: 1px solid var(--cypher-color-accent);
+  border-radius: var(--cypher-radius-sm);
 }
 
 .cypher .wound-hint, .cypher .armor-hint {
@@ -1232,10 +1557,24 @@
 .cypher.sheet .npc-section h3, .cypher.sheet .community-section h3 {
   border-bottom: 1px solid var(--cypher-color-border-soft);
   margin-bottom: var(--cypher-space-sm);
+  padding-bottom: var(--cypher-space-xs);
+  color: var(--cypher-color-accent);
+  font-family: var(--cypher-font-family-condensed);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .cypher.sheet .npc-section prose-mirror, .cypher.sheet .community-section prose-mirror {
   min-height: 80px;
+}
+
+.cypher.sheet .npc-section,
+.cypher.sheet .community-section {
+  border: 1px solid var(--cypher-color-border-soft);
+  border-radius: var(--cypher-radius-md);
+  background: var(--cypher-color-bg-card);
+  box-shadow: var(--cypher-shadow-panel);
+  padding: var(--cypher-space-md);
 }
 
 .cypher.sheet .gm-notes {

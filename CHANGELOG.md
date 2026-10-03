@@ -9,6 +9,14 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ## [Unreleased]
 
+### Changed
+
+- Improved Type compendium sheets with the description first and localized displays for Type benefits and abilities.
+- Improved Focus and Descriptor compendium sheets with the description first and structured displays of their abilities, prerequisites, choices, and grants.
+- Fixed empty Focus ability lists, low-contrast section headings, missing Focus type labels, and an unavailable image in the Grows to Towering Heights / Deviens colossal Focus.
+- Fixed undefined Focus and Type ability ranks and costs by using Foundry's supported localization interpolation format.
+- Restyled character and compendium item sheets with the shared burgundy, warm-paper palette, condensed labels, and compact panel geometry.
+
 ### Added
 
 - Added the Works for a Living / Travaille pour vivre Focus to the English and French compendiums.
