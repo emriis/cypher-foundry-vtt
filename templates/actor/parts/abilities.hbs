@@ -6,25 +6,32 @@
   <ul class="item-list abilities-list">
     {{#each items.abilities as |item|}}
     <li class="item" data-item-id="{{item.id}}">
-      <span class="ability-name">{{item.name}}</span>
-      <span class="ability-source">{{item.system.source}}</span>
-      <span class="ability-cost">
-        {{#if item.system.cost.amount}}
-          {{item.system.cost.amount}} {{localize (concat "CYPHER.Stat." item.system.cost.stat)}}
-        {{/if}}
-      </span>
-      <span class="item-controls">
-        {{#if item.system.effects.length}}
-        <a data-action="chooseAbilityEffect" title="{{localize 'CYPHER.Ability.ChooseEffect'}}"><i class="fa-solid fa-list-check"></i></a>
-        {{/if}}
-        {{#if item.system.rollTables.length}}
-        {{#each item.system.rollTables as |table|}}
-        <a data-action="rollAbilityTable" data-table-id="{{table.id}}" title="{{table.name}}"><i class="fa-solid fa-dice"></i></a>
-        {{/each}}
-        {{/if}}
-        <a data-action="itemEdit"><i class="fa-solid fa-edit"></i></a>
-        <a data-action="itemDelete"><i class="fa-solid fa-trash"></i></a>
-      </span>
+      <div class="ability-header">
+        <span class="ability-name">{{item.name}}</span>
+        <span class="ability-source">{{item.system.source}}</span>
+        <span class="ability-cost">
+          {{#if item.system.cost.amount}}
+            {{item.system.cost.amount}} {{localize (concat "CYPHER.Stat." item.system.cost.stat)}}
+          {{/if}}
+        </span>
+        <span class="item-controls">
+          {{#if item.system.effects.length}}
+          <a data-action="chooseAbilityEffect" title="{{localize 'CYPHER.Ability.ChooseEffect'}}"><i class="fa-solid fa-list-check"></i></a>
+          {{/if}}
+          {{#if item.system.rollTables.length}}
+          {{#each item.system.rollTables as |table|}}
+          <a data-action="rollAbilityTable" data-table-id="{{table.id}}" title="{{table.name}}"><i class="fa-solid fa-dice"></i></a>
+          {{/each}}
+          {{/if}}
+          <a data-action="itemEdit"><i class="fa-solid fa-edit"></i></a>
+          <a data-action="itemDelete"><i class="fa-solid fa-trash"></i></a>
+        </span>
+      </div>
+      {{#if item.system.description}}
+      <div class="ability-description">
+        {{{item.system.description}}}
+      </div>
+      {{/if}}
     </li>
     {{/each}}
   </ul>
