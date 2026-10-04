@@ -135,3 +135,33 @@ test("Always Tinkering preserves real tier-three and tier-six effects", () => {
   assert.match(effects[0].description, /medium-power manifest cypher/);
   assert.match(effects[1].description, /advanced-power manifest cypher/);
 });
+
+
+test("Leather jacket preserves its CRD armor category and price", () => {
+  const system = CRD_ARMOR_FIXTURE.system;
+
+  assert.equal(CRD_ARMOR_FIXTURE.crdType, "armor");
+  assert.equal(system.category, "light");
+  assert.equal(system.priceCategory, "moderate");
+  assert.equal(system.blockEaseDamage, 0);
+});
+
+test("Attacking preserves its CRD tier restriction", () => {
+  const system = CRD_SKILL_FIXTURE.system;
+
+  assert.equal(CRD_SKILL_FIXTURE.crdType, "skill");
+  assert.equal(CRD_SKILL_FIXTURE.name, "Attacking");
+  assert.equal(system.minimumTier, 2);
+  assert.equal(system.attackCategory, "");
+});
+
+test("Always Tinkering preserves tier 3 and tier 6 effects", () => {
+  const effects = CRD_TIERED_ABILITY_FIXTURE.system.effects;
+
+  assert.deepEqual(
+    effects.map(effect => effect.tier),
+    [3, 6]
+  );
+  assert.match(effects[0].description, /medium-power manifest cypher/);
+  assert.match(effects[1].description, /advanced-power manifest cypher/);
+});
