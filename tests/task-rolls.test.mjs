@@ -225,7 +225,11 @@ test("Lucky Shot spends XP and adds four hindrance steps before rolling", async 
       customStats: []
     },
     _resolveStat: CypherActor.prototype._resolveStat,
-    update: async () => {},
+    async update(changes) {
+      if (changes["system.xp"] !== undefined) {
+        this.system.xp = changes["system.xp"];
+      }
+    }
   };
 
   await CypherActor.prototype.rollTask.call(actor, {
