@@ -19,7 +19,8 @@ The system currently has these main layers:
 | `module/abilities.mjs` | Small pure Ability presentation helper |
 | `module/config.mjs` | Cypher constants and rule configuration |
 | `module/import.mjs` | Character Builder import mapping and import UI |
-| `module/migration.mjs` | Compatibility facade for world migration orchestration |\n| `module/migrations/` | Migration orchestration and isolated schema/content transformations |
+| `module/migration.mjs` | Compatibility facade for world migration orchestration |
+| `module/migrations/` | Migration orchestration and isolated schema/content transformations |
 | `scripts/` | Pack compilation, source migration, packaging, and E2E orchestration |
 | `cypher.mjs` | Foundry registration and global document/UI hooks |
 | `tests/` | Rule, integration, content-contract, migration, and E2E tests |
@@ -464,16 +465,30 @@ easier to support without weakening type validation.
 
 ## 11. Phase 8 — dependency-boundary enforcement
 
-Phase 8 is in progress. The first pass addresses two concrete architectural
-issues rather than introducing abstractions for their own sake:
+Phase 8 is complete. The objective was to turn the architectural direction into
+executable repository contracts and then fix concrete boundary violations
+without introducing unnecessary abstractions.
 
-1. Character Builder import orchestration and mapping have moved from the mixed
+Completed work:
+
+1. Character Builder import orchestration and mapping moved from the mixed
    `module/import.mjs` entry point into `applications/import-service.mjs`.
-   `module/import.mjs` now acts as a UI/compatibility adapter for dialogs,
-   sidebar hooks, and the historical macro API.
-2. `tests/integration/architecture-boundaries.test.mjs` now verifies the
-   production import direction and ensures rule modules remain independent of
-   Foundry runtime globals.
+   `module/import.mjs` remains a thin UI/compatibility adapter.
+2. Foundry E2E executable discovery moved into
+   `scripts/foundry-discovery.mjs`, keeping environment discovery separate from
+   the E2E orchestration script.
+3. E2E discovery now accepts either an executable path or an installation
+   directory through `FOUNDRY_APP_PATH`, validates that the resolved path is
+   a file, and reports all candidates when discovery fails.
+4. `tests/integration/architecture-boundaries.test.mjs` now enforces:
+   - allowed dependency direction between rules, applications, documents,
+     sheets, migrations, and import code;
+   - explicit rules for root-level compatibility facades such as
+     `module/import.mjs` and `module/migration.mjs`;
+   - the absence of Foundry runtime globals in rule modules;
+   - the absence of development-script dependencies on Documents or Sheets.
+5. Foundry discovery has dedicated integration tests so installation-path
+   behavior is testable without launching Foundry.
 
 The enforced direction is:
 
@@ -492,5 +507,9 @@ Rules and pure configuration
 
 The contract deliberately allows a document to call a pure rule directly when
 that is the smallest compatibility facade. It does not require an application
-service to exist merely to forward a deterministic calculation. The important
-constraint is that lower layers never depend on higher Foundry/UI layers.
+service merely to forward a deterministic calculation. The important constraint
+is that lower layers never depend on higher Foundry/UI layers.
+
+Future features should follow these boundaries by default. A new violation
+should be corrected at the owning layer rather than weakening the architecture
+test.

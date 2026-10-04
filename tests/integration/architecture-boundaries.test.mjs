@@ -21,6 +21,15 @@ const LAYER_RULES = {
   import: new Set(["import", "applications", "config.mjs"])
 };
 
+const ROOT_MODULE_RULES = {
+  "abilities.mjs": new Set(["abilities.mjs"]),
+  "config.mjs": new Set(["config.mjs"]),
+  "import.mjs": new Set(["import", "applications", "config.mjs"]),
+  "migration.mjs": new Set(["migrations", "config.mjs"])
+};
+
+const SCRIPT_IMPORT_PATTERN = /from\s+["'](\.\.\/module\/[^"']+)["']/g;
+
 async function listJavaScriptFiles(directory) {
   const entries = await fs.readdir(directory, { withFileTypes: true });
   const files = [];
@@ -40,6 +49,12 @@ async function listJavaScriptFiles(directory) {
 function getLayer(filePath) {
   const relative = path.relative(MODULE_ROOT, filePath);
   return relative.split(path.sep)[0];
+}
+
+function getRootModuleRule(filePath) {
+  const relative = path.relative(MODULE_ROOT, filePath);
+  if (relative.includes(path.sep)) return null;
+  return ROOT_MODULE_RULES[relative] ?? null;
 }
 
 function getImportedLayer(filePath, specifier) {
@@ -69,7 +84,7 @@ test("architectural imports respect layer direction", async () => {
 
   for (const filePath of files) {
     const layer = getLayer(filePath);
-    const allowed = LAYER_RULES[layer];
+    const allowed = getRootModuleRule(filePath) ?? LAYER_RULES[layer];
     if (!allowed) continue;
 
     const source = await fs.readFile(filePath, "utf8");
@@ -109,5 +124,33 @@ test("rule modules remain independent from Foundry runtime globals", async () =>
     violations,
     [],
     `Rule modules reference Foundry globals:\n${violations.join("\n")}`
+  );
+});
+
+
+test("development scripts do not depend on Foundry UI or document layers", async () => {
+  const scriptsRoot = path.resolve(MODULE_ROOT, "../scripts");
+  const files = await listJavaScriptFiles(scriptsRoot);
+  const violations = [];
+
+  for (const filePath of files) {
+    const source = await fs.readFile(filePath, "utf8");
+    for (const match of source.matchAll(SCRIPT_IMPORT_PATTERN)) {
+      const imported = match[1];
+      if (
+        imported.includes("/documents/") ||
+        imported.includes("/sheets/")
+      ) {
+        violations.push(
+          `${path.relative(scriptsRoot, filePath)} -> ${imported}`
+        );
+      }
+    }
+  }
+
+  assert.deepEqual(
+    violations,
+    [],
+    `Development scripts depend on UI/document modules:\n${violations.join("\n")}`
   );
 });
