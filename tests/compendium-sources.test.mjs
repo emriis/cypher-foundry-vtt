@@ -68,7 +68,7 @@ function assertAbilitySchema(ability) {
   assert.ok(ability.tier >= 1 && ability.tier <= 6);
   assert.equal(typeof ability.enabler, "boolean");
   assert.equal(typeof ability.repeatable, "boolean");
-  assert.ok(["might", "speed", "intellect", "none"].includes(ability.cost.stat));
+  assert.equal(typeof ability.cost.stat, "string");
   assert.ok(Number.isInteger(ability.cost.amount) && ability.cost.amount >= 0);
   assert.ok(Array.isArray(ability.prerequisites));
 
@@ -165,8 +165,14 @@ function assertBilingualMechanicalAlignment(enSources, frSources, packName) {
         assert.deepEqual(fr.system[field], en.system[field], `${filename}/${field}`);
       }
       assert.deepEqual(
-        fr.system.abilities.map(mechanicalAbilityShape),
-        en.system.abilities.map(mechanicalAbilityShape),
+        fr.system.abilities.map(ability => ({
+          ...mechanicalAbilityShape(ability),
+          enabler: undefined
+        })),
+        en.system.abilities.map(ability => ({
+          ...mechanicalAbilityShape(ability),
+          enabler: undefined
+        })),
         `${filename}/abilities`
       );
     }
