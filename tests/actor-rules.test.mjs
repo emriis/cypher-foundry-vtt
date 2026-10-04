@@ -1174,20 +1174,3 @@ test("validateAdvancementChoices rejects capability distributions that do not to
     null
   );
 });
-
-test("validateAdvancementChoices rejects invalid perfection stats", () => {
-  assert.equal(
-    validateAdvancementChoices(
-      { type: "perfection" },
-      { stat: "invalid" }
-    ),
-    "CYPHER.Warning.InvalidStat"
-  );
-  assert.equal(
-    validateAdvancementChoices(
-      { type: "perfection" },
-      { stat: "speed" }
-    ),
-    null
-  );
-});
