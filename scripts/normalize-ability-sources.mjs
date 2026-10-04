@@ -192,29 +192,15 @@ async function createAbilityPack(language, canonicalAbilities) {
   return { entries, names };
 }
 
-function abilityRef(language, ability, entries, canonicalAbilities) {
-  const key = `${ability.id}:${mechanicalSignature(ability)}`;
-  let id = entries.get(key);
-
-  if (!id) {
-    const candidates = [...canonicalAbilities.entries()]
-      .filter(([candidateKey]) => candidateKey.startsWith(`${ability.id}:`))
-      .map(([candidateKey]) => entries.get(candidateKey))
-      .filter(Boolean);
-
-    if (candidates.length === 1) id = candidates[0];
-  }
-
-  if (!id) {
-    throw new Error(
-      `No unambiguous standalone ability for ${ability.id} (${ability.name})`
-    );
-  }
+function abilityRef(language, ability) {
+  const id = stableId(
+    `${ability.id}:${mechanicalSignature(ability)}`
+  );
 
   return `Compendium.cypher.${PACKS[language].abilities}.Item.${id}`;
 }
 
-async function rewriteTypes(language, entries, canonicalAbilities, canonicalDocuments) {
+async function rewriteTypes(language, canonicalDocuments) {
   const directory = path.join(root, "packs", PACKS[language].types, "_source");
 
   for (const { name, data } of await readDocuments(PACKS[language].types)) {
@@ -226,13 +212,13 @@ async function rewriteTypes(language, entries, canonicalAbilities, canonicalDocu
     const sourceAbilities = sourceDocument?.system?.abilities ?? [];
 
     data.system.abilities = sourceAbilities
-      .map(ability => abilityRef(language, ability, entries, canonicalAbilities));
+      .map(ability => abilityRef(language, ability));
 
     await writeDocument(directory, name, data);
   }
 }
 
-async function rewriteFoci(language, entries, canonicalAbilities, canonicalDocuments) {
+async function rewriteFoci(language, canonicalDocuments) {
   const directory = path.join(root, "packs", PACKS[language].foci, "_source");
 
   for (const { name, data } of await readDocuments(PACKS[language].foci)) {
@@ -284,10 +270,10 @@ const canonicalFoci = new Map(
 const english = await createAbilityPack("en", canonicalAbilities);
 const french = await createAbilityPack("fr", canonicalAbilities);
 
-await rewriteTypes("en", english.entries, canonicalAbilities, canonicalTypes);
-await rewriteFoci("en", english.entries, canonicalAbilities, canonicalFoci);
-await rewriteTypes("fr", french.entries, canonicalAbilities, canonicalTypes);
-await rewriteFoci("fr", french.entries, canonicalAbilities, canonicalFoci);
+await rewriteTypes("en", canonicalTypes);
+await rewriteFoci("en", canonicalFoci);
+await rewriteTypes("fr", canonicalTypes);
+await rewriteFoci("fr", canonicalFoci);
 
 const variants = [...english.names.entries()]
   .filter(([, values]) => values.length > 1)
