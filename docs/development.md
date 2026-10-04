@@ -16,12 +16,15 @@ local checkout and are not included in pull requests or CI.
 
 ## 1. System implementation
 
-Use this flow when changing a Foundry feature or a game rule.
+Use this flow when changing a Foundry feature or a game rule. Read
+`docs/architecture.md` first when a change crosses document, rule,
+application, sheet, migration, or compendium boundaries.
 
 | Concern | Location |
 | --- | --- |
 | System manifest and startup | `system.json`, `cypher.mjs` |
-| Rules and persisted document behavior | `module/documents/` |
+| Foundry document behavior and orchestration | `module/documents/` |
+| Pure Cypher rules and deterministic calculations | `module/rules/` (target architecture; extract incrementally) |
 | Actor and Item schemas | `module/data-models/` |
 | Foundry applications and UI actions | `module/sheets/` |
 | Handlebars markup | `templates/` |
@@ -35,8 +38,8 @@ test, then run:
 npm test
 ```
 
-Keep `cypher.mjs` limited to Foundry registrations and global hooks. It is not
-the place for game-rule calculations or sheet actions.
+Keep `cypher.mjs` limited to Foundry registrations and thin global hooks.
+It is not the place for game-rule calculations or sheet actions.
 
 ## 2. Compendium content
 
@@ -61,19 +64,11 @@ memory.
 node --test tests/compendium-sources.test.mjs
 ```
 
-Then rebuild each affected LevelDB pack with `npm run build:packs`. The build script compiles all eight
-packs from their `_source/` directories and replaces only their generated database files. The
-`_source/` JSON is the reviewable source of truth; the adjacent LevelDB files are what Foundry
-loads because `system.json` declares them directly.
-
-The Type list follows the genre and subgenre headings in the local Reference
-Document. Each language pack groups Types under genre folders and, where the
-genre has distinct subgenres, nested subgenre folders. Superhero Types are
-directly in their genre folder because their genre and subgenre are the same.
-French names are working translations for review. The English CRD text is authoritative and is
-stored in full. French uses the complete Character Book translation when available; otherwise
-the English description is copied verbatim. Compile `types-en` and `types-fr` from
-their respective `_source/` directories before distributing a release.
+Then rebuild each affected LevelDB pack with `npm run build:packs`. The build
+script compiles all eight packs from their `_source/` directories and replaces
+only their generated database files. The `_source/` JSON is the reviewable
+source of truth; the adjacent LevelDB files are what Foundry loads because
+`system.json` declares them directly.
 
 ## 3. Development and CI
 
@@ -85,30 +80,27 @@ Development tooling belongs in `scripts/`; GitHub automation belongs in
 | `.github/workflows/test.yml` | Push and pull request | Checks E2E JavaScript syntax and runs `npm test` |
 | `.github/workflows/build-packs.yml` | Pack source/build changes | Rebuilds and commits LevelDB compendium packs |
 | `.github/workflows/release.yml` | Tag matching `v*` | Tests, checks version/tag parity, packages, publishes GitHub release |
-| `scripts/build-packs.mjs` | `npm run build:packs` | Compiles all six LevelDB packs from `_source/` |
+| `scripts/build-packs.mjs` | `npm run build:packs` | Compiles all eight LevelDB packs from `_source/` |
 | `scripts/package.ps1` | `npm run package` | Creates local release artifacts in `dist/` |
 
-Do not commit `dist/`, transient LevelDB lock/LOG files, or other generated temporary files.
-The tracked `package-lock.json` is part of the repository and should be updated when npm
-dependencies change. The compiled LevelDB database files in
-`packs/<pack-name>/` are generated but intentionally tracked because Foundry loads those files
-at runtime.
+Do not commit `dist/`, transient LevelDB lock/LOG files, or other generated
+temporary files. The tracked `package-lock.json` is part of the repository
+and should be updated when npm dependencies change. The compiled LevelDB
+database files in `packs/<pack-name>/` are generated but intentionally
+tracked because Foundry loads those files at runtime.
 
 ## 4. Release checklist
 
 The release workflow follows the Foundry history-friendly release model:
 
-1. Update `system.json` `version` and its versioned `download` URL together. The download URL
-   must use the matching `v<version>` release tag, for example
-   `/releases/download/v0.1.3/system.zip` for version `0.1.3`.
+1. Update `system.json` `version` and its versioned `download` URL together.
 2. Run `npm test` and `npm run package` locally.
 3. Inspect `dist/system.json` and `dist/system.zip`.
 4. Commit the manifest and implementation/content changes.
-5. Push a matching Git tag, for example `v0.1.2` for version `0.1.2`.
+5. Push a matching Git tag.
 6. GitHub Actions attaches that release's `system.json` and `system.zip`.
-7. Register that version-specific manifest URL and release-notes URL in Foundry's Package Administration page.
+7. Register that version-specific manifest URL and release-notes URL in Foundry.
 
 The stable `manifest` URL in `system.json` must continue to use GitHub's
-`releases/latest/download/system.json`, while `download` must remain pinned to
-the exact release version. This lets Foundry detect updates while preserving
-access to earlier releases.
+`releases/latest/download/system.json`, while `download` must remain pinned
+to the exact release version.
