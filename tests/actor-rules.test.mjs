@@ -786,3 +786,221 @@ test("custom stats and fields reject invalid PC additions and preserve valid val
     valueBoolean: false
   }]);
 });
+
+
+function makeAdvancementActor(slot, overrides = {}) {
+  const updates = [];
+  const actor = {
+    type: "pc",
+    system: {
+      xp: 10,
+      resourcePoints: 0,
+      tier: 1,
+      effort: 1,
+      recoveryBonus: 0,
+      advancementSlots: [
+        { type: slot.type, otherType: slot.otherType ?? "", bought: false },
+        { type: "", otherType: "", bought: false },
+        { type: "", otherType: "", bought: false },
+        { type: "", otherType: "", bought: false }
+      ],
+      stats: {
+        might: { pool: { max: 8, value: 8 }, edge: 0 },
+        speed: { pool: { max: 8, value: 8 }, edge: 0 },
+        intellect: { pool: { max: 8, value: 8 }, edge: 0 }
+      },
+      freeArmorCategories: [],
+      freeWeaponCategories: [],
+      canFreelyUseAllArmor: false,
+      canFreelyUseAllWeapons: false,
+      customStats: [],
+      ...overrides
+    },
+    items: new Map(),
+    flags: { cypher: {} },
+    updates,
+    getFlag(scope, key) { return this.flags[scope]?.[key]; },
+    async update(changes) {
+      updates.push(changes);
+      applyUpdate(this, changes);
+    },
+    async spendXP(amount) {
+      if (this.system.xp < amount) return false;
+      this.system.xp -= amount;
+      return true;
+    },
+    async createEmbeddedDocuments(_collection, documents) {
+      const created = documents.map(document => ({
+        ...document,
+        id: document.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")
+      }));
+      for (const item of created) this.items.set(item.id, item);
+      return created;
+    }
+  };
+  return actor;
+}
+
+function applyUpdate(target, changes) {
+  for (const [path, value] of Object.entries(changes)) {
+    const segments = path.split(".");
+    let cursor = target;
+    for (const segment of segments.slice(0, -1)) cursor = cursor[segment] ??= {};
+    cursor[segments.at(-1)] = value;
+  }
+}
+
+test("advancement purchases capabilities and applies only the requested pool increases", async () => {
+  globalThis.game = { i18n: { localize: value => value, format: value => value } };
+  globalThis.ChatMessage = { getSpeaker: () => ({}), create: async () => {} };
+
+  const actor = makeAdvancementActor({ type: "capabilities" });
+  await CypherActor.prototype.purchaseAdvancementSlot.call(actor, 0, {
+    distribution: { might: 2, speed: 1 }
+  });
+
+  assert.equal(actor.system.stats.might.pool.max, 10);
+  assert.equal(actor.system.stats.might.pool.value, 10);
+  assert.equal(actor.system.stats.speed.pool.max, 9);
+  assert.equal(actor.system.stats.speed.pool.value, 9);
+  assert.equal(actor.system.stats.intellect.pool.max, 8);
+  assert.equal(actor.system.resourcePoints, 1);
+  assert.equal(actor.system.advancementSlots[0].bought, true);
+  assert.equal(actor.system.xp, 6);
+});
+
+test("advancement purchases perfection and increments only the selected Edge", async () => {
+  globalThis.game = { i18n: { localize: value => value, format: value => value } };
+  globalThis.ChatMessage = { getSpeaker: () => ({}), create: async () => {} };
+
+  const actor = makeAdvancementActor({ type: "perfection" });
+  actor.system.stats.speed.edge = 2;
+
+  await CypherActor.prototype.purchaseAdvancementSlot.call(actor, 0, { stat: "speed" });
+
+  assert.equal(actor.system.stats.speed.edge, 3);
+  assert.equal(actor.system.stats.might.edge, 0);
+  assert.equal(actor.system.xp, 6);
+});
+
+test("advancement increases Effort but caps it at six", async () => {
+  globalThis.game = { i18n: { localize: value => value, format: value => value } };
+  globalThis.ChatMessage = { getSpeaker: () => ({}), create: async () => {} };
+
+  const actor = makeAdvancementActor({ type: "effort" }, { effort: 6 });
+  await CypherActor.prototype.purchaseAdvancementSlot.call(actor, 0);
+
+  assert.equal(actor.system.effort, 6);
+  assert.equal(actor.system.resourcePoints, 1);
+});
+
+test("skill advancement upgrades an existing skill and creates a trained skill when requested", async () => {
+  globalThis.game = { i18n: { localize: value => value, format: value => value } };
+  globalThis.ChatMessage = { getSpeaker: () => ({}), create: async () => {} };
+
+  const actor = makeAdvancementActor({ type: "skill" });
+  const skill = {
+    id: "stealth",
+    name: "Stealth",
+    type: "skill",
+    system: { level: "practiced" },
+    update: async changes => { skill.system.level = changes["system.level"]; }
+  };
+  actor.items.set(skill.id, skill);
+
+  await CypherActor.prototype.purchaseAdvancementSlot.call(actor, 0, { skillId: skill.id });
+  assert.equal(skill.system.level, "trained");
+
+  actor.system.advancementSlots[0] = {
+    type: "skill", otherType: "", bought: false
+  };
+  await CypherActor.prototype.purchaseAdvancementSlot.call(actor, 0, {
+    newSkillName: "Lore"
+  });
+
+  assert.equal(actor.items.get("lore").system.level, "trained");
+});
+
+test("Other advancements grant recovery, armor, and weapon permissions", async () => {
+  globalThis.game = { i18n: { localize: value => value, format: value => value } };
+  globalThis.ChatMessage = { getSpeaker: () => ({}), create: async () => {} };
+
+  const recovery = makeAdvancementActor({ type: "other", otherType: "recovery" });
+  await CypherActor.prototype.purchaseAdvancementSlot.call(recovery, 0);
+  assert.equal(recovery.system.recoveryBonus, 2);
+
+  const armor = makeAdvancementActor({ type: "other", otherType: "armor" });
+  await CypherActor.prototype.purchaseAdvancementSlot.call(armor, 0);
+  assert.deepEqual(armor.system.freeArmorCategories, ["light", "medium", "heavy"]);
+  assert.equal(armor.system.canFreelyUseAllArmor, true);
+
+  const weapons = makeAdvancementActor({ type: "other", otherType: "weapons" });
+  await CypherActor.prototype.purchaseAdvancementSlot.call(weapons, 0);
+  assert.deepEqual(weapons.system.freeWeaponCategories, ["light", "medium", "heavy"]);
+  assert.equal(weapons.system.canFreelyUseAllWeapons, true);
+});
+
+test("completing four advancement slots advances the tier and resets the slots", async () => {
+  globalThis.game = { i18n: { localize: value => value, format: value => value } };
+  globalThis.ChatMessage = { getSpeaker: () => ({}), create: async () => {} };
+
+  const actor = makeAdvancementActor(
+    { type: "effort" },
+    { tier: 1 }
+  );
+  actor.system.advancementSlots = [
+    { type: "effort", otherType: "", bought: true },
+    { type: "effort", otherType: "", bought: true },
+    { type: "effort", otherType: "", bought: true },
+    { type: "effort", otherType: "", bought: false }
+  ];
+  actor.flags.cypher.appliedFocusGraph = {
+    abilities: [
+      { id: "tier-two", tier: 2, prerequisites: ["tier-one"], repeatable: false }
+    ]
+  };
+  actor.flags.cypher.focusAbilityIds = ["tier-one"];
+
+  await CypherActor.prototype.purchaseAdvancementSlot.call(actor, 3);
+
+  assert.equal(actor.system.tier, 2);
+  assert.equal(actor.system.advancementSlots.length, 4);
+  assert.ok(actor.system.advancementSlots.every(slot => !slot.bought));
+  assert.equal(actor.flags.cypher.focusAbilityPendingTier, 2);
+});
+
+test("adding wounds cascades across full tracks and synchronizes Hindered and Dead states", async () => {
+  globalThis.game = { i18n: { localize: value => value, format: value => value } };
+  globalThis.ui = { notifications: { error() {}, warn() {} } };
+
+  const statuses = new Set();
+  const actor = {
+    type: "pc",
+    name: "Test",
+    system: {
+      wounds: {
+        minor: { current: 2, max: 2 },
+        moderate: { current: 1, max: 1 },
+        major: { current: 0, max: 1 }
+      },
+      hindered: true,
+      dead: false
+    },
+    statuses,
+    update: async changes => applyUpdate(actor, changes),
+    toggleStatusEffect: async (status, { active }) => {
+      if (active) statuses.add(status);
+      else statuses.delete(status);
+    },
+    _syncWoundStatusEffects: CypherActor.prototype._syncWoundStatusEffects
+  };
+
+  await CypherActor.prototype.addWound.call(actor, "minor");
+  assert.equal(actor.system.wounds.major.current, 1);
+
+  actor.system.hindered = true;
+  actor.system.dead = true;
+  await CypherActor.prototype._syncWoundStatusEffects.call(actor);
+  assert.equal(statuses.has("hindered"), true);
+  assert.equal(statuses.has("dead"), true);
+});
