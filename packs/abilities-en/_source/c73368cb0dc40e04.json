@@ -1,0 +1,28 @@
+{
+  "_id": "c73368cb0dc40e04",
+  "_key": "!items!c73368cb0dc40e04",
+  "name": "Defensive Cybernetics",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "defensive-cybernetics",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Some of your body is made of durable machine parts, some internal, some external. Work with your GM to decide your exact form and configuration. If you have a minor or moderate wound, you can rally to remove it as an action without using any Might points. This ability renews each time you take a recovery."
+  }
+}

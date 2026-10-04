@@ -1,0 +1,28 @@
+{
+  "_id": "cc08928a91d47925",
+  "_key": "!items!cc08928a91d47925",
+  "name": "Tenir Bon",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "push-on-through",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Au lieu d'une récupération de dix minutes, tu disposes d'une deuxième récupération d'une action. Ainsi, ta 1re récupération prend 1 action, ta 2e récupération prend 1 action, ta 3e récupération prend 1 heure et ta 4e récupération prend 10 heures. Tu peux encaisser une blessure modérée supplémentaire, et tu peux utiliser une de tes récupérations d'une action pour permettre à un allié d'utiliser une récupération de dix minutes comme action. Toute durée qui se termine normalement à la prochaine récupération de dix minutes se termine pour toi lorsque tu effectues ta deuxième récupération d'une action."
+  }
+}

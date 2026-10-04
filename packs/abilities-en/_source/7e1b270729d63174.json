@@ -1,0 +1,28 @@
+{
+  "_id": "7e1b270729d63174",
+  "_key": "!items!7e1b270729d63174",
+  "name": "Not Dead Yet",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "not-dead-yet",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you would normally be dead, you instead fall unconscious for one round and then awaken. When you awaken this way, you immediately gain 1d6 + 6 points to restore your stat Pools, and you remove one moderate wound and one major wound. Once you use this ability, your tasks are hindered until you use a ten-hour recovery. If you die again before you use your ten-hour recovery, you are truly dead. You can select this ability twice. The second time you select it, the healing increases to 1d6 + 12 and you remove double the number of wounds. Enabler."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "520980fdd2aa1db6",
+  "_key": "!items!520980fdd2aa1db6",
+  "name": "Forme bestiale affinée",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "sleeker-beast-form",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu utilises Forme bestiale, tu gagnes en plus : +1 en Avantage de Puissance, +2 à ta Réserve de Célérité, +1 en Avantage de Célérité."
+  }
+}

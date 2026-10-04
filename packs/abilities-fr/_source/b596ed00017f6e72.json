@@ -1,0 +1,28 @@
+{
+  "_id": "b596ed00017f6e72",
+  "_key": "!items!b596ed00017f6e72",
+  "name": "Contrôle mental",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "mind-control",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu contrôles les actions d’une créature que tu touches. La créature doit être de niveau 2 ou moins et tu dois réussir une attaque d’Intellect contre elle. Le contrôle dure jusqu’à ta prochaine récupération de dix minutes ou plus. Tant que tu contrôles la cible, tu maintiens le contact mental et perçois ce qu’elle perçoit. Tu décides au cas par cas si elle suit tes ordres à la lettre ou si elle peut agir librement dans certaines limites. Quand la durée touche à sa fin, la créature ne se souvient pas avoir été contrôlée ni de ce qu’elle a fait sous ton commandement. Effort : Augmente le niveau maximal de la cible que tu peux affecter de +1."
+  }
+}

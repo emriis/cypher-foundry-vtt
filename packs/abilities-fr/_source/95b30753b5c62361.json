@@ -1,0 +1,28 @@
+{
+  "_id": "95b30753b5c62361",
+  "_key": "!items!95b30753b5c62361",
+  "name": "Radio incarnée",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "radiohead",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu peux émettre et recevoir des transmissions radio sur un large spectre. Tu peux garder la communication privée ou la relayer de façon audible comme si tu étais une radio normale. Si tu tentes d’accéder à un signal radio crypté, tu dois réussir une tâche d’Intellect contre son niveau de cryptage. Ce mode de communication est aussi naturel que parler, cela signifie que parfois tu peux entendre des choses intéressantes sans le vouloir."
+  }
+}

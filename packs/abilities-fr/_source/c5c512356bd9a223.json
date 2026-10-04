@@ -1,0 +1,28 @@
+{
+  "_id": "c5c512356bd9a223",
+  "_key": "!items!c5c512356bd9a223",
+  "name": "Magie du sang",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "blood-sorcery",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu utilises ton propre sang, esprit ou énergie vitale pour alimenter tes aptitudes. Tu subis une blessure modérée et gagnes +1 d’Avantage dans la Réserve de ton choix tant que tu conserves cette blessure. Facilitateur."
+  }
+}

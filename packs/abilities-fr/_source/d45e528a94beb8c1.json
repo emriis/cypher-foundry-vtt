@@ -1,0 +1,28 @@
+{
+  "_id": "d45e528a94beb8c1",
+  "_key": "!items!d45e528a94beb8c1",
+  "name": "Ami·e des machines intelligentes",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "friend-to-intelligent-machines",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu gagnes un atout aux tâches pour persuader ou interagir positivement avec les machines intelligentes. Tu peux utiliser cet atout pour tenter de les pirater ou de les contrôler (même si tu ignores qu’elles sont intelligentes), mais une seule fois par machine, réussite ou échec."
+  }
+}

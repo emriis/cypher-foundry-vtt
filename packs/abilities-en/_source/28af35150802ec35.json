@@ -1,0 +1,28 @@
+{
+  "_id": "28af35150802ec35",
+  "_key": "!items!28af35150802ec35",
+  "name": "Body as a Tool",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "body-as-a-tool",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "In addition to making your body a weapon, you can use it as a tool. You gain an asset to athletics and gymnastics tasks."
+  }
+}

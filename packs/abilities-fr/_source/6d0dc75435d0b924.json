@@ -1,0 +1,28 @@
+{
+  "_id": "6d0dc75435d0b924",
+  "_key": "!items!6d0dc75435d0b924",
+  "name": "Attaque psychokinétique",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "psychokinetic-attack",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu peux utiliser cette aptitude de deux façons : - Lancer lourd : Tu saisis télékinétiquement un objet à portée courte et le jettes sur une cible à portée courte. (Pour lancer une créature au lieu d’un objet, tu dois d’abord la saisir via une attaque d’Intellect.) Si tu réussis l’attaque, la cible subit 6 dégâts. - Explosion fracturante : Tu brises par pure force psychique un objet à portée courte d’une taille allant jusqu’à la moitié de la tienne. Ton attaque d’Intellect est facilitée de trois paliers par rapport à un coup physique. En cas de réussite, l’objet est détruit."
+  }
+}

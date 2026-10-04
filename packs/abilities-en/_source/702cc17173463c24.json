@@ -1,0 +1,28 @@
+{
+  "_id": "702cc17173463c24",
+  "_key": "!items!702cc17173463c24",
+  "name": "Eat Steel",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "eat-steel",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "The foe takes +2 damage."
+  }
+}

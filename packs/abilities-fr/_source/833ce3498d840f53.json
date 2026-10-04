@@ -1,0 +1,28 @@
+{
+  "_id": "833ce3498d840f53",
+  "_key": "!items!833ce3498d840f53",
+  "name": "Cyphers de Potions",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "potion-cyphers",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu peux porter deux cyphers supplémentaires, tant qu'il s'agit de cyphers que tu as toi-même créés avec Brassage de Potion."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "429bd511bc3b087e",
+  "_key": "!items!429bd511bc3b087e",
+  "name": "Modify Device",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "modify-device",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You quickly jury-rig a piece of equipment or a power source in order to repair or upgrade it. This requires access to appropriate parts and tools."
+  }
+}

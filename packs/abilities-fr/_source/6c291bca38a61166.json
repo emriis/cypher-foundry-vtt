@@ -1,0 +1,28 @@
+{
+  "_id": "6c291bca38a61166",
+  "_key": "!items!6c291bca38a61166",
+  "name": "Réseau télépathique",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "telepathic-network",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu crées un réseau télépathique entre toi et dix créatures consentantes que tu connais, où qu’elles soient. Toutes les créatures du réseau sont reliées et peuvent communiquer télépathiquement entre elles. Elles peuvent aussi « écouter » tout ce qui se dit dans le réseau. Activer ou utiliser ce réseau ne requiert pas d’action ni de dépense d’Intellect ; pour toi, c’est aussi simple que de parler à voix haute. Le réseau dure jusqu’à ce que tu choisisses de le terminer. Tu peux créer un réseau étendu de vingt personnes en dépensant 5 Intellect, et dix personnes supplémentaires pour chaque point d’Intellect supplémentaire dépensé. Un réseau étendu dure jusqu’à ta prochaine récupération de dix minutes ou plus. Effort : Augmenter le nombre de base à vingt personnes (5 Intellect), durée jusqu’à récupération de dix minutes ; chaque groupe de dix personnes supplémentaires coûte 1 Intellect."
+  }
+}

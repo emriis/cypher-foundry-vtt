@@ -1,0 +1,28 @@
+{
+  "_id": "cf1e5063aac812e1",
+  "_key": "!items!cf1e5063aac812e1",
+  "name": "Determination",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "determination",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you retry a failed task, in addition to the required level of Effort you must use, you gain a free level of Effort. You cannot use this ability again until after you have taken a recovery. Enabler."
+  }
+}

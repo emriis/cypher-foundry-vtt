@@ -1,0 +1,28 @@
+{
+  "_id": "cd78b126b57a668a",
+  "_key": "!items!cd78b126b57a668a",
+  "name": "Bolt Rider",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "bolt-rider",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can move a long distance from one location to another almost instantaneously, carried by a bolt of lightning. You must be able to see the new location, and there must be no intervening barriers. Action."
+  }
+}

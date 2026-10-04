@@ -1,0 +1,28 @@
+{
+  "_id": "5467d18d41657371",
+  "_key": "!items!5467d18d41657371",
+  "name": "Automate expert",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "expert-automaton",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu construis un suivant automate de niveau 3. À la place, tu peux augmenter ton automate existant au niveau 3 et obtenir un nouvel automate de niveau 2. Tu peux prendre cette aptitude plusieurs fois."
+  }
+}

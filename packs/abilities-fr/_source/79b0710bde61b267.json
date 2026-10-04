@@ -1,0 +1,28 @@
+{
+  "_id": "79b0710bde61b267",
+  "_key": "!items!79b0710bde61b267",
+  "name": "Pierre qui roule",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "rolling-stone",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu plonges en avant et replie tes membres, devenant un rocher roulant parcourant jusqu’à une longue distance. Pendant ce mouvement, tu peux attaquer trois ennemis en les percutant. Fais des jets d’attaque séparés pour chacun ; en cas de succès, tu infliges 6 points de dégâts."
+  }
+}

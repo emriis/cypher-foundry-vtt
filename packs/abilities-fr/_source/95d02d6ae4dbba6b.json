@@ -1,0 +1,28 @@
+{
+  "_id": "95d02d6ae4dbba6b",
+  "_key": "!items!95d02d6ae4dbba6b",
+  "name": "Né·e pour Piloter",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "born-to-pilot",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu fais un jet pour piloter un vaisseau spatial et que le résultat est inférieur à 9, considère que tu as obtenu 9. Les tâches de pilotage comprennent des manoeuvres précises : arrimer un vaisseau, tourner ou accélérer progressivement, remarquer une anomalie sur les capteurs, etc. Au rang 3, le minimum devient 12. Effort : Augmente le minimum obtenu de +3. Cette aptitude se renouvelle après une récupération."
+  }
+}

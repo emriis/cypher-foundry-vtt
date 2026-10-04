@@ -1,0 +1,28 @@
+{
+  "_id": "77789e4502aeef9f",
+  "_key": "!items!77789e4502aeef9f",
+  "name": "Jamais maladroit·e",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "never-fumble",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Si tu fais un 1 naturel avec ton arme de prédilection, tu peux ignorer ou annuler l’intrusion du MJ. Tu ne peux jamais être désarmé·e de cette arme, et tu ne la fais jamais tomber accidentellement."
+  }
+}

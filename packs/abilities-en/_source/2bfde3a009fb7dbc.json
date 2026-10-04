@@ -1,0 +1,28 @@
+{
+  "_id": "2bfde3a009fb7dbc",
+  "_key": "!items!2bfde3a009fb7dbc",
+  "name": "High-Speed Interface",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "high-speed-interface",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "By directly plugging into a machine or device within immediate range, you ease tasks to identify and operate it. The interface allows you to interact with the device as fast as it can process information, which is usually faster than a regular person could manipulate the device (such as through a keyboard or voice interface)."
+  }
+}

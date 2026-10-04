@@ -1,0 +1,28 @@
+{
+  "_id": "2c65bbe95cd81a8a",
+  "_key": "!items!2c65bbe95cd81a8a",
+  "name": "Beast Senses",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "beast-senses",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You have heightened senses; you have an asset to perception and initiative tasks. If you are in beast form, you have two assets, and even if you are unaware of an incoming attack, the attacker doesn't gain any advantage against you, such as from surprise."
+  }
+}

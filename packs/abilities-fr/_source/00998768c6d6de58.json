@@ -1,0 +1,28 @@
+{
+  "_id": "00998768c6d6de58",
+  "_key": "!items!00998768c6d6de58",
+  "name": "Enchantement d'objet",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "enchant-object",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You imbue a weapon, tool, or other usable item with magic that enhances its performance, lasting until you (or the user of the object) use a ten-minute or longer recovery. At any point while the ability is active, the creature using the object gains an asset to one action requiring the object. You decide if the object looks the same, glows like a candle, or gains a magical rune for the duration of the spell. Action."
+  }
+}

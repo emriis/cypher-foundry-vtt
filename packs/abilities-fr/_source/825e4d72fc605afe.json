@@ -1,0 +1,28 @@
+{
+  "_id": "825e4d72fc605afe",
+  "_key": "!items!825e4d72fc605afe",
+  "name": "Précognition",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "precognition",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You dimly sense the future. Until you use a ten-minute or longer recovery, you gain the following benefits: You gain an asset on defense tasks. You can predict the actions of those around you. You gain an asset to seeing through deceptions and attempts to betray you as well as avoiding traps and ambushes. You know what people are probably thinking and what they will say before they say it. You gain an asset to all interaction tasks. Enabler."
+  }
+}

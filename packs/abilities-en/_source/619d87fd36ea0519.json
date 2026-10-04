@@ -1,0 +1,28 @@
+{
+  "_id": "619d87fd36ea0519",
+  "_key": "!items!619d87fd36ea0519",
+  "name": "Nothing but Defend",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "nothing-but-defend",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When guarding, you gain an asset to all defense tasks. Action."
+  }
+}

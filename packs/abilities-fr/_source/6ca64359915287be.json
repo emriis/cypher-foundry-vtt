@@ -1,0 +1,28 @@
+{
+  "_id": "6ca64359915287be",
+  "_key": "!items!6ca64359915287be",
+  "name": "Expert·e combattant·e",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "exorbitant-reach",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You have an exorbitant item of your choice, such as a personal force field or a small spaceship. Work with your GM to determine something appropriate for the setting. At tier 3: You gain another exorbitant item."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "ccdcc2e86130c96e",
+  "_key": "!items!ccdcc2e86130c96e",
+  "name": "Beast Betterment",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "beast-betterment",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you take a recovery within immediate range of your beast companion, you gain an additional 3 Pool points. Enabler."
+  }
+}

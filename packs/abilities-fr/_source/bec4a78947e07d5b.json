@@ -1,0 +1,28 @@
+{
+  "_id": "bec4a78947e07d5b",
+  "_key": "!items!bec4a78947e07d5b",
+  "name": "Courage grandissant",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "rising-courage",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Une cible de ton choix à portée immédiate gagne un atout à sa prochaine défense d’Intellect et à sa prochaine initiative."
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "_id": "5d566252644eb487",
+  "_key": "!items!5d566252644eb487",
+  "name": "Mieux attirer",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "improved-apportation",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [
+      {
+        "id": "random-creature",
+        "name": "Créature aléatoire",
+        "formula": "1d20",
+        "results": [
+          {
+            "min": 1,
+            "max": 16,
+            "description": "Niveau 3"
+          },
+          {
+            "min": 17,
+            "max": 18,
+            "description": "Niveau 4"
+          },
+          {
+            "min": 19,
+            "max": 20,
+            "description": "Niveau 5"
+          }
+        ]
+      }
+    ],
+    "description": "Tu attires à toi une créature de niveau 3 ou moins depuis presque n’importe quelle distance. Tu peux choisir un type de créature que tu as déjà rencontré ou laisser le·la MJ en déterminer une au hasard (une fois par récupération de dix heures). La créature apparaît à côté de toi, sans souvenir de sa vie passée, mais avec les connaissances générales de son espèce. Elle est ouverte à la communication et à l’aide."
+  }
+}

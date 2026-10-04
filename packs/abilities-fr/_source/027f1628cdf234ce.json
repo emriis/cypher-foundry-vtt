@@ -1,0 +1,28 @@
+{
+  "_id": "027f1628cdf234ce",
+  "_key": "!items!027f1628cdf234ce",
+  "name": "Leçons de vie",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "life-lessons",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu as appris des petits trucs à droite à gauche et tu as du talent pour accomplir les choses. Choisis deux compétences non liées au combat. Quand tu consacres de l’Effort à l’une de ces compétences, tu obtiens un niveau d’Effort gratuit."
+  }
+}

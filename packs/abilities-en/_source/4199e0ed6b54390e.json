@@ -1,0 +1,28 @@
+{
+  "_id": "4199e0ed6b54390e",
+  "_key": "!items!4199e0ed6b54390e",
+  "name": "Bouncing Shield",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "bouncing-shield",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 3,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You throw your shield as a light weapon at a foe in short range. Whether the shield hits or misses, it rebounds to attack two additional targets (the third target can be the same as the first target). Make separate attacks against each target. At the end of these attacks, the shield bounces back to your grasp if you succeed on a difficulty 2 Speed task; otherwise it lands within immediate range of you. Effort: A successful hit with the shield hinders the target for one round. Action."
+  }
+}

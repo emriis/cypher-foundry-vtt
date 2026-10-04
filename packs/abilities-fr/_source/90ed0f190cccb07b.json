@@ -1,0 +1,28 @@
+{
+  "_id": "90ed0f190cccb07b",
+  "_key": "!items!90ed0f190cccb07b",
+  "name": "Guérisseur·euse supérieur·e",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "superior-healer",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If you have Font of Recovery or Font of Healing, the ally can spend 2 additional Intellect for twice the normal benefit. If you have Resuscitate, it heals twice the normal number of wounds, and you can revive a creature who has been dead for no more than an hour. If you have Healing Shield, the ally gains two assets instead of one, and can use them together on one block roll or separately on two different block rolls. Effort: Extend the death time limit of Resuscitate to 24 hours, a week (two levels of Effort), a month (three levels of Effort), or a year (five levels of Effort). Enabler."
+  }
+}

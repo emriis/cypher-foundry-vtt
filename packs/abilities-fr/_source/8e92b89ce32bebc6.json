@@ -1,0 +1,28 @@
+{
+  "_id": "8e92b89ce32bebc6",
+  "_key": "!items!8e92b89ce32bebc6",
+  "name": "Sale coup",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "dirty-trick",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu tentes de distraire ton adversaire (le faire regarder ailleurs, feindre maladroitement pour préparer ton vrai coup, etc.) afin d’enchaîner avec une attaque. Fais une attaque d’Intellect pour tromper l’adversaire ; en cas de réussite, sa défense contre ton attaque de mêlée ce round est entravée. Comme tes adversaires comprennent vite que tu es fourbe, chaque utilisation après la première dans un même combat entrave ton attaque d’Intellect d’un palier supplémentaire. À la place d’une attaque, tu peux enchaîner par une autre action : si tu réussis une tâche de bluff facilitée, la cible ne se rend même pas compte de ce que tu as fait. Exemples : ouvrir les cages d’un zoo, te débarrasser discrètement d’un objet compromettant, tenter de voler ton adversaire…"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "db0ffca0a8075eed",
+  "_key": "!items!db0ffca0a8075eed",
+  "name": "Haut et bas",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "high-and-low",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Toi et un·e allié·e jouez en duo contre une même cible pour plus d’efficacité. Choisis un·e allié·e que tu vois. Si tu touches un adversaire qu’iel a déjà touché au corps à corps ce tour, ton attaque inflige +2 dégâts supplémentaires."
+  }
+}

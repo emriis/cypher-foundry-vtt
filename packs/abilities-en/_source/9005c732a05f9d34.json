@@ -1,0 +1,28 @@
+{
+  "_id": "9005c732a05f9d34",
+  "_key": "!items!9005c732a05f9d34",
+  "name": "Locked Skill",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "locked-skill",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you activate Data Processor, choose one of the skills it gives you training in; this is your “locked” skill. Your training in the locked skill lasts until you use a ten-hour recovery. If you activate Data Processor again before you use this recovery, you can reset the duration of your locked skill or choose another skill to be your locked skill. You can select this ability up to three times. Each time you select it, your maximum number of locked skills increases by one. Enabler."
+  }
+}

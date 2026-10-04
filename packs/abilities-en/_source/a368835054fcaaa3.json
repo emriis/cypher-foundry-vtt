@@ -1,0 +1,28 @@
+{
+  "_id": "a368835054fcaaa3",
+  "_key": "!items!a368835054fcaaa3",
+  "name": "Incredible Running Speed",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "incredible-running-speed",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You move much farther than normal in a round. When using Fleet of Foot, all distances you move are doubled. If you run a long distance as your entire action, all your tasks are hindered by one step until the end of your next turn (instead of two steps). As a Last action, you can run up to 500 feet (150 m), but all your tasks are hindered by two steps until the end of your next turn. Enabler."
+  }
+}

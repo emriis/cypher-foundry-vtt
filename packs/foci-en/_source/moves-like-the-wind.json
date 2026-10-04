@@ -7,231 +7,93 @@
   "system": {
     "description": "<p>You are an incredibly fast runner, whether moving toward a foe or away from danger.</p>",
     "abilities": [
-      {
-        "id": "recover-faster",
-        "name": "Recover Faster",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+      "Compendium.cypher.abilities-en.Item.1e3bf17716bc0925",
+      "Compendium.cypher.abilities-en.Item.9b53e25680f24e5c",
+      "Compendium.cypher.abilities-en.Item.e7dabeb872983ab0",
+      "Compendium.cypher.abilities-en.Item.6441cf18900cc1cb",
+      "Compendium.cypher.abilities-en.Item.65d006726fbdf574",
+      "Compendium.cypher.abilities-en.Item.a368835054fcaaa3",
+      "Compendium.cypher.abilities-en.Item.403ba9eea0fd4f9c",
+      "Compendium.cypher.abilities-en.Item.f83f89979761aa97",
+      "Compendium.cypher.abilities-en.Item.6e47da7c5453bebb",
+      "Compendium.cypher.abilities-en.Item.08da863d18f36d96",
+      "Compendium.cypher.abilities-en.Item.5203b0b3196c528e",
+      "Compendium.cypher.abilities-en.Item.9cd768a92b9171b9",
+      "Compendium.cypher.abilities-en.Item.3cc99b1e8c744a59",
+      "Compendium.cypher.abilities-en.Item.0fbb368c83888879"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "9b53e25680f24e5c",
+          "to": "6441cf18900cc1cb"
         },
-        "description": "When you rally as your action, you gain an extra action on your turn that you can only use for moving. Enabler."
-      },
-      {
-        "id": "fleet-of-foot",
-        "name": "Fleet of Foot",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 1,
-          "options": []
+        {
+          "from": "9b53e25680f24e5c",
+          "to": "65d006726fbdf574"
         },
-        "description": "As an extra action on this turn you can move up to a short distance. (This movement doesn't hinder your tasks.) Effort: As an extra action on this turn you can move up to a long distance (instead of a short distance); this movement doesn't hinder your tasks. Enabler."
-      },
-      {
-        "id": "get-out",
-        "name": "Get Out",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "e7dabeb872983ab0",
+          "to": "65d006726fbdf574"
         },
-        "description": "If you move at least an immediate distance away from the most obvious threat or toward what promises to offer safety, one task you attempt next round is eased. Enabler."
-      },
-      {
-        "id": "obstacle-running",
-        "name": "Obstacle Running",
-        "tier": 2,
-        "prerequisites": [
-          "fleet-of-foot"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 3,
-          "options": []
+        {
+          "from": "6441cf18900cc1cb",
+          "to": "a368835054fcaaa3"
         },
-        "description": "Any movement you take this round ignores most difficult terrain that would otherwise slow your movement, allowing you to travel at normal speed through areas with rubble, fences, tables, and similar objects that you would have to climb over or move around. This movement might include sliding on a railing, briefly running along a wall, or even stepping on a creature to boost yourself over something. If an obstacle would normally require a Might or Speed task to overcome, such as swinging on a rope, balancing on a rope, or jumping over a hole, the task is eased. Enabler."
-      },
-      {
-        "id": "escape",
-        "name": "Escape",
-        "tier": 2,
-        "prerequisites": [
-          "fleet-of-foot",
-          "get-out"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 2,
-          "options": []
+        {
+          "from": "6441cf18900cc1cb",
+          "to": "403ba9eea0fd4f9c"
         },
-        "description": "When you roll to escape (such as slipping your restraints, squeezing through the bars, breaking the grip of a creature holding you, or pulling free from sucking quicksand) and your roll is less than a 9, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) Effort: Increase the minimum number rolled for this ability by 3. Action. At tier 3: The minimum number rolled for this ability increases to 12."
-      },
-      {
-        "id": "incredible-running-speed",
-        "name": "Incredible Running Speed",
-        "tier": 3,
-        "prerequisites": [
-          "obstacle-running"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "65d006726fbdf574",
+          "to": "403ba9eea0fd4f9c"
         },
-        "description": "You move much farther than normal in a round. When using Fleet of Foot, all distances you move are doubled. If you run a long distance as your entire action, all your tasks are hindered by one step until the end of your next turn (instead of two steps). As a Last action, you can run up to 500 feet (150 m), but all your tasks are hindered by two steps until the end of your next turn. Enabler."
-      },
-      {
-        "id": "speedy-threat",
-        "name": "Speedy Threat",
-        "tier": 3,
-        "prerequisites": [
-          "obstacle-running",
-          "escape"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "a368835054fcaaa3",
+          "to": "f83f89979761aa97"
         },
-        "description": "You spin and move such that your attacks are aided by your quick motion. If you move at least an immediate distance on your turn, your melee attack that turn gains an asset. Enabler."
-      },
-      {
-        "id": "blink-of-an-eye",
-        "name": "Blink of an Eye",
-        "tier": 4,
-        "prerequisites": [
-          "incredible-running-speed"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 4,
-          "options": []
+        {
+          "from": "a368835054fcaaa3",
+          "to": "6e47da7c5453bebb"
         },
-        "description": "You move up to 1,000 feet (300 m). (This movement doesn't hinder your tasks.) Last action."
-      },
-      {
-        "id": "increasing-determination",
-        "name": "Increasing Determination",
-        "tier": 4,
-        "prerequisites": [
-          "incredible-running-speed",
-          "speedy-threat"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "403ba9eea0fd4f9c",
+          "to": "6e47da7c5453bebb"
         },
-        "description": "If you fail at a noncombat physical task (such as pushing open a door or climbing a cliff) and then retry the task, the task is eased. If you fail again, you gain no special benefits. Enabler."
-      },
-      {
-        "id": "speed-for-mind",
-        "name": "Speed for Mind",
-        "tier": 4,
-        "prerequisites": [
-          "speedy-threat"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "403ba9eea0fd4f9c",
+          "to": "08da863d18f36d96"
         },
-        "description": "When attempting a Speed task, you can spend points from your Intellect Pool instead of your Speed Pool, and vice versa. Use the Edge stat for the Pool you're spending points from. Enabler."
-      },
-      {
-        "id": "hard-to-see",
-        "name": "Hard to See",
-        "tier": 5,
-        "prerequisites": [
-          "blink-of-an-eye",
-          "increasing-determination"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "f83f89979761aa97",
+          "to": "5203b0b3196c528e"
         },
-        "description": "When you move, you are a blur. It is impossible to make out your identity as you pass by someone at speed. In addition, if you do nothing but move on your turn, your dodge and stealth tasks are eased by three steps until your next turn. Enabler."
-      },
-      {
-        "id": "go-to-ground",
-        "name": "Go to Ground",
-        "tier": 5,
-        "prerequisites": [
-          "increasing-determination",
-          "speed-for-mind"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 4,
-          "options": []
+        {
+          "from": "6e47da7c5453bebb",
+          "to": "5203b0b3196c528e"
         },
-        "description": "As your action, you move up to a long distance and then attempt to hide. You gain an asset on the stealth task to blend in, disappear, or otherwise escape the senses of everyone previously aware of your presence (this movement doesn't hinder your stealth task). Action."
-      },
-      {
-        "id": "speed-surge",
-        "name": "Speed Surge",
-        "tier": 6,
-        "prerequisites": [
-          "hard-to-see",
-          "go-to-ground"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "6e47da7c5453bebb",
+          "to": "9cd768a92b9171b9"
         },
-        "description": "You immediately recover 1d6 + 6 points to your Speed Pool. This ability renews when you make a ten-hour recovery. Enabler."
-      },
-      {
-        "id": "up-to-speed",
-        "name": "Up to Speed",
-        "tier": 6,
-        "prerequisites": [
-          "hard-to-see"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "08da863d18f36d96",
+          "to": "9cd768a92b9171b9"
         },
-        "description": "If you do nothing but move for three actions in a row, you accelerate greatly and can move up to about 200 mph (320 km/h)—about 2000 feet (600 m) each round—for ten minutes or about 35 miles (60 km). After this you must stop and take a recovery. Enabler."
-      }
-    ]
+        {
+          "from": "5203b0b3196c528e",
+          "to": "3cc99b1e8c744a59"
+        },
+        {
+          "from": "9cd768a92b9171b9",
+          "to": "3cc99b1e8c744a59"
+        },
+        {
+          "from": "5203b0b3196c528e",
+          "to": "0fbb368c83888879"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

@@ -1,0 +1,28 @@
+{
+  "_id": "77789e4502aeef9f",
+  "_key": "!items!77789e4502aeef9f",
+  "name": "Never Fumble",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "never-fumble",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If you roll a natural 1 when attacking with your chosen weapon, you can ignore or countermand the GM intrusion for that roll. You can never be disarmed of your chosen weapon, nor will you ever drop it accidentally."
+  }
+}

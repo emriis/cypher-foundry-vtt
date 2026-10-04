@@ -1,0 +1,28 @@
+{
+  "_id": "68be4a1481980974",
+  "_key": "!items!68be4a1481980974",
+  "name": "Quand l’affaire tourne mal",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "when-the-deal-bombs",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Il y a toujours un risque qu’un individu à qui tu viens de parler se retourne contre toi. Après avoir réussi une persuasion, une tromperie, une interaction positive ou une aptitude similaire (comme Baratin), si la personne devient hostile dans la journée : sa première attaque réussie contre toi a sa blessure réduite d’un niveau. Au rang 3, tu ignores complètement la blessure (aucun dégât)."
+  }
+}

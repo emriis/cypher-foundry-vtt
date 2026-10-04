@@ -1,0 +1,28 @@
+{
+  "_id": "cab794a1fda9daf2",
+  "_key": "!items!cab794a1fda9daf2",
+  "name": "Perfect Control",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "perfect-control",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You no longer need to attempt an Intellect task to use Beast Form or revert back to your normal form. You can change back and forth as your action. While in beast form, you no longer have to eat a creature to avoid being hindered after you revert to normal."
+  }
+}

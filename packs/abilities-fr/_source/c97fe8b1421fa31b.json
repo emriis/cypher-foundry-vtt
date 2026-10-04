@@ -1,0 +1,28 @@
+{
+  "_id": "c97fe8b1421fa31b",
+  "_key": "!items!c97fe8b1421fa31b",
+  "name": "Second Focus",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "push-on-through",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu possèdes deux focus au lieu d'un seul. Au rang 1, tu gagnes deux aptitudes pour chacun de ces deux focus. À chaque montée de rang, tu gagnes une nouvelle aptitude dans chacun des deux focus."
+  }
+}

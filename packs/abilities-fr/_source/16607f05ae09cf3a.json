@@ -1,0 +1,28 @@
+{
+  "_id": "16607f05ae09cf3a",
+  "_key": "!items!16607f05ae09cf3a",
+  "name": "Boule de feu",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "fireball",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu crées une explosion de feu à portée longue, remplissant une zone immédiate. Tu fais un jet contre chaque créature : - réussite : 3 dégâts - échec : 1 dégât Les objets inflammables peuvent prendre feu. Chaque niveau d’Effort appliqué pour augmenter les dégâts ajoute +2 (au lieu de +3)."
+  }
+}

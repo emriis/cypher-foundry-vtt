@@ -1,0 +1,28 @@
+{
+  "_id": "ec81493697a3823b",
+  "_key": "!items!ec81493697a3823b",
+  "name": "Mind Surge",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "mind-surge",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You have an extra one-action recovery each day that can only be used to replenish your Intellect Pool."
+  }
+}

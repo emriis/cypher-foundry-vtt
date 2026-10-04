@@ -1,0 +1,28 @@
+{
+  "_id": "e68856135450ebb1",
+  "_key": "!items!e68856135450ebb1",
+  "name": "Mur de granit",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "granite-wall",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu crées un mur de granit niveau 5 à portée courte. Il se compose de quatre carrés de 3,5 m × 3,5 m, arrangés comme tu veux. Il dure jusqu’à ta prochaine récupération d’une heure ou plus, où il se désagrège. Effort : prolonger la durée jusqu’à une récupération de dix heures ou rendre le mur permanent (nécessite 3 Efforts)"
+  }
+}

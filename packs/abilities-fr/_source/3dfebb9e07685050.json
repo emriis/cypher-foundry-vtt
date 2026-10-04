@@ -1,0 +1,28 @@
+{
+  "_id": "3dfebb9e07685050",
+  "_key": "!items!3dfebb9e07685050",
+  "name": "Phaser un ennemi",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "phase-foe",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 8,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu concentres une énergie perturbatrice dans ton doigt et touches une créature. Si ton attaque réussit, elle est phasée comme si tu utilisais Intouchable sur elle. Cependant, à moins qu’elle ne sache contrôler son mouvement en phase (ce qui est rare), elle tombe à travers le sol ou d’autres matières solides. Si elle ne parvient pas à reprendre le contrôle ou à mettre fin à l’effet, elle peut être perdue à jamais, car elle redeviendra solide après une minute — probablement sous terre. Tu ne peux utiliser cette aptitude que contre une créature de niveau 4 ou moins. Effort : augmenter le niveau maximal de la cible de +1."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "46f8eedb1aa3e8d5",
+  "_key": "!items!46f8eedb1aa3e8d5",
+  "name": "Commandement avancé",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "advanced-command",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 7,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu donnes un ordre à une créature à portée courte qui peut t’entendre et te comprendre. Avec un jet d’attaque d’Intellect réussi, elle obéit. Tu peux continuer à lui donner un ordre à chaque tour comme action : chaque ordre nécessite un jet d’Intellect réussi mais aucun coût supplémentaire n’est requis. L’effet cesse si tu arrêtes de donner des ordres, la créature sort de portée ou elle ne peut plus te comprendre."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "51455f1c29c5336a",
+  "_key": "!items!51455f1c29c5336a",
+  "name": "Message télépathique",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "telepathic-message",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu envoies un message télépathique unidirectionnel d’environ une minute. Tu dois avoir déjà vu la cible, et elle doit être sur la même planète. La cible reconnaît le message et peut reconnaître ta « voix mentale ». Effort : augmenter la portée à tout le système stellaire ou augmenter la portée à toute la galaxie (nécessite 3 niveaux d’Effort)."
+  }
+}

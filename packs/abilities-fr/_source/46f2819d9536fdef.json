@@ -1,0 +1,28 @@
+{
+  "_id": "46f2819d9536fdef",
+  "_key": "!items!46f2819d9536fdef",
+  "name": "Lavage de cerveau",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "brainwashing",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Par ruse, mensonges habiles et agents chimiques altérant l’esprit (ou magie, cybernétique, etc.), tu prends le contrôle d’une créature que tu touches. La cible doit être de niveau 3 ou moins et tu dois avoir réussis une attaque d’Intellect. Tu contrôles la créature jusqu’à ta prochaine récupération de dix minutes ou plus. Tant que tu peux la voir, tu décides au cas par cas si elle agit librement ou si elle suit ton ordre. À la fin, elle n’a aucun souvenir d’avoir été contrôlée. Effort : augmenter le niveau maximal de la cible de +1."
+  }
+}

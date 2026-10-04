@@ -1,0 +1,28 @@
+{
+  "_id": "5233180399f310b9",
+  "_key": "!items!5233180399f310b9",
+  "name": "Déjouer le Danger",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "foil-danger",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Si tu es conscient·e d'un danger à portée immédiate et que tu réussis un jet d'Intellect contre son niveau, tu annules ce danger pendant un round. Il peut s'agir d'un élément du terrain (flaque d'acide, fosse boueuse, etc.), d'un piège, d'une capacité naturelle d'une créature (venin, radiation, etc.) ou même de l'attaque ou de l'action d'un adversaire."
+  }
+}

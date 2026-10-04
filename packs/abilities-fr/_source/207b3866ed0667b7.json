@@ -1,0 +1,28 @@
+{
+  "_id": "207b3866ed0667b7",
+  "_key": "!items!207b3866ed0667b7",
+  "name": "Précognition défensive",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "defensive-precognition",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu esquives automatiquement toutes les attaques à distance (aucun jet requis). Cependant, au tour suivant après avoir été attaqué·e à distance, toutes tes autres actions sont entravées. L’effet dure jusqu’à ta prochaine récupération de dix minutes ou plus."
+  }
+}

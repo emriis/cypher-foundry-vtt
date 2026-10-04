@@ -1,0 +1,28 @@
+{
+  "_id": "c63aaad4c957d42e",
+  "_key": "!items!c63aaad4c957d42e",
+  "name": "Sens empathique",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "empathic-sense",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu perçois l’état mental général d’un être à portée courte. Tu peux sentir son émotion générale, et en particulier ce qu’il·elle ressent à ton égard."
+  }
+}

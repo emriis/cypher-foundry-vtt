@@ -1,0 +1,28 @@
+{
+  "_id": "77ca4e7e31841531",
+  "_key": "!items!77ca4e7e31841531",
+  "name": "Soothe the Savage",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "soothe-the-savage",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Make an Intellect attack roll to calm a nonhuman beast within short range that can see you. You must speak to them (although they don't need to understand your words). They remain calm until you use a ten-minute or longer recovery or for as long as you keep using your action to calm them. Action."
+  }
+}

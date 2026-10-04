@@ -1,0 +1,28 @@
+{
+  "_id": "268608ceee622334",
+  "_key": "!items!268608ceee622334",
+  "name": "Retourner le couteau",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "twisting-the-knife",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Si tu as touché un adversaire avec une arme de mêlée durant ce combat, tu le touches automatiquement une seconde fois (aucun jet), infligeant les dégâts normaux. Tu ne peux pas utiliser cette aptitude : avec une attaque spéciale, ni si tu veux utiliser de l’Effort pour augmenter les dégâts. Les aptitudes qui augmentent automatiquement les dégâts s’appliquent néanmoins."
+  }
+}

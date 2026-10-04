@@ -1,0 +1,28 @@
+{
+  "_id": "2bfde3a009fb7dbc",
+  "_key": "!items!2bfde3a009fb7dbc",
+  "name": "Interface haute vitesse",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "high-speed-interface",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "En te branchant directement à une machine ou un dispositif à portée immédiate, tu facilites les tâches pour l’identifier et l’utiliser. L’interface te permet d’interagir avec l’appareil aussi vite qu’il peut traiter l’information, ce qui est généralement plus rapide qu’une manipulation humaine (clavier, commandes vocales, etc.)."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "1f2032de3e958835",
+  "_key": "!items!1f2032de3e958835",
+  "name": "Commander le métal",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "command-metal",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu remodèles selon tes souhaits n’importe quel objet métallique à portée courte. Sa masse totale peut dépasser la tienne. Tu peux modeler plusieurs objets tant que leur masse combinée reste ≤ la tienne. Tu peux aussi les fusionner. Tu peux : détruire un objet métallique (comme avec Déchirer le métal) ou le refaçonner grossièrement (avec plus de délicatesse et de précision si tu réussis une tâche d’artisanat). Tu peux ensuite déplacer l’objet remodelé où tu veux dans la portée. Par exemple, tu peux utiliser plusieurs boucliers ou panneaux métallique, les fusionner et utiliser le résultat pour bloquer une ouverture. Tu peux aussi attaquer une créature à portée courte : armure qui se resserre, fragments métalliques projetés, etc. Indépendamment de la forme qu’elle prend, l’attaque est une attaque d’Intellect infligeant 7 dégâts."
+  }
+}

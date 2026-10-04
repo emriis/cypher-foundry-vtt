@@ -1,0 +1,28 @@
+{
+  "_id": "19325797829026cc",
+  "_key": "!items!19325797829026cc",
+  "name": "Nécromancie de Base",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "basic-necromancy",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu animes le corps d'une créature morte d'une taille égale ou inférieure à la tienne dans ta portée immédiate, créant un suivant de niveau 1 sous forme de mort-vivant. Il n'a ni intelligence, ni souvenirs, ni aptitudes spéciales de son vivant. Il obéit à tes ordres verbaux jusqu'à ce que tu effectues une récupération d'une heure ou plus, après quoi il redevient un cadavre inerte. Si tu animes un deuxième corps, tout corps déjà animé redevient immédiatement inerte."
+  }
+}

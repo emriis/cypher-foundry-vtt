@@ -1,0 +1,28 @@
+{
+  "_id": "c873cea465152793",
+  "_key": "!items!c873cea465152793",
+  "name": "Interface sans fil",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "wireless-interface",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu peux communiquer mentalement avec des machines à portée courte. La communication est bidirectionnelle, mais la machine doit être disposée et capable de communiquer. Tu n’as pas besoin de la voir, mais tu dois savoir qu’elle est dans la portée. Tu peux maintenir plusieurs contacts simultanés, mais tu dois établir chaque contact séparément. Une fois le contact établi : les tâches impliquant cette machine prennent la moitié du temps normal et les tâches nécessitant une action deviennent des Premières actions. Chaque contact dure jusqu’à ta prochaine récupération de dix minutes ou plus. Effort : prolonger la durée jusqu’à une récupération d’une heure ou plus ; augmenter la portée d’un palier (longue, très longue, 1,5 km, 15 km, ou n’importe où sur la planète)."
+  }
+}

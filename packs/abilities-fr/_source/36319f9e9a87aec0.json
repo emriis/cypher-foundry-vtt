@@ -1,0 +1,28 @@
+{
+  "_id": "36319f9e9a87aec0",
+  "_key": "!items!36319f9e9a87aec0",
+  "name": "Entraînement à la persistance",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "persistence-training",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu mets fin immédiatement à un contrôle mental te visant. Tu récupères également la possibilité d’effectuer ton prochain tour normalement ou tu supprimes les effets d’un effet affaiblissant persistant. Effort : utiliser cette aptitude sur un·e allié·e à portée immédiate. Pour toi : facilitateur. Pour un·e allié·e : action."
+  }
+}

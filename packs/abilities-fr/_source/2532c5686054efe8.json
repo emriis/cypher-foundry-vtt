@@ -1,0 +1,28 @@
+{
+  "_id": "2532c5686054efe8",
+  "_key": "!items!2532c5686054efe8",
+  "name": "Comprendre le public",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "knowing-the-audience",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu saisis l’humeur générale d’un groupe à portée courte. Si le groupe tente de dissimuler une information, tu peux tenter une tâche de difficulté 3 pour connaître la vérité derrière leur attitude. Au round suivant, tu gagnes un atout pour une tâche destinée à reconnaître la motivation d’une personne de ce groupe pour obtenir plus de détails et d’informations à propos de cet individu."
+  }
+}

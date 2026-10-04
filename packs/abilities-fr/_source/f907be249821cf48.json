@@ -1,0 +1,28 @@
+{
+  "_id": "f907be249821cf48",
+  "_key": "!items!f907be249821cf48",
+  "name": "Réflexion rapide",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "think-fast",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Ton esprit est vif et insaisissable. Tu es entraîné·e aux tâches de défense d’Intellect."
+  }
+}

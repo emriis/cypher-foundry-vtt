@@ -1,0 +1,28 @@
+{
+  "_id": "4aece7fdcd1b9753",
+  "_key": "!items!4aece7fdcd1b9753",
+  "name": "Lecture Mentale",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "mind-reading",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can read the surface thoughts of a creature you can see within short range. If the creature is unwilling, you must make an Intellect attack against them to read their thoughts. Once you have established contact, you can read the target's thoughts until you use a ten-minute or longer recovery. Action."
+  }
+}

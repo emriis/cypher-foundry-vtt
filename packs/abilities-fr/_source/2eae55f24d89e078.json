@@ -1,0 +1,28 @@
+{
+  "_id": "2eae55f24d89e078",
+  "_key": "!items!2eae55f24d89e078",
+  "name": "Appel de la tempête",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "call-the-storm",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 7,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu invoques d’énormes nuages d’orage sur une zone très vaste. Tant que l’effet dure, tu peux, en tant qu’action, effectuer une attaque d’Intellect pour frapper une cible par la foudre et lui infliger 4 dégâts (tu peux utiliser de l’Effort sur l’attaque ou les dégâts normalement). L’aptitude persiste jusqu’à ta prochaine récupération de dix minutes ou plus."
+  }
+}

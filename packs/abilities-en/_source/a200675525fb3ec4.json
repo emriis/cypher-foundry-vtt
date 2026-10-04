@@ -1,0 +1,28 @@
+{
+  "_id": "a200675525fb3ec4",
+  "_key": "!items!a200675525fb3ec4",
+  "name": "Band of Followers",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "band-of-followers",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You gain four level 3 followers, each with three level 4 modifications of your choice. Instead of gaining four new level 3 followers, you can advance four existing level 2 followers to level 3 and gain a new level 2 follower in place of each of them."
+  }
+}

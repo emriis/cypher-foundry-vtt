@@ -1,0 +1,28 @@
+{
+  "_id": "d423db4cb9c2b339",
+  "_key": "!items!d423db4cb9c2b339",
+  "name": "Quick Phase",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "quick-phase",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you use Walk Through Walls, you pass through physical barriers much more quickly, increasing your base rate by an additional 10 feet (3.5 m) per round. Alternatively, you can phase up to 10 feet (3.5 m) as a First action. Enabler."
+  }
+}

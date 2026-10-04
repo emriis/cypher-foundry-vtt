@@ -7,216 +7,72 @@
   "system": {
     "description": "<p>You're a scrapper and love a good fight. Punches, kicks, and full-body movements are your weapons.</p>",
     "abilities": [
-      {
-        "id": "body-as-a-tool",
-        "name": "Body as a Tool",
-        "tier": 1,
-        "prerequisites": [
-          "no-need-for-weapons"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+      "Compendium.cypher.abilities-en.Item.28af35150802ec35",
+      "Compendium.cypher.abilities-en.Item.b1e7865d7241c209",
+      "Compendium.cypher.abilities-en.Item.fc21e2a06fde9daa",
+      "Compendium.cypher.abilities-en.Item.44b8da93d86fd558",
+      "Compendium.cypher.abilities-en.Item.ec243c3d5cece11f",
+      "Compendium.cypher.abilities-en.Item.db0ffca0a8075eed",
+      "Compendium.cypher.abilities-en.Item.cf926f103de8c101",
+      "Compendium.cypher.abilities-en.Item.ee38ab77c4a40940",
+      "Compendium.cypher.abilities-en.Item.81a50a304975eae3",
+      "Compendium.cypher.abilities-en.Item.67d1c6dc5691d364",
+      "Compendium.cypher.abilities-en.Item.bc9e0b18562b40ad",
+      "Compendium.cypher.abilities-en.Item.70364fde69572c8a",
+      "Compendium.cypher.abilities-en.Item.9b2d214b2c982118"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "b1e7865d7241c209",
+          "to": "28af35150802ec35"
         },
-        "description": "In addition to making your body a weapon, you can use it as a tool. You gain an asset to athletics and gymnastics tasks."
-      },
-      {
-        "id": "no-need-for-weapons",
-        "name": "No Need for Weapons",
-        "tier": 1,
-        "prerequisites": [
-          "resilience"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "fc21e2a06fde9daa",
+          "to": "b1e7865d7241c209"
         },
-        "description": "You inflict an additional 2 damage with unarmed attacks."
-      },
-      {
-        "id": "resilience",
-        "name": "Resilience",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "28af35150802ec35",
+          "to": "44b8da93d86fd558"
         },
-        "description": "You can take one more moderate wound than normal."
-      },
-      {
-        "id": "advantage-to-disadvantage",
-        "name": "Advantage to Disadvantage",
-        "tier": 2,
-        "prerequisites": [
-          "body-as-a-tool"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 3,
-          "options": []
+        {
+          "from": "b1e7865d7241c209",
+          "to": "ec243c3d5cece11f"
         },
-        "description": "You make a hindered attack featuring several quick moves against an armed foe. If you hit, you inflict damage and disarm them—choose whether you want to be holding their weapon or it is knocked to the ground 10 feet (3.5 m) away. For the rest of the combat encounter, you gain an asset on intimidation tasks against your foe. First action."
-      },
-      {
-        "id": "fearsome-reputation",
-        "name": "Fearsome Reputation",
-        "tier": 2,
-        "prerequisites": [
-          "no-need-for-weapons"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "choice",
-          "amount": 3,
-          "options": [
-            "might",
-            "intellect"
-          ]
+        {
+          "from": "b1e7865d7241c209",
+          "to": "db0ffca0a8075eed"
         },
-        "description": "You announce yourself (perhaps mentioning one of your intimidating deeds) to all foes within long range who can hear and understand you. Make a separate Intellect attack roll for each foe. Success means they are afraid of you, easing your tasks against them until you use a ten-minute or longer recovery. Action."
-      },
-      {
-        "id": "high-and-low",
-        "name": "High and Low",
-        "tier": 2,
-        "prerequisites": [
-          "no-need-for-weapons"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "44b8da93d86fd558",
+          "to": "cf926f103de8c101"
         },
-        "description": "You and an ally tag-team a foe for greater effectiveness. Choose one ally you can see. If you hit a foe that they've hit with a melee attack this turn, your attack inflicts an additional 2 damage. Enabler."
-      },
-      {
-        "id": "moving-like-water",
-        "name": "Moving Like Water",
-        "tier": 3,
-        "prerequisites": [
-          "advantage-to-disadvantage"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 3,
-          "options": []
+        {
+          "from": "db0ffca0a8075eed",
+          "to": "ee38ab77c4a40940"
         },
-        "description": "Until you use a ten-minute or longer recovery, if you fail to dodge an attack, you can still attempt to block it, but the block task is hindered. Enabler."
-      },
-      {
-        "id": "throw",
-        "name": "Throw",
-        "tier": 3,
-        "prerequisites": [
-          "high-and-low"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "might",
-          "amount": 2,
-          "options": []
+        {
+          "from": "cf926f103de8c101",
+          "to": "81a50a304975eae3"
         },
-        "description": "When your unarmed attack damages a creature of your size or smaller, you throw that creature 1d20 feet away from you. The creature lands prone. Enabler."
-      },
-      {
-        "id": "divert-attacks",
-        "name": "Divert Attacks",
-        "tier": 4,
-        "prerequisites": [
-          "moving-like-water"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 4,
-          "options": []
+        {
+          "from": "ec243c3d5cece11f",
+          "to": "67d1c6dc5691d364"
         },
-        "description": "Until you use a ten-minute or longer recovery, you automatically deflect, block, or dodge any ranged projectile attacks (no roll required). However, on your next turn after you're attacked with ranged projectiles, all your other actions are hindered. Action to initiate."
-      },
-      {
-        "id": "knock-out",
-        "name": "Knock Out",
-        "tier": 4,
-        "prerequisites": [
-          "fearsome-reputation"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "might",
-          "amount": 5,
-          "options": []
+        {
+          "from": "ee38ab77c4a40940",
+          "to": "bc9e0b18562b40ad"
         },
-        "description": "Make a hindered melee attack against a foe of level 3 or lower. If the attack hits, instead of inflicting damage you knock them unconscious until you use a ten-minute or longer recovery (or someone uses an action to bring them back around). Effort: Increase the maximum level of the foe you can affect by 1. Action."
-      },
-      {
-        "id": "stunning-attack",
-        "name": "Stunning Attack",
-        "tier": 5,
-        "prerequisites": [
-          "throw"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "67d1c6dc5691d364",
+          "to": "70364fde69572c8a"
         },
-        "description": "When making an unarmed attack, you can choose to have the attack roll be hindered; if you hit, in addition to the normal effect of the attack, the foe loses their next turn. Enabler."
-      },
-      {
-        "id": "lethal-capability",
-        "name": "Lethal Capability",
-        "tier": 6,
-        "prerequisites": [
-          "knock-out"
-        ],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You've mastered how to kill with a particular attack. You inflict an additional 5 damage with attacks of one specific type, such as unarmed attacks, or some other specific attack you prefer. You can gain this ability more than once. Each time you do, choose a different specific attack."
-      },
-      {
-        "id": "master-of-unarmed-fighting-style",
-        "name": "Master of Unarmed Fighting Style",
-        "tier": 6,
-        "prerequisites": [
-          "stunning-attack"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You inflict an additional 3 damage with unarmed attacks. When you succeed on a Might defense roll to block an unarmed attack against you, reduce its severity by two steps instead of one (major to minor, moderate and minor to none). Enabler."
-      }
-    ]
+        {
+          "from": "bc9e0b18562b40ad",
+          "to": "9b2d214b2c982118"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

@@ -1,0 +1,28 @@
+{
+  "_id": "db0ffca0a8075eed",
+  "_key": "!items!db0ffca0a8075eed",
+  "name": "High and Low",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "high-and-low",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You and an ally tag-team a foe for greater effectiveness. Choose one ally you can see. If you hit a foe that they've hit with a melee attack this turn, your attack inflicts an additional 2 damage. Enabler."
+  }
+}

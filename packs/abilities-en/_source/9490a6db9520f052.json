@@ -1,0 +1,28 @@
+{
+  "_id": "9490a6db9520f052",
+  "_key": "!items!9490a6db9520f052",
+  "name": "Cast Illusion",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "cast-illusion",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your immediate-range illusions (such as Minor Illusion, Major Illusion, and Grandiose Illusion) increase to short range. Disguises created by your Illusory Disguise last about a minute after the disguised creatures move out of your sight. Enabler."
+  }
+}

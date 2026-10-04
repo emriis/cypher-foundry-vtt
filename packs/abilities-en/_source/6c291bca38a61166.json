@@ -1,0 +1,28 @@
+{
+  "_id": "6c291bca38a61166",
+  "_key": "!items!6c291bca38a61166",
+  "name": "Telepathic Network",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "telepathic-network",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You create a telepathic network between yourself and ten willing creatures you know, no matter where they are. All creatures in the network are linked and can communicate telepathically with one another. They can also “overhear” anything said in the network. Activating or using this ability doesn't require an action and doesn't cost Intellect points; to you, it's as easy as speaking out loud. The network lasts until you choose to end it. Effort: Increase the base number of people in the network to twenty (5 Intellect), lasting until you use a ten-minute or longer recovery; each additional ten people costs 1 Intellect. Enabler to create a network; action to create an expanded network (twenty or more people)."
+  }
+}

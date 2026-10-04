@@ -1,0 +1,28 @@
+{
+  "_id": "a179c2e322ef48de",
+  "_key": "!items!a179c2e322ef48de",
+  "name": "Slip Into Shadow",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "slip-into-shadow",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Even if in full view of a target, your successful stealth task allows you to slip away from that creature and hide from view in a nearby shadow, behind a tree or furnishing, or in the next room as your action. Effort: Increase the number of creatures you can hide from by one (attempt a separate stealth task against each). Enabler. At tier 3: The base number of targets you can attempt to hide from increases to three. Slipping into shadow and other stealth-based tasks for someone who Walks Through Walls is partly enabled by their ability to phase into translucence."
+  }
+}

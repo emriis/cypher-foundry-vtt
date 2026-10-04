@@ -1,0 +1,28 @@
+{
+  "_id": "c3fcb98799febae3",
+  "_key": "!items!c3fcb98799febae3",
+  "name": "Identify Magic",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "identify-magic",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": "lastAction",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If you have sensed magic using the tier 1 ability, you can gain more specifics about what you sense: the level of the magic, the source of the magic (a spellcaster, a magical creature, an ongoing magical effect, or an enchanted object), and the general effects of the magic at play. Last action."
+  }
+}

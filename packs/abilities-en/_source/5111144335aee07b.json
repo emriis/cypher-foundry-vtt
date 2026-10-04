@@ -1,0 +1,28 @@
+{
+  "_id": "5111144335aee07b",
+  "_key": "!items!5111144335aee07b",
+  "name": "Mount",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "mount",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You gain a follower that is a level 3 beast who serves you as a mount. You and the GM must work out the appearance and personality of your beast. Its movement is based on its creature type (avian, swimmer, and so on). Instead of gaining a new creature as your mount, your beast companion can become your mount (this may involve a growth spurt), increasing their level to 3, in which case you gain a different level 2 beast companion. While riding your mount, on your turn they can move and you can make an attack, and you gain an asset on the attack. (This is a special exception to how followers normally can aid your attack.) Any focus ability you have that affects your beast companion (such as Beast Eyes or Improved Companion) can instead affect your mount (your choice). If your mount dies, you can use your resources hunting in the wild for about a week to locate and train a new one."
+  }
+}

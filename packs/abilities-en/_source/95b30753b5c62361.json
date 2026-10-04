@@ -1,0 +1,28 @@
+{
+  "_id": "95b30753b5c62361",
+  "_key": "!items!95b30753b5c62361",
+  "name": "Radiohead",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "radiohead",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can transmit and receive radio transmissions across a broad range of frequencies. You can keep your radio communications entirely private, or relay them audibly as if you were a standard radio. If attempting to access an encrypted digital radio signal, you must succeed on an Intellect task against the encryption's level. Communicating this way is as natural for you as verbal speech, which means sometimes you may overhear something interesting over the radio even when not searching for it. Enabler."
+  }
+}

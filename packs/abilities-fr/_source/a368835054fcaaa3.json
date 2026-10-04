@@ -1,0 +1,28 @@
+{
+  "_id": "a368835054fcaaa3",
+  "_key": "!items!a368835054fcaaa3",
+  "name": "Vitesse de course incroyable",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "incredible-running-speed",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu te déplaces beaucoup plus loin que la normale en un round. Quand tu utilises Pied léger, toutes les distances que tu parcours sont doublées. De plus, si tu réussis une tâche de course de difficulté 4 en utilisant une Dernière action pour courir à pleine vitesse, tu peux parcourir jusqu’à 150 m."
+  }
+}

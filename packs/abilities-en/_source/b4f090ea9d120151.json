@@ -1,0 +1,28 @@
+{
+  "_id": "b4f090ea9d120151",
+  "_key": "!items!b4f090ea9d120151",
+  "name": "Let Them Bleed",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "let-them-bleed",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "The wound bleeds; on your next turn, the foe takes 2 damage that ignores armor. Action. Gut RipperGM intrusions: Your knife gets stuck in your foe and slips from your grasp. Instead of hurting your foe, you accidentally inflict a minor wound on yourself. Your knife sheath is empty and you can't complete the attack."
+  }
+}

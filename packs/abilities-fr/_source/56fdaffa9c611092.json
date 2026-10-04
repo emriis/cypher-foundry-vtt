@@ -1,0 +1,28 @@
+{
+  "_id": "56fdaffa9c611092",
+  "_key": "!items!56fdaffa9c611092",
+  "name": "Muscles de fer",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "muscles-of-iron",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Jusqu’à ta prochaine récupération de dix minutes ou plus, toutes tes tâches de Puissance (sauf les attaques) sont facilitées."
+  }
+}

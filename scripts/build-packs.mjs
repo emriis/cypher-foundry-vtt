@@ -8,11 +8,14 @@ import { compilePack } from "@foundryvtt/foundryvtt-cli";
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
+import { migrateAbilitySources } from "./migrate-ability-sources.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
 const packs = [
   "descriptors-en",
   "descriptors-fr",
+  "abilities-en",
+  "abilities-fr",
   "types-en",
   "types-fr",
   "foci-en",
@@ -20,6 +23,7 @@ const packs = [
 ];
 
 async function compile() {
+  await migrateAbilitySources();
   // Keep intermediate compiler output outside the repository's pack folders.
   const workspace = await fs.mkdtemp(path.join(os.tmpdir(), "cypher-packs-"));
 

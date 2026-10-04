@@ -1,0 +1,28 @@
+{
+  "_id": "34197538648b5560",
+  "_key": "!items!34197538648b5560",
+  "name": "Saut puissant",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "mighty-leap",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu es plus grand·e que la normale et que tu sautes, tu parcours deux fois la distance normale, horizontalement ou verticalement."
+  }
+}

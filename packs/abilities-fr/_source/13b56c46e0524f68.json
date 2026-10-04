@@ -1,0 +1,28 @@
+{
+  "_id": "13b56c46e0524f68",
+  "_key": "!items!13b56c46e0524f68",
+  "name": "Attaque de phase sélective",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "selective-phase-attack",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Une fois par round, une attaque utilisant Attaque phasée inflige +5 dégâts."
+  }
+}

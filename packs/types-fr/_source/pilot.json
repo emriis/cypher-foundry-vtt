@@ -31,48 +31,9 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "born-to-pilot",
-        "name": "Né·e pour Piloter",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
-        },
-        "description": "Quand tu fais un jet pour piloter un vaisseau spatial et que le résultat est inférieur à 9, considère que tu as obtenu 9. Les tâches de pilotage comprennent des manoeuvres précises : arrimer un vaisseau, tourner ou accélérer progressivement, remarquer une anomalie sur les capteurs, etc. Au rang 3, le minimum devient 12. Effort : Augmente le minimum obtenu de +3. Cette aptitude se renouvelle après une récupération."
-      },
-      {
-        "id": "expert-space-pilot",
-        "name": "Pilote Spatial·e Expert·e",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You are trained in piloting spacecraft. At tier 6: You can become an expert in piloting spacecraft if you are already specialized, but you must gain the skill normally (such as from a character advancement)."
-      },
-      {
-        "id": "piloting-flourish",
-        "name": "Panache du Pilote",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Lorsque tu pilotes un vaisseau spatial, tes manoeuvres impressionnantes, tes remarques pince-sans-rire ou ta façon d'exécuter une action peuvent impressionner ou divertir d'autres personnes. Une créature de ton choix à bord ou proche du vaisseau gagne un atout à sa prochaine tâche (si elle l'accomplit dans un round ou deux). Au rang 3, tu peux impressionner jusqu'à trois créatures choisies simultanément."
-      }
+      "Compendium.cypher.abilities-fr.Item.95d02d6ae4dbba6b",
+      "Compendium.cypher.abilities-fr.Item.7922bf2c01367671",
+      "Compendium.cypher.abilities-fr.Item.3ed657c9e38eafc3"
     ],
     "statOptions": [
       "speed",

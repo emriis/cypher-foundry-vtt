@@ -1,0 +1,28 @@
+{
+  "_id": "31dd3a6a24ba79bb",
+  "_key": "!items!31dd3a6a24ba79bb",
+  "name": "Onslaught",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "onslaught",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You attack a foe using energies that assail either their physical form or their mind. In either case, you must be able to see your target. If the attack is physical, you emit a short-range ray of force that inflicts 4 damage. If the attack is mental, you focus your mental energy to blast their thought processes with a mindslice that inflicts 2 Intellect damage (ignores armor). Some creatures without minds (such as robots) might be immune to your mindslice. Action. At tier 3: You deal 1 additional damage with Onslaught."
+  }
+}

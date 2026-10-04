@@ -1,0 +1,28 @@
+{
+  "_id": "bb0c428cbce064cb",
+  "_key": "!items!bb0c428cbce064cb",
+  "name": "Major Illusion",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "major-illusion",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You create a complex scene of images within immediate range. The entire scene must fit within a long area. The images can move, but they can't leave the area. The illusion includes sound and smell. It lasts until you use a ten-minute or longer recovery and changes as you direct (no concentration is needed). If you move beyond immediate range of the illusion's edge, the illusion vanishes. Instead of a realistic illusion, you can create illusory confusing images around a creature within short range, hindering their attacks and defenses until you use a ten-minute or longer recovery (no attack roll needed to affect them). You do not need to use your action each round to maintain this effect. Effort: Affect an additional creature with confusing images. Action to create."
+  }
+}

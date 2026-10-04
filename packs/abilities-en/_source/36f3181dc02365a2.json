@@ -1,0 +1,28 @@
+{
+  "_id": "36f3181dc02365a2",
+  "_key": "!items!36f3181dc02365a2",
+  "name": "Constrict",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "constrict",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "While in beast form, if you make an unarmed attack as a Last action, your attack deals 2 less damage and you grab the target, possibly by wrapping part of your body around them. All the grabbed target's tasks are hindered, including any attempts to escape. Each round they remain grabbed, you can use your action to inflict 5 damage on them (no roll required). Last action to initiate; action to constrict a grabbed target."
+  }
+}

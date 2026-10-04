@@ -1,0 +1,28 @@
+{
+  "_id": "8bec1dde9d883f6c",
+  "_key": "!items!8bec1dde9d883f6c",
+  "name": "Flammes renforcées",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "enhanced-flames",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Fire damage you deal using special abilities increases by 2 damage per attack."
+  }
+}

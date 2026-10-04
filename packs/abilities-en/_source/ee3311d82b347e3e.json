@@ -1,0 +1,28 @@
+{
+  "_id": "ee3311d82b347e3e",
+  "_key": "!items!ee3311d82b347e3e",
+  "name": "Device Insight",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "device-insight",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When examining any unknown, alien, supernatural, or high-technology device, you can ask the GM one question to gain an idea of its capabilities, how it functions, how it can be activated or deactivated, what its weaknesses are (if any), how it can be repaired, or any other similar query. This insight is for difficult or strange things beyond those readily identified by using the appropriate knowledge or technical skill. Action."
+  }
+}

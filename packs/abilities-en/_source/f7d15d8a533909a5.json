@@ -1,0 +1,28 @@
+{
+  "_id": "f7d15d8a533909a5",
+  "_key": "!items!f7d15d8a533909a5",
+  "name": "Knowledge of Nature",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "knowledge-of-nature",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "While in the wilderness, you can always find edible food of some kind and potable water if it exists. Likewise, you can find medicinal herbs or natural remedies that grant you an asset on treatments to heal wounds, disease, or poison."
+  }
+}

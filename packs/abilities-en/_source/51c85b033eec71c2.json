@@ -1,0 +1,28 @@
+{
+  "_id": "51c85b033eec71c2",
+  "_key": "!items!51c85b033eec71c2",
+  "name": "Desperate Defense",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "desperate-defense",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "While you have at least one moderate or one major wound, you can choose to enter a state of heightened awareness against threats. While in this state, you can't use points from your Intellect Pool, but you add +1 to your Speed Edge and gain two assets to block and dodge tasks. If you choose to end the heightened state while you remain wounded, you can't resume it again until after you use a recovery. Enabler."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "6ea9ddc1cc1575c5",
+  "_key": "!items!6ea9ddc1cc1575c5",
+  "name": "Grab",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "grab",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If you make an unarmed attack as a Last action, your attack deals 2 less damage and the target is grabbed. All the grabbed target's tasks are hindered, including any attempts to escape your grip. As an attack, you can deal 4 damage to your grabbed foe (no attack roll required). While bigger than normal, each increment (Enlarge, Bigger, Huge, Gargantuan, and Colossal) hinders the target's escape attempts by an additional step and increases your grip damage by 1. Last action to initiate; action to squeeze grabbed targets."
+  }
+}

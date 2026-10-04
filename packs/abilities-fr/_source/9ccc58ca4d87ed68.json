@@ -1,0 +1,28 @@
+{
+  "_id": "9ccc58ca4d87ed68",
+  "_key": "!items!9ccc58ca4d87ed68",
+  "name": "Mettre le feu sous leurs pieds",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "lighting-a-fire-under-them",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu donnes un ordre à un·e allié·e ou à un·e suivant·e à portée courte, et sa prochaine action devient une Première action (si elle avait été une Dernière action, elle agit normalement). Tu ne peux réutiliser cette aptitude qu’après ta prochaine récupération de dix minutes ou plus."
+  }
+}

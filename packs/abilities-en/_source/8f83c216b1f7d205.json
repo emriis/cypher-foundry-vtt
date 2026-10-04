@@ -1,0 +1,28 @@
+{
+  "_id": "8f83c216b1f7d205",
+  "_key": "!items!8f83c216b1f7d205",
+  "name": "Upgrade",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "upgrade",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If you succeed at a difficulty 3 engineering task, you make the device function about 25 percent above its rated specifications. When you take a ten-hour recovery, the device breaks, requiring a full repair (as opposed to another Modify Device task) to regain its original, unmodified function. For example, you could overclock a medium blaster so that it deals 1 additional damage, modify a food printer so that each cup of coffee made with it tastes better, modify a spacecraft's engine so that its acceleration is improved by 25 percent, and so on. Whether you repair or upgrade the device, it now has a depletion of 1–6 on a d20 (check each use). Ten minutes to complete. At tier 3: The modified device's depletion improves to 1–2 on a d20."
+  }
+}

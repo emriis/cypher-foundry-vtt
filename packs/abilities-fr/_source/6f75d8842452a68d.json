@@ -1,0 +1,28 @@
+{
+  "_id": "6f75d8842452a68d",
+  "_key": "!items!6f75d8842452a68d",
+  "name": "Intrusions MJ pour Frappe Tournoyante",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "swing-through-gm-intrusions",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Ton épée s’ébrèche ou se tord, réduisant ses dégâts de 1 jusqu’à réparation. Ton épée t’échappe et tombe à courte portée. Ton ennemi dévie ton attaque et tu te causes une blessure modérée."
+  }
+}

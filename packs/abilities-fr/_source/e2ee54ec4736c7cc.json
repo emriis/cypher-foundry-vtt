@@ -1,0 +1,28 @@
+{
+  "_id": "e2ee54ec4736c7cc",
+  "_key": "!items!e2ee54ec4736c7cc",
+  "name": "Tueur spécialisé",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "damage-dealer",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu deviens meilleur·e pour tuer avec un type d’arme spécifique. Choisis une arme de mêlée ou à distance : tu infliges +3 dégâts supplémentaires avec cette arme. Tu peux prendre cette aptitude deux fois pour la même arme (jusqu’à +6 dégâts)."
+  }
+}

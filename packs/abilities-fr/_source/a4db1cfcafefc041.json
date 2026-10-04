@@ -1,0 +1,28 @@
+{
+  "_id": "a4db1cfcafefc041",
+  "_key": "!items!a4db1cfcafefc041",
+  "name": "Agrandissement",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "enlarge",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu grandis jusqu’à atteindre 3 m de haut, jusqu’à ta prochaine récupération d’une action ou plus. Ton équipement grandit avec toi. Pendant que tu es agrandi·e : tu gagnes +1 en Avantage de Puissance, tu peux ignorer la première blessure modérée que tu subis, tes attaques à mains nues infligent 4 dégâts mais tes tâches d’Esquive sont entravées. Chaque utilisation augmente le coût en Puissance de +1. Le coût se réinitialise après une récupération."
+  }
+}

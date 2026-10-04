@@ -1,0 +1,28 @@
+{
+  "_id": "c5aa303f6bac622b",
+  "_key": "!items!c5aa303f6bac622b",
+  "name": "Désactiver un mécanisme",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "disable-mechanism",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Avec une attaque d’Intellect réussie contre une machine, un robot ou un appareil (intelligent ou non) à portée immédiate, tu le perturbes de l’une des façons suivantes : - toutes ses tâches sont entravées jusqu’à ta prochaine récupération de dix minutes ou plus, - sa vitesse est réduite de moitié, - iel ne peut pas agir pendant un round, - iel inflige 2 dégâts de moins (minimum 1) jusqu’à ta prochaine récupération de dix minutes ou plus. Tu dois toucher la machine pour la perturber (si c’est une attaque, elle n’inflige pas de dégâts). Effort : augmenter la portée jusqu’à ce que tu peux voir directement ou cibler une machine via un réseau auquel tu as un accès illimité (nécessite 2 niveaux d’Effort)."
+  }
+}

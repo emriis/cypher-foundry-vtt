@@ -1,0 +1,28 @@
+{
+  "_id": "44b8da93d86fd558",
+  "_key": "!items!44b8da93d86fd558",
+  "name": "Advantage to Disadvantage",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "advantage-to-disadvantage",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 3,
+      "options": []
+    },
+    "action": "firstAction",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You make a hindered attack featuring several quick moves against an armed foe. If you hit, you inflict damage and disarm them—choose whether you want to be holding their weapon or it is knocked to the ground 10 feet (3.5 m) away. For the rest of the combat encounter, you gain an asset on intimidation tasks against your foe. First action."
+  }
+}

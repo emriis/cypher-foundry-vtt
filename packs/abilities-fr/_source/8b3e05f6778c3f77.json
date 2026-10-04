@@ -1,0 +1,28 @@
+{
+  "_id": "8b3e05f6778c3f77",
+  "_key": "!items!8b3e05f6778c3f77",
+  "name": "Forme parfaite",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "perfected-form",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Ta source mystique t’infuse jusqu’à ta prochaine récupération d’une heure ou plus, t’accordant 3 points que tu peux ajouter à n’importe laquelle de tes Réserves, même au‑delà de leur maximum. Ces points restent jusqu’à être dépensés ou jusqu’à la fin de la durée. De plus, pendant toute la durée : tes yeux et tes mains luisent de ta source mystique, tes attaques à mains nues infligent +3 dégâts. L’aptitude se renouvelle après ta prochaine récupération d’une heure ou plus."
+  }
+}

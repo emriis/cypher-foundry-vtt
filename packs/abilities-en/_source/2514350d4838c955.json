@@ -1,0 +1,28 @@
+{
+  "_id": "2514350d4838c955",
+  "_key": "!items!2514350d4838c955",
+  "name": "Disable Mechanism",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "disable-mechanism",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "With a successful Intellect attack to hack a machine, robot, or device (intelligent or not) within immediate range, you disrupt it in one of the following ways: All the machine's tasks are hindered until you use a ten-minute or longer recovery. The machine's speed is halved. The machine can take no action for one round. The severity of the machine's attacks are reduced by one step (minimum of a minor wound) until you use a ten-minute or longer recovery. You must touch the machine, robot, or device to disrupt it (if you are making an attack, it inflicts no damage). Effort: Increase the range to as far as you can directly see (through your own eyes, not through a remote camera or other interface). Target a machine through a network interface you have unrestricted access to (this requires two levels of Effort). Action."
+  }
+}

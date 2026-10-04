@@ -1,0 +1,28 @@
+{
+  "_id": "baaa4fdf16bd9e47",
+  "_key": "!items!baaa4fdf16bd9e47",
+  "name": "Fireball",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "fireball",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You create a burst of fire within long range, filling an immediate area. Roll against each creature in the area; you inflict 3 damage on a success, or 1 damage on a failure. Flammable objects may catch fire. Each level of Effort applied to increase damage adds 2 damage to each target (instead of 3). Action."
+  }
+}

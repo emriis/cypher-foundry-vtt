@@ -1,0 +1,28 @@
+{
+  "_id": "fbb4222a43856210",
+  "_key": "!items!fbb4222a43856210",
+  "name": "Subsonic Rumble",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "subsonic-rumble",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You emit an unnerving subsonic rumble that most living creatures can't hear but that affects them all the same. For creatures within short range, attempts to charm them, intimidate them, or frighten them are eased by two steps. You continue to emit this rumble until you use a ten-minute or longer recovery. Action to initiate."
+  }
+}

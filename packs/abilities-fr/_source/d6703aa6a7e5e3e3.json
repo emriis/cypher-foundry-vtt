@@ -1,0 +1,28 @@
+{
+  "_id": "d6703aa6a7e5e3e3",
+  "_key": "!items!d6703aa6a7e5e3e3",
+  "name": "Improviser",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "improvise",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If you aren't trained in a task, you can improvise to gain an asset on that task—a tool you cobble together, sudden insight, or just dumb luck. The asset lasts until you use a ten-minute or longer recovery. Enabler."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "6e633abe0b0487bc",
+  "_key": "!items!6e633abe0b0487bc",
+  "name": "Bond arrière",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "spring-away",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Après avoir réussi une Esquive contre une attaque ou un danger, tu peux immédiatement te déplacer d’une courte distance. Tu ne peux pas réutiliser cette aptitude avant ton prochain tour."
+  }
+}

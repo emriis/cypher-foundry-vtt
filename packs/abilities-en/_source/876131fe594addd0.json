@@ -1,0 +1,28 @@
+{
+  "_id": "876131fe594addd0",
+  "_key": "!items!876131fe594addd0",
+  "name": "Rolling Stone",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "rolling-stone",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 5,
+      "options": []
+    },
+    "action": "lastAction",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can dive forward and contract your limbs, becoming a careening boulder moving up to a long distance. During this movement you can attack three foes by colliding with them. Make separate attack rolls for each; success means you inflict 6 damage. Last action."
+  }
+}

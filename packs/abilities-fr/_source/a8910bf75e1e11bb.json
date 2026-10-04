@@ -1,0 +1,28 @@
+{
+  "_id": "a8910bf75e1e11bb",
+  "_key": "!items!a8910bf75e1e11bb",
+  "name": "Yeux de bête",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "beast-eyes",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu lies ton esprit à celui de ton compagnon animal (ou une bête apaisée via Apaiser la bête, tant qu’elle reste bien disposée). Tu perçois par ses sens tant qu’il est à 1,5 km de toi. L’effet dure jusqu’à ta prochaine récupération de dix minutes ou plus."
+  }
+}

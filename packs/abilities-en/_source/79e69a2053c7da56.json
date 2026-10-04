@@ -1,0 +1,28 @@
+{
+  "_id": "79e69a2053c7da56",
+  "_key": "!items!79e69a2053c7da56",
+  "name": "Quick Draw",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "quick-draw",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Once per turn if you take down a foe with your medium or heavy ranged attack, you can immediately make another attack on that same turn against a new foe within short range as an extra action on your turn. Enabler."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "f67c8bf3211bff88",
+  "_key": "!items!f67c8bf3211bff88",
+  "name": "Plus fort ensemble",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "stronger-together",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Lorsque toi et ton compagnon animal (ou une bête apaisée via Apaiser la bête) êtes à portée immédiate l’un·e de l’autre, tu infliges 2 dégâts supplémentaires quand tu attaques et vous obtenez tous·tes les deux un atout aux tâches de défense. Facilitateur."
+  }
+}

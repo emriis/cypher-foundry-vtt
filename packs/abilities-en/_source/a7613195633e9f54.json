@@ -1,0 +1,28 @@
+{
+  "_id": "a7613195633e9f54",
+  "_key": "!items!a7613195633e9f54",
+  "name": "Retaliatory Swipe",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "retaliatory-swipe",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If a melee attack hits you, you can immediately make a melee attack against your attacker. You can't use this ability more than once per turn. Enabler."
+  }
+}

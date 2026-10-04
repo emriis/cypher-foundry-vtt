@@ -1,0 +1,28 @@
+{
+  "_id": "f5733a2ff66bd1f7",
+  "_key": "!items!f5733a2ff66bd1f7",
+  "name": "Lower Temperature",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "lower-temperature",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You make it up to 30˚ F (15˚ C) cooler in an immediate area until you make a ten-minute or longer recovery (this reduces wound severity from warm temperature environments by two steps). This effect is centered on you and moves with you. Action."
+  }
+}

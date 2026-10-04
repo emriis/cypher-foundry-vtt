@@ -1,0 +1,28 @@
+{
+  "_id": "7eda85805fdfea22",
+  "_key": "!items!7eda85805fdfea22",
+  "name": "Inspiring Performance",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "inspiring-performance",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "With a rousing speech or inspiring music, you lift the spirits of and inspire three allies who can hear and see you. While you continue to speak or perform each round as your action, affected allies gain an asset in a task you choose (combat or noncombat) related to your performance. Even after the effect ends, affected allies are so inspired that they add +1 to their next recovery. Effort: Affect three additional allies. Action. At tier 3: Affected allies add +2 to their next recovery."
+  }
+}

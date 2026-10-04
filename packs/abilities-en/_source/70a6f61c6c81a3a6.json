@@ -1,0 +1,28 @@
+{
+  "_id": "70a6f61c6c81a3a6",
+  "_key": "!items!70a6f61c6c81a3a6",
+  "name": "Press Advantage",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "press-advantage",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When your damage-dealing attack roll is 17 or higher, you deal +1 damage with the attack. If you roll a 19 or 20, you inflict the extra damage regardless of whether you choose to deal additional damage or take a special minor or major effect. Successive Attack (2 Speed or Might): Once per turn if you take down a foe, you can immediately make another attack on that same turn against a new foe within your reach as an extra action on your turn. You can use this ability with melee attacks and ranged attacks. Enabler."
+  }
+}

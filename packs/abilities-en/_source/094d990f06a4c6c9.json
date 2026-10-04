@@ -1,0 +1,28 @@
+{
+  "_id": "094d990f06a4c6c9",
+  "_key": "!items!094d990f06a4c6c9",
+  "name": "Healing Hand",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "healing-hand",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "With a touch, you reduce one wound's severity. A healed minor wound is gone completely, one moderate wound becomes a minor wound, or one major wound becomes a moderate wound. (If the character is at their limit of lower-severity wounds, you can't use this ability to reduce the severity of their wounds.) Each time you use Healing Hand, the Intellect cost increases by 1. The cost returns to 1 after you take a recovery. Last action. An NPC recipient of Healing Hand regains 5 health."
+  }
+}

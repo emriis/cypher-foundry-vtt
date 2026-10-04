@@ -1,0 +1,28 @@
+{
+  "_id": "3dd67364591da22f",
+  "_key": "!items!3dd67364591da22f",
+  "name": "Bouclier ricochet",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "bouncing-shield",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu lances ton bouclier comme une arme légère sur une cible à courte portée. Qu’il touche ou non, il rebondit pour attaquer deux cibles supplémentaires (la troisième cible peut être la première). Fais un jet séparé pour chaque cible. À la fin, le bouclier revient vers toi si tu réussis une tâche de Célérité de difficulté 2 ; sinon, il tombe à portée immédiate. Effort : un coup réussi entrave la cible pendant un round."
+  }
+}

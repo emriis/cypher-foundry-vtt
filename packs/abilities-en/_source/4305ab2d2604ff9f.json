@@ -1,0 +1,28 @@
+{
+  "_id": "4305ab2d2604ff9f",
+  "_key": "!items!4305ab2d2604ff9f",
+  "name": "Electric Flight",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "electric-flight",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "While Electric Armor is active, you can fly. You can move a short distance and take an action, or move a long distance as your action. (Unlike a normal situation of taking an action and moving a short distance, this doesn't hinder your tasks.) You can carry one creature of your size or smaller with you. They aren't harmed by your Electric Armor. Effort: Cover and protect a passenger with Electric Armor as if they were you. Enabler."
+  }
+}

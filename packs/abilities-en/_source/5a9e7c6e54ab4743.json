@@ -1,0 +1,28 @@
+{
+  "_id": "5a9e7c6e54ab4743",
+  "_key": "!items!5a9e7c6e54ab4743",
+  "name": "Frost Bolt",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "frost-bolt",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You emit a ray of intense cold at a foe within short range. If it hits, it inflicts 4 damage from cold. Instead of attacking with a ray, you can increase the intensity of the cold that Ice Armor has on your hands, adding 2 damage to your cold touch and to your melee and ranged weapon damage. This aspect of this ability lasts until you use a  ten-minute or longer recovery. Action; action to initiate more intense cold."
+  }
+}

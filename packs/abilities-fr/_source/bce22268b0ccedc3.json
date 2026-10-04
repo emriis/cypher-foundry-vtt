@@ -1,0 +1,28 @@
+{
+  "_id": "bce22268b0ccedc3",
+  "_key": "!items!bce22268b0ccedc3",
+  "name": "Intrusions MJ pour Crâne fendu",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "split-skull-gm-intrusions",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Ta hache t’échappe et tombe à proximité. La tête de la hache reste coincée dans l’ennemi et t’est arrachée des mains. Le manche se brise ou éclate. La hache ricoche et tu te blesses modérément."
+  }
+}

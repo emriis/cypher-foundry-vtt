@@ -1,0 +1,28 @@
+{
+  "_id": "6268469dedab9c2e",
+  "_key": "!items!6268469dedab9c2e",
+  "name": "Enhanced Self-Repair",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "enhanced-self-repair",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You reduce the Might cost of rallying to remove wounds by 2."
+  }
+}

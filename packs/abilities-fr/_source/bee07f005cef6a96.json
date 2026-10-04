@@ -1,0 +1,28 @@
+{
+  "_id": "bee07f005cef6a96",
+  "_key": "!items!bee07f005cef6a96",
+  "name": "Quand le Deal Explose",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "when-the-deal-bombs",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Après avoir persuadé, trompé, interagi positivement, ou utilisé Baratin avec succès sur une créature, si celle-ci devient hostile dans les 24 heures, tu réduis automatiquement la gravité de la première blessure qu'elle t'inflige d'un palier. Au rang 3, tu ignores complètement cette blessure (aucun dégât)."
+  }
+}

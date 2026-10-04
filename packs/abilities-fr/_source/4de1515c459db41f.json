@@ -1,0 +1,28 @@
+{
+  "_id": "4de1515c459db41f",
+  "_key": "!items!4de1515c459db41f",
+  "name": "Invisibilité",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "invisibility",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu deviens invisible. Cet effet prend fin si tu fais quelque chose qui révèle ta présence ou ta position (attaquer, utiliser une aptitude, déplacer un gros objet, etc.), ou si tu fais une récupération de dix minutes ou plus. Effort : utilise cette aptitude sur une créature que tu touches plutôt que sur toi-même ; elle reste invisible jusqu’à ce qu’elle agisse précipitamment ou que toi ou elle fassiez une récupération de dix minutes ou plus. Action pour commencer. L’attaque d’un personnage invisible est facilitée de deux paliers. Les attaques contre un personnage invisible sont entravées de quatre paliers, ou presque impossibles si l’attaquant ignore où il peut se trouver."
+  }
+}

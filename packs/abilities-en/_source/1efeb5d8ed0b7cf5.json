@@ -1,0 +1,28 @@
+{
+  "_id": "1efeb5d8ed0b7cf5",
+  "_key": "!items!1efeb5d8ed0b7cf5",
+  "name": "Energize Object",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "energize-object",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You channel energy into an object (like a melee or ranged weapon). Until you use a one-hour or longer recovery, any attack you make with the energized object inflicts an additional 1 damage from energy (if the weapon fires projectiles, such as bullets from a rifle, this damage applies to the projectiles). The energy drains out if you stop holding or carrying the object, but as an extra action on your turn, you can energize a different object. Action. When you energize an object, you use psychokinetic energy, which tends to give affected weapons a subtle purple glimmer."
+  }
+}

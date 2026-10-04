@@ -1,0 +1,28 @@
+{
+  "_id": "1755ee92fe138e0f",
+  "_key": "!items!1755ee92fe138e0f",
+  "name": "Inspiring Display",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "inspiring-display",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "After succeeding at a task that depends on brute force (such as smashing down a barred door, tearing open a locked container, lifting or moving a heavy object, or striking someone with a melee weapon), choose an ally who saw you. A chosen PC regains 2 points to a Pool of their choice; a chosen NPC regains 2 health. Enabler."
+  }
+}

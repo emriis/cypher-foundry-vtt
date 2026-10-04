@@ -1,0 +1,28 @@
+{
+  "_id": "b8433e2b665e4450",
+  "_key": "!items!b8433e2b665e4450",
+  "name": "Righteous Cloak",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "righteous-cloak",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You shine with wholesome light, automatically inflicting 4 damage (no roll needed) on anyone who tries to touch you or strike you with a melee attack. While Righteous Cloak is active, bright light illuminates a short area around you if you wish. This ability lasts until you use a ten-minute or longer recovery. Enabler."
+  }
+}

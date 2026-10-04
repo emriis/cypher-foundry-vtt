@@ -1,0 +1,28 @@
+{
+  "_id": "23f49ec426c57e57",
+  "_key": "!items!23f49ec426c57e57",
+  "name": "Lévitation",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "hover",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu t'élèves lentement dans les airs. Si tu te concentres, tu peux rester immobile ou flotter jusqu'à un court déplacement pendant ton action. Sans concentration, tu dérives avec le vent ou l'élan que tu as pris. L'effet dure jusqu'à ta prochaine récupération de dix minutes ou plus."
+  }
+}

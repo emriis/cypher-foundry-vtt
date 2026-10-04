@@ -1,0 +1,28 @@
+{
+  "_id": "505689ba2ae3f4d6",
+  "_key": "!items!505689ba2ae3f4d6",
+  "name": "Prise phasée",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "phase-grasp",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu phases un objet à longue portée pour le faire disparaître et réapparaître dans tes mains ou à portée immédiate. Tu dois voir l’objet, et il doit être transportable à deux mains. S’il est tenu par une créature ou derrière une barrière, tu dois réussir une attaque d’Intellect contre le niveau de la créature ou de la barrière."
+  }
+}

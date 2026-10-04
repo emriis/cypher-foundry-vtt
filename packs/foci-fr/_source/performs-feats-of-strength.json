@@ -7,214 +7,84 @@
   "system": {
     "description": "<p>A muscled prodigy, you can haul incredible weight, hurl your body through the air, and punch through doors.</p>",
     "abilities": [
-      {
-        "id": "always-mighty",
-        "name": "Toujours puissant·e",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+      "Compendium.cypher.abilities-fr.Item.a92e437a358d0cd6",
+      "Compendium.cypher.abilities-fr.Item.e7e68d4974efda02",
+      "Compendium.cypher.abilities-fr.Item.1755ee92fe138e0f",
+      "Compendium.cypher.abilities-fr.Item.68b29b1095e49d07",
+      "Compendium.cypher.abilities-fr.Item.308948feb8a101e4",
+      "Compendium.cypher.abilities-fr.Item.d337d5bf3cb93ec6",
+      "Compendium.cypher.abilities-fr.Item.72ac4602304a045b",
+      "Compendium.cypher.abilities-fr.Item.f5664063e520fb95",
+      "Compendium.cypher.abilities-fr.Item.fa53d04442336ef6",
+      "Compendium.cypher.abilities-fr.Item.2a0ae0de64d9a35b",
+      "Compendium.cypher.abilities-fr.Item.08bf281e08d1e7d5",
+      "Compendium.cypher.abilities-fr.Item.adede57b2d2de3ba",
+      "Compendium.cypher.abilities-fr.Item.0aa7e583e284e219"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "a92e437a358d0cd6",
+          "to": "68b29b1095e49d07"
         },
-        "description": "Chaque fois que tu fais une récupération, si ta Réserve de Puissance n’est pas déjà pleine, tu récupères 1 point supplémentaire dans cette Réserve. Tu peux choisir cette aptitude jusqu’à trois fois."
-      },
-      {
-        "id": "hitting-harder",
-        "name": "Frapper plus fort",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "a92e437a358d0cd6",
+          "to": "308948feb8a101e4"
         },
-        "description": "Tes attaques à mains nues infligent +1 dégât."
-      },
-      {
-        "id": "inspiring-display",
-        "name": "Démonstration inspirante",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "might",
-          "amount": 2,
-          "options": []
+        {
+          "from": "e7e68d4974efda02",
+          "to": "308948feb8a101e4"
         },
-        "description": "Après avoir réussi une tâche reposant sur la force brute (défoncer une porte barrée, arracher un conteneur verrouillé, soulever ou déplacer un objet lourd, frapper quelqu’un en mêlée…), choisis un·e allié·e qui t’a vu·e. Un·e PJ choisi·e récupère 2 points dans la Réserve de son choix. Un·e PNJ choisi·e récupère 2 points de santé."
-      },
-      {
-        "id": "feat-of-strength",
-        "name": "Exploit de force",
-        "tier": 2,
-        "prerequisites": [
-          "always-mighty"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "might",
-          "amount": 1,
-          "options": []
+        {
+          "from": "1755ee92fe138e0f",
+          "to": "308948feb8a101e4"
         },
-        "description": "Ton action physique est si impressionnante qu’elle inspire un·e allié·e ou intimide un·e adversaire. Après avoir réussi une tâche reposant sur la force brute (défoncer une porte barrée, arracher un conteneur verrouillé, soulever ou déplacer un objet lourd, frapper quelqu’un en mêlée…), choisis une créature qui t’a vu·e : si c’est un·e allié·e, sa prochaine tâche est facilitée, si c’est un·e ennemi·e, tu peux soit entraver l’une de ses tâches à son prochain tour, soit tenter immédiatement une tâche d’intimidation facilitée contre ellui."
-      },
-      {
-        "id": "desperate-feat",
-        "name": "Exploit désespéré",
-        "tier": 2,
-        "prerequisites": [
-          "always-mighty",
-          "hitting-harder",
-          "inspiring-display"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "1755ee92fe138e0f",
+          "to": "d337d5bf3cb93ec6"
         },
-        "description": "Tant que tu as au moins une blessure modérée ou majeure, tu gagnes +1 en Avantage dans la Réserve de ton choix."
-      },
-      {
-        "id": "naturally-strong",
-        "name": "Naturellement fort·e",
-        "tier": 2,
-        "prerequisites": [
-          "inspiring-display"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "might",
-          "amount": 2,
-          "options": []
+        {
+          "from": "68b29b1095e49d07",
+          "to": "72ac4602304a045b"
         },
-        "description": "Quand tu fais un jet pour porter, grimper, sauter ou briser, et que ton résultat est inférieur à 9, considère que tu as obtenu 9. (Tu évites ainsi une Intrusion du·de la MJ si tu fais un 1.) L’aptitude se renouvelle après une récupération. Au rang 3, le minimum passe à 12. Effort : augmenter le minimum obtenu de +3."
-      },
-      {
-        "id": "deep-reserves",
-        "name": "Réserves profondes",
-        "tier": 3,
-        "prerequisites": [
-          "feat-of-strength",
-          "desperate-feat"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "308948feb8a101e4",
+          "to": "72ac4602304a045b"
         },
-        "description": "When others are exhausted, you can push through. You can transfer up to 6 points among your Pools in any combination, at a rate of 1 point per round. For example, you could transfer 3 points of Speed to Might and 3 points of Intellect to Might, which would take a total of six rounds. This ability renews when you take a ten-hour recovery. Action."
-      },
-      {
-        "id": "iron-fist",
-        "name": "Poing de fer",
-        "tier": 3,
-        "prerequisites": [
-          "desperate-feat",
-          "naturally-strong"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "308948feb8a101e4",
+          "to": "f5664063e520fb95"
         },
-        "description": "Tes attaques à mains nues infligent +3 dégâts."
-      },
-      {
-        "id": "amazing-strength",
-        "name": "Force prodigieuse",
-        "tier": 4,
-        "prerequisites": [
-          "deep-reserves"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "d337d5bf3cb93ec6",
+          "to": "f5664063e520fb95"
         },
-        "description": "Quand tu consacres de l’Effort depuis ta Réserve de Puissance pour une tâche hors combat, tu gagnes un niveau d’Effort gratuit pour cette tâche."
-      },
-      {
-        "id": "throw",
-        "name": "Projection",
-        "tier": 4,
-        "prerequisites": [
-          "iron-fist"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "might",
-          "amount": 2,
-          "options": []
+        {
+          "from": "72ac4602304a045b",
+          "to": "fa53d04442336ef6"
         },
-        "description": "When your unarmed attack damages a creature of your size or smaller, you throw that creature 1d20 feet away from you. The creature lands prone. Enabler."
-      },
-      {
-        "id": "brute-strike",
-        "name": "Frappe brutale",
-        "tier": 5,
-        "prerequisites": [
-          "amazing-strength",
-          "throw"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "might",
-          "amount": 4,
-          "options": []
+        {
+          "from": "f5664063e520fb95",
+          "to": "2a0ae0de64d9a35b"
         },
-        "description": "Quand tu touches avec une attaque de Puissance, tu infliges +6 dégâts supplémentaires. Tu ne peux pas utiliser cette aptitude deux rounds d’affilée."
-      },
-      {
-        "id": "brute-squad",
-        "name": "Escouade brutale",
-        "tier": 6,
-        "prerequisites": [
-          "brute-strike"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "might",
-          "amount": 8,
-          "options": []
+        {
+          "from": "fa53d04442336ef6",
+          "to": "08bf281e08d1e7d5"
         },
-        "description": "You can perform two Might tasks on this turn, one with your normal action and one with an extra action. For example, you could make a melee attack and smash open a door, throw a heavy couch and jump over a wall, or make two melee attacks. Enabler."
-      },
-      {
-        "id": "jump-attack",
-        "name": "Attaque bondissante",
-        "tier": 6,
-        "prerequisites": [
-          "brute-strike"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "might",
-          "amount": 5,
-          "options": []
+        {
+          "from": "2a0ae0de64d9a35b",
+          "to": "08bf281e08d1e7d5"
         },
-        "description": "You jump up to 4 feet (1 m) into the air and make a melee attack against a foe on the way up or down. If you hit, you inflict damage and can attempt a difficulty 4 Might roll to inflict an additional 4 damage and knock them prone. Effort: Add 2 feet to the jump height and an additional 2 damage to the attack (whether or not you knock the target prone). Action."
-      }
-    ]
+        {
+          "from": "08bf281e08d1e7d5",
+          "to": "adede57b2d2de3ba"
+        },
+        {
+          "from": "08bf281e08d1e7d5",
+          "to": "0aa7e583e284e219"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

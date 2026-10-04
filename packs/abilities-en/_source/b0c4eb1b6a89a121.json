@@ -1,0 +1,28 @@
+{
+  "_id": "b0c4eb1b6a89a121",
+  "_key": "!items!b0c4eb1b6a89a121",
+  "name": "Greater Controlled Change",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "greater-controlled-change",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "It's easier to change into and out of the shape granted by your Beast Form ability. Transforming either way is now a difficulty 2 Intellect task."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "ddbd7845e51d0301",
+  "_key": "!items!ddbd7845e51d0301",
+  "name": "Talons or Claws",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "talons-or-claws",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can make your fingertips grow sharp talons or claws (whichever matches your beast form) until you use a ten-minute or longer recovery, during which time your unarmed attacks deal an additional 1 damage. Action when in your normal form; enabler when using Beast Form."
+  }
+}

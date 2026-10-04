@@ -1,0 +1,28 @@
+{
+  "_id": "78e9354e00b973ef",
+  "_key": "!items!78e9354e00b973ef",
+  "name": "Médecin Expert·e",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "expert-doctor",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You are trained in healing. At tier 6: You can become an expert in healing if you are already specialized, but you must gain the skill normally (such as from a character advancement)."
+  }
+}

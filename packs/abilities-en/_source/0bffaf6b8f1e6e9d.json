@@ -1,0 +1,28 @@
+{
+  "_id": "0bffaf6b8f1e6e9d",
+  "_key": "!items!0bffaf6b8f1e6e9d",
+  "name": "Gather Your Strength",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "gather-your-strength",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your attack this round deals an additional 2 damage if you make it as a Last action instead of as an action or a First action. Enabler."
+  }
+}

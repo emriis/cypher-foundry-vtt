@@ -34,48 +34,9 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "built-to-hack",
-        "name": "Conçu·e pour Pirater",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
-        },
-        "description": "Quand tu fais un jet pour pirater un ordinateur ou une machine non intelligente et que ton résultat est inférieur à 9, considère que tu as obtenu 9. Les tâches de piratage incluent : pénétrer des bases de données sécurisées, prendre le contrôle de tourelles, ouvrir des accès verrouillés, etc. Au rang 3, le minimum devient 12. Effort : Augmente le minimum obtenu de +3."
-      },
-      {
-        "id": "flex-skill",
-        "name": "Compétence Flexible",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Choisis une tâche (autre qu'une attaque ou une défense) sur laquelle tu te concentres. Pour le reste de la journée, tu es entraîné·e dans cette tâche. Tu ne peux pas utiliser cette aptitude pour devenir spécialisé·e dans une compétence dans laquelle tu es déjà entraîné·e. Cette aptitude se renouvelle après une récupération de dix heures."
-      },
-      {
-        "id": "machine-not-flesh",
-        "name": "Machine plutôt que Chair",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Tu es une machine intelligente au corps humanoïde. Avantages : +4 points à répartir dans tes Réserves ; +1 d'Avantage supplémentaire dans une Réserve de ton choix ; immunité contre les poisons, maladies et le vide spatial ; pas besoin de manger/boire/respirer ; une récupération supplémentaire d'une action par jour si connecté·e à une source d'énergie ; tu facilites toutes les tâches de piratage. Inconvénients : le traitement de tes blessures nécessite de l'ingénierie (pas de méthodes biologiques) ; sans source d'énergie lors de ta récupération de dix heures, tu perds ta récupération d'action normale et ton bonus ; certaines personnes biologiques ont des préjugés contre les androïdes (interactions sociales positives parfois entravées à la discrétion du MJ)."
-      }
+      "Compendium.cypher.abilities-fr.Item.a5f83219315516ef",
+      "Compendium.cypher.abilities-fr.Item.50ba1d25e229dbc5",
+      "Compendium.cypher.abilities-fr.Item.69ab54e8f1400023"
     ],
     "statOptions": [
       "might",

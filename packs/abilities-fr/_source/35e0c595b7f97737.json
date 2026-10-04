@@ -1,0 +1,28 @@
+{
+  "_id": "35e0c595b7f97737",
+  "_key": "!items!35e0c595b7f97737",
+  "name": "Nécromancie améliorée",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "improved-necromancy",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu peux utiliser Nécromancie de base pour réanimer plusieurs corps en même temps.. Chaque créature réanimée au-delà de la première coûte 1 point d’Intellect supplémentaire (donc 4 points pour deux corps, 5 points pour trois etc…) La portée de Nécromancie de base (y compris quand tu réanimes plusieurs corps) augmente à court."
+  }
+}

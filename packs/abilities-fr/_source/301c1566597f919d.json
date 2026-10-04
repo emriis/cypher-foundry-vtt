@@ -1,0 +1,28 @@
+{
+  "_id": "301c1566597f919d",
+  "_key": "!items!301c1566597f919d",
+  "name": "Superhéroïsme",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "wider-use",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Choisis une Réserve : Puissance, Célérité ou Intellect. Pour les tâches utilisant cette Réserve, ajoute ton rang au nombre de niveaux d'Effort que tu peux appliquer. Tu peux te surmener : subir une blessure modérée pour obtenir deux niveaux d'Effort gratuits pour une tâche de cette Réserve (sans dépasser la limite d'Effort maximale). À chaque récupération, ajoute ton rang en points supplémentaires dans cette même Réserve."
+  }
+}

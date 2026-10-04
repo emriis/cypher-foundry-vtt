@@ -1,0 +1,28 @@
+{
+  "_id": "dea5467a527ddfcb",
+  "_key": "!items!dea5467a527ddfcb",
+  "name": "Petite illusion",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "minor-illusion",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu crées une image unique d’une créature ou d’un objet à portée immédiate. L’image doit tenir dans une zone immédiate. Elle peut bouger (par exemple, tu peux créer l’illusion d’une personne qui marche ou attaque…), mais ne peut pas quitter la zone définie par le cube. L’illusion inclut le son, mais pas l’odeur. Elle dure jusqu’à ta prochaine récupération de dix minutes ou plus. Si tu veux modifier significativement l’illusion — par ex. la faire paraître blessée — tu dois utiliser une action pour te reconcentrer. Si tu sors de portée, l’illusion disparaît. À la place d’une illusion réaliste, tu peux créer un motif d’images déroutantes autour d’une créature à portée courte : tant que tu utilises ton action chaque round pour changer le motif, ses attaques et défenses sont entravées (aucun jet d’attaque requis)."
+  }
+}

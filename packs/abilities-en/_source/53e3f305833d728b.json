@@ -1,0 +1,28 @@
+{
+  "_id": "53e3f305833d728b",
+  "_key": "!items!53e3f305833d728b",
+  "name": "Expert Interlocuter",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "expert-interlocuter",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You are trained in your choice of charm, deception, or intimidation. At tier 6: You can become an expert in that same skill if you are already specialized, but you must gain the skill normally (such as from a character advancement)."
+  }
+}

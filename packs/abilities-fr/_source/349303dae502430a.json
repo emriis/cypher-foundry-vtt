@@ -1,0 +1,28 @@
+{
+  "_id": "349303dae502430a",
+  "_key": "!items!349303dae502430a",
+  "name": "Désamorcer une situation",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "defuse-situation",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Pendant une enquête, si tes questions provoquent une réaction agressive ou violente, tu peux — par la distraction, le baratin, la désescalade ou toute approche sociale — empêcher une créature vivante d’attaquer quiconque pendant un round, si ton jet d’interaction réussit."
+  }
+}

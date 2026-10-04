@@ -1,0 +1,31 @@
+{
+  "_id": "d27be94bc2efc78e",
+  "_key": "!items!d27be94bc2efc78e",
+  "name": "Weave an Iron Wall",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "weave-an-iron-wall",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "choice",
+      "amount": 5,
+      "options": [
+        "might",
+        "speed"
+      ]
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You slash and weave your weapons so quickly, they almost resemble a wall. This barrier is large enough to block access through an immediate area. You must use your action every round to maintain the barrier. Any creature that attempts to cross through your barrier takes 10 damage (no roll needed); as an extra action you can attempt a melee attack against them, pushing them back if you succeed. Action to initiate."
+  }
+}

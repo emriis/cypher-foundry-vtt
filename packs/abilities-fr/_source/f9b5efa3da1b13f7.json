@@ -1,0 +1,28 @@
+{
+  "_id": "f9b5efa3da1b13f7",
+  "_key": "!items!f9b5efa3da1b13f7",
+  "name": "Traverser les murs",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "walk-through-walls",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu peux traverser lentement des barrières physiques de niveau 5 ou moins, à raison de 30 cm par round (minimum : une Dernière action pour traverser n’importe quelle barrière). Tu peux percevoir ton environnement pendant que tu es en phase dans un objet ou un mur, ce qui te permet de regarder à travers. Tu ne peux pas utiliser cette aptitude pour traverser des barrières d’énergie. Effort : augmenter le niveau maximal de la barrière de +1."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "22d49d5780043e84",
+  "_key": "!items!22d49d5780043e84",
+  "name": "Data Processor",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "data-processor",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Drawing upon stored information and the ability to process incoming data at amazing speeds, you temporarily become trained in a mental task. Each time you activate this ability, choose one Intellect skill, such as hacking, Intellect defense, a knowledge skill, or perception; you become trained in that skill until you use a ten-minute or longer recovery. Normally you can use this ability to become trained in only one skill at a time; activating it again replaces the previous use with a new trained skill. Effort: Increase your maximum number of temporary trained skills by one. Action to initiate."
+  }
+}

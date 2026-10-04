@@ -1,0 +1,28 @@
+{
+  "_id": "df4572915d95bbed",
+  "_key": "!items!df4572915d95bbed",
+  "name": "Use the Force",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "use-the-force",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You gain an asset on a single noncombat task you attempt this turn. You cannot use this ability again until after you take a recovery. Enabler."
+  }
+}

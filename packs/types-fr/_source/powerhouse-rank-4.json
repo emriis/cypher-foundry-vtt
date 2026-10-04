@@ -34,76 +34,11 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "always-mighty",
-        "name": "Toujours Puissant·e",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Chaque fois que tu effectues une récupération, si ta Réserve de Puissance n'est pas déjà pleine, tu récupères 1 point supplémentaire dans ta Réserve de Puissance. Tu peux choisir cette aptitude jusqu'à trois fois."
-      },
-      {
-        "id": "enhanced-energy",
-        "name": "Énergie Amplifiée",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Lorsque tu réussis une tâche importante en utilisant tes pouvoirs (à la discrétion du MJ), tu récupères 4 points d'Intellect. Chaque fois que tu utilises cette aptitude, tu récupères 1 point de moins que la fois précédente. L'aptitude se renouvelle après une récupération de dix heures."
-      },
-      {
-        "id": "push-on-through",
-        "name": "Tenir Bon",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Au lieu d'une récupération de dix minutes, tu disposes d'une deuxième récupération d'une action. Ainsi, ta 1re récupération prend 1 action, ta 2e récupération prend 1 action, ta 3e récupération prend 1 heure et ta 4e récupération prend 10 heures. Tu peux encaisser une blessure modérée supplémentaire, et tu peux utiliser une de tes récupérations d'une action pour permettre à un allié d'utiliser une récupération de dix minutes comme action. Toute durée qui se termine normalement à la prochaine récupération de dix minutes se termine pour toi lorsque tu effectues ta deuxième récupération d'une action."
-      },
-      {
-        "id": "super-combatant",
-        "name": "Super‑Combattant·e",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you're already specialized in), but you must gain the skill normally."
-      },
-      {
-        "id": "superheroics",
-        "name": "Superhéroïsme",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Choisis une Réserve : Puissance, Célérité ou Intellect. Pour les tâches utilisant cette Réserve, ajoute ton rang au nombre de niveaux d'Effort que tu peux appliquer. Tu peux te surmener : subir une blessure modérée pour obtenir deux niveaux d'Effort gratuits pour une tâche de cette Réserve (sans dépasser la limite d'Effort maximale). À chaque récupération, ajoute ton rang en points supplémentaires dans cette même Réserve."
-      }
+      "Compendium.cypher.abilities-fr.Item.c299fcaf3f3a23cc",
+      "Compendium.cypher.abilities-fr.Item.a4fd7c41ed6a62a3",
+      "Compendium.cypher.abilities-fr.Item.cc08928a91d47925",
+      "Compendium.cypher.abilities-fr.Item.405734090912bf27",
+      "Compendium.cypher.abilities-fr.Item.1eac155981dbb2f9"
     ],
     "statOptions": [
       "might"

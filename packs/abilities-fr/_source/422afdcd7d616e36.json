@@ -1,0 +1,28 @@
+{
+  "_id": "422afdcd7d616e36",
+  "_key": "!items!422afdcd7d616e36",
+  "name": "Sacrifice consenti",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "willing-sacrifice",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu réussis à attirer ou prendre une attaque destinée à quelqu’un d’autre et que tu échoues ton esquive ou ton blocage, tu réduis la sévérité de la blessure d’un palier : majeure → modérée, modérée → mineure, mineure → aucune. Tu peux attirer ou prendre plusieurs attaques dans un même round si elles visaient toutes la même cible."
+  }
+}

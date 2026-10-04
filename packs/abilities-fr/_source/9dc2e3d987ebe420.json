@@ -1,0 +1,28 @@
+{
+  "_id": "9dc2e3d987ebe420",
+  "_key": "!items!9dc2e3d987ebe420",
+  "name": "Rétribution",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "retribution",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 8,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Call radiant flame onto an immediate area at long range, damaging every creature and one chosen creature more severely."
+  }
+}

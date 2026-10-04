@@ -7,302 +7,108 @@
   "system": {
     "description": "<p>You are a master user of a particular type of weapon, be it a sword, whip, dagger, bow, gun, or something else.</p>",
     "abilities": [
-      {
-        "id": "battle-competence",
-        "name": "Compétence martiale",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+      "Compendium.cypher.abilities-fr.Item.7e30d79548684919",
+      "Compendium.cypher.abilities-fr.Item.e39822b9d74d694c",
+      "Compendium.cypher.abilities-fr.Item.2ca60aea88470de1",
+      "Compendium.cypher.abilities-fr.Item.35fcfb431169cb19",
+      "Compendium.cypher.abilities-fr.Item.7471eac18247de18",
+      "Compendium.cypher.abilities-fr.Item.3515a95fd3fb92ee",
+      "Compendium.cypher.abilities-fr.Item.a25d342d47c3780d",
+      "Compendium.cypher.abilities-fr.Item.05ba3e65c9d604dd",
+      "Compendium.cypher.abilities-fr.Item.afca7e8fe0f8003f",
+      "Compendium.cypher.abilities-fr.Item.975bc388003a536f",
+      "Compendium.cypher.abilities-fr.Item.4c317c64f47e6268",
+      "Compendium.cypher.abilities-fr.Item.77789e4502aeef9f",
+      "Compendium.cypher.abilities-fr.Item.14dc75cd461695f9",
+      "Compendium.cypher.abilities-fr.Item.727fb8d672f18bea",
+      "Compendium.cypher.abilities-fr.Item.83a40b9215ed40e1",
+      "Compendium.cypher.abilities-fr.Item.485a7038a60cc618",
+      "Compendium.cypher.abilities-fr.Item.cb3ee447e5b078a3"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "2ca60aea88470de1",
+          "to": "35fcfb431169cb19"
         },
-        "description": "You can freely use all weapons and all armor. As an action, you learn the level of up to three creatures that you can see within short range. This ability can be foiled by disguises or shapechanging. Enabler for weapon use; action for evaluating creatures. The weapon use aspect of Battle Competence is a “catch up” ability for characters whose type doesn't give them the ability to use most weapons and armor, and they don't want to be limited to just their chosen weapon. Most characters with this focus won't need the catch-up aspect of Battle Competence at all.",
-        "freeWeaponCategories": [
-          "light",
-          "medium",
-          "heavy"
-        ],
-        "freeArmorCategories": [
-          "light",
-          "medium",
-          "heavy"
-        ]
-      },
-      {
-        "id": "display-of-skill",
-        "name": "Démonstration d’adresse",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "e39822b9d74d694c",
+          "to": "7471eac18247de18"
         },
-        "description": "En te voyant utiliser ton arme en combat ou via une démonstration spectaculaire, un·e allié·e gagne un niveau d’Effort gratuit pour une action de son choix avant ta prochaine récupération de dix minutes ou plus (ou la sienne). Inversement, un·e adversaire peut être intimidé·e : tu gagnes alors un niveau d’Effort gratuit sur une tâche d’intimidation ultérieure."
-      },
-      {
-        "id": "weapon-master",
-        "name": "Maître·sse d’arme",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "7e30d79548684919",
+          "to": "3515a95fd3fb92ee"
         },
-        "description": "Tu maîtrises un type d’arme (ex. lames moyennes, armes contondantes légères, armes lourdes à distance) qui t’était normalement inconnu. Tu peux utiliser librement ce type d’arme sans subir de pénalité. Tu infliges +1 dégât avec ce type d’arme. Tu es entraîné·e en artisanat pour ce type d’arme (tu peux les fabriquer et les réparer facilement via tes ressources). Tu peux prendre cette aptitude plusieurs fois, en choisissant un nouveau type d’arme à chaque fois.",
-        "chooseWeaponAttackCategory": true
-      },
-      {
-        "id": "careful-shot",
-        "name": "Tir précis",
-        "tier": 2,
-        "prerequisites": [
-          "weapon-master"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "choice",
-          "amount": 0,
-          "options": [
-            "speed",
-            "intellect"
-          ]
+        {
+          "from": "35fcfb431169cb19",
+          "to": "a25d342d47c3780d"
         },
-        "description": "You can use Speed Effort or Intellect Effort to increase your ranged weapon damage. In addition, if you use an action to line up your shot, the attack on your next turn inflicts 2 additional damage per level of Effort applied to increase damage (5 damage total per level of Effort)."
-      },
-      {
-        "id": "throw-weapon",
-        "name": "Lancer d’arme",
-        "tier": 2,
-        "prerequisites": [
-          "display-of-skill"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 1,
-          "options": []
+        {
+          "from": "7471eac18247de18",
+          "to": "a25d342d47c3780d"
         },
-        "description": "Tu lances une arme de mêlée légère ou moyenne comme si elle était une arme de jet moyenne, sur une cible à portée courte. Après le lancer (touché ou raté), l’arme revient dans ta main si tu réussis une tâche de difficulté 3 (ou 4 si l’arme est tranchante). Effort : lancer une arme lourde (au lieu d’une légère/moyenne) — en Dernière action."
-      },
-      {
-        "id": "perfect-attack",
-        "name": "Attaque parfaite",
-        "tier": 2,
-        "prerequisites": [
-          "battle-competence"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "choice",
-          "amount": 2,
-          "options": [
-            "might",
-            "speed"
-          ]
+        {
+          "from": "3515a95fd3fb92ee",
+          "to": "a25d342d47c3780d"
         },
-        "description": "Tu attaques avec ton arme de prédilection. Si ton jet est inférieur à 9, considère-le comme 9. (Tu évites ainsi une Intrusion du·de la MJ si tu fais un 1.) Si tu touches, l’attaque inflige ses dégâts normaux. Cette aptitude ne rend pas possibles les attaques physiquement impossibles (trancher une personne se situant à 1,5km, tirer une flèche sur la lune, etc.). Elle se réinitialise après chaque récupération. Au rang 3, le minimum passe à 12. Effort : augmenter le minimum de +3."
-      },
-      {
-        "id": "rapid-attack",
-        "name": "Attaque rapide",
-        "tier": 3,
-        "prerequisites": [
-          "careful-shot",
-          "throw-weapon",
-          "perfect-attack"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 3,
-          "options": []
+        {
+          "from": "35fcfb431169cb19",
+          "to": "05ba3e65c9d604dd"
         },
-        "description": "Tu effectues une attaque supplémentaire avec ton arme de prédilection pendant ton tour. Une seule fois par round."
-      },
-      {
-        "id": "spray",
-        "name": "Rafale",
-        "tier": 3,
-        "prerequisites": [
-          "careful-shot"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 2,
-          "options": []
+        {
+          "from": "3515a95fd3fb92ee",
+          "to": "afca7e8fe0f8003f"
         },
-        "description": "If a weapon has the ability to fire rapid shots without reloading (usually called a  rapid-fire weapon, such as a crank crossbow or submachine gun), you can spray multiple shots around your target to increase the chance of hitting, gaining an asset to the attack. This ability uses 1d6 + 1 attacks' worth of ammunition or power (or all of the weapon's stores, if it has less ammo or power than the number rolled). If the attack is successful, it deals 1 less damage than normal. You can also use this ability on multiple thrown weapons (such as stones, shuriken, daggers, and so on) if you're carrying them on your person or they are all within reach. Action."
-      },
-      {
-        "id": "disarming-strike",
-        "name": "Coup désarmant",
-        "tier": 3,
-        "prerequisites": [
-          "perfect-attack"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 3,
-          "options": []
+        {
+          "from": "05ba3e65c9d604dd",
+          "to": "975bc388003a536f"
         },
-        "description": "Tu attaques un·e adversaire avec ton arme de prédilection. En cas de réussite tu infliges 1 dégât de moins mais tu désarmes l’adversaire, lancant son arme à 3,5 m au sol. Si ton arme est un fouet, tu peux au lieu de cela entraver ton attaque et si elle réussit, attraper l’arme de l’adversaire dans ton autre main. Si ton arme est un arc, tu peux au lieu de cela entraver ton attaque et si elle réussit, clouer l’arme de l’adversaire à un objet ou mur proche."
-      },
-      {
-        "id": "special-shot",
-        "name": "Tir spécial",
-        "tier": 4,
-        "prerequisites": [
-          "spray",
-          "rapid-attack"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "a25d342d47c3780d",
+          "to": "975bc388003a536f"
         },
-        "description": "When you hit a target with a firearm attack, you can choose to reduce the damage by 1 point but hit the target in a precise spot. Some of the possible effects include (but are not limited to) the following: Shoot an object out of someone's hand. Shoot the target's leg, wing, or other limb they use to move, reducing their maximum movement speed to immediate for a few days or until they receive expert medical care. Shoot a strap holding a backpack, armor, or a similarly strapped-on item so that it falls off. Enabler."
-      },
-      {
-        "id": "rival-talent",
-        "name": "Talent rival",
-        "tier": 4,
-        "prerequisites": [
-          "rapid-attack"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "a25d342d47c3780d",
+          "to": "4c317c64f47e6268"
         },
-        "description": "Tu apprends énormément sur quelqu’un via l’arme qu’iel utilise. Tu facilites toutes tes tâches (attaque, défense, influence, pistage…) contre les adversaires utilisant le même type d’arme que ton arme de prédilection."
-      },
-      {
-        "id": "never-fumble",
-        "name": "Jamais maladroit·e",
-        "tier": 4,
-        "prerequisites": [
-          "disarming-strike"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "afca7e8fe0f8003f",
+          "to": "77789e4502aeef9f"
         },
-        "description": "Si tu fais un 1 naturel avec ton arme de prédilection, tu peux ignorer ou annuler l’intrusion du MJ. Tu ne peux jamais être désarmé·e de cette arme, et tu ne la fais jamais tomber accidentellement."
-      },
-      {
-        "id": "arc-spray",
-        "name": "Rafale en arc",
-        "tier": 5,
-        "prerequisites": [
-          "special-shot",
-          "rival-talent"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 3,
-          "options": []
+        {
+          "from": "975bc388003a536f",
+          "to": "14dc75cd461695f9"
         },
-        "description": "If a weapon has the ability to fire rapid shots without reloading (usually called a rapid-fire weapon, such as a crank crossbow or submachine gun), you can fire your weapon at three targets (all next to one another) at once. Make a separate hindered attack roll against each target. Action."
-      },
-      {
-        "id": "that-was-a-feint",
-        "name": "C’était une feinte",
-        "tier": 5,
-        "prerequisites": [
-          "rival-talent",
-          "never-fumble"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "choice",
-          "amount": 5,
-          "options": [
-            "might",
-            "speed"
-          ]
+        {
+          "from": "4c317c64f47e6268",
+          "to": "14dc75cd461695f9"
         },
-        "description": "Tu retentes immédiatement un jet d’attaque raté avec ton arme de prédilection, mais cette fois avec un atout. Si cette seconde tentative échoue, tu ne peux pas réutiliser cette aptitude pour ce même jet."
-      },
-      {
-        "id": "shot-collision",
-        "name": "Collision de tir",
-        "tier": 6,
-        "prerequisites": [
-          "arc-spray"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 4,
-          "options": []
+        {
+          "from": "4c317c64f47e6268",
+          "to": "727fb8d672f18bea"
         },
-        "description": "Once per round, if someone attacks you with a firearm, thrown weapon, or other physical projectile (such as an arrow, bullet, or crossbow bolt), instead of attempting a defense task, you can attempt to shoot the projectile out of the air. Make an attack against the projectile at the same difficulty as the defense task. If you hit, your shot deflects it, destroys it, or otherwise prevents it from hitting you. If you wish, the successfully deflected object explosively shatters in an immediate radius you select between you and the attacker, dealing 2 damage to all creatures and objects in the area (roll a separate attack against each). If you apply Effort to increase the damage, you deal 2 additional damage per level of Effort (instead of 3); targets in the area take 1 damage even if you fail the attack roll. Enabler."
-      },
-      {
-        "id": "lethal-strike",
-        "name": "Frappe létale",
-        "tier": 6,
-        "prerequisites": [
-          "arc-spray",
-          "that-was-a-feint"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 6,
-          "options": []
+        {
+          "from": "77789e4502aeef9f",
+          "to": "727fb8d672f18bea"
         },
-        "description": "With a swift and sudden melee or ranged weapon attack, you strike a foe in a vital spot. If you hit, you inflict an additional 7 damage. Action."
-      },
-      {
-        "id": "perfect-follow-through",
-        "name": "Suivi parfait",
-        "tier": 6,
-        "prerequisites": [
-          "that-was-a-feint"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "choice",
-          "amount": 8,
-          "options": [
-            "might",
-            "speed"
-          ]
+        {
+          "from": "14dc75cd461695f9",
+          "to": "83a40b9215ed40e1"
         },
-        "description": "Tu attaques avec ton arme de prédilection et tu peux effectuer une autre action comme action supplémentaire à ton tour."
-      }
-    ]
+        {
+          "from": "14dc75cd461695f9",
+          "to": "485a7038a60cc618"
+        },
+        {
+          "from": "727fb8d672f18bea",
+          "to": "485a7038a60cc618"
+        },
+        {
+          "from": "727fb8d672f18bea",
+          "to": "cb3ee447e5b078a3"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

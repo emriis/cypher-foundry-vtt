@@ -1,0 +1,28 @@
+{
+  "_id": "2a2ba8acba44052c",
+  "_key": "!items!2a2ba8acba44052c",
+  "name": "Éclair",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "lightning-bolt",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu libères un éclair de foudre vers une cible à longue portée, infligeant 6 dégâts si ton attaque réussit. Tu peux aussi ajuster le type d'énergie du sort avec ton MJ si tu veux qu'il corresponde à ton focus. Au rang 3, l'éclair se divise, attaquant une seconde cible à courte portée de la première (effectue un jet séparé pour chaque cible)."
+  }
+}

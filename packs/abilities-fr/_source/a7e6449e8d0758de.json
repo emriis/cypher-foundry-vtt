@@ -1,0 +1,28 @@
+{
+  "_id": "a7e6449e8d0758de",
+  "_key": "!items!a7e6449e8d0758de",
+  "name": "Maître·sse de l’art",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "master-entertainer",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tes alliés affectés par Facilitation inspirante peuvent soit faciliter deux tâches par jour, soit faciliter une tâche de deux paliers au lieu d’un seul."
+  }
+}

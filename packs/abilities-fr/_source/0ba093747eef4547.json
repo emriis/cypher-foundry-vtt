@@ -1,0 +1,28 @@
+{
+  "_id": "0ba093747eef4547",
+  "_key": "!items!0ba093747eef4547",
+  "name": "La nature est de ton côté",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "the-wild-is-on-your-side",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "La nature elle‑même interfère avec tes adversaires à portée courte : rochers qui les font trébucher, lianes qui les entravent, insectes qui les mordent, animaux qui les distraient, etc. Toutes leurs tâches sont entravées jusqu’à ta prochaine récupération de dix minutes ou plus. Tu ne peux utiliser cette aptitude qu’en environnement sauvage."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "3fe1980a257011ad",
+  "_key": "!items!3fe1980a257011ad",
+  "name": "Cavalier de l’éclair",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "bolt-rider",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu te déplaces d’une longue distance instantanément, porté·e par un éclair. Tu dois voir l’emplacement et aucune barrière ne doit t’en séparer."
+  }
+}

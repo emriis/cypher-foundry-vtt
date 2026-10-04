@@ -1,0 +1,28 @@
+{
+  "_id": "3e730d85960b2297",
+  "_key": "!items!3e730d85960b2297",
+  "name": "Écrasement télékinétique",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "telekinetic-crush",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Fais une attaque d’Intellect entravée contre une cible non vivante (robot, zombie…). En cas de réussite, tu l’écrases et lui infliges 6 dégâts."
+  }
+}

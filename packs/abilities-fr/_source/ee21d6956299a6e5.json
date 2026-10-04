@@ -1,0 +1,28 @@
+{
+  "_id": "ee21d6956299a6e5",
+  "_key": "!items!ee21d6956299a6e5",
+  "name": "Fureur du blessé",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "wounded-fury",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tant que tu as au moins trois blessures modérées ou au moins une blessure majeure, tu bénéficies d'un niveau gratuit d'Effort que tu peux appliquer à l'une de tes attaques à chaque round. Au rang 3, ce bénéfice passe à deux niveaux d'Effort gratuits."
+  }
+}

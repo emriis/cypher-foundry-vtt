@@ -1,0 +1,28 @@
+{
+  "_id": "b12f266d8c48da35",
+  "_key": "!items!b12f266d8c48da35",
+  "name": "Connected",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "connected",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You know people who get things done—not just respected people in positions of authority, but also a variety of online hackers and regular street criminals. These people are not necessarily your friends and might not be trustworthy, but they owe you a favor or two. When you use this ability, you remember or otherwise establish a level 2 contact you can reach out to in a specific location. You and your GM can work out the specifics. Effort: Increase the level of the new contact by 1. This ability renews when you access a new location or when at least a month has elapsed in the same location where you last used this ability. Enabler. At tier 3: You can establish two contacts in a specific location simultaneously."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "3ba07674cbea4e97",
+  "_key": "!items!3ba07674cbea4e97",
+  "name": "Volonté du chasseur",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "hunter-s-drive",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu deviens encore plus redoutable en chasse. Si ta proie est à moins de 15 km, ta vitesse de déplacement est doublée pour la rejoindre. Tu gagnes un atout supplémentaire pour toutes tes tâches liées à ta proie. Dure jusqu’à ta prochaine récupération de dix minutes ou plus."
+  }
+}

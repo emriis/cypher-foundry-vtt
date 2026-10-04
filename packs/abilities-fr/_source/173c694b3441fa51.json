@@ -1,0 +1,28 @@
+{
+  "_id": "173c694b3441fa51",
+  "_key": "!items!173c694b3441fa51",
+  "name": "Mot de mort",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "word-of-death",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You speak a magic word so potent that it can instantly kill a foe. Make an Intellect attack against a foe within short range. If you succeed, you inflict 10 damage. Action."
+  }
+}

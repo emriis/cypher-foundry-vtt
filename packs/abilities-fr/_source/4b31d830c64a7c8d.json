@@ -1,0 +1,28 @@
+{
+  "_id": "4b31d830c64a7c8d",
+  "_key": "!items!4b31d830c64a7c8d",
+  "name": "Contrôle machine",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "machine-control",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu utilises tes connaissances des commandes robotiques contre un robot, un système mécanisé ou une machine intelligente à courte portée (ou à portée d’un appareil capable de transmettre des signaux). Choisis si tu préfères commander une créature ou désactiver plusieurs créatures, puis fais une attaque d’Intellect séparée pour chaque cible. Si ton jet est inférieur à 6, considère que tu as obtenu 6. (Tu évites ainsi une Intrusion du·de la MJ si tu fais un 1.) - Commander : tu prends le contrôle actif de la cible jusqu’à ta prochaine récupération de dix minutes ou plus, en lui donnant des tâches simples. - Désactiver : la cible ne peut plus agir tant que tu te concentres. Au rang 3, le minimum passe à 9. Effort : augmenter le minimum obtenu de +3."
+  }
+}

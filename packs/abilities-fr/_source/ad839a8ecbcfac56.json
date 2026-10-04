@@ -1,0 +1,28 @@
+{
+  "_id": "ad839a8ecbcfac56",
+  "_key": "!items!ad839a8ecbcfac56",
+  "name": "Intrusions MJ pour Éventrement",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "gut-ripper-gm-intrusions",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Ton couteau reste coincé dans ton ennemi et t’est arraché des mains. Au lieu de blesser ton ennemi, tu te causes une blessure mineure par accident. Ton fourreau est vide et tu ne peux pas accomplir ton attaque."
+  }
+}

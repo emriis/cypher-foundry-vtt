@@ -1,0 +1,28 @@
+{
+  "_id": "a6f4e70f05ebc93d",
+  "_key": "!items!a6f4e70f05ebc93d",
+  "name": "Faire baisser la garde",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "letting-their-guard-down",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Si tu interagis avec un PNJ intelligent et que tu réussis une tâche de déguisement ou de tromperie, il te révèle un détail supplémentaire : quelle porte n’est jamais verrouillée, combien de gardes sont à l’étage, quelle décision le roi va probablement prendre, etc."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "180bf47d590061d4",
+  "_key": "!items!180bf47d590061d4",
+  "name": "Stoneknowing",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "stoneknowing",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": "lastAction",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You are trained in working any kind of stone. In addition, if you touch a crystal or stone object or structure and concentrate, you learn its level and perhaps some relevant facts about its materials and structure. For example, you could learn that a brick wall is level 3 and conceals a hidden space behind it or that a boulder is level 5 and contains iron ore. Your GM may require an Intellect task for you to learn something especially subtle or secret. Last action."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "7922bf2c01367671",
+  "_key": "!items!7922bf2c01367671",
+  "name": "Pilote Spatial·e Expert·e",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "expert-space-pilot",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You are trained in piloting spacecraft. At tier 6: You can become an expert in piloting spacecraft if you are already specialized, but you must gain the skill normally (such as from a character advancement)."
+  }
+}

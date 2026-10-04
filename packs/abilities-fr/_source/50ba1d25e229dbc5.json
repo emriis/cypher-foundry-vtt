@@ -1,0 +1,28 @@
+{
+  "_id": "50ba1d25e229dbc5",
+  "_key": "!items!50ba1d25e229dbc5",
+  "name": "Compétence Flexible",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "flex-skill",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Choisis une tâche (autre qu'une attaque ou une défense) sur laquelle tu te concentres. Pour le reste de la journée, tu es entraîné·e dans cette tâche. Tu ne peux pas utiliser cette aptitude pour devenir spécialisé·e dans une compétence dans laquelle tu es déjà entraîné·e. Cette aptitude se renouvelle après une récupération de dix heures."
+  }
+}

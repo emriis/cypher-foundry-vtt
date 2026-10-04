@@ -1,0 +1,28 @@
+{
+  "_id": "59b8d23beed18b3e",
+  "_key": "!items!59b8d23beed18b3e",
+  "name": "Bigger",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "bigger",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you use Enlarge, if you spend an additional 1 Might, you grow to a height of 12 feet (4 m). While bigger, you add +1 to your Might Edge, you can ignore the first two moderate wounds you take, your unarmed attacks inflict 6 damage, and you gain an asset to tasks that are easier for a larger creature to perform (like climbing or wading). While bigger, your dodge tasks are hindered by two steps. Enabler. When you spend extra Might to use Bigger, Huge, Gargantuan, or Colossal, the benefits from those abilities replace the benefits you get from Enlarge."
+  }
+}

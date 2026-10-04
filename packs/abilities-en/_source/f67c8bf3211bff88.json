@@ -1,0 +1,28 @@
+{
+  "_id": "f67c8bf3211bff88",
+  "_key": "!items!f67c8bf3211bff88",
+  "name": "Stronger Together",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "stronger-together",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you and your beast companion (or a beast you've calmed with Soothe the Savage) are within immediate distance of each other, you inflict an additional 2 damage when you attack and both of you gain an asset to defense tasks. Enabler."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "64eb3be38ae2eae8",
+  "_key": "!items!64eb3be38ae2eae8",
+  "name": "Lien télépathique",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "telepathic-bond",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu crées un lien entre toi et une autre créature, vous permettant de communiquer mentalement à volonté. Tu dois toucher la créature pour activer le lien et elle doit être consentante. L’un·e ou l’autre peut dissoudre le lien au prix d’une Dernière action. Vous pouvez vous parler télépathiquement à tout moment tant que vous êtes tous deux consentants et à moins de 150 km l’un·e de l’autre. Tu ne peux avoir qu’un seul lien télépathique à la fois. Dernière action pour former ou dissoudre le lien."
+  }
+}

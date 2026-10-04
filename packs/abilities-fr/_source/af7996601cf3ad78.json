@@ -1,0 +1,28 @@
+{
+  "_id": "af7996601cf3ad78",
+  "_key": "!items!af7996601cf3ad78",
+  "name": "Arme intégrée",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "weaponization",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu possèdes une arme intégrée dans ton corps. Choisis une arme légère ou moyenne à une main (épée large, matraque, pistolet moyen…). Tu es entraîné·e avec cette arme. Tu peux la révéler ou la dissimuler comme action supplémentaire. Si ton arme intégrée est une arme à feu, elle se recharge via une fente dans ton bras, contient 10 tirs, et tire par un canon dissimulé au centre de ta paume. À la place d’une arme, tu peux intégrer un outil polyvalent comptant comme un ensemble d’outils légers ou lourds (à ton choix quand tu obtiens l’aptitude)."
+  }
+}

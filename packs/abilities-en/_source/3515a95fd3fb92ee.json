@@ -1,0 +1,31 @@
+{
+  "_id": "3515a95fd3fb92ee",
+  "_key": "!items!3515a95fd3fb92ee",
+  "name": "Perfect Attack",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "perfect-attack",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "choice",
+      "amount": 2,
+      "options": [
+        "might",
+        "speed"
+      ]
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Make an attack with your chosen weapon. If your roll is less than a 9, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) If you succeed, the attack inflicts normal damage. This ability doesn't allow you to succeed at an attack that would be impossible, such as slashing a person a mile away or shooting an arrow at the moon. This ability renews when you take a recovery. Effort: Increase the minimum number rolled for this ability by 3. Action. At tier 3: The minimum number rolled for this ability increases to 12."
+  }
+}

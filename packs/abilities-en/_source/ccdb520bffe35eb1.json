@@ -1,0 +1,28 @@
+{
+  "_id": "ccdb520bffe35eb1",
+  "_key": "!items!ccdb520bffe35eb1",
+  "name": "Expert Follower",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "expert-follower",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You gain a level 3 follower who has three level 4 modifications of your choice. Instead of gaining a new level 3 follower, you can advance an existing follower to level 3 and gain a new level 2 follower. You can take this ability multiple times, each time gaining another follower."
+  }
+}

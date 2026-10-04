@@ -1,0 +1,28 @@
+{
+  "_id": "76489b1a94f16e42",
+  "_key": "!items!76489b1a94f16e42",
+  "name": "Eau fraîche",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "cool-water",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu condenses l’humidité de l’air pour créer suffisamment d’eau potable froide pour abreuver cinq créatures pendant un jour."
+  }
+}

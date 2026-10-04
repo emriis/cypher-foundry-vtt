@@ -1,0 +1,28 @@
+{
+  "_id": "d337d5bf3cb93ec6",
+  "_key": "!items!d337d5bf3cb93ec6",
+  "name": "Naturellement fort·e",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "naturally-strong",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu fais un jet pour porter, grimper, sauter ou briser, et que ton résultat est inférieur à 9, considère que tu as obtenu 9. (Tu évites ainsi une Intrusion du·de la MJ si tu fais un 1.) L’aptitude se renouvelle après une récupération. Au rang 3, le minimum passe à 12. Effort : augmenter le minimum obtenu de +3."
+  }
+}

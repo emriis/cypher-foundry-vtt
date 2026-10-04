@@ -1,0 +1,28 @@
+{
+  "_id": "d337d5bf3cb93ec6",
+  "_key": "!items!d337d5bf3cb93ec6",
+  "name": "Naturally Strong",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "naturally-strong",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you roll on a task to carry, climb, jump, or smash, and your roll is less than a 9, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) This ability renews when you take a recovery. Effort: Increase the minimum number rolled for this ability by 3. Enabler. At tier 3: The minimum number rolled for this ability increases to 12."
+  }
+}

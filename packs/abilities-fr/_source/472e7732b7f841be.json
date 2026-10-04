@@ -1,0 +1,28 @@
+{
+  "_id": "472e7732b7f841be",
+  "_key": "!items!472e7732b7f841be",
+  "name": "Idole",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "idol",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Au terme d'un rituel de dix minutes, tu crées une idole qui persiste tant que sa magie n'est pas épuisée. L'idole peut être un symbole gravé dans la pierre, une figurine tressée en brindilles, une petite sculpture, etc. Elle doit être placée sur une surface solide. Effort : Tu peux porter l'idole avec toi. L'idole offre un seul bénéfice fixe de ton choix. Quiconque prie l'idole en utilisant son action reçoit ce bénéfice. L'idole a un épuisement de 1–2 sur 1d6. Bénéfices possibles : Fureur Bestiale (le suppliant se transforme et attaque toute créature à courte portée, lance deux jets et choisit le meilleur, jusqu'à récupération 10 min+ ou test Intellect diff. 2), Guérison (réduit la gravité d'une blessure d'un niveau), ou Purification Spirituelle (libère d'une malédiction ou possession de niveau 5 ou moins)."
+  }
+}

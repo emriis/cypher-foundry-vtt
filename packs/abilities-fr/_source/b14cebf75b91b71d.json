@@ -1,0 +1,31 @@
+{
+  "_id": "b14cebf75b91b71d",
+  "_key": "!items!b14cebf75b91b71d",
+  "name": "Secousse terrestre",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "earthshake",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "choice",
+      "amount": 7,
+      "options": [
+        "might",
+        "intellect"
+      ]
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Vous déclenchez un violent mouvement de terre dans une zone courte à très longue portée. Les bâtiments et éléments du terrain sont endommagés, réduisant leur niveau de 1 à 3, et produisent des débris et des gravats. Les créatures dans la zone subissent 6 points de dégâts dus aux secousses et/ou aux chutes de débris (faites un jet d’attaque séparé contre chacune). Même en cas d’échec, les créatures subissent 3 points de dégâts."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "1062c7f2d6075d8b",
+  "_key": "!items!1062c7f2d6075d8b",
+  "name": "Psychic Burst",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "psychic-burst",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You blast waves of mental force into the minds of three targets within short range (make an Intellect roll against each target). This burst inflicts 3 Intellect damage (ignores armor). Effort: Attack an additional target. Action."
+  }
+}

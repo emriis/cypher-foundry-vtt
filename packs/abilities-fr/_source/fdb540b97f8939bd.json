@@ -1,0 +1,28 @@
+{
+  "_id": "fdb540b97f8939bd",
+  "_key": "!items!fdb540b97f8939bd",
+  "name": "Localiser une machine",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "locate-machine",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu peux retrouver une machine à des kilomètres. Choisis une machine, un robot ou une machine intelligente que tu as identifiée (soit en trouvant des informations permettant de les identifier grâce à des recherches réseau, soit parce que tu as déjà interagi personnellement avec elles). Si ton attaque d’Intellect réussit, tu peux percevoir sa direction ou sa distance tant qu’elle est dans un rayon de 16 km, en consacrant une action pour te concentrer ou consulter ton appareil. Au‑delà, tu ne perçois que la direction. Si la machine détecte ta trace, elle tente de la supprimer : tu dois réussir une nouvelle attaque d’Intellect toutes les dix heures pour maintenir la trace."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "bf150a0f4185bf43",
+  "_key": "!items!bf150a0f4185bf43",
+  "name": "Suggestion psychique",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "psychic-suggestion",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You attempt to make a foe within short range take the action you indicate on their next turn. Make an Intellect attack against the foe. If the action would cause direct harm to themself or their allies, the mental attack is hindered. Action."
+  }
+}

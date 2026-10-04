@@ -1,0 +1,28 @@
+{
+  "_id": "8a636e2a2b82f50c",
+  "_key": "!items!8a636e2a2b82f50c",
+  "name": "Thunder Crash",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "thunder-crash",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You affect a target in long range with overwhelming thunder. With a successful Speed attack, you inflict 2 damage and induce a tremor in their body. Each round after this initial attack, as an extra action on your turn you can make another attack roll for the destructive tremor to inflict an additional 1 damage on the target. If you fail this roll, the tremor ends. Action to initiate."
+  }
+}

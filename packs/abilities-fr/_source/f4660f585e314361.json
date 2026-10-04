@@ -1,0 +1,28 @@
+{
+  "_id": "f4660f585e314361",
+  "_key": "!items!f4660f585e314361",
+  "name": "Main de feu funeste",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "fiery-hand-of-doom",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "While your Shroud of Flame is active, you can reach into your halo and produce a hand composed of animate flame with a handspan of up to 3 feet (1 m), lasting until you use a ten-minute or longer recovery. The hand is a level 3 creature that inflicts 1 extra fire damage when it attacks (4 damage total). The hand acts as you direct, floating in the air. Directing the hand is an action. Without a command, the hand does nothing but follow you. It can move a long distance in a round, but it never moves farther away from you than long range. The hand can attack, grab, move, and carry things. It inflicts 3 damage each round to any flammable object it holds. Action to create; action to direct."
+  }
+}

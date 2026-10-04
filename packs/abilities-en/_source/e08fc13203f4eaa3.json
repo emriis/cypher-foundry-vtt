@@ -1,0 +1,28 @@
+{
+  "_id": "e08fc13203f4eaa3",
+  "_key": "!items!e08fc13203f4eaa3",
+  "name": "Magnetize",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "magnetize",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your touch permanently magnetizes an object (regardless of whether it is metallic) no larger than you with a level 5 magnetic force, or demagnetizes an object no larger than you whose magnetic force is level 5 or less. A magnetized object attracts metal brought within 1 foot (30 cm) of it. Pulling the metal away requires a successful Might task. Magnetizing or demagnetizing electronic equipment destroys it if its level is 5 or less. You can use magnetic abilities (such as Move Metal and Command Metal) on a magnetized object. Alternatively, you can create a magnetic field that repels metal objects of level 3 or less (in effect, this is much like a force field that only affects metal things). Effort: Increase the level of a new magnetic force by 1. Increase the maximum level of an existing magnetic force you want to demagnetize by 1. Action."
+  }
+}

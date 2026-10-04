@@ -1,0 +1,28 @@
+{
+  "_id": "a97edbe5b08620a4",
+  "_key": "!items!a97edbe5b08620a4",
+  "name": "Vraie nécromancie",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "true-necromancy",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 8,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu réanimes le corps d’une créature morte jusqu’à deux fois ta taille à portée courte, créant un·e suivant·e mort‑vivant·e de niveau 5. Iel n’a aucune intelligence, mémoire ou aptitude spéciale de son vivant. La créature te suit jusqu’à ta prochaine récupération d’une heure ou plus, où elle redevient inerte. Tu peux la réanimer à nouveau lorsqu’elle redevient inerte ou si elle est « tuée » par dégâts (tu devras peut être passer quelques minutes avec une aiguille et du fil pour rattacher les morceaux détachés ou tombés). Chaque créature supplémentaire au‑delà de la première coûte +3 Intellect (11 points pour deux corps, 14 points pour trois, etc.)."
+  }
+}

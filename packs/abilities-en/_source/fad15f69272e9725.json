@@ -1,0 +1,28 @@
+{
+  "_id": "fad15f69272e9725",
+  "_key": "!items!fad15f69272e9725",
+  "name": "Automaton Assistant",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "automaton-assistant",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You have built a level 2 automaton follower of your size or smaller that accompanies you and follows your instructions. You and the GM must work out the details of your automaton's appearance and personality. If the automaton is damaged, a few minutes of your attention mends it—the automaton regains 2 health. If the automaton is destroyed, it can be restored using your resources if you spend a few days tinkering. Depending on the genre, your automatons might be metallic robots, animated objects, organic androids, magical golems, steampunk constructs, awakened statues, or something else entirely."
+  }
+}

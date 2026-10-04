@@ -1,0 +1,28 @@
+{
+  "_id": "e2ee54ec4736c7cc",
+  "_key": "!items!e2ee54ec4736c7cc",
+  "name": "Damage Dealer",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "damage-dealer",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You've become better at killing with one kind of weapon. Choose one melee or ranged weapon. You inflict an additional 3 damage with this weapon. You can select this ability up to two times for any particular weapon (for a total of 6 damage)."
+  }
+}

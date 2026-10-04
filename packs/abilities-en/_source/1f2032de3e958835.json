@@ -1,0 +1,28 @@
+{
+  "_id": "1f2032de3e958835",
+  "_key": "!items!1f2032de3e958835",
+  "name": "Command Metal",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "command-metal",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You reshape a metallic object you can see in short range as you desire. The item's mass can be no greater than your own. You can affect multiple items at once as long as their combined mass does not exceed yours. You can fuse multiple items together. You can use this power to destroy a metal object (as the Rend Metal ability), or you can craft it into another desired shape (crudely, unless you succeed on a sculpting or crafting task). You can then move the new object anywhere within range. For example, you could take a few metal shields or panels, fuse them together, and use the resulting shape to block a doorway. You can use this ability to attack one target within short range, causing a foe's armor to constrict, rendering a metal item into shards that you fling across the battlefield, and so on. Regardless of the form of the attack, it is an Intellect attack that deals 7 damage. Last action; action to attack."
+  }
+}

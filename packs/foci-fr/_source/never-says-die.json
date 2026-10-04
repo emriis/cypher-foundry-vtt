@@ -7,196 +7,71 @@
   "system": {
     "description": "<p>You never quit, can shrug off a beating, and always come back for more.</p>",
     "abilities": [
-      {
-        "id": "determination",
-        "name": "Détermination",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+      "Compendium.cypher.abilities-fr.Item.cf1e5063aac812e1",
+      "Compendium.cypher.abilities-fr.Item.cc08928a91d47925",
+      "Compendium.cypher.abilities-fr.Item.51609bb02289367e",
+      "Compendium.cypher.abilities-fr.Item.e6a9143ebeecac66",
+      "Compendium.cypher.abilities-fr.Item.a0a974178b5fa97a",
+      "Compendium.cypher.abilities-fr.Item.7dee3f589a86e23a",
+      "Compendium.cypher.abilities-fr.Item.36664645c059c15c",
+      "Compendium.cypher.abilities-fr.Item.8dcb05d36d4629d7",
+      "Compendium.cypher.abilities-fr.Item.6e47da7c5453bebb",
+      "Compendium.cypher.abilities-fr.Item.7e1b270729d63174",
+      "Compendium.cypher.abilities-fr.Item.f64910769fe981b6",
+      "Compendium.cypher.abilities-fr.Item.d86cd44e5c559602"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "cc08928a91d47925",
+          "to": "e6a9143ebeecac66"
         },
-        "description": "Quand tu réessaies une tâche que tu as échouée, en plus du niveau d’Effort requis pour retenter, tu gagnes un niveau d’Effort gratuit. Tu ne peux pas réutiliser cette aptitude avant d’avoir effectué une récupération."
-      },
-      {
-        "id": "push-on-through",
-        "name": "Tenir bon",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "cf1e5063aac812e1",
+          "to": "e6a9143ebeecac66"
         },
-        "description": "Au lieu d’une récupération de dix minutes, tu disposes d’une deuxième récupération d’une action — tes deux premières récupérations sont d’une action, la troisième dure une heure, la quatrième dix heures. Tu peux encaisser une blessure modérée supplémentaire. Tu peux utiliser l’une de tes récupérations d’une action pour permettre à un·e allié·e d’utiliser l’une de ses récupérations de dix minutes comme action."
-      },
-      {
-        "id": "safe-fall",
-        "name": "Chute sans danger",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "cf1e5063aac812e1",
+          "to": "a0a974178b5fa97a"
         },
-        "description": "Tu ignores une blessure provenant d’une chute."
-      },
-      {
-        "id": "always-mighty",
-        "name": "Toujours sous le pied",
-        "tier": 2,
-        "prerequisites": [
-          "push-on-through",
-          "determination"
-        ],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "51609bb02289367e",
+          "to": "a0a974178b5fa97a"
         },
-        "description": "Chaque fois que tu fais une récupération, si ta Réserve de Puissance n’est pas déjà pleine, tu récupères 1 point supplémentaire dans cette Réserve. Tu peux choisir cette aptitude jusqu’à trois fois."
-      },
-      {
-        "id": "ignore-the-pain",
-        "name": "Ignorer la douleur",
-        "tier": 2,
-        "prerequisites": [
-          "determination",
-          "safe-fall"
-        ],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "e6a9143ebeecac66",
+          "to": "7dee3f589a86e23a"
         },
-        "description": "Tu ignores un palier d’entrave provenant soit d’une blessure majeure, soit du fait d’avoir subi toutes tes blessures modérées. Tu peux choisir cette aptitude jusqu’à trois fois. Chaque fois, tu ignores un palier supplémentaire d’entrave due aux blessures."
-      },
-      {
-        "id": "hidden-reserves",
-        "name": "Réserves cachées",
-        "tier": 3,
-        "prerequisites": [
-          "always-mighty"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "a0a974178b5fa97a",
+          "to": "36664645c059c15c"
         },
-        "description": "Quand tu utilises une récupération d’une action, tu gagnes +1 en Avantage de Puissance et +1 en Avantage de Célérité jusqu’à ta prochaine récupération de dix minutes ou plus."
-      },
-      {
-        "id": "blood-fever",
-        "name": "Fièvre de sang",
-        "tier": 3,
-        "prerequisites": [
-          "ignore-the-pain"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "7dee3f589a86e23a",
+          "to": "8dcb05d36d4629d7"
         },
-        "description": "Tant qu’au moins une de tes Réserves est vide, ou tant que tu as au moins deux blessures modérées ou une blessure majeure, tu gagnes un atout à tes attaques ou à tes défenses (au choix), ainsi qu’aux tâches d’intimidation."
-      },
-      {
-        "id": "outlast-the-foe",
-        "name": "Tenir plus longtemps que l’ennemi",
-        "tier": 4,
-        "prerequisites": [
-          "hidden-reserves"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "36664645c059c15c",
+          "to": "6e47da7c5453bebb"
         },
-        "description": "Si tu es en combat depuis cinq rounds complets, tu gagnes un atout à toutes tes tâches pour le reste du combat, et tu infliges +1 dégât supplémentaire à chaque attaque."
-      },
-      {
-        "id": "increasing-determination",
-        "name": "Détermination croissante",
-        "tier": 4,
-        "prerequisites": [
-          "blood-fever"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "8dcb05d36d4629d7",
+          "to": "7e1b270729d63174"
         },
-        "description": "If you fail at a noncombat physical task (pushing open a door or climbing a cliff, for example) and then retry the task, the task is eased. If you fail again, you gain no special benefits. Enabler."
-      },
-      {
-        "id": "not-dead-yet",
-        "name": "Pas encore mort·e",
-        "tier": 5,
-        "prerequisites": [
-          "outlast-the-foe",
-          "increasing-determination"
-        ],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "6e47da7c5453bebb",
+          "to": "7e1b270729d63174"
         },
-        "description": "When you would normally be dead, you instead fall unconscious for one round and then awaken. When you awaken this way, you immediately gain 1d6 + 6 points to restore your stat Pools, and you remove one moderate wound and one major wound. Once you use this ability, your tasks are hindered until you use a ten-hour recovery. If you die again before you make your ten-hour recovery, you are truly dead. You can select this ability twice. The second time you select it, the healing increases to 1d6 + 12 and you remove double the number of wounds."
-      },
-      {
-        "id": "final-defiance",
-        "name": "Défi final",
-        "tier": 6,
-        "prerequisites": [
-          "not-dead-yet"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "7e1b270729d63174",
+          "to": "f64910769fe981b6"
         },
-        "description": "Quand tu devrais normalement mourir, tu restes conscient·e et actif·ive pendant un round supplémentaire. (Cette aptitude s’active avant Pas mort·e encore.) À chaque round suivant, en tant qu’action supplémentaire, tu peux tenter une tâche de Puissance de difficulté 5 pour rester en vie un round de plus. Pendant ces rounds supplémentaires, toutes tes tâches sont entravées. Si, au dernier round où tu restes en vie, tu ne reçois aucun soin, aucun point dans une Réserve, ou ne retires pas la blessure qui t’a tué, alors Pas encore mort·e s’active."
-      },
-      {
-        "id": "ignore-affliction",
-        "name": "Ignorer l’affliction",
-        "tier": 6,
-        "prerequisites": [
-          "not-dead-yet"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "might",
-          "amount": 5,
-          "options": []
-        },
-        "description": "Jusqu’à ta prochaine récupération d’une heure ou plus, tu ignores toute condition ou affliction indésirable (maladie, paralysie, contrôle mental, membre brisé, etc., mais pas les dégâts) et tu agis comme si elle ne t’affectait pas. Si la condition durerait normalement moins d’une heure, elle est entièrement annulée. Tu peux utiliser cette aptitude même si la condition t’empêche normalement d’agir."
-      }
-    ]
+        {
+          "from": "7e1b270729d63174",
+          "to": "d86cd44e5c559602"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

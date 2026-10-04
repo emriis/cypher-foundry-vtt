@@ -1,0 +1,28 @@
+{
+  "_id": "737f552a57898e10",
+  "_key": "!items!737f552a57898e10",
+  "name": "Coussin naturel",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "extra-padding",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu traînes un peu plus de masse que la moyenne — muscles, graisse, ou les deux. Cette « protection naturelle » te permet d’ignorer une blessure mineure que tu viens de subir (ne note pas la blessure sur ta fiche). L’aptitude se renouvelle après une récupération de dix heures. Effort : ignorer une blessure modérée plutôt qu’une mineure ou ignorer une blessure majeure plutôt qu’une mineure (nécessite 2 Efforts)."
+  }
+}

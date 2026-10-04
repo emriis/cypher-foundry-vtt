@@ -1,0 +1,28 @@
+{
+  "_id": "648b1477a720d214",
+  "_key": "!items!648b1477a720d214",
+  "name": "Porte-parole amélioré",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "improved-speaker",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu utilises Porte‑parole des morts, pour chaque point d’Intellect supplémentaire dépensé dans le coût initial, tu peux poser une question supplémentaire."
+  }
+}

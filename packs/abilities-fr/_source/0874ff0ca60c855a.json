@@ -1,0 +1,28 @@
+{
+  "_id": "0874ff0ca60c855a",
+  "_key": "!items!0874ff0ca60c855a",
+  "name": "Joie des petites choses",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "joy-in-small-things",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu apprends ou comprends quelque chose d’important (déterminé par le·la MJ), tu récupères 4 points dans ta Réserve d’Intellect. Chaque utilisation suivante dans la même période restaure 1 point de moins. Ce compteur se réinitialise après une récupération de dix heures."
+  }
+}

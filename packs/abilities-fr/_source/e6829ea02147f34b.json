@@ -1,0 +1,28 @@
+{
+  "_id": "e6829ea02147f34b",
+  "_key": "!items!e6829ea02147f34b",
+  "name": "Trouver la Voie",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "find-the-way",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Lorsque tu suis une créature, que tu es perdu·e, que tu ignores par où commencer un voyage, ou que tu dois choisir entre plusieurs routes, tu peux poser une question à ton MJ liée à la tâche et obtenir une réponse courte et utile. Une fois utilisée, cette aptitude ne peut pas être réutilisée avant ta prochaine récupération."
+  }
+}

@@ -7,221 +7,112 @@
   "system": {
     "description": "<p>You fashion images from light that are so perfect they seem real.</p>",
     "abilities": [
-      {
-        "id": "hedge-magic",
-        "name": "Hedge Magic",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+      "Compendium.cypher.abilities-en.Item.90c6de1f3ba30511",
+      "Compendium.cypher.abilities-en.Item.dea5467a527ddfcb",
+      "Compendium.cypher.abilities-en.Item.0408dac73817b8c2",
+      "Compendium.cypher.abilities-en.Item.a7f7c8df20240630",
+      "Compendium.cypher.abilities-en.Item.5ad5c369776e8268",
+      "Compendium.cypher.abilities-en.Item.9490a6db9520f052",
+      "Compendium.cypher.abilities-en.Item.bb0c428cbce064cb",
+      "Compendium.cypher.abilities-en.Item.e88b3b98ddbe0113",
+      "Compendium.cypher.abilities-en.Item.52274f6787b70f78",
+      "Compendium.cypher.abilities-en.Item.4de1515c459db41f",
+      "Compendium.cypher.abilities-en.Item.e589dc65402ecc4b",
+      "Compendium.cypher.abilities-en.Item.982bef99b0e3ed87",
+      "Compendium.cypher.abilities-en.Item.248936b005c6c984"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "90c6de1f3ba30511",
+          "to": "a7f7c8df20240630"
         },
-        "description": "You can perform small tricks: temporarily change the color or basic appearance of a small object, cause small objects to float through the air, clean a small area, mend a broken object, prepare (but not create) food, and so on. You can't use Hedge Magic to harm another creature or object. Action."
-      },
-      {
-        "id": "minor-illusion",
-        "name": "Minor Illusion",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+        {
+          "from": "dea5467a527ddfcb",
+          "to": "a7f7c8df20240630"
         },
-        "description": "You create a single image of a creature or object within immediate range. The image must fit within an immediate area. The image can move (for example, you could make the illusion of a person walk or attack), but it can't leave the area. The illusion includes sound but not smell. It lasts until you use a ten-minute or longer recovery, but if you want to change the original illusion significantly—such as making a creature appear to be wounded—you must use an action to concentrate on it again. If you move out of range, the illusion vanishes. Instead of a realistic illusion, you can create a confusing pattern of images around a creature within short range. As long as you use your action to change this pattern, you hinder the creature's attacks and defenses (no attack roll needed to affect them). Action to create; action to modify. You usually don't have to make a roll against a casual observer to get them to believe your illusion is real, but you probably do if they're doubtful or searching for unusual details. An observer who recognizes something as an illusion can ignore it, but it can still distract them and interfere with what they can see."
-      },
-      {
-        "id": "sense-magic",
-        "name": "Sense Magic",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+        {
+          "from": "dea5467a527ddfcb",
+          "to": "5ad5c369776e8268"
         },
-        "description": "If there is magic of any kind at work within short range, you are aware of that fact (but not the specifics). Last action."
-      },
-      {
-        "id": "illusory-disguise",
-        "name": "Illusory Disguise",
-        "tier": 2,
-        "prerequisites": [
-          "hedge-magic",
-          "minor-illusion"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "0408dac73817b8c2",
+          "to": "5ad5c369776e8268"
         },
-        "description": "You appear to be someone or something else, roughly of your size and shape, until you use a one-hour or longer recovery. Once created, the disguise requires no concentration. Effort: Disguise one additional creature (1 Intellect); if you lose sight of a disguised creature, they lose their disguise. Action."
-      },
-      {
-        "id": "reveal-illusion",
-        "name": "Reveal Illusion",
-        "tier": 2,
-        "prerequisites": [
-          "minor-illusion",
-          "sense-magic"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "a7f7c8df20240630",
+          "to": "9490a6db9520f052"
         },
-        "description": "When you roll to find an illusion or invisible target within short range and your roll is less than a 12, treat the roll as a 12. (This means you don't get a GM intrusion if you roll a 1.) This ability lasts until you use a ten-minute or longer recovery. Action to initiate. Effort: Increase the minimum number rolled for this ability by 3. At tier 3: The minimum number rolled for this ability increases to 15."
-      },
-      {
-        "id": "cast-illusion",
-        "name": "Cast Illusion",
-        "tier": 3,
-        "prerequisites": [
-          "illusory-disguise",
-          "reveal-illusion",
-          "major-illusion"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "5ad5c369776e8268",
+          "to": "9490a6db9520f052"
         },
-        "description": "Your immediate-range illusions (such as Minor Illusion, Major Illusion, and Grandiose Illusion) increase to short range. Disguises created by your Illusory Disguise last about a minute after the disguised creatures move out of your sight. Enabler."
-      },
-      {
-        "id": "major-illusion",
-        "name": "Major Illusion",
-        "tier": 3,
-        "prerequisites": [
-          "illusory-disguise",
-          "reveal-illusion",
-          "cast-illusion"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "bb0c428cbce064cb",
+          "to": "9490a6db9520f052"
         },
-        "description": "You create a complex scene of images within immediate range. The entire scene must fit within a long area. The images can move, but they can't leave the area. The illusion includes sound and smell. It lasts until you use a ten-minute or longer recovery and changes as you direct (no concentration is needed). If you move beyond immediate range of the illusion's edge, the illusion vanishes. Instead of a realistic illusion, you can create illusory confusing images around a creature within short range, hindering their attacks and defenses until you use a ten-minute or longer recovery (no attack roll needed to affect them). You do not need to use your action each round to maintain this effect. Effort: Affect an additional creature with confusing images. Action to create."
-      },
-      {
-        "id": "illusion-cocoon",
-        "name": "Illusion Cocoon",
-        "tier": 4,
-        "prerequisites": [
-          "cast-illusion",
-          "major-illusion"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "a7f7c8df20240630",
+          "to": "bb0c428cbce064cb"
         },
-        "description": "With a successful Intellect attack, you wrap a target within long range in a full-sensory illusion so all-encompassing that they are helpless, losing their turn each round until you use a ten-minute or longer recovery, or until they take direct physical damage. Action."
-      },
-      {
-        "id": "illusory-selves",
-        "name": "Illusory Selves",
-        "tier": 4,
-        "prerequisites": [
-          "cast-illusion",
-          "major-illusion"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "5ad5c369776e8268",
+          "to": "bb0c428cbce064cb"
         },
-        "description": "You create four illusions of yourself within short range. These each last until you use a ten-minute or longer recovery. You mentally direct their actions; they aren’t mirror images, and each one can do different things. If an image is struck violently, you choose whether it freezes motionless or disappears permanently. Action to initiate."
-      },
-      {
-        "id": "invisibility",
-        "name": "Invisibility",
-        "tier": 5,
-        "prerequisites": [
-          "illusion-cocoon",
-          "illusory-selves"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "9490a6db9520f052",
+          "to": "bb0c428cbce064cb"
         },
-        "description": "You become invisible. This effect ends if you do something to reveal your presence or position—attacking, using an ability, moving a large object, and so on—or if you use a ten-minute or longer recovery. Effort: Use this ability on a creature you touch instead of yourself; they remain invisible until they act precipitously or they or you use a ten-minute or longer recovery. Action to initiate. An invisible character's attack is eased by two steps. Attacks on an invisible character are hindered by four steps or are nearly impossible if the attacker has no idea where they might be."
-      },
-      {
-        "id": "terrifying-image",
-        "name": "Terrifying Image",
-        "tier": 5,
-        "prerequisites": [
-          "illusion-cocoon",
-          "illusory-selves"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 6,
-          "options": []
+        {
+          "from": "9490a6db9520f052",
+          "to": "e88b3b98ddbe0113"
         },
-        "description": "You can terrify foes with illusions created from their own fears. Make separate Intellect attacks against up to five creatures within long range. Success means a creature flees in terror, pursued by their nightmares until they've fled at least a very long distance or you use a ten-minute or longer recovery. Failure means the creature ignores the images, which do not hamper them in any way. Action."
-      },
-      {
-        "id": "grand-illusion",
-        "name": "Grand Illusion",
-        "tier": 6,
-        "prerequisites": [
-          "invisibility",
-          "terrifying-image"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 8,
-          "options": []
+        {
+          "from": "bb0c428cbce064cb",
+          "to": "e88b3b98ddbe0113"
         },
-        "description": "You create a vast, immensely complex illusory scene filling a 1-mile (1.6 km) cube whose closest face is within immediate range of you. You must be able to see the area when you create the illusion. The images can move freely within the cube, behave logically (reacting to fire, attacks, and so on) even when you aren’t watching, and include sound and smell. Examples include armies in battle, flying creatures, aerial machines, or an illusory landscape. The illusion lasts as long as you concentrate (using your action) or until you use a one-hour or longer recovery. Action to create."
-      },
-      {
-        "id": "permanent-illusion",
-        "name": "Permanent Illusion",
-        "tier": 6,
-        "prerequisites": [
-          "invisibility",
-          "terrifying-image"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 9,
-          "options": []
+        {
+          "from": "9490a6db9520f052",
+          "to": "52274f6787b70f78"
         },
-        "description": "You make one of your ongoing illusions permanent. Choose an illusion (or portion of an illusion) that you created. The illusion must fit within an immediate area and remains in that area. The illusion is permanent, persisting on its own without your attention or presence. You can permanently end the illusion as an action, but anyone else who wants to end it must expend exceptional ingenuity to prevent it from regenerating after a while. Enabler."
-      }
-    ]
+        {
+          "from": "bb0c428cbce064cb",
+          "to": "52274f6787b70f78"
+        },
+        {
+          "from": "e88b3b98ddbe0113",
+          "to": "4de1515c459db41f"
+        },
+        {
+          "from": "52274f6787b70f78",
+          "to": "4de1515c459db41f"
+        },
+        {
+          "from": "e88b3b98ddbe0113",
+          "to": "e589dc65402ecc4b"
+        },
+        {
+          "from": "52274f6787b70f78",
+          "to": "e589dc65402ecc4b"
+        },
+        {
+          "from": "4de1515c459db41f",
+          "to": "982bef99b0e3ed87"
+        },
+        {
+          "from": "e589dc65402ecc4b",
+          "to": "982bef99b0e3ed87"
+        },
+        {
+          "from": "4de1515c459db41f",
+          "to": "248936b005c6c984"
+        },
+        {
+          "from": "e589dc65402ecc4b",
+          "to": "248936b005c6c984"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

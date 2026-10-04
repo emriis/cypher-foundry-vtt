@@ -1,0 +1,28 @@
+{
+  "_id": "d876d52c7901be96",
+  "_key": "!items!d876d52c7901be96",
+  "name": "Improved Follower",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "improved-follower",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "One of your followers increases their overall power, knowledge, and ability. Choose one of your followers. Their level increases by 1, their existing modifications each increase by 1, and they gain a new modification (equal to their base level plus 1). You can take this ability once per tier, each time improving a follower (the same one or a different one)."
+  }
+}

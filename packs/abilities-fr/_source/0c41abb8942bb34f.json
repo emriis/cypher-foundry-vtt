@@ -1,0 +1,28 @@
+{
+  "_id": "0c41abb8942bb34f",
+  "_key": "!items!0c41abb8942bb34f",
+  "name": "Franc-tireur",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "sniper",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You are effective at much longer range than normal. Double the range of any firearm in your hands. If making a shot at very long range (or longer), you inflict an additional 1 damage."
+  }
+}

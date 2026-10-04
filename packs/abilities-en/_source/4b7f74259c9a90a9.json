@@ -1,0 +1,28 @@
+{
+  "_id": "4b7f74259c9a90a9",
+  "_key": "!items!4b7f74259c9a90a9",
+  "name": "Magnetic Field",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "magnetic-field",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "A field of magnetism around you pulls incoming, ranged, metallic projectile attacks (such as arrows, bullets, a thrown metal knife, and so on) to the ground. It also disperses energy attacks such as electricity, x-rays, lasers, and other attacks that are part of the electromagnetic spectrum. You are immune to such attacks for one round. You must be aware of an attack to foil it. Enabler."
+  }
+}

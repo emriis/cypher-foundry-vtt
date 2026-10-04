@@ -1,0 +1,28 @@
+{
+  "_id": "625ab675157aaa87",
+  "_key": "!items!625ab675157aaa87",
+  "name": "Changement d’Arme",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "weapon-switch",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "As an extra action on your turn, you change which weapons you're holding in each hand. This might entail swapping your left and right weapons, sheathing them and drawing new ones, flipping and catching one or both of them, dropping one to switch to a two-handed grip, or something similar. This maneuver is so startling, unexpected, and impressive that your next attack is eased by two steps. Once you use this ability, you can't use it again until after your next recovery. Enabler."
+  }
+}

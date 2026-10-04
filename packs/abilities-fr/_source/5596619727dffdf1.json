@@ -1,0 +1,28 @@
+{
+  "_id": "5596619727dffdf1",
+  "_key": "!items!5596619727dffdf1",
+  "name": "Appel à la bête",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "call-upon-the-beast",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu n’est pas sousa forme bestiale, tu peux invoquer brièvement ta nature animale : grognement menaçant, regard bestial… Tu gagnes un niveau d’Effort gratuit sur une tâche d’intimidation."
+  }
+}

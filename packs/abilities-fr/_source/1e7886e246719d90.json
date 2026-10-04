@@ -1,0 +1,28 @@
+{
+  "_id": "1e7886e246719d90",
+  "_key": "!items!1e7886e246719d90",
+  "name": "Source de récupération",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "font-of-recovery",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You have restorative power within you that others can access with a touch. If an ally uses their action to touch you and they spend 1 Intellect, they choose whether they regain 1d6 Might points or regain 1d6 Speed points. Once the ally uses this ability, they can't do so again until after they use a ten-hour recovery. Enabler."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "36f3181dc02365a2",
+  "_key": "!items!36f3181dc02365a2",
+  "name": "Constriction",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "constrict",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "En forme bestiale, si tu fais une attaque à mains nues en tant que Dernière action, ton attaque inflige 2 dégâts de moins, mais tu saisis la cible (en l’enserrant avec ton corps, par exemple). Toutes ses tâches sont entravées, y compris pour tenter de se libérer. Chaque round où elle reste saisie, tu peux utiliser ton action pour lui infliger 5 dégâts (sans jet)."
+  }
+}

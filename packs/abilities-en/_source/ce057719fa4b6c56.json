@@ -1,0 +1,28 @@
+{
+  "_id": "ce057719fa4b6c56",
+  "_key": "!items!ce057719fa4b6c56",
+  "name": "Perfected Form",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "perfected-form",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": "lastAction",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your mystic source infuses you until you use a one-hour or longer recovery, granting you 3 points that you can add to any of your Pools, even if that would exceed their normal maximums. The points remain until you spend them or the duration expires. In addition, while the duration lasts, your eyes and hands glow with the power of your mystic source, and you inflict an additional 3 damage with your unarmed attacks. This ability renews after your next one-hour or longer recovery. Last action."
+  }
+}

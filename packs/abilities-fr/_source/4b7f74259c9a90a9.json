@@ -1,0 +1,28 @@
+{
+  "_id": "4b7f74259c9a90a9",
+  "_key": "!items!4b7f74259c9a90a9",
+  "name": "Champ magnétique",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "magnetic-field",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Un champ magnétique autour de toi projette au sol tous les projectiles métalliques à distance : flèches, balles, couteaux, carreaux, etc. Il disperse aussi les attaques d’énergie du spectre électromagnétique : électricité, rayons X, lasers… Tu es immunisé·e à ces attaques pendant un round. Tu dois être conscient·e de l’attaque pour la contrer."
+  }
+}

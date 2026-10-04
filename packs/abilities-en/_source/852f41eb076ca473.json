@@ -1,0 +1,28 @@
+{
+  "_id": "852f41eb076ca473",
+  "_key": "!items!852f41eb076ca473",
+  "name": "Out of Harm's Way",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "out-of-harm-s-way",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you succeed on a dodge task, you can immediately move an immediate distance even though it's not your turn. Enabler."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "ac61788927fa4d93",
+  "_key": "!items!ac61788927fa4d93",
+  "name": "Œil du détail",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "eye-for-detail",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Après avoir passé 5 minutes à examiner soigneusement une zone d’un diamètre de courte portée ou un objet auquel tu as accès direct, tu peux poser une question au/à la MJ sur la zone ou l’objet. Le·La MJ doit te répondre honnêtement. L’aptitude se réinitialise après une récupération de dix heures."
+  }
+}

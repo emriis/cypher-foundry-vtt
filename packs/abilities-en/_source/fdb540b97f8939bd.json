@@ -1,0 +1,28 @@
+{
+  "_id": "fdb540b97f8939bd",
+  "_key": "!items!fdb540b97f8939bd",
+  "name": "Locate Machine",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "locate-machine",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can track down a specific machine from miles away. Choose a machine, robot, or intelligent device you've identified, either finding identifying information about them through network research or because you've personally interacted with them. If you succeed on an Intellect attack, you can sense their general direction or distance as long as they are within 10 miles (16 km) of you if you spend an action concentrating, checking your device, or something similar. If they are beyond that distance, you can only sense their general direction. A machine that becomes aware of your trace attempts to remove it; you must succeed on a new Intellect attack roll every ten hours to maintain the trace. Action to initiate; action to update directional  and/or distance information."
+  }
+}

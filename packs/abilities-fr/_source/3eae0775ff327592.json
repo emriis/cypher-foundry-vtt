@@ -1,0 +1,28 @@
+{
+  "_id": "3eae0775ff327592",
+  "_key": "!items!3eae0775ff327592",
+  "name": "Se Fondre dans l’Ombre",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "slip-into-shadow",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Even if in full view of a creature, your successful stealth task allows you to slip away from that creature and hide from view in a nearby shadow, behind a tree or furnishing, or in the next room as your action. Effort: Attempt to slip away from one additional target looking directly at you (attempt a separate stealth task against each). Enabler. At tier 3: You can attempt to hide from two additional creatures, whether or not you use Effort."
+  }
+}

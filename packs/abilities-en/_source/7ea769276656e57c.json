@@ -1,0 +1,28 @@
+{
+  "_id": "7ea769276656e57c",
+  "_key": "!items!7ea769276656e57c",
+  "name": "Explorer's Awareness",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "explorer-s-awareness",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You're instinctively vigilant about potential threats, foes, obstacles, and hazards in your line of sight. When you use Effort on initiative and perception tasks, you gain two free levels of Effort. Enabler."
+  }
+}

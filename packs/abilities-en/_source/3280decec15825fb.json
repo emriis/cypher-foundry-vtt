@@ -1,0 +1,28 @@
+{
+  "_id": "3280decec15825fb",
+  "_key": "!items!3280decec15825fb",
+  "name": "Automaton Evolution",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "automaton-evolution",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "One of your automaton followers is upgraded, increasing its level by 1. You can select this ability multiple times. Each time, the level of one of your automatons increases by 1."
+  }
+}

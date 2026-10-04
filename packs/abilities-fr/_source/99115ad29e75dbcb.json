@@ -1,0 +1,28 @@
+{
+  "_id": "99115ad29e75dbcb",
+  "_key": "!items!99115ad29e75dbcb",
+  "name": "Forme lunaire",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "moon-shape",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu deviens une bête primale, guidée par la rage et l’instinct, jusqu’à ta prochaine récupération d’une heure ou plus. Cette transformation nécessite d’être sous la lumière de la lune (au moins demi‑lune), sauf si tu dépenses de l’Effort. Sous forme bestiale tu obtiens : +8 à ta Réserve de Puissance, +2 à ta Réserve de Célérité, +2 d’Avantage en Puissance et en Célérité"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "3d8bf53958c918e1",
+  "_key": "!items!3d8bf53958c918e1",
+  "name": "Stimulation",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "stimulate",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tes paroles motivent une créature à portée immédiate qui peut te comprendre. Sa prochaine action est facilitée de trois paliers. (Pour cette tâche, la limite d’atouts est 3 au lieu de 2.)"
+  }
+}

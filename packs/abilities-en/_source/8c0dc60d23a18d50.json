@@ -1,0 +1,28 @@
+{
+  "_id": "8c0dc60d23a18d50",
+  "_key": "!items!8c0dc60d23a18d50",
+  "name": "Healing Shield",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "healing-shield",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You bolster an ally's health with healing power, protecting them against injury. Choose an ally within short range; they gain an asset that they can use on one block roll of their choice, which is expended once they use it. This ability renews when you take a recovery. Enabler."
+  }
+}

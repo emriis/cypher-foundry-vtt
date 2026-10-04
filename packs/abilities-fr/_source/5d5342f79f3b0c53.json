@@ -1,0 +1,28 @@
+{
+  "_id": "5d5342f79f3b0c53",
+  "_key": "!items!5d5342f79f3b0c53",
+  "name": "Main explosive",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "exploding-hand",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu invoques ta source mystique et la projettes sur une cible à longue portée, puis deux cibles supplémentaires à portée immédiate de la première. Fais un jet séparé pour chaque cible. En cas de réussite, tu infliges 4 dégâts et en cas d’échec tu infliges quand même 1 dégât."
+  }
+}

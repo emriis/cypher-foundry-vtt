@@ -1,0 +1,28 @@
+{
+  "_id": "710a8478198676b6",
+  "_key": "!items!710a8478198676b6",
+  "name": "Improved Machine Companion",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "improved-machine-companion",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You create, find, or otherwise acquire a level 5 intelligent machine companion follower that accompanies you and acts as you direct. If it's destroyed, it can be restored using your resources after a few days of labor. If you already have a lower-level machine companion, you choose whether it is upgraded to level 5 or you retain the level 3 companion and gain a new level 5 companion."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "74899ea520ac1106",
+  "_key": "!items!74899ea520ac1106",
+  "name": "Mur de lumière sacrée",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "fence-out-evil",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu entoures une zone courte d’un mur immatériel de lumière purificatrice jusqu’à ta prochaine récupération de dix minutes ou plus. À l’apparition du mur, puis à chaque round : chaque mort‑vivant·e·s, démon ou créature du même acabit dans la zone (ou entrant dans la zone) subit 3 dégâts (ignore l’Armure), sans jet. De plus, tu peux faire une attaque d’Intellect contre une créature qualifiée dans la zone ; en cas de réussite, elle est affectée comme par Réprimande sacrée."
+  }
+}

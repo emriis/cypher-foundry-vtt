@@ -1,0 +1,28 @@
+{
+  "_id": "a4d43ba1a9388256",
+  "_key": "!items!a4d43ba1a9388256",
+  "name": "Untouchable",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "untouchable",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You change your phase state so that you can't affect or be affected by normal matter or energy. Only mental attacks and special transdimensional energies, devices, or abilities can affect you, but likewise you can't physically attack, touch, or otherwise affect anything. This lasts until you use a ten-minute or longer recovery. Action to initiate."
+  }
+}

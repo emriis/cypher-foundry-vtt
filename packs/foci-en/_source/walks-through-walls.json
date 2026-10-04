@@ -7,230 +7,77 @@
   "system": {
     "description": "<p>A bit translucent when you want to be, you can move through solid objects.</p>",
     "abilities": [
-      {
-        "id": "light-step",
-        "name": "Light Step",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+      "Compendium.cypher.abilities-en.Item.4790a2012f02bbac",
+      "Compendium.cypher.abilities-en.Item.3bbd3c2dcb8a0e21",
+      "Compendium.cypher.abilities-en.Item.6fccbfc494ff2e72",
+      "Compendium.cypher.abilities-en.Item.f5a27fc7de12d9ce",
+      "Compendium.cypher.abilities-en.Item.8e9b14104e08ec6f",
+      "Compendium.cypher.abilities-en.Item.a179c2e322ef48de",
+      "Compendium.cypher.abilities-en.Item.67c9fa841d79f21a",
+      "Compendium.cypher.abilities-en.Item.3f76f62dec4179bf",
+      "Compendium.cypher.abilities-en.Item.4bedf1edd0ff4738",
+      "Compendium.cypher.abilities-en.Item.aef63c01b247e964",
+      "Compendium.cypher.abilities-en.Item.d423db4cb9c2b339",
+      "Compendium.cypher.abilities-en.Item.a4d43ba1a9388256",
+      "Compendium.cypher.abilities-en.Item.36e8879a7f49021a",
+      "Compendium.cypher.abilities-en.Item.13b56c46e0524f68"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "4790a2012f02bbac",
+          "to": "f5a27fc7de12d9ce"
         },
-        "description": "You can reduce the weight of your footprints to about the weight of a piece of paper, which means you don't trigger pressure plates or similar weight-based devices. You also reduce your falling damage by one wound severity."
-      },
-      {
-        "id": "soft-whisper",
-        "name": "Soft Whisper",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+        {
+          "from": "3bbd3c2dcb8a0e21",
+          "to": "8e9b14104e08ec6f"
         },
-        "description": "You can say something to a being within immediate range that no one else will hear. Enabler."
-      },
-      {
-        "id": "walk-through-walls",
-        "name": "Walk Through Walls",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "6fccbfc494ff2e72",
+          "to": "a179c2e322ef48de"
         },
-        "description": "You can slowly pass through physical barriers of level 5 or lower at a rate of 1 foot (30 cm) per round (minimum of one Last action to pass through any barrier). You can perceive while phased within a barrier or object, which could allow you to peek through walls. You can't use this ability to pass through energy barriers. Effort: Increase the maximum level of the barrier you can pass through by 1. Last action."
-      },
-      {
-        "id": "defensive-phasing",
-        "name": "Defensive Phasing",
-        "tier": 2,
-        "prerequisites": [
-          "light-step"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "choice",
-          "amount": 2,
-          "options": [
-            "intellect",
-            "speed"
-          ]
+        {
+          "from": "f5a27fc7de12d9ce",
+          "to": "67c9fa841d79f21a"
         },
-        "description": "Until you use a ten-minute or longer recovery, you gain an asset to your dodge tasks as you selectively change your phase so that some attacks pass through you harmlessly. Action to initiate."
-      },
-      {
-        "id": "phase-grasp",
-        "name": "Phase Grasp",
-        "tier": 2,
-        "prerequisites": [
-          "soft-whisper"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "8e9b14104e08ec6f",
+          "to": "67c9fa841d79f21a"
         },
-        "description": "You phase an object within long range so it vanishes and reappears in your hands or within immediate range of you. You must be able to see the object and it must be something you could carry with two hands. If the object is held by a creature or behind a barrier, you must succeed on an Intellect attack against the creature or barrier to transport it. Action."
-      },
-      {
-        "id": "slip-into-shadow",
-        "name": "Slip Into Shadow",
-        "tier": 2,
-        "prerequisites": [
-          "walk-through-walls"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "8e9b14104e08ec6f",
+          "to": "3f76f62dec4179bf"
         },
-        "description": "Even if in full view of a target, your successful stealth task allows you to slip away from that creature and hide from view in a nearby shadow, behind a tree or furnishing, or in the next room as your action. Effort: Increase the number of creatures you can hide from by one (attempt a separate stealth task against each). Enabler. At tier 3: The base number of targets you can attempt to hide from increases to three. Slipping into shadow and other stealth-based tasks for someone who Walks Through Walls is partly enabled by their ability to phase into translucence."
-      },
-      {
-        "id": "faster-phase",
-        "name": "Faster Phase",
-        "tier": 3,
-        "prerequisites": [
-          "defensive-phasing",
-          "phase-grasp"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "a179c2e322ef48de",
+          "to": "3f76f62dec4179bf"
         },
-        "description": "When you use Walk Through Walls, you pass through physical barriers faster, increasing your base rate by an additional 3 feet (1 m) per round, and doing so is an action rather than a Last action (you can take your normal movement before or after you use your phasing action). Enabler."
-      },
-      {
-        "id": "phased-attack",
-        "name": "Phased Attack",
-        "tier": 3,
-        "prerequisites": [
-          "phase-grasp",
-          "slip-into-shadow"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "67c9fa841d79f21a",
+          "to": "4bedf1edd0ff4738"
         },
-        "description": "Attacks you make this turn ignore your foe's armor. Enabler."
-      },
-      {
-        "id": "phase-door",
-        "name": "Phase Door",
-        "tier": 4,
-        "prerequisites": [
-          "faster-phase"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "3f76f62dec4179bf",
+          "to": "aef63c01b247e964"
         },
-        "description": "You can phase into an adjacent solid object and then phase out of any other solid object within long range of the first, even if the two objects are not connected. There must be no intervening barriers between the two objects, and you must be aware of or able to see the destination object. Effort: Increase the traveling range by a long distance. Action."
-      },
-      {
-        "id": "phase-friend",
-        "name": "Phase Friend",
-        "tier": 4,
-        "prerequisites": [
-          "phased-attack"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "aef63c01b247e964",
+          "to": "d423db4cb9c2b339"
         },
-        "description": "When using a phasing ability, you bring along an ally within immediate range. Effort: Bring an additional ally. Enabler."
-      },
-      {
-        "id": "quick-phase",
-        "name": "Quick Phase",
-        "tier": 5,
-        "prerequisites": [
-          "phase-friend"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "4bedf1edd0ff4738",
+          "to": "a4d43ba1a9388256"
         },
-        "description": "When you use Walk Through Walls, you pass through physical barriers much more quickly, increasing your base rate by an additional 10 feet (3.5 m) per round. Alternatively, you can phase up to 10 feet (3.5 m) as a First action. Enabler."
-      },
-      {
-        "id": "untouchable",
-        "name": "Untouchable",
-        "tier": 5,
-        "prerequisites": [
-          "phase-door"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 6,
-          "options": []
+        {
+          "from": "a4d43ba1a9388256",
+          "to": "36e8879a7f49021a"
         },
-        "description": "You change your phase state so that you can't affect or be affected by normal matter or energy. Only mental attacks and special transdimensional energies, devices, or abilities can affect you, but likewise you can't physically attack, touch, or otherwise affect anything. This lasts until you use a ten-minute or longer recovery. Action to initiate."
-      },
-      {
-        "id": "phase-foe",
-        "name": "Phase Foe",
-        "tier": 6,
-        "prerequisites": [
-          "untouchable"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 8,
-          "options": []
-        },
-        "description": "You gather disrupting energy in your fingertip and touch a creature. If your attack succeeds, they are phased as if you used Untouchable on them. However, unless they can figure out how to control their movement while phased, which most creatures have no experience with, they sink through the ground or other solid matter. If they can't later gain control or end the effect, they might be gone for good because when they become solid again after a minute, they're probably deep underground. You can only use this ability against a target of level 4 or lower. Effort: Increase the maximum level of the target you can affect by 1. Action."
-      },
-      {
-        "id": "selective-phase-attack",
-        "name": "Selective Phase Attack",
-        "tier": 6,
-        "prerequisites": [
-          "quick-phase"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "One attack each round you make using Phased Attack deals an additional 5 damage. Enabler. Phased Attack used against a PC means their block attempts fail."
-      }
-    ]
+        {
+          "from": "d423db4cb9c2b339",
+          "to": "13b56c46e0524f68"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

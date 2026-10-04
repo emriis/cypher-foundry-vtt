@@ -1,0 +1,28 @@
+{
+  "_id": "68cc05aef8a6269c",
+  "_key": "!items!68cc05aef8a6269c",
+  "name": "Attaque incapacitante",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "incapacitating-attack",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Ton attaque réussie incapacite brièvement la cible. Jusqu’à ta prochaine récupération de dix minutes ou plus (ou jusqu’à ce qu’on l’aide), la cible est à terre, ne peut pas se lever, ne peut se déplacer que d’une distance immédiate par round et ses défenses sont entravées."
+  }
+}

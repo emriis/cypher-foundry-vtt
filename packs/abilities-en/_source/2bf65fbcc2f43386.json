@@ -1,0 +1,28 @@
+{
+  "_id": "2bf65fbcc2f43386",
+  "_key": "!items!2bf65fbcc2f43386",
+  "name": "Return to Sender",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "return-to-sender",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If you successfully block or dodge a melee attack, you can immediately make a melee attack against the attacking foe. You can't use this ability again until after you take your normal turn. Enabler."
+  }
+}

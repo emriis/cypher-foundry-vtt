@@ -1,0 +1,28 @@
+{
+  "_id": "53458b09ac3104e5",
+  "_key": "!items!53458b09ac3104e5",
+  "name": "Always Speedy",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "always-speedy",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Every time you use a recovery, if your Speed Pool isn't already full, you get 1 extra point to restore to your Speed Pool. You can select this ability up to three times."
+  }
+}

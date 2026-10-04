@@ -1,0 +1,28 @@
+{
+  "_id": "9cd38e9c8dd07bdd",
+  "_key": "!items!9cd38e9c8dd07bdd",
+  "name": "Potion Cyphers",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "potion-cyphers",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can bear two additional cyphers at a time as long as they are cyphers you created with Brew Potion."
+  }
+}

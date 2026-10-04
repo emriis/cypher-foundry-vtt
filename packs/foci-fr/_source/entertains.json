@@ -7,200 +7,79 @@
   "system": {
     "description": "<p>You perform, mostly for the benefit of others.</p>",
     "abilities": [
-      {
-        "id": "anecdote",
-        "name": "Anecdote",
-        "tier": 1,
-        "prerequisites": [
-          "knowing-the-audience"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+      "Compendium.cypher.abilities-fr.Item.760a55410e499fc0",
+      "Compendium.cypher.abilities-fr.Item.d23c7e05acbc7905",
+      "Compendium.cypher.abilities-fr.Item.2532c5686054efe8",
+      "Compendium.cypher.abilities-fr.Item.9fa2bb3e0adcf7c6",
+      "Compendium.cypher.abilities-fr.Item.bec4a78947e07d5b",
+      "Compendium.cypher.abilities-fr.Item.3efd33833b8a6953",
+      "Compendium.cypher.abilities-fr.Item.9f11831b1b7dadbd",
+      "Compendium.cypher.abilities-fr.Item.34ca8d20f1f237d2",
+      "Compendium.cypher.abilities-fr.Item.898264bd7e3de1c0",
+      "Compendium.cypher.abilities-fr.Item.422afdcd7d616e36",
+      "Compendium.cypher.abilities-fr.Item.a7e6449e8d0758de",
+      "Compendium.cypher.abilities-fr.Item.b41dfb2e36810698"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "2532c5686054efe8",
+          "to": "760a55410e499fc0"
         },
-        "description": "Tu remontes le moral d’un groupe de créatures et renforces leur cohésion en les divertissant avec une anecdote inspirante ou percutante. Choisis une tâche (autre qu’une attaque ou une défense) liée à ton anecdote. Jusqu’à ta prochaine récupération d’une heure ou plus, tous ceux qui écoutent ton histoire sont entraîné·e·s dans cette tâche. À la place, tu peux passer du temps à interagir avec un groupe de personnes à portée courte : si elles sont au moins neutres envers toi (et non hostiles), elles deviennent amicales jusqu’à ta prochaine récupération d’une heure ou plus."
-      },
-      {
-        "id": "inspiring-suggestion",
-        "name": "Suggestion inspirante",
-        "tier": 1,
-        "prerequisites": [
-          "inspiring-suggestion"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "d23c7e05acbc7905",
+          "to": "d23c7e05acbc7905"
         },
-        "description": "When you make a helpful suggestion to an ally, they have a better chance of succeeding at what they're doing. Choose an ally who can see and understand you, then suggest a specific action for them to take, such as “attack the leader” or “climb the wall.” If the ally chooses to take that exact action, they gain two assets on that task. First action."
-      },
-      {
-        "id": "knowing-the-audience",
-        "name": "Comprendre le public",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+        {
+          "from": "760a55410e499fc0",
+          "to": "9fa2bb3e0adcf7c6"
         },
-        "description": "Tu saisis l’humeur générale d’un groupe à portée courte. Si le groupe tente de dissimuler une information, tu peux tenter une tâche de difficulté 3 pour connaître la vérité derrière leur attitude. Au round suivant, tu gagnes un atout pour une tâche destinée à reconnaître la motivation d’une personne de ce groupe pour obtenir plus de détails et d’informations à propos de cet individu."
-      },
-      {
-        "id": "inspiring-ease",
-        "name": "Facilitation inspirante",
-        "tier": 2,
-        "prerequisites": [
-          "anecdote"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "d23c7e05acbc7905",
+          "to": "bec4a78947e07d5b"
         },
-        "description": "Through stories, songs, art, or other forms of entertainment, you inspire your allies. When you and any number of allies spend a ten-hour recovery together (yours or theirs), the allies are inspired by you. Once per day, each inspired ally can ease one task. This inspiration remains while you remain within a long distance of them. The inspiration is suspended at greater distances, but resumes automatically if you get within range. The inspiration ends if you use a ten-hour recovery while away from the ally. Ten-hour recovery to initiate."
-      },
-      {
-        "id": "rising-courage",
-        "name": "Courage grandissant",
-        "tier": 2,
-        "prerequisites": [
-          "inspiring-suggestion"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "bec4a78947e07d5b",
+          "to": "3efd33833b8a6953"
         },
-        "description": "Une cible de ton choix à portée immédiate gagne un atout à sa prochaine défense d’Intellect et à sa prochaine initiative."
-      },
-      {
-        "id": "find-motivation",
-        "name": "Trouver la motivation",
-        "tier": 3,
-        "prerequisites": [
-          "rising-courage"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "2532c5686054efe8",
+          "to": "9f11831b1b7dadbd"
         },
-        "description": "Quand ton esprit devrait être affecté négativement par un effet de niveau 4 ou moins (ordre psychique, maladie, peur, ennui, contrôle mental…), tu peux ignorer l’effet. Si l’effet dure (peur, contrôle…), il n’a aucun impact sur toi jusqu’à ta prochaine récupération de dix minutes ou plus. Si l’effet est instantané (dégâts psychiques), il ne t’affecte pas du tout. Effort : augmenter de +1 le niveau maximal de l’effet que tu peux ignorer."
-      },
-      {
-        "id": "perfect-stranger",
-        "name": "Inconnu·e parfait·e",
-        "tier": 3,
-        "prerequisites": [
-          "knowing-the-audience"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "3efd33833b8a6953",
+          "to": "34ca8d20f1f237d2"
         },
-        "description": "Tu te plonges totalement dans un rôle, devenant presque méconnaissable jusqu’à ta prochaine récupération d’une heure ou plus. Cela implique souvent d’altérer ta voix, ta posture, ton accent, tes vêtements pour “vendre” se nouveau personnage. Toutes tes tâches visant à faire semblant d’être quelqu’un d’autre sont facilitées. Trois fois pendant la durée de cette aptitude, si tu consacres de l’Effort à une tâche d’interaction ou de connaissance liée à ton rôle, tu gagnes un niveau d’Effort gratuit."
-      },
-      {
-        "id": "calm",
-        "name": "Apaiser",
-        "tier": 4,
-        "prerequisites": [
-          "find-motivation"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "9fa2bb3e0adcf7c6",
+          "to": "898264bd7e3de1c0"
         },
-        "description": "If you succeed on an Intellect attack against a living foe who can see and hear you, you prevent them from attacking anyone or anything for one round by way of your jokes, song, or other performance. Action."
-      },
-      {
-        "id": "captivate-or-inspire",
-        "name": "Captiver ou inspirer",
-        "tier": 4,
-        "prerequisites": [
-          "inspiring-ease",
-          "perfect-stranger"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "9f11831b1b7dadbd",
+          "to": "898264bd7e3de1c0"
         },
-        "description": "You can use this ability in one of two ways. Captivate: Your words keep the attention of all NPCs in immediate range that hear them for as long as you speak, if you succeed on a persuasion, deception, or intimidation skill roll against a difficulty level equal to the highest level of an NPC in the crowd. Inspire: Your words inspire all NPCs that hear them, allowing them to perform tasks as if one level higher until you use a one-hour or longer recovery. In either case, you choose which NPCs are affected. If anyone in the crowd is attacked while you're trying to speak to them, you lose the crowd's attention. Action to initiate."
-      },
-      {
-        "id": "willing-sacrifice",
-        "name": "Sacrifice consenti",
-        "tier": 5,
-        "prerequisites": [
-          "calm"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "34ca8d20f1f237d2",
+          "to": "422afdcd7d616e36"
         },
-        "description": "Quand tu réussis à attirer ou prendre une attaque destinée à quelqu’un d’autre et que tu échoues ton esquive ou ton blocage, tu réduis la sévérité de la blessure d’un palier : majeure → modérée, modérée → mineure, mineure → aucune. Tu peux attirer ou prendre plusieurs attaques dans un même round si elles visaient toutes la même cible."
-      },
-      {
-        "id": "master-entertainer",
-        "name": "Maître·sse de l’art",
-        "tier": 6,
-        "prerequisites": [
-          "inspiring-ease",
-          "captivate-or-inspire"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "9fa2bb3e0adcf7c6",
+          "to": "a7e6449e8d0758de"
         },
-        "description": "Tes alliés affectés par Facilitation inspirante peuvent soit faciliter deux tâches par jour, soit faciliter une tâche de deux paliers au lieu d’un seul."
-      },
-      {
-        "id": "vindictive-performance",
-        "name": "Performance vengeresse",
-        "tier": 6,
-        "prerequisites": [
-          "captivate-or-inspire",
-          "willing-sacrifice"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 5,
-          "options": []
+        {
+          "from": "898264bd7e3de1c0",
+          "to": "a7e6449e8d0758de"
         },
-        "description": "Quand tu racontes une blague, chantes, récites un poème, dessines, racontes une anecdote ou divertis d’une autre manière, tu peux choisir une créature à portée courte capable de te comprendre. Pendant ta prestation, tu lui adresses une satire indirecte mais mordante. Si tu réussis ton attaque d’Intellect : la créature ne réalise pas immédiatement qu’elle est visée mais lorsqu’elle comprend (au moment où tu choisis de conclure la performance), elle subit 6 dégâts d’Intellect (ignore l’Armure)et perd son prochain tour."
-      }
-    ]
+        {
+          "from": "898264bd7e3de1c0",
+          "to": "b41dfb2e36810698"
+        },
+        {
+          "from": "422afdcd7d616e36",
+          "to": "b41dfb2e36810698"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

@@ -1,0 +1,28 @@
+{
+  "_id": "a9a7ff1c128b7038",
+  "_key": "!items!a9a7ff1c128b7038",
+  "name": "En un clin d’œil",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "blink-of-an-eye",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu te déplaces jusqu’à 300 m."
+  }
+}

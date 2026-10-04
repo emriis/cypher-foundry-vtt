@@ -1,0 +1,28 @@
+{
+  "_id": "012281410601b35c",
+  "_key": "!items!012281410601b35c",
+  "name": "Porte de phase",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "phase-door",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu peux te phaser dans un objet solide adjacent, puis ressortir de n’importe quel autre objet solide à longue portée, même s’ils ne sont pas connectés. Il ne doit y avoir aucune barrière intermédiaire, et tu dois connaître ou voir l’objet de destination. Effort : augmenter la portée de déplacement d’une portée longue supplémentaire."
+  }
+}

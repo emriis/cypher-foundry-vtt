@@ -1,0 +1,28 @@
+{
+  "_id": "a4a20f5e3fd7fa3e",
+  "_key": "!items!a4a20f5e3fd7fa3e",
+  "name": "Avantage au désavantage",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "advantage-to-disadvantage",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu fais une attaque entravée, en multipliant les gestes rapides contre un adversaire armé. Si tu touches, tu infliges les dégâts et tu le désarmes. Tu choisis si l’arme tombe dans ta main ou au sol à 3,5 m. Pour le reste du combat, tu gagnes un atout à tes tâches d’intimidation contre cet adversaire."
+  }
+}

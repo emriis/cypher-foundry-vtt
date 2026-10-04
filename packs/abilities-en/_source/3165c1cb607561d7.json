@@ -1,0 +1,28 @@
+{
+  "_id": "3165c1cb607561d7",
+  "_key": "!items!3165c1cb607561d7",
+  "name": "Shrug Off Evil",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "shrug-off-evil",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You are immune to mental influence, fear, and possession (from any source). You ignore one wound inflicted by undead, demons, or creatures of similar ilk. This aspect of this ability renews after you take a ten-hour recovery. Enabler."
+  }
+}

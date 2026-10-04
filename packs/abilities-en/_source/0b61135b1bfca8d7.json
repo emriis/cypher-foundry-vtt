@@ -1,0 +1,28 @@
+{
+  "_id": "0b61135b1bfca8d7",
+  "_key": "!items!0b61135b1bfca8d7",
+  "name": "Summon Giant Spider",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "summon-giant-spider",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You conjure a giant spider, which appears within immediate range. The spider acts according to its nature, attacking a nearby creature that looks like suitable prey. The spider remains until you use a ten-minute or longer recovery, then fades away. Effort: Make the spider understand you and obey your verbal instructions. Action to initiate. Giant spider: level 3, perception as level 5, Speed defense as level 4 due to quickness; health 12; bite inflicts 3 damage plus 1 Speed damage from poison (ignores armor); moves a long distance each round when on webs"
+  }
+}

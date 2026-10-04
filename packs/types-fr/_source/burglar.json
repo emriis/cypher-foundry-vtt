@@ -30,48 +30,9 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "burgle",
-        "name": "Cambriolage (2 Célérité)",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 2,
-          "options": []
-        },
-        "description": "When you succeed on a stealth task, you can also undertake one of the following tasks as an extra action on your turn, even if the task is usually a Last action: attempt to pick a lock, grab a loose object up to a fifth of your size and conceal it on your person, move up to a long distance, or attack a target in immediate range with a light weapon. Enabler."
-      },
-      {
-        "id": "escape",
-        "name": "Évasion (2+ Célérité)",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 2,
-          "options": []
-        },
-        "description": "When you roll to escape (such as slipping your restraints, squeezing through the bars, breaking the grip of a creature holding you, or pulling free from sucking quicksand) and your roll is less than a 9, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) Action. Effort: Increase the minimum number rolled for this ability by 3. At tier 3: The minimum number rolled for this ability increases to 12."
-      },
-      {
-        "id": "slip-into-shadow",
-        "name": "Se Fondre dans l’Ombre",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Even if in full view of a creature, your successful stealth task allows you to slip away from that creature and hide from view in a nearby shadow, behind a tree or furnishing, or in the next room as your action. Effort: Attempt to slip away from one additional target looking directly at you (attempt a separate stealth task against each). Enabler. At tier 3: You can attempt to hide from two additional creatures, whether or not you use Effort."
-      }
+      "Compendium.cypher.abilities-fr.Item.1c6a1d52828c1326",
+      "Compendium.cypher.abilities-fr.Item.661cf3fe9bf8ac29",
+      "Compendium.cypher.abilities-fr.Item.3eae0775ff327592"
     ],
     "statOptions": [
       "speed",

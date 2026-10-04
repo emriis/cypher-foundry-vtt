@@ -1,0 +1,28 @@
+{
+  "_id": "50ba1d25e229dbc5",
+  "_key": "!items!50ba1d25e229dbc5",
+  "name": "Flex Skill",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "flex-skill",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Choose one task (other than an attack or defense skill) on which you will concentrate. For the rest of the day, you're trained in that task. You can't use this ability with a skill in which you're already trained to become specialized. This ability refreshes when you use a ten-hour recovery. Enabler. Androids using Flex Skill usually accomplish the training by expanding data they already downloaded, compressed, and stored in their system, though in some cases accessing a specialized skill might require connecting to an external data hub."
+  }
+}

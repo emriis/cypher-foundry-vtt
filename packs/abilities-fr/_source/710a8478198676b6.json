@@ -1,0 +1,28 @@
+{
+  "_id": "710a8478198676b6",
+  "_key": "!items!710a8478198676b6",
+  "name": "Compagnon mécanique amélioré",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "improved-machine-companion",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu crées, trouves ou acquiers un·e suivant·e machine intelligent·e de niveau 5. Si tu as déjà un compagnon de niveau inférieur, tu choisis de l’améliorer au niveau 5 ou garder le niveau 3 et obtenir un nouveau niveau 5. Si iel est détruit·e, tu peux le·la restaurer avec tes ressources après quelques jours."
+  }
+}

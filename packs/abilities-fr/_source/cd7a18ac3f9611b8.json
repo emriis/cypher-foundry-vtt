@@ -1,0 +1,28 @@
+{
+  "_id": "cd7a18ac3f9611b8",
+  "_key": "!items!cd7a18ac3f9611b8",
+  "name": "Dominer la bête",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "control-the-savage",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu fais une attaque d’Intellect pour contrôler une bête non humaine calme à portée courte. Tu la contrôles tant que tu utilises ton action chaque round pour te concentrer sur la cible. Action."
+  }
+}

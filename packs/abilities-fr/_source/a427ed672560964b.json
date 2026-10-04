@@ -1,0 +1,28 @@
+{
+  "_id": "a427ed672560964b",
+  "_key": "!items!a427ed672560964b",
+  "name": "Étreinte hivernale",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "winter-s-grip",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Fais une attaque d’Intellect contre une cible à courte portée. En cas de réussite, elle est entravée par une couche de glace jusqu’à ta prochaine récupération de dix minutes ou plus, ou jusqu’à ce qu’elle utilise une action pour se libérer. Elle ne peut pas se déplacer et toutes ses tâches physiques (attaques, défenses…) sont entravées. Si ton Armure de glace est active et que tu touches la cible, l’attaque d’Intellect est facilitée, et tu ajoutes les 2 dégâts de ton toucher glacé. Effort : infliger 3 dégâts de froid au round où la cible est immobilisée."
+  }
+}

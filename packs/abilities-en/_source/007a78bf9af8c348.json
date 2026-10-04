@@ -1,0 +1,28 @@
+{
+  "_id": "007a78bf9af8c348",
+  "_key": "!items!007a78bf9af8c348",
+  "name": "Inspiring Defense",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "inspiring-defense",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you succeed on a defense roll against an attack that would have dealt you an especially powerful blow or effect as determined by your GM, you regain 4 points to your Might Pool. Each use of this ability after the first time restores 1 fewer Pool point; this renews after you take a ten-hour recovery. Enabler."
+  }
+}

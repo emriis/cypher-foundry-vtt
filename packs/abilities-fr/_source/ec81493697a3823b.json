@@ -1,0 +1,28 @@
+{
+  "_id": "ec81493697a3823b",
+  "_key": "!items!ec81493697a3823b",
+  "name": "Surtension mentale",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "mind-surge",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu disposes d’une récupération supplémentaire d’une action chaque jour, utilisable uniquement pour restaurer ta Réserve d’Intellect."
+  }
+}

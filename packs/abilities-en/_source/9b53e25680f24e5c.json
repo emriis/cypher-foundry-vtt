@@ -1,0 +1,28 @@
+{
+  "_id": "9b53e25680f24e5c",
+  "_key": "!items!9b53e25680f24e5c",
+  "name": "Fleet of Foot",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "fleet-of-foot",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "As an extra action on this turn you can move up to a short distance. (This movement doesn't hinder your tasks.) Effort: As an extra action on this turn you can move up to a long distance (instead of a short distance); this movement doesn't hinder your tasks. Enabler."
+  }
+}

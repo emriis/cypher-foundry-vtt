@@ -1,0 +1,28 @@
+{
+  "_id": "90a742bfe8ee8000",
+  "_key": "!items!90a742bfe8ee8000",
+  "name": "Lighting a Fire Under Them",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "lighting-a-fire-under-them",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": "lastAction",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You issue a command to a follower or ally within short range and that person's next action is a First action (if the action would have been Last, it happens normally). You can't use this ability again until after your next ten-minute or longer recovery. Last action."
+  }
+}

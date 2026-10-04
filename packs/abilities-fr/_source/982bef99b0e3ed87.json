@@ -1,0 +1,28 @@
+{
+  "_id": "982bef99b0e3ed87",
+  "_key": "!items!982bef99b0e3ed87",
+  "name": "Illusion grandiose",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "grand-illusion",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 8,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu crées une scène illusoire immensément complexe, occupant un cube de 1,5 km dont la face la plus proche doit être à portée immédiate de toi. Tu dois voir la zone au moment de la création. Les images peuvent se déplacer librement dans le cube, se comportent logiquement (réagissent au feu, aux attaques, etc.) même sans ton regard. L’illusion inclue son et odeur. Exemples : armées en bataille, créatures volantes, machines aériennes, paysage illusoire… L’illusion dure tant que tu te concentres (en utilisant ton action), ou jusqu’à ta prochaine récupération d’une heure ou plus."
+  }
+}

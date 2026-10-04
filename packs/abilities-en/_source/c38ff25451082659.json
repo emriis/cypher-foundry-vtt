@@ -1,0 +1,28 @@
+{
+  "_id": "c38ff25451082659",
+  "_key": "!items!c38ff25451082659",
+  "name": "Desperate Flame",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "desperate-flame",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "While you have at least three moderate wounds or at least one major wound, you gain two free levels of Effort you can apply to one fire attack each round. This benefit lasts until you take your next ten-minute or longer recovery or you no longer have the qualifying wounds. Enabler."
+  }
+}

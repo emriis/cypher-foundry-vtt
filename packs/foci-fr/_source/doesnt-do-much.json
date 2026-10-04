@@ -7,183 +7,70 @@
   "system": {
     "description": "<p>You're a slacker, but you know a little about a lot of things.</p>",
     "abilities": [
-      {
-        "id": "joy-in-small-things",
-        "name": "Joie des petites choses",
-        "tier": 1,
-        "prerequisites": [
-          "life-lessons"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+      "Compendium.cypher.abilities-fr.Item.0874ff0ca60c855a",
+      "Compendium.cypher.abilities-fr.Item.027f1628cdf234ce",
+      "Compendium.cypher.abilities-fr.Item.070d35cfea9a039f",
+      "Compendium.cypher.abilities-fr.Item.9fa2bb3e0adcf7c6",
+      "Compendium.cypher.abilities-fr.Item.76895b2d4dd1b30c",
+      "Compendium.cypher.abilities-fr.Item.737f552a57898e10",
+      "Compendium.cypher.abilities-fr.Item.6d11f307def29272",
+      "Compendium.cypher.abilities-fr.Item.01f896d23379cfa9",
+      "Compendium.cypher.abilities-fr.Item.0bffaf6b8f1e6e9d",
+      "Compendium.cypher.abilities-fr.Item.36f37ed34cd9c9af",
+      "Compendium.cypher.abilities-fr.Item.11de1b15e2673c16"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "027f1628cdf234ce",
+          "to": "0874ff0ca60c855a"
         },
-        "description": "Quand tu apprends ou comprends quelque chose d’important (déterminé par le·la MJ), tu récupères 4 points dans ta Réserve d’Intellect. Chaque utilisation suivante dans la même période restaure 1 point de moins. Ce compteur se réinitialise après une récupération de dix heures."
-      },
-      {
-        "id": "life-lessons",
-        "name": "Leçons de vie",
-        "tier": 1,
-        "prerequisites": [
-          "joy-in-small-things"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "0874ff0ca60c855a",
+          "to": "027f1628cdf234ce"
         },
-        "description": "Tu as appris des petits trucs à droite à gauche et tu as du talent pour accomplir les choses. Choisis deux compétences non liées au combat. Quand tu consacres de l’Effort à l’une de ces compétences, tu obtiens un niveau d’Effort gratuit."
-      },
-      {
-        "id": "picking-up-the-slack",
-        "name": "Remplacer au pied levé",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+        {
+          "from": "0874ff0ca60c855a",
+          "to": "9fa2bb3e0adcf7c6"
         },
-        "description": "You can fill in for a skilled ally when they're unable to perform a specific task. If an ally within long range is trained (or more) in a skill but can't attempt the task (such as if there's a lock to be picked, but the skilled ally is unconscious or too far away), you gain an asset on that task. You cannot use this ability if you are trained (or better) in that skill. Enabler."
-      },
-      {
-        "id": "inspiring-ease",
-        "name": "Facilitation inspirante",
-        "tier": 2,
-        "prerequisites": [
-          "joy-in-small-things",
-          "life-lessons"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "027f1628cdf234ce",
+          "to": "9fa2bb3e0adcf7c6"
         },
-        "description": "Through stories, songs, art, or other forms of entertainment, you inspire your allies. When you and any number of allies spend a ten-hour recovery together (yours or theirs), the allies are inspired by you. Once per day, each inspired ally can ease one task. This inspiration remains while you remain within a long distance of them. The inspiration is suspended at greater distances, but resumes automatically if you get within range. The inspiration ends if you use a ten-hour recovery while away from the ally. Ten-hour recovery to initiate."
-      },
-      {
-        "id": "totally-chill",
-        "name": "Totalement relax",
-        "tier": 2,
-        "prerequisites": [
-          "life-lessons"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "027f1628cdf234ce",
+          "to": "76895b2d4dd1b30c"
         },
-        "description": "Ta récupération de dix minutes prend une seule action, et ta récupération d’une heure prend dix minutes."
-      },
-      {
-        "id": "extra-padding",
-        "name": "Coussin naturel",
-        "tier": 3,
-        "prerequisites": [
-          "picking-up-the-slack"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "might",
-          "amount": 1,
-          "options": []
+        {
+          "from": "070d35cfea9a039f",
+          "to": "737f552a57898e10"
         },
-        "description": "Tu traînes un peu plus de masse que la moyenne — muscles, graisse, ou les deux. Cette « protection naturelle » te permet d’ignorer une blessure mineure que tu viens de subir (ne note pas la blessure sur ta fiche). L’aptitude se renouvelle après une récupération de dix heures. Effort : ignorer une blessure modérée plutôt qu’une mineure ou ignorer une blessure majeure plutôt qu’une mineure (nécessite 2 Efforts)."
-      },
-      {
-        "id": "improvise",
-        "name": "Improviser",
-        "tier": 3,
-        "prerequisites": [
-          "life-lessons"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "027f1628cdf234ce",
+          "to": "6d11f307def29272"
         },
-        "description": "(3 Intellect): If you aren't trained in a task, you can improvise to gain an asset on that task—a tool you cobble together, sudden insight, or just dumb luck. The asset lasts until you use a ten-minute or longer recovery. Enabler."
-      },
-      {
-        "id": "agile-wit",
-        "name": "Esprit agile",
-        "tier": 4,
-        "prerequisites": [
-          "improvise"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "6d11f307def29272",
+          "to": "01f896d23379cfa9"
         },
-        "description": "When attempting a Speed task, you can spend points from your Intellect Pool instead of your Speed Pool, and vice versa. Use the Edge stat for the Pool you're spending points from."
-      },
-      {
-        "id": "gather-your-strength",
-        "name": "Rassembler sa force",
-        "tier": 4,
-        "prerequisites": [
-          "extra-padding"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "737f552a57898e10",
+          "to": "0bffaf6b8f1e6e9d"
         },
-        "description": "Ton attaque de ce round inflige +2 dégâts supplémentaires si tu la fais en tant que Dernière action, au lieu d’une Action ou d’une Première action."
-      },
-      {
-        "id": "attention-to-detail",
-        "name": "Prêter attention au détail",
-        "tier": 5,
-        "prerequisites": [
-          "agile-wit",
-          "gather-your-strength"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "01f896d23379cfa9",
+          "to": "36f37ed34cd9c9af"
         },
-        "description": "Ta tâche de ce round (hors attaque) bénéficie d’un atout si tu l’accomplis comme Dernière action plutôt que comme Action ou Première action."
-      },
-      {
-        "id": "drawing-on-life-s-experiences",
-        "name": "Puiser dans l’expérience de toute une vie",
-        "tier": 6,
-        "prerequisites": [
-          "attention-to-detail"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 6,
-          "options": []
+        {
+          "from": "0bffaf6b8f1e6e9d",
+          "to": "36f37ed34cd9c9af"
         },
-        "description": "Tu as vécu beaucoup de choses, et ton expérience te sert. Tu poses une question au/à la MJ et reçois une réponse générale. Le·La MJ donne un niveau à la question : connaissances trouvables ailleurs qu’ici : niveau 1, connaissance obscure du passé : niveau 7."
-      }
-    ]
+        {
+          "from": "36f37ed34cd9c9af",
+          "to": "11de1b15e2673c16"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

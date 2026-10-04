@@ -1,0 +1,28 @@
+{
+  "_id": "cef1fec17ca240cd",
+  "_key": "!items!cef1fec17ca240cd",
+  "name": "Information Gathering",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "information-gathering",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You speak wirelessly with any or all non-intelligent machines within 1 mile (1.6 km). You can ask one basic question about themselves or anything happening near them and receive a simple answer. For example, while in an area with many machines, you could ask about the location of a specific creature or individual, and if they are within range, one or more machines will probably provide the answer. Action."
+  }
+}

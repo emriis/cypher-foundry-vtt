@@ -1,0 +1,28 @@
+{
+  "_id": "77134707a2e7dee3",
+  "_key": "!items!77134707a2e7dee3",
+  "name": "Préparation de Sort",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "prepare-spell",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Chaque jour, tu peux choisir un effet magique différent et le lancer comme un sort. Choisis un cypher manifesté de faible puissance. Après dix minutes de préparation, tu gagnes l'effet de ce cypher sous forme de sort (une Aptitude de personnage). Tu peux lancer ce sort en action, pour un coût de 2 Intellect. Ce sort ne compte pas dans ta limite de cyphers et n'est pas perdu après utilisation. Lors d'une récupération de dix heures, tu peux changer le cypher choisi. Au rang 3 : cypher de faible ou moyenne puissance (coût 4 Intellect). Au rang 6 : cypher de faible, moyenne ou grande puissance (coût 6 Intellect). Tu peux sélectionner cette aptitude jusqu'à trois fois."
+  }
+}

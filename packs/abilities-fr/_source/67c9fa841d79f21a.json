@@ -1,0 +1,28 @@
+{
+  "_id": "67c9fa841d79f21a",
+  "_key": "!items!67c9fa841d79f21a",
+  "name": "Phasage accéléré",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "faster-phase",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu utilises Traverser les murs, tu traverses les barrières physiques plus vite, augmentant ta vitesse de 1 m par round. De plus, l’action devient une action normale au lieu d’une Dernière action (tu peux te déplacer normalement avant ou après avoir utilisé ton action de phasage)."
+  }
+}

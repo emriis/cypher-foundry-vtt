@@ -1,0 +1,28 @@
+{
+  "_id": "9b53e25680f24e5c",
+  "_key": "!items!9b53e25680f24e5c",
+  "name": "Pied léger",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "fleet-of-foot",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Ce tour‑ci, tu peux te déplacer jusqu’à courte portée comme action supplémentaire. Effort : Ce tour‑ci, tu peux te déplacer jusqu’à longue portée comme action supplémentaire au lieu de courte portée."
+  }
+}

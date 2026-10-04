@@ -1,0 +1,28 @@
+{
+  "_id": "56fdaffa9c611092",
+  "_key": "!items!56fdaffa9c611092",
+  "name": "Muscles of Iron",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "muscles-of-iron",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Until you use a ten-minute or longer recovery, all Might actions other than attack rolls that you attempt are eased. Enabler."
+  }
+}

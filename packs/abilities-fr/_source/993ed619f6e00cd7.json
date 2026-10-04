@@ -1,0 +1,28 @@
+{
+  "_id": "993ed619f6e00cd7",
+  "_key": "!items!993ed619f6e00cd7",
+  "name": "Malgré Mes Blessures",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "despite-my-wounds",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Lorsque tu as deux blessures modérées ou plus, ou une blessure majeure, tu bénéficies d’une relance gratuite pour une action par round (comme si tu avais dépensé 1 PX). Facilitateur."
+  }
+}

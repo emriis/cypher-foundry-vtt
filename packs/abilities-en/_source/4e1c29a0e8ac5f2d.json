@@ -1,0 +1,28 @@
+{
+  "_id": "4e1c29a0e8ac5f2d",
+  "_key": "!items!4e1c29a0e8ac5f2d",
+  "name": "Spreading Fire",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "spreading-fire",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Once per turn if you take down a foe with an attack that inflicted fire damage, you can immediately make another fire-based attack on that same turn against a new foe within short range as an extra action on your turn. Enabler."
+  }
+}

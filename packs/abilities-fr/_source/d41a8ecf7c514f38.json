@@ -1,0 +1,28 @@
+{
+  "_id": "d41a8ecf7c514f38",
+  "_key": "!items!d41a8ecf7c514f38",
+  "name": "Fabricant·e de poison",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "poison-crafter",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Si tu as environ une heure, tu peux utiliser tes ressources pour fabriquer une dose de poison à appliquer sur une arme (contact). Appliquer le poison nécessite une dernière action. L’arme ainsi enduite inflige +2 dégâts jusqu’à ta prochaine récupération d’une heure ou plus. Ton expérience des poisons t’accorde d’autres avantages. Un atout pour détecter, identifier et résister aux poisons. Tes jets de défense contre le poison sont facilités. Tu subis 2 dégâts de Célérité de moins provenant d’un poison (si le poison inflige des dégâts de Célérité) ou réduis les blessures du poison d’un palier (majeure → modérée, modérée → mineure, mineure → aucune)."
+  }
+}

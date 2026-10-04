@@ -1,0 +1,28 @@
+{
+  "_id": "5e25ccb17f5abfa3",
+  "_key": "!items!5e25ccb17f5abfa3",
+  "name": "Morsure venimeuse",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "poison-bite",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu fais pousser des crocs et une mâchoire allongée, te permettant d’effectuer des attaques de morsure empoisonnées comme des attaques légères (attaque facilitée, 2 dégâts) jusqu’à ta prochaine récupération de dix minutes ou plus. Si l’attaque de morsure réussit : la cible subit +5 dégâts supplémentaires (ignore l’Armure) à cause du poison et toutes ses tâches sont entravées pendant un round."
+  }
+}

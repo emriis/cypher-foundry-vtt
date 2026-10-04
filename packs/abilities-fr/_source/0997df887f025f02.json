@@ -1,0 +1,28 @@
+{
+  "_id": "0997df887f025f02",
+  "_key": "!items!0997df887f025f02",
+  "name": "Proie Désignée",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "quarry",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Choisis une créature que tu peux voir pour en faire ta proie. Tu obtiens +1 Atout pour toutes les tâches impliquant le suivi, la compréhension, l'interaction, l'attaque ou la défense contre elle. Tes attaques contre ta proie infligent +1 dégât. Cela inclut les tâches liées à la chasse si approprié. Tu ne peux avoir qu'une seule proie à la fois. Au rang 3, tu peux avoir deux proies simultanément."
+  }
+}

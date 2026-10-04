@@ -1,0 +1,28 @@
+{
+  "_id": "3f8b03484cd1c031",
+  "_key": "!items!3f8b03484cd1c031",
+  "name": "Portée étendue",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "extended-range",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu augmentes la portée d’une de tes aptitudes mentales qui affecte une autre créature. Choisis une aptitude de focus qui affecte une créature ; sa portée augmente d’une catégorie (toucher → immédiate → courte → longue → très longue → 1,5 km → 150 km → n’importe où sur la même planète). Tu peux choisir cette aptitude plusieurs fois, chaque fois pour augmenter encore la portée d’une aptitude différente."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "89b28e772ada083c",
+  "_key": "!items!89b28e772ada083c",
+  "name": "Fruit guérisseur",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "healing-fruit",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu insuffles une magie curative dans un fruit ou une graine. Une créature qui le mange récupère 1d6 points dans la Réserve de son choix ou retire une blessure mineure. Une même créature ne peut pas bénéficier à nouveau de cet effet avant qu’elle ait pris une récupération de dix minutes ou plus. Tout fruit non consommé perd automatiquement ses propriétés lorsque tu effectues une telle récupération."
+  }
+}

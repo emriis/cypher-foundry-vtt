@@ -1,0 +1,28 @@
+{
+  "_id": "84e446c9f5f40ad2",
+  "_key": "!items!84e446c9f5f40ad2",
+  "name": "Suivant·e de base",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "basic-follower",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu gagnes un·e suivant·e de niveau 2, doté·e de deux modifications de niveau 3 (dont une en persuasion). Tu peux prendre cette aptitude autant de fois que tu veux, gagnant un·e nouveau·elle suivant·e à chaque fois."
+  }
+}

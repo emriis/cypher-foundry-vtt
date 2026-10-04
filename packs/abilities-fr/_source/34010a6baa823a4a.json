@@ -1,0 +1,28 @@
+{
+  "_id": "34010a6baa823a4a",
+  "_key": "!items!34010a6baa823a4a",
+  "name": "Léviter",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "hover",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu t’élèves lentement dans les airs. En te concentrant, tu peux rester immobile ou te déplacer d’une courte distance comme action. Sinon, tu dérives au gré du vent ou de ton élan. L’effet dure jusqu’à ta prochaine récupération de dix minutes ou plus."
+  }
+}

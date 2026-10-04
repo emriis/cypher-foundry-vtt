@@ -1,0 +1,28 @@
+{
+  "_id": "3d4242011577daa8",
+  "_key": "!items!3d4242011577daa8",
+  "name": "Connaître l’inconnu",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "knowing-the-unknown",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "En utilisant les ressources appropriées à ton personnage, tu poses une question au/à la MJ et reçois une réponse générale. Le·la MJ attribue un niveau à ta question : - information triviale et disponible ailleurs → niveau 1, - savoir obscur du passé → niveau 7, - futur → impossible."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "4d77145dfdd4b6e6",
+  "_key": "!items!4d77145dfdd4b6e6",
+  "name": "Misdirect",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "misdirect",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When an opponent misses you, you can redirect their attack to another target of your choosing that's within immediate range of you. Make an unmodified attack roll against the new target (do not use any of your or the opponent's modifiers to the attack roll, but you can apply Effort for accuracy). If the attack hits, the target takes damage equal to the attacking foe's level. Enabler."
+  }
+}

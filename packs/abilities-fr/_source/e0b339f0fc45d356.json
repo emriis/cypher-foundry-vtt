@@ -1,0 +1,28 @@
+{
+  "_id": "e0b339f0fc45d356",
+  "_key": "!items!e0b339f0fc45d356",
+  "name": "Mur d'ossements",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "wall-of-bones",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You create a barrier of bones tainted with undeath composed of four 10-foot by 10-foot (3.5 m by 3.5 m) squares, each 1 inch (2.5 cm) thick, arranged as you wish. The wall is a level 5 barrier. One or both sides emanate necrotic energy; anyone within immediate distance of such a side takes 5 damage (no rolls required) or double that if they pass through. The wall lasts until you use a ten-minute or longer recovery. Action to create."
+  }
+}

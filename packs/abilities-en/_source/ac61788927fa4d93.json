@@ -1,0 +1,28 @@
+{
+  "_id": "ac61788927fa4d93",
+  "_key": "!items!ac61788927fa4d93",
+  "name": "Eye for Detail",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "eye-for-detail",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you spend five minutes or so thoroughly exploring an area no larger than a short distance in diameter or an object you have direct access to, you can ask the GM one question about the area or object. The GM must answer you truthfully. This ability resets when you use a ten-hour recovery. Five minutes to explore the area or object."
+  }
+}

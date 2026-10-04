@@ -1,0 +1,28 @@
+{
+  "_id": "492507a99afab0e7",
+  "_key": "!items!492507a99afab0e7",
+  "name": "Fusion",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "fusion",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can fuse your manifest cyphers and artifacts with your body. You can use these fused devices with First actions (assuming their normal use requires a regular action). Action to fuse item with your body or detach it."
+  }
+}

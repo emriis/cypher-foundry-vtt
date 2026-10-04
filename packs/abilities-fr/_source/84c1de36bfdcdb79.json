@@ -1,0 +1,28 @@
+{
+  "_id": "84c1de36bfdcdb79",
+  "_key": "!items!84c1de36bfdcdb79",
+  "name": "Survie de l’explorateur·rice",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "exploration-survivor",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu sais comment survivre dans des lieux nouveaux et étranges. Après avoir passé au moins dix minutes dans une région et réussi une tâche de survie (généralement difficulté 2, ou selon le/de la MJ), tu trouves un élément utile que tu cherchais : abri (grotte, cavité d’arbre…), matériaux pour faire du feu, eau potable, gibier facile à abattre, plantes et champignons comestibles, ou encore de quoi contrer une blessure qui saigne ou un poison. Tu peux nourrir toi‑même et cinq allié·e·s tant que vous restez dans cette région. Une fois que tu as été dans un lieu notable (campement, repère naturel…), tu connais toujours la direction générale et la distance depuis l’endroit où tu te trouves."
+  }
+}

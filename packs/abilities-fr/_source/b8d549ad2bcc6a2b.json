@@ -1,0 +1,28 @@
+{
+  "_id": "b8d549ad2bcc6a2b",
+  "_key": "!items!b8d549ad2bcc6a2b",
+  "name": "HUD",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "hud",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu disposes d’un système d’affichage tête haute (HUD/ATH) qui améliore ta perception de l’environnement. Tu vois dans une faible luminosité comme s’il faisait jour. Tu vois dans l’obscurité totale comme s’il c’était de la faible luminosité. Tu peux voir jusqu’à courte portée à travers le brouillard, la fumée ou d’autres phénomènes occultants. Effort : Tu peux consacrer de l’Effort pour obtenir des effets alternatifs : - HUD de combat : Avec 2 niveaux d’Effort, le HUD souligne tes adversaires et anticipe leurs attaques ce round, t’accordant un atout à ton prochain Blocage ou Esquive. - HUD grossissant : Avec 1 niveau d’Effort, pendant deux rounds, le HUD augmente ta portée visuelle jusqu’à 10 km et te permet de voir à courte portée à travers des matériaux simples de niveau 4 ou moins (bois, béton, plastique, pierre) en fausses couleurs. - HUD scanner : Avec 2 niveaux d’Effort, pendant deux rounds, le HUD te permet de voir à portée immédiate à travers des matériaux spéciaux de niveau 4 ou moins (plomb solide, champ de force opaque) en fausses couleurs. Si le matériau spécial est niveau 6+, tu dois réussir une tâche d’Intellect pour voir à travers."
+  }
+}

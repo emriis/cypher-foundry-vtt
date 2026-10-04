@@ -1,0 +1,28 @@
+{
+  "_id": "32a2bbd4475104af",
+  "_key": "!items!32a2bbd4475104af",
+  "name": "Hindering Throw",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "hindering-throw",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 3,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your successful ranged knife attack sticks in the target, catching in their clothing, their flesh, the floor, or another adjacent surface in a way that deals normal damage and hinders their tasks on their next turn. Action."
+  }
+}

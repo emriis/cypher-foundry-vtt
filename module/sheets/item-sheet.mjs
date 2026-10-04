@@ -1,4 +1,5 @@
 import { CYPHER } from "../config.mjs";
+import { abilityActionLabel, resolveAbilityReferences } from "../abilities.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;

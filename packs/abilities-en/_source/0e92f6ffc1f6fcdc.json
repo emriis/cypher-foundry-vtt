@@ -1,0 +1,28 @@
+{
+  "_id": "0e92f6ffc1f6fcdc",
+  "_key": "!items!0e92f6ffc1f6fcdc",
+  "name": "Towering Throw",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "towering-throw",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you deal damage to a creature of your size or smaller with an unarmed attack, you throw that creature 1d20 feet away from you. The creature lands prone. While bigger than normal, each increment (Enlarge, Bigger, Huge, Gargantuan, and Colossal) increases the distance you throw the creature by another 1d6 feet and deals an additional 1 damage upon their impact. Enabler."
+  }
+}

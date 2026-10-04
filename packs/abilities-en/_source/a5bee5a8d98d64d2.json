@@ -1,0 +1,28 @@
+{
+  "_id": "a5bee5a8d98d64d2",
+  "_key": "!items!a5bee5a8d98d64d2",
+  "name": "Enhanced Beast Form",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "enhanced-beast-form",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you use Beast Form, your beast form gains the following additional bonuses: +3 to your Might Pool, +2 to your Speed Pool, and you can ignore all minor wounds from physical attacks."
+  }
+}

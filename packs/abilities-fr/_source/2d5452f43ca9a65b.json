@@ -1,0 +1,28 @@
+{
+  "_id": "2d5452f43ca9a65b",
+  "_key": "!items!2d5452f43ca9a65b",
+  "name": "Viser les yeux",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "go-for-the-eyes",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu tentes d’endommager l’œil d’un adversaire (en le frappant, en lançant de la poussière, etc.). Fais une attaque de mêlée entravée ; en cas de réussite, sa vision est altérée jusqu’à ta prochaine récupération de dix minutes ou plus, entravant toutes ses tâches dépendant de la vue (pratiquement toutes)."
+  }
+}

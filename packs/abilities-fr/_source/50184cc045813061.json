@@ -1,0 +1,28 @@
+{
+  "_id": "50184cc045813061",
+  "_key": "!items!50184cc045813061",
+  "name": "Maître du déguisement",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "master-of-disguise",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu peux créer un déguisement en tant que Dernière action, au lieu de la minute ou plus normalement requise. Si ton jet de déguisement est inférieur à 6, considère que tu as obtenu 6. (Un 1 naturel n’entraîne pas d’intrusion du·de la MJ.) L’effet se renouvelle après une récupération. Au rang 3, le minimum passe à 9. Effort : augmente le minimum obtenu de +3."
+  }
+}

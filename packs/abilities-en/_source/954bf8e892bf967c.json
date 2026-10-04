@@ -1,0 +1,28 @@
+{
+  "_id": "954bf8e892bf967c",
+  "_key": "!items!954bf8e892bf967c",
+  "name": "Craft Metal",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "craft-metal",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can manipulate metal easily, allowing you to craft metal objects without heat. You also gain an asset to all tasks involving crafting metal."
+  }
+}

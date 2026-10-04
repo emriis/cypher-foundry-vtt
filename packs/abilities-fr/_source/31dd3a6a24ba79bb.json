@@ -1,0 +1,28 @@
+{
+  "_id": "31dd3a6a24ba79bb",
+  "_key": "!items!31dd3a6a24ba79bb",
+  "name": "Assaut Psychique",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "onslaught",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu attaques un adversaire que tu peux voir en utilisant des énergies visant soit son corps, soit son esprit. Attaque physique : tu émets un rayon de force à courte portée qui inflige 4 dégâts. Attaque mentale : tu tranches dans ses pensées par une onde psychique infligeant 2 dégâts d'Intellect, ignorant l'armure. Certaines créatures dépourvues d'esprit (comme les robots) peuvent être immunisées. Au rang 3, tes attaques infligent +1 dégât."
+  }
+}

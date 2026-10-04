@@ -1,0 +1,28 @@
+{
+  "_id": "e84c844b52d7b799",
+  "_key": "!items!e84c844b52d7b799",
+  "name": "Wilderness Experience",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "wilderness-experience",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Given an hour or so, you can always find edible food and potable water in the wilderness, enough to feed yourself and a few other people. Your experience with venomous animals and poisonous plants gives you some additional protection against them. Your defense rolls against poison are eased and you reduce the severity of wounds from poison by one step (major to moderate, moderate to minor, minor to none). For example, if you are bitten by a snake whose poison inflicts a moderate wound, you'd only take a minor wound from the poison. You are immune to natural diseases. When in the wild, you ignore any task penalties and movement penalties affecting you due to tall grass, thick brush, rugged terrain, weather, and other natural causes."
+  }
+}

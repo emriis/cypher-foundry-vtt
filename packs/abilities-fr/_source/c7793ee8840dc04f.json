@@ -1,0 +1,28 @@
+{
+  "_id": "c7793ee8840dc04f",
+  "_key": "!items!c7793ee8840dc04f",
+  "name": "Compilation robotique offensive",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "compile-robotic-offense",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Ton attaque contre un robot ou une machine intelligente gagne un atout si tu l’effectues comme Dernière action plutôt qu’en action ou Première action."
+  }
+}

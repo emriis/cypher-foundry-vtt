@@ -1,0 +1,28 @@
+{
+  "_id": "76895b2d4dd1b30c",
+  "_key": "!items!76895b2d4dd1b30c",
+  "name": "Totalement relax",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "totally-chill",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Ta récupération de dix minutes prend une seule action, et ta récupération d’une heure prend dix minutes."
+  }
+}

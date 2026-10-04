@@ -1,0 +1,28 @@
+{
+  "_id": "acf0c1f7bd9004c7",
+  "_key": "!items!acf0c1f7bd9004c7",
+  "name": "Armure de Mage",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "mage-armor",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Un champ d'énergie invisible t'entoure jusqu'à ta prochaine récupération de dix heures. Tu peux tenter de bloquer une attaque avec un jet de défense d'Intellect facilité, au lieu d'un jet de défense de Puissance. En cas de réussite, tu réduis la gravité de la blessure d'un niveau. Au rang 3, ton jet de défense d'Intellect est facilité de deux paliers au total."
+  }
+}

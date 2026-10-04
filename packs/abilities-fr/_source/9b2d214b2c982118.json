@@ -1,0 +1,28 @@
+{
+  "_id": "9b2d214b2c982118",
+  "_key": "!items!9b2d214b2c982118",
+  "name": "Maître·sse du combat à mains nues",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "master-of-unarmed-fighting-style",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tes attaques à mains nues infligent +3 dégâts supplémentaires. Quand tu réussis une défense de Blocage de Puissance contre une attaque à mains nues, tu réduis sa sévérité de deux paliers au lieu d’un : - majeure → mineure, - modérée → aucune, - mineure → aucune."
+  }
+}

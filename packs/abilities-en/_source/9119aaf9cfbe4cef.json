@@ -1,0 +1,28 @@
+{
+  "_id": "9119aaf9cfbe4cef",
+  "_key": "!items!9119aaf9cfbe4cef",
+  "name": "Concealed Carry",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "concealed-carry",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can easily hide a one-handed firearm on your person, drawing or holstering it as an extra action (a First action) on your turn. Tasks to hide this weapon (whether from someone looking at you or actually searching you) are eased by two steps. You gain an asset on any task to spin, twirl, quick draw, or do another trick task involving your firearm and its holster. You can perform skillful manipulations with your firearm, including gunspinning (twirling it around one finger), shooting an icon from a playing card at long range, shooting an object held in someone's hand at long range, shooting a coin tossed skyward at long range, and so on, after which you can reholster your firearm in the blink of an eye. These acts can't hurt or affect a creature (or their equipment); however, if you do this to impress or intimidate a foe, that task is eased."
+  }
+}

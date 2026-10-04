@@ -1,0 +1,28 @@
+{
+  "_id": "e7e319932af2dd43",
+  "_key": "!items!e7e319932af2dd43",
+  "name": "Inébranlable",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "unmovable",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu ne peux pas être renversé·e, repoussé·e ou déplacé·e contre ta volonté tant que tu es debout et capable d’agir."
+  }
+}

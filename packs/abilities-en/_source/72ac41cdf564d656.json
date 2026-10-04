@@ -1,0 +1,28 @@
+{
+  "_id": "72ac41cdf564d656",
+  "_key": "!items!72ac41cdf564d656",
+  "name": "Scales",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "scales",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You grow scales all across your body until you use a ten-minute or longer recovery, during which time your block tasks are eased. Action when in your normal form; enabler when using Beast Form."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "384787d15def3411",
+  "_key": "!items!384787d15def3411",
+  "name": "Utiliser les sens d’autrui",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "use-senses-of-others",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu peux voir, entendre, sentir, toucher et goûter à travers les sens d’une autre créature à portée longue. Tu n’as pas besoin de voir la créature, mais tu dois savoir qu’elle est à portée ; si elle est intelligente et non consentante, tu dois réussir une attaque d’Intellect pour commencer à percevoir via ses sens. Tes sens partagés durent jusqu’à ta prochaine récupération de dix minutes ou plus."
+  }
+}
