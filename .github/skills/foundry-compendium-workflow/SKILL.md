@@ -28,7 +28,7 @@ item DataModel, paired `_source` entries, and tests before editing. Check
 ## Validation and packaging
 
 1. Inspect both language diffs and run focused compendium tests (for example `node --test
-   tests/compendium-sources.test.mjs`) and `npm test` when source or behavior
+   tests/content/compendium-sources.test.mjs`) and `npm test` when source or behavior
    warrants it.
 2. Rebuild each affected Foundry-readable LevelDB pack using the documented
    `@foundryvtt/foundryvtt-cli` workflow in `CONTRIBUTING.md`. The CLI may need
