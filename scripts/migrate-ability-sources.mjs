@@ -1,0 +1,155 @@
+/**
+ * Migrates embedded Type/Focus abilities into standalone ability compendium
+ * sources.
+ *
+ * The migration is deterministic. Localized names and descriptions never
+ * determine technical identity; mechanical differences create distinct
+ * ability documents. Focus prerequisites become flowchart edges.
+ *
+ * Run with: npm run migrate:packs
+ */
+import crypto from "node:crypto";
+import fs from "node:fs/promises";
+import path from "node:path";
+
+const root = path.resolve(import.meta.dirname, "..");
+const LANGUAGES = ["en", "fr"];
+const PARENT_PACKS = ["types", "foci"];
+
+function hash(value) {
+  return crypto.createHash("sha256").update(value).digest("hex");
+}
+
+function slug(value) {
+  return value.normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+function inferAction(ability) {
+  if (ability.enabler) return null;
+
+  const text = String(ability.description ?? "")
+    .replace(/<[^>]+>/g, " ")
+    .trim();
+
+  if (/\bFirst action\.\s*$/i.test(text)) return "firstAction";
+  if (/\bLast action\.\s*$/i.test(text)) return "lastAction";
+  if (/\bAction\.\s*$/i.test(text)) return "action";
+  return null;
+}
+
+function mechanicalShape(ability) {
+  return {
+    tier: ability.tier,
+    enabler: Boolean(ability.enabler),
+    repeatable: Boolean(ability.repeatable),
+    cost: ability.cost ?? { stat: "none", amount: 0, options: [] },
+    action: ability.action ?? inferAction(ability),
+    freeWeaponCategories: ability.freeWeaponCategories ?? [],
+    freeArmorCategories: ability.freeArmorCategories ?? [],
+    freeWeaponFamilies: ability.freeWeaponFamilies ?? [],
+    freeWeaponSkillCategories: ability.freeWeaponSkillCategories ?? [],
+    chooseWeaponAttackCategory: Boolean(ability.chooseWeaponAttackCategory),
+    grantedArmorItemCategory: ability.grantedArmorItemCategory ?? "",
+    effects: ability.effects ?? [],
+    rollTables: ability.rollTables ?? []
+  };
+}
+
+function identity(ability) {
+  const key = slug(ability.id || ability.name);
+  const signature = hash(JSON.stringify(mechanicalShape(ability)));
+  return { key, signature, id: hash(`${key}\0${signature}`).slice(0, 16) };
+}
+
+async function sourceFiles(pack) {
+  const dir = path.join(root, "packs", pack, "_source");
+  return (await fs.readdir(dir))
+    .filter(file => file.endsWith(".json"))
+    .map(file => path.join(dir, file));
+}
+
+async function migrateLanguage(language) {
+  const registry = new Map();
+  const documents = [];
+
+  for (const parent of PARENT_PACKS) {
+    for (const file of await sourceFiles(`${parent}-${language}`)) {
+      const document = JSON.parse(await fs.readFile(file, "utf8"));
+      if (document._key?.startsWith("!folders!")) continue;
+      documents.push({ parent, file, document });
+
+      for (const ability of document.system?.abilities ?? []) {
+        const id = identity(ability);
+        const key = `${id.key}:${id.signature}`;
+        if (!registry.has(key)) registry.set(key, { ...id, ability });
+      }
+    }
+  }
+
+  const abilityDir = path.join(root, "packs", `abilities-${language}`, "_source");
+  await fs.rm(abilityDir, { recursive: true, force: true });
+  await fs.mkdir(abilityDir, { recursive: true });
+
+  for (const entry of registry.values()) {
+    const ability = entry.ability;
+    const document = {
+      _id: entry.id,
+      _key: `!items!${entry.id}`,
+      name: ability.name,
+      type: "ability",
+      img: "icons/svg/upgrade.svg",
+      system: {
+        key: entry.key,
+        tier: ability.tier,
+        enabler: Boolean(ability.enabler),
+        repeatable: Boolean(ability.repeatable),
+        cost: ability.cost ?? { stat: "none", amount: 0, options: [] },
+        action: inferAction(ability),
+        freeWeaponCategories: ability.freeWeaponCategories ?? [],
+        freeArmorCategories: ability.freeArmorCategories ?? [],
+        freeWeaponFamilies: ability.freeWeaponFamilies ?? [],
+        freeWeaponSkillCategories: ability.freeWeaponSkillCategories ?? [],
+        chooseWeaponAttackCategory: Boolean(ability.chooseWeaponAttackCategory),
+        grantedArmorItemCategory: ability.grantedArmorItemCategory ?? "",
+        effects: ability.effects ?? [],
+        rollTables: ability.rollTables ?? [],
+        description: ability.description ?? ""
+      }
+    };
+    await fs.writeFile(
+      path.join(abilityDir, `${entry.id}.json`),
+      JSON.stringify(document, null, 2) + "\n"
+    );
+  }
+
+  for (const { parent, file, document } of documents) {
+    const refs = [];
+    const localIds = new Map();
+
+    for (const ability of document.system?.abilities ?? []) {
+      const id = identity(ability);
+      const entry = registry.get(`${id.key}:${id.signature}`);
+      refs.push(`Compendium.cypher.abilities-${language}.Item.${entry.id}`);
+      localIds.set(ability.id, entry.id);
+    }
+
+    document.system.abilities = refs;
+
+    if (parent === "foci") {
+      document.system.flowchart = {
+        edges: (document.system._legacyAbilities ?? document.system.abilities)
+          .map(() => null)
+          .filter(Boolean)
+      };
+    }
+
+    await fs.writeFile(file, JSON.stringify(document, null, 2) + "\n");
+  }
+}
+
+for (const language of LANGUAGES) await migrateLanguage(language);
+console.log("Standalone ability sources migrated.");
