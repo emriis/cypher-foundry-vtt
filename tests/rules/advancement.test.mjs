@@ -1,0 +1,69 @@
+import assert from "node:assert/strict";
+import test from "node:test";
+
+import {
+  advanceSkillLevel,
+  computeAdvancementEffects,
+  computeTierAdvancement
+} from "../../module/rules/advancement.mjs";
+
+test("advancement skill progression follows the configured skill ladder", () => {
+  assert.equal(advanceSkillLevel("inability"), "trained");
+  assert.equal(advanceSkillLevel("practiced"), "trained");
+  assert.equal(advanceSkillLevel("trained"), "specialized");
+  assert.equal(advanceSkillLevel("specialized"), "expert");
+  assert.equal(advanceSkillLevel("expert"), "expert");
+});
+
+test("advancement effects calculate capabilities, Effort, and permissions", () => {
+  const system = {
+    effort: 5,
+    recoveryBonus: 0,
+    stats: {
+      might: { pool: { max: 8, value: 8 }, edge: 0 },
+      speed: { pool: { max: 8, value: 8 }, edge: 0 },
+      intellect: { pool: { max: 8, value: 8 }, edge: 0 }
+    }
+  };
+
+  assert.deepEqual(
+    computeAdvancementEffects(
+      { type: "capabilities" },
+      { distribution: { might: 2, speed: 1 } },
+      system
+    ).updates,
+    {
+      "system.stats.might.pool.max": 10,
+      "system.stats.might.pool.value": 10,
+      "system.stats.speed.pool.max": 9,
+      "system.stats.speed.pool.value": 9
+    }
+  );
+
+  assert.equal(
+    computeAdvancementEffects({ type: "effort" }, {}, system)
+      .updates["system.effort"],
+    6
+  );
+
+  assert.deepEqual(
+    computeAdvancementEffects(
+      { type: "other", otherType: "armor" },
+      {},
+      system
+    ).updates,
+    {
+      "system.freeArmorCategories": ["light", "medium", "heavy"],
+      "system.canFreelyUseAllArmor": true
+    }
+  );
+});
+
+test("tier advancement resets four slots and caps the tier", () => {
+  const result = computeTierAdvancement(5);
+  assert.equal(result.newTier, 6);
+  assert.equal(result.freshSlots.length, 4);
+  assert.ok(result.freshSlots.every(slot => !slot.bought));
+
+  assert.equal(computeTierAdvancement(6).newTier, 6);
+});
