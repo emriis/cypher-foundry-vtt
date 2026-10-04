@@ -317,8 +317,20 @@ The remaining Type/Focus/Descriptor work should then use that boundary:
 
 ### Phase 5 — Reduce sheet responsibilities
 
-After application services exist, simplify sheet handlers so they collect
-input and delegate.
+Phase 5 is in progress. The PC sheet now delegates reusable application
+operations to focused services while retaining UI concerns such as dialogs,
+form rendering, tab preparation, and action event wiring.
+
+Current extractions:
+
+1. `applications/ability-service.mjs` — selected Ability effects and Ability-table rolls.
+2. `applications/equipment-service.mjs` — equipped-state changes and the single-equipped-armor invariant.
+3. `applications/content-service.mjs` — Focus ability-choice lookup and selection.
+4. `applications/character-service.mjs` — optional second Descriptor/Focus persistence.
+5. `rules/advancement.mjs` + `applications/advancement-service.mjs` — advancement-choice validation.
+
+The sheet remains responsible for collecting user input. It should not enforce
+persistent game invariants or duplicate deterministic validation.
 
 ### Phase 6 — Split migrations
 
@@ -364,8 +376,9 @@ Phase 4 verification is complete. Focused application-service tests cover the
 reference boundary, Actor compatibility tests cover the migrated operations, and
 the Unit Tests workflow passes on the final Phase 4 commit.
 
-Phase 5 can now reduce sheet responsibilities by moving any remaining reusable
-application logic out of `module/sheets/` while keeping UI event handling there. Do not move Type/Focus/Descriptor logic into
+Phase 5 is in progress. Continue auditing sheet handlers for duplicated
+application logic, but keep dialog construction, template context, item-sheet
+opening, and other presentation concerns inside `module/sheets/`. Do not move Type/Focus/Descriptor logic into
 the new character or damage services merely to make the Actor smaller; those
 operations have a separate content/reference boundary.
 
