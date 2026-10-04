@@ -35,6 +35,23 @@ export const CRD_SOURCE_KINDS = new Set([
 
 export const CRD_PROVENANCE_FLAG = "cypherFoundry";
 
+export const CRD_ID_PREFIXES = Object.freeze({
+  ability: "ability",
+  artifact: "artifact",
+  armor: "armor",
+  cypher: "cypher",
+  descriptor: "descriptor",
+  equipment: "equipment",
+  focus: "focus",
+  genre: "genre",
+  journal: "journal",
+  shield: "shield",
+  skill: "skill",
+  type: "type",
+  weapon: "weapon",
+  creature: "creature"
+});
+
 /**
  * Read CRD provenance metadata from a source record.
  *
