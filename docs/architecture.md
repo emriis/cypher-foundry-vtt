@@ -14,9 +14,9 @@ The system currently has these main layers:
 | Area | Current responsibility |
 | --- | --- |
 | `module/data-models/` | Foundry DataModel schemas and derived actor data |
-| `module/documents/` | Foundry Actor/Item document behavior and gameplay operations |
+| `module/documents/` | Thin Foundry Actor/Item APIs and compatibility facades |
 | `module/sheets/` | Actor/Item presentation, dialogs, and UI event handling |
-| `module/abilities.mjs` | Ability UUID resolution and ability presentation helpers |
+| `module/abilities.mjs` | Small pure Ability presentation helper |
 | `module/config.mjs` | Cypher constants and rule configuration |
 | `module/import.mjs` | Character Builder import mapping and import UI |
 | `module/migration.mjs` | World schema migration and legacy data conversion |
@@ -29,14 +29,15 @@ architectural responsibilities.
 
 ## 2. Main findings
 
-### 2.1 Actor document is the primary refactoring target
+### 2.1 Actor document is now primarily a compatibility boundary
 
-`module/documents/actor.mjs` remains the primary refactoring target. It still owns
-Foundry document lifecycle, defense mapping, compatibility facades for content
-application, ability behavior, and some document-specific character behavior.
-Task rolls, recovery, advancement, XP transactions, rerolls, Player Intrusions,
-wounds, damage, shields, armor damage, and custom character fields have been
-moved behind application-service boundaries.
+`module/documents/actor.mjs` has been reduced to a Foundry document boundary and
+compatibility API. Task rolls, defense orchestration, recovery, advancement,
+XP transactions, rerolls, Player Intrusions, wounds, damage, shields, armor
+damage, custom character fields, and Type/Focus/Descriptor application now
+delegate to focused application services or pure rules. The remaining public
+methods are intentionally retained for sheets, macros, and backwards
+compatibility.
 
 This makes the Actor document both a Foundry persistence boundary and a
 substantial gameplay rules/service layer.
@@ -45,17 +46,13 @@ The intended direction is to keep the Actor document as an orchestration
 boundary while moving pure rules and reusable application logic into focused
 modules.
 
-### 2.2 PC sheet is also carrying too much application logic
+### 2.2 PC sheet is now primarily presentation/UI
 
-`module/sheets/actor-pc-sheet.mjs` is about 39 KB.
-
-It currently handles sheet context preparation, many UI dialogs,
-Type/Focus/Descriptor selection, roll option collection, ability effect
-selection, ability roll tables, advancement interaction, inventory actions,
-armor/shield actions, and recovery/rally interaction.
-
-UI event handling belongs here, but rule decisions and data transformations
-should not increasingly accumulate in the sheet.
+`module/sheets/actor-pc-sheet.mjs` remains the largest sheet because it owns many
+user interactions, but reusable application operations have been extracted.
+It now handles context preparation, dialogs, form input, action wiring, and
+content-drop workflows, while persistent invariants and reusable state changes
+are delegated to application services.
 
 ### 2.3 Migration is a mixed responsibility
 
@@ -160,7 +157,10 @@ The extracted application services are:
 6. `applications/reference-resolver.mjs` for centralized document-reference
    resolution and expected-type validation.
 7. `applications/content-service.mjs` for Type, Focus, Focus-ability selection,
-   and Descriptor/species application.
+   Descriptor/species application, and standalone content-reference resolution.
+8. `applications/ability-service.mjs` for Ability effect/table operations.
+9. `applications/equipment-service.mjs` for equipment invariants.
+10. `applications/item-service.mjs` for Item use, attack, and depletion use cases.
 
 These services own Foundry-specific orchestration such as dice evaluation,
 document updates, Pool/XP transactions, and chat output while delegating
@@ -317,19 +317,21 @@ The remaining Type/Focus/Descriptor work should then use that boundary:
 
 ### Phase 5 — Reduce sheet responsibilities
 
-Phase 5 is in progress. The PC sheet now delegates reusable application
+Phase 5 is complete. The PC sheet now delegates reusable application
 operations to focused services while retaining UI concerns such as dialogs,
 form rendering, tab preparation, and action event wiring.
 
-Current extractions:
+Completed extractions:
 
 1. `applications/ability-service.mjs` — selected Ability effects and Ability-table rolls.
 2. `applications/equipment-service.mjs` — equipped-state changes and the single-equipped-armor invariant.
 3. `applications/content-service.mjs` — Focus ability-choice lookup and selection.
 4. `applications/character-service.mjs` — optional second Descriptor/Focus persistence.
 5. `rules/advancement.mjs` + `applications/advancement-service.mjs` — advancement-choice validation.
+6. `applications/item-service.mjs` — reusable Item use cases and attack/depletion orchestration.
+7. `applications/task-service.mjs` — defense orchestration, leaving the Actor as a facade.
 
-The sheet remains responsible for collecting user input. It should not enforce
+The PC sheet remains responsible for collecting user input and presentation. It should not enforce
 persistent game invariants or duplicate deterministic validation.
 
 ### Phase 6 — Split migrations
@@ -376,11 +378,13 @@ Phase 4 verification is complete. Focused application-service tests cover the
 reference boundary, Actor compatibility tests cover the migrated operations, and
 the Unit Tests workflow passes on the final Phase 4 commit.
 
-Phase 5 is in progress. Continue auditing sheet handlers for duplicated
-application logic, but keep dialog construction, template context, item-sheet
-opening, and other presentation concerns inside `module/sheets/`. Do not move Type/Focus/Descriptor logic into
-the new character or damage services merely to make the Actor smaller; those
-operations have a separate content/reference boundary.
+The general architecture audit identified three additional cleanup points that
+were addressed during Phase 5: Item gameplay methods were moved behind an Item
+application service, defense orchestration was removed from Actor, and the
+Item sheet was updated to resolve standalone Type/Focus ability UUIDs before
+rendering them. The remaining large modules are now dominated by presentation,
+Foundry lifecycle, migration, or intentionally cross-cutting application logic.
+The next architectural phase is migration decomposition.
 
 ## 8. Domain organization
 
