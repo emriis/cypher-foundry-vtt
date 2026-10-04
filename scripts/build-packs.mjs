@@ -13,6 +13,8 @@ const root = path.resolve(import.meta.dirname, "..");
 const packs = [
   "descriptors-en",
   "descriptors-fr",
+  "abilities-en",
+  "abilities-fr",
   "types-en",
   "types-fr",
   "foci-en",
