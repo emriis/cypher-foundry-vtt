@@ -192,39 +192,49 @@ async function createAbilityPack(language, canonicalAbilities) {
   return { entries, names };
 }
 
-function abilityRef(language, ability, entries) {
+function abilityRef(language, ability, entries, canonicalAbilities) {
   const key = `${ability.id}:${mechanicalSignature(ability)}`;
-  const id = entries.get(key);
+  let id = entries.get(key);
+
+  if (!id) {
+    const candidates = [...canonicalAbilities.entries()]
+      .filter(([candidateKey]) => candidateKey.startsWith(`${ability.id}:`))
+      .map(([candidateKey]) => entries.get(candidateKey))
+      .filter(Boolean);
+
+    if (candidates.length === 1) id = candidates[0];
+  }
+
   if (!id) {
     throw new Error(
-      `No standalone ability for ${ability.id} (${ability.name})`
+      `No unambiguous standalone ability for ${ability.id} (${ability.name})`
     );
   }
 
   return `Compendium.cypher.${PACKS[language].abilities}.Item.${id}`;
 }
 
-async function rewriteTypes(language, entries) {
+async function rewriteTypes(language, entries, canonicalAbilities) {
   const directory = path.join(root, "packs", PACKS[language].types, "_source");
 
   for (const { name, data } of await readDocuments(PACKS[language].types)) {
     if (data._key.startsWith("!folders!")) continue;
 
     data.system.abilities = (data.system.abilities ?? [])
-      .map(ability => abilityRef(language, ability, entries));
+      .map(ability => abilityRef(language, ability, entries, canonicalAbilities));
 
     await writeDocument(directory, name, data);
   }
 }
 
-async function rewriteFoci(language, entries) {
+async function rewriteFoci(language, entries, canonicalAbilities) {
   const directory = path.join(root, "packs", PACKS[language].foci, "_source");
 
   for (const { name, data } of await readDocuments(PACKS[language].foci)) {
     if (data._key.startsWith("!folders!")) continue;
 
     const abilities = data.system.abilities ?? [];
-    const refs = abilities.map(ability => abilityRef(language, ability, entries));
+    const refs = abilities.map(ability => abilityRef(language, ability, entries, canonicalAbilities));
     const byId = new Map();
 
     abilities.forEach((ability, index) => {
@@ -233,7 +243,7 @@ async function rewriteFoci(language, entries) {
 
     const edges = [];
     for (const ability of abilities) {
-      const to = abilityRef(language, ability, entries);
+      const to = abilityRef(language, ability, entries, canonicalAbilities);
 
       for (const prerequisite of ability.prerequisites ?? []) {
         const from = byId.get(prerequisite);
@@ -257,10 +267,10 @@ const canonicalAbilities = await collectCanonicalAbilities();
 const english = await createAbilityPack("en", canonicalAbilities);
 const french = await createAbilityPack("fr", canonicalAbilities);
 
-await rewriteTypes("en", english.entries);
-await rewriteFoci("en", english.entries);
-await rewriteTypes("fr", french.entries);
-await rewriteFoci("fr", french.entries);
+await rewriteTypes("en", english.entries, canonicalAbilities);
+await rewriteFoci("en", english.entries, canonicalAbilities);
+await rewriteTypes("fr", french.entries, canonicalAbilities);
+await rewriteFoci("fr", french.entries, canonicalAbilities);
 
 const variants = [...english.names.entries()]
   .filter(([, values]) => values.length > 1)
