@@ -1,11 +1,6 @@
-import { test, expect } from "@playwright/test";
-import { joinAsGamemaster } from "./foundry-session.mjs";
+import { test, expect } from "./foundry-session-fixture.mjs";
 
 test.describe("Cypher Foundry live runtime", () => {
-  test.beforeEach(async ({ page }) => {
-    await joinAsGamemaster(page);
-  });
-
   test("loads the Cypher system and its document models", async ({ page }) => {
     const result = await page.evaluate(() => ({
       systemId: game.system.id,
