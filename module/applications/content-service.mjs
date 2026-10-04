@@ -28,9 +28,8 @@ async function applyTypeInternal(actor, typeItem, { stat = null, skillName = nul
     "ability"
   );
   if (abilities.length !== (typeItem.system.abilities ?? []).length) {
-    ui.notifications.warn(
-      game.i18n.localize("CYPHER.Ability.ReferenceMissing")
-    );
+    console.warn("Cypher | A Type or Focus references an unavailable ability.");
+    return false;
     return false;
   }
 
@@ -133,7 +132,7 @@ export async function applyFocus(actor, focusItem, abilityIds, weaponSkillCatego
   );
   if (abilities.length !== (focusItem.system.abilities ?? []).length) {
     ui.notifications.warn(
-      game.i18n.localize("CYPHER.Ability.ReferenceMissing")
+      "CYPHER.Ability.ReferenceMissing"
     );
     return false;
   }
@@ -388,7 +387,7 @@ export async function applyDescriptor(
   }
 
   await ChatMessage.create({
-    speaker: ChatMessage.getSpeaker({ actor: this }),
+    speaker: ChatMessage.getSpeaker({ actor }),
     content: `<div class="cypher-roll-card">
       <h3>${game.i18n.format(isSpecies ? "CYPHER.Descriptor.SpeciesApplied" : "CYPHER.Descriptor.Applied", { name: descriptorItem.name })}</h3>
       ${chosenStat && amount > 0 ? `<p>${game.i18n.format("CYPHER.Descriptor.StatNote", { amount, stat: game.i18n.localize(`CYPHER.Stat.${chosenStat}`) })}</p>` : ""}
