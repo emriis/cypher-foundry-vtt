@@ -725,6 +725,7 @@ test("NPC damage uses armor before reducing health and can ignore armor", async 
   const actor = {
     type: "npc",
     system: { armor: 2, health: { value: 10, max: 10 } },
+    _applyNpcDamage: CypherActor.prototype._applyNpcDamage,
     update: async changes => {
       updates.push(changes);
       actor.system.health.value = changes["system.health.value"];
