@@ -1,4 +1,4 @@
-// Verifies that each source pack has a compiled LevelDB directory for Foundry to load.
+// Verifies that each declared source pack has a compiled LevelDB directory.
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
@@ -11,25 +11,17 @@ const packNames = [
   "types-en",
   "types-fr",
   "foci-en",
-  "foci-fr"
+  "foci-fr",
+  "abilities-en",
+  "abilities-fr"
 ];
 
 for (const packName of packNames) {
   test(`compiled compendium pack exists: ${packName}`, () => {
     const directory = path.join(root, "packs", packName);
-
     assert.ok(fs.existsSync(directory), `Missing pack directory: ${packName}`);
-    assert.ok(
-      fs.existsSync(path.join(directory, "_source")),
-      `Missing source directory: ${packName}`
-    );
-    assert.ok(
-      fs.existsSync(path.join(directory, "CURRENT")),
-      `Missing LevelDB CURRENT file: ${packName}`
-    );
-    assert.ok(
-      fs.readdirSync(directory).some(file => file.startsWith("MANIFEST-")),
-      `Missing LevelDB manifest: ${packName}`
-    );
+    assert.ok(fs.existsSync(path.join(directory, "_source")));
+    assert.ok(fs.existsSync(path.join(directory, "CURRENT")));
+    assert.ok(fs.readdirSync(directory).some(file => file.startsWith("MANIFEST-")));
   });
 }
