@@ -43,6 +43,9 @@ export function createAbilityEffectsField() {
   return new ArrayField(new SchemaField({
     id: new StringField({ required: true, blank: false }),
     name: new StringField({ required: true, blank: false }),
+    tier: new NumberField({
+      required: true, integer: true, nullable: true, initial: null, min: 1, max: 6
+    }),
     description: new HTMLField({ required: true, blank: true }),
     effort: new HTMLField({ required: true, blank: true })
   }), { required: true, initial: [] });
