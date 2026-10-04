@@ -11,6 +11,7 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ### Changed
 
+- Completed the Phase 8 architecture refactor: dependency rules are now enforced by an automated static audit, Foundry E2E executable discovery is isolated and tested, concrete remaining dependency violations were corrected, and the architecture/development documentation now records the stable application, document, sheet, rules, migration, import, content, and test boundaries.
 - Continued the Phase 3 architecture refactor: task, recovery, advancement, XP, reroll,
   Player Intrusion, damage, wound, shield, armor, and custom-character operations now live in
   focused Foundry-aware application services, while Actor methods remain compatibility facades.
