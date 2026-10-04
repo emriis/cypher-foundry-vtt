@@ -20,9 +20,9 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
   boundary and the next Phase 4 Type/Focus/Descriptor reference-resolution work.
 - Removed Actor-owned stat resolution from the application path and added a pure
   `rules/stats.mjs` helper with dedicated tests.
-- Started Phase 4 by moving Type, Focus, Focus-ability selection, and Descriptor/species
+- Completed Phase 4 by moving Type, Focus, Focus-ability selection, and Descriptor/species
   application into `applications/content-service.mjs`, including UUID-backed ability
-  resolution and dedicated application-boundary tests.
+  resolution, Actor compatibility facades, and dedicated application-boundary tests.
 - Updated project documentation to reflect the current six-pack compendium layout,
   live E2E harness, and current CI/release workflow.
 - Improved Type compendium sheets with the description first and localized displays for Type benefits and abilities.
