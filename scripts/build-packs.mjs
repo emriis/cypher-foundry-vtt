@@ -11,16 +11,19 @@ import path from "node:path";
 import { migrateAbilitySources } from "./migrate-ability-sources.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
-const packs = [
-  "descriptors-en",
-  "descriptors-fr",
-  "abilities-en",
-  "abilities-fr",
-  "types-en",
-  "types-fr",
-  "foci-en",
-  "foci-fr"
-];
+async function discoverPacks() {
+  const packsRoot = path.join(root, "packs");
+  const entries = await fs.readdir(packsRoot, { withFileTypes: true });
+
+  return entries
+    .filter(entry => entry.isDirectory())
+    .map(entry => entry.name)
+    .filter(name => name !== "_source")
+    .filter(name => name.endsWith("-en") || name.endsWith("-fr"))
+    .sort();
+}
+
+const packs = await discoverPacks();
 
 async function compile() {
   await migrateAbilitySources();
