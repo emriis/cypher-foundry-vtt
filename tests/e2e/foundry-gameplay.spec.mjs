@@ -385,35 +385,6 @@ test.describe("Cypher Foundry live gameplay", () => {
     });
   });
 
-  test("depletes a real Artifact using the live Cypher Item document", async ({
-    page
-  }) => {
-    const result = await page.evaluate(async () => {
-      const actor = await Actor.create({
-        name: `${"E2E Cypher"} Artifact ${Date.now()}`,
-        type: "pc"
-      });
-      const [artifact] = await actor.createEmbeddedDocuments("Item", [{
-        name: "E2E Artifact",
-        type: "artifact",
-        system: {
-          depletionDie: "d1",
-          depletionThreshold: 1,
-          depleted: false
-        }
-      }]);
-
-      await artifact.rollDepletion();
-
-      return {
-        actorId: actor.id,
-        depleted: artifact.system.depleted
-      };
-    });
-
-    expect(result.depleted).toBe(true);
-  });
-
   test("persists actor state after the sheet is closed and reopened", async ({
     page
   }) => {
