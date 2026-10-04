@@ -11,7 +11,8 @@ permissions:
 jobs:
   normalize:
     if: >-
-      !startsWith(github.event.head_commit.message, 'chore: normalize standalone ability sources')
+      !startsWith(github.event.head_commit.message, 'chore: normalize standalone ability sources') &&
+      !startsWith(github.event.head_commit.message, 'chore: ability migration diagnostics')
     runs-on: ubuntu-latest
 
     steps:
@@ -31,7 +32,26 @@ jobs:
         run: npm ci
 
       - name: Normalize ability sources
-        run: npm run migrate:abilities
+        id: migrate
+        continue-on-error: true
+        run: |
+          npm run migrate:abilities 2>&1 | tee /tmp/ability-migration.log
+          exit ${PIPESTATUS[0]}
+
+      - name: Save migration diagnostics
+        if: steps.migrate.outcome == 'failure'
+        run: |
+          cp /tmp/ability-migration.log docs/ability-migration-error.log
+
+      - name: Commit migration diagnostics
+        if: steps.migrate.outcome == 'failure'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/ability-migration-error.log
+          git commit -m "chore: ability migration diagnostics"
+          git push origin HEAD:feature/standalone-ability-compendiums
+          exit 1
 
       - name: Build compendium packs
         run: npm run build:packs
