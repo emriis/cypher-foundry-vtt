@@ -127,10 +127,11 @@ async function migrateLanguage(language) {
   }
 
   for (const { parent, file, document } of documents) {
+    const legacyAbilities = document.system?.abilities ?? [];
     const refs = [];
     const localIds = new Map();
 
-    for (const ability of document.system?.abilities ?? []) {
+    for (const ability of legacyAbilities) {
       const id = identity(ability);
       const entry = registry.get(`${id.key}:${id.signature}`);
       refs.push(`Compendium.cypher.abilities-${language}.Item.${entry.id}`);
@@ -141,9 +142,12 @@ async function migrateLanguage(language) {
 
     if (parent === "foci") {
       document.system.flowchart = {
-        edges: (document.system._legacyAbilities ?? document.system.abilities)
-          .map(() => null)
-          .filter(Boolean)
+        edges: legacyAbilities.flatMap(ability =>
+          (ability.prerequisites ?? []).map(prerequisite => ({
+            from: localIds.get(prerequisite),
+            to: localIds.get(ability.id)
+          }))
+        ).filter(edge => edge.from && edge.to)
       };
     }
 
