@@ -253,11 +253,12 @@ export async function selectFocusAbility(actor, abilityId, weaponSkillCategory =
       ...freeWeaponSkillCategories
     ])];
   }
+  const source = await resolveDocumentReferences([ability.uuid], "ability");
+  if (source.length !== 1) return false;
+
   await actor.update({
     ...updates
   });
-  const source = await resolveDocumentReferences([ability.uuid], "ability");
-  if (source.length !== 1) return false;
 
   const items = [{
     name: source[0].name,
