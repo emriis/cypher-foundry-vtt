@@ -1,9 +1,9 @@
 import { test, expect } from "@playwright/test";
+import { joinAsGamemaster } from "./foundry-session.mjs";
 
 test.describe("Cypher Foundry live runtime", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto(process.env.FOUNDRY_URL || "http://127.0.0.1:30000");
-    await page.waitForFunction(() => globalThis.game?.ready === true);
+    await joinAsGamemaster(page);
   });
 
   test("loads the Cypher system and its document models", async ({ page }) => {
