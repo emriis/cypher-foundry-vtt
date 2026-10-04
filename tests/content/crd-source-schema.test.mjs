@@ -72,3 +72,30 @@ test("does not rewrite source mechanics", () => {
   assert.deepEqual(validateCrdSourceRecord(record), []);
   assert.equal(record.system.cost.amount, 5);
 });
+
+
+test("requires document-aware Foundry keys", () => {
+  const actor = {
+    _id: "0123456789abcdef",
+    _key: "!actors!0123456789abcdef",
+    document: "Actor",
+    name: "Example Creature",
+    crdType: "creature",
+    type: "npc",
+    flags: {
+      cypherFoundry: {
+        crd: {
+          version: "2026-07-29",
+          logicalId: "creature.example-creature",
+          language: "en",
+          sourceKind: "record",
+          section: "Creatures",
+          sourceLocator: "CRD p. 400",
+          transformations: []
+        }
+      }
+    }
+  };
+
+  assert.deepEqual(validateCrdSourceRecord(actor), []);
+});
