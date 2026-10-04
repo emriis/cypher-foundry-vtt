@@ -88,3 +88,40 @@ test("each declared pack has a corresponding language-specific source set", () =
     }
   }
 });
+
+test("static localization keys used by templates and modules exist in both locales", () => {
+  const locales = ["lang/en.json", "lang/fr.json"].map(readJson);
+  const localeKeySets = locales.map(locale => new Set(flattenKeys(locale)));
+
+  const sourceFiles = [
+    "templates/actor/community/body.hbs",
+    "templates/actor/community/header.hbs",
+    "templates/actor/npc/body.hbs",
+    "templates/actor/npc/header.hbs",
+    "templates/actor/parts/abilities.hbs",
+    "templates/actor/parts/advancement.hbs",
+    "templates/actor/parts/biography.hbs",
+    "templates/actor/parts/header.hbs",
+    "templates/actor/parts/inventory.hbs",
+    "templates/actor/parts/main.hbs",
+    "templates/actor/parts/skills.hbs",
+    "templates/item/parts/body.hbs",
+    "templates/item/parts/header.hbs"
+  ];
+
+  const keys = new Set();
+  const pattern = /localize\s+['"]([^'"]+)['"]/g;
+
+  for (const relativePath of sourceFiles) {
+    const source = fs.readFileSync(path.join(root, relativePath), "utf8");
+    for (const match of source.matchAll(pattern)) {
+      keys.add(match[1]);
+    }
+  }
+
+  for (const key of keys) {
+    for (const localeKeys of localeKeySets) {
+      assert.ok(localeKeys.has(key), `Missing locale key: ${key}`);
+    }
+  }
+});
