@@ -1,5 +1,7 @@
 import {
+  computeRallyResult,
   computeRecoveryUpdates,
+  getRallyCost,
   getRecoveryRollData
 } from "../rules/recovery.mjs";
 
