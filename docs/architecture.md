@@ -19,7 +19,7 @@ The system currently has these main layers:
 | `module/abilities.mjs` | Small pure Ability presentation helper |
 | `module/config.mjs` | Cypher constants and rule configuration |
 | `module/import.mjs` | Character Builder import mapping and import UI |
-| `module/migration.mjs` | World schema migration and legacy data conversion |
+| `module/migration.mjs` | Compatibility facade for world migration orchestration |\n| `module/migrations/` | Migration orchestration and isolated schema/content transformations |
 | `scripts/` | Pack compilation, source migration, packaging, and E2E orchestration |
 | `cypher.mjs` | Foundry registration and global document/UI hooks |
 | `tests/` | Rule, integration, content-contract, migration, and E2E tests |
