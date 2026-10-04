@@ -1,8 +1,8 @@
 /**
- * Builds Foundry-readable LevelDB packs from the editable JSON sources.
+ * Builds Foundry-readable LevelDB packs from editable JSON sources.
  *
- * The script compiles into a temporary workspace first, then replaces each
- * pack's generated files while preserving its `_source` authoring directory.
+ * Ability content is authored as standalone Items and referenced by Types and
+ * Foci through Document UUIDs.
  */
 import { compilePack } from "@foundryvtt/foundryvtt-cli";
 import fs from "node:fs/promises";
@@ -13,6 +13,8 @@ const root = path.resolve(import.meta.dirname, "..");
 const packs = [
   "descriptors-en",
   "descriptors-fr",
+  "abilities-en",
+  "abilities-fr",
   "types-en",
   "types-fr",
   "foci-en",
@@ -20,8 +22,9 @@ const packs = [
 ];
 
 async function compile() {
-  // Keep intermediate compiler output outside the repository's pack folders.
-  const workspace = await fs.mkdtemp(path.join(os.tmpdir(), "cypher-packs-"));
+  const workspace = await fs.mkdtemp(
+    path.join(os.tmpdir(), "cypher-packs-")
+  );
 
   try {
     for (const pack of packs) {
@@ -32,7 +35,6 @@ async function compile() {
       console.log(`Building ${pack}...`);
       await compilePack(source, output, { recursive: true });
 
-      // Remove the previous compiled database, but keep the editable source directory.
       const entries = await fs.readdir(destination);
       for (const entry of entries) {
         if (entry !== "_source") {
@@ -52,7 +54,6 @@ async function compile() {
       }
     }
   } finally {
-    // Always remove the temporary workspace, even when one pack fails to compile.
     await fs.rm(workspace, { recursive: true, force: true });
   }
 }
