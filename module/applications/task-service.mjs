@@ -58,6 +58,15 @@ export async function rollDefense(
         : "CYPHER.Defense.Dodge"
     )
   });
+
+  if (!result) return null;
+  return {
+    ...result,
+    stat,
+    armorModifier,
+    defenseType,
+    incomingSeverity
+  };
 }
 
 /**
