@@ -17,10 +17,8 @@ export const CRD_FIXTURE_IDS = Object.freeze({
   shotgun: "0123456789abc009",
   backpack: "0123456789abc010",
   adhesionBomb: "0123456789abc011",
-  angelicWard: "0123456789abc012",
   mediumArmor: "0123456789abc013",
-  skillWithAttacks: "0123456789abc014",
-  blackDog: "0123456789abc015"
+  skillWithAttacks: "0123456789abc014"
 });
 
 function provenance(logicalId, sourceLocator, sourceKind = "record") {
@@ -256,36 +254,6 @@ export const CRD_SKILL_FIXTURE = item(
   "Real-World Skills — Attacking (tier restricted)"
 );
 
-export const CRD_CREATURE_FIXTURE = {
-  _id: "0123456789abc015",
-  _key: "!actors!0123456789abc015",
-  document: "Actor",
-  type: "npc",
-  name: "Giant spider",
-  crdType: "creature",
-  system: {
-    level: 3,
-    health: { max: 12, value: 12 },
-    armor: 0,
-    damage: "3 + 1 Speed damage from poison",
-    movement: "long on webs",
-    modifications: "Perception as level 5; Speed defense as level 4",
-    combat: "Bite inflicts 3 damage plus 1 Speed damage from poison.",
-    interaction: "",
-    use: "",
-    loot: "",
-    gmNotes: ""
-  },
-  flags: {
-    cypherFoundry: {
-      crd: provenance(
-        "creature.giant-spider",
-        "Fantasy Genre — Casts Spells — Summon Giant Spider"
-      )
-    }
-  }
-};
-
 export const CRD_TIERED_ABILITY_FIXTURE = item(
   "0123456789abc016",
   "Always Tinkering",
@@ -339,9 +307,7 @@ export const CRD_FIXTURES = Object.freeze([
   CRD_WEAPON_FIXTURE,
   CRD_EQUIPMENT_FIXTURE,
   CRD_CYPHER_FIXTURE,
-  CRD_ARTIFACT_FIXTURE,
   CRD_ARMOR_FIXTURE,
   CRD_SKILL_FIXTURE,
-  CRD_CREATURE_FIXTURE,
   CRD_TIERED_ABILITY_FIXTURE
 ]);
