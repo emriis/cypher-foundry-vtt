@@ -4,6 +4,8 @@
  * Armor affects defensive task difficulty and may also impose a Speed
  * hindrance when the character cannot freely use its category.
  */
+import { CYPHER } from "../config.mjs";
+
 const { StringField, HTMLField, BooleanField, NumberField } = foundry.data.fields;
 
 export default class CypherArmorData extends foundry.abstract.TypeDataModel {
