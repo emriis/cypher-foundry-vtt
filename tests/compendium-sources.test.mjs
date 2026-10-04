@@ -36,7 +36,6 @@ function mechanicalAbilityShape(ability) {
     prerequisites: ability.prerequisites,
     effects: (ability.effects ?? []).map(effect => ({
       id: effect.id,
-      effort: effect.effort,
       enabler: effect.enabler,
       cost: effect.cost,
       action: effect.action,
