@@ -128,3 +128,46 @@ mechanics instead.
 The normal GitHub Actions suite remains deterministic and does not require a
 Foundry installation or license. Live E2E tests are intended for a local
 Foundry environment or a dedicated self-hosted runner.
+
+
+## World and session lifetime
+
+The E2E runner creates **one** disposable world per complete
+`npm run test:e2e` execution. Foundry remains open and that same world stays
+active for the complete Playwright suite.
+
+Playwright is configured with a single worker and uses one worker-scoped
+browser page. The Gamemaster joins the world once at the beginning of the
+worker; individual tests do not return to the Foundry join screen.
+
+Actors created by the E2E tests are cleaned up after the worker finishes.
+Only after Playwright has completely finished does the runner stop the
+Foundry process. The temporary Foundry data directory, including the world,
+is then removed.
+
+This ordering is intentional:
+
+```text
+start Foundry
+    |
+    v
+create + open ONE world
+    |
+    v
+join Gamemaster ONCE
+    |
+    v
+all E2E tests
+    |
+    v
+cleanup test Actors
+    |
+    v
+close browser
+    |
+    v
+STOP Foundry
+    |
+    v
+delete temporary Data/world
+```
