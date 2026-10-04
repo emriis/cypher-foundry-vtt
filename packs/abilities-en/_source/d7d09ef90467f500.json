@@ -1,0 +1,28 @@
+{
+  "_id": "d7d09ef90467f500",
+  "_key": "!items!d7d09ef90467f500",
+  "name": "Electromagnetically Charge",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "electromagnetically-charge",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": "lastAction",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You gather energy from the electromagnetic fields that invisibly fill most locations, then use it to heal yourself, reducing the severity of one of your wounds. You are healed of a minor wound, reduce a moderate wound to a minor wound, or reduce a major wound to a moderate wound. Alternatively, you can use this ability to restore charge to a mundane handheld device, such as a cell phone or small radio, that uses electricity and has lost its charge or whose batteries have been exhausted. Each time you use this ability, the Intellect point cost increases by 1. The cost returns to 1 after you take a recovery. Last action."
+  }
+}

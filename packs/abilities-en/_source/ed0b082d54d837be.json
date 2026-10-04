@@ -1,0 +1,28 @@
+{
+  "_id": "ed0b082d54d837be",
+  "_key": "!items!ed0b082d54d837be",
+  "name": "Flight Not Fight",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "flight-not-fight",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If you use your action only to move, your dodge tasks are eased until your next turn. Enabler."
+  }
+}

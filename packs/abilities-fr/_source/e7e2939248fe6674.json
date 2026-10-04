@@ -1,0 +1,28 @@
+{
+  "_id": "e7e2939248fe6674",
+  "_key": "!items!e7e2939248fe6674",
+  "name": "Divination",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "divination",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu contactes une entité puissante (divinité, démon, être extradimensionnel), poses une question, et reçois une réponse générale. Le·la MJ attribue un niveau à la question (plus la réponse est obscure, plus la tâche est difficile) : - informations trouvables ailleurs qu’ici : niveau 1 - connaissance obscure du passé : niveau 7 - connaître précisément l’avenir au‑delà de quelques minutes : impossible"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "fcd066ed475de21d",
+  "_key": "!items!fcd066ed475de21d",
+  "name": "Amélioration machine",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "machine-enhancement",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Chaque fois que tu consacres de l’Effort à une action d’Intellect, ajoute au choix : un niveau d’Effort gratuit ou un effet mineur sur l’action."
+  }
+}

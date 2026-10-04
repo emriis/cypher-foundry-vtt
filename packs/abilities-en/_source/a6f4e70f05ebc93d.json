@@ -1,0 +1,28 @@
+{
+  "_id": "a6f4e70f05ebc93d",
+  "_key": "!items!a6f4e70f05ebc93d",
+  "name": "Letting Their Guard Down",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "letting-their-guard-down",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If you interact with an intelligent NPC and successfully use disguise or deception against them, they reveal some minor additional information, such as which door is never locked, how many guards are on the upper level, or which way the king plans on ruling on a matter before him. Enabler."
+  }
+}

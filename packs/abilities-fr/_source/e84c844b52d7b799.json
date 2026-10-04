@@ -1,0 +1,28 @@
+{
+  "_id": "e84c844b52d7b799",
+  "_key": "!items!e84c844b52d7b799",
+  "name": "Expérience des étendues sauvages",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "wilderness-experience",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "En une heure environ, tu trouves toujours nourriture et eau potable pour toi et quelques autres. Tes connaissances des animaux venimeux et plantes toxiques t’accordent : des défenses contre le poison facilitées, les blessures dues au poison sont réduites d’un palier et une immunité aux maladies naturelles. Dans la nature, tu ignores tous les malus sur les tâches et les déplacements dus à la végétation dense, au terrain difficile, au climat, etc."
+  }
+}

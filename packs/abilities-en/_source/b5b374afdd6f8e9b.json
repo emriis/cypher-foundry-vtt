@@ -1,0 +1,28 @@
+{
+  "_id": "b5b374afdd6f8e9b",
+  "_key": "!items!b5b374afdd6f8e9b",
+  "name": "On the Crew",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "on-the-crew",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "While you are working with a team of at least two other allies, you give them a short pep talk and grant yourself and them one of the following abilities until you use a ten-minute or longer recovery. +1 damage on attacks Ignore the first minor wound taken Add +6 to next recovery Last action to initiate."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "c73368cb0dc40e04",
+  "_key": "!items!c73368cb0dc40e04",
+  "name": "Cybernétique défensive",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "defensive-cybernetics",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Une partie de ton corps est constituée d’éléments mécaniques persistants, internes et/ou externes. Décide avec le·la MJ de ta forme et de ta configuration exactes. Si tu as une blessure mineure ou modérée, tu peux te reprendre pour la retirer sans dépenser de Puissance, en utilisant simplement une action. L’aptitude se renouvelle à chaque récupération."
+  }
+}

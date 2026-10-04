@@ -1,0 +1,28 @@
+{
+  "_id": "49446be20ddc2dd5",
+  "_key": "!items!49446be20ddc2dd5",
+  "name": "Poigne de golem",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "golem-grip",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu peux facilement saisir tes ennemis avec tes poings de pierre. Fais une attaque facilitée contre un adversaire. Si tu réussis, tu limites ses mouvements, l’empêchant de s’éloigner et gênant ses attaques physiques ainsi que ses tentatives pour se libérer. Si la cible tente de se libérer lors de son action, tu dois réussir un jet de Puissance pour continuer à la maintenir. Si tu retiens une cible, tu peux la serrer automatiquement à ton tour (sans jet requis), infligeant 4 points de dégâts."
+  }
+}

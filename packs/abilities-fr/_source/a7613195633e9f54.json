@@ -1,0 +1,28 @@
+{
+  "_id": "a7613195633e9f54",
+  "_key": "!items!a7613195633e9f54",
+  "name": "Représailles éclair",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "retaliatory-swipe",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Lorsqu’une attaque de mêlée te touche, tu peux immédiatement effectuer une attaque de mêlée contre l’assaillant·e. Tu ne peux utiliser cette aptitude qu’une fois par tour."
+  }
+}

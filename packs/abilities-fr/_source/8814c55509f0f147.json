@@ -1,0 +1,28 @@
+{
+  "_id": "8814c55509f0f147",
+  "_key": "!items!8814c55509f0f147",
+  "name": "Prêter Forme animale",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "lend-animal-shape",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu te changes en animal comme avec Forme animale, et une créature consentante à portée immédiate se transforme aussi en cet animal (ours, tigre, loup, etc.) jusqu’à ta prochaine récupération de dix minutes ou plus, comme si elle utilisait ton aptitude Forme animale. Toutes les créatures transformées doivent être de ta taille ou plus petites. Une créature peut revenir à sa forme normale au prix d’une action, mais elle ne peut pas reprendre forme animale ensuite. Une créature changeant de forme (que ce soit toi ou quelqu’un d’autre) n’affecte pas les autres créatures affectées par cette aptitude. Consacrer de l’Effort : Affecter une créature supplémentaire."
+  }
+}

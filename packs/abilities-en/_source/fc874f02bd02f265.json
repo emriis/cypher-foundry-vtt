@@ -1,0 +1,28 @@
+{
+  "_id": "fc874f02bd02f265",
+  "_key": "!items!fc874f02bd02f265",
+  "name": "Winter's Grip",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "winter-s-grip",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Make an Intellect attack against a foe within short range. Success means they are restrained by a layer of ice until you use a ten-minute or longer recovery or until they use an action to break free. The foe can't move from their current position, and their physical tasks (including attacks and defense) are hindered. If Ice Armor is active and you instead touch the foe, the Intellect attack is eased and you add the 2 damage from your cold touch. Effort: Inflict 3 damage from cold on the round the foe is first held. Action."
+  }
+}

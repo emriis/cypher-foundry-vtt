@@ -1,0 +1,28 @@
+{
+  "_id": "90142c54921ed78b",
+  "_key": "!items!90142c54921ed78b",
+  "name": "Main électrique",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "lightning-hand",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tes mains crépitent d’électricité, te permettant soit une attaque de contact, soit une attaque à longue portée de foudre infligeant 4 dégâts. Sinon, si tu tiens une arme, elle crépite d’électricité et inflige +1 dégât jusqu’à ta prochaine récupération de dix minutes ou plus."
+  }
+}

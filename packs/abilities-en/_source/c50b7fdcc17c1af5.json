@@ -1,0 +1,28 @@
+{
+  "_id": "c50b7fdcc17c1af5",
+  "_key": "!items!c50b7fdcc17c1af5",
+  "name": "Arcane Flight",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "arcane-flight",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can float and fly through the air at your normal land speed until you use a ten-minute or longer recovery. In terms of overland movement, a flying creature moves about 20 miles (32 km) per hour and is not affected by terrain. Effort: Affect one additional touched creature of your size or smaller; you direct their movement and they must remain within sight of you or they fall. Action to initiate. Arcane Flight is better than Hover, so if you have both, you can exchange Hover for another tier 2 or lower ability from the Casts Spells focus."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "18e4c035c5d0e4c5",
+  "_key": "!items!18e4c035c5d0e4c5",
+  "name": "Diamagnétisme",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "diamagnetism",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu magnétises n’importe quel objet non métallique à portée courte afin de le rendre sensible à toutes tes autres aptitudes magnétiques, comme si tu utilisais Magnétiser à distance et instantanément. (magnétisation permanente possible en dépensant le coût d’Intellect normal de Magnétiser). Ainsi : avec Déplacer le métal, tu peux déplacer n’importe quel objet, avec Repousser le métal, tu as un atout pour tous les jets de Blocage et d’Esquive, même contre des attaques sans métal (les attaques d’énergie se courbent). Et ainsi de suite."
+  }
+}

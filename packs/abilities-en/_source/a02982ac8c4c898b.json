@@ -1,0 +1,28 @@
+{
+  "_id": "a02982ac8c4c898b",
+  "_key": "!items!a02982ac8c4c898b",
+  "name": "Warm Air",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "warm-air",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "While your Shroud of Flame is active, you heat the air beneath you, allowing you to fall up to 10 feet (3.5 m) safely. Falls of greater than 10 feet are treated as 10 feet less. Enabler."
+  }
+}

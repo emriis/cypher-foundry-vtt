@@ -1,0 +1,28 @@
+{
+  "_id": "3165c1cb607561d7",
+  "_key": "!items!3165c1cb607561d7",
+  "name": "Résister au mal",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "shrug-off-evil",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu es immunisé·e à l’influence mentale, la peur et la possession (de n’importe quelle source). Tu ignores une blessure infligée par un mort‑vivant·e·s, un démon ou une créature du même acabit. Ce deuxième effet de l’aptitude se renouvelle après une récupération de dix heures."
+  }
+}

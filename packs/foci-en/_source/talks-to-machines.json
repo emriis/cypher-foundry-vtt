@@ -7,210 +7,68 @@
   "system": {
     "description": "<p>You use your brain like a computer, interfacing “wirelessly” with any electronic device. You can control and influence them in ways that others can't.</p>",
     "abilities": [
-      {
-        "id": "charm-machine",
-        "name": "Charm Machine",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+      "Compendium.cypher.abilities-en.Item.177e1219d645cdf4",
+      "Compendium.cypher.abilities-en.Item.add09689309ed9f0",
+      "Compendium.cypher.abilities-en.Item.d45e528a94beb8c1",
+      "Compendium.cypher.abilities-en.Item.03bf0447711e2635",
+      "Compendium.cypher.abilities-en.Item.fdb540b97f8939bd",
+      "Compendium.cypher.abilities-en.Item.4b31d830c64a7c8d",
+      "Compendium.cypher.abilities-en.Item.2514350d4838c955",
+      "Compendium.cypher.abilities-en.Item.2e477d7ed2d1ec27",
+      "Compendium.cypher.abilities-en.Item.c7793ee8840dc04f",
+      "Compendium.cypher.abilities-en.Item.ce0719ecd30fc0f3",
+      "Compendium.cypher.abilities-en.Item.cef1fec17ca240cd",
+      "Compendium.cypher.abilities-en.Item.710a8478198676b6",
+      "Compendium.cypher.abilities-en.Item.8ed7397d6cb9b3d1"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "177e1219d645cdf4",
+          "to": "03bf0447711e2635"
         },
-        "description": "You convince an unintelligent machine or robot within immediate range to “like” you with a successful Intellect attack roll. A machine that likes you is 50 percent less likely to function if said function would cause you harm. For example, if a foe attempts to detonate a bomb near you controlled by a detonator that likes you, there is a 50 percent chance that it won't explode. The target likes you until you use a ten-minute or longer recovery. Action to initiate."
-      },
-      {
-        "id": "control-electric-device",
-        "name": "Control Electric Device",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "add09689309ed9f0",
+          "to": "fdb540b97f8939bd"
         },
-        "description": "You can attempt to control or disrupt an electric device (in other words, a non-intelligent device or machine that is powered by electricity) at long range. Make an Intellect attack against the device. If your roll is less than a 12, treat the roll as a 12. (This means you don't get a GM intrusion if you roll a 1.) If you succeed, you can control the device as if you were next to it, even if normally you would have to touch it, read a screen, or manually operate it. If the machine is protected against casual access via some kind of security protocol, your tasks to hack or otherwise bypass that security are hindered unless you are within immediate range. If it is held by another creature, you must succeed against the creature's level or the device's level, whichever is higher. If attempting to disrupt the device, success means it shorts out and, if you wish, also explodes in an immediate radius, dealing 1 damage to all creatures in the area (make separate Intellect attack rolls against each creature). Effort: Increase the minimum number rolled for this ability by 3. Action. At tier 3: The minimum number rolled for this ability increases to 15."
-      },
-      {
-        "id": "friend-to-intelligent-machines",
-        "name": "Friend to Intelligent Machines",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "d45e528a94beb8c1",
+          "to": "4b31d830c64a7c8d"
         },
-        "description": "You have an asset to tasks to charm or positively interact with intelligent machines. You can use this asset if you attempt to hack or otherwise gain control of the intelligent machine (whether or not you know it is intelligent when you make the attempt), but never again for that machine regardless of whether the attempt succeeds. Enabler."
-      },
-      {
-        "id": "coaxing-power",
-        "name": "Coaxing Power",
-        "tier": 2,
-        "prerequisites": [
-          "charm-machine"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "03bf0447711e2635",
+          "to": "2514350d4838c955"
         },
-        "description": "You boost the power or function of a machine so that it operates at one level higher than normal, lasting until you use a one-hour or longer recovery. Action to initiate."
-      },
-      {
-        "id": "locate-machine",
-        "name": "Locate Machine",
-        "tier": 2,
-        "prerequisites": [
-          "control-electric-device"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "fdb540b97f8939bd",
+          "to": "2e477d7ed2d1ec27"
         },
-        "description": "You can track down a specific machine from miles away. Choose a machine, robot, or intelligent device you've identified, either finding identifying information about them through network research or because you've personally interacted with them. If you succeed on an Intellect attack, you can sense their general direction or distance as long as they are within 10 miles (16 km) of you if you spend an action concentrating, checking your device, or something similar. If they are beyond that distance, you can only sense their general direction. A machine that becomes aware of your trace attempts to remove it; you must succeed on a new Intellect attack roll every ten hours to maintain the trace. Action to initiate; action to update directional  and/or distance information."
-      },
-      {
-        "id": "machine-control",
-        "name": "Machine Control",
-        "tier": 2,
-        "prerequisites": [
-          "friend-to-intelligent-machines"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "2514350d4838c955",
+          "to": "c7793ee8840dc04f"
         },
-        "description": "You use your knowledge of robot commands and controls against a robot, mechanized system, or intelligent machine within short range (or within short range of a device you can remotely transmit signals from). Choose whether you want to command one creature or deactivate multiple creatures, and make separate Intellect attack rolls against each target. If your roll is less than a 6, treat the roll as a 6. (This means you don't get a GM intrusion if you roll a 1.) Command: Success means you take active control of your target until you use a ten-minute or longer recovery, commanding it to do simple tasks on your behalf while you concentrate. Deactivate: Success means you make affected targets unable to take actions for as long as you concentrate on them. Effort: Increase the minimum number rolled for this ability by 3. Action to initiate. At tier 3: The minimum number rolled for this ability increases to 9."
-      },
-      {
-        "id": "disable-mechanism",
-        "name": "Disable Mechanism",
-        "tier": 3,
-        "prerequisites": [
-          "coaxing-power"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "2e477d7ed2d1ec27",
+          "to": "ce0719ecd30fc0f3"
         },
-        "description": "With a successful Intellect attack to hack a machine, robot, or device (intelligent or not) within immediate range, you disrupt it in one of the following ways: All the machine's tasks are hindered until you use a ten-minute or longer recovery. The machine's speed is halved. The machine can take no action for one round. The severity of the machine's attacks are reduced by one step (minimum of a minor wound) until you use a ten-minute or longer recovery. You must touch the machine, robot, or device to disrupt it (if you are making an attack, it inflicts no damage). Effort: Increase the range to as far as you can directly see (through your own eyes, not through a remote camera or other interface). Target a machine through a network interface you have unrestricted access to (this requires two levels of Effort). Action."
-      },
-      {
-        "id": "quick-control",
-        "name": "Quick Control",
-        "tier": 3,
-        "prerequisites": [
-          "locate-machine"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "c7793ee8840dc04f",
+          "to": "cef1fec17ca240cd"
         },
-        "description": "A successful Intellect attack allows you to command a machine (intelligent or not) within short range to take one action within its capabilities on its next turn, regardless of its normal programming or attitudes. If this action would cause the machine direct harm to itself or its allies, your Intellect attack against it is hindered. (If you use this ability to command an intelligent machine, it likely becomes hostile to you afterward.) Action."
-      },
-      {
-        "id": "compile-robotic-offense",
-        "name": "Compile Robotic Offense",
-        "tier": 4,
-        "prerequisites": [
-          "disable-mechanism"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "ce0719ecd30fc0f3",
+          "to": "cef1fec17ca240cd"
         },
-        "description": "Your attack against a robot or intelligent machine this round has an asset if you make it as a Last action instead of as an action or a First action. Enabler."
-      },
-      {
-        "id": "machine-companion",
-        "name": "Machine Companion",
-        "tier": 4,
-        "prerequisites": [
-          "quick-control"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "cef1fec17ca240cd",
+          "to": "710a8478198676b6"
         },
-        "description": "You create, find, or otherwise acquire a level 3 intelligent machine companion follower that accompanies you and acts as you direct. If it's destroyed, it can be restored using your resources if you spend a few days tinkering."
-      },
-      {
-        "id": "information-gathering",
-        "name": "Information Gathering",
-        "tier": 5,
-        "prerequisites": [
-          "compile-robotic-offense",
-          "machine-companion"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 5,
-          "options": []
-        },
-        "description": "You speak wirelessly with any or all non-intelligent machines within 1 mile (1.6 km). You can ask one basic question about themselves or anything happening near them and receive a simple answer. For example, while in an area with many machines, you could ask about the location of a specific creature or individual, and if they are within range, one or more machines will probably provide the answer. Action."
-      },
-      {
-        "id": "improved-machine-companion",
-        "name": "Improved Machine Companion",
-        "tier": 6,
-        "prerequisites": [
-          "information-gathering"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You create, find, or otherwise acquire a level 5 intelligent machine companion follower that accompanies you and acts as you direct. If it's destroyed, it can be restored using your resources after a few days of labor. If you already have a lower-level machine companion, you choose whether it is upgraded to level 5 or you retain the level 3 companion and gain a new level 5 companion."
-      },
-      {
-        "id": "recompile-machine",
-        "name": "Recompile Machine",
-        "tier": 6,
-        "prerequisites": [
-          "information-gathering"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 8,
-          "options": []
-        },
-        "description": "With a successful Intellect attack against a machine (intelligent or not) of level 4 or lower within long range, you connect directly into their core system. Choose one of the following effects. The machine ceases all function—it is “bricked.” The machine reboots after a few rounds, then functions as an additional machine companion to you for about a day. After you finish a ten-hour recovery, you must reuse this ability on the machine to ensure it doesn't reset back to its original programming (or sense of self, if an intelligent machine). The machine explodes, inflicting 4 damage to all creatures in immediate range; make a separate Intellect attack roll against each. Effort: Increase the maximum level of the machine you can affect by 1. Last action."
-      }
-    ]
+        {
+          "from": "cef1fec17ca240cd",
+          "to": "8ed7397d6cb9b3d1"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

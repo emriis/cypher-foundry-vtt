@@ -1,0 +1,28 @@
+{
+  "_id": "1755ee92fe138e0f",
+  "_key": "!items!1755ee92fe138e0f",
+  "name": "Démonstration inspirante",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "inspiring-display",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Après avoir réussi une tâche reposant sur la force brute (défoncer une porte barrée, arracher un conteneur verrouillé, soulever ou déplacer un objet lourd, frapper quelqu’un en mêlée…), choisis un·e allié·e qui t’a vu·e. Un·e PJ choisi·e récupère 2 points dans la Réserve de son choix. Un·e PNJ choisi·e récupère 2 points de santé."
+  }
+}

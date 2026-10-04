@@ -1,0 +1,28 @@
+{
+  "_id": "d4ac515041ad9e9b",
+  "_key": "!items!d4ac515041ad9e9b",
+  "name": "Polymathe",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "polymath",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu fais un jet pour une tâche dans laquelle tu es entraîné·e (hors attaque ou défense) et que ton résultat est inférieur à 12, considère que tu as obtenu 12. (Tu n’obtiens donc pas d’intrusion du·de la MJ sur un 1.) Au rang 3, le minimum passe à 15. Effort : augmenter le minimum obtenu de +3."
+  }
+}

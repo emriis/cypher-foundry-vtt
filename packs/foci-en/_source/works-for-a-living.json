@@ -7,196 +7,71 @@
   "system": {
     "description": "<p>You take great satisfaction in a job well done, whether it's coding, building houses, or mining asteroids.</p>",
     "abilities": [
-      {
-        "id": "fitting-in",
-        "name": "Fitting In",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+      "Compendium.cypher.abilities-en.Item.749fa426aa276343",
+      "Compendium.cypher.abilities-en.Item.587ed5bf54d637c0",
+      "Compendium.cypher.abilities-en.Item.56fdaffa9c611092",
+      "Compendium.cypher.abilities-en.Item.02c67cc80a177590",
+      "Compendium.cypher.abilities-en.Item.edbd27a98c3b7c13",
+      "Compendium.cypher.abilities-en.Item.ac61788927fa4d93",
+      "Compendium.cypher.abilities-en.Item.d6703aa6a7e5e3e3",
+      "Compendium.cypher.abilities-en.Item.ee3311d82b347e3e",
+      "Compendium.cypher.abilities-en.Item.eee7b4bfa6876981",
+      "Compendium.cypher.abilities-en.Item.d4ac515041ad9e9b",
+      "Compendium.cypher.abilities-en.Item.30e084c44e02bbbb",
+      "Compendium.cypher.abilities-en.Item.b5b374afdd6f8e9b"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "749fa426aa276343",
+          "to": "02c67cc80a177590"
         },
-        "description": "You can blend in among any intelligent creatures other than the upper classes or the authorities. Working or common people can still see you, but those of level 3 or less attach no importance to your presence. If a higher-level creature notices you, you can attempt an Intellect task against their level to retain your unimportant-seeming status. This effect ends if you do something to call attention to your presence or position—attacking, using an ability, moving a large object, and so on—or if you use a ten-minute or longer recovery. Action to initiate."
-      },
-      {
-        "id": "handy",
-        "name": "Handy",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "56fdaffa9c611092",
+          "to": "02c67cc80a177590"
         },
-        "description": "You're trained in crafting. Anytime you gain resource points, you gain 1 additional point, but that point can only be spent on repairing or crafting."
-      },
-      {
-        "id": "muscles-of-iron",
-        "name": "Muscles of Iron",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "might",
-          "amount": 2,
-          "options": []
+        {
+          "from": "749fa426aa276343",
+          "to": "edbd27a98c3b7c13"
         },
-        "description": "Until you use a ten-minute or longer recovery, all Might actions other than attack rolls that you attempt are eased. Enabler."
-      },
-      {
-        "id": "danger-instinct",
-        "name": "Danger Instinct",
-        "tier": 2,
-        "prerequisites": [
-          "fitting-in",
-          "muscles-of-iron"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 3,
-          "options": []
+        {
+          "from": "587ed5bf54d637c0",
+          "to": "edbd27a98c3b7c13"
         },
-        "description": "If you are attacked by surprise, whether by a creature, a device, or simply an environmental hazard (such as a tree falling on you), you can move an immediate distance before the attack occurs. If moving prevents the attack, you are safe. If the attack can still potentially affect you—if the attacking creature can move to keep pace, if the attack fills an area too big to escape, and so on—your defense against it is eased. Enabler."
-      },
-      {
-        "id": "endurance",
-        "name": "Endurance",
-        "tier": 2,
-        "prerequisites": [
-          "fitting-in",
-          "handy"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "02c67cc80a177590",
+          "to": "ac61788927fa4d93"
         },
-        "description": "Any duration dealing with physical actions is either doubled or halved, whichever is better for you. For example, if the typical person can hold their breath for thirty seconds, you can hold it for one minute. If the typical person can march for four hours without stopping, you can do so for eight hours. In terms of harmful effects, if a poison paralyzes its victims for one minute, you are paralyzed for thirty seconds. The minimum duration is always one round. Enabler."
-      },
-      {
-        "id": "eye-for-detail",
-        "name": "Eye for Detail",
-        "tier": 3,
-        "prerequisites": [
-          "danger-instinct"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "edbd27a98c3b7c13",
+          "to": "d6703aa6a7e5e3e3"
         },
-        "description": "When you spend five minutes or so thoroughly exploring an area no larger than a short distance in diameter or an object you have direct access to, you can ask the GM one question about the area or object. The GM must answer you truthfully. This ability resets when you use a ten-hour recovery. Five minutes to explore the area or object."
-      },
-      {
-        "id": "improvise",
-        "name": "Improvise",
-        "tier": 3,
-        "prerequisites": [
-          "endurance"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "ac61788927fa4d93",
+          "to": "ee3311d82b347e3e"
         },
-        "description": "If you aren't trained in a task, you can improvise to gain an asset on that task—a tool you cobble together, sudden insight, or just dumb luck. The asset lasts until you use a ten-minute or longer recovery. Enabler."
-      },
-      {
-        "id": "device-insight",
-        "name": "Device Insight",
-        "tier": 4,
-        "prerequisites": [
-          "eye-for-detail"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "d6703aa6a7e5e3e3",
+          "to": "eee7b4bfa6876981"
         },
-        "description": "When examining any unknown, alien, supernatural, or high-technology device, you can ask the GM one question to gain an idea of its capabilities, how it functions, how it can be activated or deactivated, what its weaknesses are (if any), how it can be repaired, or any other similar query. This insight is for difficult or strange things beyond those readily identified by using the appropriate knowledge or technical skill. Action."
-      },
-      {
-        "id": "hard-won-resilience",
-        "name": "Hard-Won Resilience",
-        "tier": 4,
-        "prerequisites": [
-          "improvise"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "ee3311d82b347e3e",
+          "to": "d4ac515041ad9e9b"
         },
-        "description": "Due to your experiences, you've been exposed to all sorts of terrible things and are developing a general resistance. You can take one more moderate wound than normal."
-      },
-      {
-        "id": "polymath",
-        "name": "Polymath",
-        "tier": 5,
-        "prerequisites": [
-          "device-insight",
-          "hard-won-resilience"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "eee7b4bfa6876981",
+          "to": "d4ac515041ad9e9b"
         },
-        "description": "When you roll on a task you're trained in (other than an attack or defense task) and your roll is less than a 12, treat the roll as a 12. (This means you don't get a GM intrusion if you roll a 1.) Effort: Increase the minimum number rolled for this ability by 3. Enabler. At tier 3: The minimum number rolled for this ability increases to 15."
-      },
-      {
-        "id": "expert-handyman",
-        "name": "Expert Handyman",
-        "tier": 6,
-        "prerequisites": [
-          "polymath"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "d4ac515041ad9e9b",
+          "to": "30e084c44e02bbbb"
         },
-        "description": "When you use resource points to craft, repair, or build something, the resulting object is superior to other objects of a similar kind. Work with the GM to determine exactly how that manifests, but typically they are 2 levels higher than they'd otherwise be."
-      },
-      {
-        "id": "on-the-crew",
-        "name": "On the Crew",
-        "tier": 6,
-        "prerequisites": [
-          "polymath"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
-        },
-        "description": "While you are working with a team of at least two other allies, you give them a short pep talk and grant yourself and them one of the following abilities until you use a ten-minute or longer recovery. +1 damage on attacks Ignore the first minor wound taken Add +6 to next recovery Last action to initiate."
-      }
-    ]
+        {
+          "from": "d4ac515041ad9e9b",
+          "to": "b5b374afdd6f8e9b"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

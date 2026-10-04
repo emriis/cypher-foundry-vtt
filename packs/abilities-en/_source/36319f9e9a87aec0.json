@@ -1,0 +1,28 @@
+{
+  "_id": "36319f9e9a87aec0",
+  "_key": "!items!36319f9e9a87aec0",
+  "name": "Persistence Training",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "persistence-training",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You immediately end mind control affecting you. You also regain your ability to take your next turn normally and/or take it without hindrance by shaking off a lingering disabling effect. Effort: Use this ability on an ally within immediate range instead of yourself. Enabler for yourself; action for another."
+  }
+}

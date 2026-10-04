@@ -1,0 +1,28 @@
+{
+  "_id": "790f16d24d3c1aea",
+  "_key": "!items!790f16d24d3c1aea",
+  "name": "Dashing Defense",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "dashing-defense",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When wielding a light or medium weapon against a foe of your size or smaller, if you fail to dodge an attack, you can still attempt to block it. Enabler."
+  }
+}

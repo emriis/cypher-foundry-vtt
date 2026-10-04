@@ -1,0 +1,28 @@
+{
+  "_id": "d2b17694320c7a11",
+  "_key": "!items!d2b17694320c7a11",
+  "name": "Éclair assourdissant",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "deafening-bolt",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu projettes un éclair sur une cible à portée longue. Fais une attaque de Célérité. En cas de réussite la cible subit 5 dégâts et est assourdie (défenses entravées, n’entend plus rien) jusqu’à ta prochaine récupération de dix minutes ou plus."
+  }
+}

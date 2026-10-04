@@ -1,0 +1,28 @@
+{
+  "_id": "d847a78f8d17c87d",
+  "_key": "!items!d847a78f8d17c87d",
+  "name": "Detect Spirit",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "detect-spirit",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Make an Intellect roll to scan for mental presences of living creatures and undead spirits within short range. You detect any such creature whose level is equal to or less than the level of your result. Barriers of higher level than the level of your result block this sense. Effort: Until your next turn you can pinpoint those presences in physical space. Action."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "08da863d18f36d96",
+  "_key": "!items!08da863d18f36d96",
+  "name": "Célérité pour l’esprit",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "speed-for-mind",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu tentes une tâche de Célérité, tu peux dépenser des points de ta Réserve d’Intellect au lieu de ta Réserve de Célérité — et inversement. Utilise l’Avantage de la Réserve dont tu dépenses les points."
+  }
+}

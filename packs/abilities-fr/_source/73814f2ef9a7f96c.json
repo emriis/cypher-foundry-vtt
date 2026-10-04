@@ -1,0 +1,28 @@
+{
+  "_id": "73814f2ef9a7f96c",
+  "_key": "!items!73814f2ef9a7f96c",
+  "name": "Armure électrique",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "electric-armor",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Ton corps est parcouru d’électricité jusqu’à ta prochaine récupération de dix minutes ou plus. L’électricité ne te blesse pas et toute créature te touchant ou t’attaquant en mêlée subit 3 dégâts automatiquement (pas de jet nécessaire). Tant que l’aptitude est active, tu ignores les blessures mineures et modérées provenant de l’électricité et tu peux faire une attaque de contact infligeant 2 dégâts électriques."
+  }
+}

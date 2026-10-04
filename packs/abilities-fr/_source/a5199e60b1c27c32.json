@@ -1,0 +1,28 @@
+{
+  "_id": "a5199e60b1c27c32",
+  "_key": "!items!a5199e60b1c27c32",
+  "name": "Pas mystique",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "mystic-step",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu canalises ta source mystique pour te téléporter instantanément vers un endroit que tu vois à longue portée. Si tu apparais à portée immédiate d’un ennemi, tu peux faire une attaque à mains nues comme action supplémentaire. Effort : atteindre un endroit dans la portée mais hors de vue directe (derrière un mur, une structure…)."
+  }
+}

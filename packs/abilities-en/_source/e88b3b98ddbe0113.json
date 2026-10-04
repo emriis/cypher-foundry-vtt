@@ -1,0 +1,28 @@
+{
+  "_id": "e88b3b98ddbe0113",
+  "_key": "!items!e88b3b98ddbe0113",
+  "name": "Illusion Cocoon",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "illusion-cocoon",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "With a successful Intellect attack, you wrap a target within long range in a full-sensory illusion so all-encompassing that they are helpless, losing their turn each round until you use a ten-minute or longer recovery, or until they take direct physical damage. Action."
+  }
+}

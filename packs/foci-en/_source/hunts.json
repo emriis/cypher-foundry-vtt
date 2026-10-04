@@ -7,247 +7,86 @@
   "system": {
     "description": "<p>You are a stalking hunter who excels at bringing down your selected quarry, whether person or beast.</p>",
     "abilities": [
-      {
-        "id": "hunter-s-determination",
-        "name": "Hunter's Determination",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+      "Compendium.cypher.abilities-en.Item.2b460282fa97faed",
+      "Compendium.cypher.abilities-en.Item.f7d15d8a533909a5",
+      "Compendium.cypher.abilities-en.Item.2d70a39dd42dc0d8",
+      "Compendium.cypher.abilities-en.Item.28d3c8bace532570",
+      "Compendium.cypher.abilities-en.Item.50ee0cf06578203f",
+      "Compendium.cypher.abilities-en.Item.d41a8ecf7c514f38",
+      "Compendium.cypher.abilities-en.Item.6625cbf95c10f6a5",
+      "Compendium.cypher.abilities-en.Item.b55fae46dfdf4e1f",
+      "Compendium.cypher.abilities-en.Item.d50bb31cb29d46b3",
+      "Compendium.cypher.abilities-en.Item.ae779e02e1002f16",
+      "Compendium.cypher.abilities-en.Item.e2ee54ec4736c7cc",
+      "Compendium.cypher.abilities-en.Item.3ba07674cbea4e97",
+      "Compendium.cypher.abilities-en.Item.e92c891924573cb9",
+      "Compendium.cypher.abilities-en.Item.485a7038a60cc618",
+      "Compendium.cypher.abilities-en.Item.289c69aeada582b5"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "f7d15d8a533909a5",
+          "to": "28d3c8bace532570"
         },
-        "description": "When you attack a foe and miss, you gain an asset on your attacks and defenses against that foe. If you miss them again, you gain a second asset against them. You lose these assets if you change targets or the combat ends. Enabler."
-      },
-      {
-        "id": "knowledge-of-nature",
-        "name": "Knowledge of Nature",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "2d70a39dd42dc0d8",
+          "to": "28d3c8bace532570"
         },
-        "description": "While in the wilderness, you can always find edible food of some kind and potable water if it exists. Likewise, you can find medicinal herbs or natural remedies that grant you an asset on treatments to heal wounds, disease, or poison."
-      },
-      {
-        "id": "sneak-attack",
-        "name": "Sneak Attack",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 1,
-          "options": []
+        {
+          "from": "2b460282fa97faed",
+          "to": "50ee0cf06578203f"
         },
-        "description": "If you attack a foe under one of the following conditions, your light melee or light ranged weapon attack inflicts an additional 5 damage on a successful hit. (This ability doesn't work with medium or heavy weapons.) You attack with surprise. An ally uses their action to ease your attack. Your foe's defenses are hindered due to some other ongoing direct distraction. Your foe is unable to take their next turn due to some disabling attack or situation. First action."
-      },
-      {
-        "id": "fast-kill",
-        "name": "Fast Kill",
-        "tier": 2,
-        "prerequisites": [
-          "knowledge-of-nature",
-          "sneak-attack"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "choice",
-          "amount": 2,
-          "options": [
-            "might",
-            "speed"
-          ]
+        {
+          "from": "f7d15d8a533909a5",
+          "to": "50ee0cf06578203f"
         },
-        "description": "When you hit with a melee or ranged attack, you deal an additional 4 damage. You can't use this ability in two consecutive rounds. Enabler."
-      },
-      {
-        "id": "quarry",
-        "name": "Quarry",
-        "tier": 2,
-        "prerequisites": [
-          "hunter-s-determination",
-          "knowledge-of-nature"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "50ee0cf06578203f",
+          "to": "d41a8ecf7c514f38"
         },
-        "description": "You pick a creature and focus your intention on pursuing them.  Choose one creature you can see to become your quarry. You gain an asset on all tasks involving following, understanding, interacting with, attacking, or defending against your quarry. This asset includes hunting-related tasks, if appropriate, such as skinning, dressing, the best way to prepare and preserve any resulting game meat, and so on. You can have only one quarry at a time. Action to initiate."
-      },
-      {
-        "id": "poison-crafter",
-        "name": "Poison Crafter",
-        "tier": 3,
-        "prerequisites": [
-          "quarry"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "50ee0cf06578203f",
+          "to": "6625cbf95c10f6a5"
         },
-        "description": "If you have about an hour, you can use your resources to craft one dose of poison you can use as a contact poison on a weapon. A weapon coated with the poison (requiring a Last action to carefully apply) inflicts an additional 2 damage until you use a one-hour or longer recovery. Your experience with poison gives you some additional related benefits. You gain an asset on detecting, identifying, and resisting poison. Your defense rolls against poison are eased, and you take 2 less Speed damage from poison (if the poison inflicts Speed damage) or reduce wounds from poison by one step (major to moderate, moderate to minor, minor to none). For example, if you are hit by an attack that adds a moderate wound from poison, you only take a minor wound from the poison. Poison crafting uses resource points—in this case, use Craft Cypher and the weapon augmentation cypher to create a poison you can apply to your weapon. The poison, a manifest cypher, applies toward your cypher limit."
-      },
-      {
-        "id": "horde-fighting",
-        "name": "Horde Fighting",
-        "tier": 3,
-        "prerequisites": [
-          "quarry",
-          "fast-kill"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "28d3c8bace532570",
+          "to": "6625cbf95c10f6a5"
         },
-        "description": "When two or more foes attack you at once in melee, you can use them against each other. Each round, choose whether you gain an asset to block and dodge rolls against them or to attack rolls against them. Enabler."
-      },
-      {
-        "id": "awareness",
-        "name": "Awareness",
-        "tier": 3,
-        "prerequisites": [
-          "fast-kill"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "28d3c8bace532570",
+          "to": "b55fae46dfdf4e1f"
         },
-        "description": "You become hyperaware of your surroundings until you use a ten-minute or longer recovery. You are aware of all living things within long range (including their general position). By using an action to concentrate, you can choose one of them and attempt to learn their general health and power level. Action."
-      },
-      {
-        "id": "better-sneak-attack",
-        "name": "Better Sneak Attack",
-        "tier": 4,
-        "prerequisites": [
-          "sneak-attack"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "2d70a39dd42dc0d8",
+          "to": "d50bb31cb29d46b3"
         },
-        "description": "When using Sneak Attack, you gain an asset on the attack. On your next turn, your target takes an additional 5 damage (ignores armor). The target can prevent this additional damage by taking a recovery, using any ability that heals it, or using its action to attend to the injury. Enabler."
-      },
-      {
-        "id": "sprint-and-grab",
-        "name": "Sprint and Grab",
-        "tier": 4,
-        "prerequisites": [
-          "horde-fighting"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 2,
-          "options": []
+        {
+          "from": "6625cbf95c10f6a5",
+          "to": "ae779e02e1002f16"
         },
-        "description": "You move a short distance and make a melee attack to grab a foe of your size or smaller. (Unlike a normal situation of taking an action and moving a short distance, this doesn't hinder your tasks.) A successful attack means you grab the foe and bring it to a halt if it was moving (this can be treated as a tackle, if appropriate). Action."
-      },
-      {
-        "id": "damage-dealer",
-        "name": "Damage Dealer",
-        "tier": 5,
-        "prerequisites": [
-          "better-sneak-attack"
-        ],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "d50bb31cb29d46b3",
+          "to": "e2ee54ec4736c7cc"
         },
-        "description": "You've become better at killing with one kind of weapon. Choose one melee or ranged weapon. You inflict an additional 3 damage with this weapon. You can select this ability up to two times for any particular weapon (for a total of 6 damage)."
-      },
-      {
-        "id": "hunter-s-drive",
-        "name": "Hunter's Drive",
-        "tier": 5,
-        "prerequisites": [
-          "quarry"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 5,
-          "options": []
+        {
+          "from": "50ee0cf06578203f",
+          "to": "3ba07674cbea4e97"
         },
-        "description": "You gain greater prowess in the hunt. If your quarry is within 10 miles (16 km) of you, your movement rate is doubled if you are trying to reach them. You gain an additional asset on tasks related to your quarry. This ability lasts until you use a ten-minute or longer recovery. Enabler."
-      },
-      {
-        "id": "multiple-quarries",
-        "name": "Multiple Quarries",
-        "tier": 6,
-        "prerequisites": [
-          "hunter-s-drive"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "3ba07674cbea4e97",
+          "to": "e92c891924573cb9"
         },
-        "description": "When you activate Quarry, you can select four creatures you can see to be your quarry instead of just one. Each additional quarry you select adds 2 Intellect to the cost of Quarry. Enabler."
-      },
-      {
-        "id": "lethal-strike",
-        "name": "Lethal Strike",
-        "tier": 6,
-        "prerequisites": [
-          "damage-dealer"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 6,
-          "options": []
+        {
+          "from": "e2ee54ec4736c7cc",
+          "to": "485a7038a60cc618"
         },
-        "description": "With a swift and sudden melee or ranged weapon attack, you strike a foe in a vital spot. If you hit, you inflict an additional 7 damage. Action."
-      },
-      {
-        "id": "escape-plan",
-        "name": "Escape Plan",
-        "tier": 6,
-        "prerequisites": [
-          "damage-dealer"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "When you kill a foe, you can attempt a stealth task as an extra action on your turn to hide from anyone around, assuming that a suitable hiding place is nearby. Enabler."
-      }
-    ]
+        {
+          "from": "e2ee54ec4736c7cc",
+          "to": "289c69aeada582b5"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

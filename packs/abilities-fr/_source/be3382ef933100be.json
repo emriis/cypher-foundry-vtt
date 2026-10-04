@@ -1,0 +1,28 @@
+{
+  "_id": "be3382ef933100be",
+  "_key": "!items!be3382ef933100be",
+  "name": "Constructeur efficace",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "efficient-builder",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Anytime you gain resource points, you gain 1 additional point, but that point can be spent only on repairing or crafting."
+  }
+}

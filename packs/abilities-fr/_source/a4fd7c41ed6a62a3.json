@@ -1,0 +1,28 @@
+{
+  "_id": "a4fd7c41ed6a62a3",
+  "_key": "!items!a4fd7c41ed6a62a3",
+  "name": "Énergie Amplifiée",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "enhanced-energy",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Lorsque tu réussis une tâche importante en utilisant tes pouvoirs (à la discrétion du MJ), tu récupères 4 points d'Intellect. Chaque fois que tu utilises cette aptitude, tu récupères 1 point de moins que la fois précédente. L'aptitude se renouvelle après une récupération de dix heures."
+  }
+}

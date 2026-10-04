@@ -1,0 +1,28 @@
+{
+  "_id": "5c415e2700189778",
+  "_key": "!items!5c415e2700189778",
+  "name": "Drone intégré",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "embedded-drone",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu possèdes un drone intégré dans ton corps, que tu peux lancer et contrôler jusqu’à ta prochaine récupération d’une heure ou plus (moment où il revient automatiquement). Le drone mesure 30 cm de côté, possède des manipulateurs pour accomplir des tâches physiques et une arme à feu intégrée pour attaquer. Il peut agir immédiatement au tour où tu le lances. S’il est détruit, tu peux utiliser tes ressources pour le restaurer en quelques jours."
+  }
+}

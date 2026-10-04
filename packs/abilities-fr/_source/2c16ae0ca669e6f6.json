@@ -1,0 +1,28 @@
+{
+  "_id": "2c16ae0ca669e6f6",
+  "_key": "!items!2c16ae0ca669e6f6",
+  "name": "Rat des ruelles",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "alley-rat",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "En ville, tu peux tenter de trouver ou créer un raccourci, une entrée secrète, ou un passage d’évasion là où il semblait n’y avoir aucune issue. Pour réussir, tu dois effectuer une tâche d’Intellect dont la difficulté dépend de la situation (définie par le·la MJ). Le passage ainsi découvert doit te permettre d’avancer ou de t’éloigner d’au moins une courte distance."
+  }
+}

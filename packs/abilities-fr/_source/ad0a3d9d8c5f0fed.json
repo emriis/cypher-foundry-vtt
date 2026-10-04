@@ -1,0 +1,28 @@
+{
+  "_id": "ad0a3d9d8c5f0fed",
+  "_key": "!items!ad0a3d9d8c5f0fed",
+  "name": "Toujours inspiré·e",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "always-witty",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Chaque fois que tu fais une récupération, si ta Réserve d’Intellect n’est pas déjà pleine, tu récupères 1 point d’Intellect supplémentaire. Tu peux sélectionner cette aptitude jusqu’à trois fois."
+  }
+}

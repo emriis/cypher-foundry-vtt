@@ -1,0 +1,28 @@
+{
+  "_id": "b0992446f37cf5bb",
+  "_key": "!items!b0992446f37cf5bb",
+  "name": "Mind for Speed",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "mind-for-speed",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When performing a task that would normally require spending points from your Intellect Pool, you can spend points from your Speed Pool instead, and vice versa."
+  }
+}

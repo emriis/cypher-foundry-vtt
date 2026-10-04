@@ -1,0 +1,28 @@
+{
+  "_id": "ccdb520bffe35eb1",
+  "_key": "!items!ccdb520bffe35eb1",
+  "name": "Suivant·e expert·e",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "expert-follower",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu gagnes un·e suivant·e de niveau 3, doté·e de trois modifications de niveau 4 de ton choix. À la place, tu peux améliorer un·e suivant·e existant·e au niveau 3 et gagner un·e nouveau·elle suivant·e de niveau 2. Tu peux prendre cette aptitude plusieurs fois."
+  }
+}

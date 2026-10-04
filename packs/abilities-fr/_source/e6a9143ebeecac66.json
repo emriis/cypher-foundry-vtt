@@ -1,0 +1,28 @@
+{
+  "_id": "e6a9143ebeecac66",
+  "_key": "!items!e6a9143ebeecac66",
+  "name": "Toujours sous le pied",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "always-mighty",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Chaque fois que tu fais une récupération, si ta Réserve de Puissance n’est pas déjà pleine, tu récupères 1 point supplémentaire dans cette Réserve. Tu peux choisir cette aptitude jusqu’à trois fois."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "1c19d2dc7fa543aa",
+  "_key": "!items!1c19d2dc7fa543aa",
+  "name": "Stone Body",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "stone-body",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your body is made of a hard substance like stone or crystal. Work with your GM to decide your exact form, though it is likely about the shape and size of a humanoid. You do not need to eat, drink, or breathe (though you do need rest and sleep). As a being of mineral, you can take two more minor wounds than normal and ease block rolls, and your unarmed attacks deal an additional 2 damage. Due to your relative mineral inflexibility, you have an inability in dodge tasks."
+  }
+}

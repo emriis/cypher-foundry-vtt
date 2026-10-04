@@ -1,0 +1,28 @@
+{
+  "_id": "e39822b9d74d694c",
+  "_key": "!items!e39822b9d74d694c",
+  "name": "Display of Skill",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "display-of-skill",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Seeing you use your weapon in combat (or perform showy moves outside of combat) gives one ally confidence that equates to a free level of Effort they can use on an action of their choice before their (or your) next ten-minute or longer recovery. Conversely, one foe can be cowed by this display, giving you a free level of Effort on a subsequent intimidation task. Enabler; action if used outside of combat."
+  }
+}

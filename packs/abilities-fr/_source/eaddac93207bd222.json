@@ -1,0 +1,28 @@
+{
+  "_id": "eaddac93207bd222",
+  "_key": "!items!eaddac93207bd222",
+  "name": "Feinte",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "feint",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Si tu utilises une action pour créer une diversion, au round suivant tu profites de la faiblesse défensive de ton adversaire. Tu fais une attaque de mêlée avec un atout et si l’attaque réussit, tu infliges +4 dégâts supplémentaires."
+  }
+}

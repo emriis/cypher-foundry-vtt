@@ -1,0 +1,28 @@
+{
+  "_id": "18e4c035c5d0e4c5",
+  "_key": "!items!18e4c035c5d0e4c5",
+  "name": "Diamagnetism",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "diamagnetism",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You magnetize any nonmetallic object within short range so that it can be affected by your other magnetic powers, as if using Magnetize at range and on the fly (to permanently magnetize an object, you must spend Intellect as noted for Magnetize). Therefore, with Move Metal, you can move any object you can see. With Repel Metal, you have an asset to all block and dodge rolls, regardless of whether the incoming attack uses metal (even pure energy attacks bend slightly to your will). And so on."
+  }
+}

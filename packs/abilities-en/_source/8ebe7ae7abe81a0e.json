@@ -1,0 +1,28 @@
+{
+  "_id": "8ebe7ae7abe81a0e",
+  "_key": "!items!8ebe7ae7abe81a0e",
+  "name": "Taunting Defense",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "taunting-defense",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you defend against a melee attack, your mocking moves, entertaining quips at your foe's expense, or a certain something draws out your foe's anger. Your foe's attack is hindered, but if they hit, they deal an additional minor wound. Enabler."
+  }
+}

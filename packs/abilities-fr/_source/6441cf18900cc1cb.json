@@ -1,0 +1,28 @@
+{
+  "_id": "6441cf18900cc1cb",
+  "_key": "!items!6441cf18900cc1cb",
+  "name": "Course d’obstacles",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "obstacle-running",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tout déplacement que tu fais ce round ignore la plupart des terrains difficiles qui ralentiraient normalement ton mouvement : gravats, clôtures, tables, obstacles divers. Tu te déplaces à vitesse normale en glissant sur une rambarde, en courant brièvement sur un mur ou en prenant appui sur une créature. Si un obstacle nécessite normalement une tâche de Puissance ou de Célérité (corde, équilibre, saut…), la tâche est facilitée."
+  }
+}

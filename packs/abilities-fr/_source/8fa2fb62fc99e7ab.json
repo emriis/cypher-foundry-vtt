@@ -1,0 +1,28 @@
+{
+  "_id": "8fa2fb62fc99e7ab",
+  "_key": "!items!8fa2fb62fc99e7ab",
+  "name": "Connaissance de la pierre",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "stoneknowing",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu es entraîné·e pour travailler n’importe quel type de pierre. De plus, si tu touches un objet ou une structure en pierre ou en cristal et que tu te concentres, tu apprends son niveau et éventuellement des informations pertinentes concernant sa matière et sa structure. Exemples : - apprendre qu’un mur de briques est niveau 3 et dissimule un espace caché, - qu’un rocher est niveau 5 et contient du minerai de fer. Ton·ta MJ peut demander une Tâche d’Intellect pour des informations très subtiles ou secrètes"
+  }
+}

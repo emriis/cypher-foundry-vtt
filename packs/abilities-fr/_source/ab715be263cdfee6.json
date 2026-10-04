@@ -1,0 +1,28 @@
+{
+  "_id": "ab715be263cdfee6",
+  "_key": "!items!ab715be263cdfee6",
+  "name": "Flotte d'automates",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "automaton-fleet",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You've built four level 2 automaton followers, each no larger than yourself. You and the GM must work out the details of each automaton's appearance and personality. If one of these automatons is destroyed, it can be restored using your resources after a few days of labor."
+  }
+}

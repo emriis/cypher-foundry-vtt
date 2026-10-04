@@ -1,0 +1,28 @@
+{
+  "_id": "add09689309ed9f0",
+  "_key": "!items!add09689309ed9f0",
+  "name": "Contrôle des appareils électriques",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "control-electric-device",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu tentes de contrôler ou perturber un appareil électrique (machine ou dispositif non intelligent alimenté par électricité) à portée longue. Fais une attaque d’Intellect contre l’appareil. Si ton jet est inférieur à 12, considère-le comme 12. (Tu évites ainsi une Intrusion du·de la MJ si tu fais un 1.) En cas de réussite tu contrôles l’appareil comme si tu étais juste à côté, même si cela nécessiterait normalement de le toucher, lire un écran ou manipuler des commandes. Si l’appareil est protégé par des mesures de sécurité, tes tâches pour les contourner sont entravées tant que tu n’es pas à portée immédiate. S’il est tenu par une créature, tu dois réussir contre son niveau ou celui de l’objet (le plus élevé). Si tu essayes de déstabiliser l’appareil, une réussite signifie qu’il subit un court‑circuit et si tu le souhaite, il explose dans une zone immédiate, infligeant 1 dégât à toutes les créatures (fait un jet d’attaque d’Intellect différent pour chaque créature). Au rang 3, le minimum automatique passe à 15. Effort : augmente ce minimum de +3."
+  }
+}

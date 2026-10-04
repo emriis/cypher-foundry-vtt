@@ -1,0 +1,28 @@
+{
+  "_id": "7d5fe0d214cc8288",
+  "_key": "!items!7d5fe0d214cc8288",
+  "name": "Hurl Flame",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "hurl-flame",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "While your Shroud of Flame is active, you can reach into your halo and hurl a handful of fire at a target within short range, inflicting 4 fire damage if you succeed on an Intellect attack. Action."
+  }
+}

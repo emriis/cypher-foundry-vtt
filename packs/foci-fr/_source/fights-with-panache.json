@@ -7,248 +7,82 @@
   "system": {
     "description": "<p>You're a swashbuckling daredevil who fights with a flamboyant style that's entertaining to watch.</p>",
     "abilities": [
-      {
-        "id": "attack-flourish",
-        "name": "Attaque flamboyante",
-        "tier": 1,
-        "prerequisites": [
-          "roguish-smile"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+      "Compendium.cypher.abilities-fr.Item.c0850a7cabfc59b2",
+      "Compendium.cypher.abilities-fr.Item.a0ef831057da6305",
+      "Compendium.cypher.abilities-fr.Item.8ebe7ae7abe81a0e",
+      "Compendium.cypher.abilities-fr.Item.790f16d24d3c1aea",
+      "Compendium.cypher.abilities-fr.Item.28d3c8bace532570",
+      "Compendium.cypher.abilities-fr.Item.495c300d1d3d8b01",
+      "Compendium.cypher.abilities-fr.Item.ecc635e12d6dd57d",
+      "Compendium.cypher.abilities-fr.Item.8e9965cb551acba9",
+      "Compendium.cypher.abilities-fr.Item.2d4c98cd36a19bd6",
+      "Compendium.cypher.abilities-fr.Item.d57f90583546212e",
+      "Compendium.cypher.abilities-fr.Item.4d77145dfdd4b6e6",
+      "Compendium.cypher.abilities-fr.Item.44ba268bc6db6ca2",
+      "Compendium.cypher.abilities-fr.Item.2319f4845210f3a6",
+      "Compendium.cypher.abilities-fr.Item.f7b8695c5ae4512d",
+      "Compendium.cypher.abilities-fr.Item.2bf65fbcc2f43386"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "a0ef831057da6305",
+          "to": "c0850a7cabfc59b2"
         },
-        "description": "Lorsque tu attaques, tu ajoutes des mouvements stylés, une pirouette, une répartie brillante ou un geste théâtral. Une créature de ton choix à portée courte qui peut te voir gagne un atout à sa prochaine tâche si elle l’effectue dans un ou deux rounds."
-      },
-      {
-        "id": "roguish-smile",
-        "name": "Sourire canaille",
-        "tier": 1,
-        "prerequisites": [
-          "taunting-defense"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+        {
+          "from": "8ebe7ae7abe81a0e",
+          "to": "a0ef831057da6305"
         },
-        "description": "Avec un sourire charmeur — et peut‑être un clin d’œil — tu effaces le dernier round de la mémoire d’une cible de niveau 3 ou moins à portée immédiate (attaque d’Intellect requise). Effort : augmenter le niveau maximal affecté de +1."
-      },
-      {
-        "id": "taunting-defense",
-        "name": "Défense moqueuse",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "c0850a7cabfc59b2",
+          "to": "790f16d24d3c1aea"
         },
-        "description": "Quand tu te défends contre une attaque de mêlée, tes piques, moqueries ou mouvements provocateurs attirent la colère de l’adversaire. L’attaque de ton adversaire est entravée, mais s’iel te touche, l’attaque inflige une blessure mineure supplémentaire."
-      },
-      {
-        "id": "dashing-defense",
-        "name": "Défense virevoltante",
-        "tier": 2,
-        "prerequisites": [
-          "attack-flourish"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "a0ef831057da6305",
+          "to": "28d3c8bace532570"
         },
-        "description": "Lorsque tu manies une arme légère ou moyenne contre un adversaire de ta taille ou plus petit·e, si tu rates une Esquive, tu peux quand même tenter un Blocage."
-      },
-      {
-        "id": "fast-kill",
-        "name": "Tuer vite",
-        "tier": 2,
-        "prerequisites": [
-          "roguish-smile"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "choice",
-          "amount": 2,
-          "options": [
-            "might",
-            "speed"
-          ]
+        {
+          "from": "8ebe7ae7abe81a0e",
+          "to": "495c300d1d3d8b01"
         },
-        "description": "When you hit with a melee or ranged attack, you deal an additional 4 damage. You can't use this ability in two consecutive rounds. Enabler."
-      },
-      {
-        "id": "wounded-fury",
-        "name": "Fureur blessée",
-        "tier": 2,
-        "prerequisites": [
-          "taunting-defense"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "790f16d24d3c1aea",
+          "to": "ecc635e12d6dd57d"
         },
-        "description": "While you have at least three moderate wounds or at least one major wound, you gain one free level of Effort you can apply to your attack each round (easing your chance to hit or dealing 3 extra damage). This benefit lasts until you take your next ten-minute or longer recovery (or you no longer suffer from those wounds) At tier 3: The benefit increases to two free levels of Effort. Enabler."
-      },
-      {
-        "id": "acrobatic-attack",
-        "name": "Attaque acrobatique",
-        "tier": 3,
-        "prerequisites": [
-          "dashing-defense"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 1,
-          "options": []
+        {
+          "from": "495c300d1d3d8b01",
+          "to": "8e9965cb551acba9"
         },
-        "description": "You leap into the attack, twisting or flipping through the air. If you use Effort on the attack roll, you get a free level of Effort on it. If you roll a natural 17 or 18, instead of inflicting extra damage you can choose to have a minor effect. You can't use this ability if you can't freely use the armor you're wearing. Enabler."
-      },
-      {
-        "id": "flamboyant-boast",
-        "name": "Vantardise flamboyante",
-        "tier": 3,
-        "prerequisites": [
-          "wounded-fury"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+        {
+          "from": "28d3c8bace532570",
+          "to": "2d4c98cd36a19bd6"
         },
-        "description": "Tu décris bruyamment un exploit que tu vas réaliser, puis, comme action supplémentaire, tu essaies de le faire. Si l’action serait difficile (ou impossible) pour une personne moyenne et que tu réussis, les non-alliés témoins sont tellement étonné·e·s que toutes leurs actions sont entravées à leur prochain tour. Le·La MJ détermine si ta vantardise est réellement impressionnante. Si tu échoues, jusqu’à ta prochaine récupération de dix minutes ou plus, toutes tes tentatives pour influencer les témoins (attaques, aptitudes, interactions) sont entravées."
-      },
-      {
-        "id": "quick-adjustment",
-        "name": "Ajustement rapide",
-        "tier": 3,
-        "prerequisites": [
-          "fast-kill"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 2,
-          "options": []
+        {
+          "from": "790f16d24d3c1aea",
+          "to": "d57f90583546212e"
         },
-        "description": "Ton attaque non létale (désarmement, briser un objet, assommer…) devient une Première action."
-      },
-      {
-        "id": "improved-dashing-defense",
-        "name": "Défense virevoltante améliorée",
-        "tier": 4,
-        "prerequisites": [
-          "dashing-defense"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "2d4c98cd36a19bd6",
+          "to": "4d77145dfdd4b6e6"
         },
-        "description": "Un·e allié·e à portée immédiate, maniant une arme légère ou moyenne, bénéficie de Défense virevoltante jusqu’à ton prochain tour."
-      },
-      {
-        "id": "misdirect",
-        "name": "Redirection",
-        "tier": 4,
-        "prerequisites": [
-          "quick-adjustment"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 3,
-          "options": []
+        {
+          "from": "d57f90583546212e",
+          "to": "44ba268bc6db6ca2"
         },
-        "description": "Lorsqu’un adversaire te rate, tu peux rediriger son attaque vers une autre cible à portée immédiate. Fais un jet d’attaque non modifié contre cette nouvelle cible (tu peux ajouter de l’Effort pour viser). En cas de réussite, la cible subit des dégâts égaux au niveau de l’attaquant d’origine."
-      },
-      {
-        "id": "agile-wit",
-        "name": "Esprit agile",
-        "tier": 5,
-        "prerequisites": [
-          "improved-dashing-defense"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "4d77145dfdd4b6e6",
+          "to": "2319f4845210f3a6"
         },
-        "description": "When attempting a Speed task, you can spend points from your Intellect Pool instead of your Speed Pool, and vice versa. Use the Edge stat for the Pool you're spending points from."
-      },
-      {
-        "id": "using-the-environment",
-        "name": "Utiliser l’environnement",
-        "tier": 5,
-        "prerequisites": [
-          "misdirect"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "44ba268bc6db6ca2",
+          "to": "f7b8695c5ae4512d"
         },
-        "description": "Tu utilises le décor à ton avantage. Si quelque chose à portée immédiate peut plausiblement servir de couverture (table, lustre, rampe, un autre adversaire, etc.), tu obtiens une couverture et un atout sur tes attaques de mêlée. Il s’agit d’une tâche de routine qui ne nécessite donc pas de jet pour se déplacer partout où c’est physiquement possible tant que tu pourrais rejoindre cet endroit avec un mouvement normal, de l’escalade, un saut (de plus tu ignores les obstacles et le terrain difficile quand tu le fais). Par exemple : escalader une tenture jusqu’à un balcon, glisser le long d’une voile, etc. Impossible cependant de passer par une meurtrière ou d’entrer dans une cage fermée. L’effet dure jusqu’à ta prochaine récupération de dix minutes ou plus."
-      },
-      {
-        "id": "again-and-again",
-        "name": "Encore et encore",
-        "tier": 6,
-        "prerequisites": [
-          "agile-wit"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 6,
-          "options": []
-        },
-        "description": "You can take an extra action on your turn. Enabler."
-      },
-      {
-        "id": "return-to-sender",
-        "name": "Renvoi à l’expéditeur",
-        "tier": 6,
-        "prerequisites": [
-          "using-the-environment"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 3,
-          "options": []
-        },
-        "description": "Si tu réussis un Blocage ou une Esquive contre une attaque de mêlée, tu peux immédiatement faire une attaque de mêlée contre l’assaillant. Tu ne peux pas réutiliser cette aptitude avant ton prochain tour normal."
-      }
-    ]
+        {
+          "from": "2319f4845210f3a6",
+          "to": "2bf65fbcc2f43386"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

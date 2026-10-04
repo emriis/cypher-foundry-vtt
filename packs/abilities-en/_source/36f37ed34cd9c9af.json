@@ -1,0 +1,28 @@
+{
+  "_id": "36f37ed34cd9c9af",
+  "_key": "!items!36f37ed34cd9c9af",
+  "name": "Attention to Detail",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "attention-to-detail",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your task this round (other than an attack) has an asset if you attempt it as a Last action instead of an action or First action. Enabler."
+  }
+}

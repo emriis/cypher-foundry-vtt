@@ -1,0 +1,28 @@
+{
+  "_id": "385d507cf12055e2",
+  "_key": "!items!385d507cf12055e2",
+  "name": "Porte parole des Morts",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "speaker-for-the-dead",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu touches le corps d’un être mort et lui poses une question. Il ne peut pas répondre à des questions qu’il n’aurait pas comprises de son vivant, ni fournir des informations qu’il n’avait pas à l’époque. L’être mort n’est pas obligé de te répondre. Tu dois interagir avec lui comme tu l’aurais convaincu de son vivant : promettre des funérailles, venger sa mort, transmettre un message, etc. Cela nécessite généralement un jet d’interaction (persuasion ou intimidation). Action."
+  }
+}

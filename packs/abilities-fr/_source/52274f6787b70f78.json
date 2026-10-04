@@ -1,0 +1,28 @@
+{
+  "_id": "52274f6787b70f78",
+  "_key": "!items!52274f6787b70f78",
+  "name": "Doubles illusoires",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "illusory-selves",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu crées quatre illusions de toi-même à portée courte. Elles durent jusqu’à ta prochaine récupération de dix minutes ou plus. Tu diriges leurs actions mentalement (elles ne sont pas des reflets et peuvent chacune faire des choses différentes). Si une illusion est frappée violemment, tu choisis si elle se fige ou disparaît de façon permanente."
+  }
+}

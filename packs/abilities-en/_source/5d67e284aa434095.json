@@ -1,0 +1,28 @@
+{
+  "_id": "5d67e284aa434095",
+  "_key": "!items!5d67e284aa434095",
+  "name": "One With the Wild",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "one-with-the-wild",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You and your allies gain an unusual connection to the wilderness within long range until you use a one-hour or longer recovery. This has three effects: Natural animals and plants in the area will not knowingly harm you or your allies. You and your allies increase their Might Edge, Speed Edge, and Intellect Edge by 1. Any recoveries made during this period restore twice as many points. Action to initiate."
+  }
+}

@@ -34,48 +34,9 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "effort",
-        "name": "Amélioration de Combat (2+ Célérité ou Intellect)",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Increase the minimum number rolled for this ability by 3. Enabler. At tier 3: The minimum number rolled for this ability increases to 18."
-      },
-      {
-        "id": "expert-combatant",
-        "name": "Combattant·e Expert·e",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you're already specialized in), but you must gain the skill normally. For a Soldier, Expert Combatant means choosing training in weapons appropriate to the genre, such as laser pistols or rail guns (if available), or firing specific spacecraft weapons, such as point defense cannons, torpedo tubes, plasma casters, or something similar."
-      },
-      {
-        "id": "push-implant",
-        "name": "Implant de Surpassement",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Après avoir attaqué, tu peux activer un implant de combat pour effectuer une attaque supplémentaire en tant qu'action supplémentaire à ton tour. Cette action te cause une blessure modérée. Cette aptitude se renouvelle après une récupération de dix heures."
-      }
+      "Compendium.cypher.abilities-fr.Item.aff0abef74df29c3",
+      "Compendium.cypher.abilities-fr.Item.1f9d46bc2d619c20",
+      "Compendium.cypher.abilities-fr.Item.1ec6a06130f18619"
     ],
     "statOptions": [
       "might",

@@ -1,0 +1,28 @@
+{
+  "_id": "8c79833d94e60437",
+  "_key": "!items!8c79833d94e60437",
+  "name": "Corps en circuit fermé",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "closed-loop-body",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu n’as pas besoin de manger ni de respirer, et tu ne subis aucun effet néfaste du vide ou des températures extrêmes (mais tu subis normalement les attaques de feu, froid, etc.)."
+  }
+}

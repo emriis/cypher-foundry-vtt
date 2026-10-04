@@ -1,0 +1,28 @@
+{
+  "_id": "a0a974178b5fa97a",
+  "_key": "!items!a0a974178b5fa97a",
+  "name": "Ignorer la douleur",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "ignore-the-pain",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu ignores un palier d’entrave provenant soit d’une blessure majeure, soit du fait d’avoir subi toutes tes blessures modérées. Tu peux choisir cette aptitude jusqu’à trois fois. Chaque fois, tu ignores un palier supplémentaire d’entrave due aux blessures."
+  }
+}

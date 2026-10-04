@@ -1,0 +1,28 @@
+{
+  "_id": "11de1b15e2673c16",
+  "_key": "!items!11de1b15e2673c16",
+  "name": "Puiser dans l’expérience de toute une vie",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "drawing-on-life-s-experiences",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu as vécu beaucoup de choses, et ton expérience te sert. Tu poses une question au/à la MJ et reçois une réponse générale. Le·La MJ donne un niveau à la question : connaissances trouvables ailleurs qu’ici : niveau 1, connaissance obscure du passé : niveau 7."
+  }
+}

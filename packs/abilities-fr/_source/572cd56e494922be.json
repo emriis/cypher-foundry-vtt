@@ -1,0 +1,28 @@
+{
+  "_id": "572cd56e494922be",
+  "_key": "!items!572cd56e494922be",
+  "name": "Explosion psychique",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "psychic-burst",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu envoies des ondes de force mentale dans l’esprit de trois cibles à portée courte (fais un jet d’Intellect contre chaque cible). Cette explosion inflige 3 dégâts d’Intellect (ignore l’Armure). Effort : Attaquer une cible supplémentaire (2 Intellect)."
+  }
+}

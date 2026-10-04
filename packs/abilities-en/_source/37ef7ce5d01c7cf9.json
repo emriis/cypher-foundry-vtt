@@ -1,0 +1,28 @@
+{
+  "_id": "37ef7ce5d01c7cf9",
+  "_key": "!items!37ef7ce5d01c7cf9",
+  "name": "Ice Monster",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "ice-monster",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You create an automaton made of snow or ice that is your general shape and size, lasting until you use a ten-minute or longer recovery. This NPC ally acts as you direct each round. Directing the monster is an action, and you can command it only when you are within long range of it. Without a command, the monster continues to follow your previous command. You can also give it a simple programmed action, such as “Wait here and attack anyone who comes within short range until they're dead.” Action to create; action to direct. Automaton: level 5; Armor 1; bash attacks deal 6 damage (half from intense cold)"
+  }
+}

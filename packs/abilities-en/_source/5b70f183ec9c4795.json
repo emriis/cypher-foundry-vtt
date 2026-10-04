@@ -1,0 +1,28 @@
+{
+  "_id": "5b70f183ec9c4795",
+  "_key": "!items!5b70f183ec9c4795",
+  "name": "Greater Necromancy",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "greater-necromancy",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You animate the body of a dead creature up to twice your size within short range, creating a level 3 follower that is an undead creature. It has none of the intelligence, memories, or special abilities that it had in life. The creature follows your verbal commands until you use a one-hour or longer recovery, at which time it becomes an inert corpse. You can reanimate it again when it becomes inert, or if it is “killed” by damage (though you may have to spend some time with a needle and thread to reattach detached or loose parts). Each animated creature beyond the first costs 2 additional Intellect points (so 7 points for two bodies, 9 points for three, and so on). Action to animate. Wraith Cloak (4 Intellect): At your command, a nearby undead spirit wraps itself around you until you use a ten-minute or longer recovery. The spirit is empowered during this period, automatically inflicting 4 damage (no roll required) to anyone who tries to touch you or strike you with a melee attack. While the wraith cloak is active, all your stealth tasks are eased. Enabler."
+  }
+}

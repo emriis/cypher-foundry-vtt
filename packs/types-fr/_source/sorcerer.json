@@ -31,62 +31,10 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "cypher-use",
-        "name": "Utilisation des Cyphers",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You can bear one additional cypher at a time. Open Inner Eye (2+ Intellect plus 1 minor wound): After a ten-minute ritual that concludes by you or an ally puncturing your forehead with a blade (inflicting a minor wound), you can peer into the spiritual realm until you use a ten-hour recovery. While your inner eye is open, your perception tasks in physical reality are hindered, but you gain additional abilities. While your inner eye is open, you can use any of the following abilities, paying the Pool point cost for each use."
-      },
-      {
-        "id": "detect-spirit",
-        "name": "Ouvrir l’Œil Intérieur (2+ Intellect et 1 blessure mineure)",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
-        },
-        "description": "Make an Intellect roll to scan for mental presences of living creatures and undead spirits within short range. You detect any such creature whose level is equal to or less than the level of your result. Barriers of higher level than the level of your result block this sense. Effort: Until your next turn you can pinpoint those presences in physical space. Action."
-      },
-      {
-        "id": "mindslice",
-        "name": "Mindslice",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
-        },
-        "description": "You mentally attack a target you can see within short range, focusing your mind to blast their thoughts for 2 damage (ignores armor). Creatures without minds (such as relatively mindless undead) might be immune. Action."
-      },
-      {
-        "id": "sorcerous-suggestion",
-        "name": "Sorcerous Suggestion",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
-        },
-        "description": "If you succeed on an Intellect attack against a creature with a mind, on their next turn they attempt one of the following actions that you specify: identify themself, say why they are present, close or open a door or container, drop something or pick something up, move an immediate distance, pass something they're holding to you, or just stand quietly and do nothing. Action. Ten minutes to activate (one minute to activate at tier 3 and higher). At tier 3: The time you need to activate the ritual is reduced to one minute and your perception tasks in the real world are no longer hindered. Most types give you three abilities. Sorcerer only gives you two, but Cypher Use gives you additional options and Open Inner Eye is like three abilities wrapped in one."
-      }
+      "Compendium.cypher.abilities-fr.Item.cc5f4c8ad92183a1",
+      "Compendium.cypher.abilities-fr.Item.d847a78f8d17c87d",
+      "Compendium.cypher.abilities-fr.Item.6a9ceeb3c3a2cf5f",
+      "Compendium.cypher.abilities-fr.Item.c527bf562ea77e1c"
     ],
     "statOptions": [
       "intellect"

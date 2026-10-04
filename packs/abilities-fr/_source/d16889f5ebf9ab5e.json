@@ -1,0 +1,28 @@
+{
+  "_id": "d16889f5ebf9ab5e",
+  "_key": "!items!d16889f5ebf9ab5e",
+  "name": "Forme animale",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "animal-shape",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu te changes en un animal aussi petit qu’un rat ou jusqu’à ta taille (par exemple un grand chien ou un petit ours) jusqu’à ta prochaine récupération de dix minutes ou plus. À chaque transformation, tu peux choisir une forme animale différente. Ton équipement fait partie de la transformation et devient inutilisable sauf s’il a un effet passif (comme une armure). Dans cette forme, tes caractéristiques restent celles de ta forme normale, mais tu peux te déplacer et attaquer selon la forme animale choisie (les attaques de la plupart des animaux de cette taille sont des armes moyennes, que tu peux utiliser sans pénalité). Les tâches nécessitant des mains (ouvrir une porte, appuyer sur un bouton) sont entravées en forme animale. Tu ne peux pas parler mais tu peux utiliser des aptitudes qui ne reposent pas sur la parole humaine. Tu gagnes deux aptitudes mineures associées à la créature que tu deviens (voir le tableau Aptitudes mineures de forme animale). Devenir un animal parlant : ressemblant exactement à un animal normal, mais tu peux parler et utiliser des aptitudes reposant sur la parole. Prendre une forme hybride : C’est comme ta forme normale mais avec des traits animaliers, même si l’animal est beaucoup plus petit que toi (par ex. chauve‑souris ou rat). En forme hybride tu peux parler, utiliser toutes tes aptitudes, attaquer comme un animal et effectuer des tâches nécessitant des mains sans être entravé·e. Quiconque te voit clairement en forme hybride ne te confondra jamais avec un simple animal."
+  }
+}

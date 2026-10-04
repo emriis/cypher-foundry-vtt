@@ -33,49 +33,9 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "combat-prowess",
-        "name": "Prouesse Martiale",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Tu ajoutes +1 dégât à un type d'attaque d'arme de ton choix : attaque de mêlée ou attaque à distance."
-      },
-      {
-        "id": "divine-radiance",
-        "name": "Rayonnement Divin",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
-        },
-        "description": "Tu canalises ton pouvoir sacré pour produire l’un des effets suivants.",
-        "effects": [{"id":"blessing","name":"Bénédiction","description":"Une cible à courte portée est chargée d’une grâce divine bienveillante. À tout moment avant sa prochaine récupération de dix minutes ou plus, elle gagne un Atout pour une action de son choix.","effort":"Affecte deux cibles supplémentaires.","rollTables":[]},{"id":"turn-undead","name":"Repousser les morts-vivants","description":"Jusqu’à cinq morts-vivants de niveau 2 ou moins à courte portée sont frappés par un rayonnement divin (effectue un jet d’attaque d’Intellect séparé contre chaque cible). Les cibles affectées sont repoussées et doivent consacrer leur prochain tour à fuir ta présence. Selon le cadre de jeu, le MJ peut décider que cette aptitude fonctionne sur les démons ou des créatures similaires à la place des morts-vivants, ou en plus d’eux. Au rang 3, au lieu de faire fuir les cibles affectées, tu peux les rendre incapables d’agir pendant un tour. Lorsqu’une aptitude ou un effet permet d’attaquer plusieurs créatures pendant ton tour, chaque attaque après la première est une action supplémentaire pendant ton tour. Une attaque effectuée comme action supplémentaire compte comme une action distincte pour déterminer les modifications apportées à la tâche par l’Effort.","effort":"Affecte deux cibles supplémentaires. Augmente de 1 le niveau maximal des morts-vivants que tu peux affecter.","rollTables":[]}]
-      },
-      {
-        "id": "healing-hand",
-        "name": "Healing Hand",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
-        },
-        "description": "With a touch, you reduce one wound's severity. A healed minor wound is gone completely, one moderate wound becomes a minor wound, or one major wound becomes a moderate wound. (If the character is at their limit of lower-severity wounds, you can't use this ability to reduce the severity of their wounds.) Each time you use Healing Hand, the Intellect cost increases by 1. The cost returns to 1 after you take a recovery. Last action. An NPC recipient of Healing Hand regains 5 health."
-      }
+      "Compendium.cypher.abilities-fr.Item.ac808c42b3ad5310",
+      "Compendium.cypher.abilities-fr.Item.3960e53484ca9e8e",
+      "Compendium.cypher.abilities-fr.Item.094d990f06a4c6c9"
     ],
     "statOptions": [
       "might",

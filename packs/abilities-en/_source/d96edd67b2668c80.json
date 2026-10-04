@@ -1,0 +1,28 @@
+{
+  "_id": "d96edd67b2668c80",
+  "_key": "!items!d96edd67b2668c80",
+  "name": "Flamboyant Swordplay GM intrusions",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "flamboyant-swordplay-gm-intrusions",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your foe's disarmed object strikes your ally for a minor wound. The tip of your weapon gets embedded in the floor or wall, requiring an action to free it. The attack impact jars you, hindering tasks with that hand until you use an action to shake it off. A few abilities in this book include suggested GM intrusions because you're more likely to trigger an intrusion when using those abilities, and having some options here makes it easier for the GM."
+  }
+}

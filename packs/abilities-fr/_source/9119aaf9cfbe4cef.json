@@ -1,0 +1,28 @@
+{
+  "_id": "9119aaf9cfbe4cef",
+  "_key": "!items!9119aaf9cfbe4cef",
+  "name": "Port dissimulé",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "concealed-carry",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu peux facilement cacher une arme à feu à une main sur toi et la dégainer ou la rengainer en utilisant une Première action) pendant ton tour. Les tâches pour dissimuler cette arme (que quelqu’un te regarde ou te fouille) sont facilitées de deux paliers. Tu gagnes un atout pour toute tâche consistant à faire tourner, jongler, dégainer rapidement ou réaliser un tour d’adresse avec ton arme et son holster. Tu peux effectuer des manipulations expertes avec ton arme : jongler avec, faire tourner le canon autour d’un doigt, tirer sur une icône d’une carte à longue portée, tirer sur un objet tenu dans la main de quelqu’un à longue portée, toucher une pièce lancée en l’air à longue portée, etc., puis rengainer l’arme en un clin d’œil. Ces actions ne peuvent pas blesser une créature (ni son équipement). Cependant, si tu les utilises pour impressionner ou intimider un·e adversaire, la tâche est facilitée."
+  }
+}

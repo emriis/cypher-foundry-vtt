@@ -1,0 +1,28 @@
+{
+  "_id": "6ea9ddc1cc1575c5",
+  "_key": "!items!6ea9ddc1cc1575c5",
+  "name": "Saisie colossale",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "grab",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Si tu fais une attaque à mains nues comme Dernière action, ton attaque inflige 2 dégâts de moins, mais la cible est saisie. Toutes ses tâches sont entravées, y compris pour tenter de se libérer. En tant qu’attaque, tu peux infliger 4 dégâts à la cible saisie (sans jet). Quand tu es plus grand·e que la normale, chaque palier de taille (Agrandissement, Encore plus grand·e, Énorme, Gigantesque, Colossal·e) entrave les tentatives d’évasion de la cible de +1 palier et augmente tes dégâts d’écrasement de +1."
+  }
+}

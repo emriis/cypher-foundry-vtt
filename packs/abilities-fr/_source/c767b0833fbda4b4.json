@@ -1,0 +1,28 @@
+{
+  "_id": "c767b0833fbda4b4",
+  "_key": "!items!c767b0833fbda4b4",
+  "name": "Connaissance des os",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "bone-lore",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "En touchant un corps, tu peux établir la cause de la mort, depuis combien de temps la créature est morte et son espèce lorsqu’elle était vivante. Dernière action."
+  }
+}

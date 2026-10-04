@@ -1,0 +1,28 @@
+{
+  "_id": "2578d58a8ccec183",
+  "_key": "!items!2578d58a8ccec183",
+  "name": "Divination",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "divination",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You contact a powerful entity (such as a deity, demon lord, or creature from a dimension of knowledge), ask one question, and get a general answer. The GM assigns a level to the question, so the more obscure the answer, the more difficult the task. Generally, knowledge that you could find by looking somewhere  other than your current location is level 1, obscure knowledge of the past is level 7, and specific knowledge of future events beyond the next few minutes is impossible. Action."
+  }
+}

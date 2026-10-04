@@ -1,0 +1,28 @@
+{
+  "_id": "bee172df46baed49",
+  "_key": "!items!bee172df46baed49",
+  "name": "Compagnon animal",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "beast-companion",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu gagnes un·e suivant·e de niveau 2, une bête de ta taille ou plus petite, qui t’accompagne et suit tes instructions. Toi et le·la MJ définissez son apparence et sa personnalité. Son déplacement dépend de son type (oiseau, nageur·euse, etc.). Si ton compagnon animal meurt, tu peux utiliser tes ressources pour chasser quelques jours dans la nature afin d’en trouver un·e nouveau·elle et l’apprivoiser. Facilitateur."
+  }
+}

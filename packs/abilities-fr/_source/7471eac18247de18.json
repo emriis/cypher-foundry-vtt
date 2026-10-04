@@ -1,0 +1,28 @@
+{
+  "_id": "7471eac18247de18",
+  "_key": "!items!7471eac18247de18",
+  "name": "Lancer d’arme",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "throw-weapon",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 1,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu lances une arme de mêlée légère ou moyenne comme si elle était une arme de jet moyenne, sur une cible à portée courte. Après le lancer (touché ou raté), l’arme revient dans ta main si tu réussis une tâche de difficulté 3 (ou 4 si l’arme est tranchante). Effort : lancer une arme lourde (au lieu d’une légère/moyenne) — en Dernière action."
+  }
+}

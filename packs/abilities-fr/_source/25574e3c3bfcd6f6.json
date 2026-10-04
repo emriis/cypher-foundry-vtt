@@ -1,0 +1,28 @@
+{
+  "_id": "25574e3c3bfcd6f6",
+  "_key": "!items!25574e3c3bfcd6f6",
+  "name": "Rien que défendre",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "nothing-but-defend",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Si tu ne fais rien d’autre que te défendre pendant ton tour, tu gagnes un atout à toutes tes tâches de défense pendant un round."
+  }
+}

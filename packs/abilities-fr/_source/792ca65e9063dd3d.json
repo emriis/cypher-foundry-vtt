@@ -1,0 +1,28 @@
+{
+  "_id": "792ca65e9063dd3d",
+  "_key": "!items!792ca65e9063dd3d",
+  "name": "Frénésie",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "frenzy",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "<p>En combat, tu peux entrer dans un état de frénésie. Tant que tu es dans cet état, tu ne peux pas utiliser de points d'Intellect, mais tu ajoutes +1 à ton Atout de Puissance et à ton Atout de Célérité. Cet effet dure aussi longtemps que tu le souhaites, mais il prend fin dès qu'aucun combat n'a lieu à portée de tes sens.</p><p>Effort : Tu facilites les attaques de tes alliés contre un adversaire de ton choix pour le reste du combat.</p>"
+  }
+}

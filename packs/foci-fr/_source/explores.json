@@ -7,214 +7,76 @@
   "system": {
     "description": "<p>You love discovering and exploring new locations, whether a tranquil valley, a dangerous wasteland, or a forbidding planet—and you have the necessary skills to survive and thrive in those places.</p>",
     "abilities": [
-      {
-        "id": "exploration-survivor",
-        "name": "Survie de l’explorateur·rice",
-        "tier": 1,
-        "prerequisites": [
-          "tough"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+      "Compendium.cypher.abilities-fr.Item.84c1de36bfdcdb79",
+      "Compendium.cypher.abilities-fr.Item.717cbbb1fe15ca8e",
+      "Compendium.cypher.abilities-fr.Item.90b001af78f168b4",
+      "Compendium.cypher.abilities-fr.Item.37a7370f1c4da046",
+      "Compendium.cypher.abilities-fr.Item.de3f5d68d3c235b3",
+      "Compendium.cypher.abilities-fr.Item.459f3787b3de629e",
+      "Compendium.cypher.abilities-fr.Item.a3a0094d69ff08e7",
+      "Compendium.cypher.abilities-fr.Item.d97ee061ff844e4f",
+      "Compendium.cypher.abilities-fr.Item.ca6a048fe04a316f",
+      "Compendium.cypher.abilities-fr.Item.7ea769276656e57c",
+      "Compendium.cypher.abilities-fr.Item.0ba093747eef4547",
+      "Compendium.cypher.abilities-fr.Item.5d67e284aa434095",
+      "Compendium.cypher.abilities-fr.Item.6ad4bdf852dcae6b"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "717cbbb1fe15ca8e",
+          "to": "84c1de36bfdcdb79"
         },
-        "description": "Tu sais comment survivre dans des lieux nouveaux et étranges. Après avoir passé au moins dix minutes dans une région et réussi une tâche de survie (généralement difficulté 2, ou selon le/de la MJ), tu trouves un élément utile que tu cherchais : abri (grotte, cavité d’arbre…), matériaux pour faire du feu, eau potable, gibier facile à abattre, plantes et champignons comestibles, ou encore de quoi contrer une blessure qui saigne ou un poison. Tu peux nourrir toi‑même et cinq allié·e·s tant que vous restez dans cette région. Une fois que tu as été dans un lieu notable (campement, repère naturel…), tu connais toujours la direction générale et la distance depuis l’endroit où tu te trouves."
-      },
-      {
-        "id": "tough",
-        "name": "Robuste",
-        "tier": 1,
-        "prerequisites": [
-          "untamed-recovery"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "90b001af78f168b4",
+          "to": "717cbbb1fe15ca8e"
         },
-        "description": "You can take an additional minor wound."
-      },
-      {
-        "id": "untamed-recovery",
-        "name": "Récupération sauvage",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "84c1de36bfdcdb79",
+          "to": "37a7370f1c4da046"
         },
-        "description": "Tu gagnes une récupération d’une action supplémentaire chaque jour."
-      },
-      {
-        "id": "beast-companion",
-        "name": "Compagnon animal",
-        "tier": 2,
-        "prerequisites": [
-          "exploration-survivor"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "84c1de36bfdcdb79",
+          "to": "de3f5d68d3c235b3"
         },
-        "description": "You gain a follower that is a level 2 beast of your size or smaller that accompanies you and follows your instructions. You and the GM must work out the appearance and personality of your beast. Its movement is based on its creature type (avian, swimmer, and so on). If your beast companion dies, you can use your resources hunting in the wild for a few days to locate and befriend a new one."
-      },
-      {
-        "id": "experienced-explorer",
-        "name": "Explorateur·rice expérimenté·e",
-        "tier": 2,
-        "prerequisites": [
-          "exploration-survivor"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "37a7370f1c4da046",
+          "to": "459f3787b3de629e"
         },
-        "description": "Ton expérience des créatures, plantes et substances de divers environnements te donne une protection naturelle : Tes jets de défense contre le poison sont facilités, Les blessures causées par un poison sont réduites d’un palier (majeure → modérée, modérée → mineure, mineure → aucune), Tu es immunisé·e aux maladies naturelles. Dans la nature, les effets comme les hautes herbes, les broussailles denses, le terrain accidenté, les éboulements ou le mauvais temps ne t’entravent pas, ne ralentissent pas ton déplacement et les blessures potentielles qu’ils peuvent infligés sont réduites d’un palier. Enfin, tu peux trouver nourriture et eau potable dans la nature pour toi et quelques personnes, en environ une heure d’exploration."
-      },
-      {
-        "id": "animal-senses-and-sensibilities",
-        "name": "Sens et instincts animaux",
-        "tier": 3,
-        "prerequisites": [
-          "beast-companion"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "de3f5d68d3c235b3",
+          "to": "a3a0094d69ff08e7"
         },
-        "description": "La plupart du temps, si tu t’apprêtes à tomber dans une embuscade ou un piège de niveau 4 ou moins, le·la MJ t’en avertit (tu n’auras peut‑être pas le temps de prévenir les autres). Même si tu ignores une attaque imminente, l’assaillant n’obtient aucun avantage (pas d’atout dû à la surprise)."
-      },
-      {
-        "id": "wilderness-encouragement",
-        "name": "Encouragement sauvage",
-        "tier": 3,
-        "prerequisites": [
-          "experienced-explorer"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "459f3787b3de629e",
+          "to": "d97ee061ff844e4f"
         },
-        "description": "Your knowledge and experience allow you to help others rest and recover. While in the wilderness or when talking about your time in the wilderness, choose one ally within short range who can understand you (you can choose yourself). The ally can immediately make an extra one-action recovery or remove a moderate wound. You can't use this ability on the same creature again until they've used one of their own recoveries. Action."
-      },
-      {
-        "id": "wild-camouflage",
-        "name": "Camouflage sauvage",
-        "tier": 4,
-        "prerequisites": [
-          "animal-senses-and-sensibilities"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "a3a0094d69ff08e7",
+          "to": "ca6a048fe04a316f"
         },
-        "description": "En ajustant ta tenue, grâce à des astuces de déguisement et à ta connaissance du terrain, tu deviens difficile à repérer dans la nature jusqu’à ta prochaine récupération de dix minutes ou plus. Pendant ce temps : tu gagnes deux atouts à tes tâches d’Esquive et de Discrétion. L’effet cesse si tu fais quelque chose de trop visible (attaque, aptitude à effet évident, déplacement d’un gros objet…)."
-      },
-      {
-        "id": "wilderness-awareness",
-        "name": "Conscience de la nature",
-        "tier": 4,
-        "prerequisites": [
-          "wilderness-encouragement"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "d97ee061ff844e4f",
+          "to": "7ea769276656e57c"
         },
-        "description": "Ton lien avec la nature devient presque surnaturel. En pleine nature, tu peux étendre tes sens dans un rayon de1,5 km et poser au/à la MJ une question simple et générale sur la zone, comme : « Où est le camp ennemi ? », « Mon ami·e Deithan est‑iel encore en vie ? », « Où est la chose la plus venimeuse du coin ? » Si la réponse n’est pas dans la zone, tu n’obtiens rien."
-      },
-      {
-        "id": "explorer-s-awareness",
-        "name": "Vigilance de l’explorateur·rice",
-        "tier": 5,
-        "prerequisites": [
-          "wild-camouflage"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "ca6a048fe04a316f",
+          "to": "0ba093747eef4547"
         },
-        "description": "Tu es instinctivement attentif·ive aux dangers, obstacles et menaces dans ta ligne de vue. Lorsque tu consacres de l’Effort à tes tâches d’initiative ou de perception, tu gagnes deux niveaux d’Effort gratuits."
-      },
-      {
-        "id": "the-wild-is-on-your-side",
-        "name": "La nature est de ton côté",
-        "tier": 5,
-        "prerequisites": [
-          "wilderness-awareness"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 5,
-          "options": []
+        {
+          "from": "7ea769276656e57c",
+          "to": "5d67e284aa434095"
         },
-        "description": "La nature elle‑même interfère avec tes adversaires à portée courte : rochers qui les font trébucher, lianes qui les entravent, insectes qui les mordent, animaux qui les distraient, etc. Toutes leurs tâches sont entravées jusqu’à ta prochaine récupération de dix minutes ou plus. Tu ne peux utiliser cette aptitude qu’en environnement sauvage."
-      },
-      {
-        "id": "one-with-the-wild",
-        "name": "Un·e avec la nature",
-        "tier": 6,
-        "prerequisites": [
-          "explorer-s-awareness",
-          "the-wild-is-on-your-side"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 6,
-          "options": []
+        {
+          "from": "0ba093747eef4547",
+          "to": "5d67e284aa434095"
         },
-        "description": "Toi et tes allié·e·s développez un lien inhabituel avec la nature à portée longue, jusqu’à ta prochaine récupération d’une heure ou plus. Effets : Les animaux et plantes naturels ne vous blesseront pas volontairement. Toi et tes allié·e·s gagnez +1 en Avantage de Puissance, Célérité et Intellect. Vos récupérations restaurent deux fois plus de points."
-      },
-      {
-        "id": "survivor",
-        "name": "Survivant·e",
-        "tier": 6,
-        "prerequisites": [
-          "the-wild-is-on-your-side"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Si tu as une blessure mineure ou modérée, tu peux te reprendre sans dépenser de Puissance. L’aptitude se renouvelle à chaque récupération."
-      }
-    ]
+        {
+          "from": "0ba093747eef4547",
+          "to": "6ad4bdf852dcae6b"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

@@ -1,0 +1,28 @@
+{
+  "_id": "8ed7397d6cb9b3d1",
+  "_key": "!items!8ed7397d6cb9b3d1",
+  "name": "Recompile Machine",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "recompile-machine",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 8,
+      "options": []
+    },
+    "action": "lastAction",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "With a successful Intellect attack against a machine (intelligent or not) of level 4 or lower within long range, you connect directly into their core system. Choose one of the following effects. The machine ceases all function—it is “bricked.” The machine reboots after a few rounds, then functions as an additional machine companion to you for about a day. After you finish a ten-hour recovery, you must reuse this ability on the machine to ensure it doesn't reset back to its original programming (or sense of self, if an intelligent machine). The machine explodes, inflicting 4 damage to all creatures in immediate range; make a separate Intellect attack roll against each. Effort: Increase the maximum level of the machine you can affect by 1. Last action."
+  }
+}

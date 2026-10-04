@@ -1,0 +1,28 @@
+{
+  "_id": "d23c7e05acbc7905",
+  "_key": "!items!d23c7e05acbc7905",
+  "name": "Suggestion inspirante",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "inspiring-suggestion",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": "firstAction",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Choose an ally who can see and easily understand you. Suggest a specific action for them to take, such as “attack the leader” or “climb the wall.” If the ally chooses to take that exact action on their next turn, they gain two assets on that task. First action."
+  }
+}

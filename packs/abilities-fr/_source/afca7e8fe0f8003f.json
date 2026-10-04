@@ -1,0 +1,28 @@
+{
+  "_id": "afca7e8fe0f8003f",
+  "_key": "!items!afca7e8fe0f8003f",
+  "name": "Coup désarmant",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "disarming-strike",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu attaques un·e adversaire avec ton arme de prédilection. En cas de réussite tu infliges 1 dégât de moins mais tu désarmes l’adversaire, lancant son arme à 3,5 m au sol. Si ton arme est un fouet, tu peux au lieu de cela entraver ton attaque et si elle réussit, attraper l’arme de l’adversaire dans ton autre main. Si ton arme est un arc, tu peux au lieu de cela entraver ton attaque et si elle réussit, clouer l’arme de l’adversaire à un objet ou mur proche."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "8ba041f47f9dfd31",
+  "_key": "!items!8ba041f47f9dfd31",
+  "name": "Voix de la nature",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "nature-s-voice",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu fais une attaque d’Intellect pour calmer une créature non‑humaine à longue portée qui peut te voir. Tu dois lui parler (sans qu’elle comprenne forcément tes mots). La cible reste calme jusqu’à ta prochaine récupération de dix minutes ou plus, ou aussi longtemps que tu passes ton action à la calmer. Effort : affecter une créature supplémentaire (coût : 2 Intellect)."
+  }
+}

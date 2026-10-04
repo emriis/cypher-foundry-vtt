@@ -1,0 +1,28 @@
+{
+  "_id": "47cfe07b3e324cd6",
+  "_key": "!items!47cfe07b3e324cd6",
+  "name": "Armure de glace améliorée",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "improved-ice-armor",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Ton Armure de glace facilite tes jets de défense de Blocage d’un palier supplémentaire. Les dégâts de ton toucher glacé, de Trait de givre et d’Étreinte hivernale augmentent de +1 dégât supplémentaire."
+  }
+}

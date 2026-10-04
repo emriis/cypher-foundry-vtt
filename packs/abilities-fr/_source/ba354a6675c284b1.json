@@ -1,0 +1,28 @@
+{
+  "_id": "ba354a6675c284b1",
+  "_key": "!items!ba354a6675c284b1",
+  "name": "Coup de pierre",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "stone-bash",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Ton attaque à mains nues ce tour inflige 2 points de dégâts supplémentaires si tu la réalises en tant que dernière action."
+  }
+}

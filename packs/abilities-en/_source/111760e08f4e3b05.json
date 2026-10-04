@@ -1,0 +1,28 @@
+{
+  "_id": "111760e08f4e3b05",
+  "_key": "!items!111760e08f4e3b05",
+  "name": "Resist the Storm",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "resist-the-storm",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You're resistant to the natural hazards of storms. Choose either electricity or sonic energy. If attacked with this kind of energy, reduce the severity of the wound by one step (major to moderate, moderate to minor, minor to none). You can take this ability twice, each time selecting a different kind of energy. Enabler."
+  }
+}

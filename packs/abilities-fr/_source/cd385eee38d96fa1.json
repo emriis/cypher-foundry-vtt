@@ -1,0 +1,28 @@
+{
+  "_id": "cd385eee38d96fa1",
+  "_key": "!items!cd385eee38d96fa1",
+  "name": "Source de guérison",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "font-of-healing",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You have healing power within you that others can access with a touch. If an ally uses their action to touch you and spends 2 Intellect, they choose whether they are healed of two minor wounds, healed of a moderate wound, or (if they spend 5 Intellect) healed of a major wound. Once the ally uses this ability, they can't do so again until after they use a ten-hour recovery. Enabler."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "621df79084e834f3",
+  "_key": "!items!621df79084e834f3",
+  "name": "Machine Reading",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "machine-reading",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can read the surface “thoughts” of a machine within short range, even if it doesn't want you to. You must be able to see it. Once you have established contact, you can read the machine's thoughts until you use a ten-minute or longer recovery. Action to initiate."
+  }
+}

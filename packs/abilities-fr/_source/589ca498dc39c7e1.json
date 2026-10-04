@@ -1,0 +1,28 @@
+{
+  "_id": "589ca498dc39c7e1",
+  "_key": "!items!589ca498dc39c7e1",
+  "name": "Lire les pensées de surface",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "infer-thoughts",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "En observant ou en interagissant avec une cible de niveau 4 ou moins pendant un round, tu obtiens une lecture claire de ses pensées de surface, même si elle résiste (aucun jet requis). Tu dois être capable de voir la cible. Tant que tu à un accès à ses pensées que ce soit par le langage corporel, sa parole et donc ce que cela dit ou ne dit pas, tu peux continuer à lire ses pensées jusqu’à ta prochaine récupération de dix minutes ou plus. Effort : augmente le niveau maximum affecté de +1."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "13e5fef6b0ed0023",
+  "_key": "!items!13e5fef6b0ed0023",
+  "name": "Rayon de confusion",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "confusion-ray",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu projettes un rayon gris perturbant l’esprit d’une créature à portée courte. Attaque d’Intellect : en cas de succès, tu infliges 1 dégât ignorant l’Armure et les tâches de la cible sont entravées jusqu’à ton prochain tour."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "80a4d95e113c59f7",
+  "_key": "!items!80a4d95e113c59f7",
+  "name": "Healing Beacon",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "healing-beacon",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "One of your allies automatically is healed whenever you use your healing power. Choose one ally to be your healing beacon. Until you use a one-hour or longer recovery, when you use Healing Hand or a similar ability, the beacon ally gets to reduce the severity of one of their own wounds too (as long as it's not a higher severity than the one you're healing). The beacon ally must be within short range of you to gain this healing. The beacon ally doesn't gain this effect if you directly heal them. Action to initiate."
+  }
+}

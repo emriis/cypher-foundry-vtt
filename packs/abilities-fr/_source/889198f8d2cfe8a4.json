@@ -1,0 +1,28 @@
+{
+  "_id": "889198f8d2cfe8a4",
+  "_key": "!items!889198f8d2cfe8a4",
+  "name": "Piétinement de golem",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "golem-stomp",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu frappes le sol de toute ta force, créant une onde de choc. Fais des attaques séparées contre trois créatures à portée immédiate. Chaque créature touchée subit 3 points de dégâts et tu choisis si elle est repoussée hors de portée immédiate ou renversée."
+  }
+}

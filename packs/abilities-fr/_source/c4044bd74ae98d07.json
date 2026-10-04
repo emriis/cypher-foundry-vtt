@@ -1,0 +1,30 @@
+{
+  "_id": "c4044bd74ae98d07",
+  "_key": "!items!c4044bd74ae98d07",
+  "name": "Tireur d'élite",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "excellent-gunner",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [
+      "firearms"
+    ],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can freely use firearms and suffer no penalty when using one. You inflict an additional 1 damage with firearms. For one attack you make with a firearm, you can roll twice and use the better result. This ability renews when you make a ten-minute or longer recovery. Enabler."
+  }
+}

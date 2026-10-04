@@ -1,0 +1,28 @@
+{
+  "_id": "822cea619f6a0285",
+  "_key": "!items!822cea619f6a0285",
+  "name": "Armure de glace",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "ice-armor",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu recouvres ton corps d’une pellicule de glace jusqu’à ta prochaine récupération de dix minutes ou plus, facilitant tes jets de défense de Blocage. De plus, tu réduis la sévérité des blessures causées par le froid ou la glace d’un palier (majeure → modérée, modérée → mineure, mineure → aucune). Exemple : un effet infligeant une blessure modérée ne t’inflige qu’une blessure mineure. Tu peux effectuer une attaque légère à mains nues de « toucher glacé » infligeant 2 dégâts de froid si l’attaque réussit."
+  }
+}

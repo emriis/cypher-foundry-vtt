@@ -1,0 +1,31 @@
+{
+  "_id": "f5a27fc7de12d9ce",
+  "_key": "!items!f5a27fc7de12d9ce",
+  "name": "Defensive Phasing",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "defensive-phasing",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "choice",
+      "amount": 2,
+      "options": [
+        "intellect",
+        "speed"
+      ]
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Until you use a ten-minute or longer recovery, you gain an asset to your dodge tasks as you selectively change your phase so that some attacks pass through you harmlessly. Action to initiate."
+  }
+}

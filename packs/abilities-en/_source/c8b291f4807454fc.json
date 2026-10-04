@@ -1,0 +1,31 @@
+{
+  "_id": "c8b291f4807454fc",
+  "_key": "!items!c8b291f4807454fc",
+  "name": "Earthshake",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "earthshake",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "choice",
+      "amount": 7,
+      "options": [
+        "might",
+        "intellect"
+      ]
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You trigger a violent earth movement in a short area within very long range. Buildings and terrain features are damaged, reducing their levels by 1 to 3, shedding debris and rubble. Creatures in the area take 6 damage from shaking and/or falling debris (roll a separate attack roll against each). Even on a failed attack, creatures in the area still take 3 damage. Action."
+  }
+}

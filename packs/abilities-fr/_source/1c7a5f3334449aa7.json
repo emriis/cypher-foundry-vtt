@@ -1,0 +1,28 @@
+{
+  "_id": "1c7a5f3334449aa7",
+  "_key": "!items!1c7a5f3334449aa7",
+  "name": "Renfort structurel",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "structural-brace",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu sers de renfort structurel, de pilier supplémentaire ou de contrefort pour une structure menacée d’effondrement. Si tu dois faire un jet pour empêcher la structure de s’effondrer et que ton résultat est de 18 ou moins, considère ton résultat comme un 18. (Tu évites ainsi une Intrusion du·de la MJ si tu fais un 1.) Pendant que tu sers de renfort, tu ne peux pas bouger et tu échoues automatiquement aux tâches d’esquive. Tu peux effectuer une action supplémentaire à ton tour pour mettre fin à l’effet plus tôt ; sinon, il prend fin lorsque tu effectues une récupération de dix heures. Alternativement, tu peux simplement soutenir un poids énorme allant jusqu’à 50 tonnes ou utiliser cette aptitude pour maintenir une porte ou une grille fermée (en considérant un jet de 18 ou moins comme un 18, ou plus avec Effort). Effort : Augmente le nombre minimum obtenu pour cette aptitude de 3 ou augmente le poids que tu peux soutenir de 10 tonnes."
+  }
+}

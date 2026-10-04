@@ -1,0 +1,28 @@
+{
+  "_id": "16ac53dcf92bb38c",
+  "_key": "!items!16ac53dcf92bb38c",
+  "name": "Panache Romantique",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "daring-lunge",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Ton charme éclatant, ta confiance assurée, ton salut parfaitement chorégraphié ou ton clin d'œil suggestif font que, si ton jet pour persuader ou impressionner est inférieur à 9, considère-le comme 9. (Ce qui signifie qu'un 1 n'entraîne pas d'intrusion du MJ.) Au rang 3, le résultat minimum pour cette aptitude passe à 12. Effort : Augmente le résultat minimum de 3."
+  }
+}

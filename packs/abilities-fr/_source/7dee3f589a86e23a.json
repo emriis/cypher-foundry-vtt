@@ -1,0 +1,28 @@
+{
+  "_id": "7dee3f589a86e23a",
+  "_key": "!items!7dee3f589a86e23a",
+  "name": "Réserves cachées",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "hidden-reserves",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu utilises une récupération d’une action, tu gagnes +1 en Avantage de Puissance et +1 en Avantage de Célérité jusqu’à ta prochaine récupération de dix minutes ou plus."
+  }
+}

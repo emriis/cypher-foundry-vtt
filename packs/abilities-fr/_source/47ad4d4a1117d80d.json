@@ -1,0 +1,28 @@
+{
+  "_id": "47ad4d4a1117d80d",
+  "_key": "!items!47ad4d4a1117d80d",
+  "name": "Maître·sse du bouclier",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "shield-master",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu utilises un bouclier, il peut encaisser une blessure modérée supplémentaire avant d’être détruit."
+  }
+}

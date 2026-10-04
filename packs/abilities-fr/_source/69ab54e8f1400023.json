@@ -1,0 +1,28 @@
+{
+  "_id": "69ab54e8f1400023",
+  "_key": "!items!69ab54e8f1400023",
+  "name": "Machine plutôt que Chair",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "machine-not-flesh",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu es une machine intelligente au corps humanoïde. Avantages : +4 points à répartir dans tes Réserves ; +1 d'Avantage supplémentaire dans une Réserve de ton choix ; immunité contre les poisons, maladies et le vide spatial ; pas besoin de manger/boire/respirer ; une récupération supplémentaire d'une action par jour si connecté·e à une source d'énergie ; tu facilites toutes les tâches de piratage. Inconvénients : le traitement de tes blessures nécessite de l'ingénierie (pas de méthodes biologiques) ; sans source d'énergie lors de ta récupération de dix heures, tu perds ta récupération d'action normale et ton bonus ; certaines personnes biologiques ont des préjugés contre les androïdes (interactions sociales positives parfois entravées à la discrétion du MJ)."
+  }
+}

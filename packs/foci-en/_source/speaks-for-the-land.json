@@ -7,199 +7,71 @@
   "system": {
     "description": "<p>Your spiritual connection to nature and the environment grants you mystical abilities.</p>",
     "abilities": [
-      {
-        "id": "healing-fruit",
-        "name": "Healing Fruit",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+      "Compendium.cypher.abilities-en.Item.0e176c045f4a74e7",
+      "Compendium.cypher.abilities-en.Item.ec6a00aa2aa77608",
+      "Compendium.cypher.abilities-en.Item.ba0cd166e4331148",
+      "Compendium.cypher.abilities-en.Item.fcf49bf4fa70d5ed",
+      "Compendium.cypher.abilities-en.Item.e84c844b52d7b799",
+      "Compendium.cypher.abilities-en.Item.0fa12863b5115638",
+      "Compendium.cypher.abilities-en.Item.8ba041f47f9dfd31",
+      "Compendium.cypher.abilities-en.Item.99115ad29e75dbcb",
+      "Compendium.cypher.abilities-en.Item.3431df2579bde7f3",
+      "Compendium.cypher.abilities-en.Item.30a2ecf459648a64",
+      "Compendium.cypher.abilities-en.Item.2eae55f24d89e078",
+      "Compendium.cypher.abilities-en.Item.f89f9c33f615854a"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "0e176c045f4a74e7",
+          "to": "fcf49bf4fa70d5ed"
         },
-        "description": "You infuse one fruit or seed with healing magic. A creature that eats it regains 1d6 to a stat Pool of their choice or recovers a minor wound. A creature cannot gain this benefit again until they take a ten-minute or longer recovery. An uneaten fruit automatically loses its healing magic when you use a ten-minute or longer recovery. Action."
-      },
-      {
-        "id": "seeds-of-fury",
-        "name": "Seeds of Fury",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+        {
+          "from": "ba0cd166e4331148",
+          "to": "fcf49bf4fa70d5ed"
         },
-        "description": "You throw a handful of seeds in the air that ignite and speed toward a target within long range, scratching the air with twisting smoke trails. A successful attack deals 3 damage and catches the target on fire, inflicting an additional 1 damage per round until the target uses an action to douse the flames or until you use a ten-minute or longer recovery. Action to initiate."
-      },
-      {
-        "id": "wild-affinity",
-        "name": "Wild Affinity",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "ba0cd166e4331148",
+          "to": "e84c844b52d7b799"
         },
-        "description": "A natural wild animal in its right mind and in its natural environment will not attack you unless provoked or controlled."
-      },
-      {
-        "id": "communication",
-        "name": "Communication",
-        "tier": 2,
-        "prerequisites": [
-          "healing-fruit",
-          "wild-affinity"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "ec6a00aa2aa77608",
+          "to": "e84c844b52d7b799"
         },
-        "description": "You can convey a basic concept to a creature that normally can't speak or understand speech. The creature can also give you a very basic answer to a simple question. Action."
-      },
-      {
-        "id": "wilderness-experience",
-        "name": "Wilderness Experience",
-        "tier": 2,
-        "prerequisites": [
-          "wild-affinity",
-          "seeds-of-fury"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "fcf49bf4fa70d5ed",
+          "to": "0fa12863b5115638"
         },
-        "description": "Given an hour or so, you can always find edible food and potable water in the wilderness, enough to feed yourself and a few other people. Your experience with venomous animals and poisonous plants gives you some additional protection against them. Your defense rolls against poison are eased and you reduce the severity of wounds from poison by one step (major to moderate, moderate to minor, minor to none). For example, if you are bitten by a snake whose poison inflicts a moderate wound, you'd only take a minor wound from the poison. You are immune to natural diseases. When in the wild, you ignore any task penalties and movement penalties affecting you due to tall grass, thick brush, rugged terrain, weather, and other natural causes."
-      },
-      {
-        "id": "nature-s-grip",
-        "name": "Nature's Grip",
-        "tier": 3,
-        "prerequisites": [
-          "communication"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "e84c844b52d7b799",
+          "to": "8ba041f47f9dfd31"
         },
-        "description": "Make an Intellect attack against a foe within short range. Success means branches, grass, or other natural foliage snags and holds the foe until you use a ten-minute or longer recovery. The foe can't move from their current position, and their physical tasks (including attacks and defense) are hindered. If the foe tries to break free, you can continue to restrain them with another Intellect roll. You can use this ability to repel entangling plants in an immediate area within short range, leaving a clear space with no obstructions. Effort: Inflict 3 damage on the round the foe is first held. Action."
-      },
-      {
-        "id": "nature-s-voice",
-        "name": "Nature's Voice",
-        "tier": 3,
-        "prerequisites": [
-          "wilderness-experience"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "0fa12863b5115638",
+          "to": "99115ad29e75dbcb"
         },
-        "description": "Make an Intellect attack roll to calm a nonhuman beast within long range that can see you. You must speak to them (although they don't need to understand your words). They remain calm until you use a ten-minute or longer recovery or for as long as you keep using your action to calm them. Effort: Affect an additional beast (2 Intellect). Action. The GM has final say over what counts as a nonhuman beast. Unless some kind of deception is at work, you should know whether you can affect a creature before you attempt to use Nature's Voice on them. Aliens, extradimensional entities, very intelligent creatures, and robots never count."
-      },
-      {
-        "id": "moon-shape",
-        "name": "Moon Shape",
-        "tier": 4,
-        "prerequisites": [
-          "nature-s-grip"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "8ba041f47f9dfd31",
+          "to": "3431df2579bde7f3"
         },
-        "description": "You become a primal beast ruled by fury and instinct until you use a one-hour or longer recovery. You cannot activate this ability if you are not in moonlight (at least a half moon). In beast form, you add 8 points to your Might Pool and 2 points to your Speed Pool, and add +2 to your Might Edge and Speed Edge. As a GM intrusion, you might enter a rage, attacking every living creature within short range. The rage lasts until you revert to your normal form. Intentionally reverting to your normal form is a difficulty 2 Intellect task. Once back in your normal form, you are hindered until you use a one-hour or longer recovery. Furthermore, if you did not kill and eat at least one substantial creature while in beast form, your tasks are hindered until you use a ten-hour recovery. Effort: Activate this ability even if you are not in moonlight. Action to change; action to revert."
-      },
-      {
-        "id": "wilderness-encouragement",
-        "name": "Wilderness Encouragement",
-        "tier": 4,
-        "prerequisites": [
-          "nature-s-voice"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "99115ad29e75dbcb",
+          "to": "30a2ecf459648a64"
         },
-        "description": "Your knowledge and experience allow you to help others rest and recover. While in the wilderness or when talking about your time in the wilderness, choose one ally within short range who can understand you (you can choose yourself). The ally can immediately take an extra one-action recovery or remove a moderate wound. You can't use this ability on the same creature again until they've used one of their own recoveries. Action."
-      },
-      {
-        "id": "insect-eruption",
-        "name": "Insect Eruption",
-        "tier": 5,
-        "prerequisites": [
-          "moon-shape",
-          "wilderness-encouragement"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 6,
-          "options": []
+        {
+          "from": "3431df2579bde7f3",
+          "to": "30a2ecf459648a64"
         },
-        "description": "You call a swarm of insects to obey you until you use a ten-minute or longer recovery. The insects appear within long range and do as you command. They automatically hinder any number of foes within range (no rolls required). If you use an action to concentrate the swarm on an immediate area, you can make an Intellect attack on each foe in that area; success means affected creatures take 2 damage. You can use the swarm to move heavy objects through collective effort, eat through wooden walls, and perform other actions suitable for a supernatural swarm. You can't use this ability in an area where insects cannot reach, such as a sealed room. Action to initiate."
-      },
-      {
-        "id": "call-the-storm",
-        "name": "Call the Storm",
-        "tier": 6,
-        "prerequisites": [
-          "insect-eruption"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 7,
-          "options": []
+        {
+          "from": "30a2ecf459648a64",
+          "to": "2eae55f24d89e078"
         },
-        "description": "You create dark, rumbling storm clouds in a very long area. As an action, you can make an Intellect attack to strike a foe with lightning, inflicting 4 damage (you can use Effort on the attack or damage normally). This ability lasts until you use a ten-minute or longer recovery. Three actions to initiate; action to call a lightning strike."
-      },
-      {
-        "id": "earthshake",
-        "name": "Earthshake",
-        "tier": 6,
-        "prerequisites": [
-          "insect-eruption"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "choice",
-          "amount": 8,
-          "options": [
-            "might",
-            "intellect"
-          ]
-        },
-        "description": "You trigger a violent earth movement in a short area within very long range. Buildings and terrain features are damaged, reducing their levels by 1 to 3, shedding debris and rubble. All creatures in the area take 7 damage from shaking or 13 damage if in or adjacent to an affected building or terrain feature (no roll required). Last action."
-      }
-    ]
+        {
+          "from": "30a2ecf459648a64",
+          "to": "f89f9c33f615854a"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

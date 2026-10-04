@@ -1,0 +1,28 @@
+{
+  "_id": "edf2530993f94690",
+  "_key": "!items!edf2530993f94690",
+  "name": "Ranged Healer",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "ranged-healer",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "All of your short-range focus abilities work at long range. All of your touch and immediate range focus abilities work at short range."
+  }
+}

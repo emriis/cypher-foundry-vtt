@@ -1,0 +1,28 @@
+{
+  "_id": "ef9323a35cf981eb",
+  "_key": "!items!ef9323a35cf981eb",
+  "name": "Resuscitate",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "resuscitate",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can resuscitate an injured PC you touch. The character is healed of their choice of one major wound, one moderate wound, or three minor wounds. If the character is dead from wounds but is otherwise in one piece and less than a minute has passed since they died, you can resuscitate them as described above if you succeed at a level 6 healing task. If you use this ability on a dead NPC who has no health but is otherwise in one piece and has been dead for less than a minute, you resuscitate them with 1 health. Each time you use Resuscitate, the Intellect point cost increases by 3. The cost returns to its base value after you use a recovery. Action."
+  }
+}

@@ -7,235 +7,89 @@
   "system": {
     "description": "<p>You'll do anything to win a fight: bite, scratch, kick, trick, and worse.</p>",
     "abilities": [
-      {
-        "id": "dirty-trick",
-        "name": "Sale coup",
-        "tier": 1,
-        "prerequisites": [
-          "dirty-trick"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+      "Compendium.cypher.abilities-fr.Item.8e92b89ce32bebc6",
+      "Compendium.cypher.abilities-fr.Item.2d5452f43ca9a65b",
+      "Compendium.cypher.abilities-fr.Item.bad527a85875f054",
+      "Compendium.cypher.abilities-fr.Item.2ea0935aa50fcc96",
+      "Compendium.cypher.abilities-fr.Item.ef8abcbc53c82a30",
+      "Compendium.cypher.abilities-fr.Item.68be4a1481980974",
+      "Compendium.cypher.abilities-fr.Item.de063c726879563d",
+      "Compendium.cypher.abilities-fr.Item.68cc05aef8a6269c",
+      "Compendium.cypher.abilities-fr.Item.eaddac93207bd222",
+      "Compendium.cypher.abilities-fr.Item.25fd7f0b28506201",
+      "Compendium.cypher.abilities-fr.Item.1a36e812e77d4c0e",
+      "Compendium.cypher.abilities-fr.Item.2319f4845210f3a6",
+      "Compendium.cypher.abilities-fr.Item.485a7038a60cc618",
+      "Compendium.cypher.abilities-fr.Item.268608ceee622334"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "8e92b89ce32bebc6",
+          "to": "8e92b89ce32bebc6"
         },
-        "description": "Tu tentes de distraire ton adversaire (le faire regarder ailleurs, feindre maladroitement pour préparer ton vrai coup, etc.) afin d’enchaîner avec une attaque. Fais une attaque d’Intellect pour tromper l’adversaire ; en cas de réussite, sa défense contre ton attaque de mêlée ce round est entravée. Comme tes adversaires comprennent vite que tu es fourbe, chaque utilisation après la première dans un même combat entrave ton attaque d’Intellect d’un palier supplémentaire. À la place d’une attaque, tu peux enchaîner par une autre action : si tu réussis une tâche de bluff facilitée, la cible ne se rend même pas compte de ce que tu as fait. Exemples : ouvrir les cages d’un zoo, te débarrasser discrètement d’un objet compromettant, tenter de voler ton adversaire…"
-      },
-      {
-        "id": "go-for-the-eyes",
-        "name": "Viser les yeux",
-        "tier": 1,
-        "prerequisites": [
-          "go-for-the-eyes"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 2,
-          "options": []
+        {
+          "from": "2d5452f43ca9a65b",
+          "to": "2d5452f43ca9a65b"
         },
-        "description": "Tu tentes d’endommager l’œil d’un adversaire (en le frappant, en lançant de la poussière, etc.). Fais une attaque de mêlée entravée ; en cas de réussite, sa vision est altérée jusqu’à ta prochaine récupération de dix minutes ou plus, entravant toutes ses tâches dépendant de la vue (pratiquement toutes)."
-      },
-      {
-        "id": "scratching-and-kicking",
-        "name": "Griffer et donner des coups",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 1,
-          "options": []
+        {
+          "from": "2d5452f43ca9a65b",
+          "to": "2ea0935aa50fcc96"
         },
-        "description": "Tes attaques de mêlée infligent +1 dégât, car elles incluent coups de pied, griffures ou morsures."
-      },
-      {
-        "id": "despite-my-wounds",
-        "name": "Malgré mes blessures",
-        "tier": 2,
-        "prerequisites": [
-          "go-for-the-eyes"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "8e92b89ce32bebc6",
+          "to": "ef8abcbc53c82a30"
         },
-        "description": "Tant que tu as deux blessures modérées ou une blessure majeure, tu obtiens un jet gratuit de relance sur une action par round (comme si tu dépensais 1 XP)."
-      },
-      {
-        "id": "sneak-attack",
-        "name": "Attaque sournoise",
-        "tier": 2,
-        "prerequisites": [
-          "dirty-trick"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 1,
-          "options": []
+        {
+          "from": "8e92b89ce32bebc6",
+          "to": "68be4a1481980974"
         },
-        "description": "If you attack a foe under one of the following conditions, your light melee or light ranged weapon attack inflicts an additional 5 damage on a successful hit. (This ability doesn't work with medium or heavy weapons.) You attack with surprise. An ally uses their action to ease your attack. Your foe's defenses are hindered due to some other ongoing direct distraction. Your foe is unable to take their next turn due to some disabling attack or situation. First action."
-      },
-      {
-        "id": "when-the-deal-bombs",
-        "name": "Quand l’affaire tourne mal",
-        "tier": 2,
-        "prerequisites": [
-          "dirty-trick"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "ef8abcbc53c82a30",
+          "to": "de063c726879563d"
         },
-        "description": "Il y a toujours un risque qu’un individu à qui tu viens de parler se retourne contre toi. Après avoir réussi une persuasion, une tromperie, une interaction positive ou une aptitude similaire (comme Baratin), si la personne devient hostile dans la journée : sa première attaque réussie contre toi a sa blessure réduite d’un niveau. Au rang 3, tu ignores complètement la blessure (aucun dégât)."
-      },
-      {
-        "id": "fast-kill",
-        "name": "Frapper plus fort",
-        "tier": 3,
-        "prerequisites": [
-          "sneak-attack"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "choice",
-          "amount": 2,
-          "options": [
-            "might",
-            "speed"
-          ]
+        {
+          "from": "2d5452f43ca9a65b",
+          "to": "68cc05aef8a6269c"
         },
-        "description": "Tes attaques à mains nues infligent +1 dégât."
-      },
-      {
-        "id": "incapacitating-attack",
-        "name": "Attaque incapacitante",
-        "tier": 3,
-        "prerequisites": [
-          "go-for-the-eyes"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 4,
-          "options": []
+        {
+          "from": "8e92b89ce32bebc6",
+          "to": "eaddac93207bd222"
         },
-        "description": "Ton attaque réussie incapacite brièvement la cible. Jusqu’à ta prochaine récupération de dix minutes ou plus (ou jusqu’à ce qu’on l’aide), la cible est à terre, ne peut pas se lever, ne peut se déplacer que d’une distance immédiate par round et ses défenses sont entravées."
-      },
-      {
-        "id": "feint",
-        "name": "Feinte",
-        "tier": 4,
-        "prerequisites": [
-          "dirty-trick",
-          "sneak-attack"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 2,
-          "options": []
+        {
+          "from": "ef8abcbc53c82a30",
+          "to": "eaddac93207bd222"
         },
-        "description": "Si tu utilises une action pour créer une diversion, au round suivant tu profites de la faiblesse défensive de ton adversaire. Tu fais une attaque de mêlée avec un atout et si l’attaque réussit, tu infliges +4 dégâts supplémentaires."
-      },
-      {
-        "id": "mind-games",
-        "name": "Jeux psychologiques",
-        "tier": 4,
-        "prerequisites": [
-          "when-the-deal-bombs"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "68be4a1481980974",
+          "to": "25fd7f0b28506201"
         },
-        "description": "Par mensonges, provocations, sarcasmes, ou insultes acerbes ou obscènes contre un adversaire capable de te comprendre, tu le perturbes mentalement. En cas de réussite de la tâche d’Intellect : la cible perd son prochain tour et au tour suivant, toutes ses tâches sont entravées."
-      },
-      {
-        "id": "knock-out",
-        "name": "Assommer",
-        "tier": 5,
-        "prerequisites": [
-          "incapacitating-attack"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "might",
-          "amount": 5,
-          "options": []
+        {
+          "from": "68cc05aef8a6269c",
+          "to": "1a36e812e77d4c0e"
         },
-        "description": "Make a hindered melee attack against a foe of level 3 or lower. If the attack hits, instead of inflicting damage you knock them unconscious until you use a ten-minute or longer recovery (or someone uses an action to bring them back around). Effort: Increase the maximum level of the foe you can affect by 1. Action."
-      },
-      {
-        "id": "using-the-environment",
-        "name": "Utiliser l’environnement",
-        "tier": 5,
-        "prerequisites": [
-          "feint"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "eaddac93207bd222",
+          "to": "2319f4845210f3a6"
         },
-        "description": "Tu utilises le décor à ton avantage. Si quelque chose à portée immédiate peut plausiblement servir de couverture (table, lustre, rampe, un autre adversaire, etc.), tu obtiens une couverture et un atout sur tes attaques de mêlée. Il s’agit d’une tâche de routine qui ne nécessite donc pas de jet pour se déplacer partout où c’est physiquement possible tant que tu pourrais rejoindre cet endroit avec un mouvement normal, de l’escalade, un saut (de plus tu ignores les obstacles et le terrain difficile quand tu le fais). Par exemple : escalader une tenture jusqu’à un balcon, glisser le long d’une voile, etc. Impossible cependant de passer par une meurtrière ou d’entrer dans une cage fermée. L’effet dure jusqu’à ta prochaine récupération de dix minutes ou plus."
-      },
-      {
-        "id": "lethal-strike",
-        "name": "Frappe létale",
-        "tier": 6,
-        "prerequisites": [
-          "fast-kill",
-          "knock-out"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 6,
-          "options": []
+        {
+          "from": "de063c726879563d",
+          "to": "485a7038a60cc618"
         },
-        "description": "With a swift and sudden melee or ranged weapon attack, you strike a foe in a vital spot. If you hit, you inflict an additional 7 damage. Action."
-      },
-      {
-        "id": "twisting-the-knife",
-        "name": "Retourner le couteau",
-        "tier": 6,
-        "prerequisites": [
-          "mind-games",
-          "using-the-environment"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 4,
-          "options": []
+        {
+          "from": "1a36e812e77d4c0e",
+          "to": "485a7038a60cc618"
         },
-        "description": "Si tu as touché un adversaire avec une arme de mêlée durant ce combat, tu le touches automatiquement une seconde fois (aucun jet), infligeant les dégâts normaux. Tu ne peux pas utiliser cette aptitude : avec une attaque spéciale, ni si tu veux utiliser de l’Effort pour augmenter les dégâts. Les aptitudes qui augmentent automatiquement les dégâts s’appliquent néanmoins."
-      }
-    ]
+        {
+          "from": "25fd7f0b28506201",
+          "to": "268608ceee622334"
+        },
+        {
+          "from": "2319f4845210f3a6",
+          "to": "268608ceee622334"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

@@ -7,235 +7,109 @@
   "system": {
     "description": "<p>You can sheathe your body in flames, which protect you and harm your foes.</p>",
     "abilities": [
-      {
-        "id": "warm-air",
-        "name": "Warm Air",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+      "Compendium.cypher.abilities-en.Item.a02982ac8c4c898b",
+      "Compendium.cypher.abilities-en.Item.ba7f2293e5eef3b8",
+      "Compendium.cypher.abilities-en.Item.08c5f72d4c8c2539",
+      "Compendium.cypher.abilities-en.Item.7d5fe0d214cc8288",
+      "Compendium.cypher.abilities-en.Item.255ad4723a8c16b5",
+      "Compendium.cypher.abilities-en.Item.4e1c29a0e8ac5f2d",
+      "Compendium.cypher.abilities-en.Item.9c050ddf311f251b",
+      "Compendium.cypher.abilities-en.Item.c38ff25451082659",
+      "Compendium.cypher.abilities-en.Item.f4660f585e314361",
+      "Compendium.cypher.abilities-en.Item.8bec1dde9d883f6c",
+      "Compendium.cypher.abilities-en.Item.fa208e4bb958dd4a",
+      "Compendium.cypher.abilities-en.Item.e324282c01337291",
+      "Compendium.cypher.abilities-en.Item.e4481752950758ee",
+      "Compendium.cypher.abilities-en.Item.6961956c4622fc3a"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "ba7f2293e5eef3b8",
+          "to": "7d5fe0d214cc8288"
         },
-        "description": "While your Shroud of Flame is active, you heat the air beneath you, allowing you to fall up to 10 feet (3.5 m) safely. Falls of greater than 10 feet are treated as 10 feet less. Enabler."
-      },
-      {
-        "id": "shroud-of-flame",
-        "name": "Shroud of Flame",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+        {
+          "from": "ba7f2293e5eef3b8",
+          "to": "255ad4723a8c16b5"
         },
-        "description": "At your command, your entire body becomes shrouded in flames until you use a ten-minute or longer recovery. The fire doesn't burn you or your equipment, but it inflicts 2 damage on anyone who tries to touch you or strike you with a melee attack (no roll required). While you are shrouded in flame, reduce the severity of wounds from heat and flames used against you by one step (major to moderate, moderate to minor, minor to none). For example, if you are hit by a fire attack that causes a moderate wound, you instead take a minor wound. While shrouded in flame, you can touch a foe as a light unarmed attack, inflicting 2 fire damage. Enabler."
-      },
-      {
-        "id": "gentle-warmth",
-        "name": "Gentle Warmth",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+        {
+          "from": "ba7f2293e5eef3b8",
+          "to": "4e1c29a0e8ac5f2d"
         },
-        "description": "You make it up to 30˚ F (15˚ C) warmer in an immediate area until you take a ten-minute or longer recovery (this reduces wound severity from cold temperature environments by two steps). This effect is centered on you and moves with you. Action."
-      },
-      {
-        "id": "hurl-flame",
-        "name": "Hurl Flame",
-        "tier": 2,
-        "prerequisites": [
-          "shroud-of-flame"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "7d5fe0d214cc8288",
+          "to": "9c050ddf311f251b"
         },
-        "description": "While your Shroud of Flame is active, you can reach into your halo and hurl a handful of fire at a target within short range, inflicting 4 fire damage if you succeed on an Intellect attack. Action."
-      },
-      {
-        "id": "flameblade",
-        "name": "Flameblade",
-        "tier": 2,
-        "prerequisites": [
-          "shroud-of-flame"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "255ad4723a8c16b5",
+          "to": "9c050ddf311f251b"
         },
-        "description": "Your Shroud of Flame covers one weapon you wield in flame, such as a manufactured weapon like a sword or bow. (You could also intensify the flame already shrouding your hand, improving your unarmed attacks.) Any attack you make with the flaming weapon inflicts an additional 1 damage from fire (if the weapon fires projectiles, such as arrows from a bow, this damage applies to the projectiles). The flame ends if you stop holding or carrying the weapon, but as an extra action on your turn you can cover a different weapon you wield with flames. This ability ends automatically when you use a ten-minute or longer recovery. Enabler."
-      },
-      {
-        "id": "spreading-fire",
-        "name": "Spreading Fire",
-        "tier": 2,
-        "prerequisites": [
-          "shroud-of-flame"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "c38ff25451082659",
+          "to": "9c050ddf311f251b"
         },
-        "description": "Once per turn if you take down a foe with an attack that inflicted fire damage, you can immediately make another fire-based attack on that same turn against a new foe within short range as an extra action on your turn. Enabler."
-      },
-      {
-        "id": "wings-of-fire",
-        "name": "Wings of Fire",
-        "tier": 3,
-        "prerequisites": [
-          "hurl-flame",
-          "flameblade",
-          "desperate-flame"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "7d5fe0d214cc8288",
+          "to": "c38ff25451082659"
         },
-        "description": "While your Shroud of Flame is active, you can spread wings of fire and fly until you use a ten-minute or longer recovery, moving at a rate of up to 20 feet (6 m) per round in any direction. You can also take one other non-movement action as an extra action on your turn. Action to initiate."
-      },
-      {
-        "id": "desperate-flame",
-        "name": "Desperate Flame",
-        "tier": 3,
-        "prerequisites": [
-          "hurl-flame",
-          "flameblade",
-          "spreading-fire",
-          "wings-of-fire",
-          "fiery-hand-of-doom"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "255ad4723a8c16b5",
+          "to": "c38ff25451082659"
         },
-        "description": "While you have at least three moderate wounds or at least one major wound, you gain two free levels of Effort you can apply to one fire attack each round. This benefit lasts until you take your next ten-minute or longer recovery or you no longer have the qualifying wounds. Enabler."
-      },
-      {
-        "id": "fiery-hand-of-doom",
-        "name": "Fiery Hand of Doom",
-        "tier": 3,
-        "prerequisites": [
-          "flameblade",
-          "spreading-fire",
-          "desperate-flame"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "4e1c29a0e8ac5f2d",
+          "to": "c38ff25451082659"
         },
-        "description": "While your Shroud of Flame is active, you can reach into your halo and produce a hand composed of animate flame with a handspan of up to 3 feet (1 m), lasting until you use a ten-minute or longer recovery. The hand is a level 3 creature that inflicts 1 extra fire damage when it attacks (4 damage total). The hand acts as you direct, floating in the air. Directing the hand is an action. Without a command, the hand does nothing but follow you. It can move a long distance in a round, but it never moves farther away from you than long range. The hand can attack, grab, move, and carry things. It inflicts 3 damage each round to any flammable object it holds. Action to create; action to direct."
-      },
-      {
-        "id": "enhanced-flames",
-        "name": "Enhanced Flames",
-        "tier": 4,
-        "prerequisites": [
-          "wings-of-fire",
-          "desperate-flame",
-          "fiery-hand-of-doom"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "9c050ddf311f251b",
+          "to": "c38ff25451082659"
         },
-        "description": "Fire damage you deal using special abilities increases by 2 damage per attack."
-      },
-      {
-        "id": "plasma-field",
-        "name": "Plasma Field",
-        "tier": 5,
-        "prerequisites": [
-          "enhanced-flames"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 5,
-          "options": []
+        {
+          "from": "f4660f585e314361",
+          "to": "c38ff25451082659"
         },
-        "description": "A selected portion of your fire shroud spikes to a temperature hot enough to incinerate incoming ranged attacks (such as arrows, bullets, a thrown metal knife, and so on), instantly turning them to ash. You are immune to such attacks for one round. You must be aware of an attack to incinerate it. Enabler."
-      },
-      {
-        "id": "fire-tendrils",
-        "name": "Fire Tendrils",
-        "tier": 5,
-        "prerequisites": [
-          "enhanced-flames"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 5,
-          "options": []
+        {
+          "from": "255ad4723a8c16b5",
+          "to": "f4660f585e314361"
         },
-        "description": "Your Shroud of Flame sprouts three tendrils of flame that last until you use a ten-minute or longer recovery. You can attack with each tendril as an extra action on your turn. Each tendril inflicts 3 damage (5 damage with Enhanced Flames). If you don't use the tendrils to attack, they remain but do nothing. Action to initiate. Following the round in which you initiate Fire Tendrils, attacking with them—as extra actions on your turn—counts as your overall action for that round."
-      },
-      {
-        "id": "inferno-trail",
-        "name": "Inferno Trail",
-        "tier": 6,
-        "prerequisites": [
-          "plasma-field"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 6,
-          "options": []
+        {
+          "from": "4e1c29a0e8ac5f2d",
+          "to": "f4660f585e314361"
         },
-        "description": "Your Shroud of Flame leaves a trail of fire in your wake. The trail matches your path, creating a wall of flame about 6 feet (2 m) high that inflicts 5 damage on any creature that passes through it. If targets are flammable, they also catch on fire for an additional 1 damage each round until they spend a round putting out the fire. You can suppress the trail of fire when you wish as an extra action on your turn (and restart it the same way) or end the overall effect early. Otherwise, the effect ends after you use a ten-minute or longer recovery. Action."
-      },
-      {
-        "id": "fire-servant",
-        "name": "Fire Servant",
-        "tier": 6,
-        "prerequisites": [
-          "fire-tendrils"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 6,
-          "options": []
+        {
+          "from": "c38ff25451082659",
+          "to": "f4660f585e314361"
         },
-        "description": "You use your Shroud of Flame to create an automaton of fire that is your general shape and size, lasting until you use a ten-minute or longer recovery. This NPC ally acts as you direct each round. Directing the automaton is an action, and you can command it only when you are within long range of it. Without a command, the automaton continues to follow your previous command. You can also give it a simple programmed action, such as “Wait here and attack anyone who comes within short range until they're dead.” Action to create; action to direct. Fire automaton: level 5; Armor 1; bash attacks deal 6 damage (1 from fire)"
-      }
-    ]
+        {
+          "from": "9c050ddf311f251b",
+          "to": "8bec1dde9d883f6c"
+        },
+        {
+          "from": "c38ff25451082659",
+          "to": "8bec1dde9d883f6c"
+        },
+        {
+          "from": "f4660f585e314361",
+          "to": "8bec1dde9d883f6c"
+        },
+        {
+          "from": "8bec1dde9d883f6c",
+          "to": "fa208e4bb958dd4a"
+        },
+        {
+          "from": "8bec1dde9d883f6c",
+          "to": "e324282c01337291"
+        },
+        {
+          "from": "fa208e4bb958dd4a",
+          "to": "e4481752950758ee"
+        },
+        {
+          "from": "e324282c01337291",
+          "to": "6961956c4622fc3a"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

@@ -1,0 +1,28 @@
+{
+  "_id": "0f7dfb28ce8eabe2",
+  "_key": "!items!0f7dfb28ce8eabe2",
+  "name": "Déplacer le métal",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "move-metal",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Jusqu’à ta prochaine récupération d’une heure ou plus, tu peux exercer une force sur les objets métalliques à portée courte, comme action. Chaque utilisation nécessite une action et te permet de déplacer un objet fait de métal ou qui en contient à distance. Tu ne peux déplacer que ce que tu pourrais physiquement manipuler avec tes mains : soulever un petit objet métallique, tirer un objet vers toi, déplacer un objet lourd (comme un meuble) d’une distance immédiate, etc. Ce pouvoir manque d’un contrôle fin permettant l’utilisation d’une arme ou pour déplacer des objets avec suffisament de vitesse pour pouvoir en faire une attaque directe. Cependant tu peux : saisir un objet métallique dans la main d’une créature, pousser une créature portant une armure métallique d’une distance immédiate, entraver ses attaques ou défenses en appliquant une pression sur ses membres ou armes métalliques. Affecter une créature réticente (ou son équipement) nécessite une attaque d’Intellect. Tu peux aussi créer une perturbation magnétique à portée courte, entravant de deux paliers les appareils électroniques, machines électriques ou machines‑créatures (robots) pendant un round."
+  }
+}

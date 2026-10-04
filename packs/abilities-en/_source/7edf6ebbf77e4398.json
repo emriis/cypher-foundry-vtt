@@ -1,0 +1,28 @@
+{
+  "_id": "7edf6ebbf77e4398",
+  "_key": "!items!7edf6ebbf77e4398",
+  "name": "Action Processor",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "action-processor",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your Data Processor ability can now grant you training in physical skills as well, such as athletics, gymnastics, dodging or blocking, or attacks with a specific weapon. This does not change how many skills Data Processor can simultaneously give you training in. Enabler."
+  }
+}

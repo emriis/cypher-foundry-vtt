@@ -1,0 +1,28 @@
+{
+  "_id": "16e429b4059bd255",
+  "_key": "!items!16e429b4059bd255",
+  "name": "Compagnon amélioré",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "improved-companion",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Augmente le niveau de ton compagnon animal (et ses modificateurs, si applicables) de 1. Tu peux prendre cette aptitude trois fois. À chaque fois, ton compagnon animal gagne +1 niveau."
+  }
+}

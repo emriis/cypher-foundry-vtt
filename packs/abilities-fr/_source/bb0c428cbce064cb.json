@@ -1,0 +1,28 @@
+{
+  "_id": "bb0c428cbce064cb",
+  "_key": "!items!bb0c428cbce064cb",
+  "name": "Illusion majeure",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "major-illusion",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu crées une scène complexe d’images à portée immédiate. Toute la scène doit tenir dans une zone longue. Les images peuvent bouger, mais pas sortir du cube. L’illusion inclut son et odeur. Elle dure jusqu’à ta prochaine récupération de dix minutes ou plus, et change selon ta volonté (sans concentration). Si tu t’éloignes au-delà d’une portée immédiate du cube, l’illusion disparaît. À la place d’une scène réaliste, tu peux créer des images déroutantes autour d’une créature à portée courte, entravant ses attaques et défenses jusqu’à ta prochaine récupération de dix minutes ou plus, sans que tu aies besoin d’utiliser ton action à chaque tour pour maintenire l’effet. Effort : Affecter une créature supplémentaire."
+  }
+}

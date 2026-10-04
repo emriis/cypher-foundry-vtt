@@ -1,0 +1,28 @@
+{
+  "_id": "78a661a918988465",
+  "_key": "!items!78a661a918988465",
+  "name": "Beast Form",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "beast-form",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "On five consecutive nights each month, you uncontrollably change into a monstrous beast until the first hint of dawn or the moon sets (but see below). Work with your GM to determine the details of this form. In this new form, you add +4 to your Might Pool, +1 to your Might Edge, +2 to your Speed Pool, and +1 to your Speed Edge; you ignore the first moderate wound you take; and you can freely use your unarmed attacks as light weapons (eased attack, 2 damage) or medium weapons (unmodified attack, 4 damage), whichever seems appropriate for that attack. While in beast form, you can't spend Intellect points for any reason other than to try to change to your normal form before the duration is over (a difficulty 4 task). In addition, you attack any and every living creature within short range. After you revert to your normal form, all your tasks are hindered until you use a one-hour or longer recovery. If you did not kill and eat at least one substantial creature while in beast form, the hindrance is two steps instead of one and lasts until you use a ten-hour recovery. Effort: You can intentionally change into your beast form if you succeed at a difficulty 4 Intellect task. If you fail, you can keep trying each round (at no additional Might cost to activate this ability) until you succeed or decide to give up. Enabler to involuntarily change into beast form; action to voluntarily change into beast form; action to change back to your normal form. A PC in beast form usually loses or at least leaves behind their regular-sized clothing and armor."
+  }
+}

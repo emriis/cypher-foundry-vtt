@@ -1,0 +1,28 @@
+{
+  "_id": "b41dfb2e36810698",
+  "_key": "!items!b41dfb2e36810698",
+  "name": "Performance vengeresse",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "vindictive-performance",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu racontes une blague, chantes, récites un poème, dessines, racontes une anecdote ou divertis d’une autre manière, tu peux choisir une créature à portée courte capable de te comprendre. Pendant ta prestation, tu lui adresses une satire indirecte mais mordante. Si tu réussis ton attaque d’Intellect : la créature ne réalise pas immédiatement qu’elle est visée mais lorsqu’elle comprend (au moment où tu choisis de conclure la performance), elle subit 6 dégâts d’Intellect (ignore l’Armure)et perd son prochain tour."
+  }
+}

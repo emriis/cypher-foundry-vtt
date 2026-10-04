@@ -34,48 +34,9 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "combat-prowess",
-        "name": "Combat Prowess",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You add +1 damage to one type of weapon attack of your choice: melee weapon attacks or ranged weapon attacks."
-      },
-      {
-        "id": "desperate-feat",
-        "name": "Desperate Feat",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "While you have at least one moderate or major wound, you add +1 Edge to the Pool of your choice. Enabler."
-      },
-      {
-        "id": "expert-combatant",
-        "name": "Expert Combatant",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you're already specialized in), but you must gain the skill normally. For a Heavy, Expert Combatant also means choosing training in weapons appropriate to the genre, such as pistols and rifles."
-      }
+      "Compendium.cypher.abilities-en.Item.d631387889d71582",
+      "Compendium.cypher.abilities-en.Item.85be636847962ea6",
+      "Compendium.cypher.abilities-en.Item.1fc1bf6430861da5"
     ],
     "statOptions": [
       "might"

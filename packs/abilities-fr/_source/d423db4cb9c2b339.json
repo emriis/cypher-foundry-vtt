@@ -1,0 +1,28 @@
+{
+  "_id": "d423db4cb9c2b339",
+  "_key": "!items!d423db4cb9c2b339",
+  "name": "Phasage rapide",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "quick-phase",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu utilises Traverser les murs, tu traverses les barrières beaucoup plus vite, augmentant ta vitesse de 3,5 m par round. Ou bien, tu peux te phaser jusqu’à 3,5 m comme Première action."
+  }
+}

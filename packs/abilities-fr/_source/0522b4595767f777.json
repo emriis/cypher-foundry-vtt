@@ -1,0 +1,28 @@
+{
+  "_id": "0522b4595767f777",
+  "_key": "!items!0522b4595767f777",
+  "name": "Gigantesque",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "gargantuan",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu utilises Agrandissement, si tu dépenses 5 Puissance supplémentaires, tu atteins 9 m de haut. Pendant que tu es gigantesque : tu gagnes +2 en Avantage de Puissance, tu peux ignorer trois blessures modérées et une blessure majeure, tes attaques à mains nues infligent 8 dégâts, tu gagnes deux atouts aux tâches facilitées par une grande taille, tu peux, comme action, faire une attaque à mains nues contre toutes les créatures dans une zone immédiate (jet séparé pour chaque cible) mais tes tâches d’Esquive sont entravées de trois paliers. Si tu tombes à terre en étant gigantesque, tu subis une blessure modérée et tu dois utiliser une Dernière action pour te relever."
+  }
+}

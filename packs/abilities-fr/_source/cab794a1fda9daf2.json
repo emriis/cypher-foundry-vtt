@@ -1,0 +1,28 @@
+{
+  "_id": "cab794a1fda9daf2",
+  "_key": "!items!cab794a1fda9daf2",
+  "name": "Contrôle parfait",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "perfect-control",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu n’as plus besoin de faire de tâche d’Intellect pour utiliser Forme bestiale ou revenir à la normale. Tu peux changer librement comme action. En forme bestiale, tu n’as plus besoin de manger une créature pour éviter l’entrave après la transformation."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "5f2c1a20196b1965",
+  "_key": "!items!5f2c1a20196b1965",
+  "name": "Tribulation",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "tribulation",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu canalises une énergie spirituelle pour étourdir ou repousser les créatures surnaturelles maléfiques. Choisis jusqu’à cinq mort‑vivant·e·s, démons ou créatures du même acabit de niveau 2 ou moins à courte portée, et fais un jet d’attaque d’Intellect séparé pour chacun·e. En cas de réussite, tu choisis si iels perdent leur prochain tour ou fuient ta présence pendant un round. Effort : imposer une autre action à effectuer pendant un round (attaquer un ennemi de ton choix, etc.) ou augmenter le niveau maximal affecté de +1. Dernière action."
+  }
+}

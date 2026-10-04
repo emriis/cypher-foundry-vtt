@@ -1,0 +1,28 @@
+{
+  "_id": "af634cb391e99f8f",
+  "_key": "!items!af634cb391e99f8f",
+  "name": "Image terrifiante",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "terrifying-image",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu effraies des adversaires grâce à des illusions créées à partir de leurs propres peurs. Fais une attaque d’Intellect séparée contre un groupe allant jusqu’à cinq créatures à portée longue. En cas de réussite : la créature fuit terrifiée jusqu’à parcourir au moins une très longue distance ou jusqu’à ta prochaine récupération de dix minutes ou plus. En cas d’échec : elle ignore l’illusion, ce qui fait qu’elle n’est pas gênée du tout."
+  }
+}

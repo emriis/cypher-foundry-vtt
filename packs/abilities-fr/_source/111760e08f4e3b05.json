@@ -1,0 +1,28 @@
+{
+  "_id": "111760e08f4e3b05",
+  "_key": "!items!111760e08f4e3b05",
+  "name": "Résister à la tempête",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "resist-the-storm",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu es résistant·e aux dangers naturels des tempêtes. Choisis entre l’électricité ou l’énergie phonique (onde sonore). Les attaques de ce type réduisent leur niveau de blessure d’un palier (majeure→modérée, modérée→mineure, mineure→aucune). Tu peux prendre cette aptitude deux fois,en choisissant une énergie différente."
+  }
+}

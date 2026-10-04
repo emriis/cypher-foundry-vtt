@@ -1,0 +1,28 @@
+{
+  "_id": "af7996601cf3ad78",
+  "_key": "!items!af7996601cf3ad78",
+  "name": "Weaponization",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "weaponization",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You have a weapon built into your body. Choose one light or medium one-handed weapon, such as a broadsword, baton, or medium pistol. You are trained in this weapon. You can hide or reveal this weapon as an extra action on your turn. If your embedded weapon is a firearm, it reloads through a slot in your arm, can hold ten shots, and fires through a disguised barrel in the center of the palm of your hand. Instead of embedding a weapon, you can embed a multitool that counts as either a set of light tools or a set of heavy tools (your choice when you gain this ability)."
+  }
+}

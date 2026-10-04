@@ -1,0 +1,28 @@
+{
+  "_id": "f09210a4a7dcbbe6",
+  "_key": "!items!f09210a4a7dcbbe6",
+  "name": "Colossal·e",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "colossal",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 7,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu utilises Agrandissement, si tu dépenses 7 Puissance supplémentaires, tu atteins 18 m de haut. Pendant que tu es colossal·e : tu gagnes +2 en Avantage de Puissance, tu peux ignorer trois blessures modérées et deux blessures majeures, tes attaques à mains nues infligent 9 dégâts, tu gagnes deux atouts aux tâches facilitées par une grande taille, tu peux, comme action, faire une attaque à mains nues contre toutes les créatures dans une zone immédiate (jet séparé pour chaque cible), tu ne peux pas esquiver efficacement les attaques de créatures faisant un quart de ta taille ou moins (leurs attaques te touchent automatiquement). Si tu tombes à terre en étant colossal·e, tu subis une blessure modérée et tu dois utiliser une Dernière action pour te relever."
+  }
+}

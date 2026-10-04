@@ -1,0 +1,28 @@
+{
+  "_id": "92cca373be8a04d4",
+  "_key": "!items!92cca373be8a04d4",
+  "name": "Invocation de créature surnaturelle",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "conjure-supernatural-creature",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 7,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Une créature surnaturelle (ange, démon, élémentaire) se manifeste à portée immédiate. Elle agit selon sa nature, généralement en attaquant un ennemi opposé à son ethos (un ange attaquerait un démon ou un nécromancien, un démon attaquerait un innocent ou un prêtre sacré et un élémentaire attaquerait une créature de l’élément opposé). Elle reste jusqu’à ta prochaine récupération de dix minutes ou plus. Effort : la créature te comprend et t’obéit."
+  }
+}

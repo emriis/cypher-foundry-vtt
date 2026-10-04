@@ -32,90 +32,12 @@
     ],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "expert-combatant",
-        "name": "Expert Combatant",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you're already specialized in), but you must gain the skill normally."
-      },
-      {
-        "id": "gut-ripper",
-        "name": "Gut Ripper",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 1,
-          "options": []
-        },
-        "description": "You attack with a knife in a way that has a greater risk of making an error but gains an additional benefit. Your GM intrusion range for this attack increases by 2 (from 1 on a d20 to 1–3 on a d20), but if you hit you can choose one of the following additional effects:"
-      },
-      {
-        "id": "deep-slice",
-        "name": "Deep Slice",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "The foe takes +2 damage."
-      },
-      {
-        "id": "let-them-bleed",
-        "name": "Let Them Bleed",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "The wound bleeds; on your next turn, the foe takes 2 damage that ignores armor. Action. Gut RipperGM intrusions: Your knife gets stuck in your foe and slips from your grasp. Instead of hurting your foe, you accidentally inflict a minor wound on yourself. Your knife sheath is empty and you can't complete the attack."
-      },
-      {
-        "id": "gut-ripper-gm-intrusions",
-        "name": "Gut Ripper GM intrusions",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Your knife gets stuck in your foe and slips from your grasp. Instead of hurting your foe, you accidentally inflict a minor wound on yourself. Your knife sheath is empty and you can’t complete the attack."
-      },
-      {
-        "id": "hindering-throw",
-        "name": "Hindering Throw",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 3,
-          "options": []
-        },
-        "description": "Your successful ranged knife attack sticks in the target, catching in their clothing, their flesh, the floor, or another adjacent surface in a way that deals normal damage and hinders their tasks on their next turn. Action."
-      }
+      "Compendium.cypher.abilities-en.Item.1fc1bf6430861da5",
+      "Compendium.cypher.abilities-en.Item.8df5baa32a6dbbbc",
+      "Compendium.cypher.abilities-en.Item.5f7fce9b60b0aae2",
+      "Compendium.cypher.abilities-en.Item.b4f090ea9d120151",
+      "Compendium.cypher.abilities-en.Item.ad839a8ecbcfac56",
+      "Compendium.cypher.abilities-en.Item.32a2bbd4475104af"
     ],
     "statOptions": [
       "speed"

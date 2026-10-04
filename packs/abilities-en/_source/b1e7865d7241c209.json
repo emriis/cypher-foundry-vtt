@@ -1,0 +1,28 @@
+{
+  "_id": "b1e7865d7241c209",
+  "_key": "!items!b1e7865d7241c209",
+  "name": "No Need for Weapons",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "no-need-for-weapons",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You inflict an additional 2 damage with unarmed attacks."
+  }
+}

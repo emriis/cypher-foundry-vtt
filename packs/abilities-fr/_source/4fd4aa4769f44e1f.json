@@ -1,0 +1,51 @@
+{
+  "_id": "4fd4aa4769f44e1f",
+  "_key": "!items!4fd4aa4769f44e1f",
+  "name": "Attirer",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "apportation",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [
+      {
+        "id": "random-object",
+        "name": "Objet aléatoire",
+        "formula": "1d20",
+        "results": [
+          {
+            "min": 1,
+            "max": 10,
+            "description": "Équipement standard"
+          },
+          {
+            "min": 11,
+            "max": 12,
+            "description": "Cypher manifeste"
+          },
+          {
+            "min": 13,
+            "max": 20,
+            "description": "Objet sans valeur"
+          }
+        ]
+      }
+    ],
+    "description": "Tu attires à toi un objet physique depuis presque n’importe quelle distance. Tu peux choisir n’importe quel objet d’équipement standard de ton genre ou une fois par récupération de dix heures, laisser le·la MJ tirer un objet aléatoire. Tu ne peux pas récupérer un objet tenu par quelqu’un. L’objet apparaît à côté de toi."
+  }
+}

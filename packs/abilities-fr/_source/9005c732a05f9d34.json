@@ -1,0 +1,28 @@
+{
+  "_id": "9005c732a05f9d34",
+  "_key": "!items!9005c732a05f9d34",
+  "name": "Compétence verrouillée",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "locked-skill",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu actives Processeur de données, choisis l’une des compétences qu’il t’accorde : elle devient ta compétence verrouillée. Tu restes entraîné·e dans cette compétence jusqu’à ta prochaine récupération de dix heures. Si tu réactives Processeur de données avant cette récupération, tu peux réinitialiser la durée ou choisir une nouvelle compétence verrouillée. Tu peux choisir cette aptitude jusqu’à trois fois. Chaque fois, ton nombre maximal de compétences verrouillées augmente de +1."
+  }
+}

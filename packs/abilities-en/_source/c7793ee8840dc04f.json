@@ -1,0 +1,28 @@
+{
+  "_id": "c7793ee8840dc04f",
+  "_key": "!items!c7793ee8840dc04f",
+  "name": "Compile Robotic Offense",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "compile-robotic-offense",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your attack against a robot or intelligent machine this round has an asset if you make it as a Last action instead of as an action or a First action. Enabler."
+  }
+}

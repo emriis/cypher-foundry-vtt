@@ -1,0 +1,28 @@
+{
+  "_id": "3ed657c9e38eafc3",
+  "_key": "!items!3ed657c9e38eafc3",
+  "name": "Panache du Pilote",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "piloting-flourish",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Lorsque tu pilotes un vaisseau spatial, tes manoeuvres impressionnantes, tes remarques pince-sans-rire ou ta façon d'exécuter une action peuvent impressionner ou divertir d'autres personnes. Une créature de ton choix à bord ou proche du vaisseau gagne un atout à sa prochaine tâche (si elle l'accomplit dans un round ou deux). Au rang 3, tu peux impressionner jusqu'à trois créatures choisies simultanément."
+  }
+}

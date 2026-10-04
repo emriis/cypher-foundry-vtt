@@ -31,48 +31,9 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "expert-interlocuter",
-        "name": "Interlocuteur expert",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Tu es entraîné·e dans la compétence de ton choix parmi charme, duperie ou intimidation. Au rang 6, tu peux devenir expert·e dans cette même compétence si tu es déjà spécialisé·e, mais tu dois acquérir la compétence normalement (après une progression de personnage, par exemple)."
-      },
-      {
-        "id": "inspiring-performance",
-        "name": "Performance Inspirante",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
-        },
-        "description": "Par un discours enflammé ou une musique inspirante, tu remontes le moral de trois alliés qui peuvent te voir et t'entendre. Tant que tu continues à parler ou à jouer chaque round en tant qu'action, les alliés affectés gagnent un Atout dans une tâche de ton choix (de combat ou non), liée à ta performance. Même après la fin de l'effet, les alliés affectés ajoutent +1 à leur prochaine récupération. Au rang 3, ils ajoutent +2 à leur prochaine récupération. Effort : Affecte trois alliés supplémentaires."
-      },
-      {
-        "id": "a-smile-and-a-word",
-        "name": "Un Sourire et un Mot",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Lorsque tu interagis avec succès avec une créature en réussissant une tâche de charme, de duperie ou d'intimidation — y compris pour calmer des animaux ou communiquer avec quelqu'un dont tu ne parles pas la langue — tu apprends également une petite information utile ou au moins intéressante. Par exemple, si tu convaincs un garde de te laisser passer, tu pourrais aussi apprendre que son supérieur revient dans dix minutes."
-      }
+      "Compendium.cypher.abilities-fr.Item.1fa91792afec15b3",
+      "Compendium.cypher.abilities-fr.Item.7eda85805fdfea22",
+      "Compendium.cypher.abilities-fr.Item.c2e2b2be534aa1ed"
     ],
     "statOptions": [
       "speed",

@@ -1,0 +1,28 @@
+{
+  "_id": "5ae2ca192ece9154",
+  "_key": "!items!5ae2ca192ece9154",
+  "name": "Reshape",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "reshape",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You reshape matter within short range in an area no larger than a 5-foot (1.5 m) cube. If you use only one action on this ability, the changes you make are crude at best. If you spend at least ten minutes and succeed at an appropriate hindered crafting task, you can make complex changes to the material. You can't change the nature of the material, only its shape. For example, you can make a hole in a wall or floor, seal up a hole, create a sword from a piece of iron, or break or repair a chain. Using this ability multiple times lets you make larger changes, such as building a wall, bridge, or similar structure. Action."
+  }
+}

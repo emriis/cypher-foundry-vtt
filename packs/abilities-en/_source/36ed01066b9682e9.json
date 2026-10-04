@@ -1,0 +1,28 @@
+{
+  "_id": "36ed01066b9682e9",
+  "_key": "!items!36ed01066b9682e9",
+  "name": "Iron in the Blood",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "iron-in-the-blood",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You have honed your magnetic senses, allowing you to sense and manipulate the trace amounts of iron in flesh and blood. You can now move creatures with Move Metal and attack them directly with Rend Metal (inflicting 5 damage with a successful attack) and Command Metal (inflicting 7 damage), although your Intellect attack is hindered when doing so."
+  }
+}

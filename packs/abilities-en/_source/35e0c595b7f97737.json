@@ -1,0 +1,28 @@
+{
+  "_id": "35e0c595b7f97737",
+  "_key": "!items!35e0c595b7f97737",
+  "name": "Improved Necromancy",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "improved-necromancy",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can use Basic Necromancy to animate multiple bodies at the same time. Each animated creature beyond the first costs 1 additional Intellect point (so 4 points for two bodies, 5 points for three, and so on). Your range for Basic Necromancy (including when animating multiple bodies) increases to short."
+  }
+}

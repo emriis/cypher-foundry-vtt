@@ -1,0 +1,28 @@
+{
+  "_id": "9617e3d71eba790e",
+  "_key": "!items!9617e3d71eba790e",
+  "name": "Collecte d’informations",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "information-gathering",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu communiques sans fil avec toutes les machines non intelligentes dans un rayon de 1,5 km. Tu peux poser une question simple sur elles‑mêmes ou sur ce qui se passe près d’elles, et recevoir une réponse simple. Exemple : dans une zone remplie de machines, tu peux demander la localisation d’une personne ; si elle est dans la portée, une ou plusieurs machines te répondront probablement."
+  }
+}

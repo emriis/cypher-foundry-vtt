@@ -1,0 +1,28 @@
+{
+  "_id": "6ad4bdf852dcae6b",
+  "_key": "!items!6ad4bdf852dcae6b",
+  "name": "Survivant·e",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "survivor",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Si tu as une blessure mineure ou modérée, tu peux te reprendre sans dépenser de Puissance. L’aptitude se renouvelle à chaque récupération."
+  }
+}

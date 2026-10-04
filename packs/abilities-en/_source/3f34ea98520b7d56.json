@@ -1,0 +1,28 @@
+{
+  "_id": "3f34ea98520b7d56",
+  "_key": "!items!3f34ea98520b7d56",
+  "name": "Shapechanger Healing",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "shapechanger-healing",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you change into an animal form, you are healed of one wound of any severity. This ability renews after you take a ten-hour recovery. Enabler."
+  }
+}

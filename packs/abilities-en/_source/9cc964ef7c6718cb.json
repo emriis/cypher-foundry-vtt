@@ -1,0 +1,28 @@
+{
+  "_id": "9cc964ef7c6718cb",
+  "_key": "!items!9cc964ef7c6718cb",
+  "name": "Flash Across the Miles",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "flash-across-the-miles",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You move as a bolt of lightning almost instantaneously to a location you're familiar with on the same planet. The location must be outdoors or open to the sky. Effort: Travel to an indoor location if a lightning bolt could find an open route to that spot from the outside (such as through a window or doorway). Action."
+  }
+}

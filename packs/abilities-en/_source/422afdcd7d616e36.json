@@ -1,0 +1,28 @@
+{
+  "_id": "422afdcd7d616e36",
+  "_key": "!items!422afdcd7d616e36",
+  "name": "Willing Sacrifice",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "willing-sacrifice",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you successfully draw the attack or take the attack meant for another character and you fail to dodge or block the attack, reduce the severity of the attack's wound by one step (major to moderate, moderate to minor, minor to none). You can draw or take more than one attack in a given round if all of the attacks were meant for one target. Enabler."
+  }
+}

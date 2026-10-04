@@ -1,0 +1,28 @@
+{
+  "_id": "806805898b6f3c3f",
+  "_key": "!items!806805898b6f3c3f",
+  "name": "Lend Animal Shape",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "lend-animal-shape",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You change into an animal as if using Animal Shape, and one willing creature within immediate range also transforms into an animal of that type (bear, tiger, wolf, and so on) until you use a ten-minute or longer recovery, as if they were using your Animal Shape ability. All creatures transforming with you must be your size or smaller. A creature can revert to its normal form as an action, but it cannot then change back into the animal form. One creature (whether you or someone else) changing form does not affect any other creature affected by this ability. Effort: Affect an additional creature. Action."
+  }
+}

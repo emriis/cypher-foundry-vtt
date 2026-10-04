@@ -33,49 +33,9 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "combat-prowess",
-        "name": "Combat Prowess",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You add +1 damage to one type of weapon attack of your choice: melee weapon attacks or ranged weapon attacks."
-      },
-      {
-        "id": "divine-radiance",
-        "name": "Divine Radiance",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
-        },
-        "description": "You channel divine influence to gain one of the following effects.",
-        "effects": [{"id":"blessing","name":"Blessing","description":"A target within short range is charged with benevolent divine grace. At any point before they have taken their next ten-minute or longer recovery, they gain an asset to one action.","effort":"Affect two additional targets.","rollTables":[]},{"id":"turn-undead","name":"Turn Undead","description":"Up to five undead creatures of level 2 or less within short range are blasted by divine radiance (make separate Intellect attack rolls against each target). Affected targets are repulsed and must spend their next turn fleeing your presence. Depending on the game, your GM may decide Turn Undead works on demons or creatures of similar ilk instead of (or in addition to) undead. At tier 3, instead of causing affected targets to flee, you can make them unable to take actions for one turn. When an ability or effect lets you attack multiple creatures on your turn, each attack after the first one is an extra action on your turn. An attack made as an extra action on your turn counts as a separate action for the purposes of modifying the task with Effort.","effort":"Affect two additional targets. Increase the maximum level of undead you can affect by 1.","rollTables":[]}]
-      },
-      {
-        "id": "healing-hand",
-        "name": "Healing Hand",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
-        },
-        "description": "With a touch, you reduce one wound's severity. A healed minor wound is gone completely, one moderate wound becomes a minor wound, or one major wound becomes a moderate wound. (If the character is at their limit of lower-severity wounds, you can't use this ability to reduce the severity of their wounds.) Each time you use Healing Hand, the Intellect cost increases by 1. The cost returns to 1 after you take a recovery. Last action. An NPC recipient of Healing Hand regains 5 health."
-      }
+      "Compendium.cypher.abilities-en.Item.d631387889d71582",
+      "Compendium.cypher.abilities-en.Item.9ede2b74b767bfc4",
+      "Compendium.cypher.abilities-en.Item.094d990f06a4c6c9"
     ],
     "statOptions": [
       "might",

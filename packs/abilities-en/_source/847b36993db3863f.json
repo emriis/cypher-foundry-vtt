@@ -1,0 +1,28 @@
+{
+  "_id": "847b36993db3863f",
+  "_key": "!items!847b36993db3863f",
+  "name": "Imperturbable",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "imperturbable",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You have a sense of calm around you that affects others as well. You cannot be forced to flee against your will (such as from magical fear) and the defense rolls of allies within immediate range against such attacks are eased."
+  }
+}

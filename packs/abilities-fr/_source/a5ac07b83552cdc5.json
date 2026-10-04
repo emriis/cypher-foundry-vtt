@@ -1,0 +1,28 @@
+{
+  "_id": "a5ac07b83552cdc5",
+  "_key": "!items!a5ac07b83552cdc5",
+  "name": "Force amplifiée",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "enhance-strength",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Jusqu’à ta prochaine récupération de dix minutes ou plus, tu utilises ta télékinésie pour amplifier tes actions physiques. Pour toute tâche de force brute (ouvrir une porte verrouillée, porter un poids, attaquer avec une arme de mêlée ou de jet…), si ton résultat est inférieur à 9, considère qu’il est de 9. (Tu évites ainsi une Intrusion du·de la MJ si tu fais un 1.) Au rang 3, le minimum passe à 12. Effort : augmenter le minimum de +3."
+  }
+}

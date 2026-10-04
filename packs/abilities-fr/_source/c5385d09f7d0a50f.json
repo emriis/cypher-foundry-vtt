@@ -1,0 +1,28 @@
+{
+  "_id": "c5385d09f7d0a50f",
+  "_key": "!items!c5385d09f7d0a50f",
+  "name": "Insaisissable",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "slippery-customer",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu ignores tous les malus liés à la très faible lumière ou à l’obscurité. Tu ignores les malus dus à des espaces exigus. Tu gagnes un atout sur les tâches de furtivité en faible lumière, très faible lumière ou obscurité."
+  }
+}

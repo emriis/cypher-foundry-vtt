@@ -31,90 +31,12 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "attack-flourish",
-        "name": "Attack Flourish",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "When you attack, you add stylish moves, entertaining quips, or a certain something that entertains or impresses others. One creature you choose within short range who can see you gains an asset to their next task if taken within a round or two. Enabler."
-      },
-      {
-        "id": "flamboyant-swordplay",
-        "name": "Flamboyant Swordplay",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 1,
-          "options": []
-        },
-        "description": "You attack in a way that has a greater risk of making an error but gains an additional benefit. Your GM intrusion range for this attack increases by 2 (from 1 on a d20 to 1–3 on a d20), but if you hit you can choose one of the following additional effects:"
-      },
-      {
-        "id": "daring-lunge",
-        "name": "Daring Lunge",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "The foe takes +2 damage."
-      },
-      {
-        "id": "disarming-agility",
-        "name": "Disarming Agility",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "The attack inflicts 1 less damage, but your foe drops something they are holding in one hand (such as a weapon or shield). To retrieve the dropped item, the foe must use an action. Action."
-      },
-      {
-        "id": "flamboyant-swordplay-gm-intrusions",
-        "name": "Flamboyant Swordplay GM intrusions",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Your foe's disarmed object strikes your ally for a minor wound. The tip of your weapon gets embedded in the floor or wall, requiring an action to free it. The attack impact jars you, hindering tasks with that hand until you use an action to shake it off. A few abilities in this book include suggested GM intrusions because you're more likely to trigger an intrusion when using those abilities, and having some options here makes it easier for the GM."
-      },
-      {
-        "id": "romantic-flair",
-        "name": "Romantic Flair",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
-        },
-        "description": "Your accompanying exuberant charm, bold confidence, perfectly timed bow, or suggestive wink means if your roll to charm or impress is less than a 9, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) Effort: Increase the minimum number rolled for this ability by 3. Action. At tier 3: The minimum number rolled for this ability increases to 12."
-      }
+      "Compendium.cypher.abilities-en.Item.c0850a7cabfc59b2",
+      "Compendium.cypher.abilities-en.Item.a9699b4261b5f709",
+      "Compendium.cypher.abilities-en.Item.16ac53dcf92bb38c",
+      "Compendium.cypher.abilities-en.Item.f7b72c7040358072",
+      "Compendium.cypher.abilities-en.Item.d96edd67b2668c80",
+      "Compendium.cypher.abilities-en.Item.fb7526a0ebd98a63"
     ],
     "statOptions": [
       "speed",

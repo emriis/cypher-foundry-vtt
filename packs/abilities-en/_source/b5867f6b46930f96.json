@@ -1,0 +1,36 @@
+{
+  "_id": "b5867f6b46930f96",
+  "_key": "!items!b5867f6b46930f96",
+  "name": "Battle Competence",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "battle-competence",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [
+      "light",
+      "medium",
+      "heavy"
+    ],
+    "freeArmorCategories": [
+      "light",
+      "medium",
+      "heavy"
+    ],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can freely use all weapons and all armor. As an action, you learn the level of up to three creatures that you can see within short range. This ability can be foiled by disguises or shapechanging. Enabler for weapon use; action for evaluating creatures."
+  }
+}

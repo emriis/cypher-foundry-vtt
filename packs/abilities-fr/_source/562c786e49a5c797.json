@@ -1,0 +1,28 @@
+{
+  "_id": "562c786e49a5c797",
+  "_key": "!items!562c786e49a5c797",
+  "name": "Éclairs de puissance",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "bolts-of-power",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You simultaneously unleash four lightning bolts, dealing 4 damage to up to four targets in short range; roll separately against each target. Even on a miss, your target still takes 1 damage. Action."
+  }
+}

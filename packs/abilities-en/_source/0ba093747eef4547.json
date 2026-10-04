@@ -1,0 +1,28 @@
+{
+  "_id": "0ba093747eef4547",
+  "_key": "!items!0ba093747eef4547",
+  "name": "The Wild Is on Your Side",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "the-wild-is-on-your-side",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Nature itself intervenes against your foes within short range. Until you use a ten-minute or longer recovery, rocks trip them, vines entangle them, insects bite them, small animals distract or confuse them, and so on, hindering all their tasks. You can only use this ability when in a wilderness environment. Enabler."
+  }
+}

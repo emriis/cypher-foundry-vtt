@@ -1,0 +1,28 @@
+{
+  "_id": "68cc05aef8a6269c",
+  "_key": "!items!68cc05aef8a6269c",
+  "name": "Incapacitating Attack",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "incapacitating-attack",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your successful attack also briefly incapacitates the target. Until you use a ten-minute or longer recovery (or until someone uses an action to give them aid), they are prone, unable to stand or crawl more than an immediate distance each round, and their defenses are hindered. Enabler."
+  }
+}

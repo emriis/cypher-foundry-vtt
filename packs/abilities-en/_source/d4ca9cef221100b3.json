@@ -1,0 +1,28 @@
+{
+  "_id": "d4ca9cef221100b3",
+  "_key": "!items!d4ca9cef221100b3",
+  "name": "Dirty Fighter",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "dirty-fighter",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 2,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Make a Speed attack against a foe within long range who you want to distract, blind, annoy, hamper, or otherwise interfere with. If you succeed, you hinder their attacks and defenses until you use a ten-minute or longer recovery. Action."
+  }
+}

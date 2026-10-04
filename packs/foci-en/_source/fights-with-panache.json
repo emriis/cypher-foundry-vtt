@@ -7,248 +7,82 @@
   "system": {
     "description": "<p>You're a swashbuckling daredevil who fights with a flamboyant style that's entertaining to watch.</p>",
     "abilities": [
-      {
-        "id": "attack-flourish",
-        "name": "Attack Flourish",
-        "tier": 1,
-        "prerequisites": [
-          "roguish-smile"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+      "Compendium.cypher.abilities-en.Item.c0850a7cabfc59b2",
+      "Compendium.cypher.abilities-en.Item.3ba2ca9b7eca76da",
+      "Compendium.cypher.abilities-en.Item.8ebe7ae7abe81a0e",
+      "Compendium.cypher.abilities-en.Item.790f16d24d3c1aea",
+      "Compendium.cypher.abilities-en.Item.28d3c8bace532570",
+      "Compendium.cypher.abilities-en.Item.495c300d1d3d8b01",
+      "Compendium.cypher.abilities-en.Item.ecc635e12d6dd57d",
+      "Compendium.cypher.abilities-en.Item.8e9965cb551acba9",
+      "Compendium.cypher.abilities-en.Item.2d4c98cd36a19bd6",
+      "Compendium.cypher.abilities-en.Item.d57f90583546212e",
+      "Compendium.cypher.abilities-en.Item.4d77145dfdd4b6e6",
+      "Compendium.cypher.abilities-en.Item.44ba268bc6db6ca2",
+      "Compendium.cypher.abilities-en.Item.2319f4845210f3a6",
+      "Compendium.cypher.abilities-en.Item.f7b8695c5ae4512d",
+      "Compendium.cypher.abilities-en.Item.2bf65fbcc2f43386"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "3ba2ca9b7eca76da",
+          "to": "c0850a7cabfc59b2"
         },
-        "description": "When you attack, you add stylish moves, entertaining quips, or a certain something that entertains or impresses others. One creature you choose within short range who can see you gains an asset to their next task if taken within a round or two. Enabler."
-      },
-      {
-        "id": "roguish-smile",
-        "name": "Roguish Smile",
-        "tier": 1,
-        "prerequisites": [
-          "taunting-defense"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+        {
+          "from": "8ebe7ae7abe81a0e",
+          "to": "3ba2ca9b7eca76da"
         },
-        "description": "With a smile and perhaps a wink, you erase the last round from the memory of a target of level 3 or less within immediate distance (make an Intellect attack against them to succeed). Effort: Increase the maximum level of the foe you can affect by 1. Action."
-      },
-      {
-        "id": "taunting-defense",
-        "name": "Taunting Defense",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "c0850a7cabfc59b2",
+          "to": "790f16d24d3c1aea"
         },
-        "description": "When you defend against a melee attack, your mocking moves, entertaining quips at your foe's expense, or a certain something draws out your foe's anger. Your foe's attack is hindered, but if they hit, they deal an additional minor wound. Enabler."
-      },
-      {
-        "id": "dashing-defense",
-        "name": "Dashing Defense",
-        "tier": 2,
-        "prerequisites": [
-          "attack-flourish"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "3ba2ca9b7eca76da",
+          "to": "28d3c8bace532570"
         },
-        "description": "When wielding a light or medium weapon against a foe of your size or smaller, if you fail to dodge an attack, you can still attempt to block it. Enabler."
-      },
-      {
-        "id": "fast-kill",
-        "name": "Fast Kill",
-        "tier": 2,
-        "prerequisites": [
-          "roguish-smile"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "choice",
-          "amount": 2,
-          "options": [
-            "might",
-            "speed"
-          ]
+        {
+          "from": "8ebe7ae7abe81a0e",
+          "to": "495c300d1d3d8b01"
         },
-        "description": "When you hit with a melee or ranged attack, you deal an additional 4 damage. You can't use this ability in two consecutive rounds. Enabler."
-      },
-      {
-        "id": "wounded-fury",
-        "name": "Wounded Fury",
-        "tier": 2,
-        "prerequisites": [
-          "taunting-defense"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "790f16d24d3c1aea",
+          "to": "ecc635e12d6dd57d"
         },
-        "description": "While you have at least three moderate wounds or at least one major wound, you gain one free level of Effort you can apply to your attack each round (easing your chance to hit or dealing 3 extra damage). This benefit lasts until you take your next ten-minute or longer recovery (or you no longer suffer from those wounds) At tier 3: The benefit increases to two free levels of Effort. Enabler."
-      },
-      {
-        "id": "acrobatic-attack",
-        "name": "Acrobatic Attack",
-        "tier": 3,
-        "prerequisites": [
-          "dashing-defense"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 1,
-          "options": []
+        {
+          "from": "495c300d1d3d8b01",
+          "to": "8e9965cb551acba9"
         },
-        "description": "You leap into the attack, twisting or flipping through the air. If you use Effort on the attack roll, you get a free level of Effort on it. If you roll a natural 17 or 18, instead of inflicting extra damage you can choose to have a minor effect. You can't use this ability if you can't freely use the armor you're wearing. Enabler."
-      },
-      {
-        "id": "flamboyant-boast",
-        "name": "Flamboyant Boast",
-        "tier": 3,
-        "prerequisites": [
-          "wounded-fury"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+        {
+          "from": "28d3c8bace532570",
+          "to": "2d4c98cd36a19bd6"
         },
-        "description": "You boastfully describe an act that you will accomplish, and then as an extra action on your turn, you attempt it. If an average person would find the action difficult (or impossible) and you succeed on it, non-allies who witnessed it are so amazed and confused that all actions they attempt on their next turn are hindered. The GM will help you determine whether your boast is something that would significantly impress onlookers. If you fail the boasted task, until you use a ten-minute or longer recovery your attempts to affect witnesses (with attacks, special abilities, or skills) are hindered. Enabler."
-      },
-      {
-        "id": "quick-adjustment",
-        "name": "Quick Adjustment",
-        "tier": 3,
-        "prerequisites": [
-          "fast-kill"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 2,
-          "options": []
+        {
+          "from": "790f16d24d3c1aea",
+          "to": "d57f90583546212e"
         },
-        "description": "Your nonlethal attack (an attempt to disarm, an attack against an inanimate object, or an attack to subdue) is a First action. Enabler."
-      },
-      {
-        "id": "improved-dashing-defense",
-        "name": "Improved Dashing Defense",
-        "tier": 4,
-        "prerequisites": [
-          "dashing-defense"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "2d4c98cd36a19bd6",
+          "to": "4d77145dfdd4b6e6"
         },
-        "description": "One ally within immediate range who is using a light or medium weapon gains the benefit of Dashing Defense until your next turn. Enabler."
-      },
-      {
-        "id": "misdirect",
-        "name": "Misdirect",
-        "tier": 4,
-        "prerequisites": [
-          "quick-adjustment"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 3,
-          "options": []
+        {
+          "from": "d57f90583546212e",
+          "to": "44ba268bc6db6ca2"
         },
-        "description": "When an opponent misses you, you can redirect their attack to another target of your choosing that's within immediate range of you. Make an unmodified attack roll against the new target (do not use any of your or the opponent's modifiers to the attack roll, but you can apply Effort for accuracy). If the attack hits, the target takes damage equal to the attacking foe's level. Enabler."
-      },
-      {
-        "id": "agile-wit",
-        "name": "Agile Wit",
-        "tier": 5,
-        "prerequisites": [
-          "improved-dashing-defense"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "4d77145dfdd4b6e6",
+          "to": "2319f4845210f3a6"
         },
-        "description": "When attempting a Speed task, you can spend points from your Intellect Pool instead of your Speed Pool, and vice versa. Use the Edge stat for the Pool you're spending points from."
-      },
-      {
-        "id": "using-the-environment",
-        "name": "Using the Environment",
-        "tier": 5,
-        "prerequisites": [
-          "misdirect"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "44ba268bc6db6ca2",
+          "to": "f7b8695c5ae4512d"
         },
-        "description": "You can use the environment to your advantage. If there is something within immediate distance that plausibly could provide cover (a table, chandelier, banister, second foe, and so on), you have cover and an asset on your melee attacks. It is a routine task for you to move anywhere that it is physically possible for you to reach as part of normal movement, climbing, or jumping, and you ignore obstacles and difficult terrain when you do so. For example, you could climb up a tapestry to a balcony or slide down a ship's sail, but not slip through an arrow slit or enter a locked cage. This ability lasts until you use a ten-minute or longer recovery. Enabler."
-      },
-      {
-        "id": "again-and-again",
-        "name": "Again and Again",
-        "tier": 6,
-        "prerequisites": [
-          "agile-wit"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 6,
-          "options": []
-        },
-        "description": "You can take an extra action on your turn. Enabler."
-      },
-      {
-        "id": "return-to-sender",
-        "name": "Return to Sender",
-        "tier": 6,
-        "prerequisites": [
-          "using-the-environment"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 3,
-          "options": []
-        },
-        "description": "If you successfully block or dodge a melee attack, you can immediately make a melee attack against the attacking foe. You can't use this ability again until after you take your normal turn. Enabler."
-      }
-    ]
+        {
+          "from": "2319f4845210f3a6",
+          "to": "2bf65fbcc2f43386"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

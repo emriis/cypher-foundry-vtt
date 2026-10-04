@@ -1,0 +1,28 @@
+{
+  "_id": "ba0cd166e4331148",
+  "_key": "!items!ba0cd166e4331148",
+  "name": "Wild Affinity",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "wild-affinity",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "A natural wild animal in its right mind and in its natural environment will not attack you unless provoked or controlled."
+  }
+}

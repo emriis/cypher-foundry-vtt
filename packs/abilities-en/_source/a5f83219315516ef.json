@@ -1,0 +1,28 @@
+{
+  "_id": "a5f83219315516ef",
+  "_key": "!items!a5f83219315516ef",
+  "name": "Built to Hack",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "built-to-hack",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you roll to hack an unintelligent computer or machine and your roll is less than a 9, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) Hacking tasks—which you can initiate using your ability to wirelessly network or by directly connecting to the target machine—include breaking into secure databases, taking temporary control of remote turrets, unlocking electronically secured entrances, and so on. Effort: Increase the minimum number rolled for this ability by 3. Enabler. At tier 3: The minimum number rolled for this ability increases to 12."
+  }
+}

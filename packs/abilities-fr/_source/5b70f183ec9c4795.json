@@ -1,0 +1,28 @@
+{
+  "_id": "5b70f183ec9c4795",
+  "_key": "!items!5b70f183ec9c4795",
+  "name": "Nécromancie supérieure",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "greater-necromancy",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu réanimes le corps d’une créature morte jusqu’à deux fois ta taille à portée courte, créant un·e suivant·e mort‑vivant·e de niveau 3. Iel n’a aucune intelligence, mémoire ou aptitude spéciale de son vivant. La créature te suit jusqu’à ta prochaine récupération d’une heure ou plus, où elle redevient inerte. Tu peux la réanimer à nouveau lorsqu’elle redevient inerte ou si elle est « tuée » par dégâts (tu devras peut être passer quelques minutes avec une aiguille et du fil pour rattacher les morceaux détachés ou tombés). Chaque créature supplémentaire réanimée au‑delà de la première coûte +2 Intellect (7 points pour deux corps, 9 points pour trois, etc.)."
+  }
+}

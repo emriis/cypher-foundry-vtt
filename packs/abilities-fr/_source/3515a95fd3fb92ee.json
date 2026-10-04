@@ -1,0 +1,31 @@
+{
+  "_id": "3515a95fd3fb92ee",
+  "_key": "!items!3515a95fd3fb92ee",
+  "name": "Attaque parfaite",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "perfect-attack",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "choice",
+      "amount": 2,
+      "options": [
+        "might",
+        "speed"
+      ]
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu attaques avec ton arme de prédilection. Si ton jet est inférieur à 9, considère-le comme 9. (Tu évites ainsi une Intrusion du·de la MJ si tu fais un 1.) Si tu touches, l’attaque inflige ses dégâts normaux. Cette aptitude ne rend pas possibles les attaques physiquement impossibles (trancher une personne se situant à 1,5km, tirer une flèche sur la lune, etc.). Elle se réinitialise après chaque récupération. Au rang 3, le minimum passe à 12. Effort : augmenter le minimum de +3."
+  }
+}

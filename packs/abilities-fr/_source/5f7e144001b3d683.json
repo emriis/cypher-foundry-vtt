@@ -1,0 +1,28 @@
+{
+  "_id": "5f7e144001b3d683",
+  "_key": "!items!5f7e144001b3d683",
+  "name": "Détection du mal",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "sense-evil",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "En utilisant une action pour percevoir les mort‑vivant·e·s, les démons (ou les créatures possédées par des démons), ou les créatures du même acabit à portée immédiate, si ton jet est inférieur à 9, considère que tu as obtenu 9. (Tu évites ainsi une Intrusion du·de la MJ si tu fais un 1.) Au rang 3, le minimum passe à 12. Effort : augmenter le minimum obtenu de +3 ou L’effet dure jusqu’à ta prochaine récupération de dix minutes ou plus."
+  }
+}

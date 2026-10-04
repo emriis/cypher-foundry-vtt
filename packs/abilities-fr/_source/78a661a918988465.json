@@ -1,0 +1,28 @@
+{
+  "_id": "78a661a918988465",
+  "_key": "!items!78a661a918988465",
+  "name": "Forme bestiale",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "beast-form",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Cinq nuits consécutives chaque mois, tu te transformes involontairement en une bête monstrueuse jusqu’aux premières lueurs de l’aube ou jusqu’au coucher de la lune (voir ci‑dessous). Décide avec le·la MJ des détails de cette forme. Dans cette forme, tu gagnes : +4 à ta Réserve de Puissance, +1 en Avantage de Puissance, +2 à ta Réserve de Célérité, +1 en Avantage de Célérité, tu ignores la première blessure modérée que tu subis, tu peux utiliser librement tes attaques à mains nues comme armes légères (attaque facilitée, 2 dégâts) ou armes moyennes (attaque normale, 4 dégâts), selon ce qui convient à l’attaque. Sous forme bestiale : tu ne peux pas dépenser de points d’Intellect, sauf pour tenter de reprendre ta forme normale avant la fin (tâche d’Intellect de difficulté 4), tu attaques toute créature vivante à portée courte, sans distinction. Après être redevenu·e normal·e, toutes tes tâches sont entravées jusqu’à ta prochaine récupération d’une heure ou plus. Si tu n’as pas tué et mangé au moins une créature substantielle pendant ta forme bestiale, l’entrave est de deux paliers et dure jusqu’à une récupération de dix heures."
+  }
+}

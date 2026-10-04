@@ -1,0 +1,28 @@
+{
+  "_id": "ecfb9fe73b7034b5",
+  "_key": "!items!ecfb9fe73b7034b5",
+  "name": "Détecter le métal",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "sense-metal",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu sais immédiatement s’il existe du métal ferromagnétique à portée courte, ainsi que la quantité, le type et la localisation générale."
+  }
+}

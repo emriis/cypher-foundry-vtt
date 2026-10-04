@@ -1,0 +1,28 @@
+{
+  "_id": "73814f2ef9a7f96c",
+  "_key": "!items!73814f2ef9a7f96c",
+  "name": "Electric Armor",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "electric-armor",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Lightning crackles across your body until you use a ten-minute or longer recovery. The electricity doesn't harm you, but it automatically inflicts 3 damage on anyone who tries to touch you or strike you with a melee attack (no roll required). While this ability is active, you ignore moderate and minor wounds from electricity. While this ability is active, you can make a touch attack that inflicts 2 damage from electricity. Enabler."
+  }
+}

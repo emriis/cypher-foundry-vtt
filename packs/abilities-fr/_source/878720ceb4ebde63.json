@@ -1,0 +1,28 @@
+{
+  "_id": "878720ceb4ebde63",
+  "_key": "!items!878720ceb4ebde63",
+  "name": "Frappe démesurée",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "towering-strike",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu touches avec une attaque de Puissance, tu infliges +4 dégâts supplémentaires. Quand tu es plus grand·e que la normale, chaque palier de taille (Agrandissement, Encore plus grand·e, Énorme, Gigantesque, Colossal·e) ajoute +1 dégât supplémentaire. L’aptitude se renouvelle après une récupération."
+  }
+}

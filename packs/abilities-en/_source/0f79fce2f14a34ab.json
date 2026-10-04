@@ -1,0 +1,28 @@
+{
+  "_id": "0f79fce2f14a34ab",
+  "_key": "!items!0f79fce2f14a34ab",
+  "name": "Find the Way",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "find-the-way",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you are tracking a creature, have gotten lost, don't know the first step to take to begin a journey, or are attempting to choose between two or more routes to take, you can ask your GM one question about the task and get a very short, helpful answer. Once you use this ability, you can't use it again until after your next recovery. Action."
+  }
+}

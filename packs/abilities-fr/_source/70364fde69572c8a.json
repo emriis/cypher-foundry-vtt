@@ -1,0 +1,28 @@
+{
+  "_id": "70364fde69572c8a",
+  "_key": "!items!70364fde69572c8a",
+  "name": "Capacité létale",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "lethal-capability",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You've mastered how to kill with a particular attack. You inflict an additional 5 damage with attacks of one specific type, such as your firearm, or some other specific attack you prefer. You can gain this ability more than once. Each time you do, choose a different specific attack."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "8dcb05d36d4629d7",
+  "_key": "!items!8dcb05d36d4629d7",
+  "name": "Outlast the Foe",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "outlast-the-foe",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If you have been in combat for five full rounds, you have an asset for all tasks in the remainder of the combat, and you deal an additional 1 damage per attack. Enabler."
+  }
+}

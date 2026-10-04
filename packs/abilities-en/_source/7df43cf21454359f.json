@@ -1,0 +1,28 @@
+{
+  "_id": "7df43cf21454359f",
+  "_key": "!items!7df43cf21454359f",
+  "name": "Total Awareness",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "total-awareness",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You automatically and frequently use your special senses to check your immediate vicinity, making it very difficult to surprise, hide from, or sneak up on you. When you use Effort on initiative and perception tasks, you gain two free levels of Effort. Enabler."
+  }
+}

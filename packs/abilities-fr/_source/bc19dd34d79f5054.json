@@ -1,0 +1,28 @@
+{
+  "_id": "bc19dd34d79f5054",
+  "_key": "!items!bc19dd34d79f5054",
+  "name": "Détection psionique",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "sense-psionics",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "S’il y a des pouvoirs mentaux, des aptitudes psioniques ou d’autres phénomènes psychiques en action à portée courte, tu en es conscient·e (sans en connaître les détails). Dernière action."
+  }
+}

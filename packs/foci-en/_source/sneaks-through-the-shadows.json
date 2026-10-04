@@ -7,214 +7,84 @@
   "system": {
     "description": "<p>You use shadows and darkness to make your way unseen, moving quickly and smoothly, and you never seem to be where danger is. Maybe you use these abilities to hunt treasures, or maybe just to steal.</p>",
     "abilities": [
-      {
-        "id": "always-speedy",
-        "name": "Always Speedy",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+      "Compendium.cypher.abilities-en.Item.53458b09ac3104e5",
+      "Compendium.cypher.abilities-en.Item.e0e84ebc3ed2bdf5",
+      "Compendium.cypher.abilities-en.Item.b1033570f07c5797",
+      "Compendium.cypher.abilities-en.Item.e8e53f7ced15d3db",
+      "Compendium.cypher.abilities-en.Item.e50184306603ce33",
+      "Compendium.cypher.abilities-en.Item.a7613195633e9f54",
+      "Compendium.cypher.abilities-en.Item.a0001fe704170404",
+      "Compendium.cypher.abilities-en.Item.ee398cc5aca5ef28",
+      "Compendium.cypher.abilities-en.Item.eee7b4bfa6876981",
+      "Compendium.cypher.abilities-en.Item.d4ca9cef221100b3",
+      "Compendium.cypher.abilities-en.Item.c5385d09f7d0a50f",
+      "Compendium.cypher.abilities-en.Item.f7b8695c5ae4512d",
+      "Compendium.cypher.abilities-en.Item.61785d50a753aa61"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "53458b09ac3104e5",
+          "to": "e8e53f7ced15d3db"
         },
-        "description": "Every time you use a recovery, if your Speed Pool isn't already full, you get 1 extra point to restore to your Speed Pool. You can select this ability up to three times."
-      },
-      {
-        "id": "natural-sneak",
-        "name": "Natural Sneak",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "e0e84ebc3ed2bdf5",
+          "to": "e8e53f7ced15d3db"
         },
-        "description": "When you roll on a lockpicking, perception, pickpocketing, or stealth task and your roll is less than a 6, treat the roll as a 6. (This means you don't get a GM intrusion if you roll a 1.) This ability renews when you take a recovery. Effort: Increase the minimum number rolled for this ability by 3. Enabler. At tier 3: The minimum number rolled for this ability increases to 9."
-      },
-      {
-        "id": "eyes-adjusted",
-        "name": "Eyes Adjusted",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "e0e84ebc3ed2bdf5",
+          "to": "e50184306603ce33"
         },
-        "description": "You can see in very dim light as though it were bright light. You can see in total darkness as if it were very dim light."
-      },
-      {
-        "id": "underworld-contacts",
-        "name": "Underworld Contacts",
-        "tier": 2,
-        "prerequisites": [
-          "always-speedy",
-          "natural-sneak"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "b1033570f07c5797",
+          "to": "e50184306603ce33"
         },
-        "description": "You know many people in a variety of communities who engage in illegal activities. These people are not necessarily your friends and might not be trustworthy, but they recognize you as a peer. You and the GM should work out the details of your underworld contacts."
-      },
-      {
-        "id": "safe-fall",
-        "name": "Safe Fall",
-        "tier": 2,
-        "prerequisites": [
-          "natural-sneak",
-          "eyes-adjusted"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "e8e53f7ced15d3db",
+          "to": "a7613195633e9f54"
         },
-        "description": "When you take a wound from a fall, reduce its severity by one step. Enabler."
-      },
-      {
-        "id": "retaliatory-swipe",
-        "name": "Retaliatory Swipe",
-        "tier": 3,
-        "prerequisites": [
-          "underworld-contacts"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 3,
-          "options": []
+        {
+          "from": "e50184306603ce33",
+          "to": "a0001fe704170404"
         },
-        "description": "If a melee attack hits you, you can immediately make a melee attack against your attacker. You can't use this ability more than once per turn. Enabler."
-      },
-      {
-        "id": "nine-lives",
-        "name": "Nine Lives",
-        "tier": 3,
-        "prerequisites": [
-          "safe-fall"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "a7613195633e9f54",
+          "to": "ee398cc5aca5ef28"
         },
-        "description": "You can use Might Effort or Speed Effort on block rolls."
-      },
-      {
-        "id": "unbalancing-strike",
-        "name": "Unbalancing Strike",
-        "tier": 4,
-        "prerequisites": [
-          "retaliatory-swipe",
-          "nine-lives"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 4,
-          "options": []
+        {
+          "from": "a0001fe704170404",
+          "to": "ee398cc5aca5ef28"
         },
-        "description": "Make a melee attack to knock your foe off balance. This attack is eased by two steps. If you succeed, you inflict damage and all actions they attempt on their next turn are hindered. Action."
-      },
-      {
-        "id": "hard-won-resilience",
-        "name": "Hard-Won Resilience",
-        "tier": 4,
-        "prerequisites": [
-          "nine-lives"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "a0001fe704170404",
+          "to": "eee7b4bfa6876981"
         },
-        "description": "Due to your experiences, you've been exposed to all sorts of terrible things and are developing a general resistance. You can take one more moderate wound than normal."
-      },
-      {
-        "id": "dirty-fighter",
-        "name": "Dirty Fighter",
-        "tier": 5,
-        "prerequisites": [
-          "unbalancing-strike"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 2,
-          "options": []
+        {
+          "from": "ee398cc5aca5ef28",
+          "to": "d4ca9cef221100b3"
         },
-        "description": "Make a Speed attack against a foe within long range who you want to distract, blind, annoy, hamper, or otherwise interfere with. If you succeed, you hinder their attacks and defenses until you use a ten-minute or longer recovery. Action."
-      },
-      {
-        "id": "slippery-customer",
-        "name": "Slippery Customer",
-        "tier": 5,
-        "prerequisites": [
-          "hard-won-resilience"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "eee7b4bfa6876981",
+          "to": "c5385d09f7d0a50f"
         },
-        "description": "You ignore all penalties from very dim light and darkness. You ignore penalties for actions in cramped spaces. You gain an asset on stealth tasks in dim light, very dim light, and darkness."
-      },
-      {
-        "id": "again-and-again",
-        "name": "Again and Again",
-        "tier": 6,
-        "prerequisites": [
-          "dirty-fighter",
-          "slippery-customer"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 6,
-          "options": []
+        {
+          "from": "d4ca9cef221100b3",
+          "to": "f7b8695c5ae4512d"
         },
-        "description": "You can take an extra action on your turn. Enabler."
-      },
-      {
-        "id": "alley-rat",
-        "name": "Alley Rat",
-        "tier": 6,
-        "prerequisites": [
-          "dirty-fighter",
-          "slippery-customer"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 6,
-          "options": []
+        {
+          "from": "c5385d09f7d0a50f",
+          "to": "f7b8695c5ae4512d"
         },
-        "description": "While in a city, you attempt to find or create a significant shortcut, secret entrance, or emergency escape route where it looked like none existed. To do so, you must succeed at an Intellect task, with the difficulty set by the GM based on the situation. You and the GM should work out the details of your unexpected path, but it should let you move at least a short distance away from where you are now. Action."
-      }
-    ]
+        {
+          "from": "d4ca9cef221100b3",
+          "to": "61785d50a753aa61"
+        },
+        {
+          "from": "c5385d09f7d0a50f",
+          "to": "61785d50a753aa61"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

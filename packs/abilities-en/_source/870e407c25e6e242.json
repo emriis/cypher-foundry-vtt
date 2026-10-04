@@ -1,0 +1,28 @@
+{
+  "_id": "870e407c25e6e242",
+  "_key": "!items!870e407c25e6e242",
+  "name": "Might for Mind",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "might-for-mind",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When performing a task that would normally require spending points from your Might Pool, you can spend points from your Intellect Pool instead, and vice versa."
+  }
+}

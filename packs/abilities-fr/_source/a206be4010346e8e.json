@@ -1,0 +1,28 @@
+{
+  "_id": "a206be4010346e8e",
+  "_key": "!items!a206be4010346e8e",
+  "name": "Intuition mécanique",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "device-insight",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "En examinant un appareil inconnu, alien, surnaturel ou de haute technologie, tu peux poser une question au/à la MJ pour comprendre ses capacités, son fonctionnement, comment l’activer ou le désactiver, ses faiblesses, comment le réparer ou toute question similaire. Cette aptitude sert pour les choses difficiles ou étranges, au‑delà de ce qu’une compétence technique normale permettrait d’identifier."
+  }
+}

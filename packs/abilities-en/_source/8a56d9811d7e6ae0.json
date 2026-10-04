@@ -1,0 +1,28 @@
+{
+  "_id": "8a56d9811d7e6ae0",
+  "_key": "!items!8a56d9811d7e6ae0",
+  "name": "Push",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "push",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You telekinetically push a target within short range an immediate distance in any direction. You must be able to see the target, it must be your size or smaller, and it must not be affixed to anything. The push is quick, and the force is about as direct and crude as a kick or punch. Action."
+  }
+}

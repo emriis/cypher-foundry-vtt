@@ -1,0 +1,28 @@
+{
+  "_id": "b3d395afa618262f",
+  "_key": "!items!b3d395afa618262f",
+  "name": "Instinct de survie",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "wilderness-survival",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu sais survivre dans les terres inhabitées. Après avoir passé au moins dix minutes en pleine nature et réussi une tâche de survie en plein air de difficulté 2 (ou une difficulté évaluée par le MJ correspondante à la zone concernée), tu trouves quelque chose d'utile que tu recherchais : abri, feu, gibier, baies, champignons, racines ou autres aliments. Tu sais également préparer au mieux tout gibier ou végétation récupéré et tu peux nourrir jusqu'à cinq alliés en plus de toi-même."
+  }
+}

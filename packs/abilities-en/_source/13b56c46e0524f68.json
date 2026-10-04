@@ -1,0 +1,28 @@
+{
+  "_id": "13b56c46e0524f68",
+  "_key": "!items!13b56c46e0524f68",
+  "name": "Selective Phase Attack",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "selective-phase-attack",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "One attack each round you make using Phased Attack deals an additional 5 damage. Enabler. Phased Attack used against a PC means their block attempts fail."
+  }
+}

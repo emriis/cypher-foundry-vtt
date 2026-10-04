@@ -1,0 +1,28 @@
+{
+  "_id": "055f6d6b2e1a13d6",
+  "_key": "!items!055f6d6b2e1a13d6",
+  "name": "Cold Burst",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "cold-burst",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You emit a short-range burst of cold in all directions from yourself. Make an Intellect attack against any number of creatures in range; success means they take 5 damage from cold. Each level of Effort you use for extra damage increases the damage by 2 points, or 1 point on a failed attack. Effort: Attempt to blind all targets you successfully hit (a successful second attack roll against a target means they are blinded, hindering all vision-based tasks by two steps, until you use a ten-minute or longer recovery). Action."
+  }
+}

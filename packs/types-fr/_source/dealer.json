@@ -31,48 +31,9 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "fast-talk",
-        "name": "Baratin",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
-        },
-        "description": "Quand tu parles à une créature intelligente capable de te comprendre et qui n’est pas hostile, tu la convaincs d’accomplir une action raisonnable lors du prochain round. Cette action doit être validée par le·la MJ : elle ne doit pas être dangereuse pour la créature ou ses allié·e·s, ni contraire à sa nature."
-      },
-      {
-        "id": "sneak-attack",
-        "name": "Attaque Furtive (1 Célérité)",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 1,
-          "options": []
-        },
-        "description": "If you use a light weapon to attack a foe under one of the following conditions, your attack inflicts +5 damage. (This ability doesn't work with medium or heavy weapons.) You attack with surprise. An ally uses their action to ease your attack. Your foe's defenses are hindered due to some other ongoing direct distraction. Your foe is unable to take their next turn due to some disabling attack or situation. First action."
-      },
-      {
-        "id": "when-the-deal-bombs",
-        "name": "Quand le Deal Explose",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Après avoir persuadé, trompé, interagi positivement, ou utilisé Baratin avec succès sur une créature, si celle-ci devient hostile dans les 24 heures, tu réduis automatiquement la gravité de la première blessure qu'elle t'inflige d'un palier. Au rang 3, tu ignores complètement cette blessure (aucun dégât)."
-      }
+      "Compendium.cypher.abilities-fr.Item.74f836631507813c",
+      "Compendium.cypher.abilities-fr.Item.2d70a39dd42dc0d8",
+      "Compendium.cypher.abilities-fr.Item.bee07f005cef6a96"
     ],
     "statOptions": [
       "intellect",

@@ -1,0 +1,28 @@
+{
+  "_id": "1ed3f41abe04acdd",
+  "_key": "!items!1ed3f41abe04acdd",
+  "name": "Unearth Evil",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "unearth-evil",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You detect the faint whiff of undead, demons, and similar ilk from a great distance. When you use this ability, you generate a mental “heat map” of qualifying creatures within a 10-mile (16 km) radius. Affected creature locations are accurate to within about 100 feet (30 m). This takes anywhere from an hour to a full day of concentration, depending on what the GM feels is appropriate due to time, distance, or other mitigating circumstances. However, you don't know in advance how long it will take. Creatures of level 4 or higher are aware that something has noticed them, but they don't necessarily realize what. Effort: Once you have established where each qualifying target is located, you retain a sense of their locations (so if they move, you are aware of their new position) until you use a one-hour or longer recovery (this requires two levels of Effort). Action to initiate. A heat map is a simple map of an area using colors to show the intensity of something in a visual way, like showing where things are “hot” or “cold”—or, in this case, “evil.”"
+  }
+}

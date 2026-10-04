@@ -1,0 +1,28 @@
+{
+  "_id": "9f11831b1b7dadbd",
+  "_key": "!items!9f11831b1b7dadbd",
+  "name": "Perfect Stranger",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "perfect-stranger",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You completely throw yourself into a role, becoming almost unrecognizable until you use a one-hour or longer recovery. This often involves altering your voice, posture, accent, or clothing to “sell” this new guise. All tasks to pretend to be someone other than yourself are eased. Three times while this ability is active, if you use Effort on an interaction or knowledge task related to this role, you gain a free level of Effort. Action to initiate."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "172ef00d9fe55b57",
+  "_key": "!items!172ef00d9fe55b57",
+  "name": "Énorme",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "huge",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu utilises Agrandissement, si tu dépenses 2 Puissance supplémentaires, tu atteins 5 m de haut. Tant que tu es énorme : tu gagnes +1 en Avantage de Puissance, tu peux ignorer les trois premières blessures modérées, tes attaques à mains nues infligent 7 dégâts, tu gagnes un atout aux tâches facilitées par une grande taille mais tes tâches d’Esquive sont entravées de deux paliers."
+  }
+}

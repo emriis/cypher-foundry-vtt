@@ -7,178 +7,58 @@
   "system": {
     "description": "<p>You command the wintry power of cold and ice.</p>",
     "abilities": [
-      {
-        "id": "cool-water",
-        "name": "Cool Water",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+      "Compendium.cypher.abilities-en.Item.17fde222705df765",
+      "Compendium.cypher.abilities-en.Item.822cea619f6a0285",
+      "Compendium.cypher.abilities-en.Item.f5733a2ff66bd1f7",
+      "Compendium.cypher.abilities-en.Item.5a9e7c6e54ab4743",
+      "Compendium.cypher.abilities-en.Item.5701d74d8a23466c",
+      "Compendium.cypher.abilities-en.Item.17d115c4d103309c",
+      "Compendium.cypher.abilities-en.Item.fc874f02bd02f265",
+      "Compendium.cypher.abilities-en.Item.47cfe07b3e324cd6",
+      "Compendium.cypher.abilities-en.Item.055f6d6b2e1a13d6",
+      "Compendium.cypher.abilities-en.Item.37ef7ce5d01c7cf9",
+      "Compendium.cypher.abilities-en.Item.6668e982907684a7"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "822cea619f6a0285",
+          "to": "5a9e7c6e54ab4743"
         },
-        "description": "You cause water in the air to condense, creating enough potable cold water to sustain five creatures for one day. Action."
-      },
-      {
-        "id": "ice-armor",
-        "name": "Ice Armor",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+        {
+          "from": "822cea619f6a0285",
+          "to": "5701d74d8a23466c"
         },
-        "description": "You cover your body in a sheen of ice until you use a ten-minute or longer recovery, easing your Might defense rolls to block attacks. In addition, reduce the severity of wounds from cold and ice effects used against you by one step (major to moderate, moderate to minor, minor to none). For example, if you are hit by a blast of cold that causes a moderate wound, you instead take a minor wound. You can make a “cold touch” light unarmed attack against a foe, inflicting 2 cold damage from the ice armor if your attack succeeds. Enabler."
-      },
-      {
-        "id": "lower-temperature",
-        "name": "Lower Temperature",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+        {
+          "from": "5701d74d8a23466c",
+          "to": "17d115c4d103309c"
         },
-        "description": "You make it up to 30˚ F (15˚ C) cooler in an immediate area until you make a ten-minute or longer recovery (this reduces wound severity from warm temperature environments by two steps). This effect is centered on you and moves with you. Action."
-      },
-      {
-        "id": "frost-bolt",
-        "name": "Frost Bolt",
-        "tier": 2,
-        "prerequisites": [
-          "ice-armor"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "5a9e7c6e54ab4743",
+          "to": "fc874f02bd02f265"
         },
-        "description": "You emit a ray of intense cold at a foe within short range. If it hits, it inflicts 4 damage from cold. Instead of attacking with a ray, you can increase the intensity of the cold that Ice Armor has on your hands, adding 2 damage to your cold touch and to your melee and ranged weapon damage. This aspect of this ability lasts until you use a  ten-minute or longer recovery. Action; action to initiate more intense cold."
-      },
-      {
-        "id": "ice-slide",
-        "name": "Ice Slide",
-        "tier": 2,
-        "prerequisites": [
-          "ice-armor"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "17d115c4d103309c",
+          "to": "47cfe07b3e324cd6"
         },
-        "description": "You create a path of smooth ice from yourself to a location within long range and safely slide to there. You must have a clear and unobstructed path to that location, but otherwise it can be above, below, or even across a gap. The ice melts away after a few seconds. Action."
-      },
-      {
-        "id": "ice-creation",
-        "name": "Ice Creation",
-        "tier": 3,
-        "prerequisites": [
-          "ice-slide"
-        ],
-        "repeatable": true,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "fc874f02bd02f265",
+          "to": "47cfe07b3e324cd6"
         },
-        "description": "You create an object of your size or smaller that is made of level 3 ice. It is crude and can have no moving parts, so you can make a sword, a shield, a small wall, a short ladder, and so on. If you aren't within short range of the object, it breaks or melts once you use a ten-minute or longer recovery. You can choose this ability multiple times. Each additional time you choose it, you double the base size of the object you can create. Effort: Double the maximum size of the object you can create. Increase the distance the object can be from you by one range category. Action. A wall of ice that is about 5 feet by 5 feet and 1 inch thick (1.5 m by 1.5 m and 3 cm thick) is about the same size as a person."
-      },
-      {
-        "id": "winter-s-grip",
-        "name": "Winter's Grip",
-        "tier": 3,
-        "prerequisites": [
-          "frost-bolt"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "47cfe07b3e324cd6",
+          "to": "055f6d6b2e1a13d6"
         },
-        "description": "Make an Intellect attack against a foe within short range. Success means they are restrained by a layer of ice until you use a ten-minute or longer recovery or until they use an action to break free. The foe can't move from their current position, and their physical tasks (including attacks and defense) are hindered. If Ice Armor is active and you instead touch the foe, the Intellect attack is eased and you add the 2 damage from your cold touch. Effort: Inflict 3 damage from cold on the round the foe is first held. Action."
-      },
-      {
-        "id": "improved-ice-armor",
-        "name": "Improved Ice Armor",
-        "tier": 4,
-        "prerequisites": [
-          "ice-creation",
-          "winter-s-grip"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "055f6d6b2e1a13d6",
+          "to": "37ef7ce5d01c7cf9"
         },
-        "description": "Your Ice Armor eases your Might defense rolls to block attacks by an additional step. The damage from your Ice Armor's cold touch, Frost Bolt, and Winter's Grip increases by 1."
-      },
-      {
-        "id": "cold-burst",
-        "name": "Cold Burst",
-        "tier": 5,
-        "prerequisites": [
-          "improved-ice-armor"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 5,
-          "options": []
-        },
-        "description": "You emit a short-range burst of cold in all directions from yourself. Make an Intellect attack against any number of creatures in range; success means they take 5 damage from cold. Each level of Effort you use for extra damage increases the damage by 2 points, or 1 point on a failed attack. Effort: Attempt to blind all targets you successfully hit (a successful second attack roll against a target means they are blinded, hindering all vision-based tasks by two steps, until you use a ten-minute or longer recovery). Action."
-      },
-      {
-        "id": "ice-monster",
-        "name": "Ice Monster",
-        "tier": 6,
-        "prerequisites": [
-          "cold-burst"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 6,
-          "options": []
-        },
-        "description": "You create an automaton made of snow or ice that is your general shape and size, lasting until you use a ten-minute or longer recovery. This NPC ally acts as you direct each round. Directing the monster is an action, and you can command it only when you are within long range of it. Without a command, the monster continues to follow your previous command. You can also give it a simple programmed action, such as “Wait here and attack anyone who comes within short range until they're dead.” Action to create; action to direct. Automaton: level 5; Armor 1; bash attacks deal 6 damage (half from intense cold)"
-      },
-      {
-        "id": "winter-gauntlets",
-        "name": "Winter Gauntlets",
-        "tier": 6,
-        "prerequisites": [
-          "cold-burst"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Your Frost Bolt ray inflicts an additional 3 damage, or an additional 3 damage as part of a touch or weapon attack. Any creature you hit with Frost Bolt, cold touch, or a cold-enhanced weapon attack is restrained in place (as Winter's Grip). Enabler."
-      }
-    ]
+        {
+          "from": "055f6d6b2e1a13d6",
+          "to": "6668e982907684a7"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

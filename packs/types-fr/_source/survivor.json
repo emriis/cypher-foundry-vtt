@@ -31,48 +31,9 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "despite-my-wounds",
-        "name": "Malgré Mes Blessures",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Lorsque tu as deux blessures modérées ou plus, ou une blessure majeure, tu bénéficies d’une relance gratuite pour une action par round (comme si tu avais dépensé 1 PX). Facilitateur."
-      },
-      {
-        "id": "enhanced-scavenging",
-        "name": "Fouilles Améliorées",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
-        },
-        "description": "Lorsque tu fais un jet pour fouiller les terres postapocalyptiques à la recherche de quelque chose d'utile et que le résultat est inférieur à 9, considère que tu as obtenu 9. L'effet reste actif jusqu'à ta prochaine récupération de dix minutes ou plus. Au rang 3, le minimum devient 12. Effort : Augmente le minimum obtenu de +3."
-      },
-      {
-        "id": "get-out",
-        "name": "Dégage",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "If you move at least an immediate distance away from the most obvious threat or toward what promises to offer safety, one task you attempt next round is eased. Enabler."
-      }
+      "Compendium.cypher.abilities-fr.Item.993ed619f6e00cd7",
+      "Compendium.cypher.abilities-fr.Item.9c1891a384e94cc3",
+      "Compendium.cypher.abilities-fr.Item.e7dabeb872983ab0"
     ],
     "statOptions": [
       "might",

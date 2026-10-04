@@ -1,0 +1,28 @@
+{
+  "_id": "4bedf1edd0ff4738",
+  "_key": "!items!4bedf1edd0ff4738",
+  "name": "Phase Door",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "phase-door",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can phase into an adjacent solid object and then phase out of any other solid object within long range of the first, even if the two objects are not connected. There must be no intervening barriers between the two objects, and you must be aware of or able to see the destination object. Effort: Increase the traveling range by a long distance. Action."
+  }
+}

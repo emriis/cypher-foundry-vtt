@@ -1,0 +1,28 @@
+{
+  "_id": "5596619727dffdf1",
+  "_key": "!items!5596619727dffdf1",
+  "name": "Call Upon the Beast",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "call-upon-the-beast",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "While not in beast form, you can call upon your beastly nature for a moment and give a menacing growl or have your eyes become more animal-like. If you do this, you gain a free level of Effort on an intimidation task. Enabler."
+  }
+}

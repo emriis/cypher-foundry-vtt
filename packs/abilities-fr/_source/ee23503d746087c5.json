@@ -1,0 +1,28 @@
+{
+  "_id": "ee23503d746087c5",
+  "_key": "!items!ee23503d746087c5",
+  "name": "Lecture de pensées",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "mind-reading",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu peux lire les pensées superficielles d’une créature que tu vois à portée courte. Si la créature est non consentante, tu dois réussir une attaque d’Intellect contre elle pour lire ses pensées. Une fois le contact établi, tu peux lire les pensées de la cible jusqu’à ta prochaine récupération de dix minutes ou plus. Action pour commencer."
+  }
+}

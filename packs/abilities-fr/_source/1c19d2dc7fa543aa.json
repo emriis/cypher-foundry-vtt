@@ -1,0 +1,28 @@
+{
+  "_id": "1c19d2dc7fa543aa",
+  "_key": "!items!1c19d2dc7fa543aa",
+  "name": "Corps de pierre",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "stone-body",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Ton corps est constitué d’une substance aussi dure que la pierre ou le cristal. Détermine avec ton·ta MJ ta forme exacte, bien qu’elle soit probablement de taille et de forme humanoïdes. Tu n’as pas besoin de manger, boire ou respirer, mais tu dois toujours te reposer et dormir. En tant qu’être minéral : - Tu peux subir deux blessures mineures supplémentaires par rapport à la normale - Tes jets pour bloquer sont facilités - Tes attaques à mains nues infligent +2 dégâts"
+  }
+}

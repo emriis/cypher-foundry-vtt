@@ -1,0 +1,28 @@
+{
+  "_id": "7ea769276656e57c",
+  "_key": "!items!7ea769276656e57c",
+  "name": "Vigilance de l’explorateur·rice",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "explorer-s-awareness",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu es instinctivement attentif·ive aux dangers, obstacles et menaces dans ta ligne de vue. Lorsque tu consacres de l’Effort à tes tâches d’initiative ou de perception, tu gagnes deux niveaux d’Effort gratuits."
+  }
+}

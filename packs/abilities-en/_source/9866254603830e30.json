@@ -1,0 +1,28 @@
+{
+  "_id": "9866254603830e30",
+  "_key": "!items!9866254603830e30",
+  "name": "Lead by Inquiry",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "lead-by-inquiry",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you and any number of allies spend a ten-hour recovery together (yours or theirs), the allies are treated as if trained in perception and recognizing motive. This benefit remains while you remain within a long distance of them. The benefit is suspended at greater distances, but resumes automatically if you get within range. The benefit ends if you use a ten-hour recovery while away from the allies. Enabler."
+  }
+}

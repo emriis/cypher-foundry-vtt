@@ -1,0 +1,28 @@
+{
+  "_id": "6625cbf95c10f6a5",
+  "_key": "!items!6625cbf95c10f6a5",
+  "name": "Combat contre la horde",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "horde-fighting",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand deux adversaires ou plus t’attaquent en mêlée, tu peux utiliser leur nombre contre eux. Chaque round, choisis soit un atout pour tes Blocages et Esquives contre eux ou un atout à tes attaques contre eux."
+  }
+}

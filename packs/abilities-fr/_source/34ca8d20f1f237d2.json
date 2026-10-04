@@ -1,0 +1,28 @@
+{
+  "_id": "34ca8d20f1f237d2",
+  "_key": "!items!34ca8d20f1f237d2",
+  "name": "Apaiser",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "calm",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If you succeed on an Intellect attack against a living foe who can see and hear you, you prevent them from attacking anyone or anything for one round by way of your jokes, song, or other performance. Action."
+  }
+}

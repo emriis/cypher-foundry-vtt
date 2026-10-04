@@ -1,0 +1,28 @@
+{
+  "_id": "bb45a0a121c72a40",
+  "_key": "!items!bb45a0a121c72a40",
+  "name": "Transformation d'odeur",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "scent-transformation",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You alter your scent so that you smell like an animal of your choosing until your next ten-minute or longer recovery. This can foil tracking attempts that are based on smell, and when attempting to interact with animals of your chosen type that rely heavily on smell, your tasks are eased by two steps. You can use this ability no matter what your shape is. Action to initiate."
+  }
+}

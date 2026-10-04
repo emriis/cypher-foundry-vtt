@@ -1,0 +1,28 @@
+{
+  "_id": "862983a39dc25d74",
+  "_key": "!items!862983a39dc25d74",
+  "name": "Bouclier contre le mal",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "shield-against-evil",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu bénis toi‑même ou un·e allié·e touché·e, gagnant une protection contre les mort‑vivant·e·s, démons et créatures du même acabit jusqu’à ta prochaine récupération de dix minutes ou plus. La protection facilite les jets de défense contre ces créatures et accorde une immunité contre l’influence mentale, la peur et la possession (provenant de n’importe quelle source)."
+  }
+}

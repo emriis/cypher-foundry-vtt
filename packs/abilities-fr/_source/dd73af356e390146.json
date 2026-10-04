@@ -1,0 +1,28 @@
+{
+  "_id": "dd73af356e390146",
+  "_key": "!items!dd73af356e390146",
+  "name": "Invisibilité face au mal",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "invisibility-to-evil",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Un·e allié·e touché·e devient effectivement invisible pour les mort‑vivant·e·s, démons et créatures du même acabit de niveau 3 ou moins, jusqu’à ta prochaine récupération de dix minutes ou plus. L’effet cesse si la cible révèle sa présence (attaque, aptitude, déplacement d’un gros objet…). Effort : augmenter le niveau maximal des créatures incapables de percevoir la cible de +1."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "e7f967cac5928f6a",
+  "_key": "!items!e7f967cac5928f6a",
+  "name": "Resonant Palm",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "resonant-palm",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 7,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You forge a mystic connection with a willing creature you touch or a foe you successfully attack (this attack deals 2 less damage than normal). At any point within the next ten days, you can attempt to affect the target in one of the following ways, no matter how far you are from them. This connection breaks once you make this attempt, you force a connection with a different creature, or ten days pass. Transfer one wound from the creature to yourself. No abilities, effects, or equipment can reduce the severity of this wound, but you can rally or attempt to heal it using normal methods. Make an eased unarmed attack against the target or an eased attack against them with one of your abilities, as if they were in range. Last action to initiate; action to heal or attack the creature."
+  }
+}

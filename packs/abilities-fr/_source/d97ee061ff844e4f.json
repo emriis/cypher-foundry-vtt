@@ -1,0 +1,28 @@
+{
+  "_id": "d97ee061ff844e4f",
+  "_key": "!items!d97ee061ff844e4f",
+  "name": "Camouflage sauvage",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "wild-camouflage",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "En ajustant ta tenue, grâce à des astuces de déguisement et à ta connaissance du terrain, tu deviens difficile à repérer dans la nature jusqu’à ta prochaine récupération de dix minutes ou plus. Pendant ce temps : tu gagnes deux atouts à tes tâches d’Esquive et de Discrétion. L’effet cesse si tu fais quelque chose de trop visible (attaque, aptitude à effet évident, déplacement d’un gros objet…)."
+  }
+}

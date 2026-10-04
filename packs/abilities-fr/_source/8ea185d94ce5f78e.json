@@ -1,0 +1,28 @@
+{
+  "_id": "8ea185d94ce5f78e",
+  "_key": "!items!8ea185d94ce5f78e",
+  "name": "Voile Psychique",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "psychic-veil",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Ton apparence devient floue jusqu'à ta prochaine récupération de dix minutes ou plus. Ce voile ne gêne pas tes actions, mais tes jets d'Esquive et de défense d'Intellect sont facilités. Tant que le voile est actif, les attaques psychiques que tu subis voient leur gravité réduite d'un palier (majeure vers modérée, modérée vers mineure, mineure vers aucune)."
+  }
+}

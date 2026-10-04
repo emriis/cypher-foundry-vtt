@@ -1,0 +1,28 @@
+{
+  "_id": "b80f0e1b550d811a",
+  "_key": "!items!b80f0e1b550d811a",
+  "name": "Lancer de bouclier",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "throw-shield",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu lances ton bouclier comme une arme légère à courte portée. Qu’il touche ou non, il rebondit vers toi si tu réussis une tâche de Célérité de difficulté 2. Effort : un coup réussi entrave la cible pendant un round."
+  }
+}

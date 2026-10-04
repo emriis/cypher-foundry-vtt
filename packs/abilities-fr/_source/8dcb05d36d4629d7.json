@@ -1,0 +1,28 @@
+{
+  "_id": "8dcb05d36d4629d7",
+  "_key": "!items!8dcb05d36d4629d7",
+  "name": "Tenir plus longtemps que l’ennemi",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "outlast-the-foe",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Si tu es en combat depuis cinq rounds complets, tu gagnes un atout à toutes tes tâches pour le reste du combat, et tu infliges +1 dégât supplémentaire à chaque attaque."
+  }
+}

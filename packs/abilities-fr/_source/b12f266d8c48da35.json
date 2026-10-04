@@ -1,0 +1,28 @@
+{
+  "_id": "b12f266d8c48da35",
+  "_key": "!items!b12f266d8c48da35",
+  "name": "Connecté·e",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "connected",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu connais des personnes qui savent obtenir des résultats — hackers, criminels de rue, personnalités respectées. Ces contacts ne sont pas nécessairement amis ou dignes de confiance, mais te doivent une faveur. Quand tu utilises cette aptitude, tu te remémores ou établis un contact de niveau 2 que tu peux joindre dans un lieu spécifique. Cette aptitude se renouvelle quand tu accèdes à un nouveau lieu, ou après au moins un mois dans le même lieu. Au rang 3, tu peux établir deux contacts simultanément. Effort : Augmente le niveau du nouveau contact de +1."
+  }
+}

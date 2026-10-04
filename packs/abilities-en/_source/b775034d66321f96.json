@@ -1,0 +1,28 @@
+{
+  "_id": "b775034d66321f96",
+  "_key": "!items!b775034d66321f96",
+  "name": "Mind of a Leader",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "mind-of-a-leader",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you develop a course of action to deal with a future situation, you can ask the GM one very general question about what is likely to happen if you carry out the plan, and you will get a simple, brief answer. Each of the allies who know the plan (including you) gain an asset to one roll of their choice related to that future situation, as long as the situation occurs within a few days of creating the plan. Action to initiate planning; enabler for asset."
+  }
+}

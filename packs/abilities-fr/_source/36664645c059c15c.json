@@ -1,0 +1,28 @@
+{
+  "_id": "36664645c059c15c",
+  "_key": "!items!36664645c059c15c",
+  "name": "Fièvre de sang",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "blood-fever",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tant qu’au moins une de tes Réserves est vide, ou tant que tu as au moins deux blessures modérées ou une blessure majeure, tu gagnes un atout à tes attaques ou à tes défenses (au choix), ainsi qu’aux tâches d’intimidation."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "ce491547d06803be",
+  "_key": "!items!ce491547d06803be",
+  "name": "Tour de volonté",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "tower-of-will",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu gagnes un atout aux tâches de défense d’Intellect et +3 points à ta Réserve d’Intellect."
+  }
+}

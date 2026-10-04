@@ -1,0 +1,28 @@
+{
+  "_id": "08bf281e08d1e7d5",
+  "_key": "!items!08bf281e08d1e7d5",
+  "name": "Frappe brutale",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "brute-strike",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu touches avec une attaque de Puissance, tu infliges +6 dégâts supplémentaires. Tu ne peux pas utiliser cette aptitude deux rounds d’affilée."
+  }
+}

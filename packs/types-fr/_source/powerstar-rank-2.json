@@ -32,62 +32,10 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "enhanced-energy",
-        "name": "Énergie Amplifiée",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Lorsque tu réussis une tâche importante en utilisant tes pouvoirs (à la discrétion du MJ), tu récupères 4 points d'Intellect. Chaque fois que tu utilises cette aptitude, tu récupères 1 point de moins que la fois précédente. L'aptitude se renouvelle après une récupération de dix heures."
-      },
-      {
-        "id": "power-prowess",
-        "name": "Maîtrise de Puissance",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Tu infliges +1 dégât avec toute attaque impliquant tes pouvoirs."
-      },
-      {
-        "id": "superheroics",
-        "name": "Usage Étendu",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Lorsque tu choisis ton focus, en plus de sélectionner deux aptitudes de rang 1, tu choisis également une aptitude de rang 2."
-      },
-      {
-        "id": "wider-use",
-        "name": "Superhéroïsme",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Choisis une Réserve : Puissance, Célérité ou Intellect. Pour les tâches utilisant cette Réserve, ajoute ton rang au nombre de niveaux d'Effort que tu peux appliquer. Tu peux te surmener : subir une blessure modérée pour obtenir deux niveaux d'Effort gratuits pour une tâche de cette Réserve (sans dépasser la limite d'Effort maximale). À chaque récupération, ajoute ton rang en points supplémentaires dans cette même Réserve."
-      }
+      "Compendium.cypher.abilities-fr.Item.a4fd7c41ed6a62a3",
+      "Compendium.cypher.abilities-fr.Item.12557fc72f061787",
+      "Compendium.cypher.abilities-fr.Item.1eac155981dbb2f9",
+      "Compendium.cypher.abilities-fr.Item.301c1566597f919d"
     ],
     "statOptions": [
       "might",

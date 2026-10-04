@@ -1,0 +1,28 @@
+{
+  "_id": "b80f0e1b550d811a",
+  "_key": "!items!b80f0e1b550d811a",
+  "name": "Throw Shield",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "throw-shield",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You throw your shield as a short-range light weapon. Whether the shield hits or misses, it bounces back to your grasp if you succeed on a difficulty 2 Speed task. Effort: A successful hit with the shield also hinders the target for one round. Action. When using Throw Shield, if you throw your shield and fail to catch it when it rebounds, it most likely ends up a short distance from you."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "397adaa70e71df88",
+  "_key": "!items!397adaa70e71df88",
+  "name": "Scary Big",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "scary-big",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Even when you're not larger than normal, your presence is compelling; you have an asset to charm and intimidation tasks. If you have grown larger than your normal size, you have two assets. Enabler."
+  }
+}

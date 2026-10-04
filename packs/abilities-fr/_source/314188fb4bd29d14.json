@@ -1,0 +1,28 @@
+{
+  "_id": "314188fb4bd29d14",
+  "_key": "!items!314188fb4bd29d14",
+  "name": "Abaisser la température",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "lower-temperature",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu peux réduire la température d’une zone immédiate jusqu’à 20 degrés (Farenheit ou Celsius???) en dessous de la normale, jusqu’à ta prochaine récupération de dix minutes ou plus. L’effet est centré sur toi et te suit."
+  }
+}

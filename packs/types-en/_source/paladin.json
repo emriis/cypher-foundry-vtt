@@ -34,48 +34,9 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "combat-prowess",
-        "name": "Combat Prowess",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You add +1 damage to one type of weapon attack of your choice: melee weapon attacks or ranged weapon attacks."
-      },
-      {
-        "id": "holy-succor",
-        "name": "Holy Succor",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
-        },
-        "description": "While an ally within immediate range of you has at least three moderate wounds or at least one major wound, you can extend your divine grace, granting them one free level of Effort they can apply each round to an attack or defense roll. The divine grace they are afforded lasts until the wounds are healed or they use a ten-minute or longer recovery. Each time you use Holy Succor, the Intellect cost increases by 1. The cost returns to 1 after you take a recovery. Enabler."
-      },
-      {
-        "id": "sacred-smite",
-        "name": "Sacred Smite",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
-        },
-        "description": "Choose one creature you can see that you want to be punished for their transgressions. Until you attack a different creature, your attacks against that creature deal +1 damage from divine energy coursing through your melee or ranged weapon. If the target is an undead creature, a demon, or of similar ilk as designated by your GM, you choose whether your successful attack inflicts +2 damage or your foe must flee from you for one turn. Enabler. At tier 3: The bonus damage against undead, demons, and similar ilk increases to +3."
-      }
+      "Compendium.cypher.abilities-en.Item.d631387889d71582",
+      "Compendium.cypher.abilities-en.Item.ca549f77a8a40129",
+      "Compendium.cypher.abilities-en.Item.c525589d38fcd19f"
     ],
     "statOptions": [
       "might",

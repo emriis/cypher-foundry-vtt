@@ -1,0 +1,28 @@
+{
+  "_id": "de83ef8d1bb5d31e",
+  "_key": "!items!de83ef8d1bb5d31e",
+  "name": "Transformation contrôlée",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "controlled-change",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu peux tenter d’utiliser Forme bestiale pour te transformer n’importe quelle nuit (tâche d’Intellect de difficulté 4). Ces transformations s’ajoutent aux cinq nuits mensuelles obligatoires."
+  }
+}

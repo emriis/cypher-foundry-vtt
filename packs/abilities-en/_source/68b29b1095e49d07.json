@@ -1,0 +1,28 @@
+{
+  "_id": "68b29b1095e49d07",
+  "_key": "!items!68b29b1095e49d07",
+  "name": "Feat of Strength",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "feat-of-strength",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your physical action is impressive, inspiring an ally or intimidating a foe. After succeeding at a task that depends on brute force (such as smashing down a barred door, tearing open a locked container, lifting or moving a heavy object, or striking someone with a melee weapon), choose a creature who saw you succeed. If they are an ally, you ease their next task. If they are a foe, you can either hinder one of their tasks on their next turn or immediately attempt an eased intimidation task against them. Enabler."
+  }
+}

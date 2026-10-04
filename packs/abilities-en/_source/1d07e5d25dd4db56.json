@@ -1,0 +1,28 @@
+{
+  "_id": "1d07e5d25dd4db56",
+  "_key": "!items!1d07e5d25dd4db56",
+  "name": "Knowing the Audience",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "knowing-the-audience",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": "lastAction",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You ascertain the general mood of a group of people within short range. If they are trying to conceal that information, you may attempt a difficulty 3 task to learn the truth of their attitude. On the following round, you also gain an asset to a single recognizing motive task regarding one person in that group to gain more detail and information about that individual. Last action."
+  }
+}

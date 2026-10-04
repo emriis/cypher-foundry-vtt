@@ -1,0 +1,28 @@
+{
+  "_id": "e92c891924573cb9",
+  "_key": "!items!e92c891924573cb9",
+  "name": "Multiples proies",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "multiple-quarries",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu actives Proie, tu peux sélectionner jusqu’à quatre créatures visibles pour être tes proies. Chaque proie supplémentaire augmente le coût de Proie de +2 Intellect."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "bce6da916bee188a",
+  "_key": "!items!bce6da916bee188a",
+  "name": "Fabriquer un Dispositif",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "craft-device",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu construis un nouveau dispositif, fragile mais fonctionnel, en réussissant une tâche d'ingénierie de difficulté 3. Tu choisis son effet dans la table des cyphers manifestés de faible puissance. Ce dispositif n'est pas un cypher, ne compte pas dans ta limite de cyphers, n'est généralement pas limité à un seul usage (déchargement de 1 sur 1d6) et est assez petit pour être transporté. Au rang 3, en dépensant 1 niveau d'Effort, tu peux fabriquer un dispositif basé sur un cypher de puissance moyenne. Au rang 6, en dépensant 2 niveaux d'Effort, tu peux fabriquer un dispositif basé sur un cypher de puissance avancée."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "bad527a85875f054",
+  "_key": "!items!bad527a85875f054",
+  "name": "Scratching and Kicking",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "scratching-and-kicking",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your melee attack deals an additional 1 damage due to it including some combination of scratching, kicking, and/or biting. Enabler."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "4f53e4900ffa91e1",
+  "_key": "!items!4f53e4900ffa91e1",
+  "name": "Pousser",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "push",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu repousses télékinétiquement une cible à portée courte d’une distance immédiate, dans n’importe quelle direction. Tu dois voir la cible ; elle doit être de ta taille ou plus petite, et ne pas être fixée. La poussée est brusque, comparable à un coup de pied ou de poing."
+  }
+}

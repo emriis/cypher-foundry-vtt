@@ -1,0 +1,28 @@
+{
+  "_id": "f64910769fe981b6",
+  "_key": "!items!f64910769fe981b6",
+  "name": "Final Defiance",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "final-defiance",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you would normally be dead, you instead remain conscious and active for one more round. (This ability activates before Not Dead Yet activates.) As an extra action on your turn each round thereafter, you can attempt a difficulty 5 Might task to remain alive for one additional round. During these extra rounds of life, all your tasks are hindered. If by the last round you're alive you do not receive healing, gain points in a Pool, or otherwise rally or remove a wound that killed you, Not Dead Yet activates. Enabler."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "a25d342d47c3780d",
+  "_key": "!items!a25d342d47c3780d",
+  "name": "Attaque rapide",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "rapid-attack",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu effectues une attaque supplémentaire avec ton arme de prédilection pendant ton tour. Une seule fois par round."
+  }
+}

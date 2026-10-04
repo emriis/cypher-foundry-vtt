@@ -1,0 +1,28 @@
+{
+  "_id": "a53712b5ce931b91",
+  "_key": "!items!a53712b5ce931b91",
+  "name": "Recompiler une machine",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "recompile-machine",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 8,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Avec une attaque d’Intellect réussie contre une machine (intelligente ou non) de niveau 4 ou moins à longue portée, tu te connectes à son système central. Choisis l’un des effets : - la machine cesse toute fonction (elle est « briquée »), - la machine redémarre après quelques rounds et devient un compagnon machine supplémentaire pendant environ un jour ; après une récupération de dix heures, tu dois réutiliser cette aptitude pour éviter qu’elle ne revienne à sa programmation d’origine, - la machine explose, infligeant 4 dégâts à toutes les créatures à portée immédiate (attaque d’Intellect séparée pour chaque). Effort : augmenter le niveau maximal affecté de +1."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "cf1e5063aac812e1",
+  "_key": "!items!cf1e5063aac812e1",
+  "name": "Détermination",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "determination",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu réessaies une tâche que tu as échouée, en plus du niveau d’Effort requis pour retenter, tu gagnes un niveau d’Effort gratuit. Tu ne peux pas réutiliser cette aptitude avant d’avoir effectué une récupération."
+  }
+}

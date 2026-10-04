@@ -1,0 +1,28 @@
+{
+  "_id": "28af35150802ec35",
+  "_key": "!items!28af35150802ec35",
+  "name": "Le corps comme outil",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "body-as-a-tool",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "En plus de faire de ton corps une arme, tu sais l’utiliser comme un outil. Tu gagnes un atout pour toutes les tâches d’athlétisme et de gymnastique."
+  }
+}

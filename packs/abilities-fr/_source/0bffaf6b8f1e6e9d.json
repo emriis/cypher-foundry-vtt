@@ -1,0 +1,28 @@
+{
+  "_id": "0bffaf6b8f1e6e9d",
+  "_key": "!items!0bffaf6b8f1e6e9d",
+  "name": "Rassembler sa force",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "gather-your-strength",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Ton attaque de ce round inflige +2 dégâts supplémentaires si tu la fais en tant que Dernière action, au lieu d’une Action ou d’une Première action."
+  }
+}

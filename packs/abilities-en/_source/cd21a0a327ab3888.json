@@ -1,0 +1,28 @@
+{
+  "_id": "cd21a0a327ab3888",
+  "_key": "!items!cd21a0a327ab3888",
+  "name": "Master of Disguise",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "master-of-disguise",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": "lastAction",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You disguise yourself in well under half the time—one Last action—rather than the minute or more normally required when attempting a disguise task, and if the disguise comes under direct scrutiny or challenge, you gain an additional asset to your disguise tasks to maintain the deception. Last action."
+  }
+}

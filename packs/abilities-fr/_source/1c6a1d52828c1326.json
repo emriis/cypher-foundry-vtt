@@ -1,0 +1,28 @@
+{
+  "_id": "1c6a1d52828c1326",
+  "_key": "!items!1c6a1d52828c1326",
+  "name": "Cambriolage (2 Célérité)",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "burgle",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you succeed on a stealth task, you can also undertake one of the following tasks as an extra action on your turn, even if the task is usually a Last action: attempt to pick a lock, grab a loose object up to a fifth of your size and conceal it on your person, move up to a long distance, or attack a target in immediate range with a light weapon. Enabler."
+  }
+}

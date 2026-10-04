@@ -1,0 +1,28 @@
+{
+  "_id": "37ef7ce5d01c7cf9",
+  "_key": "!items!37ef7ce5d01c7cf9",
+  "name": "Monstre de glace",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "ice-monster",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu crées un automate de neige ou de glace, de ta taille et de ta forme, qui dure jusqu’à ta prochaine récupération de dix minutes ou plus. Cet allié PNJ agit selon tes directives chaque round. Le diriger est une action, et tu ne peux le commander que si tu es à longue portée ou moins. Sans ordre, il continue la dernière instruction reçue. Tu peux aussi lui donner une routine simple (« Attends ici et attaque quiconque entre à courte portée jusqu’à ce qu’iel soit mort·e. »)."
+  }
+}

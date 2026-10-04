@@ -1,0 +1,28 @@
+{
+  "_id": "65ac5cc9725cfc3d",
+  "_key": "!items!65ac5cc9725cfc3d",
+  "name": "Automaton Force Field Upgrade",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "automaton-force-field-upgrade",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You've built a new capability into one of your automatons—it can erect a translucent level 5 force field around itself and anyone within immediate range of it until you use a ten-minute or longer recovery. Any creature protected by the field reduces incoming wounds by one severity (NPCs take 3 less damage). Enabler."
+  }
+}
