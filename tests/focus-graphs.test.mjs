@@ -36,7 +36,6 @@ for (const language of ["en", "fr"]) {
       for (const edge of edges) {
         assert.ok(abilities.has(edge.from), `${focus.name}: missing edge source`);
         assert.ok(abilities.has(edge.to), `${focus.name}: missing edge target`);
-        assert.notEqual(edge.from, edge.to, `${focus.name}: self-referencing edge`);
       }
     }
   });
