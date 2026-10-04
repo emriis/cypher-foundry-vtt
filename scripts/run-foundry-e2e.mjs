@@ -50,19 +50,38 @@ function getSourceDataPath() {
 
 function getApplicationCandidates() {
   if (process.env.FOUNDRY_APP_PATH) {
-    return [path.resolve(process.env.FOUNDRY_APP_PATH)];
+    const configuredPath = path.resolve(process.env.FOUNDRY_APP_PATH);
+    return process.platform === "win32"
+      ? [
+          configuredPath,
+          path.join(configuredPath, "Foundry Virtual Tabletop.exe")
+        ]
+      : [configuredPath];
   }
 
   if (process.platform === "win32") {
+    const localAppData = process.env.LOCALAPPDATA || "";
+    const programFiles = process.env.ProgramFiles || "C:\\Program Files";
+
     return [
       path.join(
-        process.env.LOCALAPPDATA || "",
+        localAppData,
         "Foundry Virtual Tabletop",
         "Foundry Virtual Tabletop.exe"
       ),
       path.join(
-        process.env.ProgramFiles || "C:\\Program Files",
+        localAppData,
+        "FoundryVTT",
+        "Foundry Virtual Tabletop.exe"
+      ),
+      path.join(
+        programFiles,
         "Foundry Virtual Tabletop",
+        "Foundry Virtual Tabletop.exe"
+      ),
+      path.join(
+        programFiles,
+        "FoundryVTT",
         "Foundry Virtual Tabletop.exe"
       )
     ];
@@ -87,9 +106,12 @@ async function findApplication() {
     }
   }
 
+  const candidates = getApplicationCandidates();
   throw new Error(
-    "Foundry VTT executable was not found. Set FOUNDRY_APP_PATH " +
-    "to your Foundry executable."
+    "Foundry VTT executable was not found. Checked:\n" +
+    candidates.map(candidate => `  - ${candidate}`).join("\n") +
+    "\nSet FOUNDRY_APP_PATH to the executable path (or its installation " +
+    "directory) to use a custom Foundry installation."
   );
 }
 
