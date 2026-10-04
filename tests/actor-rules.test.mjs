@@ -908,18 +908,19 @@ function applyUpdate(target, changes) {
 
 test("advancement purchases capabilities and applies only the requested pool increases", async () => {
   globalThis.game = { i18n: { localize: value => value, format: value => value } };
+  globalThis.ui = { notifications: { warn() {}, error() {} } };
   globalThis.ChatMessage = { getSpeaker: () => ({}), create: async () => {} };
 
   const actor = makeAdvancementActor({ type: "capabilities" });
   await CypherActor.prototype.purchaseAdvancementSlot.call(actor, 0, {
-    distribution: { might: 2, speed: 1 }
+    distribution: { might: 2, speed: 1, intellect: 1 }
   });
 
   assert.equal(actor.system.stats.might.pool.max, 10);
   assert.equal(actor.system.stats.might.pool.value, 10);
   assert.equal(actor.system.stats.speed.pool.max, 9);
   assert.equal(actor.system.stats.speed.pool.value, 9);
-  assert.equal(actor.system.stats.intellect.pool.max, 8);
+  assert.equal(actor.system.stats.intellect.pool.max, 9);
   assert.equal(actor.system.resourcePoints, 1);
   assert.equal(actor.system.advancementSlots[0].bought, true);
   assert.equal(actor.system.xp, 6);
