@@ -62,3 +62,12 @@ test("ability model owns focus-specific mechanical grants", () => {
     "grantedArmorItemCategory"
   ]) assert.ok(schema[field], field);
 });
+
+test("ability effects can preserve tier-specific CRD improvements", () => {
+  const schema = Ability.defineSchema();
+  const effect = schema.effects.element;
+  assert.ok(effect.fields.tier);
+  assert.equal(effect.fields.tier.options.nullable, true);
+  assert.equal(effect.fields.tier.options.min, 1);
+  assert.equal(effect.fields.tier.options.max, 6);
+});
