@@ -9,6 +9,15 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ## [Unreleased]
 
+### Added
+
+- Defined the Foundry-first architecture and conversion map for the 2026 Cypher Reference Document compendiums.
+
+### Changed
+
+- Compendium builds now discover authored bilingual pack source directories automatically instead of maintaining a hard-coded pack list.
+
+
 ### Changed
 
 - Completed the Phase 8 architecture refactor: dependency rules are now enforced by an automated static audit, Foundry E2E executable discovery is isolated and tested, concrete remaining dependency violations were corrected, and the architecture/development documentation now records the stable application, document, sheet, rules, migration, import, content, and test boundaries.
