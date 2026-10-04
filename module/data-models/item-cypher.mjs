@@ -10,7 +10,8 @@ export default class CypherCypherData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     return {
       cypherType: new StringField({ required: true, initial: "manifest", choices: ["subtle", "manifest"] }),
-      level: new StringField({ required: true, blank: true }), // ex: "1d6+2"
+      level: new StringField({ required: true, blank: true }),
+      powerLevel: new StringField({ required: true, initial: "", choices: ["", "low", "medium", "advanced", "high", "ultra"] }),
       internal: new BooleanField({ required: true, initial: false }), // Marks a cypher implanted inside the character.
       identified: new BooleanField({ required: true, initial: true }),
       depleted: new BooleanField({ required: true, initial: false }),

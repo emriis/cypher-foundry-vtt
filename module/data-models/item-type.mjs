@@ -47,6 +47,12 @@ export default class CypherTypeData extends foundry.abstract.TypeDataModel {
         new DocumentUUIDField({ type: "Item", nullable: false }),
         { required: true, initial: [] }
       ),
+      abilityTiers: new ArrayField(new SchemaField({
+        ability: new DocumentUUIDField({ type: "Item", nullable: false }),
+        tier: new NumberField({
+          required: true, integer: true, min: 1, max: 6
+        })
+      }), { required: true, initial: [] }),
       statOptions: new ArrayField(
         new StringField({
           required: true,

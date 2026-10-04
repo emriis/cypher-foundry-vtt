@@ -115,6 +115,28 @@ CYPHER.otherAdvancementTypes = ["recovery", "focus", "armor", "weapons", "genre"
 /** Base damage by weapon category. */
 CYPHER.weaponDamage = { light: 2, medium: 4, heavy: 6 };
 CYPHER.weaponCategories = Object.keys(CYPHER.weaponDamage);
+
+/** CRD range categories used by weapons and special abilities. */
+CYPHER.rangeCategories = [
+  "immediate",
+  "short",
+  "long",
+  "veryLong",
+  "planetary",
+  "interplanetary",
+  "interstellar",
+  "intergalactic",
+  "interdimensional"
+];
+
+/** CRD price categories used for equipment and purchasing rules. */
+CYPHER.priceCategories = [
+  "inexpensive",
+  "moderate",
+  "expensive",
+  "veryExpensive",
+  "exorbitant"
+];
 CYPHER.coreFreeWeaponCategories = ["light"];
 CYPHER.coreFreeArmorCategories = [];
 CYPHER.weaponFamilies = ["axes", "knives", "swords", "firearms"];

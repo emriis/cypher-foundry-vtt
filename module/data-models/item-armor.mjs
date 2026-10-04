@@ -4,6 +4,8 @@
  * Armor affects defensive task difficulty and may also impose a Speed
  * hindrance when the character cannot freely use its category.
  */
+import { CYPHER } from "../config.mjs";
+
 const { StringField, HTMLField, BooleanField, NumberField } = foundry.data.fields;
 
 export default class CypherArmorData extends foundry.abstract.TypeDataModel {
@@ -18,6 +20,9 @@ export default class CypherArmorData extends foundry.abstract.TypeDataModel {
       freelyUsable: new BooleanField({ required: true, initial: false }),
       equipped: new BooleanField({ required: true, initial: false }),
       blockEaseDamage: new NumberField({ required: true, integer: true, initial: 0, min: 0 }),
+      priceCategory: new StringField({
+        required: true, initial: "expensive", choices: CYPHER.priceCategories
+      }),
       description: new HTMLField({ required: true, blank: true })
     };
   }

@@ -33,7 +33,10 @@ export default class CypherAbilityData extends foundry.abstract.TypeDataModel {
             choices: ["might", "speed", "intellect"]
           }),
           { required: true, initial: [] }
-        )
+        ),
+        additionalEffort: new BooleanField({
+          required: true, initial: false
+        })
       }),
 
       // Null is reserved for activation cases that are not modelled by the
