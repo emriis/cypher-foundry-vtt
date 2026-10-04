@@ -3,117 +3,34 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
 
+import {
+  auditArchitectureDependencies,
+  auditScriptDependencies,
+  extractModuleSpecifiers
+} from "../../scripts/audit-architecture-dependencies.mjs";
+
 const MODULE_ROOT = path.resolve(import.meta.dirname, "../../module");
 
-const LAYER_RULES = {
-  rules: new Set(["rules", "config.mjs"]),
-  "data-models": new Set(["data-models", "config.mjs"]),
-  applications: new Set(["applications", "rules", "config.mjs", "import"]),
-  documents: new Set(["documents", "applications", "rules", "config.mjs"]),
-  sheets: new Set([
-    "sheets",
-    "applications",
-    "documents",
-    "config.mjs",
-    "abilities.mjs"
-  ]),
-  migrations: new Set(["migrations", "config.mjs", "rules"]),
-  import: new Set(["import", "applications", "config.mjs"])
-};
-
-const ROOT_MODULE_RULES = {
-  "abilities.mjs": new Set(["abilities.mjs"]),
-  "config.mjs": new Set(["config.mjs"]),
-  "import.mjs": new Set(["import", "applications", "config.mjs"]),
-  "migration.mjs": new Set(["migrations", "config.mjs"])
-};
-
-const SCRIPT_IMPORT_PATTERN = /from\s+["'](\.\.\/module\/[^"']+)["']/g;
-
-async function listJavaScriptFiles(directory) {
-  const entries = await fs.readdir(directory, { withFileTypes: true });
-  const files = [];
-
-  for (const entry of entries) {
-    const entryPath = path.join(directory, entry.name);
-    if (entry.isDirectory()) {
-      files.push(...await listJavaScriptFiles(entryPath));
-    } else if (/\.mjs$/.test(entry.name)) {
-      files.push(entryPath);
-    }
-  }
-
-  return files;
-}
-
-function getLayer(filePath) {
-  const relative = path.relative(MODULE_ROOT, filePath);
-  return relative.split(path.sep)[0];
-}
-
-function getRootModuleRule(filePath) {
-  const relative = path.relative(MODULE_ROOT, filePath);
-  if (relative.includes(path.sep)) return null;
-  return ROOT_MODULE_RULES[relative] ?? null;
-}
-
-function getImportedLayer(filePath, specifier) {
-  if (!specifier.startsWith(".")) return null;
-
-  const target = path.resolve(path.dirname(filePath), specifier);
-  const relative = path.relative(MODULE_ROOT, target);
-  if (relative.startsWith("..") || path.isAbsolute(relative)) return null;
-
-  return relative.split(path.sep)[0];
-}
-
-function extractStaticImports(source) {
-  const imports = [];
-  const pattern = /^\s*import(?:[\s\S]*?\s+from\s+)?["']([^"']+)["']\s*;?/gm;
-
-  for (const match of source.matchAll(pattern)) {
-    imports.push(match[1]);
-  }
-
-  return imports;
-}
-
 test("architectural imports respect layer direction", async () => {
-  const files = await listJavaScriptFiles(MODULE_ROOT);
-  const violations = [];
-
-  for (const filePath of files) {
-    const layer = getLayer(filePath);
-    const allowed = getRootModuleRule(filePath) ?? LAYER_RULES[layer];
-    if (!allowed) continue;
-
-    const source = await fs.readFile(filePath, "utf8");
-    for (const specifier of extractStaticImports(source)) {
-      const importedLayer = getImportedLayer(filePath, specifier);
-      if (!importedLayer || importedLayer === layer) continue;
-
-      if (!allowed.has(importedLayer)) {
-        violations.push(
-          `${path.relative(MODULE_ROOT, filePath)} -> ${specifier}`
-        );
-      }
-    }
-  }
+  const violations = await auditArchitectureDependencies();
 
   assert.deepEqual(
     violations,
     [],
-    `Forbidden architectural imports:\n${violations.join("\n")}`
+    "Forbidden architectural imports:\n" + violations.join("\n")
   );
 });
 
 test("rule modules remain independent from Foundry runtime globals", async () => {
   const ruleRoot = path.join(MODULE_ROOT, "rules");
-  const files = await listJavaScriptFiles(ruleRoot);
+  const entries = await fs.readdir(ruleRoot, { withFileTypes: true });
   const violations = [];
   const forbiddenGlobals = /\b(?:game|ui|ChatMessage|foundry|Hooks)\s*\./;
 
-  for (const filePath of files) {
+  for (const entry of entries) {
+    if (!entry.isFile() || !/\.mjs$/.test(entry.name)) continue;
+
+    const filePath = path.join(ruleRoot, entry.name);
     const source = await fs.readFile(filePath, "utf8");
     if (forbiddenGlobals.test(source)) {
       violations.push(path.relative(MODULE_ROOT, filePath));
@@ -123,34 +40,24 @@ test("rule modules remain independent from Foundry runtime globals", async () =>
   assert.deepEqual(
     violations,
     [],
-    `Rule modules reference Foundry globals:\n${violations.join("\n")}`
+    "Rule modules reference Foundry globals:\n" + violations.join("\n")
   );
 });
 
-
 test("development scripts do not depend on Foundry UI or document layers", async () => {
-  const scriptsRoot = path.resolve(MODULE_ROOT, "../scripts");
-  const files = await listJavaScriptFiles(scriptsRoot);
-  const violations = [];
-
-  for (const filePath of files) {
-    const source = await fs.readFile(filePath, "utf8");
-    for (const match of source.matchAll(SCRIPT_IMPORT_PATTERN)) {
-      const imported = match[1];
-      if (
-        imported.includes("/documents/") ||
-        imported.includes("/sheets/")
-      ) {
-        violations.push(
-          `${path.relative(scriptsRoot, filePath)} -> ${imported}`
-        );
-      }
-    }
-  }
+  const violations = await auditScriptDependencies();
 
   assert.deepEqual(
     violations,
     [],
-    `Development scripts depend on UI/document modules:\n${violations.join("\n")}`
+    "Development scripts depend on UI/document modules:\n" +
+      violations.join("\n")
+  );
+});
+
+test("architecture audit recognizes dynamic local imports", () => {
+  assert.deepEqual(
+    extractModuleSpecifiers('import("./applications/task-service.mjs");'),
+    ["./applications/task-service.mjs"]
   );
 });
