@@ -336,12 +336,15 @@ persistent game invariants or duplicate deterministic validation.
 
 ### Phase 6 — Split migrations
 
-Separate migration orchestration from individual schema migrations and content
-compatibility transforms.
+Phase 6 is complete. Migration orchestration is isolated in
+`applications/migration-runner.mjs`-adjacent migration code, while actor
+schema and legacy content transformations are independently testable under
+`module/migrations/`. `module/migration.mjs` remains a compatibility facade
+for the existing Foundry bootstrap.
 
 ### Phase 7 — Reorganize tests
 
-The target test taxonomy is:
+Phase 7 is complete. The test suite now mirrors the production architecture:
 
 ```
 tests/
@@ -354,9 +357,15 @@ tests/
   e2e/
 ```
 
-This is a target organization, not a claim that all tests have already been
-moved. The directory split should happen only after the production boundaries
-are established, to avoid moving tests without improving their meaning.
+The reorganization is semantic rather than cosmetic. Mixed legacy test files
+were split where they crossed boundaries, pure rule tests now live beside their
+own rule domains, application-service tests cover Foundry-aware use cases,
+document tests cover compatibility facades, content tests cover compendium and
+DataModel contracts, migration tests cover each migration boundary, and
+repository-wide contracts remain under integration tests.
+
+The Node test runner continues to discover the complete suite recursively, so
+the taxonomy does not require a separate test command for each directory.
 
 ## 6. Refactoring principles
 
