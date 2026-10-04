@@ -31,13 +31,6 @@ export function validateAdvancementChoices(slot, extra = {}) {
     );
     if (total !== 4) return "CYPHER.Warning.CapabilitiesMustSumFour";
   }
-
-  if (slot?.type === "perfection") {
-    if (!CYPHER.stats.includes(extra.stat || "might")) {
-      return "CYPHER.Warning.InvalidStat";
-    }
-  }
-
   return null;
 }
 
