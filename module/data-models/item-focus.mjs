@@ -1,48 +1,23 @@
 import { CYPHER } from "../config.mjs";
-import { createAbilityEffectsField, createAbilityRollTablesField } from "./ability-fields.mjs";
 
-const { StringField, NumberField, HTMLField, ArrayField, BooleanField, SchemaField } = foundry.data.fields;
+const {
+  StringField, NumberField, HTMLField, ArrayField, BooleanField,
+  SchemaField, BooleanField: BoolField, DocumentUUIDField
+} = foundry.data.fields;
 
 export default class CypherFocusData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     return {
-      abilities: new ArrayField(new SchemaField({
-        id: new StringField({ required: true, blank: false }),
-        name: new StringField({ required: true, blank: false }),
-        tier: new NumberField({ required: true, integer: true, initial: 1, min: 1, max: 6 }),
-        prerequisites: new ArrayField(new StringField({ required: true, blank: false }), { required: true, initial: [] }),
-        repeatable: new BooleanField({ required: true, initial: false }),
-        enabler: new BooleanField({ required: true, initial: false }),
-        cost: new SchemaField({
-          stat: new StringField({ required: true, initial: "none", choices: ["might", "speed", "intellect", "choice", "none"] }),
-          amount: new NumberField({ required: true, integer: true, initial: 0, min: 0 }),
-          options: new ArrayField(
-            new StringField({ required: true, choices: ["might", "speed", "intellect"] }),
-            { required: true, initial: [] }
-          )
-        }),
-        freeWeaponCategories: new ArrayField(
-          new StringField({ required: true, choices: CYPHER.weaponCategories }),
-          { required: true, initial: [] }
-        ),
-        freeArmorCategories: new ArrayField(
-          new StringField({ required: true, choices: CYPHER.armorCategoryIds }),
-          { required: true, initial: [] }
-        ),
-        freeWeaponFamilies: new ArrayField(
-          new StringField({ required: true, choices: CYPHER.weaponFamilies }),
-          { required: true, initial: [] }
-        ),
-        freeWeaponSkillCategories: new ArrayField(
-          new StringField({ required: true, choices: CYPHER.attackSkillCategories }),
-          { required: true, initial: [] }
-        ),
-        chooseWeaponAttackCategory: new BooleanField({ required: true, initial: false }),
-        grantedArmorItemCategory: new StringField({ required: true, initial: "", blank: true, choices: ["", ...CYPHER.armorCategoryIds] }),
-        description: new HTMLField({ required: true, blank: true }),
-        effects: createAbilityEffectsField(),
-        rollTables: createAbilityRollTablesField()
-      }), { required: true, initial: [] }),
+      abilities: new ArrayField(
+        new DocumentUUIDField({ type: "Item", nullable: false }),
+        { required: true, initial: [] }
+      ),
+      flowchart: new SchemaField({
+        edges: new ArrayField(new SchemaField({
+          from: new StringField({ required: true, blank: false }),
+          to: new StringField({ required: true, blank: false })
+        }), { required: true, initial: [] })
+      }),
       description: new HTMLField({ required: true, blank: true })
     };
   }
