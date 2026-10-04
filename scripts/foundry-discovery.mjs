@@ -42,7 +42,13 @@ export function getApplicationCandidates({
         "Foundry Virtual Tabletop",
         WINDOWS_EXECUTABLE
       ),
-      path.join(programFiles, "FoundryVTT", WINDOWS_EXECUTABLE)
+      path.join(programFiles, "FoundryVTT", WINDOWS_EXECUTABLE),
+      path.join(
+        programFiles,
+        "FoundryVTT",
+        "Foundry Virtual Tabletop",
+        WINDOWS_EXECUTABLE
+      )
     ];
   }
 

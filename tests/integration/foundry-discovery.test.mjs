@@ -38,6 +38,12 @@ test("Windows discovery includes the standard Foundry installation paths", () =>
       "C:\\Program Files",
       "FoundryVTT",
       "Foundry Virtual Tabletop.exe"
+    ),
+    path.join(
+      "C:\\Program Files",
+      "FoundryVTT",
+      "Foundry Virtual Tabletop",
+      "Foundry Virtual Tabletop.exe"
     )
   ]);
 });
