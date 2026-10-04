@@ -3,7 +3,6 @@
  * suite, and removes the entire test data directory afterwards.
  */
 import {
-  access,
   cp,
   mkdir,
   mkdtemp,
@@ -14,6 +13,7 @@ import {
 import { spawn } from "node:child_process";
 import os from "node:os";
 import path from "node:path";
+import { findApplication } from "./foundry-discovery.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const PORT = Number(process.env.FOUNDRY_PORT || 30000);
@@ -48,72 +48,6 @@ function getSourceDataPath() {
   );
 }
 
-function getApplicationCandidates() {
-  if (process.env.FOUNDRY_APP_PATH) {
-    const configuredPath = path.resolve(process.env.FOUNDRY_APP_PATH);
-    return process.platform === "win32"
-      ? [
-          configuredPath,
-          path.join(configuredPath, "Foundry Virtual Tabletop.exe")
-        ]
-      : [configuredPath];
-  }
-
-  if (process.platform === "win32") {
-    const localAppData = process.env.LOCALAPPDATA || "";
-    const programFiles = process.env.ProgramFiles || "C:\\Program Files";
-
-    return [
-      path.join(
-        localAppData,
-        "Foundry Virtual Tabletop",
-        "Foundry Virtual Tabletop.exe"
-      ),
-      path.join(
-        localAppData,
-        "FoundryVTT",
-        "Foundry Virtual Tabletop.exe"
-      ),
-      path.join(
-        programFiles,
-        "Foundry Virtual Tabletop",
-        "Foundry Virtual Tabletop.exe"
-      ),
-      path.join(
-        programFiles,
-        "FoundryVTT",
-        "Foundry Virtual Tabletop.exe"
-      )
-    ];
-  }
-
-  if (process.platform === "darwin") {
-    return [
-      "/Applications/Foundry Virtual Tabletop.app/Contents/MacOS/Foundry Virtual Tabletop"
-    ];
-  }
-
-  return ["/usr/bin/foundryvtt", "/usr/local/bin/foundryvtt"];
-}
-
-async function findApplication() {
-  for (const candidate of getApplicationCandidates()) {
-    try {
-      await access(candidate);
-      return candidate;
-    } catch {
-      // Try the next known installation path.
-    }
-  }
-
-  const candidates = getApplicationCandidates();
-  throw new Error(
-    "Foundry VTT executable was not found. Checked:\n" +
-    candidates.map(candidate => `  - ${candidate}`).join("\n") +
-    "\nSet FOUNDRY_APP_PATH to the executable path (or its installation " +
-    "directory) to use a custom Foundry installation."
-  );
-}
 
 async function readCoreVersion(appPath) {
   const candidate = path.join(

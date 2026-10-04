@@ -42,6 +42,17 @@ npm test
 Keep `cypher.mjs` limited to Foundry registrations and thin global hooks.
 It is not the place for game-rule calculations or sheet actions.
 
+Run the architecture-boundary contract when changing module dependencies:
+
+```powershell
+node --test tests/integration/architecture-boundaries.test.mjs
+```
+
+This test checks allowed layer imports, root compatibility-facade boundaries,
+rule independence from Foundry globals, and development-script independence
+from Documents and Sheets. Do not weaken the contract to accommodate a new
+dependency; move the dependency to the layer that owns the responsibility.
+
 When adding a new gameplay use case, first decide whether the deterministic part
 belongs in `module/rules/` and whether Foundry orchestration belongs in
 `module/applications/`. Keep the Actor method as a small compatibility facade when
@@ -95,6 +106,8 @@ Development tooling belongs in `scripts/`; GitHub automation belongs in
 | `.github/workflows/release.yml` | Tag matching `v*` | Tests, checks version/tag parity, packages, publishes GitHub release |
 | `scripts/build-packs.mjs` | `npm run build:packs` | Compiles all eight LevelDB packs from `_source/` |
 | `scripts/package.ps1` | `npm run package` | Creates local release artifacts in `dist/` |
+| `scripts/foundry-discovery.mjs` | Used by `npm run test:e2e` | Discovers and validates the local Foundry executable |
+| `scripts/run-foundry-e2e.mjs` | `npm run test:e2e` | Creates a disposable Foundry environment and runs Playwright |
 
 Do not commit `dist/`, transient LevelDB lock/LOG files, or other generated
 temporary files. The tracked `package-lock.json` is part of the repository
