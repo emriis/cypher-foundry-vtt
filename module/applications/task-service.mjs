@@ -1,4 +1,10 @@
 import { CYPHER } from "../config.mjs";
+import { spendXP } from "./character-service.mjs";
+import {
+  addWound,
+  reduceWound,
+  shieldAbsorbWound
+} from "./damage-service.mjs";
 import {
   clampAssetSteps,
   clampEffortLevels,
@@ -31,7 +37,7 @@ export async function rollTask(actor, {
 
     // Lucky shot: spend 1 XP to attack blind, hindered by 4 steps
     if (luckyShot) {
-      if (!(await actor.spendXP(CYPHER.xpCosts.luckyShot, game.i18n.localize("CYPHER.XP.LuckyShot")))) return null;
+      if (!(await spendXP(actor, CYPHER.xpCosts.luckyShot, game.i18n.localize("CYPHER.XP.LuckyShot")))) return null;
       extraHinderSteps += 4;
     }
 
@@ -179,15 +185,15 @@ export async function rollTask(actor, {
       if (success) {
         if (defenseType === "block") {
           if (usingShield) {
-            await actor._shieldAbsorbWound(shieldItem, incomingSeverity);
+            await shieldAbsorbWound(actor, shieldItem, incomingSeverity);
           } else {
-            const reduced = actor._reduceWoundSeverity(incomingSeverity);
-            if (reduced) await actor.addWound(reduced);
+            const reduced = reduceWound(incomingSeverity);
+            if (reduced) await addWound(actor, reduced);
           }
         }
         // A successful Dodge avoids the wound entirely.
       } else {
-        await actor.addWound(incomingSeverity);
+        await addWound(actor, incomingSeverity);
       }
     }
 
