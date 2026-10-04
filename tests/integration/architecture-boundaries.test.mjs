@@ -10,7 +10,13 @@ const LAYER_RULES = {
   "data-models": new Set(["data-models", "config.mjs"]),
   applications: new Set(["applications", "rules", "config.mjs", "import"]),
   documents: new Set(["documents", "applications", "rules", "config.mjs"]),
-  sheets: new Set(["sheets", "applications", "documents", "config.mjs", "abilities.mjs"]),
+  sheets: new Set([
+    "sheets",
+    "applications",
+    "documents",
+    "config.mjs",
+    "abilities.mjs"
+  ]),
   migrations: new Set(["migrations", "config.mjs", "rules"]),
   import: new Set(["import", "applications", "config.mjs"])
 };
@@ -23,7 +29,7 @@ async function listJavaScriptFiles(directory) {
     const entryPath = path.join(directory, entry.name);
     if (entry.isDirectory()) {
       files.push(...await listJavaScriptFiles(entryPath));
-    } else if (/\\.mjs$/.test(entry.name)) {
+    } else if (/\.mjs$/.test(entry.name)) {
       files.push(entryPath);
     }
   }
@@ -48,7 +54,7 @@ function getImportedLayer(filePath, specifier) {
 
 function extractStaticImports(source) {
   const imports = [];
-  const pattern = /^\\s*import(?:[\\s\\S]*?\\s+from\\s+)?["']([^"']+)["']\\s*;?/gm;
+  const pattern = /^\s*import(?:[\s\S]*?\s+from\s+)?["']([^"']+)["']\s*;?/gm;
 
   for (const match of source.matchAll(pattern)) {
     imports.push(match[1]);
@@ -71,8 +77,7 @@ test("architectural imports respect layer direction", async () => {
       const importedLayer = getImportedLayer(filePath, specifier);
       if (!importedLayer || importedLayer === layer) continue;
 
-      const allowedTarget = allowed.has(importedLayer);
-      if (!allowedTarget) {
+      if (!allowed.has(importedLayer)) {
         violations.push(
           `${path.relative(MODULE_ROOT, filePath)} -> ${specifier}`
         );
@@ -83,7 +88,7 @@ test("architectural imports respect layer direction", async () => {
   assert.deepEqual(
     violations,
     [],
-    `Forbidden architectural imports:\\n${violations.join("\\n")}`
+    `Forbidden architectural imports:\n${violations.join("\n")}`
   );
 });
 
@@ -91,7 +96,7 @@ test("rule modules remain independent from Foundry runtime globals", async () =>
   const ruleRoot = path.join(MODULE_ROOT, "rules");
   const files = await listJavaScriptFiles(ruleRoot);
   const violations = [];
-  const forbiddenGlobals = /\\b(?:game|ui|ChatMessage|foundry|Hooks)\\s*\\./;
+  const forbiddenGlobals = /\b(?:game|ui|ChatMessage|foundry|Hooks)\s*\./;
 
   for (const filePath of files) {
     const source = await fs.readFile(filePath, "utf8");
@@ -103,6 +108,6 @@ test("rule modules remain independent from Foundry runtime globals", async () =>
   assert.deepEqual(
     violations,
     [],
-    `Rule modules reference Foundry globals:\\n${violations.join("\\n")}`
+    `Rule modules reference Foundry globals:\n${violations.join("\n")}`
   );
 });
