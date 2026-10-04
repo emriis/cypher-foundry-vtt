@@ -274,13 +274,20 @@ async function rewriteFoci(language, entries, canonicalAbilities, canonicalDocum
 }
 
 const canonicalAbilities = await collectCanonicalAbilities();
+const canonicalTypes = new Map(
+  (await readDocuments(PACKS.en.types)).map(({ name, data }) => [name, data])
+);
+const canonicalFoci = new Map(
+  (await readDocuments(PACKS.en.foci)).map(({ name, data }) => [name, data])
+);
+
 const english = await createAbilityPack("en", canonicalAbilities);
 const french = await createAbilityPack("fr", canonicalAbilities);
 
-await rewriteTypes("en", english.entries, canonicalAbilities, new Map((await readDocuments(PACKS.en.types)).map(({ name, data }) => [name, data])));
-await rewriteFoci("en", english.entries, canonicalAbilities, new Map((await readDocuments(PACKS.en.foci)).map(({ name, data }) => [name, data])));
-await rewriteTypes("fr", french.entries, canonicalAbilities, new Map((await readDocuments(PACKS.en.types)).map(({ name, data }) => [name, data])));
-await rewriteFoci("fr", french.entries, canonicalAbilities, new Map((await readDocuments(PACKS.en.foci)).map(({ name, data }) => [name, data])));
+await rewriteTypes("en", english.entries, canonicalAbilities, canonicalTypes);
+await rewriteFoci("en", english.entries, canonicalAbilities, canonicalFoci);
+await rewriteTypes("fr", french.entries, canonicalAbilities, canonicalTypes);
+await rewriteFoci("fr", french.entries, canonicalAbilities, canonicalFoci);
 
 const variants = [...english.names.entries()]
   .filter(([, values]) => values.length > 1)
