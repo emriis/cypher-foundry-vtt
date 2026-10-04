@@ -354,7 +354,8 @@ are established, to avoid moving tests without improving their meaning.
 ## 7. Immediate next step
 
 Complete the Phase 3 verification pass: keep the Actor facades covered by tests,
-check for accidental direct application logic left in the document, and verify
+check for accidental direct application logic left in the document, verify that
+application services no longer depend on private Actor helpers, and verify
 that the extracted services are documented and independently testable.
 
 Then Phase 4 can continue the Type/Focus/Descriptor application refactor using
