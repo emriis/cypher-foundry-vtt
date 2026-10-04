@@ -24,6 +24,31 @@ export async function resolveContentAbilities(references = []) {
 }
 
 /**
+ * Return the tier-one abilities available when applying a Focus.
+ *
+ * @param {Item} focusItem Focus Item being applied.
+ * @returns {Promise<object[]>} Resolved tier-one ability data.
+ */
+export async function getInitialFocusAbilityChoices(focusItem) {
+  if (focusItem?.type !== "focus") return [];
+
+  const abilities = await resolveContentAbilities(
+    focusItem.system.abilities ?? []
+  );
+  const focus = {
+    abilities: abilities.map(ability => ({
+      id: ability.id,
+      uuid: ability.uuid,
+      name: ability.name,
+      ...ability.system
+    })),
+    flowchart: focusItem.system.flowchart ?? { edges: [] }
+  };
+
+  return getEligibleFocusAbilities(focus, [], 1);
+}
+
+/**
  * Return the Focus abilities currently available to the character.
  *
  * This keeps Focus graph traversal out of presentation code while leaving
