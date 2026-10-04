@@ -110,7 +110,7 @@ test("static localization keys used by templates and modules exist in both local
   ];
 
   const keys = new Set();
-  const pattern = /localize\\s+['"]([^'"]+)['"]/g;
+  const pattern = /localize\s+['"]([^'"]+)['"]/g;
 
   for (const relativePath of sourceFiles) {
     const source = fs.readFileSync(path.join(root, relativePath), "utf8");
