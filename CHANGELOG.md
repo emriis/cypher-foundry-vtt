@@ -11,6 +11,12 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ### Added
 
+- Defined deterministic language-neutral CRD logical identifiers and source
+  reference targets for stable bilingual pairing.
+- Documented late resolution of source logical IDs to generated Foundry UUIDs.
+
+### Added
+
 - Extended existing data models with structured CRD mechanics needed for
   automation, including range categories, price categories, equipment levels,
   tiered ability data, skill tier restrictions, and cypher power levels.
