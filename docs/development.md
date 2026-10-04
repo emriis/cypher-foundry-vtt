@@ -16,12 +16,13 @@ local checkout and are not included in pull requests or CI.
 
 ## 1. System implementation
 
-Use this flow when changing a Foundry feature or a game rule.
+Use this flow when changing a Foundry feature or a game rule. Read `docs/architecture.md` first when a change crosses document, rule, application, sheet, migration, or compendium boundaries.
 
 | Concern | Location |
 | --- | --- |
 | System manifest and startup | `system.json`, `cypher.mjs` |
-| Rules and persisted document behavior | `module/documents/` |
+| Foundry document behavior and orchestration | `module/documents/` |
+| Pure Cypher rules and deterministic calculations | `module/rules/` (target architecture; extract incrementally) |
 | Actor and Item schemas | `module/data-models/` |
 | Foundry applications and UI actions | `module/sheets/` |
 | Handlebars markup | `templates/` |
@@ -85,7 +86,7 @@ Development tooling belongs in `scripts/`; GitHub automation belongs in
 | `.github/workflows/test.yml` | Push and pull request | Checks E2E JavaScript syntax and runs `npm test` |
 | `.github/workflows/build-packs.yml` | Pack source/build changes | Rebuilds and commits LevelDB compendium packs |
 | `.github/workflows/release.yml` | Tag matching `v*` | Tests, checks version/tag parity, packages, publishes GitHub release |
-| `scripts/build-packs.mjs` | `npm run build:packs` | Compiles all six LevelDB packs from `_source/` |
+| `scripts/build-packs.mjs` | `npm run build:packs` | Compiles all eight LevelDB packs from `_source/` |
 | `scripts/package.ps1` | `npm run package` | Creates local release artifacts in `dist/` |
 
 Do not commit `dist/`, transient LevelDB lock/LOG files, or other generated temporary files.
