@@ -84,20 +84,81 @@ async function sourceFiles(pack) {
     .map(file => path.join(dir, file));
 }
 
-async function migrateLanguage(language) {
+async function collectEnglishRegistry() {
   const registry = new Map();
-  const documents = [];
+  const byKey = new Map();
 
   for (const parent of PARENT_PACKS) {
-    for (const file of await sourceFiles(`${parent}-${language}`)) {
+    for (const file of await sourceFiles(`${parent}-en`)) {
       const document = JSON.parse(await fs.readFile(file, "utf8"));
       if (document._key?.startsWith("!folders!")) continue;
-      documents.push({ parent, file, document });
 
       for (const ability of document.system?.abilities ?? []) {
         const id = identity(ability);
-        const key = `${id.key}:${id.signature}`;
-        if (!registry.has(key)) registry.set(key, { ...id, ability });
+        const entryKey = `${id.key}:${id.signature}`;
+        if (!registry.has(entryKey)) registry.set(entryKey, { ...id, ability });
+
+        const entries = byKey.get(id.key) ?? [];
+        if (!entries.some(entry => entry.signature === id.signature)) {
+          entries.push(registry.get(entryKey));
+          byKey.set(id.key, entries);
+        }
+      }
+    }
+  }
+
+  return { registry, byKey };
+}
+
+async function collectDocuments(language) {
+  const documents = [];
+  for (const parent of PARENT_PACKS) {
+    for (const file of await sourceFiles(`${parent}-${language}`)) {
+      const document = JSON.parse(await fs.readFile(file, "utf8"));
+      if (!document._key?.startsWith("!folders!")) {
+        documents.push({ parent, file, document });
+      }
+    }
+  }
+  return documents;
+}
+
+function resolveFrenchEntry(ability, english) {
+  const id = identity(ability);
+  const exact = english.registry.get(`${id.key}:${id.signature}`);
+  if (exact) return { entry: exact, translated: true };
+
+  const candidates = english.byKey.get(id.key) ?? [];
+  if (candidates.length === 1) return { entry: candidates[0], translated: false };
+
+  throw new Error(
+    `French ability "${ability.name}" has no unambiguous CRD mechanical match for key "${id.key}".`
+  );
+}
+
+async function migrateLanguage(language, english) {
+  const documents = await collectDocuments(language);
+  const registry = new Map();
+
+  for (const { document } of documents) {
+    for (const ability of document.system?.abilities ?? []) {
+      const resolved = language === "fr"
+        ? resolveFrenchEntry(ability, english)
+        : {
+            entry: english.registry.get(
+              `${identity(ability).key}:${identity(ability).signature}`
+            ),
+            translated: true
+          };
+
+      if (!resolved.entry) continue;
+
+      const key = `${resolved.entry.key}:${resolved.entry.signature}`;
+      if (!registry.has(key)) {
+        registry.set(key, {
+          ...resolved.entry,
+          localizedAbility: resolved.translated ? ability : resolved.entry.ability
+        });
       }
     }
   }
@@ -107,7 +168,8 @@ async function migrateLanguage(language) {
   await fs.mkdir(abilityDir, { recursive: true });
 
   for (const entry of registry.values()) {
-    const ability = entry.ability;
+    const ability = entry.localizedAbility;
+    const canonical = entry.ability;
     const document = {
       _id: entry.id,
       _key: `!items!${entry.id}`,
@@ -116,20 +178,20 @@ async function migrateLanguage(language) {
       img: "icons/svg/upgrade.svg",
       system: {
         key: entry.key,
-        tier: ability.tier,
-        enabler: Boolean(ability.enabler),
-        repeatable: Boolean(ability.repeatable),
-        cost: ability.cost ?? { stat: "none", amount: 0, options: [] },
-        action: inferAction(ability),
-        freeWeaponCategories: ability.freeWeaponCategories ?? [],
-        freeArmorCategories: ability.freeArmorCategories ?? [],
-        freeWeaponFamilies: ability.freeWeaponFamilies ?? [],
-        freeWeaponSkillCategories: ability.freeWeaponSkillCategories ?? [],
-        chooseWeaponAttackCategory: Boolean(ability.chooseWeaponAttackCategory),
-        grantedArmorItemCategory: ability.grantedArmorItemCategory ?? "",
-        effects: ability.effects ?? [],
-        rollTables: ability.rollTables ?? [],
-        description: ability.description ?? ""
+        tier: canonical.tier,
+        enabler: Boolean(canonical.enabler),
+        repeatable: Boolean(canonical.repeatable),
+        cost: canonical.cost ?? { stat: "none", amount: 0, options: [] },
+        action: inferAction(canonical),
+        freeWeaponCategories: canonical.freeWeaponCategories ?? [],
+        freeArmorCategories: canonical.freeArmorCategories ?? [],
+        freeWeaponFamilies: canonical.freeWeaponFamilies ?? [],
+        freeWeaponSkillCategories: canonical.freeWeaponSkillCategories ?? [],
+        chooseWeaponAttackCategory: Boolean(canonical.chooseWeaponAttackCategory),
+        grantedArmorItemCategory: canonical.grantedArmorItemCategory ?? "",
+        effects: canonical.effects ?? [],
+        rollTables: canonical.rollTables ?? [],
+        description: ability.description ?? canonical.description ?? ""
       }
     };
     await fs.writeFile(
@@ -144,10 +206,17 @@ async function migrateLanguage(language) {
     const localIds = new Map();
 
     for (const ability of legacyAbilities) {
-      const id = identity(ability);
-      const entry = registry.get(`${id.key}:${id.signature}`);
-      refs.push(`Compendium.cypher.abilities-${language}.Item.${entry.id}`);
-      localIds.set(ability.id, entry.id);
+      const resolved = language === "fr"
+        ? resolveFrenchEntry(ability, english)
+        : {
+            entry: english.registry.get(
+              `${identity(ability).key}:${identity(ability).signature}`
+            )
+          };
+      if (!resolved.entry) continue;
+
+      refs.push(`Compendium.cypher.abilities-${language}.Item.${resolved.entry.id}`);
+      localIds.set(ability.id, resolved.entry.id);
     }
 
     document.system.abilities = refs;
@@ -168,7 +237,9 @@ async function migrateLanguage(language) {
 }
 
 export async function migrateAbilitySources() {
-  for (const language of LANGUAGES) await migrateLanguage(language);
+  const english = await collectEnglishRegistry();
+  await migrateLanguage("en", english);
+  await migrateLanguage("fr", english);
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
