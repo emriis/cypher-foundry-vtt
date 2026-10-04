@@ -158,7 +158,7 @@ export async function rollTask(actor, {
       </div>`;
 
     await roll.toMessage({
-      speaker: ChatMessage.getSpeaker({ actor: this }),
+      speaker: ChatMessage.getSpeaker({ actor: actor }),
       flavor: messageFlavor,
       flags: {
         "cypher": {
