@@ -272,7 +272,7 @@ export const CRD_TIERED_ABILITY_FIXTURE = item(
       options: [],
       additionalEffort: false
     },
-    action: "ten minutes to brew",
+    action: null,
     freeWeaponCategories: [],
     freeArmorCategories: [],
     freeWeaponFamilies: [],
@@ -312,7 +312,7 @@ export const CRD_TIERED_ABILITY_FIXTURE = item(
     rollTables: [],
     description:
       "You brew a potion. You can choose its effect from the " +
-      "Low-Power Manifest Cyphers table."
+      "Low-Power Manifest Cyphers table. Ten minutes to brew."
   },
   "Fantasy Genre — Witch Abilities — Tier 1 — Brew Potion"
 );
