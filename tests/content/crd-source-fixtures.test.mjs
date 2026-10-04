@@ -8,6 +8,10 @@ import {
   CRD_WEAPON_FIXTURE,
   CRD_EQUIPMENT_FIXTURE,
   CRD_CYPHER_FIXTURE,
+  CRD_ARMOR_FIXTURE,
+  CRD_SKILL_FIXTURE,
+  CRD_CREATURE_FIXTURE,
+  CRD_TIERED_ABILITY_FIXTURE,
   CRD_FIXTURES
 } from "../fixtures/crd-source-fixtures.mjs";
 import { validateCrdSourceRecord } from "../../module/crd/source-schema.mjs";
@@ -95,4 +99,39 @@ test("Adhesion Bomb preserves manifest cypher power classification", () => {
     CRD_CYPHER_FIXTURE.system.description,
     /immediate-radius explosion/
   );
+});
+
+
+test("Leather jacket preserves the CRD armor category and price", () => {
+  const system = CRD_ARMOR_FIXTURE.system;
+
+  assert.equal(system.category, "light");
+  assert.equal(system.priceCategory, "moderate");
+  assert.equal(system.blockEaseDamage, 0);
+});
+
+test("Attacking preserves its CRD tier restriction", () => {
+  assert.equal(CRD_SKILL_FIXTURE.system.minimumTier, 2);
+  assert.equal(CRD_SKILL_FIXTURE.system.level, "trained");
+});
+
+test("Giant spider preserves its mapped NPC mechanics", () => {
+  const system = CRD_CREATURE_FIXTURE.system;
+
+  assert.equal(system.level, 3);
+  assert.equal(system.health.max, 12);
+  assert.equal(system.damage, "3 + 1 Speed damage from poison");
+  assert.match(system.modifications, /level 5/);
+  assert.match(system.modifications, /level 4/);
+});
+
+test("Always Tinkering preserves real tier-three and tier-six effects", () => {
+  const effects = CRD_TIERED_ABILITY_FIXTURE.system.effects;
+
+  assert.deepEqual(
+    effects.map(effect => effect.tier),
+    [3, 6]
+  );
+  assert.match(effects[0].description, /medium-power manifest cypher/);
+  assert.match(effects[1].description, /advanced-power manifest cypher/);
 });
