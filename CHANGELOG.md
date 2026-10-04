@@ -11,6 +11,13 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ### Added
 
+- Extended existing data models with structured CRD mechanics needed for
+  automation, including range categories, price categories, equipment levels,
+  tiered ability data, skill tier restrictions, and cypher power levels.
+- Added an automation-first mechanical field contract for CRD extraction.
+
+### Added
+
 - Defined the common CRD source-record contract for stable logical identifiers,
   bilingual pairing, and provenance, with pure validation helpers and tests.
 - Documented the CRD source schema and structural-transformation rules.
