@@ -17,8 +17,7 @@ import path from "node:path";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const PORT = Number(process.env.FOUNDRY_PORT || 30000);
-const BASE_URL =
-  process.env.FOUNDRY_URL || `http://127.0.0.1:${PORT}`;
+const BASE_URL = `http://127.0.0.1:${PORT}`;
 const WORLD_ID = `cypher-e2e-${Date.now()}`;
 const WORLD_TITLE = "Cypher Automated E2E";
 
