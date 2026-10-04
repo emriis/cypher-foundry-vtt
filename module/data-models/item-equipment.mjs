@@ -12,6 +12,8 @@ export default class CypherEquipmentData extends foundry.abstract.TypeDataModel 
   static defineSchema() {
     return {
       quantity: new NumberField({ required: true, integer: true, initial: 1, min: 0 }),
+      level: new NumberField({ required: true, integer: true, nullable: true, initial: 4, min: 0 }),
+      priceCategory: new StringField({ required: true, initial: "moderate", choices: CYPHER.priceCategories }),
       weight: new StringField({ required: true, initial: "light", choices: ["none", "light", "medium", "heavy"] }),
       equipped: new BooleanField({ required: true, initial: false }),
 
