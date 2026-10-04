@@ -23,6 +23,17 @@ async function applyTypeInternal(actor, typeItem, { stat = null, skillName = nul
     return false;
   }
 
+  const abilities = await resolveDocumentReferences(
+    typeItem.system.abilities ?? [],
+    "ability"
+  );
+  if (abilities.length !== (typeItem.system.abilities ?? []).length) {
+    ui.notifications.warn(
+      game.i18n.localize("CYPHER.Ability.ReferenceMissing")
+    );
+    return false;
+  }
+
   const system = typeItem.system;
   const poolBonuses = system.poolBonuses ?? {};
   const woundBonuses = system.woundBonuses ?? {};
@@ -91,40 +102,62 @@ async function applyTypeInternal(actor, typeItem, { stat = null, skillName = nul
     }
   }
 
-  const abilities = (system.abilities ?? []).map(ability => ({
-    name: ability.name,
-    type: "ability",
-    system: {
-      source: typeItem.name,
-      tier: Number(ability.tier) || 1,
-      enabler: Boolean(ability.enabler),
-      cost: ability.cost ?? { stat: "none", amount: 0, options: [] },
-      action: "none",
-      effects: ability.effects ?? [],
-      rollTables: ability.rollTables ?? [],
-      description: ability.description ?? ""
-    }
-  }));
-  if (abilities.length) await actor.createEmbeddedDocuments("Item", abilities);
+  if (abilities.length) {
+    await actor.createEmbeddedDocuments(
+      "Item",
+      abilities.map(ability => ({
+        name: ability.name,
+        type: "ability",
+        system: {
+          ...ability.system,
+          source: typeItem.name
+        }
+      }))
+    );
+  }
 
   await ChatMessage.create({
-    speaker: ChatMessage.getSpeaker({ actor: this }),
+    speaker: ChatMessage.getSpeaker({ actor }),
     content: `<div class="cypher-roll-card"><h3>${game.i18n.format("CYPHER.Type.Applied", { name: typeItem.name })}</h3><p>${skillNote}</p></div>`
   });
   return true;
 }
 
 export async function applyFocus(actor, focusItem, abilityIds, weaponSkillCategories = {}) {
-async function applyFocus(actor, focusItem, abilityIds, weaponSkillCategories = {}) {
   if (actor.type !== "pc" || focusItem?.type !== "focus") return false;
   if (actor.getFlag("cypher", "appliedFocusId")) return false;
 
-  const selected = [...new Set(abilityIds ?? [])];
-  if (selected.length !== 2 || !selected.every(id => isFocusAbilityEligible(focusItem.system, [], id, 1))) {
+  const abilities = await resolveDocumentReferences(
+    focusItem.system.abilities ?? [],
+    "ability"
+  );
+  if (abilities.length !== (focusItem.system.abilities ?? []).length) {
+    ui.notifications.warn(
+      game.i18n.localize("CYPHER.Ability.ReferenceMissing")
+    );
     return false;
   }
 
-  const selectedAbilities = focusItem.system.abilities.filter(ability => selected.includes(ability.id));
+  const focus = {
+    abilities: abilities.map(ability => ({
+      id: ability.id ?? ability._id,
+      uuid: ability.uuid,
+      name: ability.name,
+      ...ability.system
+    })),
+    flowchart: focusItem.system.flowchart ?? { edges: [] }
+  };
+  const selected = [...new Set(abilityIds ?? [])];
+  if (
+    selected.length !== 2 ||
+    !selected.every(id => isFocusAbilityEligible(focus, [], id, 1))
+  ) {
+    return false;
+  }
+
+  const selectedAbilities = focus.abilities.filter(
+    ability => selected.includes(ability.id)
+  );
   if (selectedAbilities.some(ability =>
     ability.chooseWeaponAttackCategory
     && !CYPHER.attackSkillCategories.includes(weaponSkillCategories[ability.id])
@@ -155,10 +188,23 @@ async function applyFocus(actor, focusItem, abilityIds, weaponSkillCategories = 
       ...freeWeaponSkillCategories
     ])],
     "flags.cypher.appliedFocusId": focusItem.id ?? focusItem._id,
-    "flags.cypher.appliedFocusGraph": focusItem.system,
+    "flags.cypher.appliedFocusGraph": focus,
     "flags.cypher.focusAbilityIds": selected
   });
-  const selectedItems = selectedAbilities.map(ability => focusAbilityItemData(focusItem, ability));
+  const selectedItems = selectedAbilities.map(ability => {
+    const source = abilities.find(
+      item => (item.id ?? item._id) === ability.id
+    );
+    return {
+      name: source.name,
+      type: "ability",
+      system: {
+        ...source.system,
+        source: focusItem.name,
+        focusAbilityId: ability.id
+      }
+    };
+  });
   const armorItems = selectedAbilities
     .filter(ability => ability.grantedArmorItemCategory)
     .map(ability => focusArmorItemData(focusItem, ability));
@@ -167,7 +213,6 @@ async function applyFocus(actor, focusItem, abilityIds, weaponSkillCategories = 
 }
 
 export async function selectFocusAbility(actor, abilityId, weaponSkillCategory = null) {
-async function selectFocusAbility(actor, abilityId, weaponSkillCategory = null) {
   if (actor.type !== "pc") return false;
   const focus = actor.getFlag("cypher", "appliedFocusGraph");
   const selected = actor.getFlag("cypher", "focusAbilityIds") ?? [];
@@ -213,28 +258,25 @@ async function selectFocusAbility(actor, abilityId, weaponSkillCategory = null) 
   await actor.update({
     ...updates
   });
-  const items = [focusAbilityItemData({ name: actor.system.focus }, ability)];
-  if (ability.grantedArmorItemCategory) items.push(focusArmorItemData({ name: actor.system.focus }, ability));
-  await actor.createEmbeddedDocuments("Item", items);
-  return true;
-}
+  const source = await resolveDocumentReferences([ability.uuid], "ability");
+  if (source.length !== 1) return false;
 
-function focusAbilityItemData(focus, ability) {
-  return {
-    name: ability.name,
+  const items = [{
+    name: source[0].name,
     type: "ability",
     system: {
-      source: focus.name,
-      focusAbilityId: ability.id,
-      tier: ability.tier,
-      enabler: ability.enabler,
-      cost: ability.cost,
-      action: "none",
-      effects: ability.effects ?? [],
-      rollTables: ability.rollTables ?? [],
-      description: ability.description
+      ...source[0].system,
+      source: actor.system.focus,
+      focusAbilityId: ability.id
     }
-  };
+  }];
+  if (ability.grantedArmorItemCategory) {
+    items.push(
+      focusArmorItemData({ name: actor.system.focus }, ability)
+    );
+  }
+  await actor.createEmbeddedDocuments("Item", items);
+  return true;
 }
 
 function focusArmorItemData(focus, ability) {
@@ -251,8 +293,11 @@ function focusArmorItemData(focus, ability) {
   };
 }
 
-export async function applyDescriptor(actor, descriptorItem, options = {}) {
-async function applyDescriptor(actor, descriptorItem, { stat = null, skillName = null } = {}) {
+export async function applyDescriptor(
+  actor,
+  descriptorItem,
+  { stat = null, skillName = null } = {}
+) {
   if (actor.type !== "pc" || descriptorItem?.type !== "descriptor") return false;
 
   const isSpecies = descriptorItem.system.category === "species";
@@ -333,7 +378,10 @@ async function applyDescriptor(actor, descriptorItem, { stat = null, skillName =
         tier: 1,
         enabler: true,
         cost: { stat: "none", amount: 0, options: [] },
-        action: "none",
+        action: null,
+        repeatable: false,
+        effects: [],
+        rollTables: [],
         description: benefit.description
       }
     })));
