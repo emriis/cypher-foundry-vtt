@@ -213,17 +213,26 @@ dependency rules.
 
 ### Phase 2 — Extract pure rules
 
-Start with deterministic logic already covered by tests:
+Phase 2 is complete. The deterministic rule set is now extracted into focused
+modules under `module/rules/`:
 
-1. Effort cost and task-step calculation.
-2. Wound severity/cascade.
-3. Defense modifiers.
-4. Recovery calculations.
-5. Advancement calculations.
-6. Focus graph eligibility.
+1. Effort cost and task-step calculation in `rules/tasks.mjs`.
+2. Wound severity, cascading, shield overflow, and Pool-damage conversion in
+   `rules/wounds.mjs`.
+3. Defense stat and armor modifiers in `rules/defense.mjs`.
+4. Recovery roll data, wound recovery, and rally calculations in
+   `rules/recovery.mjs`.
+5. Advancement progression and mechanical updates in
+   `rules/advancement.mjs`.
+6. Focus graph eligibility in `rules/focus.mjs`.
 
-Each extraction must preserve existing public behavior and add or retain
-focused unit tests.
+Actor methods remain compatibility facades and orchestration boundaries. Pure
+rule modules do not depend on Foundry globals. Focus and advancement operations
+that require persistence or document resolution remain in the Actor layer for
+the later application-service phases.
+
+Each extraction preserves existing public behavior and is covered by focused
+unit tests in addition to the existing Actor integration tests.
 
 ### Phase 3 — Refactor Actor orchestration
 
@@ -294,10 +303,7 @@ are established, to avoid moving tests without improving their meaning.
 
 ## 7. Immediate next step
 
-The next implementation PR should extract the first small group of pure Cypher
-rules from `CypherActor`, beginning with deterministic calculations that already
-have strong test coverage.
-
-Before extracting a rule, identify its current callers and tests. The original
-Actor method should remain as a thin compatibility facade until all callers have
-been migrated.
+The next implementation PR should refactor Actor orchestration around the pure
+rules established in Phase 2. Before moving a responsibility, identify its
+current callers and tests. Actor methods should remain stable compatibility
+facades until callers have been migrated to the new application boundaries.
