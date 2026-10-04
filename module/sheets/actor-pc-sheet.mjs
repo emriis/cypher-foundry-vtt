@@ -1,6 +1,20 @@
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
 
+import {
+  chooseAbilityEffect,
+  rollAbilityTable
+} from "../applications/ability-service.mjs";
+import {
+  getFocusAbilityChoices,
+  selectFocusAbility
+} from "../applications/content-service.mjs";
+import {
+  toggleSecondDescriptor,
+  toggleSecondFocus
+} from "../applications/character-service.mjs";
+import { toggleEquipped } from "../applications/equipment-service.mjs";
+
 /**
  * Foundry VTT sheet for player characters using the Cypher system.
  *
@@ -260,18 +274,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     });
     if (!effectId) return;
 
-    const effect = effects.find(candidate => candidate.id === effectId);
-    if (!effect) return;
-    const description = await foundry.applications.ux.TextEditor.implementation.enrichHTML(
-      effect.description ?? "", { relativeTo: item }
-    );
-    const effort = effect.effort
-      ? `<p><strong>${game.i18n.localize("CYPHER.Ability.Effort")}:</strong> ${effect.effort}</p>`
-      : "";
-    await ChatMessage.create({
-      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      content: `<div class="cypher-roll-card"><h3>${item.name}: ${effect.name}</h3>${description}${effort}</div>`
-    });
+    await chooseAbilityEffect(item, effectId);
   }
 
   /**
@@ -286,25 +289,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     const table = item?.system.rollTables?.find(candidate => candidate.id === tableId);
     if (!item || !table) return;
 
-    let roll;
-    try {
-      roll = await new Roll(table.formula).evaluate();
-    } catch (error) {
-      ui.notifications.error(`${game.i18n.localize("CYPHER.Ability.InvalidRollTable")}: ${error.message}`);
-      return;
-    }
-
-    const result = table.results.find(candidate => roll.total >= candidate.min && roll.total <= candidate.max);
-    const description = result
-      ? await foundry.applications.ux.TextEditor.implementation.enrichHTML(
-        result.description ?? "", { relativeTo: item }
-      )
-      : `<p>${game.i18n.localize("CYPHER.Ability.NoRollTableResult")}</p>`;
-
-    await roll.toMessage({
-      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      flavor: `<strong>${item.name}</strong> — ${table.name}<br>${description}`
-    });
+    await rollAbilityTable(item, tableId);
   }
 
   /**
@@ -319,8 +304,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     const focus = actor.getFlag("cypher", "appliedFocusGraph");
     if (!pendingTier || !focus) return;
 
-    const selected = actor.getFlag("cypher", "focusAbilityIds") ?? [];
-    const abilities = actor.constructor.getEligibleFocusAbilities(focus, selected, actor.system.tier);
+    const abilities = getFocusAbilityChoices(actor);
     if (!abilities.length) return;
 
     const abilityId = await foundry.applications.api.DialogV2.prompt({
@@ -340,7 +324,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
         ? await CypherPCSheet.#promptWeaponAttackCategory()
         : null;
       if (ability?.chooseWeaponAttackCategory && !weaponSkillCategory) return;
-      await actor.selectFocusAbility(abilityId, weaponSkillCategory);
+      await selectFocusAbility(actor, abilityId, weaponSkillCategory);
     }
   }
 
@@ -612,11 +596,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
    */
   static async #onToggleSecondDescriptor(event, target) {
     const enabled = this.actor.system.hasSecondDescriptor;
-    if (enabled) {
-      await this.actor.update({ "system.hasSecondDescriptor": false, "system.descriptor2": "" });
-    } else {
-      await this.actor.update({ "system.hasSecondDescriptor": true });
-    }
+    await toggleSecondDescriptor(this.actor, !enabled);
   }
 
   /**
@@ -627,11 +607,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
    */
   static async #onToggleSecondFocus(event, target) {
     const enabled = this.actor.system.hasSecondFocus;
-    if (enabled) {
-      await this.actor.update({ "system.hasSecondFocus": false, "system.focus2": "" });
-    } else {
-      await this.actor.update({ "system.hasSecondFocus": true });
-    }
+    await toggleSecondFocus(this.actor, !enabled);
   }
 
   /**
@@ -774,17 +750,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
   static async #onToggleEquipped(event, target) {
     const item = this.actor.items.get(target.closest("[data-item-id]").dataset.itemId);
     if (!item) return;
-    const newState = !item.system.equipped;
-
-    // Only one Armor item may be equipped at a time.
-    if (item.type === "armor" && newState) {
-      const others = this.actor.items.filter(i => i.type === "armor" && i.id !== item.id && i.system.equipped);
-      if (others.length) {
-        await this.actor.updateEmbeddedDocuments("Item", others.map(i => ({ _id: i.id, "system.equipped": false })));
-      }
-    }
-
-    await item.update({ "system.equipped": newState });
+    await toggleEquipped(item);
   }
 
   /* -------------------------------------------- */
