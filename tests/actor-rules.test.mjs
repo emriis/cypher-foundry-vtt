@@ -707,7 +707,8 @@ test("rollDefense maps Block and Dodge to the correct stat and armor modifier", 
       }
     },
     items: new Map(),
-    async update() {}
+    async update() {},
+    async toggleStatusEffect() {}
   };
 
   const block = await CypherActor.prototype.rollDefense.call(actor, "block", {
