@@ -293,7 +293,7 @@ facades while the application service resolves standalone ability Documents.
 
 ### Phase 4 — Refactor Type/Focus/Ability application
 
-Phase 4 is in progress. Type, Focus, Focus-ability selection, and Descriptor
+Phase 4 is complete. Type, Focus, Focus-ability selection, and Descriptor
 application now live in `applications/content-service.mjs`; the Actor only
 provides compatibility facades for these operations.
 
@@ -360,12 +360,12 @@ are established, to avoid moving tests without improving their meaning.
 
 ## 7. Immediate next step
 
-Complete the Phase 4 verification pass: add focused application-service tests,
-verify that all Type/Focus ability references are resolved through the centralized
-resolver, and check that no content-application orchestration remains in Actor.
+Phase 4 verification is complete. Focused application-service tests cover the
+reference boundary, Actor compatibility tests cover the migrated operations, and
+the Unit Tests workflow passes on the final Phase 4 commit.
 
-Then the remaining Phase 4 cleanup can cover any compatibility-only helpers before
-Phase 5 reduces sheet responsibilities. Do not move Type/Focus/Descriptor logic into
+Phase 5 can now reduce sheet responsibilities by moving any remaining reusable
+application logic out of `module/sheets/` while keeping UI event handling there. Do not move Type/Focus/Descriptor logic into
 the new character or damage services merely to make the Actor smaller; those
 operations have a separate content/reference boundary.
 
