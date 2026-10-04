@@ -104,6 +104,7 @@ function toAbilityDocument(ability, id, language) {
     img: "icons/svg/book.svg",
     system: {
       key: ability.id,
+      variantKey: id,
       tier: ability.tier,
       enabler: Boolean(ability.enabler),
       repeatable: Boolean(ability.repeatable),
