@@ -260,6 +260,24 @@ async function rewriteFoci(language, canonicalDocuments) {
   }
 }
 
+const currentTypeSources = await readDocuments(PACKS.en.types);
+const currentFocusSources = await readDocuments(PACKS.en.foci);
+const alreadyNormalized = [...currentTypeSources, ...currentFocusSources]
+  .filter(({ data }) => !data._key.startsWith("!folders!"))
+  .every(({ data }) =>
+    Array.isArray(data.system?.abilities) &&
+    data.system.abilities.every(ability => typeof ability === "string")
+  );
+
+if (alreadyNormalized) {
+  const abilitySources = await readDocuments(PACKS.en.abilities);
+  if (!abilitySources.length) {
+    throw new Error("Types and Foci are normalized but abilities-en is empty.");
+  }
+  console.log("Standalone ability sources are already normalized.");
+  process.exit(0);
+}
+
 const canonicalAbilities = await collectCanonicalAbilities();
 const canonicalTypes = new Map(
   (await readDocuments(PACKS.en.types)).map(({ name, data }) => [name, data])
