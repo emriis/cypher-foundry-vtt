@@ -1,4 +1,5 @@
 import { CYPHER } from "../config.mjs";
+import { spendXP } from "./character-service.mjs";
 import { getEligibleFocusAbilities } from "../rules/focus.mjs";
 import {
   advanceSkillLevel,
@@ -28,7 +29,8 @@ export async function purchaseAdvancementSlot(actor, index, extra = {}) {
       return;
     }
 
-    if (!(await actor.spendXP(
+    if (!(await spendXP(
+      actor,
       CYPHER.xpCosts.advancementSlot,
       game.i18n.localize("CYPHER.Tab.advancement")
     ))) return;
