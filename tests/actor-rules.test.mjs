@@ -458,6 +458,7 @@ test("all-category advancements store every weapon or armor category", async () 
       type: "pc",
       id: "actor-id",
       system: {
+        xp: 10,
         advancementSlots: [{ type: "other", otherType, bought: false },
           { type: "", otherType: "", bought: false },
           { type: "", otherType: "", bought: false },
@@ -466,7 +467,6 @@ test("all-category advancements store every weapon or armor category", async () 
         freeArmorCategories: [],
         resourcePoints: 0
       },
-      async spendXP() { return true; },
       async update(update) { changes = update; }
     };
 
@@ -680,9 +680,10 @@ test("usePlayerIntrusion spends XP only when the intrusion is accepted", async (
   const actor = {
     id: "actor-1",
     type: "pc",
-    spendXP: async amount => {
-      spent += amount;
-      return true;
+    system: { xp: 1 },
+    async update(changes) {
+      spent += 1;
+      this.system.xp = changes["system.xp"];
     }
   };
   const originalCreate = ChatMessage.create;

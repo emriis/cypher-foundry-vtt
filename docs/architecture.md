@@ -31,11 +31,12 @@ architectural responsibilities.
 
 ### 2.1 Actor document is the primary refactoring target
 
-`module/documents/actor.mjs` is currently about 51 KB and contains task and
-defense resolution, Effort and XP transactions, rerolls and Player Intrusions,
-advancement, recovery and rally, wounds and damage, armor and shield behavior,
-Type/Focus/Descriptor application, custom stats and fields, ability behavior,
-depletion-related behavior, and chat output.
+`module/documents/actor.mjs` remains the primary refactoring target. It still owns
+Foundry document lifecycle, stat resolution, defense mapping, Type/Focus/Descriptor
+application, ability behavior, and some document-specific character behavior.
+Task rolls, recovery, advancement, XP transactions, rerolls, Player Intrusions,
+wounds, damage, shields, armor damage, and custom character fields have been
+moved behind application-service boundaries.
 
 This makes the Actor document both a Foundry persistence boundary and a
 substantial gameplay rules/service layer.
@@ -132,25 +133,52 @@ instead of becoming the home for every rule.
 
 ### 3.3 Rules
 
-A future `module/rules/` layer should contain pure Cypher mechanics such as
-task-step calculation, Effort cost, wound severity/cascading, defense
-resolution, recovery calculations, advancement calculations, Focus graph
-eligibility, and other deterministic rule calculations.
+The `module/rules/` layer contains pure Cypher mechanics such as task-step
+calculation, Effort cost, wound severity/cascading, defense resolution,
+recovery calculations, advancement calculations, Focus graph eligibility, and
+other deterministic rule calculations.
 
-Rules should not depend on Foundry globals such as `game`, `ui`,
+Rules must not depend on Foundry globals such as `game`, `ui`,
 `ChatMessage`, `Actor`, or `Item`.
 
 ### 3.4 Application services
 
-A future `module/applications/` or `module/services/` layer should contain
-operations that combine domain rules with Foundry documents.
+The `module/applications/` layer contains Foundry-aware use cases that combine
+documents with pure rules. It is the boundary between Foundry orchestration and
+the Cypher rule core.
 
-Examples include applying a Type, applying a Focus, selecting a Focus ability,
-applying a Descriptor, creating an embedded ability from a referenced ability,
-resolving a compendium reference, and executing an advancement.
+The extracted application services are:
 
-These operations may use Foundry APIs, but they should not contain the
-low-level mathematical rule calculations themselves.
+1. `applications/task-service.mjs` for task-roll orchestration.
+2. `applications/recovery-service.mjs` for recovery and Rally orchestration.
+3. `applications/advancement-service.mjs` for advancement purchases and tier
+   transitions.
+4. `applications/character-service.mjs` for XP spending, rerolls, Player
+   Intrusions, and custom character fields.
+5. `applications/damage-service.mjs` for wounds, damage, shields, armor damage,
+   and wound-related token statuses.
+6. `applications/reference-resolver.mjs` for centralized document-reference
+   resolution and expected-type validation.
+
+These services own Foundry-specific orchestration such as dice evaluation,
+document updates, Pool/XP transactions, and chat output while delegating
+deterministic calculations to `module/rules/`.
+
+Actor methods remain stable compatibility facades for sheets, macros, and other
+callers while application services are introduced. For example:
+
+```js
+await actor.rollTask(options);
+```
+
+remains a public operation while its application use case is implemented by
+`applications/task-service.mjs`.
+
+Actor methods remain compatibility facades after extraction. This is deliberate:
+sheets, macros, and other callers can keep using the existing API while the
+implementation moves behind a clearer boundary. A responsibility should be
+extracted when doing so removes a meaningful application concern from the
+document; behavior that is genuinely document-owned may remain there.
 
 ### 3.5 Sheets
 
@@ -236,23 +264,45 @@ unit tests in addition to the existing Actor integration tests.
 
 ### Phase 3 — Refactor Actor orchestration
 
-Move reusable operations out of `CypherActor` while keeping Actor methods as
-stable facades for sheets and macros.
+Phase 3 is complete. The main Foundry-aware application boundaries have been
+extracted and the verification pass has removed the remaining shared stat
+lookup dependency from the Actor document. Actor methods remain stable compatibility facades while
+implementation moves into focused services.
 
-For example:
+The current Phase 3 services are:
 
-```js
-await actor.rollTask(options);
-```
+1. `applications/task-service.mjs` — task rolls, Effort/Pool transactions,
+   special results, defense outcomes, and chat output.
+2. `applications/recovery-service.mjs` — recovery and Rally orchestration.
+3. `applications/advancement-service.mjs` — advancement purchases and tier
+   transitions.
+4. `applications/character-service.mjs` — XP spending, rerolls, Player
+   Intrusions, and custom stats/fields.
+5. `applications/damage-service.mjs` — wounds, damage, shield absorption,
+   armor damage/repair, and wound-related token status synchronization.
 
-may remain the public operation while deterministic calculations move to the
-rules layer.
+These services own Foundry-specific orchestration such as dice evaluation,
+document updates, resource transactions, chat output, and token/item updates.
+Deterministic calculations remain delegated to `module/rules/`.
+
+The remaining substantial Actor responsibilities have been assessed. Type,
+Focus, Descriptor, and standalone ability application are intentionally deferred
+to Phase 4 because they require the reference-resolution boundary established
+by `applications/reference-resolver.mjs`.
 
 ### Phase 4 — Refactor Type/Focus/Ability application
 
-Complete the standalone ability runtime boundary:
+The runtime reference boundary is established by
+`applications/reference-resolver.mjs`:
 
-1. Resolve UUID references.
+1. Resolve a UUID or accept an already-resolved document.
+2. Validate the expected document type.
+3. Return only valid documents to the caller.
+4. Keep direct `fromUuid()` calls out of application/content consumers.
+
+The remaining Type/Focus/Descriptor work should then use that boundary:
+
+1. Resolve Type/Focus UUID references through the centralized resolver.
 2. Validate the resolved Item type.
 3. Evaluate Focus flowchart edges separately from ability data.
 4. Apply standalone ability mechanics.
@@ -271,7 +321,7 @@ compatibility transforms.
 
 ### Phase 7 — Reorganize tests
 
-Align tests with the architecture:
+The target test taxonomy is:
 
 ```
 tests/
@@ -284,7 +334,8 @@ tests/
   e2e/
 ```
 
-The exact directory split should happen only after the production boundaries
+This is a target organization, not a claim that all tests have already been
+moved. The directory split should happen only after the production boundaries
 are established, to avoid moving tests without improving their meaning.
 
 ## 6. Refactoring principles
@@ -303,7 +354,84 @@ are established, to avoid moving tests without improving their meaning.
 
 ## 7. Immediate next step
 
-The next implementation PR should refactor Actor orchestration around the pure
-rules established in Phase 2. Before moving a responsibility, identify its
-current callers and tests. Actor methods should remain stable compatibility
-facades until callers have been migrated to the new application boundaries.
+Complete the Phase 3 verification pass: keep the Actor facades covered by tests,
+check for accidental direct application logic left in the document, verify that
+application services no longer depend on private Actor helpers, and verify
+that the extracted services are documented and independently testable.
+
+Then Phase 4 can continue the Type/Focus/Descriptor application refactor using
+the centralized reference resolver. Do not move Type/Focus/Descriptor logic into
+the new character or damage services merely to make the Actor smaller; those
+operations have a separate content/reference boundary.
+
+## 8. Domain organization
+
+Production code should be organized by architectural responsibility and domain,
+not by the historical order in which features were added.
+
+The intended rule domains are:
+
+```
+module/
+  rules/
+    combat/
+    tasks/
+    recovery/
+    advancement/
+    characters/
+    content/
+  applications/
+  documents/
+  data-models/
+  sheets/
+```
+
+This is a target structure, not a requirement to move every existing file
+immediately. A rule belongs in a domain module when its behavior is deterministic
+and does not require Foundry state. Application modules may cross domains when
+implementing a complete use case, but individual rule modules should remain
+focused.
+
+New domains such as equipment, cyphers, creatures/NPC abilities, powers,
+custom Descriptors, custom Types, and custom Foci should follow the same
+boundary instead of adding another collection of feature-specific helpers.
+
+## 9. Content source and pack compilation contract
+
+Repository content follows one direction:
+
+```
+editable source data
+      |
+      | deterministic migration / normalization
+      v
+compiled Foundry packs
+```
+
+The `packs/*/_source/` files are authoritative. LevelDB and other generated
+pack artifacts are build outputs and must never be edited as source data.
+
+Pack tooling should keep this distinction explicit. Source migrations transform
+authoring data before compilation; the compiler writes generated artifacts into
+the pack directory. A generated artifact must be reproducible from source.
+
+## 10. Reference-resolution contract
+
+All persisted document references use the following convention:
+
+```
+reference
+    |
+    v
+resolveDocumentReference(reference, expectedType)
+    |
+    v
+validate expected document type
+    |
+    v
+use resolved document
+```
+
+Content/application code must not duplicate `fromUuid()` calls. The resolver
+also accepts an already-resolved Document, which makes custom content and tests
+easier to support without weakening type validation.

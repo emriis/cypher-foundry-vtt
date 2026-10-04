@@ -23,8 +23,9 @@ application, sheet, migration, or compendium boundaries.
 | Concern | Location |
 | --- | --- |
 | System manifest and startup | `system.json`, `cypher.mjs` |
-| Foundry document behavior and orchestration | `module/documents/` |
-| Pure Cypher rules and deterministic calculations | `module/rules/` (target architecture; extract incrementally) |
+| Foundry document behavior and compatibility facades | `module/documents/` |
+| Foundry-aware application use cases | `module/applications/` |
+| Pure Cypher rules and deterministic calculations | `module/rules/` |
 | Actor and Item schemas | `module/data-models/` |
 | Foundry applications and UI actions | `module/sheets/` |
 | Handlebars markup | `templates/` |
@@ -40,6 +41,16 @@ npm test
 
 Keep `cypher.mjs` limited to Foundry registrations and thin global hooks.
 It is not the place for game-rule calculations or sheet actions.
+
+When adding a new gameplay use case, first decide whether the deterministic part
+belongs in `module/rules/` and whether Foundry orchestration belongs in
+`module/applications/`. Keep the Actor method as a small compatibility facade when
+existing callers already use it. Application services should have English JSDoc
+and short inline comments for non-obvious Foundry or rules interactions so a new
+contributor can follow the control flow without relying on tribal knowledge.
+If a helper only maps data and does not need Foundry state, keep it in
+`module/rules/` instead of adding another Actor compatibility method; for example,
+stat lookup belongs to `rules/stats.mjs`.
 
 ## 2. Compendium content
 
