@@ -87,24 +87,6 @@ export default class CypherActor extends Actor {
   }
 
   /* -------------------------------------------- */
-  /*  Stat resolution                                */
-  /* -------------------------------------------- */
-
-  /**
-   * Resolves a stat key (one of the three core stats, or a custom stat by id) to its
-   * data and the update path to use.
-   */
-  _resolveStat(statKey) {
-    if (CYPHER.stats.includes(statKey)) {
-      return { data: this.system.stats[statKey], path: `system.stats.${statKey}`, label: `CYPHER.Stat.${statKey}` };
-    }
-    const index = this.system.customStats.findIndex(s => s.id === statKey);
-    if (index === -1) return null;
-    const data = this.system.customStats[index];
-    return { data, path: `system.customStats.${index}`, label: data.label };
-  }
-
-  /* -------------------------------------------- */
   /*  Task rolls                                  */
   /* -------------------------------------------- */
 
