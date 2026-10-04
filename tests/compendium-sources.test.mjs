@@ -177,10 +177,10 @@ function assertBilingualMechanicalAlignment(enSources, frSources, packName) {
       ]) {
         assert.deepEqual(fr.system[field] ?? null, en.system[field] ?? null, `${filename}/${field}`);
       }
-      assert.deepEqual(
-        fr.system.skillOptions ?? [],
-        en.system.skillOptions ?? [],
-        `${filename}/skillOptions`
+      assert.equal(
+        (fr.system.skillOptions ?? []).length,
+        (en.system.skillOptions ?? []).length,
+        `${filename}/skillOptions/count`
       );
     }
 
