@@ -51,6 +51,8 @@ contributor can follow the control flow without relying on tribal knowledge.
 If a helper only maps data and does not need Foundry state, keep it in
 `module/rules/` instead of adding another Actor compatibility method; for example,
 stat lookup belongs to `rules/stats.mjs`.
+For Type/Focus content, resolve persisted ability references through
+`module/applications/reference-resolver.mjs` before copying mechanics to an actor.
 
 ## 2. Compendium content
 
