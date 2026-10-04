@@ -97,8 +97,8 @@ test.describe("Cypher Foundry live runtime", () => {
   test("loads all FR and EN compendium packs", async ({ page }) => {
     const result = await page.evaluate(async () => {
       const names = [
-        "descriptors-fr", "types-fr", "foci-fr",
-        "descriptors-en", "types-en", "foci-en"
+        "descriptors-fr", "abilities-fr", "types-fr", "foci-fr",
+        "descriptors-en", "abilities-en", "types-en", "foci-en"
       ];
 
       return Promise.all(names.map(async name => {
