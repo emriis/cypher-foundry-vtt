@@ -23,6 +23,9 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 - Completed Phase 4 by moving Type, Focus, Focus-ability selection, and Descriptor/species
   application into `applications/content-service.mjs`, including UUID-backed ability
   resolution, Actor compatibility facades, and dedicated application-boundary tests.
+- Started Phase 5 by moving Ability effect/table operations, equipment invariants, optional
+  second Descriptor/Focus persistence, Focus choice lookup, and advancement-choice validation
+  out of the PC sheet.
 - Updated project documentation to reflect the current six-pack compendium layout,
   live E2E harness, and current CI/release workflow.
 - Improved Type compendium sheets with the description first and localized displays for Type benefits and abilities.
