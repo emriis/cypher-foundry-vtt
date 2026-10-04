@@ -65,7 +65,7 @@ for (const language of ["en", "fr"]) {
 
       for (const edge of focus.system.flowchart?.edges ?? []) {
         assert.ok(ids.has(edge.from), `${focus.name}/${edge.from}`);
-        assert.ok(ids.has(edge.to), `${focus.name}/${edge.to`);
+        assert.ok(ids.has(edge.to), `${focus.name}/${edge.to}`);
         const from = byId.get(edge.from);
         const to = byId.get(edge.to);
         assert.ok(from.system.tier <= to.system.tier);
