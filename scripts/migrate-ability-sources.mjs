@@ -11,6 +11,7 @@
 import crypto from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";
+import { pathToFileURL } from "node:url";
 
 const root = path.resolve(import.meta.dirname, "..");
 const LANGUAGES = ["en", "fr"];
@@ -166,5 +167,11 @@ async function migrateLanguage(language) {
   }
 }
 
-for (const language of LANGUAGES) await migrateLanguage(language);
-console.log("Standalone ability sources migrated.");
+export async function migrateAbilitySources() {
+  for (const language of LANGUAGES) await migrateLanguage(language);
+}
+
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  await migrateAbilitySources();
+  console.log("Standalone ability sources migrated.");
+}
