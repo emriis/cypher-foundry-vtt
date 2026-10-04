@@ -7,6 +7,7 @@ import {
 } from "../applications/ability-service.mjs";
 import {
   getFocusAbilityChoices,
+  getInitialFocusAbilityChoices,
   selectFocusAbility
 } from "../applications/content-service.mjs";
 import {
@@ -785,7 +786,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       return;
     }
 
-    const tierOneAbilities = actor.constructor.getEligibleFocusAbilities(item.system, [], 1);
+    const tierOneAbilities = await getInitialFocusAbilityChoices(item);
     const choices = tierOneAbilities.map(ability => `
       <label class="checkbox"><input type="checkbox" name="abilityId" value="${ability.id}"/> ${ability.name}</label>`).join("");
     const selectedIds = await foundry.applications.api.DialogV2.prompt({
@@ -804,7 +805,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     }
     const weaponSkillCategories = {};
     for (const abilityId of selectedIds) {
-      const ability = item.system.abilities.find(candidate => candidate.id === abilityId);
+      const ability = tierOneAbilities.find(candidate => candidate.id === abilityId);
       if (!ability?.chooseWeaponAttackCategory) continue;
       const category = await CypherPCSheet.#promptWeaponAttackCategory();
       if (!category) return;
