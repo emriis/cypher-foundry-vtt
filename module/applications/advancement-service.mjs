@@ -92,7 +92,7 @@ export async function purchaseAdvancementSlot(actor, index, extra = {}) {
     });
 
     const boughtCount = slots.filter(s => s.bought).length;
-    if (boughtCount >= 4) await actor._advanceTier();
+    if (boughtCount >= 4) await advanceTier(actor);
   }
 
   /**
