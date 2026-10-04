@@ -1,5 +1,6 @@
 import { CYPHER } from "../config.mjs";
 import { resolveContentAbilities } from "../applications/content-service.mjs";
+import { abilityActionLabel } from "../abilities.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
@@ -103,6 +104,7 @@ export default class CypherItemSheet extends HandlebarsApplicationMixin(ItemShee
             costOptionsLabel: costOptions.length
               ? game.i18n.format("CYPHER.Type.AbilityCostOptions", { options: costOptions.join(", ") })
               : "",
+            actionLabel: abilityActionLabel(ability.system, localize),
             prerequisites,
             prerequisitesLabel: prerequisites.join(", "),
             enrichedDescription: await foundry.applications.ux.TextEditor.implementation.enrichHTML(
@@ -148,6 +150,7 @@ export default class CypherItemSheet extends HandlebarsApplicationMixin(ItemShee
           costOptionsLabel: costOptions.length
             ? game.i18n.format("CYPHER.FocusSheet.AbilityCostOptions", { options: costOptions.join(", ") })
             : "",
+          actionLabel: abilityActionLabel(ability.system, game.i18n.localize),
           prerequisites: flowchart.edges
             .filter(edge => edge.to === ability.id)
             .map(edge => sourceAbilities.find(candidate => candidate.id === edge.from)?.name ?? edge.from),
