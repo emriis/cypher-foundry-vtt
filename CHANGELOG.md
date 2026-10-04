@@ -29,7 +29,7 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 - Completed the general architecture audit by extracting Item use/attack/depletion operations,
   defense orchestration, and centralized armor exclusivity; the Item sheet now resolves standalone
   Type/Focus ability UUIDs before rendering content.
-- Updated project documentation to reflect the current six-pack compendium layout,
+- Completed Phase 6 by separating migration orchestration from actor schema and legacy Type/Focus content transformations, while preserving the existing public migration entry point and version semantics.\n- Updated project documentation to reflect the current six-pack compendium layout,
   live E2E harness, and current CI/release workflow.
 - Improved Type compendium sheets with the description first and localized displays for Type benefits and abilities.
 - Improved Focus and Descriptor compendium sheets with the description first and structured displays of their abilities, prerequisites, choices, and grants.
