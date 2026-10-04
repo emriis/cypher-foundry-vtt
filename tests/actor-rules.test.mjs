@@ -679,11 +679,30 @@ test("selectFocusAbility stores and embeds the selected pending Focus ability", 
 });
 
 
+
+
 test("rollDefense maps Block and Dodge to the correct stat and armor modifier", async () => {
+  globalThis.game = { i18n: { localize: value => value, format: value => value } };
+  globalThis.ChatMessage = { getSpeaker: () => ({}), create: async () => {} };
+  globalThis.Roll = class {
+    constructor() { this.total = 10; }
+    async evaluate() { return this; }
+    async toMessage() {}
+  };
   const actor = {
     type: "pc",
-    system: { armor: { blockEase: 1, dodgeHinder: 2 } },
-    rollTask: async options => options
+    system: {
+      armor: { blockEase: 1, dodgeHinder: 2 },
+      stats: {
+        might: { pool: { value: 10, max: 10 }, edge: 0 },
+        speed: { pool: { value: 10, max: 10 }, edge: 0 },
+        intellect: { pool: { value: 10, max: 10 }, edge: 0 }
+      },
+      effort: 1,
+      hinderSteps: 0
+    },
+    items: new Map(),
+    async update() {}
   };
 
   const block = await CypherActor.prototype.rollDefense.call(actor, "block", {
@@ -702,6 +721,12 @@ test("rollDefense maps Block and Dodge to the correct stat and armor modifier", 
   assert.equal(dodge.armorModifier, -2);
   assert.equal(dodge.defenseType, "dodge");
 });
+
+test("_shieldAbsorbWound cascades a full minor shield wound into moderate", async () => {
+  let update;
+  const shield = {
+    name: "Shield",
+    system: {
 
 test("_shieldAbsorbWound cascades a full minor shield wound into moderate", async () => {
   let update;
