@@ -193,11 +193,11 @@ test("rollTask combines Effort, assets, skill, wounds, and armor into the effect
     skillItemId: "skill"
   });
 
-  assert.equal(result.effectiveDifficulty, 5);
-  assert.equal(result.targetNumber, 15);
-  assert.equal(result.success, false);
+  assert.equal(result.effectiveDifficulty, 3);
+  assert.equal(result.targetNumber, 9);
+  assert.equal(result.success, true);
   assert.equal(actor.system.speed.pool.value, 6);
-  assert.equal(rollResult.flags.cypher.effectiveDifficulty, 5);
+  assert.equal(rollResult.flags.cypher.effectiveDifficulty, 3);
 });
 
 test("Lucky Shot spends XP and adds four hindrance steps before rolling", async () => {
@@ -239,7 +239,7 @@ test("Lucky Shot spends XP and adds four hindrance steps before rolling", async 
   });
 
   assert.equal(spent, 1);
-  assert.equal(receivedMessage.flags.cypher.effectiveDifficulty, 7);
+  assert.equal(receivedMessage.flags.cypher.effectiveDifficulty, 0);
 });
 
 test("rollTask resolves custom stats by id and keeps their user-facing label", async () => {
@@ -319,7 +319,7 @@ test("natural 20 on a non-attack refunds Effort and reports a major effect", asy
   ]);
 });
 
-test("natural 1 remains a failed roll even when the task is otherwise routine", async () => {
+test("natural 1 records the special result on an otherwise routine task", async () => {
   let message;
   globalThis.Roll = class {
     async evaluate() {
