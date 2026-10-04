@@ -9,6 +9,8 @@ as a rules or schema change.
 
 ## 1. Current architecture
 
+The system is organized around explicit architectural layers. Dependencies flow downward: higher layers may depend on lower layers, but lower layers must never depend on higher Foundry/UI layers.
+
 The system currently has these main layers:
 
 | Area | Current responsibility |
@@ -18,7 +20,7 @@ The system currently has these main layers:
 | `module/sheets/` | Actor/Item presentation, dialogs, and UI event handling |
 | `module/abilities.mjs` | Small pure Ability presentation helper |
 | `module/config.mjs` | Cypher constants and rule configuration |
-| `module/import.mjs` | Character Builder import mapping and import UI |
+| `module/import.mjs` | Character Builder import UI and compatibility facade |
 | `module/migration.mjs` | Compatibility facade for world migration orchestration |
 | `module/migrations/` | Migration orchestration and isolated schema/content transformations |
 | `scripts/` | Pack compilation, source migration, packaging, and E2E orchestration |
@@ -40,8 +42,7 @@ delegate to focused application services or pure rules. The remaining public
 methods are intentionally retained for sheets, macros, and backwards
 compatibility.
 
-This makes the Actor document both a Foundry persistence boundary and a
-substantial gameplay rules/service layer.
+The Actor document is therefore intentionally not the primary home of reusable application logic. Its remaining methods are compatibility facades or operations that are genuinely document-owned.
 
 The intended direction is to keep the Actor document as an orchestration
 boundary while moving pure rules and reusable application logic into focused
@@ -391,7 +392,7 @@ remain incremental and should not force every call through an application
 service when a compatibility facade or pure helper is already the clearest
 boundary.
 
-## 8. Domain organization
+## 9. Domain organization
 
 Production code should be organized by architectural responsibility and domain,
 not by the historical order in which features were added.
@@ -423,7 +424,7 @@ New domains such as equipment, cyphers, creatures/NPC abilities, powers,
 custom Descriptors, custom Types, and custom Foci should follow the same
 boundary instead of adding another collection of feature-specific helpers.
 
-## 9. Content source and pack compilation contract
+## 10. Content source and pack compilation contract
 
 Repository content follows one direction:
 
@@ -442,7 +443,7 @@ Pack tooling should keep this distinction explicit. Source migrations transform
 authoring data before compilation; the compiler writes generated artifacts into
 the pack directory. A generated artifact must be reproducible from source.
 
-## 10. Reference-resolution contract
+## 11. Reference-resolution contract
 
 All persisted document references use the following convention:
 
@@ -463,7 +464,7 @@ Content/application code must not duplicate `fromUuid()` calls. The resolver
 also accepts an already-resolved Document, which makes custom content and tests
 easier to support without weakening type validation.
 
-## 11. Phase 8 — dependency-boundary enforcement
+## 12. Phase 8 — dependency-boundary enforcement
 
 Phase 8 is complete. The objective was to turn the architectural direction into
 executable repository contracts and then fix concrete boundary violations

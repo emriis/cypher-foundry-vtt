@@ -48,6 +48,14 @@ Run the architecture-boundary contract when changing module dependencies:
 node --test tests/integration/architecture-boundaries.test.mjs
 ```
 
+For a complete static dependency audit, run:
+
+```powershell
+npm run audit:architecture
+```
+
+The audit checks static and dynamic local imports against the architectural layer contract. It also checks development scripts for accidental dependencies on Foundry Documents or Sheets. Treat a failed audit as an architectural defect: do not broaden an allow-list merely to make the check pass.
+
 This test checks allowed layer imports, root compatibility-facade boundaries,
 rule independence from Foundry globals, and development-script independence
 from Documents and Sheets. Do not weaken the contract to accommodate a new
@@ -130,3 +138,9 @@ The release workflow follows the Foundry history-friendly release model:
 The stable `manifest` URL in `system.json` must continue to use GitHub's
 `releases/latest/download/system.json`, while `download` must remain pinned
 to the exact release version.
+
+## 5. Architecture maintenance
+
+Keep new code at the lowest layer that can own its responsibility. Pure deterministic mechanics belong in `module/rules/`; Foundry-aware use cases belong in `module/applications/`; persistence boundaries belong in `module/documents/`; presentation and user interaction belong in `module/sheets/`; bootstrap code belongs in `cypher.mjs` and thin adapters. Preserve compatibility facades when they protect existing sheet, macro, or API callers.
+
+When a change crosses layers, update the corresponding architecture-boundary tests and run `npm run audit:architecture` before opening the pull request. The final architecture reference is maintained in `docs/architecture.md`.
