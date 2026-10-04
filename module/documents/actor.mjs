@@ -31,6 +31,12 @@ import {
   computeEffortCost
 } from "../rules/tasks.mjs";
 import {
+  applyDescriptor,
+  applyFocus,
+  applyType,
+  selectFocusAbility
+} from "../applications/content-service.mjs";
+import {
   getEligibleFocusAbilities,
   isFocusAbilityEligible
 } from "../rules/focus.mjs";
@@ -388,388 +394,52 @@ export default class CypherActor extends Actor {
   }
 
   /* -------------------------------------------- */
-  /*  Types                                         */
+  /*  Content application                         */
   /* -------------------------------------------- */
 
   /**
-   * Applies the mechanical benefits of a Type dropped from a compendium.
-   * The source Type is not embedded on the actor; its applied id is stored so
-   * dropping it again cannot grant the benefits twice.
+   * Apply a Type through the content application service.
+   *
+   * @param {object} typeItem Type Item.
+   * @param {object} [options={}] Player choices.
+   * @returns {Promise<boolean>} Whether the Type was applied.
    */
-  async applyType(typeItem, { stat = null, skillName = null } = {}) {
-    if (this.type !== "pc" || typeItem?.type !== "type") return false;
-    if (this.getFlag("cypher", "appliedTypeId")) {
-      ui.notifications.warn(game.i18n.localize("CYPHER.Type.AlreadyApplied"));
-      return false;
-    }
-
-    const system = typeItem.system;
-    const poolBonuses = system.poolBonuses ?? {};
-    const woundBonuses = system.woundBonuses ?? {};
-    const chosenStat = stat && CYPHER.stats.includes(stat) ? stat : "might";
-    const updates = {
-      "system.type": typeItem.name,
-      "system.genre": { Fantasy: "fantasy", "Science Fiction": "sciFi", Superheroes: "superhero" }[system.genre] ?? this.system.genre,
-      "flags.cypher.appliedTypeId": typeItem.id ?? typeItem._id
-    };
-
-    for (const statName of CYPHER.stats) {
-      const amount = Number(poolBonuses[statName]) || 0;
-      if (!amount) continue;
-      updates[`system.stats.${statName}.pool.max`] = this.system.stats[statName].pool.max + amount;
-      updates[`system.stats.${statName}.pool.value`] = this.system.stats[statName].pool.value + amount;
-    }
-    if (system.edgeChoice) {
-      updates[`system.stats.${chosenStat}.edge`] = this.system.stats[chosenStat].edge + Number(system.edgeChoice);
-    }
-    for (const severity of CYPHER.woundSeverities) {
-      const amount = Number(woundBonuses[severity]) || 0;
-      if (amount) updates[`system.wounds.${severity}.max`] = this.system.wounds[severity].max + amount;
-    }
-    if (Array.isArray(system.freeWeaponCategories) && system.freeWeaponCategories.length) {
-      updates["system.freeWeaponCategories"] = [...new Set([
-        ...(this.system.freeWeaponCategories ?? []),
-        ...system.freeWeaponCategories
-      ])];
-    } else if (system.freeWeapons) {
-      updates["system.canFreelyUseAllWeapons"] = true;
-    }
-    if (Array.isArray(system.freeArmorCategories) && system.freeArmorCategories.length) {
-      updates["system.freeArmorCategories"] = [...new Set([
-        ...(this.system.freeArmorCategories ?? []),
-        ...system.freeArmorCategories
-      ])];
-    } else if (system.freeArmor) {
-      updates["system.canFreelyUseAllArmor"] = true;
-    }
-    if (Array.isArray(system.freeWeaponFamilies) && system.freeWeaponFamilies.length) {
-      updates["system.freeWeaponFamilies"] = [...new Set([
-        ...(this.system.freeWeaponFamilies ?? []),
-        ...system.freeWeaponFamilies
-      ])];
-    }
-
-    await this.update(updates);
-
-    const finalSkillName = skillName?.trim() || (system.skillOptions ?? []).find(value => value?.trim());
-    let skillNote = "";
-    if (finalSkillName) {
-      const existing = this.items.find(item => item.type === "skill" && item.name.toLowerCase() === finalSkillName.toLowerCase());
-      if (existing) {
-        const order = ["inability", "practiced", "trained", "specialized", "expert"];
-        const index = Math.max(0, order.indexOf(existing.system.level));
-        const newLevel = order[Math.min(order.length - 1, index + 1)];
-        await existing.update({ "system.level": newLevel });
-        skillNote = game.i18n.format("CYPHER.Type.SkillUpgraded", { name: existing.name, level: game.i18n.localize(`CYPHER.SkillLevel.${newLevel}`) });
-      } else {
-        await this.createEmbeddedDocuments("Item", [{
-          name: finalSkillName,
-          type: "skill",
-          system: { level: "trained", description: game.i18n.format("CYPHER.Type.GrantedFrom", { name: typeItem.name }) }
-        }]);
-        skillNote = game.i18n.format("CYPHER.Type.SkillGranted", { name: finalSkillName });
-      }
-    }
-
-    const abilities = (system.abilities ?? []).map(ability => ({
-      name: ability.name,
-      type: "ability",
-      system: {
-        source: typeItem.name,
-        tier: Number(ability.tier) || 1,
-        enabler: Boolean(ability.enabler),
-        cost: ability.cost ?? { stat: "none", amount: 0, options: [] },
-        action: "none",
-        effects: ability.effects ?? [],
-        rollTables: ability.rollTables ?? [],
-        description: ability.description ?? ""
-      }
-    }));
-    if (abilities.length) await this.createEmbeddedDocuments("Item", abilities);
-
-    await ChatMessage.create({
-      speaker: ChatMessage.getSpeaker({ actor: this }),
-      content: `<div class="cypher-roll-card"><h3>${game.i18n.format("CYPHER.Type.Applied", { name: typeItem.name })}</h3><p>${skillNote}</p></div>`
-    });
-    return true;
+  async applyType(typeItem, options = {}) {
+    return applyType(this, typeItem, options);
   }
 
-  /* -------------------------------------------- */
-  /*  Focuses                                      */
-  /* -------------------------------------------- */
-
   /**
-   * Applies a Focus and its two required tier-1 abilities to a PC.
+   * Apply a Focus through the content application service.
    *
-   * @param {Item} focusItem Focus compendium item.
-   * @param {string[]} abilityIds Two initial tier-1 Focus ability ids.
+   * @param {object} focusItem Focus Item.
+   * @param {string[]} abilityIds Selected tier-1 ability ids.
+   * @param {object} [weaponSkillCategories={}] Weapon skill choices.
    * @returns {Promise<boolean>} Whether the Focus was applied.
    */
   async applyFocus(focusItem, abilityIds, weaponSkillCategories = {}) {
-    if (this.type !== "pc" || focusItem?.type !== "focus") return false;
-    if (this.getFlag("cypher", "appliedFocusId")) return false;
-
-    const selected = [...new Set(abilityIds ?? [])];
-    if (selected.length !== 2 || !selected.every(id => CypherActor.isFocusAbilityEligible(focusItem.system, [], id, 1))) {
-      return false;
-    }
-
-    const selectedAbilities = focusItem.system.abilities.filter(ability => selected.includes(ability.id));
-    if (selectedAbilities.some(ability =>
-      ability.chooseWeaponAttackCategory
-      && !CYPHER.attackSkillCategories.includes(weaponSkillCategories[ability.id])
-    )) return false;
-    const freeWeaponCategories = selectedAbilities.flatMap(ability => ability.freeWeaponCategories ?? []);
-    const freeArmorCategories = selectedAbilities.flatMap(ability => ability.freeArmorCategories ?? []);
-    const freeWeaponFamilies = selectedAbilities.flatMap(ability => ability.freeWeaponFamilies ?? []);
-    const freeWeaponSkillCategories = [
-      ...selectedAbilities.flatMap(ability => ability.freeWeaponSkillCategories ?? []),
-      ...Object.values(weaponSkillCategories)
-    ];
-    await this.update({
-      "system.focus": focusItem.name,
-      "system.freeWeaponCategories": [...new Set([
-        ...(this.system.freeWeaponCategories ?? CYPHER.coreFreeWeaponCategories),
-        ...freeWeaponCategories
-      ])],
-      "system.freeArmorCategories": [...new Set([
-        ...(this.system.freeArmorCategories ?? CYPHER.coreFreeArmorCategories),
-        ...freeArmorCategories
-      ])],
-      "system.freeWeaponFamilies": [...new Set([
-        ...(this.system.freeWeaponFamilies ?? []),
-        ...freeWeaponFamilies
-      ])],
-      "system.freeWeaponSkillCategories": [...new Set([
-        ...(this.system.freeWeaponSkillCategories ?? []),
-        ...freeWeaponSkillCategories
-      ])],
-      "flags.cypher.appliedFocusId": focusItem.id ?? focusItem._id,
-      "flags.cypher.appliedFocusGraph": focusItem.system,
-      "flags.cypher.focusAbilityIds": selected
-    });
-    const selectedItems = selectedAbilities.map(ability => CypherActor._focusAbilityItemData(focusItem, ability));
-    const armorItems = selectedAbilities
-      .filter(ability => ability.grantedArmorItemCategory)
-      .map(ability => CypherActor._focusArmorItemData(focusItem, ability));
-    await this.createEmbeddedDocuments("Item", [...selectedItems, ...armorItems]);
-    return true;
+    return applyFocus(this, focusItem, abilityIds, weaponSkillCategories);
   }
 
   /**
-   * Selects one additional Focus ability after a character reaches a new tier.
+   * Select an additional Focus ability through the content service.
    *
-   * @param {string} abilityId Focus ability id to select.
+   * @param {string} abilityId Focus ability id.
+   * @param {string|null} [weaponSkillCategory=null] Weapon skill choice.
    * @returns {Promise<boolean>} Whether the ability was selected.
    */
   async selectFocusAbility(abilityId, weaponSkillCategory = null) {
-    if (this.type !== "pc") return false;
-    const focus = this.getFlag("cypher", "appliedFocusGraph");
-    const selected = this.getFlag("cypher", "focusAbilityIds") ?? [];
-    if (!CypherActor.isFocusAbilityEligible(focus, selected, abilityId, this.system.tier)) return false;
-
-    const ability = focus.abilities.find(candidate => candidate.id === abilityId);
-    if (ability.chooseWeaponAttackCategory && !CYPHER.attackSkillCategories.includes(weaponSkillCategory)) return false;
-    const updates = {
-      "flags.cypher.focusAbilityIds": [...selected, abilityId],
-      "flags.cypher.focusAbilityPendingTier": null
-    };
-    const freeWeaponCategories = ability.freeWeaponCategories ?? [];
-    const freeArmorCategories = ability.freeArmorCategories ?? [];
-    const freeWeaponFamilies = ability.freeWeaponFamilies ?? [];
-    const freeWeaponSkillCategories = [
-      ...(ability.freeWeaponSkillCategories ?? []),
-      ...(weaponSkillCategory ? [weaponSkillCategory] : [])
-    ];
-    if (freeWeaponCategories.length) {
-      updates["system.freeWeaponCategories"] = [...new Set([
-        ...(this.system.freeWeaponCategories ?? CYPHER.coreFreeWeaponCategories),
-        ...freeWeaponCategories
-      ])];
-    }
-    if (freeArmorCategories.length) {
-      updates["system.freeArmorCategories"] = [...new Set([
-        ...(this.system.freeArmorCategories ?? CYPHER.coreFreeArmorCategories),
-        ...freeArmorCategories
-      ])];
-    }
-    if (freeWeaponFamilies.length) {
-      updates["system.freeWeaponFamilies"] = [...new Set([
-        ...(this.system.freeWeaponFamilies ?? []),
-        ...freeWeaponFamilies
-      ])];
-    }
-    if (freeWeaponSkillCategories.length) {
-      updates["system.freeWeaponSkillCategories"] = [...new Set([
-        ...(this.system.freeWeaponSkillCategories ?? []),
-        ...freeWeaponSkillCategories
-      ])];
-    }
-    await this.update({
-      ...updates
-    });
-    const items = [CypherActor._focusAbilityItemData({ name: this.system.focus }, ability)];
-    if (ability.grantedArmorItemCategory) items.push(CypherActor._focusArmorItemData({ name: this.system.focus }, ability));
-    await this.createEmbeddedDocuments("Item", items);
-    return true;
+    return selectFocusAbility(this, abilityId, weaponSkillCategory);
   }
 
   /**
-   * Creates the embedded Item data for one selected Focus ability.
+   * Apply a Descriptor through the content application service.
    *
-   * @param {Item|object} focus Focus item or focus-like source.
-   * @param {object} ability Focus ability graph node.
-   * @returns {object} Embedded ability item data.
+   * @param {object} descriptorItem Descriptor Item.
+   * @param {object} [options={}] Player choices.
+   * @returns {Promise<boolean>} Whether the Descriptor was applied.
    */
-  static _focusAbilityItemData(focus, ability) {
-    return {
-      name: ability.name,
-      type: "ability",
-      system: {
-        source: focus.name,
-        focusAbilityId: ability.id,
-        tier: ability.tier,
-        enabler: ability.enabler,
-        cost: ability.cost,
-        action: "none",
-        effects: ability.effects ?? [],
-        rollTables: ability.rollTables ?? [],
-        description: ability.description
-      }
-    };
-  }
-
-  /**
-   * Creates the individual armor item granted by a Focus ability.
-   *
-   * This keeps a Focus-created suit's free use attached to that item instead
-   * of granting the same permission for every armor item of its category.
-   */
-  static _focusArmorItemData(focus, ability) {
-    return {
-      name: ability.name,
-      type: "armor",
-      system: {
-        category: ability.grantedArmorItemCategory,
-        freelyUsable: true,
-        equipped: false,
-        blockEaseDamage: 0,
-        description: game.i18n.format("CYPHER.FocusSelection.ArmorItemDescription", { name: focus.name })
-      }
-    };
-  }
-
-  /* -------------------------------------------- */
-  /*  Descriptors                                    */
-  /* -------------------------------------------- */
-
-  /**
-   * Applies a CRD Descriptor to the character: increases the chosen Pool by the given amount
-   * and creates (or advances) a trained Skill. Unlike a normal item, the Descriptor itself is
-   * never embedded on the actor — only its effect is, mirroring how a Type or Focus work in
-   * the CRD (see also system.descriptor, already shown in the header's character sentence).
-   *
-  * @param {Item} descriptorItem The Descriptor item (compendium or world) to apply
-   * @param {object} [options]
-  * @param {string} [options.stat] Chosen stat among statOptions (ignored if only one choice)
-  * @param {string} [options.skillName] Chosen skill name (from skillOptions, or freely typed)
-   */
-  async applyDescriptor(descriptorItem, { stat = null, skillName = null } = {}) {
-    if (this.type !== "pc" || descriptorItem?.type !== "descriptor") return false;
-
-    const isSpecies = descriptorItem.system.category === "species";
-    const descriptorId = descriptorItem.id ?? descriptorItem._id;
-    if (isSpecies) {
-      const genres = descriptorItem.system.genres ?? [];
-      if (!genres.includes(this.system.genre)) {
-        ui.notifications.warn(game.i18n.localize("CYPHER.Descriptor.SpeciesWrongGenre"));
-        return false;
-      }
-      if (this.getFlag("cypher", "appliedSpeciesId")) {
-        ui.notifications.warn(game.i18n.localize("CYPHER.Descriptor.SpeciesAlreadyApplied"));
-        return false;
-      }
-    } else if (this.getFlag("cypher", "appliedDescriptorId")) {
-      if (!this.system.hasSecondDescriptor || this.getFlag("cypher", "appliedSecondDescriptorId")) {
-        ui.notifications.warn(game.i18n.localize("CYPHER.Descriptor.AlreadyApplied"));
-        return false;
-      }
-    }
-
-    const statOptions = descriptorItem.system.statOptions ?? [];
-    const chosenStat = stat && statOptions.includes(stat) ? stat : statOptions[0];
-    const finalSkillName = skillName?.trim();
-    const amount = descriptorItem.system.statAmount ?? 2;
-    const applyingSecondDescriptor = !isSpecies && Boolean(this.getFlag("cypher", "appliedDescriptorId"));
-    const updates = isSpecies
-      ? {
-          "system.species": descriptorItem.name,
-          "system.hasSecondDescriptor": Boolean(descriptorItem.system.grantsSecondDescriptor),
-          "flags.cypher.appliedSpeciesId": descriptorId
-        }
-      : applyingSecondDescriptor
-        ? { "system.descriptor2": descriptorItem.name, "flags.cypher.appliedSecondDescriptorId": descriptorId }
-        : { "system.descriptor": descriptorItem.name, "flags.cypher.appliedDescriptorId": descriptorId };
-
-    if (chosenStat && amount > 0) {
-      updates[`system.stats.${chosenStat}.pool.max`] = this.system.stats[chosenStat].pool.max + amount;
-      updates[`system.stats.${chosenStat}.pool.value`] = this.system.stats[chosenStat].pool.value + amount;
-    }
-    await this.update(updates);
-
-    // Advance an existing skill of the same name, or create a new trained skill, using the
-    // same progression logic as purchaseAdvancementSlot's "skill" advancement.
-    const order = ["inability", "practiced", "trained", "specialized", "expert"];
-    const grantedSkills = (descriptorItem.system.grantedSkills ?? []).map(name => name.trim()).filter(Boolean);
-    const skillNames = [...new Set([finalSkillName, ...grantedSkills].filter(Boolean))];
-    const chatNotes = [];
-
-    for (const grantedSkillName of skillNames) {
-      const existing = this.items.find(item => item.type === "skill" && item.name.toLowerCase() === grantedSkillName.toLowerCase());
-      if (existing) {
-        const newLevel = existing.system.level === "inability"
-          ? "trained"
-          : order[Math.min(order.length - 1, order.indexOf(existing.system.level) + 1)];
-        await existing.update({ "system.level": newLevel });
-        chatNotes.push(game.i18n.format("CYPHER.Descriptor.SkillUpgraded", { name: existing.name, level: game.i18n.localize(`CYPHER.SkillLevel.${newLevel}`) }));
-      } else {
-        const [created] = await this.createEmbeddedDocuments("Item", [{
-          name: grantedSkillName,
-          type: "skill",
-          system: {
-            level: "trained",
-            description: game.i18n.format("CYPHER.Descriptor.GrantedFrom", { name: descriptorItem.name })
-          }
-        }]);
-        chatNotes.push(game.i18n.format("CYPHER.Descriptor.SkillGranted", { name: created.name }));
-      }
-    }
-
-    const benefits = descriptorItem.system.benefits ?? [];
-    if (benefits.length) {
-      await this.createEmbeddedDocuments("Item", benefits.map(benefit => ({
-        name: benefit.name,
-        type: "ability",
-        system: {
-          source: descriptorItem.name,
-          tier: 1,
-          enabler: true,
-          cost: { stat: "none", amount: 0, options: [] },
-          action: "none",
-          description: benefit.description
-        }
-      })));
-    }
-
-    await ChatMessage.create({
-      speaker: ChatMessage.getSpeaker({ actor: this }),
-      content: `<div class="cypher-roll-card">
-        <h3>${game.i18n.format(isSpecies ? "CYPHER.Descriptor.SpeciesApplied" : "CYPHER.Descriptor.Applied", { name: descriptorItem.name })}</h3>
-        ${chosenStat && amount > 0 ? `<p>${game.i18n.format("CYPHER.Descriptor.StatNote", { amount, stat: game.i18n.localize(`CYPHER.Stat.${chosenStat}`) })}</p>` : ""}
-        ${chatNotes.map(note => `<p>${note}</p>`).join("")}
-      </div>`
-    });
-    return true;
+  async applyDescriptor(descriptorItem, options = {}) {
+    return applyDescriptor(this, descriptorItem, options);
   }
 
   /** @override */
