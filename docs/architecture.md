@@ -383,17 +383,12 @@ the taxonomy does not require a separate test command for each directory.
 
 ## 7. Immediate next step
 
-Phase 4 verification is complete. Focused application-service tests cover the
-reference boundary, Actor compatibility tests cover the migrated operations, and
-the Unit Tests workflow passes on the final Phase 4 commit.
-
-The general architecture audit identified three additional cleanup points that
-were addressed during Phase 5: Item gameplay methods were moved behind an Item
-application service, defense orchestration was removed from Actor, and the
-Item sheet was updated to resolve standalone Type/Focus ability UUIDs before
-rendering them. The remaining large modules are now dominated by presentation,
-Foundry lifecycle, migration, or intentionally cross-cutting application logic.
-The next architectural phase is migration decomposition.
+Phase 8 is the current architecture-enforcement pass. The priority is to turn
+identified dependency rules into executable repository contracts, then refactor
+only concrete violations or mixed-responsibility hotspots. The pass should
+remain incremental and should not force every call through an application
+service when a compatibility facade or pure helper is already the clearest
+boundary.
 
 ## 8. Domain organization
 
@@ -466,3 +461,36 @@ use resolved document
 Content/application code must not duplicate `fromUuid()` calls. The resolver
 also accepts an already-resolved Document, which makes custom content and tests
 easier to support without weakening type validation.
+
+## 11. Phase 8 — dependency-boundary enforcement
+
+Phase 8 is in progress. The first pass addresses two concrete architectural
+issues rather than introducing abstractions for their own sake:
+
+1. Character Builder import orchestration and mapping have moved from the mixed
+   `module/import.mjs` entry point into `applications/import-service.mjs`.
+   `module/import.mjs` now acts as a UI/compatibility adapter for dialogs,
+   sidebar hooks, and the historical macro API.
+2. `tests/integration/architecture-boundaries.test.mjs` now verifies the
+   production import direction and ensures rule modules remain independent of
+   Foundry runtime globals.
+
+The enforced direction is:
+
+```text
+Foundry bootstrap / UI adapters
+          |
+          v
+Documents / Sheets / application entry points
+          |
+          v
+Application services
+          |
+          v
+Rules and pure configuration
+```
+
+The contract deliberately allows a document to call a pure rule directly when
+that is the smallest compatibility facade. It does not require an application
+service to exist merely to forward a deterministic calculation. The important
+constraint is that lower layers never depend on higher Foundry/UI layers.
