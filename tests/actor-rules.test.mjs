@@ -338,10 +338,17 @@ test("applyType applies pool, Edge, wound, and equipment benefits once", async (
       freeArmor: true,
       skillOptions: [],
       abilities: [{
+        type: "ability",
+        id: "frenzy-id",
+        uuid: "Actor.actor-id.Item.frenzy-id",
         name: "Frenzy",
         tier: 1,
         enabler: false,
         cost: { stat: "intellect", amount: 1 },
+        action: null,
+        repeatable: false,
+        effects: [],
+        rollTables: [],
         description: "Enter a state of frenzy."
       }]
     }
@@ -362,7 +369,8 @@ test("applyType applies pool, Edge, wound, and equipment benefits once", async (
     tier: 1,
     enabler: false,
     cost: { stat: "intellect", amount: 1 },
-    action: "none",
+    action: null,
+    repeatable: false,
     effects: [],
     rollTables: [],
     description: "Enter a state of frenzy."
@@ -504,9 +512,9 @@ test("applyFocus records two tier-1 selections and creates their ability items",
     name: "Abides in Stone",
     system: {
       abilities: [
-        { id: "intimidating-presence", name: "Intimidating Presence", tier: 1, prerequisites: [], repeatable: false, enabler: true, cost: { stat: "none", amount: 0 }, description: "" },
-        { id: "stone-body", name: "Stone Body", tier: 1, prerequisites: [], repeatable: false, enabler: true, cost: { stat: "none", amount: 0 }, description: "" },
-        { id: "stone-bash", name: "Stone Bash", tier: 2, prerequisites: ["intimidating-presence", "stone-body"], repeatable: false, enabler: true, cost: { stat: "none", amount: 0 }, description: "" }
+        { type: "ability", id: "intimidating-presence", uuid: "Compendium.test.abilities.Item.intimidating-presence", name: "Intimidating Presence", tier: 1, prerequisites: [], repeatable: false, enabler: true, cost: { stat: "none", amount: 0 }, description: "" },
+        { type: "ability", id: "stone-body", uuid: "Compendium.test.abilities.Item.stone-body", name: "Stone Body", tier: 1, prerequisites: [], repeatable: false, enabler: true, cost: { stat: "none", amount: 0 }, description: "" },
+        { type: "ability", id: "stone-bash", uuid: "Compendium.test.abilities.Item.stone-bash", name: "Stone Bash", tier: 2, prerequisites: ["intimidating-presence", "stone-body"], repeatable: false, enabler: true, cost: { stat: "none", amount: 0 }, description: "" }
       ]
     }
   };
@@ -547,9 +555,9 @@ test("applyFocus applies only the selected abilities' free-use grants", async ()
     name: "Test Focus",
     system: {
       abilities: [
-        { id: "chosen", name: "Chosen", tier: 1, prerequisites: [], repeatable: false, freeWeaponCategories: ["medium"], freeArmorCategories: ["light"], freeWeaponFamilies: ["firearms"], chooseWeaponAttackCategory: true, grantedArmorItemCategory: "light" },
-        { id: "also-chosen", name: "Also Chosen", tier: 1, prerequisites: [], repeatable: false, freeWeaponCategories: [], freeArmorCategories: [], freeWeaponFamilies: [] },
-        { id: "not-chosen", name: "Not Chosen", tier: 1, prerequisites: [], repeatable: false, freeWeaponCategories: ["heavy"], freeArmorCategories: ["heavy"], freeWeaponFamilies: ["swords"] }
+        { type: "ability", id: "chosen", uuid: "Compendium.test.abilities.Item.chosen", name: "Chosen", tier: 1, prerequisites: [], repeatable: false, freeWeaponCategories: ["medium"], freeArmorCategories: ["light"], freeWeaponFamilies: ["firearms"], chooseWeaponAttackCategory: true, grantedArmorItemCategory: "light" },
+        { type: "ability", id: "also-chosen", uuid: "Compendium.test.abilities.Item.also-chosen", name: "Also Chosen", tier: 1, prerequisites: [], repeatable: false, freeWeaponCategories: [], freeArmorCategories: [], freeWeaponFamilies: [] },
+        { type: "ability", id: "not-chosen", uuid: "Compendium.test.abilities.Item.not-chosen", name: "Not Chosen", tier: 1, prerequisites: [], repeatable: false, freeWeaponCategories: ["heavy"], freeArmorCategories: ["heavy"], freeWeaponFamilies: ["swords"] }
       ]
     }
   };
@@ -571,8 +579,8 @@ test("advancing a tier records a pending Focus selection when an ability becomes
       cypher: {
         appliedFocusGraph: {
           abilities: [
-            { id: "stone-body", tier: 1, prerequisites: [], repeatable: false },
-            { id: "golem-grip", tier: 2, prerequisites: ["stone-body"], repeatable: false }
+            { type: "ability", uuid: "Compendium.test.abilities.Item.stone-body", id: "stone-body", tier: 1, prerequisites: [], repeatable: false },
+            { type: "ability", uuid: "Compendium.test.abilities.Item.golem-grip", id: "golem-grip", tier: 2, prerequisites: ["stone-body"], repeatable: false }
           ]
         },
         focusAbilityIds: ["stone-body"]
@@ -591,6 +599,23 @@ test("advancing a tier records a pending Focus selection when an ability becomes
 });
 
 test("selectFocusAbility stores and embeds the selected pending Focus ability", async () => {
+  globalThis.fromUuid = async uuid => ({
+    type: "ability",
+    id: uuid.split(".").at(-1),
+    name: uuid.split(".").at(-1),
+    system: {
+      tier: 2,
+      enabler: false,
+      repeatable: false,
+      cost: { stat: "might", amount: 3, options: [] },
+      action: null,
+      effects: [],
+      rollTables: [],
+      description: ""
+    },
+    uuid
+  });
+
   const actor = {
     type: "pc",
     system: { tier: 2, focus: "Abides in Stone" },
