@@ -94,6 +94,7 @@ async function collectEnglishRegistry() {
       if (document._key?.startsWith("!folders!")) continue;
 
       for (const ability of document.system?.abilities ?? []) {
+        if (!ability || typeof ability !== "object") continue;
         const id = identity(ability);
         const entryKey = `${id.key}:${id.signature}`;
         if (!registry.has(entryKey)) registry.set(entryKey, { ...id, ability });
@@ -142,6 +143,7 @@ async function migrateLanguage(language, english) {
 
   for (const { document } of documents) {
     for (const ability of document.system?.abilities ?? []) {
+      if (!ability || typeof ability !== "object") continue;
       const resolved = language === "fr"
         ? resolveFrenchEntry(ability, english)
         : {
