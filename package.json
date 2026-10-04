@@ -6,7 +6,8 @@
     "test": "node --test",
     "test:e2e": "node scripts/run-foundry-e2e.mjs",
     "build:packs": "node scripts/build-packs.mjs",
-    "package": "npm run build:packs && pwsh -File scripts/package.ps1"
+    "migrate:abilities": "node scripts/normalize-ability-sources.mjs",
+    "package": "npm run migrate:abilities && npm run build:packs && pwsh -File scripts/package.ps1"
   },
   "dependencies": {
     "@foundryvtt/foundryvtt-cli": "^3.0.4"
