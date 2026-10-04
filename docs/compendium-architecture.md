@@ -182,7 +182,74 @@ Add player/GM landing Journals, cross-links, folders, icons, search-friendly nam
 
 Each phase should remain independently testable and compilable.
 
-## 9. Authoring rules
+## 9. Fidelity and translation policy
+
+The CRD conversion is a transcription and localization project, not a rewriting
+project.
+
+For every CRD-derived record:
+
+- English rules text must remain faithful to the supplied 2026-07-29 CRD.
+- No rule, example, exception, value, prerequisite, duration, range, cost,
+  damage value, table result, or mechanical qualifier may be invented,
+  simplified, modernized, or paraphrased.
+- Structural conversion into Foundry fields is allowed only when it preserves
+  the source meaning exactly.
+- Formatting may change to fit Foundry presentation; the underlying wording and
+  mechanical content must not change.
+- Apparent source ambiguity or editorial errors must not be silently corrected.
+  Preserve the source and flag the issue for review.
+- Automation that cannot establish a reliable source-to-record mapping must
+  stop rather than guess.
+
+### French localization
+
+The French packs are faithful translations of the CRD-derived English/source
+content.
+
+Translation is a separate localization layer. It must not introduce a rules
+interpretation absent from the source.
+
+For every translated record:
+
+- Preserve all mechanical meaning exactly.
+- Preserve numbers, units, ranges, durations, costs, tiers, levels,
+  prerequisites, table probabilities, and conditions exactly.
+- Preserve the distinction between rules text, examples, explanations, and
+  descriptive text.
+- Do not translate by summarization.
+- Keep a stable logical source key so English and French records can be compared.
+- Flag uncertain translations for review instead of guessing.
+
+### Source provenance
+
+Each generated content family must be traceable back to its CRD section. The
+conversion process should retain enough provenance to answer:
+
+1. Which CRD section produced this record?
+2. Which source passage or table produced each mechanical field?
+3. Which English record is the source of the French translation?
+4. Which transformations were structural only?
+
+Provenance may live in source metadata and build-time manifests; it must not
+pollute user-facing rules text.
+
+### Automated fidelity checks
+
+Tests should reject:
+
+- missing source keys;
+- duplicate logical keys;
+- English/French relationship mismatches;
+- changed numeric or mechanical fields between language variants;
+- Type or Focus references to non-existent Ability records;
+- compiled packs missing from authored source packs;
+- content records without required provenance.
+
+Representative source-to-record fixtures should cover high-risk content such as
+tables, abilities, equipment statistics, and rules containing exceptions.
+
+## 10. Authoring rules
 
 - English and French records use the same logical identifiers.
 - Mechanical fields remain language-independent where possible.
