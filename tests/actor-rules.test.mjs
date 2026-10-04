@@ -699,7 +699,12 @@ test("rollDefense maps Block and Dodge to the correct stat and armor modifier", 
         intellect: { pool: { value: 10, max: 10 }, edge: 0 }
       },
       effort: 1,
-      hinderSteps: 0
+      hinderSteps: 0,
+      wounds: {
+        minor: { current: 0, max: 3 },
+        moderate: { current: 0, max: 3 },
+        major: { current: 0, max: 3 }
+      }
     },
     items: new Map(),
     async update() {}
