@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-const { applyType, applyFocus } = await import(
+const { applyType, applyFocus, getInitialFocusAbilityChoices } = await import(
   "../../module/applications/content-service.mjs"
 );
 
@@ -188,4 +188,37 @@ test("selectFocusAbility does not mutate actor state when its source cannot be r
   );
 
   assert.equal(await selectFocusAbility(actor, "second"), false);
+});
+
+test("getInitialFocusAbilityChoices resolves standalone tier-one abilities", async () => {
+  globalThis.fromUuid = async uuid => ({
+    type: "ability",
+    id: uuid.endsWith("first") ? "first" : "second",
+    uuid,
+    name: uuid.endsWith("first") ? "First Ability" : "Second Ability",
+    system: {
+      tier: uuid.endsWith("first") ? 1 : 2,
+      key: uuid,
+      enabler: false,
+      repeatable: false,
+      cost: { stat: "none", amount: 0, options: [] },
+      action: null
+    }
+  });
+
+  const choices = await getInitialFocusAbilityChoices({
+    type: "focus",
+    system: {
+      abilities: [
+        "Compendium.test.abilities.Item.first",
+        "Compendium.test.abilities.Item.second"
+      ],
+      flowchart: {
+        edges: [{ from: "first", to: "second" }]
+      }
+    }
+  });
+
+  assert.deepEqual(choices.map(ability => ability.id), ["first"]);
+  assert.equal(choices[0].name, "First Ability");
 });
