@@ -11,6 +11,13 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ### Changed
 
+- Continued the Phase 3 architecture refactor: task, recovery, advancement, XP, reroll,
+  Player Intrusion, damage, wound, shield, armor, and custom-character operations now live in
+  focused Foundry-aware application services, while Actor methods remain compatibility facades.
+- Added beginner-oriented JSDoc and implementation comments to the new application boundaries,
+  and added focused application-service tests alongside the existing Actor compatibility tests.
+- Updated the architecture and development documentation to describe the application-service
+  boundary and the next Phase 4 Type/Focus/Descriptor reference-resolution work.
 - Updated project documentation to reflect the current six-pack compendium layout,
   live E2E harness, and current CI/release workflow.
 - Improved Type compendium sheets with the description first and localized displays for Type benefits and abilities.
