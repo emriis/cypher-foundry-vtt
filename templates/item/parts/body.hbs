@@ -363,7 +363,8 @@
     <select name="system.action">
       <option value="none" {{#ifEquals system.action "none"}}selected{{/ifEquals}}>{{localize 'CYPHER.Ability.ActionNone'}}</option>
       <option value="action" {{#ifEquals system.action "action"}}selected{{/ifEquals}}>{{localize 'CYPHER.Ability.ActionStandard'}}</option>
-      <option value="movement" {{#ifEquals system.action "movement"}}selected{{/ifEquals}}>{{localize 'CYPHER.Ability.ActionMovement'}}</option>
+      <option value="firstAction" {{#ifEquals system.action "firstAction"}}selected{{/ifEquals}}>{{localize 'CYPHER.Ability.ActionFirst'}}</option>
+      <option value="lastAction" {{#ifEquals system.action "lastAction"}}selected{{/ifEquals}}>{{localize 'CYPHER.Ability.ActionLast'}}</option>
     </select>
   </div>
   {{/ifEquals}}
