@@ -222,84 +222,65 @@ export const CRD_CYPHER_FIXTURE = item(
 );
 
 
-export const CRD_ARTIFACT_FIXTURE = item(
-  CRD_FIXTURE_IDS.angelicWard,
-  "Angelic Ward",
-  "artifact",
-  "artifact",
-  "artifact.angelic-ward",
-  {
-    level: "1d6+2",
-    form: "Tiny figurine of a winged angel",
-    identified: true,
-    depletionDie: "d10",
-    depletionThreshold: 1,
-    depleted: false,
-    description: ""
-  },
-  "Fantasy Genre — Major Fantasy Artifacts — Angelic Ward"
-);
 
 export const CRD_ARMOR_FIXTURE = item(
-  CRD_FIXTURE_IDS.mediumArmor,
-  "Medium Armor",
+  "0123456789abc013",
+  "Leather jacket",
   "armor",
   "armor",
-  "armor.medium",
+  "armor.leather-jacket",
   {
-    category: "medium",
+    category: "light",
     freelyUsable: false,
     equipped: false,
     blockEaseDamage: 0,
-    priceCategory: "veryExpensive",
+    priceCategory: "moderate",
     description: ""
   },
-  "Fantasy Genre — Equipment — Medium Armor"
+  "Real-World Equipment — Moderately Priced Items — Leather jacket"
 );
 
 export const CRD_SKILL_FIXTURE = item(
-  CRD_FIXTURE_IDS.skillWithAttacks,
-  "Skill With Attacks",
+  "0123456789abc014",
+  "Attacking",
   "skill",
   "skill",
-  "skill.skill-with-attacks",
+  "skill.attacking",
   {
     stat: "none",
     level: "trained",
-    attackCategory: "heavyRanged",
-    minimumTier: 3,
-    description:
-      "Choose one attack category in which you are not already trained."
+    attackCategory: "",
+    minimumTier: 2,
+    description: ""
   },
-  "Character Creation — Third-Tier Skills and Knowledge Abilities — Skill With Attacks"
+  "Real-World Skills — Attacking (tier restricted)"
 );
 
 export const CRD_CREATURE_FIXTURE = {
-  _id: CRD_FIXTURE_IDS.blackDog,
-  _key: "!actors!" + CRD_FIXTURE_IDS.blackDog,
+  _id: "0123456789abc015",
+  _key: "!actors!0123456789abc015",
   document: "Actor",
   type: "npc",
-  name: "Black Dog",
+  name: "Giant spider",
   crdType: "creature",
   system: {
-    level: 6,
-    health: { max: 20, value: 20 },
-    armor: 2,
-    damage: "8",
-    movement: "long; very long when running",
-    modifications: "Sneaking, hiding, and attacking from surprise or advantage as level 7",
-    combat: "Spectral teeth and claws inflict 8 points of damage.",
-    interaction:
-      "Helpful black dogs are unpredictable companions; malevolent ones are best avoided.",
-    use: "A black dog can guide lost characters or appear during a dangerous encounter.",
-    loot: "Black dogs rarely have anything valuable.",
+    level: 3,
+    health: { max: 12, value: 12 },
+    armor: 0,
+    damage: "3 + 1 Speed damage from poison",
+    movement: "long on webs",
+    modifications: "Perception as level 5; Speed defense as level 4",
+    combat: "Bite inflicts 3 damage plus 1 Speed damage from poison.",
+    interaction: "",
+    use: "",
+    loot: "",
     gmNotes: ""
   },
   flags: {
     cypherFoundry: {
       crd: provenance(
-        "creature.black-dog",
-        "Fantasy Genre — Creatures — Black Dog"
+        "creature.giant-spider",
+        "Fantasy Genre — Casts Spells — Summon Giant Spider"
       )
     }
   }
@@ -307,14 +288,14 @@ export const CRD_CREATURE_FIXTURE = {
 
 export const CRD_TIERED_ABILITY_FIXTURE = item(
   "0123456789abc016",
-  "Howls at the Moon — Tiered Effects",
+  "Always Tinkering",
   "ability",
   "ability",
-  "ability.howls-at-the-moon-tiered-effects",
+  "ability.always-tinkering",
   {
     tier: 1,
-    key: "howls-at-the-moon-tiered-effects",
-    enabler: true,
+    key: "always-tinkering",
+    enabler: false,
     repeatable: false,
     cost: {
       stat: "none",
@@ -332,26 +313,23 @@ export const CRD_TIERED_ABILITY_FIXTURE = item(
     effects: [
       {
         id: "tier-3",
-        name: "Bigger Beast Form",
+        name: "Tier 3 effect",
         tier: 3,
-        description:
-          "The beast form becomes larger and gains additional physical benefits.",
+        description: "Allows a medium-power manifest cypher.",
         effort: ""
       },
       {
         id: "tier-6",
-        name: "Perfect Control",
+        name: "Tier 6 effect",
         tier: 6,
-        description:
-          "The character can change between beast and normal form without a roll.",
+        description: "Allows an advanced-power manifest cypher.",
         effort: ""
       }
     ],
     rollTables: [],
-    description:
-      "Representative tier progression for the Howls at the Moon focus."
+    description: "Build a single-use technological device."
   },
-  "Fantasy Genre — Howls at the Moon — Tier 3 and Tier 6"
+  "Science Fiction Genre — Tech Abilities — Always Tinkering"
 );
 
 export const CRD_FIXTURES = Object.freeze([
