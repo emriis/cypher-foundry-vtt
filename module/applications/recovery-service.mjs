@@ -28,7 +28,7 @@ export async function rollRecovery(actor, interval = "hour") {
     }
 
     await roll.toMessage({
-      speaker: ChatMessage.getSpeaker({ actor: this }),
+      speaker: ChatMessage.getSpeaker({ actor: actor }),
       flavor: `<h3>${game.i18n.localize("CYPHER.Roll.Recovery")}</h3>
                 <p>${game.i18n.localize(`CYPHER.Recovery.${interval}`)}</p>
                 ${woundNote ? `<p>${woundNote}</p>` : ""}`
