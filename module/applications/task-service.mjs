@@ -42,7 +42,7 @@ export async function rollDefense(
     actor.system.armor
   );
 
-  return rollTask(actor, {
+  const result = await rollTask(actor, {
     stat,
     difficulty,
     effortLevels,
