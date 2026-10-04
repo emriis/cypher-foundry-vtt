@@ -15,6 +15,7 @@ import * as models from "./module/data-models/_module.mjs";
 import * as sheets from "./module/sheets/_module.mjs";
 import { migrateWorld } from "./module/migration.mjs";
 import { importFromBuilder, openImportDialog, registerImportButton } from "./module/import.mjs";
+import { enforceSingleEquippedArmor } from "./module/applications/equipment-service.mjs";
 
 Hooks.once("init", () => {
   console.log("Cypher | Initialisation / Initializing");
@@ -145,10 +146,7 @@ Hooks.on("updateItem", async (item, changes, options, userId) => {
   if (changes.system?.equipped !== true) return;
   if (userId !== game.user.id) return;
 
-  const others = item.actor.items.filter(i => i.type === "armor" && i.id !== item.id && i.system.equipped);
-  if (others.length) {
-    await item.actor.updateEmbeddedDocuments("Item", others.map(i => ({ _id: i.id, "system.equipped": false })));
-  }
+  await enforceSingleEquippedArmor(item);
 });
 
 /**

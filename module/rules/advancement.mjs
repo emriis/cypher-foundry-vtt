@@ -14,6 +14,26 @@ export function advanceSkillLevel(level) {
   return order[Math.min(order.length - 1, index + 1)];
 }
 
+
+/**
+ * Validate player-selected options for an advancement slot.
+ *
+ * @param {object} slot Advancement slot.
+ * @param {object} extra User-selected advancement options.
+ * @returns {string|null} Validation error key, or null when valid.
+ */
+export function validateAdvancementChoices(slot, extra = {}) {
+  if (slot?.type === "capabilities") {
+    const distribution = extra.distribution ?? {};
+    const total = CYPHER.stats.reduce(
+      (sum, stat) => sum + (Number(distribution[stat]) || 0),
+      0
+    );
+    if (total !== 4) return "CYPHER.Warning.CapabilitiesMustSumFour";
+  }
+  return null;
+}
+
 /**
  * Compute the mechanical effects of an advancement slot.
  *

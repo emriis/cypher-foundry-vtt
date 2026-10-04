@@ -18,7 +18,7 @@ import {
   shieldAbsorbWound,
   syncWoundStatusEffects
 } from "../applications/damage-service.mjs";
-import { rollTask } from "../applications/task-service.mjs";
+import { rollDefense, rollTask } from "../applications/task-service.mjs";
 import {
   advanceTier,
   purchaseAdvancementSlot
@@ -138,40 +138,8 @@ export default class CypherActor extends Actor {
    * @param {object} [options={}] Defense roll options.
    * @returns {Promise<object|null>} Roll result or null when rejected.
    */
-  async rollDefense(
-    defenseType,
-    {
-      difficulty = 3,
-      effortLevels = 0,
-      assetSteps = 0,
-      incomingSeverity = "minor",
-      shieldItemId = null,
-      skillItemId = null
-    } = {}
-  ) {
-    if (this.type !== "pc") return null;
-
-    const { stat, armorModifier } = resolveDefense(
-      defenseType,
-      this.system.armor
-    );
-
-    return this.rollTask({
-      stat,
-      difficulty,
-      effortLevels,
-      assetSteps,
-      armorModifier,
-      skillItemId,
-      defenseType,
-      incomingSeverity,
-      shieldItemId,
-      flavor: game.i18n.localize(
-        defenseType === "block"
-          ? "CYPHER.Defense.Block"
-          : "CYPHER.Defense.Dodge"
-      )
-    });
+  async rollDefense(defenseType, options = {}) {
+    return rollDefense(this, defenseType, options);
   }
 
   /* -------------------------------------------- */
