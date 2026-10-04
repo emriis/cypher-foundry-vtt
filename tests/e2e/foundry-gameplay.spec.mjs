@@ -1,0 +1,362 @@
+import { test, expect } from "./foundry-session-fixture.mjs";
+
+const ACTOR_PREFIX = "E2E Cypher";
+
+async function createActor(page, overrides = {}) {
+  return page.evaluate(async ({ prefix, overrides }) => {
+    const actor = await Actor.create({
+      name: `${prefix} ${Date.now()} ${Math.random().toString(16).slice(2)}`,
+      type: "pc",
+      ...overrides
+    });
+    return actor.id;
+  }, { prefix: ACTOR_PREFIX, overrides });
+}
+
+async function readActor(page, actorId) {
+  return page.evaluate(id => {
+    const actor = game.actors.get(id);
+    if (!actor) throw new Error(`Actor ${id} no longer exists`);
+
+    return {
+      id: actor.id,
+      type: actor.type,
+      xp: actor.system.xp,
+      tier: actor.system.tier,
+      effort: actor.system.effort,
+      might: actor.system.stats.might.pool.value,
+      speed: actor.system.stats.speed.pool.value,
+      intellect: actor.system.stats.intellect.pool.value,
+      wounds: {
+        minor: actor.system.wounds.minor.current,
+        moderate: actor.system.wounds.moderate.current,
+        major: actor.system.wounds.major.current
+      },
+      recoveries: { ...actor.system.recoveries },
+      advancement: actor.system.advancementSlots.map(slot => ({
+        type: slot.type,
+        bought: slot.bought
+      }))
+    };
+  }, actorId);
+}
+
+async function cleanupActors(page) {
+  await page.evaluate(async prefix => {
+    const actors = game.actors.filter(actor => actor.name.startsWith(prefix));
+    for (const actor of actors) await actor.delete();
+  }, ACTOR_PREFIX);
+}
+
+async function closeActorSheet(page) {
+  await page.evaluate(() => {
+    for (const actor of game.actors) {
+      if (actor.sheet?.rendered) actor.sheet.close();
+    }
+  });
+}
+
+async function waitForChatMessage(page, actorId) {
+  await page.waitForFunction(id => {
+    return [...game.messages].some(message =>
+      message.speaker?.actor === id ||
+      message.getFlag?.("cypher", "actorId") === id
+    );
+  }, actorId);
+}
+
+async function clickRollDialog(page, values = {}) {
+  const form = page.locator("form").filter({
+    has: page.locator('input[name="difficulty"]')
+  }).last();
+
+  await expect(form).toBeVisible();
+  for (const [name, value] of Object.entries(values)) {
+    const field = form.locator(`[name="${name}"]`);
+    if (await field.count()) {
+      await field.fill(String(value));
+    }
+  }
+
+  await form.getByRole("button").last().click();
+}
+
+test.describe("Cypher Foundry live gameplay", () => {
+  test("executes a task roll from the real PC sheet and creates chat output", async ({
+    page
+  }) => {
+    const actorId = await createActor(page);
+
+    await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      await actor.update({
+        "system.stats.might.pool.value": 8,
+        "system.stats.might.pool.max": 8
+      });
+      await actor.sheet.render(true);
+    }, actorId);
+
+    const before = await readActor(page, actorId);
+    const messageCount = await page.evaluate(() => game.messages.size);
+
+    await page.locator(
+      '[data-action="rollStat"][data-stat="might"]'
+    ).first().click();
+
+    await clickRollDialog(page, {
+      difficulty: 1,
+      effort: 0,
+      assets: 0
+    });
+
+    await page.waitForFunction(
+      ({ count, actorId }) =>
+        game.messages.size > count &&
+        [...game.messages].some(message => message.speaker?.actor === actorId),
+      { count: messageCount, actorId }
+    );
+
+    const after = await readActor(page, actorId);
+    expect(after.might).toBe(before.might);
+  });
+
+  test("executes a guaranteed failed Block from the real PC sheet and applies the incoming wound", async ({
+    page
+  }) => {
+    const actorId = await createActor(page);
+
+    await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      await actor.update({
+        "system.wounds.moderate.current": 0,
+        "system.stats.might.pool.value": 8,
+        "system.stats.might.pool.max": 8
+      });
+      await actor.sheet.render(true);
+    }, actorId);
+
+    await page.locator(
+      '[data-action="rollDefense"][data-defense-type="block"]'
+    ).click();
+
+    const form = page.locator("form").filter({
+      has: page.locator('select[name="incomingSeverity"]')
+    }).last();
+
+    await expect(form).toBeVisible();
+    await form.locator('select[name="incomingSeverity"]').selectOption("moderate");
+    await form.locator('input[name="difficulty"]').fill("21");
+    await form.getByRole("button").last().click();
+
+    await page.waitForFunction(id => {
+      const actor = game.actors.get(id);
+      return actor?.system.wounds.moderate.current === 1;
+    }, actorId);
+
+    const actor = await readActor(page, actorId);
+    expect(actor.wounds.moderate).toBe(1);
+  });
+
+  test("uses a recovery from the real PC sheet and persists the recovery marker", async ({
+    page
+  }) => {
+    const actorId = await createActor(page);
+
+    await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      await actor.update({
+        "system.stats.might.pool.value": 0,
+        "system.wounds.moderate.current": 1,
+        "system.recoveries.hour": false
+      });
+      await actor.sheet.render(true);
+    }, actorId);
+
+    await page.locator(
+      '[data-action="rollRecovery"][data-interval="hour"]'
+    ).click();
+
+    await waitForChatMessage(page, actorId);
+
+    await page.waitForFunction(id => {
+      return game.actors.get(id)?.system.recoveries.hour === true;
+    }, actorId);
+
+    const actor = await readActor(page, actorId);
+    expect(actor.recoveries.hour).toBe(true);
+    expect(actor.wounds.moderate).toBe(0);
+  });
+
+  test("rallies a moderate wound from the real PC sheet and charges Might", async ({
+    page
+  }) => {
+    const actorId = await createActor(page);
+
+    await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      await actor.update({
+        "system.stats.might.pool.value": 6,
+        "system.wounds.moderate.current": 1
+      });
+      await actor.sheet.render(true);
+    }, actorId);
+
+    await page.locator(
+      '[data-action="rallyWound"][data-severity="moderate"]'
+    ).click();
+
+    await page.waitForFunction(id => {
+      const actor = game.actors.get(id);
+      return actor?.system.wounds.moderate.current === 0;
+    }, actorId);
+
+    const actor = await readActor(page, actorId);
+    expect(actor.might).toBe(1);
+    expect(actor.wounds.moderate).toBe(0);
+  });
+
+  test("purchases an Effort advancement through the real Actor document", async ({
+    page
+  }) => {
+    const actorId = await createActor(page);
+
+    const before = await readActor(page, actorId);
+    expect(before.advancement[0].bought).toBe(false);
+
+    const result = await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      await actor.update({
+        "system.xp": 4,
+        "system.effort": 1,
+        "system.advancementSlots.0.type": "effort"
+      });
+      await actor.purchaseAdvancementSlot(0);
+      return {
+        xp: actor.system.xp,
+        effort: actor.system.effort,
+        bought: actor.system.advancementSlots[0].bought
+      };
+    }, actorId);
+
+    expect(result.xp).toBe(0);
+    expect(result.effort).toBe(2);
+    expect(result.bought).toBe(true);
+  });
+
+  test("applies a player intrusion through the real Actor document and persists XP", async ({
+    page
+  }) => {
+    const actorId = await createActor(page);
+
+    const result = await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      await actor.update({ "system.xp": 2 });
+      await actor.usePlayerIntrusion("E2E intrusion");
+      return {
+        xp: actor.system.xp,
+        messageCount: game.messages.size
+      };
+    }, actorId);
+
+    expect(result.xp).toBe(1);
+    expect(result.messageCount).toBeGreaterThan(0);
+
+    await page.waitForFunction(id => {
+      return [...game.messages].some(message =>
+        message.speaker?.actor === id
+      );
+    }, actorId);
+  });
+
+  test("creates real armor, shield, and attack Items with their DataModels", async ({
+    page
+  }) => {
+    const result = await page.evaluate(async () => {
+      const actor = await Actor.create({
+        name: `${"E2E Cypher"} Item DataModels ${Date.now()}`,
+        type: "pc"
+      });
+
+      const [armor] = await actor.createEmbeddedDocuments("Item", [{
+        name: "E2E Armor",
+        type: "armor",
+        system: { category: "light", equipped: true }
+      }]);
+      const [shield] = await actor.createEmbeddedDocuments("Item", [{
+        name: "E2E Shield",
+        type: "shield",
+        system: { equipped: true }
+      }]);
+      const [attack] = await actor.createEmbeddedDocuments("Item", [{
+        name: "E2E Attack",
+        type: "attack",
+        system: { damage: 4, stat: "might", equipped: true }
+      }]);
+
+      const data = {
+        actorId: actor.id,
+        armor: {
+          type: armor.type,
+          equipped: armor.system.equipped,
+          category: armor.system.category
+        },
+        shield: {
+          type: shield.type,
+          equipped: shield.system.equipped,
+          minorMax: shield.system.wounds.minor.max,
+          moderateMax: shield.system.wounds.moderate.max
+        },
+        attack: {
+          type: attack.type,
+          damage: attack.system.damage,
+          stat: attack.system.stat
+        }
+      };
+
+      return data;
+    });
+
+    expect(result.armor).toEqual({
+      type: "armor",
+      equipped: true,
+      category: "light"
+    });
+    expect(result.shield).toMatchObject({
+      type: "shield",
+      equipped: true,
+      minorMax: 3,
+      moderateMax: 2
+    });
+    expect(result.attack).toMatchObject({
+      type: "attack",
+      damage: 4,
+      stat: "might"
+    });
+  });
+
+  test("persists actor state after the sheet is closed and reopened", async ({
+    page
+  }) => {
+    const actorId = await createActor(page);
+
+    await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      await actor.update({
+        "system.xp": 7,
+        "system.stats.might.pool.value": 4,
+        "system.wounds.minor.current": 1
+      });
+      await actor.sheet.render(true);
+    }, actorId);
+
+    await page.evaluate(id => game.actors.get(id).sheet.close(), actorId);
+    await page.waitForTimeout(250);
+
+    await page.evaluate(id => game.actors.get(id).sheet.render(true), actorId);
+
+    const actor = await readActor(page, actorId);
+    expect(actor.xp).toBe(7);
+    expect(actor.might).toBe(4);
+    expect(actor.wounds.minor).toBe(1);
+  });
+});

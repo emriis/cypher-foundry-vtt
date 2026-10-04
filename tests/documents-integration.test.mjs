@@ -204,3 +204,125 @@ test("useCypher depletes the item and creates a chat message", async () => {
   assert.deepEqual(update, { "system.depleted": true });
   assert.match(message.content, /Ghost Lens/);
 });
+
+test("rollDepletion marks depleted artifacts when the roll reaches the threshold", async () => {
+  let update;
+  let message;
+  const originalCreate = ChatMessage.create;
+  globalThis.Roll = class {
+    async evaluate() {
+      this.total = 1;
+      return this;
+    }
+    async toMessage(data) {
+      message = data;
+      return this;
+    }
+  };
+  ChatMessage.create = async data => { message = data; };
+
+  const item = {
+    type: "artifact",
+    id: "artifact-1",
+    name: "Ancient Lens",
+    actor: { id: "actor-1" },
+    system: { depletionDie: "d6", depletionThreshold: 2 },
+    update: async changes => { update = changes; }
+  };
+
+  try {
+    await CypherItem.prototype.rollDepletion.call(item);
+  } finally {
+    ChatMessage.create = originalCreate;
+  }
+
+  assert.deepEqual(update, { "system.depleted": true });
+  assert.equal(message.flags.cypher.rollType, "depletion");
+  assert.equal(message.flags.cypher.originalRoll, 1);
+});
+
+test("rollDepletion does not deplete when the roll is above the threshold", async () => {
+  let updateCalled = false;
+  let message;
+  const originalCreate = ChatMessage.create;
+  globalThis.Roll = class {
+    async evaluate() {
+      this.total = 6;
+      return this;
+    }
+    async toMessage(data) {
+      message = data;
+      return this;
+    }
+  };
+  ChatMessage.create = async data => { message = data; };
+
+  const item = {
+    type: "equipment",
+    id: "equipment-1",
+    name: "Tool",
+    actor: { id: "actor-1" },
+    system: { depletionDie: "d6", depletionThreshold: 2 },
+    update: async () => { updateCalled = true; }
+  };
+
+  try {
+    await CypherItem.prototype.rollDepletion.call(item);
+  } finally {
+    ChatMessage.create = originalCreate;
+  }
+
+  assert.equal(updateCalled, false);
+  assert.equal(message.flags.cypher.originalRoll, 6);
+});
+
+test("rollDefense integration applies a wound on a failed defense", async () => {
+  const actor = {
+    type: "pc",
+    system: {
+      effort: 1,
+      hinderSteps: 0,
+      armor: { blockEase: 0, dodgeHinder: 0 },
+      stats: {
+        might: { pool: { value: 8, max: 8 }, edge: 0 },
+        speed: { pool: { value: 8, max: 8 }, edge: 0 },
+        intellect: { pool: { value: 8, max: 8 }, edge: 0 }
+      },
+      wounds: {
+        minor: { current: 0, max: 3 },
+        moderate: { current: 0, max: 3 },
+        major: { current: 0, max: 3 }
+      },
+      customStats: []
+    },
+    items: new Map(),
+    updates: [],
+    _resolveStat: CypherActor.prototype._resolveStat,
+    _convertDamageToWound: CypherActor.prototype._convertDamageToWound,
+    addWound: CypherActor.prototype.addWound,
+    _syncWoundStatusEffects: async () => {},
+    update: async changes => {
+      actor.updates.push(changes);
+      applyUpdate(actor, changes);
+    },
+    toggleStatusEffect: async () => {}
+  };
+
+  globalThis.Roll = class {
+    async evaluate() {
+      this.total = 1;
+      return this;
+    }
+    async toMessage() { return this; }
+  };
+
+  actor.rollTask = CypherActor.prototype.rollTask;
+  actor._resolveStat = CypherActor.prototype._resolveStat;
+    const result = await CypherActor.prototype.rollDefense.call(actor, "dodge", {
+    difficulty: 3,
+    incomingSeverity: "moderate"
+  });
+
+  assert.equal(result.success, false);
+  assert.equal(actor.system.wounds.moderate.current, 1);
+});
