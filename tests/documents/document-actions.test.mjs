@@ -16,8 +16,8 @@ globalThis.ChatMessage = {
   create: async () => {}
 };
 
-const { default: CypherActor } = await import("../module/documents/actor.mjs");
-const { default: CypherItem } = await import("../module/documents/item.mjs");
+const { default: CypherActor } = await import("../../module/documents/actor.mjs");
+const { default: CypherItem } = await import("../../module/documents/item.mjs");
 
 function applyUpdate(target, updates) {
   for (const [path, value] of Object.entries(updates)) {

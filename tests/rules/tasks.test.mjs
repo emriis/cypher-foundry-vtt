@@ -7,7 +7,7 @@ import {
   computeEffortCost,
   computeTaskSteps,
   resolveTaskDifficulty
-} from "../module/rules/tasks.mjs";
+} from "../../module/rules/tasks.mjs";
 
 test("computeEffortCost charges the first level, additional levels, and Edge once", () => {
   assert.equal(computeEffortCost(0), 0);

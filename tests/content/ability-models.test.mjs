@@ -26,9 +26,9 @@ globalThis.foundry = {
 
 const [{ default: Ability }, { default: Type }, { default: Focus }] =
   await Promise.all([
-    import("../module/data-models/item-ability.mjs"),
-    import("../module/data-models/item-type.mjs"),
-    import("../module/data-models/item-focus.mjs")
+    import("../../module/data-models/item-ability.mjs"),
+    import("../../module/data-models/item-type.mjs"),
+    import("../../module/data-models/item-focus.mjs")
   ]);
 
 test("standalone ability action model exposes only supported categories", () => {

@@ -13,7 +13,7 @@ globalThis.ui = { notifications: { error() {}, warn() {} } };
 globalThis.ChatMessage = { getSpeaker: () => ({}) };
 globalThis.__rollMessages = [];
 
-const { default: CypherActor } = await import("../module/documents/actor.mjs");
+const { default: CypherActor } = await import("../../module/documents/actor.mjs");
 
 function createActor({ type = "pc", pool = 10, max = 10, edge = 0, effort = 6 } = {}) {
   const actor = {
