@@ -1,0 +1,40 @@
+{
+  "_id": "01osc73i01sg7dev",
+  "_key": "!items!01osc73i01sg7dev",
+  "name": "Dual Wield",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "dual-wield",
+    "variantKey": "01osc73i01sg7dev",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can use two light melee weapons at the same time or one light melee weapon and one medium melee weapon at the same time. You can make an attack with either one as your action, then attack with the other weapon as an extra action on your turn. Enabler. At tier 3: You can choose to use two medium melee weapons at the same time. When using Dual Wield to attack twice on your turn, you can't use a First action to attack with a light melee weapon and then attack again with your other weapon as an action; instead, your two actions take place in regular initiative order."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

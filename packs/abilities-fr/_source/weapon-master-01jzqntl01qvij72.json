@@ -1,0 +1,40 @@
+{
+  "_id": "01jzqntl01qvij72",
+  "_key": "!items!01jzqntl01qvij72",
+  "name": "Weapon Master",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "weapon-master",
+    "variantKey": "01jzqntl01qvij72",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": true,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You're proficient in using one kind of weapon (such as medium blades, light bashing, or heavy ranged) that would otherwise be unfamiliar to you. You can freely use this kind of weapon and suffer no penalty when using one. You inflict an additional 1 damage with this kind of weapon. You are trained in crafting your chosen kind of weapon. (Crafting training allows you to easily craft and repair weapons of that type using your resources.) You can gain this ability multiple times. Each time you do so, pick a new kind of weapon to master."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

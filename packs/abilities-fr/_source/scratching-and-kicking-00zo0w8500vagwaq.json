@@ -1,0 +1,40 @@
+{
+  "_id": "00zo0w8500vagwaq",
+  "_key": "!items!00zo0w8500vagwaq",
+  "name": "Scratching and Kicking",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "scratching-and-kicking",
+    "variantKey": "00zo0w8500vagwaq",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your melee attack deals an additional 1 damage due to it including some combination of scratching, kicking, and/or biting. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

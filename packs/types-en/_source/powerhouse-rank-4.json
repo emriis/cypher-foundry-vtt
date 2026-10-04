@@ -34,76 +34,11 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "always-mighty",
-        "name": "Always Mighty",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Every time you use a recovery, if your Might Pool isn't already full, you get 1 extra point to restore to your Might Pool. You can select this ability up to three times. One way you could choose Always Mighty again is if your focus is Performs Feats of Strength, which includes this ability as an option."
-      },
-      {
-        "id": "enhanced-energy",
-        "name": "Enhanced Energy",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "When you succeed on an important task using your powers as determined by your GM, you regain 4 points to your Intellect Pool. Each time you do, you regain 1 less point. This ability renews after you take a ten-hour recovery."
-      },
-      {
-        "id": "push-on-through",
-        "name": "Push on Through",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Instead of a ten-minute recovery, you have a second one-action recovery. Thus, your first two recoveries are one action, the third is one hour, and the fourth is ten hours. You can take one more moderate wound than normal. You can use one of your one-action recoveries to allow an ally to use one of their ten-minute recoveries as an action."
-      },
-      {
-        "id": "super-combatant",
-        "name": "Super Combatant",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you're already specialized in), but you must gain the skill normally."
-      },
-      {
-        "id": "superheroics",
-        "name": "Superheroics",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Choose one Pool: Might, Speed, or Intellect. For tasks using your chosen Pool, add your rank to the amount of Effort you can apply, allowing you to apply additional levels of Effort to tasks in that Pool. In addition, you can choose to push yourself so hard that you take a moderate wound in exchange for two free levels of Effort you can apply to tasks in your chosen Pool (as long as this doesn't push you past your Effort limit for that Pool). Finally, add your rank as a bonus to your recovery, with those points going only into the Pool you have chosen."
-      }
+      "Compendium.cypher.abilities-en.Item.00vuty5b010s78ok",
+      "Compendium.cypher.abilities-en.Item.00a74qc2013fxbgo",
+      "Compendium.cypher.abilities-en.Item.00yvzvbr01vxfk5d",
+      "Compendium.cypher.abilities-en.Item.001feepg00cxbotc",
+      "Compendium.cypher.abilities-en.Item.008xogon00lvnhon"
     ],
     "statOptions": [
       "might"

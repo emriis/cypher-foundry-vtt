@@ -1,0 +1,40 @@
+{
+  "_id": "00i2pwnv01ac6g5b",
+  "_key": "!items!00i2pwnv01ac6g5b",
+  "name": "Master of Disguise",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "master-of-disguise",
+    "variantKey": "00i2pwnv01ac6g5b",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": "lastAction",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You disguise yourself in well under half the time—one Last action—rather than the minute or more normally required when attempting a disguise task, and if the disguise comes under direct scrutiny or challenge, you gain an additional asset to your disguise tasks to maintain the deception. Last action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

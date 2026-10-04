@@ -1,0 +1,43 @@
+{
+  "_id": "01c083s40030065u",
+  "_key": "!items!01c083s40030065u",
+  "name": "That Was a Feint",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "that-was-a-feint",
+    "variantKey": "01c083s40030065u",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "choice",
+      "amount": 5,
+      "options": [
+        "might",
+        "speed"
+      ]
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You immediately retry a failed attack roll with your chosen weapon, except this time you have an asset on the task. If this retry fails, you can't use this ability to retry it again. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "01j2tl2x01334x97",
+  "_key": "!items!01j2tl2x01334x97",
+  "name": "Telepathic Message",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "telepathic-message",
+    "variantKey": "01j2tl2x01334x97",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can send a one-way telepathic message lasting about a minute. You must have at least seen the target before, and they must be on the same planet as you. The target recognizes the contact as a telepathic message and may recognize your mental “voice.” Effort: Increase the range to anywhere in the same star system. Increase the range to anywhere in the same galaxy (this requires three levels of Effort). Action to initiate."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "01bdryta01lkrqta",
+  "_key": "!items!01bdryta01lkrqta",
+  "name": "Mage Armor",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "mage-armor",
+    "variantKey": "01bdryta01lkrqta",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "An invisible field of energy surrounds you until you use a ten-hour recovery. This allows you to try blocking attacks with an eased Intellect defense roll instead of a Might defense roll; if you succeed, you reduce the severity of the wound by one step. Action. At tier 3: Your Intellect defense roll to block an attack is eased by two steps total."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

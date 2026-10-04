@@ -1,0 +1,40 @@
+{
+  "_id": "0082748200ti1ekp",
+  "_key": "!items!0082748200ti1ekp",
+  "name": "Structural Brace",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "structural-brace",
+    "variantKey": "0082748200ti1ekp",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You serve as a structural brace, additional pillar, or other support buttress for a structure in danger of collapsing. If you need to roll to prevent the structure from collapsing and your roll is 18 or less, treat the roll as an 18. (This means you don't get a GM intrusion if you roll a 1.) While serving as a brace, you cannot move from where you are and you automatically fail dodge tasks. You can take an extra action on your turn to end the effect early; otherwise it ends when you take a ten-hour recovery. Alternatively, you can simply hold up a mighty weight of up to 50 tons (45 tonnes) or use this ability to hold a door or gate shut (treating a roll of 18 or less as an 18, or higher with Effort). Effort: Increase the minimum number rolled for this ability by 3. Increase the weight you can hold by 10 tons (9 tonnes). Action to initiate."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

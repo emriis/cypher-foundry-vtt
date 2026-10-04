@@ -1,0 +1,40 @@
+{
+  "_id": "00hjz80u01iozjr1",
+  "_key": "!items!00hjz80u01iozjr1",
+  "name": "Conjure Supernatural Creature",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "conjure-supernatural-creature",
+    "variantKey": "00hjz80u01iozjr1",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 7,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "A supernatural creature from another dimension such as an angel, demon, or elemental manifests in a physical form within immediate range. The creature acts according to its nature, usually by attacking a nearby foe that is opposed to its own ethos (an angel would attack a demon or necromancer, a demon would attack an innocent or a holy priest, and an elemental would attack a creature of the opposing element). The creature remains until you use a ten-minute or longer recovery, then fades away (although a demon or elemental might remain for a while to cause trouble). Effort: Make the supernatural creature understand you and obey your verbal instructions. Action to initiate. Angel: level 5; health 15; physical, magical, or energy attack inflicts 6 damage; flies a short distance each round Demon: level 5; health 25; physical, magical, or energy attack inflicts 6 damage; flies a short distance each round Elemental: level 5; health 25; physical or energy attack inflicts 5 damage; amorphous form can pass through spaces as small as 1 foot (30 cm); air elemental flies a long distance each round; earth elemental has Armor 3; fire elemental has Armor 10 against fire; water elemental swims a long distance each round"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

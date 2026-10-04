@@ -1,0 +1,40 @@
+{
+  "_id": "01crc4ev01sunges",
+  "_key": "!items!01crc4ev01sunges",
+  "name": "Push",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "push",
+    "variantKey": "01crc4ev01sunges",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You telekinetically push a target within short range an immediate distance in any direction. You must be able to see the target, it must be your size or smaller, and it must not be affixed to anything. The push is quick, and the force is about as direct and crude as a kick or punch. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

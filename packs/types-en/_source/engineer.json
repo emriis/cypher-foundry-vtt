@@ -32,76 +32,11 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "connected-knowledge",
-        "name": "Connected Knowledge",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
-        },
-        "description": "You can connect to restricted data (via an implant, a handheld device, a robotic drone assistant, or the like) that isn't publicly accessible. Ask your GM a question and get a short but accurate answer if you succeed on an Intellect task. The difficulty is routine if it's something anyone could learn via their own method of access, level 3 if the sensitive or secret knowledge is primarily an engineering or scientific topic, and level 5 or higher if your GM decides the information is particularly sensitive or secret, whether scientific in nature or not. Last action."
-      },
-      {
-        "id": "expert-engineer",
-        "name": "Expert Engineer",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You are trained in engineering. At tier 6: You can become an expert in engineering if you are already specialized, but you must gain the skill normally (such as from a character advancement)."
-      },
-      {
-        "id": "modify-device",
-        "name": "Modify Device",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
-        },
-        "description": "You quickly jury-rig a piece of equipment or a power source in order to repair or upgrade it. This requires access to appropriate parts and tools."
-      },
-      {
-        "id": "repair",
-        "name": "Repair",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "If you succeed on an engineering task (difficulty equal to the device's level + 1), you temporarily repair a piece of broken equipment or an inactive power source to get a few more uses out of it. Fully repairing a device—as opposed to the jury-rigged repair of Modify Device—is often possible, but usually requires at least a few days, specialized tools and parts, and the application of resource points )."
-      },
-      {
-        "id": "upgrade",
-        "name": "Upgrade",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "If you succeed at a difficulty 3 engineering task, you make the device function about 25 percent above its rated specifications. When you take a ten-hour recovery, the device breaks, requiring a full repair (as opposed to another Modify Device task) to regain its original, unmodified function. For example, you could overclock a medium blaster so that it deals 1 additional damage, modify a food printer so that each cup of coffee made with it tastes better, modify a spacecraft's engine so that its acceleration is improved by 25 percent, and so on. Whether you repair or upgrade the device, it now has a depletion of 1–6 on a d20 (check each use). Ten minutes to complete. At tier 3: The modified device's depletion improves to 1–2 on a d20."
-      }
+      "Compendium.cypher.abilities-en.Item.00pp453e005f1mlq",
+      "Compendium.cypher.abilities-en.Item.014s367f01k5zo5f",
+      "Compendium.cypher.abilities-en.Item.012iiz9p000iqcow",
+      "Compendium.cypher.abilities-en.Item.01vubl0s012nxxgz",
+      "Compendium.cypher.abilities-en.Item.00x9kcpp01ro5sl9"
     ],
     "statOptions": [
       "intellect"

@@ -7,200 +7,71 @@
   "system": {
     "description": "<p>You're a master of deduction, using evidence to find the answer.</p>",
     "abilities": [
-      {
-        "id": "investigative-knack",
-        "name": "Investigative Knack",
-        "tier": 1,
-        "prerequisites": [
-          "sleuthing",
-          "sense-weakness"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+      "Compendium.cypher.abilities-en.Item.01q3igkw01w7vfv2",
+      "Compendium.cypher.abilities-en.Item.00opm4rd006e46ad",
+      "Compendium.cypher.abilities-en.Item.00bv8nw500q5tkcq",
+      "Compendium.cypher.abilities-en.Item.001v6u9100c8bdia",
+      "Compendium.cypher.abilities-en.Item.00alzsc30173kmio",
+      "Compendium.cypher.abilities-en.Item.01rsf30k01w4dp5n",
+      "Compendium.cypher.abilities-en.Item.01wwipp900c2rm8k",
+      "Compendium.cypher.abilities-en.Item.00irwpsf01fdcp8e",
+      "Compendium.cypher.abilities-en.Item.01gb6hal01c32gh4",
+      "Compendium.cypher.abilities-en.Item.00nrxz1u00dbwb5z",
+      "Compendium.cypher.abilities-en.Item.002tk1vb014ve3rt",
+      "Compendium.cypher.abilities-en.Item.00wnar9m00gralru"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00bv8nw500q5tkcq",
+          "to": "Compendium.cypher.abilities-en.Item.01q3igkw01w7vfv2"
         },
-        "description": "You have a keen eye for detail and can pick up subtle cues that indicate someone is lying or withholding information. When you study an area for clues or converse with (or interrogate) someone for information, if you roll a 9 or less on your perception, interaction, or recognizing motive task, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) This ability lasts until you use a ten-minute or longer recovery. Effort: Increase the minimum number rolled for this ability by 3. Action to initiate. At tier 3: The minimum number rolled for this ability increases to 12."
-      },
-      {
-        "id": "sense-weakness",
-        "name": "Sense Weakness",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00opm4rd006e46ad",
+          "to": "Compendium.cypher.abilities-en.Item.01q3igkw01w7vfv2"
         },
-        "description": "After observing a creature for one round, you know of any special weaknesses they may have and your attacks inflict an additional 1 damage against them. Action to initiate."
-      },
-      {
-        "id": "sleuthing",
-        "name": "Sleuthing",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01q3igkw01w7vfv2",
+          "to": "Compendium.cypher.abilities-en.Item.001v6u9100c8bdia"
         },
-        "description": "When you're tracking a target of interest, looking for anything out of the ordinary (such as a clue or a single piece of evidence) at the scene of interest, or otherwise attempting to learn something about a mystery, you can ask the GM one question about the task and get a very short helpful answer that might be obvious to the character, but not to the player who doesn't have their character's experience. Action."
-      },
-      {
-        "id": "master-of-disguise",
-        "name": "Master of Disguise",
-        "tier": 2,
-        "prerequisites": [
-          "investigative-knack"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01q3igkw01w7vfv2",
+          "to": "Compendium.cypher.abilities-en.Item.00alzsc30173kmio"
         },
-        "description": "You can create a disguise as a Last action instead of the minute or more typically required. When you roll on a disguise task and your roll is less than a 6, treat the roll as a 6. (This means you don't get a GM intrusion if you roll a 1.) This ability renews when you take a recovery. Effort: Increase the minimum number rolled for this ability by 3. Enabler. At tier 3: The minimum number rolled for this ability increases to 9."
-      },
-      {
-        "id": "out-of-harm-s-way",
-        "name": "Out of Harm's Way",
-        "tier": 2,
-        "prerequisites": [
-          "investigative-knack"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 2,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00alzsc30173kmio",
+          "to": "Compendium.cypher.abilities-en.Item.01rsf30k01w4dp5n"
         },
-        "description": "When you succeed on a dodge task, you can immediately move an immediate distance even though it's not your turn. Enabler."
-      },
-      {
-        "id": "combat-prowess",
-        "name": "Combat Prowess",
-        "tier": 3,
-        "prerequisites": [
-          "out-of-harm-s-way"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.001v6u9100c8bdia",
+          "to": "Compendium.cypher.abilities-en.Item.01wwipp900c2rm8k"
         },
-        "description": "You add +1 damage to one type of weapon attack of your choice: melee weapon attacks or ranged weapon attacks."
-      },
-      {
-        "id": "ditch-assumption",
-        "name": "Ditch Assumption",
-        "tier": 3,
-        "prerequisites": [
-          "master-of-disguise"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01rsf30k01w4dp5n",
+          "to": "Compendium.cypher.abilities-en.Item.00irwpsf01fdcp8e"
         },
-        "description": "After careful observation and investigation (questioning one or more NPCs on a topic, searching an area or a file, reassessing your prior beliefs, or similar activity), you gain clarity on a topic—the GM identifies one false assumption you have regarding your current investigation. For instance, if you have come to mistakenly believe a fact, the GM lets you know. Alternatively, if you have several possible suspects for a crime, the GM eliminates one. However, if you're not operating with false information or running down a red herring, and you don't have incorrect suspects to eliminate, you learn nothing. This ability renews after you take a ten-hour recovery. Ten minutes to initiate."
-      },
-      {
-        "id": "defend-and-respond",
-        "name": "Defend and Respond",
-        "tier": 4,
-        "prerequisites": [
-          "combat-prowess"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "choice",
-          "amount": 3,
-          "options": [
-            "might",
-            "speed"
-          ]
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01wwipp900c2rm8k",
+          "to": "Compendium.cypher.abilities-en.Item.01gb6hal01c32gh4"
         },
-        "description": "If you block or dodge a melee attack, you can immediately make a melee attack against your attacker. You can't use this ability more than once per turn. Enabler."
-      },
-      {
-        "id": "lead-by-inquiry",
-        "name": "Lead by Inquiry",
-        "tier": 4,
-        "prerequisites": [
-          "ditch-assumption"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00irwpsf01fdcp8e",
+          "to": "Compendium.cypher.abilities-en.Item.00nrxz1u00dbwb5z"
         },
-        "description": "When you and any number of allies spend a ten-hour recovery together (yours or theirs), the allies are treated as if trained in perception and recognizing motive. This benefit remains while you remain within a long distance of them. The benefit is suspended at greater distances, but resumes automatically if you get within range. The benefit ends if you use a ten-hour recovery while away from the allies. Enabler."
-      },
-      {
-        "id": "defuse-situation",
-        "name": "Defuse Situation",
-        "tier": 5,
-        "prerequisites": [
-          "defend-and-respond",
-          "lead-by-inquiry"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01gb6hal01c32gh4",
+          "to": "Compendium.cypher.abilities-en.Item.00nrxz1u00dbwb5z"
         },
-        "description": "During the course of an investigation, your questions sometimes elicit an angry or even violent response. Through dissembling, verbal distraction, or similar evasion, you prevent a living foe from attacking anyone or anything for one round if you succeed on a charm, deception, intimidation, or other interaction task. Action."
-      },
-      {
-        "id": "infer-thoughts",
-        "name": "Infer Thoughts",
-        "tier": 6,
-        "prerequisites": [
-          "defuse-situation"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00nrxz1u00dbwb5z",
+          "to": "Compendium.cypher.abilities-en.Item.002tk1vb014ve3rt"
         },
-        "description": "If you interact with or study a target of level 4 or less for at least a round, you gain so much insight into its surface thoughts that you're essentially reading its mind (no roll required), even if the subject doesn't want you to. You must be able to see the target. Once you have gained a sense of what it's thinking—through its body language, its speech, and what it does and doesn't say—you can continue to infer the target's surface thoughts until you use a ten-minute or longer recovery as long as you can still see and hear the target. Effort: Increase the maximum level of a target you can affect by 1. Action to prepare; action to initiate."
-      },
-      {
-        "id": "knowing-the-unknown",
-        "name": "Knowing the Unknown",
-        "tier": 6,
-        "prerequisites": [
-          "defuse-situation"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 6,
-          "options": []
-        },
-        "description": "By accessing the resources appropriate to your character, you can ask the GM one question and get a general answer. The GM assigns a level to the question, so the more obscure the answer, the more difficult the task. Generally, knowledge that you could find by looking somewhere  other than your current location is level 1, and obscure knowledge of the past is level 7. Gaining knowledge of the future is impossible. Action."
-      }
-    ]
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00nrxz1u00dbwb5z",
+          "to": "Compendium.cypher.abilities-en.Item.00wnar9m00gralru"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

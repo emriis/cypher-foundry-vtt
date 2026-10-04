@@ -32,62 +32,10 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "enhanced-energy",
-        "name": "Enhanced Energy",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "When you succeed on an important task using your powers as determined by your GM, you regain 4 points to your Intellect Pool. Each time you do, you regain 1 less point. This ability renews after you take a ten-hour recovery. Enabler."
-      },
-      {
-        "id": "power-prowess",
-        "name": "Power Prowess",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You inflict +1 damage with any attack you make involving your powers."
-      },
-      {
-        "id": "superheroics",
-        "name": "Superheroics",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Choose one Pool: Might, Speed, or Intellect. For tasks using your chosen Pool, add your rank to the amount of Effort you can apply, allowing you to apply additional levels of Effort to tasks in that Pool. In addition, you can choose to push yourself so hard that you take a moderate wound in exchange for two free levels of Effort you can apply to tasks in your chosen Pool (as long as this doesn't push you past your Effort limit for that Pool). Finally, add your rank as a bonus to your recovery, with those points going only into the Pool you have chosen."
-      },
-      {
-        "id": "wider-use",
-        "name": "Wider Use",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "When you pick your focus, in addition to choosing two tier 1 abilities, you also choose one tier 2 ability."
-      }
+      "Compendium.cypher.abilities-en.Item.0124hpu901ca6i46",
+      "Compendium.cypher.abilities-en.Item.00z8kmvq01y7j367",
+      "Compendium.cypher.abilities-en.Item.008xogon00lvnhon",
+      "Compendium.cypher.abilities-en.Item.00g388pu00ph9j39"
     ],
     "statOptions": [
       "might",

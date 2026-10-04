@@ -1,0 +1,40 @@
+{
+  "_id": "00veqq5f017ee6ch",
+  "_key": "!items!00veqq5f017ee6ch",
+  "name": "Smooth Operator",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "smooth-operator",
+    "variantKey": "00veqq5f017ee6ch",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You purchase an expensive item for the cost of a moderately priced item. You can only use this ability in a location where services and items are routinely bought and sold. Effort: Purchase a very expensive item for the cost of an expensive item (this requires two levels of Effort). Purchase an exorbitant item for the cost of a very expensive item (this requires four levels of Effort). This ability renews when you access a new market or when at least a month has elapsed at the same market where you last used this ability. Enabler. At tier 3: You can use this ability twice before it must be renewed by going somewhere else or letting enough time pass."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

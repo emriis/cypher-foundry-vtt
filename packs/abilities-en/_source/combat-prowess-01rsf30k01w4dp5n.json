@@ -1,0 +1,40 @@
+{
+  "_id": "01rsf30k01w4dp5n",
+  "_key": "!items!01rsf30k01w4dp5n",
+  "name": "Combat Prowess",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "combat-prowess",
+    "variantKey": "01rsf30k01w4dp5n",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You add +1 damage to one type of weapon attack of your choice: melee weapon attacks or ranged weapon attacks."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

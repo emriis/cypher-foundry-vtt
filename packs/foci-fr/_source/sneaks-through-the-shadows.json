@@ -7,214 +7,84 @@
   "system": {
     "description": "<p>You use shadows and darkness to make your way unseen, moving quickly and smoothly, and you never seem to be where danger is. Maybe you use these abilities to hunt treasures, or maybe just to steal.</p>",
     "abilities": [
-      {
-        "id": "always-speedy",
-        "name": "Toujours vif·ve",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+      "Compendium.cypher.abilities-fr.Item.00utnm4z00r3mi23",
+      "Compendium.cypher.abilities-fr.Item.00hpvp5c01rsck5j",
+      "Compendium.cypher.abilities-fr.Item.01ibnbk700bt2e5r",
+      "Compendium.cypher.abilities-fr.Item.0129ftpr014d4f5s",
+      "Compendium.cypher.abilities-fr.Item.004oq2ya01u6g0s2",
+      "Compendium.cypher.abilities-fr.Item.00j6se550091o5d2",
+      "Compendium.cypher.abilities-fr.Item.00setrwi00upd5lf",
+      "Compendium.cypher.abilities-fr.Item.00a6wtky01d77u1m",
+      "Compendium.cypher.abilities-fr.Item.01xebjh7012y3vay",
+      "Compendium.cypher.abilities-fr.Item.0117mpxo00vm4eox",
+      "Compendium.cypher.abilities-fr.Item.01ef79vj00lb8twd",
+      "Compendium.cypher.abilities-fr.Item.01ryziaj01pxlirp",
+      "Compendium.cypher.abilities-fr.Item.019pwjfd00cn30tw"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00utnm4z00r3mi23",
+          "to": "Compendium.cypher.abilities-fr.Item.0129ftpr014d4f5s"
         },
-        "description": "À chaque récupération, si ta Réserve de Célérité n’est pas déjà pleine, tu récupères 1 point supplémentaire dans cette Réserve. Tu peux sélectionner cette aptitude jusqu’à trois fois."
-      },
-      {
-        "id": "natural-sneak",
-        "name": "Furtivité naturelle",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00hpvp5c01rsck5j",
+          "to": "Compendium.cypher.abilities-fr.Item.0129ftpr014d4f5s"
         },
-        "description": "Lorsque tu fais un jet de crochetage, de perception, de pickpocket, ou de furtivité, et que ton résultat est inférieur à 6, considère que tu as obtenu 6. (Un 1 naturel n’entraîne donc pas d’intrusion du·de la MJ.) L’aptitude se renouvelle lorsque tu fais une récupération. Au rang 3, le minimum passe à 9. Effort : augmente le minimum obtenu de +3."
-      },
-      {
-        "id": "eyes-adjusted",
-        "name": "Yeux habitués",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00hpvp5c01rsck5j",
+          "to": "Compendium.cypher.abilities-fr.Item.004oq2ya01u6g0s2"
         },
-        "description": "Tu vois dans en très faible luminosité comme s’il s’agissait de pleine lumière. Tu vois dans l’obscurité totale comme s’il s’agissait d’une très faible lumière."
-      },
-      {
-        "id": "underworld-contacts",
-        "name": "Contacts de la pègre",
-        "tier": 2,
-        "prerequisites": [
-          "always-speedy",
-          "natural-sneak"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01ibnbk700bt2e5r",
+          "to": "Compendium.cypher.abilities-fr.Item.004oq2ya01u6g0s2"
         },
-        "description": "Tu connais de nombreuses personnes, dans divers milieux, impliquées dans des activités illégales. Ce ne sont pas nécessairement tes ami·e·s, ni des gens fiables, mais iels te reconnaissent comme un pair. Toi et ton·ta MJ devez définir les détails de ces contacts."
-      },
-      {
-        "id": "safe-fall",
-        "name": "Chute sans dommage",
-        "tier": 2,
-        "prerequisites": [
-          "natural-sneak",
-          "eyes-adjusted"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.0129ftpr014d4f5s",
+          "to": "Compendium.cypher.abilities-fr.Item.00j6se550091o5d2"
         },
-        "description": "Tu ignores une blessure provenant d’une chute."
-      },
-      {
-        "id": "retaliatory-swipe",
-        "name": "Représailles éclair",
-        "tier": 3,
-        "prerequisites": [
-          "underworld-contacts"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 3,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.004oq2ya01u6g0s2",
+          "to": "Compendium.cypher.abilities-fr.Item.00setrwi00upd5lf"
         },
-        "description": "Lorsqu’une attaque de mêlée te touche, tu peux immédiatement effectuer une attaque de mêlée contre l’assaillant·e. Tu ne peux utiliser cette aptitude qu’une fois par tour."
-      },
-      {
-        "id": "nine-lives",
-        "name": "Neuf vies",
-        "tier": 3,
-        "prerequisites": [
-          "safe-fall"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00j6se550091o5d2",
+          "to": "Compendium.cypher.abilities-fr.Item.00a6wtky01d77u1m"
         },
-        "description": "Tu peux consacrer de l’Effort de Puissance ou de Célérité sur des jets de blocage."
-      },
-      {
-        "id": "unbalancing-strike",
-        "name": "Coup déséquilibrant",
-        "tier": 4,
-        "prerequisites": [
-          "retaliatory-swipe",
-          "nine-lives"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 4,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00setrwi00upd5lf",
+          "to": "Compendium.cypher.abilities-fr.Item.00a6wtky01d77u1m"
         },
-        "description": "Make a melee attack to knock your foe off balance. This attack is eased by two steps. If you succeed, you inflict damage and all actions they attempt on their next turn are hindered. Action."
-      },
-      {
-        "id": "hard-won-resilience",
-        "name": "Résilience chèrement acquise",
-        "tier": 4,
-        "prerequisites": [
-          "nine-lives"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00setrwi00upd5lf",
+          "to": "Compendium.cypher.abilities-fr.Item.01xebjh7012y3vay"
         },
-        "description": "Due to your experiences, you've been exposed to all sorts of terrible things and are developing a general resistance. You can take one more moderate wound than normal."
-      },
-      {
-        "id": "dirty-fighter",
-        "name": "Coup de traîtrise",
-        "tier": 5,
-        "prerequisites": [
-          "unbalancing-strike"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 2,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00a6wtky01d77u1m",
+          "to": "Compendium.cypher.abilities-fr.Item.0117mpxo00vm4eox"
         },
-        "description": "Fais une attaque de Célérité contre un ennemi à longue portée que tu souhaites distraitre, aveugler, irriter ou gêner. En cas de réussite, tu entraves ses attaques et ses défenses jusqu’à ta prochaine récupération de dix minutes ou plus."
-      },
-      {
-        "id": "slippery-customer",
-        "name": "Insaisissable",
-        "tier": 5,
-        "prerequisites": [
-          "hard-won-resilience"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01xebjh7012y3vay",
+          "to": "Compendium.cypher.abilities-fr.Item.01ef79vj00lb8twd"
         },
-        "description": "Tu ignores tous les malus liés à la très faible lumière ou à l’obscurité. Tu ignores les malus dus à des espaces exigus. Tu gagnes un atout sur les tâches de furtivité en faible lumière, très faible lumière ou obscurité."
-      },
-      {
-        "id": "again-and-again",
-        "name": "Encore et encore",
-        "tier": 6,
-        "prerequisites": [
-          "dirty-fighter",
-          "slippery-customer"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 6,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.0117mpxo00vm4eox",
+          "to": "Compendium.cypher.abilities-fr.Item.01ryziaj01pxlirp"
         },
-        "description": "You can take an extra action on your turn. Enabler."
-      },
-      {
-        "id": "alley-rat",
-        "name": "Rat des ruelles",
-        "tier": 6,
-        "prerequisites": [
-          "dirty-fighter",
-          "slippery-customer"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 6,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01ef79vj00lb8twd",
+          "to": "Compendium.cypher.abilities-fr.Item.01ryziaj01pxlirp"
         },
-        "description": "En ville, tu peux tenter de trouver ou créer un raccourci, une entrée secrète, ou un passage d’évasion là où il semblait n’y avoir aucune issue. Pour réussir, tu dois effectuer une tâche d’Intellect dont la difficulté dépend de la situation (définie par le·la MJ). Le passage ainsi découvert doit te permettre d’avancer ou de t’éloigner d’au moins une courte distance."
-      }
-    ]
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.0117mpxo00vm4eox",
+          "to": "Compendium.cypher.abilities-fr.Item.019pwjfd00cn30tw"
+        },
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01ef79vj00lb8twd",
+          "to": "Compendium.cypher.abilities-fr.Item.019pwjfd00cn30tw"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

@@ -1,0 +1,40 @@
+{
+  "_id": "009jxmmn00596ugt",
+  "_key": "!items!009jxmmn00596ugt",
+  "name": "Incredible Running Speed",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "incredible-running-speed",
+    "variantKey": "009jxmmn00596ugt",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You move much farther than normal in a round. When using Fleet of Foot, all distances you move are doubled. If you run a long distance as your entire action, all your tasks are hindered by one step until the end of your next turn (instead of two steps). As a Last action, you can run up to 500 feet (150 m), but all your tasks are hindered by two steps until the end of your next turn. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

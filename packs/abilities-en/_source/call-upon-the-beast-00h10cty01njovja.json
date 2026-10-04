@@ -1,0 +1,40 @@
+{
+  "_id": "00h10cty01njovja",
+  "_key": "!items!00h10cty01njovja",
+  "name": "Call Upon the Beast",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "call-upon-the-beast",
+    "variantKey": "00h10cty01njovja",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "While not in beast form, you can call upon your beastly nature for a moment and give a menacing growl or have your eyes become more animal-like. If you do this, you gain a free level of Effort on an intimidation task. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "00wnar9m00gralru",
+  "_key": "!items!00wnar9m00gralru",
+  "name": "Knowing the Unknown",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "knowing-the-unknown",
+    "variantKey": "00wnar9m00gralru",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "By accessing the resources appropriate to your character, you can ask the GM one question and get a general answer. The GM assigns a level to the question, so the more obscure the answer, the more difficult the task. Generally, knowledge that you could find by looking somewhere  other than your current location is level 1, and obscure knowledge of the past is level 7. Gaining knowledge of the future is impossible. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "00kiv5ux01pcbvhn",
+  "_key": "!items!00kiv5ux01pcbvhn",
+  "name": "Minor Illusion",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "minor-illusion",
+    "variantKey": "00kiv5ux01pcbvhn",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You create a single image of a creature or object within immediate range. The image must fit within an immediate area. The image can move (for example, you could make the illusion of a person walk or attack), but it can't leave the area. The illusion includes sound but not smell. It lasts until you use a ten-minute or longer recovery, but if you want to change the original illusion significantly—such as making a creature appear to be wounded—you must use an action to concentrate on it again. If you move out of range, the illusion vanishes. Instead of a realistic illusion, you can create a confusing pattern of images around a creature within short range. As long as you use your action to change this pattern, you hinder the creature's attacks and defenses (no attack roll needed to affect them). Action to create; action to modify. You usually don't have to make a roll against a casual observer to get them to believe your illusion is real, but you probably do if they're doubtful or searching for unusual details. An observer who recognizes something as an illusion can ignore it, but it can still distract them and interfere with what they can see."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

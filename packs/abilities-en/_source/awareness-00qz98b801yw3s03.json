@@ -1,0 +1,40 @@
+{
+  "_id": "00qz98b801yw3s03",
+  "_key": "!items!00qz98b801yw3s03",
+  "name": "Awareness",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "awareness",
+    "variantKey": "00qz98b801yw3s03",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You become hyperaware of your surroundings until you use a ten-minute or longer recovery. You are aware of all living things within long range (including their general position). By using an action to concentrate, you can choose one of them and attempt to learn their general health and power level. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

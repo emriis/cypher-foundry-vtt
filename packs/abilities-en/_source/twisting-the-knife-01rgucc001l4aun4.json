@@ -1,0 +1,40 @@
+{
+  "_id": "01rgucc001l4aun4",
+  "_key": "!items!01rgucc001l4aun4",
+  "name": "Twisting the Knife",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "twisting-the-knife",
+    "variantKey": "01rgucc001l4aun4",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 4,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If you've hit a foe with a melee weapon in this combat, you automatically hit them again with that same weapon (no roll required), dealing normal damage. You can't use this ability with a special attack or if you want to use Effort to increase damage, but abilities that automatically affect your damage do apply to this attack. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "_id": "0081qs3f01po3ynj",
+  "_key": "!items!0081qs3f01po3ynj",
+  "name": "Weave an Iron Wall",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "weave-an-iron-wall",
+    "variantKey": "0081qs3f01po3ynj",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "choice",
+      "amount": 5,
+      "options": [
+        "might",
+        "speed"
+      ]
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You slash and weave your weapons so quickly, they almost resemble a wall. This barrier is large enough to block access through an immediate area. You must use your action every round to maintain the barrier. Any creature that attempts to cross through your barrier takes 10 damage (no roll needed); as an extra action you can attempt a melee attack against them, pushing them back if you succeed. Action to initiate."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

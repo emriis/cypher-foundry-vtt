@@ -34,48 +34,9 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "effort",
-        "name": "Effort",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Increase the minimum number rolled for this ability by 3. Enabler. At tier 3: The minimum number rolled for this ability increases to 18."
-      },
-      {
-        "id": "expert-combatant",
-        "name": "Expert Combatant",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you're already specialized in), but you must gain the skill normally. For a Soldier, Expert Combatant means choosing training in weapons appropriate to the genre, such as laser pistols or rail guns (if available), or firing specific spacecraft weapons, such as point defense cannons, torpedo tubes, plasma casters, or something similar."
-      },
-      {
-        "id": "push-implant",
-        "name": "Push Implant",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "After attacking, you can activate a combat implant to make an additional attack as an extra action on your turn. Doing this inflicts a moderate wound on yourself. Enabler. If you want a combat-capable character but don't want implants like those described under Combat Enhancement, you might prefer to use the Fighter type from the dungeon fantasy genre as the basis for your character, translating between the genres but otherwise using those abilities instead of the Soldier's."
-      }
+      "Compendium.cypher.abilities-en.Item.000jm8u000dgtw31",
+      "Compendium.cypher.abilities-en.Item.0044i9nr01k453dp",
+      "Compendium.cypher.abilities-en.Item.001b2abk00qbqxa6"
     ],
     "statOptions": [
       "might",

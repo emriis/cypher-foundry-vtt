@@ -1,0 +1,40 @@
+{
+  "_id": "01oodu9l01m5gwiv",
+  "_key": "!items!01oodu9l01m5gwiv",
+  "name": "Wounded Fury",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "wounded-fury",
+    "variantKey": "01oodu9l01m5gwiv",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "While you have at least three moderate wounds or at least one major wound, you gain two free levels of Effort you can apply to an attack each round. This benefit lasts until you take your next ten-minute or longer recovery (or you no longer suffer from those wounds). Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

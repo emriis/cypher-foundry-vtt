@@ -1,0 +1,40 @@
+{
+  "_id": "002tk1vb014ve3rt",
+  "_key": "!items!002tk1vb014ve3rt",
+  "name": "Infer Thoughts",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "infer-thoughts",
+    "variantKey": "002tk1vb014ve3rt",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If you interact with or study a target of level 4 or less for at least a round, you gain so much insight into its surface thoughts that you're essentially reading its mind (no roll required), even if the subject doesn't want you to. You must be able to see the target. Once you have gained a sense of what it's thinking—through its body language, its speech, and what it does and doesn't say—you can continue to infer the target's surface thoughts until you use a ten-minute or longer recovery as long as you can still see and hear the target. Effort: Increase the maximum level of a target you can affect by 1. Action to prepare; action to initiate."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

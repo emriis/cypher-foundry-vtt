@@ -1,0 +1,40 @@
+{
+  "_id": "016fa6ba01ivwngg",
+  "_key": "!items!016fa6ba01ivwngg",
+  "name": "Lightning Hand",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "lightning-hand",
+    "variantKey": "016fa6ba01ivwngg",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your hands crackle with electricity, allowing you to make either one touch attack or one long-range lightning blast attack, inflicting 4 damage. Alternatively, if you wield a weapon, it crackles with electricity and inflicts an additional 1 damage. This version of the ability lasts until you use a  ten-minute or longer recovery. Action for touch; enabler for weapon. Touch attacks are effectively light unarmed attacks, and therefore are eased."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

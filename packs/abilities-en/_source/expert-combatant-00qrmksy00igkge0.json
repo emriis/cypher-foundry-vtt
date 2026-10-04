@@ -1,0 +1,40 @@
+{
+  "_id": "00qrmksy00igkge0",
+  "_key": "!items!00qrmksy00igkge0",
+  "name": "Expert Combatant",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "expert-combatant",
+    "variantKey": "00qrmksy00igkge0",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you're already specialized in), but you must gain the skill normally. Noble Defender (2 Might or Speed): Choose one character you can see. That character comes under your protection. You gain an asset on all tasks involving finding, healing, interacting with, and protecting them. When you use the help action to aid their block or dodge, you give them two assets instead of one. You can use the help action to aid their Intellect defense (including direct attacks like fear and mind control and subtle influences like charm and intimidation) and give them two assets when you do so. You can only protect one character at a time. First action. At tier 3: Two characters at a time can be under your protection. Noble Sacrifice (2 Might or Speed): When you take the attack meant for another character, you gain a benefit for your selflessness. The attack automatically hits you and inflicts its normal damage (plus the additional minor wound for taking the attack). You can immediately retaliate with an attack against a foe within range. If you took the attack for a person you are protecting with Noble Defender, this attack is eased. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

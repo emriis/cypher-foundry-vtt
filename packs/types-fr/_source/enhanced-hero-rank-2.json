@@ -34,48 +34,9 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "no-need-for-weapons",
-        "name": "Pas Besoin d’Armes",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Your unarmed attacks (such as punches, kicks, elbows, or knees) inflict an additional 2 damage."
-      },
-      {
-        "id": "press-advantage",
-        "name": "Pression Maintenue",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Lorsque ton jet d'attaque infligeant des dégâts est 17 ou plus, tu infliges +1 dégât. Si tu obtiens un 19 ou 20, tu infliges ce dégât supplémentaire même si tu choisis d'appliquer un effet mineur ou majeur au lieu d'ajouter des dégâts normaux."
-      },
-      {
-        "id": "superheroics",
-        "name": "Attaque Successive (2 Célérité ou Puissance)",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Choose one Pool: Might, Speed, or Intellect. For tasks using your chosen Pool, add your rank to the amount of Effort you can apply, allowing you to apply additional levels of Effort to tasks in that Pool. In addition, you can choose to push yourself so hard that you take a moderate wound in exchange for two free levels of Effort you can apply to tasks in your chosen Pool (as long as this doesn't push you past your Effort limit for that Pool). Finally, add your rank as a bonus to your recovery, with those points going only into the Pool you have chosen."
-      }
+      "Compendium.cypher.abilities-fr.Item.00tc1nk5000f8d3d",
+      "Compendium.cypher.abilities-fr.Item.010g3hvz01jfy05q",
+      "Compendium.cypher.abilities-fr.Item.008xogon00lvnhon"
     ],
     "statOptions": [
       "might",

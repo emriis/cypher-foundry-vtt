@@ -31,48 +31,9 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "beast-companion",
-        "name": "Beast Companion",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You gain a follower that is a level 2 beast of your size or smaller that accompanies you and follows your instructions. You and your GM must work out the appearance and personality of your beast. Its movement is based on its creature type (avian, swimmer, and so on). If your beast companion dies, you can use your resource points to revive them or (by hunting in the wild for a few days) locate and befriend a new one. When working out the details of your follower, you might decide you'd like an animated plant companion rather than an animal."
-      },
-      {
-        "id": "friend-to-small-creatures",
-        "name": "Friend to Small Creatures",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
-        },
-        "description": "A type of small creature you name that exists in the surrounding environment (such as insects, rats, bats, or birds) comes under your influence if you succeed on a difficulty 2 Intellect task for outdoor survival. Affected creatures within short range will not harm you or those you designate as allies until you use a ten-minute or longer recovery. This ability doesn't work against hostile swarms of creatures of level 3 or higher. Your creatures—even common insects (level 0)—can swarm in large-enough numbers to hinder the attacks or defenses of a single target, or take some other action. You can use this ability to calm or command vines, grass blades, creepers, roots, or branches of nearby plants instead of animals. Effort: Your creatures collectively respond to your commands as an NPC ally. Action. An NPC ally can provide an asset to one task each round, like perception or defense, unless your GM decides the ally isn't capable of providing that kind of asset."
-      },
-      {
-        "id": "seeds-of-fury",
-        "name": "Seeds of Fury",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
-        },
-        "description": "You throw a handful of seeds in the air that ignite and speed toward a target within long range, scorching the air with twisting smoke trails. A successful attack deals 3 damage and catches the target on fire, inflicting +1 damage per round until the target uses an action to douse the flames or until you've taken your next recovery. Action."
-      }
+      "Compendium.cypher.abilities-en.Item.01ep6lsh0071ik27",
+      "Compendium.cypher.abilities-en.Item.00tb4kfn00y5by1k",
+      "Compendium.cypher.abilities-en.Item.01u1fv3f003i8gyu"
     ],
     "statOptions": [
       "might",

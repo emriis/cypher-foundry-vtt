@@ -1,0 +1,40 @@
+{
+  "_id": "01eshy7a015thlxq",
+  "_key": "!items!01eshy7a015thlxq",
+  "name": "Summon Giant Spider",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "summon-giant-spider",
+    "variantKey": "01eshy7a015thlxq",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You conjure a giant spider, which appears within immediate range. The spider acts according to its nature, attacking a nearby creature that looks like suitable prey. The spider remains until you use a ten-minute or longer recovery, then fades away. Effort: Make the spider understand you and obey your verbal instructions. Action to initiate. Giant spider: level 3, perception as level 5, Speed defense as level 4 due to quickness; health 12; bite inflicts 3 damage plus 1 Speed damage from poison (ignores armor); moves a long distance each round when on webs"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

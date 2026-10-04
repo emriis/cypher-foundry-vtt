@@ -1,0 +1,40 @@
+{
+  "_id": "00dq2a0t01igg80r",
+  "_key": "!items!00dq2a0t01igg80r",
+  "name": "Control Electric Device",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "control-electric-device",
+    "variantKey": "00dq2a0t01igg80r",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can attempt to control or disrupt an electric device  (in other words, a non-intelligent device or machine that is powered by electricity) at long range. Make an Intellect attack against the device. If your roll is less than a 12, treat the roll as a 12. (This means you don't get a GM intrusion if you roll a 1.) If you succeed, you can control the device as if you were next to it, even if normally you would have to touch it, read a screen, or manually operate it. If the machine is protected against casual access via some kind of security protocol, your tasks to hack or otherwise bypass that security are hindered unless you are within immediate range. If it is held by another creature, you must succeed against the creature's level or the device's level, whichever is higher. If attempting to disrupt the device, success means it shorts out and, if you wish, also explodes in an immediate radius, dealing 1 damage to all creatures in the area (make separate Intellect attack rolls against each creature). Effort: Increase the minimum number rolled for this ability by 3. Action. At tier 3: The minimum number rolled for this ability increases to 15."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "019grg6d00y88n2v",
+  "_key": "!items!019grg6d00y88n2v",
+  "name": "Deafening Bolt",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "deafening-bolt",
+    "variantKey": "019grg6d00y88n2v",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You unleash a bolt of lightning at a target within long range. If your attack succeeds, the target takes 5 damage and is deafened until you use a ten-minute or longer recovery, during which time they can't hear anything and their defense tasks are hindered. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

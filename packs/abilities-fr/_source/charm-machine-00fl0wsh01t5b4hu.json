@@ -1,0 +1,40 @@
+{
+  "_id": "00fl0wsh01t5b4hu",
+  "_key": "!items!00fl0wsh01t5b4hu",
+  "name": "Charm Machine",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "charm-machine",
+    "variantKey": "00fl0wsh01t5b4hu",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You convince an unintelligent machine or automaton within immediate range to “like” you with a successful Intellect attack roll. A machine that likes you is 50 percent less likely to function if said function would cause you harm. For example, if a foe attempts to detonate a bomb near you controlled by a detonator that likes you, there is a 50 percent chance that it won't explode. The target likes you until you use a ten-minute or longer recovery. Action to initiate."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

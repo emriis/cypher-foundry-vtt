@@ -1,0 +1,40 @@
+{
+  "_id": "00dzwpqh01vq9ofd",
+  "_key": "!items!00dzwpqh01vq9ofd",
+  "name": "Mystic Step",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "mystic-step",
+    "variantKey": "00dzwpqh01vq9ofd",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You harness your mystic source to instantly transport yourself to a new location you can see within long range. If you appear within immediate range of a foe, you can make one unarmed attack against them as an extra action. Effort: Reach a location within range that you can't see directly because it's blocked by a wall or structure. First action. If you try to use Mystic Step to reach a location that has no room for you, the ability automatically fails and you don't leave your original location."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

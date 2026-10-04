@@ -1,0 +1,40 @@
+{
+  "_id": "004utnaz0192gkbp",
+  "_key": "!items!004utnaz0192gkbp",
+  "name": "Enchant Object",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "enchant-object",
+    "variantKey": "004utnaz0192gkbp",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You imbue a weapon, tool, or other usable item with magic that enhances its performance, lasting until you (or the user of the object) use a ten-minute or longer recovery. At any point while the ability is active, the creature using the object gains an asset to one action requiring the object. You decide if the object looks the same, glows like a candle, or gains a magical rune for the duration of the spell. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

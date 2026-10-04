@@ -1,0 +1,40 @@
+{
+  "_id": "01aq3dts00ijifbv",
+  "_key": "!items!01aq3dts00ijifbv",
+  "name": "Piercing Accuracy",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "piercing-accuracy",
+    "variantKey": "01aq3dts00ijifbv",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "The foe takes +2 damage. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

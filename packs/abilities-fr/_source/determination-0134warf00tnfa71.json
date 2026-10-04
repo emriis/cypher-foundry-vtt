@@ -1,0 +1,40 @@
+{
+  "_id": "0134warf00tnfa71",
+  "_key": "!items!0134warf00tnfa71",
+  "name": "Determination",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "determination",
+    "variantKey": "0134warf00tnfa71",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you retry a failed task, in addition to the required level of Effort you must use, you gain a free level of Effort. You cannot use this ability again until after you have taken a recovery. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

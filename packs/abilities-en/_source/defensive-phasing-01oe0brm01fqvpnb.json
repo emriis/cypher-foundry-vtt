@@ -1,0 +1,43 @@
+{
+  "_id": "01oe0brm01fqvpnb",
+  "_key": "!items!01oe0brm01fqvpnb",
+  "name": "Defensive Phasing",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "defensive-phasing",
+    "variantKey": "01oe0brm01fqvpnb",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "choice",
+      "amount": 2,
+      "options": [
+        "intellect",
+        "speed"
+      ]
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Until you use a ten-minute or longer recovery, you gain an asset to your dodge tasks as you selectively change your phase so that some attacks pass through you harmlessly. Action to initiate."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

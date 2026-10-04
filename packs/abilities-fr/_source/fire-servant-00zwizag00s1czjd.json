@@ -1,0 +1,40 @@
+{
+  "_id": "00zwizag00s1czjd",
+  "_key": "!items!00zwizag00s1czjd",
+  "name": "Fire Servant",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "fire-servant",
+    "variantKey": "00zwizag00s1czjd",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You use your Shroud of Flame to create an automaton of fire that is your general shape and size, lasting until you use a ten-minute or longer recovery. This NPC ally acts as you direct each round. Directing the automaton is an action, and you can command it only when you are within long range of it. Without a command, the automaton continues to follow your previous command. You can also give it a simple programmed action, such as “Wait here and attack anyone who comes within short range until they're dead.” Action to create; action to direct. Fire automaton: level 5; Armor 1; bash attacks deal 6 damage (1 from fire)"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

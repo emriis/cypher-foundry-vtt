@@ -1,0 +1,40 @@
+{
+  "_id": "001djazl001ity8p",
+  "_key": "!items!001djazl001ity8p",
+  "name": "Golem Grip",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "golem-grip",
+    "variantKey": "001djazl001ity8p",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 3,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can easily grab foes with your stone fists. Make an eased attack against a foe. If you succeed, you restrict their movement, preventing them from moving away and hindering their physical attacks and attempts to break free. If the target attempts to break free as their action, you must make a Might roll to continue holding them. If you are holding a target, you can squeeze them automatically on your turn (no roll required), inflicting 4 damage. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

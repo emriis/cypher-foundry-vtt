@@ -1,0 +1,40 @@
+{
+  "_id": "01c8zwfb009kqv1x",
+  "_key": "!items!01c8zwfb009kqv1x",
+  "name": "Danger Instinct",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "danger-instinct",
+    "variantKey": "01c8zwfb009kqv1x",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If you are attacked by surprise, whether by a creature, a device, or simply an environmental hazard (such as a tree falling on you), you can move an immediate distance before the attack occurs. If moving prevents the attack, you are safe. If the attack can still potentially affect you—if the attacking creature can move to keep pace, if the attack fills an area too big to escape, and so on—your defense against it is eased. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

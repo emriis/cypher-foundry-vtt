@@ -7,241 +7,125 @@
   "system": {
     "description": "<p>You create automatons, robots, constructs, or other artificial creatures that do as you command.</p>",
     "abilities": [
-      {
-        "id": "identify-machine",
-        "name": "Identifier les machines",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+      "Compendium.cypher.abilities-fr.Item.00vdk6gq00g0gsex",
+      "Compendium.cypher.abilities-fr.Item.00aq0fxj018affuc",
+      "Compendium.cypher.abilities-fr.Item.00c9h5s500ef4h2l",
+      "Compendium.cypher.abilities-fr.Item.01k3939y0194fq7f",
+      "Compendium.cypher.abilities-fr.Item.00cpcqb501muhdeh",
+      "Compendium.cypher.abilities-fr.Item.00fl0wsh01t5b4hu",
+      "Compendium.cypher.abilities-fr.Item.01owr0rc00evpe0p",
+      "Compendium.cypher.abilities-fr.Item.00ueqoq600jc73bd",
+      "Compendium.cypher.abilities-fr.Item.013uxujh0021wxhd",
+      "Compendium.cypher.abilities-fr.Item.01uho7v800tepxfy",
+      "Compendium.cypher.abilities-fr.Item.00y00ken00fhljae",
+      "Compendium.cypher.abilities-fr.Item.01sxm60000fixyqe",
+      "Compendium.cypher.abilities-fr.Item.003or1fc01fs7mlz",
+      "Compendium.cypher.abilities-fr.Item.004sbwc801u56tf2"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00aq0fxj018affuc",
+          "to": "Compendium.cypher.abilities-fr.Item.01k3939y0194fq7f"
         },
-        "description": "Tu comprends la fonction, l’usage, le niveau et l’état d’une machine ou d’un robot à portée immédiate."
-      },
-      {
-        "id": "automaton-assistant",
-        "name": "Assistant automate",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00aq0fxj018affuc",
+          "to": "Compendium.cypher.abilities-fr.Item.00cpcqb501muhdeh"
         },
-        "description": "You have built a level 2 automaton follower of your size or smaller that accompanies you and follows your instructions. You and the GM must work out the details of your automaton's appearance and personality. If the automaton is damaged, a few minutes of your attention mends it—the automaton regains 2 health. If the automaton is destroyed, it can be restored using your resources if you spend a few days tinkering. Depending on the genre, your automatons might be metallic robots, animated objects, organic androids, magical golems, steampunk constructs, awakened statues, or something else entirely."
-      },
-      {
-        "id": "efficient-builder",
-        "name": "Constructeur efficace",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00aq0fxj018affuc",
+          "to": "Compendium.cypher.abilities-fr.Item.00fl0wsh01t5b4hu"
         },
-        "description": "Anytime you gain resource points, you gain 1 additional point, but that point can be spent only on repairing or crafting."
-      },
-      {
-        "id": "automaton-armor-upgrade",
-        "name": "Amélioration d'armure d'automate",
-        "tier": 2,
-        "prerequisites": [
-          "automaton-assistant"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01k3939y0194fq7f",
+          "to": "Compendium.cypher.abilities-fr.Item.01owr0rc00evpe0p"
         },
-        "description": "You've built a new capability into one of your automatons—it can use its action to transform into an armored suit that you wear until you use a one-hour or longer recovery. If you are within an immediate distance when it transforms, it automatically forms itself around you. The transformed automaton acts as light armor; because it anticipates and reacts to your movements, you can freely use this armor. Enabler.",
-        "grantedArmorItemCategory": "light"
-      },
-      {
-        "id": "automaton-cypher-upgrade",
-        "name": "Amélioration Cypher d'automate",
-        "tier": 2,
-        "prerequisites": [
-          "automaton-assistant"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00cpcqb501muhdeh",
+          "to": "Compendium.cypher.abilities-fr.Item.01owr0rc00evpe0p"
         },
-        "description": "You've built a new capability into one of your automatons—for one day, the automaton increases your cypher limit by one. Enabler."
-      },
-      {
-        "id": "charm-machine",
-        "name": "Charmer une machine",
-        "tier": 2,
-        "prerequisites": [
-          "automaton-assistant"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00ueqoq600jc73bd",
+          "to": "Compendium.cypher.abilities-fr.Item.01owr0rc00evpe0p"
         },
-        "description": "Tu convaincs une machine ou un automate non intelligent à portée immédiate de « t’apprécier », via une attaque d’Intellect réussie. Une machine qui t’apprécie a 50 % de chances de ne pas fonctionner si cela te causerait du tort."
-      },
-      {
-        "id": "expert-automaton",
-        "name": "Automate expert",
-        "tier": 3,
-        "prerequisites": [
-          "automaton-armor-upgrade",
-          "automaton-cypher-upgrade",
-          "quick-control"
-        ],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00cpcqb501muhdeh",
+          "to": "Compendium.cypher.abilities-fr.Item.00ueqoq600jc73bd"
         },
-        "description": "Tu construis un suivant automate de niveau 3. À la place, tu peux augmenter ton automate existant au niveau 3 et obtenir un nouvel automate de niveau 2. Tu peux prendre cette aptitude plusieurs fois."
-      },
-      {
-        "id": "quick-control",
-        "name": "Contrôle rapide",
-        "tier": 3,
-        "prerequisites": [
-          "automaton-cypher-upgrade",
-          "charm-machine",
-          "expert-automaton"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00fl0wsh01t5b4hu",
+          "to": "Compendium.cypher.abilities-fr.Item.00ueqoq600jc73bd"
         },
-        "description": "A successful Intellect attack allows you to command a machine or automaton (intelligent or not) within short range to take one action within its capabilities on its next turn, regardless of its normal programming or attitudes. If this action would cause the machine or automaton direct harm to itself or its allies, your Intellect attack against it is hindered. (If you use this ability to command an intelligent machine or automaton, it likely becomes hostile to you afterward.) Action."
-      },
-      {
-        "id": "automaton-flight-upgrade",
-        "name": "Amélioration de vol d'automate",
-        "tier": 4,
-        "prerequisites": [
-          "expert-automaton",
-          "quick-control"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01owr0rc00evpe0p",
+          "to": "Compendium.cypher.abilities-fr.Item.00ueqoq600jc73bd"
         },
-        "description": "You've built a new capability into one of your automatons—as its normal movement, it can fly up to a long distance. If you wish, it can carry you but can only move at a rate of up to 20 feet (6 m) per round in any direction while doing so."
-      },
-      {
-        "id": "automaton-turret-upgrade",
-        "name": "Amélioration tourelle d'automate",
-        "tier": 4,
-        "prerequisites": [
-          "expert-automaton",
-          "quick-control"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01owr0rc00evpe0p",
+          "to": "Compendium.cypher.abilities-fr.Item.013uxujh0021wxhd"
         },
-        "description": "You've built a new capability into one of your automatons—it can reconfigure itself and become an immobile energy weapon on a gimbal mount. The turret is a heavy weapon with very long range that inflicts 7 damage. If you have the automaton act on its own, it makes one hindered attack per round. If you or an ally use the turret as a weapon, attacks with it are eased. Action to change the automaton's configuration; Last action to attack with turret. In a fantasy setting, the automaton turret probably shoots fire or lightning. In a science fiction setting, it probably shoots lasers."
-      },
-      {
-        "id": "automaton-fleet",
-        "name": "Flotte d'automates",
-        "tier": 5,
-        "prerequisites": [
-          "automaton-flight-upgrade",
-          "automaton-turret-upgrade",
-          "automaton-force-field-upgrade"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00ueqoq600jc73bd",
+          "to": "Compendium.cypher.abilities-fr.Item.013uxujh0021wxhd"
         },
-        "description": "You've built four level 2 automaton followers, each no larger than yourself. You and the GM must work out the details of each automaton's appearance and personality. If one of these automatons is destroyed, it can be restored using your resources after a few days of labor."
-      },
-      {
-        "id": "automaton-force-field-upgrade",
-        "name": "Amélioration champ de force d'automate",
-        "tier": 5,
-        "prerequisites": [
-          "automaton-flight-upgrade",
-          "automaton-turret-upgrade",
-          "automaton-fleet"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01owr0rc00evpe0p",
+          "to": "Compendium.cypher.abilities-fr.Item.01uho7v800tepxfy"
         },
-        "description": "You've built a new capability into one of your automatons—it can erect a translucent level 5 force field around itself and anyone within immediate range of it until you use a ten-minute or longer recovery. Any creature protected by the field reduces incoming wounds by one severity (NPCs take 3 less damage). Enabler."
-      },
-      {
-        "id": "automaton-evolution",
-        "name": "Évolution d'automate",
-        "tier": 6,
-        "prerequisites": [
-          "automaton-fleet",
-          "automaton-force-field-upgrade",
-          "automaton-heavy-armor-upgrade"
-        ],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00ueqoq600jc73bd",
+          "to": "Compendium.cypher.abilities-fr.Item.01uho7v800tepxfy"
         },
-        "description": "One of your automaton followers is upgraded, increasing its level by 1. You can select this ability multiple times. Each time, the level of one of your automatons increases by 1."
-      },
-      {
-        "id": "automaton-heavy-armor-upgrade",
-        "name": "Amélioration armure lourde d'automate",
-        "tier": 6,
-        "prerequisites": [
-          "automaton-fleet",
-          "automaton-force-field-upgrade",
-          "automaton-evolution"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 6,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.013uxujh0021wxhd",
+          "to": "Compendium.cypher.abilities-fr.Item.00y00ken00fhljae"
         },
-        "description": "You've built a new capability into one of your automatons—the robot can use its action to transform into an armored suit that you wear until you use a one-hour or longer recovery. If you are within an immediate distance when it transforms, it automatically forms itself around you. The transformed automaton acts as heavy armor; because it anticipates and reacts to your movements, you can freely use this armor. Enabler.",
-        "grantedArmorItemCategory": "heavy"
-      }
-    ]
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01uho7v800tepxfy",
+          "to": "Compendium.cypher.abilities-fr.Item.00y00ken00fhljae"
+        },
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01sxm60000fixyqe",
+          "to": "Compendium.cypher.abilities-fr.Item.00y00ken00fhljae"
+        },
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.013uxujh0021wxhd",
+          "to": "Compendium.cypher.abilities-fr.Item.01sxm60000fixyqe"
+        },
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01uho7v800tepxfy",
+          "to": "Compendium.cypher.abilities-fr.Item.01sxm60000fixyqe"
+        },
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00y00ken00fhljae",
+          "to": "Compendium.cypher.abilities-fr.Item.01sxm60000fixyqe"
+        },
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00y00ken00fhljae",
+          "to": "Compendium.cypher.abilities-fr.Item.003or1fc01fs7mlz"
+        },
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01sxm60000fixyqe",
+          "to": "Compendium.cypher.abilities-fr.Item.003or1fc01fs7mlz"
+        },
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.004sbwc801u56tf2",
+          "to": "Compendium.cypher.abilities-fr.Item.003or1fc01fs7mlz"
+        },
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00y00ken00fhljae",
+          "to": "Compendium.cypher.abilities-fr.Item.004sbwc801u56tf2"
+        },
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01sxm60000fixyqe",
+          "to": "Compendium.cypher.abilities-fr.Item.004sbwc801u56tf2"
+        },
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.003or1fc01fs7mlz",
+          "to": "Compendium.cypher.abilities-fr.Item.004sbwc801u56tf2"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

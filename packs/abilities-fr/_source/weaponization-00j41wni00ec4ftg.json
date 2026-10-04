@@ -1,0 +1,40 @@
+{
+  "_id": "00j41wni00ec4ftg",
+  "_key": "!items!00j41wni00ec4ftg",
+  "name": "Weaponization",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "weaponization",
+    "variantKey": "00j41wni00ec4ftg",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You have a weapon built into your body. Choose one light or medium one-handed weapon, such as a broadsword, baton, or medium pistol. You are trained in this weapon. You can hide or reveal this weapon as an extra action on your turn. If your embedded weapon is a firearm, it reloads through a slot in your arm, can hold ten shots, and fires through a disguised barrel in the center of the palm of your hand. Instead of embedding a weapon, you can embed a multitool that counts as either a set of light tools or a set of heavy tools (your choice when you gain this ability)."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

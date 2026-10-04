@@ -32,48 +32,9 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "effort",
-        "name": "Mauvais Remède (2+ Intellect ou Célérité)",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Instead make the creature unconscious until you use a recovery (requires two levels of Effort). Action to prepare medicine; action to attack. Bad Medicine doesn't allow you to exceed your normal Effort limit."
-      },
-      {
-        "id": "expert-doctor",
-        "name": "Médecin Expert·e",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You are trained in healing. At tier 6: You can become an expert in healing if you are already specialized, but you must gain the skill normally (such as from a character advancement)."
-      },
-      {
-        "id": "prepared-medic",
-        "name": "Prepared Medic",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
-        },
-        "description": "With access to a medical field kit (or similar equipment), you can use treatment in half the normal amount of time or treat twice as many wounds for one character in the normal time. Enabler."
-      }
+      "Compendium.cypher.abilities-fr.Item.01ytjssl00wznq94",
+      "Compendium.cypher.abilities-fr.Item.01o15jcd003c9m10",
+      "Compendium.cypher.abilities-fr.Item.00p1thpc00wukhrj"
     ],
     "statOptions": [
       "intellect"

@@ -1,0 +1,40 @@
+{
+  "_id": "00q3229m01h1m3l7",
+  "_key": "!items!00q3229m01h1m3l7",
+  "name": "Picking Up the Slack",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "picking-up-the-slack",
+    "variantKey": "00q3229m01h1m3l7",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can fill in for a skilled ally when they're unable to perform a specific task. If an ally within long range is trained (or more) in a skill but can't attempt the task (such as if there's a lock to be picked, but the skilled ally is unconscious or too far away), you gain an asset on that task. You cannot use this ability if you are trained (or better) in that skill. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

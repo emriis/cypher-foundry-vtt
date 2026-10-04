@@ -1,0 +1,40 @@
+{
+  "_id": "015m0auu01s7ah5j",
+  "_key": "!items!015m0auu01s7ah5j",
+  "name": "Iron Punch",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "iron-punch",
+    "variantKey": "015m0auu01s7ah5j",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 8,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You magnetically pick up a heavy metallic object within short range and hurl it at a target within short range. With a successful Intellect attack, you deal 10 damage to the target and the object. Effort: Affect an additional target that is adjacent to the first target. Action. Diamagnetism supersedes Magnetize, so if you have both, you can exchange Magnetize for another equal or lower-tier ability from this focus."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

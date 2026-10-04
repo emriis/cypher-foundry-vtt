@@ -34,34 +34,8 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "expert-combatant",
-        "name": "Combattant Expert",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Tu es entraîné·e dans un type d'attaque d'arme spécifique de ton choix (épées, haches, arcs…) ou dans une catégorie plus large : armes contondantes légères, armes tranchantes légères, armes à distance légères, armes contondantes moyennes, armes tranchantes moyennes, armes à distance moyennes, etc. Au rang 2, tu peux devenir spécialisé·e dans la même méthode d'attaque. Au rang 6, tu peux devenir expert·e dans une méthode d'attaque spécifique."
-      },
-      {
-        "id": "press-advantage",
-        "name": "Mettre la pression",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Lorsque ton jet d'attaque infligeant des dégâts est de 17 ou plus, tu infliges +1 dégât. Si tu obtiens 19 ou 20, tu infliges ce dégât supplémentaire même si tu choisis un effet mineur ou majeur au lieu de dégâts additionnels."
-      }
+      "Compendium.cypher.abilities-fr.Item.0044i9nr01k453dp",
+      "Compendium.cypher.abilities-fr.Item.010g3hvz01jfy05q"
     ],
     "statOptions": [
       "might",

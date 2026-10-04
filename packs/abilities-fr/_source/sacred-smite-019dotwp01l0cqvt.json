@@ -1,0 +1,40 @@
+{
+  "_id": "019dotwp01l0cqvt",
+  "_key": "!items!019dotwp01l0cqvt",
+  "name": "Sacred Smite",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "sacred-smite",
+    "variantKey": "019dotwp01l0cqvt",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Choose one creature you can see that you want to be punished for their transgressions. Until you attack a different creature, your attacks against that creature deal +1 damage from divine energy coursing through your melee or ranged weapon. If the target is an undead creature, a demon, or of similar ilk as designated by your GM, you choose whether your successful attack inflicts +2 damage or your foe must flee from you for one turn. Enabler. At tier 3: The bonus damage against undead, demons, and similar ilk increases to +3."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

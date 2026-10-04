@@ -1,0 +1,40 @@
+{
+  "_id": "00bthz9l01rvudha",
+  "_key": "!items!00bthz9l01rvudha",
+  "name": "Flex Skill",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "flex-skill",
+    "variantKey": "00bthz9l01rvudha",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Choose one task (other than an attack or defense skill) on which you will concentrate. For the rest of the day, you're trained in that task. You can't use this ability with a skill in which you're already trained to become specialized. This ability refreshes when you use a ten-hour recovery. Enabler. Androids using Flex Skill usually accomplish the training by expanding data they already downloaded, compressed, and stored in their system, though in some cases accessing a specialized skill might require connecting to an external data hub."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

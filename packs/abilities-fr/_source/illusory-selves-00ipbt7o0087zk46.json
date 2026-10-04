@@ -1,0 +1,40 @@
+{
+  "_id": "00ipbt7o0087zk46",
+  "_key": "!items!00ipbt7o0087zk46",
+  "name": "Illusory Selves",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "illusory-selves",
+    "variantKey": "00ipbt7o0087zk46",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You create four illusions of yourself within short range. These each last until you use a ten-minute or longer recovery. You mentally direct their actions; they aren’t mirror images, and each one can do different things. If an image is struck violently, you choose whether it freezes motionless or disappears permanently. Action to initiate."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "00jkb8ap01vzetrk",
+  "_key": "!items!00jkb8ap01vzetrk",
+  "name": "Advantage to Disadvantage",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "advantage-to-disadvantage",
+    "variantKey": "00jkb8ap01vzetrk",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 3,
+      "options": []
+    },
+    "action": "firstAction",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You make a hindered attack featuring several quick moves against an armed foe. If you hit, you inflict damage and disarm them—choose whether you want to be holding their weapon or it is knocked to the ground 10 feet (3.5 m) away. For the rest of the combat encounter, you gain an asset on intimidation tasks against your foe. First action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

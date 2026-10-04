@@ -1,0 +1,55 @@
+{
+  "_id": "00vuoq9r011w9acu",
+  "_key": "!items!00vuoq9r011w9acu",
+  "name": "Divine Radiance",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "divine-radiance",
+    "variantKey": "00vuoq9r011w9acu",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [
+      {
+        "id": "blessing",
+        "name": "Blessing",
+        "description": "A target within short range is charged with benevolent divine grace. At any point before they have taken their next ten-minute or longer recovery, they gain an asset to one action.",
+        "effort": "Affect two additional targets.",
+        "rollTables": []
+      },
+      {
+        "id": "turn-undead",
+        "name": "Turn Undead",
+        "description": "Up to five undead creatures of level 2 or less within short range are blasted by divine radiance (make separate Intellect attack rolls against each target). Affected targets are repulsed and must spend their next turn fleeing your presence. Depending on the game, your GM may decide Turn Undead works on demons or creatures of similar ilk instead of (or in addition to) undead. At tier 3, instead of causing affected targets to flee, you can make them unable to take actions for one turn. When an ability or effect lets you attack multiple creatures on your turn, each attack after the first one is an extra action on your turn. An attack made as an extra action on your turn counts as a separate action for the purposes of modifying the task with Effort.",
+        "effort": "Affect two additional targets. Increase the maximum level of undead you can affect by 1.",
+        "rollTables": []
+      }
+    ],
+    "rollTables": [],
+    "description": "You channel divine influence to gain one of the following effects."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

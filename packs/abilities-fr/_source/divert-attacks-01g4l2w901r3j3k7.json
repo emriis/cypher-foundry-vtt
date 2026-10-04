@@ -1,0 +1,40 @@
+{
+  "_id": "01g4l2w901r3j3k7",
+  "_key": "!items!01g4l2w901r3j3k7",
+  "name": "Divert Attacks",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "divert-attacks",
+    "variantKey": "01g4l2w901r3j3k7",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Until you use a ten-minute or longer recovery, you automatically deflect, block, or dodge any ranged projectile attacks (no roll required). However, on your next turn after you're attacked with ranged projectiles, all your other actions are hindered. Action to initiate."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

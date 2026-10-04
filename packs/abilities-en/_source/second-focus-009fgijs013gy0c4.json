@@ -1,0 +1,40 @@
+{
+  "_id": "009fgijs013gy0c4",
+  "_key": "!items!009fgijs013gy0c4",
+  "name": "Second Focus",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "second-focus",
+    "variantKey": "009fgijs013gy0c4",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You have two foci instead of one. At tier 1 you gain two abilities from each of them. When you advance to a new tier, you gain a new ability from each focus."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

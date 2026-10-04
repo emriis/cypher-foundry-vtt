@@ -1,0 +1,40 @@
+{
+  "_id": "00dar6j9002t2de1",
+  "_key": "!items!00dar6j9002t2de1",
+  "name": "Retribution",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "retribution",
+    "variantKey": "00dar6j9002t2de1",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 8,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You call down a shaft of roaring radiant flame in an immediate area within long range. Make separate Intellect attacks against each creature in the area. Success means you inflict 4 damage; all creatures take 1 damage even on a failed attack roll. Choose one creature in the area to take an additional 3 damage regardless of whether your attack succeeded or failed. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

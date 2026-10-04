@@ -1,0 +1,40 @@
+{
+  "_id": "01ndstzt00scy245",
+  "_key": "!items!01ndstzt00scy245",
+  "name": "Energize Object",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "energize-object",
+    "variantKey": "01ndstzt00scy245",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You channel energy into an object (like a melee or ranged weapon). Until you use a one-hour or longer recovery, any attack you make with the energized object inflicts an additional 1 damage from energy (if the weapon fires projectiles, such as bullets from a rifle, this damage applies to the projectiles). The energy drains out if you stop holding or carrying the object, but as an extra action on your turn, you can energize a different object. Action. When you energize an object, you use psychokinetic energy, which tends to give affected weapons a subtle purple glimmer."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

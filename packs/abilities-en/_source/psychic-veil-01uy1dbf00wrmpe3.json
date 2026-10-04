@@ -1,0 +1,40 @@
+{
+  "_id": "01uy1dbf00wrmpe3",
+  "_key": "!items!01uy1dbf00wrmpe3",
+  "name": "Psychic Veil",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "psychic-veil",
+    "variantKey": "01uy1dbf00wrmpe3",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your appearance is distorted as if viewed through the visual aura of a migraine until you take a ten-minute or longer recovery. The distortion doesn't interfere with your actions, but your dodge and Intellect defense rolls are eased. While active, the distortion protects you from mental attacks, reducing their wound severity by one step (major to moderate, moderate to minor, minor to none). For example, if you are hit by a psychic blast attack that causes a moderate wound, you instead take a minor wound. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

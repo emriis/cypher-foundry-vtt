@@ -1,0 +1,40 @@
+{
+  "_id": "01taqj4s01s35kne",
+  "_key": "!items!01taqj4s01s35kne",
+  "name": "Animal Scrying",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "animal-scrying",
+    "variantKey": "01taqj4s01s35kne",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If you know the general location of an animal that is friendly toward you and within 1 mile (1.6 km) of your location, you can sense through its senses until you use a ten-minute or longer recovery. You must be in animal form or a form similar to that animal to activate this ability. Effort: Activate this ability even if you are not in animal form or a form similar to that animal. Action to establish."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

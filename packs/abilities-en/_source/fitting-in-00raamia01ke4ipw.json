@@ -1,0 +1,40 @@
+{
+  "_id": "00raamia01ke4ipw",
+  "_key": "!items!00raamia01ke4ipw",
+  "name": "Fitting In",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "fitting-in",
+    "variantKey": "00raamia01ke4ipw",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can blend in among any intelligent creatures other than the upper classes or the authorities. Working or common people can still see you, but those of level 3 or less attach no importance to your presence. If a higher-level creature notices you, you can attempt an Intellect task against their level to retain your unimportant-seeming status. This effect ends if you do something to call attention to your presence or position—attacking, using an ability, moving a large object, and so on—or if you use a ten-minute or longer recovery. Action to initiate."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

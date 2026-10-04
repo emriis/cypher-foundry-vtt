@@ -1,0 +1,40 @@
+{
+  "_id": "019x2gkn00q8v3f4",
+  "_key": "!items!019x2gkn00q8v3f4",
+  "name": "Think Fast",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "think-fast",
+    "variantKey": "019x2gkn00q8v3f4",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your mind is quick and elusive. You are trained in Intellect defense."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

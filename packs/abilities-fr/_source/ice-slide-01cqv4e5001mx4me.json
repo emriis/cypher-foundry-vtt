@@ -1,0 +1,40 @@
+{
+  "_id": "01cqv4e5001mx4me",
+  "_key": "!items!01cqv4e5001mx4me",
+  "name": "Ice Slide",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "ice-slide",
+    "variantKey": "01cqv4e5001mx4me",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You create a path of smooth ice from yourself to a location within long range and safely slide to there. You must have a clear and unobstructed path to that location, but otherwise it can be above, below, or even across a gap. The ice melts away after a few seconds. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

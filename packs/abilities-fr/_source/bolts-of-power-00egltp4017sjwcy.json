@@ -1,0 +1,40 @@
+{
+  "_id": "00egltp4017sjwcy",
+  "_key": "!items!00egltp4017sjwcy",
+  "name": "Bolts of Power",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "bolts-of-power",
+    "variantKey": "00egltp4017sjwcy",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You simultaneously unleash four lightning bolts, making four separate attacks against targets within short range. Each bolt inflicts 4 damage, or 1 damage on a failed attack roll. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

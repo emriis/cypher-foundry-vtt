@@ -1,0 +1,40 @@
+{
+  "_id": "01w72rei01wiywz4",
+  "_key": "!items!01w72rei01wiywz4",
+  "name": "Machine Reading",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "machine-reading",
+    "variantKey": "01w72rei01wiywz4",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can read the surface “thoughts” of a machine within short range, even if it doesn't want you to. You must be able to see it. Once you have established contact, you can read the machine's thoughts until you use a ten-minute or longer recovery. Action to initiate."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

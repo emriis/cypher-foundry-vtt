@@ -1,0 +1,40 @@
+{
+  "_id": "00ueqoq600jc73bd",
+  "_key": "!items!00ueqoq600jc73bd",
+  "name": "Quick Control",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "quick-control",
+    "variantKey": "00ueqoq600jc73bd",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "A successful Intellect attack allows you to command a machine or automaton (intelligent or not) within short range to take one action within its capabilities on its next turn, regardless of its normal programming or attitudes. If this action would cause the machine or automaton direct harm to itself or its allies, your Intellect attack against it is hindered. (If you use this ability to command an intelligent machine or automaton, it likely becomes hostile to you afterward.) Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

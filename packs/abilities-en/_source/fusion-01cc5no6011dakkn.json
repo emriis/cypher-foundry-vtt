@@ -1,0 +1,40 @@
+{
+  "_id": "01cc5no6011dakkn",
+  "_key": "!items!01cc5no6011dakkn",
+  "name": "Fusion",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "fusion",
+    "variantKey": "01cc5no6011dakkn",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can fuse your manifest cyphers and artifacts with your body. You can use these fused devices with First actions (assuming their normal use requires a regular action). Action to fuse item with your body or detach it."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

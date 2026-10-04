@@ -1,0 +1,40 @@
+{
+  "_id": "01lq2lyh01q6fu0w",
+  "_key": "!items!01lq2lyh01q6fu0w",
+  "name": "Empathic Sense",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "empathic-sense",
+    "variantKey": "01lq2lyh01q6fu0w",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You sense the general mental state of a being within short range. You can sense their general emotion, and in particular how they feel about you. Last action. Sense Psionics (1 Intellect): If there are mental powers, psionic abilities, or other psychic phenomena at work within short range, you are aware of that fact (but not the specifics). Last action. Telepathic (1+ Intellect): You can speak telepathically with others who are within long range. Communication is two-way, but the other party must be willing and able to communicate. You don't have to see the target, but you must know that they're within range. You can have more than one active contact at once, but you must establish contact with each target individually. Each contact lasts until you use a ten-minute or longer recovery. Effort: Increase the duration so it lasts until you use a ten-hour recovery. Action to establish contact."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

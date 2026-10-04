@@ -1,0 +1,40 @@
+{
+  "_id": "01s4x01e00fl0ref",
+  "_key": "!items!01s4x01e00fl0ref",
+  "name": "Enhance Strength",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "enhance-strength",
+    "variantKey": "01s4x01e00fl0ref",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Until you use a ten-minute or longer recovery, you use your telekinesis to augment your physical actions. When you roll on a task using brute force, such as moving a heavy object or smashing down a door, and your roll is less than a 9, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) Effort: Increase the minimum number rolled for this ability by 3. Action to initiate."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "01scz0pa01o3nekp",
+  "_key": "!items!01scz0pa01o3nekp",
+  "name": "Lighting a Fire Under Them",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "lighting-a-fire-under-them",
+    "variantKey": "01scz0pa01o3nekp",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": "lastAction",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You issue a command to a follower or ally within short range and that person's next action is a First action (if the action would have been Last, it happens normally). You can't use this ability again until after your next ten-minute or longer recovery. Last action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "01haaool001jk8n1",
+  "_key": "!items!01haaool001jk8n1",
+  "name": "Holy Succor",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "holy-succor",
+    "variantKey": "01haaool001jk8n1",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "While an ally within immediate range of you has at least three moderate wounds or at least one major wound, you can extend your divine grace, granting them one free level of Effort they can apply each round to an attack or defense roll. The divine grace they are afforded lasts until the wounds are healed or they use a ten-minute or longer recovery. Each time you use Holy Succor, the Intellect cost increases by 1. The cost returns to 1 after you take a recovery. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

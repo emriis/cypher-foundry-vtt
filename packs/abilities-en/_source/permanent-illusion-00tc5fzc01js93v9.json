@@ -1,0 +1,40 @@
+{
+  "_id": "00tc5fzc01js93v9",
+  "_key": "!items!00tc5fzc01js93v9",
+  "name": "Permanent Illusion",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "permanent-illusion",
+    "variantKey": "00tc5fzc01js93v9",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 9,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You make one of your ongoing illusions permanent. Choose an illusion (or portion of an illusion) that you created. The illusion must fit within an immediate area and remains in that area. The illusion is permanent, persisting on its own without your attention or presence. You can permanently end the illusion as an action, but anyone else who wants to end it must expend exceptional ingenuity to prevent it from regenerating after a while. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

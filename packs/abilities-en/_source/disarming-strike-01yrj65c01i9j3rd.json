@@ -1,0 +1,40 @@
+{
+  "_id": "01yrj65c01i9j3rd",
+  "_key": "!items!01yrj65c01i9j3rd",
+  "name": "Disarming Strike",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "disarming-strike",
+    "variantKey": "01yrj65c01i9j3rd",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 3,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Make an attack against a foe with your chosen weapon. If you hit, you inflict 1 less damage than normal, but you disarm your foe, knocking their weapon to the ground 10 feet (3.5 m) away. If your chosen weapon is a whip, you can instead choose to hinder your attack, and if it succeeds, the foe's weapon lands in your other hand. If your chosen weapon is a bow, you can instead choose to hinder your attack, and if it succeeds, the foe's weapon is “nailed” to a nearby object or structure. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

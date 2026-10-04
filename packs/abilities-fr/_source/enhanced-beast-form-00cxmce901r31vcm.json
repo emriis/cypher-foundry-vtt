@@ -1,0 +1,40 @@
+{
+  "_id": "00cxmce901r31vcm",
+  "_key": "!items!00cxmce901r31vcm",
+  "name": "Enhanced Beast Form",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "enhanced-beast-form",
+    "variantKey": "00cxmce901r31vcm",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you use Beast Form, your beast form gains the following additional bonuses: +3 to your Might Pool, +2 to your Speed Pool, and you can ignore all minor wounds from physical attacks."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

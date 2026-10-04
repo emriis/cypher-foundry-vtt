@@ -1,0 +1,40 @@
+{
+  "_id": "01dfvo3i00jmymju",
+  "_key": "!items!01dfvo3i00jmymju",
+  "name": "Device Insight",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "device-insight",
+    "variantKey": "01dfvo3i00jmymju",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When examining any unknown, alien, supernatural, or high-technology device, you can ask the GM one question to gain an idea of its capabilities, how it functions, how it can be activated or deactivated, what its weaknesses are (if any), how it can be repaired, or any other similar query. This insight is for difficult or strange things beyond those readily identified by using the appropriate knowledge or technical skill. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

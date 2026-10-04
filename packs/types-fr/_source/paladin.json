@@ -34,48 +34,9 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "combat-prowess",
-        "name": "Prouesse Martiale",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Tu ajoutes +1 dégât à un type d'attaque d'arme de ton choix : attaque de mêlée ou attaque à distance."
-      },
-      {
-        "id": "holy-succor",
-        "name": "Secours Sacré",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
-        },
-        "description": "Lorsqu'un allié à portée immédiate possède au moins trois blessures modérées ou une blessure majeure, tu peux lui accorder ta grâce divine, lui offrant un niveau d'Effort gratuit applicable chaque round à un jet d'attaque ou de défense. La grâce divine persiste jusqu'à ce que les blessures soient soignées ou que l'allié utilise une récupération de dix minutes ou plus. Chaque fois que tu utilises Secours Sacré, son coût augmente de +1 Intellect. Le coût revient à 1 après une récupération."
-      },
-      {
-        "id": "sacred-smite",
-        "name": "Châtiment Sacré",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
-        },
-        "description": "Choisis une créature que tu peux voir et que tu souhaites punir pour ses transgressions. Tant que tu n'attaques pas une autre cible, tes attaques contre cette créature infligent +1 dégât grâce à l'énergie divine qui traverse ton arme, qu'il s'agisse d'une attaque de mêlée ou à distance. Si la cible est un mort-vivant, un démon ou une créature similaire, tu choisis si ton attaque réussie inflige +2 dégâts ou si la créature doit fuir pendant un tour. Au rang 3, le bonus de dégâts contre les morts-vivants, démons et créatures similaires passe à +3."
-      }
+      "Compendium.cypher.abilities-fr.Item.01rt4fmf00x48mh0",
+      "Compendium.cypher.abilities-fr.Item.01haaool001jk8n1",
+      "Compendium.cypher.abilities-fr.Item.019dotwp01l0cqvt"
     ],
     "statOptions": [
       "might",

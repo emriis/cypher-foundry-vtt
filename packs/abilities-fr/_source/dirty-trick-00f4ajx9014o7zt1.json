@@ -1,0 +1,40 @@
+{
+  "_id": "00f4ajx9014o7zt1",
+  "_key": "!items!00f4ajx9014o7zt1",
+  "name": "Dirty Trick",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "dirty-trick",
+    "variantKey": "00f4ajx9014o7zt1",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You attempt to distract your foe (by getting them to look elsewhere, making a clumsy feint to set up your real strike, and so on) so you can follow up with an attack. Make an Intellect attack to deceive your foe; success means their defense against your melee attack this round is hindered. Because your foes catch on that you're tricky, each time after the first that you use this ability in a combat encounter, the Intellect attack is hindered by one step. Instead of following up with an attack, you can follow up with some other action, and if you succeed at an eased bluffing task against them, they don't realize what you did. For example, you could distract a foe and then press the button that opens all of the lion cages, throw an incriminating object into a trash can, or even attempt to pickpocket them. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

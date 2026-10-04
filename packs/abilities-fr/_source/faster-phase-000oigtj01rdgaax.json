@@ -1,0 +1,40 @@
+{
+  "_id": "000oigtj01rdgaax",
+  "_key": "!items!000oigtj01rdgaax",
+  "name": "Faster Phase",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "faster-phase",
+    "variantKey": "000oigtj01rdgaax",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you use Walk Through Walls, you pass through physical barriers faster, increasing your base rate by an additional 3 feet (1 m) per round, and doing so is an action rather than a Last action (you can take your normal movement before or after you use your phasing action). Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

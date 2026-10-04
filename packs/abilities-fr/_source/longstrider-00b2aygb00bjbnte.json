@@ -1,0 +1,40 @@
+{
+  "_id": "00b2aygb00bjbnte",
+  "_key": "!items!00b2aygb00bjbnte",
+  "name": "Longstrider",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "longstrider",
+    "variantKey": "00b2aygb00bjbnte",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you are larger than normal, your long-term movement speed (not your movement each round, but when walking, running, or hiking over a minute or longer) is doubled thanks to your bigger stride and your greater endurance."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

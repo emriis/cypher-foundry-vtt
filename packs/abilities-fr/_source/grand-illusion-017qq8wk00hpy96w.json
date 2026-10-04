@@ -1,0 +1,40 @@
+{
+  "_id": "017qq8wk00hpy96w",
+  "_key": "!items!017qq8wk00hpy96w",
+  "name": "Grand Illusion",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "grand-illusion",
+    "variantKey": "017qq8wk00hpy96w",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 8,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You create a vast, immensely complex illusory scene filling a 1-mile (1.6 km) cube whose closest face is within immediate range of you. You must be able to see the area when you create the illusion. The images can move freely within the cube, behave logically (reacting to fire, attacks, and so on) even when you aren’t watching, and include sound and smell. Examples include armies in battle, flying creatures, aerial machines, or an illusory landscape. The illusion lasts as long as you concentrate (using your action) or until you use a one-hour or longer recovery. Action to create."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

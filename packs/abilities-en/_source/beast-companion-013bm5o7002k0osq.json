@@ -1,0 +1,40 @@
+{
+  "_id": "013bm5o7002k0osq",
+  "_key": "!items!013bm5o7002k0osq",
+  "name": "Beast Companion",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "beast-companion",
+    "variantKey": "013bm5o7002k0osq",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You gain a follower that is a level 2 beast of your size or smaller that accompanies you and follows your instructions. You and the GM must work out the appearance and personality of your beast. Its movement is based on its creature type (avian, swimmer, and so on). If your beast companion dies, you can use your resources hunting in the wild for a few days to locate and befriend a new one."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

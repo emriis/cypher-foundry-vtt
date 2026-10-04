@@ -7,242 +7,125 @@
   "system": {
     "description": "<p>You can transform into various animals, gaining their natural abilities as if you were born with them.</p>",
     "abilities": [
-      {
-        "id": "keen-eye",
-        "name": "Keen Eye",
-        "tier": 1,
-        "prerequisites": [
-          "animal-shape"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+      "Compendium.cypher.abilities-en.Item.006o3xl901kdkbt3",
+      "Compendium.cypher.abilities-en.Item.00pu3lac00xxnbm3",
+      "Compendium.cypher.abilities-en.Item.00fzebb501oazrtm",
+      "Compendium.cypher.abilities-en.Item.001vm4yk008cs65i",
+      "Compendium.cypher.abilities-en.Item.01h8ybz401p5yuv1",
+      "Compendium.cypher.abilities-en.Item.00xma5jd005pw9cs",
+      "Compendium.cypher.abilities-en.Item.015es9ma00a0su5y",
+      "Compendium.cypher.abilities-en.Item.01h5pzci0071t78y",
+      "Compendium.cypher.abilities-en.Item.01taqj4s01s35kne",
+      "Compendium.cypher.abilities-en.Item.015fmmbx01gvwpsn",
+      "Compendium.cypher.abilities-en.Item.00i4olk000dzqtir",
+      "Compendium.cypher.abilities-en.Item.00sh4tca006i4ylb",
+      "Compendium.cypher.abilities-en.Item.00e0ki1300dyxp07",
+      "Compendium.cypher.abilities-en.Item.0106poh000oqokkh"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00pu3lac00xxnbm3",
+          "to": "Compendium.cypher.abilities-en.Item.006o3xl901kdkbt3"
         },
-        "description": "You can see perfectly well half again as far as normal. You ignore attack and perception penalties for fog, smoke, mist, dim light, and very dim light."
-      },
-      {
-        "id": "animal-shape",
-        "name": "Animal Shape",
-        "tier": 1,
-        "prerequisites": [
-          "keen-eye",
-          "scent-transformation"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.006o3xl901kdkbt3",
+          "to": "Compendium.cypher.abilities-en.Item.00pu3lac00xxnbm3"
         },
-        "description": "You change into an animal as small as a rat or up to your own size (such as a large dog or small bear) until you use a recovery. Each time you transform, you can take a different animal shape. Your equipment becomes part of the transformation, rendering it unusable unless it has a passive effect, such as armor. In this form your stats remain the same as your normal form, but you can move and attack according to your animal shape (attacks from most human-sized animals inflict 4 damage; attacks from smaller animals inflict 2 damage) without penalty. Tasks requiring hands (such as using door handles or pushing buttons) are hindered when in animal form. You cannot speak but can still use abilities that don't rely on human speech. You gain a minor ability associated with the creature you become (see the Animal Form Minor Abilities box). For example, if you transform into a bat, you can fly up to a long distance each round. If you transform into an octopus, you can breathe underwater. Effort: Gain an asset to one skill associated with the creature you become (see the Animal Form Minor Abilities box). Effort: Become a talking animal; this looks exactly like a normal animal, but you can still talk and use any abilities that rely on human speech. Effort: Take a hybrid shape; this is like your normal form but with animalistic features, even if that animal is something much smaller than you (such as a bat or rat). In hybrid form you can speak, use all of your abilities, make attacks like an animal, and perform tasks using hands without being hindered. Anyone who sees you clearly in hybrid form would never mistake you for a mere animal. Action to change or revert."
-      },
-      {
-        "id": "scent-transformation",
-        "name": "Scent Transformation",
-        "tier": 1,
-        "prerequisites": [
-          "animal-shape"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00fzebb501oazrtm",
+          "to": "Compendium.cypher.abilities-en.Item.00pu3lac00xxnbm3"
         },
-        "description": "You alter your scent so that you smell like an animal of your choosing until your next ten-minute or longer recovery. This can foil tracking attempts that are based on smell, and when attempting to interact with animals of your chosen type that rely heavily on smell, your tasks are eased by two steps. You can use this ability no matter what your shape is. Action to initiate."
-      },
-      {
-        "id": "beast-communication",
-        "name": "Beast Communication",
-        "tier": 2,
-        "prerequisites": [
-          "animal-shape"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00pu3lac00xxnbm3",
+          "to": "Compendium.cypher.abilities-en.Item.00fzebb501oazrtm"
         },
-        "description": "You can convey a basic concept to a creature that normally can't speak or understand speech. The creature can also give you a very basic answer to a simple question. Action."
-      },
-      {
-        "id": "soothe-the-savage",
-        "name": "Soothe the Savage",
-        "tier": 2,
-        "prerequisites": [
-          "animal-shape"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00pu3lac00xxnbm3",
+          "to": "Compendium.cypher.abilities-en.Item.001vm4yk008cs65i"
         },
-        "description": "Make an Intellect attack roll to calm a nonhuman beast within short range that can see you. You must speak to them (although they don't need to understand your words). They remain calm until you use a ten-minute or longer recovery or for as long as you keep using your action to calm them. Action."
-      },
-      {
-        "id": "bigger-animal-shape",
-        "name": "Bigger Animal Shape",
-        "tier": 3,
-        "prerequisites": [
-          "beast-communication",
-          "soothe-the-savage"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00pu3lac00xxnbm3",
+          "to": "Compendium.cypher.abilities-en.Item.01h8ybz401p5yuv1"
         },
-        "description": "When you use Animal Shape, you can grow to about twice your normal size. Being so large, your animal shape gains the following additional benefits: you can ignore the first moderate wound you take, your unarmed attacks inflict an additional 4 damage, and you gain an asset on your unarmed attack rolls. However, your dodge tasks are hindered. While using Bigger Animal Shape, you also gain an asset to tasks that are easier for a larger creature to perform, like climbing, intimidating, wading rivers, and so on."
-      },
-      {
-        "id": "shapechanger-healing",
-        "name": "Shapechanger Healing",
-        "tier": 3,
-        "prerequisites": [
-          "beast-communication",
-          "soothe-the-savage"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.001vm4yk008cs65i",
+          "to": "Compendium.cypher.abilities-en.Item.00xma5jd005pw9cs"
         },
-        "description": "When you change into an animal form, you are healed of one wound of any severity. This ability renews after you take a ten-hour recovery. Enabler."
-      },
-      {
-        "id": "movement-adaptation",
-        "name": "Movement Adaptation",
-        "tier": 4,
-        "prerequisites": [
-          "bigger-animal-shape",
-          "animal-scrying"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "might",
-          "amount": 4,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01h8ybz401p5yuv1",
+          "to": "Compendium.cypher.abilities-en.Item.00xma5jd005pw9cs"
         },
-        "description": "You can modify your animal shape, either growing wings so you can fly or becoming aquatic with fins and gills (for example, if you are in the form of a gorilla, you could become a winged gorilla or a fishlike gorilla). If you choose flight, you can fly a long distance each round. If you choose aquatic, you can breathe water and swim at your normal land speed. You can carry a creature of your size or smaller, or if affected by Bigger Animal Shape, three creatures of your regular size or smaller. If you use Animal Shape, you gain the benefit of this ability without having to spend an action to trigger it. Action; enabler when using Animal Shape."
-      },
-      {
-        "id": "animal-scrying",
-        "name": "Animal Scrying",
-        "tier": 4,
-        "prerequisites": [
-          "bigger-animal-shape",
-          "shapechanger-healing",
-          "movement-adaptation"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.001vm4yk008cs65i",
+          "to": "Compendium.cypher.abilities-en.Item.015es9ma00a0su5y"
         },
-        "description": "If you know the general location of an animal that is friendly toward you and within 1 mile (1.6 km) of your location, you can sense through its senses until you use a ten-minute or longer recovery. You must be in animal form or a form similar to that animal to activate this ability. Effort: Activate this ability even if you are not in animal form or a form similar to that animal. Action to establish."
-      },
-      {
-        "id": "enhanced-animal-shape",
-        "name": "Enhanced Animal Shape",
-        "tier": 5,
-        "prerequisites": [
-          "movement-adaptation",
-          "not-dead-yet"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01h8ybz401p5yuv1",
+          "to": "Compendium.cypher.abilities-en.Item.015es9ma00a0su5y"
         },
-        "description": "When you use Animal Shape, your animal form gains the following additional bonuses: +3 to your Might Pool, +2 to your Speed Pool, and you can ignore minor wounds from physical attacks. Enabler."
-      },
-      {
-        "id": "not-dead-yet",
-        "name": "Not Dead Yet",
-        "tier": 5,
-        "prerequisites": [
-          "movement-adaptation",
-          "animal-scrying",
-          "enhanced-animal-shape"
-        ],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00xma5jd005pw9cs",
+          "to": "Compendium.cypher.abilities-en.Item.01h5pzci0071t78y"
         },
-        "description": "When you would normally be dead, you instead fall unconscious for one round and then awaken. When you awaken this way, you immediately gain 1d6 + 6 points to restore your stat Pools, and you remove one moderate wound and one major wound. Once you use this ability, your tasks are hindered until you use a ten-hour recovery. If you die again before you use your ten-hour recovery, you are truly dead. You can select this ability twice. The second time you select it, the healing increases to 1d6 + 12 and you remove double the number of wounds. Enabler."
-      },
-      {
-        "id": "lend-animal-shape",
-        "name": "Lend Animal Shape",
-        "tier": 6,
-        "prerequisites": [
-          "enhanced-animal-shape"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 6,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01taqj4s01s35kne",
+          "to": "Compendium.cypher.abilities-en.Item.01h5pzci0071t78y"
         },
-        "description": "You change into an animal as if using Animal Shape, and one willing creature within immediate range also transforms into an animal of that type (bear, tiger, wolf, and so on) until you use a ten-minute or longer recovery, as if they were using your Animal Shape ability. All creatures transforming with you must be your size or smaller. A creature can revert to its normal form as an action, but it cannot then change back into the animal form. One creature (whether you or someone else) changing form does not affect any other creature affected by this ability. Effort: Affect an additional creature. Action."
-      },
-      {
-        "id": "lethal-capability",
-        "name": "Lethal Capability",
-        "tier": 6,
-        "prerequisites": [
-          "enhanced-animal-shape",
-          "not-dead-yet"
-        ],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00xma5jd005pw9cs",
+          "to": "Compendium.cypher.abilities-en.Item.01taqj4s01s35kne"
         },
-        "description": "You've mastered how to kill with a particular attack. You inflict an additional 5 damage with attacks of one specific type, such as a claw, a bite, a tail slap, or some other specific attack you prefer. You can gain this ability more than once. Each time you do, choose a different specific attack."
-      },
-      {
-        "id": "hard-to-see",
-        "name": "Hard to See",
-        "tier": 6,
-        "prerequisites": [
-          "enhanced-animal-shape",
-          "not-dead-yet"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.015es9ma00a0su5y",
+          "to": "Compendium.cypher.abilities-en.Item.01taqj4s01s35kne"
         },
-        "description": "When you move, you are a blur. It is impossible to make out your identity as you pass by someone at speed. In addition, if you do nothing but move on your turn, your dodge and stealth tasks are eased by three steps until your next turn."
-      }
-    ]
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01h5pzci0071t78y",
+          "to": "Compendium.cypher.abilities-en.Item.01taqj4s01s35kne"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01h5pzci0071t78y",
+          "to": "Compendium.cypher.abilities-en.Item.015fmmbx01gvwpsn"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00i4olk000dzqtir",
+          "to": "Compendium.cypher.abilities-en.Item.015fmmbx01gvwpsn"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01h5pzci0071t78y",
+          "to": "Compendium.cypher.abilities-en.Item.00i4olk000dzqtir"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01taqj4s01s35kne",
+          "to": "Compendium.cypher.abilities-en.Item.00i4olk000dzqtir"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.015fmmbx01gvwpsn",
+          "to": "Compendium.cypher.abilities-en.Item.00i4olk000dzqtir"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.015fmmbx01gvwpsn",
+          "to": "Compendium.cypher.abilities-en.Item.00sh4tca006i4ylb"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.015fmmbx01gvwpsn",
+          "to": "Compendium.cypher.abilities-en.Item.00e0ki1300dyxp07"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00i4olk000dzqtir",
+          "to": "Compendium.cypher.abilities-en.Item.00e0ki1300dyxp07"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.015fmmbx01gvwpsn",
+          "to": "Compendium.cypher.abilities-en.Item.0106poh000oqokkh"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00i4olk000dzqtir",
+          "to": "Compendium.cypher.abilities-en.Item.0106poh000oqokkh"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

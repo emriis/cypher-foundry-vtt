@@ -1,0 +1,40 @@
+{
+  "_id": "01owr0rc00evpe0p",
+  "_key": "!items!01owr0rc00evpe0p",
+  "name": "Expert Automaton",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "expert-automaton",
+    "variantKey": "01owr0rc00evpe0p",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You've built a level 3 automaton follower. It otherwise functions much like your level 2 automaton from Automaton Assistant. Instead of gaining a new level 3 automaton, you can upgrade an existing level 2 or 3 automaton follower (increasing its level by 1) and gain a new level 2 automaton. You can take this ability multiple times, each time gaining another automaton."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

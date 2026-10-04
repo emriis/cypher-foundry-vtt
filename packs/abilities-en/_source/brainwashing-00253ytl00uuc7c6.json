@@ -1,0 +1,40 @@
+{
+  "_id": "00253ytl00uuc7c6",
+  "_key": "!items!00253ytl00uuc7c6",
+  "name": "Brainwashing",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "brainwashing",
+    "variantKey": "00253ytl00uuc7c6",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You use trickery, well-spoken lies, and mind-affecting chemicals (or other means, like magic or high technology, as appropriate to your genre) to control the actions of another creature you touch. The creature must be level 3 or lower and you must succeed at an Intellect attack against them. Control lasts until you use a ten-minute or longer recovery, and if you can see them you decide on a case-by-case basis if they follow your orders or if they can act freely. When the duration ends, the creature doesn't remember being controlled or anything it did while under your command. Effort: Increase the maximum level of the creature you can affect by 1. Action to initiate."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

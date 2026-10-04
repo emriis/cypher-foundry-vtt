@@ -1,0 +1,40 @@
+{
+  "_id": "01rzlvja01382x19",
+  "_key": "!items!01rzlvja01382x19",
+  "name": "Information Gathering",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "information-gathering",
+    "variantKey": "01rzlvja01382x19",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You speak wirelessly with any or all non-intelligent machines within 1 mile (1.6 km). You can ask one basic question about themselves or anything happening near them and receive a simple answer. For example, while in an area with many machines, you could ask about the location of a specific creature or individual, and if they are within range, one or more machines will probably provide the answer. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

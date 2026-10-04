@@ -1,0 +1,40 @@
+{
+  "_id": "00pp453e005f1mlq",
+  "_key": "!items!00pp453e005f1mlq",
+  "name": "Connected Knowledge",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "connected-knowledge",
+    "variantKey": "00pp453e005f1mlq",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": "lastAction",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can connect to restricted data (via an implant, a handheld device, a robotic drone assistant, or the like) that isn't publicly accessible. Ask your GM a question and get a short but accurate answer if you succeed on an Intellect task. The difficulty is routine if it's something anyone could learn via their own method of access, level 3 if the sensitive or secret knowledge is primarily an engineering or scientific topic, and level 5 or higher if your GM decides the information is particularly sensitive or secret, whether scientific in nature or not. Last action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

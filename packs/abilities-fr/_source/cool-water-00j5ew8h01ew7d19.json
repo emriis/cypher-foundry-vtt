@@ -1,0 +1,40 @@
+{
+  "_id": "00j5ew8h01ew7d19",
+  "_key": "!items!00j5ew8h01ew7d19",
+  "name": "Cool Water",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "cool-water",
+    "variantKey": "00j5ew8h01ew7d19",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You cause water in the air to condense, creating enough potable cold water to sustain five creatures for one day. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

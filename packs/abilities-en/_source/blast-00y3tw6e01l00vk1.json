@@ -1,0 +1,40 @@
+{
+  "_id": "00y3tw6e01l00vk1",
+  "_key": "!items!00y3tw6e01l00vk1",
+  "name": "Blast",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "blast",
+    "variantKey": "00y3tw6e01l00vk1",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You emit a short-range blast of energy inflicting 4 damage on a target with a successful attack roll. Work with the GM to determine the type of energy comprising your blast. You can tune the effect to make it hot enough to slice through material of up to level 5 that's no more than 1 foot (30 cm) thick if given a few rounds to concentrate on doing so. If you have another damaging attack ability (from your focus or your type), you can use Blast to augment that ability, increasing its damage by 1. Effort: Gain fine control over the effect until you use a ten-minute or longer recovery, varying the intensity as you wish within immediate range; for instance, you could use it to warm the area, cook food without burning it, provide bright light in the area, and so on. Increase the maximum level of material that you can cut through by 1. Action to attack; Last action to initiate fine control; enabler to augment another attack ability. The type of energy you release could be fire, in which case you might call this ability Blast of Fire. Alternatively, your focus might suggest the energy type. For instance, this ability could produce a ray of electricity—especially if your focus is Rides the Lightning—and be called Blast of Lightning."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

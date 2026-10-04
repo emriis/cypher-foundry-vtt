@@ -34,48 +34,9 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "combat-prowess",
-        "name": "Combat Prowess",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You add +1 damage to one type of weapon attack of your choice: melee weapon attacks or ranged weapon attacks."
-      },
-      {
-        "id": "despite-my-wounds",
-        "name": "Despite My Wounds",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "While you have two or more moderate wounds or one major wound, you get a free reroll on one action each round (as if you had spent 1 XP). Enabler."
-      },
-      {
-        "id": "expert-combatant",
-        "name": "Expert Combatant",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you're already specialized in), but you must gain the skill normally. Noble Defender (2 Might or Speed): Choose one character you can see. That character comes under your protection. You gain an asset on all tasks involving finding, healing, interacting with, and protecting them. When you use the help action to aid their block or dodge, you give them two assets instead of one. You can use the help action to aid their Intellect defense (including direct attacks like fear and mind control and subtle influences like charm and intimidation) and give them two assets when you do so. You can only protect one character at a time. First action. At tier 3: Two characters at a time can be under your protection. Noble Sacrifice (2 Might or Speed): When you take the attack meant for another character, you gain a benefit for your selflessness. The attack automatically hits you and inflicts its normal damage (plus the additional minor wound for taking the attack). You can immediately retaliate with an attack against a foe within range. If you took the attack for a person you are protecting with Noble Defender, this attack is eased. Enabler."
-      }
+      "Compendium.cypher.abilities-en.Item.01rt4fmf00x48mh0",
+      "Compendium.cypher.abilities-en.Item.01e3jnvk008p8xfk",
+      "Compendium.cypher.abilities-en.Item.0044i9nr01k453dp"
     ],
     "statOptions": [
       "might",

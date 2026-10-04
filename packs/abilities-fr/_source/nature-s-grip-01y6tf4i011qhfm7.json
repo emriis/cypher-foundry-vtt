@@ -1,0 +1,40 @@
+{
+  "_id": "01y6tf4i011qhfm7",
+  "_key": "!items!01y6tf4i011qhfm7",
+  "name": "Nature's Grip",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "nature-s-grip",
+    "variantKey": "01y6tf4i011qhfm7",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Make an Intellect attack against a foe within short range. Success means branches, grass, or other natural foliage snags and holds the foe until you use a ten-minute or longer recovery. The foe can't move from their current position, and their physical tasks (including attacks and defense) are hindered. If the foe tries to break free, you can continue to restrain them with another Intellect roll. You can use this ability to repel entangling plants in an immediate area within short range, leaving a clear space with no obstructions. Effort: Inflict 3 damage on the round the foe is first held. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

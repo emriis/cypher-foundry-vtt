@@ -31,48 +31,9 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "expert-interlocuter",
-        "name": "Expert Interlocuter",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You are trained in your choice of charm, deception, or intimidation. At tier 6: You can become an expert in that same skill if you are already specialized, but you must gain the skill normally (such as from a character advancement)."
-      },
-      {
-        "id": "inspiring-performance",
-        "name": "Inspiring Performance",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
-        },
-        "description": "With a rousing speech or inspiring music, you lift the spirits of and inspire three allies who can hear and see you. While you continue to speak or perform each round as your action, affected allies gain an asset in a task you choose (combat or noncombat) related to your performance. Even after the effect ends, affected allies are so inspired that they add +1 to their next recovery. Effort: Affect three additional allies. Action. At tier 3: Affected allies add +2 to their next recovery."
-      },
-      {
-        "id": "a-smile-and-a-word",
-        "name": "A Smile and a Word",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "When you successfully interact with a creature by succeeding on a charm, deception, or intimidation task—even those having to do with calming animals or communicating with someone or something whose language you do not speak—you also learn one small useful or at least interesting bit of information. For instance, if you convince the guard to let you pass, you might also learn that their supervisor is due back in ten minutes. Action."
-      }
+      "Compendium.cypher.abilities-en.Item.00wyfx4m00cfab48",
+      "Compendium.cypher.abilities-en.Item.01efhfyr01axrgya",
+      "Compendium.cypher.abilities-en.Item.01lc8spy015pzwd9"
     ],
     "statOptions": [
       "speed",

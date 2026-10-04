@@ -1,0 +1,40 @@
+{
+  "_id": "00symv1a01n68umo",
+  "_key": "!items!00symv1a01n68umo",
+  "name": "Band of Followers",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "band-of-followers",
+    "variantKey": "00symv1a01n68umo",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You gain four level 3 followers, each with three level 4 modifications of your choice. Instead of gaining four new level 3 followers, you can advance four existing level 2 followers to level 3 and gain a new level 2 follower in place of each of them."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

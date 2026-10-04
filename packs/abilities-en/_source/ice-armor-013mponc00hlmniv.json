@@ -1,0 +1,40 @@
+{
+  "_id": "013mponc00hlmniv",
+  "_key": "!items!013mponc00hlmniv",
+  "name": "Ice Armor",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "ice-armor",
+    "variantKey": "013mponc00hlmniv",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You cover your body in a sheen of ice until you use a ten-minute or longer recovery, easing your Might defense rolls to block attacks. In addition, reduce the severity of wounds from cold and ice effects used against you by one step (major to moderate, moderate to minor, minor to none). For example, if you are hit by a blast of cold that causes a moderate wound, you instead take a minor wound. You can make a “cold touch” light unarmed attack against a foe, inflicting 2 cold damage from the ice armor if your attack succeeds. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

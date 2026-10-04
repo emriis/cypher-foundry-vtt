@@ -1,0 +1,40 @@
+{
+  "_id": "01ozb26t00sl9pjp",
+  "_key": "!items!01ozb26t00sl9pjp",
+  "name": "Feat of Strength",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "feat-of-strength",
+    "variantKey": "01ozb26t00sl9pjp",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your physical action is impressive, inspiring an ally or intimidating a foe. After succeeding at a task that depends on brute force (such as smashing down a barred door, tearing open a locked container, lifting or moving a heavy object, or striking someone with a melee weapon), choose a creature who saw you succeed. If they are an ally, you ease their next task. If they are a foe, you can either hinder one of their tasks on their next turn or immediately attempt an eased intimidation task against them. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "013lwe9601vnkr06",
+  "_key": "!items!013lwe9601vnkr06",
+  "name": "Diamagnetism",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "diamagnetism",
+    "variantKey": "013lwe9601vnkr06",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You magnetize any nonmetallic object within short range so that it can be affected by your other magnetic powers, as if using Magnetize at range and on the fly (to permanently magnetize an object, you must spend Intellect as noted for Magnetize). Therefore, with Move Metal, you can move any object you can see. With Repel Metal, you have an asset to all block and dodge rolls, regardless of whether the incoming attack uses metal (even pure energy attacks bend slightly to your will). And so on."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

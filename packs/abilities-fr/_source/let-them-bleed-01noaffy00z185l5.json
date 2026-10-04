@@ -1,0 +1,40 @@
+{
+  "_id": "01noaffy00z185l5",
+  "_key": "!items!01noaffy00z185l5",
+  "name": "Let Them Bleed",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "let-them-bleed",
+    "variantKey": "01noaffy00z185l5",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "The wound bleeds; on your next turn, the foe takes 2 damage that ignores armor. Action. Gut RipperGM intrusions: Your knife gets stuck in your foe and slips from your grasp. Instead of hurting your foe, you accidentally inflict a minor wound on yourself. Your knife sheath is empty and you can't complete the attack."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

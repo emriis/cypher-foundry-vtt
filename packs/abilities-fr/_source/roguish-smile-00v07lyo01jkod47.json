@@ -1,0 +1,40 @@
+{
+  "_id": "00v07lyo01jkod47",
+  "_key": "!items!00v07lyo01jkod47",
+  "name": "Roguish Smile",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "roguish-smile",
+    "variantKey": "00v07lyo01jkod47",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "With a smile and perhaps a wink, you erase the last round from the memory of a target of level 3 or less within immediate distance (make an Intellect attack against them to succeed). Effort: Increase the maximum level of the foe you can affect by 1. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "01u1p76r00l3moy3",
+  "_key": "!items!01u1p76r00l3moy3",
+  "name": "Rend Metal",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "rend-metal",
+    "variantKey": "01u1p76r00l3moy3",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You instantly tear, rip, or burst a metal object of up to level 3 that is within short range. You must be able to see the object and it can't be bigger than half your size (or, if part of a larger object like a wall, a section that is no bigger than half your size). The affected object is destroyed; optionally, it also expels shrapnel, inflicting 1 damage per level on all creatures in immediate range (make separate Intellect attack rolls). Affecting an unwilling creature's equipment requires an Intellect attack roll, but the roll is eased by two steps. Effort: Increase the maximum level of the metal object you can affect by 1. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

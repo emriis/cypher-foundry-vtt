@@ -1,0 +1,40 @@
+{
+  "_id": "00vkwws000h0u5l5",
+  "_key": "!items!00vkwws000h0u5l5",
+  "name": "Reading the Room",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "reading-the-room",
+    "variantKey": "00vkwws000h0u5l5",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You gain knowledge about an area by speaking with dead spirits or their residual energies. You may ask the GM one question, which must be simple and matter-of-fact. You must succeed at an Intellect roll against the difficulty of the question, as set by the GM. “What killed the cattle in this barn?” is a good example of a simple question. “Why were these cattle killed?” is not an appropriate question because it has more to do with the mindset of the killer than the barn. Simple questions usually have a difficulty of 2, but extremely technical questions or those that involve facts meant to be kept secret can have a much higher difficulty. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

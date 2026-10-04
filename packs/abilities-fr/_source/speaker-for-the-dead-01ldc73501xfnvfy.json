@@ -1,0 +1,40 @@
+{
+  "_id": "01ldc73501xfnvfy",
+  "_key": "!items!01ldc73501xfnvfy",
+  "name": "Speaker for the Dead",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "speaker-for-the-dead",
+    "variantKey": "01ldc73501xfnvfy",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You touch a corpse of a dead being and ask it a question. It can’t answer questions that it wouldn’t have understood in life, and it can’t provide answers that it wouldn’t have known in life. The dead being is not compelled to answer you at all, so you might need to interact with it in a way that would have convinced it to answer while it was alive. For example, you might promise to give the corpse a proper burial, avenge their death, or carry a message to someone they knew when they were alive. This probably requires an interaction roll (typically persuasion or intimidation). Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

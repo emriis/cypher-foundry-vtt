@@ -1,0 +1,40 @@
+{
+  "_id": "01iehje501qlgkkh",
+  "_key": "!items!01iehje501qlgkkh",
+  "name": "Drain Life",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "drain-life",
+    "variantKey": "01iehje501qlgkkh",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You send forth an ashy tendril reaching up to short range, inflicting 2 damage to a living target with a successful Intellect attack roll. You benefit from their drained life, healing a minor wound from yourself or an ally within immediate range. Action. At tier 3: If you apply two levels of Effort, a successful attack inflicts 5 damage and heals a moderate or minor wound from yourself or an ally within immediate range."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

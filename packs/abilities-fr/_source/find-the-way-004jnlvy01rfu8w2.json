@@ -1,0 +1,40 @@
+{
+  "_id": "004jnlvy01rfu8w2",
+  "_key": "!items!004jnlvy01rfu8w2",
+  "name": "Find the Way",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "find-the-way",
+    "variantKey": "004jnlvy01rfu8w2",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you are tracking a creature, have gotten lost, don't know the first step to take to begin a journey, or are attempting to choose between two or more routes to take, you can ask your GM one question about the task and get a very short, helpful answer. Once you use this ability, you can't use it again until after your next recovery. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

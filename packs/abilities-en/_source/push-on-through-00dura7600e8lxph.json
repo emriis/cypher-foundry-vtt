@@ -1,0 +1,40 @@
+{
+  "_id": "00dura7600e8lxph",
+  "_key": "!items!00dura7600e8lxph",
+  "name": "Push on Through",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "push-on-through",
+    "variantKey": "00dura7600e8lxph",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Instead of a ten-minute recovery, you have a second one-action recovery. Thus, your first two recoveries are one action, the third is one hour, and the fourth is ten hours. You can take one more moderate wound than normal. You can use one of your one-action recoveries to allow an ally to use one of their ten-minute recoveries as an action. Successive Attack (2 Speed or Might): Once per turn if you take down a foe, you can immediately make another attack on that same turn against a new foe within your reach as an extra action on your turn. You can use this ability with melee attacks and ranged attacks. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

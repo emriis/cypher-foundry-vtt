@@ -1,0 +1,40 @@
+{
+  "_id": "00cf9aix00yg8q2k",
+  "_key": "!items!00cf9aix00yg8q2k",
+  "name": "Friend to Intelligent Machines",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "friend-to-intelligent-machines",
+    "variantKey": "00cf9aix00yg8q2k",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You have an asset to tasks to charm or positively interact with intelligent machines. You can use this asset if you attempt to hack or otherwise gain control of the intelligent machine (whether or not you know it is intelligent when you make the attempt), but never again for that machine regardless of whether the attempt succeeds. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

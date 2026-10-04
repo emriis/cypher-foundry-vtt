@@ -1,0 +1,40 @@
+{
+  "_id": "01gac5cq00ncq38u",
+  "_key": "!items!01gac5cq00ncq38u",
+  "name": "Mystic Flurry",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "mystic-flurry",
+    "variantKey": "01gac5cq00ncq38u",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You inflict an additional 1 damage with unarmed attacks with your mystic source."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

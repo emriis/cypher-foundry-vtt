@@ -7,261 +7,90 @@
   "system": {
     "description": "<p>Your armor, along with your size, strength, incredible training, or machine enhancement, makes you difficult to move or hurt.</p>",
     "abilities": [
-      {
-        "id": "battle-competence",
-        "name": "Compétence martiale",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+      "Compendium.cypher.abilities-fr.Item.01rjggia015bacf2",
+      "Compendium.cypher.abilities-fr.Item.018rcasi00vjg6eq",
+      "Compendium.cypher.abilities-fr.Item.0156r7t101tok69y",
+      "Compendium.cypher.abilities-fr.Item.01m2j4px00ksepw6",
+      "Compendium.cypher.abilities-fr.Item.01jpoh8901hqwa75",
+      "Compendium.cypher.abilities-fr.Item.00iskzw0015hq4en",
+      "Compendium.cypher.abilities-fr.Item.00ilditr01ht28kd",
+      "Compendium.cypher.abilities-fr.Item.00ow6y7x01syqlbs",
+      "Compendium.cypher.abilities-fr.Item.01xebjh7012y3vay",
+      "Compendium.cypher.abilities-fr.Item.01vbumwx00qthpb5",
+      "Compendium.cypher.abilities-fr.Item.01xayyyo000ocr5u",
+      "Compendium.cypher.abilities-fr.Item.0081qs3f01po3ynj",
+      "Compendium.cypher.abilities-fr.Item.00cmhm4p01g99jdt",
+      "Compendium.cypher.abilities-fr.Item.00pfr7of01vkkxy1",
+      "Compendium.cypher.abilities-fr.Item.00e0ki1300dyxp07"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.018rcasi00vjg6eq",
+          "to": "Compendium.cypher.abilities-fr.Item.01m2j4px00ksepw6"
         },
-        "description": "You can freely use all weapons and all armor. As an action, you learn the level of up to three creatures that you can see within short range. This ability can be foiled by disguises or shapechanging. Enabler for weapon use; action for evaluating creatures.",
-        "freeWeaponCategories": [
-          "light",
-          "medium",
-          "heavy"
-        ],
-        "freeArmorCategories": [
-          "light",
-          "medium",
-          "heavy"
-        ]
-      },
-      {
-        "id": "imperturbable",
-        "name": "Imperturbable",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01rjggia015bacf2",
+          "to": "Compendium.cypher.abilities-fr.Item.01m2j4px00ksepw6"
         },
-        "description": "Tu dégages un calme qui influence aussi les autres. On0 ne peux pas te forcer à fuir contre ta volonté (peur magique, etc.). Les jets de défense des allié·e·s à portée immédiate contre ce type d’effet sont facilit és."
-      },
-      {
-        "id": "nothing-but-defend",
-        "name": "Rien que défendre",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01rjggia015bacf2",
+          "to": "Compendium.cypher.abilities-fr.Item.01jpoh8901hqwa75"
         },
-        "description": "Si tu ne fais rien d’autre que te défendre pendant ton tour, tu gagnes un atout à toutes tes tâches de défense pendant un round."
-      },
-      {
-        "id": "resist-the-elements",
-        "name": "Résister aux éléments",
-        "tier": 2,
-        "prerequisites": [
-          "imperturbable",
-          "battle-competence"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.0156r7t101tok69y",
+          "to": "Compendium.cypher.abilities-fr.Item.01jpoh8901hqwa75"
         },
-        "description": "Tu deviens résistant·e à un type d’énergie nocive. Choisis un type (feu, électricité, etc.). Tu réduis la sévérité des blessures causées par cette énergie d’un palier (majeure → modérée, modérée → mineure, mineure → aucune)."
-      },
-      {
-        "id": "shield-master",
-        "name": "Maître·sse du bouclier",
-        "tier": 2,
-        "prerequisites": [
-          "battle-competence",
-          "nothing-but-defend"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01m2j4px00ksepw6",
+          "to": "Compendium.cypher.abilities-fr.Item.00iskzw0015hq4en"
         },
-        "description": "Quand tu utilises un bouclier, il peut encaisser une blessure modérée supplémentaire avant d’être détruit."
-      },
-      {
-        "id": "defend-and-respond",
-        "name": "Défendre et riposter",
-        "tier": 3,
-        "prerequisites": [
-          "resist-the-elements"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "choice",
-          "amount": 3,
-          "options": [
-            "might",
-            "speed"
-          ]
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01jpoh8901hqwa75",
+          "to": "Compendium.cypher.abilities-fr.Item.00ilditr01ht28kd"
         },
-        "description": "If you block or dodge a melee attack, you can immediately make a melee attack against your attacker. You can't use this ability more than once per turn. Enabler."
-      },
-      {
-        "id": "throw-shield",
-        "name": "Lancer de bouclier",
-        "tier": 3,
-        "prerequisites": [
-          "shield-master"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01jpoh8901hqwa75",
+          "to": "Compendium.cypher.abilities-fr.Item.00ow6y7x01syqlbs"
         },
-        "description": "Tu lances ton bouclier comme une arme légère à courte portée. Qu’il touche ou non, il rebondit vers toi si tu réussis une tâche de Célérité de difficulté 2. Effort : un coup réussi entrave la cible pendant un round."
-      },
-      {
-        "id": "unmovable",
-        "name": "Inébranlable",
-        "tier": 3,
-        "prerequisites": [
-          "shield-master",
-          "resist-the-elements"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "might",
-          "amount": 3,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01m2j4px00ksepw6",
+          "to": "Compendium.cypher.abilities-fr.Item.00ow6y7x01syqlbs"
         },
-        "description": "Tu ne peux pas être renversé·e, repoussé·e ou déplacé·e contre ta volonté tant que tu es debout et capable d’agir."
-      },
-      {
-        "id": "hard-won-resilience",
-        "name": "Résilience chèrement acquise",
-        "tier": 4,
-        "prerequisites": [
-          "unmovable"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00ow6y7x01syqlbs",
+          "to": "Compendium.cypher.abilities-fr.Item.01xebjh7012y3vay"
         },
-        "description": "Due to your experiences, you've been exposed to all sorts of terrible things and are developing a general resistance. You can take one more moderate wound than normal. Enabler."
-      },
-      {
-        "id": "inspiring-defense",
-        "name": "Défense inspirante",
-        "tier": 4,
-        "prerequisites": [
-          "throw-shield"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00ilditr01ht28kd",
+          "to": "Compendium.cypher.abilities-fr.Item.01vbumwx00qthpb5"
         },
-        "description": "Quand tu réussis un jet de défense contre une attaque qui t’aurait infligé un effet ou un coup particulièrement puissant (selon le·la MJ), tu récupères 4 points dans ta Réserve de Puissance. Chaque utilisation après la première restaure 1 point de moins. Ce malus se réinitialise après une récupération de dix heures."
-      },
-      {
-        "id": "tower-of-will",
-        "name": "Tour de volonté",
-        "tier": 5,
-        "prerequisites": [
-          "inspiring-defense"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01vbumwx00qthpb5",
+          "to": "Compendium.cypher.abilities-fr.Item.01xayyyo000ocr5u"
         },
-        "description": "Tu gagnes un atout aux tâches de défense d’Intellect et +3 points à ta Réserve d’Intellect."
-      },
-      {
-        "id": "weave-an-iron-wall",
-        "name": "Tisser un mur de fer",
-        "tier": 5,
-        "prerequisites": [
-          "inspiring-defense",
-          "hard-won-resilience"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "choice",
-          "amount": 5,
-          "options": [
-            "might",
-            "speed"
-          ]
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01vbumwx00qthpb5",
+          "to": "Compendium.cypher.abilities-fr.Item.0081qs3f01po3ynj"
         },
-        "description": "Tu manies tes armes si vite qu’elles forment presque un mur. Cette barrière bloque l’accès à une zone immédiate. Tu dois utiliser ton action chaque round pour la maintenir. Toute créature tentant de traverser subit 10 dégâts (sans jet). En tant qu’action supplémentaire, tu peux tenter une attaque de mêlée contre elle et la repousser en cas de réussite."
-      },
-      {
-        "id": "attenuate-threat",
-        "name": "Atténuer la menace",
-        "tier": 6,
-        "prerequisites": [
-          "tower-of-will"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01xebjh7012y3vay",
+          "to": "Compendium.cypher.abilities-fr.Item.0081qs3f01po3ynj"
         },
-        "description": "Si tu fais ton attaque ce round en tant que Dernière action au lieu de la faire en tant qu’action ou Première action, tu peux ignorer une blessure que tu subis avant ton prochain tour."
-      },
-      {
-        "id": "bouncing-shield",
-        "name": "Bouclier ricochet",
-        "tier": 6,
-        "prerequisites": [
-          "tower-of-will"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 3,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01xayyyo000ocr5u",
+          "to": "Compendium.cypher.abilities-fr.Item.00cmhm4p01g99jdt"
         },
-        "description": "Tu lances ton bouclier comme une arme légère sur une cible à courte portée. Qu’il touche ou non, il rebondit pour attaquer deux cibles supplémentaires (la troisième cible peut être la première). Fais un jet séparé pour chaque cible. À la fin, le bouclier revient vers toi si tu réussis une tâche de Célérité de difficulté 2 ; sinon, il tombe à portée immédiate. Effort : un coup réussi entrave la cible pendant un round."
-      },
-      {
-        "id": "lethal-capability",
-        "name": "Capacité létale",
-        "tier": 6,
-        "prerequisites": [
-          "weave-an-iron-wall"
-        ],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01xayyyo000ocr5u",
+          "to": "Compendium.cypher.abilities-fr.Item.00pfr7of01vkkxy1"
         },
-        "description": "You've mastered how to kill with a particular attack. You inflict an additional 5 damage with attacks of one specific type, such as a thrown knife, a shot with a firearm, a swing of an axe, unarmed attacks, or some other specific attack you prefer. You can gain this ability more than once. Each time you do, choose a different specific attack."
-      }
-    ]
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.0081qs3f01po3ynj",
+          "to": "Compendium.cypher.abilities-fr.Item.00e0ki1300dyxp07"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

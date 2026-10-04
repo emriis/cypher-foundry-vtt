@@ -1,0 +1,40 @@
+{
+  "_id": "018o1a3101wj7z7g",
+  "_key": "!items!018o1a3101wj7z7g",
+  "name": "Stunning Attack",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "stunning-attack",
+    "variantKey": "018o1a3101wj7z7g",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When making an unarmed attack, you can choose to have the attack roll be hindered; if you hit, in addition to the normal effect of the attack, the foe loses their next turn. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

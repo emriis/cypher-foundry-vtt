@@ -1,0 +1,40 @@
+{
+  "_id": "00jtr56m01wjs23x",
+  "_key": "!items!00jtr56m01wjs23x",
+  "name": "Blend In",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "blend-in",
+    "variantKey": "00jtr56m01wjs23x",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "By changing your posture, your facial expression, and perhaps your clothing, you make yourself appear unimportant but not out of place for wherever you are. For example, you could look like a janitor in an office building, an orderly in a hospital, or a clerk in a police station. People can still see you, but those of level 3 or less attach no importance to your presence. If a higher-level creature notices you, you can attempt an Intellect task against their level to retain your unimportant-seeming status. While blending in, you gain two assets to dodge and stealth tasks. This effect ends if you do something to call attention to your presence or position—attacking, using an ability, moving a large object, and so on—or if you use a ten-minute or longer recovery. This ability works even if the NPC observes you through a security camera or similar device. Attempting to fool an animal (such as a guard dog or police dog) is hindered. Action to initiate."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

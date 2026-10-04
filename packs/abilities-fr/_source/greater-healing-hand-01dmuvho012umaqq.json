@@ -1,0 +1,40 @@
+{
+  "_id": "01dmuvho012umaqq",
+  "_key": "!items!01dmuvho012umaqq",
+  "name": "Greater Healing Hand",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "greater-healing-hand",
+    "variantKey": "01dmuvho012umaqq",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You remove all of a touched character's minor wounds, reduce two moderate wounds to minor wounds, or reduce two major wounds to moderate wounds. Each time you use Greater Healing Hand, the Intellect point cost increases by 2. The cost returns to its base value after you use a recovery. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

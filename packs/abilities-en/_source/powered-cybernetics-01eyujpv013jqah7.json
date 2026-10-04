@@ -1,0 +1,40 @@
+{
+  "_id": "01eyujpv013jqah7",
+  "_key": "!items!01eyujpv013jqah7",
+  "name": "Powered Cybernetics",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "powered-cybernetics",
+    "variantKey": "01eyujpv013jqah7",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can use your cybernetics to support and enhance your physical actions. When you roll on a task to carry, climb, jump, or smash and your roll is less than a 9, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) This ability renews when you take a recovery. Enabler; action to carry, climb, jump, or smash. Effort: Increase the minimum number rolled for this ability by 3. At tier 3: The minimum number rolled for this ability increases to 12."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

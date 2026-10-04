@@ -1,0 +1,40 @@
+{
+  "_id": "00x7s4eu00w10v8g",
+  "_key": "!items!00x7s4eu00w10v8g",
+  "name": "Mind Games",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "mind-games",
+    "variantKey": "00x7s4eu00w10v8g",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You use lies and trickery, mockery, and perhaps even hateful, obscene language against a foe that can understand you. If you succeed, the foe is confused, enraged, or otherwise distracted enough that they lose their next turn, and on the turn thereafter, their tasks are hindered. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -7,196 +7,71 @@
   "system": {
     "description": "<p>You never quit, can shrug off a beating, and always come back for more.</p>",
     "abilities": [
-      {
-        "id": "determination",
-        "name": "Determination",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+      "Compendium.cypher.abilities-en.Item.0134warf00tnfa71",
+      "Compendium.cypher.abilities-en.Item.00dura7600e8lxph",
+      "Compendium.cypher.abilities-en.Item.004ovg2101y469n3",
+      "Compendium.cypher.abilities-en.Item.00t8bmn4015s1hhk",
+      "Compendium.cypher.abilities-en.Item.01rleh8n011htooa",
+      "Compendium.cypher.abilities-en.Item.01skqdno0078kscn",
+      "Compendium.cypher.abilities-en.Item.01yz3agp00fk8aec",
+      "Compendium.cypher.abilities-en.Item.0121ncug01crf8ex",
+      "Compendium.cypher.abilities-en.Item.01406xna01i532zu",
+      "Compendium.cypher.abilities-en.Item.00i4olk000dzqtir",
+      "Compendium.cypher.abilities-en.Item.01345i5j004yg7yo",
+      "Compendium.cypher.abilities-en.Item.00s8tu7w00eqm4kz"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00dura7600e8lxph",
+          "to": "Compendium.cypher.abilities-en.Item.00t8bmn4015s1hhk"
         },
-        "description": "When you retry a failed task, in addition to the required level of Effort you must use, you gain a free level of Effort. You cannot use this ability again until after you have taken a recovery. Enabler."
-      },
-      {
-        "id": "push-on-through",
-        "name": "Push on Through",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.0134warf00tnfa71",
+          "to": "Compendium.cypher.abilities-en.Item.00t8bmn4015s1hhk"
         },
-        "description": "Instead of a ten-minute recovery, you have a second one-action recovery—your first two recoveries are one action, the third is one hour, and the fourth is ten hours. You can take one more moderate wound than normal. You can use one of your one-action recoveries to allow an ally to use one of their ten-minute recoveries as an action."
-      },
-      {
-        "id": "safe-fall",
-        "name": "Safe Fall",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.0134warf00tnfa71",
+          "to": "Compendium.cypher.abilities-en.Item.01rleh8n011htooa"
         },
-        "description": "When you take a wound from a fall, reduce its severity by one step. Enabler."
-      },
-      {
-        "id": "always-mighty",
-        "name": "Always Mighty",
-        "tier": 2,
-        "prerequisites": [
-          "push-on-through",
-          "determination"
-        ],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.004ovg2101y469n3",
+          "to": "Compendium.cypher.abilities-en.Item.01rleh8n011htooa"
         },
-        "description": "Every time you use a recovery, if your Might Pool isn't already full, you get 1 extra point to restore to your Might Pool. You can select this ability up to three times."
-      },
-      {
-        "id": "ignore-the-pain",
-        "name": "Ignore the Pain",
-        "tier": 2,
-        "prerequisites": [
-          "determination",
-          "safe-fall"
-        ],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00t8bmn4015s1hhk",
+          "to": "Compendium.cypher.abilities-en.Item.01skqdno0078kscn"
         },
-        "description": "You ignore one step of hindrance from one major wound or from having taken all your moderate wounds. You can choose this ability up to three times. Each time you choose it, it allows you to ignore another step of hindrance caused by wounds. Enabler."
-      },
-      {
-        "id": "hidden-reserves",
-        "name": "Hidden Reserves",
-        "tier": 3,
-        "prerequisites": [
-          "always-mighty"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01rleh8n011htooa",
+          "to": "Compendium.cypher.abilities-en.Item.01yz3agp00fk8aec"
         },
-        "description": "When you use a one-action recovery, you add +1 to your Might Edge and your Speed Edge until you use a ten-minute or longer recovery. Enabler."
-      },
-      {
-        "id": "blood-fever",
-        "name": "Blood Fever",
-        "tier": 3,
-        "prerequisites": [
-          "ignore-the-pain"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01skqdno0078kscn",
+          "to": "Compendium.cypher.abilities-en.Item.0121ncug01crf8ex"
         },
-        "description": "While at least one of your Pools has no points, or while you have at least two moderate wounds or one major wound, you gain an asset to attacks or defense rolls (your choice), as well as to intimidation rolls. Enabler."
-      },
-      {
-        "id": "outlast-the-foe",
-        "name": "Outlast the Foe",
-        "tier": 4,
-        "prerequisites": [
-          "hidden-reserves"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01yz3agp00fk8aec",
+          "to": "Compendium.cypher.abilities-en.Item.01406xna01i532zu"
         },
-        "description": "If you have been in combat for five full rounds, you have an asset for all tasks in the remainder of the combat, and you deal an additional 1 damage per attack. Enabler."
-      },
-      {
-        "id": "increasing-determination",
-        "name": "Increasing Determination",
-        "tier": 4,
-        "prerequisites": [
-          "blood-fever"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.0121ncug01crf8ex",
+          "to": "Compendium.cypher.abilities-en.Item.00i4olk000dzqtir"
         },
-        "description": "If you fail at a noncombat physical task (pushing open a door or climbing a cliff, for example) and then retry the task, the task is eased. If you fail again, you gain no special benefits. Enabler."
-      },
-      {
-        "id": "not-dead-yet",
-        "name": "Not Dead Yet",
-        "tier": 5,
-        "prerequisites": [
-          "outlast-the-foe",
-          "increasing-determination"
-        ],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01406xna01i532zu",
+          "to": "Compendium.cypher.abilities-en.Item.00i4olk000dzqtir"
         },
-        "description": "When you would normally be dead, you instead fall unconscious for one round and then awaken. When you awaken this way, you immediately gain 1d6 + 6 points to restore your stat Pools, and you remove one moderate wound and one major wound. Once you use this ability, your tasks are hindered until you use a ten-hour recovery. If you die again before you make your ten-hour recovery, you are truly dead. You can select this ability twice. The second time you select it, the healing increases to 1d6 + 12 and you remove double the number of wounds."
-      },
-      {
-        "id": "final-defiance",
-        "name": "Final Defiance",
-        "tier": 6,
-        "prerequisites": [
-          "not-dead-yet"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00i4olk000dzqtir",
+          "to": "Compendium.cypher.abilities-en.Item.01345i5j004yg7yo"
         },
-        "description": "When you would normally be dead, you instead remain conscious and active for one more round. (This ability activates before Not Dead Yet activates.) As an extra action on your turn each round thereafter, you can attempt a difficulty 5 Might task to remain alive for one additional round. During these extra rounds of life, all your tasks are hindered. If by the last round you're alive you do not receive healing, gain points in a Pool, or otherwise rally or remove a wound that killed you, Not Dead Yet activates. Enabler."
-      },
-      {
-        "id": "ignore-affliction",
-        "name": "Ignore Affliction",
-        "tier": 6,
-        "prerequisites": [
-          "not-dead-yet"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "might",
-          "amount": 5,
-          "options": []
-        },
-        "description": "Until you use a one-hour or longer recovery, you ignore any unwanted condition or affliction (such as disease, paralysis, mind control, broken limb, and so on, but not damage) and act as if it does not affect you. If the condition would normally last less than an hour, it is entirely negated. You can use this ability even if the condition prevents you from taking actions. Action."
-      }
-    ]
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00i4olk000dzqtir",
+          "to": "Compendium.cypher.abilities-en.Item.00s8tu7w00eqm4kz"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

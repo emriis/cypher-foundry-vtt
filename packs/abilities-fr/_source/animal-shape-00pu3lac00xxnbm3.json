@@ -1,0 +1,40 @@
+{
+  "_id": "00pu3lac00xxnbm3",
+  "_key": "!items!00pu3lac00xxnbm3",
+  "name": "Animal Shape",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "animal-shape",
+    "variantKey": "00pu3lac00xxnbm3",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You change into an animal as small as a rat or up to your own size (such as a large dog or small bear) until you use a recovery. Each time you transform, you can take a different animal shape. Your equipment becomes part of the transformation, rendering it unusable unless it has a passive effect, such as armor. In this form your stats remain the same as your normal form, but you can move and attack according to your animal shape (attacks from most human-sized animals inflict 4 damage; attacks from smaller animals inflict 2 damage) without penalty. Tasks requiring hands (such as using door handles or pushing buttons) are hindered when in animal form. You cannot speak but can still use abilities that don't rely on human speech. You gain a minor ability associated with the creature you become (see the Animal Form Minor Abilities box). For example, if you transform into a bat, you can fly up to a long distance each round. If you transform into an octopus, you can breathe underwater. Effort: Gain an asset to one skill associated with the creature you become (see the Animal Form Minor Abilities box). Effort: Become a talking animal; this looks exactly like a normal animal, but you can still talk and use any abilities that rely on human speech. Effort: Take a hybrid shape; this is like your normal form but with animalistic features, even if that animal is something much smaller than you (such as a bat or rat). In hybrid form you can speak, use all of your abilities, make attacks like an animal, and perform tasks using hands without being hindered. Anyone who sees you clearly in hybrid form would never mistake you for a mere animal. Action to change or revert."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

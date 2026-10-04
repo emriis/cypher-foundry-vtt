@@ -1,0 +1,40 @@
+{
+  "_id": "0047c0tz00qug39m",
+  "_key": "!items!0047c0tz00qug39m",
+  "name": "Feint",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "feint",
+    "variantKey": "0047c0tz00qug39m",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 2,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If you use one action creating a misdirection or diversion, in the next round you can take advantage of your opponent's lowered defenses. Make a melee attack roll against that opponent. You gain an asset on this attack. If your attack is successful, it inflicts an additional 4 damage. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

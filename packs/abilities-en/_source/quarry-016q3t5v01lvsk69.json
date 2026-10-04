@@ -1,0 +1,40 @@
+{
+  "_id": "016q3t5v01lvsk69",
+  "_key": "!items!016q3t5v01lvsk69",
+  "name": "Quarry",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "quarry",
+    "variantKey": "016q3t5v01lvsk69",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Choose one creature you can see to be your quarry. You gain an asset on all tasks involving following, understanding, interacting with, attacking, or defending against your quarry. Your attacks against your quarry deal +1 damage. This benefit encompasses hunting-related tasks, if appropriate, such as skinning, dressing, the best way to prepare and preserve any resulting game meat, and so on. You can have only one quarry at a time. Action. At tier 3: You can have two quarries at a time."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

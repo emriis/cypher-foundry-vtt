@@ -1,0 +1,40 @@
+{
+  "_id": "00k00nf300fb3wqw",
+  "_key": "!items!00k00nf300fb3wqw",
+  "name": "Phased Attack",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "phased-attack",
+    "variantKey": "00k00nf300fb3wqw",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Attacks you make this turn ignore your foe's armor. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

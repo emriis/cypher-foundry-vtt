@@ -1,0 +1,40 @@
+{
+  "_id": "01ssgyit00r222zr",
+  "_key": "!items!01ssgyit00r222zr",
+  "name": "Retribution",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "retribution",
+    "variantKey": "01ssgyit00r222zr",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You call forth the powers of a deity to assail a foe within short range that you can see. If your Intellect attack hits, the target takes 3 damage; they are also marked with an obvious sign relating to that deity until you take a ten-minute or longer recovery. For example, if you call for the retribution of Thesk the Serpent Lord, the attack looks like ephemeral snakes twining around and biting your foe, and they are marked on their forehead or another obvious location with glowing fangs or a snake's head. Last action. At tier 3: The retribution increases to 5 damage."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

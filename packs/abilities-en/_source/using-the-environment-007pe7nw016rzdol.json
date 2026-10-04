@@ -1,0 +1,40 @@
+{
+  "_id": "007pe7nw016rzdol",
+  "_key": "!items!007pe7nw016rzdol",
+  "name": "Using the Environment",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "using-the-environment",
+    "variantKey": "007pe7nw016rzdol",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can use the environment to your advantage. If there is something within immediate distance that plausibly could provide cover (a table, chandelier, banister, second foe, and so on), you have cover and an asset on your melee attacks. It is a routine task (no roll required) for you to move anywhere that it is physically possible for you to reach as part of normal movement, climbing, or jumping, and you ignore obstacles and difficult terrain when you do so. For example, you could climb up a tapestry to a balcony or slide down a ship's sail, but not slip through an arrow slit or enter a locked cage. This ability lasts until you use a ten-minute or longer recovery. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

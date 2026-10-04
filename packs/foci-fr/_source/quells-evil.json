@@ -7,196 +7,71 @@
   "system": {
     "description": "<p>You are skilled in finding, destroying, and banishing undead, demons, and creatures of similar ilk.</p>",
     "abilities": [
-      {
-        "id": "sense-evil",
-        "name": "Détection du mal",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+      "Compendium.cypher.abilities-fr.Item.007hb8ao01fwema0",
+      "Compendium.cypher.abilities-fr.Item.00vy8ch901a8xkyz",
+      "Compendium.cypher.abilities-fr.Item.0006e7nh01tqj4ph",
+      "Compendium.cypher.abilities-fr.Item.00j9su2b00z8lqy9",
+      "Compendium.cypher.abilities-fr.Item.00w1thxo010a5b05",
+      "Compendium.cypher.abilities-fr.Item.011gnvmt007tou9k",
+      "Compendium.cypher.abilities-fr.Item.00s5vofw00z2qu9i",
+      "Compendium.cypher.abilities-fr.Item.012qko5q00de1vk2",
+      "Compendium.cypher.abilities-fr.Item.01p0z0wz0083jn5h",
+      "Compendium.cypher.abilities-fr.Item.01b66wpy018md90z",
+      "Compendium.cypher.abilities-fr.Item.00y1ielt01pgg9lx",
+      "Compendium.cypher.abilities-fr.Item.00dar6j9002t2de1"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.007hb8ao01fwema0",
+          "to": "Compendium.cypher.abilities-fr.Item.00j9su2b00z8lqy9"
         },
-        "description": "En utilisant une action pour percevoir les mort‑vivant·e·s, les démons (ou les créatures possédées par des démons), ou les créatures du même acabit à portée immédiate, si ton jet est inférieur à 9, considère que tu as obtenu 9. (Tu évites ainsi une Intrusion du·de la MJ si tu fais un 1.) Au rang 3, le minimum passe à 12. Effort : augmenter le minimum obtenu de +3 ou L’effet dure jusqu’à ta prochaine récupération de dix minutes ou plus."
-      },
-      {
-        "id": "inspiring-trust",
-        "name": "Confiance inspirante",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00vy8ch901a8xkyz",
+          "to": "Compendium.cypher.abilities-fr.Item.00j9su2b00z8lqy9"
         },
-        "description": "Les allié·e·s présent·e·s qui partagent ton sens du bien et du mal gagnent +1 à leurs récupérations."
-      },
-      {
-        "id": "tribulation",
-        "name": "Tribulation",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00vy8ch901a8xkyz",
+          "to": "Compendium.cypher.abilities-fr.Item.00w1thxo010a5b05"
         },
-        "description": "Tu canalises une énergie spirituelle pour étourdir ou repousser les créatures surnaturelles maléfiques. Choisis jusqu’à cinq mort‑vivant·e·s, démons ou créatures du même acabit de niveau 2 ou moins à courte portée, et fais un jet d’attaque d’Intellect séparé pour chacun·e. En cas de réussite, tu choisis si iels perdent leur prochain tour ou fuient ta présence pendant un round. Effort : imposer une autre action à effectuer pendant un round (attaquer un ennemi de ton choix, etc.) ou augmenter le niveau maximal affecté de +1. Dernière action."
-      },
-      {
-        "id": "shield-against-evil",
-        "name": "Bouclier contre le mal",
-        "tier": 2,
-        "prerequisites": [
-          "sense-evil",
-          "inspiring-trust"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.0006e7nh01tqj4ph",
+          "to": "Compendium.cypher.abilities-fr.Item.00w1thxo010a5b05"
         },
-        "description": "Tu bénis toi‑même ou un·e allié·e touché·e, gagnant une protection contre les mort‑vivant·e·s, démons et créatures du même acabit jusqu’à ta prochaine récupération de dix minutes ou plus. La protection facilite les jets de défense contre ces créatures et accorde une immunité contre l’influence mentale, la peur et la possession (provenant de n’importe quelle source)."
-      },
-      {
-        "id": "invisibility-to-evil",
-        "name": "Invisibilité face au mal",
-        "tier": 2,
-        "prerequisites": [
-          "inspiring-trust",
-          "tribulation"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00j9su2b00z8lqy9",
+          "to": "Compendium.cypher.abilities-fr.Item.011gnvmt007tou9k"
         },
-        "description": "Un·e allié·e touché·e devient effectivement invisible pour les mort‑vivant·e·s, démons et créatures du même acabit de niveau 3 ou moins, jusqu’à ta prochaine récupération de dix minutes ou plus. L’effet cesse si la cible révèle sa présence (attaque, aptitude, déplacement d’un gros objet…). Effort : augmenter le niveau maximal des créatures incapables de percevoir la cible de +1."
-      },
-      {
-        "id": "unearth-evil",
-        "name": "Déterrer le mal",
-        "tier": 3,
-        "prerequisites": [
-          "shield-against-evil"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00w1thxo010a5b05",
+          "to": "Compendium.cypher.abilities-fr.Item.00s5vofw00z2qu9i"
         },
-        "description": "Tu détectes la présence des mort‑vivant·e·s, démons et créatures du même acabit à grande distance. Tu génères une « carte thermique » mentale des créatures concernées dans un rayon de 15 km. La position des créatures affectées est précise à environ 30 m. Le processus prend d’une heure à une journée entière de concentration, selon les circonstances (distance, interférences, etc.). Tu ne sais pas à l’avance combien de temps cela prendra. Les créatures de niveau 4+ sentent qu’on les a remarquées, sans forcément comprendre comment. Effort : après avoir localisé les cibles, tu gardes leur position en tête (même si elles se déplacent) jusqu’à ta prochaine récupération d’une heure ou plus (nécessite 2 niveaux d’Effort)."
-      },
-      {
-        "id": "blast-evil",
-        "name": "Frappe sacrée",
-        "tier": 3,
-        "prerequisites": [
-          "invisibility-to-evil"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.011gnvmt007tou9k",
+          "to": "Compendium.cypher.abilities-fr.Item.012qko5q00de1vk2"
         },
-        "description": "Tu purifies une zone immédiate adjacente d’un éclat radiant, infligeant 3 dégâts à jusqu’à trois cibles (jet séparé pour chacune). Si les cibles sont des mort‑vivant·e·s, démons ou créatures du même acabit, elles subissent 6 dégâts à la place. Si une cible est possédée, elle obtient une nouvelle chance de résister et d’expulser son possesseur."
-      },
-      {
-        "id": "righteous-cloak",
-        "name": "Manteau vertueux",
-        "tier": 4,
-        "prerequisites": [
-          "unearth-evil"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00s5vofw00z2qu9i",
+          "to": "Compendium.cypher.abilities-fr.Item.01p0z0wz0083jn5h"
         },
-        "description": "Tu rayonnes d’une lumière pure, infligeant automatiquement 4 dégâts (sans jet) à quiconque te touche ou t’attaque en mêlée. Tu peux aussi illuminer une zone courte autour de toi. L’effet dure jusqu’à ta prochaine récupération de dix minutes ou plus."
-      },
-      {
-        "id": "rebuke-evil",
-        "name": "Réprimande sacrée",
-        "tier": 4,
-        "prerequisites": [
-          "blast-evil"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.012qko5q00de1vk2",
+          "to": "Compendium.cypher.abilities-fr.Item.01b66wpy018md90z"
         },
-        "description": "Tu réprimandes un mort‑vivant·e·s, un démon ou une créature du même acabit à courte portée en réussissant une attaque d’Intellect. La créature fait alors de son mieux pour accomplir l’ordre que tu lui donnes, même si cela lui nuit ou nuit à ses allié·e·s, jusqu’à ta prochaine récupération de dix minutes ou plus. Effort : affecter une cible supplémentaire (jet séparé pour chaque), avec le même ordre pour toutes."
-      },
-      {
-        "id": "shrug-off-evil",
-        "name": "Résister au mal",
-        "tier": 5,
-        "prerequisites": [
-          "righteous-cloak",
-          "rebuke-evil"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01p0z0wz0083jn5h",
+          "to": "Compendium.cypher.abilities-fr.Item.01b66wpy018md90z"
         },
-        "description": "Tu es immunisé·e à l’influence mentale, la peur et la possession (de n’importe quelle source). Tu ignores une blessure infligée par un mort‑vivant·e·s, un démon ou une créature du même acabit. Ce deuxième effet de l’aptitude se renouvelle après une récupération de dix heures."
-      },
-      {
-        "id": "fence-out-evil",
-        "name": "Mur de lumière sacrée",
-        "tier": 6,
-        "prerequisites": [
-          "shrug-off-evil"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 6,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01b66wpy018md90z",
+          "to": "Compendium.cypher.abilities-fr.Item.00y1ielt01pgg9lx"
         },
-        "description": "Tu entoures une zone courte d’un mur immatériel de lumière purificatrice jusqu’à ta prochaine récupération de dix minutes ou plus. À l’apparition du mur, puis à chaque round : chaque mort‑vivant·e·s, démon ou créature du même acabit dans la zone (ou entrant dans la zone) subit 3 dégâts (ignore l’Armure), sans jet. De plus, tu peux faire une attaque d’Intellect contre une créature qualifiée dans la zone ; en cas de réussite, elle est affectée comme par Réprimande sacrée."
-      },
-      {
-        "id": "retribution",
-        "name": "Rétribution",
-        "tier": 6,
-        "prerequisites": [
-          "shrug-off-evil"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 8,
-          "options": []
-        },
-        "description": "Call radiant flame onto an immediate area at long range, damaging every creature and one chosen creature more severely."
-      }
-    ]
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01b66wpy018md90z",
+          "to": "Compendium.cypher.abilities-fr.Item.00dar6j9002t2de1"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

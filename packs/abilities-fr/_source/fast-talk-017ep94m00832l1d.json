@@ -1,0 +1,40 @@
+{
+  "_id": "017ep94m00832l1d",
+  "_key": "!items!017ep94m00832l1d",
+  "name": "Fast Talk",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "fast-talk",
+    "variantKey": "017ep94m00832l1d",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When speaking with an intelligent creature who can understand you and isn't hostile, you convince them to take one reasonable action in the next round. A reasonable action must be agreed upon by your GM; it should not put the creature or its allies in obvious danger or be wildly out of character. Action. Hand to Eye (2 Speed or Intellect): When you roll to accomplish a task involving manual dexterity or mental agility—pickpocketing, lockpicking, games involving agility, and so on—and your roll is less than a 9, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) Effort: Increase the minimum number rolled for this ability by 3. Enabler. At tier 3: The minimum number rolled for this ability increases to 12."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

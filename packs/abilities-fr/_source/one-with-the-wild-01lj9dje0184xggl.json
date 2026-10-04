@@ -1,0 +1,40 @@
+{
+  "_id": "01lj9dje0184xggl",
+  "_key": "!items!01lj9dje0184xggl",
+  "name": "One With the Wild",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "one-with-the-wild",
+    "variantKey": "01lj9dje0184xggl",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You and your allies gain an unusual connection to the wilderness within long range until you use a one-hour or longer recovery. This has three effects: Natural animals and plants in the area will not knowingly harm you or your allies. You and your allies increase their Might Edge, Speed Edge, and Intellect Edge by 1. Any recoveries made during this period restore twice as many points. Action to initiate."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

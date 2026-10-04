@@ -1,0 +1,40 @@
+{
+  "_id": "01c1u83s00b6ua84",
+  "_key": "!items!01c1u83s00b6ua84",
+  "name": "Beast Senses",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "beast-senses",
+    "variantKey": "01c1u83s00b6ua84",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You have heightened senses; you have an asset to perception and initiative tasks. If you are in beast form, you have two assets, and even if you are unaware of an incoming attack, the attacker doesn't gain any advantage against you, such as from surprise."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

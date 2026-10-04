@@ -1,0 +1,40 @@
+{
+  "_id": "01b3sbto00ro1r9n",
+  "_key": "!items!01b3sbto00ro1r9n",
+  "name": "Flameblade",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "flameblade",
+    "variantKey": "01b3sbto00ro1r9n",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your Shroud of Flame covers one weapon you wield in flame, such as a manufactured weapon like a sword or bow. (You could also intensify the flame already shrouding your hand, improving your unarmed attacks.) Any attack you make with the flaming weapon inflicts an additional 1 damage from fire (if the weapon fires projectiles, such as arrows from a bow, this damage applies to the projectiles). The flame ends if you stop holding or carrying the weapon, but as an extra action on your turn you can cover a different weapon you wield with flames. This ability ends automatically when you use a ten-minute or longer recovery. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

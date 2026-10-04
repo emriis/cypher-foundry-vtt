@@ -1,0 +1,40 @@
+{
+  "_id": "0117mpxo00vm4eox",
+  "_key": "!items!0117mpxo00vm4eox",
+  "name": "Dirty Fighter",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "dirty-fighter",
+    "variantKey": "0117mpxo00vm4eox",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 2,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Make a Speed attack against a foe within long range who you want to distract, blind, annoy, hamper, or otherwise interfere with. If you succeed, you hinder their attacks and defenses until you use a ten-minute or longer recovery. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

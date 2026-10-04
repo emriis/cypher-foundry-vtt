@@ -1,0 +1,40 @@
+{
+  "_id": "01xmq6zj01pi5zx4",
+  "_key": "!items!01xmq6zj01pi5zx4",
+  "name": "Coaxing Power",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "coaxing-power",
+    "variantKey": "01xmq6zj01pi5zx4",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You boost the power or function of a machine so that it operates at one level higher than normal, lasting until you use a one-hour or longer recovery. Action to initiate."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

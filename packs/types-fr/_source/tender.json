@@ -31,34 +31,8 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "foil-danger",
-        "name": "Déjouer le Danger",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
-        },
-        "description": "Si tu es conscient·e d'un danger à portée immédiate et que tu réussis un jet d'Intellect contre son niveau, tu annules ce danger pendant un round. Il peut s'agir d'un élément du terrain (flaque d'acide, fosse boueuse, etc.), d'un piège, d'une capacité naturelle d'une créature (venin, radiation, etc.) ou même de l'attaque ou de l'action d'un adversaire."
-      },
-      {
-        "id": "wasteland-healer",
-        "name": "Suggestion Inspirante",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
-        },
-        "description": "With access to a scavenged doctor's bag (or similar equipment), you can use treatment in half the normal amount of time or treat twice as many wounds for one character in the normal time. Enabler."
-      }
+      "Compendium.cypher.abilities-fr.Item.019i62rb00qjv70h",
+      "Compendium.cypher.abilities-fr.Item.018zuj3b00mfi3zt"
     ],
     "statOptions": [
       "intellect"

@@ -1,0 +1,40 @@
+{
+  "_id": "00zc5wmg019sowut",
+  "_key": "!items!00zc5wmg019sowut",
+  "name": "Recover Faster",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "recover-faster",
+    "variantKey": "00zc5wmg019sowut",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you rally as your action, you gain an extra action on your turn that you can only use for moving. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

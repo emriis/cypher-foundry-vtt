@@ -1,0 +1,40 @@
+{
+  "_id": "01cmsg5j00ki0f8c",
+  "_key": "!items!01cmsg5j00ki0f8c",
+  "name": "Axe Hook",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "axe-hook",
+    "variantKey": "01cmsg5j00ki0f8c",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 1,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "This is an axe attack that relies on your axe's “beard” (the portion of the blade directly below the axe's cutting edge) to hook a target's weapon or shield. A successful attack deals 2 less damage than normal but causes them to drop one or the other. To retrieve their weapon or shield, the target must use an action. Alternatively, you can hook a limb to pull your target off balance. This attack deals 1 less damage than normal but hinders your target's tasks until your next turn. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

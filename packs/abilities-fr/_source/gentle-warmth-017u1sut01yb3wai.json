@@ -1,0 +1,40 @@
+{
+  "_id": "017u1sut01yb3wai",
+  "_key": "!items!017u1sut01yb3wai",
+  "name": "Gentle Warmth",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "gentle-warmth",
+    "variantKey": "017u1sut01yb3wai",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You make it up to 30˚ F (15˚ C) warmer in an immediate area until you take a ten-minute or longer recovery (this reduces wound severity from cold temperature environments by two steps). This effect is centered on you and moves with you. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

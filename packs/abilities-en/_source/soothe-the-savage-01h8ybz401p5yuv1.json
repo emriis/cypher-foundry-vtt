@@ -1,0 +1,40 @@
+{
+  "_id": "01h8ybz401p5yuv1",
+  "_key": "!items!01h8ybz401p5yuv1",
+  "name": "Soothe the Savage",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "soothe-the-savage",
+    "variantKey": "01h8ybz401p5yuv1",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Make an Intellect attack roll to calm a nonhuman beast within short range that can see you. You must speak to them (although they don't need to understand your words). They remain calm until you use a ten-minute or longer recovery or for as long as you keep using your action to calm them. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

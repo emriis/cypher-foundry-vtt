@@ -1,0 +1,40 @@
+{
+  "_id": "01uiud0w01whvoe7",
+  "_key": "!items!01uiud0w01whvoe7",
+  "name": "Surging Hand",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "surging-hand",
+    "variantKey": "01uiud0w01whvoe7",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 2,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You call upon your mystic source and project it at a target within short range, inflicting 4 damage with a successful Speed attack. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

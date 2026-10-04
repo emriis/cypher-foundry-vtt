@@ -1,0 +1,40 @@
+{
+  "_id": "016k6c7c01hcm1ju",
+  "_key": "!items!016k6c7c01hcm1ju",
+  "name": "Captivate or Inspire",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "captivate-or-inspire",
+    "variantKey": "016k6c7c01hcm1ju",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can use this ability in one of two ways. Captivate: Your words keep the attention of all NPCs in immediate range that hear them for as long as you speak, if you succeed on a persuasion, deception, or intimidation skill roll against a difficulty level equal to the highest level of an NPC in the crowd. Inspire: Your words inspire all NPCs that hear them, allowing them to perform tasks as if one level higher until you use aone-hour or longer recovery. In either case, you choose which NPCs are affected. If anyone in the crowd is attacked while you're trying to speak to them, you lose the crowd's attention. Action to initiate."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

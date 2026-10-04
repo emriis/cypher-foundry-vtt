@@ -32,48 +32,9 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "dual-wield",
-        "name": "Dual Wield",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You can use two light melee weapons at the same time or one light melee weapon and one medium melee weapon at the same time. You can make an attack with either one as your action, then attack with the other weapon as an extra action on your turn. Enabler. At tier 3: You can choose to use two medium melee weapons at the same time. When using Dual Wield to attack twice on your turn, you can't use a First action to attack with a light melee weapon and then attack again with your other weapon as an action; instead, your two actions take place in regular initiative order."
-      },
-      {
-        "id": "expert-combatant",
-        "name": "Expert Combatant",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you're already specialized in), but you must gain the skill normally."
-      },
-      {
-        "id": "weapon-switch",
-        "name": "Weapon Switch",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "As an extra action on your turn, you change which weapons you're holding in each hand. This might entail swapping your left and right weapons, sheathing them and drawing new ones, flipping and catching one or both of them, dropping one to switch to a two-handed grip, or something similar. This maneuver is so startling, unexpected, and impressive that your next attack is eased by two steps. Once you use this ability, you can't use it again until after your next recovery. Enabler."
-      }
+      "Compendium.cypher.abilities-en.Item.01osc73i01sg7dev",
+      "Compendium.cypher.abilities-en.Item.0044i9nr01k453dp",
+      "Compendium.cypher.abilities-en.Item.00ji4kqn00epbfwp"
     ],
     "statOptions": [
       "speed"

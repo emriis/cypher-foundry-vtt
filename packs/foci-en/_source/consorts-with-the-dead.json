@@ -7,240 +7,129 @@
   "system": {
     "description": "<p>The dead answer your questions, and their reanimated corpses serve you.</p>",
     "abilities": [
-      {
-        "id": "basic-necromancy",
-        "name": "Basic Necromancy",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+      "Compendium.cypher.abilities-en.Item.00880c9y01swrm91",
+      "Compendium.cypher.abilities-en.Item.000bak3l00tlcgu0",
+      "Compendium.cypher.abilities-en.Item.01ldc73501xfnvfy",
+      "Compendium.cypher.abilities-en.Item.00xkfmvn01vzesjb",
+      "Compendium.cypher.abilities-en.Item.01wi4y8r00gt0dsm",
+      "Compendium.cypher.abilities-en.Item.00r4vdph00fkjcqp",
+      "Compendium.cypher.abilities-en.Item.00vkwws000h0u5l5",
+      "Compendium.cypher.abilities-en.Item.00svnx6o00g6x8pp",
+      "Compendium.cypher.abilities-en.Item.00myh3sx01xqu821",
+      "Compendium.cypher.abilities-en.Item.01iewwzn01ss01k5",
+      "Compendium.cypher.abilities-en.Item.01uloiy0000dtznu",
+      "Compendium.cypher.abilities-en.Item.00pkvo4400b964sv",
+      "Compendium.cypher.abilities-en.Item.01v27e9w01wwndw6",
+      "Compendium.cypher.abilities-en.Item.00t7w23r018i6hks"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00880c9y01swrm91",
+          "to": "Compendium.cypher.abilities-en.Item.00xkfmvn01vzesjb"
         },
-        "description": "You animate the body of a dead creature of approximately your size or smaller within immediate range, creating a level 1 follower that is an undead creature. It has none of the intelligence, memories, or special abilities that it had in life. The creature follows your verbal commands until you use a one-hour or longer recovery, at which point it becomes an inert corpse. You can reanimate it again when it becomes inert or if it is “killed” by damage (though you may have to spend a few minutes with a needle and thread to reattach detached or loose parts). Last action to animate. Bone Lore (1 Intellect): With a touch, you ascertain the cause of death of a corpse, how long since its death, and its species when it was alive. Last action. Speaker for the Dead (2 Intellect): You touch a corpse of a dead being and ask it a question. It can't answer questions that it wouldn't have understood in life, and it can't provide answers that it wouldn't have known in life. The dead being is not compelled to answer you at all, so you might need to interact with it in a way that would have convinced it to answer while it was alive. For example, you might promise to give the corpse a proper burial, avenge their death, or carry a message to someone they knew when they were alive. This probably requires an interaction roll (typically charm or intimidation). Action."
-      },
-      {
-        "id": "bone-lore",
-        "name": "Bone Lore",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.000bak3l00tlcgu0",
+          "to": "Compendium.cypher.abilities-en.Item.00xkfmvn01vzesjb"
         },
-        "description": "With a touch, you ascertain the cause of death of a corpse, how long since its death, and its species when it was alive. Last action."
-      },
-      {
-        "id": "speaker-for-the-dead",
-        "name": "Speaker for the Dead",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00880c9y01swrm91",
+          "to": "Compendium.cypher.abilities-en.Item.01wi4y8r00gt0dsm"
         },
-        "description": "You touch a corpse of a dead being and ask it a question. It can’t answer questions that it wouldn’t have understood in life, and it can’t provide answers that it wouldn’t have known in life. The dead being is not compelled to answer you at all, so you might need to interact with it in a way that would have convinced it to answer while it was alive. For example, you might promise to give the corpse a proper burial, avenge their death, or carry a message to someone they knew when they were alive. This probably requires an interaction roll (typically persuasion or intimidation). Action."
-      },
-      {
-        "id": "blood-sorcery",
-        "name": "Blood Sorcery",
-        "tier": 2,
-        "prerequisites": [
-          "basic-necromancy",
-          "bone-lore"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00xkfmvn01vzesjb",
+          "to": "Compendium.cypher.abilities-en.Item.01wi4y8r00gt0dsm"
         },
-        "description": "You draw upon your own blood, spirit, or life energy to power your abilities. You take a moderate wound and add +1 Edge to the Pool of your choice while you retain that wound. Enabler."
-      },
-      {
-        "id": "improved-necromancy",
-        "name": "Improved Necromancy",
-        "tier": 2,
-        "prerequisites": [
-          "basic-necromancy",
-          "blood-sorcery"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.000bak3l00tlcgu0",
+          "to": "Compendium.cypher.abilities-en.Item.00r4vdph00fkjcqp"
         },
-        "description": "You can use Basic Necromancy to animate multiple bodies at the same time. Each animated creature beyond the first costs 1 additional Intellect point (so 4 points for two bodies, 5 points for three, and so on). Your range for Basic Necromancy (including when animating multiple bodies) increases to short."
-      },
-      {
-        "id": "improved-speaker",
-        "name": "Improved Speaker",
-        "tier": 2,
-        "prerequisites": [
-          "bone-lore",
-          "speaker-for-the-dead"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01ldc73501xfnvfy",
+          "to": "Compendium.cypher.abilities-en.Item.00r4vdph00fkjcqp"
         },
-        "description": "When using Speaker for the Dead, for each additional Intellect point you spend beyond the initial ability cost, you can ask one additional question. Enabler."
-      },
-      {
-        "id": "reading-the-room",
-        "name": "Reading the Room",
-        "tier": 3,
-        "prerequisites": [
-          "blood-sorcery",
-          "improved-speaker",
-          "repair-flesh"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00xkfmvn01vzesjb",
+          "to": "Compendium.cypher.abilities-en.Item.00vkwws000h0u5l5"
         },
-        "description": "You gain knowledge about an area by speaking with dead spirits or their residual energies. You may ask the GM one question, which must be simple and matter-of-fact. You must succeed at an Intellect roll against the difficulty of the question, as set by the GM. “What killed the cattle in this barn?” is a good example of a simple question. “Why were these cattle killed?” is not an appropriate question because it has more to do with the mindset of the killer than the barn. Simple questions usually have a difficulty of 2, but extremely technical questions or those that involve facts meant to be kept secret can have a much higher difficulty. Action."
-      },
-      {
-        "id": "repair-flesh",
-        "name": "Repair Flesh",
-        "tier": 3,
-        "prerequisites": [
-          "blood-sorcery",
-          "improved-necromancy",
-          "reading-the-room"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00r4vdph00fkjcqp",
+          "to": "Compendium.cypher.abilities-en.Item.00vkwws000h0u5l5"
         },
-        "description": "You can knit back together damaged flesh with a touch. You can reduce a wound by one severity: major to moderate, moderate to minor, or minor to none. Instead of curing a wound, you can enhance a character’s next recovery by +2 Pool points. If used on a living or undead NPC, you restore 3 health. Action."
-      },
-      {
-        "id": "greater-necromancy",
-        "name": "Greater Necromancy",
-        "tier": 4,
-        "prerequisites": [
-          "improved-necromancy",
-          "repair-flesh",
-          "wraith-cloak"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 5,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00svnx6o00g6x8pp",
+          "to": "Compendium.cypher.abilities-en.Item.00vkwws000h0u5l5"
         },
-        "description": "You animate the body of a dead creature up to twice your size within short range, creating a level 3 follower that is an undead creature. It has none of the intelligence, memories, or special abilities that it had in life. The creature follows your verbal commands until you use a one-hour or longer recovery, at which time it becomes an inert corpse. You can reanimate it again when it becomes inert, or if it is “killed” by damage (though you may have to spend some time with a needle and thread to reattach detached or loose parts). Each animated creature beyond the first costs 2 additional Intellect points (so 7 points for two bodies, 9 points for three, and so on). Action to animate. Wraith Cloak (4 Intellect): At your command, a nearby undead spirit wraps itself around you until you use a ten-minute or longer recovery. The spirit is empowered during this period, automatically inflicting 4 damage (no roll required) to anyone who tries to touch you or strike you with a melee attack. While the wraith cloak is active, all your stealth tasks are eased. Enabler."
-      },
-      {
-        "id": "wraith-cloak",
-        "name": "Wraith Cloak",
-        "tier": 4,
-        "prerequisites": [
-          "reading-the-room",
-          "repair-flesh",
-          "greater-necromancy"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00xkfmvn01vzesjb",
+          "to": "Compendium.cypher.abilities-en.Item.00svnx6o00g6x8pp"
         },
-        "description": "At your command, a nearby undead spirit wraps itself around you until you use a ten-minute or longer recovery. The spirit is empowered during this period, automatically inflicting 4 damage (no roll required) to anyone who tries to touch you or strike you with a melee attack. While the wraith cloak is active, all your stealth tasks are eased. Enabler."
-      },
-      {
-        "id": "terrifying-gaze",
-        "name": "Terrifying Gaze",
-        "tier": 5,
-        "prerequisites": [
-          "greater-necromancy",
-          "wall-of-bones"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 6,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01wi4y8r00gt0dsm",
+          "to": "Compendium.cypher.abilities-en.Item.00svnx6o00g6x8pp"
         },
-        "description": "You project a fearsome gaze at up to five living creatures within short range who can see you. Make a separate Intellect attack roll for each creature. Success means that the creature is frozen in fear, not moving or taking actions until you use a ten-minute or longer recovery, they are attacked, or you leave their field of view. Some creatures without minds (such as slime monsters or animated statues) might be immune to Terrifying Gaze. Action."
-      },
-      {
-        "id": "wall-of-bones",
-        "name": "Wall of Bones",
-        "tier": 5,
-        "prerequisites": [
-          "wraith-cloak",
-          "terrifying-gaze"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 5,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00vkwws000h0u5l5",
+          "to": "Compendium.cypher.abilities-en.Item.00svnx6o00g6x8pp"
         },
-        "description": "You create a barrier of bones tainted with undeath composed of four 10-foot by 10-foot (3.5 m by 3.5 m) squares, each 1 inch (2.5 cm) thick, arranged as you wish. The wall is a level 5 barrier. One or both sides emanate necrotic energy; anyone within immediate distance of such a side takes 5 damage (no rolls required) or double that if they pass through. The wall lasts until you use a ten-minute or longer recovery. Action to create."
-      },
-      {
-        "id": "true-necromancy",
-        "name": "True Necromancy",
-        "tier": 6,
-        "prerequisites": [
-          "terrifying-gaze",
-          "wall-of-bones"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 8,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01wi4y8r00gt0dsm",
+          "to": "Compendium.cypher.abilities-en.Item.00myh3sx01xqu821"
         },
-        "description": "You animate the body of a dead creature up to twice your size within short range, creating a level 5 follower that is an undead creature. It has none of the intelligence, memories, or special abilities that it had in life. The creature follows your verbal commands until you use a one-hour or longer recovery, at which time it becomes an inert corpse. You can reanimate it again when it becomes inert or if it is “killed” by damage (though you may have to spend some time with a needle and thread to reattach detached or loose parts). Each animated creature beyond the first costs 3 additional Intellect points (so 11 points for two bodies, 14 points for three, and so on). Action to animate."
-      },
-      {
-        "id": "word-of-death",
-        "name": "Word of Death",
-        "tier": 6,
-        "prerequisites": [
-          "terrifying-gaze",
-          "wall-of-bones"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 6,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00svnx6o00g6x8pp",
+          "to": "Compendium.cypher.abilities-en.Item.00myh3sx01xqu821"
         },
-        "description": "You speak a magic word so potent that it can instantly kill a foe. Make an Intellect attack against a foe within short range. If you succeed, you inflict 10 damage. Action."
-      }
-    ]
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01iewwzn01ss01k5",
+          "to": "Compendium.cypher.abilities-en.Item.00myh3sx01xqu821"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00vkwws000h0u5l5",
+          "to": "Compendium.cypher.abilities-en.Item.01iewwzn01ss01k5"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00svnx6o00g6x8pp",
+          "to": "Compendium.cypher.abilities-en.Item.01iewwzn01ss01k5"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00myh3sx01xqu821",
+          "to": "Compendium.cypher.abilities-en.Item.01iewwzn01ss01k5"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00myh3sx01xqu821",
+          "to": "Compendium.cypher.abilities-en.Item.01uloiy0000dtznu"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00pkvo4400b964sv",
+          "to": "Compendium.cypher.abilities-en.Item.01uloiy0000dtznu"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01iewwzn01ss01k5",
+          "to": "Compendium.cypher.abilities-en.Item.00pkvo4400b964sv"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01uloiy0000dtznu",
+          "to": "Compendium.cypher.abilities-en.Item.00pkvo4400b964sv"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01uloiy0000dtznu",
+          "to": "Compendium.cypher.abilities-en.Item.01v27e9w01wwndw6"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00pkvo4400b964sv",
+          "to": "Compendium.cypher.abilities-en.Item.01v27e9w01wwndw6"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01uloiy0000dtznu",
+          "to": "Compendium.cypher.abilities-en.Item.00t7w23r018i6hks"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00pkvo4400b964sv",
+          "to": "Compendium.cypher.abilities-en.Item.00t7w23r018i6hks"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

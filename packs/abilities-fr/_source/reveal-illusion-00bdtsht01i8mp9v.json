@@ -1,0 +1,40 @@
+{
+  "_id": "00bdtsht01i8mp9v",
+  "_key": "!items!00bdtsht01i8mp9v",
+  "name": "Reveal Illusion",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "reveal-illusion",
+    "variantKey": "00bdtsht01i8mp9v",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you roll to find an illusion or invisible target within short range and your roll is less than a 12, treat the roll as a 12. (This means you don't get a GM intrusion if you roll a 1.) This ability lasts until you use a ten-minute or longer recovery. Action to initiate. Effort: Increase the minimum number rolled for this ability by 3. At tier 3: The minimum number rolled for this ability increases to 15."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

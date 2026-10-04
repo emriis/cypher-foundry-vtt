@@ -1,0 +1,40 @@
+{
+  "_id": "0156r7t101tok69y",
+  "_key": "!items!0156r7t101tok69y",
+  "name": "Nothing but Defend",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "nothing-but-defend",
+    "variantKey": "0156r7t101tok69y",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When guarding, you gain an asset to all defense tasks. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

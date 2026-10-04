@@ -1,0 +1,40 @@
+{
+  "_id": "01f0av3901lfspl2",
+  "_key": "!items!01f0av3901lfspl2",
+  "name": "Guide Bolt",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "guide-bolt",
+    "variantKey": "01f0av3901lfspl2",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you make an attack with metallic ammunition—including bullets, thrown knives, metallic bolts, or metal-tipped arrows—on a target within short range, you can improve the attack's aim and velocity, which grants an asset to the attack and inflicts an additional 3 damage. You can use this ability only once per round. Effort: Affect an ally's attack instead of your own if their attack passes within short range. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

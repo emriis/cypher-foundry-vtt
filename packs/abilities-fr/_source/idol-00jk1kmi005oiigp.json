@@ -1,0 +1,40 @@
+{
+  "_id": "00jk1kmi005oiigp",
+  "_key": "!items!00jk1kmi005oiigp",
+  "name": "Idol",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "idol",
+    "variantKey": "00jk1kmi005oiigp",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "At the conclusion of a ten-minute ritual, you create an idol that persists until its magic is exhausted. The idol could be a symbol etched in stone, a figurine woven from twigs, a small carving, or something similar. The idol must be set on a solid surface with a nod toward being protected from the elements, such as being set in a tree hollow, at the base of a wall, or inside a structure. The idol's holy connection to the ineffable provides your choice of one of the following fixed benefits. Whoever prays to the idol as their action gains this benefit whether you are present or not. The idol has a depletion of 1–2 in 1d6; roll each time it grants its benefit to someone."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

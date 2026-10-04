@@ -1,0 +1,40 @@
+{
+  "_id": "00rw1or701of0cb8",
+  "_key": "!items!00rw1or701of0cb8",
+  "name": "Light Step",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "light-step",
+    "variantKey": "00rw1or701of0cb8",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can reduce the weight of your footprints to about the weight of a piece of paper, which means you don't trigger pressure plates or similar weight-based devices. You also reduce your falling damage by one wound severity."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

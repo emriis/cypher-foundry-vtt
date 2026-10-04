@@ -1,0 +1,40 @@
+{
+  "_id": "00cdc05500immcv9",
+  "_key": "!items!00cdc05500immcv9",
+  "name": "Taunting Defense",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "taunting-defense",
+    "variantKey": "00cdc05500immcv9",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you defend against a melee attack, your mocking moves, entertaining quips at your foe's expense, or a certain something draws out your foe's anger. Your foe's attack is hindered, but if they hit, they deal an additional minor wound. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

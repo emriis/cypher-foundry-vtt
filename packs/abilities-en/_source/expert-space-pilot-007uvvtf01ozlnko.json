@@ -1,0 +1,40 @@
+{
+  "_id": "007uvvtf01ozlnko",
+  "_key": "!items!007uvvtf01ozlnko",
+  "name": "Expert Space Pilot",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "expert-space-pilot",
+    "variantKey": "007uvvtf01ozlnko",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You are trained in piloting spacecraft. At tier 6: You can become an expert in piloting spacecraft if you are already specialized, but you must gain the skill normally (such as from a character advancement)."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

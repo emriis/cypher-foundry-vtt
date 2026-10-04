@@ -1,0 +1,40 @@
+{
+  "_id": "01x2n35h01uvntp0",
+  "_key": "!items!01x2n35h01uvntp0",
+  "name": "Controlled Change",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "controlled-change",
+    "variantKey": "01x2n35h01uvntp0",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can try to use your Beast Form ability to change into your beast form on any night (a difficulty 4 Intellect task). Any transformations you make using this power are in addition to the five nights per month that you change involuntarily. Action to change."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

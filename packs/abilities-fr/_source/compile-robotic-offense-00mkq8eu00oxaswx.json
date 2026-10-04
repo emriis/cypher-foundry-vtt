@@ -1,0 +1,40 @@
+{
+  "_id": "00mkq8eu00oxaswx",
+  "_key": "!items!00mkq8eu00oxaswx",
+  "name": "Compile Robotic Offense",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "compile-robotic-offense",
+    "variantKey": "00mkq8eu00oxaswx",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your attack against a robot or intelligent machine this round has an asset if you make it as a Last action instead of as an action or a First action. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "00trwn2900d3hinu",
+  "_key": "!items!00trwn2900d3hinu",
+  "name": "Towering Throw",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "towering-throw",
+    "variantKey": "00trwn2900d3hinu",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you deal damage to a creature of your size or smaller with an unarmed attack, you throw that creature 1d20 feet away from you. The creature lands prone. While bigger than normal, each increment (Enlarge, Bigger, Huge, Gargantuan, and Colossal) increases the distance you throw the creature by another 1d6 feet and deals an additional 1 damage upon their impact. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

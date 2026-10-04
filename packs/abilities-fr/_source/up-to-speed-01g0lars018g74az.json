@@ -1,0 +1,40 @@
+{
+  "_id": "01g0lars018g74az",
+  "_key": "!items!01g0lars018g74az",
+  "name": "Up to Speed",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "up-to-speed",
+    "variantKey": "01g0lars018g74az",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If you do nothing but move for three actions in a row, you accelerate greatly and can move up to about 200 mph (320 km/h)—about 2000 feet (600 m) each round—for ten minutes or about 35 miles (60 km). After this you must stop and take a recovery. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

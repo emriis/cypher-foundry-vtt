@@ -7,197 +7,67 @@
   "system": {
     "description": "<p>Electronic aids implanted in your brain make you a mental powerhouse.</p>",
     "abilities": [
-      {
-        "id": "data-processor",
-        "name": "Data Processor",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+      "Compendium.cypher.abilities-en.Item.01kcuhq701t8ngo9",
+      "Compendium.cypher.abilities-en.Item.019x2gkn00q8v3f4",
+      "Compendium.cypher.abilities-en.Item.01gr626800p6kd1a",
+      "Compendium.cypher.abilities-en.Item.00vq79hw01xm8cbq",
+      "Compendium.cypher.abilities-en.Item.01w72rei01wiywz4",
+      "Compendium.cypher.abilities-en.Item.00n3ze9z01ng10s5",
+      "Compendium.cypher.abilities-en.Item.00s34hl500kbo7rs",
+      "Compendium.cypher.abilities-en.Item.01tns92t00hq13hv",
+      "Compendium.cypher.abilities-en.Item.017ulh9800z3bz35",
+      "Compendium.cypher.abilities-en.Item.00e87aun0198qsgb",
+      "Compendium.cypher.abilities-en.Item.01pssuwl00o5b84o",
+      "Compendium.cypher.abilities-en.Item.0140ytgy01remsdj"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01kcuhq701t8ngo9",
+          "to": "Compendium.cypher.abilities-en.Item.019x2gkn00q8v3f4"
         },
-        "description": "Drawing upon stored information and the ability to process incoming data at amazing speeds, you temporarily become trained in a mental task. Each time you activate this ability, choose one Intellect skill, such as hacking, Intellect defense, a knowledge skill, or perception; you become trained in that skill until you use a ten-minute or longer recovery. Normally you can use this ability to become trained in only one skill at a time; activating it again replaces the previous use with a new trained skill. Effort: Increase your maximum number of temporary trained skills by one. Action to initiate."
-      },
-      {
-        "id": "think-fast",
-        "name": "Think Fast",
-        "tier": 1,
-        "prerequisites": [
-          "data-processor"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01kcuhq701t8ngo9",
+          "to": "Compendium.cypher.abilities-en.Item.01gr626800p6kd1a"
         },
-        "description": "Your mind is quick and elusive. You are trained in Intellect defense."
-      },
-      {
-        "id": "wireless-interface",
-        "name": "Wireless Interface",
-        "tier": 1,
-        "prerequisites": [
-          "data-processor"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01kcuhq701t8ngo9",
+          "to": "Compendium.cypher.abilities-en.Item.00vq79hw01xm8cbq"
         },
-        "description": "You can mentally communicate with machines within short range. Communication is two-way, but the machine must be willing and able to communicate. You don't have to see the target, but you must know that it's within range. You can have more than one active contact at once, but you must establish contact with each machine individually. Once you've established contact, tasks involving that machine take half the normal time, and tasks that are an action become a First action. Each contact lasts until you use a ten-minute or longer recovery. Effort: Increase the duration so it lasts until you use a one-hour or longer recovery. Increase the range by a step (long, very long, 1 mile, 10 miles, or anywhere on the planet). Action to establish contact."
-      },
-      {
-        "id": "analytic-processor",
-        "name": "Analytic Processor",
-        "tier": 2,
-        "prerequisites": [
-          "data-processor"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01gr626800p6kd1a",
+          "to": "Compendium.cypher.abilities-en.Item.01w72rei01wiywz4"
         },
-        "description": "Ask the GM a question you want answered. The GM sets a difficulty for the answer—the more obscure the answer, the more difficult the task. If you succeed at an Intellect task against this difficulty, you get a short answer to the question. If you fail, you take 4 Intellect damage from digital feedback. Action."
-      },
-      {
-        "id": "machine-reading",
-        "name": "Machine Reading",
-        "tier": 2,
-        "prerequisites": [
-          "wireless-interface"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01kcuhq701t8ngo9",
+          "to": "Compendium.cypher.abilities-en.Item.00n3ze9z01ng10s5"
         },
-        "description": "You can read the surface “thoughts” of a machine within short range, even if it doesn't want you to. You must be able to see it. Once you have established contact, you can read the machine's thoughts until you use a ten-minute or longer recovery. Action to initiate."
-      },
-      {
-        "id": "action-processor",
-        "name": "Action Processor",
-        "tier": 3,
-        "prerequisites": [
-          "data-processor"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.019x2gkn00q8v3f4",
+          "to": "Compendium.cypher.abilities-en.Item.00s34hl500kbo7rs"
         },
-        "description": "Your Data Processor ability can now grant you training in physical skills as well, such as athletics, gymnastics, dodging or blocking, or attacks with a specific weapon. This does not change how many skills Data Processor can simultaneously give you training in. Enabler."
-      },
-      {
-        "id": "awareness",
-        "name": "Awareness",
-        "tier": 3,
-        "prerequisites": [
-          "think-fast"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01gr626800p6kd1a",
+          "to": "Compendium.cypher.abilities-en.Item.01tns92t00hq13hv"
         },
-        "description": "You become hyperaware of your surroundings until you use a ten-minute or longer recovery. You are aware of all living things within long range (including their general position). By using an action to concentrate, you can choose one of them and attempt to learn their general health and power level. Action. When you use Awareness, you are also aware of thinking machines in long range."
-      },
-      {
-        "id": "expanded-wireless",
-        "name": "Expanded Wireless",
-        "tier": 4,
-        "prerequisites": [
-          "wireless-interface"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00n3ze9z01ng10s5",
+          "to": "Compendium.cypher.abilities-en.Item.017ulh9800z3bz35"
         },
-        "description": "The base range for Wireless Interface increases to anywhere on the planet."
-      },
-      {
-        "id": "locked-skill",
-        "name": "Locked Skill",
-        "tier": 4,
-        "prerequisites": [
-          "action-processor"
-        ],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00s34hl500kbo7rs",
+          "to": "Compendium.cypher.abilities-en.Item.00e87aun0198qsgb"
         },
-        "description": "When you activate Data Processor, choose one of the skills it gives you training in; this is your “locked” skill. Your training in the locked skill lasts until you use a ten-hour recovery. If you activate Data Processor again before you use this recovery, you can reset the duration of your locked skill or choose another skill to be your locked skill. You can select this ability up to three times. Each time you select it, your maximum number of locked skills increases by one. Enabler."
-      },
-      {
-        "id": "precognition",
-        "name": "Precognition",
-        "tier": 5,
-        "prerequisites": [
-          "awareness"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 6,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.017ulh9800z3bz35",
+          "to": "Compendium.cypher.abilities-en.Item.01pssuwl00o5b84o"
         },
-        "description": "You dimly sense the future until you use a ten-minute or longer recovery. During this time, you gain the following benefits: You gain an asset on defense tasks. You can predict the actions of those around you. You gain an asset to seeing through deceptions and attempts to betray you as well as avoiding traps and ambushes. You know what people are probably thinking and what they will say before they say it. You gain an asset to all interaction tasks. Enabler."
-      },
-      {
-        "id": "machine-enhancement",
-        "name": "Machine Enhancement",
-        "tier": 6,
-        "prerequisites": [
-          "locked-skill"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Anytime you use Effort on an Intellect action, add your choice of the following options: a free level of Effort on the action or a minor effect on the action. Enabler."
-      },
-      {
-        "id": "mind-surge",
-        "name": "Mind Surge",
-        "tier": 6,
-        "prerequisites": [
-          "precognition"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You have an extra one-action recovery each day that can only be used to replenish your Intellect Pool."
-      }
-    ]
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00e87aun0198qsgb",
+          "to": "Compendium.cypher.abilities-en.Item.0140ytgy01remsdj"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

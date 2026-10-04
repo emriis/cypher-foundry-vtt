@@ -1,0 +1,43 @@
+{
+  "_id": "006xd3or0010c8gn",
+  "_key": "!items!006xd3or0010c8gn",
+  "name": "Fearsome Reputation",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "fearsome-reputation",
+    "variantKey": "006xd3or0010c8gn",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "choice",
+      "amount": 3,
+      "options": [
+        "might",
+        "intellect"
+      ]
+    },
+    "action": "action",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You announce yourself (perhaps mentioning one of your intimidating deeds) to all foes within long range who can hear and understand you. Make a separate Intellect attack roll for each foe. Success means they are afraid of you, easing your tasks against them until you use a ten-minute or longer recovery. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

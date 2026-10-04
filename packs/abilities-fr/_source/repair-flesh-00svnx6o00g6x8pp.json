@@ -1,0 +1,40 @@
+{
+  "_id": "00svnx6o00g6x8pp",
+  "_key": "!items!00svnx6o00g6x8pp",
+  "name": "Repair Flesh",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "repair-flesh",
+    "variantKey": "00svnx6o00g6x8pp",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can knit back together damaged flesh with a touch. You can reduce a wound by one severity: major to moderate, moderate to minor, or minor to none. Instead of curing a wound, you can enhance a character’s next recovery by +2 Pool points. If used on a living or undead NPC, you restore 3 health. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

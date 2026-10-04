@@ -1,0 +1,40 @@
+{
+  "_id": "01fbq3dn016x2473",
+  "_key": "!items!01fbq3dn016x2473",
+  "name": "Preternaturally Strong",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "preternaturally-strong",
+    "variantKey": "01fbq3dn016x2473",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you roll for a carrying, climbing, jumping, or smashing task and your roll is less than a 9, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) While bigger than normal, each size increment (Enlarge, Bigger, Huge, Gargantuan, and Colossal) increases this minimum number rolled by 3. This ability renews when you take a recovery. Enabler. At tier 3: The minimum number rolled for this ability increases to 12."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

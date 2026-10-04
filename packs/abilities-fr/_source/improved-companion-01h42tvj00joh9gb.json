@@ -1,0 +1,40 @@
+{
+  "_id": "01h42tvj00joh9gb",
+  "_key": "!items!01h42tvj00joh9gb",
+  "name": "Improved Companion",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "improved-companion",
+    "variantKey": "01h42tvj00joh9gb",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Increase the level of your beast companion (and their modifiers, if any) by 1. You can select this ability up to three times. Each additional time you select it, increase your beast's level by 1."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -33,48 +33,9 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "frenzy",
-        "name": "Frénésie",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
-        },
-        "description": "<p>En combat, tu peux entrer dans un état de frénésie. Tant que tu es dans cet état, tu ne peux pas utiliser de points d'Intellect, mais tu ajoutes +1 à ton Atout de Puissance et à ton Atout de Célérité. Cet effet dure aussi longtemps que tu le souhaites, mais il prend fin dès qu'aucun combat n'a lieu à portée de tes sens.</p><p>Effort : Tu facilites les attaques de tes alliés contre un adversaire de ton choix pour le reste du combat.</p>"
-      },
-      {
-        "id": "wilderness-survival",
-        "name": "Instinct de survie",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Tu sais survivre dans les terres inhabitées. Après avoir passé au moins dix minutes en pleine nature et réussi une tâche de survie en plein air de difficulté 2 (ou une difficulté évaluée par le MJ correspondante à la zone concernée), tu trouves quelque chose d'utile que tu recherchais : abri, feu, gibier, baies, champignons, racines ou autres aliments. Tu sais également préparer au mieux tout gibier ou végétation récupéré et tu peux nourrir jusqu'à cinq alliés en plus de toi-même."
-      },
-      {
-        "id": "wounded-fury",
-        "name": "Fureur du blessé",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Tant que tu as au moins trois blessures modérées ou au moins une blessure majeure, tu bénéficies d'un niveau gratuit d'Effort que tu peux appliquer à l'une de tes attaques à chaque round. Au rang 3, ce bénéfice passe à deux niveaux d'Effort gratuits."
-      }
+      "Compendium.cypher.abilities-fr.Item.00i86oqn01yg5a2w",
+      "Compendium.cypher.abilities-fr.Item.017c16qa00f4k5ca",
+      "Compendium.cypher.abilities-fr.Item.01nk94hr00xcxsjt"
     ],
     "statOptions": [
       "might",

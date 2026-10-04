@@ -1,0 +1,40 @@
+{
+  "_id": "00tt0zuz01pg22l5",
+  "_key": "!items!00tt0zuz01pg22l5",
+  "name": "Swing Through GM intrusions",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "swing-through-gm-intrusions",
+    "variantKey": "00tt0zuz01pg22l5",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your sword chips or bends, reducing its damage by 1 until repaired. Your sword goes flying, landing a short distance away. Your foe deflects your attack, and you inflict a moderate wound on yourself."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "009620rr01019d1h",
+  "_key": "!items!009620rr01019d1h",
+  "name": "Font of Recovery",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "font-of-recovery",
+    "variantKey": "009620rr01019d1h",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You have restorative power within you that others can access with a touch. If an ally uses their action to touch you and they spend 1 Intellect, they choose whether they regain 1d6 Might points or regain 1d6 Speed points. Once the ally uses this ability, they can't do so again until after they use a ten-hour recovery. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

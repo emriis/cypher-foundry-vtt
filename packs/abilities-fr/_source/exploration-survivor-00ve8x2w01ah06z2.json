@@ -1,0 +1,40 @@
+{
+  "_id": "00ve8x2w01ah06z2",
+  "_key": "!items!00ve8x2w01ah06z2",
+  "name": "Exploration Survivor",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "exploration-survivor",
+    "variantKey": "00ve8x2w01ah06z2",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You know how to survive in new and strange locations. After spending at least ten minutes in a region and succeeding on a outdoor survival task (generally difficulty 2, or whatever the GM determines is appropriate to the area), you find something useful you were seeking. The useful thing might be shelter in the form of a cave or tree hollow, materials to start a fire, fresh water, a game animal you bring down with ease, edible plants and fungi, or something to counteract a bleeding wound or poison. You are able to feed yourself and five allies for as long as you remain in this region. Once you've been to a notable location within a region (such as your campsite or a prominent landmark), you know the general direction and distance to it from where you are right now. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

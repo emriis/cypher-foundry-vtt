@@ -1,0 +1,40 @@
+{
+  "_id": "01rleh8n011htooa",
+  "_key": "!items!01rleh8n011htooa",
+  "name": "Ignore the Pain",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "ignore-the-pain",
+    "variantKey": "01rleh8n011htooa",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You ignore one step of hindrance from one major wound or from having taken all your moderate wounds. You can choose this ability up to three times. Each time you choose it, it allows you to ignore another step of hindrance caused by wounds. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

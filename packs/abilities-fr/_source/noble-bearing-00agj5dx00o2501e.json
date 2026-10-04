@@ -1,0 +1,40 @@
+{
+  "_id": "00agj5dx00o2501e",
+  "_key": "!items!00agj5dx00o2501e",
+  "name": "Noble Bearing",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "noble-bearing",
+    "variantKey": "00agj5dx00o2501e",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You are adept at claiming the rewards that a noble background can generate. When you use this ability, strangers who are not already attacking give you at least a round to have your say. Alternatively, you can secure a place to stay somewhere that provides accommodations (even if that means others are turned out), get into a restricted area, ignore rules (minor ones, anyway), get in to see and speak with an important person, or gain some similar benefit without needing to succeed on an interaction task (unless your GM determines special circumstances apply, in which case you gain an asset to the task). Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

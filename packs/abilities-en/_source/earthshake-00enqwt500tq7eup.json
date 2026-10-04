@@ -1,0 +1,43 @@
+{
+  "_id": "00enqwt500tq7eup",
+  "_key": "!items!00enqwt500tq7eup",
+  "name": "Earthshake",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "earthshake",
+    "variantKey": "00enqwt500tq7eup",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "choice",
+      "amount": 7,
+      "options": [
+        "might",
+        "intellect"
+      ]
+    },
+    "action": "action",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You trigger a violent earth movement in a short area within very long range. Buildings and terrain features are damaged, reducing their levels by 1 to 3, shedding debris and rubble. Creatures in the area take 6 damage from shaking and/or falling debris (roll a separate attack roll against each). Even on a failed attack, creatures in the area still take 3 damage. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

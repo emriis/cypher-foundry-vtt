@@ -1,0 +1,40 @@
+{
+  "_id": "01xgfoim011dv87e",
+  "_key": "!items!01xgfoim011dv87e",
+  "name": "Snap Shot",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "snap-shot",
+    "variantKey": "01xgfoim011dv87e",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can attack with your firearm and then attack again as an extra action on your turn. The second attack is hindered by two steps. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

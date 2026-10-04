@@ -1,0 +1,40 @@
+{
+  "_id": "003gcle2008ch83r",
+  "_key": "!items!003gcle2008ch83r",
+  "name": "Lower Temperature",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "lower-temperature",
+    "variantKey": "003gcle2008ch83r",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You make it up to 30˚ F (15˚ C) cooler in an immediate area until you make a ten-minute or longer recovery (this reduces wound severity from warm temperature environments by two steps). This effect is centered on you and moves with you. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "0127b3t701g602gi",
+  "_key": "!items!0127b3t701g602gi",
+  "name": "The Wild Is on Your Side",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "the-wild-is-on-your-side",
+    "variantKey": "0127b3t701g602gi",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Nature itself intervenes against your foes within short range. Until you use a ten-minute or longer recovery, rocks trip them, vines entangle them, insects bite them, small animals distract or confuse them, and so on, hindering all their tasks. You can only use this ability when in a wilderness environment. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "00nq6erm00rcxuy9",
+  "_key": "!items!00nq6erm00rcxuy9",
+  "name": "Fireball",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "fireball",
+    "variantKey": "00nq6erm00rcxuy9",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You create a burst of fire within long range, filling an immediate area. Roll against each creature in the area; you inflict 3 damage on a success, or 1 damage on a failure. Flammable objects may catch fire. Each level of Effort applied to increase damage adds 2 damage to each target (instead of 3). Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

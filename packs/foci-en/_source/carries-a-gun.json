@@ -7,245 +7,137 @@
   "system": {
     "description": "<p>You carry a firearm (whether a conventional gunpowder pistol or some kind of blaster or energy weapon) and you know how to use it in a fight.</p>",
     "abilities": [
-      {
-        "id": "keen-eye",
-        "name": "Keen Eye",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+      "Compendium.cypher.abilities-en.Item.006o3xl901kdkbt3",
+      "Compendium.cypher.abilities-en.Item.01vuo4u600q600hn",
+      "Compendium.cypher.abilities-en.Item.00nxwn6l00vami12",
+      "Compendium.cypher.abilities-en.Item.01wfbpoq01w6sxn6",
+      "Compendium.cypher.abilities-en.Item.01fp41il01jv3m63",
+      "Compendium.cypher.abilities-en.Item.00bik3xb01et0zy2",
+      "Compendium.cypher.abilities-en.Item.00zbsr8z01j40rw7",
+      "Compendium.cypher.abilities-en.Item.01qmbmtz015g03b8",
+      "Compendium.cypher.abilities-en.Item.015qllqx008nfylb",
+      "Compendium.cypher.abilities-en.Item.01xgfoim011dv87e",
+      "Compendium.cypher.abilities-en.Item.01qo1ht700cbimtm",
+      "Compendium.cypher.abilities-en.Item.006tlxkt018xqyoi",
+      "Compendium.cypher.abilities-en.Item.00e0ki1300dyxp07",
+      "Compendium.cypher.abilities-en.Item.00573fw701rbhsue"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "Compendium.cypher.abilities-en.Item.006o3xl901kdkbt3",
+          "to": "Compendium.cypher.abilities-en.Item.01wfbpoq01w6sxn6"
         },
-        "description": "You can see perfectly well half again as far as normal. You ignore attack and perception penalties for fog, smoke, mist, dim light, and very dim light."
-      },
-      {
-        "id": "concealed-carry",
-        "name": "Concealed Carry",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01vuo4u600q600hn",
+          "to": "Compendium.cypher.abilities-en.Item.01wfbpoq01w6sxn6"
         },
-        "description": "You can easily hide a one-handed firearm on your person, drawing or holstering it as an extra action (a First action) on your turn. Tasks to hide this weapon (whether from someone looking at you or actually searching you) are eased by two steps. You gain an asset on any task to spin, twirl, quick draw, or do another trick task involving your firearm and its holster. You can perform skillful manipulations with your firearm, including gunspinning (twirling it around one finger), shooting an icon from a playing card at long range, shooting an object held in someone's hand at long range, shooting a coin tossed skyward at long range, and so on, after which you can reholster your firearm in the blink of an eye. These acts can't hurt or affect a creature (or their equipment); however, if you do this to impress or intimidate a foe, that task is eased."
-      },
-      {
-        "id": "excellent-gunner",
-        "name": "Excellent Gunner",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00nxwn6l00vami12",
+          "to": "Compendium.cypher.abilities-en.Item.01wfbpoq01w6sxn6"
         },
-        "description": "You can freely use firearms and suffer no penalty when using one. You inflict an additional 1 damage with firearms. For one attack you make with a firearm, you can roll twice and use the better result. This ability renews when you make a ten-minute or longer recovery. Enabler.",
-        "freeWeaponFamilies": [
-          "firearms"
-        ]
-      },
-      {
-        "id": "careful-shot",
-        "name": "Careful Shot",
-        "tier": 2,
-        "prerequisites": [
-          "keen-eye",
-          "concealed-carry",
-          "excellent-gunner"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.006o3xl901kdkbt3",
+          "to": "Compendium.cypher.abilities-en.Item.01fp41il01jv3m63"
         },
-        "description": "You can use Speed Effort or Intellect Effort to increase your ranged weapon damage. In addition, if you use an action to line up your shot, the attack on your next turn inflicts 2 additional damage per level of Effort applied to increase damage (5 damage total per level of Effort). Enabler."
-      },
-      {
-        "id": "reload",
-        "name": "Reload",
-        "tier": 2,
-        "prerequisites": [
-          "keen-eye",
-          "concealed-carry",
-          "excellent-gunner"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 1,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01vuo4u600q600hn",
+          "to": "Compendium.cypher.abilities-en.Item.01fp41il01jv3m63"
         },
-        "description": "You can reload a firearm as an extra action on your turn. Enabler."
-      },
-      {
-        "id": "sneak-attack",
-        "name": "Sneak Attack",
-        "tier": 2,
-        "prerequisites": [
-          "concealed-carry",
-          "excellent-gunner"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 1,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00nxwn6l00vami12",
+          "to": "Compendium.cypher.abilities-en.Item.01fp41il01jv3m63"
         },
-        "description": "If you attack a foe under one of the following conditions, your light melee or light ranged weapon attack inflicts an additional 5 damage on a successful hit. (This ability doesn't work with medium or heavy weapons.) You attack with surprise. An ally uses their action to ease your attack. Your foe's defenses are hindered due to some other ongoing direct distraction. Your foe is unable to take their next turn due to some disabling attack or situation. First action."
-      },
-      {
-        "id": "damage-dealer",
-        "name": "Damage Dealer",
-        "tier": 3,
-        "prerequisites": [
-          "careful-shot",
-          "reload",
-          "spray"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01vuo4u600q600hn",
+          "to": "Compendium.cypher.abilities-en.Item.00bik3xb01et0zy2"
         },
-        "description": "You've become better at killing with firearms, inflicting an additional 3 damage with them."
-      },
-      {
-        "id": "spray",
-        "name": "Spray",
-        "tier": 3,
-        "prerequisites": [
-          "reload",
-          "sneak-attack",
-          "damage-dealer"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 2,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00nxwn6l00vami12",
+          "to": "Compendium.cypher.abilities-en.Item.00bik3xb01et0zy2"
         },
-        "description": "If a weapon has the ability to fire rapid shots without reloading (usually called a rapid-fire weapon, such as a crank crossbow or submachine gun), you can spray multiple shots around your target to increase the chance of hitting, gaining an asset to the attack. This ability uses 1d6 + 1 attacks' worth of ammunition or power (or all of the weapon's stores, if it has less ammo or power than the number rolled). If the attack is successful, it deals 1 less damage than normal. You can also use this ability on multiple thrown weapons (such as stones, shuriken, daggers, and so on) if you're carrying them on your person or they are all within reach. Action."
-      },
-      {
-        "id": "special-shot",
-        "name": "Special Shot",
-        "tier": 4,
-        "prerequisites": [
-          "damage-dealer",
-          "spray"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01wfbpoq01w6sxn6",
+          "to": "Compendium.cypher.abilities-en.Item.00zbsr8z01j40rw7"
         },
-        "description": "When you hit a target with a firearm attack, you can choose to reduce the damage by 1 point but hit the target in a precise spot. Some of the possible effects include (but are not limited to) the following: Shoot an object out of someone's hand. Shoot the target's leg, wing, or other limb they use to move, reducing their maximum movement speed to immediate for a few days or until they receive expert medical care. Shoot a strap holding a backpack, armor, or a similarly strapped-on item so that it falls off. Enabler."
-      },
-      {
-        "id": "snap-shot",
-        "name": "Snap Shot",
-        "tier": 4,
-        "prerequisites": [
-          "damage-dealer",
-          "spray"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01fp41il01jv3m63",
+          "to": "Compendium.cypher.abilities-en.Item.00zbsr8z01j40rw7"
         },
-        "description": "You can attack with your firearm and then attack again as an extra action on your turn. The second attack is hindered by two steps. Enabler."
-      },
-      {
-        "id": "arc-spray",
-        "name": "Arc Spray",
-        "tier": 5,
-        "prerequisites": [
-          "special-shot",
-          "sniper"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 3,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01qmbmtz015g03b8",
+          "to": "Compendium.cypher.abilities-en.Item.00zbsr8z01j40rw7"
         },
-        "description": "If a weapon has the ability to fire rapid shots without reloading (usually called a rapid-fire weapon, such as a crank crossbow or submachine gun), you can fire your weapon at three targets (all next to one another) at once. Make a separate hindered attack roll against each target. Action."
-      },
-      {
-        "id": "sniper",
-        "name": "Sniper",
-        "tier": 5,
-        "prerequisites": [
-          "snap-shot",
-          "arc-spray"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01fp41il01jv3m63",
+          "to": "Compendium.cypher.abilities-en.Item.01qmbmtz015g03b8"
         },
-        "description": "You are effective at much longer range than normal. Double the range of any firearm in your hands. If making a shot at very long range (or longer), you inflict an additional 1 damage."
-      },
-      {
-        "id": "lethal-capability",
-        "name": "Lethal Capability",
-        "tier": 6,
-        "prerequisites": [
-          "arc-spray",
-          "sniper",
-          "shot-collision"
-        ],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00bik3xb01et0zy2",
+          "to": "Compendium.cypher.abilities-en.Item.01qmbmtz015g03b8"
         },
-        "description": "You've mastered how to kill with a particular attack. You inflict an additional 5 damage with attacks of one specific type, such as your firearm, or some other specific attack you prefer. You can gain this ability more than once. Each time you do, choose a different specific attack."
-      },
-      {
-        "id": "shot-collision",
-        "name": "Shot Collision",
-        "tier": 6,
-        "prerequisites": [
-          "arc-spray",
-          "sniper",
-          "lethal-capability"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 4,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00zbsr8z01j40rw7",
+          "to": "Compendium.cypher.abilities-en.Item.01qmbmtz015g03b8"
         },
-        "description": "Once per round, if someone attacks you with a firearm, thrown weapon, or other physical projectile (such as an arrow, bullet, or crossbow bolt), instead of attempting a defense task, you can attempt to shoot the projectile out of the air. Make an attack against the projectile at the same difficulty as the defense task. If you hit, your shot deflects, destroys, or otherwise prevents the projectile from hitting you. If you wish, the successfully deflected object explosively shatters in an immediate radius you select between you and the attacker, dealing 2 damage to all creatures and objects in the area (roll a separate attack against each). If you apply Effort to increase the damage, you deal 2 additional damage per level of Effort (instead of 3); targets in the area take 1 damage even if you fail the attack roll. Enabler."
-      }
-    ]
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00zbsr8z01j40rw7",
+          "to": "Compendium.cypher.abilities-en.Item.015qllqx008nfylb"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01qmbmtz015g03b8",
+          "to": "Compendium.cypher.abilities-en.Item.015qllqx008nfylb"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00zbsr8z01j40rw7",
+          "to": "Compendium.cypher.abilities-en.Item.01xgfoim011dv87e"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01qmbmtz015g03b8",
+          "to": "Compendium.cypher.abilities-en.Item.01xgfoim011dv87e"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.015qllqx008nfylb",
+          "to": "Compendium.cypher.abilities-en.Item.01qo1ht700cbimtm"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.006tlxkt018xqyoi",
+          "to": "Compendium.cypher.abilities-en.Item.01qo1ht700cbimtm"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01xgfoim011dv87e",
+          "to": "Compendium.cypher.abilities-en.Item.006tlxkt018xqyoi"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01qo1ht700cbimtm",
+          "to": "Compendium.cypher.abilities-en.Item.006tlxkt018xqyoi"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01qo1ht700cbimtm",
+          "to": "Compendium.cypher.abilities-en.Item.00e0ki1300dyxp07"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.006tlxkt018xqyoi",
+          "to": "Compendium.cypher.abilities-en.Item.00e0ki1300dyxp07"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00573fw701rbhsue",
+          "to": "Compendium.cypher.abilities-en.Item.00e0ki1300dyxp07"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01qo1ht700cbimtm",
+          "to": "Compendium.cypher.abilities-en.Item.00573fw701rbhsue"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.006tlxkt018xqyoi",
+          "to": "Compendium.cypher.abilities-en.Item.00573fw701rbhsue"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00e0ki1300dyxp07",
+          "to": "Compendium.cypher.abilities-en.Item.00573fw701rbhsue"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

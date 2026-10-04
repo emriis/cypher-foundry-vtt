@@ -1,0 +1,40 @@
+{
+  "_id": "01ak6g9200y4f1yo",
+  "_key": "!items!01ak6g9200y4f1yo",
+  "name": "Flamboyant Boast",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "flamboyant-boast",
+    "variantKey": "01ak6g9200y4f1yo",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You boastfully describe an act that you will accomplish, and then as an extra action on your turn, you attempt it. If an average person would find the action difficult (or impossible) and you succeed on it, non-allies who witnessed it are so amazed and confused that all actions they attempt on their next turn are hindered. The GM will help you determine whether your boast is something that would significantly impress onlookers. If you fail the boasted task, until you use a ten-minute or longer recovery your attempts to affect witnesses (with attacks, special abilities, or skills) are hindered. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

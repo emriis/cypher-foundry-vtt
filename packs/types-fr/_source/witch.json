@@ -31,48 +31,9 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "brew-potion",
-        "name": "Brassage de Potion",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Tu brasses une potion. Tu choisis son effet dans la table des cyphers manifestes de faible puissance. La potion ainsi créée compte dans ta limite de cyphers. Si tu es déjà à ta limite de cyphers, tu dois choisir l'un de tes cyphers actuels, qui perd sa magie, pour faire place à la nouvelle potion. Au rang 3, tu peux choisir un cypher manifeste de faible ou de puissance moyenne. Au rang 6, tu peux choisir un cypher manifeste de faible, moyenne ou de puissance avancée."
-      },
-      {
-        "id": "evil-eye",
-        "name": "Mauvais Œil",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
-        },
-        "description": "Tu traces le signe du mauvais œil, ciblant une créature à courte portée avec une attaque d'Intellect. En cas de réussite, elle est affligée par un esprit de malchance pour environ une journée. Le MJ l'afflige d'événements gênants : trébucher, perdre un objet, manquer un rendez-vous, etc. Sur un PJ, cela se manifeste comme une intrusion du MJ. Effort : Prolonge la durée jusqu'à ta prochaine récupération de dix heures OU inflige 2 dégâts d'Intellect par niveau d'Effort, en plus de la malchance. Au rang 3 avec deux niveaux d'Effort : la malchance devient permanente (malédiction de niveau 4)."
-      },
-      {
-        "id": "potion-cyphers",
-        "name": "Cyphers de Potions",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Tu peux porter deux cyphers supplémentaires, tant qu'il s'agit de cyphers que tu as toi-même créés avec Brassage de Potion."
-      }
+      "Compendium.cypher.abilities-fr.Item.014cbhl901khgd9h",
+      "Compendium.cypher.abilities-fr.Item.012kkxzk001heeeb",
+      "Compendium.cypher.abilities-fr.Item.00ra0y0901wpo1bo"
     ],
     "statOptions": [
       "intellect"

@@ -1,0 +1,40 @@
+{
+  "_id": "00opm4rd006e46ad",
+  "_key": "!items!00opm4rd006e46ad",
+  "name": "Sense Weakness",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "sense-weakness",
+    "variantKey": "00opm4rd006e46ad",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "After observing a creature for one round, you know of any special weaknesses they may have and your attacks inflict an additional 1 damage against them. Action to initiate."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "00573fw701rbhsue",
+  "_key": "!items!00573fw701rbhsue",
+  "name": "Shot Collision",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "shot-collision",
+    "variantKey": "00573fw701rbhsue",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Once per round, if someone attacks you with a firearm, thrown weapon, or other physical projectile (such as an arrow, bullet, or crossbow bolt), instead of attempting a defense task, you can attempt to shoot the projectile out of the air. Make an attack against the projectile at the same difficulty as the defense task. If you hit, your shot deflects, destroys, or otherwise prevents the projectile from hitting you. If you wish, the successfully deflected object explosively shatters in an immediate radius you select between you and the attacker, dealing 2 damage to all creatures and objects in the area (roll a separate attack against each). If you apply Effort to increase the damage, you deal 2 additional damage per level of Effort (instead of 3); targets in the area take 1 damage even if you fail the attack roll. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

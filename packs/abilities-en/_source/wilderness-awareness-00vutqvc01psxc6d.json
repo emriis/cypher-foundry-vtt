@@ -1,0 +1,40 @@
+{
+  "_id": "00vutqvc01psxc6d",
+  "_key": "!items!00vutqvc01psxc6d",
+  "name": "Wilderness Awareness",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "wilderness-awareness",
+    "variantKey": "00vutqvc01psxc6d",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your connection to the natural world extends to a degree that some would call supernatural. While in the wilderness, you can extend your senses 1 mile (1.6 km) in any direction and ask the GM a very simple, general question about that area, such as “Where is the enemy camp?” or “Is my friend Deithan still alive?” or “Where's the most poisonous thing I could find?” If the answer you seek is not in the area, you receive no information. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

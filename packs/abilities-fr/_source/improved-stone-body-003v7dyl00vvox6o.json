@@ -1,0 +1,40 @@
+{
+  "_id": "003v7dyl00vvox6o",
+  "_key": "!items!003v7dyl00vvox6o",
+  "name": "Improved Stone Body",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "improved-stone-body",
+    "variantKey": "003v7dyl00vvox6o",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can take one more moderate wound than normal."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

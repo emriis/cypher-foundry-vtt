@@ -1,0 +1,40 @@
+{
+  "_id": "01cccc2y01cfx9sf",
+  "_key": "!items!01cccc2y01cfx9sf",
+  "name": "Knowledge of Nature",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "knowledge-of-nature",
+    "variantKey": "01cccc2y01cfx9sf",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "While in the wilderness, you can always find edible food of some kind and potable water if it exists. Likewise, you can find medicinal herbs or natural remedies that grant you an asset on treatments to heal wounds, disease, or poison."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

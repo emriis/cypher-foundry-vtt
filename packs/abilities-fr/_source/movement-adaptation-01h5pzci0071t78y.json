@@ -1,0 +1,40 @@
+{
+  "_id": "01h5pzci0071t78y",
+  "_key": "!items!01h5pzci0071t78y",
+  "name": "Movement Adaptation",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "movement-adaptation",
+    "variantKey": "01h5pzci0071t78y",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can modify your animal shape, either growing wings so you can fly or becoming aquatic with fins and gills (for example, if you are in the form of a gorilla, you could become a winged gorilla or a fishlike gorilla). If you choose flight, you can fly a long distance each round. If you choose aquatic, you can breathe water and swim at your normal land speed. You can carry a creature of your size or smaller, or if affected by Bigger Animal Shape, three creatures of your regular size or smaller. If you use Animal Shape, you gain the benefit of this ability without having to spend an action to trigger it. Action; enabler when using Animal Shape."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

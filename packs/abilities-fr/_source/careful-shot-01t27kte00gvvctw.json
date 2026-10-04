@@ -1,0 +1,43 @@
+{
+  "_id": "01t27kte00gvvctw",
+  "_key": "!items!01t27kte00gvvctw",
+  "name": "Careful Shot",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "careful-shot",
+    "variantKey": "01t27kte00gvvctw",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "choice",
+      "amount": 0,
+      "options": [
+        "speed",
+        "intellect"
+      ]
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can use Speed Effort or Intellect Effort to increase your ranged weapon damage. In addition, if you use an action to line up your shot, the attack on your next turn inflicts 2 additional damage per level of Effort applied to increase damage (5 damage total per level of Effort)."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -31,48 +31,9 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "basic-necromancy",
-        "name": "Nécromancie de Base",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
-        },
-        "description": "Tu animes le corps d'une créature morte d'une taille égale ou inférieure à la tienne dans ta portée immédiate, créant un suivant de niveau 1 sous forme de mort-vivant. Il n'a ni intelligence, ni souvenirs, ni aptitudes spéciales de son vivant. Il obéit à tes ordres verbaux jusqu'à ce que tu effectues une récupération d'une heure ou plus, après quoi il redevient un cadavre inerte. Si tu animes un deuxième corps, tout corps déjà animé redevient immédiatement inerte."
-      },
-      {
-        "id": "drain-life",
-        "name": "Drain de Vie",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
-        },
-        "description": "Tu projettes une vrille cendreuse jusqu'à une courte portée, infligeant 2 dégâts à une cible vivante avec un jet d'attaque d'Intellect réussi. Tu bénéficies de l'énergie drainée en soignant une blessure mineure chez toi ou un allié à portée immédiate. Au rang 3, si tu consacres deux niveaux d'Effort, une attaque réussie inflige 5 dégâts et soigne une blessure modérée ou mineure pour toi ou un allié à portée immédiate."
-      },
-      {
-        "id": "tribulation",
-        "name": "Tribulation",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
-        },
-        "description": "You conjure pure spiritual energy to blast up to five undead, demons, and creatures of similar ilk of level 2 or less within short range. If you succeed on a separate Intellect attack against each foe, you choose whether they spend their next turn fleeing or lose their next turn. Effort: Increase the maximum level of the foe you can affect by 1. Specify some other action for the creatures to perform for one round, such as attacking a foe of your choice. Last action."
-      }
+      "Compendium.cypher.abilities-fr.Item.00880c9y01swrm91",
+      "Compendium.cypher.abilities-fr.Item.01iehje501qlgkkh",
+      "Compendium.cypher.abilities-fr.Item.0006e7nh01tqj4ph"
     ],
     "statOptions": [
       "intellect"

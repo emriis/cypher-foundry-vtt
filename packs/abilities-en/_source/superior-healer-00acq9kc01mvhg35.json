@@ -1,0 +1,40 @@
+{
+  "_id": "00acq9kc01mvhg35",
+  "_key": "!items!00acq9kc01mvhg35",
+  "name": "Superior Healer",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "superior-healer",
+    "variantKey": "00acq9kc01mvhg35",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If you have Font of Recovery or Font of Healing, the ally can spend 2 additional Intellect for twice the normal benefit. If you have Resuscitate, it heals twice the normal number of wounds, and you can revive a creature who has been dead for no more than an hour. If you have Healing Shield, the ally gains two assets instead of one, and can use them together on one block roll or separately on two different block rolls. Effort: Extend the death time limit of Resuscitate to 24 hours, a week (two levels of Effort), a month (three levels of Effort), or a year (five levels of Effort). Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

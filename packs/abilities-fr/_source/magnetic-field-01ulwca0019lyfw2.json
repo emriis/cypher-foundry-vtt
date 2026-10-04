@@ -1,0 +1,40 @@
+{
+  "_id": "01ulwca0019lyfw2",
+  "_key": "!items!01ulwca0019lyfw2",
+  "name": "Magnetic Field",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "magnetic-field",
+    "variantKey": "01ulwca0019lyfw2",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "A field of magnetism around you pulls incoming, ranged, metallic projectile attacks (such as arrows, bullets, a thrown metal knife, and so on) to the ground. It also disperses energy attacks such as electricity, x-rays, lasers, and other attacks that are part of the electromagnetic spectrum. You are immune to such attacks for one round. You must be aware of an attack to foil it. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

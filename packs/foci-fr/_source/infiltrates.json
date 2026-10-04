@@ -7,231 +7,85 @@
   "system": {
     "description": "<p>Subtlety, guile, and stealth allow you to get in where others can't.</p>",
     "abilities": [
-      {
-        "id": "fast-talk",
-        "name": "Baratin",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+      "Compendium.cypher.abilities-fr.Item.019bkekj01yj2g30",
+      "Compendium.cypher.abilities-fr.Item.00uy965001awkimk",
+      "Compendium.cypher.abilities-fr.Item.00i2pwnv01ac6g5b",
+      "Compendium.cypher.abilities-fr.Item.00hpvp5c01rsck5j",
+      "Compendium.cypher.abilities-fr.Item.00qz98b801yw3s03",
+      "Compendium.cypher.abilities-fr.Item.007dogh800a5xvlo",
+      "Compendium.cypher.abilities-fr.Item.00jtr56m01wjs23x",
+      "Compendium.cypher.abilities-fr.Item.00iskzw0015hq4en",
+      "Compendium.cypher.abilities-fr.Item.01yxoeo200tmrw8w",
+      "Compendium.cypher.abilities-fr.Item.011chm1o010ojtbx",
+      "Compendium.cypher.abilities-fr.Item.01c22t8a01gckesd",
+      "Compendium.cypher.abilities-fr.Item.00m62l4600b2f560",
+      "Compendium.cypher.abilities-fr.Item.00253ytl00uuc7c6",
+      "Compendium.cypher.abilities-fr.Item.010ujo1501co9hcv"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.019bkekj01yj2g30",
+          "to": "Compendium.cypher.abilities-fr.Item.00qz98b801yw3s03"
         },
-        "description": "Quand tu parles à une créature intelligente capable de te comprendre et qui n’est pas hostile, tu la convaincs d’accomplir une action raisonnable lors du prochain round. Cette action doit être validée par le·la MJ : elle ne doit pas être dangereuse pour la créature ou ses allié·e·s, ni contraire à sa nature."
-      },
-      {
-        "id": "letting-their-guard-down",
-        "name": "Faire baisser la garde",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00uy965001awkimk",
+          "to": "Compendium.cypher.abilities-fr.Item.00qz98b801yw3s03"
         },
-        "description": "Si tu interagis avec un PNJ intelligent et que tu réussis une tâche de déguisement ou de tromperie, il te révèle un détail supplémentaire : quelle porte n’est jamais verrouillée, combien de gardes sont à l’étage, quelle décision le roi va probablement prendre, etc."
-      },
-      {
-        "id": "master-of-disguise",
-        "name": "Maître·sse du déguisement",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00i2pwnv01ac6g5b",
+          "to": "Compendium.cypher.abilities-fr.Item.007dogh800a5xvlo"
         },
-        "description": "Tu te déguises en une seule dernière action, bien plus rapidement que la normale. Si ton déguisement est examiné de près ou mis au défi, tu gagnes un atout supplémentaire pour le maintenir."
-      },
-      {
-        "id": "natural-sneak",
-        "name": "Infiltré·e né·e",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00hpvp5c01rsck5j",
+          "to": "Compendium.cypher.abilities-fr.Item.007dogh800a5xvlo"
         },
-        "description": "Pour toute tâche de crochetage, perception, vol à la tire ou discrétion, si ton résultat est inférieur à 6, considère le résultat comme 6. (Tu évites ainsi une Intrusion du·de la MJ si tu fais un 1.) Cet effet se réinitialise à ta prochaine récupération. Au rang 3, ce minimum passe à 9. Effort : augmenter le minimum obtenu de +3."
-      },
-      {
-        "id": "awareness",
-        "name": "Hypervigilance",
-        "tier": 2,
-        "prerequisites": [
-          "fast-talk",
-          "letting-their-guard-down"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00qz98b801yw3s03",
+          "to": "Compendium.cypher.abilities-fr.Item.00jtr56m01wjs23x"
         },
-        "description": "You become hyperaware of your surroundings until you use a ten-minute or longer recovery. You are aware of all living things within long range (including their general position). By using an action to concentrate, you can choose one of them and attempt to learn their general health and power level. Action."
-      },
-      {
-        "id": "flight-not-fight",
-        "name": "Fuir plutôt que combattre",
-        "tier": 2,
-        "prerequisites": [
-          "master-of-disguise",
-          "natural-sneak"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00qz98b801yw3s03",
+          "to": "Compendium.cypher.abilities-fr.Item.00iskzw0015hq4en"
         },
-        "description": "Si tu utilises ton action uniquement pour te déplacer, tes tâches d’Esquive sont facilitées jusqu’à ton prochain tour."
-      },
-      {
-        "id": "blend-in",
-        "name": "Se fondre dans la masse",
-        "tier": 3,
-        "prerequisites": [
-          "awareness"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.007dogh800a5xvlo",
+          "to": "Compendium.cypher.abilities-fr.Item.00iskzw0015hq4en"
         },
-        "description": "By changing your posture, your facial expression, and perhaps your clothing, you make yourself appear unimportant but not out of place for wherever you are. For example, you could look like a janitor in an office building, an orderly in a hospital, or a clerk in a police station. People can still see you, but those of level 3 or less attach no importance to your presence. If a higher-level creature notices you, you can attempt an Intellect task against their level to retain your unimportant-seeming status. While blending in, you gain two assets to dodge and stealth tasks. This effect ends if you do something to call attention to your presence or position—attacking, using an ability, moving a large object, and so on—or if you use a ten-minute or longer recovery. This ability works even if the NPC observes you through a security camera or similar device. Attempting to fool an animal (such as a guard dog or police dog) is hindered. Action to initiate."
-      },
-      {
-        "id": "defend-and-respond",
-        "name": "Défendre et riposter",
-        "tier": 3,
-        "prerequisites": [
-          "awareness",
-          "flight-not-fight"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "choice",
-          "amount": 3,
-          "options": [
-            "might",
-            "speed"
-          ]
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.007dogh800a5xvlo",
+          "to": "Compendium.cypher.abilities-fr.Item.01yxoeo200tmrw8w"
         },
-        "description": "If you block or dodge a melee attack, you can immediately make a melee attack against your attacker. You can't use this ability more than once per round. Enabler."
-      },
-      {
-        "id": "scrutinize-defenses",
-        "name": "Analyser les défenses",
-        "tier": 3,
-        "prerequisites": [
-          "flight-not-fight"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00jtr56m01wjs23x",
+          "to": "Compendium.cypher.abilities-fr.Item.011chm1o010ojtbx"
         },
-        "description": "En explorant minutieusement une zone (sur place, via caméras, plans, témoignages…) d’une taille maximale équivalente à une longue distance, pendant environ une heure, tu peux poser une question au/à la MJ sur les systèmes et procédures de défense. La réponse doit être vraie. Exemples : fréquence de passage des gardes, équipement des gardes, existence d’alarmes magiques ou électroniques… Cet effet se réinitialise à ta récupération de dix heures. Effort : poser une question de plus."
-      },
-      {
-        "id": "convenient-device",
-        "name": "Objet providentiel",
-        "tier": 4,
-        "prerequisites": [
-          "blend-in",
-          "defend-and-respond",
-          "scrutinize-defenses"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00iskzw0015hq4en",
+          "to": "Compendium.cypher.abilities-fr.Item.011chm1o010ojtbx"
         },
-        "description": "Parce que tu avais prévu le coup (ou que tu as reçu l’objet à l’avance), tu produis un outil permettant de supprimer un état négatif qui te touche toi ou un·e allié·e à portée immédiate. Exemples : antidote si tu es empoisonné·e, onguent pour neutraliser du gaz irritant, mini‑crochet ou laser‑stylo pour te libérer de menottes… L’objet fonctionne une seule fois. Le coût en Intellect est égal au niveau de l’effet supprimé."
-      },
-      {
-        "id": "invisibility",
-        "name": "Invisibilité",
-        "tier": 5,
-        "prerequisites": [
-          "convenient-device"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01yxoeo200tmrw8w",
+          "to": "Compendium.cypher.abilities-fr.Item.011chm1o010ojtbx"
         },
-        "description": "You become invisible. This effect ends if you do something to reveal your presence or position—attacking, using an ability, moving a large object, and so on. Effort: Use this ability on a creature you touch instead of yourself; it lasts until they do something to reveal their presence or until you (not they) use a ten-minute or longer recovery. Action to initiate. An invisible character's attack is eased by two steps. Attacks on an invisible character are hindered by four steps or are nearly impossible if the attacker has no idea where they might be."
-      },
-      {
-        "id": "persistence-training",
-        "name": "Entraînement à la persistance",
-        "tier": 5,
-        "prerequisites": [
-          "convenient-device"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "might",
-          "amount": 5,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.011chm1o010ojtbx",
+          "to": "Compendium.cypher.abilities-fr.Item.01c22t8a01gckesd"
         },
-        "description": "Tu mets fin immédiatement à un contrôle mental te visant. Tu récupères également la possibilité d’effectuer ton prochain tour normalement ou tu supprimes les effets d’un effet affaiblissant persistant. Effort : utiliser cette aptitude sur un·e allié·e à portée immédiate. Pour toi : facilitateur. Pour un·e allié·e : action."
-      },
-      {
-        "id": "brainwashing",
-        "name": "Lavage de cerveau",
-        "tier": 6,
-        "prerequisites": [
-          "invisibility"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 6,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.011chm1o010ojtbx",
+          "to": "Compendium.cypher.abilities-fr.Item.00m62l4600b2f560"
         },
-        "description": "Par ruse, mensonges habiles et agents chimiques altérant l’esprit (ou magie, cybernétique, etc.), tu prends le contrôle d’une créature que tu touches. La cible doit être de niveau 3 ou moins et tu dois avoir réussis une attaque d’Intellect. Tu contrôles la créature jusqu’à ta prochaine récupération de dix minutes ou plus. Tant que tu peux la voir, tu décides au cas par cas si elle agit librement ou si elle suit ton ordre. À la fin, elle n’a aucun souvenir d’avoir été contrôlée. Effort : augmenter le niveau maximal de la cible de +1."
-      },
-      {
-        "id": "spring-away",
-        "name": "Bond arrière",
-        "tier": 6,
-        "prerequisites": [
-          "persistence-training"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 5,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01c22t8a01gckesd",
+          "to": "Compendium.cypher.abilities-fr.Item.00253ytl00uuc7c6"
         },
-        "description": "Après avoir réussi une Esquive contre une attaque ou un danger, tu peux immédiatement te déplacer d’une courte distance. Tu ne peux pas réutiliser cette aptitude avant ton prochain tour."
-      }
-    ]
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00m62l4600b2f560",
+          "to": "Compendium.cypher.abilities-fr.Item.010ujo1501co9hcv"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

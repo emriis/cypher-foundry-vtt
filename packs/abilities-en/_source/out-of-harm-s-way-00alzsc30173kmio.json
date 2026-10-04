@@ -1,0 +1,40 @@
+{
+  "_id": "00alzsc30173kmio",
+  "_key": "!items!00alzsc30173kmio",
+  "name": "Out of Harm's Way",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "out-of-harm-s-way",
+    "variantKey": "00alzsc30173kmio",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you succeed on a dodge task, you can immediately move an immediate distance even though it's not your turn. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

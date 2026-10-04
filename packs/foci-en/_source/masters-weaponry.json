@@ -7,302 +7,108 @@
   "system": {
     "description": "<p>You are a master user of a particular type of weapon, be it a sword, whip, dagger, bow, gun, or something else.</p>",
     "abilities": [
-      {
-        "id": "battle-competence",
-        "name": "Battle Competence",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+      "Compendium.cypher.abilities-en.Item.00epj6kd00nqvtjl",
+      "Compendium.cypher.abilities-en.Item.01aqrb9i01s0axac",
+      "Compendium.cypher.abilities-en.Item.01jzqntl01qvij72",
+      "Compendium.cypher.abilities-en.Item.01t27kte00gvvctw",
+      "Compendium.cypher.abilities-en.Item.01vv0u7701tv92u0",
+      "Compendium.cypher.abilities-en.Item.00s3viu7000q2jhf",
+      "Compendium.cypher.abilities-en.Item.01r7l02l01j1k71j",
+      "Compendium.cypher.abilities-en.Item.01qmbmtz015g03b8",
+      "Compendium.cypher.abilities-en.Item.01yrj65c01i9j3rd",
+      "Compendium.cypher.abilities-en.Item.015qllqx008nfylb",
+      "Compendium.cypher.abilities-en.Item.00eq7i5u01oh54co",
+      "Compendium.cypher.abilities-en.Item.01t2i5nf01997uhx",
+      "Compendium.cypher.abilities-en.Item.01qo1ht700cbimtm",
+      "Compendium.cypher.abilities-en.Item.01c083s40030065u",
+      "Compendium.cypher.abilities-en.Item.00573fw701rbhsue",
+      "Compendium.cypher.abilities-en.Item.00i2romw01dzzfs9",
+      "Compendium.cypher.abilities-en.Item.0057t5n9013n5jio"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01jzqntl01qvij72",
+          "to": "Compendium.cypher.abilities-en.Item.01t27kte00gvvctw"
         },
-        "description": "You can freely use all weapons and all armor. As an action, you learn the level of up to three creatures that you can see within short range. This ability can be foiled by disguises or shapechanging. Enabler for weapon use; action for evaluating creatures. The weapon use aspect of Battle Competence is a “catch up” ability for characters whose type doesn't give them the ability to use most weapons and armor, and they don't want to be limited to just their chosen weapon. Most characters with this focus won't need the catch-up aspect of Battle Competence at all.",
-        "freeWeaponCategories": [
-          "light",
-          "medium",
-          "heavy"
-        ],
-        "freeArmorCategories": [
-          "light",
-          "medium",
-          "heavy"
-        ]
-      },
-      {
-        "id": "display-of-skill",
-        "name": "Display of Skill",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01aqrb9i01s0axac",
+          "to": "Compendium.cypher.abilities-en.Item.01vv0u7701tv92u0"
         },
-        "description": "Seeing you use your weapon in combat (or perform showy moves outside of combat) gives one ally confidence that equates to a free level of Effort they can use on an action of their choice before their (or your) next ten-minute or longer recovery. Conversely, one foe can be cowed by this display, giving you a free level of Effort on a subsequent intimidation task. Enabler; action if used outside of combat."
-      },
-      {
-        "id": "weapon-master",
-        "name": "Weapon Master",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00epj6kd00nqvtjl",
+          "to": "Compendium.cypher.abilities-en.Item.00s3viu7000q2jhf"
         },
-        "description": "You're proficient in using one kind of weapon (such as medium blades, light bashing, or heavy ranged) that would otherwise be unfamiliar to you. You can freely use this kind of weapon and suffer no penalty when using one. You inflict an additional 1 damage with this kind of weapon. You are trained in crafting your chosen kind of weapon. (Crafting training allows you to easily craft and repair weapons of that type using your resources.) You can gain this ability multiple times. Each time you do so, pick a new kind of weapon to master.",
-        "chooseWeaponAttackCategory": true
-      },
-      {
-        "id": "careful-shot",
-        "name": "Careful Shot",
-        "tier": 2,
-        "prerequisites": [
-          "weapon-master"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "choice",
-          "amount": 0,
-          "options": [
-            "speed",
-            "intellect"
-          ]
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01t27kte00gvvctw",
+          "to": "Compendium.cypher.abilities-en.Item.01r7l02l01j1k71j"
         },
-        "description": "You can use Speed Effort or Intellect Effort to increase your ranged weapon damage. In addition, if you use an action to line up your shot, the attack on your next turn inflicts 2 additional damage per level of Effort applied to increase damage (5 damage total per level of Effort)."
-      },
-      {
-        "id": "throw-weapon",
-        "name": "Throw Weapon",
-        "tier": 2,
-        "prerequisites": [
-          "display-of-skill"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 1,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01vv0u7701tv92u0",
+          "to": "Compendium.cypher.abilities-en.Item.01r7l02l01j1k71j"
         },
-        "description": "You throw your light or medium melee weapon at a foe within short range as if it were a medium thrown weapon. Whether the weapon hits or misses, it rebounds back to your grasp if you succeed on a difficulty 3 Speed task (or difficulty 4 if the weapon is edged). Effort: Throw a heavy weapon (instead of a light or medium weapon) as a Last action. Action; Last action to throw heavy weapon. If you throw your weapon and fail to catch it after it rebounds, it most likely ends up a short distance from you."
-      },
-      {
-        "id": "perfect-attack",
-        "name": "Perfect Attack",
-        "tier": 2,
-        "prerequisites": [
-          "battle-competence"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "choice",
-          "amount": 2,
-          "options": [
-            "might",
-            "speed"
-          ]
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00s3viu7000q2jhf",
+          "to": "Compendium.cypher.abilities-en.Item.01r7l02l01j1k71j"
         },
-        "description": "Make an attack with your chosen weapon. If your roll is less than a 9, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) If you succeed, the attack inflicts normal damage. This ability doesn't allow you to succeed at an attack that would be impossible, such as slashing a person a mile away or shooting an arrow at the moon. This ability renews when you take a recovery. Effort: Increase the minimum number rolled for this ability by 3. Action. At tier 3: The minimum number rolled for this ability increases to 12."
-      },
-      {
-        "id": "rapid-attack",
-        "name": "Rapid Attack",
-        "tier": 3,
-        "prerequisites": [
-          "careful-shot",
-          "throw-weapon",
-          "perfect-attack"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 3,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01t27kte00gvvctw",
+          "to": "Compendium.cypher.abilities-en.Item.01qmbmtz015g03b8"
         },
-        "description": "You make an additional attack on your turn with your chosen weapon. You can use this ability only once per round. Enabler."
-      },
-      {
-        "id": "spray",
-        "name": "Spray",
-        "tier": 3,
-        "prerequisites": [
-          "careful-shot"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 2,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00s3viu7000q2jhf",
+          "to": "Compendium.cypher.abilities-en.Item.01yrj65c01i9j3rd"
         },
-        "description": "If a weapon has the ability to fire rapid shots without reloading (usually called a  rapid-fire weapon, such as a crank crossbow or submachine gun), you can spray multiple shots around your target to increase the chance of hitting, gaining an asset to the attack. This ability uses 1d6 + 1 attacks' worth of ammunition or power (or all of the weapon's stores, if it has less ammo or power than the number rolled). If the attack is successful, it deals 1 less damage than normal. You can also use this ability on multiple thrown weapons (such as stones, shuriken, daggers, and so on) if you're carrying them on your person or they are all within reach. Action."
-      },
-      {
-        "id": "disarming-strike",
-        "name": "Disarming Strike",
-        "tier": 3,
-        "prerequisites": [
-          "perfect-attack"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 3,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01qmbmtz015g03b8",
+          "to": "Compendium.cypher.abilities-en.Item.015qllqx008nfylb"
         },
-        "description": "Make an attack against a foe with your chosen weapon. If you hit, you inflict 1 less damage than normal, but you disarm your foe, knocking their weapon to the ground 10 feet (3.5 m) away. If your chosen weapon is a whip, you can instead choose to hinder your attack, and if it succeeds, the foe's weapon lands in your other hand. If your chosen weapon is a bow, you can instead choose to hinder your attack, and if it succeeds, the foe's weapon is “nailed” to a nearby object or structure. Action."
-      },
-      {
-        "id": "special-shot",
-        "name": "Special Shot",
-        "tier": 4,
-        "prerequisites": [
-          "spray",
-          "rapid-attack"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01r7l02l01j1k71j",
+          "to": "Compendium.cypher.abilities-en.Item.015qllqx008nfylb"
         },
-        "description": "When you hit a target with a firearm attack, you can choose to reduce the damage by 1 point but hit the target in a precise spot. Some of the possible effects include (but are not limited to) the following: Shoot an object out of someone's hand. Shoot the target's leg, wing, or other limb they use to move, reducing their maximum movement speed to immediate for a few days or until they receive expert medical care. Shoot a strap holding a backpack, armor, or a similarly strapped-on item so that it falls off. Enabler."
-      },
-      {
-        "id": "rival-talent",
-        "name": "Rival Talent",
-        "tier": 4,
-        "prerequisites": [
-          "rapid-attack"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01r7l02l01j1k71j",
+          "to": "Compendium.cypher.abilities-en.Item.00eq7i5u01oh54co"
         },
-        "description": "You can tell a lot about someone by the weapon they wield. You ease all tasks (attacking, defending, influencing, tracking, and so on) against any foe using the same kind of weapon as your chosen weapon."
-      },
-      {
-        "id": "never-fumble",
-        "name": "Never Fumble",
-        "tier": 4,
-        "prerequisites": [
-          "disarming-strike"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01yrj65c01i9j3rd",
+          "to": "Compendium.cypher.abilities-en.Item.01t2i5nf01997uhx"
         },
-        "description": "If you roll a natural 1 when attacking with your chosen weapon, you can ignore or countermand the GM intrusion for that roll. You can never be disarmed of your chosen weapon, nor will you ever drop it accidentally."
-      },
-      {
-        "id": "arc-spray",
-        "name": "Arc Spray",
-        "tier": 5,
-        "prerequisites": [
-          "special-shot",
-          "rival-talent"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 3,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.015qllqx008nfylb",
+          "to": "Compendium.cypher.abilities-en.Item.01qo1ht700cbimtm"
         },
-        "description": "If a weapon has the ability to fire rapid shots without reloading (usually called a rapid-fire weapon, such as a crank crossbow or submachine gun), you can fire your weapon at three targets (all next to one another) at once. Make a separate hindered attack roll against each target. Action."
-      },
-      {
-        "id": "that-was-a-feint",
-        "name": "That Was a Feint",
-        "tier": 5,
-        "prerequisites": [
-          "rival-talent",
-          "never-fumble"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "choice",
-          "amount": 5,
-          "options": [
-            "might",
-            "speed"
-          ]
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00eq7i5u01oh54co",
+          "to": "Compendium.cypher.abilities-en.Item.01qo1ht700cbimtm"
         },
-        "description": "You immediately retry a failed attack roll with your chosen weapon, except this time you have an asset on the task. If this retry fails, you can't use this ability to retry it again. Enabler."
-      },
-      {
-        "id": "shot-collision",
-        "name": "Shot Collision",
-        "tier": 6,
-        "prerequisites": [
-          "arc-spray"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 4,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00eq7i5u01oh54co",
+          "to": "Compendium.cypher.abilities-en.Item.01c083s40030065u"
         },
-        "description": "Once per round, if someone attacks you with a firearm, thrown weapon, or other physical projectile (such as an arrow, bullet, or crossbow bolt), instead of attempting a defense task, you can attempt to shoot the projectile out of the air. Make an attack against the projectile at the same difficulty as the defense task. If you hit, your shot deflects it, destroys it, or otherwise prevents it from hitting you. If you wish, the successfully deflected object explosively shatters in an immediate radius you select between you and the attacker, dealing 2 damage to all creatures and objects in the area (roll a separate attack against each). If you apply Effort to increase the damage, you deal 2 additional damage per level of Effort (instead of 3); targets in the area take 1 damage even if you fail the attack roll. Enabler."
-      },
-      {
-        "id": "lethal-strike",
-        "name": "Lethal Strike",
-        "tier": 6,
-        "prerequisites": [
-          "arc-spray",
-          "that-was-a-feint"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 6,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01t2i5nf01997uhx",
+          "to": "Compendium.cypher.abilities-en.Item.01c083s40030065u"
         },
-        "description": "With a swift and sudden melee or ranged weapon attack, you strike a foe in a vital spot. If you hit, you inflict an additional 7 damage. Action."
-      },
-      {
-        "id": "perfect-follow-through",
-        "name": "Perfect Follow-Through",
-        "tier": 6,
-        "prerequisites": [
-          "that-was-a-feint"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "choice",
-          "amount": 8,
-          "options": [
-            "might",
-            "speed"
-          ]
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01qo1ht700cbimtm",
+          "to": "Compendium.cypher.abilities-en.Item.00573fw701rbhsue"
         },
-        "description": "You can attack with your chosen weapon and take another action as an extra action on your turn. Enabler."
-      }
-    ]
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01qo1ht700cbimtm",
+          "to": "Compendium.cypher.abilities-en.Item.00i2romw01dzzfs9"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01c083s40030065u",
+          "to": "Compendium.cypher.abilities-en.Item.00i2romw01dzzfs9"
+        },
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01c083s40030065u",
+          "to": "Compendium.cypher.abilities-en.Item.0057t5n9013n5jio"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

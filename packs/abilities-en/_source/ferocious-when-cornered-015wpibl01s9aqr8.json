@@ -1,0 +1,40 @@
+{
+  "_id": "015wpibl01s9aqr8",
+  "_key": "!items!015wpibl01s9aqr8",
+  "name": "Ferocious When Cornered",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "ferocious-when-cornered",
+    "variantKey": "015wpibl01s9aqr8",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "While you have at least three minor wounds, at least two moderate wounds, or at least one major wound, you gain one free level of Effort you can apply to one of your attacks each round. Enabler. At tier 3: The benefit increases to two free levels of Effort."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

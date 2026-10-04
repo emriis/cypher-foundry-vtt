@@ -1,0 +1,40 @@
+{
+  "_id": "014jnr8j01juaad5",
+  "_key": "!items!014jnr8j01juaad5",
+  "name": "On the Crew",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "on-the-crew",
+    "variantKey": "014jnr8j01juaad5",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "While you are working with a team of at least two other allies, you give them a short pep talk and grant yourself and them one of the following abilities until you use a ten-minute or longer recovery. +1 damage on attacks Ignore the first minor wound taken Add +6 to next recovery Last action to initiate."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

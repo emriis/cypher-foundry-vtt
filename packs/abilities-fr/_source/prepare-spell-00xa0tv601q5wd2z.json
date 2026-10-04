@@ -1,0 +1,40 @@
+{
+  "_id": "00xa0tv601q5wd2z",
+  "_key": "!items!00xa0tv601q5wd2z",
+  "name": "Prepare Spell",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "prepare-spell",
+    "variantKey": "00xa0tv601q5wd2z",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": true,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Each day you can pick a different magical effect and cast it as a spell. Choose a low-power manifest cypher. You gain that cypher's effect as a spell (a character special ability) after spending ten minutes preparing. You can cast that spell as an action, costing 2 Intellect. This spell does not count toward your cypher limit. Unlike when using a cypher, you do not lose this spell after casting it. Whenever you take a ten-hour recovery, you can change which cypher you've taken as a spell. Changing which cypher you have prepared as a spell ends all of your durations of the previous prepared spell. You can select this ability up to three times, allowing you to choose one, two, or three cyphers each day as spells. Ten minutes to complete preparing a cypher as a spell; action to cast a cypher as a spell. At tier 3: You can use this ability to choose a low- or medium-power cypher as a spell. You can cast a medium-power cypher spell as an action, costing 4 Intellect. At tier 6: You can use this ability to choose a low-, medium-, or advanced-power cypher as a spell. You can cast an advanced-power cypher spell as an action, costing 6 Intellect."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

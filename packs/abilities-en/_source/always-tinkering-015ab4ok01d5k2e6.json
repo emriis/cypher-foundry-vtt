@@ -1,0 +1,40 @@
+{
+  "_id": "015ab4ok01d5k2e6",
+  "_key": "!items!015ab4ok01d5k2e6",
+  "name": "Always Tinkering",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "always-tinkering",
+    "variantKey": "015ab4ok01d5k2e6",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You build a single-use technological device. You can choose its effect from the Low-Power Manifest Cyphers table. Your device cypher counts toward your cypher limit (or to the limit of anyone you give the device to). If you are already at your cypher limit, your choice of one of your current cyphers shorts out, had to be salvaged for parts to create the new device, or something similar, and the new device takes its place. Ten minutes to build. At tier 3: You can choose a low or medium-power manifest cypher as a single-use device. At tier 6: You can choose a low, medium-, or advanced-power manifest cypher as a single-use device. Each time you use Always Tinkering, you can choose a different manifest cypher you want to build."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

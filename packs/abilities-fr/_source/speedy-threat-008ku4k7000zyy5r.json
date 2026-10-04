@@ -1,0 +1,40 @@
+{
+  "_id": "008ku4k7000zyy5r",
+  "_key": "!items!008ku4k7000zyy5r",
+  "name": "Speedy Threat",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "speedy-threat",
+    "variantKey": "008ku4k7000zyy5r",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You spin and move such that your attacks are aided by your quick motion. If you move at least an immediate distance on your turn, your melee attack that turn gains an asset. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

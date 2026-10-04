@@ -1,0 +1,40 @@
+{
+  "_id": "00uy965001awkimk",
+  "_key": "!items!00uy965001awkimk",
+  "name": "Letting Their Guard Down",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "letting-their-guard-down",
+    "variantKey": "00uy965001awkimk",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If you interact with an intelligent NPC and successfully use disguise or deception against them, they reveal some minor additional information, such as which door is never locked, how many guards are on the upper level, or which way the king plans on ruling on a matter before him. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

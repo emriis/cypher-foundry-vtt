@@ -1,0 +1,40 @@
+{
+  "_id": "00s8tu7w00eqm4kz",
+  "_key": "!items!00s8tu7w00eqm4kz",
+  "name": "Ignore Affliction",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "ignore-affliction",
+    "variantKey": "00s8tu7w00eqm4kz",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 5,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Until you use a one-hour or longer recovery, you ignore any unwanted condition or affliction (such as disease, paralysis, mind control, broken limb, and so on, but not damage) and act as if it does not affect you. If the condition would normally last less than an hour, it is entirely negated. You can use this ability even if the condition prevents you from taking actions. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

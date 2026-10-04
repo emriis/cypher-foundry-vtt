@@ -1,0 +1,40 @@
+{
+  "_id": "01dz43mw019obepg",
+  "_key": "!items!01dz43mw019obepg",
+  "name": "Sense Metal",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "sense-metal",
+    "variantKey": "01dz43mw019obepg",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": "lastAction",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If there is ferromagnetic metal of any kind within short range, you are aware of that fact, as well as the amount, type, and general location. Last action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

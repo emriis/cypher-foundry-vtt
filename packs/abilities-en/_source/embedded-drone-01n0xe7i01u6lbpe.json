@@ -1,0 +1,40 @@
+{
+  "_id": "01n0xe7i01u6lbpe",
+  "_key": "!items!01n0xe7i01u6lbpe",
+  "name": "Embedded Drone",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "embedded-drone",
+    "variantKey": "01n0xe7i01u6lbpe",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You have an embedded drone built into your body that you can launch and control until you use a one-hour or longer recovery (at which time it returns to you). The drone is no larger than 1 foot (30 cm) on a side. It has manipulators, allowing it to attempt to accomplish physical tasks, and a built-in firearm that it can use to make attacks. The drone can immediately take an action on the turn that you launch it. If the drone is destroyed, you can use your resources to restore it over several days. Action to initiate. Embedded drone: level 4; long-range embedded pistol inflicts 4 damage; flies a short distance each round"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

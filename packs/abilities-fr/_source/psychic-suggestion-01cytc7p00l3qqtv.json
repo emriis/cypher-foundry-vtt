@@ -1,0 +1,40 @@
+{
+  "_id": "01cytc7p00l3qqtv",
+  "_key": "!items!01cytc7p00l3qqtv",
+  "name": "Psychic Suggestion",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "psychic-suggestion",
+    "variantKey": "01cytc7p00l3qqtv",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You attempt to make a foe within short range take the action you indicate on their next turn. Make an Intellect attack against the foe. If the action would cause direct harm to themself or their allies, the mental attack is hindered. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

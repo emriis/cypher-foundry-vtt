@@ -1,0 +1,40 @@
+{
+  "_id": "00xzwjx900ubpsfu",
+  "_key": "!items!00xzwjx900ubpsfu",
+  "name": "Use the Force",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "use-the-force",
+    "variantKey": "00xzwjx900ubpsfu",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You gain an asset on a single noncombat task you attempt this turn. You cannot use this ability again until after you take a recovery. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "00i5d2vx01yfvq94",
+  "_key": "!items!00i5d2vx01yfvq94",
+  "name": "Born to Pilot",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "born-to-pilot",
+    "variantKey": "00i5d2vx01yfvq94",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you roll to pilot a spacecraft and your roll is less than a 9, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) Spacecraft piloting tasks include specific maneuvers like safely docking the craft, turning or accelerating the ship gradually enough to avoid dangerously high gravity for sustained periods, noticing something unusual come up on the sensors, and so on. Effort: Increase the minimum number rolled for this ability by 3. This ability renews when you take a recovery. Action. At tier 3: The minimum number rolled for this ability increases to 12."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "004ovg2101y469n3",
+  "_key": "!items!004ovg2101y469n3",
+  "name": "Safe Fall",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "safe-fall",
+    "variantKey": "004ovg2101y469n3",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you take a wound from a fall, reduce its severity by one step. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

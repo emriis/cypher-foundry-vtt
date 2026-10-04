@@ -1,0 +1,40 @@
+{
+  "_id": "01vubl0s012nxxgz",
+  "_key": "!items!01vubl0s012nxxgz",
+  "name": "Repair",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "repair",
+    "variantKey": "01vubl0s012nxxgz",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If you succeed on an engineering task (difficulty equal to the device's level + 1), you temporarily repair a piece of broken equipment or an inactive power source to get a few more uses out of it. Fully repairing a device—as opposed to the jury-rigged repair of Modify Device—is often possible, but usually requires at least a few days, specialized tools and parts, and the application of resource points )."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

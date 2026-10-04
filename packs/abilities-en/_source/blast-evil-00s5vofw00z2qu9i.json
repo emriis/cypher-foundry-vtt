@@ -1,0 +1,40 @@
+{
+  "_id": "00s5vofw00z2qu9i",
+  "_key": "!items!00s5vofw00z2qu9i",
+  "name": "Blast Evil",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "blast-evil",
+    "variantKey": "00s5vofw00z2qu9i",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You blast an adjacent immediate area with cleansing radiance, inflicting 3 damage on up to three targets in the area—make a separate attack roll against each. If the targets are undead, demons, or creatures of similar ilk, they take 6 damage instead. If any targets are possessed by a spirit, demon, or similar entity, they gain another opportunity to resist the effect and eject their possessor. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

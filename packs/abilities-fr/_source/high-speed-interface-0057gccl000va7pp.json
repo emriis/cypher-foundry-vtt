@@ -1,0 +1,40 @@
+{
+  "_id": "0057gccl000va7pp",
+  "_key": "!items!0057gccl000va7pp",
+  "name": "High-Speed Interface",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "high-speed-interface",
+    "variantKey": "0057gccl000va7pp",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "By directly plugging into a machine or device within immediate range, you ease tasks to identify and operate it. The interface allows you to interact with the device as fast as it can process information, which is usually faster than a regular person could manipulate the device (such as through a keyboard or voice interface)."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

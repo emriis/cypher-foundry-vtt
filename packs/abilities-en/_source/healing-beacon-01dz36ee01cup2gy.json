@@ -1,0 +1,40 @@
+{
+  "_id": "01dz36ee01cup2gy",
+  "_key": "!items!01dz36ee01cup2gy",
+  "name": "Healing Beacon",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "healing-beacon",
+    "variantKey": "01dz36ee01cup2gy",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "One of your allies automatically is healed whenever you use your healing power. Choose one ally to be your healing beacon. Until you use a one-hour or longer recovery, when you use Healing Hand or a similar ability, the beacon ally gets to reduce the severity of one of their own wounds too (as long as it's not a higher severity than the one you're healing). The beacon ally must be within short range of you to gain this healing. The beacon ally doesn't gain this effect if you directly heal them. Action to initiate."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "01pr7qca0048y1jr",
+  "_key": "!items!01pr7qca0048y1jr",
+  "name": "Nimble",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "nimble",
+    "variantKey": "01pr7qca0048y1jr",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "As a First action, you move up to a short distance and then can take another First action, such as attacking with a light weapon or opening a door (the movement happens before the First action, not the other way around). Unlike a normal situation of taking an action and moving a short distance, this movement doesn't hinder your tasks. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

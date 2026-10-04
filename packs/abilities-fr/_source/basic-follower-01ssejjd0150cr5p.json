@@ -1,0 +1,40 @@
+{
+  "_id": "01ssejjd0150cr5p",
+  "_key": "!items!01ssejjd0150cr5p",
+  "name": "Basic Follower",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "basic-follower",
+    "variantKey": "01ssejjd0150cr5p",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You gain a level 2 follower who has two level 3 modifications (one of which is charm). You can take this ability multiple times, each time gaining another follower."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

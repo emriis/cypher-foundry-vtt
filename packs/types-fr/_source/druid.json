@@ -31,48 +31,9 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "beast-companion",
-        "name": "Compagnon animal",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You gain a follower that is a level 2 beast of your size or smaller that accompanies you and follows your instructions. You and your GM must work out the appearance and personality of your beast. Its movement is based on its creature type (avian, swimmer, and so on). If your beast companion dies, you can use your resource points to revive them or (by hunting in the wild for a few days) locate and befriend a new one. When working out the details of your follower, you might decide you'd like an animated plant companion rather than an animal."
-      },
-      {
-        "id": "friend-to-small-creatures",
-        "name": "Ami des Petites Créatures",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
-        },
-        "description": "Tu choisis un type de petites créatures présentes dans l'environnement (insectes, rats, oiseaux, chauves-souris, etc.). Si tu réussis une tâche d'Intellect de difficulté 2, les créatures choisies à courte portée se placent sous ton influence : elles ne t'attaquent pas, ni toi, ni les personnes que tu désignes comme alliés, jusqu'à ta prochaine récupération de 10 min+. Tu peux aussi employer cette aptitude pour calmer ou influencer des plantes proches. Effort : Tes petites créatures peuvent agir collectivement comme un PNJ allié."
-      },
-      {
-        "id": "seeds-of-fury",
-        "name": "Graines de Fureur",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
-        },
-        "description": "Tu projettes une poignée de graines qui s'enflamment en plein air puis filent vers une cible à longue portée, laissant derrière elles une traînée de fumée. Une attaque réussie inflige 3 dégâts et met la cible en feu, provoquant +1 dégât par round jusqu'à ce qu'elle utilise une action pour éteindre les flammes ou jusqu'à ta prochaine récupération."
-      }
+      "Compendium.cypher.abilities-fr.Item.01ep6lsh0071ik27",
+      "Compendium.cypher.abilities-fr.Item.00tb4kfn00y5by1k",
+      "Compendium.cypher.abilities-fr.Item.01u1fv3f003i8gyu"
     ],
     "statOptions": [
       "might",

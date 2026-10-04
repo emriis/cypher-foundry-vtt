@@ -1,0 +1,40 @@
+{
+  "_id": "0137h835013dwdjj",
+  "_key": "!items!0137h835013dwdjj",
+  "name": "Reshape",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "reshape",
+    "variantKey": "0137h835013dwdjj",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You reshape matter within short range in an area no larger than a 5-foot (1.5 m) cube. If you use only one action on this ability, the changes you make are crude at best. If you spend at least ten minutes and succeed at an appropriate hindered crafting task, you can make complex changes to the material. You can't change the nature of the material, only its shape. For example, you can make a hole in a wall or floor, seal up a hole, create a sword from a piece of iron, or break or repair a chain. Using this ability multiple times lets you make larger changes, such as building a wall, bridge, or similar structure. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -34,62 +34,10 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "nimble",
-        "name": "Nimble",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 2,
-          "options": []
-        },
-        "description": "As a First action, you move up to a short distance and then can take another First action, such as attacking with a light weapon or opening a door (the movement happens before the First action, not the other way around). Unlike a normal situation of taking an action and moving a short distance, this movement doesn't hinder your tasks. Enabler."
-      },
-      {
-        "id": "sneak-attack",
-        "name": "Sneak Attack",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 1,
-          "options": []
-        },
-        "description": "If you use a light weapon to attack a foe under one of the following conditions, your attack inflicts +5 damage. (This ability doesn't work with medium or heavy weapons.) You attack with surprise. An ally uses their action to ease your attack. Your foe's defenses are hindered due to some other ongoing direct distraction. Your foe is unable to take their next turn due to some disabling attack or situation. First action."
-      },
-      {
-        "id": "super-combatant",
-        "name": "Super Combatant",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you're already specialized in), but you must gain the skill normally. As a Vigilante, you probably choose unarmed attacks as your Super Combatant training."
-      },
-      {
-        "id": "superheroics",
-        "name": "Superheroics",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Choose one Pool: Might, Speed, or Intellect. For tasks using your chosen Pool, add your rank to the amount of Effort you can apply, allowing you to apply additional levels of Effort to tasks in that Pool. In addition, you can choose to push yourself so hard that you take a moderate wound in exchange for two free levels of Effort you can apply to tasks in your chosen Pool (as long as this doesn't push you past your Effort limit for that Pool). Finally, add your rank as a bonus to your recovery, with those points going only into the Pool you have chosen."
-      }
+      "Compendium.cypher.abilities-en.Item.01pr7qca0048y1jr",
+      "Compendium.cypher.abilities-en.Item.00bivs10003ivsf9",
+      "Compendium.cypher.abilities-en.Item.001feepg00cxbotc",
+      "Compendium.cypher.abilities-en.Item.008xogon00lvnhon"
     ],
     "statOptions": [
       "might",

@@ -1,0 +1,40 @@
+{
+  "_id": "00bk4r4d013zvb05",
+  "_key": "!items!00bk4r4d013zvb05",
+  "name": "Explorer's Awareness",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "explorer-s-awareness",
+    "variantKey": "00bk4r4d013zvb05",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You're instinctively vigilant about potential threats, foes, obstacles, and hazards in your line of sight. When you use Effort on initiative and perception tasks, you gain two free levels of Effort. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

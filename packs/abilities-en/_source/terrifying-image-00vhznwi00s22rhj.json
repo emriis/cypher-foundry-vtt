@@ -1,0 +1,40 @@
+{
+  "_id": "00vhznwi00s22rhj",
+  "_key": "!items!00vhznwi00s22rhj",
+  "name": "Terrifying Image",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "terrifying-image",
+    "variantKey": "00vhznwi00s22rhj",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can terrify foes with illusions created from their own fears. Make separate Intellect attacks against up to five creatures within long range. Success means a creature flees in terror, pursued by their nightmares until they've fled at least a very long distance or you use a ten-minute or longer recovery. Failure means the creature ignores the images, which do not hamper them in any way. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -7,211 +7,72 @@
   "system": {
     "description": "<p>Your natural leadership capability allows you to command others, including a loyal band of followers.</p>",
     "abilities": [
-      {
-        "id": "always-witty",
-        "name": "Always Witty",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+      "Compendium.cypher.abilities-en.Item.01nadg2u0182m8kt",
+      "Compendium.cypher.abilities-en.Item.00562f6z00x2g5pw",
+      "Compendium.cypher.abilities-en.Item.01scz0pa01o3nekp",
+      "Compendium.cypher.abilities-en.Item.01ssejjd0150cr5p",
+      "Compendium.cypher.abilities-en.Item.00rxmrrz006e9aey",
+      "Compendium.cypher.abilities-en.Item.01rf9efs01gnh1il",
+      "Compendium.cypher.abilities-en.Item.00hicrco00r1fbfp",
+      "Compendium.cypher.abilities-en.Item.006x666e01qreu7l",
+      "Compendium.cypher.abilities-en.Item.016k6c7c01hcm1ju",
+      "Compendium.cypher.abilities-en.Item.00smbvu601s3fna0",
+      "Compendium.cypher.abilities-en.Item.00symv1a01n68umo",
+      "Compendium.cypher.abilities-en.Item.019yff3z00s99b2f",
+      "Compendium.cypher.abilities-en.Item.017v2p8a00jsd8r3"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01nadg2u0182m8kt",
+          "to": "Compendium.cypher.abilities-en.Item.01ssejjd0150cr5p"
         },
-        "description": "Every time you use a recovery, if your Intellect Pool isn't already full, you get 1 extra point to restore to your Intellect Pool. You can select this ability up to three times."
-      },
-      {
-        "id": "inspiring-suggestion",
-        "name": "Inspiring Suggestion",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00562f6z00x2g5pw",
+          "to": "Compendium.cypher.abilities-en.Item.01ssejjd0150cr5p"
         },
-        "description": "When you make a helpful suggestion to an ally, they have a better chance of succeeding at what they're doing. Choose an ally who can see and understand you, then suggest a specific action for them to take, such as “attack the leader” or “climb the wall.” If the ally chooses to take that exact action, they gain two assets on that task. First action."
-      },
-      {
-        "id": "lighting-a-fire-under-them",
-        "name": "Lighting a Fire Under Them",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00562f6z00x2g5pw",
+          "to": "Compendium.cypher.abilities-en.Item.00rxmrrz006e9aey"
         },
-        "description": "You issue a command to a follower or ally within short range and that person's next action is a First action (if the action would have been Last, it happens normally). You can't use this ability again until after your next ten-minute or longer recovery. Last action."
-      },
-      {
-        "id": "basic-follower",
-        "name": "Basic Follower",
-        "tier": 2,
-        "prerequisites": [
-          "always-witty",
-          "inspiring-suggestion"
-        ],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01scz0pa01o3nekp",
+          "to": "Compendium.cypher.abilities-en.Item.00rxmrrz006e9aey"
         },
-        "description": "You gain a level 2 follower who has two level 3 modifications (one of which is charm). You can take this ability multiple times, each time gaining another follower."
-      },
-      {
-        "id": "natural-leader",
-        "name": "Natural Leader",
-        "tier": 2,
-        "prerequisites": [
-          "inspiring-suggestion",
-          "lighting-a-fire-under-them"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00rxmrrz006e9aey",
+          "to": "Compendium.cypher.abilities-en.Item.01rf9efs01gnh1il"
         },
-        "description": "When you roll to bargain, bluff, charm, interrogate, or intimidate a character and your roll is less than a 9, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) This ability renews when you take a recovery. Effort: Increase the minimum number rolled for this ability by 3. Enabler. At tier 3: The minimum number rolled for this ability increases to 12. A person manipulated by Natural Leader becomes more difficult to work with; the GM should treat them as one level higher for later uses of the ability."
-      },
-      {
-        "id": "advanced-command",
-        "name": "Advanced Command",
-        "tier": 3,
-        "prerequisites": [
-          "natural-leader"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 7,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01ssejjd0150cr5p",
+          "to": "Compendium.cypher.abilities-en.Item.00hicrco00r1fbfp"
         },
-        "description": "You give a command to a creature within short range who can hear and understand you. If you succeed at an Intellect roll against them, they obey that command for one round. If the command would cause direct harm to them or their allies, the attack is hindered. Effort: Attempt to give them one command each following round (make an Intellect attack for each additional command); the ability ends when you fail the attack. Action."
-      },
-      {
-        "id": "expert-follower",
-        "name": "Expert Follower",
-        "tier": 3,
-        "prerequisites": [
-          "basic-follower"
-        ],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.01rf9efs01gnh1il",
+          "to": "Compendium.cypher.abilities-en.Item.006x666e01qreu7l"
         },
-        "description": "You gain a level 3 follower who has three level 4 modifications of your choice. Instead of gaining a new level 3 follower, you can advance an existing follower to level 3 and gain a new level 2 follower. You can take this ability multiple times, each time gaining another follower."
-      },
-      {
-        "id": "calm",
-        "name": "Calm",
-        "tier": 4,
-        "prerequisites": [
-          "advanced-command"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00hicrco00r1fbfp",
+          "to": "Compendium.cypher.abilities-en.Item.016k6c7c01hcm1ju"
         },
-        "description": "Through jokes, song, or other art, you prevent a living foe from attacking anyone or anything for one round. Action."
-      },
-      {
-        "id": "captivate-or-inspire",
-        "name": "Captivate or Inspire",
-        "tier": 4,
-        "prerequisites": [
-          "expert-follower"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00hicrco00r1fbfp",
+          "to": "Compendium.cypher.abilities-en.Item.00smbvu601s3fna0"
         },
-        "description": "You can use this ability in one of two ways. Captivate: Your words keep the attention of all NPCs that hear them for as long as you speak. Inspire: Your words inspire all NPCs that hear them, allowing them to perform tasks as if one level higher until you use a one-hour or longer recovery. In either case, you choose which NPCs are affected. If anyone in the crowd is attacked while you're trying to speak to them, you lose the crowd's attention. Action to initiate."
-      },
-      {
-        "id": "improved-follower",
-        "name": "Improved Follower",
-        "tier": 5,
-        "prerequisites": [
-          "expert-follower"
-        ],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.00smbvu601s3fna0",
+          "to": "Compendium.cypher.abilities-en.Item.00symv1a01n68umo"
         },
-        "description": "One of your followers increases their overall power, knowledge, and ability. Choose one of your followers. Their level increases by 1, their existing modifications each increase by 1, and they gain a new modification (equal to their base level plus 1). You can take this ability once per tier, each time improving a follower (the same one or a different one)."
-      },
-      {
-        "id": "band-of-followers",
-        "name": "Band of Followers",
-        "tier": 6,
-        "prerequisites": [
-          "improved-follower"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-en.Item.006x666e01qreu7l",
+          "to": "Compendium.cypher.abilities-en.Item.019yff3z00s99b2f"
         },
-        "description": "You gain four level 3 followers, each with three level 4 modifications of your choice. Instead of gaining four new level 3 followers, you can advance four existing level 2 followers to level 3 and gain a new level 2 follower in place of each of them."
-      },
-      {
-        "id": "mind-of-a-leader",
-        "name": "Mind of a Leader",
-        "tier": 6,
-        "prerequisites": [
-          "calm"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 6,
-          "options": []
-        },
-        "description": "When you develop a course of action to deal with a future situation, you can ask the GM one very general question about what is likely to happen if you carry out the plan, and you will get a simple, brief answer. Each of the allies who know the plan (including you) gain an asset to one roll of their choice related to that future situation, as long as the situation occurs within a few days of creating the plan. Action to initiate planning; enabler for asset."
-      },
-      {
-        "id": "stimulate",
-        "name": "Stimulate",
-        "tier": 6,
-        "prerequisites": [
-          "captivate-or-inspire"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 6,
-          "options": []
-        },
-        "description": "Your words encourage a target in immediate range who can understand you. The next action they take is eased by three steps. (For this task, the asset limit is three instead of two.) Action."
-      }
-    ]
+        {
+          "from": "Compendium.cypher.abilities-en.Item.016k6c7c01hcm1ju",
+          "to": "Compendium.cypher.abilities-en.Item.017v2p8a00jsd8r3"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

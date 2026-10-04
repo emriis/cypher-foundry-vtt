@@ -32,62 +32,10 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "exorbitant-reach",
-        "name": "Exorbitant Reach",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You have an exorbitant item of your choice, such as a personal force field or a small spaceship. Work with your GM to determine something appropriate for the setting. At tier 3: You gain another exorbitant item."
-      },
-      {
-        "id": "noble-bearing",
-        "name": "Noble Bearing",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
-        },
-        "description": "You are adept at claiming the rewards that a noble background can generate. When you use this ability, strangers who are not already attacking give you at least a round to have your say. Alternatively, you can secure a place to stay somewhere that provides accommodations (even if that means others are turned out), get into a restricted area, ignore rules (minor ones, anyway), get in to see and speak with an important person, or gain some similar benefit without needing to succeed on an interaction task (unless your GM determines special circumstances apply, in which case you gain an asset to the task). Enabler."
-      },
-      {
-        "id": "retainer",
-        "name": "Retainer",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You enjoy the services of a loyal level 2 follower who looks after your affairs, accounts, meals, clothing, and other trivial needs so you don't have to. Work with your GM to flesh out the details of your retainer. By spending 2 Intellect, you can have your retainer take the attack meant for you. If the attack brings them to 0 health, they are unconscious but not dead and can be restored by using your resource points and arranging or providing for a few days of care."
-      },
-      {
-        "id": "at-higher-tiers",
-        "name": "At higher tiers",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Your follower improves when you reach tier 3 and again at tier 5 (this is explained in the section about followers). Your retainer could be a robot or alien pet if you prefer."
-      }
+      "Compendium.cypher.abilities-en.Item.01xixh0d00viay7j",
+      "Compendium.cypher.abilities-en.Item.00agj5dx00o2501e",
+      "Compendium.cypher.abilities-en.Item.005iqd4900bnl8x1",
+      "Compendium.cypher.abilities-en.Item.01e2y184017tzio4"
     ],
     "statOptions": [
       "intellect"

@@ -1,0 +1,40 @@
+{
+  "_id": "012lxc9i00w3o4vt",
+  "_key": "!items!012lxc9i00w3o4vt",
+  "name": "Total Awareness",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "total-awareness",
+    "variantKey": "012lxc9i00w3o4vt",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You automatically and frequently use your special senses to check your immediate vicinity, making it very difficult to surprise, hide from, or sneak up on you. When you use Effort on initiative and perception tasks, you gain two free levels of Effort. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

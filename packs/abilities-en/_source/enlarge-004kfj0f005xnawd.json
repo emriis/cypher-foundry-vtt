@@ -1,0 +1,40 @@
+{
+  "_id": "004kfj0f005xnawd",
+  "_key": "!items!004kfj0f005xnawd",
+  "name": "Enlarge",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "enlarge",
+    "variantKey": "004kfj0f005xnawd",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You grow to a height of 9 feet (3 m) until you use a recovery. Your equipment increases size with you. While enlarged, you add +1 to your Might Edge, you can ignore the first moderate wound you take, and your unarmed attacks inflict 4 damage. While enlarged, your dodge tasks are hindered. Each time you use Enlarge, the Might cost increases by 1. The cost resets after you take a recovery. Last action; enabler to use again to remain enlarged. If you have multiple abilities that let you grow to a larger size, their effects don't add together—you just get the benefits from the biggest one."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

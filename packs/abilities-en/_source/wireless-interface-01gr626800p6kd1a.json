@@ -1,0 +1,40 @@
+{
+  "_id": "01gr626800p6kd1a",
+  "_key": "!items!01gr626800p6kd1a",
+  "name": "Wireless Interface",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "wireless-interface",
+    "variantKey": "01gr626800p6kd1a",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can mentally communicate with machines within short range. Communication is two-way, but the machine must be willing and able to communicate. You don't have to see the target, but you must know that it's within range. You can have more than one active contact at once, but you must establish contact with each machine individually. Once you've established contact, tasks involving that machine take half the normal time, and tasks that are an action become a First action. Each contact lasts until you use a ten-minute or longer recovery. Effort: Increase the duration so it lasts until you use a one-hour or longer recovery. Increase the range by a step (long, very long, 1 mile, 10 miles, or anywhere on the planet). Action to establish contact."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

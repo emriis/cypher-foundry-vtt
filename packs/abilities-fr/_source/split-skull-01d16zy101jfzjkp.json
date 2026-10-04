@@ -1,0 +1,40 @@
+{
+  "_id": "01d16zy101jfzjkp",
+  "_key": "!items!01d16zy101jfzjkp",
+  "name": "Split Skull",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "split-skull",
+    "variantKey": "01d16zy101jfzjkp",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You attack with an axe in a way that has a greater risk of making an error but gains an additional benefit. Your GM intrusion range for this attack increases by 2 (from 1 on a d20 to 1–3 on a d20), but if you hit you can choose one of the following additional effects:"
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

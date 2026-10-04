@@ -1,0 +1,40 @@
+{
+  "_id": "014cbhl901khgd9h",
+  "_key": "!items!014cbhl901khgd9h",
+  "name": "Brew Potion",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "brew-potion",
+    "variantKey": "014cbhl901khgd9h",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You brew a potion. You can choose its effect from the Low-Power Manifest Cyphers table. Your brewed potion cypher counts toward your cypher limit (or to the limit of anyone you give the potion to), plus the allowance granted by Potion Cyphers. If you are already at your cypher limit, your choice of one of your current cyphers loses its magic so you can have the new potion cypher. Ten minutes to brew. At tier 3: You can choose a low or medium-power manifest cypher as your brewed potion. At tier 6: You can choose a low, medium-, or advanced-power manifest cypher as your brewed potion."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "017fay4r00s7vzfp",
+  "_key": "!items!017fay4r00s7vzfp",
+  "name": "Cast Illusion",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "cast-illusion",
+    "variantKey": "017fay4r00s7vzfp",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your immediate-range illusions (such as Minor Illusion, Major Illusion, and Grandiose Illusion) increase to short range. Disguises created by your Illusory Disguise last about a minute after the disguised creatures move out of your sight. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

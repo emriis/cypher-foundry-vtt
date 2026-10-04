@@ -1,0 +1,40 @@
+{
+  "_id": "00egbez600jna2zy",
+  "_key": "!items!00egbez600jna2zy",
+  "name": "Hidden Shield",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "hidden-shield",
+    "variantKey": "00egbez600jna2zy",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You have a shield built into your body (probably your arm) made of a composite of metal and advanced polymers. The shield is concealed until you wish to use it. You can freely use the shield in one hand as a light melee weapon. As an extra action on your turn, you can make a melee attack with the shield, but if you do so the main attack and shield attack are both hindered. If your shield is destroyed due to blocking wounds, you cannot use it until you use your resources to repair it, taking about one day."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "00ahsvti00ievlhb",
+  "_key": "!items!00ahsvti00ievlhb",
+  "name": "Fire Tendrils",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "fire-tendrils",
+    "variantKey": "00ahsvti00ievlhb",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your Shroud of Flame sprouts three tendrils of flame that last until you use a ten-minute or longer recovery. You can attack with each tendril as an extra action on your turn. Each tendril inflicts 3 damage (5 damage with Enhanced Flames). If you don't use the tendrils to attack, they remain but do nothing. Action to initiate. Following the round in which you initiate Fire Tendrils, attacking with them—as extra actions on your turn—counts as your overall action for that round."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

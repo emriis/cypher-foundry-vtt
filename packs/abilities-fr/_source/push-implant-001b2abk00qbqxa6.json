@@ -1,0 +1,40 @@
+{
+  "_id": "001b2abk00qbqxa6",
+  "_key": "!items!001b2abk00qbqxa6",
+  "name": "Push Implant",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "push-implant",
+    "variantKey": "001b2abk00qbqxa6",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "After attacking, you can activate a combat implant to make an additional attack as an extra action on your turn. Doing this inflicts a moderate wound on yourself. Enabler. If you want a combat-capable character but don't want implants like those described under Combat Enhancement, you might prefer to use the Fighter type from the dungeon fantasy genre as the basis for your character, translating between the genres but otherwise using those abilities instead of the Soldier's."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

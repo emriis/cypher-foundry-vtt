@@ -1,0 +1,40 @@
+{
+  "_id": "008zhnhd00mv8c03",
+  "_key": "!items!008zhnhd00mv8c03",
+  "name": "Ice Creation",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "ice-creation",
+    "variantKey": "008zhnhd00mv8c03",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": true,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You create an object of your size or smaller that is made of level 3 ice. It is crude and can have no moving parts, so you can make a sword, a shield, a small wall, a short ladder, and so on. If you aren't within short range of the object, it breaks or melts once you use a ten-minute or longer recovery. You can choose this ability multiple times. Each additional time you choose it, you double the base size of the object you can create. Effort: Double the maximum size of the object you can create. Increase the distance the object can be from you by one range category. Action. A wall of ice that is about 5 feet by 5 feet and 1 inch thick (1.5 m by 1.5 m and 3 cm thick) is about the same size as a person."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

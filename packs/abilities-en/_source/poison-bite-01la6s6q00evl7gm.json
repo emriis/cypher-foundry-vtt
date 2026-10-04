@@ -1,0 +1,40 @@
+{
+  "_id": "01la6s6q00evl7gm",
+  "_key": "!items!01la6s6q00evl7gm",
+  "name": "Poison Bite",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "poison-bite",
+    "variantKey": "01la6s6q00evl7gm",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You grow fangs and an extended overbite or underbite, allowing you to make poisonous bite attacks as light unarmed attacks (eased attack, 2 damage) until you use a ten-minute or longer recovery. If your bite attack succeeds, the target takes an additional 5 damage (ignores armor) from poison and their tasks are hindered for one round. Action when in your normal form; enabler when using Beast Form. Wings(4 Might): You sprout wings massive enough to give you the power to fly up to a long distance each round. You can carry a creature your size or smaller (if using Bigger Beast Form, you can carry up to three creatures of your normal size or smaller). Action when in your normal form; enabler when using Beast Form."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

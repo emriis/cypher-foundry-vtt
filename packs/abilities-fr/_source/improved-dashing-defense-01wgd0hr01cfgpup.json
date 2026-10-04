@@ -1,0 +1,40 @@
+{
+  "_id": "01wgd0hr01cfgpup",
+  "_key": "!items!01wgd0hr01cfgpup",
+  "name": "Improved Dashing Defense",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "improved-dashing-defense",
+    "variantKey": "01wgd0hr01cfgpup",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "One ally within immediate range who is using a light or medium weapon gains the benefit of Dashing Defense until your next turn. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

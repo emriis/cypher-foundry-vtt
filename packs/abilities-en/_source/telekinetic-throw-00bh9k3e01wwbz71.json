@@ -1,0 +1,40 @@
+{
+  "_id": "00bh9k3e01wwbz71",
+  "_key": "!items!00bh9k3e01wwbz71",
+  "name": "Telekinetic Throw",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "telekinetic-throw",
+    "variantKey": "00bh9k3e01wwbz71",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You telekinetically grab an object within short range and hurl it at a target within short range. (To throw a creature instead of an object, you first have to telekinetically grab them with a successful Intellect attack.) Make an Intellect attack against your target. If you succeed, your target and whatever you throw each take 6 damage. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

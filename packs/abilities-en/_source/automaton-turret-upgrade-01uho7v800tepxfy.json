@@ -1,0 +1,40 @@
+{
+  "_id": "01uho7v800tepxfy",
+  "_key": "!items!01uho7v800tepxfy",
+  "name": "Automaton Turret Upgrade",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "automaton-turret-upgrade",
+    "variantKey": "01uho7v800tepxfy",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You've built a new capability into one of your automatons—it can reconfigure itself and become an immobile energy weapon on a gimbal mount. The turret is a heavy weapon with very long range that inflicts 7 damage. If you have the automaton act on its own, it makes one hindered attack per round. If you or an ally use the turret as a weapon, attacks with it are eased. Action to change the automaton's configuration; Last action to attack with turret. In a fantasy setting, the automaton turret probably shoots fire or lightning. In a science fiction setting, it probably shoots lasers."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

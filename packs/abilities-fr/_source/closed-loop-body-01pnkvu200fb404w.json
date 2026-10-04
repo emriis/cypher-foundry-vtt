@@ -1,0 +1,40 @@
+{
+  "_id": "01pnkvu200fb404w",
+  "_key": "!items!01pnkvu200fb404w",
+  "name": "Closed Loop Body",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "closed-loop-body",
+    "variantKey": "01pnkvu200fb404w",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You don't need to eat or breathe, and you suffer no ill effects from vacuum or extreme temperatures (though fire, cold, and other attacks are suffered normally)."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "018n5ugq007t3965",
+  "_key": "!items!018n5ugq007t3965",
+  "name": "Easing the Pain",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "easing-the-pain",
+    "variantKey": "018n5ugq007t3965",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Allies within immediate range (including you) that take a recovery add +1 to  their roll."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "00a4uyyx00vjiwns",
+  "_key": "!items!00a4uyyx00vjiwns",
+  "name": "Incapacitating Attack",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "incapacitating-attack",
+    "variantKey": "00a4uyyx00vjiwns",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your successful attack also briefly incapacitates the target. Until you use a ten-minute or longer recovery (or until someone uses an action to give them aid), they are prone, unable to stand or crawl more than an immediate distance each round, and their defenses are hindered. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

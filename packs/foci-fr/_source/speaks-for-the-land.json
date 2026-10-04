@@ -7,199 +7,71 @@
   "system": {
     "description": "<p>Your spiritual connection to nature and the environment grants you mystical abilities.</p>",
     "abilities": [
-      {
-        "id": "healing-fruit",
-        "name": "Fruit guérisseur",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+      "Compendium.cypher.abilities-fr.Item.01uogmsx01x83f52",
+      "Compendium.cypher.abilities-fr.Item.01u1fv3f003i8gyu",
+      "Compendium.cypher.abilities-fr.Item.001j28gr00zg8ku5",
+      "Compendium.cypher.abilities-fr.Item.016ldcb200vwt8yp",
+      "Compendium.cypher.abilities-fr.Item.00uhsoe8006qjwmo",
+      "Compendium.cypher.abilities-fr.Item.01y6tf4i011qhfm7",
+      "Compendium.cypher.abilities-fr.Item.007zkhna01y14ef2",
+      "Compendium.cypher.abilities-fr.Item.01nmqcz100edosf7",
+      "Compendium.cypher.abilities-fr.Item.01jyv4d501nb635k",
+      "Compendium.cypher.abilities-fr.Item.0019gg4m00atfj18",
+      "Compendium.cypher.abilities-fr.Item.019rq279011v9on7",
+      "Compendium.cypher.abilities-fr.Item.00ndrs64001x07gy"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01uogmsx01x83f52",
+          "to": "Compendium.cypher.abilities-fr.Item.016ldcb200vwt8yp"
         },
-        "description": "Tu insuffles une magie curative dans un fruit ou une graine. Une créature qui le mange récupère 1d6 points dans la Réserve de son choix ou retire une blessure mineure. Une même créature ne peut pas bénéficier à nouveau de cet effet avant qu’elle ait pris une récupération de dix minutes ou plus. Tout fruit non consommé perd automatiquement ses propriétés lorsque tu effectues une telle récupération."
-      },
-      {
-        "id": "seeds-of-fury",
-        "name": "Graines de fureur",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.001j28gr00zg8ku5",
+          "to": "Compendium.cypher.abilities-fr.Item.016ldcb200vwt8yp"
         },
-        "description": "Tu jettes une poignée de graines en l’air ; elles s’enflamment et filent vers une cible à longue portée, laissant derrière elles un trainée de fumée. Une attaque réussie inflige 3 dégâts, et la cible prend feu, subissant 1 dégât supplémentaire par round jusqu’à ce qu’elle éteigne les flammes (action) ou jusqu’à ta prochaine récupération de dix minutes ou plus."
-      },
-      {
-        "id": "wild-affinity",
-        "name": "Affinité sauvage",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.001j28gr00zg8ku5",
+          "to": "Compendium.cypher.abilities-fr.Item.00uhsoe8006qjwmo"
         },
-        "description": "Un animal sauvage, sain d’esprit et dans son environnement naturel, ne t’attaquera pas sauf provocation ou contrôle."
-      },
-      {
-        "id": "communication",
-        "name": "Communication",
-        "tier": 2,
-        "prerequisites": [
-          "healing-fruit",
-          "wild-affinity"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01u1fv3f003i8gyu",
+          "to": "Compendium.cypher.abilities-fr.Item.00uhsoe8006qjwmo"
         },
-        "description": "Tu transmets un concept simple à une créature incapable de parler ou de comprendre normalement le langage. Elle peut te répondre par une réponse simple à une question directe."
-      },
-      {
-        "id": "wilderness-experience",
-        "name": "Expérience des étendues sauvages",
-        "tier": 2,
-        "prerequisites": [
-          "wild-affinity",
-          "seeds-of-fury"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.016ldcb200vwt8yp",
+          "to": "Compendium.cypher.abilities-fr.Item.01y6tf4i011qhfm7"
         },
-        "description": "En une heure environ, tu trouves toujours nourriture et eau potable pour toi et quelques autres. Tes connaissances des animaux venimeux et plantes toxiques t’accordent : des défenses contre le poison facilitées, les blessures dues au poison sont réduites d’un palier et une immunité aux maladies naturelles. Dans la nature, tu ignores tous les malus sur les tâches et les déplacements dus à la végétation dense, au terrain difficile, au climat, etc."
-      },
-      {
-        "id": "nature-s-grip",
-        "name": "Étreinte de la nature",
-        "tier": 3,
-        "prerequisites": [
-          "communication"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00uhsoe8006qjwmo",
+          "to": "Compendium.cypher.abilities-fr.Item.007zkhna01y14ef2"
         },
-        "description": "Fais une attaque d’Intellect contre une cible à courte portée. En cas de réussite, des branches, herbes ou racines immobilisent la cible jusqu’à ta prochaine récupération de dix minutes ou plus. La cible ne peut plus se déplacer et ses actions physiques (attaque, défense…) sont entravées. Si elle tente de se libérer, tu peux la retenir au moyen d’un nouveau jet d’Intellect. Tu peux aussi utiliser cette aptitude pour repousser ou disperser des plantes entravantes dans une zone immédiate. Effort : infliger 3 dégâts lors du round initial où tu l’immobilises."
-      },
-      {
-        "id": "nature-s-voice",
-        "name": "Voix de la nature",
-        "tier": 3,
-        "prerequisites": [
-          "wilderness-experience"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01y6tf4i011qhfm7",
+          "to": "Compendium.cypher.abilities-fr.Item.01nmqcz100edosf7"
         },
-        "description": "Tu fais une attaque d’Intellect pour calmer une créature non‑humaine à longue portée qui peut te voir. Tu dois lui parler (sans qu’elle comprenne forcément tes mots). La cible reste calme jusqu’à ta prochaine récupération de dix minutes ou plus, ou aussi longtemps que tu passes ton action à la calmer. Effort : affecter une créature supplémentaire (coût : 2 Intellect)."
-      },
-      {
-        "id": "moon-shape",
-        "name": "Forme lunaire",
-        "tier": 4,
-        "prerequisites": [
-          "nature-s-grip"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.007zkhna01y14ef2",
+          "to": "Compendium.cypher.abilities-fr.Item.01jyv4d501nb635k"
         },
-        "description": "Tu deviens une bête primale, guidée par la rage et l’instinct, jusqu’à ta prochaine récupération d’une heure ou plus. Cette transformation nécessite d’être sous la lumière de la lune (au moins demi‑lune), sauf si tu dépenses de l’Effort. Sous forme bestiale tu obtiens : +8 à ta Réserve de Puissance, +2 à ta Réserve de Célérité, +2 d’Avantage en Puissance et en Célérité"
-      },
-      {
-        "id": "wilderness-encouragement",
-        "name": "Encouragement sauvage",
-        "tier": 4,
-        "prerequisites": [
-          "nature-s-voice"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01nmqcz100edosf7",
+          "to": "Compendium.cypher.abilities-fr.Item.0019gg4m00atfj18"
         },
-        "description": "Your knowledge and experience allow you to help others rest and recover. While in the wilderness or when talking about your time in the wilderness, choose one ally within short range who can understand you (you can choose yourself). The ally can immediately take an extra one-action recovery or remove a moderate wound. You can't use this ability on the same creature again until they've used one of their own recoveries. Action."
-      },
-      {
-        "id": "insect-eruption",
-        "name": "Éruption d'insectes",
-        "tier": 5,
-        "prerequisites": [
-          "moon-shape",
-          "wilderness-encouragement"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 6,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01jyv4d501nb635k",
+          "to": "Compendium.cypher.abilities-fr.Item.0019gg4m00atfj18"
         },
-        "description": "You call a swarm of insects to obey you until you use a ten-minute or longer recovery. The insects appear within long range and do as you command. They automatically hinder any number of foes within range (no rolls required). If you use an action to concentrate the swarm on an immediate area, you can make an Intellect attack on each foe in that area; success means affected creatures take 2 damage. You can use the swarm to move heavy objects through collective effort, eat through wooden walls, and perform other actions suitable for a supernatural swarm. You can't use this ability in an area where insects cannot reach, such as a sealed room. Action to initiate."
-      },
-      {
-        "id": "call-the-storm",
-        "name": "Appel de la tempête",
-        "tier": 6,
-        "prerequisites": [
-          "insect-eruption"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 7,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.0019gg4m00atfj18",
+          "to": "Compendium.cypher.abilities-fr.Item.019rq279011v9on7"
         },
-        "description": "Tu invoques d’énormes nuages d’orage sur une zone très vaste. Tant que l’effet dure, tu peux, en tant qu’action, effectuer une attaque d’Intellect pour frapper une cible par la foudre et lui infliger 4 dégâts (tu peux utiliser de l’Effort sur l’attaque ou les dégâts normalement). L’aptitude persiste jusqu’à ta prochaine récupération de dix minutes ou plus."
-      },
-      {
-        "id": "earthshake",
-        "name": "Fracas tellurique",
-        "tier": 6,
-        "prerequisites": [
-          "insect-eruption"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "choice",
-          "amount": 8,
-          "options": [
-            "might",
-            "intellect"
-          ]
-        },
-        "description": "Tu déclenches un séisme localisé dans une zone courte à très longue portée. Les constructions et éléments naturels dans la zone sont endommagés, réduisant leur niveau de 1 à 3, produisant des débris et des gravats. Toutes les créatures dans la zone subissent 7 dégâts à cause des tremblements. Les créatures dans ou à côté d’un bâtiment ou élément affecté subissent 13 dégâts, sans jet."
-      }
-    ]
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.0019gg4m00atfj18",
+          "to": "Compendium.cypher.abilities-fr.Item.00ndrs64001x07gy"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

@@ -1,0 +1,40 @@
+{
+  "_id": "006x666e01qreu7l",
+  "_key": "!items!006x666e01qreu7l",
+  "name": "Calm",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "calm",
+    "variantKey": "006x666e01qreu7l",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If you succeed on an Intellect attack against a living foe who can see and hear you, you prevent them from attacking anyone or anything for one round by way of your jokes, song, or other performance. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

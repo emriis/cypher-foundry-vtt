@@ -1,0 +1,40 @@
+{
+  "_id": "01cttlek01updo95",
+  "_key": "!items!01cttlek01updo95",
+  "name": "Field of Stones",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "field-of-stones",
+    "variantKey": "01cttlek01updo95",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can attempt to hide in natural terrain, appearing as a natural rock formation. If the terrain is rocky and your stealth roll is a 15 or less, you can treat the roll as a 15. (This means you don't get a GM intrusion if you roll a 1.) In other terrain, your stealth task to blend in as rocks is eased by two steps. At tier 3: The minimum number rolled for this ability increases to 18."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

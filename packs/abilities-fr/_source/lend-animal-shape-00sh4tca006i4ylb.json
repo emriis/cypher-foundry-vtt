@@ -1,0 +1,40 @@
+{
+  "_id": "00sh4tca006i4ylb",
+  "_key": "!items!00sh4tca006i4ylb",
+  "name": "Lend Animal Shape",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "lend-animal-shape",
+    "variantKey": "00sh4tca006i4ylb",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You change into an animal as if using Animal Shape, and one willing creature within immediate range also transforms into an animal of that type (bear, tiger, wolf, and so on) until you use a ten-minute or longer recovery, as if they were using your Animal Shape ability. All creatures transforming with you must be your size or smaller. A creature can revert to its normal form as an action, but it cannot then change back into the animal form. One creature (whether you or someone else) changing form does not affect any other creature affected by this ability. Effort: Affect an additional creature. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

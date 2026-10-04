@@ -1,0 +1,40 @@
+{
+  "_id": "00lk39rx01yhmlub",
+  "_key": "!items!00lk39rx01yhmlub",
+  "name": "Beast Eyes",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "beast-eyes",
+    "variantKey": "00lk39rx01yhmlub",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You link your mind to your beast companion (or a beast you've calmed with Soothe the Savage, if they remain well disposed toward you), perceiving through their senses if they are within 1 mile (1.6 km) of you. This ability lasts until you use a ten-minute or longer recovery. Action to initiate."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "01j2wmtg0163ewi5",
+  "_key": "!items!01j2wmtg0163ewi5",
+  "name": "Flamboyant Swordplay GM intrusions",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "flamboyant-swordplay-gm-intrusions",
+    "variantKey": "01j2wmtg0163ewi5",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your foe's disarmed object strikes your ally for a minor wound. The tip of your weapon gets embedded in the floor or wall, requiring an action to free it. The attack impact jars you, hindering tasks with that hand until you use an action to shake it off. A few abilities in this book include suggested GM intrusions because you're more likely to trigger an intrusion when using those abilities, and having some options here makes it easier for the GM."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

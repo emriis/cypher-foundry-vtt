@@ -1,0 +1,40 @@
+{
+  "_id": "004elcxq001zh6ni",
+  "_key": "!items!004elcxq001zh6ni",
+  "name": "Rewind Time",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "rewind-time",
+    "variantKey": "004elcxq001zh6ni",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You rewind time a few seconds, allowing someone to undo what they just did and take a different action. Choose a creature within short range who most recently took an action. Time rewinds to just before they took that action; it is now their turn. They can repeat the same action or try something different. The creature isn't aware of what they did before or that you reversed time, but they might be aware that you did something. This ability renews when you use a recovery. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

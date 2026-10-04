@@ -1,0 +1,40 @@
+{
+  "_id": "00vjrj23010k6e4m",
+  "_key": "!items!00vjrj23010k6e4m",
+  "name": "Drawing on Life's Experiences",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "drawing-on-life-s-experiences",
+    "variantKey": "00vjrj23010k6e4m",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You've seen a lot and done a lot, and that experience comes in handy. Ask the GM one question, and you'll receive a general answer. The GM assigns a level to the question, so the more obscure the answer, the more difficult the task. Generally, knowledge that you could find by looking somewhere other than your current location is level 1, and obscure knowledge of the past is level 7. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

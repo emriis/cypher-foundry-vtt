@@ -1,0 +1,40 @@
+{
+  "_id": "01ef79vj00lb8twd",
+  "_key": "!items!01ef79vj00lb8twd",
+  "name": "Slippery Customer",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "slippery-customer",
+    "variantKey": "01ef79vj00lb8twd",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You ignore all penalties from very dim light and darkness. You ignore penalties for actions in cramped spaces. You gain an asset on stealth tasks in dim light, very dim light, and darkness."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

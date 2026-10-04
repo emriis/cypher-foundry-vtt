@@ -1,0 +1,40 @@
+{
+  "_id": "00eq7i5u01oh54co",
+  "_key": "!items!00eq7i5u01oh54co",
+  "name": "Rival Talent",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "rival-talent",
+    "variantKey": "00eq7i5u01oh54co",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can tell a lot about someone by the weapon they wield. You ease all tasks (attacking, defending, influencing, tracking, and so on) against any foe using the same kind of weapon as your chosen weapon."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

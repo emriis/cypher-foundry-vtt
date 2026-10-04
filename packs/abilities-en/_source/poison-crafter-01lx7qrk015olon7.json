@@ -1,0 +1,40 @@
+{
+  "_id": "01lx7qrk015olon7",
+  "_key": "!items!01lx7qrk015olon7",
+  "name": "Poison Crafter",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "poison-crafter",
+    "variantKey": "01lx7qrk015olon7",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If you have about an hour, you can use your resources to craft one dose of poison you can use as a contact poison on a weapon. A weapon coated with the poison (requiring a Last action to carefully apply) inflicts an additional 2 damage until you use a one-hour or longer recovery. Your experience with poison gives you some additional related benefits. You gain an asset on detecting, identifying, and resisting poison. Your defense rolls against poison are eased, and you take 2 less Speed damage from poison (if the poison inflicts Speed damage) or reduce wounds from poison by one step (major to moderate, moderate to minor, minor to none). For example, if you are hit by an attack that adds a moderate wound from poison, you only take a minor wound from the poison. Poison crafting uses resource points—in this case, use Craft Cypher and the weapon augmentation cypher to create a poison you can apply to your weapon. The poison, a manifest cypher, applies toward your cypher limit."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

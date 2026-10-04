@@ -1,0 +1,40 @@
+{
+  "_id": "001lhj4201r0s970",
+  "_key": "!items!001lhj4201r0s970",
+  "name": "Damage Dealer",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "damage-dealer",
+    "variantKey": "001lhj4201r0s970",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You've become better at killing with one kind of weapon. Choose one melee or ranged weapon. You inflict an additional 3 damage with this weapon. You can select this ability up to two times for any particular weapon (for a total of 6 damage)."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

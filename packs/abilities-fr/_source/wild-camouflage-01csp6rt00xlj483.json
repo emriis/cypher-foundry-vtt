@@ -1,0 +1,40 @@
+{
+  "_id": "01csp6rt00xlj483",
+  "_key": "!items!01csp6rt00xlj483",
+  "name": "Wild Camouflage",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "wild-camouflage",
+    "variantKey": "01csp6rt00xlj483",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "By adjusting your clothing, using various disguise tricks, and drawing upon your deep knowledge of your surroundings, you are hard to make out in the wilderness until you use a ten-minute or longer recovery. While you are camouflaged, you gain two assets to dodge and stealth. This effect ends early if you do something to reveal your presence or position—attacking, using a special ability with an obvious effect, moving a large object, and so on. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

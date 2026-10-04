@@ -1,0 +1,40 @@
+{
+  "_id": "015wila601qtgyv9",
+  "_key": "!items!015wila601qtgyv9",
+  "name": "Escape Plan",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "escape-plan",
+    "variantKey": "015wila601qtgyv9",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you kill a foe, you can attempt a stealth task as an extra action on your turn to hide from anyone around, assuming that a suitable hiding place is nearby. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

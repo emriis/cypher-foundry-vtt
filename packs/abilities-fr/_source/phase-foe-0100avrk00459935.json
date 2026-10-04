@@ -1,0 +1,40 @@
+{
+  "_id": "0100avrk00459935",
+  "_key": "!items!0100avrk00459935",
+  "name": "Phase Foe",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "phase-foe",
+    "variantKey": "0100avrk00459935",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 8,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You gather disrupting energy in your fingertip and touch a creature. If your attack succeeds, they are phased as if you used Untouchable on them. However, unless they can figure out how to control their movement while phased, which most creatures have no experience with, they sink through the ground or other solid matter. If they can't later gain control or end the effect, they might be gone for good because when they become solid again after a minute, they're probably deep underground. You can only use this ability against a target of level 4 or lower. Effort: Increase the maximum level of the target you can affect by 1. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

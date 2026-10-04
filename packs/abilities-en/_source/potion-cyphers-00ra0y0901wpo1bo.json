@@ -1,0 +1,40 @@
+{
+  "_id": "00ra0y0901wpo1bo",
+  "_key": "!items!00ra0y0901wpo1bo",
+  "name": "Potion Cyphers",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "potion-cyphers",
+    "variantKey": "00ra0y0901wpo1bo",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can bear two additional cyphers at a time as long as they are cyphers you created with Brew Potion."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

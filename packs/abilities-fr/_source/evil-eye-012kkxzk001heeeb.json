@@ -1,0 +1,40 @@
+{
+  "_id": "012kkxzk001heeeb",
+  "_key": "!items!012kkxzk001heeeb",
+  "name": "Evil Eye",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "evil-eye",
+    "variantKey": "012kkxzk001heeeb",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You make the sign of the evil eye, targeting a creature within short range with your Intellect attack. On a success, they are afflicted by a spirit of misfortune until you use a one-hour recovery. During this period, the GM afflicts them by introducing (or intruding, if against a PC) inconvenient events such as tripping, losing an item, missing an appointment, and so on. Effort: Increase the misfortune duration so it lasts until you use a ten-hour recovery. Inflict 2 Intellect damage per level of Effort on a  successful attack (in addition to the misfortune aspect of the ability). Last action. At tier 3: You can use two levels of Effort to make the misfortune permanent; it is a level 4 curse for the purpose of abilities that remove afflictions."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

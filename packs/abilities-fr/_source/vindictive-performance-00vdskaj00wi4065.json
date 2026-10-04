@@ -1,0 +1,40 @@
+{
+  "_id": "00vdskaj00wi4065",
+  "_key": "!items!00vdskaj00wi4065",
+  "name": "Vindictive Performance",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "vindictive-performance",
+    "variantKey": "00vdskaj00wi4065",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you tell a joke, perform a song or poem, draw a picture, relate an anecdote, or otherwise provide entertainment, you can select one creature within short range who is able to understand you. During your performance, you heap indirect but biting derision on this creature. If you succeed, the creature doesn't realize that they've become the victim of your performance until you wrap up the entertainment at a moment you choose in a way that strikes home. The creature takes 6 Intellect damage (ignores armor) and loses their next turn. One or more actions to initiate."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "00tpnc4y01319zt5",
+  "_key": "!items!00tpnc4y01319zt5",
+  "name": "Spiritual Cleanse",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "spiritual-cleanse",
+    "variantKey": "00tpnc4y01319zt5",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "The supplicant is freed from one curse, demonic possession, or similar spiritual affliction of level 5 or less. Effort: You can carry the idol with you. Ten minutes to initiate."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

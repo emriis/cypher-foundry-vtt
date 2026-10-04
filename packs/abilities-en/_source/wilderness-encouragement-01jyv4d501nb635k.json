@@ -1,0 +1,40 @@
+{
+  "_id": "01jyv4d501nb635k",
+  "_key": "!items!01jyv4d501nb635k",
+  "name": "Wilderness Encouragement",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "wilderness-encouragement",
+    "variantKey": "01jyv4d501nb635k",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your knowledge and experience allow you to help others rest and recover. While in the wilderness or when talking about your time in the wilderness, choose one ally within short range who can understand you (you can choose yourself). The ally can immediately take an extra one-action recovery or remove a moderate wound. You can't use this ability on the same creature again until they've used one of their own recoveries. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

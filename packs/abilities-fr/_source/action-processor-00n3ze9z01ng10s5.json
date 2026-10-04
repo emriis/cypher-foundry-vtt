@@ -1,0 +1,40 @@
+{
+  "_id": "00n3ze9z01ng10s5",
+  "_key": "!items!00n3ze9z01ng10s5",
+  "name": "Action Processor",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "action-processor",
+    "variantKey": "00n3ze9z01ng10s5",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your Data Processor ability can now grant you training in physical skills as well, such as athletics, gymnastics, dodging or blocking, or attacks with a specific weapon. This does not change how many skills Data Processor can simultaneously give you training in. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

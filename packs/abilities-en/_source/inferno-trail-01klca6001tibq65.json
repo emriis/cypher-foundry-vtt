@@ -1,0 +1,40 @@
+{
+  "_id": "01klca6001tibq65",
+  "_key": "!items!01klca6001tibq65",
+  "name": "Inferno Trail",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "inferno-trail",
+    "variantKey": "01klca6001tibq65",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your Shroud of Flame leaves a trail of fire in your wake. The trail matches your path, creating a wall of flame about 6 feet (2 m) high that inflicts 5 damage on any creature that passes through it. If targets are flammable, they also catch on fire for an additional 1 damage each round until they spend a round putting out the fire. You can suppress the trail of fire when you wish as an extra action on your turn (and restart it the same way) or end the overall effect early. Otherwise, the effect ends after you use a ten-minute or longer recovery. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

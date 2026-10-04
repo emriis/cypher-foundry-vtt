@@ -1,0 +1,40 @@
+{
+  "_id": "01tgflm000j2prj3",
+  "_key": "!items!01tgflm000j2prj3",
+  "name": "Disable Mechanism",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "disable-mechanism",
+    "variantKey": "01tgflm000j2prj3",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "With a successful Intellect attack to hack a machine, robot, or device (intelligent or not) within immediate range, you disrupt it in one of the following ways: All the machine's tasks are hindered until you use a ten-minute or longer recovery. The machine's speed is halved. The machine can take no action for one round. The severity of the machine's attacks are reduced by one step (minimum of a minor wound) until you use a ten-minute or longer recovery. You must touch the machine, robot, or device to disrupt it (if you are making an attack, it inflicts no damage). Effort: Increase the range to as far as you can directly see (through your own eyes, not through a remote camera or other interface). Target a machine through a network interface you have unrestricted access to (this requires two levels of Effort). Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

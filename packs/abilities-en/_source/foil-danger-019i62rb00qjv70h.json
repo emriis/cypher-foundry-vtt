@@ -1,0 +1,40 @@
+{
+  "_id": "019i62rb00qjv70h",
+  "_key": "!items!019i62rb00qjv70h",
+  "name": "Foil Danger",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "foil-danger",
+    "variantKey": "019i62rb00qjv70h",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": "firstAction",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If you are aware of a danger within immediate distance and succeed on an Intellect roll against its level, you negate that danger for one round. For instance, the danger could be a feature of the landscape like a mud or acid pit, a trap triggered by a wire, or a creature's natural ability (like a snake's venom or a radiation blast from a glowing roach). It could even be a foe's mundane attack or action (such as a weapon attack or their attempt to flip a switch), in which case this ability means they can't take that action on their next turn. Action. Inspiring Suggestion (2 Intellect): When you make a helpful suggestion to an ally, they have a better chance of succeeding at what they're doing. Choose an ally who can see and understand you, then suggest a specific action for them to take, such as “attack the leader” or “climb the wall.” If the ally chooses to take that exact action, they gain two assets on that task. First action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

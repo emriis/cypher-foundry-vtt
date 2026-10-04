@@ -1,0 +1,40 @@
+{
+  "_id": "00lzl5gj01i0b4v2",
+  "_key": "!items!00lzl5gj01i0b4v2",
+  "name": "Machine Not Flesh",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "machine-not-flesh",
+    "variantKey": "00lzl5gj01i0b4v2",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You are a sophisticated, intelligent machine with a generally humanoid shape; work with your GM to determine specifics. This gives you the following benefits: You gain an additional +4 points to permanently distribute among your Pools. You gain an additional +1 Edge in one Pool of your choice. Your nonbiological body is immune to standard poisons, diseases, and the vacuum of space, and you do not need to eat, drink, or breathe (though you must still rest and take recoveries). If you can connect to an electrical conduit, charging station, or similar location that can provide you with power, you can take an extra one-action recovery each day. You ease any hacking tasks you attempt. Your machine nature also comes with some downsides. Instead of using healing, treatment of your wounds requires engineering. Accelerated healing methods developed for biological creatures (such as the Prepared Medic ability from the Medic type) don't work on you at all. Repair tasks to successfully treat (remove) your minor, moderate, and major wounds are level 1, level 3, and level 5, respectively. If you cannot connect to a suitable power supply during your ten-hour recovery, you lose your normal one-action recovery and your bonus (connected to power) recovery until you do so. Some biologicals look down on androids. At the GM's discretion, your positive interaction tasks with such individuals are hindered."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "00g8g2ex014ekicp",
+  "_key": "!items!00g8g2ex014ekicp",
+  "name": "Subsonic Rumble",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "subsonic-rumble",
+    "variantKey": "00g8g2ex014ekicp",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You emit an unnerving subsonic rumble that most living creatures can't hear but that affects them all the same. For creatures within short range, attempts to charm them, intimidate them, or frighten them are eased by two steps. You continue to emit this rumble until you use a ten-minute or longer recovery. Action to initiate."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "01c22t8a01gckesd",
+  "_key": "!items!01c22t8a01gckesd",
+  "name": "Invisibility",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "invisibility",
+    "variantKey": "01c22t8a01gckesd",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You become invisible. This effect ends if you do something to reveal your presence or position—attacking, using an ability, moving a large object, and so on—or if you use a ten-minute or longer recovery. Effort: Use this ability on a creature you touch instead of yourself; they remain invisible until they act precipitously or they or you use a ten-minute or longer recovery. Action to initiate. An invisible character's attack is eased by two steps. Attacks on an invisible character are hindered by four steps or are nearly impossible if the attacker has no idea where they might be."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

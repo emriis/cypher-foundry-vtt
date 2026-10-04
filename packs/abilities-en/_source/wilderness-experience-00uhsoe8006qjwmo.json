@@ -1,0 +1,40 @@
+{
+  "_id": "00uhsoe8006qjwmo",
+  "_key": "!items!00uhsoe8006qjwmo",
+  "name": "Wilderness Experience",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "wilderness-experience",
+    "variantKey": "00uhsoe8006qjwmo",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Given an hour or so, you can always find edible food and potable water in the wilderness, enough to feed yourself and a few other people. Your experience with venomous animals and poisonous plants gives you some additional protection against them. Your defense rolls against poison are eased and you reduce the severity of wounds from poison by one step (major to moderate, moderate to minor, minor to none). For example, if you are bitten by a snake whose poison inflicts a moderate wound, you'd only take a minor wound from the poison. You are immune to natural diseases. When in the wild, you ignore any task penalties and movement penalties affecting you due to tall grass, thick brush, rugged terrain, weather, and other natural causes."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -31,48 +31,9 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "always-tinkering",
-        "name": "Toujours en Train de Bricoler",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Tu fabriques un dispositif technologique à usage unique dont tu choisis l'effet dans la table des cyphers manifestés de faible puissance. Le dispositif compte dans ta limite de cyphers. Si tu es déjà à ta limite, l'un de tes cyphers actuels cesse de fonctionner. Au rang 3, tu peux choisir un cypher de puissance faible ou moyenne. Au rang 6, tu peux choisir un cypher faible, moyen ou avancé. A chaque utilisation, tu peux choisir un cypher différent."
-      },
-      {
-        "id": "craft-device",
-        "name": "Fabriquer un Dispositif",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 5,
-          "options": []
-        },
-        "description": "Tu construis un nouveau dispositif, fragile mais fonctionnel, en réussissant une tâche d'ingénierie de difficulté 3. Tu choisis son effet dans la table des cyphers manifestés de faible puissance. Ce dispositif n'est pas un cypher, ne compte pas dans ta limite de cyphers, n'est généralement pas limité à un seul usage (déchargement de 1 sur 1d6) et est assez petit pour être transporté. Au rang 3, en dépensant 1 niveau d'Effort, tu peux fabriquer un dispositif basé sur un cypher de puissance moyenne. Au rang 6, en dépensant 2 niveaux d'Effort, tu peux fabriquer un dispositif basé sur un cypher de puissance avancée."
-      },
-      {
-        "id": "cypher-use",
-        "name": "Utilisation de Cyphers",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You can bear one additional cypher at a time."
-      }
+      "Compendium.cypher.abilities-fr.Item.015ab4ok01d5k2e6",
+      "Compendium.cypher.abilities-fr.Item.00vwhi4h01rrd58q",
+      "Compendium.cypher.abilities-fr.Item.01kmjqpo005ovl3l"
     ],
     "statOptions": [
       "intellect"

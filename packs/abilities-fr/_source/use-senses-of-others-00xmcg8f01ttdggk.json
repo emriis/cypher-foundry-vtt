@@ -1,0 +1,40 @@
+{
+  "_id": "00xmcg8f01ttdggk",
+  "_key": "!items!00xmcg8f01ttdggk",
+  "name": "Use Senses of Others",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "use-senses-of-others",
+    "variantKey": "00xmcg8f01ttdggk",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can see, hear, smell, touch, and taste through the senses of another creature within long range. You don’t need to see the creature, but you must know that they are within range, and if they are intelligent and unwilling, you must succeed on an Intellect attack to begin sensing through their senses. Your shared senses last until you use a ten-minute or longer recovery. Action to establish."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

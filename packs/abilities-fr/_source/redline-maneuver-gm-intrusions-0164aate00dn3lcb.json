@@ -1,0 +1,40 @@
+{
+  "_id": "0164aate00dn3lcb",
+  "_key": "!items!0164aate00dn3lcb",
+  "name": "Redline Maneuver GM intrusions",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "redline-maneuver-gm-intrusions",
+    "variantKey": "0164aate00dn3lcb",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "The FTL engines fail. The ship takes significant damage. Someone’s console within the ship explodes, inflicting a moderate wound."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "01995oxq0001hbal",
+  "_key": "!items!01995oxq0001hbal",
+  "name": "Anecdote",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "anecdote",
+    "variantKey": "01995oxq0001hbal",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can lift the spirits of a group of creatures and help them bond together by entertaining them with an uplifting or pointed anecdote. Choose one task (other than an attack or defense task) related to your anecdote. Until you use a one-hour or longer recovery, those who pay attention to your story are trained in that task. Alternatively, you can spend time interacting with a group of people within short range. As long as they are at least neutral toward you (rather than hostile), they become friendly toward you until you use a one-hour or longer recovery. Action to initiate; one minute to complete."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

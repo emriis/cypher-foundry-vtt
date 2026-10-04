@@ -7,211 +7,72 @@
   "system": {
     "description": "<p>You can heal others with a touch, can alter time to help others, and are generally beloved by everyone.</p>",
     "abilities": [
-      {
-        "id": "easing-the-pain",
-        "name": "Soulagement de la douleur",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+      "Compendium.cypher.abilities-fr.Item.018n5ugq007t3965",
+      "Compendium.cypher.abilities-fr.Item.00swulwe003s127z",
+      "Compendium.cypher.abilities-fr.Item.00jods9n015zgi34",
+      "Compendium.cypher.abilities-fr.Item.01u70h7x00k151yu",
+      "Compendium.cypher.abilities-fr.Item.01dz36ee01cup2gy",
+      "Compendium.cypher.abilities-fr.Item.016r5djo00o7hs0t",
+      "Compendium.cypher.abilities-fr.Item.009620rr01019d1h",
+      "Compendium.cypher.abilities-fr.Item.01rrwean00yuyeca",
+      "Compendium.cypher.abilities-fr.Item.00i2pwbj00vlxfn1",
+      "Compendium.cypher.abilities-fr.Item.01rukqu3011dhc1d",
+      "Compendium.cypher.abilities-fr.Item.004elcxq001zh6ni",
+      "Compendium.cypher.abilities-fr.Item.01dmuvho012umaqq",
+      "Compendium.cypher.abilities-fr.Item.00acq9kc01mvhg35"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00swulwe003s127z",
+          "to": "Compendium.cypher.abilities-fr.Item.01u70h7x00k151yu"
         },
-        "description": "Allies within immediate range (including you) that take a recovery add +1 to  their roll."
-      },
-      {
-        "id": "healing-hand",
-        "name": "Main guérisseuse",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00jods9n015zgi34",
+          "to": "Compendium.cypher.abilities-fr.Item.01u70h7x00k151yu"
         },
-        "description": "With a touch, you reduce one wound's severity by one step (unless the target can take no more wounds of that lower severity). A healed minor wound is gone completely, one moderate wound becomes a minor wound, or one major wound becomes a moderate wound. Each time you use Healing Hand, the Intellect cost increases by 1. The cost returns to 1 after you take a recovery. Last action."
-      },
-      {
-        "id": "resilience",
-        "name": "Résilience",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.018n5ugq007t3965",
+          "to": "Compendium.cypher.abilities-fr.Item.01dz36ee01cup2gy"
         },
-        "description": "Tu peux encaisser une blessure modérée supplémentaire."
-      },
-      {
-        "id": "alleviate-malady",
-        "name": "Soulager le mal",
-        "tier": 2,
-        "prerequisites": [
-          "healing-hand",
-          "resilience"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00swulwe003s127z",
+          "to": "Compendium.cypher.abilities-fr.Item.01dz36ee01cup2gy"
         },
-        "description": "You cancel or cure a disease, poison, or similar malady in a creature you touch if you succeed at an Intellect roll against the malady's level. (Some maladies may require multiple successes to be cured.) Action."
-      },
-      {
-        "id": "healing-beacon",
-        "name": "Balise de guérison",
-        "tier": 2,
-        "prerequisites": [
-          "easing-the-pain",
-          "healing-hand"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01dz36ee01cup2gy",
+          "to": "Compendium.cypher.abilities-fr.Item.016r5djo00o7hs0t"
         },
-        "description": "One of your allies automatically is healed whenever you use your healing power. Choose one ally to be your healing beacon. Until you use a one-hour or longer recovery, when you use Healing Hand or a similar ability, the beacon ally gets to reduce the severity of one of their own wounds too (as long as it's not a higher severity than the one you're healing). The beacon ally must be within short range of you to gain this healing. The beacon ally doesn't gain this effect if you directly heal them. Action to initiate."
-      },
-      {
-        "id": "font-of-healing",
-        "name": "Source de guérison",
-        "tier": 3,
-        "prerequisites": [
-          "healing-beacon"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01u70h7x00k151yu",
+          "to": "Compendium.cypher.abilities-fr.Item.009620rr01019d1h"
         },
-        "description": "You have healing power within you that others can access with a touch. If an ally uses their action to touch you and spends 2 Intellect, they choose whether they are healed of two minor wounds, healed of a moderate wound, or (if they spend 5 Intellect) healed of a major wound. Once the ally uses this ability, they can't do so again until after they use a ten-hour recovery. Enabler."
-      },
-      {
-        "id": "font-of-recovery",
-        "name": "Source de récupération",
-        "tier": 3,
-        "prerequisites": [
-          "alleviate-malady"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.016r5djo00o7hs0t",
+          "to": "Compendium.cypher.abilities-fr.Item.01rrwean00yuyeca"
         },
-        "description": "You have restorative power within you that others can access with a touch. If an ally uses their action to touch you and they spend 1 Intellect, they choose whether they regain 1d6 Might points or regain 1d6 Speed points. Once the ally uses this ability, they can't do so again until after they use a ten-hour recovery. Enabler."
-      },
-      {
-        "id": "healing-shield",
-        "name": "Bouclier guérisseur",
-        "tier": 4,
-        "prerequisites": [
-          "font-of-healing"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.009620rr01019d1h",
+          "to": "Compendium.cypher.abilities-fr.Item.00i2pwbj00vlxfn1"
         },
-        "description": "You bolster an ally's health with healing power, protecting them against injury. Choose an ally within short range; they gain an asset that they can use on one block roll of their choice, which is expended once they use it. This ability renews when you take a recovery. Enabler."
-      },
-      {
-        "id": "resuscitate",
-        "name": "Réanimer",
-        "tier": 4,
-        "prerequisites": [
-          "font-of-recovery"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 5,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00i2pwbj00vlxfn1",
+          "to": "Compendium.cypher.abilities-fr.Item.01rukqu3011dhc1d"
         },
-        "description": "You can resuscitate an injured PC you touch. The character is healed of their choice of one major wound, one moderate wound, or three minor wounds. If the character is dead from wounds but is otherwise in one piece and less than a minute has passed since they died, you can resuscitate them as described above if you succeed at a level 6 healing task. If you use this ability on a dead NPC who has no health but is otherwise in one piece and has been dead for less than a minute, you resuscitate them with 1 health. Each time you use Resuscitate, the Intellect point cost increases by 3. The cost returns to its base value after you use a recovery. Action."
-      },
-      {
-        "id": "ranged-healer",
-        "name": "Soignant·e à distance",
-        "tier": 5,
-        "prerequisites": [
-          "resuscitate"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01rrwean00yuyeca",
+          "to": "Compendium.cypher.abilities-fr.Item.004elcxq001zh6ni"
         },
-        "description": "All of your short-range focus abilities work at long range. All of your touch and immediate range focus abilities work at short range."
-      },
-      {
-        "id": "rewind-time",
-        "name": "Rembobiner le temps",
-        "tier": 5,
-        "prerequisites": [
-          "healing-shield"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 5,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.004elcxq001zh6ni",
+          "to": "Compendium.cypher.abilities-fr.Item.01dmuvho012umaqq"
         },
-        "description": "You rewind time a few seconds, allowing someone to undo what they just did and take a different action. Choose a creature within short range who most recently took an action. Time rewinds to just before they took that action; it is now their turn. They can repeat the same action or try something different. The creature isn't aware of what they did before or that you reversed time, but they might be aware that you did something. This ability renews when you use a recovery. Enabler."
-      },
-      {
-        "id": "greater-healing-hand",
-        "name": "Grande main guérisseuse",
-        "tier": 6,
-        "prerequisites": [
-          "rewind-time"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
-        },
-        "description": "You remove all of a touched character's minor wounds, reduce two moderate wounds to minor wounds, or reduce two major wounds to moderate wounds. Each time you use Greater Healing Hand, the Intellect point cost increases by 2. The cost returns to its base value after you use a recovery. Enabler."
-      },
-      {
-        "id": "superior-healer",
-        "name": "Guérisseur·euse supérieur·e",
-        "tier": 6,
-        "prerequisites": [
-          "ranged-healer"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "If you have Font of Recovery or Font of Healing, the ally can spend 2 additional Intellect for twice the normal benefit. If you have Resuscitate, it heals twice the normal number of wounds, and you can revive a creature who has been dead for no more than an hour. If you have Healing Shield, the ally gains two assets instead of one, and can use them together on one block roll or separately on two different block rolls. Effort: Extend the death time limit of Resuscitate to 24 hours, a week (two levels of Effort), a month (three levels of Effort), or a year (five levels of Effort). Enabler."
-      }
-    ]
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01rukqu3011dhc1d",
+          "to": "Compendium.cypher.abilities-fr.Item.00acq9kc01mvhg35"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

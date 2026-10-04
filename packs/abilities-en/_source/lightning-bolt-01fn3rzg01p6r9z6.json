@@ -1,0 +1,40 @@
+{
+  "_id": "01fn3rzg01p6r9z6",
+  "_key": "!items!01fn3rzg01p6r9z6",
+  "name": "Lightning Bolt",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "lightning-bolt",
+    "variantKey": "01fn3rzg01p6r9z6",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You unleash a bolt of lightning at a target within long range, inflicting 6 damage with a successful attack roll. Alternatively, work with your GM if you want your bolt to be composed of a different kind of energy or use the same energy type as that suggested by your focus. For instance, if your focus is Blazes With Fire, this ability could produce a ray of fire and be called Fiery Bolt. Last action. At tier 3: The bolt branches and also attacks a second target in short range of the first target (make separate attack rolls for each)."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

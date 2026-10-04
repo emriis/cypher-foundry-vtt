@@ -1,0 +1,40 @@
+{
+  "_id": "00xkfmvn01vzesjb",
+  "_key": "!items!00xkfmvn01vzesjb",
+  "name": "Blood Sorcery",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "blood-sorcery",
+    "variantKey": "00xkfmvn01vzesjb",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You draw upon your own blood, spirit, or life energy to power your abilities. You take a moderate wound and add +1 Edge to the Pool of your choice while you retain that wound. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

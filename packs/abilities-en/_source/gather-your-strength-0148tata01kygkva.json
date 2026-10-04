@@ -1,0 +1,40 @@
+{
+  "_id": "0148tata01kygkva",
+  "_key": "!items!0148tata01kygkva",
+  "name": "Gather Your Strength",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "gather-your-strength",
+    "variantKey": "0148tata01kygkva",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your attack this round deals an additional 2 damage if you make it as a Last action instead of as an action or a First action. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

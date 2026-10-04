@@ -1,0 +1,40 @@
+{
+  "_id": "01xheiyb0173tcxu",
+  "_key": "!items!01xheiyb0173tcxu",
+  "name": "Cybernetic Alacrity",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "cybernetic-alacrity",
+    "variantKey": "01xheiyb0173tcxu",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Any time you use Effort on a noncombat Speed task, add your choice of the following options: a free level of Effort on the action or a minor effect on the action. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

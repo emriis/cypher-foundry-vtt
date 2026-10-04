@@ -7,231 +7,93 @@
   "system": {
     "description": "<p>You are an incredibly fast runner, whether moving toward a foe or away from danger.</p>",
     "abilities": [
-      {
-        "id": "recover-faster",
-        "name": "Récupération accélérée",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+      "Compendium.cypher.abilities-fr.Item.00zc5wmg019sowut",
+      "Compendium.cypher.abilities-fr.Item.018aenhr0102bt70",
+      "Compendium.cypher.abilities-fr.Item.01ptblbx005d9ari",
+      "Compendium.cypher.abilities-fr.Item.00lurn0q01e5sdwc",
+      "Compendium.cypher.abilities-fr.Item.0134ihtq00n93y7k",
+      "Compendium.cypher.abilities-fr.Item.009jxmmn00596ugt",
+      "Compendium.cypher.abilities-fr.Item.008ku4k7000zyy5r",
+      "Compendium.cypher.abilities-fr.Item.01n4esqn00ypb14j",
+      "Compendium.cypher.abilities-fr.Item.01406xna01i532zu",
+      "Compendium.cypher.abilities-fr.Item.0117qv13004uc8ti",
+      "Compendium.cypher.abilities-fr.Item.0106e0db00e8dmag",
+      "Compendium.cypher.abilities-fr.Item.00c9qg98009ufjnt",
+      "Compendium.cypher.abilities-fr.Item.01toc0ar01m2mq3k",
+      "Compendium.cypher.abilities-fr.Item.01g0lars018g74az"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.018aenhr0102bt70",
+          "to": "Compendium.cypher.abilities-fr.Item.00lurn0q01e5sdwc"
         },
-        "description": "Quand tu utilises une action pour te reprendre, tu gagnes une action supplémentaire durant ce tour, utilisable uniquement pour te déplacer."
-      },
-      {
-        "id": "fleet-of-foot",
-        "name": "Pied léger",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 1,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.018aenhr0102bt70",
+          "to": "Compendium.cypher.abilities-fr.Item.0134ihtq00n93y7k"
         },
-        "description": "Ce tour‑ci, tu peux te déplacer jusqu’à courte portée comme action supplémentaire. Effort : Ce tour‑ci, tu peux te déplacer jusqu’à longue portée comme action supplémentaire au lieu de courte portée."
-      },
-      {
-        "id": "get-out",
-        "name": "Dégage",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01ptblbx005d9ari",
+          "to": "Compendium.cypher.abilities-fr.Item.0134ihtq00n93y7k"
         },
-        "description": "If you move at least an immediate distance away from the most obvious threat or toward what promises to offer safety, one task you attempt next round is eased. Enabler."
-      },
-      {
-        "id": "obstacle-running",
-        "name": "Course d’obstacles",
-        "tier": 2,
-        "prerequisites": [
-          "fleet-of-foot"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "speed",
-          "amount": 3,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00lurn0q01e5sdwc",
+          "to": "Compendium.cypher.abilities-fr.Item.009jxmmn00596ugt"
         },
-        "description": "Tout déplacement que tu fais ce round ignore la plupart des terrains difficiles qui ralentiraient normalement ton mouvement : gravats, clôtures, tables, obstacles divers. Tu te déplaces à vitesse normale en glissant sur une rambarde, en courant brièvement sur un mur ou en prenant appui sur une créature. Si un obstacle nécessite normalement une tâche de Puissance ou de Célérité (corde, équilibre, saut…), la tâche est facilitée."
-      },
-      {
-        "id": "escape",
-        "name": "Évasion",
-        "tier": 2,
-        "prerequisites": [
-          "fleet-of-foot",
-          "get-out"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 2,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00lurn0q01e5sdwc",
+          "to": "Compendium.cypher.abilities-fr.Item.008ku4k7000zyy5r"
         },
-        "description": "When you roll to escape (such as slipping your restraints, squeezing through the bars, breaking the grip of a creature holding you, or pulling free from sucking quicksand) and your roll is less than a 9, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) Effort: Increase the minimum number rolled for this ability by 3. Action. At tier 3: The minimum number rolled for this ability increases to 12."
-      },
-      {
-        "id": "incredible-running-speed",
-        "name": "Vitesse de course incroyable",
-        "tier": 3,
-        "prerequisites": [
-          "obstacle-running"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.0134ihtq00n93y7k",
+          "to": "Compendium.cypher.abilities-fr.Item.008ku4k7000zyy5r"
         },
-        "description": "Tu te déplaces beaucoup plus loin que la normale en un round. Quand tu utilises Pied léger, toutes les distances que tu parcours sont doublées. De plus, si tu réussis une tâche de course de difficulté 4 en utilisant une Dernière action pour courir à pleine vitesse, tu peux parcourir jusqu’à 150 m."
-      },
-      {
-        "id": "speedy-threat",
-        "name": "Menace fulgurante",
-        "tier": 3,
-        "prerequisites": [
-          "obstacle-running",
-          "escape"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.009jxmmn00596ugt",
+          "to": "Compendium.cypher.abilities-fr.Item.01n4esqn00ypb14j"
         },
-        "description": "Tu tournoies et te déplaces si vite que tes attaques profitent de ton élan. Si tu te déplaces d’au moins portée immédiate pendant ton tour, ton attaque de mêlée ce tour‑ci gagne un atout."
-      },
-      {
-        "id": "blink-of-an-eye",
-        "name": "En un clin d’œil",
-        "tier": 4,
-        "prerequisites": [
-          "incredible-running-speed"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 4,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.009jxmmn00596ugt",
+          "to": "Compendium.cypher.abilities-fr.Item.01406xna01i532zu"
         },
-        "description": "Tu te déplaces jusqu’à 300 m."
-      },
-      {
-        "id": "increasing-determination",
-        "name": "Détermination croissante",
-        "tier": 4,
-        "prerequisites": [
-          "incredible-running-speed",
-          "speedy-threat"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.008ku4k7000zyy5r",
+          "to": "Compendium.cypher.abilities-fr.Item.01406xna01i532zu"
         },
-        "description": "If you fail at a noncombat physical task (such as pushing open a door or climbing a cliff) and then retry the task, the task is eased. If you fail again, you gain no special benefits. Enabler."
-      },
-      {
-        "id": "speed-for-mind",
-        "name": "Célérité pour l’esprit",
-        "tier": 4,
-        "prerequisites": [
-          "speedy-threat"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.008ku4k7000zyy5r",
+          "to": "Compendium.cypher.abilities-fr.Item.0117qv13004uc8ti"
         },
-        "description": "Quand tu tentes une tâche de Célérité, tu peux dépenser des points de ta Réserve d’Intellect au lieu de ta Réserve de Célérité — et inversement. Utilise l’Avantage de la Réserve dont tu dépenses les points."
-      },
-      {
-        "id": "hard-to-see",
-        "name": "Difficile à voir",
-        "tier": 5,
-        "prerequisites": [
-          "blink-of-an-eye",
-          "increasing-determination"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01n4esqn00ypb14j",
+          "to": "Compendium.cypher.abilities-fr.Item.0106e0db00e8dmag"
         },
-        "description": "When you move, you are a blur. It is impossible to make out your identity as you pass by someone at speed. In addition, if you do nothing but move on your turn, your dodge and stealth tasks are eased by three steps until your next turn. Enabler."
-      },
-      {
-        "id": "go-to-ground",
-        "name": "Se fondre dans le décor",
-        "tier": 5,
-        "prerequisites": [
-          "increasing-determination",
-          "speed-for-mind"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "speed",
-          "amount": 4,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01406xna01i532zu",
+          "to": "Compendium.cypher.abilities-fr.Item.0106e0db00e8dmag"
         },
-        "description": "Comme action, tu te déplaces jusqu’à longue portée, puis tu tentes de te cacher. Tu gagnes un atout à ta tâche de Discrétion pour te fondre dans l’environnement, disparaître ou échapper aux sens de toutes les personnes conscientes de ta présence."
-      },
-      {
-        "id": "speed-surge",
-        "name": "Surtension de vitesse",
-        "tier": 6,
-        "prerequisites": [
-          "hard-to-see",
-          "go-to-ground"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.01406xna01i532zu",
+          "to": "Compendium.cypher.abilities-fr.Item.00c9qg98009ufjnt"
         },
-        "description": "Tu récupères immédiatement 1d6 + 6 points dans ta Réserve de Célérité. L’aptitude se renouvelle après une récupération de dix heures."
-      },
-      {
-        "id": "up-to-speed",
-        "name": "À pleine vitesse",
-        "tier": 6,
-        "prerequisites": [
-          "hard-to-see"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.0117qv13004uc8ti",
+          "to": "Compendium.cypher.abilities-fr.Item.00c9qg98009ufjnt"
         },
-        "description": "Si tu ne fais que te déplacer pendant trois actions consécutives, tu accélères énormément et peux atteindre environ 300 km/h (environ 100 m par round) pendant dix minutes (environ 50 km), après quoi tu dois t’arrêter et effectuer une récupération."
-      }
-    ]
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.0106e0db00e8dmag",
+          "to": "Compendium.cypher.abilities-fr.Item.01toc0ar01m2mq3k"
+        },
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.00c9qg98009ufjnt",
+          "to": "Compendium.cypher.abilities-fr.Item.01toc0ar01m2mq3k"
+        },
+        {
+          "from": "Compendium.cypher.abilities-fr.Item.0106e0db00e8dmag",
+          "to": "Compendium.cypher.abilities-fr.Item.01g0lars018g74az"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

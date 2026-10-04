@@ -1,0 +1,40 @@
+{
+  "_id": "00vq79hw01xm8cbq",
+  "_key": "!items!00vq79hw01xm8cbq",
+  "name": "Analytic Processor",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "analytic-processor",
+    "variantKey": "00vq79hw01xm8cbq",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Ask the GM a question you want answered. The GM sets a difficulty for the answer—the more obscure the answer, the more difficult the task. If you succeed at an Intellect task against this difficulty, you get a short answer to the question. If you fail, you take 4 Intellect damage from digital feedback. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

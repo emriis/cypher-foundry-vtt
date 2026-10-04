@@ -1,0 +1,40 @@
+{
+  "_id": "01762keh000vtz3f",
+  "_key": "!items!01762keh000vtz3f",
+  "name": "Mystic Hand",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "mystic-hand",
+    "variantKey": "01762keh000vtz3f",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You inflict an additional 1 damage with unarmed attacks with your mystic source. Once per round, if you take a wound and are not helpless, you can spend 3 Speed to reduce the wound's severity by one step. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

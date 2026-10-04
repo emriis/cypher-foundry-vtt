@@ -1,0 +1,632 @@
+[
+  {
+    "name": "Expert Combatant",
+    "variants": [
+      {
+        "id": "0044i9nr01k453dp",
+        "sourceId": "expert-combatant",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":false,\"repeatable\":false,\"tier\":1}"
+      },
+      {
+        "id": "00qrmksy00igkge0",
+        "sourceId": "expert-combatant",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":false,\"tier\":1}"
+      }
+    ]
+  },
+  {
+    "name": "Wounded Fury",
+    "variants": [
+      {
+        "id": "01nk94hr00xcxsjt",
+        "sourceId": "wounded-fury",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":false,\"tier\":1}"
+      },
+      {
+        "id": "01nkikzo01kvho7q",
+        "sourceId": "wounded-fury",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":false,\"tier\":2}"
+      },
+      {
+        "id": "01oodu9l01m5gwiv",
+        "sourceId": "wounded-fury",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":false,\"tier\":3}"
+      }
+    ]
+  },
+  {
+    "name": "Escape",
+    "variants": [
+      {
+        "id": "0134nuxh01mvvglb",
+        "sourceId": "escape",
+        "signature": "{\"cost\":{\"amount\":2,\"options\":[],\"stat\":\"speed\"},\"enabler\":false,\"repeatable\":false,\"tier\":1}"
+      },
+      {
+        "id": "0134ihtq00n93y7k",
+        "sourceId": "escape",
+        "signature": "{\"cost\":{\"amount\":2,\"options\":[],\"stat\":\"speed\"},\"enabler\":false,\"repeatable\":false,\"tier\":2}"
+      }
+    ]
+  },
+  {
+    "name": "Slip Into Shadow",
+    "variants": [
+      {
+        "id": "001zwwvw01nt4opa",
+        "sourceId": "slip-into-shadow",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":false,\"tier\":1}"
+      },
+      {
+        "id": "001zngdz01kekby9",
+        "sourceId": "slip-into-shadow",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":false,\"tier\":2}"
+      }
+    ]
+  },
+  {
+    "name": "Combat Prowess",
+    "variants": [
+      {
+        "id": "01rt4fmf00x48mh0",
+        "sourceId": "combat-prowess",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":false,\"repeatable\":false,\"tier\":1}"
+      },
+      {
+        "id": "01rsf30k01w4dp5n",
+        "sourceId": "combat-prowess",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":false,\"tier\":3}"
+      }
+    ]
+  },
+  {
+    "name": "Fast Talk",
+    "variants": [
+      {
+        "id": "019bkekj01yj2g30",
+        "sourceId": "fast-talk",
+        "signature": "{\"cost\":{\"amount\":1,\"options\":[],\"stat\":\"intellect\"},\"enabler\":false,\"repeatable\":false,\"tier\":1}"
+      },
+      {
+        "id": "017ep94m00832l1d",
+        "sourceId": "fast-talk",
+        "signature": "{\"cost\":{\"amount\":1,\"options\":[],\"stat\":\"intellect\"},\"enabler\":true,\"repeatable\":false,\"tier\":1}"
+      }
+    ]
+  },
+  {
+    "name": "Sneak Attack",
+    "variants": [
+      {
+        "id": "00bivs10003ivsf9",
+        "sourceId": "sneak-attack",
+        "signature": "{\"cost\":{\"amount\":1,\"options\":[],\"stat\":\"speed\"},\"enabler\":false,\"repeatable\":false,\"tier\":1}"
+      },
+      {
+        "id": "00bik3xb01et0zy2",
+        "sourceId": "sneak-attack",
+        "signature": "{\"cost\":{\"amount\":1,\"options\":[],\"stat\":\"speed\"},\"enabler\":false,\"repeatable\":false,\"tier\":2}"
+      }
+    ]
+  },
+  {
+    "name": "When the Deal Bombs",
+    "variants": [
+      {
+        "id": "00bpijvr008foj7m",
+        "sourceId": "when-the-deal-bombs",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":false,\"tier\":1}"
+      },
+      {
+        "id": "00bpu7zg00w34wbn",
+        "sourceId": "when-the-deal-bombs",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":false,\"tier\":2}"
+      }
+    ]
+  },
+  {
+    "name": "Beast Companion",
+    "variants": [
+      {
+        "id": "01ep6lsh0071ik27",
+        "sourceId": "beast-companion",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":false,\"repeatable\":false,\"tier\":1}"
+      },
+      {
+        "id": "017svtn900lp7qys",
+        "sourceId": "beast-companion",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":true,\"tier\":1}"
+      },
+      {
+        "id": "013bm5o7002k0osq",
+        "sourceId": "beast-companion",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":false,\"tier\":2}"
+      }
+    ]
+  },
+  {
+    "name": "No Need for Weapons",
+    "variants": [
+      {
+        "id": "00tc1nk5000f8d3d",
+        "sourceId": "no-need-for-weapons",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":false,\"repeatable\":false,\"tier\":1}"
+      },
+      {
+        "id": "01ck5dtk00qdhc3t",
+        "sourceId": "no-need-for-weapons",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":false,\"tier\":1}"
+      }
+    ]
+  },
+  {
+    "name": "Desperate Feat",
+    "variants": [
+      {
+        "id": "016fydyy01v317vv",
+        "sourceId": "desperate-feat",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":false,\"tier\":1}"
+      },
+      {
+        "id": "016g1jgx01wd0g70",
+        "sourceId": "desperate-feat",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":false,\"tier\":2}"
+      }
+    ]
+  },
+  {
+    "name": "Hover",
+    "variants": [
+      {
+        "id": "00mxm08700z6cm2e",
+        "sourceId": "hover",
+        "signature": "{\"cost\":{\"amount\":2,\"options\":[],\"stat\":\"intellect\"},\"enabler\":false,\"repeatable\":false,\"tier\":1}"
+      },
+      {
+        "id": "00mxxobw006u7mlj",
+        "sourceId": "hover",
+        "signature": "{\"cost\":{\"amount\":2,\"options\":[],\"stat\":\"intellect\"},\"enabler\":false,\"repeatable\":false,\"tier\":2}"
+      }
+    ]
+  },
+  {
+    "name": "Push on Through",
+    "variants": [
+      {
+        "id": "00yvzvbr01vxfk5d",
+        "sourceId": "push-on-through",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":false,\"repeatable\":false,\"tier\":1}"
+      },
+      {
+        "id": "00dura7600e8lxph",
+        "sourceId": "push-on-through",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":false,\"tier\":1}"
+      }
+    ]
+  },
+  {
+    "name": "Prepare Spell",
+    "variants": [
+      {
+        "id": "002lmcgl01x5i3ds",
+        "sourceId": "prepare-spell",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":false,\"repeatable\":false,\"tier\":1}"
+      },
+      {
+        "id": "00xa0tv601q5wd2z",
+        "sourceId": "prepare-spell",
+        "signature": "{\"cost\":{\"amount\":2,\"options\":[],\"stat\":\"intellect\"},\"enabler\":false,\"repeatable\":true,\"tier\":1}"
+      }
+    ]
+  },
+  {
+    "name": "Effort",
+    "variants": [
+      {
+        "id": "01ytjssl00wznq94",
+        "sourceId": "effort",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":false,\"repeatable\":false,\"tier\":1}"
+      },
+      {
+        "id": "000jm8u000dgtw31",
+        "sourceId": "effort",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":false,\"tier\":1}"
+      }
+    ]
+  },
+  {
+    "name": "Always Mighty",
+    "variants": [
+      {
+        "id": "00vuty5b010s78ok",
+        "sourceId": "always-mighty",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":false,\"repeatable\":false,\"tier\":1}"
+      },
+      {
+        "id": "00t8bmn4015s1hhk",
+        "sourceId": "always-mighty",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":true,\"tier\":2}"
+      },
+      {
+        "id": "00t8265701kfv60f",
+        "sourceId": "always-mighty",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":true,\"tier\":1}"
+      }
+    ]
+  },
+  {
+    "name": "Enhanced Energy",
+    "variants": [
+      {
+        "id": "00a74qc2013fxbgo",
+        "sourceId": "enhanced-energy",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":false,\"repeatable\":false,\"tier\":1}"
+      },
+      {
+        "id": "0124hpu901ca6i46",
+        "sourceId": "enhanced-energy",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":false,\"tier\":1}"
+      }
+    ]
+  },
+  {
+    "name": "Retribution",
+    "variants": [
+      {
+        "id": "01ssgyit00r222zr",
+        "sourceId": "retribution",
+        "signature": "{\"cost\":{\"amount\":1,\"options\":[],\"stat\":\"intellect\"},\"enabler\":false,\"repeatable\":false,\"tier\":1}"
+      },
+      {
+        "id": "00dar6j9002t2de1",
+        "sourceId": "retribution",
+        "signature": "{\"cost\":{\"amount\":8,\"options\":[],\"stat\":\"intellect\"},\"enabler\":false,\"repeatable\":false,\"tier\":6}"
+      }
+    ]
+  },
+  {
+    "name": "Mind Reading",
+    "variants": [
+      {
+        "id": "00ihktja01ovfncr",
+        "sourceId": "mind-reading",
+        "signature": "{\"cost\":{\"amount\":2,\"options\":[],\"stat\":\"intellect\"},\"enabler\":false,\"repeatable\":false,\"tier\":1}"
+      },
+      {
+        "id": "00hduxd401b3lv2h",
+        "sourceId": "mind-reading",
+        "signature": "{\"cost\":{\"amount\":2,\"options\":[],\"stat\":\"intellect\"},\"enabler\":false,\"repeatable\":false,\"tier\":3}"
+      }
+    ]
+  },
+  {
+    "name": "Quarry",
+    "variants": [
+      {
+        "id": "016q3t5v01lvsk69",
+        "sourceId": "quarry",
+        "signature": "{\"cost\":{\"amount\":2,\"options\":[],\"stat\":\"intellect\"},\"enabler\":false,\"repeatable\":false,\"tier\":1}"
+      },
+      {
+        "id": "016qd9ns01x45by6",
+        "sourceId": "quarry",
+        "signature": "{\"cost\":{\"amount\":2,\"options\":[],\"stat\":\"intellect\"},\"enabler\":false,\"repeatable\":false,\"tier\":2}"
+      }
+    ]
+  },
+  {
+    "name": "Despite My Wounds",
+    "variants": [
+      {
+        "id": "01e3jnvk008p8xfk",
+        "sourceId": "despite-my-wounds",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":false,\"tier\":1}"
+      },
+      {
+        "id": "01e37zrv01lyspct",
+        "sourceId": "despite-my-wounds",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":false,\"tier\":2}"
+      }
+    ]
+  },
+  {
+    "name": "Deep Reserves",
+    "variants": [
+      {
+        "id": "00q55a5s00nomqhp",
+        "sourceId": "deep-reserves",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":false,\"repeatable\":false,\"tier\":4}"
+      },
+      {
+        "id": "00q4h02701xpf73y",
+        "sourceId": "deep-reserves",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":false,\"repeatable\":false,\"tier\":3}"
+      }
+    ]
+  },
+  {
+    "name": "Earthshake",
+    "variants": [
+      {
+        "id": "00enqwt500tq7eup",
+        "sourceId": "earthshake",
+        "signature": "{\"cost\":{\"amount\":7,\"options\":[\"might\",\"intellect\"],\"stat\":\"choice\"},\"enabler\":false,\"repeatable\":false,\"tier\":6}"
+      },
+      {
+        "id": "00ndrs64001x07gy",
+        "sourceId": "earthshake",
+        "signature": "{\"cost\":{\"amount\":8,\"options\":[\"might\",\"intellect\"],\"stat\":\"choice\"},\"enabler\":false,\"repeatable\":false,\"tier\":6}"
+      }
+    ]
+  },
+  {
+    "name": "Charm Machine",
+    "variants": [
+      {
+        "id": "00fl0wsh01t5b4hu",
+        "sourceId": "charm-machine",
+        "signature": "{\"cost\":{\"amount\":2,\"options\":[],\"stat\":\"intellect\"},\"enabler\":false,\"repeatable\":false,\"tier\":2}"
+      },
+      {
+        "id": "00fkxrai00hrnfmr",
+        "sourceId": "charm-machine",
+        "signature": "{\"cost\":{\"amount\":2,\"options\":[],\"stat\":\"intellect\"},\"enabler\":false,\"repeatable\":false,\"tier\":1}"
+      }
+    ]
+  },
+  {
+    "name": "Careful Shot",
+    "variants": [
+      {
+        "id": "01wfbpoq01w6sxn6",
+        "sourceId": "careful-shot",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":false,\"tier\":2}"
+      },
+      {
+        "id": "01t27kte00gvvctw",
+        "sourceId": "careful-shot",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[\"speed\",\"intellect\"],\"stat\":\"choice\"},\"enabler\":true,\"repeatable\":false,\"tier\":2}"
+      }
+    ]
+  },
+  {
+    "name": "Damage Dealer",
+    "variants": [
+      {
+        "id": "00zbsr8z01j40rw7",
+        "sourceId": "damage-dealer",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":false,\"tier\":3}"
+      },
+      {
+        "id": "001lhj4201r0s970",
+        "sourceId": "damage-dealer",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":true,\"tier\":5}"
+      }
+    ]
+  },
+  {
+    "name": "Hard to See",
+    "variants": [
+      {
+        "id": "0106poh000oqokkh",
+        "sourceId": "hard-to-see",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":false,\"tier\":6}"
+      },
+      {
+        "id": "0106e0db00e8dmag",
+        "sourceId": "hard-to-see",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":false,\"tier\":5}"
+      }
+    ]
+  },
+  {
+    "name": "Improvise",
+    "variants": [
+      {
+        "id": "012udldo005t7amd",
+        "sourceId": "improvise",
+        "signature": "{\"cost\":{\"amount\":3,\"options\":[],\"stat\":\"intellect\"},\"enabler\":false,\"repeatable\":false,\"tier\":3}"
+      },
+      {
+        "id": "00wqin4v00dc5ga2",
+        "sourceId": "improvise",
+        "signature": "{\"cost\":{\"amount\":3,\"options\":[],\"stat\":\"intellect\"},\"enabler\":true,\"repeatable\":false,\"tier\":3}"
+      }
+    ]
+  },
+  {
+    "name": "Agile Wit",
+    "variants": [
+      {
+        "id": "00hn9lgc0166tj8q",
+        "sourceId": "agile-wit",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":false,\"tier\":4}"
+      },
+      {
+        "id": "00ir4uq901lrxh8t",
+        "sourceId": "agile-wit",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":false,\"tier\":5}"
+      }
+    ]
+  },
+  {
+    "name": "Wilderness Encouragement",
+    "variants": [
+      {
+        "id": "01jz4kv200c10vmr",
+        "sourceId": "wilderness-encouragement",
+        "signature": "{\"cost\":{\"amount\":3,\"options\":[],\"stat\":\"intellect\"},\"enabler\":false,\"repeatable\":false,\"tier\":3}"
+      },
+      {
+        "id": "01jyv4d501nb635k",
+        "sourceId": "wilderness-encouragement",
+        "signature": "{\"cost\":{\"amount\":3,\"options\":[],\"stat\":\"intellect\"},\"enabler\":false,\"repeatable\":false,\"tier\":4}"
+      }
+    ]
+  },
+  {
+    "name": "Fast Kill",
+    "variants": [
+      {
+        "id": "01exyt3o018q7hg7",
+        "sourceId": "fast-kill",
+        "signature": "{\"cost\":{\"amount\":2,\"options\":[\"might\",\"speed\"],\"stat\":\"choice\"},\"enabler\":true,\"repeatable\":false,\"tier\":3}"
+      },
+      {
+        "id": "01g1u2dl00xhpodm",
+        "sourceId": "fast-kill",
+        "signature": "{\"cost\":{\"amount\":2,\"options\":[\"might\",\"speed\"],\"stat\":\"choice\"},\"enabler\":true,\"repeatable\":false,\"tier\":2}"
+      }
+    ]
+  },
+  {
+    "name": "Knock Out",
+    "variants": [
+      {
+        "id": "00akr38k009pz737",
+        "sourceId": "knock-out",
+        "signature": "{\"cost\":{\"amount\":5,\"options\":[],\"stat\":\"might\"},\"enabler\":false,\"repeatable\":false,\"tier\":5}"
+      },
+      {
+        "id": "00bomcih01gey9lg",
+        "sourceId": "knock-out",
+        "signature": "{\"cost\":{\"amount\":5,\"options\":[],\"stat\":\"might\"},\"enabler\":false,\"repeatable\":false,\"tier\":4}"
+      }
+    ]
+  },
+  {
+    "name": "Throw",
+    "variants": [
+      {
+        "id": "00d7swb101ryiepi",
+        "sourceId": "throw",
+        "signature": "{\"cost\":{\"amount\":2,\"options\":[],\"stat\":\"might\"},\"enabler\":true,\"repeatable\":false,\"tier\":3}"
+      },
+      {
+        "id": "00d7ax7e01xxbao5",
+        "sourceId": "throw",
+        "signature": "{\"cost\":{\"amount\":2,\"options\":[],\"stat\":\"might\"},\"enabler\":true,\"repeatable\":false,\"tier\":4}"
+      }
+    ]
+  },
+  {
+    "name": "Bolts of Power",
+    "variants": [
+      {
+        "id": "00egltp4017sjwcy",
+        "sourceId": "bolts-of-power",
+        "signature": "{\"cost\":{\"amount\":5,\"options\":[],\"stat\":\"intellect\"},\"enabler\":false,\"repeatable\":false,\"tier\":5}"
+      },
+      {
+        "id": "00fkh2z100ayfvz7",
+        "sourceId": "bolts-of-power",
+        "signature": "{\"cost\":{\"amount\":5,\"options\":[],\"stat\":\"intellect\"},\"enabler\":false,\"repeatable\":false,\"tier\":4}"
+      }
+    ]
+  },
+  {
+    "name": "Awareness",
+    "variants": [
+      {
+        "id": "00s34hl500kbo7rs",
+        "sourceId": "awareness",
+        "signature": "{\"cost\":{\"amount\":3,\"options\":[],\"stat\":\"intellect\"},\"enabler\":false,\"repeatable\":false,\"tier\":3}"
+      },
+      {
+        "id": "00qz98b801yw3s03",
+        "sourceId": "awareness",
+        "signature": "{\"cost\":{\"amount\":3,\"options\":[],\"stat\":\"intellect\"},\"enabler\":false,\"repeatable\":false,\"tier\":2}"
+      }
+    ]
+  },
+  {
+    "name": "Brute Squad",
+    "variants": [
+      {
+        "id": "00ch1sg401aigzww",
+        "sourceId": "brute-squad",
+        "signature": "{\"cost\":{\"amount\":8,\"options\":[],\"stat\":\"might\"},\"enabler\":true,\"repeatable\":false,\"tier\":5}"
+      },
+      {
+        "id": "00cgsby701ob2awf",
+        "sourceId": "brute-squad",
+        "signature": "{\"cost\":{\"amount\":8,\"options\":[],\"stat\":\"might\"},\"enabler\":true,\"repeatable\":false,\"tier\":6}"
+      }
+    ]
+  },
+  {
+    "name": "Master of Disguise",
+    "variants": [
+      {
+        "id": "00i2pwnv01ac6g5b",
+        "sourceId": "master-of-disguise",
+        "signature": "{\"cost\":{\"amount\":2,\"options\":[],\"stat\":\"intellect\"},\"enabler\":false,\"repeatable\":false,\"tier\":1}"
+      },
+      {
+        "id": "001v6u9100c8bdia",
+        "sourceId": "master-of-disguise",
+        "signature": "{\"cost\":{\"amount\":2,\"options\":[],\"stat\":\"intellect\"},\"enabler\":true,\"repeatable\":false,\"tier\":2}"
+      }
+    ]
+  },
+  {
+    "name": "Defend and Respond",
+    "variants": [
+      {
+        "id": "00iskzw0015hq4en",
+        "sourceId": "defend-and-respond",
+        "signature": "{\"cost\":{\"amount\":3,\"options\":[\"might\",\"speed\"],\"stat\":\"choice\"},\"enabler\":true,\"repeatable\":false,\"tier\":3}"
+      },
+      {
+        "id": "00irwpsf01fdcp8e",
+        "sourceId": "defend-and-respond",
+        "signature": "{\"cost\":{\"amount\":3,\"options\":[\"might\",\"speed\"],\"stat\":\"choice\"},\"enabler\":true,\"repeatable\":false,\"tier\":4}"
+      }
+    ]
+  },
+  {
+    "name": "Telekinesis",
+    "variants": [
+      {
+        "id": "00jhq30z004tn0zb",
+        "sourceId": "telekinesis",
+        "signature": "{\"cost\":{\"amount\":2,\"options\":[],\"stat\":\"intellect\"},\"enabler\":false,\"repeatable\":false,\"tier\":1}"
+      },
+      {
+        "id": "00jhzjiw00r67lsa",
+        "sourceId": "telekinesis",
+        "signature": "{\"cost\":{\"amount\":2,\"options\":[],\"stat\":\"intellect\"},\"enabler\":false,\"repeatable\":false,\"tier\":2}"
+      }
+    ]
+  },
+  {
+    "name": "Battle Competence",
+    "variants": [
+      {
+        "id": "00epj6kd00nqvtjl",
+        "sourceId": "battle-competence",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"freeArmorCategories\":[\"light\",\"medium\",\"heavy\"],\"freeWeaponCategories\":[\"light\",\"medium\",\"heavy\"],\"repeatable\":false,\"tier\":1}"
+      },
+      {
+        "id": "01rjggia015bacf2",
+        "sourceId": "battle-competence",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":false,\"freeArmorCategories\":[\"light\",\"medium\",\"heavy\"],\"freeWeaponCategories\":[\"light\",\"medium\",\"heavy\"],\"repeatable\":false,\"tier\":1}"
+      }
+    ]
+  },
+  {
+    "name": "Safe Fall",
+    "variants": [
+      {
+        "id": "004ovg2101y469n3",
+        "sourceId": "safe-fall",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":false,\"tier\":1}"
+      },
+      {
+        "id": "004oq2ya01u6g0s2",
+        "sourceId": "safe-fall",
+        "signature": "{\"cost\":{\"amount\":0,\"options\":[],\"stat\":\"none\"},\"enabler\":true,\"repeatable\":false,\"tier\":2}"
+      }
+    ]
+  }
+]

@@ -33,48 +33,9 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "frenzy",
-        "name": "Frenzy",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
-        },
-        "description": "While in combat, you can enter a state of frenzy. While in this state, you can't use Intellect points, but you add +1 to your Might Edge and your Speed Edge. This effect lasts as long as you wish, but it ends if no combat is taking place within range of your senses. Effort: Ease your allies' attacks against one foe of your choice for the rest of the combat. Enabler."
-      },
-      {
-        "id": "wilderness-survival",
-        "name": "Wilderness Survival",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You know how to survive in unpeopled lands. After spending at least ten minutes in the wilderness and succeeding on a difficulty 2 outdoor survival task (or a difficulty your GM determines is appropriate to the area), you find something useful you were seeking. The useful thing might be shelter in the form of a cave or tree hollow, all the makings necessary to start a fire, a game animal you bring down with ease, or berries, mushrooms, root vegetables, or other food. You know how to best prepare any game or vegetation you find and are able to feed yourself and up to five allies."
-      },
-      {
-        "id": "wounded-fury",
-        "name": "Wounded Fury",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "While you have at least three moderate wounds or at least one major wound, you gain one free level of Effort you can apply to one of your attacks each round. Enabler. At tier 3: The benefit increases to two free levels of Effort."
-      }
+      "Compendium.cypher.abilities-en.Item.00i86oqn01yg5a2w",
+      "Compendium.cypher.abilities-en.Item.017c16qa00f4k5ca",
+      "Compendium.cypher.abilities-en.Item.01nk94hr00xcxsjt"
     ],
     "statOptions": [
       "might",

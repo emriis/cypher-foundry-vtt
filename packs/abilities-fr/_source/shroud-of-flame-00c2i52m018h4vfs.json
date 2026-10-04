@@ -1,0 +1,40 @@
+{
+  "_id": "00c2i52m018h4vfs",
+  "_key": "!items!00c2i52m018h4vfs",
+  "name": "Shroud of Flame",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "shroud-of-flame",
+    "variantKey": "00c2i52m018h4vfs",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "At your command, your entire body becomes shrouded in flames until you use a ten-minute or longer recovery. The fire doesn't burn you or your equipment, but it inflicts 2 damage on anyone who tries to touch you or strike you with a melee attack (no roll required). While you are shrouded in flame, reduce the severity of wounds from heat and flames used against you by one step (major to moderate, moderate to minor, minor to none). For example, if you are hit by a fire attack that causes a moderate wound, you instead take a minor wound. While shrouded in flame, you can touch a foe as a light unarmed attack, inflicting 2 fire damage. Enabler."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

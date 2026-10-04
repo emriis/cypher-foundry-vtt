@@ -1,0 +1,40 @@
+{
+  "_id": "00c9qg98009ufjnt",
+  "_key": "!items!00c9qg98009ufjnt",
+  "name": "Go to Ground",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "go-to-ground",
+    "variantKey": "00c9qg98009ufjnt",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 4,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "As your action, you move up to a long distance and then attempt to hide. You gain an asset on the stealth task to blend in, disappear, or otherwise escape the senses of everyone previously aware of your presence (this movement doesn't hinder your stealth task). Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

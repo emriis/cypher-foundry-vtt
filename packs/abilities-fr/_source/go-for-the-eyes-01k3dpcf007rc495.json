@@ -1,0 +1,40 @@
+{
+  "_id": "01k3dpcf007rc495",
+  "_key": "!items!01k3dpcf007rc495",
+  "name": "Go for the Eyes",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "go-for-the-eyes",
+    "variantKey": "01k3dpcf007rc495",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 2,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You attempt to injure your foe's eye, such as by gouging it or throwing dirt in their face. Make a hindered melee attack; success means their vision is impaired until you use a ten-minute or longer recovery, hindering their tasks that rely on sight (which is most tasks). Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

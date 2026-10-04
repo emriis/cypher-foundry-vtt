@@ -1,0 +1,40 @@
+{
+  "_id": "0019gg4m00atfj18",
+  "_key": "!items!0019gg4m00atfj18",
+  "name": "Insect Eruption",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "insect-eruption",
+    "variantKey": "0019gg4m00atfj18",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": null,
+    "source": "CRD English fallback",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You call a swarm of insects to obey you until you use a ten-minute or longer recovery. The insects appear within long range and do as you command. They automatically hinder any number of foes within range (no rolls required). If you use an action to concentrate the swarm on an immediate area, you can make an Intellect attack on each foe in that area; success means affected creatures take 2 damage. You can use the swarm to move heavy objects through collective effort, eat through wooden walls, and perform other actions suitable for a supernatural swarm. You can't use this ability in an area where insects cannot reach, such as a sealed room. Action to initiate."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}

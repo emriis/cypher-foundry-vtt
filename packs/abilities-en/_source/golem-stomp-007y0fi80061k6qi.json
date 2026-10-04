@@ -1,0 +1,40 @@
+{
+  "_id": "007y0fi80061k6qi",
+  "_key": "!items!007y0fi80061k6qi",
+  "name": "Golem Stomp",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "key": "golem-stomp",
+    "variantKey": "007y0fi80061k6qi",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 4,
+      "options": []
+    },
+    "action": "action",
+    "source": "CRD",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You stomp on the ground with all of your strength, creating a shock wave. Make separate attacks against three creatures in immediate range. Each creature you hit takes 3 damage and you choose if they are pushed out of immediate range or are knocked prone. Action."
+  },
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    }
+  }
+}
