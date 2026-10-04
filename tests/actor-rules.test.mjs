@@ -1,3 +1,6 @@
+import {
+  validateAdvancementChoices
+} from "../module/rules/advancement.mjs";
 // Tests actor-owned Cypher rules with a minimal Actor stub instead of a live Foundry world.
 import assert from "node:assert/strict";
 import test from "node:test";
@@ -676,11 +679,36 @@ test("selectFocusAbility stores and embeds the selected pending Focus ability", 
 });
 
 
+
+
 test("rollDefense maps Block and Dodge to the correct stat and armor modifier", async () => {
+  globalThis.game = { i18n: { localize: value => value, format: value => value } };
+  globalThis.ChatMessage = { getSpeaker: () => ({}), create: async () => {} };
+  globalThis.Roll = class {
+    constructor() { this.total = 10; }
+    async evaluate() { return this; }
+    async toMessage() {}
+  };
   const actor = {
     type: "pc",
-    system: { armor: { blockEase: 1, dodgeHinder: 2 } },
-    rollTask: async options => options
+    system: {
+      armor: { blockEase: 1, dodgeHinder: 2 },
+      stats: {
+        might: { pool: { value: 10, max: 10 }, edge: 0 },
+        speed: { pool: { value: 10, max: 10 }, edge: 0 },
+        intellect: { pool: { value: 10, max: 10 }, edge: 0 }
+      },
+      effort: 1,
+      hinderSteps: 0,
+      wounds: {
+        minor: { current: 0, max: 3 },
+        moderate: { current: 0, max: 3 },
+        major: { current: 0, max: 3 }
+      }
+    },
+    items: new Map(),
+    async update() {},
+    async toggleStatusEffect() {}
   };
 
   const block = await CypherActor.prototype.rollDefense.call(actor, "block", {
@@ -905,18 +933,19 @@ function applyUpdate(target, changes) {
 
 test("advancement purchases capabilities and applies only the requested pool increases", async () => {
   globalThis.game = { i18n: { localize: value => value, format: value => value } };
+  globalThis.ui = { notifications: { warn() {}, error() {} } };
   globalThis.ChatMessage = { getSpeaker: () => ({}), create: async () => {} };
 
   const actor = makeAdvancementActor({ type: "capabilities" });
   await CypherActor.prototype.purchaseAdvancementSlot.call(actor, 0, {
-    distribution: { might: 2, speed: 1 }
+    distribution: { might: 2, speed: 1, intellect: 1 }
   });
 
   assert.equal(actor.system.stats.might.pool.max, 10);
   assert.equal(actor.system.stats.might.pool.value, 10);
   assert.equal(actor.system.stats.speed.pool.max, 9);
   assert.equal(actor.system.stats.speed.pool.value, 9);
-  assert.equal(actor.system.stats.intellect.pool.max, 8);
+  assert.equal(actor.system.stats.intellect.pool.max, 9);
   assert.equal(actor.system.resourcePoints, 1);
   assert.equal(actor.system.advancementSlots[0].bought, true);
   assert.equal(actor.system.xp, 6);
@@ -1153,4 +1182,21 @@ test("rallyWound rejects a major wound outside the Superhero genre", async () =>
   await CypherActor.prototype.rallyWound.call(actor, "major");
 
   assert.equal(updateCalled, false);
+});
+
+test("validateAdvancementChoices rejects capability distributions that do not total four", () => {
+  assert.equal(
+    validateAdvancementChoices(
+      { type: "capabilities" },
+      { distribution: { might: 2, speed: 1, intellect: 0 } }
+    ),
+    "CYPHER.Warning.CapabilitiesMustSumFour"
+  );
+  assert.equal(
+    validateAdvancementChoices(
+      { type: "capabilities" },
+      { distribution: { might: 2, speed: 1, intellect: 1 } }
+    ),
+    null
+  );
 });

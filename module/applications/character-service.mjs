@@ -273,3 +273,43 @@ export async function deleteCustomField(actor, id) {
   const customFields = actor.system.customFields.filter(field => field.id !== id);
   await actor.update({ "system.customFields": customFields });
 }
+
+/**
+ * Toggle the optional second Descriptor.
+ *
+ * @param {Actor} actor PC Actor.
+ * @param {boolean} enabled Whether the second Descriptor should be enabled.
+ * @returns {Promise<void>} Completes after the actor is updated.
+ */
+export async function toggleSecondDescriptor(actor, enabled) {
+  if (actor.type !== "pc") return;
+
+  await actor.update(
+    enabled
+      ? { "system.hasSecondDescriptor": true }
+      : {
+          "system.hasSecondDescriptor": false,
+          "system.descriptor2": ""
+        }
+  );
+}
+
+/**
+ * Toggle the optional second Focus.
+ *
+ * @param {Actor} actor PC Actor.
+ * @param {boolean} enabled Whether the second Focus should be enabled.
+ * @returns {Promise<void>} Completes after the actor is updated.
+ */
+export async function toggleSecondFocus(actor, enabled) {
+  if (actor.type !== "pc") return;
+
+  await actor.update(
+    enabled
+      ? { "system.hasSecondFocus": true }
+      : {
+          "system.hasSecondFocus": false,
+          "system.focus2": ""
+        }
+  );
+}

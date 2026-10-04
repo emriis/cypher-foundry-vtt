@@ -1,5 +1,6 @@
 import { CYPHER } from "../config.mjs";
-import { abilityActionLabel, resolveAbilityReferences } from "../abilities.mjs";
+import { resolveContentAbilities } from "../applications/content-service.mjs";
+import { abilityActionLabel } from "../abilities.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
@@ -9,8 +10,6 @@ const { ItemSheetV2 } = foundry.applications.sheets;
  *
  * Supplies item data, shared configuration, and an enriched description to the
  * Handlebars templates while relying on ItemSheetV2 for common application behavior.
- * Template inputs save to the registered Item data model, and sheet actions
- * handle the item-specific choices that cannot be expressed as ordinary fields.
  * Template inputs save to the registered Item data model, and sheet actions
  * handle the item-specific choices that cannot be expressed as ordinary fields.
  */
@@ -67,7 +66,7 @@ export default class CypherItemSheet extends HandlebarsApplicationMixin(ItemShee
         }
         return allCategories ? [localize(`CYPHER.Type.All${categoryType}`)] : [];
       };
-      const sourceAbilities = system.abilities ?? [];
+      const sourceAbilities = await resolveContentAbilities(system.abilities ?? []);
 
       context.typeView = {
         genre: genreKeys[system.genre] ? localize(genreKeys[system.genre]) : system.genre,
@@ -105,6 +104,7 @@ export default class CypherItemSheet extends HandlebarsApplicationMixin(ItemShee
             costOptionsLabel: costOptions.length
               ? game.i18n.format("CYPHER.Type.AbilityCostOptions", { options: costOptions.join(", ") })
               : "",
+            actionLabel: abilityActionLabel(ability.system, localize),
             prerequisites,
             prerequisitesLabel: prerequisites.join(", "),
             enrichedDescription: await foundry.applications.ux.TextEditor.implementation.enrichHTML(
@@ -116,9 +116,12 @@ export default class CypherItemSheet extends HandlebarsApplicationMixin(ItemShee
     }
 
     if (this.item.type === "focus") {
-      const sourceAbilities = this.item.system.abilities?.length
-        ? this.item.system.abilities
-        : this.item._source?.system?.abilities ?? [];
+      const sourceAbilities = await resolveContentAbilities(
+        this.item.system.abilities?.length
+          ? this.item.system.abilities
+          : this.item._source?.system?.abilities ?? []
+      );
+      const flowchart = this.item.system.flowchart ?? { edges: [] };
       const abilities = await Promise.all(sourceAbilities.map(async ability => {
         const cost = ability.cost ?? {};
         const costOptions = (cost.options ?? []).map(stat => game.i18n.localize(`CYPHER.Stat.${stat}`));
@@ -147,9 +150,10 @@ export default class CypherItemSheet extends HandlebarsApplicationMixin(ItemShee
           costOptionsLabel: costOptions.length
             ? game.i18n.format("CYPHER.FocusSheet.AbilityCostOptions", { options: costOptions.join(", ") })
             : "",
-          prerequisites: (ability.prerequisites ?? []).map(id =>
-            sourceAbilities.find(candidate => candidate.id === id)?.name ?? id
-          ),
+          actionLabel: abilityActionLabel(ability.system, game.i18n.localize),
+          prerequisites: flowchart.edges
+            .filter(edge => edge.to === ability.id)
+            .map(edge => sourceAbilities.find(candidate => candidate.id === edge.from)?.name ?? edge.from),
           weaponCategories,
           weaponCategoriesLabel: weaponCategories.join(", "),
           armorCategories,

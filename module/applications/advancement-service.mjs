@@ -4,7 +4,8 @@ import { getEligibleFocusAbilities } from "../rules/focus.mjs";
 import {
   advanceSkillLevel,
   computeAdvancementEffects,
-  computeTierAdvancement
+  computeTierAdvancement,
+  validateAdvancementChoices
 } from "../rules/advancement.mjs";
 
 /**
@@ -26,6 +27,12 @@ export async function purchaseAdvancementSlot(actor, index, extra = {}) {
     }
     if (slot.type === "other" && !slot.otherType) {
       ui.notifications.warn(game.i18n.localize("CYPHER.Warning.ChooseAdvancementType"));
+      return;
+    }
+
+    const validationError = validateAdvancementChoices(slot, extra);
+    if (validationError) {
+      ui.notifications.error(game.i18n.localize(validationError));
       return;
     }
 
