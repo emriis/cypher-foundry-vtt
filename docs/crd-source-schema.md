@@ -157,3 +157,90 @@ Every automated extractor must:
 4. record provenance;
 5. validate the resulting source record;
 6. refuse to emit a record when the source mapping is ambiguous.
+
+## Logical identifiers and cross-language pairing
+
+Every reusable CRD record has one language-neutral `logicalId`.
+
+The canonical form is:
+
+    <content-family>.<normalized-source-name>
+
+Examples:
+
+    ability.wounded-fury
+    focus.howls-at-the-moon
+    descriptor.resilient
+    weapon.medium-blaster
+
+The logical ID is a source key. It is not a Foundry `_id`, UUID, display name,
+or translation key.
+
+### Identifier rules
+
+- The content-family prefix is one of the canonical CRD content families.
+- The source name is normalized deterministically.
+- Identifiers use lowercase ASCII characters, digits, and hyphens.
+- The two components are separated by one period.
+- Localized names never replace the logical ID.
+- Foundry `_id` values remain implementation identifiers and may change when
+  documents are rebuilt.
+- Logical IDs remain stable across pack rebuilds and language variants.
+
+### English/French pairing
+
+English is the canonical source record for the CRD content key.
+
+A French record carries the same logical ID and additionally records
+`sourceLogicalId` pointing to the English logical ID.
+
+Therefore:
+
+    EN: ability.wounded-fury
+    FR: ability.wounded-fury
+        sourceLogicalId: ability.wounded-fury
+
+The pairing does not depend on the translated display name.
+
+### References
+
+References between authored records should first be expressed using logical
+IDs during source authoring and extraction.
+
+The build phase resolves those logical IDs to Foundry UUIDs after all source
+records are known.
+
+This creates the following deterministic pipeline:
+
+    CRD source
+        ↓
+    logicalId
+        ↓
+    source-to-source references
+        ↓
+    Foundry document creation
+        ↓
+    UUID resolution
+
+A source reference that cannot be resolved to exactly one authored record is a
+build error. The build must not guess between candidates.
+
+### Duplicate detection
+
+A source build must reject:
+- duplicate logical IDs within one language;
+- duplicate logical IDs across records of incompatible content families;
+- French records without a matching English logical ID;
+- references to missing logical IDs;
+- references that resolve to more than one record;
+- a logical ID derived from a localized French name instead of the canonical
+  source name.
+
+### Why Foundry UUIDs are resolved late
+
+Foundry UUIDs are generated implementation identifiers. Using them as the
+authoring key would make source content unnecessarily dependent on the generated
+pack state.
+
+Logical IDs are therefore the stable authoring contract; UUIDs are the compiled
+runtime references.
