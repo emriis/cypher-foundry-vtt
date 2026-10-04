@@ -15,7 +15,7 @@ If the Descriptor identity, authoritative mechanic, or French localization canno
 2. Inspect `module/data-models/item-descriptor.mjs`, the focused compendium tests, and the closest existing bilingual Descriptor pair.
 3. Create matching filenames under `packs/descriptors-en/_source/` and `packs/descriptors-fr/_source/`. Use unique 16-character document IDs with matching `_key` values.
 4. Align `statOptions`, `statAmount`, structure, and supported fields across languages. Localize skill names and descriptions while preserving their intended choices.
-5. Run `node --test tests/compendium-sources.test.mjs`, then `npm test`.
+5. Run `node --test tests/content/compendium-sources.test.mjs`, then `npm test`.
 6. Rebuild both Descriptor LevelDB packs from their `_source` directories using a temporary output location, excluding transient logs and locks.
 7. Report the records added, source mapping, test results, packaging results, and any live Foundry verification still required.
 
