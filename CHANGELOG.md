@@ -11,6 +11,10 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ### Added
 
+- Established a strict CRD fidelity and French localization policy requiring source-faithful transcription, stable provenance, and automated consistency checks.
+
+### Added
+
 - Defined the Foundry-first architecture and conversion map for the 2026 Cypher Reference Document compendiums.
 
 ### Changed
