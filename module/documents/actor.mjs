@@ -1,4 +1,19 @@
 import { CYPHER } from "../config.mjs";
+import {
+  rerollMessage,
+  spendXP,
+  usePlayerIntrusion
+} from "../applications/character-service.mjs";
+import {
+  addWound,
+  applyDamage,
+  applyNpcDamage,
+  damageArmor,
+  reduceWound,
+  repairArmor,
+  shieldAbsorbWound,
+  syncWoundStatusEffects
+} from "../applications/damage-service.mjs";
 import { rollTask } from "../applications/task-service.mjs";
 import {
   advanceTier,
@@ -8,35 +23,6 @@ import {
   rallyWound,
   rollRecovery
 } from "../applications/recovery-service.mjs";
-import {
-  clampAssetSteps,
-  clampEffortLevels,
-  computeEffortCost,
-  computeTaskSteps,
-  resolveTaskDifficulty
-} from "../rules/tasks.mjs";
-import {
-  advanceSkillLevel,
-  computeAdvancementEffects,
-  computeTierAdvancement
-} from "../rules/advancement.mjs";
-import { resolveDefense } from "../rules/defense.mjs";
-import {
-  computeRallyResult,
-  computeRecoveryUpdates,
-  getRallyCost,
-  getRecoveryRollData
-} from "../rules/recovery.mjs";
-import {
-  getEligibleFocusAbilities,
-  isFocusAbilityEligible
-} from "../rules/focus.mjs";
-import {
-  computeWoundIncrease,
-  convertDamageToWound,
-  reduceWoundSeverity,
-  resolveShieldWoundSeverity
-} from "../rules/wounds.mjs";
 
 /**
  * Extends Foundry's Actor class with Cypher logic.
@@ -124,31 +110,31 @@ export default class CypherActor extends Actor {
   /**
    * Reduces a wound severity by one step (major→moderate→minor→none).
    */
+  /**
+   * Reduce a wound severity by one step.
+   *
+   * Compatibility facade for the extracted damage application service.
+   *
+   * @param {string} severity Current wound severity.
+   * @returns {string|null} Reduced severity, or null when the wound disappears.
+   */
   _reduceWoundSeverity(severity) {
-    return reduceWoundSeverity(severity);
+    return reduceWound(severity);
   }
 
   /**
    * Has a shield absorb a whole wound, with cascading overflow (3 minor → 2 moderate →
    * 1 major, per the rules). The shield is destroyed as soon as it takes a major wound.
    */
+  /**
+   * Have a shield absorb a wound through the damage application service.
+   *
+   * @param {object} shieldItem Shield receiving the wound.
+   * @param {string} severity Incoming wound severity.
+   * @returns {Promise<void>} Completes after the shield is updated.
+   */
   async _shieldAbsorbWound(shieldItem, severity) {
-    const w = shieldItem.system.wounds;
-    const target = resolveShieldWoundSeverity(severity, w);
-    const newCurrent = w[target].current + 1;
-    await shieldItem.update({
-      [`system.wounds.${target}.current`]: Math.min(
-        newCurrent,
-        w[target].max
-      )
-    });
-
-    if (target === "major" && newCurrent >= w.major.max) {
-      await ChatMessage.create({
-        speaker: ChatMessage.getSpeaker({ actor: this }),
-        content: `<div class="cypher-roll-card"><h3>${game.i18n.localize("CYPHER.Shield.Broken")}</h3><p>${game.i18n.format("CYPHER.Shield.BrokenNote", { name: shieldItem.name })}</p></div>`
-      });
-    }
+    return shieldAbsorbWound(this, shieldItem, severity);
   }
 
   /**
@@ -177,105 +163,60 @@ export default class CypherActor extends Actor {
   /**
    * Spends XP if the character has enough. Returns true if the spend succeeded.
    */
+  /**
+   * Spend XP through the application service.
+   *
+   * Kept as a compatibility facade for sheets, macros, and existing callers.
+   *
+   * @param {number} amount Number of XP to spend.
+   * @param {string} [reasonLabel=""] Localized reason shown in the warning.
+   * @returns {Promise<boolean>} Whether the XP was spent.
+   */
   async spendXP(amount, reasonLabel = "") {
-    if (this.type !== "pc") return false;
-    if ((this.system.xp ?? 0) < amount) {
-      ui.notifications.error(game.i18n.format("CYPHER.Warning.NotEnoughXP", { amount, reason: reasonLabel }));
-      return false;
-    }
-    await this.update({ "system.xp": (this.system.xp ?? 0) - amount });
-    return true;
+    return spendXP(this, amount, reasonLabel);
   }
 
   /**
    * Rerolls a previous roll by spending 1 XP, keeping the better of the two results.
    */
+  /**
+   * Reroll a previous roll through the application service.
+   *
+   * @param {object} message Foundry chat message containing reroll flags.
+   * @returns {Promise<void>|undefined} Nothing when the message is not rerollable.
+   */
   async rerollMessage(message) {
-    const flags = message.getFlag("cypher", "rerollable") ? message.flags["cypher"] : null;
-    if (!flags) return;
-
-    if (flags.rollType === "depletion") return this._rerollDepletion(message, flags);
-
-    if (!(await this.spendXP(CYPHER.xpCosts.reroll, game.i18n.localize("CYPHER.XP.Reroll")))) return;
-
-    const newRoll = await new Roll("1d20").evaluate();
-    const oldD20 = flags.d20;
-    const finalD20 = Math.max(oldD20, newRoll.total);
-    const success = flags.effectiveDifficulty <= 0 ? true : finalD20 >= flags.targetNumber;
-
-    let damageBonus = 0;
-    let effectText = "";
-    if (flags.isAttack && success) {
-      if (finalD20 === 17) damageBonus = 1;
-      else if (finalD20 === 18) damageBonus = 2;
-      else if (finalD20 === 19) damageBonus = 3;
-      else if (finalD20 === 20) damageBonus = 4;
-    } else if (success && finalD20 === 19) {
-      effectText = game.i18n.localize("CYPHER.Roll.MinorEffect");
-    } else if (success && finalD20 === 20) {
-      effectText = game.i18n.localize("CYPHER.Roll.MajorEffect");
-    }
-
-    const totalDamage = flags.isAttack ? flags.baseDamage + damageBonus : 0;
-
-    const content = `
-      <div class="cypher-roll-card cypher-reroll-card">
-        <h3>${game.i18n.localize("CYPHER.XP.RerollResult")}</h3>
-        <p>${game.i18n.format("CYPHER.XP.RerollCompare", { old: oldD20, new: newRoll.total, final: finalD20 })}</p>
-        <p class="cypher-result ${success ? "success" : "failure"}">
-          ${success ? game.i18n.localize("CYPHER.Roll.Success") : game.i18n.localize("CYPHER.Roll.Failure")}
-          ${flags.isAttack && damageBonus ? ` — +${damageBonus} ${game.i18n.localize("CYPHER.Damage")} (${totalDamage} ${game.i18n.localize("CYPHER.Roll.TotalDamage")})` : ""}
-          ${effectText ? ` — ${effectText}` : ""}
-        </p>
-      </div>`;
-
-    await newRoll.toMessage({
-      speaker: ChatMessage.getSpeaker({ actor: this }),
-      flavor: content,
-      flags: { "cypher": { rerollable: false } }
-    });
+    return rerollMessage(this, message);
   }
 
   /**
    * Rerolls a depletion check (1 XP), keeping the better of the two results (the higher one,
    * since a higher result avoids depletion).
    */
+  /**
+   * Compatibility facade for the depletion reroll implementation.
+   *
+   * New callers should use rerollMessage instead of this internal helper.
+   *
+   * @param {object} message Foundry chat message.
+   * @param {object} flags Reroll metadata.
+   * @returns {Promise<void>} Completes after the reroll.
+   */
   async _rerollDepletion(message, flags) {
-    const item = this.items.get(flags.itemId);
-    if (!item) return;
-    if (!(await this.spendXP(CYPHER.xpCosts.reroll, game.i18n.localize("CYPHER.XP.Reroll")))) return;
-
-    const newRoll = await new Roll(`1d${flags.dieMax}`).evaluate();
-    const finalValue = Math.max(flags.originalRoll, newRoll.total);
-    const depletes = finalValue <= flags.threshold;
-
-    if (depletes && !item.system.depleted) await item.update({ "system.depleted": true });
-
-    const content = `
-      <div class="cypher-roll-card cypher-reroll-card">
-        <h3>${game.i18n.localize("CYPHER.XP.RerollResult")}</h3>
-        <p>${game.i18n.format("CYPHER.XP.RerollCompare", { old: flags.originalRoll, new: newRoll.total, final: finalValue })}</p>
-        <p class="cypher-result ${depletes ? "failure" : "success"}">
-          ${depletes ? game.i18n.localize("CYPHER.Depletion.LastUse") : game.i18n.localize("CYPHER.Depletion.StillWorks")}
-        </p>
-      </div>`;
-
-    await newRoll.toMessage({
-      speaker: ChatMessage.getSpeaker({ actor: this }),
-      flavor: content,
-      flags: { "cypher": { rerollable: false } }
-    });
+    return rerollMessage(this, message, flags);
   }
 
   /**
    * Player intrusion: spend 1 XP to alter the situation in the character's favor.
    */
+  /**
+   * Use a Player Intrusion through the application service.
+   *
+   * @param {string} description Player-provided intrusion description.
+   * @returns {Promise<void>} Completes after the intrusion message is created.
+   */
   async usePlayerIntrusion(description) {
-    if (!(await this.spendXP(CYPHER.xpCosts.playerIntrusion, game.i18n.localize("CYPHER.XP.PlayerIntrusion")))) return;
-    await ChatMessage.create({
-      speaker: ChatMessage.getSpeaker({ actor: this }),
-      content: `<div class="cypher-roll-card"><h3>${game.i18n.localize("CYPHER.XP.PlayerIntrusion")}</h3><p>${description || ""}</p></div>`
-    });
+    return usePlayerIntrusion(this, description);
   }
 
   /* -------------------------------------------- */
@@ -382,40 +323,26 @@ export default class CypherActor extends Actor {
    * by a given number of steps, capped at the base bonus (can't go below 0). The Dodge
    * hindrance is never affected.
    */
+  /**
+   * Damage the equipped armor through the damage application service.
+   *
+   * @param {number} [steps=1] Number of Block-ease damage steps.
+   * @returns {Promise<void>} Completes after the armor is updated.
+   */
   async damageArmor(steps = 1) {
-    if (this.type !== "pc") return;
-    const itemId = this.system.armor.itemId;
-    if (!itemId) {
-      ui.notifications.warn(game.i18n.localize("CYPHER.Armor.NoArmorEquipped"));
-      return;
-    }
-    const item = this.items.get(itemId);
-    if (!item) return;
-
-    const baseEase = this.system.armor.baseBlockEase ?? 0;
-    if (baseEase <= 0) {
-      ui.notifications.info(game.i18n.localize("CYPHER.Armor.NoBlockBonusToDamage"));
-      return;
-    }
-    const newDamage = Math.min(baseEase, (item.system.blockEaseDamage ?? 0) + steps);
-    await item.update({ "system.blockEaseDamage": newDamage });
-
-    await ChatMessage.create({
-      speaker: ChatMessage.getSpeaker({ actor: this }),
-      content: `<div class="cypher-roll-card"><h3>${game.i18n.localize("CYPHER.Armor.Damaged")}</h3><p>${game.i18n.format("CYPHER.Armor.DamagedNote", { name: this.name })}</p></div>`
-    });
+    return damageArmor(this, steps);
   }
 
   /**
    * Repairs the equipped armor, clearing all accumulated damage to its Block bonus.
    */
+  /**
+   * Repair the equipped armor through the damage application service.
+   *
+   * @returns {Promise<void>} Completes after the armor is repaired.
+   */
   async repairArmor() {
-    if (this.type !== "pc") return;
-    const itemId = this.system.armor.itemId;
-    if (!itemId) return;
-    const item = this.items.get(itemId);
-    if (!item) return;
-    await item.update({ "system.blockEaseDamage": 0 });
+    return repairArmor(this);
   }
 
   /* -------------------------------------------- */
@@ -426,7 +353,16 @@ export default class CypherActor extends Actor {
    * Applies damage. For a PC, converts the amount to a wound severity
    * (1-4 minor, 5-8 moderate, 9+ major) unless an explicit severity is given.
    */
-  async applyDamage(amount, { severity = null, stat = null, ignoreArmor = false } = {}) {
+  /**
+   * Apply damage through the damage application service.
+   *
+   * @param {number} amount Raw damage amount.
+   * @param {object} [options={}] Damage options.
+   * @returns {Promise<number|undefined>} NPC damage dealt, when applicable.
+   */
+  async applyDamage(amount, options = {}) {
+    return applyDamage(this, amount, options);
+  } = {}) {
     if (this.type !== "pc") return this._applyNpcDamage(amount, { ignoreArmor });
 
     // Direct Pool damage converts any overflow into a wound via the conversion table.
@@ -448,6 +384,14 @@ export default class CypherActor extends Actor {
     await this.addWound(woundSeverity);
   }
 
+  /**
+   * Convert a damage amount into a wound severity.
+   *
+   * Compatibility facade for the pure wound rule.
+   *
+   * @param {number} amount Damage amount.
+   * @returns {string|null} Corresponding wound severity.
+   */
   _convertDamageToWound(amount) {
     return convertDamageToWound(amount);
   }
@@ -455,22 +399,26 @@ export default class CypherActor extends Actor {
   /**
    * Adds a wound of a given severity, with cascading overflow.
    */
+  /**
+   * Add a wound through the damage application service.
+   *
+   * @param {string} severity Wound severity.
+   * @returns {Promise<void>} Completes after the actor is updated.
+   */
   async addWound(severity) {
-    if (this.type !== "pc") return;
-    const w = this.system.wounds;
-    const { target, current: newCurrent } = computeWoundIncrease(severity, w);
-    await this.update({
-      [`system.wounds.${target}.current`]: newCurrent
-    });
-
-    if (target === "major" && newCurrent >= w.major.max) {
-      ui.notifications.error(game.i18n.format("CYPHER.Warning.CharacterDied", { name: this.name }));
-    }
-
-    await this._syncWoundStatusEffects();
+    return addWound(this, severity);
   }
 
-  async _applyNpcDamage(amount, { ignoreArmor = false } = {}) {
+  /**
+   * Compatibility facade for NPC damage application.
+   *
+   * @param {number} amount Raw damage amount.
+   * @param {object} [options={}] Damage options.
+   * @returns {Promise<number|undefined>} Damage actually applied.
+   */
+  async _applyNpcDamage(amount, options = {}) {
+    return applyNpcDamage(this, amount, options);
+  } = {}) {
     const armor = ignoreArmor ? 0 : (this.system.armor ?? 0);
     const finalDamage = Math.max(0, amount - armor);
     const health = this.system.health;
@@ -483,17 +431,13 @@ export default class CypherActor extends Actor {
   /**
    * Toggles the "Hindered" and "Dead" token status icons based on the current wound state.
    */
+  /**
+   * Synchronize wound-related token statuses through the damage service.
+   *
+   * @returns {Promise<void>} Completes after status synchronization.
+   */
   async _syncWoundStatusEffects() {
-    if (this.type !== "pc") return;
-    const shouldBeHindered = !!this.system.hindered;
-    const shouldBeDead = !!this.system.dead;
-
-    if (this.statuses?.has("hindered") !== shouldBeHindered) {
-      await this.toggleStatusEffect("hindered", { active: shouldBeHindered });
-    }
-    if (this.statuses?.has("dead") !== shouldBeDead) {
-      await this.toggleStatusEffect("dead", { active: shouldBeDead });
-    }
+    return syncWoundStatusEffects(this);
   }
 
   /* -------------------------------------------- */
