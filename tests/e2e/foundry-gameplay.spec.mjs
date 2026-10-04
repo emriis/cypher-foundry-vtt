@@ -82,11 +82,6 @@ async function clickRollDialog(page, values = {}) {
 }
 
 test.describe("Cypher Foundry live gameplay", () => {
-  test.afterAll(async ({ page }) => {
-    await closeActorSheet(page);
-    await cleanupActors(page);
-  });
-
   test("executes a task roll from the real PC sheet and creates chat output", async ({
     page
   }) => {
