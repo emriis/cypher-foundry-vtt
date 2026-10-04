@@ -77,7 +77,7 @@ export async function rallyWound(actor, severity) {
     });
 
     await ChatMessage.create({
-      speaker: ChatMessage.getSpeaker({ actor: this }),
+      speaker: ChatMessage.getSpeaker({ actor }),
       content: `<p>${game.i18n.format("CYPHER.Roll.Rallied", { name: actor.name, severity: game.i18n.localize(`CYPHER.Wound.${severity}`) })}</p>`
     });
   }
