@@ -458,6 +458,7 @@ test("all-category advancements store every weapon or armor category", async () 
       type: "pc",
       id: "actor-id",
       system: {
+        xp: 10,
         advancementSlots: [{ type: "other", otherType, bought: false },
           { type: "", otherType: "", bought: false },
           { type: "", otherType: "", bought: false },
@@ -466,7 +467,6 @@ test("all-category advancements store every weapon or armor category", async () 
         freeArmorCategories: [],
         resourcePoints: 0
       },
-      async spendXP() { return true; },
       async update(update) { changes = update; }
     };
 
