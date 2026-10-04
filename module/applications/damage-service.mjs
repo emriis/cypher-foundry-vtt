@@ -5,6 +5,7 @@ import {
   reduceWoundSeverity,
   resolveShieldWoundSeverity
 } from "../rules/wounds.mjs";
+import { resolveStat } from "../rules/stats.mjs";
 
 /**
  * Reduce a wound by one severity step.
@@ -99,7 +100,7 @@ export async function applyDamage(
   }
 
   if (stat) {
-    const resolved = actor._resolveStat(stat);
+    const resolved = resolveStat(actor.system, stat);
     if (!resolved) return;
 
     const pool = resolved.data.pool;
