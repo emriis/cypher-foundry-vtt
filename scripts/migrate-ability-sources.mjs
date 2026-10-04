@@ -139,6 +139,13 @@ function resolveFrenchEntry(ability, english) {
 
 async function migrateLanguage(language, english) {
   const documents = await collectDocuments(language);
+  const hasLegacyAbilities = documents.some(({ document }) =>
+    (document.system?.abilities ?? []).some(
+      ability => ability && typeof ability === "object"
+    )
+  );
+  if (!hasLegacyAbilities) return;
+
   const registry = new Map();
 
   for (const { document } of documents) {
