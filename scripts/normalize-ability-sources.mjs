@@ -229,7 +229,7 @@ async function rewriteFoci(language, canonicalDocuments) {
       : data;
     const abilities = sourceDocument?.system?.abilities ?? [];
     const refs = abilities.map(ability =>
-      abilityRef(language, ability, entries, canonicalAbilities)
+      abilityRef(language, ability)
     );
     const byId = new Map();
 
@@ -239,7 +239,7 @@ async function rewriteFoci(language, canonicalDocuments) {
 
     const edges = [];
     for (const ability of abilities) {
-      const to = abilityRef(language, ability, entries, canonicalAbilities);
+      const to = abilityRef(language, ability);
 
       for (const prerequisite of ability.prerequisites ?? []) {
         const from = byId.get(prerequisite);
