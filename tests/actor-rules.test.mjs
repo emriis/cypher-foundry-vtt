@@ -1078,10 +1078,10 @@ test("rallyWound spends the correct Might cost and removes one wound", async () 
   await CypherActor.prototype.rallyWound.call(actor, "moderate");
 
   assert.deepEqual(changes, {
-    "system.stats.might.pool.value": 4,
+    "system.stats.might.pool.value": 1,
     "system.wounds.moderate.current": 0
   });
-  assert.equal(actor.system.stats.might.pool.value, 4);
+  assert.equal(actor.system.stats.might.pool.value, 1);
   assert.equal(actor.system.wounds.moderate.current, 0);
 });
 
