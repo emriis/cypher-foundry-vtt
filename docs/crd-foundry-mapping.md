@@ -263,3 +263,42 @@ represent sufficiently for automation:
 
 These are model extensions, not changes to CRD rules. Their values will only be
 populated from source material during extraction.
+
+## 10. Representative CRD fixtures
+
+Phase 2.5 uses representative records from the supplied 2026-07-29 CRD to
+verify that the structured model can preserve mechanics before full extraction.
+
+The current fixture set covers:
+
+- **Ability:** Frenzy, including its Pool cost, additional-Effort marker,
+  Enabler state, and effect text.
+- **Type:** Barbarian, including Pool bonuses, Edge choice, wound bonuses,
+  weapon/armor permissions, and tier-one ability relationships.
+- **Focus:** Howls at the Moon, using standalone Ability UUID references.
+- **Weapon:** Shotgun, including heavy category, immediate range, short extreme
+  range, base damage, price category, and the one-handed attack hindrance.
+- **Equipment:** Backpack, including the general level-4 equipment baseline and
+  moderate price category.
+- **Cypher:** Adhesion Bomb, including manifest classification and medium power
+  classification.
+
+These are validation fixtures, not a partial CRD content release. They must not
+be treated as an exhaustive representation of their source sections.
+
+The fixture suite also serves as a model-gap detector. If a source mechanic
+cannot be represented without inventing a value, the fixture must fail or the
+data model must be extended before extraction continues.
+
+### Tier-specific ability effects
+
+The CRD explicitly allows an ability to have improved effects at higher tiers.
+The structured effect model therefore stores an optional `tier` on each effect
+entry.
+
+This is distinct from the ability's own tier:
+
+- `system.tier` identifies the ability's base tier.
+- `system.effects[].tier` identifies a tier-specific improved effect.
+
+This distinction must be preserved during extraction.
