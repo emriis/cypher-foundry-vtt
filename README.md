@@ -495,3 +495,16 @@ the matching archive.
 
 Run `npm test` to execute the unit tests for deterministic game rules. GitHub Actions runs this
 command for every push and pull request, and before packaging a tagged release.
+
+
+---
+
+## License and attribution
+
+This project is an independent production and is not affiliated with Monte Cook Games, LLC. It is published under the Cypher Open License. The complete license text applicable to this project is preserved in [LICENSE.txt](LICENSE.txt).
+
+This system uses the phrase **Compatible with Cypher** as required by the license. It does not use the Cypher logo, the Monte Cook Games logo, or other MCG trademarks.
+
+**Author:** Aymeric VILAIN
+
+CRD-derived content is converted into Foundry documents without rewriting its mechanics; see [the CRD compendium fidelity policy](docs/compendium-architecture.md).

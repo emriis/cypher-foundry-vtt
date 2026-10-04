@@ -1,37 +1,58 @@
 # Generated release artifacts
 /dist/
 
-# Documents de référence locaux, non destinés au dépôt
+# Documents de reference locaux, non destines au depot
 /docs/local/
 
-# Transient LevelDB files created while editing Foundry compendium packs
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+
+# Foundry local/world data and runtime state
+/foundry-data/
+/Data/
+/worlds/
+/modules-local/
+/systems-local/
 /packs/**/LOCK
 /packs/**/LOG
 /packs/**/LOG.old
 /packs/**/*.log
 
-# Fichiers système d'exploitation / OS files
+# Test and E2E artifacts
+/playwright-report/
+/test-results/
+/coverage/
+/reports/
+
+# Operating system files
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# Éditeurs / Editors
+# Editors
 .vscode/
 .idea/
 *.swp
 
-# Node (si un jour un outillage de build/lint est ajouté)
-# Node (if build/lint tooling is ever added)
+# Node
 node_modules/
 npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
 
 # Python
 __pycache__/
 *.py[cod]
 .venv/
 
-# Scratch local / fichiers de test ponctuels non destinés au dépôt
 # Local scratch / one-off test files not meant for the repo
 *.local.json
-
-
+*.local.yaml
+*.local.yml
