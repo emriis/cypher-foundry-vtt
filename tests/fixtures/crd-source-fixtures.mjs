@@ -16,7 +16,11 @@ export const CRD_FIXTURE_IDS = Object.freeze({
   keenEye: "0123456789abc008",
   shotgun: "0123456789abc009",
   backpack: "0123456789abc010",
-  adhesionBomb: "0123456789abc011"
+  adhesionBomb: "0123456789abc011",
+  angelicWard: "0123456789abc012",
+  mediumArmor: "0123456789abc013",
+  skillWithAttacks: "0123456789abc014",
+  blackDog: "0123456789abc015"
 });
 
 function provenance(logicalId, sourceLocator, sourceKind = "record") {
@@ -217,11 +221,149 @@ export const CRD_CYPHER_FIXTURE = item(
   "Medium-Power Manifest Cyphers — Adhesion bomb"
 );
 
+
+export const CRD_ARTIFACT_FIXTURE = item(
+  CRD_FIXTURE_IDS.angelicWard,
+  "Angelic Ward",
+  "artifact",
+  "artifact",
+  "artifact.angelic-ward",
+  {
+    level: "1d6+2",
+    form: "Tiny figurine of a winged angel",
+    identified: true,
+    depletionDie: "d10",
+    depletionThreshold: 1,
+    depleted: false,
+    description: ""
+  },
+  "Fantasy Genre — Major Fantasy Artifacts — Angelic Ward"
+);
+
+export const CRD_ARMOR_FIXTURE = item(
+  CRD_FIXTURE_IDS.mediumArmor,
+  "Medium Armor",
+  "armor",
+  "armor",
+  "armor.medium",
+  {
+    category: "medium",
+    freelyUsable: false,
+    equipped: false,
+    blockEaseDamage: 0,
+    priceCategory: "veryExpensive",
+    description: ""
+  },
+  "Fantasy Genre — Equipment — Medium Armor"
+);
+
+export const CRD_SKILL_FIXTURE = item(
+  CRD_FIXTURE_IDS.skillWithAttacks,
+  "Skill With Attacks",
+  "skill",
+  "skill",
+  "skill.skill-with-attacks",
+  {
+    stat: "none",
+    level: "trained",
+    attackCategory: "heavyRanged",
+    minimumTier: 3,
+    description:
+      "Choose one attack category in which you are not already trained."
+  },
+  "Character Creation — Third-Tier Skills and Knowledge Abilities — Skill With Attacks"
+);
+
+export const CRD_CREATURE_FIXTURE = {
+  _id: CRD_FIXTURE_IDS.blackDog,
+  _key: "!actors!" + CRD_FIXTURE_IDS.blackDog,
+  document: "Actor",
+  type: "npc",
+  name: "Black Dog",
+  crdType: "creature",
+  system: {
+    level: 6,
+    health: { max: 20, value: 20 },
+    armor: 2,
+    damage: "8",
+    movement: "long; very long when running",
+    modifications: "Sneaking, hiding, and attacking from surprise or advantage as level 7",
+    combat: "Spectral teeth and claws inflict 8 points of damage.",
+    interaction:
+      "Helpful black dogs are unpredictable companions; malevolent ones are best avoided.",
+    use: "A black dog can guide lost characters or appear during a dangerous encounter.",
+    loot: "Black dogs rarely have anything valuable.",
+    gmNotes: ""
+  },
+  flags: {
+    cypherFoundry: {
+      crd: provenance(
+        "creature.black-dog",
+        "Fantasy Genre — Creatures — Black Dog"
+      )
+    }
+  }
+};
+
+export const CRD_TIERED_ABILITY_FIXTURE = item(
+  "0123456789abc016",
+  "Howls at the Moon — Tiered Effects",
+  "ability",
+  "ability",
+  "ability.howls-at-the-moon-tiered-effects",
+  {
+    tier: 1,
+    key: "howls-at-the-moon-tiered-effects",
+    enabler: true,
+    repeatable: false,
+    cost: {
+      stat: "none",
+      amount: 0,
+      options: [],
+      additionalEffort: false
+    },
+    action: null,
+    freeWeaponCategories: [],
+    freeArmorCategories: [],
+    freeWeaponFamilies: [],
+    freeWeaponSkillCategories: [],
+    chooseWeaponAttackCategory: false,
+    grantedArmorItemCategory: "",
+    effects: [
+      {
+        id: "tier-3",
+        name: "Bigger Beast Form",
+        tier: 3,
+        description:
+          "The beast form becomes larger and gains additional physical benefits.",
+        effort: ""
+      },
+      {
+        id: "tier-6",
+        name: "Perfect Control",
+        tier: 6,
+        description:
+          "The character can change between beast and normal form without a roll.",
+        effort: ""
+      }
+    ],
+    rollTables: [],
+    description:
+      "Representative tier progression for the Howls at the Moon focus."
+  },
+  "Fantasy Genre — Howls at the Moon — Tier 3 and Tier 6"
+);
+
 export const CRD_FIXTURES = Object.freeze([
   CRD_ABILITY_FIXTURE,
   CRD_TYPE_FIXTURE,
   CRD_FOCUS_FIXTURE,
   CRD_WEAPON_FIXTURE,
   CRD_EQUIPMENT_FIXTURE,
-  CRD_CYPHER_FIXTURE
+  CRD_CYPHER_FIXTURE,
+  CRD_ARTIFACT_FIXTURE,
+  CRD_ARMOR_FIXTURE,
+  CRD_SKILL_FIXTURE,
+  CRD_CREATURE_FIXTURE,
+  CRD_TIERED_ABILITY_FIXTURE
 ]);
