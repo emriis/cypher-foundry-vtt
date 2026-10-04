@@ -61,7 +61,7 @@ memory.
 node --test tests/compendium-sources.test.mjs
 ```
 
-Then rebuild each affected LevelDB pack with `npm run build:packs`. The build script compiles all six
+Then rebuild each affected LevelDB pack with `npm run build:packs`. The build script compiles all eight
 packs from their `_source/` directories and replaces only their generated database files. The
 `_source/` JSON is the reviewable source of truth; the adjacent LevelDB files are what Foundry
 loads because `system.json` declares them directly.
