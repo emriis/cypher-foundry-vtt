@@ -12,6 +12,7 @@ import {
   computeTaskSteps,
   resolveTaskDifficulty
 } from "../rules/tasks.mjs";
+import { resolveStat } from "../rules/stats.mjs";
 
 /**
  * Execute a task roll at the Foundry application boundary.
@@ -41,7 +42,7 @@ export async function rollTask(actor, {
       extraHinderSteps += 4;
     }
 
-    const resolved = actor._resolveStat(stat);
+    const resolved = resolveStat(actor.system, stat);
     if (!resolved) return null;
     const statData = resolved.data;
     const statLabel = CYPHER.stats.includes(stat) ? game.i18n.localize(resolved.label) : resolved.label;
