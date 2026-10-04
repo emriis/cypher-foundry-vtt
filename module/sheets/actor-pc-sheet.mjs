@@ -494,14 +494,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
   static async #onPurchaseAdvancement(event, target) {
     const index = Number(target.dataset.slot);
     const slot = this.actor.system.advancementSlots[index];
-    if (!slot?.type) {
-      ui.notifications.warn(game.i18n.localize("CYPHER.Warning.ChooseAdvancementType"));
-      return;
-    }
-    if (slot.type === "other" && !slot.otherType) {
-      ui.notifications.warn(game.i18n.localize("CYPHER.Warning.ChooseAdvancementType"));
-      return;
-    }
+    if (!slot) return;
 
     let extra = {};
 
@@ -526,10 +519,6 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
         }
       });
       if (!result) return;
-      if (result.might + result.speed + result.intellect !== 4) {
-        ui.notifications.error(game.i18n.localize("CYPHER.Warning.CapabilitiesMustSumFour"));
-        return;
-      }
       extra.distribution = result;
     } else if (slot.type === "perfection") {
       const content = `
