@@ -4,10 +4,12 @@
   "type": "module",
   "scripts": {
     "test": "node --test",
+    "test:e2e": "playwright test --config=playwright.config.mjs",
     "build:packs": "node scripts/build-packs.mjs",
     "package": "npm run build:packs && pwsh -File scripts/package.ps1"
   },
   "dependencies": {
-    "@foundryvtt/foundryvtt-cli": "^3.0.4"
+    "@foundryvtt/foundryvtt-cli": "^3.0.4",
+    "@playwright/test": "^1.56.1"
   }
 }
