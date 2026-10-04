@@ -649,8 +649,8 @@ test("selectFocusAbility stores and embeds the selected pending Focus ability", 
         focusAbilityIds: ["stone-body"],
         appliedFocusGraph: {
           abilities: [
-            { id: "stone-body", name: "Stone Body", tier: 1, prerequisites: [], repeatable: false, enabler: true, cost: { stat: "none", amount: 0 }, description: "" },
-            { id: "golem-grip", name: "Golem Grip", tier: 2, prerequisites: ["stone-body"], repeatable: false, enabler: false, cost: { stat: "might", amount: 3 }, description: "" }
+            { id: "stone-body", uuid: "Compendium.test.abilities.Item.stone-body", name: "Stone Body", tier: 1, prerequisites: [], repeatable: false, enabler: true, cost: { stat: "none", amount: 0 }, description: "" },
+            { id: "golem-grip", uuid: "Compendium.test.abilities.Item.golem-grip", name: "Golem Grip", tier: 2, prerequisites: ["stone-body"], repeatable: false, enabler: false, cost: { stat: "might", amount: 3 }, description: "" }
           ]
         }
       }
