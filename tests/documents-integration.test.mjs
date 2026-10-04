@@ -316,7 +316,9 @@ test("rollDefense integration applies a wound on a failed defense", async () => 
     async toMessage() { return this; }
   };
 
-  const result = await CypherActor.prototype.rollDefense.call(actor, "dodge", {
+  actor.rollTask = CypherActor.prototype.rollTask;
+  actor._resolveStat = CypherActor.prototype._resolveStat;
+    const result = await CypherActor.prototype.rollDefense.call(actor, "dodge", {
     difficulty: 3,
     incomingSeverity: "moderate"
   });
