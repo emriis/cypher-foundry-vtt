@@ -313,7 +313,7 @@
       <option value="might" {{#ifEquals system.stat "might"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.might'}}</option>
       <option value="speed" {{#ifEquals system.stat "speed"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.speed'}}</option>
       <option value="intellect" {{#ifEquals system.stat "intellect"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.intellect'}}</option>
-      <option value="practiced" {{#ifEquals system.stat "practiced"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.practiced'}}</option>
+      <option value="none" {{#ifEquals system.stat "none"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.none'}}</option>
     </select>
   </div>
   <div class="form-group">
@@ -349,7 +349,7 @@
   <div class="form-group inline">
     <label>{{localize 'CYPHER.Ability.CostStat'}}</label>
     <select name="system.cost.stat">
-      <option value="practiced" {{#ifEquals system.cost.stat "practiced"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.practiced'}}</option>
+      <option value="none" {{#ifEquals system.cost.stat "none"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.none'}}</option>
       <option value="might" {{#ifEquals system.cost.stat "might"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.might'}}</option>
       <option value="speed" {{#ifEquals system.cost.stat "speed"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.speed'}}</option>
       <option value="intellect" {{#ifEquals system.cost.stat "intellect"}}selected{{/ifEquals}}>{{localize 'CYPHER.Stat.intellect'}}</option>
@@ -359,7 +359,7 @@
   <div class="form-group">
     <label>{{localize 'CYPHER.Ability.Action'}}</label>
     <select name="system.action">
-      <option value="practiced" {{#ifEquals system.action "practiced"}}selected{{/ifEquals}}>{{localize 'CYPHER.Ability.ActionPracticed'}}</option>
+      <option value="none" {{#ifEquals system.action "none"}}selected{{/ifEquals}}>{{localize 'CYPHER.Ability.ActionNone'}}</option>
       <option value="action" {{#ifEquals system.action "action"}}selected{{/ifEquals}}>{{localize 'CYPHER.Ability.ActionStandard'}}</option>
       <option value="movement" {{#ifEquals system.action "movement"}}selected{{/ifEquals}}>{{localize 'CYPHER.Ability.ActionMovement'}}</option>
     </select>
