@@ -747,7 +747,7 @@ test("NPC damage uses armor before reducing health and can ignore armor", async 
 
 test("custom stats and fields reject invalid PC additions and preserve valid values", async () => {
   const updates = [];
-  globalThis.foundry.utils.randomID = length => "abc123";
+  globalThis.foundry.utils = { randomID: length => "abc123" };
   globalThis.ui = { notifications: { warn() {} } };
 
   const actor = {
@@ -818,6 +818,8 @@ function makeAdvancementActor(slot, overrides = {}) {
     },
     items: new Map(),
     flags: { cypher: {} },
+    _advanceTier: CypherActor.prototype._advanceTier,
+    _syncWoundStatusEffects: CypherActor.prototype._syncWoundStatusEffects,
     updates,
     getFlag(scope, key) { return this.flags[scope]?.[key]; },
     async update(changes) {
