@@ -1,4 +1,4 @@
-import { CYPHER } from "../config.mjs";
+import { abilityUuid } from "../ability-references.mjs";
 
 const {
   HTMLField,
