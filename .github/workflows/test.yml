@@ -37,7 +37,25 @@ jobs:
         run: npm run build:packs
 
       - name: Run unit tests
-        run: npm test
+        id: tests
+        continue-on-error: true
+        run: |
+          npm test 2>&1 | tee /tmp/unit-tests.log
+          exit ${PIPESTATUS[0]}
+
+      - name: Save test log
+        if: steps.tests.outcome == 'failure'
+        run: cp /tmp/unit-tests.log docs/current-unit-test-failure.log
+
+      - name: Commit test log
+        if: steps.tests.outcome == 'failure'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/current-unit-test-failure.log
+          git commit -m "chore: capture current unit test diagnostics"
+          git push origin HEAD:feature/standalone-ability-compendiums
+          exit 1
 
       - name: Commit normalized sources
         run: |
