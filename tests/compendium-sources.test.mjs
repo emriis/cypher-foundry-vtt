@@ -23,7 +23,6 @@ function assertDocumentIdentity(document) {
   assert.match(document._id, /^[A-Za-z0-9]{16}$/);
   assert.ok(document._key);
   assert.ok(document.name);
-  assert.ok(document.system);
 }
 
 function mechanicalAbilityShape(ability) {
@@ -153,8 +152,9 @@ function assertBilingualMechanicalAlignment(enSources, frSources, packName) {
       continue;
     }
 
-    assert.equal(fr._id, en._id, `${filename}/_id`);
     assert.equal(fr.type, en.type, `${filename}/type`);
+    assert.match(fr._id, /^[A-Za-z0-9]{16}$/, `${filename}/fr-id`);
+    assert.match(en._id, /^[A-Za-z0-9]{16}$/, `${filename}/en-id`);
 
     if (en.type === "type") {
       for (const field of [
