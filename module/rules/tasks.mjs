@@ -1,10 +1,7 @@
-import { CYPHER } from "../../config.mjs";
+import { CYPHER } from "../config.mjs";
 
 /**
  * Compute the Pool cost of Effort after applying Edge once to the total cost.
- *
- * This function contains no Foundry dependencies and is intentionally usable
- * from documents, applications, and tests.
  *
  * @param {number} levels Number of Effort levels spent.
  * @param {number} edge Edge available on the relevant Pool.
@@ -21,8 +18,7 @@ export function computeEffortCost(levels, edge = 0) {
 }
 
 /**
- * Clamp the number of Effort levels to the character's available Effort,
- * while preserving the system's six-level ceiling.
+ * Clamp Effort to the character's available Effort and system ceiling.
  *
  * @param {number} levels Requested Effort levels.
  * @param {number} effort Character Effort score.
@@ -45,8 +41,6 @@ export function clampAssetSteps(steps) {
 
 /**
  * Combine all task step modifiers into a single net step adjustment.
- *
- * Positive values ease the task; negative values hinder it.
  *
  * @param {object} options Task step modifiers.
  * @returns {number} Net task step adjustment.
@@ -79,7 +73,6 @@ export function computeTaskSteps({
  * @param {number} difficulty Base difficulty.
  * @param {number} steps Net task step adjustment.
  * @returns {{effectiveDifficulty: number, targetNumber: number}}
- *   Effective difficulty and its d20 target number.
  */
 export function resolveTaskDifficulty(difficulty, steps) {
   const effectiveDifficulty = Math.max(0, difficulty - steps);
