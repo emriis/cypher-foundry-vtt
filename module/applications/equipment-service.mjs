@@ -38,3 +38,30 @@ export async function toggleEquipped(item) {
   await item.update({ "system.equipped": newState });
   return true;
 }
+
+/**
+ * Enforce the single-equipped-armor invariant after an Item update.
+ *
+ * @param {Item} item Armor Item that was equipped.
+ * @returns {Promise<void>} Completes after conflicting armor is unequipped.
+ */
+export async function enforceSingleEquippedArmor(item) {
+  if (item?.type !== "armor" || !item.actor || !item.system.equipped) return;
+
+  const others = item.actor.items.filter(
+    candidate =>
+      candidate.type === "armor"
+      && candidate.id !== item.id
+      && candidate.system.equipped
+  );
+
+  if (others.length) {
+    await item.actor.updateEmbeddedDocuments(
+      "Item",
+      others.map(candidate => ({
+        _id: candidate.id,
+        "system.equipped": false
+      }))
+    );
+  }
+}
