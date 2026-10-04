@@ -17,7 +17,7 @@ export const CRD_FIXTURE_IDS = Object.freeze({
   shotgun: "0123456789abc009",
   backpack: "0123456789abc010",
   adhesionBomb: "0123456789abc011",
-  mediumArmor: "0123456789abc013"
+  mediumArmor: "0123456789abc013",
   skillWithAttacks: "0123456789abc014",
   brewPotion: "0123456789abc016"
 });
@@ -252,7 +252,7 @@ export const CRD_SKILL_FIXTURE = item(
     minimumTier: 2,
     description: ""
   },
-  "Real-World Skills — Attacking (tier restricted)"
+  "Character Creation — Tier-Restricted Skills — Master Skill List — Attacking (tier-restricted)"
 );
 
 export const CRD_TIERED_ABILITY_FIXTURE = item(
