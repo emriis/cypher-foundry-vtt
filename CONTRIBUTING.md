@@ -23,9 +23,10 @@ consistent as more people touch it.
 2. No build step is required to run the system — `.mjs` modules are loaded directly by Foundry.
    A build step (`@foundryvtt/foundryvtt-cli`) is only needed when regenerating compendium
    packs; see [Rebuilding compendium packs](#rebuilding-compendium-packs).
-3. Run the automated suite with `npm test`. Changes that depend on Foundry runtime behavior
-   should also be manually verified in a live Foundry world before opening a PR — see the
-   [known limitation](CHANGELOG.md#known-limitations) noted in the changelog.
+3. Run the automated suite with `npm test`. For changes that depend on Foundry runtime behavior,
+   also run `npm run test:e2e` when a local activated Foundry installation is available, or
+   perform the focused disposable-world check described in
+   [foundry-live-validation](.github/skills/foundry-live-validation/SKILL.md).
 
 ## Coding conventions
 
