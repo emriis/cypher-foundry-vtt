@@ -1,4 +1,5 @@
 import { CYPHER } from "../config.mjs";
+import { getEligibleFocusAbilities } from "../rules/focus.mjs";
 import {
   advanceSkillLevel,
   computeAdvancementEffects,
@@ -87,7 +88,7 @@ export async function purchaseAdvancementSlot(actor, index, extra = {}) {
     await actor.update(updates);
 
     await ChatMessage.create({
-      speaker: ChatMessage.getSpeaker({ actor: this }),
+      speaker: ChatMessage.getSpeaker({ actor: actor }),
       content: `<div class="cypher-roll-card"><h3>${game.i18n.localize("CYPHER.Advancement.Purchased")}</h3><p>${chatNote}</p></div>`
     });
 
@@ -105,7 +106,7 @@ export async function advanceTier(actor) {
     const updates = { "system.tier": newTier, "system.advancementSlots": freshSlots };
     const focus = actor.getFlag("cypher", "appliedFocusGraph");
     const selectedFocusAbilities = actor.getFlag("cypher", "focusAbilityIds") ?? [];
-    if (CypherActor.getEligibleFocusAbilities(focus, selectedFocusAbilities, newTier).length) {
+    if (getEligibleFocusAbilities(focus, selectedFocusAbilities, newTier).length) {
       updates["flags.cypher.focusAbilityPendingTier"] = newTier;
     }
     await actor.update(updates);
