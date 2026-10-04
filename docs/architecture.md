@@ -142,6 +142,12 @@ Rules should not depend on Foundry globals such as `game`, `ui`,
 
 ### 3.4 Application services
 
+The `module/applications/` layer contains Foundry-aware use cases that combine
+documents with pure rules. It is the boundary between Foundry orchestration and
+the Cypher rule core. For example, `task-service.mjs` owns dice, Pool/XP
+transactions, chat output, and wound application while delegating deterministic
+calculations to `module/rules/tasks.mjs`.
+
 A future `module/applications/` or `module/services/` layer should contain
 operations that combine domain rules with Foundry documents.
 
@@ -250,9 +256,17 @@ rules layer.
 
 ### Phase 4 — Refactor Type/Focus/Ability application
 
+The runtime reference boundary is now established by
+`applications/reference-resolver.mjs`:
+
+1. Resolve a UUID or accept an already-resolved document.
+2. Validate the expected document type.
+3. Return only valid documents to the caller.
+4. Keep direct `fromUuid()` calls out of application/content consumers.
+
 Complete the standalone ability runtime boundary:
 
-1. Resolve UUID references.
+1. Resolve Type/Focus UUID references through the centralized resolver.
 2. Validate the resolved Item type.
 3. Evaluate Focus flowchart edges separately from ability data.
 4. Apply standalone ability mechanics.
@@ -271,7 +285,9 @@ compatibility transforms.
 
 ### Phase 7 — Reorganize tests
 
-Align tests with the architecture:
+The target test taxonomy is:
+
+
 
 ```
 tests/
@@ -286,6 +302,77 @@ tests/
 
 The exact directory split should happen only after the production boundaries
 are established, to avoid moving tests without improving their meaning.
+
+### 8. Domain organization
+
+Production code should be organized by architectural responsibility and domain,
+not by the historical order in which features were added.
+
+The intended rule domains are:
+
+```
+module/
+  rules/
+    combat/
+    tasks/
+    recovery/
+    advancement/
+    characters/
+    content/
+  applications/
+  documents/
+  data-models/
+  sheets/
+```
+
+A rule belongs in a domain module when its behavior is deterministic and does
+not require Foundry state. Application modules may cross domains when
+implementing a complete use case, but individual rule modules should remain
+focused.
+
+New domains such as equipment, cyphers, creatures/NPC abilities, powers,
+custom Descriptors, custom Types, and custom Foci should follow the same
+boundary instead of adding another collection of feature-specific helpers.
+
+## 9. Content source and pack compilation contract
+
+Repository content follows one direction:
+
+```
+editable source data
+      |
+      | deterministic migration / normalization
+      v
+compiled Foundry packs
+```
+
+The `packs/*/_source/` files are authoritative. LevelDB and other generated
+pack artifacts are build outputs and must never be edited as source data.
+
+Pack tooling should keep this distinction explicit. Source migrations transform
+authoring data before compilation; the compiler writes generated artifacts into
+the pack directory. A generated artifact must be reproducible from source.
+
+## 10. Reference-resolution contract
+
+All persisted document references use the following convention:
+
+```
+reference
+    |
+    v
+resolveDocumentReference(reference, expectedType)
+    |
+    v
+validate expected document type
+    |
+    v
+use resolved document
+```
+
+Content/application code must not duplicate `fromUuid()` calls. The resolver
+also accepts an already-resolved Document, which makes custom content and tests
+easier to support without weakening type validation.
 
 ## 6. Refactoring principles
 
