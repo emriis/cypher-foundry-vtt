@@ -10,7 +10,6 @@ import {
   CRD_CYPHER_FIXTURE,
   CRD_ARMOR_FIXTURE,
   CRD_SKILL_FIXTURE,
-  CRD_CREATURE_FIXTURE,
   CRD_TIERED_ABILITY_FIXTURE,
   CRD_FIXTURES
 } from "../fixtures/crd-source-fixtures.mjs";
@@ -102,66 +101,75 @@ test("Adhesion Bomb preserves manifest cypher power classification", () => {
 });
 
 
-test("Leather jacket preserves the CRD armor category and price", () => {
-  const system = CRD_ARMOR_FIXTURE.system;
-
-  assert.equal(system.category, "light");
-  assert.equal(system.priceCategory, "moderate");
-  assert.equal(system.blockEaseDamage, 0);
+test("Armor, skill, and tiered ability preserve their CRD identity", () => {
+  assert.equal(CRD_ARMOR_FIXTURE.crdType, "armor");
+  assert.equal(CRD_SKILL_FIXTURE.crdType, "skill");
+  assert.equal(CRD_TIERED_ABILITY_FIXTURE.crdType, "ability");
+  assert.equal(CRD_SKILL_FIXTURE.name, "Attacking");
 });
 
 test("Attacking preserves its CRD tier restriction", () => {
   assert.equal(CRD_SKILL_FIXTURE.system.minimumTier, 2);
   assert.equal(CRD_SKILL_FIXTURE.system.level, "trained");
+  assert.equal(CRD_SKILL_FIXTURE.system.attackCategory, "");
 });
-
-test("Giant spider preserves its mapped NPC mechanics", () => {
-  const system = CRD_CREATURE_FIXTURE.system;
-
-  assert.equal(system.level, 3);
-  assert.equal(system.health.max, 12);
-  assert.equal(system.damage, "3 + 1 Speed damage from poison");
-  assert.match(system.modifications, /level 5/);
-  assert.match(system.modifications, /level 4/);
-});
-
-test("Always Tinkering preserves real tier-three and tier-six effects", () => {
-  const effects = CRD_TIERED_ABILITY_FIXTURE.system.effects;
-
-  assert.deepEqual(
-    effects.map(effect => effect.tier),
-    [3, 6]
-  );
-  assert.match(effects[0].description, /medium-power manifest cypher/);
-  assert.match(effects[1].description, /advanced-power manifest cypher/);
-});
-
 
 test("Leather jacket preserves its CRD armor category and price", () => {
   const system = CRD_ARMOR_FIXTURE.system;
 
-  assert.equal(CRD_ARMOR_FIXTURE.crdType, "armor");
   assert.equal(system.category, "light");
   assert.equal(system.priceCategory, "moderate");
   assert.equal(system.blockEaseDamage, 0);
 });
 
-test("Attacking preserves its CRD tier restriction", () => {
-  const system = CRD_SKILL_FIXTURE.system;
-
-  assert.equal(CRD_SKILL_FIXTURE.crdType, "skill");
-  assert.equal(CRD_SKILL_FIXTURE.name, "Attacking");
-  assert.equal(system.minimumTier, 2);
-  assert.equal(system.attackCategory, "");
-});
-
-test("Always Tinkering preserves tier 3 and tier 6 effects", () => {
+test("Brew Potion preserves its tier-three and tier-six effects", () => {
   const effects = CRD_TIERED_ABILITY_FIXTURE.system.effects;
 
   assert.deepEqual(
     effects.map(effect => effect.tier),
-    [3, 6]
+    [null, 3, 6]
   );
-  assert.match(effects[0].description, /medium-power manifest cypher/);
-  assert.match(effects[1].description, /advanced-power manifest cypher/);
+  assert.match(effects[1].description, /low or medium-power manifest cypher/);
+  assert.match(
+    effects[2].description,
+    /low, medium-, or advanced-power manifest cypher/
+  );
+});
+
+test("CRD fixture identities and provenance remain stable", () => {
+  const ids = CRD_FIXTURES.map(record => record._id);
+  const logicalIds = CRD_FIXTURES.map(
+    record => record.flags.cypherFoundry.crd.logicalId
+  );
+
+  assert.equal(new Set(ids).size, ids.length);
+  assert.equal(new Set(logicalIds).size, logicalIds.length);
+
+  for (const record of CRD_FIXTURES) {
+    const provenance = record.flags.cypherFoundry.crd;
+
+    assert.equal(provenance.version, "2026-07-29");
+    assert.equal(provenance.language, "en");
+    assert.deepEqual(
+      provenance.transformations,
+      ["structural field mapping only"]
+    );
+    assert.match(provenance.sourceLocator, /\S/);
+  }
+});
+
+test("CRD item references resolve within the fixture set", () => {
+  const fixtureIds = new Set(CRD_FIXTURES.map(record => record._id));
+
+  for (const record of CRD_FIXTURES) {
+    const references = JSON.stringify(record.system)
+      .match(/!items![a-zA-Z0-9]{16}/g) || [];
+
+    for (const reference of references) {
+      assert.ok(
+        fixtureIds.has(reference.slice("!items!".length)),
+        `${record.name} contains a dangling fixture reference: ${reference}`
+      );
+    }
+  }
 });
