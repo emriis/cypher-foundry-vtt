@@ -214,27 +214,37 @@ function abilityRef(language, ability, entries, canonicalAbilities) {
   return `Compendium.cypher.${PACKS[language].abilities}.Item.${id}`;
 }
 
-async function rewriteTypes(language, entries, canonicalAbilities) {
+async function rewriteTypes(language, entries, canonicalAbilities, canonicalDocuments) {
   const directory = path.join(root, "packs", PACKS[language].types, "_source");
 
   for (const { name, data } of await readDocuments(PACKS[language].types)) {
     if (data._key.startsWith("!folders!")) continue;
 
-    data.system.abilities = (data.system.abilities ?? [])
+    const sourceDocument = language === "fr"
+      ? canonicalDocuments.get(name)
+      : data;
+    const sourceAbilities = sourceDocument?.system?.abilities ?? [];
+
+    data.system.abilities = sourceAbilities
       .map(ability => abilityRef(language, ability, entries, canonicalAbilities));
 
     await writeDocument(directory, name, data);
   }
 }
 
-async function rewriteFoci(language, entries, canonicalAbilities) {
+async function rewriteFoci(language, entries, canonicalAbilities, canonicalDocuments) {
   const directory = path.join(root, "packs", PACKS[language].foci, "_source");
 
   for (const { name, data } of await readDocuments(PACKS[language].foci)) {
     if (data._key.startsWith("!folders!")) continue;
 
-    const abilities = data.system.abilities ?? [];
-    const refs = abilities.map(ability => abilityRef(language, ability, entries, canonicalAbilities));
+    const sourceDocument = language === "fr"
+      ? canonicalDocuments.get(name)
+      : data;
+    const abilities = sourceDocument?.system?.abilities ?? [];
+    const refs = abilities.map(ability =>
+      abilityRef(language, ability, entries, canonicalAbilities)
+    );
     const byId = new Map();
 
     abilities.forEach((ability, index) => {
@@ -267,10 +277,10 @@ const canonicalAbilities = await collectCanonicalAbilities();
 const english = await createAbilityPack("en", canonicalAbilities);
 const french = await createAbilityPack("fr", canonicalAbilities);
 
-await rewriteTypes("en", english.entries, canonicalAbilities);
-await rewriteFoci("en", english.entries, canonicalAbilities);
-await rewriteTypes("fr", french.entries, canonicalAbilities);
-await rewriteFoci("fr", french.entries, canonicalAbilities);
+await rewriteTypes("en", english.entries, canonicalAbilities, new Map((await readDocuments(PACKS.en.types)).map(({ name, data }) => [name, data])));
+await rewriteFoci("en", english.entries, canonicalAbilities, new Map((await readDocuments(PACKS.en.foci)).map(({ name, data }) => [name, data])));
+await rewriteTypes("fr", french.entries, canonicalAbilities, new Map((await readDocuments(PACKS.en.types)).map(({ name, data }) => [name, data])));
+await rewriteFoci("fr", french.entries, canonicalAbilities, new Map((await readDocuments(PACKS.en.foci)).map(({ name, data }) => [name, data])));
 
 const variants = [...english.names.entries()]
   .filter(([, values]) => values.length > 1)
