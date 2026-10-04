@@ -81,13 +81,15 @@ Development tooling belongs in `scripts/`; GitHub automation belongs in
 
 | Automation | Trigger | Purpose |
 | --- | --- | --- |
-| `.github/workflows/test.yml` | Push and pull request | Runs `npm test` |
+| `.github/workflows/test.yml` | Push and pull request | Checks E2E JavaScript syntax and runs `npm test` |
 | `.github/workflows/build-packs.yml` | Pack source/build changes | Rebuilds and commits LevelDB compendium packs |
 | `.github/workflows/release.yml` | Tag matching `v*` | Tests, checks version/tag parity, packages, publishes GitHub release |
 | `scripts/build-packs.mjs` | `npm run build:packs` | Compiles all six LevelDB packs from `_source/` |
 | `scripts/package.ps1` | `npm run package` | Creates local release artifacts in `dist/` |
 
-Do not commit `dist/`, lock files, or LevelDB logs. The compiled LevelDB database files in
+Do not commit `dist/`, transient LevelDB lock/LOG files, or other generated temporary files.
+The tracked `package-lock.json` is part of the repository and should be updated when npm
+dependencies change. The compiled LevelDB database files in
 `packs/<pack-name>/` are generated but intentionally tracked because Foundry loads those files
 at runtime.
 

@@ -11,6 +11,8 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ### Changed
 
+- Updated project documentation to reflect the current six-pack compendium layout,
+  live E2E harness, and current CI/release workflow.
 - Improved Type compendium sheets with the description first and localized displays for Type benefits and abilities.
 - Improved Focus and Descriptor compendium sheets with the description first and structured displays of their abilities, prerequisites, choices, and grants.
 - Fixed empty Focus ability lists, low-contrast section headings, missing Focus type labels, and an unavailable image in the Grows to Towering Heights / Deviens colossal Focus.
@@ -160,9 +162,11 @@ First documented state of the system.
 
 ### Known limitations
 
-- These fixes and mechanics were validated by code review against Foundry's official API
-  documentation, but have not yet been tested inside a live Foundry instance.
+- The deterministic test suite runs in CI, while live Foundry E2E tests require a locally
+  activated Foundry installation and are not part of the standard GitHub-hosted CI job.
+- Runtime-affecting changes still require disposable-world validation before their Foundry
+  compatibility can be considered verified.
 
-[Unreleased]: https://github.com/emriis/cypher-foundry-vtt/compare/v0.1.3...HEAD
+[Unreleased]: https://github.com/emriis/cypher-foundry-vtt/compare/v0.1.7...HEAD
 [0.1.3]: https://github.com/emriis/cypher-foundry-vtt/compare/v0.1.2...v0.1.3
 [0.1.1]: https://github.com/emriis/cypher-foundry-vtt/releases/tag/0.1.1
