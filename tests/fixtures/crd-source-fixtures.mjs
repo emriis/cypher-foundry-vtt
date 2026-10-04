@@ -25,7 +25,7 @@ function provenance(logicalId, sourceLocator, sourceKind = "record") {
     logicalId,
     language: "en",
     sourceKind,
-    section: "Representative CRD fixture",
+    section: "CRD representative source section",
     sourceLocator,
     transformations: ["structural field mapping only"]
   };
@@ -92,7 +92,7 @@ export const CRD_ABILITY_FIXTURE = item(
       "Edge and your Speed Edge. This effect lasts as long as you wish, " +
       "but it ends if no combat is taking place within range of your senses."
   },
-  "Barbarian Abilities — Tier 1"
+  "Fantasy Genre — Barbarian Abilities — Tier 1 — Frenzy"
 );
 
 export const CRD_TYPE_FIXTURE = item(
@@ -126,7 +126,7 @@ export const CRD_TYPE_FIXTURE = item(
     ],
     statOptions: []
   },
-  "Barbarian Abilities"
+  "Fantasy Genre — Barbarian Abilities"
 );
 
 export const CRD_FOCUS_FIXTURE = item(
@@ -148,7 +148,7 @@ export const CRD_FOCUS_FIXTURE = item(
       "For brief periods, you become a fearsome and powerful creature with " +
       "control issues."
   },
-  "Howls at the Moon — Tier 1"
+  "Fantasy Genre — Howls at the Moon — Tier 1"
 );
 
 export const CRD_WEAPON_FIXTURE = item(
