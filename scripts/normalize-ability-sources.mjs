@@ -25,8 +25,8 @@ function stableId(value) {
     h2 = Math.imul(h2, 0x85ebca6b);
   }
   return (
-    (h1 >>> 0).toString(36).padStart(7, "0") +
-    (h2 >>> 0).toString(36).padStart(7, "0")
+    (h1 >>> 0).toString(36).padStart(8, "0") +
+    (h2 >>> 0).toString(36).padStart(8, "0")
   ).slice(0, 16);
 }
 
