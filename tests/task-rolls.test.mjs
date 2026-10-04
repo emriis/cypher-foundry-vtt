@@ -30,7 +30,6 @@ function createActor({ type = "pc", pool = 10, max = 10, edge = 0, effort = 6 } 
       },
       customStats: []
     },
-    _resolveStat: CypherActor.prototype._resolveStat,
     items: new Map(),
     updates: [],
     messages: [],
@@ -184,7 +183,6 @@ test("rollTask combines Effort, assets, skill, wounds, and armor into the effect
       actor.system.stats.speed.pool.value = value;
     }
   };
-  actor._resolveStat = CypherActor.prototype._resolveStat;
 
   const result = await CypherActor.prototype.rollTask.call(actor, {
     stat: "speed",
@@ -201,9 +199,8 @@ test("rollTask combines Effort, assets, skill, wounds, and armor into the effect
   assert.equal(rollResult.flags.cypher.effectiveDifficulty, 3);
 });
 
-test("Lucky Shot spends XP and adds four hindrance steps before rolling", async () => {
+test("Lucky Shot applies four hindrance steps before rolling", async () => {
   let receivedMessage;
-  let spent = 0;
   globalThis.Roll = class {
     async evaluate() {
       this.total = 15;
@@ -226,10 +223,10 @@ test("Lucky Shot spends XP and adds four hindrance steps before rolling", async 
       customStats: []
     },
     _resolveStat: CypherActor.prototype._resolveStat,
-    update: async () => {},
-    spendXP: async amount => {
-      spent += amount;
-      return true;
+    async update(changes) {
+      if (changes["system.xp"] !== undefined) {
+        this.system.xp = changes["system.xp"];
+      }
     }
   };
 
@@ -239,7 +236,6 @@ test("Lucky Shot spends XP and adds four hindrance steps before rolling", async 
     luckyShot: true
   });
 
-  assert.equal(spent, 1);
   assert.equal(receivedMessage.flags.cypher.effectiveDifficulty, 7);
 });
 

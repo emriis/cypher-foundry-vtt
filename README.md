@@ -6,6 +6,57 @@ Le guide de contribution, avec les flux séparés pour l'implémentation, les
 compendiums, la CI et les releases, se trouve dans
 [`docs/development.md`](docs/development.md).
 
+## Architecture for contributors
+
+The system is being refactored incrementally toward a clear separation of concerns:
+
+```
+Foundry documents / sheets
+          |
+          v
+application services
+          |
+          v
+pure Cypher rules
+          |
+          v
+configuration and source data
+```
+
+During Phase 3, the main gameplay use cases have been extracted into
+`module/applications/`. The Actor API remains available as a compatibility
+facade, so existing sheets and macros do not need to change just because the
+implementation moves.
+
+The current application boundaries are:
+
+- `task-service.mjs`: task rolls, Effort/Pool transactions, defense outcomes, and chat output.
+- `recovery-service.mjs`: recoveries and Rally.
+- `advancement-service.mjs`: advancement purchases and tier transitions.
+- `character-service.mjs`: XP spending, rerolls, Player Intrusions, and custom character data.
+- `damage-service.mjs`: wounds, damage, shields, armor damage/repair, and token statuses.
+- `reference-resolver.mjs`: the common boundary for resolving and validating document references.
+
+The deterministic rules remain in `module/rules/` and must not depend on Foundry globals.
+When adding a new feature, read [`docs/architecture.md`](docs/architecture.md) and
+[`docs/development.md`](docs/development.md) before deciding where the code belongs.
+
+### Compendium source of truth
+
+The bilingual compendiums follow the same separation:
+
+```
+packs/*/_source/
+      |
+      | migration / normalization / build
+      v
+Foundry LevelDB packs
+```
+
+Edit only the paired English/French `_source/` records. The LevelDB files are generated
+artifacts that Foundry loads at runtime. A gameplay refactor normally does **not** require
+rebuilding compendiums unless the content schema or compiled pack contents actually change.
+
 ## 🇫🇷 À propos
 
 Ce système est construit à partir du **Cypher Reference Document (CRD)** publié par

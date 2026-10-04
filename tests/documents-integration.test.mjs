@@ -56,10 +56,6 @@ test("applyDamage converts pool overflow into a wound and synchronizes statuses"
       dead: false
     },
     statuses,
-    _resolveStat: CypherActor.prototype._resolveStat,
-    _convertDamageToWound: CypherActor.prototype._convertDamageToWound,
-    addWound: CypherActor.prototype.addWound,
-    _syncWoundStatusEffects: CypherActor.prototype._syncWoundStatusEffects,
     update: async changes => { updates.push(changes); applyUpdate(actor, changes); },
     toggleStatusEffect: async (status, { active }) => active ? statuses.add(status) : statuses.delete(status)
   };
@@ -297,10 +293,6 @@ test("rollDefense integration applies a wound on a failed defense", async () => 
     },
     items: new Map(),
     updates: [],
-    _resolveStat: CypherActor.prototype._resolveStat,
-    _convertDamageToWound: CypherActor.prototype._convertDamageToWound,
-    addWound: CypherActor.prototype.addWound,
-    _syncWoundStatusEffects: async () => {},
     update: async changes => {
       actor.updates.push(changes);
       applyUpdate(actor, changes);
@@ -317,7 +309,6 @@ test("rollDefense integration applies a wound on a failed defense", async () => 
   };
 
   actor.rollTask = CypherActor.prototype.rollTask;
-  actor._resolveStat = CypherActor.prototype._resolveStat;
     const result = await CypherActor.prototype.rollDefense.call(actor, "dodge", {
     difficulty: 3,
     incomingSeverity: "moderate"
