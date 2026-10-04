@@ -132,31 +132,46 @@ instead of becoming the home for every rule.
 
 ### 3.3 Rules
 
-A future `module/rules/` layer should contain pure Cypher mechanics such as
-task-step calculation, Effort cost, wound severity/cascading, defense
-resolution, recovery calculations, advancement calculations, Focus graph
-eligibility, and other deterministic rule calculations.
+The `module/rules/` layer contains pure Cypher mechanics such as task-step
+calculation, Effort cost, wound severity/cascading, defense resolution,
+recovery calculations, advancement calculations, Focus graph eligibility, and
+other deterministic rule calculations.
 
-Rules should not depend on Foundry globals such as `game`, `ui`,
+Rules must not depend on Foundry globals such as `game`, `ui`,
 `ChatMessage`, `Actor`, or `Item`.
 
 ### 3.4 Application services
 
 The `module/applications/` layer contains Foundry-aware use cases that combine
 documents with pure rules. It is the boundary between Foundry orchestration and
-the Cypher rule core. For example, `task-service.mjs` owns dice, Pool/XP
-transactions, chat output, and wound application while delegating deterministic
-calculations to `module/rules/tasks.mjs`.
+the Cypher rule core.
 
-A future `module/applications/` or `module/services/` layer should contain
-operations that combine domain rules with Foundry documents.
+The first extracted application services are:
 
-Examples include applying a Type, applying a Focus, selecting a Focus ability,
-applying a Descriptor, creating an embedded ability from a referenced ability,
-resolving a compendium reference, and executing an advancement.
+1. `applications/task-service.mjs` for task-roll orchestration.
+2. `applications/recovery-service.mjs` for recovery and Rally orchestration.
+3. `applications/advancement-service.mjs` for advancement purchases and tier
+   transitions.
+4. `applications/reference-resolver.mjs` for centralized document-reference
+   resolution and expected-type validation.
 
-These operations may use Foundry APIs, but they should not contain the
-low-level mathematical rule calculations themselves.
+These services own Foundry-specific orchestration such as dice evaluation,
+document updates, Pool/XP transactions, and chat output while delegating
+deterministic calculations to `module/rules/`.
+
+Actor methods remain stable compatibility facades for sheets, macros, and other
+callers while application services are introduced. For example:
+
+```js
+await actor.rollTask(options);
+```
+
+remains a public operation while its application use case is implemented by
+`applications/task-service.mjs`.
+
+The remaining Actor responsibilities must still be assessed. A responsibility
+should be extracted when doing so removes a meaningful application concern from
+the document; behavior that is genuinely document-owned may remain there.
 
 ### 3.5 Sheets
 
@@ -242,21 +257,28 @@ unit tests in addition to the existing Actor integration tests.
 
 ### Phase 3 — Refactor Actor orchestration
 
-Move reusable operations out of `CypherActor` while keeping Actor methods as
-stable facades for sheets and macros.
+Phase 3 is in progress. Foundry-aware use cases are being extracted into
+`module/applications/` while Actor methods remain stable compatibility
+facades for sheets, macros, and other callers.
 
-For example:
+The first extracted application services are:
 
-```js
-await actor.rollTask(options);
-```
+1. `applications/task-service.mjs` for task-roll orchestration.
+2. `applications/recovery-service.mjs` for recovery and Rally orchestration.
+3. `applications/advancement-service.mjs` for advancement purchases and tier
+   transitions.
 
-may remain the public operation while deterministic calculations move to the
-rules layer.
+These services own Foundry-specific orchestration such as dice evaluation,
+document updates, Pool/XP transactions, and chat output. Deterministic
+calculations remain delegated to `module/rules/`.
+
+The phase is not complete until the remaining substantial Actor application
+responsibilities have been assessed and either extracted or explicitly
+documented as document-owned behavior.
 
 ### Phase 4 — Refactor Type/Focus/Ability application
 
-The runtime reference boundary is now established by
+The runtime reference boundary is established by
 `applications/reference-resolver.mjs`:
 
 1. Resolve a UUID or accept an already-resolved document.
@@ -264,7 +286,7 @@ The runtime reference boundary is now established by
 3. Return only valid documents to the caller.
 4. Keep direct `fromUuid()` calls out of application/content consumers.
 
-Complete the standalone ability runtime boundary:
+The remaining Type/Focus/Descriptor work should then use that boundary:
 
 1. Resolve Type/Focus UUID references through the centralized resolver.
 2. Validate the resolved Item type.
@@ -287,8 +309,6 @@ compatibility transforms.
 
 The target test taxonomy is:
 
-
-
 ```
 tests/
   rules/
@@ -300,10 +320,36 @@ tests/
   e2e/
 ```
 
-The exact directory split should happen only after the production boundaries
+This is a target organization, not a claim that all tests have already been
+moved. The directory split should happen only after the production boundaries
 are established, to avoid moving tests without improving their meaning.
 
-### 8. Domain organization
+## 6. Refactoring principles
+
+- No broad rewrite.
+- One architectural concern per pull request where practical.
+- Preserve behavior unless the PR explicitly changes it.
+- Prefer pure functions over static methods when no document state is needed.
+- Keep Foundry-specific code at the boundaries.
+- Keep CRD-derived rules separate from editorial content.
+- Use synthetic fixtures for rule tests.
+- Use real compendium data for content-contract tests.
+- Keep live Foundry E2E tests separate from normal Node tests.
+- Do not introduce abstractions merely because they look architecturally
+  elegant; introduce them when they remove a real dependency or responsibility.
+
+## 7. Immediate next step
+
+Continue Phase 3 by assessing the remaining substantial responsibilities in
+`module/documents/actor.mjs`. For each responsibility, identify its callers,
+tests, Foundry dependencies, and whether it is better expressed as an
+application service, a pure rule, or genuinely document-owned behavior.
+
+Once that assessment and the remaining useful Phase 3 extractions are complete,
+Phase 4 can continue the Type/Focus/Descriptor application refactor using the
+centralized reference resolver.
+
+## 8. Domain organization
 
 Production code should be organized by architectural responsibility and domain,
 not by the historical order in which features were added.
@@ -325,8 +371,9 @@ module/
   sheets/
 ```
 
-A rule belongs in a domain module when its behavior is deterministic and does
-not require Foundry state. Application modules may cross domains when
+This is a target structure, not a requirement to move every existing file
+immediately. A rule belongs in a domain module when its behavior is deterministic
+and does not require Foundry state. Application modules may cross domains when
 implementing a complete use case, but individual rule modules should remain
 focused.
 
@@ -373,24 +420,3 @@ use resolved document
 Content/application code must not duplicate `fromUuid()` calls. The resolver
 also accepts an already-resolved Document, which makes custom content and tests
 easier to support without weakening type validation.
-
-## 6. Refactoring principles
-
-- No broad rewrite.
-- One architectural concern per pull request where practical.
-- Preserve behavior unless the PR explicitly changes it.
-- Prefer pure functions over static methods when no document state is needed.
-- Keep Foundry-specific code at the boundaries.
-- Keep CRD-derived rules separate from editorial content.
-- Use synthetic fixtures for rule tests.
-- Use real compendium data for content-contract tests.
-- Keep live Foundry E2E tests separate from normal Node tests.
-- Do not introduce abstractions merely because they look architecturally
-  elegant; introduce them when they remove a real dependency or responsibility.
-
-## 7. Immediate next step
-
-The next implementation PR should refactor Actor orchestration around the pure
-rules established in Phase 2. Before moving a responsibility, identify its
-current callers and tests. Actor methods should remain stable compatibility
-facades until callers have been migrated to the new application boundaries.
