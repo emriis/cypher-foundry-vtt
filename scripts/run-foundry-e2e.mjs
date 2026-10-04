@@ -13,6 +13,7 @@ import {
 import { spawn } from "node:child_process";
 import os from "node:os";
 import path from "node:path";
+import { findApplication } from "./foundry-discovery.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const PORT = Number(process.env.FOUNDRY_PORT || 30000);
@@ -47,7 +48,6 @@ function getSourceDataPath() {
   );
 }
 
-import { findApplication } from "./foundry-discovery.mjs";
 
 async function readCoreVersion(appPath) {
   const candidate = path.join(
