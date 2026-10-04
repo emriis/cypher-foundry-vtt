@@ -32,7 +32,7 @@ architectural responsibilities.
 ### 2.1 Actor document is the primary refactoring target
 
 `module/documents/actor.mjs` remains the primary refactoring target. It still owns
-Foundry document lifecycle, stat resolution, defense mapping, Type/Focus/Descriptor
+Foundry document lifecycle, defense mapping, compatibility facades for content
 application, ability behavior, and some document-specific character behavior.
 Task rolls, recovery, advancement, XP transactions, rerolls, Player Intrusions,
 wounds, damage, shields, armor damage, and custom character fields have been
@@ -159,6 +159,8 @@ The extracted application services are:
    and wound-related token statuses.
 6. `applications/reference-resolver.mjs` for centralized document-reference
    resolution and expected-type validation.
+7. `applications/content-service.mjs` for Type, Focus, Focus-ability selection,
+   and Descriptor/species application.
 
 These services own Foundry-specific orchestration such as dice evaluation,
 document updates, Pool/XP transactions, and chat output while delegating
@@ -285,12 +287,15 @@ These services own Foundry-specific orchestration such as dice evaluation,
 document updates, resource transactions, chat output, and token/item updates.
 Deterministic calculations remain delegated to `module/rules/`.
 
-The remaining substantial Actor responsibilities have been assessed. Type,
-Focus, Descriptor, and standalone ability application are intentionally deferred
-to Phase 4 because they require the reference-resolution boundary established
-by `applications/reference-resolver.mjs`.
+The remaining Type, Focus, and Descriptor responsibilities are now being moved
+through the Phase 4 content application boundary. The Actor keeps compatibility
+facades while the application service resolves standalone ability Documents.
 
 ### Phase 4 — Refactor Type/Focus/Ability application
+
+Phase 4 is in progress. Type, Focus, Focus-ability selection, and Descriptor
+application now live in `applications/content-service.mjs`; the Actor only
+provides compatibility facades for these operations.
 
 The runtime reference boundary is established by
 `applications/reference-resolver.mjs`:
@@ -303,6 +308,7 @@ The runtime reference boundary is established by
 The remaining Type/Focus/Descriptor work should then use that boundary:
 
 1. Resolve Type/Focus UUID references through the centralized resolver.
+   The application service now rejects missing or wrong-type ability references.
 2. Validate the resolved Item type.
 3. Evaluate Focus flowchart edges separately from ability data.
 4. Apply standalone ability mechanics.
@@ -354,13 +360,12 @@ are established, to avoid moving tests without improving their meaning.
 
 ## 7. Immediate next step
 
-Complete the Phase 3 verification pass: keep the Actor facades covered by tests,
-check for accidental direct application logic left in the document, verify that
-application services no longer depend on private Actor helpers, and verify
-that the extracted services are documented and independently testable.
+Complete the Phase 4 verification pass: add focused application-service tests,
+verify that all Type/Focus ability references are resolved through the centralized
+resolver, and check that no content-application orchestration remains in Actor.
 
-Then Phase 4 can continue the Type/Focus/Descriptor application refactor using
-the centralized reference resolver. Do not move Type/Focus/Descriptor logic into
+Then the remaining Phase 4 cleanup can cover any compatibility-only helpers before
+Phase 5 reduces sheet responsibilities. Do not move Type/Focus/Descriptor logic into
 the new character or damage services merely to make the Actor smaller; those
 operations have a separate content/reference boundary.
 
