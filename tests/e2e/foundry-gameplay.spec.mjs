@@ -1,8 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { joinAsGamemaster } from "./foundry-session.mjs";
 
-const FOUNDRY_URL =
-  process.env.FOUNDRY_URL || "http://127.0.0.1:30000";
 const ACTOR_PREFIX = "E2E Cypher";
 
 async function createActor(page, overrides = {}) {
