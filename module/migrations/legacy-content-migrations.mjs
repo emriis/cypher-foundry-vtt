@@ -97,9 +97,9 @@ export function inferLegacyAbilityAction(ability) {
     .replace(/<[^>]+>/g, " ")
     .trim();
 
-  if (/\\bFirst action\\.\\s*$/i.test(text)) return "firstAction";
-  if (/\\bLast action\\.\\s*$/i.test(text)) return "lastAction";
-  if (/\\bAction\\.\\s*$/i.test(text)) return "action";
+  if (/\bFirst action\.\s*$/i.test(text)) return "firstAction";
+  if (/\bLast action\.\s*$/i.test(text)) return "lastAction";
+  if (/\bAction\.\s*$/i.test(text)) return "action";
 
   return null;
 }
