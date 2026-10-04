@@ -1,48 +1,9 @@
 import { test, expect } from "@playwright/test";
+import { joinAsGamemaster } from "./foundry-session.mjs";
 
 const FOUNDRY_URL =
   process.env.FOUNDRY_URL || "http://127.0.0.1:30000";
 const ACTOR_PREFIX = "E2E Cypher";
-
-async function joinAsGamemaster(page) {
-  await page.goto(FOUNDRY_URL);
-
-  if (await page.locator('select').count()) {
-    const userSelect = page.locator("select").first();
-    const option = userSelect.locator("option").filter({
-      hasText: /game\s*master/i
-    });
-
-    if (await option.count()) {
-      const value = await option.first().getAttribute("value");
-      await userSelect.selectOption(value);
-    }
-
-    const password = page.locator(
-      'input[type="password"], input[name*="password" i]'
-    ).first();
-
-    if (await password.count()) {
-      await password.fill("");
-    }
-
-    const joinButton = page.getByRole("button", {
-      name: /join game( session)?/i
-    });
-
-    if (await joinButton.count()) {
-      await joinButton.click();
-    } else {
-      await page.locator('input[type="submit"]').click();
-    }
-  }
-
-  await page.waitForFunction(
-    () => globalThis.game?.ready === true,
-    null,
-    { timeout: 60_000 }
-  );
-}
 
 async function createActor(page, overrides = {}) {
   return page.evaluate(async ({ prefix, overrides }) => {
