@@ -14,6 +14,16 @@ import { resolveDocumentReferences } from "./reference-resolver.mjs";
  */
 
 /**
+ * Resolve referenced content abilities for presentation or application use.
+ *
+ * @param {Array<string|object>} references Ability UUID references.
+ * @returns {Promise<object[]>} Resolved standalone Ability documents.
+ */
+export async function resolveContentAbilities(references = []) {
+  return resolveDocumentReferences(references, "ability");
+}
+
+/**
  * Return the Focus abilities currently available to the character.
  *
  * This keeps Focus graph traversal out of presentation code while leaving
