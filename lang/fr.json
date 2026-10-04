@@ -1,8 +1,20 @@
 {
   "TYPES": {
+    "Actor": {
+      "pc": "Personnage joueur",
+      "npc": "PNJ",
+      "community": "Communauté"
+    },
     "Item": {
-      "type": "Type",
-      "focus": "Focus",
+      "skill": "Compétence",
+      "ability": "Aptitude",
+      "cypher": "Cypher",
+      "artifact": "Artefact",
+      "oddity": "Curiosité",
+      "equipment": "Équipement",
+      "attack": "Attaque",
+      "armor": "Armure",
+      "shield": "Bouclier",
       "descriptor": "Descripteur"
     }
   },
@@ -20,13 +32,11 @@
     "Identified": "Identifié(e)",
     "CypherLimit": "Limite de cyphers",
     "AdditionalAbilities": "Aptitudes supplémentaires",
-
     "Sheet": {
       "PC": "Fiche de personnage",
       "NPC": "Fiche de PNJ",
       "Community": "Fiche de Communauté"
     },
-
     "Tab": {
       "main": "Principal",
       "skills": "Compétences",
@@ -35,7 +45,6 @@
       "advancement": "Avancement",
       "biography": "Biographie"
     },
-
     "CharacterLine": {
       "Prefix": "Je suis un(e)",
       "Middle": "qui",
@@ -66,7 +75,6 @@
     "Species": "Espèce",
     "SpeciesPlaceholder": "ex. Humain, Elfe, Cyborg... (optionnel)",
     "ResourcePoints": "Points de Ressource",
-
     "Genre": {
       "Label": "Genre de jeu",
       "none": "Non spécifié",
@@ -77,13 +85,11 @@
       "custom": "Personnalisé (tous les champs)",
       "RealWorldHint": "Monde réel : pas de Type ni de Focus — un descripteur et une profession suffisent. Par défaut, les personnages sont inaptes à utiliser les armes moyennes et lourdes, sauf si une compétence de fond compense cette inaptitude."
     },
-
     "Superhero": {
       "Rank": "Rang du Type (1-5)",
       "PowerShifts": "Amplificateurs de Pouvoir",
       "Hint": "Chaque catégorie est limitée à trois amplificateurs. En règle générale, un amplificateur équivaut à un niveau d'Effort gratuit et permanent pour les tâches concernées. Dans ce genre, les tâches peuvent atteindre la difficulté 15."
     },
-
     "PowerShift": {
       "accuracy": "Précision (jets d'attaque)",
       "dexterity": "Dextérité (esquive, défense de Célérité, mouvement, acrobaties, initiative)",
@@ -98,7 +104,6 @@
       "singleAttack": "Attaque unique (un type d'attaque précis)",
       "strength": "Force (athlétisme, dégâts de mêlée)"
     },
-
     "Stat": {
       "Label": "Caractéristique",
       "might": "Puissance",
@@ -113,7 +118,6 @@
       "PoolValue": "Valeur actuelle",
       "PoolMax": "Maximum"
     },
-
     "Armor": {
       "Title": "Armure",
       "Category": "Catégorie",
@@ -140,7 +144,6 @@
       "BlockEaseDamage": "Dégâts au bonus de Blocage",
       "ItemHint": "Coche « Équipé » pour rendre cette armure active sur la fiche du personnage. Une seule armure peut être équipée à la fois — équiper celle-ci désactive automatiquement les autres."
     },
-
     "Wound": {
       "Title": "Blessures",
       "minor": "Mineure",
@@ -155,7 +158,6 @@
       "HinderedStatus": "Entravé",
       "DeadStatus": "Mort"
     },
-
     "Recovery": {
       "Title": "Récupérations",
       "action": "Une action",
@@ -166,7 +168,6 @@
       "RemovesOneModerate": "Retire une blessure modérée.",
       "RemovesAllModerateReminder": "Retire toutes les blessures modérées. (Une blessure majeure peut être retirée avec un jet de Puissance difficulté 6 réussi — à gérer manuellement.)"
     },
-
     "Skill": {
       "New": "Nouvelle compétence",
       "Level": "Niveau d'entraînement"
@@ -186,7 +187,6 @@
       "Practiced": "Familier(e)",
       "None": "Aucune"
     },
-
     "CustomField": {
       "Title": "Champs libres",
       "Hint": "Ajoute n'importe quel élément propre à ton personnage, non prévu par le système (statut, réputation, allié, dette, etc.).",
@@ -200,20 +200,22 @@
       "checkbox": "Case à cocher",
       "ConfirmDelete": "Retirer définitivement ce champ libre ?"
     },
-
     "Ability": {
       "New": "Nouvelle aptitude",
       "Source": "Origine (Type/Focus/Avancement)",
       "CostStat": "Coût",
       "Action": "Action requise",
-      "ActionNone": "Aucune",
+      "ActionNone": "Aucune action",
       "ActionStandard": "Action",
       "ActionMovement": "Mouvement",
       "ChooseEffect": "Choisir un effet",
       "Effort": "Effort",
       "RollTable": "Table de résolution",
       "InvalidRollTable": "Table de résolution d'aptitude invalide",
-      "NoRollTableResult": "Aucun résultat ne correspond au résultat du dé."
+      "NoRollTableResult": "Aucun résultat ne correspond au résultat du dé.",
+      "ActionFirst": "Première action",
+      "ActionLast": "Dernière action",
+      "ActionEnabler": "Enabler"
     },
     "Cypher": {
       "Title": "Cyphers",
@@ -225,12 +227,10 @@
       "Use": "Utiliser",
       "Used": "Ce cypher a été utilisé et est maintenant épuisé."
     },
-
     "Artifact": {
       "Title": "Artefacts",
       "Form": "Forme"
     },
-
     "Depletion": {
       "Die": "Dé d'épuisement",
       "Threshold": "Seuil",
@@ -245,11 +245,9 @@
       "Hint": "Quand tu utilises cet artefact, clique sur le dé pour lancer son jet d'épuisement. \"Ne s'épuise jamais\" correspond à la mention « — » du CRD.",
       "EquipmentHint": "Cet équipement utilise un épuisement plutôt qu'une quantité fixe (comme une trousse de secours ou de l'aspirine dans le CRD)."
     },
-
     "Oddity": {
       "Title": "Curiosités"
     },
-
     "Equipment": {
       "Title": "Équipement",
       "Quantity": "Quantité",
@@ -261,7 +259,6 @@
       "medium": "Moyen",
       "heavy": "Lourd"
     },
-
     "Attack": {
       "Title": "Attaques",
       "Type": "Type d'attaque",
@@ -294,11 +291,9 @@
       "medium": "Moyenne (4 dégâts)",
       "heavy": "Lourde (6 dégâts)"
     },
-
     "Item": {
       "New": "Nouveau : {type}"
     },
-
     "Descriptor": {
       "Label": "Descripteur",
       "StandardCategory": "Descripteur",
@@ -393,7 +388,6 @@
       "SkillGranted": "Compétence entraînée : {name}.",
       "SkillUpgraded": "{name} passe au niveau {level}."
     },
-
     "Import": {
       "Button": "Importer (Character Builder)",
       "Title": "Importer un export du Character Builder",
@@ -408,7 +402,6 @@
       "UnsupportedType": "Objet « {name} » ({type}) : ce type d'objet n'est pas encore pris en charge par l'import, il a été ignoré.",
       "ItemFailed": "Objet « {name} » : échec de l'import ({error})."
     },
-
     "Roll": {
       "Roll": "Lancer",
       "Task": "Jet de tâche",
@@ -439,7 +432,6 @@
       "CostRefunded": "Le coût de l'action a été remboursé (20 naturel).",
       "Rallied": "{name} se reprend et retire une blessure {severity}."
     },
-
     "Defense": {
       "Block": "Bloquer",
       "Dodge": "Esquiver",
@@ -449,7 +441,6 @@
       "DodgeSuccess": "Esquive réussie : la blessure est entièrement évitée.",
       "Failed": "Défense échouée : blessure {severity} subie."
     },
-
     "Shield": {
       "Title": "Boucliers",
       "SheetHint": "Tout personnage peut utiliser un bouclier librement, quel que soit son Type. Sur un Blocage réussi, choisis de réduire la blessure d'un cran comme d'habitude, ou de la faire absorber entièrement par un bouclier équipé.",
@@ -460,7 +451,6 @@
       "BrokenNote": "{name} a subi sa blessure majeure et est détruit.",
       "BrokenLabel": "Détruit"
     },
-
     "XP": {
       "Label": "XP",
       "Title": "Points d'Expérience",
@@ -475,7 +465,6 @@
       "LuckyShotHint": "entravé de 4 paliers",
       "LuckyShotHint2": "Coup de chance (1 XP) : disponible directement dans la boîte de dialogue d'un jet d'attaque, pour tenter d'attaquer à l'aveugle."
     },
-
     "Advancement": {
       "Title": "Avancement du personnage",
       "Hint": "Choisis un type d'avancement pour chacun des quatre emplacements du rang actuel, puis achète-les (4 XP chacun). Une fois les quatre avancements achetés, le personnage passe automatiquement au rang suivant.",
@@ -513,7 +502,6 @@
       "AllCategories": "toutes catégories",
       "AllWeaponsFree": "Toute arme utilisable librement"
     },
-
     "NPC": {
       "Level": "Niveau",
       "TargetNumber": "Nombre cible",
@@ -529,17 +517,14 @@
       "ApplyDamage": "Appliquer des dégâts",
       "IgnoreArmor": "Ignorer l'armure"
     },
-
     "Community": {
       "Resources": "Ressources"
     },
-
     "Confirm": {
       "Delete": "Confirmer la suppression",
       "DeleteItem": "Supprimer définitivement « {name} » ?",
       "Add": "Ajouter"
     },
-
     "Warning": {
       "NotPC": "Seuls les personnages joueurs peuvent effectuer ce jet.",
       "NotEnoughPool": "Pas assez de points dans la réserve de {stat} pour cet effort.",
@@ -551,31 +536,10 @@
       "ChooseAdvancementType": "Choisis d'abord un type d'avancement pour cet emplacement.",
       "CapabilitiesMustSumFour": "La répartition doit totaliser exactement 4 points."
     },
-
     "Migration": {
       "Begin": "Cypher : migration des données du monde vers la version {version}. Merci de ne pas fermer le jeu...",
       "Complete": "Cypher : migration des données du monde vers la version {version} terminée.",
       "TooOld": "Vos données Cypher (version {version}) sont trop anciennes pour être migrées automatiquement. Merci de mettre à jour via des versions intermédiaires, ou de demander de l'aide."
-    }
-  },
-
-  "TYPES": {
-    "Actor": {
-      "pc": "Personnage joueur",
-      "npc": "PNJ",
-      "community": "Communauté"
-    },
-    "Item": {
-      "skill": "Compétence",
-      "ability": "Aptitude",
-      "cypher": "Cypher",
-      "artifact": "Artefact",
-      "oddity": "Curiosité",
-      "equipment": "Équipement",
-      "attack": "Attaque",
-      "armor": "Armure",
-      "shield": "Bouclier",
-      "descriptor": "Descripteur"
     }
   }
 }
