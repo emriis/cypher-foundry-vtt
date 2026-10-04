@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test",
+    "test": "npm run migrate:packs && node --test",
     "test:e2e": "node scripts/run-foundry-e2e.mjs",
     "build:packs": "node scripts/build-packs.mjs",
     "package": "npm run build:packs && pwsh -File scripts/package.ps1",
