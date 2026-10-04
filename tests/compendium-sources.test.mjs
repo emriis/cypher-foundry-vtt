@@ -45,6 +45,7 @@ function assertAbility(document, filename) {
   assert.equal(document.type, "ability", filename);
   const system = document.system;
   assert.match(system.key, /^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+  assert.match(system.variantKey, /^[A-Za-z0-9]{16}$/);
   assert.ok(document.name);
   assert.ok(system.description !== undefined);
   assert.ok(Number.isInteger(system.tier));
@@ -110,8 +111,10 @@ test("English and French ability packs keep matching mechanical documents", () =
   );
 
   for (const frDocument of fr.values()) {
-    const enDocument = byKey.get(frDocument.system.key);
-    assert.ok(enDocument, `Missing English ability for ${frDocument.system.key}`);
+    const enDocument = [...byKey.values()].find(document =>
+      document.system.variantKey === frDocument.system.variantKey
+    );
+    assert.ok(enDocument, `Missing English ability variant for ${frDocument.system.variantKey}`);
 
     assert.deepEqual(
       {
