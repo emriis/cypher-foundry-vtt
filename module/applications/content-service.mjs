@@ -30,7 +30,6 @@ async function applyTypeInternal(actor, typeItem, { stat = null, skillName = nul
   if (abilities.length !== (typeItem.system.abilities ?? []).length) {
     console.warn("Cypher | A Type or Focus references an unavailable ability.");
     return false;
-    return false;
   }
 
   const system = typeItem.system;
