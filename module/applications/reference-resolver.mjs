@@ -12,9 +12,20 @@
 export async function resolveDocumentReference(reference, expectedType) {
   if (!reference) return null;
 
-  const document = typeof reference === "string"
-    ? await fromUuid(reference).catch(() => null)
-    : reference;
+  let document;
+  if (typeof reference === "string") {
+    try {
+      document = await fromUuid(reference);
+    } catch (error) {
+      console.warn(
+        `Cypher | Failed to resolve document reference: ${reference}`,
+        error
+      );
+      return null;
+    }
+  } else {
+    document = reference;
+  }
 
   if (!document) return null;
   if (expectedType && document.type !== expectedType) return null;
