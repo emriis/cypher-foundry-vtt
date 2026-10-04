@@ -6,7 +6,7 @@ import { CYPHER } from "../config.mjs";
  * CypherItem and CypherActor use these fields when the player starts an attack
  * from the character sheet.
  */
-const { StringField, NumberField, HTMLField, BooleanField } = foundry.data.fields;
+const { StringField, NumberField, HTMLField, BooleanField, ArrayField } = foundry.data.fields;
 
 export default class CypherAttackData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
