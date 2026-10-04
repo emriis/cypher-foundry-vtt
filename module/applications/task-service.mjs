@@ -13,6 +13,52 @@ import {
   resolveTaskDifficulty
 } from "../rules/tasks.mjs";
 import { resolveStat } from "../rules/stats.mjs";
+import { resolveDefense } from "../rules/defense.mjs";
+
+/**
+ * Roll a Block or Dodge defense through the common task engine.
+ *
+ * @param {Actor} actor PC Actor.
+ * @param {string} defenseType "block" or "dodge".
+ * @param {object} options Defense roll options.
+ * @returns {Promise<object|null>} Roll result.
+ */
+export async function rollDefense(
+  actor,
+  defenseType,
+  {
+    difficulty = 3,
+    effortLevels = 0,
+    assetSteps = 0,
+    incomingSeverity = "minor",
+    shieldItemId = null,
+    skillItemId = null
+  } = {}
+) {
+  if (actor.type !== "pc") return null;
+
+  const { stat, armorModifier } = resolveDefense(
+    defenseType,
+    actor.system.armor
+  );
+
+  return rollTask(actor, {
+    stat,
+    difficulty,
+    effortLevels,
+    assetSteps,
+    armorModifier,
+    skillItemId,
+    defenseType,
+    incomingSeverity,
+    shieldItemId,
+    flavor: game.i18n.localize(
+      defenseType === "block"
+        ? "CYPHER.Defense.Block"
+        : "CYPHER.Defense.Dodge"
+    )
+  });
+}
 
 /**
  * Execute a task roll at the Foundry application boundary.
