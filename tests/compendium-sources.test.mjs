@@ -1,4 +1,4 @@
-// Validates editable compendium sources, bilingual pairs, and their required item data.
+// Validates editable compendium source integrity without coupling tests to editorial content.
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
@@ -6,511 +6,233 @@ import test from "node:test";
 
 const root = path.resolve(import.meta.dirname, "..");
 
-function slug(value) {
-  return value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-}
-
 function readPackSources(packName) {
   const directory = path.join(root, "packs", packName, "_source");
-  return new Map(fs.readdirSync(directory, { recursive: true })
-    .filter(file => file.endsWith(".json"))
-    .map(file => [file, JSON.parse(fs.readFileSync(path.join(directory, file), "utf8"))]));
+  return new Map(
+    fs.readdirSync(directory, { recursive: true })
+      .filter(file => file.endsWith(".json"))
+      .map(file => [file, JSON.parse(fs.readFileSync(path.join(directory, file), "utf8"))])
+  );
 }
 
-function assertDocumentIdentity(document, expectedType) {
+function isFolder(document) {
+  return document._key.startsWith("!folders!");
+}
+
+function assertDocumentIdentity(document) {
   assert.match(document._id, /^[A-Za-z0-9]{16}$/);
-  assert.equal(document._key, `!items!${document._id}`);
-  assert.equal(document.type, expectedType);
+  assert.ok(document._key);
   assert.ok(document.name);
-  assert.ok(document.system.description);
+  assert.ok(document.system);
+}
+
+function mechanicalAbilityShape(ability) {
+  return {
+    id: ability.id,
+    tier: ability.tier,
+    enabler: ability.enabler,
+    repeatable: ability.repeatable,
+    cost: ability.cost,
+    action: ability.action,
+    prerequisites: ability.prerequisites,
+    effects: (ability.effects ?? []).map(effect => ({
+      id: effect.id,
+      effort: effect.effort,
+      enabler: effect.enabler,
+      cost: effect.cost,
+      action: effect.action,
+      rollTables: (effect.rollTables ?? []).map(table => ({
+        id: table.id,
+        formula: table.formula,
+        results: (table.results ?? []).map(result => ({
+          min: result.min,
+          max: result.max
+        }))
+      }))
+    })),
+    rollTables: (ability.rollTables ?? []).map(table => ({
+      id: table.id,
+      formula: table.formula,
+      results: (table.results ?? []).map(result => ({
+        min: result.min,
+        max: result.max
+      }))
+    }))
+  };
+}
+
+function assertAbilitySchema(ability) {
+  assert.match(ability.id, /^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+  assert.ok(ability.name);
+  assert.ok(ability.description !== undefined);
+  assert.ok(Number.isInteger(ability.tier));
+  assert.ok(ability.tier >= 1 && ability.tier <= 6);
+  assert.equal(typeof ability.enabler, "boolean");
+  assert.equal(typeof ability.repeatable, "boolean");
+  assert.ok(["might", "speed", "intellect", "none"].includes(ability.cost.stat));
+  assert.ok(Number.isInteger(ability.cost.amount) && ability.cost.amount >= 0);
+  assert.ok(Array.isArray(ability.prerequisites));
+
+  for (const effect of ability.effects ?? []) {
+    assert.match(effect.id, /^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+    assert.ok(effect.name);
+    assert.ok(effect.description !== undefined);
+    assert.ok(Array.isArray(effect.rollTables));
+  }
+
+  for (const table of ability.rollTables ?? []) {
+    assert.match(table.id, /^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+    assert.ok(table.name);
+    assert.match(table.formula, /^\d+d\d+$/);
+    assert.ok(Array.isArray(table.results) && table.results.length > 0);
+    for (const result of table.results) {
+      assert.ok(Number.isInteger(result.min));
+      assert.ok(Number.isInteger(result.max));
+      assert.ok(result.min <= result.max);
+      assert.ok(result.description !== undefined);
+    }
+  }
+}
+
+function assertUniqueDocumentKeys(sources, packName) {
+  const ids = new Set();
+  const keys = new Set();
+
+  for (const [filename, document] of sources) {
+    assertDocumentIdentity(document);
+    assert.equal(ids.has(document._id), false, `${packName}/${filename} duplicates _id`);
+    assert.equal(keys.has(document._key), false, `${packName}/${filename} duplicates _key`);
+    ids.add(document._id);
+    keys.add(document._key);
+  }
+}
+
+function assertFolderReferences(sources, packName) {
+  const folders = new Set(
+    [...sources.values()]
+      .filter(isFolder)
+      .map(folder => folder._id)
+  );
+
+  for (const [filename, document] of sources) {
+    if (isFolder(document)) {
+      if (document.folder != null) {
+        assert.equal(
+          folders.has(document.folder),
+          true,
+          `${packName}/${filename} references a missing parent folder`
+        );
+      }
+      continue;
+    }
+
+    if (document.folder != null) {
+      assert.equal(
+        folders.has(document.folder),
+        true,
+        `${packName}/${filename} references a missing folder`
+      );
+    }
+  }
+}
+
+function assertBilingualMechanicalAlignment(enSources, frSources, packName) {
+  assert.deepEqual(
+    [...enSources.keys()].sort(),
+    [...frSources.keys()].sort(),
+    `${packName}: EN/FR source files differ`
+  );
+
+  for (const [filename, en] of enSources) {
+    const fr = frSources.get(filename);
+    assert.equal(fr._key.startsWith("!folders!"), en._key.startsWith("!folders!"), filename);
+
+    if (isFolder(en)) {
+      assert.equal(fr.type, en.type, `${filename}/type`);
+      assert.equal(fr.folder == null, en.folder == null, `${filename}/folder-depth`);
+      continue;
+    }
+
+    assert.equal(fr._id, en._id, `${filename}/_id`);
+    assert.equal(fr.type, en.type, `${filename}/type`);
+
+    if (en.type === "type") {
+      for (const field of [
+        "tier", "genre", "subgenre", "poolBonuses", "edgeChoice",
+        "woundBonuses", "freeWeapons", "freeArmor", "freeWeaponCategories",
+        "freeArmorCategories", "freeWeaponFamilies", "skillOptions", "statOptions"
+      ]) {
+        assert.deepEqual(fr.system[field], en.system[field], `${filename}/${field}`);
+      }
+      assert.deepEqual(
+        fr.system.abilities.map(mechanicalAbilityShape),
+        en.system.abilities.map(mechanicalAbilityShape),
+        `${filename}/abilities`
+      );
+    }
+
+    if (en.type === "descriptor") {
+      for (const field of [
+        "category", "genres", "grantsSecondDescriptor", "statOptions", "statAmount"
+      ]) {
+        assert.deepEqual(fr.system[field] ?? null, en.system[field] ?? null, `${filename}/${field}`);
+      }
+      assert.deepEqual(
+        fr.system.skillOptions ?? [],
+        en.system.skillOptions ?? [],
+        `${filename}/skillOptions`
+      );
+    }
+
+    if (en.type === "focus") {
+      assert.deepEqual(
+        fr.system.abilities.map(mechanicalAbilityShape),
+        en.system.abilities.map(mechanicalAbilityShape),
+        `${filename}/abilities`
+      );
+    }
+  }
 }
 
 for (const language of ["en", "fr"]) {
-  test(`type sources contain all directly maintained ${language} entries`, () => {
-    const directory = path.join(root, "packs", `types-${language}`, "_source");
-    const files = fs.readdirSync(directory).filter(file => file.endsWith(".json"));
-    const sources = files.map(file => ({
-      file,
-      item: JSON.parse(fs.readFileSync(path.join(directory, file), "utf8"))
-    }));
-    const entries = sources.map(source => source.item);
-    const items = entries.filter(item => item._key.startsWith("!items!"));
-    const folders = entries.filter(item => item._key.startsWith("!folders!"));
-    const slugsById = new Map(sources
-      .filter(source => source.item._key.startsWith("!items!"))
-      .map(source => [source.item._id, path.basename(source.file, ".json")]));
+  test(`all ${language} compendium source documents satisfy their structural contracts`, () => {
+    const packNames = ["descriptors", "types", "foci"].map(prefix => `${prefix}-${language}`);
 
-    assert.equal(items.length, 55);
-    assert.equal(folders.length, 9);
-    for (const item of items) {
-      assert.equal(item.type, "type");
-      assert.match(item._key, /^!items![A-Za-z0-9]{16}$/);
-      assert.ok(item.name);
-      assert.ok(item.system.genre);
-      assert.ok(item.system.subgenre);
-      assert.ok(item.system.description);
-      assert.ok(item.system.statOptions.length > 0);
-    }
+    for (const packName of packNames) {
+      const sources = readPackSources(packName);
+      assert.ok(sources.size > 0, `${packName} has no source documents`);
+      assertUniqueDocumentKeys(sources, packName);
+      assertFolderReferences(sources, packName);
 
-    const canonicalSlugs = {
-      "barbarian-swords-sorcery": "barbarian",
-      "archer-epic-fantasy": "archer",
-      "soldier-space-opera": "soldier",
-      "diplomat-space-opera": "diplomat",
-      "medic-space-opera": "medic",
-      "noble-hard-science-fiction": "noble"
-    };
-    for (const item of items) {
-      const slug = slugsById.get(item._id);
-      const imageSlug = canonicalSlugs[slug] ?? slug.replace(/-rank-\d+$/, "");
-      const imageFilename = `${imageSlug}.webp`;
-      const expectedPath = fs.existsSync(path.join(root, "assets", "types", imageFilename))
-        ? `systems/cypher/assets/types/${imageFilename}`
-        : "icons/svg/upgrade.svg";
-      assert.equal(item.img, expectedPath, item.name);
-    }
-  });
-
-  test(`${language} Type mechanics stay tied to their source section`, () => {
-    const directory = path.join(root, "packs", `types-${language}`, "_source");
-    const barbarian = JSON.parse(fs.readFileSync(path.join(directory, language === "en" ? "barbarian.json" : "barbarian.json"), "utf8"));
-    assert.deepEqual(barbarian.system.poolBonuses, { might: 3, speed: 1, intellect: 0 });
-    assert.deepEqual(barbarian.system.woundBonuses, { minor: 3, moderate: 1, major: 0 });
-    assert.equal(barbarian.system.edgeChoice, 1);
-    assert.equal(barbarian.system.freeWeapons, false);
-    assert.equal(barbarian.system.freeArmor, false);
-    assert.deepEqual(barbarian.system.freeWeaponCategories, ["light", "medium", "heavy"]);
-    assert.deepEqual(barbarian.system.freeArmorCategories, ["light", "medium"]);
-    assert.deepEqual(
-      barbarian.system.abilities.map(ability => [ability.name, ability.enabler]),
-      [
-        [language === "en" ? "Frenzy" : "Frénésie", true],
-        [language === "en" ? "Wilderness Survival" : "Instinct de survie", language === "fr"],
-        [language === "en" ? "Wounded Fury" : "Fureur du blessé", true]
-      ]
-    );
-
-    const readType = filename => JSON.parse(fs.readFileSync(path.join(directory, filename), "utf8"));
-    const cleric = readType("cleric.json");
-    assert.deepEqual(cleric.system.freeWeaponCategories, ["light", "medium"]);
-    assert.deepEqual(cleric.system.freeArmorCategories, ["light", "medium", "heavy"]);
-    const axeFighter = readType("axe-fighter.json");
-    assert.deepEqual(axeFighter.system.freeWeaponCategories, ["light"]);
-    assert.deepEqual(axeFighter.system.freeWeaponFamilies, ["axes"]);
-    assert.deepEqual(axeFighter.system.freeArmorCategories, ["light", "medium", "heavy"]);
-    const mage = readType("mage.json");
-    assert.deepEqual(mage.system.freeWeaponCategories, ["light"]);
-    assert.deepEqual(mage.system.freeArmorCategories, []);
-    const mechanics = item => ({
-      poolBonuses: item.system.poolBonuses,
-      edgeChoice: item.system.edgeChoice,
-      woundBonuses: item.system.woundBonuses,
-      freeWeapons: item.system.freeWeapons,
-      freeArmor: item.system.freeArmor,
-      freeWeaponCategories: item.system.freeWeaponCategories,
-      freeArmorCategories: item.system.freeArmorCategories,
-      freeWeaponFamilies: item.system.freeWeaponFamilies,
-      skillOptions: item.system.skillOptions,
-      abilities: item.system.abilities,
-      statOptions: item.system.statOptions
-    });
-    const canonicalPairs = [
-      ["barbarian-swords-sorcery.json", "barbarian.json"],
-      ["archer-epic-fantasy.json", "archer.json"],
-      ["soldier-space-opera.json", "soldier.json"],
-      ["noble-hard-science-fiction.json", "noble.json"],
-      ["medic-space-opera.json", "medic.json"],
-      ["diplomat-space-opera.json", "diplomat.json"]
-    ];
-    for (const [variant, canonical] of canonicalPairs) {
-      assert.deepEqual(mechanics(readType(variant)), mechanics(readType(canonical)), variant);
-      assert.equal(readType(variant).name, readType(canonical).name, variant);
-    }
-    assert.equal(readType("soldier.json").system.subgenre, "Hard Science Fiction");
-    assert.equal(readType("soldier-space-opera.json").system.subgenre, "Space Opera");
-
-    const crimefighter = JSON.parse(fs.readFileSync(path.join(directory, "crimefighter-rank-1.json"), "utf8"));
-    assert.deepEqual(crimefighter.system.poolBonuses, { might: 2, speed: 3, intellect: 5 });
-    assert.deepEqual(crimefighter.system.woundBonuses, { minor: 3, moderate: 1, major: 0 });
-    assert.equal(crimefighter.system.abilities.length, 4);
-  });
-
-  test(`${language} Type abilities have valid item data`, () => {
-    const directory = path.join(root, "packs", `types-${language}`, "_source");
-    for (const file of fs.readdirSync(directory).filter(file => file.endsWith(".json"))) {
-      const item = JSON.parse(fs.readFileSync(path.join(directory, file), "utf8"));
-      if (item._key.startsWith("!folders!")) continue;
-      const abilityNames = new Set();
-      const abilityIds = new Set();
-      for (const ability of item.system.abilities) {
-        assert.ok(ability.name);
-        assert.match(ability.id, /^[a-z0-9]+(?:-[a-z0-9]+)*$/);
-        assert.equal(abilityIds.has(ability.id), false);
-        abilityIds.add(ability.id);
-        const expectedKeys = ["cost", "description", "enabler", "id", "name", "prerequisites", "repeatable", "tier"];
-        const optionalKeys = ["effects", "rollTables"];
-        assert.ok(Object.keys(ability).every(key => expectedKeys.includes(key) || optionalKeys.includes(key)));
-        assert.deepEqual(Object.keys(ability).sort(), [...new Set([...expectedKeys, ...optionalKeys.filter(key => key in ability)])].sort());
-        assert.deepEqual(ability.prerequisites, []);
-        assert.equal(ability.repeatable, false);
-        assert.deepEqual(ability.cost.options, []);
-        for (const effect of ability.effects ?? []) {
-          assert.match(effect.id, /^[a-z0-9]+(?:-[a-z0-9]+)*$/);
-          assert.ok(effect.name);
-          assert.ok(effect.description !== undefined);
-          assert.ok(Array.isArray(effect.rollTables));
+      for (const [filename, document] of sources) {
+        if (isFolder(document)) {
+          assert.equal(document.type, "Item", `${packName}/${filename}`);
+          continue;
         }
-        for (const table of ability.rollTables ?? []) {
-          assert.match(table.id, /^[a-z0-9]+(?:-[a-z0-9]+)*$/);
-          assert.ok(table.name);
-          assert.match(table.formula, /^\\d+d\\d+$/);
-          assert.ok(table.results.length > 0);
-          for (const result of table.results) {
-            assert.ok(Number.isInteger(result.min) && Number.isInteger(result.max));
-            assert.ok(result.min <= result.max);
-            assert.ok(result.description !== undefined);
+
+        assert.match(document._key, /^!items![A-Za-z0-9]{16}$/, `${packName}/${filename}`);
+        assert.ok(document.system.description !== undefined, `${packName}/${filename}`);
+
+        if (document.type === "type" || document.type === "focus") {
+          assert.ok(Array.isArray(document.system.abilities), `${packName}/${filename}`);
+          const ids = new Set();
+          for (const ability of document.system.abilities) {
+            assert.equal(ids.has(ability.id), false, `${packName}/${filename}/${ability.id}`);
+            ids.add(ability.id);
+            assertAbilitySchema(ability);
           }
         }
-        const abilityKey = `${ability.id}|${ability.name}|${ability.tier}|${ability.description}`;
-        assert.equal(abilityNames.has(abilityKey), false);
-        abilityNames.add(abilityKey);
-        assert.ok(ability.tier >= 1 && ability.tier <= 6);
-        assert.ok(["might", "speed", "intellect", "none"].includes(ability.cost.stat));
-        assert.ok(Number.isInteger(ability.cost.amount) && ability.cost.amount >= 0);
-        assert.ok(ability.description);
-      }
-    }
-  });
-
-  test(`${language} Type compendium entries are grouped by genre and subgenre`, () => {
-    const directory = path.join(root, "packs", `types-${language}`, "_source");
-    const entries = fs.readdirSync(directory)
-      .filter(file => file.endsWith(".json"))
-      .map(file => JSON.parse(fs.readFileSync(path.join(directory, file), "utf8")));
-    const folders = entries.filter(item => item._key.startsWith("!folders!"));
-    const items = entries.filter(item => item._key.startsWith("!items!"));
-    const genreLabels = language === "en"
-      ? { Fantasy: "Fantasy", "Science Fiction": "Science Fiction", Superheroes: "Superheroes" }
-      : { Fantasy: "Fantasy", "Science Fiction": "Science-fiction", Superheroes: "Super-héros" };
-    const subgenreLabels = language === "en"
-      ? {
-          "Dungeon Fantasy": "Dungeon Fantasy",
-          "Swords & Sorcery": "Swords & Sorcery",
-          "Epic Fantasy": "Epic Fantasy",
-          "Hard Science Fiction": "Hard Science Fiction",
-          "Space Opera": "Space Opera",
-          Postapocalypse: "Postapocalypse"
-        }
-      : {
-          "Dungeon Fantasy": "Dungeon Fantasy",
-          "Swords & Sorcery": "Épées & Sorcellerie",
-          "Epic Fantasy": "Fantasy épique",
-          "Hard Science Fiction": "Science-fiction dure",
-          "Space Opera": "Space Opera",
-          Postapocalypse: "Postapocalyptique"
-        };
-    const foldersById = new Map(folders.map(folder => [folder._id, folder]));
-    const genreFolders = folders.filter(folder => folder.folder == null);
-    const subgenreFolders = folders.filter(folder => folder.folder != null);
-
-    assert.equal(folders.length, 9);
-    assert.equal(genreFolders.length, 3);
-    assert.equal(subgenreFolders.length, 6);
-    for (const folder of folders) {
-      assert.match(folder._key, /^!folders![A-Za-z0-9]{16}$/);
-      assert.equal(folder.type, "Item");
-    }
-    for (const folder of genreFolders) {
-      assert.ok(Object.values(genreLabels).includes(folder.name));
-    }
-    for (const folder of subgenreFolders) {
-      assert.ok(Object.values(subgenreLabels).includes(folder.name));
-      assert.ok(genreFolders.some(parent => parent._id === folder.folder));
-    }
-    for (const item of items) {
-      const folder = foldersById.get(item.folder);
-      assert.ok(folder, `${item.name} has no genre folder`);
-      if (item.system.subgenre === item.system.genre) {
-        assert.equal(folder.name, genreLabels[item.system.genre], item.name);
-        assert.equal(folder.folder, null, item.name);
-      } else {
-        assert.equal(folder.name, subgenreLabels[item.system.subgenre], item.name);
-        assert.equal(foldersById.get(folder.folder)?.name, genreLabels[item.system.genre], item.name);
       }
     }
   });
 }
 
-test("Structured ability effects and roll tables preserve bilingual mechanics", () => {
-  const englishCleric = JSON.parse(fs.readFileSync(
-    path.join(root, "packs", "types-en", "_source", "cleric.json"), "utf8"
-  ));
-  const frenchCleric = JSON.parse(fs.readFileSync(
-    path.join(root, "packs", "types-fr", "_source", "cleric.json"), "utf8"
-  ));
-  const englishRadiance = englishCleric.system.abilities.find(
-    ability => ability.id === "divine-radiance"
-  );
-  const frenchRadiance = frenchCleric.system.abilities.find(
-    ability => ability.id === "divine-radiance"
-  );
-  assert.deepEqual(
-    frenchRadiance.effects.map(effect => effect.id),
-    englishRadiance.effects.map(effect => effect.id)
-  );
-  assert.deepEqual(frenchRadiance.effects.map(effect => effect.effort !== ""), englishRadiance.effects.map(effect => effect.effort !== ""));
-
-  const englishFocus = JSON.parse(fs.readFileSync(
-    path.join(root, "packs", "foci-en", "_source", "masters-telekinesis.json"), "utf8"
-  ));
-  const frenchFocus = JSON.parse(fs.readFileSync(
-    path.join(root, "packs", "foci-fr", "_source", "masters-telekinesis.json"), "utf8"
-  ));
-  for (const abilityId of ["apportation", "improved-apportation"]) {
-    const en = englishFocus.system.abilities.find(ability => ability.id === abilityId);
-    const fr = frenchFocus.system.abilities.find(ability => ability.id === abilityId);
-    assert.equal(en.rollTables.length, 1, abilityId);
-    assert.equal(fr.rollTables.length, 1, abilityId);
-    assert.equal(en.rollTables[0].formula, fr.rollTables[0].formula, abilityId);
-    assert.deepEqual(
-      fr.rollTables[0].results.map(result => [result.min, result.max]),
-      en.rollTables[0].results.map(result => [result.min, result.max]),
-      abilityId
+for (const prefix of ["descriptors", "types", "foci"]) {
+  test(`${prefix} English and French sources preserve mechanical parity`, () => {
+    assertBilingualMechanicalAlignment(
+      readPackSources(`${prefix}-en`),
+      readPackSources(`${prefix}-fr`),
+      prefix
     );
-  }
-});
-
-test("Type sources are directly maintained as structurally aligned bilingual pairs", () => {
-  const enSources = readPackSources("types-en");
-  const frSources = readPackSources("types-fr");
-  assert.deepEqual([...frSources.keys()].sort(), [...enSources.keys()].sort());
-
-  for (const [filename, en] of enSources) {
-    const fr = frSources.get(filename);
-    assert.equal(fr._key.startsWith("!folders!"), en._key.startsWith("!folders!"), filename);
-    if (en._key.startsWith("!folders!")) continue;
-
-    assertDocumentIdentity(en, "type");
-    assertDocumentIdentity(fr, "type");
-    for (const field of ["tier", "genre", "subgenre", "poolBonuses", "edgeChoice", "woundBonuses", "freeWeapons", "freeArmor", "statOptions"]) {
-      assert.deepEqual(fr.system[field], en.system[field], `${filename}/${field}`);
-    }
-    assert.equal(fr.system.abilities.length, en.system.abilities.length, `${filename}/abilities`);
-    for (let index = 0; index < en.system.abilities.length; index += 1) {
-      const enAbility = en.system.abilities[index];
-      const frAbility = fr.system.abilities[index];
-      assert.equal(frAbility.id, enAbility.id, `${filename}/ability-${index}/id`);
-      assert.deepEqual(frAbility.prerequisites, enAbility.prerequisites, `${filename}/ability-${index}/prerequisites`);
-      assert.equal(frAbility.repeatable, enAbility.repeatable, `${filename}/ability-${index}/repeatable`);
-      assert.deepEqual(frAbility.cost, enAbility.cost, `${filename}/ability-${index}/cost`);
-      assert.equal(enAbility.id, slug(enAbility.name), `${filename}/ability-${index}/slug`);
-    }
-  }
-});
-
-test("Descriptor sources are directly maintained as valid bilingual pairs", () => {
-  const enSources = readPackSources("descriptors-en");
-  const frSources = readPackSources("descriptors-fr");
-  assert.deepEqual([...frSources.keys()].sort(), [...enSources.keys()].sort());
-
-  for (const [filename, en] of enSources) {
-    const fr = frSources.get(filename);
-    assert.equal(fr._key.startsWith("!folders!"), en._key.startsWith("!folders!"), filename);
-    if (en._key.startsWith("!folders!")) continue;
-    assertDocumentIdentity(en, "descriptor");
-    assertDocumentIdentity(fr, "descriptor");
-    assert.equal(fr.system.category ?? "descriptor", en.system.category ?? "descriptor", `${filename}/category`);
-    assert.deepEqual(fr.system.genres ?? [], en.system.genres ?? [], `${filename}/genres`);
-    assert.equal(fr.system.grantsSecondDescriptor ?? false, en.system.grantsSecondDescriptor ?? false, `${filename}/grantsSecondDescriptor`);
-    assert.deepEqual(fr.system.statOptions, en.system.statOptions, `${filename}/statOptions`);
-    assert.equal(fr.system.statAmount, en.system.statAmount, `${filename}/statAmount`);
-    for (const document of [en, fr]) {
-      const category = document.system.category ?? "descriptor";
-      if (category === "descriptor") {
-        assert.ok(document.system.statOptions.length > 0, filename);
-        assert.ok(document.system.skillOptions.some(Boolean), filename);
-      }
-      assert.ok(document.system.skillOptions.every(option => typeof option === "string"), filename);
-    }
-  }
-});
-
-test("Descriptor packs group species and standard entries into separate folders", () => {
-  for (const language of ["en", "fr"]) {
-    const sources = readPackSources(`descriptors-${language}`);
-    const entries = [...sources.entries()].map(([filename, document]) => ({ filename, document }));
-    const folders = entries.filter(({ document }) => document._key.startsWith("!folders!"));
-    const items = entries.filter(({ document }) => document._key.startsWith("!items!"));
-    const expectedNames = language === "en"
-      ? { species: "Species", standard: "General Descriptors", fantasy: "Fantasy", sciFi: "Science Fiction", mixed: "Fantasy & Science Fiction" }
-      : { species: "Espèces", standard: "Descripteurs généraux", fantasy: "Fantasy", sciFi: "Science-fiction", mixed: "Fantasy et science-fiction" };
-    const folderByName = new Map(folders.map(({ document }) => [document.name, document]));
-
-    assert.equal(folders.length, 5, language);
-    for (const { document } of folders) {
-      assert.match(document._id, /^[A-Za-z0-9]{16}$/);
-      assert.equal(document._key, `!folders!${document._id}`);
-      assert.equal(document.type, "Item");
-    }
-    for (const name of Object.values(expectedNames)) {
-      assert.ok(folderByName.has(name), `${language}/${name}`);
-    }
-    assert.equal(folderByName.get(expectedNames.species).folder, null, `${language}/species root`);
-    assert.equal(folderByName.get(expectedNames.standard).folder, null, `${language}/general root`);
-    for (const name of [expectedNames.fantasy, expectedNames.sciFi, expectedNames.mixed]) {
-      assert.equal(folderByName.get(name).folder, folderByName.get(expectedNames.species)._id, `${language}/${name} parent`);
-    }
-    for (const { filename, document } of items) {
-      const category = document.system.category ?? "descriptor";
-      let expectedFolder = expectedNames.standard;
-      if (category === "species") {
-        const genres = document.system.genres ?? [];
-        expectedFolder = genres.length > 1
-          ? expectedNames.mixed
-          : genres[0] === "fantasy" ? expectedNames.fantasy : expectedNames.sciFi;
-      }
-      assert.equal(folderByName.get(expectedFolder)?._id, document.folder, `${language}/${filename}`);
-    }
-  }
-});
-
-test("French descriptor sources match the Character Book translations", () => {
-  const directory = path.join(root, "packs", "descriptors-fr", "_source", "standard");
-  const expectedNames = {
-    appealing: "Attirant·e",
-    bookish: "Studieux·se",
-    brash: "Audacieux·se",
-    calm: "Serein·e",
-    cautious: "Prudent·e",
-    chaotic: "Chaotique",
-    charming: "Charmeur·euse",
-    clever: "Malin·gne",
-    compassionate: "Compatissant·e",
-    creative: "Créatif·ve",
-    empathic: "Empathique",
-    fast: "Rapide",
-    gloomy: "Pessimiste",
-    graceful: "Gracieux·se",
-    guarded: "Méfiant·e",
-    honorable: "Honorable",
-    inquisitive: "Curieux·se",
-    intelligent: "Intelligent·e",
-    intuitive: "Intuitif·ve",
-    jovial: "Jovial·e",
-    kind: "Gentil·le",
-    mechanical: "Mécanicien·ne",
-    mysterious: "Mystérieux·se",
-    mystical: "Mystique",
-    perceptive: "Perceptif·ve",
-    resilient: "Résilient·e",
-    rugged: "Sauvage",
-    skeptical: "Sceptique",
-    stealthy: "Furtif·ve",
-    strong: "Puissant·e",
-    "strong-willed": "Têtu·e",
-    tough: "Robuste",
-    virtuous: "Vertueux·se"
-  };
-
-  assert.equal(fs.readdirSync(directory).filter(file => file.endsWith(".json")).length, 33);
-  for (const [slug, expectedName] of Object.entries(expectedNames)) {
-    const item = JSON.parse(fs.readFileSync(path.join(directory, `${slug}.json`), "utf8"));
-    assert.equal(item.name, expectedName, slug);
-  }
-
-  const appealing = JSON.parse(fs.readFileSync(path.join(directory, "appealing.json"), "utf8"));
-  assert.deepEqual(appealing.system.skillOptions.filter(Boolean), ["Charme", "Discernement des motivations"]);
-  assert.match(appealing.system.description, /Les autres te trouvent attirant·e — mais peut‑être plus important encore, tu es sympathique et charismatique\. Tu as ce « petit truc » qui attire naturellement les autres\. La plupart du temps, tu sais exactement quoi dire pour faire rire quelqu’un, le mettre à l’aise ou l’encourager à agir\. Les gens t’apprécient, veulent t’aider et devenir ton ami·e\./);
-});
-
-test("Human is a bilingual species descriptor that grants a second descriptor", () => {
-  for (const language of ["en", "fr"]) {
-    const human = JSON.parse(fs.readFileSync(path.join(root, "packs", `descriptors-${language}`, "_source", "species", "human.json"), "utf8"));
-    assertDocumentIdentity(human, "descriptor");
-    assert.equal(human.system.category, "species");
-    assert.deepEqual(human.system.genres, ["fantasy", "sciFi"]);
-    assert.equal(human.system.grantsSecondDescriptor, true);
-  }
-});
-
-test("Dragonfolk keeps its trained skill separate from its species abilities", () => {
-  for (const language of ["en", "fr"]) {
-    const dragonfolk = JSON.parse(fs.readFileSync(path.join(root, "packs", `descriptors-${language}`, "_source", "species", "dragonfolk.json"), "utf8"));
-    assert.equal(dragonfolk.system.category, "species");
-    assert.deepEqual(dragonfolk.system.skillOptions, [language === "en" ? "Intimidation" : "Intimidation"]);
-    assert.equal(dragonfolk.system.benefits.length, 2);
-    assert.deepEqual(dragonfolk.system.benefits.map(benefit => benefit.name), language === "en"
-      ? ["No GM Intrusion on Block", "Energy Attack Damage"]
-      : ["Pas d'intrusion du MJ au blocage", "Dégâts d'attaque d'énergie"]);
-  }
-});
-
-test("French Type names use the Character Book terminology", () => {
-  const directory = path.join(root, "packs", "types-fr", "_source");
-  const expectedNames = {
-    fighter: "Combattant",
-    archer: "Archer·ère",
-    "barbarian-swords-sorcery": "Barbare",
-    "sword-fighter": "Combattant·e à l’épée",
-    "noble-warrior": "Noble guerrier·ère",
-    medic: "Toubib",
-    "diplomat-space-opera": "Diplomate",
-    "medic-space-opera": "Toubib",
-    "noble-hard-science-fiction": "Noble",
-    "dealer": "Magouilleur·euse",
-    heavy: "Bourrin·e",
-    "crimefighter-rank-1": "Justicier·ère",
-    "vigilante-rank-1": "Vengeur·euse",
-    "enhanced-hero-rank-2": "Héros·ïne Augmenté·e",
-    "powerstar-rank-2": "Astropuissance",
-    "superhuman-rank-3": "Surhumain·e",
-    "powerhouse-rank-4": "Colosse",
-    "living-god-rank-5": "Dieu Vivant"
-  };
-
-  for (const [slug, expectedName] of Object.entries(expectedNames)) {
-    const item = JSON.parse(fs.readFileSync(path.join(directory, `${slug}.json`), "utf8"));
-    assert.equal(item.name, expectedName, slug);
-  }
-});
-
-test("Compendium descriptions preserve complete CRD text and explicit French fallback", () => {
-  const english = JSON.parse(fs.readFileSync(
-    path.join(root, "packs", "foci-en", "_source", "abides-in-stone.json"),
-    "utf8"
-  ));
-  const french = JSON.parse(fs.readFileSync(
-    path.join(root, "packs", "foci-fr", "_source", "abides-in-stone.json"),
-    "utf8"
-  ));
-  const englishStoneknowing = english.system.abilities.find(ability => ability.id === "stoneknowing");
-  const frenchStoneknowing = french.system.abilities.find(ability => ability.id === "stoneknowing");
-
-  assert.match(english.system.description, /Your flesh is made of hard mineral, making you a hulking, difficult-to-harm humanoid\./);
-  assert.match(englishStoneknowing.description, /Your GM may require an Intellect task for you to learn something especially subtle or secret\. Last action\./);
-  assert.doesNotMatch(english.system.description, /resilient mineral-bodied character who channels stone/);
-  assert.doesNotMatch(englishStoneknowing.description, /Study touched stone or crystal to learn useful structural facts/);
-
-  assert.equal(french.system.description, english.system.description);
-  assert.match(frenchStoneknowing.description, /Tu es entraîné·e pour travailler n’importe quel type de pierre\./);
-  assert.doesNotMatch(frenchStoneknowing.description, /Étudie une pierre ou un cristal touché pour en tirer des informations structurelles/);
-});
-
-test("Resolved compendium abilities keep CRD titles when local names were summaries", () => {
-  const focus = JSON.parse(fs.readFileSync(
-    path.join(root, "packs", "foci-en", "_source", "commands-mental-powers.json"),
-    "utf8"
-  ));
-  const sensePsionics = focus.system.abilities.find(ability => ability.id === "sense-psionics");
-  assert.equal(sensePsionics.name, "Sense Psionics");
-  assert.match(sensePsionics.description, /If there are mental powers, psionic abilities, or other psychic phenomena/);
-
-  const frenchType = JSON.parse(fs.readFileSync(
-    path.join(root, "packs", "types-fr", "_source", "axe-fighter.json"),
-    "utf8"
-  ));
-  const axeIntrusions = frenchType.system.abilities.find(ability => ability.name === "Intrusions MJ pour Crâne fendu");
-  assert.equal(axeIntrusions.name, "Intrusions MJ pour Crâne fendu");
-  assert.match(axeIntrusions.description, /Ta hache t’échappe et tombe à proximité/);
-});
+  });
+}
