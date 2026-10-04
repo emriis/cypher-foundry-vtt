@@ -117,7 +117,7 @@ export async function advanceTier(actor) {
     }
 
     await ChatMessage.create({
-      speaker: ChatMessage.getSpeaker({ actor: this }),
+      speaker: ChatMessage.getSpeaker({ actor }),
       content: `<div class="cypher-roll-card"><h3>${game.i18n.format("CYPHER.Advancement.TierReached", { tier: newTier })}</h3><p>${note}</p></div>`
     });
   }
