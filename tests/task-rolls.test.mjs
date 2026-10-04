@@ -197,7 +197,7 @@ test("rollTask combines Effort, assets, skill, wounds, and armor into the effect
   assert.equal(result.effectiveDifficulty, 3);
   assert.equal(result.targetNumber, 9);
   assert.equal(result.success, true);
-  assert.equal(actor.system.speed.pool.value, 6);
+  assert.equal(actor.system.stats.speed.pool.value, 6);
   assert.equal(rollResult.flags.cypher.effectiveDifficulty, 3);
 });
 
