@@ -22,7 +22,8 @@ export const CRD_CONTENT_TYPES = new Set([
   "shield",
   "skill",
   "type",
-  "weapon"
+  "weapon",
+  "creature"
 ]);
 
 export const CRD_SOURCE_KINDS = new Set([
@@ -74,19 +75,30 @@ export function validateCrdSourceRecord(record) {
     errors.push("Record _id must be a 16-character Foundry identifier.");
   }
 
-  if (record._key !== `!items!${record._id}`) {
-    errors.push("Record _key must match the Foundry item identifier.");
+  const expectedKeyPrefix = record.document === "Actor"
+    ? "!actors!"
+    : record.document === "JournalEntry"
+      ? "!journal!"
+      : "!items!";
+
+  if (record._key !== expectedKeyPrefix + record._id) {
+    errors.push("Record _key must match the Foundry document identifier.");
+  }
+
+  if (!["Item", "Actor", "JournalEntry"].includes(record.document)) {
+    errors.push("Record document must be Item, Actor, or JournalEntry.");
   }
 
   if (typeof record.name !== "string" || record.name.trim() === "") {
     errors.push("Record name must be a non-empty string.");
   }
 
-  if (
-    typeof record.type !== "string" ||
-    !CRD_CONTENT_TYPES.has(record.type)
-  ) {
-    errors.push(`Unsupported CRD content type: ${String(record.type)}.`);
+  if (typeof record.crdType !== "string" || !CRD_CONTENT_TYPES.has(record.crdType)) {
+    errors.push(`Unsupported CRD content type: ${String(record.crdType)}.`);
+  }
+
+  if (record.document === "Item" && typeof record.type !== "string") {
+    errors.push("Item records must define a Foundry item type.");
   }
 
   const provenance = getCrdProvenance(record);
