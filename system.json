@@ -33,13 +33,22 @@
   "documentTypes": {
     "Actor": {
       "pc": {
-        "htmlFields": ["biography", "notes"]
+        "htmlFields": [
+          "biography",
+          "notes"
+        ]
       },
       "npc": {
-        "htmlFields": ["biography", "notes"]
+        "htmlFields": [
+          "biography",
+          "notes"
+        ]
       },
       "community": {
-        "htmlFields": ["biography", "notes"]
+        "htmlFields": [
+          "biography",
+          "notes"
+        ]
       }
     },
     "Item": {
@@ -64,7 +73,22 @@
       "path": "packs/descriptors-fr",
       "type": "Item",
       "system": "cypher",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "abilities-fr",
+      "label": "Aptitudes (FR)",
+      "path": "packs/abilities-fr",
+      "type": "Item",
+      "system": "cypher",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -73,7 +97,10 @@
       "path": "packs/types-fr",
       "type": "Item",
       "system": "cypher",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -82,25 +109,10 @@
       "path": "packs/foci-fr",
       "type": "Item",
       "system": "cypher",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
-      "flags": {}
-    },
-    {
-      "name": "types-en",
-      "label": "Types (EN)",
-      "path": "packs/types-en",
-      "type": "Item",
-      "system": "cypher",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
-      "flags": {}
-    },
-    {
-      "name": "foci-en",
-      "label": "Foci (EN)",
-      "path": "packs/foci-en",
-      "type": "Item",
-      "system": "cypher",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     },
     {
@@ -109,7 +121,46 @@
       "path": "packs/descriptors-en",
       "type": "Item",
       "system": "cypher",
-      "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" },
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "abilities-en",
+      "label": "Abilities (EN)",
+      "path": "packs/abilities-en",
+      "type": "Item",
+      "system": "cypher",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "types-en",
+      "label": "Types (EN)",
+      "path": "packs/types-en",
+      "type": "Item",
+      "system": "cypher",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "foci-en",
+      "label": "Foci (EN)",
+      "path": "packs/foci-en",
+      "type": "Item",
+      "system": "cypher",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
       "flags": {}
     }
   ],
@@ -117,12 +168,22 @@
     {
       "name": "Français",
       "sorting": "a",
-      "packs": ["descriptors-fr", "types-fr", "foci-fr"]
+      "packs": [
+        "descriptors-fr",
+        "abilities-fr",
+        "types-fr",
+        "foci-fr"
+      ]
     },
     {
       "name": "English",
       "sorting": "a",
-      "packs": ["descriptors-en", "types-en", "foci-en"]
+      "packs": [
+        "descriptors-en",
+        "abilities-en",
+        "types-en",
+        "foci-en"
+      ]
     }
   ],
   "primaryTokenAttribute": "stats.might.pool",
@@ -140,11 +201,19 @@
     "cypher": {
       "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD). See https://col.montecookgames.com for license terms."
     },
-    "needsMigrationVersion": "0.1.7",
+    "needsMigrationVersion": "0.2.0",
     "compatibleMigrationVersion": "0.1.0",
     "hotReload": {
-      "extensions": ["css", "hbs", "json"],
-      "paths": ["css/cypher.css", "templates", "lang"]
+      "extensions": [
+        "css",
+        "hbs",
+        "json"
+      ],
+      "paths": [
+        "css/cypher.css",
+        "templates",
+        "lang"
+      ]
     }
   }
 }
