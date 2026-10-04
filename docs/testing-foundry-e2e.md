@@ -39,24 +39,25 @@ You do **not** need to open Foundry manually.
 The command performs this lifecycle:
 
 1. Finds the local Foundry executable.
-2. Creates a disposable `cypher-e2e` world using the current Cypher
-   `system.json` version.
-3. Temporarily installs the current checkout as
-   `Data/systems/cypher`, restoring any previous Cypher installation
-   afterwards.
+2. Creates an isolated temporary Foundry data directory and copies the
+   activated `Config/license.json` from the normal Foundry data directory.
+3. Creates a unique disposable Cypher world using the current `system.json`
+   version and installs the current checkout as `Data/systems/cypher` in that
+   isolated directory.
 4. Starts Foundry with that world using `--world`.
 5. Waits for the local server to become reachable.
 6. Playwright joins the fresh Gamemaster session.
 7. Runs the smoke and gameplay E2E suites.
 8. Stops Foundry.
-9. Deletes the disposable world.
-10. Restores the previously installed Cypher system.
+9. Deletes the entire temporary Foundry data directory, including the
+   disposable world. Your normal Foundry worlds and installed system are not
+   modified.
 
 Foundry documents that newly created worlds start with a Gamemaster account
 without a password, so the runner can join the fresh world without storing
 test credentials.
 
-### Windows paths
+### Custom data paths
 
 If Foundry is installed somewhere non-standard:
 
@@ -65,6 +66,20 @@ $env:FOUNDRY_APP_PATH = "D:\\Foundry Virtual Tabletop\\Foundry Virtual Tabletop.
 $env:FOUNDRY_DATA_PATH = "D:\\FoundryVTT"
 npm run test:e2e
 ```
+
+`FOUNDRY_DATA_PATH` identifies the real user-data directory from which the
+activated license is copied. It is never used as the E2E data directory.
+
+You can optionally choose a persistent disposable directory with
+`FOUNDRY_E2E_DATA_PATH`:
+
+```powershell
+$env:FOUNDRY_E2E_DATA_PATH = "D:\\FoundryVTT-E2E"
+npm run test:e2e
+```
+
+That directory is deleted and recreated for every run. If it is not set, the
+runner uses an automatically created system temporary directory.
 
 If your installation uses the default paths, these variables are not needed.
 
