@@ -625,3 +625,164 @@ test("selectFocusAbility stores and embeds the selected pending Focus ability", 
   assert.equal(actor.lastUpdate["flags.cypher.focusAbilityPendingTier"], null);
   assert.equal(actor.created[0].system.focusAbilityId, "golem-grip");
 });
+
+
+test("rollDefense maps Block and Dodge to the correct stat and armor modifier", async () => {
+  const actor = {
+    type: "pc",
+    system: { armor: { blockEase: 1, dodgeHinder: 2 } },
+    rollTask: async options => options
+  };
+
+  const block = await CypherActor.prototype.rollDefense.call(actor, "block", {
+    difficulty: 4,
+    incomingSeverity: "moderate"
+  });
+  assert.equal(block.stat, "might");
+  assert.equal(block.armorModifier, 1);
+  assert.equal(block.defenseType, "block");
+  assert.equal(block.incomingSeverity, "moderate");
+
+  const dodge = await CypherActor.prototype.rollDefense.call(actor, "dodge", {
+    difficulty: 5
+  });
+  assert.equal(dodge.stat, "speed");
+  assert.equal(dodge.armorModifier, -2);
+  assert.equal(dodge.defenseType, "dodge");
+});
+
+test("_shieldAbsorbWound cascades a full minor shield wound into moderate", async () => {
+  let update;
+  const shield = {
+    name: "Shield",
+    system: {
+      wounds: {
+        minor: { current: 3, max: 3 },
+        moderate: { current: 0, max: 2 },
+        major: { current: 0, max: 1 }
+      }
+    },
+    update: async changes => { update = changes; }
+  };
+  const actor = {
+    type: "pc",
+    name: "Test PC"
+  };
+
+  await CypherActor.prototype._shieldAbsorbWound.call(actor, shield, "minor");
+
+  assert.deepEqual(update, { "system.wounds.moderate.current": 1 });
+});
+
+test("usePlayerIntrusion spends XP only when the intrusion is accepted", async () => {
+  let spent = 0;
+  let message;
+  const actor = {
+    id: "actor-1",
+    type: "pc",
+    spendXP: async amount => {
+      spent += amount;
+      return true;
+    }
+  };
+  const originalCreate = ChatMessage.create;
+  ChatMessage.create = async data => { message = data; };
+
+  try {
+    await CypherActor.prototype.usePlayerIntrusion.call(actor, "Find a hidden passage.");
+  } finally {
+    ChatMessage.create = originalCreate;
+  }
+
+  assert.equal(spent, 1);
+  assert.match(message.content, /Find a hidden passage/);
+});
+
+test("damageArmor caps armor damage at its base Block bonus and repairArmor clears it", async () => {
+  let armorUpdate;
+  const armor = {
+    system: { blockEaseDamage: 1 },
+    update: async changes => { armorUpdate = changes; }
+  };
+  const actor = {
+    type: "pc",
+    name: "Test PC",
+    system: {
+      armor: { itemId: "armor-1", baseBlockEase: 2 }
+    },
+    items: new Map([["armor-1", armor]])
+  };
+
+  await CypherActor.prototype.damageArmor.call(actor, 5);
+  assert.deepEqual(armorUpdate, { "system.blockEaseDamage": 2 });
+
+  await CypherActor.prototype.repairArmor.call(actor);
+  assert.deepEqual(armorUpdate, { "system.blockEaseDamage": 0 });
+});
+
+test("NPC damage uses armor before reducing health and can ignore armor", async () => {
+  const updates = [];
+  const actor = {
+    type: "npc",
+    system: { armor: 2, health: { value: 10, max: 10 } },
+    update: async changes => {
+      updates.push(changes);
+      actor.system.health.value = changes["system.health.value"];
+    }
+  };
+
+  assert.equal(await CypherActor.prototype.applyDamage.call(actor, 5), 3);
+  assert.equal(actor.system.health.value, 7);
+
+  assert.equal(
+    await CypherActor.prototype.applyDamage.call(actor, 5, { ignoreArmor: true }),
+    5
+  );
+  assert.equal(actor.system.health.value, 2);
+  assert.deepEqual(updates, [
+    { "system.health.value": 7 },
+    { "system.health.value": 2 }
+  ]);
+});
+
+test("custom stats and fields reject invalid PC additions and preserve valid values", async () => {
+  const updates = [];
+  globalThis.foundry.utils.randomID = length => "abc123";
+  globalThis.ui = { notifications: { warn() {} } };
+
+  const actor = {
+    type: "pc",
+    system: {
+      customStats: [],
+      customFields: []
+    },
+    async update(changes) {
+      updates.push(changes);
+      Object.assign(this.system, {
+        customStats: changes["system.customStats"] ?? this.system.customStats,
+        customFields: changes["system.customFields"] ?? this.system.customFields
+      });
+    }
+  };
+
+  await CypherActor.prototype.addCustomStat.call(actor, "  Favour  ");
+  assert.deepEqual(actor.system.customStats, [{
+    id: "favour",
+    label: "Favour",
+    pool: { max: 8, value: 8 },
+    edge: 0
+  }]);
+
+  await CypherActor.prototype.addCustomStat.call(actor, "Favour");
+  assert.equal(updates.length, 1);
+
+  await CypherActor.prototype.addCustomField.call(actor, " Reputation ", "invalid");
+  assert.deepEqual(actor.system.customFields, [{
+    id: "field-abc123",
+    label: "Reputation",
+    fieldType: "text",
+    valueText: "",
+    valueNumber: 0,
+    valueBoolean: false
+  }]);
+});
