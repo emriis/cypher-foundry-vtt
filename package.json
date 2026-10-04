@@ -9,7 +9,9 @@
     "package": "npm run build:packs && pwsh -File scripts/package.ps1"
   },
   "dependencies": {
-    "@foundryvtt/foundryvtt-cli": "^3.0.4",
+    "@foundryvtt/foundryvtt-cli": "^3.0.4"
+  },
+  "devDependencies": {
     "@playwright/test": "^1.56.1"
   }
 }
