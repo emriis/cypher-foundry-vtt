@@ -2,15 +2,14 @@
 > migrate:abilities
 > node scripts/normalize-ability-sources.mjs
 
-file:///home/runner/work/cypher-foundry-vtt/cypher-foundry-vtt/scripts/normalize-ability-sources.mjs:209
-    throw new Error(
-          ^
+file:///home/runner/work/cypher-foundry-vtt/cypher-foundry-vtt/scripts/normalize-ability-sources.mjs:232
+      abilityRef(language, ability, entries, canonicalAbilities)
+                                    ^
 
-Error: No unambiguous standalone ability for combat-prowess (Prouesse Martiale)
-    at abilityRef (file:///home/runner/work/cypher-foundry-vtt/cypher-foundry-vtt/scripts/normalize-ability-sources.mjs:209:11)
-    at file:///home/runner/work/cypher-foundry-vtt/cypher-foundry-vtt/scripts/normalize-ability-sources.mjs:224:23
+ReferenceError: entries is not defined
+    at file:///home/runner/work/cypher-foundry-vtt/cypher-foundry-vtt/scripts/normalize-ability-sources.mjs:232:37
     at Array.map (<anonymous>)
-    at rewriteTypes (file:///home/runner/work/cypher-foundry-vtt/cypher-foundry-vtt/scripts/normalize-ability-sources.mjs:224:8)
-    at async file:///home/runner/work/cypher-foundry-vtt/cypher-foundry-vtt/scripts/normalize-ability-sources.mjs:272:1
+    at rewriteFoci (file:///home/runner/work/cypher-foundry-vtt/cypher-foundry-vtt/scripts/normalize-ability-sources.mjs:231:28)
+    at async file:///home/runner/work/cypher-foundry-vtt/cypher-foundry-vtt/scripts/normalize-ability-sources.mjs:274:1
 
 Node.js v22.23.3
