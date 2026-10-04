@@ -31,11 +31,12 @@ architectural responsibilities.
 
 ### 2.1 Actor document is the primary refactoring target
 
-`module/documents/actor.mjs` is currently about 51 KB and contains task and
-defense resolution, Effort and XP transactions, rerolls and Player Intrusions,
-advancement, recovery and rally, wounds and damage, armor and shield behavior,
-Type/Focus/Descriptor application, custom stats and fields, ability behavior,
-depletion-related behavior, and chat output.
+`module/documents/actor.mjs` remains the primary refactoring target. It still owns
+Foundry document lifecycle, stat resolution, defense mapping, Type/Focus/Descriptor
+application, ability behavior, and some document-specific character behavior.
+Task rolls, recovery, advancement, XP transactions, rerolls, Player Intrusions,
+wounds, damage, shields, armor damage, and custom character fields have been
+moved behind application-service boundaries.
 
 This makes the Actor document both a Foundry persistence boundary and a
 substantial gameplay rules/service layer.
@@ -146,13 +147,17 @@ The `module/applications/` layer contains Foundry-aware use cases that combine
 documents with pure rules. It is the boundary between Foundry orchestration and
 the Cypher rule core.
 
-The first extracted application services are:
+The extracted application services are:
 
 1. `applications/task-service.mjs` for task-roll orchestration.
 2. `applications/recovery-service.mjs` for recovery and Rally orchestration.
 3. `applications/advancement-service.mjs` for advancement purchases and tier
    transitions.
-4. `applications/reference-resolver.mjs` for centralized document-reference
+4. `applications/character-service.mjs` for XP spending, rerolls, Player
+   Intrusions, and custom character fields.
+5. `applications/damage-service.mjs` for wounds, damage, shields, armor damage,
+   and wound-related token statuses.
+6. `applications/reference-resolver.mjs` for centralized document-reference
    resolution and expected-type validation.
 
 These services own Foundry-specific orchestration such as dice evaluation,
@@ -169,9 +174,11 @@ await actor.rollTask(options);
 remains a public operation while its application use case is implemented by
 `applications/task-service.mjs`.
 
-The remaining Actor responsibilities must still be assessed. A responsibility
-should be extracted when doing so removes a meaningful application concern from
-the document; behavior that is genuinely document-owned may remain there.
+Actor methods remain compatibility facades after extraction. This is deliberate:
+sheets, macros, and other callers can keep using the existing API while the
+implementation moves behind a clearer boundary. A responsibility should be
+extracted when doing so removes a meaningful application concern from the
+document; behavior that is genuinely document-owned may remain there.
 
 ### 3.5 Sheets
 
@@ -257,24 +264,30 @@ unit tests in addition to the existing Actor integration tests.
 
 ### Phase 3 — Refactor Actor orchestration
 
-Phase 3 is in progress. Foundry-aware use cases are being extracted into
-`module/applications/` while Actor methods remain stable compatibility
-facades for sheets, macros, and other callers.
+Phase 3 is in progress and the main Foundry-aware application boundaries have
+now been extracted. Actor methods remain stable compatibility facades while
+implementation moves into focused services.
 
-The first extracted application services are:
+The current Phase 3 services are:
 
-1. `applications/task-service.mjs` for task-roll orchestration.
-2. `applications/recovery-service.mjs` for recovery and Rally orchestration.
-3. `applications/advancement-service.mjs` for advancement purchases and tier
+1. `applications/task-service.mjs` — task rolls, Effort/Pool transactions,
+   special results, defense outcomes, and chat output.
+2. `applications/recovery-service.mjs` — recovery and Rally orchestration.
+3. `applications/advancement-service.mjs` — advancement purchases and tier
    transitions.
+4. `applications/character-service.mjs` — XP spending, rerolls, Player
+   Intrusions, and custom stats/fields.
+5. `applications/damage-service.mjs` — wounds, damage, shield absorption,
+   armor damage/repair, and wound-related token status synchronization.
 
 These services own Foundry-specific orchestration such as dice evaluation,
-document updates, Pool/XP transactions, and chat output. Deterministic
-calculations remain delegated to `module/rules/`.
+document updates, resource transactions, chat output, and token/item updates.
+Deterministic calculations remain delegated to `module/rules/`.
 
-The phase is not complete until the remaining substantial Actor application
-responsibilities have been assessed and either extracted or explicitly
-documented as document-owned behavior.
+The remaining substantial Actor responsibilities have been assessed. Type,
+Focus, Descriptor, and standalone ability application are intentionally deferred
+to Phase 4 because they require the reference-resolution boundary established
+by `applications/reference-resolver.mjs`.
 
 ### Phase 4 — Refactor Type/Focus/Ability application
 
@@ -340,14 +353,14 @@ are established, to avoid moving tests without improving their meaning.
 
 ## 7. Immediate next step
 
-Continue Phase 3 by assessing the remaining substantial responsibilities in
-`module/documents/actor.mjs`. For each responsibility, identify its callers,
-tests, Foundry dependencies, and whether it is better expressed as an
-application service, a pure rule, or genuinely document-owned behavior.
+Complete the Phase 3 verification pass: keep the Actor facades covered by tests,
+check for accidental direct application logic left in the document, and verify
+that the extracted services are documented and independently testable.
 
-Once that assessment and the remaining useful Phase 3 extractions are complete,
-Phase 4 can continue the Type/Focus/Descriptor application refactor using the
-centralized reference resolver.
+Then Phase 4 can continue the Type/Focus/Descriptor application refactor using
+the centralized reference resolver. Do not move Type/Focus/Descriptor logic into
+the new character or damage services merely to make the Actor smaller; those
+operations have a separate content/reference boundary.
 
 ## 8. Domain organization
 
