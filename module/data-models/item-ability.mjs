@@ -18,6 +18,7 @@ export default class CypherAbilityData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     return {
       key: new StringField({ required: true, blank: false }),
+      variantKey: new StringField({ required: true, blank: false }),
       tier: new NumberField({
         required: true,
         integer: true,
