@@ -176,3 +176,100 @@ export async function usePlayerIntrusion(actor, description) {
     }</h3><p>${description || ""}</p></div>`
   });
 }
+
+
+/**
+ * Add a custom character stat.
+ *
+ * This is intentionally kept as a small application operation: the sheet
+ * collects the label, while this service validates and persists the change.
+ *
+ * @param {Actor} actor PC receiving the custom stat.
+ * @param {string} label Display label for the stat.
+ * @returns {Promise<void>} Completes after the stat is stored.
+ */
+export async function addCustomStat(actor, label) {
+  if (actor.type !== "pc" || !label?.trim()) return;
+
+  const id = label.trim().toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "")
+    || `stat-${foundry.utils.randomID(6)}`;
+
+  if (
+    CYPHER.stats.includes(id)
+    || actor.system.customStats.some(stat => stat.id === id)
+  ) {
+    ui.notifications.warn(
+      game.i18n.localize("CYPHER.Warning.CustomStatExists")
+    );
+    return;
+  }
+
+  const customStats = actor.system.customStats.map(stat => ({ ...stat }));
+  customStats.push({
+    id,
+    label: label.trim(),
+    pool: { max: 8, value: 8 },
+    edge: 0
+  });
+
+  await actor.update({ "system.customStats": customStats });
+}
+
+/**
+ * Remove a custom character stat by id.
+ *
+ * @param {Actor} actor PC owning the stat.
+ * @param {string} id Custom stat identifier.
+ * @returns {Promise<void>} Completes after the stat is removed.
+ */
+export async function deleteCustomStat(actor, id) {
+  if (actor.type !== "pc") return;
+
+  const customStats = actor.system.customStats.filter(stat => stat.id !== id);
+  await actor.update({ "system.customStats": customStats });
+}
+
+/**
+ * Add a custom character field.
+ *
+ * @param {Actor} actor PC receiving the field.
+ * @param {string} label Display label for the field.
+ * @param {string} [fieldType="text"] Field value type.
+ * @returns {Promise<void>} Completes after the field is stored.
+ */
+export async function addCustomField(actor, label, fieldType = "text") {
+  if (actor.type !== "pc" || !label?.trim()) return;
+  if (!CYPHER.customFieldTypes.includes(fieldType)) fieldType = "text";
+
+  const id = `field-${foundry.utils.randomID(8)}`;
+  const customFields = actor.system.customFields.map(field => ({ ...field }));
+
+  customFields.push({
+    id,
+    label: label.trim(),
+    fieldType,
+    valueText: "",
+    valueNumber: 0,
+    valueBoolean: false
+  });
+
+  await actor.update({ "system.customFields": customFields });
+}
+
+/**
+ * Remove a custom character field by id.
+ *
+ * @param {Actor} actor PC owning the field.
+ * @param {string} id Custom field identifier.
+ * @returns {Promise<void>} Completes after the field is removed.
+ */
+export async function deleteCustomField(actor, id) {
+  if (actor.type !== "pc") return;
+
+  const customFields = actor.system.customFields.filter(field => field.id !== id);
+  await actor.update({ "system.customFields": customFields });
+}
