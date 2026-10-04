@@ -1,5 +1,8 @@
 import { CYPHER } from "../config.mjs";
-import { isFocusAbilityEligible } from "../rules/focus.mjs";
+import {
+  getEligibleFocusAbilities,
+  isFocusAbilityEligible
+} from "../rules/focus.mjs";
 import { resolveDocumentReferences } from "./reference-resolver.mjs";
 
 /**
@@ -9,6 +12,28 @@ import { resolveDocumentReferences } from "./reference-resolver.mjs";
  * resolved at the application boundary before its mechanics are copied to an
  * actor-owned Item.
  */
+
+/**
+ * Return the Focus abilities currently available to the character.
+ *
+ * This keeps Focus graph traversal out of presentation code while leaving
+ * dialogs and user input collection in the sheet.
+ *
+ * @param {Actor} actor PC Actor.
+ * @returns {object[]} Eligible Focus ability data.
+ */
+export function getFocusAbilityChoices(actor) {
+  const focus = actor.getFlag("cypher", "appliedFocusGraph");
+  if (!focus) return [];
+
+  const selected = actor.getFlag("cypher", "focusAbilityIds") ?? [];
+  return getEligibleFocusAbilities(
+    focus,
+    selected,
+    actor.system.tier
+  );
+}
+
 /**
  * Apply a Type's mechanical benefits to a PC.
  *
