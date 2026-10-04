@@ -282,6 +282,14 @@ The current fixture set covers:
   moderate price category.
 - **Cypher:** Adhesion Bomb, including manifest classification and medium power
   classification.
+- **Armor:** Leather jacket, including light armor category and moderate price.
+- **Skill:** Attacking (tier-restricted), including its tier-2 restriction.
+- **Ability:** Brew Potion, including its tier-3 and tier-6 effects.
+
+Artifact and Creature are intentionally not included in this fixture phase.
+The supplied CRD does not currently provide a concrete source example suitable
+for a faithful representative fixture for either family. Their models remain
+supported and will be covered when concrete CRD examples are available.
 
 These are validation fixtures, not a partial CRD content release. They must not
 be treated as an exhaustive representation of their source sections.
@@ -302,3 +310,30 @@ This is distinct from the ability's own tier:
 - `system.effects[].tier` identifies a tier-specific improved effect.
 
 This distinction must be preserved during extraction.
+
+
+## 11. Fidelity assertions
+
+Phase 2.6 turns the representative fixtures into regression boundaries for
+source fidelity.
+
+The tests must verify more than schema validity. They protect:
+
+- structured mechanical values that automation depends on;
+- CRD content-family identity;
+- stable source logical identifiers;
+- CRD version and provenance;
+- uniqueness of authored source identifiers;
+- internal Foundry Item references;
+- tier-specific effect boundaries.
+
+A fixture that still satisfies the generic source schema but changes one of
+these mechanics must fail the fidelity suite.
+
+These assertions are deliberately source-specific. They are not intended to
+replace the CRD or become a second rules source. Their expected values are
+derived from the supplied 2026-07-29 CRD and exist to detect accidental changes
+to the authored mapping.
+
+Artifact and Creature remain outside this phase until the CRD supplies concrete
+examples for them.
