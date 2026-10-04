@@ -203,7 +203,6 @@ test("rollTask combines Effort, assets, skill, wounds, and armor into the effect
 
 test("Lucky Shot spends XP and adds four hindrance steps before rolling", async () => {
   let receivedMessage;
-  let spent = 0;
   globalThis.Roll = class {
     async evaluate() {
       this.total = 15;
@@ -227,10 +226,6 @@ test("Lucky Shot spends XP and adds four hindrance steps before rolling", async 
     },
     _resolveStat: CypherActor.prototype._resolveStat,
     update: async () => {},
-    spendXP: async amount => {
-      spent += amount;
-      return true;
-    }
   };
 
   await CypherActor.prototype.rollTask.call(actor, {
@@ -239,7 +234,7 @@ test("Lucky Shot spends XP and adds four hindrance steps before rolling", async 
     luckyShot: true
   });
 
-  assert.equal(spent, 1);
+  assert.equal(actor.system.xp, 1);
   assert.equal(receivedMessage.flags.cypher.effectiveDifficulty, 7);
 });
 
