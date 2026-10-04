@@ -1,3 +1,6 @@
+import {
+  validateAdvancementChoices
+} from "../module/rules/advancement.mjs";
 // Tests actor-owned Cypher rules with a minimal Actor stub instead of a live Foundry world.
 import assert from "node:assert/strict";
 import test from "node:test";
@@ -1153,4 +1156,38 @@ test("rallyWound rejects a major wound outside the Superhero genre", async () =>
   await CypherActor.prototype.rallyWound.call(actor, "major");
 
   assert.equal(updateCalled, false);
+});
+
+test("validateAdvancementChoices rejects capability distributions that do not total four", () => {
+  assert.equal(
+    validateAdvancementChoices(
+      { type: "capabilities" },
+      { distribution: { might: 2, speed: 1, intellect: 0 } }
+    ),
+    "CYPHER.Warning.CapabilitiesMustSumFour"
+  );
+  assert.equal(
+    validateAdvancementChoices(
+      { type: "capabilities" },
+      { distribution: { might: 2, speed: 1, intellect: 1 } }
+    ),
+    null
+  );
+});
+
+test("validateAdvancementChoices rejects invalid perfection stats", () => {
+  assert.equal(
+    validateAdvancementChoices(
+      { type: "perfection" },
+      { stat: "invalid" }
+    ),
+    "CYPHER.Warning.InvalidStat"
+  );
+  assert.equal(
+    validateAdvancementChoices(
+      { type: "perfection" },
+      { stat: "speed" }
+    ),
+    null
+  );
 });
