@@ -125,6 +125,11 @@ test("Leather jacket preserves its CRD armor category and price", () => {
 test("Brew Potion preserves its tier-three and tier-six effects", () => {
   const effects = CRD_TIERED_ABILITY_FIXTURE.system.effects;
 
+  assert.equal(CRD_TIERED_ABILITY_FIXTURE.system.action, null);
+  assert.match(
+    CRD_TIERED_ABILITY_FIXTURE.system.description,
+    /Ten minutes to brew/
+  );
   assert.deepEqual(
     effects.map(effect => effect.tier),
     [null, 3, 6]
