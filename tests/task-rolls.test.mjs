@@ -180,7 +180,8 @@ test("rollTask combines Effort, assets, skill, wounds, and armor into the effect
     ]),
     update: async changes => {
       actor.lastUpdate = changes;
-      actor.system.speed.pool.value = changes["system.stats.speed.pool.value"];
+      const value = changes["system.stats.speed.pool.value"];
+      actor.system.stats.speed.pool.value = value;
     }
   };
   actor._resolveStat = CypherActor.prototype._resolveStat;
@@ -239,7 +240,7 @@ test("Lucky Shot spends XP and adds four hindrance steps before rolling", async 
   });
 
   assert.equal(spent, 1);
-  assert.equal(receivedMessage.flags.cypher.effectiveDifficulty, 0);
+  assert.equal(receivedMessage.flags.cypher.effectiveDifficulty, 7);
 });
 
 test("rollTask resolves custom stats by id and keeps their user-facing label", async () => {
