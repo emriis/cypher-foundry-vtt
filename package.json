@@ -5,6 +5,7 @@
   "scripts": {
     "test": "npm run migrate:packs && node --test",
     "test:e2e": "node scripts/run-foundry-e2e.mjs",
+    "audit:architecture": "node scripts/audit-architecture-dependencies.mjs",
     "build:packs": "node scripts/build-packs.mjs",
     "package": "npm run build:packs && pwsh -File scripts/package.ps1",
     "migrate:packs": "node scripts/migrate-ability-sources.mjs"

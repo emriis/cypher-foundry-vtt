@@ -253,7 +253,7 @@ la traduction.
 Modifiez directement les sources correspondantes dans `packs/abilities-{fr,en}/_source/`, `packs/types-{fr,en}/_source/` et `packs/foci-{fr,en}/_source/`, puis validez-les avec :
 
 ```powershell
-node --test tests/compendium-sources.test.mjs
+node --test tests/content/compendium-sources.test.mjs
 ```
 
 Puis compiler les deux packs avec le CLI Foundry, en utilisant la même procédure que pour les
@@ -455,7 +455,7 @@ otherwise it stores the English text verbatim. Names, identifiers, and mechanica
 aligned between languages.
 
 Edit the paired source JSON directly under `packs/descriptors-{en,fr}/_source/`, run
-`node --test tests/compendium-sources.test.mjs`, then recompile a loadable LevelDB pack with
+`node --test tests/content/compendium-sources.test.mjs`, then recompile a loadable LevelDB pack with
 `@foundryvtt/foundryvtt-cli` — see the French section above for the exact commands (each source
 file needs a `_key: "!items!<_id>"` field, or the CLI silently skips it).
 

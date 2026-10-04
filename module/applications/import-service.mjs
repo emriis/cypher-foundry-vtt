@@ -1,5 +1,5 @@
 import { CYPHER } from "../config.mjs";
-import { parseWoundsFromNotes } from "../import/wounds.mjs";
+import { parseWoundsFromNotes } from "./import-wounds.mjs";
 
 /**
  * Application service for importing Character Builder exports.
@@ -114,7 +114,7 @@ export function buildActorData(jsonData) {
   };
 }
 
-export { parseWoundsFromNotes } from "../import/wounds.mjs";
+export { parseWoundsFromNotes } from "./import-wounds.mjs";
 
 /* -------------------------------------------- */
 /* Species to second descriptor */

@@ -2,7 +2,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { parseWoundsFromNotes } from "../../module/import/wounds.mjs";
+import { parseWoundsFromNotes } from "../../module/applications/import-wounds.mjs";
 
 test("parseWoundsFromNotes reads each wound severity independently", () => {
   const wounds = parseWoundsFromNotes("<p>Minor: 1/4; Moderate: 2/3; Major: 0/2</p>");
