@@ -51,7 +51,7 @@ export default class CypherAbilityData extends foundry.abstract.TypeDataModel {
         required: true,
         nullable: true,
         initial: null,
-        choices: ["action", "firstAction", "lastAction"]
+        choices: ["", "action", "firstAction", "lastAction"]
       }),
       source: new StringField({ required: true, blank: true }),
       freeWeaponCategories: new ArrayField(new StringField({
