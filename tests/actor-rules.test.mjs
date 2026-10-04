@@ -680,9 +680,10 @@ test("usePlayerIntrusion spends XP only when the intrusion is accepted", async (
   const actor = {
     id: "actor-1",
     type: "pc",
-    spendXP: async amount => {
-      spent += amount;
-      return true;
+    system: { xp: 1 },
+    async update(changes) {
+      spent += 1;
+      this.system.xp = changes["system.xp"];
     }
   };
   const originalCreate = ChatMessage.create;
