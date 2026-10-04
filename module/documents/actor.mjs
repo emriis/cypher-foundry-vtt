@@ -1,4 +1,33 @@
 import { CYPHER } from "../config.mjs";
+import {
+  clampAssetSteps,
+  clampEffortLevels,
+  computeEffortCost,
+  computeTaskSteps,
+  resolveTaskDifficulty
+} from "../rules/tasks.mjs";
+import {
+  advanceSkillLevel,
+  computeAdvancementEffects,
+  computeTierAdvancement
+} from "../rules/advancement.mjs";
+import { resolveDefense } from "../rules/defense.mjs";
+import {
+  computeRallyResult,
+  computeRecoveryUpdates,
+  getRallyCost,
+  getRecoveryRollData
+} from "../rules/recovery.mjs";
+import {
+  getEligibleFocusAbilities,
+  isFocusAbilityEligible
+} from "../rules/focus.mjs";
+import {
+  computeWoundIncrease,
+  convertDamageToWound,
+  reduceWoundSeverity,
+  resolveShieldWoundSeverity
+} from "../rules/wounds.mjs";
 
 /**
  * Extends Foundry's Actor class with Cypher logic.
@@ -14,14 +43,13 @@ export default class CypherActor extends Actor {
   /* -------------------------------------------- */
 
   /**
-   * Computes total Pool cost for a number of Effort levels, with Edge discounted
-   * ONCE on the total (never per level), per the rules.
+   * Computes total Pool cost for a number of Effort levels.
+   *
+   * Kept as a compatibility facade for callers that historically used the
+   * actor class directly. The rule itself lives in module/rules/tasks.mjs.
    */
   static computeEffortCost(levels, edge = 0) {
-    if (levels <= 0) return 0;
-    let total = CYPHER.effortCostFirstLevel + (levels - 1) * CYPHER.effortCostAdditionalLevel;
-    total = Math.max(0, total - edge);
-    return total;
+    return computeEffortCost(levels, edge);
   }
 
   /**
@@ -35,14 +63,7 @@ export default class CypherActor extends Actor {
    * @returns {boolean} Whether the Focus ability can be selected.
    */
   static isFocusAbilityEligible(focus, selectedAbilityIds, abilityId, tier) {
-    const ability = focus?.abilities?.find(candidate => candidate.id === abilityId);
-    if (!ability || ability.tier > tier) return false;
-
-    const selected = new Set(selectedAbilityIds ?? []);
-    if (!ability.repeatable && selected.has(ability.id)) return false;
-    if (ability.tier === 1) return true;
-
-    return (ability.prerequisites ?? []).some(prerequisiteId => selected.has(prerequisiteId));
+    return isFocusAbilityEligible(focus, selectedAbilityIds, abilityId, tier);
   }
 
   /**
@@ -54,9 +75,7 @@ export default class CypherActor extends Actor {
    * @returns {object[]} Eligible Focus abilities.
    */
   static getEligibleFocusAbilities(focus, selectedAbilityIds, tier) {
-    return (focus?.abilities ?? []).filter(ability =>
-      CypherActor.isFocusAbilityEligible(focus, selectedAbilityIds, ability.id, tier)
-    );
+    return getEligibleFocusAbilities(focus, selectedAbilityIds, tier);
   }
 
   /* -------------------------------------------- */
@@ -107,16 +126,16 @@ export default class CypherActor extends Actor {
     const statLabel = CYPHER.stats.includes(stat) ? game.i18n.localize(resolved.label) : resolved.label;
 
     // Asset steps are capped at 2.
-    assetSteps = Math.min(2, Math.max(0, assetSteps));
-    // Effort can't exceed the character's Effort score (max 6)
-    effortLevels = Math.min(this.system.effort, 6, Math.max(0, effortLevels));
+    assetSteps = clampAssetSteps(assetSteps);
+    // Effort cannot exceed the character's Effort score (max 6).
+    effortLevels = clampEffortLevels(effortLevels, this.system.effort);
 
     const skillItem = skillItemId ? this.items.get(skillItemId) : null;
     const skillSteps = skillItem ? skillItem.system.stepModifier : 0;
 
     const edge = statData.edge ?? 0;
     const poolValue = statData.pool.value;
-    const totalCost = CypherActor.computeEffortCost(effortLevels, edge);
+    const totalCost = computeEffortCost(effortLevels, edge);
 
     if (totalCost > poolValue) {
       ui.notifications.error(game.i18n.format("CYPHER.Warning.NotEnoughPool", { stat: statLabel }));
@@ -133,9 +152,18 @@ export default class CypherActor extends Actor {
       ? (this.system.armor?.speedTaskHinder ?? 0)
       : 0;
 
-    const totalSteps = effortLevels + assetSteps + skillSteps + extraEaseSteps - woundHinder - extraHinderSteps + armorModifier - autoArmorSpeedHinder;
-    const effectiveDifficulty = Math.max(0, difficulty - totalSteps);
-    const targetNumber = effectiveDifficulty * 3;
+    const totalSteps = computeTaskSteps({
+      effortLevels,
+      assetSteps,
+      skillSteps,
+      extraEaseSteps,
+      woundHinder,
+      extraHinderSteps,
+      armorModifier,
+      autoArmorSpeedHinder
+    });
+    const { effectiveDifficulty, targetNumber } =
+      resolveTaskDifficulty(difficulty, totalSteps);
 
     // Spend the Pool points.
     if (totalCost > 0) {
@@ -255,9 +283,7 @@ export default class CypherActor extends Actor {
    * Reduces a wound severity by one step (major→moderate→minor→none).
    */
   _reduceWoundSeverity(severity) {
-    if (severity === "major") return "moderate";
-    if (severity === "moderate") return "minor";
-    return null; // A minor wound reduced by one step disappears.
+    return reduceWoundSeverity(severity);
   }
 
   /**
@@ -266,12 +292,14 @@ export default class CypherActor extends Actor {
    */
   async _shieldAbsorbWound(shieldItem, severity) {
     const w = shieldItem.system.wounds;
-    let target = severity;
-    if (target === "minor" && w.minor.current >= w.minor.max) target = "moderate";
-    if (target === "moderate" && w.moderate.current >= w.moderate.max) target = "major";
-
+    const target = resolveShieldWoundSeverity(severity, w);
     const newCurrent = w[target].current + 1;
-    await shieldItem.update({ [`system.wounds.${target}.current`]: Math.min(newCurrent, w[target].max) });
+    await shieldItem.update({
+      [`system.wounds.${target}.current`]: Math.min(
+        newCurrent,
+        w[target].max
+      )
+    });
 
     if (target === "major" && newCurrent >= w.major.max) {
       await ChatMessage.create({
@@ -288,10 +316,10 @@ export default class CypherActor extends Actor {
    */
   async rollDefense(defenseType, { difficulty = 3, effortLevels = 0, assetSteps = 0, incomingSeverity = "minor", shieldItemId = null, skillItemId = null } = {}) {
     if (this.type !== "pc") return null;
-    const stat = defenseType === "block" ? "might" : "speed";
-    const armorModifier = defenseType === "block"
-      ? (this.system.armor.blockEase ?? 0)
-      : -(this.system.armor.dodgeHinder ?? 0);
+    const { stat, armorModifier } = resolveDefense(
+      defenseType,
+      this.system.armor
+    );
 
     return this.rollTask({
       stat, difficulty, effortLevels, assetSteps, armorModifier, skillItemId,
@@ -430,76 +458,62 @@ export default class CypherActor extends Actor {
       return;
     }
 
-    if (!(await this.spendXP(CYPHER.xpCosts.advancementSlot, game.i18n.localize("CYPHER.Tab.advancement")))) return;
+    if (!(await this.spendXP(
+      CYPHER.xpCosts.advancementSlot,
+      game.i18n.localize("CYPHER.Tab.advancement")
+    ))) return;
 
-    const updates = {};
+    const { updates, skillAction } = computeAdvancementEffects(
+      slot,
+      extra,
+      this.system
+    );
+
     let chatNote = "";
-
-    switch (slot.type) {
-      case "capabilities": {
-        const dist = extra.distribution ?? {};
-        for (const stat of CYPHER.stats) {
-          const add = Number(dist[stat]) || 0;
-          if (add) {
-            updates[`system.stats.${stat}.pool.max`] = this.system.stats[stat].pool.max + add;
-            updates[`system.stats.${stat}.pool.value`] = this.system.stats[stat].pool.value + add;
-          }
-        }
-        chatNote = game.i18n.localize("CYPHER.Advancement.CapabilitiesNote");
-        break;
+    if (skillAction?.type === "advance") {
+      const item = this.items.get(skillAction.skillId);
+      if (item) {
+        const newLevel = advanceSkillLevel(item.system.level);
+        await item.update({ "system.level": newLevel });
+        chatNote = game.i18n.format("CYPHER.Advancement.SkillNote", {
+          name: item.name,
+          level: game.i18n.localize(`CYPHER.SkillLevel.${newLevel}`)
+        });
       }
-      case "perfection": {
-        const stat = extra.stat || "might";
-        updates[`system.stats.${stat}.edge`] = this.system.stats[stat].edge + 1;
-        chatNote = game.i18n.format("CYPHER.Advancement.PerfectionNote", { stat: game.i18n.localize(`CYPHER.Stat.${stat}`) });
-        break;
-      }
-      case "effort": {
-        updates["system.effort"] = Math.min(6, this.system.effort + 1);
-        chatNote = game.i18n.localize("CYPHER.Advancement.EffortNote");
-        break;
-      }
-      case "skill": {
-        if (extra.skillId) {
-          const item = this.items.get(extra.skillId);
-          if (item) {
-            const order = ["inability", "practiced", "trained", "specialized", "expert"];
-            const newLevel = item.system.level === "inability"
-              ? "trained"
-              : order[Math.min(order.length - 1, order.indexOf(item.system.level) + 1)];
-            await item.update({ "system.level": newLevel });
-            chatNote = game.i18n.format("CYPHER.Advancement.SkillNote", { name: item.name, level: game.i18n.localize(`CYPHER.SkillLevel.${newLevel}`) });
-          }
-        } else if (extra.newSkillName?.trim()) {
-          await this.createEmbeddedDocuments("Item", [{ name: extra.newSkillName.trim(), type: "skill", system: { level: "trained" } }]);
-          chatNote = game.i18n.format("CYPHER.Advancement.SkillNote", { name: extra.newSkillName.trim(), level: game.i18n.localize("CYPHER.SkillLevel.trained") });
-        }
-        break;
-      }
-      case "other": {
-        if (slot.otherType === "recovery") {
-          updates["system.recoveryBonus"] = (this.system.recoveryBonus ?? 0) + 2;
-          chatNote = game.i18n.localize("CYPHER.Advancement.OtherRecoveryNote");
-        } else if (slot.otherType === "focus") {
-          chatNote = game.i18n.localize("CYPHER.Advancement.OtherFocusNote");
-        } else if (slot.otherType === "armor") {
-          updates["system.freeArmorCategories"] = [...CYPHER.armorCategoryIds];
-          updates["system.canFreelyUseAllArmor"] = true;
-          chatNote = game.i18n.localize("CYPHER.Advancement.OtherArmorNote");
-        } else if (slot.otherType === "weapons") {
-          updates["system.freeWeaponCategories"] = [...CYPHER.weaponCategories];
-          updates["system.canFreelyUseAllWeapons"] = true;
-          chatNote = game.i18n.localize("CYPHER.Advancement.OtherWeaponsNote");
-        } else if (slot.otherType === "genre") {
-          chatNote = game.i18n.localize("CYPHER.Advancement.OtherGenreNote");
-        }
-        break;
-      }
+    } else if (skillAction?.type === "create") {
+      await this.createEmbeddedDocuments("Item", [{
+        name: skillAction.name,
+        type: "skill",
+        system: { level: "trained" }
+      }]);
+      chatNote = game.i18n.format("CYPHER.Advancement.SkillNote", {
+        name: skillAction.name,
+        level: game.i18n.localize("CYPHER.SkillLevel.trained")
+      });
+    } else if (slot.type === "capabilities") {
+      chatNote = game.i18n.localize("CYPHER.Advancement.CapabilitiesNote");
+    } else if (slot.type === "perfection") {
+      const stat = extra.stat || "might";
+      chatNote = game.i18n.format("CYPHER.Advancement.PerfectionNote", {
+        stat: game.i18n.localize(`CYPHER.Stat.${stat}`)
+      });
+    } else if (slot.type === "effort") {
+      chatNote = game.i18n.localize("CYPHER.Advancement.EffortNote");
+    } else if (slot.type === "other") {
+      const notes = {
+        recovery: "CYPHER.Advancement.OtherRecoveryNote",
+        focus: "CYPHER.Advancement.OtherFocusNote",
+        armor: "CYPHER.Advancement.OtherArmorNote",
+        weapons: "CYPHER.Advancement.OtherWeaponsNote",
+        genre: "CYPHER.Advancement.OtherGenreNote"
+      };
+      chatNote = game.i18n.localize(notes[slot.otherType] ?? "");
     }
 
     slot.bought = true;
     updates["system.advancementSlots"] = slots;
-    updates["system.resourcePoints"] = (this.system.resourcePoints ?? 0) + 1;
+    updates["system.resourcePoints"] =
+      (this.system.resourcePoints ?? 0) + 1;
 
     await this.update(updates);
 
@@ -517,13 +531,8 @@ export default class CypherActor extends Actor {
    * gains (a Focus ability, and a Genre ability at tiers 3/6/9...).
    */
   async _advanceTier() {
-    const newTier = Math.min(6, this.system.tier + 1);
-    const freshSlots = [
-      { type: "", otherType: "", bought: false },
-      { type: "", otherType: "", bought: false },
-      { type: "", otherType: "", bought: false },
-      { type: "", otherType: "", bought: false }
-    ];
+    const { newTier, freshSlots } =
+      computeTierAdvancement(this.system.tier);
     const updates = { "system.tier": newTier, "system.advancementSlots": freshSlots };
     const focus = this.getFlag("cypher", "appliedFocusGraph");
     const selectedFocusAbilities = this.getFlag("cypher", "focusAbilityIds") ?? [];
@@ -554,30 +563,17 @@ export default class CypherActor extends Actor {
   async rollRecovery(interval = "hour") {
     const tier = this.system.tier ?? 1;
     const bonus = this.system.recoveryBonus ?? 0;
-    const roll = await new Roll(`1d6 + @tier + @bonus`, { tier, bonus }).evaluate();
+    const { formula, data } = getRecoveryRollData(tier, bonus);
+    const roll = await new Roll(formula, data).evaluate();
 
     let woundNote = "";
     if (this.type === "pc") {
-      const updates = {};
-      const w = this.system.wounds;
-
-      if (interval === "tenMinutes") {
-        updates["system.wounds.minor.current"] = 0;
-        woundNote = game.i18n.localize("CYPHER.Recovery.RemovesAllMinor");
-      } else if (interval === "hour") {
-        if (w.moderate.current > 0) {
-          updates["system.wounds.moderate.current"] = w.moderate.current - 1;
-          woundNote = game.i18n.localize("CYPHER.Recovery.RemovesOneModerate");
-        } else {
-          updates["system.wounds.minor.current"] = 0;
-          woundNote = game.i18n.localize("CYPHER.Recovery.RemovesAllMinor");
-        }
-      } else if (interval === "tenHours") {
-        updates["system.wounds.moderate.current"] = 0;
-        woundNote = game.i18n.localize("CYPHER.Recovery.RemovesAllModerateReminder");
-      }
-
-      if (!this.system.recoveries[interval]) updates[`system.recoveries.${interval}`] = true;
+      const { updates, woundNoteKey } = computeRecoveryUpdates(
+        interval,
+        this.system.wounds,
+        this.system.recoveries
+      );
+      if (woundNoteKey) woundNote = game.i18n.localize(woundNoteKey);
       if (Object.keys(updates).length) await this.update(updates);
     }
 
@@ -597,28 +593,32 @@ export default class CypherActor extends Actor {
   async rallyWound(severity) {
     if (this.type !== "pc") return;
 
-    let cost;
-    if (severity === "major") {
-      if (!this.system.canRallyMajor) {
+    const might = this.system.stats.might.pool.value;
+    const cost = getRallyCost(severity, this.system.canRallyMajor);
+
+    if (cost === null) {
+      if (severity === "major" && !this.system.canRallyMajor) {
         ui.notifications.warn(game.i18n.localize("CYPHER.Warning.CannotRallyMajor"));
-        return;
       }
-      cost = CYPHER.rallyCostMajorSuperhero;
-    } else {
-      cost = CYPHER.rallyCost[severity];
+      return;
     }
 
-    const might = this.system.stats.might.pool.value;
     if (might < cost) {
       ui.notifications.error(game.i18n.localize("CYPHER.Warning.NotEnoughMightToRally"));
       return;
     }
-    const current = this.system.wounds[severity].current;
-    if (current <= 0) return;
+
+    const result = computeRallyResult(
+      severity,
+      might,
+      this.system.wounds,
+      this.system.canRallyMajor
+    );
+    if (!result) return;
 
     await this.update({
-      "system.stats.might.pool.value": might - cost,
-      [`system.wounds.${severity}.current`]: current - 1
+      "system.stats.might.pool.value": result.remainingMight,
+      [`system.wounds.${severity}.current`]: result.remainingWound
     });
 
     await ChatMessage.create({
@@ -758,10 +758,7 @@ export default class CypherActor extends Actor {
   }
 
   _convertDamageToWound(amount) {
-    for (const tier of CYPHER.poolDamageToWound) {
-      if (amount <= tier.max) return tier.severity;
-    }
-    return "major";
+    return convertDamageToWound(amount);
   }
 
   /**
@@ -770,13 +767,10 @@ export default class CypherActor extends Actor {
   async addWound(severity) {
     if (this.type !== "pc") return;
     const w = this.system.wounds;
-    let target = severity;
-
-    if (target === "minor" && w.minor.current >= w.minor.max) target = "moderate";
-    if (target === "moderate" && w.moderate.current >= w.moderate.max) target = "major";
-
-    const newCurrent = w[target].current + 1;
-    await this.update({ [`system.wounds.${target}.current`]: Math.min(newCurrent, w[target].max) });
+    const { target, current: newCurrent } = computeWoundIncrease(severity, w);
+    await this.update({
+      [`system.wounds.${target}.current`]: newCurrent
+    });
 
     if (target === "major" && newCurrent >= w.major.max) {
       ui.notifications.error(game.i18n.format("CYPHER.Warning.CharacterDied", { name: this.name }));
