@@ -727,12 +727,6 @@ test("_shieldAbsorbWound cascades a full minor shield wound into moderate", asyn
   const shield = {
     name: "Shield",
     system: {
-
-test("_shieldAbsorbWound cascades a full minor shield wound into moderate", async () => {
-  let update;
-  const shield = {
-    name: "Shield",
-    system: {
       wounds: {
         minor: { current: 3, max: 3 },
         moderate: { current: 0, max: 2 },
