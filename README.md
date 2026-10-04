@@ -38,10 +38,10 @@ Foundry VTT (V13/V14). Bugs réels trouvés et corrigés :
   dossier, chemins de templates, classes CSS, espace de noms des flags), suite à la mise à jour
   du nom du jeu par Monte Cook Games pour cette édition.
 
-Limite connue : ces corrections ont été validées par relecture systématique du code et vérification
-face à la documentation officielle de l'API Foundry, mais **n'ont pas été testées dans une
-instance Foundry réelle**. Un premier lancement en jeu reste recommandé avant toute utilisation
-en table.
+Limite de validation : les tests déterministes et l'infrastructure E2E sont présents dans le
+dépôt. Les E2E nécessitent toutefois une installation Foundry locale activée et ne sont pas
+exécutés par la CI standard ; une validation live reste donc à effectuer pour toute modification
+dépendant du runtime, du rendu ou de l'UI Foundry.
 
 ### Audit comparatif face à dnd5e (référence officielle)
 
@@ -135,7 +135,9 @@ ce système, il s'agit d'un vrai mappeur, pas d'un chargement direct :
 
 ### Compendiums de Descripteurs (FR/EN)
 
-Premier lot de compendiums bilingues, avant les Types et les Foyers : **33 Descripteurs** du
+Les compendiums bilingues de Descripteurs regroupent les entrées du CRD par catégories de
+sources et sont disponibles en français et en anglais. Le lot actuel contient **33 Descripteurs**
+du
 CRD, sous la forme d'un nouveau type d'objet `descriptor` (`module/data-models/item-descriptor.mjs`),
 packagés dans deux compendiums LevelDB (`descriptors-fr`, `descriptors-en`).
 
@@ -374,7 +376,8 @@ from this system's own, so this is a real mapper, not a direct load:
 
 ### Descriptor compendiums (FR/EN)
 
-First batch of bilingual compendiums, ahead of Types and Foci: **33 CRD Descriptors**, as a new
+The bilingual Descriptor compendiums group the current CRD Descriptor entries by source category
+and are available in both French and English. The current set contains **33 CRD Descriptors**, as a new
 `descriptor` item type (`module/data-models/item-descriptor.mjs`), packaged into two LevelDB
 compendiums (`descriptors-fr`, `descriptors-en`).
 
@@ -394,10 +397,10 @@ Edit the paired source JSON directly under `packs/descriptors-{en,fr}/_source/`,
 `@foundryvtt/foundryvtt-cli` — see the French section above for the exact commands (each source
 file needs a `_key: "!items!<_id>"` field, or the CLI silently skips it).
 
-### Suggested next steps
+### Current roadmap
 
-See the French section above — same roadmap: playtest the sheet, complete the bilingual Focus
-compendiums, add automation macros, and a dedicated NPC sheet.
+See the French section above — continue playtesting the sheet, complete the remaining bilingual
+Focus compendiums, add automation macros, add a dedicated NPC sheet, and extend live E2E coverage.
 
 ## Publier une version / Releasing a version
 
