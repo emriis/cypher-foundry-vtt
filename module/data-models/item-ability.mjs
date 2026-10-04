@@ -36,8 +36,8 @@ export default class CypherAbilityData extends foundry.abstract.TypeDataModel {
         )
       }),
 
-      // null represents an activation category that is not modelled as an
-      // Action/First Action/Last Action in this iteration.
+      // Null is reserved for activation cases that are not modelled by the
+      // current Action/First Action/Last Action categories.
       action: new StringField({
         required: true,
         nullable: true,

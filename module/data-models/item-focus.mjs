@@ -1,3 +1,7 @@
+/**
+ * Data model for a Cypher Focus. Its flowchart belongs to the Focus because
+ * prerequisites are contextual; referenced abilities remain reusable documents.
+ */
 const { DocumentUUIDField, HTMLField, ArrayField, SchemaField, StringField } = foundry.data.fields;
 
 export default class CypherFocusData extends foundry.abstract.TypeDataModel {

@@ -1,3 +1,7 @@
+/**
+ * Data model for a Cypher Type. Type abilities are reusable Item UUID references;
+ * the ability mechanics themselves live in the standalone ability compendium.
+ */
 import { CYPHER } from "../config.mjs";
 
 const { StringField, NumberField, HTMLField, ArrayField, BooleanField, SchemaField, DocumentUUIDField } = foundry.data.fields;
