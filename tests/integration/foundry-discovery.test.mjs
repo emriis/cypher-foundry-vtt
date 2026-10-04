@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { mkdtemp, mkdir, rm, writeFile } from "node:fs/promises";
+import { mkdtemp, rm, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import test from "node:test";
@@ -64,7 +64,6 @@ test("findApplication ignores a configured installation directory", async () => 
   const executable = path.join(root, "Foundry Virtual Tabletop.exe");
 
   try {
-    await mkdir(root, { recursive: true });
     await writeFile(executable, "test", "utf8");
 
     const found = await findApplication({
@@ -86,8 +85,8 @@ test("findApplication reports every candidate when discovery fails", async () =>
     }),
     error => {
       assert.match(error.message, /Foundry VTT executable was not found/);
-      assert.match(error.message, /\\/usr\\/bin\\/foundryvtt/);
-      assert.match(error.message, /\\/usr\\/local\\/bin\\/foundryvtt/);
+      assert.match(error.message, /\/usr\/bin\/foundryvtt/);
+      assert.match(error.message, /\/usr\/local\/bin\/foundryvtt/);
       return true;
     }
   );
