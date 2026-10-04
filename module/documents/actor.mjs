@@ -1,6 +1,14 @@
 import { CYPHER } from "../config.mjs";
 import { rollTask } from "../applications/task-service.mjs";
 import {
+  advanceTier,
+  purchaseAdvancementSlot
+} from "../applications/advancement-service.mjs";
+import {
+  rallyWound,
+  rollRecovery
+} from "../applications/recovery-service.mjs";
+import {
   clampAssetSteps,
   clampEffortLevels,
   computeEffortCost,
@@ -278,112 +286,14 @@ export default class CypherActor extends Actor {
    * Purchases an advancement slot for the current tier (4 XP). Automatically applies the
    * matching mechanical effect, and advances the character a tier once all 4 slots are bought.
    */
+  /** Compatibility facade for advancement callers. */
   async purchaseAdvancementSlot(index, extra = {}) {
-    if (this.type !== "pc") return;
-    const slots = this.system.advancementSlots.map(s => ({ ...s }));
-    const slot = slots[index];
-    if (!slot || slot.bought) return;
-    if (!slot.type) {
-      ui.notifications.warn(game.i18n.localize("CYPHER.Warning.ChooseAdvancementType"));
-      return;
-    }
-    if (slot.type === "other" && !slot.otherType) {
-      ui.notifications.warn(game.i18n.localize("CYPHER.Warning.ChooseAdvancementType"));
-      return;
-    }
-
-    if (!(await this.spendXP(
-      CYPHER.xpCosts.advancementSlot,
-      game.i18n.localize("CYPHER.Tab.advancement")
-    ))) return;
-
-    const { updates, skillAction } = computeAdvancementEffects(
-      slot,
-      extra,
-      this.system
-    );
-
-    let chatNote = "";
-    if (skillAction?.type === "advance") {
-      const item = this.items.get(skillAction.skillId);
-      if (item) {
-        const newLevel = advanceSkillLevel(item.system.level);
-        await item.update({ "system.level": newLevel });
-        chatNote = game.i18n.format("CYPHER.Advancement.SkillNote", {
-          name: item.name,
-          level: game.i18n.localize(`CYPHER.SkillLevel.${newLevel}`)
-        });
-      }
-    } else if (skillAction?.type === "create") {
-      await this.createEmbeddedDocuments("Item", [{
-        name: skillAction.name,
-        type: "skill",
-        system: { level: "trained" }
-      }]);
-      chatNote = game.i18n.format("CYPHER.Advancement.SkillNote", {
-        name: skillAction.name,
-        level: game.i18n.localize("CYPHER.SkillLevel.trained")
-      });
-    } else if (slot.type === "capabilities") {
-      chatNote = game.i18n.localize("CYPHER.Advancement.CapabilitiesNote");
-    } else if (slot.type === "perfection") {
-      const stat = extra.stat || "might";
-      chatNote = game.i18n.format("CYPHER.Advancement.PerfectionNote", {
-        stat: game.i18n.localize(`CYPHER.Stat.${stat}`)
-      });
-    } else if (slot.type === "effort") {
-      chatNote = game.i18n.localize("CYPHER.Advancement.EffortNote");
-    } else if (slot.type === "other") {
-      const notes = {
-        recovery: "CYPHER.Advancement.OtherRecoveryNote",
-        focus: "CYPHER.Advancement.OtherFocusNote",
-        armor: "CYPHER.Advancement.OtherArmorNote",
-        weapons: "CYPHER.Advancement.OtherWeaponsNote",
-        genre: "CYPHER.Advancement.OtherGenreNote"
-      };
-      chatNote = game.i18n.localize(notes[slot.otherType] ?? "");
-    }
-
-    slot.bought = true;
-    updates["system.advancementSlots"] = slots;
-    updates["system.resourcePoints"] =
-      (this.system.resourcePoints ?? 0) + 1;
-
-    await this.update(updates);
-
-    await ChatMessage.create({
-      speaker: ChatMessage.getSpeaker({ actor: this }),
-      content: `<div class="cypher-roll-card"><h3>${game.i18n.localize("CYPHER.Advancement.Purchased")}</h3><p>${chatNote}</p></div>`
-    });
-
-    const boughtCount = slots.filter(s => s.bought).length;
-    if (boughtCount >= 4) await this._advanceTier();
+    return purchaseAdvancementSlot(this, index, extra);
   }
 
-  /**
-   * Advances the character a tier, resets advancement slots, and reminds about automatic
-   * gains (a Focus ability, and a Genre ability at tiers 3/6/9...).
-   */
+  /** Compatibility facade for tier advancement callers. */
   async _advanceTier() {
-    const { newTier, freshSlots } =
-      computeTierAdvancement(this.system.tier);
-    const updates = { "system.tier": newTier, "system.advancementSlots": freshSlots };
-    const focus = this.getFlag("cypher", "appliedFocusGraph");
-    const selectedFocusAbilities = this.getFlag("cypher", "focusAbilityIds") ?? [];
-    if (CypherActor.getEligibleFocusAbilities(focus, selectedFocusAbilities, newTier).length) {
-      updates["flags.cypher.focusAbilityPendingTier"] = newTier;
-    }
-    await this.update(updates);
-
-    let note = game.i18n.format("CYPHER.Advancement.NewTierFocus", { tier: newTier });
-    if (newTier === 3 || newTier === 6 || (newTier > 6 && (newTier - 6) % 3 === 0)) {
-      note += `<br>${game.i18n.format("CYPHER.Advancement.NewTierGenre", { tier: newTier })}`;
-    }
-
-    await ChatMessage.create({
-      speaker: ChatMessage.getSpeaker({ actor: this }),
-      content: `<div class="cypher-roll-card"><h3>${game.i18n.format("CYPHER.Advancement.TierReached", { tier: newTier })}</h3><p>${note}</p></div>`
-    });
+    return advanceTier(this);
   }
 
   /* -------------------------------------------- */
@@ -394,71 +304,18 @@ export default class CypherActor extends Actor {
    * Takes a recovery: restores 1d6+Tier Pool points and removes wounds
    * based on the chosen interval.
    */
+  /** Compatibility facade for recovery callers. */
   async rollRecovery(interval = "hour") {
-    const tier = this.system.tier ?? 1;
-    const bonus = this.system.recoveryBonus ?? 0;
-    const { formula, data } = getRecoveryRollData(tier, bonus);
-    const roll = await new Roll(formula, data).evaluate();
-
-    let woundNote = "";
-    if (this.type === "pc") {
-      const { updates, woundNoteKey } = computeRecoveryUpdates(
-        interval,
-        this.system.wounds,
-        this.system.recoveries
-      );
-      if (woundNoteKey) woundNote = game.i18n.localize(woundNoteKey);
-      if (Object.keys(updates).length) await this.update(updates);
-    }
-
-    await roll.toMessage({
-      speaker: ChatMessage.getSpeaker({ actor: this }),
-      flavor: `<h3>${game.i18n.localize("CYPHER.Roll.Recovery")}</h3>
-                <p>${game.i18n.localize(`CYPHER.Recovery.${interval}`)}</p>
-                ${woundNote ? `<p>${woundNote}</p>` : ""}`
-    });
-    return roll;
+    return rollRecovery(this, interval);
   }
 
   /**
    * Rally: spend Might points to remove a wound. A major wound can only be rallied
    * in the Superhero genre (cost: 10 Might).
    */
+  /** Compatibility facade for Rally callers. */
   async rallyWound(severity) {
-    if (this.type !== "pc") return;
-
-    const might = this.system.stats.might.pool.value;
-    const cost = getRallyCost(severity, this.system.canRallyMajor);
-
-    if (cost === null) {
-      if (severity === "major" && !this.system.canRallyMajor) {
-        ui.notifications.warn(game.i18n.localize("CYPHER.Warning.CannotRallyMajor"));
-      }
-      return;
-    }
-
-    if (might < cost) {
-      ui.notifications.error(game.i18n.localize("CYPHER.Warning.NotEnoughMightToRally"));
-      return;
-    }
-
-    const result = computeRallyResult(
-      severity,
-      might,
-      this.system.wounds,
-      this.system.canRallyMajor
-    );
-    if (!result) return;
-
-    await this.update({
-      "system.stats.might.pool.value": result.remainingMight,
-      [`system.wounds.${severity}.current`]: result.remainingWound
-    });
-
-    await ChatMessage.create({
-      speaker: ChatMessage.getSpeaker({ actor: this }),
-      content: `<p>${game.i18n.format("CYPHER.Roll.Rallied", { name: this.name, severity: game.i18n.localize(`CYPHER.Wound.${severity}`) })}</p>`
-    });
+    return rallyWound(this, severity);
   }
 
   /* -------------------------------------------- */
