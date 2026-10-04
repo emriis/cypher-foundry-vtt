@@ -147,3 +147,45 @@ test("applyFocus rejects a missing ability reference before changing the actor",
   assert.equal(actor.system.focus, undefined);
   assert.equal(actor.items.length, 0);
 });
+
+test("selectFocusAbility does not mutate actor state when its source cannot be resolved", async () => {
+  globalThis.game = {
+    i18n: { localize: value => value }
+  };
+  globalThis.ui = { notifications: { warn() {} } };
+  globalThis.fromUuid = async () => null;
+
+  const actor = {
+    type: "pc",
+    system: {
+      tier: 2,
+      focus: "Missing Focus"
+    },
+    flags: {
+      cypher: {
+        focusAbilityIds: ["first"],
+        appliedFocusGraph: {
+          abilities: [{
+            id: "second",
+            uuid: "Compendium.test.abilities.Item.second",
+            tier: 2,
+            prerequisites: ["first"],
+            repeatable: false
+          }]
+        }
+      }
+    },
+    getFlag(scope, key) {
+      return this.flags[scope]?.[key];
+    },
+    async update() {
+      throw new Error("Actor must not be updated before resolving the ability");
+    }
+  };
+
+  const { selectFocusAbility } = await import(
+    "../../module/applications/content-service.mjs"
+  );
+
+  assert.equal(await selectFocusAbility(actor, "second"), false);
+});
