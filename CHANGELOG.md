@@ -21,6 +21,7 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ### Added
 
+- Added standalone bilingual `abilities-en` and `abilities-fr` compendiums. Types and Foci now reference reusable ability documents instead of embedding ability data; Focus prerequisite relationships are stored in the Focus flowchart.
 - Added the Works for a Living / Travaille pour vivre Focus to the English and French compendiums.
 - Added the Wears a Sheen of Ice / Revêt un voile de glace Focus to the English and French compendiums.
 - Added the Walks Through Walls / Traverse les murs Focus to the English and French compendiums.

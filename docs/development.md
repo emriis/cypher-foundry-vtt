@@ -46,6 +46,7 @@ Use this flow when adding or revising game content rather than system behavior.
 | --- | --- | --- |
 | Editable Descriptor sources | `packs/descriptors-{en,fr}/_source/` | Source of truth |
 | Foundry-readable LevelDB packs | `packs/descriptors-{en,fr}/` | Generated package input |
+| Editable Ability sources | `packs/abilities-{en,fr}/_source/` | Source of truth |
 | Editable Type sources | `packs/types-{en,fr}/_source/` | Source of truth |
 | Editable Focus sources | `packs/foci-{en,fr}/_source/` | Source of truth |
 
