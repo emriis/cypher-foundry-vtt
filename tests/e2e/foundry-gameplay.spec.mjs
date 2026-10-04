@@ -1,5 +1,4 @@
-import { test, expect } from "@playwright/test";
-import { joinAsGamemaster } from "./foundry-session.mjs";
+import { test, expect } from "./foundry-session-fixture.mjs";
 
 const ACTOR_PREFIX = "E2E Cypher";
 
@@ -83,11 +82,7 @@ async function clickRollDialog(page, values = {}) {
 }
 
 test.describe("Cypher Foundry live gameplay", () => {
-  test.beforeEach(async ({ page }) => {
-    await joinAsGamemaster(page);
-  });
-
-  test.afterEach(async ({ page }) => {
+  test.afterAll(async ({ page }) => {
     await closeActorSheet(page);
     await cleanupActors(page);
   });
