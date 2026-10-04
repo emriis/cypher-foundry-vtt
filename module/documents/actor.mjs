@@ -1,5 +1,9 @@
 import { CYPHER } from "../config.mjs";
 import {
+  addCustomField,
+  addCustomStat,
+  deleteCustomField,
+  deleteCustomStat,
   rerollMessage,
   spendXP,
   usePlayerIntrusion
@@ -275,25 +279,24 @@ export default class CypherActor extends Actor {
   /**
    * Adds a custom stat (in addition to Might/Speed/Intellect).
    */
+  /**
+   * Add a custom stat through the character application service.
+   *
+   * @param {string} label Display label for the stat.
+   * @returns {Promise<void>} Completes after the stat is stored.
+   */
   async addCustomStat(label) {
-    if (this.type !== "pc" || !label?.trim()) return;
-    const id = label.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-      .replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") || `stat-${foundry.utils.randomID(6)}`;
-
-    if (CYPHER.stats.includes(id) || this.system.customStats.some(s => s.id === id)) {
-      ui.notifications.warn(game.i18n.localize("CYPHER.Warning.CustomStatExists"));
-      return;
-    }
-
-    const customStats = this.system.customStats.map(s => ({ ...s }));
-    customStats.push({ id, label: label.trim(), pool: { max: 8, value: 8 }, edge: 0 });
-    await this.update({ "system.customStats": customStats });
+    return addCustomStat(this, label);
   }
 
+  /**
+   * Remove a custom stat through the character application service.
+   *
+   * @param {string} id Custom stat identifier.
+   * @returns {Promise<void>} Completes after the stat is removed.
+   */
   async deleteCustomStat(id) {
-    if (this.type !== "pc") return;
-    const customStats = this.system.customStats.filter(s => s.id !== id);
-    await this.update({ "system.customStats": customStats });
+    return deleteCustomStat(this, id);
   }
 
   /* -------------------------------------------- */
@@ -304,23 +307,25 @@ export default class CypherActor extends Actor {
    * Adds a custom field (text, number, or checkbox) — to add any character element the
    * system doesn't already provide for, independent of genre.
    */
+  /**
+   * Add a custom field through the character application service.
+   *
+   * @param {string} label Display label for the field.
+   * @param {string} [fieldType="text"] Field value type.
+   * @returns {Promise<void>} Completes after the field is stored.
+   */
   async addCustomField(label, fieldType = "text") {
-    if (this.type !== "pc" || !label?.trim()) return;
-    if (!CYPHER.customFieldTypes.includes(fieldType)) fieldType = "text";
-
-    const id = `field-${foundry.utils.randomID(8)}`;
-    const customFields = this.system.customFields.map(f => ({ ...f }));
-    customFields.push({
-      id, label: label.trim(), fieldType,
-      valueText: "", valueNumber: 0, valueBoolean: false
-    });
-    await this.update({ "system.customFields": customFields });
+    return addCustomField(this, label, fieldType);
   }
 
+  /**
+   * Remove a custom field through the character application service.
+   *
+   * @param {string} id Custom field identifier.
+   * @returns {Promise<void>} Completes after the field is removed.
+   */
   async deleteCustomField(id) {
-    if (this.type !== "pc") return;
-    const customFields = this.system.customFields.filter(f => f.id !== id);
-    await this.update({ "system.customFields": customFields });
+    return deleteCustomField(this, id);
   }
 
   /* -------------------------------------------- */
