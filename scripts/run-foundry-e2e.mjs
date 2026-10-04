@@ -231,6 +231,20 @@ function spawnFoundry(appPath, dataPath) {
   );
 }
 
+async function runCommand(command, args) {
+  await new Promise((resolve, reject) => {
+    const process = spawn(command, args, {
+      cwd: ROOT,
+      stdio: "inherit"
+    });
+    process.on("error", reject);
+    process.on("close", code => {
+      if (code === 0) resolve();
+      else reject(new Error(`Command failed with exit code ${code}: ${command}`));
+    });
+  });
+}
+
 function stopProcess(child) {
   if (!child || child.killed) return;
 
@@ -272,6 +286,9 @@ try {
   } catch (error) {
     if (error.message.includes("already running")) throw error;
   }
+
+  const npmCommand = process.platform === "win32" ? "npm.cmd" : "npm";
+  await runCommand(npmCommand, ["run", "build:packs"]);
 
   testDataPath = await createTestData(sourceDataPath);
   await installSystem(testDataPath);
