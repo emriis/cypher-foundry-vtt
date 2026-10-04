@@ -45,6 +45,7 @@ function mechanicalSignature(ability) {
   delete intrinsic.id;
   delete intrinsic.name;
   delete intrinsic.prerequisites;
+  delete intrinsic.description;
   return JSON.stringify(sortObject(intrinsic));
 }
 
