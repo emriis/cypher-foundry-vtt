@@ -142,6 +142,7 @@ The initial contract covers:
     skill
     type
     weapon
+    creature
 
 Creature/Actor-specific source fields will be defined with the creature
 extraction phase rather than guessed now.
