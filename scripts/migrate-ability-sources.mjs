@@ -47,7 +47,7 @@ function stripEditorial(value) {
 
   return Object.fromEntries(
     Object.entries(value)
-      .filter(([key]) => !["name", "description", "enabler"].includes(key))
+      .filter(([key]) => !["name", "description"].includes(key))
       .map(([key, nested]) => [key, stripEditorial(nested)])
   );
 }
