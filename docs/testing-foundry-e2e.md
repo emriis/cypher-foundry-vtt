@@ -95,7 +95,7 @@ npm run test:e2e
 
 ### Do not run two Foundry instances against the same data directory
 
-The runner deliberately fails fast if `FOUNDRY_URL` is already reachable.
+The runner deliberately fails fast if its local test port is already reachable.
 Close a manually running Foundry instance before starting the autonomous
 suite. This avoids two Foundry processes writing to the same user-data
 directory.
