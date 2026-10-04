@@ -105,28 +105,24 @@ export default class CypherActor extends Actor {
   }
 
   /* -------------------------------------------- */
-  /*  Task rolls                                    */
+  /*  Task rolls                                  */
   /* -------------------------------------------- */
 
   /**
-   * Rolls a Cypher task: d20 vs (difficulty - steps) * 3.
-   */
-  /**
    * Rolls a Cypher task through the application service.
    *
-   * Kept as a compatibility facade for sheets, macros, and existing callers.
+   * The Actor method stays as a compatibility facade so existing sheets and
+   * macros can keep calling the same API while the use case evolves.
+   *
+   * @param {object} [options={}] Roll options.
+   * @returns {Promise<object|null>} Roll result or null when rejected.
    */
   async rollTask(options = {}) {
     return rollTask(this, options);
   }
 
   /**
-   * Reduces a wound severity by one step (major→moderate→minor→none).
-   */
-  /**
    * Reduce a wound severity by one step.
-   *
-   * Compatibility facade for the extracted damage application service.
    *
    * @param {string} severity Current wound severity.
    * @returns {string|null} Reduced severity, or null when the wound disappears.
@@ -135,10 +131,6 @@ export default class CypherActor extends Actor {
     return reduceWound(severity);
   }
 
-  /**
-   * Has a shield absorb a whole wound, with cascading overflow (3 minor → 2 moderate →
-   * 1 major, per the rules). The shield is destroyed as soon as it takes a major wound.
-   */
   /**
    * Have a shield absorb a wound through the damage application service.
    *
@@ -151,35 +143,55 @@ export default class CypherActor extends Actor {
   }
 
   /**
-   * Rolls a Defense task: Block (Might, eased by armor) or Dodge (Speed, hindered by armor),
-   * against the attacker's target number. A successful Block reduces the wound's severity by
-   * one step; a successful Dodge avoids it entirely; a failure inflicts the wound as-is.
+   * Rolls a Defense task by mapping Block/Dodge to the correct stat and
+   * armor modifier before delegating to the normal task service.
+   *
+   * @param {string} defenseType "block" or "dodge".
+   * @param {object} [options={}] Defense roll options.
+   * @returns {Promise<object|null>} Roll result or null when rejected.
    */
-  async rollDefense(defenseType, { difficulty = 3, effortLevels = 0, assetSteps = 0, incomingSeverity = "minor", shieldItemId = null, skillItemId = null } = {}) {
+  async rollDefense(
+    defenseType,
+    {
+      difficulty = 3,
+      effortLevels = 0,
+      assetSteps = 0,
+      incomingSeverity = "minor",
+      shieldItemId = null,
+      skillItemId = null
+    } = {}
+  ) {
     if (this.type !== "pc") return null;
+
     const { stat, armorModifier } = resolveDefense(
       defenseType,
       this.system.armor
     );
 
     return this.rollTask({
-      stat, difficulty, effortLevels, assetSteps, armorModifier, skillItemId,
-      defenseType, incomingSeverity, shieldItemId,
-      flavor: `${game.i18n.localize(defenseType === "block" ? "CYPHER.Defense.Block" : "CYPHER.Defense.Dodge")}`
+      stat,
+      difficulty,
+      effortLevels,
+      assetSteps,
+      armorModifier,
+      skillItemId,
+      defenseType,
+      incomingSeverity,
+      shieldItemId,
+      flavor: game.i18n.localize(
+        defenseType === "block"
+          ? "CYPHER.Defense.Block"
+          : "CYPHER.Defense.Dodge"
+      )
     });
   }
 
   /* -------------------------------------------- */
-  /*  Experience Points                              */
+  /*  Experience Points                            */
   /* -------------------------------------------- */
 
   /**
-   * Spends XP if the character has enough. Returns true if the spend succeeded.
-   */
-  /**
-   * Spend XP through the application service.
-   *
-   * Kept as a compatibility facade for sheets, macros, and existing callers.
+   * Spend XP through the character application service.
    *
    * @param {number} amount Number of XP to spend.
    * @param {string} [reasonLabel=""] Localized reason shown in the warning.
@@ -190,40 +202,28 @@ export default class CypherActor extends Actor {
   }
 
   /**
-   * Rerolls a previous roll by spending 1 XP, keeping the better of the two results.
-   */
-  /**
-   * Reroll a previous roll through the application service.
+   * Reroll a previous roll through the character application service.
    *
    * @param {object} message Foundry chat message containing reroll flags.
-   * @returns {Promise<void>|undefined} Nothing when the message is not rerollable.
+   * @returns {Promise<void>|undefined} Nothing when not rerollable.
    */
   async rerollMessage(message) {
     return rerollMessage(this, message);
   }
 
   /**
-   * Rerolls a depletion check (1 XP), keeping the better of the two results (the higher one,
-   * since a higher result avoids depletion).
-   */
-  /**
-   * Compatibility facade for the depletion reroll implementation.
-   *
-   * New callers should use rerollMessage instead of this internal helper.
+   * Compatibility facade for the depletion reroll helper.
    *
    * @param {object} message Foundry chat message.
-   * @param {object} flags Reroll metadata.
-   * @returns {Promise<void>} Completes after the reroll.
+   * @param {object} flags Legacy reroll metadata argument.
+   * @returns {Promise<void>|undefined} Reroll result.
    */
   async _rerollDepletion(message, flags) {
-    return rerollMessage(this, message, flags);
+    return rerollMessage(this, message);
   }
 
   /**
-   * Player intrusion: spend 1 XP to alter the situation in the character's favor.
-   */
-  /**
-   * Use a Player Intrusion through the application service.
+   * Use a Player Intrusion through the character application service.
    *
    * @param {string} description Player-provided intrusion description.
    * @returns {Promise<void>} Completes after the intrusion message is created.
@@ -233,52 +233,57 @@ export default class CypherActor extends Actor {
   }
 
   /* -------------------------------------------- */
-  /*  Character advancement                           */
+  /*  Character advancement                       */
   /* -------------------------------------------- */
 
   /**
-   * Purchases an advancement slot for the current tier (4 XP). Automatically applies the
-   * matching mechanical effect, and advances the character a tier once all 4 slots are bought.
+   * Purchase an advancement slot through the advancement application service.
+   *
+   * @param {number} index Advancement slot index.
+   * @param {object} [extra={}] User-selected advancement options.
+   * @returns {Promise<void>} Completes after the purchase.
    */
-  /** Compatibility facade for advancement callers. */
   async purchaseAdvancementSlot(index, extra = {}) {
     return purchaseAdvancementSlot(this, index, extra);
   }
 
-  /** Compatibility facade for tier advancement callers. */
+  /**
+   * Advance the character's tier through the advancement application service.
+   *
+   * @returns {Promise<void>} Completes after the tier transition.
+   */
   async _advanceTier() {
     return advanceTier(this);
   }
 
   /* -------------------------------------------- */
-  /*  Recovery rolls                                 */
+  /*  Recovery rolls                               */
   /* -------------------------------------------- */
 
   /**
-   * Takes a recovery: restores 1d6+Tier Pool points and removes wounds
-   * based on the chosen interval.
+   * Take a recovery through the recovery application service.
+   *
+   * @param {string} [interval="hour"] Recovery interval.
+   * @returns {Promise<object|null>} Recovery roll.
    */
-  /** Compatibility facade for recovery callers. */
   async rollRecovery(interval = "hour") {
     return rollRecovery(this, interval);
   }
 
   /**
-   * Rally: spend Might points to remove a wound. A major wound can only be rallied
-   * in the Superhero genre (cost: 10 Might).
+   * Rally a wound through the recovery application service.
+   *
+   * @param {string} severity Wound severity to rally.
+   * @returns {Promise<void>} Completes after the rally.
    */
-  /** Compatibility facade for Rally callers. */
   async rallyWound(severity) {
     return rallyWound(this, severity);
   }
 
   /* -------------------------------------------- */
-  /*  Custom stats                                   */
+  /*  Custom character data                       */
   /* -------------------------------------------- */
 
-  /**
-   * Adds a custom stat (in addition to Might/Speed/Intellect).
-   */
   /**
    * Add a custom stat through the character application service.
    *
@@ -299,14 +304,6 @@ export default class CypherActor extends Actor {
     return deleteCustomStat(this, id);
   }
 
-  /* -------------------------------------------- */
-  /*  Champs Libres / Custom fields                 */
-  /* -------------------------------------------- */
-
-  /**
-   * Adds a custom field (text, number, or checkbox) — to add any character element the
-   * system doesn't already provide for, independent of genre.
-   */
   /**
    * Add a custom field through the character application service.
    *
@@ -329,14 +326,9 @@ export default class CypherActor extends Actor {
   }
 
   /* -------------------------------------------- */
-  /*  Armor damage                                   */
+  /*  Armor damage                                */
   /* -------------------------------------------- */
 
-  /**
-   * Damages the worn armor (special attack or GM intrusion): reduces its Block-easing bonus
-   * by a given number of steps, capped at the base bonus (can't go below 0). The Dodge
-   * hindrance is never affected.
-   */
   /**
    * Damage the equipped armor through the damage application service.
    *
@@ -348,9 +340,6 @@ export default class CypherActor extends Actor {
   }
 
   /**
-   * Repairs the equipped armor, clearing all accumulated damage to its Block bonus.
-   */
-  /**
    * Repair the equipped armor through the damage application service.
    *
    * @returns {Promise<void>} Completes after the armor is repaired.
@@ -360,13 +349,9 @@ export default class CypherActor extends Actor {
   }
 
   /* -------------------------------------------- */
-  /*  Damage and wounds                              */
+  /*  Damage and wounds                           */
   /* -------------------------------------------- */
 
-  /**
-   * Applies damage. For a PC, converts the amount to a wound severity
-   * (1-4 minor, 5-8 moderate, 9+ major) unless an explicit severity is given.
-   */
   /**
    * Apply damage through the damage application service.
    *
@@ -376,32 +361,12 @@ export default class CypherActor extends Actor {
    */
   async applyDamage(amount, options = {}) {
     return applyDamage(this, amount, options);
-  } = {}) {
-    if (this.type !== "pc") return this._applyNpcDamage(amount, { ignoreArmor });
-
-    // Direct Pool damage converts any overflow into a wound via the conversion table.
-    if (stat) {
-      const resolved = this._resolveStat(stat);
-      if (!resolved) return;
-      const pool = resolved.data.pool;
-      const overflow = Math.max(0, amount - pool.value);
-      const newValue = Math.max(0, pool.value - amount);
-      await this.update({ [`${resolved.path}.pool.value`]: newValue });
-      if (overflow > 0) {
-        const woundSeverity = severity ?? this._convertDamageToWound(overflow);
-        await this.addWound(woundSeverity);
-      }
-      return;
-    }
-
-    const woundSeverity = severity ?? this._convertDamageToWound(amount);
-    await this.addWound(woundSeverity);
   }
 
   /**
    * Convert a damage amount into a wound severity.
    *
-   * Compatibility facade for the pure wound rule.
+   * This remains a small compatibility facade around the pure wound rule.
    *
    * @param {number} amount Damage amount.
    * @returns {string|null} Corresponding wound severity.
@@ -410,9 +375,6 @@ export default class CypherActor extends Actor {
     return convertDamageToWound(amount);
   }
 
-  /**
-   * Adds a wound of a given severity, with cascading overflow.
-   */
   /**
    * Add a wound through the damage application service.
    *
@@ -432,19 +394,8 @@ export default class CypherActor extends Actor {
    */
   async _applyNpcDamage(amount, options = {}) {
     return applyNpcDamage(this, amount, options);
-  } = {}) {
-    const armor = ignoreArmor ? 0 : (this.system.armor ?? 0);
-    const finalDamage = Math.max(0, amount - armor);
-    const health = this.system.health;
-    if (!health) return;
-    const newValue = Math.max(0, health.value - finalDamage);
-    await this.update({ "system.health.value": newValue });
-    return finalDamage;
   }
 
-  /**
-   * Toggles the "Hindered" and "Dead" token status icons based on the current wound state.
-   */
   /**
    * Synchronize wound-related token statuses through the damage service.
    *
