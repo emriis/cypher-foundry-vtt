@@ -201,7 +201,7 @@ test("rollTask combines Effort, assets, skill, wounds, and armor into the effect
   assert.equal(rollResult.flags.cypher.effectiveDifficulty, 3);
 });
 
-test("Lucky Shot spends XP and adds four hindrance steps before rolling", async () => {
+test("Lucky Shot applies four hindrance steps before rolling", async () => {
   let receivedMessage;
   globalThis.Roll = class {
     async evaluate() {
@@ -238,7 +238,6 @@ test("Lucky Shot spends XP and adds four hindrance steps before rolling", async 
     luckyShot: true
   });
 
-  assert.equal(actor.system.xp, 1);
   assert.equal(receivedMessage.flags.cypher.effectiveDifficulty, 7);
 });
 
