@@ -220,3 +220,46 @@ A model extension must include:
 - provenance for the affected content.
 
 Only then should the extractor use the new field.
+## 8. Automation-first authoring rule
+
+The purpose of the structured Item fields is not merely presentation. They are
+the contract used later by character creation, rolling, equipment handling,
+depletion, reference resolution, and other automation.
+
+When a CRD mechanic has a corresponding structured field, extraction must put
+the mechanic in that field rather than relying only on prose in description.
+
+Examples include:
+- an Ability's Pool cost and whether additional Effort can be applied;
+- an Ability's tier-specific effects;
+- a Type's tiered Ability grants;
+- a Skill's tier restriction;
+- a Weapon's range, extreme-range behavior, damage, price category, and
+  mechanical properties;
+- Equipment level and price category;
+- Cypher power level;
+- Artifact depletion.
+
+The description remains the authoritative source text for wording and context,
+but it is not a substitute for structured mechanics.
+
+A structured field must never be populated by inference when the CRD does not
+support the mapping. If a mechanic cannot be represented faithfully, the
+extractor must report a model gap instead.
+
+## 9. CRD-specific model extensions
+
+Phase 2 has identified several mechanics that the existing models did not
+represent sufficiently for automation:
+
+- the full CRD range categories;
+- equipment level and price category;
+- weapon extreme-range information and mechanical properties;
+- Type ability-to-tier relationships;
+- Ability additional-Effort cost marker;
+- Ability tier-specific effects;
+- Skill tier restrictions;
+- manifest Cypher power levels.
+
+These are model extensions, not changes to CRD rules. Their values will only be
+populated from source material during extraction.
