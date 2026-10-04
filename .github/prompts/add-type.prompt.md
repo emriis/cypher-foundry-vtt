@@ -15,7 +15,7 @@ If the Type identity, authoritative CRD section, or French localization cannot b
 2. Inspect `module/data-models/item-type.mjs`, the focused compendium tests, the target genre/subgenre folders, and the closest existing bilingual Type pair.
 3. Create matching filenames under `packs/types-en/_source/` and `packs/types-fr/_source/`. Use unique 16-character document IDs, matching `_key` values, original summaries, and the correct language-specific folder IDs.
 4. Keep document-level mechanics and ability counts aligned. Preserve localized ability names and descriptions without copying substantial source text.
-5. Run `node --test tests/compendium-sources.test.mjs`, then `npm test`.
+5. Run `node --test tests/content/compendium-sources.test.mjs`, then `npm test`.
 6. Rebuild both Type LevelDB packs from their `_source` directories using a temporary output location, excluding transient logs and locks.
 7. Report the records and folders added, source mapping, test results, packaging results, and any live Foundry verification still required.
 
