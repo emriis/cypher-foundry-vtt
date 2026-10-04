@@ -15,6 +15,7 @@ import { resolveDefense } from "../rules/defense.mjs";
 import {
   computeRallyResult,
   computeRecoveryUpdates,
+  getRallyCost,
   getRecoveryRollData
 } from "../rules/recovery.mjs";
 import {
@@ -593,26 +594,17 @@ export default class CypherActor extends Actor {
     if (this.type !== "pc") return;
 
     const might = this.system.stats.might.pool.value;
-    const cost = severity === "major"
-      ? computeRallyResult(
-          severity,
-          might,
-          this.system.wounds,
-          this.system.canRallyMajor
-        )?.cost ?? null
-      : computeRallyResult(
-          severity,
-          might,
-          this.system.wounds,
-          this.system.canRallyMajor
-        )?.cost ?? null;
+    const cost = getRallyCost(severity, this.system.canRallyMajor);
 
     if (cost === null) {
       if (severity === "major" && !this.system.canRallyMajor) {
         ui.notifications.warn(game.i18n.localize("CYPHER.Warning.CannotRallyMajor"));
-      } else if (might < (CYPHER.rallyCost[severity] ?? Infinity)) {
-        ui.notifications.error(game.i18n.localize("CYPHER.Warning.NotEnoughMightToRally"));
       }
+      return;
+    }
+
+    if (might < cost) {
+      ui.notifications.error(game.i18n.localize("CYPHER.Warning.NotEnoughMightToRally"));
       return;
     }
 
