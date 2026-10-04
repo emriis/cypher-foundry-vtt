@@ -1,9 +1,4 @@
-import { CYPHER } from "../config.mjs";
-
-const {
-  StringField, NumberField, HTMLField, ArrayField, BooleanField,
-  SchemaField, BooleanField: BoolField, DocumentUUIDField
-} = foundry.data.fields;
+const { DocumentUUIDField, HTMLField, ArrayField, SchemaField, StringField } = foundry.data.fields;
 
 export default class CypherFocusData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
