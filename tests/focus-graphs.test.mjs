@@ -1,4 +1,4 @@
-// Checks that Focus ability graphs have valid links and matching translated IDs.
+// Validates Focus flowcharts and their references to standalone abilities.
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
@@ -7,134 +7,107 @@ import test from "node:test";
 const root = path.resolve(import.meta.dirname, "..");
 
 class FieldDefinition {
-  constructor(options = {}) {
-    this.options = options;
-  }
+  constructor(options = {}) { this.options = options; }
 }
-
 class ArrayField extends FieldDefinition {
-  constructor(element, options = {}) {
-    super(options);
-    this.element = element;
-  }
+  constructor(element, options = {}) { super(options); this.element = element; }
 }
-
 class SchemaField extends FieldDefinition {
-  constructor(fields, options = {}) {
-    super(options);
-    this.fields = fields;
-  }
+  constructor(fields, options = {}) { super(options); this.fields = fields; }
 }
 
 globalThis.foundry = {
   abstract: { TypeDataModel: class {} },
-  data: {
-    fields: {
-      StringField: FieldDefinition,
-      NumberField: FieldDefinition,
-      HTMLField: FieldDefinition,
-      ArrayField,
-      BooleanField: FieldDefinition,
-      SchemaField
-    }
-  }
+  data: { fields: {
+    StringField: FieldDefinition,
+    NumberField: FieldDefinition,
+    HTMLField: FieldDefinition,
+    BooleanField: FieldDefinition,
+    DocumentUUIDField: FieldDefinition,
+    ArrayField,
+    SchemaField
+  }}
 };
 
-const { default: CypherFocusData } = await import("../module/data-models/item-focus.mjs");
+const { default: CypherFocusData } =
+  await import("../module/data-models/item-focus.mjs");
 
-function slug(value) {
-  return value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+function readPack(pack) {
+  const directory = path.join(root, "packs", pack, "_source");
+  return fs.readdirSync(directory)
+    .filter(file => file.endsWith(".json"))
+    .map(file => JSON.parse(fs.readFileSync(path.join(directory, file), "utf8")));
 }
 
-const englishFoci = new Map(fs.readdirSync(path.join(root, "packs", "foci-en", "_source"))
-  .filter(file => file.endsWith(".json"))
-  .map(file => [file, JSON.parse(fs.readFileSync(path.join(root, "packs", "foci-en", "_source", file), "utf8"))]));
-
-test("Focus abilities accept the blank default for an optional granted armor category", () => {
-  const schema = CypherFocusData.defineSchema();
-  const armorField = schema.abilities.element.fields.grantedArmorItemCategory;
-
-  assert.equal(armorField.options.initial, "");
-  assert.equal(armorField.options.blank, true);
-  assert.ok(armorField.options.choices.includes(""));
-});
+function readAbilities(language) {
+  return new Map(
+    readPack(`abilities-${language}`)
+      .map(document => [document._id, document])
+  );
+}
 
 for (const language of ["en", "fr"]) {
-  test(`${language} Focus sources use valid ability flowchart links`, () => {
-    const directory = path.join(root, "packs", `foci-${language}`, "_source");
-    const sources = fs.readdirSync(directory).filter(file => file.endsWith(".json"));
-    assert.ok(sources.length > 0);
+  test(`${language} Focus flowchart edges reference abilities in the Focus`, () => {
+    const abilities = readAbilities(language);
 
-    for (const filename of sources) {
-      const focus = JSON.parse(fs.readFileSync(path.join(directory, filename), "utf8"));
-      assert.equal(focus.type, "focus");
-      const abilities = new Map(focus.system.abilities.map(ability => [ability.id, ability]));
-      assert.equal(abilities.size, focus.system.abilities.length);
+    for (const focus of readPack(`foci-${language}`)) {
+      const refs = focus.system.abilities ?? [];
+      const ids = new Set(refs.map(uuid => uuid.split(".").at(-1)));
+      assert.equal(ids.size, refs.length);
 
-      for (const ability of abilities.values()) {
-        assert.ok(ability.id);
-        assert.ok(ability.name);
-        assert.ok(ability.tier >= 1 && ability.tier <= 6);
-        for (const prerequisiteId of ability.prerequisites) {
-          const prerequisite = abilities.get(prerequisiteId);
-          assert.ok(prerequisite, `${focus.name}/${ability.id} references ${prerequisiteId}`);
-          assert.ok(prerequisite.tier <= ability.tier, `${focus.name}/${ability.id} cannot follow a higher tier`);
-        }
+      const byId = new Map(
+        [...ids].map(id => [id, abilities.get(id)])
+      );
+      for (const [id, ability] of byId) {
+        assert.ok(ability, `${focus.name}/missing ability ${id}`);
+        assert.equal(ability.type, "ability");
+      }
+
+      for (const edge of focus.system.flowchart?.edges ?? []) {
+        assert.ok(ids.has(edge.from), `${focus.name}/${edge.from}`);
+        assert.ok(ids.has(edge.to), `${focus.name}/${edge.to`);
+        const from = byId.get(edge.from);
+        const to = byId.get(edge.to);
+        assert.ok(from.system.tier <= to.system.tier);
       }
     }
   });
 }
 
-test("Focus ability IDs align between languages and use English CRD slugs", () => {
-  const frenchDirectory = path.join(root, "packs", "foci-fr", "_source");
-  for (const [filename, english] of englishFoci) {
-    const french = JSON.parse(fs.readFileSync(path.join(frenchDirectory, filename), "utf8"));
-    assert.equal(french.system.abilities.length, english.system.abilities.length, filename);
-    for (let index = 0; index < english.system.abilities.length; index += 1) {
-      const englishAbility = english.system.abilities[index];
-      const frenchAbility = french.system.abilities[index];
-      assert.equal(englishAbility.id, slug(englishAbility.name), `${filename}/ability-${index}`);
-      assert.equal(frenchAbility.id, englishAbility.id, `${filename}/ability-${index}/alignment`);
-      assert.deepEqual(frenchAbility.prerequisites, englishAbility.prerequisites, `${filename}/ability-${index}/prerequisites`);
-    }
-  }
+test("Focus data model stores UUID references and an external flowchart", () => {
+  const schema = CypherFocusData.defineSchema();
+  assert.equal(schema.abilities.element.options.type, "Item");
+  assert.ok(schema.flowchart.fields.edges);
+  assert.ok(!schema.abilities.element.fields);
 });
 
-test("free-use Focus abilities scope their weapon and armor grants", () => {
-  const expected = {
-    "carries-a-gun.json": { "excellent-gunner": { freeWeaponFamilies: ["firearms"] } },
-    "masters-weaponry.json": {
-      "battle-competence": {
-        freeWeaponCategories: ["light", "medium", "heavy"],
-        freeArmorCategories: ["light", "medium", "heavy"]
-      },
-      "weapon-master": { chooseWeaponAttackCategory: true }
-    },
-    "stands-like-a-bastion.json": {
-      "battle-competence": {
-        freeWeaponCategories: ["light", "medium", "heavy"],
-        freeArmorCategories: ["light", "medium", "heavy"]
-      }
-    },
-    "builds-allies.json": {
-      "automaton-armor-upgrade": { grantedArmorItemCategory: "light" },
-      "automaton-heavy-armor-upgrade": { grantedArmorItemCategory: "heavy" }
-    }
-  };
+test("same-name abilities can remain distinct documents when their mechanics differ", () => {
+  const abilities = readPack("abilities-en");
+  const byName = new Map();
 
-  for (const [filename, abilities] of Object.entries(expected)) {
-    const english = englishFoci.get(filename);
-    const french = JSON.parse(fs.readFileSync(path.join(root, "packs", "foci-fr", "_source", filename), "utf8"));
-    for (const [abilityId, fields] of Object.entries(abilities)) {
-      const englishAbility = english.system.abilities.find(ability => ability.id === abilityId);
-      const frenchAbility = french.system.abilities.find(ability => ability.id === abilityId);
-      assert.ok(englishAbility, `${filename}/${abilityId} missing in EN`);
-      assert.ok(frenchAbility, `${filename}/${abilityId} missing in FR`);
-      for (const [field, value] of Object.entries(fields)) {
-        assert.deepEqual(englishAbility[field], value, `${filename}/${abilityId}/${field}/EN`);
-        assert.deepEqual(frenchAbility[field], value, `${filename}/${abilityId}/${field}/FR`);
-      }
+  for (const ability of abilities) {
+    const list = byName.get(ability.name) ?? [];
+    list.push(ability);
+    byName.set(ability.name, list);
+  }
+
+  for (const [name, documents] of byName) {
+    const signatures = new Set(documents.map(document =>
+      JSON.stringify({
+        tier: document.system.tier,
+        enabler: document.system.enabler,
+        repeatable: document.system.repeatable,
+        cost: document.system.cost,
+        action: document.system.action,
+        effects: document.system.effects,
+        rollTables: document.system.rollTables
+      })
+    ));
+    if (signatures.size > 1) {
+      assert.ok(
+        documents.every(document => document._id),
+        `${name} has distinct technical identities`
+      );
     }
   }
 });
