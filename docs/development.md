@@ -48,6 +48,9 @@ belongs in `module/rules/` and whether Foundry orchestration belongs in
 existing callers already use it. Application services should have English JSDoc
 and short inline comments for non-obvious Foundry or rules interactions so a new
 contributor can follow the control flow without relying on tribal knowledge.
+If a helper only maps data and does not need Foundry state, keep it in
+`module/rules/` instead of adding another Actor compatibility method; for example,
+stat lookup belongs to `rules/stats.mjs`.
 
 ## 2. Compendium content
 
