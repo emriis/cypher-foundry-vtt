@@ -359,7 +359,7 @@ test("applyType applies pool, Edge, wound, and equipment benefits once", async (
     id: ability.id,
     uuid: ability.uuid,
     name: ability.name,
-    system: { ...ability }
+    system: (({ type, id, uuid, name, ...system }) => system)(ability)
   }));
 
   assert.equal(await CypherActor.prototype.applyType.call(actor, typeItem, { stat: "speed" }), true);
