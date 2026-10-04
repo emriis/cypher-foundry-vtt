@@ -17,8 +17,9 @@ export const CRD_FIXTURE_IDS = Object.freeze({
   shotgun: "0123456789abc009",
   backpack: "0123456789abc010",
   adhesionBomb: "0123456789abc011",
-  mediumArmor: "0123456789abc013",
-  skillWithAttacks: "0123456789abc014"
+  mediumArmor: "0123456789abc013"
+  skillWithAttacks: "0123456789abc014",
+  brewPotion: "0123456789abc016"
 });
 
 function provenance(logicalId, sourceLocator, sourceKind = "record") {
@@ -255,14 +256,14 @@ export const CRD_SKILL_FIXTURE = item(
 );
 
 export const CRD_TIERED_ABILITY_FIXTURE = item(
-  "0123456789abc016",
-  "Always Tinkering",
+  CRD_FIXTURE_IDS.brewPotion,
+  "Brew Potion",
   "ability",
   "ability",
-  "ability.always-tinkering",
+  "ability.brew-potion",
   {
     tier: 1,
-    key: "always-tinkering",
+    key: "brew-potion",
     enabler: false,
     repeatable: false,
     cost: {
@@ -271,7 +272,7 @@ export const CRD_TIERED_ABILITY_FIXTURE = item(
       options: [],
       additionalEffort: false
     },
-    action: null,
+    action: "ten minutes to brew",
     freeWeaponCategories: [],
     freeArmorCategories: [],
     freeWeaponFamilies: [],
@@ -280,24 +281,40 @@ export const CRD_TIERED_ABILITY_FIXTURE = item(
     grantedArmorItemCategory: "",
     effects: [
       {
+        id: "base",
+        name: "Brew Potion",
+        tier: null,
+        description:
+          "You brew a potion. You can choose its effect from the " +
+          "Low-Power Manifest Cyphers table. Your brewed potion cypher " +
+          "counts toward your cypher limit.",
+        effort: ""
+      },
+      {
         id: "tier-3",
         name: "Tier 3 effect",
         tier: 3,
-        description: "Allows a medium-power manifest cypher.",
+        description:
+          "You can choose a low or medium-power manifest cypher as " +
+          "your brewed potion.",
         effort: ""
       },
       {
         id: "tier-6",
         name: "Tier 6 effect",
         tier: 6,
-        description: "Allows an advanced-power manifest cypher.",
+        description:
+          "You can choose a low, medium-, or advanced-power manifest " +
+          "cypher as your brewed potion.",
         effort: ""
       }
     ],
     rollTables: [],
-    description: "Build a single-use technological device."
+    description:
+      "You brew a potion. You can choose its effect from the " +
+      "Low-Power Manifest Cyphers table."
   },
-  "Science Fiction Genre — Tech Abilities — Always Tinkering"
+  "Fantasy Genre — Witch Abilities — Tier 1 — Brew Potion"
 );
 
 export const CRD_FIXTURES = Object.freeze([
