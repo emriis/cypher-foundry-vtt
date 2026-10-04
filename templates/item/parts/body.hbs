@@ -166,68 +166,7 @@
       </div>
     </section>
     {{/each}}
-    {{#unless focusView.tiers.length}}
-    {{#if system.abilities.length}}
-    <div class="focus-tier-abilities">
-      {{#each system.abilities as |ability|}}
-      <article class="type-ability">
-        <header>
-          <h4>{{ability.name}}</h4>
-          <span>{{localize 'CYPHER.Tier'}} {{ability.tier}}</span>
-        </header>
-        <div class="type-ability-tags">
-          {{#if ability.cost.amount}}
-          <span>{{localize 'CYPHER.Ability.CostStat'}}: {{ability.cost.amount}}
-            {{#ifEquals ability.cost.stat "choice"}}{{localize 'CYPHER.FocusSheet.AnyPool'}}{{else}}{{localize (concat "CYPHER.Stat." ability.cost.stat)}}{{/ifEquals}}
-          </span>
-          {{else}}
-          <span>{{localize 'CYPHER.FocusSheet.NoPoolCost'}}</span>
-          {{/if}}
-          {{#if ability.enabler}}<span>{{localize 'CYPHER.FocusSheet.Enabler'}}</span>{{/if}}
-          {{#if ability.repeatable}}<span>{{localize 'CYPHER.FocusSheet.Repeatable'}}</span>{{/if}}
-        </div>
-        {{#if ability.prerequisites.length}}
-        <div class="focus-prerequisites">
-          <strong>{{localize 'CYPHER.FocusSheet.OnePrerequisite'}}:</strong>
-          <ul class="type-chip-list">
-            {{#each ability.prerequisites as |prerequisite|}}<li>{{prerequisite}}</li>{{/each}}
-          </ul>
-        </div>
-        {{/if}}
-        {{#if ability.freeWeaponCategories.length}}
-        <p class="focus-grant"><strong>{{localize 'CYPHER.FocusSheet.WeaponCategories'}}:</strong>
-          {{#each ability.freeWeaponCategories as |category|}}{{localize (concat "CYPHER.Type.WeaponCategory." category)}}{{#unless @last}}, {{/unless}}{{/each}}
-        </p>
-        {{/if}}
-        {{#if ability.freeArmorCategories.length}}
-        <p class="focus-grant"><strong>{{localize 'CYPHER.FocusSheet.ArmorCategories'}}:</strong>
-          {{#each ability.freeArmorCategories as |category|}}{{localize (concat "CYPHER.Type.ArmorCategory." category)}}{{#unless @last}}, {{/unless}}{{/each}}
-        </p>
-        {{/if}}
-        {{#if ability.freeWeaponFamilies.length}}
-        <p class="focus-grant"><strong>{{localize 'CYPHER.FocusSheet.WeaponFamilies'}}:</strong>
-          {{#each ability.freeWeaponFamilies as |family|}}{{localize (concat "CYPHER.WeaponFamily." family)}}{{#unless @last}}, {{/unless}}{{/each}}
-        </p>
-        {{/if}}
-        {{#if ability.freeWeaponSkillCategories.length}}
-        <p class="focus-grant"><strong>{{localize 'CYPHER.FocusSheet.WeaponSkills'}}:</strong>
-          {{#each ability.freeWeaponSkillCategories as |category|}}{{localize (concat "CYPHER.AttackSkill." category)}}{{#unless @last}}, {{/unless}}{{/each}}
-        </p>
-        {{/if}}
-        {{#if ability.chooseWeaponAttackCategory}}
-        <p class="focus-grant">{{localize 'CYPHER.FocusSheet.ChooseWeaponAttackCategory'}}</p>
-        {{/if}}
-        {{#if ability.grantedArmorItemCategory}}
-        <p class="focus-grant"><strong>{{localize 'CYPHER.FocusSheet.GrantedArmor'}}:</strong> {{localize (concat "CYPHER.Armor." ability.grantedArmorItemCategory)}}</p>
-        {{/if}}
-        <div class="type-ability-description">{{{ability.description}}}</div>
-      </article>
-      {{/each}}
-    </div>
-    {{else}}
-    <p class="focus-empty-state">{{localize 'CYPHER.FocusSheet.NoAbilities'}}</p>
-    {{/if}}
-    {{/unless}}
+
   </section>
 
   {{else}}
