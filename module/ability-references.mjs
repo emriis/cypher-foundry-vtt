@@ -38,8 +38,8 @@ export function abilityDocumentId(ability) {
   }
 
   return (
-    (h1 >>> 0).toString(36).padStart(7, "0") +
-    (h2 >>> 0).toString(36).padStart(7, "0")
+    (h1 >>> 0).toString(36).padStart(8, "0") +
+    (h2 >>> 0).toString(36).padStart(8, "0")
   ).slice(0, 16);
 }
 
