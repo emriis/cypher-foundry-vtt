@@ -1,0 +1,28 @@
+{
+  "_id": "0aa7e583e284e219",
+  "_key": "!items!0aa7e583e284e219",
+  "name": "Jump Attack",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "jump-attack",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 5,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You jump up to 4 feet (1 m) into the air and make a melee attack against a foe on the way up or down. If you hit, you inflict damage and can attempt a difficulty 4 Might roll to inflict an additional 4 damage and knock them prone. Effort: Add 2 feet to the jump height and an additional 2 damage to the attack (whether or not you knock the target prone). Action."
+  }
+}

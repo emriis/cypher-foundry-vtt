@@ -1,0 +1,28 @@
+{
+  "_id": "b31162814ad734ec",
+  "_key": "!items!b31162814ad734ec",
+  "name": "Débris protecteurs",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "armoring-debris",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu fais léviter de petits objets se trouvant autour de toi (rochers, morceaux brisés, mottes de terre…) pour intercepter les attaques jusqu’à ta prochaine récupération de dix minutes ou plus. Tes tâches de Blocage sont facilitées d’un palier (Esquive inchangée)."
+  }
+}

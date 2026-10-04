@@ -1,0 +1,28 @@
+{
+  "_id": "5701d74d8a23466c",
+  "_key": "!items!5701d74d8a23466c",
+  "name": "Ice Slide",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "ice-slide",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You create a path of smooth ice from yourself to a location within long range and safely slide to there. You must have a clear and unobstructed path to that location, but otherwise it can be above, below, or even across a gap. The ice melts away after a few seconds. Action."
+  }
+}

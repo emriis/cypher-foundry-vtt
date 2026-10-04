@@ -1,0 +1,28 @@
+{
+  "_id": "fe1cbf8232ca834a",
+  "_key": "!items!fe1cbf8232ca834a",
+  "name": "Maître·sse du déguisement",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "master-of-disguise",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu te déguises en une seule dernière action, bien plus rapidement que la normale. Si ton déguisement est examiné de près ou mis au défi, tu gagnes un atout supplémentaire pour le maintenir."
+  }
+}

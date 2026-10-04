@@ -1,0 +1,28 @@
+{
+  "_id": "587ed5bf54d637c0",
+  "_key": "!items!587ed5bf54d637c0",
+  "name": "Bricoleur·euse",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "handy",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu es entraîné·e en artisanat. Chaque fois que tu gagnes des points de ressources, tu gagnes 1 point supplémentaire, utilisable uniquement pour réparer ou fabriquer."
+  }
+}

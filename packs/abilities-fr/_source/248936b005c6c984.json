@@ -1,0 +1,28 @@
+{
+  "_id": "248936b005c6c984",
+  "_key": "!items!248936b005c6c984",
+  "name": "Illusion permanente",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "permanent-illusion",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 9,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu rends permanente l’une de tes illusions en cours. Choisis une illusion (ou une partie d’une illusion) que tu as créée. Elle doit tenir dans une zone immédiate et reste en place à cet endroit pour toujours, sans ton attention ni ta présence. Tu peux la dissiper définitivement en utilisant une action. Toute autre personne souhaitant la faire disparaitre doit faire preuve d’une ingéniosité exceptionnelle pour empêcher l’illusion de se régénérer au bout d’un moment."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "59b8d23beed18b3e",
+  "_key": "!items!59b8d23beed18b3e",
+  "name": "Encore plus grand·e",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "bigger",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu utilises Agrandissement, si tu dépenses 1 Puissance supplémentaire, tu atteins 4 m de haut. Pendant que tu es encore plus grand·e : tu gagnes +1 en Avantage de Puissance, tu peux ignorer les deux premières blessures modérées, tes attaques à mains nues infligent 6 dégâts, tu gagnes un atout aux tâches facilitées par une grande taille (grimper, traverser un cours d’eau…) mais tes tâches d’Esquive sont entravées de deux paliers."
+  }
+}

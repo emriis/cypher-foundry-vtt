@@ -1,0 +1,28 @@
+{
+  "_id": "007a78bf9af8c348",
+  "_key": "!items!007a78bf9af8c348",
+  "name": "Défense inspirante",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "inspiring-defense",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu réussis un jet de défense contre une attaque qui t’aurait infligé un effet ou un coup particulièrement puissant (selon le·la MJ), tu récupères 4 points dans ta Réserve de Puissance. Chaque utilisation après la première restaure 1 point de moins. Ce malus se réinitialise après une récupération de dix heures."
+  }
+}

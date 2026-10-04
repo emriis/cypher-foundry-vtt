@@ -1,0 +1,28 @@
+{
+  "_id": "84bc75b6bd606794",
+  "_key": "!items!84bc75b6bd606794",
+  "name": "Cybernetic Alacrity",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "cybernetic-alacrity",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Any time you use Effort on a noncombat Speed task, add your choice of the following options: a free level of Effort on the action or a minor effect on the action. Enabler."
+  }
+}

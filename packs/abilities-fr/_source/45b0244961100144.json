@@ -1,0 +1,28 @@
+{
+  "_id": "45b0244961100144",
+  "_key": "!items!45b0244961100144",
+  "name": "Télépathie",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "telepathic",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu peux communiquer télépathiquement avec d’autres personnes situées jusqu’à portée longue. La communication est bidirectionnelle, mais l’autre partie doit être consentante et capable de communiquer. Tu n’as pas besoin de voir la cible, mais tu dois savoir qu’elle est à portée. Tu peux avoir plusieurs contacts actifs en même temps, mais tu dois établir le contact avec chaque cible individuellement. Chaque contact dure jusqu’à ta prochaine récupération de dix minutes ou plus. Effort : Augmente la durée pour qu’elle dure jusqu’à ta récupération de dix heures. Action pour établir le contact."
+  }
+}

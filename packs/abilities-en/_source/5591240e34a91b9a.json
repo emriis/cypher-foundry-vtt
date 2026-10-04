@@ -1,0 +1,28 @@
+{
+  "_id": "5591240e34a91b9a",
+  "_key": "!items!5591240e34a91b9a",
+  "name": "Repair Flesh",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "repair-flesh",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can knit back together damaged flesh with a touch. You can reduce a wound by one severity: major to moderate, moderate to minor, or minor to none. Instead of curing a wound, you can enhance a character’s next recovery by +2 Pool points. If used on a living or undead NPC, you restore 3 health. Action."
+  }
+}

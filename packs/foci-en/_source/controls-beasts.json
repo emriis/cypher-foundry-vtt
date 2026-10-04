@@ -7,219 +7,104 @@
   "system": {
     "description": "<p>Your ability to communicate and lead beasts is uncanny.</p>",
     "abilities": [
-      {
-        "id": "beast-companion",
-        "name": "Beast Companion",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+      "Compendium.cypher.abilities-en.Item.bee172df46baed49",
+      "Compendium.cypher.abilities-en.Item.819cfb3a4c30ffc7",
+      "Compendium.cypher.abilities-en.Item.e879127bf5280ad0",
+      "Compendium.cypher.abilities-en.Item.deeb68d42a797ff6",
+      "Compendium.cypher.abilities-en.Item.77ca4e7e31841531",
+      "Compendium.cypher.abilities-en.Item.5111144335aee07b",
+      "Compendium.cypher.abilities-en.Item.f67c8bf3211bff88",
+      "Compendium.cypher.abilities-en.Item.a8910bf75e1e11bb",
+      "Compendium.cypher.abilities-en.Item.16e429b4059bd255",
+      "Compendium.cypher.abilities-en.Item.ccdcc2e86130c96e",
+      "Compendium.cypher.abilities-en.Item.95b18fc22e2af433",
+      "Compendium.cypher.abilities-en.Item.12fac91cf3042bb7",
+      "Compendium.cypher.abilities-en.Item.cd7a18ac3f9611b8"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "819cfb3a4c30ffc7",
+          "to": "deeb68d42a797ff6"
         },
-        "description": "You gain a follower that is a level 2 beast of your size or smaller that accompanies you and follows your instructions. You and the GM must work out the appearance and personality of your beast. Its movement is based on its creature type (avian, swimmer, and so on). If your beast companion dies, you can use your resources hunting in the wild for a few days to locate and befriend a new one. Enabler."
-      },
-      {
-        "id": "friend-to-small-creatures",
-        "name": "Friend to Small Creatures",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+        {
+          "from": "e879127bf5280ad0",
+          "to": "deeb68d42a797ff6"
         },
-        "description": "A broad type of small creature you name that exists in the surrounding environment (such as insects, rats, bats, or birds) comes under your influence if you succeed on a difficulty 2 Intellect task for outdoor survival. Affected creatures within short range will not harm you or those you designate as allies until you use a ten-minute or longer recovery. This ability doesn't work against hostile  swarms of creatures of level 3 or higher. Your creatures—even common insects (level 0)—can swarm in large-enough numbers to hinder the attacks or defenses of a single target, or take some other action. This ability could instead be used to calm or command vines, grass blades, creepers, roots, or branches of nearby plants rather than animals or insects. Effort: Your creatures respond to your commands as NPC allies. Action to initiate. Understand Beast (2 Intellect): You sense the level, the nature, and any special abilities of a nonhuman creature within immediate range. Last action. The GM has final say over what counts as a nonhuman beast. Unless some kind of deception is at work, you should know whether you can affect a creature before you attempt to use Soothe the Savage on them. Aliens, extradimensional entities, very intelligent creatures, and robots never count."
-      },
-      {
-        "id": "understand-beast",
-        "name": "Understand Beast",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "819cfb3a4c30ffc7",
+          "to": "77ca4e7e31841531"
         },
-        "description": "You sense the level, the nature, and any special abilities of a nonhuman creature within immediate range. Last action."
-      },
-      {
-        "id": "beast-communication",
-        "name": "Beast Communication",
-        "tier": 2,
-        "prerequisites": [
-          "friend-to-small-creatures",
-          "understand-beast"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "e879127bf5280ad0",
+          "to": "77ca4e7e31841531"
         },
-        "description": "You can convey a basic concept to a creature that normally can't speak or understand speech. The creature can also give you a very basic answer to a simple question. Action."
-      },
-      {
-        "id": "soothe-the-savage",
-        "name": "Soothe the Savage",
-        "tier": 2,
-        "prerequisites": [
-          "friend-to-small-creatures",
-          "understand-beast"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "bee172df46baed49",
+          "to": "5111144335aee07b"
         },
-        "description": "Make an Intellect attack roll to calm a nonhuman beast within short range that can see you. You must speak to them (although they don't need to understand your words). They remain calm until you use a ten-minute or longer recovery or for as long as you keep using your action to calm them. Action."
-      },
-      {
-        "id": "mount",
-        "name": "Mount",
-        "tier": 3,
-        "prerequisites": [
-          "beast-companion",
-          "beast-communication"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "deeb68d42a797ff6",
+          "to": "5111144335aee07b"
         },
-        "description": "You gain a follower that is a level 3 beast who serves you as a mount. You and the GM must work out the appearance and personality of your beast. Its movement is based on its creature type (avian, swimmer, and so on). Instead of gaining a new creature as your mount, your beast companion can become your mount (this may involve a growth spurt), increasing their level to 3, in which case you gain a different level 2 beast companion. While riding your mount, on your turn they can move and you can make an attack, and you gain an asset on the attack. (This is a special exception to how followers normally can aid your attack.) Any focus ability you have that affects your beast companion (such as Beast Eyes or Improved Companion) can instead affect your mount (your choice). If your mount dies, you can use your resources hunting in the wild for about a week to locate and train a new one."
-      },
-      {
-        "id": "stronger-together",
-        "name": "Stronger Together",
-        "tier": 3,
-        "prerequisites": [
-          "beast-communication",
-          "soothe-the-savage"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "deeb68d42a797ff6",
+          "to": "f67c8bf3211bff88"
         },
-        "description": "When you and your beast companion (or a beast you've calmed with Soothe the Savage) are within immediate distance of each other, you inflict an additional 2 damage when you attack and both of you gain an asset to defense tasks. Enabler."
-      },
-      {
-        "id": "beast-eyes",
-        "name": "Beast Eyes",
-        "tier": 4,
-        "prerequisites": [
-          "mount",
-          "stronger-together"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "77ca4e7e31841531",
+          "to": "f67c8bf3211bff88"
         },
-        "description": "You link your mind to your beast companion (or a beast you've calmed with Soothe the Savage, if they remain well disposed toward you), perceiving through their senses if they are within 1 mile (1.6 km) of you. This ability lasts until you use a ten-minute or longer recovery. Action to initiate."
-      },
-      {
-        "id": "improved-companion",
-        "name": "Improved Companion",
-        "tier": 4,
-        "prerequisites": [
-          "mount",
-          "stronger-together"
-        ],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "5111144335aee07b",
+          "to": "a8910bf75e1e11bb"
         },
-        "description": "Increase the level of your beast companion (and their modifiers, if any) by 1. You can select this ability up to three times. Each additional time you select it, increase your beast's level by 1."
-      },
-      {
-        "id": "beast-betterment",
-        "name": "Beast Betterment",
-        "tier": 5,
-        "prerequisites": [
-          "beast-eyes",
-          "improved-companion"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "f67c8bf3211bff88",
+          "to": "a8910bf75e1e11bb"
         },
-        "description": "When you take a recovery within immediate range of your beast companion, you gain an additional 3 Pool points. Enabler."
-      },
-      {
-        "id": "beast-call",
-        "name": "Beast Call",
-        "tier": 5,
-        "prerequisites": [
-          "beast-eyes",
-          "improved-companion"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 5,
-          "options": []
+        {
+          "from": "5111144335aee07b",
+          "to": "16e429b4059bd255"
         },
-        "description": "You temporarily summon one level 4 beast or a horde of small beasts (who together function as a level 4 creature) to help you. The beast or beasts do your bidding for as long as you focus your attention, but you must use your action each turn to direct them. The beasts are native to the area and arrive under their own power, so if you’re in an unreachable place, this ability won’t work. Action."
-      },
-      {
-        "id": "armored-beast",
-        "name": "Armored Beast",
-        "tier": 6,
-        "prerequisites": [
-          "beast-betterment",
-          "beast-call"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "f67c8bf3211bff88",
+          "to": "16e429b4059bd255"
         },
-        "description": "Your beast’s Armor increases by 2. Enabler."
-      },
-      {
-        "id": "control-the-savage",
-        "name": "Control the Savage",
-        "tier": 6,
-        "prerequisites": [
-          "beast-betterment",
-          "beast-call"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 6,
-          "options": []
+        {
+          "from": "a8910bf75e1e11bb",
+          "to": "ccdcc2e86130c96e"
         },
-        "description": "Make an Intellect attack roll to control a calm nonhuman beast within short range. You control it as long as you use your action each round to concentrate on the target. Action."
-      }
-    ]
+        {
+          "from": "16e429b4059bd255",
+          "to": "ccdcc2e86130c96e"
+        },
+        {
+          "from": "a8910bf75e1e11bb",
+          "to": "95b18fc22e2af433"
+        },
+        {
+          "from": "16e429b4059bd255",
+          "to": "95b18fc22e2af433"
+        },
+        {
+          "from": "ccdcc2e86130c96e",
+          "to": "12fac91cf3042bb7"
+        },
+        {
+          "from": "95b18fc22e2af433",
+          "to": "12fac91cf3042bb7"
+        },
+        {
+          "from": "ccdcc2e86130c96e",
+          "to": "cd7a18ac3f9611b8"
+        },
+        {
+          "from": "95b18fc22e2af433",
+          "to": "cd7a18ac3f9611b8"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

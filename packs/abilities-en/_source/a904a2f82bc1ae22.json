@@ -1,0 +1,28 @@
+{
+  "_id": "a904a2f82bc1ae22",
+  "_key": "!items!a904a2f82bc1ae22",
+  "name": "Automaton Flight Upgrade",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "automaton-flight-upgrade",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You've built a new capability into one of your automatons—as its normal movement, it can fly up to a long distance. If you wish, it can carry you but can only move at a rate of up to 20 feet (6 m) per round in any direction while doing so."
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "_id": "ec243c3d5cece11f",
+  "_key": "!items!ec243c3d5cece11f",
+  "name": "Fearsome Reputation",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "fearsome-reputation",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "choice",
+      "amount": 3,
+      "options": [
+        "might",
+        "intellect"
+      ]
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You announce yourself (perhaps mentioning one of your intimidating deeds) to all foes within long range who can hear and understand you. Make a separate Intellect attack roll for each foe. Success means they are afraid of you, easing your tasks against them until you use a ten-minute or longer recovery. Action."
+  }
+}

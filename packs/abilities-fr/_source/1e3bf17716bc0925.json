@@ -1,0 +1,28 @@
+{
+  "_id": "1e3bf17716bc0925",
+  "_key": "!items!1e3bf17716bc0925",
+  "name": "Récupération accélérée",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "recover-faster",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu utilises une action pour te reprendre, tu gagnes une action supplémentaire durant ce tour, utilisable uniquement pour te déplacer."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "d876d52c7901be96",
+  "_key": "!items!d876d52c7901be96",
+  "name": "Suivant·e amélioré·e",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "improved-follower",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Choisis un·e de tes suivant·e·s : son niveau augmente de 1, toutes ses modifications augmentent de +1, iel gagne une nouvelle modification (de niveau = niveau de base + 1). Tu peux prendre cette aptitude une fois par rang, pour améliorer le même suivant ou un autre."
+  }
+}

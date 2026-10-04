@@ -1,0 +1,28 @@
+{
+  "_id": "e8e53f7ced15d3db",
+  "_key": "!items!e8e53f7ced15d3db",
+  "name": "Contacts de la pègre",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "underworld-contacts",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu connais de nombreuses personnes, dans divers milieux, impliquées dans des activités illégales. Ce ne sont pas nécessairement tes ami·e·s, ni des gens fiables, mais iels te reconnaissent comme un pair. Toi et ton·ta MJ devez définir les détails de ces contacts."
+  }
+}

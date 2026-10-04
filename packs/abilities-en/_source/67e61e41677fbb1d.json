@@ -1,0 +1,28 @@
+{
+  "_id": "67e61e41677fbb1d",
+  "_key": "!items!67e61e41677fbb1d",
+  "name": "Seeds of Fury",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "seeds-of-fury",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You throw a handful of seeds in the air that ignite and speed toward a target within long range, scorching the air with twisting smoke trails. A successful attack deals 3 damage and catches the target on fire, inflicting +1 damage per round until the target uses an action to douse the flames or until you've taken your next recovery. Action."
+  }
+}

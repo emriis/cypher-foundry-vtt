@@ -1,0 +1,28 @@
+{
+  "_id": "6f75d8842452a68d",
+  "_key": "!items!6f75d8842452a68d",
+  "name": "Swing Through GM intrusions",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "swing-through-gm-intrusions",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your sword chips or bends, reducing its damage by 1 until repaired. Your sword goes flying, landing a short distance away. Your foe deflects your attack, and you inflict a moderate wound on yourself."
+  }
+}

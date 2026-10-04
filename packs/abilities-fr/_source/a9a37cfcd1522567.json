@@ -1,0 +1,28 @@
+{
+  "_id": "a9a37cfcd1522567",
+  "_key": "!items!a9a37cfcd1522567",
+  "name": "Se fondre dans le décor",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "go-to-ground",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Comme action, tu te déplaces jusqu’à longue portée, puis tu tentes de te cacher. Tu gagnes un atout à ta tâche de Discrétion pour te fondre dans l’environnement, disparaître ou échapper aux sens de toutes les personnes conscientes de ta présence."
+  }
+}

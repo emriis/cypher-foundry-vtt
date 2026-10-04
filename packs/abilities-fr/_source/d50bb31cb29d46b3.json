@@ -1,0 +1,28 @@
+{
+  "_id": "d50bb31cb29d46b3",
+  "_key": "!items!d50bb31cb29d46b3",
+  "name": "Attaque sournoise améliorée",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "better-sneak-attack",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu utilises Attaque sournoise, tu gagnes un atout supplémentaire sur l’attaque. Au prochain tour, ta cible subit +5 dégâts supplémentaires (ignore l’Armure) à moins qu’elle ne prenne une récupération, ne se soigne ou n’utilise son action pour traiter la blessure."
+  }
+}

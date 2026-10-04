@@ -1,0 +1,28 @@
+{
+  "_id": "e92c891924573cb9",
+  "_key": "!items!e92c891924573cb9",
+  "name": "Multiple Quarries",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "multiple-quarries",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you activate Quarry, you can select four creatures you can see to be your quarry instead of just one. Each additional quarry you select adds 2 Intellect to the cost of Quarry. Enabler."
+  }
+}

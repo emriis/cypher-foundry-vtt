@@ -1,0 +1,28 @@
+{
+  "_id": "2a352546de6d31d5",
+  "_key": "!items!2a352546de6d31d5",
+  "name": "Noble défenseur·euse (2 Puissance ou 2 Célérité)",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "noble-bearing",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You are adept at claiming the rewards that a noble background can generate. When you use this ability, strangers who are not already attacking give you at least a round to have your say. Alternatively, you can secure a place to stay somewhere that provides accommodations (even if that means others are turned out), get into a restricted area, ignore rules (minor ones, anyway), get in to see and speak with an important person, or gain some similar benefit without needing to succeed on an interaction task (unless your GM determines special circumstances apply, in which case you gain an asset to the task). Enabler."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "71be9025bd28d76d",
+  "_key": "!items!71be9025bd28d76d",
+  "name": "Étreinte de la nature",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "nature-s-grip",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Fais une attaque d’Intellect contre une cible à courte portée. En cas de réussite, des branches, herbes ou racines immobilisent la cible jusqu’à ta prochaine récupération de dix minutes ou plus. La cible ne peut plus se déplacer et ses actions physiques (attaque, défense…) sont entravées. Si elle tente de se libérer, tu peux la retenir au moyen d’un nouveau jet d’Intellect. Tu peux aussi utiliser cette aptitude pour repousser ou disperser des plantes entravantes dans une zone immédiate. Effort : infliger 3 dégâts lors du round initial où tu l’immobilises."
+  }
+}

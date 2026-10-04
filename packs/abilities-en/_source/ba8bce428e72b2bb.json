@@ -1,0 +1,28 @@
+{
+  "_id": "ba8bce428e72b2bb",
+  "_key": "!items!ba8bce428e72b2bb",
+  "name": "Sense Metal",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "sense-metal",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": "lastAction",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If there is ferromagnetic metal of any kind within short range, you are aware of that fact, as well as the amount, type, and general location. Last action."
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "_id": "cb3ee447e5b078a3",
+  "_key": "!items!cb3ee447e5b078a3",
+  "name": "Suivi parfait",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "perfect-follow-through",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "choice",
+      "amount": 8,
+      "options": [
+        "might",
+        "speed"
+      ]
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu attaques avec ton arme de prédilection et tu peux effectuer une autre action comme action supplémentaire à ton tour."
+  }
+}

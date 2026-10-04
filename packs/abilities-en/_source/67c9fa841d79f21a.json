@@ -1,0 +1,28 @@
+{
+  "_id": "67c9fa841d79f21a",
+  "_key": "!items!67c9fa841d79f21a",
+  "name": "Faster Phase",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "faster-phase",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you use Walk Through Walls, you pass through physical barriers faster, increasing your base rate by an additional 3 feet (1 m) per round, and doing so is an action rather than a Last action (you can take your normal movement before or after you use your phasing action). Enabler."
+  }
+}

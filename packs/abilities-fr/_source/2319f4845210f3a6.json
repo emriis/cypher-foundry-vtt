@@ -1,0 +1,28 @@
+{
+  "_id": "2319f4845210f3a6",
+  "_key": "!items!2319f4845210f3a6",
+  "name": "Utiliser l’environnement",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "using-the-environment",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu utilises le décor à ton avantage. Si quelque chose à portée immédiate peut plausiblement servir de couverture (table, lustre, rampe, un autre adversaire, etc.), tu obtiens une couverture et un atout sur tes attaques de mêlée. Il s’agit d’une tâche de routine qui ne nécessite donc pas de jet pour se déplacer partout où c’est physiquement possible tant que tu pourrais rejoindre cet endroit avec un mouvement normal, de l’escalade, un saut (de plus tu ignores les obstacles et le terrain difficile quand tu le fais). Par exemple : escalader une tenture jusqu’à un balcon, glisser le long d’une voile, etc. Impossible cependant de passer par une meurtrière ou d’entrer dans une cage fermée. L’effet dure jusqu’à ta prochaine récupération de dix minutes ou plus."
+  }
+}

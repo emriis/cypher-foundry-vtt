@@ -1,0 +1,28 @@
+{
+  "_id": "fc13982fbdc509a9",
+  "_key": "!items!fc13982fbdc509a9",
+  "name": "Bigger Animal Shape",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "bigger-animal-shape",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you use Animal Shape, you can grow to about twice your normal size. Being so large, your animal shape gains the following additional benefits: you can ignore the first moderate wound you take, your unarmed attacks inflict an additional 4 damage, and you gain an asset on your unarmed attack rolls. However, your dodge tasks are hindered. While using Bigger Animal Shape, you also gain an asset to tasks that are easier for a larger creature to perform, like climbing, intimidating, wading rivers, and so on."
+  }
+}

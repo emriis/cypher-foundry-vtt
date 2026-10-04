@@ -1,0 +1,28 @@
+{
+  "_id": "5ad5c369776e8268",
+  "_key": "!items!5ad5c369776e8268",
+  "name": "Révéler l'illusion",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "reveal-illusion",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu fais un jet pour trouver une illusion ou une cible invisible à portée courte et que ton résultat est inférieur à 12, considère que tu as obtenu 12. (Tu évites ainsi une Intrusion du·de la MJ si tu fais un 1.) Cette aptitude dure jusqu’à ta prochaine récupération de dix minutes ou plus. Action pour commencer. Effort : augmente le résultat minimal de cette aptitude de 3. Au rang 3 : le résultat minimal de cette aptitude passe à 15."
+  }
+}

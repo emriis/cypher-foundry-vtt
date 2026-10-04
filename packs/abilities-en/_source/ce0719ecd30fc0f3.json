@@ -1,0 +1,28 @@
+{
+  "_id": "ce0719ecd30fc0f3",
+  "_key": "!items!ce0719ecd30fc0f3",
+  "name": "Machine Companion",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "machine-companion",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You create, find, or otherwise acquire a level 3 intelligent machine companion follower that accompanies you and acts as you direct. If it's destroyed, it can be restored using your resources if you spend a few days tinkering."
+  }
+}

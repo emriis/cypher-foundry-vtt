@@ -1,0 +1,28 @@
+{
+  "_id": "3efd33833b8a6953",
+  "_key": "!items!3efd33833b8a6953",
+  "name": "Find Motivation",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "find-motivation",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When your mind would be negatively affected by an effect of level 4 or less (psychic commands, illness, fear, boredom, mind control, and so on), you can ignore the effect. If the effect lasts for a while (such as fear or mind control), it has no power over you until you use a ten-minute or longer recovery. If the effect is instantaneous (such as a psychic blast that inflicts damage), it doesn't affect you at all. Effort: Increase the maximum effect level you can ignore by 1. Enabler."
+  }
+}

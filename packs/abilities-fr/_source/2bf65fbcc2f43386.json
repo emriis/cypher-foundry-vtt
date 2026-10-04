@@ -1,0 +1,28 @@
+{
+  "_id": "2bf65fbcc2f43386",
+  "_key": "!items!2bf65fbcc2f43386",
+  "name": "Renvoi à l’expéditeur",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "return-to-sender",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Si tu réussis un Blocage ou une Esquive contre une attaque de mêlée, tu peux immédiatement faire une attaque de mêlée contre l’assaillant. Tu ne peux pas réutiliser cette aptitude avant ton prochain tour normal."
+  }
+}

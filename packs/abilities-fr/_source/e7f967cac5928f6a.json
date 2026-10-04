@@ -1,0 +1,28 @@
+{
+  "_id": "e7f967cac5928f6a",
+  "_key": "!items!e7f967cac5928f6a",
+  "name": "Paume résonante",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "resonant-palm",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 7,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu crées un lien mystique avec une créature consentante que tu touches, ou un ennemi que tu touches via une attaque réussie (cette attaque inflige 2 dégâts de moins). Pendant les dix prochains jours, peu importe la distance, tu peux : - Transférer une blessure de la créature vers toi. (Aucune aptitude ou équipement ne peut réduire la sévérité de cette blessure, mais tu peux te reprendre ou la traiter normalement.) - Faire une attaque à mains nues facilitée contre la cible, ou une attaque facilitée avec l’une de tes aptitudes, comme si elle était à portée. Le lien se brise après ton utilisation, si tu en crées un nouveau ou après dix jours."
+  }
+}

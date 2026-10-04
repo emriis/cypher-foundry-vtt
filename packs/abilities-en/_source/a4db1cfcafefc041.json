@@ -1,0 +1,28 @@
+{
+  "_id": "a4db1cfcafefc041",
+  "_key": "!items!a4db1cfcafefc041",
+  "name": "Enlarge",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "enlarge",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You grow to a height of 9 feet (3 m) until you use a recovery. Your equipment increases size with you. While enlarged, you add +1 to your Might Edge, you can ignore the first moderate wound you take, and your unarmed attacks inflict 4 damage. While enlarged, your dodge tasks are hindered. Each time you use Enlarge, the Might cost increases by 1. The cost resets after you take a recovery. Last action; enabler to use again to remain enlarged. If you have multiple abilities that let you grow to a larger size, their effects don't add together—you just get the benefits from the biggest one."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "f879c9f72f2d168b",
+  "_key": "!items!f879c9f72f2d168b",
+  "name": "Automaton Cypher Upgrade",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "automaton-cypher-upgrade",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You've built a new capability into one of your automatons—for one day, the automaton increases your cypher limit by one. Enabler."
+  }
+}

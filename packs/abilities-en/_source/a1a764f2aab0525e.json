@@ -1,0 +1,28 @@
+{
+  "_id": "a1a764f2aab0525e",
+  "_key": "!items!a1a764f2aab0525e",
+  "name": "Sense Weakness",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "sense-weakness",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "After observing a creature for one round, you know of any special weaknesses they may have and your attacks inflict an additional 1 damage against them. Action to initiate."
+  }
+}

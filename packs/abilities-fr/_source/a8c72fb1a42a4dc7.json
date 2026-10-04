@@ -1,0 +1,28 @@
+{
+  "_id": "a8c72fb1a42a4dc7",
+  "_key": "!items!a8c72fb1a42a4dc7",
+  "name": "Déchirer le métal",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "rend-metal",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu déchires, perce ou fais éclater instantanément un objet métallique jusqu’à niveau 3, à portée courte. Tu dois voir l’objet et il ne peut pas dépasser la moitié de ta taille (ou être une portion de cette taille maximum contenu dans un objet plus grand). Tu détruis l’objet. Optionnellement, il explose en shrapnel, infligeant 1 dégât par niveau à toutes les créatures à portée immédiate (jets séparés d’attaque d’Intellect). Affecter l’équipement d’une créature réticente nécessite une attaque d’Intellect, facilitée de deux paliers. Effort : augmenter le niveau maximal destructible de +1."
+  }
+}

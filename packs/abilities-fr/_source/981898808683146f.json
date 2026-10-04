@@ -1,0 +1,28 @@
+{
+  "_id": "981898808683146f",
+  "_key": "!items!981898808683146f",
+  "name": "Explosion de froid",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "cold-burst",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu émets une explosion de froid dans toutes les directions, jusqu’à courte portée. Fais une attaque d’Intellect contre toute créature dans la zone. En cas de réussite elles encaissent 5 dégâts de froid. Chaque niveau d’Effort pour augmenter les dégâts ajoute +2 dégâts (ou +1 en cas d’échec). Effort : tenter d’aveugler les cibles touchées (un second jet réussi contre une cible l’aveugle, entravant toutes ses tâches basées sur la vision de deux paliers, jusqu’à ta prochaine récupération de dix minutes ou plus)."
+  }
+}

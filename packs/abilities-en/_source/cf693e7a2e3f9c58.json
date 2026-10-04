@@ -1,0 +1,28 @@
+{
+  "_id": "cf693e7a2e3f9c58",
+  "_key": "!items!cf693e7a2e3f9c58",
+  "name": "Identify Psionics",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "identify-psionics",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": "lastAction",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If you have sensed psionics using the tier 1 ability, you can gain more specifics about what you sense: the level of the effect, the source of the effect (a creature or an ongoing psychic effect), and the general effects of the psionics at play. Last action."
+  }
+}

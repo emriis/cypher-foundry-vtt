@@ -1,0 +1,28 @@
+{
+  "_id": "397adaa70e71df88",
+  "_key": "!items!397adaa70e71df88",
+  "name": "Terrifiant·e même à taille normale",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "scary-big",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Même sans être agrandi·e, ta présence est impressionnante : tu gagnes un atout aux tâches de persuasion et intimidation. Si tu es plus grand·e que ta taille normale, tu gagnes deux atouts."
+  }
+}

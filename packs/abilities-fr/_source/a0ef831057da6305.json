@@ -1,0 +1,28 @@
+{
+  "_id": "a0ef831057da6305",
+  "_key": "!items!a0ef831057da6305",
+  "name": "Sourire canaille",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "roguish-smile",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Avec un sourire charmeur — et peut‑être un clin d’œil — tu effaces le dernier round de la mémoire d’une cible de niveau 3 ou moins à portée immédiate (attaque d’Intellect requise). Effort : augmenter le niveau maximal affecté de +1."
+  }
+}

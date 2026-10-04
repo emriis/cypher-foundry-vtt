@@ -1,0 +1,28 @@
+{
+  "_id": "6cad3b9e78af3a07",
+  "_key": "!items!6cad3b9e78af3a07",
+  "name": "Shield Against Evil",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "shield-against-evil",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You bless yourself or a touched ally with protection against undead, demons, or creatures of similar ilk until you use a ten-minute or longer recovery. The protection eases defense rolls against the specified creature variety and grants immunity against mental influence, fear, and possession (from any source). Action."
+  }
+}

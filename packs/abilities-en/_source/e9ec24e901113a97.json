@@ -1,0 +1,28 @@
+{
+  "_id": "e9ec24e901113a97",
+  "_key": "!items!e9ec24e901113a97",
+  "name": "Soul Interrogation",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "soul-interrogation",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You attempt to learn secret information about a foe that you can use against them. Make an Intellect attack against a creature within long range. Success means you learn their level, basic abilities, and obvious weaknesses (such as a vulnerability to fire or silver), as well as their mannerisms and personal qualities that you could discover by conversing with them for an extended time. For the next few months, your actions against them are eased. Action."
+  }
+}

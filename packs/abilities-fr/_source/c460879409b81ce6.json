@@ -1,0 +1,28 @@
+{
+  "_id": "c460879409b81ce6",
+  "_key": "!items!c460879409b81ce6",
+  "name": "Charmer une machine",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "charm-machine",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu convaincs une machine ou un automate non intelligent à portée immédiate de « t’apprécier », via une attaque d’Intellect réussie. Une machine qui t’apprécie a 50 % de chances de ne pas fonctionner si cela te causerait du tort."
+  }
+}

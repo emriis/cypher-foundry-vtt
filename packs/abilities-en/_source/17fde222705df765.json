@@ -1,0 +1,28 @@
+{
+  "_id": "17fde222705df765",
+  "_key": "!items!17fde222705df765",
+  "name": "Cool Water",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "cool-water",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You cause water in the air to condense, creating enough potable cold water to sustain five creatures for one day. Action."
+  }
+}

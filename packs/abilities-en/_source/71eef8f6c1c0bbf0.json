@@ -1,0 +1,28 @@
+{
+  "_id": "71eef8f6c1c0bbf0",
+  "_key": "!items!71eef8f6c1c0bbf0",
+  "name": "Investigative Knack",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "investigative-knack",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You have a keen eye for detail and can pick up subtle cues that indicate someone is lying or withholding information. When you study an area for clues or converse with (or interrogate) someone for information, if you roll a 9 or less on your perception, interaction, or recognizing motive task, treat the roll as a 9. (This means you don't get a GM intrusion if you roll a 1.) This ability lasts until you use a ten-minute or longer recovery. Effort: Increase the minimum number rolled for this ability by 3. Action to initiate. At tier 3: The minimum number rolled for this ability increases to 12."
+  }
+}

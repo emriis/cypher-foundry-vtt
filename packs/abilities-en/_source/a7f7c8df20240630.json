@@ -1,0 +1,28 @@
+{
+  "_id": "a7f7c8df20240630",
+  "_key": "!items!a7f7c8df20240630",
+  "name": "Illusory Disguise",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "illusory-disguise",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You appear to be someone or something else, roughly of your size and shape, until you use a one-hour or longer recovery. Once created, the disguise requires no concentration. Effort: Disguise one additional creature (1 Intellect); if you lose sight of a disguised creature, they lose their disguise. Action."
+  }
+}

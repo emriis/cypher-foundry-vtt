@@ -1,0 +1,31 @@
+{
+  "_id": "a684650af8b2ed98",
+  "_key": "!items!a684650af8b2ed98",
+  "name": "Fracas tellurique",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "earthshake",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "choice",
+      "amount": 8,
+      "options": [
+        "might",
+        "intellect"
+      ]
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu déclenches un séisme localisé dans une zone courte à très longue portée. Les constructions et éléments naturels dans la zone sont endommagés, réduisant leur niveau de 1 à 3, produisant des débris et des gravats. Toutes les créatures dans la zone subissent 7 dégâts à cause des tremblements. Les créatures dans ou à côté d’un bâtiment ou élément affecté subissent 13 dégâts, sans jet."
+  }
+}

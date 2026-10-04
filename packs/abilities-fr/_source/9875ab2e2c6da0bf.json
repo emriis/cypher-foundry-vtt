@@ -1,0 +1,28 @@
+{
+  "_id": "9875ab2e2c6da0bf",
+  "_key": "!items!9875ab2e2c6da0bf",
+  "name": "Soulagement de la douleur",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "easing-the-pain",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Allies within immediate range (including you) that take a recovery add +1 to  their roll."
+  }
+}

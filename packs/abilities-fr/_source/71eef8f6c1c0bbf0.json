@@ -1,0 +1,28 @@
+{
+  "_id": "71eef8f6c1c0bbf0",
+  "_key": "!items!71eef8f6c1c0bbf0",
+  "name": "Flair pour l’enquête",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "investigative-knack",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu as l’œil pour les détails subtils — ceux qui révèlent un mensonge ou une rétention d’information. Lorsque tu examines une zone à la recherche d’indices, ou que tu discutes/interroges quelqu’un, si ton jet de perception, interaction ou détection de mensonge est inférieur à 9, considère‑le comme 9. (Un 1 naturel n’entraîne pas d’intrusion du·de la MJ.) L’effet dure jusqu’à ta prochaine récupération de dix minutes ou plus. Au rang 3, le minimum passe à 12. Effort : augmente le minimum obtenu de +3."
+  }
+}

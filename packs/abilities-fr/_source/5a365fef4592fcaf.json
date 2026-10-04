@@ -1,0 +1,28 @@
+{
+  "_id": "5a365fef4592fcaf",
+  "_key": "!items!5a365fef4592fcaf",
+  "name": "Projectiles guidés",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "guide-bolt",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Lorsque tu fais une attaque utilisant une munition métallique (balle, couteau lancé, carreau, flèche à pointe métallique…) sur une cible à portée courte, tu peux en corriger la trajectoire et en augmenter la vitesse : gain d’un atout, +3 dégâts supplémentaires. Tu peux utiliser cette aptitude une fois par round. Effort : Affecter l’attaque d’un·e allié·e si elle passe à portée courte de toi."
+  }
+}

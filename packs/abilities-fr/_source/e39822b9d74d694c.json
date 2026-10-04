@@ -1,0 +1,28 @@
+{
+  "_id": "e39822b9d74d694c",
+  "_key": "!items!e39822b9d74d694c",
+  "name": "Démonstration d’adresse",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "display-of-skill",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "En te voyant utiliser ton arme en combat ou via une démonstration spectaculaire, un·e allié·e gagne un niveau d’Effort gratuit pour une action de son choix avant ta prochaine récupération de dix minutes ou plus (ou la sienne). Inversement, un·e adversaire peut être intimidé·e : tu gagnes alors un niveau d’Effort gratuit sur une tâche d’intimidation ultérieure."
+  }
+}

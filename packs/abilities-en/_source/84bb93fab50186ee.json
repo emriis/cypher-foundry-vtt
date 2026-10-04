@@ -1,0 +1,28 @@
+{
+  "_id": "84bb93fab50186ee",
+  "_key": "!items!84bb93fab50186ee",
+  "name": "Twisting the Knife",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "twisting-the-knife",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 4,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If you've hit a foe with a melee weapon in this combat, you automatically hit them again with that same weapon (no roll required), dealing normal damage. You can't use this ability with a special attack or if you want to use Effort to increase damage, but abilities that automatically affect your damage do apply to this attack. Action."
+  }
+}

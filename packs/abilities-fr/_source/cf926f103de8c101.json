@@ -1,0 +1,28 @@
+{
+  "_id": "cf926f103de8c101",
+  "_key": "!items!cf926f103de8c101",
+  "name": "Se mouvoir comme l’eau",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "moving-like-water",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Jusqu’à ta prochaine récupération de dix minutes ou plus, si tu rates une Esquive, tu peux quand même tenter un Blocage, mais celui‑ci est entravé."
+  }
+}

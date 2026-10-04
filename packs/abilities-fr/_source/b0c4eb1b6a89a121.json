@@ -1,0 +1,28 @@
+{
+  "_id": "b0c4eb1b6a89a121",
+  "_key": "!items!b0c4eb1b6a89a121",
+  "name": "Transformation mieux contrôlée",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "greater-controlled-change",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Se transformer dans un sens ou dans l’autre via Forme bestiale devient une tâche d’Intellect de difficulté 2."
+  }
+}

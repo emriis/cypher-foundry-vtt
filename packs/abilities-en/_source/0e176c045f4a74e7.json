@@ -1,0 +1,28 @@
+{
+  "_id": "0e176c045f4a74e7",
+  "_key": "!items!0e176c045f4a74e7",
+  "name": "Healing Fruit",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "healing-fruit",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You infuse one fruit or seed with healing magic. A creature that eats it regains 1d6 to a stat Pool of their choice or recovers a minor wound. A creature cannot gain this benefit again until they take a ten-minute or longer recovery. An uneaten fruit automatically loses its healing magic when you use a ten-minute or longer recovery. Action."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "2ea0935aa50fcc96",
+  "_key": "!items!2ea0935aa50fcc96",
+  "name": "Malgré mes blessures",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "despite-my-wounds",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tant que tu as deux blessures modérées ou une blessure majeure, tu obtiens un jet gratuit de relance sur une action par round (comme si tu dépensais 1 XP)."
+  }
+}

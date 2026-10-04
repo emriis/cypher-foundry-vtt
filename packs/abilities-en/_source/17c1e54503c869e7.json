@@ -1,0 +1,28 @@
+{
+  "_id": "17c1e54503c869e7",
+  "_key": "!items!17c1e54503c869e7",
+  "name": "Fence Out Evil",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "fence-out-evil",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You encircle a short area in a transparent, immaterial wall of cleansing light until you use a ten-minute or longer recovery. When the wall appears, each undead, demon, or creature of similar ilk within its area—or that enters the area—automatically takes 3 damage (ignores armor) from the light (no attack roll required) each round. In addition, you can attempt an Intellect attack against a qualifying creature in the area each round as your action. If you succeed, that creature is affected as if you successfully used Rebuke Evil against them. Action to initiate; action for each targeted use. Supreme Retribution (8 Intellect): You call down a shaft of roaring radiant flame in an immediate area within long range. Make separate Intellect attacks against each creature in the area. Success means you inflict 4 damage; all creatures take 1 damage even on a failed attack roll. Choose one creature in the area to take an additional 3 damage regardless of whether your attack succeeded or failed. Action."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "68b29b1095e49d07",
+  "_key": "!items!68b29b1095e49d07",
+  "name": "Exploit de force",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "feat-of-strength",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Ton action physique est si impressionnante qu’elle inspire un·e allié·e ou intimide un·e adversaire. Après avoir réussi une tâche reposant sur la force brute (défoncer une porte barrée, arracher un conteneur verrouillé, soulever ou déplacer un objet lourd, frapper quelqu’un en mêlée…), choisis une créature qui t’a vu·e : si c’est un·e allié·e, sa prochaine tâche est facilitée, si c’est un·e ennemi·e, tu peux soit entraver l’une de ses tâches à son prochain tour, soit tenter immédiatement une tâche d’intimidation facilitée contre ellui."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "ec6a00aa2aa77608",
+  "_key": "!items!ec6a00aa2aa77608",
+  "name": "Graines de Fureur",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "seeds-of-fury",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu projettes une poignée de graines qui s'enflamment en plein air puis filent vers une cible à longue portée, laissant derrière elles une traînée de fumée. Une attaque réussie inflige 3 dégâts et met la cible en feu, provoquant +1 dégât par round jusqu'à ce qu'elle utilise une action pour éteindre les flammes ou jusqu'à ta prochaine récupération."
+  }
+}

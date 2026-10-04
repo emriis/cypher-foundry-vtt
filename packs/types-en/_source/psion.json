@@ -29,48 +29,9 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "mind-reading",
-        "name": "Mind Reading",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
-        },
-        "description": "You can read the surface thoughts of a creature you can see within short range. If the creature is unwilling, you must make an Intellect attack against them to read their thoughts. Once you have established contact, you can read the target's thoughts until you use a ten-minute or longer recovery. Action."
-      },
-      {
-        "id": "onslaught",
-        "name": "Onslaught",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
-        },
-        "description": "You attack a foe using energies that assail either their physical form or their mind. In either case, you must be able to see your target. If the attack is physical, you emit a short-range ray of force that inflicts 4 damage. If the attack is mental, you focus your mental energy to blast their thought processes with a mindslice that inflicts 2 Intellect damage (ignores armor). Some creatures without minds (such as robots) might be immune to your mindslice. Action. At tier 3: You deal 1 additional damage with Onslaught."
-      },
-      {
-        "id": "psychic-veil",
-        "name": "Psychic Veil",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
-        },
-        "description": "Your appearance is distorted as if viewed through the visual aura of a migraine until you take a ten-minute or longer recovery. The distortion doesn't interfere with your actions, but your dodge and Intellect defense rolls are eased. While active, the distortion protects you from mental attacks, reducing their wound severity by one step (major to moderate, moderate to minor, minor to none). For example, if you are hit by a psychic blast attack that causes a moderate wound, you instead take a minor wound. Enabler."
-      }
+      "Compendium.cypher.abilities-en.Item.4aece7fdcd1b9753",
+      "Compendium.cypher.abilities-en.Item.31dd3a6a24ba79bb",
+      "Compendium.cypher.abilities-en.Item.8ea185d94ce5f78e"
     ],
     "statOptions": [
       "intellect"

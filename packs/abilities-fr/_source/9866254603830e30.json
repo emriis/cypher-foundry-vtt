@@ -1,0 +1,28 @@
+{
+  "_id": "9866254603830e30",
+  "_key": "!items!9866254603830e30",
+  "name": "Diriger par l’investigation",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "lead-by-inquiry",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Lorsque tu prends une récupération de dix heures avec un ou plusieurs allié·e·s, ces allié·e·s sont considérés comme entraîné·e·s en perception et en détection de mensonge. L’effet persiste tant que tu restes à courte portée d’eux. Il cesse si vous vous séparez d’une plus grande distance mais revient si vous revenez à portée. Le bénéfice s’arrête si tu fais une récupération de dix heures sans eux."
+  }
+}

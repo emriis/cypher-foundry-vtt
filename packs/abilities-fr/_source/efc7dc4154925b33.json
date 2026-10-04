@@ -1,0 +1,28 @@
+{
+  "_id": "efc7dc4154925b33",
+  "_key": "!items!efc7dc4154925b33",
+  "name": "Perfection du corps",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "perfecting-the-body",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tes katas quotidiens t’infusent et te protègent, t’accordant une immunité contre la peur, le contrôle mental, la maladie et le poison."
+  }
+}

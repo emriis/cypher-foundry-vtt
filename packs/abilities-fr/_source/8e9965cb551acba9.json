@@ -1,0 +1,28 @@
+{
+  "_id": "8e9965cb551acba9",
+  "_key": "!items!8e9965cb551acba9",
+  "name": "Vantardise flamboyante",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "flamboyant-boast",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu décris bruyamment un exploit que tu vas réaliser, puis, comme action supplémentaire, tu essaies de le faire. Si l’action serait difficile (ou impossible) pour une personne moyenne et que tu réussis, les non-alliés témoins sont tellement étonné·e·s que toutes leurs actions sont entravées à leur prochain tour. Le·La MJ détermine si ta vantardise est réellement impressionnante. Si tu échoues, jusqu’à ta prochaine récupération de dix minutes ou plus, toutes tes tentatives pour influencer les témoins (attaques, aptitudes, interactions) sont entravées."
+  }
+}

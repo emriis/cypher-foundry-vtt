@@ -1,0 +1,28 @@
+{
+  "_id": "1fa91792afec15b3",
+  "_key": "!items!1fa91792afec15b3",
+  "name": "Interlocuteur expert",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "expert-interlocuter",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu es entraîné·e dans la compétence de ton choix parmi charme, duperie ou intimidation. Au rang 6, tu peux devenir expert·e dans cette même compétence si tu es déjà spécialisé·e, mais tu dois acquérir la compétence normalement (après une progression de personnage, par exemple)."
+  }
+}

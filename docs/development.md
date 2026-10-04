@@ -46,6 +46,7 @@ Use this flow when adding or revising game content rather than system behavior.
 | --- | --- | --- |
 | Editable Descriptor sources | `packs/descriptors-{en,fr}/_source/` | Source of truth |
 | Foundry-readable LevelDB packs | `packs/descriptors-{en,fr}/` | Generated package input |
+| Editable Ability sources | `packs/abilities-{en,fr}/_source/` | Source of truth |
 | Editable Type sources | `packs/types-{en,fr}/_source/` | Source of truth |
 | Editable Focus sources | `packs/foci-{en,fr}/_source/` | Source of truth |
 
@@ -60,7 +61,7 @@ memory.
 node --test tests/compendium-sources.test.mjs
 ```
 
-Then rebuild each affected LevelDB pack with `npm run build:packs`. The build script compiles all six
+Then rebuild each affected LevelDB pack with `npm run build:packs`. The build script compiles all eight
 packs from their `_source/` directories and replaces only their generated database files. The
 `_source/` JSON is the reviewable source of truth; the adjacent LevelDB files are what Foundry
 loads because `system.json` declares them directly.

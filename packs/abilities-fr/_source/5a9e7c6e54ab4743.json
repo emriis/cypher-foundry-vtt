@@ -1,0 +1,28 @@
+{
+  "_id": "5a9e7c6e54ab4743",
+  "_key": "!items!5a9e7c6e54ab4743",
+  "name": "Trait de givre",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "frost-bolt",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu émets un rayon de froid intense sur une cible à courte portée. En cas de réussite, tu infliges 4 dégâts de froid. À la place, tu peux intensifier le froid de ton Armure de glace, ajoutant +2 dégâts à ton toucher glacé ainsi qu’à tes attaques de mêlée ou à distance. Cet effet dure jusqu’à ta prochaine récupération de dix minutes ou plus."
+  }
+}

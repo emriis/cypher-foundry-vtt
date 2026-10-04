@@ -1,0 +1,28 @@
+{
+  "_id": "878720ceb4ebde63",
+  "_key": "!items!878720ceb4ebde63",
+  "name": "Towering Strike",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "towering-strike",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you hit with a Might attack, you deal an additional 4 damage. While bigger than normal, each increment (Enlarge, Bigger, Huge, Gargantuan, and Colossal) inflicts an additional 1 damage. This ability renews after you take a recovery. Enabler."
+  }
+}

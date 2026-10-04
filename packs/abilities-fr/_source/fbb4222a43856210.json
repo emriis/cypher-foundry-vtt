@@ -1,0 +1,28 @@
+{
+  "_id": "fbb4222a43856210",
+  "_key": "!items!fbb4222a43856210",
+  "name": "Vibration subsonique",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "subsonic-rumble",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu émets un grondement subsonique que peu de créatures entendent, mais qui les affecte toutes. Les créatures à portée courte voient leurs défenses entravées de deux paliers contre les tâches visant à les persuader, les intimider, leur faire peur. L’effet dure jusqu’à ta prochaine récupération de dix minutes ou plus."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "e602b98e6a3e488f",
+  "_key": "!items!e602b98e6a3e488f",
+  "name": "Still As a Statue",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "still-as-a-statue",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You freeze in place, burying your essence deep in your stone core. During this time, you lose all mobility as well as the ability to take physical actions. You cannot sense what's happening around you, and no time seems to pass for you. While using this ability, any wounds you take are reduced in severity by two steps. You rouse to normal wakefulness and mobility 24 hours later, removing three wounds of any severity. If an ally shakes you hard enough (with a minimum cost of 2 Might on their part), you rouse earlier, but no wounds (if you have any) are removed. Action to initiate."
+  }
+}

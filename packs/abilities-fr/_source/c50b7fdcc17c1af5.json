@@ -1,0 +1,28 @@
+{
+  "_id": "c50b7fdcc17c1af5",
+  "_key": "!items!c50b7fdcc17c1af5",
+  "name": "Vol arcanique",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "arcane-flight",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu peux flotter et voler à ta vitesse terrestre normale jusqu’à ta prochaine récupération de dix minutes ou plus. En déplacement de longue durée : une créature volante se déplace à environ 30 km/h, sans être ralenti·e par le terrain. Effort : affecte une créature touchée supplémentaire (taille égale ou plus petite), que tu diriges ; elle doit rester dans ton champ visuel."
+  }
+}

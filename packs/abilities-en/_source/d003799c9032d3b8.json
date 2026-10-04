@@ -1,0 +1,28 @@
+{
+  "_id": "d003799c9032d3b8",
+  "_key": "!items!d003799c9032d3b8",
+  "name": "Automaton Armor Upgrade",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "automaton-armor-upgrade",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "light",
+    "effects": [],
+    "rollTables": [],
+    "description": "You've built a new capability into one of your automatons—it can use its action to transform into an armored suit that you wear until you use a one-hour or longer recovery. If you are within an immediate distance when it transforms, it automatically forms itself around you. The transformed automaton acts as light armor; because it anticipates and reacts to your movements, you can freely use this armor. Enabler."
+  }
+}

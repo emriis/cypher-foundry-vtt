@@ -1,0 +1,28 @@
+{
+  "_id": "f073a131a49fb3d4",
+  "_key": "!items!f073a131a49fb3d4",
+  "name": "Regard terrifiant",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "terrifying-gaze",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu projettes un regard effroyable sur jusqu’à cinq créatures vivantes à portée courte qui peuvent te voir. Tu fais un jet d’attaque d’Intellect séparé pour chaque créature. En cas de succès, la créature est figée de peur, incapable de se déplacer ou d’agir jusqu’à ce que : tu fasses une récupération de dix minutes ou plus, elle soit attaquée, tu quittes son champ de vision. Certaines créatures sans esprit (slimes, statues animées…) sont immunisées contre cette aptitude."
+  }
+}

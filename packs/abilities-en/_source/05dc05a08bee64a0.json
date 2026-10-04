@@ -1,0 +1,28 @@
+{
+  "_id": "05dc05a08bee64a0",
+  "_key": "!items!05dc05a08bee64a0",
+  "name": "Steady Hand",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "steady-hand",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Using your telekinesis to stabilize yourself or improve your grip, you gain a free level of Effort to use on one physical noncombat task. You can't use this ability again until after you take a recovery action. Enabler."
+  }
+}

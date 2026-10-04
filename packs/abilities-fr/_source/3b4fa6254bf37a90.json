@@ -1,0 +1,28 @@
+{
+  "_id": "3b4fa6254bf37a90",
+  "_key": "!items!3b4fa6254bf37a90",
+  "name": "Combat à Deux Armes",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "dual-wield",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu peux utiliser deux armes de mêlée légères simultanément, ou une arme légère et une arme moyenne. Tu peux attaquer avec l'une ou l'autre en tant qu'action, puis attaquer avec l'autre comme action supplémentaire pendant ton tour. Au rang 3, tu peux choisir d'utiliser deux armes de mêlée moyennes en même temps."
+  }
+}

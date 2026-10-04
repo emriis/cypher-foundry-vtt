@@ -1,0 +1,28 @@
+{
+  "_id": "f7d15d8a533909a5",
+  "_key": "!items!f7d15d8a533909a5",
+  "name": "Connaissance de la nature",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "knowledge-of-nature",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "En pleine nature, tu trouves toujours de la nourriture comestible et de l’eau potable si elles existent. De même, tu trouves des herbes médicinales ou remèdes naturels te donnant un atout pour traiter blessures, maladies ou poisons."
+  }
+}

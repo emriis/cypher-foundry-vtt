@@ -1,0 +1,28 @@
+{
+  "_id": "d57f90583546212e",
+  "_key": "!items!d57f90583546212e",
+  "name": "Défense virevoltante améliorée",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "improved-dashing-defense",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Un·e allié·e à portée immédiate, maniant une arme légère ou moyenne, bénéficie de Défense virevoltante jusqu’à ton prochain tour."
+  }
+}

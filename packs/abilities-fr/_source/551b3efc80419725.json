@@ -1,0 +1,28 @@
+{
+  "_id": "551b3efc80419725",
+  "_key": "!items!551b3efc80419725",
+  "name": "Champ de pierres",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "field-of-stones",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu peux tenter de te cacher dans un terrain naturel en prenant l’apparence d’une formation rocheuse. Si le terrain est rocailleux et que ton jet de discrétion est inférieur ou égal à 15, considère ton résultat comme un 15. (Tu évites ainsi une Intrusion du·de la MJ si tu fais un 1.) Dans un autre type de terrain, ta tâche pour te fondre dans les rochers est facilitée de deux paliers. Au rang 3, le minimum automatique passe à 18."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "dd73af356e390146",
+  "_key": "!items!dd73af356e390146",
+  "name": "Invisibility to Evil",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "invisibility-to-evil",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You or a touched ally become becomes effectively invisible to undead, demons, or creatures of similar ilk of level 3 or less until you use a ten-minute or longer recovery. This effect ends if the target does something to reveal their presence or position—attacking, using an ability, moving a large object, and so on. Effort: Increase the maximum level of foes who can't perceive the invisible target by 1. Action to initiate."
+  }
+}

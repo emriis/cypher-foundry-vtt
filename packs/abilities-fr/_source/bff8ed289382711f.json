@@ -1,0 +1,31 @@
+{
+  "_id": "bff8ed289382711f",
+  "_key": "!items!bff8ed289382711f",
+  "name": "Réputation terrifiante",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "fearsome-reputation",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "choice",
+      "amount": 3,
+      "options": [
+        "might",
+        "intellect"
+      ]
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu t’annonces (par exemple en citant un exploit intimidant) à tous les adversaires à portée longue qui peuvent t’entendre et te comprendre. Fais un jet d’attaque d’Intellect séparé pour chaque adversaire. En cas de réussite, iel a peur de toi, facilitant toutes tes tâches contre ellui jusqu’à ta prochaine récupération de dix minutes ou plus."
+  }
+}

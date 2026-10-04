@@ -1,0 +1,28 @@
+{
+  "_id": "248936b005c6c984",
+  "_key": "!items!248936b005c6c984",
+  "name": "Permanent Illusion",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "permanent-illusion",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 9,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You make one of your ongoing illusions permanent. Choose an illusion (or portion of an illusion) that you created. The illusion must fit within an immediate area and remains in that area. The illusion is permanent, persisting on its own without your attention or presence. You can permanently end the illusion as an action, but anyone else who wants to end it must expend exceptional ingenuity to prevent it from regenerating after a while. Enabler."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "de273348ca78931b",
+  "_key": "!items!de273348ca78931b",
+  "name": "Résister aux éléments",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "resist-the-elements",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu deviens résistant·e à un type d’énergie nocive. Choisis un type (feu, électricité, etc.). Tu réduis la sévérité des blessures causées par cette énergie d’un palier (majeure → modérée, modérée → mineure, mineure → aucune)."
+  }
+}

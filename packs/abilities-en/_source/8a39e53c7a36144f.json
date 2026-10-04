@@ -1,0 +1,28 @@
+{
+  "_id": "8a39e53c7a36144f",
+  "_key": "!items!8a39e53c7a36144f",
+  "name": "Convenient Device",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "convenient-device",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 0,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Because you planned ahead or were given a special tool to overcome an obstacle, you produce a piece of equipment that removes one harmful or negative condition affecting you or an ally within immediate range. For example, if you are poisoned, you have an antidote. If an ally is blinded by pepper spray, you have a salve that negates the irritant. If you are handcuffed, you have a miniature lockpick or a pen laser that cuts metal. The device works only once (but you can use this ability again to produce another one). The Intellect cost for using this ability is equal to the level of the effect you're trying to overcome. Action."
+  }
+}

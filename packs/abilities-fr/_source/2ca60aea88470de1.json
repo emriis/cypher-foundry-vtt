@@ -1,0 +1,28 @@
+{
+  "_id": "2ca60aea88470de1",
+  "_key": "!items!2ca60aea88470de1",
+  "name": "Maître·sse d’arme",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "weapon-master",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": true,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu maîtrises un type d’arme (ex. lames moyennes, armes contondantes légères, armes lourdes à distance) qui t’était normalement inconnu. Tu peux utiliser librement ce type d’arme sans subir de pénalité. Tu infliges +1 dégât avec ce type d’arme. Tu es entraîné·e en artisanat pour ce type d’arme (tu peux les fabriquer et les réparer facilement via tes ressources). Tu peux prendre cette aptitude plusieurs fois, en choisissant un nouveau type d’arme à chaque fois."
+  }
+}

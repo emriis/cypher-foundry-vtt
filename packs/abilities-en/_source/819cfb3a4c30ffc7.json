@@ -1,0 +1,28 @@
+{
+  "_id": "819cfb3a4c30ffc7",
+  "_key": "!items!819cfb3a4c30ffc7",
+  "name": "Friend to Small Creatures",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "friend-to-small-creatures",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "A type of small creature you name that exists in the surrounding environment (such as insects, rats, bats, or birds) comes under your influence if you succeed on a difficulty 2 Intellect task for outdoor survival. Affected creatures within short range will not harm you or those you designate as allies until you use a ten-minute or longer recovery. This ability doesn't work against hostile swarms of creatures of level 3 or higher. Your creatures—even common insects (level 0)—can swarm in large-enough numbers to hinder the attacks or defenses of a single target, or take some other action. You can use this ability to calm or command vines, grass blades, creepers, roots, or branches of nearby plants instead of animals. Effort: Your creatures collectively respond to your commands as an NPC ally. Action. An NPC ally can provide an asset to one task each round, like perception or defense, unless your GM decides the ally isn't capable of providing that kind of asset."
+  }
+}

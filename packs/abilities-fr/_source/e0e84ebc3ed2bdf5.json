@@ -1,0 +1,28 @@
+{
+  "_id": "e0e84ebc3ed2bdf5",
+  "_key": "!items!e0e84ebc3ed2bdf5",
+  "name": "Infiltré·e né·e",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "natural-sneak",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Pour toute tâche de crochetage, perception, vol à la tire ou discrétion, si ton résultat est inférieur à 6, considère le résultat comme 6. (Tu évites ainsi une Intrusion du·de la MJ si tu fais un 1.) Cet effet se réinitialise à ta prochaine récupération. Au rang 3, ce minimum passe à 9. Effort : augmenter le minimum obtenu de +3."
+  }
+}

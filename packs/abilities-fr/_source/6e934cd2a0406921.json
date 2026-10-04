@@ -1,0 +1,28 @@
+{
+  "_id": "6e934cd2a0406921",
+  "_key": "!items!6e934cd2a0406921",
+  "name": "Œil affûté",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "keen-eye",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu vois parfaitement à une distance équivalente à 1,5× la distance normale. Tu ignores les pénalités d’attaque et de perception dues au brouillard, à la fumée, à la brume, à la faible luminosité ou à une très faible luminosité."
+  }
+}

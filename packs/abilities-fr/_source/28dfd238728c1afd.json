@@ -1,0 +1,28 @@
+{
+  "_id": "28dfd238728c1afd",
+  "_key": "!items!28dfd238728c1afd",
+  "name": "Mains lourdes",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "heavy-hands",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tes attaques à mains nues infligent 2 points de dégâts supplémentaires."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "847b36993db3863f",
+  "_key": "!items!847b36993db3863f",
+  "name": "Imperturbable",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "imperturbable",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu dégages un calme qui influence aussi les autres. On0 ne peux pas te forcer à fuir contre ta volonté (peur magique, etc.). Les jets de défense des allié·e·s à portée immédiate contre ce type d’effet sont facilit és."
+  }
+}

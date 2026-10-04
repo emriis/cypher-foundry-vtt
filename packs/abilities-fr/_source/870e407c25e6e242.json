@@ -1,0 +1,28 @@
+{
+  "_id": "870e407c25e6e242",
+  "_key": "!items!870e407c25e6e242",
+  "name": "Puissance pour l’esprit",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "might-for-mind",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu effectues une tâche qui exigerait normalement de dépenser des points de ta Réserve de Puissance, tu peux dépenser des points de ta Réserve d’Intellect à la place — et inversement."
+  }
+}

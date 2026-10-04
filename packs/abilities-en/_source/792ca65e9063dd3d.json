@@ -1,0 +1,28 @@
+{
+  "_id": "792ca65e9063dd3d",
+  "_key": "!items!792ca65e9063dd3d",
+  "name": "Frenzy",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "frenzy",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "While in combat, you can enter a state of frenzy. While in this state, you can't use Intellect points, but you add +1 to your Might Edge and your Speed Edge. This effect lasts as long as you wish, but it ends if no combat is taking place within range of your senses. Effort: Ease your allies' attacks against one foe of your choice for the rest of the combat. Enabler."
+  }
+}

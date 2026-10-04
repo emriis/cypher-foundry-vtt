@@ -1,0 +1,31 @@
+{
+  "_id": "727fb8d672f18bea",
+  "_key": "!items!727fb8d672f18bea",
+  "name": "That Was a Feint",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "that-was-a-feint",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "choice",
+      "amount": 5,
+      "options": [
+        "might",
+        "speed"
+      ]
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You immediately retry a failed attack roll with your chosen weapon, except this time you have an asset on the task. If this retry fails, you can't use this ability to retry it again. Enabler."
+  }
+}

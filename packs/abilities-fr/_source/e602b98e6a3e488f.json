@@ -1,0 +1,28 @@
+{
+  "_id": "e602b98e6a3e488f",
+  "_key": "!items!e602b98e6a3e488f",
+  "name": "Immobile comme une statue",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "still-as-a-statue",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu te figes, enfouissant ton essence au cœur de la pierre. Pendant ce temps, tu perds toute mobilité ainsi que la capacité d’effectuer des actions physiques. Tu ne peux pas percevoir ce qui se passe autour de toi, et le temps ne semble pas s’écouler. Tant que tu utilises cette aptitude, toute blessure subie est réduite de deux niveaux de gravité. Tu te réveilles normalement et retrouves ta mobilité au bout de 24 heures, en supprimant trois blessures de n’importe quelle gravité. Si un allié te secoue suffisamment fort (au coût minimum de 2 points de Puissance pour lui), tu te réveilles plus tôt, mais aucune blessure (si tu en as) n’est supprimée."
+  }
+}

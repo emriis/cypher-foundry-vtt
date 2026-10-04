@@ -1,0 +1,28 @@
+{
+  "_id": "5bdcd94c8188134b",
+  "_key": "!items!5bdcd94c8188134b",
+  "name": "Attenuate Threat",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "attenuate-threat",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If you make your attack this round as a Last action instead of as an action or a First action, you can ignore one wound you take before the beginning of your next turn. Enabler."
+  }
+}

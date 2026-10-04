@@ -1,0 +1,28 @@
+{
+  "_id": "429bd511bc3b087e",
+  "_key": "!items!429bd511bc3b087e",
+  "name": "Modifier un Dispositif",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "modify-device",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu improvises rapidement une réparation ou une amélioration sur un équipement ou une source d'énergie (pièces et outils nécessaires). Réparation : si tu réussis une tâche d'ingénierie (difficulté = niveau de l'objet + 1), tu répares temporairement un équipement cassé pour en obtenir quelques utilisations supplémentaires. Amélioration : si tu réussis une tâche d'ingénierie de difficulté 3, tu fais fonctionner l'appareil environ 25% au-dessus de ses spécifications jusqu'à ta récupération de dix heures (il se brise ensuite). Exemples : blaster moyen +1 dégât, moteur de vaisseau +25% d'accélération. Dans tous les cas, le dispositif modifié gagne un déchargement de 1-6 sur un d20. Au rang 3, ce déchargement s'améliore à 1-2 sur un d20."
+  }
+}

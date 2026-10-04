@@ -1,0 +1,28 @@
+{
+  "_id": "ca549f77a8a40129",
+  "_key": "!items!ca549f77a8a40129",
+  "name": "Secours Sacré",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "holy-succor",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Lorsqu'un allié à portée immédiate possède au moins trois blessures modérées ou une blessure majeure, tu peux lui accorder ta grâce divine, lui offrant un niveau d'Effort gratuit applicable chaque round à un jet d'attaque ou de défense. La grâce divine persiste jusqu'à ce que les blessures soient soignées ou que l'allié utilise une récupération de dix minutes ou plus. Chaque fois que tu utilises Secours Sacré, son coût augmente de +1 Intellect. Le coût revient à 1 après une récupération."
+  }
+}

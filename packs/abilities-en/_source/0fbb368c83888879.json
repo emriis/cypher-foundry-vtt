@@ -1,0 +1,28 @@
+{
+  "_id": "0fbb368c83888879",
+  "_key": "!items!0fbb368c83888879",
+  "name": "Up to Speed",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "up-to-speed",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If you do nothing but move for three actions in a row, you accelerate greatly and can move up to about 200 mph (320 km/h)—about 2000 feet (600 m) each round—for ten minutes or about 35 miles (60 km). After this you must stop and take a recovery. Enabler."
+  }
+}

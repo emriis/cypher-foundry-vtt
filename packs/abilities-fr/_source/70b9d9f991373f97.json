@@ -1,0 +1,28 @@
+{
+  "_id": "70b9d9f991373f97",
+  "_key": "!items!70b9d9f991373f97",
+  "name": "Cypher Use",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "cypher-use",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can bear one additional cypher at a time. Redline Maneuver (1 Speed or Intellect): You attempt a risky maneuver piloting the starcraft, increasing the GM intrusion range by 2 on your task, and “redlining” the craft beyond its regular operating envelope. If you succeed on a difficulty 2 (or potentially higher, depending on your GM's assessment of the situation) task, you can accomplish something normally ill-advised when flying a starcraft. For instance, you could fire its weapons as you put the entire ship into an accelerating spiral, possibly directly into the swarm of fighters as opposed to fleeing, hoping to shatter their coordination and maybe cause a couple of crashes in the process. You could try to graze a star's corona (or even chromosphere) to lose pursuing ships. You could jump the starcraft to FTL more quickly than is usually possible, or closer to a gravitational source than is normally thinkable. Or you could move much farther or faster through FTL than normally works out well for the craft. Action. Redline ManeuverGM intrusions: The FTL engines fail. The ship takes significant damage. Someone's console within the ship explodes, inflicting a moderate wound."
+  }
+}

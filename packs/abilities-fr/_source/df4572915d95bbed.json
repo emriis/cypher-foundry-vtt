@@ -1,0 +1,28 @@
+{
+  "_id": "df4572915d95bbed",
+  "_key": "!items!df4572915d95bbed",
+  "name": "Utiliser la Force",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "use-the-force",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu gagnes un atout sur une tâche hors combat que tu tentes ce tour‑ci. Tu ne peux pas réutiliser cette aptitude avant d’avoir effectué une action de récupération."
+  }
+}

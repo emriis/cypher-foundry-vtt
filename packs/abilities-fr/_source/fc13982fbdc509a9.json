@@ -1,0 +1,28 @@
+{
+  "_id": "fc13982fbdc509a9",
+  "_key": "!items!fc13982fbdc509a9",
+  "name": "Forme animale agrandie",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "bigger-animal-shape",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu utilises Forme animale, tu peux grandir jusqu’au double de ta taille normale. En étant si grand·e, ta forme animale te donne les bénéfices suivants : tu ignores la première blessure modérée que tu subis, tes attaques non armées infligent +4 dégâts supplémentaires, et tu gagnes un Atout sur tes jets d’attaque non armés. En contrepartie, tes tâches de Esquive sont entravées."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "de3f5d68d3c235b3",
+  "_key": "!items!de3f5d68d3c235b3",
+  "name": "Explorateur·rice expérimenté·e",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "experienced-explorer",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Ton expérience des créatures, plantes et substances de divers environnements te donne une protection naturelle : Tes jets de défense contre le poison sont facilités, Les blessures causées par un poison sont réduites d’un palier (majeure → modérée, modérée → mineure, mineure → aucune), Tu es immunisé·e aux maladies naturelles. Dans la nature, les effets comme les hautes herbes, les broussailles denses, le terrain accidenté, les éboulements ou le mauvais temps ne t’entravent pas, ne ralentissent pas ton déplacement et les blessures potentielles qu’ils peuvent infligés sont réduites d’un palier. Enfin, tu peux trouver nourriture et eau potable dans la nature pour toi et quelques personnes, en environ une heure d’exploration."
+  }
+}

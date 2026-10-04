@@ -1,0 +1,28 @@
+{
+  "_id": "d86cd44e5c559602",
+  "_key": "!items!d86cd44e5c559602",
+  "name": "Ignorer l’affliction",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "ignore-affliction",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Jusqu’à ta prochaine récupération d’une heure ou plus, tu ignores toute condition ou affliction indésirable (maladie, paralysie, contrôle mental, membre brisé, etc., mais pas les dégâts) et tu agis comme si elle ne t’affectait pas. Si la condition durerait normalement moins d’une heure, elle est entièrement annulée. Tu peux utiliser cette aptitude même si la condition t’empêche normalement d’agir."
+  }
+}

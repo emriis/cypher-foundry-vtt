@@ -177,6 +177,18 @@ niveau attendu par `system.json`, qui pointe directement vers `packs/<nom-du-pac
 fichier source doit contenir un champ `_key` au format `!items!<_id>`, sans quoi le CLI l'ignore
 silencieusement.)
 
+### Compendiums d'aptitudes, Types et Foci (FR/EN)
+
+Les aptitudes sont des documents `ability` autonomes, stockés dans `abilities-en` et `abilities-fr`. Les Types et Foci ne contiennent plus les données complètes de leurs aptitudes : ils stockent des références UUID vers ces documents réutilisables. Cela permet à un contenu personnalisé de réutiliser une aptitude existante ou d'en référencer une nouvelle sans dupliquer sa définition.
+
+Les aptitudes portent leurs propres données mécaniques, notamment leur coût, leurs effets et leur mode d'activation. Le modèle actuel distingue `action`, `firstAction` et `lastAction`; `null` est réservé aux aptitudes qui ne requièrent pas d'action dans ce modèle. D'autres cas particuliers du CRD ne sont pas encore modélisés.
+
+Les prérequis ne font pas partie de l'aptitude réutilisable. Pour un Focus, ils sont représentés par son `flowchart`, dont les arêtes relient les identifiants locaux des aptitudes du Focus. Le flowchart appartient donc au Focus et non à l'aptitude.
+
+Les mêmes noms peuvent correspondre à plusieurs aptitudes si leurs mécaniques diffèrent : l'identité technique d'une aptitude est son identifiant, pas son nom.
+
+Les sources françaises sont traitées avec le CRD comme autorité mécanique. Une traduction française issue du Character Book n'est conservée que lorsqu'elle correspond au contenu anglais de référence ; sinon le contenu anglais est conservé pour traduction ultérieure.
+
 ### Compendiums de Types (FR/EN)
 
 Les Types du document de référence sont maintenus dans deux compendiums bilingues, regroupés dans
@@ -187,8 +199,7 @@ traduction complète du Character Book est utilisée lorsqu'elle existe ; sinon,
 est recopié à l'identique. Les noms, identifiants et données mécaniques ne sont pas modifiés par
 la traduction.
 
-Modifiez directement les paires correspondantes dans `packs/types-{fr,en}/_source/`, puis
-validez-les avec :
+Modifiez directement les sources correspondantes dans `packs/abilities-{fr,en}/_source/`, `packs/types-{fr,en}/_source/` et `packs/foci-{fr,en}/_source/`, puis validez-les avec :
 
 ```powershell
 node --test tests/compendium-sources.test.mjs

@@ -86,7 +86,7 @@ npm run build:packs
 
 Notes:
 
-- `npm run build:packs` compiles all six declared packs and writes the generated LevelDB files
+- `npm run build:packs` compiles all eight declared packs and writes the generated LevelDB files
   directly under `packs/<pack-name>/`, which is what `system.json` points to.
 - Every source file needs a `_key` field formatted as `!items!<_id>` (or `!actors!<_id>`, etc.)
   — the CLI silently skips files missing it.

@@ -1,0 +1,28 @@
+{
+  "_id": "02c67cc80a177590",
+  "_key": "!items!02c67cc80a177590",
+  "name": "Instinct du Danger",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "danger-instinct",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If you are attacked by surprise, whether by a creature, a device, or simply an environmental hazard (such as a tree falling on you), you can move an immediate distance before the attack occurs. If moving prevents the attack, you are safe. If the attack can still potentially affect you—if the attacking creature can move to keep pace, if the attack fills an area too big to escape, and so on—your defense against it is eased. Enabler."
+  }
+}

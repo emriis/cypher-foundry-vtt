@@ -1,0 +1,28 @@
+{
+  "_id": "c3e91a62478e276f",
+  "_key": "!items!c3e91a62478e276f",
+  "name": "Traînée infernale",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "inferno-trail",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Voile de Flammes laisse derrière toi une traînée de feu. Celle‑ci forme un mur de flammes d’environ 2 m de haut, infligeant 5 dégâts à toute créature qui le traverse. Les cibles inflammables prennent également feu, subissant +1 dégât par round** jusqu’à ce qu’elles passent un round à éteindre les flammes. Tu peux supprimer ou réactiver la traînée en effectuant une action supplémentaire, ou mettre fin à l’effet plus tôt si vous le souhaitez. Sinon, l’effet cesse à ta prochaine récupération de dix minutes ou plus."
+  }
+}

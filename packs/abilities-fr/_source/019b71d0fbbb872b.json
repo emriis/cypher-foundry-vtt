@@ -1,0 +1,28 @@
+{
+  "_id": "019b71d0fbbb872b",
+  "_key": "!items!019b71d0fbbb872b",
+  "name": "Cocon illusoire",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "illusion-cocoon",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu fais une attaque d’Intellect réussie pour envelopper une créature à portée longue dans une illusion sensorielle totale. La cible est rendue impuissante, perdant son tour à chaque round, jusqu’à ta prochaine récupération de dix minutes ou plus, ou qu’elle subisse des dégâts directs."
+  }
+}

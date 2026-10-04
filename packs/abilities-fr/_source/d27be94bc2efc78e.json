@@ -1,0 +1,31 @@
+{
+  "_id": "d27be94bc2efc78e",
+  "_key": "!items!d27be94bc2efc78e",
+  "name": "Tisser un mur de fer",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "weave-an-iron-wall",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "choice",
+      "amount": 5,
+      "options": [
+        "might",
+        "speed"
+      ]
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu manies tes armes si vite qu’elles forment presque un mur. Cette barrière bloque l’accès à une zone immédiate. Tu dois utiliser ton action chaque round pour la maintenir. Toute créature tentant de traverser subit 10 dégâts (sans jet). En tant qu’action supplémentaire, tu peux tenter une attaque de mêlée contre elle et la repousser en cas de réussite."
+  }
+}

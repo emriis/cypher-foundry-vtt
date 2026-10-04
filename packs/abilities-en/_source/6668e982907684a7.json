@@ -1,0 +1,28 @@
+{
+  "_id": "6668e982907684a7",
+  "_key": "!items!6668e982907684a7",
+  "name": "Winter Gauntlets",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "winter-gauntlets",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your Frost Bolt ray inflicts an additional 3 damage, or an additional 3 damage as part of a touch or weapon attack. Any creature you hit with Frost Bolt, cold touch, or a cold-enhanced weapon attack is restrained in place (as Winter's Grip). Enabler."
+  }
+}

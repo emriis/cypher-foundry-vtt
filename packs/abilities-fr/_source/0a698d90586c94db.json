@@ -1,0 +1,28 @@
+{
+  "_id": "0a698d90586c94db",
+  "_key": "!items!0a698d90586c94db",
+  "name": "Forme animale améliorée",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "enhanced-animal-shape",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu utilises Forme animale, ta forme gagne les bonus supplémentaires suivants : +3 à ta Réserve Puissance, +2 à ta Réserve Célérité, et tu peux ignorer les blessures mineures causées par des attaques physiques."
+  }
+}

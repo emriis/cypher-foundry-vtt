@@ -7,200 +7,79 @@
   "system": {
     "description": "<p>You perform, mostly for the benefit of others.</p>",
     "abilities": [
-      {
-        "id": "anecdote",
-        "name": "Anecdote",
-        "tier": 1,
-        "prerequisites": [
-          "knowing-the-audience"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+      "Compendium.cypher.abilities-en.Item.760a55410e499fc0",
+      "Compendium.cypher.abilities-en.Item.d23c7e05acbc7905",
+      "Compendium.cypher.abilities-en.Item.1d07e5d25dd4db56",
+      "Compendium.cypher.abilities-en.Item.9fa2bb3e0adcf7c6",
+      "Compendium.cypher.abilities-en.Item.bec4a78947e07d5b",
+      "Compendium.cypher.abilities-en.Item.3efd33833b8a6953",
+      "Compendium.cypher.abilities-en.Item.9f11831b1b7dadbd",
+      "Compendium.cypher.abilities-en.Item.34ca8d20f1f237d2",
+      "Compendium.cypher.abilities-en.Item.898264bd7e3de1c0",
+      "Compendium.cypher.abilities-en.Item.422afdcd7d616e36",
+      "Compendium.cypher.abilities-en.Item.a7e6449e8d0758de",
+      "Compendium.cypher.abilities-en.Item.b41dfb2e36810698"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "1d07e5d25dd4db56",
+          "to": "760a55410e499fc0"
         },
-        "description": "You can lift the spirits of a group of creatures and help them bond together by entertaining them with an uplifting or pointed anecdote. Choose one task (other than an attack or defense task) related to your anecdote. Until you use a one-hour or longer recovery, those who pay attention to your story are trained in that task. Alternatively, you can spend time interacting with a group of people within short range. As long as they are at least neutral toward you (rather than hostile), they become friendly toward you until you use a one-hour or longer recovery. Action to initiate; one minute to complete."
-      },
-      {
-        "id": "inspiring-suggestion",
-        "name": "Inspiring Suggestion",
-        "tier": 1,
-        "prerequisites": [
-          "inspiring-suggestion"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "d23c7e05acbc7905",
+          "to": "d23c7e05acbc7905"
         },
-        "description": "When you make a helpful suggestion to an ally, they have a better chance of succeeding at what they're doing. Choose an ally who can see and understand you, then suggest a specific action for them to take, such as “attack the leader” or “climb the wall.” If the ally chooses to take that exact action, they gain two assets on that task. First action."
-      },
-      {
-        "id": "knowing-the-audience",
-        "name": "Knowing the Audience",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+        {
+          "from": "760a55410e499fc0",
+          "to": "9fa2bb3e0adcf7c6"
         },
-        "description": "You ascertain the general mood of a group of people within short range. If they are trying to conceal that information, you may attempt a difficulty 3 task to learn the truth of their attitude. On the following round, you also gain an asset to a single recognizing motive task regarding one person in that group to gain more detail and information about that individual. Last action."
-      },
-      {
-        "id": "inspiring-ease",
-        "name": "Inspiring Ease",
-        "tier": 2,
-        "prerequisites": [
-          "anecdote"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "d23c7e05acbc7905",
+          "to": "bec4a78947e07d5b"
         },
-        "description": "Through stories, songs, art, or other forms of entertainment, you inspire your allies. When you and any number of allies spend a ten-hour recovery together (yours or theirs), the allies are inspired by you. Once per day, each inspired ally can ease one task. This inspiration remains while you remain within a long distance of them. The inspiration is suspended at greater distances, but resumes automatically if you get within range. The inspiration ends if you use a ten-hour recovery while away from the ally. Ten-hour recovery to initiate."
-      },
-      {
-        "id": "rising-courage",
-        "name": "Rising Courage",
-        "tier": 2,
-        "prerequisites": [
-          "inspiring-suggestion"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "bec4a78947e07d5b",
+          "to": "3efd33833b8a6953"
         },
-        "description": "A target you choose within immediate range has an asset to their next Intellect defense task and next initiative task. Enabler."
-      },
-      {
-        "id": "find-motivation",
-        "name": "Find Motivation",
-        "tier": 3,
-        "prerequisites": [
-          "rising-courage"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "1d07e5d25dd4db56",
+          "to": "9f11831b1b7dadbd"
         },
-        "description": "When your mind would be negatively affected by an effect of level 4 or less (psychic commands, illness, fear, boredom, mind control, and so on), you can ignore the effect. If the effect lasts for a while (such as fear or mind control), it has no power over you until you use a ten-minute or longer recovery. If the effect is instantaneous (such as a psychic blast that inflicts damage), it doesn't affect you at all. Effort: Increase the maximum effect level you can ignore by 1. Enabler."
-      },
-      {
-        "id": "perfect-stranger",
-        "name": "Perfect Stranger",
-        "tier": 3,
-        "prerequisites": [
-          "knowing-the-audience"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "3efd33833b8a6953",
+          "to": "34ca8d20f1f237d2"
         },
-        "description": "You completely throw yourself into a role, becoming almost unrecognizable until you use a one-hour or longer recovery. This often involves altering your voice, posture, accent, or clothing to “sell” this new guise. All tasks to pretend to be someone other than yourself are eased. Three times while this ability is active, if you use Effort on an interaction or knowledge task related to this role, you gain a free level of Effort. Action to initiate."
-      },
-      {
-        "id": "calm",
-        "name": "Calm",
-        "tier": 4,
-        "prerequisites": [
-          "find-motivation"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "9fa2bb3e0adcf7c6",
+          "to": "898264bd7e3de1c0"
         },
-        "description": "If you succeed on an Intellect attack against a living foe who can see and hear you, you prevent them from attacking anyone or anything for one round by way of your jokes, song, or other performance. Action."
-      },
-      {
-        "id": "captivate-or-inspire",
-        "name": "Captivate or Inspire",
-        "tier": 4,
-        "prerequisites": [
-          "inspiring-ease",
-          "perfect-stranger"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "9f11831b1b7dadbd",
+          "to": "898264bd7e3de1c0"
         },
-        "description": "You can use this ability in one of two ways. Captivate: Your words keep the attention of all NPCs in immediate range that hear them for as long as you speak, if you succeed on a persuasion, deception, or intimidation skill roll against a difficulty level equal to the highest level of an NPC in the crowd. Inspire: Your words inspire all NPCs that hear them, allowing them to perform tasks as if one level higher until you use aone-hour or longer recovery. In either case, you choose which NPCs are affected. If anyone in the crowd is attacked while you're trying to speak to them, you lose the crowd's attention. Action to initiate."
-      },
-      {
-        "id": "willing-sacrifice",
-        "name": "Willing Sacrifice",
-        "tier": 5,
-        "prerequisites": [
-          "calm"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "34ca8d20f1f237d2",
+          "to": "422afdcd7d616e36"
         },
-        "description": "When you successfully draw the attack or take the attack meant for another character and you fail to dodge or block the attack, reduce the severity of the attack's wound by one step (major to moderate, moderate to minor, minor to none). You can draw or take more than one attack in a given round if all of the attacks were meant for one target. Enabler."
-      },
-      {
-        "id": "master-entertainer",
-        "name": "Master Entertainer",
-        "tier": 6,
-        "prerequisites": [
-          "inspiring-ease",
-          "captivate-or-inspire"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "9fa2bb3e0adcf7c6",
+          "to": "a7e6449e8d0758de"
         },
-        "description": "Your allies affected by Inspiring Ease can ease a second task each day, or ease one task by two steps instead of just one."
-      },
-      {
-        "id": "vindictive-performance",
-        "name": "Vindictive Performance",
-        "tier": 6,
-        "prerequisites": [
-          "captivate-or-inspire",
-          "willing-sacrifice"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 5,
-          "options": []
+        {
+          "from": "898264bd7e3de1c0",
+          "to": "a7e6449e8d0758de"
         },
-        "description": "When you tell a joke, perform a song or poem, draw a picture, relate an anecdote, or otherwise provide entertainment, you can select one creature within short range who is able to understand you. During your performance, you heap indirect but biting derision on this creature. If you succeed, the creature doesn't realize that they've become the victim of your performance until you wrap up the entertainment at a moment you choose in a way that strikes home. The creature takes 6 Intellect damage (ignores armor) and loses their next turn. One or more actions to initiate."
-      }
-    ]
+        {
+          "from": "898264bd7e3de1c0",
+          "to": "b41dfb2e36810698"
+        },
+        {
+          "from": "422afdcd7d616e36",
+          "to": "b41dfb2e36810698"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

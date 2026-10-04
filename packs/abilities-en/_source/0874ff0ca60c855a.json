@@ -1,0 +1,28 @@
+{
+  "_id": "0874ff0ca60c855a",
+  "_key": "!items!0874ff0ca60c855a",
+  "name": "Joy in Small Things",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "joy-in-small-things",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you learn or figure out something important (as determined by your GM), you regain 4 points to your Intellect Pool. Each use of this ability after the first time restores 1 fewer Pool point; this renews after you take a ten-hour recovery. Enabler."
+  }
+}

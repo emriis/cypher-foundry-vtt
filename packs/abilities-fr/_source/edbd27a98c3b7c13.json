@@ -1,0 +1,28 @@
+{
+  "_id": "edbd27a98c3b7c13",
+  "_key": "!items!edbd27a98c3b7c13",
+  "name": "Endurance",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "endurance",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Toute durée liée à une action physique est doublée ou réduite de moitié, selon ce qui t’avantage. Exemples : si une personne normale peut retenir son souffle 30 secondes, tu peux le faire 1 minute, si une personne normale peut marcher 4 heures sans pause, tu peux marcher 8 heures, si un poison paralyse pendant 1 minute, tu es paralysé·e 30 secondes. La durée minimale reste un round."
+  }
+}

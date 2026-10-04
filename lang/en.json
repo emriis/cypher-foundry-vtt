@@ -1,8 +1,20 @@
 {
   "TYPES": {
+    "Actor": {
+      "pc": "Player Character",
+      "npc": "NPC",
+      "community": "Community"
+    },
     "Item": {
-      "type": "Type",
-      "focus": "Focus",
+      "skill": "Skill",
+      "ability": "Ability",
+      "cypher": "Cypher",
+      "artifact": "Artifact",
+      "oddity": "Oddity",
+      "equipment": "Equipment",
+      "attack": "Attack",
+      "armor": "Armor",
+      "shield": "Shield",
       "descriptor": "Descriptor"
     }
   },
@@ -20,13 +32,11 @@
     "Identified": "Identified",
     "CypherLimit": "Cypher Limit",
     "AdditionalAbilities": "Additional Abilities",
-
     "Sheet": {
       "PC": "Character Sheet",
       "NPC": "NPC Sheet",
       "Community": "Community Sheet"
     },
-
     "Tab": {
       "main": "Main",
       "skills": "Skills",
@@ -35,7 +45,6 @@
       "advancement": "Advancement",
       "biography": "Biography"
     },
-
     "CharacterLine": {
       "Prefix": "I am a",
       "Middle": "who is",
@@ -66,7 +75,6 @@
     "Species": "Species",
     "SpeciesPlaceholder": "e.g. Human, Elf, Cyborg... (optional)",
     "ResourcePoints": "Resource Points",
-
     "Genre": {
       "Label": "Genre",
       "none": "Unspecified",
@@ -77,13 +85,11 @@
       "custom": "Custom (all fields)",
       "RealWorldHint": "Real World: no Type or Focus — a Descriptor + Profession is enough. By default, inability with medium/heavy weapons (unless offset by a dedicated background skill)."
     },
-
     "Superhero": {
       "Rank": "Type Rank (1-5)",
       "PowerShifts": "Power Shifts",
       "Hint": "Each category is capped at 3. A shift acts as a free, permanent level of Effort for the relevant tasks. Tasks can go up to difficulty 15 in this genre."
     },
-
     "PowerShift": {
       "accuracy": "Accuracy (attack rolls)",
       "dexterity": "Dexterity (dodge, initiative, acrobatics)",
@@ -98,7 +104,6 @@
       "singleAttack": "Single Attack (one specific attack)",
       "strength": "Strength (athletics, melee damage)"
     },
-
     "Stat": {
       "Label": "Stat",
       "might": "Might",
@@ -113,7 +118,6 @@
       "PoolValue": "Actual value",
       "PoolMax": "Maximum"
     },
-
     "Armor": {
       "Title": "Armor",
       "Category": "Category",
@@ -140,7 +144,6 @@
       "BlockEaseDamage": "Damage to Block Bonus",
       "ItemHint": "Check \"Equipped\" to make this armor active on the character sheet. Only one armor can be equipped at a time — equipping this one automatically unequips the others."
     },
-
     "Wound": {
       "Title": "Wounds",
       "minor": "Minor",
@@ -155,7 +158,6 @@
       "HinderedStatus": "Hindered",
       "DeadStatus": "Dead"
     },
-
     "Recovery": {
       "Title": "Recoveries",
       "action": "One Action",
@@ -166,7 +168,6 @@
       "RemovesOneModerate": "Removes one moderate wound.",
       "RemovesAllModerateReminder": "Removes all moderate wounds. (One major wound can be removed with a successful difficulty 6 Might task — handle manually.)"
     },
-
     "Skill": {
       "New": "New Skill",
       "Level": "Training Level"
@@ -186,7 +187,6 @@
       "Practiced": "Practiced",
       "None": "None"
     },
-
     "CustomField": {
       "Title": "Custom Fields",
       "Hint": "Add anything specific to your character that the system doesn't already provide for (status, reputation, ally, debt, etc.).",
@@ -200,20 +200,21 @@
       "checkbox": "Checkbox",
       "ConfirmDelete": "Permanently remove this custom field?"
     },
-
     "Ability": {
       "New": "New Ability",
       "Source": "Source (Type/Focus/Advancement)",
       "CostStat": "Cost",
       "Action": "Action Required",
-      "ActionNone": "None",
+      "ActionNone": "Not an action",
       "ActionStandard": "Action",
-      "ActionMovement": "Movement",
       "ChooseEffect": "Choose Effect",
       "Effort": "Effort",
       "RollTable": "Roll Table",
       "InvalidRollTable": "Invalid ability roll table",
-      "NoRollTableResult": "No result matches the rolled value."
+      "NoRollTableResult": "No result matches the rolled value.",
+      "ActionFirst": "First Action",
+      "ActionLast": "Last Action",
+      "ActionEnabler": "Enabler"
     },
     "Cypher": {
       "Title": "Cyphers",
@@ -225,12 +226,10 @@
       "Use": "Use",
       "Used": "This cypher has been used and is now depleted."
     },
-
     "Artifact": {
       "Title": "Artifacts",
       "Form": "Form"
     },
-
     "Depletion": {
       "Die": "Depletion Die",
       "Threshold": "Threshold",
@@ -245,11 +244,9 @@
       "Hint": "When you use this artifact, click the die to roll its depletion check. \"Never depletes\" corresponds to the CRD's \"—\" notation.",
       "EquipmentHint": "This equipment uses depletion instead of a fixed quantity (like a medical bag or aspirin in the CRD)."
     },
-
     "Oddity": {
       "Title": "Oddities"
     },
-
     "Equipment": {
       "Title": "Equipment",
       "Quantity": "Quantity",
@@ -261,7 +258,6 @@
       "medium": "Medium",
       "heavy": "Heavy"
     },
-
     "Attack": {
       "Title": "Attacks",
       "Type": "Attack Type",
@@ -294,11 +290,9 @@
       "medium": "Medium (4 damage)",
       "heavy": "Heavy (6 damage)"
     },
-
     "Item": {
       "New": "New {type}"
     },
-
     "Descriptor": {
       "Label": "Descriptor",
       "StandardCategory": "Descriptor",
@@ -393,7 +387,6 @@
       "SkillGranted": "Trained in {name}.",
       "SkillUpgraded": "{name} improved to {level}."
     },
-
     "Import": {
       "Button": "Import (Character Builder)",
       "Title": "Import a Character Builder export",
@@ -408,7 +401,6 @@
       "UnsupportedType": "Item \"{name}\" ({type}): this item type isn't supported by the importer yet, it was skipped.",
       "ItemFailed": "Item \"{name}\": import failed ({error})."
     },
-
     "Roll": {
       "Roll": "Roll",
       "Task": "Task Roll",
@@ -439,7 +431,6 @@
       "CostRefunded": "The action's point cost was refunded (natural 20).",
       "Rallied": "{name} rallies and removes a {severity} wound."
     },
-
     "Defense": {
       "Block": "Block",
       "Dodge": "Dodge",
@@ -449,7 +440,6 @@
       "DodgeSuccess": "Dodge succeeded: the wound is avoided entirely.",
       "Failed": "Defense failed: a {severity} wound is taken."
     },
-
     "Shield": {
       "Title": "Shields",
       "SheetHint": "Any character can use a shield freely, regardless of their Type. On a successful Block, choose to reduce the wound by one step as usual, or have it absorbed entirely by an equipped shield.",
@@ -460,7 +450,6 @@
       "BrokenNote": "{name} has taken its major wound and is destroyed.",
       "BrokenLabel": "Broken"
     },
-
     "XP": {
       "Label": "XP",
       "Title": "Experience Points",
@@ -475,7 +464,6 @@
       "LuckyShotHint": "hindered by 4 steps",
       "LuckyShotHint2": "Lucky Shot (1 XP): available directly in the attack roll dialog, to attempt a blind attack."
     },
-
     "Advancement": {
       "Title": "Character Advancement",
       "Hint": "Pick a type for each of the current tier's 4 slots, then buy them one at a time (4 XP each). Once all 4 are bought, the character automatically advances a tier.",
@@ -513,7 +501,6 @@
       "AllCategories": "all categories",
       "AllWeaponsFree": "All weapons freely usable"
     },
-
     "NPC": {
       "Level": "Level",
       "TargetNumber": "Target Number",
@@ -529,17 +516,14 @@
       "ApplyDamage": "Apply Damage",
       "IgnoreArmor": "Ignore Armor"
     },
-
     "Community": {
       "Resources": "Resources"
     },
-
     "Confirm": {
       "Delete": "Confirm Deletion",
       "DeleteItem": "Permanently delete \"{name}\"?",
       "Add": "Add"
     },
-
     "Warning": {
       "NotPC": "Only player characters can make this roll.",
       "NotEnoughPool": "Not enough points in the {stat} pool for this Effort.",
@@ -551,31 +535,10 @@
       "ChooseAdvancementType": "Choose an advancement type for this slot first.",
       "CapabilitiesMustSumFour": "The distribution must add up to exactly 4 points."
     },
-
     "Migration": {
       "Begin": "Cypher: migrating world data to version {version}. Please do not close the game...",
       "Complete": "Cypher: world data migration to version {version} complete.",
       "TooOld": "Your Cypher data (version {version}) is too old to migrate automatically. Please update through intermediate versions first, or ask for help."
-    }
-  },
-
-  "TYPES": {
-    "Actor": {
-      "pc": "Player Character",
-      "npc": "NPC",
-      "community": "Community"
-    },
-    "Item": {
-      "skill": "Skill",
-      "ability": "Ability",
-      "cypher": "Cypher",
-      "artifact": "Artifact",
-      "oddity": "Oddity",
-      "equipment": "Equipment",
-      "attack": "Attack",
-      "armor": "Armor",
-      "shield": "Shield",
-      "descriptor": "Descriptor"
     }
   }
 }

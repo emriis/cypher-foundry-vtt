@@ -34,48 +34,9 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "combat-prowess",
-        "name": "Prouesse de Combat",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Tu ajoutes +1 dégât à un type d’attaque d’arme de ton choix : attaque de mêlée ou attaque à distance."
-      },
-      {
-        "id": "desperate-feat",
-        "name": "Exploit Désespéré",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "Tant que tu as au moins une blessure modérée ou majeure, tu ajoutes +1 d'Avantage dans la Réserve de ton choix."
-      },
-      {
-        "id": "expert-combatant",
-        "name": "Combattant·e Expert·e",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "You are trained in a specific weapon attack of your choice, such as swords, axes, or bows; or in a broader category of attacks such as light bashing weapons, light bladed weapons, light ranged weapons, medium bashing weapons, medium bladed weapons, medium ranged weapons, and so on. At tier 2: You can choose to become specialized in the same attack method you chose at tier 1, but you must gain the skill normally (such as from a character advancement). At tier 6: You can become an expert in a specific attack method (either the one you chose at tier 1 or another weapon skill you're already specialized in), but you must gain the skill normally. For a Heavy, Expert Combatant also means choosing training in weapons appropriate to the genre, such as pistols and rifles."
-      }
+      "Compendium.cypher.abilities-fr.Item.ac808c42b3ad5310",
+      "Compendium.cypher.abilities-fr.Item.85be636847962ea6",
+      "Compendium.cypher.abilities-fr.Item.1f9d46bc2d619c20"
     ],
     "statOptions": [
       "might"

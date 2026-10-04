@@ -1,0 +1,28 @@
+{
+  "_id": "4b31d830c64a7c8d",
+  "_key": "!items!4b31d830c64a7c8d",
+  "name": "Machine Control",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "machine-control",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You use your knowledge of robot commands and controls against a robot, mechanized system, or intelligent machine within short range (or within short range of a device you can remotely transmit signals from). Choose whether you want to command one creature or deactivate multiple creatures, and make separate Intellect attack rolls against each target. If your roll is less than a 6, treat the roll as a 6. (This means you don't get a GM intrusion if you roll a 1.) Command: Success means you take active control of your target until you use a ten-minute or longer recovery, commanding it to do simple tasks on your behalf while you concentrate. Deactivate: Success means you make affected targets unable to take actions for as long as you concentrate on them. Effort: Increase the minimum number rolled for this ability by 3. Action to initiate. At tier 3: The minimum number rolled for this ability increases to 9."
+  }
+}

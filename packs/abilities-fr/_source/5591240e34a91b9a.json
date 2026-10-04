@@ -1,0 +1,28 @@
+{
+  "_id": "5591240e34a91b9a",
+  "_key": "!items!5591240e34a91b9a",
+  "name": "Réparation de la chair",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "repair-flesh",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Par un simple toucher, tu rafistoles la chair blessée. Tu soignes une blessure mineure ou réduis une blessure modérée à mineure ou une blessure majeure à modérée. Au lieu de s’occuper d’une blessure, tu peux améliorer la prochaine récupération d’un personnage de +2 points de Réserve supplémentaires. Si tu l’utilises sur un·e PNJ vivant ou mort-vivant, tu lui redonnes 3 points de santé. Action."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "760a55410e499fc0",
+  "_key": "!items!760a55410e499fc0",
+  "name": "Anecdote",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "anecdote",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu remontes le moral d’un groupe de créatures et renforces leur cohésion en les divertissant avec une anecdote inspirante ou percutante. Choisis une tâche (autre qu’une attaque ou une défense) liée à ton anecdote. Jusqu’à ta prochaine récupération d’une heure ou plus, tous ceux qui écoutent ton histoire sont entraîné·e·s dans cette tâche. À la place, tu peux passer du temps à interagir avec un groupe de personnes à portée courte : si elles sont au moins neutres envers toi (et non hostiles), elles deviennent amicales jusqu’à ta prochaine récupération d’une heure ou plus."
+  }
+}

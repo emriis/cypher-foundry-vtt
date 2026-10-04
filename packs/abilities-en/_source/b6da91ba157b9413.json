@@ -1,0 +1,28 @@
+{
+  "_id": "b6da91ba157b9413",
+  "_key": "!items!b6da91ba157b9413",
+  "name": "Disarming Strike",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "disarming-strike",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 3,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Make an attack against a foe with your chosen weapon. If you hit, you inflict 1 less damage than normal, but you disarm your foe, knocking their weapon to the ground 10 feet (3.5 m) away. If your chosen weapon is a whip, you can instead choose to hinder your attack, and if it succeeds, the foe's weapon lands in your other hand. If your chosen weapon is a bow, you can instead choose to hinder your attack, and if it succeeds, the foe's weapon is “nailed” to a nearby object or structure. Action."
+  }
+}

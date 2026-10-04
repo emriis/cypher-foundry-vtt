@@ -1,0 +1,28 @@
+{
+  "_id": "6625cbf95c10f6a5",
+  "_key": "!items!6625cbf95c10f6a5",
+  "name": "Horde Fighting",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "horde-fighting",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When two or more foes attack you at once in melee, you can use them against each other. Each round, choose whether you gain an asset to block and dodge rolls against them or to attack rolls against them. Enabler."
+  }
+}

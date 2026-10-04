@@ -1,0 +1,28 @@
+{
+  "_id": "f2d0476286c84d23",
+  "_key": "!items!f2d0476286c84d23",
+  "name": "Interface étendue",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "expanded-wireless",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "La portée de base de ton aptitude Interface sans fil devient n’importe où sur la planète."
+  }
+}

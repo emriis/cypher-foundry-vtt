@@ -1,0 +1,28 @@
+{
+  "_id": "8ebe7ae7abe81a0e",
+  "_key": "!items!8ebe7ae7abe81a0e",
+  "name": "Défense moqueuse",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "taunting-defense",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu te défends contre une attaque de mêlée, tes piques, moqueries ou mouvements provocateurs attirent la colère de l’adversaire. L’attaque de ton adversaire est entravée, mais s’iel te touche, l’attaque inflige une blessure mineure supplémentaire."
+  }
+}

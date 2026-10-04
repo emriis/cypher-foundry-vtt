@@ -1,0 +1,28 @@
+{
+  "_id": "47cfe07b3e324cd6",
+  "_key": "!items!47cfe07b3e324cd6",
+  "name": "Improved Ice Armor",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "improved-ice-armor",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your Ice Armor eases your Might defense rolls to block attacks by an additional step. The damage from your Ice Armor's cold touch, Frost Bolt, and Winter's Grip increases by 1."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "34197538648b5560",
+  "_key": "!items!34197538648b5560",
+  "name": "Mighty Leap",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "mighty-leap",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you are larger than normal and jump, you move twice as far as normal, either horizontally or vertically. Enabler."
+  }
+}

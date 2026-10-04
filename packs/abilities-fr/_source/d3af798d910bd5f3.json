@@ -1,0 +1,28 @@
+{
+  "_id": "d3af798d910bd5f3",
+  "_key": "!items!d3af798d910bd5f3",
+  "name": "Frappe sacrée",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "blast-evil",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu purifies une zone immédiate adjacente d’un éclat radiant, infligeant 3 dégâts à jusqu’à trois cibles (jet séparé pour chacune). Si les cibles sont des mort‑vivant·e·s, démons ou créatures du même acabit, elles subissent 6 dégâts à la place. Si une cible est possédée, elle obtient une nouvelle chance de résister et d’expulser son possesseur."
+  }
+}

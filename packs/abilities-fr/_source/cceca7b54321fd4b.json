@@ -1,0 +1,28 @@
+{
+  "_id": "cceca7b54321fd4b",
+  "_key": "!items!cceca7b54321fd4b",
+  "name": "Leader né·e",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "natural-leader",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu fais un jet pour marchander, tromper, charmer, interroger, intimider ou persuader, si ton résultat est inférieur à 9, considère qu’il est de 9. (Tu évites ainsi une Intrusion du·de la MJ si tu fais un 1.) Cet effet se réinitialise à chaque récupération. Au rang 3, le minimum passe à 12. Effort : augmenter le minimum de +3."
+  }
+}

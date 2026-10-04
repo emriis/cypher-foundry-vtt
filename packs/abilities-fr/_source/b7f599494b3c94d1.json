@@ -1,0 +1,28 @@
+{
+  "_id": "b7f599494b3c94d1",
+  "_key": "!items!b7f599494b3c94d1",
+  "name": "Bouclier caché",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "hidden-shield",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu possèdes un bouclier intégré à ton corps (probablement dans ton bras), composé d’un alliage de métal et de polymères avancés. Le bouclier reste dissimulé tant que tu ne souhaites pas l’utiliser. Tu peux utiliser librement ce bouclier dans une main comme une arme légère de mêlée. Au prix d’une action supplémentaire à ton tour, tu peux faire une attaque de mêlée avec le bouclier, mais si tu le fais, ton attaque principale et l’attaque au bouclier sont toutes deux entravées. Si ton bouclier est détruit en encaissant des blessures, tu ne peux plus l’utiliser tant que tu n’as pas dépensé des ressources pour le réparer, ce qui prend environ une journée."
+  }
+}

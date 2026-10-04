@@ -1,0 +1,28 @@
+{
+  "_id": "1fcacec810cb420d",
+  "_key": "!items!1fcacec810cb420d",
+  "name": "Repel Metal",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "repel-metal",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "By manipulating magnetism, you have an asset to block and dodge rolls against attacks that include metal, such as bullets, thrown knives, metal-tipped arrows and crossbow bolts, and so on."
+  }
+}

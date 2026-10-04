@@ -1,0 +1,28 @@
+{
+  "_id": "c0850a7cabfc59b2",
+  "_key": "!items!c0850a7cabfc59b2",
+  "name": "Attaque foisonnante",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "attack-flourish",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Lorsque tu attaques, tu accompagnes tes gestes de mouvements élégants, de répliques spirituelles ou d'un panache irrésistible qui divertit ou impressionne. Une créature de ton choix, à courte portée, qui peut te voir, obtient un atout sur sa prochaine tâche (si elle l'accomplit dans un round ou deux)."
+  }
+}

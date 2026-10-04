@@ -1,0 +1,28 @@
+{
+  "_id": "3ba07674cbea4e97",
+  "_key": "!items!3ba07674cbea4e97",
+  "name": "Hunter's Drive",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "hunter-s-drive",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You gain greater prowess in the hunt. If your quarry is within 10 miles (16 km) of you, your movement rate is doubled if you are trying to reach them. You gain an additional asset on tasks related to your quarry. This ability lasts until you use a ten-minute or longer recovery. Enabler."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "f64910769fe981b6",
+  "_key": "!items!f64910769fe981b6",
+  "name": "Défi final",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "final-defiance",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu devrais normalement mourir, tu restes conscient·e et actif·ive pendant un round supplémentaire. (Cette aptitude s’active avant Pas mort·e encore.) À chaque round suivant, en tant qu’action supplémentaire, tu peux tenter une tâche de Puissance de difficulté 5 pour rester en vie un round de plus. Pendant ces rounds supplémentaires, toutes tes tâches sont entravées. Si, au dernier round où tu restes en vie, tu ne reçois aucun soin, aucun point dans une Réserve, ou ne retires pas la blessure qui t’a tué, alors Pas encore mort·e s’active."
+  }
+}

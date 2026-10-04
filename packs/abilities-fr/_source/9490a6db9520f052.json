@@ -1,0 +1,28 @@
+{
+  "_id": "9490a6db9520f052",
+  "_key": "!items!9490a6db9520f052",
+  "name": "Projeter les illusions",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "cast-illusion",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "La portée de toutes tes illusions à portée immédiate (telles que Petite illusion, Illusion majeure, Illusion grandiose) augmente à portée courte. Les déguisements créés par Déguisement illusoire durent environ une minute après que la créature sorte de ton champ de vision."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "93d30c24d04ea53b",
+  "_key": "!items!93d30c24d04ea53b",
+  "name": "Electromagnetic Eyes",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "electromagnetic-eyes",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You sense your environment using the electromagnetic fields that invisibly fill most locations—invisible to others, but not to you. You can “see” up to long range even in complete darkness, and you have an asset on perception tasks related to noticing hiding living creatures (which have their own electromagnetic fields) as well as metal and magnetic objects and powered devices. You can see otherwise invisible creatures normally. You always know which way is north (assuming you're on a planet with magnetic poles). This ability lasts until you use a ten-minute or longer recovery. Action to initiate."
+  }
+}

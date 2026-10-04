@@ -1,0 +1,28 @@
+{
+  "_id": "f83f89979761aa97",
+  "_key": "!items!f83f89979761aa97",
+  "name": "Blink of an Eye",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "blink-of-an-eye",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 4,
+      "options": []
+    },
+    "action": "lastAction",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You move up to 1,000 feet (300 m). (This movement doesn't hinder your tasks.) Last action."
+  }
+}

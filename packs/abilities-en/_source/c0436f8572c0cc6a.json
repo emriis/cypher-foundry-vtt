@@ -1,0 +1,28 @@
+{
+  "_id": "c0436f8572c0cc6a",
+  "_key": "!items!c0436f8572c0cc6a",
+  "name": "Go for the Eyes",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "go-for-the-eyes",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 2,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You attempt to injure your foe's eye, such as by gouging it or throwing dirt in their face. Make a hindered melee attack; success means their vision is impaired until you use a ten-minute or longer recovery, hindering their tasks that rely on sight (which is most tasks). Action."
+  }
+}

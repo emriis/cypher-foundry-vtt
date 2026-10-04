@@ -1,0 +1,28 @@
+{
+  "_id": "459f3787b3de629e",
+  "_key": "!items!459f3787b3de629e",
+  "name": "Sens et instincts animaux",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "animal-senses-and-sensibilities",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "La plupart du temps, si tu t’apprêtes à tomber dans une embuscade ou un piège de niveau 4 ou moins, le·la MJ t’en avertit (tu n’auras peut‑être pas le temps de prévenir les autres). Même si tu ignores une attaque imminente, l’assaillant n’obtient aucun avantage (pas d’atout dû à la surprise)."
+  }
+}

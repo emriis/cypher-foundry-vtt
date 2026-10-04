@@ -1,0 +1,28 @@
+{
+  "_id": "84e446c9f5f40ad2",
+  "_key": "!items!84e446c9f5f40ad2",
+  "name": "Basic Follower",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "basic-follower",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You gain a level 2 follower who has two level 3 modifications (one of which is charm). You can take this ability multiple times, each time gaining another follower."
+  }
+}

@@ -7,211 +7,72 @@
   "system": {
     "description": "<p>Your natural leadership capability allows you to command others, including a loyal band of followers.</p>",
     "abilities": [
-      {
-        "id": "always-witty",
-        "name": "Toujours inspiré·e",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+      "Compendium.cypher.abilities-fr.Item.ad0a3d9d8c5f0fed",
+      "Compendium.cypher.abilities-fr.Item.d23c7e05acbc7905",
+      "Compendium.cypher.abilities-fr.Item.9ccc58ca4d87ed68",
+      "Compendium.cypher.abilities-fr.Item.84e446c9f5f40ad2",
+      "Compendium.cypher.abilities-fr.Item.cceca7b54321fd4b",
+      "Compendium.cypher.abilities-fr.Item.46f8eedb1aa3e8d5",
+      "Compendium.cypher.abilities-fr.Item.ccdb520bffe35eb1",
+      "Compendium.cypher.abilities-fr.Item.34ca8d20f1f237d2",
+      "Compendium.cypher.abilities-fr.Item.898264bd7e3de1c0",
+      "Compendium.cypher.abilities-fr.Item.d876d52c7901be96",
+      "Compendium.cypher.abilities-fr.Item.a200675525fb3ec4",
+      "Compendium.cypher.abilities-fr.Item.b775034d66321f96",
+      "Compendium.cypher.abilities-fr.Item.3d8bf53958c918e1"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "ad0a3d9d8c5f0fed",
+          "to": "84e446c9f5f40ad2"
         },
-        "description": "Chaque fois que tu fais une récupération, si ta Réserve d’Intellect n’est pas déjà pleine, tu récupères 1 point d’Intellect supplémentaire. Tu peux sélectionner cette aptitude jusqu’à trois fois."
-      },
-      {
-        "id": "inspiring-suggestion",
-        "name": "Suggestion inspirante",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "d23c7e05acbc7905",
+          "to": "84e446c9f5f40ad2"
         },
-        "description": "When you make a helpful suggestion to an ally, they have a better chance of succeeding at what they're doing. Choose an ally who can see and understand you, then suggest a specific action for them to take, such as “attack the leader” or “climb the wall.” If the ally chooses to take that exact action, they gain two assets on that task. First action."
-      },
-      {
-        "id": "lighting-a-fire-under-them",
-        "name": "Mettre le feu sous leurs pieds",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "d23c7e05acbc7905",
+          "to": "cceca7b54321fd4b"
         },
-        "description": "Tu donnes un ordre à un·e allié·e ou à un·e suivant·e à portée courte, et sa prochaine action devient une Première action (si elle avait été une Dernière action, elle agit normalement). Tu ne peux réutiliser cette aptitude qu’après ta prochaine récupération de dix minutes ou plus."
-      },
-      {
-        "id": "basic-follower",
-        "name": "Suivant·e de base",
-        "tier": 2,
-        "prerequisites": [
-          "always-witty",
-          "inspiring-suggestion"
-        ],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "9ccc58ca4d87ed68",
+          "to": "cceca7b54321fd4b"
         },
-        "description": "Tu gagnes un·e suivant·e de niveau 2, doté·e de deux modifications de niveau 3 (dont une en persuasion). Tu peux prendre cette aptitude autant de fois que tu veux, gagnant un·e nouveau·elle suivant·e à chaque fois."
-      },
-      {
-        "id": "natural-leader",
-        "name": "Leader né·e",
-        "tier": 2,
-        "prerequisites": [
-          "inspiring-suggestion",
-          "lighting-a-fire-under-them"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "cceca7b54321fd4b",
+          "to": "46f8eedb1aa3e8d5"
         },
-        "description": "Quand tu fais un jet pour marchander, tromper, charmer, interroger, intimider ou persuader, si ton résultat est inférieur à 9, considère qu’il est de 9. (Tu évites ainsi une Intrusion du·de la MJ si tu fais un 1.) Cet effet se réinitialise à chaque récupération. Au rang 3, le minimum passe à 12. Effort : augmenter le minimum de +3."
-      },
-      {
-        "id": "advanced-command",
-        "name": "Commandement avancé",
-        "tier": 3,
-        "prerequisites": [
-          "natural-leader"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 7,
-          "options": []
+        {
+          "from": "84e446c9f5f40ad2",
+          "to": "ccdb520bffe35eb1"
         },
-        "description": "Tu donnes un ordre à une créature à portée courte qui peut t’entendre et te comprendre. Avec un jet d’attaque d’Intellect réussi, elle obéit. Tu peux continuer à lui donner un ordre à chaque tour comme action : chaque ordre nécessite un jet d’Intellect réussi mais aucun coût supplémentaire n’est requis. L’effet cesse si tu arrêtes de donner des ordres, la créature sort de portée ou elle ne peut plus te comprendre."
-      },
-      {
-        "id": "expert-follower",
-        "name": "Suivant·e expert·e",
-        "tier": 3,
-        "prerequisites": [
-          "basic-follower"
-        ],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "46f8eedb1aa3e8d5",
+          "to": "34ca8d20f1f237d2"
         },
-        "description": "Tu gagnes un·e suivant·e de niveau 3, doté·e de trois modifications de niveau 4 de ton choix. À la place, tu peux améliorer un·e suivant·e existant·e au niveau 3 et gagner un·e nouveau·elle suivant·e de niveau 2. Tu peux prendre cette aptitude plusieurs fois."
-      },
-      {
-        "id": "calm",
-        "name": "Apaiser",
-        "tier": 4,
-        "prerequisites": [
-          "advanced-command"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "ccdb520bffe35eb1",
+          "to": "898264bd7e3de1c0"
         },
-        "description": "Through jokes, song, or other art, you prevent a living foe from attacking anyone or anything for one round. Action."
-      },
-      {
-        "id": "captivate-or-inspire",
-        "name": "Captiver ou inspirer",
-        "tier": 4,
-        "prerequisites": [
-          "expert-follower"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "ccdb520bffe35eb1",
+          "to": "d876d52c7901be96"
         },
-        "description": "You can use this ability in one of two ways. Captivate: Your words keep the attention of all NPCs that hear them for as long as you speak. Inspire: Your words inspire all NPCs that hear them, allowing them to perform tasks as if one level higher until you use a one-hour or longer recovery. In either case, you choose which NPCs are affected. If anyone in the crowd is attacked while you're trying to speak to them, you lose the crowd's attention. Action to initiate."
-      },
-      {
-        "id": "improved-follower",
-        "name": "Suivant·e amélioré·e",
-        "tier": 5,
-        "prerequisites": [
-          "expert-follower"
-        ],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "d876d52c7901be96",
+          "to": "a200675525fb3ec4"
         },
-        "description": "Choisis un·e de tes suivant·e·s : son niveau augmente de 1, toutes ses modifications augmentent de +1, iel gagne une nouvelle modification (de niveau = niveau de base + 1). Tu peux prendre cette aptitude une fois par rang, pour améliorer le même suivant ou un autre."
-      },
-      {
-        "id": "band-of-followers",
-        "name": "Bande de suivant·e·s",
-        "tier": 6,
-        "prerequisites": [
-          "improved-follower"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "34ca8d20f1f237d2",
+          "to": "b775034d66321f96"
         },
-        "description": "Tu gagnes quatre suivant·e·s de niveau 3, chacun·e disposant de trois modifications de niveau 4. À la place, tu peux améliorer quatre suivant·e·s de niveau 2 au niveau 3 et gagner un·e nouveau·elle suivant·e de niveau 2 pour chacun d’eux."
-      },
-      {
-        "id": "mind-of-a-leader",
-        "name": "Esprit de meneur·euse",
-        "tier": 6,
-        "prerequisites": [
-          "calm"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 6,
-          "options": []
-        },
-        "description": "Lorsque tu prépares un plan pour une situation future, tu peux poser une question très générale au/à la MJ sur ce qui risque d’arriver si tu exécutes ce plan. Tu obtiens une réponse simple et brève. Chaque allié·e connaissant le plan (toi inclus·e) gagne un atout pour un jet de son choix lié à cette situation, tant qu’elle survient dans les quelques jours suivants."
-      },
-      {
-        "id": "stimulate",
-        "name": "Stimulation",
-        "tier": 6,
-        "prerequisites": [
-          "captivate-or-inspire"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 6,
-          "options": []
-        },
-        "description": "Tes paroles motivent une créature à portée immédiate qui peut te comprendre. Sa prochaine action est facilitée de trois paliers. (Pour cette tâche, la limite d’atouts est 3 au lieu de 2.)"
-      }
-    ]
+        {
+          "from": "898264bd7e3de1c0",
+          "to": "3d8bf53958c918e1"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

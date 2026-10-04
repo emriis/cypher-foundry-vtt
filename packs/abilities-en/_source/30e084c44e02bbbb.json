@@ -1,0 +1,28 @@
+{
+  "_id": "30e084c44e02bbbb",
+  "_key": "!items!30e084c44e02bbbb",
+  "name": "Expert Handyman",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "expert-handyman",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you use resource points to craft, repair, or build something, the resulting object is superior to other objects of a similar kind. Work with the GM to determine exactly how that manifests, but typically they are 2 levels higher than they'd otherwise be."
+  }
+}

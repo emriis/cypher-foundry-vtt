@@ -1,0 +1,28 @@
+{
+  "_id": "0522b4595767f777",
+  "_key": "!items!0522b4595767f777",
+  "name": "Gargantuan",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "gargantuan",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you use Enlarge, if you spend an additional 5 Might, you can grow to a height of 30 feet (9 m). While gargantuan, you add +2 to your Might Edge, you can ignore the first three moderate wounds and first major wound you take, your unarmed attacks inflict 8 damage, and you gain two assets to tasks that are easier for a larger creature to perform (like climbing or wading). You can make an unarmed attack against all creatures in an immediate area (make separate attack rolls for each). While gargantuan, your dodge tasks are hindered by three steps. If you fall prone while gargantuan, you take a moderate wound and require a Last action to get up. Enabler."
+  }
+}

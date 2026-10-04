@@ -1,0 +1,28 @@
+{
+  "_id": "b596ed00017f6e72",
+  "_key": "!items!b596ed00017f6e72",
+  "name": "Mind Control",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "mind-control",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You control the actions of another creature you touch. The creature must be level 2 or lower and you must succeed at an Intellect attack against them. Control lasts until you use a ten-minute or longer recovery. While you have control, you maintain mental contact with the target and sense what they sense. You decide on a case-by-case basis if they follow your orders or if they can act freely. When the duration ends, the creature doesn't remember being controlled or anything it did while under your command. Effort: Increase the maximum level of the target you can affect by 1. Action to initiate."
+  }
+}

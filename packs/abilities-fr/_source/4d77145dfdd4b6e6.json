@@ -1,0 +1,28 @@
+{
+  "_id": "4d77145dfdd4b6e6",
+  "_key": "!items!4d77145dfdd4b6e6",
+  "name": "Redirection",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "misdirect",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Lorsqu’un adversaire te rate, tu peux rediriger son attaque vers une autre cible à portée immédiate. Fais un jet d’attaque non modifié contre cette nouvelle cible (tu peux ajouter de l’Effort pour viser). En cas de réussite, la cible subit des dégâts égaux au niveau de l’attaquant d’origine."
+  }
+}

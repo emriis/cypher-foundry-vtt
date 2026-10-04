@@ -1,0 +1,28 @@
+{
+  "_id": "5069da728f6ff127",
+  "_key": "!items!5069da728f6ff127",
+  "name": "Basic Necromancy",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "basic-necromancy",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You animate the body of a dead creature of approximately your size or smaller within immediate range, creating a level 1 follower that is an undead creature. It has none of the intelligence, memories, or special abilities that it had in life. The creature follows your verbal commands until you use a one-hour or longer recovery, at which point it becomes an inert corpse. You can reanimate it again when it becomes inert or if it is “killed” by damage (though you may have to spend a few minutes with a needle and thread to reattach detached or loose parts). Last action to animate. Bone Lore (1 Intellect): With a touch, you ascertain the cause of death of a corpse, how long since its death, and its species when it was alive. Last action. Speaker for the Dead (2 Intellect): You touch a corpse of a dead being and ask it a question. It can't answer questions that it wouldn't have understood in life, and it can't provide answers that it wouldn't have known in life. The dead being is not compelled to answer you at all, so you might need to interact with it in a way that would have convinced it to answer while it was alive. For example, you might promise to give the corpse a proper burial, avenge their death, or carry a message to someone they knew when they were alive. This probably requires an interaction roll (typically charm or intimidation). Action."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "4790a2012f02bbac",
+  "_key": "!items!4790a2012f02bbac",
+  "name": "Pas léger",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "light-step",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu peux réduire le poids de tes pas jusqu’à celui d’une feuille de papier, ce qui t’empêche d’activer des plaques de pression ou autres dispositifs basés sur le poids. Tu réduis également les dégâts de chute d’un palier de blessure."
+  }
+}

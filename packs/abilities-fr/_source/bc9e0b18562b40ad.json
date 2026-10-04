@@ -1,0 +1,28 @@
+{
+  "_id": "bc9e0b18562b40ad",
+  "_key": "!items!bc9e0b18562b40ad",
+  "name": "Attaque étourdissante",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "stunning-attack",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu fais une attaque à mains nues, tu peux choisir d’entraver ton jet. Si tu touches, en plus des dégâts normaux, la cible perd son prochain tour."
+  }
+}

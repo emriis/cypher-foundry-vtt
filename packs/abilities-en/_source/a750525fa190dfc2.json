@@ -1,0 +1,28 @@
+{
+  "_id": "a750525fa190dfc2",
+  "_key": "!items!a750525fa190dfc2",
+  "name": "Head Trauma",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "head-trauma",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "The attack inflicts 1 less damage, but the foe's actions are hindered until they use an action to recover. Action. Split SkullGM intrusions: Your axe flies out of your hand, landing a short distance away. Your axe head becomes stuck in the foe and pulls free of your grasp. Your axe haft splinters or breaks, making it unusable until repaired. Your axe ricochets and you inflict a moderate wound on yourself."
+  }
+}

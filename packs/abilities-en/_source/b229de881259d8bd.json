@@ -1,0 +1,28 @@
+{
+  "_id": "b229de881259d8bd",
+  "_key": "!items!b229de881259d8bd",
+  "name": "Rebuke Evil",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "rebuke-evil",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": "lastAction",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You rebuke one undead, demon, or creature of similar ilk within short range that you make a successful Intellect attack against. The affected creature does their best to accomplish a goal you specify in your rebuke, even if it would cause them or their allies harm, until you use a ten-minute or longer recovery. Effort: Affect an additional foe (make a separate attack roll against each foe); you must give the same command to all affected creatures. Last action."
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "_id": "4fd4aa4769f44e1f",
+  "_key": "!items!4fd4aa4769f44e1f",
+  "name": "Apportation",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "apportation",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [
+      {
+        "id": "random-object",
+        "name": "Random Object",
+        "formula": "1d20",
+        "results": [
+          {
+            "min": 1,
+            "max": 10,
+            "description": "Standard equipment"
+          },
+          {
+            "min": 11,
+            "max": 12,
+            "description": "Manifest cypher"
+          },
+          {
+            "min": 13,
+            "max": 20,
+            "description": "Worthless junk"
+          }
+        ]
+      }
+    ],
+    "description": "You pull a physical object to you across almost any distance. You can choose any piece of normal equipment on the equipment list for your genre, or (once between each ten-hour recovery) you can let the GM randomly determine what object appears. You can't use this ability to take an item held by another creature. The object appears next to you. Action. Random Object d20 Results 1–10 Standard equipment 11–12 Manifest cypher 13–20 Worthless junk"
+  }
+}

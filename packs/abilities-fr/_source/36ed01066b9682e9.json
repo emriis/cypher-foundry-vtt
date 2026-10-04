@@ -1,0 +1,28 @@
+{
+  "_id": "36ed01066b9682e9",
+  "_key": "!items!36ed01066b9682e9",
+  "name": "Fer dans le sang",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "iron-in-the-blood",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu as affiné ton sens magnétique au point de sentir et manipuler le fer présent dans la chair et le sang. Tu peux maintenant : déplacer des créatures avec Déplacer le métal, les attaquer directement avec Déchirer le métal (5 dégâts) ou Commander le métal (7 dégâts). Tes attaques d’Intellect sont entravées lorsque tu fais cela."
+  }
+}

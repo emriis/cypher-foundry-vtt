@@ -1,0 +1,28 @@
+{
+  "_id": "7ef5aec17601be99",
+  "_key": "!items!7ef5aec17601be99",
+  "name": "Analyser les défenses",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "scrutinize-defenses",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "En explorant minutieusement une zone (sur place, via caméras, plans, témoignages…) d’une taille maximale équivalente à une longue distance, pendant environ une heure, tu peux poser une question au/à la MJ sur les systèmes et procédures de défense. La réponse doit être vraie. Exemples : fréquence de passage des gardes, équipement des gardes, existence d’alarmes magiques ou électroniques… Cet effet se réinitialise à ta récupération de dix heures. Effort : poser une question de plus."
+  }
+}

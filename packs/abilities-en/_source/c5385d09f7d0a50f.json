@@ -1,0 +1,28 @@
+{
+  "_id": "c5385d09f7d0a50f",
+  "_key": "!items!c5385d09f7d0a50f",
+  "name": "Slippery Customer",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "slippery-customer",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You ignore all penalties from very dim light and darkness. You ignore penalties for actions in cramped spaces. You gain an asset on stealth tasks in dim light, very dim light, and darkness."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "08bf281e08d1e7d5",
+  "_key": "!items!08bf281e08d1e7d5",
+  "name": "Brute Strike",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "brute-strike",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you hit with a Might attack, you deal an additional 6 damage. You can't use this ability in two consecutive rounds. Enabler."
+  }
+}

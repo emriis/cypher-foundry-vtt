@@ -1,0 +1,28 @@
+{
+  "_id": "a9f31cd4b06cce50",
+  "_key": "!items!a9f31cd4b06cce50",
+  "name": "Forme bestiale agrandie",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "bigger-beast-form",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu utilises Forme bestiale, tu deviens plus grand·e, atteignant 4 m de haut. Ta forme bestiale gagne alors : tu ignores une blessure modérée supplémentaire, tes attaques à mains nues ont un atout, tu peux librement utiliser tes attaques à mains nues comme armes lourdes (6 dégâts), tu gagnes un atout aux tâches facilitées par une grande taille (grimper, traverser un cours d’eau…) mais tes tâches d’Esquive sont entravées."
+  }
+}

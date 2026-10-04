@@ -1,0 +1,28 @@
+{
+  "_id": "7810cd939065b107",
+  "_key": "!items!7810cd939065b107",
+  "name": "Manteau spectral",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "wraith-cloak",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "À ton commandement, un esprit mort‑vivant proche s’enroule autour de toi jusqu’à ta prochaine récupération de dix minutes ou plus. Pendant cette durée : toute créature qui tente de te toucher ou de t’attaquer au corps à corps subit automatiquement 4 dégâts (pas besoin de jet), toutes tes tâches de Discrétion sont facilitées. Facilitateur."
+  }
+}

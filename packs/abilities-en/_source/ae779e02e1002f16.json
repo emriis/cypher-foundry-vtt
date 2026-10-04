@@ -1,0 +1,28 @@
+{
+  "_id": "ae779e02e1002f16",
+  "_key": "!items!ae779e02e1002f16",
+  "name": "Sprint and Grab",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "sprint-and-grab",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 2,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You move a short distance and make a melee attack to grab a foe of your size or smaller. (Unlike a normal situation of taking an action and moving a short distance, this doesn't hinder your tasks.) A successful attack means you grab the foe and bring it to a halt if it was moving (this can be treated as a tackle, if appropriate). Action."
+  }
+}

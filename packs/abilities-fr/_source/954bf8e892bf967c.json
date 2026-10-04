@@ -1,0 +1,28 @@
+{
+  "_id": "954bf8e892bf967c",
+  "_key": "!items!954bf8e892bf967c",
+  "name": "Façonneur·euse de métal",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "craft-metal",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu peux manipuler le métal sans effort, te permettant de façonner des objets métalliques sans chaleur. Tu gagnes aussi un atout pour toutes les tâches liées au travail du métal."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "8ba041f47f9dfd31",
+  "_key": "!items!8ba041f47f9dfd31",
+  "name": "Nature's Voice",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "nature-s-voice",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Make an Intellect attack roll to calm a nonhuman beast within long range that can see you. You must speak to them (although they don't need to understand your words). They remain calm until you use a ten-minute or longer recovery or for as long as you keep using your action to calm them. Effort: Affect an additional beast (2 Intellect). Action. The GM has final say over what counts as a nonhuman beast. Unless some kind of deception is at work, you should know whether you can affect a creature before you attempt to use Nature's Voice on them. Aliens, extradimensional entities, very intelligent creatures, and robots never count."
+  }
+}

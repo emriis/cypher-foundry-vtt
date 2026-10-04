@@ -7,223 +7,120 @@
   "system": {
     "description": "<p>You can send and receive thoughts as easily as communicating by voice.</p>",
     "abilities": [
-      {
-        "id": "empathic-sense",
-        "name": "Sens empathique",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+      "Compendium.cypher.abilities-fr.Item.c63aaad4c957d42e",
+      "Compendium.cypher.abilities-fr.Item.bc19dd34d79f5054",
+      "Compendium.cypher.abilities-fr.Item.45b0244961100144",
+      "Compendium.cypher.abilities-fr.Item.64eb3be38ae2eae8",
+      "Compendium.cypher.abilities-fr.Item.4ccb7861f9a67bf3",
+      "Compendium.cypher.abilities-fr.Item.ee23503d746087c5",
+      "Compendium.cypher.abilities-fr.Item.572cd56e494922be",
+      "Compendium.cypher.abilities-fr.Item.bf150a0f4185bf43",
+      "Compendium.cypher.abilities-fr.Item.3f8b03484cd1c031",
+      "Compendium.cypher.abilities-fr.Item.384787d15def3411",
+      "Compendium.cypher.abilities-fr.Item.825e4d72fc605afe",
+      "Compendium.cypher.abilities-fr.Item.b596ed00017f6e72",
+      "Compendium.cypher.abilities-fr.Item.6c291bca38a61166"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "c63aaad4c957d42e",
+          "to": "64eb3be38ae2eae8"
         },
-        "description": "Tu perçois l’état mental général d’un être à portée courte. Tu peux sentir son émotion générale, et en particulier ce qu’il·elle ressent à ton égard."
-      },
-      {
-        "id": "sense-psionics",
-        "name": "Détection psionique",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+        {
+          "from": "bc19dd34d79f5054",
+          "to": "64eb3be38ae2eae8"
         },
-        "description": "S’il y a des pouvoirs mentaux, des aptitudes psioniques ou d’autres phénomènes psychiques en action à portée courte, tu en es conscient·e (sans en connaître les détails). Dernière action."
-      },
-      {
-        "id": "telepathic",
-        "name": "Télépathie",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+        {
+          "from": "45b0244961100144",
+          "to": "64eb3be38ae2eae8"
         },
-        "description": "Tu peux communiquer télépathiquement avec d’autres personnes situées jusqu’à portée longue. La communication est bidirectionnelle, mais l’autre partie doit être consentante et capable de communiquer. Tu n’as pas besoin de voir la cible, mais tu dois savoir qu’elle est à portée. Tu peux avoir plusieurs contacts actifs en même temps, mais tu dois établir le contact avec chaque cible individuellement. Chaque contact dure jusqu’à ta prochaine récupération de dix minutes ou plus. Effort : Augmente la durée pour qu’elle dure jusqu’à ta récupération de dix heures. Action pour établir le contact."
-      },
-      {
-        "id": "telepathic-bond",
-        "name": "Lien télépathique",
-        "tier": 2,
-        "prerequisites": [
-          "empathic-sense",
-          "sense-psionics",
-          "telepathic"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "bc19dd34d79f5054",
+          "to": "4ccb7861f9a67bf3"
         },
-        "description": "Tu crées un lien entre toi et une autre créature, vous permettant de communiquer mentalement à volonté. Tu dois toucher la créature pour activer le lien et elle doit être consentante. L’un·e ou l’autre peut dissoudre le lien au prix d’une Dernière action. Vous pouvez vous parler télépathiquement à tout moment tant que vous êtes tous deux consentants et à moins de 150 km l’un·e de l’autre. Tu ne peux avoir qu’un seul lien télépathique à la fois. Dernière action pour former ou dissoudre le lien."
-      },
-      {
-        "id": "identify-psionics",
-        "name": "Identifier les psioniques",
-        "tier": 3,
-        "prerequisites": [
-          "sense-psionics",
-          "telepathic-bond"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "64eb3be38ae2eae8",
+          "to": "4ccb7861f9a67bf3"
         },
-        "description": "Si tu as détecté des psioniques avec l’aptitude de rang 1, tu peux obtenir plus de précisions : le niveau de l’effet, la source (une créature ou un effet psychique en cours) et les effets généraux des psioniques en jeu."
-      },
-      {
-        "id": "mind-reading",
-        "name": "Lecture de pensées",
-        "tier": 3,
-        "prerequisites": [
-          "empathic-sense",
-          "telepathic-bond",
-          "psychic-suggestion"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
+        {
+          "from": "c63aaad4c957d42e",
+          "to": "ee23503d746087c5"
         },
-        "description": "Tu peux lire les pensées superficielles d’une créature que tu vois à portée courte. Si la créature est non consentante, tu dois réussir une attaque d’Intellect contre elle pour lire ses pensées. Une fois le contact établi, tu peux lire les pensées de la cible jusqu’à ta prochaine récupération de dix minutes ou plus. Action pour commencer."
-      },
-      {
-        "id": "psychic-burst",
-        "name": "Explosion psychique",
-        "tier": 3,
-        "prerequisites": [
-          "sense-psionics",
-          "telepathic",
-          "psychic-suggestion"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "64eb3be38ae2eae8",
+          "to": "ee23503d746087c5"
         },
-        "description": "Tu envoies des ondes de force mentale dans l’esprit de trois cibles à portée courte (fais un jet d’Intellect contre chaque cible). Cette explosion inflige 3 dégâts d’Intellect (ignore l’Armure). Effort : Attaquer une cible supplémentaire (2 Intellect)."
-      },
-      {
-        "id": "psychic-suggestion",
-        "name": "Suggestion psychique",
-        "tier": 3,
-        "prerequisites": [
-          "telepathic",
-          "mind-reading",
-          "psychic-burst"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "bf150a0f4185bf43",
+          "to": "ee23503d746087c5"
         },
-        "description": "You attempt to make a foe within short range take the action you indicate on their next turn. Make an Intellect attack against the foe. If the action would cause direct harm to themself or their allies, the mental attack is hindered. Action."
-      },
-      {
-        "id": "extended-range",
-        "name": "Portée étendue",
-        "tier": 4,
-        "prerequisites": [
-          "identify-psionics",
-          "mind-reading",
-          "psychic-burst"
-        ],
-        "repeatable": true,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "bc19dd34d79f5054",
+          "to": "572cd56e494922be"
         },
-        "description": "Tu augmentes la portée d’une de tes aptitudes mentales qui affecte une autre créature. Choisis une aptitude de focus qui affecte une créature ; sa portée augmente d’une catégorie (toucher → immédiate → courte → longue → très longue → 1,5 km → 150 km → n’importe où sur la même planète). Tu peux choisir cette aptitude plusieurs fois, chaque fois pour augmenter encore la portée d’une aptitude différente."
-      },
-      {
-        "id": "use-senses-of-others",
-        "name": "Utiliser les sens d’autrui",
-        "tier": 4,
-        "prerequisites": [
-          "mind-reading",
-          "psychic-suggestion",
-          "extended-range"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 4,
-          "options": []
+        {
+          "from": "45b0244961100144",
+          "to": "572cd56e494922be"
         },
-        "description": "Tu peux voir, entendre, sentir, toucher et goûter à travers les sens d’une autre créature à portée longue. Tu n’as pas besoin de voir la créature, mais tu dois savoir qu’elle est à portée ; si elle est intelligente et non consentante, tu dois réussir une attaque d’Intellect pour commencer à percevoir via ses sens. Tes sens partagés durent jusqu’à ta prochaine récupération de dix minutes ou plus."
-      },
-      {
-        "id": "precognition",
-        "name": "Précognition",
-        "tier": 5,
-        "prerequisites": [
-          "extended-range",
-          "use-senses-of-others"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 6,
-          "options": []
+        {
+          "from": "bf150a0f4185bf43",
+          "to": "572cd56e494922be"
         },
-        "description": "You dimly sense the future. Until you use a ten-minute or longer recovery, you gain the following benefits: You gain an asset on defense tasks. You can predict the actions of those around you. You gain an asset to seeing through deceptions and attempts to betray you as well as avoiding traps and ambushes. You know what people are probably thinking and what they will say before they say it. You gain an asset to all interaction tasks. Enabler."
-      },
-      {
-        "id": "mind-control",
-        "name": "Contrôle mental",
-        "tier": 6,
-        "prerequisites": [
-          "precognition"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 6,
-          "options": []
+        {
+          "from": "45b0244961100144",
+          "to": "bf150a0f4185bf43"
         },
-        "description": "Tu contrôles les actions d’une créature que tu touches. La créature doit être de niveau 2 ou moins et tu dois réussir une attaque d’Intellect contre elle. Le contrôle dure jusqu’à ta prochaine récupération de dix minutes ou plus. Tant que tu contrôles la cible, tu maintiens le contact mental et perçois ce qu’elle perçoit. Tu décides au cas par cas si elle suit tes ordres à la lettre ou si elle peut agir librement dans certaines limites. Quand la durée touche à sa fin, la créature ne se souvient pas avoir été contrôlée ni de ce qu’elle a fait sous ton commandement. Effort : Augmente le niveau maximal de la cible que tu peux affecter de +1."
-      },
-      {
-        "id": "telepathic-network",
-        "name": "Réseau télépathique",
-        "tier": 6,
-        "prerequisites": [
-          "precognition"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "ee23503d746087c5",
+          "to": "bf150a0f4185bf43"
         },
-        "description": "Tu crées un réseau télépathique entre toi et dix créatures consentantes que tu connais, où qu’elles soient. Toutes les créatures du réseau sont reliées et peuvent communiquer télépathiquement entre elles. Elles peuvent aussi « écouter » tout ce qui se dit dans le réseau. Activer ou utiliser ce réseau ne requiert pas d’action ni de dépense d’Intellect ; pour toi, c’est aussi simple que de parler à voix haute. Le réseau dure jusqu’à ce que tu choisisses de le terminer. Tu peux créer un réseau étendu de vingt personnes en dépensant 5 Intellect, et dix personnes supplémentaires pour chaque point d’Intellect supplémentaire dépensé. Un réseau étendu dure jusqu’à ta prochaine récupération de dix minutes ou plus. Effort : Augmenter le nombre de base à vingt personnes (5 Intellect), durée jusqu’à récupération de dix minutes ; chaque groupe de dix personnes supplémentaires coûte 1 Intellect."
-      }
-    ]
+        {
+          "from": "572cd56e494922be",
+          "to": "bf150a0f4185bf43"
+        },
+        {
+          "from": "4ccb7861f9a67bf3",
+          "to": "3f8b03484cd1c031"
+        },
+        {
+          "from": "ee23503d746087c5",
+          "to": "3f8b03484cd1c031"
+        },
+        {
+          "from": "572cd56e494922be",
+          "to": "3f8b03484cd1c031"
+        },
+        {
+          "from": "ee23503d746087c5",
+          "to": "384787d15def3411"
+        },
+        {
+          "from": "bf150a0f4185bf43",
+          "to": "384787d15def3411"
+        },
+        {
+          "from": "3f8b03484cd1c031",
+          "to": "384787d15def3411"
+        },
+        {
+          "from": "3f8b03484cd1c031",
+          "to": "825e4d72fc605afe"
+        },
+        {
+          "from": "384787d15def3411",
+          "to": "825e4d72fc605afe"
+        },
+        {
+          "from": "825e4d72fc605afe",
+          "to": "b596ed00017f6e72"
+        },
+        {
+          "from": "825e4d72fc605afe",
+          "to": "6c291bca38a61166"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

@@ -1,0 +1,28 @@
+{
+  "_id": "a135b8438dee2f47",
+  "_key": "!items!a135b8438dee2f47",
+  "name": "Présence intimidante",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "intimidating-presence",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Grâce à ton apparence rocheuse, tu bénéficies d’un Atout sur toutes tes tentatives d’intimidation."
+  }
+}

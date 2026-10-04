@@ -1,0 +1,28 @@
+{
+  "_id": "db0e946894b3309f",
+  "_key": "!items!db0e946894b3309f",
+  "name": "Grand·e marcheur·euse",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "longstrider",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu es plus grand·e que la normale, ta vitesse de déplacement sur la durée (pas ton déplacement par round, mais plutôt quand tu marches, cours, randonnes pendant au moins une minute) est doublée grâce à ta foulée élargie et ton endurance accrue."
+  }
+}

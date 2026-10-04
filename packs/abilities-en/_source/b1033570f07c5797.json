@@ -1,0 +1,28 @@
+{
+  "_id": "b1033570f07c5797",
+  "_key": "!items!b1033570f07c5797",
+  "name": "Eyes Adjusted",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "eyes-adjusted",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can see in very dim light as though it were bright light. You can see in total darkness as if it were very dim light."
+  }
+}

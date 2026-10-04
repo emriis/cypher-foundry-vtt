@@ -1,0 +1,28 @@
+{
+  "_id": "a5f83219315516ef",
+  "_key": "!items!a5f83219315516ef",
+  "name": "Conçu·e pour Pirater",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "built-to-hack",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu fais un jet pour pirater un ordinateur ou une machine non intelligente et que ton résultat est inférieur à 9, considère que tu as obtenu 9. Les tâches de piratage incluent : pénétrer des bases de données sécurisées, prendre le contrôle de tourelles, ouvrir des accès verrouillés, etc. Au rang 3, le minimum devient 12. Effort : Augmente le minimum obtenu de +3."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "3d3de2d0d7a3e6ae",
+  "_key": "!items!3d3de2d0d7a3e6ae",
+  "name": "Ignore Affliction",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "ignore-affliction",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 5,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Until you use a one-hour or longer recovery, you ignore any unwanted condition or affliction (such as disease, paralysis, mind control, broken limb, and so on, but not damage) and act as if it does not affect you. If the condition would normally last less than an hour, it is entirely negated. You can use this ability even if the condition prevents you from taking actions. Action."
+  }
+}

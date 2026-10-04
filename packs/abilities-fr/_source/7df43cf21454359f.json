@@ -1,0 +1,28 @@
+{
+  "_id": "7df43cf21454359f",
+  "_key": "!items!7df43cf21454359f",
+  "name": "Conscience totale",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "total-awareness",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu utilises constamment tes sens spéciaux pour surveiller ton environnement immédiat, rendant très difficile toute tentative de te surprendre ou de se cacher de toi. Quand tu consacres de l’Effort aux tâches d’initiative et de perception, tu gagnes deux niveaux d’Effort gratuits."
+  }
+}

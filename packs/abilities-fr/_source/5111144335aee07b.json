@@ -1,0 +1,28 @@
+{
+  "_id": "5111144335aee07b",
+  "_key": "!items!5111144335aee07b",
+  "name": "Monture",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "mount",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu gagnes un·e suivant·e animal·e de niveau 3 qui te sert de monture. Tu définis avec le·la MJ son apparence et sa personnalité. Son déplacement dépend de son type (oiseau, nageur·euse, etc.). À la place d’obtenir une nouvelle monture, ton compagnon animal peut devenir ta monture (via une croissance ou évolution), ce qui augmente son niveau à 3, et tu gagnes alors un nouveau compagnon animal de niveau 2. Lorsque tu chevauche ta monture : elle peut se déplacer pendant ton tour et tu peux attaquer en bénéficiant d’un atout sur l’attaque. (Il s’agit d’une exception spéciale : les suivant·e·s n’apportent normalement pas d’atout offensif.) Toute aptitude affectant ton compagnon animal (comme Yeux de bête ou Compagnon amélioré) peut affecter ta monture à la place. Si ta monture meurt, tu peux utiliser tes ressources pour chasser dans la nature pendant environ une semaine et en apprivoiser une nouvelle."
+  }
+}

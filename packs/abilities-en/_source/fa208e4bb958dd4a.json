@@ -1,0 +1,28 @@
+{
+  "_id": "fa208e4bb958dd4a",
+  "_key": "!items!fa208e4bb958dd4a",
+  "name": "Plasma Field",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "plasma-field",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "A selected portion of your fire shroud spikes to a temperature hot enough to incinerate incoming ranged attacks (such as arrows, bullets, a thrown metal knife, and so on), instantly turning them to ash. You are immune to such attacks for one round. You must be aware of an attack to incinerate it. Enabler."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "7ffd7212d933ddc7",
+  "_key": "!items!7ffd7212d933ddc7",
+  "name": "Golem Stomp",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "golem-stomp",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 4,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You stomp on the ground with all of your strength, creating a shock wave. Make separate attacks against three creatures in immediate range. Each creature you hit takes 3 damage and you choose if they are pushed out of immediate range or are knocked prone. Action."
+  }
+}

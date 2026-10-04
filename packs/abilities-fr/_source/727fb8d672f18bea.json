@@ -1,0 +1,31 @@
+{
+  "_id": "727fb8d672f18bea",
+  "_key": "!items!727fb8d672f18bea",
+  "name": "C’était une feinte",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "that-was-a-feint",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "choice",
+      "amount": 5,
+      "options": [
+        "might",
+        "speed"
+      ]
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu retentes immédiatement un jet d’attaque raté avec ton arme de prédilection, mais cette fois avec un atout. Si cette seconde tentative échoue, tu ne peux pas réutiliser cette aptitude pour ce même jet."
+  }
+}

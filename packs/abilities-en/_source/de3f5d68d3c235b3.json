@@ -1,0 +1,28 @@
+{
+  "_id": "de3f5d68d3c235b3",
+  "_key": "!items!de3f5d68d3c235b3",
+  "name": "Experienced Explorer",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "experienced-explorer",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Your experience with creatures, plants, and substances in various regions gives you some additional protection against them. Your defense rolls against poison are eased and you reduce wounds from poison by one step (major to moderate, moderate to minor, minor to none). For example, if you are bitten by a snake whose poison inflicts a moderate wound, you take only a minor wound from the poison. You are immune to natural diseases. When in the wild, natural effects such as tall grass, thick brush, rugged terrain, landslides, and bad weather do not hinder you or slow your movement, and any wounds from them are reduced by one step. Finally, you can find edible food and potable water in the wilderness, enough to feed yourself and a few other people, if given an hour or so to explore."
+  }
+}

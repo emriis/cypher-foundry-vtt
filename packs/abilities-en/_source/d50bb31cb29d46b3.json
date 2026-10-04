@@ -1,0 +1,28 @@
+{
+  "_id": "d50bb31cb29d46b3",
+  "_key": "!items!d50bb31cb29d46b3",
+  "name": "Better Sneak Attack",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "better-sneak-attack",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When using Sneak Attack, you gain an asset on the attack. On your next turn, your target takes an additional 5 damage (ignores armor). The target can prevent this additional damage by taking a recovery, using any ability that heals it, or using its action to attend to the injury. Enabler."
+  }
+}

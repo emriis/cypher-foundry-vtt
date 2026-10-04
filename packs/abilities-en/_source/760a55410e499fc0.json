@@ -1,0 +1,28 @@
+{
+  "_id": "760a55410e499fc0",
+  "_key": "!items!760a55410e499fc0",
+  "name": "Anecdote",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "anecdote",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can lift the spirits of a group of creatures and help them bond together by entertaining them with an uplifting or pointed anecdote. Choose one task (other than an attack or defense task) related to your anecdote. Until you use a one-hour or longer recovery, those who pay attention to your story are trained in that task. Alternatively, you can spend time interacting with a group of people within short range. As long as they are at least neutral toward you (rather than hostile), they become friendly toward you until you use a one-hour or longer recovery. Action to initiate; one minute to complete."
+  }
+}

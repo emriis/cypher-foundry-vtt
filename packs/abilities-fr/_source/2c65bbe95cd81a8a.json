@@ -1,0 +1,28 @@
+{
+  "_id": "2c65bbe95cd81a8a",
+  "_key": "!items!2c65bbe95cd81a8a",
+  "name": "Sens bestiaux",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "beast-senses",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tes sens sont exacerbés : tu gagnes un atout aux tâches de perception et initiative. Sous forme bestiale, tu gagnes deux atouts, et même si tu ignores une attaque imminente, l’assaillant n’obtient aucun avantage (pas d’atout dû à la surprise)."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "17d115c4d103309c",
+  "_key": "!items!17d115c4d103309c",
+  "name": "Création de glace",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "ice-creation",
+    "tier": 3,
+    "enabler": false,
+    "repeatable": true,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu crées un objet de ta taille ou plus petit, composé de glace de niveau 3. L’objet est grossier et sans pièces mobiles : épée, bouclier, petit mur, échelle courte, etc. Si tu t’éloignes à plus de courte portée, l’objet fond ou se brise dès que tu fais une récupération de dix minutes ou plus. Tu peux choisir cette aptitude plusieurs fois : chaque fois, tu doubles la taille de base de l’objet que tu peux créer. Effort : doubler la taille maximale de l’objet ou augmenter la distance maximale d’un palier de portée."
+  }
+}

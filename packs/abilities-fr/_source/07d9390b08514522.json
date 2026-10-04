@@ -1,0 +1,28 @@
+{
+  "_id": "07d9390b08514522",
+  "_key": "!items!07d9390b08514522",
+  "name": "Divination animale",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "animal-scrying",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Si tu connais la localisation générale d’un animal qui t’est amical et qui se trouve à moins d’1,5 km, tu peux percevoir à travers ses sens jusqu’à ta prochaine récupération de dix minutes ou plus. Tu dois être sous forme animale ou dans une forme similaire à cet animal pour activer cette aptitude. Consacrer de l’Effort : Activer cette aptitude même si tu n’es pas en forme animale ou en une forme similaire."
+  }
+}

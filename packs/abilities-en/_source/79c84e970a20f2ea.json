@@ -1,0 +1,28 @@
+{
+  "_id": "79c84e970a20f2ea",
+  "_key": "!items!79c84e970a20f2ea",
+  "name": "Terrifying Gaze",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "terrifying-gaze",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You project a fearsome gaze at up to five living creatures within short range who can see you. Make a separate Intellect attack roll for each creature. Success means that the creature is frozen in fear, not moving or taking actions until you use a ten-minute or longer recovery, they are attacked, or you leave their field of view. Some creatures without minds (such as slime monsters or animated statues) might be immune to Terrifying Gaze. Action."
+  }
+}

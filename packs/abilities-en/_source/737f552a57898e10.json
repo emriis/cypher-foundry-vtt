@@ -1,0 +1,28 @@
+{
+  "_id": "737f552a57898e10",
+  "_key": "!items!737f552a57898e10",
+  "name": "Extra Padding",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "extra-padding",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You carry around a little more weight than most—maybe muscle, maybe fat, or a mix of both. This extra padding provides extra protection from physical threats, allowing you to ignore a minor wound you just took (do not mark the wound on your character sheet). This ability renews after your ten-hour recovery. Effort: Ignore a moderate wound instead of a minor wound. Ignore a major wound instead of a minor wound (this requires two levels of Effort). Enabler."
+  }
+}

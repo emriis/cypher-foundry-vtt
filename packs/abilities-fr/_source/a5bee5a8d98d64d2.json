@@ -1,0 +1,28 @@
+{
+  "_id": "a5bee5a8d98d64d2",
+  "_key": "!items!a5bee5a8d98d64d2",
+  "name": "Forme bestiale améliorée",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "enhanced-beast-form",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu utilises Forme bestiale, tu gagnes en plus : +3 à ta Réserve de Puissance, +2 à ta Réserve de Célérité, tu ignores toutes les blessures mineures provenant d’attaques physiques."
+  }
+}

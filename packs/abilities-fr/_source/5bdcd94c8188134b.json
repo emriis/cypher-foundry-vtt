@@ -1,0 +1,28 @@
+{
+  "_id": "5bdcd94c8188134b",
+  "_key": "!items!5bdcd94c8188134b",
+  "name": "Atténuer la menace",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "attenuate-threat",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Si tu fais ton attaque ce round en tant que Dernière action au lieu de la faire en tant qu’action ou Première action, tu peux ignorer une blessure que tu subis avant ton prochain tour."
+  }
+}

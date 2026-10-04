@@ -1,0 +1,28 @@
+{
+  "_id": "db0e946894b3309f",
+  "_key": "!items!db0e946894b3309f",
+  "name": "Longstrider",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "longstrider",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you are larger than normal, your long-term movement speed (not your movement each round, but when walking, running, or hiking over a minute or longer) is doubled thanks to your bigger stride and your greater endurance."
+  }
+}

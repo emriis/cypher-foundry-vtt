@@ -1,0 +1,28 @@
+{
+  "_id": "e50b8f838043c608",
+  "_key": "!items!e50b8f838043c608",
+  "name": "Communication",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "communication",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu transmets un concept simple à une créature incapable de parler ou de comprendre normalement le langage. Elle peut te répondre par une réponse simple à une question directe."
+  }
+}

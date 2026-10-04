@@ -1,0 +1,28 @@
+{
+  "_id": "823e2fc77346d7f7",
+  "_key": "!items!823e2fc77346d7f7",
+  "name": "Guérison bestiale",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "beast-healing",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu te transformes en forme bestiale, tu es immédiatement soigné·e d’une blessure, quelle qu’en soit la sévérité. L’aptitude se renouvelle après une récupération de dix heures."
+  }
+}

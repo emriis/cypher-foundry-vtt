@@ -1,0 +1,28 @@
+{
+  "_id": "aef63c01b247e964",
+  "_key": "!items!aef63c01b247e964",
+  "name": "Ami·e en phase",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "phase-friend",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu utilises une aptitude de phasage, tu peux emmener un·e allié·e à portée immédiate avec toi. Effort : emmener un·e allié·e supplémentaire."
+  }
+}

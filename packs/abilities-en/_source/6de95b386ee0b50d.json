@@ -1,0 +1,28 @@
+{
+  "_id": "6de95b386ee0b50d",
+  "_key": "!items!6de95b386ee0b50d",
+  "name": "Snap Shot",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "snap-shot",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You can attack with your firearm and then attack again as an extra action on your turn. The second attack is hindered by two steps. Enabler."
+  }
+}

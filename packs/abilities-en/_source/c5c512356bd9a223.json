@@ -1,0 +1,28 @@
+{
+  "_id": "c5c512356bd9a223",
+  "_key": "!items!c5c512356bd9a223",
+  "name": "Blood Sorcery",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "blood-sorcery",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You draw upon your own blood, spirit, or life energy to power your abilities. You take a moderate wound and add +1 Edge to the Pool of your choice while you retain that wound. Enabler."
+  }
+}

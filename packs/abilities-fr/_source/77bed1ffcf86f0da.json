@@ -1,0 +1,28 @@
+{
+  "_id": "77bed1ffcf86f0da",
+  "_key": "!items!77bed1ffcf86f0da",
+  "name": "Processeur analytique",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "analytic-processor",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Pose au/à la MJ une question dont tu veux la réponse. Le·La MJ fixe une difficulté selon la rareté ou la complexité de l’information. Si tu réussis une tâche d’Intellect contre cette difficulté, tu obtiens une réponse courte. En cas d’échec, tu subis 4 dégâts d’Intellect dus au contrecoup numérique."
+  }
+}

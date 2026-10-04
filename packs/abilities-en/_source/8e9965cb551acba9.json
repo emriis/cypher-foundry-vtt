@@ -1,0 +1,28 @@
+{
+  "_id": "8e9965cb551acba9",
+  "_key": "!items!8e9965cb551acba9",
+  "name": "Flamboyant Boast",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "flamboyant-boast",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You boastfully describe an act that you will accomplish, and then as an extra action on your turn, you attempt it. If an average person would find the action difficult (or impossible) and you succeed on it, non-allies who witnessed it are so amazed and confused that all actions they attempt on their next turn are hindered. The GM will help you determine whether your boast is something that would significantly impress onlookers. If you fail the boasted task, until you use a ten-minute or longer recovery your attempts to affect witnesses (with attacks, special abilities, or skills) are hindered. Enabler."
+  }
+}

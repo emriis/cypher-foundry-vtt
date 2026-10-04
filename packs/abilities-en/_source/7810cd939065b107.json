@@ -1,0 +1,28 @@
+{
+  "_id": "7810cd939065b107",
+  "_key": "!items!7810cd939065b107",
+  "name": "Wraith Cloak",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "wraith-cloak",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "At your command, a nearby undead spirit wraps itself around you until you use a ten-minute or longer recovery. The spirit is empowered during this period, automatically inflicting 4 damage (no roll required) to anyone who tries to touch you or strike you with a melee attack. While the wraith cloak is active, all your stealth tasks are eased. Enabler."
+  }
+}

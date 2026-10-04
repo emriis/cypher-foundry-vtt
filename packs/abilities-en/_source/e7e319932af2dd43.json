@@ -1,0 +1,28 @@
+{
+  "_id": "e7e319932af2dd43",
+  "_key": "!items!e7e319932af2dd43",
+  "name": "Unmovable",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "unmovable",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 3,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You avoid being knocked down, pushed back, or moved against your will as long as you are upright and able to take actions. Enabler."
+  }
+}

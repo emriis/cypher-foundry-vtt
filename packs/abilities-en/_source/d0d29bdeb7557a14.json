@@ -1,0 +1,28 @@
+{
+  "_id": "d0d29bdeb7557a14",
+  "_key": "!items!d0d29bdeb7557a14",
+  "name": "Wall of Lightning",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "wall-of-lightning",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 8,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You create a barrier of crackling electricity composed of six 10-foot by 10-foot (3.5 m by 3.5 m) squares, each 1 inch (2.5 cm) thick, arranged as you wish. The wall is a level 7 barrier. One or both sides crackle with excess electricity; anyone within immediate distance of an energized side takes 10 damage (no rolls required), or double that if they pass through. The wall lasts until you use a ten-minute or longer recovery. Action to create."
+  }
+}

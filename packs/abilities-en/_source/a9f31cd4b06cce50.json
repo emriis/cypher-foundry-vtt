@@ -1,0 +1,28 @@
+{
+  "_id": "a9f31cd4b06cce50",
+  "_key": "!items!a9f31cd4b06cce50",
+  "name": "Bigger Beast Form",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "bigger-beast-form",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you use Beast Form, you grow larger, during which time you achieve a height of 12 feet (4 m). Being so large, your beast form gains the following additional benefits: you can ignore the first moderate wound you take, your unarmed attack rolls have an asset, you can freely use your unarmed attacks as heavy weapons (6 damage), and you gain an asset to tasks that are easier for a larger creature to perform (like climbing or wading). While in your bigger beast form, your dodge tasks are hindered. Enabler."
+  }
+}

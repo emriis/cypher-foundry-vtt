@@ -1,0 +1,28 @@
+{
+  "_id": "3cc99b1e8c744a59",
+  "_key": "!items!3cc99b1e8c744a59",
+  "name": "Surtension de vitesse",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "speed-surge",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu récupères immédiatement 1d6 + 6 points dans ta Réserve de Célérité. L’aptitude se renouvelle après une récupération de dix heures."
+  }
+}

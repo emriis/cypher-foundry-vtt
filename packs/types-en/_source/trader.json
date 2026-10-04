@@ -31,48 +31,9 @@
     "freeWeaponFamilies": [],
     "skillOptions": [],
     "abilities": [
-      {
-        "id": "fast-talk",
-        "name": "Fast Talk",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
-        },
-        "description": "When speaking with an intelligent creature who can understand you and isn't hostile, you convince them to take one reasonable action in the next round. A reasonable action must be agreed upon by your GM; it should not put the creature or its allies in obvious danger or be wildly out of character. Action."
-      },
-      {
-        "id": "a-smile-and-a-word",
-        "name": "A Smile and a Word",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
-        },
-        "description": "When you successfully interact with a creature by succeeding on a charm, deception, or intimidation task—even those having to do with calming animals or communicating with someone or something whose language you do not speak—you also learn one small useful or at least interesting bit of information. For instance, if you convince the guard to let you pass, you might also learn that their supervisor is due back in ten minutes. Action."
-      },
-      {
-        "id": "smooth-operator",
-        "name": "Smooth Operator",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "intellect",
-          "amount": 2,
-          "options": []
-        },
-        "description": "You purchase an expensive item for the cost of a moderately priced item. You can only use this ability in a location where services and items are routinely bought and sold. Effort: Purchase a very expensive item for the cost of an expensive item (this requires two levels of Effort). Purchase an exorbitant item for the cost of a very expensive item (this requires four levels of Effort). This ability renews when you access a new market or when at least a month has elapsed at the same market where you last used this ability. Enabler. At tier 3: You can use this ability twice before it must be renewed by going somewhere else or letting enough time pass."
-      }
+      "Compendium.cypher.abilities-en.Item.81c430f514f5fed2",
+      "Compendium.cypher.abilities-en.Item.bfd8c1fd4e463af4",
+      "Compendium.cypher.abilities-en.Item.53a4f6e3af635095"
     ],
     "statOptions": [
       "intellect"

@@ -1,0 +1,28 @@
+{
+  "_id": "a200675525fb3ec4",
+  "_key": "!items!a200675525fb3ec4",
+  "name": "Bande de suivant·e·s",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "band-of-followers",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu gagnes quatre suivant·e·s de niveau 3, chacun·e disposant de trois modifications de niveau 4. À la place, tu peux améliorer quatre suivant·e·s de niveau 2 au niveau 3 et gagner un·e nouveau·elle suivant·e de niveau 2 pour chacun d’eux."
+  }
+}

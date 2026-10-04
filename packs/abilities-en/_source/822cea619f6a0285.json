@@ -1,0 +1,28 @@
+{
+  "_id": "822cea619f6a0285",
+  "_key": "!items!822cea619f6a0285",
+  "name": "Ice Armor",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "ice-armor",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You cover your body in a sheen of ice until you use a ten-minute or longer recovery, easing your Might defense rolls to block attacks. In addition, reduce the severity of wounds from cold and ice effects used against you by one step (major to moderate, moderate to minor, minor to none). For example, if you are hit by a blast of cold that causes a moderate wound, you instead take a minor wound. You can make a “cold touch” light unarmed attack against a foe, inflicting 2 cold damage from the ice armor if your attack succeeds. Enabler."
+  }
+}

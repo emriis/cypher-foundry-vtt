@@ -1,0 +1,28 @@
+{
+  "_id": "7edf6ebbf77e4398",
+  "_key": "!items!7edf6ebbf77e4398",
+  "name": "Processeur d’action",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "action-processor",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Ton aptitude Processeur de données peut désormais t’accorder un entraînement dans des compétences physiques : athlétisme, acrobaties, Esquive ou Blocage, ou pour les attaques avec une arme spécifique. Cela ne change pas le nombre maximal de compétences que Processeur de données peut t’accorder simultanément."
+  }
+}

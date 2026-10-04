@@ -1,0 +1,28 @@
+{
+  "_id": "819cfb3a4c30ffc7",
+  "_key": "!items!819cfb3a4c30ffc7",
+  "name": "Ami des Petites Créatures",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "friend-to-small-creatures",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu choisis un type de petites créatures présentes dans l'environnement (insectes, rats, oiseaux, chauves-souris, etc.). Si tu réussis une tâche d'Intellect de difficulté 2, les créatures choisies à courte portée se placent sous ton influence : elles ne t'attaquent pas, ni toi, ni les personnes que tu désignes comme alliés, jusqu'à ta prochaine récupération de 10 min+. Tu peux aussi employer cette aptitude pour calmer ou influencer des plantes proches. Effort : Tes petites créatures peuvent agir collectivement comme un PNJ allié."
+  }
+}

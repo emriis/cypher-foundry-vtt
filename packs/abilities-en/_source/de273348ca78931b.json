@@ -1,0 +1,28 @@
+{
+  "_id": "de273348ca78931b",
+  "_key": "!items!de273348ca78931b",
+  "name": "Resist the Elements",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "resist-the-elements",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You become resistant to one type of harmful energy.  Choose one kind of energy, such as fire or electricity. Reduce the severity of wounds from that energy by one step (major to moderate, moderate to minor, minor to none)."
+  }
+}

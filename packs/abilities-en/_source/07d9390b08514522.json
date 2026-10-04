@@ -1,0 +1,28 @@
+{
+  "_id": "07d9390b08514522",
+  "_key": "!items!07d9390b08514522",
+  "name": "Animal Scrying",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "animal-scrying",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "If you know the general location of an animal that is friendly toward you and within 1 mile (1.6 km) of your location, you can sense through its senses until you use a ten-minute or longer recovery. You must be in animal form or a form similar to that animal to activate this ability. Effort: Activate this ability even if you are not in animal form or a form similar to that animal. Action to establish."
+  }
+}

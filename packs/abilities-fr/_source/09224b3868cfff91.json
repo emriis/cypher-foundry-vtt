@@ -1,0 +1,28 @@
+{
+  "_id": "09224b3868cfff91",
+  "_key": "!items!09224b3868cfff91",
+  "name": "Charge électromagnétique",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "electromagnetically-charge",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu canalises l’énergie magnétique ambiante pour te soigner, réduisant une blessure : tu soignes une blessure mineure ou réduis une blessure modérée → mineure ou une blessure majeure → modérée. Alternativement, tu peux également recharger un appareil électrique portable (téléphone, radio, etc.) dont la batterie est à plat avec cette aptitude. À chaque utilisation de cette aptitude, le coût augmente de +1 Intellect, puis revient à 1 après une récupération."
+  }
+}

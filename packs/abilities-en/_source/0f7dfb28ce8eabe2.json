@@ -1,0 +1,28 @@
+{
+  "_id": "0f7dfb28ce8eabe2",
+  "_key": "!items!0f7dfb28ce8eabe2",
+  "name": "Move Metal",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "move-metal",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Until you use a one-hour or longer recovery, you can exert force on metal objects within short range as your action. Each use of this ability requires an action, allowing you to move an object at a distance if it contains metal or is made of metal. You can only move or manipulate an object if you could physically do so with your own hands. For example, you could lift and pull a light metal object anywhere within range to yourself or move a heavy object (like a piece of furniture) an immediate distance. This power lacks the fine control to wield a weapon or move objects with much speed, so in most situations, it's not a means of direct attack; however, you could pull a metallic object from another creature's grasp, push a creature in metallic armor an immediate distance, or hinder a creature's attack or defense by applying restraining pressure to an armored leg or arm or to a metallic weapon. Affecting an unwilling creature or their equipment requires an Intellect attack roll. You can use your action to create a magnetic disruption within short range, hindering electronic devices, electronic machines, and machine creatures (such as robots) by two steps for one round. Action to initiate; action to move metal or disrupt electronics."
+  }
+}

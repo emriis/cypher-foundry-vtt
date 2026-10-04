@@ -1,0 +1,28 @@
+{
+  "_id": "2b460282fa97faed",
+  "_key": "!items!2b460282fa97faed",
+  "name": "Détermination du chasseur",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "hunter-s-determination",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu attaques un·e adversaire et que tu rates, tu gagnes un atout pour tes attaques et défenses contre cet adversaire. Si tu rates encore, tu gagnes un deuxième atout contre ellui. Tu perds ces atouts si tu changes de cible ou si le combat se termine."
+  }
+}

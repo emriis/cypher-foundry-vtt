@@ -1,0 +1,28 @@
+{
+  "_id": "790f16d24d3c1aea",
+  "_key": "!items!790f16d24d3c1aea",
+  "name": "Défense virevoltante",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "dashing-defense",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Lorsque tu manies une arme légère ou moyenne contre un adversaire de ta taille ou plus petit·e, si tu rates une Esquive, tu peux quand même tenter un Blocage."
+  }
+}

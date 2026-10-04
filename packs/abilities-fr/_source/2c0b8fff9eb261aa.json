@@ -1,0 +1,28 @@
+{
+  "_id": "2c0b8fff9eb261aa",
+  "_key": "!items!2c0b8fff9eb261aa",
+  "name": "Amélioration tourelle d'automate",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "automaton-turret-upgrade",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You've built a new capability into one of your automatons—it can reconfigure itself and become an immobile energy weapon on a gimbal mount. The turret is a heavy weapon with very long range that inflicts 7 damage. If you have the automaton act on its own, it makes one hindered attack per round. If you or an ally use the turret as a weapon, attacks with it are eased. Action to change the automaton's configuration; Last action to attack with turret. In a fantasy setting, the automaton turret probably shoots fire or lightning. In a science fiction setting, it probably shoots lasers."
+  }
+}

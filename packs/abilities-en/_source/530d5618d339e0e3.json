@@ -1,0 +1,28 @@
+{
+  "_id": "530d5618d339e0e3",
+  "_key": "!items!530d5618d339e0e3",
+  "name": "Granite Wall",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "granite-wall",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": "action",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You create a level 5 granite wall within short range. The wall is four 10-foot by 10-foot (3.5 m by 3.5 m) squares, each 1 inch (2.5 cm) thick, arranged as you wish. The wall lasts until you use a one-hour or longer recovery, after which it crumbles to dust. Effort: Increase the duration to until you use a ten-hour recovery. Make the duration permanent (this requires three levels of Effort). Action."
+  }
+}

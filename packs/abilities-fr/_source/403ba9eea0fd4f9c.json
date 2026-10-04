@@ -1,0 +1,28 @@
+{
+  "_id": "403ba9eea0fd4f9c",
+  "_key": "!items!403ba9eea0fd4f9c",
+  "name": "Menace fulgurante",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "speedy-threat",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu tournoies et te déplaces si vite que tes attaques profitent de ton élan. Si tu te déplaces d’au moins portée immédiate pendant ton tour, ton attaque de mêlée ce tour‑ci gagne un atout."
+  }
+}

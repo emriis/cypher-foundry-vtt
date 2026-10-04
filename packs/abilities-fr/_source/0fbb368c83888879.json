@@ -1,0 +1,28 @@
+{
+  "_id": "0fbb368c83888879",
+  "_key": "!items!0fbb368c83888879",
+  "name": "À pleine vitesse",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "up-to-speed",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Si tu ne fais que te déplacer pendant trois actions consécutives, tu accélères énormément et peux atteindre environ 300 km/h (environ 100 m par round) pendant dix minutes (environ 50 km), après quoi tu dois t’arrêter et effectuer une récupération."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "274410b0e81d8f01",
+  "_key": "!items!274410b0e81d8f01",
+  "name": "Restructurer la matière",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "reshape",
+    "tier": 6,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu remodèles la matière dans une zone d’un cube de 1,5 m à portée courte. Avec une seule action : la forme est grossière au mieux. Avec 10 minutes et une tâche d’artisanat entravée, tu peux faire des formes complexes. Tu ne modifies pas la nature du matériau, seulement sa forme. Exemples : percer un mur ou le sol, sceller un trou, forger une épée à partir d’un lingot, casser ou réparer une chaîne. En répétant l’aptitude, tu peux créer de plus grandes structures (murs, ponts, etc.)."
+  }
+}

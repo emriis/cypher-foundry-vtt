@@ -1,0 +1,28 @@
+{
+  "_id": "1d05ebe7ce728402",
+  "_key": "!items!1d05ebe7ce728402",
+  "name": "Cybernétique assistée",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "powered-cybernetics",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu peux utiliser ta cybernétique pour soutenir et amplifier tes actions physiques. Quand tu fais un jet pour porter, grimper, sauter ou briser, et que ton résultat est inférieur à 9, considère que tu as obtenu 9. (Tu évites ainsi une Intrusion du·de la MJ si tu fais un 1.) L’aptitude se renouvelle à chaque récupération. Au rang 3, le minimum obtenu passe à 12. Effort : augmenter le minimum obtenu de +3."
+  }
+}

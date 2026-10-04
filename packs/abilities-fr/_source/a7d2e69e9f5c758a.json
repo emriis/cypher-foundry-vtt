@@ -1,0 +1,28 @@
+{
+  "_id": "a7d2e69e9f5c758a",
+  "_key": "!items!a7d2e69e9f5c758a",
+  "name": "Communication bestiale",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "beast-communication",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu peux transmettre un concept basique à une créature qui normalement ne parle pas et ne comprend pas la parole. La créature peut aussi te donner une réponse très simple à une question simple."
+  }
+}

@@ -7,183 +7,70 @@
   "system": {
     "description": "<p>You're a slacker, but you know a little about a lot of things.</p>",
     "abilities": [
-      {
-        "id": "joy-in-small-things",
-        "name": "Joy in Small Things",
-        "tier": 1,
-        "prerequisites": [
-          "life-lessons"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+      "Compendium.cypher.abilities-en.Item.0874ff0ca60c855a",
+      "Compendium.cypher.abilities-en.Item.027f1628cdf234ce",
+      "Compendium.cypher.abilities-en.Item.070d35cfea9a039f",
+      "Compendium.cypher.abilities-en.Item.9fa2bb3e0adcf7c6",
+      "Compendium.cypher.abilities-en.Item.76895b2d4dd1b30c",
+      "Compendium.cypher.abilities-en.Item.737f552a57898e10",
+      "Compendium.cypher.abilities-en.Item.6d11f307def29272",
+      "Compendium.cypher.abilities-en.Item.01f896d23379cfa9",
+      "Compendium.cypher.abilities-en.Item.0bffaf6b8f1e6e9d",
+      "Compendium.cypher.abilities-en.Item.36f37ed34cd9c9af",
+      "Compendium.cypher.abilities-en.Item.2b1dddec956c9df0"
+    ],
+    "flowchart": {
+      "edges": [
+        {
+          "from": "027f1628cdf234ce",
+          "to": "0874ff0ca60c855a"
         },
-        "description": "When you learn or figure out something important (as determined by your GM), you regain 4 points to your Intellect Pool. Each use of this ability after the first time restores 1 fewer Pool point; this renews after you take a ten-hour recovery. Enabler."
-      },
-      {
-        "id": "life-lessons",
-        "name": "Life Lessons",
-        "tier": 1,
-        "prerequisites": [
-          "joy-in-small-things"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "0874ff0ca60c855a",
+          "to": "027f1628cdf234ce"
         },
-        "description": "You've learned a little of this and that, and you have a knack for getting things done. Choose any two noncombat skills. When you use Effort on either of those skills, you can apply a free level of Effort. Enabler."
-      },
-      {
-        "id": "picking-up-the-slack",
-        "name": "Picking Up the Slack",
-        "tier": 1,
-        "prerequisites": [],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 1,
-          "options": []
+        {
+          "from": "0874ff0ca60c855a",
+          "to": "9fa2bb3e0adcf7c6"
         },
-        "description": "You can fill in for a skilled ally when they're unable to perform a specific task. If an ally within long range is trained (or more) in a skill but can't attempt the task (such as if there's a lock to be picked, but the skilled ally is unconscious or too far away), you gain an asset on that task. You cannot use this ability if you are trained (or better) in that skill. Enabler."
-      },
-      {
-        "id": "inspiring-ease",
-        "name": "Inspiring Ease",
-        "tier": 2,
-        "prerequisites": [
-          "joy-in-small-things",
-          "life-lessons"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "027f1628cdf234ce",
+          "to": "9fa2bb3e0adcf7c6"
         },
-        "description": "Through stories, songs, art, or other forms of entertainment, you inspire your allies. When you and any number of allies spend a ten-hour recovery together (yours or theirs), the allies are inspired by you. Once per day, each inspired ally can ease one task. This inspiration remains while you remain within a long distance of them. The inspiration is suspended at greater distances, but resumes automatically if you get within range. The inspiration ends if you use a ten-hour recovery while away from the ally. Ten-hour recovery to initiate."
-      },
-      {
-        "id": "totally-chill",
-        "name": "Totally Chill",
-        "tier": 2,
-        "prerequisites": [
-          "life-lessons"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "027f1628cdf234ce",
+          "to": "76895b2d4dd1b30c"
         },
-        "description": "Your ten-minute recovery takes you only one action, and your hour-long recovery takes ten minutes."
-      },
-      {
-        "id": "extra-padding",
-        "name": "Extra Padding",
-        "tier": 3,
-        "prerequisites": [
-          "picking-up-the-slack"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "might",
-          "amount": 1,
-          "options": []
+        {
+          "from": "070d35cfea9a039f",
+          "to": "737f552a57898e10"
         },
-        "description": "You carry around a little more weight than most—maybe muscle, maybe fat, or a mix of both. This extra padding provides extra protection from physical threats, allowing you to ignore a minor wound you just took (do not mark the wound on your character sheet). This ability renews after your ten-hour recovery. Effort: Ignore a moderate wound instead of a minor wound. Ignore a major wound instead of a minor wound (this requires two levels of Effort). Enabler."
-      },
-      {
-        "id": "improvise",
-        "name": "Improvise",
-        "tier": 3,
-        "prerequisites": [
-          "life-lessons"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 3,
-          "options": []
+        {
+          "from": "027f1628cdf234ce",
+          "to": "6d11f307def29272"
         },
-        "description": "(3 Intellect): If you aren't trained in a task, you can improvise to gain an asset on that task—a tool you cobble together, sudden insight, or just dumb luck. The asset lasts until you use a ten-minute or longer recovery. Enabler."
-      },
-      {
-        "id": "agile-wit",
-        "name": "Agile Wit",
-        "tier": 4,
-        "prerequisites": [
-          "improvise"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "6d11f307def29272",
+          "to": "01f896d23379cfa9"
         },
-        "description": "When attempting a Speed task, you can spend points from your Intellect Pool instead of your Speed Pool, and vice versa. Use the Edge stat for the Pool you're spending points from."
-      },
-      {
-        "id": "gather-your-strength",
-        "name": "Gather Your Strength",
-        "tier": 4,
-        "prerequisites": [
-          "extra-padding"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "737f552a57898e10",
+          "to": "0bffaf6b8f1e6e9d"
         },
-        "description": "Your attack this round deals an additional 2 damage if you make it as a Last action instead of as an action or a First action. Enabler."
-      },
-      {
-        "id": "attention-to-detail",
-        "name": "Attention to Detail",
-        "tier": 5,
-        "prerequisites": [
-          "agile-wit",
-          "gather-your-strength"
-        ],
-        "repeatable": false,
-        "enabler": true,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": []
+        {
+          "from": "01f896d23379cfa9",
+          "to": "36f37ed34cd9c9af"
         },
-        "description": "Your task this round (other than an attack) has an asset if you attempt it as a Last action instead of an action or First action. Enabler."
-      },
-      {
-        "id": "drawing-on-life-s-experiences",
-        "name": "Drawing on Life's Experiences",
-        "tier": 6,
-        "prerequisites": [
-          "attention-to-detail"
-        ],
-        "repeatable": false,
-        "enabler": false,
-        "cost": {
-          "stat": "intellect",
-          "amount": 6,
-          "options": []
+        {
+          "from": "0bffaf6b8f1e6e9d",
+          "to": "36f37ed34cd9c9af"
         },
-        "description": "You've seen a lot and done a lot, and that experience comes in handy. Ask the GM one question, and you'll receive a general answer. The GM assigns a level to the question, so the more obscure the answer, the more difficult the task. Generally, knowledge that you could find by looking somewhere other than your current location is level 1, and obscure knowledge of the past is level 7. Action."
-      }
-    ]
+        {
+          "from": "36f37ed34cd9c9af",
+          "to": "2b1dddec956c9df0"
+        }
+      ]
+    }
   },
   "folder": null,
   "sort": 0,

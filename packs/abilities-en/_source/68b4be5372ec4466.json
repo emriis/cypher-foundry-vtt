@@ -1,0 +1,28 @@
+{
+  "_id": "68b4be5372ec4466",
+  "_key": "!items!68b4be5372ec4466",
+  "name": "Damage Dealer",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "damage-dealer",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You've become better at killing with firearms, inflicting an additional 3 damage with them."
+  }
+}

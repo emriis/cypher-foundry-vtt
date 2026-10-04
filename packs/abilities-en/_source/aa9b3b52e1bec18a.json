@@ -1,0 +1,28 @@
+{
+  "_id": "aa9b3b52e1bec18a",
+  "_key": "!items!aa9b3b52e1bec18a",
+  "name": "Second Focus",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "second-focus",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You have two foci instead of one. At tier 1 you gain two abilities from each of them. When you advance to a new tier, you gain a new ability from each focus."
+  }
+}

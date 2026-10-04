@@ -1,0 +1,28 @@
+{
+  "_id": "ca6a048fe04a316f",
+  "_key": "!items!ca6a048fe04a316f",
+  "name": "Conscience de la nature",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "wilderness-awareness",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Ton lien avec la nature devient presque surnaturel. En pleine nature, tu peux étendre tes sens dans un rayon de1,5 km et poser au/à la MJ une question simple et générale sur la zone, comme : « Où est le camp ennemi ? », « Mon ami·e Deithan est‑iel encore en vie ? », « Où est la chose la plus venimeuse du coin ? » Si la réponse n’est pas dans la zone, tu n’obtiens rien."
+  }
+}

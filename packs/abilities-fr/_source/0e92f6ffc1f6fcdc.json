@@ -1,0 +1,28 @@
+{
+  "_id": "0e92f6ffc1f6fcdc",
+  "_key": "!items!0e92f6ffc1f6fcdc",
+  "name": "Projection titanesque",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "towering-throw",
+    "tier": 3,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "might",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Quand tu infliges des dégâts à une créature de ta taille ou plus petite avec une attaque à mains nues, tu la projettes à 1d20 × 30 cm. Elle atterrit à terre. Quand tu es plus grand·e que la normale, chaque palier de taille (Agrandissement, Encore plus grand·e, Énorme, Gigantesque, Colossal·e) augmente : la distance projetée de +1d6 x 30cm et infligent des dégâts d’impact supplémentaires de +1."
+  }
+}

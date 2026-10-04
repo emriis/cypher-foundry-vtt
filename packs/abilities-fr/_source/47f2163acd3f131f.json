@@ -1,0 +1,28 @@
+{
+  "_id": "47f2163acd3f131f",
+  "_key": "!items!47f2163acd3f131f",
+  "name": "Ingénieur·e Expert·e",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "expert-engineer",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You are trained in engineering. At tier 6: You can become an expert in engineering if you are already specialized, but you must gain the skill normally (such as from a character advancement)."
+  }
+}

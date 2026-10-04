@@ -1,0 +1,28 @@
+{
+  "_id": "296604f6a38e93df",
+  "_key": "!items!296604f6a38e93df",
+  "name": "Projection télékinétique",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "telekinetic-throw",
+    "tier": 5,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 5,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu saisis télékinétiquement un objet à courte portée et tu le lances sur une cible à courte portée. (Pour lancer une créature, tu dois d’abord la saisir télékinétiquement via une attaque d’Intellect réussie.) Fais une attaque d’Intellect contre la cible. En cas de réussite, la cible subissent 6 dégâts."
+  }
+}

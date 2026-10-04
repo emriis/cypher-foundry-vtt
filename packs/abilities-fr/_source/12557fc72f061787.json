@@ -1,0 +1,28 @@
+{
+  "_id": "12557fc72f061787",
+  "_key": "!items!12557fc72f061787",
+  "name": "Maîtrise de Puissance",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "power-prowess",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu infliges +1 dégât avec toute attaque impliquant tes pouvoirs."
+  }
+}

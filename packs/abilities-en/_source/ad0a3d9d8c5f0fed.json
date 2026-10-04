@@ -1,0 +1,28 @@
+{
+  "_id": "ad0a3d9d8c5f0fed",
+  "_key": "!items!ad0a3d9d8c5f0fed",
+  "name": "Always Witty",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "always-witty",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": true,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Every time you use a recovery, if your Intellect Pool isn't already full, you get 1 extra point to restore to your Intellect Pool. You can select this ability up to three times."
+  }
+}

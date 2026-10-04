@@ -1,0 +1,28 @@
+{
+  "_id": "7eda85805fdfea22",
+  "_key": "!items!7eda85805fdfea22",
+  "name": "Performance Inspirante",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "inspiring-performance",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Par un discours enflammé ou une musique inspirante, tu remontes le moral de trois alliés qui peuvent te voir et t'entendre. Tant que tu continues à parler ou à jouer chaque round en tant qu'action, les alliés affectés gagnent un Atout dans une tâche de ton choix (de combat ou non), liée à ta performance. Même après la fin de l'effet, les alliés affectés ajoutent +1 à leur prochaine récupération. Au rang 3, ils ajoutent +2 à leur prochaine récupération. Effort : Affecte trois alliés supplémentaires."
+  }
+}

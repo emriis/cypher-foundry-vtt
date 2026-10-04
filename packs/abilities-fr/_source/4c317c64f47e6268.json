@@ -1,0 +1,28 @@
+{
+  "_id": "4c317c64f47e6268",
+  "_key": "!items!4c317c64f47e6268",
+  "name": "Talent rival",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "rival-talent",
+    "tier": 4,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu apprends énormément sur quelqu’un via l’arme qu’iel utilise. Tu facilites toutes tes tâches (attaque, défense, influence, pistage…) contre les adversaires utilisant le même type d’arme que ton arme de prédilection."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "12fac91cf3042bb7",
+  "_key": "!items!12fac91cf3042bb7",
+  "name": "Armure de la bête",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "armored-beast",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "L’Armure de ton compagnon animal augmente de 2. Facilitateur."
+  }
+}

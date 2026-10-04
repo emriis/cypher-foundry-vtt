@@ -1,0 +1,28 @@
+{
+  "_id": "b775034d66321f96",
+  "_key": "!items!b775034d66321f96",
+  "name": "Esprit de meneur·euse",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "mind-of-a-leader",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 6,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Lorsque tu prépares un plan pour une situation future, tu peux poser une question très générale au/à la MJ sur ce qui risque d’arriver si tu exécutes ce plan. Tu obtiens une réponse simple et brève. Chaque allié·e connaissant le plan (toi inclus·e) gagne un atout pour un jet de son choix lié à cette situation, tant qu’elle survient dans les quelques jours suivants."
+  }
+}

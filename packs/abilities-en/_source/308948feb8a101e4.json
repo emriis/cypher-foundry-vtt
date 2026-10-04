@@ -1,0 +1,28 @@
+{
+  "_id": "308948feb8a101e4",
+  "_key": "!items!308948feb8a101e4",
+  "name": "Desperate Feat",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "desperate-feat",
+    "tier": 2,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "While you have at least one moderate or major wound, you add +1 Edge to the Pool of your choice. Enabler."
+  }
+}

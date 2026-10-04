@@ -1,0 +1,28 @@
+{
+  "_id": "51c85b033eec71c2",
+  "_key": "!items!51c85b033eec71c2",
+  "name": "Défense Désespérée",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "desperate-defense",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tant que tu as au moins une blessure modérée ou majeure, tu peux entrer dans un état d'hypervigilance. Dans cet état, tu ne peux pas utiliser de points de ta Réserve d'Intellect, tu ajoutes +1 à ton Avantage de Célérité, tu gagnes deux atouts pour les tâches de blocage et d'esquive. Si tu mets fin volontairement à cet état alors que tu es encore blessé·e, tu ne peux pas y revenir avant d'avoir effectué une récupération."
+  }
+}

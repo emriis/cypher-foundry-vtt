@@ -1,0 +1,28 @@
+{
+  "_id": "0408eeea64d7be95",
+  "_key": "!items!0408eeea64d7be95",
+  "name": "Connaissances Connectées",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "connected-knowledge",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu peux accéder à des données restreintes (via un implant, un appareil portatif, un drone assistant, ou autre) qui ne sont pas accessibles au public. Pose une question à ton MJ et obtiens une réponse courte mais exacte si tu réussis une tâche d'Intellect. La difficulté est routine si c'est une information accessible par d'autres moyens, niveau 3 si le sujet sensible concerne surtout l'ingénierie ou la science, niveau 5 ou plus si l'information est particulièrement sensible."
+  }
+}

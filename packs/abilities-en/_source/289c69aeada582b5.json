@@ -1,0 +1,28 @@
+{
+  "_id": "289c69aeada582b5",
+  "_key": "!items!289c69aeada582b5",
+  "name": "Escape Plan",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "escape-plan",
+    "tier": 6,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you kill a foe, you can attempt a stealth task as an extra action on your turn to hide from anyone around, assuming that a suitable hiding place is nearby. Enabler."
+  }
+}

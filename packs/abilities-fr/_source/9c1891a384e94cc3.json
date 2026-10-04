@@ -1,0 +1,28 @@
+{
+  "_id": "9c1891a384e94cc3",
+  "_key": "!items!9c1891a384e94cc3",
+  "name": "Fouilles Améliorées",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "enhanced-scavenging",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Lorsque tu fais un jet pour fouiller les terres postapocalyptiques à la recherche de quelque chose d'utile et que le résultat est inférieur à 9, considère que tu as obtenu 9. L'effet reste actif jusqu'à ta prochaine récupération de dix minutes ou plus. Au rang 3, le minimum devient 12. Effort : Augmente le minimum obtenu de +3."
+  }
+}

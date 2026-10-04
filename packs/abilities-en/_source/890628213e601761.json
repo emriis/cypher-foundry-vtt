@@ -1,0 +1,28 @@
+{
+  "_id": "890628213e601761",
+  "_key": "!items!890628213e601761",
+  "name": "Throw Weapon",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "throw-weapon",
+    "tier": 2,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "speed",
+      "amount": 1,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You throw your light or medium melee weapon at a foe within short range as if it were a medium thrown weapon. Whether the weapon hits or misses, it rebounds back to your grasp if you succeed on a difficulty 3 Speed task (or difficulty 4 if the weapon is edged). Effort: Throw a heavy weapon (instead of a light or medium weapon) as a Last action. Action; Last action to throw heavy weapon. If you throw your weapon and fail to catch it after it rebounds, it most likely ends up a short distance from you."
+  }
+}

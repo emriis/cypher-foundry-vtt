@@ -1,0 +1,28 @@
+{
+  "_id": "8c79833d94e60437",
+  "_key": "!items!8c79833d94e60437",
+  "name": "Closed Loop Body",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "closed-loop-body",
+    "tier": 5,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "You don't need to eat or breathe, and you suffer no ill effects from vacuum or extreme temperatures (though fire, cold, and other attacks are suffered normally)."
+  }
+}

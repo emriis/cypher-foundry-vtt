@@ -1,0 +1,28 @@
+{
+  "_id": "1ec6a06130f18619",
+  "_key": "!items!1ec6a06130f18619",
+  "name": "Implant de Surpassement",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "push-implant",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Après avoir attaqué, tu peux activer un implant de combat pour effectuer une attaque supplémentaire en tant qu'action supplémentaire à ton tour. Cette action te cause une blessure modérée. Cette aptitude se renouvelle après une récupération de dix heures."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "70a6f61c6c81a3a6",
+  "_key": "!items!70a6f61c6c81a3a6",
+  "name": "Pression Maintenue",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "press-advantage",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "none",
+      "amount": 0,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Lorsque ton jet d'attaque infligeant des dégâts est 17 ou plus, tu infliges +1 dégât. Si tu obtiens un 19 ou 20, tu infliges ce dégât supplémentaire même si tu choisis d'appliquer un effet mineur ou majeur au lieu d'ajouter des dégâts normaux."
+  }
+}

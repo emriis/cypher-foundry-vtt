@@ -1,0 +1,28 @@
+{
+  "_id": "2c44f67dc1a05a4c",
+  "_key": "!items!2c44f67dc1a05a4c",
+  "name": "Magnétiser",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "magnetize",
+    "tier": 4,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 4,
+      "options": []
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "Tu touches un objet (métallique ou non) pas plus grand que toi pour le magnétiser définitivement avec une force niveau 5, ou démagnétiser un objet de force magnétique niveau 5 ou moins. Un objet magnétisé attire tout métal à moins de 30 cm. Arracher cet objet une fois attiré nécessite une tâche de Puissance réussie. Magnétiser ou démagnétiser un appareil électronique le détruit s’il est de niveau 5 ou moins. Tu peux utiliser tes aptitudes (comme Déplacer le métal, Commander le métal) sur un objet magnétisé. Alternativement, tu peux créer un champ répulsif qui repousse les objets métalliques de niveau 3 ou moins (un champ de force pour le métal). Effort : augmenter le niveau d’une nouvelle force magnétique de +1 ou augmenter le niveau maximal que tu peux démagnétiser de +1."
+  }
+}
