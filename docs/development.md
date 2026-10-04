@@ -30,7 +30,7 @@ application, sheet, migration, or compendium boundaries.
 | Foundry applications and UI actions | `module/sheets/` |
 | Handlebars markup | `templates/` |
 | Styles and translations | `css/`, `lang/` |
-| Automated rules checks | `tests/` |
+| Automated tests | `tests/rules/`, `tests/applications/`, `tests/documents/`, `tests/content/`, `tests/migrations/`, `tests/integration/`, `tests/e2e/` |
 
 For a rule change, update the owning document or data model, add or update its
 test, then run:
@@ -74,7 +74,7 @@ local reference is unavailable, stop rather than reconstructing content from
 memory.
 
 ```powershell
-node --test tests/compendium-sources.test.mjs
+node --test tests/content/compendium-sources.test.mjs
 ```
 
 Then rebuild each affected LevelDB pack with `npm run build:packs`. The build
