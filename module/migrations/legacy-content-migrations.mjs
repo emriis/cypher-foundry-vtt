@@ -112,7 +112,7 @@ export function inferLegacyAbilityAction(ability) {
  */
 export function slugLegacyAbilityName(name = "ability") {
   return name.normalize("NFKD")
-    .replace(/[\\u0300-\\u036f]/g, "")
+    .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
