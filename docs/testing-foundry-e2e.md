@@ -47,10 +47,12 @@ The command performs this lifecycle:
 4. Starts Foundry with that world using `--world`.
 5. Waits for the local server to become reachable.
 6. Playwright joins the fresh Gamemaster session.
-7. Runs the smoke and gameplay E2E suites.
-8. Stops Foundry.
-9. Deletes the entire temporary Foundry data directory, including the
-   disposable world. Your normal Foundry worlds and installed system are not
+7. Runs the smoke and gameplay E2E suites in the same world and Gamemaster
+   session.
+8. Cleans up E2E-created Actors and closes the browser session.
+9. Stops Foundry only after Playwright has completely finished.
+10. Deletes the entire temporary Foundry data directory, including the
+    disposable world. Your normal Foundry worlds and installed system are not
    modified.
 
 Foundry documents that newly created worlds start with a Gamemaster account
@@ -126,8 +128,9 @@ mechanics instead.
 ## Why this is separate from CI
 
 The normal GitHub Actions suite remains deterministic and does not require a
-Foundry installation or license. Live E2E tests are intended for a local
-Foundry environment or a dedicated self-hosted runner.
+Foundry installation or license. CI checks the E2E JavaScript syntax but does
+not launch Foundry. Live E2E tests are intended for a local Foundry environment
+or a dedicated self-hosted runner with an appropriately licensed installation.
 
 
 ## World and session lifetime
