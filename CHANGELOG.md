@@ -18,6 +18,8 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
   and added focused application-service tests alongside the existing Actor compatibility tests.
 - Updated the architecture and development documentation to describe the application-service
   boundary and the next Phase 4 Type/Focus/Descriptor reference-resolution work.
+- Removed Actor-owned stat resolution from the application path and added a pure
+  `rules/stats.mjs` helper with dedicated tests.
 - Updated project documentation to reflect the current six-pack compendium layout,
   live E2E harness, and current CI/release workflow.
 - Improved Type compendium sheets with the description first and localized displays for Type benefits and abilities.
