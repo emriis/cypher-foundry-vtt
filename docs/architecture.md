@@ -264,8 +264,9 @@ unit tests in addition to the existing Actor integration tests.
 
 ### Phase 3 — Refactor Actor orchestration
 
-Phase 3 is in progress and the main Foundry-aware application boundaries have
-now been extracted. Actor methods remain stable compatibility facades while
+Phase 3 is complete. The main Foundry-aware application boundaries have been
+extracted and the verification pass has removed the remaining shared stat
+lookup dependency from the Actor document. Actor methods remain stable compatibility facades while
 implementation moves into focused services.
 
 The current Phase 3 services are:
