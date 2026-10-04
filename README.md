@@ -184,6 +184,21 @@ ce système, il s'agit d'un vrai mappeur, pas d'un chargement direct :
   version de Foundry donnée (placement du bouton fait au mieux, DOM de la barre latérale non garanti
   stable d'une version à l'autre).
 
+### CRD compendium architecture
+
+The 2026 Cypher Reference Document is being converted into a Foundry-first
+reference library rather than a single Journal Entry. General rules become
+Journal Entries, reusable player content becomes Items, creatures become
+Actors, and quick references link back to detailed rules.
+
+The conversion architecture and working mapping are documented in
+[docs/compendium-architecture.md](docs/compendium-architecture.md) and
+[docs/crd-compendium-map.md](docs/crd-compendium-map.md).
+
+The existing standalone Ability, Type, Descriptor, and Focus compendiums remain
+the authoritative character-content layer. New CRD packs will be introduced
+incrementally and compiled from their _source directories.
+
 ### Compendiums de Descripteurs (FR/EN)
 
 Les compendiums bilingues de Descripteurs regroupent les entrées du CRD par catégories de
