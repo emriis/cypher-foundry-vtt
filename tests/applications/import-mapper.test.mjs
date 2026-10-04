@@ -14,7 +14,7 @@ const {
   extractFreelyUsableCategories,
   extractSpeciesAsDescriptor,
   mapItems
-} = await import("../module/import.mjs");
+} = await import("../../module/import.mjs");
 
 test("extractFreelyUsableCategories separates weapon and armor permissions", () => {
   const result = extractFreelyUsableCategories([

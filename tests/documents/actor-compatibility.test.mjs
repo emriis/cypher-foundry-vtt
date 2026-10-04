@@ -1,6 +1,6 @@
 import {
   validateAdvancementChoices
-} from "../module/rules/advancement.mjs";
+} from "../../module/rules/advancement.mjs";
 // Tests actor-owned Cypher rules with a minimal Actor stub instead of a live Foundry world.
 import assert from "node:assert/strict";
 import test from "node:test";
@@ -18,8 +18,8 @@ globalThis.foundry = {
   }
 };
 
-const { default: CypherActor } = await import("../module/documents/actor.mjs");
-const { default: CypherPCData } = await import("../module/data-models/actor-pc.mjs");
+const { default: CypherActor } = await import("../../module/documents/actor.mjs");
+const { default: CypherPCData } = await import("../../module/data-models/actor-pc.mjs");
 
 test("computeEffortCost charges the first level, additional levels, and Edge once", () => {
   assert.equal(CypherActor.computeEffortCost(1), 3);

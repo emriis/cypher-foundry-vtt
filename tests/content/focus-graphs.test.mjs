@@ -4,7 +4,7 @@ import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
 
-const root = path.resolve(import.meta.dirname, "..");
+const root = path.resolve(import.meta.dirname, "../..");
 
 class FieldDefinition {
   constructor(options = {}) { this.options = options; }
@@ -30,7 +30,7 @@ globalThis.foundry = {
 };
 
 const { default: CypherFocusData } =
-  await import("../module/data-models/item-focus.mjs");
+  await import("../../module/data-models/item-focus.mjs");
 
 function readPack(pack) {
   const directory = path.join(root, "packs", pack, "_source");
