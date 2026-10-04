@@ -1,8 +1,5 @@
 import { CYPHER } from "../config.mjs";
-import {
-  getEligibleFocusAbilities,
-  isFocusAbilityEligible
-} from "../rules/focus.mjs";
+import { isFocusAbilityEligible } from "../rules/focus.mjs";
 import { resolveDocumentReferences } from "./reference-resolver.mjs";
 
 /**
@@ -11,6 +8,14 @@ import { resolveDocumentReferences } from "./reference-resolver.mjs";
  * This module owns Foundry-aware content application. Reusable content is
  * resolved at the application boundary before its mechanics are copied to an
  * actor-owned Item.
+ */
+/**
+ * Apply a Type's mechanical benefits to a PC.
+ *
+ * @param {object} actor PC Actor.
+ * @param {object} typeItem Type Item.
+ * @param {object} [options={}] Player choices.
+ * @returns {Promise<boolean>} Whether the Type was applied.
  */
 export async function applyType(actor, typeItem, options = {}) {
   return applyTypeInternal(actor, typeItem, options);
@@ -121,7 +126,21 @@ async function applyTypeInternal(actor, typeItem, { stat = null, skillName = nul
   return true;
 }
 
-export async function applyFocus(actor, focusItem, abilityIds, weaponSkillCategories = {}) {
+/**
+ * Apply a Focus and its required tier-1 abilities to a PC.
+ *
+ * @param {object} actor PC Actor.
+ * @param {object} focusItem Focus Item.
+ * @param {string[]} abilityIds Selected tier-1 ability ids.
+ * @param {object} [weaponSkillCategories={}] Weapon skill choices by ability id.
+ * @returns {Promise<boolean>} Whether the Focus was applied.
+ */
+export async function applyFocus(
+  actor,
+  focusItem,
+  abilityIds,
+  weaponSkillCategories = {}
+) {
   if (actor.type !== "pc" || focusItem?.type !== "focus") return false;
   if (actor.getFlag("cypher", "appliedFocusId")) return false;
 
@@ -210,7 +229,19 @@ export async function applyFocus(actor, focusItem, abilityIds, weaponSkillCatego
   return true;
 }
 
-export async function selectFocusAbility(actor, abilityId, weaponSkillCategory = null) {
+/**
+ * Select one additional Focus ability after a character reaches a new tier.
+ *
+ * @param {object} actor PC Actor.
+ * @param {string} abilityId Focus ability id.
+ * @param {string|null} [weaponSkillCategory=null] Weapon skill choice.
+ * @returns {Promise<boolean>} Whether the ability was selected.
+ */
+export async function selectFocusAbility(
+  actor,
+  abilityId,
+  weaponSkillCategory = null
+) {
   if (actor.type !== "pc") return false;
   const focus = actor.getFlag("cypher", "appliedFocusGraph");
   const selected = actor.getFlag("cypher", "focusAbilityIds") ?? [];
@@ -292,6 +323,14 @@ function focusArmorItemData(focus, ability) {
   };
 }
 
+/**
+ * Apply a Descriptor or species Descriptor to a PC.
+ *
+ * @param {object} actor PC Actor.
+ * @param {object} descriptorItem Descriptor Item.
+ * @param {object} [options={}] Player choices.
+ * @returns {Promise<boolean>} Whether the Descriptor was applied.
+ */
 export async function applyDescriptor(
   actor,
   descriptorItem,
@@ -396,5 +435,3 @@ export async function applyDescriptor(
   });
   return true;
 }
-
-export { getEligibleFocusAbilities };
