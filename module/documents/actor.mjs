@@ -1,4 +1,11 @@
 import { CYPHER } from "../config.mjs";
+import {
+  clampAssetSteps,
+  clampEffortLevels,
+  computeEffortCost,
+  computeTaskSteps,
+  resolveTaskDifficulty
+} from "../rules/tasks.mjs";
 
 /**
  * Extends Foundry's Actor class with Cypher logic.
@@ -14,14 +21,13 @@ export default class CypherActor extends Actor {
   /* -------------------------------------------- */
 
   /**
-   * Computes total Pool cost for a number of Effort levels, with Edge discounted
-   * ONCE on the total (never per level), per the rules.
+   * Computes total Pool cost for a number of Effort levels.
+   *
+   * Kept as a compatibility facade for callers that historically used the
+   * actor class directly. The rule itself lives in module/rules/tasks.mjs.
    */
   static computeEffortCost(levels, edge = 0) {
-    if (levels <= 0) return 0;
-    let total = CYPHER.effortCostFirstLevel + (levels - 1) * CYPHER.effortCostAdditionalLevel;
-    total = Math.max(0, total - edge);
-    return total;
+    return computeEffortCost(levels, edge);
   }
 
   /**
@@ -107,16 +113,16 @@ export default class CypherActor extends Actor {
     const statLabel = CYPHER.stats.includes(stat) ? game.i18n.localize(resolved.label) : resolved.label;
 
     // Asset steps are capped at 2.
-    assetSteps = Math.min(2, Math.max(0, assetSteps));
-    // Effort can't exceed the character's Effort score (max 6)
-    effortLevels = Math.min(this.system.effort, 6, Math.max(0, effortLevels));
+    assetSteps = clampAssetSteps(assetSteps);
+    // Effort cannot exceed the character's Effort score (max 6).
+    effortLevels = clampEffortLevels(effortLevels, this.system.effort);
 
     const skillItem = skillItemId ? this.items.get(skillItemId) : null;
     const skillSteps = skillItem ? skillItem.system.stepModifier : 0;
 
     const edge = statData.edge ?? 0;
     const poolValue = statData.pool.value;
-    const totalCost = CypherActor.computeEffortCost(effortLevels, edge);
+    const totalCost = computeEffortCost(effortLevels, edge);
 
     if (totalCost > poolValue) {
       ui.notifications.error(game.i18n.format("CYPHER.Warning.NotEnoughPool", { stat: statLabel }));
@@ -133,9 +139,18 @@ export default class CypherActor extends Actor {
       ? (this.system.armor?.speedTaskHinder ?? 0)
       : 0;
 
-    const totalSteps = effortLevels + assetSteps + skillSteps + extraEaseSteps - woundHinder - extraHinderSteps + armorModifier - autoArmorSpeedHinder;
-    const effectiveDifficulty = Math.max(0, difficulty - totalSteps);
-    const targetNumber = effectiveDifficulty * 3;
+    const totalSteps = computeTaskSteps({
+      effortLevels,
+      assetSteps,
+      skillSteps,
+      extraEaseSteps,
+      woundHinder,
+      extraHinderSteps,
+      armorModifier,
+      autoArmorSpeedHinder
+    });
+    const { effectiveDifficulty, targetNumber } =
+      resolveTaskDifficulty(difficulty, totalSteps);
 
     // Spend the Pool points.
     if (totalCost > 0) {
