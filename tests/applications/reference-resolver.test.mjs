@@ -4,7 +4,7 @@ import test from "node:test";
 import {
   resolveDocumentReference,
   resolveDocumentReferences
-} from "../module/applications/reference-resolver.mjs";
+} from "../../module/applications/reference-resolver.mjs";
 
 test("resolveDocumentReference resolves and validates a document type", async () => {
   const ability = { type: "ability", id: "ability-1" };
