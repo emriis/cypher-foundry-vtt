@@ -16,5 +16,13 @@ jobs:
         with:
           node-version: 22
 
+      - name: Check E2E JavaScript syntax
+        run: |
+          node --check scripts/run-foundry-e2e.mjs
+          node --check playwright.config.mjs
+          node --check tests/e2e/foundry-session.mjs
+          node --check tests/e2e/foundry-runtime.spec.mjs
+          node --check tests/e2e/foundry-gameplay.spec.mjs
+
       - name: Run unit tests
         run: npm test
