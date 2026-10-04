@@ -67,7 +67,7 @@ for (const language of ["en", "fr"]) {
           assert.match(
             uuid,
             new RegExp(
-              `^Compendium\\\\.cypher\\\\.abilities-${language}\\\\.Item\\\\.[A-Za-z0-9]{16}$`
+              `^Compendium\\.cypher\\.abilities-${language}\\.Item\\.[A-Za-z0-9]{16}$`
             )
           );
         }
