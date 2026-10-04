@@ -41,8 +41,19 @@ function inferAction(ability) {
   return null;
 }
 
+function stripEditorial(value) {
+  if (Array.isArray(value)) return value.map(stripEditorial);
+  if (!value || typeof value !== "object") return value;
+
+  return Object.fromEntries(
+    Object.entries(value)
+      .filter(([key]) => !["name", "description", "enabler"].includes(key))
+      .map(([key, nested]) => [key, stripEditorial(nested)])
+  );
+}
+
 function mechanicalShape(ability) {
-  return {
+  return stripEditorial({
     tier: ability.tier,
     enabler: Boolean(ability.enabler),
     repeatable: Boolean(ability.repeatable),
@@ -56,7 +67,7 @@ function mechanicalShape(ability) {
     grantedArmorItemCategory: ability.grantedArmorItemCategory ?? "",
     effects: ability.effects ?? [],
     rollTables: ability.rollTables ?? []
-  };
+  });
 }
 
 function identity(ability) {
