@@ -20,6 +20,10 @@ The CRD is the reference source. Repository source data is the editable represen
 
 The CRD itself is not copied into JavaScript modules. Structured content belongs in compendium source records.
 
+The common CRD source-record envelope is defined in
+docs/crd-source-schema.md. It establishes stable logical identifiers, bilingual
+pairing, and provenance without replacing the domain-specific Foundry schemas.
+
 Every public distribution must retain the attribution and licensing information required by the Cypher Open License. The repository license file and system manifest already identify the CRD as licensed content from Monte Cook Games.
 
 ## 2. Pack organization
@@ -160,6 +164,7 @@ Quick Reference entries should be concise and link to the detailed rule entry in
 - Define document-type mapping.
 - Preserve standalone Ability/Type/Focus architecture.
 - Establish bilingual logical identifiers.
+- Define the common CRD source-record envelope and provenance contract.
 - Add source and pack contract tests.
 
 ### Phase B — Core rules
@@ -184,8 +189,8 @@ Each phase should remain independently testable and compilable.
 
 ## 9. Fidelity and translation policy
 
-The CRD conversion is a transcription and localization project, not a rewriting
-project.
+The CRD conversion is a transcription and localization
+project, not a rewriting project.
 
 For every CRD-derived record:
 
