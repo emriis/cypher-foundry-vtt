@@ -143,7 +143,7 @@ test("applyDescriptor creates Dragonfolk benefits as abilities and Intimidation 
     assert.equal(ability.system.source, "Dragonfolk");
     assert.equal(ability.system.enabler, true);
     assert.deepEqual(ability.system.cost, { stat: "none", amount: 0, options: [] });
-    assert.equal(ability.system.action, "none");
+    assert.equal(ability.system.action, null);
   }
 });
 
@@ -354,6 +354,14 @@ test("applyType applies pool, Edge, wound, and equipment benefits once", async (
     }
   };
 
+  typeItem.system.abilities = typeItem.system.abilities.map(ability => ({
+    type: "ability",
+    id: ability.id,
+    uuid: ability.uuid,
+    name: ability.name,
+    system: { ...ability }
+  }));
+
   assert.equal(await CypherActor.prototype.applyType.call(actor, typeItem, { stat: "speed" }), true);
   assert.equal(actor.system.type, "Barbarian");
   assert.equal(actor.system.genre, "fantasy");
@@ -519,6 +527,14 @@ test("applyFocus records two tier-1 selections and creates their ability items",
     }
   };
 
+  focus.system.abilities = focus.system.abilities.map(ability => ({
+    type: "ability",
+    id: ability.id,
+    uuid: ability.uuid,
+    name: ability.name,
+    system: { ...ability }
+  }));
+
   assert.equal(await CypherActor.prototype.applyFocus.call(actor, focus, ["intimidating-presence", "stone-body"]), true);
   assert.equal(actor.system.focus, "Abides in Stone");
   assert.deepEqual(actor.flags.cypher.focusAbilityIds, ["intimidating-presence", "stone-body"]);
@@ -561,6 +577,14 @@ test("applyFocus applies only the selected abilities' free-use grants", async ()
       ]
     }
   };
+
+  focus.system.abilities = focus.system.abilities.map(ability => ({
+    type: "ability",
+    id: ability.id,
+    uuid: ability.uuid,
+    name: ability.name,
+    system: { ...ability }
+  }));
 
   assert.equal(await CypherActor.prototype.applyFocus.call(actor, focus, ["chosen", "also-chosen"], { chosen: "mediumBladed" }), true);
   assert.deepEqual(actor.system.freeWeaponCategories, ["light", "medium"]);
