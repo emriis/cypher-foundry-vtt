@@ -18,7 +18,7 @@ must be installed locally.
 Foundry's command-line `--world` option supports launching a specific world
 directly, which is what the E2E runner uses. The runner also installs the
 current checkout of the Cypher system into the test data directory so the
-browser tests execute the code from the branch being tested. citeturn0search0
+browser tests execute the code from the branch being tested.
 
 ## Run
 
@@ -54,7 +54,7 @@ The command performs this lifecycle:
 
 Foundry documents that newly created worlds start with a Gamemaster account
 without a password, so the runner can join the fresh world without storing
-test credentials. citeturn1search6
+test credentials.
 
 ### Windows paths
 
