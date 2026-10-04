@@ -13,7 +13,9 @@ const baseRecord = {
   _id: "0123456789abcdef",
   _key: "!items!0123456789abcdef",
   name: "Example Ability",
+  document: "Item",
   type: "ability",
+  crdType: "ability",
   flags: buildCrdFlags({
     version: CRD_SOURCE_VERSION,
     logicalId: "ability.example-ability",
