@@ -1,13 +1,11 @@
+import { resolveDocumentReferences } from "./applications/reference-resolver.mjs";
+
 /**
  * Resolves standalone ability UUID references stored by Types and Foci.
  *
  * Missing references are ignored so a custom document can remain renderable
  * while a referenced optional pack is unavailable.
  */
-import {
-  resolveDocumentReferences
-} from "./applications/reference-resolver.mjs";
-
 /**
  * Resolve standalone ability UUID references.
  *
