@@ -6,39 +6,110 @@ must be installed locally.
 
 ## Requirements
 
-- Node.js 22
-- A Foundry VTT installation compatible with the system
-- A disposable test world using the Cypher system
-- Playwright Chromium (`npx playwright install chromium`)
+- Node.js 22 or newer.
+- A local Foundry VTT installation that has already completed license/EULA
+  setup.
+- Playwright Chromium (`npx playwright install chromium`).
+- The Foundry executable must be discoverable automatically, or
+  `FOUNDRY_APP_PATH` must point to it.
+- The Foundry user-data directory must be the default location, or
+  `FOUNDRY_DATA_PATH` must point to it.
+
+Foundry's command-line `--world` option supports launching a specific world
+directly, which is what the E2E runner uses. The runner also installs the
+current checkout of the Cypher system into the test data directory so the
+browser tests execute the code from the branch being tested. citeturn0search0
 
 ## Run
 
-Start Foundry, open the disposable test world, then run:
+First install the browser once:
 
 ```powershell
-$env:FOUNDRY_URL = "http://127.0.0.1:30000"
+npx playwright install chromium
+```
+
+Then:
+
+```powershell
 npm run test:e2e
 ```
 
-The tests create temporary Actors and remove them after each scenario.
-They do not depend on specific editorial names or descriptions from the
-compendiums.
+You do **not** need to open Foundry manually.
+
+The command performs this lifecycle:
+
+1. Finds the local Foundry executable.
+2. Creates a disposable `cypher-e2e` world using the current Cypher
+   `system.json` version.
+3. Temporarily installs the current checkout as
+   `Data/systems/cypher`, restoring any previous Cypher installation
+   afterwards.
+4. Starts Foundry with that world using `--world`.
+5. Waits for the local server to become reachable.
+6. Playwright joins the fresh Gamemaster session.
+7. Runs the smoke and gameplay E2E suites.
+8. Stops Foundry.
+9. Deletes the disposable world.
+10. Restores the previously installed Cypher system.
+
+Foundry documents that newly created worlds start with a Gamemaster account
+without a password, so the runner can join the fresh world without storing
+test credentials. citeturn1search6
+
+### Windows paths
+
+If Foundry is installed somewhere non-standard:
+
+```powershell
+$env:FOUNDRY_APP_PATH = "D:\\Foundry Virtual Tabletop\\Foundry Virtual Tabletop.exe"
+$env:FOUNDRY_DATA_PATH = "D:\\FoundryVTT"
+npm run test:e2e
+```
+
+If your installation uses the default paths, these variables are not needed.
+
+### Watching the browser
+
+The Foundry application itself is started visibly. To also run Chromium
+headed:
+
+```powershell
+$env:PLAYWRIGHT_HEADLESS = "false"
+npm run test:e2e
+```
+
+### Do not run two Foundry instances against the same data directory
+
+The runner deliberately fails fast if `FOUNDRY_URL` is already reachable.
+Close a manually running Foundry instance before starting the autonomous
+suite. This avoids two Foundry processes writing to the same user-data
+directory.
 
 ## Current coverage
 
-The first live suite checks:
+The live suite currently validates:
 
-1. The Cypher system is actually loaded by Foundry.
-2. PC Actor DataModels instantiate with valid defaults.
-3. Embedded Skill, Armor, and Attack Items can be created on a real Actor.
-4. All six FR/EN Item compendium collections are loadable and non-empty.
-5. A real PC ApplicationV2 sheet renders and exposes stat-roll controls.
+1. Cypher system loading and real Foundry document models.
+2. PC Actor DataModel defaults.
+3. Embedded Skill, Armor, Attack, Shield and related Item creation.
+4. All six FR/EN compendium collections.
+5. PC sheet rendering and stat-roll controls.
+6. A real task roll initiated from the PC sheet, including ChatMessage output.
+7. A guaranteed failed Block initiated from the PC sheet and wound
+   persistence.
+8. Recovery initiated from the PC sheet, including recovery markers and wound
+   removal.
+9. Rally initiated from the PC sheet, including the correct Might cost.
+10. Effort advancement on a real Actor document.
+11. Player Intrusion XP expenditure and chat output.
+12. Actor state persistence across sheet close/reopen.
+
+The tests intentionally avoid depending on editorial compendium names or
+localized prose. They assert Foundry/runtime contracts and stable Cypher
+mechanics instead.
 
 ## Why this is separate from CI
 
-The normal GitHub Actions suite remains deterministic and does not require
-a Foundry installation or license. Live E2E tests are intended for a local
+The normal GitHub Actions suite remains deterministic and does not require a
+Foundry installation or license. Live E2E tests are intended for a local
 Foundry environment or a dedicated self-hosted runner.
-
-Future live scenarios should cover defense, wounds, recovery, advancement,
-armor, shields, depletion, compendium drag/drop, and chat results.
