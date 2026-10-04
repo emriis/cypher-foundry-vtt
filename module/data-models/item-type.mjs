@@ -1,4 +1,5 @@
 import { CYPHER } from "../config.mjs";
+import { abilityUuid } from "../ability-references.mjs";
 
 const { StringField, NumberField, HTMLField, ArrayField, BooleanField, SchemaField, DocumentUUIDField } = foundry.data.fields;
 
