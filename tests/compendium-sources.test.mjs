@@ -106,12 +106,10 @@ test("English and French ability packs keep matching mechanical documents", () =
 
   assert.equal(en.size, fr.size);
 
-  const byKey = new Map(
-    [...en.values()].map(document => [document.system.key, document])
-  );
+  const englishDocuments = [...en.values()];
 
   for (const frDocument of fr.values()) {
-    const enDocument = [...byKey.values()].find(document =>
+    const enDocument = englishDocuments.find(document =>
       document.system.variantKey === frDocument.system.variantKey
     );
     assert.ok(enDocument, `Missing English ability variant for ${frDocument.system.variantKey}`);
