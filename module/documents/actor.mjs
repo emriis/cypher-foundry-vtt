@@ -23,13 +23,22 @@ import {
   rallyWound,
   rollRecovery
 } from "../applications/recovery-service.mjs";
+import {
+  computeEffortCost
+} from "../rules/tasks.mjs";
+import {
+  getEligibleFocusAbilities,
+  isFocusAbilityEligible
+} from "../rules/focus.mjs";
+import { resolveDefense } from "../rules/defense.mjs";
+import { convertDamageToWound } from "../rules/wounds.mjs";
 
 /**
  * Extends Foundry's Actor class with Cypher logic.
  *
- * Sheet actions call methods here to change actor data. For a task, the actor
- * combines the selected stat, Effort, assets, skills, and hindrances, spends
- * Pool points, rolls the die, posts the result, and then applies any wounds.
+ * Sheet actions call methods here to change actor data. Gameplay use cases are
+ * delegated to application services, while this document keeps compatibility
+ * facades and genuinely document-specific helpers.
  */
 export default class CypherActor extends Actor {
 
