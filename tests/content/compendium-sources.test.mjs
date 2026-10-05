@@ -211,3 +211,50 @@ test("Type and Focus ability references resolve to standalone Ability sources", 
     }
   }
 });
+
+test("CRD Genre Ability manifest is fully materialized in both languages", () => {
+  const manifest = JSON.parse(
+    fs.readFileSync(
+      path.join(root, "data", "crd-genre-abilities.json"),
+      "utf8"
+    )
+  );
+
+  assert.equal(manifest.version, "2026-07-29");
+  assert.ok(manifest.records.length >= 60);
+
+  const logicalIds = new Set(
+    manifest.records.map(record => record.logicalId)
+  );
+  assert.equal(logicalIds.size, manifest.records.length);
+
+  for (const record of manifest.records) {
+    assert.match(record.logicalId, /^ability\\.[a-z0-9-]+$/);
+    assert.ok(record.system.description);
+    assert.ok(record.provenance);
+    assert.equal(record.provenance.logicalId, record.logicalId);
+  }
+
+  for (const language of ["en", "fr"]) {
+    const sources = [...readPackSources(`abilities-${language}`).values()]
+      .filter(document => !isFolder(document));
+    const byLogicalId = new Map(
+      sources.map(document => [
+        document.flags?.cypherFoundry?.crd?.logicalId,
+        document
+      ])
+    );
+
+    for (const record of manifest.records) {
+      const document = byLogicalId.get(record.logicalId);
+      assert.ok(document, `${language}/${record.logicalId}`);
+      assert.equal(document.crdType, "ability");
+      if (language === "fr") {
+        assert.equal(
+          document.flags.cypherFoundry.crd.sourceLogicalId,
+          record.logicalId
+        );
+      }
+    }
+  }
+});
