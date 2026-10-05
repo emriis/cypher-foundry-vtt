@@ -1,4 +1,5 @@
 import { activateAbilityEffect } from "./ability-runtime-service.mjs";
+import { resolveAbilityCost } from "../rules/ability-costs.mjs";
 
 /**
  * Foundry-aware application operations for interactive Ability content.
@@ -15,7 +16,7 @@ import { activateAbilityEffect } from "./ability-runtime-service.mjs";
  * @param {string} effectId Selected effect identifier.
  * @returns {Promise<boolean>} Whether an effect was posted.
  */
-export async function chooseAbilityEffect(item, effectId) {
+export async function chooseAbilityEffect(item, effectId, options = {}) {
   if (!item || item.type !== "ability") return false;
 
   const effect = (item.system.effects ?? [])
@@ -23,8 +24,35 @@ export async function chooseAbilityEffect(item, effectId) {
   if (!effect) return false;
 
   const actor = item.actor;
+  const isOwnedPC = actor?.type === "pc" && item.parent === actor;
   const isOngoing = (effect.endConditions ?? []).length > 0;
-  if (isOngoing && actor?.type === "pc" && item.parent === actor) {
+
+  if (isOngoing && isOwnedPC) {
+    const activeEffects = actor.system.activeAbilityEffects ?? [];
+    const alreadyActive = activeEffects.some(active =>
+      active.itemUuid === item.uuid && active.effectId === effectId
+    );
+    if (alreadyActive) return false;
+  }
+
+  if (isOwnedPC) {
+    const resolvedCost = resolveAbilityCost(
+      actor.system,
+      item.system.cost,
+      options.costStat ?? null
+    );
+    if (!resolvedCost) return false;
+
+    if (resolvedCost.amount > 0) {
+      await actor.update({
+        [resolvedCost.path]:
+          actor.system.stats[resolvedCost.stat].pool.value
+          - resolvedCost.amount
+      });
+    }
+  }
+
+  if (isOngoing && isOwnedPC) {
     const activated = await activateAbilityEffect(actor, item, effectId);
     if (!activated) return false;
   }
