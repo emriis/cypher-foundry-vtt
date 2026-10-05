@@ -41,7 +41,21 @@
       "might",
       "speed"
     ],
-    "description": "<p>Pour toi, chaque jour est une nouvelle occasion de répandre du sang, boire de la bière, ou les deux — et de récolter une cicatrice ou deux pour commémorer la journée. Né·e comme un·e étranger·ère aux terres civilisées et vagabond·e dans l’âme, tu es devenu·e aventurier·ère plus par accident que par choix. On dit que tu es sauvage, mais seulement dans ton dos, de peur d’affronter ta fureur.</p><p>Parmi tous les membres de ton groupe, tu es celle ou celui qui attire le plus l’attention des ennemis, car tu abandonnes la crainte au profit de la rage. Les peurs disparaissent lorsque ton sang s’échauffe ; tout ce que tu vois, c’est le rouge. La frénésie te donne de la force, un esprit tourné vers la bataille, et, la plupart du temps, un chemin vers la victoire. Mais lorsque ta fièvre guerrière retombe, ta connaissance des terres sauvages aide à guider tes allié·es et toi‑même à travers les contrées non civilisées où rôdent monstres, bandits et autres barbares.</p>"
+    "description": "<p>Pour toi, chaque jour est une nouvelle occasion de répandre du sang, boire de la bière, ou les deux — et de récolter une cicatrice ou deux pour commémorer la journée. Né·e comme un·e étranger·ère aux terres civilisées et vagabond·e dans l’âme, tu es devenu·e aventurier·ère plus par accident que par choix. On dit que tu es sauvage, mais seulement dans ton dos, de peur d’affronter ta fureur.</p><p>Parmi tous les membres de ton groupe, tu es celle ou celui qui attire le plus l’attention des ennemis, car tu abandonnes la crainte au profit de la rage. Les peurs disparaissent lorsque ton sang s’échauffe ; tout ce que tu vois, c’est le rouge. La frénésie te donne de la force, un esprit tourné vers la bataille, et, la plupart du temps, un chemin vers la victoire. Mais lorsque ta fièvre guerrière retombe, ta connaissance des terres sauvages aide à guider tes allié·es et toi‑même à travers les contrées non civilisées où rôdent monstres, bandits et autres barbares.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.792ca65e9063dd3d",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.b3d395afa618262f",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.ee21d6956299a6e5",
+        "tier": 1
+      }
+    ]
   },
   "folder": "N6LoBZte2sRtJhu7",
   "sort": 0,
@@ -51,6 +65,24 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.barbarian",
+        "language": "fr",
+        "sourceKind": "record",
+        "sourceLogicalId": "type.barbarian",
+        "section": "Character Creation — Type — Barbare — Abilities",
+        "sourceLocator": "CRD — Type: barbarian",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "French localization paired to the canonical English Type",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }
