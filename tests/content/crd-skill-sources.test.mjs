@@ -81,9 +81,9 @@ test("CRD tier-restricted skills preserve training and specialization boundaries
   assert.deepEqual(
     [...restricted.entries()].sort(),
     [
-      ["skill.attacking", 2, 4],
-      ["skill.defending", 2, 4],
-      ["skill.gunnery", 2, 4]
+      ["skill.attacking", [2, 4]],
+      ["skill.defending", [2, 4]],
+      ["skill.gunnery", [2, 4]]
     ]
   );
 });
