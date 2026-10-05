@@ -1,0 +1,37 @@
+{
+  "_id": "a1b2c3d4e5f60708",
+  "_key": "!journal!a1b2c3d4e5f60708",
+  "name": "Task Difficulty and Easing Tasks",
+  "document": "JournalEntry",
+  "crdType": "journal",
+  "pages": [
+    {
+      "name": "Task Difficulty",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<h1>Task Difficulty</h1>\n<table>\n<thead><tr><th>Task Difficulty</th><th>Description</th><th>Target Number</th><th>Guidance</th></tr></thead>\n<tbody>\n<tr><td>0</td><td>Routine</td><td>0</td><td>Anyone can do this basically every time.</td></tr>\n<tr><td>1</td><td>Simple</td><td>3</td><td>Most people can do this most of the time.</td></tr>\n<tr><td>2</td><td>Standard</td><td>6</td><td>Typical task requiring focus, but most people can usually do this.</td></tr>\n<tr><td>3</td><td>Demanding</td><td>9</td><td>Requires full attention; most people have a 50/50 chance to succeed.</td></tr>\n<tr><td>4</td><td>Difficult</td><td>12</td><td>Trained people have a 50/50 chance to succeed.</td></tr>\n<tr><td>5</td><td>Challenging</td><td>15</td><td>Even trained people often fail.</td></tr>\n<tr><td>6</td><td>Intimidating</td><td>18</td><td>Normal people almost never succeed.</td></tr>\n<tr><td>7</td><td>Formidable</td><td>21</td><td>Impossible without skills or great effort.</td></tr>\n<tr><td>8</td><td>Heroic</td><td>24</td><td>A task worthy of tales told for years afterward.</td></tr>\n<tr><td>9</td><td>Immortal</td><td>27</td><td>A task worthy of legends that last lifetimes.</td></tr>\n<tr><td>10</td><td>Impossible</td><td>30</td><td>A task that normal humans couldn’t consider (but one that doesn’t break the laws of physics).</td></tr>\n</tbody>\n</table>\n<p>The GM uses the Task Difficulty table to determine the difficulty of the task, which in turn sets the target number you need to roll to succeed. If you’re acting against an NPC, that NPC’s level is the difficulty. You can look at the table to see the target number, but a shortcut is simply taking the difficulty and multiplying it by 3. You’ll notice that at difficulty 7 and above, the target number is higher than 20, and since you’re rolling a d20, those targets are impossible. However, you can ease the difficulty of a task in many ways. Lowering the difficulty means lowering the target number.</p>\n<p>If your task is opposed by a creature, the GM will likely use their level to decide the difficulty. So to attack a level 3 mugger, the task is level 3 and you need to roll a 9. If a level 4 psychic tries to control your mind, the task to resist will be level 4.</p>\n<p>All NPCs have levels. Objects and obstacles also have levels. If you need to pick a level 5 lock or smash through a level 6 barrier, the GM will use those levels to determine the difficulty.</p>\n<h2>Easing Tasks</h2>\n<p>You can potentially ease (decrease the difficulty) of any task to 0, making it routine and negating the need for a roll. Walking across a narrow wooden beam is tricky for most people, but for an experienced gymnast, it’s routine. Repairing a car might be difficult for most people, but for a professional mechanic, it’s routine.</p>\n<p>There are three main ways for characters to ease tasks: skills, assets, and Effort.</p>\n<h3>Skill</h3>\n<p>A skill is something your character is better at than the average person. Athletics, hacking, history, perception, and stealth are all examples of skills. You can even be trained in a combat skill like guns or dodging.</p>\n<p>There are three possible levels to a skill: trained, specialized, and expert (but you can usually become expert in a skill only if your character has a special ability allowing it). Trained means you’re good at it, specialized means you’re great at it, and expert means you’re amazing at it. For example, a high school or college gymnast is probably trained in gymnastics, an Olympic competitor is probably specialized in gymnastics, and a gymnast who breaks world records is probably an expert in gymnastics.</p>\n<p>Being trained eases your task by one step, being specialized eases it by two, and being an expert eases it by three. A skill can never ease a task by more than three steps.</p>\n<h3>Asset</h3>\n<p>An asset is any object, situation, or assistance that helps you with a task. If you’re trying to force open a door, a crowbar is an asset. If you’re trying to put out a fire, a rainstorm is an asset. If you’re trying to climb over a fence, your friend giving you a boost (in other words, helping) is an asset. If you’re fighting a monster, the monster being distracted by strong winds is an asset.</p>\n<p>An asset usually eases a task by one step. A really good asset (or two regular assets) can ease a task by two steps. Assets can never ease a task by more than two steps—any more than two steps doesn’t count.</p>\n<p>The game rules tell you if something is an asset so you know if the two-asset limit applies. If it’s not called an asset, it’s not an asset. For example, medium armor eases block tasks by two steps, but it’s not an asset.</p>"
+      }
+    }
+  ],
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "journal.task-difficulty",
+        "language": "fr",
+        "sourceKind": "section",
+        "section": "Core Rules — Task Difficulty",
+        "sourceLocator": "Core Rules — Task Difficulty",
+        "transformations": [
+          "structural: CRD section to JournalEntry text page"
+        ],
+        "sourceLogicalId": "journal.task-difficulty"
+      }
+    }
+  }
+}
