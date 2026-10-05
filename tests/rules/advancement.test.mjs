@@ -67,3 +67,46 @@ test("tier advancement resets four slots and caps the tier", () => {
 
   assert.equal(computeTierAdvancement(6).newTier, 6);
 });
+
+test("capability advancement validation requires exactly four points", async () => {
+  const { validateAdvancementChoices } =
+    await import("../../module/rules/advancement.mjs");
+
+  assert.equal(
+    validateAdvancementChoices(
+      { type: "capabilities" },
+      { distribution: { might: 2, speed: 2, intellect: 0 } }
+    ),
+    null
+  );
+
+  assert.equal(
+    validateAdvancementChoices(
+      { type: "capabilities" },
+      { distribution: { might: 1, speed: 1, intellect: 1 } }
+    ),
+    "CYPHER.Warning.CapabilitiesMustSumFour"
+  );
+});
+
+test("skill advancement can target an existing skill or create a new one", () => {
+  const system = { effort: 1, stats: {} };
+
+  assert.deepEqual(
+    computeAdvancementEffects(
+      { type: "skill" },
+      { skillId: "stealth" },
+      system
+    ).skillAction,
+    { type: "advance", skillId: "stealth" }
+  );
+
+  assert.deepEqual(
+    computeAdvancementEffects(
+      { type: "skill" },
+      { newSkillName: "  Sailing  " },
+      system
+    ).skillAction,
+    { type: "create", name: "Sailing" }
+  );
+});
