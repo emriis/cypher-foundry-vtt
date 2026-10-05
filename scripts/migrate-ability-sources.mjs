@@ -134,6 +134,7 @@ async function mergeGenreAbilities() {
 
   const records = manifest.records ?? [];
   const existing = new Map();
+  const englishReferences = await collectReferenceProvenance("en");
 
   for (const file of await sourceFiles("abilities-en")) {
     const document = JSON.parse(await fs.readFile(file, "utf8"));
@@ -189,7 +190,10 @@ async function mergeGenreAbilities() {
       continue;
     }
 
-    if (!current.document.flags?.cypherFoundry?.crd) {
+    if (
+      !current.document.flags?.cypherFoundry?.crd &&
+      !englishReferences.has(current.document._id)
+    ) {
       current.document.document = "Item";
       current.document.crdType = "ability";
       current.document.flags = {
