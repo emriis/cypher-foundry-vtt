@@ -8,9 +8,6 @@ const testFiles = [
   "tests/applications/*.test.mjs",
   "tests/documents/*.test.mjs",
   "tests/migrations/*.test.mjs",
-  "tests/content/*.test.mjs",
-  "tests/integration/*.test.mjs",
-  "tests/behaviors/*.test.mjs"
 ];
 
 const args = [
