@@ -2,7 +2,11 @@ import { resolveDocumentReference } from "./reference-resolver.mjs";
 import { abilityEffectEndsOnRecovery } from "../rules/ability-effects.mjs";
 
 export async function activateAbilityEffect(actor, abilityItem, effectId) {
-  if (actor?.type !== "pc" || abilityItem?.type !== "ability") return false;
+  if (
+    actor?.type !== "pc"
+    || abilityItem?.type !== "ability"
+    || abilityItem.parent !== actor
+  ) return false;
 
   const effect = (abilityItem.system.effects ?? [])
     .find(candidate => candidate.id === effectId);
@@ -59,11 +63,12 @@ export async function expireAbilityEffectsOnRecovery(
       candidate => candidate.id === active.effectId
     );
 
-    if (
-      !abilityItem
-      || !effect
-      || abilityEffectEndsOnRecovery(effect, recoveryInterval)
-    ) {
+    if (!abilityItem || !effect) {
+      remaining.push(active);
+      continue;
+    }
+
+    if (abilityEffectEndsOnRecovery(effect, recoveryInterval)) {
       expiredCount += 1;
       continue;
     }
