@@ -82,6 +82,19 @@ function mechanicalShape(ability) {
   });
 }
 
+function contentIdentityShape(ability) {
+  return stripEditorial({
+    mechanics: mechanicalShape(ability),
+    description: String(ability.description ?? "").trim()
+  });
+}
+
+function contentIdentityShapeWithoutDescription(ability) {
+  const shape = contentIdentityShape(ability);
+  delete shape.description;
+  return shape;
+}
+
 function mechanicalShapeWithoutAction(ability) {
   const shape = mechanicalShape(ability);
   delete shape.action;
@@ -129,7 +142,7 @@ function canonicalMechanicalShape(ability) {
 }
 
 function localizedPairingMechanicalShape(ability) {
-  const shape = canonicalMechanicalShape(ability);
+  const shape = contentIdentityShapeWithoutDescription(ability);
   delete shape.action;
   return shape;
 }
@@ -142,7 +155,7 @@ function localizedLooseMechanicalShape(ability) {
 
 function identity(ability) {
   const key = slug(ability.id || ability.name);
-  const signature = hash(JSON.stringify(mechanicalShape(ability)));
+  const signature = hash(JSON.stringify(contentIdentityShape(ability)));
   return { key, signature, id: hash(`${key}\\0${signature}`).slice(0, 16) };
 }
 
@@ -271,7 +284,7 @@ async function mergeGenreAbilities() {
     const document = JSON.parse(await fs.readFile(file, "utf8"));
     if (document._key?.startsWith("!folders!")) continue;
     const identityKey = `${document.system?.key}:${hash(
-      JSON.stringify(mechanicalShape(document.system ?? {}))
+      JSON.stringify(contentIdentityShape(document.system ?? {}))
     )}`;
     existing.set(identityKey, { file, document });
   }
@@ -315,7 +328,7 @@ async function mergeGenreAbilities() {
 
   for (const record of records) {
     const identityKey = `${record.system.key}:${hash(
-      JSON.stringify(mechanicalShape(record.system))
+      JSON.stringify(contentIdentityShape(record.system))
     )}`;
     const current = existing.get(identityKey);
 
@@ -497,7 +510,7 @@ async function collectStandaloneEnglishLogicalIds() {
     if (document._key?.startsWith("!folders!")) continue;
     const key = document.system?.key;
     if (!key) continue;
-    const signature = hash(JSON.stringify(mechanicalShape(document.system)));
+    const signature = hash(JSON.stringify(contentIdentityShape(document.system)));
     entries.push({ key, signature, document });
   }
 
