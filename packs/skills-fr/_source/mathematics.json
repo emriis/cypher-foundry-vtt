@@ -1,0 +1,32 @@
+{
+  "_id": "c8e88d9dmathemat",
+  "_key": "!items!c8e88d9dmathemat",
+  "document": "Item",
+  "name": "Mathematics",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You’re a whiz with numbers, calculations, and pattern analysis.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.mathematics",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.mathematics"
+      }
+    }
+  }
+}
