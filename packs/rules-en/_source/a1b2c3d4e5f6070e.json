@@ -1,0 +1,31 @@
+{
+  "_id": "a1b2c3d4e5f6070e",
+  "_key": "!journal!a1b2c3d4e5f6070e",
+  "name": "Experience Points and Character Advancement",
+  "document": "JournalEntry",
+  "crdType": "journal",
+  "pages": [{
+    "name": "Experience Points and Character Advancement",
+    "type": "text",
+    "title": {"show": true, "level": 1},
+    "text": {
+      "format": 1,
+      "content": "<h1>Experience Points and Character Advancement</h1><p>Experience points (XP) represent experience, time, toil, travail, and the process of becoming more skilled, able, and powerful.</p><h2>Spending Experience Points</h2><p>Most XP are spent on rerolls, player intrusions, and advancement. More rarely, XP can be spent on lucky shots.</p><p>A reroll costs 1 XP. You can reroll any roll in the game, yours or another player's, and use the better of the two results. You can reroll as many times as you wish as long as you have the XP to spend.</p><p>A player intrusion costs 1 XP and lets you alter something in the campaign to benefit your character.</p><h2>Character Advancement</h2><p>A beginning character is tier 1. Progressing to the next tier involves four advancements, each costing 4 XP. You can buy the advancements in any order, but only once per tier. Each advancement also grants one or more resource points.</p><ul><li><strong>Increasing Capabilities:</strong> Permanently add 4 points to your stat Pools, allocating them among your Pools as you wish.</li><li><strong>Moving Toward Perfection:</strong> Increase one of your Edge stats by 1.</li><li><strong>Extra Effort:</strong> Increase your Effort score by 1. Effort has a maximum of 6.</li><li><strong>Skill:</strong> Become trained in a skill. Depending on your tier and the skill, this advancement can instead cancel an inability, improve a trained skill to specialized, train an attack or defense skill, train an ability that requires a roll, or at higher tiers improve an attack or defense skill from trained to specialized.</li><li><strong>Other:</strong> In place of one of the main advancements, choose one special option: Recovery (add +2 to recoveries), Focus (choose another current-tier-or-lower focus ability according to the focus flowchart), Armor (freely use all kinds of armor), Weapons (freely use all kinds of weapons), or Genre (at tier 3 or higher, choose another genre ability). The other three advancements must come from the main options.</li></ul><h2>Reaching a New Tier</h2><p>When you have bought four advancements, you reach a new tier and automatically get one new focus ability for free. The ability must be current tier or lower and connected by a line on your focus flowchart to an ability you already have.</p><p>At tier 3, you automatically get a new genre ability for free. You get another at tier 6 and, if play advances beyond tier 6, every three tiers thereafter (tier 9, 12, and so on).</p>"
+    },
+    "_id": "b2c3d4e5f6070812",
+    "_key": "!journal.pages!a1b2c3d4e5f6070e.b2c3d4e5f6070812"
+  }],
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "journal.experience-points-advancement",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Core Rules — Experience Points and Character Advancement",
+        "sourceLocator": "Core Rules — Experience Points and Character Advancement",
+        "transformations": ["structural: CRD section to JournalEntry text page"]
+      }
+    }
+  }
+}
