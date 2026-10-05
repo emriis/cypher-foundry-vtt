@@ -4,6 +4,8 @@ import test from "node:test";
 import {
   computeWoundIncrease,
   convertDamageToWound,
+  resolveNpcDamage,
+  resolvePoolDamage,
   reduceWoundSeverity,
   resolveShieldWoundSeverity
 } from "../../module/rules/wounds.mjs";
@@ -45,4 +47,22 @@ test("Pool overflow maps to the configured wound severity", () => {
   assert.equal(convertDamageToWound(5), "moderate");
   assert.equal(convertDamageToWound(8), "moderate");
   assert.equal(convertDamageToWound(9), "major");
+});
+
+test("NPC damage is reduced by Armor but never below zero", () => {
+  assert.equal(resolveNpcDamage(6, 2), 4);
+  assert.equal(resolveNpcDamage(2, 3), 0);
+});
+
+test("Pool damage resolves consumed Pool and overflow independently", () => {
+  assert.deepEqual(resolvePoolDamage(6, 3), {
+    poolDamage: 3,
+    overflow: 3,
+    woundSeverity: "minor"
+  });
+  assert.deepEqual(resolvePoolDamage(8, 10), {
+    poolDamage: 8,
+    overflow: 0,
+    woundSeverity: null
+  });
 });

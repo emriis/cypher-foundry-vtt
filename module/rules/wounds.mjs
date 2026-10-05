@@ -1,6 +1,66 @@
 import { CYPHER } from "../config.mjs";
 
 /**
+ * Resolve the damage that remains after NPC Armor.
+ *
+ * @param {number} amount Raw incoming damage.
+ * @param {number} armor NPC Armor value.
+ * @returns {number} Damage that reaches NPC Health.
+ */
+export function resolveNpcDamage(amount, armor = 0) {
+  return Math.max(0, Number(amount) - Number(armor));
+}
+
+/**
+ * Resolve damage to a stat Pool and any overflow that becomes a wound.
+ *
+ * @param {number} amount Incoming Pool damage.
+ * @param {number} poolValue Current Pool value.
+ * @returns {{poolDamage: number, overflow: number, woundSeverity: string|null}}
+ */
+export function resolvePoolDamage(amount, poolValue) {
+  const damage = Math.max(0, Number(amount));
+  const currentPool = Math.max(0, Number(poolValue));
+  const poolDamage = Math.min(damage, currentPool);
+  const overflow = damage - poolDamage;
+
+  return {
+    poolDamage,
+    overflow,
+    woundSeverity: overflow > 0 ? convertDamageToWound(overflow) : null
+  };
+}
+
+/**
+ * Convert Pool damage into a wound severity.
+ *
+ * @param {number} amount Overflow damage.
+ * @returns {string} Wound severity.
+ */
+export function convertDamageToWound(amount) {
+  for (const tier of CYPHER.poolDamageToWound) {
+    if (amount <= tier.max) return tier.severity;
+  }
+  return "major";
+}
+
+/**
+ * Calculate the next wound value without applying persistence.
+ *
+ * @param {string} severity Incoming wound severity.
+ * @param {object} wounds Wound track.
+ * @returns {{target: string, current: number, max: number}}
+ */
+export function computeWoundIncrease(severity, wounds) {
+  const target = resolveWoundSeverity(severity, wounds);
+  return {
+    target,
+    current: Math.min(wounds[target].current + 1, wounds[target].max),
+    max: wounds[target].max
+  };
+}
+
+/**
  * Reduce a wound by one severity step.
  *
  * @param {string} severity Wound severity.
@@ -44,33 +104,4 @@ export function resolveWoundSeverity(severity, wounds) {
  */
 export function resolveShieldWoundSeverity(severity, wounds) {
   return resolveWoundSeverity(severity, wounds);
-}
-
-/**
- * Convert Pool damage into a wound severity.
- *
- * @param {number} amount Overflow damage.
- * @returns {string} Wound severity.
- */
-export function convertDamageToWound(amount) {
-  for (const tier of CYPHER.poolDamageToWound) {
-    if (amount <= tier.max) return tier.severity;
-  }
-  return "major";
-}
-
-/**
- * Calculate the next wound value without applying persistence.
- *
- * @param {string} severity Incoming wound severity.
- * @param {object} wounds Wound track.
- * @returns {{target: string, current: number, max: number}}
- */
-export function computeWoundIncrease(severity, wounds) {
-  const target = resolveWoundSeverity(severity, wounds);
-  return {
-    target,
-    current: Math.min(wounds[target].current + 1, wounds[target].max),
-    max: wounds[target].max
-  };
 }

@@ -1,8 +1,9 @@
 import { CYPHER } from "../config.mjs";
 import {
   computeWoundIncrease,
-  convertDamageToWound,
   reduceWoundSeverity,
+  resolveNpcDamage,
+  resolvePoolDamage,
   resolveShieldWoundSeverity
 } from "../rules/wounds.mjs";
 import { resolveStat } from "../rules/stats.mjs";
@@ -104,15 +105,15 @@ export async function applyDamage(
     if (!resolved) return;
 
     const pool = resolved.data.pool;
-    const overflow = Math.max(0, amount - pool.value);
-    const newValue = Math.max(0, pool.value - amount);
+    const resolution = resolvePoolDamage(amount, pool.value);
+    const newValue = pool.value - resolution.poolDamage;
 
     await actor.update({
       [`${resolved.path}.pool.value`]: newValue
     });
 
-    if (overflow > 0) {
-      const woundSeverity = severity ?? convertDamageToWound(overflow);
+    if (resolution.overflow > 0) {
+      const woundSeverity = severity ?? resolution.woundSeverity;
       await addWound(actor, woundSeverity);
     }
     return;
@@ -137,7 +138,7 @@ export async function applyNpcDamage(
   { ignoreArmor = false } = {}
 ) {
   const armor = ignoreArmor ? 0 : (actor.system.armor ?? 0);
-  const finalDamage = Math.max(0, amount - armor);
+  const finalDamage = resolveNpcDamage(amount, armor);
   const health = actor.system.health;
 
   if (!health) return;
