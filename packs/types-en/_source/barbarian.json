@@ -41,7 +41,21 @@
       "might",
       "speed"
     ],
-    "description": "<p>For you, every day is another chance to spill blood, drink ale, or both—and pick up a scar or two to commemorate the day. Born an outlander and a wanderer at heart, you've become an adventurer more by accident than design. They say you're savage, but only behind your back, lest they face your fury. Out of everyone in your group, you tend to draw the most attention from foes because you give up trepidation for rage. Fears fall away when your blood is up; all you see is red. Frenzy gives you strength, battle-minded purpose, and, more times than not, a path to victory. But when your battle fever passes, your lore of the wild places helps guide you and your allies through uncivilized lands where monsters, bandits, and other barbarians roam.</p>"
+    "description": "<p>For you, every day is another chance to spill blood, drink ale, or both—and pick up a scar or two to commemorate the day. Born an outlander and a wanderer at heart, you've become an adventurer more by accident than design. They say you're savage, but only behind your back, lest they face your fury. Out of everyone in your group, you tend to draw the most attention from foes because you give up trepidation for rage. Fears fall away when your blood is up; all you see is red. Frenzy gives you strength, battle-minded purpose, and, more times than not, a path to victory. But when your battle fever passes, your lore of the wild places helps guide you and your allies through uncivilized lands where monsters, bandits, and other barbarians roam.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.792ca65e9063dd3d",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.12b5ca7341bb9f3f",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.ee21d6956299a6e5",
+        "tier": 1
+      }
+    ]
   },
   "folder": "pQTzt4j9XPpLBpKm",
   "sort": 0,
@@ -51,6 +65,22 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.barbarian",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Type — Barbarian — Abilities",
+        "sourceLocator": "CRD — Type: Barbarian",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }
