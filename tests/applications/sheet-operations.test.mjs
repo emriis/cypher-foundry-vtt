@@ -146,3 +146,57 @@ test("rollAbilityTable rejects a missing table", async () => {
 
   assert.equal(await rollAbilityTable(item, "missing"), false);
 });
+
+test("chooseAbilityEffect activates a structured ongoing effect on its PC actor", async () => {
+  globalThis.foundry = {
+    applications: {
+      ux: {
+        TextEditor: {
+          implementation: {
+            enrichHTML: async value => `<p>${value}</p>`
+          }
+        }
+      }
+    }
+  };
+  globalThis.game = { i18n: { localize: value => value } };
+  globalThis.ChatMessage = {
+    getSpeaker: () => ({}),
+    create: async () => {}
+  };
+
+  const actor = {
+    type: "pc",
+    system: { activeAbilityEffects: [] },
+    async update(changes) {
+      this.system.activeAbilityEffects =
+        changes["system.activeAbilityEffects"];
+    }
+  };
+  const item = {
+    type: "ability",
+    name: "Fury",
+    actor,
+    parent: actor,
+    uuid: "Actor.pc.Item.fury",
+    system: {
+      effects: [{
+        id: "fury",
+        name: "Fury",
+        description: "Your melee attacks inflict +2 damage.",
+        effort: "",
+        endConditions: [{
+          kind: "recovery",
+          interval: "tenMinutes",
+          minimum: true
+        }]
+      }]
+    }
+  };
+
+  assert.equal(await chooseAbilityEffect(item, "fury"), true);
+  assert.deepEqual(actor.system.activeAbilityEffects, [{
+    itemUuid: item.uuid,
+    effectId: "fury"
+  }]);
+});
