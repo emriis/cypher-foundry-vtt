@@ -422,9 +422,19 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
     if (!reference) continue;
 
     const signature = hash(JSON.stringify(mechanicalShape(document.system ?? {})));
-    const logicalId = language === "fr"
-      ? englishLogicalIds.get(`${key}:${signature}`)
-      : buildLogicalId(key, signature, keyCounts.get(key));
+    let logicalId;
+    if (language === "fr") {
+      logicalId = englishLogicalIds.get(`${key}:${signature}`);
+      if (!logicalId) {
+        const candidates = [...englishLogicalIds.entries()]
+          .filter(([entryKey]) => entryKey.startsWith(`${key}:`))
+          .map(([, value]) => value);
+        if (candidates.length === 1) logicalId = candidates[0];
+      }
+    } else {
+      logicalId = buildLogicalId(key, signature, keyCounts.get(key));
+    }
+
     if (!logicalId) {
       throw new Error(
         `French Ability "${document.name}" has no canonical English logical ID for key "${key}".`
