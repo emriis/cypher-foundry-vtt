@@ -1,0 +1,32 @@
+{
+  "_id": "900cf082cybernet",
+  "_key": "!items!900cf082cybernet",
+  "document": "Item",
+  "name": "Cybernetics",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You’re knowledgeable about cybernetic prosthetics, enhancements, and related machine-body and machine-mind devices, with some practice in installing, maintaining, repairing, and removing them.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.cybernetics",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.cybernetics"
+      }
+    }
+  }
+}
