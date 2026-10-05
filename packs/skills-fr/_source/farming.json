@@ -1,0 +1,32 @@
+{
+  "_id": "8a340be7farming0",
+  "_key": "!items!8a340be7farming0",
+  "document": "Item",
+  "name": "Farming",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You are knowledgeable when it comes to cultivating land, raising crops, and harvesting what you’ve grown to provide food and resources at the end of the growing seasons. (Tending to livestock in any but the most general way requires training in animal care.)</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.farming",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.farming"
+      }
+    }
+  }
+}
