@@ -1,0 +1,38 @@
+{
+  "_id": "a1b2c3d4e5f60709",
+  "_key": "!journal!a1b2c3d4e5f60709",
+  "name": "Effort and Edge",
+  "document": "JournalEntry",
+  "crdType": "journal",
+  "pages": [
+    {
+      "name": "Effort and Edge",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<h1>Effort</h1><p>When you really need to accomplish a task, you can try harder. In game terms, this is called applying Effort. Applying Effort costs 3 points from the appropriate stat Pool. Effort makes a task easier, just as a skill does.</p><p>A core character has an Effort of 1, meaning you can only use Effort to ease a task by one step. A character with a higher Effort score can apply more Effort to a task, easing it by additional steps.</p><h1>Edge</h1><p>Edge reduces the point cost when you spend Pool points (it’s like a discount). A core character has an Edge of 0 for all three stats.</p>"
+      },
+      "_id": "b2c3d4e5f6070811",
+      "_key": "!journal.pages!a1b2c3d4e5f60709.b2c3d4e5f6070811"
+    }
+  ],
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "journal.effort-edge",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Core Rules — Effort and Edge",
+        "sourceLocator": "Core Rules — Effort; Core Rules — Edge",
+        "transformations": [
+          "structural: CRD sections to JournalEntry text page"
+        ]
+      }
+    }
+  }
+}

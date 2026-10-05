@@ -1,0 +1,67 @@
+{
+  "_id": "a1b2c3d4e5f6070a",
+  "_key": "!journal!a1b2c3d4e5f6070a",
+  "name": "Recoveries and Healing Wounds",
+  "document": "JournalEntry",
+  "crdType": "journal",
+  "pages": [
+    {
+      "name": "Recoveries",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<h1>Recoveries</h1><p>To recover points used from your Pools, you rest and take a recovery. A core character’s recovery is equal to a 1d6 roll plus their tier, so 1d6 + 1. The result of the roll is how many points you get back; you can add them into your Pools in any combination you like, up to your normal maximum for each Pool.</p>"
+      },
+      "_id": "b2c3d4e5f6070812",
+      "_key": "!journal.pages!a1b2c3d4e5f6070a.b2c3d4e5f6070812"
+    },
+    {
+      "name": "Healing Wounds",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<h1>Healing Wounds</h1><p>There are four ways to heal a wound: rallying, treatment, rest, and exceptional healing abilities. All these methods remove a wound so you can erase it from your character sheet, but there are advantages and disadvantages to each.</p><h2>Rallying</h2><p>Rallying allows you to remove a wound. You simply spend the indicated Might points. Rallying is fast and never requires a roll, but in most genres, rallying only works with minor and moderate wounds. When you rally, it’s because the wound wasn’t as bad as it seemed; because you’re shrugging it off, toughing it out, or taking a moment to catch your breath; because you’re lucky; or for some similar narrative reason.</p><p>You cannot use Might Edge to reduce the cost of rallying.</p><table><thead><tr><th>Wounds Removed</th><th>Might Cost</th><th>Time Required</th></tr></thead><tbody><tr><td>One minor wound</td><td>2</td><td>One action</td></tr><tr><td>One moderate wound</td><td>5</td><td>One action</td></tr><tr><td>One major wound</td><td>N/A</td><td>Except for the superhero genre and similarly superheroic games, you can’t rally to remove a major wound; you have to use treatment, rest, or an exceptional healing ability.</td></tr></tbody></table><h2>Treatment</h2><p>Treatment to remove a wound is an Intellect task, using the healing skill. It requires a roll and time based on the severity of the wound, but it doesn’t cost any Might points. Treatment is slower than rallying but sometimes faster than resting, and it works best when a skilled person is involved.</p><p>An ally can use treatment on you; you both spend the time, and they make the roll.</p>"
+      },
+      "_id": "b2c3d4e5f6070813",
+      "_key": "!journal.pages!a1b2c3d4e5f6070a.b2c3d4e5f6070813"
+    },
+    {
+      "name": "Rest",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<h1>Rest</h1><p>When you rest (or require treatment), it’s because the wound was as bad as it first seemed. Resting takes time, and it happens when you use a ten-minute or longer recovery—in addition to restoring Pool points, you remove wounds.</p><table><thead><tr><th>Recovery</th><th>Wound Removal (in Addition to Restored Pool Points)</th></tr></thead><tbody><tr><td>Ten-minute</td><td>Remove all minor wounds</td></tr><tr><td>One-hour</td><td>Remove one moderate wound or all minor wounds</td></tr><tr><td>Ten-hour</td><td>Remove all moderate wounds and, with a successful difficulty 6 Might task, remove one major wound; in place of removing one moderate wound, you can remove all minor wounds</td></tr></tbody></table><p>Resting is slow but happens automatically as part of using your recoveries.</p><h2>Exceptional Healing Abilities</h2><p>Some character abilities, cyphers, magic, advanced technology, and other amazing effects can quickly remove wounds or reduce their severity (such as turning a major wound into a moderate wound). How this works is explained in the individual abilities; in most cases, it happens instantly and doesn’t cost the injured person any Might points.</p>"
+      },
+      "_id": "b2c3d4e5f6070814",
+      "_key": "!journal.pages!a1b2c3d4e5f6070a.b2c3d4e5f6070814"
+    }
+  ],
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "journal.recoveries-healing-wounds",
+        "language": "fr",
+        "sourceKind": "section",
+        "section": "Core Rules — Recoveries and Healing Wounds",
+        "sourceLocator": "Core Rules — Recoveries; Core Rules — Healing Wounds; Core Rules — Rest",
+        "transformations": [
+          "structural: CRD sections to JournalEntry text pages",
+          "fallback: supplied CRD materials contain no matching French Character Book source"
+        ]
+      }
+    }
+  }
+}
