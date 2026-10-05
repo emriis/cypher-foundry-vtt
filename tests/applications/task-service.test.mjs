@@ -99,7 +99,8 @@ test("rollTask refunds Effort cost on a natural 20 and reports attack damage", a
     difficulty: 3,
     effortLevels: 2,
     isAttack: true,
-    baseDamage: 4
+    baseDamage: 4,
+    specialEffectChoice: "damage"
   });
 
   assert.equal(result.damage, 8);
