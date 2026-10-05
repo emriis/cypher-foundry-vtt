@@ -13,8 +13,10 @@ export function resolveDefense(defenseType, armor = {}) {
     };
   }
 
+  const dodgeHinder = armor.dodgeHinder ?? 0;
+
   return {
     stat: "speed",
-    armorModifier: -(armor.dodgeHinder ?? 0)
+    armorModifier: dodgeHinder === 0 ? 0 : -dodgeHinder
   };
 }
