@@ -16,7 +16,7 @@ import { pathToFileURL } from "node:url";
 const root = path.resolve(import.meta.dirname, "..");
 const PARENT_PACKS = ["types", "foci"];
 const CRD_VERSION = "2026-07-29";
-const KNOWN_EDITORIAL_ARTIFACT_IDS = new Set([
+const EDITORIAL_ARTIFACT_IDS = new Set([
   "fecb5c4df49a4667"
 ]);
 
@@ -354,6 +354,7 @@ async function enrichStandaloneLanguage(language, english, diagnostics) {
     const document = JSON.parse(await fs.readFile(file, "utf8"));
     if (document._key?.startsWith("!folders!")) continue;
     if (isEditorialArtifact(document)) {
+      EDITORIAL_ARTIFACT_IDS.add(document._id);
       await fs.rm(file, { force: true });
       continue;
     }
