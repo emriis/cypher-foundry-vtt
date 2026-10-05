@@ -79,11 +79,8 @@ function canonicalMechanicalShape(ability) {
 }
 
 function isAbilityParserArtifact(ability) {
-  return /\bgm intrusions\b/i.test(String(ability.name ?? ""));
-}
-
-function isAbilityParserArtifact(ability) {
-  return isAbilityParserArtifact(ability) || ability.name === "At higher tiers";
+  return /\bgm intrusions\b/i.test(String(ability.name ?? "")) ||
+    ability.name === "At higher tiers";
 }
 
 function identity(ability) {
