@@ -706,6 +706,7 @@ async function collectStandaloneEnglishLogicalIds() {
   const byKey = new Map();
   const byKeyTier = new Map();
   const loose = new Map();
+  const byLogicalId = new Map();
 
   for (const entry of entries) {
     const logicalId = buildLogicalId(
@@ -713,6 +714,7 @@ async function collectStandaloneEnglishLogicalIds() {
       entry.signature,
       counts.get(entry.key)
     );
+    byLogicalId.set(logicalId, entry);
     exact.set(`${entry.key}:${entry.signature}`, logicalId);
 
     const documentIds = byDocumentId.get(entry.document._id) ?? new Set();
@@ -743,7 +745,15 @@ async function collectStandaloneEnglishLogicalIds() {
     loose.set(looseKey, looseIds);
   }
 
-  return { exact, fallback, byDocumentId, byKey, byKeyTier, loose };
+  return {
+    exact,
+    fallback,
+    byDocumentId,
+    byKey,
+    byKeyTier,
+    loose,
+    byLogicalId
+  };
 }
 
 async function collectFrenchEnglishReferencePairs() {
@@ -928,6 +938,51 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
     };
 
     await fs.writeFile(file, JSON.stringify(document, null, 2) + "\n");
+  }
+
+  if (language === "fr") {
+    for (const [logicalId, entry] of englishLogicalIds.byLogicalId) {
+      if (canonicalDocuments.has(logicalId)) continue;
+
+      const source = entry.document;
+      const sourceProvenance = source.flags?.cypherFoundry?.crd;
+      const document = {
+        ...source,
+        flags: {
+          ...(source.flags ?? {}),
+          cypherFoundry: {
+            ...(source.flags?.cypherFoundry ?? {}),
+            crd: {
+              ...(sourceProvenance ?? {}),
+              logicalId,
+              language: "fr",
+              sourceLogicalId: logicalId,
+              transformations: [
+                ...(sourceProvenance?.transformations ?? []),
+                "English source retained pending French translation"
+              ]
+            }
+          }
+        }
+      };
+
+      const targetFile = path.join(abilityDir, `${document._id}.json`);
+      try {
+        await fs.access(targetFile);
+        throw new Error(
+          `Cannot create fallback French ability "${logicalId}": ` +
+          `source file "${targetFile}" already exists.`
+        );
+      } catch (error) {
+        if (error?.code !== "ENOENT") throw error;
+      }
+
+      await fs.writeFile(
+        targetFile,
+        JSON.stringify(document, null, 2) + "\n"
+      );
+      canonicalDocuments.set(logicalId, { file: targetFile, document });
+    }
   }
 
   if (duplicateIds.size) {
