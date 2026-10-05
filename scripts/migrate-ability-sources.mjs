@@ -117,7 +117,7 @@ function isEditorialArtifact(ability) {
 
   return isGmIntrusionEntry(ability) ||
     /(?:^|-)gm-intrusions$/i.test(id) ||
-    /^Intrusions MJ\\b/i.test(name) ||
+    /^Intrusions MJ\b/i.test(name) ||
     name === "At higher tiers";
 }
 
