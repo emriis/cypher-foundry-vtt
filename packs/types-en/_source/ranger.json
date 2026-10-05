@@ -40,7 +40,21 @@
       "speed",
       "intellect"
     ],
-    "description": "<p>You're adept at traveling through perilous places. Hard experience has taught you that trust is something to be offered only rarely, and even then, might have to be traded for enmity. You know how to think like, track, and, if need be, bring down your prey, whether your quarry is wild game or someone you've determined must be hunted. Your ability to navigate is important in any group where travel to distant unknown regions and/or through mazelike tunnels under the earth happens with any sort of regularity. Your skill in finding the right path makes you invaluable anytime your group needs to track a foe who's fled the scene and, once found, quickly dispatch them.</p>"
+    "description": "<p>You're adept at traveling through perilous places. Hard experience has taught you that trust is something to be offered only rarely, and even then, might have to be traded for enmity. You know how to think like, track, and, if need be, bring down your prey, whether your quarry is wild game or someone you've determined must be hunted. Your ability to navigate is important in any group where travel to distant unknown regions and/or through mazelike tunnels under the earth happens with any sort of regularity. Your skill in finding the right path makes you invaluable anytime your group needs to track a foe who's fled the scene and, once found, quickly dispatch them.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.8f5104dabcc483dc",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.0f79fce2f14a34ab",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.0997df887f025f02",
+        "tier": 1
+      }
+    ]
   },
   "folder": "pQTzt4j9XPpLBpKm",
   "sort": 0,
@@ -50,6 +64,22 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.ranger",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Type — Ranger — Abilities",
+        "sourceLocator": "CRD — Type: Ranger",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }
