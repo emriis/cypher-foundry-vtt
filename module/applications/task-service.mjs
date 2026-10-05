@@ -14,6 +14,7 @@ import {
 } from "../rules/tasks.mjs";
 import { resolveStat } from "../rules/stats.mjs";
 import { resolveDefense } from "../rules/defense.mjs";
+import { resolveActiveAbilityModifiers } from "../rules/ability-modifiers.mjs";
 
 /**
  * Roll a Block or Dodge defense through the common task engine.
@@ -110,8 +111,19 @@ export async function rollTask(actor, {
     const skillItem = skillItemId ? actor.items.get(skillItemId) : null;
     const skillSteps = skillItem ? skillItem.system.stepModifier : 0;
 
-    const edge = statData.edge ?? 0;
+    const abilityItems = actor.items?.contents
+      ?? (Array.isArray(actor.items)
+        ? actor.items
+        : Array.from(actor.items?.values?.() ?? []));
+    const abilityModifiers = resolveActiveAbilityModifiers(
+      actor.system.activeAbilityEffects,
+      abilityItems
+    );
+    const abilityEdge = abilityModifiers.edge?.[stat] ?? 0;
+    const abilityPoolMax = abilityModifiers.poolMax?.[stat] ?? 0;
+    const edge = (statData.edge ?? 0) + abilityEdge;
     const poolValue = statData.pool.value;
+    const poolMax = statData.pool.max + abilityPoolMax;
     const totalCost = computeEffortCost(effortLevels, edge);
 
     if (totalCost > poolValue) {
@@ -172,7 +184,7 @@ export async function rollTask(actor, {
 
     // A natural 20 refunds the action's point cost.
     if (refund && totalCost > 0) {
-      await actor.update({ [`${resolved.path}.pool.value`]: Math.min(statData.pool.max, poolValue) });
+      await actor.update({ [`${resolved.path}.pool.value`]: Math.min(poolMax, poolValue) });
     }
 
     const totalDamage = isAttack ? baseDamage + damageBonus : 0;

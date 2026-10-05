@@ -23,6 +23,37 @@ const {
  *
  * @returns {SchemaField} Recovery end-condition definition.
  */
+function createAbilityEffectModifierField() {
+  return new SchemaField({
+    kind: new StringField({
+      required: true,
+      choices: ["poolMax", "edge", "woundCapacity"]
+    }),
+    stat: new StringField({ required: true, blank: true, initial: "" }),
+    severity: new StringField({ required: true, blank: true, initial: "" }),
+    amount: new NumberField({
+      required: true,
+      integer: true,
+      initial: 0
+    })
+  });
+}
+
+/**
+ * Creates structured self-modifiers for an Ability effect.
+ *
+ * Only mechanics with an explicit, source-grounded representation are stored
+ * here. Effect prose is never parsed into modifiers.
+ *
+ * @returns {ArrayField} Ability effect modifiers.
+ */
+export function createAbilityEffectModifiersField() {
+  return new ArrayField(
+    createAbilityEffectModifierField(),
+    { required: true, initial: [] }
+  );
+}
+
 function createRecoveryEndConditionField() {
   return new SchemaField({
     kind: new StringField({
@@ -93,6 +124,7 @@ export function createAbilityEffectsField() {
     }),
     description: new HTMLField({ required: true, blank: true }),
     effort: new HTMLField({ required: true, blank: true }),
+    modifiers: createAbilityEffectModifiersField(),
     endConditions: createAbilityEndConditionsField()
   }), { required: true, initial: [] });
 }

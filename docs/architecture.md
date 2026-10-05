@@ -185,6 +185,27 @@ implementation moves behind a clearer boundary. A responsibility should be
 extracted when doing so removes a meaningful application concern from the
 document; behavior that is genuinely document-owned may remain there.
 
+### 3.5 Structured Ability effects
+
+Ability source records may contain structured effect modifiers when the CRD
+expresses a mechanic that maps cleanly to the actor model. The current runtime
+supports self-modifiers for Pool maximums, Edge, and wound capacity.
+
+The source Ability Item remains immutable CRD-derived data. The actor stores only
+active effect references in `system.activeAbilityEffects`. The application/rules
+boundary resolves those references to aggregate derived modifiers when a task
+needs them. The pure `rules/ability-modifiers.mjs` helper never parses effect
+prose.
+
+Unsupported mechanics must remain in source text until a faithful structured
+representation exists. This prevents the compendium importer from silently
+turning ambiguous prose into incorrect automation.
+
+The next automation step is to consume additional structured modifier classes
+from the appropriate rule/application boundaries (for example attack damage,
+task-specific assets, or target effects) rather than expanding the generic
+modifier object without a demonstrated source requirement.
+
 ### 3.5 Sheets
 
 Sheets should primarily prepare presentation context, collect user input, call
