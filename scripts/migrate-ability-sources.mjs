@@ -78,6 +78,12 @@ function canonicalMechanicalShape(ability) {
   return shape;
 }
 
+function localizedPairingMechanicalShape(ability) {
+  const shape = canonicalMechanicalShape(ability);
+  delete shape.action;
+  return shape;
+}
+
 function isAbilityParserArtifact(ability) {
   return /\bgm intrusions\b/i.test(String(ability.name ?? "")) ||
     ability.name === "At higher tiers";
@@ -387,12 +393,31 @@ async function collectStandaloneEnglishLogicalIds() {
     counts.set(entry.key, (counts.get(entry.key) ?? 0) + 1);
   }
 
-  return new Map(
-    entries.map(entry => [
-      `${entry.key}:${entry.signature}`,
-      buildLogicalId(entry.key, entry.signature, counts.get(entry.key))
-    ])
-  );
+  const exact = new Map();
+  const fallback = new Map();
+  const byKey = new Map();
+
+  for (const entry of entries) {
+    const logicalId = buildLogicalId(
+      entry.key,
+      entry.signature,
+      counts.get(entry.key)
+    );
+    exact.set(`${entry.key}:${entry.signature}`, logicalId);
+
+    const fallbackKey = `${entry.key}:${hash(
+      JSON.stringify(localizedPairingMechanicalShape(entry.document.system))
+    )}`;
+    const fallbackIds = fallback.get(fallbackKey) ?? new Set();
+    fallbackIds.add(logicalId);
+    fallback.set(fallbackKey, fallbackIds);
+
+    const keyIds = byKey.get(entry.key) ?? new Set();
+    keyIds.add(logicalId);
+    byKey.set(entry.key, keyIds);
+  }
+
+  return { exact, fallback, byKey };
 }
 
 async function enrichStandaloneLanguage(language, englishLogicalIds) {
@@ -424,14 +449,23 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
     const signature = hash(JSON.stringify(mechanicalShape(document.system ?? {})));
     let logicalId;
     if (language === "fr") {
-      logicalId = englishLogicalIds.get(`${key}:${signature}`);
+      logicalId = englishLogicalIds.exact.get(`${key}:${signature}`);
       if (!logicalId) {
-        const candidates = [...englishLogicalIds.entries()]
-          .filter(([entryKey]) => entryKey.startsWith(`${key}:`))
-          .map(([, value]) => value);
-        if (candidates.length === 1) logicalId = candidates[0];
+        const fallbackKey = `${key}:${hash(
+          JSON.stringify(localizedPairingMechanicalShape(document.system ?? {}))
+        )}`;
+        const candidates = englishLogicalIds.fallback.get(fallbackKey);
+        if (candidates?.size === 1) {
+          logicalId = candidates.values().next().value;
+        }
       }
-    } else {
+      if (!logicalId) {
+        const candidates = englishLogicalIds.byKey.get(key);
+        if (candidates?.size === 1) {
+          logicalId = candidates.values().next().value;
+        }
+      }
+    } else {    } else {
       logicalId = buildLogicalId(key, signature, keyCounts.get(key));
     }
 
