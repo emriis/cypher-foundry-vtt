@@ -63,7 +63,7 @@ function mechanicalShape(ability) {
     enabler: Boolean(ability.enabler),
     repeatable: Boolean(ability.repeatable),
     cost: ability.cost ?? { stat: "none", amount: 0, options: [] },
-    action: ability.action ?? inferAction(ability),
+    action: ability.enabler ? null : ability.action ?? inferAction(ability),
     freeWeaponCategories: ability.freeWeaponCategories ?? [],
     freeArmorCategories: ability.freeArmorCategories ?? [],
     freeWeaponFamilies: ability.freeWeaponFamilies ?? [],
@@ -359,8 +359,9 @@ async function enrichStandaloneLanguage(language, english, diagnostics) {
     document.document = "Item";
     document.crdType = "ability";
     if (language === "fr" && match) {
-      const canonicalAction = match.ability?.action ??
-        inferAction(match.ability ?? match);
+      const canonicalAction = match.ability?.enabler
+        ? null
+        : match.ability?.action ?? inferAction(match.ability ?? match);
       if (standalone.action !== canonicalAction) {
         document.system.action = canonicalAction;
       }
