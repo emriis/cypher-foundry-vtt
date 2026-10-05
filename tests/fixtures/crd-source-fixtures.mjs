@@ -19,7 +19,8 @@ export const CRD_FIXTURE_IDS = Object.freeze({
   adhesionBomb: "0123456789abc011",
   mediumArmor: "0123456789abc013",
   skillWithAttacks: "0123456789abc014",
-  brewPotion: "0123456789abc016"
+  brewPotion: "0123456789abc016",
+  fury: "0123456789abc017"
 });
 
 function provenance(logicalId, sourceLocator, sourceKind = "record") {
@@ -96,6 +97,52 @@ export const CRD_ABILITY_FIXTURE = item(
       "but it ends if no combat is taking place within range of your senses."
   },
   "Fantasy Genre — Barbarian Abilities — Tier 1 — Frenzy"
+);
+
+export const CRD_RECOVERY_ABILITY_FIXTURE = item(
+  CRD_FIXTURE_IDS.fury,
+  "Fury",
+  "ability",
+  "ability",
+  "ability.fury",
+  {
+    tier: 1,
+    key: "fury",
+    enabler: false,
+    repeatable: false,
+    cost: {
+      stat: "might",
+      amount: 3,
+      options: [],
+      additionalEffort: false
+    },
+    action: "action",
+    freeWeaponCategories: [],
+    freeArmorCategories: [],
+    freeWeaponFamilies: [],
+    freeWeaponSkillCategories: [],
+    chooseWeaponAttackCategory: false,
+    grantedArmorItemCategory: "",
+    effects: [{
+      id: "base",
+      name: "Fury",
+      tier: null,
+      description:
+        "Your melee attacks inflict +2 damage. This ability lasts until " +
+        "you use a ten-minute or longer recovery.",
+      effort: "",
+      endConditions: [{
+        kind: "recovery",
+        interval: "tenMinutes",
+        minimum: true
+      }]
+    }],
+    rollTables: [],
+    description:
+      "Your melee attacks inflict +2 damage. This ability lasts until " +
+      "you use a ten-minute or longer recovery."
+  },
+  "Fantasy Genre — High-Tier Fantasy Abilities — Fury"
 );
 
 export const CRD_TYPE_FIXTURE = item(
@@ -288,7 +335,8 @@ export const CRD_TIERED_ABILITY_FIXTURE = item(
           "You brew a potion. You can choose its effect from the " +
           "Low-Power Manifest Cyphers table. Your brewed potion cypher " +
           "counts toward your cypher limit.",
-        effort: ""
+        effort: "",
+        endConditions: []
       },
       {
         id: "tier-3",
@@ -297,7 +345,8 @@ export const CRD_TIERED_ABILITY_FIXTURE = item(
         description:
           "You can choose a low or medium-power manifest cypher as " +
           "your brewed potion.",
-        effort: ""
+        effort: "",
+        endConditions: []
       },
       {
         id: "tier-6",
@@ -306,7 +355,8 @@ export const CRD_TIERED_ABILITY_FIXTURE = item(
         description:
           "You can choose a low, medium-, or advanced-power manifest " +
           "cypher as your brewed potion.",
-        effort: ""
+        effort: "",
+        endConditions: []
       }
     ],
     rollTables: [],
@@ -326,5 +376,6 @@ export const CRD_FIXTURES = Object.freeze([
   CRD_CYPHER_FIXTURE,
   CRD_ARMOR_FIXTURE,
   CRD_SKILL_FIXTURE,
-  CRD_TIERED_ABILITY_FIXTURE
+  CRD_TIERED_ABILITY_FIXTURE,
+  CRD_RECOVERY_ABILITY_FIXTURE
 ]);

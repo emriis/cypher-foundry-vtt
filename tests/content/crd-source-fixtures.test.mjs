@@ -11,6 +11,7 @@ import {
   CRD_ARMOR_FIXTURE,
   CRD_SKILL_FIXTURE,
   CRD_TIERED_ABILITY_FIXTURE,
+  CRD_RECOVERY_ABILITY_FIXTURE,
   CRD_FIXTURES
 } from "../fixtures/crd-source-fixtures.mjs";
 import { validateCrdSourceRecord } from "../../module/crd/source-schema.mjs";
