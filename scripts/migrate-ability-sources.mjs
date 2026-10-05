@@ -14,7 +14,6 @@ import path from "node:path";
 import { pathToFileURL } from "node:url";
 
 const root = path.resolve(import.meta.dirname, "..");
-const LANGUAGES = ["en", "fr"];
 const PARENT_PACKS = ["types", "foci"];
 const CRD_VERSION = "2026-07-29";
 const KNOWN_EDITORIAL_ARTIFACT_IDS = new Set([
@@ -344,31 +343,6 @@ function resolveFrenchEntry(ability, english, standaloneEnglish = new Map()) {
   throw new Error(
     `French ability "${ability.name}" has no unambiguous CRD mechanical match for key "${id.key}".`
   );
-}
-
-async function collectReferenceProvenance(language) {
-  const references = new Map();
-
-  for (const parent of PARENT_PACKS) {
-    for (const file of await sourceFiles(`${parent}-${language}`)) {
-      const document = JSON.parse(await fs.readFile(file, "utf8"));
-      if (document._key?.startsWith("!folders!")) continue;
-
-      for (const reference of document.system?.abilities ?? []) {
-        const match = String(reference).match(
-          /Item\.([A-Za-z0-9]{16})$/
-        );
-        if (!match || references.has(match[1])) continue;
-
-        references.set(match[1], {
-          parent,
-          document
-        });
-      }
-    }
-  }
-
-  return references;
 }
 
 async function enrichStandaloneLanguage(language, english, diagnostics) {
