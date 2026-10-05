@@ -68,6 +68,7 @@ jobs:
       - name: Run integration tests
         run: npm run test:integration
       - name: Run architecture audit
+        if: always()
         run: npm run audit:architecture
       - name: Publish diagnostics
         if: always()
