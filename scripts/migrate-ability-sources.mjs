@@ -17,6 +17,9 @@ const root = path.resolve(import.meta.dirname, "..");
 const LANGUAGES = ["en", "fr"];
 const PARENT_PACKS = ["types", "foci"];
 const CRD_VERSION = "2026-07-29";
+const KNOWN_EDITORIAL_ARTIFACT_IDS = new Set([
+  "fecb5c4df49a4667"
+]);
 
 function hash(value) {
   return crypto.createHash("sha256").update(value).digest("hex");
@@ -76,6 +79,11 @@ function isGmIntrusionEntry(ability) {
   return /\bgm intrusions\b/i.test(String(ability.name ?? ""));
 }
 
+function isEditorialArtifact(ability) {
+  return isGmIntrusionEntry(ability) ||
+    String(ability.name ?? "").trim() === "At higher tiers";
+}
+
 function identity(ability) {
   const key = slug(ability.id || ability.name);
   const signature = hash(JSON.stringify(mechanicalShape(ability)));
@@ -121,7 +129,7 @@ async function collectEnglishRegistry() {
       if (document._key?.startsWith("!folders!")) continue;
 
       for (const ability of document.system?.abilities ?? []) {
-        if (!ability || typeof ability !== "object" || isGmIntrusionEntry(ability)) continue;
+        if (!ability || typeof ability !== "object" || isEditorialArtifact(ability)) continue;
         const id = identity(ability);
         const entryKey = `${id.key}:${id.signature}`;
         if (!registry.has(entryKey)) registry.set(entryKey, {
@@ -215,10 +223,22 @@ async function enrichStandaloneLanguage(language, english) {
     documents.push({ file, document });
   }
 
-  const keyCounts = new Map();
-  for (const { document } of documents) {
-    const key = document.system?.key;
-    if (key) keyCounts.set(key, (keyCounts.get(key) ?? 0) + 1);
+  const identities = documents.map(({ document }) => ({
+    document,
+    identity: identity({
+      id: document.system.key,
+      name: document.name,
+      ...document.system
+    })
+  }));
+  const variants = new Map();
+  for (const { identity: id } of identities) {
+    const entryKey = `${id.key}:${id.signature}`;
+    if (!variants.has(entryKey)) variants.set(entryKey, id);
+  }
+  const keyVariantCounts = new Map();
+  for (const id of variants.values()) {
+    keyVariantCounts.set(id.key, (keyVariantCounts.get(id.key) ?? 0) + 1);
   }
 
   const references = await collectReferenceProvenance(language);
@@ -227,24 +247,26 @@ async function enrichStandaloneLanguage(language, english) {
     const key = document.system?.key;
     if (!key) continue;
 
+    const standalone = {
+      id: key,
+      name: document.name,
+      ...document.system
+    };
+    const id = identity(standalone);
+    const match = english.registry.get(
+      `${id.key}:${id.signature}`
+    );
+    const logicalId = match?.logicalId ??
+      buildLogicalId(
+        id.key,
+        id.signature,
+        keyVariantCounts.get(id.key) ?? 1
+      );
     const reference = references.get(document._id);
-    if (!reference) continue;
-
-    const standalone = { id: key, name: document.name, ...document.system };
-    const match = language === "fr"
-      ? english.registry.get(
-          `${identity(standalone).key}:${identity(standalone).signature}`
-        )
-      : null;
-    const logicalId = language === "fr"
-      ? match?.logicalId ?? (
-          keyCounts.get(key) > 1
-            ? `ability.${key}-${document._id.slice(0, 12)}`
-            : `ability.${key}`
-        )
-      : (keyCounts.get(key) > 1
-        ? `ability.${key}-${document._id.slice(0, 12)}`
-        : `ability.${key}`);
+    const sourceParent = reference?.parent ?? "types";
+    const sourceDocument = reference?.document ?? {
+      name: "Standalone Ability Catalogue"
+    };
 
     document.document = "Item";
     document.crdType = "ability";
@@ -263,6 +285,33 @@ async function enrichStandaloneLanguage(language, english) {
     };
 
     await fs.writeFile(file, JSON.stringify(document, null, 2) + "\n");
+  }
+
+  const abilityIds = new Set(documents.map(({ document }) => document._id));
+  for (const parent of PARENT_PACKS) {
+    for (const file of await sourceFiles(`${parent}-${language}`)) {
+      const document = JSON.parse(await fs.readFile(file, "utf8"));
+      if (document._key?.startsWith("!folders!")) continue;
+      const references = document.system?.abilities ?? [];
+      const missing = references.filter(reference => {
+        const match = String(reference).match(/Item\.([A-Za-z0-9]{16})$/);
+        return match && !abilityIds.has(match[1]);
+      });
+      const unexpected = missing.filter(reference => {
+        const match = String(reference).match(/Item\.([A-Za-z0-9]{16})$/);
+        return !KNOWN_EDITORIAL_ARTIFACT_IDS.has(match?.[1]);
+      });
+      if (unexpected.length) {
+        throw new Error(
+          `Unresolved ${language} ${parent} ability references in ${file}: ${unexpected.join(", ")}`
+        );
+      }
+      document.system.abilities = references.filter(reference => {
+        const match = String(reference).match(/Item\.([A-Za-z0-9]{16})$/);
+        return !match || abilityIds.has(match[1]);
+      });
+      await fs.writeFile(file, JSON.stringify(document, null, 2) + "\n");
+    }
   }
 
   return abilityDir;
@@ -284,7 +333,7 @@ async function migrateLanguage(language, english) {
 
   for (const { document } of documents) {
     for (const ability of document.system?.abilities ?? []) {
-      if (!ability || typeof ability !== "object" || isGmIntrusionEntry(ability)) continue;
+      if (!ability || typeof ability !== "object" || isEditorialArtifact(ability)) continue;
       const resolved = language === "fr"
         ? resolveFrenchEntry(ability, english)
         : {
