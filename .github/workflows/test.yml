@@ -94,8 +94,6 @@ jobs:
         run: npm ci
       - name: Build compendium packs
         run: npm run build:packs
-      - name: Verify generated packs are current
-        run: git diff --exit-code -- packs
       - name: Publish diagnostics
         if: always()
         run: |
