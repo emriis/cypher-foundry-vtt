@@ -17,6 +17,9 @@ const root = path.resolve(import.meta.dirname, "..");
 const LANGUAGES = ["en", "fr"];
 const PARENT_PACKS = ["types", "foci"];
 const CRD_VERSION = "2026-07-29";
+const EDITORIAL_ARTIFACT_IDS = new Set([
+  "fecb5c4df49a4667"
+]);
 
 function hash(value) {
   return crypto.createHash("sha256").update(value).digest("hex");
@@ -54,22 +57,69 @@ function stripEditorial(value) {
   );
 }
 
+function mechanicalEffectShape(effect) {
+  return {
+    id: effect.id ?? "",
+    rollTables: effect.rollTables ?? []
+  };
+}
+
 function mechanicalShape(ability) {
   return stripEditorial({
     tier: ability.tier,
     enabler: Boolean(ability.enabler),
     repeatable: Boolean(ability.repeatable),
     cost: ability.cost ?? { stat: "none", amount: 0, options: [] },
-    action: ability.action ?? inferAction(ability),
+    action: ability.enabler ? null : ability.action ?? inferAction(ability),
     freeWeaponCategories: ability.freeWeaponCategories ?? [],
     freeArmorCategories: ability.freeArmorCategories ?? [],
     freeWeaponFamilies: ability.freeWeaponFamilies ?? [],
     freeWeaponSkillCategories: ability.freeWeaponSkillCategories ?? [],
     chooseWeaponAttackCategory: Boolean(ability.chooseWeaponAttackCategory),
     grantedArmorItemCategory: ability.grantedArmorItemCategory ?? "",
-    effects: ability.effects ?? [],
+    effects: (ability.effects ?? []).map(mechanicalEffectShape),
     rollTables: ability.rollTables ?? []
   });
+}
+
+function mechanicalShapeWithoutAction(ability) {
+  const shape = mechanicalShape(ability);
+  delete shape.action;
+  return shape;
+}
+
+function mechanicallyMatchesExceptAction(left, right) {
+  return JSON.stringify(mechanicalShapeWithoutAction(left)) ===
+    JSON.stringify(mechanicalShapeWithoutAction(right));
+}
+
+function mechanicalShapeWithoutActionAndEnabler(ability) {
+  const shape = mechanicalShape(ability);
+  delete shape.action;
+  delete shape.enabler;
+  return shape;
+}
+
+function mechanicallyMatchesExceptActionAndEnabler(left, right) {
+  return JSON.stringify(
+    mechanicalShapeWithoutActionAndEnabler(left)
+  ) === JSON.stringify(
+    mechanicalShapeWithoutActionAndEnabler(right)
+  );
+}
+
+function isGmIntrusionEntry(ability) {
+  return /\bgm intrusions\b/i.test(String(ability.name ?? ""));
+}
+
+function isEditorialArtifact(ability) {
+  const id = String(ability.id ?? ability.key ?? "");
+  const name = String(ability.name ?? "").trim();
+
+  return isGmIntrusionEntry(ability) ||
+    /(?:^|-)gm-intrusions$/i.test(id) ||
+    /^Intrusions MJ\b/i.test(name) ||
+    name === "At higher tiers";
 }
 
 function canonicalMechanicalShape(ability) {
@@ -90,11 +140,6 @@ function localizedLooseMechanicalShape(ability) {
   return shape;
 }
 
-function isAbilityParserArtifact(ability) {
-  return /\bgm intrusions\b/i.test(String(ability.name ?? "")) ||
-    ability.name === "At higher tiers";
-}
-
 function identity(ability) {
   const key = slug(ability.id || ability.name);
   const signature = hash(JSON.stringify(mechanicalShape(ability)));
@@ -106,15 +151,30 @@ function buildLogicalId(key, signature, variants) {
   return `ability.${key}${suffix}`;
 }
 
+function buildLocalizedLogicalId(key, sourceId, variants) {
+  const suffix = variants > 1
+    ? `-${hash(String(sourceId)).slice(0, 12)}`
+    : "";
+  return `ability.${key}${suffix}`;
+}
+
 function provenance(language, parent, document, ability, logicalId) {
-  const parentLabel = parent === "types" ? "Type" : "Focus";
+  const parentLabel = parent === "types"
+    ? "Type"
+    : parent === "foci"
+      ? "Focus"
+      : "Ability Catalogue";
   return {
     version: CRD_VERSION,
     logicalId,
     language,
     sourceKind: "record",
-    section: `Character Creation — ${parentLabel} — ${document.name} — Abilities`,
-    sourceLocator: `CRD — ${parentLabel}: ${document.name} — Ability: ${ability.name}`,
+    section: parent === "abilities"
+      ? `Ability Catalogue — ${document.name}`
+      : `Character Creation — ${parentLabel} — ${document.name} — Abilities`,
+    sourceLocator: parent === "abilities"
+      ? `CRD — Ability: ${ability.name}`
+      : `CRD — ${parentLabel}: ${document.name} — Ability: ${ability.name}`,
     transformations: [
       "mechanical fields extracted from the CRD",
       "source occurrence converted to a standalone Ability Item"
