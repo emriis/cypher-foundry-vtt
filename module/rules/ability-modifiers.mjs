@@ -20,7 +20,13 @@ export function resolveActiveAbilityModifiers(activeEffects, abilityItems) {
     )
   };
 
+  const seenEffects = new Set();
+
   for (const active of activeEffects ?? []) {
+    const effectKey = `${active?.itemUuid}::${active?.effectId}`;
+    if (seenEffects.has(effectKey)) continue;
+    seenEffects.add(effectKey);
+
     const item = (abilityItems ?? []).find(
       candidate => candidate?.uuid === active.itemUuid
     );
