@@ -587,7 +587,7 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
     const reference = references.get(document._id);
     if (!reference) continue;
 
-    const signature = hash(JSON.stringify(mechanicalShape(document.system ?? {})));
+    const signature = hash(JSON.stringify(contentIdentityShape(document.system ?? {})));
     let logicalId;
     if (language === "fr") {
       logicalId = englishLogicalIds.exact.get(`${key}:${signature}`);
