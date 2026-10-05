@@ -66,3 +66,26 @@ test("Pool damage resolves consumed Pool and overflow independently", () => {
     woundSeverity: null
   });
 });
+
+test("wound resolution normalizes negative damage to zero", () => {
+  assert.deepEqual(resolvePoolDamage(-4, 8), {
+    poolDamage: 0,
+    overflow: 0,
+    woundSeverity: null
+  });
+  assert.equal(resolveNpcDamage(-4, 2), 0);
+});
+
+test("wound overflow cannot exceed the available target track", () => {
+  const wounds = {
+    minor: { current: 1, max: 1 },
+    moderate: { current: 1, max: 1 },
+    major: { current: 1, max: 1 }
+  };
+
+  assert.deepEqual(computeWoundIncrease("minor", wounds), {
+    target: "major",
+    current: 1,
+    max: 1
+  });
+});
