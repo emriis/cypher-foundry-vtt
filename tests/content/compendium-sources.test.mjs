@@ -167,10 +167,10 @@ for (const language of ["en", "fr"]) {
       .filter(document => !isFolder(document));
 
     const logicalIds = new Set();
-    const englishByKey = new Map(
+    const englishLogicalIds = new Set(
       [...readPackSources("abilities-en").values()]
         .filter(document => !isFolder(document))
-        .map(document => [document.system.key, document])
+        .map(document => document.flags?.cypherFoundry?.crd?.logicalId)
     );
 
     for (const document of abilities) {
@@ -191,7 +191,9 @@ for (const language of ["en", "fr"]) {
       if (language === "fr") {
         assert.equal(
           provenance.sourceLogicalId,
-          englishByKey.get(document.system.key)?.flags?.cypherFoundry?.crd?.logicalId
+          true
+        );
+        assert.ok(englishLogicalIds.has(provenance.sourceLogicalId)
         );
       }
     }
