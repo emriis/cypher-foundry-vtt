@@ -44,7 +44,25 @@
       "speed",
       "intellect"
     ],
-    "description": "<p>Your suite of extraordinary powers elevates you far beyond human capabilities. You might have a versatile combination of special attributes, possibly including enhanced strength and durability that allow you to withstand immense impacts and lift incredible weights, or super-speed for rapid movement and reaction, or even more exotic abilities like flight, energy manipulation, or advanced telepathy. Superhumans are capable in a variety of different situations, though your particular specialty will determine how many ways you can benefit your group or allies during a team-up.</p>"
+    "description": "<p>Your suite of extraordinary powers elevates you far beyond human capabilities. You might have a versatile combination of special attributes, possibly including enhanced strength and durability that allow you to withstand immense impacts and lift incredible weights, or super-speed for rapid movement and reaction, or even more exotic abilities like flight, energy manipulation, or advanced telepathy. Superhumans are capable in a variety of different situations, though your particular specialty will determine how many ways you can benefit your group or allies during a team-up.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.d23c7e05acbc7905",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.cc08928a91d47925",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.f39d28da208c496e",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.d944940ce90d0bb1",
+        "tier": 1
+      }
+    ]
   },
   "folder": "jyQmvn0EhqJ84yoX",
   "sort": 0,
@@ -54,6 +72,22 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.superhuman-rank-3",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Type — Superhuman (Rank 3) — Abilities",
+        "sourceLocator": "CRD — Type: Superhuman (Rank 3)",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }
