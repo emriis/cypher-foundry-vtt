@@ -38,7 +38,21 @@
     "statOptions": [
       "intellect"
     ],
-    "description": "<p>You are a master of potions, using herbs, minerals, and even bits and pieces such as frog eyes and dragon scales as your metaphorical canvas and paint. When you work with these materials to brew potions, you imagine and create new substances imbued with wondrous and magical effects. But your magical talents extend beyond potioncraft—you can call down curses on your foes with very real effects and, depending on your choices as you continue to study and explore, eventually learn all manner of other spells. You are one of the most versatile members of your group, given that you can brew a potion for almost any need—healing, hiding, empowering, or straight-up blasting. When facing conflict, you prefer to let others take the brunt, but you're not inexperienced when it comes to weapons, and can give as good as you get if the need arises.</p>"
+    "description": "<p>You are a master of potions, using herbs, minerals, and even bits and pieces such as frog eyes and dragon scales as your metaphorical canvas and paint. When you work with these materials to brew potions, you imagine and create new substances imbued with wondrous and magical effects. But your magical talents extend beyond potioncraft—you can call down curses on your foes with very real effects and, depending on your choices as you continue to study and explore, eventually learn all manner of other spells. You are one of the most versatile members of your group, given that you can brew a potion for almost any need—healing, hiding, empowering, or straight-up blasting. When facing conflict, you prefer to let others take the brunt, but you're not inexperienced when it comes to weapons, and can give as good as you get if the need arises.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.d5479157d98fc727",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.7976d4f65343bcdd",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.9cd38e9c8dd07bdd",
+        "tier": 1
+      }
+    ]
   },
   "folder": "zBqRagUFEUelogPi",
   "sort": 0,
@@ -48,6 +62,22 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.witch",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Type — Witch — Abilities",
+        "sourceLocator": "CRD — Type: Witch",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }
