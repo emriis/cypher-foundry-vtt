@@ -38,7 +38,21 @@
       "speed",
       "intellect"
     ],
-    "description": "<p>Who would've thought that you'd one day be capably sneaking through goblin warrens and escaping dragons? Certainly not you. But necessity is the best teacher, and you've learned that shadows are your friends when you need somewhere to hide, sneaking is more than its own reward if you need to accomplish something quickly when no one's watching, and escaping a foe is almost always the right choice, even if it's so you can circle around and attack them by surprise. You prefer letting someone else in your group begin conflicts, allowing you to slip past unnoticed, possibly so you can avoid the combat altogether. When danger isn't imminent, you're among the best suited to carefully examine a new location and, when possible, steal whatever isn't spiked down.</p>"
+    "description": "<p>Who would've thought that you'd one day be capably sneaking through goblin warrens and escaping dragons? Certainly not you. But necessity is the best teacher, and you've learned that shadows are your friends when you need somewhere to hide, sneaking is more than its own reward if you need to accomplish something quickly when no one's watching, and escaping a foe is almost always the right choice, even if it's so you can circle around and attack them by surprise. You prefer letting someone else in your group begin conflicts, allowing you to slip past unnoticed, possibly so you can avoid the combat altogether. When danger isn't imminent, you're among the best suited to carefully examine a new location and, when possible, steal whatever isn't spiked down.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.1c6a1d52828c1326",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.661cf3fe9bf8ac29",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.3eae0775ff327592",
+        "tier": 1
+      }
+    ]
   },
   "folder": "406V7PHmM8qHDb1x",
   "sort": 0,
@@ -48,6 +62,22 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.burglar",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Type — Burglar — Abilities",
+        "sourceLocator": "CRD — Type: Burglar",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }
