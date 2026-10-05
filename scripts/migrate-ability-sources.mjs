@@ -295,6 +295,7 @@ async function collectEnglishRegistry() {
   const byKey = new Map();
   const byKeyTier = new Map();
   const loose = new Map();
+  const loose = new Map();
 
   for (const parent of PARENT_PACKS) {
     for (const file of await sourceFiles(`${parent}-en`)) {
