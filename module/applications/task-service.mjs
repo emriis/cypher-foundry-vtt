@@ -86,6 +86,7 @@ export async function rollTask(actor, {
     stat = "might", difficulty = 3, effortLevels = 0, assetSteps = 0,
     skillItemId = null, isAttack = false, baseDamage = 0, flavor = "",
     extraHinderSteps = 0, extraEaseSteps = 0, luckyShot = false,
+    specialEffectChoice = null,
     defenseType = null, incomingSeverity = "minor", armorModifier = 0, shieldItemId = null
   } = {}) {
     if (actor.type !== "pc") {
@@ -172,7 +173,28 @@ export async function rollTask(actor, {
       isAttack,
       inflictsDamage: isAttack && success && baseDamage > 0
     });
-    const damageBonus = special.damageBonus;
+    let damageBonus = special.damageBonus;
+    let selectedEffect = special.effect;
+    if (special.effectOptions.length > 0 && specialEffectChoice) {
+      const selectedDamage =
+        specialEffectChoice === "damage"
+        && special.effectOptions.includes("damage");
+      const selectedMinor =
+        specialEffectChoice === "minor"
+        && special.effectOptions.includes("minor");
+      const selectedMajor =
+        specialEffectChoice === "major"
+        && special.effectOptions.includes("major");
+
+      if (selectedDamage) {
+        damageBonus = d20 === 19 ? 3 : 4;
+      } else if (selectedMinor) {
+        selectedEffect = "minor";
+      } else if (selectedMajor) {
+        selectedEffect = "major";
+      }
+    }
+
     const effectText = special.gmIntrusion
       ? game.i18n.localize("CYPHER.Roll.GMIntrusionFree")
       : special.effect === "minor"
@@ -265,7 +287,14 @@ export async function rollTask(actor, {
       }
     }
 
-    return { roll, success, targetNumber, effectiveDifficulty, damage: totalDamage };
+    return {
+      roll,
+      success,
+      targetNumber,
+      effectiveDifficulty,
+      damage: totalDamage,
+      specialEffectOptions: special.effectOptions
+    };
   }
 
 
