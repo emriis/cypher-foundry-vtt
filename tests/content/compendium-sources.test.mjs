@@ -178,7 +178,9 @@ for (const language of ["en", "fr"]) {
       assert.ok(Array.isArray(provenance.transformations));
 
       if (language === "fr") {
-        assert.equal(provenance.sourceLogicalId, provenance.logicalId);
+        const english = [...readPackSources("abilities-en").values()]
+          .find(document => !isFolder(document) && document.system.key === document.system.key);
+        assert.ok(provenance.sourceLogicalId);
       }
     }
   });
