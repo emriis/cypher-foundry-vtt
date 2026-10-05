@@ -181,7 +181,7 @@ for (const language of ["en", "fr"]) {
       assert.ok(provenance);
       assert.equal(provenance.version, "2026-07-29");
       assert.equal(provenance.language, language);
-      assert.match(provenance.logicalId, /^ability\\.[a-z0-9-]+(?:-[a-f0-9]{12})?$/);
+      assert.match(provenance.logicalId, /^ability\.[a-z0-9-]+(?:-[a-f0-9]{12})?$/);
       assert.ok(!logicalIds.has(provenance.logicalId), provenance.logicalId);
       logicalIds.add(provenance.logicalId);
       assert.ok(provenance.section);
@@ -235,7 +235,7 @@ test("CRD Genre Ability manifest is fully materialized in both languages", () =>
   assert.equal(logicalIds.size, manifest.records.length);
 
   for (const record of manifest.records) {
-    assert.match(record.logicalId, /^ability\\.[a-z0-9-]+$/);
+    assert.match(record.logicalId, /^ability\.[a-z0-9-]+$/);
     assert.ok(record.system.description);
     assert.ok(record.provenance);
     assert.equal(record.provenance.logicalId, record.logicalId);
