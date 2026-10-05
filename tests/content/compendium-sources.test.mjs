@@ -189,12 +189,11 @@ for (const language of ["en", "fr"]) {
       assert.ok(Array.isArray(provenance.transformations));
 
       if (language === "fr") {
-        assert.equal(
+        assert.match(
           provenance.sourceLogicalId,
-          true
+          /^ability\.[a-z0-9-]+(?:-[a-f0-9]{12})?$/
         );
-        assert.ok(englishLogicalIds.has(provenance.sourceLogicalId)
-        );
+        assert.ok(englishLogicalIds.has(provenance.sourceLogicalId));
       }
     }
   });
