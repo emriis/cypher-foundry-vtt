@@ -1,0 +1,32 @@
+{
+  "_id": "e2c95e9bgymnasti",
+  "_key": "!items!e2c95e9bgymnasti",
+  "document": "Item",
+  "name": "Gymnastics",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>Regular training has improved your balance, easing your tasks to avoid losing your footing, as well as attempts to roll, dive, flip, and pull off similar feats that require grace and agility, such as precision jumping, sprints, swinging from ropes or handholds, dancing, skiing, or ice skating. If you are trained in gymnastics, it might provide the same benefit in zero-G environments as zero-G fluency. But not the other way around.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.gymnastics",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.gymnastics"
+      }
+    }
+  }
+}
