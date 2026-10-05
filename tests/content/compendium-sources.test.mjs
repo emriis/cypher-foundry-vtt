@@ -40,9 +40,17 @@ for (const language of ["en", "fr"]) {
       assert.equal(document.crdType, "ability");
       assert.equal(document.flags.cypherFoundry.crd.language, language);
       if (language === "fr") {
+        const sourceLogicalId =
+          document.flags.cypherFoundry.crd.sourceLogicalId;
+        const english = [...readPackSources("abilities-en").values()]
+          .find(candidate =>
+            !isFolder(candidate) &&
+            candidate.flags?.cypherFoundry?.crd?.logicalId === sourceLogicalId
+          );
+        assert.ok(english, sourceLogicalId);
         assert.equal(
           document.flags.cypherFoundry.crd.sourceLogicalId,
-          document.flags.cypherFoundry.crd.logicalId
+          english.flags.cypherFoundry.crd.logicalId
         );
       }
     }
@@ -55,7 +63,8 @@ for (const language of ["en", "fr"]) {
     for (const [filename, document] of sources) {
       if (isFolder(document)) continue;
       assert.equal(document.type, "ability");
-      assert.doesNotMatch(document.name, /\\bGM intrusions\\b/i);\n      assert.notEqual(document.name, "At higher tiers");
+      assert.doesNotMatch(document.name, /\\bGM intrusions\\b/i);
+      assert.notEqual(document.name, "At higher tiers");
       assert.match(document._id, /^[A-Za-z0-9]{16}$/);
       assert.match(document._key, /^!items![A-Za-z0-9]{16}$/);
       assert.ok(document.system.key);
