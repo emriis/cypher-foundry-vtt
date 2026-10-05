@@ -3,13 +3,15 @@ name: Build Compendium Packs
 on:
   push:
     branches:
-      - "**"
+      - main
     paths:
       - "packs/**/_source/**"
       - "scripts/build-packs.mjs"
+      - "scripts/migrate-ability-sources.mjs"
       - "package.json"
       - "package-lock.json"
       - ".github/workflows/build-packs.yml"
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -28,8 +30,11 @@ jobs:
       - name: Install Foundry CLI
         run: npm install --no-save @foundryvtt/foundryvtt-cli@3.0.4
 
+      - name: Normalize CRD source metadata
+        run: npm run migrate:packs
+
       - name: Validate compendium sources
-        run: node --test tests/content/compendium-sources.test.mjs
+        run: node --test tests/content/*.test.mjs
 
       - name: Build LevelDB packs
         run: npm run build:packs

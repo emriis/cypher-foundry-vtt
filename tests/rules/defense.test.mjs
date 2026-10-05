@@ -20,3 +20,15 @@ test("defense resolution selects the correct stat and armor modifier", () => {
     armorModifier: -3
   });
 });
+
+test("defense resolution defaults missing armor modifiers to zero", () => {
+  assert.deepEqual(resolveDefense("block"), {
+    stat: "might",
+    armorModifier: 0
+  });
+
+  assert.deepEqual(resolveDefense("dodge"), {
+    stat: "speed",
+    armorModifier: 0
+  });
+});

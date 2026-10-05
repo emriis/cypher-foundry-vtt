@@ -45,3 +45,25 @@ test("Focus eligibility uses tier and prerequisite links", () => {
     ["second", "third", "repeatable"]
   );
 });
+
+test("Focus eligibility rejects unknown abilities and duplicate non-repeatable picks", () => {
+  const focus = {
+    abilities: [
+      { id: "first", tier: 1, prerequisites: [], repeatable: false },
+      { id: "repeat", tier: 1, prerequisites: [], repeatable: true }
+    ]
+  };
+
+  assert.equal(
+    isFocusAbilityEligible(focus, [], "missing", 6),
+    false
+  );
+  assert.equal(
+    isFocusAbilityEligible(focus, ["first"], "first", 6),
+    false
+  );
+  assert.equal(
+    isFocusAbilityEligible(focus, ["repeat"], "repeat", 6),
+    true
+  );
+});

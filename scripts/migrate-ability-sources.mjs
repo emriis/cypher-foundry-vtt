@@ -293,6 +293,97 @@ async function normalizeDescriptorSources() {
   }
 }
 
+async function normalizeTypeSources() {
+  for (const language of LANGUAGES) {
+    const directory = path.join(
+      root,
+      "packs",
+      `types-${language}`,
+      "_source"
+    );
+
+    for (const file of await fs.readdir(directory)) {
+      if (!file.endsWith(".json")) continue;
+
+      const filePath = path.join(directory, file);
+      const document = JSON.parse(await fs.readFile(filePath, "utf8"));
+      if (document._key?.startsWith("!folders!")) continue;
+
+      const logicalId = `type.${slug(path.basename(file, ".json"))}`;
+      document.document = "Item";
+      document.crdType = "type";
+      document.flags = {
+        ...(document.flags ?? {}),
+        cypherFoundry: {
+          ...(document.flags?.cypherFoundry ?? {}),
+          crd: {
+            version: CRD_VERSION,
+            logicalId,
+            language,
+            sourceKind: "record",
+            section: `Character Creation — Type — ${document.name}`,
+            sourceLocator: `CRD — Type: ${document.name}`,
+            transformations: [
+              "mechanical fields extracted from the CRD",
+              "Type source retained as a structured Foundry Item"
+            ],
+            ...(language === "fr" ? { sourceLogicalId: logicalId } : {})
+          }
+        }
+      };
+
+      await fs.writeFile(
+        filePath,
+        JSON.stringify(document, null, 2) + "\n"
+      );
+    }
+  }
+}
+
+async function normalizeFocusSources() {
+  for (const language of LANGUAGES) {
+    const directory = path.join(
+      root,
+      "packs",
+      `foci-${language}`,
+      "_source"
+    );
+
+    for (const file of await fs.readdir(directory)) {
+      if (!file.endsWith(".json")) continue;
+
+      const filePath = path.join(directory, file);
+      const document = JSON.parse(await fs.readFile(filePath, "utf8"));
+      if (document._key?.startsWith("!folders!")) continue;
+
+      const logicalId = `focus.${slug(path.basename(file, ".json"))}`;
+      document.document = "Item";
+      document.crdType = "focus";
+      document.flags = {
+        ...(document.flags ?? {}),
+        cypherFoundry: {
+          ...(document.flags?.cypherFoundry ?? {}),
+          crd: {
+            version: CRD_VERSION,
+            logicalId,
+            language,
+            sourceKind: "record",
+            section: `Character Creation — Focus — ${document.name} — Abilities`,
+            sourceLocator: `CRD — Focus: ${document.name}`,
+            transformations: [
+              "mechanical fields extracted from the CRD",
+              "Focus abilities represented as standalone Ability UUID references"
+            ],
+            ...(language === "fr" ? { sourceLogicalId: logicalId } : {})
+          }
+        }
+      };
+
+      await fs.writeFile(filePath, JSON.stringify(document, null, 2) + "\n");
+    }
+  }
+}
+
 async function pruneAbilityArtifacts() {
   // Keep known editorial IDs in the removal set even when a stale source file
   // has already disappeared. Parent documents can otherwise retain orphaned
@@ -615,6 +706,7 @@ async function collectStandaloneEnglishLogicalIds() {
   const byKey = new Map();
   const byKeyTier = new Map();
   const loose = new Map();
+  const byLogicalId = new Map();
 
   for (const entry of entries) {
     const logicalId = buildLogicalId(
@@ -622,6 +714,7 @@ async function collectStandaloneEnglishLogicalIds() {
       entry.signature,
       counts.get(entry.key)
     );
+    byLogicalId.set(logicalId, entry);
     exact.set(`${entry.key}:${entry.signature}`, logicalId);
 
     const documentIds = byDocumentId.get(entry.document._id) ?? new Set();
@@ -652,7 +745,15 @@ async function collectStandaloneEnglishLogicalIds() {
     loose.set(looseKey, looseIds);
   }
 
-  return { exact, fallback, byDocumentId, byKey, byKeyTier, loose };
+  return {
+    exact,
+    fallback,
+    byDocumentId,
+    byKey,
+    byKeyTier,
+    loose,
+    byLogicalId
+  };
 }
 
 async function collectFrenchEnglishReferencePairs() {
@@ -748,44 +849,63 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
           pairedLogicalIds.add(candidate);
         }
       }
-      if (pairedLogicalIds.size === 1) {
-        logicalId = pairedLogicalIds.values().next().value;
-      }
+      const selectCandidate = candidates => {
+        const allCandidates = [...(candidates ?? [])];
+        const unusedCandidates = allCandidates.filter(
+          candidate => !canonicalDocuments.has(candidate)
+        );
+
+        if (unusedCandidates.length === 1) {
+          return unusedCandidates[0];
+        }
+
+        // A single already-canonical candidate is a duplicate source, not an
+        // ambiguity. Let the duplicate handling below collapse it.
+        if (unusedCandidates.length === 0 && allCandidates.length === 1) {
+          return allCandidates[0];
+        }
+
+        return null;
+      };
 
       if (!logicalId) {
-        logicalId = englishLogicalIds.exact.get(`${key}:${signature}`);
+        const pairedCandidates = [...(pairedLogicalIds ?? [])]
+          .filter(candidate =>
+            englishLogicalIds.byKey.get(key)?.has(candidate)
+          );
+        logicalId = selectCandidate(pairedCandidates);
+      }
+      if (!logicalId) {
+        const exact = englishLogicalIds.exact.get(
+          `${key}:${signature}`
+        );
+        if (exact) {
+          logicalId = exact;
+        }
       }
       if (!logicalId) {
         const fallbackKey = `${key}:${hash(
           JSON.stringify(localizedPairingMechanicalShape(document.system ?? {}))
         )}`;
-        const candidates = englishLogicalIds.fallback.get(fallbackKey);
-        if (candidates?.size === 1) {
-          logicalId = candidates.values().next().value;
-        }
+        logicalId = selectCandidate(
+          englishLogicalIds.fallback.get(fallbackKey)
+        );
       }
       if (!logicalId) {
-        const candidates = englishLogicalIds.byKeyTier.get(
-          `${key}:${document.system?.tier}`
+        logicalId = selectCandidate(
+          englishLogicalIds.byKeyTier.get(
+            `${key}:${document.system?.tier}`
+          )
         );
-        if (candidates?.size === 1) {
-          logicalId = candidates.values().next().value;
-        }
       }
       if (!logicalId) {
         const looseKey = `${key}:${document.system?.tier}:${hash(
           JSON.stringify(localizedLooseMechanicalShape(document.system ?? {}))
         )}`;
-        const candidates = englishLogicalIds.loose.get(looseKey);
-        if (candidates?.size === 1) {
-          logicalId = candidates.values().next().value;
-        }
+        logicalId = selectCandidate(englishLogicalIds.loose.get(looseKey));
       }
       if (!logicalId) {
-        const candidates = englishLogicalIds.byKey.get(key);
-        if (candidates?.size === 1) {
-          logicalId = candidates.values().next().value;
-        }
+        logicalId = selectCandidate(englishLogicalIds.byKey.get(key));
       }
     } else {
       logicalId = buildLogicalId(key, signature, keyCounts.get(key));
@@ -822,6 +942,51 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
     };
 
     await fs.writeFile(file, JSON.stringify(document, null, 2) + "\n");
+  }
+
+  if (language === "fr") {
+    for (const [logicalId, entry] of englishLogicalIds.byLogicalId) {
+      if (canonicalDocuments.has(logicalId)) continue;
+
+      const source = entry.document;
+      const sourceProvenance = source.flags?.cypherFoundry?.crd;
+      const document = {
+        ...source,
+        flags: {
+          ...(source.flags ?? {}),
+          cypherFoundry: {
+            ...(source.flags?.cypherFoundry ?? {}),
+            crd: {
+              ...(sourceProvenance ?? {}),
+              logicalId,
+              language: "fr",
+              sourceLogicalId: logicalId,
+              transformations: [
+                ...(sourceProvenance?.transformations ?? []),
+                "English source retained pending French translation"
+              ]
+            }
+          }
+        }
+      };
+
+      const targetFile = path.join(abilityDir, `${document._id}.json`);
+      try {
+        await fs.access(targetFile);
+        throw new Error(
+          `Cannot create fallback French ability "${logicalId}": ` +
+          `source file "${targetFile}" already exists.`
+        );
+      } catch (error) {
+        if (error?.code !== "ENOENT") throw error;
+      }
+
+      await fs.writeFile(
+        targetFile,
+        JSON.stringify(document, null, 2) + "\n"
+      );
+      canonicalDocuments.set(logicalId, { file: targetFile, document });
+    }
   }
 
   if (duplicateIds.size) {
@@ -981,12 +1146,15 @@ export async function migrateAbilitySources() {
   await pruneAbilityReferences(removedAbilityIds);
   await mergeGenreAbilities();
   const english = await collectEnglishRegistry();
-  const englishLogicalIds = await collectStandaloneEnglishLogicalIds();
+  let englishLogicalIds = await collectStandaloneEnglishLogicalIds();
   await migrateLanguage("en", english, englishLogicalIds);
+  englishLogicalIds = await collectStandaloneEnglishLogicalIds();
   await migrateLanguage("fr", english, englishLogicalIds);
   const finalRemovedAbilityIds = await pruneAbilityArtifacts();
   await pruneAbilityReferences(finalRemovedAbilityIds);
   await normalizeDescriptorSources();
+  await normalizeTypeSources();
+  await normalizeFocusSources();
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

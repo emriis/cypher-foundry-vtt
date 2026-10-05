@@ -30,7 +30,7 @@ application, sheet, migration, or compendium boundaries.
 | Foundry applications and UI actions | `module/sheets/` |
 | Handlebars markup | `templates/` |
 | Styles and translations | `css/`, `lang/` |
-| Automated tests | `tests/rules/`, `tests/applications/`, `tests/documents/`, `tests/content/`, `tests/migrations/`, `tests/integration/`, `tests/e2e/` |
+| Automated tests | `tests/rules/`, `tests/behaviors/`, `tests/applications/`, `tests/documents/`, `tests/content/`, `tests/migrations/`, `tests/integration/`, `tests/e2e/` |
 
 For a rule change, update the owning document or data model, add or update its
 test, then run:
@@ -41,6 +41,56 @@ npm test
 
 Keep `cypher.mjs` limited to Foundry registrations and thin global hooks.
 It is not the place for game-rule calculations or sheet actions.
+
+### TDD and BDD boundary
+
+Use **TDD** for deterministic game mechanics in `module/rules/`. A rule
+change should start with the smallest failing test that describes the required
+mechanic, followed by the implementation and then cleanup. Prefer boundary
+cases and invariant-based assertions over large fixture snapshots.
+
+Use **BDD-style tests** for player-facing gameplay behavior. These tests live
+in `tests/behaviors/` and use nested `Given / When / Then` descriptions with
+the Node test runner; no additional Gherkin framework is required. Keep these
+tests independent of Foundry Documents and compendium record counts. They
+should describe what a player can observe, while rule tests describe the
+deterministic calculation underneath.
+
+Run the behavior suite directly with:
+
+```powershell
+npm run test:behavior
+```
+
+During active Phase C work, prefer batching related changes and running one
+consolidated local validation rather than rerunning the full suite after every
+individual test file. The recommended final local check is:
+
+```powershell
+npm run test:all
+```
+
+This covers rules, applications, documents, migrations, content, integration,
+and behavior tests. CI runs those categories independently so a failure in one
+category does not hide failures in another. The full test suite includes
+behavior tests automatically.
+
+### Phase D — coverage and mutation testing
+
+Phase D measures test effectiveness rather than only test count.
+
+- Native Node coverage is collected for module/rules/ with npm run test:coverage.
+- Coverage is published as an LCOV artifact by CI and remains a diagnostic signal
+  until a measured baseline is established.
+- Mutation testing uses StrykerJS against pure rule modules only. It is exposed
+  through the manual Mutation testing workflow so the normal pull-request CI
+  remains fast and deterministic.
+- The mutation configuration uses npm run test:unit as its command runner and
+  starts with a non-blocking mutation threshold. After the first representative
+  mutation report establishes a baseline, raise the break threshold deliberately
+  rather than guessing a target.
+- Do not use coverage percentage as a substitute for mutation score. A covered
+  line can still have assertions that are too weak to kill a meaningful mutant.
 
 Run the architecture-boundary contract when changing module dependencies:
 
@@ -93,17 +143,22 @@ local reference is unavailable, stop rather than reconstructing content from
 memory.
 
 ```powershell
-node --test tests/content/compendium-sources.test.mjs
+node --test tests/content/*.test.mjs
 ```
+
+The content contract suite validates the common CRD source envelope, provenance,
+logical identity, and English/French pairing across reusable content families.
+Keep these contracts independent from arbitrary record counts so additions do
+not require rewriting tests.
 
 Then rebuild each affected LevelDB pack with `npm run build:packs`. The build
 script discovers every authored `packs/*/_source/` directory and compiles each
 one, replacing only its generated database files. The registered pack list in
 `system.json` and the authored source directories must remain consistent as new
 content families are introduced. See `docs/crd-content-roadmap.md` for the
-planned Player Guide, GM Guide, Quick Reference, genre, and GM libraries. The `_source/` JSON is the reviewable
-source of truth; the adjacent LevelDB files are what Foundry loads because
-`system.json` declares them directly.
+planned Player Guide, GM Guide, Quick Reference, genre, and GM libraries. The
+`_source/` JSON is the reviewable source of truth; the adjacent LevelDB files
+are what Foundry loads because `system.json` declares them directly.
 
 ## 3. Development and CI
 
@@ -112,8 +167,8 @@ Development tooling belongs in `scripts/`; GitHub automation belongs in
 
 | Automation | Trigger | Purpose |
 | --- | --- | --- |
-| `.github/workflows/test.yml` | Push and pull request | Checks E2E JavaScript syntax and runs `npm test` |
-| `.github/workflows/build-packs.yml` | Pack source/build changes | Rebuilds and commits LevelDB compendium packs |
+| `.github/workflows/test.yml` | Push to `main`, pull request, or manual dispatch | Runs independent unit, BDD behavior, content, integration, architecture, pack-build, and repository checks |
+| `.github/workflows/build-packs.yml` | Push to `main` or manual dispatch | Normalizes CRD source metadata, validates content, rebuilds, and commits LevelDB compendium packs |
 | `.github/workflows/release.yml` | Tag matching `v*` | Tests, checks version/tag parity, packages, publishes GitHub release |
 | `scripts/build-packs.mjs` | `npm run build:packs` | Compiles all eight LevelDB packs from `_source/` |
 | `scripts/package.ps1` | `npm run package` | Creates local release artifacts in `dist/` |

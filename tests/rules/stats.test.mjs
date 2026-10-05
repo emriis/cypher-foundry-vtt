@@ -3,7 +3,7 @@ import test from "node:test";
 
 const { resolveStat } = await import("../../module/rules/stats.mjs");
 
-test("resolveStat resolves core stats to their data and update path", () => {
+test("resolveStat resolves every core stat to its data and update path", () => {
   const system = {
     stats: {
       might: { pool: { value: 8, max: 8 }, edge: 1 },
@@ -13,11 +13,13 @@ test("resolveStat resolves core stats to their data and update path", () => {
     customStats: []
   };
 
-  assert.deepEqual(resolveStat(system, "might"), {
-    data: system.stats.might,
-    path: "system.stats.might",
-    label: "CYPHER.Stat.might"
-  });
+  for (const stat of ["might", "speed", "intellect"]) {
+    assert.deepEqual(resolveStat(system, stat), {
+      data: system.stats[stat],
+      path: `system.stats.${stat}`,
+      label: `CYPHER.Stat.${stat}`
+    });
+  }
 });
 
 test("resolveStat resolves custom stats by id and preserves their label", () => {

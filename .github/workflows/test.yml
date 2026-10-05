@@ -1,45 +1,215 @@
-name: Unit Tests
+name: CI
 
 on:
   push:
     branches:
-      - "**"
+      - main
   pull_request:
+  workflow_dispatch:
+
+concurrency:
+  # Keep each revision independently runnable and never cancel diagnostics.
+  # Including the commit SHA prevents a queued run from blocking the next
+  # revision when a previous GitHub-hosted runner is unavailable.
+  group: ci-${{ github.workflow }}-${{ github.sha }}
+  cancel-in-progress: false
 
 jobs:
-  test:
+  unit:
+    name: Unit and document tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
-
       - name: Install dependencies
         run: npm ci
-
-      - name: Check E2E JavaScript syntax
-        run: |
-          node --check scripts/run-foundry-e2e.mjs
-          node --check playwright.config.mjs
-          node --check tests/e2e/foundry-session.mjs
-          node --check tests/e2e/foundry-runtime.spec.mjs
-          node --check tests/e2e/foundry-gameplay.spec.mjs
-
-      - name: Build compendium packs
-        run: npm run build:packs
-
       - name: Run unit tests
-        run: npm test
-
-      - name: Publish test summary
+        run: npm run test:unit
+      - name: Publish diagnostics
         if: always()
         run: |
-          echo "## Unit test diagnostics" >> "$GITHUB_STEP_SUMMARY"
+          echo "## Unit and document tests" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
-          echo 'The unit-test step uses Node\x27s spec reporter so each failure includes the test name, assertion details, and stack trace directly in the Actions log.' >> "$GITHUB_STEP_SUMMARY"
+          echo "Command: `npm run test:unit`" >> "$GITHUB_STEP_SUMMARY"
+          echo "Failures are reported independently by Node's spec reporter." >> "$GITHUB_STEP_SUMMARY"
 
+  behavior:
+    name: BDD behavior tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Run behavior tests
+        run: npm run test:behavior
+      - name: Publish diagnostics
+        if: always()
+        run: |
+          echo "## BDD behavior tests" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Command: `npm run test:behavior`" >> "$GITHUB_STEP_SUMMARY"
+          echo "Gameplay behavior failures are isolated from low-level rule tests." >> "$GITHUB_STEP_SUMMARY"
+
+  content:
+    name: Content contract tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Normalize CRD source metadata
+        run: npm run migrate:packs
+      - name: Run content tests
+        run: npm run test:content
+      - name: Publish diagnostics
+        if: always()
+        run: |
+          echo "## Content contract tests" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Command: `npm run test:content`" >> "$GITHUB_STEP_SUMMARY"
+          echo "Content failures are isolated from rule and application failures." >> "$GITHUB_STEP_SUMMARY"
+
+  integration:
+    name: Integration and architecture tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Run integration tests
+        run: npm run test:integration
+      - name: Run architecture audit
+        if: always()
+        run: npm run audit:architecture
+      - name: Publish diagnostics
+        if: always()
+        run: |
+          echo "## Integration diagnostics" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Commands: `npm run test:integration`, `npm run audit:architecture`" >> "$GITHUB_STEP_SUMMARY"
+
+  build:
+    name: Compendium build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Build compendium packs
+        run: npm run build:packs
+      - name: Validate compiled compendium packs
+        run: node --test --test-reporter=spec tests/build/compendium-packs.test.mjs
+      - name: Publish diagnostics
+        if: always()
+        run: |
+          echo "## Compendium build" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Command: `npm run build:packs`" >> "$GITHUB_STEP_SUMMARY"
+
+  repository:
+    name: Repository and E2E syntax checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Check E2E JavaScript syntax
+        run: npm run check:e2e-syntax
       - name: Audit public repository data
         run: npm run audit:public-data
+      - name: Publish diagnostics
+        if: always()
+        run: |
+          echo "## Repository diagnostics" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Commands: `npm run check:e2e-syntax`, `npm run audit:public-data`" >> "$GITHUB_STEP_SUMMARY"
+
+  coverage:
+    name: Rule coverage
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Run rule coverage
+        run: npm run test:coverage
+      - name: Upload coverage report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rule-coverage
+          path: coverage/lcov.info
+          if-no-files-found: warn
+      - name: Publish diagnostics
+        if: always()
+        run: |
+          echo "## Rule coverage" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Command: `npm run test:coverage`" >> "$GITHUB_STEP_SUMMARY"
+          echo "Coverage is currently reported as a quality metric; mutation testing provides the stronger test-effectiveness signal." >> "$GITHUB_STEP_SUMMARY"
+
+  status:
+    name: CI status
+    if: always()
+    needs:
+      - unit
+      - behavior
+      - content
+      - integration
+      - build
+      - repository
+      - coverage
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report overall result
+        run: |
+          echo "## CI result" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Check | Result |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| --- | --- |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Unit and document tests | ${{ needs.unit.result }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| BDD behavior tests | ${{ needs.behavior.result }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Content contracts | ${{ needs.content.result }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Integration and architecture | ${{ needs.integration.result }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Compendium build | ${{ needs.build.result }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Repository checks | ${{ needs.repository.result }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Rule coverage | ${{ needs.coverage.result }} |" >> "$GITHUB_STEP_SUMMARY"
+
+          if [ "${{ needs.unit.result }}" != "success" ] || \
+             [ "${{ needs.behavior.result }}" != "success" ] || \
+             [ "${{ needs.content.result }}" != "success" ] || \
+             [ "${{ needs.integration.result }}" != "success" ] || \
+             [ "${{ needs.build.result }}" != "success" ] || \
+             [ "${{ needs.repository.result }}" != "success" ] || \
+             [ "${{ needs.coverage.result }}" != "success" ]; then
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo "One or more CI categories failed. Inspect the corresponding job above; failures are intentionally reported independently." >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi

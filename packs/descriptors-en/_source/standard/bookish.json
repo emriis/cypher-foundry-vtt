@@ -24,6 +24,21 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "descriptor.bookish",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Descriptors",
+        "sourceLocator": "CRD — Descriptors — bookish",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "descriptor"
 }

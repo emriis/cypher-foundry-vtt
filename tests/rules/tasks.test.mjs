@@ -5,8 +5,8 @@ import {
   clampAssetSteps,
   clampEffortLevels,
   computeEffortCost,
-  resolveAttackDamage,
   computeTaskSteps,
+  resolveAttackDamage,
   resolveSpecialRoll,
   resolveTaskDifficulty,
   canRetryTask
@@ -168,4 +168,79 @@ test("successful attack damage includes the special damage bonus", () => {
 
 test("attack damage never becomes negative", () => {
   assert.equal(resolveAttackDamage(true, -2, -1), 0);
+});
+
+test("Effort and Asset levels are clamped to their supported bounds", () => {
+  assert.equal(clampEffortLevels(-2, 4), 0);
+  assert.equal(clampEffortLevels(9, 4), 4);
+  assert.equal(clampEffortLevels(9, 9, 6), 6);
+  assert.equal(clampAssetSteps(-1), 0);
+  assert.equal(clampAssetSteps(1), 1);
+  assert.equal(clampAssetSteps(4), 2);
+});
+
+test("task step modifiers combine ease and hindrance sources", () => {
+  assert.equal(
+    computeTaskSteps({
+      effortLevels: 2,
+      assetSteps: 1,
+      skillSteps: 1,
+      extraEaseSteps: 1,
+      woundHinder: 2,
+      extraHinderSteps: 1,
+      armorModifier: 1,
+      autoArmorSpeedHinder: 2
+    }),
+    1
+  );
+});
+
+test("Effort cost applies Edge once to the complete cost", () => {
+  assert.equal(computeEffortCost(1, 1), 2);
+  assert.equal(computeEffortCost(2, 1), 4);
+  assert.equal(computeEffortCost(3, 99), 0);
+});
+
+test("special attack results distinguish damage bonuses from selectable effects", () => {
+  assert.deepEqual(resolveSpecialRoll({
+    d20: 17,
+    success: true,
+    isAttack: true,
+    inflictsDamage: true
+  }).damageBonus, 1);
+
+  assert.deepEqual(resolveSpecialRoll({
+    d20: 18,
+    success: true,
+    isAttack: true,
+    inflictsDamage: true
+  }).damageBonus, 2);
+
+  assert.deepEqual(resolveSpecialRoll({
+    d20: 19,
+    success: true,
+    isAttack: true,
+    inflictsDamage: true
+  }).effectOptions, ["damage", "minor"]);
+
+  assert.deepEqual(resolveSpecialRoll({
+    d20: 20,
+    success: true,
+    isAttack: true,
+    inflictsDamage: true
+  }).effectOptions, ["damage", "major"]);
+});
+
+test("a natural 1 records a GM intrusion even on a failed task", () => {
+  assert.equal(resolveSpecialRoll({
+    d20: 1,
+    success: false
+  }).gmIntrusion, true);
+});
+
+test("effective task difficulty clamps at zero", () => {
+  assert.deepEqual(resolveTaskDifficulty(2, -1), {
+    effectiveDifficulty: 3,
+    targetNumber: 9
+  });
 });
