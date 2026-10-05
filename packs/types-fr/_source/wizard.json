@@ -36,7 +36,21 @@
     "statOptions": [
       "intellect"
     ],
-    "description": "<p>Your conjured lightning, flashing displays, and wizardly spells are just part of what makes you a wizard. With your wisdom and knowledge, you have the opportunity to guide others to a larger goal, to learn ancient secrets, discover new truths, and maybe even become a major figure as history unfolds. You may see your role as the voice of wisdom and reason in your company. More tactically, your spells aren't as quick as a flashing sword or swift-flying arrow, so you appreciate others in your fellowship who have the physical presence to keep aggressors away from you a few extra moments while you prepare one of your magical effects. And anytime enemy magic is found, you have the best chance to deal with and perhaps even counter it.</p>"
+    "description": "<p>Your conjured lightning, flashing displays, and wizardly spells are just part of what makes you a wizard. With your wisdom and knowledge, you have the opportunity to guide others to a larger goal, to learn ancient secrets, discover new truths, and maybe even become a major figure as history unfolds. You may see your role as the voice of wisdom and reason in your company. More tactically, your spells aren't as quick as a flashing sword or swift-flying arrow, so you appreciate others in your fellowship who have the physical presence to keep aggressors away from you a few extra moments while you prepare one of your magical effects. And anytime enemy magic is found, you have the best chance to deal with and perhaps even counter it.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.2a2ba8acba44052c",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.3f2b9a73cd33341b",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.44c750f170527f4c",
+        "tier": 1
+      }
+    ]
   },
   "folder": "hprdGeaH0YyHvS4S",
   "sort": 0,
@@ -46,6 +60,24 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.wizard",
+        "language": "fr",
+        "sourceKind": "record",
+        "sourceLogicalId": "type.wizard",
+        "section": "Character Creation — Type — Magicien·ne — Abilities",
+        "sourceLocator": "CRD — Type: wizard",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "French localization paired to the canonical English Type",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }
