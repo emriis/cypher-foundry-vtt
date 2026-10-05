@@ -234,6 +234,9 @@ test("chooseAbilityEffect charges a fixed structured Ability cost", async () => 
       this.system.stats.might.pool.value =
         changes["system.stats.might.pool.value"] ??
         this.system.stats.might.pool.value;
+      this.system.activeAbilityEffects =
+        changes["system.activeAbilityEffects"] ??
+        this.system.activeAbilityEffects;
     }
   };
 
