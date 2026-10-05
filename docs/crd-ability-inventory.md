@@ -25,8 +25,9 @@ the CRD explicitly presents the benefit as a standalone Ability.
 
 ### Fantasy
 
-The CRD contains 26 named Fantasy Genre abilities:
+The CRD contains 27 named Fantasy Genre abilities:
 
+- A Bit of Magic
 - Cypher Use
 - Danger Instinct
 - Disappear Into Shadow
@@ -49,6 +50,7 @@ The CRD contains 26 named Fantasy Genre abilities:
 - Jump Attack
 - Magic Portal
 - Mask
+- Resilience
 - Spellbreaker
 - Spin Attack
 - Will of a Leader
