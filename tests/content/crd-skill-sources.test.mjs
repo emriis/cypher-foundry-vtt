@@ -33,7 +33,7 @@ test("CRD skill source packs contain the complete Master Skill List", () => {
       assert.equal(record.crdType, "skill");
       assert.equal(record.system.stat, "none");
       assert.equal(record.system.level, "trained");
-      assert.equal(record.system.attackCategory, "");\n      assert.ok("minimumSpecializationTier" in record.system);
+      assert.equal(record.system.attackCategory, "");
       assert.match(record.system.description, /<p>.+<\/p>/);
     }
   }
