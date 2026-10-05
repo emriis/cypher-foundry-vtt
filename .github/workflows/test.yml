@@ -147,6 +147,34 @@ jobs:
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "Commands: `npm run check:e2e-syntax`, `npm run audit:public-data`" >> "$GITHUB_STEP_SUMMARY"
 
+  coverage:
+    name: Rule coverage
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Run rule coverage
+        run: npm run test:coverage
+      - name: Upload coverage report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rule-coverage
+          path: coverage/lcov.info
+          if-no-files-found: warn
+      - name: Publish diagnostics
+        if: always()
+        run: |
+          echo "## Rule coverage" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Command: `npm run test:coverage`" >> "$GITHUB_STEP_SUMMARY"
+          echo "Coverage is currently reported as a quality metric; mutation testing provides the stronger test-effectiveness signal." >> "$GITHUB_STEP_SUMMARY"
+
   status:
     name: CI status
     if: always()
@@ -157,6 +185,7 @@ jobs:
       - integration
       - build
       - repository
+      - coverage
     runs-on: ubuntu-latest
     steps:
       - name: Report overall result
@@ -171,13 +200,15 @@ jobs:
           echo "| Integration and architecture | ${{ needs.integration.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Compendium build | ${{ needs.build.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Repository checks | ${{ needs.repository.result }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Rule coverage | ${{ needs.coverage.result }} |" >> "$GITHUB_STEP_SUMMARY"
 
           if [ "${{ needs.unit.result }}" != "success" ] || \
              [ "${{ needs.behavior.result }}" != "success" ] || \
              [ "${{ needs.content.result }}" != "success" ] || \
              [ "${{ needs.integration.result }}" != "success" ] || \
              [ "${{ needs.build.result }}" != "success" ] || \
-             [ "${{ needs.repository.result }}" != "success" ]; then
+             [ "${{ needs.repository.result }}" != "success" ] || \
+             [ "${{ needs.coverage.result }}" != "success" ]; then
             echo "" >> "$GITHUB_STEP_SUMMARY"
             echo "One or more CI categories failed. Inspect the corresponding job above; failures are intentionally reported independently." >> "$GITHUB_STEP_SUMMARY"
             exit 1
