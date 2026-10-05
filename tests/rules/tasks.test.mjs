@@ -5,12 +5,8 @@ import {
   clampAssetSteps,
   clampEffortLevels,
   computeEffortCost,
-  clampAssetSteps,
-  clampEffortLevels,
-  computeEffortCost,
   computeTaskSteps,
   resolveAttackDamage,
-  computeTaskSteps,
   resolveSpecialRoll,
   resolveTaskDifficulty,
   canRetryTask
