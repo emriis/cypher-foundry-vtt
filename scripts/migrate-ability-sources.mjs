@@ -107,14 +107,26 @@ function buildLogicalId(key, signature, variants) {
 }
 
 function provenance(language, parent, document, ability, logicalId) {
-  const parentLabel = parent === "types" ? "Type" : "Focus";
+  const parentLabel = parent === "types"
+    ? "Type"
+    : parent === "foci"
+      ? "Focus"
+      : "Ability Catalogue";
+  const sourceLabel = parent === "abilities"
+    ? `Ability: ${ability.name}`
+    : `Ability: ${ability.name}`;
+
   return {
     version: CRD_VERSION,
     logicalId,
     language,
     sourceKind: "record",
-    section: `Character Creation — ${parentLabel} — ${document.name} — Abilities`,
-    sourceLocator: `CRD — ${parentLabel}: ${document.name} — Ability: ${ability.name}`,
+    section: parent === "abilities"
+      ? `Ability Catalogue — ${document.name}`
+      : `Character Creation — ${parentLabel} — ${document.name} — Abilities`,
+    sourceLocator: parent === "abilities"
+      ? `CRD — Ability: ${ability.name}`
+      : `CRD — ${parentLabel}: ${document.name} — ${sourceLabel}`,
     transformations: [
       "mechanical fields extracted from the CRD",
       "source occurrence converted to a standalone Ability Item"
@@ -134,39 +146,76 @@ async function collectEnglishRegistry() {
   const registry = new Map();
   const byKey = new Map();
 
+  const register = (parent, document, ability) => {
+    if (!ability || typeof ability !== "object" || isEditorialArtifact(ability)) {
+      return;
+    }
+
+    const id = identity(ability);
+    const entryKey = `${id.key}:${id.signature}`;
+    if (!registry.has(entryKey)) {
+      registry.set(entryKey, {
+        ...id,
+        ability,
+        parent,
+        document,
+        provenance: null
+      });
+    }
+
+    const entries = byKey.get(id.key) ?? [];
+    if (!entries.some(entry => entry.signature === id.signature)) {
+      entries.push(registry.get(entryKey));
+      byKey.set(id.key, entries);
+    }
+  };
+
   for (const parent of PARENT_PACKS) {
     for (const file of await sourceFiles(`${parent}-en`)) {
       const document = JSON.parse(await fs.readFile(file, "utf8"));
       if (document._key?.startsWith("!folders!")) continue;
 
       for (const ability of document.system?.abilities ?? []) {
-        if (!ability || typeof ability !== "object" || isEditorialArtifact(ability)) continue;
-        const id = identity(ability);
-        const entryKey = `${id.key}:${id.signature}`;
-        if (!registry.has(entryKey)) registry.set(entryKey, {
-          ...id,
-          ability,
-          parent,
-          document,
-          provenance: null
-        });
-
-        const entries = byKey.get(id.key) ?? [];
-        if (!entries.some(entry => entry.signature === id.signature)) {
-          entries.push(registry.get(entryKey));
-          byKey.set(id.key, entries);
-        }
+        register(parent, document, ability);
       }
     }
+  }
+
+  // The standalone catalogue is part of the canonical Ability registry.
+  // This is required for abilities that are not referenced by a Type or
+  // Focus, and it also gives localized standalone records a stable target.
+  for (const file of await sourceFiles("abilities-en")) {
+    const document = JSON.parse(await fs.readFile(file, "utf8"));
+    if (document._key?.startsWith("!folders!")) continue;
+
+    register("abilities", document, {
+      id: document.system?.key,
+      name: document.name,
+      ...document.system
+    });
   }
 
   const variants = new Map();
   for (const entry of registry.values()) {
     variants.set(entry.key, (variants.get(entry.key) ?? 0) + 1);
   }
+
   for (const entry of registry.values()) {
-    entry.logicalId = buildLogicalId(entry.key, entry.signature, variants.get(entry.key));
-    entry.provenance = provenance("en", entry.parent, entry.document, entry.ability, entry.logicalId);
+    const existingLogicalId =
+      entry.document.flags?.cypherFoundry?.crd?.logicalId;
+    entry.logicalId = existingLogicalId ??
+      buildLogicalId(
+        entry.key,
+        entry.signature,
+        variants.get(entry.key)
+      );
+    entry.provenance = provenance(
+      "en",
+      entry.parent,
+      entry.document,
+      entry.ability,
+      entry.logicalId
+    );
   }
 
   return { registry, byKey };
