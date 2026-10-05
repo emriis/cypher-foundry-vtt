@@ -515,7 +515,7 @@ async function enrichStandaloneLanguage(language, english, diagnostics) {
       });
       const unexpected = missing.filter(reference => {
         const match = String(reference).match(/Item\.([A-Za-z0-9]{16})$/);
-        return !KNOWN_EDITORIAL_ARTIFACT_IDS.has(match?.[1]);
+        return !EDITORIAL_ARTIFACT_IDS.has(match?.[1]);
       });
       if (unexpected.length) {
         diagnostics.push({
