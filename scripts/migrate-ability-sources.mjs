@@ -309,7 +309,7 @@ async function normalizeFocusSources() {
       const document = JSON.parse(await fs.readFile(filePath, "utf8"));
       if (document._key?.startsWith("!folders!")) continue;
 
-      const logicalId = `focus.${slug(path.basename(file, ".json"))`;
+      const logicalId = `focus.${slug(path.basename(file, ".json"))}`;
       document.document = "Item";
       document.crdType = "focus";
       document.flags = {
