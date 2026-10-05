@@ -40,7 +40,25 @@
     "statOptions": [
       "intellect"
     ],
-    "description": "<p>You descend from privilege, wealth, and power. Your family owns significant property, wields political control, and/or has vast wealth—or once did. You've stepped away from that somewhat, though you still carry a noble title, whether you want to or not. People recognize you in certain circles, especially those who've had dealings with your family. With access to the privileges your title can command, you might be able and willing to pay for your group's passage on a starship, or even provide them with passage outright if your family's resources are extensive enough (assuming you are on good terms with your siblings and parents). But even if your title is more of an honorific handed down from better times, your nobility still grants access that you and your friends might not otherwise be able to attain.</p>"
+    "description": "<p>You descend from privilege, wealth, and power. Your family owns significant property, wields political control, and/or has vast wealth—or once did. You've stepped away from that somewhat, though you still carry a noble title, whether you want to or not. People recognize you in certain circles, especially those who've had dealings with your family. With access to the privileges your title can command, you might be able and willing to pay for your group's passage on a starship, or even provide them with passage outright if your family's resources are extensive enough (assuming you are on good terms with your siblings and parents). But even if your title is more of an honorific handed down from better times, your nobility still grants access that you and your friends might not otherwise be able to attain.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.6ca64359915287be",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.2a352546de6d31d5",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.2290e19100fcd635",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.fecb5c4df49a4667",
+        "tier": 1
+      }
+    ]
   },
   "folder": "DNZXZoUQ1z24nS44",
   "sort": 0,
@@ -50,6 +68,24 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.noble",
+        "language": "fr",
+        "sourceKind": "record",
+        "sourceLogicalId": "type.noble",
+        "section": "Character Creation — Type — Noble — Abilities",
+        "sourceLocator": "CRD — Type: noble",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "French localization paired to the canonical English Type",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }
