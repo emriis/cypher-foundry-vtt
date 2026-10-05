@@ -77,7 +77,7 @@ function isGmIntrusionEntry(ability) {
 }
 
 function identity(ability) {
-  const key = slug(ability.id || ability.name);
+  const key = slug(ability.key || ability.id || ability.name);
   const signature = hash(JSON.stringify(mechanicalShape(ability)));
   return { key, signature, id: hash(`${key}\\0${signature}`).slice(0, 16) };
 }
@@ -275,6 +275,82 @@ async function enrichStandaloneLanguage(language) {
   return abilityDir;
 }
 
+async function enrichStandaloneSources(language, english) {
+  const documents = await collectDocuments(language);
+  const contexts = new Map();
+
+  for (const { parent, document } of documents) {
+    for (const uuid of document.system?.abilities ?? []) {
+      const id = typeof uuid === "string" ? uuid.split(".").at(-1) : null;
+      if (!id) continue;
+      const list = contexts.get(id) ?? [];
+      list.push({
+        parent,
+        document: document.name
+      });
+      contexts.set(id, list);
+    }
+  }
+
+  const abilityDir = path.join(root, "packs", `abilities-${language}`, "_source");
+  for (const file of await sourceFiles(`abilities-${language}`)) {
+    const ability = JSON.parse(await fs.readFile(file, "utf8"));
+    if (ability._key?.startsWith("!folders!")) continue;
+
+    const system = ability.system ?? {};
+    const id = ability._id;
+    const identityValue = identity({ ...system, name: ability.name });
+    const englishAbility = english?.get(identityValue.key);
+    const source = contexts.get(id)?.[0];
+    const logicalId = `ability.${identityValue.key}-${identityValue.signature.slice(0, 12)}`;
+
+    const provenance = {
+      version: "2026-07-29",
+      logicalId: englishAbility?.logicalId ?? logicalId,
+      language,
+      sourceKind: "section",
+      section: source
+        ? `Genre Character Abilities from Types and Foci > ${source.parent === "foci" ? "Focus" : "Type"} Abilities`
+        : "Genre Character Abilities from Types and Foci",
+      sourceLocator: source
+        ? `${source.document} > ${ability.name}`
+        : `Standalone Ability > ${ability.name}`,
+      transformations: [
+        "Extracted as a standalone Ability Item",
+        "Preserved canonical mechanical fields"
+      ]
+    };
+
+    if (language === "fr") {
+      provenance.sourceLogicalId = englishAbility?.logicalId ?? logicalId;
+    }
+
+    ability.document = "Item";
+    ability.crdType = "ability";
+    ability.flags = {
+      ...(ability.flags ?? {}),
+      cypherFoundry: {
+        ...(ability.flags?.cypherFoundry ?? {}),
+        crd: provenance
+      }
+    };
+
+    await fs.writeFile(file, JSON.stringify(ability, null, 2) + "\n");
+  }
+
+  return new Map(
+    (await Promise.all(
+      (await sourceFiles(`abilities-${language}`)).map(async file => {
+        const ability = JSON.parse(await fs.readFile(file, "utf8"));
+        return [
+          ability.system?.key,
+          ability.flags?.cypherFoundry?.crd
+        ];
+      })
+    )).filter(([key]) => key)
+  );
+}
+
 async function migrateLanguage(language, english) {
   const documents = await collectDocuments(language);
   const hasLegacyAbilities = documents.some(({ document }) =>
@@ -412,8 +488,13 @@ async function migrateLanguage(language, english) {
 
 export async function migrateAbilitySources() {
   const english = await collectEnglishRegistry();
-  await migrateLanguage("en", english);
-  await migrateLanguage("fr", english);
+  if (english.registry.size === 0) {
+    const englishProvenance = await enrichStandaloneSources("en", null);
+    await enrichStandaloneSources("fr", englishProvenance);
+  } else {
+    await migrateLanguage("en", english);
+    await migrateLanguage("fr", english);
+  }
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
