@@ -118,6 +118,7 @@ async function sourceFiles(pack) {
 }
 
 async function pruneAbilityArtifacts() {
+  const removedIds = new Set();
   for (const language of LANGUAGES) {
     for (const file of await sourceFiles(`abilities-${language}`)) {
       const document = JSON.parse(await fs.readFile(file, "utf8"));
@@ -128,7 +129,39 @@ async function pruneAbilityArtifacts() {
         document.system?.key?.endsWith("-gm-intrusions") ||
         document.name === "At higher tiers"
       ) {
+        removedIds.add(document._id);
         await fs.rm(file, { force: true });
+      }
+    }
+  }
+  return removedIds;
+}
+
+async function pruneAbilityReferences(removedIds) {
+  if (!removedIds.size) return;
+
+  for (const parent of PARENT_PACKS) {
+    for (const language of LANGUAGES) {
+      for (const file of await sourceFiles(`${parent}-${language}`)) {
+        const document = JSON.parse(await fs.readFile(file, "utf8"));
+        if (document._key?.startsWith("!folders!")) continue;
+
+        const abilities = document.system?.abilities ?? [];
+        const filtered = abilities.filter(uuid =>
+          !removedIds.has(typeof uuid === "string" ? uuid.split(".").at(-1) : null)
+        );
+        if (filtered.length !== abilities.length) {
+          document.system.abilities = filtered;
+          if (parent === "foci") {
+            const remaining = new Set(
+              filtered.map(uuid => uuid.split(".").at(-1))
+            );
+            document.system.flowchart?.edges = (
+              document.system.flowchart?.edges ?? []
+            ).filter(edge => remaining.has(edge.from) && remaining.has(edge.to));
+          }
+          await fs.writeFile(file, JSON.stringify(document, null, 2) + "\n");
+        }
       }
     }
   }
@@ -509,7 +542,8 @@ async function migrateLanguage(language, english) {
 }
 
 export async function migrateAbilitySources() {
-  await pruneAbilityArtifacts();
+  const removedAbilityIds = await pruneAbilityArtifacts();
+  await pruneAbilityReferences(removedAbilityIds);
   await mergeGenreAbilities();
   const english = await collectEnglishRegistry();
   await migrateLanguage("en", english);
