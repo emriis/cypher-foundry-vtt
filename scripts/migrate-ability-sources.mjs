@@ -72,7 +72,7 @@ function mechanicalShape(ability) {
   });
 }
 
-function isGmIntrusionEntry(ability) {
+function isEditorialArtifact(ability) {
   return /\bgm intrusions\b/i.test(String(ability.name ?? ""));
 }
 
@@ -138,7 +138,7 @@ async function collectEnglishRegistry() {
       if (document._key?.startsWith("!folders!")) continue;
 
       for (const ability of document.system?.abilities ?? []) {
-        if (!ability || typeof ability !== "object" || isGmIntrusionEntry(ability)) continue;
+        if (!ability || typeof ability !== "object" || isEditorialArtifact(ability)) continue;
         const id = identity(ability);
         const entryKey = `${id.key}:${id.signature}`;
         if (!registry.has(entryKey)) registry.set(entryKey, {
@@ -355,7 +355,7 @@ async function migrateLanguage(language, english) {
   const documents = await collectDocuments(language);
   const hasLegacyAbilities = documents.some(({ document }) =>
     (document.system?.abilities ?? []).some(
-      ability => ability && typeof ability === "object" && !isGmIntrusionEntry(ability)
+      ability => ability && typeof ability === "object" && !isEditorialArtifact(ability)
     )
   );
   if (!hasLegacyAbilities) {
@@ -367,7 +367,7 @@ async function migrateLanguage(language, english) {
 
   for (const { document } of documents) {
     for (const ability of document.system?.abilities ?? []) {
-      if (!ability || typeof ability !== "object" || isGmIntrusionEntry(ability)) continue;
+      if (!ability || typeof ability !== "object" || isEditorialArtifact(ability)) continue;
       const resolved = language === "fr"
         ? resolveFrenchEntry(ability, english)
         : {
