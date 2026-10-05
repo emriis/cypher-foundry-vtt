@@ -192,20 +192,10 @@ async function collectEnglishRegistry() {
     }
   };
 
-  for (const parent of PARENT_PACKS) {
-    for (const file of await sourceFiles(`${parent}-en`)) {
-      const document = JSON.parse(await fs.readFile(file, "utf8"));
-      if (document._key?.startsWith("!folders!")) continue;
-
-      for (const ability of document.system?.abilities ?? []) {
-        register(parent, document, ability);
-      }
-    }
-  }
-
-  // The standalone catalogue is part of the canonical Ability registry.
-  // This is required for abilities that are not referenced by a Type or
-  // Focus, and it also gives localized standalone records a stable target.
+  // The standalone catalogue is the canonical source for Ability identity.
+  // Register it before Type/Focus occurrences so localized records resolve to
+  // the canonical Ability Catalogue provenance rather than an incidental
+  // parent occurrence.
   for (const file of await sourceFiles("abilities-en")) {
     const document = JSON.parse(await fs.readFile(file, "utf8"));
     if (document._key?.startsWith("!folders!")) continue;
@@ -215,6 +205,19 @@ async function collectEnglishRegistry() {
       name: document.name,
       ...document.system
     });
+  }
+
+  // Type/Focus occurrences remain part of the registry so the catalogue
+  // covers every CRD ability, including abilities referenced only there.
+  for (const parent of PARENT_PACKS) {
+    for (const file of await sourceFiles(`${parent}-en`)) {
+      const document = JSON.parse(await fs.readFile(file, "utf8"));
+      if (document._key?.startsWith("!folders!")) continue;
+
+      for (const ability of document.system?.abilities ?? []) {
+        register(parent, document, ability);
+      }
+    }
   }
 
   const variants = new Map();
