@@ -192,10 +192,26 @@ for (const language of ["en", "fr"]) {
       assert.ok(provenance.sourceLocator);
       assert.ok(Array.isArray(provenance.transformations));
 
+      if (language === "en") {
+        assert.match(provenance.section, /^Ability Catalogue — /);
+        assert.match(provenance.sourceLocator, /^CRD — Ability: /);
+      }
+
       if (language === "fr") {
         assert.ok(
           englishLogicalIds.has(provenance.sourceLogicalId),
           provenance.sourceLogicalId
+        );
+        const english = [...readPackSources("abilities-en").values()]
+          .find(candidate =>
+            !isFolder(candidate) &&
+            candidate.flags?.cypherFoundry?.crd?.logicalId ===
+              provenance.sourceLogicalId
+          );
+        assert.equal(
+          document.system.key,
+          english?.system?.key,
+          document._id
         );
       }
     }
