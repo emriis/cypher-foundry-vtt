@@ -103,7 +103,7 @@ test("rollTask refunds Effort cost on a natural 20 and reports attack damage", a
   });
 
   assert.equal(result.damage, 8);
-  assert.equal(actor.system.stats.might.pool.value, 8);
+  assert.equal(actor.system.stats.might.pool.value, 9);
   assert.deepEqual(actor.updates, [
     { "system.stats.might.pool.value": 5 },
     { "system.stats.might.pool.value": 9 }
