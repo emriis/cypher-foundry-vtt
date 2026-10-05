@@ -741,7 +741,7 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
           const replacement = duplicateIds.get(id);
           if (!replacement) return uuid;
           changed = true;
-          return uuid.replace(/Item\\.[A-Za-z0-9]{16}$/, `Item.${replacement}`);
+          return uuid.replace(/Item\.[A-Za-z0-9]{16}$/, `Item.${replacement}`);
         });
         if (document.system.flowchart) {
           for (const edge of document.system.flowchart.edges ?? []) {
