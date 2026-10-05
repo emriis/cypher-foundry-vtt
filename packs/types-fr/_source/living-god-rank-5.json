@@ -44,7 +44,29 @@
       "might",
       "intellect"
     ],
-    "description": "<p>Literally a divine being and part of a divine pantheon (or this powerful for some other reason), you use your amazing abilities to end injustice and defeat evil. Whether you're a child of Mount Olympus, Asgard, or some other mythology; from a distant dimension or star; or the result of an experiment or process that bequeathed you unbelievable power, you've thrown in your lot with regular people, at least for now. What can't a living god do, or at least credibly attempt? Your presence on a team almost ensures its eventual success, assuming the foes you face aren't also gods.</p>"
+    "description": "<p>Literally a divine being and part of a divine pantheon (or this powerful for some other reason), you use your amazing abilities to end injustice and defeat evil. Whether you're a child of Mount Olympus, Asgard, or some other mythology; from a distant dimension or star; or the result of an experiment or process that bequeathed you unbelievable power, you've thrown in your lot with regular people, at least for now. What can't a living god do, or at least credibly attempt? Your presence on a team almost ensures its eventual success, assuming the foes you face aren't also gods.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.23f49ec426c57e57",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.c97fe8b1421fa31b",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.04f258a45f5ce7f9",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.405734090912bf27",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.1eac155981dbb2f9",
+        "tier": 1
+      }
+    ]
   },
   "folder": "rgUrIo08MxTkt23F",
   "sort": 0,
@@ -54,6 +76,24 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.living-god-rank-5",
+        "language": "fr",
+        "sourceKind": "record",
+        "sourceLogicalId": "type.living-god-rank-5",
+        "section": "Character Creation — Type — Dieu Vivant — Abilities",
+        "sourceLocator": "CRD — Type: living-god-rank-5",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "French localization paired to the canonical English Type",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }
