@@ -2868,6 +2868,144 @@
           "extracted as a standalone Ability Item"
         ]
       }
+    },
+    {
+      "logicalId": "ability.spellbreaker",
+      "name": "Spellbreaker",
+      "genre": "fantasy",
+      "tier": 6,
+      "key": "spellbreaker",
+      "system": {
+        "key": "spellbreaker",
+        "tier": 6,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>Spellbreaker (4+ Intellect) (Magic): You immediately end one ongoing magical</p>"
+      },
+      "sources": [
+        {
+          "genre": "fantasy",
+          "name": "Spellbreaker"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.spellbreaker",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Fantasy Genre Abilities",
+        "sourceLocator": "CRD — Spellbreaker",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.technology-expert",
+      "name": "Technology Expert",
+      "genre": "science-fiction",
+      "tier": 6,
+      "key": "technology-expert",
+      "system": {
+        "key": "technology-expert",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>Technology Expert: When you roll to use any kind of mechanical device (other</p>"
+      },
+      "sources": [
+        {
+          "genre": "science-fiction",
+          "name": "Technology Expert"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.technology-expert",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Science Fiction Genre Abilities",
+        "sourceLocator": "CRD — Technology Expert",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.telepathic-network",
+      "name": "Telepathic Network",
+      "genre": "science-fiction",
+      "tier": 6,
+      "key": "telepathic-network",
+      "system": {
+        "key": "telepathic-network",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>Telepathic Network (0+ Intellect): You create a telepathic network between</p>"
+      },
+      "sources": [
+        {
+          "genre": "science-fiction",
+          "name": "Telepathic Network"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.telepathic-network",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Science Fiction Genre Abilities",
+        "sourceLocator": "CRD — Telepathic Network",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
     }
   ]
 }
