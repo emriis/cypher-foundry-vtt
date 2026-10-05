@@ -384,5 +384,5 @@ test("rollTask consumes active Ability Edge modifiers", async () => {
   });
 
   assert.equal(result.success, true);
-  assert.equal(actor.system.stats.might.pool.value, 9);
+  assert.equal(actor.system.stats.might.pool.value, 8);
 });
