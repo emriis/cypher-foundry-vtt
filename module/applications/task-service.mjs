@@ -110,8 +110,11 @@ export async function rollTask(actor, {
     const skillItem = skillItemId ? actor.items.get(skillItemId) : null;
     const skillSteps = skillItem ? skillItem.system.stepModifier : 0;
 
-    const edge = statData.edge ?? 0;
+    const abilityEdge = actor.system.abilityModifiers?.edge?.[stat] ?? 0;
+    const abilityPoolMax = actor.system.abilityModifiers?.poolMax?.[stat] ?? 0;
+    const edge = (statData.edge ?? 0) + abilityEdge;
     const poolValue = statData.pool.value;
+    const poolMax = statData.pool.max + abilityPoolMax;
     const totalCost = computeEffortCost(effortLevels, edge);
 
     if (totalCost > poolValue) {
@@ -172,7 +175,7 @@ export async function rollTask(actor, {
 
     // A natural 20 refunds the action's point cost.
     if (refund && totalCost > 0) {
-      await actor.update({ [`${resolved.path}.pool.value`]: Math.min(statData.pool.max, poolValue) });
+      await actor.update({ [`${resolved.path}.pool.value`]: Math.min(poolMax, poolValue) });
     }
 
     const totalDamage = isAttack ? baseDamage + damageBonus : 0;
