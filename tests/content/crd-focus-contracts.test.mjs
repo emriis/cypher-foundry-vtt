@@ -187,33 +187,63 @@ test("CRD Focus references resolve to standalone Ability sources", () => {
   }
 });
 
-test("CRD Focus English and French references preserve the same logical graph", () => {
-  const english = new Map(
+test("CRD Focus English and French graphs preserve logical identity", () => {
+  const englishFoci = new Map(
     readPackSources("foci", "en").map(document => [
       document.flags.cypherFoundry.crd.logicalId,
       document
     ])
   );
-  const french = new Map(
+  const frenchFoci = new Map(
     readPackSources("foci", "fr").map(document => [
       document.flags.cypherFoundry.crd.sourceLogicalId,
       document
     ])
   );
+  const englishAbilities = new Map(
+    readPackSources("abilities", "en").map(document => [
+      document._id,
+      document
+    ])
+  );
+  const frenchAbilities = new Map(
+    readPackSources("abilities", "fr").map(document => [
+      document._id,
+      document
+    ])
+  );
 
-  for (const [logicalId, enFocus] of english) {
-    const frFocus = french.get(logicalId);
+  const normalizeGraph = (focus, abilities) => {
+    const logicalIds = new Map(
+      focus.system.abilities.map(abilityId).map(id => [
+        id,
+        abilities.get(id)?.flags?.cypherFoundry?.crd?.logicalId
+      ])
+    );
+
+    return {
+      abilities: [...logicalIds.values()].sort(),
+      edges: (focus.system.flowchart?.edges ?? [])
+        .map(edge => [
+          logicalIds.get(edge.from),
+          logicalIds.get(edge.to)
+        ])
+        .sort((left, right) =>
+          `${left[0]}->${left[1]}`.localeCompare(
+            `${right[0]}->${right[1]}`
+          )
+        )
+    };
+  };
+
+  for (const [logicalId, enFocus] of englishFoci) {
+    const frFocus = frenchFoci.get(logicalId);
     assert.ok(frFocus, logicalId);
 
     assert.deepEqual(
-      enFocus.system.flowchart.edges,
-      frFocus.system.flowchart.edges,
-      `${logicalId}: EN/FR flowchart mismatch`
-    );
-
-    assert.equal(
-      frFocus.flags.cypherFoundry.crd.sourceLogicalId,
-      logicalId
+      normalizeGraph(enFocus, englishAbilities),
+      normalizeGraph(frFocus, frenchAbilities),
+      `${logicalId}: EN/FR focus graph mismatch`
     );
   }
 });
