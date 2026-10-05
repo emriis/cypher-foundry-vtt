@@ -40,7 +40,11 @@ for (const language of ["en", "fr"]) {
       assert.equal(document.crdType, "ability");
       assert.equal(document.flags.cypherFoundry.crd.language, language);
       if (language === "fr") {
-        assert.equal(
+        assert.match(
+          document.flags.cypherFoundry.crd.sourceLogicalId,
+          /^ability\.[a-z0-9-]+(?:-[a-f0-9]{12})?$/
+        );
+        assert.notEqual(
           document.flags.cypherFoundry.crd.sourceLogicalId,
           document.flags.cypherFoundry.crd.logicalId
         );
