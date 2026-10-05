@@ -91,6 +91,7 @@ export function resolveTaskDifficulty(difficulty, steps) {
  *   gmIntrusion: boolean,
  *   damageBonus: number,
  *   effect: string|null,
+ *   effectOptions: string[],
  *   refundsCost: boolean
  * }}
  */
@@ -104,6 +105,7 @@ export function resolveSpecialRoll({
     gmIntrusion: d20 === 1,
     damageBonus: 0,
     effect: null,
+    effectOptions: [],
     refundsCost: d20 === 20 && success
   };
 
@@ -112,8 +114,11 @@ export function resolveSpecialRoll({
   if (isAttack && inflictsDamage) {
     if (d20 === 17) result.damageBonus = 1;
     else if (d20 === 18) result.damageBonus = 2;
-    else if (d20 === 19) result.damageBonus = 3;
-    else if (d20 === 20) result.damageBonus = 4;
+    else if (d20 === 19) {
+      result.effectOptions = ["damage", "minor"];
+    } else if (d20 === 20) {
+      result.effectOptions = ["damage", "major"];
+    }
   }
 
   if (d20 === 19 && !(isAttack && inflictsDamage)) {
