@@ -1,0 +1,32 @@
+{
+  "_id": "5f914f09systemso",
+  "_key": "!items!5f914f09systemso",
+  "document": "Item",
+  "name": "Systems operation",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You can operate a variety of different complex systems—including computers, robots, spacecraft drives, environmental systems, communication systems, scanning systems, and so on—to achieve their intended functions. This operation could extend to generating simple code for legitimate programming purposes.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.systems-operation",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.systems-operation"
+      }
+    }
+  }
+}
