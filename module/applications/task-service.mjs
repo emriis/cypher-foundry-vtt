@@ -10,6 +10,7 @@ import {
   clampEffortLevels,
   computeEffortCost,
   computeTaskSteps,
+  resolveAttackDamage,
   resolveSpecialRoll,
   resolveTaskDifficulty
 } from "../rules/tasks.mjs";
@@ -209,7 +210,9 @@ export async function rollTask(actor, {
       await actor.update({ [`${resolved.path}.pool.value`]: Math.min(poolMax, poolValue) });
     }
 
-    const totalDamage = isAttack ? baseDamage + damageBonus : 0;
+    const totalDamage = isAttack
+      ? resolveAttackDamage(success, baseDamage, damageBonus)
+      : 0;
 
     // A successful Block can transfer the whole wound to an equipped, unbroken shield
     // instead of reducing it by one step on the character.
