@@ -680,11 +680,11 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
   return abilityDir;
 }
 
-async function migrateLanguage(language, english, englishLogicalIds, diagnostics) {
+async function migrateLanguage(language, english, englishLogicalIds) {
   const documents = await collectDocuments(language);
   const hasLegacyAbilities = documents.some(({ document }) =>
     (document.system?.abilities ?? []).some(
-      ability => ability && typeof ability === "object" && !isAbilityParserArtifact(ability)
+      ability => ability && typeof ability === "object" && !isEditorialArtifact(ability)
     )
   );
   if (!hasLegacyAbilities) {
@@ -696,7 +696,7 @@ async function migrateLanguage(language, english, englishLogicalIds, diagnostics
 
   for (const { document } of documents) {
     for (const ability of document.system?.abilities ?? []) {
-      if (!ability || typeof ability !== "object" || isAbilityParserArtifact(ability)) continue;
+      if (!ability || typeof ability !== "object" || isEditorialArtifact(ability)) continue;
       const resolved = language === "fr"
         ? resolveFrenchEntry(ability, english)
         : {
