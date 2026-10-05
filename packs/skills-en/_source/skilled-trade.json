@@ -1,0 +1,31 @@
+{
+  "_id": "8575d31cskilledt",
+  "_key": "!items!8575d31cskilledt",
+  "document": "Item",
+  "name": "Skilled trade",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You’re experienced in one skilled trade, potentially allowing you to earn a wage as a carpenter, a bricklayer, a drywall installer, a plumber, a mechanic, a roofer, an electrician, or a similar trade, as appropriate for your setting.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.skilled-trade",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}
