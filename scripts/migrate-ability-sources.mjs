@@ -276,8 +276,8 @@ async function enrichStandaloneLanguage(language, english) {
         ...(document.flags?.cypherFoundry ?? {}),
         crd: provenance(
           language,
-          reference.parent,
-          reference.document,
+          sourceParent,
+          sourceDocument,
           { name: document.name },
           logicalId
         )
