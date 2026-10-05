@@ -34,5 +34,12 @@ jobs:
       - name: Run unit tests
         run: npm test
 
+      - name: Publish test summary
+        if: always()
+        run: |
+          echo "## Unit test diagnostics" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "The unit-test step uses Node's `spec` reporter so each failure includes the test name, assertion details, and stack trace directly in the Actions log." >> "$GITHUB_STEP_SUMMARY"
+
       - name: Audit public repository data
         run: npm run audit:public-data
