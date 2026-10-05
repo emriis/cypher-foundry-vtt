@@ -116,6 +116,8 @@ jobs:
         run: npm ci
       - name: Build compendium packs
         run: npm run build:packs
+      - name: Validate compiled compendium packs
+        run: node --test --test-reporter=spec tests/build/compendium-packs.test.mjs
       - name: Publish diagnostics
         if: always()
         run: |
