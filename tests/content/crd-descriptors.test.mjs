@@ -64,7 +64,9 @@ const SPECIES_DESCRIPTORS = [
   "orc",
   "prota",
   "rigellian",
-  "stela(n)"
+  "stela(n)",
+  "vendeer",
+  "zantari"
 ].map(value => value === "stela(n)" ? "stelan" : value).sort();
 
 function readSources(language, category) {
