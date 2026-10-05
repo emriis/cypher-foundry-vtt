@@ -36,7 +36,21 @@
       "might",
       "speed"
     ],
-    "description": "<p>You don't use weapons—you are a weapon. With powerful punches, kicks, and full-body moves, you inflict incredible damage on your foes. By focusing your energy (sometimes called chi, ki, or just “grit”), you magnify your power and speed. You probably gained your skills through intense training, fighting in real-world tournaments against your peers and betters, and, more recently, putting your unique skills to use in adventuring. Weaponless martial artists are both feared and revered, which means your role in your group is likely unique in one sense. However, you join any other frontline warriors on your team, using your weapons of hand, foot, knee, and elbow far more nimbly than someone swinging around a bulky slab of metal.</p>"
+    "description": "<p>You don't use weapons—you are a weapon. With powerful punches, kicks, and full-body moves, you inflict incredible damage on your foes. By focusing your energy (sometimes called chi, ki, or just “grit”), you magnify your power and speed. You probably gained your skills through intense training, fighting in real-world tournaments against your peers and betters, and, more recently, putting your unique skills to use in adventuring. Weaponless martial artists are both feared and revered, which means your role in your group is likely unique in one sense. However, you join any other frontline warriors on your team, using your weapons of hand, foot, knee, and elbow far more nimbly than someone swinging around a bulky slab of metal.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.3ec07c2cd347458d",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.1c4e7d98dd6b1494",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.b1e7865d7241c209",
+        "tier": 1
+      }
+    ]
   },
   "folder": "N6LoBZte2sRtJhu7",
   "sort": 0,
@@ -46,6 +60,24 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.monk",
+        "language": "fr",
+        "sourceKind": "record",
+        "sourceLogicalId": "type.monk",
+        "section": "Character Creation — Type — Moine — Abilities",
+        "sourceLocator": "CRD — Type: monk",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "French localization paired to the canonical English Type",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }
