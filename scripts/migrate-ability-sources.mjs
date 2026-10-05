@@ -327,12 +327,12 @@ async function enrichStandaloneLanguage(language, english) {
 
     document.document = "Item";
     document.crdType = "ability";
-    if (language === "fr" && match && !mechanicallyMatchesExceptAction(
-      standalone,
-      match.ability ?? match
-    )) {
-      document.system.action = match.ability?.action ??
+    if (language === "fr" && match) {
+      const canonicalAction = match.ability?.action ??
         inferAction(match.ability ?? match);
+      if (standalone.action !== canonicalAction) {
+        document.system.action = canonicalAction;
+      }
     }
 
     document.flags = {
