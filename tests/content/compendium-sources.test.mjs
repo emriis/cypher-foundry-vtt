@@ -6,10 +6,15 @@ import test from "node:test";
 import { validateCrdSourceRecord, getCrdLogicalId } from "../../module/crd/source-schema.mjs";
 
 const root = path.resolve(import.meta.dirname, "../..");
+const packSourceCache = new Map();
 
 function readPackSources(packName) {
+  if (packSourceCache.has(packName)) {
+    return packSourceCache.get(packName);
+  }
+
   const directory = path.join(root, "packs", packName, "_source");
-  return new Map(
+  const sources = new Map(
     fs.readdirSync(directory, { recursive: true })
       .filter(file => file.endsWith(".json"))
       .map(file => [
@@ -17,6 +22,9 @@ function readPackSources(packName) {
         JSON.parse(fs.readFileSync(path.join(directory, file), "utf8"))
       ])
   );
+
+  packSourceCache.set(packName, sources);
+  return sources;
 }
 
 function isFolder(document) {
