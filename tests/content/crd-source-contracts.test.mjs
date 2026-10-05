@@ -86,17 +86,31 @@ for (const [family, crdType] of CONTENT_PACKS) {
       ])
     );
 
-    assert.deepEqual([...fr.keys()].sort(), [...en.keys()].sort());
+    const englishByLogicalId = new Map(
+      [...en.values()].map(document => [
+        getCrdLogicalId(document),
+        document
+      ])
+    );
+    const frenchBySourceLogicalId = new Map(
+      [...fr.values()].map(document => {
+        const provenance = document.flags?.cypherFoundry?.crd;
+        return [provenance?.sourceLogicalId, document];
+      })
+    );
 
-    for (const [file, english] of en) {
-      const french = fr.get(file);
-      assert.ok(french, file);
+    assert.deepEqual(
+      [...frenchBySourceLogicalId.keys()].sort(),
+      [...englishByLogicalId.keys()].sort()
+    );
 
-      const englishId = getCrdLogicalId(english);
+    for (const [englishId] of englishByLogicalId) {
+      const french = frenchBySourceLogicalId.get(englishId);
+      assert.ok(french, englishId);
+
       const frenchProvenance = french.flags.cypherFoundry.crd;
-
-      assert.equal(frenchProvenance.sourceLogicalId, englishId, file);
-      assert.equal(frenchProvenance.logicalId, englishId, file);
+      assert.equal(frenchProvenance.sourceLogicalId, englishId);
+      assert.equal(frenchProvenance.logicalId, englishId);
     }
   });
 }
