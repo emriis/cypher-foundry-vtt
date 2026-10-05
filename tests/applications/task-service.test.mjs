@@ -387,3 +387,18 @@ test("rollTask consumes active Ability Edge modifiers", async () => {
   assert.equal(result.success, true);
   assert.equal(actor.system.stats.might.pool.value, 8);
 });
+
+test("failed attacks deal no damage", async () => {
+  setRollResult(1);
+  const actor = createActor({ pool: 10 });
+
+  const result = await CypherActor.prototype.rollTask.call(actor, {
+    stat: "might",
+    difficulty: 10,
+    isAttack: true,
+    baseDamage: 6
+  });
+
+  assert.equal(result.success, false);
+  assert.equal(result.damage, 0);
+});
