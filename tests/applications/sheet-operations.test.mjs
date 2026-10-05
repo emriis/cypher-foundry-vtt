@@ -200,3 +200,74 @@ test("chooseAbilityEffect activates a structured ongoing effect on its PC actor"
     effectId: "fury"
   }]);
 });
+
+
+test("chooseAbilityEffect charges a fixed structured Ability cost", async () => {
+  globalThis.foundry = {
+    applications: {
+      ux: {
+        TextEditor: {
+          implementation: {
+            enrichHTML: async value => value
+          }
+        }
+      }
+    }
+  };
+  globalThis.game = { i18n: { localize: value => value } };
+  globalThis.ChatMessage = {
+    getSpeaker: () => ({}),
+    create: async () => {}
+  };
+
+  const actor = {
+    type: "pc",
+    system: {
+      stats: {
+        might: { pool: { value: 8, max: 8 }, edge: 0 },
+        speed: { pool: { value: 8, max: 8 }, edge: 0 },
+        intellect: { pool: { value: 8, max: 8 }, edge: 0 }
+      },
+      activeAbilityEffects: []
+    },
+    async update(changes) {
+      this.system.stats.might.pool.value =
+        changes["system.stats.might.pool.value"] ??
+        this.system.stats.might.pool.value;
+    }
+  };
+
+  const item = {
+    type: "ability",
+    name: "Fury",
+    actor,
+    parent: actor,
+    uuid: "Actor.pc.Item.fury",
+    system: {
+      cost: {
+        stat: "might",
+        amount: 3,
+        options: [],
+        additionalEffort: false
+      },
+      effects: [{
+        id: "base",
+        name: "Fury",
+        description: "Your melee attacks inflict +2 damage.",
+        effort: "",
+        endConditions: [{
+          kind: "recovery",
+          interval: "tenMinutes",
+          minimum: true
+        }]
+      }]
+    }
+  };
+
+  assert.equal(await chooseAbilityEffect(item, "base"), true);
+  assert.equal(actor.system.stats.might.pool.value, 5);
+  assert.deepEqual(actor.system.activeAbilityEffects, [{
+    itemUuid: item.uuid,
+    effectId: "base"
+  }]);
+});
