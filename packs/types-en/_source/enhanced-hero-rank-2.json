@@ -42,7 +42,21 @@
       "might",
       "speed"
     ],
-    "description": "<p>You're more than human. Something made you that way—your abilities might be due to cutting-edge cybernetics; a freak accident, such as exposure to exotic energies or chemicals; an experimental serum or genetic therapy, unlocking latent potential or rewriting your very DNA; an alien artifact or mystical ancient relic; or something else. Whatever the source of your enhancement, your abilities allow you to perform feats that are impossible for normal people. Your abilities include those that lend themselves to combat, which means that a team-up with others usually has you among those taking the brunt of any hostilities, protecting allies whose enhancements aren't quite as fearsome as your own.</p>"
+    "description": "<p>You're more than human. Something made you that way—your abilities might be due to cutting-edge cybernetics; a freak accident, such as exposure to exotic energies or chemicals; an experimental serum or genetic therapy, unlocking latent potential or rewriting your very DNA; an alien artifact or mystical ancient relic; or something else. Whatever the source of your enhancement, your abilities allow you to perform feats that are impossible for normal people. Your abilities include those that lend themselves to combat, which means that a team-up with others usually has you among those taking the brunt of any hostilities, protecting allies whose enhancements aren't quite as fearsome as your own.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.6b5d5be3e84d0341",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.70a6f61c6c81a3a6",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.d944940ce90d0bb1",
+        "tier": 1
+      }
+    ]
   },
   "folder": "jyQmvn0EhqJ84yoX",
   "sort": 0,
@@ -52,6 +66,22 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.enhanced-hero-rank-2",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Type — Enhanced Hero (Rank 2) — Abilities",
+        "sourceLocator": "CRD — Type: Enhanced Hero (Rank 2)",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }
