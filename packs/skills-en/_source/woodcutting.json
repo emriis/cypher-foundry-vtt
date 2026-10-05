@@ -1,0 +1,31 @@
+{
+  "_id": "1a81bca4woodcutt",
+  "_key": "!items!1a81bca4woodcutt",
+  "document": "Item",
+  "name": "Woodcutting",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You’re adept at felling trees, splitting logs, and preparing timber for fuel, construction, and other uses. (Woodcutting is usually an option in any setting except modern real world and science fiction. Someone interested in woodcutting in a sci-fi setting might choose systems operation, allowing them to direct automated woodcutting machinery.)</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.woodcutting",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}
