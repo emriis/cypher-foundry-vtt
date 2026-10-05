@@ -53,3 +53,29 @@ test("unsupported Ability modifiers do not create runtime changes", () => {
     intellect: 0
   });
 });
+
+test("active Ability modifiers aggregate Pool maxima and wound capacity", () => {
+  const modifiers = resolveActiveAbilityModifiers(
+    [
+      { itemUuid: "Actor.pc.Item.guardian", effectId: "base" },
+      { itemUuid: "Actor.pc.Item.guardian", effectId: "base" }
+    ],
+    [{
+      uuid: "Actor.pc.Item.guardian",
+      type: "ability",
+      system: {
+        effects: [{
+          id: "base",
+          modifiers: [
+            { kind: "poolMax", stat: "might", amount: 2 },
+            { kind: "woundCapacity", severity: "minor", amount: 1 }
+          ]
+        }]
+      }
+    }]
+  );
+
+  assert.equal(modifiers.poolMax.might, 4);
+  assert.equal(modifiers.woundCapacity.minor, 2);
+  assert.equal(modifiers.poolMax.speed, 0);
+});
