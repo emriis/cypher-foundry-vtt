@@ -92,6 +92,30 @@
       "flags": {}
     },
     {
+      "name": "skills-fr",
+      "label": "Compétences (FR)",
+      "path": "packs/skills-fr",
+      "type": "Item",
+      "system": "cypher",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "skills-en",
+      "label": "Skills (EN)",
+      "path": "packs/skills-en",
+      "type": "Item",
+      "system": "cypher",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
       "name": "descriptors-fr",
       "label": "Descripteurs (FR)",
       "path": "packs/descriptors-fr",
@@ -194,6 +218,7 @@
       "sorting": "a",
       "packs": [
         "abilities-fr",
+        "skills-fr",
         "descriptors-fr",
         "types-fr",
         "foci-fr",
@@ -205,6 +230,7 @@
       "sorting": "a",
       "packs": [
         "abilities-en",
+        "skills-en",
         "descriptors-en",
         "types-en",
         "foci-en",
