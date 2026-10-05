@@ -57,6 +57,14 @@ function stripEditorial(value) {
   );
 }
 
+function mechanicalEffectShape(effect) {
+  return {
+    id: effect.id ?? "",
+    effort: effect.effort ?? "",
+    rollTables: effect.rollTables ?? []
+  };
+}
+
 function mechanicalShape(ability) {
   return stripEditorial({
     tier: ability.tier,
@@ -70,7 +78,7 @@ function mechanicalShape(ability) {
     freeWeaponSkillCategories: ability.freeWeaponSkillCategories ?? [],
     chooseWeaponAttackCategory: Boolean(ability.chooseWeaponAttackCategory),
     grantedArmorItemCategory: ability.grantedArmorItemCategory ?? "",
-    effects: ability.effects ?? [],
+    effects: (ability.effects ?? []).map(mechanicalEffectShape),
     rollTables: ability.rollTables ?? []
   });
 }
