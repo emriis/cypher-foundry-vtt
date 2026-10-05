@@ -42,7 +42,21 @@
       "might",
       "intellect"
     ],
-    "description": "<p>You were manufactured, not born. Some might say that makes you superior to living people, especially those born without the benefit of strict genetic oversight. And even people who have used genetic engineering lack your ability to upgrade yourself as needed to deal with new situations, new jobs, and wherever your curiosity might lead. Your integument and frame are tougher than skin and bones, and you have a way with other machines that most living things never will. As adaptable as you are, you can take multiple different roles on your team over time, including serving as a frontline combatant. You're equally useful in other situations, especially when interfacing with nearby machines. But even that pales in comparison to your android capacity to dump old skills and take on new training in something important to an emerging situation or upcoming mission.</p>"
+    "description": "<p>You were manufactured, not born. Some might say that makes you superior to living people, especially those born without the benefit of strict genetic oversight. And even people who have used genetic engineering lack your ability to upgrade yourself as needed to deal with new situations, new jobs, and wherever your curiosity might lead. Your integument and frame are tougher than skin and bones, and you have a way with other machines that most living things never will. As adaptable as you are, you can take multiple different roles on your team over time, including serving as a frontline combatant. You're equally useful in other situations, especially when interfacing with nearby machines. But even that pales in comparison to your android capacity to dump old skills and take on new training in something important to an emerging situation or upcoming mission.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.a5f83219315516ef",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.50ba1d25e229dbc5",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.687a33128e58d142",
+        "tier": 1
+      }
+    ]
   },
   "folder": "AxljvbOd6vL9wkut",
   "sort": 0,
@@ -52,6 +66,22 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.android",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Type — Android — Abilities",
+        "sourceLocator": "CRD — Type: Android",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }
