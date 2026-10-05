@@ -39,7 +39,21 @@
       "speed",
       "intellect"
     ],
-    "description": "<p>Tu es un·e artiste : chanteur·euse, danseur·euse, poète, conteur·euse ou quelque chose de similaire. Naturellement charismatique et talentueux·se, ta persévérance et ton étude n’ont fait qu’affiner ton art. Tu connais de vieux poèmes, chansons, histoires et plaisanteries, et tu es tout aussi habile à en créer de nouveaux. Ta nature apparemment bienveillante met les autres à l’aise, et tes performances remontent le moral, allègent les fardeaux mentaux et peuvent même inspirer. La plupart des membres de ton groupe comptent probablement sur toi pour obtenir de l’aide, des conseils ou, à défaut, une prestation entraînante capable de raviver leur courage. Ces mêmes talents se révèlent précieux lorsque votre équipe tente la diplomatie. Que tu t’appuies sur la vérité ou que tu tentes une duperie, ta capacité à flatter, sourire et ravir les autres peut ouvrir des portes que ni les épées ni les sorts ne peuvent forcer.</p>"
+    "description": "<p>Tu es un·e artiste : chanteur·euse, danseur·euse, poète, conteur·euse ou quelque chose de similaire. Naturellement charismatique et talentueux·se, ta persévérance et ton étude n’ont fait qu’affiner ton art. Tu connais de vieux poèmes, chansons, histoires et plaisanteries, et tu es tout aussi habile à en créer de nouveaux. Ta nature apparemment bienveillante met les autres à l’aise, et tes performances remontent le moral, allègent les fardeaux mentaux et peuvent même inspirer. La plupart des membres de ton groupe comptent probablement sur toi pour obtenir de l’aide, des conseils ou, à défaut, une prestation entraînante capable de raviver leur courage. Ces mêmes talents se révèlent précieux lorsque votre équipe tente la diplomatie. Que tu t’appuies sur la vérité ou que tu tentes une duperie, ta capacité à flatter, sourire et ravir les autres peut ouvrir des portes que ni les épées ni les sorts ne peuvent forcer.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.1fa91792afec15b3",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.7eda85805fdfea22",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.c2e2b2be534aa1ed",
+        "tier": 1
+      }
+    ]
   },
   "folder": "N6LoBZte2sRtJhu7",
   "sort": 0,
@@ -49,6 +63,24 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.bard",
+        "language": "fr",
+        "sourceKind": "record",
+        "sourceLogicalId": "type.bard",
+        "section": "Character Creation — Type — Barde — Abilities",
+        "sourceLocator": "CRD — Type: bard",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "French localization paired to the canonical English Type",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }
