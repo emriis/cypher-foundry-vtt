@@ -293,6 +293,53 @@ async function normalizeDescriptorSources() {
   }
 }
 
+async function normalizeTypeSources() {
+  for (const language of LANGUAGES) {
+    const directory = path.join(
+      root,
+      "packs",
+      `types-${language}`,
+      "_source"
+    );
+
+    for (const file of await fs.readdir(directory)) {
+      if (!file.endsWith(".json")) continue;
+
+      const filePath = path.join(directory, file);
+      const document = JSON.parse(await fs.readFile(filePath, "utf8"));
+      if (document._key?.startsWith("!folders!")) continue;
+
+      const logicalId = `type.${slug(path.basename(file, ".json"))}`;
+      document.document = "Item";
+      document.crdType = "type";
+      document.flags = {
+        ...(document.flags ?? {}),
+        cypherFoundry: {
+          ...(document.flags?.cypherFoundry ?? {}),
+          crd: {
+            version: CRD_VERSION,
+            logicalId,
+            language,
+            sourceKind: "record",
+            section: `Character Creation — Type — ${document.name}`,
+            sourceLocator: `CRD — Type: ${document.name}`,
+            transformations: [
+              "mechanical fields extracted from the CRD",
+              "Type source retained as a structured Foundry Item"
+            ],
+            ...(language === "fr" ? { sourceLogicalId: logicalId } : {})
+          }
+        }
+      };
+
+      await fs.writeFile(
+        filePath,
+        JSON.stringify(document, null, 2) + "\n"
+      );
+    }
+  }
+}
+
 async function normalizeFocusSources() {
   for (const language of LANGUAGES) {
     const directory = path.join(
@@ -1031,6 +1078,7 @@ export async function migrateAbilitySources() {
   const finalRemovedAbilityIds = await pruneAbilityArtifacts();
   await pruneAbilityReferences(finalRemovedAbilityIds);
   await normalizeDescriptorSources();
+  await normalizeTypeSources();
   await normalizeFocusSources();
 }
 
