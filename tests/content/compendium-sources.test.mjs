@@ -63,7 +63,7 @@ for (const language of ["en", "fr"]) {
     for (const [filename, document] of sources) {
       if (isFolder(document)) continue;
       assert.equal(document.type, "ability");
-      assert.doesNotMatch(document.name, /\\bGM intrusions\\b/i);
+      assert.doesNotMatch(document.name, /\bGM intrusions\b/i);
       assert.notEqual(document.name, "At higher tiers");
       assert.match(document._id, /^[A-Za-z0-9]{16}$/);
       assert.match(document._key, /^!items![A-Za-z0-9]{16}$/);
@@ -237,6 +237,87 @@ test("Type and Focus ability references resolve to standalone Ability sources", 
       for (const uuid of document.system.abilities) {
         const id = uuid.split(".").at(-1);
         assert.ok(abilityIds.has(id), `${filename}/${id}`);
+      }
+    }
+  }
+});
+
+test("CRD Genre Ability manifest preserves structured mechanics", () => {
+  const manifest = JSON.parse(
+    fs.readFileSync(
+      path.join(root, "data", "crd-genre-abilities.json"),
+      "utf8"
+    )
+  );
+
+  const genres = new Set(["fantasy", "science-fiction", "superhero"]);
+  for (const record of manifest.records) {
+    assert.ok(genres.has(record.genre), record.logicalId);
+    assert.equal(record.key, record.system.key, record.logicalId);
+    assert.equal(record.tier, record.system.tier, record.logicalId);
+    if (record.system.enabler) {
+      assert.equal(record.system.action, null, record.logicalId);
+    }
+    assert.ok(record.system.cost);
+    assert.ok(Array.isArray(record.system.cost.options));
+    assert.ok(Array.isArray(record.system.effects));
+    assert.ok(Array.isArray(record.system.rollTables));
+    assert.ok(record.provenance);
+    assert.equal(record.provenance.language, "en");
+    assert.equal(record.provenance.sourceKind, "section");
+    assert.ok(
+      [
+        "Fantasy Genre Abilities",
+        "Science Fiction Genre Abilities",
+        "Origin Superhero Abilities"
+      ].includes(record.provenance.section),
+      record.logicalId
+    );
+    assert.match(record.provenance.sourceLocator, /^CRD — /);
+  }
+});
+test("CRD Genre Ability manifest is fully materialized in both languages", () => {
+  const manifest = JSON.parse(
+    fs.readFileSync(
+      path.join(root, "data", "crd-genre-abilities.json"),
+      "utf8"
+    )
+  );
+
+  assert.equal(manifest.version, "2026-07-29");
+  assert.ok(manifest.records.length >= 60);
+
+  const logicalIds = new Set(
+    manifest.records.map(record => record.logicalId)
+  );
+  assert.equal(logicalIds.size, manifest.records.length);
+
+  for (const record of manifest.records) {
+    assert.match(record.logicalId, /^ability\.[a-z0-9-]+$/);
+    assert.ok(record.system.description);
+    assert.ok(record.provenance);
+    assert.equal(record.provenance.logicalId, record.logicalId);
+  }
+
+  for (const language of ["en", "fr"]) {
+    const sources = [...readPackSources(`abilities-${language}`).values()]
+      .filter(document => !isFolder(document));
+    const byLogicalId = new Map(
+      sources.map(document => [
+        document.flags?.cypherFoundry?.crd?.logicalId,
+        document
+      ])
+    );
+
+    for (const record of manifest.records) {
+      const document = byLogicalId.get(record.logicalId);
+      assert.ok(document, `${language}/${record.logicalId}`);
+      assert.equal(document.crdType, "ability");
+      if (language === "fr") {
+        assert.equal(
+          document.flags.cypherFoundry.crd.sourceLogicalId,
+          record.logicalId
+        );
       }
     }
   }
