@@ -259,7 +259,6 @@ async function mergeGenreAbilities() {
 
   const records = manifest.records ?? [];
   const existing = new Map();
-  const englishReferences = await collectReferenceProvenance("en");
 
   for (const file of await sourceFiles("abilities-en")) {
     const document = JSON.parse(await fs.readFile(file, "utf8"));
@@ -315,10 +314,7 @@ async function mergeGenreAbilities() {
       continue;
     }
 
-    if (
-      !current.document.flags?.cypherFoundry?.crd &&
-      !englishReferences.has(current.document._id)
-    ) {
+    if (!current.document.flags?.cypherFoundry?.crd) {
       current.document.document = "Item";
       current.document.crdType = "ability";
       current.document.flags = {
@@ -346,6 +342,56 @@ async function mergeGenreAbilities() {
       await fs.access(frFile);
     } catch {
       await writeRecord("fr", record);
+    }
+  }
+}
+
+async function pruneAbilityArtifacts() {
+  const removedIds = new Set();
+
+  for (const language of LANGUAGES) {
+    for (const file of await sourceFiles(`abilities-${language}`)) {
+      const document = JSON.parse(await fs.readFile(file, "utf8"));
+      if (document._key?.startsWith("!folders!")) continue;
+      if (isEditorialArtifact(document)) {
+        removedIds.add(document._id);
+        EDITORIAL_ARTIFACT_IDS.add(document._id);
+        await fs.rm(file, { force: true });
+      }
+    }
+  }
+
+  return removedIds;
+}
+
+async function pruneAbilityReferences(removedIds) {
+  if (!removedIds.size) return;
+
+  for (const parent of PARENT_PACKS) {
+    for (const language of LANGUAGES) {
+      for (const file of await sourceFiles(`${parent}-${language}`)) {
+        const document = JSON.parse(await fs.readFile(file, "utf8"));
+        if (document._key?.startsWith("!folders!")) continue;
+
+        const abilities = document.system?.abilities ?? [];
+        const filtered = abilities.filter(uuid =>
+          !removedIds.has(
+            typeof uuid === "string" ? uuid.split(".").at(-1) : null
+          )
+        );
+        if (filtered.length === abilities.length) continue;
+
+        document.system.abilities = filtered;
+        if (parent === "foci" && document.system.flowchart) {
+          const remaining = new Set(
+            filtered.map(uuid => uuid.split(".").at(-1))
+          );
+          document.system.flowchart.edges = (
+            document.system.flowchart.edges ?? []
+          ).filter(edge => remaining.has(edge.from) && remaining.has(edge.to));
+        }
+        await fs.writeFile(file, JSON.stringify(document, null, 2) + "\n");
+      }
     }
   }
 }
@@ -634,7 +680,7 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
   return abilityDir;
 }
 
-async function migrateLanguage(language, english, englishLogicalIds) {
+async function migrateLanguage(language, english, englishLogicalIds, diagnostics) {
   const documents = await collectDocuments(language);
   const hasLegacyAbilities = documents.some(({ document }) =>
     (document.system?.abilities ?? []).some(
