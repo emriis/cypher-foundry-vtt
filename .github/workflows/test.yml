@@ -36,6 +36,27 @@ jobs:
           echo "Command: `npm run test:unit`" >> "$GITHUB_STEP_SUMMARY"
           echo "Failures are reported independently by Node's spec reporter." >> "$GITHUB_STEP_SUMMARY"
 
+  behavior:
+    name: BDD behavior tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Run behavior tests
+        run: npm run test:behavior
+      - name: Publish diagnostics
+        if: always()
+        run: |
+          echo "## BDD behavior tests" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Command: `npm run test:behavior`" >> "$GITHUB_STEP_SUMMARY"
+          echo "Gameplay behavior failures are isolated from low-level rule tests." >> "$GITHUB_STEP_SUMMARY"
+
   content:
     name: Content contract tests
     runs-on: ubuntu-latest
@@ -129,6 +150,7 @@ jobs:
     if: always()
     needs:
       - unit
+      - behavior
       - content
       - integration
       - build
@@ -142,12 +164,18 @@ jobs:
           echo "| Check | Result |" >> "$GITHUB_STEP_SUMMARY"
           echo "| --- | --- |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Unit and document tests | ${{ needs.unit.result }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| BDD behavior tests | ${{ needs.behavior.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Content contracts | ${{ needs.content.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Integration and architecture | ${{ needs.integration.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Compendium build | ${{ needs.build.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Repository checks | ${{ needs.repository.result }} |" >> "$GITHUB_STEP_SUMMARY"
 
-          if [ "${{ needs.unit.result }}" != "success" ] ||              [ "${{ needs.content.result }}" != "success" ] ||              [ "${{ needs.integration.result }}" != "success" ] ||              [ "${{ needs.build.result }}" != "success" ] ||              [ "${{ needs.repository.result }}" != "success" ]; then
+          if [ "${{ needs.unit.result }}" != "success" ] || \
+             [ "${{ needs.behavior.result }}" != "success" ] || \
+             [ "${{ needs.content.result }}" != "success" ] || \
+             [ "${{ needs.integration.result }}" != "success" ] || \
+             [ "${{ needs.build.result }}" != "success" ] || \
+             [ "${{ needs.repository.result }}" != "success" ]; then
             echo "" >> "$GITHUB_STEP_SUMMARY"
             echo "One or more CI categories failed. Inspect the corresponding job above; failures are intentionally reported independently." >> "$GITHUB_STEP_SUMMARY"
             exit 1
