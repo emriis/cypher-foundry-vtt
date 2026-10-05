@@ -22,6 +22,7 @@ test("activating an Ability effect stores actor-owned runtime state", async () =
   const item = {
     type: "ability",
     uuid: "Actor.pc.Item.ability",
+    parent: actor,
     system: {
       effects: [{
         id: "fury",
@@ -41,6 +42,28 @@ test("activating an Ability effect stores actor-owned runtime state", async () =
     effectId: "fury"
   }]);
   assert.equal(await activateAbilityEffect(actor, item, "fury"), false);
+});
+
+
+test("activation rejects an Ability Item not owned by the actor", async () => {
+  const actor = {
+    type: "pc",
+    system: { activeAbilityEffects: [] },
+    async update() {
+      assert.fail("Unowned Ability must not update the actor");
+    }
+  };
+
+  const item = {
+    type: "ability",
+    uuid: "Item.unowned",
+    parent: null,
+    system: {
+      effects: [{ id: "effect", endConditions: [] }]
+    }
+  };
+
+  assert.equal(await activateAbilityEffect(actor, item, "effect"), false);
 });
 
 test("deactivation removes only the requested runtime effect", async () => {
@@ -140,6 +163,32 @@ test("a shorter recovery does not expire a minimum condition", async () => {
     await expireAbilityEffectsOnRecovery(actor, "action"),
     0
   );
+});
+
+
+test("missing Ability references remain in runtime state during recovery", async () => {
+  globalThis.fromUuid = async () => null;
+
+  const actor = {
+    type: "pc",
+    system: {
+      activeAbilityEffects: [
+        { itemUuid: "Actor.pc.Item.missing", effectId: "effect" }
+      ]
+    },
+    async update() {
+      assert.fail("A missing source reference must not be removed implicitly");
+    }
+  };
+
+  assert.equal(
+    await expireAbilityEffectsOnRecovery(actor, "hour"),
+    0
+  );
+  assert.deepEqual(actor.system.activeAbilityEffects, [{
+    itemUuid: "Actor.pc.Item.missing",
+    effectId: "effect"
+  }]);
 });
 
 test("effects without a recovery end condition remain active", async () => {
