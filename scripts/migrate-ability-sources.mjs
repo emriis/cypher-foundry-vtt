@@ -220,8 +220,20 @@ async function collectEnglishRegistry() {
     }
   }
 
+  // Logical-ID variants are determined by the canonical standalone
+  // catalogue. Type/Focus occurrences must not create artificial variants
+  // merely because their embedded action metadata differs.
+  const standaloneKeys = new Set();
   const variants = new Map();
+
   for (const entry of registry.values()) {
+    if (entry.parent !== "abilities") continue;
+    standaloneKeys.add(entry.key);
+    variants.set(entry.key, (variants.get(entry.key) ?? 0) + 1);
+  }
+
+  for (const entry of registry.values()) {
+    if (standaloneKeys.has(entry.key)) continue;
     variants.set(entry.key, (variants.get(entry.key) ?? 0) + 1);
   }
 
