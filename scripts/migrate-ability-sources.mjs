@@ -256,6 +256,8 @@ async function enrichStandaloneLanguage(language, english) {
     const match = language === "fr"
       ? resolveFrenchEntry(standalone, english).entry
       : english.registry.get(`${id.key}:${id.signature}`);
+    const logicalId = match?.logicalId ??
+      buildLogicalId(
         id.key,
         id.signature,
         keyVariantCounts.get(id.key) ?? 1
@@ -284,6 +286,7 @@ async function enrichStandaloneLanguage(language, english) {
             ? { sourceLogicalId: match.logicalId }
             : {})
         }
+      }
     };
 
     await fs.writeFile(file, JSON.stringify(document, null, 2) + "\n");
