@@ -288,7 +288,8 @@ export const CRD_TIERED_ABILITY_FIXTURE = item(
           "You brew a potion. You can choose its effect from the " +
           "Low-Power Manifest Cyphers table. Your brewed potion cypher " +
           "counts toward your cypher limit.",
-        effort: ""
+        effort: "",
+        endConditions: []
       },
       {
         id: "tier-3",
@@ -297,7 +298,8 @@ export const CRD_TIERED_ABILITY_FIXTURE = item(
         description:
           "You can choose a low or medium-power manifest cypher as " +
           "your brewed potion.",
-        effort: ""
+        effort: "",
+        endConditions: []
       },
       {
         id: "tier-6",
@@ -306,7 +308,8 @@ export const CRD_TIERED_ABILITY_FIXTURE = item(
         description:
           "You can choose a low, medium-, or advanced-power manifest " +
           "cypher as your brewed potion.",
-        effort: ""
+        effort: "",
+        endConditions: []
       }
     ],
     rollTables: [],
