@@ -6,7 +6,9 @@ import {
   clampEffortLevels,
   computeEffortCost,
   computeTaskSteps,
-  resolveTaskDifficulty
+  resolveSpecialRoll,
+  resolveTaskDifficulty,
+  canRetryTask
 } from "../../module/rules/tasks.mjs";
 
 test("computeEffortCost charges the first level, additional levels, and Edge once", () => {
@@ -60,4 +62,79 @@ test("resolveTaskDifficulty never produces a negative difficulty", () => {
     effectiveDifficulty: 0,
     targetNumber: 0
   });
+});
+
+
+test("resolveSpecialRoll applies CRD special results only when the task succeeds", () => {
+  assert.deepEqual(resolveSpecialRoll({ d20: 1, success: false }), {
+    gmIntrusion: true,
+    damageBonus: 0,
+    effect: null,
+    refundsCost: false
+  });
+  assert.deepEqual(resolveSpecialRoll({
+    d20: 17,
+    success: true,
+    isAttack: true,
+    inflictsDamage: true
+  }), {
+    gmIntrusion: false,
+    damageBonus: 1,
+    effect: null,
+    refundsCost: false
+  });
+  assert.deepEqual(resolveSpecialRoll({
+    d20: 19,
+    success: true,
+    isAttack: true,
+    inflictsDamage: true
+  }), {
+    gmIntrusion: false,
+    damageBonus: 3,
+    effect: null,
+    refundsCost: false
+  });
+  assert.deepEqual(resolveSpecialRoll({
+    d20: 19,
+    success: true,
+    isAttack: false
+  }), {
+    gmIntrusion: false,
+    damageBonus: 0,
+    effect: "minor",
+    refundsCost: false
+  });
+  assert.deepEqual(resolveSpecialRoll({
+    d20: 20,
+    success: true,
+    isAttack: true,
+    inflictsDamage: false
+  }), {
+    gmIntrusion: false,
+    damageBonus: 0,
+    effect: "major",
+    refundsCost: true
+  });
+  assert.deepEqual(resolveSpecialRoll({
+    d20: 20,
+    success: false,
+    isAttack: true,
+    inflictsDamage: true
+  }), {
+    gmIntrusion: false,
+    damageBonus: 0,
+    effect: null,
+    refundsCost: false
+  });
+});
+
+test("canRetryTask enforces the CRD retry boundary", () => {
+  assert.equal(canRetryTask({ failed: true, effortLevels: 1 }), true);
+  assert.equal(canRetryTask({ failed: true, effortLevels: 0 }), false);
+  assert.equal(canRetryTask({
+    failed: true,
+    isAttack: true,
+    effortLevels: 1
+  }), false);
+  assert.equal(canRetryTask({ failed: false, effortLevels: 1 }), false);
 });
