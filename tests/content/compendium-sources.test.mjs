@@ -200,7 +200,11 @@ for (const language of ["en", "fr"]) {
       if (language === "fr") {
         assert.ok(
           englishLogicalIds.has(provenance.sourceLogicalId),
-          provenance.sourceLogicalId
+          document._id + "/" + document.name + ": " +
+            provenance.sourceLogicalId + "; English IDs: " +
+            [...englishLogicalIds]
+              .filter(id => id.includes("sense-magic"))
+              .join(", ")
         );
         const english = [...readPackSources("abilities-en").values()]
           .find(candidate =>
