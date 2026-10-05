@@ -515,11 +515,12 @@ A documented genuine source/model limitation may be an explicit exception.
 
 ### W3 — Complete Foci
 
-- [ ] Inventory all Foci
+- [x] Inventory all Foci
 - [ ] Rebuild Ability references
 - [ ] Validate flowchart structure and tier progression
 - [ ] Complete EN/FR pairing and provenance
-- [ ] Add fidelity and contract tests
+- [x] Add structural inventory and reference contracts
+- [ ] Add CRD fidelity tests
 
 ### W4 — Equipment foundations
 
