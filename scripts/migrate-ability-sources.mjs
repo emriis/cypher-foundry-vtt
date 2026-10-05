@@ -16,6 +16,7 @@ import { pathToFileURL } from "node:url";
 const root = path.resolve(import.meta.dirname, "..");
 const LANGUAGES = ["en", "fr"];
 const PARENT_PACKS = ["types", "foci"];
+const CRD_VERSION = "2026-07-29";
 
 function hash(value) {
   return crypto.createHash("sha256").update(value).digest("hex");
@@ -71,10 +72,36 @@ function mechanicalShape(ability) {
   });
 }
 
+function isGmIntrusionEntry(ability) {
+  return /\\bgm intrusions\\b/i.test(String(ability.name ?? ""));
+}
+
 function identity(ability) {
   const key = slug(ability.id || ability.name);
   const signature = hash(JSON.stringify(mechanicalShape(ability)));
-  return { key, signature, id: hash(`${key}\0${signature}`).slice(0, 16) };
+  return { key, signature, id: hash(`${key}\\0${signature}`).slice(0, 16) };
+}
+
+function buildLogicalId(key, signature, variants) {
+  const suffix = variants > 1 ? `-${signature.slice(0, 12)}` : "";
+  return `ability.${key}${suffix}`;
+}
+
+function provenance(language, parent, document, ability, logicalId) {
+  const parentLabel = parent === "types" ? "Type" : "Focus";
+  return {
+    version: CRD_VERSION,
+    logicalId,
+    language,
+    sourceKind: "record",
+    section: `Character Creation — ${parentLabel} — ${document.name} — Abilities`,
+    sourceLocator: `CRD — ${parentLabel}: ${document.name} — Ability: ${ability.name}`,
+    transformations: [
+      "mechanical fields extracted from the CRD",
+      "source occurrence converted to a standalone Ability Item"
+    ],
+    ...(language === "fr" ? { sourceLogicalId: logicalId } : {})
+  };
 }
 
 async function sourceFiles(pack) {
@@ -94,10 +121,16 @@ async function collectEnglishRegistry() {
       if (document._key?.startsWith("!folders!")) continue;
 
       for (const ability of document.system?.abilities ?? []) {
-        if (!ability || typeof ability !== "object") continue;
+        if (!ability || typeof ability !== "object" || isGmIntrusionEntry(ability)) continue;
         const id = identity(ability);
         const entryKey = `${id.key}:${id.signature}`;
-        if (!registry.has(entryKey)) registry.set(entryKey, { ...id, ability });
+        if (!registry.has(entryKey)) registry.set(entryKey, {
+          ...id,
+          ability,
+          parent,
+          document,
+          provenance: null
+        });
 
         const entries = byKey.get(id.key) ?? [];
         if (!entries.some(entry => entry.signature === id.signature)) {
@@ -106,6 +139,15 @@ async function collectEnglishRegistry() {
         }
       }
     }
+  }
+
+  const variants = new Map();
+  for (const entry of registry.values()) {
+    variants.set(entry.key, (variants.get(entry.key) ?? 0) + 1);
+  }
+  for (const entry of registry.values()) {
+    entry.logicalId = buildLogicalId(entry.key, entry.signature, variants.get(entry.key));
+    entry.provenance = provenance("en", entry.parent, entry.document, entry.ability, entry.logicalId);
   }
 
   return { registry, byKey };
@@ -179,12 +221,17 @@ async function migrateLanguage(language, english) {
   for (const entry of registry.values()) {
     const ability = entry.localizedAbility;
     const canonical = entry.ability;
+    const localizedProvenance = language === "fr"
+      ? { ...entry.provenance, language: "fr", sourceLogicalId: entry.logicalId }
+      : entry.provenance;
     const document = {
       _id: entry.id,
       _key: `!items!${entry.id}`,
+      document: "Item",
       name: ability.name,
       type: "ability",
       img: "icons/svg/upgrade.svg",
+      crdType: "ability",
       system: {
         key: entry.key,
         tier: canonical.tier,
@@ -201,6 +248,11 @@ async function migrateLanguage(language, english) {
         effects: canonical.effects ?? [],
         rollTables: canonical.rollTables ?? [],
         description: ability.description ?? canonical.description ?? ""
+      },
+      flags: {
+        cypherFoundry: {
+          crd: localizedProvenance
+        }
       }
     };
     await fs.writeFile(
