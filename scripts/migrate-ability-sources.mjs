@@ -253,11 +253,9 @@ async function enrichStandaloneLanguage(language, english) {
       ...document.system
     };
     const id = identity(standalone);
-    const match = english.registry.get(
-      `${id.key}:${id.signature}`
-    );
-    const logicalId = match?.logicalId ??
-      buildLogicalId(
+    const match = language === "fr"
+      ? resolveFrenchEntry(standalone, english).entry
+      : english.registry.get(`${id.key}:${id.signature}`);
         id.key,
         id.signature,
         keyVariantCounts.get(id.key) ?? 1
@@ -274,14 +272,18 @@ async function enrichStandaloneLanguage(language, english) {
       ...(document.flags ?? {}),
       cypherFoundry: {
         ...(document.flags?.cypherFoundry ?? {}),
-        crd: provenance(
-          language,
-          sourceParent,
-          sourceDocument,
-          { name: document.name },
-          logicalId
-        )
-      }
+        crd: {
+          ...provenance(
+            language,
+            sourceParent,
+            sourceDocument,
+            { name: document.name },
+            logicalId
+          ),
+          ...(language === "fr" && match
+            ? { sourceLogicalId: match.logicalId }
+            : {})
+        }
     };
 
     await fs.writeFile(file, JSON.stringify(document, null, 2) + "\n");
