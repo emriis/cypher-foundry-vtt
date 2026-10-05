@@ -82,3 +82,67 @@ export function resolveTaskDifficulty(difficulty, steps) {
     targetNumber: effectiveDifficulty * 3
   };
 }
+
+/**
+ * Resolve the special outcome of a d20 task roll.
+ *
+ * @param {object} options Roll context.
+ * @returns {{
+ *   gmIntrusion: boolean,
+ *   damageBonus: number,
+ *   effect: string|null,
+ *   effectOptions: string[],
+ *   refundsCost: boolean
+ * }}
+ */
+export function resolveSpecialRoll({
+  d20,
+  success,
+  isAttack = false,
+  inflictsDamage = false
+} = {}) {
+  const result = {
+    gmIntrusion: d20 === 1,
+    damageBonus: 0,
+    effect: null,
+    effectOptions: [],
+    refundsCost: d20 === 20 && success
+  };
+
+  if (!success) return result;
+
+  if (isAttack && inflictsDamage) {
+    if (d20 === 17) result.damageBonus = 1;
+    else if (d20 === 18) result.damageBonus = 2;
+    else if (d20 === 19) {
+      result.effectOptions = ["damage", "minor"];
+    } else if (d20 === 20) {
+      result.effectOptions = ["damage", "major"];
+    }
+  }
+
+  if (d20 === 19 && !(isAttack && inflictsDamage)) {
+    result.effect = "minor";
+  } else if (d20 === 20 && !(isAttack && inflictsDamage)) {
+    result.effect = "major";
+  }
+
+  return result;
+}
+
+/**
+ * Determine whether a failed task can be retried.
+ *
+ * Combat attacks cannot use the retry rule. A retry requires at least one
+ * level of Effort on the new action.
+ *
+ * @param {object} options Retry context.
+ * @returns {boolean} Whether the retry is permitted by the core rule.
+ */
+export function canRetryTask({
+  failed,
+  isAttack = false,
+  effortLevels = 0
+} = {}) {
+  return Boolean(failed) && !isAttack && effortLevels >= 1;
+}
