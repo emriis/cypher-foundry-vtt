@@ -161,6 +161,11 @@ for (const language of ["en", "fr"]) {
       .filter(document => !isFolder(document));
 
     const logicalIds = new Set();
+    const englishByKey = new Map(
+      [...readPackSources("abilities-en").values()]
+        .filter(document => !isFolder(document))
+        .map(document => [document.system.key, document])
+    );
 
     for (const document of abilities) {
       assert.equal(document.document, "Item");
@@ -178,9 +183,10 @@ for (const language of ["en", "fr"]) {
       assert.ok(Array.isArray(provenance.transformations));
 
       if (language === "fr") {
-        const english = [...readPackSources("abilities-en").values()]
-          .find(document => !isFolder(document) && document.system.key === document.system.key);
-        assert.ok(provenance.sourceLogicalId);
+        assert.equal(
+          provenance.sourceLogicalId,
+          englishByKey.get(document.system.key)?.flags?.cypherFoundry?.crd?.logicalId
+        );
       }
     }
   });
