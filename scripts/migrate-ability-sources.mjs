@@ -293,9 +293,6 @@ async function mergeGenreAbilities() {
 async function collectEnglishRegistry() {
   const registry = new Map();
   const byKey = new Map();
-  const byKeyTier = new Map();
-  const loose = new Map();
-  const loose = new Map();
 
   for (const parent of PARENT_PACKS) {
     for (const file of await sourceFiles(`${parent}-en`)) {
@@ -406,6 +403,7 @@ async function collectStandaloneEnglishLogicalIds() {
   const fallback = new Map();
   const byKey = new Map();
   const byKeyTier = new Map();
+  const loose = new Map();
 
   for (const entry of entries) {
     const logicalId = buildLogicalId(
