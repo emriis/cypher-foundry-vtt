@@ -143,13 +143,14 @@ function canonicalMechanicalShape(ability) {
 
 function localizedPairingMechanicalShape(ability) {
   const shape = contentIdentityShapeWithoutDescription(ability);
-  delete shape.action;
+  delete shape.mechanics.tier;
+  delete shape.mechanics.action;
   return shape;
 }
 
 function localizedLooseMechanicalShape(ability) {
   const shape = localizedPairingMechanicalShape(ability);
-  delete shape.enabler;
+  delete shape.mechanics.enabler;
   return shape;
 }
 
