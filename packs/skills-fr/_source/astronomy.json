@@ -1,0 +1,32 @@
+{
+  "_id": "5f9854f1astronom",
+  "_key": "!items!5f9854f1astronom",
+  "document": "Item",
+  "name": "Astronomy",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You are well-versed in the study of the stars, planets, and cosmology in general.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.astronomy",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.astronomy"
+      }
+    }
+  }
+}
