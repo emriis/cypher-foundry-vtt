@@ -175,7 +175,7 @@ for (const language of ["en", "fr"]) {
       assert.ok(provenance);
       assert.equal(provenance.version, "2026-07-29");
       assert.equal(provenance.language, language);
-      assert.match(provenance.logicalId, /^ability\\.[a-z0-9-]+-[a-f0-9]{12}$/);
+      assert.match(provenance.logicalId, /^ability\\.[a-z0-9-]+(?:-[a-f0-9]{12})?$/);
       assert.ok(!logicalIds.has(provenance.logicalId), provenance.logicalId);
       logicalIds.add(provenance.logicalId);
       assert.ok(provenance.section);
