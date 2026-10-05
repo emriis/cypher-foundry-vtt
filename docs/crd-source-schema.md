@@ -102,7 +102,7 @@ termination conditions remain in source text until a separate source-justified
 representation is established. The extractor must not infer a structured
 condition from prose merely because it appears automatable.
 
-## 5. Structural transformations
+## 6. Structural transformations
 
 Allowed transformations include:
 
