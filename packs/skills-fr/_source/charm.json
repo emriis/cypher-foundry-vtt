@@ -1,0 +1,32 @@
+{
+  "_id": "5fa96950charm000",
+  "_key": "!items!5fa96950charm000",
+  "document": "Item",
+  "name": "Charm",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You know how to interact with people to get them to react to you positively. In a disagreement, you’re adept at getting them to agree with your position. Any truthful positive social interaction is covered by charm.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.charm",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.charm"
+      }
+    }
+  }
+}
