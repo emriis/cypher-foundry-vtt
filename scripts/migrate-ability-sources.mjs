@@ -174,13 +174,24 @@ async function collectDocuments(language) {
   return documents;
 }
 
-function resolveFrenchEntry(ability, english) {
+function resolveFrenchEntry(ability, english, standaloneEnglish) {
   const id = identity(ability);
   const exact = english.registry.get(`${id.key}:${id.signature}`);
   if (exact) return { entry: exact, translated: true };
 
+  const standalone = standaloneEnglish.get(
+    `${id.key}:${id.signature}`
+  );
+  if (standalone) return { entry: standalone, translated: true };
+
   const candidates = english.byKey.get(id.key) ?? [];
   if (candidates.length === 1) return { entry: candidates[0], translated: false };
+
+  const standaloneCandidates = [...standaloneEnglish.values()]
+    .filter(entry => entry.key === id.key);
+  if (standaloneCandidates.length === 1) {
+    return { entry: standaloneCandidates[0], translated: false };
+  }
 
   throw new Error(
     `French ability "${ability.name}" has no unambiguous CRD mechanical match for key "${id.key}".`
@@ -241,6 +252,27 @@ async function enrichStandaloneLanguage(language, english) {
     keyVariantCounts.set(id.key, (keyVariantCounts.get(id.key) ?? 0) + 1);
   }
 
+  const standaloneEnglish = new Map();
+  if (language === "fr") {
+    for (const file of await sourceFiles("abilities-en")) {
+      const source = JSON.parse(await fs.readFile(file, "utf8"));
+      if (source._key?.startsWith("!folders!") ||
+          isEditorialArtifact(source.system)) continue;
+      const standalone = {
+        id: source.system?.key,
+        name: source.name,
+        ...source.system
+      };
+      const id = identity(standalone);
+      const logicalId = source.flags?.cypherFoundry?.crd?.logicalId ??
+        buildLogicalId(id.key, id.signature, 1);
+      standaloneEnglish.set(`${id.key}:${id.signature}`, {
+        ...id,
+        logicalId
+      });
+    }
+  }
+
   const references = await collectReferenceProvenance(language);
 
   for (const { file, document } of documents) {
@@ -254,7 +286,7 @@ async function enrichStandaloneLanguage(language, english) {
     };
     const id = identity(standalone);
     const match = language === "fr"
-      ? resolveFrenchEntry(standalone, english).entry
+      ? resolveFrenchEntry(standalone, english, standaloneEnglish).entry
       : english.registry.get(`${id.key}:${id.signature}`);
     const logicalId = match?.logicalId ??
       buildLogicalId(
