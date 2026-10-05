@@ -10,6 +10,7 @@ import {
   clampEffortLevels,
   computeEffortCost,
   computeTaskSteps,
+  resolveSpecialRoll,
   resolveTaskDifficulty
 } from "../rules/tasks.mjs";
 import { resolveStat } from "../rules/stats.mjs";
@@ -85,6 +86,7 @@ export async function rollTask(actor, {
     stat = "might", difficulty = 3, effortLevels = 0, assetSteps = 0,
     skillItemId = null, isAttack = false, baseDamage = 0, flavor = "",
     extraHinderSteps = 0, extraEaseSteps = 0, luckyShot = false,
+    specialEffectChoice = null,
     defenseType = null, incomingSeverity = "minor", armorModifier = 0, shieldItemId = null
   } = {}) {
     if (actor.type !== "pc") {
@@ -163,24 +165,44 @@ export async function rollTask(actor, {
     const d20 = roll.total;
     const success = effectiveDifficulty <= 0 ? true : d20 >= targetNumber;
 
-    // Special results on 1 / 17 / 18 / 19 / 20, as defined by the rules.
-    let damageBonus = 0;
-    let effectText = "";
-    let refund = false;
+    // Resolve CRD special outcomes in the pure rules layer. The application
+    // layer only translates the resulting mechanics into Foundry state/chat.
+    const special = resolveSpecialRoll({
+      d20,
+      success,
+      isAttack,
+      inflictsDamage: isAttack && success && baseDamage > 0
+    });
+    let damageBonus = special.damageBonus;
+    let selectedEffect = special.effect;
+    if (special.effectOptions.length > 0 && specialEffectChoice) {
+      const selectedDamage =
+        specialEffectChoice === "damage"
+        && special.effectOptions.includes("damage");
+      const selectedMinor =
+        specialEffectChoice === "minor"
+        && special.effectOptions.includes("minor");
+      const selectedMajor =
+        specialEffectChoice === "major"
+        && special.effectOptions.includes("major");
 
-    if (d20 === 1) {
-      effectText = game.i18n.localize("CYPHER.Roll.GMIntrusionFree");
-    } else if (success && isAttack) {
-      if (d20 === 17) damageBonus = 1;
-      else if (d20 === 18) damageBonus = 2;
-      else if (d20 === 19) damageBonus = 3;
-      else if (d20 === 20) { damageBonus = 4; refund = true; }
-    } else if (success && d20 === 19) {
-      effectText = game.i18n.localize("CYPHER.Roll.MinorEffect");
-    } else if (success && d20 === 20) {
-      effectText = game.i18n.localize("CYPHER.Roll.MajorEffect");
-      refund = true;
+      if (selectedDamage) {
+        damageBonus = d20 === 19 ? 3 : 4;
+      } else if (selectedMinor) {
+        selectedEffect = "minor";
+      } else if (selectedMajor) {
+        selectedEffect = "major";
+      }
     }
+
+    const effectText = special.gmIntrusion
+      ? game.i18n.localize("CYPHER.Roll.GMIntrusionFree")
+      : special.effect === "minor"
+        ? game.i18n.localize("CYPHER.Roll.MinorEffect")
+        : special.effect === "major"
+          ? game.i18n.localize("CYPHER.Roll.MajorEffect")
+          : "";
+    const refund = special.refundsCost;
 
     // A natural 20 refunds the action's point cost.
     if (refund && totalCost > 0) {
@@ -265,7 +287,14 @@ export async function rollTask(actor, {
       }
     }
 
-    return { roll, success, targetNumber, effectiveDifficulty, damage: totalDamage };
+    return {
+      roll,
+      success,
+      targetNumber,
+      effectiveDifficulty,
+      damage: totalDamage,
+      specialEffectOptions: special.effectOptions
+    };
   }
 
 
