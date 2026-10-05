@@ -93,7 +93,12 @@ local reference is unavailable, stop rather than reconstructing content from
 memory.
 
 ```powershell
-node --test tests/content/compendium-sources.test.mjs
+node --test tests/content/*.test.mjs
+
+The content contract suite validates the common CRD source envelope, provenance,
+logical identity, and English/French pairing across reusable content families.
+Keep these contracts independent from arbitrary record counts so additions do
+not require rewriting tests.
 ```
 
 Then rebuild each affected LevelDB pack with `npm run build:packs`. The build
