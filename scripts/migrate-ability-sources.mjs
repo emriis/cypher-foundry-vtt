@@ -465,7 +465,7 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
           logicalId = candidates.values().next().value;
         }
       }
-    } else {    } else {
+    } else {
       logicalId = buildLogicalId(key, signature, keyCounts.get(key));
     }
 
