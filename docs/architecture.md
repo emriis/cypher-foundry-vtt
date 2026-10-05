@@ -163,6 +163,7 @@ The extracted application services are:
 8. `applications/ability-service.mjs` for Ability effect/table operations.
 9. `applications/equipment-service.mjs` for equipment invariants.
 10. `applications/item-service.mjs` for Item use, attack, and depletion use cases.
+11. `applications/ability-runtime-service.mjs` for actor-owned active Ability effects and Recovery-driven expiration.
 
 These services own Foundry-specific orchestration such as dice evaluation,
 document updates, Pool/XP transactions, and chat output while delegating
@@ -392,7 +393,46 @@ remain incremental and should not force every call through an application
 service when a compatibility facade or pure helper is already the clearest
 boundary.
 
-## 9. Domain organization
+## 9. Runtime Ability state
+
+Runtime activation state is deliberately separate from CRD Ability definitions.
+The CRD/compendium model describes what an Ability effect does and, when
+explicitly sourced, how a recovery ends it. The actor stores only the currently
+active effect references needed to apply that lifecycle.
+
+The runtime boundary is:
+
+```text
+Actor active effect state
+        |
+        v
+Ability runtime application service
+        |
+        +--> resolve actor-owned Ability Item
+        |
+        v
+Pure recovery-end rule
+```
+
+`applications/ability-runtime-service.mjs` owns activation, deactivation, and
+Recovery-driven expiration. `rules/ability-effects.mjs` owns only deterministic
+matching of a recovery interval against a structured source end condition.
+
+The runtime state does not add `active`, cooldown, or availability fields to the
+CRD source record. This keeps authored mechanics reusable while allowing the
+same Ability definition to be instantiated independently on different actors.
+
+### Phase 9 — Ability runtime lifecycle
+
+Phase 9 begins with recovery-based Ability termination. The first increment
+supports only explicit structured recovery end conditions already justified by
+the CRD source schema. Activation and expiration are generic and do not contain
+Ability-name-specific rules.
+
+Other termination conditions remain unstructured until the CRD provides enough
+source-grounded information to model them without inference.
+
+## 10. Domain organization
 
 Production code should be organized by architectural responsibility and domain,
 not by the historical order in which features were added.
@@ -424,7 +464,7 @@ New domains such as equipment, cyphers, creatures/NPC abilities, powers,
 custom Descriptors, custom Types, and custom Foci should follow the same
 boundary instead of adding another collection of feature-specific helpers.
 
-## 10. Content source and pack compilation contract
+## 11. Content source and pack compilation contract
 
 Repository content follows one direction:
 
@@ -443,7 +483,7 @@ Pack tooling should keep this distinction explicit. Source migrations transform
 authoring data before compilation; the compiler writes generated artifacts into
 the pack directory. A generated artifact must be reproducible from source.
 
-## 11. Reference-resolution contract
+## 12. Reference-resolution contract
 
 All persisted document references use the following convention:
 
@@ -464,7 +504,7 @@ Content/application code must not duplicate `fromUuid()` calls. The resolver
 also accepts an already-resolved Document, which makes custom content and tests
 easier to support without weakening type validation.
 
-## 12. Phase 8 — dependency-boundary enforcement
+## 13. Phase 8 — dependency-boundary enforcement
 
 Phase 8 is complete. The objective was to turn the architectural direction into
 executable repository contracts and then fix concrete boundary violations

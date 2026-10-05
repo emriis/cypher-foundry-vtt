@@ -4,6 +4,9 @@ import {
   getRallyCost,
   getRecoveryRollData
 } from "../rules/recovery.mjs";
+import {
+  expireAbilityEffectsOnRecovery
+} from "./ability-runtime-service.mjs";
 
 /**
  * Execute a recovery roll at the Foundry application boundary.
@@ -27,6 +30,7 @@ export async function rollRecovery(actor, interval = "hour") {
       );
       if (woundNoteKey) woundNote = game.i18n.localize(woundNoteKey);
       if (Object.keys(updates).length) await actor.update(updates);
+      await expireAbilityEffectsOnRecovery(actor, interval);
     }
 
     await roll.toMessage({

@@ -91,3 +91,38 @@ test("rallyWound spends Might only when removing an existing eligible wound", as
   assert.equal(actor.system.stats.might.pool.value, 8);
   assert.equal(actor.updates.length, 1);
 });
+test("rollRecovery expires active Ability effects after the recovery is applied", async () => {
+  setRecoveryRoll();
+
+  const ability = {
+    type: "ability",
+    uuid: "Actor.pc.Item.fury",
+    system: {
+      effects: [{
+        id: "fury",
+        endConditions: [{
+          kind: "recovery",
+          interval: "tenMinutes",
+          minimum: true
+        }]
+      }]
+    }
+  };
+  globalThis.fromUuid = async uuid =>
+    uuid === ability.uuid ? ability : null;
+
+  const actor = createPc();
+  actor.system.activeAbilityEffects = [{
+    itemUuid: ability.uuid,
+    effectId: "fury"
+  }];
+
+  const roll = await CypherActor.prototype.rollRecovery.call(
+    actor,
+    "hour"
+  );
+
+  assert.equal(roll.total, 5);
+  assert.deepEqual(actor.system.activeAbilityEffects, []);
+  assert.equal(actor.updates.length, 2);
+});
