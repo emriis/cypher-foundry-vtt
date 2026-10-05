@@ -58,7 +58,7 @@
         "key": "cypher-use",
         "tier": 3,
         "enabler": false,
-        "repeatable": true,
+        "repeatable": false,
         "cost": {
           "stat": "none",
           "amount": 0,
@@ -108,11 +108,11 @@
       "system": {
         "key": "danger-instinct",
         "tier": 3,
-        "enabler": false,
+        "enabler": true,
         "repeatable": false,
         "cost": {
-          "stat": "none",
-          "amount": 0,
+          "stat": "speed",
+          "amount": 3,
           "options": [],
           "additionalEffort": false
         },
@@ -155,7 +155,7 @@
       "system": {
         "key": "disappear-into-shadow",
         "tier": 3,
-        "enabler": false,
+        "enabler": true,
         "repeatable": false,
         "cost": {
           "stat": "none",
@@ -202,11 +202,11 @@
       "system": {
         "key": "discerning-mind",
         "tier": 3,
-        "enabler": false,
+        "enabler": true,
         "repeatable": false,
         "cost": {
-          "stat": "none",
-          "amount": 0,
+          "stat": "intellect",
+          "amount": 2,
           "options": [],
           "additionalEffort": false
         },
@@ -252,12 +252,12 @@
         "enabler": false,
         "repeatable": false,
         "cost": {
-          "stat": "none",
-          "amount": 0,
+          "stat": "intellect",
+          "amount": 4,
           "options": [],
-          "additionalEffort": false
+          "additionalEffort": true
         },
-        "action": null,
+        "action": "action",
         "freeWeaponCategories": [],
         "freeArmorCategories": [],
         "freeWeaponFamilies": [],
@@ -394,7 +394,7 @@
       "system": {
         "key": "from-the-shadows",
         "tier": 3,
-        "enabler": false,
+        "enabler": true,
         "repeatable": false,
         "cost": {
           "stat": "none",
@@ -444,12 +444,12 @@
         "enabler": false,
         "repeatable": false,
         "cost": {
-          "stat": "none",
-          "amount": 0,
+          "stat": "might",
+          "amount": 3,
           "options": [],
           "additionalEffort": false
         },
-        "action": null,
+        "action": "action",
         "freeWeaponCategories": [],
         "freeArmorCategories": [],
         "freeWeaponFamilies": [],
@@ -491,12 +491,12 @@
         "enabler": false,
         "repeatable": false,
         "cost": {
-          "stat": "none",
-          "amount": 0,
+          "stat": "intellect",
+          "amount": 4,
           "options": [],
           "additionalEffort": false
         },
-        "action": null,
+        "action": "action",
         "freeWeaponCategories": [],
         "freeArmorCategories": [],
         "freeWeaponFamilies": [],
@@ -585,12 +585,12 @@
         "enabler": false,
         "repeatable": false,
         "cost": {
-          "stat": "none",
-          "amount": 0,
+          "stat": "speed",
+          "amount": 2,
           "options": [],
           "additionalEffort": false
         },
-        "action": null,
+        "action": "firstAction",
         "freeWeaponCategories": [],
         "freeArmorCategories": [],
         "freeWeaponFamilies": [],
@@ -636,8 +636,8 @@
         "enabler": false,
         "repeatable": false,
         "cost": {
-          "stat": "none",
-          "amount": 0,
+          "stat": "intellect",
+          "amount": 4,
           "options": [],
           "additionalEffort": false
         },
@@ -730,10 +730,10 @@
         "enabler": false,
         "repeatable": false,
         "cost": {
-          "stat": "none",
-          "amount": 0,
+          "stat": "intellect",
+          "amount": 2,
           "options": [],
-          "additionalEffort": false
+          "additionalEffort": true
         },
         "action": null,
         "freeWeaponCategories": [],
@@ -774,11 +774,11 @@
       "system": {
         "key": "assassin-strike",
         "tier": 3,
-        "enabler": false,
+        "enabler": true,
         "repeatable": false,
         "cost": {
-          "stat": "none",
-          "amount": 0,
+          "stat": "speed",
+          "amount": 5,
           "options": [],
           "additionalEffort": false
         },
@@ -824,12 +824,12 @@
         "enabler": false,
         "repeatable": false,
         "cost": {
-          "stat": "none",
-          "amount": 0,
+          "stat": "intellect",
+          "amount": 7,
           "options": [],
           "additionalEffort": false
         },
-        "action": null,
+        "action": "action",
         "freeWeaponCategories": [],
         "freeArmorCategories": [],
         "freeWeaponFamilies": [],
@@ -871,12 +871,12 @@
         "enabler": false,
         "repeatable": false,
         "cost": {
-          "stat": "none",
-          "amount": 0,
+          "stat": "intellect",
+          "amount": 4,
           "options": [],
           "additionalEffort": false
         },
-        "action": null,
+        "action": "action",
         "freeWeaponCategories": [],
         "freeArmorCategories": [],
         "freeWeaponFamilies": [],
@@ -922,12 +922,12 @@
         "enabler": false,
         "repeatable": false,
         "cost": {
-          "stat": "none",
-          "amount": 0,
+          "stat": "intellect",
+          "amount": 4,
           "options": [],
-          "additionalEffort": false
+          "additionalEffort": true
         },
-        "action": null,
+        "action": "action",
         "freeWeaponCategories": [],
         "freeArmorCategories": [],
         "freeWeaponFamilies": [],
@@ -969,12 +969,12 @@
         "enabler": false,
         "repeatable": false,
         "cost": {
-          "stat": "none",
-          "amount": 0,
+          "stat": "might",
+          "amount": 5,
           "options": [],
-          "additionalEffort": false
+          "additionalEffort": true
         },
-        "action": null,
+        "action": "action",
         "freeWeaponCategories": [],
         "freeArmorCategories": [],
         "freeWeaponFamilies": [],
@@ -1016,12 +1016,12 @@
         "enabler": false,
         "repeatable": false,
         "cost": {
-          "stat": "none",
-          "amount": 0,
+          "stat": "intellect",
+          "amount": 6,
           "options": [],
           "additionalEffort": false
         },
-        "action": null,
+        "action": "action",
         "freeWeaponCategories": [],
         "freeArmorCategories": [],
         "freeWeaponFamilies": [],
@@ -1063,8 +1063,8 @@
         "enabler": false,
         "repeatable": false,
         "cost": {
-          "stat": "none",
-          "amount": 0,
+          "stat": "intellect",
+          "amount": 5,
           "options": [],
           "additionalEffort": false
         },
@@ -1110,10 +1110,10 @@
         "enabler": false,
         "repeatable": false,
         "cost": {
-          "stat": "none",
-          "amount": 0,
+          "stat": "intellect",
+          "amount": 4,
           "options": [],
-          "additionalEffort": false
+          "additionalEffort": true
         },
         "action": null,
         "freeWeaponCategories": [],
@@ -1157,12 +1157,12 @@
         "enabler": false,
         "repeatable": false,
         "cost": {
-          "stat": "none",
-          "amount": 0,
+          "stat": "speed",
+          "amount": 5,
           "options": [],
-          "additionalEffort": false
+          "additionalEffort": true
         },
-        "action": null,
+        "action": "action",
         "freeWeaponCategories": [],
         "freeArmorCategories": [],
         "freeWeaponFamilies": [],
@@ -1204,8 +1204,8 @@
         "enabler": false,
         "repeatable": false,
         "cost": {
-          "stat": "none",
-          "amount": 0,
+          "stat": "intellect",
+          "amount": 9,
           "options": [],
           "additionalEffort": false
         },
@@ -1298,12 +1298,12 @@
         "enabler": false,
         "repeatable": false,
         "cost": {
-          "stat": "none",
-          "amount": 0,
+          "stat": "intellect",
+          "amount": 3,
           "options": [],
-          "additionalEffort": false
+          "additionalEffort": true
         },
-        "action": null,
+        "action": "action",
         "freeWeaponCategories": [],
         "freeArmorCategories": [],
         "freeWeaponFamilies": [],
@@ -1392,10 +1392,10 @@
         "enabler": false,
         "repeatable": false,
         "cost": {
-          "stat": "none",
-          "amount": 0,
+          "stat": "intellect",
+          "amount": 2,
           "options": [],
-          "additionalEffort": false
+          "additionalEffort": true
         },
         "action": null,
         "freeWeaponCategories": [],
@@ -1533,12 +1533,12 @@
         "enabler": false,
         "repeatable": false,
         "cost": {
-          "stat": "none",
-          "amount": 0,
+          "stat": "intellect",
+          "amount": 2,
           "options": [],
           "additionalEffort": false
         },
-        "action": null,
+        "action": "action",
         "freeWeaponCategories": [],
         "freeArmorCategories": [],
         "freeWeaponFamilies": [],
@@ -1580,8 +1580,8 @@
         "enabler": false,
         "repeatable": false,
         "cost": {
-          "stat": "none",
-          "amount": 0,
+          "stat": "speed",
+          "amount": 2,
           "options": [],
           "additionalEffort": false
         },
@@ -1627,12 +1627,12 @@
         "enabler": false,
         "repeatable": false,
         "cost": {
-          "stat": "none",
-          "amount": 0,
+          "stat": "speed",
+          "amount": 3,
           "options": [],
           "additionalEffort": false
         },
-        "action": null,
+        "action": "action",
         "freeWeaponCategories": [],
         "freeArmorCategories": [],
         "freeWeaponFamilies": [],
@@ -1718,7 +1718,7 @@
       "system": {
         "key": "knowledge-expert",
         "tier": 3,
-        "enabler": false,
+        "enabler": true,
         "repeatable": false,
         "cost": {
           "stat": "none",
@@ -1815,12 +1815,12 @@
         "enabler": false,
         "repeatable": false,
         "cost": {
-          "stat": "none",
-          "amount": 0,
+          "stat": "intellect",
+          "amount": 5,
           "options": [],
-          "additionalEffort": false
+          "additionalEffort": true
         },
-        "action": null,
+        "action": "action",
         "freeWeaponCategories": [],
         "freeArmorCategories": [],
         "freeWeaponFamilies": [],
@@ -1909,10 +1909,10 @@
         "enabler": false,
         "repeatable": false,
         "cost": {
-          "stat": "none",
+          "stat": "intellect",
           "amount": 0,
           "options": [],
-          "additionalEffort": false
+          "additionalEffort": true
         },
         "action": null,
         "freeWeaponCategories": [],
@@ -2149,7 +2149,7 @@
           "options": [],
           "additionalEffort": false
         },
-        "action": null,
+        "action": "lastAction",
         "freeWeaponCategories": [],
         "freeArmorCategories": [],
         "freeWeaponFamilies": [],
@@ -2196,7 +2196,7 @@
           "options": [],
           "additionalEffort": false
         },
-        "action": null,
+        "action": "action",
         "freeWeaponCategories": [],
         "freeArmorCategories": [],
         "freeWeaponFamilies": [],
@@ -2238,10 +2238,10 @@
         "enabler": false,
         "repeatable": false,
         "cost": {
-          "stat": "none",
-          "amount": 0,
+          "stat": "might",
+          "amount": 2,
           "options": [],
-          "additionalEffort": false
+          "additionalEffort": true
         },
         "action": null,
         "freeWeaponCategories": [],
@@ -2666,7 +2666,7 @@
           "options": [],
           "additionalEffort": false
         },
-        "action": null,
+        "action": "lastAction",
         "freeWeaponCategories": [],
         "freeArmorCategories": [],
         "freeWeaponFamilies": [],
@@ -2755,10 +2755,10 @@
         "enabler": false,
         "repeatable": false,
         "cost": {
-          "stat": "none",
-          "amount": 0,
+          "stat": "might",
+          "amount": 1,
           "options": [],
-          "additionalEffort": false
+          "additionalEffort": true
         },
         "action": null,
         "freeWeaponCategories": [],
@@ -2987,7 +2987,7 @@
       "system": {
         "key": "telepathic-prodigy",
         "tier": 1,
-        "enabler": false,
+        "enabler": true,
         "repeatable": false,
         "cost": {
           "stat": "none",
@@ -3042,7 +3042,7 @@
           "options": [],
           "additionalEffort": false
         },
-        "action": null,
+        "action": "lastAction",
         "freeWeaponCategories": [],
         "freeArmorCategories": [],
         "freeWeaponFamilies": [],
