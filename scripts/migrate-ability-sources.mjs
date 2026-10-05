@@ -246,6 +246,13 @@ async function pruneAbilityReferences(removedIds) {
 
         document.system.abilities = filtered;
 
+        if (Array.isArray(document.system.abilityTiers)) {
+          const remaining = new Set(filtered);
+          document.system.abilityTiers = document.system.abilityTiers.filter(
+            entry => remaining.has(entry?.ability)
+          );
+        }
+
         if (parent === "foci" && document.system.flowchart) {
           const remaining = new Set(
             filtered.map(uuid => uuid.split(".").at(-1))
