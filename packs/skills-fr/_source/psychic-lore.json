@@ -1,0 +1,32 @@
+{
+  "_id": "3e38c2b3psychicl",
+  "_key": "!items!3e38c2b3psychicl",
+  "document": "Item",
+  "name": "Psychic lore",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You’re cognizant of the many varieties of psychic talent; of the leagues, agencies, and other groups that employ entities with psionic power; and of other related topics. Your lore helps you identify psychic activity, objects, or the purpose of a particular psychic working, or gain some similar insight.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.psychic-lore",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.psychic-lore"
+      }
+    }
+  }
+}
