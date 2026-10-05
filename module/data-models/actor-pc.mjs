@@ -1,5 +1,4 @@
 import { CYPHER } from "../config.mjs";
-import { resolveActiveAbilityModifiers } from "../rules/ability-modifiers.mjs";
 
 const { SchemaField, NumberField, StringField, HTMLField, BooleanField, ArrayField } = foundry.data.fields;
 
@@ -255,13 +254,6 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
       speedTaskHinder: freelyUsable ? 0 : armorSteps.dodge
     };
 
-    const abilityItems = itemsCollection?.contents
-      ?? (Array.isArray(itemsCollection) ? itemsCollection : []);
-    this.abilityModifiers = resolveActiveAbilityModifiers(
-      this.activeAbilityEffects,
-      abilityItems
-    );
-
     // Current tier advancement slots.
     this.advancementBoughtCount = this.advancementSlots.filter(s => s.bought).length;
     this.advancementComplete = this.advancementBoughtCount >= 4;
@@ -292,13 +284,6 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
       itemId: null, name: null, category: "none", freelyUsable: false,
       baseBlockEase: 0, blockEaseDamage: 0, blockEase: 0, damaged: false,
       dodgeHinder: 0, speedTaskHinder: 0
-    };
-    this.abilityModifiers ??= {
-      poolMax: Object.fromEntries(CYPHER.stats.map(stat => [stat, 0])),
-      edge: Object.fromEntries(CYPHER.stats.map(stat => [stat, 0])),
-      woundCapacity: Object.fromEntries(
-        CYPHER.woundSeverities.map(severity => [severity, 0])
-      )
     };
     this.advancementBoughtCount ??= 0;
     this.advancementComplete ??= false;
