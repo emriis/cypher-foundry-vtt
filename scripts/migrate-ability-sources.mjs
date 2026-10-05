@@ -353,6 +353,10 @@ async function enrichStandaloneLanguage(language, english, diagnostics) {
   for (const file of files) {
     const document = JSON.parse(await fs.readFile(file, "utf8"));
     if (document._key?.startsWith("!folders!")) continue;
+    if (isEditorialArtifact(document)) {
+      await fs.rm(file, { force: true });
+      continue;
+    }
     documents.push({ file, document });
   }
 
@@ -379,7 +383,7 @@ async function enrichStandaloneLanguage(language, english, diagnostics) {
     for (const file of await sourceFiles("abilities-en")) {
       const source = JSON.parse(await fs.readFile(file, "utf8"));
       if (source._key?.startsWith("!folders!") ||
-          isEditorialArtifact(source.system)) continue;
+          isEditorialArtifact(source)) continue;
       const standalone = {
         id: source.system?.key,
         name: source.name,
