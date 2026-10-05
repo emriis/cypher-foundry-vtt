@@ -15,7 +15,8 @@
     "build:packs": "node scripts/build-packs.mjs",
     "package": "npm run build:packs && pwsh -File scripts/package.ps1",
     "migrate:packs": "node scripts/migrate-ability-sources.mjs",
-    "audit:public-data": "node scripts/audit-public-data.mjs"
+    "audit:public-data": "node scripts/audit-public-data.mjs",
+    "test:coverage": "node scripts/run-test-coverage.mjs"
   },
   "dependencies": {
     "@foundryvtt/foundryvtt-cli": "^3.0.4"
