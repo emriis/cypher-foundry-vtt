@@ -132,6 +132,13 @@ function buildLogicalId(key, signature, variants) {
   return `ability.${key}${suffix}`;
 }
 
+function buildLocalizedLogicalId(key, sourceId, variants) {
+  const suffix = variants > 1
+    ? `-${hash(String(sourceId)).slice(0, 12)}`
+    : "";
+  return `ability.${key}${suffix}`;
+}
+
 function provenance(language, parent, document, ability, logicalId) {
   const parentLabel = parent === "types"
     ? "Type"
@@ -380,8 +387,11 @@ async function enrichStandaloneLanguage(language, english, diagnostics) {
     if (!variants.has(entryKey)) variants.set(entryKey, id);
   }
   const keyVariantCounts = new Map();
-  for (const id of variants.values()) {
-    keyVariantCounts.set(id.key, (keyVariantCounts.get(id.key) ?? 0) + 1);
+  for (const { identity: id } of identities) {
+    keyVariantCounts.set(
+      id.key,
+      (keyVariantCounts.get(id.key) ?? 0) + 1
+    );
   }
 
   const standaloneEnglish = new Map();
@@ -448,9 +458,9 @@ async function enrichStandaloneLanguage(language, english, diagnostics) {
     // localized source variants can coexist, while sourceLogicalId points to
     // the single canonical English Ability record.
     const logicalId = language === "fr"
-      ? buildLogicalId(
+      ? buildLocalizedLogicalId(
           id.key,
-          id.signature,
+          document._id,
           keyVariantCounts.get(id.key) ?? 1
         )
       : match.logicalId;
