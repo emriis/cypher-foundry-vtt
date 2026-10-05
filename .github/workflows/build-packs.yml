@@ -7,6 +7,7 @@ on:
     paths:
       - "packs/**/_source/**"
       - "scripts/build-packs.mjs"
+      - "scripts/migrate-ability-sources.mjs"
       - "package.json"
       - "package-lock.json"
       - ".github/workflows/build-packs.yml"
