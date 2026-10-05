@@ -1,0 +1,31 @@
+{
+  "_id": "91c8b0bdhealing0",
+  "_key": "!items!91c8b0bdhealing0",
+  "document": "Item",
+  "name": "Healing",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You’re experienced in diagnosing and dealing with sickness, bruises, cuts, breaks, and other injuries, and are proficient with healing tasks. Healing might be called “medicine” in real-world or science fiction settings, suggesting the possibility that the character previously pursued a medical specialty, nursing, dentistry, optometry, audiology, or something similar. Training in healing eases your task to treat a wound.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.healing",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}
