@@ -74,8 +74,7 @@ test("CRD tier-restricted skills preserve training and specialization boundaries
       .filter(record => record.system.minimumTier !== null)
       .map(record => [
         record.flags.cypherFoundry.crd.logicalId,
-        record.system.minimumTier,
-        record.system.minimumSpecializationTier
+        [record.system.minimumTier, record.system.minimumSpecializationTier]
       ])
   );
 
