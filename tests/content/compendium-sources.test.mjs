@@ -242,6 +242,32 @@ test("Type and Focus ability references resolve to standalone Ability sources", 
   }
 });
 
+test("CRD Genre Ability manifest preserves structured mechanics", () => {
+  const manifest = JSON.parse(
+    fs.readFileSync(
+      path.join(root, "data", "crd-genre-abilities.json"),
+      "utf8"
+    )
+  );
+
+  const genres = new Set(["fantasy", "science-fiction", "superhero"]);
+  for (const record of manifest.records) {
+    assert.ok(genres.has(record.genre), record.logicalId);
+    assert.equal(record.key, record.system.key, record.logicalId);
+    assert.equal(record.tier, record.system.tier, record.logicalId);
+    assert.equal(record.system.enabler, record.system.action === null &&
+      record.system.enabler, record.logicalId);
+    assert.ok(record.system.cost);
+    assert.ok(Array.isArray(record.system.cost.options));
+    assert.ok(Array.isArray(record.system.effects));
+    assert.ok(Array.isArray(record.system.rollTables));
+    assert.ok(record.provenance);
+    assert.equal(record.provenance.language, "en");
+    assert.equal(record.provenance.sourceKind, "section");
+    assert.match(record.provenance.section, /Genre Abilities$/);
+    assert.match(record.provenance.sourceLocator, /^CRD — /);
+  }
+});
 test("CRD Genre Ability manifest is fully materialized in both languages", () => {
   const manifest = JSON.parse(
     fs.readFileSync(
