@@ -358,12 +358,25 @@ async function enrichStandaloneLanguage(language, english, diagnostics) {
 
     document.document = "Item";
     document.crdType = "ability";
+    const canonicalAction = document.system.enabler
+      ? null
+      : (match?.ability?.action ?? document.system.action ?? inferAction(document.system));
+    if (document.system.action !== canonicalAction) {
+      document.system.action = canonicalAction;
+    }
     if (language === "fr" && match) {
-      const canonicalAction = match.ability?.enabler
-        ? null
-        : match.ability?.action ?? inferAction(match.ability ?? match);
-      if (standalone.action !== canonicalAction) {
-        document.system.action = canonicalAction;
+      const sourceLogicalId = match.logicalId;
+      if (sourceLogicalId) {
+        document.flags = {
+          ...(document.flags ?? {}),
+          cypherFoundry: {
+            ...(document.flags?.cypherFoundry ?? {}),
+            crd: {
+              ...(document.flags?.cypherFoundry?.crd ?? {}),
+              sourceLogicalId
+            }
+          }
+        };
       }
     }
 
