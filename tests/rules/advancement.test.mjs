@@ -137,7 +137,8 @@ test("advancement handles perfection and Effort without exceeding the cap", () =
   );
 });
 
-test("advancement grants recovery and weapon permissions", () => {
+test("advancement grants recovery and all configured weapon permissions", async () => {
+  const { CYPHER } = await import("../../module/config.mjs");
   const system = {
     effort: 1,
     recoveryBonus: 2,
@@ -164,7 +165,7 @@ test("advancement grants recovery and weapon permissions", () => {
       system
     ).updates,
     {
-      "system.freeWeaponCategories": ["light", "medium", "heavy", "special"],
+      "system.freeWeaponCategories": [...CYPHER.weaponCategories],
       "system.canFreelyUseAllWeapons": true
     }
   );
