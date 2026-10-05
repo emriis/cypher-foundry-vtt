@@ -82,6 +82,23 @@ function identity(ability) {
   return { key, signature, id: hash(`${key}\\0${signature}`).slice(0, 16) };
 }
 
+function sourceProvenance(parent, document, ability) {
+  const parentName = document.name || parent;
+  const parentType = parent === "foci" ? "Focus" : "Type";
+  return {
+    version: "2026-07-29",
+    logicalId: `ability.${ability.id || slug(ability.name)}`,
+    language: "en",
+    sourceKind: "section",
+    section: `Genre Character Abilities from Types and Foci > ${parentType} Abilities`,
+    sourceLocator: `${parentName} > ${ability.name}`,
+    transformations: [
+      "Extracted as a standalone Ability Item",
+      "Resolved Type/Focus occurrence to canonical mechanical identity"
+    ]
+  };
+}
+
 function buildLogicalId(key, signature, variants) {
   const suffix = variants > 1 ? `-${signature.slice(0, 12)}` : "";
   return `ability.${key}${suffix}`;
@@ -134,7 +151,9 @@ async function collectEnglishRegistry() {
 
         const entries = byKey.get(id.key) ?? [];
         if (!entries.some(entry => entry.signature === id.signature)) {
-          entries.push(registry.get(entryKey));
+          const entry = registry.get(entryKey);
+          entry.sources.push({ parent, document: document.name, ability: ability.name });
+          entries.push(entry);
           byKey.set(id.key, entries);
         }
       }
@@ -288,7 +307,8 @@ async function migrateLanguage(language, english) {
       if (!registry.has(key)) {
         registry.set(key, {
           ...resolved.entry,
-          localizedAbility: resolved.translated ? ability : resolved.entry.ability
+          localizedAbility: resolved.translated ? ability : resolved.entry.ability,
+          source: resolved.entry.sources[0]
         });
       }
     }
@@ -304,11 +324,24 @@ async function migrateLanguage(language, english) {
     const localizedProvenance = language === "fr"
       ? { ...entry.provenance, language: "fr", sourceLogicalId: entry.logicalId }
       : entry.provenance;
+    const provenance = sourceProvenance(
+      entry.source?.parent ?? "types",
+      { name: entry.source?.document ?? "Unknown source" },
+      { name: canonical.name, id: canonical.id ?? canonical.name }
+    );
+    provenance.logicalId = `ability.${entry.key}`;
+    provenance.language = language;
+    if (language === "fr") {
+      provenance.sourceLogicalId = `ability.${entry.key}`;
+    }
+
     const document = {
       _id: entry.id,
       _key: `!items!${entry.id}`,
       document: "Item",
       name: ability.name,
+      document: "Item",
+      crdType: "ability",
       type: "ability",
       img: "icons/svg/upgrade.svg",
       crdType: "ability",
