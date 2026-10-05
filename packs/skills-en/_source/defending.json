@@ -1,0 +1,31 @@
+{
+  "_id": "8664571fdefendin",
+  "_key": "!items!8664571fdefendin",
+  "document": "Item",
+  "name": "Defending",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": 2,
+    "description": "<p>Choose one kind of defense per training you gain in this skill: blocking an attack (a Might task), dodging an attack (a Speed task), a Might defense roll to endure an unwanted physical effect, or an Intellect defense roll to resist an unwanted mental effect.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.defending",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}
