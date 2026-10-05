@@ -205,7 +205,10 @@ async function sourceFiles(pack) {
 }
 
 async function pruneAbilityArtifacts() {
-  const removedIds = new Set();
+  // Keep known editorial IDs in the removal set even when a stale source file
+  // has already disappeared. Parent documents can otherwise retain orphaned
+  // references to those artifacts indefinitely.
+  const removedIds = new Set(EDITORIAL_ARTIFACT_IDS);
 
   for (const language of LANGUAGES) {
     for (const file of await sourceFiles(`abilities-${language}`)) {
@@ -522,6 +525,7 @@ async function collectStandaloneEnglishLogicalIds() {
 
   const exact = new Map();
   const fallback = new Map();
+  const byDocumentId = new Map();
   const byKey = new Map();
   const byKeyTier = new Map();
   const loose = new Map();
@@ -533,6 +537,10 @@ async function collectStandaloneEnglishLogicalIds() {
       counts.get(entry.key)
     );
     exact.set(`${entry.key}:${entry.signature}`, logicalId);
+
+    const documentIds = byDocumentId.get(entry.document._id) ?? new Set();
+    documentIds.add(logicalId);
+    byDocumentId.set(entry.document._id, documentIds);
 
     const fallbackKey = `${entry.key}:${hash(
       JSON.stringify(localizedPairingMechanicalShape(entry.document.system))
@@ -558,7 +566,57 @@ async function collectStandaloneEnglishLogicalIds() {
     loose.set(looseKey, looseIds);
   }
 
-  return { exact, fallback, byKey, byKeyTier, loose };
+  return { exact, fallback, byDocumentId, byKey, byKeyTier, loose };
+}
+
+async function collectFrenchEnglishReferencePairs() {
+  const pairs = new Map();
+
+  const addPair = (frenchId, englishId) => {
+    if (!frenchId || !englishId) return;
+    const ids = pairs.get(frenchId) ?? new Set();
+    ids.add(englishId);
+    pairs.set(frenchId, ids);
+  };
+
+  for (const parent of PARENT_PACKS) {
+    const englishFiles = await sourceFiles(`${parent}-en`);
+    const frenchFiles = await sourceFiles(`${parent}-fr`);
+    const frenchByName = new Map(
+      frenchFiles.map(file => [path.basename(file), file])
+    );
+
+    for (const englishFile of englishFiles) {
+      const frenchFile = frenchByName.get(path.basename(englishFile));
+      if (!frenchFile) continue;
+
+      const english = JSON.parse(await fs.readFile(englishFile, "utf8"));
+      const french = JSON.parse(await fs.readFile(frenchFile, "utf8"));
+      if (english._key?.startsWith("!folders!") ||
+          french._key?.startsWith("!folders!")) continue;
+
+      const englishAbilities = english.system?.abilities ?? [];
+      const frenchAbilities = french.system?.abilities ?? [];
+      const length = Math.min(
+        englishAbilities.length,
+        frenchAbilities.length
+      );
+
+      for (let index = 0; index < length; index += 1) {
+        const englishReference = englishAbilities[index];
+        const frenchReference = frenchAbilities[index];
+        const englishId = typeof englishReference === "string"
+          ? englishReference.split(".").at(-1)
+          : englishReference?.id;
+        const frenchId = typeof frenchReference === "string"
+          ? frenchReference.split(".").at(-1)
+          : frenchReference?.id;
+        addPair(frenchId, englishId);
+      }
+    }
+  }
+
+  return pairs;
 }
 
 async function enrichStandaloneLanguage(language, englishLogicalIds) {
@@ -579,6 +637,9 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
   }
 
   const references = await collectReferenceProvenance(language);
+  const referencePairs = language === "fr"
+    ? await collectFrenchEnglishReferencePairs()
+    : new Map();
 
   for (const { file, document } of documents) {
     const key = document.system?.key;
@@ -590,7 +651,20 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
     const signature = hash(JSON.stringify(contentIdentityShape(document.system ?? {})));
     let logicalId;
     if (language === "fr") {
-      logicalId = englishLogicalIds.exact.get(`${key}:${signature}`);
+      const pairedEnglishIds = referencePairs.get(document._id);
+      const pairedLogicalIds = new Set();
+      for (const englishId of pairedEnglishIds ?? []) {
+        for (const candidate of englishLogicalIds.byDocumentId.get(englishId) ?? []) {
+          pairedLogicalIds.add(candidate);
+        }
+      }
+      if (pairedLogicalIds.size === 1) {
+        logicalId = pairedLogicalIds.values().next().value;
+      }
+
+      if (!logicalId) {
+        logicalId = englishLogicalIds.exact.get(`${key}:${signature}`);
+      }
       if (!logicalId) {
         const fallbackKey = `${key}:${hash(
           JSON.stringify(localizedPairingMechanicalShape(document.system ?? {}))
@@ -619,7 +693,7 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
       }
       if (!logicalId) {
         const candidates = englishLogicalIds.byKey.get(key);
-        if (candidates?.size) {
+        if (candidates?.size === 1) {
           logicalId = candidates.values().next().value;
         }
       }
