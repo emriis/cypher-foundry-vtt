@@ -1,3 +1,5 @@
+import { activateAbilityEffect } from "./ability-runtime-service.mjs";
+
 /**
  * Foundry-aware application operations for interactive Ability content.
  *
