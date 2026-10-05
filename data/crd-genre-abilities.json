@@ -288,7 +288,7 @@
       }
     },
     {
-      "logicalId": "ability.enhanced-stat-12273721-73e",
+      "logicalId": "ability.enhanced-stat",
       "name": "Enhanced Stat",
       "genre": "fantasy",
       "tier": 3,
@@ -319,11 +319,15 @@
         {
           "genre": "fantasy",
           "name": "Enhanced Stat"
+        },
+        {
+          "genre": "science-fiction",
+          "name": "Enhanced Stat"
         }
       ],
       "provenance": {
         "version": "2026-07-29",
-        "logicalId": "ability.enhanced-stat-12273721-73e",
+        "logicalId": "ability.enhanced-stat",
         "language": "en",
         "sourceKind": "section",
         "section": "Fantasy Genre Abilities",
@@ -1327,53 +1331,6 @@
         "sourceKind": "section",
         "section": "Science Fiction Genre Abilities",
         "sourceLocator": "CRD — Disable Mechanism",
-        "transformations": [
-          "extracted as a standalone Ability Item",
-          "whitespace normalized in description only"
-        ]
-      }
-    },
-    {
-      "logicalId": "ability.enhanced-stat-b21a9cfb2c2d",
-      "name": "Enhanced Stat",
-      "genre": "science-fiction",
-      "tier": 3,
-      "key": "enhanced-stat",
-      "system": {
-        "key": "enhanced-stat",
-        "tier": 3,
-        "enabler": false,
-        "repeatable": false,
-        "cost": {
-          "stat": "none",
-          "amount": 0,
-          "options": [],
-          "additionalEffort": false
-        },
-        "action": null,
-        "freeWeaponCategories": [],
-        "freeArmorCategories": [],
-        "freeWeaponFamilies": [],
-        "freeWeaponSkillCategories": [],
-        "chooseWeaponAttackCategory": false,
-        "grantedArmorItemCategory": "",
-        "effects": [],
-        "rollTables": [],
-        "description": "<p>You gain 4 points in one Pool of your choice.</p>"
-      },
-      "sources": [
-        {
-          "genre": "science-fiction",
-          "name": "Enhanced Stat"
-        }
-      ],
-      "provenance": {
-        "version": "2026-07-29",
-        "logicalId": "ability.enhanced-stat-b21a9cfb2c2d",
-        "language": "en",
-        "sourceKind": "section",
-        "section": "Science Fiction Genre Abilities",
-        "sourceLocator": "CRD — Enhanced Stat",
         "transformations": [
           "extracted as a standalone Ability Item",
           "whitespace normalized in description only"
@@ -2666,7 +2623,7 @@
           "options": [],
           "additionalEffort": false
         },
-        "action": "lastAction",
+        "action": null,
         "freeWeaponCategories": [],
         "freeArmorCategories": [],
         "freeWeaponFamilies": [],
