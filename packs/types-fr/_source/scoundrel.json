@@ -38,7 +38,17 @@
       "speed",
       "intellect"
     ],
-    "description": "<p>You find that shading the truth, more often than not, benefits your endeavors. You've even pulled off one or more lucrative confidence games during your career, bilking the gullible of their resources for your own benefit. This kind of behavior tends to catch up with a person, so you probably move around a lot, hoping to stay ahead of unfortunate realizations and subsequent reprisal. Your group might lean on you when it comes to breaking into places without proper authorization or for distracting guards, officials, or foes with your capacity to make almost anything sound plausible even if it's a complete web of lies. If you're forced into armed conflict, you'll fight, but you're also remarkably good at seeing to your own welfare first.</p>"
+    "description": "<p>You find that shading the truth, more often than not, benefits your endeavors. You've even pulled off one or more lucrative confidence games during your career, bilking the gullible of their resources for your own benefit. This kind of behavior tends to catch up with a person, so you probably move around a lot, hoping to stay ahead of unfortunate realizations and subsequent reprisal. Your group might lean on you when it comes to breaking into places without proper authorization or for distracting guards, officials, or foes with your capacity to make almost anything sound plausible even if it's a complete web of lies. If you're forced into armed conflict, you'll fight, but you're also remarkably good at seeing to your own welfare first.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.51c85b033eec71c2",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.74f836631507813c",
+        "tier": 1
+      }
+    ]
   },
   "folder": "DNZXZoUQ1z24nS44",
   "sort": 0,
@@ -48,6 +58,24 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.scoundrel",
+        "language": "fr",
+        "sourceKind": "record",
+        "sourceLogicalId": "type.scoundrel",
+        "section": "Character Creation — Type — Fripouille — Abilities",
+        "sourceLocator": "CRD — Type: scoundrel",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "French localization paired to the canonical English Type",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }
