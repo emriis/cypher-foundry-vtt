@@ -354,39 +354,79 @@ async function collectEnglishRegistry() {
   const registry = new Map();
   const byKey = new Map();
 
+  const register = (parent, document, ability) => {
+    if (!ability || typeof ability !== "object" || isEditorialArtifact(ability)) {
+      return;
+    }
+
+    const id = identity(ability);
+    const entryKey = `${id.key}:${id.signature}`;
+    if (!registry.has(entryKey)) {
+      registry.set(entryKey, {
+        ...id,
+        ability,
+        parent,
+        document,
+        provenance: null
+      });
+    }
+
+    const entries = byKey.get(id.key) ?? [];
+    if (!entries.some(entry => entry.signature === id.signature)) {
+      entries.push(registry.get(entryKey));
+      byKey.set(id.key, entries);
+    }
+  };
+
+  for (const file of await sourceFiles("abilities-en")) {
+    const document = JSON.parse(await fs.readFile(file, "utf8"));
+    if (document._key?.startsWith("!folders!")) continue;
+
+    register("abilities", document, {
+      id: document.system?.key,
+      name: document.name,
+      ...document.system
+    });
+  }
+
   for (const parent of PARENT_PACKS) {
     for (const file of await sourceFiles(`${parent}-en`)) {
       const document = JSON.parse(await fs.readFile(file, "utf8"));
       if (document._key?.startsWith("!folders!")) continue;
 
       for (const ability of document.system?.abilities ?? []) {
-        if (!ability || typeof ability !== "object" || isAbilityParserArtifact(ability)) continue;
-        const id = identity(ability);
-        const entryKey = `${id.key}:${id.signature}`;
-        if (!registry.has(entryKey)) registry.set(entryKey, {
-          ...id,
-          ability,
-          parent,
-          document,
-          provenance: null
-        });
-
-        const entries = byKey.get(id.key) ?? [];
-        if (!entries.some(entry => entry.signature === id.signature)) {
-          entries.push(registry.get(entryKey));
-          byKey.set(id.key, entries);
-        }
+        register(parent, document, ability);
       }
     }
   }
 
+  const standaloneKeys = new Set();
   const variants = new Map();
+
   for (const entry of registry.values()) {
+    if (entry.parent !== "abilities") continue;
+    standaloneKeys.add(entry.key);
     variants.set(entry.key, (variants.get(entry.key) ?? 0) + 1);
   }
+
   for (const entry of registry.values()) {
-    entry.logicalId = buildLogicalId(entry.key, entry.signature, variants.get(entry.key));
-    entry.provenance = provenance("en", entry.parent, entry.document, entry.ability, entry.logicalId);
+    if (standaloneKeys.has(entry.key)) continue;
+    variants.set(entry.key, (variants.get(entry.key) ?? 0) + 1);
+  }
+
+  for (const entry of registry.values()) {
+    entry.logicalId = buildLogicalId(
+      entry.key,
+      entry.signature,
+      variants.get(entry.key)
+    );
+    entry.provenance = provenance(
+      "en",
+      entry.parent,
+      entry.document,
+      entry.ability,
+      entry.logicalId
+    );
   }
 
   return { registry, byKey };
