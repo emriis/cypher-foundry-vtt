@@ -204,6 +204,95 @@ async function sourceFiles(pack) {
     .map(file => path.join(dir, file));
 }
 
+async function normalizeDescriptorSources() {
+  const descriptorPacks = LANGUAGES.map(language => ({
+    language,
+    pack: `descriptors-${language}`
+  }));
+
+  const english = new Map();
+  const descriptorDirectories = [
+    "standard",
+    "species"
+  ];
+
+  for (const directory of descriptorDirectories) {
+    const dir = path.join(root, "packs", "descriptors-en", "_source", directory);
+    for (const file of await fs.readdir(dir)) {
+      if (!file.endsWith(".json")) continue;
+
+      const filePath = path.join(dir, file);
+      const document = JSON.parse(await fs.readFile(filePath, "utf8"));
+      if (document._key?.startsWith("!folders!")) continue;
+
+      const category = directory === "species" ? "species" : "descriptor";
+      const slugValue = slug(path.basename(file, ".json"));
+      const logicalId = category === "species"
+        ? `descriptor.species.${slugValue}`
+        : `descriptor.${slugValue}`;
+
+      english.set(`${directory}/${file}`, {
+        category,
+        logicalId,
+        name: document.name
+      });
+    }
+  }
+
+  for (const { language, pack } of descriptorPacks) {
+    for (const directory of descriptorDirectories) {
+      const dir = path.join(root, "packs", pack, "_source", directory);
+      for (const file of await fs.readdir(dir)) {
+        if (!file.endsWith(".json")) continue;
+
+        const filePath = path.join(dir, file);
+        const document = JSON.parse(await fs.readFile(filePath, "utf8"));
+        if (document._key?.startsWith("!folders!")) continue;
+
+        const reference = english.get(`${directory}/${file}`);
+        if (!reference) {
+          throw new Error(
+            `Missing English Descriptor source for ${directory}/${file}.`
+          );
+        }
+
+        document.document = "Item";
+        document.crdType = "descriptor";
+        document.flags = {
+          ...(document.flags ?? {}),
+          cypherFoundry: {
+            ...(document.flags?.cypherFoundry ?? {}),
+            crd: {
+              version: CRD_VERSION,
+              logicalId: reference.logicalId,
+              language,
+              sourceKind: "record",
+              section: reference.category === "species"
+                ? `Character Creation — Species — ${reference.name}`
+                : `Character Creation — Descriptor — ${reference.name}`,
+              sourceLocator: reference.category === "species"
+                ? `CRD — Species: ${reference.name}`
+                : `CRD — Descriptor: ${reference.name}`,
+              transformations: [
+                "mechanical fields extracted from the CRD",
+                "Descriptor source retained as a structured Foundry Item"
+              ],
+              ...(language === "fr"
+                ? { sourceLogicalId: reference.logicalId }
+                : {})
+            }
+          }
+        };
+
+        await fs.writeFile(
+          filePath,
+          JSON.stringify(document, null, 2) + "\n"
+        );
+      }
+    }
+  }
+}
+
 async function pruneAbilityArtifacts() {
   // Keep known editorial IDs in the removal set even when a stale source file
   // has already disappeared. Parent documents can otherwise retain orphaned
@@ -897,6 +986,7 @@ export async function migrateAbilitySources() {
   await migrateLanguage("fr", english, englishLogicalIds);
   const finalRemovedAbilityIds = await pruneAbilityArtifacts();
   await pruneAbilityReferences(finalRemovedAbilityIds);
+  await normalizeDescriptorSources();
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

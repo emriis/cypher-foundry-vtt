@@ -78,7 +78,7 @@ manually.
 | --- | --- | --- |
 | Skills | Item: skill | **Complete** |
 | Abilities | Item: ability | **Complete catalogue** |
-| Types | Item: type | **In progress** |
+| Types | Item: type | **Complete** |
 | Descriptors | Item: descriptor | **In progress** |
 | Foci | Item: focus | **In progress** |
 | Equipment | Item: equipment | Planned |
@@ -198,19 +198,19 @@ The remaining items are runtime/provenance work, not another identity rewrite.
 
 ### 6.3 Types — In progress
 
-- [ ] Complete CRD Type inventory
-- [ ] Audit current Type source records against the CRD
-- [ ] Canonical logical IDs and EN/FR pairing
-- [ ] Pool, Edge, wound, weapon, armor, and skill mechanics
-- [ ] Stat choices and selectable benefits
-- [ ] Canonical Ability and Skill references
-- [ ] Tier-specific Ability relationships
-- [ ] Provenance
-- [ ] Fidelity fixtures
-- [ ] Business/content contract tests
-- [ ] Full CI validation
+- [x] Complete CRD Type inventory
+- [x] Audit current Type source records against the CRD
+- [x] Canonical logical IDs and EN/FR pairing
+- [x] Pool, Edge, wound, weapon, armor, and skill mechanics
+- [x] Stat choices and selectable benefits
+- [x] Canonical Ability and Skill references
+- [x] Tier-specific Ability relationships
+- [x] Provenance
+- [x] Fidelity fixtures
+- [x] Business/content contract tests
+- [x] Full CI validation
 
-**Next implementation target.**
+**Completed in PR64. Next implementation target: Descriptors.**
 
 ### 6.4 Descriptors — In progress
 
@@ -497,21 +497,21 @@ A documented genuine source/model limitation may be an explicit exception.
 
 ### W1 — Complete Types
 
-- [ ] Audit current Type source records against the 2026-07-29 CRD
-- [ ] Build complete Type inventory
-- [ ] Normalize Type mechanics
-- [ ] Resolve Ability and Skill references
-- [ ] Complete EN/FR pairing and provenance
-- [ ] Add fidelity and contract tests
-- [ ] Merge only after CI is green
+- [x] Audit current Type source records against the 2026-07-29 CRD
+- [x] Build complete Type inventory
+- [x] Normalize Type mechanics
+- [x] Resolve Ability and Skill references
+- [x] Complete EN/FR pairing and provenance
+- [x] Add fidelity and contract tests
+- [x] Merge only after CI is green
 
 ### W2 — Complete Descriptors
 
-- [ ] Inventory descriptors and species-style descriptors
-- [ ] Normalize stat/skill/benefit mechanics
-- [ ] Review source-specific benefits versus reusable Abilities
-- [ ] Complete EN/FR pairing and provenance
-- [ ] Add fidelity and contract tests
+- [x] Inventory descriptors and species-style descriptors
+- [x] Normalize stat/skill/benefit mechanics
+- [x] Review source-specific benefits versus reusable Abilities
+- [x] Complete EN/FR pairing and provenance
+- [x] Add fidelity and contract tests
 
 ### W3 — Complete Foci
 
