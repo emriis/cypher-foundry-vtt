@@ -97,8 +97,11 @@ node --test tests/content/compendium-sources.test.mjs
 ```
 
 Then rebuild each affected LevelDB pack with `npm run build:packs`. The build
-script compiles all eight packs from their `_source/` directories and replaces
-only their generated database files. The `_source/` JSON is the reviewable
+script discovers every authored `packs/*/_source/` directory and compiles each
+one, replacing only its generated database files. The registered pack list in
+`system.json` and the authored source directories must remain consistent as new
+content families are introduced. See `docs/crd-content-roadmap.md` for the
+planned Player Guide, GM Guide, Quick Reference, genre, and GM libraries. The `_source/` JSON is the reviewable
 source of truth; the adjacent LevelDB files are what Foundry loads because
 `system.json` declares them directly.
 
