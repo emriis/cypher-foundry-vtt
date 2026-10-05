@@ -42,7 +42,33 @@
       "speed",
       "intellect"
     ],
-    "description": "<p>Your skill, daring, and flamboyant style outshine most others. When battle beckons, you rely on agile swordplay rather than brute force. You're not afraid to leap onto tables, slide down bannisters, and otherwise gamble on using the environment to your advantage. That same reckless confidence imbues your dashing grin, your witty banter, and your almost-theatrical charisma, allowing you to charm and beguile as you please. Among those in your company, you're probably one of the most ostentatious. If a fight is in the offing, foes are likely to focus on you for as long as you wish, thereby providing your allies a measure of protection. Of course, your fencing skills are amazing, so that's no sacrifice on your part. In fact, combat is just another stage on which you can show off your style and wit, aiding in your efforts to negotiate or woo.</p>"
+    "description": "<p>Your skill, daring, and flamboyant style outshine most others. When battle beckons, you rely on agile swordplay rather than brute force. You're not afraid to leap onto tables, slide down bannisters, and otherwise gamble on using the environment to your advantage. That same reckless confidence imbues your dashing grin, your witty banter, and your almost-theatrical charisma, allowing you to charm and beguile as you please. Among those in your company, you're probably one of the most ostentatious. If a fight is in the offing, foes are likely to focus on you for as long as you wish, thereby providing your allies a measure of protection. Of course, your fencing skills are amazing, so that's no sacrifice on your part. In fact, combat is just another stage on which you can show off your style and wit, aiding in your efforts to negotiate or woo.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.c0850a7cabfc59b2",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.a9699b4261b5f709",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.16ac53dcf92bb38c",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.f7b72c7040358072",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.d96edd67b2668c80",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.fb7526a0ebd98a63",
+        "tier": 1
+      }
+    ]
   },
   "folder": "406V7PHmM8qHDb1x",
   "sort": 0,
@@ -52,6 +78,22 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.swashbuckler",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Type — Swashbuckler — Abilities",
+        "sourceLocator": "CRD — Type: Swashbuckler",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }
