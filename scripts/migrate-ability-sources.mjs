@@ -986,6 +986,7 @@ export async function migrateAbilitySources() {
   await migrateLanguage("fr", english, englishLogicalIds);
   const finalRemovedAbilityIds = await pruneAbilityArtifacts();
   await pruneAbilityReferences(finalRemovedAbilityIds);
+  await normalizeDescriptorSources();
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
