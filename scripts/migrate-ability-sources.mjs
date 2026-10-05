@@ -125,6 +125,7 @@ async function pruneAbilityArtifacts() {
 
       if (
         /\bGM intrusions\b/i.test(String(document.name ?? "")) ||
+        document.system?.key?.endsWith("-gm-intrusions") ||
         document.name === "At higher tiers"
       ) {
         await fs.rm(file, { force: true });
