@@ -14,6 +14,7 @@ import {
 } from "../rules/tasks.mjs";
 import { resolveStat } from "../rules/stats.mjs";
 import { resolveDefense } from "../rules/defense.mjs";
+import { resolveActiveAbilityModifiers } from "../rules/ability-modifiers.mjs";
 
 /**
  * Roll a Block or Dodge defense through the common task engine.
@@ -110,8 +111,14 @@ export async function rollTask(actor, {
     const skillItem = skillItemId ? actor.items.get(skillItemId) : null;
     const skillSteps = skillItem ? skillItem.system.stepModifier : 0;
 
-    const abilityEdge = actor.system.abilityModifiers?.edge?.[stat] ?? 0;
-    const abilityPoolMax = actor.system.abilityModifiers?.poolMax?.[stat] ?? 0;
+    const abilityItems = actor.items?.contents
+      ?? (Array.isArray(actor.items) ? actor.items : []);
+    const abilityModifiers = resolveActiveAbilityModifiers(
+      actor.system.activeAbilityEffects,
+      abilityItems
+    );
+    const abilityEdge = abilityModifiers.edge?.[stat] ?? 0;
+    const abilityPoolMax = abilityModifiers.poolMax?.[stat] ?? 0;
     const edge = (statData.edge ?? 0) + abilityEdge;
     const poolValue = statData.pool.value;
     const poolMax = statData.pool.max + abilityPoolMax;
