@@ -41,7 +41,21 @@
     "statOptions": [
       "might"
     ],
-    "description": "<p>War never changes—it only changes people like you who have to fight in it or, after the war is lost, battle for survival in a world broken by conflict. For you, the only way forward is to crush even potential enemies so quickly and violently that they'll never threaten you or that which you cherish again. In an often violent postapocalyptic world, your allies appreciate your protection and, when necessary, your aggressive nature when you must force your way into a location that may contain the resources required to survive another day.</p>"
+    "description": "<p>War never changes—it only changes people like you who have to fight in it or, after the war is lost, battle for survival in a world broken by conflict. For you, the only way forward is to crush even potential enemies so quickly and violently that they'll never threaten you or that which you cherish again. In an often violent postapocalyptic world, your allies appreciate your protection and, when necessary, your aggressive nature when you must force your way into a location that may contain the resources required to survive another day.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.d631387889d71582",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.85be636847962ea6",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.1fc1bf6430861da5",
+        "tier": 1
+      }
+    ]
   },
   "folder": "UwhTFa2lNkjiyB2j",
   "sort": 0,
@@ -51,6 +65,22 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.heavy",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Type — Heavy — Abilities",
+        "sourceLocator": "CRD — Type: Heavy",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }
