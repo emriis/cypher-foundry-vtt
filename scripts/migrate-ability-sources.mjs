@@ -73,7 +73,7 @@ function mechanicalShape(ability) {
 }
 
 function isGmIntrusionEntry(ability) {
-  return /\\bgm intrusions\\b/i.test(String(ability.name ?? ""));
+  return /\bgm intrusions\b/i.test(String(ability.name ?? ""));
 }
 
 function identity(ability) {
@@ -183,7 +183,7 @@ async function migrateLanguage(language, english) {
   const documents = await collectDocuments(language);
   const hasLegacyAbilities = documents.some(({ document }) =>
     (document.system?.abilities ?? []).some(
-      ability => ability && typeof ability === "object"
+      ability => ability && typeof ability === "object" && !isGmIntrusionEntry(ability)
     )
   );
   if (!hasLegacyAbilities) return;
@@ -192,7 +192,7 @@ async function migrateLanguage(language, english) {
 
   for (const { document } of documents) {
     for (const ability of document.system?.abilities ?? []) {
-      if (!ability || typeof ability !== "object") continue;
+      if (!ability || typeof ability !== "object" || isGmIntrusionEntry(ability)) continue;
       const resolved = language === "fr"
         ? resolveFrenchEntry(ability, english)
         : {
