@@ -329,10 +329,10 @@ async function migrateLanguage(language, english) {
       { name: entry.source?.document ?? "Unknown source" },
       { name: canonical.name, id: canonical.id ?? canonical.name }
     );
-    provenance.logicalId = `ability.${entry.key}`;
+    provenance.logicalId = `ability.${entry.key}-${entry.signature.slice(0, 12)}`;
     provenance.language = language;
     if (language === "fr") {
-      provenance.sourceLogicalId = `ability.${entry.key}`;
+      provenance.sourceLogicalId = provenance.logicalId;
     }
 
     const document = {
