@@ -1142,8 +1142,9 @@ export async function migrateAbilitySources() {
   await pruneAbilityReferences(removedAbilityIds);
   await mergeGenreAbilities();
   const english = await collectEnglishRegistry();
-  const englishLogicalIds = await collectStandaloneEnglishLogicalIds();
+  let englishLogicalIds = await collectStandaloneEnglishLogicalIds();
   await migrateLanguage("en", english, englishLogicalIds);
+  englishLogicalIds = await collectStandaloneEnglishLogicalIds();
   await migrateLanguage("fr", english, englishLogicalIds);
   const finalRemovedAbilityIds = await pruneAbilityArtifacts();
   await pruneAbilityReferences(finalRemovedAbilityIds);
