@@ -397,6 +397,7 @@ async function collectStandaloneEnglishLogicalIds() {
   const exact = new Map();
   const fallback = new Map();
   const byKey = new Map();
+  const byKeyTier = new Map();
 
   for (const entry of entries) {
     const logicalId = buildLogicalId(
