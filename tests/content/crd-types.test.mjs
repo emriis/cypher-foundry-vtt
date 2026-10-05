@@ -10,6 +10,7 @@ const TYPE_DIRS = ["types-en", "types-fr"];
 const TYPE_NAMES = [
   "android",
   "archer",
+  "knife-fighter",
   "axe-fighter",
   "barbarian",
   "bard",
