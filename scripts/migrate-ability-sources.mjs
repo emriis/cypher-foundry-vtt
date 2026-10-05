@@ -370,7 +370,31 @@ async function collectReferenceProvenance(language) {
   return references;
 }
 
-async function enrichStandaloneLanguage(language) {
+async function collectStandaloneEnglishLogicalIds() {
+  const entries = [];
+  for (const file of await sourceFiles("abilities-en")) {
+    const document = JSON.parse(await fs.readFile(file, "utf8"));
+    if (document._key?.startsWith("!folders!")) continue;
+    const key = document.system?.key;
+    if (!key) continue;
+    const signature = hash(JSON.stringify(mechanicalShape(document.system)));
+    entries.push({ key, signature, document });
+  }
+
+  const counts = new Map();
+  for (const entry of entries) {
+    counts.set(entry.key, (counts.get(entry.key) ?? 0) + 1);
+  }
+
+  return new Map(
+    entries.map(entry => [
+      `${entry.key}:${entry.signature}`,
+      buildLogicalId(entry.key, entry.signature, counts.get(entry.key))
+    ])
+  );
+}
+
+async function enrichStandaloneLanguage(language, englishLogicalIds) {
   const abilityDir = path.join(root, "packs", `abilities-${language}`, "_source");
   const files = await sourceFiles(`abilities-${language}`);
   const documents = [];
@@ -396,9 +420,15 @@ async function enrichStandaloneLanguage(language) {
     const reference = references.get(document._id);
     if (!reference) continue;
 
-    const logicalId = keyCounts.get(key) > 1
-      ? `ability.${key}-${document._id.slice(0, 12)}`
-      : `ability.${key}`;
+    const signature = hash(JSON.stringify(mechanicalShape(document.system ?? {})));
+    const logicalId = language === "fr"
+      ? englishLogicalIds.get(`${key}:${signature}`)
+      : buildLogicalId(key, signature, keyCounts.get(key));
+    if (!logicalId) {
+      throw new Error(
+        `French Ability "${document.name}" has no canonical English logical ID for key "${key}".`
+      );
+    }
 
     document.document = "Item";
     document.crdType = "ability";
@@ -422,7 +452,7 @@ async function enrichStandaloneLanguage(language) {
   return abilityDir;
 }
 
-async function migrateLanguage(language, english) {
+async function migrateLanguage(language, english, englishLogicalIds) {
   const documents = await collectDocuments(language);
   const hasLegacyAbilities = documents.some(({ document }) =>
     (document.system?.abilities ?? []).some(
@@ -430,7 +460,7 @@ async function migrateLanguage(language, english) {
     )
   );
   if (!hasLegacyAbilities) {
-    await enrichStandaloneLanguage(language);
+    await enrichStandaloneLanguage(language, englishLogicalIds);
     return;
   }
 
@@ -548,6 +578,7 @@ export async function migrateAbilitySources() {
   await pruneAbilityReferences(removedAbilityIds);
   await mergeGenreAbilities();
   const english = await collectEnglishRegistry();
+  const englishLogicalIds = await collectStandaloneEnglishLogicalIds();
   await migrateLanguage("en", english);
   await migrateLanguage("fr", english);
   await pruneAbilityArtifacts();
