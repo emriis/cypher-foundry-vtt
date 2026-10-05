@@ -255,8 +255,9 @@ test("CRD Genre Ability manifest preserves structured mechanics", () => {
     assert.ok(genres.has(record.genre), record.logicalId);
     assert.equal(record.key, record.system.key, record.logicalId);
     assert.equal(record.tier, record.system.tier, record.logicalId);
-    assert.equal(record.system.enabler, record.system.action === null &&
-      record.system.enabler, record.logicalId);
+    if (record.system.enabler) {
+      assert.equal(record.system.action, null, record.logicalId);
+    }
     assert.ok(record.system.cost);
     assert.ok(Array.isArray(record.system.cost.options));
     assert.ok(Array.isArray(record.system.effects));
