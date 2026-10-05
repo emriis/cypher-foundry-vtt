@@ -466,7 +466,16 @@ async function enrichStandaloneLanguage(language, english, diagnostics) {
       continue;
     }
 
-    const logicalId = match.logicalId;
+    // French records keep their own deterministic logical IDs so multiple
+    // localized source variants can coexist, while sourceLogicalId points to
+    // the single canonical English Ability record.
+    const logicalId = language === "fr"
+      ? buildLogicalId(
+          id.key,
+          id.signature,
+          keyVariantCounts.get(id.key) ?? 1
+        )
+      : match.logicalId;
     const reference = references.get(document._id);
     const sourceParent = reference?.parent ?? "types";
     const sourceDocument = reference?.document ?? {
