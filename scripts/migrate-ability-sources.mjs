@@ -849,21 +849,37 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
           pairedLogicalIds.add(candidate);
         }
       }
-      const unusedCandidates = candidates => [...(candidates ?? [])]
-        .filter(candidate => !canonicalDocuments.has(candidate));
+      const selectCandidate = candidates => {
+        const allCandidates = [...(candidates ?? [])];
+        const unusedCandidates = allCandidates.filter(
+          candidate => !canonicalDocuments.has(candidate)
+        );
+
+        if (unusedCandidates.length === 1) {
+          return unusedCandidates[0];
+        }
+
+        // A single already-canonical candidate is a duplicate source, not an
+        // ambiguity. Let the duplicate handling below collapse it.
+        if (unusedCandidates.length === 0 && allCandidates.length === 1) {
+          return allCandidates[0];
+        }
+
+        return null;
+      };
 
       if (!logicalId) {
-        const pairedCandidates = unusedCandidates(pairedLogicalIds)
+        const pairedCandidates = [...(pairedLogicalIds ?? [])]
           .filter(candidate =>
             englishLogicalIds.byKey.get(key)?.has(candidate)
           );
-        if (pairedCandidates.length === 1) {
-          logicalId = pairedCandidates[0];
-        }
+        logicalId = selectCandidate(pairedCandidates);
       }
       if (!logicalId) {
-        const exact = englishLogicalIds.exact.get(`${key}:${signature}`);
-        if (exact && !canonicalDocuments.has(exact)) {
+        const exact = englishLogicalIds.exact.get(
+          `${key}:${signature}`
+        );
+        if (exact) {
           logicalId = exact;
         }
       }
@@ -871,37 +887,25 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
         const fallbackKey = `${key}:${hash(
           JSON.stringify(localizedPairingMechanicalShape(document.system ?? {}))
         )}`;
-        const candidates = unusedCandidates(
+        logicalId = selectCandidate(
           englishLogicalIds.fallback.get(fallbackKey)
         );
-        if (candidates.length === 1) {
-          logicalId = candidates[0];
-        }
       }
       if (!logicalId) {
-        const candidates = unusedCandidates(
+        logicalId = selectCandidate(
           englishLogicalIds.byKeyTier.get(
             `${key}:${document.system?.tier}`
           )
         );
-        if (candidates.length === 1) {
-          logicalId = candidates[0];
-        }
       }
       if (!logicalId) {
         const looseKey = `${key}:${document.system?.tier}:${hash(
           JSON.stringify(localizedLooseMechanicalShape(document.system ?? {}))
         )}`;
-        const candidates = unusedCandidates(englishLogicalIds.loose.get(looseKey));
-        if (candidates.length === 1) {
-          logicalId = candidates[0];
-        }
+        logicalId = selectCandidate(englishLogicalIds.loose.get(looseKey));
       }
       if (!logicalId) {
-        const candidates = unusedCandidates(englishLogicalIds.byKey.get(key));
-        if (candidates.length === 1) {
-          logicalId = candidates[0];
-        }
+        logicalId = selectCandidate(englishLogicalIds.byKey.get(key));
       }
     } else {
       logicalId = buildLogicalId(key, signature, keyCounts.get(key));
