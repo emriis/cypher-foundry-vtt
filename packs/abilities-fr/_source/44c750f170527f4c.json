@@ -1,0 +1,48 @@
+{
+  "_id": "44c750f170527f4c",
+  "_key": "!items!44c750f170527f4c",
+  "document": "Item",
+  "name": "Wizard's Cunning",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "crdType": "ability",
+  "system": {
+    "key": "wizards-cunning",
+    "tier": 1,
+    "enabler": false,
+    "repeatable": false,
+    "cost": {
+      "stat": "intellect",
+      "amount": 2,
+      "options": []
+    },
+    "action": "lastAction",
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "When you succeed on an Intellect roll for magic lore against a difficulty set by your GM, you identify and understand the purpose of something magical within short range (if any). In addition, you can attempt to immediately dispel one magical effect (such as an effect created by a character, creature, or item) within the same area by succeeding on another magic lore task against its level. Alternatively, you can attempt to create a small magical effect within short range. The effect might be to create a firework-like display of light and sound, permanently change the color or basic appearance of a small mundane object, cause small objects to float through the air, ask a moth or other small creature to carry a message for you, mend a broken object, urge a little more alacrity from a mount (lasting until you use a one-hour or longer recovery), and so on. Using this ability offensively is possible with some ingenuity, but it can't inflict more than 1 or 2 damage. Last action."
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "ability.wizards-cunning",
+        "language": "fr",
+        "sourceLogicalId": "ability.wizards-cunning",
+        "sourceKind": "record",
+        "section": "Character Creation — Type — Wizard — Abilities",
+        "sourceLocator": "CRD — Type: Wizard — Ability: Wizard's Cunning",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "source occurrence converted to a standalone Ability Item",
+          "no faithful French CRD localization available; English source text retained"
+        ]
+      }
+    }
+  }
+}
