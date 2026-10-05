@@ -1,0 +1,32 @@
+{
+  "_id": "79230118riding00",
+  "_key": "!items!79230118riding00",
+  "document": "Item",
+  "name": "Riding",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You know how to ride and care for a horse, camel, or similar mount. Alternatively, you know how to ride and care for a motorcycle, bicycle, or similar mechanical device appropriate to your game’s setting.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.riding",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.riding"
+      }
+    }
+  }
+}
