@@ -96,6 +96,14 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
         tenHours: new BooleanField({ initial: false })
       }),
 
+      // Actor-owned runtime state for currently active Ability effects.
+      // The referenced Ability Item contains the source-defined mechanics;
+      // this collection stores only the runtime activation state.
+      activeAbilityEffects: new ArrayField(new SchemaField({
+        itemUuid: new StringField({ required: true, blank: false }),
+        effectId: new StringField({ required: true, blank: false })
+      }), { required: true, initial: [] }),
+
       // Maximum number of cyphers carried simultaneously.
       cypherLimit: new NumberField({ required: true, integer: true, initial: 2, min: 0 }),
 
