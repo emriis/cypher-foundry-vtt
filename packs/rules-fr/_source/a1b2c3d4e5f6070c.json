@@ -1,0 +1,37 @@
+{
+  "_id": "a1b2c3d4e5f6070c",
+  "_key": "!journal!a1b2c3d4e5f6070c",
+  "name": "Combat: Attacks and Defenses",
+  "document": "JournalEntry",
+  "crdType": "journal",
+  "pages": [
+    {
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<h1>Combat: Attacks and Defenses</h1><p>Combat uses attack rolls and defense rolls. An attack roll is a task to determine whether an attack succeeds. Defense rolls determine whether you avoid, block, or otherwise resist an attack or effect.</p><p>You can always choose to not defend against an attack, in which case it automatically hits you.</p><p>Some effects and NPC attacks might bypass blocks and dodges. For example, a trap that releases poison gas might have you make a Might defense roll, and a mental blast from a psychic monster might have you make an Intellect defense roll.</p><p>Sometimes an attack provokes two defense actions. For example, a venomous snake might require a block or dodge followed by a Might defense roll against its poison.</p><p>If a defense roll fails, some attacks may confer an ongoing hostile effect that requires you to use a recovery to end it. If you use a recovery this way, you don’t get the benefits a recovery normally grants.</p><h2>Armor and Shields</h2><p>Armor indicates how much less damage a character takes from an attack. Shields protect against attacks when a block roll succeeds: instead of reducing the wound’s severity by one step, the shield can take the entire wound so the character takes no damage.</p>"
+      },
+      "_id": "b2c3d4e5f6070815",
+      "_key": "!journal.pages!a1b2c3d4e5f6070c.b2c3d4e5f6070815"
+    }
+  ],
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "language": "fr",
+        "sourceKind": "section",
+        "section": "Core Rules — Combat: Attacks and Defenses",
+        "sourceLocator": "Core Rules — Combat: Attacks and Defenses",
+        "transformations": [
+          "structural: CRD section to JournalEntry text page",
+          "fallback: supplied CRD materials contain no matching French Character Book source"
+        ]
+      }
+    }
+  }
+}
