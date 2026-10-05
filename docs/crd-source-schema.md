@@ -73,6 +73,35 @@ Localized prose belongs in the language-specific record.
 
 The schema does not translate, normalize, infer, or otherwise rewrite mechanics.
 
+## 5. Structured ability end conditions
+
+Ability effects may contain a structured `endConditions` collection when the CRD
+states an explicit recovery boundary.
+
+A recovery end condition uses:
+
+| Field | Meaning |
+| --- | --- |
+| kind | `recovery` |
+| interval | `any`, `tenMinutes`, `hour`, or `tenHours` |
+| minimum | Whether the stated interval is a minimum threshold, corresponding to wording such as "one-hour or longer" |
+
+For example, "until you use a ten-minute or longer recovery" maps to:
+
+    {
+      kind: "recovery",
+      interval: "tenMinutes",
+      minimum: true
+    }
+
+This is source data, not runtime state. It does not indicate that an ability is
+currently active, on cooldown, or available on a character.
+
+Only explicit recovery boundaries are structured by this contract. Other
+termination conditions remain in source text until a separate source-justified
+representation is established. The extractor must not infer a structured
+condition from prose merely because it appears automatable.
+
 ## 5. Structural transformations
 
 Allowed transformations include:
@@ -91,7 +120,7 @@ inventing missing mechanics.
 
 If extraction cannot establish a reliable mapping, the extractor must stop.
 
-## 6. Bilingual pairing
+## 7. Bilingual pairing
 
 The pairing model is:
 
@@ -108,7 +137,7 @@ The pairing model is:
 
 French is a localization layer, not an independent mechanical source.
 
-## 7. Validation contract
+## 8. Validation contract
 
 The source validator rejects:
 
@@ -125,7 +154,7 @@ The source validator rejects:
 The validator does not attempt to judge the correctness of CRD prose. Fidelity
 must be established against the extracted source material.
 
-## 8. Phase 2 content types
+## 9. Phase 2 content types
 
 The initial contract covers:
 
@@ -147,7 +176,7 @@ The initial contract covers:
 Creature/Actor-specific source fields will be defined with the creature
 extraction phase rather than guessed now.
 
-## 9. Extraction boundary
+## 10. Extraction boundary
 
 Every automated extractor must:
 
@@ -158,7 +187,7 @@ Every automated extractor must:
 5. validate the resulting source record;
 6. refuse to emit a record when the source mapping is ambiguous.
 
-## Logical identifiers and cross-language pairing
+## 11. Logical identifiers and cross-language pairing
 
 Every reusable CRD record has one language-neutral `logicalId`.
 
