@@ -179,6 +179,83 @@ function resolveFrenchEntry(ability, english) {
   );
 }
 
+async function collectReferenceProvenance(language) {
+  const references = new Map();
+
+  for (const parent of PARENT_PACKS) {
+    for (const file of await sourceFiles(`${parent}-${language}`)) {
+      const document = JSON.parse(await fs.readFile(file, "utf8"));
+      if (document._key?.startsWith("!folders!")) continue;
+
+      for (const reference of document.system?.abilities ?? []) {
+        const match = String(reference).match(
+          /Item\\.([A-Za-z0-9]{16})$/
+        );
+        if (!match || references.has(match[1])) continue;
+
+        references.set(match[1], {
+          parent,
+          document
+        });
+      }
+    }
+  }
+
+  return references;
+}
+
+async function enrichStandaloneLanguage(language) {
+  const abilityDir = path.join(root, "packs", `abilities-${language}`, "_source");
+  const files = await sourceFiles(`abilities-${language}`);
+  const documents = [];
+
+  for (const file of files) {
+    const document = JSON.parse(await fs.readFile(file, "utf8"));
+    if (document._key?.startsWith("!folders!")) continue;
+    documents.push({ file, document });
+  }
+
+  const keyCounts = new Map();
+  for (const { document } of documents) {
+    const key = document.system?.key;
+    if (key) keyCounts.set(key, (keyCounts.get(key) ?? 0) + 1);
+  }
+
+  const references = await collectReferenceProvenance(language);
+
+  for (const { file, document } of documents) {
+    const key = document.system?.key;
+    if (!key) continue;
+
+    const reference = references.get(document._id);
+    if (!reference) continue;
+
+    const logicalId = keyCounts.get(key) > 1
+      ? `ability.${key}-${document._id.slice(0, 12)}`
+      : `ability.${key}`;
+
+    document.document = "Item";
+    document.crdType = "ability";
+    document.flags = {
+      ...(document.flags ?? {}),
+      cypherFoundry: {
+        ...(document.flags?.cypherFoundry ?? {}),
+        crd: provenance(
+          language,
+          reference.parent,
+          reference.document,
+          { name: document.name },
+          logicalId
+        )
+      }
+    };
+
+    await fs.writeFile(file, JSON.stringify(document, null, 2) + "\\n");
+  }
+
+  return abilityDir;
+}
+
 async function migrateLanguage(language, english) {
   const documents = await collectDocuments(language);
   const hasLegacyAbilities = documents.some(({ document }) =>
@@ -186,7 +263,10 @@ async function migrateLanguage(language, english) {
       ability => ability && typeof ability === "object" && !isGmIntrusionEntry(ability)
     )
   );
-  if (!hasLegacyAbilities) return;
+  if (!hasLegacyAbilities) {
+    await enrichStandaloneLanguage(language);
+    return;
+  }
 
   const registry = new Map();
 
