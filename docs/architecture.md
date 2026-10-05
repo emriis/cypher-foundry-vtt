@@ -192,9 +192,10 @@ expresses a mechanic that maps cleanly to the actor model. The current runtime
 supports self-modifiers for Pool maximums, Edge, and wound capacity.
 
 The source Ability Item remains immutable CRD-derived data. The actor stores only
-active effect references in `system.activeAbilityEffects`. The pure
-`rules/ability-modifiers.mjs` helper resolves those references to aggregate
-derived modifiers. It never parses effect prose.
+active effect references in `system.activeAbilityEffects`. The application/rules
+boundary resolves those references to aggregate derived modifiers when a task
+needs them. The pure `rules/ability-modifiers.mjs` helper never parses effect
+prose.
 
 Unsupported mechanics must remain in source text until a faithful structured
 representation exists. This prevents the compendium importer from silently
