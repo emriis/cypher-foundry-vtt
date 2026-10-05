@@ -42,7 +42,33 @@
     "statOptions": [
       "intellect"
     ],
-    "description": "<p>You propitiate the dark ones, ancient entities, or possibly a very real and present god who will punish you if you fail to continue singing their praises and offering sacrifices. But in return for your worship and idolatry, you can call upon their antediluvian aid, allowing you to manifest inexplicable powers to heal, enhance, cleanse, or punish. Your allies count on you to interpret strange dreams, identify lost gods and their works, heal and ward them against malign influences, and, when it matters most, step into a fight with your magic or weapon. You've journeyed long and far enough to know that the capacity to strike a foe down with an axe or sword is just as much a blessing as magic, as long as thanks are given afterward.</p>"
+    "description": "<p>You propitiate the dark ones, ancient entities, or possibly a very real and present god who will punish you if you fail to continue singing their praises and offering sacrifices. But in return for your worship and idolatry, you can call upon their antediluvian aid, allowing you to manifest inexplicable powers to heal, enhance, cleanse, or punish. Your allies count on you to interpret strange dreams, identify lost gods and their works, heal and ward them against malign influences, and, when it matters most, step into a fight with your magic or weapon. You've journeyed long and far enough to know that the capacity to strike a foe down with an axe or sword is just as much a blessing as magic, as long as thanks are given afterward.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.cc5f4c8ad92183a1",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.472e7732b7f841be",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.318cf8b74842f371",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.b0b4bc51667dbe41",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.a089fa3c26560a84",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.7ca303e7a63e578b",
+        "tier": 1
+      }
+    ]
   },
   "folder": "Mqh1tXdDDqH3lySK",
   "sort": 0,
@@ -52,6 +78,24 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.priest",
+        "language": "fr",
+        "sourceKind": "record",
+        "sourceLogicalId": "type.priest",
+        "section": "Character Creation — Type — Prêtre·esse — Abilities",
+        "sourceLocator": "CRD — Type: priest",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "French localization paired to the canonical English Type",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }
