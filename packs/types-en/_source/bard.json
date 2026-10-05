@@ -39,7 +39,21 @@
       "speed",
       "intellect"
     ],
-    "description": "<p>You're an entertainer: a singer, dancer, poet, storyteller, or something similar. Naturally charismatic and talented, your diligence and study have only improved your art. You know old poems, songs, jokes, and stories, and you're skilled at creating new ones, too. Your seemingly beneficent nature puts others at their ease, and your performances lift spirits, ease mental burdens, and may even inspire. Most characters on your team probably look to you for help, advice, and, if nothing else, a rousing performance to spark courage. Those same talents are useful when your group tries diplomacy. Whether you're relying on the truth or attempting a deception, your ability to flatter, smile, and delight others may open places that swords and spells can't.</p>"
+    "description": "<p>You're an entertainer: a singer, dancer, poet, storyteller, or something similar. Naturally charismatic and talented, your diligence and study have only improved your art. You know old poems, songs, jokes, and stories, and you're skilled at creating new ones, too. Your seemingly beneficent nature puts others at their ease, and your performances lift spirits, ease mental burdens, and may even inspire. Most characters on your team probably look to you for help, advice, and, if nothing else, a rousing performance to spark courage. Those same talents are useful when your group tries diplomacy. Whether you're relying on the truth or attempting a deception, your ability to flatter, smile, and delight others may open places that swords and spells can't.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.53e3f305833d728b",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.7eda85805fdfea22",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.bfd8c1fd4e463af4",
+        "tier": 1
+      }
+    ]
   },
   "folder": "pQTzt4j9XPpLBpKm",
   "sort": 0,
@@ -49,6 +63,22 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.bard",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Type — Bard — Abilities",
+        "sourceLocator": "CRD — Type: Bard",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }
