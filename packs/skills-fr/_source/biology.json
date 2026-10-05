@@ -1,0 +1,32 @@
+{
+  "_id": "9d74b89cbiology0",
+  "_key": "!items!9d74b89cbiology0",
+  "document": "Item",
+  "name": "Biology",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You have a deep working knowledge of living systems, including animals, plants, and insects appropriate to your game’s setting.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.biology",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.biology"
+      }
+    }
+  }
+}
