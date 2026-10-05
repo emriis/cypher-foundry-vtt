@@ -58,6 +58,41 @@ test("active Ability modifiers aggregate Pool maxima and wound capacity", () => 
   const modifiers = resolveActiveAbilityModifiers(
     [
       { itemUuid: "Actor.pc.Item.guardian", effectId: "base" },
+      { itemUuid: "Actor.pc.Item.guardian", effectId: "ward" }
+    ],
+    [{
+      uuid: "Actor.pc.Item.guardian",
+      type: "ability",
+      system: {
+        effects: [
+          {
+            id: "base",
+            modifiers: [
+              { kind: "poolMax", stat: "might", amount: 2 },
+              { kind: "woundCapacity", severity: "minor", amount: 1 }
+            ]
+          },
+          {
+            id: "ward",
+            modifiers: [
+              { kind: "poolMax", stat: "might", amount: 1 },
+              { kind: "woundCapacity", severity: "minor", amount: 1 }
+            ]
+          }
+        ]
+      }
+    }]
+  );
+
+  assert.equal(modifiers.poolMax.might, 3);
+  assert.equal(modifiers.woundCapacity.minor, 2);
+  assert.equal(modifiers.poolMax.speed, 0);
+});
+
+test("duplicate runtime references do not stack the same Ability effect twice", () => {
+  const modifiers = resolveActiveAbilityModifiers(
+    [
+      { itemUuid: "Actor.pc.Item.guardian", effectId: "base" },
       { itemUuid: "Actor.pc.Item.guardian", effectId: "base" }
     ],
     [{
@@ -67,15 +102,12 @@ test("active Ability modifiers aggregate Pool maxima and wound capacity", () => 
         effects: [{
           id: "base",
           modifiers: [
-            { kind: "poolMax", stat: "might", amount: 2 },
-            { kind: "woundCapacity", severity: "minor", amount: 1 }
+            { kind: "edge", stat: "might", amount: 1 }
           ]
         }]
       }
     }]
   );
 
-  assert.equal(modifiers.poolMax.might, 4);
-  assert.equal(modifiers.woundCapacity.minor, 2);
-  assert.equal(modifiers.poolMax.speed, 0);
+  assert.equal(modifiers.edge.might, 1);
 });
