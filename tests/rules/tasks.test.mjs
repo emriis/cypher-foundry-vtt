@@ -5,6 +5,7 @@ import {
   clampAssetSteps,
   clampEffortLevels,
   computeEffortCost,
+  resolveAttackDamage,
   computeTaskSteps,
   resolveSpecialRoll,
   resolveTaskDifficulty,
@@ -155,4 +156,16 @@ test("canRetryTask enforces the CRD retry boundary", () => {
     effortLevels: 1
   }), false);
   assert.equal(canRetryTask({ failed: false, effortLevels: 1 }), false);
+});
+
+test("attack damage is zero when the attack fails", () => {
+  assert.equal(resolveAttackDamage(false, 6, 4), 0);
+});
+
+test("successful attack damage includes the special damage bonus", () => {
+  assert.equal(resolveAttackDamage(true, 6, 4), 10);
+});
+
+test("attack damage never becomes negative", () => {
+  assert.equal(resolveAttackDamage(true, -2, -1), 0);
 });
