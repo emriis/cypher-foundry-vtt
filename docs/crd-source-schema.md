@@ -102,7 +102,27 @@ termination conditions remain in source text until a separate source-justified
 representation is established. The extractor must not infer a structured
 condition from prose merely because it appears automatable.
 
-This is source data, not runtime state. It does not indicate that an ability is\ncurrently active, on cooldown, or available on a character.\n\nOnly explicit recovery boundaries are structured by this contract. Other\ntermination conditions remain in source text until a separate source-justified\nrepresentation is established. The extractor must not infer a structured\ncondition from prose merely because it appears automatable.\n\n## 6. Runtime boundary\n\nThe source schema and actor runtime state are separate contracts.\n\nThe source record defines an Ability effect and its CRD-derived `endConditions`.\nThe actor runtime stores only which actor-owned Ability effects are currently\nactive:\n\n    system.activeAbilityEffects[]\n      - itemUuid\n      - effectId\n\nThis runtime collection is not part of the CRD source record. It represents\ncurrent actor state and may differ between characters using the same Ability.\n\nRecovery-driven expiration is implemented by the application/runtime boundary:\nthe persisted Ability reference is resolved first, then the pure rule evaluates\nthe source-defined recovery condition. The runtime must not infer additional\ntermination conditions from effect prose.\n\n## 7. Structural transformations
+## 6. Runtime boundary
+
+The source schema and actor runtime state are separate contracts.
+
+The source record defines an Ability effect and its CRD-derived `endConditions`.
+The actor runtime stores only which actor-owned Ability effects are currently
+active:
+
+    system.activeAbilityEffects[]
+      - itemUuid
+      - effectId
+
+This runtime collection is not part of the CRD source record. It represents
+current actor state and may differ between characters using the same Ability.
+
+Recovery-driven expiration is implemented by the application/runtime boundary:
+the persisted Ability reference is resolved first, then the pure rule evaluates
+the source-defined recovery condition. The runtime must not infer additional
+termination conditions from effect prose.
+
+## 7. Structural transformations
 
 Allowed transformations include:
 
