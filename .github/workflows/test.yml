@@ -8,9 +8,10 @@ on:
   workflow_dispatch:
 
 concurrency:
-  # Never cancel a diagnostic run: every PR revision must leave a visible
-  # result so a failure cannot disappear between revisions.
-  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  # Keep each revision independently runnable and never cancel diagnostics.
+  # Including the commit SHA prevents a queued run from blocking the next
+  # revision when a previous GitHub-hosted runner is unavailable.
+  group: ci-${{ github.workflow }}-${{ github.sha }}
   cancel-in-progress: false
 
 jobs:
