@@ -24,5 +24,23 @@
     "effects": [],
     "rollTables": [],
     "description": "When you succeed on an Intellect roll for magic lore against a difficulty set by your GM, you identify and understand the purpose of something magical within short range (if any). In addition, you can attempt to immediately dispel one magical effect (such as an effect created by a character, creature, or item) within the same area by succeeding on another magic lore task against its level. Alternatively, you can attempt to create a small magical effect within short range. The effect might be to create a firework-like display of light and sound, permanently change the color or basic appearance of a small mundane object, cause small objects to float through the air, ask a moth or other small creature to carry a message for you, mend a broken object, urge a little more alacrity from a mount (lasting until you use a one-hour or longer recovery), and so on. Using this ability offensively is possible with some ingenuity, but it can't inflict more than 1 or 2 damage. Last action."
+  },
+  "document": "Item",
+  "crdType": "ability",
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "ability.wizards-cunning",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Type — Wizard — Abilities",
+        "sourceLocator": "CRD — Type: Wizard — Ability: Wizard's Cunning",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "source occurrence converted to a standalone Ability Item"
+        ]
+      }
+    }
   }
 }
