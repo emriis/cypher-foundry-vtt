@@ -94,3 +94,70 @@ test("rally rules enforce major-wound permission and Might cost", () => {
   assert.equal(computeRallyResult("minor", 1, wounds), null);
   assert.equal(computeRallyResult("major", 20, wounds), null);
 });
+
+test("hourly recovery clears all minor wounds when no moderate wound remains", () => {
+  assert.deepEqual(
+    computeRecoveryUpdates(
+      "hour",
+      {
+        minor: { current: 3 },
+        moderate: { current: 0 }
+      },
+      {}
+    ),
+    {
+      updates: {
+        "system.wounds.minor.current": 0,
+        "system.recoveries.hour": true
+      },
+      woundNoteKey: "CYPHER.Recovery.RemovesAllMinor"
+    }
+  );
+});
+
+test("recovery does not duplicate an already recorded interval", () => {
+  assert.deepEqual(
+    computeRecoveryUpdates(
+      "hour",
+      {
+        minor: { current: 1 },
+        moderate: { current: 0 }
+      },
+      { hour: true }
+    ),
+    {
+      updates: {
+        "system.wounds.minor.current": 0
+      },
+      woundNoteKey: "CYPHER.Recovery.RemovesAllMinor"
+    }
+  );
+});
+
+test("rallying requires an existing wound and sufficient Might", () => {
+  const wounds = {
+    minor: { current: 1 },
+    moderate: { current: 1 },
+    major: { current: 0 }
+  };
+
+  assert.equal(computeRallyResult("moderate", 4, wounds), null);
+  assert.equal(computeRallyResult("major", 20, wounds, true), null);
+});
+
+test("major wounds can be rallied when the permission is present", () => {
+  const wounds = {
+    minor: { current: 0 },
+    moderate: { current: 0 },
+    major: { current: 2 }
+  };
+
+  assert.deepEqual(
+    computeRallyResult("major", 12, wounds, true),
+    {
+      cost: 10,
+      remainingMight: 2,
+      remainingWound: 1
+    }
+  );
+});
