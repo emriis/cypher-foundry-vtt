@@ -20,6 +20,13 @@ export async function chooseAbilityEffect(item, effectId) {
     .find(candidate => candidate.id === effectId);
   if (!effect) return false;
 
+  const actor = item.actor;
+  const isOngoing = (effect.endConditions ?? []).length > 0;
+  if (isOngoing && actor?.type === "pc" && item.parent === actor) {
+    const activated = await activateAbilityEffect(actor, item, effectId);
+    if (!activated) return false;
+  }
+
   const description =
     await foundry.applications.ux.TextEditor.implementation.enrichHTML(
       effect.description ?? "",
