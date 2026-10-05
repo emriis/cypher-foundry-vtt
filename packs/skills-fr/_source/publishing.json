@@ -1,0 +1,32 @@
+{
+  "_id": "28e06a80publishi",
+  "_key": "!items!28e06a80publishi",
+  "document": "Item",
+  "name": "Publishing",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You’re well-versed in one aspect of publishing, such as writing, editing, copywriting, proofing, marketing, or something else. (Publishing is a modern real-world or science fiction skill. Someone interested in this skill in a historical real-world or fantasy setting might choose scribing instead.)</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.publishing",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.publishing"
+      }
+    }
+  }
+}
