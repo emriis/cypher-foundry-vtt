@@ -293,6 +293,50 @@ async function normalizeDescriptorSources() {
   }
 }
 
+async function normalizeFocusSources() {
+  for (const language of LANGUAGES) {
+    const directory = path.join(
+      root,
+      "packs",
+      `foci-${language}`,
+      "_source"
+    );
+
+    for (const file of await fs.readdir(directory)) {
+      if (!file.endsWith(".json")) continue;
+
+      const filePath = path.join(directory, file);
+      const document = JSON.parse(await fs.readFile(filePath, "utf8"));
+      if (document._key?.startsWith("!folders!")) continue;
+
+      const logicalId = `focus.${slug(path.basename(file, ".json"))`;
+      document.document = "Item";
+      document.crdType = "focus";
+      document.flags = {
+        ...(document.flags ?? {}),
+        cypherFoundry: {
+          ...(document.flags?.cypherFoundry ?? {}),
+          crd: {
+            version: CRD_VERSION,
+            logicalId,
+            language,
+            sourceKind: "record",
+            section: `Character Creation — Focus — ${document.name} — Abilities`,
+            sourceLocator: `CRD — Focus: ${document.name}`,
+            transformations: [
+              "mechanical fields extracted from the CRD",
+              "Focus abilities represented as standalone Ability UUID references"
+            ],
+            ...(language === "fr" ? { sourceLogicalId: logicalId } : {})
+          }
+        }
+      };
+
+      await fs.writeFile(filePath, JSON.stringify(document, null, 2) + "\n");
+    }
+  }
+}
+
 async function pruneAbilityArtifacts() {
   // Keep known editorial IDs in the removal set even when a stale source file
   // has already disappeared. Parent documents can otherwise retain orphaned
@@ -987,6 +1031,7 @@ export async function migrateAbilitySources() {
   const finalRemovedAbilityIds = await pruneAbilityArtifacts();
   await pruneAbilityReferences(finalRemovedAbilityIds);
   await normalizeDescriptorSources();
+  await normalizeFocusSources();
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
