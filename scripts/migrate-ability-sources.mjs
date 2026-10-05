@@ -72,6 +72,12 @@ function mechanicalShape(ability) {
   });
 }
 
+function canonicalMechanicalShape(ability) {
+  const shape = mechanicalShape(ability);
+  delete shape.tier;
+  return shape;
+}
+
 function isGmIntrusionEntry(ability) {
   return /\bgm intrusions\b/i.test(String(ability.name ?? ""));
 }
@@ -132,7 +138,7 @@ async function mergeGenreAbilities() {
   for (const file of await sourceFiles("abilities-en")) {
     const document = JSON.parse(await fs.readFile(file, "utf8"));
     if (document._key?.startsWith("!folders!")) continue;
-    const identityKey = `${document.system?.key}:${hash(JSON.stringify(mechanicalShape(document.system ?? {})))}`;
+    const identityKey = `${document.system?.key}:${hash(JSON.stringify(canonicalMechanicalShape(document.system ?? {})))}`;
     existing.set(identityKey, { file, document });
   }
 
@@ -174,7 +180,7 @@ async function mergeGenreAbilities() {
   };
 
   for (const record of records) {
-    const identityKey = `${record.system.key}:${hash(JSON.stringify(mechanicalShape(record.system)))}`;
+    const identityKey = `${record.system.key}:${hash(JSON.stringify(canonicalMechanicalShape(record.system)))}`;
     const current = existing.get(identityKey);
 
     if (!current) {
