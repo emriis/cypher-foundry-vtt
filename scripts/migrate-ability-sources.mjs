@@ -271,7 +271,7 @@ async function collectDocuments(language) {
   return documents;
 }
 
-function resolveFrenchEntry(ability, english, standaloneEnglish) {
+function resolveFrenchEntry(ability, english, standaloneEnglish = new Map()) {
   const id = identity(ability);
   const exact = english.registry.get(`${id.key}:${id.signature}`);
   if (exact) return { entry: exact, translated: true };
@@ -339,10 +339,6 @@ function resolveFrenchEntry(ability, english, standaloneEnglish) {
       entry: [...uniqueRelaxedMatches.values()][0],
       translated: false
     };
-  }
-
-  if (candidates.length === 1) {
-    return { entry: candidates[0], translated: false };
   }
 
   throw new Error(
@@ -426,8 +422,6 @@ async function enrichStandaloneLanguage(language, english, diagnostics) {
     }
   }
 
-  const references = await collectReferenceProvenance(language);
-
   for (const { file, document } of documents) {
     const key = document.system?.key;
     if (!key) continue;
@@ -476,11 +470,8 @@ async function enrichStandaloneLanguage(language, english, diagnostics) {
           keyVariantCounts.get(id.key) ?? 1
         )
       : match.logicalId;
-    const reference = references.get(document._id);
-    const sourceParent = reference?.parent ?? "types";
-    const sourceDocument = reference?.document ?? {
-      name: "Standalone Ability Catalogue"
-    };
+    // Existing standalone records are canonical Ability Catalogue records.
+    // Type/Focus references are relationships, not their authoritative source.
 
     document.document = "Item";
     document.crdType = "ability";
@@ -518,8 +509,8 @@ async function enrichStandaloneLanguage(language, english, diagnostics) {
         crd: {
           ...provenance(
             language,
-            sourceParent,
-            sourceDocument,
+            "abilities",
+            document,
             { name: document.name },
             logicalId
           ),
