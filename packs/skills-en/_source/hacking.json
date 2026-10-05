@@ -1,0 +1,31 @@
+{
+  "_id": "59295480hacking0",
+  "_key": "!items!59295480hacking0",
+  "document": "Item",
+  "name": "Hacking",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You can exploit weaknesses in a computer or computerized machine to gain unauthorized access, manipulate its intended function, damage it, and/or otherwise contravene its regular operation. Hacking requires a connection and some way to manipulate the system, such as with a keyboard or more advanced interface, and requires at least a few rounds or even minutes of effort, and perhaps much longer, depending on the hack desired. Attempting to exploit, break, or warp a computerized system—as opposed to operating a system as intended—is a hacking task.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.hacking",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}
