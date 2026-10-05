@@ -8,8 +8,10 @@ on:
   workflow_dispatch:
 
 concurrency:
+  # Never cancel a diagnostic run: every PR revision must leave a visible
+  # result so a failure cannot disappear between revisions.
   group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   unit:
@@ -44,6 +46,8 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
+      - name: Normalize CRD source metadata
+        run: npm run migrate:packs
       - name: Run content tests
         run: npm run test:content
       - name: Publish diagnostics
@@ -90,6 +94,8 @@ jobs:
         run: npm ci
       - name: Build compendium packs
         run: npm run build:packs
+      - name: Verify generated packs are current
+        run: git diff --exit-code -- packs
       - name: Publish diagnostics
         if: always()
         run: |
