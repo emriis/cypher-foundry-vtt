@@ -38,7 +38,21 @@
     "statOptions": [
       "speed"
     ],
-    "description": "<p>You're a War Arrow, a Hawkeye, a Death Whisper—or, as they sometimes call those like you, an Archer. You down your foes from afar with whistling bolts, one shot after another, before they have a chance to close. Even when foes bite, hew, and curse you in turn, your steady hand and long experience wielding a bow in combat allow your aim to remain true. You excel at ranged support for your allies, or sometimes downing foes from afar before hostilities have a chance to truly begin. You're also adept at watching over an area for your next target, protecting others in your band with the threat of your nocked arrow.</p>"
+    "description": "<p>You're a War Arrow, a Hawkeye, a Death Whisper—or, as they sometimes call those like you, an Archer. You down your foes from afar with whistling bolts, one shot after another, before they have a chance to close. Even when foes bite, hew, and curse you in turn, your steady hand and long experience wielding a bow in combat allow your aim to remain true. You excel at ranged support for your allies, or sometimes downing foes from afar before hostilities have a chance to truly begin. You're also adept at watching over an area for your next target, protecting others in your band with the threat of your nocked arrow.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.1fc1bf6430861da5",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.4479fa583104cc39",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.79e69a2053c7da56",
+        "tier": 1
+      }
+    ]
   },
   "folder": "zBqRagUFEUelogPi",
   "sort": 0,
@@ -48,6 +62,22 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.archer",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Type — Archer — Abilities",
+        "sourceLocator": "CRD — Type: Archer",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }
