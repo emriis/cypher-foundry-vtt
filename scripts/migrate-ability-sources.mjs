@@ -276,27 +276,33 @@ async function mergeGenreAbilities() {
   }
 
   if (manifest.version !== CRD_VERSION) {
-    throw new Error(
-      `Unsupported CRD genre ability manifest version: ${manifest.version}`
-    );
+    throw new Error(`Unsupported CRD genre ability manifest version: ${manifest.version}`);
   }
 
   const records = manifest.records ?? [];
   const existing = new Map();
+  const variantCounts = new Map();
+  const addVariant = key => {
+    if (key) variantCounts.set(key, (variantCounts.get(key) ?? 0) + 1);
+  };
 
   for (const file of await sourceFiles("abilities-en")) {
     const document = JSON.parse(await fs.readFile(file, "utf8"));
     if (document._key?.startsWith("!folders!")) continue;
-    const identityKey = `${document.system?.key}:${hash(
-      JSON.stringify(contentIdentityShape(document.system ?? {}))
-    )}`;
+    const identityKey = `${document.system?.key}:${hash(JSON.stringify(contentIdentityShape(document.system ?? {})))}`;
     existing.set(identityKey, { file, document });
+    addVariant(document.system?.key);
+  }
+
+  for (const record of records) {
+    if (!record.system?.key) continue;
+    const identityKey = `${record.system.key}:${hash(JSON.stringify(contentIdentityShape(record.system)))}`;
+    if (!existing.has(identityKey)) addVariant(record.system.key);
   }
 
   const writeRecord = async (language, record, localized) => {
     const abilityDir = path.join(root, "packs", `abilities-${language}`, "_source");
     await fs.mkdir(abilityDir, { recursive: true });
-
     const logicalId = record.logicalId;
     const id = hash(logicalId).slice(0, 16);
     const document = {
@@ -307,34 +313,29 @@ async function mergeGenreAbilities() {
       name: localized?.name ?? record.name,
       type: "ability",
       img: "icons/svg/upgrade.svg",
-      system: {
-        ...record.system,
-        description: localized?.system?.description ?? record.system.description
-      },
+      system: { ...record.system, description: localized?.system?.description ?? record.system.description },
       flags: {
         cypherFoundry: {
           crd: {
             ...record.provenance,
             language,
-            ...(language === "fr"
-              ? { sourceLogicalId: record.logicalId }
-              : {})
+            ...(language === "fr" ? { sourceLogicalId: record.logicalId } : {})
           }
         }
       }
     };
-
-    await fs.writeFile(
-      path.join(abilityDir, `${id}.json`),
-      JSON.stringify(document, null, 2) + "\n"
-    );
+    await fs.writeFile(path.join(abilityDir, `${id}.json`), JSON.stringify(document, null, 2) + "\n");
   };
 
   for (const record of records) {
-    const identityKey = `${record.system.key}:${hash(
-      JSON.stringify(contentIdentityShape(record.system))
-    )}`;
+    const identityKey = `${record.system.key}:${hash(JSON.stringify(contentIdentityShape(record.system)))}`;
     const current = existing.get(identityKey);
+    if (current?.document?.flags?.cypherFoundry?.crd?.logicalId) {
+      record.logicalId = current.document.flags.cypherFoundry.crd.logicalId;
+    } else {
+      record.logicalId = buildLogicalId(record.system.key, hash(JSON.stringify(contentIdentityShape(record.system))), variantCounts.get(record.system.key));
+    }
+    record.provenance.logicalId = record.logicalId;
 
     if (!current) {
       await writeRecord("en", record);
@@ -342,38 +343,27 @@ async function mergeGenreAbilities() {
       continue;
     }
 
-    if (!current.document.flags?.cypherFoundry?.crd) {
-      current.document.document = "Item";
-      current.document.crdType = "ability";
-      current.document.flags = {
-        ...(current.document.flags ?? {}),
-        cypherFoundry: {
-          ...(current.document.flags?.cypherFoundry ?? {}),
-          crd: record.provenance
-        }
-      };
-      await fs.writeFile(
-        current.file,
-        JSON.stringify(current.document, null, 2) + "\n"
-      );
-    }
+    current.document.document = "Item";
+    current.document.crdType = "ability";
+    current.document.flags = {
+      ...(current.document.flags ?? {}),
+      cypherFoundry: {
+        ...(current.document.flags?.cypherFoundry ?? {}),
+        crd: record.provenance
+      }
+    };
+    await fs.writeFile(current.file, JSON.stringify(current.document, null, 2) + "\n");
 
-    const frFile = path.join(
-      root,
-      "packs",
-      "abilities-fr",
-      "_source",
-      `${current.document._id}.json`
-    );
-
+    const frFile = path.join(root, "packs", "abilities-fr", "_source", `${current.document._id}.json`);
     try {
       await fs.access(frFile);
     } catch {
       await writeRecord("fr", record);
     }
   }
-}
 
+  await fs.writeFile(manifestPath, JSON.stringify(manifest, null, 2) + "\n");
+}
 async function collectEnglishRegistry() {
   const registry = new Map();
   const byKey = new Map();
