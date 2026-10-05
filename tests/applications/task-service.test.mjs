@@ -357,11 +357,25 @@ test("rollTask consumes active Ability Edge modifiers", async () => {
   setRollResult(12);
   globalThis.__rollMessages = [];
   const actor = createActor({ pool: 10, edge: 0 });
-  actor.system.abilityModifiers = {
-    poolMax: { might: 0, speed: 0, intellect: 0 },
-    edge: { might: 1, speed: 0, intellect: 0 },
-    woundCapacity: { minor: 0, moderate: 0, major: 0 }
-  };
+  actor.system.activeAbilityEffects = [{
+    itemUuid: "Actor.pc.Item.frenzy",
+    effectId: "frenzy"
+  }];
+  actor.items.set("frenzy", {
+    uuid: "Actor.pc.Item.frenzy",
+    type: "ability",
+    system: {
+      effects: [{
+        id: "frenzy",
+        modifiers: [{
+          kind: "edge",
+          stat: "might",
+          severity: "",
+          amount: 1
+        }]
+      }]
+    }
+  });
 
   const result = await CypherActor.prototype.rollTask.call(actor, {
     stat: "might",
@@ -370,5 +384,5 @@ test("rollTask consumes active Ability Edge modifiers", async () => {
   });
 
   assert.equal(result.success, true);
-  assert.equal(actor.system.stats.might.pool.value, 7);
+  assert.equal(actor.system.stats.might.pool.value, 9);
 });
