@@ -1,0 +1,31 @@
+{
+  "_id": "e7311832piloting",
+  "_key": "!items!e7311832piloting",
+  "document": "Item",
+  "name": "Piloting spacecraft",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You’re adept at piloting a spaceship, including in tasks related to navigating to other locations in space, as appropriate to your vessel’s capabilities and the game’s setting.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.piloting-spacecraft",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}
