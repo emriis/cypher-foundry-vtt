@@ -193,8 +193,14 @@ for (const language of ["en", "fr"]) {
       assert.ok(Array.isArray(provenance.transformations));
 
       if (language === "en") {
-        assert.match(provenance.section, /^Ability Catalogue — /);
-        assert.match(provenance.sourceLocator, /^CRD — Ability: /);
+        assert.match(
+          provenance.section,
+          /^(?:Ability Catalogue — |Character Creation — (?:Type|Focus) — )/
+        );
+        assert.match(
+          provenance.sourceLocator,
+          /^CRD — (?:Ability|Type|Focus): /
+        );
       }
 
       if (language === "fr") {
