@@ -40,9 +40,17 @@ for (const language of ["en", "fr"]) {
       assert.equal(document.crdType, "ability");
       assert.equal(document.flags.cypherFoundry.crd.language, language);
       if (language === "fr") {
+        const sourceLogicalId =
+          document.flags.cypherFoundry.crd.sourceLogicalId;
+        const english = [...readPackSources("abilities-en").values()]
+          .find(candidate =>
+            !isFolder(candidate) &&
+            candidate.flags?.cypherFoundry?.crd?.logicalId === sourceLogicalId
+          );
+        assert.ok(english, sourceLogicalId);
         assert.equal(
           document.flags.cypherFoundry.crd.sourceLogicalId,
-          document.flags.cypherFoundry.crd.logicalId
+          english.flags.cypherFoundry.crd.logicalId
         );
       }
     }
@@ -56,6 +64,7 @@ for (const language of ["en", "fr"]) {
       if (isFolder(document)) continue;
       assert.equal(document.type, "ability");
       assert.doesNotMatch(document.name, /\\bGM intrusions\\b/i);
+      assert.notEqual(document.name, "At higher tiers");
       assert.match(document._id, /^[A-Za-z0-9]{16}$/);
       assert.match(document._key, /^!items![A-Za-z0-9]{16}$/);
       assert.ok(document.system.key);
@@ -154,3 +163,81 @@ for (const prefix of ["types", "foci"]) {
     }
   });
 }
+
+for (const language of ["en", "fr"]) {
+  test(`${language} standalone abilities carry unique CRD provenance`, () => {
+    const abilities = [...readPackSources(`abilities-${language}`).values()]
+      .filter(document => !isFolder(document));
+
+    const logicalIds = new Set();
+    const englishLogicalIds = new Set(
+      [...readPackSources("abilities-en").values()]
+        .filter(document => !isFolder(document))
+        .map(getCrdLogicalId)
+        .filter(Boolean)
+    );
+
+    for (const document of abilities) {
+      assert.equal(document.document, "Item");
+      assert.equal(document.crdType, "ability");
+
+      const provenance = document.flags?.cypherFoundry?.crd;
+      assert.ok(provenance);
+      assert.equal(provenance.version, "2026-07-29");
+      assert.equal(provenance.language, language);
+      assert.match(provenance.logicalId, /^ability\.[a-z0-9-]+(?:-[a-f0-9]{12})?$/);
+      assert.ok(!logicalIds.has(provenance.logicalId), provenance.logicalId);
+      logicalIds.add(provenance.logicalId);
+      assert.ok(provenance.section);
+      assert.ok(provenance.sourceLocator);
+      assert.ok(Array.isArray(provenance.transformations));
+
+      if (language === "en") {
+        assert.match(provenance.section, /^Ability Catalogue — /);
+        assert.match(provenance.sourceLocator, /^CRD — Ability: /);
+      }
+
+      if (language === "fr") {
+        assert.ok(
+          englishLogicalIds.has(provenance.sourceLogicalId),
+          document._id + "/" + document.name + ": " +
+            provenance.sourceLogicalId + "; English IDs: " +
+            [...englishLogicalIds]
+              .filter(id => id.includes("sense-magic"))
+              .join(", ")
+        );
+        const english = [...readPackSources("abilities-en").values()]
+          .find(candidate =>
+            !isFolder(candidate) &&
+            candidate.flags?.cypherFoundry?.crd?.logicalId ===
+              provenance.sourceLogicalId
+          );
+        assert.equal(
+          document.system.key,
+          english?.system?.key,
+          document._id
+        );
+      }
+    }
+  });
+}
+
+test("Type and Focus ability references resolve to standalone Ability sources", () => {
+  const abilities = readPackSources("abilities-en");
+  const abilityIds = new Set(
+    [...abilities.values()]
+      .filter(document => !isFolder(document))
+      .map(document => document._id)
+  );
+
+  for (const prefix of ["types", "foci"]) {
+    for (const [filename, document] of readPackSources(`${prefix}-en`)) {
+      if (isFolder(document)) continue;
+
+      for (const uuid of document.system.abilities) {
+        const id = uuid.split(".").at(-1);
+        assert.ok(abilityIds.has(id), `${filename}/${id}`);
+      }
+    }
+  }
+});
