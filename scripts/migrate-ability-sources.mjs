@@ -72,31 +72,14 @@ function mechanicalShape(ability) {
   });
 }
 
-function isEditorialArtifact(ability) {
+function isGmIntrusionEntry(ability) {
   return /\bgm intrusions\b/i.test(String(ability.name ?? ""));
 }
 
 function identity(ability) {
-  const key = slug(ability.key || ability.id || ability.name);
+  const key = slug(ability.id || ability.name);
   const signature = hash(JSON.stringify(mechanicalShape(ability)));
   return { key, signature, id: hash(`${key}\\0${signature}`).slice(0, 16) };
-}
-
-function sourceProvenance(parent, document, ability) {
-  const parentName = document.name || parent;
-  const parentType = parent === "foci" ? "Focus" : "Type";
-  return {
-    version: "2026-07-29",
-    logicalId: `ability.${ability.id || slug(ability.name)}`,
-    language: "en",
-    sourceKind: "section",
-    section: `Genre Character Abilities from Types and Foci > ${parentType} Abilities`,
-    sourceLocator: `${parentName} > ${ability.name}`,
-    transformations: [
-      "Extracted as a standalone Ability Item",
-      "Resolved Type/Focus occurrence to canonical mechanical identity"
-    ]
-  };
 }
 
 function buildLogicalId(key, signature, variants) {
@@ -138,7 +121,7 @@ async function collectEnglishRegistry() {
       if (document._key?.startsWith("!folders!")) continue;
 
       for (const ability of document.system?.abilities ?? []) {
-        if (!ability || typeof ability !== "object" || isEditorialArtifact(ability)) continue;
+        if (!ability || typeof ability !== "object" || isGmIntrusionEntry(ability)) continue;
         const id = identity(ability);
         const entryKey = `${id.key}:${id.signature}`;
         if (!registry.has(entryKey)) registry.set(entryKey, {
@@ -151,9 +134,7 @@ async function collectEnglishRegistry() {
 
         const entries = byKey.get(id.key) ?? [];
         if (!entries.some(entry => entry.signature === id.signature)) {
-          const entry = registry.get(entryKey);
-          entry.sources.push({ parent, document: document.name, ability: ability.name });
-          entries.push(entry);
+          entries.push(registry.get(entryKey));
           byKey.set(id.key, entries);
         }
       }
@@ -275,87 +256,11 @@ async function enrichStandaloneLanguage(language) {
   return abilityDir;
 }
 
-async function enrichStandaloneSources(language, english) {
-  const documents = await collectDocuments(language);
-  const contexts = new Map();
-
-  for (const { parent, document } of documents) {
-    for (const uuid of document.system?.abilities ?? []) {
-      const id = typeof uuid === "string" ? uuid.split(".").at(-1) : null;
-      if (!id) continue;
-      const list = contexts.get(id) ?? [];
-      list.push({
-        parent,
-        document: document.name
-      });
-      contexts.set(id, list);
-    }
-  }
-
-  const abilityDir = path.join(root, "packs", `abilities-${language}`, "_source");
-  for (const file of await sourceFiles(`abilities-${language}`)) {
-    const ability = JSON.parse(await fs.readFile(file, "utf8"));
-    if (ability._key?.startsWith("!folders!")) continue;
-
-    const system = ability.system ?? {};
-    const id = ability._id;
-    const identityValue = identity({ ...system, name: ability.name });
-    const englishAbility = english?.get(identityValue.key);
-    const source = contexts.get(id)?.[0];
-    const logicalId = `ability.${identityValue.key}-${identityValue.signature.slice(0, 12)}`;
-
-    const provenance = {
-      version: "2026-07-29",
-      logicalId: englishAbility?.logicalId ?? logicalId,
-      language,
-      sourceKind: "section",
-      section: source
-        ? `Genre Character Abilities from Types and Foci > ${source.parent === "foci" ? "Focus" : "Type"} Abilities`
-        : "Genre Character Abilities from Types and Foci",
-      sourceLocator: source
-        ? `${source.document} > ${ability.name}`
-        : `Standalone Ability > ${ability.name}`,
-      transformations: [
-        "Extracted as a standalone Ability Item",
-        "Preserved canonical mechanical fields"
-      ]
-    };
-
-    if (language === "fr") {
-      provenance.sourceLogicalId = englishAbility?.logicalId ?? logicalId;
-    }
-
-    ability.document = "Item";
-    ability.crdType = "ability";
-    ability.flags = {
-      ...(ability.flags ?? {}),
-      cypherFoundry: {
-        ...(ability.flags?.cypherFoundry ?? {}),
-        crd: provenance
-      }
-    };
-
-    await fs.writeFile(file, JSON.stringify(ability, null, 2) + "\n");
-  }
-
-  return new Map(
-    (await Promise.all(
-      (await sourceFiles(`abilities-${language}`)).map(async file => {
-        const ability = JSON.parse(await fs.readFile(file, "utf8"));
-        return [
-          ability.system?.key,
-          ability.flags?.cypherFoundry?.crd
-        ];
-      })
-    )).filter(([key]) => key)
-  );
-}
-
 async function migrateLanguage(language, english) {
   const documents = await collectDocuments(language);
   const hasLegacyAbilities = documents.some(({ document }) =>
     (document.system?.abilities ?? []).some(
-      ability => ability && typeof ability === "object" && !isEditorialArtifact(ability)
+      ability => ability && typeof ability === "object" && !isGmIntrusionEntry(ability)
     )
   );
   if (!hasLegacyAbilities) {
@@ -367,7 +272,7 @@ async function migrateLanguage(language, english) {
 
   for (const { document } of documents) {
     for (const ability of document.system?.abilities ?? []) {
-      if (!ability || typeof ability !== "object" || isEditorialArtifact(ability)) continue;
+      if (!ability || typeof ability !== "object" || isGmIntrusionEntry(ability)) continue;
       const resolved = language === "fr"
         ? resolveFrenchEntry(ability, english)
         : {
@@ -383,8 +288,7 @@ async function migrateLanguage(language, english) {
       if (!registry.has(key)) {
         registry.set(key, {
           ...resolved.entry,
-          localizedAbility: resolved.translated ? ability : resolved.entry.ability,
-          source: resolved.entry.sources[0]
+          localizedAbility: resolved.translated ? ability : resolved.entry.ability
         });
       }
     }
@@ -400,24 +304,11 @@ async function migrateLanguage(language, english) {
     const localizedProvenance = language === "fr"
       ? { ...entry.provenance, language: "fr", sourceLogicalId: entry.logicalId }
       : entry.provenance;
-    const provenance = sourceProvenance(
-      entry.source?.parent ?? "types",
-      { name: entry.source?.document ?? "Unknown source" },
-      { name: canonical.name, id: canonical.id ?? canonical.name }
-    );
-    provenance.logicalId = `ability.${entry.key}-${entry.signature.slice(0, 12)}`;
-    provenance.language = language;
-    if (language === "fr") {
-      provenance.sourceLogicalId = provenance.logicalId;
-    }
-
     const document = {
       _id: entry.id,
       _key: `!items!${entry.id}`,
       document: "Item",
       name: ability.name,
-      document: "Item",
-      crdType: "ability",
       type: "ability",
       img: "icons/svg/upgrade.svg",
       crdType: "ability",
@@ -488,13 +379,8 @@ async function migrateLanguage(language, english) {
 
 export async function migrateAbilitySources() {
   const english = await collectEnglishRegistry();
-  if (english.registry.size === 0) {
-    const englishProvenance = await enrichStandaloneSources("en", null);
-    await enrichStandaloneSources("fr", englishProvenance);
-  } else {
-    await migrateLanguage("en", english);
-    await migrateLanguage("fr", english);
-  }
+  await migrateLanguage("en", english);
+  await migrateLanguage("fr", english);
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
