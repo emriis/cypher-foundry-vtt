@@ -146,3 +146,23 @@ export function canRetryTask({
 } = {}) {
   return Boolean(failed) && !isAttack && effortLevels >= 1;
 }
+
+/**
+ * Resolve damage dealt by a successful attack.
+ *
+ * Damage is only inflicted when the attack succeeds. Special damage bonuses
+ * are added to the attack's base damage after the result is known.
+ *
+ * @param {boolean} success Whether the attack hit.
+ * @param {number} baseDamage Base damage of the attack.
+ * @param {number} damageBonus Additional damage from a special result.
+ * @returns {number} Damage inflicted by the attack.
+ */
+export function resolveAttackDamage(
+  success,
+  baseDamage = 0,
+  damageBonus = 0
+) {
+  if (!success) return 0;
+  return Math.max(0, Number(baseDamage) + Number(damageBonus));
+}
