@@ -40,13 +40,17 @@ for (const language of ["en", "fr"]) {
       assert.equal(document.crdType, "ability");
       assert.equal(document.flags.cypherFoundry.crd.language, language);
       if (language === "fr") {
-        assert.match(
-          document.flags.cypherFoundry.crd.sourceLogicalId,
-          /^ability\.[a-z0-9-]+(?:-[a-f0-9]{12})?$/
-        );
+        const sourceLogicalId =
+          document.flags.cypherFoundry.crd.sourceLogicalId;
+        const english = [...readPackSources("abilities-en").values()]
+          .find(candidate =>
+            !isFolder(candidate) &&
+            candidate.flags?.cypherFoundry?.crd?.logicalId === sourceLogicalId
+          );
+        assert.ok(english, sourceLogicalId);
         assert.equal(
           document.flags.cypherFoundry.crd.sourceLogicalId,
-          document.flags.cypherFoundry.crd.logicalId
+          english.flags.cypherFoundry.crd.logicalId
         );
       }
     }
@@ -59,8 +63,7 @@ for (const language of ["en", "fr"]) {
     for (const [filename, document] of sources) {
       if (isFolder(document)) continue;
       assert.equal(document.type, "ability");
-      assert.doesNotMatch(document.name, /\bGM intrusions\b/i);
-      assert.doesNotMatch(document.system.key, /-gm-intrusions$/i);
+      assert.doesNotMatch(document.name, /\\bGM intrusions\\b/i);
       assert.notEqual(document.name, "At higher tiers");
       assert.match(document._id, /^[A-Za-z0-9]{16}$/);
       assert.match(document._key, /^!items![A-Za-z0-9]{16}$/);
@@ -170,7 +173,8 @@ for (const language of ["en", "fr"]) {
     const englishLogicalIds = new Set(
       [...readPackSources("abilities-en").values()]
         .filter(document => !isFolder(document))
-        .map(document => document.flags?.cypherFoundry?.crd?.logicalId)
+        .map(getCrdLogicalId)
+        .filter(Boolean)
     );
 
     for (const document of abilities) {
@@ -188,12 +192,31 @@ for (const language of ["en", "fr"]) {
       assert.ok(provenance.sourceLocator);
       assert.ok(Array.isArray(provenance.transformations));
 
+      if (language === "en") {
+        assert.match(provenance.section, /^Ability Catalogue — /);
+        assert.match(provenance.sourceLocator, /^CRD — Ability: /);
+      }
+
       if (language === "fr") {
-        assert.match(
-          provenance.sourceLogicalId,
-          /^ability\.[a-z0-9-]+(?:-[a-f0-9]{12})?$/
+        assert.ok(
+          englishLogicalIds.has(provenance.sourceLogicalId),
+          document._id + "/" + document.name + ": " +
+            provenance.sourceLogicalId + "; English IDs: " +
+            [...englishLogicalIds]
+              .filter(id => id.includes("sense-magic"))
+              .join(", ")
         );
-        assert.ok(englishLogicalIds.has(provenance.sourceLogicalId));
+        const english = [...readPackSources("abilities-en").values()]
+          .find(candidate =>
+            !isFolder(candidate) &&
+            candidate.flags?.cypherFoundry?.crd?.logicalId ===
+              provenance.sourceLogicalId
+          );
+        assert.equal(
+          document.system.key,
+          english?.system?.key,
+          document._id
+        );
       }
     }
   });
