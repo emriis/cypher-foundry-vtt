@@ -112,8 +112,13 @@ function isGmIntrusionEntry(ability) {
 }
 
 function isEditorialArtifact(ability) {
+  const id = String(ability.id ?? ability.key ?? "");
+  const name = String(ability.name ?? "").trim();
+
   return isGmIntrusionEntry(ability) ||
-    String(ability.name ?? "").trim() === "At higher tiers";
+    /(?:^|-)gm-intrusions$/i.test(id) ||
+    /^Intrusions MJ\\b/i.test(name) ||
+    name === "At higher tiers";
 }
 
 function identity(ability) {
