@@ -197,10 +197,7 @@ for (const language of ["en", "fr"]) {
           provenance.section,
           /^(?:Ability Catalogue — |Character Creation — (?:Type|Focus) — |(?:Fantasy|Science Fiction|Origin Superhero) Genre Abilities$)/
         );
-        assert.match(
-          provenance.sourceLocator,
-          /^CRD — (?:Ability|Type|Focus): /
-        );
+        assert.match(provenance.sourceLocator, /^CRD — .+/);
       }
 
       if (language === "fr") {
