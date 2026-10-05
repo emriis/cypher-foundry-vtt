@@ -263,7 +263,7 @@ The remaining work is mechanical reconciliation rather than discovery:
 1. Enumerate every named Focus Ability occurrence.
 2. Enumerate every named Type Ability occurrence, including genre-specific
    Type abilities.
-3. Compare all occurrences against the existing 38 English Ability records.
+3. Compare all occurrences against the existing 53 English Ability records.
 4. Assign logical IDs and provenance.
 5. Add missing canonical English records.
 6. Pair the French records.
