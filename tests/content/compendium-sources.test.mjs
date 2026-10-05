@@ -195,8 +195,7 @@ for (const language of ["en", "fr"]) {
       if (language === "en") {
         assert.match(
           provenance.section,
-          /^(?:Ability Catalogue — |Character Creation — (?:Type|Focus) — |
-            (?:Fantasy|Science Fiction|Origin Superhero) Genre Abilities$)/
+          /^(?:Ability Catalogue — |Character Creation — (?:Type|Focus) — |(?:Fantasy|Science Fiction|Origin Superhero) Genre Abilities$)/
         );
         assert.match(
           provenance.sourceLocator,
