@@ -1,0 +1,32 @@
+{
+  "_id": "fb60acfbmagiclor",
+  "_key": "!items!fb60acfbmagiclor",
+  "document": "Item",
+  "name": "Magic lore",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You’ve studied magical traditions of many different sorts and know something about the different organizations and schools, leading magical practitioners, sources of power, fabled artifacts, and more. Your lore helps you identify magic items, the potential purpose of a strange ritual, or how an active spell is working, or gain some similar insight. By spending a minute concentrating on an object or area, you can determine if there is any magic present; by examining a magical object or area and making a magic lore roll against the target’s level, you can determine the magic’s general purpose or function. Magic lore might be called “occultism” in real-world or science fiction settings where magic isn’t real (or, at least, is generally believed not to be real).</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.magic-lore",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.magic-lore"
+      }
+    }
+  }
+}
