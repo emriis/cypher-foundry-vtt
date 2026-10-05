@@ -84,6 +84,12 @@ function localizedPairingMechanicalShape(ability) {
   return shape;
 }
 
+function localizedLooseMechanicalShape(ability) {
+  const shape = localizedPairingMechanicalShape(ability);
+  delete shape.enabler;
+  return shape;
+}
+
 function isAbilityParserArtifact(ability) {
   return /\bgm intrusions\b/i.test(String(ability.name ?? "")) ||
     ability.name === "At higher tiers";
@@ -288,6 +294,7 @@ async function collectEnglishRegistry() {
   const registry = new Map();
   const byKey = new Map();
   const byKeyTier = new Map();
+  const loose = new Map();
 
   for (const parent of PARENT_PACKS) {
     for (const file of await sourceFiles(`${parent}-en`)) {
@@ -422,9 +429,16 @@ async function collectStandaloneEnglishLogicalIds() {
     const tierIds = byKeyTier.get(keyTier) ?? new Set();
     tierIds.add(logicalId);
     byKeyTier.set(keyTier, tierIds);
+
+    const looseKey = `${entry.key}:${entry.document.system.tier}:${hash(
+      JSON.stringify(localizedLooseMechanicalShape(entry.document.system))
+    )}`;
+    const looseIds = loose.get(looseKey) ?? new Set();
+    looseIds.add(logicalId);
+    loose.set(looseKey, looseIds);
   }
 
-  return { exact, fallback, byKey, byKeyTier };
+  return { exact, fallback, byKey, byKeyTier, loose };
 }
 
 async function enrichStandaloneLanguage(language, englishLogicalIds) {
@@ -470,6 +484,15 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
         const candidates = englishLogicalIds.byKeyTier.get(
           `${key}:${document.system?.tier}`
         );
+        if (candidates?.size === 1) {
+          logicalId = candidates.values().next().value;
+        }
+      }
+      if (!logicalId) {
+        const looseKey = `${key}:${document.system?.tier}:${hash(
+          JSON.stringify(localizedLooseMechanicalShape(document.system ?? {}))
+        )}`;
+        const candidates = englishLogicalIds.loose.get(looseKey);
         if (candidates?.size === 1) {
           logicalId = candidates.values().next().value;
         }
