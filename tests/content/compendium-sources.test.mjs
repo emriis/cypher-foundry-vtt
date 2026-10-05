@@ -44,7 +44,7 @@ for (const language of ["en", "fr"]) {
           document.flags.cypherFoundry.crd.sourceLogicalId,
           /^ability\.[a-z0-9-]+(?:-[a-f0-9]{12})?$/
         );
-        assert.notEqual(
+        assert.equal(
           document.flags.cypherFoundry.crd.sourceLogicalId,
           document.flags.cypherFoundry.crd.logicalId
         );
