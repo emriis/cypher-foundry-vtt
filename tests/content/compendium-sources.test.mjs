@@ -3,6 +3,8 @@ import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
 
+import { validateCrdSourceRecord, getCrdLogicalId } from "../../module/crd/source-schema.mjs";
+
 const root = path.resolve(import.meta.dirname, "../..");
 
 function readPackSources(packName) {
@@ -30,6 +32,22 @@ function abilityIndex(language) {
 }
 
 for (const language of ["en", "fr"]) {
+  test(`${language} standalone abilities have valid CRD provenance`, () => {
+    const sources = readPackSources(`abilities-${language}`);
+    for (const [filename, document] of sources) {
+      if (isFolder(document)) continue;
+      assert.deepEqual(validateCrdSourceRecord(document), [], filename);
+      assert.equal(document.crdType, "ability");
+      assert.equal(document.flags.cypherFoundry.crd.language, language);
+      if (language === "fr") {
+        assert.equal(
+          document.flags.cypherFoundry.crd.sourceLogicalId,
+          document.flags.cypherFoundry.crd.logicalId
+        );
+      }
+    }
+  });
+
   test(`${language} standalone abilities have valid schemas`, () => {
     const sources = readPackSources(`abilities-${language}`);
     assert.ok(sources.size > 0);
@@ -37,6 +55,7 @@ for (const language of ["en", "fr"]) {
     for (const [filename, document] of sources) {
       if (isFolder(document)) continue;
       assert.equal(document.type, "ability");
+      assert.doesNotMatch(document.name, /\\bGM intrusions\\b/i);
       assert.match(document._id, /^[A-Za-z0-9]{16}$/);
       assert.match(document._key, /^!items![A-Za-z0-9]{16}$/);
       assert.ok(document.system.key);
