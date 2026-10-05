@@ -42,7 +42,21 @@
       "might",
       "speed"
     ],
-    "description": "<p>A life well-lived, you believe, is a life in service to others. Should glory and elevated status one day find you, you're confident you'll use that office to bring peace and aid to all who are in need of a protector. Until then, you're satisfied defending one ally at a time, pledging your weapon to their defense if their need be true. You're excellent in a fight but equally concerned with aiding your allies. You have on several previous occasions even interceded, taking an attack that would've otherwise brought one of your fellows low. You're also adept at using the confusion such a sacrifice elicits in foes, returning the favor with the edge of your swift blade.</p>"
+    "description": "<p>A life well-lived, you believe, is a life in service to others. Should glory and elevated status one day find you, you're confident you'll use that office to bring peace and aid to all who are in need of a protector. Until then, you're satisfied defending one ally at a time, pledging your weapon to their defense if their need be true. You're excellent in a fight but equally concerned with aiding your allies. You have on several previous occasions even interceded, taking an attack that would've otherwise brought one of your fellows low. You're also adept at using the confusion such a sacrifice elicits in foes, returning the favor with the edge of your swift blade.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.ac808c42b3ad5310",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.993ed619f6e00cd7",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.1f9d46bc2d619c20",
+        "tier": 1
+      }
+    ]
   },
   "folder": "hprdGeaH0YyHvS4S",
   "sort": 0,
@@ -52,6 +66,24 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.warrior",
+        "language": "fr",
+        "sourceKind": "record",
+        "sourceLogicalId": "type.warrior",
+        "section": "Character Creation — Type — Guerrier·ère — Abilities",
+        "sourceLocator": "CRD — Type: warrior",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "French localization paired to the canonical English Type",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }
