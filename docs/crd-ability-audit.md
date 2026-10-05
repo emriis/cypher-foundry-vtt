@@ -2,12 +2,55 @@
 
 ## Scope
 
-This audit compares the current standalone Ability compendiums with the extraction
-requirements defined by the 2026-07-29 Cypher Reference Document (CRD). It is an
-inventory and structural audit, not an extraction pass.
+The standalone Ability compendiums are the canonical catalogue of reusable
+character capabilities extracted from the 2026-07-29 Cypher Reference Document
+(CRD).
 
-The CRD remains the only authoritative content source. No ability is added from
-memory or from an external source as part of this audit.
+This audit separates reusable Abilities from source-specific character benefits.
+It is intentionally an inventory and architecture audit, not an extraction pass.
+
+## Ability taxonomy
+
+The Ability catalogue includes mechanically complete, reusable capabilities
+that the CRD presents as abilities, including:
+
+1. Type Abilities.
+2. Focus Abilities.
+3. Genre Abilities.
+4. Genre-specific Type Abilities.
+5. Other explicitly reusable character abilities presented by the CRD.
+
+An Ability is identified by its mechanical identity, not by its display name.
+Two abilities with the same name but different mechanics remain distinct.
+One ability referenced by several sources remains one canonical Ability.
+
+Type, Focus, and Genre records should reference canonical Ability logical IDs
+rather than duplicate their mechanics.
+
+## Benefits that are not automatically Abilities
+
+Species and Descriptor packages contain character benefits that should remain
+structured on their source record unless the CRD presents the benefit as a
+standalone reusable Ability.
+
+Examples of source-specific benefits include:
+
+- Pool bonuses.
+- Edge bonuses.
+- Skill training.
+- Skill specialization.
+- Wound capacity changes.
+- Conditional damage modifiers.
+- Resistances.
+- Other passive modifiers.
+
+A special benefit becomes an Ability only when its CRD mechanics constitute a
+standalone character capability that is meaningfully represented as an Ability:
+for example an activatable effect with its own cost, action, target, range,
+duration, Effort, or comparable mechanics.
+
+This prevents the Ability catalogue from becoming a generic container for every
+character modifier.
 
 ## Current inventory
 
@@ -16,45 +59,44 @@ memory or from an external source as part of this audit.
 | `abilities-en` | 38 | Partial |
 | `abilities-fr` | 28 | Partial |
 
-The current records originated from the earlier Type/Focus ability migration.
-They therefore represent only the abilities already present in those authored
-Type/Focus sources at migration time. They are not a complete CRD Ability
-catalogue.
+These records originated from earlier Type/Focus migrations and therefore do
+not constitute complete CRD coverage.
 
-## CRD coverage boundary
+## Required CRD inventory
 
-The CRD defines reusable abilities in several content contexts:
+The extraction pass must first enumerate, from the supplied CRD:
 
-1. Type abilities.
-2. Focus abilities.
-3. Genre ability lists used by Types and genre character creation.
-4. Other explicitly reusable ability choices described by the CRD.
+- every Type Ability;
+- every Focus Ability;
+- every Genre Ability;
+- every genre-specific Type Ability;
+- every other explicitly reusable Ability;
+- the source lists from which each Ability is selectable or granted.
 
-The standalone Ability pack must represent each mechanically distinct reusable
-ability once per language, while allowing duplicate names when the mechanics
-differ. Type and Focus records should reference these reusable records rather
-than embedding their mechanics.
+The inventory must then classify each source occurrence as:
 
-## Findings
+- canonical Ability;
+- reference to an existing canonical Ability;
+- duplicate name with distinct mechanics;
+- source-specific benefit that must remain on its Type/Focus/Species/etc.;
+- unresolved model gap requiring documentation rather than invention.
 
-### 1. The current catalogue is incomplete
+## Identity and references
 
-The 38 English and 28 French records are insufficient to claim complete CRD
-coverage. The next extraction pass must build a CRD-derived inventory before
-adding or removing records.
+Each canonical Ability receives one stable, language-neutral logical ID.
 
-The inventory must distinguish:
+Type, Focus, and Genre source records should reference that logical ID.
+Foundry UUIDs are resolved during pack compilation and are not the canonical
+source identity.
 
-- missing abilities;
-- existing abilities whose mechanics match the CRD;
-- existing abilities whose mechanics require correction;
-- mechanically distinct abilities sharing a display name;
-- English records without a French counterpart;
-- French records whose localization is not yet established.
+An Ability referenced by multiple sources must not be duplicated merely because
+its source context differs.
 
-### 2. Provenance is missing from current Ability source records
+A duplicate display name is allowed when the mechanical identity differs.
 
-The source schema requires:
+## Provenance
+
+Every extracted English Ability must carry the CRD provenance envelope:
 
 - `flags.cypherFoundry.crd.version`
 - `flags.cypherFoundry.crd.logicalId`
@@ -64,88 +106,68 @@ The source schema requires:
 - `flags.cypherFoundry.crd.sourceLocator`
 - `flags.cypherFoundry.crd.transformations`
 
-French records additionally require `sourceLogicalId`.
+French records must retain the same logical identity and include the English
+`sourceLogicalId` convention already used by the Skills source packs.
 
-The current standalone Ability records do not yet carry this provenance envelope.
-This must be corrected as part of CRD Ability extraction rather than guessed
-from existing Foundry UUIDs.
+## Structured mechanics
 
-### 3. Mechanical identity must not depend on display names
+Only CRD-backed mechanics may be structured. Candidate fields include:
 
-The existing migration correctly separates a normalized ability key from its
-mechanical signature. This principle must be retained.
+- Pool cost and cost options;
+- Effort options;
+- effects and effect options;
+- action timing;
+- target and range;
+- duration/end conditions;
+- damage;
+- prerequisites and tier gates;
+- equipment grants;
+- weapon/armor permissions;
+- skill or task interactions;
+- ongoing effects;
+- other mechanics explicitly supported by the CRD.
 
-Two abilities with the same name but different mechanics must remain distinct.
-Conversely, localized names must never create a second logical identity.
+If the current data model cannot faithfully represent a CRD mechanic, preserve
+the source text and document the model gap. Do not invent or silently simplify
+rules.
 
-### 4. Ability references need a source-level identity
+## Extraction sequence
 
-The long-term source representation should use logical IDs during extraction
-and resolve them to Foundry UUIDs during pack compilation. Direct UUIDs in
-authored Type/Focus source are an implementation detail and should not become
-the canonical CRD extraction key.
+1. Build the complete CRD Ability inventory.
+2. Classify every source occurrence using the taxonomy above.
+3. Assign stable logical IDs to canonical abilities.
+4. Match the existing 38 English records to the inventory.
+5. Verify each matched mechanic against the CRD.
+6. Add missing English canonical records.
+7. Pair French records using the same logical IDs.
+8. Preserve English source text in French records when no faithful CRD
+   localization is available; do not invent translations.
+9. Rebuild Type/Focus/Genre references from logical IDs.
+10. Validate that every reference resolves uniquely.
+11. Add business-level coverage tests that validate contracts instead of
+    hard-coding individual JSON inventories.
 
-### 5. Action handling requires CRD verification
+## Acceptance criteria
 
-The current model supports:
+The Ability extraction is complete when:
 
-- `action`
-- `firstAction`
-- `lastAction`
-- `null` for cases not represented by the current activation model.
+- all CRD reusable Abilities in scope have canonical source records;
+- Type, Focus, and Genre source occurrences resolve to canonical Abilities;
+- source-specific passive benefits are not incorrectly promoted to Abilities;
+- same-name/different-mechanics Abilities remain distinct;
+- every English Ability has CRD provenance;
+- every French Ability retains stable English logical identity;
+- no logical ID is duplicated within a language;
+- no source-level Ability reference is dangling or ambiguous;
+- structured mechanics are supported by the CRD;
+- CI and pack compilation remain green.
 
-The extraction pass must verify the CRD wording before assigning an activation
-value. It must not infer an action from unrelated prose or invent a new action
-category.
-
-### 6. Structured fields must be source-backed
-
-Costs, Effort options, effects, roll tables, prerequisites/flowchart edges,
-equipment grants, weapon/armor permissions, durations, ranges, damage, and
-other mechanics must only be structured where the CRD provides an unambiguous
-mapping.
-
-When the current model cannot faithfully represent a CRD mechanic, the content
-should remain in source text and the model gap should be documented rather than
-silently normalized.
-
-## Required next extraction work
-
-1. Build a CRD Ability inventory from the supplied 2026-07-29 CRD.
-2. Assign one stable language-neutral logical ID to every reusable ability.
-3. Match the existing 38 English records against that inventory.
-4. Identify all missing English records.
-5. Verify existing mechanics against the CRD before modifying them.
-6. Pair French records with English logical IDs.
-7. Add missing French records using faithful CRD localization where the source
-   provides it; otherwise preserve the English source text and record the
-   English logical ID for later localization.
-8. Add complete provenance to every extracted Ability source record.
-9. Rebuild Type/Focus references from logical IDs and validate that no reference
-   is dangling or ambiguous.
-10. Add business-level coverage tests that validate extraction contracts rather
-    than hard-coding the contents of individual JSON files.
-
-## Explicit non-goals
+## Non-goals
 
 This audit does not:
 
-- invent abilities absent from the supplied CRD;
+- invent abilities absent from the CRD;
 - translate missing French text from external sources;
 - change Ability runtime behavior;
-- redesign the Ability data model without a CRD-backed requirement;
-- rebuild compiled LevelDB packs by hand.
-
-## Acceptance criteria for the completion PR
-
-The Ability extraction is complete only when:
-
-- every CRD reusable Ability in scope has a source record;
-- every English source record has CRD provenance;
-- every French source record has a stable English logical ID;
-- mechanically distinct same-name abilities remain distinct;
-- no Type/Focus Ability reference is dangling;
-- no duplicate logical ID exists within a language;
-- source-level references resolve uniquely;
-- structured mechanics are supported by the CRD;
-- CI and pack compilation remain green.
+- redesign the Ability model without a CRD-backed requirement;
+- compile or hand-edit Foundry LevelDB packs.
