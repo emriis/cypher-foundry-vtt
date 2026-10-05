@@ -97,3 +97,31 @@ For example:
 - A creature with Armor, health, attacks, and abilities belongs in the Actor pack.
 
 This prevents the reference library from becoming a collection of static pages while avoiding the opposite mistake of modelling every sentence as an Item.
+
+
+## Player and GM guides
+
+The conversion includes two curated navigation layers in addition to the detailed
+content packs:
+
+| Guide | Foundry | Purpose |
+| --- | --- | --- |
+| Player Guide | JournalEntry | Character creation, player rules, reusable options, and play reference |
+| GM Guide | JournalEntry | Running the game, adjudication, encounters, creatures, rewards, and GM reference |
+| Quick Reference | JournalEntry | Short high-frequency rules linked to detailed entries |
+
+The guides are deliberately link-based. They should not duplicate the authoritative
+rule text or mechanical records already stored in rules, skills, abilities,
+equipment, genres, or creature packs.
+
+## Additional planned libraries
+
+The full CRD conversion also includes:
+
+- Genre reference and genre-specific character creation;
+- Creature/NPC Actors;
+- GM procedures and random tables;
+- Rewards, treasure, and equipment references;
+- automation helpers backed by structured compendium data.
+
+See `docs/crd-content-roadmap.md` for the implementation order and completion criteria.
