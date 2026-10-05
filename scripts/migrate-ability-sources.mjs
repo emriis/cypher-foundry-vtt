@@ -839,49 +839,58 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
           pairedLogicalIds.add(candidate);
         }
       }
+      const unusedCandidates = candidates => [...(candidates ?? [])]
+        .filter(candidate => !canonicalDocuments.has(candidate));
+
       if (!logicalId) {
-        logicalId = englishLogicalIds.exact.get(`${key}:${signature}`);
+        const pairedCandidates = unusedCandidates(pairedLogicalIds)
+          .filter(candidate =>
+            englishLogicalIds.byKey.get(key)?.has(candidate)
+          );
+        if (pairedCandidates.length === 1) {
+          logicalId = pairedCandidates[0];
+        }
+      }
+      if (!logicalId) {
+        const exact = englishLogicalIds.exact.get(`${key}:${signature}`);
+        if (exact && !canonicalDocuments.has(exact)) {
+          logicalId = exact;
+        }
       }
       if (!logicalId) {
         const fallbackKey = `${key}:${hash(
           JSON.stringify(localizedPairingMechanicalShape(document.system ?? {}))
         )}`;
-        const candidates = englishLogicalIds.fallback.get(fallbackKey);
-        if (candidates?.size === 1) {
-          logicalId = candidates.values().next().value;
+        const candidates = unusedCandidates(
+          englishLogicalIds.fallback.get(fallbackKey)
+        );
+        if (candidates.length === 1) {
+          logicalId = candidates[0];
         }
       }
       if (!logicalId) {
-        const candidates = englishLogicalIds.byKeyTier.get(
-          `${key}:${document.system?.tier}`
+        const candidates = unusedCandidates(
+          englishLogicalIds.byKeyTier.get(
+            `${key}:${document.system?.tier}`
+          )
         );
-        if (candidates?.size === 1) {
-          logicalId = candidates.values().next().value;
-        }
-      }
-      if (!logicalId && pairedLogicalIds.size === 1) {
-        const candidate = pairedLogicalIds.values().next().value;
-        const candidateMatchesKey = [...englishLogicalIds.byKey.entries()]
-          .some(([candidateKey, ids]) =>
-            candidateKey === key && ids.has(candidate)
-          );
-        if (candidateMatchesKey) {
-          logicalId = candidate;
+        if (candidates.length === 1) {
+          logicalId = candidates[0];
         }
       }
       if (!logicalId) {
         const looseKey = `${key}:${document.system?.tier}:${hash(
           JSON.stringify(localizedLooseMechanicalShape(document.system ?? {}))
         )}`;
-        const candidates = englishLogicalIds.loose.get(looseKey);
-        if (candidates?.size === 1) {
-          logicalId = candidates.values().next().value;
+        const candidates = unusedCandidates(englishLogicalIds.loose.get(looseKey));
+        if (candidates.length === 1) {
+          logicalId = candidates[0];
         }
       }
       if (!logicalId) {
-        const candidates = englishLogicalIds.byKey.get(key);
-        if (candidates?.size === 1) {
-          logicalId = candidates.values().next().value;
+        const candidates = unusedCandidates(englishLogicalIds.byKey.get(key));
+        if (candidates.length === 1) {
+          logicalId = candidates[0];
         }
       }
     } else {
