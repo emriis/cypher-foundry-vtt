@@ -687,7 +687,7 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
           JSON.stringify(localizedLooseMechanicalShape(document.system ?? {}))
         )}`;
         const candidates = englishLogicalIds.loose.get(looseKey);
-        if (candidates?.size) {
+        if (candidates?.size === 1) {
           logicalId = candidates.values().next().value;
         }
       }
