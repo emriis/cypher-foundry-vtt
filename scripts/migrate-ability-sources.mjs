@@ -117,6 +117,22 @@ async function sourceFiles(pack) {
     .map(file => path.join(dir, file));
 }
 
+async function pruneAbilityArtifacts() {
+  for (const language of LANGUAGES) {
+    for (const file of await sourceFiles(`abilities-${language}`)) {
+      const document = JSON.parse(await fs.readFile(file, "utf8"));
+      if (document._key?.startsWith("!folders!")) continue;
+
+      if (
+        /\bGM intrusions\b/i.test(String(document.name ?? "")) ||
+        document.name === "At higher tiers"
+      ) {
+        await fs.rm(file, { force: true });
+      }
+    }
+  }
+}
+
 async function mergeGenreAbilities() {
   const manifestPath = path.join(root, "data", "crd-genre-abilities.json");
   let manifest;
@@ -492,6 +508,7 @@ async function migrateLanguage(language, english) {
 }
 
 export async function migrateAbilitySources() {
+  await pruneAbilityArtifacts();
   await mergeGenreAbilities();
   const english = await collectEnglishRegistry();
   await migrateLanguage("en", english);
