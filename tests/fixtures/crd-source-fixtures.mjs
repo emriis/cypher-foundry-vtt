@@ -87,7 +87,12 @@ export const CRD_ABILITY_FIXTURE = item(
         "but it ends if no combat is taking place within range of your senses.",
       effort:
         "Ease your allies’ attacks against one foe of your choice for the " +
-        "rest of the combat."
+        "rest of the combat.",
+      modifiers: [
+        { kind: "edge", stat: "might", severity: "", amount: 1 },
+        { kind: "edge", stat: "speed", severity: "", amount: 1 }
+      ],
+      endConditions: []
     }],
     rollTables: [],
     description:
@@ -131,6 +136,7 @@ export const CRD_RECOVERY_ABILITY_FIXTURE = item(
         "Your melee attacks inflict +2 damage. This ability lasts until " +
         "you use a ten-minute or longer recovery.",
       effort: "",
+      modifiers: [],
       endConditions: [{
         kind: "recovery",
         interval: "tenMinutes",
@@ -336,6 +342,7 @@ export const CRD_TIERED_ABILITY_FIXTURE = item(
           "Low-Power Manifest Cyphers table. Your brewed potion cypher " +
           "counts toward your cypher limit.",
         effort: "",
+        modifiers: [],
         endConditions: []
       },
       {
