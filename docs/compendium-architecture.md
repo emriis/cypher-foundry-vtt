@@ -264,3 +264,22 @@ tables, abilities, equipment statistics, and rules containing exceptions.
 - Do not duplicate reusable Ability definitions.
 - Preserve CRD wording accurately when the license permits its inclusion.
 - Keep attribution/licensing metadata with the generated content and repository documentation.
+
+
+## 11. Curated Player and GM guides
+
+The detailed reference packs are not themselves the user-facing reading order.
+The final library also contains two curated navigation layers:
+
+- `player-guide-en/fr`: player-facing character creation and play guidance;
+- `gm-guide-en/fr`: GM-facing procedures, preparation, adjudication, and reference.
+
+These guides are Journal Entries and link to the authoritative detailed records.
+They must not become a second manually maintained copy of the CRD.
+
+The same principle applies to Quick Reference: it provides short, high-frequency
+lookups while linking to the full rule entry for detail.
+
+The complete roadmap, including the Player Guide, GM Guide, genre library, GM
+library, quick-reference layer, and future automation, is maintained in
+`docs/crd-content-roadmap.md`.
