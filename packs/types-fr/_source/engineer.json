@@ -41,7 +41,29 @@
     "statOptions": [
       "intellect"
     ],
-    "description": "<p>Listen to those engines hum! Wait, are those harmonics in spec? For you, every machine is a potential opportunity to learn something, to fix something, or maybe even to make something new—however temporary—from its parts. If you don't know something, you know what archives are most likely to contain the blueprints or other answers you need, even if that knowledge is encoded in restricted databases. You're a maker, a fixer, and a hard-edged knowledge worker with real-world experience in all kinds of scenarios. Because of your presence, your team's mission is more likely to succeed, rather than fail for want of a turbo encabulator.</p>"
+    "description": "<p>Listen to those engines hum! Wait, are those harmonics in spec? For you, every machine is a potential opportunity to learn something, to fix something, or maybe even to make something new—however temporary—from its parts. If you don't know something, you know what archives are most likely to contain the blueprints or other answers you need, even if that knowledge is encoded in restricted databases. You're a maker, a fixer, and a hard-edged knowledge worker with real-world experience in all kinds of scenarios. Because of your presence, your team's mission is more likely to succeed, rather than fail for want of a turbo encabulator.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.0408eeea64d7be95",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.47f2163acd3f131f",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.429bd511bc3b087e",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.deaff4cec6a9fee1",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.8f83c216b1f7d205",
+        "tier": 1
+      }
+    ]
   },
   "folder": "C6ZFx2IjshXiDYap",
   "sort": 0,
@@ -51,6 +73,24 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.engineer",
+        "language": "fr",
+        "sourceKind": "record",
+        "sourceLogicalId": "type.engineer",
+        "section": "Character Creation — Type — Ingénieur·e — Abilities",
+        "sourceLocator": "CRD — Type: engineer",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "French localization paired to the canonical English Type",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }
