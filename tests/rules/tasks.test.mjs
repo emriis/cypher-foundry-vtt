@@ -70,6 +70,7 @@ test("resolveSpecialRoll applies CRD special results only when the task succeeds
     gmIntrusion: true,
     damageBonus: 0,
     effect: null,
+    effectOptions: [],
     refundsCost: false
   });
   assert.deepEqual(resolveSpecialRoll({
@@ -81,6 +82,7 @@ test("resolveSpecialRoll applies CRD special results only when the task succeeds
     gmIntrusion: false,
     damageBonus: 1,
     effect: null,
+    effectOptions: [],
     refundsCost: false
   });
   assert.deepEqual(resolveSpecialRoll({
@@ -90,9 +92,22 @@ test("resolveSpecialRoll applies CRD special results only when the task succeeds
     inflictsDamage: true
   }), {
     gmIntrusion: false,
-    damageBonus: 3,
+    damageBonus: 0,
     effect: null,
+    effectOptions: ["damage", "minor"],
     refundsCost: false
+  });
+  assert.deepEqual(resolveSpecialRoll({
+    d20: 20,
+    success: true,
+    isAttack: true,
+    inflictsDamage: true
+  }), {
+    gmIntrusion: false,
+    damageBonus: 0,
+    effect: null,
+    effectOptions: ["damage", "major"],
+    refundsCost: true
   });
   assert.deepEqual(resolveSpecialRoll({
     d20: 19,
@@ -102,6 +117,7 @@ test("resolveSpecialRoll applies CRD special results only when the task succeeds
     gmIntrusion: false,
     damageBonus: 0,
     effect: "minor",
+    effectOptions: [],
     refundsCost: false
   });
   assert.deepEqual(resolveSpecialRoll({
@@ -113,6 +129,7 @@ test("resolveSpecialRoll applies CRD special results only when the task succeeds
     gmIntrusion: false,
     damageBonus: 0,
     effect: "major",
+    effectOptions: [],
     refundsCost: true
   });
   assert.deepEqual(resolveSpecialRoll({
@@ -124,6 +141,7 @@ test("resolveSpecialRoll applies CRD special results only when the task succeeds
     gmIntrusion: false,
     damageBonus: 0,
     effect: null,
+    effectOptions: [],
     refundsCost: false
   });
 });
