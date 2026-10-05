@@ -117,8 +117,8 @@ Development tooling belongs in `scripts/`; GitHub automation belongs in
 
 | Automation | Trigger | Purpose |
 | --- | --- | --- |
-| `.github/workflows/test.yml` | Push and pull request | Checks E2E JavaScript syntax and runs `npm test` |
-| `.github/workflows/build-packs.yml` | Pack source/build changes | Rebuilds and commits LevelDB compendium packs |
+| `.github/workflows/test.yml` | Push to `main`, pull request, or manual dispatch | Runs independent unit, content, integration, architecture, pack-build, and repository checks |
+| `.github/workflows/build-packs.yml` | Push to `main` or manual dispatch | Normalizes CRD source metadata, validates content, rebuilds, and commits LevelDB compendium packs |
 | `.github/workflows/release.yml` | Tag matching `v*` | Tests, checks version/tag parity, packages, publishes GitHub release |
 | `scripts/build-packs.mjs` | `npm run build:packs` | Compiles all eight LevelDB packs from `_source/` |
 | `scripts/package.ps1` | `npm run package` | Creates local release artifacts in `dist/` |
