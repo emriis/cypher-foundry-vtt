@@ -1,0 +1,2873 @@
+{
+  "version": "2026-07-29",
+  "records": [
+    {
+      "logicalId": "ability.a-bit-of-magic",
+      "name": "A Bit of Magic",
+      "genre": "fantasy",
+      "tier": 3,
+      "key": "a-bit-of-magic",
+      "system": {
+        "key": "a-bit-of-magic",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>(Magic): Each day you can pick a different magical effect and cast \nit as a spell. Choose a low-power or medium-power manifest cypher. You can cast \nthat spell as an action, costing 3 Intellect for a low-power cypher or 5 Intellect for \na medium-power cypher. This spell does not count toward your cypher limit. \nUnlike when using a cypher, you do not lose this spell after casting it.\nAs part of making a ten-hour recovery, you can change which cypher you’ve \ntaken as a spell.\nTen minutes to prepare a cypher as a spell; action to cast a cypher as a spell.\nAt tier 6: You can use this ability to choose a low-, mid-, or advanced-power \ncypher as a spell. You can cast an advanced-power cypher spell as an action, \ncosting 7 Intellect.</p>"
+      },
+      "sources": [
+        {
+          "genre": "fantasy",
+          "name": "A Bit of Magic"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.a-bit-of-magic",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Fantasy Genre Abilities",
+        "sourceLocator": "CRD — A Bit of Magic",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.cypher-use",
+      "name": "Cypher Use",
+      "genre": "fantasy",
+      "tier": 3,
+      "key": "cypher-use",
+      "system": {
+        "key": "cypher-use",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: You can bear one additional cypher at a time. You can gain this \nability multiple times (as a character advancement or in place of a new focus \nability). Each time you do, you can bear one additional cypher at a time.</p>"
+      },
+      "sources": [
+        {
+          "genre": "fantasy",
+          "name": "Cypher Use"
+        },
+        {
+          "genre": "science-fiction",
+          "name": "Cypher Use"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.cypher-use",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Fantasy Genre Abilities",
+        "sourceLocator": "CRD — Cypher Use",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.danger-instinct",
+      "name": "Danger Instinct",
+      "genre": "fantasy",
+      "tier": 3,
+      "key": "danger-instinct",
+      "system": {
+        "key": "danger-instinct",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>(3 Speed): If you are attacked by surprise, whether by a \ncreature, a device, or simply an environmental hazard (such as a tree falling on \nyou), you move an immediate distance before the attack occurs. If moving \nprevents the attack, you are safe. If the attack can still potentially affect you—if \nthe attacking creature can move to keep pace, if the attack fills an area too big to \nescape, and so on—your defense against it is eased. Enabler.</p>"
+      },
+      "sources": [
+        {
+          "genre": "fantasy",
+          "name": "Danger Instinct"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.danger-instinct",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Fantasy Genre Abilities",
+        "sourceLocator": "CRD — Danger Instinct",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.disappear-into-shadow",
+      "name": "Disappear Into Shadow",
+      "genre": "fantasy",
+      "tier": 3,
+      "key": "disappear-into-shadow",
+      "system": {
+        "key": "disappear-into-shadow",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: Even if in full view of up to three creatures, your \nsuccessful stealth task allows you to slip away from them and hide from view in a\nnearby shadow, behind a tree or furnishing, or in the next room as your action.\nEffort: Attempt to slip away from one additional target looking directly at you \n(attempt a separate stealth task against each).\nEnabler.</p>"
+      },
+      "sources": [
+        {
+          "genre": "fantasy",
+          "name": "Disappear Into Shadow"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.disappear-into-shadow",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Fantasy Genre Abilities",
+        "sourceLocator": "CRD — Disappear Into Shadow",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.discerning-mind",
+      "name": "Discerning Mind",
+      "genre": "fantasy",
+      "tier": 3,
+      "key": "discerning-mind",
+      "system": {
+        "key": "discerning-mind",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>(2 Intellect): Your mind resists injury from one mental attack, \npsychic trauma, or similar effect, reducing its wound severity by one step (major \nto moderate, moderate to minor, minor to none). Enabler.</p>"
+      },
+      "sources": [
+        {
+          "genre": "fantasy",
+          "name": "Discerning Mind"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.discerning-mind",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Fantasy Genre Abilities",
+        "sourceLocator": "CRD — Discerning Mind",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.elemental-protection",
+      "name": "Elemental Protection",
+      "genre": "fantasy",
+      "tier": 3,
+      "key": "elemental-protection",
+      "system": {
+        "key": "elemental-protection",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>(4+ Intellect) (Magic): You and every creature you \ndesignate within immediate range gains protection against one kind of energy \ndamage (such as fire, electricity, or cold). The creatures reduce the severity of \nwounds from that energy by one step (major to moderate, moderate to minor, \nminor to none). This protection lasts for a creature until they use a one-hour or \nlonger recovery; one individual ending the ability doesn’t affect the duration for \nother creatures.\nEffort: Reduce the wound severity by another step.\nAction.</p>"
+      },
+      "sources": [
+        {
+          "genre": "fantasy",
+          "name": "Elemental Protection"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.elemental-protection",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Fantasy Genre Abilities",
+        "sourceLocator": "CRD — Elemental Protection",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.enhanced-stat-000d6ca8-61c",
+      "name": "Enhanced Stat",
+      "genre": "fantasy",
+      "tier": 3,
+      "key": "enhanced-stat",
+      "system": {
+        "key": "enhanced-stat",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: You gain 4 points to one Pool of your choice.</p>"
+      },
+      "sources": [
+        {
+          "genre": "fantasy",
+          "name": "Enhanced Stat"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.enhanced-stat-000d6ca8-61c",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Fantasy Genre Abilities",
+        "sourceLocator": "CRD — Enhanced Stat",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.exceptional-follower",
+      "name": "Exceptional Follower",
+      "genre": "fantasy",
+      "tier": 3,
+      "key": "exceptional-follower",
+      "system": {
+        "key": "exceptional-follower",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: You gain a level 3 follower.</p>"
+      },
+      "sources": [
+        {
+          "genre": "fantasy",
+          "name": "Exceptional Follower"
+        },
+        {
+          "genre": "science-fiction",
+          "name": "Exceptional Follower"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.exceptional-follower",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Fantasy Genre Abilities",
+        "sourceLocator": "CRD — Exceptional Follower",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.from-the-shadows",
+      "name": "From the Shadows",
+      "genre": "fantasy",
+      "tier": 3,
+      "key": "from-the-shadows",
+      "system": {
+        "key": "from-the-shadows",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: Your successful attack against a creature that was previously\nunaware of your presence deals +3 damage. Enabler.</p>"
+      },
+      "sources": [
+        {
+          "genre": "fantasy",
+          "name": "From the Shadows"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.from-the-shadows",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Fantasy Genre Abilities",
+        "sourceLocator": "CRD — From the Shadows",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.fury",
+      "name": "Fury",
+      "genre": "fantasy",
+      "tier": 3,
+      "key": "fury",
+      "system": {
+        "key": "fury",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>(3 Might): Your melee attacks inflict+2 damage. This ability lasts until you \nuse aten-minute or longer recovery. Action.</p>"
+      },
+      "sources": [
+        {
+          "genre": "fantasy",
+          "name": "Fury"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.fury",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Fantasy Genre Abilities",
+        "sourceLocator": "CRD — Fury",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.pry-open-defense",
+      "name": "Pry Open Defense",
+      "genre": "fantasy",
+      "tier": 3,
+      "key": "pry-open-defense",
+      "system": {
+        "key": "pry-open-defense",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>(4 Intellect) (Magic): With a successful Intellect attack, you \ntear apart the defenses of a creature within long range. Any magic-based \ndefenses they have (such as a warding spell) are negated. If the creature has no \nmagical defenses, its armor is reduced by 2. If it has no magic-based defenses or \narmor, its defense tasks are hindered. This lasts until you use a ten-minute or \nlonger recovery. Action.</p>"
+      },
+      "sources": [
+        {
+          "genre": "fantasy",
+          "name": "Pry Open Defense"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.pry-open-defense",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Fantasy Genre Abilities",
+        "sourceLocator": "CRD — Pry Open Defense",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.puncturing-attack",
+      "name": "Puncturing Attack",
+      "genre": "fantasy",
+      "tier": 3,
+      "key": "puncturing-attack",
+      "system": {
+        "key": "puncturing-attack",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: Your attacks ignore 2 points of your opponent’s armor.</p>"
+      },
+      "sources": [
+        {
+          "genre": "fantasy",
+          "name": "Puncturing Attack"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.puncturing-attack",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Fantasy Genre Abilities",
+        "sourceLocator": "CRD — Puncturing Attack",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.snipe",
+      "name": "Snipe",
+      "genre": "fantasy",
+      "tier": 3,
+      "key": "snipe",
+      "system": {
+        "key": "snipe",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>(2 Speed): You spend one action aiming at a foe. If you attack that foe on \nyour next turn, your attack is eased, and if you hit you inflict an additional 5 \ndamage. First action.</p>"
+      },
+      "sources": [
+        {
+          "genre": "fantasy",
+          "name": "Snipe"
+        },
+        {
+          "genre": "science-fiction",
+          "name": "Snipe"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.snipe",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Fantasy Genre Abilities",
+        "sourceLocator": "CRD — Snipe",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.strategize",
+      "name": "Strategize",
+      "genre": "fantasy",
+      "tier": 3,
+      "key": "strategize",
+      "system": {
+        "key": "strategize",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>(4 Intellect): Having an action plan in place before facing a challenge \nimproves the odds of success, even if that plan is eventually changed or discarded\nonce it’s put into play. If you and your allies spend at least ten minutes going over\na plan of action and you try to enact the plan before you use a ten-hour recovery, \nyour GM provides a useful piece of information about the situation, either \n\nimmediately if you’ve missed something or as it comes up sometime during the \nexecution of the plan. The plan of action must be something concrete and \nexecutable in order to gain this benefit. Ten minutes to activate.</p>"
+      },
+      "sources": [
+        {
+          "genre": "fantasy",
+          "name": "Strategize"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.strategize",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Fantasy Genre Abilities",
+        "sourceLocator": "CRD — Strategize",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.tough",
+      "name": "Tough",
+      "genre": "fantasy",
+      "tier": 3,
+      "key": "tough",
+      "system": {
+        "key": "tough",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: You can take an additional minor wound.</p>"
+      },
+      "sources": [
+        {
+          "genre": "fantasy",
+          "name": "Tough"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.tough",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Fantasy Genre Abilities",
+        "sourceLocator": "CRD — Tough",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.winning-smile",
+      "name": "Winning Smile",
+      "genre": "fantasy",
+      "tier": 3,
+      "key": "winning-smile",
+      "system": {
+        "key": "winning-smile",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>(2+ Intellect): When you roll to charm or influence someone and \nyour roll is less than a 9, treat the roll as a 9. (This means you don’t get a GM \nintrusion if you roll a 1.) Your increased influence persists until your nextten￾minute or longer recovery.\nEffort: Increase the minimum number rolled for this ability by 3.\nAction.\nHigh-Tier Fantasy Abilities</p>"
+      },
+      "sources": [
+        {
+          "genre": "fantasy",
+          "name": "Winning Smile"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.winning-smile",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Fantasy Genre Abilities",
+        "sourceLocator": "CRD — Winning Smile",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.assassin-strike",
+      "name": "Assassin Strike",
+      "genre": "fantasy",
+      "tier": 3,
+      "key": "assassin-strike",
+      "system": {
+        "key": "assassin-strike",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>(5 Speed): If you successfully attack a creature that was \npreviously unaware of your presence, you deal +6 damage. (If you also have \nFrom the Shadows, add the extra damage from both abilities.) Enabler.</p>"
+      },
+      "sources": [
+        {
+          "genre": "fantasy",
+          "name": "Assassin Strike"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.assassin-strike",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Fantasy Genre Abilities",
+        "sourceLocator": "CRD — Assassin Strike",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.concussive-force",
+      "name": "Concussive Force",
+      "genre": "fantasy",
+      "tier": 3,
+      "key": "concussive-force",
+      "system": {
+        "key": "concussive-force",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>(7 Intellect) (Magic): You cause a pulse of force to explode out\nfrom a point you choose within long range. The pulse extends up to short range \nin all directions, dealing 5 damage to everything in the area (make separate \nattack rolls against each). Even if you fail the attack roll against a creature in the \narea, it still takes 1 damage. Action.</p>"
+      },
+      "sources": [
+        {
+          "genre": "fantasy",
+          "name": "Concussive Force"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.concussive-force",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Fantasy Genre Abilities",
+        "sourceLocator": "CRD — Concussive Force",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.inspire-action",
+      "name": "Inspire Action",
+      "genre": "fantasy",
+      "tier": 3,
+      "key": "inspire-action",
+      "system": {
+        "key": "inspire-action",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>(4 Intellect): If one ally can see and easily understand you, you \ncan instruct that ally to take an action. If the ally chooses to take that exact action,\nthey can do so as an additional action immediately. Doing so doesn’t interfere \nwith the ally taking a normal action on their turn. Action.</p>"
+      },
+      "sources": [
+        {
+          "genre": "fantasy",
+          "name": "Inspire Action"
+        },
+        {
+          "genre": "science-fiction",
+          "name": "Inspire Action"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.inspire-action",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Fantasy Genre Abilities",
+        "sourceLocator": "CRD — Inspire Action",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.invisibility",
+      "name": "Invisibility",
+      "genre": "fantasy",
+      "tier": 3,
+      "key": "invisibility",
+      "system": {
+        "key": "invisibility",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>(4+ Intellect) (Magic): You become invisible. This effect ends if you \ndo something to reveal your presence or position—attacking, using an ability, \nmoving a large object, and so on—or you use a ten-minute or longer recovery.\nAn invisible character’s attack is eased by two steps. Attacks on an invisible \ncharacter are hindered by four steps or are nearly impossible if the attacker has \nno idea where they might be.\nAn NPC’s invisibility lasts until you use a ten-minute or longer recovery.\n\nEffort: Use this ability on a creature you touch; that creature becomes invisible \n(instead of yourself), lasting until they use a ten-minute or longer recovery.\nAction.</p>"
+      },
+      "sources": [
+        {
+          "genre": "fantasy",
+          "name": "Invisibility"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.invisibility",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Fantasy Genre Abilities",
+        "sourceLocator": "CRD — Invisibility",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.jump-attack",
+      "name": "Jump Attack",
+      "genre": "fantasy",
+      "tier": 3,
+      "key": "jump-attack",
+      "system": {
+        "key": "jump-attack",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>(5+ Might): You jump up to 4 feet (1 m) into the air and make a \nmelee attack against a foe on the way up or down. If you hit, you inflict damage \nand can attempt a difficulty 4 Might roll to inflict an additional 4 damage and \nknock them prone.\nEffort: Add 2 feet to the jump height and +2 damage to the attack (whether or not \nyou knock the target prone).\nAction.</p>"
+      },
+      "sources": [
+        {
+          "genre": "fantasy",
+          "name": "Jump Attack"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.jump-attack",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Fantasy Genre Abilities",
+        "sourceLocator": "CRD — Jump Attack",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.magic-portal",
+      "name": "Magic Portal",
+      "genre": "fantasy",
+      "tier": 3,
+      "key": "magic-portal",
+      "system": {
+        "key": "magic-portal",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>(6 Intellect) (Magic): You create a tunnel through space that allows\ntransportation to a location within long range. You must be able to see this \nlocation or know that it exists (such as beyond a closed door or an open space \nunderground beneath you). This hole in reality is large enough to accommodate \nyou and creatures of your size or smaller. Anything moving into the hole \nimmediately emerges from the other side. The hole remains open until you use a \nten-minute or longer recovery. Action.</p>"
+      },
+      "sources": [
+        {
+          "genre": "fantasy",
+          "name": "Magic Portal"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.magic-portal",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Fantasy Genre Abilities",
+        "sourceLocator": "CRD — Magic Portal",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.mask",
+      "name": "Mask",
+      "genre": "fantasy",
+      "tier": 3,
+      "key": "mask",
+      "system": {
+        "key": "mask",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>(5 Intellect) (Magic): You transform your body to become someone else.</p>"
+      },
+      "sources": [
+        {
+          "genre": "fantasy",
+          "name": "Mask"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.mask",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Fantasy Genre Abilities",
+        "sourceLocator": "CRD — Mask",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.black-thumb",
+      "name": "Black Thumb",
+      "genre": "science-fiction",
+      "tier": 3,
+      "key": "black-thumb",
+      "system": {
+        "key": "black-thumb",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: When repairing, modifying, or building machines or devices of \nany kind, your task takes you half as long as normal.</p>"
+      },
+      "sources": [
+        {
+          "genre": "science-fiction",
+          "name": "Black Thumb"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.black-thumb",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Science Fiction Genre Abilities",
+        "sourceLocator": "CRD — Black Thumb",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.disable-mechanism",
+      "name": "Disable Mechanism",
+      "genre": "science-fiction",
+      "tier": 3,
+      "key": "disable-mechanism",
+      "system": {
+        "key": "disable-mechanism",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>(3+ Intellect): With a successful Intellect attack to hack a \nmachine, robot, or device (intelligent or not) within immediate range, you disrupt\nit in one of the following ways:\n All the machine’s tasks are hindered until you use a ten-minute or longer \nrecovery.\n The machine’s speed is halved.\n\n The machine can take no action for one round.\n The severity of the machine’s attacks are reduced by one step (minimum of\na minor wound) until you use a ten-minute or longer recovery.\nYou must touch the machine, robot, or device to disrupt it (if you are making an \nattack, it inflicts no damage).\nEffort: Increase the range to as far as you can directly see (through your own \neyes, not through a remote camera or other interface). Target a mechanism \nthrough a network interface you have unrestricted access to (this requires two \nlevels of Effort).\nAction.</p>"
+      },
+      "sources": [
+        {
+          "genre": "science-fiction",
+          "name": "Disable Mechanism"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.disable-mechanism",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Science Fiction Genre Abilities",
+        "sourceLocator": "CRD — Disable Mechanism",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.enhanced-stat-630418e6-2cc",
+      "name": "Enhanced Stat",
+      "genre": "science-fiction",
+      "tier": 3,
+      "key": "enhanced-stat",
+      "system": {
+        "key": "enhanced-stat",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: You gain 4 points in one Pool of your choice.</p>"
+      },
+      "sources": [
+        {
+          "genre": "science-fiction",
+          "name": "Enhanced Stat"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.enhanced-stat-630418e6-2cc",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Science Fiction Genre Abilities",
+        "sourceLocator": "CRD — Enhanced Stat",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.hands-on-the-wheel",
+      "name": "Hands on the Wheel",
+      "genre": "science-fiction",
+      "tier": 3,
+      "key": "hands-on-the-wheel",
+      "system": {
+        "key": "hands-on-the-wheel",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>(2+ Intellect): When you pilot or drive a mechanical craft \nand your roll is less than a 9, treat the roll as a 9. (This means you don’t get a GM \nintrusion if you roll a 1.) This ability’s benefit persists until you take aten-minute \nor longer recovery.\nEffort: Increase the minimum number rolled for this ability by 3.\nEnabler.\nAt tier 3: The minimum number rolled for this ability increases to 12.</p>"
+      },
+      "sources": [
+        {
+          "genre": "science-fiction",
+          "name": "Hands on the Wheel"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.hands-on-the-wheel",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Science Fiction Genre Abilities",
+        "sourceLocator": "CRD — Hands on the Wheel",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.incredible-health",
+      "name": "Incredible Health",
+      "genre": "science-fiction",
+      "tier": 3,
+      "key": "incredible-health",
+      "system": {
+        "key": "incredible-health",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: Due to some unusual circumstances—alien physiology, \ninjection of nanobots, exposure to strange radiation, your natural immune \nsystem coming into its own, or something else—you are now immune to diseases \n(and, if youwish, mutations) of any kind.</p>"
+      },
+      "sources": [
+        {
+          "genre": "science-fiction",
+          "name": "Incredible Health"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.incredible-health",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Science Fiction Genre Abilities",
+        "sourceLocator": "CRD — Incredible Health",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.machine-companion",
+      "name": "Machine Companion",
+      "genre": "science-fiction",
+      "tier": 3,
+      "key": "machine-companion",
+      "system": {
+        "key": "machine-companion",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: A level 3 robot of your size or smaller (purchased or built \nby you) accompanies you and follows your instructions as an intelligent follower. \nYou and your GM must work out the details of your robot. If the robot is \ndestroyed, it can be restored using your resources and a few days of tinkering.\nIf you already have a robot assistant, machine companion, or similar device, you \neither gain a new one or upgrade the current one by 1 level, whichever you \nchoose.</p>"
+      },
+      "sources": [
+        {
+          "genre": "science-fiction",
+          "name": "Machine Companion"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.machine-companion",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Science Fiction Genre Abilities",
+        "sourceLocator": "CRD — Machine Companion",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.mind-reading",
+      "name": "Mind Reading",
+      "genre": "science-fiction",
+      "tier": 3,
+      "key": "mind-reading",
+      "system": {
+        "key": "mind-reading",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>(2 Intellect): You can read the surface thoughts of a creature you \ncan see within short range. If the creature is unwilling, you must make an \n\nIntellect attack against them to read their thoughts. Once you have established \ncontact, you can read the target’s thoughts until you use aten-minute or longer \nrecovery. Action.</p>"
+      },
+      "sources": [
+        {
+          "genre": "science-fiction",
+          "name": "Mind Reading"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.mind-reading",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Science Fiction Genre Abilities",
+        "sourceLocator": "CRD — Mind Reading",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.spray",
+      "name": "Spray",
+      "genre": "science-fiction",
+      "tier": 3,
+      "key": "spray",
+      "system": {
+        "key": "spray",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>(2 Speed): If a weapon has the ability to fire rapid shots without reloading \n(usually called a rapid-fire weapon, such as a crank crossbow or submachine \ngun), you can spray multiple shots around your target to increase the chance of \nhitting, gaining an asset to the attack. This ability uses 1d6 + 1 attacks’ worth of \nammunition or power (or all of the weapon’s stores, if it has less ammo or power \nthan the number rolled). If the attack is successful, it deals 1 less damage than \nnormal. You can also use this ability on multiple thrown weapons (such as stones,\nshuriken, daggers, and so on) if you’re carrying them on your person or they are \nall within reach. Action.\nHigh-Tier Science Fiction Abilities</p>"
+      },
+      "sources": [
+        {
+          "genre": "science-fiction",
+          "name": "Spray"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.spray",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Science Fiction Genre Abilities",
+        "sourceLocator": "CRD — Spray",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.arc-spray",
+      "name": "Arc Spray",
+      "genre": "science-fiction",
+      "tier": 3,
+      "key": "arc-spray",
+      "system": {
+        "key": "arc-spray",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>(3 Speed): If a weapon has the ability to fire rapid shots without \nreloading (usually called a rapid-fire weapon, such as a crank crossbow or \nsubmachine gun), you can fire your weapon at three targets (all next to one \nanother) at once. Make a separate hindered attack roll against each target. Action.</p>"
+      },
+      "sources": [
+        {
+          "genre": "science-fiction",
+          "name": "Arc Spray"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.arc-spray",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Science Fiction Genre Abilities",
+        "sourceLocator": "CRD — Arc Spray",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.improved-machine-companion",
+      "name": "Improved Machine Companion",
+      "genre": "science-fiction",
+      "tier": 3,
+      "key": "improved-machine-companion",
+      "system": {
+        "key": "improved-machine-companion",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: You create, find, or otherwise acquire a level 5 \nintelligent machine companion follower that accompanies you and acts as you \ndirect. If it’s destroyed, it can be restored using your resources after a few days of\nlabor. If you already have a lower-level machine companion, you choose whether\nit is upgraded to level 5 or you retain it as is and gain a new level 5 companion.</p>"
+      },
+      "sources": [
+        {
+          "genre": "science-fiction",
+          "name": "Improved Machine Companion"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.improved-machine-companion",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Science Fiction Genre Abilities",
+        "sourceLocator": "CRD — Improved Machine Companion",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.knowledge-expert",
+      "name": "Knowledge Expert",
+      "genre": "science-fiction",
+      "tier": 3,
+      "key": "knowledge-expert",
+      "system": {
+        "key": "knowledge-expert",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: You are trained as an expert in two broad science and/or \nknowledge skills (such as mathematics, physics, engineering, geology, history, \nhacking, and the like) that you are already specialized in. Alternatively, you can \nincrease your skill in two science or knowledge skills (from no skill to trained, or \nfrom trained to specialized). Enabler.</p>"
+      },
+      "sources": [
+        {
+          "genre": "science-fiction",
+          "name": "Knowledge Expert"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.knowledge-expert",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Science Fiction Genre Abilities",
+        "sourceLocator": "CRD — Knowledge Expert",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.lethal-capability",
+      "name": "Lethal Capability",
+      "genre": "science-fiction",
+      "tier": 3,
+      "key": "lethal-capability",
+      "system": {
+        "key": "lethal-capability",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: You’ve mastered how to kill with a particular attack. You \ninflict an additional 5 damage with attacks of one specific type, such as a thrown \nknife, a shot with a firearm, a swing of an axe, unarmed attacks, or some other \nspecific attack you prefer.\nYou can gain this ability more than once. Each time you do, choose a different \nspecific attack.</p>"
+      },
+      "sources": [
+        {
+          "genre": "science-fiction",
+          "name": "Lethal Capability"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.lethal-capability",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Science Fiction Genre Abilities",
+        "sourceLocator": "CRD — Lethal Capability",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.severe-machine-disruption",
+      "name": "Severe Machine Disruption",
+      "genre": "science-fiction",
+      "tier": 3,
+      "key": "severe-machine-disruption",
+      "system": {
+        "key": "severe-machine-disruption",
+        "tier": 3,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>(5+ Intellect): With a successful Intellect attack to \nhack a machine, robot, mechanism, or device (intelligent or not) within \nimmediate range, you disrupt it in all the following ways simultaneously:\n All the machine’s tasks are hindered until you use a ten-minute or longer \nrecovery.\n The machine’s speed is halved.\n The machine can take no action for one round.\n The severity of the machine’s attacks are reduced by one step (minimum of\na minor wound) until you use a ten-minute or longer recovery.\nYou must touch the machine to disrupt it (if you are making an attack, it inflicts \nno damage).\nEffort: Increase the range to as far as you can directly see (through your own \neyes, not through a remote camera or other interface). Target a machine through</p>"
+      },
+      "sources": [
+        {
+          "genre": "science-fiction",
+          "name": "Severe Machine Disruption"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.severe-machine-disruption",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Science Fiction Genre Abilities",
+        "sourceLocator": "CRD — Severe Machine Disruption",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.adhesive-mobility",
+      "name": "Adhesive Mobility",
+      "genre": "superhero",
+      "tier": 1,
+      "key": "adhesive-mobility",
+      "system": {
+        "key": "adhesive-mobility",
+        "tier": 1,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: You can effortlessly adhere to most physical objects and \nsurfaces nimbly enough that you can effectively walk or run up walls and ceilings\nas if they were level ground, using as much or as little of your body surface as \nmakes sense. For example, you could simply hang from a surface with one hand \nor lie across a wall for maximum surface contact. In addition, you rarely drop \nobjects, and others can’t easily take objects away from you; your tasks related to \nretaining your grip on an object are eased.</p>"
+      },
+      "sources": [
+        {
+          "genre": "superhero",
+          "name": "Adhesive Mobility"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.adhesive-mobility",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Origin Superhero Abilities",
+        "sourceLocator": "CRD — Adhesive Mobility",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.amazing-invulnerability",
+      "name": "Amazing Invulnerability",
+      "genre": "superhero",
+      "tier": 1,
+      "key": "amazing-invulnerability",
+      "system": {
+        "key": "amazing-invulnerability",
+        "tier": 1,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: Choose one kind of energy, such as cold, electricity, \nfire, psychic, radiation, and so on. You reduce the severity of wounds you take \nfrom this energy by three steps (major, moderate, and minor to none). You can’t \nbecome invulnerable to kinetic energy using this ability. You can use this ability \nto become invulnerable to damaging magical blasts (but not magical effects that \naren’t based on damage, such as mind control or telekinesis).</p>"
+      },
+      "sources": [
+        {
+          "genre": "superhero",
+          "name": "Amazing Invulnerability"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.amazing-invulnerability",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Origin Superhero Abilities",
+        "sourceLocator": "CRD — Amazing Invulnerability",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.amazing-tools",
+      "name": "Amazing Tools",
+      "genre": "superhero",
+      "tier": 1,
+      "key": "amazing-tools",
+      "system": {
+        "key": "amazing-tools",
+        "tier": 1,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: You have a utility belt, supersuit, or other device that provides \nyou with a useful effect when you need it. Pick a low-power manifest cypher \naccessed through this device. You can activate the device as an action, costing 2 \nIntellect. The chosen ability does not count toward your cypher limit. Unlike \nwhen using a cypher, you do not lose this ability after activating it.\nWhenever you take a ten-hour recovery, you can change which cypher you’ve \nincorporated into this device.\nIf you lose your device, you can (depending on your skill) craft a replacement or \narrange for one to be made for you, requiring 1d6 days of concerted effort.</p>"
+      },
+      "sources": [
+        {
+          "genre": "superhero",
+          "name": "Amazing Tools"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.amazing-tools",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Origin Superhero Abilities",
+        "sourceLocator": "CRD — Amazing Tools",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.armored-body",
+      "name": "Armored Body",
+      "genre": "superhero",
+      "tier": 1,
+      "key": "armored-body",
+      "system": {
+        "key": "armored-body",
+        "tier": 1,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>(rank 2+): You are very resistant to damage due to your body \nbeing composed of rock or metal, your incredible toughness, or a similar reason.\nYou ignore minor wounds.\n\nYou can take an additional moderate wound and major wound.</p>"
+      },
+      "sources": [
+        {
+          "genre": "superhero",
+          "name": "Armored Body"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.armored-body",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Origin Superhero Abilities",
+        "sourceLocator": "CRD — Armored Body",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.astonishing-teleport",
+      "name": "Astonishing Teleport",
+      "genre": "superhero",
+      "tier": 1,
+      "key": "astonishing-teleport",
+      "system": {
+        "key": "astonishing-teleport",
+        "tier": 1,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: You can instantly teleport anywhere you can see or that \nyou know exists.\nYou can instantly teleport to a location within immediate range and then take a \nFirst action, such as attacking with a light weapon or opening a door (the \nteleportation happens before your First action, not the other way around).\nYou can take an action, then teleport within short range as an extra action on \nyour turn.\nAs a Last action, you can teleport to a location within long range.\nFirst action, action, or Last action.</p>"
+      },
+      "sources": [
+        {
+          "genre": "superhero",
+          "name": "Astonishing Teleport"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.astonishing-teleport",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Origin Superhero Abilities",
+        "sourceLocator": "CRD — Astonishing Teleport",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.awesome-force-field",
+      "name": "Awesome Force Field",
+      "genre": "superhero",
+      "tier": 1,
+      "key": "awesome-force-field",
+      "system": {
+        "key": "awesome-force-field",
+        "tier": 1,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: An invisible force field surrounds you, lasting until you \ntake a ten‑minute or longer recovery. This allows you to try blocking attacks with \nan eased Intellect defense roll instead of a Might defense roll; if you succeed, you \nreduce the severity of the wound by one step. If the blocked attack would still \ninflict a wound, you can spend 5 Intellect to completely negate it, shattering your \nforce field until your next turn.\nEffort: Create a level 6 force field up to a short distance away that is identical to a \nforce field cypher, lasting until you take a ten-minute or longer recovery. You can \nhave more than one such force field active at a time, but each one beyond the \nfirst requires you to use an additional level of Effort to activate it (two levels for a \nsecond force field, and so on). Your personal force field doesn’t count toward this \ntotal.\nAction.</p>"
+      },
+      "sources": [
+        {
+          "genre": "superhero",
+          "name": "Awesome Force Field"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.awesome-force-field",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Origin Superhero Abilities",
+        "sourceLocator": "CRD — Awesome Force Field",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.duplicate",
+      "name": "Duplicate",
+      "genre": "superhero",
+      "tier": 1,
+      "key": "duplicate",
+      "system": {
+        "key": "duplicate",
+        "tier": 1,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>(2+ Might): You cause a temporary instance of yourself to appear at \nany point you can see within short range. It persists until you use a ten-minute or \nlonger recovery. The instance is a level 2 follower that appears with copies of \nyour clothing and equipment (minus any cyphers and artifacts) and has all your \nmemories. The instance obeys your commands and does as you direct. The \ninstance dissipates earlier if you dismiss it as an extra action on your turn, if you \nuse this ability again, or if it is killed. When the instance disappears, any clothing \nor equipment it appeared with also vanishes, and any new equipment it acquired\nremains behind. Each time an instance is killed, you take a moderate wound.\nNormally, you can only have one instance at a time; creating a second makes the \nfirst one disappear.\n\nEffort: Spawn one additional duplicate of yourself, which is simultaneously active\nwith the normal duplicate from this ability; each duplicate can be individually \ndismissed as an extra action on your turn. Increase the level of one of your \nduplicates by 1.\nAction to initiate.</p>"
+      },
+      "sources": [
+        {
+          "genre": "superhero",
+          "name": "Duplicate"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.duplicate",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Origin Superhero Abilities",
+        "sourceLocator": "CRD — Duplicate",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.extraordinary-leap",
+      "name": "Extraordinary Leap",
+      "genre": "superhero",
+      "tier": 1,
+      "key": "extraordinary-leap",
+      "system": {
+        "key": "extraordinary-leap",
+        "tier": 1,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: When you move, instead of walking or running you can \njump up, down, or across to anywhere you choose within long range if you have a\nclear and unobstructed path to that location. For example, you could jump to the \ntop of a ten-story building or down to the ground from the top of that building.\nIf you do nothing but jump for three actions in a row, you can go farther with \neach leap until you’re jumping a very long distance each round, effectively \nmoving at around 55 miles per hour (88 kph) for up to about ten minutes.</p>"
+      },
+      "sources": [
+        {
+          "genre": "superhero",
+          "name": "Extraordinary Leap"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.extraordinary-leap",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Origin Superhero Abilities",
+        "sourceLocator": "CRD — Extraordinary Leap",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.fantastic-armament",
+      "name": "Fantastic Armament",
+      "genre": "superhero",
+      "tier": 1,
+      "key": "fantastic-armament",
+      "system": {
+        "key": "fantastic-armament",
+        "tier": 1,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: You have a weapon, either mystical or technological in \nnature. You can freely use this weapon. Work with your GM to determine its \norigin, its history, and whether it’s a ranged or melee weapon.\nYou wield this weapon as a medium weapon that inflicts an additional +2 \ndamage.\nYour weapon also has one power of its own. Choose an ability from the \nLow‑Power Manifest Cyphers or Medium‑Power Manifest Cyphers table. You can \nuse that power as your action, costing 3 Intellect if it’s a low-power ability or \n5 Intellect if it’s a medium-power ability.\nIf you lose your weapon, you can (depending on your skill) craft a replacement or\narrange for one to be made for you, requiring 1d6 days of concerted effort.</p>"
+      },
+      "sources": [
+        {
+          "genre": "superhero",
+          "name": "Fantastic Armament"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.fantastic-armament",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Origin Superhero Abilities",
+        "sourceLocator": "CRD — Fantastic Armament",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.fantastic-vehicle",
+      "name": "Fantastic Vehicle",
+      "genre": "superhero",
+      "tier": 1,
+      "key": "fantastic-vehicle",
+      "system": {
+        "key": "fantastic-vehicle",
+        "tier": 1,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: You have a vehicle, either mystical or technological in nature, \nthat you can freely use. Work with your GM to determine whether it’s a flying \nvehicle, a burrowing vehicle, a land vehicle, a watercraft, or something else.\nYour vehicle can comfortably carry you and up to six other creatures of your size.\nYour vehicle also has one power of its own. Choose an ability from the \nLow‑Power or Medium‑Power Manifest Cyphers table. You can use that power as \nyour action, costing 3 Intellect if it’s a low-power ability or 5 Intellect if it’s a \nmedium‑power ability.\nIf you lose your vehicle, you can (depending on your skill) craft a replacement or \narrange for one to be made for you, requiring 1d6 days of concerted effort.</p>"
+      },
+      "sources": [
+        {
+          "genre": "superhero",
+          "name": "Fantastic Vehicle"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.fantastic-vehicle",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Origin Superhero Abilities",
+        "sourceLocator": "CRD — Fantastic Vehicle",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.incredible-instinct",
+      "name": "Incredible Instinct",
+      "genre": "superhero",
+      "tier": 1,
+      "key": "incredible-instinct",
+      "system": {
+        "key": "incredible-instinct",
+        "tier": 1,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: If you are attacked by surprise, whether by a creature, a \ndevice, or simply an environmental hazard (such as poison gas from a vent), you \nmove an immediate distance before the attack occurs. If moving prevents the \nattack, you are safe. If the attack can still potentially affect you (the attacking \ncreature can move to keep pace, the attack fills an area too big to escape, and so \non), your defense against it is eased.\nWhen you roll for initiative and your roll is less than a 9, treat the roll as a 9. \n(This means you don’t get a GM intrusion if you roll a 1.)\nEffort: Increase the minimum number rolled for this ability by 3.\nAt tier 3: The minimum number rolled for this ability increases to 12.</p>"
+      },
+      "sources": [
+        {
+          "genre": "superhero",
+          "name": "Incredible Instinct"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.incredible-instinct",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Origin Superhero Abilities",
+        "sourceLocator": "CRD — Incredible Instinct",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.incredible-velocity",
+      "name": "Incredible Velocity",
+      "genre": "superhero",
+      "tier": 1,
+      "key": "incredible-velocity",
+      "system": {
+        "key": "incredible-velocity",
+        "tier": 1,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: You can move a long distance as a First action (instead of \nmoving only an immediate distance as a First action), but your tasks are hindered\nby two steps until the end of your next turn.\nAlternatively, you can take an action, then move a short distance as part of your \nturn (instead of only an immediate distance), without your tasks being hindered \nuntil the end of your next turn.\nIf you do nothing but move for three actions in a row, you accelerate greatly and \ncan move up to 700 miles per hour (1,100 kph) for up to about ten minutes.</p>"
+      },
+      "sources": [
+        {
+          "genre": "superhero",
+          "name": "Incredible Velocity"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.incredible-velocity",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Origin Superhero Abilities",
+        "sourceLocator": "CRD — Incredible Velocity",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.intangible",
+      "name": "Intangible",
+      "genre": "superhero",
+      "tier": 1,
+      "key": "intangible",
+      "system": {
+        "key": "intangible",
+        "tier": 1,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: You (including your clothing and equipment) can pass through \nphysical barriers of up to level 5 at a rate of 3 feet (1 m) per round as your action. \nYou can perceive while phased within a barrier or object, which allows you to \npeek through walls. You can’t pass through energy barriers.\nIn addition, you could take an action, and instead of moving up to an immediate \ndistance afterward, you can phase through a physical barrier. (You can’t use this \nability as a First action.)\nEffort: Increase the maximum level of the barrier you can pass through by 1. Use \nthe ability as an enabler to ease your dodge defense roll against an attack by one \nstep.\nAction; enabler if used defensively.</p>"
+      },
+      "sources": [
+        {
+          "genre": "superhero",
+          "name": "Intangible"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.intangible",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Origin Superhero Abilities",
+        "sourceLocator": "CRD — Intangible",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.invisible-knack",
+      "name": "Invisible Knack",
+      "genre": "superhero",
+      "tier": 1,
+      "key": "invisible-knack",
+      "system": {
+        "key": "invisible-knack",
+        "tier": 1,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: When you wish, you (including your clothing and equipment) \nbecomes invisible. The effect ends if you do something to reveal your presence or \nposition—attacking, using an ability, moving a large object, and so on—but you \ncan become invisible again on your next turn.\n\nIf you use an action, you can confer the invisibility effect on a creature or object \nyou touch instead of, or in addition to, yourself. This invisibility lasts until the \naffected target does something to reveal their presence, the object is struck or \nforcibly moved, or they or you use a ten‑minute or longer recovery.\nEffort: Affect a creature or object within long range instead of touch range.\nEnabler for yourself; action for another creature or object.\nAn invisible character’s attack is eased by two steps. Attacks on an invisible \ncharacter are hindered by four steps or are nearly impossible if the attacker has \nno idea where they might be.</p>"
+      },
+      "sources": [
+        {
+          "genre": "superhero",
+          "name": "Invisible Knack"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.invisible-knack",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Origin Superhero Abilities",
+        "sourceLocator": "CRD — Invisible Knack",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.power-cypher-use",
+      "name": "Power Cypher Use",
+      "genre": "superhero",
+      "tier": 1,
+      "key": "power-cypher-use",
+      "system": {
+        "key": "power-cypher-use",
+        "tier": 1,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: You can bear one additional cypher or power boost cypher at\na time.</p>"
+      },
+      "sources": [
+        {
+          "genre": "superhero",
+          "name": "Power Cypher Use"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.power-cypher-use",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Origin Superhero Abilities",
+        "sourceLocator": "CRD — Power Cypher Use",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.powerful-blast",
+      "name": "Powerful Blast",
+      "genre": "superhero",
+      "tier": 1,
+      "key": "powerful-blast",
+      "system": {
+        "key": "powerful-blast",
+        "tier": 1,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: You can emit a long-range blast of energy inflicting 4 damage \nwith a successful attack roll, or 6 points if you use a Last action to attack. Work \nwith your GM to determine the type of energy comprising your blast (cold, \nelectricity, fire, and so on). Action or Last action.</p>"
+      },
+      "sources": [
+        {
+          "genre": "superhero",
+          "name": "Powerful Blast"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.powerful-blast",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Origin Superhero Abilities",
+        "sourceLocator": "CRD — Powerful Blast",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.regenerative-healing",
+      "name": "Regenerative Healing",
+      "genre": "superhero",
+      "tier": 1,
+      "key": "regenerative-healing",
+      "system": {
+        "key": "regenerative-healing",
+        "tier": 1,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: Your healing factor is constantly at work, healing your \nwounds automatically without requiring your will or actions.\nYou automatically heal one minor wound each round.\nIf you have no minor wounds, you can heal one moderate wound each round if \nyou spend 2 Might to do so.\nIf you have no minor or moderate wounds, you can heal one major wound each \nminute if you spend 5 Might to do so.\nIf you would be killed by wounds but spend 5 Might to heal a major wound, your \nregeneration keeps you alive but unconscious while it’s healing that wound.\nYou decide whether or not to spend Might to heal a wound, even if you are \nunconscious or unable to take actions. (In other words, you don’t have to spend \nMight to heal if you don’t want to.)</p>"
+      },
+      "sources": [
+        {
+          "genre": "superhero",
+          "name": "Regenerative Healing"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.regenerative-healing",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Origin Superhero Abilities",
+        "sourceLocator": "CRD — Regenerative Healing",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.shrink",
+      "name": "Shrink",
+      "genre": "superhero",
+      "tier": 1,
+      "key": "shrink",
+      "system": {
+        "key": "shrink",
+        "tier": 1,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>(1+ Might): Your size proportionally decreases to a height of 1 inch (3 cm)\nuntil you use a ten-minute or longer recovery. Your clothing and equipment \nchanges size with you. While small, you add 7 points to your Speed Pool and add \n+2 to your Speed Edge. While you are this small, your dodge and stealth tasks are \neased by two steps and your movement speed is one-tenth normal; your melee \n\nattacks still inflict normal damage because the force is concentrated in a very \nsmall area.\nEach time you use Shrink, the Might cost increases by 1. The cost returns to 1 \nafter you take a recovery.\nFirst action; enabler to use again to remain shrunken.</p>"
+      },
+      "sources": [
+        {
+          "genre": "superhero",
+          "name": "Shrink"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.shrink",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Origin Superhero Abilities",
+        "sourceLocator": "CRD — Shrink",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.skill-exemplar",
+      "name": "Skill Exemplar",
+      "genre": "superhero",
+      "tier": 1,
+      "key": "skill-exemplar",
+      "system": {
+        "key": "skill-exemplar",
+        "tier": 1,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: You are among the best of the best when it comes to your area of\nexpertise. Choose one skill that you are trained or specialized in (other than an \nattack skill or defense skill), such as healing, athletics, stealth, physics, \npickpocketing, hacking, gymnastics, and so on. When you roll for this skill and \nyour roll is less than a 15, treat the roll as a 15. (This means you don’t get a GM \nintrusion if you roll a 1.)\nEffort: Increase the minimum number rolled for this ability by 3.\nAt tier 3: The minimum number rolled for this ability increases to 18.</p>"
+      },
+      "sources": [
+        {
+          "genre": "superhero",
+          "name": "Skill Exemplar"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.skill-exemplar",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Origin Superhero Abilities",
+        "sourceLocator": "CRD — Skill Exemplar",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.stretchy",
+      "name": "Stretchy",
+      "genre": "superhero",
+      "tier": 1,
+      "key": "stretchy",
+      "system": {
+        "key": "stretchy",
+        "tier": 1,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: Your body is elastic and rubbery, granting you the following benefits.\nYou can take an extra moderate wound.\nAs your action, you can stretch and reshape your body and limbs thin enough to \neasily pull free from mundane bindings, or squeeze through a tight spot as small \nas half an inch (1 cm) in diameter.\nYou can stretch your arms up to a long distance, allowing you to touch, grab, or \ninteract with anything you can see as if you were standing next to it and could \nuse your hands normally.\nYou can attempt to grab a creature as an eased attack by enveloping yourself \naround them or wrapping them in extra lengths of your stretchy limbs. If you hit, \nyou prevent them from moving on their turn, and their physical attacks are \nhindered. If they try to escape, you must succeed at a Might task to maintain your\ngrip. As your action, you can automatically inflict 4 damage to a grabbed target by\nsqueezing them.</p>"
+      },
+      "sources": [
+        {
+          "genre": "superhero",
+          "name": "Stretchy"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.stretchy",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Origin Superhero Abilities",
+        "sourceLocator": "CRD — Stretchy",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.superhero-versatility",
+      "name": "Superhero Versatility",
+      "genre": "superhero",
+      "tier": 1,
+      "key": "superhero-versatility",
+      "system": {
+        "key": "superhero-versatility",
+        "tier": 1,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: Gain 12 Pool points, dividing them among your Pools as \nyou wish.</p>"
+      },
+      "sources": [
+        {
+          "genre": "superhero",
+          "name": "Superhero Versatility"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.superhero-versatility",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Origin Superhero Abilities",
+        "sourceLocator": "CRD — Superhero Versatility",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.team-up-ally",
+      "name": "Team-Up Ally",
+      "genre": "superhero",
+      "tier": 1,
+      "key": "team-up-ally",
+      "system": {
+        "key": "team-up-ally",
+        "tier": 1,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: You have an NPC ally who is a level 4 superhero. They have one \nability from the Origin Superhero Abilities list (other than Team-Up Ally) and the \nmodifications of a level 4 follower. You and your GM must work out their name, \nappearance, and personality, and how their superhero ability works as an NPC \n\nability. (Alternatively, your ally could be an unusual super-powered pet, such as a\ntiny dragon from an alternate dimension, a strange alien techno‑organic being, or\nsomething else unexpected.)\nAnytime you wish to have your ally accompany you on an outing, your GM \ndecides if they’re available, depending on circumstances, and you must succeed \nat a difficulty 2 charm task.\nIf your ally is supposedly killed, they were actually only knocked unconscious or \nseverely hurt. They can be restored using your resource points plus several \nweeks of care you arrange or provide.</p>"
+      },
+      "sources": [
+        {
+          "genre": "superhero",
+          "name": "Team-Up Ally"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.team-up-ally",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Origin Superhero Abilities",
+        "sourceLocator": "CRD — Team-Up Ally",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.telepathic-prodigy",
+      "name": "Telepathic Prodigy",
+      "genre": "superhero",
+      "tier": 1,
+      "key": "telepathic-prodigy",
+      "system": {
+        "key": "telepathic-prodigy",
+        "tier": 1,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: You can speak telepathically with a creature within long \nrange. Communication is two-way, but the other party must be willing and able to\ncommunicate. You don’t have to see the target, but you must know that they are \nwithin range.\nEffort: Read an unwilling creature’s surface thoughts if you succeed at an Intellect\ntask against them; this also allows you to telepathically speak to them even if they\ndon’t want to listen, and lasts until you use a ten-minute or longer recovery. \nEnabler.</p>"
+      },
+      "sources": [
+        {
+          "genre": "superhero",
+          "name": "Telepathic Prodigy"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.telepathic-prodigy",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Origin Superhero Abilities",
+        "sourceLocator": "CRD — Telepathic Prodigy",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.unbelievable-transformation",
+      "name": "Unbelievable Transformation",
+      "genre": "superhero",
+      "tier": 1,
+      "key": "unbelievable-transformation",
+      "system": {
+        "key": "unbelievable-transformation",
+        "tier": 1,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: Your body physically changes from its base state,\nallowing you to alter your posture, voice, hair, skin, features, and size (up or \ndown by an apparent 50 percent). You can even change the clothing and \nequipment you appear to wear or carry; however, these are actually part of you \nand, as such, have limited functionality.\nYou can choose random features or adopt the appearance of a specific individual \nyou’ve spent at least one minute carefully studying within short range. \nEffectively, you don’t need a disguise kit to attempt a disguise, nor do you require \nthe minute or more it normally takes to apply a mundane disguise. If this disguise\ncomes under direct scrutiny or challenge, you gain two additional assets to your \ndisguise task to maintain the deception.\nLast action.</p>"
+      },
+      "sources": [
+        {
+          "genre": "superhero",
+          "name": "Unbelievable Transformation"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.unbelievable-transformation",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Origin Superhero Abilities",
+        "sourceLocator": "CRD — Unbelievable Transformation",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.uncanny-flight",
+      "name": "Uncanny Flight",
+      "genre": "superhero",
+      "tier": 1,
+      "key": "uncanny-flight",
+      "system": {
+        "key": "uncanny-flight",
+        "tier": 1,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: You can fly. You can move a short distance and take an action, \nor move a long distance as your action. You have fine control over your flight, can\nhover in place, and can attempt complicated flight maneuvers. You can carry one \ncreature of your size or smaller (or possibly much more, depending on your \nstrength).</p>"
+      },
+      "sources": [
+        {
+          "genre": "superhero",
+          "name": "Uncanny Flight"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.uncanny-flight",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Origin Superhero Abilities",
+        "sourceLocator": "CRD — Uncanny Flight",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.unyielding-shield",
+      "name": "Unyielding Shield",
+      "genre": "superhero",
+      "tier": 1,
+      "key": "unyielding-shield",
+      "system": {
+        "key": "unyielding-shield",
+        "tier": 1,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": null,
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>: You carry a nearly unbreakable shield. If it takes a major \nwound for you, instead of it being destroyed, you lose your next turn from the \nforce traveling through the shield (or the GM may instead trigger a GM intrusion).\nWhenever you take a recovery, remove all minor and moderate wounds from the\nshield.\nYou can freely use the shield in one hand as a light melee weapon. You can throw\nyour shield as a short-range light weapon. Whether the thrown shield hits or \nmisses, you can attempt a difficulty 2 Speed task for it to bounce back to your \ngrasp.\nEffort: A successful hit with the shield also hinders the target for one round.\nIf you lose your shield, you can (depending on your skill) craft a replacement or \narrange for one to be made for you, requiring 1d6 days of concerted effort.\nAdapting Alternate Types\nIf you want more type options than those presented in the superhero genre, you \ncan adapt or reskin a type from another genre, such as a dungeon fantasy Monk \nor a space opera Psion. When translating the alternate types to the superhero \ngenre, your character also gains the following:\n Replace the additional Pool points benefit of the original type with the \nadditional Pool points benefit of a type of the appropriate rank (such as \nCrimefighter or Vigilante for a rank 1 superhero)\n One choice from the Origin Superhero Abilities list\n A number of power shifts indicated for a superhero of the appropriate \nrank (such as three power shifts for a rank 2 superhero)\n The Superheroics ability, and additional points to the Pool you choose for \nthat ability (+2 for rank 2, +4 for rank 3, +6 for rank 4, or +8 for rank 5)\nFor example, adapting a Monk into a rank 2 superhero gives you the additional \nPool points benefit of an Enhanced Hero or Powerstar (instead of the Monk’s +2 \nto Might and +2 to Speed), one origin superhero ability, the Superheroics ability \nand three power shifts, plus all of the Monk’s special abilities and other benefits.</p>"
+      },
+      "sources": [
+        {
+          "genre": "superhero",
+          "name": "Unyielding Shield"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.unyielding-shield",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Origin Superhero Abilities",
+        "sourceLocator": "CRD — Unyielding Shield",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    }
+  ]
+}
