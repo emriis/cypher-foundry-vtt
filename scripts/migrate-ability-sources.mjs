@@ -287,6 +287,7 @@ async function mergeGenreAbilities() {
 async function collectEnglishRegistry() {
   const registry = new Map();
   const byKey = new Map();
+  const byKeyTier = new Map();
 
   for (const parent of PARENT_PACKS) {
     for (const file of await sourceFiles(`${parent}-en`)) {
@@ -415,9 +416,14 @@ async function collectStandaloneEnglishLogicalIds() {
     const keyIds = byKey.get(entry.key) ?? new Set();
     keyIds.add(logicalId);
     byKey.set(entry.key, keyIds);
+
+    const keyTier = `${entry.key}:${entry.document.system.tier}`;
+    const tierIds = byKeyTier.get(keyTier) ?? new Set();
+    tierIds.add(logicalId);
+    byKeyTier.set(keyTier, tierIds);
   }
 
-  return { exact, fallback, byKey };
+  return { exact, fallback, byKey, byKeyTier };
 }
 
 async function enrichStandaloneLanguage(language, englishLogicalIds) {
@@ -455,6 +461,14 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
           JSON.stringify(localizedPairingMechanicalShape(document.system ?? {}))
         )}`;
         const candidates = englishLogicalIds.fallback.get(fallbackKey);
+        if (candidates?.size === 1) {
+          logicalId = candidates.values().next().value;
+        }
+      }
+      if (!logicalId) {
+        const candidates = englishLogicalIds.byKeyTier.get(
+          `${key}:${document.system?.tier}`
+        );
         if (candidates?.size === 1) {
           logicalId = candidates.values().next().value;
         }
