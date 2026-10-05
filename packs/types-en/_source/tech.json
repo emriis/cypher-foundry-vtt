@@ -38,7 +38,21 @@
     "statOptions": [
       "intellect"
     ],
-    "description": "<p>You're not simply good with machines; you're a galactic-level genius. Where others see a pile of junk, a boring appliance, or a simple device, you see potential—circuits, energy conduits, and power cells enabling you to build an explosive, repair a weapon, fashion a new custom-built device, or keep a starship limping along when by all rights that last enemy disintegration beam should have spelled the end. Others on your team probably celebrate your technical know-how, especially as it usually falls to you to bypass dumb devices like surveillance monitors and force screens. And if they can protect you from direct enemy action, you can produce a gadget that might just be the key to accomplishing the overall objective.</p>"
+    "description": "<p>You're not simply good with machines; you're a galactic-level genius. Where others see a pile of junk, a boring appliance, or a simple device, you see potential—circuits, energy conduits, and power cells enabling you to build an explosive, repair a weapon, fashion a new custom-built device, or keep a starship limping along when by all rights that last enemy disintegration beam should have spelled the end. Others on your team probably celebrate your technical know-how, especially as it usually falls to you to bypass dumb devices like surveillance monitors and force screens. And if they can protect you from direct enemy action, you can produce a gadget that might just be the key to accomplishing the overall objective.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.7ff1f6e18e788dd8",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.bce6da916bee188a",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.70b9d9f991373f97",
+        "tier": 1
+      }
+    ]
   },
   "folder": "AxljvbOd6vL9wkut",
   "sort": 0,
@@ -48,6 +62,22 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.tech",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Type — Tech — Abilities",
+        "sourceLocator": "CRD — Type: Tech",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }
