@@ -37,7 +37,7 @@ test("Foundry manifest points to existing system entry points, locales, and pack
 
   for (const pack of manifest.packs) {
     assert.ok(fs.existsSync(path.join(root, pack.path, "_source")), `Pack source does not exist: ${pack.path}`);
-    assert.equal(pack.type, "Item");
+    assert.ok(["Item", "JournalEntry"].includes(pack.type));
     assert.equal(pack.system, manifest.id);
   }
 });
@@ -83,8 +83,25 @@ test("each declared pack has a corresponding language-specific source set", () =
         assert.ok(item.name);
         continue;
       }
-      assert.ok(manifest.documentTypes.Item[item.type], `${pack.name}/${file} has an undeclared Item type`);
-      assert.match(item._key, /^!items![A-Za-z0-9]{16}$/, `${pack.name}/${file} has an invalid compendium key`);
+      if (pack.type === "Item") {
+        assert.ok(
+          manifest.documentTypes.Item[item.type],
+          `${pack.name}/${file} has an undeclared Item type`
+        );
+        assert.match(
+          item._key,
+          /^!items![A-Za-z0-9]{16}$/,
+          `${pack.name}/${file} has an invalid compendium key`
+        );
+      } else {
+        assert.equal(item.document, "JournalEntry");
+        assert.equal(item.crdType, "journal");
+        assert.match(
+          item._key,
+          /^!journal![A-Za-z0-9]{16}$/,
+          `${pack.name}/${file} has an invalid JournalEntry key`
+        );
+      }
     }
   }
 });
