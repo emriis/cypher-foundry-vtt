@@ -39,7 +39,25 @@
     "statOptions": [
       "intellect"
     ],
-    "description": "<p>You're one of the rare few. You have the aptitude, inborn talent, and capacity to confer with dark entities without losing your mind, allowing you to unlock and command magic. Most people gaze upon you with fear when they realize your abilities are not mere pageantry, but instead the secrets of a forgotten age reborn in you. When you open your inner eye, your mind expands, allowing you to see the unseen, bend others to your will, and lash their minds directly. Your magic is useful in a fight, especially since you don't need to physically strike your foes to harm or sway them; however, you lean on others in your group to provide physical security lest you be overrun by mere force before you have a chance to shine. Outside a conflict, your deeper knowledge of ancient, sorcerous lore may spell the difference between a successful foray and an early grave.</p>"
+    "description": "<p>You're one of the rare few. You have the aptitude, inborn talent, and capacity to confer with dark entities without losing your mind, allowing you to unlock and command magic. Most people gaze upon you with fear when they realize your abilities are not mere pageantry, but instead the secrets of a forgotten age reborn in you. When you open your inner eye, your mind expands, allowing you to see the unseen, bend others to your will, and lash their minds directly. Your magic is useful in a fight, especially since you don't need to physically strike your foes to harm or sway them; however, you lean on others in your group to provide physical security lest you be overrun by mere force before you have a chance to shine. Outside a conflict, your deeper knowledge of ancient, sorcerous lore may spell the difference between a successful foray and an early grave.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.70b9d9f991373f97",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.d847a78f8d17c87d",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.6a9ceeb3c3a2cf5f",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.c527bf562ea77e1c",
+        "tier": 1
+      }
+    ]
   },
   "folder": "zBqRagUFEUelogPi",
   "sort": 0,
@@ -49,6 +67,22 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.sorcerer",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Type — Sorcerer — Abilities",
+        "sourceLocator": "CRD — Type: Sorcerer",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }
