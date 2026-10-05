@@ -839,10 +839,6 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
           pairedLogicalIds.add(candidate);
         }
       }
-      if (pairedLogicalIds.size === 1) {
-        logicalId = pairedLogicalIds.values().next().value;
-      }
-
       if (!logicalId) {
         logicalId = englishLogicalIds.exact.get(`${key}:${signature}`);
       }
@@ -861,6 +857,16 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
         );
         if (candidates?.size === 1) {
           logicalId = candidates.values().next().value;
+        }
+      }
+      if (!logicalId && pairedLogicalIds.size === 1) {
+        const candidate = pairedLogicalIds.values().next().value;
+        const candidateMatchesKey = [...englishLogicalIds.byKey.entries()]
+          .some(([candidateKey, ids]) =>
+            candidateKey === key && ids.has(candidate)
+          );
+        if (candidateMatchesKey) {
+          logicalId = candidate;
         }
       }
       if (!logicalId) {
