@@ -265,7 +265,14 @@ test("CRD Genre Ability manifest preserves structured mechanics", () => {
     assert.ok(record.provenance);
     assert.equal(record.provenance.language, "en");
     assert.equal(record.provenance.sourceKind, "section");
-    assert.match(record.provenance.section, /Genre Abilities$/);
+    assert.ok(
+      [
+        "Fantasy Genre Abilities",
+        "Science Fiction Genre Abilities",
+        "Origin Superhero Abilities"
+      ].includes(record.provenance.section),
+      record.logicalId
+    );
     assert.match(record.provenance.sourceLocator, /^CRD — /);
   }
 });
