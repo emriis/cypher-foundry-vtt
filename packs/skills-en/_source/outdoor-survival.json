@@ -1,0 +1,31 @@
+{
+  "_id": "e5b4a2fcoutdoors",
+  "_key": "!items!e5b4a2fcoutdoors",
+  "document": "Item",
+  "name": "Outdoor survival",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You know the basics of hunting, trapping, fishing, and other ways to find (and prepare) game and vegetation for food, as well as locating drinkable water and shelter in wilderness areas.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.outdoor-survival",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}
