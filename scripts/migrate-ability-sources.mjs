@@ -86,6 +86,21 @@ function mechanicallyMatchesExceptAction(left, right) {
     JSON.stringify(mechanicalShapeWithoutAction(right));
 }
 
+function mechanicalShapeWithoutActionAndEnabler(ability) {
+  const shape = mechanicalShape(ability);
+  delete shape.action;
+  delete shape.enabler;
+  return shape;
+}
+
+function mechanicallyMatchesExceptActionAndEnabler(left, right) {
+  return JSON.stringify(
+    mechanicalShapeWithoutActionAndEnabler(left)
+  ) === JSON.stringify(
+    mechanicalShapeWithoutActionAndEnabler(right)
+  );
+}
+
 function isGmIntrusionEntry(ability) {
   return /\bgm intrusions\b/i.test(String(ability.name ?? ""));
 }
@@ -280,6 +295,30 @@ function resolveFrenchEntry(ability, english, standaloneEnglish) {
     };
   }
 
+  // Some localized source records contain an incorrect enabler flag while
+  // preserving the rest of the mechanical data. Treat that flag like action
+  // metadata for matching, but only when the remaining shape identifies one
+  // canonical English record.
+  const relaxedMatches = candidates.filter(entry =>
+    mechanicallyMatchesExceptActionAndEnabler(
+      ability,
+      entry.ability ?? entry
+    )
+  );
+  const uniqueRelaxedMatches = new Map(
+    relaxedMatches.map(entry => [
+      `${entry.key}:${entry.signature}`,
+      entry
+    ])
+  );
+
+  if (uniqueRelaxedMatches.size === 1) {
+    return {
+      entry: [...uniqueRelaxedMatches.values()][0],
+      translated: false
+    };
+  }
+
   if (candidates.length === 1) {
     return { entry: candidates[0], translated: false };
   }
@@ -407,9 +446,14 @@ async function enrichStandaloneLanguage(language, english, diagnostics) {
 
     document.document = "Item";
     document.crdType = "ability";
+    if (match?.ability) {
+      document.system.enabler = Boolean(match.ability.enabler);
+    }
     const canonicalAction = document.system.enabler
       ? null
-      : (match?.ability?.action ?? document.system.action ?? inferAction(document.system));
+      : (match?.ability?.action ??
+        document.system.action ??
+        inferAction(document.system));
     if (document.system.action !== canonicalAction) {
       document.system.action = canonicalAction;
     }
