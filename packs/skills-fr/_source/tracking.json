@@ -1,0 +1,32 @@
+{
+  "_id": "c4a9977ctracking",
+  "_key": "!items!c4a9977ctracking",
+  "document": "Item",
+  "name": "Tracking",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You are better able to follow a target through all sorts of landscapes and environments and in identifying tracks.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.tracking",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.tracking"
+      }
+    }
+  }
+}
