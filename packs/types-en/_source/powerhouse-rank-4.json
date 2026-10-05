@@ -43,7 +43,29 @@
     "statOptions": [
       "might"
     ],
-    "description": "<p>You embody raw, overwhelming power, making you a one-person force to be reckoned with. You have a formidable array of abilities, starting with amazing stamina, fluid dexterity, and a cutting intellect. But that's the least amazing thing about you—few can stand against you unless they are literal gods. And even those may fear your wrath. Powerhouses are effective in almost every situation, though your particular suite of abilities could provide even more amazing aid to your allies, depending on the circumstances.</p>"
+    "description": "<p>You embody raw, overwhelming power, making you a one-person force to be reckoned with. You have a formidable array of abilities, starting with amazing stamina, fluid dexterity, and a cutting intellect. But that's the least amazing thing about you—few can stand against you unless they are literal gods. And even those may fear your wrath. Powerhouses are effective in almost every situation, though your particular suite of abilities could provide even more amazing aid to your allies, depending on the circumstances.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.4c88c9f6bc204292",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.86baeef27eb14c98",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.58e8f7c10d33d452",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.f39d28da208c496e",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.d944940ce90d0bb1",
+        "tier": 1
+      }
+    ]
   },
   "folder": "jyQmvn0EhqJ84yoX",
   "sort": 0,
@@ -53,6 +75,22 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.powerhouse-rank-4",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Type — Powerhouse (Rank 4) — Abilities",
+        "sourceLocator": "CRD — Type: Powerhouse (Rank 4)",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }

@@ -41,7 +41,25 @@
       "might",
       "intellect"
     ],
-    "description": "<p>You have a single, often spectacular, core superpower. Beams of energy shoot from your eyes, the power of magnetism is yours to command, your flesh can burst into flames, you can generate lightning, or something equally amazing. This ability forms the backbone of your heroic identity, allowing you to attempt incredible feats, though sometimes posing unique challenges in controlling your gift in all circumstances. With a Powerstar on the team, the obstacles villains throw your way are easier to break, burn, or otherwise demolish. Most heroes welcome you into their ranks (or in a temporary team-up), as long as you can keep your volatile abilities leashed.</p>"
+    "description": "<p>You have a single, often spectacular, core superpower. Beams of energy shoot from your eyes, the power of magnetism is yours to command, your flesh can burst into flames, you can generate lightning, or something equally amazing. This ability forms the backbone of your heroic identity, allowing you to attempt incredible feats, though sometimes posing unique challenges in controlling your gift in all circumstances. With a Powerstar on the team, the obstacles villains throw your way are easier to break, burn, or otherwise demolish. Most heroes welcome you into their ranks (or in a temporary team-up), as long as you can keep your volatile abilities leashed.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.a4fd7c41ed6a62a3",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.8c79ba28473cc133",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.d944940ce90d0bb1",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.052b7a4fad6eadae",
+        "tier": 1
+      }
+    ]
   },
   "folder": "jyQmvn0EhqJ84yoX",
   "sort": 0,
@@ -51,6 +69,22 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.powerstar-rank-2",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Type — Powerstar (Rank 2) — Abilities",
+        "sourceLocator": "CRD — Type: Powerstar (Rank 2)",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }

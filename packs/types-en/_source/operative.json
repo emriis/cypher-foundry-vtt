@@ -40,7 +40,21 @@
       "speed",
       "intellect"
     ],
-    "description": "<p>You imagine yourself as the glitch in the system, or the “ghost in the machine” that gets in and then out without alerting automated surveillance until you're already elsewhere. As far as your foes are concerned, you're one of them, blending in with everyone else so that no one suspects you're an operative working for the enemy. But if you are caught out, you don't hesitate—you eliminate those who recognize you so quickly that they can't raise the alarm. Some situations would benefit from having someone on your team already on the inside, which is perfect for you. Or at least someone who doesn't draw enemy fire until you can slip past perimeter security to shut down surveillance and/or take out guards who don't realize you're a foe.</p>"
+    "description": "<p>You imagine yourself as the glitch in the system, or the “ghost in the machine” that gets in and then out without alerting automated surveillance until you're already elsewhere. As far as your foes are concerned, you're one of them, blending in with everyone else so that no one suspects you're an operative working for the enemy. But if you are caught out, you don't hesitate—you eliminate those who recognize you so quickly that they can't raise the alarm. Some situations would benefit from having someone on your team already on the inside, which is perfect for you. Or at least someone who doesn't draw enemy fire until you can slip past perimeter security to shut down surveillance and/or take out guards who don't realize you're a foe.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.661cf3fe9bf8ac29",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.2d70a39dd42dc0d8",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.3446132d45c96e92",
+        "tier": 1
+      }
+    ]
   },
   "folder": "t6C5D0PsA9y7RaFQ",
   "sort": 0,
@@ -50,6 +64,22 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.operative",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Type — Operative — Abilities",
+        "sourceLocator": "CRD — Type: Operative",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }

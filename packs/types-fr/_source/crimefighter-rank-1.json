@@ -43,7 +43,25 @@
       "speed",
       "intellect"
     ],
-    "description": "<p>You apply your keen intelligence to outwit the dark forces, reveal corruption, and put a stop to illegal activities. Though some see you as a super-detective able to piece together fragmented clues and unravel complex mysteries that stump the police, you can also hold your own in a fight. You might be skilled in various martial arts, tactical combat, and/or strategic use of nonlethal gadgets, ensuring you can subdue opponents of all kinds. You often work alone in the shadows, but sometimes you join other heroes, especially when they are looking for a way forward against a particularly cunning villain. You being part of the team means they gain something of your reputation—a terrifying enigma who will pursue criminals wherever they might lead.</p>"
+    "description": "<p>You apply your keen intelligence to outwit the dark forces, reveal corruption, and put a stop to illegal activities. Though some see you as a super-detective able to piece together fragmented clues and unravel complex mysteries that stump the police, you can also hold your own in a fight. You might be skilled in various martial arts, tactical combat, and/or strategic use of nonlethal gadgets, ensuring you can subdue opponents of all kinds. You often work alone in the shadows, but sometimes you join other heroes, especially when they are looking for a way forward against a particularly cunning villain. You being part of the team means they gain something of your reputation—a terrifying enigma who will pursue criminals wherever they might lead.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.7ff1f6e18e788dd8",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.8e60299f297d245d",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.405734090912bf27",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.1eac155981dbb2f9",
+        "tier": 1
+      }
+    ]
   },
   "folder": "rgUrIo08MxTkt23F",
   "sort": 0,
@@ -53,6 +71,24 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.crimefighter-rank-1",
+        "language": "fr",
+        "sourceKind": "record",
+        "sourceLogicalId": "type.crimefighter-rank-1",
+        "section": "Character Creation — Type — Justicier·ère — Abilities",
+        "sourceLocator": "CRD — Type: crimefighter-rank-1",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "French localization paired to the canonical English Type",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }

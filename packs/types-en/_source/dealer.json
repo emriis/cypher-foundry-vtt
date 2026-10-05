@@ -39,7 +39,21 @@
       "intellect",
       "speed"
     ],
-    "description": "<p>You make your way through civilization's ruins as best you know how, trading for supplies with your natural talent for bullshit. When things go south, you run away, or maybe plant a knife in your would-be trading partner's back. You have a way of connecting people to the things they want—or at least promising to do so—and folks sometimes call you a Fixer or Supplier. And though you might be moved to help others with their needs, if we're being honest, your own skin is your most important commodity. You're adept at talking, so you're probably one of the people your band relies on to deal with strangers, allies, and potential foes for as long as words serve the situation. Others in your band also benefit from your trading prowess, such as it is. But when the situation turns ugly, you're ready to dance away from a double-cross, or maybe instigate the same yourself.</p>"
+    "description": "<p>You make your way through civilization's ruins as best you know how, trading for supplies with your natural talent for bullshit. When things go south, you run away, or maybe plant a knife in your would-be trading partner's back. You have a way of connecting people to the things they want—or at least promising to do so—and folks sometimes call you a Fixer or Supplier. And though you might be moved to help others with their needs, if we're being honest, your own skin is your most important commodity. You're adept at talking, so you're probably one of the people your band relies on to deal with strangers, allies, and potential foes for as long as words serve the situation. Others in your band also benefit from your trading prowess, such as it is. But when the situation turns ugly, you're ready to dance away from a double-cross, or maybe instigate the same yourself.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.81c430f514f5fed2",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.2d70a39dd42dc0d8",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.bee07f005cef6a96",
+        "tier": 1
+      }
+    ]
   },
   "folder": "UwhTFa2lNkjiyB2j",
   "sort": 0,
@@ -49,6 +63,22 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.dealer",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Type — Dealer — Abilities",
+        "sourceLocator": "CRD — Type: Dealer",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }

@@ -39,7 +39,21 @@
       "speed",
       "intellect"
     ],
-    "description": "<p>You'll cop to Thief, but you're also a finagler, a swindler, and someone able to perform tricks that go beyond mere sleight of hand (or so you tell everyone). More importantly, you're deadly with a blade when your tricks go wrong, but especially if you gain the drop on someone. You're no hulking warrior—rather, your feline grace allows you to slip into and out of danger with nary a scratch. The same can't be said of your foes. You prefer to let others in your band jump headlong into a fight, allowing you to bypass the threat altogether, or perhaps deliver a decisive blow from behind. You're a natural when it comes to checking out new areas, disarming traps, and cracking open secure containers.</p>"
+    "description": "<p>You'll cop to Thief, but you're also a finagler, a swindler, and someone able to perform tricks that go beyond mere sleight of hand (or so you tell everyone). More importantly, you're deadly with a blade when your tricks go wrong, but especially if you gain the drop on someone. You're no hulking warrior—rather, your feline grace allows you to slip into and out of danger with nary a scratch. The same can't be said of your foes. You prefer to let others in your band jump headlong into a fight, allowing you to bypass the threat altogether, or perhaps deliver a decisive blow from behind. You're a natural when it comes to checking out new areas, disarming traps, and cracking open secure containers.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.d249ce226986b685",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.f80960feeb129212",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.2d70a39dd42dc0d8",
+        "tier": 1
+      }
+    ]
   },
   "folder": "zBqRagUFEUelogPi",
   "sort": 0,
@@ -49,6 +63,22 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.thief",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Type — Thief — Abilities",
+        "sourceLocator": "CRD — Type: Thief",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }

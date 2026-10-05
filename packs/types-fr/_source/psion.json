@@ -36,7 +36,21 @@
     "statOptions": [
       "intellect"
     ],
-    "description": "<p>Your latent psychic talents were coaxed forth via study, specialized training, and perhaps even genetic manipulation and/or cranial implants. Now you routinely tap into another fundamental force of the universe, possibly an extradimensional energy field that gives you a mental connection to both the physical world and the minds of other creatures. How you choose to use your somewhat rare abilities depends on your circumstances and ambitions. With your ability to peer into the minds of others, you can help your team avoid conflict. Your allies benefit from letting you help mediate situations, since you might gain an insight into the secret hearts of the other negotiators. But should you fail to read their thoughts (or dislike what you find), you're also a capable combatant, able to veil yourself in mental distortion while peppering foes with psychic violence.</p>"
+    "description": "<p>Your latent psychic talents were coaxed forth via study, specialized training, and perhaps even genetic manipulation and/or cranial implants. Now you routinely tap into another fundamental force of the universe, possibly an extradimensional energy field that gives you a mental connection to both the physical world and the minds of other creatures. How you choose to use your somewhat rare abilities depends on your circumstances and ambitions. With your ability to peer into the minds of others, you can help your team avoid conflict. Your allies benefit from letting you help mediate situations, since you might gain an insight into the secret hearts of the other negotiators. But should you fail to read their thoughts (or dislike what you find), you're also a capable combatant, able to veil yourself in mental distortion while peppering foes with psychic violence.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.4aece7fdcd1b9753",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.31dd3a6a24ba79bb",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.8ea185d94ce5f78e",
+        "tier": 1
+      }
+    ]
   },
   "folder": "DNZXZoUQ1z24nS44",
   "sort": 0,
@@ -46,6 +60,24 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.psion",
+        "language": "fr",
+        "sourceKind": "record",
+        "sourceLogicalId": "type.psion",
+        "section": "Character Creation — Type — Psion·ne — Abilities",
+        "sourceLocator": "CRD — Type: psion",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "French localization paired to the canonical English Type",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }

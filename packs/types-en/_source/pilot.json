@@ -39,7 +39,21 @@
       "speed",
       "intellect"
     ],
-    "description": "<p>You're sensitive to the slightest vibration and yaw of ion, nuclear, and chemical rocket-propelled spacecraft, honed during many hundreds of hours of test flights, combat missions, and your personal zeal for piloting interplanetary craft between moons and planets. Your job combines sophisticated course plotting, long periods of gradual acceleration and deceleration, and, sometimes, intense moments of action where your reaction times make the difference between arriving at your destination and your spacecraft becoming one more drifting hulk in a decaying orbit. If the team's mission requires an interplanetary trip, it's your job to get everyone there. Should enemy craft threaten the trip, your superior piloting skills help keep everyone alive, up to and including the Soldiers who, scary as they may be, probably couldn't last ten seconds piloting through an interplanetary naval engagement.</p>"
+    "description": "<p>You're sensitive to the slightest vibration and yaw of ion, nuclear, and chemical rocket-propelled spacecraft, honed during many hundreds of hours of test flights, combat missions, and your personal zeal for piloting interplanetary craft between moons and planets. Your job combines sophisticated course plotting, long periods of gradual acceleration and deceleration, and, sometimes, intense moments of action where your reaction times make the difference between arriving at your destination and your spacecraft becoming one more drifting hulk in a decaying orbit. If the team's mission requires an interplanetary trip, it's your job to get everyone there. Should enemy craft threaten the trip, your superior piloting skills help keep everyone alive, up to and including the Soldiers who, scary as they may be, probably couldn't last ten seconds piloting through an interplanetary naval engagement.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.95d02d6ae4dbba6b",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.c090c9d9cebcf058",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.3ed657c9e38eafc3",
+        "tier": 1
+      }
+    ]
   },
   "folder": "t6C5D0PsA9y7RaFQ",
   "sort": 0,
@@ -49,6 +63,22 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.pilot",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Type — Pilot — Abilities",
+        "sourceLocator": "CRD — Type: Pilot",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }

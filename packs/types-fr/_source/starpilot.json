@@ -43,7 +43,33 @@
       "speed",
       "intellect"
     ],
-    "description": "<p>To you, the way the ship trembles right before you engage faster-than-light (FTL) speed communicates the stardrive's health. How the cockpit screens stutter expresses how much damage the ship has just suffered after that last enemy torpedo. And how much the deckplates buzz indicates how much more you can push your starship as you fly a looping, spinning trajectory past enemy starcraft. When you're not conveying your allies between distant stars or outmaneuvering enemy fighters, you're reasonably competent in a hand-to-hand firefight. It seems like you've always got a little extra on your side—call it luck, audacity, or maybe just being too stubborn to know when to quit—potentially allowing you to defeat a larger force, or at least startle them long enough for you and your allies to get away.</p>"
+    "description": "<p>To you, the way the ship trembles right before you engage faster-than-light (FTL) speed communicates the stardrive's health. How the cockpit screens stutter expresses how much damage the ship has just suffered after that last enemy torpedo. And how much the deckplates buzz indicates how much more you can push your starship as you fly a looping, spinning trajectory past enemy starcraft. When you're not conveying your allies between distant stars or outmaneuvering enemy fighters, you're reasonably competent in a hand-to-hand firefight. It seems like you've always got a little extra on your side—call it luck, audacity, or maybe just being too stubborn to know when to quit—potentially allowing you to defeat a larger force, or at least startle them long enough for you and your allies to get away.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.5da9dbaa0336ab81",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.bb985a65151cea09",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.0db277d000b44749",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.aca6257039b0393c",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.70b9d9f991373f97",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.c087af0096f6c8a4",
+        "tier": 1
+      }
+    ]
   },
   "folder": "DNZXZoUQ1z24nS44",
   "sort": 0,
@@ -53,6 +79,24 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.starpilot",
+        "language": "fr",
+        "sourceKind": "record",
+        "sourceLogicalId": "type.starpilot",
+        "section": "Character Creation — Type — Pilote spatial — Abilities",
+        "sourceLocator": "CRD — Type: starpilot",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "French localization paired to the canonical English Type",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }

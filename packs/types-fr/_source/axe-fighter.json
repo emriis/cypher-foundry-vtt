@@ -44,7 +44,33 @@
     "statOptions": [
       "might"
     ],
-    "description": "<p>When combat calls, your chosen weapon is a sturdy axe—maybe a handaxe, a battleaxe, or even a greataxe. Thus, they name you Deathhew, Axe Reaver, or maybe just what you are: an Axe Fighter. You've split many skulls with your axe, and if the gods continue to watch over you, many more will fall before you in the years ahead. Like others in your band, you're ready for combat. You don't mind if an ally gets in the first blow against cursed creatures you often face, because you know you're more than capable of finishing the job with a final, sundering swing of your blade.</p>"
+    "description": "<p>When combat calls, your chosen weapon is a sturdy axe—maybe a handaxe, a battleaxe, or even a greataxe. Thus, they name you Deathhew, Axe Reaver, or maybe just what you are: an Axe Fighter. You've split many skulls with your axe, and if the gods continue to watch over you, many more will fall before you in the years ahead. Like others in your band, you're ready for combat. You don't mind if an ally gets in the first blow against cursed creatures you often face, because you know you're more than capable of finishing the job with a final, sundering swing of your blade.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.6990fd5b01189230",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.1f9d46bc2d619c20",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.6c7c41fa266dbd72",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.00e9d2bb3535f653",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.a750525fa190dfc2",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.bce22268b0ccedc3",
+        "tier": 1
+      }
+    ]
   },
   "folder": "Mqh1tXdDDqH3lySK",
   "sort": 0,
@@ -54,6 +80,24 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.axe-fighter",
+        "language": "fr",
+        "sourceKind": "record",
+        "sourceLogicalId": "type.axe-fighter",
+        "section": "Character Creation — Type — Combattant·e à la hache — Abilities",
+        "sourceLocator": "CRD — Type: axe-fighter",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "French localization paired to the canonical English Type",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }

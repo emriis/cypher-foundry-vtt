@@ -42,7 +42,21 @@
       "might",
       "speed"
     ],
-    "description": "<p>You've seen things civilians wouldn't believe: attack ships shattering Mars domes with mini-nukes; fellow soldiers disintegrated by stray linear accelerator fire, floating ashes their only grave marker; gravity-dropping through the silent void, praying your lidar warns you quickly enough to pop your brake rockets before you slam into the unlit enemy asteroid. The adrenaline kick of a firefight is like nothing else, but better yet is the fizzy exhilaration of another mission survived. Made for combat, you're probably among the first on your team to confront armed foes. Your allies with other specialties are probably happy to let you; not everyone can rely on combat enhancements when adversaries begin firing kinetic weapons.</p>"
+    "description": "<p>You've seen things civilians wouldn't believe: attack ships shattering Mars domes with mini-nukes; fellow soldiers disintegrated by stray linear accelerator fire, floating ashes their only grave marker; gravity-dropping through the silent void, praying your lidar warns you quickly enough to pop your brake rockets before you slam into the unlit enemy asteroid. The adrenaline kick of a firefight is like nothing else, but better yet is the fizzy exhilaration of another mission survived. Made for combat, you're probably among the first on your team to confront armed foes. Your allies with other specialties are probably happy to let you; not everyone can rely on combat enhancements when adversaries begin firing kinetic weapons.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.aff0abef74df29c3",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.1fc1bf6430861da5",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.1ec6a06130f18619",
+        "tier": 1
+      }
+    ]
   },
   "folder": "t6C5D0PsA9y7RaFQ",
   "sort": 0,
@@ -52,6 +66,22 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.soldier",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Type — Soldier — Abilities",
+        "sourceLocator": "CRD — Type: Soldier",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }

@@ -43,7 +43,25 @@
       "might",
       "speed"
     ],
-    "description": "<p>You use your fists, your agility, and your speed to bring justice to the streets, even if that means operating outside the law. You're driven by a personal code, and maybe a tragedy from your past that yet lingers. You probably have no inherent superpowers, but instead rely on extensive conditioning, relentless martial arts training, and an unwavering desire to eliminate corruption and protect the innocent. When you team up with other heroes for jobs that are too big for you to tackle alone, you make an ideal choice for scouting, getting in and out of places before anyone even realizes you're there. But if your foes do notice you, you're usually the first to react. And if a stand-up fight against villains is unavoidable, well, your entire body is a honed instrument of justice.</p>"
+    "description": "<p>You use your fists, your agility, and your speed to bring justice to the streets, even if that means operating outside the law. You're driven by a personal code, and maybe a tragedy from your past that yet lingers. You probably have no inherent superpowers, but instead rely on extensive conditioning, relentless martial arts training, and an unwavering desire to eliminate corruption and protect the innocent. When you team up with other heroes for jobs that are too big for you to tackle alone, you make an ideal choice for scouting, getting in and out of places before anyone even realizes you're there. But if your foes do notice you, you're usually the first to react. And if a stand-up fight against villains is unavoidable, well, your entire body is a honed instrument of justice.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.1c4e7d98dd6b1494",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.2d70a39dd42dc0d8",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.405734090912bf27",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.1eac155981dbb2f9",
+        "tier": 1
+      }
+    ]
   },
   "folder": "rgUrIo08MxTkt23F",
   "sort": 0,
@@ -53,6 +71,24 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.vigilante-rank-1",
+        "language": "fr",
+        "sourceKind": "record",
+        "sourceLogicalId": "type.vigilante-rank-1",
+        "section": "Character Creation — Type — Vengeur·euse — Abilities",
+        "sourceLocator": "CRD — Type: vigilante-rank-1",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "French localization paired to the canonical English Type",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }

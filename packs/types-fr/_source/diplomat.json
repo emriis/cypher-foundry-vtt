@@ -38,7 +38,21 @@
     "statOptions": [
       "intellect"
     ],
-    "description": "<p>You play the long game while everyone else is reacting to the latest provocation. You know how to smile, flatter, and offer gifts to your potential new ally, even when you'd prefer to jump across the table and strangle them. Sometimes less obvious means are required for negotiation. When possible, you try to discover as much as you can about who you'll be talking to. If they won't do as you ask initially, perhaps they'll make a deal in light of something they need that you can help arrange—or, if you're not above making veiled threats, because you know something they'd prefer not come out. You understand others, so you're probably someone who can advise and assist teammates and serve as an intermediary between your allies and strangers. Many times, a bit of diplomacy—or a bit of distraction through verbal diversion—is what allows the rest of the team to reach a sensitive location, talk your way out of the same, or, when the stakes are really high, avoid escalating tensions.</p>"
+    "description": "<p>You play the long game while everyone else is reacting to the latest provocation. You know how to smile, flatter, and offer gifts to your potential new ally, even when you'd prefer to jump across the table and strangle them. Sometimes less obvious means are required for negotiation. When possible, you try to discover as much as you can about who you'll be talking to. If they won't do as you ask initially, perhaps they'll make a deal in light of something they need that you can help arrange—or, if you're not above making veiled threats, because you know something they'd prefer not come out. You understand others, so you're probably someone who can advise and assist teammates and serve as an intermediary between your allies and strangers. Many times, a bit of diplomacy—or a bit of distraction through verbal diversion—is what allows the rest of the team to reach a sensitive location, talk your way out of the same, or, when the stakes are really high, avoid escalating tensions.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.b12f266d8c48da35",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.74f836631507813c",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.d23c7e05acbc7905",
+        "tier": 1
+      }
+    ]
   },
   "folder": "C6ZFx2IjshXiDYap",
   "sort": 0,
@@ -48,6 +62,24 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.diplomat",
+        "language": "fr",
+        "sourceKind": "record",
+        "sourceLogicalId": "type.diplomat",
+        "section": "Character Creation — Type — Diplomate — Abilities",
+        "sourceLocator": "CRD — Type: diplomat",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "French localization paired to the canonical English Type",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }

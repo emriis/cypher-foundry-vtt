@@ -39,7 +39,21 @@
       "might",
       "intellect"
     ],
-    "description": "<p>You have a magical affinity for animals and the landscapes they inhabit. Sometimes you serve as a protector of forests, grasslands, seas, or some other region natural creatures need to survive and thrive; other times you rely on your connection to such places to protect and empower yourself. You might be part of an ancient, far-flung priesthood or a self-taught celebrant channeling the magic of the forest, moon, storm, and beast. Your expertise provides your group both offensive might and more discreet or tactful possibilities when you're traveling through or exploring wild environments. Your beast companion aids you and your allies in combat, and it also performs other tasks such as surveillance, distraction, tracking, reaching a location large creatures can't, and so on.</p>"
+    "description": "<p>You have a magical affinity for animals and the landscapes they inhabit. Sometimes you serve as a protector of forests, grasslands, seas, or some other region natural creatures need to survive and thrive; other times you rely on your connection to such places to protect and empower yourself. You might be part of an ancient, far-flung priesthood or a self-taught celebrant channeling the magic of the forest, moon, storm, and beast. Your expertise provides your group both offensive might and more discreet or tactful possibilities when you're traveling through or exploring wild environments. Your beast companion aids you and your allies in combat, and it also performs other tasks such as surveillance, distraction, tracking, reaching a location large creatures can't, and so on.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.32745372b53e1c8c",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.819cfb3a4c30ffc7",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.ec6a00aa2aa77608",
+        "tier": 1
+      }
+    ]
   },
   "folder": "N6LoBZte2sRtJhu7",
   "sort": 0,
@@ -49,6 +63,24 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.druid",
+        "language": "fr",
+        "sourceKind": "record",
+        "sourceLogicalId": "type.druid",
+        "section": "Character Creation — Type — Druide — Abilities",
+        "sourceLocator": "CRD — Type: druid",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "French localization paired to the canonical English Type",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }

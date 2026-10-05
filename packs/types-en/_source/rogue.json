@@ -39,7 +39,21 @@
       "speed",
       "intellect"
     ],
-    "description": "<p>You're crafty; some might even say shady. That's because you survive risky endeavors with stealth, skill, and the grace that comes with quick reflexes. You size up the vulnerabilities of others with a glance, and when it's in your best interest, exploit opportunities to their fullest. What you lack in brawn you more than make up for in guile, furtiveness, and maybe a little bit of luck. You prefer letting someone else in your group charge head-first into conflict, allowing you to slip past unnoticed, possibly so you can stick a dagger in an enemy's back. When danger isn't imminent, you're among the best suited to carefully examine a new location and, if necessary, remediate traps and unlock vaults.</p>"
+    "description": "<p>You're crafty; some might even say shady. That's because you survive risky endeavors with stealth, skill, and the grace that comes with quick reflexes. You size up the vulnerabilities of others with a glance, and when it's in your best interest, exploit opportunities to their fullest. What you lack in brawn you more than make up for in guile, furtiveness, and maybe a little bit of luck. You prefer letting someone else in your group charge head-first into conflict, allowing you to slip past unnoticed, possibly so you can stick a dagger in an enemy's back. When danger isn't imminent, you're among the best suited to carefully examine a new location and, if necessary, remediate traps and unlock vaults.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.d249ce226986b685",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.81e6469f2671fc80",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.2d70a39dd42dc0d8",
+        "tier": 1
+      }
+    ]
   },
   "folder": "pQTzt4j9XPpLBpKm",
   "sort": 0,
@@ -49,6 +63,22 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.rogue",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Type — Rogue — Abilities",
+        "sourceLocator": "CRD — Type: Rogue",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }

@@ -39,7 +39,21 @@
     "statOptions": [
       "speed"
     ],
-    "description": "<p>In some lands they call you a Twin Fang; in others, a Blade Dancer. These and other names illustrate your fighting style. A weapon clutched in each hand, you crash into your foes, attacking as if two people in one body. You deal out death to monsters of the wild lands and dark places, enemies, and whoever chooses to match themselves against you. So far, you've been the victor. Your weaponplay is among the most conspicuous in your group, so foes may be drawn to you over the other warriors in your band. That's how you like it. You're a bit more specialized than they are, but that sacrifice in versatility means you're doubly armed and ready to meet whatever the fates throw your way.</p>"
+    "description": "<p>In some lands they call you a Twin Fang; in others, a Blade Dancer. These and other names illustrate your fighting style. A weapon clutched in each hand, you crash into your foes, attacking as if two people in one body. You deal out death to monsters of the wild lands and dark places, enemies, and whoever chooses to match themselves against you. So far, you've been the victor. Your weaponplay is among the most conspicuous in your group, so foes may be drawn to you over the other warriors in your band. That's how you like it. You're a bit more specialized than they are, but that sacrifice in versatility means you're doubly armed and ready to meet whatever the fates throw your way.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.3b4fa6254bf37a90",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.1fc1bf6430861da5",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.625ab675157aaa87",
+        "tier": 1
+      }
+    ]
   },
   "folder": "zBqRagUFEUelogPi",
   "sort": 0,
@@ -49,6 +63,22 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.two-weapon-fighter",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Type — Two-Weapon Fighter — Abilities",
+        "sourceLocator": "CRD — Type: Two-Weapon Fighter",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }

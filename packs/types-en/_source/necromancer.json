@@ -38,7 +38,21 @@
     "statOptions": [
       "intellect"
     ],
-    "description": "<p>Decomposing flesh radiates fading life force. You know how to siphon that power, twist and shape it, then reinfuse the dead with it to return them to ambulatory service. You can also draw that energy directly from them to heal your own rent flesh or anyone near you. In fact, your necromantic prowess gives you a degree of control over undead of all sorts, allowing you to daze and repel them, or even briefly command their service. Because your abilities are so directly tethered to death, many people fear and hate you regardless of your deeds and true motivation. Your animated helpers can aid whoever you command, including any allies willing to accept help from a corpse. Likewise, your ability to drain life from your foes to heal your flesh can also provide balm to allies willing to accept it. And should your group face an external necromantic threat, you have the knowledge and power to help confront it.</p>"
+    "description": "<p>Decomposing flesh radiates fading life force. You know how to siphon that power, twist and shape it, then reinfuse the dead with it to return them to ambulatory service. You can also draw that energy directly from them to heal your own rent flesh or anyone near you. In fact, your necromantic prowess gives you a degree of control over undead of all sorts, allowing you to daze and repel them, or even briefly command their service. Because your abilities are so directly tethered to death, many people fear and hate you regardless of your deeds and true motivation. Your animated helpers can aid whoever you command, including any allies willing to accept help from a corpse. Likewise, your ability to drain life from your foes to heal your flesh can also provide balm to allies willing to accept it. And should your group face an external necromantic threat, you have the knowledge and power to help confront it.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.19325797829026cc",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.6ebcff7e61f4ae3c",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.5bcca9b9c3a8d22e",
+        "tier": 1
+      }
+    ]
   },
   "folder": "pQTzt4j9XPpLBpKm",
   "sort": 0,
@@ -48,6 +62,22 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.necromancer",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Type — Necromancer — Abilities",
+        "sourceLocator": "CRD — Type: Necromancer",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }

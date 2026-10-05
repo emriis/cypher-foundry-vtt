@@ -39,7 +39,21 @@
     "statOptions": [
       "intellect"
     ],
-    "description": "<p>You fix people, reknitting their flesh, patching their ruptured organs, and coaxing their shattered bones back together. Your bedside manner doesn't really matter, especially when your skills are called on during disaster or war. And your comportment matters even less in situations when you use your medical knowledge and supplies to disable foes—sometimes, no one expects a medic to fight back. Your role on a team that routinely encounters challenging environments or conflict is crucial. Without your expertise and care, the group's next job could prove its last. Luckily, you can also handle yourself in a fight. In fact, either hard experience or professional training means you're not someone who needs protection when the situation sours.</p>"
+    "description": "<p>You fix people, reknitting their flesh, patching their ruptured organs, and coaxing their shattered bones back together. Your bedside manner doesn't really matter, especially when your skills are called on during disaster or war. And your comportment matters even less in situations when you use your medical knowledge and supplies to disable foes—sometimes, no one expects a medic to fight back. Your role on a team that routinely encounters challenging environments or conflict is crucial. Without your expertise and care, the group's next job could prove its last. Luckily, you can also handle yourself in a fight. In fact, either hard experience or professional training means you're not someone who needs protection when the situation sours.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.d249ce226986b685",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.78e9354e00b973ef",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.2c2cf09a5ecc5c23",
+        "tier": 1
+      }
+    ]
   },
   "folder": "C6ZFx2IjshXiDYap",
   "sort": 0,
@@ -49,6 +63,24 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.medic",
+        "language": "fr",
+        "sourceKind": "record",
+        "sourceLogicalId": "type.medic",
+        "section": "Character Creation — Type — Toubib — Abilities",
+        "sourceLocator": "CRD — Type: medic",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "French localization paired to the canonical English Type",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }

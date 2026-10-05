@@ -37,7 +37,17 @@
     "statOptions": [
       "intellect"
     ],
-    "description": "<p>Even under the worst possible circumstances, you usually feel that your life—whatever remains of it—is best lived in service to others. Depending on how you tend to others' needs, they might know you as a Sage, Doctor, Responder, or Minister. But names don't matter. You just want to help others survive, heal their hurts, and, if nothing else can be done for them, see that their ends are humane and painless. Everyone probably welcomes your presence, or at least your skills, especially those in your group. Without your care and knowledge, their lives could come to a brutal, painful end. If conflict kicks off, you can handle a weapon, but you prefer trying to counteract the threat so you and your allies aren't hurt in the first place.</p>"
+    "description": "<p>Even under the worst possible circumstances, you usually feel that your life—whatever remains of it—is best lived in service to others. Depending on how you tend to others' needs, they might know you as a Sage, Doctor, Responder, or Minister. But names don't matter. You just want to help others survive, heal their hurts, and, if nothing else can be done for them, see that their ends are humane and painless. Everyone probably welcomes your presence, or at least your skills, especially those in your group. Without your care and knowledge, their lives could come to a brutal, painful end. If conflict kicks off, you can handle a weapon, but you prefer trying to counteract the threat so you and your allies aren't hurt in the first place.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.342488762c63893c",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.0767eb9f9e704120",
+        "tier": 1
+      }
+    ]
   },
   "folder": "UwhTFa2lNkjiyB2j",
   "sort": 0,
@@ -47,6 +57,22 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.tender",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Type — Tender — Abilities",
+        "sourceLocator": "CRD — Type: Tender",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }

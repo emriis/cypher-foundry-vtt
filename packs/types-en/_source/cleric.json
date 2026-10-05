@@ -41,7 +41,21 @@
       "might",
       "intellect"
     ],
-    "description": "<p>You follow a divine being and serve as their representative among mortals. The power of your deity (or deities) allows you to perform minor “miracles” on their behalf. How well or poorly you follow the teachings of your deity is up to you, but their main area of interest greatly influences how you see the world. For instance, a Cleric serving a god of fire may have different priorities than one who serves a goddess of the sea. But almost all deities agree on one thing: healing and blessing others is a good way to extend their influence in the world. Your allies may see you as a vital support with your ability to bless their actions and heal their wounds after (or during!) a fight. But the truth is that you're a capable warrior in your own right, armed and armored nearly as well as front-rank fighters, and with the added capability of being able to turn away your god's most hated foes—usually the reanimated dead.</p>"
+    "description": "<p>You follow a divine being and serve as their representative among mortals. The power of your deity (or deities) allows you to perform minor “miracles” on their behalf. How well or poorly you follow the teachings of your deity is up to you, but their main area of interest greatly influences how you see the world. For instance, a Cleric serving a god of fire may have different priorities than one who serves a goddess of the sea. But almost all deities agree on one thing: healing and blessing others is a good way to extend their influence in the world. Your allies may see you as a vital support with your ability to bless their actions and heal their wounds after (or during!) a fight. But the truth is that you're a capable warrior in your own right, armed and armored nearly as well as front-rank fighters, and with the added capability of being able to turn away your god's most hated foes—usually the reanimated dead.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.d631387889d71582",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.9ede2b74b767bfc4",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.094d990f06a4c6c9",
+        "tier": 1
+      }
+    ]
   },
   "folder": "pQTzt4j9XPpLBpKm",
   "sort": 0,
@@ -51,6 +65,22 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.cleric",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Type — Cleric — Abilities",
+        "sourceLocator": "CRD — Type: Cleric",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }
