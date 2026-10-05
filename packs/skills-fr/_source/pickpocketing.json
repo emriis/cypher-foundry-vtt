@@ -1,0 +1,32 @@
+{
+  "_id": "d4191186pickpock",
+  "_key": "!items!d4191186pickpock",
+  "document": "Item",
+  "name": "Pickpocketing",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You’re adept at separating a target from belongings they carry on their person without being detected. You’re also trained with sleight-of-hand tricks, like making a coin seemingly disappear, hiding something in your own clothing, or planting something on someone else.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.pickpocketing",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.pickpocketing"
+      }
+    }
+  }
+}
