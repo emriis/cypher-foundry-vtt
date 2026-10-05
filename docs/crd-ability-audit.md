@@ -56,8 +56,8 @@ character modifier.
 
 | Pack | Current source records | Status |
 | --- | ---: | --- |
-| `abilities-en` | 38 | Partial |
-| `abilities-fr` | 28 | Partial |
+| `abilities-en` | 53 | Legacy partial coverage |
+| `abilities-fr` | 45 | Legacy partial coverage |
 
 These records originated from earlier Type/Focus migrations and therefore do
 not constitute complete CRD coverage.
@@ -136,7 +136,7 @@ rules.
 1. Build the complete CRD Ability inventory.
 2. Classify every source occurrence using the taxonomy above.
 3. Assign stable logical IDs to canonical abilities.
-4. Match the existing 38 English records to the inventory.
+4. Match the existing 53 English records to the inventory.
 5. Verify each matched mechanic against the CRD.
 6. Add missing English canonical records.
 7. Pair French records using the same logical IDs.
