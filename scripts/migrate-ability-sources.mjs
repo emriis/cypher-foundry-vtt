@@ -513,6 +513,7 @@ export async function migrateAbilitySources() {
   const english = await collectEnglishRegistry();
   await migrateLanguage("en", english);
   await migrateLanguage("fr", english);
+  await pruneAbilityArtifacts();
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
