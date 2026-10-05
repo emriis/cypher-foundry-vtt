@@ -34,7 +34,7 @@ test("CRD skill source packs contain the complete Master Skill List", () => {
       assert.equal(record.system.stat, "none");
       assert.equal(record.system.level, "trained");
       assert.equal(record.system.attackCategory, "");
-      assert.match(record.system.description, /<p>.+<\/p>/);
+      assert.match(record.system.description, /<p>.+<\\/p>/);
     }
   }
 });
@@ -67,23 +67,24 @@ test("English and French CRD skill records are paired by logical ID", () => {
   }
 });
 
-test("CRD tier-restricted skills preserve their tier boundary", () => {
+test("CRD tier-restricted skills preserve training and specialization boundaries", () => {
   const skills = readSkills("en");
   const restricted = new Map(
     skills
       .filter(record => record.system.minimumTier !== null)
       .map(record => [
         record.flags.cypherFoundry.crd.logicalId,
-        record.system.minimumTier
+        record.system.minimumTier,
+        record.system.minimumSpecializationTier
       ])
   );
 
   assert.deepEqual(
     [...restricted.entries()].sort(),
     [
-      ["skill.attacking", 2],
-      ["skill.defending", 2],
-      ["skill.gunnery", 2]
+      ["skill.attacking", 2, 4],
+      ["skill.defending", 2, 4],
+      ["skill.gunnery", 2, 4]
     ]
   );
 });
