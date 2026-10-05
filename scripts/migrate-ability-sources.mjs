@@ -630,6 +630,8 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
   const referencePairs = language === "fr"
     ? await collectFrenchEnglishReferencePairs()
     : new Map();
+  const canonicalDocuments = new Map();
+  const duplicateIds = new Map();
 
   for (const { file, document } of documents) {
     const key = document.system?.key;
@@ -699,6 +701,14 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
       );
     }
 
+    const canonical = canonicalDocuments.get(logicalId);
+    if (canonical) {
+      duplicateIds.set(document._id, canonical.document._id);
+      await fs.rm(file, { force: true });
+      continue;
+    }
+    canonicalDocuments.set(logicalId, { file, document });
+
     document.document = "Item";
     document.crdType = "ability";
     document.flags = {
@@ -716,6 +726,34 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
     };
 
     await fs.writeFile(file, JSON.stringify(document, null, 2) + "\n");
+  }
+
+  if (duplicateIds.size) {
+    for (const parent of PARENT_PACKS) {
+      const files = await sourceFiles(`${parent}-${language}`);
+      for (const file of files) {
+        const document = JSON.parse(await fs.readFile(file, "utf8"));
+        if (document._key?.startsWith("!folders!")) continue;
+        let changed = false;
+        document.system.abilities = (document.system?.abilities ?? []).map(uuid => {
+          if (typeof uuid !== "string") return uuid;
+          const id = uuid.split(".").at(-1);
+          const replacement = duplicateIds.get(id);
+          if (!replacement) return uuid;
+          changed = true;
+          return uuid.replace(/Item\\.[A-Za-z0-9]{16}$/, `Item.${replacement}`);
+        });
+        if (document.system.flowchart) {
+          for (const edge of document.system.flowchart.edges ?? []) {
+            const from = duplicateIds.get(edge.from);
+            const to = duplicateIds.get(edge.to);
+            if (from) { edge.from = from; changed = true; }
+            if (to) { edge.to = to; changed = true; }
+          }
+        }
+        if (changed) await fs.writeFile(file, JSON.stringify(document, null, 2) + "\n");
+      }
+    }
   }
 
   return abilityDir;
