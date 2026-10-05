@@ -351,3 +351,24 @@ test("natural 1 records the special result on an otherwise routine task", async 
   assert.equal(result.success, true);
   assert.match(message.flavor, /GMIntrusionFree/);
 });
+
+
+test("rollTask consumes active Ability Edge modifiers", async () => {
+  setRollResult(12);
+  globalThis.__rollMessages = [];
+  const actor = createActor({ pool: 10, edge: 0 });
+  actor.system.abilityModifiers = {
+    poolMax: { might: 0, speed: 0, intellect: 0 },
+    edge: { might: 1, speed: 0, intellect: 0 },
+    woundCapacity: { minor: 0, moderate: 0, major: 0 }
+  };
+
+  const result = await CypherActor.prototype.rollTask.call(actor, {
+    stat: "might",
+    difficulty: 3,
+    effortLevels: 1
+  });
+
+  assert.equal(result.success, true);
+  assert.equal(actor.system.stats.might.pool.value, 7);
+});
