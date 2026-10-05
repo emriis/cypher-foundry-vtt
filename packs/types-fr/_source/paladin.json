@@ -42,7 +42,21 @@
       "might",
       "intellect"
     ],
-    "description": "<p>By the power granted to you through righteous divine will, you protect and heal the innocent, drive out and destroy the servants of evil, and strive to live up to your oaths of honor and service. As witnessed before your god, you stand for justice and against the forces of corruption—usually delivered by the holy power you channel through your weapon. You're among the first in your group to face your foes, seemingly fearless. You're most effective in situations where your presence can draw the attention of your foes away from your allies, especially as your gods-given power can serve as a proactive defense.</p>"
+    "description": "<p>By the power granted to you through righteous divine will, you protect and heal the innocent, drive out and destroy the servants of evil, and strive to live up to your oaths of honor and service. As witnessed before your god, you stand for justice and against the forces of corruption—usually delivered by the holy power you channel through your weapon. You're among the first in your group to face your foes, seemingly fearless. You're most effective in situations where your presence can draw the attention of your foes away from your allies, especially as your gods-given power can serve as a proactive defense.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.ac808c42b3ad5310",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.ca549f77a8a40129",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.c525589d38fcd19f",
+        "tier": 1
+      }
+    ]
   },
   "folder": "N6LoBZte2sRtJhu7",
   "sort": 0,
@@ -52,6 +66,24 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.paladin",
+        "language": "fr",
+        "sourceKind": "record",
+        "sourceLogicalId": "type.paladin",
+        "section": "Character Creation — Type — Paladin — Abilities",
+        "sourceLocator": "CRD — Type: paladin",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "French localization paired to the canonical English Type",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }
