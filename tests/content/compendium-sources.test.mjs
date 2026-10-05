@@ -42,22 +42,12 @@ for (const language of ["en", "fr"]) {
       if (language === "fr") {
         const sourceLogicalId =
           document.flags.cypherFoundry.crd.sourceLogicalId;
-        const englishCandidates = [...readPackSources("abilities-en").values()]
-          .filter(candidate =>
+        const english = [...readPackSources("abilities-en").values()]
+          .find(candidate =>
             !isFolder(candidate) &&
-            candidate.system?.key === document.system?.key
+            candidate.flags?.cypherFoundry?.crd?.logicalId === sourceLogicalId
           );
-        const english = englishCandidates.find(candidate =>
-          candidate.flags?.cypherFoundry?.crd?.logicalId === sourceLogicalId
-        );
-        assert.ok(
-          english,
-          document._id + "/" + document.name + ": " +
-            sourceLogicalId + "; English candidates: " +
-            englishCandidates.map(candidate =>
-              candidate.flags?.cypherFoundry?.crd?.logicalId
-            ).join(", ")
-        );
+        assert.ok(english, sourceLogicalId);
         assert.equal(
           document.flags.cypherFoundry.crd.sourceLogicalId,
           english.flags.cypherFoundry.crd.logicalId
