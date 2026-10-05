@@ -65,3 +65,35 @@ test("negative Ability costs are rejected instead of becoming refunds", () => {
     null
   );
 });
+
+test("fixed Ability costs reject an unknown stat", () => {
+  assert.equal(
+    resolveAbilityCostStat({
+      stat: "unknown",
+      amount: 2,
+      options: []
+    }),
+    "unknown"
+  );
+
+  assert.equal(
+    resolveAbilityCost(
+      { stats: {}, customStats: [] },
+      { stat: "unknown", amount: 2, options: [] }
+    ),
+    null
+  );
+});
+
+test("choice Ability costs reject missing or malformed cost definitions", () => {
+  assert.equal(resolveAbilityCostStat(null), null);
+  assert.equal(resolveAbilityCostStat({
+    stat: "choice",
+    amount: 2,
+    options: []
+  }, "might"), null);
+  assert.deepEqual(
+    resolveAbilityCost({ stats: {}, customStats: [] }, null),
+    { stat: null, amount: 0, path: null }
+  );
+});
