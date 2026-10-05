@@ -342,3 +342,9 @@ The next implementation steps are deliberately concrete:
 The order is intentional: guides and automation should sit on top of complete,
 validated source data rather than becoming a second, manually maintained
 content database.
+
+## Skills extraction status
+
+The complete 2026-07-29 CRD Master Skill List is now represented as paired English/French `skill` Item source packs. The French pack currently mirrors the CRD English source text and keeps the required `sourceLogicalId` pairing so localization can be completed without changing the logical identity or mechanics.
+
+The source records preserve the CRD skill descriptions and the tier-2 boundary for Attacking, Defending, and Gunnery. Character-specific training state remains runtime data rather than part of the reusable skill definition.

@@ -1,0 +1,31 @@
+{
+  "_id": "75b69543geology0",
+  "_key": "!items!75b69543geology0",
+  "document": "Item",
+  "name": "Geology",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You’re knowledgeable about planetary structure, composition, and processes (including working knowledge of earthquakes, volcanoes, and the formation of natural resources).</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.geology",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

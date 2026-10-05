@@ -45,7 +45,10 @@ export const CRD_MECHANICAL_FIELDS = Object.freeze({
     "statAmount", "skillOptions", "grantedSkills", "benefits"
   ],
   focus: ["abilities", "flowchart"],
-  skill: ["stat", "level", "attackCategory", "minimumTier"],
+  skill: [
+    "stat", "level", "attackCategory", "minimumTier",
+    "minimumSpecializationTier"
+  ],
   weapon: [
     "attackType", "range", "extremeRange", "damage", "stat", "weaponFamily",
     "attackSkillCategory", "priceCategory", "properties"

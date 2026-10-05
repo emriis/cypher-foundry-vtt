@@ -1,0 +1,31 @@
+{
+  "_id": "7aae3a23firefigh",
+  "_key": "!items!7aae3a23firefigh",
+  "document": "Item",
+  "name": "Firefighting",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You are proficient in methods to contain fires and know the best ways to use axes, hoses, fire extinguishers, and other tools to directly suppress fire.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.firefighting",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

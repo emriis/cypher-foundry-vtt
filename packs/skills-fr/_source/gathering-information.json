@@ -1,0 +1,32 @@
+{
+  "_id": "2e835a01gatherin",
+  "_key": "!items!2e835a01gatherin",
+  "document": "Item",
+  "name": "Gathering information",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You’re adroit at gathering rumors, stories, and other information from locals to discover the news of the day; doing so requires several hours of effort. Gathering information in a real-world or science fiction setting—also known as researching—includes using sources like databases, physical archives, discussion platforms, and experts who agree to message you.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.gathering-information",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.gathering-information"
+      }
+    }
+  }
+}

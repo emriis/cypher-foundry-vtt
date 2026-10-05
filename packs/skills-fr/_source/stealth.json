@@ -1,0 +1,32 @@
+{
+  "_id": "3752237cstealth0",
+  "_key": "!items!3752237cstealth0",
+  "document": "Item",
+  "name": "Stealth",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You’re adept at sneaking and hiding, staying out of sight, and keeping all noise of your presence to a minimum.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.stealth",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.stealth"
+      }
+    }
+  }
+}

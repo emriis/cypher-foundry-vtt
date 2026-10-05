@@ -1,0 +1,31 @@
+{
+  "_id": "1ab5a965heavyequ",
+  "_key": "!items!1ab5a965heavyequ",
+  "document": "Item",
+  "name": "Heavy equipment operation",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You’re proficient in operating various heavy machinery used in construction projects, such as bulldozers, cranes, excavators, pavers, rollers, and other equipment appropriate to your game’s setting.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.heavy-equipment-operation",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

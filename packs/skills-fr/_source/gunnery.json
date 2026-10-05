@@ -1,0 +1,33 @@
+{
+  "_id": "1019dd29gunnery0",
+  "_key": "!items!1019dd29gunnery0",
+  "document": "Item",
+  "name": "Gunnery",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": 2,
+    "minimumSpecializationTier": 4,
+    "description": "<p>You are proficient in attacking with all large mounted weapons appropriate to the setting, including tank cannons, battleship guns, turrets, or spacecraft weaponry such as torpedoes, railguns, phasers, and so on.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.gunnery",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.gunnery"
+      }
+    }
+  }
+}

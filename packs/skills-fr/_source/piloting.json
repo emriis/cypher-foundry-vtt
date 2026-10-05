@@ -1,0 +1,32 @@
+{
+  "_id": "ac7712bfpiloting",
+  "_key": "!items!ac7712bfpiloting",
+  "document": "Item",
+  "name": "Piloting",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You’re adept at piloting planes, boats, submersibles, or craft appropriate to your game’s setting.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.piloting",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.piloting"
+      }
+    }
+  }
+}

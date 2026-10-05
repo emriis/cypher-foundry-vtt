@@ -1,0 +1,31 @@
+{
+  "_id": "2ff741a1mining00",
+  "_key": "!items!2ff741a1mining00",
+  "document": "Item",
+  "name": "Mining",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You have experience with methods for extracting valuable geological materials and minerals from the ground, including the use of mining tools appropriate to the genre. Mining techniques vary widely by genre. For example, in a fantasy or real-world historical genre, pickaxes feature prominently. In more modern real-world and horror settings, dynamite comes into the picture. In science fiction settings, a miner might know how to use laser boring devices.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.mining",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

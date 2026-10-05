@@ -1,0 +1,31 @@
+{
+  "_id": "494acff4mechanic",
+  "_key": "!items!494acff4mechanic",
+  "document": "Item",
+  "name": "Mechanics",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You can diagnose, repair, maintain, and (with the right tools and parts) build engines and various machines appropriate to your game’s setting. Mechanics training often requires resources to build and repair engines.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.mechanics",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

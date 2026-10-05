@@ -1,0 +1,32 @@
+{
+  "_id": "20fdb97apercepti",
+  "_key": "!items!20fdb97apercepti",
+  "document": "Item",
+  "name": "Perception",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You have a better chance to notice what others miss in a physical environment when searching an area, listening closely, or using some other sense to discover what’s hidden or not obvious.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.perception",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.perception"
+      }
+    }
+  }
+}

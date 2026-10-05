@@ -1,0 +1,32 @@
+{
+  "_id": "aece8ca5performa",
+  "_key": "!items!aece8ca5performa",
+  "document": "Item",
+  "name": "Performance",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You’re adept at one kind of performance or art, whether that’s singing, comedy, playing an instrument, acting on a stage or in front of a camera, composing, painting, or something else.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.performance",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.performance"
+      }
+    }
+  }
+}

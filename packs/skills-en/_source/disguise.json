@@ -1,0 +1,31 @@
+{
+  "_id": "b5079dc2disguise",
+  "_key": "!items!b5079dc2disguise",
+  "document": "Item",
+  "name": "Disguise",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You’re adept at disguising your identity with a false appearance using minimal accoutrements, usually with whatever’s at hand. Applying a disguise usually requires a disguise kit or access to similar materials and at least a minute (or many minutes) to complete. A disguise may allow you to pass as someone else of roughly your size and shape. Besides appearing as someone else, a disguise may require impersonating a different voice and different mannerisms. A disguise usually routinely (no rolls required) convinces casual observers, especially those who don’t already know you, though if the disguise comes under direct scrutiny or challenge, you must succeed on a disguise task against the level of whoever’s studying you to maintain the deception. Disguise kit contents vary by genre, but all contain setting-appropriate materials a character can use to change their features, hair, and other distinguishing elements, possibly even including alternate clothing. If attempting to disguise yourself as a particular person, you must have previously interacted with them or studied them, their specific voice, and their mannerisms, and the disguise task to maintain the deception under direct scrutiny is hindered.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.disguise",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

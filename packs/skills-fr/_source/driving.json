@@ -1,0 +1,32 @@
+{
+  "_id": "72b54760driving0",
+  "_key": "!items!72b54760driving0",
+  "document": "Item",
+  "name": "Driving",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You can keep a car or truck (or land vehicle appropriate to your game’s setting) on the road even under difficult conditions.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.driving",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.driving"
+      }
+    }
+  }
+}

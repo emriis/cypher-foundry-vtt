@@ -1,0 +1,32 @@
+{
+  "_id": "dddda5a3attackin",
+  "_key": "!items!dddda5a3attackin",
+  "document": "Item",
+  "name": "Attacking",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": 2,
+    "minimumSpecializationTier": 4,
+    "description": "<p>Choose one kind of attack action per training you gain in this skill: light bashing, light bladed, light ranged, medium bashing, medium bladed, medium ranged, heavy bashing, heavy bladed, heavy ranged, or your unarmed attacks. Alternatively, you’re better at attacking with one of your special abilities (like Blast or Onslaught) or one kind of weapon you can freely use (such as swords or rifles).</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.attacking",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

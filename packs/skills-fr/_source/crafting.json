@@ -1,0 +1,32 @@
+{
+  "_id": "b5ade61fcrafting",
+  "_key": "!items!b5ade61fcrafting",
+  "document": "Item",
+  "name": "Crafting",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You’re well-versed in one aspect of crafting, as appropriate to your game’s setting. Options include cooking; weaving; metalworking or blacksmithing; leatherworking; brewing, vinting, and/or distilling; woodworking; pottery; gun and ammunition smithing; or something else available for the genre. Crafting training allows you to craft (and, if appropriate, repair) related items using your resources.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.crafting",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.crafting"
+      }
+    }
+  }
+}

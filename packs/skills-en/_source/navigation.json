@@ -1,0 +1,31 @@
+{
+  "_id": "2cd52ea3navigati",
+  "_key": "!items!2cd52ea3navigati",
+  "document": "Item",
+  "name": "Navigation",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>Your sense of direction is well honed, and you are familiar with using maps, cues from the environment, and/or tools appropriate to the setting to find your way through an unfamiliar or confusing landscape.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.navigation",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

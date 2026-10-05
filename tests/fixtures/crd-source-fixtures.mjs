@@ -303,6 +303,7 @@ export const CRD_SKILL_FIXTURE = item(
     level: "trained",
     attackCategory: "",
     minimumTier: 2,
+    minimumSpecializationTier: 4,
     description: ""
   },
   "Character Creation — Tier-Restricted Skills — Master Skill List — Attacking (tier-restricted)"

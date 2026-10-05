@@ -1,0 +1,32 @@
+{
+  "_id": "0aa7f654disarmin",
+  "_key": "!items!0aa7f654disarmin",
+  "document": "Item",
+  "name": "Disarming traps",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You have a knack for figuring out how devious mechanisms and traps function, giving you better odds in your attempt to defuse them, if not permanently then at least long enough to bypass them.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.disarming-traps",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.disarming-traps"
+      }
+    }
+  }
+}

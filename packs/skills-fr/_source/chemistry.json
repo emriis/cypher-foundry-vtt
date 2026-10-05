@@ -1,0 +1,32 @@
+{
+  "_id": "e632ac05chemistr",
+  "_key": "!items!e632ac05chemistr",
+  "document": "Item",
+  "name": "Chemistry",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You’re knowledgeable about the composition and properties of physical substances, allowing you to predict and study chemical reactions, analyze substances to detect chemicals of interest, and—with sufficient time and experiments—attempt to develop novel materials.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.chemistry",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.chemistry"
+      }
+    }
+  }
+}

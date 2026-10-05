@@ -1,0 +1,32 @@
+{
+  "_id": "c5725fb0engineer",
+  "_key": "!items!c5725fb0engineer",
+  "document": "Item",
+  "name": "Engineering",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You can analyze, repair, and create innovative solutions for complex problems, such as tracing power outages and making new devices appropriate to your game’s setting. The differences between engineering, hacking, and systems operation are that training in engineering eases your tasks to create, repurpose, and repair complex items (and requires making physical alterations in the real world). Hacking, on the other hand, eases your tasks to warp, distort, or otherwise use software embedded in a device or network in ways that were never intended (and do not involve making physical alterations). Finally, systems operation eases your tasks to use complex items and systems as intended, including computers and regular computer programming (but, like hacking, do not require physical alterations to devices). Engineering training could potentially require resources to make or repair complex systems. In a sci-fi setting, the engineering skill includes any task related to the mechanics skill. Regular computer usage and programming—as opposed to hacking—is a systems operation task.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.engineering",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.engineering"
+      }
+    }
+  }
+}

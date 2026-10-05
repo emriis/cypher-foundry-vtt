@@ -1,0 +1,31 @@
+{
+  "_id": "7fa21031escaping",
+  "_key": "!items!7fa21031escaping",
+  "document": "Item",
+  "name": "Escaping",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You’re talented at slipping restraints, squeezing through bars, breaking the grip of a creature holding you, pulling free from sucking quicksand, or some similar circumstance.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.escaping",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}
