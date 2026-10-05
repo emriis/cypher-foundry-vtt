@@ -75,6 +75,23 @@ and behavior tests. CI runs those categories independently so a failure in one
 category does not hide failures in another. The full test suite includes
 behavior tests automatically.
 
+### Phase D — coverage and mutation testing
+
+Phase D measures test effectiveness rather than only test count.
+
+- Native Node coverage is collected for module/rules/ with npm run test:coverage.
+- Coverage is published as an LCOV artifact by CI and remains a diagnostic signal
+  until a measured baseline is established.
+- Mutation testing uses StrykerJS against pure rule modules only. It is exposed
+  through the manual Mutation testing workflow so the normal pull-request CI
+  remains fast and deterministic.
+- The mutation configuration uses npm run test:unit as its command runner and
+  starts with a non-blocking mutation threshold. After the first representative
+  mutation report establishes a baseline, raise the break threshold deliberately
+  rather than guessing a target.
+- Do not use coverage percentage as a substitute for mutation score. A covered
+  line can still have assertions that are too weak to kill a meaningful mutant.
+
 Run the architecture-boundary contract when changing module dependencies:
 
 ```powershell
