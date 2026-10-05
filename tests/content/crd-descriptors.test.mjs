@@ -149,7 +149,7 @@ for (const language of ["en", "fr"]) {
       }
     }
 
-    assert.equal(logicalIds.size, 51);
+    assert.equal(logicalIds.size, 53);
   });
 }
 
