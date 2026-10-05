@@ -112,7 +112,9 @@ export async function rollTask(actor, {
     const skillSteps = skillItem ? skillItem.system.stepModifier : 0;
 
     const abilityItems = actor.items?.contents
-      ?? (Array.isArray(actor.items) ? actor.items : []);
+      ?? (Array.isArray(actor.items)
+        ? actor.items
+        : Array.from(actor.items?.values?.() ?? []));
     const abilityModifiers = resolveActiveAbilityModifiers(
       actor.system.activeAbilityEffects,
       abilityItems
