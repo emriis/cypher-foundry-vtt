@@ -156,9 +156,11 @@ async function pruneAbilityReferences(removedIds) {
             const remaining = new Set(
               filtered.map(uuid => uuid.split(".").at(-1))
             );
-            document.system.flowchart?.edges = (
-              document.system.flowchart?.edges ?? []
-            ).filter(edge => remaining.has(edge.from) && remaining.has(edge.to));
+            if (document.system.flowchart) {
+              document.system.flowchart.edges = (
+                document.system.flowchart.edges ?? []
+              ).filter(edge => remaining.has(edge.from) && remaining.has(edge.to));
+            }
           }
           await fs.writeFile(file, JSON.stringify(document, null, 2) + "\n");
         }
