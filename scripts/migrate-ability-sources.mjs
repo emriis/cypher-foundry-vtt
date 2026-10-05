@@ -204,7 +204,7 @@ async function collectReferenceProvenance(language) {
   return references;
 }
 
-async function enrichStandaloneLanguage(language) {
+async function enrichStandaloneLanguage(language, english) {
   const abilityDir = path.join(root, "packs", `abilities-${language}`, "_source");
   const files = await sourceFiles(`abilities-${language}`);
   const documents = [];
@@ -230,9 +230,21 @@ async function enrichStandaloneLanguage(language) {
     const reference = references.get(document._id);
     if (!reference) continue;
 
-    const logicalId = keyCounts.get(key) > 1
-      ? `ability.${key}-${document._id.slice(0, 12)}`
-      : `ability.${key}`;
+    const standalone = { id: key, name: document.name, ...document.system };
+    const match = language === "fr"
+      ? english.registry.get(
+          `${identity(standalone).key}:${identity(standalone).signature}`
+        )
+      : null;
+    const logicalId = language === "fr"
+      ? match?.logicalId ?? (
+          keyCounts.get(key) > 1
+            ? `ability.${key}-${document._id.slice(0, 12)}`
+            : `ability.${key}`
+        )
+      : (keyCounts.get(key) > 1
+        ? `ability.${key}-${document._id.slice(0, 12)}`
+        : `ability.${key}`);
 
     document.document = "Item";
     document.crdType = "ability";
@@ -264,7 +276,7 @@ async function migrateLanguage(language, english) {
     )
   );
   if (!hasLegacyAbilities) {
-    await enrichStandaloneLanguage(language);
+    await enrichStandaloneLanguage(language, english);
     return;
   }
 
