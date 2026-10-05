@@ -1,0 +1,32 @@
+{
+  "_id": "0a10daafreligiou",
+  "_key": "!items!0a10daafreligiou",
+  "document": "Item",
+  "name": "Religious lore",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You know about the gods and pantheons of the world; their cults, temples, and priesthoods; and their doctrines, holy artifacts, methods of worship, and religious holidays. Your lore helps you identify holy items if any exist in your setting, the potential purpose of a religious ceremony, or how divine influence might be affecting an area, or gain some similar insight. Religious lore might simply be called “religion” in real-world or science fiction settings where a constellation of different pantheons doesn’t exist (or, at least, not obviously).</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.religious-lore",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.religious-lore"
+      }
+    }
+  }
+}
