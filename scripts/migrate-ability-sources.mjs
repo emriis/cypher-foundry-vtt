@@ -238,14 +238,14 @@ async function collectEnglishRegistry() {
   }
 
   for (const entry of registry.values()) {
-    const existingLogicalId =
-      entry.document.flags?.cypherFoundry?.crd?.logicalId;
-    entry.logicalId = existingLogicalId ??
-      buildLogicalId(
-        entry.key,
-        entry.signature,
-        variants.get(entry.key)
-      );
+    // Canonical logical IDs are derived from the canonical English Ability
+    // catalogue. Existing provenance is intentionally not authoritative here:
+    // it may have been produced by an older migration algorithm.
+    entry.logicalId = buildLogicalId(
+      entry.key,
+      entry.signature,
+      variants.get(entry.key)
+    );
     entry.provenance = provenance(
       "en",
       entry.parent,
@@ -454,12 +454,19 @@ async function enrichStandaloneLanguage(language, english, diagnostics) {
       });
       continue;
     }
-    const logicalId = match?.logicalId ??
-      buildLogicalId(
-        id.key,
-        id.signature,
-        keyVariantCounts.get(id.key) ?? 1
-      );
+    if (!match) {
+      diagnostics.push({
+        code: "MISSING_CANONICAL_ABILITY",
+        language,
+        ability: document.name,
+        key: id.key,
+        file,
+        message: `No canonical English ability matched ${document.name}.`
+      });
+      continue;
+    }
+
+    const logicalId = match.logicalId;
     const reference = references.get(document._id);
     const sourceParent = reference?.parent ?? "types";
     const sourceDocument = reference?.document ?? {
