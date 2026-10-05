@@ -3006,6 +3006,98 @@
           "extracted as a standalone Ability Item"
         ]
       }
+    },
+    {
+      "logicalId": "ability.spin-attack",
+      "name": "Spin Attack",
+      "genre": "fantasy",
+      "tier": 6,
+      "key": "spin-attack",
+      "system": {
+        "key": "spin-attack",
+        "tier": 6,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": "action",
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>(5+ Speed): You stand in one place and attack up to five foes, each as\nan extra action on your turn. All of the attacks have to be the same sort of attack \n(melee or ranged attacks). Make a separate attack roll for each foe.\nEffort: Attack one additional creature with this ability.\nAction.</p>"
+      },
+      "sources": [
+        {
+          "genre": "fantasy",
+          "name": "Spin Attack"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.spin-attack",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Fantasy Genre Abilities",
+        "sourceLocator": "CRD — Spin Attack",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
+    },
+    {
+      "logicalId": "ability.will-of-a-leader",
+      "name": "Will of a Leader",
+      "genre": "fantasy",
+      "tier": 6,
+      "key": "will-of-a-leader",
+      "system": {
+        "key": "will-of-a-leader",
+        "tier": 6,
+        "enabler": false,
+        "repeatable": false,
+        "cost": {
+          "stat": "none",
+          "amount": 0,
+          "options": [],
+          "additionalEffort": false
+        },
+        "action": "action",
+        "freeWeaponCategories": [],
+        "freeArmorCategories": [],
+        "freeWeaponFamilies": [],
+        "freeWeaponSkillCategories": [],
+        "chooseWeaponAttackCategory": false,
+        "grantedArmorItemCategory": "",
+        "effects": [],
+        "rollTables": [],
+        "description": "<p>(9 Intellect): You harden your allies’ dedication and capabilities\nwith an inspiring speech that lasts at least a minute. All allies within immediate \nrange (including yourself) add +1 Edge to one stat (chosen by each individual). \nThis lasts until they use a one-hour or longer recovery; one individual ending the \nability doesn’t affect the duration for other allies. One minute to complete.</p>"
+      },
+      "sources": [
+        {
+          "genre": "fantasy",
+          "name": "Will of a Leader"
+        }
+      ],
+      "provenance": {
+        "version": "2026-07-29",
+        "logicalId": "ability.will-of-a-leader",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Fantasy Genre Abilities",
+        "sourceLocator": "CRD — Will of a Leader",
+        "transformations": [
+          "extracted as a standalone Ability Item"
+        ]
+      }
     }
   ]
 }
