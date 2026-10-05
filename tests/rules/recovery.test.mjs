@@ -51,6 +51,26 @@ test("recovery clears all minor wounds at ten minutes", () => {
   );
 });
 
+test("ten-hour recovery clears moderate wounds and records the recovery", () => {
+  assert.deepEqual(
+    computeRecoveryUpdates(
+      "tenHours",
+      {
+        minor: { current: 1 },
+        moderate: { current: 2 }
+      },
+      {}
+    ),
+    {
+      updates: {
+        "system.wounds.moderate.current": 0,
+        "system.recoveries.tenHours": true
+      },
+      woundNoteKey: "CYPHER.Recovery.RemovesAllModerateReminder"
+    }
+  );
+});
+
 test("rally rules enforce major-wound permission and Might cost", () => {
   assert.equal(getRallyCost("minor"), 2);
   assert.equal(getRallyCost("moderate"), 5);
