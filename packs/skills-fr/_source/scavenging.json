@@ -1,0 +1,32 @@
+{
+  "_id": "ab6cc9ecscavengi",
+  "_key": "!items!ab6cc9ecscavengi",
+  "document": "Item",
+  "name": "Scavenging",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You’re experienced in scavenging for food, water, shelter, and when you’re especially lucky, a random piece of postapocalyptic equipment. A scavenging task attempt usually requires a minimum of ten minutes but could stretch to two to four hours spent searching through the rubble and ruins. Scavenging is most appropriate for postapocalypse settings with easy access to the ruins of a fallen civilization that still contain potentially useful things, including preserved food and potable water. In other genres, or if attempting to find useful things in the wilderness, use outdoor survival.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.scavenging",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.scavenging"
+      }
+    }
+  }
+}
