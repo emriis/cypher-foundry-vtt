@@ -1,0 +1,32 @@
+{
+  "_id": "e49dc042athletic",
+  "_key": "!items!e49dc042athletic",
+  "document": "Item",
+  "name": "Athletics",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>Regular training has improved your physical fitness, making you better at climbing, jumping, running long distances, and swimming tasks. Athletics and gymnastics are similar skills, but athletics focuses on tasks related to using your Might Pool, while gymnastics focuses on tasks requiring your Speed Pool.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.athletics",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.athletics"
+      }
+    }
+  }
+}
