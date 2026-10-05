@@ -110,3 +110,73 @@ test("skill advancement can target an existing skill or create a new one", () =>
     { type: "create", name: "Sailing" }
   );
 });
+
+test("advancement handles perfection and Effort without exceeding the cap", () => {
+  const system = {
+    effort: 6,
+    stats: {
+      might: { pool: { max: 8, value: 8 }, edge: 2 },
+      speed: { pool: { max: 8, value: 8 }, edge: 0 },
+      intellect: { pool: { max: 8, value: 8 }, edge: 0 }
+    }
+  };
+
+  assert.equal(
+    computeAdvancementEffects(
+      { type: "perfection" },
+      { stat: "might" },
+      system
+    ).updates["system.stats.might.edge"],
+    3
+  );
+
+  assert.equal(
+    computeAdvancementEffects({ type: "effort" }, {}, system)
+      .updates["system.effort"],
+    6
+  );
+});
+
+test("advancement grants recovery and weapon permissions", () => {
+  const system = {
+    effort: 1,
+    recoveryBonus: 2,
+    stats: {
+      might: { pool: { max: 8, value: 8 }, edge: 0 },
+      speed: { pool: { max: 8, value: 8 }, edge: 0 },
+      intellect: { pool: { max: 8, value: 8 }, edge: 0 }
+    }
+  };
+
+  assert.equal(
+    computeAdvancementEffects(
+      { type: "other", otherType: "recovery" },
+      {},
+      system
+    ).updates["system.recoveryBonus"],
+    4
+  );
+
+  assert.deepEqual(
+    computeAdvancementEffects(
+      { type: "other", otherType: "weapons" },
+      {},
+      system
+    ).updates,
+    {
+      "system.freeWeaponCategories": ["light", "medium", "heavy", "special"],
+      "system.canFreelyUseAllWeapons": true
+    }
+  );
+});
+
+test("invalid advancement choices do not silently create skill actions", () => {
+  assert.deepEqual(
+    computeAdvancementEffects(
+      { type: "skill" },
+      {},
+      { effort: 1, stats: {} }
+    ),
+    { updates: {}, skillAction: null }
+  );
+});
