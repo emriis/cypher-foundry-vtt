@@ -250,7 +250,7 @@ async function enrichStandaloneLanguage(language) {
       }
     };
 
-    await fs.writeFile(file, JSON.stringify(document, null, 2) + "\\n");
+    await fs.writeFile(file, JSON.stringify(document, null, 2) + "\n");
   }
 
   return abilityDir;
