@@ -189,7 +189,7 @@ async function collectReferenceProvenance(language) {
 
       for (const reference of document.system?.abilities ?? []) {
         const match = String(reference).match(
-          /Item\\.([A-Za-z0-9]{16})$/
+          /Item\.([A-Za-z0-9]{16})$/
         );
         if (!match || references.has(match[1])) continue;
 
