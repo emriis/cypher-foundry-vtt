@@ -154,3 +154,52 @@ for (const prefix of ["types", "foci"]) {
     }
   });
 }
+
+for (const language of ["en", "fr"]) {
+  test(`${language} standalone abilities carry unique CRD provenance`, () => {
+    const abilities = [...readPackSources(`abilities-${language}`).values()]
+      .filter(document => !isFolder(document));
+
+    const logicalIds = new Set();
+
+    for (const document of abilities) {
+      assert.equal(document.document, "Item");
+      assert.equal(document.crdType, "ability");
+
+      const provenance = document.flags?.cypherFoundry?.crd;
+      assert.ok(provenance);
+      assert.equal(provenance.version, "2026-07-29");
+      assert.equal(provenance.language, language);
+      assert.match(provenance.logicalId, /^ability\\.[a-z0-9-]+-[a-f0-9]{12}$/);
+      assert.ok(!logicalIds.has(provenance.logicalId), provenance.logicalId);
+      logicalIds.add(provenance.logicalId);
+      assert.ok(provenance.section);
+      assert.ok(provenance.sourceLocator);
+      assert.ok(Array.isArray(provenance.transformations));
+
+      if (language === "fr") {
+        assert.equal(provenance.sourceLogicalId, provenance.logicalId);
+      }
+    }
+  });
+}
+
+test("Type and Focus ability references resolve to standalone Ability sources", () => {
+  const abilities = readPackSources("abilities-en");
+  const abilityIds = new Set(
+    [...abilities.values()]
+      .filter(document => !isFolder(document))
+      .map(document => document._id)
+  );
+
+  for (const prefix of ["types", "foci"]) {
+    for (const [filename, document] of readPackSources(`${prefix}-en`)) {
+      if (isFolder(document)) continue;
+
+      for (const uuid of document.system.abilities) {
+        const id = uuid.split(".").at(-1);
+        assert.ok(abilityIds.has(id), `${filename}/${id}`);
+      }
+    }
+  }
+});
