@@ -60,6 +60,7 @@ for (const language of ["en", "fr"]) {
       if (isFolder(document)) continue;
       assert.equal(document.type, "ability");
       assert.doesNotMatch(document.name, /\bGM intrusions\b/i);
+      assert.doesNotMatch(document.system.key, /-gm-intrusions$/i);
       assert.notEqual(document.name, "At higher tiers");
       assert.match(document._id, /^[A-Za-z0-9]{16}$/);
       assert.match(document._key, /^!items![A-Za-z0-9]{16}$/);
