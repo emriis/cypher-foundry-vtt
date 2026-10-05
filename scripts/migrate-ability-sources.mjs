@@ -199,6 +199,24 @@ function resolveFrenchEntry(ability, english, standaloneEnglish) {
     ...(english.byKey.get(id.key) ?? []),
     ...[...standaloneEnglish.values()].filter(entry => entry.key === id.key)
   ];
+  const description = String(ability.description ?? "").trim();
+  const descriptionMatches = candidates.filter(entry =>
+    description &&
+    description === String(
+      entry.ability?.description ?? entry.description ?? ""
+    ).trim()
+  );
+  const uniqueDescriptionMatches = new Map(
+    descriptionMatches.map(entry => [`${entry.key}:${entry.signature}`, entry])
+  );
+
+  if (uniqueDescriptionMatches.size === 1) {
+    return {
+      entry: [...uniqueDescriptionMatches.values()][0],
+      translated: false
+    };
+  }
+
   const mechanicalMatches = candidates.filter(entry =>
     mechanicallyMatchesExceptAction(ability, entry.ability ?? entry)
   );
