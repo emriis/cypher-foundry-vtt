@@ -265,7 +265,7 @@ async function collectReferenceProvenance(language) {
   return references;
 }
 
-async function enrichStandaloneLanguage(language, english) {
+async function enrichStandaloneLanguage(language, english, diagnostics) {
   const abilityDir = path.join(root, "packs", `abilities-${language}`, "_source");
   const files = await sourceFiles(`abilities-${language}`);
   const documents = [];
@@ -328,9 +328,22 @@ async function enrichStandaloneLanguage(language, english) {
       ...document.system
     };
     const id = identity(standalone);
-    const match = language === "fr"
-      ? resolveFrenchEntry(standalone, english, standaloneEnglish).entry
-      : english.registry.get(`${id.key}:${id.signature}`);
+    let match;
+    try {
+      match = language === "fr"
+        ? resolveFrenchEntry(standalone, english, standaloneEnglish).entry
+        : english.registry.get(`${id.key}:${id.signature}`);
+    } catch (error) {
+      diagnostics.push({
+        code: "UNRESOLVED_FRENCH_ABILITY",
+        language,
+        ability: document.name,
+        key: id.key,
+        file,
+        message: error.message
+      });
+      continue;
+    }
     const logicalId = match?.logicalId ??
       buildLogicalId(
         id.key,
@@ -390,9 +403,13 @@ async function enrichStandaloneLanguage(language, english) {
         return !KNOWN_EDITORIAL_ARTIFACT_IDS.has(match?.[1]);
       });
       if (unexpected.length) {
-        throw new Error(
-          `Unresolved ${language} ${parent} ability references in ${file}: ${unexpected.join(", ")}`
-        );
+        diagnostics.push({
+          code: "UNRESOLVED_ABILITY_REFERENCE",
+          language,
+          parent,
+          file,
+          message: `Unresolved ${language} ${parent} ability references: ${unexpected.join(", ")}`
+        });
       }
       document.system.abilities = references.filter(reference => {
         const match = String(reference).match(/Item\.([A-Za-z0-9]{16})$/);
@@ -405,7 +422,7 @@ async function enrichStandaloneLanguage(language, english) {
   return abilityDir;
 }
 
-async function migrateLanguage(language, english) {
+async function migrateLanguage(language, english, diagnostics) {
   const documents = await collectDocuments(language);
   const hasLegacyAbilities = documents.some(({ document }) =>
     (document.system?.abilities ?? []).some(
@@ -413,7 +430,7 @@ async function migrateLanguage(language, english) {
     )
   );
   if (!hasLegacyAbilities) {
-    await enrichStandaloneLanguage(language, english);
+    await enrichStandaloneLanguage(language, english, diagnostics);
     return;
   }
 
@@ -422,16 +439,39 @@ async function migrateLanguage(language, english) {
   for (const { document } of documents) {
     for (const ability of document.system?.abilities ?? []) {
       if (!ability || typeof ability !== "object" || isEditorialArtifact(ability)) continue;
-      const resolved = language === "fr"
-        ? resolveFrenchEntry(ability, english)
-        : {
-            entry: english.registry.get(
-              `${identity(ability).key}:${identity(ability).signature}`
-            ),
-            translated: true
-          };
+      let resolved;
+      try {
+        resolved = language === "fr"
+          ? resolveFrenchEntry(ability, english)
+          : {
+              entry: english.registry.get(
+                `${identity(ability).key}:${identity(ability).signature}`
+              ),
+              translated: true
+            };
+      } catch (error) {
+        diagnostics.push({
+          code: "UNRESOLVED_LEGACY_ABILITY",
+          language,
+          parent: document.name,
+          ability: ability.name,
+          key: identity(ability).key,
+          message: error.message
+        });
+        continue;
+      }
 
-      if (!resolved.entry) continue;
+      if (!resolved.entry) {
+        diagnostics.push({
+          code: "MISSING_CANONICAL_ABILITY",
+          language,
+          parent: document.name,
+          ability: ability.name,
+          key: identity(ability).key,
+          message: `No canonical English ability matched ${ability.name}.`
+        });
+        continue;
+      }
 
       const key = `${resolved.entry.key}:${resolved.entry.signature}`;
       if (!registry.has(key)) {
@@ -496,13 +536,26 @@ async function migrateLanguage(language, english) {
     const localIds = new Map();
 
     for (const ability of legacyAbilities) {
-      const resolved = language === "fr"
-        ? resolveFrenchEntry(ability, english)
-        : {
-            entry: english.registry.get(
-              `${identity(ability).key}:${identity(ability).signature}`
-            )
-          };
+      let resolved;
+      try {
+        resolved = language === "fr"
+          ? resolveFrenchEntry(ability, english)
+          : {
+              entry: english.registry.get(
+                `${identity(ability).key}:${identity(ability).signature}`
+              )
+            };
+      } catch (error) {
+        diagnostics.push({
+          code: "UNRESOLVED_LEGACY_ABILITY_REFERENCE",
+          language,
+          parent,
+          ability: ability.name,
+          key: identity(ability).key,
+          message: error.message
+        });
+        continue;
+      }
       if (!resolved.entry) continue;
 
       refs.push(`Compendium.cypher.abilities-${language}.Item.${resolved.entry.id}`);
@@ -527,9 +580,30 @@ async function migrateLanguage(language, english) {
 }
 
 export async function migrateAbilitySources() {
+  const diagnostics = [];
   const english = await collectEnglishRegistry();
-  await migrateLanguage("en", english);
-  await migrateLanguage("fr", english);
+  await migrateLanguage("en", english, diagnostics);
+  await migrateLanguage("fr", english, diagnostics);
+
+  if (diagnostics.length) {
+    const counts = new Map();
+    for (const diagnostic of diagnostics) {
+      counts.set(diagnostic.code, (counts.get(diagnostic.code) ?? 0) + 1);
+    }
+    console.error("Ability migration validation failed:");
+    for (const [code, count] of counts) {
+      console.error(`  ${code}: ${count}`);
+    }
+    for (const diagnostic of diagnostics) {
+      console.error(
+        `  [${diagnostic.code}] ${diagnostic.language} ` +
+        `${diagnostic.key ?? ""} — ${diagnostic.message}`
+      );
+    }
+    throw new Error(
+      `Ability migration validation found ${diagnostics.length} error(s).`
+    );
+  }
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
