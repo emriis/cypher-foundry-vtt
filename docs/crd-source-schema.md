@@ -102,7 +102,7 @@ termination conditions remain in source text until a separate source-justified
 representation is established. The extractor must not infer a structured
 condition from prose merely because it appears automatable.
 
-## 6. Structural transformations
+This is source data, not runtime state. It does not indicate that an ability is\ncurrently active, on cooldown, or available on a character.\n\nOnly explicit recovery boundaries are structured by this contract. Other\ntermination conditions remain in source text until a separate source-justified\nrepresentation is established. The extractor must not infer a structured\ncondition from prose merely because it appears automatable.\n\n## 6. Runtime boundary\n\nThe source schema and actor runtime state are separate contracts.\n\nThe source record defines an Ability effect and its CRD-derived `endConditions`.\nThe actor runtime stores only which actor-owned Ability effects are currently\nactive:\n\n    system.activeAbilityEffects[]\n      - itemUuid\n      - effectId\n\nThis runtime collection is not part of the CRD source record. It represents\ncurrent actor state and may differ between characters using the same Ability.\n\nRecovery-driven expiration is implemented by the application/runtime boundary:\nthe persisted Ability reference is resolved first, then the pure rule evaluates\nthe source-defined recovery condition. The runtime must not infer additional\ntermination conditions from effect prose.\n\n## 7. Structural transformations
 
 Allowed transformations include:
 
@@ -120,7 +120,7 @@ inventing missing mechanics.
 
 If extraction cannot establish a reliable mapping, the extractor must stop.
 
-## 7. Bilingual pairing
+## 8. Bilingual pairing
 
 The pairing model is:
 
@@ -137,7 +137,7 @@ The pairing model is:
 
 French is a localization layer, not an independent mechanical source.
 
-## 8. Validation contract
+## 9. Validation contract
 
 The source validator rejects:
 
@@ -154,7 +154,7 @@ The source validator rejects:
 The validator does not attempt to judge the correctness of CRD prose. Fidelity
 must be established against the extracted source material.
 
-## 9. Phase 2 content types
+## 10. Phase 2 content types
 
 The initial contract covers:
 
@@ -176,7 +176,7 @@ The initial contract covers:
 Creature/Actor-specific source fields will be defined with the creature
 extraction phase rather than guessed now.
 
-## 10. Extraction boundary
+## 11. Extraction boundary
 
 Every automated extractor must:
 
@@ -187,7 +187,7 @@ Every automated extractor must:
 5. validate the resulting source record;
 6. refuse to emit a record when the source mapping is ambiguous.
 
-## 11. Logical identifiers and cross-language pairing
+## 12. Logical identifiers and cross-language pairing
 
 Every reusable CRD record has one language-neutral `logicalId`.
 
