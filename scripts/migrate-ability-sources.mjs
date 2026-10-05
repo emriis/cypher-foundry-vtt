@@ -75,6 +75,17 @@ function mechanicalShape(ability) {
   });
 }
 
+function mechanicalShapeWithoutAction(ability) {
+  const shape = mechanicalShape(ability);
+  delete shape.action;
+  return shape;
+}
+
+function mechanicallyMatchesExceptAction(left, right) {
+  return JSON.stringify(mechanicalShapeWithoutAction(left)) ===
+    JSON.stringify(mechanicalShapeWithoutAction(right));
+}
+
 function isGmIntrusionEntry(ability) {
   return /\bgm intrusions\b/i.test(String(ability.name ?? ""));
 }
@@ -184,13 +195,26 @@ function resolveFrenchEntry(ability, english, standaloneEnglish) {
   );
   if (standalone) return { entry: standalone, translated: true };
 
-  const candidates = english.byKey.get(id.key) ?? [];
-  if (candidates.length === 1) return { entry: candidates[0], translated: false };
+  const candidates = [
+    ...(english.byKey.get(id.key) ?? []),
+    ...[...standaloneEnglish.values()].filter(entry => entry.key === id.key)
+  ];
+  const mechanicalMatches = candidates.filter(entry =>
+    mechanicallyMatchesExceptAction(ability, entry.ability ?? entry)
+  );
+  const uniqueMatches = new Map(
+    mechanicalMatches.map(entry => [`${entry.key}:${entry.signature}`, entry])
+  );
 
-  const standaloneCandidates = [...standaloneEnglish.values()]
-    .filter(entry => entry.key === id.key);
-  if (standaloneCandidates.length === 1) {
-    return { entry: standaloneCandidates[0], translated: false };
+  if (uniqueMatches.size === 1) {
+    return {
+      entry: [...uniqueMatches.values()][0],
+      translated: false
+    };
+  }
+
+  if (candidates.length === 1) {
+    return { entry: candidates[0], translated: false };
   }
 
   throw new Error(
@@ -268,6 +292,7 @@ async function enrichStandaloneLanguage(language, english) {
         buildLogicalId(id.key, id.signature, 1);
       standaloneEnglish.set(`${id.key}:${id.signature}`, {
         ...id,
+        ability: standalone,
         logicalId
       });
     }
@@ -302,6 +327,14 @@ async function enrichStandaloneLanguage(language, english) {
 
     document.document = "Item";
     document.crdType = "ability";
+    if (language === "fr" && match && !mechanicallyMatchesExceptAction(
+      standalone,
+      match.ability ?? match
+    )) {
+      document.system.action = match.ability?.action ??
+        inferAction(match.ability ?? match);
+    }
+
     document.flags = {
       ...(document.flags ?? {}),
       cypherFoundry: {
