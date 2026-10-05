@@ -1,0 +1,32 @@
+{
+  "_id": "87231ca2physics0",
+  "_key": "!items!87231ca2physics0",
+  "document": "Item",
+  "name": "Physics",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You’re knowledgeable about scientifically derived laws of the physical universe and can use that knowledge to devise experiments to probe natural phenomena.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.physics",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.physics"
+      }
+    }
+  }
+}
