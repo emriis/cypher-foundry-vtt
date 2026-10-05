@@ -162,6 +162,30 @@
         "ASSISTANT": "OWNER"
       },
       "flags": {}
+    },
+    {
+      "name": "rules-fr",
+      "label": "Règles (FR)",
+      "path": "packs/rules-fr",
+      "type": "JournalEntry",
+      "system": "cypher",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "rules-en",
+      "label": "Rules (EN)",
+      "path": "packs/rules-en",
+      "type": "JournalEntry",
+      "system": "cypher",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
     }
   ],
   "packFolders": [
@@ -172,7 +196,8 @@
         "abilities-fr",
         "descriptors-fr",
         "types-fr",
-        "foci-fr"
+        "foci-fr",
+        "rules-fr"
       ]
     },
     {
@@ -182,7 +207,8 @@
         "abilities-en",
         "descriptors-en",
         "types-en",
-        "foci-en"
+        "foci-en",
+        "rules-en"
       ]
     }
   ],
