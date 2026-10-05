@@ -41,7 +41,17 @@
       "might",
       "speed"
     ],
-    "description": "<p>Weapon tightly gripped, you charge your monstrous foes. Anyone willing to hold a sword might be called a “fighter,” but you're a cut above most. Less well-trained warriors may serve as soldiers, guards, and muscle in a tavern, but a Fighter truly understands conflict and battlefield control. You've trained in specific weapons and methods of defense, have scars from past fights, and probably look forward to your next descent into an ancient ruin or enemy's outpost, if only so you can match your weapon against a foe's blade or spell. In your group, you're usually the most physically capable, the most durable, and the most ready to meet danger head-on. This attribute probably leads to a role as a protector of your friends—particularly the least sturdy among them. If someone has to take the lead when entering the monster's den, you're among the first to charge in.</p>"
+    "description": "<p>Weapon tightly gripped, you charge your monstrous foes. Anyone willing to hold a sword might be called a “fighter,” but you're a cut above most. Less well-trained warriors may serve as soldiers, guards, and muscle in a tavern, but a Fighter truly understands conflict and battlefield control. You've trained in specific weapons and methods of defense, have scars from past fights, and probably look forward to your next descent into an ancient ruin or enemy's outpost, if only so you can match your weapon against a foe's blade or spell. In your group, you're usually the most physically capable, the most durable, and the most ready to meet danger head-on. This attribute probably leads to a role as a protector of your friends—particularly the least sturdy among them. If someone has to take the lead when entering the monster's den, you're among the first to charge in.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.1fc1bf6430861da5",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.70a6f61c6c81a3a6",
+        "tier": 1
+      }
+    ]
   },
   "folder": "pQTzt4j9XPpLBpKm",
   "sort": 0,
@@ -51,6 +61,22 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.fighter",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Type — Fighter — Abilities",
+        "sourceLocator": "CRD — Type: Fighter",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }
