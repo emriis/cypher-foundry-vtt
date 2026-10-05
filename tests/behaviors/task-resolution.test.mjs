@@ -96,3 +96,59 @@ describe("Given a Cypher task", () => {
     });
   });
 });
+
+describe("Given a character makes a successful damaging attack", () => {
+  test("when the natural roll is 17 or 18, then the attack gains bonus damage", () => {
+    assert.equal(
+      resolveSpecialRoll({
+        d20: 17,
+        success: true,
+        isAttack: true,
+        inflictsDamage: true
+      }).damageBonus,
+      1
+    );
+    assert.equal(
+      resolveSpecialRoll({
+        d20: 18,
+        success: true,
+        isAttack: true,
+        inflictsDamage: true
+      }).damageBonus,
+      2
+    );
+  });
+
+  test("when the natural roll is 19 or 20, then the player receives damage/effect choices", () => {
+    assert.deepEqual(
+      resolveSpecialRoll({
+        d20: 19,
+        success: true,
+        isAttack: true,
+        inflictsDamage: true
+      }).effectOptions,
+      ["damage", "minor"]
+    );
+    assert.deepEqual(
+      resolveSpecialRoll({
+        d20: 20,
+        success: true,
+        isAttack: true,
+        inflictsDamage: true
+      }).effectOptions,
+      ["damage", "major"]
+    );
+  });
+});
+
+describe("Given a character rolls a natural 1", () => {
+  test("when the task fails, then a GM intrusion is recorded", () => {
+    assert.equal(
+      resolveSpecialRoll({
+        d20: 1,
+        success: false
+      }).gmIntrusion,
+      true
+    );
+  });
+});
