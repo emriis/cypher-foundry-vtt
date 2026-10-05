@@ -45,7 +45,33 @@
       "might",
       "speed"
     ],
-    "description": "<p>In some lands, you're known as a Swordsworn, a Steelhand, or a Blade Master. You don't care about a showy name—you just prefer to fight with a sword. You've fought with your sword for thousands of hours while training, in war, on expeditions, and during desperate battles in forgotten places of the world. Maybe you fight as a mercenary, for yourself, or as part of a group of adventurers. As long as you've got your sword, nothing can withstand you. You are up for a fight anytime, even when startled directly from sleep. Sword held high, you're ready to protect your allies, even if that means drawing your foes' attention. So be it; they'll meet you at your sword's edge.</p>"
+    "description": "<p>In some lands, you're known as a Swordsworn, a Steelhand, or a Blade Master. You don't care about a showy name—you just prefer to fight with a sword. You've fought with your sword for thousands of hours while training, in war, on expeditions, and during desperate battles in forgotten places of the world. Maybe you fight as a mercenary, for yourself, or as part of a group of adventurers. As long as you've got your sword, nothing can withstand you. You are up for a fight anytime, even when startled directly from sleep. Sword held high, you're ready to protect your allies, even if that means drawing your foes' attention. So be it; they'll meet you at your sword's edge.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.d631387889d71582",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.1fc1bf6430861da5",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.fb781f705a259c99",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.702cc17173463c24",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.9304e20e85949c22",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-en.Item.6f75d8842452a68d",
+        "tier": 1
+      }
+    ]
   },
   "folder": "zBqRagUFEUelogPi",
   "sort": 0,
@@ -55,6 +81,22 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.sword-fighter",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Character Creation — Type — Sword Fighter — Abilities",
+        "sourceLocator": "CRD — Type: Sword Fighter",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }
