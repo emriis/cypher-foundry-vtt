@@ -35,7 +35,21 @@
     "statOptions": [
       "intellect"
     ],
-    "description": "<p>You cast spells of blasting fire, magical protection, and force at a distance. As a spellcaster, you're always on the lookout for new arcane secrets, magic lore, and spells you can add to your repertoire. You understand that the most powerful spells—those that can alter a creature's form, open pathways to other worlds, or kill with a single word—are jealously guarded secrets even among friendly spellcasters, including between master and apprentice. But that only makes you willing to brave nearly any threat to search for such things, even in dangerous locations far below ground. You're happy to rely on the physical protection provided by others in your group who are more armed and armored, leaving more esoteric threats and puzzles to your elevated talents. And any time potentially enchanted loot or treasure is discovered, others in the group are likely hoping you, with your intelligence and experience, can explain their function. That's not to say you're not a threat in your own right—you know at least one spell capable of magically blasting foes, and if you survive, you hope to learn even more.</p>"
+    "description": "<p>You cast spells of blasting fire, magical protection, and force at a distance. As a spellcaster, you're always on the lookout for new arcane secrets, magic lore, and spells you can add to your repertoire. You understand that the most powerful spells—those that can alter a creature's form, open pathways to other worlds, or kill with a single word—are jealously guarded secrets even among friendly spellcasters, including between master and apprentice. But that only makes you willing to brave nearly any threat to search for such things, even in dangerous locations far below ground. You're happy to rely on the physical protection provided by others in your group who are more armed and armored, leaving more esoteric threats and puzzles to your elevated talents. And any time potentially enchanted loot or treasure is discovered, others in the group are likely hoping you, with your intelligence and experience, can explain their function. That's not to say you're not a threat in your own right—you know at least one spell capable of magically blasting foes, and if you survive, you hope to learn even more.</p>",
+    "abilityTiers": [
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.62fb10cd0bc47fa2",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.acf0c1f7bd9004c7",
+        "tier": 1
+      },
+      {
+        "ability": "Compendium.cypher.abilities-fr.Item.77134707a2e7dee3",
+        "tier": 1
+      }
+    ]
   },
   "folder": "N6LoBZte2sRtJhu7",
   "sort": 0,
@@ -45,6 +59,24 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "type.mage",
+        "language": "fr",
+        "sourceKind": "record",
+        "sourceLogicalId": "type.mage",
+        "section": "Character Creation — Type — Mage — Abilities",
+        "sourceLocator": "CRD — Type: mage",
+        "transformations": [
+          "mechanical fields extracted from the CRD",
+          "French localization paired to the canonical English Type",
+          "Type ability occurrences represented as standalone Ability UUID references"
+        ]
+      }
     }
-  }
+  },
+  "document": "Item",
+  "crdType": "type"
 }
