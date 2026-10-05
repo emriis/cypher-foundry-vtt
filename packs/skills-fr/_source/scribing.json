@@ -1,0 +1,32 @@
+{
+  "_id": "d5534cd4scribing",
+  "_key": "!items!d5534cd4scribing",
+  "document": "Item",
+  "name": "Scribing",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "crdType": "skill",
+  "system": {
+    "stat": "none",
+    "level": "trained",
+    "attackCategory": "",
+    "minimumTier": null,
+    "description": "<p>You are adroit at copying texts, illustrating manuscripts, and preparing official documents by hand. (Scribing is usually an option in any setting except modern real world and science fiction. Someone interested in scribing in a modern real-world or sci-fi setting might choose publishing instead.)</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "skill.scribing",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Character Creation — Tier-Restricted Skills — Master Skill List",
+        "sourceLocator": "CRD pp. 9–18",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "skill.scribing"
+      }
+    }
+  }
+}
