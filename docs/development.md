@@ -62,7 +62,18 @@ Run the behavior suite directly with:
 npm run test:behavior
 ```
 
-The full test suite includes behavior tests automatically.
+During active Phase C work, prefer batching related changes and running one
+consolidated local validation rather than rerunning the full suite after every
+individual test file. The recommended final local check is:
+
+```powershell
+npm run test:all
+```
+
+This covers rules, applications, documents, migrations, content, integration,
+and behavior tests. CI runs those categories independently so a failure in one
+category does not hide failures in another. The full test suite includes
+behavior tests automatically.
 
 Run the architecture-boundary contract when changing module dependencies:
 
