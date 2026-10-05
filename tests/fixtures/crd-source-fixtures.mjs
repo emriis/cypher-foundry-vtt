@@ -353,6 +353,7 @@ export const CRD_TIERED_ABILITY_FIXTURE = item(
           "You can choose a low or medium-power manifest cypher as " +
           "your brewed potion.",
         effort: "",
+        modifiers: [],
         endConditions: []
       },
       {
