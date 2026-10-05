@@ -10,6 +10,7 @@ import {
   clampEffortLevels,
   computeEffortCost,
   computeTaskSteps,
+  resolveSpecialRoll,
   resolveTaskDifficulty
 } from "../rules/tasks.mjs";
 import { resolveStat } from "../rules/stats.mjs";
@@ -163,24 +164,23 @@ export async function rollTask(actor, {
     const d20 = roll.total;
     const success = effectiveDifficulty <= 0 ? true : d20 >= targetNumber;
 
-    // Special results on 1 / 17 / 18 / 19 / 20, as defined by the rules.
-    let damageBonus = 0;
-    let effectText = "";
-    let refund = false;
-
-    if (d20 === 1) {
-      effectText = game.i18n.localize("CYPHER.Roll.GMIntrusionFree");
-    } else if (success && isAttack) {
-      if (d20 === 17) damageBonus = 1;
-      else if (d20 === 18) damageBonus = 2;
-      else if (d20 === 19) damageBonus = 3;
-      else if (d20 === 20) { damageBonus = 4; refund = true; }
-    } else if (success && d20 === 19) {
-      effectText = game.i18n.localize("CYPHER.Roll.MinorEffect");
-    } else if (success && d20 === 20) {
-      effectText = game.i18n.localize("CYPHER.Roll.MajorEffect");
-      refund = true;
-    }
+    // Resolve CRD special outcomes in the pure rules layer. The application
+    // layer only translates the resulting mechanics into Foundry state/chat.
+    const special = resolveSpecialRoll({
+      d20,
+      success,
+      isAttack,
+      inflictsDamage: isAttack && success && baseDamage > 0
+    });
+    const damageBonus = special.damageBonus;
+    const effectText = special.gmIntrusion
+      ? game.i18n.localize("CYPHER.Roll.GMIntrusionFree")
+      : special.effect === "minor"
+        ? game.i18n.localize("CYPHER.Roll.MinorEffect")
+        : special.effect === "major"
+          ? game.i18n.localize("CYPHER.Roll.MajorEffect")
+          : "";
+    const refund = special.refundsCost;
 
     // A natural 20 refunds the action's point cost.
     if (refund && totalCost > 0) {
