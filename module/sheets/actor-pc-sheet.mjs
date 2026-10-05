@@ -255,7 +255,18 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     const effects = item?.system.effects ?? [];
     if (!item || !effects.length) return;
 
-    const effectId = await foundry.applications.api.DialogV2.prompt({
+    const cost = item.system.cost ?? {};
+    const costChoiceField = cost.stat === "choice" ? `
+      <div class="form-group">
+        <label>${game.i18n.localize("CYPHER.Stat.Label")}</label>
+        <select name="costStat">
+          ${(cost.options ?? []).map(stat =>
+            `<option value="${stat}">${game.i18n.localize(`CYPHER.Stat.${stat}`)}</option>`
+          ).join("")}
+        </select>
+      </div>` : "";
+
+    const selection = await foundry.applications.api.DialogV2.prompt({
       window: { title: item.name },
       content: `<fieldset class="cypher-ability-effects">
         <legend>${game.i18n.localize("CYPHER.Ability.ChooseEffect")}</legend>
@@ -267,15 +278,21 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
             ${effect.effort ? `<em>${game.i18n.localize("CYPHER.Ability.Effort")}: ${effect.effort}</em>` : ""}
           </label>
         `).join("")}
-      </fieldset>`,
+      </fieldset>
+      ${costChoiceField}`,
       ok: {
         label: game.i18n.localize("CYPHER.Confirm.Add"),
-        callback: (event, button) => button.form.querySelector("input[name=effectId]:checked")?.value ?? null
+        callback: (event, button) => ({
+          effectId: button.form.querySelector("input[name=effectId]:checked")?.value ?? null,
+          costStat: button.form.costStat?.value ?? null
+        })
       }
     });
-    if (!effectId) return;
+    if (!selection?.effectId) return;
 
-    await chooseAbilityEffect(item, effectId);
+    await chooseAbilityEffect(item, selection.effectId, {
+      costStat: selection.costStat
+    });
   }
 
   /**
