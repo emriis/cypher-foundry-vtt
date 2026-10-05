@@ -60,7 +60,6 @@ function stripEditorial(value) {
 function mechanicalEffectShape(effect) {
   return {
     id: effect.id ?? "",
-    effort: effect.effort ?? "",
     rollTables: effect.rollTables ?? []
   };
 }
