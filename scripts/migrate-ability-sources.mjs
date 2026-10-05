@@ -78,8 +78,12 @@ function canonicalMechanicalShape(ability) {
   return shape;
 }
 
-function isGmIntrusionEntry(ability) {
+function isAbilityParserArtifact(ability) {
   return /\bgm intrusions\b/i.test(String(ability.name ?? ""));
+}
+
+function isAbilityParserArtifact(ability) {
+  return isAbilityParserArtifact(ability) || ability.name === "At higher tiers";
 }
 
 function identity(ability) {
@@ -287,7 +291,7 @@ async function collectEnglishRegistry() {
       if (document._key?.startsWith("!folders!")) continue;
 
       for (const ability of document.system?.abilities ?? []) {
-        if (!ability || typeof ability !== "object" || isGmIntrusionEntry(ability)) continue;
+        if (!ability || typeof ability !== "object" || isAbilityParserArtifact(ability)) continue;
         const id = identity(ability);
         const entryKey = `${id.key}:${id.signature}`;
         if (!registry.has(entryKey)) registry.set(entryKey, {
@@ -456,7 +460,7 @@ async function migrateLanguage(language, english, englishLogicalIds) {
   const documents = await collectDocuments(language);
   const hasLegacyAbilities = documents.some(({ document }) =>
     (document.system?.abilities ?? []).some(
-      ability => ability && typeof ability === "object" && !isGmIntrusionEntry(ability)
+      ability => ability && typeof ability === "object" && !isAbilityParserArtifact(ability)
     )
   );
   if (!hasLegacyAbilities) {
@@ -468,7 +472,7 @@ async function migrateLanguage(language, english, englishLogicalIds) {
 
   for (const { document } of documents) {
     for (const ability of document.system?.abilities ?? []) {
-      if (!ability || typeof ability !== "object" || isGmIntrusionEntry(ability)) continue;
+      if (!ability || typeof ability !== "object" || isAbilityParserArtifact(ability)) continue;
       const resolved = language === "fr"
         ? resolveFrenchEntry(ability, english)
         : {
@@ -581,7 +585,8 @@ export async function migrateAbilitySources() {
   const englishLogicalIds = await collectStandaloneEnglishLogicalIds();
   await migrateLanguage("en", english);
   await migrateLanguage("fr", english);
-  await pruneAbilityArtifacts();
+  const finalRemovedAbilityIds = await pruneAbilityArtifacts();
+  await pruneAbilityReferences(finalRemovedAbilityIds);
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
