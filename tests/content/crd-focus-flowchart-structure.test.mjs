@@ -1,1 +1,169 @@
-import assert from "node:assert/strict";\nimport fs from "node:fs";\nimport path from "node:path";\nimport test from "node:test";\n\nconst root = path.resolve(import.meta.dirname, "../..");\n\nfunction readSources(family, language) {\n  const directory = path.join(\n    root,\n    "packs",\n    family + "-" + language,\n    "_source"\n  );\n\n  return fs.readdirSync(directory)\n    .filter(file => file.endsWith(".json"))\n    .map(file => JSON.parse(\n      fs.readFileSync(path.join(directory, file), "utf8")\n    ))\n    .filter(document => !document._key?.startsWith("!folders!"));\n}\n\nfunction abilityId(reference) {\n  if (typeof reference !== "string") return null;\n  return reference.match(/Item\.([A-Za-z0-9]{16})$/)?.[1] ?? null;\n}\n\nfunction validateFlowchart(focus, abilities) {\n  const label = focus.name;\n  const referencedIds = new Set(\n    (focus.system.abilities ?? []).map(abilityId)\n  );\n  const nodes = new Map();\n\n  for (const id of referencedIds) {\n    const ability = abilities.get(id);\n    assert.ok(ability, label + ": missing Ability source " + id);\n\n    const tier = ability.system?.tier;\n    assert.ok(\n      Number.isInteger(tier),\n      label + ": missing tier for Ability " + id\n    );\n\n    nodes.set(id, { tier, key: ability.system?.key ?? id });\n  }\n\n  const edges = focus.system.flowchart?.edges ?? [];\n  assert.ok(edges.length > 0, label + ": flowchart has no edges");\n\n  const edgeKeys = new Set();\n  const incoming = new Set();\n  const adjacency = new Map();\n\n  for (const edge of edges) {\n    assert.ok(\n      nodes.has(edge.from),\n      label + ": unknown edge source " + edge.from\n    );\n    assert.ok(\n      nodes.has(edge.to),\n      label + ": unknown edge target " + edge.to\n    );\n    assert.notEqual(\n      edge.from,\n      edge.to,\n      label + ": self-referential edge " + edge.from\n    );\n\n    const edgeKey = edge.from + "->" + edge.to;\n    assert.equal(\n      edgeKeys.has(edgeKey),\n      false,\n      label + ": duplicate edge " + edgeKey\n    );\n    edgeKeys.add(edgeKey);\n\n    const fromTier = nodes.get(edge.from).tier;\n    const toTier = nodes.get(edge.to).tier;\n\n    assert.equal(\n      toTier,\n      fromTier + 1,\n      label + ": edge " + nodes.get(edge.from).key + " -> " +\n        nodes.get(edge.to).key + " skips or repeats a tier (" +\n        fromTier + " -> " + toTier + ")"\n    );\n\n    incoming.add(edge.to);\n    if (!adjacency.has(edge.from)) adjacency.set(edge.from, []);\n    adjacency.get(edge.from).push(edge.to);\n  }\n\n  for (const [id, node] of nodes) {\n    if (node.tier > 1) {\n      assert.ok(\n        incoming.has(id),\n        label + ": non-tier-1 Ability " + node.key +\n          " has no prerequisite edge"\n      );\n    }\n  }\n\n  const tierOne = [...nodes]\n    .filter(([, node]) => node.tier === 1)\n    .map(([id]) => id);\n\n  assert.ok(\n    tierOne.length > 0,\n    label + ": flowchart has no tier-1 Ability"\n  );\n\n  const reachable = new Set(tierOne);\n  const queue = [...tierOne];\n\n  while (queue.length > 0) {\n    const current = queue.shift();\n    for (const next of adjacency.get(current) ?? []) {\n      if (!reachable.has(next)) {\n        reachable.add(next);\n        queue.push(next);\n      }\n    }\n  }\n\n  for (const [id, node] of nodes) {\n    if (node.tier > 1) {\n      assert.ok(\n        reachable.has(id),\n        label + ": Ability " + node.key +\n          " is not reachable from a tier-1 Ability"\n      );\n    }\n  }\n}\n\nfor (const language of ["en", "fr"]) {\n  test(\n    "CRD Focus " + language.toUpperCase() +\n      " flowcharts preserve tier progression",\n    () => {\n      const foci = readSources("foci", language);\n      const abilities = new Map(\n        readSources("abilities", language).map(document => [\n          document._id,\n          document\n        ])\n      );\n\n      const failures = [];\n\n      for (const focus of foci) {\n        try {\n          validateFlowchart(focus, abilities);\n        } catch (error) {\n          failures.push(focus.name + ": " + error.message);\n        }\n      }\n\n      assert.deepEqual(\n        failures,\n        [],\n        "Focus flowchart structure failures (" +\n          language.toUpperCase() + ")"\n      );\n    }\n  );\n}\n
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import path from "node:path";
+import test from "node:test";
+
+const root = path.resolve(import.meta.dirname, "../..");
+
+function readSources(family, language) {
+  const directory = path.join(
+    root,
+    "packs",
+    family + "-" + language,
+    "_source"
+  );
+
+  return fs.readdirSync(directory)
+    .filter(file => file.endsWith(".json"))
+    .map(file => JSON.parse(
+      fs.readFileSync(path.join(directory, file), "utf8")
+    ))
+    .filter(document => !document._key?.startsWith("!folders!"));
+}
+
+function abilityId(reference) {
+  if (typeof reference !== "string") return null;
+  return reference.match(/Item\.([A-Za-z0-9]{16})$/)?.[1] ?? null;
+}
+
+function validateFlowchart(focus, abilities) {
+  const label = focus.name;
+  const referencedIds = new Set(
+    (focus.system.abilities ?? []).map(abilityId)
+  );
+  const nodes = new Map();
+
+  for (const id of referencedIds) {
+    const ability = abilities.get(id);
+    assert.ok(ability, label + ": missing Ability source " + id);
+
+    const tier = ability.system?.tier;
+    assert.ok(
+      Number.isInteger(tier),
+      label + ": missing tier for Ability " + id
+    );
+
+    nodes.set(id, { tier, key: ability.system?.key ?? id });
+  }
+
+  const edges = focus.system.flowchart?.edges ?? [];
+  assert.ok(edges.length > 0, label + ": flowchart has no edges");
+
+  const edgeKeys = new Set();
+  const incoming = new Set();
+  const adjacency = new Map();
+
+  for (const edge of edges) {
+    assert.ok(
+      nodes.has(edge.from),
+      label + ": unknown edge source " + edge.from
+    );
+    assert.ok(
+      nodes.has(edge.to),
+      label + ": unknown edge target " + edge.to
+    );
+    assert.notEqual(
+      edge.from,
+      edge.to,
+      label + ": self-referential edge " + edge.from
+    );
+
+    const edgeKey = edge.from + "->" + edge.to;
+    assert.equal(
+      edgeKeys.has(edgeKey),
+      false,
+      label + ": duplicate edge " + edgeKey
+    );
+    edgeKeys.add(edgeKey);
+
+    const fromTier = nodes.get(edge.from).tier;
+    const toTier = nodes.get(edge.to).tier;
+
+    assert.equal(
+      toTier,
+      fromTier + 1,
+      label + ": edge " + nodes.get(edge.from).key + " -> " +
+        nodes.get(edge.to).key + " skips or repeats a tier (" +
+        fromTier + " -> " + toTier + ")"
+    );
+
+    incoming.add(edge.to);
+    if (!adjacency.has(edge.from)) adjacency.set(edge.from, []);
+    adjacency.get(edge.from).push(edge.to);
+  }
+
+  for (const [id, node] of nodes) {
+    if (node.tier > 1) {
+      assert.ok(
+        incoming.has(id),
+        label + ": non-tier-1 Ability " + node.key +
+          " has no prerequisite edge"
+      );
+    }
+  }
+
+  const tierOne = [...nodes]
+    .filter(([, node]) => node.tier === 1)
+    .map(([id]) => id);
+
+  assert.ok(
+    tierOne.length > 0,
+    label + ": flowchart has no tier-1 Ability"
+  );
+
+  const reachable = new Set(tierOne);
+  const queue = [...tierOne];
+
+  while (queue.length > 0) {
+    const current = queue.shift();
+    for (const next of adjacency.get(current) ?? []) {
+      if (!reachable.has(next)) {
+        reachable.add(next);
+        queue.push(next);
+      }
+    }
+  }
+
+  for (const [id, node] of nodes) {
+    if (node.tier > 1) {
+      assert.ok(
+        reachable.has(id),
+        label + ": Ability " + node.key +
+          " is not reachable from a tier-1 Ability"
+      );
+    }
+  }
+}
+
+for (const language of ["en", "fr"]) {
+  test(
+    "CRD Focus " + language.toUpperCase() +
+      " flowcharts preserve tier progression",
+    () => {
+      const foci = readSources("foci", language);
+      const abilities = new Map(
+        readSources("abilities", language).map(document => [
+          document._id,
+          document
+        ])
+      );
+
+      const failures = [];
+
+      for (const focus of foci) {
+        try {
+          validateFlowchart(focus, abilities);
+        } catch (error) {
+          failures.push(focus.name + ": " + error.message);
+        }
+      }
+
+      assert.deepEqual(
+        failures,
+        [],
+        "Focus flowchart structure failures (" +
+          language.toUpperCase() + ")"
+      );
+    }
+  );
+}
