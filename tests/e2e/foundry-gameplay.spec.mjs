@@ -1,4 +1,29 @@
 test.describe("Cypher Foundry live gameplay", () => {
+  test("renders a complete playable PC dashboard for a newly created actor", async ({
+    page
+  }) => {
+    const actorId = await createActor(page);
+
+    await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      await actor.sheet.render(true);
+    }, actorId);
+
+    await expect(page.locator(".pc-dashboard")).toBeVisible();
+    await expect(page.locator('input[name="name"]').first()).toBeVisible();
+    await expect(page.locator('[data-action="rollStat"][data-stat="might"]')).toBeVisible();
+    await expect(page.locator('[data-action="rollStat"][data-stat="speed"]')).toBeVisible();
+    await expect(page.locator('[data-action="rollStat"][data-stat="intellect"]')).toBeVisible();
+    await expect(page.locator('[data-action="rollDefense"][data-defense-type="block"]')).toBeVisible();
+    await expect(page.locator('[data-action="rollDefense"][data-defense-type="dodge"]')).toBeVisible();
+    await expect(page.locator(".pc-skills")).toBeVisible();
+    await expect(page.locator(".pc-abilities")).toBeVisible();
+    await expect(page.locator(".pc-advancement")).toBeVisible();
+    await expect(page.locator("nav.tabs")).toHaveCount(0);
+
+    await page.evaluate(id => game.actors.get(id)?.sheet.close(), actorId);
+  });
+
 e.mjs";
 
 const ACTOR_PREFIX = "E2E Cypher";
