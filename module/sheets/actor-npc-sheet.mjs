@@ -21,8 +21,12 @@ export default class CypherNPCSheet extends HandlebarsApplicationMixin(ActorShee
 
   /** Handlebars template parts rendered by the sheet. */
   static PARTS = {
-    header: { template: "systems/cypher/templates/actor/npc/header.hbs" },
-    body: { template: "systems/cypher/templates/actor/npc/body.hbs", scrollable: [""] }
+    body: {
+      root: true,
+      template: "systems/cypher/templates/actor/npc/body.hbs",
+      templates: ["systems/cypher/templates/actor/npc/header.hbs"],
+      scrollable: [".npc-body"]
+    }
   };
 
   /**
