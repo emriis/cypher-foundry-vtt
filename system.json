@@ -210,6 +210,30 @@
         "ASSISTANT": "OWNER"
       },
       "flags": {}
+    },
+    {
+      "name": "equipment-fr",
+      "label": "Équipement (FR)",
+      "path": "packs/equipment-fr",
+      "type": "Item",
+      "system": "cypher",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "equipment-en",
+      "label": "Equipment (EN)",
+      "path": "packs/equipment-en",
+      "type": "Item",
+      "system": "cypher",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
     }
   ],
   "packFolders": [
@@ -222,7 +246,8 @@
         "descriptors-fr",
         "types-fr",
         "foci-fr",
-        "rules-fr"
+        "rules-fr",
+        "equipment-fr"
       ]
     },
     {
@@ -234,7 +259,8 @@
         "descriptors-en",
         "types-en",
         "foci-en",
-        "rules-en"
+        "rules-en",
+        "equipment-en"
       ]
     }
   ],
