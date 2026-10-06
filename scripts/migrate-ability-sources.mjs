@@ -204,6 +204,31 @@ async function sourceFiles(pack) {
     .map(file => path.join(dir, file));
 }
 
+async function normalizeEquipmentSources() {
+  for (const language of LANGUAGES) {
+    const directory = path.join(root, "packs", `equipment-${language}`, "_source");
+
+    for (const relativeFile of await fs.readdir(directory, { recursive: true })) {
+      if (!relativeFile.endsWith(".json")) continue;
+
+      const filePath = path.join(directory, relativeFile);
+      const document = JSON.parse(await fs.readFile(filePath, "utf8"));
+      if (document._key?.startsWith("!folders!")) continue;
+
+      const logicalId = document.flags?.cypherFoundry?.crd?.logicalId;
+      if (!logicalId) {
+        throw new Error(`Equipment source "${filePath}" is missing its CRD logicalId.`);
+      }
+
+      const id = hash(logicalId).slice(0, 16);
+      document._id = id;
+      document._key = `!items!${id}`;
+
+      await fs.writeFile(filePath, JSON.stringify(document, null, 2) + "\n");
+    }
+  }
+}
+
 async function normalizeDescriptorSources() {
   const descriptorPacks = LANGUAGES.map(language => ({
     language,
@@ -1155,6 +1180,7 @@ export async function migrateAbilitySources() {
   await normalizeDescriptorSources();
   await normalizeTypeSources();
   await normalizeFocusSources();
+  await normalizeEquipmentSources();
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

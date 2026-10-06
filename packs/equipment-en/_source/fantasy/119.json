@@ -1,0 +1,53 @@
+{
+  "_id": "71afd498d0077",
+  "_key": "!items!71afd498d0077",
+  "document": "Item",
+  "name": "Light crossbow",
+  "type": "attack",
+  "crdType": "weapon",
+  "system": {
+    "attackType": "medium",
+    "range": "long",
+    "extremeRange": "",
+    "damage": 4,
+    "stat": "might",
+    "weaponFamily": "",
+    "attackSkillCategory": "",
+    "priceCategory": "expensive",
+    "properties": [
+      "Medium weapon, long range"
+    ],
+    "mechanics": {
+      "twoHanded": false,
+      "rapidFire": false,
+      "ignoresPhysicalArmor": 0,
+      "cutsThroughMaterialsLevel": null,
+      "targetEffects": [],
+      "requiresTripod": false,
+      "requiredOperators": 0,
+      "alternateConfiguration": {
+        "enabled": false,
+        "attackType": "",
+        "action": ""
+      }
+    },
+    "freelyUsable": false,
+    "equipped": false,
+    "description": "Medium weapon, long range"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Fantasy.Light crossbow",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Fantasy Equipment",
+        "sourceLocator": "Fantasy Equipment — expensive Items — Light crossbow",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

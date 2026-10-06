@@ -1,0 +1,35 @@
+{
+  "_id": "aa87bee538033",
+  "_key": "!items!aa87bee538033",
+  "document": "Item",
+  "name": "Environment tent",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "moderate",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Wounds from extreme temperature environments are reduced by two steps"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Environment tent",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — moderate Items — Environment tent",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

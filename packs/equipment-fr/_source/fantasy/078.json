@@ -1,0 +1,36 @@
+{
+  "_id": "71afd498d004e",
+  "_key": "!items!71afd498d004e",
+  "document": "Item",
+  "name": "Oil flask",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "moderate",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Fuels a lamp for three to four hours; can be prepped with a wick, lit, and thrown up to short range for 2 fire damage"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Fantasy.Oil flask",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Fantasy Equipment",
+        "sourceLocator": "Fantasy Equipment — moderate Items — Oil flask",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Fantasy.Oil flask"
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "_id": "71afd498d008f",
+  "_key": "!items!71afd498d008f",
+  "document": "Item",
+  "name": "Elven chainmail",
+  "type": "armor",
+  "crdType": "armor",
+  "system": {
+    "category": "medium",
+    "freelyUsable": false,
+    "equipped": false,
+    "blockEaseDamage": 0,
+    "priceCategory": "exorbitant",
+    "description": "Medium armor, encumbers as light armor"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Fantasy.Elven chainmail",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Fantasy Equipment",
+        "sourceLocator": "Fantasy Equipment — exorbitant Items — Elven chainmail",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "_id": "e35fa931a002b",
+  "_key": "!items!e35fa931a002b",
+  "document": "Item",
+  "name": "Multitool knife",
+  "type": "attack",
+  "crdType": "weapon",
+  "system": {
+    "attackType": "light",
+    "range": "immediate",
+    "extremeRange": "",
+    "damage": 2,
+    "stat": "might",
+    "weaponFamily": "",
+    "attackSkillCategory": "",
+    "priceCategory": "moderate",
+    "properties": [
+      "Light weapon; asset to small repair tasks"
+    ],
+    "mechanics": {
+      "twoHanded": false,
+      "rapidFire": false,
+      "ignoresPhysicalArmor": 0,
+      "cutsThroughMaterialsLevel": null,
+      "targetEffects": [],
+      "requiresTripod": false,
+      "requiredOperators": 0,
+      "alternateConfiguration": {
+        "enabled": false,
+        "attackType": "",
+        "action": ""
+      }
+    },
+    "freelyUsable": false,
+    "equipped": false,
+    "description": "Light weapon; asset to small repair tasks"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Postapocalypse.moderate.Multitool knife",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Postapocalypse Equipment",
+        "sourceLocator": "Postapocalypse Equipment — moderate Items — Multitool knife",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

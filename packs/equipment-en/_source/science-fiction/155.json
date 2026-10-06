@@ -1,0 +1,53 @@
+{
+  "_id": "aa87bee53809b",
+  "_key": "!items!aa87bee53809b",
+  "document": "Item",
+  "name": "Pulse laser pistol",
+  "type": "attack",
+  "crdType": "weapon",
+  "system": {
+    "attackType": "medium",
+    "range": "long",
+    "extremeRange": "",
+    "damage": 4,
+    "stat": "might",
+    "weaponFamily": "",
+    "attackSkillCategory": "",
+    "priceCategory": "veryExpensive",
+    "properties": [
+      "Medium weapon, rapid-fire weapon, long range"
+    ],
+    "mechanics": {
+      "twoHanded": false,
+      "rapidFire": true,
+      "ignoresPhysicalArmor": 0,
+      "cutsThroughMaterialsLevel": null,
+      "targetEffects": [],
+      "requiresTripod": false,
+      "requiredOperators": 0,
+      "alternateConfiguration": {
+        "enabled": false,
+        "attackType": "",
+        "action": ""
+      }
+    },
+    "freelyUsable": false,
+    "equipped": false,
+    "description": "Medium weapon, rapid-fire weapon, long range"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Pulse laser pistol",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — veryExpensive Items — Pulse laser pistol",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

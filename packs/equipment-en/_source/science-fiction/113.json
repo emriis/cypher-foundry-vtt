@@ -1,0 +1,35 @@
+{
+  "_id": "aa87bee538071",
+  "_key": "!items!aa87bee538071",
+  "document": "Item",
+  "name": "Portable hidden camera",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "expensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Transmits at long range"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Portable hidden camera",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — expensive Items — Portable hidden camera",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

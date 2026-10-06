@@ -1,0 +1,35 @@
+{
+  "_id": "71afd498d0017",
+  "_key": "!items!71afd498d0017",
+  "document": "Item",
+  "name": "Pitcher of cheap wine",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "inexpensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": ""
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Fantasy.Pitcher of cheap wine",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Fantasy Equipment",
+        "sourceLocator": "Fantasy Equipment — inexpensive Items — Pitcher of cheap wine",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

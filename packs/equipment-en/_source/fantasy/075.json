@@ -1,0 +1,35 @@
+{
+  "_id": "71afd498d004b",
+  "_key": "!items!71afd498d004b",
+  "document": "Item",
+  "name": "Matchsticks (10)",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "moderate",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Asset for creating fire"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Fantasy.Matchsticks (10)",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Fantasy Equipment",
+        "sourceLocator": "Fantasy Equipment — moderate Items — Matchsticks (10)",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "_id": "e35fa931a0002",
+  "_key": "!items!e35fa931a0002",
+  "document": "Item",
+  "name": "Animal hide",
+  "type": "armor",
+  "crdType": "armor",
+  "system": {
+    "category": "light",
+    "freelyUsable": false,
+    "equipped": false,
+    "blockEaseDamage": 0,
+    "priceCategory": "inexpensive",
+    "description": "Light armor, odor hinders stealth tasks"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Postapocalypse.inexpensive.Animal hide",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Postapocalypse Equipment",
+        "sourceLocator": "Postapocalypse Equipment — inexpensive Items — Animal hide",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Postapocalypse.inexpensive.Animal hide"
+      }
+    }
+  }
+}

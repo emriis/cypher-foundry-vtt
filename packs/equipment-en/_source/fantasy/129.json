@@ -1,0 +1,53 @@
+{
+  "_id": "71afd498d0081",
+  "_key": "!items!71afd498d0081",
+  "document": "Item",
+  "name": "Saber",
+  "type": "attack",
+  "crdType": "weapon",
+  "system": {
+    "attackType": "medium",
+    "range": "immediate",
+    "extremeRange": "",
+    "damage": 4,
+    "stat": "might",
+    "weaponFamily": "",
+    "attackSkillCategory": "",
+    "priceCategory": "expensive",
+    "properties": [
+      "Medium weapon GM intrusion: The character’s limited-use piece of equipment (like a healer’s kit, disguise kit, or or box of ammunition) has run out. Perhaps they used it all up and didn’t realize, they spilled some, it’s expired, or it’s been ruined somehow. Very Expensive Items Item Note"
+    ],
+    "mechanics": {
+      "twoHanded": false,
+      "rapidFire": false,
+      "ignoresPhysicalArmor": 0,
+      "cutsThroughMaterialsLevel": null,
+      "targetEffects": [],
+      "requiresTripod": false,
+      "requiredOperators": 0,
+      "alternateConfiguration": {
+        "enabled": false,
+        "attackType": "",
+        "action": ""
+      }
+    },
+    "freelyUsable": false,
+    "equipped": false,
+    "description": "Medium weapon GM intrusion: The character’s limited-use piece of equipment (like a healer’s kit, disguise kit, or or box of ammunition) has run out. Perhaps they used it all up and didn’t realize, they spilled some, it’s expired, or it’s been ruined somehow. Very Expensive Items Item Note"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Fantasy.Saber",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Fantasy Equipment",
+        "sourceLocator": "Fantasy Equipment — expensive Items — Saber",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

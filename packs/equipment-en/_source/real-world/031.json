@@ -1,0 +1,35 @@
+{
+  "_id": "38d7ea4c6801f",
+  "_key": "!items!38d7ea4c6801f",
+  "document": "Item",
+  "name": "Bolt cutter",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "moderate",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Cuts objects like bolts, chains, and bars up to level 5"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Real-World.Bolt cutter",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Real-World Equipment",
+        "sourceLocator": "Real-World Equipment — moderate Items — Bolt cutter",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "_id": "e35fa931a0015",
+  "_key": "!items!e35fa931a0015",
+  "document": "Item",
+  "name": "Binoculars",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "moderate",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Asset for perception tasks at long range or longer"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Postapocalypse.moderate.Binoculars",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Postapocalypse Equipment",
+        "sourceLocator": "Postapocalypse Equipment — moderate Items — Binoculars",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

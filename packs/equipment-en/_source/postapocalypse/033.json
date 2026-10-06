@@ -1,0 +1,35 @@
+{
+  "_id": "e35fa931a0021",
+  "_key": "!items!e35fa931a0021",
+  "document": "Item",
+  "name": "First aid kit",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "moderate",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Asset for healing tasks; five uses"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Postapocalypse.moderate.First aid kit",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Postapocalypse Equipment",
+        "sourceLocator": "Postapocalypse Equipment — moderate Items — First aid kit",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

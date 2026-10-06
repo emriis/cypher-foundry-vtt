@@ -1,0 +1,36 @@
+{
+  "_id": "aa87bee538052",
+  "_key": "!items!aa87bee538052",
+  "document": "Item",
+  "name": "Space-fit serum",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "moderate",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Restores 3 points to one Pool; gives one month of protection against long-term health problems caused by space travel’s low gravity and cosmic radiation"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Space-fit serum",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — moderate Items — Space-fit serum",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Science Fiction.Space-fit serum"
+      }
+    }
+  }
+}

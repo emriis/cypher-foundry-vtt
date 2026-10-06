@@ -1,0 +1,31 @@
+{
+  "_id": "aa87bee538057",
+  "_key": "!items!aa87bee538057",
+  "document": "Item",
+  "name": "Armored bodysuit",
+  "type": "armor",
+  "crdType": "armor",
+  "system": {
+    "category": "medium",
+    "freelyUsable": false,
+    "equipped": false,
+    "blockEaseDamage": 0,
+    "priceCategory": "expensive",
+    "description": "Medium armor"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Armored bodysuit",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — expensive Items — Armored bodysuit",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "_id": "aa87bee538005",
+  "_key": "!items!aa87bee538005",
+  "document": "Item",
+  "name": "Cryo storage",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "inexpensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "One month (or more . . . ) in an unused deep freeze locker"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Cryo storage",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — inexpensive Items — Cryo storage",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

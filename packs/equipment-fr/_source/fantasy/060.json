@@ -1,0 +1,32 @@
+{
+  "_id": "71afd498d003c",
+  "_key": "!items!71afd498d003c",
+  "document": "Item",
+  "name": "Hides and furs",
+  "type": "armor",
+  "crdType": "armor",
+  "system": {
+    "category": "light",
+    "freelyUsable": false,
+    "equipped": false,
+    "blockEaseDamage": 0,
+    "priceCategory": "moderate",
+    "description": "Light armor"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Fantasy.Hides and furs",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Fantasy Equipment",
+        "sourceLocator": "Fantasy Equipment — moderate Items — Hides and furs",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Fantasy.Hides and furs"
+      }
+    }
+  }
+}

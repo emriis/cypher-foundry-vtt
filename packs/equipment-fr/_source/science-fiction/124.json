@@ -1,0 +1,32 @@
+{
+  "_id": "aa87bee53807c",
+  "_key": "!items!aa87bee53807c",
+  "document": "Item",
+  "name": "Spray-on impact armor",
+  "type": "armor",
+  "crdType": "armor",
+  "system": {
+    "category": "light",
+    "freelyUsable": false,
+    "equipped": false,
+    "blockEaseDamage": 0,
+    "priceCategory": "expensive",
+    "description": "Device creates nanofiber armor over skin or clothing for ten minutes, protects as light armor without hindering dodge tasks; applicator depletion 1 in 1d10"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Spray-on impact armor",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — expensive Items — Spray-on impact armor",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Science Fiction.Spray-on impact armor"
+      }
+    }
+  }
+}

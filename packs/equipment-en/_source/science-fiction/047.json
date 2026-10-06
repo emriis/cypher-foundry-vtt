@@ -1,0 +1,35 @@
+{
+  "_id": "aa87bee53802f",
+  "_key": "!items!aa87bee53802f",
+  "document": "Item",
+  "name": "Digital intoxicant",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "moderate",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": ""
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Digital intoxicant",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — moderate Items — Digital intoxicant",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

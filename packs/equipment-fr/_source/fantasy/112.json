@@ -1,0 +1,32 @@
+{
+  "_id": "71afd498d0070",
+  "_key": "!items!71afd498d0070",
+  "document": "Item",
+  "name": "Chainmail",
+  "type": "armor",
+  "crdType": "armor",
+  "system": {
+    "category": "medium",
+    "freelyUsable": false,
+    "equipped": false,
+    "blockEaseDamage": 0,
+    "priceCategory": "expensive",
+    "description": "Medium armor"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Fantasy.Chainmail",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Fantasy Equipment",
+        "sourceLocator": "Fantasy Equipment — expensive Items — Chainmail",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Fantasy.Chainmail"
+      }
+    }
+  }
+}

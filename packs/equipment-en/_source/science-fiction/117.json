@@ -1,0 +1,35 @@
+{
+  "_id": "aa87bee538075",
+  "_key": "!items!aa87bee538075",
+  "document": "Item",
+  "name": "Portable scanner",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "expensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Two-handed device; asset on tasks to detect and identify life forms, machines, metal deposits, electronic transmissions, energy fields, and power sources in long range"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Portable scanner",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — expensive Items — Portable scanner",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

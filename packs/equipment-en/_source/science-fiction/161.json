@@ -1,0 +1,53 @@
+{
+  "_id": "aa87bee5380a1",
+  "_key": "!items!aa87bee5380a1",
+  "document": "Item",
+  "name": "Vacuum pistol",
+  "type": "attack",
+  "crdType": "weapon",
+  "system": {
+    "attackType": "medium",
+    "range": "long",
+    "extremeRange": "",
+    "damage": 4,
+    "stat": "might",
+    "weaponFamily": "",
+    "attackSkillCategory": "",
+    "priceCategory": "veryExpensive",
+    "properties": [
+      "Medium weapon, long range Vacuum pistols and vacuum assault rifles use special self-propelling rounds that can fire in oxygen-free environments; the rounds produce no recoil, so firing the weapon doesn’t push or spin the character. Exorbitant Items Item Note"
+    ],
+    "mechanics": {
+      "twoHanded": false,
+      "rapidFire": false,
+      "ignoresPhysicalArmor": 0,
+      "cutsThroughMaterialsLevel": null,
+      "targetEffects": [],
+      "requiresTripod": false,
+      "requiredOperators": 0,
+      "alternateConfiguration": {
+        "enabled": false,
+        "attackType": "",
+        "action": ""
+      }
+    },
+    "freelyUsable": false,
+    "equipped": false,
+    "description": "Medium weapon, long range Vacuum pistols and vacuum assault rifles use special self-propelling rounds that can fire in oxygen-free environments; the rounds produce no recoil, so firing the weapon doesn’t push or spin the character. Exorbitant Items Item Note"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Vacuum pistol",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — veryExpensive Items — Vacuum pistol",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

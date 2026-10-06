@@ -1,0 +1,35 @@
+{
+  "_id": "aa87bee538045",
+  "_key": "!items!aa87bee538045",
+  "document": "Item",
+  "name": "Nightvision goggles",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "moderate",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Reasonably accurate vision in darkness up to long range"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.moderate Items.Nightvision goggles",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — moderate Items — Nightvision goggles",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

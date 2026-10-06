@@ -1,0 +1,54 @@
+{
+  "_id": "aa87bee5380a0",
+  "_key": "!items!aa87bee5380a0",
+  "document": "Item",
+  "name": "Vacuum assault rifle",
+  "type": "attack",
+  "crdType": "weapon",
+  "system": {
+    "attackType": "heavy",
+    "range": "long",
+    "extremeRange": "",
+    "damage": 6,
+    "stat": "might",
+    "weaponFamily": "",
+    "attackSkillCategory": "",
+    "priceCategory": "veryExpensive",
+    "properties": [
+      "Heavy weapon, rapid-fire weapon, long range; can switch to medium weapon configuration as an action"
+    ],
+    "mechanics": {
+      "twoHanded": false,
+      "rapidFire": true,
+      "ignoresPhysicalArmor": 0,
+      "cutsThroughMaterialsLevel": null,
+      "targetEffects": [],
+      "requiresTripod": false,
+      "requiredOperators": 0,
+      "alternateConfiguration": {
+        "enabled": true,
+        "attackType": "medium",
+        "action": "action"
+      }
+    },
+    "freelyUsable": false,
+    "equipped": false,
+    "description": "Heavy weapon, rapid-fire weapon, long range; can switch to medium weapon configuration as an action"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Vacuum assault rifle",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — veryExpensive Items — Vacuum assault rifle",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Science Fiction.Vacuum assault rifle"
+      }
+    }
+  }
+}

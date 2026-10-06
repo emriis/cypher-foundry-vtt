@@ -1,0 +1,36 @@
+{
+  "_id": "e35fa931a0048",
+  "_key": "!items!e35fa931a0048",
+  "document": "Item",
+  "name": "Homemade costume",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "inexpensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Looks cheap, easily destroyed Moderately Priced Items Item Note"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Superhero.inexpensive.Homemade costume",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Superhero Equipment",
+        "sourceLocator": "Superhero Equipment — inexpensive Items — Homemade costume",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Superhero.inexpensive.Homemade costume"
+      }
+    }
+  }
+}

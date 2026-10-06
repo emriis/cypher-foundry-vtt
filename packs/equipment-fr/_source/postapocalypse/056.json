@@ -1,0 +1,36 @@
+{
+  "_id": "e35fa931a0038",
+  "_key": "!items!e35fa931a0038",
+  "document": "Item",
+  "name": "Water filter straw",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "moderate",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Removes bacteria and parasites while drinking Expensive Items Item Note"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Postapocalypse.moderate.Water filter straw",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Postapocalypse Equipment",
+        "sourceLocator": "Postapocalypse Equipment — moderate Items — Water filter straw",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Postapocalypse.moderate.Water filter straw"
+      }
+    }
+  }
+}

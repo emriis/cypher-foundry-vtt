@@ -1,0 +1,32 @@
+{
+  "_id": "e35fa931a0028",
+  "_key": "!items!e35fa931a0028",
+  "document": "Item",
+  "name": "Leather jacket",
+  "type": "armor",
+  "crdType": "armor",
+  "system": {
+    "category": "light",
+    "freelyUsable": false,
+    "equipped": false,
+    "blockEaseDamage": 0,
+    "priceCategory": "moderate",
+    "description": "Light armor"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Postapocalypse.moderate.Leather jacket",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Postapocalypse Equipment",
+        "sourceLocator": "Postapocalypse Equipment — moderate Items — Leather jacket",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Postapocalypse.moderate.Leather jacket"
+      }
+    }
+  }
+}

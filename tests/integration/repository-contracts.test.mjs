@@ -69,41 +69,50 @@ test("locale interpolation placeholders use Foundry's single-brace format", () =
 
 test("each declared pack has a corresponding language-specific source set", () => {
   const manifest = readJson("system.json");
+  const failures = [];
 
   for (const pack of manifest.packs) {
     const sourceDirectory = path.join(root, pack.path, "_source");
     const sourceFiles = fs.readdirSync(sourceDirectory, { recursive: true }).filter(file => file.endsWith(".json"));
-    assert.ok(sourceFiles.length > 0, `Pack has no JSON source files: ${pack.name}`);
+    if (sourceFiles.length === 0) {
+      failures.push(`${pack.name}: pack has no JSON source files`);
+      continue;
+    }
 
     for (const file of sourceFiles) {
       const item = JSON.parse(fs.readFileSync(path.join(sourceDirectory, file), "utf8"));
+      const label = `${pack.name}/${file}`;
+
       if (item._key.startsWith("!folders!")) {
-        assert.match(item._key, /^!folders![A-Za-z0-9]{16}$/);
-        assert.equal(item.type, "Item");
-        assert.ok(item.name);
+        if (!/^!folders![A-Za-z0-9]{16}$/.test(item._key)) {
+          failures.push(`${label}: invalid folder compendium key: ${item._key}`);
+        }
+        if (item.type !== "Item") failures.push(`${label}: folder type must be Item`);
+        if (!item.name) failures.push(`${label}: folder name is missing`);
         continue;
       }
+
       if (pack.type === "Item") {
-        assert.ok(
-          manifest.documentTypes.Item[item.type],
-          `${pack.name}/${file} has an undeclared Item type`
-        );
-        assert.match(
-          item._key,
-          /^!items![A-Za-z0-9]{16}$/,
-          `${pack.name}/${file} has an invalid compendium key`
-        );
+        if (!manifest.documentTypes.Item[item.type]) {
+          failures.push(`${label}: undeclared Item type: ${item.type}`);
+        }
+        if (!/^!items![A-Za-z0-9]{16}$/.test(item._key)) {
+          failures.push(`${label}: invalid item compendium key: ${item._key}`);
+        }
+        if (item._id && item._key !== `!items!${item._id}`) {
+          failures.push(`${label}: _key does not match _id: ${item._id}`);
+        }
       } else {
-        assert.equal(item.document, "JournalEntry");
-        assert.equal(item.crdType, "journal");
-        assert.match(
-          item._key,
-          /^!journal![A-Za-z0-9]{16}$/,
-          `${pack.name}/${file} has an invalid JournalEntry key`
-        );
+        if (item.document !== "JournalEntry") failures.push(`${label}: document must be JournalEntry`);
+        if (item.crdType !== "journal") failures.push(`${label}: crdType must be journal`);
+        if (!/^!journal![A-Za-z0-9]{16}$/.test(item._key)) {
+          failures.push(`${label}: invalid JournalEntry key: ${item._key}`);
+        }
       }
     }
   }
+
+  assert.deepEqual(failures, [], failures.join("\n"));
 });
 
 test("static localization keys used by templates and modules exist in both locales", () => {

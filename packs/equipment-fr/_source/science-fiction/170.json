@@ -1,0 +1,36 @@
+{
+  "_id": "aa87bee5380aa",
+  "_key": "!items!aa87bee5380aa",
+  "document": "Item",
+  "name": "Robot servant",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 3,
+    "priceCategory": "exorbitant",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "level 3, positive social interactions as level 4; not permitted to harm people or pets"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Robot servant",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — exorbitant Items — Robot servant",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Science Fiction.Robot servant"
+      }
+    }
+  }
+}

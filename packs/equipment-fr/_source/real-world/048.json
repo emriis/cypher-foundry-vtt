@@ -1,0 +1,32 @@
+{
+  "_id": "38d7ea4c68030",
+  "_key": "!items!38d7ea4c68030",
+  "document": "Item",
+  "name": "Leather jacket",
+  "type": "armor",
+  "crdType": "armor",
+  "system": {
+    "category": "light",
+    "freelyUsable": false,
+    "equipped": false,
+    "blockEaseDamage": 0,
+    "priceCategory": "moderate",
+    "description": "Light armor"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Real-World.Leather jacket",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Real-World Equipment",
+        "sourceLocator": "Real-World Equipment — moderate Items — Leather jacket",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Real-World.Leather jacket"
+      }
+    }
+  }
+}

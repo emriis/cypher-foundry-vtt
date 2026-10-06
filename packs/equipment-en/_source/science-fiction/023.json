@@ -1,0 +1,35 @@
+{
+  "_id": "aa87bee538017",
+  "_key": "!items!aa87bee538017",
+  "document": "Item",
+  "name": "Survival rations (1 day)",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "inexpensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Moderately Priced Items Item Note"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Survival rations (1 day)",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — inexpensive Items — Survival rations (1 day)",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

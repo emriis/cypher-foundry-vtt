@@ -1,0 +1,35 @@
+{
+  "_id": "71afd498d0071",
+  "_key": "!items!71afd498d0071",
+  "document": "Item",
+  "name": "Compass",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "expensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Points north, eases some navigation tasks"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Fantasy.Compass",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Fantasy Equipment",
+        "sourceLocator": "Fantasy Equipment — expensive Items — Compass",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

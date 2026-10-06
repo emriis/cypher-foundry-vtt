@@ -1,0 +1,31 @@
+{
+  "_id": "71afd498d0083",
+  "_key": "!items!71afd498d0083",
+  "document": "Item",
+  "name": "Dwarven breastplate",
+  "type": "armor",
+  "crdType": "armor",
+  "system": {
+    "category": "medium",
+    "freelyUsable": false,
+    "equipped": false,
+    "blockEaseDamage": 1,
+    "priceCategory": "veryExpensive",
+    "description": "Medium armor, eases block tasks by an additional step"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Fantasy.Dwarven breastplate",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Fantasy Equipment",
+        "sourceLocator": "Fantasy Equipment — veryExpensive Items — Dwarven breastplate",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

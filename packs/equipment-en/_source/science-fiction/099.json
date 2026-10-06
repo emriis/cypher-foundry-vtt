@@ -1,0 +1,35 @@
+{
+  "_id": "aa87bee538063",
+  "_key": "!items!aa87bee538063",
+  "document": "Item",
+  "name": "High-end meal",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "expensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Hearty and extravagant meal for two or three at a high-end restaurant"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.High-end meal",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — expensive Items — High-end meal",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

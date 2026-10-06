@@ -1,0 +1,35 @@
+{
+  "_id": "e35fa931a0011",
+  "_key": "!items!e35fa931a0011",
+  "document": "Item",
+  "name": "Backpack",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "moderate",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": ""
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Postapocalypse.moderate.Backpack",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Postapocalypse Equipment",
+        "sourceLocator": "Postapocalypse Equipment — moderate Items — Backpack",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "_id": "e35fa931a0009",
+  "_key": "!items!e35fa931a0009",
+  "document": "Item",
+  "name": "Plastic bag",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "inexpensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Easily destroyed"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Postapocalypse.inexpensive.Plastic bag",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Postapocalypse Equipment",
+        "sourceLocator": "Postapocalypse Equipment — inexpensive Items — Plastic bag",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

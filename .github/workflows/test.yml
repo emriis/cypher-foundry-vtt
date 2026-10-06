@@ -91,6 +91,8 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
+      - name: Normalize CRD source metadata
+        run: npm run migrate:packs
       - name: Run integration tests
         run: npm run test:integration
       - name: Run architecture audit

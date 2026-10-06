@@ -1,0 +1,35 @@
+{
+  "_id": "e35fa931a0005",
+  "_key": "!items!e35fa931a0005",
+  "document": "Item",
+  "name": "Duct tape roll",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "inexpensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Level 2 adhesive, level 3 with multiple layers"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Postapocalypse.inexpensive.Duct tape roll",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Postapocalypse Equipment",
+        "sourceLocator": "Postapocalypse Equipment — inexpensive Items — Duct tape roll",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "_id": "aa87bee53800b",
+  "_key": "!items!aa87bee53800b",
+  "document": "Item",
+  "name": "Flashlight",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "inexpensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Normal light out to short distance"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Flashlight",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — inexpensive Items — Flashlight",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

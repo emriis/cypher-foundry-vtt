@@ -1,0 +1,36 @@
+{
+  "_id": "aa87bee5380a6",
+  "_key": "!items!aa87bee5380a6",
+  "document": "Item",
+  "name": "Luxury car",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "exorbitant",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "SUV, limousine, or anything with advanced features, comfortably seats four to six people"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Luxury car",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — exorbitant Items — Luxury car",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Science Fiction.Luxury car"
+      }
+    }
+  }
+}

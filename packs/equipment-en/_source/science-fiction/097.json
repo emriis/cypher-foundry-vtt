@@ -1,0 +1,35 @@
+{
+  "_id": "aa87bee538061",
+  "_key": "!items!aa87bee538061",
+  "document": "Item",
+  "name": "False ID",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "expensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "False identification accurate enough to get the character past most official checkpoints"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.False ID",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — expensive Items — False ID",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}
