@@ -11,7 +11,11 @@
     "equipped": false,
     "blockEaseDamage": 0,
     "priceCategory": "expensive",
-    "description": "Device creates nanofiber armor over skin or clothing for ten minutes, protects as light armor without hindering dodge tasks; applicator depletion 1 in 1d10"
+    "description": "Device creates nanofiber armor over skin or clothing for ten minutes, protects as light armor without hindering dodge tasks; applicator depletion 1 in 1d10",
+    "depletionDie": "d10",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false
   },
   "flags": {
     "cypherFoundry": {
