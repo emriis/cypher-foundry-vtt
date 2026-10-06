@@ -1,6 +1,6 @@
 {
-  "_id": "9a4c2f1b00000001",
-  "_key": "!items!9a4c2f1b00000001",
+  "_id": "0123456789abc023",
+  "_key": "!items!0123456789abc023",
   "document": "Item",
   "name": "Stunstick",
   "type": "attack",
@@ -16,7 +16,9 @@
     "attackSkillCategory": "",
     "priceCategory": "expensive",
     "properties": [
-      "Medium weapon, inflicts no damage, level 2 or lower creature loses their next action, level 3 or higher is hindered by two steps for a round or two"
+      "inflicts no damage",
+      "level 2 or lower creature loses their next action",
+      "level 3 or higher is hindered by two steps for a round or two"
     ],
     "mechanics": {
       "twoHanded": false,
@@ -49,17 +51,17 @@
     },
     "freelyUsable": false,
     "equipped": false,
-    "description": "<p>Medium weapon, inflicts no damage, level 2 or lower creature loses their next action, level 3 or higher is hindered by two steps for a round or two</p>"
+    "description": ""
   },
   "flags": {
     "cypherFoundry": {
       "crd": {
         "version": "2026-07-29",
-        "logicalId": "equipment.Science Fiction.Stunstick",
+        "logicalId": "weapon.stunstick",
         "language": "en",
         "sourceKind": "record",
         "section": "Science Fiction Equipment",
-        "sourceLocator": "CRD p. 420",
+        "sourceLocator": "Science Fiction Equipment — Expensive Items — Stunstick",
         "transformations": [
           "structural field mapping only"
         ]
