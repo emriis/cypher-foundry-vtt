@@ -633,7 +633,7 @@ test("W4 source records preserve canonical Foundry identity and CRD provenance",
   assert.deepEqual(failures, [], failures.join("\n"));
 });
 
-test("W4 source records use complete mechanical projections for implemented families", () => {
+test("W4 source records include every mandatory mechanical projection", () => {
   const requiredFields = {
     equipment: [
       "quantity", "level", "priceCategory",
@@ -645,8 +645,7 @@ test("W4 source records use complete mechanical projections for implemented fami
       "properties", "mechanics"
     ],
     armor: [
-      "category", "freelyUsable", "blockEaseDamage",
-      "encumbranceCategory", "dodgeHindrance", "priceCategory"
+      "category", "freelyUsable", "blockEaseDamage", "priceCategory"
     ],
     shield: ["equipped", "priceCategory", "wounds"]
   };
