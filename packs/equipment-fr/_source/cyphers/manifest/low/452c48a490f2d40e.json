@@ -1,0 +1,44 @@
+{
+  "_id": "452c48a490f2d40e",
+  "_key": "!items!452c48a490f2d40e",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Weapon Augmentation",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 96,
+      "max": 98
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Choose a physical weapon such as a sword or pistol. Until you use a one￾hour or longer recovery, attacks with that weapon inflict an additional 2 damage (a projectile weapon such as a bow, crossbow, or pistol adds this damage to the projectile). The source of this extra damage depends on the cypher; some add a special effect such as cold, electricity, fire, or poison, others release a burst of necromantic energy or cell-disrupting nanites, and others just make the weapon innately more effective (such as by sharpening a blade or increasing the mass of a projectile at the moment of impact). Instead of using the cypher on a manufactured physical weapon, you can use it on a part of your body you make unarmed attacks with, such as a fist or foot.</p><p><strong>Genre Items: oil of weapon enhancement (fantasy); density modulator (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.weapon-augmentation",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Weapon Augmentation",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.weapon-augmentation"
+      }
+    }
+  }
+}

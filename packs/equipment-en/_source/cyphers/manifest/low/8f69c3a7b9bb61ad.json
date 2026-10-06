@@ -1,0 +1,43 @@
+{
+  "_id": "8f69c3a7b9bb61ad",
+  "_key": "!items!8f69c3a7b9bb61ad",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Fear",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 45,
+      "max": 47
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Make an Intellect attack against a foe within short range. If you succeed, they are filled with fear of you and attempt to flee the area, remaining away until you use a ten-minute or longer recovery. If they can’t get away, all their tasks against you are hindered until you use a ten-minute or longer recovery.</p><p><strong>Genre Items: rune of fear (fantasy); amygdala stimulator (sci-fi) Some creatures (such as automatons and mindless entities) cannot feel fear and are immune to a fear cypher.</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.fear",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Fear",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "_id": "bdf29cc8edff2528",
+  "_key": "!items!bdf29cc8edff2528",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Summon Creature",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 89,
+      "max": 91
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> A random level 6 creature from somewhere in the world (or perhaps another world or dimension) appears in a location of your choice within short range. The creature attacks the closest foe (switching to new foes if it defeats the initial one) until you use a ten-minute or longer recovery, after which it returns to where it came from.</p><p><strong>Genre Items: scroll of monster summoning (fantasy); zoology portal (sci-fi) In some settings, a summon creature cypher might actually create a single-use combat robot or temporarily clone a creature instead of bringing one from elsewhere.</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.summon-creature",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Summon Creature",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.summon-creature"
+      }
+    }
+  }
+}

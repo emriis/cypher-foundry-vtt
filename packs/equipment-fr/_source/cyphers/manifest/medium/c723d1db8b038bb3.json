@@ -1,0 +1,44 @@
+{
+  "_id": "c723d1db8b038bb3",
+  "_key": "!items!c723d1db8b038bb3",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Tiny Size",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 97,
+      "max": 98
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a ten-minute or longer recovery, you shrink to about one￾tenth your normal size. While at this smaller size, you add 4 points to your Speed Pool and +2 to your Speed Edge, but all of your Might actions are hindered by two steps. When the cypher ends, your Speed Edge returns to normal, you lose the penalty to Might actions, and you take 4 Speed damage. If an NPC uses this cypher, they ease their Speed tasks by two steps and hinder their Might tasks by two steps.</p><p><strong>Genre Items: potion of shrinking (fantasy); bodily compressor (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.tiny-size",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Tiny Size",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.tiny-size"
+      }
+    }
+  }
+}

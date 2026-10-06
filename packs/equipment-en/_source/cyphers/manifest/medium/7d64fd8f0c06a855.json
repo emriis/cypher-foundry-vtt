@@ -1,0 +1,43 @@
+{
+  "_id": "7d64fd8f0c06a855",
+  "_key": "!items!7d64fd8f0c06a855",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Might Restorer",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 55,
+      "max": 58
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You restore 6 points to your Might Pool.</p><p><strong>Genre Items: potion of stamina (fantasy); stem cell cocktail (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.might-restorer",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Might Restorer",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

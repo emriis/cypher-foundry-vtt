@@ -1,0 +1,44 @@
+{
+  "_id": "1b8a79f03d743550",
+  "_key": "!items!1b8a79f03d743550",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Extra Cyphers",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 13,
+      "max": 15
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a one-hour or longer recovery, your cypher limit increases by two. Once you activate this cypher, it doesn’t count against your cypher limit.</p><p><strong>Genre Items: bag of safe storage (fantasy); stabilization field (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.extra-cyphers",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Extra Cyphers",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.extra-cyphers"
+      }
+    }
+  }
+}

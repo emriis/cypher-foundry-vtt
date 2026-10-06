@@ -1,0 +1,43 @@
+{
+  "_id": "2c3f3e7a207a4f7e",
+  "_key": "!items!2c3f3e7a207a4f7e",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Sonic Bomb",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "advanced",
+    "powerLevels": [
+      "advanced"
+    ],
+    "randomRange": {
+      "min": 91,
+      "max": 97
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Creates an immediate-radius explosion of intense sound up to a short distance away. Make separate Speed attacks against each creature in the area. Success means they take 3 damage and are deafened until you use a ten-minute or longer recovery. Failure means they still take 1 damage but are not deafened.</p><p><strong>Genre Items: scroll of sonic burst (fantasy); decibel grenade (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.sonic-bomb",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Sonic Bomb",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

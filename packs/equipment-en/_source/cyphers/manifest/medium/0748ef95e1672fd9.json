@@ -1,0 +1,43 @@
+{
+  "_id": "0748ef95e1672fd9",
+  "_key": "!items!0748ef95e1672fd9",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Penultimate Key",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 65,
+      "max": 66
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a one-hour or longer recovery, when you roll to unlock or lock something, if you roll an 18 or less, treat the roll as an 18. (This means you don’t get a GM intrusion if you roll a 1.) This ability only works on devices that use a key, such as doors, cabinets, treasure chests, and so on.</p><p><strong>Genre Items: chime of opening (fantasy); universal locksmith (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.penultimate-key",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Penultimate Key",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

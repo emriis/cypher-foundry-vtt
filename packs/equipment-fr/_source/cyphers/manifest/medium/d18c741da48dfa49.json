@@ -1,0 +1,44 @@
+{
+  "_id": "d18c741da48dfa49",
+  "_key": "!items!d18c741da48dfa49",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Stamina Enhancer",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 86,
+      "max": 88
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a one-hour or longer recovery, the number of moderate wounds you can take increases by one.</p><p><strong>Genre Items: amulet of constitution (fantasy); dermal enhancer (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.stamina-enhancer",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Stamina Enhancer",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.stamina-enhancer"
+      }
+    }
+  }
+}

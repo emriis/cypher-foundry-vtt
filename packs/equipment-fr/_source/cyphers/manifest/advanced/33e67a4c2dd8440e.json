@@ -1,0 +1,44 @@
+{
+  "_id": "33e67a4c2dd8440e",
+  "_key": "!items!33e67a4c2dd8440e",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Nullification",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "advanced",
+    "powerLevels": [
+      "advanced"
+    ],
+    "randomRange": {
+      "min": 57,
+      "max": 62
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Choose one ongoing effect within long range, such as an energy wall, illusion, or paralysis effect. If the effect is caused by an artifact, cypher, or creature ability and is level 5 or lower, it ends immediately; you can affect something of level 6 or higher if you succeed at a hindered Intellect attack against it. If the effect is caused by a PC ability, you and the other PC both make Intellect rolls. If your roll is better than theirs, the effect ends.</p><p><strong>Genre Items: dispelling rune (fantasy); omniscrambler (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.nullification",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Nullification",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.nullification"
+      }
+    }
+  }
+}

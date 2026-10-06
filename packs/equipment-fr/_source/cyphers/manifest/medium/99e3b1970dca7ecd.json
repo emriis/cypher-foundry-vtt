@@ -1,0 +1,44 @@
+{
+  "_id": "99e3b1970dca7ecd",
+  "_key": "!items!99e3b1970dca7ecd",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Speed Restorer",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 82,
+      "max": 85
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You restore 6 points to your Speed Pool.</p><p><strong>Genre Items: potion of soothed reflexes (fantasy); primephetamine (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.speed-restorer",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Speed Restorer",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.speed-restorer"
+      }
+    }
+  }
+}

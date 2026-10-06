@@ -1,0 +1,43 @@
+{
+  "_id": "2d6487b42f5d5942",
+  "_key": "!items!2d6487b42f5d5942",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Overpowered Bomb",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "ultra",
+    "powerLevels": [
+      "ultra"
+    ],
+    "randomRange": {
+      "min": 34,
+      "max": 46
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Upgrades a bomb cypher that inflicts damage (such as a fiery bomb or shrapnel bomb) so it inflicts an additional 4 damage. Once an overpowered bomb cypher is used to upgrade another cypher, the overpowered bomb is expended and no longer counts toward your cypher limit.</p><p><strong>Genre Items: scroll of empowered magical burst (fantasy); bomb expander (sci￾fi) Some GMs might decide that if a character finds an overpowered bomb cypher, it’s actually an existing bomb cypher that’s already been upgraded with an overpowered bomb cypher.</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.overpowered-bomb",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Overpowered Bomb",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

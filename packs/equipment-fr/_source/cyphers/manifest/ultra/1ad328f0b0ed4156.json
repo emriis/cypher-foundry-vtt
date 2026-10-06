@@ -1,0 +1,44 @@
+{
+  "_id": "1ad328f0b0ed4156",
+  "_key": "!items!1ad328f0b0ed4156",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Perfection",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "ultra",
+    "powerLevels": [
+      "ultra"
+    ],
+    "randomRange": {
+      "min": 57,
+      "max": 68
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a one-hour or longer recovery, you have the ability to perform one task perfectly. When you activate this ability as part of the task, you treat the task as if you had rolled a natural 20. This cypher ends after you use this ability one time.</p><p><strong>Genre Items: potion of liquid luck (fantasy); quantum probability focuser (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.perfection",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Perfection",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.perfection"
+      }
+    }
+  }
+}

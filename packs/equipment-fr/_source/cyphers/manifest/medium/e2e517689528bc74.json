@@ -1,0 +1,44 @@
+{
+  "_id": "e2e517689528bc74",
+  "_key": "!items!e2e517689528bc74",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Giant Size",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 25,
+      "max": 26
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a ten-minute or longer recovery, you grow to about one and a half times your normal size. While at this larger size, you add 4 points to your Might Pool and +2 to your Might Edge, but your Speed defense rolls are hindered. When the cypher ends, your Might Edge returns to normal, you lose the penalty to Speed defense, and you take 4 Might damage. If an NPC uses this cypher, they temporarily gain 4 health, ease their Might tasks by two steps, and hinder their Speed defense tasks.</p><p><strong>Genre Items: potion of growth (fantasy); bodily expander (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.giant-size",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Giant Size",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.giant-size"
+      }
+    }
+  }
+}

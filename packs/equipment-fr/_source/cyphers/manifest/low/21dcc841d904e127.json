@@ -1,0 +1,44 @@
+{
+  "_id": "21dcc841d904e127",
+  "_key": "!items!21dcc841d904e127",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Enhanced Climbing",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 24,
+      "max": 28
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a one-hour or longer recovery, you can climb or walk on walls and ceilings as easily as walking on floors, moving at your normal ground movement speed. You must keep at least two extremities (hands or feet) in contact with the surface to climb it.</p><p><strong>Genre Items: potion of spider climbing (fantasy); nanotube grips (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.enhanced-climbing",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Enhanced Climbing",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.enhanced-climbing"
+      }
+    }
+  }
+}

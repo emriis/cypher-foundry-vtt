@@ -1,0 +1,44 @@
+{
+  "_id": "cd88cb30591be43c",
+  "_key": "!items!cd88cb30591be43c",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Corrosive Bomb",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "advanced",
+    "powerLevels": [
+      "advanced"
+    ],
+    "randomRange": {
+      "min": 1,
+      "max": 7
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Creates an immediate-radius explosion of acid up to a short distance away. Make separate Speed attacks against each living creature in the area. Success means they take 4 damage; failure means they still take 2 damage.</p><p><strong>Genre Items: scroll of acid burst (fantasy); corrosion grenade (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.corrosive-bomb",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Corrosive Bomb",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.corrosive-bomb"
+      }
+    }
+  }
+}

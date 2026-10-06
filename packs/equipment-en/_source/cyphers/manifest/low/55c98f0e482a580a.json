@@ -1,0 +1,43 @@
+{
+  "_id": "55c98f0e482a580a",
+  "_key": "!items!55c98f0e482a580a",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Instant Outfit",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 57,
+      "max": 58
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You create a fashionable outfit. It fits you perfectly and is very flattering. When you activate the cypher, you can specify what the outfit looks like or describe an event or situation and allow the cypher to become something appropriate. Until you take a ten‑hour recovery, the outfit gives you an asset on interaction tasks, after which it becomes normal clothing that doesn’t provide any additional benefit.</p><p><strong>Genre Items: costume chrysoberyl (fantasy); clothier nanospray (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.instant-outfit",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Instant Outfit",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

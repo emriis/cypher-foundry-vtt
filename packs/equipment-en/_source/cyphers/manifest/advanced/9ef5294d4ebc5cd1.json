@@ -1,0 +1,43 @@
+{
+  "_id": "9ef5294d4ebc5cd1",
+  "_key": "!items!9ef5294d4ebc5cd1",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Enhanced Armor",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "advanced",
+    "powerLevels": [
+      "advanced"
+    ],
+    "randomRange": {
+      "min": 8,
+      "max": 12
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a one-hour or longer recovery, your block tasks are eased and the severity of any wounds you take (blocked or not) is reduced by one step.</p><p><strong>Genre Items: oil of armor enhancement (fantasy); tensile nanoinjection (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.enhanced-armor",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Enhanced Armor",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

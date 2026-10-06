@@ -1,0 +1,44 @@
+{
+  "_id": "aa83124e4cbc381c",
+  "_key": "!items!aa83124e4cbc381c",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Zone of Privacy",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 99,
+      "max": 100
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a one-hour or longer recovery, an area within immediate range of you becomes shielded against effects outside the area that attempt to see, hear, or otherwise sense what occurs inside. Any attempts to do so allow you to roll an Intellect defense task; success means the area appears as a blur to any sense applied.</p><p><strong>Genre Items: amulet of nondetection (fantasy); surveillance scrambler (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.zone-of-privacy",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Zone of Privacy",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.zone-of-privacy"
+      }
+    }
+  }
+}

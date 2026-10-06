@@ -1,0 +1,44 @@
+{
+  "_id": "9e04f8f55dc6f875",
+  "_key": "!items!9e04f8f55dc6f875",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Telepathy",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 82,
+      "max": 83
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a ten-minute or longer recovery, you can telepathically communicate (sending and receiving) with any number of thinking creatures within long range. You must be able to perceive them to initiate contact, but thereafter, as long as they’re in range you can remain in contact with them.</p><p><strong>Genre Items: circlet of telepathy (fantasy); telepathy module (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.telepathy",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Telepathy",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.telepathy"
+      }
+    }
+  }
+}

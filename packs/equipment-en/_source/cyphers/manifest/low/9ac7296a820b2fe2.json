@@ -1,0 +1,43 @@
+{
+  "_id": "9ac7296a820b2fe2",
+  "_key": "!items!9ac7296a820b2fe2",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Sustenance",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 80,
+      "max": 81
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> For oneday you can go without food and water without any ill effects, as if you’ve been eating and drinking healthily during this time.</p><p><strong>Genre Items: amulet of sustenance (fantasy); nutrition recycler (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.sustenance",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Sustenance",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

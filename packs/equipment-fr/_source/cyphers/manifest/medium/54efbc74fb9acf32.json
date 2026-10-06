@@ -1,0 +1,44 @@
+{
+  "_id": "54efbc74fb9acf32",
+  "_key": "!items!54efbc74fb9acf32",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Frost Wall",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 21,
+      "max": 22
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You create a wall of swirling frost up to a short distance away, lasting until you use aten-minute or longer recovery. The wall is up to 30 feet by 30 feet by 1 foot (9 m by 9 m by 30 cm) and it conforms to the space available. Anything passing through it takes 3 damage.</p><p><strong>Genre Items: frost diamond (fantasy); cryoplane module (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.frost-wall",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Frost Wall",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.frost-wall"
+      }
+    }
+  }
+}

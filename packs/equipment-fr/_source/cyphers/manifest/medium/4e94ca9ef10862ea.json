@@ -1,0 +1,44 @@
+{
+  "_id": "4e94ca9ef10862ea",
+  "_key": "!items!4e94ca9ef10862ea",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Intellect Restorer",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 37,
+      "max": 40
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You restore 6 points to your Intellect Pool.</p><p><strong>Genre Items: potion of meditation (fantasy); synaptic rejuvenator (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.intellect-restorer",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Intellect Restorer",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.intellect-restorer"
+      }
+    }
+  }
+}

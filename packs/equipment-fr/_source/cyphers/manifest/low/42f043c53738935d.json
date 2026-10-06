@@ -1,0 +1,44 @@
+{
+  "_id": "42f043c53738935d",
+  "_key": "!items!42f043c53738935d",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Disguise Module",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 13,
+      "max": 15
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a one-houror longer recovery, you are disguised as another person. About half of these cyphers allow you to disguise yourself as a person you’ve interacted with (your choice of who), and the other half have a preset generic disguise (such as a security guard, business person, or store clerk). Disguise tasks to pretend to be that person are eased by two steps.</p><p><strong>Genre Items: oil of the doppelganger (fantasy); biomorphic restructurer (sci-fi) Some disguise modules take a couple of minutes to fully change your appearance, either to or from the disguise.</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.disguise-module",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Disguise Module",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.disguise-module"
+      }
+    }
+  }
+}

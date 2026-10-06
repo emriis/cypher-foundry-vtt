@@ -1,0 +1,43 @@
+{
+  "_id": "95209431984629c5",
+  "_key": "!items!95209431984629c5",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Mind Control",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "advanced",
+    "powerLevels": [
+      "advanced"
+    ],
+    "randomRange": {
+      "min": 54,
+      "max": 56
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Make an Intellect attack against a foe within short range (if the foe is level 7 or higher, the attack is hindered by two steps). Success means the creature becomes calm and doesn’t attack you or your allies unless threatened or attacked, lasting until you use a ten-minute or longer recovery. The creature obeys your verbal commands. If you command them to do something against their ethics or moral code (such as betray or attack their allies or harm themselves), you must succeed at another Intellect attack against them (at the same difficulty as the original attack); otherwise they break free of your control. If you use this cypher against a nonsapient creature (typically something with animal-level intelligence), it lasts until you use a one-houror longer recovery.</p><p><strong>Genre Items: scroll of mind control (fantasy); cerebral dominator (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.mind-control",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Mind Control",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

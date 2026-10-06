@@ -1,0 +1,43 @@
+{
+  "_id": "f442807d1faff101",
+  "_key": "!items!f442807d1faff101",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Instant Building",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 29,
+      "max": 30
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Creates a simple one-room building in a space adjacent to you. The building’s minimum size is 10 feet by 10 feet by 20 feet (3.5 m by 3.5 m by 6 m). It consists of one room, a door, and a transparent window, and it is made from a durable, nonflammable material similar to sandstone. The building is permanent and immobile once created. If there isn’t sufficient room for the building to reach its full size, it fills the available space, but its appearance and growth does not apply any force or pressure against the confining surfaces.</p><p><strong>Genre Items: scroll of secure shelter (fantasy); structural fabrication unit (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.instant-building",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Instant Building",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

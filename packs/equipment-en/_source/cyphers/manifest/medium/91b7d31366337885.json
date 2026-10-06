@@ -1,0 +1,43 @@
+{
+  "_id": "91b7d31366337885",
+  "_key": "!items!91b7d31366337885",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Sleep Inducer",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 76,
+      "max": 78
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Make an Intellect attack against each living creature in an immediate area within short range (if the creature is level 7 or higher, the attack is hindered by two steps). Success means the creature falls asleep until you use a ten-minute or longer recovery. Damage, extremely loud noise, or a violent action (such as shaking them) awakens a sleeper.</p><p><strong>Genre Items: scroll of sleep (fantasy); somnotron (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.sleep-inducer",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Sleep Inducer",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

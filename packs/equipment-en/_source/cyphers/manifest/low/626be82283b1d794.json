@@ -1,0 +1,43 @@
+{
+  "_id": "626be82283b1d794",
+  "_key": "!items!626be82283b1d794",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Device Controller",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 11,
+      "max": 12
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Attach one part of this cypher to an unintelligent device or machine. Until you use a one-hour or longer recovery, if you are holding the other part of the cypher, you can mentally control that device at long range, making it do anything it could do normally. For example, you could activate or deactivate a computer, open or close a door, pilot a vehicle, and so on. You can only control one device with this cypher—removing the remote part and reattaching it to a different device has no effect.</p><p><strong>Genre Items: glove of manipulation (fantasy); ultrapotent remote (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.device-controller",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Device Controller",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

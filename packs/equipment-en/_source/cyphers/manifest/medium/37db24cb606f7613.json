@@ -1,0 +1,43 @@
+{
+  "_id": "37db24cb606f7613",
+  "_key": "!items!37db24cb606f7613",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Remote Mapper",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 72,
+      "max": 73
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You launch a tiny object that moves at great speed, mapping and scanning an area you choose, starting a short distance away. The object travels up to a total of 3,000 feet (900 m), scanning an area 1800 feet (540 m) per level away from it, creating a path that optimizes how much area it can cover. It identifies basic layout, creatures, and major energy sources and either transmits this information back to you (perhaps by telepathy or an electronic signal) or returns to you to show what it saw. Its movement is blocked by any physical or energy barrier.</p><p><strong>Genre Items: spying crystalline eye (fantasy); infiltration drone (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.remote-mapper",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Remote Mapper",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

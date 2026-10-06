@@ -1,0 +1,44 @@
+{
+  "_id": "20b302d6321ab0ea",
+  "_key": "!items!20b302d6321ab0ea",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Resurrection",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "high",
+    "powerLevels": [
+      "high"
+    ],
+    "randomRange": {
+      "min": 71,
+      "max": 80
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> If you died within the last hour, you revive. Whatever injury, wound, or effect supposedly killed you is undone. You are hindered until you take a recovery. The number of moderate wounds you can take permanently decreases by one. You can use this cypher on another creature instead of yourself. If they are an NPC, instead of being hindered until they take a recovery, they’re hindered until they rest for an hour; their maximum health decreases by 5 (to a minimum of 1).</p><p><strong>Genre Items: rod of resurrection (fantasy); Lazarus module (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.resurrection",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Resurrection",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.resurrection"
+      }
+    }
+  }
+}

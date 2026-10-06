@@ -1,0 +1,43 @@
+{
+  "_id": "857cf7615f092025",
+  "_key": "!items!857cf7615f092025",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Ultimate Healing",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "ultra",
+    "powerLevels": [
+      "ultra"
+    ],
+    "randomRange": {
+      "min": 91,
+      "max": 100
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You heal all your minor, moderate, and major wounds.</p><p><strong>Genre Items: potion of ultimate healing (fantasy); advanced stimpack (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.ultimate-healing",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Ultimate Healing",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

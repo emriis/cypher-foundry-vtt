@@ -1,0 +1,43 @@
+{
+  "_id": "68694e10c5732c84",
+  "_key": "!items!68694e10c5732c84",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Cluster Bomb",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "high",
+    "powerLevels": [
+      "high"
+    ],
+    "randomRange": {
+      "min": 1,
+      "max": 30
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Upgrades a bomb cypher (such as a fiery bomb or shrapnel bomb) to have long range and create an additional delayed effect. When the upgraded cypher explodes, it also creates four additional bombs that each move a short distance in a different random direction, then explode on the next round in the same way as the original (unmodified) bomb cypher. Once a cluster bomb cypher is used to upgrade another cypher, the cluster bomb is expended and no longer counts toward your cypher limit.</p><p><strong>Genre Items: scroll of metamagical destruction (fantasy); bomb cascade (sci-fi) Some GMs might decide that if a character finds a cluster bomb cypher, it’s actually an existing bomb cypher that’s already been upgraded with a cluster bomb cypher.</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.cluster-bomb",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Cluster Bomb",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

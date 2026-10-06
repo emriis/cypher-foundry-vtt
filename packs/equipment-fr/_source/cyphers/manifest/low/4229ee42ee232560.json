@@ -1,0 +1,44 @@
+{
+  "_id": "4229ee42ee232560",
+  "_key": "!items!4229ee42ee232560",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Contingent Activator",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 3,
+      "max": 5
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You create a remote link with a manifest cypher you are touching and specify a condition that will activate the linked cypher. For example, if you create a contingent link with a healing cypher, you could specify that it activates if you take a major wound or if you are knocked unconscious. The linked cypher can still be activated normally (without the contingent trigger). The contingent activator counts against your cypher limit until the linked cypher is used, lost, or discarded.</p><p><strong>Genre Items: candle of contingent activation (fantasy); remote control (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.contingent-activator",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Contingent Activator",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.contingent-activator"
+      }
+    }
+  }
+}

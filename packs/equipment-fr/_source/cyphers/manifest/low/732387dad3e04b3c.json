@@ -1,0 +1,44 @@
+{
+  "_id": "732387dad3e04b3c",
+  "_key": "!items!732387dad3e04b3c",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Enhanced Jumping",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 29,
+      "max": 33
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a one-hour or longer recovery, you can make incredible jumps. A standing vertical jump (up or down) of 10 feet (3.5 m) or a standing horizontal jump of 20 feet (6 m) is a routine task for you. Running at least a short distance before the jump doubles how far you can go as a routine task. If you attempt a longer jump, you get two assets on the roll and you don’t get a GM intrusion if you roll a 1.</p><p><strong>Genre Items: potion of jumping (fantasy); batrachian augmentation (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.enhanced-jumping",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Enhanced Jumping",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.enhanced-jumping"
+      }
+    }
+  }
+}

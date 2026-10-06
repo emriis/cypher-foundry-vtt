@@ -1,0 +1,44 @@
+{
+  "_id": "445927242abe62da",
+  "_key": "!items!445927242abe62da",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Reality Spike",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 70,
+      "max": 71
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> The cypher physically locks itself in its current position forever (even if it is in midair). It can be dislodged with a successful level 6 Might action or by a creature of level 7 or higher, but this destroys the cypher and ends the effect.</p><p><strong>Genre Items: immovable rod (fantasy); locational mooring (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.reality-spike",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Reality Spike",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.reality-spike"
+      }
+    }
+  }
+}

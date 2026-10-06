@@ -1,0 +1,44 @@
+{
+  "_id": "6fa914a189f85895",
+  "_key": "!items!6fa914a189f85895",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Uninterruptible Power Source",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 99,
+      "max": 100
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You attach the cypher to another device of up to level 6, providing power to it until you use a ten-hour recovery.</p><p><strong>Genre Items: power stone (fantasy); microgenerator (sci-fi) Typically a modern or sci-fi uninterruptible power source cypher is providing electrical power, but exotic technology might be able to activate a gasoline engine or a nuclear-powered machine.</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.uninterruptible-power-source",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Uninterruptible Power Source",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.uninterruptible-power-source"
+      }
+    }
+  }
+}

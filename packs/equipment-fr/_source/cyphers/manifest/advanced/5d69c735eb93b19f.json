@@ -1,0 +1,44 @@
+{
+  "_id": "5d69c735eb93b19f",
+  "_key": "!items!5d69c735eb93b19f",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Force Field",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "advanced",
+    "powerLevels": [
+      "advanced"
+    ],
+    "randomRange": {
+      "min": 27,
+      "max": 31
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You create a level 6 force field up to a short distance away. Choose whether the force field is a cube, sphere, wall, or path. A force cube or sphere is about an immediate distance across. A wall is an immediate distance high and a short distance wide (or vice versa). A path is like a wall, but horizontal instead of vertical. The force field otherwise conforms to the space available (stopping at solid obstacles but not exerting pressure on them). The force field lasts until you make a one-hour or longer recovery. You can use a force cube or sphere to trap foes within its area; make Intellect attacks against each foe to contain them. Gas can’t permeate the force field, but the volume inside a cube or sphere is enough that anyone inside probably won’t suffocate.</p><p><strong>Genre Items: cube of force (fantasy); force field generator (sci-fi) Individual force fields may be invisible, transparent, translucent, or opaque.</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.force-field",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Force Field",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.force-field"
+      }
+    }
+  }
+}

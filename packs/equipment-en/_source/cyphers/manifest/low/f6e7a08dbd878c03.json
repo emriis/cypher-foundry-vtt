@@ -1,0 +1,43 @@
+{
+  "_id": "f6e7a08dbd878c03",
+  "_key": "!items!f6e7a08dbd878c03",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Insanity Suppressor",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 55,
+      "max": 56
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You ignore the effects and symptoms of a mental disorder, brain injury, or other impairing mental condition until you make a ten-hour recovery. Examples include clinical depression, generalized anxiety disorder, delusions, manias, phobias, dementia, obsessive-compulsive disorder, attention deficit hyperactivity disorder, and schizophrenia, as well as external effects (such as poisons, psychic attacks, or magic) that cause erratic or uncontrolled behaviors (including fear and rage).</p><p><strong>Genre Items: circlet of mental clarity (fantasy); cortical modulator (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.insanity-suppressor",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Insanity Suppressor",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

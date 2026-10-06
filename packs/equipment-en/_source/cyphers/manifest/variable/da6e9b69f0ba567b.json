@@ -1,0 +1,71 @@
+{
+  "_id": "da6e9b69f0ba567b",
+  "_key": "!items!da6e9b69f0ba567b",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Teleporter",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "",
+    "powerLevels": [
+      "medium",
+      "advanced",
+      "high",
+      "ultra"
+    ],
+    "randomRange": {
+      "min": null,
+      "max": null
+    },
+    "variants": [
+      {
+        "name": "Bounder",
+        "powerLevel": "medium",
+        "rollMin": 1,
+        "rollMax": 50
+      },
+      {
+        "name": "Traveler",
+        "powerLevel": "advanced",
+        "rollMin": 51,
+        "rollMax": 80
+      },
+      {
+        "name": "Planetary",
+        "powerLevel": "high",
+        "rollMin": 81,
+        "rollMax": 95
+      },
+      {
+        "name": "Interstellar",
+        "powerLevel": "ultra",
+        "rollMin": 96,
+        "rollMax": 100
+      }
+    ],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You teleport to a location within range, arriving safely. The teleportation includes your equipment but cannot bring other creatures with you. If you can’t fit in the chosen destination, you appear in the closest open space to it. Roll to determine what kind of teleportation the cypher can perform. d00 Type Power Level 01–50 Bounder Medium 51–80 Traveler Advanced 81–95 Planetary High 96–00 Interstellar Ultra Bounder: A location within 500 feet (150 m) that you can see, or up to 500 feet in the direction and distance you specify (such as “200 feet west and 20 feet upward”). Traveler: A location within 500 miles (800 km) that you can see or have previously visited or seen. Planetary: A location on the same planet that you can see or have previously visited or seen. Interstellar: A location in the same galaxy that you can see or have previously visited or seen.</p><p><strong>Genre Items: scroll of teleportation (fantasy); portal gun (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.teleporter",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Teleporter",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

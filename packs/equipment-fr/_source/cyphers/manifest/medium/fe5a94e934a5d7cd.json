@@ -1,0 +1,44 @@
+{
+  "_id": "fe5a94e934a5d7cd",
+  "_key": "!items!fe5a94e934a5d7cd",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Adhesion Bomb",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 1,
+      "max": 3
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Creates an immediate-radius explosion of sticky goo up to a short distance away. Make separate Speed attacks against each creature in the area. Success means they are held in place. The goo lasts until you use a ten-minute or longer recovery but can be cut, broken, or burned (inflicting 4 damage from fire to anyone held in it). NPCs can break free as an action (you can prevent this by making a Speed roll against them).</p><p><strong>Genre Items: scroll of web (fantasy); restraint grenade (sci-fi) Rather than strands of sticky goo, some adhesion bombs fill the area with quick￾hardening foam, constricting vines, spectral tentacles, or similar effects with the same result.</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.adhesion-bomb",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Adhesion Bomb",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.adhesion-bomb"
+      }
+    }
+  }
+}

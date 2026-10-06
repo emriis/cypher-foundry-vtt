@@ -1,0 +1,43 @@
+{
+  "_id": "7c59aa6540141163",
+  "_key": "!items!7c59aa6540141163",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Depth Scanner",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 9,
+      "max": 10
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a ten-minute or longer recovery, you can see through opaque matter. As an action, you can concentrate on something within immediate range, seeing through it to a depth of 2 feet (60 cm) for one round as if it were transparent. You can see through substances up to level 6 (typically wood, flesh, plastic, stone, and even metal, but specially reinforced or exotic materials may remain opaque).</p><p><strong>Genre Items: crystal lens of piercing vision (fantasy); x-ray goggles (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.depth-scanner",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Depth Scanner",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

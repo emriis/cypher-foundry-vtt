@@ -1,0 +1,43 @@
+{
+  "_id": "981ba3ee6dd35df0",
+  "_key": "!items!981ba3ee6dd35df0",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Friction Reducer",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 48,
+      "max": 50
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a one-hour or longer recovery, an immediate area within short range becomes extremely slippery. Movement tasks (acrobatics, balance, physical attacks and defense, running, and so on) in the area are hindered by three steps.</p><p><strong>Genre Items: oil of slipperiness (fantasy); defrictioning spray (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.friction-reducer",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Friction Reducer",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

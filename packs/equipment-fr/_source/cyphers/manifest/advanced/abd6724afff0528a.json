@@ -1,0 +1,44 @@
+{
+  "_id": "abd6724afff0528a",
+  "_key": "!items!abd6724afff0528a",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Enhanced Dodging",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "advanced",
+    "powerLevels": [
+      "advanced"
+    ],
+    "randomRange": {
+      "min": 13,
+      "max": 19
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a one-hour or longer recovery, your dodge tasks are eased, and even if you fail a dodge task, the severity of the wound is reduced by one step.</p><p><strong>Genre Items: amulet of defense (fantasy); deflecting force field (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.enhanced-dodging",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Enhanced Dodging",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.enhanced-dodging"
+      }
+    }
+  }
+}

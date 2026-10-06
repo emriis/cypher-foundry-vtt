@@ -1,0 +1,86 @@
+{
+  "_id": "a50ff2b22f1f1dc6",
+  "_key": "!items!a50ff2b22f1f1dc6",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Energy Blast",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 9,
+      "max": 12
+    },
+    "variants": [],
+    "rollTables": [
+      {
+        "id": "energy-type",
+        "name": "Energy Type",
+        "formula": "1d100",
+        "results": [
+          {
+            "min": 1,
+            "max": 15,
+            "description": "<p>Cold</p>"
+          },
+          {
+            "min": 16,
+            "max": 40,
+            "description": "<p>Electricity</p>"
+          },
+          {
+            "min": 41,
+            "max": 50,
+            "description": "<p>Force</p>"
+          },
+          {
+            "min": 51,
+            "max": 80,
+            "description": "<p>Heat/concentrated light</p>"
+          },
+          {
+            "min": 81,
+            "max": 85,
+            "description": "<p>Magnetic wave</p>"
+          },
+          {
+            "min": 86,
+            "max": 90,
+            "description": "<p>Molecular bond disruption</p>"
+          },
+          {
+            "min": 91,
+            "max": 100,
+            "description": "<p>Radiation</p>"
+          }
+        ]
+      }
+    ],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Projects a ray of destructive energy at a target within very long range, inflicting 8 damage. You may instead split the ray and fire at two targets within range that are within a short distance of each other (make separate attack rolls for each target), inflicting 5 damage on each. Roll a d00 to determine the type of energy. d00 Energy Type 01– 15 Cold 16– 40 Electricity 41– 50 Force 51– 80 Heat/concentrated light 81– 85 Magnetic wave 86– 90 Molecular bond disruption 91– 00 Radiation</p><p><strong>Genre Items: crystal fire dart (fantasy); one-shot blaster (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.energy-blast",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Energy Blast",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "_id": "9c9ea26475922b3e",
+  "_key": "!items!9c9ea26475922b3e",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Poison Bomb",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "advanced",
+    "powerLevels": [
+      "advanced"
+    ],
+    "randomRange": {
+      "min": 69,
+      "max": 74
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Creates an immediate-radius explosion of toxic gas up to a short distance away. Make separate Speed attacks against each creature in the area. Success means they take 4 damage; failure means they still take 2 damage. About half of these cyphers inflict Might damage and half inflict Speed damage.</p><p><strong>Genre Items: venom emerald (fantasy); toxin grenade (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.poison-bomb",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Poison Bomb",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.poison-bomb"
+      }
+    }
+  }
+}

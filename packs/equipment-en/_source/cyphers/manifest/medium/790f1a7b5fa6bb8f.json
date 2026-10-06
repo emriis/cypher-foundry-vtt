@@ -1,0 +1,43 @@
+{
+  "_id": "790f1a7b5fa6bb8f",
+  "_key": "!items!790f1a7b5fa6bb8f",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Decay Metal",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 4,
+      "max": 6
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You create a stream of liquid or foam that covers an area about 3 feet by 3 feet (1 m by 1 m) within an immediate distance. Metal in the area of level 6 or less becomes as brittle as thin glass (level 0) to a depth of about 6 inches (15 cm). To affect metal of level 7 or higher, you must succeed at an Intellect attack against it.</p><p><strong>Genre Items: rusting gauntlet (fantasy); metal metaoxidizer (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.decay-metal",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Decay Metal",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

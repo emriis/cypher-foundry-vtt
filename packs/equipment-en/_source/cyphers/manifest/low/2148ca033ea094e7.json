@@ -1,0 +1,43 @@
+{
+  "_id": "2148ca033ea094e7",
+  "_key": "!items!2148ca033ea094e7",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Enhanced Swimming",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 41,
+      "max": 44
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a one-hour or longer recovery, you can easily and effectively swim at a superhuman level. You can swim an immediate distance as your turn and still take another action, swim a short distance as your entire action, or swim a long distance as your entire action if you succeed at a difficulty 4 swimming task (to “run”). Your swimming tasks (such as to avoid a current or whirlpool) are eased by two steps. Your melee attacks while swimming ignore the normal penalties for fighting in water.</p><p><strong>Genre Items: potion of swimming (fantasy); drag‑suppressing nanosuit (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.enhanced-swimming",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Enhanced Swimming",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "_id": "61c73c1968c9b17b",
+  "_key": "!items!61c73c1968c9b17b",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Mental Vigilance",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 50,
+      "max": 51
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a one-hour or longer recovery, you gain two assets on Intellect defense tasks and reduce the severity of any mental wound you take by one step.</p><p><strong>Genre Items: crown of iron will (fantasy); cerebral stimulator (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.mental-vigilance",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Mental Vigilance",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.mental-vigilance"
+      }
+    }
+  }
+}

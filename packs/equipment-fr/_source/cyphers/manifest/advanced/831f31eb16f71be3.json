@@ -1,0 +1,44 @@
+{
+  "_id": "831f31eb16f71be3",
+  "_key": "!items!831f31eb16f71be3",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Homing Projectile",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "advanced",
+    "powerLevels": [
+      "advanced"
+    ],
+    "randomRange": {
+      "min": 42,
+      "max": 48
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You launch a self-guiding projectile at a foe within long range. Make a Speed attack against this foe. Success means it inflicts 8 damage. Failure means it misses but will try again one round later on your turn (requiring another attack roll, but not an action). The projectile is expended if it misses four times. The type of damage depends on the cypher, with cold, electricity, fire, piercing, or poison being the most common.</p><p><strong>Genre Items: seeking arrow (fantasy); seeking drone (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.homing-projectile",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Homing Projectile",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.homing-projectile"
+      }
+    }
+  }
+}

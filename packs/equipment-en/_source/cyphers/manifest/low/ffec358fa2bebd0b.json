@@ -1,0 +1,43 @@
+{
+  "_id": "ffec358fa2bebd0b",
+  "_key": "!items!ffec358fa2bebd0b",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Trick Embedder",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 87,
+      "max": 88
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Choose a non-intelligent beast within short range. The beast immediately learns two tricks of your choosing that they can physically perform (roll over, heel, spin, shake, go to an indicated place within long range, and so on). The beast never forgets this trick.</p><p><strong>Genre Items: beast trick rune (fantasy); pheromonal training dart (sci-fi) You can use a trick embedder to teach tricks to a hostile or indifferent beast, but that won’t make them obey you.</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.trick-embedder",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Trick Embedder",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}
