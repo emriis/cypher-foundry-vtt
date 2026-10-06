@@ -65,6 +65,17 @@ function createActor() {
 }
 
 function configureFoundryStubs() {
+  globalThis.foundry = {
+    applications: {
+      ux: {
+        TextEditor: {
+          implementation: {
+            enrichHTML: async value => `<p>${value}</p>`
+          }
+        }
+      }
+    }
+  };
   globalThis.game = {
     i18n: {
       localize: key => key,
