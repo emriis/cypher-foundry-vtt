@@ -7,6 +7,13 @@ class FieldDefinition {
   }
 }
 
+class ArrayFieldDefinition extends FieldDefinition {
+  constructor(element, options = {}) {
+    super(options);
+    this.element = element;
+  }
+}
+
 globalThis.foundry = {
   abstract: { TypeDataModel: class {} },
   data: { fields: {
@@ -14,7 +21,7 @@ globalThis.foundry = {
     NumberField: FieldDefinition,
     HTMLField: FieldDefinition,
     BooleanField: FieldDefinition,
-    ArrayField: FieldDefinition,
+    ArrayField: ArrayFieldDefinition,
     SchemaField: FieldDefinition
   }}
 };
@@ -44,13 +51,13 @@ test("weapon target effects keep level ranges and explicit effect semantics", ()
   const targetEffects =
     CypherAttackData.defineSchema().mechanics.options.targetEffects;
 
-  assert.ok(targetEffects.options.element);
+  assert.ok(targetEffects.element);
   assert.deepEqual(
-    targetEffects.options.element.options.effect.options.choices,
+    targetEffects.element.options.effect.options.choices,
     ["", "loseNextAction", "hindered"]
   );
   assert.equal(
-    targetEffects.options.element.options.maximumTargetLevel.options.nullable,
+    targetEffects.element.options.maximumTargetLevel.options.nullable,
     true
   );
 });
