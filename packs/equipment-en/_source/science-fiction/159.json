@@ -18,7 +18,7 @@
       "Heavy weapon, rapid-fire weapon, long range; can switch to medium weapon configuration as an action"
     ],
     "mechanics": {
-      "twoHanded": false,
+      "twoHanded": true,
       "rapidFire": true,
       "ignoresPhysicalArmor": 0,
       "cutsThroughMaterialsLevel": null,
