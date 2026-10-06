@@ -88,11 +88,65 @@ test("rollDepletion marks a depleting item and posts a rerollable result", async
     id: "artifact",
     name: "Artifact",
     actor: { id: "actor" },
-    system: { depletionDie: "d6", depletionThreshold: 1 },
+    system: { depletionDie: "d6", depletionMin: 1, depletionMax: 1 },
     async update(value) { update = value; }
   };
 
   assert.equal(await rollDepletion(item), true);
   assert.deepEqual(update, { "system.depleted": true });
   assert.equal(message.flags.cypher.rerollable, true);
+  assert.equal(message.flags.cypher.depletionMin, 1);
+  assert.equal(message.flags.cypher.depletionMax, 1);
+});
+
+
+test("rollDepletion depletes only inside an inclusive depletion range", async () => {
+  let updateCalled = false;
+  globalThis.game = {
+    i18n: {
+      localize: value => value,
+      format: (value, data) => `${value}:${data.threshold ?? data.name ?? ""}`
+    }
+  };
+  globalThis.ChatMessage = { getSpeaker: () => ({}) };
+  globalThis.Roll = class {
+    async evaluate() {
+      this.total = 3;
+      return this;
+    }
+    async toMessage(data) { return data; }
+  };
+
+  const item = {
+    type: "artifact",
+    name: "Range Artifact",
+    actor: { id: "actor" },
+    system: { depletionDie: "d20", depletionMin: 2, depletionMax: 4 },
+    update: async () => { updateCalled = true; }
+  };
+
+  assert.equal(await rollDepletion(item), true);
+  assert.equal(updateCalled, true);
+});
+
+test("rollDepletion leaves an item intact outside its depletion range", async () => {
+  let updateCalled = false;
+  globalThis.Roll = class {
+    async evaluate() {
+      this.total = 5;
+      return this;
+    }
+    async toMessage(data) { return data; }
+  };
+
+  const item = {
+    type: "equipment",
+    name: "Range Equipment",
+    actor: { id: "actor" },
+    system: { depletionDie: "d20", depletionMin: 2, depletionMax: 4 },
+    update: async () => { updateCalled = true; }
+  };
+
+  assert.equal(await rollDepletion(item), true);
+  assert.equal(updateCalled, false);
 });

@@ -57,13 +57,13 @@ export const CRD_MECHANICAL_FIELDS = Object.freeze({
   shield: ["equipped", "wounds"],
   equipment: [
     "quantity", "level", "priceCategory", "weight", "depletionDie",
-    "depletionThreshold", "depleted"
+    "depletionMin", "depletionMax", "depleted"
   ],
   cypher: [
     "cypherType", "level", "powerLevel", "internal", "identified", "depleted"
   ],
   artifact: [
-    "level", "form", "identified", "depletionDie", "depletionThreshold",
+    "level", "form", "identified", "depletionDie", "depletionMin", "depletionMax",
     "depleted"
   ]
 });

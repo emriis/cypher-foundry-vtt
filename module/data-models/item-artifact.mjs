@@ -9,7 +9,7 @@ import { CYPHER } from "../config.mjs";
 const { StringField, HTMLField, BooleanField, NumberField } = foundry.data.fields;
 
 export default class CypherArtifactData extends foundry.abstract.TypeDataModel {
-  static defineSchema() {
+  static migrateData(source) {\n    if (source && source.depletionThreshold !== undefined) {\n      const threshold = Number(source.depletionThreshold);\n      source.depletionMin ??= threshold;\n      source.depletionMax ??= threshold;\n      delete source.depletionThreshold;\n    }\n    return super.migrateData ? super.migrateData(source) : source;\n  }\n\n  static defineSchema() {
     return {
       level: new StringField({ required: true, blank: true }),
       form: new StringField({ required: true, blank: true }),
@@ -17,7 +17,8 @@ export default class CypherArtifactData extends foundry.abstract.TypeDataModel {
       // Depletion is structured (not free text) to allow the automated roll:
       // "1 in 1d20" → depletionDie: "d20", depletionThreshold: 1. "—" (never depletes) → "none".
       depletionDie: new StringField({ required: true, initial: "d20", choices: ["none", ...CYPHER.depletionDice] }),
-      depletionThreshold: new NumberField({ required: true, integer: true, initial: 1, min: 1 }),
+      depletionMin: new NumberField({ required: true, integer: true, initial: 1, min: 1 }),
+      depletionMax: new NumberField({ required: true, integer: true, initial: 1, min: 1 }),
       depleted: new BooleanField({ required: true, initial: false }),
       description: new HTMLField({ required: true, blank: true })
     };

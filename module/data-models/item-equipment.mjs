@@ -9,7 +9,7 @@ import { CYPHER } from "../config.mjs";
 const { StringField, NumberField, HTMLField, BooleanField } = foundry.data.fields;
 
 export default class CypherEquipmentData extends foundry.abstract.TypeDataModel {
-  static defineSchema() {
+  static migrateData(source) {\n    if (source && source.depletionThreshold !== undefined) {\n      const threshold = Number(source.depletionThreshold);\n      source.depletionMin ??= threshold;\n      source.depletionMax ??= threshold;\n      delete source.depletionThreshold;\n    }\n    return super.migrateData ? super.migrateData(source) : source;\n  }\n\n  static defineSchema() {
     return {
       quantity: new NumberField({ required: true, integer: true, initial: 1, min: 0 }),
       level: new NumberField({ required: true, integer: true, nullable: true, initial: 4, min: 0 }),
@@ -20,7 +20,8 @@ export default class CypherEquipmentData extends foundry.abstract.TypeDataModel 
       // Some equipment (medical bag, aspirin...) uses depletion instead of a fixed quantity,
       // as in the CRD. "none" = no depletion (default behavior).
       depletionDie: new StringField({ required: true, initial: "none", choices: ["none", ...CYPHER.depletionDice] }),
-      depletionThreshold: new NumberField({ required: true, integer: true, initial: 1, min: 1 }),
+      depletionMin: new NumberField({ required: true, integer: true, initial: 1, min: 1 }),
+      depletionMax: new NumberField({ required: true, integer: true, initial: 1, min: 1 }),
       depleted: new BooleanField({ required: true, initial: false }),
 
       description: new HTMLField({ required: true, blank: true })
