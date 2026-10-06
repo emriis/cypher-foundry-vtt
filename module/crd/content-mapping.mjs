@@ -56,7 +56,7 @@ export const CRD_MECHANICAL_FIELDS = Object.freeze({
   armor: ["category", "freelyUsable", "blockEaseDamage", "priceCategory"],
   shield: ["equipped", "priceCategory", "wounds"],
   equipment: [
-    "quantity", "level", "priceCategory", "weight", "depletionDie",
+    "quantity", "level", "priceCategory", "depletionDie",
     "depletionMin", "depletionMax", "depleted"
   ],
   cypher: [
