@@ -1,0 +1,35 @@
+{
+  "_id": "aa87bee538083",
+  "_key": "!items!aa87bee538083",
+  "document": "Item",
+  "name": "Antigravity belt*",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "veryExpensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Provides flight at walking speed for an hour; several hours to recharge"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Antigravity belt*",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — veryExpensive Items — Antigravity belt*",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

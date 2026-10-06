@@ -1,0 +1,35 @@
+{
+  "_id": "aa87bee538035",
+  "_key": "!items!aa87bee538035",
+  "document": "Item",
+  "name": "First aid kit",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "moderate",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Asset for healing tasks; five uses"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.First aid kit",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — moderate Items — First aid kit",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

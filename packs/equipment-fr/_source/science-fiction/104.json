@@ -1,0 +1,54 @@
+{
+  "_id": "aa87bee538068",
+  "_key": "!items!aa87bee538068",
+  "document": "Item",
+  "name": "Light blaster pistol*",
+  "type": "attack",
+  "crdType": "weapon",
+  "system": {
+    "attackType": "light",
+    "range": "short",
+    "extremeRange": "",
+    "damage": 2,
+    "stat": "might",
+    "weaponFamily": "",
+    "attackSkillCategory": "",
+    "priceCategory": "expensive",
+    "properties": [
+      "Light weapon, short range"
+    ],
+    "mechanics": {
+      "twoHanded": false,
+      "rapidFire": false,
+      "ignoresPhysicalArmor": 0,
+      "cutsThroughMaterialsLevel": null,
+      "targetEffects": [],
+      "requiresTripod": false,
+      "requiredOperators": 0,
+      "alternateConfiguration": {
+        "enabled": false,
+        "attackType": "",
+        "action": ""
+      }
+    },
+    "freelyUsable": false,
+    "equipped": false,
+    "description": "Light weapon, short range"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Light blaster pistol*",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — expensive Items — Light blaster pistol*",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Science Fiction.Light blaster pistol*"
+      }
+    }
+  }
+}

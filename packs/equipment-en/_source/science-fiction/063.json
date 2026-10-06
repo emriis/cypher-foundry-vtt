@@ -1,0 +1,35 @@
+{
+  "_id": "aa87bee53803f",
+  "_key": "!items!aa87bee53803f",
+  "document": "Item",
+  "name": "Interface module",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "moderate",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Electronic device that allows user to connect to a wide variety of different computer systems or computerized devices, usually for the purpose of hacking"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Interface module",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — moderate Items — Interface module",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

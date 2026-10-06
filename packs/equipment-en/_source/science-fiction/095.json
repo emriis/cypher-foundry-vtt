@@ -1,0 +1,35 @@
+{
+  "_id": "aa87bee53805f",
+  "_key": "!items!aa87bee53805f",
+  "document": "Item",
+  "name": "Environment suit",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "expensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "24 hours of breathable air; wounds from extreme temperatures are reduced by two steps"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Environment suit",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — expensive Items — Environment suit",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

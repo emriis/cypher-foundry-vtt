@@ -1,0 +1,35 @@
+{
+  "_id": "aa87bee538093",
+  "_key": "!items!aa87bee538093",
+  "document": "Item",
+  "name": "Infiltrator",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "veryExpensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Asset on lockpicking for mechanical locks"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Infiltrator",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — veryExpensive Items — Infiltrator",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

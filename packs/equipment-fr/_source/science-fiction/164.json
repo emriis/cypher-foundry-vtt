@@ -1,0 +1,54 @@
+{
+  "_id": "aa87bee5380a4",
+  "_key": "!items!aa87bee5380a4",
+  "document": "Item",
+  "name": "Blast cannon",
+  "type": "attack",
+  "crdType": "weapon",
+  "system": {
+    "attackType": "heavy",
+    "range": "veryLong",
+    "extremeRange": "",
+    "damage": 10,
+    "stat": "might",
+    "weaponFamily": "",
+    "attackSkillCategory": "",
+    "priceCategory": "exorbitant",
+    "properties": [
+      "Heavy weapon, 10 damage, very long range, requires a tripod and two people to operate, rapid-fire weapon"
+    ],
+    "mechanics": {
+      "twoHanded": false,
+      "rapidFire": true,
+      "ignoresPhysicalArmor": 0,
+      "cutsThroughMaterialsLevel": null,
+      "targetEffects": [],
+      "requiresTripod": true,
+      "requiredOperators": 2,
+      "alternateConfiguration": {
+        "enabled": false,
+        "attackType": "",
+        "action": ""
+      }
+    },
+    "freelyUsable": false,
+    "equipped": false,
+    "description": "Heavy weapon, 10 damage, very long range, requires a tripod and two people to operate, rapid-fire weapon"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Blast cannon",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — exorbitant Items — Blast cannon",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Science Fiction.Blast cannon"
+      }
+    }
+  }
+}

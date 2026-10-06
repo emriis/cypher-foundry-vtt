@@ -1,0 +1,31 @@
+{
+  "_id": "aa87bee538097",
+  "_key": "!items!aa87bee538097",
+  "document": "Item",
+  "name": "Monomolecular blade",
+  "type": "armor",
+  "crdType": "armor",
+  "system": {
+    "category": "light",
+    "freelyUsable": false,
+    "equipped": false,
+    "blockEaseDamage": 0,
+    "priceCategory": "veryExpensive",
+    "description": "Light weapon, ignores 1 point of physical armor, cuts through physical materials up to level 6"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Monomolecular blade",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — veryExpensive Items — Monomolecular blade",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

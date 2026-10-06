@@ -1,0 +1,35 @@
+{
+  "_id": "aa87bee53807f",
+  "_key": "!items!aa87bee53807f",
+  "document": "Item",
+  "name": "Surelock*",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 6,
+    "priceCategory": "expensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Level 6 lock, can be attached to any opening with level 8 adhesive"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Surelock*",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — expensive Items — Surelock*",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

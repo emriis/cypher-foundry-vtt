@@ -1,0 +1,35 @@
+{
+  "_id": "aa87bee538037",
+  "_key": "!items!aa87bee538037",
+  "document": "Item",
+  "name": "Grenade",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "moderate",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Equivalent to a bomb cypher (adhesion, fiery, flash, poison, shrapnel, or sonic)"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Grenade",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — moderate Items — Grenade",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "_id": "aa87bee538011",
+  "_key": "!items!aa87bee538011",
+  "document": "Item",
+  "name": "Nutritabs, sleeve",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "inexpensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Reasonable one-day sustenance for two or three people"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Nutritabs, sleeve",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — inexpensive Items — Nutritabs, sleeve",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

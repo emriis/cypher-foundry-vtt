@@ -1,0 +1,31 @@
+{
+  "_id": "aa87bee538085",
+  "_key": "!items!aa87bee538085",
+  "document": "Item",
+  "name": "Battlesuit",
+  "type": "armor",
+  "crdType": "armor",
+  "system": {
+    "category": "heavy",
+    "freelyUsable": false,
+    "equipped": false,
+    "blockEaseDamage": 0,
+    "priceCategory": "veryExpensive",
+    "description": "Heavy armor; 24 hours of breathable air; wounds from extreme temperatures are reduced by two steps"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Battlesuit",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — veryExpensive Items — Battlesuit",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

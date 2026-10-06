@@ -1,0 +1,36 @@
+{
+  "_id": "aa87bee538050",
+  "_key": "!items!aa87bee538050",
+  "document": "Item",
+  "name": "Smart device",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "moderate",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "app that makes character inebriated, easing social tasks and hindering physical tasks for one hour; any additional doses end the easing and each hinders all tasks by one step"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Smart device",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — moderate Items — Smart device",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Science Fiction.Smart device"
+      }
+    }
+  }
+}

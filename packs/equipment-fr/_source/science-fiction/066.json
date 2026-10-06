@@ -1,0 +1,32 @@
+{
+  "_id": "aa87bee538042",
+  "_key": "!items!aa87bee538042",
+  "document": "Item",
+  "name": "Leather jacket",
+  "type": "armor",
+  "crdType": "armor",
+  "system": {
+    "category": "light",
+    "freelyUsable": false,
+    "equipped": false,
+    "blockEaseDamage": 0,
+    "priceCategory": "moderate",
+    "description": "Light armor"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Leather jacket",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — moderate Items — Leather jacket",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Science Fiction.Leather jacket"
+      }
+    }
+  }
+}

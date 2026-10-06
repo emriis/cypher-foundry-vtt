@@ -1,0 +1,35 @@
+{
+  "_id": "aa87bee538025",
+  "_key": "!items!aa87bee538025",
+  "document": "Item",
+  "name": "Bottle of good wine",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "moderate",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": ""
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Bottle of good wine",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — moderate Items — Bottle of good wine",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

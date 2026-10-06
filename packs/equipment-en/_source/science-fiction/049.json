@@ -1,0 +1,35 @@
+{
+  "_id": "aa87bee538031",
+  "_key": "!items!aa87bee538031",
+  "document": "Item",
+  "name": "Electric lantern",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "moderate",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Normal light in an immediate area, dim light in a short area; three to four hours"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Electric lantern",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — moderate Items — Electric lantern",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

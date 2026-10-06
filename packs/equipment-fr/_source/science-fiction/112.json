@@ -1,0 +1,54 @@
+{
+  "_id": "aa87bee538070",
+  "_key": "!items!aa87bee538070",
+  "document": "Item",
+  "name": "Needler",
+  "type": "attack",
+  "crdType": "weapon",
+  "system": {
+    "attackType": "light",
+    "range": "long",
+    "extremeRange": "",
+    "damage": 2,
+    "stat": "might",
+    "weaponFamily": "",
+    "attackSkillCategory": "",
+    "priceCategory": "expensive",
+    "properties": [
+      "Light weapon, long range"
+    ],
+    "mechanics": {
+      "twoHanded": false,
+      "rapidFire": false,
+      "ignoresPhysicalArmor": 0,
+      "cutsThroughMaterialsLevel": null,
+      "targetEffects": [],
+      "requiresTripod": false,
+      "requiredOperators": 0,
+      "alternateConfiguration": {
+        "enabled": false,
+        "attackType": "",
+        "action": ""
+      }
+    },
+    "freelyUsable": false,
+    "equipped": false,
+    "description": "Light weapon, long range"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Needler",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — expensive Items — Needler",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Science Fiction.Needler"
+      }
+    }
+  }
+}

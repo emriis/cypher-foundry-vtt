@@ -1,0 +1,36 @@
+{
+  "_id": "aa87bee5380ac",
+  "_key": "!items!aa87bee5380ac",
+  "document": "Item",
+  "name": "Small spaceship",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "exorbitant",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Comfortably carries about six people Sci-fi Currency Equivalences If the GM uses specific currency amounts and makes in-game prices about the same as the price of modern goods, that makes it easy for everyone to understand a quoted price. For example, if a nice sandwich costs $10 in modern-day Earth and 10 sol credits in a futuristic planetary exploration game, you have a reasonable idea of how much a ground car or apartment costs. With that in mind, here are some suggested sci-fi currency values for the general price categories, whether the GM is using sol credits, star dollars, Imperial credits, or platinum chips. Category Currency Value Inexpensive $10–$20 Moderate $100–$200 Expensive $1,000–$2,000 Very expensive $10,000—$20,000 Exorbitant $100,000— $200,000"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Small spaceship",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — exorbitant Items — Small spaceship",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Science Fiction.Small spaceship"
+      }
+    }
+  }
+}

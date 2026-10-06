@@ -1,0 +1,35 @@
+{
+  "_id": "aa87bee53803b",
+  "_key": "!items!aa87bee53803b",
+  "document": "Item",
+  "name": "Holographic suite",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "moderate",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "One night for two in a room using holograms for decoration"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Holographic suite",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — moderate Items — Holographic suite",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

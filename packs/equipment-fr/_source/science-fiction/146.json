@@ -1,0 +1,32 @@
+{
+  "_id": "aa87bee538092",
+  "_key": "!items!aa87bee538092",
+  "document": "Item",
+  "name": "Impact cloak*",
+  "type": "armor",
+  "crdType": "armor",
+  "system": {
+    "category": "heavy",
+    "freelyUsable": false,
+    "equipped": false,
+    "blockEaseDamage": 0,
+    "priceCategory": "veryExpensive",
+    "description": "Fashionable cloak with attached hood; hardens if wearer is attacked, protecting as heavy armor but encumbering as light armor"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Impact cloak*",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — veryExpensive Items — Impact cloak*",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Science Fiction.Impact cloak*"
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "_id": "aa87bee538003",
+  "_key": "!items!aa87bee538003",
+  "document": "Item",
+  "name": "Capsule room",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "inexpensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "One night in tiny, coffin-like pod"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Capsule room",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — inexpensive Items — Capsule room",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

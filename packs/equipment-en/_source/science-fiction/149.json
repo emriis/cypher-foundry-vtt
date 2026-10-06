@@ -1,0 +1,35 @@
+{
+  "_id": "aa87bee538095",
+  "_key": "!items!aa87bee538095",
+  "document": "Item",
+  "name": "Jetpack",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "veryExpensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Flies a long distance each round, or 120 mph (190 kph) overland, refuel every 1,000 miles (1,600 km)"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Jetpack",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — veryExpensive Items — Jetpack",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

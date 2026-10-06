@@ -1,0 +1,31 @@
+{
+  "_id": "aa87bee538069",
+  "_key": "!items!aa87bee538069",
+  "document": "Item",
+  "name": "Lightweight body armor",
+  "type": "armor",
+  "crdType": "armor",
+  "system": {
+    "category": "medium",
+    "freelyUsable": false,
+    "equipped": false,
+    "blockEaseDamage": 0,
+    "priceCategory": "expensive",
+    "description": "Medium armor"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Lightweight body armor",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "Science Fiction Equipment — expensive Items — Lightweight body armor",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}
