@@ -35,3 +35,8 @@ test("Stunstick extraction preserves its source provenance", () => {
     "structural field mapping only"
   ]);
 });
+
+test("extracted Stunstick satisfies the CRD source contract", async () => {
+  const { validateCrdSourceRecord } = await import("../../module/crd/source-schema.mjs");
+  assert.deepEqual(validateCrdSourceRecord(CRD_STUNSTICK_FIXTURE), []);
+});
