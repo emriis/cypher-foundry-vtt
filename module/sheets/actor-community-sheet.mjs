@@ -18,8 +18,12 @@ export default class CypherCommunitySheet extends HandlebarsApplicationMixin(Act
 
   /** Handlebars template parts rendered by the sheet. */
   static PARTS = {
-    header: { template: "systems/cypher/templates/actor/community/header.hbs" },
-    body: { template: "systems/cypher/templates/actor/community/body.hbs", scrollable: [""] }
+    body: {
+      root: true,
+      template: "systems/cypher/templates/actor/community/body.hbs",
+      templates: ["systems/cypher/templates/actor/community/header.hbs"],
+      scrollable: [".community-body"]
+    }
   };
 
   /**
