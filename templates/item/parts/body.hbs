@@ -442,8 +442,11 @@
       <option value="d12" {{#ifEquals system.depletionDie "d12"}}selected{{/ifEquals}}>1d12</option>
       <option value="d20" {{#ifEquals system.depletionDie "d20"}}selected{{/ifEquals}}>1d20</option>
     </select>
-    <label>{{localize 'CYPHER.Depletion.Threshold'}}
-      <input name="system.depletionThreshold" type="number" value="{{system.depletionThreshold}}" min="1"/>
+    <label>{{localize 'CYPHER.Depletion.Min'}}
+      <input name="system.depletionMin" type="number" value="{{system.depletionMin}}" min="1"/>
+    </label>
+    <label>{{localize 'CYPHER.Depletion.Max'}}
+      <input name="system.depletionMax" type="number" value="{{system.depletionMax}}" min="1"/>
     </label>
   </div>
   <div class="form-group inline">
