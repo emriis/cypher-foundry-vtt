@@ -104,11 +104,10 @@ d'architecture. Comparaison faite, adoptions retenues :
   sans incompatibilité réelle connue.
 - **Flag `hotReload`** ajouté : permet à Foundry de recharger CSS/templates/langue à la volée
   pendant le développement, sans redémarrer le monde.
-- **Scaffold de migration de schéma** (`module/migration.mjs`), suivant le modèle exact de
-  dnd5e (version stockée par acteur, comparée à `needsMigrationVersion`/
-  `compatibleMigrationVersion` du manifeste, exécutée au hook `ready`). Le schéma a déjà changé
-  plusieurs fois pendant le développement (blessures, armure, artefacts) — sans ce filet, tout
-  monde de jeu créé avant un futur changement de schéma garderait des données orphelines.
+- **Point d'entrée de migration de monde** (`module/migration.mjs`) conservé comme emplacement
+  réservé aux futures migrations de données persistées. Aucun monde pré-alpha pris en charge
+  n'exige actuellement de transformation ; les migrations ne seront réintroduites que lorsqu'un
+  changement de schéma nécessitera réellement une conversion de données.
 - **Exports groupés (`_module.mjs`)** par dossier (`data-models/`, `documents/`, `sheets/`),
   suivant le motif `import * as X from "./module/X/_module.mjs"` de dnd5e, au lieu d'importer
   chaque classe individuellement dans `cypher.mjs` — plus lisible et qui passe mieux à l'échelle

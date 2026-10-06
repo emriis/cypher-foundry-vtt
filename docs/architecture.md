@@ -21,11 +21,10 @@ The system currently has these main layers:
 | `module/abilities.mjs` | Small pure Ability presentation helper |
 | `module/config.mjs` | Cypher constants and rule configuration |
 | `module/import.mjs` | Character Builder import UI and compatibility facade |
-| `module/migration.mjs` | Compatibility facade for world migration orchestration |
-| `module/migrations/` | Migration orchestration and isolated schema/content transformations |
+| `module/migration.mjs` | Reserved entry point for future world-data migrations |
 | `scripts/` | Pack compilation, source migration, packaging, and E2E orchestration |
 | `cypher.mjs` | Foundry registration and global document/UI hooks |
-| `tests/` | Rule, integration, content-contract, migration, and E2E tests |
+| `tests/` | Rule, integration, content-contract, migration-readiness, and E2E tests |
 
 This separation is useful, but several modules currently contain multiple
 architectural responsibilities.
@@ -358,13 +357,17 @@ Completed extractions:
 The PC sheet remains responsible for collecting user input and presentation. It should not enforce
 persistent game invariants or duplicate deterministic validation.
 
-### Phase 6 — Split migrations
+### Phase 6 — Migration boundary
 
-Phase 6 is complete. Migration orchestration is isolated in
-`applications/migration-runner.mjs`-adjacent migration code, while actor
-schema and legacy content transformations are independently testable under
-`module/migrations/`. `module/migration.mjs` remains a compatibility facade
-for the existing Foundry bootstrap.
+Phase 6 established the migration boundary. The alpha reset removes obsolete
+world-data transformations because no supported pre-alpha world currently
+requires conversion. `module/migration.mjs` remains as an intentionally empty
+entry point so a future persisted-data migration has a stable place to start.
+
+When a real migration is required, introduce it with representative
+pre-migration fixtures, a version-gated transformation, focused tests, and
+matching manifest metadata. Do not retain speculative migration code between
+actual compatibility requirements.
 
 ### Phase 7 — Reorganize tests
 

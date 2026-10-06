@@ -13,7 +13,6 @@ import { CYPHER } from "./module/config.mjs";
 import * as documents from "./module/documents/_module.mjs";
 import * as models from "./module/data-models/_module.mjs";
 import * as sheets from "./module/sheets/_module.mjs";
-import { migrateWorld } from "./module/migration.mjs";
 import { importFromBuilder, openImportDialog, registerImportButton } from "./module/import.mjs";
 import { enforceSingleEquippedArmor } from "./module/applications/equipment-service.mjs";
 
@@ -88,17 +87,6 @@ Hooks.once("init", () => {
   });
 
   /* -------------------------------------------- */
-  /*  World settings                               */
-  /* -------------------------------------------- */
-  // The initial schema baseline prevents new worlds from being treated as legacy data.
-  game.settings.register("cypher", "schemaVersion", {
-    scope: "world",
-    config: false,
-    type: String,
-    default: "0.1.7"
-  });
-
-  /* -------------------------------------------- */
   /*  Handlebars helpers                           */
   /* -------------------------------------------- */
   Handlebars.registerHelper("concat", (...args) => {
@@ -130,10 +118,8 @@ Hooks.once("init", () => {
   );
 });
 
-Hooks.once("ready", async () => {
+Hooks.once("ready", () => {
   console.log("Cypher | Prêt / Ready");
-  // Migrations run after world documents are available, so existing actors can be updated.
-  await migrateWorld();
 });
 
 /**

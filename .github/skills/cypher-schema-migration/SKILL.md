@@ -16,10 +16,10 @@ Use this workflow when a data-model change can make existing Actor or Item data 
 
 ## Implement with TDD
 
-1. Add a focused test using representative pre-migration data. Assert transformed values, preservation of unrelated fields, idempotence, version recording, GM-only execution, and locked-pack behavior as applicable.
+1. Add a focused test using representative pre-migration data. Assert transformed values, preservation of unrelated fields, idempotence, and any relevant world/pack safety constraints.
 2. Run the focused test and confirm it fails for the intended missing transformation.
-3. Add the smallest version-gated transformation in `module/migration.mjs`. Migrate world documents and only the unlocked compendium documents supported by the migration runner.
-4. Update `system.json` `flags.needsMigrationVersion` to the target schema version. Raise `flags.compatibleMigrationVersion` only when older data cannot be migrated safely; do not use it as a routine version marker.
+3. Add the smallest version-gated transformation behind the reserved `module/migration.mjs` entry point, keeping the entry point itself small.
+4. Add manifest migration metadata only for the release that actually introduces the compatibility break: set `flags.needsMigrationVersion` to the target schema version and raise `flags.compatibleMigrationVersion` only when older data cannot be migrated safely.
 5. Add matching localized migration messages only when the user-visible status or failure mode changes.
 6. Rerun the focused test, then `npm test`.
 
