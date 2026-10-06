@@ -1,0 +1,35 @@
+{
+  "_id": "71afd498d0073",
+  "_key": "!items!71afd498d0073",
+  "document": "Item",
+  "name": "Disguise kit",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "expensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Asset for disguise tasks; five uses"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Fantasy.Disguise kit",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Fantasy Equipment",
+        "sourceLocator": "Fantasy Equipment — expensive Items — Disguise kit",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

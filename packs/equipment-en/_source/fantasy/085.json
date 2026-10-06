@@ -1,0 +1,35 @@
+{
+  "_id": "71afd498d0055",
+  "_key": "!items!71afd498d0055",
+  "document": "Item",
+  "name": "Signal horn",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "moderate",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Can be heard up to 1 mile (1.6 km) away"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Fantasy.Signal horn",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Fantasy Equipment",
+        "sourceLocator": "Fantasy Equipment — moderate Items — Signal horn",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

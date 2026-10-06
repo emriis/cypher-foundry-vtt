@@ -1,0 +1,53 @@
+{
+  "_id": "71afd498d0091",
+  "_key": "!items!71afd498d0091",
+  "document": "Item",
+  "name": "Sailing ship (small)",
+  "type": "attack",
+  "crdType": "weapon",
+  "system": {
+    "attackType": "light",
+    "range": "immediate",
+    "extremeRange": "",
+    "damage": 2,
+    "stat": "might",
+    "weaponFamily": "",
+    "attackSkillCategory": "",
+    "priceCategory": "exorbitant",
+    "properties": [
+      "Fantasy Currency Equivalences Here are some suggested fantasy currency values for the general price categories. Category Gold Piece Value Inexpensive Less than 1 Moderate 1–10 Expensive 100–500 Very expensive 1,000–10,000 Exorbitant 10,000+ Science Fiction Equipment In a science fiction setting, the following items are usually available. An item marked with an asterisk (*) indicates fantastic-level technology (such as cybernetic limbs, multidimensional storage, and personal energy shields) available only in far-future or advanced-technology settings. An asterisk (*) indicates fantastic-level technology (such as cybernetic limbs, multidimensional storage, and personal energy shields) available only in far￾future or advanced-technology settings. Inexpensive Items Item Note Bullets (50) Ammunition for handguns and rifles Capsule room One night in tiny, coffin-like pod Cryo storage One month (or more . . . ) in an unused deep freeze locker Energy pack (50) Ammunition for blaster weapons Everlight* Normal light out to very long distance, radio isotope power cell lasts years Flashlight Normal light out to short distance Knife (simple) Light weapon; easily destroyed Needles (50) Ammunition for needler"
+    ],
+    "mechanics": {
+      "twoHanded": false,
+      "rapidFire": false,
+      "ignoresPhysicalArmor": 0,
+      "cutsThroughMaterialsLevel": null,
+      "targetEffects": [],
+      "requiresTripod": false,
+      "requiredOperators": 0,
+      "alternateConfiguration": {
+        "enabled": false,
+        "attackType": "",
+        "action": ""
+      }
+    },
+    "freelyUsable": false,
+    "equipped": false,
+    "description": "Fantasy Currency Equivalences Here are some suggested fantasy currency values for the general price categories. Category Gold Piece Value Inexpensive Less than 1 Moderate 1–10 Expensive 100–500 Very expensive 1,000–10,000 Exorbitant 10,000+ Science Fiction Equipment In a science fiction setting, the following items are usually available. An item marked with an asterisk (*) indicates fantastic-level technology (such as cybernetic limbs, multidimensional storage, and personal energy shields) available only in far-future or advanced-technology settings. An asterisk (*) indicates fantastic-level technology (such as cybernetic limbs, multidimensional storage, and personal energy shields) available only in far￾future or advanced-technology settings. Inexpensive Items Item Note Bullets (50) Ammunition for handguns and rifles Capsule room One night in tiny, coffin-like pod Cryo storage One month (or more . . . ) in an unused deep freeze locker Energy pack (50) Ammunition for blaster weapons Everlight* Normal light out to very long distance, radio isotope power cell lasts years Flashlight Normal light out to short distance Knife (simple) Light weapon; easily destroyed Needles (50) Ammunition for needler"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Fantasy.Sailing ship (small)",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Fantasy Equipment",
+        "sourceLocator": "Fantasy Equipment — exorbitant Items — Sailing ship (small)",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

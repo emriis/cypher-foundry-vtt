@@ -1,0 +1,35 @@
+{
+  "_id": "71afd498d008d",
+  "_key": "!items!71afd498d008d",
+  "document": "Item",
+  "name": "Warhorse",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "veryExpensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "level 4; moves a long distance each round Exorbitant Items Item Note"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Fantasy.Warhorse",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Fantasy Equipment",
+        "sourceLocator": "Fantasy Equipment — veryExpensive Items — Warhorse",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

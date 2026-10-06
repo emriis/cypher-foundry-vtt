@@ -1,0 +1,42 @@
+{
+  "_id": "71afd498d0053",
+  "_key": "!items!71afd498d0053",
+  "document": "Item",
+  "name": "Shield",
+  "type": "shield",
+  "crdType": "shield",
+  "system": {
+    "equipped": false,
+    "priceCategory": "moderate",
+    "wounds": {
+      "minor": {
+        "max": 3,
+        "current": 0
+      },
+      "moderate": {
+        "max": 2,
+        "current": 0
+      },
+      "major": {
+        "max": 1,
+        "current": 0
+      }
+    },
+    "description": "Can block wounds"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Fantasy.Shield",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Fantasy Equipment",
+        "sourceLocator": "Fantasy Equipment — moderate Items — Shield",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

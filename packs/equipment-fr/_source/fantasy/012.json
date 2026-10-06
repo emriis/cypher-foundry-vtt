@@ -1,0 +1,36 @@
+{
+  "_id": "71afd498d000c",
+  "_key": "!items!71afd498d000c",
+  "document": "Item",
+  "name": "Gallon of ale",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "inexpensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": ""
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Fantasy.Gallon of ale",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Fantasy Equipment",
+        "sourceLocator": "Fantasy Equipment — inexpensive Items — Gallon of ale",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Fantasy.Gallon of ale"
+      }
+    }
+  }
+}

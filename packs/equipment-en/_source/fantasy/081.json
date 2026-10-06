@@ -1,0 +1,35 @@
+{
+  "_id": "71afd498d0051",
+  "_key": "!items!71afd498d0051",
+  "document": "Item",
+  "name": "Rope",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "moderate",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Hemp, 50 feet (16 m)"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Fantasy.Rope",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Fantasy Equipment",
+        "sourceLocator": "Fantasy Equipment — moderate Items — Rope",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

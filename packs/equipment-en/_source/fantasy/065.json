@@ -1,0 +1,35 @@
+{
+  "_id": "71afd498d0041",
+  "_key": "!items!71afd498d0041",
+  "document": "Item",
+  "name": "Lantern",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "moderate",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Normal light in an immediate area, dim light in a short area; three to four hours"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Fantasy.Lantern",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Fantasy Equipment",
+        "sourceLocator": "Fantasy Equipment — moderate Items — Lantern",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

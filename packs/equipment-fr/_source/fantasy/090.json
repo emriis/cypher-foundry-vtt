@@ -1,0 +1,36 @@
+{
+  "_id": "71afd498d005a",
+  "_key": "!items!71afd498d005a",
+  "document": "Item",
+  "name": "Tent",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "moderate",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Fits two adults Expensive Items Item Note"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Fantasy.Tent",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Fantasy Equipment",
+        "sourceLocator": "Fantasy Equipment — moderate Items — Tent",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Fantasy.Tent"
+      }
+    }
+  }
+}

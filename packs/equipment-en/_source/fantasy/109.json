@@ -1,0 +1,53 @@
+{
+  "_id": "71afd498d006d",
+  "_key": "!items!71afd498d006d",
+  "document": "Item",
+  "name": "Broadsword",
+  "type": "attack",
+  "crdType": "weapon",
+  "system": {
+    "attackType": "medium",
+    "range": "immediate",
+    "extremeRange": "",
+    "damage": 4,
+    "stat": "might",
+    "weaponFamily": "",
+    "attackSkillCategory": "",
+    "priceCategory": "expensive",
+    "properties": [
+      "Medium weapon"
+    ],
+    "mechanics": {
+      "twoHanded": false,
+      "rapidFire": false,
+      "ignoresPhysicalArmor": 0,
+      "cutsThroughMaterialsLevel": null,
+      "targetEffects": [],
+      "requiresTripod": false,
+      "requiredOperators": 0,
+      "alternateConfiguration": {
+        "enabled": false,
+        "attackType": "",
+        "action": ""
+      }
+    },
+    "freelyUsable": false,
+    "equipped": false,
+    "description": "Medium weapon"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Fantasy.Broadsword",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Fantasy Equipment",
+        "sourceLocator": "Fantasy Equipment — expensive Items — Broadsword",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

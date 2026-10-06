@@ -1,0 +1,36 @@
+{
+  "_id": "71afd498d003a",
+  "_key": "!items!71afd498d003a",
+  "document": "Item",
+  "name": "Hand mirror",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "moderate",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Useful for signaling or seeing around corners"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Fantasy.Hand mirror",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Fantasy Equipment",
+        "sourceLocator": "Fantasy Equipment — moderate Items — Hand mirror",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Fantasy.Hand mirror"
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "_id": "71afd498d007c",
+  "_key": "!items!71afd498d007c",
+  "document": "Item",
+  "name": "Musical instrument",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "expensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Guitar, harp, flute, hand drum, or something similar"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Fantasy.Musical instrument",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Fantasy Equipment",
+        "sourceLocator": "Fantasy Equipment — expensive Items — Musical instrument",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Fantasy.Musical instrument"
+      }
+    }
+  }
+}

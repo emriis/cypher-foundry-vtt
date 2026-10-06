@@ -1,0 +1,35 @@
+{
+  "_id": "71afd498d0029",
+  "_key": "!items!71afd498d0029",
+  "document": "Item",
+  "name": "Bottle of good wine",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "moderate",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": ""
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Fantasy.Bottle of good wine",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Fantasy Equipment",
+        "sourceLocator": "Fantasy Equipment — moderate Items — Bottle of good wine",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

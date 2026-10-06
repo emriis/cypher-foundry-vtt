@@ -1,0 +1,35 @@
+{
+  "_id": "71afd498d0063",
+  "_key": "!items!71afd498d0063",
+  "document": "Item",
+  "name": "Blank book",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "expensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "For writing notes or spells, 100 pages"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Fantasy.Blank book",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Fantasy Equipment",
+        "sourceLocator": "Fantasy Equipment — expensive Items — Blank book",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

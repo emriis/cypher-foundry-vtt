@@ -1,0 +1,32 @@
+{
+  "_id": "71afd498d0086",
+  "_key": "!items!71afd498d0086",
+  "document": "Item",
+  "name": "Full plate armor",
+  "type": "armor",
+  "crdType": "armor",
+  "system": {
+    "category": "heavy",
+    "freelyUsable": false,
+    "equipped": false,
+    "blockEaseDamage": 0,
+    "priceCategory": "veryExpensive",
+    "description": "Heavy armor"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Fantasy.Full plate armor",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Fantasy Equipment",
+        "sourceLocator": "Fantasy Equipment — veryExpensive Items — Full plate armor",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Fantasy.Full plate armor"
+      }
+    }
+  }
+}

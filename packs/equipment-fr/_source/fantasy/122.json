@@ -1,0 +1,54 @@
+{
+  "_id": "71afd498d007a",
+  "_key": "!items!71afd498d007a",
+  "document": "Item",
+  "name": "Maul",
+  "type": "attack",
+  "crdType": "weapon",
+  "system": {
+    "attackType": "heavy",
+    "range": "immediate",
+    "extremeRange": "",
+    "damage": 6,
+    "stat": "might",
+    "weaponFamily": "",
+    "attackSkillCategory": "",
+    "priceCategory": "expensive",
+    "properties": [
+      "Heavy weapon"
+    ],
+    "mechanics": {
+      "twoHanded": false,
+      "rapidFire": false,
+      "ignoresPhysicalArmor": 0,
+      "cutsThroughMaterialsLevel": null,
+      "targetEffects": [],
+      "requiresTripod": false,
+      "requiredOperators": 0,
+      "alternateConfiguration": {
+        "enabled": false,
+        "attackType": "",
+        "action": ""
+      }
+    },
+    "freelyUsable": false,
+    "equipped": false,
+    "description": "Heavy weapon"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Fantasy.Maul",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Fantasy Equipment",
+        "sourceLocator": "Fantasy Equipment — expensive Items — Maul",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Fantasy.Maul"
+      }
+    }
+  }
+}
