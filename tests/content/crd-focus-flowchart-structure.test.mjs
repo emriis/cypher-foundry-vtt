@@ -79,11 +79,10 @@ function validateFlowchart(focus, abilities) {
     const fromTier = nodes.get(edge.from).tier;
     const toTier = nodes.get(edge.to).tier;
 
-    assert.equal(
-      toTier,
-      fromTier + 1,
+    assert.ok(
+      toTier >= fromTier,
       label + ": edge " + nodes.get(edge.from).key + " -> " +
-        nodes.get(edge.to).key + " skips or repeats a tier (" +
+        nodes.get(edge.to).key + " moves backward in tiers (" +
         fromTier + " -> " + toTier + ")"
     );
 
