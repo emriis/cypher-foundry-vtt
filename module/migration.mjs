@@ -1,8 +1,13 @@
 /**
- * Public migration entry point retained for compatibility.
+ * World migration entry point reserved for future persisted-data migrations.
  *
- * The orchestration logic now lives in `migrations/migration-runner.mjs`.
- * Keeping this module as a small facade avoids changing the Foundry bootstrap
- * import while giving future migrations a clear home.
+ * The current 0.2.0-alpha.1 baseline does not require a world migration:
+ * there are no supported pre-alpha worlds whose persisted data must be
+ * transformed. Keep this function deliberately empty until a real migration
+ * requirement exists; DataModel-level migrateData hooks remain independent.
+ *
+ * @returns {Promise<void>} Resolves without modifying the world.
  */
-export { migrateWorld } from "./migrations/migration-runner.mjs";
+export async function migrateWorld() {
+  // Intentionally empty for the current alpha baseline.
+}
