@@ -1,0 +1,187 @@
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import path from "node:path";
+import test from "node:test";
+
+const root = path.resolve(import.meta.dirname, "../..");
+
+const EXPECTED_FOCI = [
+  ["abides-in-stone", "Abides in Stone"],
+  ["blazes-with-fire", "Blazes With Fire"],
+  ["builds-allies", "Builds Allies"],
+  ["carries-a-gun", "Carries a Gun"],
+  ["casts-spells", "Casts Spells"],
+  ["changes-shape", "Changes Shape"],
+  ["commands-mental-powers", "Commands Mental Powers"],
+  ["consorts-with-the-dead", "Consorts With the Dead"],
+  ["controls-beasts", "Controls Beasts"],
+  ["crafts-illusions", "Crafts Illusions"],
+  ["doesnt-do-much", "Doesn't Do Much"],
+  ["employs-magnetism", "Employs Magnetism"],
+  ["entertains", "Entertains"],
+  ["explores", "Explores"],
+  ["fights-dirty", "Fights Dirty"],
+  ["fights-unarmed", "Fights Unarmed"],
+  ["fights-with-panache", "Fights With Panache"],
+  ["fuses-flesh-and-steel", "Fuses Flesh and Steel"],
+  ["fuses-mind-and-machine", "Fuses Mind and Machine"],
+  ["grows-to-towering-heights", "Grows to Towering Heights"],
+  ["howls-at-the-moon", "Howls at the Moon"],
+  ["hunts", "Hunts"],
+  ["infiltrates", "Infiltrates"],
+  ["leads", "Leads"],
+  ["masters-telekinesis", "Masters Telekinesis"],
+  ["masters-weaponry", "Masters Weaponry"],
+  ["moves-like-the-wind", "Moves Like the Wind"],
+  ["never-says-die", "Never Says Die"],
+  ["performs-feats-of-strength", "Performs Feats of Strength"],
+  ["quells-evil", "Quells Evil"],
+  ["reveres-a-supernatural-force", "Reveres a Supernatural Force"],
+  ["rides-the-lightning", "Rides the Lightning"],
+  ["sneaks-through-the-shadows", "Sneaks Through the Shadows"],
+  ["solves-mysteries", "Solves Mysteries"],
+  ["speaks-for-the-land", "Speaks for the Land"],
+  ["stands-like-a-bastion", "Stands Like A Bastion"],
+  ["strikes-with-mystic-might", "Strikes With Mystic Might"],
+  ["talks-to-machines", "Talks to Machines"],
+  ["tends-to-the-wounded", "Tends to the Wounded"],
+  ["walks-through-walls", "Walks Through Walls"],
+  ["wears-a-sheen-of-ice", "Wears a Sheen of Ice"],
+  ["works-for-a-living", "Works for a Living"]
+];
+
+function readPackSources(family, language) {
+  const directory = path.join(
+    root,
+    "packs",
+    `${family}-${language}`,
+    "_source"
+  );
+
+  return fs.readdirSync(directory)
+    .filter(file => file.endsWith(".json"))
+    .map(file => JSON.parse(
+      fs.readFileSync(path.join(directory, file), "utf8")
+    ))
+    .filter(document => !document._key?.startsWith("!folders!"));
+}
+
+function abilityId(reference) {
+  if (typeof reference !== "string") return null;
+  return reference.match(/Item\.([A-Za-z0-9]{16})$/)?.[1] ?? null;
+}
+
+function assertFlowchart(document, abilities, label) {
+  const abilityIds = new Set(
+    document.system.abilities.map(abilityId)
+  );
+  const edges = document.system.flowchart?.edges ?? [];
+  const edgeKeys = new Set();
+
+  assert.ok(edges.length > 0, label);
+
+  for (const edge of edges) {
+    assert.ok(
+      abilityIds.has(edge.from),
+      `${label}: unknown edge source ${edge.from}`
+    );
+    assert.ok(
+      abilityIds.has(edge.to),
+      `${label}: unknown edge target ${edge.to}`
+    );
+    assert.notEqual(
+      edge.from,
+      edge.to,
+      `${label}: self-referential edge ${edge.from}`
+    );
+
+    const key = `${edge.from}->${edge.to}`;
+    assert.equal(
+      edgeKeys.has(key),
+      false,
+      `${label}: duplicate edge ${key}`
+    );
+    edgeKeys.add(key);
+
+    const fromTier = abilities.get(edge.from)?.system?.tier;
+    const toTier = abilities.get(edge.to)?.system?.tier;
+    assert.ok(
+      Number.isInteger(fromTier),
+      `${label}: missing source tier for ${edge.from}`
+    );
+    assert.ok(
+      Number.isInteger(toTier),
+      `${label}: missing target tier for ${edge.to}`
+    );
+    assert.ok(
+      toTier >= fromTier,
+      `${label}: prerequisite points backward in tiers (${fromTier} -> ${toTier})`
+    );
+  }
+}
+
+for (const [language] of [["en"], ["fr"]]) {
+  test(`CRD Focus inventory contains exactly the authoritative ${language.toUpperCase()} set`, () => {
+    const sources = readPackSources("foci", language);
+    const byLogicalId = new Map(
+      sources.map(document => [
+        document.flags?.cypherFoundry?.crd?.logicalId,
+        document
+      ])
+    );
+
+    assert.equal(byLogicalId.size, EXPECTED_FOCI.length);
+
+    for (const [slug, name] of EXPECTED_FOCI) {
+      const logicalId = `focus.${slug}`;
+      const document = byLogicalId.get(logicalId);
+      assert.ok(document, logicalId);
+      if (language === "en") assert.equal(document.name, name);
+    }
+  });
+}
+
+for (const language of ["en", "fr"]) {
+  test(
+    `CRD Focus ${language.toUpperCase()} references resolve to standalone Ability sources`,
+    () => {
+      const foci = readPackSources("foci", language);
+      const abilities = new Map(
+        readPackSources("abilities", language).map(document => [
+          document._id,
+          document
+        ])
+      );
+      const failures = [];
+
+      for (const focus of foci) {
+        const references = focus.system.abilities ?? [];
+        assert.ok(references.length > 0, focus.name);
+
+        const ids = references.map(abilityId);
+        assert.equal(
+          new Set(ids).size,
+          ids.length,
+          `${focus.name}: duplicate Ability reference`
+        );
+
+        for (const id of ids) {
+          assert.ok(id, `${focus.name}: malformed Ability reference`);
+          assert.ok(
+            abilities.has(id),
+            `${focus.name}: missing Ability source ${id}`
+          );
+        }
+
+        try {
+          assertFlowchart(focus, abilities, `${language}:${focus.name}`);
+        } catch (error) {
+          failures.push(`${focus.name}: ${error.message}`);
+        }
+      }
+
+      assert.deepEqual(failures, [], "Focus flowchart failures");
+    }
+  );
+}
+
