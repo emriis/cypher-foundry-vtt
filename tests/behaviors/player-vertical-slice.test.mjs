@@ -200,6 +200,7 @@ describe("Given a player-facing Cypher character", () => {
     ownedFury.actor = actor;
     ownedFury.parent = actor;
     ownedFury.uuid = fury.uuid;
+    globalThis.fromUuid = async uuid => uuid === fury.uuid ? ownedFury : null;
 
     assert.equal(await chooseAbilityEffect(ownedFury, "base"), true);
     assert.equal(actor.system.stats.might.pool.value, 5);
