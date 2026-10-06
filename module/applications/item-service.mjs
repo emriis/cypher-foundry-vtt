@@ -53,7 +53,7 @@ export async function rollAttack(item, {
 }
 
 export async function rollDepletion(item) {
-  if (!["artifact", "equipment"].includes(item.type) || !item.actor) return false;
+  if (!["artifact", "equipment", "armor"].includes(item.type) || !item.actor) return false;
   const die = item.system.depletionDie;
   if (die === "none") {
     await ChatMessage.create({
