@@ -244,7 +244,7 @@ test("W4 weapon extraction preserves explicitly named CRD ranges", () => {
       /extreme range extends to (?:immediate|short|long|very long) range/gi,
       ""
     );
-    const match = primary.match(/\b(very long|long|short|immediate) range\\b/i);
+    const match = primary.match(/\b(very long|long|short|immediate) range\b/i);
     if (!match) return null;
 
     return {
