@@ -50,10 +50,64 @@ function abilityKeysByTier(focus, abilities) {
 
 const fixtures = [
   {
+    slug: "abides-in-stone",
+    description:
+      "<p>Your flesh is made of hard mineral, making you a hulking, " +
+      "difficult-to-harm humanoid.</p>",
+    abilityCount: 15,
+    edgeCount: 18
+  },
+  {
+    slug: "blazes-with-fire",
+    description:
+      "<p>You can sheathe your body in flames, which protect you and harm " +
+      "your foes.</p>",
+    abilityCount: 14,
+    edgeCount: 21
+  },
+  {
+    slug: "carries-a-gun",
+    description:
+      "<p>You carry a firearm (whether a conventional gunpowder pistol or " +
+      "some kind of blaster or energy weapon) and you know how to use it " +
+      "in a fight.</p>",
+    abilityCount: 14,
+    edgeCount: 28
+  },
+  {
+    slug: "casts-spells",
+    description:
+      "<p>You have a book of various spells and can change which ones you " +
+      "have ready to cast each day—blasts of energy, summoning monsters, " +
+      "magical flight, teleportation, and copying cyphers can all be part " +
+      "of your repertoire.</p>",
+    abilityCount: 17,
+    edgeCount: 41
+  },
+  {
+    slug: "fights-dirty",
+    description:
+      "<p>You'll do anything to win a fight: bite, scratch, kick, trick, " +
+      "and worse.</p>",
+    abilityCount: 14,
+    edgeCount: 14
+  },
+  {
+    slug: "talks-to-machines",
+    description:
+      "<p>You use your brain like a computer, interfacing “wirelessly” " +
+      "with any electronic device. You can control and influence them in " +
+      "ways that others can't.</p>",
+    abilityCount: 13,
+    edgeCount: 11
+  },
+  {
     slug: "changes-shape",
     description:
       "<p>You can transform into various animals, gaining their natural " +
       "abilities as if you were born with them.</p>",
+    abilityCount: 14,
+    edgeCount: 25,
     counts: { 1: 3, 2: 2, 3: 2, 4: 2, 5: 2, 6: 3 },
     tierOne: ["animal-shape", "keen-eye", "scent-transformation"]
   },
@@ -61,6 +115,8 @@ const fixtures = [
     slug: "doesnt-do-much",
     description:
       "<p>You're a slacker, but you know a little about a lot of things.</p>",
+    abilityCount: 11,
+    edgeCount: 12,
     counts: { 1: 3, 2: 2, 3: 2, 4: 2, 5: 1, 6: 1 },
     tierOne: [
       "joy-in-small-things",
@@ -77,7 +133,15 @@ test("CRD Focus fidelity fixtures preserve representative source structure", () 
     const focus = readFocus(fixture.slug);
 
     assert.equal(focus.system.description, fixture.description);
-    assert.deepEqual(
+    assert.equal(
+      focus.system.abilities.length,
+      fixture.abilityCount
+    );
+    assert.equal(
+      focus.system.flowchart.edges.length,
+      fixture.edgeCount
+    );
+    if (fixture.counts) assert.deepEqual(
       Object.fromEntries(
         [...abilityKeysByTier(focus, abilities)].map(([tier, keys]) => [
           tier,
@@ -87,7 +151,7 @@ test("CRD Focus fidelity fixtures preserve representative source structure", () 
       fixture.counts
     );
 
-    assert.deepEqual(
+    if (fixture.tierOne) assert.deepEqual(
       abilityKeysByTier(focus, abilities).get(1),
       [...fixture.tierOne].sort()
     );
