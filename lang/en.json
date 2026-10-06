@@ -34,7 +34,17 @@
     "Sheet": {
       "PC": "Character Sheet",
       "NPC": "NPC Sheet",
-      "Community": "Community Sheet"
+      "Community": "Community Sheet",
+      "Core": "Core play",
+      "StatsAndHealth": "Stats, pools & health",
+      "Skills": "Skills",
+      "Abilities": "Abilities",
+      "NoSkills": "No skills yet.",
+      "NoAbilities": "No abilities yet.",
+      "NoAttacks": "No attacks yet.",
+      "NoCyphers": "No Cyphers carried.",
+      "NoEquipment": "No equipment yet.",
+      "CharacterDetails": "Biography, notes & custom fields"
     },
     "Tab": {
       "main": "Main",
@@ -115,7 +125,8 @@
       "CustomNamePlaceholder": "e.g. Luck, Faith, Willpower...",
       "ConfirmDeleteCustom": "Permanently remove this custom stat?",
       "PoolValue": "Actual value",
-      "PoolMax": "Maximum"
+      "PoolMax": "Maximum",
+      "Depleted": "Pool depleted"
     },
     "Armor": {
       "Title": "Armor",
@@ -293,7 +304,9 @@
       "heavy": "Heavy (6 damage)"
     },
     "Item": {
-      "New": "New {type}"
+      "New": "New {type}",
+      "Edit": "Edit",
+      "Delete": "Delete"
     },
     "Descriptor": {
       "Label": "Descriptor",
