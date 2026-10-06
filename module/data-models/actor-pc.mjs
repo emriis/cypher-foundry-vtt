@@ -233,8 +233,14 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
     }
     const category = equippedArmorItem?.system?.category ?? "none";
     const armorSteps = CYPHER.armorCategories[category] ?? { block: 0, dodge: 0 };
+    const encumbranceCategory =
+      equippedArmorItem?.system?.encumbranceCategory || category;
+    const encumbranceSteps =
+      CYPHER.armorCategories[encumbranceCategory] ?? { block: 0, dodge: 0 };
     const blockEaseDamage = equippedArmorItem?.system?.blockEaseDamage ?? 0;
     // Armor damage reduces the Block bonus but never changes Dodge hindrance.
+    // An explicit CRD dodge override takes precedence over category-based
+    // hindrance; otherwise an explicit lighter encumbrance category applies.
     // Non-free armor applies its Dodge hindrance to all Speed tasks.
     const freeArmorCategories = this.freeArmorCategories ?? CYPHER.coreFreeArmorCategories;
     const freelyUsable = (equippedArmorItem?.system?.freelyUsable ?? false)
@@ -250,8 +256,10 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
       blockEaseDamage,
       blockEase: Math.max(0, armorSteps.block - blockEaseDamage),
       damaged: blockEaseDamage > 0,
-      dodgeHinder: armorSteps.dodge,
-      speedTaskHinder: freelyUsable ? 0 : armorSteps.dodge
+      dodgeHinder: equippedArmorItem?.system?.dodgeHindrance ??
+        encumbranceSteps.dodge,
+      speedTaskHinder: freelyUsable ? 0 :
+        (equippedArmorItem?.system?.dodgeHindrance ?? encumbranceSteps.dodge)
     };
 
     // Current tier advancement slots.

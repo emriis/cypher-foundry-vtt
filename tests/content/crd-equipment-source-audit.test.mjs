@@ -235,3 +235,108 @@ test("W4 source extraction keeps EN and FR mechanical projections identical", ()
 
   assert.deepEqual(failures, [], failures.join("\n"));
 });
+
+test("W4 weapon extraction preserves explicitly named CRD ranges", () => {
+  const failures = [];
+
+  function expectedNamedRange(description) {
+    const primary = description.replace(
+      /extreme range extends to (?:immediate|short|long|very long) range/gi,
+      ""
+    );
+    const match = primary.match(/\b(very long|long|short|immediate) range\b/i);
+    if (!match) return null;
+
+    return {
+      immediate: "immediate",
+      short: "short",
+      long: "long",
+      "very long": "veryLong"
+    }[match[1].toLowerCase()];
+  }
+
+  for (const language of ["en", "fr"]) {
+    for (const record of readRecords(language)) {
+      if (record.crdType !== "weapon") continue;
+
+      const description = normalizeText(record.system.description);
+      const expectedRange = expectedNamedRange(description);
+      if (expectedRange && record.system.range !== expectedRange) {
+        failures.push(
+          language + "/" + record.name + ": explicit CRD range is " +
+          expectedRange + ", extracted as " + record.system.range
+        );
+      }
+
+      const extremeMatch = description.match(
+        /extreme range extends to (immediate|short|long|very long) range/i
+      );
+      if (extremeMatch) {
+        const expectedExtreme = {
+          immediate: "immediate",
+          short: "short",
+          long: "long",
+          "very long": "veryLong"
+        }[extremeMatch[1].toLowerCase()];
+
+        if (record.system.extremeRange !== expectedExtreme) {
+          failures.push(
+            language + "/" + record.name +
+            ": explicit CRD extreme range is " + expectedExtreme +
+            ", extracted as " + record.system.extremeRange
+          );
+        }
+      }
+    }
+  }
+
+  assert.deepEqual(failures, [], failures.join("\n"));
+});
+
+test("W4 armor extraction preserves explicit CRD armor categories", () => {
+  const failures = [];
+
+  for (const language of ["en", "fr"]) {
+    for (const record of readRecords(language)) {
+      if (record.crdType !== "armor") continue;
+
+      const description = normalizeText(record.system.description);
+      const match = description.match(/\b(light|medium|heavy) armor\b/i);
+      if (!match) continue;
+
+      const expected = match[1].toLowerCase();
+      if (record.system.category !== expected) {
+        failures.push(
+          language + "/" + record.name + ": CRD armor category is " +
+          expected + ", extracted as " + record.system.category
+        );
+      }
+    }
+  }
+
+  assert.deepEqual(failures, [], failures.join("\n"));
+});
+
+test("W4 armor extraction structures the explicit no-dodge exception", () => {
+  const failures = [];
+
+  for (const language of ["en", "fr"]) {
+    const spray = readRecords(language).find(
+      record => record.name === "Spray-on impact armor"
+    );
+
+    if (!spray) {
+      failures.push(language + "/Spray-on impact armor: record is missing");
+      continue;
+    }
+
+    if (spray.system.dodgeHindrance !== 0) {
+      failures.push(
+        language + "/Spray-on impact armor: CRD says no dodge hindrance, " +
+        "extracted as " + spray.system.dodgeHindrance
+      );
+    }
+  }
+
+  assert.deepEqual(failures, [], failures.join("\n"));
+});
