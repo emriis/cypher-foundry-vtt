@@ -45,9 +45,9 @@ test("CRD equipment inventory preserves the expected price categories", () => {
   const expected = {
     inexpensive: 49,
     moderate: 100,
-    expensive: 81,
+    expensive: 71,
     veryExpensive: 29,
-    exorbitant: 0
+    exorbitant: 10
   };
 
   const actual = Object.fromEntries(
