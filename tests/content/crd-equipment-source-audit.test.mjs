@@ -118,11 +118,9 @@ test("W4 weapon extraction respects heavy weapon two-hand rules", () => {
       if (record.crdType !== "weapon") continue;
 
       const { attackType, damage, mechanics } = record.system;
-      const expectedDamage = {
-        light: 2,
-        medium: 4,
-        heavy: 6
-      }[attackType];
+      const expectedDamage = attackType == null
+        ? null
+        : { light: 2, medium: 4, heavy: 6 }[attackType];
 
       if (
         record.name !== "Blast cannon" &&
@@ -131,6 +129,15 @@ test("W4 weapon extraction respects heavy weapon two-hand rules", () => {
       ) {
         failures.push(
           `${language}/${record.name}: ${attackType} weapon has damage ${damage}, expected ${expectedDamage}`
+        );
+      }
+
+      if (
+        attackType === null &&
+        !/Explosive weapon/i.test((record.system.properties || []).join(" "))
+      ) {
+        failures.push(
+          `${language}/${record.name}: uncategorized weapon is not an explicit special weapon`
         );
       }
 
