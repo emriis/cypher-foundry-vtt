@@ -25,6 +25,16 @@ export default class CypherArmorData extends foundry.abstract.TypeDataModel {
         initial: null,
         choices: ["", "light", "medium", "heavy"]
       }),
+      // Null means the normal dodge hindrance is derived from the armor
+      // category or explicit encumbrance category. Zero represents a CRD
+      // exception such as spray-on impact armor, which hinders no dodge tasks.
+      dodgeHindrance: new NumberField({
+        required: true,
+        nullable: true,
+        initial: null,
+        integer: true,
+        min: 0
+      }),
       freelyUsable: new BooleanField({ required: true, initial: false }),
       equipped: new BooleanField({ required: true, initial: false }),
       blockEaseDamage: new NumberField({ required: true, integer: true, initial: 0, min: 0 }),
