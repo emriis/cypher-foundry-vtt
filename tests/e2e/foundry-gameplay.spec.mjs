@@ -92,7 +92,10 @@ test.describe("Cypher Foundry live gameplay", () => {
       await actor.sheet.render(true);
     }, actorId);
 
+    await expect(page.locator(".pc-sheet-layout")).toBeVisible();
+    await expect(page.locator(".sheet-header")).toBeVisible();
     await expect(page.locator(".pc-dashboard")).toBeVisible();
+    await expect(page.locator(".pc-core-stats")).toBeVisible();
     await expect(page.locator('input[name="name"]').first()).toBeVisible();
     await expect(page.locator('[data-action="rollStat"][data-stat="might"]')).toBeVisible();
     await expect(page.locator('[data-action="rollStat"][data-stat="speed"]')).toBeVisible();
