@@ -12,7 +12,6 @@ genre-item labels, or outside references.
 - Manifest Cyphers: not yet extracted.
 - Power Boost Cyphers: not yet extracted.
 - Artifact content: not present in the supplied CRD and therefore not extracted.
-- Oddities: outside this project's CRD content scope.
 
 French records use the English CRD text verbatim when no project-owned faithful
 French source is available. Mechanical fields remain identical.
