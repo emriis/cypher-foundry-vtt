@@ -44,6 +44,7 @@ test("keeps high-value CRD mechanics in structured fields", () => {
   assert.ok(CRD_MECHANICAL_FIELDS.type.includes("abilityTiers"));
   assert.ok(CRD_MECHANICAL_FIELDS.weapon.includes("range"));
   assert.ok(CRD_MECHANICAL_FIELDS.weapon.includes("properties"));
+  assert.ok(CRD_MECHANICAL_FIELDS.weapon.includes("mechanics"));
   assert.ok(CRD_MECHANICAL_FIELDS.equipment.includes("level"));
   assert.ok(CRD_MECHANICAL_FIELDS.equipment.includes("priceCategory"));
   assert.ok(CRD_MECHANICAL_FIELDS.cypher.includes("powerLevel"));

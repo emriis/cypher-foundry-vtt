@@ -6,6 +6,11 @@ import {
   CRD_TYPE_FIXTURE,
   CRD_FOCUS_FIXTURE,
   CRD_WEAPON_FIXTURE,
+  CRD_QUARTERSTAFF_FIXTURE,
+  CRD_STUNSTICK_FIXTURE,
+  CRD_MONOMOLECULAR_BLADE_FIXTURE,
+  CRD_VACUUM_ASSAULT_RIFLE_FIXTURE,
+  CRD_BLAST_CANNON_FIXTURE,
   CRD_EQUIPMENT_FIXTURE,
   CRD_CYPHER_FIXTURE,
   CRD_ARMOR_FIXTURE,
@@ -84,6 +89,65 @@ test("Shotgun preserves CRD range, category, damage, price, and property", () =>
     system.properties,
     ["attack hindered if fired with one hand"]
   );
+});
+
+
+test("Shotgun keeps its structured two-handed weapon mechanic", () => {
+  assert.equal(CRD_WEAPON_FIXTURE.system.mechanics.twoHanded, true);
+  assert.equal(CRD_WEAPON_FIXTURE.system.mechanics.rapidFire, false);
+  assert.deepEqual(CRD_WEAPON_FIXTURE.system.mechanics.targetEffects, []);
+});
+
+test("Quarterstaff preserves two-handed use independently of weapon category", () => {
+  assert.equal(CRD_QUARTERSTAFF_FIXTURE.system.attackType, "medium");
+  assert.equal(CRD_QUARTERSTAFF_FIXTURE.system.mechanics.twoHanded, true);
+});
+
+test("Stunstick preserves level-gated target effects", () => {
+  assert.equal(CRD_STUNSTICK_FIXTURE.system.damage, 0);
+  assert.deepEqual(CRD_STUNSTICK_FIXTURE.system.mechanics.targetEffects, [
+    {
+      minimumTargetLevel: 0,
+      maximumTargetLevel: 2,
+      effect: "loseNextAction",
+      hinderSteps: 0,
+      duration: "next action"
+    },
+    {
+      minimumTargetLevel: 3,
+      maximumTargetLevel: null,
+      effect: "hindered",
+      hinderSteps: 2,
+      duration: "a round or two"
+    }
+  ]);
+});
+
+test("Monomolecular blade preserves armor penetration and material level", () => {
+  const mechanics = CRD_MONOMOLECULAR_BLADE_FIXTURE.system.mechanics;
+
+  assert.equal(mechanics.ignoresPhysicalArmor, 1);
+  assert.equal(mechanics.cutsThroughMaterialsLevel, 6);
+});
+
+test("Vacuum assault rifle preserves rapid fire and alternate configuration", () => {
+  const mechanics = CRD_VACUUM_ASSAULT_RIFLE_FIXTURE.system.mechanics;
+
+  assert.equal(mechanics.rapidFire, true);
+  assert.deepEqual(mechanics.alternateConfiguration, {
+    enabled: true,
+    attackType: "medium",
+    action: "action"
+  });
+});
+
+test("Blast cannon preserves operator and tripod requirements", () => {
+  const system = CRD_BLAST_CANNON_FIXTURE.system;
+
+  assert.equal(system.damage, 10);
+  assert.equal(system.mechanics.rapidFire, true);
+  assert.equal(system.mechanics.requiresTripod, true);
+  assert.equal(system.mechanics.requiredOperators, 2);
 });
 
 test("Backpack preserves default equipment level and price category", () => {

@@ -223,6 +223,20 @@ export const CRD_WEAPON_FIXTURE = item(
     attackSkillCategory: "",
     priceCategory: "expensive",
     properties: ["attack hindered if fired with one hand"],
+    mechanics: {
+      twoHanded: true,
+      rapidFire: false,
+      ignoresPhysicalArmor: 0,
+      cutsThroughMaterialsLevel: null,
+      targetEffects: [],
+      requiresTripod: false,
+      requiredOperators: 0,
+      alternateConfiguration: {
+        enabled: false,
+        attackType: "",
+        action: ""
+      }
+    },
     freelyUsable: false,
     equipped: false,
     description:
@@ -230,6 +244,220 @@ export const CRD_WEAPON_FIXTURE = item(
       "attack hindered if fired with one hand."
   },
   "Real-World Equipment — Expensive Items — Shotgun"
+);
+
+
+export const CRD_QUARTERSTAFF_FIXTURE = item(
+  "0123456789abc018",
+  "Quarterstaff",
+  "attack",
+  "weapon",
+  "weapon.quarterstaff",
+  {
+    attackType: "medium",
+    range: "immediate",
+    extremeRange: "",
+    damage: 4,
+    stat: "might",
+    weaponFamily: "",
+    attackSkillCategory: "",
+    priceCategory: "expensive",
+    properties: ["requires two hands"],
+    mechanics: {
+      twoHanded: true,
+      rapidFire: false,
+      ignoresPhysicalArmor: 0,
+      cutsThroughMaterialsLevel: null,
+      targetEffects: [],
+      requiresTripod: false,
+      requiredOperators: 0,
+      alternateConfiguration: {
+        enabled: false,
+        attackType: "",
+        action: ""
+      }
+    },
+    freelyUsable: false,
+    equipped: false,
+    description: "Medium weapon (requires two hands)."
+  },
+  "Fantasy Equipment — Expensive Items — Quarterstaff"
+);
+
+export const CRD_STUNSTICK_FIXTURE = item(
+  "0123456789abc019",
+  "Stunstick",
+  "attack",
+  "weapon",
+  "weapon.stunstick",
+  {
+    attackType: "medium",
+    range: "immediate",
+    extremeRange: "",
+    damage: 0,
+    stat: "might",
+    weaponFamily: "",
+    attackSkillCategory: "",
+    priceCategory: "expensive",
+    properties: [
+      "inflicts no damage",
+      "level 2 or lower creature loses their next action",
+      "level 3 or higher is hindered by two steps for a round or two"
+    ],
+    mechanics: {
+      twoHanded: false,
+      rapidFire: false,
+      ignoresPhysicalArmor: 0,
+      cutsThroughMaterialsLevel: null,
+      targetEffects: [
+        {
+          minimumTargetLevel: 0,
+          maximumTargetLevel: 2,
+          effect: "loseNextAction",
+          hinderSteps: 0,
+          duration: "next action"
+        },
+        {
+          minimumTargetLevel: 3,
+          maximumTargetLevel: null,
+          effect: "hindered",
+          hinderSteps: 2,
+          duration: "a round or two"
+        }
+      ],
+      requiresTripod: false,
+      requiredOperators: 0,
+      alternateConfiguration: {
+        enabled: false,
+        attackType: "",
+        action: ""
+      }
+    },
+    freelyUsable: false,
+    equipped: false,
+    description: ""
+  },
+  "Science Fiction Equipment — Expensive Items — Stunstick"
+);
+
+export const CRD_MONOMOLECULAR_BLADE_FIXTURE = item(
+  "0123456789abc020",
+  "Monomolecular blade",
+  "attack",
+  "weapon",
+  "weapon.monomolecular-blade",
+  {
+    attackType: "light",
+    range: "immediate",
+    extremeRange: "",
+    damage: 2,
+    stat: "might",
+    weaponFamily: "",
+    attackSkillCategory: "",
+    priceCategory: "veryExpensive",
+    properties: [
+      "ignores 1 point of physical armor",
+      "cuts through physical materials up to level 6"
+    ],
+    mechanics: {
+      twoHanded: false,
+      rapidFire: false,
+      ignoresPhysicalArmor: 1,
+      cutsThroughMaterialsLevel: 6,
+      targetEffects: [],
+      requiresTripod: false,
+      requiredOperators: 0,
+      alternateConfiguration: {
+        enabled: false,
+        attackType: "",
+        action: ""
+      }
+    },
+    freelyUsable: false,
+    equipped: false,
+    description: ""
+  },
+  "Science Fiction Equipment — Very Expensive Items — Monomolecular blade"
+);
+
+export const CRD_VACUUM_ASSAULT_RIFLE_FIXTURE = item(
+  "0123456789abc021",
+  "Vacuum assault rifle",
+  "attack",
+  "weapon",
+  "weapon.vacuum-assault-rifle",
+  {
+    attackType: "heavy",
+    range: "long",
+    extremeRange: "",
+    damage: 6,
+    stat: "speed",
+    weaponFamily: "",
+    attackSkillCategory: "",
+    priceCategory: "veryExpensive",
+    properties: [
+      "rapid-fire weapon",
+      "can switch to medium weapon configuration as an action"
+    ],
+    mechanics: {
+      twoHanded: true,
+      rapidFire: true,
+      ignoresPhysicalArmor: 0,
+      cutsThroughMaterialsLevel: null,
+      targetEffects: [],
+      requiresTripod: false,
+      requiredOperators: 0,
+      alternateConfiguration: {
+        enabled: true,
+        attackType: "medium",
+        action: "action"
+      }
+    },
+    freelyUsable: false,
+    equipped: false,
+    description: ""
+  },
+  "Science Fiction Equipment — Very Expensive Items — Vacuum assault rifle"
+);
+
+export const CRD_BLAST_CANNON_FIXTURE = item(
+  "0123456789abc022",
+  "Blast cannon",
+  "attack",
+  "weapon",
+  "weapon.blast-cannon",
+  {
+    attackType: "heavy",
+    range: "veryLong",
+    extremeRange: "",
+    damage: 10,
+    stat: "might",
+    weaponFamily: "",
+    attackSkillCategory: "",
+    priceCategory: "exorbitant",
+    properties: [
+      "requires a tripod and two people to operate",
+      "rapid-fire weapon"
+    ],
+    mechanics: {
+      twoHanded: true,
+      rapidFire: true,
+      ignoresPhysicalArmor: 0,
+      cutsThroughMaterialsLevel: null,
+      targetEffects: [],
+      requiresTripod: true,
+      requiredOperators: 2,
+      alternateConfiguration: {
+        enabled: false,
+        attackType: "",
+        action: ""
+      }
+    },
+    freelyUsable: false,
+    equipped: false,
+    description: ""
+  },
+  "Science Fiction Equipment — Exorbitant Items — Blast cannon"
 );
 
 export const CRD_EQUIPMENT_FIXTURE = item(
@@ -382,6 +610,11 @@ export const CRD_FIXTURES = Object.freeze([
   CRD_TYPE_FIXTURE,
   CRD_FOCUS_FIXTURE,
   CRD_WEAPON_FIXTURE,
+  CRD_QUARTERSTAFF_FIXTURE,
+  CRD_STUNSTICK_FIXTURE,
+  CRD_MONOMOLECULAR_BLADE_FIXTURE,
+  CRD_VACUUM_ASSAULT_RIFLE_FIXTURE,
+  CRD_BLAST_CANNON_FIXTURE,
   CRD_EQUIPMENT_FIXTURE,
   CRD_CYPHER_FIXTURE,
   CRD_ARMOR_FIXTURE,
