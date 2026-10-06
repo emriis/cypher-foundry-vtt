@@ -119,7 +119,7 @@ test("W4 weapon extraction respects heavy weapon two-hand rules", () => {
 
       const { attackType, damage, mechanics } = record.system;
       const expectedDamage = attackType == null
-        ? null
+        ? damage
         : { light: 2, medium: 4, heavy: 6 }[attackType];
 
       if (
