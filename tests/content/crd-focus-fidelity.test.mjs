@@ -82,7 +82,7 @@ const fixtures = [
       "magical flight, teleportation, and copying cyphers can all be part " +
       "of your repertoire.</p>",
     abilityCount: 17,
-    edgeCount: 42
+    edgeCount: 41
   },
   {
     slug: "fights-dirty",
