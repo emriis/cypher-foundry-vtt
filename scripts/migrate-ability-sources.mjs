@@ -215,10 +215,23 @@ async function normalizeEquipmentSources() {
       const document = JSON.parse(await fs.readFile(filePath, "utf8"));
       if (document._key?.startsWith("!folders!")) continue;
 
-      const logicalId = document.flags?.cypherFoundry?.crd?.logicalId;
-      if (!logicalId) {
+      const provenance = document.flags?.cypherFoundry?.crd;
+      if (!provenance?.logicalId) {
         throw new Error(`Equipment source "${filePath}" is missing its CRD logicalId.`);
       }
+
+      const genre = String(provenance.section ?? "").replace(/ Equipment$/, "");
+      const priceCategory = document.system?.priceCategory;
+      if (!genre || !priceCategory || !document.name) {
+        throw new Error(`Equipment source "${filePath}" is missing canonical identity fields.`);
+      }
+
+      // Equipment identity is the full canonical inventory tuple:
+      // genre + price category + source name. The previous extractor omitted
+      // price category, which collides for same-named entries at different prices.
+      const logicalId = `equipment.${genre}.${priceCategory}.${document.name}`;
+      provenance.logicalId = logicalId;
+      if (provenance.language === "fr") provenance.sourceLogicalId = logicalId;
 
       const id = hash(logicalId).slice(0, 16);
       document._id = id;
