@@ -6,20 +6,28 @@ import { CYPHER } from "../config.mjs";
  * CypherActor updates this track when a successful Block transfers a wound
  * from the character to an equipped, unbroken shield.
  */
-const { SchemaField, NumberField, HTMLField, BooleanField } = foundry.data.fields;
+const { SchemaField, NumberField, HTMLField, BooleanField, StringField } =
+  foundry.data.fields;
 
 export default class CypherShieldData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     const woundSchema = (max) => new SchemaField({
-      max: new NumberField({ required: true, integer: true, initial: max, min: 0 }),
-      current: new NumberField({ required: true, integer: true, initial: 0, min: 0 })
+      max: new NumberField({
+        required: true, integer: true, initial: max, min: 0
+      }),
+      current: new NumberField({
+        required: true, integer: true, initial: 0, min: 0
+      })
     });
 
     return {
-      // Any character can use a shield freely, regardless of their Type
+      // Any character can use a shield freely, regardless of their Type.
       equipped: new BooleanField({ required: true, initial: false }),
+      priceCategory: new StringField({
+        required: true, initial: "moderate", choices: CYPHER.priceCategories
+      }),
 
-      // A shield has its own wound track: 3 minor, 2 moderate, 1 major by default
+      // A shield has its own wound track: 3 minor, 2 moderate, 1 major.
       wounds: new SchemaField({
         minor: woundSchema(CYPHER.defaultShieldWoundMax.minor),
         moderate: woundSchema(CYPHER.defaultShieldWoundMax.moderate),
@@ -31,7 +39,9 @@ export default class CypherShieldData extends foundry.abstract.TypeDataModel {
   }
 
   prepareDerivedData() {
-    // The shield is destroyed as soon as it takes a major wound
-    this.broken = this.wounds.major.current >= this.wounds.major.max && this.wounds.major.max > 0;
+    // The shield is destroyed as soon as it takes a major wound.
+    this.broken =
+      this.wounds.major.current >= this.wounds.major.max &&
+      this.wounds.major.max > 0;
   }
 }
