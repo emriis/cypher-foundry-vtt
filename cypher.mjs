@@ -49,7 +49,6 @@ Hooks.once("init", () => {
     ability: models.CypherAbilityData,
     cypher: models.CypherCypherData,
     artifact: models.CypherArtifactData,
-    oddity: models.CypherOddityData,
     equipment: models.CypherEquipmentData,
     armor: models.CypherArmorData,
     attack: models.CypherAttackData,

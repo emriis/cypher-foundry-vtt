@@ -49,7 +49,6 @@ CYPHER.itemTypes = [
   "ability",
   "cypher",
   "artifact",
-  "oddity",
   "equipment",
   "attack",
   "armor",

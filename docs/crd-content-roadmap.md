@@ -87,7 +87,6 @@ manually.
 | Shields | Item: shield | **Model ready — extraction planned** |
 | Cyphers | Item: cypher | **Model ready — extraction planned** |
 | Artifacts | Item: artifact | **Model ready — extraction planned** |
-| Oddities | Item: oddity | **Model ready — extraction planned** |
 | Creatures / NPCs | Actor: npc | Planned |
 
 ### 3.2 Reference Journals
@@ -529,7 +528,7 @@ A documented genuine source/model limitation may be an explicit exception.
 **Status: In progress — model contracts complete; extraction next.**
 
 - [ ] Build the complete canonical inventory of equipment, weapons, armor,
-  shields, cyphers, artifacts, and oddities
+  shields, cyphers, and artifacts
 - [x] Validate current model fields against the core CRD mechanics
 - [x] Document model gaps and source-backed extensions
 - [x] Validate weapon-specific mechanical properties against representative CRD

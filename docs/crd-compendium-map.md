@@ -45,7 +45,6 @@ This is the working conversion map for the 2026 Cypher Reference Document. It is
 | Price categories | JournalEntry + equipment metadata | rules + equipment |
 | Cyphers | Item: cypher | equipment |
 | Artifacts | Item: artifact | equipment |
-| Oddities | Item: oddity | equipment |
 
 ## Genre material
 

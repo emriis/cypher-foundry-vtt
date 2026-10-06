@@ -105,7 +105,6 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       abilities: this.actor.items.filter(i => i.type === "ability"),
       cyphers: this.actor.items.filter(i => i.type === "cypher"),
       artifacts: this.actor.items.filter(i => i.type === "artifact"),
-      oddities: this.actor.items.filter(i => i.type === "oddity"),
       equipment: this.actor.items.filter(i => i.type === "equipment"),
       attacks: this.actor.items.filter(i => i.type === "attack"),
       armor: this.actor.items.filter(i => i.type === "armor"),

@@ -10,7 +10,6 @@
       "ability": "Ability",
       "cypher": "Cypher",
       "artifact": "Artifact",
-      "oddity": "Oddity",
       "equipment": "Equipment",
       "attack": "Attack",
       "armor": "Armor",
@@ -245,9 +244,6 @@
       "Never": "This item never depletes.",
       "Hint": "When you use this artifact, click the die to roll its depletion check. \"Never depletes\" corresponds to the CRD's \"—\" notation.",
       "EquipmentHint": "This equipment uses depletion instead of a fixed quantity (like a medical bag or aspirin in the CRD)."
-    },
-    "Oddity": {
-      "Title": "Oddities"
     },
     "Equipment": {
       "Title": "Equipment",

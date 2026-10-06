@@ -189,7 +189,7 @@ First documented state of the system.
 - Full XP economy: reroll, player intrusion, lucky shot, and 4-slot-per-tier character
   advancement with automatic tier-up.
 - Character Builder JSON import (`module/import.mjs`), mapping Skills, Abilities, Equipment,
-  and Attacks; Cyphers/Artifacts/Armor/Shields/Oddities are not yet mapped.
+  and Attacks; Cyphers/Artifacts/Armor/Shields are not yet mapped.
 - Bilingual (FR/EN) Descriptor compendiums (33 CRD descriptors) with a drag-and-drop
   apply-effect flow instead of a persistent item.
 - Design system (`DESIGN-SYSTEM.md`): color/typography/spacing tokens, WCAG AA–verified
