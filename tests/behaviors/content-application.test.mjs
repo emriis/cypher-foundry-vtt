@@ -162,4 +162,51 @@ describe("Given a new PC builds a character from CRD content", () => {
     }
   );
 
+  test(
+    "when the PC reaches Tier 2, then an eligible Focus Ability is selected " +
+      "and becomes actor-owned",
+    async () => {
+      const actor = createActor({
+        system: {
+          ...createActor().system,
+          tier: 2,
+          focus: "Studies the Strange"
+        },
+        flags: {
+          cypher: {
+            focusAbilityIds: ["first", "second"],
+            appliedFocusGraph: {
+              abilities: [
+                ability("first", "First Ability", 1),
+                ability("second", "Second Ability", 1),
+                ability("later", "Later Ability", 2, {
+                  prerequisites: ["first"]
+                })
+              ].map(item => ({
+                id: item.id,
+                uuid: item.uuid,
+                name: item.name,
+                ...item.system
+              }))
+            }
+          }
+        }
+      });
+
+      globalThis.fromUuid = async uuid =>
+        uuid.endsWith(".later")
+          ? ability("later", "Later Ability", 2, {
+              prerequisites: ["first"]
+            })
+          : null;
+
+      assert.equal(await selectFocusAbility(actor, "later"), true);
+      assert.deepEqual(
+        actor.getFlag("cypher", "focusAbilityIds"),
+        ["first", "second", "later"]
+      );
+      assert.equal(actor.items.at(-1).system.focusAbilityId, "later");
+    }
+  );
+
 });
