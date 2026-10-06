@@ -516,17 +516,23 @@ A documented genuine source/model limitation may be an explicit exception.
 ### W3 — Complete Foci
 
 - [x] Inventory all Foci
-- [ ] Rebuild Ability references
-- [ ] Validate flowchart structure and tier progression
-- [ ] Complete EN/FR pairing and provenance
+- [x] Rebuild Ability references
+- [x] Validate flowchart structure and tier progression
+- [x] Complete EN/FR pairing and provenance
 - [x] Add structural inventory and reference contracts
-- [ ] Add CRD fidelity tests
+- [x] Add CRD fidelity tests
+
+**Completed after PR72: all 42 Foci have standalone Ability references, flowchart integrity/tier checks, EN/FR identity checks, provenance contracts, and representative CRD fidelity coverage.**
 
 ### W4 — Equipment foundations
 
-- [ ] Inventory equipment, weapons, armor, shields, cyphers, artifacts,
+**Status: In progress — model audit first.**
+
+- [x] Inventory equipment, weapons, armor, shields, cyphers, artifacts,
   oddities
-- [ ] Validate required model fields against actual CRD mechanics
+- [x] Validate current model fields against the core CRD mechanics
+- [ ] Document model gaps and source-backed extensions
+- [ ] Validate required model fields against the full CRD equipment tables
 - [ ] Implement justified model extensions
 - [ ] Extract content with provenance and bilingual pairing
 - [ ] Add fidelity and contract tests
