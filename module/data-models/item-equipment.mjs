@@ -3,8 +3,10 @@ import { CYPHER } from "../config.mjs";
 /**
  * Data model for general equipment carried by an actor.
  *
- * Quantity and weight describe ordinary gear; optional depletion fields let
- * CypherItem handle limited-use equipment in the same way as artifacts.
+ * Quantity and optional physical-weight metadata describe ordinary gear;
+ * optional depletion fields let CypherItem handle limited-use equipment in
+ * the same way as artifacts. CRD light/medium/heavy classifications belong
+ * to weapons and armor and must never be stored as generic equipment weight.
  */
 const { StringField, NumberField, HTMLField, BooleanField } = foundry.data.fields;
 
@@ -33,7 +35,8 @@ export default class CypherEquipmentData extends foundry.abstract.TypeDataModel 
       }),
       weight: new StringField({
         required: true,
-        initial: "light",
+        nullable: true,
+        initial: null,
         choices: ["none", "light", "medium", "heavy"]
       }),
       equipped: new BooleanField({ required: true, initial: false }),
