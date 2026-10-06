@@ -156,6 +156,20 @@ test("W4 weapon extraction respects heavy weapon two-hand rules", () => {
   assert.deepEqual(failures, [], failures.join("\n"));
 });
 
+test("W4 armor extraction preserves explicit depletion mechanics", () => {
+  const byName = new Map(
+    readRecords("en")
+      .filter(record => record.crdType === "armor")
+      .map(record => [record.name, record])
+  );
+  const spray = byName.get("Spray-on impact armor");
+
+  assert.ok(spray);
+  assert.equal(spray.system.depletionDie, "d10");
+  assert.equal(spray.system.depletionMin, 1);
+  assert.equal(spray.system.depletionMax, 1);
+});
+
 test("W4 armor extraction preserves explicit armor exceptions", () => {
   const byName = new Map(
     readRecords("en")
