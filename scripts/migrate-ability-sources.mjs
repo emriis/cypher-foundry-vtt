@@ -1155,6 +1155,7 @@ export async function migrateAbilitySources() {
   await normalizeDescriptorSources();
   await normalizeTypeSources();
   await normalizeFocusSources();
+  await normalizeEquipmentSources();
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
