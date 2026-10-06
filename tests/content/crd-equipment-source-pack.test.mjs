@@ -1,4 +1,4 @@
-import assert from "node:assert/strict";
+// CI trigger: keep source-pack validation attached to every PR revision.\nimport assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
