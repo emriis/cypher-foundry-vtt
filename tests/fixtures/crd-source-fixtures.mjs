@@ -470,7 +470,6 @@ export const CRD_EQUIPMENT_FIXTURE = item(
     quantity: 1,
     level: 4,
     priceCategory: "moderate",
-    weight: "light",
     equipped: false,
     depletionDie: "none",
     depletionMin: 1,
