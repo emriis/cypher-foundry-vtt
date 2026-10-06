@@ -31,6 +31,18 @@ export default class CypherArmorData extends foundry.abstract.TypeDataModel {
       priceCategory: new StringField({
         required: true, initial: "expensive", choices: CYPHER.priceCategories
       }),
+      depletionDie: new StringField({
+        required: true,
+        initial: "none",
+        choices: ["none", ...CYPHER.depletionDice]
+      }),
+      depletionMin: new NumberField({
+        required: true, integer: true, initial: 1, min: 1
+      }),
+      depletionMax: new NumberField({
+        required: true, integer: true, initial: 1, min: 1
+      }),
+      depleted: new BooleanField({ required: true, initial: false }),
       description: new HTMLField({ required: true, blank: true })
     };
   }
