@@ -1,4 +1,4 @@
-// CI trigger: keep source-pack validation attached to every PR revision.\nimport assert from "node:assert/strict";
+// Source-pack validation runs with the complete content suite.\nimport assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
@@ -19,7 +19,8 @@ function readJsonRecords(directory) {
     }
 
     if (!entry.name.endsWith(".json")) continue;
-    const record = JSON.parse(fs.readFileSync(fullPath, "utf8"));\n    if (record.document === "Item") records.push(record);
+    const record = JSON.parse(fs.readFileSync(fullPath, "utf8"));
+    if (record.document === "Item") records.push(record);
   }
 
   return records;
