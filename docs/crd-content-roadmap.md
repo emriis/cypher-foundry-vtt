@@ -81,10 +81,10 @@ manually.
 | Types | Item: type | **Complete** |
 | Descriptors | Item: descriptor | **In progress** |
 | Foci | Item: focus | **In progress** |
-| Equipment | Item: equipment | **Model ready — extraction planned** |
-| Weapons | Item: attack | **Model ready — extraction planned** |
-| Armor | Item: armor | **Model ready — extraction planned** |
-| Shields | Item: shield | **Model ready — extraction planned** |
+| Equipment | Item: equipment | **Complete** |
+| Weapons | Item: attack | **Complete** |
+| Armor | Item: armor | **Complete** |
+| Shields | Item: shield | **Complete** |
 | Cyphers | Item: cypher | **Complete — subtle, manifest, and Power Boost extracted** |
 | Artifacts | Item: artifact | **Model ready — extraction planned** |
 | Creatures / NPCs | Actor: npc | Planned |
@@ -151,7 +151,7 @@ rather than trigger another broad architectural rewrite.
 - [x] Tier-specific effects
 - [x] Ability references from Types/Foci
 - [ ] Complete runtime application of all structured Ability effects
-- [ ] E2E coverage for representative Ability activation workflows
+- [x] E2E coverage for representative Ability usage (structured runtime activation + CRD table usage)
 
 ## 6. Phase 3 — Reusable player content
 
@@ -248,7 +248,7 @@ the CRD presents them as reusable abilities.
 - [x] Subtle Cyphers — complete 2026-07-29 CRD inventory
 - [x] Manifest Cyphers — 103-record 2026-07-29 CRD inventory / 106 random-table placements
 - [x] Power Boost Cyphers — complete 2026-07-29 CRD inventory
-- [ ] Artifacts
+- [ ] Artifacts — source-blocked: the supplied 2026-07-29 CRD contains no Artifact inventory
 
 Where supplied by the CRD, preserve structured level, price, range, damage,
 weapon/armor category, depletion, identification, special properties,
@@ -526,17 +526,17 @@ A documented genuine source/model limitation may be an explicit exception.
 
 ### W4 — Equipment foundations
 
-**Status: In progress — model contracts complete; extraction next.**
+**Status: Complete for all source-backed equipment families in the supplied 2026-07-29 CRD. Artifact extraction is source-blocked because the supplied CRD contains no Artifact inventory.**
 
-- [ ] Build the complete canonical inventory of equipment, weapons, armor,
-  shields, cyphers, and artifacts
+- [x] Build the complete canonical inventory of the equipment, weapons, armor,
+  shields, and Cyphers present in the supplied CRD
 - [x] Validate current model fields against the core CRD mechanics
 - [x] Document model gaps and source-backed extensions
 - [x] Validate weapon-specific mechanical properties against representative CRD
   tables
 - [x] Implement justified model extensions
-- [ ] Extract content with provenance and bilingual pairing
-- [ ] Add fidelity and contract tests
+- [x] Extract content with provenance and bilingual pairing
+- [x] Add fidelity and contract tests
 
 ### W5 — CRD Journal foundation
 
@@ -567,6 +567,8 @@ A documented genuine source/model limitation may be an explicit exception.
 - [ ] Add GM procedures and rewards
 
 ### W9 — Automation and E2E
+
+- [x] Define the first player-facing alpha vertical slice
 
 - [ ] Consume structured compendium data from application services
 - [ ] Automate high-value player workflows
