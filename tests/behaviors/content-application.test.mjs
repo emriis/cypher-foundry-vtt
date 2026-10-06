@@ -122,4 +122,44 @@ describe("Given a new PC builds a character from CRD content", () => {
   );
 
 
+  test(
+    "when a Focus has exactly two eligible Tier 1 choices, then both choices " +
+      "are persisted with the Focus graph",
+    async () => {
+      const actor = createActor();
+      const first = ability("first", "First Ability", 1);
+      const second = ability("second", "Second Ability", 1);
+      const later = ability("later", "Later Ability", 2, {
+        prerequisites: ["first"]
+      });
+      const focus = {
+        type: "focus",
+        id: "focus-id",
+        name: "Studies the Strange",
+        system: {
+          abilities: [first, second, later],
+          flowchart: { edges: [{ from: "first", to: "later" }] }
+        }
+      };
+
+      assert.equal(
+        await applyFocus(actor, focus, ["first", "second"]),
+        true
+      );
+      assert.equal(actor.system.focus, "Studies the Strange");
+      assert.deepEqual(
+        actor.getFlag("cypher", "focusAbilityIds").sort(),
+        ["first", "second"]
+      );
+      assert.equal(
+        actor.getFlag("cypher", "appliedFocusGraph").abilities.length,
+        3
+      );
+      assert.deepEqual(
+        actor.items.map(item => item.system.focusAbilityId).sort(),
+        ["first", "second"]
+      );
+    }
+  );
+
 });
