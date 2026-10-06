@@ -293,6 +293,148 @@ test("W4 weapon extraction preserves explicitly named CRD ranges", () => {
   assert.deepEqual(failures, [], failures.join("\n"));
 });
 
+
+test("W4 weapon extraction structures every explicit special mechanic", () => {
+  const failures = [];
+
+  for (const language of ["en", "fr"]) {
+    for (const record of readRecords(language)) {
+      if (record.crdType !== "weapon") continue;
+
+      const mechanics = record.system.mechanics || {};
+      const properties = normalizeText(
+        (record.system.properties || []).join(" ")
+      );
+
+      if (/rapid-fire weapon/i.test(properties) && !mechanics.rapidFire) {
+        failures.push(
+          language + "/" + record.name +
+          ": CRD marks the weapon as rapid-fire but mechanics.rapidFire is false"
+        );
+      }
+
+      if (/requires a tripod/i.test(properties) && !mechanics.requiresTripod) {
+        failures.push(
+          language + "/" + record.name +
+          ": CRD requires a tripod but mechanics.requiresTripod is false"
+        );
+      }
+
+      if (/requires a tripod and (\\d+) people to operate/i.test(properties)) {
+        const expectedOperators = Number(
+          properties.match(
+            /requires a tripod and (\\d+) people to operate/i
+          )[1]
+        );
+        if (mechanics.requiredOperators !== expectedOperators) {
+          failures.push(
+            language + "/" + record.name +
+            ": CRD requires " + expectedOperators +
+            " operators, extracted as " + mechanics.requiredOperators
+          );
+        }
+      }
+
+      const armorMatch = properties.match(
+        /ignores (\\d+) point(?:s)? of physical armor/i
+      );
+      if (armorMatch) {
+        const expectedArmor = Number(armorMatch[1]);
+        if (mechanics.ignoresPhysicalArmor !== expectedArmor) {
+          failures.push(
+            language + "/" + record.name +
+            ": CRD ignores " + expectedArmor +
+            " point(s) of physical armor, extracted as " +
+            mechanics.ignoresPhysicalArmor
+          );
+        }
+      }
+
+      const materialMatch = properties.match(
+        /cuts through physical materials up to level (\\d+)/i
+      );
+      if (materialMatch) {
+        const expectedLevel = Number(materialMatch[1]);
+        if (mechanics.cutsThroughMaterialsLevel !== expectedLevel) {
+          failures.push(
+            language + "/" + record.name +
+            ": CRD material-cutting level is " + expectedLevel +
+            ", extracted as " + mechanics.cutsThroughMaterialsLevel
+          );
+        }
+      }
+
+      if (
+        /can switch to medium weapon configuration as an action/i.test(
+          properties
+        )
+      ) {
+        if (
+          mechanics.alternateConfiguration?.enabled !== true ||
+          mechanics.alternateConfiguration.attackType !== "medium" ||
+          mechanics.alternateConfiguration.action !== "action"
+        ) {
+          failures.push(
+            language + "/" + record.name +
+            ": CRD alternate medium configuration is not structured"
+          );
+        }
+      }
+
+      const lowerLevelMatch = properties.match(
+        /level (\\d+) or lower creature loses their next action/i
+      );
+      const higherLevelMatch = properties.match(
+        /level (\\d+) or higher is hindered by (\\d+) steps for a round or two/i
+      );
+
+      if (lowerLevelMatch || higherLevelMatch) {
+        const expectedEffects = [];
+
+        if (lowerLevelMatch) {
+          expectedEffects.push({
+            minimumTargetLevel: 0,
+            maximumTargetLevel: Number(lowerLevelMatch[1]),
+            effect: "loseNextAction",
+            hinderSteps: 0,
+            duration: "next action"
+          });
+        }
+
+        if (higherLevelMatch) {
+          expectedEffects.push({
+            minimumTargetLevel: Number(higherLevelMatch[1]),
+            maximumTargetLevel: null,
+            effect: "hindered",
+            hinderSteps: Number(higherLevelMatch[2]),
+            duration: "a round or two"
+          });
+        }
+
+        if (
+          JSON.stringify(mechanics.targetEffects || []) !==
+          JSON.stringify(expectedEffects)
+        ) {
+          failures.push(
+            language + "/" + record.name +
+            ": explicit CRD target effects are not structured"
+          );
+        }
+      }
+
+      if (/inflicts no damage/i.test(properties) && record.system.damage !== 0) {
+        failures.push(
+          language + "/" + record.name +
+          ": CRD says the weapon inflicts no damage, extracted as " +
+          record.system.damage
+        );
+      }
+    }
+  }
+
+  assert.deepEqual(failures, [], failures.join("\n"));
+});
+
 test("W4 armor extraction preserves explicit CRD armor categories", () => {
   const failures = [];
 
