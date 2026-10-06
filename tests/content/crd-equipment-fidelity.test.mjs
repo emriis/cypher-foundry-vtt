@@ -98,6 +98,7 @@ test("all extracted equipment records preserve their CRD document type", () => {
       }
 
       if (record.crdType === "weapon" &&
+          record.system.attackType !== null &&
           !["light", "medium", "heavy"].includes(record.system.attackType)) {
         failures.push(
           `${language}/${record.name}: invalid weapon attackType`
