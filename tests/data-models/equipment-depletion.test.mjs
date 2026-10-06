@@ -45,3 +45,13 @@ test("legacy single depletion threshold migrates to an equivalent range", () => 
   assert.deepEqual(artifact, { depletionMin: 3, depletionMax: 3 });
   assert.deepEqual(equipment, { depletionMin: 2, depletionMax: 2 });
 });
+
+
+test("generic equipment weight is nullable and is not a CRD category", () => {
+  const schema = CypherEquipmentData.defineSchema();
+  assert.equal(schema.weight.options.initial, null);
+  assert.equal(schema.weight.options.nullable, true);
+  assert.deepEqual(schema.weight.options.choices, [
+    "none", "light", "medium", "heavy"
+  ]);
+});
