@@ -482,3 +482,92 @@ test("W4 armor extraction structures the explicit no-dodge exception", () => {
 
   assert.deepEqual(failures, [], failures.join("\n"));
 });
+
+
+test("W4 shield extraction preserves the CRD wound track", () => {
+  const failures = [];
+  const expectedMax = { minor: 3, moderate: 2, major: 1 };
+
+  for (const language of ["en", "fr"]) {
+    const shields = readRecords(language).filter(
+      record => record.crdType === "shield"
+    );
+
+    if (shields.length === 0) {
+      failures.push(language + ": no shield source records found");
+      continue;
+    }
+
+    for (const record of shields) {
+      if (record.type !== "shield") {
+        failures.push(
+          language + "/" + record.name +
+          ": shield CRD record is not a Foundry shield item"
+        );
+      }
+
+      for (const severity of Object.keys(expectedMax)) {
+        const wound = record.system.wounds?.[severity];
+        if (!wound) {
+          failures.push(
+            language + "/" + record.name +
+            ": missing " + severity + " shield wound track"
+          );
+          continue;
+        }
+
+        if (wound.max !== expectedMax[severity]) {
+          failures.push(
+            language + "/" + record.name + ": " + severity +
+            " shield capacity is " + wound.max +
+            ", expected " + expectedMax[severity]
+          );
+        }
+
+        if (wound.current !== 0) {
+          failures.push(
+            language + "/" + record.name + ": " + severity +
+            " shield wounds start at " + wound.current +
+            " instead of 0"
+          );
+        }
+      }
+    }
+  }
+
+  assert.deepEqual(failures, [], failures.join("\n"));
+});
+
+test("W4 shield extraction does not invent armor or equipment mechanics", () => {
+  const failures = [];
+  const forbidden = [
+    "category",
+    "blockEaseDamage",
+    "dodgeHindrance",
+    "encumbranceCategory",
+    "level",
+    "quantity",
+    "weight",
+    "depletionDie",
+    "depletionMin",
+    "depletionMax",
+    "depleted"
+  ];
+
+  for (const language of ["en", "fr"]) {
+    for (const record of readRecords(language)) {
+      if (record.crdType !== "shield") continue;
+
+      for (const field of forbidden) {
+        if (Object.prototype.hasOwnProperty.call(record.system, field)) {
+          failures.push(
+            language + "/" + record.name +
+            ": shield contains invented " + field + " field"
+          );
+        }
+      }
+    }
+  }
+
+  assert.deepEqual(failures, [], failures.join("\n"));
+});
