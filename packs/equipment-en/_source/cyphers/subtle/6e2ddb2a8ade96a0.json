@@ -1,0 +1,32 @@
+{
+  "_id": "6e2ddb2a8ade96a0",
+  "_key": "!items!6e2ddb2a8ade96a0",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Burst of Speed",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> As an extra action on your turn, you can move a short or long distance If you use this extra action to move a short distance, this doesn’t hinder your tasks. If you use this extra action to move a long distance, your tasks until your next turn are only hindered by one step instead of two.</p><p><strong>Explanation:</strong> It was a little bit downhill the whole way. You were the fastest kid in school. Fear is a strong motivator.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.burst-of-speed",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Burst of Speed",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

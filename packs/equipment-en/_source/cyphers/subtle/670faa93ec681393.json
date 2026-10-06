@@ -1,0 +1,32 @@
+{
+  "_id": "670faa93ec681393",
+  "_key": "!items!670faa93ec681393",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Improved Healing",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You have three assets on your healing, medicine, or surgery task. (For this task, the asset limit is three instead of two.) You can use this cypher before or after you roll.</p><p><strong>Explanation:</strong> They weren’t as badly hurt as it first appeared. You just studied how to treat this kind of injury. Everything easily popped back into place.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.improved-healing",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Improved Healing",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

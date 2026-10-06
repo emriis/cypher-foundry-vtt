@@ -1,0 +1,32 @@
+{
+  "_id": "46ec32447dac13ce",
+  "_key": "!items!46ec32447dac13ce",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Feat of Strength",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> For one task, you have three assets in an appropriate skill requiring a lot of physical strength, such as breaking down a door, carrying a heavy weight, lifting a bed above your head, pulling someone out of a hole, or pushing a car off a cliff. (For this task, the asset limit is three instead of two.) You can use this cypher before or after you roll.</p><p><strong>Explanation:</strong> You found a weak spot. You had leverage. You got a surge of adrenaline.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.feat-of-strength",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Feat of Strength",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

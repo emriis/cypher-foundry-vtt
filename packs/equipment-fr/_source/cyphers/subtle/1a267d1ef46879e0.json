@@ -1,0 +1,33 @@
+{
+  "_id": "1a267d1ef46879e0",
+  "_key": "!items!1a267d1ef46879e0",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Noncombat Enhancer",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You get two assets on a noncombat task. You can use this cypher before or after you roll.</p><p><strong>Explanation:</strong> Wow, you’re really good at this! Fake it until you make it. Your horoscope said this would happen today.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.noncombat-enhancer",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Noncombat Enhancer",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.noncombat-enhancer"
+      }
+    }
+  }
+}

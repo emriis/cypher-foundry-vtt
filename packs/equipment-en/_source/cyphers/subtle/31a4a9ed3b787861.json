@@ -1,0 +1,32 @@
+{
+  "_id": "31a4a9ed3b787861",
+  "_key": "!items!31a4a9ed3b787861",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Inspire Aggression",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> A foe of level 4 or less within short range uses their next turn to attack a creature of your choice within short range. The attacking creature inflicts damage equal to their level.</p><p><strong>Explanation:</strong> You convinced them the creature said or did something unforgivable. Your taunt confused them. They thought the creature they attacked was on your side.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.inspire-aggression",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Inspire Aggression",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

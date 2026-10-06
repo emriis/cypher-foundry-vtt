@@ -1,0 +1,33 @@
+{
+  "_id": "dda1508704c5ed51",
+  "_key": "!items!dda1508704c5ed51",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Make Passage",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> As part of your movement, you create or use an opening in a barrier (up to level 4) and pass through it.</p><p><strong>Explanation:</strong> The floor was rotting away. The drywall was poorly installed. The mortar between the bricks was weak. You can also use a make passage cypher to open an existing door or gate, or even have an elevator arrive when you need it.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.make-passage",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Make Passage",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.make-passage"
+      }
+    }
+  }
+}

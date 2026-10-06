@@ -1,0 +1,32 @@
+{
+  "_id": "e2d034008dd9a498",
+  "_key": "!items!e2d034008dd9a498",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Double Attack",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> In place of one attack, you make two hindered attacks with the same weapon.</p><p><strong>Explanation:</strong> You have two fists. The weapon has a sensitive trigger. You had just enough time for a double tap.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.double-attack",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Double Attack",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

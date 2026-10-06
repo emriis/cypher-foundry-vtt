@@ -1,0 +1,33 @@
+{
+  "_id": "c7251d37e8eacfbf",
+  "_key": "!items!c7251d37e8eacfbf",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Speed Replenisher",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You restore 4 points to your Speed Pool.</p><p><strong>Explanation:</strong> You took a moment for a really good stretch. You cracked your back or neck and it made a really satisfying noise. That knot in your muscle finally relaxed.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.speed-replenisher",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Speed Replenisher",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.speed-replenisher"
+      }
+    }
+  }
+}

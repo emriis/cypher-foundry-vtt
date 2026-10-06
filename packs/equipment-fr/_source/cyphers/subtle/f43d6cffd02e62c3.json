@@ -1,0 +1,33 @@
+{
+  "_id": "f43d6cffd02e62c3",
+  "_key": "!items!f43d6cffd02e62c3",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Combat Enhancer",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You get two assets on a combat or noncombat task. You can use this cypher before or after you roll.</p><p><strong>Explanation:</strong> This must be what bullet time feels like. They made a fatal mistake. Two hits—you hitting them, them hitting the floor.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.combat-enhancer",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Combat Enhancer",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.combat-enhancer"
+      }
+    }
+  }
+}

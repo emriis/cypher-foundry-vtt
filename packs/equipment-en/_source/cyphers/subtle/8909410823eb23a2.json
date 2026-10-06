@@ -1,0 +1,32 @@
+{
+  "_id": "8909410823eb23a2",
+  "_key": "!items!8909410823eb23a2",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Master Password",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You have three assets on your computer or hacking task. (For this task, the asset limit is three instead of two.) You can use this cypher before or after you roll. If you succeed, your interaction with the device is better than you expected in some way. For example, you might gain access to a secure folder on a computer, the device might think you’re an administrator, follow-up tasks with the device might be eased, or you might be able to use it for a longer time before it deactivates or you get locked out of the system.</p><p><strong>Explanation:</strong> You accidentally guessed the master password. Your biometrics are almost identical to those of the device’s creator. The device is glitching.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.master-password",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Master Password",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

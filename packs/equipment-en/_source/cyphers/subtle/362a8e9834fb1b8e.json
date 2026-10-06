@@ -1,0 +1,32 @@
+{
+  "_id": "362a8e9834fb1b8e",
+  "_key": "!items!362a8e9834fb1b8e",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Horizon Observer",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You have three assets on your long-distance perception task, affecting noticing things that are at least a long distance away. (For this task, the asset limit is three instead of two.) You can use this cypher before or after you roll.</p><p><strong>Explanation:</strong> You’ve watched a lot of live sports from the nosebleed section. You can feel something in the air. You grew up in a very flat part of the world.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.horizon-observer",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Horizon Observer",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

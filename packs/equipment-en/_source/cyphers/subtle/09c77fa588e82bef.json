@@ -1,0 +1,32 @@
+{
+  "_id": "09c77fa588e82bef",
+  "_key": "!items!09c77fa588e82bef",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Mental Concentration",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You have three assets on your Intellect defense task. (For this task, the asset limit is three instead of two.) You can use this cypher before or after you roll. If you fail your Intellect defense task, the attack inflicts 4 less Intellect damage (or, if you are out of Intellect and the attack would inflict wounds, it reduces the severity of the wound by one step).</p><p><strong>Explanation:</strong> Eye of the tiger. Keep your eye on the ball. Your friends are counting on you.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.mental-concentration",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Mental Concentration",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

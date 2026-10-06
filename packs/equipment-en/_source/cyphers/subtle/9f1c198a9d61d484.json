@@ -1,0 +1,32 @@
+{
+  "_id": "9f1c198a9d61d484",
+  "_key": "!items!9f1c198a9d61d484",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Fortunate Fluke",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Reroll the die you just rolled, even if it was a natural 1. You must use the new result, even if it’s a 1.</p><p><strong>Explanation:</strong> Things don’t always turn out like they first appear. Luck favors the prepared. It’s not that you were lucky—it was that they were unlucky.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.fortunate-fluke",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Fortunate Fluke",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

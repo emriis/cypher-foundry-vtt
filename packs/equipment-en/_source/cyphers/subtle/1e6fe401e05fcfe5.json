@@ -1,0 +1,32 @@
+{
+  "_id": "1e6fe401e05fcfe5",
+  "_key": "!items!1e6fe401e05fcfe5",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Press the Advantage",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Against a foe who has already taken damage in this combat, your attack inflicts an additional 5 damage. You can use this cypher before or after you roll for the attack.</p><p><strong>Explanation:</strong> You got the scent of blood. Your attacks hit them right where they were most wounded. The foe started to panic.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.press-the-advantage",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Press the Advantage",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

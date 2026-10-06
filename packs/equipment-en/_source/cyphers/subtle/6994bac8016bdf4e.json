@@ -1,0 +1,32 @@
+{
+  "_id": "6994bac8016bdf4e",
+  "_key": "!items!6994bac8016bdf4e",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Lucid Moment",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You ignore the effects and symptoms of a mental disorder, brain injury, or other impairing mental condition until you use a ten-hour recovery. Examples include clinical depression, generalized anxiety disorder, delusions, manias, phobias, dementia, obsessive-compulsive disorder, attention deficit hyperactivity disorder, and schizophrenia.</p><p><strong>Explanation:</strong> Your medication dosage is precisely what you need right now. You’ve found a way to compensate for a little while. Some unknown factor (such as diet, exercise, or rest) has swung things your way.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.lucid-moment",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Lucid Moment",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

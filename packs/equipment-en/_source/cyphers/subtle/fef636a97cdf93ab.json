@@ -1,0 +1,32 @@
+{
+  "_id": "fef636a97cdf93ab",
+  "_key": "!items!fef636a97cdf93ab",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Improved Initiative",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You have three assets on your initiative task. (For this task, the asset limit is three instead of two.) You can use this cypher before or after you roll. If the GM calls for another initiative roll as part of the encounter (for example, if reinforcements arrive), this cypher applies to the new initiative roll as well.</p><p><strong>Explanation:</strong> You noticed someone slowly reaching for a weapon. You had a feeling things were about to get dangerous. You heard something that drew your attention to a threat.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.improved-initiative",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Improved Initiative",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "_id": "e18c4664a36b743c",
+  "_key": "!items!e18c4664a36b743c",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Knockout",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> As a second action after a successful melee attack, make a Might or Intellect roll against your foe (hindered by two steps if the foe is level 5 or higher). If you succeed, you knock them out (or something similar that incapacitates them, such as knocking the wind out of them) for a few rounds.</p><p><strong>Explanation:</strong> A good bonk on the head can take out almost anyone. You and your high school friends used to choke each other out for fun. You learned how to do a solar plexus jab by watching a lot of boxing matches.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.knockout",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Knockout",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

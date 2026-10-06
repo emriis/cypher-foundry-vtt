@@ -1,0 +1,32 @@
+{
+  "_id": "5b775b59f4785a4f",
+  "_key": "!items!5b775b59f4785a4f",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Deflect Wound",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> An attack on you that would inflict a minor or moderate wound instead doesn’t harm you at all.</p><p><strong>Explanation:</strong> Some bit of your clothing or equipment deflected the damage. Something distracted your foe. You’re tougher than you thought.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.deflect-wound",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Deflect Wound",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "_id": "d26424d8f7a2aa82",
+  "_key": "!items!d26424d8f7a2aa82",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Perfect Moment",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You treat your next action as if you had rolled a natural 20.</p><p><strong>Explanation:</strong> Your trainer wouldn’t let you stop until you got this move right. You dreamed about this and now it’s happening exactly as you dreamed it. That shot was one in a million, kid. Because rolling a natural 20 means you get back any points you used to apply Effort on the task, there’s no reason not to apply as much Effort as you can afford on this task, since you’ll immediately get the points back.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.perfect-moment",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Perfect Moment",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "_id": "8bae7c486372e152",
+  "_key": "!items!8bae7c486372e152",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Push",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> After a successful melee or ranged attack, you attempt to move a foe as an extra action. Make a Might or Speed attack (using the same Pool as the original attack). If this attack succeeds, you also move the foe horizontally an immediate distance. If you use a level of Effort on the attack specifically for this cypher, the successful attack also knocks them prone.</p><p><strong>Explanation:</strong> They were surprised by how strong you are. You caught them off￾balance. They tripped on something.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.push",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Push",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

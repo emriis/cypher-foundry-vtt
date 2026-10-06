@@ -1,0 +1,33 @@
+{
+  "_id": "649d02f8198cd958",
+  "_key": "!items!649d02f8198cd958",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Improvised Shelter",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You find something in the area that is large enough to cover you, providing shelter from the weather or concealment from a pursuer. It might even block one attack before breaking or collapsing.</p><p><strong>Explanation:</strong> This thick tangle of branches is unexpectedly sturdy. This old tarp blends in pretty well with the dirt. This heavy cardboard box is much bigger than you thought.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.improvised-shelter",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Improvised Shelter",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.improvised-shelter"
+      }
+    }
+  }
+}

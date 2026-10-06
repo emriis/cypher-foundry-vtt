@@ -1,0 +1,33 @@
+{
+  "_id": "2862992da1ca02dd",
+  "_key": "!items!2862992da1ca02dd",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Calm Sniper",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> If you use one action to aim at a target beyond extreme range, in the next round your attack roll against them gets three assets. (For this task, the asset limit is three instead of two.)</p><p><strong>Explanation:</strong> You found the calm state that quiets your breathing and heartbeat. Your tactical position overcomes extreme-distance factors that would impede your attack, like the angle of the sun and the speed of the wind. You mastered the sniper level in your favorite videogame.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.calm-sniper",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Calm Sniper",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.calm-sniper"
+      }
+    }
+  }
+}

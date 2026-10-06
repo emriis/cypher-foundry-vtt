@@ -1,0 +1,33 @@
+{
+  "_id": "bb324891ac982fcf",
+  "_key": "!items!bb324891ac982fcf",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Improved Dodging",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You have three assets on your dodge task. (For this task, the asset limit is three instead of two.) You can use this cypher before or after you roll.</p><p><strong>Explanation:</strong> Your foe’s attacks are slow and clumsy. You have the high ground. You’ve practiced against the foe’s combat style.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.improved-dodging",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Improved Dodging",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.improved-dodging"
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "_id": "17e86d5b57b9d32d",
+  "_key": "!items!17e86d5b57b9d32d",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Crying Jag",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Make a hindered interaction roll against a foe in short range who can see and hear you. If you succeed, you upset them enough that they start crying. This might hinder them by two steps for about a round, make them leave the area for a while, or prompt one of their allies to comfort them.</p><p><strong>Explanation:</strong> You found a topic they are really sensitive about. They were already having a bad day. You’re a mean drunk.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.crying-jag",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Crying Jag",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.crying-jag"
+      }
+    }
+  }
+}

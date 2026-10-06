@@ -1,0 +1,33 @@
+{
+  "_id": "a05e0ea70729ac8f",
+  "_key": "!items!a05e0ea70729ac8f",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Might Replenisher",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You restore 4 points to your Might Pool.</p><p><strong>Explanation:</strong> You’re not as tired as you thought. You were faking an injury. Something just made you really angry.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.might-replenisher",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Might Replenisher",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.might-replenisher"
+      }
+    }
+  }
+}

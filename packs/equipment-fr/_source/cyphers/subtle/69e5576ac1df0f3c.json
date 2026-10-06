@@ -1,0 +1,33 @@
+{
+  "_id": "69e5576ac1df0f3c",
+  "_key": "!items!69e5576ac1df0f3c",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Maintain Temperature",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a one-hour or longer recovery, you’re resistant to hot or cold temperatures, as if you were wearing appropriate clothing. For example, you could walk through the Sahara Desert without getting heatstroke or a sunburn, or go out in the snow without risking frostbite or hypothermia.</p><p><strong>Explanation:</strong> You grew up with weather like this. You’ve always run a little hot/cold. That extra-large hot/cold drink was exactly what you needed.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.maintain-temperature",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Maintain Temperature",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.maintain-temperature"
+      }
+    }
+  }
+}

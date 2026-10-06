@@ -1,0 +1,33 @@
+{
+  "_id": "5918b3fcf62812f6",
+  "_key": "!items!5918b3fcf62812f6",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Reveal Unseen",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until your next turn, you ignore all penalties associated with attacking or defending against a foe who has cover, has a superior position, is camouflaged, or is invisible.</p><p><strong>Explanation:</strong> They accidentally revealed exactly where they are. You got a weird feeling and guessed right. They stumbled or were distracted and briefly moved out of cover.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.reveal-unseen",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Reveal Unseen",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.reveal-unseen"
+      }
+    }
+  }
+}

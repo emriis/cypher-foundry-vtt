@@ -1,0 +1,32 @@
+{
+  "_id": "83f91bfcdfa1a632",
+  "_key": "!items!83f91bfcdfa1a632",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Improved Perception",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You have three assets on your perception task. (For this task, the asset limit is three instead of two.) You can use this cypher before or after you roll.</p><p><strong>Explanation:</strong> You happened to be looking in the right direction. You got a hunch that something was out of place. You accidentally nudged the hidden thing.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.improved-perception",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Improved Perception",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

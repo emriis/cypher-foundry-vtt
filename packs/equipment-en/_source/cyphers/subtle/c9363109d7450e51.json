@@ -1,0 +1,32 @@
+{
+  "_id": "c9363109d7450e51",
+  "_key": "!items!c9363109d7450e51",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Wound Recovery",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You heal two minor wounds, heal a moderate wound, or reduce a major wound to a moderate wound.</p><p><strong>Explanation:</strong> The hit wasn’t as bad as it looked. You can tough this one out. Your foe must have pulled their punch.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.wound-recovery",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Wound Recovery",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

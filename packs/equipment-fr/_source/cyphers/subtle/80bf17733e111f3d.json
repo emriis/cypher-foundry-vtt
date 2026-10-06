@@ -1,0 +1,33 @@
+{
+  "_id": "80bf17733e111f3d",
+  "_key": "!items!80bf17733e111f3d",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Teach Trick",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> If you spend about ten minutes interacting with a beast (such as a dog, cat, bear, or other common animal), you can teach it one basic trick that it can physically perform (roll over, heel, spin, shake, go to an indicated place within long range, and so on). The beast’s knowledge of this trick doesn’t expire, but after a fewdays it probably needs a reminder about the trick in order to do it well.</p><p><strong>Explanation:</strong> You have a good connection to this beast. This animal is unusually smart. This might actually be an escaped pet.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.teach-trick",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Teach Trick",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.teach-trick"
+      }
+    }
+  }
+}

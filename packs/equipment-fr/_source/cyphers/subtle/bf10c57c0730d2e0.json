@@ -1,0 +1,33 @@
+{
+  "_id": "bf10c57c0730d2e0",
+  "_key": "!items!bf10c57c0730d2e0",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Quick Feint",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> If you succeed at an Intellect task against a foe you’re in melee with, you make a feint, misleading them. You have three assets on your melee attack against them this turn. (For this task, the asset limit is three instead of two.)</p><p><strong>Explanation:</strong> Their shoes are untied. Aim high, stab low. You are not left-handed.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.quick-feint",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Quick Feint",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.quick-feint"
+      }
+    }
+  }
+}

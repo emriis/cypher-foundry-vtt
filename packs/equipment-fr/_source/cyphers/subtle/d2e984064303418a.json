@@ -1,0 +1,33 @@
+{
+  "_id": "d2e984064303418a",
+  "_key": "!items!d2e984064303418a",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Disease Recovery",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> One disease of level 4 or lower that is currently in your system has no further effect on you.</p><p><strong>Explanation:</strong> You have a strong immune system. You’ve been exposed to this disease before. The strain of infection was already weakened before it got to you.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.disease-recovery",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Disease Recovery",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.disease-recovery"
+      }
+    }
+  }
+}

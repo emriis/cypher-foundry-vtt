@@ -1,0 +1,32 @@
+{
+  "_id": "741de7d4437b3f12",
+  "_key": "!items!741de7d4437b3f12",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Improvised Range",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You attack with a weapon at a foe within short range even if the attack wouldn’t normally be effective or possible at that range. For example, you could throw a sword, use a punch or kick to propel a heavy object, or throw an empty pistol. Make an eased attack against the foe as if you were attacking them with the weapon normally; for example, skill in swords, unarmed combat, or pistols applies to the attack roll. If the attack succeeds, the foe takes damage as if you had hit them with the weapon in the normal way.</p><p><strong>Explanation:</strong> You’ve been practicing this trick. Weapon training includes unorthodox attack methods. It’s basic physics.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.improvised-range",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Improvised Range",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

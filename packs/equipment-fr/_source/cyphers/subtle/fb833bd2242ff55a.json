@@ -1,0 +1,33 @@
+{
+  "_id": "fb833bd2242ff55a",
+  "_key": "!items!fb833bd2242ff55a",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Berserk",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You go berserk in combat. While in this state, you can’t use Intellect points, but you add +1 to your Might Edge or your Speed Edge (your choice). You end this effect early when you wish, and it ends automatically if no combat is taking place within range of your senses or if you use a ten-minute or longer recovery.</p><p><strong>Explanation:</strong> That was the last straw. They hurt or insulted someone you care for deeply. They reminded you of a villain who once did you wrong.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.berserk",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Berserk",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.berserk"
+      }
+    }
+  }
+}

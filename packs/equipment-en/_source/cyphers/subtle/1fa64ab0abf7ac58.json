@@ -1,0 +1,32 @@
+{
+  "_id": "1fa64ab0abf7ac58",
+  "_key": "!items!1fa64ab0abf7ac58",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Take One for the Team",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> When you take the attack against a foe of level 4 or less, the attack inflicts no damage, and you also don’t take the extra minor wound that you’d normally incur.</p><p><strong>Explanation:</strong> The foe was too surprised by your move to make a telling blow. Your movement to intercept partially deflected the attack. You got instant karma.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.take-one-for-the-team",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Take One for the Team",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

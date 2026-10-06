@@ -1,0 +1,32 @@
+{
+  "_id": "a29023a8167b1674",
+  "_key": "!items!a29023a8167b1674",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Restrain",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> As an extra action after a successful melee attack, make a Might or Speed roll against your foe (hindered if the foe is level 5 or higher). If you succeed, you restrain them (with an armlock, a headlock, a length of rope, or something similar) and the foe is unable to attack or move away from their current position. The foe can use their action to escape the restraints, but if you actively interfere (costing you your next action) you can make an eased roll against them to restrain them for another round.</p><p><strong>Explanation:</strong> You’ve watched a lot of wrestling. Reunions for your family tend to get unruly. You have a knack for ropes.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.restrain",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Restrain",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

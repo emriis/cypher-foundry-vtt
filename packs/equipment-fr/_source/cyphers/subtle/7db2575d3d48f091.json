@@ -1,0 +1,33 @@
+{
+  "_id": "7db2575d3d48f091",
+  "_key": "!items!7db2575d3d48f091",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Traumatic Amnesia",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Make a Might, Speed, or Intellect attack against someone in immediate range who you’ve just surprised, harmed, or threatened. If you succeed, their memory of what just happened is confused, hindering by two steps their recollection of you and the details of the last minute or so.</p><p><strong>Explanation:</strong> You did or said something that triggered them. They were already on the verge of a crisis. They startle easily.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.traumatic-amnesia",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Traumatic Amnesia",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.traumatic-amnesia"
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "_id": "4f9e7541a67ebd27",
+  "_key": "!items!4f9e7541a67ebd27",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Fortuitous Moment",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Something happens that makes the encounter (or specifically your next action) a little easier for you. You can call for a player intrusion without spending any XP.</p><p><strong>Explanation:</strong> You have friends everywhere. The universe finally gave you a break. All that good karma finally paid off.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.fortuitous-moment",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Fortuitous Moment",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

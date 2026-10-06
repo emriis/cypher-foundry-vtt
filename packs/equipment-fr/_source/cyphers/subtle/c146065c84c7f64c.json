@@ -1,0 +1,33 @@
+{
+  "_id": "c146065c84c7f64c",
+  "_key": "!items!c146065c84c7f64c",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Counterattack",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> In response to being hit with an attack, you immediately make an eased attack against that foe with an attack of your own, even though it is not your turn. Your attack must be of the same kind (melee or ranged) as the attack that hit you.</p><p><strong>Explanation:</strong> You have an itchy trigger finger. You allowed yourself to get hit to set up a counterattack. They were at the perfect angle for you to respond.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.counterattack",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Counterattack",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.counterattack"
+      }
+    }
+  }
+}

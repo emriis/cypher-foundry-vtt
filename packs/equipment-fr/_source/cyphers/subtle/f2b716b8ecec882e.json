@@ -1,0 +1,33 @@
+{
+  "_id": "f2b716b8ecec882e",
+  "_key": "!items!f2b716b8ecec882e",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Poison Recovery",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> One poison of level 4 or lower that is currently in your system has no further effect on you.</p><p><strong>Explanation:</strong> The wound was only a scratch and barely any poison got into you. You’ve spent time building up a resistance to this particular poison. A medication you’re taking interferes with the poison.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.poison-recovery",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Poison Recovery",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.poison-recovery"
+      }
+    }
+  }
+}
