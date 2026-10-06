@@ -6,8 +6,8 @@
   "type": "attack",
   "crdType": "weapon",
   "system": {
-    "attackType": "light",
-    "range": "immediate",
+    "attackType": null,
+    "range": "short",
     "extremeRange": "",
     "damage": 4,
     "stat": "might",
