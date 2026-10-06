@@ -244,7 +244,7 @@ test("W4 weapon extraction preserves explicitly named CRD ranges", () => {
       /extreme range extends to (?:immediate|short|long|very long) range/gi,
       ""
     );
-    const match = primary.match(/\\b(very long|long|short|immediate) range\\b/i);
+    const match = primary.match(/\b(very long|long|short|immediate) range\\b/i);
     if (!match) return null;
 
     return {
@@ -301,7 +301,7 @@ test("W4 armor extraction preserves explicit CRD armor categories", () => {
       if (record.crdType !== "armor") continue;
 
       const description = normalizeText(record.system.description);
-      const match = description.match(/\\b(light|medium|heavy) armor\\b/i);
+      const match = description.match(/\b(light|medium|heavy) armor\b/i);
       if (!match) continue;
 
       const expected = match[1].toLowerCase();
