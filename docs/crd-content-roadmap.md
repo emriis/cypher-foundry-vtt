@@ -151,7 +151,7 @@ rather than trigger another broad architectural rewrite.
 - [x] Tier-specific effects
 - [x] Ability references from Types/Foci
 - [ ] Complete runtime application of all structured Ability effects
-- [ ] E2E coverage for representative Ability activation workflows
+- [x] E2E coverage for representative Ability usage (structured runtime activation + CRD table usage)
 
 ## 6. Phase 3 — Reusable player content
 

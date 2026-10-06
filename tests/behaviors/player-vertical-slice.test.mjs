@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { describe, test } from "node:test";
 
+import { chooseAbilityEffect } from "../../module/applications/ability-service.mjs";
 import { applyDescriptor, applyFocus, applyType } from "../../module/applications/content-service.mjs";
 import { addWound } from "../../module/applications/damage-service.mjs";
 import { purchaseAdvancementSlot } from "../../module/applications/advancement-service.mjs";
@@ -148,4 +149,56 @@ describe("Given a player-facing Cypher character", () => {
     assert.equal(actor.system.effort, 2);
     assert.equal(actor.system.resourcePoints, 1);
   });
+
+  test("when a structured Ability has a Pool cost and recovery boundary, then use deducts its cost and recovery expires it", async () => {
+    configureFoundryStubs();
+    const actor = createActor();
+    actor.system.stats.might.pool.value = 8;
+
+    const fury = {
+      type: "ability",
+      id: "fury",
+      uuid: "Actor.player-slice.Item.fury",
+      name: "Fury",
+      actor,
+      parent: actor,
+      system: {
+        cost: {
+          stat: "might",
+          amount: 3,
+          options: [],
+          additionalEffort: false
+        },
+        effects: [{
+          id: "base",
+          name: "Fury",
+          description: "Your melee attacks inflict +2 damage.",
+          effort: "",
+          modifiers: [],
+          endConditions: [{
+            kind: "recovery",
+            interval: "tenMinutes",
+            minimum: true
+          }]
+        }]
+      }
+    };
+
+    await actor.createEmbeddedDocuments("Item", [fury]);
+    const ownedFury = actor.items.at(-1);
+    ownedFury.actor = actor;
+    ownedFury.parent = actor;
+    ownedFury.uuid = fury.uuid;
+
+    assert.equal(await chooseAbilityEffect(ownedFury, "base"), true);
+    assert.equal(actor.system.stats.might.pool.value, 5);
+    assert.deepEqual(actor.system.activeAbilityEffects, [{
+      itemUuid: fury.uuid,
+      effectId: "base"
+    }]);
+
+    await rollRecovery(actor, "hour");
+    assert.deepEqual(actor.system.activeAbilityEffects, []);
+  });
+
 });

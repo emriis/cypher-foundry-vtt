@@ -428,14 +428,38 @@ test("completes a player vertical slice from real CRD compendiums", async ({
       await attack.rollAttack({ difficulty: 0 });
       await cypher.useCypher();
 
+      const abilityPack = getPack("abilities-en");
+      const abilities = await abilityPack.getDocuments();
+      const tableAbilitySource = abilities.find(item =>
+        item.type === "ability" && item.system.rollTables?.length
+      );
+      if (!tableAbilitySource) {
+        throw new Error("Player vertical slice could not find an Ability with a structured table");
+      }
+      const [tableAbility] = await actor.createEmbeddedDocuments("Item", [
+        tableAbilitySource.toObject()
+      ]);
+      const { rollAbilityTable } =
+        await import("/systems/cypher/module/applications/ability-service.mjs");
+      const messageCountBeforeAbility = game.messages.size;
+      const tableId = tableAbility.system.rollTables[0].id;
+      if (!(await rollAbilityTable(tableAbility, tableId))) {
+        throw new Error("Structured Ability table could not be used");
+      }
+      if (game.messages.size <= messageCountBeforeAbility) {
+        throw new Error("Ability table use did not create chat output");
+      }
+
       await actor.addWound("moderate");
       await actor.rollRecovery("hour");
 
       await actor.update({
-        "system.xp": 4,
+        "system.xp": 5,
         "system.advancementSlots.0.type": "effort",
         "system.advancementSlots.0.bought": false
       });
+      await actor.usePlayerIntrusion("Alpha vertical-slice intrusion");
+      const xpAfterIntrusion = actor.system.xp;
       await actor.purchaseAdvancementSlot(0);
 
       return {
@@ -447,7 +471,9 @@ test("completes a player vertical slice from real CRD compendiums", async ({
         abilityCount: actor.items.filter(item => item.type === "ability").length,
         attackType: attack.type,
         cypherDepleted: cypher.system.depleted,
+        abilityTableUsed: tableAbility.name,
         moderateWounds: actor.system.wounds.moderate.current,
+        xpAfterIntrusion,
         xp: actor.system.xp,
         advancementBought: actor.system.advancementSlots[0].bought,
         effort: actor.system.effort,
@@ -461,7 +487,9 @@ test("completes a player vertical slice from real CRD compendiums", async ({
     expect(summary.abilityCount).toBeGreaterThan(0);
     expect(summary.attackType).toBe("attack");
     expect(summary.cypherDepleted).toBe(true);
+    expect(summary.abilityTableUsed).toBeTruthy();
     expect(summary.moderateWounds).toBe(0);
+    expect(summary.xpAfterIntrusion).toBe(4);
     expect(summary.xp).toBe(0);
     expect(summary.advancementBought).toBe(true);
     expect(summary.effort).toBeGreaterThan(1);
