@@ -571,3 +571,101 @@ test("W4 shield extraction does not invent armor or equipment mechanics", () => 
 
   assert.deepEqual(failures, [], failures.join("\n"));
 });
+
+
+test("W4 source records preserve canonical Foundry identity and CRD provenance", () => {
+  const expectedTypes = {
+    equipment: "equipment",
+    weapon: "attack",
+    armor: "armor",
+    shield: "shield"
+  };
+  const failures = [];
+  const logicalIds = new Set();
+
+  for (const language of ["en", "fr"]) {
+    for (const record of readRecords(language)) {
+      if (!expectedTypes[record.crdType]) continue;
+
+      const crd = record.flags?.cypherFoundry?.crd;
+      const expectedType = expectedTypes[record.crdType];
+
+      if (record.document !== "Item" || record.type !== expectedType) {
+        failures.push(
+          language + "/" + record.name +
+          ": " + record.crdType + " maps to " + expectedType +
+          " but is " + record.document + "/" + record.type
+        );
+      }
+
+      if (!crd || crd.language !== language) {
+        failures.push(
+          language + "/" + record.name +
+          ": missing or incorrect CRD language provenance"
+        );
+      }
+
+      if (crd?.version !== "2026-07-29") {
+        failures.push(
+          language + "/" + record.name +
+          ": missing CRD version provenance"
+        );
+      }
+
+      if (!crd?.logicalId || !crd?.sourceLocator) {
+        failures.push(
+          language + "/" + record.name +
+          ": incomplete CRD source identity"
+        );
+      }
+
+      const key = language + ":" + crd?.logicalId;
+      if (logicalIds.has(key)) {
+        failures.push(
+          language + "/" + record.name +
+          ": duplicate CRD logicalId " + crd?.logicalId
+        );
+      }
+      logicalIds.add(key);
+    }
+  }
+
+  assert.deepEqual(failures, [], failures.join("\n"));
+});
+
+test("W4 source records include every mandatory mechanical projection", () => {
+  const requiredFields = {
+    equipment: [
+      "quantity", "level", "priceCategory",
+      "depletionDie", "depletionMin", "depletionMax", "depleted"
+    ],
+    weapon: [
+      "attackType", "range", "extremeRange", "damage", "stat",
+      "weaponFamily", "attackSkillCategory", "priceCategory",
+      "properties", "mechanics"
+    ],
+    armor: [
+      "category", "freelyUsable", "blockEaseDamage", "priceCategory"
+    ],
+    shield: ["equipped", "priceCategory", "wounds"]
+  };
+  const failures = [];
+
+  for (const language of ["en", "fr"]) {
+    for (const record of readRecords(language)) {
+      const fields = requiredFields[record.crdType];
+      if (!fields) continue;
+
+      for (const field of fields) {
+        if (!Object.prototype.hasOwnProperty.call(record.system, field)) {
+          failures.push(
+            language + "/" + record.name +
+            ": missing mechanical field " + record.crdType + "." + field
+          );
+        }
+      }
+    }
+  }
+
+  assert.deepEqual(failures, [], failures.join("\n"));
+});
