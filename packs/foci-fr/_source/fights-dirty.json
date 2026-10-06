@@ -22,83 +22,25 @@
       "Compendium.cypher.abilities-fr.Item.485a7038a60cc618",
       "Compendium.cypher.abilities-fr.Item.268608ceee622334"
     ],
-    "flowchart": {
-      "edges": [
-        {
-          "from": "8e92b89ce32bebc6",
-          "to": "8e92b89ce32bebc6"
-        },
-        {
-          "from": "2d5452f43ca9a65b",
-          "to": "2d5452f43ca9a65b"
-        },
-        {
-          "from": "2d5452f43ca9a65b",
-          "to": "2ea0935aa50fcc96"
-        },
-        {
-          "from": "8e92b89ce32bebc6",
-          "to": "ef8abcbc53c82a30"
-        },
-        {
-          "from": "8e92b89ce32bebc6",
-          "to": "68be4a1481980974"
-        },
-        {
-          "from": "ef8abcbc53c82a30",
-          "to": "de063c726879563d"
-        },
-        {
-          "from": "2d5452f43ca9a65b",
-          "to": "68cc05aef8a6269c"
-        },
-        {
-          "from": "8e92b89ce32bebc6",
-          "to": "eaddac93207bd222"
-        },
-        {
-          "from": "ef8abcbc53c82a30",
-          "to": "eaddac93207bd222"
-        },
-        {
-          "from": "68be4a1481980974",
-          "to": "25fd7f0b28506201"
-        },
-        {
-          "from": "68cc05aef8a6269c",
-          "to": "1a36e812e77d4c0e"
-        },
-        {
-          "from": "eaddac93207bd222",
-          "to": "2319f4845210f3a6"
-        },
-        {
-          "from": "de063c726879563d",
-          "to": "485a7038a60cc618"
-        },
-        {
-          "from": "1a36e812e77d4c0e",
-          "to": "485a7038a60cc618"
-        },
-        {
-          "from": "25fd7f0b28506201",
-          "to": "268608ceee622334"
-        },
-        {
-          "from": "2319f4845210f3a6",
-          "to": "268608ceee622334"
-        }
-      ]
-    }
+    "flowchart": {"edges": [
+      {"from": "2d5452f43ca9a65b", "to": "2ea0935aa50fcc96"},
+      {"from": "8e92b89ce32bebc6", "to": "ef8abcbc53c82a30"},
+      {"from": "8e92b89ce32bebc6", "to": "68be4a1481980974"},
+      {"from": "ef8abcbc53c82a30", "to": "de063c726879563d"},
+      {"from": "2d5452f43ca9a65b", "to": "68cc05aef8a6269c"},
+      {"from": "8e92b89ce32bebc6", "to": "eaddac93207bd222"},
+      {"from": "ef8abcbc53c82a30", "to": "eaddac93207bd222"},
+      {"from": "68be4a1481980974", "to": "25fd7f0b28506201"},
+      {"from": "68cc05aef8a6269c", "to": "1a36e812e77d4c0e"},
+      {"from": "eaddac93207bd222", "to": "2319f4845210f3a6"},
+      {"from": "de063c726879563d", "to": "485a7038a60cc618"},
+      {"from": "1a36e812e77d4c0e", "to": "485a7038a60cc618"},
+      {"from": "25fd7f0b28506201", "to": "268608ceee622334"},
+      {"from": "2319f4845210f3a6", "to": "268608ceee622334"}
+    ]}
   },
   "folder": null,
   "sort": 0,
-  "ownership": {
-    "default": 0
-  },
-  "flags": {
-    "cypher": {
-      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
-    }
-  }
+  "ownership": {"default": 0},
+  "flags": {"cypher": {"sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."}}
 }
