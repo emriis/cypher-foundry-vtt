@@ -245,7 +245,8 @@ export const CRD_EQUIPMENT_FIXTURE = item(
     weight: "light",
     equipped: false,
     depletionDie: "none",
-    depletionMin: 1,\n    depletionMax: 1,
+    depletionMin: 1,
+    depletionMax: 1,
     depleted: false,
     description: ""
   },
