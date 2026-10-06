@@ -13,13 +13,13 @@ gaps; it does not invent additional game rules.
 | --- | --- | --- | --- |
 | General equipment | level, price category, quantity, weight; some items use depletion | quantity, level, priceCategory, weight, depletion, equipped, description | **Covered** |
 | Weapons / attacks | light/medium/heavy category, damage, range, extreme-range handling, weapon family/category, price, plus source-backed special mechanics | attackType, damage, range, extremeRange, weaponFamily, attackSkillCategory, priceCategory, properties, mechanics, freelyUsable | **Structured** |
-| Armor | light/medium/heavy category, free-use state, damaged armor reducing block benefit | category, freelyUsable, blockEaseDamage, equipped, priceCategory, description | **Covered** |
+| Armor | light/medium/heavy category, free-use state, block benefit, dodge hindrance, and explicit encumbrance exceptions | category, freelyUsable, blockEaseDamage, encumbranceCategory, dodgeHindrance, equipped, priceCategory, description | **Structured** |
 | Shields | independent wound track: 3 minor, 2 moderate, 1 major; broken after major wound | wounds with max/current values, equipped, derived broken state | **Covered** |
 | Cyphers | one-use nature, type, power level where applicable, identification/internal state | cypherType, powerLevel, identified, internal, depleted, description | **Mostly covered** |
 | Artifacts | level/form, identification, reusable depletion including never-depletes | level, form, identified, depletionDie, depletionThreshold, depleted, description | **Covered** |
 | Oddities | descriptive item content | description | **Covered** |
 
-## 2. Model gaps to resolve before extraction
+## 2. Model gaps to resolve before automation
 
 ### 2.1 Depletion ranges
 
@@ -69,7 +69,19 @@ The representative fixtures cover quarterstaff, stunstick, monomolecular
 blade, vacuum assault rifle, shotgun, and blast cannon. The model does not try
 to interpret arbitrary prose or infer mechanics from weapon names.
 
-### 2.4 General equipment depletion
+### 2.4 Armor dodge exceptions
+
+The CRD normally derives dodge hindrance from the armor category, with lighter
+encumbrance explicitly represented for items such as Elven chainmail and Impact
+cloak*. Spray-on impact armor is a distinct exception: it protects as light
+armor but explicitly does not hinder dodge tasks.
+
+Resolution: `encumbranceCategory` represents a lighter explicit encumbrance
+category, while nullable `dodgeHindrance` allows a source-backed override.
+`null` means the normal category/encumbrance rule applies; `0` represents the
+explicit no-hindrance exception.
+
+### 2.5 General equipment depletion
 
 The CRD explicitly allows some ordinary equipment to use depletion instead of
 a fixed quantity. The existing general equipment model supports this, but the
@@ -81,20 +93,23 @@ depletion for ordinary quantity-based items.
 1. Keep `priceCategory` abstract; do not invent currency amounts.
 2. Preserve equipment level independently from price category.
 3. Preserve weapon category independently from weapon family.
-4. Preserve ranged maximum range and extreme-range behavior separately.
+4. Preserve explicitly named weapon range and extreme-range behavior separately.
 5. Preserve depletion as structured data whenever the CRD supplies it.
 6. Keep source descriptive properties even when a mechanic is also structured.
 7. Do not convert descriptive notes into mechanics without a source-backed
    rule.
 8. Keep English and French records mechanically identical.
 9. Attach CRD provenance to every extracted source record.
-10. Add representative fidelity fixtures before declaring a family complete.
+10. Add representative fidelity fixtures and repository-wide semantic audits before declaring a family complete.
 11. Never edit compiled LevelDB packs directly.
 
-## 4. Next implementation step
+## 4. Current W4 scope
 
-The depletion-range and weapon-mechanics model extensions are complete. The
-next W4 step is to validate remaining general-equipment semantics against the
-full CRD tables before bulk extraction. Cypher effect level and power level are
-already represented as separate structured fields. Full inventory extraction
-follows only after these model contracts are green.
+The implemented W4 audit covers general equipment, weapons, armor, and shields.
+Cyphers are not part of this extraction audit because their content model is not
+yet implemented. Artifacts and oddities are also out of scope: they are not yet
+implemented and are not present in the current CRD equipment tables.
+
+The remaining W4 work is to complete the source-semantic audit of the
+implemented families before building further automation on top of the extracted
+data.
