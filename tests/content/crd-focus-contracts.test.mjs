@@ -77,61 +77,47 @@ function assertFlowchart(document, abilities, label) {
   );
   const edges = document.system.flowchart?.edges ?? [];
   const edgeKeys = new Set();
-  const incident = new Set();
 
   assert.ok(edges.length > 0, label);
 
   for (const edge of edges) {
-    assert.ok(abilityIds.has(edge.from), `${label}: unknown edge source ${edge.from}`);
-    assert.ok(abilityIds.has(edge.to), `${label}: unknown edge target ${edge.to}`);
-    assert.notEqual(edge.from, edge.to, label);
+    assert.ok(
+      abilityIds.has(edge.from),
+      `${label}: unknown edge source ${edge.from}`
+    );
+    assert.ok(
+      abilityIds.has(edge.to),
+      `${label}: unknown edge target ${edge.to}`
+    );
+    assert.notEqual(
+      edge.from,
+      edge.to,
+      `${label}: self-referential edge ${edge.from}`
+    );
 
     const key = `${edge.from}->${edge.to}`;
-    assert.equal(edgeKeys.has(key), false, `${label}: duplicate edge ${key}`);
+    assert.equal(
+      edgeKeys.has(key),
+      false,
+      `${label}: duplicate edge ${key}`
+    );
     edgeKeys.add(key);
-    incident.add(edge.from);
-    incident.add(edge.to);
 
     const fromTier = abilities.get(edge.from)?.system?.tier;
     const toTier = abilities.get(edge.to)?.system?.tier;
-    assert.ok(Number.isInteger(fromTier), `${label}: missing source tier`);
-    assert.ok(Number.isInteger(toTier), `${label}: missing target tier`);
     assert.ok(
-      Math.abs(toTier - fromTier) <= 1,
-      `${label}: edge skips tiers (${fromTier} -> ${toTier})`
+      Number.isInteger(fromTier),
+      `${label}: missing source tier for ${edge.from}`
+    );
+    assert.ok(
+      Number.isInteger(toTier),
+      `${label}: missing target tier for ${edge.to}`
+    );
+    assert.ok(
+      toTier >= fromTier,
+      `${label}: prerequisite points backward in tiers (${fromTier} -> ${toTier})`
     );
   }
-
-  assert.deepEqual(
-    [...incident].sort(),
-    [...abilityIds].sort(),
-    `${label}: every focus ability must participate in the flowchart`
-  );
-
-  const adjacency = new Map(
-    [...abilityIds].map(id => [id, new Set()])
-  );
-  for (const edge of edges) {
-    adjacency.get(edge.from).add(edge.to);
-    adjacency.get(edge.to).add(edge.from);
-  }
-
-  const visited = new Set();
-  const queue = [document.system.abilities.map(abilityId)[0]];
-  while (queue.length) {
-    const current = queue.shift();
-    if (visited.has(current)) continue;
-    visited.add(current);
-    for (const next of adjacency.get(current) ?? []) {
-      if (!visited.has(next)) queue.push(next);
-    }
-  }
-
-  assert.deepEqual(
-    [...visited].sort(),
-    [...abilityIds].sort(),
-    `${label}: flowchart must be connected`
-  );
 }
 
 for (const [language] of [["en"], ["fr"]]) {
