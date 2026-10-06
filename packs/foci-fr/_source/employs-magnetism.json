@@ -24,97 +24,30 @@
     ],
     "flowchart": {
       "edges": [
-        {
-          "from": "ecfb9fe73b7034b5",
-          "to": "954bf8e892bf967c"
-        },
-        {
-          "from": "0f7dfb28ce8eabe2",
-          "to": "0f7dfb28ce8eabe2"
-        },
-        {
-          "from": "ecfb9fe73b7034b5",
-          "to": "93d30c24d04ea53b"
-        },
-        {
-          "from": "0f7dfb28ce8eabe2",
-          "to": "09224b3868cfff91"
-        },
-        {
-          "from": "954bf8e892bf967c",
-          "to": "1fcacec810cb420d"
-        },
-        {
-          "from": "0f7dfb28ce8eabe2",
-          "to": "5a365fef4592fcaf"
-        },
-        {
-          "from": "1fcacec810cb420d",
-          "to": "5a365fef4592fcaf"
-        },
-        {
-          "from": "0f7dfb28ce8eabe2",
-          "to": "a8c72fb1a42a4dc7"
-        },
-        {
-          "from": "954bf8e892bf967c",
-          "to": "a8c72fb1a42a4dc7"
-        },
-        {
-          "from": "1fcacec810cb420d",
-          "to": "4b7f74259c9a90a9"
-        },
-        {
-          "from": "5a365fef4592fcaf",
-          "to": "4b7f74259c9a90a9"
-        },
-        {
-          "from": "a8c72fb1a42a4dc7",
-          "to": "2c44f67dc1a05a4c"
-        },
-        {
-          "from": "2c44f67dc1a05a4c",
-          "to": "1f2032de3e958835"
-        },
-        {
-          "from": "a8c72fb1a42a4dc7",
-          "to": "1f2032de3e958835"
-        },
-        {
-          "from": "0f7dfb28ce8eabe2",
-          "to": "36ed01066b9682e9"
-        },
-        {
-          "from": "a8c72fb1a42a4dc7",
-          "to": "36ed01066b9682e9"
-        },
-        {
-          "from": "2c44f67dc1a05a4c",
-          "to": "18e4c035c5d0e4c5"
-        },
-        {
-          "from": "36ed01066b9682e9",
-          "to": "18e4c035c5d0e4c5"
-        },
-        {
-          "from": "1f2032de3e958835",
-          "to": "dc5480fcb02aa6bd"
-        },
-        {
-          "from": "36ed01066b9682e9",
-          "to": "dc5480fcb02aa6bd"
-        }
+        {"from": "ecfb9fe73b7034b5", "to": "954bf8e892bf967c"},
+        {"from": "ecfb9fe73b7034b5", "to": "93d30c24d04ea53b"},
+        {"from": "0f7dfb28ce8eabe2", "to": "09224b3868cfff91"},
+        {"from": "954bf8e892bf967c", "to": "1fcacec810cb420d"},
+        {"from": "0f7dfb28ce8eabe2", "to": "5a365fef4592fcaf"},
+        {"from": "1fcacec810cb420d", "to": "5a365fef4592fcaf"},
+        {"from": "0f7dfb28ce8eabe2", "to": "a8c72fb1a42a4dc7"},
+        {"from": "954bf8e892bf967c", "to": "a8c72fb1a42a4dc7"},
+        {"from": "1fcacec810cb420d", "to": "4b7f74259c9a90a9"},
+        {"from": "5a365fef4592fcaf", "to": "4b7f74259c9a90a9"},
+        {"from": "a8c72fb1a42a4dc7", "to": "2c44f67dc1a05a4c"},
+        {"from": "2c44f67dc1a05a4c", "to": "1f2032de3e958835"},
+        {"from": "a8c72fb1a42a4dc7", "to": "1f2032de3e958835"},
+        {"from": "0f7dfb28ce8eabe2", "to": "36ed01066b9682e9"},
+        {"from": "a8c72fb1a42a4dc7", "to": "36ed01066b9682e9"},
+        {"from": "2c44f67dc1a05a4c", "to": "18e4c035c5d0e4c5"},
+        {"from": "36ed01066b9682e9", "to": "18e4c035c5d0e4c5"},
+        {"from": "1f2032de3e958835", "to": "dc5480fcb02aa6bd"},
+        {"from": "36ed01066b9682e9", "to": "dc5480fcb02aa6bd"}
       ]
     }
   },
   "folder": null,
   "sort": 0,
-  "ownership": {
-    "default": 0
-  },
-  "flags": {
-    "cypher": {
-      "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
-    }
-  }
+  "ownership": {"default": 0},
+  "flags": {"cypher": {"sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."}}
 }
