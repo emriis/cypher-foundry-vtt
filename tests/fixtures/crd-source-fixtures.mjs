@@ -261,7 +261,7 @@ export const CRD_CYPHER_FIXTURE = item(
   "cypher.adhesion-bomb",
   {
     cypherType: "manifest",
-    level: "",
+    level: 6,
     powerLevel: "medium",
     internal: false,
     identified: true,

@@ -94,6 +94,7 @@ test("Backpack preserves default equipment level and price category", () => {
 
 test("Adhesion Bomb preserves manifest cypher power classification", () => {
   assert.equal(CRD_CYPHER_FIXTURE.system.cypherType, "manifest");
+  assert.equal(CRD_CYPHER_FIXTURE.system.level, 6);
   assert.equal(CRD_CYPHER_FIXTURE.system.powerLevel, "medium");
   assert.match(
     CRD_CYPHER_FIXTURE.system.description,

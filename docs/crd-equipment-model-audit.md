@@ -37,12 +37,15 @@ preserving the existing single-value behavior as the normalized case.
 ### 2.2 Cypher level semantics
 
 The current Cypher model stores `level` as a free-form string and separately
-stores `powerLevel`. The CRD distinguishes cypher power levels from ordinary
-equipment levels, so extraction must not collapse those concepts.
+stores `powerLevel`. The CRD explicitly states that manifest cyphers are level
+6 effects, while power levels (low through ultra) are a separate classification.
+Other cypher forms do not require an implicit numeric effect level.
 
-**Required action:** audit every CRD cypher source before deciding whether
-`level` needs a structured representation or whether the existing field is
-intentionally textual.
+**Resolution:** `level` is now a nullable numeric field, while `powerLevel`
+remains a separate categorical field. Legacy textual levels migrate to numbers
+and empty legacy values migrate to null. Source extraction must assign level 6
+to manifest cyphers where the CRD identifies them as such; it must not derive
+power level from numeric level.
 
 ### 2.3 Weapon properties
 
@@ -74,7 +77,8 @@ depletion for ordinary quantity-based items.
 
 ## 4. Next implementation step
 
-The next W4 PR should implement the depletion-range model extension, add schema
-and migration tests, and then use the resulting schema to extract representative
-equipment/artifact sources. Full inventory extraction follows only after those
-contracts are green.
+The depletion-range extension is complete. The next W4 step is to validate the
+remaining equipment/cypher model semantics against the full CRD tables before
+bulk extraction. Cypher effect level and power level are now represented as
+separate structured fields. Full inventory extraction follows only after these
+model contracts are green.
