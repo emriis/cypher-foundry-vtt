@@ -9,6 +9,12 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ## [Unreleased]
 
+### Changed
+
+- Reset the world migration layer for the 0.2.0-alpha.1 baseline. No supported
+  pre-alpha world currently requires persisted-data conversion; future migrations
+  should be introduced only alongside a concrete schema compatibility requirement.
+
 ## [0.2.0-alpha.1] - 2026-10-06
 
 ### Added
