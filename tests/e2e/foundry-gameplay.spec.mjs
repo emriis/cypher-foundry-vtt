@@ -1,4 +1,5 @@
-import { test, expect } from "./foundry-session-fixture.mjs";
+test.describe("Cypher Foundry live gameplay", () => {
+e.mjs";
 
 const ACTOR_PREFIX = "E2E Cypher";
 
