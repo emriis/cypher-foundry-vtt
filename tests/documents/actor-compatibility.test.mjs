@@ -265,6 +265,53 @@ test("armor free use is checked against the equipped armor's exact category", ()
   assert.equal(actorData.armor.speedTaskHinder, 0);
 });
 
+test("armor derived dodge uses explicit encumbrance and CRD overrides", () => {
+  const actorData = {
+    stats: {
+      might: { pool: { value: 8 } },
+      speed: { pool: { value: 8 } },
+      intellect: { pool: { value: 8 } }
+    },
+    customStats: [],
+    wounds: {
+      minor: { current: 0, max: 3 },
+      moderate: { current: 0, max: 3 },
+      major: { current: 0, max: 3 }
+    },
+    genre: "none",
+    powerShifts: {},
+    advancementSlots: [],
+    freeArmorCategories: [],
+    canFreelyUseAllArmor: false,
+    parent: {
+      items: [{
+        type: "armor",
+        id: "armor-id",
+        name: "Elven chainmail",
+        system: {
+          equipped: true,
+          category: "medium",
+          encumbranceCategory: "light",
+          blockEaseDamage: 0
+        }
+      }]
+    }
+  };
+
+  CypherPCData.prototype._prepareDerivedDataUnsafe.call(actorData);
+  assert.equal(actorData.armor.dodgeHinder, 1);
+  assert.equal(actorData.armor.speedTaskHinder, 1);
+
+  actorData.parent.items[0].system = {
+    equipped: true,
+    category: "light",
+    blockEaseDamage: 0,
+    dodgeHindrance: 0
+  };
+  CypherPCData.prototype._prepareDerivedDataUnsafe.call(actorData);
+  assert.equal(actorData.armor.dodgeHinder, 0);
+  assert.equal(actorData.armor.speedTaskHinder, 0);
+});
 test("convertDamageToWound honors documented damage thresholds", () => {
   const convert = CypherActor.prototype._convertDamageToWound;
 
