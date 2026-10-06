@@ -165,7 +165,7 @@ First documented state of the system.
 ### Added
 
 - `system.json` manifest compatible with Foundry VTT **V13 and V14** (verified against V14.360).
-- DataModels for PC/NPC/Community actors and Skill/Ability/Cypher/Artifact/Oddity/Equipment/
+- DataModels for PC/NPC/Community actors and Skill/Ability/Cypher/Artifact/Equipment/
   Attack/Armor/Shield/Descriptor items.
 - ApplicationV2 character, NPC, Community, and Item sheets.
 - Full French/English localization (`lang/fr.json`, `lang/en.json`).

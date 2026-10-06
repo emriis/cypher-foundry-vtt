@@ -1,0 +1,42 @@
+{
+  "_id": "fb132b6c1c508412",
+  "_key": "!items!fb132b6c1c508412",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Area Boost",
+  "crdType": "cypher",
+  "system": {
+    "cypherCategory": "powerBoost",
+    "cypherType": "",
+    "level": null,
+    "powerLevel": "",
+    "powerLevels": [],
+    "randomRange": {
+      "min": 5,
+      "max": 8
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Your ability affects a larger area. If it normally affects one creature, it also affects the immediate area around that creature. Abilities that already affect an area increase to the next larger area size (immediate to short, short to long, long to very long, very long to 1,000 feet [300 m] across).</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.power-boost.area-boost",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Power Boost Cypher Descriptions",
+        "sourceLocator": "CRD — Power Boost Cypher Descriptions — Area Boost",
+        "transformations": [
+          "structured CRD category",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

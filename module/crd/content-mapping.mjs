@@ -63,7 +63,7 @@ export const CRD_MECHANICAL_FIELDS = Object.freeze({
     "depletionMin", "depletionMax", "depleted"
   ],
   cypher: [
-    "cypherType", "level", "powerLevel", "powerLevels", "randomRange", "variants", "rollTables", "internal", "identified", "depleted"
+    "cypherCategory", "cypherType", "level", "powerLevel", "powerLevels", "randomRange", "variants", "rollTables", "internal", "identified", "depleted"
   ],
   artifact: [
     "level", "form", "identified", "depletionDie", "depletionMin", "depletionMax",

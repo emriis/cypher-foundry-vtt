@@ -32,10 +32,16 @@ export default class CypherCypherData extends foundry.abstract.TypeDataModel {
 
   static defineSchema() {
     return {
+      cypherCategory: new StringField({
+        required: true,
+        initial: "standard",
+        choices: ["standard", "powerBoost"]
+      }),
       cypherType: new StringField({
         required: true,
+        nullable: true,
         initial: "manifest",
-        choices: ["subtle", "manifest"]
+        choices: ["", "subtle", "manifest"]
       }),
       level: new NumberField({
         required: true, nullable: true, initial: null, integer: true, min: 0

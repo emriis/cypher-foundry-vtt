@@ -1,0 +1,42 @@
+{
+  "_id": "7fad872b3459c125",
+  "_key": "!items!7fad872b3459c125",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Shift Boost",
+  "crdType": "cypher",
+  "system": {
+    "cypherCategory": "powerBoost",
+    "cypherType": "",
+    "level": null,
+    "powerLevel": "",
+    "powerLevels": [],
+    "randomRange": {
+      "min": 25,
+      "max": 28
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You gain one additional power shift for one round. This shift must be a category of shift that you already have. For example, if you have shifts in Dexterity and Resilience, you can gain an additional shift in either Dexterity or Resilience for one round.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.power-boost.shift-boost",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Power Boost Cypher Descriptions",
+        "sourceLocator": "CRD — Power Boost Cypher Descriptions — Shift Boost",
+        "transformations": [
+          "structured CRD category",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

@@ -407,8 +407,16 @@
 
   {{#ifEquals item.type "cypher"}}
   <div class="form-group">
+    <label>{{localize 'CYPHER.Cypher.Category'}}</label>
+    <select name="system.cypherCategory">
+      <option value="standard" {{#ifEquals system.cypherCategory "standard"}}selected{{/ifEquals}}>{{localize 'CYPHER.Cypher.Standard'}}</option>
+      <option value="powerBoost" {{#ifEquals system.cypherCategory "powerBoost"}}selected{{/ifEquals}}>{{localize 'CYPHER.Cypher.PowerBoost'}}</option>
+    </select>
+  </div>
+  <div class="form-group">
     <label>{{localize 'CYPHER.Cypher.Type'}}</label>
     <select name="system.cypherType">
+      <option value="" {{#ifEquals system.cypherType ""}}selected{{/ifEquals}}>{{localize 'CYPHER.Cypher.GMChoice'}}</option>
       <option value="subtle" {{#ifEquals system.cypherType "subtle"}}selected{{/ifEquals}}>{{localize 'CYPHER.Cypher.Subtle'}}</option>
       <option value="manifest" {{#ifEquals system.cypherType "manifest"}}selected{{/ifEquals}}>{{localize 'CYPHER.Cypher.Manifest'}}</option>
     </select>

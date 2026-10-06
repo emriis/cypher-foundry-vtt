@@ -1,0 +1,42 @@
+{
+  "_id": "f00699c5dc50a17d",
+  "_key": "!items!f00699c5dc50a17d",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Amazing Feat",
+  "crdType": "cypher",
+  "system": {
+    "cypherCategory": "powerBoost",
+    "cypherType": "",
+    "level": null,
+    "powerLevel": "",
+    "powerLevels": [],
+    "randomRange": {
+      "min": 1,
+      "max": 4
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You perform an amazing feat not normally defined by your powers or one that would normally be beyond your limits. For example, you use your flame blasts to weld metal, or you push your super-strength so you can catch a falling helicopter.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.power-boost.amazing-feat",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Power Boost Cypher Descriptions",
+        "sourceLocator": "CRD — Power Boost Cypher Descriptions — Amazing Feat",
+        "transformations": [
+          "structured CRD category",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "_id": "8fa00d2370d0176b",
+  "_key": "!items!8fa00d2370d0176b",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Split Boost",
+  "crdType": "cypher",
+  "system": {
+    "cypherCategory": "powerBoost",
+    "cypherType": "",
+    "level": null,
+    "powerLevel": "",
+    "powerLevels": [],
+    "randomRange": {
+      "min": 33,
+      "max": 36
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Your ability affects twice as many targets or twice as many areas. For example, if you have a mind control ability that affects one creature, you can use it on two creatures; if you have a blast of fire that affects an immediate area, you can affect two immediate areas. The targets or areas must be within range of you but otherwise do not have to be near each other. Choosing the same target twice or overlapping two areas has no effect. If the ability is an attack, make separate attacks for the targets or areas.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.power-boost.split-boost",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Power Boost Cypher Descriptions",
+        "sourceLocator": "CRD — Power Boost Cypher Descriptions — Split Boost",
+        "transformations": [
+          "structured CRD category",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.power-boost.split-boost"
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "_id": "80697af4319490d4",
+  "_key": "!items!80697af4319490d4",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Source Boost",
+  "crdType": "cypher",
+  "system": {
+    "cypherCategory": "powerBoost",
+    "cypherType": "",
+    "level": null,
+    "powerLevel": "",
+    "powerLevels": [],
+    "randomRange": {
+      "min": 29,
+      "max": 32
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Your ability costs 6 fewer Pool points.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.power-boost.source-boost",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Power Boost Cypher Descriptions",
+        "sourceLocator": "CRD — Power Boost Cypher Descriptions — Source Boost",
+        "transformations": [
+          "structured CRD category",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.power-boost.source-boost"
+      }
+    }
+  }
+}
