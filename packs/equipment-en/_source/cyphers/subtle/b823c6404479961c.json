@@ -1,0 +1,32 @@
+{
+  "_id": "b823c6404479961c",
+  "_key": "!items!b823c6404479961c",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Intellect Replenisher",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You restore 4 points to your Intellect Pool.</p><p><strong>Explanation:</strong> Your coffee just kicked in. Something just reminded you of your favorite person. Your theme music just started playing.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.intellect-replenisher",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Intellect Replenisher",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

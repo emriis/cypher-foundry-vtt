@@ -1,0 +1,32 @@
+{
+  "_id": "da794b978db0770b",
+  "_key": "!items!da794b978db0770b",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Equipment Cache",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p>Equipment Cache Effect: You rummage around and create or find one piece of standard equipment (such as a weapon, piece of armor, or rope, but not a cypher or artifact) up to level 4. The piece of equipment persists for up to one day, unless it’s the sort of equipment that is expended after use (such as a box of bullets or a grenade). An equipment cache cypher probably means you discover a forgotten stash of equipment or find something useful on a fallen foe.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.equipment-cache",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Equipment Cache",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

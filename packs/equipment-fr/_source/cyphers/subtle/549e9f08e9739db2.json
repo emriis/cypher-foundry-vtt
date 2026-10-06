@@ -1,0 +1,33 @@
+{
+  "_id": "549e9f08e9739db2",
+  "_key": "!items!549e9f08e9739db2",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Amazing Effort",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You add two free levels of Effort to your task. You can use this cypher before or after you roll.</p><p><strong>Explanation:</strong> Time to go all out. If you mess this up, someone dies. You don’t even know how you did that.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.amazing-effort",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Amazing Effort",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.amazing-effort"
+      }
+    }
+  }
+}

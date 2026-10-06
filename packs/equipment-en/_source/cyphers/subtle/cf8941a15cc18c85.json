@@ -1,0 +1,32 @@
+{
+  "_id": "cf8941a15cc18c85",
+  "_key": "!items!cf8941a15cc18c85",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Collateral Damage",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> A melee or ranged attack by you or a foe also damages a nearby object (not something you or the foe have) up to level 4, automatically breaking or destroying it.</p><p><strong>Explanation:</strong> Your backswing broke the table. Their shot shattered the window. Your follow-through cracked a steam pipe.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.collateral-damage",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Collateral Damage",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

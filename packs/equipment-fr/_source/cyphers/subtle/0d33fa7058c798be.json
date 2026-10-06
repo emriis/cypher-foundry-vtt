@@ -1,0 +1,33 @@
+{
+  "_id": "0d33fa7058c798be",
+  "_key": "!items!0d33fa7058c798be",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Improved Climbing",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You have three assets on your climbing task. (For this task, the asset limit is three instead of two.) You can use this cypher before or after you roll.</p><p><strong>Explanation:</strong> This wall isn’t as smooth as it looked. You watched some climbing training videos last night. You’ve got an inspirational theme song playing in your head.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.improved-climbing",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Improved Climbing",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.improved-climbing"
+      }
+    }
+  }
+}

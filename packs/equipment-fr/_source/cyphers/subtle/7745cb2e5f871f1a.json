@@ -1,0 +1,33 @@
+{
+  "_id": "7745cb2e5f871f1a",
+  "_key": "!items!7745cb2e5f871f1a",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Improved Driving",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You have three assets on your driving or piloting task. (For this task, the asset limit is three instead of two.) You can use this cypher before or after you roll.</p><p><strong>Explanation:</strong> It’s just like riding a bike. You play a videogame with a vehicle like this. The vehicle has driver-assist technology. The Improved Driving cypher works for most civilian-level vehicles (bicycles, motorcycles, mopeds, cars, small boats, and small planes) but is less effective when controlling a cruise ship, large passenger aircraft, or military tank.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.improved-driving",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Improved Driving",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.improved-driving"
+      }
+    }
+  }
+}

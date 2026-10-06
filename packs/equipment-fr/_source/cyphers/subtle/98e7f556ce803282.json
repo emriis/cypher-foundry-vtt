@@ -1,0 +1,33 @@
+{
+  "_id": "98e7f556ce803282",
+  "_key": "!items!98e7f556ce803282",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Hamper Foe",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Choose a foe you can see. Their attacks and defenses against you are hindered by four steps until your next turn.</p><p><strong>Explanation:</strong> You’re familiar with their combat style. You practiced at the same military academy. They just got a cramp.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.hamper-foe",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Hamper Foe",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.hamper-foe"
+      }
+    }
+  }
+}

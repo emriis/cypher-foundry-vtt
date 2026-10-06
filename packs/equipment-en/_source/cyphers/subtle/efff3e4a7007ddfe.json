@@ -1,0 +1,32 @@
+{
+  "_id": "efff3e4a7007ddfe",
+  "_key": "!items!efff3e4a7007ddfe",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Improved Repairing",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> For one repair task, you are trained in an appropriate kind of crafting for that repair, and can repair the device as if you spent 1 resource point on it.</p><p><strong>Explanation:</strong> You used to rebuild this sort of device for fun. There’s a repair manual for the device nearby (or online). The device wasn’t really broken, just jammed or dirty.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.improved-repairing",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Improved Repairing",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "_id": "6f10ad217e334a9d",
+  "_key": "!items!6f10ad217e334a9d",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Improved Dexterity",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You gain three assets on one noncombat task requiring manual dexterity, such as pickpocketing, lockpicking, juggling, defusing a bomb, or performing surgery. (For this task, the asset limit is three instead of two.) You can use this cypher before or after you roll.</p><p><strong>Explanation:</strong> You have a hidden talent for this sort of thing. It’s easier than it looks. Beginner’s luck.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.improved-dexterity",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Improved Dexterity",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

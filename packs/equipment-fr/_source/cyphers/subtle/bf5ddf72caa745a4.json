@@ -1,0 +1,33 @@
+{
+  "_id": "bf5ddf72caa745a4",
+  "_key": "!items!bf5ddf72caa745a4",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Improved Deception",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You have three assets on your deception task. (For this task, the asset limit is three instead of two.) You can use this cypher before or after you roll.</p><p><strong>Explanation:</strong> They were sympathetic to your lie. They didn’t get much sleep last night. Your explanation resonated with them.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.improved-deception",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Improved Deception",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.improved-deception"
+      }
+    }
+  }
+}

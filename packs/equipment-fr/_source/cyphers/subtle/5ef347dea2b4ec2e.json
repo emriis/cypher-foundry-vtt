@@ -1,0 +1,33 @@
+{
+  "_id": "5ef347dea2b4ec2e",
+  "_key": "!items!5ef347dea2b4ec2e",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Improvised Shield",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You use a piece of your equipment or an object within reach to block an attack, negating the wound from the attack as if you had used a shield. This probably destroys the object the way that a shield negates a major wound.</p><p><strong>Explanation:</strong> That was an expensive chair. That sword was a family heirloom. Good thing you were next to that door.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.improvised-shield",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Improvised Shield",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.improvised-shield"
+      }
+    }
+  }
+}

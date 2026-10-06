@@ -1,0 +1,32 @@
+{
+  "_id": "411c26f47789a11c",
+  "_key": "!items!411c26f47789a11c",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Motivated Aid",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> If you use your action to help someone, they gain a total of three assets on their task. (For this task, the asset limit is three instead of two.) You can use this cypher before or after they roll.</p><p><strong>Explanation:</strong> You couldn’t stand to see them fail. You remembered when they went out of their way for you. You want them to owe you a favor.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.motivated-aid",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Motivated Aid",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "_id": "add3a338f945eb36",
+  "_key": "!items!add3a338f945eb36",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Near-Death Experience",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> If you died within the last minute, you revive. Whatever injury, wound, or effect that supposedly killed you is undone. You are hindered until you take a recovery. The number of moderate wounds you can take permanently decreases by one. You can use this cypher on an ally instead of yourself. If they are an NPC, instead of being hindered until they take a recovery, they’re hindered until they rest for an hour; their maximum health decreases by 5 (to a minimum of 1).</p><p><strong>Explanation:</strong> It must have bounced off your thick skull. You’re not dying today. Your guardian angel is keeping busy.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.near-death-experience",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Near-Death Experience",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

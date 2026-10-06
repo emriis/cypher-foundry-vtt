@@ -1,0 +1,32 @@
+{
+  "_id": "e67306278cc94e85",
+  "_key": "!items!e67306278cc94e85",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Focus Fire",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> If you attack a foe that your ally attacked this turn, you gain an asset on the attack, and if you hit you inflict an additional 5 damage. You can use this cypher before or after you roll.</p><p><strong>Explanation:</strong> The foe is overwhelmed. Your ally distracted the foe. You and your ally practiced this combo.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.focus-fire",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Focus Fire",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

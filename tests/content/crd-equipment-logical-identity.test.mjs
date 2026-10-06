@@ -17,7 +17,7 @@ function readJsonRecords(directory) {
     }
     if (!entry.name.endsWith(".json")) continue;
     const record = JSON.parse(fs.readFileSync(fullPath, "utf8"));
-    if (record.document === "Item") records.push(record);
+    if (record.document === "Item" && ["equipment", "weapon", "armor", "shield"].includes(record.crdType)) records.push(record);
   }
   return records;
 }

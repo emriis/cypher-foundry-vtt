@@ -1,0 +1,32 @@
+{
+  "_id": "29ea9e925d7b3076",
+  "_key": "!items!29ea9e925d7b3076",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Improved Swimming",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You have three assets on your swimming task. (For this task, the asset limit is three instead of two.) You can use this cypher before or after you roll.</p><p><strong>Explanation:</strong> You remembered your old lifeguard training. You found a current moving in the direction you want to go. You thought you saw a shark.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.improved-swimming",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Improved Swimming",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "_id": "002df3c817e72edc",
+  "_key": "!items!002df3c817e72edc",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Improved Pickpocketing",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You have three assets on your pickpocketing task. (For this task, the asset limit is three instead of two.) You can use this cypher before or after you roll.</p><p><strong>Explanation:</strong> Your mark’s pockets are especially loose. Something distracts your mark just as you’re about to steal from them. You’re just the right height to grab what you want from the mark.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.improved-pickpocketing",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Improved Pickpocketing",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.improved-pickpocketing"
+      }
+    }
+  }
+}

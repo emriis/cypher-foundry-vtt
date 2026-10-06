@@ -1,0 +1,32 @@
+{
+  "_id": "71b7ddf540176935",
+  "_key": "!items!71b7ddf540176935",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Pidgin",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Using gestures, facial expressions, and a few meaningful words, you’re able to understand and be understood by someone even though you don’t have a common language. This communication is simple and limited (like “caveman talk”) but is enough to express concepts like friend, enemy, help, danger, sunrise/sunset, give, trade, and so on. After a few minutes of communicating like this, the other person probably ends the conversation out of boredom, frustration, or having other things to do; in any case, this understanding ends if you use a ten-minute or longer recovery.</p><p><strong>Explanation:</strong> You have an expressive face. You and they have a talent for pantomime. Some words in your language are similar to related words in their language.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.pidgin",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Pidgin",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

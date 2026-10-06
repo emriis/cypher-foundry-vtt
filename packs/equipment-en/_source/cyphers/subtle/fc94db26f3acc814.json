@@ -1,0 +1,32 @@
+{
+  "_id": "fc94db26f3acc814",
+  "_key": "!items!fc94db26f3acc814",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Not Me",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You have three assets on your deception or charm task to convince an intelligent creature that you are someone other than who you actually are. (For this task, the asset limit is three instead of two.) You can use this cypher before or after you roll. This cypher doesn’t allow you to impersonate a specific individual. Instead, you convince the target that you’re someone belonging to a certain category of people. For example, “I’m just making a delivery.” “I work in maintenance.” “I’m selling baked goods; want some?”</p><p><strong>Explanation:</strong> You’re good at impressions. You happened to have something that served as a convincing prop. The target didn’t really care that much or was distracted.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.not-me",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Not Me",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

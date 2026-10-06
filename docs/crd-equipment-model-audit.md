@@ -15,7 +15,7 @@ gaps; it does not invent additional game rules.
 | Weapons / attacks | light/medium/heavy category, damage, range, extreme-range handling, weapon family/category, price, plus source-backed special mechanics | attackType, damage, range, extremeRange, weaponFamily, attackSkillCategory, priceCategory, properties, mechanics, freelyUsable | **Structured** |
 | Armor | light/medium/heavy category, free-use state, block benefit, dodge hindrance, and explicit encumbrance exceptions | category, freelyUsable, blockEaseDamage, encumbranceCategory, dodgeHindrance, equipped, priceCategory, description | **Structured** |
 | Shields | independent wound track: 3 minor, 2 moderate, 1 major; broken after major wound | wounds with max/current values, equipped, derived broken state | **Covered** |
-| Cyphers | one-use nature, type, power level where applicable, identification/internal state | cypherType, powerLevel, identified, internal, depleted, description | **Mostly covered** |
+| Cyphers | one-use nature, subtle/manifest form, CRD effect level, power level where applicable, identification/internal state | cypherType, level, powerLevel, identified, internal, depleted, description | **Structured** |
 | Artifacts | level/form, identification, reusable depletion including never-depletes | level, form, identified, depletionDie, depletionThreshold, depleted, description | **Covered** |
 | Oddities | descriptive item content | description | **Covered** |
 

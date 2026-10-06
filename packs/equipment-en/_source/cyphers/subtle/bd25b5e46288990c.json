@@ -1,0 +1,32 @@
+{
+  "_id": "bd25b5e46288990c",
+  "_key": "!items!bd25b5e46288990c",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Improved Intimidation",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You have three assets on your intimidation task. (For this task, the asset limit is three instead of two.) You can use this cypher before or after you roll.</p><p><strong>Explanation:</strong> You remind a foe of someone they’re afraid of. That vein in your forehead just started throbbing. They greatly underestimated how tough you look.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.improved-intimidation",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Improved Intimidation",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

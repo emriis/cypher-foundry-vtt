@@ -1,0 +1,33 @@
+{
+  "_id": "18beddbf7d107ffd",
+  "_key": "!items!18beddbf7d107ffd",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Improved Sneaking",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You have three assets on your hiding, sneaking, or stealth task. (For this task, the asset limit is three instead of two.) You can use this cypher before or after you roll.</p><p><strong>Explanation:</strong> The people are distracted and not paying attention to you. Your shoes are especially quiet on this kind of floor. Someone just did maintenance on the floor to fix a loud squeak.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.improved-sneaking",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Improved Sneaking",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.improved-sneaking"
+      }
+    }
+  }
+}

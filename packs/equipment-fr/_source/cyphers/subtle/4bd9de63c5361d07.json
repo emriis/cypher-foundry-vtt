@@ -1,0 +1,33 @@
+{
+  "_id": "4bd9de63c5361d07",
+  "_key": "!items!4bd9de63c5361d07",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Snap Alert",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You end one effect that is limiting your actions, such as being stunned, unconscious, terrified, or blinded.</p><p><strong>Explanation:</strong> No sleeping on the job. Heroes get things done. Pull yourself together.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.snap-alert",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Snap Alert",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.snap-alert"
+      }
+    }
+  }
+}

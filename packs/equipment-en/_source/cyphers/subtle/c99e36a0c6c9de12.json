@@ -1,0 +1,32 @@
+{
+  "_id": "c99e36a0c6c9de12",
+  "_key": "!items!c99e36a0c6c9de12",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Secret",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You can ask the GM one question and get a general answer. The GM assigns a level to the question, so the more obscure the answer, the more difficult the task. Generally, knowledge that you could find by looking somewhere other than your current location is level 1, and obscure knowledge of the past is level 7. Gaining knowledge of the future is level 10, and such knowledge is always open to interpretation. The cypher cannot provide an answer to a question above level 4.</p><p><strong>Explanation:</strong> You just watched a documentary about this. Someone left behind a note with relevant information. The answer was on the tip of your tongue.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.secret",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Secret",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

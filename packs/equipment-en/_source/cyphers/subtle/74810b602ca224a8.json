@@ -1,0 +1,32 @@
+{
+  "_id": "74810b602ca224a8",
+  "_key": "!items!74810b602ca224a8",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Slippery",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You find and use something nearby that makes an immediate area slippery and hard to pass through, such as a pan full of warm grease, a bag of marbles, a bucket of soapy water, or a planter full of wet soil. Movement tasks in the area are hindered at least for a few rounds or until the area is cleaned up.</p><p><strong>Explanation:</strong> The kitchen had a tray full of greasy runoff from a recent meal. The old plumbing only needed a hard kick to start spraying water everywhere. A kid left behind a bag of marbles.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.slippery",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Slippery",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

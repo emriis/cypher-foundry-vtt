@@ -1,0 +1,33 @@
+{
+  "_id": "d0e9dd1d1d116e7b",
+  "_key": "!items!d0e9dd1d1d116e7b",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Remembering",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You remember about a minute’s worth of details from your past, even if at the time it didn’t seem like you were paying attention. For example, you could remember all the details of a person’s outfit, the exact words of an overheard conversation, the license plates of several vehicles leaving a crime scene, or the password you saw someone type on a computer. Instead of remembering a past action, you can use this cypher to memorize something that’s happening now or about to happen within one minute.</p><p><strong>Explanation:</strong> You were only pretending that you weren’t observing. What they said became an earworm and it just now clicked. You got an unexpected bit of clarity about what happened.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.remembering",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Remembering",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.remembering"
+      }
+    }
+  }
+}

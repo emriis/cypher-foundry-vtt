@@ -1,0 +1,32 @@
+{
+  "_id": "465a93b2c490a760",
+  "_key": "!items!465a93b2c490a760",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Quick Disable",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You have three assets on your task to deactivate, pause, disable, or shut down a device. (For this task, the asset limit is three instead of two.) You can use this cypher before or after you roll. If you succeed, attempts to reverse what you did are hindered by two steps (even if you’re the one trying). For example, you could shut down a sentient artificial intelligence and make it hard for anyone to reactivate it, or pause the countdown clock on a time bomb and make it hard to start it up again.</p><p><strong>Explanation:</strong> You tried so many keyboard combinations that the thing froze up. You told it to print all files to the network printer. If all else fails, start cutting wires.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.quick-disable",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Quick Disable",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

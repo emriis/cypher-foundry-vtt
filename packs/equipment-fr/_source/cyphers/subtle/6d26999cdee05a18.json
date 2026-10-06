@@ -1,0 +1,33 @@
+{
+  "_id": "6d26999cdee05a18",
+  "_key": "!items!6d26999cdee05a18",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Inhibit Foe",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> As a second action after a successful attack, you hamper your foe so that until your next turn the severity of the wounds their attacks inflict decreases by one step.</p><p><strong>Explanation:</strong> Your attack hobbled them. They were demoralized by your aggression. They were distracted by something.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.inhibit-foe",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Inhibit Foe",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.inhibit-foe"
+      }
+    }
+  }
+}

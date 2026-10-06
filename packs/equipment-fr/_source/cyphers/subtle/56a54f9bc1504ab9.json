@@ -1,0 +1,33 @@
+{
+  "_id": "56a54f9bc1504ab9",
+  "_key": "!items!56a54f9bc1504ab9",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Get to the Point",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> During a conversation where you’re trying to charm, intimidate, convince, negotiate with, or influence a person, and the conversation is likely to take at least several minutes, make one interaction roll. If you succeed, you and the person wrap things up and come to a reasonable agreement in a matter of seconds.</p><p><strong>Explanation:</strong> Bullet points are enough. They were ready to agree with you anyway. You’re being very intense right now.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.get-to-the-point",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Get to the Point",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.get-to-the-point"
+      }
+    }
+  }
+}

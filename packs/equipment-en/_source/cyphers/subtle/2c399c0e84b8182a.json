@@ -1,0 +1,32 @@
+{
+  "_id": "2c399c0e84b8182a",
+  "_key": "!items!2c399c0e84b8182a",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Quick Funds",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You come up with the money or other resources required to purchase an item that is inexpensive, moderately priced, or expensive.</p><p><strong>Explanation:</strong> You have a line of credit. You found the coins hidden beneath a loose board. It’s a loan from someone.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.quick-funds",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Quick Funds",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

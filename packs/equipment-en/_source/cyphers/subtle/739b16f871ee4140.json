@@ -1,0 +1,32 @@
+{
+  "_id": "739b16f871ee4140",
+  "_key": "!items!739b16f871ee4140",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Pacify Beast",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You have two assets on your interaction, intimidation, or charm task to calm a beast or make it uninterested in attacking you or your allies. If you have food or a treat appropriate to the beast’s diet or interests, you get an additional asset on this attack. These assets can exceed the normal limit of two assets on a task. You can use this cypher before or after you roll. After a while, the creature reverts to its previous behavior or leaves, as appropriate to the situation (a guard dog would continue to guard, but a wild bear would wander off). For a pacify beast cypher, “beast” refers to creatures of animal-level intelligence and may include unintelligent aliens, magical creatures, and exotic life forms that fill a similar role in the local ecology.</p><p><strong>Explanation:</strong> You grew up on a farm. You always had a way with animals. This creature is just scared and hungry.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.pacify-beast",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Pacify Beast",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

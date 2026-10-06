@@ -1,0 +1,32 @@
+{
+  "_id": "fdd001ee033376b6",
+  "_key": "!items!fdd001ee033376b6",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Repel",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Make an Intellect attack against a foe within short range. If you succeed, they decide to leave the area for some reason and stay away until you take a recovery. If they can’t get away, all their tasks against you are hindered by two steps until you take a recovery.</p><p><strong>Explanation:</strong> You scared them away. They have to use the bathroom. They remembered an important appointment.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.repel",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Repel",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

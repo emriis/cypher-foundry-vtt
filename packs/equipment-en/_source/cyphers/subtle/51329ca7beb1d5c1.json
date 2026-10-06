@@ -1,0 +1,32 @@
+{
+  "_id": "51329ca7beb1d5c1",
+  "_key": "!items!51329ca7beb1d5c1",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Best Tool",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> When using a tool on a task, you get two additional assets on the task, even if that means exceeding the normal limit of two assets. You can use this cypher before or after you roll.</p><p><strong>Explanation:</strong> Everything lines up perfectly. This is a tool the professionals use. It only needed a quarter turn more.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.best-tool",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Best Tool",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

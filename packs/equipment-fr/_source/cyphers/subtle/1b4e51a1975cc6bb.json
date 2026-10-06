@@ -1,0 +1,33 @@
+{
+  "_id": "1b4e51a1975cc6bb",
+  "_key": "!items!1b4e51a1975cc6bb",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Sated",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You can go without food and water for a while, as if you’d just eaten a very filling meal and had plenty of fluids.</p><p><strong>Explanation:</strong> You had a big breakfast. You eat like a bird. You’re basically a camel.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.sated",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Sated",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.sated"
+      }
+    }
+  }
+}

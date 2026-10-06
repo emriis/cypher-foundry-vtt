@@ -1,0 +1,32 @@
+{
+  "_id": "a9f16daba90b0e0f",
+  "_key": "!items!a9f16daba90b0e0f",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Improved Escaping",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You have three assets on your escaping task (from ropes, handcuffs, tight spaces, and so on). (For this task, the asset limit is three instead of two.) You can use this cypher before or after you roll.</p><p><strong>Explanation:</strong> This type of handcuffs has a design flaw. The ropes weren’t as tight as planned. The cage bars were loose.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.improved-escaping",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Improved Escaping",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "_id": "ae844a8b9c0a079f",
+  "_key": "!items!ae844a8b9c0a079f",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Offensive Object Break",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> A common nearby object (one that is close enough for you to touch) harms a foe within immediate range of it, either by striking them or by breaking and its pieces hitting them. This automatically inflicts 4 damage if the foe’s level is 4 or less, or 1 damage if the foe is of level 5 or higher. This can’t affect objects that are fixed in place or held by another creature.</p><p><strong>Explanation:</strong> You tipped over the vase. You smashed the glass pitcher. You shoved the sculpture.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.offensive-object-break",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Offensive Object Break",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

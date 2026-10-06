@@ -1,0 +1,33 @@
+{
+  "_id": "be05cea8c1c1903e",
+  "_key": "!items!be05cea8c1c1903e",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Improved Blocking",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You have three assets on your block task. (For this task, the asset limit is three instead of two.) You can use this cypher before or after you roll.</p><p><strong>Explanation:</strong> Your foe’s attacks are weak and ineffective. You’ve noticed a flaw in their attack strategy. Your armor is especially good against these attacks.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.improved-blocking",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Improved Blocking",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.improved-blocking"
+      }
+    }
+  }
+}

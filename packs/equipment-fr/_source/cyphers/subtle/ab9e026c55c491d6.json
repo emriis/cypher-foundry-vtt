@@ -1,0 +1,33 @@
+{
+  "_id": "ab9e026c55c491d6",
+  "_key": "!items!ab9e026c55c491d6",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Bleed",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Your successful physical attack gives your foe a bleeding wound that inflicts an additional 3 damage (ignores armor) on your next turn. The foe can prevent this additional damage by using any ability that heals them or using their action to stop the bleeding. You can use this cypher before or after you roll. If you use Effort on the attack specifically for this cypher, the bleeding wound lasts an additional round for each level of Effort you use this way.</p><p><strong>Explanation:</strong> You hit a large blood vessel on the surface of their skin. You nicked an artery. Head wounds bleed a lot.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.bleed",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Bleed",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.bleed"
+      }
+    }
+  }
+}

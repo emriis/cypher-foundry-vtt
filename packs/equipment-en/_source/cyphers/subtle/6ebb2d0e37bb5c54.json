@@ -1,0 +1,32 @@
+{
+  "_id": "6ebb2d0e37bb5c54",
+  "_key": "!items!6ebb2d0e37bb5c54",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Ignite",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> An object within immediate range ignites in flame, taking 5 damage each round. If the object’s level is 4 or less, the fire destroys it within a few rounds; a higher-level object instead has its level reduced by 1 to 3. Nearby objects may catch on fire as it burns.</p><p><strong>Explanation:</strong> You had a lighter or matchstick. There was an electrical spark or short circuit. A window or curved glass magnified the sunlight.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.ignite",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Ignite",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

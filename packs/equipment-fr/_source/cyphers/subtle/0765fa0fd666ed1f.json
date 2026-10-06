@@ -1,0 +1,33 @@
+{
+  "_id": "0765fa0fd666ed1f",
+  "_key": "!items!0765fa0fd666ed1f",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Silent Message",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Using only gestures and facial expressions, you silently communicate a concept to an ally who can see you. The concept can be anything you could say verbally in about twenty words or ten seconds, and your ally understands exactly what you mean.</p><p><strong>Explanation:</strong> You spent one semester working as a mime in an amusement park. You’re a big fan of silent movies. You and the ally had the same military training.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.silent-message",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Silent Message",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.silent-message"
+      }
+    }
+  }
+}

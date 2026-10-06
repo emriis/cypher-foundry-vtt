@@ -1,0 +1,33 @@
+{
+  "_id": "6f5ba5bfbf85f045",
+  "_key": "!items!6f5ba5bfbf85f045",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Improved Lockpicking",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You have three assets on your lockpicking task. (For this task, the asset limit is three instead of two.) You can use this cypher before or after you roll.</p><p><strong>Explanation:</strong> Whoever locked it didn’t realize that it didn’t fully “click.” You just watched a video about this kind of lock. Your favorite videogame has a realistic lockpicking minigame.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.improved-lockpicking",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Improved Lockpicking",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.improved-lockpicking"
+      }
+    }
+  }
+}

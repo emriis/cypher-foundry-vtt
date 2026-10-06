@@ -1,0 +1,33 @@
+{
+  "_id": "35aa584a7fa6b932",
+  "_key": "!items!35aa584a7fa6b932",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Extended Breath",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You have an extra minute’s worth of breathing in a situation where you can’t breathe normally, such as underwater or in space. During this time, you’re not distracted or hindered by needing air. Once this time is over, your need for air resumes at the point it was when you activated the cypher.</p><p><strong>Explanation:</strong> You got really calm in order to conserve oxygen. Your air tank had one last lungful in it. You found a big bubble that you could make use of. A typical person without training can hold their breath for about a minute, or two minutes if they remain still.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.extended-breath",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Extended Breath",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.extended-breath"
+      }
+    }
+  }
+}

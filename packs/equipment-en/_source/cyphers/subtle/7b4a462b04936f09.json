@@ -1,0 +1,32 @@
+{
+  "_id": "7b4a462b04936f09",
+  "_key": "!items!7b4a462b04936f09",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Improved Disguising",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "subtle",
+    "level": 4,
+    "powerLevel": "",
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You have three assets on your disguise task. (For this task, the asset limit is three instead of two.) You can use this cypher before or after you roll.</p><p><strong>Explanation:</strong> People aren’t really paying attention to your look. You actually resemble the person you’re disguised as. You used a clever trick to turn something into a prop or costume piece.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.improved-disguising",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Example Cyphers — Cypher Descriptions",
+        "sourceLocator": "CRD — Example Cyphers — Improved Disguising",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}
