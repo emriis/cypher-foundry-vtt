@@ -63,13 +63,13 @@ export async function rollDepletion(item) {
     return true;
   }
   const max = CYPHER.depletionDieMax[die];
-  const threshold = item.system.depletionThreshold;
+  const min = item.system.depletionMin ?? item.system.depletionThreshold ?? 1;\n  const maxThreshold = item.system.depletionMax ?? item.system.depletionThreshold ?? min;
   const roll = await new Roll(`1d${max}`).evaluate();
-  const depletes = roll.total <= threshold;
+  const depletes = roll.total >= min && roll.total <= maxThreshold;
   if (depletes) await item.update({ "system.depleted": true });
   const flavor = `<div class="cypher-roll-card">`
     + `<h3>${game.i18n.format("CYPHER.Depletion.Title", { name: item.name })}</h3>`
-    + `<p>${game.i18n.format("CYPHER.Depletion.Range", { threshold, die })}</p>`
+    + `<p>${game.i18n.format("CYPHER.Depletion.Range", { threshold: min === maxThreshold ? min : `${min}–${maxThreshold}`, die })}</p>`
     + `<p class="cypher-result ${depletes ? "failure" : "success"}">`
     + `${depletes ? game.i18n.localize("CYPHER.Depletion.LastUse") : game.i18n.localize("CYPHER.Depletion.StillWorks")}</p>`
     + "</div>";
@@ -78,7 +78,7 @@ export async function rollDepletion(item) {
     flavor,
     flags: { cypher: {
       rerollable: true, rollType: "depletion", actorId: item.actor.id,
-      itemId: item.id, threshold, dieMax: max, originalRoll: roll.total
+      itemId: item.id, depletionMin: min, depletionMax: maxThreshold, dieMax: max, originalRoll: roll.total
     } }
   });
   return true;
