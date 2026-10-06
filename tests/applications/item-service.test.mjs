@@ -94,7 +94,9 @@ test("rollDepletion marks a depleting item and posts a rerollable result", async
 
   assert.equal(await rollDepletion(item), true);
   assert.deepEqual(update, { "system.depleted": true });
-  assert.equal(message.flags.cypher.rerollable, true);\n  assert.equal(message.flags.cypher.depletionMin, 1);\n  assert.equal(message.flags.cypher.depletionMax, 1);
+  assert.equal(message.flags.cypher.rerollable, true);
+  assert.equal(message.flags.cypher.depletionMin, 1);
+  assert.equal(message.flags.cypher.depletionMax, 1);
 });
 
 
