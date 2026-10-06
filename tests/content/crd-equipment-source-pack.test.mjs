@@ -19,7 +19,7 @@ function readJsonRecords(directory) {
     }
 
     if (!entry.name.endsWith(".json")) continue;
-    records.push(JSON.parse(fs.readFileSync(fullPath, "utf8")));
+    const record = JSON.parse(fs.readFileSync(fullPath, "utf8"));\n    if (record.document === "Item") records.push(record);
   }
 
   return records;
