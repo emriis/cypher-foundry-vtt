@@ -453,7 +453,8 @@
       "AttackerTarget": "attacker's target number",
       "BlockSuccess": "Block succeeded: the {severity} wound is reduced by one step.",
       "DodgeSuccess": "Dodge succeeded: the wound is avoided entirely.",
-      "Failed": "Defense failed: a {severity} wound is taken."
+      "Failed": "Defense failed: a {severity} wound is taken.",
+      "Title": "Defense"
     },
     "Shield": {
       "Title": "Shields",
