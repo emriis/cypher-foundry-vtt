@@ -1,0 +1,42 @@
+{
+  "_id": "e60d5b56fd1fefde",
+  "_key": "!items!e60d5b56fd1fefde",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Range Boost",
+  "crdType": "cypher",
+  "system": {
+    "cypherCategory": "powerBoost",
+    "cypherType": "",
+    "level": null,
+    "powerLevel": "",
+    "powerLevels": [],
+    "randomRange": {
+      "min": 21,
+      "max": 24
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> The range of your ability increases. If the ability affects only yourself, you can use it on someone you touch. Otherwise, its range increases by one range category (immediate to short, short to long, and so on).</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.power-boost.range-boost",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Power Boost Cypher Descriptions",
+        "sourceLocator": "CRD — Power Boost Cypher Descriptions — Range Boost",
+        "transformations": [
+          "structured CRD category",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

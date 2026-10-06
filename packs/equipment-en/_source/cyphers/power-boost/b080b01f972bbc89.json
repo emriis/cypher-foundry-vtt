@@ -1,0 +1,42 @@
+{
+  "_id": "b080b01f972bbc89",
+  "_key": "!items!b080b01f972bbc89",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Efficacy Boost",
+  "crdType": "cypher",
+  "system": {
+    "cypherCategory": "powerBoost",
+    "cypherType": "",
+    "level": null,
+    "powerLevel": "",
+    "powerLevels": [],
+    "randomRange": {
+      "min": 17,
+      "max": 20
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You get two assets on an ability that requires a skill roll. You can use this cypher before or after you roll.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.power-boost.efficacy-boost",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Power Boost Cypher Descriptions",
+        "sourceLocator": "CRD — Power Boost Cypher Descriptions — Efficacy Boost",
+        "transformations": [
+          "structured CRD category",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

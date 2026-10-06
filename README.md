@@ -305,7 +305,7 @@ This is **not** an official Monte Cook Games product.
 ### What's in this V1
 
 - `system.json` manifest compatible with Foundry VTT **V13 and V14** (verified against V14).
-- DataModels for PC/NPC/Community actors and Skill/Ability/Cypher/Artifact/Oddity/Equipment/
+- DataModels for PC/NPC/Community actors and Skill/Ability/Cypher/Artifact/Equipment/
   Attack/Armor items.
 - **ApplicationV2** character sheets (the recommended framework going forward).
 - Full **French/English** localization — no hardcoded UI strings.

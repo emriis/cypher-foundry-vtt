@@ -1,0 +1,42 @@
+{
+  "_id": "d60860c815cb371e",
+  "_key": "!items!d60860c815cb371e",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Damage Boost",
+  "crdType": "cypher",
+  "system": {
+    "cypherCategory": "powerBoost",
+    "cypherType": "",
+    "level": null,
+    "powerLevel": "",
+    "powerLevels": [],
+    "randomRange": {
+      "min": 13,
+      "max": 16
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Your attack ability inflicts additional damage as if you had applied two levels of Effort to damage.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.power-boost.damage-boost",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Power Boost Cypher Descriptions",
+        "sourceLocator": "CRD — Power Boost Cypher Descriptions — Damage Boost",
+        "transformations": [
+          "structured CRD category",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

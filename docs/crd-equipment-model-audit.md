@@ -15,7 +15,7 @@ gaps; it does not invent additional game rules.
 | Weapons / attacks | light/medium/heavy category, damage, range, extreme-range handling, weapon family/category, price, plus source-backed special mechanics | attackType, damage, range, extremeRange, weaponFamily, attackSkillCategory, priceCategory, properties, mechanics, freelyUsable | **Structured** |
 | Armor | light/medium/heavy category, free-use state, block benefit, dodge hindrance, and explicit encumbrance exceptions | category, freelyUsable, blockEaseDamage, encumbranceCategory, dodgeHindrance, equipped, priceCategory, description | **Structured** |
 | Shields | independent wound track: 3 minor, 2 moderate, 1 major; broken after major wound | wounds with max/current values, equipped, derived broken state | **Covered** |
-| Cyphers | one-use nature, subtle/manifest form, CRD effect level, power level where applicable, identification/internal state | cypherType, level, powerLevel, identified, internal, depleted, description | **Structured** |
+| Cyphers | one-use nature, standard or Power Boost category, subtle/manifest form where determined, CRD effect level, power level where applicable, identification/internal state, and source-backed random tables | cypherCategory, cypherType, level, powerLevel, powerLevels, randomRange, variants, rollTables, identified, internal, depleted, description | **Structured** |
 | Artifacts | level/form, identification, reusable depletion including never-depletes | level, form, identified, depletionDie, depletionThreshold, depleted, description | **Covered** |
 | Oddities | descriptive item content | description | **Covered** |
 
@@ -34,18 +34,22 @@ depletion range rather than a single threshold.
 **Required extension:** represent the lower and upper depletion bounds while
 preserving the existing single-value behavior as the normalized case.
 
-### 2.2 Cypher level semantics
+### 2.2 Cypher semantics
 
-The current Cypher model stores `level` as a free-form string and separately
-stores `powerLevel`. The CRD explicitly states that manifest cyphers are level
-6 effects, while power levels (low through ultra) are a separate classification.
-Other cypher forms do not require an implicit numeric effect level.
+The CRD separates several concepts that must remain independent:
 
-**Resolution:** `level` is now a nullable numeric field, while `powerLevel`
-remains a separate categorical field. Legacy textual levels migrate to numbers
-and empty legacy values migrate to null. Source extraction must assign level 6
-to manifest cyphers where the CRD identifies them as such; it must not derive
-power level from numeric level.
+- manifest Cyphers are level 6 effects;
+- low/medium/advanced/high/ultra are manifest power classifications;
+- subtle Cyphers use CRD effect level 4;
+- Teleporter has four manifest power variants in one source description;
+- Power Boost Cyphers are a separate variety, with physical/manifest form
+  decided by the GM, and the CRD does not assign them an effect level or
+  manifest power level.
+
+Resolution: the model stores `level`, `powerLevel`, `powerLevels`,
+`randomRange`, and `variants` independently. `cypherCategory`
+distinguishes standard Cyphers from Power Boost Cyphers, and Power Boost
+records leave `cypherType` unset instead of inventing a physical form.
 
 ### 2.3 Weapon properties
 
@@ -105,11 +109,10 @@ depletion for ordinary quantity-based items.
 
 ## 4. Current W4 scope
 
-The implemented W4 audit covers general equipment, weapons, armor, and shields.
-Cyphers are not part of this extraction audit because their content model is not
-yet implemented. Artifacts and oddities are also out of scope: they are not yet
-implemented and are not present in the current CRD equipment tables.
+The implemented W4 audit covers general equipment, weapons, armor, shields,
+Cyphers, and the currently modelled Artifact schema. The supplied CRD contains
+no Artifact content to extract.
 
-The remaining W4 work is to complete the source-semantic audit of the
-implemented families before building further automation on top of the extracted
-data.
+The remaining W4 work is source extraction for the ordinary equipment families,
+Artifacts when the CRD supplies content, and the completion audits for each
+family.

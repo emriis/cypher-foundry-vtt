@@ -33,3 +33,13 @@ test("Cypher model stores variable manifest powers and random tables", () => {
   assert.ok(schema.rollTables);
   assert.ok(schema.rollTables.element.fields.results);
 });
+
+test("Cypher model can represent Power Boost Cyphers without inventing their form", () => {
+  const schema = Cypher.defineSchema();
+  assert.deepEqual(
+    schema.cypherCategory.options.choices,
+    ["standard", "powerBoost"]
+  );
+  assert.equal(schema.cypherType.options.nullable, true);
+  assert.deepEqual(schema.cypherType.options.choices, ["", "subtle", "manifest"]);
+});

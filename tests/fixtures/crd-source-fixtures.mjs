@@ -503,6 +503,33 @@ export const CRD_CYPHER_FIXTURE = item(
 
 
 
+
+export const CRD_POWER_BOOST_FIXTURE = item(
+  "0123456789abc023",
+  "Area Boost",
+  "cypher",
+  "cypher",
+  "cypher.power-boost.area-boost",
+  {
+    cypherCategory: "powerBoost",
+    cypherType: "",
+    level: null,
+    powerLevel: "",
+    powerLevels: [],
+    randomRange: { min: 5, max: 8 },
+    variants: [],
+    rollTables: [],
+    internal: false,
+    identified: true,
+    depleted: false,
+    description:
+      "Your ability affects a larger area. If it normally affects one creature, " +
+      "it also affects the immediate area around that creature."
+  },
+  "Power Boost Cypher Descriptions — Area Boost"
+);
+
+
 export const CRD_ARMOR_FIXTURE = item(
   "0123456789abc013",
   "Leather jacket",
@@ -616,6 +643,7 @@ export const CRD_FIXTURES = Object.freeze([
   CRD_BLAST_CANNON_FIXTURE,
   CRD_EQUIPMENT_FIXTURE,
   CRD_CYPHER_FIXTURE,
+  CRD_POWER_BOOST_FIXTURE,
   CRD_ARMOR_FIXTURE,
   CRD_SKILL_FIXTURE,
   CRD_TIERED_ABILITY_FIXTURE,
