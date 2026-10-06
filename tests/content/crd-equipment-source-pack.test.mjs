@@ -36,14 +36,17 @@ for (const language of ["en", "fr"]) {
 
     assert.equal(records.length, 259);
 
+    const failures = [];
     for (const record of records) {
-      assert.deepEqual(validateCrdSourceRecord(record), [], record.name);
-      assert.equal(
-        record.flags.cypherFoundry.crd.language,
-        language,
-        record.name
-      );
+      const validationErrors = validateCrdSourceRecord(record);
+      if (validationErrors.length) {
+        failures.push(`${language}/${record.name}: ${validationErrors.join("; ")}`);
+      }
+      if (record.flags.cypherFoundry.crd.language !== language) {
+        failures.push(`${language}/${record.name}: language=${record.flags.cypherFoundry.crd.language}`);
+      }
     }
+    assert.deepEqual(failures, [], failures.join("\n"));
 
     const logicalIds = records.map(
       record => record.flags.cypherFoundry.crd.logicalId
