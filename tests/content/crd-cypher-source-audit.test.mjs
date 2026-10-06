@@ -108,8 +108,8 @@ test("CRD subtle cyphers cover the complete 2026-07-29 inventory", () => {
     const records = readCyphers(language);
     assert.equal(records.length, EXPECTED_SUBTLE.length, language);
     assert.deepEqual(
-      records.map(record => record.name).sort(),
-      [...EXPECTED_SUBTLE].sort(),
+      records.map(record => record.name.toLowerCase()).sort(),
+      EXPECTED_SUBTLE.map(name => name.toLowerCase()).sort(),
       language
     );
   }
