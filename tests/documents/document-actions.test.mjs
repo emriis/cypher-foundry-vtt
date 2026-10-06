@@ -207,7 +207,7 @@ test("rollDepletion marks depleted artifacts when the roll reaches the threshold
   const originalCreate = ChatMessage.create;
   globalThis.Roll = class {
     async evaluate() {
-      this.total = 1;
+      this.total = 2;
       return this;
     }
     async toMessage(data) {
@@ -234,7 +234,7 @@ test("rollDepletion marks depleted artifacts when the roll reaches the threshold
 
   assert.deepEqual(update, { "system.depleted": true });
   assert.equal(message.flags.cypher.rollType, "depletion");
-  assert.equal(message.flags.cypher.originalRoll, 1);
+  assert.equal(message.flags.cypher.originalRoll, 2);
 });
 
 test("rollDepletion does not deplete when the roll is above the threshold", async () => {
