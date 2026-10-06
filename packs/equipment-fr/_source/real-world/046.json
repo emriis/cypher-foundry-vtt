@@ -1,0 +1,54 @@
+{
+  "_id": "38d7ea4c6802e",
+  "_key": "!items!38d7ea4c6802e",
+  "document": "Item",
+  "name": "Hunting knife",
+  "type": "attack",
+  "crdType": "weapon",
+  "system": {
+    "attackType": "light",
+    "range": "immediate",
+    "extremeRange": "",
+    "damage": 2,
+    "stat": "might",
+    "weaponFamily": "",
+    "attackSkillCategory": "",
+    "priceCategory": "moderate",
+    "properties": [
+      "Light weapon"
+    ],
+    "mechanics": {
+      "twoHanded": false,
+      "rapidFire": false,
+      "ignoresPhysicalArmor": 0,
+      "cutsThroughMaterialsLevel": null,
+      "targetEffects": [],
+      "requiresTripod": false,
+      "requiredOperators": 0,
+      "alternateConfiguration": {
+        "enabled": false,
+        "attackType": "",
+        "action": ""
+      }
+    },
+    "freelyUsable": false,
+    "equipped": false,
+    "description": "Light weapon"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Real-World.Hunting knife",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Real-World Equipment",
+        "sourceLocator": "Real-World Equipment — moderate Items — Hunting knife",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Real-World.Hunting knife"
+      }
+    }
+  }
+}

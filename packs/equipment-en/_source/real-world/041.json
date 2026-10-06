@@ -1,0 +1,53 @@
+{
+  "_id": "38d7ea4c68029",
+  "_key": "!items!38d7ea4c68029",
+  "document": "Item",
+  "name": "Hand grenade",
+  "type": "attack",
+  "crdType": "weapon",
+  "system": {
+    "attackType": "light",
+    "range": "immediate",
+    "extremeRange": "",
+    "damage": 4,
+    "stat": "might",
+    "weaponFamily": "",
+    "attackSkillCategory": "",
+    "priceCategory": "moderate",
+    "properties": [
+      "Explosive weapon, can be thrown a short distance, inflicts 4 damage in immediate radius"
+    ],
+    "mechanics": {
+      "twoHanded": false,
+      "rapidFire": false,
+      "ignoresPhysicalArmor": 0,
+      "cutsThroughMaterialsLevel": null,
+      "targetEffects": [],
+      "requiresTripod": false,
+      "requiredOperators": 0,
+      "alternateConfiguration": {
+        "enabled": false,
+        "attackType": "",
+        "action": ""
+      }
+    },
+    "freelyUsable": false,
+    "equipped": false,
+    "description": "Explosive weapon, can be thrown a short distance, inflicts 4 damage in immediate radius"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Real-World.Hand grenade",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Real-World Equipment",
+        "sourceLocator": "Real-World Equipment — moderate Items — Hand grenade",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

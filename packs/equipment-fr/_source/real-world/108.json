@@ -1,0 +1,32 @@
+{
+  "_id": "38d7ea4c6806c",
+  "_key": "!items!38d7ea4c6806c",
+  "document": "Item",
+  "name": "Military body armor",
+  "type": "armor",
+  "crdType": "armor",
+  "system": {
+    "category": "heavy",
+    "freelyUsable": false,
+    "equipped": false,
+    "blockEaseDamage": 0,
+    "priceCategory": "veryExpensive",
+    "description": "Heavy armor"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Real-World.Military body armor",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Real-World Equipment",
+        "sourceLocator": "Real-World Equipment — veryExpensive Items — Military body armor",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Real-World.Military body armor"
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "_id": "38d7ea4c6805e",
+  "_key": "!items!38d7ea4c6805e",
+  "document": "Item",
+  "name": "Shotgun",
+  "type": "attack",
+  "crdType": "weapon",
+  "system": {
+    "attackType": "heavy",
+    "range": "short",
+    "extremeRange": "short",
+    "damage": 6,
+    "stat": "might",
+    "weaponFamily": "",
+    "attackSkillCategory": "",
+    "priceCategory": "expensive",
+    "properties": [
+      "Heavy weapon, immediate range, extreme range extends to short range, attack hindered if fired with one hand"
+    ],
+    "mechanics": {
+      "twoHanded": false,
+      "rapidFire": false,
+      "ignoresPhysicalArmor": 0,
+      "cutsThroughMaterialsLevel": null,
+      "targetEffects": [],
+      "requiresTripod": false,
+      "requiredOperators": 0,
+      "alternateConfiguration": {
+        "enabled": false,
+        "attackType": "",
+        "action": ""
+      }
+    },
+    "freelyUsable": false,
+    "equipped": false,
+    "description": "Heavy weapon, immediate range, extreme range extends to short range, attack hindered if fired with one hand"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Real-World.Shotgun",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Real-World Equipment",
+        "sourceLocator": "Real-World Equipment — expensive Items — Shotgun",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Real-World.Shotgun"
+      }
+    }
+  }
+}

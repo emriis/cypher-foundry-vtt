@@ -1,0 +1,35 @@
+{
+  "_id": "38d7ea4c68007",
+  "_key": "!items!38d7ea4c68007",
+  "document": "Item",
+  "name": "Energy bars, box of 12",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "inexpensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Reasonable one-day sustenance for two or three people"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Real-World.Energy bars, box of 12",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Real-World Equipment",
+        "sourceLocator": "Real-World Equipment — inexpensive Items — Energy bars, box of 12",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

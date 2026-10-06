@@ -1,0 +1,35 @@
+{
+  "_id": "38d7ea4c68005",
+  "_key": "!items!38d7ea4c68005",
+  "document": "Item",
+  "name": "Duct tape roll",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 2,
+    "priceCategory": "inexpensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Level 2 adhesive, level 3 with multiple layers; eases various tasks"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Real-World.Duct tape roll",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Real-World Equipment",
+        "sourceLocator": "Real-World Equipment — inexpensive Items — Duct tape roll",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

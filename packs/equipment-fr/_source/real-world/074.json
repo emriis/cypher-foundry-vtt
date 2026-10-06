@@ -1,0 +1,36 @@
+{
+  "_id": "38d7ea4c6804a",
+  "_key": "!items!38d7ea4c6804a",
+  "document": "Item",
+  "name": "Hotel room, moderate",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "expensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "One week in a modern room with wifi"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Real-World.Hotel room, moderate",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Real-World Equipment",
+        "sourceLocator": "Real-World Equipment — expensive Items — Hotel room, moderate",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Real-World.Hotel room, moderate"
+      }
+    }
+  }
+}

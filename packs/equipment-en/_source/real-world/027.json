@@ -1,0 +1,35 @@
+{
+  "_id": "38d7ea4c6801b",
+  "_key": "!items!38d7ea4c6801b",
+  "document": "Item",
+  "name": "Bag of light tools",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "moderate",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": ""
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Real-World.Bag of light tools",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Real-World Equipment",
+        "sourceLocator": "Real-World Equipment — moderate Items — Bag of light tools",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

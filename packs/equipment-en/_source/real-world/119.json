@@ -1,0 +1,53 @@
+{
+  "_id": "38d7ea4c68077",
+  "_key": "!items!38d7ea4c68077",
+  "document": "Item",
+  "name": "Sports car",
+  "type": "attack",
+  "crdType": "weapon",
+  "system": {
+    "attackType": "light",
+    "range": "immediate",
+    "extremeRange": "",
+    "damage": 2,
+    "stat": "might",
+    "weaponFamily": "",
+    "attackSkillCategory": "",
+    "priceCategory": "exorbitant",
+    "properties": [
+      "Fast and flashy, seats two or three If desired, the group can ignore ammunition amounts for guns, bows, and the like and simply rely on GM intrusions to indicate when one runs out of ammo. Running out of ammo is a great and easy intrusion for when a player rolls a 1 with a weapon that uses it. Real-World Currency Equivalences Here are some suggested real-world currency values (in US dollars) for the general price categories. Category Dollar Value Inexpensive $10–$20 Moderate $100–$200 Expensive $1,000–$2,000 Very expensive $10,000—$20,000 Exorbitant $100,000— $200,000 Fantasy Equipment In a typical pseudo-Medieval fantasy setting, the following items (and anything else appropriate to that time period) are usually available. Inexpensive Items Item Note Arrows (12) Ammunition for bow Burlap sack Candle Dim light in an immediate area; one hour Common meal Crossbow bolts (12) Ammunition for crossbow"
+    ],
+    "mechanics": {
+      "twoHanded": false,
+      "rapidFire": false,
+      "ignoresPhysicalArmor": 0,
+      "cutsThroughMaterialsLevel": null,
+      "targetEffects": [],
+      "requiresTripod": false,
+      "requiredOperators": 0,
+      "alternateConfiguration": {
+        "enabled": false,
+        "attackType": "",
+        "action": ""
+      }
+    },
+    "freelyUsable": false,
+    "equipped": false,
+    "description": "Fast and flashy, seats two or three If desired, the group can ignore ammunition amounts for guns, bows, and the like and simply rely on GM intrusions to indicate when one runs out of ammo. Running out of ammo is a great and easy intrusion for when a player rolls a 1 with a weapon that uses it. Real-World Currency Equivalences Here are some suggested real-world currency values (in US dollars) for the general price categories. Category Dollar Value Inexpensive $10–$20 Moderate $100–$200 Expensive $1,000–$2,000 Very expensive $10,000—$20,000 Exorbitant $100,000— $200,000 Fantasy Equipment In a typical pseudo-Medieval fantasy setting, the following items (and anything else appropriate to that time period) are usually available. Inexpensive Items Item Note Arrows (12) Ammunition for bow Burlap sack Candle Dim light in an immediate area; one hour Common meal Crossbow bolts (12) Ammunition for crossbow"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Real-World.Sports car",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Real-World Equipment",
+        "sourceLocator": "Real-World Equipment — exorbitant Items — Sports car",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "_id": "38d7ea4c6804c",
+  "_key": "!items!38d7ea4c6804c",
+  "document": "Item",
+  "name": "Kevlar vest",
+  "type": "armor",
+  "crdType": "armor",
+  "system": {
+    "category": "medium",
+    "freelyUsable": false,
+    "equipped": false,
+    "blockEaseDamage": 0,
+    "priceCategory": "expensive",
+    "description": "Medium armor"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Real-World.Kevlar vest",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Real-World Equipment",
+        "sourceLocator": "Real-World Equipment — expensive Items — Kevlar vest",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Real-World.Kevlar vest"
+      }
+    }
+  }
+}

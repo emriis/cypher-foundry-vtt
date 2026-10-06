@@ -1,0 +1,53 @@
+{
+  "_id": "38d7ea4c68065",
+  "_key": "!items!38d7ea4c68065",
+  "document": "Item",
+  "name": "Assault rifle",
+  "type": "attack",
+  "crdType": "weapon",
+  "system": {
+    "attackType": "heavy",
+    "range": "long",
+    "extremeRange": "",
+    "damage": 6,
+    "stat": "might",
+    "weaponFamily": "",
+    "attackSkillCategory": "",
+    "priceCategory": "veryExpensive",
+    "properties": [
+      "Heavy weapon, rapid-fire weapon, long range"
+    ],
+    "mechanics": {
+      "twoHanded": false,
+      "rapidFire": true,
+      "ignoresPhysicalArmor": 0,
+      "cutsThroughMaterialsLevel": null,
+      "targetEffects": [],
+      "requiresTripod": false,
+      "requiredOperators": 0,
+      "alternateConfiguration": {
+        "enabled": false,
+        "attackType": "",
+        "action": ""
+      }
+    },
+    "freelyUsable": false,
+    "equipped": false,
+    "description": "Heavy weapon, rapid-fire weapon, long range"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Real-World.Assault rifle",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Real-World Equipment",
+        "sourceLocator": "Real-World Equipment — veryExpensive Items — Assault rifle",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

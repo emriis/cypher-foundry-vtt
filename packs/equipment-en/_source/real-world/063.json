@@ -1,0 +1,53 @@
+{
+  "_id": "38d7ea4c6803f",
+  "_key": "!items!38d7ea4c6803f",
+  "document": "Item",
+  "name": "Bow",
+  "type": "attack",
+  "crdType": "weapon",
+  "system": {
+    "attackType": "medium",
+    "range": "long",
+    "extremeRange": "",
+    "damage": 4,
+    "stat": "might",
+    "weaponFamily": "",
+    "attackSkillCategory": "",
+    "priceCategory": "expensive",
+    "properties": [
+      "Medium weapon, long range"
+    ],
+    "mechanics": {
+      "twoHanded": false,
+      "rapidFire": false,
+      "ignoresPhysicalArmor": 0,
+      "cutsThroughMaterialsLevel": null,
+      "targetEffects": [],
+      "requiresTripod": false,
+      "requiredOperators": 0,
+      "alternateConfiguration": {
+        "enabled": false,
+        "attackType": "",
+        "action": ""
+      }
+    },
+    "freelyUsable": false,
+    "equipped": false,
+    "description": "Medium weapon, long range"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Real-World.Bow",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Real-World Equipment",
+        "sourceLocator": "Real-World Equipment — expensive Items — Bow",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

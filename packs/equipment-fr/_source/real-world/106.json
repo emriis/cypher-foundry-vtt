@@ -1,0 +1,54 @@
+{
+  "_id": "38d7ea4c6806a",
+  "_key": "!items!38d7ea4c6806a",
+  "document": "Item",
+  "name": "Heavy rifle",
+  "type": "attack",
+  "crdType": "weapon",
+  "system": {
+    "attackType": "heavy",
+    "range": "immediate",
+    "extremeRange": "",
+    "damage": 6,
+    "stat": "might",
+    "weaponFamily": "",
+    "attackSkillCategory": "",
+    "priceCategory": "veryExpensive",
+    "properties": [
+      "Heavy weapon, 300-foot (90 m) range"
+    ],
+    "mechanics": {
+      "twoHanded": false,
+      "rapidFire": false,
+      "ignoresPhysicalArmor": 0,
+      "cutsThroughMaterialsLevel": null,
+      "targetEffects": [],
+      "requiresTripod": false,
+      "requiredOperators": 0,
+      "alternateConfiguration": {
+        "enabled": false,
+        "attackType": "",
+        "action": ""
+      }
+    },
+    "freelyUsable": false,
+    "equipped": false,
+    "description": "Heavy weapon, 300-foot (90 m) range"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Real-World.Heavy rifle",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Real-World Equipment",
+        "sourceLocator": "Real-World Equipment — veryExpensive Items — Heavy rifle",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Real-World.Heavy rifle"
+      }
+    }
+  }
+}

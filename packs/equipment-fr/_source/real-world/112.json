@@ -1,0 +1,54 @@
+{
+  "_id": "38d7ea4c68070",
+  "_key": "!items!38d7ea4c68070",
+  "document": "Item",
+  "name": "Submachine gun",
+  "type": "attack",
+  "crdType": "weapon",
+  "system": {
+    "attackType": "medium",
+    "range": "short",
+    "extremeRange": "",
+    "damage": 4,
+    "stat": "might",
+    "weaponFamily": "",
+    "attackSkillCategory": "",
+    "priceCategory": "veryExpensive",
+    "properties": [
+      "Medium weapon, rapid-fire weapon, short range"
+    ],
+    "mechanics": {
+      "twoHanded": false,
+      "rapidFire": true,
+      "ignoresPhysicalArmor": 0,
+      "cutsThroughMaterialsLevel": null,
+      "targetEffects": [],
+      "requiresTripod": false,
+      "requiredOperators": 0,
+      "alternateConfiguration": {
+        "enabled": false,
+        "attackType": "",
+        "action": ""
+      }
+    },
+    "freelyUsable": false,
+    "equipped": false,
+    "description": "Medium weapon, rapid-fire weapon, short range"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Real-World.Submachine gun",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Real-World Equipment",
+        "sourceLocator": "Real-World Equipment — veryExpensive Items — Submachine gun",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Real-World.Submachine gun"
+      }
+    }
+  }
+}

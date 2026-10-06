@@ -1,0 +1,35 @@
+{
+  "_id": "38d7ea4c68021",
+  "_key": "!items!38d7ea4c68021",
+  "document": "Item",
+  "name": "Climbing gear",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "moderate",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Asset for climbing tasks"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Real-World.Climbing gear",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Real-World Equipment",
+        "sourceLocator": "Real-World Equipment — moderate Items — Climbing gear",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}
