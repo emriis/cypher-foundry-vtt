@@ -1,0 +1,31 @@
+{
+  "_id": "e35fa931a003d",
+  "_key": "!items!e35fa931a003d",
+  "document": "Item",
+  "name": "Kevlar vest",
+  "type": "armor",
+  "crdType": "armor",
+  "system": {
+    "category": "medium",
+    "freelyUsable": false,
+    "equipped": false,
+    "blockEaseDamage": 0,
+    "priceCategory": "expensive",
+    "description": "Medium armor"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Postapocalypse.expensive.Kevlar vest",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Postapocalypse Equipment",
+        "sourceLocator": "Postapocalypse Equipment — expensive Items — Kevlar vest",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

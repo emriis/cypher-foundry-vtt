@@ -1,0 +1,36 @@
+{
+  "_id": "e35fa931a002e",
+  "_key": "!items!e35fa931a002e",
+  "document": "Item",
+  "name": "Padlock with keys",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "moderate",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Level 3 lock"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Postapocalypse.moderate.Padlock with keys",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Postapocalypse Equipment",
+        "sourceLocator": "Postapocalypse Equipment — moderate Items — Padlock with keys",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Postapocalypse.moderate.Padlock with keys"
+      }
+    }
+  }
+}

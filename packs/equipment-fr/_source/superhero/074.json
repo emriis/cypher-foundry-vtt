@@ -1,0 +1,36 @@
+{
+  "_id": "e35fa931a004a",
+  "_key": "!items!e35fa931a004a",
+  "document": "Item",
+  "name": "Simple cape",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "moderate",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Mostly cosmetic, easily destroyed"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Superhero.moderate.Simple cape",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Superhero Equipment",
+        "sourceLocator": "Superhero Equipment — moderate Items — Simple cape",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Superhero.moderate.Simple cape"
+      }
+    }
+  }
+}

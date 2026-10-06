@@ -1,0 +1,36 @@
+{
+  "_id": "e35fa931a003a",
+  "_key": "!items!e35fa931a003a",
+  "document": "Item",
+  "name": "Antiradiation pill (5)",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "expensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Asset on defense rolls against radiation effects for 12 hours"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Postapocalypse.expensive.Antiradiation pill (5)",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Postapocalypse Equipment",
+        "sourceLocator": "Postapocalypse Equipment — expensive Items — Antiradiation pill (5)",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Postapocalypse.expensive.Antiradiation pill (5)"
+      }
+    }
+  }
+}

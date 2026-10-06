@@ -1,0 +1,36 @@
+{
+  "_id": "e35fa931a000c",
+  "_key": "!items!e35fa931a000c",
+  "document": "Item",
+  "name": "Preserved food (1 day)",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "inexpensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": ""
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Postapocalypse.inexpensive.Preserved food (1 day)",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Postapocalypse Equipment",
+        "sourceLocator": "Postapocalypse Equipment — inexpensive Items — Preserved food (1 day)",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Postapocalypse.inexpensive.Preserved food (1 day)"
+      }
+    }
+  }
+}

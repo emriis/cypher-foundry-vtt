@@ -1,0 +1,31 @@
+{
+  "_id": "e35fa931a0045",
+  "_key": "!items!e35fa931a0045",
+  "document": "Item",
+  "name": "Riot gear",
+  "type": "armor",
+  "crdType": "armor",
+  "system": {
+    "category": "medium",
+    "freelyUsable": false,
+    "equipped": false,
+    "blockEaseDamage": 0,
+    "priceCategory": "expensive",
+    "description": "Medium armor Postapocalypse Currency Equivalences Postapocalyptic settings usually “reset” the common currency and amounts to small, manageable numbers, and they don’t generally have inflation to drive up prices of common items to more than what you can carry in one hand. Here are some suggested postapocalypse currency values for the general price categories. Depending on the setting, currency units might be bottle caps, teeth, bullets, cans of food, quarters, or gold rings. Category Currency Value Inexpensive 1–2 Moderate 5–10 Expensive 50–100 Very expensive 500–1,000 Exorbitant 10,000+ Superhero Equipment A typical superhero game takes place in a real-world (modern-day Earth) setting, so you can use the Real-World Equipment table to see what sorts of things are available. Keep in mind that for most superheroes, powers and skills make the character, and equipment is almost irrelevant. However, the following items may be useful for a busy hero on the go. Inexpensive Items Item Note Homemade costume Looks cheap, easily destroyed Moderately Priced Items Item Note Simple cape Mostly cosmetic, easily destroyed Spandex costume Elastic, fairly durable Expensive Items Item Note Advanced synthetic costume Elastic, durable, adapts to unusual superpowers (like stretching and invisibility) Dramatic cape Enhances dramatic entrances, risks getting snagged"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Postapocalypse.expensive.Riot gear",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Postapocalypse Equipment",
+        "sourceLocator": "Postapocalypse Equipment — expensive Items — Riot gear",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

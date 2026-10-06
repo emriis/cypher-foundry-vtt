@@ -1,0 +1,35 @@
+{
+  "_id": "e35fa931a0019",
+  "_key": "!items!e35fa931a0019",
+  "document": "Item",
+  "name": "Bullets (50)",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "moderate",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Ammo for handguns and rifles"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Postapocalypse.moderate.Bullets (50)",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Postapocalypse Equipment",
+        "sourceLocator": "Postapocalypse Equipment — moderate Items — Bullets (50)",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "_id": "e35fa931a004e",
+  "_key": "!items!e35fa931a004e",
+  "document": "Item",
+  "name": "Advanced synthetic costume",
+  "type": "equipment",
+  "crdType": "equipment",
+  "system": {
+    "quantity": 1,
+    "level": 4,
+    "priceCategory": "expensive",
+    "weight": "light",
+    "equipped": false,
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "Elastic, durable, adapts to unusual superpowers (like stretching and invisibility)"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Superhero.expensive.Advanced synthetic costume",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Superhero Equipment",
+        "sourceLocator": "Superhero Equipment — expensive Items — Advanced synthetic costume",
+        "transformations": [
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "equipment.Superhero.expensive.Advanced synthetic costume"
+      }
+    }
+  }
+}
