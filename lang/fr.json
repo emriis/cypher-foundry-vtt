@@ -34,7 +34,17 @@
     "Sheet": {
       "PC": "Fiche de personnage",
       "NPC": "Fiche de PNJ",
-      "Community": "Fiche de Communauté"
+      "Community": "Fiche de Communauté",
+      "Core": "Jeu principal",
+      "StatsAndHealth": "Caractéristiques, réserves et santé",
+      "Skills": "Compétences",
+      "Abilities": "Aptitudes",
+      "NoSkills": "Aucune compétence pour le moment.",
+      "NoAbilities": "Aucune aptitude pour le moment.",
+      "NoAttacks": "Aucune attaque pour le moment.",
+      "NoCyphers": "Aucun Cypher porté.",
+      "NoEquipment": "Aucun équipement pour le moment.",
+      "CharacterDetails": "Biographie, notes et champs personnalisés"
     },
     "Tab": {
       "main": "Principal",
@@ -115,7 +125,8 @@
       "CustomNamePlaceholder": "ex. Chance, Foi, Volonté...",
       "ConfirmDeleteCustom": "Retirer définitivement cette caractéristique personnalisée ?",
       "PoolValue": "Valeur actuelle",
-      "PoolMax": "Maximum"
+      "PoolMax": "Maximum",
+      "Depleted": "Réserve épuisée"
     },
     "Armor": {
       "Title": "Armure",
@@ -293,7 +304,9 @@
       "heavy": "Lourde (6 dégâts)"
     },
     "Item": {
-      "New": "Nouveau : {type}"
+      "New": "Nouveau : {type}",
+      "Edit": "Modifier",
+      "Delete": "Supprimer"
     },
     "Descriptor": {
       "Label": "Descripteur",
@@ -440,7 +453,8 @@
       "AttackerTarget": "nombre cible de l'attaquant",
       "BlockSuccess": "Blocage réussi : la blessure {severity} est réduite d'un cran.",
       "DodgeSuccess": "Esquive réussie : la blessure est entièrement évitée.",
-      "Failed": "Défense échouée : blessure {severity} subie."
+      "Failed": "Défense échouée : blessure {severity} subie.",
+      "Title": "Défense"
     },
     "Shield": {
       "Title": "Boucliers",

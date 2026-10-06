@@ -19,17 +19,21 @@ import { toggleEquipped } from "../applications/equipment-service.mjs";
 /**
  * Foundry VTT sheet for player characters using the Cypher system.
  *
- * Prepares template context and exposes UI actions for rolls, inventory,
- * advancement, recovery, and other player-character interactions.
- * Templates display that context; their `data-action` attributes call the
- * handlers below, which delegate rule changes to CypherActor or CypherItem.
+ * The PC sheet is intentionally a single playable dashboard: the most
+ * frequently used character data and actions are visible together instead of
+ * being hidden behind application tabs. Secondary biography and notes remain
+ * collapsible at the end of the dashboard.
  */
 export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
 
   static DEFAULT_OPTIONS = {
     classes: ["cypher", "sheet", "actor", "pc"],
-    position: { width: 720, height: 780 },
-    window: { resizable: true, title: "CYPHER.Sheet.PC" },
+    tag: "form",
+    position: { width: 1050, height: 900 },
+    window: {
+      resizable: true,
+      title: "CYPHER.Sheet.PC"
+    },
     actions: {
       rollStat: CypherPCSheet.#onRollStat,
       rollRecovery: CypherPCSheet.#onRollRecovery,
@@ -56,40 +60,24 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       rollAbilityTable: CypherPCSheet.#onRollAbilityTable,
       chooseFocusAbility: CypherPCSheet.#onChooseFocusAbility
     },
-    form: { submitOnChange: true }
-  };
-
-  static PARTS = {
-    header: { template: "systems/cypher/templates/actor/parts/header.hbs" },
-    tabs: { template: "templates/generic/tab-navigation.hbs" },
-    main: { template: "systems/cypher/templates/actor/parts/main.hbs", scrollable: [""] },
-    skills: { template: "systems/cypher/templates/actor/parts/skills.hbs", scrollable: [""] },
-    abilities: { template: "systems/cypher/templates/actor/parts/abilities.hbs", scrollable: [""] },
-    inventory: { template: "systems/cypher/templates/actor/parts/inventory.hbs", scrollable: [""] },
-    advancement: { template: "systems/cypher/templates/actor/parts/advancement.hbs", scrollable: [""] },
-    biography: { template: "systems/cypher/templates/actor/parts/biography.hbs", scrollable: [""] }
-  };
-
-  static TABS = {
-    primary: {
-      tabs: [
-        { id: "main" },
-        { id: "skills" },
-        { id: "abilities" },
-        { id: "inventory" },
-        { id: "advancement" },
-        { id: "biography" }
-      ],
-      initial: "main",
-      labelPrefix: "CYPHER.Tab"
+    form: {
+      submitOnChange: true,
+      closeOnSubmit: false
     }
   };
 
-  tabGroups = { primary: "main" };
+  static PARTS = {
+    header: {
+      template: "systems/cypher/templates/actor/parts/header.hbs"
+    },
+    main: {
+      template: "systems/cypher/templates/actor/parts/main.hbs",
+      scrollable: [""]
+    }
+  };
 
   /**
-   * Prepares the actor, item collections, tabs, and enriched text used by the
-   * sheet templates.
+   * Prepare the complete PC dashboard context.
    *
    * @param {object} options Foundry application context options.
    * @returns {Promise<object>} Template context.
@@ -98,7 +86,8 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     const context = await super._prepareContext(options);
     context.system = this.actor.system;
     context.actor = this.actor;
-    context.focusAbilityPendingTier = this.actor.getFlag("cypher", "focusAbilityPendingTier");
+    context.focusAbilityPendingTier =
+      this.actor.getFlag("cypher", "focusAbilityPendingTier");
     context.config = CONFIG.CYPHER;
     context.items = {
       skills: this.actor.items.filter(i => i.type === "skill"),
@@ -110,24 +99,16 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       armor: this.actor.items.filter(i => i.type === "armor"),
       shields: this.actor.items.filter(i => i.type === "shield")
     };
-    context.tabs = this._prepareTabs("primary");
-    context.enrichedBiography = await foundry.applications.ux.TextEditor.implementation.enrichHTML(this.actor.system.biography, { relativeTo: this.actor });
-    context.enrichedNotes = await foundry.applications.ux.TextEditor.implementation.enrichHTML(this.actor.system.notes, { relativeTo: this.actor });
-    return context;
-  }
-
-  /**
-   * Adds the active tab state to an individual template-part context.
-   *
-   * @param {string} partId Sheet part identifier.
-   * @param {object} context Current template context.
-   * @returns {Promise<object>} Updated part context.
-   */
-  async _preparePartContext(partId, context) {
-    context = await super._preparePartContext(partId, context);
-    if (["main", "skills", "abilities", "inventory", "advancement", "biography"].includes(partId)) {
-      context.tab = context.tabs[partId];
-    }
+    context.enrichedBiography =
+      await foundry.applications.ux.TextEditor.implementation.enrichHTML(
+        this.actor.system.biography,
+        { relativeTo: this.actor }
+      );
+    context.enrichedNotes =
+      await foundry.applications.ux.TextEditor.implementation.enrichHTML(
+        this.actor.system.notes,
+        { relativeTo: this.actor }
+      );
     return context;
   }
 

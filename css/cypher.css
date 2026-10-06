@@ -1643,3 +1643,484 @@
   min-height: 0;
   padding-right: 4px;
 }
+
+
+/* ================================================================
+   Player character dashboard
+   ================================================================ */
+
+.cypher.sheet.pc {
+  --cypher-pc-gap: var(--cypher-space-lg);
+}
+
+.cypher.sheet.pc .pc-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cypher-pc-gap);
+  padding: var(--cypher-space-md) 2px var(--cypher-space-xl);
+}
+
+.cypher.sheet.pc .pc-section {
+  border: 1px solid var(--cypher-color-border-soft);
+  border-radius: var(--cypher-radius-md);
+  background: var(--cypher-color-bg-card);
+  box-shadow: var(--cypher-shadow-panel);
+  padding: var(--cypher-space-lg);
+}
+
+.cypher.sheet.pc .pc-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--cypher-space-lg);
+  margin-bottom: var(--cypher-space-md);
+}
+
+.cypher.sheet.pc .pc-section-heading.compact {
+  align-items: center;
+  margin-bottom: var(--cypher-space-md);
+}
+
+.cypher.sheet.pc .pc-section-heading h2,
+.cypher.sheet.pc .pc-section-heading h3 {
+  margin: 0;
+  color: var(--cypher-color-accent);
+  font-family: var(--cypher-font-family-condensed);
+  font-size: var(--cypher-font-size-lg);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.cypher.sheet.pc .pc-kicker {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--cypher-color-text-muted);
+  font-size: var(--cypher-font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.cypher.sheet.pc .pc-core-stats {
+  background: linear-gradient(
+    to bottom,
+    var(--cypher-color-bg-card-alt),
+    var(--cypher-color-bg-card)
+  );
+}
+
+.cypher.sheet.pc .pc-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--cypher-space-lg);
+  margin: 0;
+}
+
+.cypher.sheet.pc .pc-stats-grid .stat-block {
+  min-width: 0;
+  margin: 0;
+}
+
+.cypher.sheet.pc .stat-block-header button,
+.cypher.sheet.pc .remove-custom-stat {
+  border: 0;
+  background: transparent;
+  color: var(--cypher-color-accent);
+  cursor: pointer;
+}
+
+.cypher.sheet.pc .pc-stat-pool {
+  display: flex;
+  align-items: end;
+  gap: var(--cypher-space-sm);
+  margin: var(--cypher-space-md) 0;
+}
+
+.cypher.sheet.pc .pc-stat-pool label {
+  flex: 1 1 0;
+}
+
+.cypher.sheet.pc .pc-field-label {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--cypher-color-text-muted);
+  font-size: var(--cypher-font-size-xs);
+  text-transform: uppercase;
+}
+
+.cypher.sheet.pc .pc-pool-slash {
+  padding-bottom: 7px;
+  color: var(--cypher-color-text-muted);
+  font-weight: 700;
+}
+
+.cypher.sheet.pc .pc-stat-pool input {
+  width: 100%;
+  text-align: center;
+  font-size: var(--cypher-font-size-lg);
+  font-weight: 700;
+}
+
+.cypher.sheet.pc .pc-stat-roll {
+  width: var(--cypher-target-size);
+  min-height: var(--cypher-target-size);
+}
+
+.cypher.sheet.pc .pc-alert {
+  margin-top: var(--cypher-space-md);
+}
+
+.cypher.sheet.pc .pc-dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.4fr);
+  gap: var(--cypher-pc-gap);
+}
+
+.cypher.sheet.pc .pc-dashboard-grid-wide {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cypher.sheet.pc .pc-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cypher-pc-gap);
+  min-width: 0;
+}
+
+.cypher.sheet.pc .pc-wound-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--cypher-space-md);
+}
+
+.cypher.sheet.pc .pc-wound {
+  padding: var(--cypher-space-md);
+  border: 1px solid var(--cypher-color-border-faint);
+  border-radius: var(--cypher-radius-sm);
+  background: var(--cypher-color-bg-field);
+}
+
+.cypher.sheet.pc .pc-wound-title {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--cypher-space-md);
+  margin-bottom: var(--cypher-space-sm);
+  font-weight: 700;
+}
+
+.cypher.sheet.pc .pc-wound-track input {
+  width: 100%;
+  text-align: center;
+  font-size: var(--cypher-font-size-md);
+}
+
+.cypher.sheet.pc .pc-recovery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--cypher-space-sm);
+}
+
+.cypher.sheet.pc .pc-recovery-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cypher-space-md);
+  padding: var(--cypher-space-md);
+  border: 1px solid var(--cypher-color-border-faint);
+  border-radius: var(--cypher-radius-sm);
+  background: var(--cypher-color-bg-field);
+}
+
+.cypher.sheet.pc .pc-recovery-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--cypher-space-sm);
+}
+
+.cypher.sheet.pc .pc-defense-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--cypher-space-md);
+}
+
+.cypher.sheet.pc .pc-defense-grid button,
+.cypher.sheet.pc .pc-primary-action {
+  min-height: var(--cypher-target-size);
+  cursor: pointer;
+}
+
+.cypher.sheet.pc .pc-defense-grid button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--cypher-space-sm);
+  padding: var(--cypher-space-md);
+  font-weight: 700;
+}
+
+.cypher.sheet.pc .pc-armor-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cypher-space-md);
+  margin-top: var(--cypher-space-md);
+  padding-top: var(--cypher-space-md);
+  border-top: 1px solid var(--cypher-color-border-faint);
+  color: var(--cypher-color-text-muted);
+  font-size: var(--cypher-font-size-sm);
+}
+
+.cypher.sheet.pc .pc-armor-summary strong {
+  color: var(--cypher-color-text);
+}
+
+.cypher.sheet.pc .pc-help-text,
+.cypher.sheet.pc .pc-empty {
+  margin: var(--cypher-space-sm) 0 0;
+  color: var(--cypher-color-text-muted);
+  font-size: var(--cypher-font-size-sm);
+}
+
+.cypher.sheet.pc .pc-skill-list,
+.cypher.sheet.pc .pc-ability-list,
+.cypher.sheet.pc .pc-table {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cypher-space-sm);
+}
+
+.cypher.sheet.pc .pc-list-row,
+.cypher.sheet.pc .pc-table-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: var(--cypher-space-md);
+  padding: var(--cypher-space-sm) var(--cypher-space-md);
+  border: 1px solid var(--cypher-color-border-faint);
+  border-radius: var(--cypher-radius-sm);
+  background: var(--cypher-color-bg-field);
+}
+
+.cypher.sheet.pc .pc-list-row > div:first-child,
+.cypher.sheet.pc .pc-table-row > div:first-child {
+  min-width: 0;
+}
+
+.cypher.sheet.pc .pc-list-row strong,
+.cypher.sheet.pc .pc-table-row strong {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cypher.sheet.pc .pc-list-row span,
+.cypher.sheet.pc .pc-table-row span {
+  color: var(--cypher-color-text-muted);
+  font-size: var(--cypher-font-size-xs);
+}
+
+.cypher.sheet.pc .pc-row-controls {
+  display: flex;
+  gap: 2px;
+}
+
+.cypher.sheet.pc .pc-row-controls button,
+.cypher.sheet.pc .pc-section-heading > button,
+.cypher.sheet.pc .pc-table-row > button:not(.pc-primary-action) {
+  min-width: var(--cypher-target-size);
+  min-height: var(--cypher-target-size);
+  border: 0;
+  background: transparent;
+  color: var(--cypher-color-text-muted);
+  cursor: pointer;
+}
+
+.cypher.sheet.pc .pc-row-controls button:hover,
+.cypher.sheet.pc .pc-section-heading > button:hover,
+.cypher.sheet.pc .pc-table-row > button:not(.pc-primary-action):hover {
+  color: var(--cypher-color-accent);
+  background: var(--cypher-color-bg-hover);
+}
+
+.cypher.sheet.pc .pc-chip,
+.cypher.sheet.pc .pc-action-badge,
+.cypher.sheet.pc .pc-state {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  gap: 4px;
+  padding: 2px 7px;
+  border-radius: 99px;
+  font-size: var(--cypher-font-size-xs);
+  font-weight: 700;
+}
+
+.cypher.sheet.pc .pc-chip {
+  background: var(--cypher-color-bg-card-alt);
+  color: var(--cypher-color-text);
+}
+
+.cypher.sheet.pc .pc-action-badge {
+  margin: var(--cypher-space-sm) 0;
+  background: var(--cypher-color-band);
+  color: var(--cypher-color-warning-text);
+}
+
+.cypher.sheet.pc .pc-state-success {
+  background: var(--cypher-color-success);
+  color: var(--cypher-color-text-on-accent);
+}
+
+.cypher.sheet.pc .pc-state-danger {
+  background: var(--cypher-color-danger-soft-bg);
+  color: var(--cypher-color-danger-soft-text);
+}
+
+.cypher.sheet.pc .pc-ability-card {
+  padding: var(--cypher-space-md);
+  border: 1px solid var(--cypher-color-border-faint);
+  border-radius: var(--cypher-radius-sm);
+  background: var(--cypher-color-bg-field);
+}
+
+.cypher.sheet.pc .pc-ability-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--cypher-space-md);
+}
+
+.cypher.sheet.pc .pc-ability-heading span,
+.cypher.sheet.pc .pc-ability-description {
+  color: var(--cypher-color-text-muted);
+  font-size: var(--cypher-font-size-sm);
+}
+
+.cypher.sheet.pc .pc-ability-description {
+  margin-top: var(--cypher-space-sm);
+  line-height: 1.4;
+}
+
+.cypher.sheet.pc .pc-ability-description p:last-child {
+  margin-bottom: 0;
+}
+
+.cypher.sheet.pc .pc-inline-action,
+.cypher.sheet.pc .pc-xp-actions button,
+.cypher.sheet.pc .pc-inline-actions button,
+.cypher.sheet.pc .pc-advancement-slot > button {
+  min-height: var(--cypher-target-size);
+  cursor: pointer;
+}
+
+.cypher.sheet.pc .pc-inline-action {
+  width: 100%;
+  margin-top: var(--cypher-space-sm);
+}
+
+.cypher.sheet.pc .pc-table-row {
+  grid-template-columns: minmax(130px, 1.3fr) minmax(70px, 0.8fr) minmax(65px, 0.6fr) auto auto;
+}
+
+.cypher.sheet.pc .pc-table-row.depleted {
+  opacity: 0.62;
+}
+
+.cypher.sheet.pc .pc-table-row.depleted strong {
+  text-decoration: line-through;
+}
+
+.cypher.sheet.pc .pc-equip-control {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cypher-space-sm);
+  color: var(--cypher-color-text-muted);
+  font-size: var(--cypher-font-size-sm);
+}
+
+.cypher.sheet.pc .pc-xp-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: var(--cypher-space-sm);
+}
+
+.cypher.sheet.pc .pc-xp-value {
+  padding: 4px 8px;
+  border-radius: var(--cypher-radius-sm);
+  background: var(--cypher-color-bg-field);
+  border: 1px solid var(--cypher-color-border-faint);
+}
+
+.cypher.sheet.pc .pc-advancement-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--cypher-space-md);
+}
+
+.cypher.sheet.pc .pc-advancement-slot {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cypher-space-sm);
+  padding: var(--cypher-space-md);
+  border: 1px solid var(--cypher-color-border-soft);
+  border-radius: var(--cypher-radius-sm);
+  background: var(--cypher-color-bg-field);
+}
+
+.cypher.sheet.pc .pc-advancement-slot.bought {
+  border-color: var(--cypher-color-success);
+}
+
+.cypher.sheet.pc .pc-slot-index {
+  color: var(--cypher-color-text-muted);
+  font-size: var(--cypher-font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.cypher.sheet.pc .pc-details summary {
+  cursor: pointer;
+  color: var(--cypher-color-accent);
+  font-family: var(--cypher-font-family-condensed);
+  font-size: var(--cypher-font-size-lg);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.cypher.sheet.pc .pc-details[open] summary {
+  margin-bottom: var(--cypher-space-lg);
+}
+
+.cypher.sheet.pc .pc-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--cypher-space-xl);
+}
+
+.cypher.sheet.pc .pc-details prose-mirror {
+  min-height: 140px;
+}
+
+@media (max-width: 900px) {
+  .cypher.sheet.pc .pc-stats-grid,
+  .cypher.sheet.pc .pc-dashboard-grid,
+  .cypher.sheet.pc .pc-dashboard-grid-wide,
+  .cypher.sheet.pc .pc-advancement-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cypher.sheet.pc .pc-wound-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cypher.sheet.pc .pc-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cypher.sheet.pc .pc-table-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+}
