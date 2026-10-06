@@ -194,6 +194,11 @@ describe("Given a new PC builds a character from CRD content", () => {
         }
       });
 
+      globalThis.fromUuid = async uuid =>
+        actor.getFlag("cypher", "appliedFocusGraph").abilities.find(
+          candidate => candidate.uuid === uuid
+        );
+
       assert.equal(await selectFocusAbility(actor, "later"), true);
       assert.deepEqual(
         actor.getFlag("cypher", "focusAbilityIds"),
