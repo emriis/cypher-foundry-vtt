@@ -34,20 +34,6 @@
   </div>
 
   <div class="inventory-section">
-    <h3>{{localize 'CYPHER.Oddity.Title'}}</h3>
-    <button type="button" data-action="itemCreate" data-type="oddity"><i class="fa-solid fa-plus"></i></button>
-    <ul class="item-list">
-      {{#each items.oddities as |item|}}
-      <li class="item" data-item-id="{{item.id}}">
-        <span class="item-name">{{item.name}}</span>
-        <a data-action="itemEdit"><i class="fa-solid fa-edit"></i></a>
-        <a data-action="itemDelete"><i class="fa-solid fa-trash"></i></a>
-      </li>
-      {{/each}}
-    </ul>
-  </div>
-
-  <div class="inventory-section">
     <h3>{{localize 'CYPHER.Attack.Title'}}</h3>
     <button type="button" data-action="itemCreate" data-type="attack"><i class="fa-solid fa-plus"></i></button>
     <ul class="item-list">
