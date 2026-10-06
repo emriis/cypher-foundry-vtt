@@ -35,12 +35,6 @@ function abilityId(reference) {
     : null;
 }
 
-function focusMap(language) {
-  return new Map(readSources("foci", language).map(document => [
-    document._id, document
-  ]));
-}
-
 function abilityMap(language) {
   return new Map(readSources("abilities", language).map(document => [
     document._id, document
@@ -59,21 +53,24 @@ function normalizeEdges(focus, abilities) {
 }
 
 test("CRD Foci use the same Ability logical identities in EN and FR", () => {
-  const enFoci = new Map(readSources("foci", "en").map(document => [
-    path.basename(document._key ?? "", ".json"), document
-  ]));
-  const frFoci = new Map(readSources("foci", "fr").map(document => [
-    path.basename(document._key ?? "", ".json"), document
-  ]));
+  const enFoci = new Map();
+  const frFoci = new Map();
+  for (const slug of FOCUS_SLUGS) {
+    for (const language of ["en", "fr"]) {
+      const file = path.join(
+        root, "packs", "foci-" + language, "_source", slug + ".json"
+      );
+      const document = JSON.parse(fs.readFileSync(file, "utf8"));
+      (language === "en" ? enFoci : frFoci).set(slug, document);
+    }
+  }
   const enAbilities = abilityMap("en");
   const frAbilities = abilityMap("fr");
   const failures = [];
 
   for (const slug of FOCUS_SLUGS) {
-    const en = enFoci.get("!items!" + slug) ?? readSources("foci", "en")
-      .find(document => document._key?.includes(slug));
-    const fr = frFoci.get("!items!" + slug) ?? readSources("foci", "fr")
-      .find(document => document._key?.includes(slug));
+    const en = enFoci.get(slug);
+    const fr = frFoci.get(slug);
 
     if (!en || !fr) {
       failures.push(slug + ": missing EN or FR Focus source");
