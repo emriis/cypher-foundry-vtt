@@ -360,3 +360,116 @@ test.describe("Cypher Foundry live gameplay", () => {
     expect(actor.wounds.minor).toBe(1);
   });
 });
+
+
+test("completes a player vertical slice from real CRD compendiums", async ({
+  page
+}) => {
+  const actorId = await createActor(page);
+
+  try {
+    const summary = await page.evaluate(async id => {
+      const getPack = name => {
+        const pack = game.packs.get("cypher." + name);
+        if (!pack) throw new Error("Missing compendium pack: " + name);
+        return pack;
+      };
+
+      const type = (await getPack("types-en").getDocuments())
+        .find(item => item.type === "type");
+      const descriptors = await getPack("descriptors-en").getDocuments();
+      const descriptor = descriptors.find(item =>
+        item.type === "descriptor"
+        && (!item.system.genres?.length
+          || item.system.genres.map(value => String(value).toLowerCase())
+            .includes("fantasy"))
+      );
+      const focus = (await getPack("foci-en").getDocuments())
+        .find(item => item.type === "focus");
+      const equipment = await getPack("equipment-en").getDocuments();
+      const attackSource = equipment.find(item => item.type === "attack");
+      const cypherSource = equipment.find(item =>
+        item.type === "cypher"
+        && item.system.cypherCategory !== "powerBoost"
+      );
+
+      if (!type || !descriptor || !focus || !attackSource || !cypherSource) {
+        throw new Error("Player vertical slice could not find the required CRD content");
+      }
+
+      const actor = game.actors.get(id);
+      const typeSkill = type.system.skillOptions?.find(value => value?.trim());
+      await actor.applyType(type, {
+        stat: type.system.statOptions?.[0] ?? "might",
+        skillName: typeSkill
+      });
+
+      const descriptorSkill =
+        descriptor.system.skillOptions?.find(value => value?.trim())
+        ?? descriptor.system.grantedSkills?.[0];
+      await actor.applyDescriptor(descriptor, {
+        stat: descriptor.system.statOptions?.[0] ?? "might",
+        skillName: descriptorSkill
+      });
+
+      const { getInitialFocusAbilityChoices } =
+        await import("/systems/cypher/module/applications/content-service.mjs");
+      const focusChoices = await getInitialFocusAbilityChoices(focus);
+      if (focusChoices.length < 2) {
+        throw new Error("Selected Focus does not expose two eligible Tier 1 choices");
+      }
+      await actor.applyFocus(
+        focus,
+        focusChoices.slice(0, 2).map(ability => ability.id)
+      );
+
+      const [attack] = await actor.createEmbeddedDocuments("Item", [attackSource.toObject()]);
+      const [cypher] = await actor.createEmbeddedDocuments("Item", [cypherSource.toObject()]);
+      await attack.rollAttack({ difficulty: 0 });
+      await cypher.useCypher();
+
+      await actor.addWound("moderate");
+      await actor.rollRecovery("hour");
+
+      await actor.update({
+        "system.xp": 4,
+        "system.advancementSlots.0.type": "effort",
+        "system.advancementSlots.0.bought": false
+      });
+      await actor.purchaseAdvancementSlot(0);
+
+      return {
+        type: actor.system.type,
+        descriptor: actor.system.descriptor,
+        focus: actor.system.focus,
+        tier: actor.system.tier,
+        hasSkill: actor.items.some(item => item.type === "skill"),
+        abilityCount: actor.items.filter(item => item.type === "ability").length,
+        attackType: attack.type,
+        cypherDepleted: cypher.system.depleted,
+        moderateWounds: actor.system.wounds.moderate.current,
+        xp: actor.system.xp,
+        advancementBought: actor.system.advancementSlots[0].bought,
+        effort: actor.system.effort,
+        resourcePoints: actor.system.resourcePoints
+      };
+    }, actorId);
+
+    expect(summary.type).toBeTruthy();
+    expect(summary.focus).toBeTruthy();
+    expect(summary.hasSkill).toBe(true);
+    expect(summary.abilityCount).toBeGreaterThan(0);
+    expect(summary.attackType).toBe("attack");
+    expect(summary.cypherDepleted).toBe(true);
+    expect(summary.moderateWounds).toBe(0);
+    expect(summary.xp).toBe(0);
+    expect(summary.advancementBought).toBe(true);
+    expect(summary.effort).toBeGreaterThan(1);
+    expect(summary.resourcePoints).toBe(1);
+  } finally {
+    await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      if (actor) await actor.delete();
+    }, actorId);
+  }
+});

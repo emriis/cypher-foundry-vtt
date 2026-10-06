@@ -9,6 +9,19 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ## [Unreleased]
 
+## [0.2.0-alpha.1] - 2026-10-06
+
+### Added
+
+- Declared the first player-facing alpha milestone after the CRD reusable-content foundations were established.
+- Added a player vertical-slice E2E workflow covering CRD Type/Descriptor/Focus application, equipment/attack use, Cypher depletion, wound recovery, and advancement.
+
+### Changed
+
+- Closed W4 as complete for all source-backed equipment families available in the supplied 2026-07-29 CRD; Artifact extraction remains source-blocked because the supplied CRD contains no Artifact inventory.
+- Marked the project version as `0.2.0-alpha.1` to distinguish the player-playability milestone from the earlier `0.1.x` development baseline.
+
+
 ### Added
 
 - Defined deterministic language-neutral CRD logical identifiers and source
@@ -219,6 +232,7 @@ First documented state of the system.
 - Runtime-affecting changes still require disposable-world validation before their Foundry
   compatibility can be considered verified.
 
-[Unreleased]: https://github.com/emriis/cypher-foundry-vtt/compare/v0.1.7...HEAD
+[Unreleased]: https://github.com/emriis/cypher-foundry-vtt/compare/v0.2.0-alpha.1...HEAD
+[0.2.0-alpha.1]: https://github.com/emriis/cypher-foundry-vtt/releases/tag/v0.2.0-alpha.1
 [0.1.3]: https://github.com/emriis/cypher-foundry-vtt/compare/v0.1.2...v0.1.3
 [0.1.1]: https://github.com/emriis/cypher-foundry-vtt/releases/tag/0.1.1

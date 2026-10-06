@@ -108,10 +108,17 @@ depletion for ordinary quantity-based items.
 
 ## 4. Current W4 scope
 
-The implemented W4 audit covers general equipment, weapons, armor, shields,
-Cyphers, and the currently modelled Artifact schema. The supplied CRD contains
-no Artifact content to extract.
+W4 is complete for all source-backed content supplied by the 2026-07-29 CRD:
 
-The remaining W4 work is source extraction for the ordinary equipment families,
-Artifacts when the CRD supplies content, and the completion audits for each
-family.
+- 259 ordinary equipment/weapon/armor/shield source records per language;
+- 86 subtle Cypher records per language;
+- 103 distinct manifest Cypher records per language, representing 106 random-table placements;
+- 9 Power Boost Cypher records per language.
+
+The source packs have complete EN/FR pairing, provenance, canonical logical
+identity, structured mechanics, and content/fidelity contracts.
+
+Artifact extraction remains source-blocked: the supplied CRD contains an Artifact
+model discussion but no Artifact inventory to extract. The existing Artifact
+schema remains available for later source material without inventing content.
+
