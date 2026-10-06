@@ -1,4 +1,4 @@
-// Source-pack validation runs with the complete content suite.\nimport assert from "node:assert/strict";
+import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
