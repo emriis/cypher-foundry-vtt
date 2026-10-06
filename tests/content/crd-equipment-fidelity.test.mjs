@@ -79,6 +79,43 @@ test("CRD equipment extraction does not invent generic equipment weight", () => 
   assert.deepEqual(failures, [], failures.join("\n"));
 });
 
+test("all extracted equipment records preserve their CRD document type", () => {
+  const expectedType = {
+    equipment: "equipment",
+    weapon: "attack",
+    armor: "armor",
+    shield: "shield"
+  };
+  const failures = [];
+
+  for (const language of ["en", "fr"]) {
+    for (const record of readRecords(language)) {
+      const expected = expectedType[record.crdType];
+      if (expected && record.type !== expected) {
+        failures.push(
+          `${language}/${record.name}: crdType=${record.crdType} type=${record.type}`
+        );
+      }
+
+      if (record.crdType === "weapon" &&
+          !["light", "medium", "heavy"].includes(record.system.attackType)) {
+        failures.push(
+          `${language}/${record.name}: invalid weapon attackType`
+        );
+      }
+
+      if (record.crdType === "armor" &&
+          !["light", "medium", "heavy"].includes(record.system.category)) {
+        failures.push(
+          `${language}/${record.name}: invalid armor category`
+        );
+      }
+    }
+  }
+
+  assert.deepEqual(failures, [], failures.join("\n"));
+});
+
 test("English and French equipment preserve identical mechanical data", () => {
   const english = byLogicalId(readRecords("en"));
   const french = byLogicalId(readRecords("fr"));
