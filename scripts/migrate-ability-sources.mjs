@@ -220,6 +220,13 @@ async function normalizeEquipmentSources() {
         throw new Error(`Equipment source "${filePath}" is missing its CRD logicalId.`);
       }
 
+      // This migrator owns only the W4 equipment families whose canonical
+      // identity is genre + price category + source name. Cyphers and future
+      // artifact sources live in the equipment pack directory but have their
+      // own CRD identity contracts and must not be normalized as equipment.
+      const normalizedTypes = new Set(["equipment", "weapon", "armor", "shield"]);
+      if (!normalizedTypes.has(document.crdType)) continue;
+
       const genre = String(provenance.section ?? "").replace(/ Equipment$/, "");
       const priceCategory = document.system?.priceCategory;
       if (!genre || !priceCategory || !document.name) {
