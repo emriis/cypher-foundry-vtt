@@ -81,13 +81,13 @@ manually.
 | Types | Item: type | **Complete** |
 | Descriptors | Item: descriptor | **In progress** |
 | Foci | Item: focus | **In progress** |
-| Equipment | Item: equipment | Planned |
-| Weapons | Item: attack | Planned |
-| Armor | Item: armor | Planned |
-| Shields | Item: shield | Planned |
-| Cyphers | Item: cypher | Planned |
-| Artifacts | Item: artifact | Planned |
-| Oddities | Item: oddity | Planned |
+| Equipment | Item: equipment | **Model ready — extraction planned** |
+| Weapons | Item: attack | **Model ready — extraction planned** |
+| Armor | Item: armor | **Model ready — extraction planned** |
+| Shields | Item: shield | **Model ready — extraction planned** |
+| Cyphers | Item: cypher | **Model ready — extraction planned** |
+| Artifacts | Item: artifact | **Model ready — extraction planned** |
+| Oddities | Item: oddity | **Model ready — extraction planned** |
 | Creatures / NPCs | Actor: npc | Planned |
 
 ### 3.2 Reference Journals
@@ -240,7 +240,7 @@ the CRD presents them as reusable abilities.
 - [ ] Fidelity tests
 - [ ] Reference-integrity tests
 
-### 6.6 Equipment family — Planned
+### 6.6 Equipment family — In progress
 
 - [ ] General equipment
 - [ ] Weapons
@@ -526,14 +526,15 @@ A documented genuine source/model limitation may be an explicit exception.
 
 ### W4 — Equipment foundations
 
-**Status: In progress — model audit first.**
+**Status: In progress — model contracts complete; extraction next.**
 
-- [x] Inventory equipment, weapons, armor, shields, cyphers, artifacts,
-  oddities
+- [ ] Build the complete canonical inventory of equipment, weapons, armor,
+  shields, cyphers, artifacts, and oddities
 - [x] Validate current model fields against the core CRD mechanics
-- [ ] Document model gaps and source-backed extensions
-- [ ] Validate required model fields against the full CRD equipment tables
-- [ ] Implement justified model extensions
+- [x] Document model gaps and source-backed extensions
+- [x] Validate weapon-specific mechanical properties against representative CRD
+  tables
+- [x] Implement justified model extensions
 - [ ] Extract content with provenance and bilingual pairing
 - [ ] Add fidelity and contract tests
 
