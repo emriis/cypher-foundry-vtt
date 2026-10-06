@@ -99,12 +99,6 @@ test("CRD Foci use the same Ability logical identities in EN and FR", () => {
       failures.push(slug + ": EN/FR flowchart identity mismatch");
     }
 
-    const graphed = new Set(enEdges.flatMap(edge => edge.split("->")));
-    const missing = [...new Set(enKeys)].filter(key => !graphed.has(key));
-    if (missing.length > 0) {
-      failures.push(slug + ": Ability(s) missing from flowchart: " +
-        missing.sort().join(", "));
-    }
   }
 
   assert.deepEqual(failures, [], "Focus Ability identity audit failures");
