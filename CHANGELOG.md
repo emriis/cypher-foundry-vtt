@@ -11,6 +11,21 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ### Changed
 
+- Reworked the PC ApplicationV2 sheet into a single responsive player dashboard with
+  immediately visible stats, wounds, recoveries, defense, skills, Abilities, attacks,
+  Cyphers, equipment, armor, shields, advancement, XP, and Resource Points.
+- Removed the PC sheet's primary tab navigation so core gameplay state is no longer
+  hidden behind separate tabs; biography, notes, and custom fields remain collapsible.
+- Declared the PC sheet root as a `form` for reliable ApplicationV2 document submission.
+
+### Fixed
+
+- Repaired malformed PC header markup that could corrupt the sheet DOM.
+- Added an E2E contract for the initial PC dashboard render.
+
+
+### Changed
+
 - Reset the world migration layer for the 0.2.0-alpha.1 baseline. No supported
   pre-alpha world currently requires persisted-data conversion; future migrations
   should be introduced only alongside a concrete schema compatibility requirement.
