@@ -1,0 +1,43 @@
+{
+  "_id": "78b5435ed64baea0",
+  "_key": "!items!78b5435ed64baea0",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Darksight",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 6,
+      "max": 8
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a ten-hour recovery, you can see in darkness out to immediate range as if it were dim light, and out to short range as if it were very dim light. You can use this cypher on up to six creatures, in which case it lasts until they use a one-hour or longer recovery (one individual ending the cypher doesn’t affect the duration for other creatures).</p><p><strong>Genre Items: potion of darksight (fantasy); nightsight drops (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.darksight",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Darksight",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

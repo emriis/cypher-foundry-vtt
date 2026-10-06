@@ -1,0 +1,44 @@
+{
+  "_id": "99e045f387b61b87",
+  "_key": "!items!99e045f387b61b87",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Invulnerability Enhancement",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "ultra",
+    "powerLevels": [
+      "ultra"
+    ],
+    "randomRange": {
+      "min": 24,
+      "max": 33
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a recovery, you ignore all minor, moderate, and major wounds.</p><p><strong>Genre Items: potion of invulnerability; neutrino shield (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.invulnerability-enhancement",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Invulnerability Enhancement",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.invulnerability-enhancement"
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "_id": "e2018321224cfdf3",
+  "_key": "!items!e2018321224cfdf3",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Fiery Bomb",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "advanced",
+    "powerLevels": [
+      "advanced"
+    ],
+    "randomRange": {
+      "min": 20,
+      "max": 26
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Creates an immediate-radius explosion of fire or heat up to a short distance away. Make separate Speed attacks against each creature in the area. Success means they take 4 damage; failure means they still take 2 damage.</p><p><strong>Genre Items: scroll of fireball (fantasy); incendiary grenade (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.fiery-bomb",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Fiery Bomb",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

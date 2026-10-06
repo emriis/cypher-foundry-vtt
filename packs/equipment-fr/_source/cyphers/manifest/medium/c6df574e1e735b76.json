@@ -1,0 +1,44 @@
+{
+  "_id": "c6df574e1e735b76",
+  "_key": "!items!c6df574e1e735b76",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Poison Immunity",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 67,
+      "max": 69
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a one-hour or longer recovery, you are immune to poison of level 5 and lower, and you get two assets on defense tasks against poisons of level 6 and higher. (For this task, the asset limit is three instead of two.)</p><p><strong>Genre Items: amulet of fortitude (fantasy); antivenom injection (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.poison-immunity",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Poison Immunity",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.poison-immunity"
+      }
+    }
+  }
+}

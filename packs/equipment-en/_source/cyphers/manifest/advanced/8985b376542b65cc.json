@@ -1,0 +1,43 @@
+{
+  "_id": "8985b376542b65cc",
+  "_key": "!items!8985b376542b65cc",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Regeneration",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "advanced",
+    "powerLevels": [
+      "advanced"
+    ],
+    "randomRange": {
+      "min": 75,
+      "max": 77
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a one-hour or longer recovery, you regain 1 point to one of your Pools each round (you choose which Pool each time). If all of your Pools are full, this recovery pauses until at least one of your Pools is no longer full.</p><p><strong>Genre Items: ring of regeneration (fantasy); healing stimulant (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.regeneration",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Regeneration",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

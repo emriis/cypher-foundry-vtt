@@ -1,0 +1,43 @@
+{
+  "_id": "7915f98c2bbf4fd6",
+  "_key": "!items!7915f98c2bbf4fd6",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Lightning Wall",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 44,
+      "max": 46
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You create a wall of arcing electricity up to a short distance away, lasting until you use a ten-minute or longer recovery. The wall is up to 30 feet by 30 feet by 1 foot (9 m by 9 m by 30 cm) and it conforms to the space available. Anything passing through it takes 3 damage.</p><p><strong>Genre Items: lightning topaz (fantasy); electroplane module (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.lightning-wall",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Lightning Wall",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

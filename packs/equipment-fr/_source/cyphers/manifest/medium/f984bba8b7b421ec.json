@@ -1,0 +1,44 @@
+{
+  "_id": "f984bba8b7b421ec",
+  "_key": "!items!f984bba8b7b421ec",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Motion Sensor",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 59,
+      "max": 60
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a one-hour or longer recovery, you know when any movement occurs within short range and when large creatures or objects move within long range (you can tell the difference between the two). You sense this motion even if the source is hidden, behind a barrier, or invisible. When you detect this motion, you also know the number and size of what is moving.</p><p><strong>Genre Items: potion of alertness (fantasy); omnidar (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.motion-sensor",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Motion Sensor",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.motion-sensor"
+      }
+    }
+  }
+}

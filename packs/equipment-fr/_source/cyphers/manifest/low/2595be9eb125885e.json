@@ -1,0 +1,44 @@
+{
+  "_id": "2595be9eb125885e",
+  "_key": "!items!2595be9eb125885e",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Information Scanner",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 53,
+      "max": 54
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a one-hour or longer recovery, you gain an exceptional awareness of objects, creatures, and locations you’re viewing. If you use an action to scrutinize a target within short range, you learn relevant details, such as its level, its name, its species (if a creature), if it is magical or technological, and possibly other facts (such as a person’s address and phone number, the general purpose or function of a device or magic item, and so on). After you’ve used this sense six times, the cypher ends.</p><p><strong>Genre Items: amulet of scrutiny, wand of magic detection (fantasy); facial recognition datalink (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.information-scanner",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Information Scanner",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.information-scanner"
+      }
+    }
+  }
+}

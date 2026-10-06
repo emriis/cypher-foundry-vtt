@@ -1,0 +1,43 @@
+{
+  "_id": "6d781d03982f7407",
+  "_key": "!items!6d781d03982f7407",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Obstacle Bomb",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 65,
+      "max": 67
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Turns a short area within long range into difficult terrain, lasting until you take a one-hour or longer recovery. Most cyphers of this type create something appropriate to the location (ice, heavy snow, mud, rubble, bushes, and so on), but some create strange or fantastic obstacles (giant thorns, shadowy limbs, marbles, and so on).</p><p><strong>Genre Items: thorn burst rune (fantasy); rubble bomb (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.obstacle-bomb",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Obstacle Bomb",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

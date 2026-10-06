@@ -1,0 +1,44 @@
+{
+  "_id": "05bea8da753c0092",
+  "_key": "!items!05bea8da753c0092",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Knowledge Augmentation",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 61,
+      "max": 64
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a one-hour or longer recovery, you gain two assets in one area of knowledge. Roll on the table below to find what kind of knowledge the cypher provides. d00 Knowledge 01–07 Astronomy 08–15 Biology 16–23 Chemistry 24–31 Geology 32–39 History 40–47 Magic lore 48–54 Mathematics 55–61 Philosophy 62–69 Physics 70–77 Psychic lore 78–84 Psychology 85–92 Religious lore 93–00 Other (campaign-specific)</p><p><strong>Genre Items: potion of knowledge (fantasy); academic implant (sci-fi) Knowledge augmentation GM intrusion: The character becomes addicted to the instant training from the cypher, permanently hindering one skill that they’ve used this sort of cypher for.</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.knowledge-augmentation",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Knowledge Augmentation",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.knowledge-augmentation"
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "_id": "d846dfca022bb172",
+  "_key": "!items!d846dfca022bb172",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Range Extender",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 68,
+      "max": 69
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a one-hour or longer recovery, the range of any ranged weapon you use increases by one category (immediate to short, short to long, long to very long, very long to 1,000 feet [300 m]). A weapon with a range greater than very long has its range doubled.</p><p><strong>Genre Items: oil of far shots (fantasy); sniper scope (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.range-extender",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Range Extender",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.range-extender"
+      }
+    }
+  }
+}

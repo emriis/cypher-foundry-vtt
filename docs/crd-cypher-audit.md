@@ -9,7 +9,7 @@ genre-item labels, or outside references.
 ## Current coverage
 
 - Subtle Cyphers: 86 source records per language.
-- Manifest Cyphers: not yet extracted.
+- Manifest Cyphers: **103 source records per language**, representing 106 d00 table placements because Teleporter appears in four power tables.
 - Power Boost Cyphers: not yet extracted.
 - Artifact content: not present in the supplied CRD and therefore not extracted.
 
@@ -26,5 +26,6 @@ Every subtle Cypher source record:
 - preserves the CRD effect/explanation text in `system.description`;
 - carries CRD version, language, section, and source locator provenance.
 
-Manifest extraction will add the CRD power-level classification and preserve
-the special multi-level Teleporter behavior without inventing a single power level.
+Manifest extraction now preserves the CRD power-level classification, d00
+selection ranges, embedded random tables, and Teleporter's four power variants.
+

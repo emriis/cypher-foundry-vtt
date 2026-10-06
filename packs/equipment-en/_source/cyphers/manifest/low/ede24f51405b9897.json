@@ -1,0 +1,43 @@
+{
+  "_id": "ede24f51405b9897",
+  "_key": "!items!ede24f51405b9897",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Sound Dampener",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 76,
+      "max": 77
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a one-hour or longer recovery, sound within immediate range of you is dampened, giving everyone in the area an asset on stealth tasks and hindering sound‑based attacks and effects originating within or entering the area.</p><p><strong>Genre Items: scroll of silence (fantasy); decibel suppressor (sci-fi) A deaf creature’s perception tasks to hear are hindered by two to four steps depending on the extent of their hearing loss.</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.sound-dampener",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Sound Dampener",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

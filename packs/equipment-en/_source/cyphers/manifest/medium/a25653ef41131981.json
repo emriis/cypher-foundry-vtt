@@ -1,0 +1,43 @@
+{
+  "_id": "a25653ef41131981",
+  "_key": "!items!a25653ef41131981",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Inferno Wall",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 27,
+      "max": 28
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You create a wall of shimmering heat or flickering flames up to a short distance away, lasting until you use a ten-minute or longer recovery. The wall is up to 30 feet by 30 feet by 1 foot (9 m by 9 m by 30 cm) and it conforms to the space available. Anything passing through it takes 3 damage.</p><p><strong>Genre Items: inferno ruby (fantasy); infernoplane module (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.inferno-wall",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Inferno Wall",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

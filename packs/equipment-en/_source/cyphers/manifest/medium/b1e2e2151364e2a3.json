@@ -1,0 +1,43 @@
+{
+  "_id": "b1e2e2151364e2a3",
+  "_key": "!items!b1e2e2151364e2a3",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Instant Healing",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 31,
+      "max": 33
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You heal a moderate or major wound, as well as all of your minor wounds.</p><p><strong>Genre Items: potion of healing (fantasy); stimpack (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.instant-healing",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Instant Healing",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

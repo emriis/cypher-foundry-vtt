@@ -1,0 +1,43 @@
+{
+  "_id": "7b394d08615ed548",
+  "_key": "!items!7b394d08615ed548",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Gravity Bomb",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "advanced",
+    "powerLevels": [
+      "advanced"
+    ],
+    "randomRange": {
+      "min": 38,
+      "max": 41
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Creates an immediate-radius explosion of increased gravity up to a short distance away. Make separate Speed attacks against each creature in the area. Success means they take 3 damage, are knocked to the ground, and can’t take physical actions for one round. Failure means they still take 1 damage but are not knocked down and can act normally.</p><p><strong>Genre Items: lodestone (fantasy); singularity grenade (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.gravity-bomb",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Gravity Bomb",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

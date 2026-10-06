@@ -1,0 +1,44 @@
+{
+  "_id": "e1d580f4f8a4792e",
+  "_key": "!items!e1d580f4f8a4792e",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Tracer",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 84,
+      "max": 86
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Choose a target within short range. Until you take a ten-hour recovery, you know the direction and distance to that target, as long as it is within 100 miles (160 km) of you.</p><p><strong>Genre Items: crystal spider dart (fantasy); microtracker (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.tracer",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Tracer",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.tracer"
+      }
+    }
+  }
+}

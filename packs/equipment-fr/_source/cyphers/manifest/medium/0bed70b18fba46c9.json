@@ -1,0 +1,44 @@
+{
+  "_id": "0bed70b18fba46c9",
+  "_key": "!items!0bed70b18fba46c9",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Telekinesis",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 92,
+      "max": 94
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a one-hour or longer recovery, you can move objects and creatures within short range using your mind. Choose whether you want to use this ability with strength or finesse. Strength: You attempt to pull, push, or lift a target and move them up to a short distance. The target must be no larger than yourself and no heavier than your weight. Make an Intellect attack against the target. If you succeed, you move the target a short distance in any direction, either gently or with force. If they hit something, at your discretion they take 4 damage from the impact. If you use a level of Effort on the attack specifically for this cypher, the successful attack also knocks them prone. Finesse: You can manipulate an object or creature with finesse for one round as if you were touching it directly. For example, you could type on a keyboard, turn a doorknob and open a door, yank something from a creature’s grasp, or lift something out of a creature’s pocket. Using telekinesis this way requires a roll only if performing the task directly would require one. The cypher ends after you have used the telekinesis six times.</p><p><strong>Genre Items: ring of telekinesis (fantasy); personal tractor beam (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.telekinesis",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Telekinesis",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.telekinesis"
+      }
+    }
+  }
+}

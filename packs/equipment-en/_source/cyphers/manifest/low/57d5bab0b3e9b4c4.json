@@ -1,0 +1,43 @@
+{
+  "_id": "57d5bab0b3e9b4c4",
+  "_key": "!items!57d5bab0b3e9b4c4",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Enhanced Reflexes",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 34,
+      "max": 36
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a one-hour or longer recovery, you have an asset on noncombat tasks requiring manual dexterity, such as pickpocketing, lockpicking, juggling, defusing a bomb, or performing surgery.</p><p><strong>Genre Items: potion of adept fingers (fantasy); hand stabilizer (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.enhanced-reflexes",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Enhanced Reflexes",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

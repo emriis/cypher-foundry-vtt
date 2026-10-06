@@ -1,0 +1,43 @@
+{
+  "_id": "8396c2e6c4ae2580",
+  "_key": "!items!8396c2e6c4ae2580",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Phasing Ray",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "advanced",
+    "powerLevels": [
+      "advanced"
+    ],
+    "randomRange": {
+      "min": 66,
+      "max": 68
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Choose part of a physical structure within short range, such as a wall, floor, or other space up to about 10 feet by 10 feet (3.5 m by 3.5 m). Until you use a one-hour or longer recovery, that area goes out of phase, allowing creatures and objects to pass through it as if it weren’t there. The area looks the same as it did before (for example, a wall still blocks light and you can’t see through it). The cypher can’t affect structures above level 5.</p><p><strong>Genre Items: oil of ghost wall (fantasy); paradimensional resonator (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.phasing-ray",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Phasing Ray",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

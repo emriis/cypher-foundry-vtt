@@ -1,0 +1,43 @@
+{
+  "_id": "ae7f3e8a1de48726",
+  "_key": "!items!ae7f3e8a1de48726",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Memory Wipe",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 47,
+      "max": 49
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Make an Intellect attack against one thinking creature within long range that you can see. If you succeed, they lose their next turn and have no memory of the previous hour.</p><p><strong>Genre Items: scroll of mind fog (fantasy); amnesia emitter (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.memory-wipe",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Memory Wipe",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

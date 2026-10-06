@@ -1,0 +1,44 @@
+{
+  "_id": "4e6d6eeeb3216d6a",
+  "_key": "!items!4e6d6eeeb3216d6a",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Endure Climate",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 18,
+      "max": 19
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> For oneday, you’re resistant to hot or cold temperatures, as if you were wearing appropriate clothing. For example, you could walk through the Sahara Desert without getting heatstroke or a sunburn, or go out in the snow without risking frostbite or hypothermia.</p><p><strong>Genre Items: ring of comfort (fantasy); environmental regulator (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.endure-climate",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Endure Climate",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.endure-climate"
+      }
+    }
+  }
+}

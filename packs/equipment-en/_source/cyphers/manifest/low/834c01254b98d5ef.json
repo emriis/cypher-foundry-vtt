@@ -1,0 +1,43 @@
+{
+  "_id": "834c01254b98d5ef",
+  "_key": "!items!834c01254b98d5ef",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Retaliation",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 73,
+      "max": 75
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a one-hour or longer recovery, anyone within melee range striking you automatically takes 2 damage (no action or roll needed). The source of this damage depends on the cypher; some create a burst of electricity or fire, some inject a toxin or destructive nanites, and others temporarily cover your body with spikes or sharp scales.</p><p><strong>Genre Items: fire shield rune (fantasy); deterrence field (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.retaliation",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Retaliation",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "_id": "5d505b3b74834ebf",
+  "_key": "!items!5d505b3b74834ebf",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Phase Changer",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "advanced",
+    "powerLevels": [
+      "advanced"
+    ],
+    "randomRange": {
+      "min": 63,
+      "max": 65
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a one-hour or longer recovery, you can go out of phase, allowing you to pass through solid objects up to level 6. When in this insubstantial state, you cannot make physical attacks or be physically attacked. You can remain out of phase until you use a recovery, and can end the effect whenever you want.</p><p><strong>Genre Items: ghost salve (fantasy); paradimensional shield (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.phase-changer",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Phase Changer",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

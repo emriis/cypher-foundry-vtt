@@ -1,0 +1,44 @@
+{
+  "_id": "a21a4e54f680f55c",
+  "_key": "!items!a21a4e54f680f55c",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Repair",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 74,
+      "max": 75
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You repair an object that is damaged or neglected, restoring it to its full working condition if it originally was level 6 or lower. For example, you can restore a broken laptop or rusted sword to be as good as new. If the object was originally level 7 or higher, it isn’t fully repaired but instead regains 1 to 2 levels lost to damage. The repair happens at an accelerated pace; depending on the genre, it might be instantaneous or happen over the course of about a minute. This repair doesn’t cost you resource points.</p><p><strong>Genre Items: rune of repairing (fantasy); repairbot (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.repair",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Repair",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.repair"
+      }
+    }
+  }
+}

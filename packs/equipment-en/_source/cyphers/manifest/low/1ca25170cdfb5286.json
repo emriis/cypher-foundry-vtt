@@ -1,0 +1,43 @@
+{
+  "_id": "1ca25170cdfb5286",
+  "_key": "!items!1ca25170cdfb5286",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Remote Viewer",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 70,
+      "max": 72
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Choose a location within very long range. Until you use a one-hour or longer recovery, you can concentrate to see, hear, and smell through the cypher, no matter how far it is from you. The cypher doesn’t grant you any additional senses; for example, if the location of the cypher is dark, you can’t see anything where it is unless you normally can see in the dark.</p><p><strong>Genre Items: demon eye crystal (fantasy); microcamera (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.remote-viewer",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Remote Viewer",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

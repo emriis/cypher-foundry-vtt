@@ -1,0 +1,87 @@
+{
+  "_id": "512d87932321cb03",
+  "_key": "!items!512d87932321cb03",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Image Projector",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 51,
+      "max": 52
+    },
+    "variants": [],
+    "rollTables": [
+      {
+        "id": "image",
+        "name": "Image",
+        "formula": "1d100",
+        "results": [
+          {
+            "min": 1,
+            "max": 10,
+            "description": "<p>Copy of you that imitates your movements and speech (10-foot [3.5 m] cube)</p>"
+          },
+          {
+            "min": 11,
+            "max": 30,
+            "description": "<p>Terrifying creature, perhaps extinct or fictional (10-foot [3.5 m] cube)</p>"
+          },
+          {
+            "min": 31,
+            "max": 40,
+            "description": "<p>Huge machine or natural feature that obscures sight (30-foot [9 m] cube)</p>"
+          },
+          {
+            "min": 41,
+            "max": 50,
+            "description": "<p>Beautiful pastoral scene (50-foot [16 m] cube)</p>"
+          },
+          {
+            "min": 51,
+            "max": 60,
+            "description": "<p>Food that looks delicious but may not be familiar (10-foot [3.5 m] cube)</p>"
+          },
+          {
+            "min": 61,
+            "max": 80,
+            "description": "<p>Solid color that obscures sight (50-foot [16 m] cube)</p>"
+          },
+          {
+            "min": 81,
+            "max": 100,
+            "description": "<p>Incomprehensible scene that is disorienting and strange (20-foot [6 m] cube)</p>"
+          }
+        ]
+      }
+    ],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Projects a specific illusory or holographic scene in an immediate area up to a short distance away from you. The scene remains in place after it is created, and it includes appropriate movement, sound, and scent. For example, the scene might contain a ferocious wolf that paces back and forth but doesn’t leave the area. The scene lasts until you use aone-hour or longer recovery. Roll to determine the image. d00 Image 01– 10 Copy of you that imitates your movements and speech (10-foot [3.5 m] cube) 11– 30 Terrifying creature, perhaps extinct or fictional (10-foot [3.5 m] cube) 31– 40 Huge machine or natural feature that obscures sight (30-foot [9 m] cube) 41– 50 Beautiful pastoral scene (50-foot [16 m] cube) 51– 60 Food that looks delicious but may not be familiar (10-foot [3.5 m] cube) 61– 80 Solid color that obscures sight (50‑foot [16 m] cube) 81– 00 Incomprehensible scene that is disorienting and strange (20-foot [6 m] cube)</p><p><strong>Genre Items: illusion gem (fantasy); hologram projector (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.image-projector",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Image Projector",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.image-projector"
+      }
+    }
+  }
+}

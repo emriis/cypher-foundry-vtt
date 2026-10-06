@@ -1,0 +1,43 @@
+{
+  "_id": "bfa66f8e1570cf24",
+  "_key": "!items!bfa66f8e1570cf24",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Invisibility",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "advanced",
+    "powerLevels": [
+      "advanced"
+    ],
+    "randomRange": {
+      "min": 49,
+      "max": 53
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You become invisible. The invisibility is suspended if you do something to reveal your presence or position, such as attacking, using a character ability, moving a large object, and so on. You can reactivate the suspended invisibility by using an action to focus on hiding; otherwise, it ends after you use a one-hour or longer recovery.</p><p><strong>Genre Items: potion of invisibility (fantasy); stealthshroud (sci-fi) An invisible character’s attack is eased by two steps. Attacks on an invisible character are hindered by four steps or are nearly impossible if the attacker has no idea where they might be.</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.invisibility",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Invisibility",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

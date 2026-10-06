@@ -1,0 +1,43 @@
+{
+  "_id": "e7cfee7d344dd52f",
+  "_key": "!items!e7cfee7d344dd52f",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Paralyzer",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 63,
+      "max": 64
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Make an Intellect attack against a foe within short range (if the foe is level 7 or higher, the attack is hindered by two steps). If you succeed, they are stunned and unable to take actions until you use a ten-minute or longer recovery.</p><p><strong>Genre Items: crystal paralysis dart (fantasy); neurosuppressor (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.paralyzer",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Paralyzer",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

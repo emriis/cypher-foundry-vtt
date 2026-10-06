@@ -1,0 +1,44 @@
+{
+  "_id": "13fe811e2a8e48d6",
+  "_key": "!items!13fe811e2a8e48d6",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Object Duplicator",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 61,
+      "max": 62
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You duplicate a touched item that you can hold in one hand (such as a weapon, shield, or piece of equipment), creating a working copy. The original item must be level 6 or less. The duplicated item persists until you take a one￾hour or longer recovery, unless it’s the sort of equipment that is expended after use (such as a box of bullets or a grenade).</p><p><strong>Genre Items: promethean clay (fantasy); nanoreplicator (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.object-duplicator",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Object Duplicator",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.object-duplicator"
+      }
+    }
+  }
+}

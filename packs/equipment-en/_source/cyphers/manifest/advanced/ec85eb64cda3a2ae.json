@@ -1,0 +1,43 @@
+{
+  "_id": "ec85eb64cda3a2ae",
+  "_key": "!items!ec85eb64cda3a2ae",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Shock Bomb",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "advanced",
+    "powerLevels": [
+      "advanced"
+    ],
+    "randomRange": {
+      "min": 78,
+      "max": 83
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Creates an immediate-radius explosion of electricity up to a short distance away. Make separate Speed attacks against each creature in the area. Success means they take 4 damage; failure means they still take 2 damage.</p><p><strong>Genre Items: scroll of lightning burst (fantasy); amperage grenade (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.shock-bomb",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Shock Bomb",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

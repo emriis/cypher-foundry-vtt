@@ -1,0 +1,44 @@
+{
+  "_id": "39d0f7cc4155b20a",
+  "_key": "!items!39d0f7cc4155b20a",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Penultimate Enhancement",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "ultra",
+    "powerLevels": [
+      "ultra"
+    ],
+    "randomRange": {
+      "min": 47,
+      "max": 56
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a one-hour or longer recovery, you have the ability to add three assets to one task. (For this task, the asset limit is three instead of two.) The cypher ends after you use this ability one time.</p><p><strong>Genre Items: potion of heroism (fantasy); probability adjuster (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.penultimate-enhancement",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Penultimate Enhancement",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.penultimate-enhancement"
+      }
+    }
+  }
+}

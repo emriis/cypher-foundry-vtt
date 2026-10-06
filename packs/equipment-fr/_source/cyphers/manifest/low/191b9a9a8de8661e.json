@@ -1,0 +1,44 @@
+{
+  "_id": "191b9a9a8de8661e",
+  "_key": "!items!191b9a9a8de8661e",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Instant Servant",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 59,
+      "max": 60
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Creates (or turns into) a humanoid automaton (level 1) that is roughly 2 feet (60 cm) tall and lasts until you use a one-hour or longer recovery. It cannot speak but it can understand your verbal commands (commanding it is not an action). Like a follower, it can perform tasks independently or assist you with your tasks. It never intentionally moves farther than long range from you. It is not artificially intelligent or capable of initiating actions on its own and does only as commanded. At the GM’s discretion, it might have specialized knowledge, such as how to operate a particular device or how to get to the home of the person who created it.</p><p><strong>Genre Items: servant stone (fantasy); disposable robot (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.instant-servant",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Instant Servant",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.instant-servant"
+      }
+    }
+  }
+}

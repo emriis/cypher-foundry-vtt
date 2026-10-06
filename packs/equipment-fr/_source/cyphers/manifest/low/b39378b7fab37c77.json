@@ -1,0 +1,44 @@
+{
+  "_id": "b39378b7fab37c77",
+  "_key": "!items!b39378b7fab37c77",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Comprehension",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 1,
+      "max": 2
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Over a few minutes of interacting with a creature or device that uses a language you don’t understand, you learn the language and can communicate using it. This learning is permanent and does not count toward your cypher limit.</p><p><strong>Genre Items: scroll of translation (fantasy); translator implant (sci-fi) Some comprehension cyphers have a preset language rather than allowing you to choose an unfamiliar language. A comprehension cypher works even if you normally don’t use language—for example, if you’re naturally telepathic.</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.comprehension",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Comprehension",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.comprehension"
+      }
+    }
+  }
+}

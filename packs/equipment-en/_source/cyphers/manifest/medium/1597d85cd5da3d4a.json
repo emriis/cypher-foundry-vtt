@@ -1,0 +1,43 @@
+{
+  "_id": "1597d85cd5da3d4a",
+  "_key": "!items!1597d85cd5da3d4a",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Flash Bomb",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 16,
+      "max": 17
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Creates an immediate-radius explosion of bright light up to a short distance away. Make separate Speed attacks against each creature in the area. Success means they are blinded until you use a ten-minute or longer recovery.</p><p><strong>Genre Items: scroll of blindness (fantasy); flash grenade (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.flash-bomb",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Flash Bomb",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

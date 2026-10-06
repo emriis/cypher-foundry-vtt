@@ -1,0 +1,44 @@
+{
+  "_id": "e2007be9b4350161",
+  "_key": "!items!e2007be9b4350161",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Future Potential",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 23,
+      "max": 24
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Choose one ability from your focus that you don’t currently have. The ability must be one you could select as an advancement at your current tier or one tier higher. Until you use a one-hour or longer recovery, you can use this ability as if you had chosen it as an advancement (you must pay any Pool point or other costs to activate the ability, as normal). For example, if you’re a tier 1 character with the Blazes With Fire focus, you can use this cypher to temporarily learn one tier 1 focus ability you don’t know or one tier 2 focus ability.</p><p><strong>Genre Items: potion of future glory (fantasy); personal tachyon extractor (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.future-potential",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Future Potential",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.future-potential"
+      }
+    }
+  }
+}

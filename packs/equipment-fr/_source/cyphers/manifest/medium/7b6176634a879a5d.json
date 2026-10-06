@@ -1,0 +1,44 @@
+{
+  "_id": "7b6176634a879a5d",
+  "_key": "!items!7b6176634a879a5d",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Flight",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "medium",
+    "powerLevels": [
+      "medium"
+    ],
+    "randomRange": {
+      "min": 18,
+      "max": 20
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a one-hour or longer recovery, you can fly at your normal ground movement speed in any direction. You can carry additional weight (up to about the weight of an average adult human), slowing your movement to about an immediate distance as your action, but any more weight than that prevents you from flying.</p><p><strong>Genre Items: cloak of flying (fantasy); jetpack (sci-fi) The specific mechanism of your flight varies for each flight cypher. One might carry you on a translucent force field that you mentally control, another might temporarily give you wings, and another might propel you with jets of air.</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.flight",
+        "language": "fr",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Flight",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ],
+        "sourceLogicalId": "cypher.manifest.flight"
+      }
+    }
+  }
+}

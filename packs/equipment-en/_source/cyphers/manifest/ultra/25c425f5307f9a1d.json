@@ -1,0 +1,43 @@
+{
+  "_id": "25c425f5307f9a1d",
+  "_key": "!items!25c425f5307f9a1d",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Ultimate Enhancement",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "ultra",
+    "powerLevels": [
+      "ultra"
+    ],
+    "randomRange": {
+      "min": 79,
+      "max": 90
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a recovery, all your tasks are eased by two steps.</p><p><strong>Genre Items: potion of superheroism (fantasy); improbability adjuster (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.ultimate-enhancement",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Ultimate Enhancement",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

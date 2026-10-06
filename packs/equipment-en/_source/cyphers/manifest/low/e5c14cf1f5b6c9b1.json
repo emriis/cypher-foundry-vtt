@@ -1,0 +1,43 @@
+{
+  "_id": "e5c14cf1f5b6c9b1",
+  "_key": "!items!e5c14cf1f5b6c9b1",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Eagleseye",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 16,
+      "max": 17
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a one-hour or longer recovery, you can see ten times as far as normal as if using powerful binoculars, without interfering with your ability to see things up close.</p><p><strong>Genre Items: potion of farsight (fantasy); nanobinocs (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.eagleseye",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Eagleseye",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

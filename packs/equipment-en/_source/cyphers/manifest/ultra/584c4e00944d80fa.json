@@ -1,0 +1,43 @@
+{
+  "_id": "584c4e00944d80fa",
+  "_key": "!items!584c4e00944d80fa",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Incredible Speed",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "ultra",
+    "powerLevels": [
+      "ultra"
+    ],
+    "randomRange": {
+      "min": 14,
+      "max": 23
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> You can take one extra action on your turn (but no more than once per turn). For example, you can take all your normal actions on your turn, then take an extra action to move or attack. The cypher ends after you use this ability three times or if you use a one-hour or longer recovery.</p><p><strong>Genre Items: potion of haste (fantasy); accelerative harness (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.incredible-speed",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Incredible Speed",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

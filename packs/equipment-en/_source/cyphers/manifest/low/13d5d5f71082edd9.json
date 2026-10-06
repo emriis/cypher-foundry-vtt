@@ -1,0 +1,43 @@
+{
+  "_id": "13d5d5f71082edd9",
+  "_key": "!items!13d5d5f71082edd9",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Speeding Bullet",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 78,
+      "max": 79
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Your movement speed increases until you use a one-hour or longer recovery. You can move a short distance as part of another action (instead of an immediate distance) without hindering your tasks, or a long distance as your entire action (instead of a short distance) and only hinder your tasks by one step, or a very long distance as your entire action (instead of a long distance) and hinder your tasks by two steps until the end of your next turn.</p><p><strong>Genre Items: longstrider potion (fantasy); sprint module (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.speeding-bullet",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Speeding Bullet",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

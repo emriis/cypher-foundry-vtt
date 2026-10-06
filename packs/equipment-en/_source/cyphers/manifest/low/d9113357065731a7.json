@@ -1,0 +1,43 @@
+{
+  "_id": "d9113357065731a7",
+  "_key": "!items!d9113357065731a7",
+  "document": "Item",
+  "type": "cypher",
+  "name": "Enhanced Strength",
+  "crdType": "cypher",
+  "system": {
+    "cypherType": "manifest",
+    "level": 6,
+    "powerLevel": "low",
+    "powerLevels": [
+      "low"
+    ],
+    "randomRange": {
+      "min": 37,
+      "max": 40
+    },
+    "variants": [],
+    "rollTables": [],
+    "internal": false,
+    "identified": true,
+    "depleted": false,
+    "description": "<p><strong>Effect:</strong> Until you use a one-hour or longer recovery, you have an asset on noncombat tasks requiring raw strength, such as breaking down a door, lifting a heavy boulder, or bending a metal gate.</p><p><strong>Genre Items: belt of strength (fantasy); muscle augmenter (sci-fi)</strong></p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "cypher.manifest.enhanced-strength",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Manifest Cypher Descriptions",
+        "sourceLocator": "CRD — Manifest Cypher Descriptions — Enhanced Strength",
+        "transformations": [
+          "structured CRD power classification",
+          "structured CRD random range",
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}

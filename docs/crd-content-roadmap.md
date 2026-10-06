@@ -85,7 +85,7 @@ manually.
 | Weapons | Item: attack | **Model ready — extraction planned** |
 | Armor | Item: armor | **Model ready — extraction planned** |
 | Shields | Item: shield | **Model ready — extraction planned** |
-| Cyphers | Item: cypher | **In progress — subtle extracted** |
+| Cyphers | Item: cypher | **In progress — subtle + manifest extracted** |
 | Artifacts | Item: artifact | **Model ready — extraction planned** |
 | Creatures / NPCs | Actor: npc | Planned |
 
@@ -246,7 +246,7 @@ the CRD presents them as reusable abilities.
 - [ ] Armor
 - [ ] Shields
 - [x] Subtle Cyphers — complete 2026-07-29 CRD inventory
-- [ ] Manifest Cyphers — low, medium, advanced, high, and ultra power
+- [x] Manifest Cyphers — 103-record 2026-07-29 CRD inventory / 106 random-table placements
 - [ ] Power Boost Cyphers
 - [ ] Artifacts
 - [ ] Oddities
