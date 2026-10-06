@@ -29,6 +29,12 @@ globalThis.foundry = {
 const { default: CypherAttackData } =
   await import("../../module/data-models/item-attack.mjs");
 
+test("weapon schema permits explicit special weapons without a light/medium/heavy category", () => {
+  const schema = CypherAttackData.defineSchema();
+  assert.equal(schema.attackType.options.nullable, true);
+  assert.deepEqual(schema.attackType.options.choices, ["", "light", "medium", "heavy"]);
+});
+
 test("weapon schema exposes structured mechanics without removing source properties", () => {
   const schema = CypherAttackData.defineSchema();
 

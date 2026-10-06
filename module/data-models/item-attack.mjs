@@ -74,8 +74,9 @@ export default class CypherAttackData extends foundry.abstract.TypeDataModel {
     return {
       attackType: new StringField({
         required: true,
-        initial: "light",
-        choices: ["light", "medium", "heavy"]
+        nullable: true,
+        initial: null,
+        choices: ["", "light", "medium", "heavy"]
       }),
       range: new StringField({
         required: true, initial: "immediate", choices: CYPHER.rangeCategories

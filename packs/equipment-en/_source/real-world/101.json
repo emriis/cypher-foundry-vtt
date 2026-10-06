@@ -18,7 +18,7 @@
       "Heavy weapon, rapid-fire weapon, long range"
     ],
     "mechanics": {
-      "twoHanded": false,
+      "twoHanded": true,
       "rapidFire": true,
       "ignoresPhysicalArmor": 0,
       "cutsThroughMaterialsLevel": null,
