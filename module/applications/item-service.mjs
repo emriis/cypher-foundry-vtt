@@ -63,7 +63,8 @@ export async function rollDepletion(item) {
     return true;
   }
   const max = CYPHER.depletionDieMax[die];
-  const min = item.system.depletionMin ?? item.system.depletionThreshold ?? 1;\n  const maxThreshold = item.system.depletionMax ?? item.system.depletionThreshold ?? min;
+  const min = item.system.depletionMin ?? item.system.depletionThreshold ?? 1;
+  const maxThreshold = item.system.depletionMax ?? item.system.depletionThreshold ?? min;
   const roll = await new Roll(`1d${max}`).evaluate();
   const depletes = roll.total >= min && roll.total <= maxThreshold;
   if (depletes) await item.update({ "system.depleted": true });
