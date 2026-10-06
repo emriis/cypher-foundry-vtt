@@ -17,7 +17,6 @@ gaps; it does not invent additional game rules.
 | Shields | independent wound track: 3 minor, 2 moderate, 1 major; broken after major wound | wounds with max/current values, equipped, derived broken state | **Covered** |
 | Cyphers | one-use nature, standard or Power Boost category, subtle/manifest form where determined, CRD effect level, power level where applicable, identification/internal state, and source-backed random tables | cypherCategory, cypherType, level, powerLevel, powerLevels, randomRange, variants, rollTables, identified, internal, depleted, description | **Structured** |
 | Artifacts | level/form, identification, reusable depletion including never-depletes | level, form, identified, depletionDie, depletionThreshold, depleted, description | **Covered** |
-| Oddities | descriptive item content | description | **Covered** |
 
 ## 2. Model gaps to resolve before automation
 

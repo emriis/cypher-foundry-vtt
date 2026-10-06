@@ -443,7 +443,7 @@ from this system's own, so this is a real mapper, not a direct load:
   description text (which mentions the extra Effort) is kept as-is, and this has no bearing on
   actual Effort spending during rolls (handled independently by the roll dialog).
 - Skills, Abilities, Equipment, and Weapons (Attacks) are supported. **Cyphers, Artifacts,
-  Armor, Shields, and Oddities aren't mapped yet**, for lack of an export sample containing them
+  Armor and Shields aren't mapped yet**, for lack of an export sample containing them
   so far — they're skipped with a warning (shown in-game and in the console) rather than guessed
   at. If you have an export containing those types, share it to extend the mapper.
 - `game.cypher.importFromBuilder(jsonData)` and `game.cypher.openImportDialog()` remain usable
