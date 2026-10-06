@@ -183,7 +183,12 @@ describe("Given a new PC builds a character from CRD content", () => {
                 ability("later", "Later Ability", 2, {
                   prerequisites: ["first"]
                 })
-              ]
+              ].map(item => ({
+                id: item.id,
+                uuid: item.uuid,
+                name: item.name,
+                ...item.system
+              }))
             }
           }
         }
