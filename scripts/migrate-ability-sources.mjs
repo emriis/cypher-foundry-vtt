@@ -237,6 +237,13 @@ async function normalizeEquipmentSources() {
       document._id = id;
       document._key = `!items!${id}`;
 
+      // Generic CRD equipment has no physical-weight statistic. The
+      // light/medium/heavy categories belong to weapons and armor, while
+      // ordinary equipment weight is optional user-authored metadata.
+      if (document.crdType === "equipment" || document.type === "equipment") {
+        delete document.system.weight;
+      }
+
       await fs.writeFile(filePath, JSON.stringify(document, null, 2) + "\n");
     }
   }
