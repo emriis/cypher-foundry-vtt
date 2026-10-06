@@ -1621,10 +1621,13 @@
   overflow: hidden;
 }
 
-.cypher.sheet .window-content > form {
+.cypher.sheet .pc-sheet-layout,
+.cypher.sheet .item-sheet-layout,
+.cypher.sheet .npc-sheet-layout,
+.cypher.sheet .community-sheet-layout {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 1 1 auto;
   min-height: 0;
 }
 
@@ -1635,6 +1638,7 @@
 }
 
 .cypher.sheet .tab,
+.cypher.sheet .pc-dashboard,
 .cypher.sheet .npc-body,
 .cypher.sheet .community-body,
 .cypher.sheet .item-body {
