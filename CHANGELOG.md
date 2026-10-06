@@ -17,6 +17,8 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 - Removed the PC sheet's primary tab navigation so core gameplay state is no longer
   hidden behind separate tabs; biography, notes, and custom fields remain collapsible.
 - Declared the PC sheet root as a `form` for reliable ApplicationV2 document submission.
+- Refactored all ApplicationV2 document sheets to use one explicit root template per
+  application, with the sheet sections loaded as Handlebars partials.
 
 ### Fixed
 

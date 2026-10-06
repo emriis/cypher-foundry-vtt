@@ -67,10 +67,13 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
   };
 
   static PARTS = {
-    main: {
+    sheet: {
       root: true,
-      template: "systems/cypher/templates/actor/parts/main.hbs",
-      templates: ["systems/cypher/templates/actor/parts/header.hbs"],
+      template: "systems/cypher/templates/actor/pc.hbs",
+      templates: [
+        "systems/cypher/templates/actor/parts/header.hbs",
+        "systems/cypher/templates/actor/parts/main.hbs"
+      ],
       scrollable: [".pc-dashboard"]
     }
   };
