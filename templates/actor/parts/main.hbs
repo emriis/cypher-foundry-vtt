@@ -1,197 +1,614 @@
-{{!-- Main PC view for stat pools, wounds, armor, and quick task actions. --}}
-<section class="tab main {{tab.cssClass}}" data-group="primary" data-tab="main">
+{{!-- Single-page PC dashboard: core play state remains visible without tab navigation. --}}
+<section class="pc-dashboard">
 
-  <div class="stats-row">
-    {{#each system.stats as |stat key|}}
-    <div class="stat-block stat-{{key}}">
-      <div class="stat-block-header">
-        <h3>{{localize (concat "CYPHER.Stat." key)}}</h3>
-        <i class="fa-solid fa-dice-d20 stat-die-icon" aria-hidden="true"></i>
+  <section class="pc-section pc-core-stats">
+    <div class="pc-section-heading">
+      <div>
+        <span class="pc-kicker">{{localize "CYPHER.Sheet.Core"}}</span>
+        <h2>{{localize "CYPHER.Sheet.StatsAndHealth"}}</h2>
       </div>
-      <div class="pool-row">
-        <label class="sr-only" for="pool-value-{{key}}">{{localize (concat "CYPHER.Stat." key)}} — {{localize 'CYPHER.Stat.PoolValue'}}</label>
-        <input id="pool-value-{{key}}" class="pool-value" name="system.stats.{{key}}.pool.value" type="number" value="{{stat.pool.value}}" min="0"/>
-        <span class="pool-separator" aria-hidden="true">/</span>
-        <label class="sr-only" for="pool-max-{{key}}">{{localize (concat "CYPHER.Stat." key)}} — {{localize 'CYPHER.Stat.PoolMax'}}</label>
-        <input id="pool-max-{{key}}" class="pool-max" name="system.stats.{{key}}.pool.max" type="number" value="{{stat.pool.max}}" min="0"/>
-      </div>
-      <label class="edge-row">{{localize 'CYPHER.Edge'}}
-        <input name="system.stats.{{key}}.edge" type="number" value="{{stat.edge}}" min="0"/>
-      </label>
-      <button type="button" class="roll-stat" data-action="rollStat" data-stat="{{key}}" data-difficulty="3">
-        <i class="fa-solid fa-dice-d20"></i> {{localize 'CYPHER.Roll.Roll'}}
+      <button type="button" data-action="addCustomStat" title="{{localize 'CYPHER.Stat.AddCustom'}}">
+        <i class="fa-solid fa-plus"></i> {{localize "CYPHER.Stat.AddCustom"}}
       </button>
     </div>
-    {{/each}}
-  </div>
 
-  {{#if system.customStats.length}}
-  <div class="stats-row custom-stats-row">
-    {{#each system.customStats as |stat|}}
-    <div class="stat-block stat-custom" data-stat-id="{{stat.id}}">
-      <div class="stat-block-header">
-        <h3>{{stat.label}}</h3>
-        <a class="remove-custom-stat" data-action="deleteCustomStat" title="{{localize 'CYPHER.Stat.RemoveCustom'}}"><i class="fa-solid fa-xmark"></i></a>
-      </div>
-       <!-- Preserve id and label on whole-form submission: Foundry replaces an ArrayField as a
-         whole, so any element field without a named input would otherwise be lost. -->
-      <input type="hidden" name="system.customStats.{{@index}}.id" value="{{stat.id}}"/>
-      <input type="hidden" name="system.customStats.{{@index}}.label" value="{{stat.label}}"/>
-      <div class="pool-row">
-        <label class="sr-only" for="custom-pool-value-{{stat.id}}">{{stat.label}} — {{localize 'CYPHER.Stat.PoolValue'}}</label>
-        <input id="custom-pool-value-{{stat.id}}" class="pool-value" name="system.customStats.{{@index}}.pool.value" type="number" value="{{stat.pool.value}}" min="0"/>
-        <span class="pool-separator" aria-hidden="true">/</span>
-        <label class="sr-only" for="custom-pool-max-{{stat.id}}">{{stat.label}} — {{localize 'CYPHER.Stat.PoolMax'}}</label>
-        <input id="custom-pool-max-{{stat.id}}" class="pool-max" name="system.customStats.{{@index}}.pool.max" type="number" value="{{stat.pool.max}}" min="0"/>
-      </div>
-      <label class="edge-row">{{localize 'CYPHER.Edge'}}
-        <input name="system.customStats.{{@index}}.edge" type="number" value="{{stat.edge}}" min="0"/>
-      </label>
-      <button type="button" class="roll-stat" data-action="rollStat" data-stat="{{stat.id}}" data-difficulty="3">
-        <i class="fa-solid fa-dice-d20"></i> {{localize 'CYPHER.Roll.Roll'}}
-      </button>
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
-
-  <button type="button" class="add-custom-stat" data-action="addCustomStat">
-    <i class="fa-solid fa-plus"></i> {{localize 'CYPHER.Stat.AddCustom'}}
-  </button>
-
-
-  {{#if system.hindered}}
-  <p class="hindered-banner">
-    <i class="fa-solid fa-triangle-exclamation"></i>
-    {{localize 'CYPHER.Wound.HinderedBanner'}} ({{system.hinderSteps}} {{localize 'CYPHER.Roll.Steps'}})
-  </p>
-  {{/if}}
-  {{#if system.dead}}
-  <p class="dead-banner"><i class="fa-solid fa-skull"></i> {{localize 'CYPHER.Wound.DeadBanner'}}</p>
-  {{/if}}
-
-  <div class="vitals-row">
-
-    <div class="wounds-block">
-      <h3>{{localize 'CYPHER.Wound.Title'}}</h3>
-      <div class="wounds-row">
-        {{#each system.wounds as |wound severity|}}
-        <div class="wound-severity wound-{{severity}}">
-          <label class="wound-severity-label" for="wound-current-{{severity}}">{{localize (concat "CYPHER.Wound." severity)}}</label>
-          <div class="wound-boxes">
-            <label class="sr-only" for="wound-current-{{severity}}">{{localize (concat "CYPHER.Wound." severity)}} — {{localize 'CYPHER.Wound.CurrentLabel'}}</label>
-            <input id="wound-current-{{severity}}" name="system.wounds.{{severity}}.current" type="number" value="{{wound.current}}" min="0" max="{{wound.max}}"/>
-            <span class="wound-max-note">/ {{wound.max}}</span>
-          </div>
-          {{#ifNotEquals severity "major"}}
-          <button type="button" data-action="rallyWound" data-severity="{{severity}}" title="{{localize 'CYPHER.Wound.Rally'}}">
-            <i class="fa-solid fa-heart-pulse"></i>
+    <div class="stats-row pc-stats-grid">
+      {{#each system.stats as |stat key|}}
+      <article class="stat-block stat-{{key}}">
+        <div class="stat-block-header">
+          <h3>{{localize (concat "CYPHER.Stat." key)}}</h3>
+          <button type="button" class="pc-stat-roll"
+            data-action="rollStat" data-stat="{{key}}" data-difficulty="3"
+            title="{{localize 'CYPHER.Roll.Roll'}}">
+            <i class="fa-solid fa-dice-d20"></i>
           </button>
+        </div>
+        <div class="pc-stat-pool">
+          <label>
+            <span class="pc-field-label">{{localize "CYPHER.Stat.PoolValue"}}</span>
+            <input name="system.stats.{{key}}.pool.value" type="number"
+              value="{{stat.pool.value}}" min="0"/>
+          </label>
+          <span class="pc-pool-slash">/</span>
+          <label>
+            <span class="pc-field-label">{{localize "CYPHER.Stat.PoolMax"}}</span>
+            <input name="system.stats.{{key}}.pool.max" type="number"
+              value="{{stat.pool.max}}" min="0"/>
+          </label>
+        </div>
+        <label class="edge-row">
+          {{localize "CYPHER.Edge"}}
+          <input name="system.stats.{{key}}.edge" type="number" value="{{stat.edge}}" min="0"/>
+        </label>
+        {{#if stat.depleted}}
+        <span class="pc-state pc-state-danger">
+          <i class="fa-solid fa-circle-exclamation"></i> {{localize "CYPHER.Stat.Depleted"}}
+        </span>
+        {{/if}}
+      </article>
+      {{/each}}
+
+      {{#each system.customStats as |stat|}}
+      <article class="stat-block stat-custom" data-stat-id="{{stat.id}}">
+        <div class="stat-block-header">
+          <h3>{{stat.label}}</h3>
+          <button type="button" class="remove-custom-stat" data-action="deleteCustomStat"
+            title="{{localize 'CYPHER.Stat.RemoveCustom'}}">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <input type="hidden" name="system.customStats.{{@index}}.id" value="{{stat.id}}"/>
+        <input type="hidden" name="system.customStats.{{@index}}.label" value="{{stat.label}}"/>
+        <div class="pc-stat-pool">
+          <label>
+            <span class="pc-field-label">{{localize "CYPHER.Stat.PoolValue"}}</span>
+            <input name="system.customStats.{{@index}}.pool.value" type="number"
+              value="{{stat.pool.value}}" min="0"/>
+          </label>
+          <span class="pc-pool-slash">/</span>
+          <label>
+            <span class="pc-field-label">{{localize "CYPHER.Stat.PoolMax"}}</span>
+            <input name="system.customStats.{{@index}}.pool.max" type="number"
+              value="{{stat.pool.max}}" min="0"/>
+          </label>
+        </div>
+        <label class="edge-row">
+          {{localize "CYPHER.Edge"}}
+          <input name="system.customStats.{{@index}}.edge" type="number"
+            value="{{stat.edge}}" min="0"/>
+        </label>
+      </article>
+      {{/each}}
+    </div>
+
+    {{#if system.hindered}}
+    <div class="hindered-banner pc-alert">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      {{localize "CYPHER.Wound.HinderedBanner"}} —
+      {{system.hinderSteps}} {{localize "CYPHER.Roll.Steps"}}
+    </div>
+    {{/if}}
+    {{#if system.dead}}
+    <div class="dead-banner pc-alert">
+      <i class="fa-solid fa-skull"></i> {{localize "CYPHER.Wound.DeadBanner"}}
+    </div>
+    {{/if}}
+  </section>
+
+  <div class="pc-dashboard-grid">
+    <div class="pc-column">
+
+      <section class="pc-section">
+        <div class="pc-section-heading compact">
+          <h2>{{localize "CYPHER.Wound.Title"}}</h2>
+        </div>
+        <div class="pc-wound-grid">
+          {{#each system.wounds as |wound severity|}}
+          <div class="pc-wound">
+            <div class="pc-wound-title">
+              <span>{{localize (concat "CYPHER.Wound." severity)}}</span>
+              <span>{{wound.current}} / {{wound.max}}</span>
+            </div>
+            <input name="system.wounds.{{severity}}.current" type="number"
+              value="{{wound.current}}" min="0" max="{{wound.max}}"
+              aria-label="{{localize (concat 'CYPHER.Wound.' severity)}}"/>
+            {{#ifNotEquals severity "major"}}
+            <button type="button" class="pc-inline-action"
+              data-action="rallyWound" data-severity="{{severity}}">
+              <i class="fa-solid fa-heart-pulse"></i> {{localize "CYPHER.Wound.Rally"}}
+            </button>
+            {{else}}
+              {{#if system.canRallyMajor}}
+              <button type="button" class="pc-inline-action"
+                data-action="rallyWound" data-severity="major">
+                <i class="fa-solid fa-heart-pulse"></i> {{localize "CYPHER.Wound.Rally"}}
+              </button>
+              {{/if}}
+            {{/ifNotEquals}}
+          </div>
+          {{/each}}
+        </div>
+        <p class="pc-help-text">{{localize "CYPHER.Wound.Hint"}}</p>
+      </section>
+
+      <section class="pc-section">
+        <div class="pc-section-heading compact">
+          <h2>{{localize "CYPHER.Recovery.Title"}}</h2>
+        </div>
+        <div class="pc-recovery-grid">
+          {{#each system.recoveries as |checked key|}}
+          <label class="pc-recovery-card">
+            <span class="pc-recovery-name">{{localize (concat "CYPHER.Recovery." key)}}</span>
+            <span class="pc-recovery-controls">
+              <input type="checkbox" name="system.recoveries.{{key}}" {{#if checked}}checked{{/if}}/>
+              <button type="button" data-action="rollRecovery" data-interval="{{key}}"
+                title="{{localize 'CYPHER.Roll.Recovery'}}">
+                <i class="fa-solid fa-dice-d6"></i>
+              </button>
+            </span>
+          </label>
+          {{/each}}
+        </div>
+      </section>
+
+      <section class="pc-section">
+        <div class="pc-section-heading compact">
+          <h2>{{localize "CYPHER.Defense.Title"}}</h2>
+        </div>
+        <div class="pc-defense-grid">
+          <button type="button" data-action="rollDefense" data-defense-type="block">
+            <i class="fa-solid fa-shield-halved"></i> {{localize "CYPHER.Defense.Block"}}
+          </button>
+          <button type="button" data-action="rollDefense" data-defense-type="dodge">
+            <i class="fa-solid fa-person-running"></i> {{localize "CYPHER.Defense.Dodge"}}
+          </button>
+        </div>
+        <div class="pc-armor-summary">
+          {{#if system.armor.itemId}}
+          <strong>{{system.armor.name}}</strong>
+          <span>{{localize (concat "CYPHER.Armor." system.armor.category)}}</span>
+          <span>{{localize "CYPHER.Armor.BlockEase"}}: {{system.armor.blockEase}}</span>
+          <span>{{localize "CYPHER.Armor.DodgeHinder"}}: {{system.armor.dodgeHinder}}</span>
+          {{#if system.armor.damaged}}
+          <span class="pc-state pc-state-danger">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            {{localize "CYPHER.Armor.DamagedBanner"}}
+          </span>
+          <button type="button" data-action="repairArmor">
+            <i class="fa-solid fa-hammer"></i> {{localize "CYPHER.Armor.Repair"}}
+          </button>
+          {{/if}}
           {{else}}
-            {{#if ../system.canRallyMajor}}
-            <button type="button" data-action="rallyWound" data-severity="major" title="{{localize 'CYPHER.Wound.RallyMajorSuperhero'}}">
-              <i class="fa-solid fa-heart-pulse"></i>
+          <span>{{localize "CYPHER.Armor.NoneEquipped"}}</span>
+          {{/if}}
+        </div>
+      </section>
+
+      <section class="pc-section pc-skills">
+        <div class="pc-section-heading compact">
+          <h2>{{localize "CYPHER.Sheet.Skills"}}</h2>
+          <button type="button" data-action="itemCreate" data-type="skill"
+            title="{{localize 'CYPHER.Skill.New'}}">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+        {{#if items.skills.length}}
+        <div class="pc-skill-list">
+          {{#each items.skills as |item|}}
+          <div class="pc-list-row" data-item-id="{{item.id}}">
+            <div>
+              <strong>{{item.name}}</strong>
+              <span>{{localize (concat "CYPHER.Stat." item.system.stat)}}</span>
+            </div>
+            <span class="pc-chip">{{localize (concat "CYPHER.SkillLevel." item.system.level)}}</span>
+            <div class="pc-row-controls">
+              <button type="button" data-action="itemEdit" title="{{localize 'CYPHER.Item.Edit'}}">
+                <i class="fa-solid fa-pen"></i>
+              </button>
+              <button type="button" data-action="itemDelete" title="{{localize 'CYPHER.Item.Delete'}}">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+        {{else}}
+        <p class="pc-empty">{{localize "CYPHER.Sheet.NoSkills"}}</p>
+        {{/if}}
+      </section>
+    </div>
+
+    <div class="pc-column">
+      <section class="pc-section pc-abilities">
+        <div class="pc-section-heading compact">
+          <h2>{{localize "CYPHER.Sheet.Abilities"}}</h2>
+          <button type="button" data-action="itemCreate" data-type="ability"
+            title="{{localize 'CYPHER.Ability.New'}}">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+        {{#if items.abilities.length}}
+        <div class="pc-ability-list">
+          {{#each items.abilities as |item|}}
+          <article class="pc-ability-card" data-item-id="{{item.id}}">
+            <div class="pc-ability-heading">
+              <div>
+                <strong>{{item.name}}</strong>
+                {{#if item.system.source}}<span>{{item.system.source}}</span>{{/if}}
+              </div>
+              {{#if item.system.cost.amount}}
+              <span class="pc-chip">
+                {{item.system.cost.amount}}
+                {{localize (concat "CYPHER.Stat." item.system.cost.stat)}}
+              </span>
+              {{/if}}
+            </div>
+            {{#if item.system.action}}
+            <span class="pc-action-badge">
+              {{localize (concat "CYPHER.Ability.Action." item.system.action)}}
+            </span>
+            {{/if}}
+            {{#if item.system.effects.length}}
+            <button type="button" class="pc-primary-action" data-action="chooseAbilityEffect">
+              <i class="fa-solid fa-list-check"></i> {{localize "CYPHER.Ability.ChooseEffect"}}
             </button>
             {{/if}}
-          {{/ifNotEquals}}
+            {{#if item.system.rollTables.length}}
+              {{#each item.system.rollTables as |table|}}
+              <button type="button" class="pc-primary-action" data-action="rollAbilityTable"
+                data-table-id="{{table.id}}">
+                <i class="fa-solid fa-dice"></i> {{table.name}}
+              </button>
+              {{/each}}
+            {{/if}}
+            <div class="pc-ability-description">{{{item.system.description}}}</div>
+            <div class="pc-row-controls">
+              <button type="button" data-action="itemEdit" title="{{localize 'CYPHER.Item.Edit'}}">
+                <i class="fa-solid fa-pen"></i>
+              </button>
+              <button type="button" data-action="itemDelete" title="{{localize 'CYPHER.Item.Delete'}}">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
+          </article>
+          {{/each}}
+        </div>
+        {{else}}
+        <p class="pc-empty">{{localize "CYPHER.Sheet.NoAbilities"}}</p>
+        {{/if}}
+      </section>
+    </div>
+  </div>
+
+  <div class="pc-dashboard-grid pc-dashboard-grid-wide">
+
+    <section class="pc-section">
+      <div class="pc-section-heading compact">
+        <h2>{{localize "CYPHER.Attack.Title"}}</h2>
+        <button type="button" data-action="itemCreate" data-type="attack"
+          title="{{localize 'CYPHER.Attack.Title'}}">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
+      {{#if items.attacks.length}}
+      <div class="pc-table">
+        {{#each items.attacks as |item|}}
+        <div class="pc-table-row" data-item-id="{{item.id}}">
+          <div>
+            <strong>{{item.name}}</strong>
+            <span>{{localize (concat "CYPHER.AttackType." item.system.attackType)}}</span>
+          </div>
+          <span>{{item.system.damage}} {{localize "CYPHER.Damage"}}</span>
+          <span>{{item.system.range}}</span>
+          <button type="button" class="pc-primary-action" data-action="rollAttack"
+            data-item-id="{{item.id}}">
+            <i class="fa-solid fa-dice-d20"></i> {{localize "CYPHER.Roll.Attack"}}
+          </button>
+          <div class="pc-row-controls">
+            <button type="button" data-action="itemEdit" title="{{localize 'CYPHER.Item.Edit'}}">
+              <i class="fa-solid fa-pen"></i>
+            </button>
+            <button type="button" data-action="itemDelete" title="{{localize 'CYPHER.Item.Delete'}}">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </div>
         </div>
         {{/each}}
       </div>
-      <p class="wound-hint">{{localize 'CYPHER.Wound.Hint'}}</p>
-    </div>
+      {{else}}
+      <p class="pc-empty">{{localize "CYPHER.Sheet.NoAttacks"}}</p>
+      {{/if}}
+    </section>
 
-    <div class="recoveries-block">
-      <h3>{{localize 'CYPHER.Recovery.Title'}}</h3>
-      <div class="recovery-row">
-        {{#each system.recoveries as |checked key|}}
-        <label class="recovery-item">
-          <input type="checkbox" name="system.recoveries.{{key}}" {{#if checked}}checked{{/if}}/>
-          {{localize (concat "CYPHER.Recovery." key)}}
-          <button type="button" data-action="rollRecovery" data-interval="{{key}}" title="{{localize 'CYPHER.Roll.Recovery'}}">
-            <i class="fa-solid fa-dice-d6"></i>
+    <section class="pc-section">
+      <div class="pc-section-heading compact">
+        <h2>{{localize "CYPHER.Cypher.Title"}} ({{items.cyphers.length}}/{{system.cypherLimit}})</h2>
+        <button type="button" data-action="itemCreate" data-type="cypher"
+          title="{{localize 'CYPHER.Cypher.Title'}}">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
+      {{#if items.cyphers.length}}
+      <div class="pc-table">
+        {{#each items.cyphers as |item|}}
+        <div class="pc-table-row {{#if item.system.depleted}}depleted{{/if}}"
+          data-item-id="{{item.id}}">
+          <div>
+            <strong>{{item.name}}</strong>
+            <span>{{#if item.system.powerLevel}}{{item.system.powerLevel}}{{else}}{{item.system.level}}{{/if}}</span>
+          </div>
+          <span>{{item.system.cypherType}}</span>
+          <button type="button" class="pc-primary-action" data-action="useCypher"
+            data-item-id="{{item.id}}" {{#if item.system.depleted}}disabled{{/if}}>
+            <i class="fa-solid fa-bolt"></i> {{localize "CYPHER.Cypher.Use"}}
           </button>
-        </label>
+          <div class="pc-row-controls">
+            <button type="button" data-action="itemEdit" title="{{localize 'CYPHER.Item.Edit'}}">
+              <i class="fa-solid fa-pen"></i>
+            </button>
+            <button type="button" data-action="itemDelete" title="{{localize 'CYPHER.Item.Delete'}}">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </div>
+        </div>
         {{/each}}
+      </div>
+      {{else}}
+      <p class="pc-empty">{{localize "CYPHER.Sheet.NoCyphers"}}</p>
+      {{/if}}
+    </section>
+
+    <section class="pc-section">
+      <div class="pc-section-heading compact">
+        <h2>{{localize "CYPHER.Equipment.Title"}}</h2>
+        <button type="button" data-action="itemCreate" data-type="equipment"
+          title="{{localize 'CYPHER.Equipment.Title'}}">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
+      {{#if items.equipment.length}}
+      <div class="pc-table">
+        {{#each items.equipment as |item|}}
+        <div class="pc-table-row" data-item-id="{{item.id}}">
+          <div>
+            <strong>{{item.name}}</strong>
+            {{#if (gt item.system.quantity 1)}}<span>x{{item.system.quantity}}</span>{{/if}}
+          </div>
+          {{#ifNotEquals item.system.depletionDie "none"}}
+          <button type="button" data-action="rollDepletion" data-item-id="{{item.id}}"
+            title="{{localize 'CYPHER.Depletion.Roll'}}">
+            <i class="fa-solid fa-dice"></i>
+          </button>
+          {{/ifNotEquals}}
+          <div class="pc-row-controls">
+            <button type="button" data-action="itemEdit" title="{{localize 'CYPHER.Item.Edit'}}">
+              <i class="fa-solid fa-pen"></i>
+            </button>
+            <button type="button" data-action="itemDelete" title="{{localize 'CYPHER.Item.Delete'}}">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+      {{else}}
+      <p class="pc-empty">{{localize "CYPHER.Sheet.NoEquipment"}}</p>
+      {{/if}}
+    </section>
+
+    <section class="pc-section">
+      <div class="pc-section-heading compact">
+        <h2>{{localize "CYPHER.Armor.Title"}}</h2>
+        <button type="button" data-action="itemCreate" data-type="armor"
+          title="{{localize 'CYPHER.Armor.Title'}}">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
+      {{#if items.armor.length}}
+      <div class="pc-table">
+        {{#each items.armor as |item|}}
+        <div class="pc-table-row" data-item-id="{{item.id}}">
+          <div>
+            <strong>{{item.name}}</strong>
+            <span>{{localize (concat "CYPHER.Armor." item.system.category)}}</span>
+          </div>
+          <label class="pc-equip-control">
+            <input type="checkbox" data-action="toggleEquipped"
+              {{#if item.system.equipped}}checked{{/if}}/>
+            {{localize "CYPHER.Equipped"}}
+          </label>
+          <div class="pc-row-controls">
+            <button type="button" data-action="itemEdit" title="{{localize 'CYPHER.Item.Edit'}}">
+              <i class="fa-solid fa-pen"></i>
+            </button>
+            <button type="button" data-action="itemDelete" title="{{localize 'CYPHER.Item.Delete'}}">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+      {{else}}
+      <p class="pc-empty">{{localize "CYPHER.Armor.NoneEquipped"}}</p>
+      {{/if}}
+    </section>
+
+    <section class="pc-section">
+      <div class="pc-section-heading compact">
+        <h2>{{localize "CYPHER.Shield.Title"}}</h2>
+        <button type="button" data-action="itemCreate" data-type="shield"
+          title="{{localize 'CYPHER.Shield.Title'}}">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
+      {{#if items.shields.length}}
+      <div class="pc-table">
+        {{#each items.shields as |item|}}
+        <div class="pc-table-row {{#if item.system.broken}}depleted{{/if}}"
+          data-item-id="{{item.id}}">
+          <div>
+            <strong>{{item.name}}</strong>
+            {{#if item.system.broken}}
+            <span class="pc-state pc-state-danger">{{localize "CYPHER.Shield.BrokenLabel"}}</span>
+            {{else}}
+            <span>
+              {{item.system.wounds.minor.current}}/{{item.system.wounds.minor.max}} —
+              {{item.system.wounds.moderate.current}}/{{item.system.wounds.moderate.max}} —
+              {{item.system.wounds.major.current}}/{{item.system.wounds.major.max}}
+            </span>
+            {{/if}}
+          </div>
+          <label class="pc-equip-control">
+            <input type="checkbox" data-action="toggleEquipped"
+              {{#if item.system.equipped}}checked{{/if}}/>
+            {{localize "CYPHER.Equipped"}}
+          </label>
+          <div class="pc-row-controls">
+            <button type="button" data-action="itemEdit" title="{{localize 'CYPHER.Item.Edit'}}">
+              <i class="fa-solid fa-pen"></i>
+            </button>
+            <button type="button" data-action="itemDelete" title="{{localize 'CYPHER.Item.Delete'}}">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+      {{else}}
+      <p class="pc-empty">{{localize "CYPHER.Shield.Title"}}</p>
+      {{/if}}
+    </section>
+  </div>
+
+  <section class="pc-section pc-advancement">
+    <div class="pc-section-heading">
+      <div>
+        <span class="pc-kicker">{{localize "CYPHER.Tier"}} {{system.tier}}</span>
+        <h2>{{localize "CYPHER.Advancement.Title"}}</h2>
+      </div>
+      <div class="pc-xp-actions">
+        <span class="pc-xp-value">{{localize "CYPHER.XP.Label"}} <strong>{{system.xp}}</strong></span>
+        <span class="pc-xp-value">{{localize "CYPHER.ResourcePoints"}} <strong>{{system.resourcePoints}}</strong></span>
+        <button type="button" data-action="playerIntrusion">
+          <i class="fa-solid fa-bolt"></i>
+          {{localize "CYPHER.XP.PlayerIntrusion"}} ({{config.xpCosts.playerIntrusion}} PX)
+        </button>
       </div>
     </div>
 
-  </div>
-
-  <div class="armor-block">
-    <h3>{{localize 'CYPHER.Armor.Title'}}</h3>
-    {{#if system.armor.itemId}}
-    <p class="armor-active-name">
-      <i class="fa-solid fa-shield-halved"></i>
-      <strong>{{system.armor.name}}</strong> — {{localize (concat "CYPHER.Armor." system.armor.category)}}
-      {{#if system.armor.freelyUsable}}<span class="armor-freely-usable-tag">({{localize 'CYPHER.Armor.FreelyUsable'}})</span>{{/if}}
-    </p>
-    {{else}}
-    <p class="armor-none-note">{{localize 'CYPHER.Armor.NoneEquipped'}}</p>
+    {{#if focusAbilityPendingTier}}
+    <button type="button" class="pc-primary-action" data-action="chooseFocusAbility">
+      <i class="fa-solid fa-diagram-project"></i> {{localize "CYPHER.FocusSelection.ChooseAbility"}}
+    </button>
     {{/if}}
-    <p class="armor-hint">
-      {{localize 'CYPHER.Armor.BlockEase'}}: {{system.armor.blockEase}}{{#if system.armor.damaged}} <span class="armor-damaged-note">({{localize 'CYPHER.Armor.BaseWas'}} {{system.armor.baseBlockEase}})</span>{{/if}} —
-      {{localize 'CYPHER.Armor.DodgeHinder'}}: {{system.armor.dodgeHinder}}
-      {{#if system.armor.speedTaskHinder}} ({{localize 'CYPHER.Armor.AppliesToAllSpeed'}}){{/if}}
-    </p>
-    {{#if system.armor.damaged}}
-    <p class="armor-damaged-banner"><i class="fa-solid fa-triangle-exclamation"></i> {{localize 'CYPHER.Armor.DamagedBanner'}}</p>
-    {{/if}}
-    {{#if system.armor.itemId}}
-    <div class="armor-damage-buttons">
-      <button type="button" data-action="damageArmor" title="{{localize 'CYPHER.Armor.DamageHint'}}">
-        <i class="fa-solid fa-burst"></i> {{localize 'CYPHER.Armor.Damage'}}
-      </button>
-      {{#if system.armor.damaged}}
-      <button type="button" data-action="repairArmor">
-        <i class="fa-solid fa-hammer"></i> {{localize 'CYPHER.Armor.Repair'}}
-      </button>
-      {{/if}}
-    </div>
-    {{/if}}
-    <p class="armor-manage-hint">{{localize 'CYPHER.Armor.ManageInInventory'}}</p>
-    <div class="defense-buttons">
-      <button type="button" data-action="rollDefense" data-defense-type="block">
-        <i class="fa-solid fa-shield-halved"></i> {{localize 'CYPHER.Defense.Block'}}
-      </button>
-      <button type="button" data-action="rollDefense" data-defense-type="dodge">
-        <i class="fa-solid fa-person-running"></i> {{localize 'CYPHER.Defense.Dodge'}}
-      </button>
-    </div>
-  </div>
 
-  <div class="additional-abilities-block">
-    <h3>{{localize 'CYPHER.AdditionalAbilities'}}</h3>
-    <textarea name="system.additionalAbilities">{{system.additionalAbilities}}</textarea>
-  </div>
-
-  <div class="custom-fields-block">
-    <h3>{{localize 'CYPHER.CustomField.Title'}}</h3>
-    <p class="custom-fields-hint">{{localize 'CYPHER.CustomField.Hint'}}</p>
-    {{#if system.customFields.length}}
-    <div class="custom-fields-list">
-      {{#each system.customFields as |field|}}
-      <div class="custom-field-row" data-field-id="{{field.id}}">
-        <label class="custom-field-label">{{field.label}}</label>
-        <!-- Preserve id, label, and fieldType on whole-form submission (see the custom-stat note). -->
-        <input type="hidden" name="system.customFields.{{@index}}.id" value="{{field.id}}"/>
-        <input type="hidden" name="system.customFields.{{@index}}.label" value="{{field.label}}"/>
-        <input type="hidden" name="system.customFields.{{@index}}.fieldType" value="{{field.fieldType}}"/>
-        {{#ifEquals field.fieldType "text"}}
-        <input type="text" name="system.customFields.{{@index}}.valueText" value="{{field.valueText}}"/>
+    <div class="pc-advancement-grid">
+      {{#each system.advancementSlots as |slot|}}
+      <div class="pc-advancement-slot {{#if slot.bought}}bought{{/if}}">
+        <input type="hidden" name="system.advancementSlots.{{@index}}.bought"
+          value="{{slot.bought}}"/>
+        <div class="pc-slot-index">{{localize "CYPHER.Advancement.Slot"}} {{@index}}</div>
+        <select name="system.advancementSlots.{{@index}}.type">
+          <option value="">—</option>
+          <option value="capabilities" {{#ifEquals slot.type "capabilities"}}selected{{/ifEquals}}>
+            {{localize "CYPHER.Advancement.capabilities"}}
+          </option>
+          <option value="perfection" {{#ifEquals slot.type "perfection"}}selected{{/ifEquals}}>
+            {{localize "CYPHER.Advancement.perfection"}}
+          </option>
+          <option value="effort" {{#ifEquals slot.type "effort"}}selected{{/ifEquals}}>
+            {{localize "CYPHER.Advancement.effort"}}
+          </option>
+          <option value="skill" {{#ifEquals slot.type "skill"}}selected{{/ifEquals}}>
+            {{localize "CYPHER.Advancement.skill"}}
+          </option>
+          <option value="other" {{#ifEquals slot.type "other"}}selected{{/ifEquals}}>
+            {{localize "CYPHER.Advancement.other"}}
+          </option>
+        </select>
+        {{#ifEquals slot.type "other"}}
+        <select name="system.advancementSlots.{{@index}}.otherType">
+          <option value="">—</option>
+          <option value="recovery" {{#ifEquals slot.otherType "recovery"}}selected{{/ifEquals}}>
+            {{localize "CYPHER.Advancement.other-recovery"}}
+          </option>
+          <option value="focus" {{#ifEquals slot.otherType "focus"}}selected{{/ifEquals}}>
+            {{localize "CYPHER.Advancement.other-focus"}}
+          </option>
+          <option value="armor" {{#ifEquals slot.otherType "armor"}}selected{{/ifEquals}}>
+            {{localize "CYPHER.Advancement.other-armor"}}
+          </option>
+          <option value="weapons" {{#ifEquals slot.otherType "weapons"}}selected{{/ifEquals}}>
+            {{localize "CYPHER.Advancement.other-weapons"}}
+          </option>
+          <option value="genre" {{#ifEquals slot.otherType "genre"}}selected{{/ifEquals}}>
+            {{localize "CYPHER.Advancement.other-genre"}}
+          </option>
+        </select>
+        {{else}}
+        <input type="hidden" name="system.advancementSlots.{{@index}}.otherType"
+          value="{{slot.otherType}}"/>
         {{/ifEquals}}
-        {{#ifEquals field.fieldType "number"}}
-        <input type="number" name="system.customFields.{{@index}}.valueNumber" value="{{field.valueNumber}}"/>
-        {{/ifEquals}}
-        {{#ifEquals field.fieldType "checkbox"}}
-        <input type="checkbox" name="system.customFields.{{@index}}.valueBoolean" {{#if field.valueBoolean}}checked{{/if}}/>
-        {{/ifEquals}}
-        <a class="remove-custom-field" data-action="deleteCustomField" title="{{localize 'CYPHER.CustomField.Remove'}}"><i class="fa-solid fa-trash"></i></a>
+        {{#if slot.bought}}
+        <span class="pc-state pc-state-success">
+          <i class="fa-solid fa-circle-check"></i> {{localize "CYPHER.Advancement.Bought"}}
+        </span>
+        {{else}}
+        <button type="button" data-action="purchaseAdvancement" data-slot="{{@index}}">
+          {{localize "CYPHER.Advancement.Buy"}} ({{../config.xpCosts.advancementSlot}} PX)
+        </button>
+        {{/if}}
       </div>
       {{/each}}
     </div>
-    {{/if}}
-    <button type="button" class="add-custom-field" data-action="addCustomField">
-      <i class="fa-solid fa-plus"></i> {{localize 'CYPHER.CustomField.Add'}}
-    </button>
-  </div>
+  </section>
+
+  <details class="pc-section pc-details">
+    <summary>{{localize "CYPHER.Sheet.CharacterDetails"}}</summary>
+    <div class="pc-details-grid">
+      <div>
+        <h3>{{localize "CYPHER.Biography"}}</h3>
+        <prose-mirror name="system.biography" value="{{system.biography}}"></prose-mirror>
+      </div>
+      <div>
+        <h3>{{localize "CYPHER.Notes"}}</h3>
+        <prose-mirror name="system.notes" value="{{system.notes}}"></prose-mirror>
+      </div>
+    </div>
+
+    <div class="custom-fields-block">
+      <div class="pc-section-heading compact">
+        <h3>{{localize "CYPHER.CustomField.Title"}}</h3>
+        <button type="button" data-action="addCustomField">
+          <i class="fa-solid fa-plus"></i> {{localize "CYPHER.CustomField.Add"}}
+        </button>
+      </div>
+
+      {{#if system.customFields.length}}
+      <div class="custom-fields-list">
+        {{#each system.customFields as |field|}}
+        <div class="custom-field-row" data-field-id="{{field.id}}">
+          <label class="custom-field-label">{{field.label}}</label>
+          <input type="hidden" name="system.customFields.{{@index}}.id" value="{{field.id}}"/>
+          <input type="hidden" name="system.customFields.{{@index}}.label" value="{{field.label}}"/>
+          <input type="hidden" name="system.customFields.{{@index}}.fieldType" value="{{field.fieldType}}"/>
+          {{#ifEquals field.fieldType "text"}}
+          <input type="text" name="system.customFields.{{@index}}.valueText" value="{{field.valueText}}"/>
+          {{/ifEquals}}
+          {{#ifEquals field.fieldType "number"}}
+          <input type="number" name="system.customFields.{{@index}}.valueNumber" value="{{field.valueNumber}}"/>
+          {{/ifEquals}}
+          {{#ifEquals field.fieldType "checkbox"}}
+          <input type="checkbox" name="system.customFields.{{@index}}.valueBoolean" {{#if field.valueBoolean}}checked{{/if}}/>
+          {{/ifEquals}}
+          <button type="button" data-action="deleteCustomField"
+            title="{{localize 'CYPHER.CustomField.Remove'}}">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+        {{/each}}
+      </div>
+      {{/if}}
+    </div>
+  </details>
 </section>
