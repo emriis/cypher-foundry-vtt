@@ -3,14 +3,37 @@
   "_key": "!items!aa87bee538098",
   "document": "Item",
   "name": "Monomolecular blade",
-  "type": "armor",
-  "crdType": "armor",
+  "type": "attack",
+  "crdType": "weapon",
   "system": {
-    "category": "light",
+    "attackType": "light",
+    "range": "immediate",
+    "extremeRange": "",
+    "damage": 2,
+    "stat": "might",
+    "weaponFamily": "",
+    "attackSkillCategory": "",
+    "priceCategory": "veryExpensive",
+    "properties": [
+      "ignores 1 point of physical armor",
+      "cuts through physical materials up to level 6"
+    ],
+    "mechanics": {
+      "twoHanded": false,
+      "rapidFire": false,
+      "ignoresPhysicalArmor": 1,
+      "cutsThroughMaterialsLevel": 6,
+      "targetEffects": [],
+      "requiresTripod": false,
+      "requiredOperators": 0,
+      "alternateConfiguration": {
+        "enabled": false,
+        "attackType": "",
+        "action": ""
+      }
+    },
     "freelyUsable": false,
     "equipped": false,
-    "blockEaseDamage": 0,
-    "priceCategory": "veryExpensive",
     "description": "Light weapon, ignores 1 point of physical armor, cuts through physical materials up to level 6"
   },
   "flags": {
