@@ -1,0 +1,69 @@
+{
+  "_id": "9a4c2f1b00000001",
+  "_key": "!items!9a4c2f1b00000001",
+  "document": "Item",
+  "name": "Stunstick",
+  "type": "attack",
+  "img": "icons/svg/sword.svg",
+  "crdType": "weapon",
+  "system": {
+    "attackType": "medium",
+    "range": "immediate",
+    "extremeRange": "",
+    "damage": 0,
+    "stat": "might",
+    "weaponFamily": "",
+    "attackSkillCategory": "",
+    "priceCategory": "expensive",
+    "properties": [
+      "Medium weapon, inflicts no damage, level 2 or lower creature loses their next action, level 3 or higher is hindered by two steps for a round or two"
+    ],
+    "mechanics": {
+      "twoHanded": false,
+      "rapidFire": false,
+      "ignoresPhysicalArmor": 0,
+      "cutsThroughMaterialsLevel": null,
+      "targetEffects": [
+        {
+          "minimumTargetLevel": 0,
+          "maximumTargetLevel": 2,
+          "effect": "loseNextAction",
+          "hinderSteps": 0,
+          "duration": "next action"
+        },
+        {
+          "minimumTargetLevel": 3,
+          "maximumTargetLevel": null,
+          "effect": "hindered",
+          "hinderSteps": 2,
+          "duration": "a round or two"
+        }
+      ],
+      "requiresTripod": false,
+      "requiredOperators": 0,
+      "alternateConfiguration": {
+        "enabled": false,
+        "attackType": "",
+        "action": ""
+      }
+    },
+    "freelyUsable": false,
+    "equipped": false,
+    "description": "<p>Medium weapon, inflicts no damage, level 2 or lower creature loses their next action, level 3 or higher is hindered by two steps for a round or two</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "equipment.Science Fiction.Stunstick",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Equipment",
+        "sourceLocator": "CRD p. 420",
+        "transformations": [
+          "structural field mapping only"
+        ]
+      }
+    }
+  }
+}
