@@ -278,8 +278,6 @@
     "cypher": {
       "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD). See https://col.montecookgames.com for license terms."
     },
-    "needsMigrationVersion": "0.1.7",
-    "compatibleMigrationVersion": "0.1.0",
     "hotReload": {
       "extensions": [
         "css",
