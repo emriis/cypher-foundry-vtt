@@ -115,6 +115,57 @@ test("each declared pack has a corresponding language-specific source set", () =
   assert.deepEqual(failures, [], failures.join("\n"));
 });
 
+test("ApplicationV2 document sheets use a single root part with header partials", () => {
+  const contracts = [
+    [
+      "module/sheets/actor-pc-sheet.mjs",
+      `main: {
+      root: true,
+      template: "systems/cypher/templates/actor/parts/main.hbs",
+      templates: ["systems/cypher/templates/actor/parts/header.hbs"]`
+    ],
+    [
+      "module/sheets/item-sheet.mjs",
+      `body: {
+      root: true,
+      template: "systems/cypher/templates/item/parts/body.hbs",
+      templates: ["systems/cypher/templates/item/parts/header.hbs"]`
+    ],
+    [
+      "module/sheets/actor-npc-sheet.mjs",
+      `body: {
+      root: true,
+      template: "systems/cypher/templates/actor/npc/body.hbs",
+      templates: ["systems/cypher/templates/actor/npc/header.hbs"]`
+    ],
+    [
+      "module/sheets/actor-community-sheet.mjs",
+      `body: {
+      root: true,
+      template: "systems/cypher/templates/actor/community/body.hbs",
+      templates: ["systems/cypher/templates/actor/community/header.hbs"]`
+    ]
+  ];
+
+  for (const [relativePath, expected] of contracts) {
+    const source = fs.readFileSync(path.join(root, relativePath), "utf8");
+    assert.ok(source.includes(expected), `Invalid root PARTS contract: ${relativePath}`);
+  }
+
+  const templates = [
+    ["templates/actor/parts/main.hbs", "pc-sheet-layout", "actor/parts/header.hbs"],
+    ["templates/item/parts/body.hbs", "item-sheet-layout", "item/parts/header.hbs"],
+    ["templates/actor/npc/body.hbs", "npc-sheet-layout", "actor/npc/header.hbs"],
+    ["templates/actor/community/body.hbs", "community-sheet-layout", "actor/community/header.hbs"]
+  ];
+
+  for (const [templatePath, wrapperClass, headerPath] of templates) {
+    const source = fs.readFileSync(path.join(root, templatePath), "utf8");
+    assert.ok(source.includes(`<div class="${wrapperClass}">`), `Missing V2 sheet wrapper: ${templatePath}`);
+    assert.ok(source.includes(`{{> "systems/cypher/templates/${headerPath}" }}`), `Missing header partial: ${templatePath}`);
+  }
+});
+
 test("static localization keys used by templates and modules exist in both locales", () => {
   const locales = ["lang/en.json", "lang/fr.json"].map(readJson);
   const localeKeySets = locales.map(locale => new Set(flattenKeys(locale)));
