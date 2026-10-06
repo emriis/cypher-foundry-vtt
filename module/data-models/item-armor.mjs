@@ -17,6 +17,14 @@ export default class CypherArmorData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     return {
       category: new StringField({ required: true, initial: "light", choices: ["light", "medium", "heavy"] }),
+      // Null means the armor uses its normal category for dodge hindrance.
+      // Some CRD armor explicitly encumbers as a lighter category.
+      encumbranceCategory: new StringField({
+        required: true,
+        nullable: true,
+        initial: null,
+        choices: ["", "light", "medium", "heavy"]
+      }),
       freelyUsable: new BooleanField({ required: true, initial: false }),
       equipped: new BooleanField({ required: true, initial: false }),
       blockEaseDamage: new NumberField({ required: true, integer: true, initial: 0, min: 0 }),
