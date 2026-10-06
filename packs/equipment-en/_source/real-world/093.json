@@ -18,7 +18,7 @@
       "Heavy weapon, immediate range, extreme range extends to short range, attack hindered if fired with one hand"
     ],
     "mechanics": {
-      "twoHanded": false,
+      "twoHanded": true,
       "rapidFire": false,
       "ignoresPhysicalArmor": 0,
       "cutsThroughMaterialsLevel": null,
