@@ -106,6 +106,8 @@ const fixtures = [
     description:
       "<p>You can transform into various animals, gaining their natural " +
       "abilities as if you were born with them.</p>",
+    abilityCount: 14,
+    edgeCount: 25,
     counts: { 1: 3, 2: 2, 3: 2, 4: 2, 5: 2, 6: 3 },
     tierOne: ["animal-shape", "keen-eye", "scent-transformation"]
   },
@@ -113,6 +115,8 @@ const fixtures = [
     slug: "doesnt-do-much",
     description:
       "<p>You're a slacker, but you know a little about a lot of things.</p>",
+    abilityCount: 11,
+    edgeCount: 12,
     counts: { 1: 3, 2: 2, 3: 2, 4: 2, 5: 1, 6: 1 },
     tierOne: [
       "joy-in-small-things",
