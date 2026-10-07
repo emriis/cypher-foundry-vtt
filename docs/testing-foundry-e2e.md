@@ -102,7 +102,7 @@ repository.
 In particular, do not commit:
 
 - real Windows user-profile paths or drive-qualified local paths;
-- real Unix home-directory paths such as `/home/<user>/...` or `/Users/<user>/...`;
+- real Unix home-directory paths or placeholders that resemble absolute user paths;
 - absolute Foundry installation or Data paths when they identify a developer's
   machine;
 - machine names, local network addresses, or other unnecessary environment
