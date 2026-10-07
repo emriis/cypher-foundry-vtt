@@ -178,7 +178,8 @@ async function runCommand(command, args) {
   await new Promise((resolve, reject) => {
     const process = spawn(command, args, {
       cwd: ROOT,
-      stdio: "inherit"
+      stdio: "inherit",
+      shell: process.platform === "win32"
     });
     process.on("error", reject);
     process.on("close", code => {
@@ -258,6 +259,7 @@ try {
       {
         cwd: ROOT,
         stdio: "inherit",
+        shell: process.platform === "win32",
         env: {
           ...process.env,
           FOUNDRY_URL: BASE_URL,
