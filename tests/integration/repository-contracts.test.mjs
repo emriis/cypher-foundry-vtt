@@ -163,6 +163,25 @@ test("DocumentSheetV2 sheets declare their main part as the root content", () =>
   }
 });
 
+test("live E2E fixture keeps one browser page for the whole worker", () => {
+  const fixture = fs.readFileSync(
+    path.join(root, "tests/e2e/foundry-session-fixture.mjs"),
+    "utf8"
+  );
+
+  assert.match(fixture, /e2ePage:\s*\[async \(\{ browser \}, use\)/);
+  assert.match(fixture, /\{ scope: "worker" \}\]/);
+  assert.doesNotMatch(fixture, /\bpage:\s*\[async/);
+
+  for (const spec of [
+    "tests/e2e/foundry-runtime.spec.mjs",
+    "tests/e2e/foundry-gameplay.spec.mjs"
+  ]) {
+    const source = fs.readFileSync(path.join(root, spec), "utf8");
+    assert.match(source, /\{\s*e2ePage:\s*page\s*\}/);
+  }
+});
+
 test("live E2E runner invokes every committed Playwright spec explicitly", () => {
   const source = fs.readFileSync(
     path.join(root, "scripts/run-foundry-e2e.mjs"),
