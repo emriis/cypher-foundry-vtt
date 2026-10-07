@@ -191,11 +191,10 @@ function quoteWindowsArg(value) {
 }
 
 function windowsCommand(command, args) {
-  const executable = /^[A-Za-z0-9_./:-]+$/.test(command)
-    ? command
-    : quoteWindowsArg(command);
-  const commandLine = [executable, ...args.map(quoteWindowsArg)].join(" ");
-  return executable.startsWith('"') ? `"${commandLine}"` : commandLine;
+  return [
+    quoteWindowsArg(command),
+    ...args.map(quoteWindowsArg)
+  ].join(" ");
 }
 
 function spawnFoundry(appPath, dataPath) {
@@ -237,6 +236,7 @@ async function runCommand(command, args) {
           process.env.ComSpec || "cmd.exe",
           [
             "/d",
+            "/s",
             "/c",
             windowsCommand(command, args)
           ],
@@ -335,6 +335,7 @@ try {
           process.env.ComSpec || "cmd.exe",
           [
             "/d",
+            "/s",
             "/c",
             windowsCommand(command, testArgs)
           ],
