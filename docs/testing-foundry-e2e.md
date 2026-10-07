@@ -16,9 +16,10 @@ must be installed locally.
   `FOUNDRY_DATA_PATH` must point to it.
 
 Foundry's command-line `--world` option supports launching a specific world
-directly, which is what the E2E runner uses. The runner also installs the
-current checkout of the Cypher system into the test data directory so the
-browser tests execute the code from the branch being tested.
+directly, which is what the E2E runner uses. The runner uses the normal Foundry
+Data directory, installs the current checkout of the Cypher system into
+`Data/systems/cypher`, and creates only one uniquely named E2E world under
+`Data/worlds/`.
 
 ## Run
 
@@ -172,5 +173,5 @@ close browser
 STOP Foundry
     |
     v
-delete temporary Data/world
+delete Data/worlds/cypher-e2e-<run-id> only
 ```
