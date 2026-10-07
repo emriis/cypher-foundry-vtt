@@ -176,6 +176,9 @@ test("live E2E requires Chromium 146 or newer", () => {
   );
   assert.match(config, /browserName:\s*"chromium"/);
   assert.match(config, /channel:\s*"chromium"/);
+  assert.match(config, /viewport:\s*\{ width: 1280, height: 900 \}/);
+  assert.match(config, /deviceScaleFactor:\s*1/);
+  assert.match(config, /force-device-scale-factor=1/);
 
   const fixture = fs.readFileSync(
     path.join(root, "tests/e2e/foundry-session-fixture.mjs"),
