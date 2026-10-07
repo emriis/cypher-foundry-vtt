@@ -1,0 +1,294 @@
+{
+  "id": "cypher",
+  "title": "Cypher",
+  "description": "Un système de jeu non-officiel pour Cypher (Monte Cook Games), construit sous la Cypher Open License. / An unofficial game system for Cypher (Monte Cook Games), built under the Cypher Open License.",
+  "version": "0.2.0-alpha.1",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14.368"
+  },
+  "authors": [
+    {
+      "name": "Aymeric VILAIN"
+    }
+  ],
+  "esmodules": [
+    "cypher.mjs"
+  ],
+  "styles": [
+    "css/cypher.css"
+  ],
+  "languages": [
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json"
+    },
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "documentTypes": {
+    "Actor": {
+      "pc": {
+        "htmlFields": [
+          "biography",
+          "notes"
+        ]
+      },
+      "npc": {
+        "htmlFields": [
+          "biography",
+          "notes"
+        ]
+      },
+      "community": {
+        "htmlFields": [
+          "biography",
+          "notes"
+        ]
+      }
+    },
+    "Item": {
+      "skill": {},
+      "ability": {},
+      "cypher": {},
+      "artifact": {},
+      "equipment": {},
+      "attack": {},
+      "armor": {},
+      "shield": {},
+      "descriptor": {},
+      "type": {},
+      "focus": {}
+    }
+  },
+  "packs": [
+    {
+      "name": "abilities-fr",
+      "label": "Aptitudes (FR)",
+      "path": "packs/abilities-fr",
+      "type": "Item",
+      "system": "cypher",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "abilities-en",
+      "label": "Abilities (EN)",
+      "path": "packs/abilities-en",
+      "type": "Item",
+      "system": "cypher",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "skills-fr",
+      "label": "Compétences (FR)",
+      "path": "packs/skills-fr",
+      "type": "Item",
+      "system": "cypher",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "skills-en",
+      "label": "Skills (EN)",
+      "path": "packs/skills-en",
+      "type": "Item",
+      "system": "cypher",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "descriptors-fr",
+      "label": "Descripteurs (FR)",
+      "path": "packs/descriptors-fr",
+      "type": "Item",
+      "system": "cypher",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "types-fr",
+      "label": "Types (FR)",
+      "path": "packs/types-fr",
+      "type": "Item",
+      "system": "cypher",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "foci-fr",
+      "label": "Focus (FR)",
+      "path": "packs/foci-fr",
+      "type": "Item",
+      "system": "cypher",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "types-en",
+      "label": "Types (EN)",
+      "path": "packs/types-en",
+      "type": "Item",
+      "system": "cypher",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "foci-en",
+      "label": "Foci (EN)",
+      "path": "packs/foci-en",
+      "type": "Item",
+      "system": "cypher",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "descriptors-en",
+      "label": "Descriptors (EN)",
+      "path": "packs/descriptors-en",
+      "type": "Item",
+      "system": "cypher",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "rules-fr",
+      "label": "Règles (FR)",
+      "path": "packs/rules-fr",
+      "type": "JournalEntry",
+      "system": "cypher",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "rules-en",
+      "label": "Rules (EN)",
+      "path": "packs/rules-en",
+      "type": "JournalEntry",
+      "system": "cypher",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "equipment-fr",
+      "label": "Équipement (FR)",
+      "path": "packs/equipment-fr",
+      "type": "Item",
+      "system": "cypher",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "equipment-en",
+      "label": "Equipment (EN)",
+      "path": "packs/equipment-en",
+      "type": "Item",
+      "system": "cypher",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "Français",
+      "sorting": "a",
+      "packs": [
+        "abilities-fr",
+        "skills-fr",
+        "descriptors-fr",
+        "types-fr",
+        "foci-fr",
+        "rules-fr",
+        "equipment-fr"
+      ]
+    },
+    {
+      "name": "English",
+      "sorting": "a",
+      "packs": [
+        "abilities-en",
+        "skills-en",
+        "descriptors-en",
+        "types-en",
+        "foci-en",
+        "rules-en",
+        "equipment-en"
+      ]
+    }
+  ],
+  "primaryTokenAttribute": "stats.might.pool",
+  "secondaryTokenAttribute": "stats.speed.pool",
+  "grid": {
+    "distance": 1.5,
+    "units": "m"
+  },
+  "url": "https://github.com/emriis/cypher-foundry-vtt",
+  "manifest": "https://github.com/emriis/cypher-foundry-vtt/releases/latest/download/system.json",
+  "download": "https://github.com/emriis/cypher-foundry-vtt/releases/download/v0.2.0-alpha.1/system.zip",
+  "license": "LICENSE.txt",
+  "readme": "README.md",
+  "flags": {
+    "cypher": {
+      "sourceLicense": "Built under the Cypher Open License using content from the Cypher Reference Document (CRD). See https://col.montecookgames.com for license terms."
+    },
+    "hotReload": {
+      "extensions": [
+        "css",
+        "hbs",
+        "json"
+      ],
+      "paths": [
+        "css/cypher.css",
+        "templates",
+        "lang"
+      ]
+    }
+  }
+}
