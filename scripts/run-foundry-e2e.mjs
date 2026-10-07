@@ -207,17 +207,20 @@ function spawnFoundry(appPath, dataPath) {
   ];
 
   if (process.platform === "win32") {
-    // Some Windows Electron installations return EACCES when Node tries to
-    // spawn Foundry directly. Use cmd.exe only as the Windows process
-    // launcher, with cmd canonical /c quoting for paths containing spaces.
+    // Node's child_process can report EACCES for this Electron executable.
+    // Use cmd's START command as the Windows process boundary. START receives
+    // an explicit empty window title, then the quoted executable path.
     const commandLine = [
+      "start",
+      '""',
+      "/wait",
       appPath.includes(" ") ? `"${appPath}"` : appPath,
       ...args.map(quoteWindowsArg)
     ].join(" ");
 
     return spawn(
       process.env.ComSpec || "cmd.exe",
-      ["/d", "/c", `"${commandLine}"`],
+      ["/d", "/c", commandLine],
       {
         cwd: path.dirname(appPath),
         stdio: "inherit",
