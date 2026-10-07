@@ -83,7 +83,7 @@ async function clickRollDialog(page, values = {}) {
 
 test.describe("Cypher Foundry live gameplay", () => {
   test("renders a complete playable PC dashboard for a newly created actor", async ({
-    page
+    e2ePage: page
   }) => {
     const actorId = await createActor(page);
 
@@ -111,7 +111,7 @@ test.describe("Cypher Foundry live gameplay", () => {
   });
 
   test("executes a task roll from the real PC sheet and creates chat output", async ({
-    page
+    e2ePage: page
   }) => {
     const actorId = await createActor(page);
 
@@ -149,7 +149,7 @@ test.describe("Cypher Foundry live gameplay", () => {
   });
 
   test("executes a guaranteed failed Block from the real PC sheet and applies the incoming wound", async ({
-    page
+    e2ePage: page
   }) => {
     const actorId = await createActor(page);
 
@@ -186,7 +186,7 @@ test.describe("Cypher Foundry live gameplay", () => {
   });
 
   test("uses a recovery from the real PC sheet and persists the recovery marker", async ({
-    page
+    e2ePage: page
   }) => {
     const actorId = await createActor(page);
 
@@ -216,7 +216,7 @@ test.describe("Cypher Foundry live gameplay", () => {
   });
 
   test("rallies a moderate wound from the real PC sheet and charges Might", async ({
-    page
+    e2ePage: page
   }) => {
     const actorId = await createActor(page);
 
@@ -244,7 +244,7 @@ test.describe("Cypher Foundry live gameplay", () => {
   });
 
   test("purchases an Effort advancement through the real Actor document", async ({
-    page
+    e2ePage: page
   }) => {
     const actorId = await createActor(page);
 
@@ -272,7 +272,7 @@ test.describe("Cypher Foundry live gameplay", () => {
   });
 
   test("applies a player intrusion through the real Actor document and persists XP", async ({
-    page
+    e2ePage: page
   }) => {
     const actorId = await createActor(page);
 
@@ -297,7 +297,7 @@ test.describe("Cypher Foundry live gameplay", () => {
   });
 
   test("creates real armor, shield, and attack Items with their DataModels", async ({
-    page
+    e2ePage: page
   }) => {
     const result = await page.evaluate(async () => {
       const actor = await Actor.create({
@@ -363,7 +363,7 @@ test.describe("Cypher Foundry live gameplay", () => {
   });
 
   test("persists actor state after the sheet is closed and reopened", async ({
-    page
+    e2ePage: page
   }) => {
     const actorId = await createActor(page);
 
