@@ -14,6 +14,7 @@ consistent as more people touch it.
 - [Rebuilding compendium packs](#rebuilding-compendium-packs)
 - [Commit messages](#commit-messages)
 - [Pull requests](#pull-requests)
+- [Local path and privacy rules](#local-path-and-privacy-rules)
 - [Reporting bugs](#reporting-bugs)
 
 ## Getting set up
@@ -119,6 +120,21 @@ every commit.
   alone. Cancel unreviewed or non-reversible migration prompts.
 - Describe how the change was tested (for example, the focused test command and, where needed,
   which sheet and action were checked in a live Foundry world).
+
+## Local path and privacy rules
+
+Never commit paths that identify a contributor's machine or local user profile.
+Use environment variables, operating-system directories, Foundry configuration,
+or repository-relative paths instead.
+
+For Foundry E2E work, keep the distinction between the Foundry user-data root
+(which contains `Config/`) and its `Data/` directory. Use
+`FOUNDRY_DATA_PATH` for the actual Data directory. The E2E runner must only
+remove its generated `Data/worlds/cypher-e2e-<run-id>` directory.
+
+Fictional fixture paths are acceptable; real usernames, home directories,
+installation paths, machine names, and local network addresses are not. The
+repository contract suite checks this rule automatically.
 
 ## Reporting bugs
 
