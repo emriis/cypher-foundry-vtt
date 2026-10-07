@@ -1,11 +1,10 @@
 /**
- * Starts a disposable Foundry VTT environment, runs the live Playwright
- * suite, and removes the entire test data directory afterwards.
+ * Starts Foundry with one disposable world in the user's normal Data
+ * directory, runs the live Playwright suite, and removes only that world.
  */
 import {
   cp,
   mkdir,
-  mkdtemp,
   readFile,
   rm,
   writeFile
@@ -21,7 +20,7 @@ const BASE_URL = `http://127.0.0.1:${PORT}`;
 const WORLD_ID = `cypher-e2e-${Date.now()}`;
 const WORLD_TITLE = "Cypher Automated E2E";
 
-function getSourceDataPath() {
+function getDataPath() {
   if (process.env.FOUNDRY_DATA_PATH) {
     return path.resolve(process.env.FOUNDRY_DATA_PATH);
   }
@@ -29,7 +28,8 @@ function getSourceDataPath() {
   if (process.platform === "win32") {
     return path.join(
       process.env.LOCALAPPDATA || path.join(os.homedir(), "AppData", "Local"),
-      "FoundryVTT"
+      "FoundryVTT",
+      "Data"
     );
   }
 
@@ -38,16 +38,17 @@ function getSourceDataPath() {
       os.homedir(),
       "Library",
       "Application Support",
-      "FoundryVTT"
+      "FoundryVTT",
+      "Data"
     );
   }
 
   return path.join(
     process.env.XDG_DATA_HOME || path.join(os.homedir(), ".local", "share"),
-    "FoundryVTT"
+    "FoundryVTT",
+    "Data"
   );
 }
-
 
 async function readCoreVersion(appPath) {
   const candidate = path.join(
@@ -94,34 +95,19 @@ async function waitForServer(url, timeout = 60_000) {
   );
 }
 
-async function createTestData(sourceDataPath) {
-  const dataPath = process.env.FOUNDRY_E2E_DATA_PATH
-    ? path.resolve(process.env.FOUNDRY_E2E_DATA_PATH)
-    : await mkdtemp(path.join(os.tmpdir(), "cypher-foundry-e2e-"));
-
-  await rm(dataPath, { recursive: true, force: true });
+async function ensureDataPath(dataPath) {
   await mkdir(path.join(dataPath, "Config"), { recursive: true });
 
-  const sourceLicense = path.join(
-    sourceDataPath,
-    "Config",
-    "license.json"
-  );
-
+  const licensePath = path.join(dataPath, "Config", "license.json");
   try {
-    await cp(
-      sourceLicense,
-      path.join(dataPath, "Config", "license.json")
-    );
+    await readFile(licensePath, "utf8");
   } catch {
     throw new Error(
-      "Foundry license.json was not found in the configured data path. " +
+      "Foundry license.json was not found in the configured Data path. " +
       "Start Foundry once and complete license/EULA setup, or set " +
-      "FOUNDRY_DATA_PATH to the correct user-data directory."
+      "FOUNDRY_DATA_PATH to the correct Data directory."
     );
   }
-
-  return dataPath;
 }
 
 async function installSystem(dataPath) {
@@ -166,6 +152,8 @@ async function createWorld(dataPath, coreVersion, systemVersion) {
     JSON.stringify(manifest, null, 2) + "\n",
     "utf8"
   );
+
+  return worldPath;
 }
 
 function spawnFoundry(appPath, dataPath) {
@@ -214,20 +202,20 @@ function stopProcess(child) {
 }
 
 const appPath = await findApplication();
-const sourceDataPath = getSourceDataPath();
+const dataPath = getDataPath();
 const coreVersion = await readCoreVersion(appPath);
 const systemManifest = JSON.parse(
   await readFile(path.join(ROOT, "system.json"), "utf8")
 );
 
-let testDataPath;
 let child;
+let worldCreated = false;
+let worldPath;
 let exitCode = 1;
 
 try {
   console.log(`Foundry executable: ${appPath}`);
-  console.log(`Foundry source data: ${sourceDataPath}`);
-  console.log(`Temporary E2E data: ${process.env.FOUNDRY_E2E_DATA_PATH || "(system temp)"}`);
+  console.log(`Foundry Data path: ${dataPath}`);
   console.log(`Test world: ${WORLD_ID}`);
 
   try {
@@ -245,15 +233,17 @@ try {
   const npmCommand = process.platform === "win32" ? "npm.cmd" : "npm";
   await runCommand(npmCommand, ["run", "build:packs"]);
 
-  testDataPath = await createTestData(sourceDataPath);
-  await installSystem(testDataPath);
+  await ensureDataPath(dataPath);
+  await installSystem(dataPath);
+  worldPath = path.join(dataPath, "worlds", WORLD_ID);
+  worldCreated = true;
   await createWorld(
-    testDataPath,
+    dataPath,
     coreVersion,
     systemManifest.version
   );
 
-  child = spawnFoundry(appPath, testDataPath);
+  child = spawnFoundry(appPath, dataPath);
   child.once("error", error => {
     console.error("Unable to start Foundry:", error);
   });
@@ -290,8 +280,8 @@ try {
     });
   }
 
-  if (testDataPath) {
-    await rm(testDataPath, { recursive: true, force: true });
+  if (worldCreated) {
+    await rm(worldPath, { recursive: true, force: true });
   }
 }
 

@@ -163,6 +163,20 @@ test("DocumentSheetV2 sheets use one normal form content part", () => {
   }
 });
 
+test("live E2E cleanup is scoped to its generated world", () => {
+  const source = fs.readFileSync(
+    path.join(root, "scripts/run-foundry-e2e.mjs"),
+    "utf8"
+  );
+
+  assert.match(source, /const worldPath = path\.join\(dataPath, "worlds", WORLD_ID\)/);
+  assert.match(source, /if \(worldCreated\) \{/);
+  assert.match(source, /await rm\(worldPath, \{ recursive: true, force: true \}\)/);
+  assert.doesNotMatch(source, /await rm\(dataPath, \{ recursive: true, force: true \}\)/);
+  assert.doesNotMatch(source, /mkdtemp\(path\.join\(os\.tmpdir\(\)/);
+  assert.match(source, /"FoundryVTT",\s*"Data"/);
+});
+
 test("static localization keys used by templates and modules exist in both locales", () => {
   const locales = ["lang/en.json", "lang/fr.json"].map(readJson);
   const localeKeySets = locales.map(locale => new Set(flattenKeys(locale)));
