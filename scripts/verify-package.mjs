@@ -49,7 +49,17 @@ async function main() {
       } else expectedFiles.push(relativePath);
     }
     expectedFiles.sort();
-    if (JSON.stringify(actualFiles) !== JSON.stringify(expectedFiles)) throw new Error("Package file list does not match the PR tree.");
+    if (JSON.stringify(actualFiles) !== JSON.stringify(expectedFiles)) {
+      const actual = new Set(actualFiles);
+      const expected = new Set(expectedFiles);
+      const missing = expectedFiles.filter((file) => !actual.has(file));
+      const unexpected = actualFiles.filter((file) => !expected.has(file));
+      const details = [
+        missing.length ? "Missing from archive:\\n" + missing.join("\\n") : "",
+        unexpected.length ? "Unexpected in archive:\\n" + unexpected.join("\\n") : "",
+      ].filter(Boolean).join("\\n");
+      throw new Error("Package file list does not match the PR tree.\\n" + details);
+    }
     for (const relativePath of expectedFiles) await assertSameFile(path.join(root, relativePath), path.join(staging, relativePath), relativePath);
   } finally {
     await rm(staging, { recursive: true, force: true });
