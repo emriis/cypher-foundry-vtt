@@ -1,9 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import {
-  resolveWeaponTargetEffects
-} from "../../module/rules/weapon-mechanics.mjs";
+import { resolveWeaponTargetEffects } from "../../module/rules/weapon-mechanics.mjs";
 
 const effects = [
   {
@@ -31,9 +29,15 @@ test("weapon target effects accept an open upper bound", () => {
   assert.deepEqual(resolveWeaponTargetEffects(effects, 8), [effects[1]]);
 });
 
-test("weapon target effects do not apply outside their level range", () => {
-  assert.deepEqual(resolveWeaponTargetEffects(effects, 1), [effects[0]]);
-  assert.deepEqual(resolveWeaponTargetEffects(effects, 9), [effects[1]]);
+test("weapon target effects return no matches outside their ranges", () => {
+  const bounded = [{
+    minimumTargetLevel: 3,
+    maximumTargetLevel: 5,
+    effect: "hindered"
+  }];
+
+  assert.deepEqual(resolveWeaponTargetEffects(bounded, 2), []);
+  assert.deepEqual(resolveWeaponTargetEffects(bounded, 6), []);
 });
 
 test("weapon target effects reject an invalid target level", () => {
