@@ -19,6 +19,10 @@ const PORT = Number(process.env.FOUNDRY_PORT || 30000);
 const BASE_URL = `http://127.0.0.1:${PORT}`;
 const WORLD_ID = `cypher-e2e-${Date.now()}`;
 const WORLD_TITLE = "Cypher Automated E2E";
+const E2E_SPECS = [
+  "tests/e2e/foundry-runtime.spec.mjs",
+  "tests/e2e/foundry-gameplay.spec.mjs"
+];
 
 async function getFoundryPaths() {
   if (process.env.FOUNDRY_DATA_PATH) {
@@ -182,21 +186,6 @@ async function createWorld(dataPath, coreVersion, systemVersion) {
   return worldPath;
 }
 
-function quoteWindowsArg(value) {
-  const stringValue = String(value);
-  if (/^[A-Za-z0-9_./:-]+$/.test(stringValue)) {
-    return stringValue;
-  }
-  return `"${stringValue}"`;
-}
-
-function windowsCommand(command, args) {
-  return [
-    command,
-    ...args.map(quoteWindowsArg)
-  ].join(" ");
-}
-
 function spawnFoundry(appPath, dataPath) {
   const args = [
     `--port=${PORT}`,
@@ -245,6 +234,21 @@ function spawnFoundry(appPath, dataPath) {
     windowsHide: false,
     shell: false
   });
+}
+
+function quoteWindowsArg(value) {
+  const stringValue = String(value);
+  if (/^[A-Za-z0-9_./:-]+$/.test(stringValue)) {
+    return stringValue;
+  }
+  return `"${stringValue}"`;
+}
+
+function windowsCommand(command, args) {
+  return [
+    command,
+    ...args.map(quoteWindowsArg)
+  ].join(" ");
 }
 
 function spawnScript(command, args, options = {}) {
@@ -349,6 +353,7 @@ try {
     const testArgs = [
       "playwright",
       "test",
+      ...E2E_SPECS,
       "--config=playwright.config.mjs"
     ];
     const testProcess = spawnScript(command, testArgs, {
