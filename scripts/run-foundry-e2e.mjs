@@ -378,9 +378,28 @@ async function stopProcess(child, foundryPid) {
       });
     }
 
-    await Promise.all(
-      pids.map(pid => waitForWindowsProcessExit(pid))
-    );
+    for (const pid of pids) {
+      try {
+        await waitForWindowsProcessExit(pid, 5_000);
+      } catch {
+        await new Promise((resolve, reject) => {
+          const killer = spawn(
+            "powershell.exe",
+            [
+              "-NoProfile",
+              "-NonInteractive",
+              "-Command",
+              "Stop-Process -Id " + pid +
+                " -Force -ErrorAction SilentlyContinue"
+            ],
+            { stdio: "ignore", windowsHide: true }
+          );
+          killer.on("error", reject);
+          killer.on("close", () => resolve());
+        });
+        await waitForWindowsProcessExit(pid, 10_000);
+      }
+    }
     return;
   }
 
