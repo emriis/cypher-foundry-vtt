@@ -101,7 +101,7 @@ repository.
 
 In particular, do not commit:
 
-- real Windows user-profile paths such as `C:\\Users\\<real-user>\\...`;
+- real Windows user-profile paths or drive-qualified local paths;
 - real Unix home-directory paths such as `/home/<real-user>/...` or
   `/Users/<real-user>/...`;
 - absolute Foundry installation or Data paths when they identify a developer's
