@@ -95,6 +95,40 @@ Close a manually running Foundry instance before starting the autonomous
 suite. This avoids two Foundry processes writing to the same user-data
 directory.
 
+## Local path and privacy rules
+
+Paths that depend on a developer's machine must never be committed to the
+repository.
+
+In particular, do not commit:
+
+- real Windows user-profile paths such as `C:\\Users\\<real-user>\\...`;
+- real Unix home-directory paths such as `/home/<real-user>/...` or
+  `/Users/<real-user>/...`;
+- absolute Foundry installation or Data paths when they identify a developer's
+  machine;
+- machine names, local network addresses, or other unnecessary environment
+  identifiers.
+
+Scripts must resolve local paths from environment variables, operating-system
+directories, Foundry configuration, or repository-relative paths. For the live
+E2E runner this means:
+
+- `FOUNDRY_APP_PATH` may identify the local Foundry executable;
+- `FOUNDRY_DATA_PATH` identifies the local **Data** directory;
+- on the default Windows installation, `Config/options.json` is used to
+  resolve Foundry's user-data root and its `Data` subdirectory;
+- the runner must delete only its generated
+  `Data/worlds/cypher-e2e-<run-id>` directory.
+
+Examples and fixtures may use explicitly fictional paths such as
+`C:\\Users\\Test\\...` or `D:\\FoundryVTT\\Data`, but must never
+contain a contributor's real username or machine-specific path.
+
+The repository contains an automated contract test for this rule. If a local
+path is needed while debugging, keep it outside tracked files and outside the
+committed test fixtures.
+
 ## Current coverage
 
 The live suite currently validates:
