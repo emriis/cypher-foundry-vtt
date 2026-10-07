@@ -120,6 +120,16 @@ jobs:
         run: npm run package
       - name: Validate compiled compendium packs
         run: node --test --test-reporter=spec tests/build/compendium-packs.test.mjs
+      - name: Verify versioned release artifacts
+        run: node scripts/verify-package.mjs
+      - name: Verify generated files are committed
+        run: |
+          if [ -n "$(git status --porcelain -- dist)" ]; then
+            echo "::error::dist/ is not in sync with the package generated from this PR."
+            git status --short -- dist
+            exit 1
+          fi
+          git diff --exit-code -- dist/system.json
       - name: Upload package artifacts
         if: always()
         uses: actions/upload-artifact@v4
@@ -136,7 +146,7 @@ jobs:
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "Command: `npm run package`" >> "$GITHUB_STEP_SUMMARY"
           if [ -f dist/system.json ] && [ -f dist/system.zip ]; then
-            echo "Package artifacts were created successfully and uploaded to the workflow run." >> "$GITHUB_STEP_SUMMARY"
+            echo "Package artifacts were created and verified against the PR tree." >> "$GITHUB_STEP_SUMMARY"
           else
             echo "Package artifacts were not created." >> "$GITHUB_STEP_SUMMARY"
           fi
