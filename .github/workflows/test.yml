@@ -119,38 +119,40 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
-      - name: Build release package
-        run: npm run package
+      - name: Build compiled compendium packs
+        run: npm run build:packs
       - name: Validate compiled compendium packs
         run: node --test --test-reporter=spec tests/build/compendium-packs.test.mjs
+      - name: Build release package
+        run: npm run package
       - name: Detect generated changes
         id: generated
         run: |
-          if [ -n "$(git status --porcelain -- . ':!dist')" ]; then
-            echo "::error::The package build changed files outside dist/."
-            git status --short -- . ':!dist'
+          if [ -n "$(git status --porcelain -- . ':!dist' ':!packs')" ]; then
+            echo "::error::The package build changed files outside packs/ and dist/."
+            git status --short -- . ':!dist' ':!packs'
             exit 1
           fi
-          if [ -n "$(git status --porcelain -- dist)" ]; then
-            echo "dist_changed=true" >> "$GITHUB_OUTPUT"
+          if [ -n "$(git status --porcelain -- packs dist)" ]; then
+            echo "generated_changed=true" >> "$GITHUB_OUTPUT"
           else
-            echo "dist_changed=false" >> "$GITHUB_OUTPUT"
+            echo "generated_changed=false" >> "$GITHUB_OUTPUT"
           fi
-      - name: Update versioned release artifacts in PR
-        if: steps.generated.outputs.dist_changed == 'true' && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+      - name: Update versioned generated artifacts in PR
+        if: steps.generated.outputs.generated_changed == 'true' && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
         run: |
-          git add dist/system.json dist/system.zip
+          git add packs dist/system.json dist/system.zip
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "chore: update versioned release package"
+          git commit -m "chore: update generated release artifacts"
           git push origin "HEAD:${{ github.head_ref }}"
       - name: Verify versioned release artifacts
         run: node scripts/verify-package.mjs
       - name: Verify generated files are committed
         run: |
-          if [ -n "$(git status --porcelain -- dist)" ]; then
-            echo "::error::dist/ is not in sync with the package generated from this PR."
-            git status --short -- dist
+          if [ -n "$(git status --porcelain -- packs dist)" ]; then
+            echo "::error::Generated packs or dist/ are not in sync with the package generated from this PR."
+            git status --short -- packs dist
             exit 1
           fi
           git diff --exit-code -- dist/system.json
