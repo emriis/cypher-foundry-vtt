@@ -24,8 +24,6 @@ async function selectGamemaster(page) {
       `Expected: ${GAMEMASTER_NAME}; actual: ${value}`
     );
   }
-
-  return usernameInput;
 }
 
 export async function joinAsGamemaster(page) {
@@ -34,32 +32,22 @@ export async function joinAsGamemaster(page) {
   await selectGamemaster(page);
 
   const password = page.locator('input[type="password"]').first();
-
   if (await password.count()) {
     await password.fill("");
   }
 
-  const joinButton = page.locator(
-    'button[type="submit"], form button'
-  ).filter({ visible: true }).last();
+  // In Foundry v14 the join screen is an application form. Target the form
+  // containing the password field rather than relying on translated labels or
+  // on the position of buttons on the page.
+  const joinForm = page.locator("form").filter({
+    has: page.locator('input[type="password"]')
+  }).first();
 
-  if (await joinButton.count()) {
-    await joinButton.click();
-  } else {
-    const form = page.locator("form").first();
+  await joinForm.waitFor({ state: "visible", timeout: 10_000 });
 
-    if (await form.count()) {
-      await form.evaluate(formElement => {
-        if (typeof formElement.requestSubmit === "function") {
-          formElement.requestSubmit();
-        } else {
-          formElement.submit();
-        }
-      });
-    } else {
-      throw new Error("Foundry join page did not expose its login form.");
-    }
-  }
+  const joinButton = joinForm.locator("button").first();
+  await joinButton.waitFor({ state: "visible", timeout: 10_000 });
+  await joinButton.click();
 
   const deadline = Date.now() + 60_000;
 
