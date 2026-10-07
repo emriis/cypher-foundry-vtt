@@ -36,9 +36,6 @@ export async function joinAsGamemaster(page) {
     await password.fill("");
   }
 
-  // In Foundry v14 the join screen is an application form. Target the form
-  // containing the password field rather than relying on translated labels or
-  // on the position of buttons on the page.
   const joinForm = page.locator("form").filter({
     has: page.locator('input[type="password"]')
   }).first();
@@ -47,10 +44,18 @@ export async function joinAsGamemaster(page) {
 
   const joinButton = joinForm.locator("button").first();
   await joinButton.waitFor({ state: "visible", timeout: 10_000 });
-  await joinButton.click();
+
+  // Foundry navigates away from /join when the session is accepted. Do not
+  // evaluate page state during that navigation: the old execution context is
+  // destroyed by the document transition.
+  await Promise.all([
+    page.waitForURL(url => !url.pathname.endsWith("/join"), {
+      timeout: 60_000
+    }),
+    joinButton.click()
+  ]);
 
   const deadline = Date.now() + 60_000;
-
   while (Date.now() < deadline) {
     const state = await page.evaluate(() => ({
       ready: globalThis.game?.ready === true,
