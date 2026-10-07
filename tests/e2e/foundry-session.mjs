@@ -51,13 +51,13 @@ export async function joinAsGamemaster(page) {
 
     if (state.ready) return;
 
-    if (/game\\s*worlds|configuration and setup/i.test(state.body)) {
+    if (/game\s*worlds|configuration and setup/i.test(state.body)) {
       throw new Error(
         "Foundry did not auto-launch the E2E world. " +
         "The browser reached Setup instead. " +
-        `URL: ${state.url}\\n` +
-        `Title: ${state.title}\\n` +
-        `Setup content:\\n${state.body}`
+        `URL: ${state.url}\n` +
+        `Title: ${state.title}\n` +
+        `Setup content:\n${state.body}`
       );
     }
 
