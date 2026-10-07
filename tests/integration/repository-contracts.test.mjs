@@ -115,54 +115,42 @@ test("each declared pack has a corresponding language-specific source set", () =
   assert.deepEqual(failures, [], failures.join("\n"));
 });
 
-test("ApplicationV2 document sheets use explicit root templates", () => {
+test("DocumentSheetV2 sheets use one normal form content part", () => {
   const contracts = [
     [
       "module/sheets/actor-pc-sheet.mjs",
-      "sheet",
       "templates/actor/pc.hbs",
-      [
-        "templates/actor/parts/header.hbs",
-        "templates/actor/parts/main.hbs"
-      ]
+      "templates/actor/parts/header.hbs",
+      "templates/actor/parts/main.hbs"
     ],
     [
       "module/sheets/item-sheet.mjs",
-      "sheet",
       "templates/item/item.hbs",
-      [
-        "templates/item/parts/header.hbs",
-        "templates/item/parts/body.hbs"
-      ]
+      "templates/item/parts/header.hbs",
+      "templates/item/parts/body.hbs"
     ],
     [
       "module/sheets/actor-npc-sheet.mjs",
-      "sheet",
       "templates/actor/npc.hbs",
-      [
-        "templates/actor/npc/header.hbs",
-        "templates/actor/npc/body.hbs"
-      ]
+      "templates/actor/npc/header.hbs",
+      "templates/actor/npc/body.hbs"
     ],
     [
       "module/sheets/actor-community-sheet.mjs",
-      "sheet",
       "templates/actor/community.hbs",
-      [
-        "templates/actor/community/header.hbs",
-        "templates/actor/community/body.hbs"
-      ]
+      "templates/actor/community/header.hbs",
+      "templates/actor/community/body.hbs"
     ]
   ];
 
-  for (const [relativePath, partId, rootTemplate, partials] of contracts) {
+  for (const [relativePath, rootTemplate, ...partials] of contracts) {
     const source = fs.readFileSync(path.join(root, relativePath), "utf8");
     assert.ok(
-      source.includes(`${partId}: {
-      root: true,
+      source.includes(`sheet: {
       template: "systems/cypher/${rootTemplate}"`),
-      `Invalid root PARTS contract: ${relativePath}`
+      `Invalid document sheet PARTS contract: ${relativePath}`
     );
+    assert.doesNotMatch(source, /sheet:\s*\{\s*root:\s*true/);
     for (const partial of partials) {
       assert.ok(
         source.includes(`"systems/cypher/${partial}"`),
@@ -170,12 +158,8 @@ test("ApplicationV2 document sheets use explicit root templates", () => {
       );
     }
 
-    const rootSource = fs.readFileSync(path.join(root, rootTemplate), "utf8");
-    assert.equal(
-      (rootSource.match(/^<div\b/gm) ?? []).length,
-      1,
-      `Root template must have one top-level div: ${rootTemplate}`
-    );
+    const template = fs.readFileSync(path.join(root, rootTemplate), "utf8");
+    assert.match(template, /^\s*\{\{!--[\s\S]*?\}\}\s*<div class="/);
   }
 });
 
