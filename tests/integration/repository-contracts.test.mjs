@@ -243,9 +243,13 @@ test("live E2E joins the deterministic gamemaster profile", () => {
   );
 
   assert.match(source, /const GAMEMASTER_NAME = "gamemaster"/);
+  assert.match(source, /getByRole\("textbox",/);
+  assert.match(source, /sélectionner un utilisateur\|select a user\|username/i);
+  assert.match(source, /usernameInput\.fill\(GAMEMASTER_NAME\)/);
+  assert.match(source, /usernameInput\.press\("ArrowDown"\)/);
+  assert.match(source, /usernameInput\.press\("Enter"\)/);
   assert.match(source, /#join-username/);
   assert.match(source, /input\[name="username"\]/);
-  assert.match(source, /usernameInput\.fill\(GAMEMASTER_NAME\)/);
   assert.match(source, /input\[type="password"\]/);
   assert.match(source, /join game\( session\)\?/i);
   assert.match(source, /select option/);
