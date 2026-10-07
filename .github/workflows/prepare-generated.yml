@@ -1,0 +1,98 @@
+name: Prepare generated artifacts
+
+permissions:
+  contents: write
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: prepare-generated-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  prepare:
+    name: Build and synchronize generated artifacts
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.head.repo.full_name == github.repository
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref || github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build compiled compendium packs
+        run: npm run build:packs
+
+      - name: Validate compiled compendium packs
+        run: node --test --test-reporter=spec tests/build/compendium-packs.test.mjs
+
+      - name: Build release package
+        run: npm run package
+
+      - name: Reject unexpected generated changes
+        run: |
+          set -euo pipefail
+          if [ -n "$(git status --porcelain -- . ':!packs' ':!dist')" ]; then
+            echo "::error::Generation changed files outside packs/ and dist/."
+            git status --short -- . ':!packs' ':!dist'
+            exit 1
+          fi
+
+      - name: Verify generated artifacts
+        run: node scripts/verify-package.mjs
+
+      - name: Synchronize generated artifacts with PR branch
+        if: github.event_name == 'pull_request'
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          for attempt in 1 2 3; do
+            git fetch origin "${{ github.event.pull_request.head.ref }}"
+            git reset --hard "origin/${{ github.event.pull_request.head.ref }}"
+
+            npm run build:packs
+            npm run package
+            node scripts/verify-package.mjs
+
+            if [ -n "$(git status --porcelain -- . ':!packs' ':!dist')" ]; then
+              echo "::error::Generation changed files outside packs/ and dist/."
+              git status --short -- . ':!packs' ':!dist'
+              exit 1
+            fi
+
+            if [ -z "$(git status --porcelain -- packs dist)" ]; then
+              echo "Generated artifacts are already synchronized with the latest PR branch."
+              exit 0
+            fi
+
+            git add packs dist/system.json dist/system.zip
+            git commit -m "chore: update generated release artifacts"
+
+            if git push origin "HEAD:${{ github.event.pull_request.head.ref }}"; then
+              exit 0
+            fi
+
+            echo "Branch advanced during synchronization; retrying from the latest PR tip."
+          done
+
+          echo "::error::Could not synchronize generated artifacts after three attempts."
+          exit 1
+
+      - name: Publish diagnostics
+        if: always()
+        run: |
+          echo "## Generated artifact preparation" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Generated files: packs/ and dist/." >> "$GITHUB_STEP_SUMMARY"
+          echo "The test CI validates the committed result in a separate workflow." >> "$GITHUB_STEP_SUMMARY"

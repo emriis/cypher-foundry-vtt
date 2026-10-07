@@ -1,5 +1,8 @@
 name: CI
 
+permissions:
+  contents: read
+
 on:
   push:
     branches:
@@ -8,11 +11,8 @@ on:
   workflow_dispatch:
 
 concurrency:
-  # Keep each revision independently runnable and never cancel diagnostics.
-  # Including the commit SHA prevents a queued run from blocking the next
-  # revision when a previous GitHub-hosted runner is unavailable.
-  group: ci-${{ github.workflow }}-${{ github.sha }}
-  cancel-in-progress: false
+  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   unit:
@@ -105,27 +105,6 @@ jobs:
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "Commands: `npm run test:integration`, `npm run audit:architecture`" >> "$GITHUB_STEP_SUMMARY"
 
-  build:
-    name: Compendium build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-      - name: Install dependencies
-        run: npm ci
-      - name: Build compendium packs
-        run: npm run build:packs
-      - name: Validate compiled compendium packs
-        run: node --test --test-reporter=spec tests/build/compendium-packs.test.mjs
-      - name: Publish diagnostics
-        if: always()
-        run: |
-          echo "## Compendium build" >> "$GITHUB_STEP_SUMMARY"
-          echo "" >> "$GITHUB_STEP_SUMMARY"
-          echo "Command: `npm run build:packs`" >> "$GITHUB_STEP_SUMMARY"
 
   repository:
     name: Repository and E2E syntax checks
@@ -185,7 +164,6 @@ jobs:
       - behavior
       - content
       - integration
-      - build
       - repository
       - coverage
     runs-on: ubuntu-latest
@@ -200,7 +178,6 @@ jobs:
           echo "| BDD behavior tests | ${{ needs.behavior.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Content contracts | ${{ needs.content.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Integration and architecture | ${{ needs.integration.result }} |" >> "$GITHUB_STEP_SUMMARY"
-          echo "| Compendium build | ${{ needs.build.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Repository checks | ${{ needs.repository.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Rule coverage | ${{ needs.coverage.result }} |" >> "$GITHUB_STEP_SUMMARY"
 
@@ -208,7 +185,6 @@ jobs:
              [ "${{ needs.behavior.result }}" != "success" ] || \
              [ "${{ needs.content.result }}" != "success" ] || \
              [ "${{ needs.integration.result }}" != "success" ] || \
-             [ "${{ needs.build.result }}" != "success" ] || \
              [ "${{ needs.repository.result }}" != "success" ] || \
              [ "${{ needs.coverage.result }}" != "success" ]; then
             echo "" >> "$GITHUB_STEP_SUMMARY"
