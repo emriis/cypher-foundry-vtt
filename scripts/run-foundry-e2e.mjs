@@ -164,7 +164,7 @@ async function installSystem(dataPath) {
 
 async function createWorld(dataPath, coreVersion, systemVersion) {
   const worldPath = path.join(dataPath, "worlds", WORLD_ID);
-  await mkdir(worldPath, { recursive: true });
+  await mkdir(path.join(worldPath, "data"), { recursive: true });
 
   const manifest = {
     id: WORLD_ID,
@@ -172,6 +172,10 @@ async function createWorld(dataPath, coreVersion, systemVersion) {
     description: "Disposable Cypher system E2E world.",
     version: "1.0.0",
     coreVersion,
+    compatibility: {
+      minimum: String(coreVersion).split(".")[0],
+      verified: coreVersion
+    },
     system: "cypher",
     systemVersion,
     type: "world"
