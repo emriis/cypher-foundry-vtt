@@ -1,4 +1,4 @@
-/**
+/** 
  * Starts Foundry with one disposable world in the user's normal Data
  * directory, runs the live Playwright suite, and removes only that world.
  */
@@ -207,25 +207,34 @@ function spawnFoundry(appPath, dataPath) {
   ];
 
   if (process.platform === "win32") {
-    // Node's child_process can report EACCES for this Electron executable.
-    // Use cmd's START command as the Windows process boundary. START receives
-    // an explicit empty window title, then the quoted executable path.
-    const commandLine = [
-      "start",
-      '""',
-      "/wait",
-      appPath.includes(" ") ? `"${appPath}"` : appPath,
-      ...args.map(quoteWindowsArg)
-    ].join(" ");
+    // Node can return EACCES for this Electron executable, while cmd.exe
+    // introduces another quoting layer. PowerShell receives the executable
+    // and argument list separately, so paths with spaces stay intact.
+    const powershellScript =
+      "$arguments = ConvertFrom-Json $env:FOUNDRY_ARGS_JSON; " +
+      "Start-Process -FilePath $env:FOUNDRY_EXE " +
+      "-ArgumentList $arguments -Wait";
 
     return spawn(
-      process.env.ComSpec || "cmd.exe",
-      ["/d", "/c", commandLine],
+      "powershell.exe",
+      [
+        "-NoProfile",
+        "-NonInteractive",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        powershellScript
+      ],
       {
         cwd: path.dirname(appPath),
         stdio: "inherit",
         windowsHide: false,
-        shell: false
+        shell: false,
+        env: {
+          ...process.env,
+          FOUNDRY_EXE: appPath,
+          FOUNDRY_ARGS_JSON: JSON.stringify(args)
+        }
       }
     );
   }
