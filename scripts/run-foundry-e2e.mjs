@@ -318,32 +318,40 @@ async function runCommand(command, args) {
   });
 }
 
-async function waitForWindowsProcessExit(pid, timeout = 10_000) {
+async function runWindowsCommand(command, args) {
+  return new Promise((resolve, reject) => {
+    const process = spawn(command, args, {
+      stdio: ["ignore", "pipe", "ignore"],
+      windowsHide: true
+    });
+    let output = "";
+    process.stdout.on("data", chunk => {
+      output += chunk;
+    });
+    process.on("error", reject);
+    process.on("close", code => resolve({ code, output }));
+  });
+}
+
+async function waitForWindowsProcessExit(pid, timeout = 30_000) {
   if (process.platform !== "win32" || !Number.isInteger(pid)) return;
 
   const deadline = Date.now() + timeout;
   while (Date.now() < deadline) {
-    const result = await new Promise(resolve => {
-      const probe = spawn(
-        "tasklist",
-        ["/fi", `PID eq ${pid}`, "/fo", "csv", "/nh"],
-        { stdio: ["ignore", "pipe", "ignore"], windowsHide: true }
-      );
-      let output = "";
-      probe.stdout.on("data", chunk => {
-        output += chunk;
-      });
-      probe.on("close", () => resolve(output));
-      probe.on("error", () => resolve(""));
-    });
+    const result = await runWindowsCommand(
+      "tasklist",
+      ["/fi", `PID eq ${pid}`, "/fo", "csv", "/nh"]
+    );
 
-    if (!String(result).includes(`"${pid}"`)) return;
-    await new Promise(resolve => setTimeout(resolve, 100));
+    if (!String(result.output).includes(`"${pid}"`)) return;
+    await new Promise(resolve => setTimeout(resolve, 250));
   }
+
+  throw new Error(`Foundry process ${pid} did not exit within ${timeout}ms.`);
 }
 
-async function removeWorld(worldPath) {
-  const deadline = Date.now() + 60_000;
+async function waitForWorldRemoval(worldPath, timeout = 30_000) {
+  const deadline = Date.now() + timeout;
   let lastError;
 
   while (Date.now() < deadline) {
@@ -359,17 +367,18 @@ async function removeWorld(worldPath) {
   throw lastError;
 }
 
-function stopProcess(child, foundryPid) {
+async function stopProcess(child, foundryPid) {
   if (process.platform === "win32") {
     const pids = [foundryPid, child?.pid]
       .filter(pid => Number.isInteger(pid) && pid > 0);
 
     for (const pid of pids) {
-      spawn("taskkill", ["/pid", String(pid), "/t", "/f"], {
-        stdio: "ignore",
-        windowsHide: true
-      });
+      await runWindowsCommand("taskkill", [
+        "/pid", String(pid), "/t", "/f"
+      ]);
     }
+
+    await waitForWindowsProcessExit(foundryPid);
     return;
   }
 
