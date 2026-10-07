@@ -201,3 +201,136 @@ test("rollDepletion leaves an item intact outside its depletion range", async ()
   assert.equal(await rollDepletion(item), true);
   assert.equal(updateCalled, false);
 });
+
+
+test("rollAttack applies trained attack skill after unfamiliar weapon cancellation", async () => {
+  let received;
+  globalThis.game = { i18n: { localize: value => value } };
+
+  const skill = {
+    type: "skill",
+    system: {
+      attackCategory: "mediumBladed",
+      level: "trained"
+    }
+  };
+  const actor = {
+    system: {
+      freeWeaponCategories: [],
+      freeWeaponFamilies: [],
+      freeWeaponSkillCategories: [],
+      canFreelyUseAllWeapons: false
+    },
+    items: new Map([["skill", skill]]),
+    async rollTask(options) {
+      received = options;
+      return options;
+    }
+  };
+  const item = {
+    type: "attack",
+    name: "Sword",
+    actor,
+    system: {
+      damage: 4,
+      attackType: "medium",
+      attackSkillCategory: "mediumBladed",
+      weaponFamily: "swords",
+      stat: "might",
+      freelyUsable: false
+    }
+  };
+
+  await rollAttack(item, { skillItemId: "skill" });
+
+  assert.equal(received.extraHinderSteps, 0);
+  assert.equal(received.extraEaseSteps, 0);
+});
+
+test("rollAttack applies specialized weapon skill as one remaining ease when unfamiliar", async () => {
+  let received;
+  globalThis.game = { i18n: { localize: value => value } };
+
+  const skill = {
+    type: "skill",
+    system: {
+      attackCategory: "mediumBladed",
+      level: "specialized"
+    }
+  };
+  const actor = {
+    system: {
+      freeWeaponCategories: [],
+      freeWeaponFamilies: [],
+      freeWeaponSkillCategories: [],
+      canFreelyUseAllWeapons: false
+    },
+    items: new Map([["skill", skill]]),
+    async rollTask(options) {
+      received = options;
+      return options;
+    }
+  };
+  const item = {
+    type: "attack",
+    name: "Sword",
+    actor,
+    system: {
+      damage: 4,
+      attackType: "medium",
+      attackSkillCategory: "mediumBladed",
+      weaponFamily: "swords",
+      stat: "might",
+      freelyUsable: false
+    }
+  };
+
+  await rollAttack(item, { skillItemId: "skill" });
+
+  assert.equal(received.extraHinderSteps, 0);
+  assert.equal(received.extraEaseSteps, 1);
+});
+
+test("rollAttack does not double-count an explicit inability skill", async () => {
+  let received;
+  globalThis.game = { i18n: { localize: value => value } };
+
+  const skill = {
+    type: "skill",
+    system: {
+      attackCategory: "mediumBladed",
+      level: "inability"
+    }
+  };
+  const actor = {
+    system: {
+      freeWeaponCategories: [],
+      freeWeaponFamilies: [],
+      freeWeaponSkillCategories: [],
+      canFreelyUseAllWeapons: false
+    },
+    items: new Map([["skill", skill]]),
+    async rollTask(options) {
+      received = options;
+      return options;
+    }
+  };
+  const item = {
+    type: "attack",
+    name: "Sword",
+    actor,
+    system: {
+      damage: 4,
+      attackType: "medium",
+      attackSkillCategory: "mediumBladed",
+      weaponFamily: "swords",
+      stat: "might",
+      freelyUsable: false
+    }
+  };
+
+  await rollAttack(item, { skillItemId: "skill" });
+
+  assert.equal(received.extraHinderSteps, 1);
+  assert.equal(received.extraEaseSteps, 0);
+});
