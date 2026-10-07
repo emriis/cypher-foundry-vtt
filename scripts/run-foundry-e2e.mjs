@@ -187,12 +187,12 @@ function quoteWindowsArg(value) {
   if (/^[A-Za-z0-9_./:-]+$/.test(stringValue)) {
     return stringValue;
   }
-  return `"${stringValue.replace(/"/g, '""')}"`;
+  return `"${stringValue}"`;
 }
 
 function windowsCommand(command, args) {
   return [
-    quoteWindowsArg(command),
+    command,
     ...args.map(quoteWindowsArg)
   ].join(" ");
 }
