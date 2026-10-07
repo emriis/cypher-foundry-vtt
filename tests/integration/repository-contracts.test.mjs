@@ -236,6 +236,20 @@ test("live E2E login selects the Gamemaster independently of Foundry locale", ()
   assert.match(source, /requestSubmit/);
 });
 
+test("live E2E joins the deterministic gamemaster profile", () => {
+  const source = fs.readFileSync(
+    path.join(root, "tests/e2e/foundry-session.mjs"),
+    "utf8"
+  );
+
+  assert.match(source, /const GAMEMASTER_NAME = "gamemaster"/);
+  assert.match(source, /hasText:\s*\/\^\\\\s\*gamemaster\\\\s\*\$\/i/);
+  assert.match(source, /ancestor::select\[1\]/);
+  assert.match(source, /userSelect\.selectOption\(gamemasterValue\)/);
+  assert.match(source, /password\.fill\(""/);
+  assert.match(source, /join game\( session\)\?/i);
+});
+
 test("live E2E runner invokes every committed Playwright spec explicitly", () => {
   const source = fs.readFileSync(
     path.join(root, "scripts/run-foundry-e2e.mjs"),
