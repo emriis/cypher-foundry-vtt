@@ -20,9 +20,9 @@ const BASE_URL = `http://127.0.0.1:${PORT}`;
 const WORLD_ID = `cypher-e2e-${Date.now()}`;
 const WORLD_TITLE = "Cypher Automated E2E";
 
-async function getDataPath() {
+async function getFoundryUserDataPath() {
   if (process.env.FOUNDRY_DATA_PATH) {
-    return path.resolve(process.env.FOUNDRY_DATA_PATH);
+    return path.dirname(path.resolve(process.env.FOUNDRY_DATA_PATH));
   }
 
   if (process.platform === "win32") {
@@ -41,7 +41,7 @@ async function getDataPath() {
       // Fall back to Foundry's documented default Data directory.
     }
 
-    return path.join(userDataPath, "Data");
+    return userDataPath;
   }
 
   if (process.platform === "darwin") {
@@ -246,7 +246,7 @@ try {
   const npmCommand = process.platform === "win32" ? "npm.cmd" : "npm";
   await runCommand(npmCommand, ["run", "build:packs"]);
 
-  await ensureDataPath(dataPath);
+  await ensureDataPath(userDataPath, dataPath);
   await installSystem(dataPath);
   worldPath = path.join(dataPath, "worlds", WORLD_ID);
   worldCreated = true;
