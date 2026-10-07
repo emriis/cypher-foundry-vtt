@@ -280,6 +280,22 @@ test("live E2E cleanup waits for the Foundry process before deleting its world",
   assert.match(source, /await removeWorld\(worldPath\)/);
 });
 
+test("live E2E packages the release before installing the system", () => {
+  const source = fs.readFileSync(
+    path.join(root, "scripts/run-foundry-e2e.mjs"),
+    "utf8"
+  );
+
+  assert.match(
+    source,
+    /await runCommand\(npmCommand, \["run", "package"\]\)/
+  );
+  assert.match(
+    source,
+    /await runCommand\(npmCommand, \["run", "build:packs"\]\)/
+  );
+});
+
 test("live E2E runner invokes every committed Playwright spec explicitly", () => {
   const source = fs.readFileSync(
     path.join(root, "scripts/run-foundry-e2e.mjs"),
