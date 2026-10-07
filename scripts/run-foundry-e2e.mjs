@@ -19,6 +19,10 @@ const PORT = Number(process.env.FOUNDRY_PORT || 30000);
 const BASE_URL = `http://127.0.0.1:${PORT}`;
 const WORLD_ID = `cypher-e2e-${Date.now()}`;
 const WORLD_TITLE = "Cypher Automated E2E";
+const FOUNDRY_PID_FILE = path.join(
+  os.tmpdir(),
+  `cypher-foundry-e2e-${process.pid}.pid`
+);
 const E2E_SPECS = [
   "tests/e2e/foundry-runtime.spec.mjs",
   "tests/e2e/foundry-gameplay.spec.mjs"
@@ -103,6 +107,22 @@ async function readCoreVersion(appPath) {
     "Unable to determine the Foundry core version. Set " +
     "FOUNDRY_CORE_VERSION explicitly."
   );
+}
+
+async function waitForPidFile(filePath, timeout = 10_000) {
+  const deadline = Date.now() + timeout;
+
+  while (Date.now() < deadline) {
+    try {
+      const pid = Number((await readFile(filePath, "utf8")).trim());
+      if (Number.isInteger(pid) && pid > 0) return pid;
+    } catch {
+      // The PowerShell launcher has not written the PID yet.
+    }
+    await new Promise(resolve => setTimeout(resolve, 100));
+  }
+
+  throw new Error("Foundry launcher did not report its process ID.");
 }
 
 async function waitForServer(url, timeout = 60_000) {
@@ -205,8 +225,10 @@ function spawnFoundry(appPath, userDataPath) {
     // and argument list separately, so paths with spaces stay intact.
     const powershellScript =
       "$arguments = ConvertFrom-Json $env:FOUNDRY_ARGS_JSON; " +
-      "Start-Process -FilePath $env:FOUNDRY_EXE " +
-      "-ArgumentList $arguments -Wait";
+      "$process = Start-Process -FilePath $env:FOUNDRY_EXE " +
+      "-ArgumentList $arguments -PassThru; " +
+      "Set-Content -Path $env:FOUNDRY_PID_FILE -Value $process.Id; " +
+      "$process.WaitForExit();"
 
     return spawn(
       "powershell.exe",
@@ -226,7 +248,8 @@ function spawnFoundry(appPath, userDataPath) {
         env: {
           ...process.env,
           FOUNDRY_EXE: appPath,
-          FOUNDRY_ARGS_JSON: JSON.stringify(args)
+          FOUNDRY_ARGS_JSON: JSON.stringify(args),
+          FOUNDRY_PID_FILE
         }
       }
     );
@@ -289,17 +312,21 @@ async function runCommand(command, args) {
   });
 }
 
-function stopProcess(child) {
-  if (!child || child.killed) return;
-
+function stopProcess(child, foundryPid) {
   if (process.platform === "win32") {
-    spawn("taskkill", ["/pid", String(child.pid), "/t", "/f"], {
-      stdio: "ignore",
-      windowsHide: true
-    });
-  } else {
-    child.kill("SIGTERM");
+    const pids = [foundryPid, child?.pid]
+      .filter(pid => Number.isInteger(pid) && pid > 0);
+
+    for (const pid of pids) {
+      spawn("taskkill", ["/pid", String(pid), "/t", "/f"], {
+        stdio: "ignore",
+        windowsHide: true
+      });
+    }
+    return;
   }
+
+  if (child && !child.killed) child.kill("SIGTERM");
 }
 
 const appPath = await findApplication();
@@ -310,6 +337,7 @@ const systemManifest = JSON.parse(
 );
 
 let child;
+let foundryPid;
 let worldCreated = false;
 let worldPath;
 let exitCode = 1;
@@ -357,6 +385,10 @@ try {
     console.error("Unable to start Foundry:", error);
   });
 
+  if (process.platform === "win32") {
+    foundryPid = await waitForPidFile(FOUNDRY_PID_FILE);
+  }
+
   await waitForServer(BASE_URL);
 
   exitCode = await new Promise(resolve => {
@@ -380,7 +412,7 @@ try {
     testProcess.on("close", code => resolve(code ?? 1));
   });
 } finally {
-  stopProcess(child);
+  stopProcess(child, foundryPid);
 
   if (child) {
     await new Promise(resolve => {
@@ -395,6 +427,8 @@ try {
   if (worldCreated) {
     await rm(worldPath, { recursive: true, force: true });
   }
+
+  await rm(FOUNDRY_PID_FILE, { force: true });
 }
 
 process.exitCode = exitCode;
