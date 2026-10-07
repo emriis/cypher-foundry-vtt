@@ -4,7 +4,9 @@ const FOUNDRY_URL =
 const GAMEMASTER_NAME = "gamemaster";
 
 async function selectGamemaster(page) {
-  const usernameInput = page.getByRole("textbox").first();
+  const usernameInput = page.locator("input").filter({
+    visible: true
+  }).first();
 
   await usernameInput.waitFor({
     state: "visible",
@@ -14,25 +16,11 @@ async function selectGamemaster(page) {
   await usernameInput.click();
   await usernameInput.fill(GAMEMASTER_NAME);
 
-  const gamemasterOption = page.getByRole("option", {
-    name: /^gamemaster$/i
-  }).first();
+  await usernameInput.press("ArrowDown");
+  await usernameInput.press("Enter");
 
-  if (await gamemasterOption.count()) {
-    await gamemasterOption.click();
-  } else {
-    const matchingProfile = page.getByText(/^gamemaster$/i).first();
-
-    if (await matchingProfile.count()) {
-      await matchingProfile.click();
-    } else {
-      await usernameInput.press("ArrowDown");
-      await usernameInput.press("Enter");
-    }
-  }
-
-  const value = await usernameInput.inputValue().catch(() => "");
-  if (value && value.toLowerCase() !== GAMEMASTER_NAME) {
+  const value = await usernameInput.inputValue();
+  if (value.toLowerCase() !== GAMEMASTER_NAME) {
     throw new Error(
       "Foundry did not select the gamemaster profile. " +
       `Expected: ${GAMEMASTER_NAME}; actual: ${value}`
@@ -47,17 +35,15 @@ export async function joinAsGamemaster(page) {
 
   await selectGamemaster(page);
 
-  const password = page.locator(
-    'input[type="password"], input[name*="password" i]'
-  ).first();
+  const password = page.locator('input[type="password"]').first();
 
   if (await password.count()) {
     await password.fill("");
   }
 
-  const joinButton = page.getByRole("button", {
-    name: /rejoindre la partie|join game( session)?/i
-  }).first();
+  const joinButton = page.locator(
+    'button[type="submit"], form button'
+  ).filter({ visible: true }).last();
 
   if (await joinButton.count()) {
     await joinButton.click();
