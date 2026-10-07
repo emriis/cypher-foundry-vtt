@@ -1,4 +1,5 @@
 import { CYPHER } from "../config.mjs";
+import { resolveWeaponTargetEffects } from "../rules/weapon-mechanics.mjs";
 
 /**
  * Foundry-aware Item use cases.
@@ -19,7 +20,7 @@ export async function useCypher(item) {
 
 export async function rollAttack(item, {
   effortLevels = 0, assetSteps = 0, difficulty = 3,
-  luckyShot = false, skillItemId = null
+  luckyShot = false, skillItemId = null, target = null
 } = {}) {
   if (item.type !== "attack" || !item.actor) return null;
   const actor = item.actor;
@@ -43,11 +44,22 @@ export async function rollAttack(item, {
     || freeWeaponSkillCategories.includes(item.system.attackSkillCategory)
     || practicedAttackSkill;
   const weaponHinder = weaponIsFamiliar ? 0 : 1;
+  const selectedTarget = target
+    ?? (game.user?.targets?.size === 1
+      ? [...game.user.targets][0]?.actor
+      : null);
+  const targetLevel = selectedTarget?.type === "npc"
+    ? selectedTarget.system.level
+    : null;
+  const weaponTargetEffects = resolveWeaponTargetEffects(
+    item.system.mechanics?.targetEffects,
+    targetLevel
+  );
   const weaponEaseSteps = item.system.attackType === "light" ? 1 : 0;
   return actor.rollTask({
     stat: item.system.stat, difficulty, effortLevels, assetSteps, skillItemId,
     isAttack: true, baseDamage, extraHinderSteps: weaponHinder,
-    extraEaseSteps: weaponEaseSteps, luckyShot,
+    extraEaseSteps: weaponEaseSteps, luckyShot, weaponTargetEffects,
     flavor: `${game.i18n.localize("CYPHER.Roll.Attack")}: ${item.name}`
   });
 }
