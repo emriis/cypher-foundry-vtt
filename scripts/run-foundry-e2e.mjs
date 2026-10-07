@@ -198,7 +198,9 @@ async function createWorld(dataPath, coreVersion, systemVersion) {
     },
     system: "cypher",
     systemVersion,
-    type: "world"
+    type: "world",
+    resetKeys: false,
+    safeMode: false
   };
 
   await writeFile(
