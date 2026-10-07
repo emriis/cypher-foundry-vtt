@@ -23,5 +23,6 @@ export function resolveWeaponSkillModifier({
     return familiar ? 0 : -1;
   }
 
-  return Math.max(-1, skillSteps);
+  const familiarityModifier = familiar ? 0 : -1;
+  return Math.max(-1, skillSteps + familiarityModifier);
 }
