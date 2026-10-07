@@ -113,4 +113,21 @@ export const test = base.extend({
   }, { scope: "worker" }]
 });
 
+test.afterEach(async ({ e2ePage: page }) => {
+  await page.evaluate(async () => {
+    for (const actor of game.actors.filter(
+      actor => actor.name.startsWith("E2E Cypher") ||
+        actor.name.startsWith("E2E PC") ||
+        actor.name.startsWith("E2E Item Actor")
+    )) {
+      if (actor.sheet?.rendered) actor.sheet.close();
+      await actor.delete();
+    }
+
+    for (const application of Object.values(ui.windows ?? {})) {
+      if (application?.rendered) application.close();
+    }
+  });
+});
+
 export { expect };
