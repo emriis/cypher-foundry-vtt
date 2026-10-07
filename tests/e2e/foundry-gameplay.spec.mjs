@@ -20,6 +20,44 @@ async function createActor(page, overrides = {}) {
   }, { prefix: ACTOR_PREFIX, overrides });
 }
 
+async function logActorDiagnostics(page, actorId, label) {
+  const diagnostics = await page.evaluate(id => {
+    const actor = game.actors.get(id);
+    if (!actor) {
+      return { error: `Actor ${id} no longer exists` };
+    }
+
+    const sheet = actor.sheet;
+
+    return {
+      actor: {
+        id: actor.id,
+        type: actor.type,
+        model: actor.constructor?.name,
+        system: foundry.utils.deepClone(actor.system),
+        schemaFields: Object.keys(actor.schema?.fields ?? {})
+      },
+      sheet: {
+        constructor: sheet?.constructor?.name,
+        template: sheet?.options?.template,
+        rendered: sheet?.rendered,
+        elementClasses: sheet?.element
+          ? [...sheet.element.classList]
+          : [],
+        html: sheet?.element?.innerHTML?.slice(0, 4000) ?? null
+      }
+    };
+  }, actorId);
+
+  console.log(
+    `[E2E actor diagnostics] ${label}:\n${JSON.stringify(
+      diagnostics,
+      null,
+      2
+    )}`
+  );
+}
+
 async function readActor(page, actorId) {
   return page.evaluate(id => {
     const actor = game.actors.get(id);
@@ -99,6 +137,8 @@ test.describe("Cypher Foundry live gameplay", () => {
       await actor.sheet.render(true);
     }, actorId);
 
+    await logActorDiagnostics(page, actorId, "dashboard");
+
     await expect(page.locator(".pc-sheet-layout")).toBeVisible();
     await expect(page.locator(".sheet-header")).toBeVisible();
     await expect(page.locator(".pc-dashboard")).toBeVisible();
@@ -130,6 +170,8 @@ test.describe("Cypher Foundry live gameplay", () => {
       });
       await actor.sheet.render(true);
     }, actorId);
+
+    await logActorDiagnostics(page, actorId, "task roll");
 
     const before = await readActor(page, actorId);
     const messageCount = await page.evaluate(() => game.messages.size);
