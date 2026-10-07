@@ -23,6 +23,8 @@ export function resolveWeaponSkillModifier({
     return familiar ? 0 : -1;
   }
 
+  if (skillLevel === "practiced") return 0;
+
   const familiarityModifier = familiar ? 0 : -1;
   return Math.max(-1, skillSteps + familiarityModifier);
 }
