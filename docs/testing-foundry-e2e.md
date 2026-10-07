@@ -12,7 +12,7 @@ must be installed locally.
 - Playwright Chromium (`npx playwright install chromium`).
 - The Foundry executable must be discoverable automatically, or
   `FOUNDRY_APP_PATH` must point to it.
-- The Foundry user-data directory must be the default location, or
+- The Foundry **Data** directory must be the default location, or
   `FOUNDRY_DATA_PATH` must point to it.
 
 Foundry's command-line `--world` option supports launching a specific world
@@ -40,21 +40,23 @@ You do **not** need to open Foundry manually.
 The command performs this lifecycle:
 
 1. Finds the local Foundry executable.
-2. Creates an isolated temporary Foundry data directory and copies the
-   activated `Config/license.json` from the normal Foundry data directory.
-3. Creates a unique disposable Cypher world using the current `system.json`
-   version and installs the current checkout as `Data/systems/cypher` in that
-   isolated directory.
-4. Starts Foundry with that world using `--world`.
-5. Waits for the local server to become reachable.
-6. Playwright joins the fresh Gamemaster session.
-7. Runs the smoke and gameplay E2E suites in the same world and Gamemaster
+2. Resolves the normal Foundry **Data** directory.
+3. Builds the current compendium packs.
+4. Installs the current checkout of the Cypher system into
+   `Data/systems/cypher`.
+5. Creates one uniquely named disposable Cypher world under
+   `Data/worlds/`.
+6. Starts Foundry with that world using `--world`.
+7. Waits for the local server to become reachable.
+8. Playwright joins the fresh Gamemaster session.
+9. Runs the smoke and gameplay E2E suites in the same world and Gamemaster
    session.
-8. Cleans up E2E-created Actors and closes the browser session.
-9. Stops Foundry only after Playwright has completely finished.
-10. Deletes the entire temporary Foundry data directory, including the
-    disposable world. Your normal Foundry worlds and installed system are not
-   modified.
+10. Cleans up E2E-created Actors and closes the browser session.
+11. Stops Foundry only after Playwright has completely finished.
+12. Deletes **only** `Data/worlds/cypher-e2e-<run-id>`.
+
+Your other Foundry worlds, configuration, and installed systems are left in
+place. The runner never recursively deletes the Foundry Data directory.
 
 Foundry documents that newly created worlds start with a Gamemaster account
 without a password, so the runner can join the fresh world without storing
@@ -62,29 +64,19 @@ test credentials.
 
 ### Custom data paths
 
-If Foundry is installed somewhere non-standard:
+If Foundry uses a non-standard Data directory:
 
 ```powershell
-$env:FOUNDRY_APP_PATH = "D:\\Foundry Virtual Tabletop\\Foundry Virtual Tabletop.exe"
-$env:FOUNDRY_DATA_PATH = "D:\\FoundryVTT"
+$env:FOUNDRY_APP_PATH = "D:\Foundry Virtual Tabletop\Foundry Virtual Tabletop.exe"
+$env:FOUNDRY_DATA_PATH = "D:\FoundryVTT\Data"
 npm run test:e2e
 ```
 
-`FOUNDRY_DATA_PATH` identifies the real user-data directory from which the
-activated license is copied. It is never used as the E2E data directory.
+`FOUNDRY_DATA_PATH` identifies the **real Foundry Data directory** used by
+the runner. It is not a disposable directory and is never deleted by the
+runner.
 
-You can optionally choose a persistent disposable directory with
-`FOUNDRY_E2E_DATA_PATH`:
-
-```powershell
-$env:FOUNDRY_E2E_DATA_PATH = "D:\\FoundryVTT-E2E"
-npm run test:e2e
-```
-
-That directory is deleted and recreated for every run. If it is not set, the
-runner uses an automatically created system temporary directory.
-
-If your installation uses the default paths, these variables are not needed.
+If your installation uses the default path, this variable is not needed.
 
 ### Watching the browser
 
@@ -133,7 +125,6 @@ Foundry installation or license. CI checks the E2E JavaScript syntax but does
 not launch Foundry. Live E2E tests are intended for a local Foundry environment
 or a dedicated self-hosted runner with an appropriately licensed installation.
 
-
 ## World and session lifetime
 
 The E2E runner creates **one** disposable world per complete
@@ -145,9 +136,8 @@ browser page. The Gamemaster joins the world once at the beginning of the
 worker; individual tests do not return to the Foundry join screen.
 
 Actors created by the E2E tests are cleaned up after the worker finishes.
-Only after Playwright has completely finished does the runner stop the
-Foundry process. The temporary Foundry data directory, including the world,
-is then removed.
+Only after Playwright has completely finished does the runner stop the Foundry
+process. Finally, only the generated world directory is removed.
 
 This ordering is intentional:
 
@@ -155,7 +145,7 @@ This ordering is intentional:
 start Foundry
     |
     v
-create + open ONE world
+create + open ONE world in existing Data/
     |
     v
 join Gamemaster ONCE
