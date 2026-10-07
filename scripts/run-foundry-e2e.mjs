@@ -175,7 +175,7 @@ async function createWorld(dataPath, coreVersion, systemVersion) {
 
   await writeFile(
     path.join(worldPath, "world.json"),
-    JSON.stringify(manifest, null, 2) + "\\n",
+    JSON.stringify(manifest, null, 2) + "\n",
     "utf8"
   );
 
@@ -183,7 +183,7 @@ async function createWorld(dataPath, coreVersion, systemVersion) {
 }
 
 function quoteWindowsArg(value) {
-  return `"${String(value).replace(/(\\*)"/g, "$1$1\\\\\\\"").replace(/(\\+)$/g, "$1$1") }"`;
+  return `"${String(value).replace(/"/g, "\\\"")}"`;
 }
 
 function spawnFoundry(appPath, dataPath) {
