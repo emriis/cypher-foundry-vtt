@@ -9,31 +9,28 @@ must be installed locally.
 - Node.js 22 or newer.
 - A local Foundry VTT installation that has already completed license/EULA
   setup.
-- Playwright Chromium (`npx playwright install chromium`).
+- Playwright Chromium (installed automatically by `npm run test:e2e` unless `PLAYWRIGHT_SKIP_BROWSER_INSTALL=true`).
 - The Foundry executable must be discoverable automatically, or
   `FOUNDRY_APP_PATH` must point to it.
 - The Foundry **Data** directory must be the default location, or
   `FOUNDRY_DATA_PATH` must point to it.
 
 Foundry's command-line `--world` option supports launching a specific world
-directly, which is what the E2E runner uses. The runner uses the normal Foundry
-Data directory, installs the current checkout of the Cypher system into
-`Data/systems/cypher`, and creates only one uniquely named E2E world under
-`Data/worlds/`.
+directly, which is what the E2E runner uses. The runner resolves the normal
+Foundry **user-data root** and its **Data** directory separately. Foundry's
+`--dataPath` launch option receives the user-data root; the Cypher system is
+installed into `Data/systems/cypher`, and only one uniquely named E2E world is
+created under `Data/worlds/`.
 
 ## Run
 
-First install the browser once:
-
-```powershell
-npx playwright install chromium
-```
-
-Then:
+Run:
 
 ```powershell
 npm run test:e2e
 ```
+
+The runner automatically installs/validates the Playwright Chromium browser before launching Foundry. To skip that bootstrap step when the browser is already managed externally, set `PLAYWRIGHT_SKIP_BROWSER_INSTALL=true`.
 
 You do **not** need to open Foundry manually.
 
