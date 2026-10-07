@@ -1,143 +1,160 @@
 # Contributing to Cypher for Foundry VTT
 
-Thanks for considering a contribution. This project is a small, unofficial Foundry VTT system,
-so the process is intentionally lightweight — but a few conventions keep the codebase
-consistent as more people touch it.
+Thanks for contributing. This project is an unofficial Foundry VTT system, and
+the repository uses explicit source, architecture, testing, and provenance
+contracts to keep the codebase maintainable.
 
 ## Contents
 
-- [Getting set up](#getting-set-up)
-- [Coding conventions](#coding-conventions)
-  - [JSDoc: English only](#jsdoc-english-only)
-  - [Inline implementation comments](#inline-implementation-comments)
-  - [Localization](#localization)
-- [Rebuilding compendium packs](#rebuilding-compendium-packs)
-- [Commit messages](#commit-messages)
-- [Pull requests](#pull-requests)
-- [Local path and privacy rules](#local-path-and-privacy-rules)
-- [Reporting bugs](#reporting-bugs)
+- Getting set up
+- Coding conventions
+- Rebuilding compendium packs
+- Testing
+- Commit messages
+- Pull requests
+- Local path and privacy rules
+- Reporting bugs
 
 ## Getting set up
 
-1. Clone the repository into your Foundry `Data/systems/` directory (or symlink it there) so
-   Foundry can load it as a system. See [`README.md`](README.md#installation) for details.
-2. No build step is required to run the system — `.mjs` modules are loaded directly by Foundry.
-   A build step (`@foundryvtt/foundryvtt-cli`) is only needed when regenerating compendium
-   packs; see [Rebuilding compendium packs](#rebuilding-compendium-packs).
-3. Run the automated suite with `npm test`. For changes that depend on Foundry runtime behavior,
-   also run `npm run test:e2e` when a local activated Foundry installation is available, or
-   perform the focused disposable-world check described in
-   [foundry-live-validation](.github/skills/foundry-live-validation/SKILL.md).
+1. Clone the repository.
+2. Install dependencies with npm install.
+3. Run npm test.
+4. If the change depends on Foundry runtime behavior and a locally activated
+   Foundry installation is available, run npm run test:e2e.
+
+The system is loaded from the repository during development. Generated release
+artifacts are not the editing surface.
 
 ## Coding conventions
 
-### JSDoc: English only
+### JavaScript
 
-Every exported class, method, and function in a `.mjs` file should carry a JSDoc block
-(`/** ... */`) written **in English only**, with `@param` and `@returns` tags where applicable.
-This applies uniformly across the whole codebase — data models, documents, sheets, and the
-system entry point alike.
+- Use modern JavaScript modules already supported by the repository.
+- Follow the existing module and directory boundaries.
+- Keep deterministic rules free of Foundry globals.
+- Keep application services responsible for Foundry-aware orchestration.
+- Preserve public compatibility facades unless a deliberate breaking change is
+  documented.
+- Prefer small, focused functions and explicit data transformations.
 
-Rationale: JSDoc is API-facing documentation, read by anyone extending or debugging the system
-regardless of their spoken language, and by IDE tooling that doesn't distinguish languages.
-Keeping it in a single language avoids inconsistent, half-translated blocks and matches the
-convention used by the Foundry core API and by reference systems such as `dnd5e`.
+### JSDoc and comments
 
-```js
-/**
- * Rolls an attack using this weapon and delegates task resolution to the parent actor.
- *
- * @param {object} [options={}] Attack-roll options.
- * @param {number} [options.effortLevels=0] Number of Effort levels to spend.
- * @returns {Promise<object>|undefined} The actor task-roll result.
- */
-async rollAttack({ effortLevels = 0 } = {}) { /* ... */ }
-```
+Repository documentation, JSDoc, and implementation comments are written in
+English.
 
-This convention is being rolled out across the codebase; some files may still contain bilingual
-JSDoc blocks predating it (see the changelog). New and edited code must follow it; existing
-bilingual JSDoc should be converted to English-only opportunistically when a file is touched
-for another reason, rather than left as-is.
-
-### Inline implementation comments
-
-The project's existing style of pairing a French and an English line for non-JSDoc,
-in-body `//` comments (explaining a non-obvious rule interaction or a Foundry quirk) is
-unaffected by the JSDoc convention above and may continue to be used. If you're unsure whether
-a given comment counts as JSDoc (convert to English) or an inline implementation note (bilingual
-is fine), JSDoc is anything inside a `/** */` block directly preceding a declaration; everything
-else is an inline comment.
+Comments should explain non-obvious decisions, source constraints, or runtime
+boundaries rather than restating the code.
 
 ### Localization
 
-- No UI string may be hardcoded. All player-facing text goes through `game.i18n`, with entries
-  added to both `lang/en.json` and `lang/fr.json` in the same PR.
-- Follow the existing key structure (`CYPHER.<Category>.<Key>`) rather than introducing a new
-  top-level namespace.
+User-facing strings belong in the localization files.
+
+Do not add new hardcoded UI text when a localized string is appropriate.
 
 ## Rebuilding compendium packs
 
-Compendium sources live as individual JSON files under `packs/<pack-name>/_source/`. To compile
-them into the LevelDB format Foundry actually loads:
+The authoritative content is stored under paired:
 
-```sh
-npm install --no-save @foundryvtt/foundryvtt-cli@3.0.4
-npm run build:packs
-```
+    packs/<family>-en/_source/
+    packs/<family>-fr/_source/
 
-Notes:
+Do not edit generated LevelDB files manually.
 
-- `npm run build:packs` compiles all eight declared packs and writes the generated LevelDB files
-  directly under `packs/<pack-name>/`, which is what `system.json` points to.
-- Every source file needs a `_key` field formatted as `!items!<_id>` (or `!actors!<_id>`, etc.)
-  — the CLI silently skips files missing it.
-- The `_source` JSON files are the authoring source of truth. Edit the matching English and
-  French records together, preserve their mechanical alignment, and run
-  `node --test tests/content/compendium-sources.test.mjs` before rebuilding the packs.
-- The English CRD is the absolute authority for compendium description text. Under the Cypher
-  Open License, store the complete CRD text rather than a summary. For French records, use the
-  complete matching Character Book translation when available; otherwise copy the English text
-  verbatim. Never infer an unresolved translation or alter names, IDs, or mechanics to force a
-  match. Keep `docs/local/` private and read-only; it is not a source file to stage or package.
+For CRD-derived content:
+
+1. preserve the source-backed mechanics;
+2. preserve stable logical IDs;
+3. preserve CRD provenance;
+4. keep English/French mechanical data aligned;
+5. use the Character Book localization only when it faithfully matches the CRD;
+6. otherwise retain the English source text rather than inventing a translation.
+
+Run:
+
+    npm run migrate:packs
+    npm run test:content
+    npm run build:packs
+
+## Testing
+
+Use the lowest test layer that expresses the behavior:
+
+- tests/rules/ for deterministic rules
+- tests/applications/ for application services
+- tests/documents/ for Foundry document boundaries
+- tests/content/ for source and compendium contracts
+- tests/integration/ for cross-module behavior
+- tests/behaviors/ for business/BDD-style contracts
+- tests/e2e/ for real Foundry/browser behavior
+
+Start rule changes with a failing deterministic test whenever possible.
+
+Do not weaken tests to accommodate an incorrect implementation. Prefer business
+invariants and stable contracts over generated IDs, ordering, or incidental
+source layout.
+
+Run the complete suite with:
+
+    npm test
+
+Run the real Foundry E2E suite with:
+
+    npm run test:e2e
+
+The E2E runner creates only disposable cypher-e2e-* worlds and removes only
+those worlds after the run. It does not delete the Foundry Data directory.
 
 ## Commit messages
 
-Keep the subject line short and imperative ("Fix armor speed hindrance", not "Fixed a bug
-where..."). Reference the relevant `CHANGELOG.md` entry in the PR description rather than in
-every commit.
+Use concise imperative commit messages. Preferred prefixes include:
+
+- feat:
+- fix:
+- refactor:
+- test:
+- docs:
+- ci:
+- chore:
+
+Keep unrelated changes in separate commits when practical.
 
 ## Pull requests
 
-- Update `CHANGELOG.md` under `[Unreleased]` as part of the PR — new entries under the relevant
-  `Added` / `Changed` / `Fixed` heading.
-- If the change affects both languages (a new sheet field, a new mechanic), update `lang/en.json`
-  and `lang/fr.json` together.
-- Before committing a runtime-affecting change, follow
-  `.github/skills/foundry-live-validation/SKILL.md`: test in a disposable world
-  using the changed checkout and record the exact Foundry version/build. Update
-  `system.json` `compatibility.verified` only after that live test succeeds on
-  a version newer than the current value; do not bump it based on installation
-  alone. Cancel unreviewed or non-reversible migration prompts.
-- Describe how the change was tested (for example, the focused test command and, where needed,
-  which sheet and action were checked in a live Foundry world).
+A pull request should:
+
+- explain the user-visible or architectural purpose;
+- identify relevant tests;
+- update source/content contracts when applicable;
+- update documentation when the current-state behavior changes;
+- avoid unrelated generated-file churn;
+- preserve the project's license and provenance requirements.
+
+Do not merge a change merely because a single focused test passes. Run the
+appropriate complete contract suite for the affected boundary.
 
 ## Local path and privacy rules
 
-Never commit paths that identify a contributor's machine or local user profile.
-Use environment variables, operating-system directories, Foundry configuration,
-or repository-relative paths instead.
+docs/local/ is a private local-reference directory.
 
-For Foundry E2E work, keep the distinction between the Foundry user-data root
-(which contains `Config/`) and its `Data/` directory. Use
-`FOUNDRY_DATA_PATH` for the actual Data directory. The E2E runner must only
-remove its generated `Data/worlds/cypher-e2e-<run-id>` directory.
+It may be a junction or symlink to storage outside the repository. Preserve the
+path and target. Never add, stage, force-add, or publish its contents.
 
-Fictional fixture paths are acceptable; real usernames, home directories,
-installation paths, machine names, and local network addresses are not. The
-repository contract suite checks this rule automatically.
+The E2E runner is subject to the same principle: it may create and remove only
+its own disposable cypher-e2e-* worlds. It must not perform destructive cleanup
+of the user's general Foundry data.
 
 ## Reporting bugs
 
-Open an issue with the Foundry version, browser, and system version (`system.json`'s
-`version` field) you're running, along with steps to reproduce. If the bug involves a specific
-character sheet state, attaching an actor export is very helpful.
+Include:
+
+- Foundry version;
+- system version or commit;
+- reproduction steps;
+- expected behavior;
+- actual behavior;
+- relevant console errors;
+- whether deterministic tests and/or E2E reproduce the problem.
+
+For CRD/content issues, include the source section or provenance information
+when available.
