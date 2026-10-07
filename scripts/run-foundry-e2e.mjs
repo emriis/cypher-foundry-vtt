@@ -6,6 +6,7 @@ import {
   cp,
   mkdir,
   readFile,
+  readdir,
   rm,
   writeFile
 } from "node:fs/promises";
@@ -298,6 +299,32 @@ async function removeWorld(worldPath) {
   throw lastError;
 }
 
+async function removeStaleE2EWorlds(dataPath) {
+  const worldsPath = path.join(dataPath, "worlds");
+
+  let entries;
+  try {
+    entries = await readdir(worldsPath, { withFileTypes: true });
+  } catch (error) {
+    if (error.code === "ENOENT") return;
+    throw error;
+  }
+
+  const staleWorlds = entries
+    .filter(entry =>
+      entry.isDirectory() &&
+      entry.name.startsWith("cypher-e2e-")
+    )
+    .map(entry => path.join(worldsPath, entry.name));
+
+  for (const worldPath of staleWorlds) {
+    console.log(
+      "Removing stale E2E world: " + path.basename(worldPath)
+    );
+    await removeWorld(worldPath);
+  }
+}
+
 async function runWindowsTaskkill(pid, force = false) {
   const args = ["/pid", String(pid), "/t"];
   if (force) args.push("/f");
@@ -358,6 +385,9 @@ try {
   console.log(`Foundry User Data path: ${userDataPath}`);
   console.log(`Foundry Data path: ${dataPath}`);
   console.log(`Test world: ${WORLD_ID}`);
+
+  // Recover worlds left by interrupted runs before starting Foundry.
+  await removeStaleE2EWorlds(dataPath);
 
   try {
     const response = await fetch(BASE_URL);
