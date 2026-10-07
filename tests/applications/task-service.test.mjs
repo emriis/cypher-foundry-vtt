@@ -113,6 +113,42 @@ test("rollTask refunds Effort cost on a natural 20 and reports attack damage", a
   assert.equal(globalThis.__rollMessages[0].flags.cypher.d20, 20);
 });
 
+test("rollTask carries resolved weapon target effects into the result and chat flags", async () => {
+  let message;
+  setRollResult(15);
+  globalThis.Roll.prototype;
+  globalThis.Roll = class {
+    async evaluate() {
+      this.total = 15;
+      return this;
+    }
+    async toMessage(data) {
+      message = data;
+      return this;
+    }
+  };
+
+  const actor = createActor();
+  const weaponTargetEffects = [{
+    minimumTargetLevel: 0,
+    maximumTargetLevel: 2,
+    effect: "loseNextAction",
+    hinderSteps: 0,
+    duration: "next action"
+  }];
+
+  const result = await CypherActor.prototype.rollTask.call(actor, {
+    stat: "might",
+    difficulty: 3,
+    isAttack: true,
+    baseDamage: 0,
+    weaponTargetEffects
+  });
+
+  assert.deepEqual(result.weaponTargetEffects, weaponTargetEffects);
+  assert.deepEqual(message.flags.cypher.weaponTargetEffects, weaponTargetEffects);
+});
+
 test("rollTask refuses insufficient Pool before rolling or spending", async () => {
   let evaluated = false;
   globalThis.Roll = class {
