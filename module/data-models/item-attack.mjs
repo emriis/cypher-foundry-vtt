@@ -84,7 +84,7 @@ export default class CypherAttackData extends foundry.abstract.TypeDataModel {
         required: true, initial: "immediate", choices: CYPHER.rangeCategories
       }),
       extremeRange: new StringField({
-        required: true, initial: "", choices: ["", ...CYPHER.rangeCategories]
+        required: true, blank: true, initial: "", choices: ["", ...CYPHER.rangeCategories]
       }),
       damage: new NumberField({
         required: true, integer: true, initial: 2, min: 0
