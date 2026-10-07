@@ -68,7 +68,6 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
 
   static PARTS = {
     sheet: {
-      root: true,
       template: "systems/cypher/templates/actor/pc.hbs",
       templates: [
         "systems/cypher/templates/actor/parts/header.hbs",
