@@ -213,7 +213,7 @@ test("live E2E uses a Windows process boundary for Foundry and scripts", () => {
 
   assert.match(
     source,
-    /function spawnFoundry\(appPath, dataPath\)[\s\S]*?if \(process\.platform === "win32"\)/
+    /function spawnFoundry\(appPath, userDataPath\)[\s\S]*?if \(process\.platform === "win32"\)/
   );
   assert.match(
     source,
@@ -223,6 +223,7 @@ test("live E2E uses a Windows process boundary for Foundry and scripts", () => {
   assert.match(source, /Start-Process -FilePath/);
   assert.match(source, /FOUNDRY_EXE/);
   assert.match(source, /FOUNDRY_ARGS_JSON/);
+  assert.match(source, /--dataPath=\$\{userDataPath\}/);
   assert.match(source, /spawn\(appPath, args,/);
 });
 
@@ -241,6 +242,7 @@ test("live E2E cleanup is scoped to its generated world", () => {
   assert.match(source, /const \{ userDataPath, dataPath \} = await getFoundryPaths\(\)/);
   assert.match(source, /path\.join\(userDataPath, "Data"\)/);
   assert.match(source, /path\.join\(userDataPath, "Config", "license\.json"\)/);
+  assert.match(source, /playwright.*install.*chromium/);
 });
 
 test("repository does not contain machine-specific local paths", () => {
