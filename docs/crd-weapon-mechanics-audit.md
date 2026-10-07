@@ -52,7 +52,76 @@ Current implementation:
 
 The last point should only become structured if the source data gives a mechanically reliable distinction. Do not infer melee merely from a weapon name.
 
-## 2. Explicit weapon properties found in equipment
+## 2. Weapon skill and proficiency
+
+Weapon familiarity is not only a binary equipment flag. The CRD treats attack methods as skills and explicitly uses the normal skill progression.
+
+### Skill levels that affect weapon attacks
+
+| Level | Task modifier | Weapon-attack consequence |
+| --- | ---: | --- |
+| Inability | -1 step | The attack is hindered |
+| Practiced | 0 | No skill adjustment |
+| Trained | +1 step | One ease |
+| Specialized | +2 steps | Two eases |
+| Expert | +3 steps | Three eases, when an ability explicitly grants expert status |
+
+The CRD also states that gaining training twice in the same skill makes the character specialized. Expert status is not a normal advancement step and requires an ability that explicitly grants it.
+
+For weapons, distinguish:
+- weapon familiarity: whether the character can freely use the weapon/category/family;
+- attack skill: a skill for a specific attack method or broader weapon class;
+- other task modifiers: Effort, assets, wounds, light-weapon easing, range, and source-specific weapon effects.
+
+These must not be collapsed into a single boolean.
+
+### Core and Type-provided familiarity
+
+The CRD states that core characters freely use light weapons. Characters who cannot freely use a weapon are hindered when attacking with it.
+
+Types can grant broader familiarity, including all weapons, selected weapon categories, and selected weapon families.
+
+The CRD also contains explicit Type abilities such as Expert Combatant that grant training in a chosen specific attack or broader attack category. Some Types combine free weapon use with a separate trained attack skill.
+
+Therefore a character may simultaneously have free use of a weapon and a trained attack skill; no free use but a trained attack skill, where the training cancels the unfamiliar-weapon hindrance; no free use and a specialized attack skill, producing the skill's remaining ease after the familiarity penalty; or an explicit inability, which must not be counted twice with the same unfamiliar-weapon penalty.
+
+### Attack-skill scope
+
+The CRD uses weapon skills at several scopes, including a specific weapon or attack method (swords, axes, bows, guns, etc.) and broad categories such as light/medium/heavy bashing, bladed, or ranged weapons.
+
+The current data model already distinguishes weaponFamily and attackSkillCategory on attacks and attackCategory on skills. This is the correct direction, but runtime resolution must use the character's actual skill level rather than only a binary practiced flag.
+
+### Inability cancellation
+
+The CRD explicitly gives the real-world character an inability with medium and heavy weapons while allowing free use of light weapons. It also explicitly says that training in a specific medium/heavy weapon class cancels the inability but does not itself ease the attack in that special case.
+
+The runtime therefore cannot blindly add a familiarity penalty and a trained-skill ease as independent modifiers in every case. It must establish the effective weapon-skill state and apply the resulting step modifier exactly once. In particular, an inability must not double-hinder an already unfamiliar weapon.
+
+### Multiple training and specialization
+
+The CRD states that trained plus trained in the same skill becomes specialized, specialized provides two ease steps, and expert provides three ease steps only when explicitly granted by an ability.
+
+The existing skill item model already stores inability, practiced, trained, specialized, and expert. The weapon runtime should consume those levels directly rather than introducing a second proficiency scale.
+
+### Ability-driven weapon training
+
+Weapon training is not confined to equipment or Type data. The CRD contains abilities that grant training in a specific weapon attack, training in a broad weapon category, and specialization or expert status at later tiers when the character gains the skill normally. It also contains abilities that temporarily grant training in a specific attack.
+
+The audit therefore covers Types, Descriptors, Foci, ordinary skills, advancements, and abilities, not only weapon equipment.
+
+Current implementation:
+- skill levels are structurally represented;
+- Type/Descriptor skill progression can create or advance skills;
+- Focus/Ability data can grant practiced weapon categories/families;
+- attack resolution currently treats weapon familiarity mostly as a binary penalty and only recognizes a practiced matching attack skill as an explicit exception.
+
+Missing:
+1. a single pure resolver for weapon proficiency/familiarity;
+2. correct handling of trained, specialized, and expert attack skills;
+3. explicit prevention of double-counting an inability/unfamiliar-weapon penalty;
+4. source-traceable tests for Type/Focus/Ability grants at each supported scope;
+5. temporary weapon-skill states where the CRD ability explicitly makes them possible.
+## 4. Explicit weapon properties found in equipment
 
 ### Two-handed use
 
@@ -96,7 +165,7 @@ The CRD explicitly describes a weapon that can switch from heavy to medium confi
 
 Runtime still needs a proper configuration transition. Do not implement arbitrary weapon modes beyond the CRD.
 
-## 3. Special weapons
+## 4. Special weapons
 
 ### Stunstick
 
@@ -112,7 +181,7 @@ The word typically matters: the system must not encode failed explosive attacks 
 
 Missing structured mechanics include explosive/area identity, area size, delivery mode, explicitly stated failure effect, explosive Effort scaling, and the PC defense mode.
 
-## 4. Explicit special effects on weapon attacks
+## 5. Explicit special effects on weapon attacks
 
 The CRD contains weapon/armament descriptions with effects beyond ordinary damage, including Might defense follow-ups, stun/loss of next action, hindering, damage-track changes, burning, restraint/grappling, electrical damage, and Armor penetration.
 
@@ -120,7 +189,7 @@ These are source-specific mechanics. They must never be inferred from names such
 
 The extraction layer must preserve the actual mechanical statement before runtime automation. targetEffects is only the first example and is not expressive enough for every explicit weapon effect in the CRD.
 
-## 5. Ammunition and weapon use
+## 6. Ammunition and weapon use
 
 The CRD science-fiction armaments section explicitly describes ammunition handling as three campaign choices: exact tracking, abstracted upkeep, or no tracking.
 
@@ -128,13 +197,13 @@ This is not a universal weapon property. The system must not invent magazine siz
 
 Abilities that consume attacks worth of ammunition or power belong to ability runtime.
 
-## 6. Weapon-related abilities
+## 7. Weapon-related abilities
 
 The CRD contains weapon-dependent abilities including Spray, Arc Spray, firearm additional attacks, Special Shot, Sniper, weapon-specific Lethal Capability, weapon mastery, knife/axe/whip/bow attacks, projectile interception, and abilities that modify ranged or melee damage.
 
 These are not intrinsic weapon mechanics. The architecture should connect weapon source capabilities to ability prerequisites/effects rather than hard-code abilities into weapon attack resolution.
 
-## 7. Environment and genre rules affecting weapons
+## 8. Environment and genre rules affecting weapons
 
 The CRD explicitly contains weapon modifiers for low gravity, high gravity, and zero gravity.
 
@@ -146,25 +215,25 @@ Zero gravity: physical tasks are hindered; short range reaches long range; long 
 
 These should be implemented only when an environmental state model exists. Do not hide them inside rollAttack as unconditional modifiers.
 
-## 8. Spacecraft weapons
+## 9. Spacecraft weapons
 
 The science-fiction section contains a separate weapon-system model: spacecraft weapon systems are heavy weapons; each crewed weapon station can contribute an attack; targeting can disable weapons, defenses, engines, or maneuverability; target lock eases the next attack; coordinate fire provides an asset; redline attacks are risky options; and weapon-system GM intrusions have explicit malfunction consequences.
 
 This is CRD material but belongs to a future spacecraft-combat domain, not the ordinary character weapon resolver.
 
-## 9. Artifact weapons
+## 10. Artifact weapons
 
 The CRD contains a dedicated artifact-weapon section. Artifact weapons can operate outside the normal light/medium/heavy categories and can have level-based damage, Armor ignoring, special settings, and depletion.
 
 These must remain distinct from ordinary crdType weapon equipment.
 
-## 10. Mechanics that remain descriptive
+## 11. Mechanics that remain descriptive
 
 Do not automate genre suitability, narrative appearance, social/legal consequences, explanations of technology, recoil descriptions unless a rule explicitly changes a task, naming/category examples, GM intrusion examples, or suggestions for adapting unlisted weapons.
 
 Do not infer a missing category merely because the CRD says most weapons are medium.
 
-## 11. Automation backlog derived from the CRD
+## 12. Automation backlog derived from the CRD
 
 ### P0 — weapon attack resolution
 1. Represent First-action timing for light weapons.
@@ -194,7 +263,7 @@ Do not infer a missing category merely because the CRD says most weapons are med
 19. Model spacecraft weapons separately.
 20. Model artifact weapons separately.
 
-## 12. Testing requirements
+## 13. Testing requirements
 
 Every new weapon mechanic must be tested at the appropriate layers:
 - rules/unit: pure mechanic resolution;
