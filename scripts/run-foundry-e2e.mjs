@@ -186,13 +186,13 @@ async function createWorld(dataPath, coreVersion, systemVersion) {
   return worldPath;
 }
 
-function spawnFoundry(appPath, dataPath) {
+function spawnFoundry(appPath, userDataPath) {
   const args = [
     `--port=${PORT}`,
     "--noupnp",
     "--noupdate",
     `--world=${WORLD_ID}`,
-    `--dataPath=${dataPath}`
+    `--dataPath=${userDataPath}`
   ];
 
   if (process.platform === "win32") {
@@ -329,7 +329,12 @@ try {
   }
 
   const npmCommand = process.platform === "win32" ? "npm.cmd" : "npm";
+  const command = process.platform === "win32" ? "npx.cmd" : "npx";
+
   await runCommand(npmCommand, ["run", "build:packs"]);
+  if (process.env.PLAYWRIGHT_SKIP_BROWSER_INSTALL !== "true") {
+    await runCommand(command, ["playwright", "install", "chromium"]);
+  }
 
   await ensureDataPath(userDataPath, dataPath);
   await installSystem(dataPath);
@@ -341,14 +346,15 @@ try {
     systemManifest.version
   );
 
-  child = spawnFoundry(appPath, dataPath);
+  // Foundry's --dataPath option expects the user-data root. The actual
+  // Data directory is the child directory resolved above.
+  child = spawnFoundry(appPath, userDataPath);
   child.once("error", error => {
     console.error("Unable to start Foundry:", error);
   });
 
   await waitForServer(BASE_URL);
 
-  const command = process.platform === "win32" ? "npx.cmd" : "npx";
   exitCode = await new Promise(resolve => {
     const testArgs = [
       "playwright",
