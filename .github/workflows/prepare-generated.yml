@@ -29,9 +29,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Normalize CRD source metadata
-        run: npm run migrate:packs
-
       - name: Build compiled compendium packs
         run: npm run build:packs
 
@@ -64,7 +61,6 @@ jobs:
             git fetch origin "${{ github.event.pull_request.head.ref }}"
             git reset --hard "origin/${{ github.event.pull_request.head.ref }}"
 
-            npm run migrate:packs
             npm run build:packs
             npm run package
             node scripts/verify-package.mjs
