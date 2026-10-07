@@ -40,8 +40,20 @@ export async function joinAsGamemaster(page) {
   }
 
   await page.waitForFunction(
-    () => globalThis.game?.ready === true,
+    () => globalThis.game?.ready === true
+      || /game worlds|configuration and setup/i.test(
+        document.body?.innerText || ""
+      ),
     null,
     { timeout: 60_000 }
   );
+
+  const ready = await page.evaluate(() => globalThis.game?.ready === true);
+  if (!ready) {
+    throw new Error(
+      "Foundry did not launch the E2E world. The browser remained on " +
+      "the Setup screen; check the Foundry startup log for world " +
+      "availability errors."
+    );
+  }
 }
