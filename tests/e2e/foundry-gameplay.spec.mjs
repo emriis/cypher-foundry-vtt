@@ -139,7 +139,7 @@ test.describe("Cypher Foundry live gameplay", () => {
 
     await logActorDiagnostics(page, actorId, "dashboard");
 
-    await expect(page.locator(".pc-sheet-layout")).toBeVisible();
+    await expect(page.locator(".pc-dashboard")).toBeVisible();
     await expect(page.locator(".sheet-header")).toBeVisible();
     await expect(page.locator(".pc-dashboard")).toBeVisible();
     await expect(page.locator(".pc-core-stats")).toBeVisible();
