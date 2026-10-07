@@ -28,6 +28,7 @@ export default class CypherItemSheet extends HandlebarsApplicationMixin(ItemShee
   /** Handlebars template parts rendered by the sheet. */
   static PARTS = {
     sheet: {
+      root: true,
       template: "systems/cypher/templates/item/item.hbs",
       templates: [
         "systems/cypher/templates/item/parts/header.hbs",
