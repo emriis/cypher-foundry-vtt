@@ -162,6 +162,10 @@ async function ensureDataPath(userDataPath, dataPath) {
 
 async function installSystem(dataPath) {
   const target = path.join(dataPath, "systems", "cypher");
+
+  // Never layer one E2E installation over a previous system copy. Stale
+  // templates or modules can otherwise survive between test runs.
+  await rm(target, { recursive: true, force: true });
   const releasePaths = [
     "system.json",
     "cypher.mjs",
@@ -344,7 +348,7 @@ async function removeWorld(worldPath) {
 
   while (Date.now() < deadline) {
     try {
-      await removeWorld(worldPath);
+      await rm(worldPath, { recursive: true, force: true });
       return;
     } catch (error) {
       lastError = error;
@@ -406,7 +410,7 @@ try {
   const npmCommand = process.platform === "win32" ? "npm.cmd" : "npm";
   const command = process.platform === "win32" ? "npx.cmd" : "npx";
 
-  await runCommand(npmCommand, ["run", "build:packs"]);
+  // Build the exact release artifact before installing the system used by Foundry.\n  await runCommand(npmCommand, ["run", "package"]);\n  await runCommand(npmCommand, ["run", "build:packs"]);
   if (process.env.PLAYWRIGHT_SKIP_BROWSER_INSTALL !== "true") {
     await runCommand(command, ["playwright", "install", "chromium"]);
   }
