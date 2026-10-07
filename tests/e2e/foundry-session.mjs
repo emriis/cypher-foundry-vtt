@@ -4,71 +4,42 @@ const FOUNDRY_URL =
 const GAMEMASTER_NAME = "gamemaster";
 
 async function selectGamemaster(page) {
-  const usernameCandidates = [
-    page.getByRole("textbox", {
-      name: /sélectionner un utilisateur|select a user|username/i
-    }).first(),
-    page.locator(
-      "#join-username, input[name=\"username\"], " +
-      "input[autocomplete=\"username\"], " +
-      "input[placeholder*=\"utilisateur\" i], " +
-      "input[placeholder*=\"user\" i]"
-    ).first(),
-    page.locator('input[type="text"], input:not([type])').first()
-  ];
+  const usernameInput = page.getByRole("textbox").first();
 
-  for (const usernameInput of usernameCandidates) {
-    if (!(await usernameInput.count())) continue;
+  await usernameInput.waitFor({
+    state: "visible",
+    timeout: 30_000
+  });
 
-    await usernameInput.waitFor({ state: "visible", timeout: 30_000 });
-    await usernameInput.fill(GAMEMASTER_NAME);
+  await usernameInput.click();
+  await usernameInput.fill(GAMEMASTER_NAME);
 
-    const value = await usernameInput.inputValue();
-    if (value.toLowerCase() !== GAMEMASTER_NAME) continue;
-
-    await usernameInput.press("ArrowDown");
-    await usernameInput.press("Enter");
-
-    return usernameInput;
-  }
-
-  const legacyUsernameInput = page.locator(
-    "#join-username, input[name=\"username\"]"
-  ).first();
-
-  if (await legacyUsernameInput.count()) {
-    await legacyUsernameInput.waitFor({
-      state: "visible",
-      timeout: 30_000
-    });
-    await legacyUsernameInput.fill(GAMEMASTER_NAME);
-    return legacyUsernameInput;
-  }
-
-  const gamemasterOption = page.locator("select option").filter({
-    hasText: /^\\s*gamemaster\\s*$/i
+  const gamemasterOption = page.getByRole("option", {
+    name: /^gamemaster$/i
   }).first();
 
   if (await gamemasterOption.count()) {
-    const gamemasterValue = await gamemasterOption.getAttribute("value");
-    const userSelect = gamemasterOption.locator(
-      "xpath=ancestor::select[1]"
-    );
+    await gamemasterOption.click();
+  } else {
+    const matchingProfile = page.getByText(/^gamemaster$/i).first();
 
-    if (!gamemasterValue) {
-      throw new Error(
-        "Foundry exposed the gamemaster profile without a selectable value."
-      );
+    if (await matchingProfile.count()) {
+      await matchingProfile.click();
+    } else {
+      await usernameInput.press("ArrowDown");
+      await usernameInput.press("Enter");
     }
-
-    await userSelect.selectOption(gamemasterValue);
-    return userSelect;
   }
 
-  throw new Error(
-    "Foundry join page did not expose a gamemaster username input or " +
-    "legacy gamemaster select."
-  );
+  const value = await usernameInput.inputValue().catch(() => "");
+  if (value && value.toLowerCase() !== GAMEMASTER_NAME) {
+    throw new Error(
+      "Foundry did not select the gamemaster profile. " +
+      `Expected: ${GAMEMASTER_NAME}; actual: ${value}`
+    );
+  }
+
+  return usernameInput;
 }
 
 export async function joinAsGamemaster(page) {
@@ -85,7 +56,7 @@ export async function joinAsGamemaster(page) {
   }
 
   const joinButton = page.getByRole("button", {
-    name: /join game( session)?/i
+    name: /rejoindre la partie|join game( session)?/i
   }).first();
 
   if (await joinButton.count()) {
