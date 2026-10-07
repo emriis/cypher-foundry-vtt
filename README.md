@@ -1,509 +1,213 @@
-# Cypher — Système Foundry VTT (non-officiel) / Unofficial Foundry VTT System
-
-## Compatible with Cypher
-
-Le guide de contribution, avec les flux séparés pour l'implémentation, les
-compendiums, la CI et les releases, se trouve dans
-[`docs/development.md`](docs/development.md).
-
-## Architecture for contributors
-
-The system is being refactored incrementally toward a clear separation of concerns:
-
-```
-Foundry documents / sheets
-          |
-          v
-application services
-          |
-          v
-pure Cypher rules
-          |
-          v
-configuration and source data
-```
-
-During Phase 3, the main gameplay use cases have been extracted into
-`module/applications/`. The Actor API remains available as a compatibility
-facade, so existing sheets and macros do not need to change just because the
-implementation moves.
-
-The current application boundaries are:
-
-- `task-service.mjs`: task rolls, Effort/Pool transactions, defense outcomes, and chat output.
-- `recovery-service.mjs`: recoveries and Rally.
-- `advancement-service.mjs`: advancement purchases and tier transitions.
-- `character-service.mjs`: XP spending, rerolls, Player Intrusions, and custom character data.
-- `damage-service.mjs`: wounds, damage, shields, armor damage/repair, and token statuses.
-- `reference-resolver.mjs`: the common boundary for resolving and validating document references.
-
-The deterministic rules remain in `module/rules/` and must not depend on Foundry globals.
-When adding a new feature, read [`docs/architecture.md`](docs/architecture.md) and
-[`docs/development.md`](docs/development.md) before deciding where the code belongs.
-
-### Compendium source of truth
-
-The bilingual compendiums follow the same separation:
-
-```
-packs/*/_source/
-      |
-      | migration / normalization / build
-      v
-Foundry LevelDB packs
-```
-
-Edit only the paired English/French `_source/` records. The LevelDB files are generated
-artifacts that Foundry loads at runtime. A gameplay refactor normally does **not** require
-rebuilding compendiums unless the content schema or compiled pack contents actually change.
-
-## 🇫🇷 À propos
-
-Ce système est construit à partir du **Cypher Reference Document (CRD)** publié par
-Monte Cook Games sous la [**Cypher Open License**](https://col.montecookgames.com), qui autorise
-la création de jeux compatibles réutilisant les règles et le contenu du CRD. Pensez à respecter
-les conditions d'attribution de cette licence si vous distribuez ce système publiquement.
-
-Ceci n'est **pas** un produit officiel de Monte Cook Games.
-
-### Audit d'architecture (corrections appliquées)
-
-Un audit complet a été fait contre les recommandations officielles de développement de système
-Foundry VTT (V13/V14). Bugs réels trouvés et corrigés :
-
-- **`primaryTokenAttribute`/`secondaryTokenAttribute`** dans `system.json` pointaient vers
-  `pools.might`/`pools.speed`, un chemin qui n'existe pas dans le schéma réel
-  (`stats.might.pool`) — les barres de jeton (vie/vitesse) ne pouvaient pas fonctionner.
-- **`data-action="onEditImage"`** sur les portraits de personnage/objet — ce n'est pas le nom
-  d'action réel de Foundry (`editImage`), le clic sur le portrait ne faisait donc rien.
-- **Perte de données silencieuse sur les tableaux (`ArrayField`)** : les statistiques
-  personnalisées, les champs libres, et les emplacements d'avancement utilisaient des champs de
-  formulaire ne couvrant pas tous les sous-champs de chaque élément (ex. `id`/`label` absents).
-  Comme Foundry remplace un `ArrayField` **en bloc** à chaque soumission (jamais fusionné élément
-  par élément), et que la fiche soumet le formulaire entier à chaque changement
-  (`submitOnChange: true`), ces champs non représentés auraient été silencieusement effacés au
-  moindre autre changement sur la fiche — par exemple, un emplacement d'avancement déjà acheté
-  aurait pu redevenir "non acheté". Corrigé avec des champs cachés dédiés qui préservent ces
-  valeurs à chaque soumission.
-- Renommage cohérent **Cypher System → Cypher** dans tout le projet (identifiant du système,
-  dossier, chemins de templates, classes CSS, espace de noms des flags), suite à la mise à jour
-  du nom du jeu par Monte Cook Games pour cette édition.
-
-Limite de validation : les tests déterministes et l'infrastructure E2E sont présents dans le
-dépôt. Les E2E nécessitent toutefois une installation Foundry locale activée et ne sont pas
-exécutés par la CI standard ; une validation live reste donc à effectuer pour toute modification
-dépendant du runtime, du rendu ou de l'UI Foundry.
-
-### Audit comparatif face à dnd5e (référence officielle)
-
-Le système `dnd5e` (foundryvtt/dnd5e sur GitHub) sert de référence pour les bonnes pratiques
-d'architecture. Comparaison faite, adoptions retenues :
-
-- **`compatibility.maximum` retiré** du manifeste : dnd5e ne fixe pas de plafond de version,
-  pour ne pas bloquer artificiellement le système dès qu'une nouvelle version de Foundry sort
-  sans incompatibilité réelle connue.
-- **Flag `hotReload`** ajouté : permet à Foundry de recharger CSS/templates/langue à la volée
-  pendant le développement, sans redémarrer le monde.
-- **Point d'entrée de migration de monde** (`module/migration.mjs`) conservé comme emplacement
-  réservé aux futures migrations de données persistées. Aucun monde pré-alpha pris en charge
-  n'exige actuellement de transformation ; les migrations ne seront réintroduites que lorsqu'un
-  changement de schéma nécessitera réellement une conversion de données.
-- **Exports groupés (`_module.mjs`)** par dossier (`data-models/`, `documents/`, `sheets/`),
-  suivant le motif `import * as X from "./module/X/_module.mjs"` de dnd5e, au lieu d'importer
-  chaque classe individuellement dans `cypher.mjs` — plus lisible et qui passe mieux à l'échelle
-  à mesure que le système grossit.
-
-Différences volontairement **non adoptées**, propres à un système de la taille de dnd5e et hors
-de propos pour un projet de cette envergure : dossier `canvas/` (intégrations avancées de scène),
-`dice/` avec sous-classes de jets dédiées, pipeline de build LESS/SCSS, système de rendu
-d'enrichisseurs de texte personnalisés, et enregistrement de contenu tiers via des modules.
-
-### Ce que contient cette V1
-
-- Manifeste `system.json` compatible Foundry VTT **V13 et V14** (V14 vérifiée).
-- Modèles de données (DataModel) pour :
-  - Acteurs : Personnage joueur (PC), PNJ, Communauté
-  - Objets : Compétence, Capacité, Cypher, Artefact, Curiosité, Équipement, Arme (Attaque), Armure
-- Feuilles de personnage en **ApplicationV2** (le framework recommandé, AppV1 sera retiré en V16).
-- Localisation complète **français / anglais** (`lang/fr.json`, `lang/en.json`) — tout le texte de
-  l'interface passe par `game.i18n`, aucun texte n'est codé en dur.
-- Mécaniques automatisées (conformes au CRD fourni — système par **Blessures**, pas par
-  "réserve à 0") :
-  - Jets de tâche complets (difficulté, pas, effort, Marge, compétences, atouts), avec les
-    résultats spéciaux 1/17/18/19/20 (intrusion du MJ, bonus de dégâts, effet mineur/majeur,
-    remboursement du coût au 20 naturel).
-  - Coût d'Effort correct : 3 points le premier niveau, 2 points chaque niveau suivant, Marge
-    déduite une seule fois sur le total.
-  - **Suivi de blessures** (mineure/modérée/majeure, 3 cases chacune par défaut) avec
-    débordement en cascade et handicap cumulatif (modérée pleine = -1 pas ; chaque blessure
-    majeure = -1 pas supplémentaire ; 3 blessures majeures = mort), synchronisé avec des statuts
-    de jeton ("Handicapé"/"Mort").
-  - Armure des PJ à la bonne mécanique : facilite le Blocage / handicape l'Esquive selon la
-    catégorie (légère/moyenne/lourde), avec gestion de l'utilisation libre.
-  - Récupérations avec retrait de blessures selon la durée (10 min = mineures, 1h = une
-    modérée, 10h = toutes les modérées).
-  - Ralliement (dépense de Puissance pour retirer une blessure mineure/modérée).
-  - Utilisation des cyphers en un clic, jets d'attaque avec dégâts par catégorie d'arme
-    (légère 2 / moyenne 4 / lourde 6).
-- **Système de conception (design system)** documenté dans [`DESIGN-SYSTEM.md`](DESIGN-SYSTEM.md) :
-  jetons de couleur/typographie/espacement réutilisables, contrastes WCAG AA vérifiés,
-  compatibilité thème clair/sombre de Foundry, anneaux de focus clavier, cibles cliquables
-  minimales — à réutiliser tel quel pour toute nouvelle feuille ou application du système.
-
-### Import depuis le Character Builder officiel
-
-Un bouton **« Importer (Character Builder) »** apparaît dans la barre latérale Acteurs
-(`module/import.mjs`) pour créer directement un PJ dans ce système à partir d'un export `.json`
-du [Character Builder officiel](https://tools.cypher-rpg.com/builder) (même format que le module
-Foundry tiers `cyphersystem`). La structure de données étant entièrement différente de celle de
-ce système, il s'agit d'un vrai mappeur, pas d'un chargement direct :
-
-- Blessures : extraites par analyse tolérante (regex) du texte libre des notes de l'export
-  (`Minor: ... 0/5` etc.) ; si une sévérité ne peut pas être analysée, elle retombe
-  individuellement sur 3/0 sans faire échouer le reste de l'import.
-- Genre de jeu : aucun équivalent dans l'export, réglé sur **Personnalisé** (tous les champs
-  Type/Foyer/Espèce/Profession/Rang déverrouillés) — à ajuster ensuite à la main.
-- Le champ « Species » de l'export correspond en réalité au **second descripteur** du CRD (le
-  paquet de traits qu'une espèce à bénéfices mécaniques confère est identique à un descripteur) ;
-  il est donc importé comme second descripteur, pas comme un champ Espèce séparé.
-- Les pseudo-compétences `Freely Use ...` de l'export ne deviennent pas des objets Compétence :
-  elles servent à cocher `freelyUsable` sur les armes/armures importées de la catégorie
-  correspondante. La pseudo-compétence `Initiative` est ignorée (pas d'équivalent dans ce système).
-- Le coût d'une aptitude écrit `"1+"` dans l'export est stocké comme l'entier de base (`1`) ; le
-  texte de description complet (qui mentionne l'Effort additionnel) est conservé tel quel, et cela
-  n'affecte en rien la dépense d'Effort réelle lors des jets (gérée indépendamment par la boîte de
-  dialogue de jet).
-- Compétences, Aptitudes, Équipement et Armes (Attaques) sont pris en charge. **Cyphers, Artefacts,
-  Armures, Boucliers et Curiosités ne sont pas encore mappés**, faute d'échantillon d'export les
-  contenant à ce jour — ils sont ignorés avec un avertissement (visible en jeu et dans la console)
-  plutôt que mappés au hasard. Si vous avez un export contenant ces types, partagez-le pour étendre
-  le mappeur.
-- `game.cypher.importFromBuilder(jsonData)` et `game.cypher.openImportDialog()` restent utilisables
-  depuis une macro si le bouton de la barre latérale ne trouve pas son point d'ancrage sur une
-  version de Foundry donnée (placement du bouton fait au mieux, DOM de la barre latérale non garanti
-  stable d'une version à l'autre).
-
-### CRD compendium architecture
-
-The 2026 Cypher Reference Document is being converted into a Foundry-first
-reference library rather than a single Journal Entry. General rules become
-Journal Entries, reusable player content becomes Items, creatures become
-Actors, and quick references link back to detailed rules.
-
-The conversion architecture and working mapping are documented in
-[docs/compendium-architecture.md](docs/compendium-architecture.md) and
-[docs/crd-compendium-map.md](docs/crd-compendium-map.md).
-
-The existing standalone Ability, Type, Descriptor, and Focus compendiums remain
-the authoritative character-content layer. New CRD packs will be introduced
-incrementally and compiled from their _source directories.
-
-### Compendiums de Descripteurs (FR/EN)
-
-Les compendiums bilingues de Descripteurs regroupent les entrées du CRD par catégories de
-sources et sont disponibles en français et en anglais. Le lot actuel contient **33 Descripteurs**
-du
-CRD, sous la forme d'un nouveau type d'objet `descriptor` (`module/data-models/item-descriptor.mjs`),
-packagés dans deux compendiums LevelDB (`descriptors-fr`, `descriptors-en`).
-
-Un Descripteur n'est volontairement **pas un objet persistant** : le glisser sur une fiche PJ
-(`CypherPCSheet#_onDropItem`) ouvre une boîte de dialogue pour choisir la statistique (si le
-Descripteur en propose plusieurs, ex. Gloomy/Sombre) et la compétence (parmi celles listées, ou
-un texte libre pour couvrir les formulations "...ou similaire" du CRD), puis applique directement
-l'effet via `CypherActor#applyDescriptor` :
-
-- +2 (ou le montant défini) à la Réserve choisie ;
-- création d'une Compétence entrainée correspondante, ou avancement d'une compétence existante du
-  même nom (même logique de progression que l'avancement de personnage : inaptitude annulée,
-  entrainée → spécialisée...) ;
-- le nom du Descripteur est inscrit dans `system.descriptor`, déjà affiché dans la phrase de
-  personnage de l'en-tête ;
-- un message de tchat récapitule ce qui a été accordé.
-
-Le texte descriptif de chaque entrée reprend le texte intégral correspondant du CRD anglais,
-sous la Cypher Open License. En français, la traduction complète du Character Book est utilisée
-lorsqu'elle existe ; sinon, le texte anglais est recopié à l'identique. Les données mécaniques,
-noms et identifiants restent alignés entre les deux langues.
-
-**Maintenir/étendre les sources** : modifiez directement les fichiers JSON appariés dans
-`packs/descriptors-{fr,en}/_source/`, puis exécutez les tests de compendium. Pour recompiler en
-pack LevelDB chargeable par Foundry (nécessite `@foundryvtt/foundryvtt-cli`, installable via
-`npm install --no-save @foundryvtt/foundryvtt-cli`) :
-
-```powershell
-npx fvtt package pack -n descriptors-en --in packs/descriptors-en/_source --out /tmp/out-en
-cp /tmp/out-en/descriptors-en/* packs/descriptors-en/
-npx fvtt package pack -n descriptors-fr --in packs/descriptors-fr/_source --out /tmp/out-fr
-cp /tmp/out-fr/descriptors-fr/* packs/descriptors-fr/
-```
-
-(Le CLI imbrique son résultat dans `<out>/<nom-du-pack>/` ; il faut remonter son contenu au
-niveau attendu par `system.json`, qui pointe directement vers `packs/<nom-du-pack>/`. Chaque
-fichier source doit contenir un champ `_key` au format `!items!<_id>`, sans quoi le CLI l'ignore
-silencieusement.)
-
-### Compendiums d'aptitudes, Types et Foci (FR/EN)
-
-Les aptitudes sont des documents `ability` autonomes, stockés dans `abilities-en` et `abilities-fr`. Les Types et Foci ne contiennent plus les données complètes de leurs aptitudes : ils stockent des références UUID vers ces documents réutilisables. Cela permet à un contenu personnalisé de réutiliser une aptitude existante ou d'en référencer une nouvelle sans dupliquer sa définition.
-
-Les aptitudes portent leurs propres données mécaniques, notamment leur coût, leurs effets et leur mode d'activation. Le modèle actuel distingue `action`, `firstAction` et `lastAction`; `null` est réservé aux aptitudes qui ne requièrent pas d'action dans ce modèle. D'autres cas particuliers du CRD ne sont pas encore modélisés.
-
-Les prérequis ne font pas partie de l'aptitude réutilisable. Pour un Focus, ils sont représentés par son `flowchart`, dont les arêtes relient les identifiants locaux des aptitudes du Focus. Le flowchart appartient donc au Focus et non à l'aptitude.
-
-Les mêmes noms peuvent correspondre à plusieurs aptitudes si leurs mécaniques diffèrent : l'identité technique d'une aptitude est son identifiant, pas son nom.
-
-Les sources françaises sont traitées avec le CRD comme autorité mécanique. Une traduction française issue du Character Book n'est conservée que lorsqu'elle correspond au contenu anglais de référence ; sinon le contenu anglais est conservé pour traduction ultérieure.
-
-### Compendiums de Types (FR/EN)
-
-Les Types du document de référence sont maintenus dans deux compendiums bilingues, regroupés dans
-les dossiers de langue `Français` et `English` grâce à `packFolders`. Les 55 Types couvrent les
-sections Fantasy, Science-fiction et Super-héros du document, avec leurs variantes de sous-genre.
-Le CRD anglais est l'autorité absolue pour le texte intégral des descriptions. En français, une
-traduction complète du Character Book est utilisée lorsqu'elle existe ; sinon, le texte anglais
-est recopié à l'identique. Les noms, identifiants et données mécaniques ne sont pas modifiés par
-la traduction.
-
-Modifiez directement les sources correspondantes dans `packs/abilities-{fr,en}/_source/`, `packs/types-{fr,en}/_source/` et `packs/foci-{fr,en}/_source/`, puis validez-les avec :
-
-```powershell
-node --test tests/content/compendium-sources.test.mjs
-```
-
-Puis compiler les deux packs avec le CLI Foundry, en utilisant la même procédure que pour les
-Descripteurs : `types-en` depuis `packs/types-en/_source` et `types-fr` depuis
-`packs/types-fr/_source`. Le CLI Foundry n'est pas inclus dans ce dépôt.
-
-### Ce qu'il reste à faire (V2)
-
-1. Tester la fiche de personnage en jeu, ajuster le layout/CSS selon vos goûts.
-2. Compléter les compendiums bilingues de **Foyers** à partir du CRD, en respectant la Cypher
-  Open License.
-3. Ajouter des macros compendium pour automatiser des actions répétitives (application de dégâts
-   de groupe, gestion des intrusions du MJ, etc.).
-4. Ajouter une feuille PNJ dédiée avec calcul automatique du nombre cible (niveau × 3).
-
-### Installation locale (pour tester)
-
-1. Copiez le dossier `cypher` dans le dossier `Data/systems/` de vos données utilisateur
-   Foundry VTT.
-2. Lancez Foundry VTT (V13 ou V14), créez un monde avec le système "Cypher".
-3. Dans les paramètres du monde, choisissez la langue Français ou English.
-
----
-
-## 🇬🇧 About
-
-This system is built from the **Cypher Reference Document (CRD)** published by Monte Cook Games
-under the [**Cypher Open License**](https://col.montecookgames.com), which permits building
-compatible games that reuse CRD rules and content. Follow that license's attribution requirements
-if you distribute this system publicly.
-
-This is **not** an official Monte Cook Games product.
-
-### What's in this V1
-
-- `system.json` manifest compatible with Foundry VTT **V13 and V14** (verified against V14).
-- DataModels for PC/NPC/Community actors and Skill/Ability/Cypher/Artifact/Equipment/
-  Attack/Armor items.
-- **ApplicationV2** character sheets (the recommended framework going forward).
-- Full **French/English** localization — no hardcoded UI strings.
-- Automated mechanics matching the actual CRD rules — a **Wound**-based system, not a
-  "pool hits 0" damage track:
-  - Full task rolls (difficulty, steps, Effort, Edge, skills, assets), with special results on
-    natural 1/17/18/19/20 (GM intrusion, damage bonus, minor/major effect, cost refund on a
-    natural 20).
-  - Correct Effort cost: 3 points for the first level, 2 for each additional level, Edge
-    discounted once on the total.
-  - **Wound tracking** (minor/moderate/major, 3 boxes each by default) with cascading overflow
-    and stacking hindrance (moderate full = -1 step; each major wound = another -1 step; 3 major
-    wounds = death), synced to token statuses ("Hindered"/"Dead").
-  - PC armor using the correct mechanic: eases Block / hinders Dodge by category
-    (light/medium/heavy), accounting for freely-usable armor.
-  - Recoveries that remove wounds based on duration (10 min = minors, 1 hour = one moderate,
-    10 hours = all moderates).
-  - Rallying (spend Might to remove a minor/moderate wound).
-  - One-click cypher use, attack rolls with damage by weapon category (light 2/medium 4/heavy 6).
-- Optional **second descriptor** and **second focus** fields (CRD-sanctioned via the Human
-  species option and the "Second Focus" superhero advancement) — hidden by default, added/removed
-  with a "+"/"-" toggle on the header.
-- **Custom stats**: add any number of additional Pool/Edge stats beyond Might/Speed/Intellect
-  (e.g. Luck, Faith, Willpower for a homebrew genre). They work in task rolls exactly like the
-  three core stats (Effort, Edge discount, wound hindrance all apply the same way).
-- **Resource Points** tracker in the header, per the CRD's advancement/goals rules.
-- **Genre-aware character creation**, matching the CRD's actual per-genre rules:
-  - A **Genre** selector (Real World / Fantasy / Sci-Fi / Superhero / Unspecified) drives which
-    fields the header shows.
-  - **Real World**: no Type/Focus — the sheet switches to **Descriptor + Profession**, per the
-    CRD ("the main thing that makes a character a real-world character is you don't start with a
-    focus"). A hint reminds the GM/player of the default inability with medium/heavy weapons.
-  - **Fantasy / Sci-Fi**: standard Descriptor+Type+Focus line, plus an optional **Species**
-    field (Human, Elf, Cyborg, etc. — left blank by the system, populate however your table likes).
-  - **Superhero**: adds **Rank (1-5)** and **Power Shifts** (12 CRD categories — Accuracy,
-    Dexterity, Strength, etc. — each capped at 3, exactly as written: "no more than three in any
-    one category"). Superhero characters can also **rally to remove a major wound** (10 Might,
-    correctly gated to this genre only — every other genre still can't), and task difficulty in
-    the roll dialog goes up to **15** instead of 10, per the "impossible tasks" rule for this genre.
-  - **Custom (all fields)**: a fifth genre option that unlocks every genre-specific field at
-    once — Type/Focus, Species, Profession, and the Rank/Power Shifts block all become visible
-    together, so you can freely mix and match whichever pieces fit your own character concept.
-- **Custom Fields**: an open-ended list, independent of genre, for adding literally anything the
-  system doesn't already model — a text field, a number field, or a checkbox, each with your own
-  label (e.g. "Reputation", "Debt", "Ally", "Radiation Level"...). Add or remove as many as you like.
-- **Full XP economy** (a new **Advancement** tab), matching the CRD:
-  - **Reroll (1 XP)**: a button appears under any task/attack roll in chat, right after the roll —
-    spends 1 XP and posts the better of the original and new d20.
-  - **Player Intrusion (1 XP)**: a button + prompt to describe how the situation is altered in the
-    character's favor, posted to chat.
-  - **Lucky Shot (1 XP)**: available directly in the attack roll dialog — attacks blind, hindered
-    by 4 steps automatically.
-  - **Full character advancement**: 4 slots per tier (Increasing Capabilities / Moving Toward
-    Perfection / Extra Effort / Skill, or an "Other" substitute — Recovery/Focus/Armor/Weapons/
-    Genre), each costing 4 XP. Buying a slot applies its mechanical effect automatically (Pool
-    distribution dialog, Edge+1 on a chosen stat, Effort+1 capped at 6, upgrading or adding a
-    Skill item, etc.) and grants a Resource Point. Once all 4 slots are bought, the character
-    **automatically advances a tier**, the slots reset, and a chat message reminds about the free
-    Focus ability (and Genre ability at tiers 3/6/9...).
-  - Weapon proficiency is now tracked (`freelyUsable` on Attack items): an unfamiliar weapon
-    hinders the attack by 1 step, unless the "Other: Weapons" advancement was bought.
-  - Recovery rolls now include any permanent recovery bonus from advancement.
-- **Block & Dodge**, matching the CRD's actual wording ("blocking an attack (a Might task),
-  dodging an attack (a Speed task)"):
-  - Two buttons next to Armor — **Block** (Might, eased by the worn armor's category) and
-    **Dodge** (Speed, hindered by it) — open the usual roll dialog plus a dropdown for the
-    incoming wound's severity (set by the GM based on the attacker).
-  - A **successful Block reduces the wound's severity by one step** (major→moderate→minor→none);
-    a **successful Dodge avoids the wound entirely**; a **failed defense inflicts the wound
-    as-is**. This is applied automatically to the Wounds track.
-  - Built on top of the same roll engine as every other task, so Effort, Edge, assets, special
-    results (17-20), and the chat reroll button all work identically for defense rolls.
-- **Shields**, matching the CRD's dedicated "Armor and Shields" rules:
-  - A new **Shield** item type, usable by any character regardless of Type (unlike armor).
-  - Shields have their **own wound track** — 3 minor / 2 moderate / 1 major by default, distinct
-    from the character's own wounds — with the same cascading overflow logic.
-  - On a **successful Block**, the roll dialog lets you choose an equipped, unbroken shield: if
-    selected, the shield **absorbs the entire wound** instead of the usual one-step reduction.
-    A shield taking its major wound is automatically marked **broken** and stops protecting.
-- **Damageable armor**, per the CRD's exact wording ("reducing how much it eases your block
-  tasks (but not affecting how much it hinders your dodge tasks)"):
-  - A **Damage (GM intrusion)** button next to Armor reduces its Block-easing bonus by 1 step
-    per click, capped so it can't go below 0. The **Dodge hindrance is never touched**, matching
-    the asymmetry the CRD specifies.
-  - A damaged-armor banner appears on the sheet, and the effective Block bonus is shown alongside
-    the original base value.
-  - A **Repair Armor** button (with confirmation) clears all accumulated damage.
-- **Bugfix**: an unfamiliar armor's Speed hindrance (per the CRD: "it hinders all your Speed
-  tasks") was computed but never actually subtracted from anything except explicit Dodge rolls.
-  It's now correctly applied to every Speed-stat task roll (Dodge excluded to avoid double-
-  counting, since Dodge already folds it in directly).
-- **Artifact depletion rolls**, per the CRD's actual mechanic ("you roll the die in the depletion
-  stat... if your roll is in the depletion range... that is its last use"):
-  - Artifacts (and optionally Equipment, for CRD items like a medical bag or aspirin that use
-    depletion instead of a fixed quantity) now have a structured **depletion die + threshold**
-    instead of free text, plus a **Depletion Roll** button (🎲) in the inventory.
-  - Rolling it always lets the item work this use; if the roll falls at or under the threshold,
-    the item is marked **depleted** for future uses.
-  - The chat reroll button (1 XP) works on depletion rolls too, per the CRD's explicit mention
-    that XP can reroll "a recovery or an artifact depletion roll."
-- **Unified armor**: the actor-level "active armor" state and the Armor items in inventory are
-  no longer two disconnected things. The character's armor (category, Block/Dodge modifiers,
-  and damage) is now **fully derived from whichever Armor item is checked "Equipped"** in
-  inventory — there's nothing left to edit redundantly on the Main tab, just a live summary.
-  Damage to the Block bonus now lives on the Armor item itself (so switching armor also switches
-  its damage state, which makes sense — a fresh suit of armor isn't dented just because your old
-  one was). Only one Armor item can be Equipped at a time: checking one automatically unequips
-  any other, enforced both from the sheet and at the document level (so it holds even if you
-  toggle "Equipped" directly from an Armor item's own sheet).
-- **Design system** documented in [`DESIGN-SYSTEM.md`](DESIGN-SYSTEM.md): reusable color/
-  typography/spacing tokens, WCAG AA-verified contrast, Foundry light/dark theme compatibility,
-  keyboard focus rings, minimum click targets — reuse as-is for any new sheet or application in
-  this system.
-
-### Import from the official Character Builder
-
-An **"Import (Character Builder)"** button appears in the Actors sidebar (`module/import.mjs`)
-to create a PC directly in this system from a `.json` export produced by the
-[official Character Builder](https://tools.cypher-rpg.com/builder) (same format as the
-third-party Foundry module `cyphersystem`). That export's data structure is entirely different
-from this system's own, so this is a real mapper, not a direct load:
-
-- Wounds: extracted via tolerant regex parsing of the export's free-text notes
-  (`Minor: ... 0/5`, etc.); if one severity can't be parsed, it individually falls back to 3/0
-  without failing the rest of the import.
-- Genre: no equivalent in the export, set to **Custom** (unlocks every Type/Focus/Species/
-  Profession/Rank field) — adjust by hand afterward.
-- The export's "Species" field actually corresponds to the CRD's **second descriptor** (the
-  trait package a mechanically-benefited species grants is identical to a descriptor), so it's
-  imported as a second descriptor, not a separate Species field.
-- The export's `Freely Use ...` pseudo-skills don't become Skill items: they're used to flag
-  `freelyUsable` on imported weapons/armor of the matching category. The `Initiative`
-  pseudo-skill is ignored (no equivalent in this system).
-- An ability cost written `"1+"` in the export is stored as the base integer (`1`); the full
-  description text (which mentions the extra Effort) is kept as-is, and this has no bearing on
-  actual Effort spending during rolls (handled independently by the roll dialog).
-- Skills, Abilities, Equipment, and Weapons (Attacks) are supported. **Cyphers, Artifacts,
-  Armor and Shields aren't mapped yet**, for lack of an export sample containing them
-  so far — they're skipped with a warning (shown in-game and in the console) rather than guessed
-  at. If you have an export containing those types, share it to extend the mapper.
-- `game.cypher.importFromBuilder(jsonData)` and `game.cypher.openImportDialog()` remain usable
-  from a macro if the sidebar button fails to find its anchor point on a given Foundry version
-  (button placement is best-effort, since the sidebar's DOM isn't guaranteed stable across
-  versions).
-
-### Descriptor compendiums (FR/EN)
-
-The bilingual Descriptor compendiums group the current CRD Descriptor entries by source category
-and are available in both French and English. The current set contains **33 CRD Descriptors**, as a new
-`descriptor` item type (`module/data-models/item-descriptor.mjs`), packaged into two LevelDB
-compendiums (`descriptors-fr`, `descriptors-en`).
-
-A Descriptor is deliberately **not a persistent item**: dropping it onto a PC sheet
-(`CypherPCSheet#_onDropItem`) opens a dialog to pick the stat (if the Descriptor offers more than
-one, e.g. Gloomy) and the skill (from the listed options, or free text to cover the CRD's
-"...or similar" wording), then applies the effect directly via `CypherActor#applyDescriptor`: a
-Pool bonus, a newly trained (or advanced) Skill item, the Descriptor's name written into
-`system.descriptor` (already shown in the header's character sentence), and a chat message
-summarizing the grant. Descriptions use the complete corresponding English CRD text under the
-Cypher Open License. The French pack uses the complete Character Book translation when available;
-otherwise it stores the English text verbatim. Names, identifiers, and mechanical data remain
-aligned between languages.
-
-Edit the paired source JSON directly under `packs/descriptors-{en,fr}/_source/`, run
-`node --test tests/content/compendium-sources.test.mjs`, then recompile a loadable LevelDB pack with
-`@foundryvtt/foundryvtt-cli` — see the French section above for the exact commands (each source
-file needs a `_key: "!items!<_id>"` field, or the CLI silently skips it).
-
-### Current roadmap
-
-See the French section above — continue playtesting the sheet, complete the remaining bilingual
-Focus compendiums, add automation macros, add a dedicated NPC sheet, and extend live E2E coverage.
-
-## Publier une version / Releasing a version
-
-Exécutez `./scripts/package.ps1` depuis PowerShell pour créer `dist/system.json` et
-`dist/system.zip`. L'archive ne contient que les fichiers nécessaires à Foundry, avec
-`system.json` à sa racine. Le script vérifie que la version et l'URL `download` du manifeste
-correspondent.
-
-Create and push a `v<version>` tag matching the `version` in `system.json` to publish a GitHub
-release automatically. The workflow attaches `system.json` and `system.zip`; Foundry uses the
-stable `manifest` URL to discover the latest version and the versioned `download` URL to install
-the matching archive.
-
-## Tests
-
-Run `npm test` to execute the unit tests for deterministic game rules. GitHub Actions runs this
-command for every push and pull request, and before packaging a tagged release.
-
-
----
+# Cypher — Unofficial Foundry VTT System
+
+An unofficial Foundry VTT system for **Cypher**, built under the Cypher Open
+License.
+
+This repository currently targets Foundry VTT V13 and V14 and is verified
+against Foundry V14. The current release version is 0.2.0-alpha.1.
+
+This project is not affiliated with Monte Cook Games or Foundry Gaming LLC.
+
+## Project status
+
+The broad architecture refactor is complete. The current development focus is
+on closing the runtime boundary for structured CRD mechanics that are already
+extracted into the compendium source.
+
+The current CRD content layer is substantially complete for the source-backed
+player and equipment families:
+
+- Skills
+- Abilities
+- Types
+- Descriptors, including species-style descriptors
+- Foci
+- Equipment
+- Weapons
+- Armor
+- Shields
+- Subtle Cyphers
+- Manifest Cyphers
+- Power Boost Cyphers
+
+The W4 equipment inventory contains 259 English records paired with 259 French
+records across equipment, weapons, armor, and shields.
+
+The supplied 2026-07-29 CRD contains no creature inventory. The repository
+therefore does not claim CRD creature extraction. The existing NPC/creature
+Actor model is a general system capability.
+
+The Artifact Item model exists, but Artifact extraction is source-blocked because
+the supplied CRD contains no Artifact inventory.
+
+## Architecture
+
+The current dependency direction is:
+
+    Foundry documents / sheets
+              |
+              v
+    application services
+              |
+              v
+    pure Cypher rules
+              |
+              v
+    configuration and source data
+
+Important boundaries:
+
+- module/rules/ contains deterministic rules and must not depend on Foundry
+  globals.
+- module/applications/ contains Foundry-aware gameplay use cases.
+- module/documents/ provides thin document APIs and compatibility facades.
+- module/data-models/ defines Actor and Item schemas.
+- module/sheets/ contains ApplicationV2 UI.
+- packs/*/_source/ is the authoritative editable compendium content.
+- Generated LevelDB packs are build artifacts.
+
+See:
+
+- docs/architecture.md
+- docs/development.md
+- docs/compendium-architecture.md
+- docs/crd-compendium-map.md
+- docs/crd-content-roadmap.md
+- docs/crd-source-schema.md
+
+## Runtime capabilities
+
+The current system includes:
+
+- Cypher task resolution with difficulty, steps, Effort, Edge, skills, assets,
+  and special d20 results
+- wound-based damage and recovery
+- armor and shield behavior
+- advancement and tier transitions
+- XP, rerolls, and Player Intrusions
+- structured Ability costs and effects
+- Ability activation/deactivation and recovery-driven expiration
+- active Ability modifier aggregation
+- structured Ability roll-table resolution
+- Type and Focus advancement benefits
+- weapon attacks and core damage behavior
+- Cypher use and depletion
+- bilingual French/English localization
+- ApplicationV2 PC, NPC, Community, and Item sheets
+- Character Builder JSON import
+
+Structured CRD data is intentionally treated as an automation boundary. A field
+being extracted does not imply that its gameplay semantics are already executed.
+
+Current runtime work includes:
+
+- weapon mechanics.targetEffects
+- other structured weapon special mechanics
+- generic Cypher variants and random ranges
+- generic Cypher roll-table execution
+- complete runtime verification of structured granted benefits
+
+## Compendium source of truth
+
+Edit only the paired English/French records under:
+
+    packs/*/_source/
+
+The pipeline is:
+
+    CRD
+      -> source records
+      -> migration / validation
+      -> deterministic pack build
+      -> Foundry LevelDB packs
+
+CRD records carry provenance under flags.cypherFoundry.crd and use stable
+logical IDs independent of Foundry UUIDs.
+
+Do not edit generated LevelDB files manually.
+
+## Development
+
+Install dependencies:
+
+    npm install
+
+Run the complete deterministic suite:
+
+    npm test
+
+Useful focused commands:
+
+    npm run test:unit
+    npm run test:content
+    npm run test:integration
+    npm run test:behavior
+    npm run audit:architecture
+    npm run audit:public-data
+    npm run check:system-syntax
+    npm run check:e2e-syntax
+    npm run check:e2e-browser
+
+Compile the compendiums:
+
+    npm run build:packs
+
+Build the distributable package:
+
+    npm run package
+
+## End-to-end tests
+
+The E2E suite uses Playwright against a real headless Foundry installation.
+
+    npm run test:e2e
+
+The runner:
+
+- packages the system before the live run
+- validates system and E2E JavaScript syntax
+- validates the required Playwright browser
+- creates a disposable cypher-e2e-<timestamp> world
+- starts Foundry headlessly
+- uses one worker-scoped browser session
+- logs into the Game Master once and reuses the session
+- removes only generated cypher-e2e-* worlds
+- never removes the user's general Foundry Data directory
+- shuts down the runner-owned Foundry process
+
+A locally activated Foundry installation is required for live E2E validation.
+
+## Character Builder import
+
+The system can import a JSON export from the official Cypher Character Builder.
+
+The importer maps the supported character content into the system's Actor and
+Item models rather than copying the external data format directly.
+
+The public compatibility API remains:
+
+    game.cypher.importFromBuilder(jsonData)
+    game.cypher.openImportDialog()
+
+## Documentation and contribution workflow
+
+Repository documentation is maintained in English.
+
+Before substantial work, read:
+
+1. CONTRIBUTING.md
+2. docs/development.md
+3. docs/architecture.md
+4. the relevant content/model documentation
+
+For CRD content, follow the source/provenance rules and never invent missing
+source material.
 
 ## License and attribution
 
-This project is an independent production and is not affiliated with Monte Cook Games, LLC. It is published under the Cypher Open License. The complete license text applicable to this project is preserved in [LICENSE.txt](LICENSE.txt).
+This project is built under the **Cypher Open License** using content from the
+Cypher Reference Document. See LICENSE.txt and the official license information
+at https://col.montecookgames.com.
 
-This system uses the phrase **Compatible with Cypher** as required by the license. It does not use the Cypher logo, the Monte Cook Games logo, or other MCG trademarks.
-
-**Author:** Aymeric VILAIN
-
-CRD-derived content is converted into Foundry documents without rewriting its mechanics; see [the CRD compendium fidelity policy](docs/compendium-architecture.md).
+This is an unofficial implementation and is not an official Monte Cook Games
+product.
