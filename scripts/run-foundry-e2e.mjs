@@ -220,11 +220,28 @@ function spawnFoundry(appPath, dataPath) {
 
 async function runCommand(command, args) {
   await new Promise((resolve, reject) => {
-    const childProcess = spawn(command, args, {
-      cwd: ROOT,
-      stdio: "inherit",
-      shell: false
-    });
+    const isWindows = process.platform === "win32";
+    const childProcess = isWindows
+      ? spawn(
+          process.env.ComSpec || "cmd.exe",
+          [
+            "/d",
+            "/s",
+            "/c",
+            [command, ...args].map(quoteWindowsArg).join(" ")
+          ],
+          {
+            cwd: ROOT,
+            stdio: "inherit",
+            windowsHide: false,
+            shell: false
+          }
+        )
+      : spawn(command, args, {
+          cwd: ROOT,
+          stdio: "inherit",
+          shell: false
+        });
     childProcess.on("error", reject);
     childProcess.on("close", code => {
       if (code === 0) resolve();
@@ -298,20 +315,42 @@ try {
 
   const command = process.platform === "win32" ? "npx.cmd" : "npx";
   exitCode = await new Promise(resolve => {
-    const testProcess = spawn(
-      command,
-      ["playwright", "test", "--config=playwright.config.mjs"],
-      {
-        cwd: ROOT,
-        stdio: "inherit",
-        shell: false,
-        env: {
+    const testArgs = [
+      "playwright",
+      "test",
+      "--config=playwright.config.mjs"
+    ];
+    const testProcess = process.platform === "win32"
+      ? spawn(
+          process.env.ComSpec || "cmd.exe",
+          [
+            "/d",
+            "/s",
+            "/c",
+            [command, ...testArgs].map(quoteWindowsArg).join(" ")
+          ],
+          {
+            cwd: ROOT,
+            stdio: "inherit",
+            windowsHide: false,
+            shell: false,
+            env: {
           ...process.env,
           FOUNDRY_URL: BASE_URL,
-          FOUNDRY_E2E_WORLD_ID: WORLD_ID
-        }
-      }
-    );
+              FOUNDRY_E2E_WORLD_ID: WORLD_ID
+            }
+          }
+        )
+      : spawn(command, testArgs, {
+          cwd: ROOT,
+          stdio: "inherit",
+          shell: false,
+          env: {
+            ...process.env,
+            FOUNDRY_URL: BASE_URL,
+            FOUNDRY_E2E_WORLD_ID: WORLD_ID
+          }
+        });
     testProcess.on("close", code => resolve(code ?? 1));
   });
 } finally {
