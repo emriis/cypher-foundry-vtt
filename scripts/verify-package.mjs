@@ -43,7 +43,13 @@ async function main() {
       const source = path.join(root, relativePath);
       if ((await stat(source)).isDirectory()) {
         for (const file of await listFiles(source)) {
-          const basename = path.posix.basename(file);\n          if (basename === "LOCK" || basename === "LOG" || basename === "LOG.old" || basename.endsWith(".log")) continue;
+          const basename = path.posix.basename(file);
+          if (
+            basename === "LOCK" ||
+            basename === "LOG" ||
+            basename === "LOG.old" ||
+            basename.endsWith(".log")
+          ) continue;
           expectedFiles.push(path.posix.join(relativePath, file));
         }
       } else expectedFiles.push(relativePath);
@@ -60,7 +66,13 @@ async function main() {
       ].filter(Boolean).join("\\n");
       throw new Error("Package file list does not match the PR tree.\\n" + details);
     }
-    for (const relativePath of expectedFiles) await assertSameFile(path.join(root, relativePath), path.join(staging, relativePath), relativePath);
+    for (const relativePath of expectedFiles) {
+      await assertSameFile(
+        path.join(root, relativePath),
+        path.join(staging, relativePath),
+        relativePath
+      );
+    }
   } finally {
     await rm(staging, { recursive: true, force: true });
   }
