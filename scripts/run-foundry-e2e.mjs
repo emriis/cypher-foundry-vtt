@@ -20,17 +20,28 @@ const BASE_URL = `http://127.0.0.1:${PORT}`;
 const WORLD_ID = `cypher-e2e-${Date.now()}`;
 const WORLD_TITLE = "Cypher Automated E2E";
 
-function getDataPath() {
+async function getDataPath() {
   if (process.env.FOUNDRY_DATA_PATH) {
     return path.resolve(process.env.FOUNDRY_DATA_PATH);
   }
 
   if (process.platform === "win32") {
-    return path.join(
+    const userDataPath = path.join(
       process.env.LOCALAPPDATA || path.join(os.homedir(), "AppData", "Local"),
-      "FoundryVTT",
-      "Data"
+      "FoundryVTT"
     );
+    const optionsPath = path.join(userDataPath, "Config", "options.json");
+
+    try {
+      const options = JSON.parse(await readFile(optionsPath, "utf8"));
+      if (typeof options.dataPath === "string" && options.dataPath.trim()) {
+        return path.resolve(options.dataPath);
+      }
+    } catch {
+      // Fall back to Foundry's documented default Data directory.
+    }
+
+    return path.join(userDataPath, "Data");
   }
 
   if (process.platform === "darwin") {
@@ -203,7 +214,7 @@ function stopProcess(child) {
 }
 
 const appPath = await findApplication();
-const dataPath = getDataPath();
+const dataPath = await getDataPath();
 const coreVersion = await readCoreVersion(appPath);
 const systemManifest = JSON.parse(
   await readFile(path.join(ROOT, "system.json"), "utf8")
