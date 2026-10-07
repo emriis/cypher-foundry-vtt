@@ -176,13 +176,13 @@ function spawnFoundry(appPath, dataPath) {
 
 async function runCommand(command, args) {
   await new Promise((resolve, reject) => {
-    const process = spawn(command, args, {
+    const childProcess = spawn(command, args, {
       cwd: ROOT,
       stdio: "inherit",
-      shell: process.platform === "win32"
+      shell: globalThis.process.platform === "win32"
     });
-    process.on("error", reject);
-    process.on("close", code => {
+    childProcess.on("error", reject);
+    childProcess.on("close", code => {
       if (code === 0) resolve();
       else reject(new Error(`Command failed with exit code ${code}: ${command}`));
     });
