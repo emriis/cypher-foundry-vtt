@@ -9,6 +9,8 @@ export default defineConfig({
   reporter: process.env.CI ? "line" : "list",
   use: {
     baseURL: process.env.FOUNDRY_URL || "http://127.0.0.1:30000",
+    browserName: "chromium",
+    channel: "chromium",
     headless: process.env.PLAYWRIGHT_HEADLESS !== "false",
     trace: "retain-on-failure",
     screenshot: "only-on-failure"
