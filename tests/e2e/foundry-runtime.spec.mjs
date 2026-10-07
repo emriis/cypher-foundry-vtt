@@ -19,6 +19,23 @@ test.describe("Cypher Foundry live runtime", () => {
     expect(result.shield).toBe(true);
   });
 
+  test("keeps Foundry v14 status-effect proxy keys valid", async ({ e2ePage: page }) => {
+    const result = await page.evaluate(() => {
+      const keys = Reflect.ownKeys(CONFIG.statusEffects);
+      const uniqueKeys = new Set(keys);
+      return {
+        keys,
+        unique: uniqueKeys.size === keys.length,
+        hindered: CONFIG.statusEffects.hindered?.id,
+        dead: CONFIG.statusEffects.dead?.id
+      };
+    });
+
+    expect(result.unique).toBe(true);
+    expect(result.hindered).toBe("hindered");
+    expect(result.dead).toBe("dead");
+  });
+
   test("creates a real PC Actor with valid Cypher defaults", async ({ e2ePage: page }) => {
     const result = await page.evaluate(async () => {
       const actor = await Actor.create({
@@ -138,15 +155,3 @@ test.describe("Cypher Foundry live runtime", () => {
 
     try {
       expect(result.rendered).toBe(true);
-      expect(result.rollButtons).toBeGreaterThanOrEqual(3);
-    } finally {
-      await page.evaluate(async actorId => {
-        const actor = game.actors.get(actorId);
-        if (actor) {
-          await actor.sheet.close();
-          await actor.delete();
-        }
-      }, result.actorId);
-    }
-  });
-});
