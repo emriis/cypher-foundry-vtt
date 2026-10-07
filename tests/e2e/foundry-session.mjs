@@ -3,12 +3,24 @@ const FOUNDRY_URL =
 
 const GAMEMASTER_NAME = "gamemaster";
 
-function normalizeUserName(value) {
-  return String(value || "").trim().toLowerCase().replace(/\\s+/g, "");
-}
+async function selectGamemaster(page) {
+  const usernameInput = page.locator(
+    "#join-username, input[name=\"username\"]"
+  ).first();
 
-export async function joinAsGamemaster(page) {
-  await page.goto(FOUNDRY_URL);
+  if (await usernameInput.count()) {
+    await usernameInput.waitFor({ state: "visible", timeout: 30_000 });
+    await usernameInput.fill(GAMEMASTER_NAME);
+
+    const value = await usernameInput.inputValue();
+    if (value.toLowerCase() !== GAMEMASTER_NAME) {
+      throw new Error(
+        "Foundry did not accept the gamemaster username. " +
+        `Expected: ${GAMEMASTER_NAME}; actual: ${value}`
+      );
+    }
+    return usernameInput;
+  }
 
   const gamemasterOption = page.locator("select option").filter({
     hasText: /^\\s*gamemaster\\s*$/i
@@ -25,56 +37,50 @@ export async function joinAsGamemaster(page) {
     }
 
     await userSelect.selectOption(gamemasterValue);
+    return userSelect;
+  }
 
-    const selectedValue = await userSelect.inputValue();
-    if (selectedValue !== gamemasterValue) {
-      throw new Error(
-        "Foundry did not select the gamemaster profile. " +
-        `Expected value: ${gamemasterValue}; actual value: ${selectedValue}`
-      );
-    }
+  throw new Error(
+    "Foundry join page did not expose a gamemaster username input or " +
+    "legacy gamemaster select."
+  );
+}
 
-    const password = page.locator(
-      'input[type="password"], input[name*="password" i]'
-    ).first();
+export async function joinAsGamemaster(page) {
+  await page.goto(FOUNDRY_URL);
 
-    if (await password.count()) {
-      await password.fill("");
-    }
+  await selectGamemaster(page);
 
-    const form = userSelect.locator("xpath=ancestor::form[1]");
-    const submit = form.locator(
-      'button[type="submit"], input[type="submit"]'
-    ).first();
+  const password = page.locator(
+    'input[type="password"], input[name*="password" i]'
+  ).first();
 
-    if (await submit.count()) {
-      await submit.click();
-    } else {
-      const joinButton = page.getByRole("button", {
-        name: /join game( session)?/i
-      }).first();
+  if (await password.count()) {
+    await password.fill("");
+  }
 
-      if (await joinButton.count()) {
-        await joinButton.click();
-      } else {
-        await form.evaluate(formElement => {
-          if (typeof formElement.requestSubmit === "function") {
-            formElement.requestSubmit();
-          } else {
-            formElement.submit();
-          }
-        });
-      }
-    }
+  const joinButton = page.getByRole("button", {
+    name: /join game( session)?/i
+  }).first();
+
+  if (await joinButton.count()) {
+    await joinButton.click();
   } else {
-    const availableUsers = await page.locator("select option").allTextContents();
-    const normalizedUsers = availableUsers.map(normalizeUserName);
+    const form = page.locator("form").filter({
+      has: page.locator("#join-username, input[name=\"username\"]")
+    }).first();
 
-    throw new Error(
-      "Foundry join page did not expose the required 'gamemaster' user. " +
-      `Available users: ${JSON.stringify(availableUsers)}; ` +
-      `normalized: ${JSON.stringify(normalizedUsers)}`
-    );
+    if (await form.count()) {
+      await form.evaluate(formElement => {
+        if (typeof formElement.requestSubmit === "function") {
+          formElement.requestSubmit();
+        } else {
+          formElement.submit();
+        }
+      });
+    } else {
+      throw new Error("Foundry join page did not expose its login form.");
+    }
   }
 
   const deadline = Date.now() + 60_000;
