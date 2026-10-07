@@ -163,7 +163,7 @@ test("DocumentSheetV2 sheets declare their main part as the root content", () =>
   }
 });
 
-test("live E2E uses a Windows command boundary for Foundry and scripts", () => {
+test("live E2E uses a Windows process boundary for Foundry and scripts", () => {
   const source = fs.readFileSync(
     path.join(root, "scripts/run-foundry-e2e.mjs"),
     "utf8"
@@ -177,16 +177,11 @@ test("live E2E uses a Windows command boundary for Foundry and scripts", () => {
     source,
     /function spawnScript\(command, args, options = \{\}\)/
   );
-  assert.match(
-    source,
-    /process\.env\.ComSpec \|\| "cmd\.exe"/
-  );
-  assert.match(source, /const commandLine = \[/);
-  assert.match(source, /"start"/);
-  assert.match(source, /'""'/);
-  assert.match(source, /"\/wait"/);
+  assert.match(source, /powershell\.exe/);
+  assert.match(source, /Start-Process -FilePath/);
+  assert.match(source, /FOUNDRY_EXE/);
+  assert.match(source, /FOUNDRY_ARGS_JSON/);
   assert.match(source, /spawn\(appPath, args,/);
-  assert.match(source, /\["\/d", "\/c"/);
 });
 
 test("live E2E cleanup is scoped to its generated world", () => {
