@@ -2,7 +2,7 @@ import { test as base, expect } from "@playwright/test";
 import { joinAsGamemaster } from "./foundry-session.mjs";
 
 export const test = base.extend({
-  page: [async ({ browser }, use) => {
+  e2ePage: [async ({ browser }, use) => {
     const context = await browser.newContext();
     const page = await context.newPage();
 
