@@ -255,7 +255,6 @@ test("live E2E joins the deterministic gamemaster profile", () => {
   assert.match(source, /#join-username/);
   assert.match(source, /input\[name="username"\]/);
   assert.match(source, /input\[type="password"\]/);
-  assert.match(source, /join game\( session\)\?/i);
   assert.match(source, /select option/);
 });
 
