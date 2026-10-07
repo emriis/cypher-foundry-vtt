@@ -1621,6 +1621,13 @@
   overflow: hidden;
 }
 
+.cypher.sheet .window-content > form {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
 .cypher.sheet .pc-sheet-layout,
 .cypher.sheet .item-sheet-layout,
 .cypher.sheet .npc-sheet-layout,
