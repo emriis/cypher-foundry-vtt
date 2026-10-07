@@ -425,6 +425,7 @@ try {
   await runCommand(npmCommand, ["run", "package"]);
   await runCommand(npmCommand, ["run", "build:packs"]);
   await runCommand(npmCommand, ["run", "check:system-syntax"]);
+  await runCommand(npmCommand, ["run", "check:e2e-syntax"]);
   if (process.env.PLAYWRIGHT_SKIP_BROWSER_INSTALL !== "true") {
     await runCommand(command, ["playwright", "install", "chromium"]);
   }
