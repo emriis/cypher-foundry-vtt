@@ -89,6 +89,43 @@ test("rollAttack delegates weapon familiarity and damage to the actor task roll"
   assert.equal(received.difficulty, 2);
 });
 
+test("document rollAttack forwards an explicit target to weapon mechanics", async () => {
+  let received;
+  const target = { type: "npc", system: { level: 2 } };
+  const item = {
+    type: "attack",
+    name: "Stunstick",
+    system: {
+      damage: 0,
+      attackType: "medium",
+      stat: "might",
+      freelyUsable: true,
+      mechanics: {
+        targetEffects: [{
+          minimumTargetLevel: 0,
+          maximumTargetLevel: 2,
+          effect: "loseNextAction",
+          hinderSteps: 0,
+          duration: "next action"
+        }]
+      }
+    },
+    actor: {
+      system: { canFreelyUseAllWeapons: false },
+      rollTask: async options => {
+        received = options;
+        return "rolled";
+      }
+    }
+  };
+
+  assert.equal(
+    await CypherItem.prototype.rollAttack.call(item, { target }),
+    "rolled"
+  );
+  assert.deepEqual(received.weaponTargetEffects, item.system.mechanics.targetEffects);
+});
+
 test("light weapons use the Core Character baseline and ease their attack", async () => {
   let received;
   const item = {

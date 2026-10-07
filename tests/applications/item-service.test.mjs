@@ -67,6 +67,57 @@ test("rollAttack delegates weapon familiarity to the common task service", async
   assert.equal(received.baseDamage, 4);
 });
 
+test("rollAttack resolves target effects from the selected NPC level", async () => {
+  let received;
+  globalThis.game = {
+    i18n: { localize: value => value },
+    user: { targets: new Set() }
+  };
+
+  const actor = {
+    system: {
+      freeWeaponCategories: [],
+      freeWeaponFamilies: [],
+      freeWeaponSkillCategories: [],
+      canFreelyUseAllWeapons: false
+    },
+    items: new Map(),
+    async rollTask(options) {
+      received = options;
+      return options;
+    }
+  };
+  const target = {
+    type: "npc",
+    system: { level: 2 }
+  };
+  const item = {
+    type: "attack",
+    name: "Stunner",
+    actor,
+    system: {
+      damage: 4,
+      attackType: "medium",
+      weaponFamily: "swords",
+      attackSkillCategory: "martial",
+      stat: "might",
+      freelyUsable: true,
+      mechanics: {
+        targetEffects: [{
+          minimumTargetLevel: 0,
+          maximumTargetLevel: 2,
+          effect: "loseNextAction",
+          hinderSteps: 0,
+          duration: "next action"
+        }]
+      }
+    }
+  };
+
+  await rollAttack(item, { target });
+  assert.deepEqual(received.weaponTargetEffects, item.system.mechanics.targetEffects);
+});
+
 test("rollDepletion marks a depleting item and posts a rerollable result", async () => {
   let update;
   let message;

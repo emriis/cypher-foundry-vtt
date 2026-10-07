@@ -430,6 +430,61 @@ test.describe("Cypher Foundry live gameplay", () => {
     });
   });
 
+  test("resolves structured weapon target effects against a real NPC", async ({
+    e2ePage: page
+  }) => {
+    const result = await page.evaluate(async () => {
+      const pc = await Actor.create({
+        name: `E2E Weapon PC ${Date.now()}`,
+        type: "pc",
+        system: {
+          stats: {
+            might: { pool: { max: 8, value: 8 }, edge: 0 },
+            speed: { pool: { max: 8, value: 8 }, edge: 0 },
+            intellect: { pool: { max: 8, value: 8 }, edge: 0 }
+          }
+        }
+      });
+      const npc = await Actor.create({
+        name: `E2E Weapon NPC ${Date.now()}`,
+        type: "npc",
+        system: { level: 2 }
+      });
+
+      try {
+        const pack = game.packs.get("cypher.equipment-en");
+        const stunstick = (await pack.getDocuments())
+          .find(item => item.name === "Stunstick");
+
+        if (!stunstick) throw new Error("Stunstick not found in equipment-en");
+
+        const attack = await Item.create(stunstick.toObject(), { parent: pc });
+        await attack.rollAttack({ difficulty: 0, target: npc });
+
+        const message = [...game.messages]
+          .reverse()
+          .find(entry => entry.getFlag("cypher", "rollType") === "task");
+
+        return {
+          targetLevel: npc.system.level,
+          targetEffects: message?.getFlag("cypher", "weaponTargetEffects")
+        };
+      } finally {
+        await npc.delete();
+        await pc.delete();
+      }
+    });
+
+    expect(result.targetLevel).toBe(2);
+    expect(result.targetEffects).toEqual([{
+      minimumTargetLevel: 0,
+      maximumTargetLevel: 2,
+      effect: "loseNextAction",
+      hinderSteps: 0,
+      duration: "next action"
+    }]);
+  });
+
   test("persists actor state after the sheet is closed and reopened", async ({
     e2ePage: page
   }) => {

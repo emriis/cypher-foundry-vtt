@@ -87,7 +87,7 @@ export async function rollTask(actor, {
     stat = "might", difficulty = 3, effortLevels = 0, assetSteps = 0,
     skillItemId = null, isAttack = false, baseDamage = 0, flavor = "",
     extraHinderSteps = 0, extraEaseSteps = 0, luckyShot = false,
-    specialEffectChoice = null,
+    specialEffectChoice = null, weaponTargetEffects = [],
     defenseType = null, incomingSeverity = "minor", armorModifier = 0, shieldItemId = null
   } = {}) {
     if (actor.type !== "pc") {
@@ -268,7 +268,8 @@ export async function rollTask(actor, {
           targetNumber,
           effectiveDifficulty,
           isAttack,
-          baseDamage
+          baseDamage,
+          weaponTargetEffects
         }
       }
     });
@@ -296,6 +297,7 @@ export async function rollTask(actor, {
       targetNumber,
       effectiveDifficulty,
       damage: totalDamage,
+      weaponTargetEffects,
       specialEffectOptions: special.effectOptions
     };
   }
