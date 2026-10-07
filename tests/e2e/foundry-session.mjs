@@ -4,9 +4,7 @@ const FOUNDRY_URL =
 const GAMEMASTER_NAME = "gamemaster";
 
 async function selectGamemaster(page) {
-  const usernameInput = page.locator("input").filter({
-    visible: true
-  }).first();
+  const usernameInput = page.locator("input:visible").first();
 
   await usernameInput.waitFor({
     state: "visible",
@@ -48,9 +46,7 @@ export async function joinAsGamemaster(page) {
   if (await joinButton.count()) {
     await joinButton.click();
   } else {
-    const form = page.locator("form").filter({
-      has: page.locator("#join-username, input[name=\"username\"]")
-    }).first();
+    const form = page.locator("form").first();
 
     if (await form.count()) {
       await form.evaluate(formElement => {
