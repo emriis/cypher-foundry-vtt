@@ -214,7 +214,8 @@ function stopProcess(child) {
 }
 
 const appPath = await findApplication();
-const userDataPath = await getFoundryUserDataPath();\nconst dataPath = path.join(userDataPath, "Data");
+const userDataPath = await getFoundryUserDataPath();
+const dataPath = path.join(userDataPath, "Data");
 const coreVersion = await readCoreVersion(appPath);
 const systemManifest = JSON.parse(
   await readFile(path.join(ROOT, "system.json"), "utf8")
