@@ -255,6 +255,19 @@ test("live E2E joins the deterministic gamemaster profile", () => {
   assert.match(source, /select option/);
 });
 
+test("live E2E uses one Foundry browser session for the worker", () => {
+  const source = fs.readFileSync(
+    path.join(root, "tests/e2e/foundry-session-fixture.mjs"),
+    "utf8"
+  );
+
+  assert.match(source, /e2ePage: \[async \(\{ browser \}, use\) =>/);
+  assert.match(source, /scope: "worker"/);
+  assert.match(source, /await joinAsGamemaster\(page\)/);
+  assert.match(source, /await use\(page\)/);
+  assert.match(source, /await context\.close\(\)/);
+});
+
 test("live E2E cleanup waits for the Foundry process before deleting its world", () => {
   const source = fs.readFileSync(
     path.join(root, "scripts/run-foundry-e2e.mjs"),
