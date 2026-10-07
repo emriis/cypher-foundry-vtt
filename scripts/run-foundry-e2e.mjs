@@ -206,9 +206,27 @@ function spawnFoundry(appPath, dataPath) {
     `--dataPath=${dataPath}`
   ];
 
-  // Foundry is a real executable. Let Node launch it directly so Windows
-  // handles the executable path and its spaces without an extra cmd.exe
-  // quoting layer.
+  if (process.platform === "win32") {
+    // Some Windows Electron installations return EACCES when Node tries to
+    // spawn Foundry directly. Use cmd.exe only as the Windows process
+    // launcher, with cmd canonical /c quoting for paths containing spaces.
+    const commandLine = [
+      appPath.includes(" ") ? `"${appPath}"` : appPath,
+      ...args.map(quoteWindowsArg)
+    ].join(" ");
+
+    return spawn(
+      process.env.ComSpec || "cmd.exe",
+      ["/d", "/c", `"${commandLine}"`],
+      {
+        cwd: path.dirname(appPath),
+        stdio: "inherit",
+        windowsHide: false,
+        shell: false
+      }
+    );
+  }
+
   return spawn(appPath, args, {
     cwd: path.dirname(appPath),
     stdio: "inherit",
