@@ -197,9 +197,10 @@ function spawnFoundry(appPath, dataPath) {
 
   if (process.platform === "win32") {
     const command = [appPath, ...args].map(quoteWindowsArg).join(" ");
+    const shellCommand = `\"${command}\"`;
     return spawn(
       process.env.ComSpec || "cmd.exe",
-      ["/d", "/s", "/c", command],
+      ["/d", "/s", "/c", shellCommand],
       {
         cwd: path.dirname(appPath),
         stdio: "inherit",
