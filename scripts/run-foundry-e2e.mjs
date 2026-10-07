@@ -206,20 +206,9 @@ function spawnFoundry(appPath, dataPath) {
     `--dataPath=${dataPath}`
   ];
 
-  if (process.platform === "win32") {
-    const shellCommand = windowsCommand(appPath, args);
-    return spawn(
-      process.env.ComSpec || "cmd.exe",
-      ["/d", "/s", "/c", shellCommand],
-      {
-        cwd: path.dirname(appPath),
-        stdio: "inherit",
-        windowsHide: false,
-        shell: false
-      }
-    );
-  }
-
+  // Foundry is a real executable. Let Node launch it directly so Windows
+  // handles the executable path and its spaces without an extra cmd.exe
+  // quoting layer.
   return spawn(appPath, args, {
     cwd: path.dirname(appPath),
     stdio: "inherit",
@@ -228,30 +217,32 @@ function spawnFoundry(appPath, dataPath) {
   });
 }
 
+function spawnScript(command, args, options = {}) {
+  if (process.platform === "win32") {
+    return spawn(
+      process.env.ComSpec || "cmd.exe",
+      ["/d", "/s", "/c", windowsCommand(command, args)],
+      {
+        cwd: ROOT,
+        stdio: "inherit",
+        windowsHide: false,
+        shell: false,
+        ...options
+      }
+    );
+  }
+
+  return spawn(command, args, {
+    cwd: ROOT,
+    stdio: "inherit",
+    shell: false,
+    ...options
+  });
+}
+
 async function runCommand(command, args) {
   await new Promise((resolve, reject) => {
-    const isWindows = process.platform === "win32";
-    const childProcess = isWindows
-      ? spawn(
-          process.env.ComSpec || "cmd.exe",
-          [
-            "/d",
-            "/s",
-            "/c",
-            windowsCommand(command, args)
-          ],
-          {
-            cwd: ROOT,
-            stdio: "inherit",
-            windowsHide: false,
-            shell: false
-          }
-        )
-      : spawn(command, args, {
-          cwd: ROOT,
-          stdio: "inherit",
-          shell: false
-        });
+    const childProcess = spawnScript(command, args);
     childProcess.on("error", reject);
     childProcess.on("close", code => {
       if (code === 0) resolve();
@@ -330,37 +321,17 @@ try {
       "test",
       "--config=playwright.config.mjs"
     ];
-    const testProcess = process.platform === "win32"
-      ? spawn(
-          process.env.ComSpec || "cmd.exe",
-          [
-            "/d",
-            "/s",
-            "/c",
-            windowsCommand(command, testArgs)
-          ],
-          {
-            cwd: ROOT,
-            stdio: "inherit",
-            windowsHide: false,
-            shell: false,
-            env: {
-          ...process.env,
-          FOUNDRY_URL: BASE_URL,
-              FOUNDRY_E2E_WORLD_ID: WORLD_ID
-            }
-          }
-        )
-      : spawn(command, testArgs, {
-          cwd: ROOT,
-          stdio: "inherit",
-          shell: false,
-          env: {
-            ...process.env,
-            FOUNDRY_URL: BASE_URL,
-            FOUNDRY_E2E_WORLD_ID: WORLD_ID
-          }
-        });
+    const testProcess = spawnScript(command, testArgs, {
+      env: {
+        ...process.env,
+        FOUNDRY_URL: BASE_URL,
+        FOUNDRY_E2E_WORLD_ID: WORLD_ID
+      }
+    });
+    testProcess.on("error", error => {
+      console.error("Unable to start Playwright:", error);
+      resolve(1);
+    });
     testProcess.on("close", code => resolve(code ?? 1));
   });
 } finally {
