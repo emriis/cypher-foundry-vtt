@@ -28,7 +28,8 @@ function getDataPath() {
   if (process.platform === "win32") {
     return path.join(
       process.env.LOCALAPPDATA || path.join(os.homedir(), "AppData", "Local"),
-      "FoundryVTT"
+      "FoundryVTT",
+      "Data"
     );
   }
 
@@ -37,13 +38,15 @@ function getDataPath() {
       os.homedir(),
       "Library",
       "Application Support",
-      "FoundryVTT"
+      "FoundryVTT",
+      "Data"
     );
   }
 
   return path.join(
     process.env.XDG_DATA_HOME || path.join(os.homedir(), ".local", "share"),
-    "FoundryVTT"
+    "FoundryVTT",
+    "Data"
   );
 }
 
@@ -93,14 +96,14 @@ async function waitForServer(url, timeout = 60_000) {
 }
 
 async function ensureDataPath(dataPath) {
-  await mkdir(path.join(dataPath, "Config"), { recursive: true });
+  await mkdir(dataPath, { recursive: true });
 
-  const licensePath = path.join(dataPath, "Config", "license.json");
+  const licensePath = path.join(path.dirname(dataPath), "Config", "license.json");
   try {
     await readFile(licensePath, "utf8");
   } catch {
     throw new Error(
-      "Foundry license.json was not found in the configured Data path. " +
+      "Foundry license.json was not found beside the configured Data path. " +
       "Start Foundry once and complete license/EULA setup, or set " +
       "FOUNDRY_DATA_PATH to the correct Data directory."
     );
@@ -108,7 +111,7 @@ async function ensureDataPath(dataPath) {
 }
 
 async function installSystem(dataPath) {
-  const target = path.join(dataPath, "Data", "systems", "cypher");
+  const target = path.join(dataPath, "systems", "cypher");
   const releasePaths = [
     "system.json",
     "cypher.mjs",
@@ -130,7 +133,7 @@ async function installSystem(dataPath) {
 }
 
 async function createWorld(dataPath, coreVersion, systemVersion) {
-  const worldPath = path.join(dataPath, "Data", "worlds", WORLD_ID);
+  const worldPath = path.join(dataPath, "worlds", WORLD_ID);
   await mkdir(worldPath, { recursive: true });
 
   const manifest = {
@@ -234,7 +237,7 @@ try {
 
   await ensureDataPath(dataPath);
   await installSystem(dataPath);
-  worldPath = path.join(dataPath, "Data", "worlds", WORLD_ID);
+  worldPath = path.join(dataPath, "worlds", WORLD_ID);
   worldCreated = true;
   await createWorld(
     dataPath,
