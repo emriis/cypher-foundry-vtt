@@ -354,3 +354,72 @@ test("rollDefense integration applies a wound on a failed defense", async () => 
   assert.equal(result.success, false);
   assert.equal(actor.system.wounds.moderate.current, 1);
 });
+
+
+test("document attack forwards trained weapon skill without retaining unfamiliar hindrance", async () => {
+  let received;
+  const item = {
+    type: "attack",
+    name: "Broadsword",
+    system: {
+      damage: 4,
+      attackType: "medium",
+      attackSkillCategory: "mediumBladed",
+      weaponFamily: "swords",
+      stat: "might",
+      freelyUsable: false
+    },
+    actor: {
+      system: {
+        freeWeaponCategories: ["light"],
+        freeWeaponFamilies: [],
+        freeWeaponSkillCategories: [],
+        canFreelyUseAllWeapons: false
+      },
+      items: new Map([[
+        "medium-blades",
+        { type: "skill", system: { level: "trained", attackCategory: "mediumBladed" } }
+      ]]),
+      rollTask: async options => { received = options; return "rolled"; }
+    }
+  };
+
+  await CypherItem.prototype.rollAttack.call(item, { skillItemId: "medium-blades" });
+
+  assert.equal(received.extraHinderSteps, 0);
+  assert.equal(received.extraEaseSteps, 0);
+});
+
+test("document attack forwards specialized weapon skill as one ease when unfamiliar", async () => {
+  let received;
+  const item = {
+    type: "attack",
+    name: "Broadsword",
+    system: {
+      damage: 4,
+      attackType: "medium",
+      attackSkillCategory: "mediumBladed",
+      weaponFamily: "swords",
+      stat: "might",
+      freelyUsable: false
+    },
+    actor: {
+      system: {
+        freeWeaponCategories: ["light"],
+        freeWeaponFamilies: [],
+        freeWeaponSkillCategories: [],
+        canFreelyUseAllWeapons: false
+      },
+      items: new Map([[
+        "medium-blades",
+        { type: "skill", system: { level: "specialized", attackCategory: "mediumBladed" } }
+      ]]),
+      rollTask: async options => { received = options; return "rolled"; }
+    }
+  };
+
+  await CypherItem.prototype.rollAttack.call(item, { skillItemId: "medium-blades" });
+
+  assert.equal(received.extraHinderSteps, 0);
+  assert.equal(received.extraEaseSteps, 1);
+});
