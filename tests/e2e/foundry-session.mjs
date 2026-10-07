@@ -4,9 +4,9 @@ const FOUNDRY_URL =
 const GAMEMASTER_NAME = "gamemaster";
 
 async function selectGamemaster(page) {
-  const usernameInput = page.locator(
-    "#join-username, input[name=\"username\"]"
-  ).first();
+  const usernameInput = page.getByRole("textbox", {
+    name: /sélectionner un utilisateur|select a user|username/i
+  }).first();
 
   if (await usernameInput.count()) {
     await usernameInput.waitFor({ state: "visible", timeout: 30_000 });
@@ -19,7 +19,24 @@ async function selectGamemaster(page) {
         `Expected: ${GAMEMASTER_NAME}; actual: ${value}`
       );
     }
+
+    await usernameInput.press("ArrowDown");
+    await usernameInput.press("Enter");
+
     return usernameInput;
+  }
+
+  const legacyUsernameInput = page.locator(
+    "#join-username, input[name=\"username\"]"
+  ).first();
+
+  if (await legacyUsernameInput.count()) {
+    await legacyUsernameInput.waitFor({
+      state: "visible",
+      timeout: 30_000
+    });
+    await legacyUsernameInput.fill(GAMEMASTER_NAME);
+    return legacyUsernameInput;
   }
 
   const gamemasterOption = page.locator("select option").filter({
@@ -28,7 +45,9 @@ async function selectGamemaster(page) {
 
   if (await gamemasterOption.count()) {
     const gamemasterValue = await gamemasterOption.getAttribute("value");
-    const userSelect = gamemasterOption.locator("xpath=ancestor::select[1]");
+    const userSelect = gamemasterOption.locator(
+      "xpath=ancestor::select[1]"
+    );
 
     if (!gamemasterValue) {
       throw new Error(
