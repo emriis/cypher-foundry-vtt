@@ -480,7 +480,7 @@ try {
   }
 
   if (worldCreated) {
-    await rm(worldPath, { recursive: true, force: true });
+    await removeWorld(worldPath);
   }
 
   await rm(FOUNDRY_PID_FILE, { force: true });
