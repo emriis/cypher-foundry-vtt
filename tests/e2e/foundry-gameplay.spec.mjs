@@ -7,6 +7,13 @@ async function createActor(page, overrides = {}) {
     const actor = await Actor.create({
       name: `${prefix} ${Date.now()} ${Math.random().toString(16).slice(2)}`,
       type: "pc",
+      system: {
+        stats: {
+          might: { pool: { max: 8, value: 8 }, edge: 0 },
+          speed: { pool: { max: 8, value: 8 }, edge: 0 },
+          intellect: { pool: { max: 8, value: 8 }, edge: 0 }
+        }
+      },
       ...overrides
     });
     return actor.id;
