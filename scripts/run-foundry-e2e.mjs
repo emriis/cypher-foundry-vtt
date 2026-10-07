@@ -245,6 +245,44 @@ function spawnFoundry(appPath, userDataPath) {
   });
 }
 
+function quoteWindowsArg(value) {
+  const stringValue = String(value);
+  if (/^[A-Za-z0-9_./:-]+$/.test(stringValue)) {
+    return stringValue;
+  }
+  return """ + stringValue + """;
+}
+
+function windowsCommand(command, args) {
+  return [
+    command,
+    ...args.map(quoteWindowsArg)
+  ].join(" ");
+}
+
+function spawnScript(command, args, options = {}) {
+  if (process.platform === "win32") {
+    return spawn(
+      process.env.ComSpec || "cmd.exe",
+      ["/d", "/s", "/c", windowsCommand(command, args)],
+      {
+        cwd: ROOT,
+        stdio: "inherit",
+        windowsHide: false,
+        shell: false,
+        ...options
+      }
+    );
+  }
+
+  return spawn(command, args, {
+    cwd: ROOT,
+    stdio: "inherit",
+    shell: false,
+    ...options
+  });
+}
+
 async function runCommand(command, args) {
   await new Promise((resolve, reject) => {
     const childProcess = spawnScript(command, args);
