@@ -22,6 +22,14 @@ export const test = base.extend({
     const page = await context.newPage();
 
     await joinAsGamemaster(page);
+
+    // Foundry v14 opens its first-world tour automatically in a fresh E2E world.
+    // It is unrelated to the system under test and can intercept sheet input.
+    await page.evaluate(() => {
+      const Tour = globalThis.foundry?.nue?.Tour;
+      Tour?.activeTour?.exit();
+    });
+
     await use(page);
 
     await page.evaluate(async () => {
