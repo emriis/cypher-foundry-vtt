@@ -120,9 +120,9 @@ E2E runner this means:
 - the runner must delete only its generated
   `Data/worlds/cypher-e2e-<run-id>` directory.
 
-Examples and fixtures may use explicitly fictional paths such as
-`C:\\Users\\Test\\...` or `D:\\FoundryVTT\\Data`, but must never
-contain a contributor's real username or machine-specific path.
+Examples and fixtures must use abstract placeholders such as
+`<foundry-user-data>/Data` or `<foundry-installation>/Data`; they must never
+contain a contributor's username or a machine-specific path.
 
 The repository contains an automated contract test for this rule. If a local
 path is needed while debugging, keep it outside tracked files and outside the
