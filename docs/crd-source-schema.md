@@ -4,7 +4,7 @@ This document defines the authored source contract for content extracted from th
 2026-07-29 Cypher Reference Document.
 
 The schema defines the common provenance and identity envelope while each Foundry
-document type keeps its existing domain-specific system schema.
+document type keeps its domain-specific system schema.
 
 ## 1. Source record envelope
 
@@ -19,8 +19,7 @@ A CRD-derived Foundry source record contains:
 | system | Type-specific | Mechanical/domain data |
 | flags.cypherFoundry.crd | Required | CRD identity and provenance |
 
-The schema does not replace the existing Type, Focus, Descriptor, Ability, or
-other Foundry data models.
+The schema does not replace the existing domain DataModels.
 
 ## 2. Provenance
 
@@ -30,12 +29,12 @@ The canonical provenance path is:
 
 Required fields:
 
-- version: supplied CRD version.
-- logicalId: stable identifier shared by language variants.
-- language: en or fr.
-- sourceKind: section, passage, table, or record.
-- section: CRD section containing the source material.
-- sourceLocator: human-readable page, section, or table locator.
+- version: supplied CRD version;
+- logicalId: stable identifier shared by language variants;
+- language: en or fr;
+- sourceKind: section, passage, table, or record;
+- section: CRD section containing the source material;
+- sourceLocator: human-readable page, section, or table locator;
 - transformations: structural transformations applied during extraction.
 
 French records additionally require sourceLogicalId, identifying the English
@@ -67,26 +66,27 @@ Mechanical values stay in the domain-specific system fields wherever the current
 data model permits it.
 
 This includes costs, tiers, levels, ranges, durations, damage, prerequisites,
-table results, conditions, depletion values, and document references.
+table results, conditions, depletion values, variants, and document references.
 
 Localized prose belongs in the language-specific record.
 
 The schema does not translate, normalize, infer, or otherwise rewrite mechanics.
 
-## 5. Structured ability end conditions
+## 5. Structured Ability end conditions
 
-Ability effects may contain a structured `endConditions` collection when the CRD
+Ability effects may contain a structured endConditions collection when the CRD
 states an explicit recovery boundary.
 
 A recovery end condition uses:
 
 | Field | Meaning |
 | --- | --- |
-| kind | `recovery` |
-| interval | `any`, `tenMinutes`, `hour`, or `tenHours` |
-| minimum | Whether the stated interval is a minimum threshold, corresponding to wording such as "one-hour or longer" |
+| kind | recovery |
+| interval | any, tenMinutes, hour, or tenHours |
+| minimum | Whether the stated interval is a minimum threshold |
 
-For example, "until you use a ten-minute or longer recovery" maps to:
+For example, explicit wording equivalent to a ten-minute-or-longer recovery is
+represented by:
 
     {
       kind: "recovery",
@@ -94,19 +94,17 @@ For example, "until you use a ten-minute or longer recovery" maps to:
       minimum: true
     }
 
-This is source data, not runtime state. It does not indicate that an ability is
-currently active, on cooldown, or available on a character.
+This is source data, not runtime state.
 
 Only explicit recovery boundaries are structured by this contract. Other
 termination conditions remain in source text until a separate source-justified
-representation is established. The extractor must not infer a structured
-condition from prose merely because it appears automatable.
+representation exists.
 
 ## 6. Runtime boundary
 
 The source schema and actor runtime state are separate contracts.
 
-The source record defines an Ability effect and its CRD-derived `endConditions`.
+The source record defines an Ability effect and its CRD-derived endConditions.
 The actor runtime stores only which actor-owned Ability effects are currently
 active:
 
@@ -114,13 +112,11 @@ active:
       - itemUuid
       - effectId
 
-This runtime collection is not part of the CRD source record. It represents
-current actor state and may differ between characters using the same Ability.
+This runtime collection is not part of the CRD source record.
 
-Recovery-driven expiration is implemented by the application/runtime boundary:
-the persisted Ability reference is resolved first, then the pure rule evaluates
-the source-defined recovery condition. The runtime must not infer additional
-termination conditions from effect prose.
+Recovery-driven expiration is implemented by the application/runtime boundary.
+The persisted Ability reference is resolved first, then the pure rule evaluates
+the source-defined recovery condition.
 
 ## 7. Structural transformations
 
@@ -128,8 +124,7 @@ Allowed transformations include:
 
 - converting a CRD heading into a Journal Entry title;
 - converting an actual random table into a Foundry RollTable;
-- representing Type or Focus abilities as UUID references to standalone Ability
-  Items;
+- representing Type or Focus abilities as references to standalone Ability Items;
 - converting source formatting into Foundry HTML or structured fields.
 
 Transformations must be recorded in the transformations array.
@@ -138,7 +133,8 @@ Forbidden transformations include paraphrasing, summarizing, changing numbers or
 units, changing prerequisites or costs, silently resolving ambiguities, or
 inventing missing mechanics.
 
-If extraction cannot establish a reliable mapping, the extractor must stop.
+If extraction cannot establish a reliable mapping, the extractor must stop or
+record an explicit model/source limitation rather than guessing.
 
 ## 8. Bilingual pairing
 
@@ -172,14 +168,14 @@ The source validator rejects:
 - French records without an English source identifier.
 
 The validator does not attempt to judge the correctness of CRD prose. Fidelity
-must be established against the extracted source material.
+is established against the extracted source material and representative source
+contracts.
 
-## 10. Phase 2 content types
+## 10. Current source-backed content families
 
-The initial contract covers:
+The current CRD source conversion covers:
 
     ability
-    artifact
     armor
     cypher
     descriptor
@@ -191,10 +187,14 @@ The initial contract covers:
     skill
     type
     weapon
-    creature
 
-Creature/Actor-specific source fields will be defined with the creature
-extraction phase rather than guessed now.
+The Artifact Item type remains part of the system's supported document model,
+but the supplied CRD contains no Artifact inventory, so no Artifact source family
+is currently emitted.
+
+The Actor creature/npc type also remains a general system capability, but the
+supplied CRD contains no creature inventory and therefore no CRD creature source
+family is currently emitted.
 
 ## 11. Extraction boundary
 
@@ -209,21 +209,14 @@ Every automated extractor must:
 
 ## 12. Logical identifiers and cross-language pairing
 
-Every reusable CRD record has one language-neutral `logicalId`.
+Every reusable CRD record has one language-neutral logicalId.
 
 The canonical form is:
 
     <content-family>.<normalized-source-name>
 
-Examples:
-
-    ability.wounded-fury
-    focus.howls-at-the-moon
-    descriptor.resilient
-    weapon.medium-blaster
-
-The logical ID is a source key. It is not a Foundry `_id`, UUID, display name,
-or translation key.
+The logical ID is a source key. It is not a Foundry _id, UUID, display name, or
+translation key.
 
 ### Identifier rules
 
@@ -232,8 +225,7 @@ or translation key.
 - Identifiers use lowercase ASCII characters, digits, and hyphens.
 - The two components are separated by one period.
 - Localized names never replace the logical ID.
-- Foundry `_id` values remain implementation identifiers and may change when
-  documents are rebuilt.
+- Foundry _id values remain implementation identifiers.
 - Logical IDs remain stable across pack rebuilds and language variants.
 
 ### English/French pairing
@@ -241,15 +233,7 @@ or translation key.
 English is the canonical source record for the CRD content key.
 
 A French record carries the same logical ID and additionally records
-`sourceLogicalId` pointing to the English logical ID.
-
-Therefore:
-
-    EN: ability.wounded-fury
-    FR: ability.wounded-fury
-        sourceLogicalId: ability.wounded-fury
-
-The pairing does not depend on the translated display name.
+sourceLogicalId pointing to the English logical ID.
 
 ### References
 
@@ -259,37 +243,31 @@ IDs during source authoring and extraction.
 The build phase resolves those logical IDs to Foundry UUIDs after all source
 records are known.
 
-This creates the following deterministic pipeline:
-
-    CRD source
-        ↓
-    logicalId
-        ↓
-    source-to-source references
-        ↓
-    Foundry document creation
-        ↓
-    UUID resolution
-
 A source reference that cannot be resolved to exactly one authored record is a
 build error. The build must not guess between candidates.
 
 ### Duplicate detection
 
 A source build must reject:
+
 - duplicate logical IDs within one language;
-- duplicate logical IDs across records of incompatible content families;
+- duplicate logical IDs across incompatible content families;
 - French records without a matching English logical ID;
 - references to missing logical IDs;
 - references that resolve to more than one record;
-- a logical ID derived from a localized French name instead of the canonical
-  source name.
+- logical IDs derived from localized French names instead of canonical source
+  names.
 
-### Why Foundry UUIDs are resolved late
+## 13. Source/model/runtime distinction
 
-Foundry UUIDs are generated implementation identifiers. Using them as the
-authoring key would make source content unnecessarily dependent on the generated
-pack state.
+For each mechanically meaningful CRD field, the project distinguishes:
 
-Logical IDs are therefore the stable authoring contract; UUIDs are the compiled
-runtime references.
+1. extracted;
+2. modeled;
+3. validated;
+4. consumed by runtime;
+5. covered by an appropriate behavior/E2E contract.
+
+The source schema guarantees the first four content-layer requirements only
+where the model supports them. Runtime completion is tracked by the application
+and behavior documentation rather than being silently implied by extraction.

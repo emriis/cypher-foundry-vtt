@@ -1,285 +1,203 @@
 # CRD Compendium Architecture
 
-This document defines how the 2026 Cypher Reference Document (CRD) is represented as Foundry VTT content.
+This document describes the current representation of the 2026-07-29 Cypher
+Reference Document (CRD) in Foundry VTT.
 
-The goal is to make the CRD useful from inside Foundry rather than importing it as one large Journal Entry. Content should become searchable, linkable, draggable, and reusable wherever the Foundry document model provides a meaningful representation.
+The goal is a searchable, linkable, bilingual, automation-ready library rather
+than a PDF copied into one Journal.
 
 ## 1. Source and build pipeline
 
-The CRD is the reference source. Repository source data is the editable representation; compiled LevelDB files remain generated artifacts.
+```
+CRD
+ |
+ | extraction / normalization
+ v
+packs/*/_source/
+ |
+ | deterministic migration / pack build
+ v
+Foundry LevelDB packs
+```
 
-    Cypher Reference Document
-            |
-            | extraction / normalization
-            v
-    packs/*/_source/
-            |
-            | deterministic pack build
-            v
-    Foundry LevelDB packs
+The `_source/` records are authoritative. Generated LevelDB files are build
+artifacts and must not be edited manually.
 
-The CRD itself is not copied into JavaScript modules. Structured content belongs in compendium source records.
+CRD provenance is recorded under `flags.cypherFoundry.crd`.
 
-The common CRD source-record envelope is defined in
-docs/crd-source-schema.md. It establishes stable logical identifiers, bilingual
-pairing, and provenance without replacing the domain-specific Foundry schemas.
+## 2. Current content families
 
-Every public distribution must retain the attribution and licensing information required by the Cypher Open License. The repository license file and system manifest already identify the CRD as licensed content from Monte Cook Games.
-
-## 2. Pack organization
-
-### Player content
-
-| Pack | Foundry type | Purpose |
+| Family | Foundry representation | Current status |
 | --- | --- | --- |
-| abilities-en/fr | Item | Reusable abilities referenced by Types and Foci |
-| descriptors-en/fr | Item | Descriptors and species-style descriptors |
-| types-en/fr | Item | Character Types |
-| foci-en/fr | Item | Character Foci |
-| skills-en/fr | Item | Reusable skill definitions |
-| equipment-en/fr | Item | Equipment, weapons, armor, shields, and related gear |
+| Skills | Item | Complete source-backed inventory |
+| Abilities | Item | Complete canonical catalogue |
+| Types | Item | Complete source-backed inventory |
+| Descriptors | Item | Complete source-backed inventory |
+| Foci | Item | Complete source-backed inventory and flowcharts |
+| Equipment | Item | Complete source-backed W4 inventory |
+| Weapons | Item/attack | Complete source-backed W4 inventory; runtime mechanics still being closed |
+| Armor | Item | Complete source-backed W4 inventory |
+| Shields | Item | Complete source-backed W4 inventory |
+| Subtle Cyphers | Item/cypher | Complete source-backed inventory |
+| Manifest Cyphers | Item/cypher | Complete source-backed inventory |
+| Power Boost Cyphers | Item/cypher | Complete source-backed inventory |
+| Artifact | Item/artifact | Model exists; source-blocked because the supplied CRD has no Artifact inventory |
+| Creatures/NPCs | Actor/npc | General system capability; not a CRD extraction family because the supplied CRD has no creature inventory |
+| Journals | JournalEntry | Rules packs exist; full CRD Journal conversion remains future work |
 
-The existing four character-content pack families remain authoritative. New packs extend the same source/build conventions.
+The W4 equipment source inventory currently contains 259 English records paired
+with 259 French records across equipment, weapons, armor, and shields.
 
-### Rules and reference content
+## 3. Pack organization
 
-| Pack | Foundry type | Purpose |
-| --- | --- | --- |
-| rules-en/fr | JournalEntry | Core rules and detailed procedures |
-| genres-en/fr | JournalEntry | Genre rules and genre-specific reference |
-| gm-tools-en/fr | JournalEntry | GM procedures, tables, and quick-reference material |
+Current bilingual packs include:
 
-General rules are Journal Entries because they are primarily consulted rather than embedded on actors.
+- `abilities-en/fr`;
+- `skills-en/fr`;
+- `descriptors-en/fr`;
+- `types-en/fr`;
+- `foci-en/fr`;
+- `equipment-en/fr`;
+- `rules-en/fr`.
 
-### GM content
+Types and Foci reference standalone Ability Items. They do not duplicate the
+full Ability definition.
 
-| Pack | Foundry type | Purpose |
-| --- | --- | --- |
-| creatures-en/fr | Actor | Reusable NPC/creature records that can be dragged into scenes |
+## 4. Identity and references
 
-Creature abilities remain reusable Ability Items when they are mechanically meaningful outside a single creature.
+Every CRD-derived source record uses a stable logical ID independent of its
+Foundry UUID and display name.
 
-## 3. Player and GM navigation
+English and French records share that logical ID. French records additionally
+identify the English source logical ID.
 
-### Player entry point
+Source-to-source references use logical IDs. Pack compilation resolves them to
+Foundry UUIDs only after the complete source set is known.
 
-1. Core Character
-2. Skills
-3. Types
-4. Descriptors
-5. Foci
-6. Abilities
-7. Equipment
-8. Quick Reference
+Builds reject unresolved or ambiguous references.
 
-### GM entry point
+## 5. Structured mechanics
 
-1. Core Rules
-2. Task and Difficulty Rules
-3. Combat
-4. Damage and Recovery
-5. Advancement and XP
-6. GM Intrusions
-7. Creatures
-8. Equipment and Rewards
-9. Genres
-10. Quick Reference
+The source architecture is deliberately stronger than a prose-only conversion.
 
-Navigation will use Foundry Journal links and document UUIDs rather than duplicated text.
+Mechanically meaningful CRD data should be represented structurally whenever the
+current DataModel supports it. Examples include:
 
-## 4. Content classification
+- Ability costs, effects, modifiers, and recovery end conditions;
+- Ability roll tables;
+- weapon damage, range, properties, and target effects;
+- armor/shield categories and mechanical behavior;
+- cypher levels, depletion, variants, and roll-table data;
+- Type and Focus advancement benefits.
 
-| CRD content | Foundry representation |
-| --- | --- |
-| General rule | JournalEntry |
-| Procedure / rules explanation | JournalEntry page |
-| Quick-reference rule | JournalEntry |
-| Skill | Item: skill |
-| Ability | Item: ability |
-| Type | Item: type |
-| Descriptor | Item: descriptor |
-| Focus | Item: focus |
-| Weapon / attack | Item: attack |
-| Armor | Item: armor |
-| Shield | Item: shield |
-| General equipment | Item: equipment |
-| Cypher | Item: cypher |
-| Artifact | Item: artifact |
-| Creature / NPC | Actor: npc |
-| Creature ability | Item: ability where reusable |
-| Genre overview | JournalEntry |
-| Random table | RollTable where a real random-table mechanic exists |
+Extraction alone is not runtime integration. A structured field is fully
+integrated only when the runtime consumes it where the game rule requires it.
 
-## 5. Reuse and references
+## 6. Current runtime closure gaps
 
-The existing standalone Ability architecture is preserved. Types and Foci store UUID references to Ability Items and must not embed copies of ability data.
+The current content layer already preserves more mechanics than the runtime
+currently executes.
 
-Reference resolution follows the repository convention:
+Known gaps are:
 
-    reference
-        |
-        v
-    resolve document
-        |
-        v
-    validate expected type
-        |
-        v
-    use document
+### Weapons
 
-## 6. Genre separation
+`system.mechanics.targetEffects` is extracted, modeled, and fidelity-tested,
+but attack resolution does not yet generically apply those effects.
 
-Genre rules should not be mixed into the core rules pack when they change the available character options, skills, equipment, or assumptions of play.
+Other structured weapon properties must be audited to distinguish mechanics that
+require runtime behavior from properties that are descriptive.
 
-Genre material should therefore be represented as:
-- a genre overview Journal Entry;
-- genre-specific rules and character-creation guidance;
-- links to reusable Skills, Types, Descriptors, Foci, and Equipment;
-- GM guidance specific to the genre.
+### Cyphers
 
-## 7. Quick Reference
+Depletion is runtime-functional.
 
-A dedicated quick-reference layer should provide short Journal Entries for:
-- Difficulty and task steps
-- Common modifiers
-- Effort
-- Edge
-- Assets
-- Range
-- Movement
-- Damage
-- Wounds
-- Recovery
-- Combat
-- XP and advancement
-- GM Intrusions
-- Conditions
+Generic runtime handling for structured:
 
-Quick Reference entries should be concise and link to the detailed rule entry instead of duplicating the full rule text.
+- `variants`;
+- `randomRange`;
+- `rollTables`;
+- item-specific structured effects
 
-## 8. Extraction phases
+is still being completed.
 
-### Phase A — Architecture and mapping
-- Define pack boundaries.
-- Define document-type mapping.
-- Preserve standalone Ability/Type/Focus architecture.
-- Establish bilingual logical identifiers.
-- Define the common CRD source-record envelope and provenance contract.
-- Add source and pack contract tests.
+The implementation should remain generic rather than hardcoding individual
+Cyphers such as Teleporter.
 
-### Phase B — Core rules
-Convert core character and core rules sections into Journal Entries and Quick Reference entries.
+### Granted benefits
 
-### Phase C — Reusable player content
-Convert Skills, Equipment, Weapons, Armor, Shields, Cyphers, and Artifacts into real Items.
+Type/Focus benefit handling is already implemented for several structured
+categories. Remaining work is to verify that every source-backed benefit is both
+stored and applied correctly in actual gameplay, including granted armor where
+applicable.
 
-### Phase D — Character options
-Complete Type, Descriptor, Focus, and Ability collections and link them to reusable Skills.
+## 7. Journals, Quick Reference, and guides
 
-### Phase E — Genres
-Convert genre and real-world sections while keeping genre-specific content discoverable.
+The intended navigation layer remains:
 
-### Phase F — GM content
-Convert creature/NPC material, GM procedures, tables, and GM quick references.
+- authoritative rules in Journals;
+- reusable character/equipment content as Items;
+- a Quick Reference layer for high-frequency rules;
+- Player and GM navigation guides linking to authoritative content.
 
-### Phase G — Navigation and polish
-Add player/GM landing Journals, cross-links, folders, icons, search-friendly names, and final bilingual consistency tests.
+These are future content work, not replacements for the existing structured
+Items.
 
-Each phase should remain independently testable and compilable.
+Journals must not become a second source of truth for mechanics already modeled
+as reusable Items.
 
-## 9. Fidelity and translation policy
+## 8. Genre content
 
-The CRD conversion is a transcription and localization
-project, not a rewriting project.
+Genre-specific Abilities are already integrated into the canonical Ability
+catalogue with stable identity, variants, localization, provenance, and contract
+tests.
 
-For every CRD-derived record:
+The broader genre reference/navigation layer remains future work.
 
-- English rules text must remain faithful to the supplied 2026-07-29 CRD.
-- No rule, example, exception, value, prerequisite, duration, range, cost,
-  damage value, table result, or mechanical qualifier may be invented,
-  simplified, modernized, or paraphrased.
-- Structural conversion into Foundry fields is allowed only when it preserves
-  the source meaning exactly.
-- Formatting may change to fit Foundry presentation; the underlying wording and
-  mechanical content must not change.
-- Apparent source ambiguity or editorial errors must not be silently corrected.
-  Preserve the source and flag the issue for review.
-- Automation that cannot establish a reliable source-to-record mapping must
-  stop rather than guess.
+## 9. Translation and provenance
 
-### French localization
+English CRD content is the mechanical authority.
 
-The French packs are faithful translations of the CRD-derived English/source
-content.
+French records:
 
-Translation is a separate localization layer. It must not introduce a rules
-interpretation absent from the source.
+- share the canonical logical ID;
+- preserve equivalent mechanics;
+- use the supplied Character Book localization when it faithfully matches the
+  CRD content;
+- otherwise retain the English content for later translation.
 
-For every translated record:
+Every CRD-derived record remains traceable through its provenance envelope.
 
-- Preserve all mechanical meaning exactly.
-- Preserve numbers, units, ranges, durations, costs, tiers, levels,
-  prerequisites, table probabilities, and conditions exactly.
-- Preserve the distinction between rules text, examples, explanations, and
-  descriptive text.
-- Do not translate by summarization.
-- Keep a stable logical source key so English and French records can be compared.
-- Flag uncertain translations for review instead of guessing.
+## 10. Build contract
 
-### Source provenance
+Source changes should be followed by:
 
-Each generated content family must be traceable back to its CRD section. The
-conversion process should retain enough provenance to answer:
+```powershell
+npm run migrate:packs
+npm run test:content
+npm run build:packs
+```
 
-1. Which CRD section produced this record?
-2. Which source passage or table produced each mechanical field?
-3. Which English record is the source of the French translation?
-4. Which transformations were structural only?
+The generated LevelDB packs are never hand-edited.
 
-Provenance may live in source metadata and build-time manifests; it must not
-pollute user-facing rules text.
+## 11. Definition of done
 
-### Automated fidelity checks
+A CRD content family is complete when all applicable contracts are satisfied:
 
-Tests should reject:
+- complete source inventory;
+- stable logical IDs;
+- bilingual pairing where applicable;
+- structured mechanics;
+- provenance;
+- reference integrity;
+- model-gap review;
+- representative fidelity fixtures;
+- business/content contract tests;
+- deterministic build;
+- CI green;
+- documentation updated;
+- no duplicate canonical records;
+- no dangling references.
 
-- missing source keys;
-- duplicate logical keys;
-- English/French relationship mismatches;
-- changed numeric or mechanical fields between language variants;
-- Type or Focus references to non-existent Ability records;
-- compiled packs missing from authored source packs;
-- content records without required provenance.
-
-Representative source-to-record fixtures should cover high-risk content such as
-tables, abilities, equipment statistics, and rules containing exceptions.
-
-## 10. Authoring rules
-
-- English and French records use the same logical identifiers.
-- Mechanical fields remain language-independent where possible.
-- Localized names and descriptions belong in the corresponding language pack.
-- Do not put UI implementation details into compendium content.
-- Do not hand-edit compiled LevelDB files.
-- Do not duplicate reusable Ability definitions.
-- Preserve CRD wording accurately when the license permits its inclusion.
-- Keep attribution/licensing metadata with the generated content and repository documentation.
-
-
-## 11. Curated Player and GM guides
-
-The detailed reference packs are not themselves the user-facing reading order.
-The final library also contains two curated navigation layers:
-
-- `player-guide-en/fr`: player-facing character creation and play guidance;
-- `gm-guide-en/fr`: GM-facing procedures, preparation, adjudication, and reference.
-
-These guides are Journal Entries and link to the authoritative detailed records.
-They must not become a second manually maintained copy of the CRD.
-
-The same principle applies to Quick Reference: it provides short, high-frequency
-lookups while linking to the full rule entry for detail.
-
-The complete roadmap, including the Player Guide, GM Guide, genre library, GM
-library, quick-reference layer, and future automation, is maintained in
-`docs/crd-content-roadmap.md`.
+A genuine source limitation is documented explicitly rather than worked around by
+inventing content.

@@ -1,126 +1,96 @@
 # CRD to Foundry Mapping
 
-This is the working conversion map for the 2026 Cypher Reference Document. It is organized around Foundry usage rather than page ranges so it remains useful across CRD revisions.
+This is the current conversion map for the 2026-07-29 Cypher Reference Document.
+It describes what is implemented, what is planned, and what is source-blocked.
 
 ## Core character and rules
 
-| CRD subject | Foundry | Pack |
+| CRD subject | Foundry representation | Status |
 | --- | --- | --- |
-| Creating Your Character | JournalEntry | rules |
-| Core Character | JournalEntry | rules |
-| Tier | JournalEntry | rules |
-| Might, Speed, Intellect | JournalEntry | rules |
-| Pools and Edge | JournalEntry | rules |
-| Wounds | JournalEntry | rules |
-| Skills and Inabilities | Item + JournalEntry | skills + rules |
-| Effort | JournalEntry | rules |
-| Assets | JournalEntry | rules |
-| Cyphers overview | JournalEntry | rules |
-| Recoveries | JournalEntry | rules |
-| Healing Wounds | JournalEntry | rules |
-| Weapons and Armor rules | JournalEntry | rules |
-| Equipment and pricing | JournalEntry + Items | rules + equipment |
-
-## Character options
-
-| CRD subject | Foundry | Pack |
-| --- | --- | --- |
-| Types | Item | types |
-| Descriptors | Item | descriptors |
-| Species-style descriptors | Item | descriptors |
-| Foci | Item | foci |
-| Abilities | Item | abilities |
-| Ability prerequisites | Focus flowchart edges | foci |
-| Genre skills | Item | skills |
-| Languages as skills | Item | skills |
+| Core rules | JournalEntry / system rules | Rules foundation available; full CRD Journal conversion remains planned |
+| Skills | Item | Complete |
+| Abilities | Item | Complete |
+| Types | Item | Complete |
+| Descriptors | Item | Complete |
+| Foci | Item | Complete |
+| Character advancement | Application services + structured content | Runtime implemented |
+| Recoveries and wounds | Application/rules services | Runtime implemented |
 
 ## Equipment and expendable content
 
-| CRD subject | Foundry | Pack |
+| CRD subject | Foundry representation | Status |
 | --- | --- | --- |
-| Weapons | Item: attack | equipment |
-| Armor | Item: armor | equipment |
-| Shields | Item: shield | equipment |
-| General equipment | Item: equipment | equipment |
-| Price categories | JournalEntry + equipment metadata | rules + equipment |
-| Cyphers | Item: cypher | equipment |
-| Artifacts | Item: artifact | equipment |
+| Equipment | Item | Complete W4 inventory |
+| Weapons | Item/attack | Complete W4 inventory; runtime special mechanics audit ongoing |
+| Armor | Item/armor | Complete W4 inventory |
+| Shields | Item/shield | Complete W4 inventory |
+| Subtle Cyphers | Item/cypher | Complete |
+| Manifest Cyphers | Item/cypher | Complete |
+| Power Boost Cyphers | Item/cypher | Complete |
+| Artifacts | Item/artifact | Source-blocked: no Artifact inventory in supplied CRD |
+
+The W4 source inventory contains 259 English records and 259 French paired
+records across equipment, weapons, armor, and shields.
 
 ## Genre material
 
-The CRD genre sections become Journal Entries with links to reusable content.
-
-Expected genre families include:
-- The Real World
-- Fantasy
-- Science Fiction
-- Superhero
-- Horror
-- Modern / contemporary variants
-- Other genre-specific sections present in the supplied CRD revision
-
-The final list is derived from the supplied CRD rather than hard-coded from an older edition.
+| CRD subject | Foundry representation | Status |
+| --- | --- | --- |
+| Genre-specific Abilities | Ability Items | Complete canonical integration |
+| Genre overview/rules | JournalEntry | Planned |
+| Genre navigation | JournalEntry | Planned |
 
 ## GM material
 
-| CRD subject | Foundry | Pack |
+| CRD subject | Foundry representation | Status |
 | --- | --- | --- |
-| GM rules | JournalEntry | gm-tools |
-| GM Intrusions | JournalEntry | gm-tools |
-| Encounter guidance | JournalEntry | gm-tools |
-| Creature rules | JournalEntry | gm-tools |
-| Creatures / NPCs | Actor | creatures |
-| Creature abilities | Item: ability | abilities or creatures |
-| Random tables | RollTable where applicable | gm-tools |
-| Rewards / treasure guidance | JournalEntry | gm-tools |
-| Quick references | JournalEntry | gm-tools |
+| GM procedures | JournalEntry | Planned |
+| Random tables actually present in the CRD | RollTable or JournalEntry | Planned inventory/conversion |
+| Creatures/NPCs | Actor/npc | Not a CRD extraction target; supplied CRD contains no creature inventory |
+| Rewards/treasure | JournalEntry / Items where source-backed | Planned |
+
+The repository still supports generic NPC/creature Actors. That capability is
+separate from CRD content extraction.
 
 ## Bilingual contract
 
-For every translated content family:
-- English and French source records expose the same logical key.
-- Cross-document relationships resolve to the correct language pack.
-- Mechanical identifiers are identical in both languages.
-- Translation must not change numeric values, prerequisites, costs, or rules.
+English and French records:
 
-Tests should compare logical structure rather than translated display text.
+- share one language-neutral logical ID;
+- retain equivalent mechanical data;
+- preserve CRD provenance;
+- use the Character Book translation only when it faithfully matches the CRD;
+- otherwise retain the English source text.
+
+Localized display names are never used as canonical identity keys.
 
 ## Foundry-first principle
 
-A CRD passage becomes an Item or Actor when the Foundry document itself is useful during play. Otherwise it remains a Journal Entry.
+Use the smallest meaningful Foundry representation:
 
-For example:
-- "A medium weapon deals 4 damage" belongs in rules/quick-reference Journal content.
-- "Broadsword" belongs in the equipment Item pack.
-- A character Type belongs in the Type Item pack.
-- A creature with Armor, health, attacks, and abilities belongs in the Actor pack.
-
-This prevents the reference library from becoming a collection of static pages while avoiding the opposite mistake of modelling every sentence as an Item.
-
+- reusable character options and equipment become Items;
+- actual random tables become RollTables;
+- rules and navigation become Journals;
+- creatures remain Actors when a source actually provides them;
+- runtime state remains on Actors, not in static CRD source records.
 
 ## Player and GM guides
 
-The conversion includes two curated navigation layers in addition to the detailed
-content packs:
-
-| Guide | Foundry | Purpose |
-| --- | --- | --- |
-| Player Guide | JournalEntry | Character creation, player rules, reusable options, and play reference |
-| GM Guide | JournalEntry | Running the game, adjudication, encounters, creatures, rewards, and GM reference |
-| Quick Reference | JournalEntry | Short high-frequency rules linked to detailed entries |
-
-The guides are deliberately link-based. They should not duplicate the authoritative
-rule text or mechanical records already stored in rules, skills, abilities,
-equipment, genres, or creature packs.
+The intended guides are navigation layers. They should link to authoritative
+Items and Journals rather than duplicate their mechanics.
 
 ## Additional planned libraries
 
-The full CRD conversion also includes:
+The following remain valid future work:
 
-- Genre reference and genre-specific character creation;
-- Creature/NPC Actors;
-- GM procedures and random tables;
-- Rewards, treasure, and equipment references;
-- automation helpers backed by structured compendium data.
+- full CRD Journal library;
+- Quick Reference;
+- Player Guide;
+- GM Guide;
+- genre reference/navigation;
+- GM procedures and rewards;
+- actual CRD random-table inventory;
+- final cross-language/reference/provenance audits.
 
-See `docs/crd-content-roadmap.md` for the implementation order and completion criteria.
+The old creature-extraction plan is intentionally not retained: there is no
+source inventory to extract from the supplied CRD.
