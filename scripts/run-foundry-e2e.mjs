@@ -183,7 +183,19 @@ async function createWorld(dataPath, coreVersion, systemVersion) {
 }
 
 function quoteWindowsArg(value) {
-  return `"${String(value).replace(/"/g, "\\\"")}"`;
+  const stringValue = String(value);
+  if (/^[A-Za-z0-9_./:-]+$/.test(stringValue)) {
+    return stringValue;
+  }
+  return `"${stringValue.replace(/"/g, '""')}"`;
+}
+
+function windowsCommand(command, args) {
+  const executable = /^[A-Za-z0-9_./:-]+$/.test(command)
+    ? command
+    : quoteWindowsArg(command);
+  const commandLine = [executable, ...args.map(quoteWindowsArg)].join(" ");
+  return executable.startsWith('"') ? `"${commandLine}"` : commandLine;
 }
 
 function spawnFoundry(appPath, dataPath) {
@@ -196,8 +208,7 @@ function spawnFoundry(appPath, dataPath) {
   ];
 
   if (process.platform === "win32") {
-    const command = [appPath, ...args].map(quoteWindowsArg).join(" ");
-    const shellCommand = `\"${command}\"`;
+    const shellCommand = windowsCommand(appPath, args);
     return spawn(
       process.env.ComSpec || "cmd.exe",
       ["/d", "/s", "/c", shellCommand],
@@ -226,9 +237,8 @@ async function runCommand(command, args) {
           process.env.ComSpec || "cmd.exe",
           [
             "/d",
-            "/s",
             "/c",
-            [command, ...args].map(quoteWindowsArg).join(" ")
+            windowsCommand(command, args)
           ],
           {
             cwd: ROOT,
@@ -325,9 +335,8 @@ try {
           process.env.ComSpec || "cmd.exe",
           [
             "/d",
-            "/s",
             "/c",
-            [command, ...testArgs].map(quoteWindowsArg).join(" ")
+            windowsCommand(command, testArgs)
           ],
           {
             cwd: ROOT,
