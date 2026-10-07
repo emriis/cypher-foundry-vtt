@@ -184,6 +184,15 @@ test("live E2E requires Chromium 146 or newer", () => {
   assert.match(fixture, /const MIN_CHROMIUM_MAJOR = 146/);
   assert.match(fixture, /chromiumMajor < MIN_CHROMIUM_MAJOR/);
   assert.match(fixture, /browser\.version\(\)/);
+
+  const preflight = fs.readFileSync(
+    path.join(root, "scripts/check-playwright-browser.mjs"),
+    "utf8"
+  );
+  assert.match(preflight, /MIN_CHROMIUM_MAJOR = 146/);
+  assert.match(preflight, /chromium\.launch/);
+  assert.match(preflight, /channel: "chromium"/);
+  assert.match(preflight, /browser\.version\(\)/);
 });
 
 test("live E2E fixture keeps one browser page for the whole worker", () => {
