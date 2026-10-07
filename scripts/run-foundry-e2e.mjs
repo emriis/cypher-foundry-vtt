@@ -235,12 +235,13 @@ try {
 
   await ensureDataPath(dataPath);
   await installSystem(dataPath);
-  worldPath = await createWorld(
+  worldPath = path.join(dataPath, "worlds", WORLD_ID);
+  worldCreated = true;
+  await createWorld(
     dataPath,
     coreVersion,
     systemManifest.version
   );
-  worldCreated = true;
 
   child = spawnFoundry(appPath, dataPath);
   child.once("error", error => {
