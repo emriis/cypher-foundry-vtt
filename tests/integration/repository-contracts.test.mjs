@@ -163,6 +163,29 @@ test("DocumentSheetV2 sheets declare their main part as the root content", () =>
   }
 });
 
+test("live E2E runner invokes every committed Playwright spec explicitly", () => {
+  const source = fs.readFileSync(
+    path.join(root, "scripts/run-foundry-e2e.mjs"),
+    "utf8"
+  );
+  const specs = [
+    "tests/e2e/foundry-runtime.spec.mjs",
+    "tests/e2e/foundry-gameplay.spec.mjs"
+  ];
+
+  for (const spec of specs) {
+    assert.ok(
+      source.includes(`"${spec}"`),
+      `E2E runner does not explicitly invoke: ${spec}`
+    );
+    assert.ok(
+      fs.existsSync(path.join(root, spec)),
+      `Declared E2E spec does not exist: ${spec}`
+    );
+  }
+  assert.match(source, /const testArgs = \[[\s\S]*\.\.\.E2E_SPECS/);
+});
+
 test("live E2E uses a Windows process boundary for Foundry and scripts", () => {
   const source = fs.readFileSync(
     path.join(root, "scripts/run-foundry-e2e.mjs"),
