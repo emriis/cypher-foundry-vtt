@@ -252,7 +252,7 @@ test.describe("Cypher Foundry live gameplay", () => {
       await actor.sheet.render(true);
     }, actorId);
 
-    await page.locator(
+    await page.locator(".pc-dashboard").last().locator(
       '[data-action="rollRecovery"][data-interval="hour"]'
     ).click();
 
