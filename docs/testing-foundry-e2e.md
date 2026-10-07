@@ -31,6 +31,8 @@ npm run test:e2e
 ```
 
 The runner automatically installs/validates the Playwright Chromium browser before launching Foundry. To skip that bootstrap step when the browser is already managed externally, set `PLAYWRIGHT_SKIP_BROWSER_INSTALL=true`.
+The Playwright context uses a fixed 1280×900 CSS viewport, device scale factor 1, and Chromium's scale factor is forced to 1. This prevents Windows display scaling from reducing Foundry's effective viewport below its 1024×768 minimum.
+
 
 You do **not** need to open Foundry manually.
 
