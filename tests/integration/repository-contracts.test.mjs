@@ -243,11 +243,24 @@ test("live E2E joins the deterministic gamemaster profile", () => {
   );
 
   assert.match(source, /const GAMEMASTER_NAME = "gamemaster"/);
-  assert.match(source, /hasText:\s*\/\^\\\\s\*gamemaster\\\\s\*\$\/i/);
-  assert.match(source, /ancestor::select\[1\]/);
-  assert.match(source, /userSelect\.selectOption\(gamemasterValue\)/);
-  assert.match(source, /password\.fill\(""/);
+  assert.match(source, /#join-username/);
+  assert.match(source, /input\[name="username"\]/);
+  assert.match(source, /usernameInput\.fill\(GAMEMASTER_NAME\)/);
+  assert.match(source, /input\[type="password"\]/);
   assert.match(source, /join game\( session\)\?/i);
+  assert.match(source, /select option/);
+});
+
+test("live E2E cleanup waits for the Foundry process before deleting its world", () => {
+  const source = fs.readFileSync(
+    path.join(root, "scripts/run-foundry-e2e.mjs"),
+    "utf8"
+  );
+
+  assert.match(source, /waitForWindowsProcessExit/);
+  assert.match(source, /await waitForWindowsProcessExit\(foundryPid\)/);
+  assert.match(source, /async function removeWorld/);
+  assert.match(source, /await removeWorld\(worldPath\)/);
 });
 
 test("live E2E runner invokes every committed Playwright spec explicitly", () => {
