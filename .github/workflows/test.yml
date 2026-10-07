@@ -188,5 +188,9 @@ jobs:
              [ "${{ needs.repository.result }}" != "success" ] || \
              [ "${{ needs.coverage.result }}" != "success" ]; then
             echo "" >> "$GITHUB_STEP_SUMMARY"
-            echo "One or more CI categories failed. Inspect the corresponding job above; this summary does not duplicate the failure." >> "$GITHUB_STEP_SUMMARY"
+            echo "One or more required CI categories failed." >> "$GITHUB_STEP_SUMMARY"
+            exit 1
           fi
+
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "All required CI categories passed." >> "$GITHUB_STEP_SUMMARY"
