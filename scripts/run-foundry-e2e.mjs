@@ -220,8 +220,8 @@ const systemManifest = JSON.parse(
   await readFile(path.join(ROOT, "system.json"), "utf8")
 );
 
-let testDataPath;
 let child;
+let worldCreated = false;
 let exitCode = 1;
 
 try {
