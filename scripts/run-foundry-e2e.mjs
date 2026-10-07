@@ -218,92 +218,29 @@ async function createWorld(dataPath, coreVersion, systemVersion) {
 
 function spawnFoundry(appPath, userDataPath) {
   const args = [
-    `--port=${PORT}`,
+    "--port=" + PORT,
     "--noupnp",
     "--noupdate",
-    `--world=${WORLD_ID}`,
-    `--dataPath=${userDataPath}`
+    "--world=" + WORLD_ID,
+    "--dataPath=" + userDataPath
   ];
 
-  if (process.platform === "win32") {
-    // Node can return EACCES for this Electron executable, while cmd.exe
-    // introduces another quoting layer. PowerShell receives the executable
-    // and argument list separately, so paths with spaces stay intact.
-    const powershellScript =
-      "$arguments = ConvertFrom-Json $env:FOUNDRY_ARGS_JSON; " +
-      "$process = Start-Process -FilePath $env:FOUNDRY_EXE " +
-      "-ArgumentList $arguments -PassThru; " +
-      "Set-Content -Path $env:FOUNDRY_PID_FILE -Value $process.Id; " +
-      "$process.WaitForExit();"
+  // Run Foundry's Node server instead of the Electron executable for E2E.
+  // Playwright supplies the browser, so Electron provides no test value here.
+  // This also removes the Windows elevation and Chromium/GPU lifecycle
+  // problems caused by controlling a separately elevated Electron process.
+  const serverPath = path.join(
+    path.dirname(appPath),
+    "resources",
+    "app",
+    "main.js"
+  );
 
-    return spawn(
-      "powershell.exe",
-      [
-        "-NoProfile",
-        "-NonInteractive",
-        "-ExecutionPolicy",
-        "Bypass",
-        "-Command",
-        powershellScript
-      ],
-      {
-        cwd: path.dirname(appPath),
-        stdio: "inherit",
-        windowsHide: false,
-        shell: false,
-        env: {
-          ...process.env,
-          FOUNDRY_EXE: appPath,
-          FOUNDRY_ARGS_JSON: JSON.stringify(args),
-          FOUNDRY_PID_FILE
-        }
-      }
-    );
-  }
-
-  return spawn(appPath, args, {
-    cwd: path.dirname(appPath),
+  return spawn(process.execPath, [serverPath, ...args], {
+    cwd: path.dirname(serverPath),
     stdio: "inherit",
     windowsHide: false,
     shell: false
-  });
-}
-
-function quoteWindowsArg(value) {
-  const stringValue = String(value);
-  if (/^[A-Za-z0-9_./:-]+$/.test(stringValue)) {
-    return stringValue;
-  }
-  return `"${stringValue}"`;
-}
-
-function windowsCommand(command, args) {
-  return [
-    command,
-    ...args.map(quoteWindowsArg)
-  ].join(" ");
-}
-
-function spawnScript(command, args, options = {}) {
-  if (process.platform === "win32") {
-    return spawn(
-      process.env.ComSpec || "cmd.exe",
-      ["/d", "/s", "/c", windowsCommand(command, args)],
-      {
-        cwd: ROOT,
-        stdio: "inherit",
-        windowsHide: false,
-        shell: false,
-        ...options
-      }
-    );
-  }
-
-  return spawn(command, args, {
-    cwd: ROOT,
-    stdio: "inherit",
-    shell: false,
-    ...options
   });
 }
 
@@ -377,35 +314,29 @@ async function runWindowsTaskkill(pid, force = false) {
 }
 
 async function stopProcess(child, foundryPid) {
+  if (!child || !Number.isInteger(foundryPid)) return;
+
   if (process.platform === "win32") {
-    // The runner owns these processes, so they have the same elevation level
-    // as Node. Never attempt to control an unrelated Foundry instance.
-    const pids = [foundryPid, child?.pid]
-      .filter(pid => Number.isInteger(pid) && pid > 0);
-
-    // Ask Windows to close the process tree normally first. This is important
-    // for Electron: it gives Foundry a chance to flush world data and close
-    // its Chromium/GPU children cleanly.
-    for (const pid of pids) {
-      await runWindowsTaskkill(pid);
-    }
-
-    for (const pid of pids) {
-      try {
-        await waitForWindowsProcessExit(pid, 10_000);
-      } catch {
-        // A process that ignores the graceful close is still owned by this
-        // runner, so force termination is a safe final fallback.
-        await runWindowsTaskkill(pid, true);
-        await waitForWindowsProcessExit(pid, 10_000);
-      }
-    }
-    return;
+    await runWindowsTaskkill(foundryPid);
+  } else if (!child.killed) {
+    child.kill("SIGTERM");
   }
 
-  if (child && !child.killed) {
-    child.kill("SIGTERM");
-    await new Promise(resolve => child.once("exit", resolve));
+  try {
+    await waitForWindowsProcessExit(foundryPid, 10_000);
+  } catch {
+    if (process.platform === "win32") {
+      await runWindowsTaskkill(foundryPid, true);
+      await waitForWindowsProcessExit(foundryPid, 10_000);
+    } else {
+      throw new Error(
+        "Foundry server did not exit after SIGTERM within 10 seconds."
+      );
+    }
+  }
+
+  if (!child.killed) {
+    child.kill();
   }
 }
 
@@ -470,8 +401,9 @@ try {
     console.error("Unable to start Foundry:", error);
   });
 
-  if (process.platform === "win32") {
-    foundryPid = await waitForPidFile(FOUNDRY_PID_FILE);
+  foundryPid = child.pid;
+  if (!Number.isInteger(foundryPid) || foundryPid <= 0) {
+    throw new Error("Foundry server did not expose a valid process ID.");
   }
 
   await waitForServer(BASE_URL);
