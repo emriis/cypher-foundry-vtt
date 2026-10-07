@@ -9,29 +9,46 @@ zip_path="$output_path/system.zip"
 release_manifest_path="$output_path/system.json"
 staging_path="$(mktemp -d "${TMPDIR:-/tmp}/cypher-package-XXXXXX")"
 
-cleanup() { rm -rf "$staging_path"; }
+cleanup() {
+  rm -rf "$staging_path"
+}
 trap cleanup EXIT
 
-version="$(node -e '
-const fs = require("fs");
-const manifest = JSON.parse(fs.readFileSync(process.argv[1], "utf8"));
-if (!manifest.version) throw new Error("system.json must define a version.");
-const expected = "/releases/download/v" + manifest.version + "/system.zip";
-if (!manifest.download || !manifest.download.endsWith(expected)) throw new Error("system.json download is invalid.");
-process.stdout.write(manifest.version);
-' "$manifest_path")
+required_paths=(
+  "system.json"
+  "cypher.mjs"
+  "module"
+  "templates"
+  "css"
+  "lang"
+  "packs"
+  "assets"
+  "LICENSE.txt"
+  "README.md"
+)
 
-required_paths=("system.json" "cypher.mjs" "module" "templates" "css" "lang" "packs" "assets" "LICENSE.txt" "README.md")
 mkdir -p "$output_path"
 rm -f "$zip_path" "$release_manifest_path"
 
 for relative_path in "${required_paths[@]}"; do
   source_path="$repository_root/$relative_path"
-  if [[ ! -e "$source_path" ]]; then echo "Required release path is missing: $relative_path" >&2; exit 1; fi
+  if [[ ! -e "$source_path" ]]; then
+    echo "Required release path is missing: $relative_path" >&2
+    exit 1
+  fi
+
   destination_path="$staging_path/$relative_path"
   if [[ -d "$source_path" ]]; then
     mkdir -p "$destination_path"
-    (cd "$source_path" && find . -type f ! -name "LOCK" ! -name "LOG" ! -name "LOG.old" ! -name "*.log" -print0) | while IFS= read -r -d "" file; do
+    (
+      cd "$source_path"
+      find . -type f \
+        ! -name "LOCK" \
+        ! -name "LOG" \
+        ! -name "LOG.old" \
+        ! -name "*.log" \
+        -print0
+    ) | while IFS= read -r -d "" file; do
       relative_file="${file#./}"
       mkdir -p "$(dirname "$destination_path/$relative_file")"
       cp "$source_path/$relative_file" "$destination_path/$relative_file"
@@ -41,7 +58,16 @@ for relative_path in "${required_paths[@]}"; do
   fi
 done
 
-(cd "$staging_path" && zip -q -r -9 "$zip_path" .)
+(
+  cd "$staging_path"
+  zip -q -r -9 "$zip_path" .
+)
+
 cp "$manifest_path" "$release_manifest_path"
-unzip -Z1 "$zip_path" | grep -Fxq "system.json"
-echo "Created $zip_path and $release_manifest_path for Cypher v$version."
+
+if ! unzip -Z1 "$zip_path" | grep -Fxq "system.json"; then
+  echo "The package archive must contain system.json at its root." >&2
+  exit 1
+fi
+
+echo "Created $zip_path and $release_manifest_path."
