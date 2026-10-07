@@ -116,7 +116,6 @@ test("rollTask refunds Effort cost on a natural 20 and reports attack damage", a
 test("rollTask carries resolved weapon target effects into the result and chat flags", async () => {
   let message;
   setRollResult(15);
-  globalThis.Roll.prototype;
   globalThis.Roll = class {
     async evaluate() {
       this.total = 15;
