@@ -105,8 +105,8 @@ jobs:
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "Commands: `npm run test:integration`, `npm run audit:architecture`" >> "$GITHUB_STEP_SUMMARY"
 
-  build:
-    name: Compendium build
+  package:
+    name: Package system
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -116,16 +116,30 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
-      - name: Build compendium packs
-        run: npm run build:packs
+      - name: Build release package
+        run: npm run package
       - name: Validate compiled compendium packs
         run: node --test --test-reporter=spec tests/build/compendium-packs.test.mjs
+      - name: Upload package artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypher-system-package
+          path: |
+            dist/system.json
+            dist/system.zip
+          if-no-files-found: error
       - name: Publish diagnostics
         if: always()
         run: |
-          echo "## Compendium build" >> "$GITHUB_STEP_SUMMARY"
+          echo "## System package" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
-          echo "Command: `npm run build:packs`" >> "$GITHUB_STEP_SUMMARY"
+          echo "Command: `npm run package`" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f dist/system.json ] && [ -f dist/system.zip ]; then
+            echo "Package artifacts were created successfully and uploaded to the workflow run." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Package artifacts were not created." >> "$GITHUB_STEP_SUMMARY"
+          fi
 
   repository:
     name: Repository and E2E syntax checks
@@ -185,7 +199,7 @@ jobs:
       - behavior
       - content
       - integration
-      - build
+      - package
       - repository
       - coverage
     runs-on: ubuntu-latest
@@ -200,7 +214,7 @@ jobs:
           echo "| BDD behavior tests | ${{ needs.behavior.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Content contracts | ${{ needs.content.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Integration and architecture | ${{ needs.integration.result }} |" >> "$GITHUB_STEP_SUMMARY"
-          echo "| Compendium build | ${{ needs.build.result }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| System package | ${{ needs.package.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Repository checks | ${{ needs.repository.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Rule coverage | ${{ needs.coverage.result }} |" >> "$GITHUB_STEP_SUMMARY"
 
@@ -208,7 +222,7 @@ jobs:
              [ "${{ needs.behavior.result }}" != "success" ] || \
              [ "${{ needs.content.result }}" != "success" ] || \
              [ "${{ needs.integration.result }}" != "success" ] || \
-             [ "${{ needs.build.result }}" != "success" ] || \
+             [ "${{ needs.package.result }}" != "success" ] || \
              [ "${{ needs.repository.result }}" != "success" ] || \
              [ "${{ needs.coverage.result }}" != "success" ]; then
             echo "" >> "$GITHUB_STEP_SUMMARY"
