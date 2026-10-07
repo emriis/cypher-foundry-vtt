@@ -28,8 +28,7 @@ function getDataPath() {
   if (process.platform === "win32") {
     return path.join(
       process.env.LOCALAPPDATA || path.join(os.homedir(), "AppData", "Local"),
-      "FoundryVTT",
-      "Data"
+      "FoundryVTT"
     );
   }
 
@@ -38,15 +37,13 @@ function getDataPath() {
       os.homedir(),
       "Library",
       "Application Support",
-      "FoundryVTT",
-      "Data"
+      "FoundryVTT"
     );
   }
 
   return path.join(
     process.env.XDG_DATA_HOME || path.join(os.homedir(), ".local", "share"),
-    "FoundryVTT",
-    "Data"
+    "FoundryVTT"
   );
 }
 
