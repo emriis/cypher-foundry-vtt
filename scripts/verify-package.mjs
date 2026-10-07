@@ -43,7 +43,7 @@ async function main() {
       const source = path.join(root, relativePath);
       if ((await stat(source)).isDirectory()) {
         for (const file of await listFiles(source)) {
-          if (file === "LOCK" || file === "LOG" || file === "LOG.old" || file.endsWith(".log")) continue;
+          const basename = path.posix.basename(file);\n          if (basename === "LOCK" || basename === "LOG" || basename === "LOG.old" || basename.endsWith(".log")) continue;
           expectedFiles.push(path.posix.join(relativePath, file));
         }
       } else expectedFiles.push(relativePath);
