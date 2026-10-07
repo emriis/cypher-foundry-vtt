@@ -163,6 +163,30 @@ test("DocumentSheetV2 sheets declare their main part as the root content", () =>
   }
 });
 
+test("live E2E launches Foundry directly and scripts through cmd.exe on Windows", () => {
+  const source = fs.readFileSync(
+    path.join(root, "scripts/run-foundry-e2e.mjs"),
+    "utf8"
+  );
+
+  assert.match(
+    source,
+    /function spawnFoundry\(appPath, dataPath\)[\s\S]*?return spawn\(appPath, args,/
+  );
+  assert.match(
+    source,
+    /function spawnScript\(command, args, options = \{\}\)/
+  );
+  assert.match(
+    source,
+    /process\.env\.ComSpec \|\| "cmd\.exe"/
+  );
+  assert.doesNotMatch(
+    source,
+    /function spawnFoundry\(appPath, dataPath\)[\s\S]*?ComSpec/
+  );
+});
+
 test("live E2E cleanup is scoped to its generated world", () => {
   const source = fs.readFileSync(
     path.join(root, "scripts/run-foundry-e2e.mjs"),
