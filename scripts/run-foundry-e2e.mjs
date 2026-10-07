@@ -175,11 +175,15 @@ async function createWorld(dataPath, coreVersion, systemVersion) {
 
   await writeFile(
     path.join(worldPath, "world.json"),
-    JSON.stringify(manifest, null, 2) + "\n",
+    JSON.stringify(manifest, null, 2) + "\\n",
     "utf8"
   );
 
   return worldPath;
+}
+
+function quoteWindowsArg(value) {
+  return `"${String(value).replace(/(\\*)"/g, "$1$1\\\\\\\"").replace(/(\\+)$/g, "$1$1") }"`;
 }
 
 function spawnFoundry(appPath, dataPath) {
@@ -192,9 +196,10 @@ function spawnFoundry(appPath, dataPath) {
   ];
 
   if (process.platform === "win32") {
+    const command = [appPath, ...args].map(quoteWindowsArg).join(" ");
     return spawn(
       process.env.ComSpec || "cmd.exe",
-      ["/d", "/s", "/c", appPath, ...args],
+      ["/d", "/s", "/c", command],
       {
         cwd: path.dirname(appPath),
         stdio: "inherit",
@@ -217,7 +222,7 @@ async function runCommand(command, args) {
     const childProcess = spawn(command, args, {
       cwd: ROOT,
       stdio: "inherit",
-      shell: globalThis.process.platform === "win32"
+      shell: false
     });
     childProcess.on("error", reject);
     childProcess.on("close", code => {
@@ -298,7 +303,7 @@ try {
       {
         cwd: ROOT,
         stdio: "inherit",
-        shell: process.platform === "win32",
+        shell: false,
         env: {
           ...process.env,
           FOUNDRY_URL: BASE_URL,
