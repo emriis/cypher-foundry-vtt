@@ -217,6 +217,25 @@ test("live E2E fixture keeps one browser page for the whole worker", () => {
   }
 });
 
+test("live E2E login selects the Gamemaster independently of Foundry locale", () => {
+  const source = fs.readFileSync(
+    path.join(root, "tests/e2e/foundry-session.mjs"),
+    "utf8"
+  );
+
+  assert.match(
+    source,
+    /game\\s\*master\|gamemaster\|ma\[iî\]tre\\s\+de\\s\+jeu/
+  );
+  assert.match(source, /Available users:/);
+  assert.match(source, /ancestor::form\[1\]/);
+  assert.match(
+    source,
+    /button\[type="submit"\], input\[type="submit"\]/
+  );
+  assert.match(source, /requestSubmit/);
+});
+
 test("live E2E runner invokes every committed Playwright spec explicitly", () => {
   const source = fs.readFileSync(
     path.join(root, "scripts/run-foundry-e2e.mjs"),
