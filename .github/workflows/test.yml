@@ -1,7 +1,7 @@
 name: CI
 
 permissions:
-  contents: write
+  contents: read
 
 on:
   push:
@@ -11,9 +11,6 @@ on:
   workflow_dispatch:
 
 concurrency:
-  # Keep each revision independently runnable and never cancel diagnostics.
-  # Including the commit SHA prevents a queued run from blocking the next
-  # revision when a previous GitHub-hosted runner is unavailable.
   group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
@@ -108,105 +105,6 @@ jobs:
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "Commands: `npm run test:integration`, `npm run audit:architecture`" >> "$GITHUB_STEP_SUMMARY"
 
-  package:
-    name: Package system
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-      - name: Install dependencies
-        run: npm ci
-      - name: Build compiled compendium packs
-        run: npm run build:packs
-      - name: Validate compiled compendium packs
-        run: node --test --test-reporter=spec tests/build/compendium-packs.test.mjs
-      - name: Build release package
-        run: npm run package
-      - name: Detect generated changes
-        id: generated
-        run: |
-          if [ -n "$(git status --porcelain -- . ':!dist' ':!packs')" ]; then
-            echo "::error::The package build changed files outside packs/ and dist/."
-            git status --short -- . ':!dist' ':!packs'
-            exit 1
-          fi
-          if [ -n "$(git status --porcelain -- packs dist)" ]; then
-            echo "generated_changed=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "generated_changed=false" >> "$GITHUB_OUTPUT"
-          fi
-      - name: Update versioned generated artifacts in PR
-        if: steps.generated.outputs.generated_changed == 'true' && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
-        run: |
-          set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          for attempt in 1 2 3; do
-            git fetch origin "${{ github.head_ref }}"
-
-            # Rebuild from the latest PR tip because another CI run may have
-            # committed generated artifacts while this job was running.
-            git reset --hard "origin/${{ github.head_ref }}"
-            npm run build:packs
-            npm run package
-
-            if [ -n "$(git status --porcelain -- . ':!dist' ':!packs')" ]; then
-              echo "::error::The package build changed files outside packs/ and dist/."
-              git status --short -- . ':!dist' ':!packs'
-              exit 1
-            fi
-
-            if [ -z "$(git status --porcelain -- packs dist)" ]; then
-              echo "Generated artifacts are already synchronized with the latest PR branch."
-              exit 0
-            fi
-
-            git add packs dist/system.json dist/system.zip
-            git commit -m "chore: update generated release artifacts"
-
-            if git push origin "HEAD:${{ github.head_ref }}"; then
-              exit 0
-            fi
-
-            echo "Generated-artifact push raced with another PR update; retrying from the new branch tip."
-          done
-
-          echo "::error::Could not synchronize generated artifacts after three attempts."
-          exit 1
-      - name: Verify versioned release artifacts
-        run: node scripts/verify-package.mjs
-      - name: Verify generated files are committed
-        run: |
-          if [ -n "$(git status --porcelain -- packs dist)" ]; then
-            echo "::error::Generated packs or dist/ are not in sync with the package generated from this PR."
-            git status --short -- packs dist
-            exit 1
-          fi
-          git diff --exit-code -- dist/system.json
-      - name: Upload package artifacts
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: cypher-system-package
-          path: |
-            dist/system.json
-            dist/system.zip
-          if-no-files-found: error
-      - name: Publish diagnostics
-        if: always()
-        run: |
-          echo "## System package" >> "$GITHUB_STEP_SUMMARY"
-          echo "" >> "$GITHUB_STEP_SUMMARY"
-          echo "Command: `npm run package`" >> "$GITHUB_STEP_SUMMARY"
-          if [ -f dist/system.json ] && [ -f dist/system.zip ]; then
-            echo "Package artifacts were created and verified against the PR tree." >> "$GITHUB_STEP_SUMMARY"
-          else
-            echo "Package artifacts were not created." >> "$GITHUB_STEP_SUMMARY"
-          fi
 
   repository:
     name: Repository and E2E syntax checks
