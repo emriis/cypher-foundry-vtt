@@ -174,7 +174,10 @@ test("live E2E cleanup is scoped to its generated world", () => {
   assert.match(source, /await rm\(worldPath, \{ recursive: true, force: true \}\)/);
   assert.doesNotMatch(source, /await rm\(dataPath, \{ recursive: true, force: true \}\)/);
   assert.doesNotMatch(source, /mkdtemp\(path\.join\(os\.tmpdir\(\)/);
-  assert.match(source, /process\.env\.FOUNDRY_DATA_PATH/);\n  assert.match(source, /const \{ userDataPath, dataPath \} = await getFoundryPaths\(\)/);\n  assert.match(source, /path\.join\(userDataPath, "Data"\)/);\n  assert.match(source, /path\.join\(userDataPath, "Config", "license\.json"\)/);
+  assert.match(source, /process\.env\.FOUNDRY_DATA_PATH/);
+  assert.match(source, /const \{ userDataPath, dataPath \} = await getFoundryPaths\(\)/);
+  assert.match(source, /path\.join\(userDataPath, "Data"\)/);
+  assert.match(source, /path\.join\(userDataPath, "Config", "license\.json"\)/);
 });
 
 test("repository does not contain machine-specific local paths", () => {
