@@ -39,21 +39,33 @@ export async function joinAsGamemaster(page) {
     }
   }
 
-  await page.waitForFunction(
-    () => globalThis.game?.ready === true
-      || /game worlds|configuration and setup/i.test(
-        document.body?.innerText || ""
-      ),
-    null,
-    { timeout: 60_000 }
-  );
+  const deadline = Date.now() + 60_000;
 
-  const ready = await page.evaluate(() => globalThis.game?.ready === true);
-  if (!ready) {
-    throw new Error(
-      "Foundry did not launch the E2E world. The browser remained on " +
-      "the Setup screen; check the Foundry startup log for world " +
-      "availability errors."
-    );
+  while (Date.now() < deadline) {
+    const state = await page.evaluate(() => ({
+      ready: globalThis.game?.ready === true,
+      url: location.href,
+      title: document.title,
+      body: document.body?.innerText?.slice(0, 4000) || ""
+    }));
+
+    if (state.ready) return;
+
+    if (/game\\s*worlds|configuration and setup/i.test(state.body)) {
+      throw new Error(
+        "Foundry did not auto-launch the E2E world. " +
+        "The browser reached Setup instead. " +
+        `URL: ${state.url}\\n` +
+        `Title: ${state.title}\\n` +
+        `Setup content:\\n${state.body}`
+      );
+    }
+
+    await page.waitForTimeout(250);
   }
+
+  throw new Error(
+    "Foundry did not become ready within 60 seconds. " +
+    `URL: ${await page.url()}`
+  );
 }
