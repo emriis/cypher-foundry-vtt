@@ -183,22 +183,33 @@ async function createWorld(dataPath, coreVersion, systemVersion) {
 }
 
 function spawnFoundry(appPath, dataPath) {
-  return spawn(
-    appPath,
-    [
-      `--port=${PORT}`,
-      "--noupnp",
-      "--noupdate",
-      `--world=${WORLD_ID}`,
-      `--dataPath=${dataPath}`
-    ],
-    {
-      cwd: path.dirname(appPath),
-      stdio: "inherit",
-      windowsHide: false,
-      shell: false
-    }
-  );
+  const args = [
+    `--port=${PORT}`,
+    "--noupnp",
+    "--noupdate",
+    `--world=${WORLD_ID}`,
+    `--dataPath=${dataPath}`
+  ];
+
+  if (process.platform === "win32") {
+    return spawn(
+      process.env.ComSpec || "cmd.exe",
+      ["/d", "/s", "/c", appPath, ...args],
+      {
+        cwd: path.dirname(appPath),
+        stdio: "inherit",
+        windowsHide: false,
+        shell: false
+      }
+    );
+  }
+
+  return spawn(appPath, args, {
+    cwd: path.dirname(appPath),
+    stdio: "inherit",
+    windowsHide: false,
+    shell: false
+  });
 }
 
 async function runCommand(command, args) {
