@@ -410,7 +410,10 @@ try {
   const npmCommand = process.platform === "win32" ? "npm.cmd" : "npm";
   const command = process.platform === "win32" ? "npx.cmd" : "npx";
 
-  // Build the exact release artifact before installing the system used by Foundry.\n  await runCommand(npmCommand, ["run", "package"]);\n  await runCommand(npmCommand, ["run", "build:packs"]);
+  // Build the exact release artifact before installing the system used by Foundry.
+  await runCommand(npmCommand, ["run", "package"]);
+  await runCommand(npmCommand, ["run", "build:packs"]);
+  await runCommand(npmCommand, ["run", "check:system-syntax"]);
   if (process.env.PLAYWRIGHT_SKIP_BROWSER_INSTALL !== "true") {
     await runCommand(command, ["playwright", "install", "chromium"]);
   }
