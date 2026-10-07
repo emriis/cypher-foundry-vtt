@@ -13,7 +13,7 @@
     "check:e2e-syntax": "node --check scripts/run-foundry-e2e.mjs && node --check playwright.config.mjs && node --check tests/e2e/foundry-session.mjs && node --check tests/e2e/foundry-runtime.spec.mjs && node --check tests/e2e/foundry-gameplay.spec.mjs",
     "audit:architecture": "node scripts/audit-architecture-dependencies.mjs",
     "build:packs": "node scripts/build-packs.mjs",
-    "package": "npm run build:packs && node scripts/package.mjs",
+    "package": "node scripts/package.mjs",
     "migrate:packs": "node scripts/migrate-ability-sources.mjs",
     "audit:public-data": "node scripts/audit-public-data.mjs",
     "test:coverage": "node scripts/run-test-coverage.mjs"
