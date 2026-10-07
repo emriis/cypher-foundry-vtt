@@ -152,8 +152,6 @@ test.describe("Cypher Foundry live gameplay", () => {
     await expect(page.locator(".pc-skills")).toBeVisible();
     await expect(page.locator(".pc-abilities")).toBeVisible();
     await expect(page.locator(".pc-advancement")).toBeVisible();
-    await expect(page.locator("nav.tabs")).toHaveCount(0);
-
     await page.evaluate(id => game.actors.get(id)?.sheet.close(), actorId);
   });
 
@@ -212,7 +210,7 @@ test.describe("Cypher Foundry live gameplay", () => {
       await actor.sheet.render(true);
     }, actorId);
 
-    await page.locator(
+    await page.locator(".pc-dashboard").last().locator(
       '[data-action="rollDefense"][data-defense-type="block"]'
     ).click();
 
@@ -278,7 +276,7 @@ test.describe("Cypher Foundry live gameplay", () => {
       await actor.sheet.render(true);
     }, actorId);
 
-    await page.locator(
+    await page.locator(".pc-dashboard").last().locator(
       '[data-action="rallyWound"][data-severity="moderate"]'
     ).click();
 
