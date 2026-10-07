@@ -369,9 +369,9 @@ test("repository does not contain machine-specific local paths", () => {
     "README.md"
   ];
   const forbidden = [
-    String.raw`[A-Za-z]:\\Users\\(?!<USER>)(?!user)(?!example)(?!test)[^\\\s]+\\AppData\\Local\\FoundryVTT`,
-    String.raw`[A-Za-z]:\\Users\\(?!<USER>)(?!user)(?!example)(?!test)[^\\\s]+\\`,
-    String.raw`(?:^|[\\s"'\`])/(?:Users|home)/(?!<USER>)(?!user)(?!example)(?!test)[^\\s"'\`]+`
+    /[A-Za-z]:\\Users\\(?!<USER>)(?!user)(?!example)(?!test)[^\\\s]+\\AppData\\Local\\FoundryVTT/,
+    /[A-Za-z]:\\Users\\(?!<USER>)(?!user)(?!example)(?!test)[^\\\s]+\\/,
+    /(?:^|[\\s"'\`])\/(?:Users|home)\/(?!<USER>)(?!user)(?!example)(?!test)[^\\s"'\`]+/
   ];
   const offenders = [];
   const visit = relativePath => {
