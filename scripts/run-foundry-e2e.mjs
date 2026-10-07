@@ -314,6 +314,47 @@ async function runCommand(command, args) {
   });
 }
 
+async function waitForWindowsProcessExit(pid, timeout = 10_000) {
+  if (process.platform !== "win32" || !Number.isInteger(pid)) return;
+
+  const deadline = Date.now() + timeout;
+  while (Date.now() < deadline) {
+    const result = await new Promise(resolve => {
+      const probe = spawn(
+        "tasklist",
+        ["/fi", `PID eq ${pid}`, "/fo", "csv", "/nh"],
+        { stdio: ["ignore", "pipe", "ignore"], windowsHide: true }
+      );
+      let output = "";
+      probe.stdout.on("data", chunk => {
+        output += chunk;
+      });
+      probe.on("close", () => resolve(output));
+      probe.on("error", () => resolve(""));
+    });
+
+    if (!String(result).includes(`"${pid}"`)) return;
+    await new Promise(resolve => setTimeout(resolve, 100));
+  }
+}
+
+async function removeWorld(worldPath) {
+  const deadline = Date.now() + 10_000;
+  let lastError;
+
+  while (Date.now() < deadline) {
+    try {
+      await removeWorld(worldPath);
+      return;
+    } catch (error) {
+      lastError = error;
+      await new Promise(resolve => setTimeout(resolve, 200));
+    }
+  }
+
+  throw lastError;
+}
+
 function stopProcess(child, foundryPid) {
   if (process.platform === "win32") {
     const pids = [foundryPid, child?.pid]
@@ -416,6 +457,10 @@ try {
   });
 } finally {
   stopProcess(child, foundryPid);
+
+  if (process.platform === "win32") {
+    await waitForWindowsProcessExit(foundryPid);
+  }
 
   if (child) {
     await new Promise(resolve => {
