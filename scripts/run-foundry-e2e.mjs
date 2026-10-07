@@ -111,7 +111,7 @@ async function ensureDataPath(dataPath) {
 }
 
 async function installSystem(dataPath) {
-  const target = path.join(dataPath, "systems", "cypher");
+  const target = path.join(dataPath, "Data", "systems", "cypher");
   const releasePaths = [
     "system.json",
     "cypher.mjs",
@@ -133,7 +133,7 @@ async function installSystem(dataPath) {
 }
 
 async function createWorld(dataPath, coreVersion, systemVersion) {
-  const worldPath = path.join(dataPath, "worlds", WORLD_ID);
+  const worldPath = path.join(dataPath, "Data", "worlds", WORLD_ID);
   await mkdir(worldPath, { recursive: true });
 
   const manifest = {
@@ -216,7 +216,7 @@ let exitCode = 1;
 
 try {
   console.log(`Foundry executable: ${appPath}`);
-  console.log(`Foundry Data path: ${dataPath}`);
+  console.log(`Foundry User Data path: ${dataPath}`);\n  console.log(`Foundry Data path: ${path.join(dataPath, "Data")}`);
   console.log(`Test world: ${WORLD_ID}`);
 
   try {
@@ -236,7 +236,7 @@ try {
 
   await ensureDataPath(dataPath);
   await installSystem(dataPath);
-  worldPath = path.join(dataPath, "worlds", WORLD_ID);
+  worldPath = path.join(dataPath, "Data", "worlds", WORLD_ID);
   worldCreated = true;
   await createWorld(
     dataPath,
