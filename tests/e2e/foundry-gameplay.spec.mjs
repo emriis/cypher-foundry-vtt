@@ -233,3 +233,273 @@ test.describe("Cypher Foundry live gameplay", () => {
     await expect(page.locator(".tour-overlay")).toHaveCount(0);
     await page.locator(".pc-dashboard").last().locator(
       '[data-action="rollDefense"][data-defense-type="block"]'
+    ).click();
+
+    const form = page.locator("form").filter({
+      has: page.locator('select[name="incomingSeverity"]')
+    }).last();
+
+    await expect(form).toBeVisible();
+    await form.locator('select[name="incomingSeverity"]').selectOption("moderate");
+    await form.locator('input[name="difficulty"]').fill("21");
+    await form.getByRole("button").last().click();
+
+    await page.waitForFunction(id => {
+      const actor = game.actors.get(id);
+      return actor?.system.wounds.moderate.current === 1;
+    }, actorId);
+
+    const actor = await readActor(page, actorId);
+    expect(actor.wounds.moderate).toBe(1);
+  });
+
+  test("uses a recovery from the real PC sheet and persists the recovery marker", async ({
+    e2ePage: page
+  }) => {
+    const actorId = await createActor(page);
+
+    await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      await actor.update({
+        "system.stats.might.pool.value": 0,
+        "system.wounds.moderate.current": 1,
+        "system.recoveries.hour": false
+      });
+      await actor.sheet.render(true);
+    }, actorId);
+
+    await page.locator(".pc-dashboard").last().locator(
+      '[data-action="rollRecovery"][data-interval="hour"]'
+    ).click();
+
+    await waitForChatMessage(page, actorId);
+
+    await page.waitForFunction(id => {
+      return game.actors.get(id)?.system.recoveries.hour === true;
+    }, actorId);
+
+    const actor = await readActor(page, actorId);
+    expect(actor.recoveries.hour).toBe(true);
+    expect(actor.wounds.moderate).toBe(0);
+  });
+
+  test("rallies a moderate wound from the real PC sheet and charges Might", async ({
+    e2ePage: page
+  }) => {
+    const actorId = await createActor(page);
+
+    await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      await actor.update({
+        "system.stats.might.pool.value": 6,
+        "system.wounds.moderate.current": 1
+      });
+      await actor.sheet.render(true);
+    }, actorId);
+
+    await page.locator(".pc-dashboard").last().locator(
+      '[data-action="rallyWound"][data-severity="moderate"]'
+    ).click();
+
+    await page.waitForFunction(id => {
+      const actor = game.actors.get(id);
+      return actor?.system.wounds.moderate.current === 0;
+    }, actorId);
+
+    const actor = await readActor(page, actorId);
+    expect(actor.might).toBe(1);
+    expect(actor.wounds.moderate).toBe(0);
+  });
+
+  test("purchases an Effort advancement through the real Actor document", async ({
+    e2ePage: page
+  }) => {
+    const actorId = await createActor(page);
+
+    const before = await readActor(page, actorId);
+    expect(before.advancement[0].bought).toBe(false);
+
+    const result = await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      await actor.update({
+        "system.xp": 4,
+        "system.effort": 1,
+        "system.advancementSlots.0.type": "effort"
+      });
+      await actor.purchaseAdvancementSlot(0);
+      return {
+        xp: actor.system.xp,
+        effort: actor.system.effort,
+        bought: actor.system.advancementSlots[0].bought
+      };
+    }, actorId);
+
+    expect(result.xp).toBe(0);
+    expect(result.effort).toBe(2);
+    expect(result.bought).toBe(true);
+  });
+
+  test("applies a player intrusion through the real Actor document and persists XP", async ({
+    e2ePage: page
+  }) => {
+    const actorId = await createActor(page);
+
+    const result = await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      await actor.update({ "system.xp": 2 });
+      await actor.usePlayerIntrusion("E2E intrusion");
+      return {
+        xp: actor.system.xp,
+        messageCount: game.messages.size
+      };
+    }, actorId);
+
+    expect(result.xp).toBe(1);
+    expect(result.messageCount).toBeGreaterThan(0);
+
+    await page.waitForFunction(id => {
+      return [...game.messages].some(message =>
+        message.speaker?.actor === id
+      );
+    }, actorId);
+  });
+
+  test("creates real armor, shield, and attack Items with their DataModels", async ({
+    e2ePage: page
+  }) => {
+    const result = await page.evaluate(async () => {
+      const actor = await Actor.create({
+        name: `${"E2E Cypher"} Item DataModels ${Date.now()}`,
+        type: "pc"
+      });
+
+      const [armor] = await actor.createEmbeddedDocuments("Item", [{
+        name: "E2E Armor",
+        type: "armor",
+        system: { category: "light", equipped: true }
+      }]);
+      const [shield] = await actor.createEmbeddedDocuments("Item", [{
+        name: "E2E Shield",
+        type: "shield",
+        system: { equipped: true }
+      }]);
+      const [attack] = await actor.createEmbeddedDocuments("Item", [{
+        name: "E2E Attack",
+        type: "attack",
+        system: { damage: 4, stat: "might", equipped: true }
+      }]);
+
+      const data = {
+        actorId: actor.id,
+        armor: {
+          type: armor.type,
+          equipped: armor.system.equipped,
+          category: armor.system.category
+        },
+        shield: {
+          type: shield.type,
+          equipped: shield.system.equipped,
+          minorMax: shield.system.wounds.minor.max,
+          moderateMax: shield.system.wounds.moderate.max
+        },
+        attack: {
+          type: attack.type,
+          damage: attack.system.damage,
+          stat: attack.system.stat
+        }
+      };
+
+      return data;
+    });
+
+    expect(result.armor).toEqual({
+      type: "armor",
+      equipped: true,
+      category: "light"
+    });
+    expect(result.shield).toMatchObject({
+      type: "shield",
+      equipped: true,
+      minorMax: 3,
+      moderateMax: 2
+    });
+    expect(result.attack).toMatchObject({
+      type: "attack",
+      damage: 4,
+      stat: "might"
+    });
+  });
+
+  test("persists actor state after the sheet is closed and reopened", async ({
+    e2ePage: page
+  }) => {
+    const actorId = await createActor(page);
+
+    await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      await actor.update({
+        "system.xp": 7,
+        "system.stats.might.pool.value": 4,
+        "system.wounds.minor.current": 1
+      });
+      await actor.sheet.render(true);
+    }, actorId);
+
+    await page.evaluate(id => game.actors.get(id).sheet.close(), actorId);
+    await page.waitForTimeout(250);
+
+    await page.evaluate(id => game.actors.get(id).sheet.render(true), actorId);
+
+    const actor = await readActor(page, actorId);
+    expect(actor.xp).toBe(7);
+    expect(actor.might).toBe(4);
+    expect(actor.wounds.minor).toBe(1);
+  });
+});
+
+
+test("completes a player vertical slice from real CRD compendiums", async ({
+  e2ePage: page
+}) => {
+  const actorId = await createActor(page);
+
+  try {
+    const summary = await page.evaluate(async id => {
+      const getPack = name => {
+        const pack = game.packs.get("cypher." + name);
+        if (!pack) throw new Error("Missing compendium pack: " + name);
+        return pack;
+      };
+
+      const type = (await getPack("types-en").getDocuments())
+        .find(item => item.type === "type");
+      const descriptors = await getPack("descriptors-en").getDocuments();
+      const descriptor = descriptors.find(item =>
+        item.type === "descriptor"
+        && (!item.system.genres?.length
+          || item.system.genres.map(value => String(value).toLowerCase())
+            .includes("fantasy"))
+      );
+      const focus = (await getPack("foci-en").getDocuments())
+        .find(item => item.type === "focus");
+      const equipment = await getPack("equipment-en").getDocuments();
+      const attackSource = equipment.find(item => item.type === "attack");
+      const cypherSource = equipment.find(item =>
+        item.type === "cypher"
+        && item.system.cypherCategory !== "powerBoost"
+      );
+
+      if (!type || !descriptor || !focus || !attackSource || !cypherSource) {
+        throw new Error("Player vertical slice could not find the required CRD content");
+      }
+
+      const actor = game.actors.get(id);
+      const typeSkill = type.system.skillOptions?.find(value => value?.trim());
+      await actor.applyType(type, {
+        stat: type.system.statOptions?.[0] ?? "might",
+        skillName: typeSkill
+      });
+
+      const descriptorSkill =
+        descriptor.system.skillOptions?.find(value => value?.trim())
+        ?? descriptor.system.grantedSkills?.[0];
