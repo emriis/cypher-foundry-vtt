@@ -173,7 +173,7 @@ Development tooling belongs in `scripts/`; GitHub automation belongs in
 | `scripts/build-packs.mjs` | `npm run build:packs` | Compiles all eight LevelDB packs from `_source/` |
 | `scripts/package.ps1` | `npm run package` | Creates local release artifacts in `dist/` |
 | `scripts/foundry-discovery.mjs` | Used by `npm run test:e2e` | Discovers and validates the local Foundry executable |
-| `scripts/run-foundry-e2e.mjs` | `npm run test:e2e` | Creates a disposable Foundry environment and runs Playwright |
+| `scripts/run-foundry-e2e.mjs` | `npm run test:e2e` | Creates one disposable world in the normal Foundry Data directory and runs Playwright |
 
 Do not commit `dist/`, transient LevelDB lock/LOG files, or other generated
 temporary files. The tracked `package-lock.json` is part of the repository
