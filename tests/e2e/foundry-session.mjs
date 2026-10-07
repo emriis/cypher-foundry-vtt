@@ -1,7 +1,7 @@
 const FOUNDRY_URL =
   process.env.FOUNDRY_URL || "http://127.0.0.1:30000";
 
-const GAMEMASTER_OPTION = /game\\s*master|gamemaster|ma[iî]tre\\s+de\\s+jeu/i;
+const GAMEMASTER_OPTION = /game\s*master|gamemaster|ma[iî]tre\s+de\s+jeu/i;
 
 export async function joinAsGamemaster(page) {
   await page.goto(FOUNDRY_URL);
@@ -69,7 +69,7 @@ export async function joinAsGamemaster(page) {
 
     if (state.ready) return;
 
-    if (/game\\s*worlds|configuration and setup/i.test(state.body)) {
+    if (/game\s*worlds|configuration and setup/i.test(state.body)) {
       throw new Error(
         "Foundry did not auto-launch the E2E world. " +
         "The browser reached Setup instead. " +
