@@ -104,18 +104,19 @@ Hooks.once("init", () => {
   /* -------------------------------------------- */
   /*  Custom status effects                        */
   /* -------------------------------------------- */
-  CONFIG.statusEffects.push(
-    {
-      id: "hindered",
-      name: "CYPHER.Wound.HinderedStatus",
-      img: CYPHER.statusIcons.hindered
-    },
-    {
-      id: "dead",
-      name: "CYPHER.Wound.DeadStatus",
-      img: CYPHER.statusIcons.dead
-    }
-  );
+  // Foundry v14 exposes CONFIG.statusEffects as an ID-indexed Proxy.
+  // Assigning by ID replaces an existing core entry safely and avoids
+  // mutating the Proxy as if it were the legacy status-effect array.
+  CONFIG.statusEffects.hindered = {
+    id: "hindered",
+    name: "CYPHER.Wound.HinderedStatus",
+    img: CYPHER.statusIcons.hindered
+  };
+  CONFIG.statusEffects.dead = {
+    id: "dead",
+    name: "CYPHER.Wound.DeadStatus",
+    img: CYPHER.statusIcons.dead
+  };
 });
 
 Hooks.once("ready", () => {

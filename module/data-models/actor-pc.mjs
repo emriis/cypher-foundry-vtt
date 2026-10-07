@@ -15,8 +15,14 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
       pool: new SchemaField({
         max: new NumberField({ required: true, integer: true, initial: 8, min: 0 }),
         value: new NumberField({ required: true, integer: true, initial: 8, min: 0 })
+      }, {
+        required: true,
+        initial: { max: 8, value: 8 }
       }),
       edge: new NumberField({ required: true, integer: true, initial: 0, min: 0 })
+    }, {
+      required: true,
+      initial: { pool: { max: 8, value: 8 }, edge: 0 }
     });
 
     // Defines the maximum and currently checked boxes for one wound severity.
@@ -26,48 +32,46 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
     });
 
     return {
-      // Descriptor, Type, and Focus.
       descriptor: new StringField({ required: true, blank: true }),
       type: new StringField({ required: true, blank: true }),
       focus: new StringField({ required: true, blank: true }),
-
-      // Determines which character fields are active and enables genre-specific data.
       genre: new StringField({ required: true, initial: "none", choices: CYPHER.genres }),
-
-      // Optional species value. Some species grant a second descriptor, which is
-      // enabled explicitly by the sheet.
       species: new StringField({ required: true, blank: true }),
-
-      // Replaces Type/Focus for Real-World characters.
       profession: new StringField({ required: true, blank: true }),
-
-      // Superhero rank (1-5) and power shifts.
       rank: new NumberField({ required: true, integer: true, initial: 1, min: 1, max: 5 }),
       powerShifts: new SchemaField(
         Object.fromEntries(CYPHER.powerShiftCategories.map(cat =>
           [cat, new NumberField({ required: true, integer: true, initial: 0, min: 0, max: 3 })]
-        ))
+        )),
+        {
+          required: true,
+          initial: Object.fromEntries(
+            CYPHER.powerShiftCategories.map(cat => [cat, 0])
+          )
+        }
       ),
-
-      // Optional second descriptor and focus, enabled explicitly when granted.
       hasSecondDescriptor: new BooleanField({ required: true, initial: false }),
       descriptor2: new StringField({ required: true, blank: true }),
       hasSecondFocus: new BooleanField({ required: true, initial: false }),
       focus2: new StringField({ required: true, blank: true }),
-
       tier: new NumberField({ required: true, integer: true, initial: 1, min: 1, max: 6 }),
       effort: new NumberField({ required: true, integer: true, initial: 1, min: 1 }),
       xp: new NumberField({ required: true, integer: true, initial: 0, min: 0 }),
-      // Resource Points gained through character advancement.
       resourcePoints: new NumberField({ required: true, integer: true, initial: 0, min: 0 }),
 
       stats: new SchemaField({
         might: statSchema(),
         speed: statSchema(),
         intellect: statSchema()
+      }, {
+        required: true,
+        initial: {
+          might: { pool: { max: 8, value: 8 }, edge: 0 },
+          speed: { pool: { max: 8, value: 8 }, edge: 0 },
+          intellect: { pool: { max: 8, value: 8 }, edge: 0 }
+        }
       }),
 
-      // Optional player-defined stats in addition to Might, Speed, and Intellect.
       customStats: new ArrayField(new SchemaField({
         id: new StringField({ required: true, blank: false }),
         label: new StringField({ required: true, blank: false }),
@@ -78,42 +82,42 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
         edge: new NumberField({ required: true, integer: true, initial: 0, min: 0 })
       }), { required: true, initial: [] }),
 
-      // Three wound severities, each with its own track.
       wounds: new SchemaField({
         minor: woundSchema(CYPHER.defaultWoundMax.minor),
         moderate: woundSchema(CYPHER.defaultWoundMax.moderate),
         major: woundSchema(CYPHER.defaultWoundMax.major)
+      }, {
+        required: true,
+        initial: {
+          minor: { max: CYPHER.defaultWoundMax.minor, current: 0 },
+          moderate: { max: CYPHER.defaultWoundMax.moderate, current: 0 },
+          major: { max: CYPHER.defaultWoundMax.major, current: 0 }
+        }
       }),
 
-      // Active armor is derived from the equipped Armor item rather than
-      // duplicated in the actor model. Only one Armor item may be equipped.
-
       recoveries: new SchemaField({
-        // One checkbox for each daily recovery interval.
         action: new BooleanField({ initial: false }),
         tenMinutes: new BooleanField({ initial: false }),
         hour: new BooleanField({ initial: false }),
         tenHours: new BooleanField({ initial: false })
+      }, {
+        required: true,
+        initial: {
+          action: false,
+          tenMinutes: false,
+          hour: false,
+          tenHours: false
+        }
       }),
 
-      // Actor-owned runtime state for currently active Ability effects.
-      // The referenced Ability Item contains the source-defined mechanics;
-      // this collection stores only the runtime activation state.
       activeAbilityEffects: new ArrayField(new SchemaField({
         itemUuid: new StringField({ required: true, blank: false }),
         effectId: new StringField({ required: true, blank: false })
       }), { required: true, initial: [] }),
-
-      // Maximum number of cyphers carried simultaneously.
       cypherLimit: new NumberField({ required: true, integer: true, initial: 2, min: 0 }),
-
-      // Permanent bonus applied to recovery rolls.
       recoveryBonus: new NumberField({ required: true, integer: true, initial: 0, min: 0 }),
-
-      // Advancement-derived permission to use all armor or weapon categories freely.
       canFreelyUseAllArmor: new BooleanField({ required: true, initial: false }),
       canFreelyUseAllWeapons: new BooleanField({ required: true, initial: false }),
-      // These lists represent fixed practiced-level familiarity, not advanceable Skills.
       freeWeaponCategories: new ArrayField(
         new StringField({ required: true, choices: CYPHER.weaponCategories }),
         { required: true, initial: [...CYPHER.coreFreeWeaponCategories] }
@@ -130,9 +134,6 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
         new StringField({ required: true, choices: CYPHER.attackSkillCategories }),
         { required: true, initial: [] }
       ),
-
-      // Four advancement slots for the current tier. Completing all four advances
-      // the character to the next tier and resets the slots.
       advancementSlots: new ArrayField(new SchemaField({
         type: new StringField({ required: true, blank: true, initial: "", choices: ["", ...CYPHER.advancementTypes] }),
         otherType: new StringField({ required: true, blank: true, initial: "", choices: ["", ...CYPHER.otherAdvancementTypes] }),
@@ -146,11 +147,7 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
           { type: "", otherType: "", bought: false }
         ]
       }),
-
       additionalAbilities: new StringField({ required: true, blank: true }),
-
-      // Player-defined text, number, or checkbox fields for data not covered by
-      // the standard actor model.
       customFields: new ArrayField(new SchemaField({
         id: new StringField({ required: true, blank: false }),
         label: new StringField({ required: true, blank: false }),
@@ -159,20 +156,12 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
         valueNumber: new NumberField({ required: true, initial: 0 }),
         valueBoolean: new BooleanField({ required: true, initial: false })
       }), { required: true, initial: [] }),
-
       biography: new HTMLField({ required: true, blank: true }),
       notes: new HTMLField({ required: true, blank: true })
     };
   }
 
-  /**
-   * Computes derived values used by the PC sheet.
-   *
-   * Errors are isolated so a failure in derived-data preparation does not
-   * prevent the actor sheet from opening.
-   */
   prepareDerivedData() {
-    // Keep the sheet usable if derived-data preparation encounters an error.
     try {
       this._prepareDerivedDataUnsafe();
     } catch (err) {
@@ -181,11 +170,6 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
     }
   }
 
-  /**
-   * Computes derived values without the outer error guard.
-   *
-   * @private
-   */
   _prepareDerivedDataUnsafe() {
     for (const stat of CYPHER.stats) {
       const s = this.stats[stat];
@@ -195,8 +179,6 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
       custom.depleted = custom.pool.value <= 0;
     }
 
-    // Completing the moderate wound track adds one hindrance step; each major
-    // wound adds another step. These penalties stack.
     const w = this.wounds;
     let hinderSteps = 0;
     if (w.moderate.current >= w.moderate.max && w.moderate.max > 0) hinderSteps += 1;
@@ -205,27 +187,19 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
     this.hindered = hinderSteps > 0;
     this.hinderSteps = hinderSteps;
     this.stepModifier = -hinderSteps;
-
     this.dead = w.major.current >= w.major.max && w.major.max > 0;
 
-    // Genre-dependent derived values.
     this.isSuperhero = this.genre === "superhero";
     this.isRealWorld = this.genre === "realWorld";
     this.isCustomGenre = this.genre === "custom";
     this.supportsSpecies = ["fantasy", "sciFi", "custom"].includes(this.genre);
     this.usesTypeAndFocus = this.genre !== "realWorld";
-    // The Custom genre exposes both the Real-World profession field and the
-    // Superhero block in addition to the standard character fields.
     this.showProfession = this.isRealWorld || this.isCustomGenre;
     this.showSuperheroBlock = this.isSuperhero || this.isCustomGenre;
     this.maxDifficulty = this.isSuperhero ? CYPHER.maxDifficulty.superhero : CYPHER.maxDifficulty.standard;
-    // Only Superhero characters can rally to remove a major wound.
     this.canRallyMajor = this.isSuperhero;
-
     this.powerShiftTotal = Object.values(this.powerShifts).reduce((sum, v) => sum + v, 0);
 
-    // Derive active armor from the equipped inventory item. If the item collection
-    // is not ready yet, fall back to no armor without throwing.
     let equippedArmorItem = null;
     const itemsCollection = this.parent?.items;
     if (itemsCollection && typeof itemsCollection.find === "function") {
@@ -233,15 +207,9 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
     }
     const category = equippedArmorItem?.system?.category ?? "none";
     const armorSteps = CYPHER.armorCategories[category] ?? { block: 0, dodge: 0 };
-    const encumbranceCategory =
-      equippedArmorItem?.system?.encumbranceCategory || category;
-    const encumbranceSteps =
-      CYPHER.armorCategories[encumbranceCategory] ?? { block: 0, dodge: 0 };
+    const encumbranceCategory = equippedArmorItem?.system?.encumbranceCategory || category;
+    const encumbranceSteps = CYPHER.armorCategories[encumbranceCategory] ?? { block: 0, dodge: 0 };
     const blockEaseDamage = equippedArmorItem?.system?.blockEaseDamage ?? 0;
-    // Armor damage reduces the Block bonus but never changes Dodge hindrance.
-    // An explicit CRD dodge override takes precedence over category-based
-    // hindrance; otherwise an explicit lighter encumbrance category applies.
-    // Non-free armor applies its Dodge hindrance to all Speed tasks.
     const freeArmorCategories = this.freeArmorCategories ?? CYPHER.coreFreeArmorCategories;
     const freelyUsable = (equippedArmorItem?.system?.freelyUsable ?? false)
       || this.canFreelyUseAllArmor
@@ -256,23 +224,15 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
       blockEaseDamage,
       blockEase: Math.max(0, armorSteps.block - blockEaseDamage),
       damaged: blockEaseDamage > 0,
-      dodgeHinder: equippedArmorItem?.system?.dodgeHindrance ??
-        encumbranceSteps.dodge,
+      dodgeHinder: equippedArmorItem?.system?.dodgeHindrance ?? encumbranceSteps.dodge,
       speedTaskHinder: freelyUsable ? 0 :
         (equippedArmorItem?.system?.dodgeHindrance ?? encumbranceSteps.dodge)
     };
 
-    // Current tier advancement slots.
     this.advancementBoughtCount = this.advancementSlots.filter(s => s.bought).length;
     this.advancementComplete = this.advancementBoughtCount >= 4;
   }
 
-  /**
-   * Applies minimal derived values when full preparation fails.
-   *
-   * The fallback keeps the sheet renderable without introducing unrelated
-   * persistent state.
-   */
   _applyDerivedDataFallback() {
     this.hindered ??= false;
     this.hinderSteps ??= 0;

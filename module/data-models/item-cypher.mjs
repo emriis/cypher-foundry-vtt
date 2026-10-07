@@ -48,6 +48,7 @@ export default class CypherCypherData extends foundry.abstract.TypeDataModel {
       }),
       powerLevel: new StringField({
         required: true,
+        blank: true,
         initial: "",
         choices: ["", "low", "medium", "advanced", "high", "ultra"]
       }),

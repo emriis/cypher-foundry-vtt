@@ -9,7 +9,17 @@ import { CYPHER } from "../config.mjs";
 const { StringField, HTMLField, BooleanField, NumberField } = foundry.data.fields;
 
 export default class CypherArtifactData extends foundry.abstract.TypeDataModel {
-  static migrateData(source) {\n    if (source && source.depletionThreshold !== undefined) {\n      const threshold = Number(source.depletionThreshold);\n      source.depletionMin ??= threshold;\n      source.depletionMax ??= threshold;\n      delete source.depletionThreshold;\n    }\n    return super.migrateData ? super.migrateData(source) : source;\n  }\n\n  static defineSchema() {
+  static migrateData(source) {
+    if (source && source.depletionThreshold !== undefined) {
+      const threshold = Number(source.depletionThreshold);
+      source.depletionMin ??= threshold;
+      source.depletionMax ??= threshold;
+      delete source.depletionThreshold;
+    }
+    return super.migrateData ? super.migrateData(source) : source;
+  }
+
+  static defineSchema() {
     return {
       level: new StringField({ required: true, blank: true }),
       form: new StringField({ required: true, blank: true }),

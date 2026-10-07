@@ -6,7 +6,7 @@ import { CYPHER } from "../config.mjs";
  * Its training level becomes a step modifier during an actor task roll, while
  * the linked stat tells the sheet which pool the skill normally uses.
  */
-const { StringField, HTMLField } = foundry.data.fields;
+const { StringField, NumberField, HTMLField } = foundry.data.fields;
 
 export default class CypherSkillData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
@@ -17,7 +17,7 @@ export default class CypherSkillData extends foundry.abstract.TypeDataModel {
         initial: "trained",
         choices: Object.keys(CYPHER.skillLevels) // inability, practiced, trained, specialized, expert
       }),
-      attackCategory: new StringField({ required: true, initial: "", choices: ["", ...CYPHER.attackSkillCategories] }),
+      attackCategory: new StringField({ required: true, blank: true, initial: "", choices: ["", ...CYPHER.attackSkillCategories] }),
       minimumTier: new NumberField({
         required: true, integer: true, nullable: true, initial: null, min: 1, max: 6
       }),

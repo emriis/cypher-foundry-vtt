@@ -115,7 +115,7 @@ test("each declared pack has a corresponding language-specific source set", () =
   assert.deepEqual(failures, [], failures.join("\n"));
 });
 
-test("DocumentSheetV2 sheets use one normal form content part", () => {
+test("DocumentSheetV2 sheets declare their main part as the root content", () => {
   const contracts = [
     [
       "module/sheets/actor-pc-sheet.mjs",
@@ -150,7 +150,7 @@ test("DocumentSheetV2 sheets use one normal form content part", () => {
       template: "systems/cypher/${rootTemplate}"`),
       `Invalid document sheet PARTS contract: ${relativePath}`
     );
-    assert.doesNotMatch(source, /sheet:\s*\{\s*root:\s*true/);
+    assert.match(source, /sheet:\s*\{\s*root:\s*true/);
     for (const partial of partials) {
       assert.ok(
         source.includes(`"systems/cypher/${partial}"`),
@@ -161,6 +161,184 @@ test("DocumentSheetV2 sheets use one normal form content part", () => {
     const template = fs.readFileSync(path.join(root, rootTemplate), "utf8");
     assert.match(template, /^\s*\{\{!--[\s\S]*?\}\}\s*<div class="/);
   }
+});
+
+test("live E2E requires Chromium 146 or newer", () => {
+  const packageJson = readJson("package.json");
+  assert.equal(
+    packageJson.devDependencies["@playwright/test"],
+    "1.63.0"
+  );
+
+  const config = fs.readFileSync(
+    path.join(root, "playwright.config.mjs"),
+    "utf8"
+  );
+  assert.match(config, /browserName:\s*"chromium"/);
+  assert.match(config, /channel:\s*"chromium"/);
+  assert.match(config, /viewport:\s*\{ width: 1280, height: 900 \}/);
+  assert.match(config, /deviceScaleFactor:\s*1/);
+  assert.match(config, /force-device-scale-factor=1/);
+
+  const fixture = fs.readFileSync(
+    path.join(root, "tests/e2e/foundry-session-fixture.mjs"),
+    "utf8"
+  );
+  assert.match(fixture, /const MIN_CHROMIUM_MAJOR = 146/);
+  assert.match(fixture, /chromiumMajor < MIN_CHROMIUM_MAJOR/);
+  assert.match(fixture, /browser\.version\(\)/);
+
+  const preflight = fs.readFileSync(
+    path.join(root, "scripts/check-playwright-browser.mjs"),
+    "utf8"
+  );
+  assert.match(preflight, /MIN_CHROMIUM_MAJOR = 146/);
+  assert.match(preflight, /chromium\.launch/);
+  assert.match(preflight, /channel: "chromium"/);
+  assert.match(preflight, /browser\.version\(\)/);
+});
+
+test("live E2E fixture keeps one browser page for the whole worker", () => {
+  const fixture = fs.readFileSync(
+    path.join(root, "tests/e2e/foundry-session-fixture.mjs"),
+    "utf8"
+  );
+
+  assert.match(fixture, /e2ePage:\s*\[async \(\{ browser \}, use\)/);
+  assert.match(fixture, /\{ scope: "worker" \}\]/);
+  assert.doesNotMatch(fixture, /\bpage:\s*\[async/);
+
+  for (const spec of [
+    "tests/e2e/foundry-runtime.spec.mjs",
+    "tests/e2e/foundry-gameplay.spec.mjs"
+  ]) {
+    const source = fs.readFileSync(path.join(root, spec), "utf8");
+    assert.match(source, /\{\s*e2ePage:\s*page\s*\}/);
+  }
+});
+
+test("live E2E login selects the Gamemaster independently of Foundry locale", () => {
+  const source = fs.readFileSync(
+    path.join(root, "tests/e2e/foundry-session.mjs"),
+    "utf8"
+  );
+
+  assert.match(
+    source,
+    /game\\s\*master\|gamemaster\|ma\[iî\]tre\\s\+de\\s\+jeu/
+  );
+  assert.match(source, /Available users:/);
+  assert.match(source, /ancestor::form\[1\]/);
+  assert.match(
+    source,
+    /button\[type="submit"\], input\[type="submit"\]/
+  );
+  assert.match(source, /requestSubmit/);
+});
+
+test("live E2E joins the deterministic gamemaster profile", () => {
+  const source = fs.readFileSync(
+    path.join(root, "tests/e2e/foundry-session.mjs"),
+    "utf8"
+  );
+
+  assert.match(source, /const GAMEMASTER_NAME = "gamemaster"/);
+  assert.match(source, /getByRole\("textbox",/);
+  assert.match(source, /sélectionner un utilisateur\|select a user\|username/i);
+  assert.match(source, /usernameInput\.fill\(GAMEMASTER_NAME\)/);
+  assert.match(source, /usernameInput\.press\("ArrowDown"\)/);
+  assert.match(source, /usernameInput\.press\("Enter"\)/);
+  assert.match(source, /#join-username/);
+  assert.match(source, /input\[name="username"\]/);
+  assert.match(source, /input\[type="password"\]/);
+  assert.match(source, /join game\( session\)\?/i);
+  assert.match(source, /select option/);
+});
+
+test("live E2E uses one Foundry browser session for the worker", () => {
+  const source = fs.readFileSync(
+    path.join(root, "tests/e2e/foundry-session-fixture.mjs"),
+    "utf8"
+  );
+
+  assert.match(source, /e2ePage: \[async \(\{ browser \}, use\) =>/);
+  assert.match(source, /scope: "worker"/);
+  assert.match(source, /await joinAsGamemaster\(page\)/);
+  assert.match(source, /await use\(page\)/);
+  assert.match(source, /await context\.close\(\)/);
+});
+
+test("live E2E cleanup waits for the Foundry process before deleting its world", () => {
+  const source = fs.readFileSync(
+    path.join(root, "scripts/run-foundry-e2e.mjs"),
+    "utf8"
+  );
+
+  assert.match(source, /waitForWindowsProcessExit/);
+  assert.match(source, /await waitForWindowsProcessExit\(foundryPid\)/);
+  assert.match(source, /async function removeWorld/);
+  assert.match(source, /await removeWorld\(worldPath\)/);
+});
+
+test("live E2E packages the release before installing the system", () => {
+  const source = fs.readFileSync(
+    path.join(root, "scripts/run-foundry-e2e.mjs"),
+    "utf8"
+  );
+
+  assert.match(
+    source,
+    /await runCommand\(npmCommand, \["run", "package"\]\)/
+  );
+  assert.match(
+    source,
+    /await runCommand\(npmCommand, \["run", "build:packs"\]\)/
+  );
+});
+
+test("live E2E runner invokes every committed Playwright spec explicitly", () => {
+  const source = fs.readFileSync(
+    path.join(root, "scripts/run-foundry-e2e.mjs"),
+    "utf8"
+  );
+  const specs = [
+    "tests/e2e/foundry-runtime.spec.mjs",
+    "tests/e2e/foundry-gameplay.spec.mjs"
+  ];
+
+  for (const spec of specs) {
+    assert.ok(
+      source.includes(`"${spec}"`),
+      `E2E runner does not explicitly invoke: ${spec}`
+    );
+    assert.ok(
+      fs.existsSync(path.join(root, spec)),
+      `Declared E2E spec does not exist: ${spec}`
+    );
+  }
+  assert.match(source, /const testArgs = \[[\s\S]*\.\.\.E2E_SPECS/);
+});
+
+test("live E2E uses a Windows process boundary for Foundry and scripts", () => {
+  const source = fs.readFileSync(
+    path.join(root, "scripts/run-foundry-e2e.mjs"),
+    "utf8"
+  );
+
+  assert.match(
+    source,
+    /function spawnFoundry\(appPath, userDataPath\)[\s\S]*?if \(process\.platform === "win32"\)/
+  );
+  assert.match(
+    source,
+    /function spawnScript\(command, args, options = \{\}\)/
+  );
+  assert.match(source, /powershell\.exe/);
+  assert.match(source, /Start-Process -FilePath/);
+  assert.match(source, /FOUNDRY_EXE/);
+  assert.match(source, /FOUNDRY_ARGS_JSON/);
+  assert.match(source, /--dataPath=\$\{userDataPath\}/);
+  assert.match(source, /spawn\(appPath, args,/);
 });
 
 test("live E2E cleanup is scoped to its generated world", () => {
@@ -174,7 +352,51 @@ test("live E2E cleanup is scoped to its generated world", () => {
   assert.match(source, /await rm\(worldPath, \{ recursive: true, force: true \}\)/);
   assert.doesNotMatch(source, /await rm\(dataPath, \{ recursive: true, force: true \}\)/);
   assert.doesNotMatch(source, /mkdtemp\(path\.join\(os\.tmpdir\(\)/);
-  assert.match(source, /"FoundryVTT",\s*"Data"/);
+  assert.match(source, /process\.env\.FOUNDRY_DATA_PATH/);
+  assert.match(source, /const \{ userDataPath, dataPath \} = await getFoundryPaths\(\)/);
+  assert.match(source, /path\.join\(userDataPath, "Data"\)/);
+  assert.match(source, /path\.join\(userDataPath, "Config", "license\.json"\)/);
+  assert.match(source, /playwright.*install.*chromium/);
+});
+
+test("repository does not contain machine-specific local paths", () => {
+  const files = [
+    "scripts",
+    "tests",
+    "docs",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    "README.md"
+  ];
+  const forbidden = [
+    String.raw`[A-Za-z]:\\Users\\(?!<USER>)(?!user)(?!example)(?!test)[^\\\s]+\\AppData\\Local\\FoundryVTT`,
+    String.raw`[A-Za-z]:\\Users\\(?!<USER>)(?!user)(?!example)(?!test)[^\\\s]+\\`,
+    String.raw`(?:^|[\\s"'\`])/(?:Users|home)/(?!<USER>)(?!user)(?!example)(?!test)[^\\s"'\`]+`
+  ];
+  const offenders = [];
+  const visit = relativePath => {
+    const absolutePath = path.join(root, relativePath);
+    if (!fs.existsSync(absolutePath)) return;
+    const stat = fs.statSync(absolutePath);
+    if (stat.isDirectory()) {
+      for (const entry of fs.readdirSync(absolutePath)) {
+        if (![".git", "node_modules", "dist"].includes(entry)) {
+          visit(path.join(relativePath, entry));
+        }
+      }
+      return;
+    }
+    const source = fs.readFileSync(absolutePath, "utf8");
+    if (forbidden.some(pattern => pattern.test(source))) {
+      offenders.push(relativePath);
+    }
+  };
+  for (const file of files) visit(file);
+  assert.deepEqual(
+    offenders,
+    [],
+    `Machine-specific local path found in: ${offenders.join(", ")}`
+  );
 });
 
 test("static localization keys used by templates and modules exist in both locales", () => {

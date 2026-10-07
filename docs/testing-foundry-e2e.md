@@ -9,31 +9,30 @@ must be installed locally.
 - Node.js 22 or newer.
 - A local Foundry VTT installation that has already completed license/EULA
   setup.
-- Playwright Chromium (`npx playwright install chromium`).
+- Playwright Chromium (installed automatically by `npm run test:e2e` unless `PLAYWRIGHT_SKIP_BROWSER_INSTALL=true`).
 - The Foundry executable must be discoverable automatically, or
   `FOUNDRY_APP_PATH` must point to it.
 - The Foundry **Data** directory must be the default location, or
   `FOUNDRY_DATA_PATH` must point to it.
 
 Foundry's command-line `--world` option supports launching a specific world
-directly, which is what the E2E runner uses. The runner uses the normal Foundry
-Data directory, installs the current checkout of the Cypher system into
-`Data/systems/cypher`, and creates only one uniquely named E2E world under
-`Data/worlds/`.
+directly, which is what the E2E runner uses. The runner resolves the normal
+Foundry **user-data root** and its **Data** directory separately. Foundry's
+`--dataPath` launch option receives the user-data root; the Cypher system is
+installed into `Data/systems/cypher`, and only one uniquely named E2E world is
+created under `Data/worlds/`.
 
 ## Run
 
-First install the browser once:
-
-```powershell
-npx playwright install chromium
-```
-
-Then:
+Run:
 
 ```powershell
 npm run test:e2e
 ```
+
+The runner automatically installs/validates the Playwright Chromium browser before launching Foundry. To skip that bootstrap step when the browser is already managed externally, set `PLAYWRIGHT_SKIP_BROWSER_INSTALL=true`.
+The Playwright context uses a fixed 1280×900 CSS viewport, device scale factor 1, and Chromium's scale factor is forced to 1. This prevents Windows display scaling from reducing Foundry's effective viewport below its 1024×768 minimum.
+
 
 You do **not** need to open Foundry manually.
 
@@ -94,6 +93,40 @@ The runner deliberately fails fast if its local test port is already reachable.
 Close a manually running Foundry instance before starting the autonomous
 suite. This avoids two Foundry processes writing to the same user-data
 directory.
+
+## Local path and privacy rules
+
+Paths that depend on a developer's machine must never be committed to the
+repository.
+
+In particular, do not commit:
+
+- real Windows user-profile paths such as `C:\\Users\\<real-user>\\...`;
+- real Unix home-directory paths such as `/home/<real-user>/...` or
+  `/Users/<real-user>/...`;
+- absolute Foundry installation or Data paths when they identify a developer's
+  machine;
+- machine names, local network addresses, or other unnecessary environment
+  identifiers.
+
+Scripts must resolve local paths from environment variables, operating-system
+directories, Foundry configuration, or repository-relative paths. For the live
+E2E runner this means:
+
+- `FOUNDRY_APP_PATH` may identify the local Foundry executable;
+- `FOUNDRY_DATA_PATH` identifies the local **Data** directory;
+- on the default Windows installation, `Config/options.json` is used to
+  resolve Foundry's user-data root and its `Data` subdirectory;
+- the runner must delete only its generated
+  `Data/worlds/cypher-e2e-<run-id>` directory.
+
+Examples and fixtures may use explicitly fictional paths such as
+`C:\\Users\\Test\\...` or `D:\\FoundryVTT\\Data`, but must never
+contain a contributor's real username or machine-specific path.
+
+The repository contains an automated contract test for this rule. If a local
+path is needed while debugging, keep it outside tracked files and outside the
+committed test fixtures.
 
 ## Current coverage
 

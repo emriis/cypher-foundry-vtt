@@ -1,7 +1,7 @@
 import { test, expect } from "./foundry-session-fixture.mjs";
 
 test.describe("Cypher Foundry live runtime", () => {
-  test("loads the Cypher system and its document models", async ({ page }) => {
+  test("loads the Cypher system and its document models", async ({ e2ePage: page }) => {
     const result = await page.evaluate(() => ({
       systemId: game.system.id,
       systemVersion: game.system.version,
@@ -19,7 +19,24 @@ test.describe("Cypher Foundry live runtime", () => {
     expect(result.shield).toBe(true);
   });
 
-  test("creates a real PC Actor with valid Cypher defaults", async ({ page }) => {
+  test("keeps Foundry v14 status-effect proxy keys valid", async ({ e2ePage: page }) => {
+    const result = await page.evaluate(() => {
+      const keys = Reflect.ownKeys(CONFIG.statusEffects);
+      const uniqueKeys = new Set(keys);
+      return {
+        keys,
+        unique: uniqueKeys.size === keys.length,
+        hindered: CONFIG.statusEffects.hindered?.id,
+        dead: CONFIG.statusEffects.dead?.id
+      };
+    });
+
+    expect(result.unique).toBe(true);
+    expect(result.hindered).toBe("hindered");
+    expect(result.dead).toBe("dead");
+  });
+
+  test("creates a real PC Actor with valid Cypher defaults", async ({ e2ePage: page }) => {
     const result = await page.evaluate(async () => {
       const actor = await Actor.create({
         name: `E2E PC ${Date.now()}`,
@@ -52,7 +69,7 @@ test.describe("Cypher Foundry live runtime", () => {
     expect(result.wounds).toEqual({ minor: 3, moderate: 3, major: 3 });
   });
 
-  test("persists embedded Cypher Items on a real Actor", async ({ page }) => {
+  test("persists embedded Cypher Items on a real Actor", async ({ e2ePage: page }) => {
     const result = await page.evaluate(async () => {
       const actor = await Actor.create({
         name: `E2E Item Actor ${Date.now()}`,
@@ -94,7 +111,7 @@ test.describe("Cypher Foundry live runtime", () => {
     expect(result.attack.id).toBeTruthy();
   });
 
-  test("loads all FR and EN compendium packs", async ({ page }) => {
+  test("loads all FR and EN compendium packs", async ({ e2ePage: page }) => {
     const result = await page.evaluate(async () => {
       const names = [
         "descriptors-fr", "types-fr", "foci-fr",
@@ -120,7 +137,7 @@ test.describe("Cypher Foundry live runtime", () => {
     }
   });
 
-  test("renders a real PC sheet with stat roll controls", async ({ page }) => {
+  test("renders a real PC sheet with stat roll controls", async ({ e2ePage: page }) => {
     const result = await page.evaluate(async () => {
       const actor = await Actor.create({
         name: `E2E Sheet Actor ${Date.now()}`,

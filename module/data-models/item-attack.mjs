@@ -51,11 +51,13 @@ function createWeaponMechanicsField() {
       enabled: new BooleanField({ required: true, initial: false }),
       attackType: new StringField({
         required: true,
+        blank: true,
         initial: "",
         choices: ["", "light", "medium", "heavy"]
       }),
       action: new StringField({
         required: true,
+        blank: true,
         initial: "",
         choices: ["", "action"]
       })
@@ -82,7 +84,7 @@ export default class CypherAttackData extends foundry.abstract.TypeDataModel {
         required: true, initial: "immediate", choices: CYPHER.rangeCategories
       }),
       extremeRange: new StringField({
-        required: true, initial: "", choices: ["", ...CYPHER.rangeCategories]
+        required: true, blank: true, initial: "", choices: ["", ...CYPHER.rangeCategories]
       }),
       damage: new NumberField({
         required: true, integer: true, initial: 2, min: 0
@@ -92,11 +94,13 @@ export default class CypherAttackData extends foundry.abstract.TypeDataModel {
       }),
       weaponFamily: new StringField({
         required: true,
+        blank: true,
         initial: "",
         choices: ["", ...CYPHER.weaponFamilies]
       }),
       attackSkillCategory: new StringField({
         required: true,
+        blank: true,
         initial: "",
         choices: ["", ...CYPHER.attackSkillCategories]
       }),

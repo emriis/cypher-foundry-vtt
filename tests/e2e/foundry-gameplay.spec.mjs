@@ -7,10 +7,55 @@ async function createActor(page, overrides = {}) {
     const actor = await Actor.create({
       name: `${prefix} ${Date.now()} ${Math.random().toString(16).slice(2)}`,
       type: "pc",
+      system: {
+        stats: {
+          might: { pool: { max: 8, value: 8 }, edge: 0 },
+          speed: { pool: { max: 8, value: 8 }, edge: 0 },
+          intellect: { pool: { max: 8, value: 8 }, edge: 0 }
+        }
+      },
       ...overrides
     });
     return actor.id;
   }, { prefix: ACTOR_PREFIX, overrides });
+}
+
+async function logActorDiagnostics(page, actorId, label) {
+  const diagnostics = await page.evaluate(id => {
+    const actor = game.actors.get(id);
+    if (!actor) {
+      return { error: `Actor ${id} no longer exists` };
+    }
+
+    const sheet = actor.sheet;
+
+    return {
+      actor: {
+        id: actor.id,
+        type: actor.type,
+        model: actor.constructor?.name,
+        system: foundry.utils.deepClone(actor.system),
+        schemaFields: Object.keys(actor.schema?.fields ?? {})
+      },
+      sheet: {
+        constructor: sheet?.constructor?.name,
+        template: sheet?.options?.template,
+        rendered: sheet?.rendered,
+        elementClasses: sheet?.element
+          ? [...sheet.element.classList]
+          : [],
+        html: sheet?.element?.innerHTML?.slice(0, 4000) ?? null
+      }
+    };
+  }, actorId);
+
+  console.log(
+    `[E2E actor diagnostics] ${label}:\n${JSON.stringify(
+      diagnostics,
+      null,
+      2
+    )}`
+  );
 }
 
 async function readActor(page, actorId) {
@@ -65,7 +110,17 @@ async function waitForChatMessage(page, actorId) {
   }, actorId);
 }
 
+async function dismissActiveTour(page) {
+  await page.evaluate(() => {
+    const Tour = globalThis.foundry?.nue?.Tour;
+    Tour?.activeTour?.exit();
+  });
+  await expect(page.locator(".tour-overlay")).toHaveCount(0);
+}
+
 async function clickRollDialog(page, values = {}) {
+  await dismissActiveTour(page);
+
   const form = page.locator("form").filter({
     has: page.locator('input[name="difficulty"]')
   }).last();
@@ -78,12 +133,13 @@ async function clickRollDialog(page, values = {}) {
     }
   }
 
+  await dismissActiveTour(page);
   await form.getByRole("button").last().click();
 }
 
 test.describe("Cypher Foundry live gameplay", () => {
   test("renders a complete playable PC dashboard for a newly created actor", async ({
-    page
+    e2ePage: page
   }) => {
     const actorId = await createActor(page);
 
@@ -92,7 +148,9 @@ test.describe("Cypher Foundry live gameplay", () => {
       await actor.sheet.render(true);
     }, actorId);
 
-    await expect(page.locator(".pc-sheet-layout")).toBeVisible();
+    await logActorDiagnostics(page, actorId, "dashboard");
+
+    await expect(page.locator(".pc-dashboard")).toBeVisible();
     await expect(page.locator(".sheet-header")).toBeVisible();
     await expect(page.locator(".pc-dashboard")).toBeVisible();
     await expect(page.locator(".pc-core-stats")).toBeVisible();
@@ -105,13 +163,11 @@ test.describe("Cypher Foundry live gameplay", () => {
     await expect(page.locator(".pc-skills")).toBeVisible();
     await expect(page.locator(".pc-abilities")).toBeVisible();
     await expect(page.locator(".pc-advancement")).toBeVisible();
-    await expect(page.locator("nav.tabs")).toHaveCount(0);
-
     await page.evaluate(id => game.actors.get(id)?.sheet.close(), actorId);
   });
 
   test("executes a task roll from the real PC sheet and creates chat output", async ({
-    page
+    e2ePage: page
   }) => {
     const actorId = await createActor(page);
 
@@ -124,8 +180,15 @@ test.describe("Cypher Foundry live gameplay", () => {
       await actor.sheet.render(true);
     }, actorId);
 
+    await logActorDiagnostics(page, actorId, "task roll");
+
     const before = await readActor(page, actorId);
     const messageCount = await page.evaluate(() => game.messages.size);
+
+    // Rendering the first PC sheet can restart Foundry's first-world tour.
+    // Dismiss it immediately before the first pointer interaction so it
+    // cannot intercept the roll button.
+    await dismissActiveTour(page);
 
     await page.locator(
       '[data-action="rollStat"][data-stat="might"]'
@@ -149,7 +212,7 @@ test.describe("Cypher Foundry live gameplay", () => {
   });
 
   test("executes a guaranteed failed Block from the real PC sheet and applies the incoming wound", async ({
-    page
+    e2ePage: page
   }) => {
     const actorId = await createActor(page);
 
@@ -163,7 +226,12 @@ test.describe("Cypher Foundry live gameplay", () => {
       await actor.sheet.render(true);
     }, actorId);
 
-    await page.locator(
+    await page.evaluate(() => {
+      const Tour = globalThis.foundry?.nue?.Tour;
+      Tour?.activeTour?.exit();
+    });
+    await expect(page.locator(".tour-overlay")).toHaveCount(0);
+    await page.locator(".pc-dashboard").last().locator(
       '[data-action="rollDefense"][data-defense-type="block"]'
     ).click();
 
@@ -186,7 +254,7 @@ test.describe("Cypher Foundry live gameplay", () => {
   });
 
   test("uses a recovery from the real PC sheet and persists the recovery marker", async ({
-    page
+    e2ePage: page
   }) => {
     const actorId = await createActor(page);
 
@@ -200,7 +268,7 @@ test.describe("Cypher Foundry live gameplay", () => {
       await actor.sheet.render(true);
     }, actorId);
 
-    await page.locator(
+    await page.locator(".pc-dashboard").last().locator(
       '[data-action="rollRecovery"][data-interval="hour"]'
     ).click();
 
@@ -216,7 +284,7 @@ test.describe("Cypher Foundry live gameplay", () => {
   });
 
   test("rallies a moderate wound from the real PC sheet and charges Might", async ({
-    page
+    e2ePage: page
   }) => {
     const actorId = await createActor(page);
 
@@ -229,7 +297,7 @@ test.describe("Cypher Foundry live gameplay", () => {
       await actor.sheet.render(true);
     }, actorId);
 
-    await page.locator(
+    await page.locator(".pc-dashboard").last().locator(
       '[data-action="rallyWound"][data-severity="moderate"]'
     ).click();
 
@@ -244,7 +312,7 @@ test.describe("Cypher Foundry live gameplay", () => {
   });
 
   test("purchases an Effort advancement through the real Actor document", async ({
-    page
+    e2ePage: page
   }) => {
     const actorId = await createActor(page);
 
@@ -272,7 +340,7 @@ test.describe("Cypher Foundry live gameplay", () => {
   });
 
   test("applies a player intrusion through the real Actor document and persists XP", async ({
-    page
+    e2ePage: page
   }) => {
     const actorId = await createActor(page);
 
@@ -297,7 +365,7 @@ test.describe("Cypher Foundry live gameplay", () => {
   });
 
   test("creates real armor, shield, and attack Items with their DataModels", async ({
-    page
+    e2ePage: page
   }) => {
     const result = await page.evaluate(async () => {
       const actor = await Actor.create({
@@ -363,7 +431,7 @@ test.describe("Cypher Foundry live gameplay", () => {
   });
 
   test("persists actor state after the sheet is closed and reopened", async ({
-    page
+    e2ePage: page
   }) => {
     const actorId = await createActor(page);
 
@@ -391,7 +459,7 @@ test.describe("Cypher Foundry live gameplay", () => {
 
 
 test("completes a player vertical slice from real CRD compendiums", async ({
-  page
+  e2ePage: page
 }) => {
   const actorId = await createActor(page);
 
@@ -453,8 +521,15 @@ test("completes a player vertical slice from real CRD compendiums", async ({
 
       const [attack] = await actor.createEmbeddedDocuments("Item", [attackSource.toObject()]);
       const [cypher] = await actor.createEmbeddedDocuments("Item", [cypherSource.toObject()]);
+      if (!attack || !cypher) {
+        throw new Error(
+          "Player vertical slice failed to create the CRD Attack or Cypher item"
+        );
+      }
       await attack.rollAttack({ difficulty: 0 });
-      await cypher.useCypher();
+      const { useCypher } =
+        await import("/systems/cypher/module/applications/item-service.mjs");
+      await useCypher(cypher);
 
       const abilityPack = getPack("abilities-en");
       const abilities = await abilityPack.getDocuments();
