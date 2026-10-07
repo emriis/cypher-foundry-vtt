@@ -391,7 +391,7 @@ test.describe("Cypher Foundry live gameplay", () => {
 
 
 test("completes a player vertical slice from real CRD compendiums", async ({
-  page
+  e2ePage: page
 }) => {
   const actorId = await createActor(page);
 
