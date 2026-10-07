@@ -210,6 +210,11 @@ test.describe("Cypher Foundry live gameplay", () => {
       await actor.sheet.render(true);
     }, actorId);
 
+    await page.evaluate(() => {
+      const Tour = globalThis.foundry?.nue?.Tour;
+      Tour?.activeTour?.exit();
+    });
+    await expect(page.locator(".tour-overlay")).toHaveCount(0);
     await page.locator(".pc-dashboard").last().locator(
       '[data-action="rollDefense"][data-defense-type="block"]'
     ).click();
@@ -500,8 +505,15 @@ test("completes a player vertical slice from real CRD compendiums", async ({
 
       const [attack] = await actor.createEmbeddedDocuments("Item", [attackSource.toObject()]);
       const [cypher] = await actor.createEmbeddedDocuments("Item", [cypherSource.toObject()]);
+      if (!attack || !cypher) {
+        throw new Error(
+          "Player vertical slice failed to create the CRD Attack or Cypher item"
+        );
+      }
       await attack.rollAttack({ difficulty: 0 });
-      await cypher.useCypher();
+      const { useCypher } =
+        await import("/systems/cypher/module/applications/item-service.mjs");
+      await useCypher(cypher);
 
       const abilityPack = getPack("abilities-en");
       const abilities = await abilityPack.getDocuments();
