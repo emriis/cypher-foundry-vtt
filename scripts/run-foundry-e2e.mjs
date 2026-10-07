@@ -369,6 +369,7 @@ try {
   if (process.env.PLAYWRIGHT_SKIP_BROWSER_INSTALL !== "true") {
     await runCommand(command, ["playwright", "install", "chromium"]);
   }
+  await runCommand(npmCommand, ["run", "check:e2e-browser"]);
 
   await ensureDataPath(userDataPath, dataPath);
   await installSystem(dataPath);
