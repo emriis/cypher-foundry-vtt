@@ -115,7 +115,7 @@ test("each declared pack has a corresponding language-specific source set", () =
   assert.deepEqual(failures, [], failures.join("\n"));
 });
 
-test("DocumentSheetV2 sheets use one normal form content part", () => {
+test("DocumentSheetV2 sheets declare their main part as the root content", () => {
   const contracts = [
     [
       "module/sheets/actor-pc-sheet.mjs",
@@ -150,7 +150,7 @@ test("DocumentSheetV2 sheets use one normal form content part", () => {
       template: "systems/cypher/${rootTemplate}"`),
       `Invalid document sheet PARTS contract: ${relativePath}`
     );
-    assert.doesNotMatch(source, /sheet:\s*\{\s*root:\s*true/);
+    assert.match(source, /sheet:\s*\{\s*root:\s*true/);
     for (const partial of partials) {
       assert.ok(
         source.includes(`"systems/cypher/${partial}"`),
@@ -174,7 +174,47 @@ test("live E2E cleanup is scoped to its generated world", () => {
   assert.match(source, /await rm\(worldPath, \{ recursive: true, force: true \}\)/);
   assert.doesNotMatch(source, /await rm\(dataPath, \{ recursive: true, force: true \}\)/);
   assert.doesNotMatch(source, /mkdtemp\(path\.join\(os\.tmpdir\(\)/);
-  assert.match(source, /"FoundryVTT",\s*"Data"/);
+  assert.match(source, /process\.env\.FOUNDRY_DATA_PATH/);\n  assert.match(source, /const \{ userDataPath, dataPath \} = await getFoundryPaths\(\)/);\n  assert.match(source, /path\.join\(userDataPath, "Data"\)/);\n  assert.match(source, /path\.join\(userDataPath, "Config", "license\.json"\)/);
+});
+
+test("repository does not contain machine-specific local paths", () => {
+  const files = [
+    "scripts",
+    "tests",
+    "docs",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    "README.md"
+  ];
+  const forbidden = [
+    String.raw`[A-Za-z]:\\Users\\(?!<USER>)(?!user)(?!example)(?!test)[^\\\s]+\\AppData\\Local\\FoundryVTT`,
+    String.raw`[A-Za-z]:\\Users\\(?!<USER>)(?!user)(?!example)(?!test)[^\\\s]+\\`,
+    String.raw`(?:^|[\\s"'\`])/(?:Users|home)/(?!<USER>)(?!user)(?!example)(?!test)[^\\s"'\`]+`
+  ];
+  const offenders = [];
+  const visit = relativePath => {
+    const absolutePath = path.join(root, relativePath);
+    if (!fs.existsSync(absolutePath)) return;
+    const stat = fs.statSync(absolutePath);
+    if (stat.isDirectory()) {
+      for (const entry of fs.readdirSync(absolutePath)) {
+        if (![".git", "node_modules", "dist"].includes(entry)) {
+          visit(path.join(relativePath, entry));
+        }
+      }
+      return;
+    }
+    const source = fs.readFileSync(absolutePath, "utf8");
+    if (forbidden.some(pattern => pattern.test(source))) {
+      offenders.push(relativePath);
+    }
+  };
+  for (const file of files) visit(file);
+  assert.deepEqual(
+    offenders,
+    [],
+    `Machine-specific local path found in: ${offenders.join(", ")}`
+  );
 });
 
 test("static localization keys used by templates and modules exist in both locales", () => {
