@@ -343,7 +343,7 @@ async function waitForWindowsProcessExit(pid, timeout = 10_000) {
 }
 
 async function removeWorld(worldPath) {
-  const deadline = Date.now() + 10_000;
+  const deadline = Date.now() + 60_000;
   let lastError;
 
   while (Date.now() < deadline) {
@@ -352,7 +352,7 @@ async function removeWorld(worldPath) {
       return;
     } catch (error) {
       lastError = error;
-      await new Promise(resolve => setTimeout(resolve, 200));
+      await new Promise(resolve => setTimeout(resolve, 500));
     }
   }
 
