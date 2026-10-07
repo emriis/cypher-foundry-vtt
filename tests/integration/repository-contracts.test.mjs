@@ -182,6 +182,9 @@ test("live E2E uses a Windows command boundary for Foundry and scripts", () => {
     /process\.env\.ComSpec \|\| "cmd\.exe"/
   );
   assert.match(source, /const commandLine = \[/);
+  assert.match(source, /"start"/);
+  assert.match(source, /'""'/);
+  assert.match(source, /"\/wait"/);
   assert.match(source, /spawn\(appPath, args,/);
   assert.match(source, /\["\/d", "\/c"/);
 });
