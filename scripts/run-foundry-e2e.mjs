@@ -250,7 +250,7 @@ function quoteWindowsArg(value) {
   if (/^[A-Za-z0-9_./:-]+$/.test(stringValue)) {
     return stringValue;
   }
-  return """ + stringValue + """;
+  return "\"" + stringValue + "\"";
 }
 
 function windowsCommand(command, args) {
