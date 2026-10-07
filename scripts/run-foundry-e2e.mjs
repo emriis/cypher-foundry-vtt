@@ -20,13 +20,19 @@ const BASE_URL = `http://127.0.0.1:${PORT}`;
 const WORLD_ID = `cypher-e2e-${Date.now()}`;
 const WORLD_TITLE = "Cypher Automated E2E";
 
-async function getFoundryUserDataPath() {
+async function getFoundryPaths() {
   if (process.env.FOUNDRY_DATA_PATH) {
-    return path.dirname(path.resolve(process.env.FOUNDRY_DATA_PATH));
+    const dataPath = path.resolve(process.env.FOUNDRY_DATA_PATH);
+    return {
+      userDataPath: path.dirname(dataPath),
+      dataPath
+    };
   }
 
+  let userDataPath;
+
   if (process.platform === "win32") {
-    const userDataPath = path.join(
+    userDataPath = path.join(
       process.env.LOCALAPPDATA || path.join(os.homedir(), "AppData", "Local"),
       "FoundryVTT"
     );
@@ -35,28 +41,39 @@ async function getFoundryUserDataPath() {
     try {
       const options = JSON.parse(await readFile(optionsPath, "utf8"));
       if (typeof options.dataPath === "string" && options.dataPath.trim()) {
-        return path.resolve(options.dataPath);
+        const configuredPath = path.resolve(options.dataPath);
+        if (path.basename(configuredPath).toLowerCase() === "data") {
+          return {
+            userDataPath: path.dirname(configuredPath),
+            dataPath: configuredPath
+          };
+        }
+        return {
+          userDataPath: configuredPath,
+          dataPath: path.join(configuredPath, "Data")
+        };
       }
     } catch {
       // Fall back to Foundry's default user-data root.
     }
-
-    return userDataPath;
-  }
-
-  if (process.platform === "darwin") {
-    return path.join(
+  } else if (process.platform === "darwin") {
+    userDataPath = path.join(
       os.homedir(),
       "Library",
       "Application Support",
       "FoundryVTT"
     );
+  } else {
+    userDataPath = path.join(
+      process.env.XDG_DATA_HOME || path.join(os.homedir(), ".local", "share"),
+      "FoundryVTT"
+    );
   }
 
-  return path.join(
-    process.env.XDG_DATA_HOME || path.join(os.homedir(), ".local", "share"),
-    "FoundryVTT"
-  );
+  return {
+    userDataPath,
+    dataPath: path.join(userDataPath, "Data")
+  };
 }
 
 async function readCoreVersion(appPath) {
@@ -212,8 +229,7 @@ function stopProcess(child) {
 }
 
 const appPath = await findApplication();
-const userDataPath = await getFoundryUserDataPath();
-const dataPath = path.join(userDataPath, "Data");
+const { userDataPath, dataPath } = await getFoundryPaths();
 const coreVersion = await readCoreVersion(appPath);
 const systemManifest = JSON.parse(
   await readFile(path.join(ROOT, "system.json"), "utf8")
@@ -226,8 +242,8 @@ let exitCode = 1;
 
 try {
   console.log(`Foundry executable: ${appPath}`);
-  console.log(`Foundry User Data path: ${dataPath}`);
-  console.log(`Foundry Data path: ${path.join(dataPath, "Data")}`);
+  console.log(`Foundry User Data path: ${userDataPath}`);
+  console.log(`Foundry Data path: ${dataPath}`);
   console.log(`Test world: ${WORLD_ID}`);
 
   try {
