@@ -361,49 +361,52 @@ async function removeWorld(worldPath) {
   throw lastError;
 }
 
+async function runWindowsTaskkill(pid, force = false) {
+  const args = ["/pid", String(pid), "/t"];
+  if (force) args.push("/f");
+
+  await new Promise((resolve, reject) => {
+    const killer = spawn(
+      "taskkill",
+      args,
+      { stdio: "ignore", windowsHide: true }
+    );
+    killer.on("error", reject);
+    killer.on("close", () => resolve());
+  });
+}
+
 async function stopProcess(child, foundryPid) {
   if (process.platform === "win32") {
+    // The runner owns these processes, so they have the same elevation level
+    // as Node. Never attempt to control an unrelated Foundry instance.
     const pids = [foundryPid, child?.pid]
       .filter(pid => Number.isInteger(pid) && pid > 0);
 
+    // Ask Windows to close the process tree normally first. This is important
+    // for Electron: it gives Foundry a chance to flush world data and close
+    // its Chromium/GPU children cleanly.
     for (const pid of pids) {
-      await new Promise((resolve, reject) => {
-        const killer = spawn(
-          "taskkill",
-          ["/pid", String(pid), "/t", "/f"],
-          { stdio: "ignore", windowsHide: true }
-        );
-        killer.on("error", reject);
-        killer.on("close", () => resolve());
-      });
+      await runWindowsTaskkill(pid);
     }
 
     for (const pid of pids) {
       try {
-        await waitForWindowsProcessExit(pid, 5_000);
+        await waitForWindowsProcessExit(pid, 10_000);
       } catch {
-        await new Promise((resolve, reject) => {
-          const killer = spawn(
-            "powershell.exe",
-            [
-              "-NoProfile",
-              "-NonInteractive",
-              "-Command",
-              "Stop-Process -Id " + pid +
-                " -Force -ErrorAction SilentlyContinue"
-            ],
-            { stdio: "ignore", windowsHide: true }
-          );
-          killer.on("error", reject);
-          killer.on("close", () => resolve());
-        });
+        // A process that ignores the graceful close is still owned by this
+        // runner, so force termination is a safe final fallback.
+        await runWindowsTaskkill(pid, true);
         await waitForWindowsProcessExit(pid, 10_000);
       }
     }
     return;
   }
 
-  if (child && !child.killed) child.kill("SIGTERM");
+  if (child && !child.killed) {
+    child.kill("SIGTERM");
+    await new Promise(resolve => child.once("exit", resolve));
+  }
 }
 
 const appPath = await findApplication();
