@@ -11,6 +11,11 @@ export default defineConfig({
     baseURL: process.env.FOUNDRY_URL || "http://127.0.0.1:30000",
     browserName: "chromium",
     channel: "chromium",
+    viewport: { width: 1280, height: 900 },
+    deviceScaleFactor: 1,
+    launchOptions: {
+      args: ["--force-device-scale-factor=1"]
+    },
     headless: process.env.PLAYWRIGHT_HEADLESS !== "false",
     trace: "retain-on-failure",
     screenshot: "only-on-failure"
