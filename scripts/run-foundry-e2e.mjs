@@ -195,7 +195,8 @@ function spawnFoundry(appPath, dataPath) {
     {
       cwd: path.dirname(appPath),
       stdio: "inherit",
-      windowsHide: false
+      windowsHide: false,
+      shell: false
     }
   );
 }
