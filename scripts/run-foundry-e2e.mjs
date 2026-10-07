@@ -216,7 +216,8 @@ let exitCode = 1;
 
 try {
   console.log(`Foundry executable: ${appPath}`);
-  console.log(`Foundry User Data path: ${dataPath}`);\n  console.log(`Foundry Data path: ${path.join(dataPath, "Data")}`);
+  console.log(`Foundry User Data path: ${dataPath}`);
+  console.log(`Foundry Data path: ${path.join(dataPath, "Data")}`);
   console.log(`Test world: ${WORLD_ID}`);
 
   try {
