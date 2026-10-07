@@ -38,7 +38,7 @@ async function getFoundryUserDataPath() {
         return path.resolve(options.dataPath);
       }
     } catch {
-      // Fall back to Foundry's documented default Data directory.
+      // Fall back to Foundry's default user-data root.
     }
 
     return userDataPath;
@@ -49,15 +49,13 @@ async function getFoundryUserDataPath() {
       os.homedir(),
       "Library",
       "Application Support",
-      "FoundryVTT",
-      "Data"
+      "FoundryVTT"
     );
   }
 
   return path.join(
     process.env.XDG_DATA_HOME || path.join(os.homedir(), ".local", "share"),
-    "FoundryVTT",
-    "Data"
+    "FoundryVTT"
   );
 }
 
@@ -106,15 +104,15 @@ async function waitForServer(url, timeout = 60_000) {
   );
 }
 
-async function ensureDataPath(dataPath) {
+async function ensureDataPath(userDataPath, dataPath) {
   await mkdir(dataPath, { recursive: true });
 
-  const licensePath = path.join(path.dirname(dataPath), "Config", "license.json");
+  const licensePath = path.join(userDataPath, "Config", "license.json");
   try {
     await readFile(licensePath, "utf8");
   } catch {
     throw new Error(
-      "Foundry license.json was not found beside the configured Data path. " +
+      "Foundry license.json was not found in the Foundry Config directory. " +
       "Start Foundry once and complete license/EULA setup, or set " +
       "FOUNDRY_DATA_PATH to the correct Data directory."
     );
