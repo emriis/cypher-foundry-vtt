@@ -4,21 +4,27 @@ const FOUNDRY_URL =
 const GAMEMASTER_NAME = "gamemaster";
 
 async function selectGamemaster(page) {
-  const usernameInput = page.getByRole("textbox", {
-    name: /sélectionner un utilisateur|select a user|username/i
-  }).first();
+  const usernameCandidates = [
+    page.getByRole("textbox", {
+      name: /sélectionner un utilisateur|select a user|username/i
+    }).first(),
+    page.locator(
+      "#join-username, input[name=\"username\"], " +
+      "input[autocomplete=\"username\"], " +
+      "input[placeholder*=\"utilisateur\" i], " +
+      "input[placeholder*=\"user\" i]"
+    ).first(),
+    page.locator('input[type="text"], input:not([type])').first()
+  ];
 
-  if (await usernameInput.count()) {
+  for (const usernameInput of usernameCandidates) {
+    if (!(await usernameInput.count())) continue;
+
     await usernameInput.waitFor({ state: "visible", timeout: 30_000 });
     await usernameInput.fill(GAMEMASTER_NAME);
 
     const value = await usernameInput.inputValue();
-    if (value.toLowerCase() !== GAMEMASTER_NAME) {
-      throw new Error(
-        "Foundry did not accept the gamemaster username. " +
-        `Expected: ${GAMEMASTER_NAME}; actual: ${value}`
-      );
-    }
+    if (value.toLowerCase() !== GAMEMASTER_NAME) continue;
 
     await usernameInput.press("ArrowDown");
     await usernameInput.press("Enter");
