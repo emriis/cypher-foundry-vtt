@@ -46,7 +46,13 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
       powerShifts: new SchemaField(
         Object.fromEntries(CYPHER.powerShiftCategories.map(cat =>
           [cat, new NumberField({ required: true, integer: true, initial: 0, min: 0, max: 3 })]
-        ))
+        )),
+        {
+          required: true,
+          initial: Object.fromEntries(
+            CYPHER.powerShiftCategories.map(cat => [cat, 0])
+          )
+        }
       ),
 
       // Optional second descriptor and focus, enabled explicitly when granted.
@@ -65,6 +71,13 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
         might: statSchema(),
         speed: statSchema(),
         intellect: statSchema()
+      }, {
+        required: true,
+        initial: {
+          might: { pool: { max: 8, value: 8 }, edge: 0 },
+          speed: { pool: { max: 8, value: 8 }, edge: 0 },
+          intellect: { pool: { max: 8, value: 8 }, edge: 0 }
+        }
       }),
 
       // Optional player-defined stats in addition to Might, Speed, and Intellect.
@@ -83,6 +96,22 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
         minor: woundSchema(CYPHER.defaultWoundMax.minor),
         moderate: woundSchema(CYPHER.defaultWoundMax.moderate),
         major: woundSchema(CYPHER.defaultWoundMax.major)
+      }, {
+        required: true,
+        initial: {
+          minor: {
+            max: CYPHER.defaultWoundMax.minor,
+            current: 0
+          },
+          moderate: {
+            max: CYPHER.defaultWoundMax.moderate,
+            current: 0
+          },
+          major: {
+            max: CYPHER.defaultWoundMax.major,
+            current: 0
+          }
+        }
       }),
 
       // Active armor is derived from the equipped Armor item rather than
@@ -94,6 +123,14 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
         tenMinutes: new BooleanField({ initial: false }),
         hour: new BooleanField({ initial: false }),
         tenHours: new BooleanField({ initial: false })
+      }, {
+        required: true,
+        initial: {
+          action: false,
+          tenMinutes: false,
+          hour: false,
+          tenHours: false
+        }
       }),
 
       // Actor-owned runtime state for currently active Ability effects.
