@@ -155,3 +155,15 @@ test.describe("Cypher Foundry live runtime", () => {
 
     try {
       expect(result.rendered).toBe(true);
+      expect(result.rollButtons).toBeGreaterThanOrEqual(3);
+    } finally {
+      await page.evaluate(async actorId => {
+        const actor = game.actors.get(actorId);
+        if (actor) {
+          await actor.sheet.close();
+          await actor.delete();
+        }
+      }, result.actorId);
+    }
+  });
+});
