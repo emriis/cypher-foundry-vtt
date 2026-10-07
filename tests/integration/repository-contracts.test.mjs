@@ -163,6 +163,29 @@ test("DocumentSheetV2 sheets declare their main part as the root content", () =>
   }
 });
 
+test("live E2E requires Chromium 146 or newer", () => {
+  const packageJson = readJson("package.json");
+  assert.equal(
+    packageJson.devDependencies["@playwright/test"],
+    "1.63.0"
+  );
+
+  const config = fs.readFileSync(
+    path.join(root, "playwright.config.mjs"),
+    "utf8"
+  );
+  assert.match(config, /browserName:\s*"chromium"/);
+  assert.match(config, /channel:\s*"chromium"/);
+
+  const fixture = fs.readFileSync(
+    path.join(root, "tests/e2e/foundry-session-fixture.mjs"),
+    "utf8"
+  );
+  assert.match(fixture, /const MIN_CHROMIUM_MAJOR = 146/);
+  assert.match(fixture, /chromiumMajor < MIN_CHROMIUM_MAJOR/);
+  assert.match(fixture, /browser\.version\(\)/);
+});
+
 test("live E2E fixture keeps one browser page for the whole worker", () => {
   const fixture = fs.readFileSync(
     path.join(root, "tests/e2e/foundry-session-fixture.mjs"),
