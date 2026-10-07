@@ -33,14 +33,14 @@ test("specialized attack skill leaves one ease after unfamiliar weapon hindrance
   assert.equal(resolveWeaponSkillModifier({
     familiar: false,
     skillLevel: "specialized"
-  }), 2);
+  }), 1);
 });
 
 test("expert attack skill leaves two eases after unfamiliar weapon hindrance", () => {
   assert.equal(resolveWeaponSkillModifier({
     familiar: false,
     skillLevel: "expert"
-  }), 3);
+  }), 2);
 });
 
 test("training levels apply normally when the weapon is already familiar", () => {
