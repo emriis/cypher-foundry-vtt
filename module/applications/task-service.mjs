@@ -90,7 +90,8 @@ export async function rollTask(actor, {
     extraHinderSteps = 0, extraEaseSteps = 0, luckyShot = false,
     specialEffectChoice = null, weaponTargetEffects = [],
     defenseType = null, incomingSeverity = "minor", armorModifier = 0, shieldItemId = null,
-    targetActor = null, armorBypass = 0
+    targetActor = null, armorBypass = 0, incomingWounds = 1,
+    applyIncomingWound = true
   } = {}) {
     if (actor.type !== "pc") {
       ui.notifications.warn(game.i18n.localize("CYPHER.Warning.NotPC"));
@@ -291,17 +292,21 @@ export async function rollTask(actor, {
     // Resolve the wound based on the defense result.
     if (defenseType) {
       if (success) {
-        if (defenseType === "block") {
-          if (usingShield) {
-            await shieldAbsorbWound(actor, shieldItem, incomingSeverity);
-          } else {
-            const reduced = reduceWound(incomingSeverity);
-            if (reduced) await addWound(actor, reduced);
+        if (applyIncomingWound && defenseType === "block") {
+          for (let index = 0; index < incomingWounds; index += 1) {
+            if (usingShield) {
+              await shieldAbsorbWound(actor, shieldItem, incomingSeverity);
+            } else {
+              const reduced = reduceWound(incomingSeverity);
+              if (reduced) await addWound(actor, reduced);
+            }
           }
         }
         // A successful Dodge avoids the wound entirely.
-      } else {
-        await addWound(actor, incomingSeverity);
+      } else if (applyIncomingWound) {
+        for (let index = 0; index < incomingWounds; index += 1) {
+          await addWound(actor, incomingSeverity);
+        }
       }
     }
 
