@@ -237,7 +237,7 @@ export async function rollTask(actor, {
         } else {
           defenseNote = `<p class="cypher-defense-note">${game.i18n.localize("CYPHER.Defense.DodgeSuccess")}</p>`;
         }
-      } else {
+      } else if (applyIncomingWound) {
         defenseNote = `<p class="cypher-defense-note failure">${game.i18n.format("CYPHER.Defense.Failed", { severity: game.i18n.localize(`CYPHER.Wound.${incomingSeverity}`) })}</p>`;
       }
     }
