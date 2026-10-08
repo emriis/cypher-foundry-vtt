@@ -201,8 +201,13 @@ no Artifact inventory, so extraction is explicitly source-blocked.
 The CRD conversion does **not** include a creature extraction plan because the
 supplied CRD contains no creature inventory.
 
-The existing NPC/creature Actor model remains a general system capability and can
-be improved independently when source-backed requirements exist.
+The NPC Actor model is a generic, user-authored stat block rather than an
+extracted creature catalogue. Its schema covers level/target number, health,
+armor, damage, movement, modifications, description, motive, environment,
+combat, interaction, use, loot, GM Intrusion suggestions, and private GM notes.
+Damage remains a source-faithful free-text field for now: examples are needed
+before splitting wound severity, Pool damage, armor bypass, or multiple wounds
+into structured mechanics.
 
 ### 9.3 Random tables
 

@@ -15,9 +15,14 @@ export default class CypherNPCData extends foundry.abstract.TypeDataModel {
     return {
       level: new NumberField({ required: true, integer: true, initial: 3, min: 1 }),
       health: new SchemaField({
-        max: new NumberField({ required: true, integer: true, initial: 10, min: 0 }),
-        value: new NumberField({ required: true, integer: true, initial: 10, min: 0 })
+        // A level-3 NPC defaults to its target number (level × 3); explicit
+        // creature entries can override either health value.
+        max: new NumberField({ required: true, integer: true, initial: 9, min: 0 }),
+        value: new NumberField({ required: true, integer: true, initial: 9, min: 0 })
       }),
+      description: new HTMLField({ required: true, blank: true, initial: "" }),
+      motive: new StringField({ required: true, blank: true, initial: "" }),
+      environment: new StringField({ required: true, blank: true, initial: "" }),
       armor: new NumberField({ required: true, integer: true, initial: 0, min: 0 }),
       damage: new StringField({ required: true, blank: true, initial: "" }),
       movement: new StringField({ required: true, blank: true }),
@@ -26,6 +31,7 @@ export default class CypherNPCData extends foundry.abstract.TypeDataModel {
       interaction: new HTMLField({ required: true, blank: true }),
       use: new HTMLField({ required: true, blank: true }),
       loot: new HTMLField({ required: true, blank: true }),
+      gmIntrusion: new HTMLField({ required: true, blank: true, initial: "" }),
       gmNotes: new HTMLField({ required: true, blank: true })
     };
   }

@@ -164,6 +164,37 @@ test("DocumentSheetV2 sheets declare their main part as the root content", () =>
   }
 });
 
+test("NPC model and sheet expose the core GM guide stat-block categories", () => {
+  const model = fs.readFileSync(
+    path.join(root, "module/data-models/actor-npc.mjs"),
+    "utf8"
+  );
+  const template = fs.readFileSync(
+    path.join(root, "templates/actor/npc/body.hbs"),
+    "utf8"
+  );
+
+  for (const field of [
+    "level", "health", "armor", "damage", "movement", "modifications",
+    "description", "motive", "environment", "combat", "interaction", "use",
+    "loot", "gmIntrusion", "gmNotes"
+  ]) {
+    assert.match(model, new RegExp("\\b" + field + "\\s*:"));
+  }
+
+  for (const field of [
+    "description", "motive", "environment", "combat", "interaction",
+    "use", "loot", "gmIntrusion", "gmNotes"
+  ]) {
+    assert.ok(
+      template.includes("system." + field),
+      "NPC sheet does not expose system." + field
+    );
+  }
+
+  assert.match(model, /get targetNumber\(\)\s*\{\s*return this\.level \* 3;/);
+});
+ 
 test("live E2E requires Chromium 146 or newer", () => {
   const packageJson = readJson("package.json");
   assert.equal(
