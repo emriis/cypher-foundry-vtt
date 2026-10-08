@@ -19,6 +19,7 @@ import {
   syncWoundStatusEffects
 } from "../applications/damage-service.mjs";
 import { rollDefense, rollTask } from "../applications/task-service.mjs";
+import { rollNpcAttack } from "../applications/npc-combat-service.mjs";
 import {
   advanceTier,
   purchaseAdvancementSlot
@@ -140,6 +141,17 @@ export default class CypherActor extends Actor {
    */
   async rollDefense(defenseType, options = {}) {
     return rollDefense(this, defenseType, options);
+  }
+
+  /**
+   * Execute a structured NPC attack against a player target.
+   *
+   * @param {object} attack Structured NPC attack.
+   * @param {object} [options={}] Target and defense options.
+   * @returns {Promise<object|null>} Defense and damage result.
+   */
+  async rollNpcAttack(attack, options = {}) {
+    return rollNpcAttack(this, attack, options);
   }
 
   /* -------------------------------------------- */
