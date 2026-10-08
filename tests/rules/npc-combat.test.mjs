@@ -4,7 +4,8 @@ import test from "node:test";
 import {
   canApplyNpcHealthDamage,
   normalizeNpcAttackDamage,
-  resolveNpcHealthDamage
+  resolveNpcHealthDamage,
+  resolveNpcAttackTargetDamage
 } from "../../module/rules/npc-combat.mjs";
 
 test("resolveNpcHealthDamage applies Armor before reducing Health", () => {
