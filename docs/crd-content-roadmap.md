@@ -230,9 +230,22 @@ structured data already present in the source packs.
 
 ### 10.2 Current runtime closure work
 
-- [ ] Consume weapon `mechanics.targetEffects` during attack resolution.
-- [ ] Audit every structured weapon `range`, `properties`, and `mechanics`
-  field and classify it as runtime, descriptive-only, or model-gap.
+- [x] Resolve weapon `mechanics.targetEffects` against the selected NPC level
+  and carry matching effects into the attack result/chat flags.
+- [x] Audit every structured weapon `range`, `properties`, and `mechanics`
+  field and classify it as runtime, descriptive-only, resolved/presented, or
+  model-gap in [the weapon runtime matrix](crd-weapon-runtime-matrix.md).
+- [ ] Apply weapon target effects to persisted target state. This is blocked on
+  defining an effect/status model and duration lifecycle; selection and chat
+  flags alone are not application.
+- [ ] Define whether successful attacks automatically apply damage to the
+  selected NPC or require GM confirmation. This decision gates Armor penetration.
+- [ ] Consume `mechanics.ignoresPhysicalArmor` after the target-damage contract
+  is defined.
+- [ ] Implement range resolution after defining the target-token/scene-distance
+  contract.
+- [ ] Close remaining stored-only weapon mechanics when their CRD semantics and
+  required state models are explicit.
 - [ ] Verify all structured granted Type/Focus benefits in gameplay, including
   granted armor categories.
 - [ ] Implement generic Cypher `variants` resolution.
@@ -374,8 +387,10 @@ Completed families require, as applicable:
 - [x] Establish core equipment/attack runtime.
 - [ ] Close structured weapon mechanics.
 - [ ] Close generic Cypher variants/random tables.
-- [ ] Audit structured mechanics with an extracted/modelled/validated/runtime/E2E
+- [x] Audit structured weapon mechanics with an extracted/modelled/runtime-gap
   matrix.
+- [ ] Complete the extracted/modelled/validated/runtime/E2E matrix for all
+  structured mechanics, including Cypher effects.
 - [ ] Expand high-value player and GM E2E workflows.
 - [ ] Run final provenance/reference/stale-build audits.
 
