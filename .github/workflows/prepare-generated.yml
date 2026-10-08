@@ -1,7 +1,7 @@
 name: Prepare generated artifacts
 
 permissions:
-  contents: write
+  contents: read
 
 on:
   pull_request:
@@ -49,26 +49,6 @@ jobs:
           }
           echo "Two consecutive package builds produced identical ZIP bytes."
 
-      - name: Upload generated package for synchronization
-        uses: actions/upload-artifact@v4
-        with:
-          name: generated-system-package
-          path: dist/system.zip
-          if-no-files-found: error
-
-      - name: Synchronize generated artifacts once
-        if: github.event_name == 'pull_request'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          set -euo pipefail
-          if [ -n "$(git status --porcelain -- packs dist)" ]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add packs dist
-            git commit -m "chore: synchronize generated release artifacts"
-            git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
-          fi
 
       - name: Verify generated artifacts
         run: node scripts/verify-package.mjs
@@ -96,4 +76,4 @@ jobs:
           echo "## Generated artifact preparation" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "Generated files: packs/ and dist/." >> "$GITHUB_STEP_SUMMARY"
-          echo "The workflow validates generated artifacts without pushing commits or triggering another workflow run." >> "$GITHUB_STEP_SUMMARY"
+          echo "The workflow validates generated artifacts without pushing commits or modifying the pull request branch." >> "$GITHUB_STEP_SUMMARY"
