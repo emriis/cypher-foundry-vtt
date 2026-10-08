@@ -91,6 +91,7 @@ The current system includes:
 - structured Ability roll-table resolution
 - Type and Focus advancement benefits
 - weapon attacks and core damage behavior
+- structured NPC attacks against player defenses, including wound and Pool damage
 - Cypher use and depletion
 - bilingual French/English localization
 - ApplicationV2 PC, NPC, Community, and Item sheets
