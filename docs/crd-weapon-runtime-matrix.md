@@ -55,18 +55,17 @@ present in an Item, copied to a chat flag, or shown in descriptive text.
 
 ## Recommended implementation order
 
-1. Define and test the attack-to-target damage contract, including whether
-   successful attacks automatically update NPC Health or remain a GM-confirmed
-   chat action. This decision gates armor penetration.
-2. Once target damage is defined, apply `ignoresPhysicalArmor` through a pure
-   damage-resolution helper and test zero, partial, and fully bypassed Armor.
-3. Design the persisted target-effect lifecycle before applying
-   `targetEffects`; include effect start, duration/expiration, rerolls, and
-   target deletion or replacement.
-4. Resolve range only after the system has an explicit token-distance contract.
-5. Handle two-handed use, rapid fire, tripod/operators, alternate configuration,
+1. Define and implement the persisted target-effect/status lifecycle for
+   `mechanics.targetEffects`.
+2. Resolve range only after the system has an explicit token-distance contract.
+3. Handle two-handed use, rapid fire, tripod/operators, alternate configuration,
    and material cutting only when their CRD rule and necessary state model are
    explicit.
+
+The core PC-to-NPC numeric damage contract and physical Armor bypass are already
+implemented and verified. NPC-to-PC wound/Pool attacks are also handled through
+the separate player-defense contract; these are not prerequisites for the
+remaining weapon mechanics.
 
 ## Non-goals
 
