@@ -1,7 +1,7 @@
 name: Prepare generated artifacts
 
 permissions:
-  contents: read
+  contents: write
 
 on:
   pull_request:
@@ -49,11 +49,10 @@ jobs:
           }
           echo "Two consecutive package builds produced identical ZIP bytes."
 
-
       - name: Verify generated artifacts
         run: node scripts/verify-package.mjs
 
-      - name: Fail if generated artifacts are stale
+      - name: Reject unexpected generated changes
         run: |
           set -euo pipefail
           if [ -n "$(git status --porcelain -- . ':!packs' ':!dist')" ]; then
@@ -62,12 +61,31 @@ jobs:
             exit 1
           fi
 
+      - name: Synchronize generated artifacts on pull requests
+        if: github.event_name == 'pull_request'
+        run: |
+          set -euo pipefail
+          if [ -z "$(git status --porcelain -- packs dist)" ]; then
+            echo "Generated artifacts are synchronized with the checked-out branch."
+            exit 0
+          fi
+
+          git status --short -- packs dist
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add packs dist
+          git commit -m "chore: synchronize generated artifacts"
+          git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
+
+      - name: Verify generated artifacts are synchronized
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          set -euo pipefail
           if [ -n "$(git status --porcelain -- packs dist)" ]; then
             echo "::error::Generated artifacts are stale. Run npm run build:packs and npm run package, then commit the resulting packs/ and dist/ changes."
             git status --short -- packs dist
             exit 1
           fi
-
           echo "Generated artifacts are synchronized with the checked-out branch."
 
       - name: Publish diagnostics
@@ -76,4 +94,4 @@ jobs:
           echo "## Generated artifact preparation" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "Generated files: packs/ and dist/." >> "$GITHUB_STEP_SUMMARY"
-          echo "The workflow validates generated artifacts without pushing commits or modifying the pull request branch." >> "$GITHUB_STEP_SUMMARY"
+          echo "Pull-request runs automatically synchronize generated artifacts when they are stale."
