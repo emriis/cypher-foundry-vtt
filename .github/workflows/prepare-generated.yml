@@ -1,7 +1,7 @@
 name: Prepare generated artifacts
 
 permissions:
-  contents: write
+  contents: read
 
 on:
   pull_request:
@@ -50,44 +50,14 @@ jobs:
       - name: Verify generated artifacts
         run: node scripts/verify-package.mjs
 
-      - name: Synchronize generated artifacts with PR branch
-        if: github.event_name == 'pull_request'
+      - name: Verify committed generated artifacts are current
         run: |
           set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          for attempt in 1 2 3; do
-            git fetch origin "${{ github.event.pull_request.head.ref }}"
-            git reset --hard "origin/${{ github.event.pull_request.head.ref }}"
-
-            npm run build:packs
-            npm run package
-            node scripts/verify-package.mjs
-
-            if [ -n "$(git status --porcelain -- . ':!packs' ':!dist')" ]; then
-              echo "::error::Generation changed files outside packs/ and dist/."
-              git status --short -- . ':!packs' ':!dist'
-              exit 1
-            fi
-
-            if [ -z "$(git status --porcelain -- packs dist)" ]; then
-              echo "Generated artifacts are already synchronized with the latest PR branch."
-              exit 0
-            fi
-
-            git add packs dist/system.json dist/system.zip
-            git commit -m "chore: update generated release artifacts"
-
-            if git push origin "HEAD:${{ github.event.pull_request.head.ref }}"; then
-              exit 0
-            fi
-
-            echo "Branch advanced during synchronization; retrying from the latest PR tip."
-          done
-
-          echo "::error::Could not synchronize generated artifacts after three attempts."
-          exit 1
+          if [ -n "$(git status --porcelain -- packs dist)" ]; then
+            echo "::error::Generated artifacts are stale. Run npm run build:packs and npm run package, then commit the resulting packs/ and dist/ changes."
+            git status --short -- packs dist
+            exit 1
+          fi
 
       - name: Publish diagnostics
         if: always()
@@ -95,4 +65,4 @@ jobs:
           echo "## Generated artifact preparation" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "Generated files: packs/ and dist/." >> "$GITHUB_STEP_SUMMARY"
-          echo "The test CI validates the committed result in a separate workflow." >> "$GITHUB_STEP_SUMMARY"
+          echo "This workflow validates generated artifacts without pushing commits or retriggering pull-request workflows." >> "$GITHUB_STEP_SUMMARY"
