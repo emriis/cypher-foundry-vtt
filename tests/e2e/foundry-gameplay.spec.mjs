@@ -211,6 +211,61 @@ test.describe("Cypher Foundry live gameplay", () => {
     expect(after.might).toBe(before.might);
   });
 
+  test("executes a structured NPC Pool attack against a real PC", async ({
+    e2ePage: page
+  }) => {
+    const pcId = await createActor(page);
+    const npcId = await page.evaluate(async prefix => {
+      const actor = await Actor.create({
+        name: `${prefix} NPC ${Date.now()}`,
+        type: "npc",
+        system: {
+          level: 10,
+          attacks: [{
+            name: "Mind Blast",
+            range: "Short",
+            action: "action",
+            damage: {
+              mode: "pool",
+              amount: 4,
+              severity: "",
+              stat: "intellect",
+              ignoresArmor: 0,
+              wounds: 1
+            },
+            effects: [],
+            description: ""
+          }]
+        }
+      });
+      return actor.id;
+    }, ACTOR_PREFIX);
+
+    const before = await page.evaluate(id =>
+      game.actors.get(id).system.stats.intellect.pool.value,
+      pcId
+    );
+
+    await page.evaluate(async ({ npcId, pcId }) => {
+      const npc = game.actors.get(npcId);
+      const target = game.actors.get(pcId);
+      const result = await npc.rollNpcAttack(npc.system.attacks[0], {
+        target,
+        defenseType: "dodge"
+      });
+      if (!result || result.defense.success) {
+        throw new Error("Expected the level-10 NPC attack to fail the PC Dodge.");
+      }
+    }, { npcId, pcId });
+
+    const after = await page.evaluate(id =>
+      game.actors.get(id).system.stats.intellect.pool.value,
+      pcId
+    );
+
+    expect(after).toBe(before - 4);
+  });
+
   test("executes a guaranteed failed Block from the real PC sheet and applies the incoming wound", async ({
     e2ePage: page
   }) => {
