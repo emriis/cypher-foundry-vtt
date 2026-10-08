@@ -113,6 +113,70 @@ test("rollTask refunds Effort cost on a natural 20 and reports attack damage", a
   assert.equal(globalThis.__rollMessages[0].flags.cypher.d20, 20);
 });
 
+
+test("successful PC attacks persist numeric damage on a targeted NPC", async () => {
+  setRollResult(15);
+  globalThis.__rollMessages = [];
+  const actor = createActor({ pool: 10 });
+  const target = {
+    id: "npc-1",
+    type: "npc",
+    system: {
+      armor: 2,
+      health: { value: 10, max: 10 }
+    },
+    updates: [],
+    async update(changes) {
+      this.updates.push(changes);
+      this.system.health.value = changes["system.health.value"];
+    }
+  };
+
+  const result = await CypherActor.prototype.rollTask.call(actor, {
+    stat: "might",
+    difficulty: 3,
+    isAttack: true,
+    baseDamage: 6,
+    targetActor: target
+  });
+
+  assert.equal(result.success, true);
+  assert.equal(result.damage, 6);
+  assert.equal(result.targetDamage, 4);
+  assert.equal(target.system.health.value, 6);
+  assert.deepEqual(target.updates, [
+    { "system.health.value": 6 }
+  ]);
+});
+
+test("successful PC attacks apply structured Armor penetration to NPC Health", async () => {
+  setRollResult(15);
+  const actor = createActor({ pool: 10 });
+  const target = {
+    id: "npc-2",
+    type: "npc",
+    system: {
+      armor: 4,
+      health: { value: 10, max: 10 }
+    },
+    async update(changes) {
+      this.system.health.value = changes["system.health.value"];
+    }
+  };
+
+  const result = await CypherActor.prototype.rollTask.call(actor, {
+    stat: "might",
+    difficulty: 3,
+    isAttack: true,
+    baseDamage: 6,
+    targetActor: target,
+    armorBypass: 2
+  });
+
+  assert.equal(result.targetDamage, 4);
+  assert.equal(target.system.health.value, 6);
+});
+
 test("rollTask carries resolved weapon target effects into the result and chat flags", async () => {
   let message;
   setRollResult(15);
