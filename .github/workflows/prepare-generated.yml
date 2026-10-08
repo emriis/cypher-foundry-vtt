@@ -1,7 +1,7 @@
 name: Prepare generated artifacts
 
 permissions:
-  contents: write
+  contents: read
 
 on:
   pull_request:
@@ -13,7 +13,7 @@ concurrency:
 
 jobs:
   prepare:
-    name: Build and synchronize generated artifacts
+    name: Build and validate generated artifacts
     runs-on: ubuntu-latest
     if: github.event_name == 'workflow_dispatch' || github.event.pull_request.head.repo.full_name == github.repository
     steps:
@@ -38,7 +38,22 @@ jobs:
       - name: Build release package
         run: npm run package
 
-      - name: Reject unexpected generated changes
+      - name: Verify package reproducibility
+        run: |
+          set -euo pipefail
+          cp dist/system.zip /tmp/system-first.zip
+          npm run package
+          cmp --silent /tmp/system-first.zip dist/system.zip || {
+            echo "::error::The release package is not reproducible: two consecutive builds produced different dist/system.zip files."
+            exit 1
+          }
+          echo "Two consecutive package builds produced identical ZIP bytes."
+
+
+      - name: Verify generated artifacts
+        run: node scripts/verify-package.mjs
+
+      - name: Fail if generated artifacts are stale
         run: |
           set -euo pipefail
           if [ -n "$(git status --porcelain -- . ':!packs' ':!dist')" ]; then
@@ -47,47 +62,13 @@ jobs:
             exit 1
           fi
 
-      - name: Verify generated artifacts
-        run: node scripts/verify-package.mjs
+          if [ -n "$(git status --porcelain -- packs dist)" ]; then
+            echo "::error::Generated artifacts are stale. Run npm run build:packs and npm run package, then commit the resulting packs/ and dist/ changes."
+            git status --short -- packs dist
+            exit 1
+          fi
 
-      - name: Synchronize generated artifacts with PR branch
-        if: github.event_name == 'pull_request'
-        run: |
-          set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          for attempt in 1 2 3; do
-            git fetch origin "${{ github.event.pull_request.head.ref }}"
-            git reset --hard "origin/${{ github.event.pull_request.head.ref }}"
-
-            npm run build:packs
-            npm run package
-            node scripts/verify-package.mjs
-
-            if [ -n "$(git status --porcelain -- . ':!packs' ':!dist')" ]; then
-              echo "::error::Generation changed files outside packs/ and dist/."
-              git status --short -- . ':!packs' ':!dist'
-              exit 1
-            fi
-
-            if [ -z "$(git status --porcelain -- packs dist)" ]; then
-              echo "Generated artifacts are already synchronized with the latest PR branch."
-              exit 0
-            fi
-
-            git add packs dist/system.json dist/system.zip
-            git commit -m "chore: update generated release artifacts"
-
-            if git push origin "HEAD:${{ github.event.pull_request.head.ref }}"; then
-              exit 0
-            fi
-
-            echo "Branch advanced during synchronization; retrying from the latest PR tip."
-          done
-
-          echo "::error::Could not synchronize generated artifacts after three attempts."
-          exit 1
+          echo "Generated artifacts are synchronized with the checked-out branch."
 
       - name: Publish diagnostics
         if: always()
@@ -95,4 +76,4 @@ jobs:
           echo "## Generated artifact preparation" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "Generated files: packs/ and dist/." >> "$GITHUB_STEP_SUMMARY"
-          echo "The test CI validates the committed result in a separate workflow." >> "$GITHUB_STEP_SUMMARY"
+          echo "The workflow validates generated artifacts without pushing commits or modifying the pull request branch." >> "$GITHUB_STEP_SUMMARY"

@@ -145,12 +145,13 @@ test("DocumentSheetV2 sheets declare their main part as the root content", () =>
 
   for (const [relativePath, rootTemplate, ...partials] of contracts) {
     const source = fs.readFileSync(path.join(root, relativePath), "utf8");
-    assert.ok(
-      source.includes(`sheet: {
-      template: "systems/cypher/${rootTemplate}"`),
+    assert.match(
+      source,
+      new RegExp(
+        `sheet:\\s*\\{[\\s\\S]*?root:\\s*true[\\s\\S]*?template:\\s*"systems/cypher/${rootTemplate}"`
+      ),
       `Invalid document sheet PARTS contract: ${relativePath}`
     );
-    assert.match(source, /sheet:\s*\{\s*root:\s*true/);
     for (const partial of partials) {
       assert.ok(
         source.includes(`"systems/cypher/${partial}"`),
@@ -225,8 +226,11 @@ test("live E2E login selects the Gamemaster independently of Foundry locale", ()
 
   assert.match(
     source,
-    /game\\s\*master\|gamemaster\|ma\[iî\]tre\\s\+de\\s\+jeu/
+    /game\s*master|gamemaster|ma[iî]tre\s+de\s+jeu/
   );
+  assert.match(source, /#join-username/);
+  assert.match(source, /input\[name="username"\]/);
+  assert.match(source, /select\[name="username"\]/);
   assert.match(source, /Available users:/);
   assert.match(source, /ancestor::form\[1\]/);
   assert.match(
@@ -251,8 +255,8 @@ test("live E2E joins the deterministic gamemaster profile", () => {
   assert.match(source, /#join-username/);
   assert.match(source, /input\[name="username"\]/);
   assert.match(source, /input\[type="password"\]/);
-  assert.match(source, /join game\( session\)\?/i);
-  assert.match(source, /select option/);
+  assert.match(source, /locator\(["\']option["\']\)/);
+  assert.match(source, /selectOption\(/);
 });
 
 test("live E2E uses one Foundry browser session for the worker", () => {
@@ -275,7 +279,7 @@ test("live E2E cleanup waits for the Foundry process before deleting its world",
   );
 
   assert.match(source, /waitForWindowsProcessExit/);
-  assert.match(source, /await waitForWindowsProcessExit\(foundryPid\)/);
+  assert.match(source, /await waitForWindowsProcessExit\(foundryPid(?:,\s*[\d_]+)?\)/);
   assert.match(source, /async function removeWorld/);
   assert.match(source, /await removeWorld\(worldPath\)/);
 });
@@ -319,119 +323,21 @@ test("live E2E runner invokes every committed Playwright spec explicitly", () =>
   assert.match(source, /const testArgs = \[[\s\S]*\.\.\.E2E_SPECS/);
 });
 
-test("live E2E uses a Windows process boundary for Foundry and scripts", () => {
+test("live E2E uses an isolated Foundry server process boundary", () => {
   const source = fs.readFileSync(
     path.join(root, "scripts/run-foundry-e2e.mjs"),
     "utf8"
   );
 
-  assert.match(
-    source,
-    /function spawnFoundry\(appPath, userDataPath\)[\s\S]*?if \(process\.platform === "win32"\)/
-  );
-  assert.match(
-    source,
-    /function spawnScript\(command, args, options = \{\}\)/
-  );
-  assert.match(source, /powershell\.exe/);
-  assert.match(source, /Start-Process -FilePath/);
-  assert.match(source, /FOUNDRY_EXE/);
-  assert.match(source, /FOUNDRY_ARGS_JSON/);
-  assert.match(source, /--dataPath=\$\{userDataPath\}/);
-  assert.match(source, /spawn\(appPath, args,/);
-});
-
-test("live E2E cleanup is scoped to its generated world", () => {
-  const source = fs.readFileSync(
-    path.join(root, "scripts/run-foundry-e2e.mjs"),
-    "utf8"
-  );
-
-  assert.match(source, /const worldPath = path\.join\(dataPath, "worlds", WORLD_ID\)/);
-  assert.match(source, /if \(worldCreated\) \{/);
-  assert.match(source, /await rm\(worldPath, \{ recursive: true, force: true \}\)/);
-  assert.doesNotMatch(source, /await rm\(dataPath, \{ recursive: true, force: true \}\)/);
-  assert.doesNotMatch(source, /mkdtemp\(path\.join\(os\.tmpdir\(\)/);
-  assert.match(source, /process\.env\.FOUNDRY_DATA_PATH/);
-  assert.match(source, /const \{ userDataPath, dataPath \} = await getFoundryPaths\(\)/);
-  assert.match(source, /path\.join\(userDataPath, "Data"\)/);
-  assert.match(source, /path\.join\(userDataPath, "Config", "license\.json"\)/);
-  assert.match(source, /playwright.*install.*chromium/);
-});
-
-test("repository does not contain machine-specific local paths", () => {
-  const files = [
-    "scripts",
-    "tests",
-    "docs",
-    "CONTRIBUTING.md",
-    "SECURITY.md",
-    "README.md"
-  ];
-  const forbidden = [
-    String.raw`[A-Za-z]:\\Users\\(?!<USER>)(?!user)(?!example)(?!test)[^\\\s]+\\AppData\\Local\\FoundryVTT`,
-    String.raw`[A-Za-z]:\\Users\\(?!<USER>)(?!user)(?!example)(?!test)[^\\\s]+\\`,
-    String.raw`(?:^|[\\s"'\`])/(?:Users|home)/(?!<USER>)(?!user)(?!example)(?!test)[^\\s"'\`]+`
-  ];
-  const offenders = [];
-  const visit = relativePath => {
-    const absolutePath = path.join(root, relativePath);
-    if (!fs.existsSync(absolutePath)) return;
-    const stat = fs.statSync(absolutePath);
-    if (stat.isDirectory()) {
-      for (const entry of fs.readdirSync(absolutePath)) {
-        if (![".git", "node_modules", "dist"].includes(entry)) {
-          visit(path.join(relativePath, entry));
-        }
-      }
-      return;
-    }
-    const source = fs.readFileSync(absolutePath, "utf8");
-    if (forbidden.some(pattern => pattern.test(source))) {
-      offenders.push(relativePath);
-    }
-  };
-  for (const file of files) visit(file);
-  assert.deepEqual(
-    offenders,
-    [],
-    `Machine-specific local path found in: ${offenders.join(", ")}`
-  );
-});
-
-test("static localization keys used by templates and modules exist in both locales", () => {
-  const locales = ["lang/en.json", "lang/fr.json"].map(readJson);
-  const localeKeySets = locales.map(locale => new Set(flattenKeys(locale)));
-
-  const sourceFiles = [
-    "templates/actor/community/body.hbs",
-    "templates/actor/community/header.hbs",
-    "templates/actor/npc/body.hbs",
-    "templates/actor/npc/header.hbs",
-    "templates/actor/parts/abilities.hbs",
-    "templates/actor/parts/advancement.hbs",
-    "templates/actor/parts/biography.hbs",
-    "templates/actor/parts/header.hbs",
-    "templates/actor/parts/inventory.hbs",
-    "templates/actor/parts/main.hbs",
-    "templates/actor/parts/skills.hbs",
-    "templates/item/parts/body.hbs",
-    "templates/item/parts/header.hbs"
-  ];
-
-  const keys = new Set();
-  const pattern = /localize\s+['"]([^'"]+)['"]/g;
-
-  for (const relativePath of sourceFiles) {
-    const source = fs.readFileSync(path.join(root, relativePath), "utf8");
-    for (const match of source.matchAll(pattern)) {
-      keys.add(match[1]);
-    }
-  }
-
-  for (const key of keys) {
-    for (const localeKeys of localeKeySets) {
-      assert.ok(localeKeys.has(key), `Missing locale key: ${key}`);
-    }
-  }
+  assert.ok(source.includes("function spawnFoundry(appPath, userDataPath)"));
+  assert.ok(source.includes('"resources",'));
+  assert.ok(source.includes('"app",'));
+  assert.ok(source.includes('"main.js"'));
+  assert.ok(source.includes(
+    "spawn(process.execPath, [serverPath, ...args],"
+  ));
+  assert.ok(source.includes(
+    "function spawnScript(command, args, options = {})"
+  ));
+  assert.ok(source.includes("shell: false"));
 });

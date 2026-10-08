@@ -58,9 +58,14 @@ for relative_path in "${required_paths[@]}"; do
   fi
 done
 
+# Normalize archive timestamps so repeated builds produce identical ZIP bytes.
+# Git checkout and staging-copy mtimes otherwise make every package appear changed.
+find "$staging_path" -exec touch -t 198001010000 {} +
+
 (
   cd "$staging_path"
-  zip -q -r -9 "$zip_path" .
+  # Stable ordering and no host-specific extra fields make the archive reproducible.
+  find . -type f -print | LC_ALL=C sort | zip -X -q -9 "$zip_path" -@
 )
 
 cp "$manifest_path" "$release_manifest_path"

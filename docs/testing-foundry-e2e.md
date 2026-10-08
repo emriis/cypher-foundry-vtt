@@ -101,9 +101,8 @@ repository.
 
 In particular, do not commit:
 
-- real Windows user-profile paths such as `C:\\Users\\<real-user>\\...`;
-- real Unix home-directory paths such as `/home/<real-user>/...` or
-  `/Users/<real-user>/...`;
+- real Windows user-profile paths or drive-qualified local paths;
+- real Unix home-directory paths or placeholders that resemble absolute user paths;
 - absolute Foundry installation or Data paths when they identify a developer's
   machine;
 - machine names, local network addresses, or other unnecessary environment
@@ -120,9 +119,9 @@ E2E runner this means:
 - the runner must delete only its generated
   `Data/worlds/cypher-e2e-<run-id>` directory.
 
-Examples and fixtures may use explicitly fictional paths such as
-`C:\\Users\\Test\\...` or `D:\\FoundryVTT\\Data`, but must never
-contain a contributor's real username or machine-specific path.
+Examples and fixtures must use abstract placeholders such as
+`<foundry-user-data>/Data` or `<foundry-installation>/Data`; they must never
+contain a contributor's username or a machine-specific path.
 
 The repository contains an automated contract test for this rule. If a local
 path is needed while debugging, keep it outside tracked files and outside the

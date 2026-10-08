@@ -52,6 +52,13 @@ try {
     }
   }
 
+  # Normalize timestamps so repeated builds produce identical ZIP metadata.
+  $fixedTimestamp = [DateTime]::new(1980, 1, 1, 0, 0, 0, [DateTimeKind]::Utc)
+  Get-ChildItem -LiteralPath $stagingPath -Recurse -Force | ForEach-Object {
+    $_.LastWriteTimeUtc = $fixedTimestamp
+  }
+  (Get-Item -LiteralPath $stagingPath).LastWriteTimeUtc = $fixedTimestamp
+
   Compress-Archive -Path (Join-Path $stagingPath "*") -DestinationPath $zipPath -CompressionLevel Optimal
   Copy-Item -LiteralPath $manifestPath -Destination $releaseManifestPath
 

@@ -1,5 +1,6 @@
 import { CYPHER } from "../config.mjs";
 import { resolveWeaponTargetEffects } from "../rules/weapon-mechanics.mjs";
+import { resolveWeaponSkillModifier } from "../rules/weapon-skills.mjs";
 
 /**
  * Foundry-aware Item use cases.
@@ -31,19 +32,24 @@ export async function rollAttack(item, {
   const freeWeaponFamilies = actor.system.freeWeaponFamilies ?? [];
   const freeWeaponSkillCategories = actor.system.freeWeaponSkillCategories ?? [];
   const selectedSkill = skillItemId ? actor.items.get(skillItemId) : null;
-  const practicedAttackSkill =
+  const matchingAttackSkill =
     item.system.attackSkillCategory
     && selectedSkill?.type === "skill"
     && selectedSkill.system.attackCategory === item.system.attackSkillCategory
-    && selectedSkill.system.level === "practiced";
+    ? selectedSkill
+    : null;
   const weaponIsFamiliar =
     item.system.freelyUsable
     || actor.system.canFreelyUseAllWeapons
     || freeWeaponCategories.includes(item.system.attackType)
     || freeWeaponFamilies.includes(item.system.weaponFamily)
-    || freeWeaponSkillCategories.includes(item.system.attackSkillCategory)
-    || practicedAttackSkill;
-  const weaponHinder = weaponIsFamiliar ? 0 : 1;
+    || freeWeaponSkillCategories.includes(item.system.attackSkillCategory);
+  const weaponSkillModifier = resolveWeaponSkillModifier({
+    familiar: weaponIsFamiliar,
+    skillLevel: matchingAttackSkill?.system.level ?? null
+  });
+  const weaponHinder = weaponSkillModifier < 0 ? Math.abs(weaponSkillModifier) : 0;
+  const weaponEase = weaponSkillModifier > 0 ? weaponSkillModifier : 0;
   const selectedTarget = target
     ?? (game.user?.targets?.size === 1
       ? [...game.user.targets][0]?.actor
@@ -59,7 +65,7 @@ export async function rollAttack(item, {
   return actor.rollTask({
     stat: item.system.stat, difficulty, effortLevels, assetSteps, skillItemId,
     isAttack: true, baseDamage, extraHinderSteps: weaponHinder,
-    extraEaseSteps: weaponEaseSteps, luckyShot, weaponTargetEffects,
+    extraEaseSteps: weaponEaseSteps + weaponEase, luckyShot, weaponTargetEffects,
     flavor: `${game.i18n.localize("CYPHER.Roll.Attack")}: ${item.name}`
   });
 }
