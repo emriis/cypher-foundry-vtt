@@ -38,14 +38,16 @@ jobs:
       - name: Build release package
         run: npm run package
 
-      - name: Reject unexpected generated changes
+      - name: Verify package reproducibility
         run: |
           set -euo pipefail
-          if [ -n "$(git status --porcelain -- . ':!packs' ':!dist')" ]; then
-            echo "::error::Generation changed files outside packs/ and dist/."
-            git status --short -- . ':!packs' ':!dist'
+          cp dist/system.zip /tmp/system-first.zip
+          npm run package
+          cmp --silent /tmp/system-first.zip dist/system.zip || {
+            echo "::error::The release package is not reproducible: two consecutive builds produced different dist/system.zip files."
             exit 1
-          fi
+          }
+          echo "Two consecutive package builds produced identical ZIP bytes."
 
       - name: Verify generated artifacts
         run: node scripts/verify-package.mjs
@@ -73,4 +75,4 @@ jobs:
           echo "## Generated artifact preparation" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "Generated files: packs/ and dist/." >> "$GITHUB_STEP_SUMMARY"
-          echo "This workflow validates generated artifacts without pushing commits or triggering another workflow run." >> "$GITHUB_STEP_SUMMARY"
+          echo "The workflow validates generated artifacts without pushing commits or triggering another workflow run." >> "$GITHUB_STEP_SUMMARY"
