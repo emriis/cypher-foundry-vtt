@@ -14,7 +14,8 @@ export default class CypherNPCSheet extends HandlebarsApplicationMixin(ActorShee
     position: { width: 600, height: 680 },
     window: { resizable: true, title: "CYPHER.Sheet.NPC" },
     actions: {
-      applyDamage: CypherNPCSheet.#onApplyDamage
+      applyDamage: CypherNPCSheet.#onApplyDamage,
+      rollNpcAttack: CypherNPCSheet.#onRollNpcAttack
     },
     form: { submitOnChange: true }
   };
@@ -58,6 +59,52 @@ export default class CypherNPCSheet extends HandlebarsApplicationMixin(ActorShee
    * @param {HTMLElement} target Action target supplied by Foundry.
    * @returns {Promise<void>}
    */
+  /**
+   * Starts a structured NPC attack against the single targeted PC.
+   *
+   * @param {Event} event Action event supplied by Foundry.
+   * @param {HTMLElement} target Action target supplied by Foundry.
+   * @returns {Promise<void>}
+   */
+  static async #onRollNpcAttack(event, target) {
+    const index = Number(target.dataset.attackIndex);
+    const attack = this.actor.system.attacks?.[index];
+    if (!attack) return;
+
+    const selectedTarget = game.user?.targets?.size === 1
+      ? [...game.user.targets][0]?.actor
+      : null;
+
+    if (selectedTarget?.type !== "pc") {
+      ui.notifications.warn(game.i18n.localize("CYPHER.NPC.SinglePCTarget"));
+      return;
+    }
+
+    const result = await foundry.applications.api.DialogV2.prompt({
+      window: { title: game.i18n.format("CYPHER.NPC.RollAttackTitle", { name: attack.name }) },
+      content: `
+        <div class="form-group">
+          <label>${game.i18n.localize("CYPHER.NPC.Defense")}</label>
+          <select name="defenseType">
+            <option value="dodge">${game.i18n.localize("CYPHER.Defense.Dodge")}</option>
+            <option value="block">${game.i18n.localize("CYPHER.Defense.Block")}</option>
+          </select>
+        </div>`,
+      ok: {
+        label: game.i18n.localize("CYPHER.NPC.RollAttack"),
+        callback: (event, button) => ({
+          defenseType: button.form.defenseType.value
+        })
+      }
+    });
+
+    if (!result) return;
+    await this.actor.rollNpcAttack(attack, {
+      target: selectedTarget,
+      defenseType: result.defenseType
+    });
+  }
+
   static async #onApplyDamage(event, target) {
     const content = `
       <div class="form-group">
