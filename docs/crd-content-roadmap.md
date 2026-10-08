@@ -243,10 +243,14 @@ structured data already present in the source packs.
 - [ ] Apply weapon target effects to persisted target state. This is blocked on
   defining an effect/status model and duration lifecycle; selection and chat
   flags alone are not application.
-- [ ] Define whether successful attacks automatically apply damage to the
-  selected NPC or require GM confirmation. This decision gates Armor penetration.
-- [ ] Consume `mechanics.ignoresPhysicalArmor` after the target-damage contract
-  is defined.
+- [x] Add structured NPC attack data for numeric, wound, and Pool damage, Armor
+  bypass, multiple wounds, and secondary-effect metadata.
+- [ ] Execute NPC wound/Pool attack damage against player targets. Keep this
+  separate from NPC Health damage and require a target-side application contract.
+- [x] Successful attacks automatically apply numeric damage to the selected NPC
+  target and persist Health changes.
+- [x] Consume `mechanics.ignoresPhysicalArmor` through a pure Armor-bypass rule
+  exactly once.
 - [ ] Implement range resolution after defining the target-token/scene-distance
   contract.
 - [ ] Close remaining stored-only weapon mechanics when their CRD semantics and
