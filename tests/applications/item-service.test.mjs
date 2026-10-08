@@ -118,6 +118,52 @@ test("rollAttack resolves target effects from the selected NPC level", async () 
   assert.deepEqual(received.weaponTargetEffects, item.system.mechanics.targetEffects);
 });
 
+
+test("rollAttack passes the selected NPC target and Armor bypass to task resolution", async () => {
+  let received;
+  globalThis.game = { i18n: { localize: value => value }, user: { targets: new Set() } };
+
+  const actor = {
+    system: {
+      freeWeaponCategories: [],
+      freeWeaponFamilies: [],
+      freeWeaponSkillCategories: [],
+      canFreelyUseAllWeapons: false
+    },
+    items: new Map(),
+    async rollTask(options) {
+      received = options;
+      return options;
+    }
+  };
+  const target = {
+    type: "npc",
+    system: { level: 4, armor: 4 }
+  };
+  const item = {
+    type: "attack",
+    name: "Armor Piercer",
+    actor,
+    system: {
+      damage: 6,
+      attackType: "heavy",
+      weaponFamily: "ranged",
+      attackSkillCategory: "ranged",
+      stat: "might",
+      freelyUsable: true,
+      mechanics: {
+        ignoresPhysicalArmor: 2,
+        targetEffects: []
+      }
+    }
+  };
+
+  await rollAttack(item, { target });
+
+  assert.equal(received.targetActor, target);
+  assert.equal(received.armorBypass, 2);
+});
+
 test("rollDepletion marks a depleting item and posts a rerollable result", async () => {
   let update;
   let message;
