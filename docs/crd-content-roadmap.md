@@ -205,9 +205,9 @@ The NPC Actor model is a generic, user-authored stat block rather than an
 extracted creature catalogue. Its schema covers level/target number, health,
 armor, damage, movement, modifications, description, motive, environment,
 combat, interaction, use, loot, GM Intrusion suggestions, and private GM notes.
-Damage remains a source-faithful free-text field for now: examples are needed
-before splitting wound severity, Pool damage, armor bypass, or multiple wounds
-into structured mechanics.
+Structured attacks now represent numeric, wound, and Pool damage, Armor bypass,
+multiple wounds, ranges/actions, and secondary-effect metadata. Descriptive
+combat prose remains available and is not parsed automatically.
 
 ### 9.3 Random tables
 
@@ -245,8 +245,9 @@ structured data already present in the source packs.
   flags alone are not application.
 - [x] Add structured NPC attack data for numeric, wound, and Pool damage, Armor
   bypass, multiple wounds, and secondary-effect metadata.
-- [ ] Execute NPC wound/Pool attack damage against player targets. Keep this
-  separate from NPC Health damage and require a target-side application contract.
+- [x] Execute structured NPC wound/Pool attack damage against player targets
+  through the player Defense contract. Numeric NPC damage remains an NPC Health
+  mechanic rather than a PC-side damage mode.
 - [x] Successful attacks automatically apply numeric damage to the selected NPC
   target and persist Health changes.
 - [x] Consume `mechanics.ignoresPhysicalArmor` through a pure Armor-bypass rule
@@ -262,7 +263,8 @@ structured data already present in the source packs.
 - [ ] Implement generic Cypher `rollTables` resolution.
 - [ ] Audit structured Cypher effects and implement source-backed runtime
   semantics where required.
-- [ ] Add unit, behavior, and E2E contracts for the resulting mechanics.
+- [x] Add unit, application, behavior, and live Foundry/E2E contracts for NPC
+  wound/Pool attack execution.
 
 ### 10.3 Verification
 
@@ -394,7 +396,7 @@ Completed families require, as applicable:
 - [x] Build the real Foundry/Playwright runner.
 - [x] Establish structured Ability runtime.
 - [x] Establish core equipment/attack runtime.
-- [ ] Close structured weapon mechanics.
+- [ ] Close remaining structured weapon mechanics.
 - [ ] Close generic Cypher variants/random tables.
 - [x] Audit structured weapon mechanics with an extracted/modelled/runtime-gap
   matrix.
