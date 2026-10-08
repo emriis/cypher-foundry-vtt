@@ -35,6 +35,8 @@ export async function rollDefense(
     effortLevels = 0,
     assetSteps = 0,
     incomingSeverity = "minor",
+    incomingWounds = 1,
+    applyIncomingWound = true,
     shieldItemId = null,
     skillItemId = null
   } = {}
@@ -55,6 +57,8 @@ export async function rollDefense(
     skillItemId,
     defenseType,
     incomingSeverity,
+    incomingWounds,
+    applyIncomingWound,
     shieldItemId,
     flavor: game.i18n.localize(
       defenseType === "block"
