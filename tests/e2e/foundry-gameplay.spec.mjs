@@ -485,6 +485,66 @@ test.describe("Cypher Foundry live gameplay", () => {
     }]);
   });
 
+
+  test("persists successful weapon damage to a targeted NPC Health value", async ({
+    e2ePage: page
+  }) => {
+    const result = await page.evaluate(async () => {
+      const pc = await Actor.create({
+        name: `E2E Damage PC ${Date.now()}`,
+        type: "pc",
+        system: {
+          stats: {
+            might: { pool: { max: 8, value: 8 }, edge: 0 },
+            speed: { pool: { max: 8, value: 8 }, edge: 0 },
+            intellect: { pool: { max: 8, value: 8 }, edge: 0 }
+          }
+        }
+      });
+      const npc = await Actor.create({
+        name: `E2E Damage NPC ${Date.now()}`,
+        type: "npc",
+        system: {
+          level: 3,
+          armor: 4,
+          health: { max: 10, value: 10 }
+        }
+      });
+
+      try {
+        const [attack] = await pc.createEmbeddedDocuments("Item", [{
+          name: "E2E Armor Piercer",
+          type: "attack",
+          system: {
+            attackType: "heavy",
+            damage: 6,
+            stat: "might",
+            freelyUsable: true,
+            mechanics: {
+              ignoresPhysicalArmor: 2,
+              targetEffects: []
+            }
+          }
+        }]);
+
+        await attack.rollAttack({ difficulty: 0, target: npc });
+
+        await foundry.utils.sleep(100);
+
+        return {
+          health: npc.system.health.value,
+          armor: npc.system.armor
+        };
+      } finally {
+        await npc.delete();
+        await pc.delete();
+      }
+    });
+
+    expect(result.armor).toBe(4);
+    expect(result.health).toBe(6);
+  });
+
   test("persists actor state after the sheet is closed and reopened", async ({
     e2ePage: page
   }) => {

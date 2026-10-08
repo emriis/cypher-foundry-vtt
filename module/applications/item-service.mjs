@@ -66,6 +66,8 @@ export async function rollAttack(item, {
     stat: item.system.stat, difficulty, effortLevels, assetSteps, skillItemId,
     isAttack: true, baseDamage, extraHinderSteps: weaponHinder,
     extraEaseSteps: weaponEaseSteps + weaponEase, luckyShot, weaponTargetEffects,
+    targetActor: selectedTarget,
+    armorBypass: item.system.mechanics?.ignoresPhysicalArmor ?? 0,
     flavor: `${game.i18n.localize("CYPHER.Roll.Attack")}: ${item.name}`
   });
 }

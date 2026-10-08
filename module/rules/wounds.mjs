@@ -1,4 +1,5 @@
 import { CYPHER } from "../config.mjs";
+import { resolveNpcHealthDamage } from "./npc-combat.mjs";
 
 /**
  * Resolve the damage that remains after NPC Armor.
@@ -7,8 +8,8 @@ import { CYPHER } from "../config.mjs";
  * @param {number} armor NPC Armor value.
  * @returns {number} Damage that reaches NPC Health.
  */
-export function resolveNpcDamage(amount, armor = 0) {
-  return Math.max(0, Number(amount) - Number(armor));
+export function resolveNpcDamage(amount, armor = 0, armorBypass = 0) {
+  return resolveNpcHealthDamage(amount, armor, armorBypass);
 }
 
 /**

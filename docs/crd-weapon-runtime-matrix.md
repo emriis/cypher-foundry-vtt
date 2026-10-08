@@ -23,7 +23,7 @@ present in an Item, copied to a chat flag, or shown in descriptive text.
 | Field | Current behavior | Status | Remaining work |
 | --- | --- | --- | --- |
 | `attackType` | Supplies default damage when explicit damage is falsy; light attacks receive one ease step. Weapon category also participates in weapon familiarity. | Runtime | Verify source-specific exceptions and zero-damage handling separately; do not change without CRD evidence. |
-| `damage` | Becomes the base damage for the task result. Successful attack damage is calculated and included in the roll result/chat flags. | Runtime result only | The attack workflow does not currently apply the result to a selected target's Health. Decide and test target-damage orchestration before describing attacks as fully automated. |
+| `damage` | Becomes the base damage for the task result. A successful attack against a selected NPC now persists numeric damage to the target Health after Armor mitigation. | Runtime | Wound/Pool target damage remains a separate contract. |
 | `stat` | Chooses the Pool and stat used for the attack task. | Runtime | None identified in this field audit. |
 | `range` | Persisted on the Item. | Stored only | Requires a reliable target token/distance and scene-grid contract, plus CRD-backed range adjudication. |
 | `extremeRange` | Persisted separately from normal range. | Stored only | Same target-distance and range-resolution gap as `range`. |
@@ -33,7 +33,7 @@ present in an Item, copied to a chat flag, or shown in descriptive text.
 | `properties` | Preserves CRD weapon-note text for display and fidelity. The runtime does not parse arbitrary prose. | Descriptive-only | Keep this source-facing text; automate only mechanics backed by structured fields and explicit rules. |
 | `mechanics.twoHanded` | Preserved in the Item model. It does not validate whether the actor can use the weapon one-handed or track occupied hands. | Stored only / model gap | Needs an explicit equipment-hand model and CRD-backed handling for using a two-handed weapon in one hand. |
 | `mechanics.rapidFire` | Preserved in the Item model. No distinct rapid-fire action or resolution path consumes it. | Stored only / rule gap | Identify the exact CRD rule and expected player workflow before implementing. Do not infer extra attacks or damage. |
-| `mechanics.ignoresPhysicalArmor` | Preserved in the Item model; not applied to NPC armor during attack resolution. | Stored only | Requires target-damage application to be defined first, then armor penetration must be applied exactly once. |
+| `mechanics.ignoresPhysicalArmor` | Numeric Armor bypass is passed from the weapon to the attack resolver and applied once against selected NPC Armor. | Runtime | Source-specific exceptions still require explicit modelling. |
 | `mechanics.cutsThroughMaterialsLevel` | Preserved in the Item model. | Stored only / model gap | Requires an interactable material/object model with levels and a CRD-backed resolution contract. |
 | `mechanics.targetEffects` | `resolveWeaponTargetEffects` filters effects by the selected NPC's level. Matching effects are carried into the task result and chat flags. | Resolved/presented | Not yet applied to target state. Requires a persisted target-effect/status model and lifecycle for effects such as losing the next action or being hindered for a duration. |
 | `mechanics.requiresTripod` | Preserved in the Item model. | Stored only / model gap | Requires deployment/positioning state and a rule for resolving attacks when the requirement is unmet. |
@@ -49,9 +49,9 @@ present in an Item, copied to a chat flag, or shown in descriptive text.
   valid level, no level-gated effects are selected.
 - Matching target effects are attached to the roll message as data. This is not
   equivalent to applying an effect to the target.
-- Core attack resolution computes damage, but `rollAttack` does not currently
-  apply that damage to the selected target. Do not treat NPC damage, armor
-  penetration, and target-effect application as completed automation.
+- Core attack resolution computes damage and now persists successful numeric damage
+  to a selected NPC target, including the declared physical Armor bypass. Target
+  effects remain resolved/presented until a persisted effect lifecycle exists.
 
 ## Recommended implementation order
 

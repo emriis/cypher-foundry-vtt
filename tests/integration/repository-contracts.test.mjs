@@ -175,7 +175,8 @@ test("NPC model and sheet expose the core GM guide stat-block categories", () =>
   );
 
   for (const field of [
-    "level", "health", "armor", "damage", "movement", "modifications",
+    "level", "health", "armor", "damage", "attacks", "movement", "modifications",
+    "modificationsStructured",
     "description", "motive", "environment", "combat", "interaction", "use",
     "loot", "gmIntrusion", "gmNotes"
   ]) {
@@ -195,6 +196,21 @@ test("NPC model and sheet expose the core GM guide stat-block categories", () =>
   assert.match(model, /get targetNumber\(\)\s*\{\s*return this\.level \* 3;/);
 });
  
+
+test("NPC structured combat data exposes numeric, wound, and Pool damage modes", () => {
+  const model = fs.readFileSync(
+    path.join(root, "module/data-models/actor-npc.mjs"),
+    "utf8"
+  );
+
+  assert.match(model, /attacks:\s*new ArrayField\(new SchemaField/);
+  assert.match(model, /mode:\s*new StringField\([\s\S]*choices:\s*\["numeric", "wound", "pool"\]/);
+  assert.match(model, /ignoresArmor:\s*new NumberField/);
+  assert.match(model, /wounds:\s*new NumberField/);
+  assert.match(model, /effects:\s*new ArrayField\(new SchemaField/);
+  assert.match(model, /modificationsStructured:\s*new ArrayField\(new SchemaField/);
+});
+
 test("live E2E requires Chromium 146 or newer", () => {
   const packageJson = readJson("package.json");
   assert.equal(

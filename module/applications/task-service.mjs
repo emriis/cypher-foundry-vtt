@@ -2,6 +2,7 @@ import { CYPHER } from "../config.mjs";
 import { spendXP } from "./character-service.mjs";
 import {
   addWound,
+  applyNpcDamage,
   reduceWound,
   shieldAbsorbWound
 } from "./damage-service.mjs";
@@ -88,7 +89,8 @@ export async function rollTask(actor, {
     skillItemId = null, isAttack = false, baseDamage = 0, flavor = "",
     extraHinderSteps = 0, extraEaseSteps = 0, luckyShot = false,
     specialEffectChoice = null, weaponTargetEffects = [],
-    defenseType = null, incomingSeverity = "minor", armorModifier = 0, shieldItemId = null
+    defenseType = null, incomingSeverity = "minor", armorModifier = 0, shieldItemId = null,
+    targetActor = null, armorBypass = 0
   } = {}) {
     if (actor.type !== "pc") {
       ui.notifications.warn(game.i18n.localize("CYPHER.Warning.NotPC"));
@@ -269,10 +271,22 @@ export async function rollTask(actor, {
           effectiveDifficulty,
           isAttack,
           baseDamage,
-          weaponTargetEffects
+          weaponTargetEffects,
+          targetActorId: targetActor?.type === "npc" ? targetActor.id : null,
+          armorBypass
         }
       }
     });
+
+    // A successful PC attack can persist numeric damage on a selected NPC.
+    // Target range/effects remain separate concerns until their source-backed
+    // runtime contracts are implemented.
+    let targetDamage = 0;
+    if (isAttack && success && targetActor?.type === "npc" && totalDamage > 0) {
+      targetDamage = await applyNpcDamage(targetActor, totalDamage, {
+        armorBypass
+      });
+    }
 
     // Resolve the wound based on the defense result.
     if (defenseType) {
@@ -297,6 +311,7 @@ export async function rollTask(actor, {
       targetNumber,
       effectiveDifficulty,
       damage: totalDamage,
+      targetDamage,
       weaponTargetEffects,
       specialEffectOptions: special.effectOptions
     };
