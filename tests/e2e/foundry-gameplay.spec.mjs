@@ -584,7 +584,7 @@ test.describe("Cypher Foundry live gameplay", () => {
 
         await attack.rollAttack({ difficulty: 0, target: npc });
 
-        await foundry.utils.sleep(100);
+        await new Promise(resolve => setTimeout(resolve, 100));
 
         return {
           health: npc.system.health.value,
