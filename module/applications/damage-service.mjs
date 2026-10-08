@@ -88,7 +88,8 @@ export async function addWound(actor, severity) {
  * @param {object} [options={}] Damage options.
  * @param {string|null} [options.severity=null] Explicit wound severity.
  * @param {string|null} [options.stat=null] PC Pool to damage directly.
- * @param {boolean} [options.ignoreArmor=false] Ignore NPC armor.
+ * @param {boolean} [options.ignoreArmor=false] Ignore all NPC Armor (legacy option).
+ * @param {number} [options.armorBypass=0] Points of NPC Armor ignored.
  * @returns {Promise<number|undefined>} NPC damage actually dealt, when applicable.
  */
 export async function applyDamage(
@@ -97,7 +98,7 @@ export async function applyDamage(
   { severity = null, stat = null, ignoreArmor = false } = {}
 ) {
   if (actor.type !== "pc") {
-    return applyNpcDamage(actor, amount, { ignoreArmor });
+    return applyNpcDamage(actor, amount, { ignoreArmor, armorBypass });
   }
 
   if (stat) {
@@ -129,16 +130,21 @@ export async function applyDamage(
  * @param {Actor} actor NPC receiving damage.
  * @param {number} amount Raw damage amount.
  * @param {object} [options={}] Damage options.
- * @param {boolean} [options.ignoreArmor=false] Whether to bypass armor.
+ * @param {boolean} [options.ignoreArmor=false] Whether to bypass all Armor.
+ * @param {number} [options.armorBypass=0] Points of Armor ignored.
  * @returns {Promise<number|undefined>} Damage actually applied.
  */
 export async function applyNpcDamage(
   actor,
   amount,
-  { ignoreArmor = false } = {}
+  { ignoreArmor = false, armorBypass = 0 } = {}
 ) {
-  const armor = ignoreArmor ? 0 : (actor.system.armor ?? 0);
-  const finalDamage = resolveNpcDamage(amount, armor);
+  const armor = actor.system.armor ?? 0;
+  const finalDamage = resolveNpcDamage(
+    amount,
+    armor,
+    ignoreArmor ? Number.MAX_SAFE_INTEGER : armorBypass
+  );
   const health = actor.system.health;
 
   if (!health) return;
