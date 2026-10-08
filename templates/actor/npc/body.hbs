@@ -1,6 +1,17 @@
 {{!-- NPC statistics and descriptive sections; input names map directly to Actor system fields. --}}
 <section class="npc-body">
+  <div class="npc-section">
+    <h3>{{localize 'CYPHER.NPC.Description'}}</h3>
+    <prose-mirror name="system.description" value="{{system.description}}"></prose-mirror>
+  </div>
+
   <div class="npc-stats-row">
+    <label>{{localize 'CYPHER.NPC.Motive'}}
+      <input name="system.motive" type="text" value="{{system.motive}}"/>
+    </label>
+    <label>{{localize 'CYPHER.NPC.Environment'}}
+      <input name="system.environment" type="text" value="{{system.environment}}"/>
+    </label>
     <label>{{localize 'CYPHER.Armor.Title'}}
       <input name="system.armor" type="number" value="{{system.armor}}" min="0"/>
     </label>
@@ -34,6 +45,11 @@
   <div class="npc-section">
     <h3>{{localize 'CYPHER.NPC.Loot'}}</h3>
     <prose-mirror name="system.loot" value="{{system.loot}}"></prose-mirror>
+  </div>
+
+  <div class="npc-section">
+    <h3>{{localize 'CYPHER.NPC.GMIntrusion'}}</h3>
+    <prose-mirror name="system.gmIntrusion" value="{{system.gmIntrusion}}"></prose-mirror>
   </div>
 
   <div class="npc-section gm-notes">
