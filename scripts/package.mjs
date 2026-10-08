@@ -1,9 +1,24 @@
-import { spawn } from "node:child_process";
+import { spawn, spawnSync } from "node:child_process";
 
-const command = process.platform === "win32"
-  ? ["pwsh", ["-File", "scripts/package.ps1"]]
-  : ["bash", ["scripts/package.sh"]];
+function commandForPlatform() {
+  if (process.platform !== "win32") {
+    return ["bash", ["scripts/package.sh"]];
+  }
 
+  // Git for Windows normally provides bash.exe. Prefer the same packaging
+  // implementation used by CI so Windows builds produce identical ZIP bytes.
+  const bashCheck = spawnSync("bash", ["--version"], {
+    stdio: "ignore",
+    shell: false
+  });
+  if (bashCheck.status === 0) {
+    return ["bash", ["scripts/package.sh"]];
+  }
+
+  return ["pwsh", ["-File", "scripts/package.ps1"]];
+}
+
+const command = commandForPlatform();
 const child = spawn(command[0], command[1], {
   stdio: "inherit",
   shell: false
