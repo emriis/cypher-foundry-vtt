@@ -279,7 +279,7 @@ test("live E2E cleanup waits for the Foundry process before deleting its world",
   );
 
   assert.match(source, /waitForWindowsProcessExit/);
-  assert.match(source, /await waitForWindowsProcessExit\(foundryPid(?:,\s*\d+)?\)/);
+  assert.match(source, /await waitForWindowsProcessExit\(foundryPid(?:,\s*[\d_]+)?\)/);
   assert.match(source, /async function removeWorld/);
   assert.match(source, /await removeWorld\(worldPath\)/);
 });
