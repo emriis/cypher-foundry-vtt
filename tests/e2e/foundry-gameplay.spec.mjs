@@ -221,6 +221,12 @@ test.describe("Cypher Foundry live gameplay", () => {
         type: "npc",
         system: {
           level: 10,
+          health: { max: 30, value: 30 },
+          description: "",
+          motive: "",
+          environment: "",
+          armor: 0,
+          damage: "",
           attacks: [{
             name: "Mind Blast",
             range: "Short",
@@ -235,9 +241,23 @@ test.describe("Cypher Foundry live gameplay", () => {
             },
             effects: [],
             description: ""
-          }]
+          }],
+          modificationsStructured: [],
+          movement: "",
+          modifications: "",
+          combat: "",
+          interaction: "",
+          use: "",
+          loot: "",
+          gmIntrusion: "",
+          gmNotes: ""
         }
       });
+
+      if (!actor) {
+        throw new Error("Failed to create E2E NPC actor");
+      }
+
       return actor.id;
     }, ACTOR_PREFIX);
 
