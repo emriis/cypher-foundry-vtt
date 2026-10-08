@@ -107,6 +107,25 @@ test("applyDamage converts direct damage and NPC damage correctly", async () => 
   assert.equal(npc.system.health.value, 7);
 });
 
+test("applyNpcDamage applies partial Armor bypass exactly once", async () => {
+  const npc = {
+    type: "npc",
+    system: {
+      armor: 4,
+      health: { value: 10, max: 10 }
+    },
+    async update(changes) {
+      this.system.health.value = changes["system.health.value"];
+    }
+  };
+
+  assert.equal(
+    await applyDamage(npc, 6, { armorBypass: 2 }),
+    4
+  );
+  assert.equal(npc.system.health.value, 6);
+});
+
 test("damageArmor caps accumulated Block damage at the armor base bonus", async () => {
   globalThis.game = {
     i18n: {
