@@ -53,3 +53,38 @@ export function canApplyNpcHealthDamage(attack = {}) {
   const damage = normalizeNpcAttackDamage(attack);
   return damage.mode === "numeric" && damage.amount > 0;
 }
+
+
+/**
+ * Resolve the target-side contract for a structured NPC attack.
+ *
+ * Numeric damage targets NPC Health and is intentionally not valid here.
+ * Wound damage maps to the existing PC wound track; Pool damage requires an
+ * explicit PC Pool stat. Secondary effects remain outside this contract.
+ *
+ * @param {object} attack Structured NPC attack.
+ * @returns {object|null} Target-side damage contract, or null when unsupported.
+ */
+export function resolveNpcAttackTargetDamage(attack = {}) {
+  const damage = normalizeNpcAttackDamage(attack);
+
+  if (damage.mode === "wound") {
+    if (!damage.severity) return null;
+    return {
+      mode: damage.mode,
+      severity: damage.severity,
+      wounds: damage.wounds
+    };
+  }
+
+  if (damage.mode === "pool") {
+    if (!damage.stat || damage.amount <= 0) return null;
+    return {
+      mode: damage.mode,
+      amount: damage.amount,
+      stat: damage.stat
+    };
+  }
+
+  return null;
+}
