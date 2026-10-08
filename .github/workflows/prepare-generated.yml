@@ -49,6 +49,13 @@ jobs:
           }
           echo "Two consecutive package builds produced identical ZIP bytes."
 
+      - name: Upload generated package for synchronization
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-system-package
+          path: dist/system.zip
+          if-no-files-found: error
+
       - name: Verify generated artifacts
         run: node scripts/verify-package.mjs
 
