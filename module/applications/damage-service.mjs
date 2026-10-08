@@ -95,7 +95,7 @@ export async function addWound(actor, severity) {
 export async function applyDamage(
   actor,
   amount,
-  { severity = null, stat = null, ignoreArmor = false } = {}
+  { severity = null, stat = null, ignoreArmor = false, armorBypass = 0 } = {}
 ) {
   if (actor.type !== "pc") {
     return applyNpcDamage(actor, amount, { ignoreArmor, armorBypass });
