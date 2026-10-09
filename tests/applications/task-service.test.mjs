@@ -212,6 +212,56 @@ test("rollTask carries resolved weapon target effects into the result and chat f
   assert.deepEqual(message.flags.cypher.weaponTargetEffects, weaponTargetEffects);
 });
 
+
+test("successful attacks persist resolved target effects on the NPC", async () => {
+  setRollResult(15);
+  const actor = createActor();
+  const target = {
+    id: "npc-effects",
+    type: "npc",
+    system: { armor: 0, health: { value: 10, max: 10 } },
+    flags: { cypherFoundry: { activeWeaponEffects: [] } },
+    async update(changes) {
+      for (const [path, value] of Object.entries(changes)) {
+        const parts = path.split(".");
+        let cursor = this;
+        for (const part of parts.slice(0, -1)) {
+          cursor[part] ??= {};
+          cursor = cursor[part];
+        }
+        cursor[parts.at(-1)] = value;
+      }
+    }
+  };
+  const effects = [{
+    minimumTargetLevel: 0,
+    maximumTargetLevel: null,
+    effect: "hindered",
+    hinderSteps: 1,
+    duration: "one round"
+  }];
+
+  await CypherActor.prototype.rollTask.call(actor, {
+    stat: "might",
+    difficulty: 3,
+    isAttack: true,
+    baseDamage: 4,
+    targetActor: target,
+    weaponTargetEffects: effects,
+    weaponSource: { itemId: "weapon-1", itemName: "Shock Rifle" }
+  });
+
+  assert.equal(target.flags.cypherFoundry.activeWeaponEffects.length, 1);
+  assert.equal(
+    target.flags.cypherFoundry.activeWeaponEffects[0].sourceItemId,
+    "weapon-1"
+  );
+  assert.equal(
+    target.flags.cypherFoundry.activeWeaponEffects[0].effect,
+    "hindered"
+  );
+});
+
 test("rollTask refuses insufficient Pool before rolling or spending", async () => {
   let evaluated = false;
   globalThis.Roll = class {

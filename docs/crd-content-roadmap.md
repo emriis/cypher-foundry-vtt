@@ -240,9 +240,10 @@ structured data already present in the source packs.
 - [x] Audit every structured weapon `range`, `properties`, and `mechanics`
   field and classify it as runtime, descriptive-only, resolved/presented, or
   model-gap in [the weapon runtime matrix](crd-weapon-runtime-matrix.md).
-- [ ] Apply weapon target effects to persisted target state. This is blocked on
-  defining an effect/status model and duration lifecycle; selection and chat
-  flags alone are not application.
+- [x] Persist matching weapon target effects on NPCs and resolve supported
+  `hindered` and `loseNextAction` effects through NPC attacks. Declared
+  `one round` and `next action` durations have lifecycle handling and
+  application/E2E coverage.
 - [x] Add structured NPC attack data for numeric, wound, and Pool damage, Armor
   bypass, multiple wounds, and secondary-effect metadata.
 - [x] Execute structured NPC wound/Pool attack damage against player targets
@@ -258,9 +259,9 @@ structured data already present in the source packs.
   required state models are explicit.
 - [ ] Verify all structured granted Type/Focus benefits in gameplay, including
   granted armor categories.
-- [ ] Implement generic Cypher `variants` resolution.
+- [x] Implement generic Cypher `variants` resolution.
 - [ ] Implement generic Cypher `randomRange` resolution.
-- [ ] Implement generic Cypher `rollTables` resolution.
+- [x] Implement generic Cypher `rollTables` resolution.
 - [ ] Audit structured Cypher effects and implement source-backed runtime
   semantics where required.
 - [x] Add unit, application, behavior, and live Foundry/E2E contracts for NPC

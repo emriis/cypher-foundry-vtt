@@ -130,3 +130,74 @@ test("successful NPC Pool attack does not damage the PC", async () => {
   assert.equal(result.targetDamage, 0);
   assert.equal(target.system.stats.intellect.pool.value, 8);
 });
+
+
+function createNpc(activeWeaponEffects = []) {
+  return {
+    type: "npc",
+    system: { level: 3 },
+    flags: { cypherFoundry: { activeWeaponEffects } },
+    updates: [],
+    async update(changes) {
+      this.updates.push(changes);
+      for (const [path, value] of Object.entries(changes)) {
+        const parts = path.split(".");
+        let cursor = this;
+        for (const part of parts.slice(0, -1)) {
+          cursor[part] ??= {};
+          cursor = cursor[part];
+        }
+        cursor[parts.at(-1)] = value;
+      }
+    }
+  };
+}
+
+test("a hindered NPC attacks at the reduced structured difficulty", async () => {
+  setRollResult(8);
+  const target = createTarget();
+  const npc = createNpc([{
+    id: "hindered",
+    effect: "hindered",
+    hinderSteps: 1,
+    duration: "one round",
+    combatId: "combat-1",
+    combatRound: 1
+  }]);
+  globalThis.game.combat = { id: "combat-1", round: 1 };
+
+  const result = await rollNpcAttack(
+    npc,
+    { name: "Claw", damage: { mode: "pool", amount: 4, stat: "might" } },
+    { target, defenseType: "dodge" }
+  );
+
+  assert.equal(result.defense.effectiveDifficulty, 2);
+});
+
+test("an NPC that loses its next action cannot attack and consumes that effect", async () => {
+  let evaluated = false;
+  globalThis.Roll = class {
+    async evaluate() {
+      evaluated = true;
+      this.total = 10;
+      return this;
+    }
+  };
+  const target = createTarget();
+  const npc = createNpc([{
+    id: "lost-action",
+    effect: "loseNextAction",
+    duration: "next action"
+  }]);
+
+  const result = await rollNpcAttack(
+    npc,
+    { name: "Claw", damage: { mode: "pool", amount: 4, stat: "might" } },
+    { target, defenseType: "dodge" }
+  );
+
+  assert.equal(result, null);
+  assert.equal(evaluated, false);
+  assert.deepEqual(npc.flags.cypherFoundry.activeWeaponEffects, []);
+});

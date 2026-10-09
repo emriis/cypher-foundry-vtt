@@ -1,6 +1,11 @@
 import { addWound, applyDamage } from "./damage-service.mjs";
 import { rollDefense } from "./task-service.mjs";
 import { resolveNpcAttackTargetDamage } from "../rules/npc-combat.mjs";
+import {
+  expireWeaponEffectsAfterAction,
+  expireWeaponEffectsOutsideCurrentRound,
+  getActiveWeaponEffects
+} from "./weapon-effect-service.mjs";
 
 /**
  * Execute a structured NPC attack against a player character.
@@ -36,6 +41,19 @@ export async function rollNpcAttack(
 
   if (!["block", "dodge"].includes(defenseType)) return null;
 
+  await expireWeaponEffectsOutsideCurrentRound(actor);
+  const targetEffects = getActiveWeaponEffects(actor);
+  if (targetEffects.some(effect => effect.effect === "loseNextAction")) {
+    ui.notifications.warn(game.i18n.localize("CYPHER.NPC.LostNextAction"));
+    await expireWeaponEffectsAfterAction(actor);
+    return null;
+  }
+
+  const hinderSteps = targetEffects
+    .filter(effect => effect.effect === "hindered")
+    .reduce((total, effect) => total + Math.max(0, effect.hinderSteps ?? 0), 0);
+  const effectiveLevel = Math.max(0, actor.system.level - hinderSteps);
+
   const damage = resolveNpcAttackTargetDamage(attack);
   if (!damage) {
     ui.notifications.warn(game.i18n.localize("CYPHER.NPC.UnsupportedAttackDamage"));
@@ -43,12 +61,13 @@ export async function rollNpcAttack(
   }
 
   const defense = await rollDefense(selectedTarget, defenseType, {
-    difficulty: actor.system.level,
+    difficulty: effectiveLevel,
     incomingSeverity: damage.mode === "wound" ? damage.severity : "minor",
     incomingWounds: damage.mode === "wound" ? damage.wounds : 1,
     applyIncomingWound: damage.mode === "wound"
   });
 
+  await expireWeaponEffectsAfterAction(actor);
   if (!defense) return null;
 
   let targetDamage = 0;

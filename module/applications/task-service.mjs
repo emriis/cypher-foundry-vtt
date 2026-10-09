@@ -18,6 +18,7 @@ import {
 import { resolveStat } from "../rules/stats.mjs";
 import { resolveDefense } from "../rules/defense.mjs";
 import { resolveActiveAbilityModifiers } from "../rules/ability-modifiers.mjs";
+import { applyWeaponTargetEffects } from "./weapon-effect-service.mjs";
 
 /**
  * Roll a Block or Dodge defense through the common task engine.
@@ -92,7 +93,7 @@ export async function rollTask(actor, {
     stat = "might", difficulty = 3, effortLevels = 0, assetSteps = 0,
     skillItemId = null, isAttack = false, baseDamage = 0, flavor = "",
     extraHinderSteps = 0, extraEaseSteps = 0, luckyShot = false,
-    specialEffectChoice = null, weaponTargetEffects = [],
+    specialEffectChoice = null, weaponTargetEffects = [], weaponSource = {},
     defenseType = null, incomingSeverity = "minor", armorModifier = 0, shieldItemId = null,
     targetActor = null, armorBypass = 0, incomingWounds = 1,
     applyIncomingWound = true
@@ -283,14 +284,19 @@ export async function rollTask(actor, {
       }
     });
 
-    // A successful PC attack can persist numeric damage on a selected NPC.
-    // Target range/effects remain separate concerns until their source-backed
-    // runtime contracts are implemented.
+    // Apply target-side consequences only after a successful attack.
     let targetDamage = 0;
-    if (isAttack && success && targetActor?.type === "npc" && totalDamage > 0) {
-      targetDamage = await applyNpcDamage(targetActor, totalDamage, {
-        armorBypass
-      });
+    if (isAttack && success && targetActor?.type === "npc") {
+      if (totalDamage > 0) {
+        targetDamage = await applyNpcDamage(targetActor, totalDamage, {
+          armorBypass
+        });
+      }
+      await applyWeaponTargetEffects(
+        targetActor,
+        weaponTargetEffects,
+        weaponSource
+      );
     }
 
     // Resolve the wound based on the defense result.
