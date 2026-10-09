@@ -24,6 +24,11 @@ function createNpc(effects = []) {
       }
       target[parts.at(-1)] = value;
     }
+    async setFlag(scope, key, value) {
+      this.updates.push({ flagScope: scope, flagKey: key, flagValue: value });
+      this.flags[scope] ??= {};
+      this.flags[scope][key] = value;
+    }
   };
 }
 
