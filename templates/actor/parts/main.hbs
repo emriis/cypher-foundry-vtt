@@ -254,7 +254,14 @@
             </button>
             {{/if}}
             {{#if item.system.rollTables.length}}
-              {{#each item.system.rollTables as |table|}}
+              {{#if item.system.variants.length}}
+          <button type="button" data-action="rollCypherVariant"
+            data-item-id="{{item.id}}" title="{{localize 'CYPHER.Roll.Roll'}}"
+            {{#if item.system.depleted}}disabled{{/if}}>
+            <i class="fa-solid fa-dice"></i> {{localize "CYPHER.Roll.Roll"}}
+          </button>
+          {{/if}}
+          {{#each item.system.rollTables as |table|}}
               <button type="button" class="pc-primary-action" data-action="rollAbilityTable"
                 data-table-id="{{table.id}}">
                 <i class="fa-solid fa-dice"></i> {{table.name}}
