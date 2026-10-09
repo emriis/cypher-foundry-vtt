@@ -261,12 +261,26 @@ test.describe("Cypher Foundry live gameplay", () => {
     await page.evaluate(async ({ npcId, pcId }) => {
       const npc = game.actors.get(npcId);
       const target = game.actors.get(pcId);
+      if (npc.system.level !== 10) {
+        throw new Error(
+          `Expected NPC level 10, received ${npc.system.level}`
+        );
+      }
+
       const result = await npc.rollNpcAttack(npc.system.attacks[0], {
         target,
         defenseType: "dodge"
       });
       if (!result || result.defense.success) {
-        throw new Error("Expected the level-10 NPC attack to fail the PC Dodge.");
+        throw new Error(
+          `Expected the level-10 NPC attack to fail the PC Dodge; `
+          + `result=${JSON.stringify(result && {
+            success: result.defense?.success,
+            d20: result.defense?.roll?.total,
+            difficulty: result.defense?.effectiveDifficulty,
+            targetNumber: result.defense?.targetNumber
+          })}`
+        );
       }
     }, { npcId, pcId });
 
@@ -526,13 +540,6 @@ test.describe("Cypher Foundry live gameplay", () => {
         if (!stunstick) throw new Error("Stunstick not found in equipment-en");
 
         const attack = await Item.create(stunstick.toObject(), { parent: pc });
-        const armorBypass = attack.system.mechanics.ignoresPhysicalArmor;
-        if (armorBypass !== 2) {
-          throw new Error(
-            `Expected persisted Armor bypass 2, received ${armorBypass}`
-          );
-        }
-
         await attack.rollAttack({ difficulty: 0, target: npc });
 
         const message = [...game.messages]
@@ -610,6 +617,13 @@ test.describe("Cypher Foundry live gameplay", () => {
             }
           }
         }]);
+
+        const armorBypass = attack.system.mechanics.ignoresPhysicalArmor;
+        if (armorBypass !== 2) {
+          throw new Error(
+            `Expected persisted Armor bypass 2, received ${armorBypass}`
+          );
+        }
 
         await attack.rollAttack({ difficulty: 0, target: npc });
 
