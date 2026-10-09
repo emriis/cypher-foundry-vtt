@@ -576,9 +576,23 @@ test.describe("Cypher Foundry live gameplay", () => {
           .reverse()
           .find(entry => entry.getFlag("cypher", "rollType") === "task");
 
+        const activeEffects = foundry.utils.deepClone(
+          npc.flags.cypherFoundry?.activeWeaponEffects ?? []
+        );
+        const blockedAttack = await npc.rollNpcAttack({
+          name: "E2E follow-up",
+          damage: { mode: "pool", amount: 1, stat: "might" }
+        }, { target: pc, defenseType: "dodge" });
+        const remainingEffects = foundry.utils.deepClone(
+          npc.flags.cypherFoundry?.activeWeaponEffects ?? []
+        );
+
         return {
           targetLevel: npc.system.level,
-          targetEffects: message?.getFlag("cypher", "weaponTargetEffects")
+          targetEffects: message?.getFlag("cypher", "weaponTargetEffects"),
+          activeEffects,
+          blockedAttack: blockedAttack === null,
+          remainingEffects
         };
       } finally {
         await npc.delete();
@@ -594,6 +608,11 @@ test.describe("Cypher Foundry live gameplay", () => {
       hinderSteps: 0,
       duration: "next action"
     }]);
+    expect(result.activeEffects).toHaveLength(1);
+    expect(result.activeEffects[0].effect).toBe("loseNextAction");
+    expect(result.activeEffects[0].sourceItemName).toBe("Stunstick");
+    expect(result.blockedAttack).toBe(true);
+    expect(result.remainingEffects).toEqual([]);
   });
 
 
