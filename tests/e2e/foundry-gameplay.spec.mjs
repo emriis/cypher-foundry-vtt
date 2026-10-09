@@ -230,6 +230,7 @@ test.describe("Cypher Foundry live gameplay", () => {
       }
 
       await actor.update({
+        "system.level": 10,
         "system.health.max": 30,
         "system.health.value": 30,
         "system.attacks": [{
@@ -525,6 +526,13 @@ test.describe("Cypher Foundry live gameplay", () => {
         if (!stunstick) throw new Error("Stunstick not found in equipment-en");
 
         const attack = await Item.create(stunstick.toObject(), { parent: pc });
+        const armorBypass = attack.system.mechanics.ignoresPhysicalArmor;
+        if (armorBypass !== 2) {
+          throw new Error(
+            `Expected persisted Armor bypass 2, received ${armorBypass}`
+          );
+        }
+
         await attack.rollAttack({ difficulty: 0, target: npc });
 
         const message = [...game.messages]
@@ -587,8 +595,18 @@ test.describe("Cypher Foundry live gameplay", () => {
             stat: "might",
             freelyUsable: true,
             mechanics: {
+              twoHanded: false,
+              rapidFire: false,
               ignoresPhysicalArmor: 2,
-              targetEffects: []
+              cutsThroughMaterialsLevel: null,
+              targetEffects: [],
+              requiresTripod: false,
+              requiredOperators: 0,
+              alternateConfiguration: {
+                enabled: false,
+                attackType: "",
+                action: ""
+              }
             }
           }
         }]);
