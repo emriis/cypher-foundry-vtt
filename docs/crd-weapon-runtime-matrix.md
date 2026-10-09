@@ -42,7 +42,7 @@ present in an Item, copied to a chat flag, or shown in descriptive text.
 
 ## Existing runtime contracts
 
-- Weapon range is not inferred from token coordinates. The attack dialog exposes a GM-only explicit extreme-range declaration; when selected, the task receives one additional hindrance step and records the declared normal/extreme range in the chat flags. This records the adjudication without claiming an automatic range-limit check.
+- Weapon range is not inferred from token coordinates. The attack dialog exposes a explicit extreme-range declaration after the GM's adjudication; when selected, the task receives one additional hindrance step and records the declared normal/extreme range in the chat flags. This records the adjudication without claiming an automatic range-limit check.
 
 - Weapon familiarity combines explicit free-use state, actor free-use
   categories/families, and a matching attack-category Skill.
