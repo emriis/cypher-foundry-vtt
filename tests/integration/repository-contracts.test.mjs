@@ -377,6 +377,15 @@ test("live E2E keeps Foundry logs separate unless live diagnostics are requested
   );
 
   assert.match(source, /FOUNDRY_E2E_SHOW_FOUNDRY_LOGS/);
+  assert.match(source, /--debug-foundry-logs/);
+
+  const packageJson = JSON.parse(
+    fs.readFileSync(path.join(root, "package.json"), "utf8")
+  );
+  assert.equal(
+    packageJson.scripts["test:e2e-debug"],
+    "node scripts/run-foundry-e2e.mjs --debug-foundry-logs"
+  );
   assert.match(source, /stdio: \["ignore", logFd, logFd\]/);
   assert.match(source, /showFoundryLogTailOnFailure/);
   assert.match(source, /lines\.slice\(-120\)/);
