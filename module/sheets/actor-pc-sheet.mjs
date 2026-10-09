@@ -183,7 +183,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
         <label><input type="checkbox" name="oneHanded"/> ${game.i18n.localize("CYPHER.Attack.OneHanded")}</label>
         <p class="hint">${game.i18n.localize("CYPHER.Attack.OneHandedHint")}</p>
       </div>` : ""}
-      ${isAttack && game.user.isGM ? `
+      ${isAttack ? `
       <div class="form-group inline">
         <label><input type="checkbox" name="atExtremeRange"/> ${game.i18n.localize("CYPHER.Attack.ExtremeRange")}</label>
         <p class="hint">${game.i18n.localize("CYPHER.Attack.ExtremeRangeHint")}</p>
