@@ -158,15 +158,13 @@ test("W4 weapon extraction respects heavy weapon two-hand rules", () => {
 
 test("W4 weapon extraction structures explicit one-handed firing hindrance", () => {
   const failures = [];
-  const affectedNames = new Set(["Rifle", "Shotgun"]);
-
   for (const language of ["en", "fr"]) {
     for (const record of readRecords(language)) {
       if (record.crdType !== "weapon") continue;
 
       const note = normalizeText(record.system.description);
       const explicitlyHindered = /attack hindered if fired with one hand/i
-        .test(note);
+        .test(note) || /attaque entravée si tirée à une main/i.test(note);
       const structured = record.system.mechanics
         ?.hinderedWhenUsedOneHanded === true;
 
