@@ -283,8 +283,8 @@
       "ConfigurationChanged": "{name} switched to {configuration}. This switch costs one action.",
       "ConfigurationAction": "one action",
       "Configuration": {
-        "Primary": "Primary configuration",
-        "Alternate": "Alternate configuration"
+        "primary": "Primary configuration",
+        "alternate": "Alternate configuration"
       }
     },
     "WeaponFamily": {
