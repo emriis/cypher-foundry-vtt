@@ -182,6 +182,11 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       <div class="form-group inline">
         <label><input type="checkbox" name="oneHanded"/> ${game.i18n.localize("CYPHER.Attack.OneHanded")}</label>
         <p class="hint">${game.i18n.localize("CYPHER.Attack.OneHandedHint")}</p>
+      </div>` : ""}
+      ${isAttack ? `
+      <div class="form-group inline">
+        <label><input type="checkbox" name="atExtremeRange"/> ${game.i18n.localize("CYPHER.Attack.ExtremeRange")}</label>
+        <p class="hint">${game.i18n.localize("CYPHER.Attack.ExtremeRangeHint")}</p>
       </div>` : ""}`;
 
     return foundry.applications.api.DialogV2.prompt({
@@ -197,7 +202,8 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
             assetSteps: Number(form.assets.value),
             skillItemId: form.skillItemId.value || null,
             luckyShot: isAttack ? !!form.luckyShot?.checked : false,
-            oneHanded: isAttack ? !!form.oneHanded?.checked : false
+            oneHanded: isAttack ? !!form.oneHanded?.checked : false,
+            atExtremeRange: isAttack ? !!form.atExtremeRange?.checked : false
           };
         }
       }
