@@ -145,7 +145,9 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
    *   options such as Lucky Shot.
    * @returns {Promise<object|null>} Selected roll options, or `null` if cancelled.
    */
-  static async #promptRollOptions(actor, { difficulty = 3, isAttack = false } = {}) {
+  static async #promptRollOptions(actor, {
+    difficulty = 3, isAttack = false, weapon = null
+  } = {}) {
     const maxDifficulty = actor.system.maxDifficulty ?? 10;
     const maxEffort = actor.system.effort ?? 1;
 
@@ -189,7 +191,8 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
             effortLevels: Number(form.effort.value),
             assetSteps: Number(form.assets.value),
             skillItemId: form.skillItemId.value || null,
-            luckyShot: isAttack ? !!form.luckyShot?.checked : false
+            luckyShot: isAttack ? !!form.luckyShot?.checked : false,
+            oneHanded: isAttack ? !!form.oneHanded?.checked : false
           };
         }
       }
@@ -372,7 +375,11 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
   static async #onRollAttack(event, target) {
     const item = this.actor.items.get(target.dataset.itemId);
     if (!item) return;
-    const result = await CypherPCSheet.#promptRollOptions(this.actor, { difficulty: 3, isAttack: true });
+    const result = await CypherPCSheet.#promptRollOptions(this.actor, {
+      difficulty: 3,
+      isAttack: true,
+      weapon: item
+    });
     if (!result) return;
     await item.rollAttack(result);
   }
