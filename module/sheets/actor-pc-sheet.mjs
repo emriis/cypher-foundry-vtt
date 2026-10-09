@@ -15,6 +15,7 @@ import {
   toggleSecondFocus
 } from "../applications/character-service.mjs";
 import { toggleEquipped } from "../applications/equipment-service.mjs";
+import { resolveWeaponConfiguration } from "../rules/weapon-mechanics.mjs";
 import { rollCypherTable, rollCypherVariant, toggleAttackConfiguration } from "../applications/item-service.mjs";
 
 /**
@@ -101,7 +102,12 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       cyphers: this.actor.items.filter(i => i.type === "cypher"),
       artifacts: this.actor.items.filter(i => i.type === "artifact"),
       equipment: this.actor.items.filter(i => i.type === "equipment"),
-      attacks: this.actor.items.filter(i => i.type === "attack"),
+      attacks: this.actor.items.filter(i => i.type === "attack").map(item => ({
+        id: item.id,
+        name: item.name,
+        system: item.system,
+        activeWeaponConfiguration: resolveWeaponConfiguration(item.system)
+      })),
       armor: this.actor.items.filter(i => i.type === "armor"),
       shields: this.actor.items.filter(i => i.type === "shield")
     };
