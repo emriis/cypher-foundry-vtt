@@ -82,3 +82,18 @@ test("weapon effects reject non-NPC targets and malformed effect collections", a
   assert.equal(await applyWeaponTargetEffects({ type: "pc" }, [{ effect: "hindered" }]), 0);
   assert.equal(await applyWeaponTargetEffects(createNpc(), null), 0);
 });
+
+test("a one-round effect outside combat lasts until the target's next action", async () => {
+  globalThis.game = { combat: null };
+  const npc = createNpc([{
+    id: "narrative-round",
+    effect: "hindered",
+    duration: "one round",
+    combatId: null,
+    combatRound: null
+  }]);
+
+  assert.equal(getActiveWeaponEffects(npc).length, 1);
+  assert.equal(await expireWeaponEffectsAfterAction(npc), 1);
+  assert.deepEqual(npc.flags.cypherFoundry.activeWeaponEffects, []);
+});
