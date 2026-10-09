@@ -133,7 +133,7 @@ A medium weapon can explicitly require two hands without becoming a heavy weapon
 
 The CRD explicitly lists weapons for which an attack is hindered when fired with one hand, including rifles and shotguns.
 
-Missing structured mechanic: a source-derived one-hand attack hindrance flag. It must not be inferred from twoHanded.
+The source-derived `hinderedWhenUsedOneHanded` flag is now structured for the affected CRD weapon entries. The PC attack dialog lets the user declare one-handed use; only that choice adds the hindrance. It remains independent of `twoHanded`.
 
 ### Rapid-fire
 
@@ -171,7 +171,7 @@ Runtime still needs a proper configuration transition. Do not implement arbitrar
 
 The CRD explicitly states: no damage; level 2 or lower loses the next action; level 3 or higher is hindered by two steps for a round or two.
 
-Structured target-effect extraction is implemented. Runtime application remains outstanding.
+Structured target-effect extraction and the supported persisted runtime lifecycle are implemented for the declared `loseNextAction` and `hindered` effects.
 
 ### Explosive weapons
 
