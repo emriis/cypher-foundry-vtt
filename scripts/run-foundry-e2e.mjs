@@ -373,12 +373,12 @@ async function showFoundryLogTailOnFailure() {
     return;
   }
 
-  const lines = content.trimEnd().split(/\\r?\\n/);
-  const tail = lines.slice(-120).join("\\n");
-  console.error("\\n--- Foundry log tail (last 120 lines) ---");
+  const lines = content.trimEnd().split(/\r?\n/);
+  const tail = lines.slice(-120).join("\n");
+  console.error("\n--- Foundry log tail (last 120 lines) ---");
   console.error(tail || "(Foundry log is empty)");
   console.error("--- End Foundry log tail ---");
-  console.error(`Full Foundry log: ${FOUNDRY_LOG_PATH}`);
+  console.error("Full Foundry log: " + FOUNDRY_LOG_PATH);
 }
 
 async function removeStaleE2EWorlds(dataPath) {
