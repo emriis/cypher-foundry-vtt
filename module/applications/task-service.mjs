@@ -281,6 +281,7 @@ export async function rollTask(actor, {
           baseDamage,
           weaponTargetEffects,
           weaponRangeAdjudication,
+          weaponSource,
           targetActorId: targetActor?.type === "npc" ? targetActor.id : null,
           armorBypass
         }

@@ -40,8 +40,15 @@
       {{#each items.attacks as |item|}}
       <li class="item" data-item-id="{{item.id}}">
         <span class="item-name">{{item.name}}</span>
-        <span class="item-detail">{{localize (concat "CYPHER.AttackType." item.system.attackType)}} — {{item.system.damage}} {{localize 'CYPHER.Damage'}}</span>
-        <button type="button" data-action="rollAttack" title="{{localize 'CYPHER.Roll.Attack'}}"><i class="fa-solid fa-dice-d20"></i></button>
+        <span class="item-detail">{{localize (concat "CYPHER.AttackType." item.activeWeaponConfiguration.attackType)}} — {{item.activeWeaponConfiguration.baseDamage}} {{localize 'CYPHER.Damage'}} — {{localize (concat "CYPHER.Attack.Configuration." item.activeWeaponConfiguration.configuration)}}
+          {{#ifEquals item.system.mechanics.activeConfiguration "alternate"}} — {{localize "CYPHER.Attack.Configuration.Alternate"}}{{/ifEquals}}
+        </span>
+        {{#if item.system.mechanics.alternateConfiguration.enabled}}
+        <button type="button" data-action="toggleAttackConfiguration" title="{{localize 'CYPHER.Attack.SwitchConfiguration'}}">
+          <i class="fa-solid fa-arrows-rotate"></i> {{localize 'CYPHER.Attack.SwitchConfiguration'}}
+        </button>
+        {{/if}}
+        <button type="button" data-action="rollAttack" data-item-id="{{item.id}}" title="{{localize 'CYPHER.Roll.Attack'}}"><i class="fa-solid fa-dice-d20"></i></button>
         <a data-action="itemEdit"><i class="fa-solid fa-edit"></i></a>
         <a data-action="itemDelete"><i class="fa-solid fa-trash"></i></a>
       </li>

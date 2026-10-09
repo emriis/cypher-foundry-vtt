@@ -6,6 +6,7 @@ import {
   rollCypherTable,
   rollCypherVariant,
   rollDepletion,
+  toggleAttackConfiguration,
   useCypher
 } from "../../module/applications/item-service.mjs";
 
@@ -599,4 +600,50 @@ test("rollAttack applies and forwards explicitly adjudicated extreme range", asy
     atExtremeRange: true,
     hinderSteps: 1
   });
+});
+
+
+test("rollAttack consumes the active alternate configuration for category and damage", async () => {
+  let received;
+  globalThis.game = { i18n: { localize: value => value } };
+  const actor = {
+    system: { freeWeaponCategories: ["medium"], freeWeaponFamilies: [], freeWeaponSkillCategories: [], canFreelyUseAllWeapons: false },
+    items: new Map(),
+    async rollTask(options) { received = options; return options; }
+  };
+  const item = {
+    id: "configurable-weapon",
+    type: "attack",
+    name: "Configurable Cannon",
+    actor,
+    system: {
+      attackType: "heavy", damage: 6, stat: "might", freelyUsable: true,
+      mechanics: { activeConfiguration: "alternate", alternateConfiguration: { enabled: true, attackType: "medium", action: "action" } }
+    }
+  };
+
+  await rollAttack(item);
+  assert.equal(received.baseDamage, 4);
+  assert.equal(received.weaponSource.configuration, "alternate");
+  assert.equal(received.weaponSource.attackType, "medium");
+  assert.equal(received.extraEaseSteps, 0);
+});
+
+test("toggleAttackConfiguration persists the next configuration and records its action cost", async () => {
+  let update;
+  let message;
+  globalThis.game = { i18n: { localize: value => value, format: (value, data) => value + ":" + data.configuration } };
+  globalThis.ChatMessage = { getSpeaker: () => ({}), create: async value => { message = value; } };
+  const item = {
+    id: "configurable-weapon", type: "attack", name: "Configurable Cannon",
+    actor: { id: "pc-id" },
+    system: { mechanics: { activeConfiguration: "primary", alternateConfiguration: { enabled: true, attackType: "medium", action: "action" } } },
+    async update(value) { update = value; }
+  };
+
+  assert.equal(await toggleAttackConfiguration(item), "alternate");
+  assert.deepEqual(update, { "system.mechanics.activeConfiguration": "alternate" });
+  assert.equal(message.flags.cypher.configuration, "alternate");
+  assert.equal(message.flags.cypher.actionCost, "action");
+  assert.equal(await toggleAttackConfiguration({ type: "attack", system: { mechanics: { alternateConfiguration: { enabled: false } } } }), false);
 });

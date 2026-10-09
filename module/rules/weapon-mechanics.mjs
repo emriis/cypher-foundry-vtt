@@ -55,3 +55,34 @@ export function resolveWeaponRangeAdjudication({
     hinderSteps: adjudicated ? 1 : 0
   };
 }
+
+
+/**
+ * Resolve the active weapon configuration without mutating source data.
+ * The CRD's alternate configuration changes the weapon category, which
+ * supplies its category damage. The primary configuration retains its
+ * explicitly declared damage.
+ *
+ * @param {object} system Attack Item system data.
+ * @returns {{configuration: string, attackType: string|null,
+ *   baseDamage: number|null, switchAction: string|null}}
+ */
+export function resolveWeaponConfiguration(system = {}) {
+  const mechanics = system.mechanics ?? {};
+  const alternate = mechanics.alternateConfiguration ?? {};
+  const isAlternate = mechanics.activeConfiguration === "alternate"
+    && alternate.enabled === true
+    && ["light", "medium", "heavy"].includes(alternate.attackType);
+  const attackType = isAlternate ? alternate.attackType : system.attackType;
+  const explicitDamage = Number.isFinite(system.damage) ? system.damage : null;
+  const categoryDamage = { light: 2, medium: 4, heavy: 6 }[attackType] ?? null;
+  return {
+    configuration: isAlternate ? "alternate" : "primary",
+    attackType: attackType || null,
+    baseDamage: isAlternate
+      ? categoryDamage
+      : (explicitDamage || categoryDamage || 2),
+    switchAction: isAlternate ? "action"
+      : (alternate.enabled ? alternate.action || "action" : null)
+  };
+}

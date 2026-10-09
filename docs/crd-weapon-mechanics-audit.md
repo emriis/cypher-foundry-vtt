@@ -164,9 +164,9 @@ They should become attack prerequisites only when the system can reliably repres
 
 ### Alternate configuration
 
-The CRD explicitly describes a weapon that can switch from heavy to medium configuration as an action. The existing alternateConfiguration projection is valid.
+The CRD explicitly describes a weapon that can switch from heavy to medium configuration as an action. The structured `alternateConfiguration` projection preserves that source-defined category and action label.
 
-Runtime still needs a proper configuration transition. Do not implement arbitrary weapon modes beyond the CRD.
+Runtime now persists the active primary/alternate configuration, announces the switch in chat as costing one action, and resolves attack category and category damage from the selected configuration. The runtime does not enforce the action cost because the system has no turn/action economy. Do not implement arbitrary weapon modes beyond the CRD.
 
 ## 4. Special weapons
 
@@ -253,7 +253,7 @@ Do not infer a missing category merely because the CRD says most weapons are med
 10. Implement explosive Effort scaling exactly as specified.
 
 ### P2 — equipment interaction
-11. Implement alternate weapon configurations.
+11. Implement alternate weapon configuration switching and attack resolution (implemented; action economy enforcement remains open).
 12. Implement tripod/operator prerequisites once actor/equipment setup supports them.
 13. Implement object/material interaction for cutsThroughMaterialsLevel.
 14. Apply explicit Armor penetration during NPC damage resolution.

@@ -15,7 +15,7 @@ import {
   toggleSecondFocus
 } from "../applications/character-service.mjs";
 import { toggleEquipped } from "../applications/equipment-service.mjs";
-import { rollCypherTable, rollCypherVariant } from "../applications/item-service.mjs";
+import { getWeaponConfiguration, rollCypherTable, rollCypherVariant, toggleAttackConfiguration } from "../applications/item-service.mjs";
 
 /**
  * Foundry VTT sheet for player characters using the Cypher system.
@@ -42,6 +42,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       rollCypherTable: CypherPCSheet.#onRollCypherTable,
       rollCypherVariant: CypherPCSheet.#onRollCypherVariant,
       rollAttack: CypherPCSheet.#onRollAttack,
+      toggleAttackConfiguration: CypherPCSheet.#onToggleAttackConfiguration,
       rallyWound: CypherPCSheet.#onRallyWound,
       toggleSecondDescriptor: CypherPCSheet.#onToggleSecondDescriptor,
       toggleSecondFocus: CypherPCSheet.#onToggleSecondFocus,
@@ -100,7 +101,12 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       cyphers: this.actor.items.filter(i => i.type === "cypher"),
       artifacts: this.actor.items.filter(i => i.type === "artifact"),
       equipment: this.actor.items.filter(i => i.type === "equipment"),
-      attacks: this.actor.items.filter(i => i.type === "attack"),
+      attacks: this.actor.items.filter(i => i.type === "attack").map(item => ({
+        id: item.id,
+        name: item.name,
+        system: item.system,
+        activeWeaponConfiguration: getWeaponConfiguration(item)
+      })),
       armor: this.actor.items.filter(i => i.type === "armor"),
       shields: this.actor.items.filter(i => i.type === "shield")
     };
@@ -393,6 +399,12 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     });
     if (!result) return;
     await item.rollAttack(result);
+  }
+
+  static async #onToggleAttackConfiguration(event, target) {
+    const itemId = target.closest("[data-item-id]")?.dataset.itemId;
+    const item = this.actor.items.get(itemId);
+    await toggleAttackConfiguration(item);
   }
 
   /**

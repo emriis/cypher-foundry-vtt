@@ -1,5 +1,6 @@
 import { CYPHER } from "../config.mjs";
 import {
+  resolveWeaponConfiguration,
   resolveWeaponRangeAdjudication,
   resolveWeaponTargetEffects
 } from "../rules/weapon-mechanics.mjs";
@@ -135,8 +136,9 @@ export async function rollAttack(item, {
 } = {}) {
   if (item.type !== "attack" || !item.actor) return null;
   const actor = item.actor;
-  const baseDamage =
-    item.system.damage || CYPHER.weaponDamage[item.system.attackType] || 2;
+  const weaponConfiguration = resolveWeaponConfiguration(item.system);
+  const attackType = weaponConfiguration.attackType;
+  const baseDamage = weaponConfiguration.baseDamage;
   const freeWeaponCategories =
     actor.system.freeWeaponCategories ?? CYPHER.coreFreeWeaponCategories;
   const freeWeaponFamilies = actor.system.freeWeaponFamilies ?? [];
@@ -151,7 +153,7 @@ export async function rollAttack(item, {
   const weaponIsFamiliar =
     item.system.freelyUsable
     || actor.system.canFreelyUseAllWeapons
-    || freeWeaponCategories.includes(item.system.attackType)
+    || freeWeaponCategories.includes(attackType)
     || freeWeaponFamilies.includes(item.system.weaponFamily)
     || freeWeaponSkillCategories.includes(item.system.attackSkillCategory);
   const weaponSkillModifier = resolveWeaponSkillModifier({
@@ -178,7 +180,7 @@ export async function rollAttack(item, {
     item.system.mechanics?.targetEffects,
     targetLevel
   );
-  const weaponEaseSteps = item.system.attackType === "light" ? 1 : 0;
+  const weaponEaseSteps = attackType === "light" ? 1 : 0;
   return actor.rollTask({
     stat: item.system.stat, difficulty, effortLevels, assetSteps, skillItemId,
     isAttack: true, baseDamage,
@@ -186,7 +188,12 @@ export async function rollAttack(item, {
       + weaponRangeAdjudication.hinderSteps,
     extraEaseSteps: weaponEaseSteps + weaponEase, luckyShot, weaponTargetEffects,
     targetActor: selectedTarget, weaponRangeAdjudication,
-    weaponSource: { itemId: item.id, itemName: item.name },
+    weaponSource: {
+      itemId: item.id,
+      itemName: item.name,
+      configuration: weaponConfiguration.configuration,
+      attackType
+    },
     armorBypass: item.system.mechanics?.ignoresPhysicalArmor ?? 0,
     flavor: `${game.i18n.localize("CYPHER.Roll.Attack")}: ${item.name}`
   });
@@ -223,4 +230,39 @@ export async function rollDepletion(item) {
     } }
   });
   return true;
+}
+
+
+/** Switch a weapon between its CRD-defined primary and alternate configurations. */
+export async function toggleAttackConfiguration(item) {
+  if (item?.type !== "attack" || !item.system.mechanics?.alternateConfiguration?.enabled) {
+    return false;
+  }
+  const current = item.system.mechanics.activeConfiguration === "alternate"
+    ? "alternate" : "primary";
+  const next = current === "primary" ? "alternate" : "primary";
+  await item.update({ "system.mechanics.activeConfiguration": next });
+  await ChatMessage.create({
+    speaker: ChatMessage.getSpeaker({ actor: item.actor }),
+    content: "<p>" + game.i18n.format("CYPHER.Attack.ConfigurationChanged", {
+      name: item.name,
+      configuration: game.i18n.localize("CYPHER.Attack.Configuration." + next),
+      action: game.i18n.localize("CYPHER.Attack.ConfigurationAction")
+    }) + "</p>",
+    flags: { cypher: {
+      rollType: "weaponConfiguration",
+      actorId: item.actor?.id ?? null,
+      itemId: item.id,
+      configuration: next,
+      actionCost: "action"
+    } }
+  });
+  return next;
+}
+
+
+/** Return the active weapon configuration for sheet presentation. */
+export function getWeaponConfiguration(item) {
+  if (item?.type !== "attack") return null;
+  return resolveWeaponConfiguration(item.system);
 }
