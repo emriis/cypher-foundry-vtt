@@ -385,6 +385,66 @@ test.describe("Cypher Foundry live gameplay", () => {
     await page.evaluate(id => game.actors.get(id)?.sheet.close(), actorId);
   });
 
+  test("switches a CRD-defined alternate weapon configuration and attacks with its category", async ({
+    e2ePage: page
+  }) => {
+    const actorId = await createActor(page);
+    const itemId = await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      const [weapon] = await actor.createEmbeddedDocuments("Item", [{
+        name: "E2E Alternate Configuration Cannon",
+        type: "attack",
+        system: {
+          attackType: "heavy",
+          damage: 6,
+          stat: "might",
+          freelyUsable: true,
+          mechanics: {
+            activeConfiguration: "primary",
+            alternateConfiguration: { enabled: true, attackType: "medium", action: "action" }
+          }
+        }
+      }]);
+      await actor.sheet.render(true);
+      return weapon.id;
+    }, actorId);
+
+    await dismissActiveTour(page);
+    await page.locator('[data-item-id="' + itemId + '] [data-action="toggleAttackConfiguration"]').first().click();
+    await page.waitForFunction(({ actorId, itemId }) => {
+      const item = game.actors.get(actorId)?.items.get(itemId);
+      return item?.system.mechanics.activeConfiguration === "alternate";
+    }, { actorId, itemId });
+
+    const messageCount = await page.evaluate(() => game.messages.size);
+    await page.locator('[data-action="rollAttack"][data-item-id="' + itemId + ']').first().click();
+    await clickRollDialog(page, { difficulty: 2, effort: 0, assets: 0 });
+    await page.waitForFunction(({ count, actorId }) =>
+      game.messages.size > count && [...game.messages].some(message =>
+        message.getFlag("cypher", "actorId") === actorId &&
+        message.getFlag("cypher", "rollType") === "task" &&
+        message.getFlag("cypher", "isAttack") === true
+      ), { count: messageCount, actorId });
+
+    const result = await page.evaluate(({ actorId, itemId }) => {
+      const message = [...game.messages].reverse().find(candidate =>
+        candidate.getFlag("cypher", "actorId") === actorId &&
+        candidate.getFlag("cypher", "rollType") === "task" &&
+        candidate.getFlag("cypher", "isAttack") === true
+      );
+      return {
+        baseDamage: message?.getFlag("cypher", "baseDamage"),
+        weaponSource: message?.getFlag("cypher", "weaponSource"),
+        activeConfiguration: game.actors.get(actorId)?.items.get(itemId)?.system.mechanics.activeConfiguration
+      };
+    }, { actorId, itemId });
+
+    expect(result.activeConfiguration).toBe("alternate");
+    expect(result.baseDamage).toBe(4);
+    expect(result.weaponSource).toMatchObject({ configuration: "alternate", attackType: "medium" });
+    await page.evaluate(id => game.actors.get(id)?.sheet.close(), actorId);
+  });
+
   test("executes a structured NPC Pool attack against a real PC", async ({
     e2ePage: page
   }) => {
