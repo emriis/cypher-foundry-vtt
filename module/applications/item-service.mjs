@@ -1,5 +1,8 @@
 import { CYPHER } from "../config.mjs";
-import { resolveWeaponTargetEffects } from "../rules/weapon-mechanics.mjs";
+import {
+  resolveWeaponRangeAdjudication,
+  resolveWeaponTargetEffects
+} from "../rules/weapon-mechanics.mjs";
 import { resolveWeaponSkillModifier } from "../rules/weapon-skills.mjs";
 
 /**
@@ -127,7 +130,8 @@ export async function rollCypherTable(item, tableId) {
 
 export async function rollAttack(item, {
   effortLevels = 0, assetSteps = 0, difficulty = 3,
-  luckyShot = false, skillItemId = null, target = null, oneHanded = false
+  luckyShot = false, skillItemId = null, target = null, oneHanded = false,
+  atExtremeRange = false
 } = {}) {
   if (item.type !== "attack" || !item.actor) return null;
   const actor = item.actor;
@@ -157,6 +161,11 @@ export async function rollAttack(item, {
   const weaponHinder = weaponSkillModifier < 0 ? Math.abs(weaponSkillModifier) : 0;
   const oneHandHinder = oneHanded
     && item.system.mechanics?.hinderedWhenUsedOneHanded ? 1 : 0;
+  const weaponRangeAdjudication = resolveWeaponRangeAdjudication({
+    range: item.system.range,
+    extremeRange: item.system.extremeRange,
+    atExtremeRange
+  });
   const weaponEase = weaponSkillModifier > 0 ? weaponSkillModifier : 0;
   const selectedTarget = target
     ?? (game.user?.targets?.size === 1
@@ -173,9 +182,10 @@ export async function rollAttack(item, {
   return actor.rollTask({
     stat: item.system.stat, difficulty, effortLevels, assetSteps, skillItemId,
     isAttack: true, baseDamage,
-    extraHinderSteps: weaponHinder + oneHandHinder,
+    extraHinderSteps: weaponHinder + oneHandHinder
+      + weaponRangeAdjudication.hinderSteps,
     extraEaseSteps: weaponEaseSteps + weaponEase, luckyShot, weaponTargetEffects,
-    targetActor: selectedTarget,
+    targetActor: selectedTarget, weaponRangeAdjudication,
     weaponSource: { itemId: item.id, itemName: item.name },
     armorBypass: item.system.mechanics?.ignoresPhysicalArmor ?? 0,
     flavor: `${game.i18n.localize("CYPHER.Roll.Attack")}: ${item.name}`
