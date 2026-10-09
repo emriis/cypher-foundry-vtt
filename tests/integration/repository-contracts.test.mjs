@@ -393,6 +393,24 @@ test("live E2E keeps Foundry logs separate unless live diagnostics are requested
   assert.match(source, /if \(exitCode === 0\)[\s\S]*FOUNDRY_LOG_PATH/);
 });
 
+test("live E2E buffers browser and actor diagnostics instead of logging on success", () => {
+  const fixture = fs.readFileSync(
+    path.join(root, "tests/e2e/foundry-session-fixture.mjs"),
+    "utf8"
+  );
+  const gameplay = fs.readFileSync(
+    path.join(root, "tests/e2e/foundry-gameplay.spec.mjs"),
+    "utf8"
+  );
+
+  assert.match(fixture, /browserLogsByPage/);
+  assert.match(fixture, /recordBrowserLog/);
+  assert.match(fixture, /testInfo\.status !== testInfo\.expectedStatus/);
+  assert.match(fixture, /E2E browser diagnostics \(failed test\)/);
+  assert.match(gameplay, /test\.info\(\)\.attach\(/);
+  assert.doesNotMatch(gameplay, /console\.log\(\s*\x60\[E2E actor diagnostics\]/);
+});
+
 test("live E2E uses an isolated Foundry server process boundary", () => {
   const source = fs.readFileSync(
     path.join(root, "scripts/run-foundry-e2e.mjs"),
