@@ -49,12 +49,12 @@ async function logActorDiagnostics(page, actorId, label) {
     };
   }, actorId);
 
-  console.log(
-    `[E2E actor diagnostics] ${label}:\n${JSON.stringify(
-      diagnostics,
-      null,
-      2
-    )}`
+  await test.info().attach(
+    `actor-diagnostics-${label.replace(/[^a-z0-9_-]/gi, "-")}.json`,
+    {
+      body: JSON.stringify(diagnostics, null, 2),
+      contentType: "application/json"
+    }
   );
 }
 
