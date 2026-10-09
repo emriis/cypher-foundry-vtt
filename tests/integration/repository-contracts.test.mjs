@@ -377,11 +377,11 @@ test("live E2E keeps Foundry logs separate unless live diagnostics are requested
   );
 
   assert.match(source, /FOUNDRY_E2E_SHOW_FOUNDRY_LOGS/);
-  assert.match(source, /stdio: \\["ignore", logFd, logFd\\]/);
+  assert.match(source, /stdio: \["ignore", logFd, logFd\]/);
   assert.match(source, /showFoundryLogTailOnFailure/);
-  assert.match(source, /lines\\.slice\\(-120\\)/);
+  assert.match(source, /lines\.slice\(-120\)/);
   assert.match(source, /Full Foundry log:/);
-  assert.match(source, /if \(exitCode === 0\)[\\s\\S]*FOUNDRY_LOG_PATH/);
+  assert.match(source, /if \(exitCode === 0\)[\s\S]*FOUNDRY_LOG_PATH/);
 });
 
 test("live E2E uses an isolated Foundry server process boundary", () => {
