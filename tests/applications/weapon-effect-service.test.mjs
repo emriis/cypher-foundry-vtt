@@ -11,7 +11,7 @@ import {
 function createNpc(effects = []) {
   return {
     type: "npc",
-    flags: { cypherFoundry: { activeWeaponEffects: effects } },
+    flags: { cypher: { activeWeaponEffects: effects } },
     updates: [],
     async update(changes) {
       this.updates.push(changes);
@@ -43,7 +43,7 @@ test("weapon effects persist on NPC targets with source and duration metadata", 
   }], { itemId: "weapon-1", itemName: "Stunner" });
 
   assert.equal(count, 1);
-  const [effect] = npc.flags.cypherFoundry.activeWeaponEffects;
+  const [effect] = npc.flags.cypher.activeWeaponEffects;
   assert.equal(effect.effect, "hindered");
   assert.equal(effect.hinderSteps, 1);
   assert.equal(effect.duration, "one round");
@@ -67,7 +67,7 @@ test("one-round effects remain active only in their application combat round", a
   globalThis.game.combat.round = 3;
   assert.equal(getActiveWeaponEffects(npc).length, 0);
   assert.equal(await expireWeaponEffectsOutsideCurrentRound(npc), 1);
-  assert.deepEqual(npc.flags.cypherFoundry.activeWeaponEffects, []);
+  assert.deepEqual(npc.flags.cypher.activeWeaponEffects, []);
 });
 
 test("next-action effects expire after the NPC action is resolved", async () => {
@@ -78,7 +78,7 @@ test("next-action effects expire after the NPC action is resolved", async () => 
 
   assert.equal(await expireWeaponEffectsAfterAction(npc), 1);
   assert.deepEqual(
-    npc.flags.cypherFoundry.activeWeaponEffects.map(effect => effect.id),
+    npc.flags.cypher.activeWeaponEffects.map(effect => effect.id),
     ["persistent"]
   );
 });
@@ -100,5 +100,5 @@ test("a one-round effect outside combat lasts until the target's next action", a
 
   assert.equal(getActiveWeaponEffects(npc).length, 1);
   assert.equal(await expireWeaponEffectsAfterAction(npc), 1);
-  assert.deepEqual(npc.flags.cypherFoundry.activeWeaponEffects, []);
+  assert.deepEqual(npc.flags.cypher.activeWeaponEffects, []);
 });
