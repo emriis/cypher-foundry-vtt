@@ -274,7 +274,9 @@
     "Attack": {
       "Title": "Attacks",
       "Type": "Attack Type",
-      "FreelyUsable": "This specific weapon is freely usable (override)"
+      "FreelyUsable": "This specific weapon is freely usable (override)",
+      "OneHanded": "Fire one-handed",
+      "OneHandedHint": "This weapon hinders the attack when fired with one hand."
     },
     "WeaponFamily": {
       "Label": "Weapon Family",
