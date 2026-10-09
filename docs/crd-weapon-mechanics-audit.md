@@ -45,10 +45,13 @@ The CRD states that an unfamiliar weapon makes the attack hindered. This is alre
 The CRD defines melee attacks as immediate range, thrown melee weapons as up to short range, ranged weapons by their listed maximum range, and attacks at the limit of a weapon range as extreme range and hindered. Some weapons explicitly extend their extreme range.
 
 Current implementation:
-- primary range: implemented;
-- explicit extreme range: implemented;
-- extreme-range hindrance: must be verified in attack resolution;
+- primary and extreme range categories: preserved as structured Item data;
+- extreme-range hindrance: implemented through an explicit attack-dialog declaration; the GM/roller confirms whether the target is at the weapon's range limit, and the declared state adds one hindrance step;
+- the adjudication and source range categories are recorded in the task chat flags;
+- automatic token/grid distance measurement and range-limit validation: not implemented by design;
 - melee/thrown semantics: currently descriptive rather than independently represented.
+
+The attack dialog must not pretend to determine range from scene coordinates. If the GM does not declare extreme range, no range hindrance is added. An explicit extreme-range category is preserved for adjudication, but this feature does not independently validate whether a target lies inside it.
 
 The last point should only become structured if the source data gives a mechanically reliable distinction. Do not infer melee merely from a weapon name.
 
