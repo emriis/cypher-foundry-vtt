@@ -274,7 +274,9 @@
     "Attack": {
       "Title": "Attaques",
       "Type": "Type d'attaque",
-      "FreelyUsable": "Cette arme précise est utilisable librement (exception)"
+      "FreelyUsable": "Cette arme précise est utilisable librement (exception)",
+      "OneHanded": "Tirer à une main",
+      "OneHandedHint": "Cette arme impose un désavantage à l'attaque lorsqu'elle est utilisée d'une seule main."
     },
     "WeaponFamily": {
       "Label": "Famille d'arme",
