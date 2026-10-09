@@ -25,3 +25,33 @@ export function resolveWeaponTargetEffects(effects = [], targetLevel) {
       && (maximum === null || maximum === undefined || targetLevel <= maximum);
   });
 }
+
+
+/**
+ * Resolve an explicitly adjudicated weapon range for an attack.
+ *
+ * Range categories are intentionally approximate in the CRD. The runtime
+ * must not infer a category from token coordinates or grid measurements. The
+ * GM/roller declares whether the target is at the weapon's range limit; this
+ * declaration applies the CRD's one-step hindrance for extreme range.
+ *
+ * @param {object} options Source range data and the explicit adjudication.
+ * @param {string|null} [options.range=null] Weapon's listed normal range.
+ * @param {string|null} [options.extremeRange=null] Listed extreme range.
+ * @param {boolean} [options.atExtremeRange=false] Explicit GM adjudication.
+ * @returns {{range: string|null, extremeRange: string|null,
+ *   atExtremeRange: boolean, hinderSteps: number}}
+ */
+export function resolveWeaponRangeAdjudication({
+  range = null,
+  extremeRange = null,
+  atExtremeRange = false
+} = {}) {
+  const adjudicated = atExtremeRange === true;
+  return {
+    range: range || null,
+    extremeRange: extremeRange || null,
+    atExtremeRange: adjudicated,
+    hinderSteps: adjudicated ? 1 : 0
+  };
+}
