@@ -130,9 +130,9 @@ test.afterEach(async ({ e2ePage: page }, testInfo) => {
   if (testInfo.status !== testInfo.expectedStatus) {
     const logs = browserLogsByPage.get(page) ?? [];
     console.error(
-      "\\n--- E2E browser diagnostics (failed test) ---\\n" +
-      (logs.join("\\n") || "(No browser diagnostics captured)") +
-      "\\n--- End E2E browser diagnostics ---"
+      "\n--- E2E browser diagnostics (failed test) ---\n" +
+      (logs.join("\n") || "(No browser diagnostics captured)") +
+      "\n--- End E2E browser diagnostics ---"
     );
   }
 
