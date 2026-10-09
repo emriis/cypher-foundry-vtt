@@ -15,7 +15,7 @@ import {
   toggleSecondFocus
 } from "../applications/character-service.mjs";
 import { toggleEquipped } from "../applications/equipment-service.mjs";
-import { rollCypherTable } from "../applications/item-service.mjs";
+import { rollCypherTable, rollCypherVariant } from "../applications/item-service.mjs";
 
 /**
  * Foundry VTT sheet for player characters using the Cypher system.
@@ -40,6 +40,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       rollRecovery: CypherPCSheet.#onRollRecovery,
       useCypher: CypherPCSheet.#onUseCypher,
       rollCypherTable: CypherPCSheet.#onRollCypherTable,
+      rollCypherVariant: CypherPCSheet.#onRollCypherVariant,
       rollAttack: CypherPCSheet.#onRollAttack,
       rallyWound: CypherPCSheet.#onRallyWound,
       toggleSecondDescriptor: CypherPCSheet.#onToggleSecondDescriptor,
@@ -226,6 +227,11 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
   static async #onRollCypherTable(event, target) {
     const item = this.actor.items.get(target.closest("[data-item-id]")?.dataset.itemId);
     await rollCypherTable(item, target.dataset.tableId);
+  }
+
+  static async #onRollCypherVariant(event, target) {
+    const item = this.actor.items.get(target.closest("[data-item-id]")?.dataset.itemId);
+    await rollCypherVariant(item);
   }
 
   /**
