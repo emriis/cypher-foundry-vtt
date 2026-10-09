@@ -46,7 +46,7 @@ The CRD defines melee attacks as immediate range, thrown melee weapons as up to 
 
 Current implementation:
 - primary and extreme range categories: preserved as structured Item data;
-- extreme-range hindrance: implemented through an explicit GM-only attack-dialog declaration; the GM confirms whether the target is at the weapon's range limit, and the declared state adds one hindrance step;
+- extreme-range hindrance: implemented through an explicit attack-dialog declaration after the GM confirms whether the target is at the weapon's range limit, and the declared state adds one hindrance step;
 - the adjudication and source range categories are recorded in the task chat flags;
 - automatic token/grid distance measurement and range-limit validation: not implemented by design;
 - melee/thrown semantics: currently descriptive rather than independently represented.
