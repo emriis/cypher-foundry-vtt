@@ -338,6 +338,13 @@
             <span>{{#if item.system.powerLevel}}{{item.system.powerLevel}}{{else}}{{item.system.level}}{{/if}}</span>
           </div>
           <span>{{item.system.cypherType}}</span>
+          {{#each item.system.rollTables as |table|}}
+          <button type="button" data-action="rollCypherTable" data-table-id="{{table.id}}"
+            data-item-id="{{../item.id}}" title="{{table.name}}"
+            {{#if ../item.system.depleted}}disabled{{/if}}>
+            <i class="fa-solid fa-dice"></i> {{table.name}}
+          </button>
+          {{/each}}
           <button type="button" class="pc-primary-action" data-action="useCypher"
             data-item-id="{{item.id}}" {{#if item.system.depleted}}disabled{{/if}}>
             <i class="fa-solid fa-bolt"></i> {{localize "CYPHER.Cypher.Use"}}

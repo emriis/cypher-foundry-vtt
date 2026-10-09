@@ -781,9 +781,34 @@ test("completes a player vertical slice from real CRD compendiums", async ({
         );
       }
       await attack.rollAttack({ difficulty: 0 });
-      const { useCypher } =
+      const { rollCypherTable, useCypher } =
         await import("/systems/cypher/module/applications/item-service.mjs");
       await useCypher(cypher);
+
+      const cypherTableSource = cypherSource.toObject();
+      delete cypherTableSource._id;
+      cypherTableSource.name = "E2E Cypher Table";
+      cypherTableSource.system.depleted = false;
+      cypherTableSource.system.rollTables = [{
+        id: "e2e-cypher-table",
+        name: "E2E Cypher Table",
+        formula: "1d100",
+        results: [{
+          min: 1,
+          max: 100,
+          description: "E2E Cypher table result"
+        }]
+      }];
+      const [tableCypher] = await actor.createEmbeddedDocuments("Item", [
+        cypherTableSource
+      ]);
+      const messageCountBeforeCypherTable = game.messages.size;
+      if (!(await rollCypherTable(tableCypher, "e2e-cypher-table"))) {
+        throw new Error("Structured Cypher table could not be used");
+      }
+      if (game.messages.size <= messageCountBeforeCypherTable) {
+        throw new Error("Cypher table use did not create chat output");
+      }
 
       const abilityPack = getPack("abilities-en");
       const abilities = await abilityPack.getDocuments();
@@ -828,6 +853,8 @@ test("completes a player vertical slice from real CRD compendiums", async ({
         abilityCount: actor.items.filter(item => item.type === "ability").length,
         attackType: attack.type,
         cypherDepleted: cypher.system.depleted,
+        cypherTableDepleted: tableCypher.system.depleted,
+        cypherTableUsed: tableCypher.name,
         abilityTableUsed: tableAbility.name,
         moderateWounds: actor.system.wounds.moderate.current,
         xpAfterIntrusion,
@@ -844,6 +871,8 @@ test("completes a player vertical slice from real CRD compendiums", async ({
     expect(summary.abilityCount).toBeGreaterThan(0);
     expect(summary.attackType).toBe("attack");
     expect(summary.cypherDepleted).toBe(true);
+    expect(summary.cypherTableDepleted).toBe(true);
+    expect(summary.cypherTableUsed).toBe("E2E Cypher Table");
     expect(summary.abilityTableUsed).toBeTruthy();
     expect(summary.moderateWounds).toBe(0);
     expect(summary.xpAfterIntrusion).toBe(4);

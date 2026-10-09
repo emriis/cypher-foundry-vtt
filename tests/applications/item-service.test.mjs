@@ -3,6 +3,7 @@ import test from "node:test";
 
 import {
   rollAttack,
+  rollCypherTable,
   rollDepletion,
   useCypher
 } from "../../module/applications/item-service.mjs";
@@ -27,6 +28,73 @@ test("useCypher depletes the item and posts a message", async () => {
   assert.equal(await useCypher(item), true);
   assert.deepEqual(update, { "system.depleted": true });
   assert.match(message.content, /Teleport/);
+});
+
+test("rollCypherTable resolves the matching result and consumes the Cypher", async () => {
+  let update;
+  let message;
+  globalThis.game = { i18n: { localize: value => value } };
+  globalThis.ui = { notifications: { error: () => {} } };
+  globalThis.foundry = {
+    applications: {
+      ux: {
+        TextEditor: {
+          implementation: {
+            enrichHTML: async value => `<p>${value}</p>`
+          }
+        }
+      }
+    }
+  };
+  globalThis.ChatMessage = { getSpeaker: () => ({}) };
+  globalThis.Roll = class {
+    constructor(formula) { this.formula = formula; }
+    async evaluate() { this.total = 4; return this; }
+    async toMessage(value) { message = value; }
+  };
+
+  const item = {
+    type: "cypher",
+    id: "cypher-id",
+    name: "Table Cypher",
+    actor: { id: "actor-id" },
+    system: {
+      depleted: false,
+      rollTables: [{
+        id: "effect-table",
+        name: "Effect Table",
+        formula: "1d6",
+        results: [
+          { min: 1, max: 3, description: "Minor result" },
+          { min: 4, max: 6, description: "Major result" }
+        ]
+      }]
+    },
+    async update(value) { update = value; }
+  };
+
+  assert.equal(await rollCypherTable(item, "effect-table"), true);
+  assert.deepEqual(update, { "system.depleted": true });
+  assert.match(message.flavor, /Effect Table/);
+  assert.match(message.flavor, /Major result/);
+  assert.equal(message.flags.cypher.rollType, "cypherTable");
+  assert.equal(message.flags.cypher.tableId, "effect-table");
+  assert.equal(message.flags.cypher.originalRoll, 4);
+});
+
+test("rollCypherTable rejects missing tables and already-depleted Cyphers", async () => {
+  let updateCalled = false;
+  const item = {
+    type: "cypher",
+    id: "cypher-id",
+    name: "Spent Cypher",
+    actor: { id: "actor-id" },
+    system: { depleted: true, rollTables: [] },
+    async update() { updateCalled = true; }
+  };
+
+  assert.equal(await rollCypherTable(item, "missing"), false);
+  assert.equal(updateCalled, false);
 });
 
 test("rollAttack delegates weapon familiarity to the common task service", async () => {
