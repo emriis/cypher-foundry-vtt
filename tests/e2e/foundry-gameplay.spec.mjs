@@ -233,7 +233,7 @@ test.describe("Cypher Foundry live gameplay", () => {
             damage: {
               mode: "pool",
               amount: 4,
-              severity: "",
+              severity: "minor",
               stat: "intellect",
               ignoresArmor: 0,
               wounds: 1
@@ -659,9 +659,17 @@ test.describe("Cypher Foundry live gameplay", () => {
 
         await new Promise(resolve => setTimeout(resolve, 100));
 
+        const message = [...game.messages]
+          .reverse()
+          .find(entry => entry.getFlag("cypher", "actorId") === pc.id
+            && entry.getFlag("cypher", "isAttack") === true);
+
         return {
           health: npc.system.health.value,
-          armor: npc.system.armor
+          armor: npc.system.armor,
+          armorBypass: message?.getFlag("cypher", "armorBypass") ?? null,
+          baseDamage: message?.getFlag("cypher", "baseDamage") ?? null,
+          targetActorId: message?.getFlag("cypher", "targetActorId") ?? null
         };
       } finally {
         await npc.delete();
