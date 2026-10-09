@@ -303,10 +303,15 @@
         <div class="pc-table-row" data-item-id="{{item.id}}">
           <div>
             <strong>{{item.name}}</strong>
-            <span>{{localize (concat "CYPHER.AttackType." item.system.attackType)}}</span>
+            <span>{{localize (concat "CYPHER.AttackType." item.activeWeaponConfiguration.attackType)}}</span>
           </div>
-          <span>{{item.system.damage}} {{localize "CYPHER.Damage"}}</span>
+          <span>{{item.activeWeaponConfiguration.baseDamage}} {{localize "CYPHER.Damage"}} — {{localize (concat "CYPHER.Attack.Configuration." item.activeWeaponConfiguration.configuration)}}</span>
           <span>{{item.system.range}}</span>
+          {{#if item.system.mechanics.alternateConfiguration.enabled}}
+          <button type="button" data-action="toggleAttackConfiguration" title="{{localize 'CYPHER.Attack.SwitchConfiguration'}}">
+            <i class="fa-solid fa-arrows-rotate"></i>
+          </button>
+          {{/if}}
           <button type="button" class="pc-primary-action" data-action="rollAttack"
             data-item-id="{{item.id}}">
             <i class="fa-solid fa-dice-d20"></i> {{localize "CYPHER.Roll.Attack"}}
