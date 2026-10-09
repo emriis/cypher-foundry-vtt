@@ -39,7 +39,8 @@ present in an Item, copied to a chat flag, or shown in descriptive text.
 | `mechanics.targetEffects` | Filters effects by target level, persists them to targeted NPCs on a successful attack, and consumes supported `hindered` / `loseNextAction` effects according to duration. | Runtime | Extend only when additional CRD effect semantics are structured. |
 | `mechanics.requiresTripod` | Preserved in the Item model. | Stored only / model gap | Requires deployment/positioning state and a rule for resolving attacks when the requirement is unmet. |
 | `mechanics.requiredOperators` | Preserved in the Item model. | Stored only / model gap | Requires a group/operator participation model and a rule for enforcing the minimum. |
-| `mechanics.alternateConfiguration` | Persists primary/alternate selection; the switch action is announced in chat and the active category determines attack ease/familiarity and category damage. | Runtime (configuration switch) | Action cost is recorded but not enforced by a turn/action economy. Only the CRD-defined alternate category is modeled; no other weapon fields are inferred. |
+| `mechanics.alternateConfiguration` | Persists primary/alternate selection; the switch action is announced in chat and the active category determines attack ease/familiarity, category damage, and action timing. | Runtime (configuration switch) | Switch action cost and attack timing are recorded/presented but not enforced by a turn/action economy. Only the CRD-defined alternate category is modeled; no other weapon fields are inferred. |
+| active weapon category timing | Light resolves to `firstAction`, medium to `action`, and heavy to `lastAction`; timing is included in attack chat flags and shown on the roll card. | Resolved/presented | Not enforced because turn/action-economy state is not implemented. Timing is derived from category, never from `twoHanded`. |
 
 ## Existing runtime contracts
 
@@ -61,13 +62,13 @@ present in an Item, copied to a chat flag, or shown in descriptive text.
 1. Range categories and explicit extreme-range hindrance are handled by GM
    adjudication; token-distance calculation remains out of scope unless a
    separate grid contract is defined.
-2. Primary/alternate configuration switching is implemented for the CRD-defined
-   alternate category. The system records the one-action cost but does not
-   enforce a turn economy.
-3. Continue with explicit weapon timing, rapid-fire ability prerequisites, and
-   tripod/operator requirements only when the necessary runtime state and CRD
-   contracts are available. Two-handed occupancy and material cutting remain
-   blocked on equipment/object models.
+2. Primary/alternate configuration switching and category-derived attack timing
+   are implemented for CRD-defined categories. The system records the one-action
+   switch cost and presents attack timing but does not enforce turn order.
+3. Continue with rapid-fire ability prerequisites and tripod/operator
+   requirements only when the necessary runtime state and CRD contracts are
+   available. Two-handed occupancy and material cutting remain blocked on
+   equipment/object models.
 
 The core PC-to-NPC numeric damage contract and physical Armor bypass are already
 implemented and verified. NPC-to-PC wound/Pool attacks are also handled through
