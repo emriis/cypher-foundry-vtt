@@ -216,23 +216,13 @@ test.describe("Cypher Foundry live gameplay", () => {
   }) => {
     const pcId = await createActor(page);
     const npcId = await page.evaluate(async prefix => {
-      // Start from the NPC model defaults, then persist the structured attack
-      // through the real Actor document update path. This keeps the fixture
-      // aligned with Foundry's registered DataModel validation.
+      // Create the structured attack with the Actor so Foundry validates the
+      // ArrayField as part of initial DataModel construction. Updating an
+      // existing empty ArrayField through Document.update has been silently
+      // leaving this fixture with no attacks in the live Foundry world.
       const actor = await Actor.create({
         name: `${prefix} NPC ${Date.now()}`,
         type: "npc",
-        system: { level: 10 }
-      });
-
-      if (!actor) {
-        throw new Error("Foundry did not create the minimal E2E NPC actor");
-      }
-
-      // Foundry's update expansion can interpret a dotted array-field
-      // assignment as an object update. Pass the nested system object so the
-      // DataModel receives the complete ArrayField value.
-      await actor.update({
         system: {
           level: 10,
           health: { max: 30, value: 30 },
@@ -253,6 +243,25 @@ test.describe("Cypher Foundry live gameplay", () => {
           }]
         }
       });
+
+      if (!actor) {
+        throw new Error(
+          "Foundry did not create the E2E NPC with its structured attack"
+        );
+      }
+
+      const attack = actor.system.attacks?.[0];
+      if (!attack) {
+        throw new Error(
+          "Foundry discarded the structured attack during NPC creation: "
+          + JSON.stringify({
+            type: actor.type,
+            model: actor.system.constructor?.name,
+            attackCount: actor.system.attacks?.length ?? null,
+            system: foundry.utils.deepClone(actor.system)
+          })
+        );
+      }
 
       return actor.id;
     }, ACTOR_PREFIX);
