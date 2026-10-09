@@ -300,6 +300,91 @@ test.describe("Cypher Foundry live gameplay", () => {
     await page.evaluate(id => game.actors.get(id)?.sheet.close(), actorId);
   });
 
+  test("applies extreme-range hindrance only after explicit GM adjudication", async ({
+    e2ePage: page
+  }) => {
+    const actorId = await createActor(page);
+    const itemId = await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      await actor.update({ "system.freeWeaponCategories": ["medium"] });
+      const [weapon] = await actor.createEmbeddedDocuments("Item", [{
+        name: "E2E Range Test Rifle",
+        type: "attack",
+        system: {
+          attackType: "medium",
+          range: "long",
+          extremeRange: "",
+          damage: 4,
+          stat: "might",
+          freelyUsable: true
+        }
+      }]);
+      await actor.sheet.render(true);
+      return weapon.id;
+    }, actorId);
+
+    await dismissActiveTour(page);
+
+    const rollAndRead = async atExtremeRange => {
+      const messageCount = await page.evaluate(() => game.messages.size);
+      await page.locator(
+        '[data-action="rollAttack"][data-item-id="' + itemId + '"]'
+      ).first().click();
+
+      const form = page.locator("form").filter({
+        has: page.locator('input[name="difficulty"]')
+      }).last();
+      const extremeRangeInput = form.locator('input[name="atExtremeRange"]');
+      await expect(extremeRangeInput).toBeVisible();
+      if (atExtremeRange) await extremeRangeInput.check();
+      await form.locator('input[name="difficulty"]').fill("2");
+      await form.getByRole("button").last().click();
+
+      await page.waitForFunction(
+        ({ count, actorId }) =>
+          game.messages.size > count &&
+          [...game.messages].some(message =>
+            message.getFlag("cypher", "actorId") === actorId &&
+            message.getFlag("cypher", "rollType") === "task" &&
+            message.getFlag("cypher", "isAttack") === true
+          ),
+        { count: messageCount, actorId }
+      );
+
+      return page.evaluate(id => {
+        const message = [...game.messages].reverse().find(candidate =>
+          candidate.getFlag("cypher", "actorId") === id &&
+          candidate.getFlag("cypher", "rollType") === "task" &&
+          candidate.getFlag("cypher", "isAttack") === true
+        );
+        return {
+          effectiveDifficulty: message?.getFlag("cypher", "effectiveDifficulty"),
+          adjudication: message?.getFlag("cypher", "weaponRangeAdjudication")
+        };
+      }, actorId);
+    };
+
+    const normalRange = await rollAndRead(false);
+    expect(normalRange.effectiveDifficulty).toBe(2);
+    expect(normalRange.adjudication).toEqual({
+      range: "long",
+      extremeRange: null,
+      atExtremeRange: false,
+      hinderSteps: 0
+    });
+
+    const extremeRange = await rollAndRead(true);
+    expect(extremeRange.effectiveDifficulty).toBe(3);
+    expect(extremeRange.adjudication).toEqual({
+      range: "long",
+      extremeRange: null,
+      atExtremeRange: true,
+      hinderSteps: 1
+    });
+
+    await page.evaluate(id => game.actors.get(id)?.sheet.close(), actorId);
+  });
+
   test("executes a structured NPC Pool attack against a real PC", async ({
     e2ePage: page
   }) => {
