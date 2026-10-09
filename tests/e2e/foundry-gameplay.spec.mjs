@@ -431,7 +431,7 @@ test.describe("Cypher Foundry live gameplay", () => {
     expect(switchResult).toEqual({ configuration: "alternate", actionCost: "action" });
 
     const messageCount = await page.evaluate(() => game.messages.size);
-    await page.locator('[data-action="rollAttack"][data-item-id="' + itemId + ']').first().click();
+    await page.locator('[data-action="rollAttack"][data-item-id="' + itemId + '"]').first().click();
     await clickRollDialog(page, { difficulty: 2, effort: 0, assets: 0 });
     await page.waitForFunction(({ count, actorId }) =>
       game.messages.size > count && [...game.messages].some(message =>
