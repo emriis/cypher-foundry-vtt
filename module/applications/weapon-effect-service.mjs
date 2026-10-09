@@ -5,15 +5,15 @@
  * Combat-round effects are scoped to the combat and round in which they apply.
  */
 
-const EFFECTS_FLAG = "flags.cypherFoundry.activeWeaponEffects";
+const EFFECTS_FLAG = "flags.cypher.activeWeaponEffects";
 
 function readEffects(actor) {
-  return actor?.flags?.cypherFoundry?.activeWeaponEffects ?? [];
+  return actor?.flags?.cypher?.activeWeaponEffects ?? [];
 }
 
 async function writeEffects(actor, effects) {
   if (typeof actor.setFlag === "function") {
-    await actor.setFlag("cypherFoundry", "activeWeaponEffects", effects);
+    await actor.setFlag("cypher", "activeWeaponEffects", effects);
     return;
   }
 
