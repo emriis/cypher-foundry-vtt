@@ -29,9 +29,11 @@ const FOUNDRY_LOG_PATH = path.join(
   os.tmpdir(),
   `cypher-foundry-e2e-${process.pid}.log`
 );
-const SHOW_FOUNDRY_LOGS = /^(1|true|yes)$/i.test(
-  process.env.FOUNDRY_E2E_SHOW_FOUNDRY_LOGS || ""
-);
+const SHOW_FOUNDRY_LOGS =
+  process.argv.includes("--debug-foundry-logs") ||
+  /^(1|true|yes)$/i.test(
+    process.env.FOUNDRY_E2E_SHOW_FOUNDRY_LOGS || ""
+  );
 const E2E_SPECS = [
   "tests/e2e/foundry-runtime.spec.mjs",
   "tests/e2e/foundry-gameplay.spec.mjs"
