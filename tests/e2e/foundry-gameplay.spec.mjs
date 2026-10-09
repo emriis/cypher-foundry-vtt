@@ -410,11 +410,25 @@ test.describe("Cypher Foundry live gameplay", () => {
     }, actorId);
 
     await dismissActiveTour(page);
+    const beforeSwitchMessages = await page.evaluate(() => game.messages.size);
     await page.locator('[data-item-id="' + itemId + '] [data-action="toggleAttackConfiguration"]').first().click();
-    await page.waitForFunction(({ actorId, itemId }) => {
+    await page.waitForFunction(({ actorId, itemId, count }) => {
       const item = game.actors.get(actorId)?.items.get(itemId);
-      return item?.system.mechanics.activeConfiguration === "alternate";
-    }, { actorId, itemId });
+      return item?.system.mechanics.activeConfiguration === "alternate"
+        && game.messages.size > count
+        && [...game.messages].some(message =>
+          message.getFlag("cypher", "rollType") === "weaponConfiguration"
+          && message.getFlag("cypher", "actorId") === actorId
+        );
+    }, { actorId, itemId, count: beforeSwitchMessages });
+    const switchResult = await page.evaluate(actorId => {
+      const message = [...game.messages].reverse().find(candidate =>
+        candidate.getFlag("cypher", "rollType") === "weaponConfiguration"
+        && candidate.getFlag("cypher", "actorId") === actorId
+      );
+      return { configuration: message?.getFlag("cypher", "configuration"), actionCost: message?.getFlag("cypher", "actionCost") };
+    }, actorId);
+    expect(switchResult).toEqual({ configuration: "alternate", actionCost: "action" });
 
     const messageCount = await page.evaluate(() => game.messages.size);
     await page.locator('[data-action="rollAttack"][data-item-id="' + itemId + ']').first().click();
