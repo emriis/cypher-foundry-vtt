@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 
 import {
+  resolveWeaponConfiguration,
   resolveWeaponRangeAdjudication,
   resolveWeaponTargetEffects
 } from "../../module/rules/weapon-mechanics.mjs";
@@ -96,4 +97,45 @@ test("weapon range adjudication does not infer range from token distance or miss
       .hinderSteps,
     0
   );
+});
+
+
+test("weapon configuration defaults to primary and preserves its explicit damage", () => {
+  assert.deepEqual(resolveWeaponConfiguration({
+    attackType: "heavy",
+    damage: 7,
+    mechanics: { alternateConfiguration: { enabled: true, attackType: "medium", action: "action" } }
+  }), {
+    configuration: "primary",
+    attackType: "heavy",
+    baseDamage: 7,
+    switchAction: "action"
+  });
+});
+
+test("alternate weapon configuration uses its category and category damage", () => {
+  assert.deepEqual(resolveWeaponConfiguration({
+    attackType: "heavy",
+    damage: 6,
+    mechanics: {
+      activeConfiguration: "alternate",
+      alternateConfiguration: { enabled: true, attackType: "medium", action: "action" }
+    }
+  }), {
+    configuration: "alternate",
+    attackType: "medium",
+    baseDamage: 4,
+    switchAction: "action"
+  });
+});
+
+test("invalid or disabled alternate configuration cannot override the primary weapon", () => {
+  assert.equal(resolveWeaponConfiguration({
+    attackType: "heavy", damage: 6,
+    mechanics: { activeConfiguration: "alternate", alternateConfiguration: { enabled: false, attackType: "medium" } }
+  }).baseDamage, 6);
+  assert.equal(resolveWeaponConfiguration({
+    attackType: "heavy", damage: 6,
+    mechanics: { activeConfiguration: "alternate", alternateConfiguration: { enabled: true, attackType: "invalid" } }
+  }).attackType, "heavy");
 });
