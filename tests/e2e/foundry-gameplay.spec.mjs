@@ -303,6 +303,7 @@ test.describe("Cypher Foundry live gameplay", () => {
   test("applies extreme-range hindrance only after explicit GM adjudication", async ({
     e2ePage: page
   }) => {
+    expect(await page.evaluate(() => game.user.isGM)).toBe(true);
     const actorId = await createActor(page);
     const itemId = await page.evaluate(async id => {
       const actor = game.actors.get(id);
