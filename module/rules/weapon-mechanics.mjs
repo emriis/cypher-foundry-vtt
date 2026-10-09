@@ -81,7 +81,7 @@ export function resolveWeaponConfiguration(system = {}) {
     attackType: attackType || null,
     baseDamage: isAlternate
       ? categoryDamage
-      : (explicitDamage ?? categoryDamage ?? 2),
+      : (explicitDamage || categoryDamage || 2),
     switchAction: isAlternate ? "action"
       : (alternate.enabled ? alternate.action || "action" : null)
   };
