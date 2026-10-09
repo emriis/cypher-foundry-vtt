@@ -94,6 +94,7 @@ export async function rollTask(actor, {
     skillItemId = null, isAttack = false, baseDamage = 0, flavor = "",
     extraHinderSteps = 0, extraEaseSteps = 0, luckyShot = false,
     specialEffectChoice = null, weaponTargetEffects = [], weaponSource = {},
+    weaponRangeAdjudication = null,
     defenseType = null, incomingSeverity = "minor", armorModifier = 0, shieldItemId = null,
     targetActor = null, armorBypass = 0, incomingWounds = 1,
     applyIncomingWound = true
@@ -253,6 +254,7 @@ export async function rollTask(actor, {
         ${effortLevels ? `<p>${game.i18n.localize("CYPHER.Roll.EffortSpent")}: ${effortLevels} (${totalCost} ${game.i18n.localize("CYPHER.Roll.PoolPoints")})</p>` : ""}
         ${woundHinder ? `<p class="cypher-hindered">${game.i18n.format("CYPHER.Roll.WoundHinder", { steps: woundHinder })}</p>` : ""}
         ${extraHinderSteps ? `<p class="cypher-hindered">${game.i18n.format("CYPHER.Roll.ExtraHinder", { steps: extraHinderSteps })}</p>` : ""}
+        ${weaponRangeAdjudication?.atExtremeRange ? `<p class="cypher-hindered">${game.i18n.localize("CYPHER.Roll.ExtremeRangeHinder")}</p>` : ""}
         ${armorModifier ? `<p class="cypher-armor-mod">${game.i18n.format("CYPHER.Roll.ArmorModifier", { steps: armorModifier })}</p>` : ""}
         ${autoArmorSpeedHinder ? `<p class="cypher-hindered">${game.i18n.format("CYPHER.Roll.ArmorSpeedHinder", { steps: autoArmorSpeedHinder })}</p>` : ""}
         <p class="cypher-result ${success ? "success" : "failure"}">
@@ -278,6 +280,7 @@ export async function rollTask(actor, {
           isAttack,
           baseDamage,
           weaponTargetEffects,
+          weaponRangeAdjudication,
           targetActorId: targetActor?.type === "npc" ? targetActor.id : null,
           armorBypass
         }
