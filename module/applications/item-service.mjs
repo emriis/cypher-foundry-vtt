@@ -192,7 +192,8 @@ export async function rollAttack(item, {
       itemId: item.id,
       itemName: item.name,
       configuration: weaponConfiguration.configuration,
-      attackType
+      attackType,
+      actionTiming: weaponConfiguration.actionTiming
     },
     armorBypass: item.system.mechanics?.ignoresPhysicalArmor ?? 0,
     flavor: `${game.i18n.localize("CYPHER.Roll.Attack")}: ${item.name}`
