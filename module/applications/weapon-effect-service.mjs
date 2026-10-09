@@ -23,7 +23,7 @@ export function getActiveWeaponEffects(actor) {
 
   return effects.filter(effect => {
     if (effect.duration === "one round") {
-      if (!combat) return false;
+      if (!combat) return effect.combatId === null;
       return effect.combatId === combat.id && effect.combatRound === combat.round;
     }
     return true;
@@ -75,7 +75,13 @@ export async function expireWeaponEffectsAfterAction(actor) {
   if (actor?.type !== "npc") return 0;
 
   const existing = readEffects(actor);
-  const remaining = existing.filter(effect => effect.duration !== "next action");
+  const inNarrativeRound = !globalThis.game?.combat;
+  const remaining = existing.filter(effect =>
+    effect.duration !== "next action"
+    && !(inNarrativeRound
+      && effect.duration === "one round"
+      && effect.combatId === null)
+  );
   const removed = existing.length - remaining.length;
   if (removed) await actor.update({ [EFFECTS_FLAG]: remaining });
   return removed;
@@ -94,8 +100,8 @@ export async function expireWeaponEffectsOutsideCurrentRound(actor) {
   const combat = globalThis.game?.combat;
   const remaining = existing.filter(effect => {
     if (effect.duration !== "one round") return true;
-    return Boolean(combat)
-      && effect.combatId === combat.id
+    if (!combat) return effect.combatId === null;
+    return effect.combatId === combat.id
       && effect.combatRound === combat.round;
   });
   const removed = existing.length - remaining.length;
