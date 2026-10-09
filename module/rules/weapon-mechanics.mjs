@@ -65,7 +65,8 @@ export function resolveWeaponRangeAdjudication({
  *
  * @param {object} system Attack Item system data.
  * @returns {{configuration: string, attackType: string|null,
- *   baseDamage: number|null, switchAction: string|null}}
+ *   baseDamage: number|null, actionTiming: string|null,
+ *   switchAction: string|null}}
  */
 export function resolveWeaponConfiguration(system = {}) {
   const mechanics = system.mechanics ?? {};
