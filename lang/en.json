@@ -276,7 +276,9 @@
       "Type": "Attack Type",
       "FreelyUsable": "This specific weapon is freely usable (override)",
       "OneHanded": "Fire one-handed",
-      "OneHandedHint": "This weapon hinders the attack when fired with one hand."
+      "OneHandedHint": "This weapon hinders the attack when fired with one hand.",
+      "ExtremeRange": "Target at extreme range (GM adjudication)",
+      "ExtremeRangeHint": "The GM confirms the target is at the weapon’s range limit. This hinders the attack by one step; token distance is not calculated."
     },
     "WeaponFamily": {
       "Label": "Weapon Family",
@@ -443,6 +445,7 @@
       "GMIntrusionFree": "free GM intrusion (natural 1)",
       "WoundHinder": "Hindered by {steps} steps from wounds",
       "ExtraHinder": "Extra hindrance of {steps} steps (lucky shot / weapon not freely usable)",
+      "ExtremeRangeHinder": "Extreme range: attack hindered by one step (GM adjudication).",
       "ArmorModifier": "Armor modifier: {steps} steps",
       "ArmorSpeedHinder": "Hindered by {steps} steps (armor not freely usable)",
       "CostRefunded": "The action's point cost was refunded (natural 20).",
