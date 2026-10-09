@@ -38,7 +38,7 @@ present in an Item, copied to a chat flag, or shown in descriptive text.
 | `mechanics.targetEffects` | Filters effects by target level, persists them to targeted NPCs on a successful attack, and consumes supported `hindered` / `loseNextAction` effects according to duration. | Runtime | Extend only when additional CRD effect semantics are structured. |
 | `mechanics.requiresTripod` | Preserved in the Item model. | Stored only / model gap | Requires deployment/positioning state and a rule for resolving attacks when the requirement is unmet. |
 | `mechanics.requiredOperators` | Preserved in the Item model. | Stored only / model gap | Requires a group/operator participation model and a rule for enforcing the minimum. |
-| `mechanics.alternateConfiguration` | Preserves whether an alternate configuration exists, its attack category, and its action label. | Stored only / model gap | Requires a persisted active configuration and an action that switches configurations without losing the source record. |
+| `mechanics.alternateConfiguration` | Persists primary/alternate selection; the switch action is announced in chat and the active category determines attack ease/familiarity and category damage. | Runtime (configuration switch) | Action cost is recorded but not enforced by a turn/action economy. Only the CRD-defined alternate category is modeled; no other weapon fields are inferred. |
 
 ## Existing runtime contracts
 
@@ -49,20 +49,24 @@ present in an Item, copied to a chat flag, or shown in descriptive text.
 - A selected NPC target is used to resolve level-gated target-effect candidates.
   If no single target is selected, or the selected target is not an NPC with a
   valid level, no level-gated effects are selected.
-- Matching target effects are attached to the roll message as data. This is not
-  equivalent to applying an effect to the target.
-- Core attack resolution computes damage and now persists successful numeric damage
-  to a selected NPC target, including the declared physical Armor bypass. Target
-  effects remain resolved/presented until a persisted effect lifecycle exists.
+- Matching target effects are persisted to a selected NPC on a successful attack
+  and supported `hindered` / `loseNextAction` effects are consumed according to
+  their declared duration.
+- Core attack resolution computes damage and persists successful numeric damage
+  to a selected NPC target, including the declared physical Armor bypass.
 
 ## Recommended implementation order
 
-1. Define and implement the persisted target-effect/status lifecycle for
-   `mechanics.targetEffects`.
-2. Range categories and explicit extreme-range hindrance are now handled by GM adjudication; token-distance calculation remains out of scope unless a separate grid contract is defined.
-3. Handle two-handed use, rapid fire, tripod/operators, alternate configuration,
-   and material cutting only when their CRD rule and necessary state model are
-   explicit.
+1. Range categories and explicit extreme-range hindrance are handled by GM
+   adjudication; token-distance calculation remains out of scope unless a
+   separate grid contract is defined.
+2. Primary/alternate configuration switching is implemented for the CRD-defined
+   alternate category. The system records the one-action cost but does not
+   enforce a turn economy.
+3. Continue with explicit weapon timing, rapid-fire ability prerequisites, and
+   tripod/operator requirements only when the necessary runtime state and CRD
+   contracts are available. Two-handed occupancy and material cutting remain
+   blocked on equipment/object models.
 
 The core PC-to-NPC numeric damage contract and physical Armor bypass are already
 implemented and verified. NPC-to-PC wound/Pool attacks are also handled through
