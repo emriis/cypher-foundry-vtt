@@ -259,3 +259,10 @@ export async function toggleAttackConfiguration(item) {
   });
   return next;
 }
+
+
+/** Return the active weapon configuration for sheet presentation. */
+export function getWeaponConfiguration(item) {
+  if (item?.type !== "attack") return null;
+  return resolveWeaponConfiguration(item.system);
+}
