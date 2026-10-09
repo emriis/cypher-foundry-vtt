@@ -216,47 +216,38 @@ test.describe("Cypher Foundry live gameplay", () => {
   }) => {
     const pcId = await createActor(page);
     const npcId = await page.evaluate(async prefix => {
+      // Start from the NPC model defaults, then persist the structured attack
+      // through the real Actor document update path. This keeps the fixture
+      // aligned with Foundry's registered DataModel validation.
       const actor = await Actor.create({
         name: `${prefix} NPC ${Date.now()}`,
         type: "npc",
-        system: {
-          level: 10,
-          health: { max: 30, value: 30 },
-          description: "",
-          motive: "",
-          environment: "",
-          armor: 0,
-          damage: "",
-          attacks: [{
-            name: "Mind Blast",
-            range: "Short",
-            action: "action",
-            damage: {
-              mode: "pool",
-              amount: 4,
-              severity: "",
-              stat: "intellect",
-              ignoresArmor: 0,
-              wounds: 1
-            },
-            effects: [],
-            description: ""
-          }],
-          modificationsStructured: [],
-          movement: "",
-          modifications: "",
-          combat: "",
-          interaction: "",
-          use: "",
-          loot: "",
-          gmIntrusion: "",
-          gmNotes: ""
-        }
+        system: { level: 10 }
       });
 
       if (!actor) {
-        throw new Error("Failed to create E2E NPC actor");
+        throw new Error("Foundry did not create the minimal E2E NPC actor");
       }
+
+      await actor.update({
+        "system.health.max": 30,
+        "system.health.value": 30,
+        "system.attacks": [{
+          name: "Mind Blast",
+          range: "Short",
+          action: "action",
+          damage: {
+            mode: "pool",
+            amount: 4,
+            severity: "",
+            stat: "intellect",
+            ignoresArmor: 0,
+            wounds: 1
+          },
+          effects: [],
+          description: ""
+        }]
+      });
 
       return actor.id;
     }, ACTOR_PREFIX);
