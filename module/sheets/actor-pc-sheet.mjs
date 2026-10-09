@@ -177,6 +177,11 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       ${isAttack ? `
       <div class="form-group inline">
         <label><input type="checkbox" name="luckyShot"/> ${game.i18n.localize("CYPHER.XP.LuckyShot")} (${CONFIG.CYPHER.xpCosts.luckyShot} PX, ${game.i18n.localize("CYPHER.XP.LuckyShotHint")})</label>
+      </div>` : ""}
+      ${isAttack && weapon?.system?.mechanics?.hinderedWhenUsedOneHanded ? `
+      <div class="form-group inline">
+        <label><input type="checkbox" name="oneHanded"/> ${game.i18n.localize("CYPHER.Attack.OneHanded")}</label>
+        <p class="hint">${game.i18n.localize("CYPHER.Attack.OneHandedHint")}</p>
       </div>` : ""}`;
 
     return foundry.applications.api.DialogV2.prompt({
