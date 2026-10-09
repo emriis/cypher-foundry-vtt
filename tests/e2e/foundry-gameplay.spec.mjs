@@ -678,6 +678,9 @@ test.describe("Cypher Foundry live gameplay", () => {
     });
 
     expect(result.armor).toBe(4);
+    expect(result.armorBypass).toBe(2);
+    expect(result.baseDamage).toBe(6);
+    expect(result.targetActorId).toBeTruthy();
     expect(result.health).toBe(6);
   });
 
