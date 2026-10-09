@@ -112,6 +112,6 @@ export async function expireWeaponEffectsOutsideCurrentRound(actor) {
       && effect.combatRound === combat.round;
   });
   const removed = existing.length - remaining.length;
-  if (removed) await actor.update({ [EFFECTS_FLAG]: remaining });
+  if (removed) await writeEffects(actor, remaining);
   return removed;
 }
