@@ -48,6 +48,11 @@ function createWeaponMechanicsField() {
     requiredOperators: new NumberField({
       required: true, integer: true, initial: 0, min: 0
     }),
+    activeConfiguration: new StringField({
+      required: true,
+      initial: "primary",
+      choices: ["primary", "alternate"]
+    }),
     alternateConfiguration: new SchemaField({
       enabled: new BooleanField({ required: true, initial: false }),
       attackType: new StringField({
