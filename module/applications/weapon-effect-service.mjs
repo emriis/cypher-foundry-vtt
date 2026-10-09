@@ -11,6 +11,15 @@ function readEffects(actor) {
   return actor?.flags?.cypherFoundry?.activeWeaponEffects ?? [];
 }
 
+async function writeEffects(actor, effects) {
+  if (typeof actor.setFlag === "function") {
+    await actor.setFlag("cypherFoundry", "activeWeaponEffects", effects);
+    return;
+  }
+
+  await actor.update({ [EFFECTS_FLAG]: effects });
+}
+
 /**
  * Return target effects that have not passed their declared duration.
  *
@@ -59,9 +68,7 @@ export async function applyWeaponTargetEffects(target, effects = [], source = {}
 
   if (!applied.length) return 0;
 
-  await target.update({
-    [EFFECTS_FLAG]: [...existing, ...applied]
-  });
+  await writeEffects(target, [...existing, ...applied]);
   return applied.length;
 }
 
@@ -83,7 +90,7 @@ export async function expireWeaponEffectsAfterAction(actor) {
       && effect.combatId === null)
   );
   const removed = existing.length - remaining.length;
-  if (removed) await actor.update({ [EFFECTS_FLAG]: remaining });
+  if (removed) await writeEffects(actor, remaining);
   return removed;
 }
 
