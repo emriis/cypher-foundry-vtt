@@ -3,15 +3,14 @@
  * directory, runs the live Playwright suite, and removes only that world.
  */
 import {
-  closeSync,
   cp,
   mkdir,
-  openSync,
   readFile,
   readdir,
   rm,
   writeFile
 } from "node:fs/promises";
+import { closeSync, openSync } from "node:fs";
 import { spawn } from "node:child_process";
 import os from "node:os";
 import path from "node:path";
