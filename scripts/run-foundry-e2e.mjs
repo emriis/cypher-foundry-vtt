@@ -10,6 +10,7 @@ import {
   rm,
   writeFile
 } from "node:fs/promises";
+import { closeSync, openSync } from "node:fs";
 import { spawn } from "node:child_process";
 import os from "node:os";
 import path from "node:path";
@@ -24,6 +25,15 @@ const FOUNDRY_PID_FILE = path.join(
   os.tmpdir(),
   `cypher-foundry-e2e-${process.pid}.pid`
 );
+const FOUNDRY_LOG_PATH = path.join(
+  os.tmpdir(),
+  `cypher-foundry-e2e-${process.pid}.log`
+);
+const SHOW_FOUNDRY_LOGS =
+  process.argv.includes("--debug-foundry-logs") ||
+  /^(1|true|yes)$/i.test(
+    process.env.FOUNDRY_E2E_SHOW_FOUNDRY_LOGS || ""
+  );
 const E2E_SPECS = [
   "tests/e2e/foundry-runtime.spec.mjs",
   "tests/e2e/foundry-gameplay.spec.mjs"
@@ -237,12 +247,29 @@ function spawnFoundry(appPath, userDataPath) {
     "main.js"
   );
 
-  return spawn(process.execPath, [serverPath, ...args], {
-    cwd: path.dirname(serverPath),
-    stdio: "inherit",
-    windowsHide: false,
-    shell: false
-  });
+  // Keep the runner output focused on Playwright by default. Foundry logs are
+  // captured separately and the tail is shown automatically if E2E fails.
+  // Set FOUNDRY_E2E_SHOW_FOUNDRY_LOGS=true to stream Foundry logs live.
+  if (SHOW_FOUNDRY_LOGS) {
+    return spawn(process.execPath, [serverPath, ...args], {
+      cwd: path.dirname(serverPath),
+      stdio: "inherit",
+      windowsHide: false,
+      shell: false
+    });
+  }
+
+  const logFd = openSync(FOUNDRY_LOG_PATH, "w");
+  try {
+    return spawn(process.execPath, [serverPath, ...args], {
+      cwd: path.dirname(serverPath),
+      stdio: ["ignore", logFd, logFd],
+      windowsHide: false,
+      shell: false
+    });
+  } finally {
+    closeSync(logFd);
+  }
 }
 
 function quoteWindowsArg(value) {
@@ -335,6 +362,24 @@ async function removeWorld(worldPath) {
   }
 
   throw lastError;
+}
+
+async function showFoundryLogTailOnFailure() {
+  if (SHOW_FOUNDRY_LOGS || exitCode === 0) return;
+
+  let content;
+  try {
+    content = await readFile(FOUNDRY_LOG_PATH, "utf8");
+  } catch {
+    return;
+  }
+
+  const lines = content.trimEnd().split(/\r?\n/);
+  const tail = lines.slice(-120).join("\n");
+  console.error("\n--- Foundry log tail (last 120 lines) ---");
+  console.error(tail || "(Foundry log is empty)");
+  console.error("--- End Foundry log tail ---");
+  console.error("Full Foundry log: " + FOUNDRY_LOG_PATH);
 }
 
 async function removeStaleE2EWorlds(dataPath) {
@@ -498,6 +543,11 @@ try {
   });
 } finally {
   await stopProcess(child, foundryPid);
+  await showFoundryLogTailOnFailure();
+
+  if (exitCode === 0) {
+    await rm(FOUNDRY_LOG_PATH, { force: true });
+  }
 
   if (worldCreated) {
     await removeWorld(worldPath);

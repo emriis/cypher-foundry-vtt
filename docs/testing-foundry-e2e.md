@@ -36,6 +36,27 @@ The Playwright context uses a fixed 1280×900 CSS viewport, device scale factor 
 
 You do **not** need to open Foundry manually.
 
+### Foundry logs
+
+By default, Foundry stdout/stderr are written to a temporary log file rather
+than interleaved with Playwright output. Successful runs remove this log. If
+the run fails, the runner prints the last 120 lines and retains the complete
+log, reporting its path. To stream Foundry logs directly to the console while debugging, use the
+separate command:
+
+```powershell
+npm run test:e2e-debug
+```
+
+This debug command enables live Foundry logging. The regular `npm run
+test:e2e` remains quiet by default. For advanced use, the runner also accepts
+`FOUNDRY_E2E_SHOW_FOUNDRY_LOGS=true` as an environment variable. When live
+streaming is enabled, logs are not captured to the temporary file.
+
+Playwright browser messages and bootstrap diagnostics are buffered and printed
+only when a test fails. Actor/sheet diagnostics are attached to the test report
+as JSON rather than dumped into the terminal for every successful test.
+
 The command performs this lifecycle:
 
 1. Finds the local Foundry executable.

@@ -2,6 +2,15 @@ import { test as base, expect } from "@playwright/test";
 import { joinAsGamemaster } from "./foundry-session.mjs";
 
 const MIN_CHROMIUM_MAJOR = 146;
+const browserLogsByPage = new WeakMap();
+
+function recordBrowserLog(page, ...parts) {
+  const logs = browserLogsByPage.get(page) ?? [];
+  logs.push(parts.map(part =>
+    typeof part === "string" ? part : String(part)
+  ).join(" "));
+  browserLogsByPage.set(page, logs);
+}
 
 export const test = base.extend({
   e2ePage: [async ({ browser }, use) => {
@@ -25,7 +34,8 @@ export const test = base.extend({
     // error in cypher.mjs can leave Foundry running with the generic core
     // Actor/Item classes, which otherwise looks like a sheet rendering bug.
     page.on("pageerror", error => {
-      console.error(
+      recordBrowserLog(
+        page,
         "[E2E pageerror]",
         error.stack || error.message
       );
@@ -36,14 +46,16 @@ export const test = base.extend({
         message.type() === "error" ||
         /cypher/i.test(message.text())
       ) {
-        console.log(
+        recordBrowserLog(
+          page,
           `[E2E browser ${message.type()}] ${message.text()}`
         );
       }
     });
 
     page.on("requestfailed", request => {
-      console.error(
+      recordBrowserLog(
+        page,
         "[E2E requestfailed]",
         request.url(),
         request.failure()?.errorText || "unknown error"
@@ -69,7 +81,8 @@ export const test = base.extend({
       }
     }));
 
-    console.log(
+    recordBrowserLog(
+      page,
       "[E2E system bootstrap]\n" +
       JSON.stringify(bootstrap, null, 2)
     );
@@ -113,7 +126,18 @@ export const test = base.extend({
   }, { scope: "worker" }]
 });
 
-test.afterEach(async ({ e2ePage: page }) => {
+test.afterEach(async ({ e2ePage: page }, testInfo) => {
+  if (testInfo.status !== testInfo.expectedStatus) {
+    const logs = browserLogsByPage.get(page) ?? [];
+    console.error(
+      "\n--- E2E browser diagnostics (failed test) ---\n" +
+      (logs.join("\n") || "(No browser diagnostics captured)") +
+      "\n--- End E2E browser diagnostics ---"
+    );
+  }
+
+  browserLogsByPage.delete(page);
+
   await page.evaluate(async () => {
     for (const actor of game.actors.filter(
       actor => actor.name.startsWith("E2E Cypher") ||
