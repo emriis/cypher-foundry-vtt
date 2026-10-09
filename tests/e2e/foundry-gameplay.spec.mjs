@@ -211,65 +211,92 @@ test.describe("Cypher Foundry live gameplay", () => {
     expect(after.might).toBe(before.might);
   });
 
-  test("one-handed use hinders only CRD-marked weapon attacks", async ({
+  test("one-handed hindrance applies only when selected on CRD-marked weapons", async ({
     e2ePage: page
   }) => {
     const actorId = await createActor(page);
-    const itemId = await page.evaluate(async actorId => {
+    const itemIds = await page.evaluate(async actorId => {
       const actor = game.actors.get(actorId);
       await actor.update({
         "system.freeWeaponCategories": ["medium"]
       });
-      const item = await Item.create({
-        name: "E2E Rifle",
-        type: "attack",
-        system: {
-          attackType: "medium",
-          damage: 4,
-          stat: "might",
-          freelyUsable: true,
-          mechanics: {
-            hinderedWhenUsedOneHanded: true
+      const items = await actor.createEmbeddedDocuments("Item", [
+        {
+          name: "E2E Marked Rifle",
+          type: "attack",
+          system: {
+            attackType: "medium",
+            damage: 4,
+            stat: "might",
+            freelyUsable: true,
+            mechanics: { hinderedWhenUsedOneHanded: true }
+          }
+        },
+        {
+          name: "E2E Unmarked Weapon",
+          type: "attack",
+          system: {
+            attackType: "medium",
+            damage: 4,
+            stat: "might",
+            freelyUsable: true,
+            mechanics: { hinderedWhenUsedOneHanded: false }
           }
         }
-      }, { parent: actor });
+      ]);
       await actor.sheet.render(true);
-      return item.id;
+      return items.map(item => item.id);
     }, actorId);
 
     await dismissActiveTour(page);
-    const messageCount = await page.evaluate(() => game.messages.size);
-    await page.locator(
-      '[data-action="rollAttack"][data-item-id="' + itemId + '"]'
-    ).first().click();
 
-    const form = page.locator("form").filter({
-      has: page.locator('input[name="difficulty"]')
-    }).last();
-    await expect(form.locator('input[name="oneHanded"]')).toBeVisible();
-    await form.locator('input[name="difficulty"]').fill("2");
-    await form.locator('input[name="oneHanded"]').check();
-    await form.getByRole("button").last().click();
+    const rollAndReadDifficulty = async (itemId, oneHanded) => {
+      const messageCount = await page.evaluate(() => game.messages.size);
+      await page.locator(
+        '[data-action="rollAttack"][data-item-id="' + itemId + '"]'
+      ).first().click();
 
-    await page.waitForFunction(
-      ({ count, actorId }) =>
-        game.messages.size > count &&
-        [...game.messages].some(message =>
-          message.speaker?.actor === actorId &&
-          message.getFlag("cypher", "rollType") === "task"
-        ),
-      { count: messageCount, actorId }
-    );
+      const form = page.locator("form").filter({
+        has: page.locator('input[name="difficulty"]')
+      }).last();
+      const oneHandedInput = form.locator('input[name="oneHanded"]');
 
-    const effectiveDifficulty = await page.evaluate(actorId => {
-      const message = [...game.messages].reverse().find(candidate =>
-        candidate.speaker?.actor === actorId &&
-        candidate.getFlag("cypher", "rollType") === "task"
+      if (oneHanded === null) {
+        await expect(oneHandedInput).toHaveCount(0);
+      } else {
+        await expect(oneHandedInput).toBeVisible();
+        if (oneHanded) await oneHandedInput.check();
+      }
+
+      await form.locator('input[name="difficulty"]').fill("2");
+      await form.getByRole("button").last().click();
+
+      await page.waitForFunction(
+        ({ count, actorId }) =>
+          game.messages.size > count &&
+          [...game.messages].some(message =>
+            message.speaker?.actor === actorId &&
+            message.getFlag("cypher", "rollType") === "task"
+          ),
+        { count: messageCount, actorId }
       );
-      return message?.getFlag("cypher", "effectiveDifficulty");
-    }, actorId);
 
-    expect(effectiveDifficulty).toBe(3);
+      return page.evaluate(actorId => {
+        const message = [...game.messages].reverse().find(candidate =>
+          candidate.speaker?.actor === actorId &&
+          candidate.getFlag("cypher", "rollType") === "task"
+        );
+        return message?.getFlag("cypher", "effectiveDifficulty");
+      }, actorId);
+    };
+
+    // An unmarked weapon has no one-handed control and no extra hindrance.
+    expect(await rollAndReadDifficulty(itemIds[1], null)).toBe(2);
+    // A marked weapon is not hindered if the player leaves the option off.
+    expect(await rollAndReadDifficulty(itemIds[0], false)).toBe(2);
+    // Selecting one-handed use adds exactly one hindrance step.
+    expect(await rollAndReadDifficulty(itemIds[0], true)).toBe(3);
+
     await page.evaluate(id => game.actors.get(id)?.sheet.close(), actorId);
   });
 
