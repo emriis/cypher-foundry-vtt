@@ -267,13 +267,30 @@ test.describe("Cypher Foundry live gameplay", () => {
         );
       }
 
-      const result = await npc.rollNpcAttack(npc.system.attacks[0], {
+      const attack = npc.system.attacks?.[0];
+      const attackDiagnostics = {
+        npcType: npc.type,
+        targetType: target?.type,
+        attackCount: npc.system.attacks?.length ?? null,
+        attack: attack ? foundry.utils.deepClone(attack) : null
+      };
+      if (!attack || attack.damage?.mode !== "pool"
+          || attack.damage?.stat !== "intellect"
+          || attack.damage?.amount !== 4) {
+        throw new Error(
+          "NPC structured attack was not persisted as expected: "
+          + JSON.stringify(attackDiagnostics)
+        );
+      }
+
+      const result = await npc.rollNpcAttack(attack, {
         target,
         defenseType: "dodge"
       });
       if (!result || result.defense.success) {
         throw new Error(
           `Expected the level-10 NPC attack to fail the PC Dodge; `
+          + `inputs=${JSON.stringify(attackDiagnostics)}; `
           + `result=${JSON.stringify(result && {
             success: result.defense?.success,
             d20: result.defense?.roll?.total,
