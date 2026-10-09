@@ -229,25 +229,29 @@ test.describe("Cypher Foundry live gameplay", () => {
         throw new Error("Foundry did not create the minimal E2E NPC actor");
       }
 
+      // Foundry's update expansion can interpret a dotted array-field
+      // assignment as an object update. Pass the nested system object so the
+      // DataModel receives the complete ArrayField value.
       await actor.update({
-        "system.level": 10,
-        "system.health.max": 30,
-        "system.health.value": 30,
-        "system.attacks": [{
-          name: "Mind Blast",
-          range: "Short",
-          action: "action",
-          damage: {
-            mode: "pool",
-            amount: 4,
-            severity: "",
-            stat: "intellect",
-            ignoresArmor: 0,
-            wounds: 1
-          },
-          effects: [],
-          description: ""
-        }]
+        system: {
+          level: 10,
+          health: { max: 30, value: 30 },
+          attacks: [{
+            name: "Mind Blast",
+            range: "Short",
+            action: "action",
+            damage: {
+              mode: "pool",
+              amount: 4,
+              severity: "",
+              stat: "intellect",
+              ignoresArmor: 0,
+              wounds: 1
+            },
+            effects: [],
+            description: ""
+          }]
+        }
       });
 
       return actor.id;
