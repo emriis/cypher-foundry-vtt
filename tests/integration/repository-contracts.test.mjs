@@ -370,6 +370,20 @@ test("live E2E runner invokes every committed Playwright spec explicitly", () =>
   assert.match(source, /const testArgs = \[[\s\S]*\.\.\.E2E_SPECS/);
 });
 
+test("live E2E keeps Foundry logs separate unless live diagnostics are requested", () => {
+  const source = fs.readFileSync(
+    path.join(root, "scripts/run-foundry-e2e.mjs"),
+    "utf8"
+  );
+
+  assert.match(source, /FOUNDRY_E2E_SHOW_FOUNDRY_LOGS/);
+  assert.match(source, /stdio: \\["ignore", logFd, logFd\\]/);
+  assert.match(source, /showFoundryLogTailOnFailure/);
+  assert.match(source, /lines\\.slice\\(-120\\)/);
+  assert.match(source, /Full Foundry log:/);
+  assert.match(source, /if \(exitCode === 0\)[\\s\\S]*FOUNDRY_LOG_PATH/);
+});
+
 test("live E2E uses an isolated Foundry server process boundary", () => {
   const source = fs.readFileSync(
     path.join(root, "scripts/run-foundry-e2e.mjs"),
