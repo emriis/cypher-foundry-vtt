@@ -455,7 +455,11 @@ test.describe("Cypher Foundry live gameplay", () => {
 
     expect(result.activeConfiguration).toBe("alternate");
     expect(result.baseDamage).toBe(4);
-    expect(result.weaponSource).toMatchObject({ configuration: "alternate", attackType: "medium" });
+    expect(result.weaponSource).toMatchObject({
+      configuration: "alternate",
+      attackType: "medium",
+      actionTiming: "action"
+    });
     await page.evaluate(id => game.actors.get(id)?.sheet.close(), actorId);
   });
 
