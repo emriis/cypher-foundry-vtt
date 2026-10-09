@@ -810,6 +810,32 @@ test("completes a player vertical slice from real CRD compendiums", async ({
         throw new Error("Cypher table use did not create chat output");
       }
 
+      const cypherVariantSource = cypherSource.toObject();
+      delete cypherVariantSource._id;
+      cypherVariantSource.name = "E2E Cypher Variant";
+      cypherVariantSource.system.depleted = false;
+      cypherVariantSource.system.variants = [{
+        name: "E2E Variant",
+        powerLevel: "advanced",
+        rollMin: 1,
+        rollMax: 100
+      }];
+      const [variantCypher] = await actor.createEmbeddedDocuments("Item", [
+        cypherVariantSource
+      ]);
+      const { rollCypherVariant } =
+        await import("/systems/cypher/module/applications/item-service.mjs");
+      const messageCountBeforeVariant = game.messages.size;
+      if (!(await rollCypherVariant(variantCypher))) {
+        throw new Error("Structured Cypher variant could not be resolved");
+      }
+      if (game.messages.size <= messageCountBeforeVariant) {
+        throw new Error("Cypher variant resolution did not create chat output");
+      }
+      if (!variantCypher.system.depleted) {
+        throw new Error("Cypher variant resolution did not deplete the Cypher");
+      }
+
       const abilityPack = getPack("abilities-en");
       const abilities = await abilityPack.getDocuments();
       const tableAbilitySource = abilities.find(item =>
