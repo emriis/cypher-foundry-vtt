@@ -4,6 +4,7 @@ import test from "node:test";
 import {
   rollAttack,
   rollCypherTable,
+  rollCypherVariant,
   rollDepletion,
   useCypher
 } from "../../module/applications/item-service.mjs";
@@ -80,6 +81,66 @@ test("rollCypherTable resolves the matching result and consumes the Cypher", asy
   assert.equal(message.flags.cypher.rollType, "cypherTable");
   assert.equal(message.flags.cypher.tableId, "effect-table");
   assert.equal(message.flags.cypher.originalRoll, 4);
+});
+
+
+test("rollCypherVariant resolves the matching power and consumes the Cypher", async () => {
+  let update;
+  let message;
+  globalThis.game = { i18n: { localize: value => value } };
+  globalThis.ui = { notifications: { error: () => {} } };
+  globalThis.ChatMessage = { getSpeaker: () => ({}) };
+  globalThis.Roll = class {
+    constructor(formula) { this.formula = formula; }
+    async evaluate() { this.total = 75; return this; }
+    async toMessage(value) { message = value; }
+  };
+
+  const item = {
+    type: "cypher",
+    id: "teleporter-id",
+    name: "Teleporter",
+    actor: { id: "actor-id" },
+    system: {
+      depleted: false,
+      variants: [
+        { name: "Bounder", powerLevel: "medium", rollMin: 1, rollMax: 50 },
+        { name: "Traveler", powerLevel: "advanced", rollMin: 51, rollMax: 80 },
+        { name: "Planetary", powerLevel: "high", rollMin: 81, rollMax: 95 },
+        { name: "Interstellar", powerLevel: "ultra", rollMin: 96, rollMax: 100 }
+      ]
+    },
+    async update(value) { update = value; }
+  };
+
+  assert.equal(await rollCypherVariant(item), true);
+  assert.deepEqual(update, { "system.depleted": true });
+  assert.match(message.flavor, /Traveler/);
+  assert.match(message.flavor, /advanced/);
+  assert.equal(message.flags.cypher.rollType, "cypherVariant");
+  assert.equal(message.flags.cypher.originalRoll, 75);
+});
+
+test("rollCypherVariant leaves the Cypher untouched when no variant matches", async () => {
+  let updateCalled = false;
+  globalThis.game = { i18n: { localize: value => value } };
+  globalThis.ui = { notifications: { error: () => {} } };
+  globalThis.Roll = class {
+    constructor(formula) { this.formula = formula; }
+    async evaluate() { this.total = 75; return this; }
+  };
+  const item = {
+    type: "cypher",
+    actor: { id: "actor-id" },
+    system: {
+      depleted: false,
+      variants: [{ name: "Bounder", powerLevel: "medium", rollMin: 1, rollMax: 50 }]
+    },
+    async update() { updateCalled = true; }
+  };
+
+  assert.equal(await rollCypherVariant(item), false);
+  assert.equal(updateCalled, false);
 });
 
 test("rollCypherTable rejects missing tables and already-depleted Cyphers", async () => {
