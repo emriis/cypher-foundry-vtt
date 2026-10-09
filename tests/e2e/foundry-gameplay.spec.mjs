@@ -211,6 +211,68 @@ test.describe("Cypher Foundry live gameplay", () => {
     expect(after.might).toBe(before.might);
   });
 
+  test("one-handed use hinders only CRD-marked weapon attacks", async ({
+    e2ePage: page
+  }) => {
+    const actorId = await createActor(page);
+    const itemId = await page.evaluate(async actorId => {
+      const actor = game.actors.get(actorId);
+      await actor.update({
+        "system.freeWeaponCategories": ["medium"]
+      });
+      const item = await Item.create({
+        name: "E2E Rifle",
+        type: "attack",
+        system: {
+          attackType: "medium",
+          damage: 4,
+          stat: "might",
+          freelyUsable: true,
+          mechanics: {
+            hinderedWhenUsedOneHanded: true
+          }
+        }
+      }, { parent: actor });
+      await actor.sheet.render(true);
+      return item.id;
+    }, actorId);
+
+    await dismissActiveTour(page);
+    const messageCount = await page.evaluate(() => game.messages.size);
+    await page.locator(
+      '[data-action="rollAttack"][data-item-id="' + itemId + '"]'
+    ).first().click();
+
+    const form = page.locator("form").filter({
+      has: page.locator('input[name="difficulty"]')
+    }).last();
+    await expect(form.locator('input[name="oneHanded"]')).toBeVisible();
+    await form.locator('input[name="difficulty"]').fill("2");
+    await form.locator('input[name="oneHanded"]').check();
+    await form.getByRole("button").last().click();
+
+    await page.waitForFunction(
+      ({ count, actorId }) =>
+        game.messages.size > count &&
+        [...game.messages].some(message =>
+          message.speaker?.actor === actorId &&
+          message.getFlag("cypher", "rollType") === "task"
+        ),
+      { count: messageCount, actorId }
+    );
+
+    const effectiveDifficulty = await page.evaluate(actorId => {
+      const message = [...game.messages].reverse().find(candidate =>
+        candidate.speaker?.actor === actorId &&
+        candidate.getFlag("cypher", "rollType") === "task"
+      );
+      return message?.getFlag("cypher", "effectiveDifficulty");
+    }, actorId);
+
+    expect(effectiveDifficulty).toBe(3);
+    await page.evaluate(id => game.actors.get(id)?.sheet.close(), actorId);
+  });
+
   test("executes a structured NPC Pool attack against a real PC", async ({
     e2ePage: page
   }) => {

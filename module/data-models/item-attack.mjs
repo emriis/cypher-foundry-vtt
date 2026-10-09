@@ -19,6 +19,7 @@ const {
 function createWeaponMechanicsField() {
   return new SchemaField({
     twoHanded: new BooleanField({ required: true, initial: false }),
+    hinderedWhenUsedOneHanded: new BooleanField({ required: true, initial: false }),
     rapidFire: new BooleanField({ required: true, initial: false }),
     ignoresPhysicalArmor: new NumberField({
       required: true, integer: true, initial: 0, min: 0

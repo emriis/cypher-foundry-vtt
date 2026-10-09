@@ -196,6 +196,44 @@ test("rollAttack delegates weapon familiarity to the common task service", async
   assert.equal(received.baseDamage, 4);
 });
 
+test("rollAttack hinders a weapon explicitly used one-handed", async () => {
+  let received;
+  globalThis.game = {
+    i18n: { localize: value => value },
+    user: { targets: new Set() }
+  };
+  const actor = {
+    system: {
+      freeWeaponCategories: ["medium"],
+      freeWeaponFamilies: [],
+      freeWeaponSkillCategories: [],
+      canFreelyUseAllWeapons: false
+    },
+    items: new Map(),
+    async rollTask(options) {
+      received = options;
+      return options;
+    }
+  };
+  const item = {
+    type: "attack",
+    name: "Rifle",
+    actor,
+    system: {
+      damage: 4,
+      attackType: "medium",
+      stat: "might",
+      freelyUsable: false,
+      mechanics: { hinderedWhenUsedOneHanded: true }
+    }
+  };
+
+  await rollAttack(item, { oneHanded: true });
+  assert.equal(received.extraHinderSteps, 1);
+  await rollAttack(item, { oneHanded: false });
+  assert.equal(received.extraHinderSteps, 0);
+});
+
 test("rollAttack resolves target effects from the selected NPC level", async () => {
   let received;
   globalThis.game = {

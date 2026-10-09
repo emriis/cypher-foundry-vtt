@@ -156,6 +156,30 @@ test("W4 weapon extraction respects heavy weapon two-hand rules", () => {
   assert.deepEqual(failures, [], failures.join("\n"));
 });
 
+test("W4 weapon extraction structures explicit one-handed firing hindrance", () => {
+  const failures = [];
+  for (const language of ["en", "fr"]) {
+    for (const record of readRecords(language)) {
+      if (record.crdType !== "weapon") continue;
+
+      const note = normalizeText(record.system.description);
+      const explicitlyHindered = /attack hindered if fired with one hand/i
+        .test(note) || /attaque entravée si tirée à une main/i.test(note);
+      const structured = record.system.mechanics
+        ?.hinderedWhenUsedOneHanded === true;
+
+      if (explicitlyHindered !== structured) {
+        failures.push(
+          language + "/" + record.name +
+          ": one-handed hindrance text and structured mechanic disagree"
+        );
+      }
+    }
+  }
+
+  assert.deepEqual(failures, [], failures.join("\\n"));
+});
+
 test("W4 armor extraction preserves explicit depletion mechanics", () => {
   const byName = new Map(
     readRecords("en")

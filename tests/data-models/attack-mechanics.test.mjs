@@ -41,6 +41,10 @@ test("weapon schema exposes structured mechanics without removing source propert
   assert.ok(schema.properties);
   assert.ok(schema.mechanics);
   assert.equal(schema.mechanics.options.twoHanded.options.initial, false);
+  assert.equal(
+    schema.mechanics.options.hinderedWhenUsedOneHanded.options.initial,
+    false
+  );
   assert.equal(schema.mechanics.options.rapidFire.options.initial, false);
   assert.equal(
     schema.mechanics.options.ignoresPhysicalArmor.options.initial,
