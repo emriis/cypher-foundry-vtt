@@ -411,7 +411,7 @@ test.describe("Cypher Foundry live gameplay", () => {
 
     await dismissActiveTour(page);
     const beforeSwitchMessages = await page.evaluate(() => game.messages.size);
-    await page.locator('[data-item-id="' + itemId + '] [data-action="toggleAttackConfiguration"]').first().click();
+    await page.locator('[data-item-id="' + itemId + '"] [data-action="toggleAttackConfiguration"]').first().click();
     await page.waitForFunction(({ actorId, itemId, count }) => {
       const item = game.actors.get(actorId)?.items.get(itemId);
       return item?.system.mechanics.activeConfiguration === "alternate"
