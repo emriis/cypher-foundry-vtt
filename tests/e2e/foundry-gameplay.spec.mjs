@@ -736,7 +736,26 @@ test.describe("Cypher Foundry live gameplay", () => {
           );
         }
 
-        await attack.rollAttack({ difficulty: 0, target: npc });
+        // This test verifies Armor bypass and Health persistence, not the
+        // random special-outcome table. Force an ordinary d20 result so a
+        // natural 19/20 cannot add damage and make the Health assertion flaky.
+        const originalEvaluate = Roll.prototype.evaluate;
+        Roll.prototype.evaluate = async function (...args) {
+          const evaluated = await originalEvaluate.apply(this, args);
+          if (this.formula === "1d20") {
+            Object.defineProperty(this, "total", {
+              configurable: true,
+              value: 10
+            });
+          }
+          return evaluated;
+        };
+
+        try {
+          await attack.rollAttack({ difficulty: 0, target: npc });
+        } finally {
+          Roll.prototype.evaluate = originalEvaluate;
+        }
 
         await new Promise(resolve => setTimeout(resolve, 100));
 
@@ -748,6 +767,7 @@ test.describe("Cypher Foundry live gameplay", () => {
         return {
           health: npc.system.health.value,
           armor: npc.system.armor,
+          d20: message?.getFlag("cypher", "d20") ?? null,
           armorBypass: message?.getFlag("cypher", "armorBypass") ?? null,
           baseDamage: message?.getFlag("cypher", "baseDamage") ?? null,
           targetActorId: message?.getFlag("cypher", "targetActorId") ?? null
@@ -761,6 +781,7 @@ test.describe("Cypher Foundry live gameplay", () => {
     expect(result.armor).toBe(4);
     expect(result.armorBypass).toBe(2);
     expect(result.baseDamage).toBe(6);
+    expect(result.d20).toBe(10);
     expect(result.targetActorId).toBeTruthy();
     expect(result.health).toBe(6);
   });
