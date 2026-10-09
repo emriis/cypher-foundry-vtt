@@ -28,6 +28,58 @@ export async function useCypher(item) {
  * @param {string} tableId Structured table identifier.
  * @returns {Promise<boolean>} Whether a table result was rolled.
  */
+
+/**
+ * Roll a Cypher's structured power variants on a d100 and consume it.
+ *
+ * @param {Item} item Cypher Item.
+ * @returns {Promise<boolean>} Whether a variant was resolved.
+ */
+export async function rollCypherVariant(item) {
+  if (!item || item.type !== "cypher" || !item.actor || item.system.depleted) {
+    return false;
+  }
+
+  const variants = item.system.variants ?? [];
+  if (!variants.length) return false;
+
+  let roll;
+  try {
+    roll = await new Roll("1d100").evaluate();
+  } catch (error) {
+    ui.notifications.error(
+      `${game.i18n.localize("CYPHER.Ability.InvalidRollTable")}: ${error.message}`
+    );
+    return false;
+  }
+
+  const variant = variants.find(candidate =>
+    roll.total >= candidate.rollMin && roll.total <= candidate.rollMax
+  );
+  if (!variant) {
+    ui.notifications.error(
+      game.i18n.localize("CYPHER.Ability.NoRollTableResult")
+    );
+    return false;
+  }
+
+  await item.update({ "system.depleted": true });
+  await roll.toMessage({
+    speaker: ChatMessage.getSpeaker({ actor: item.actor }),
+    flavor: `<strong>${item.name}</strong> — ${variant.name} (${variant.powerLevel})`,
+    flags: { cypher: {
+      rerollable: true,
+      rollType: "cypherVariant",
+      actorId: item.actor.id,
+      itemId: item.id,
+      variantName: variant.name,
+      powerLevel: variant.powerLevel,
+      originalRoll: roll.total
+    } }
+  });
+  return true;
+}
+
 export async function rollCypherTable(item, tableId) {
   if (!item || item.type !== "cypher" || !item.actor || item.system.depleted) {
     return false;
