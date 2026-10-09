@@ -180,8 +180,7 @@ A locally activated Foundry installation is required for live E2E validation.
 
 Foundry server logs are captured in a temporary file and stay out of the normal
 console output. If the E2E run fails, the last 120 lines are printed and the
-full log path is shown. To stream Foundry logs live while debugging, set
-`FOUNDRY_E2E_SHOW_FOUNDRY_LOGS=true` before running the command.
+full log path is shown. To stream Foundry logs live while debugging, run `npm run test:e2e-debug`.
 
 ## Character Builder import
 
