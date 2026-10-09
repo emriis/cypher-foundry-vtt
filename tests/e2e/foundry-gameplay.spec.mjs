@@ -211,6 +211,117 @@ test.describe("Cypher Foundry live gameplay", () => {
     expect(after.might).toBe(before.might);
   });
 
+  test("executes a structured NPC Pool attack against a real PC", async ({
+    e2ePage: page
+  }) => {
+    const pcId = await createActor(page);
+    const npcId = await page.evaluate(async prefix => {
+      // Create the structured attack with the Actor so Foundry validates the
+      // ArrayField as part of initial DataModel construction. Updating an
+      // existing empty ArrayField through Document.update has been silently
+      // leaving this fixture with no attacks in the live Foundry world.
+      const actor = await Actor.create({
+        name: `${prefix} NPC ${Date.now()}`,
+        type: "npc",
+        system: {
+          level: 10,
+          health: { max: 30, value: 30 },
+          attacks: [{
+            name: "Mind Blast",
+            range: "Short",
+            action: "action",
+            damage: {
+              mode: "pool",
+              amount: 4,
+              severity: "minor",
+              stat: "intellect",
+              ignoresArmor: 0,
+              wounds: 1
+            },
+            effects: [],
+            description: ""
+          }]
+        }
+      });
+
+      if (!actor) {
+        throw new Error(
+          "Foundry did not create the E2E NPC with its structured attack"
+        );
+      }
+
+      const attack = actor.system.attacks?.[0];
+      if (!attack) {
+        throw new Error(
+          "Foundry discarded the structured attack during NPC creation: "
+          + JSON.stringify({
+            type: actor.type,
+            model: actor.system.constructor?.name,
+            attackCount: actor.system.attacks?.length ?? null,
+            system: foundry.utils.deepClone(actor.system)
+          })
+        );
+      }
+
+      return actor.id;
+    }, ACTOR_PREFIX);
+
+    const before = await page.evaluate(id =>
+      game.actors.get(id).system.stats.intellect.pool.value,
+      pcId
+    );
+
+    await page.evaluate(async ({ npcId, pcId }) => {
+      const npc = game.actors.get(npcId);
+      const target = game.actors.get(pcId);
+      if (npc.system.level !== 10) {
+        throw new Error(
+          `Expected NPC level 10, received ${npc.system.level}`
+        );
+      }
+
+      const attack = npc.system.attacks?.[0];
+      const attackDiagnostics = {
+        npcType: npc.type,
+        targetType: target?.type,
+        attackCount: npc.system.attacks?.length ?? null,
+        attack: attack ? foundry.utils.deepClone(attack) : null
+      };
+      if (!attack || attack.damage?.mode !== "pool"
+          || attack.damage?.stat !== "intellect"
+          || attack.damage?.amount !== 4) {
+        throw new Error(
+          "NPC structured attack was not persisted as expected: "
+          + JSON.stringify(attackDiagnostics)
+        );
+      }
+
+      const result = await npc.rollNpcAttack(attack, {
+        target,
+        defenseType: "dodge"
+      });
+      if (!result || result.defense.success) {
+        throw new Error(
+          `Expected the level-10 NPC attack to fail the PC Dodge; `
+          + `inputs=${JSON.stringify(attackDiagnostics)}; `
+          + `result=${JSON.stringify(result && {
+            success: result.defense?.success,
+            d20: result.defense?.roll?.total,
+            difficulty: result.defense?.effectiveDifficulty,
+            targetNumber: result.defense?.targetNumber
+          })}`
+        );
+      }
+    }, { npcId, pcId });
+
+    const after = await page.evaluate(id =>
+      game.actors.get(id).system.stats.intellect.pool.value,
+      pcId
+    );
+
+    expect(after).toBe(before - 4);
+  });
+
   test("executes a guaranteed failed Block from the real PC sheet and applies the incoming wound", async ({
     e2ePage: page
   }) => {
@@ -521,19 +632,44 @@ test.describe("Cypher Foundry live gameplay", () => {
             stat: "might",
             freelyUsable: true,
             mechanics: {
+              twoHanded: false,
+              rapidFire: false,
               ignoresPhysicalArmor: 2,
-              targetEffects: []
+              cutsThroughMaterialsLevel: null,
+              targetEffects: [],
+              requiresTripod: false,
+              requiredOperators: 0,
+              alternateConfiguration: {
+                enabled: false,
+                attackType: "",
+                action: ""
+              }
             }
           }
         }]);
 
+        const armorBypass = attack.system.mechanics.ignoresPhysicalArmor;
+        if (armorBypass !== 2) {
+          throw new Error(
+            `Expected persisted Armor bypass 2, received ${armorBypass}`
+          );
+        }
+
         await attack.rollAttack({ difficulty: 0, target: npc });
 
-        await foundry.utils.sleep(100);
+        await new Promise(resolve => setTimeout(resolve, 100));
+
+        const message = [...game.messages]
+          .reverse()
+          .find(entry => entry.getFlag("cypher", "actorId") === pc.id
+            && entry.getFlag("cypher", "isAttack") === true);
 
         return {
           health: npc.system.health.value,
-          armor: npc.system.armor
+          armor: npc.system.armor,
+          armorBypass: message?.getFlag("cypher", "armorBypass") ?? null,
+          baseDamage: message?.getFlag("cypher", "baseDamage") ?? null,
+          targetActorId: message?.getFlag("cypher", "targetActorId") ?? null
         };
       } finally {
         await npc.delete();
@@ -542,6 +678,9 @@ test.describe("Cypher Foundry live gameplay", () => {
     });
 
     expect(result.armor).toBe(4);
+    expect(result.armorBypass).toBe(2);
+    expect(result.baseDamage).toBe(6);
+    expect(result.targetActorId).toBeTruthy();
     expect(result.health).toBe(6);
   });
 

@@ -534,7 +534,14 @@
       "Description": "Description",
       "Motive": "Motive",
       "Environment": "Environment",
-      "GMIntrusion": "GM Intrusion"
+      "GMIntrusion": "GM Intrusion",
+      "Attacks": "Structured Attacks",
+      "RollAttack": "Roll Attack",
+      "NoStructuredAttacks": "No structured attacks configured.",
+      "SinglePCTarget": "Target exactly one player character.",
+      "UnsupportedAttackDamage": "This NPC attack has no supported player-target damage profile.",
+      "RollAttackTitle": "NPC Attack: {name}",
+      "Defense": "Defense"
     },
     "Community": {
       "Resources": "Resources"

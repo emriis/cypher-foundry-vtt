@@ -117,7 +117,7 @@ export async function applyDamage(
       const woundSeverity = severity ?? resolution.woundSeverity;
       await addWound(actor, woundSeverity);
     }
-    return;
+    return resolution.poolDamage;
   }
 
   const woundSeverity = severity ?? convertDamageToWound(amount);

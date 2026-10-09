@@ -534,7 +534,14 @@
       "Description": "Description",
       "Motive": "Motivation",
       "Environment": "Environnement",
-      "GMIntrusion": "Intrusion du MJ"
+      "GMIntrusion": "Intrusion du MJ",
+      "Attacks": "Attaques structurées",
+      "RollAttack": "Lancer l’attaque",
+      "NoStructuredAttacks": "Aucune attaque structurée configurée.",
+      "SinglePCTarget": "Ciblez exactement un personnage joueur.",
+      "UnsupportedAttackDamage": "Cette attaque de PNJ n’a pas de profil de dégâts applicable aux personnages joueurs.",
+      "RollAttackTitle": "Attaque du PNJ : {name}",
+      "Defense": "Défense"
     },
     "Community": {
       "Resources": "Ressources"

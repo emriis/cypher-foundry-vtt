@@ -4,7 +4,8 @@ import test from "node:test";
 import {
   canApplyNpcHealthDamage,
   normalizeNpcAttackDamage,
-  resolveNpcHealthDamage
+  resolveNpcHealthDamage,
+  resolveNpcAttackTargetDamage
 } from "../../module/rules/npc-combat.mjs";
 
 test("resolveNpcHealthDamage applies Armor before reducing Health", () => {
@@ -48,4 +49,54 @@ test("only numeric NPC attacks are eligible for automatic Health damage", () => 
   assert.equal(canApplyNpcHealthDamage({
     damage: { mode: "pool", amount: 4, stat: "might" }
   }), false);
+});
+
+
+test("NPC wound attacks resolve to a PC wound contract", () => {
+  assert.deepEqual(
+    resolveNpcAttackTargetDamage({
+      damage: {
+        mode: "wound",
+        severity: "moderate",
+        wounds: 2
+      }
+    }),
+    {
+      mode: "wound",
+      severity: "moderate",
+      wounds: 2
+    }
+  );
+});
+
+test("NPC Pool attacks require an explicit target stat", () => {
+  assert.deepEqual(
+    resolveNpcAttackTargetDamage({
+      damage: {
+        mode: "pool",
+        amount: 4,
+        stat: "speed"
+      }
+    }),
+    {
+      mode: "pool",
+      amount: 4,
+      stat: "speed"
+    }
+  );
+  assert.equal(
+    resolveNpcAttackTargetDamage({
+      damage: { mode: "pool", amount: 4 }
+    }),
+    null
+  );
+});
+
+test("NPC numeric attacks are not treated as PC damage", () => {
+  assert.equal(
+    resolveNpcAttackTargetDamage({
+      damage: { mode: "numeric", amount: 6 }
+    }),
+    null
+  );
 });

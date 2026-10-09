@@ -27,6 +27,24 @@
     <input name="system.modifications" type="text" value="{{system.modifications}}" placeholder="{{localize 'CYPHER.NPC.ModificationsPlaceholder'}}"/>
   </div>
 
+  <div class="npc-section npc-attacks">
+    <h3>{{localize 'CYPHER.NPC.Attacks'}}</h3>
+    {{#if system.attacks.length}}
+      {{#each system.attacks as |attack index|}}
+        <div class="npc-attack">
+          <strong>{{attack.name}}</strong>
+          {{#if attack.range}}<span> — {{attack.range}}</span>{{/if}}
+          <span> — {{attack.damage.mode}} {{attack.damage.amount}}</span>
+          <button type="button" data-action="rollNpcAttack" data-attack-index="{{index}}">
+            {{localize 'CYPHER.NPC.RollAttack'}}
+          </button>
+        </div>
+      {{/each}}
+    {{else}}
+      <p>{{localize 'CYPHER.NPC.NoStructuredAttacks'}}</p>
+    {{/if}}
+  </div>
+
   <div class="npc-section">
     <h3>{{localize 'CYPHER.NPC.Combat'}}</h3>
     <prose-mirror name="system.combat" value="{{system.combat}}"></prose-mirror>

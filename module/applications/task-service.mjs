@@ -35,6 +35,8 @@ export async function rollDefense(
     effortLevels = 0,
     assetSteps = 0,
     incomingSeverity = "minor",
+    incomingWounds = 1,
+    applyIncomingWound = true,
     shieldItemId = null,
     skillItemId = null
   } = {}
@@ -55,6 +57,8 @@ export async function rollDefense(
     skillItemId,
     defenseType,
     incomingSeverity,
+    incomingWounds,
+    applyIncomingWound,
     shieldItemId,
     flavor: game.i18n.localize(
       defenseType === "block"
@@ -90,7 +94,8 @@ export async function rollTask(actor, {
     extraHinderSteps = 0, extraEaseSteps = 0, luckyShot = false,
     specialEffectChoice = null, weaponTargetEffects = [],
     defenseType = null, incomingSeverity = "minor", armorModifier = 0, shieldItemId = null,
-    targetActor = null, armorBypass = 0
+    targetActor = null, armorBypass = 0, incomingWounds = 1,
+    applyIncomingWound = true
   } = {}) {
     if (actor.type !== "pc") {
       ui.notifications.warn(game.i18n.localize("CYPHER.Warning.NotPC"));
@@ -232,7 +237,7 @@ export async function rollTask(actor, {
         } else {
           defenseNote = `<p class="cypher-defense-note">${game.i18n.localize("CYPHER.Defense.DodgeSuccess")}</p>`;
         }
-      } else {
+      } else if (applyIncomingWound) {
         defenseNote = `<p class="cypher-defense-note failure">${game.i18n.format("CYPHER.Defense.Failed", { severity: game.i18n.localize(`CYPHER.Wound.${incomingSeverity}`) })}</p>`;
       }
     }
@@ -291,17 +296,21 @@ export async function rollTask(actor, {
     // Resolve the wound based on the defense result.
     if (defenseType) {
       if (success) {
-        if (defenseType === "block") {
-          if (usingShield) {
-            await shieldAbsorbWound(actor, shieldItem, incomingSeverity);
-          } else {
-            const reduced = reduceWound(incomingSeverity);
-            if (reduced) await addWound(actor, reduced);
+        if (applyIncomingWound && defenseType === "block") {
+          for (let index = 0; index < incomingWounds; index += 1) {
+            if (usingShield) {
+              await shieldAbsorbWound(actor, shieldItem, incomingSeverity);
+            } else {
+              const reduced = reduceWound(incomingSeverity);
+              if (reduced) await addWound(actor, reduced);
+            }
           }
         }
         // A successful Dodge avoids the wound entirely.
-      } else {
-        await addWound(actor, incomingSeverity);
+      } else if (applyIncomingWound) {
+        for (let index = 0; index < incomingWounds; index += 1) {
+          await addWound(actor, incomingSeverity);
+        }
       }
     }
 
