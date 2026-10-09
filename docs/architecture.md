@@ -177,13 +177,16 @@ For mechanically meaningful data, the project distinguishes:
 
 This distinction is currently important for equipment and Cyphers.
 
-For example, weapon `system.mechanics.targetEffects` is extracted, modeled, and
-validated, but is not yet fully consumed by the attack runtime. That is an
-active implementation gap.
+Weapon `system.mechanics.targetEffects` are resolved against the selected
+NPC's level. On a successful PC attack, matching effects are persisted under
+`flags.cypherFoundry.activeWeaponEffects`. The NPC attack service consumes the
+supported `hindered` and `loseNextAction` effects and expires them according
+to their declared `one round` or `next action` duration. Remaining weapon
+mechanics still require source-backed runtime contracts.
 
-Likewise, Cypher `variants`, `randomRange`, and some structured effect data
-are preserved by the content layer, while generic runtime execution is still
-being completed.
+Cypher `variants` and structured `rollTables` now have runtime resolution.
+Cypher `randomRange` and other structured effect data remain open until their
+source semantics and runtime contracts are verified.
 
 ## 7. ApplicationV2 sheets
 
