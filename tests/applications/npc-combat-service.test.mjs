@@ -136,7 +136,7 @@ function createNpc(activeWeaponEffects = []) {
   return {
     type: "npc",
     system: { level: 3 },
-    flags: { cypherFoundry: { activeWeaponEffects } },
+    flags: { cypher: { activeWeaponEffects } },
     updates: [],
     async update(changes) {
       this.updates.push(changes);
@@ -199,5 +199,5 @@ test("an NPC that loses its next action cannot attack and consumes that effect",
 
   assert.equal(result, null);
   assert.equal(evaluated, false);
-  assert.deepEqual(npc.flags.cypherFoundry.activeWeaponEffects, []);
+  assert.deepEqual(npc.flags.cypher.activeWeaponEffects, []);
 });

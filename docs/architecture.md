@@ -179,7 +179,7 @@ This distinction is currently important for equipment and Cyphers.
 
 Weapon `system.mechanics.targetEffects` are resolved against the selected
 NPC's level. On a successful PC attack, matching effects are persisted under
-`flags.cypherFoundry.activeWeaponEffects`. The NPC attack service consumes the
+`flags.cypher.activeWeaponEffects`. The NPC attack service consumes the
 supported `hindered` and `loseNextAction` effects and expires them according
 to their declared `one round` or `next action` duration. Remaining weapon
 mechanics still require source-backed runtime contracts.

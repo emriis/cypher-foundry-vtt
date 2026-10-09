@@ -5,10 +5,19 @@
  * Combat-round effects are scoped to the combat and round in which they apply.
  */
 
-const EFFECTS_FLAG = "flags.cypherFoundry.activeWeaponEffects";
+const EFFECTS_FLAG = "flags.cypher.activeWeaponEffects";
 
 function readEffects(actor) {
-  return actor?.flags?.cypherFoundry?.activeWeaponEffects ?? [];
+  return actor?.flags?.cypher?.activeWeaponEffects ?? [];
+}
+
+async function writeEffects(actor, effects) {
+  if (typeof actor.setFlag === "function") {
+    await actor.setFlag("cypher", "activeWeaponEffects", effects);
+    return;
+  }
+
+  await actor.update({ [EFFECTS_FLAG]: effects });
 }
 
 /**
@@ -59,9 +68,7 @@ export async function applyWeaponTargetEffects(target, effects = [], source = {}
 
   if (!applied.length) return 0;
 
-  await target.update({
-    [EFFECTS_FLAG]: [...existing, ...applied]
-  });
+  await writeEffects(target, [...existing, ...applied]);
   return applied.length;
 }
 
@@ -83,7 +90,7 @@ export async function expireWeaponEffectsAfterAction(actor) {
       && effect.combatId === null)
   );
   const removed = existing.length - remaining.length;
-  if (removed) await actor.update({ [EFFECTS_FLAG]: remaining });
+  if (removed) await writeEffects(actor, remaining);
   return removed;
 }
 
@@ -105,6 +112,6 @@ export async function expireWeaponEffectsOutsideCurrentRound(actor) {
       && effect.combatRound === combat.round;
   });
   const removed = existing.length - remaining.length;
-  if (removed) await actor.update({ [EFFECTS_FLAG]: remaining });
+  if (removed) await writeEffects(actor, remaining);
   return removed;
 }

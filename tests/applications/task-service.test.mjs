@@ -220,7 +220,7 @@ test("successful attacks persist resolved target effects on the NPC", async () =
     id: "npc-effects",
     type: "npc",
     system: { armor: 0, health: { value: 10, max: 10 } },
-    flags: { cypherFoundry: { activeWeaponEffects: [] } },
+    flags: { cypher: { activeWeaponEffects: [] } },
     async update(changes) {
       for (const [path, value] of Object.entries(changes)) {
         const parts = path.split(".");
@@ -251,13 +251,13 @@ test("successful attacks persist resolved target effects on the NPC", async () =
     weaponSource: { itemId: "weapon-1", itemName: "Shock Rifle" }
   });
 
-  assert.equal(target.flags.cypherFoundry.activeWeaponEffects.length, 1);
+  assert.equal(target.flags.cypher.activeWeaponEffects.length, 1);
   assert.equal(
-    target.flags.cypherFoundry.activeWeaponEffects[0].sourceItemId,
+    target.flags.cypher.activeWeaponEffects[0].sourceItemId,
     "weapon-1"
   );
   assert.equal(
-    target.flags.cypherFoundry.activeWeaponEffects[0].effect,
+    target.flags.cypher.activeWeaponEffects[0].effect,
     "hindered"
   );
 });
