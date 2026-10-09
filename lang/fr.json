@@ -278,7 +278,14 @@
       "OneHanded": "Tirer à une main",
       "OneHandedHint": "Cette arme impose un désavantage à l'attaque lorsqu'elle est utilisée d'une seule main.",
       "ExtremeRange": "Cible à portée extrême (arbitrage du MJ)",
-      "ExtremeRangeHint": "Le MJ confirme que la cible est à la limite de portée de l’arme. L’attaque est entravée d’un palier ; la distance des pions n’est pas calculée."
+      "ExtremeRangeHint": "Le MJ confirme que la cible est à la limite de portée de l’arme. L’attaque est entravée d’un palier ; la distance des pions n’est pas calculée.",
+      "SwitchConfiguration": "Changer de configuration",
+      "ConfigurationChanged": "{name} passe en configuration {configuration}. Ce changement coûte une action.",
+      "ConfigurationAction": "une action",
+      "Configuration": {
+        "Primary": "Configuration principale",
+        "Alternate": "Configuration alternative"
+      }
     },
     "WeaponFamily": {
       "Label": "Famille d'arme",
