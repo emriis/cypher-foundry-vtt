@@ -25,8 +25,8 @@ present in an Item, copied to a chat flag, or shown in descriptive text.
 | `attackType` | Supplies default damage when explicit damage is falsy; light attacks receive one ease step. Weapon category also participates in weapon familiarity. | Runtime | Verify source-specific exceptions and zero-damage handling separately; do not change without CRD evidence. |
 | `damage` | Becomes the base damage for the task result. A successful attack against a selected NPC now persists numeric damage to the target Health after Armor mitigation. | Runtime | Wound/Pool target damage remains a separate contract. |
 | `stat` | Chooses the Pool and stat used for the attack task. | Runtime | None identified in this field audit. |
-| `range` | Persisted on the Item. | Stored only | Requires a reliable target token/distance and scene-grid contract, plus CRD-backed range adjudication. |
-| `extremeRange` | Persisted separately from normal range. | Stored only | Same target-distance and range-resolution gap as `range`. |
+| `range` | Preserved on the Item and included in the attack result's range-adjudication record. The GM/roller explicitly declares whether the target is at the weapon's range limit. | Runtime (explicit adjudication only) | No token-distance or grid measurement is inferred. A future distance contract would be a separate feature. |
+| `extremeRange` | Preserved separately from normal range and recorded with the GM/roller's explicit extreme-range declaration. A declared extreme-range attack is hindered by one step. | Runtime (explicit adjudication only) | The system does not automatically determine whether the target is within normal or extended range. |
 | `weaponFamily` | Participates in the actor's free-use/familiarity rules. | Runtime | None identified in this field audit. |
 | `attackSkillCategory` | Matches an owned attack-category Skill and participates in familiarity/skill adjustment. | Runtime | None identified in this field audit. |
 | `freelyUsable` | Removes the unfamiliar-weapon penalty. | Runtime | None identified in this field audit. |
@@ -41,6 +41,8 @@ present in an Item, copied to a chat flag, or shown in descriptive text.
 | `mechanics.alternateConfiguration` | Preserves whether an alternate configuration exists, its attack category, and its action label. | Stored only / model gap | Requires a persisted active configuration and an action that switches configurations without losing the source record. |
 
 ## Existing runtime contracts
+
+- Weapon range is not inferred from token coordinates. The attack dialog exposes an explicit extreme-range declaration; when selected, the task receives one additional hindrance step and records the declared normal/extreme range in the chat flags. This records the adjudication without claiming an automatic range-limit check.
 
 - Weapon familiarity combines explicit free-use state, actor free-use
   categories/families, and a matching attack-category Skill.
@@ -57,7 +59,7 @@ present in an Item, copied to a chat flag, or shown in descriptive text.
 
 1. Define and implement the persisted target-effect/status lifecycle for
    `mechanics.targetEffects`.
-2. Resolve range only after the system has an explicit token-distance contract.
+2. Range categories and explicit extreme-range hindrance are now handled by GM/roller adjudication; token-distance calculation remains out of scope unless a separate grid contract is defined.
 3. Handle two-handed use, rapid fire, tripod/operators, alternate configuration,
    and material cutting only when their CRD rule and necessary state model are
    explicit.
