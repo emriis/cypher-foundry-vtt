@@ -639,14 +639,14 @@ test.describe("Cypher Foundry live gameplay", () => {
           .find(entry => entry.getFlag("cypher", "rollType") === "task");
 
         const activeEffects = foundry.utils.deepClone(
-          npc.flags.cypherFoundry?.activeWeaponEffects ?? []
+          npc.flags.cypher?.activeWeaponEffects ?? []
         );
         const blockedAttack = await npc.rollNpcAttack({
           name: "E2E follow-up",
           damage: { mode: "pool", amount: 1, stat: "might" }
         }, { target: pc, defenseType: "dodge" });
         const remainingEffects = foundry.utils.deepClone(
-          npc.flags.cypherFoundry?.activeWeaponEffects ?? []
+          npc.flags.cypher?.activeWeaponEffects ?? []
         );
 
         return {
