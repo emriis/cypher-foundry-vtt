@@ -547,3 +547,56 @@ test("rollAttack does not double-count an explicit inability skill", async () =>
   assert.equal(received.extraHinderSteps, 1);
   assert.equal(received.extraEaseSteps, 0);
 });
+
+
+test("rollAttack applies and forwards explicitly adjudicated extreme range", async () => {
+  let received;
+  globalThis.game = {
+    i18n: { localize: value => value },
+    user: { targets: new Set() }
+  };
+  const actor = {
+    system: {
+      freeWeaponCategories: ["medium"],
+      freeWeaponFamilies: [],
+      freeWeaponSkillCategories: [],
+      canFreelyUseAllWeapons: false
+    },
+    items: new Map(),
+    async rollTask(options) {
+      received = options;
+      return options;
+    }
+  };
+  const item = {
+    type: "attack",
+    name: "Range Test Rifle",
+    actor,
+    system: {
+      range: "long",
+      extremeRange: "",
+      attackType: "medium",
+      damage: 4,
+      stat: "might",
+      freelyUsable: true
+    }
+  };
+
+  await rollAttack(item, { difficulty: 2, atExtremeRange: false });
+  assert.equal(received.extraHinderSteps, 0);
+  assert.deepEqual(received.weaponRangeAdjudication, {
+    range: "long",
+    extremeRange: null,
+    atExtremeRange: false,
+    hinderSteps: 0
+  });
+
+  await rollAttack(item, { difficulty: 2, atExtremeRange: true });
+  assert.equal(received.extraHinderSteps, 1);
+  assert.deepEqual(received.weaponRangeAdjudication, {
+    range: "long",
+    extremeRange: null,
+    atExtremeRange: true,
+    hinderSteps: 1
+  });
+});

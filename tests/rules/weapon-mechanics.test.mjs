@@ -1,7 +1,10 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { resolveWeaponTargetEffects } from "../../module/rules/weapon-mechanics.mjs";
+import {
+  resolveWeaponRangeAdjudication,
+  resolveWeaponTargetEffects
+} from "../../module/rules/weapon-mechanics.mjs";
 
 const effects = [
   {
@@ -54,5 +57,43 @@ test("weapon target effects preserve source order", () => {
   assert.deepEqual(
     resolveWeaponTargetEffects(overlapping, 3),
     overlapping
+  );
+});
+
+
+test("weapon range adjudication adds one hindrance only when explicitly declared", () => {
+  assert.deepEqual(resolveWeaponRangeAdjudication({
+    range: "long",
+    extremeRange: ""
+  }), {
+    range: "long",
+    extremeRange: null,
+    atExtremeRange: false,
+    hinderSteps: 0
+  });
+
+  assert.deepEqual(resolveWeaponRangeAdjudication({
+    range: "immediate",
+    extremeRange: "short",
+    atExtremeRange: true
+  }), {
+    range: "immediate",
+    extremeRange: "short",
+    atExtremeRange: true,
+    hinderSteps: 1
+  });
+});
+
+test("weapon range adjudication does not infer range from token distance or missing data", () => {
+  assert.deepEqual(resolveWeaponRangeAdjudication({ atExtremeRange: false }), {
+    range: null,
+    extremeRange: null,
+    atExtremeRange: false,
+    hinderSteps: 0
+  });
+  assert.equal(
+    resolveWeaponRangeAdjudication({ range: "long", atExtremeRange: "true" })
+      .hinderSteps,
+    0
   );
 });
