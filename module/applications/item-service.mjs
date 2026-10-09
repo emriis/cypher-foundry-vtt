@@ -19,6 +19,19 @@ export async function useCypher(item) {
   return true;
 }
 
+// structured Cypher roll table runtime
+export async function rollCypherTable(item, tableId) {
+  if (!item || item.type !== "cypher" || !item.actor || item.system.depleted) return false;
+  const table = (item.system.rollTables ?? []).find(candidate => candidate.id === tableId);
+  if (!table) return false;
+  const roll = await new Roll(table.formula).evaluate();
+  const result = (table.results ?? []).find(candidate => roll.total >= candidate.min && roll.total <= candidate.max);
+  const description = result ? await foundry.applications.ux.TextEditor.implementation.enrichHTML(result.description ?? "", { relativeTo: item }) : `<p>${game.i18n.localize("CYPHER.Ability.NoRollTableResult")}</p>`;
+  await item.update({ "system.depleted": true });
+  await roll.toMessage({ speaker: ChatMessage.getSpeaker({ actor: item.actor }), flavor: `<strong>${item.name}</strong> — ${table.name}<br>${description}`, flags: { cypher: { rerollable: true, rollType: "cypherTable", actorId: item.actor.id, itemId: item.id, tableId, originalRoll: roll.total } } });
+  return true;
+}
+
 export async function rollAttack(item, {
   effortLevels = 0, assetSteps = 0, difficulty = 3,
   luckyShot = false, skillItemId = null, target = null
