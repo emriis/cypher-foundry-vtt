@@ -44,6 +44,7 @@ export async function rollNpcAttack(
   await expireWeaponEffectsOutsideCurrentRound(actor);
   const targetEffects = getActiveWeaponEffects(actor);
   if (targetEffects.some(effect => effect.effect === "loseNextAction")) {
+    ui.notifications.info(game.i18n.localize("CYPHER.NPC.LostNextAction"));
     await expireWeaponEffectsAfterAction(actor);
     return null;
   }
