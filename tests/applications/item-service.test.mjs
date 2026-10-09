@@ -195,6 +195,7 @@ test("rollAttack delegates weapon familiarity to the common task service", async
   assert.equal(received.extraHinderSteps, 1);
   assert.equal(received.extraEaseSteps, 0);
   assert.equal(received.baseDamage, 4);
+  assert.equal(received.weaponSource.actionTiming, "action");
 });
 
 test("rollAttack hinders a weapon explicitly used one-handed", async () => {
