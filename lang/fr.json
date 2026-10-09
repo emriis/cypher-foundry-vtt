@@ -276,7 +276,9 @@
       "Type": "Type d'attaque",
       "FreelyUsable": "Cette arme précise est utilisable librement (exception)",
       "OneHanded": "Tirer à une main",
-      "OneHandedHint": "Cette arme impose un désavantage à l'attaque lorsqu'elle est utilisée d'une seule main."
+      "OneHandedHint": "Cette arme impose un désavantage à l'attaque lorsqu'elle est utilisée d'une seule main.",
+      "ExtremeRange": "Cible à portée extrême (arbitrage du MJ)",
+      "ExtremeRangeHint": "Le MJ confirme que la cible est à la limite de portée de l’arme. L’attaque est entravée d’un palier ; la distance des pions n’est pas calculée."
     },
     "WeaponFamily": {
       "Label": "Famille d'arme",
@@ -443,6 +445,7 @@
       "GMIntrusionFree": "intrusion du MJ gratuite (1 naturel)",
       "WoundHinder": "Entrave due aux blessures : {steps} palier(s)",
       "ExtraHinder": "Entrave supplémentaire de {steps} palier(s) (coup de chance / arme non utilisable librement)",
+      "ExtremeRangeHinder": "Portée extrême : attaque entravée d’un palier (arbitrage du MJ).",
       "ArmorModifier": "Modificateur d'armure : {steps} palier(s)",
       "ArmorSpeedHinder": "Tâche entravée de {steps} palier(s) parce que l'armure n'est pas utilisable librement",
       "CostRefunded": "Le coût de l'action a été remboursé (20 naturel).",
