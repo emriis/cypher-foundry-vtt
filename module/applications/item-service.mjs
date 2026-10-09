@@ -127,7 +127,7 @@ export async function rollCypherTable(item, tableId) {
 
 export async function rollAttack(item, {
   effortLevels = 0, assetSteps = 0, difficulty = 3,
-  luckyShot = false, skillItemId = null, target = null
+  luckyShot = false, skillItemId = null, target = null, oneHanded = false
 } = {}) {
   if (item.type !== "attack" || !item.actor) return null;
   const actor = item.actor;
@@ -155,6 +155,8 @@ export async function rollAttack(item, {
     skillLevel: matchingAttackSkill?.system.level ?? null
   });
   const weaponHinder = weaponSkillModifier < 0 ? Math.abs(weaponSkillModifier) : 0;
+  const oneHandHinder = oneHanded
+    && item.system.mechanics?.hinderedWhenUsedOneHanded ? 1 : 0;
   const weaponEase = weaponSkillModifier > 0 ? weaponSkillModifier : 0;
   const selectedTarget = target
     ?? (game.user?.targets?.size === 1
@@ -170,7 +172,8 @@ export async function rollAttack(item, {
   const weaponEaseSteps = item.system.attackType === "light" ? 1 : 0;
   return actor.rollTask({
     stat: item.system.stat, difficulty, effortLevels, assetSteps, skillItemId,
-    isAttack: true, baseDamage, extraHinderSteps: weaponHinder,
+    isAttack: true, baseDamage,
+    extraHinderSteps: weaponHinder + oneHandHinder,
     extraEaseSteps: weaponEaseSteps + weaponEase, luckyShot, weaponTargetEffects,
     targetActor: selectedTarget,
     weaponSource: { itemId: item.id, itemName: item.name },
