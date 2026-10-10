@@ -30,7 +30,7 @@ export const CRD_FOUNDRY_MAPPING = Object.freeze({
 export const CRD_MECHANICAL_FIELDS = Object.freeze({
   ability: [
     "tier", "key", "enabler", "repeatable", "cost", "action", "effects",
-    "rollTables", "freeWeaponCategories", "freeArmorCategories",
+    "rollTables", "weaponPrerequisites", "freeWeaponCategories", "freeArmorCategories",
     "freeWeaponFamilies", "freeWeaponSkillCategories",
     "chooseWeaponAttackCategory", "grantedArmorItemCategory"
   ],
