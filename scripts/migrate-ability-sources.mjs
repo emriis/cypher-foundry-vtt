@@ -46,6 +46,8 @@ function inferAction(ability) {
   return null;
 }
 
+// Names and prose vary between languages. Removing them makes identity checks
+// compare structured mechanics instead of treating a translation as a new rule.
 function stripEditorial(value) {
   if (Array.isArray(value)) return value.map(stripEditorial);
   if (!value || typeof value !== "object") return value;
@@ -1072,6 +1074,8 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
   return abilityDir;
 }
 
+// Existing standalone sources are enriched in place. Only the legacy embedded
+// format takes the rebuild path below, which replaces the Ability source folder.
 async function migrateLanguage(language, english, englishLogicalIds) {
   const documents = await collectDocuments(language);
   const hasLegacyAbilities = documents.some(({ document }) =>
@@ -1193,6 +1197,14 @@ async function migrateLanguage(language, english, englishLogicalIds) {
   }
 }
 
+/**
+ * Normalize editable compendium sources in this checkout, including EN/FR pairs.
+ * The order matters: prune broken references, establish English identities,
+ * resolve French counterparts, then normalize the other content families.
+ * This rewrites JSON sources and may rebuild legacy Ability source directories;
+ * validation callers must run it in their temporary checkout.
+ * @returns {Promise<void>} Resolves after all source writes; errors propagate.
+ */
 export async function migrateAbilitySources() {
   const removedAbilityIds = await pruneAbilityArtifacts();
   await pruneAbilityReferences(removedAbilityIds);

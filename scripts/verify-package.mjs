@@ -1,3 +1,9 @@
+/**
+ * Compare an existing release archive and manifest with the current checkout.
+ * Extract into temporary storage, check the allowed file list, then compare
+ * bytes. This never rebuilds dist; stale artifacts must be regenerated explicitly.
+ * The external unzip command must be available on the validation machine.
+ */
 import { execFile } from "node:child_process";
 import { mkdtemp, readFile, readdir, rm, stat } from "node:fs/promises";
 import os from "node:os";

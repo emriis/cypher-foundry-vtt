@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Build the release archive from an explicit list of system files.
+# Existing dist/system.zip and dist/system.json are replaced. The EXIT trap
+# removes only this run's temporary staging directory, not the release outputs.
 set -euo pipefail
 
 output_directory="dist"

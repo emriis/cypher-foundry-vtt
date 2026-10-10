@@ -1,3 +1,8 @@
+/**
+ * Own the temporary checkout lifecycle used by Node and live Foundry tests.
+ * Copy editable work, exclude private/generated data, and share installed
+ * dependencies through a link. A marker and path checks protect cleanup.
+ */
 import { cp, lstat, mkdtemp, readFile, rm, symlink, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
@@ -10,6 +15,12 @@ const EXCLUDED = new Set([
   "worlds", "modules-local", "systems-local"
 ]);
 
+/**
+ * Copy the working checkout, including uncommitted edits, without private data.
+ * This writes only to OS temporary storage and links the existing node_modules.
+ * @param {string} sourceRoot Repository root whose current files should be tested.
+ * @returns {Promise<{workspace: string, root: string}>} Owned temp directory and checkout path.
+ */
 /** Copy the working checkout, including uncommitted edits, without private data. */
 export async function createValidationWorkspace(sourceRoot) {
   const workspace = await mkdtemp(path.join(os.tmpdir(), PREFIX));
@@ -37,6 +48,12 @@ export async function createValidationWorkspace(sourceRoot) {
   }
 }
 
+/**
+ * Delete only a temporary directory created and marked by this helper.
+ * All three ownership checks must pass before the recursive removal begins.
+ * @param {string} workspace Owned temp directory, not its checkout subdirectory.
+ * @returns {Promise<void>} Resolves after cleanup; rejects an unowned/missing marker.
+ */
 /** Delete only a temporary directory created and marked by this helper. */
 export async function removeValidationWorkspace(workspace) {
   const resolved = path.resolve(workspace);

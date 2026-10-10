@@ -11,6 +11,8 @@ const { SchemaField, NumberField, StringField, HTMLField, BooleanField, ArrayFie
 export default class CypherPCData extends foundry.abstract.TypeDataModel {
 
   static defineSchema() {
+    // A SchemaField groups saved values; NumberField/StringField/etc. enforce
+    // defaults and validation. Returning fields describes data, not UI controls.
     const statSchema = () => new SchemaField({
       pool: new SchemaField({
         max: new NumberField({ required: true, integer: true, initial: 8, min: 0 }),
@@ -110,6 +112,8 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
         }
       }),
 
+      // Keep references instead of copying Ability mechanics into the Actor.
+      // UUID identifies the source Item; effectId selects one effect within it.
       activeAbilityEffects: new ArrayField(new SchemaField({
         itemUuid: new StringField({ required: true, blank: false }),
         effectId: new StringField({ required: true, blank: false })
@@ -161,6 +165,11 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
     };
   }
 
+  /**
+   * Recompute display/gameplay properties whenever Foundry prepares this model.
+   * Derived values exist in memory; this hook must not persist document updates.
+   * On malformed input, retain available values and supply conservative fallbacks.
+   */
   prepareDerivedData() {
     try {
       this._prepareDerivedDataUnsafe();
@@ -179,6 +188,8 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
       custom.depleted = custom.pool.value <= 0;
     }
 
+    // Wound boxes determine task hindrance separately from depleted stat Pools.
+    // A full moderate track adds one step; each major wound adds another.
     const w = this.wounds;
     let hinderSteps = 0;
     if (w.moderate.current >= w.moderate.max && w.moderate.max > 0) hinderSteps += 1;
@@ -200,6 +211,8 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
     this.canRallyMajor = this.isSuperhero;
     this.powerShiftTotal = Object.values(this.powerShifts).reduce((sum, v) => sum + v, 0);
 
+    // Armor is an embedded Item owned by the Actor (the model's parent).
+    // Derive a summary for rolls/sheets without changing that Item's stored data.
     let equippedArmorItem = null;
     const itemsCollection = this.parent?.items;
     if (itemsCollection && typeof itemsCollection.find === "function") {
@@ -233,6 +246,7 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
     this.advancementComplete = this.advancementBoughtCount >= 4;
   }
 
+  /** Keep sheet context usable after preparation fails; do not repair saved data here. */
   _applyDerivedDataFallback() {
     this.hindered ??= false;
     this.hinderSteps ??= 0;

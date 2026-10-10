@@ -55,6 +55,13 @@ export async function importFromBuilder(jsonData) {
 /* Actor data */
 /* -------------------------------------------- */
 
+/**
+ * Translate Builder fields into data that can be passed to Actor.create.
+ * This returns plain data; embedded Items are mapped and created separately.
+ * Missing optional sections use defaults, and wound boxes come from notes.
+ * @param {object} jsonData Parsed Character Builder export.
+ * @returns {object} PC creation data with name, type, and system fields.
+ */
 export function buildActorData(jsonData) {
   const src = jsonData.system ?? {};
   const basic = src.basic ?? {};
@@ -123,6 +130,13 @@ export { parseWoundsFromNotes } from "./import-wounds.mjs";
 const GRANTED_FROM_RE = /Granted from ([^<]+)/i;
 const GRANTED_FROM_SPECIES_RE = /Granted from Species:\s*([^<]+)/i;
 
+/**
+ * Find the Builder's explicit "Granted from Species:" marker.
+ * The import uses the first matching trait package as the second descriptor;
+ * it does not guess a species from Item names or unrelated prose.
+ * @param {object[]} rawItems Exported Builder Items.
+ * @returns {string|null} Species label, or null when no marker is present.
+ */
 export function extractSpeciesAsDescriptor(rawItems) {
   for (const item of rawItems) {
     const desc = item?.system?.description ?? "";

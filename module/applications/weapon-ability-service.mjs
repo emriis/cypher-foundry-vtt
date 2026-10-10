@@ -1,3 +1,8 @@
+/**
+ * Coordinate Spray and Arc Spray across an Ability, a weapon, and NPC targets.
+ * Pure rules decide eligibility and modifiers; this browser service validates
+ * current documents, spends resources, and awaits each attack in order.
+ */
 import { resolveSprayUse, resolveArcSprayAttacks } from "../rules/weapon-ability-resolution.mjs";
 import { resolveWeaponPrerequisites } from "../rules/ability-weapon-prerequisites.mjs";
 import { resolveAbilityCost, resolveAbilityCostStat } from "../rules/ability-costs.mjs";
@@ -19,12 +24,25 @@ const REQUIREMENTS = {
   ],
   "arc-spray": [{ kind: "rapidFire", alternativeGroup: "weapon-use" }]
 };
+// Block overlapping activations on this client. This is an in-memory guard,
+// not a lock shared with other players or a transaction across documents.
 const pendingActors = new Set();
 
 /**
  * Execute an owned Spray/Arc Spray action through the existing attack engine.
  * Validate the entire action before charging costs or changing a tracked store.
  * Adjacency and thrown-weapon reach are explicit declarations, not measurements.
+ * Once writes begin, a later failure can leave earlier writes committed;
+ * the finally block releases the local guard but does not roll resources back.
+ *
+ * @param {Item} item Ability embedded in the acting PC.
+ * @param {object} [options={}] Weapon, actual target Actors, and roll choices.
+ * @param {string} options.weaponId Embedded attack Item ID.
+ * @param {Actor[]} [options.targets=[]] One Spray target or three distinct Arc Spray targets.
+ * @param {boolean} [options.allAdjacent=false] Caller-confirmed adjacency for Arc Spray.
+ * @param {boolean} [options.thrownWeaponsInReach=false] Caller-confirmed Spray alternative.
+ * @param {object} [options.rollOptions={}] Choices passed to the shared attack engine.
+ * @returns {Promise<object|null>} Per-target results, or null for a rejected activation.
  */
 export async function executeWeaponAbility(item, {
   weaponId, targets = [], allAdjacent = false, thrownWeaponsInReach = false,
@@ -88,6 +106,8 @@ export async function executeWeaponAbility(item, {
       spray = resolveSprayUse({ dieResult: useRoll.total, availableUses: weapon.system.availableUses ?? null });
       if (!spray.eligible) return reject();
     }
+    // Validation above is read-only. From here onward, writes are persistent:
+    // activation cost, tracked uses, chat, then each target's attack consequences.
     if (cost.amount) await actor.update({ [cost.path]: actor.system.stats[cost.stat].pool.value - cost.amount });
     if (spray && weapon.system.availableUses !== null && weapon.system.availableUses !== undefined) {
       await weapon.update({ "system.availableUses": weapon.system.availableUses - spray.usesToConsume });

@@ -1,3 +1,9 @@
+/**
+ * Shared task engine for stat rolls, weapon attacks, and player defenses.
+ * The pipeline resolves modifiers and cost, spends the Pool, rolls the d20,
+ * publishes chat, then persists attack/defense consequences. Rule calculations
+ * live in module/rules; this service owns the Foundry document operations.
+ */
 import { CYPHER } from "../config.mjs";
 import { spendXP } from "./character-service.mjs";
 import {
@@ -86,7 +92,12 @@ export async function rollDefense(
  * chat output, and wound application.
  *
  * @param {Actor} actor Cypher Actor performing the task.
- * @param {object} options Roll options.
+ * @param {object} [options={}] Roll choices and attack/defense context.
+ * @param {string} [options.stat="might"] Stat whose Pool funds Effort.
+ * @param {number} [options.difficulty=3] Base difficulty before task steps.
+ * @param {number} [options.effortLevels=0] Requested Effort levels, not Pool points.
+ * @param {number} [options.assetSteps=0] Ease from assets, capped at two steps.
+ * @param {Actor|null} [options.targetActor=null] Actual NPC receiving attack consequences.
  * @returns {Promise<object|null>} Roll result or null when the task is rejected.
  */
 export async function rollTask(actor, {
@@ -136,6 +147,9 @@ export async function rollTask(actor, {
     const edge = (statData.edge ?? 0) + abilityEdge;
     const poolValue = statData.pool.value;
     const poolMax = statData.pool.max + abilityPoolMax;
+    // Edge reduces a cost; it is not a Pool of spendable points. An Ability
+    // and its first attack share the action's Edge, so subtract the portion
+    // already used for activation before reducing this attack's Effort cost.
     const totalCost = computeEffortCost(effortLevels, Math.max(0, edge - spentAbilityEdge));
 
     if (totalCost > poolValue) {
@@ -166,7 +180,8 @@ export async function rollTask(actor, {
     const { effectiveDifficulty, targetNumber } =
       resolveTaskDifficulty(difficulty, totalSteps);
 
-    // Spend the Pool points.
+    // Persist the cost before rolling. A natural 20 can refund it below;
+    // a later document/chat failure does not automatically undo this update.
     if (totalCost > 0) {
       await actor.update({ [`${resolved.path}.pool.value`]: poolValue - totalCost });
     }
@@ -277,6 +292,8 @@ export async function rollTask(actor, {
         ${defenseNote}
       </div>`;
 
+    // Flags are structured metadata for rerolls and tests; the localized HTML
+    // is presentation. Chat is published before target-side writes below.
     await roll.toMessage({
       speaker: ChatMessage.getSpeaker({ actor: actor }),
       flavor: messageFlavor,

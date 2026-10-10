@@ -75,6 +75,8 @@ export function reduceWoundSeverity(severity) {
 
 /**
  * Resolve cascading wound overflow against a wound track.
+ * A full minor track passes the wound to moderate; if that track is also full,
+ * it passes to major. The caller caps the chosen track's value when adding it.
  *
  * @param {string} severity Incoming wound severity.
  * @param {object} wounds Wound track with current/max values.

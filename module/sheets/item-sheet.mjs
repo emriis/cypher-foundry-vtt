@@ -227,8 +227,7 @@ export default class CypherItemSheet extends HandlebarsApplicationMixin(ItemShee
   }
 
   /**
-  * Adds or removes a stat from this Descriptor's list of offered choices.
-  * Adds or removes a stat from this Descriptor's list of offered choices.
+   * Adds or removes a stat from this Descriptor's list of offered choices.
    */
   static async #onToggleDescriptorStat(event, target) {
     const stat = target.dataset.stat;
@@ -238,7 +237,6 @@ export default class CypherItemSheet extends HandlebarsApplicationMixin(ItemShee
       : current.filter(s => s !== stat);
 
     if (next.length === 0) {
-      // At least one stat must remain selectable, so restore the checkbox if this was the last one.
       // At least one stat must remain selectable, so restore the checkbox if this was the last one.
       target.checked = true;
       return;

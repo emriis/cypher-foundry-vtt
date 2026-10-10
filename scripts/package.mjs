@@ -1,3 +1,8 @@
+/**
+ * Select the platform's packaging shell and forward its exit status to npm/CI.
+ * The shell script owns archive creation and overwrites dist/system.zip and
+ * dist/system.json. Tests must invoke this launcher in their isolated checkout.
+ */
 import { spawn, spawnSync } from "node:child_process";
 
 function commandForPlatform() {

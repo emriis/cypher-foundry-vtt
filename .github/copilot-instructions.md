@@ -1,5 +1,9 @@
 # Copilot instructions
 
+- Follow `docs/code-comments.md` for beginner-readable explanations and accurate
+  JSDoc. Update comments with behavior, document side effects and important
+  ordering, and remove stale/duplicate claims. Review meaning, not line counts.
+
 - Use `AGENTS.md` for shared architecture, command side effects, and task scope.
   Codex discovery entrypoints are in `.agents/skills/`; existing detailed
   procedures remain in `.github/skills/`.

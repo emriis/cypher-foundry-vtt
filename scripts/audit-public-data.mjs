@@ -1,3 +1,9 @@
+/**
+ * Read tracked text files and report obvious secret or personal-path patterns.
+ * Git's tracked-file list defines the scan; private ignored reference files are
+ * outside it. Pattern matches are review hints, not proof that a file is safe
+ * or contains a real credential. This audit never rewrites or deletes files.
+ */
 import fs from "node:fs/promises";
 import path from "node:path";
 import { execFileSync } from "node:child_process";

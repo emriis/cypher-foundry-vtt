@@ -1,3 +1,8 @@
+/**
+ * Ask Node to parse every production ESM module without executing it.
+ * Foundry globals therefore need no mocks. Syntax success does not verify
+ * imports, rules, or browser APIs; lint and runtime tests cover those concerns.
+ */
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 import { readdir } from "node:fs/promises";
