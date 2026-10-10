@@ -466,6 +466,11 @@
 
   {{#ifEquals item.type "attack"}}
   <div class="form-group">
+    <label>{{localize 'CYPHER.WeaponAbility.AvailableUses'}}</label>
+    <input name="system.availableUses" type="number" value="{{system.availableUses}}" min="0" step="1"/>
+    <p class="hint">{{localize 'CYPHER.WeaponAbility.AvailableUsesHint'}}</p>
+  </div>
+  <div class="form-group">
     <label>{{localize 'CYPHER.Attack.Type'}}</label>
     <select name="system.attackType">
       <option value="light" {{#ifEquals system.attackType "light"}}selected{{/ifEquals}}>{{localize 'CYPHER.AttackType.light'}}</option>

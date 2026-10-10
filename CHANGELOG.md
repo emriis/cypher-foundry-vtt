@@ -9,6 +9,31 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ## [Unreleased]
 
+### Added
+
+- Added shared Codex instructions, discoverable skill entrypoints, ESM/runtime
+  and document-transaction workflows, and runtime/review/roadmap/branch prompts.
+- Added environment-specific ESLint checks and an incremental pure-rule JSDoc
+  type-checking pilot, with CI validation.
+
+### Changed
+
+- Full tests now normalize and validate a temporary checkout; live Foundry E2E
+  builds/runs in isolated checkout and user-data directories, preserving the
+  installed system and working compendium sources.
+- Aligned skills/prompts with application services and CRD source fidelity.
+
+### Fixed
+
+- Restored the missing direct-damage wound resolver import exposed by linting.
+
+### Added
+
+- Added playable Spray and Arc Spray actions to PC Ability cards, with explicit
+  weapon/target selection, prerequisite checks, tracked Spray resource use,
+  activation/Edge/Effort costs, NPC damage, and Ability-aware attack chat cards.
+- Added application contracts and live PC-sheet scenarios for both actions.
+
 ### Changed
 
 - Reworked the PC ApplicationV2 sheet into a single responsive player dashboard with
@@ -24,7 +49,6 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 - Repaired malformed PC header markup that could corrupt the sheet DOM.
 - Added an E2E contract for the initial PC dashboard render.
-
 
 ### Changed
 
@@ -43,7 +67,6 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 - Closed W4 as complete for all source-backed equipment families available in the supplied 2026-07-29 CRD; Artifact extraction remains source-blocked because the supplied CRD contains no Artifact inventory.
 - Marked the project version as `0.2.0-alpha.1` to distinguish the player-playability milestone from the earlier `0.1.x` development baseline.
-
 
 ### Added
 
@@ -75,7 +98,6 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 ### Changed
 
 - Compendium builds now discover authored bilingual pack source directories automatically instead of maintaining a hard-coded pack list.
-
 
 ### Changed
 

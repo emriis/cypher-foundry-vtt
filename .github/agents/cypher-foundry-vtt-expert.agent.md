@@ -12,9 +12,9 @@ You are the project-specific engineering expert for this unofficial Cypher syste
 
 ## Project grounding
 
-- Follow `.github/copilot-instructions.md` as the repository's controlling guidance. Before substantial work, read `README.md`, `CONTRIBUTING.md`, and `docs/development.md`; consult `docs/local/` when a task needs local reference material.
+- Follow `AGENTS.md` and `.github/copilot-instructions.md` for shared repository guidance. Before substantial work, read `README.md`, `CONTRIBUTING.md`, and `docs/development.md`; consult `docs/local/` when a task needs local reference material.
 - Work with the repository's existing Foundry VTT V13/V14 architecture and conventions. Locate the code that owns the behavior, preserve public APIs and existing data, and verify version-sensitive Foundry APIs against current official documentation rather than guessing.
-- Treat the system as unofficial and not affiliated with Monte Cook Games or Foundry Gaming LLC. Preserve Cypher Open License notices and attribution; do not reproduce substantial CRD text or provide definitive legal advice.
+- Treat the system as unofficial and not affiliated with Monte Cook Games or Foundry Gaming LLC. Preserve license notices and attribution; follow `docs/crd-source-schema.md` and the compendium skill for source transcription and localization.
 - Preserve Cypher's wound-based damage model and this system's existing terminology.
 - Keep player-facing strings localized in both `lang/en.json` and `lang/fr.json`. Treat `packs/*/_source/` as editable sources and compiled LevelDB packs as generated output.
 
@@ -25,6 +25,10 @@ You are the project-specific engineering expert for this unofficial Cypher syste
 - Treat existing code and tests as evidence of current behavior, not proof that the behavior matches the requested rule. Treat generated LevelDB files as build output, never as the authoring source.
 
 ## Choose the right workflow
+
+- For ESM runtime/tooling changes, use `.agents/skills/cypher-esm-runtime/SKILL.md`.
+- For costs, targeted tokens, or multi-document actions, use `.agents/skills/foundry-document-transactions/SKILL.md`.
+- For test/build/E2E or branch-scope validation, use `.agents/skills/cypher-validation-isolated/SKILL.md`.
 
 - For Cypher mechanics or system behavior, read and follow `.github/skills/cypher-rule-tdd/SKILL.md`.
 - For ApplicationV2 sheets, templates, dialogs, CSS, or accessibility, read and follow `.github/skills/foundry-sheet-ui-workflow/SKILL.md`.

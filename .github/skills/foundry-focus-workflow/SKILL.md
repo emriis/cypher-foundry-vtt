@@ -9,7 +9,7 @@ Use this workflow for Focus/Foci/Foyer compendium content and its directed abili
 
 ## Establish source authority
 
-1. Read the relevant sections of `docs/development.md`, the Focus DataModel, `tests/focus-graphs.test.mjs`, and representative paired records under `packs/foci-{en,fr}/_source/`.
+1. Read the relevant sections of `docs/development.md`, the Focus DataModel, `tests/content/focus-graphs.test.mjs`, and representative paired records under `packs/foci-{en,fr}/_source/`.
 2. Consult only the relevant files in `docs/local/` and follow `.github/skills/local-reference-library/SKILL.md`. If a required source is unavailable, stop instead of reconstructing mechanics from memory.
 3. Map each field to its authority before authoring:
    - Use CRD prose for ability names, tiers, costs, and mechanical facts.
@@ -29,7 +29,9 @@ Use this workflow for Focus/Foci/Foyer compendium content and its directed abili
 ## Author bilingual records
 
 1. Keep the English and French records structurally aligned: Foundry document type, ability count and order, stable ability IDs, tiers, costs, and prerequisite arrays.
-2. Localize names and write concise original summaries. Do not copy substantial CRD prose.
+2. Follow `docs/crd-source-schema.md` and the compendium workflow for complete
+   source-faithful descriptions and matching French localization. Do not
+   invent missing translations or replace source prose with summaries.
 3. Preserve valid 16-character Foundry document IDs and matching `_key` values. Check IDs programmatically rather than visually.
 4. Edit `_source` JSON only. Never hand-edit LevelDB files.
 

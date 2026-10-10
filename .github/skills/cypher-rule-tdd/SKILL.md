@@ -16,9 +16,11 @@ when the rule or terminology depends on one.
    repository. Preserve the system's wound-based model and existing terminology.
    If the rule is ambiguous, ask before choosing between materially different
    mechanics.
-2. Identify the owning layer: schemas in `module/data-models/`, persisted rules
-   in `module/documents/`, sheet actions in `module/sheets/`, markup in
-   `templates/`, and UI translations in `lang/`.
+2. Identify the owning layer: deterministic rules in `module/rules/`, Foundry
+   orchestration/persistence in `module/applications/`, schemas and derived
+   preparation in `module/data-models/`, thin compatibility facades in
+   `module/documents/`, sheet actions in `module/sheets/`, markup in `templates/`,
+   and UI translations in `lang/`.
 3. Add or update a deterministic test in `tests/` that captures observable
    expected behavior, including relevant boundaries or regressions.
 4. Run that test first and verify it fails for the intended reason (RED), not
@@ -35,7 +37,11 @@ when the rule or terminology depends on one.
 
 ## License and content
 
-Preserve Cypher Open License attribution and notices. Implement mechanics and
-write original summaries; do not copy substantial CRD prose into code, tests,
-translations, or compendium content. If a material license interpretation is
-unclear, state the uncertainty instead of presenting legal advice.
+Follow the maintained source-fidelity policy in `docs/crd-source-schema.md`
+and the compendium skill for CRD descriptions, translations, and provenance.
+Keep explanatory code comments original; preserve license notices. Do not
+invent mechanics or substitute summaries for required source descriptions.
+
+`npm test` runs normalization and the full suite in an isolated checkout.
+Use the ESM and document transaction skills for runtime changes that cross
+environment or persistence boundaries.

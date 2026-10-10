@@ -18,4 +18,6 @@ If the Focus identity or authoritative prose/flowchart cannot be located, ask on
 5. Rebuild both Focus LevelDB packs from their `_source` directories using a temporary output location. Preserve unrelated working-tree changes and exclude transient LevelDB logs and locks.
 6. Report the records added, source mapping, graph ambiguities resolved or remaining, exact test results, packaging results, and any live Foundry verification still required.
 
-Do not copy substantial CRD prose, edit LevelDB files by hand, alter unrelated Focus records, claim a pack loaded in Foundry without observing it, commit, or release unless explicitly requested.
+Follow `docs/crd-source-schema.md` for source-faithful transcription. Do not edit
+LevelDB files by hand, alter unrelated Focus records, claim a pack loaded in
+Foundry without observing it, commit, or release unless explicitly requested.

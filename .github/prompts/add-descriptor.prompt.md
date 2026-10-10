@@ -11,10 +11,14 @@ Follow [the compendium workflow](../skills/foundry-compendium-workflow/SKILL.md)
 
 If the Descriptor identity, authoritative mechanic, or French localization cannot be located, ask one concise blocking question. Otherwise proceed end to end:
 
-1. Use the CRD for Pool and skill mechanics and the French Character Book for localized terminology. Write concise original summaries rather than copying source prose.
+1. Use the CRD for Pool and skill mechanics and matching French references for
+   localization. Follow the source-fidelity policy in `docs/crd-source-schema.md`
+   and the compendium workflow; do not invent missing prose or translations.
 2. Inspect `module/data-models/item-descriptor.mjs`, the focused compendium tests, and the closest existing bilingual Descriptor pair.
 3. Create matching filenames under `packs/descriptors-en/_source/` and `packs/descriptors-fr/_source/`. Use unique 16-character document IDs with matching `_key` values.
-4. Align `statOptions`, `statAmount`, structure, and supported fields across languages. Localize skill names and descriptions while preserving their intended choices.
+4. Align `statOptions`, `statAmount`, structure, and supported fields across languages.
+   Follow `docs/crd-source-schema.md` for source-faithful descriptions and
+   localization while preserving their intended choices.
 5. Run `node --test tests/content/compendium-sources.test.mjs`, then `npm test`.
 6. Rebuild both Descriptor LevelDB packs from their `_source` directories using a temporary output location, excluding transient logs and locks.
 7. Report the records added, source mapping, test results, packaging results, and any live Foundry verification still required.

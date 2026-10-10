@@ -1,4 +1,4 @@
-import { test, expect } from "./foundry-session-fixture.mjs";
+import { test, expect, setDiceUniform } from "./foundry-session-fixture.mjs";
 
 const ACTOR_PREFIX = "E2E Cypher";
 
@@ -822,7 +822,7 @@ test.describe("Cypher Foundry live gameplay", () => {
         if (!stunstick) throw new Error("Stunstick not found in equipment-en");
 
         const attack = await Item.create(stunstick.toObject(), { parent: pc });
-        await attack.rollAttack({ difficulty: 0, target: npc });
+        const attackResult = await attack.rollAttack({ difficulty: 0, target: npc });
 
         const message = [...game.messages]
           .reverse()
@@ -841,6 +841,7 @@ test.describe("Cypher Foundry live gameplay", () => {
 
         return {
           targetLevel: npc.system.level,
+          attackSucceeded: attackResult?.success,
           targetEffects: message?.getFlag("cypher", "weaponTargetEffects"),
           activeEffects,
           blockedAttack: blockedAttack === null,
@@ -853,6 +854,7 @@ test.describe("Cypher Foundry live gameplay", () => {
     });
 
     expect(result.targetLevel).toBe(2);
+    expect(result.attackSucceeded).toBe(true);
     expect(result.targetEffects).toEqual([{
       minimumTargetLevel: 0,
       maximumTargetLevel: 2,
@@ -926,20 +928,7 @@ test.describe("Cypher Foundry live gameplay", () => {
           );
         }
 
-        // Keep the E2E assertion focused on base damage and Armor bypass.
-        // Natural 17–20 rolls can add CRD special damage and make Health
-        // depend on randomness unrelated to the behavior under test.
-        const originalEvaluate = Roll.prototype.evaluate;
-        try {
-          Roll.prototype.evaluate = async function (...args) {
-            await originalEvaluate.apply(this, args);
-            this.total = 10;
-            return this;
-          };
-          await attack.rollAttack({ difficulty: 0, target: npc });
-        } finally {
-          Roll.prototype.evaluate = originalEvaluate;
-        }
+        await attack.rollAttack({ difficulty: 0, target: npc });
 
         await new Promise(resolve => setTimeout(resolve, 100));
 
@@ -967,6 +956,70 @@ test.describe("Cypher Foundry live gameplay", () => {
     expect(result.targetActorId).toBeTruthy();
     expect(result.health).toBe(6);
   });
+
+  for (const kind of ["spray", "arc-spray"]) {
+    test(`executes ${kind} from the PC sheet with persisted target damage`, async ({ e2ePage: page }) => {
+      // Spray needs d6 = 5; this input also gives d20 = 16 without special damage.
+      await setDiceUniform(page, 0.225);
+      await closeActorSheet(page);
+      const actorId = await createActor(page);
+      const setup = await page.evaluate(async ({ actorId, kind, prefix }) => {
+        const actor = game.actors.get(actorId);
+        const [ability, weapon] = await actor.createEmbeddedDocuments("Item", [
+          { name: `E2E ${kind}`, type: "ability", system: {
+            key: kind, cost: { stat: "speed", amount: kind === "spray" ? 2 : 3 }
+          } },
+          { name: "E2E rapid-fire weapon", type: "attack", system: {
+            attackType: "medium", damage: 4, stat: "speed", freelyUsable: true,
+            mechanics: { rapidFire: true }, availableUses: 2
+          } }
+        ]);
+        const targets = [];
+        for (let index = 0; index < 3; index += 1) {
+          targets.push(await Actor.create({ name: `${prefix} ${kind} target ${index}`, type: "npc",
+            system: { level: 1, health: { value: 20, max: 20 }, armor: 0 } }));
+        }
+        await actor.sheet.render(true);
+        return { abilityId: ability.id, weaponId: weapon.id, targetIds: targets.map(target => target.id) };
+      }, { actorId, kind, prefix: ACTOR_PREFIX });
+      try {
+        await dismissActiveTour(page);
+        await page.locator(`[data-item-id="${setup.abilityId}"] [data-action="useWeaponAbility"]`).click();
+        const selection = page.locator("form").filter({ has: page.locator('select[name="weaponId"]') }).last();
+        await expect(selection).toBeVisible();
+        await selection.locator('[name="weaponId"]').selectOption(setup.weaponId);
+        for (let index = 0; index < (kind === "spray" ? 1 : 3); index += 1) {
+          await selection.locator(`[name="target${index}"]`).selectOption(setup.targetIds[index]);
+        }
+        if (kind === "arc-spray") await selection.locator('[name="confirmed"]').check();
+        await selection.getByRole("button").last().click();
+        await clickRollDialog(page);
+        await expect.poll(() => page.evaluate(({ actorId, kind }) => [...game.messages].filter(message =>
+          message.getFlag("cypher", "actorId") === actorId
+          && message.getFlag("cypher", "rollType") === "task"
+          && message.getFlag("cypher", "abilitySource")?.kind === kind).length,
+        { actorId, kind })).toBe(kind === "spray" ? 1 : 3);
+        await expect.poll(() => page.evaluate(ids => ids.map(id => game.actors.get(id).system.health.value), setup.targetIds))
+          .toEqual(kind === "spray" ? [17, 20, 20] : [16, 16, 16]);
+        const state = await page.evaluate(({ actorId, weaponId, kind }) => {
+          const actor = game.actors.get(actorId);
+          return { speed: actor.system.stats.speed.pool.value,
+            uses: actor.items.get(weaponId).system.availableUses,
+            difficulties: [...game.messages].filter(message => message.getFlag("cypher", "actorId") === actorId
+              && message.getFlag("cypher", "rollType") === "task"
+              && message.getFlag("cypher", "abilitySource")?.kind === kind)
+              .map(message => message.getFlag("cypher", "effectiveDifficulty")) };
+        }, { actorId, weaponId: setup.weaponId, kind });
+        expect(state.speed).toBe(kind === "spray" ? 6 : 5);
+        expect(state.uses).toBe(kind === "spray" ? 0 : 2);
+        expect(state.difficulties).toEqual(kind === "spray" ? [0] : [2, 2, 2]);
+      } finally {
+        await page.evaluate(async ids => {
+          for (const id of ids) await game.actors.get(id)?.delete();
+        }, [actorId, ...setup.targetIds]);
+      }
+    });
+  }
 
   test("persists actor state after the sheet is closed and reopened", async ({
     e2ePage: page

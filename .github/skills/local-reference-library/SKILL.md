@@ -52,9 +52,10 @@ to the local environment; they are not available to other clones or CI.
    them without an explicit request and a reviewed preview.
 6. For a project task, consult only the relevant local references. If the
    target is missing or inaccessible, say so rather than guessing or silently
-   substituting a different source. Do not copy substantial copyrighted
-   reference text into tracked files; follow the repository's license guidance
-   and prefer original summaries.
+   substituting a different source. Do not publish the private reference
+   library. For authorized CRD compendium transcription, follow the shared
+   source-fidelity policy in `docs/crd-source-schema.md` and the compendium
+   skill; do not turn unrelated private references into tracked content.
 
 ## Completion checks
 

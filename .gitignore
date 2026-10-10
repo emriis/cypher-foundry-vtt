@@ -16,7 +16,6 @@
 
 # Foundry local/world data and runtime state
 /foundry-data/
-/Data/
 /worlds/
 /modules-local/
 /systems-local/
@@ -30,6 +29,7 @@
 /test-results/
 /coverage/
 /reports/
+/.stryker-tmp/
 
 # Operating system files
 .DS_Store

@@ -1,6 +1,7 @@
 import { CYPHER } from "../config.mjs";
 import {
   computeWoundIncrease,
+  convertDamageToWound,
   reduceWoundSeverity,
   resolveNpcDamage,
   resolvePoolDamage,

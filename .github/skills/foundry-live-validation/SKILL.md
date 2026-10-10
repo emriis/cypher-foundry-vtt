@@ -13,6 +13,17 @@ automated tests.
 
 ## Safety and setup
 
+Prefer `npm run test:e2e -- --grep <scenario>` for automated live checks. It
+copies the checkout, normalizes/builds/packages there, and runs Foundry with a
+temporary user-data directory. The configured installation supplies only a
+copy of activation metadata; its settings, systems, and worlds are untouched.
+See `.agents/skills/cypher-validation-isolated/SKILL.md` for command effects.
+
+The manual linking procedure below applies only when the user explicitly
+requests validation in their desktop installation. It is not required for the
+isolated runner. Preserve the original installation and do not retarget it as
+part of ordinary automated validation.
+
 1. Identify the changed behavior and choose the smallest in-game path that
    exercises it. Read `system.json` for the supported and verified Foundry
    versions; do not infer compatibility from a successful test on one version.
@@ -111,6 +122,11 @@ Select only the cases affected by the change:
 - **Task rolls or rules:** perform one representative success and any changed
   boundary case; verify displayed result, Pool/Effort changes, chat output, and
   token status effects when affected.
+  In deterministic live tests, respect the public Roll API: `total` is a
+  getter, not a writable result. Substitute an evaluated numeric Roll at the
+  test boundary instead of assigning `total` or changing private `_total`.
+  Restore modified prototypes in `finally`, and create valid schema values
+  rather than assuming invalid inputs survive Foundry's field cleaning.
 - **Migrations:** run only against a disposable world copy with representative
   old data; verify migrated values and unrelated data before and after reload.
 - **Compendiums:** rebuild affected packs first, then confirm they load in the

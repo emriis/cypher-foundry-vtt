@@ -11,6 +11,9 @@ item DataModel, paired `_source` entries, and tests before editing. Check
 
 ## Source and generation
 
+The detailed source-fidelity and transformation policy is maintained in
+`docs/crd-source-schema.md`. All agents and authoring prompts use that policy.
+
 - Treat `packs/<pack-name>/_source/` as the reviewable source of truth.
 - Edit the English and French `_source` records directly. Keep paired filenames,
   document structure, mechanical data, and supported item fields aligned.
@@ -36,6 +39,9 @@ item DataModel, paired `_source` entries, and tests before editing. Check
    this optional tool.
 3. Check the pack output and Git status. Do not commit transient `LOCK`/`LOG`
    files or unrelated generated artifacts.
+   `npm test` normalizes only a temporary copy. Explicit source migrations and
+   builds in the authoring checkout are intentional content/artifact changes;
+   follow `cypher-validation-isolated` when only validating runtime work.
 4. State clearly if the CLI or a live Foundry instance was unavailable; source
    validation is not the same as successfully loading the compiled pack in
    Foundry.

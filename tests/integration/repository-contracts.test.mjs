@@ -295,7 +295,12 @@ test("live E2E joins the deterministic gamemaster profile", () => {
 
   assert.match(source, /const GAMEMASTER_NAME = "gamemaster"/);
   assert.match(source, /getByRole\("textbox",/);
-  assert.match(source, /sélectionner un utilisateur\|select a user\|username/i);
+  const selector = source.match(/name:\s*\/(.+)\/i/);
+  assert.ok(selector, "Gamemaster login must expose a localized user selector");
+  const labelPattern = new RegExp(selector[1], "i");
+  for (const label of ["Sélectionner un utilisateur", "Select a User", "Select User", "Username"]) {
+    assert.ok(labelPattern.test(label), `Login selector does not recognize: ${label}`);
+  }
   assert.match(source, /usernameInput\.fill\(GAMEMASTER_NAME\)/);
   assert.match(source, /usernameInput\.press\("ArrowDown"\)/);
   assert.match(source, /usernameInput\.press\("Enter"\)/);

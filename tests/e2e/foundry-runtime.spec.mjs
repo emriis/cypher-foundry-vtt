@@ -1,6 +1,37 @@
-import { test, expect } from "./foundry-session-fixture.mjs";
+import { test, expect, setDiceUniform } from "./foundry-session-fixture.mjs";
 
 test.describe("Cypher Foundry live runtime", () => {
+  test("supports deterministic natural-roll boundaries", async ({ e2ePage: page }) => {
+    await expect(setDiceUniform(page, 1)).rejects.toThrow(RangeError);
+    await setDiceUniform(page, 0.025);
+    expect(await page.evaluate(async () => (await new Roll("1d20").evaluate()).total)).toBe(20);
+    await setDiceUniform(page, 0.975);
+    expect(await page.evaluate(async () => (await new Roll("1d20").evaluate()).total)).toBe(1);
+    // The next test must get the fixture default, not this test's final input.
+  });
+
+  test("evaluates deterministic dice with real Foundry formulas and serialization", async ({ e2ePage: page }) => {
+    const results = await page.evaluate(async () => {
+      return Promise.all(["1d20", "2d6 + 1", "1d100"].map(async formula => {
+        const roll = await new Roll(formula).evaluate();
+        const restored = Roll.fromJSON(JSON.stringify(roll));
+        return {
+          total: roll.total,
+          dice: roll.dice.map(die => die.results.map(result => result.result)),
+          restoredTotal: restored.total,
+          restoredFormula: restored.formula,
+          formula: roll.formula
+        };
+      }));
+    });
+    expect(results.map(result => result.total)).toEqual([10, 7, 48]);
+    expect(results.map(result => result.dice)).toEqual([[[10]], [[3, 3]], [[48]]]);
+    for (const result of results) {
+      expect(result.restoredTotal).toBe(result.total);
+      expect(result.restoredFormula).toBe(result.formula);
+    }
+  });
+
   test("loads the Cypher system and its document models", async ({ e2ePage: page }) => {
     const result = await page.evaluate(() => ({
       systemId: game.system.id,

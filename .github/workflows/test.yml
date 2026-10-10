@@ -119,6 +119,12 @@ jobs:
         run: npm ci
       - name: Check E2E JavaScript syntax
         run: npm run check:e2e-syntax
+      - name: Check ESM runtime and tooling boundaries
+        run: npm run lint
+      - name: Check pure-rule JSDoc pilot
+        run: npm run typecheck
+      - name: Check system JavaScript syntax
+        run: npm run check:system-syntax
       - name: Audit public repository data
         run: npm run audit:public-data
       - name: Publish diagnostics

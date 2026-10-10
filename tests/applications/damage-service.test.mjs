@@ -126,6 +126,19 @@ test("applyNpcDamage applies partial Armor bypass exactly once", async () => {
   assert.equal(npc.system.health.value, 6);
 });
 
+test("direct PC damage without a Pool or explicit severity resolves a wound", async () => {
+  let update;
+  const pc = {
+    type: "pc",
+    system: { wounds: { minor: { current: 0, max: 3 }, moderate: { current: 0, max: 3 }, major: { current: 0, max: 3 } } },
+    statuses: new Set(),
+    async update(changes) { update = changes; },
+    async toggleStatusEffect() {}
+  };
+  await applyDamage(pc, 1);
+  assert.deepEqual(update, { "system.wounds.minor.current": 1 });
+});
+
 test("damageArmor caps accumulated Block damage at the armor base bonus", async () => {
   globalThis.game = {
     i18n: {

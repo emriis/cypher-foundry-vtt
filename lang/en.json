@@ -18,6 +18,16 @@
     }
   },
   "CYPHER": {
+    "WeaponAbility": {
+      "Weapon": "Weapon / thrown-weapon attack",
+      "AvailableUses": "Available uses (ammunition, power, or thrown weapons)",
+      "AvailableUsesHint": "Leave empty if the campaign does not track this store. Zero means empty. Spray consumes 1d6 + 1 uses, capped by this store.",
+      "Adjacent": "The GM confirms that all three targets are next to one another.",
+      "ThrownInReach": "This attack uses multiple thrown weapons carried or within reach.",
+      "TargetDifficulty": "Each attack uses its target's level as difficulty. Effort is paid separately for each attack.",
+      "InvalidUse": "Check the weapon, targets, adjacency or reach, available uses, and Pool points before using this ability.",
+      "UsesConsumed": "Spray: {uses} uses of ammunition, power, or thrown weapons."
+    },
     "Name": "Name",
     "Description": "Description",
     "Biography": "Biography",

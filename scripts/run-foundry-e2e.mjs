@@ -1,6 +1,6 @@
 /** 
- * Starts Foundry with one disposable world in the user's normal Data
- * directory, runs the live Playwright suite, and removes only that world.
+ * Builds a temporary checkout and starts Foundry in an isolated user-data
+ * directory. The configured installation is read only for its license.
  */
 import {
   cp,
@@ -15,8 +15,10 @@ import { spawn } from "node:child_process";
 import os from "node:os";
 import path from "node:path";
 import { findApplication } from "./foundry-discovery.mjs";
+import { createValidationWorkspace, removeValidationWorkspace } from "./validation-workspace.mjs";
 
-const ROOT = path.resolve(import.meta.dirname, "..");
+const SOURCE_ROOT = path.resolve(import.meta.dirname, "..");
+let ROOT = SOURCE_ROOT;
 const PORT = Number(process.env.FOUNDRY_PORT || 30000);
 const BASE_URL = `http://127.0.0.1:${PORT}`;
 const WORLD_ID = `cypher-e2e-${Date.now()}`;
@@ -173,6 +175,10 @@ async function ensureDataPath(userDataPath, dataPath) {
 
 async function installSystem(dataPath) {
   const target = path.join(dataPath, "systems", "cypher");
+  if (!validationWorkspace || target !== path.join(validationWorkspace,
+    "foundry-user-data", "Data", "systems", "cypher")) {
+    throw new Error("Refusing to install outside the owned E2E workspace.");
+  }
 
   // Never layer one E2E installation over a previous system copy. Stale
   // templates or modules can otherwise survive between test runs.
@@ -254,7 +260,7 @@ function spawnFoundry(appPath, userDataPath) {
     return spawn(process.execPath, [serverPath, ...args], {
       cwd: path.dirname(serverPath),
       stdio: "inherit",
-      windowsHide: false,
+      windowsHide: true,
       shell: false
     });
   }
@@ -264,7 +270,7 @@ function spawnFoundry(appPath, userDataPath) {
     return spawn(process.execPath, [serverPath, ...args], {
       cwd: path.dirname(serverPath),
       stdio: ["ignore", logFd, logFd],
-      windowsHide: false,
+      windowsHide: true,
       shell: false
     });
   } finally {
@@ -295,7 +301,7 @@ function spawnScript(command, args, options = {}) {
       {
         cwd: ROOT,
         stdio: "inherit",
-        windowsHide: false,
+        windowsHide: true,
         shell: false,
         ...options
       }
@@ -451,7 +457,7 @@ async function stopProcess(child, foundryPid) {
 }
 
 const appPath = await findApplication();
-const { userDataPath, dataPath } = await getFoundryPaths();
+const { userDataPath: licenseSource } = await getFoundryPaths();
 const coreVersion = await readCoreVersion(appPath);
 const systemManifest = JSON.parse(
   await readFile(path.join(ROOT, "system.json"), "utf8")
@@ -462,8 +468,20 @@ let foundryPid;
 let worldCreated = false;
 let worldPath;
 let exitCode = 1;
+let validationWorkspace;
+let userDataPath;
+let dataPath;
 
 try {
+  const isolated = await createValidationWorkspace(SOURCE_ROOT);
+  validationWorkspace = isolated.workspace;
+  ROOT = isolated.root;
+  userDataPath = path.join(validationWorkspace, "foundry-user-data");
+  dataPath = path.join(userDataPath, "Data");
+  await mkdir(path.join(userDataPath, "Config"), { recursive: true });
+  // Copy activation metadata without printing it or copying user settings/worlds.
+  await cp(path.join(licenseSource, "Config", "license.json"),
+    path.join(userDataPath, "Config", "license.json"));
   console.log(`Foundry executable: ${appPath}`);
   console.log(`Foundry User Data path: ${userDataPath}`);
   console.log(`Foundry Data path: ${dataPath}`);
@@ -487,9 +505,11 @@ try {
   const npmCommand = process.platform === "win32" ? "npm.cmd" : "npm";
   const command = process.platform === "win32" ? "npx.cmd" : "npx";
 
-  // Build the exact release artifact before installing the system used by Foundry.
-  await runCommand(npmCommand, ["run", "package"]);
+  // Normalize and build only in the temporary checkout. Package after packs,
+  // so the archive and the installed runtime contain the same generated data.
+  await runCommand(npmCommand, ["run", "migrate:packs"]);
   await runCommand(npmCommand, ["run", "build:packs"]);
+  await runCommand(npmCommand, ["run", "package"]);
   await runCommand(npmCommand, ["run", "check:system-syntax"]);
   await runCommand(npmCommand, ["run", "check:e2e-syntax"]);
   if (process.env.PLAYWRIGHT_SKIP_BROWSER_INSTALL !== "true") {
@@ -523,12 +543,20 @@ try {
 
   exitCode = await new Promise(resolve => {
     const testArgs = [
-      "playwright",
       "test",
       ...E2E_SPECS,
-      "--config=playwright.config.mjs"
+      "--config=playwright.config.mjs",
+      ...process.argv.slice(2).filter(argument => argument !== "--debug-foundry-logs")
     ];
-    const testProcess = spawnScript(command, testArgs, {
+    // Use Node directly so Windows cmd/npm cannot reinterpret a grep regex,
+    // spaces, or shell metacharacters in user-supplied Playwright arguments.
+    const testProcess = spawn(process.execPath, [
+      path.join(ROOT, "node_modules", "@playwright", "test", "cli.js"),
+      ...testArgs
+    ], {
+      cwd: ROOT,
+      stdio: "inherit",
+      windowsHide: true,
       env: {
         ...process.env,
         FOUNDRY_URL: BASE_URL,
@@ -554,6 +582,16 @@ try {
   }
 
   await rm(FOUNDRY_PID_FILE, { force: true });
+  if (validationWorkspace && exitCode !== 0) {
+    const reportPath = path.join(SOURCE_ROOT, "reports", WORLD_ID);
+    try {
+      await cp(path.join(ROOT, "test-results"), reportPath, { recursive: true });
+      console.error("E2E diagnostics: " + reportPath);
+    } catch (error) {
+      if (error.code !== "ENOENT") throw error;
+    }
+  }
+  if (validationWorkspace) await removeValidationWorkspace(validationWorkspace);
 }
 
 process.exitCode = exitCode;

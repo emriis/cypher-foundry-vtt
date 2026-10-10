@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "types": [],
+    "lib": ["ES2022"]
+  },
+  "include": ["module/rules/weapon-ability-resolution.mjs"]
+}
