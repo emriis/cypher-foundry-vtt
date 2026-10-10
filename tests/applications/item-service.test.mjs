@@ -185,7 +185,6 @@ test("rollAttack delegates weapon familiarity to the common task service", async
       attackType: "medium",
       attackSkillCategory: "martial",
       weaponFamily: "swords",
-      attackSkillCategory: "martial",
       stat: "might",
       freelyUsable: false
     }

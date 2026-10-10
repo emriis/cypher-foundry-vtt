@@ -82,7 +82,7 @@ An Ability can contain structured:
 
 Runtime activation is deliberately separate from the CRD source definition:
 
-```
+```text
 Ability Item
   static CRD-derived definition
        |
@@ -103,7 +103,7 @@ The source definition never stores current activation state.
 
 CRD-derived content follows this pipeline:
 
-```
+```text
 CRD source
    |
    v
@@ -119,7 +119,7 @@ artifacts and must not be edited manually.
 
 CRD provenance is stored under:
 
-```
+```text
 flags.cypherFoundry.crd
 ```
 
@@ -205,15 +205,16 @@ The E2E suite uses Playwright against a real headless Foundry runtime.
 
 The runner:
 
-- packages the system before the live run;
+- copies the checkout into a marked temporary workspace;
+- normalizes sources and builds packs before packaging the isolated system;
 - validates JavaScript syntax and the Playwright browser before startup;
-- creates one disposable `cypher-e2e-<timestamp>` world;
+- creates one disposable `cypher-e2e-<timestamp>` world in temporary user data;
 - starts Foundry headlessly;
 - uses one worker-scoped browser/context/page;
 - logs into Foundry as the Game Master once for the worker;
 - reuses that session for the E2E suite;
-- cleans only generated `cypher-e2e-*` worlds;
-- never deletes the user's general Foundry `Data` directory;
+- removes only its marked workspace after stopping Foundry;
+- never installs into or deletes the user's general Foundry `Data` directory;
 - shuts down the runner-owned Foundry process.
 
 The E2E command is:

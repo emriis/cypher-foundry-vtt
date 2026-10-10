@@ -10,10 +10,20 @@ Repository-wide Copilot guidance lives in `.github/copilot-instructions.md`.
 The project-specific expert agent is defined in `.github/agents/`, and
 reusable procedures live in `.github/skills/`.
 
+Codex loads `AGENTS.md` and discovers skills under `.agents/skills/`. Existing
+entrypoints link to maintained `.github/skills/` procedures. New ESM runtime,
+document-transaction, and isolated-validation skills live in `.agents/skills/`.
+Task prompts also cover runtime implementation, review, roadmap audit, and
+scoped-branch preparation.
+
 Optional user-provided reference documents may be placed in `docs/local/`.
 That directory is ignored by Git and is private to the local checkout.
 
 ## 1. System implementation
+
+Use Node 22 for tooling, matching CI (`.nvmrc`). ESLint requires at least
+22.13 in that release line; Node 24+ is also accepted by the package's engine
+contract. These tooling versions do not describe Foundry's browser runtime.
 
 Read `docs/architecture.md` before a change crosses document, rule,
 application, sheet, migration, or compendium boundaries.
@@ -89,8 +99,11 @@ npm run test:content
 npm run build:packs
 ```
 
-The normal `npm test` command also runs pack-source migration before the complete
-automated suite.
+`npm test` copies the checkout (including uncommitted edits), normalizes sources
+and runs the complete suite there, then removes its owned temporary directory.
+It does not rewrite the working checkout. `test:all` and focused suites test
+current sources without normalization. Explicit `migrate:packs`, `build:packs`,
+and `package` still change this checkout's sources or generated artifacts.
 
 ## 3. Validation and CI
 
@@ -98,6 +111,8 @@ Useful local commands are:
 
 ```powershell
 npm test
+npm run lint
+npm run typecheck
 npm run test:unit
 npm run test:content
 npm run test:integration
@@ -115,9 +130,25 @@ npm run package
 deterministic tests and is kept separate because it requires a locally activated
 Foundry installation.
 
-The E2E runner owns its Foundry process and its disposable world. Cleanup is
-restricted to generated `cypher-e2e-*` worlds; it does not remove the user's
-Foundry `Data` directory.
+The E2E runner owns a temporary checkout and Foundry user-data directory.
+Builds and installation happen there. It reads activation metadata from the
+configured installation but never writes its settings, worlds, or systems.
+Cleanup checks the temporary workspace's ownership marker before removal.
+Failure diagnostics are retained under ignored `reports/` paths.
+
+### ESM and static checks
+
+`eslint.config.mjs` separates Node tooling/tests, Foundry browser modules, and
+pure rules/source helpers. It checks undefined globals, duplicate keys,
+unreachable code, explicit relative `.mjs` imports, and Node imports in browser
+modules. Test doubles are declared in test configuration; pure rules do not
+inherit browser or Foundry globals.
+
+`npm run typecheck` uses TypeScript's `allowJs`/`checkJs` and `noEmit` on the
+explicit pilot in `jsconfig.rules.json` (weapon Ability resolution). It checks
+existing `.mjs` and JSDoc without introducing a TypeScript runtime or claiming
+full-system typing. Expand this pilot with accurate contracts, not broad `any`
+declarations for Foundry. CI runs both checks on Node 22.
 
 ## 4. Release checklist
 

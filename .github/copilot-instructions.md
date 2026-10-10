@@ -1,5 +1,9 @@
 # Copilot instructions
 
+- Use `AGENTS.md` for shared architecture, command side effects, and task scope.
+  Codex discovery entrypoints are in `.agents/skills/`; existing detailed
+  procedures remain in `.github/skills/`.
+
 - Read `README.md`, `CONTRIBUTING.md`, and `docs/development.md` before
   substantial work; check `docs/local/` for relevant user-provided references.
   `docs/local/` is ignored by Git and is not available to other clones or CI.
@@ -22,6 +26,9 @@
   build outputs. Edit paired English and French source records directly, then
   use the documented validation and packaging workflows.
 - For behavior changes, use TDD and run focused tests followed by `npm test`.
+  `npm test` normalizes sources only in a temporary checkout. Explicit
+  `migrate:packs`, `build:packs`, and `package` commands mutate this checkout;
+  use them here only when authoring or artifact changes are intended.
   Report checks that were not run, including any required live-Foundry
   verification.
 - Before preparing a commit with runtime-affecting changes, follow

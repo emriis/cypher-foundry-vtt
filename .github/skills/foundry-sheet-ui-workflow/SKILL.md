@@ -16,7 +16,11 @@ Use this workflow for changes under `module/sheets/`, `templates/`, or `css/`, a
 
 ## Implement
 
-- Keep rule calculations and persisted mutations in documents or data models. Sheets collect input, invoke the owning behavior, and present results.
+- Keep deterministic calculations in `module/rules/` and Foundry orchestration
+  and persisted mutations in `module/applications/`. Documents are thin
+  compatibility facades; DataModels define schemas and derived values. Sheets
+  collect input, invoke services/facades, and present results. Never call
+  `update` or `setFlag` during data preparation.
 - Register actions in `DEFAULT_OPTIONS.actions`; keep template `data-action` names aligned with those registrations.
 - Prepare display data in `_prepareContext` or `_preparePartContext` rather than embedding business logic in Handlebars.
 - Use `game.i18n` and matching keys in `lang/en.json` and `lang/fr.json` for every player-facing string.
@@ -26,7 +30,7 @@ Use this workflow for changes under `module/sheets/`, `templates/`, or `css/`, a
 ## Validate
 
 1. Add or update the narrowest deterministic behavior test when the interaction delegates to testable document logic. Run it before and after the implementation.
-2. Run `npm test` for behavior or data-flow changes.
+2. Run lint, architecture checks, and isolated `npm test` for behavior or data-flow changes.
 3. Follow `foundry-live-validation` in a disposable world. Exercise the changed control with mouse and keyboard, then verify persistence after rerender and reload.
 4. Check both locales and light/dark themes when labels, layout, or styles changed. Inspect the client console for errors.
 5. Test the narrowest relevant viewport or sheet size and confirm dynamic text does not overlap or resize fixed controls.

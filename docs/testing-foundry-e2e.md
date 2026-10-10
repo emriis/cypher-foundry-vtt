@@ -33,7 +33,6 @@ npm run test:e2e
 The runner automatically installs/validates the Playwright Chromium browser before launching Foundry. To skip that bootstrap step when the browser is already managed externally, set `PLAYWRIGHT_SKIP_BROWSER_INSTALL=true`.
 The Playwright context uses a fixed 1280×900 CSS viewport, device scale factor 1, and Chromium's scale factor is forced to 1. This prevents Windows display scaling from reducing Foundry's effective viewport below its 1024×768 minimum.
 
-
 You do **not** need to open Foundry manually.
 
 ### Foundry logs
@@ -60,10 +59,11 @@ as JSON rather than dumped into the terminal for every successful test.
 The command performs this lifecycle:
 
 1. Finds the local Foundry executable.
-2. Resolves the normal Foundry **Data** directory.
-3. Builds the current compendium packs.
-4. Installs the current checkout of the Cypher system into
-   `Data/systems/cypher`.
+2. Reads activation metadata from the configured installation and copies it
+   into a marked temporary user-data directory; does not copy user settings.
+3. Copies the checkout (including edits), normalizes source records, builds
+   compendium packs, and packages the system in that temporary checkout.
+4. Installs the isolated build into temporary `Data/systems/cypher`.
 5. Creates one uniquely named disposable Cypher world under
    `Data/worlds/`.
 6. Starts Foundry with that world using `--world`.
@@ -73,10 +73,11 @@ The command performs this lifecycle:
    session.
 10. Cleans up E2E-created Actors and closes the browser session.
 11. Stops Foundry only after Playwright has completely finished.
-12. Deletes **only** `Data/worlds/cypher-e2e-<run-id>`.
+12. Retains failure diagnostics under ignored `reports/` paths, then verifies
+    ownership and removes only the temporary workspace.
 
 Your other Foundry worlds, configuration, and installed systems are left in
-place. The runner never recursively deletes the Foundry Data directory.
+place. The working checkout's `packs/`, `data/`, and `dist/` are also preserved.
 
 Foundry documents that newly created worlds start with a Gamemaster account
 without a password, so the runner can join the fresh world without storing
@@ -92,16 +93,15 @@ $env:FOUNDRY_DATA_PATH = "D:\FoundryVTT\Data"
 npm run test:e2e
 ```
 
-`FOUNDRY_DATA_PATH` identifies the **real Foundry Data directory** used by
-the runner. It is not a disposable directory and is never deleted by the
-runner.
+`FOUNDRY_DATA_PATH` identifies a read-only source installation: the runner
+reads `Config/license.json` from its parent. The live run always uses a new
+temporary Data directory. No system is installed into the specified path.
 
 If your installation uses the default path, this variable is not needed.
 
 ### Watching the browser
 
-The Foundry application itself is started visibly. To also run Chromium
-headed:
+Foundry runs as a hidden Node server. To run Chromium headed:
 
 ```powershell
 $env:PLAYWRIGHT_HEADLESS = "false"
@@ -112,8 +112,8 @@ npm run test:e2e
 
 The runner deliberately fails fast if its local test port is already reachable.
 Close a manually running Foundry instance before starting the autonomous
-suite. This avoids two Foundry processes writing to the same user-data
-directory.
+suite, or choose another `FOUNDRY_PORT`. Each test run uses its own temporary
+user-data directory; the port check prevents connecting to the wrong server.
 
 ## Local path and privacy rules
 
@@ -134,11 +134,11 @@ directories, Foundry configuration, or repository-relative paths. For the live
 E2E runner this means:
 
 - `FOUNDRY_APP_PATH` may identify the local Foundry executable;
-- `FOUNDRY_DATA_PATH` identifies the local **Data** directory;
+- `FOUNDRY_DATA_PATH` identifies the read-only license-source installation;
 - on the default Windows installation, `Config/options.json` is used to
   resolve Foundry's user-data root and its `Data` subdirectory;
-- the runner must delete only its generated
-  `Data/worlds/cypher-e2e-<run-id>` directory.
+- the runner must remove only its marked temporary workspace after stopping
+  its owned server; normal installations are never cleanup targets.
 
 Examples and fixtures must use abstract placeholders such as
 `<foundry-user-data>/Data` or `<foundry-installation>/Data`; they must never
@@ -190,7 +190,7 @@ worker; individual tests do not return to the Foundry join screen.
 
 Actors created by the E2E tests are cleaned up after the worker finishes.
 Only after Playwright has completely finished does the runner stop the Foundry
-process. Finally, only the generated world directory is removed.
+process. Finally, only the marked temporary workspace is removed.
 
 This ordering is intentional:
 
@@ -198,7 +198,7 @@ This ordering is intentional:
 start Foundry
     |
     v
-create + open ONE world in existing Data/
+create + open ONE world in temporary Data/
     |
     v
 join Gamemaster ONCE
@@ -216,5 +216,5 @@ close browser
 STOP Foundry
     |
     v
-delete Data/worlds/cypher-e2e-<run-id> only
+verify ownership + delete temporary workspace only
 ```

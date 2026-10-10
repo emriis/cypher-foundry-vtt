@@ -26,6 +26,11 @@ contracts to keep the codebase maintainable.
 The system is loaded from the repository during development. Generated release
 artifacts are not the editing surface.
 
+Shared agent instructions are in `AGENTS.md`. `npm test` normalizes and tests a
+temporary copy; `npm run test:e2e` also builds and launches Foundry in temporary
+storage. Explicit source migrations, builds, and packaging still modify this
+checkout and should be used here only for intended content/artifact changes.
+
 ## Coding conventions
 
 ### JavaScript
@@ -102,8 +107,13 @@ Run the real Foundry E2E suite with:
 
     npm run test:e2e
 
-The E2E runner creates only disposable cypher-e2e-* worlds and removes only
-those worlds after the run. It does not delete the Foundry Data directory.
+Also run `npm run lint` and `npm run typecheck` for JavaScript changes. The
+JSDoc checker covers the explicit pure-rule pilot in `jsconfig.rules.json`.
+
+The E2E runner creates a marked temporary checkout and Foundry user-data
+directory, copies activation metadata without printing it, and builds/tests
+there. It removes only its owned workspace after stopping Foundry. The user's
+normal Data directory is not an installation or cleanup target.
 
 ## Commit messages
 

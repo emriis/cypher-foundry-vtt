@@ -932,9 +932,9 @@ test.describe("Cypher Foundry live gameplay", () => {
         const originalEvaluate = Roll.prototype.evaluate;
         try {
           Roll.prototype.evaluate = async function (...args) {
-            await originalEvaluate.apply(this, args);
-            this.total = 10;
-            return this;
+            // Roll.total is a getter; use an evaluated numeric Roll rather
+            // than assigning a result that Foundry silently ignores.
+            return originalEvaluate.apply(new Roll("10"), args);
           };
           await attack.rollAttack({ difficulty: 0, target: npc });
         } finally {
@@ -986,13 +986,14 @@ test.describe("Cypher Foundry live gameplay", () => {
         const targets = [];
         for (let index = 0; index < 3; index += 1) {
           targets.push(await Actor.create({ name: `${prefix} ${kind} target ${index}`, type: "npc",
-            system: { level: 0, health: { value: 20, max: 20 }, armor: 0 } }));
+            system: { level: 1, health: { value: 20, max: 20 }, armor: 0 } }));
         }
         globalThis.cypherE2EOriginalEvaluate = Roll.prototype.evaluate;
         Roll.prototype.evaluate = async function (...args) {
-          await globalThis.cypherE2EOriginalEvaluate.apply(this, args);
-          this.total = this.formula === "1d6" ? 5 : 10;
-          return this;
+          // Preserve Foundry's public Roll serialization/chat path while
+          // replacing only the random input with an evaluated numeric Roll.
+          const deterministic = new Roll(this.formula === "1d6" ? "5" : "10");
+          return globalThis.cypherE2EOriginalEvaluate.apply(deterministic, args);
         };
         await actor.sheet.render(true);
         return { abilityId: ability.id, weaponId: weapon.id, targetIds: targets.map(target => target.id) };
@@ -1027,7 +1028,7 @@ test.describe("Cypher Foundry live gameplay", () => {
         }, { actorId, weaponId: setup.weaponId, kind });
         expect(state.speed).toBe(kind === "spray" ? 6 : 5);
         expect(state.uses).toBe(kind === "spray" ? 0 : 2);
-        expect(state.difficulties).toEqual(kind === "spray" ? [0] : [1, 1, 1]);
+        expect(state.difficulties).toEqual(kind === "spray" ? [0] : [2, 2, 2]);
       } finally {
         await page.evaluate(async ids => {
           Roll.prototype.evaluate = globalThis.cypherE2EOriginalEvaluate;

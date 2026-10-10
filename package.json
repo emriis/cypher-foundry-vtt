@@ -2,8 +2,13 @@
   "name": "cypher-foundry-vtt",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": "^22.13.0 || >=24.0.0"
+  },
   "scripts": {
-    "test": "npm run migrate:packs && npm run test:all",
+    "test": "node scripts/run-isolated-validation.mjs",
+    "lint": "eslint cypher.mjs module scripts tests *.config.mjs --max-warnings=0",
+    "typecheck": "tsc -p jsconfig.rules.json",
     "test:all": "node --test --test-reporter=spec tests/rules/*.test.mjs tests/applications/*.test.mjs tests/documents/*.test.mjs tests/migrations/*.test.mjs tests/content/*.test.mjs tests/integration/*.test.mjs tests/behaviors/*.test.mjs",
     "test:unit": "node --test --test-reporter=spec tests/rules/*.test.mjs tests/applications/*.test.mjs tests/documents/*.test.mjs tests/migrations/*.test.mjs",
     "test:content": "node --test --test-reporter=spec tests/content/*.test.mjs",
@@ -25,6 +30,9 @@
     "@foundryvtt/foundryvtt-cli": "^3.0.4"
   },
   "devDependencies": {
-    "@playwright/test": "1.63.0"
+    "@playwright/test": "1.63.0",
+    "eslint": "10.12.0",
+    "globals": "16.5.0",
+    "typescript": "5.9.3"
   }
 }

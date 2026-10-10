@@ -165,15 +165,15 @@ The E2E suite uses Playwright against a real headless Foundry installation.
 
 The runner:
 
-- packages the system before the live run
+- copies the checkout, normalizes sources, builds packs, and packages in temporary storage
 - validates system and E2E JavaScript syntax
 - validates the required Playwright browser
-- creates a disposable cypher-e2e-<timestamp> world
+- creates a disposable `cypher-e2e-<timestamp>` world in isolated user data
 - starts Foundry headlessly
 - uses one worker-scoped browser session
 - logs into the Game Master once and reuses the session
-- removes only generated cypher-e2e-* worlds
-- never removes the user's general Foundry Data directory
+- removes only its owned temporary workspace after stopping Foundry
+- preserves the user's Foundry settings, installed system, and general Data directory
 - shuts down the runner-owned Foundry process
 
 A locally activated Foundry installation is required for live E2E validation.
@@ -214,7 +214,7 @@ source material.
 
 This project is built under the **Cypher Open License** using content from the
 Cypher Reference Document. See LICENSE.txt and the official license information
-at https://col.montecookgames.com.
+at <https://col.montecookgames.com>.
 
 This is an unofficial implementation and is not an official Monte Cook Games
 product.

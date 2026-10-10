@@ -15,8 +15,8 @@
  * store (for example, an untracked-ammunition campaign); it does not authorize
  * the application to invent or decrement a resource.
  *
- * @param {object} options Spray roll and resource context.
- * @param {number} options.dieResult Result of 1d6.
+ * @param {object} [options] Spray roll and resource context.
+ * @param {number} [options.dieResult] Result of 1d6; omission rejects the use.
  * @param {number|null} [options.availableUses=null] Available attacks/uses.
  * @returns {{eligible: boolean, requestedUses: number,
  *   usesToConsume: number, assetSteps: number, damageAdjustment: number,
@@ -83,9 +83,9 @@ export function resolveSprayUse({
  * Target adjacency is an explicit GM/application-layer adjudication; this
  * function never derives it from token coordinates.
  *
- * @param {object} options Arc Spray target context.
- * @param {string[]} options.targetIds Exactly three distinct target IDs.
- * @param {boolean} options.allAdjacent Whether the GM confirms adjacency.
+ * @param {object} [options] Arc Spray target context.
+ * @param {string[]} [options.targetIds=[]] Exactly three distinct target IDs.
+ * @param {boolean} [options.allAdjacent=false] Whether the GM confirms adjacency.
  * @returns {{eligible: boolean, attacks: Array<object>, reason: string|null}}
  */
 export function resolveArcSprayAttacks({
