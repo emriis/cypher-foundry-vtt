@@ -33,6 +33,10 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ### Fixed
 
+- Source normalization preserves CRD provenance and pending-translation metadata
+  on French fallback Abilities across repeated passes and directory order changes.
+- Ability provenance is computed after duplicate parent references are redirected,
+  so the first normalized output already matches subsequent passes.
 - Lucky Shot validates XP/Pool before committing either cost. Rejected target
   permissions cannot spend resources; overlapping local activations are guarded.
 - Paid rerolls retain the best result across successive uses, honor depletion

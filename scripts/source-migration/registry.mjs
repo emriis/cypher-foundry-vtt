@@ -270,6 +270,26 @@ async function collectFrenchEnglishReferencePairs() {
   return pairs;
 }
 
+const PENDING_FRENCH_TRANSLATION = "English source retained pending French translation";
+
+/**
+ * Keep an untranslated French fallback traceable to its canonical English CRD
+ * record on creation and subsequent passes. It has no French parent reference
+ * from which enrichment could reconstruct the original section or locator.
+ */
+function pendingFrenchProvenance(logicalId, sourceProvenance = {}) {
+  return {
+    ...sourceProvenance,
+    logicalId,
+    language: "fr",
+    sourceLogicalId: logicalId,
+    transformations: [
+      ...(sourceProvenance.transformations ?? []),
+      PENDING_FRENCH_TRANSLATION
+    ]
+  };
+}
+
 async function enrichStandaloneLanguage(language, englishLogicalIds) {
   const abilityDir = path.join(root, "packs", `abilities-${language}`, "_source");
   const files = await sourceFiles(`abilities-${language}`);
@@ -287,7 +307,6 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
     if (key) keyCounts.set(key, (keyCounts.get(key) ?? 0) + 1);
   }
 
-  const references = await collectReferenceProvenance(language);
   const referencePairs = language === "fr"
     ? await collectFrenchEnglishReferencePairs()
     : new Map();
@@ -297,11 +316,6 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
   for (const { file, document } of documents) {
     const key = document.system?.key;
     if (!key) continue;
-
-    const reference = references.get(document._id) ?? {
-      parent: "abilities",
-      document: { name: "Ability Catalogue" }
-    };
 
     const signature = hash(JSON.stringify(contentIdentityShape(document.system ?? {})));
     let logicalId;
@@ -391,21 +405,6 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
 
     document.document = "Item";
     document.crdType = "ability";
-    document.flags = {
-      ...(document.flags ?? {}),
-      cypherFoundry: {
-        ...(document.flags?.cypherFoundry ?? {}),
-        crd: provenance(
-          language,
-          reference.parent,
-          reference.document,
-          { name: document.name },
-          logicalId
-        )
-      }
-    };
-
-    await fs.writeFile(file, JSON.stringify(document, null, 2) + "\n");
   }
 
   if (language === "fr") {
@@ -420,16 +419,7 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
           ...(source.flags ?? {}),
           cypherFoundry: {
             ...(source.flags?.cypherFoundry ?? {}),
-            crd: {
-              ...(sourceProvenance ?? {}),
-              logicalId,
-              language: "fr",
-              sourceLogicalId: logicalId,
-              transformations: [
-                ...(sourceProvenance?.transformations ?? []),
-                "English source retained pending French translation"
-              ]
-            }
+            crd: pendingFrenchProvenance(logicalId, sourceProvenance)
           }
         }
       };
@@ -445,10 +435,6 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
         if (error?.code !== "ENOENT") throw error;
       }
 
-      await fs.writeFile(
-        targetFile,
-        JSON.stringify(document, null, 2) + "\n"
-      );
       canonicalDocuments.set(logicalId, { file: targetFile, document });
     }
   }
@@ -479,6 +465,36 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
         if (changed) await fs.writeFile(file, JSON.stringify(document, null, 2) + "\n");
       }
     }
+  }
+
+  // Duplicate IDs now point to their retained record. Derive provenance from
+  // these final parent references, not the references that existed before
+  // deduplication; otherwise the next pass can choose a different CRD section.
+  const references = await collectReferenceProvenance(language);
+  for (const [logicalId, { file, document }] of canonicalDocuments) {
+    const reference = references.get(document._id) ?? {
+      parent: "abilities",
+      document: { name: "Ability Catalogue" }
+    };
+    const previousProvenance = document.flags?.cypherFoundry?.crd;
+    const isPendingFrench = language === "fr"
+      && previousProvenance?.transformations?.includes(PENDING_FRENCH_TRANSLATION);
+    const sourceProvenance = englishLogicalIds.byLogicalId.get(logicalId)
+      ?.document.flags?.cypherFoundry?.crd;
+    document.flags = {
+      ...(document.flags ?? {}),
+      cypherFoundry: {
+        ...(document.flags?.cypherFoundry ?? {}),
+        crd: isPendingFrench ? pendingFrenchProvenance(logicalId, sourceProvenance) : provenance(
+          language,
+          reference.parent,
+          reference.document,
+          { name: document.name },
+          logicalId
+        )
+      }
+    };
+    await fs.writeFile(file, JSON.stringify(document, null, 2) + "\n");
   }
 
   return abilityDir;

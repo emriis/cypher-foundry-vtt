@@ -103,6 +103,18 @@ An isolated before/after comparison found the same 2,771 normalized JSON files
 with identical SHA-256 hashes. No compendium content was authored by this
 refactor. A permanent isolated test verifies normalization idempotence.
 
+The idempotence regression starts from the current sources, including their
+first normalization, and also reverses directory enumeration in a child process.
+Pending French translations retain their canonical English CRD provenance and
+the pending-translation marker on every pass. Parent-derived provenance is
+computed after duplicate references have been redirected, using stable filename
+ordering. Clear the pending marker only when the
+French text has been verified as a faithful rendering of the CRD.
+
+Run this test directly or through `npm run test:unit` when changing normalization.
+`npm test` pre-normalizes its outer checkout, which can mask a defect limited to
+the transition between the first and second passes on raw sources.
+
 ## BDD and TDD maintenance
 
 1. Locate the CRD contract and describe observable Given/When/Then behavior.
