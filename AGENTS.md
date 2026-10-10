@@ -26,6 +26,11 @@ their existing edits.
 
 ## Content and state
 
+- The supplied CRD is the sole authority for rules and all compendium content.
+  Existing code, tests, generated packs, and other books are implementation or
+  language aids, never alternate sources of mechanical/content facts. Record
+  the CRD section for behavior changes and do not guess unresolved semantics.
+
 - Use `docs/crd-source-schema.md` and the compendium skill for source authority,
   full source-faithful descriptions, provenance, stable IDs, and EN/FR pairing.
   Do not infer mechanics from localized names or descriptive prose.

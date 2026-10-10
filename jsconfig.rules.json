@@ -9,5 +9,10 @@
     "types": [],
     "lib": ["ES2022"]
   },
-  "include": ["module/rules/weapon-ability-resolution.mjs"]
+  "include": [
+    "module/rules/weapon-ability-resolution.mjs",
+    "module/rules/tasks.mjs",
+    "module/rules/task-outcome.mjs",
+    "module/rules/rerolls.mjs"
+  ]
 }

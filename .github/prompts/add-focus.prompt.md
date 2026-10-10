@@ -11,7 +11,9 @@ Follow [the Focus workflow](../skills/foundry-focus-workflow/SKILL.md) and [the 
 
 If the Focus identity or authoritative prose/flowchart cannot be located, ask one concise blocking question. Otherwise proceed end to end:
 
-1. Identify the authoritative prose, graph image, and French localization source. State which source owns mechanics, graph edges, and translated text.
+1. Locate the prose and any graph within the supplied CRD, the sole authority
+   for all content and mechanics. Record its version and section. French
+   wording must faithfully render it; external diagrams cannot establish edges.
 2. Inspect the DataModel, graph contract, and one current bilingual pair. Choose unique 16-character Foundry document IDs and stable matching ability IDs.
 3. Create aligned records under `packs/foci-en/_source/` and `packs/foci-fr/_source/`. Encode only explicit graph arrows; never infer prerequisites.
 4. Run the focused graph and source-contract tests, then `npm test`.

@@ -19,11 +19,11 @@
   inaccessible, report that rather than recreating or replacing it.
 - Follow the repository's existing Foundry VTT V13/V14 architecture and the
   Cypher Open License notices. Do not guess at version-sensitive Foundry APIs.
-  For compendium descriptions, the English CRD is the absolute authority and
-  its complete text may be stored under the Cypher Open License; use a complete
-  matching Character Book translation in French when available, otherwise copy
-  the English text verbatim. Never guess an unresolved match or modify names,
-  IDs, or mechanics to force one.
+  The supplied CRD is the sole authority for rules and all compendium content.
+  Its complete text may be stored under the Cypher Open License. French wording
+  must faithfully render the CRD; other books cannot supply different content
+  or mechanics. Never guess an unresolved match or modify names, IDs, or rules
+  to force one. Follow `docs/crd-source-schema.md` for this source contract.
 - Keep player-facing strings localized in both `lang/en.json` and
   `lang/fr.json`; validate JSON and avoid duplicate keys.
 - Treat `packs/*/_source/` as editable sources and generated LevelDB packs as

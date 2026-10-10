@@ -8,7 +8,9 @@ agent: Cypher Foundry VTT Expert
 Implement the requested mechanic. Read `AGENTS.md`, inspect the current branch,
 and distinguish existing behavior from roadmap claims before editing.
 
-Identify authoritative source semantics, owning layers, and acceptance criteria.
+Identify the supplied CRD version and section, owning layers, and acceptance
+criteria. The CRD is the sole authority for rules and all compendium content;
+existing code/tests and other books cannot establish alternative semantics.
 Use the ESM runtime and document transaction skills when relevant. Keep rules
 pure, application services responsible for persistence, and sheets responsible
 for input/presentation. Preserve supported public facades.

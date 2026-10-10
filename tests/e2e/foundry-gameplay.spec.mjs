@@ -111,11 +111,15 @@ async function waitForChatMessage(page, actorId) {
 }
 
 async function dismissActiveTour(page) {
-  await page.evaluate(() => {
-    const Tour = globalThis.foundry?.nue?.Tour;
-    Tour?.activeTour?.exit();
-  });
-  await expect(page.locator(".tour-overlay")).toHaveCount(0);
+  // The first-world tour may begin asynchronously after a sheet renders.
+  // Retry its public exit operation until the overlay has actually gone away.
+  await expect.poll(async () => {
+    await page.evaluate(async () => {
+      const Tour = globalThis.foundry?.nue?.Tour;
+      await Tour?.activeTour?.exit();
+    });
+    return page.locator(".tour-overlay").count();
+  }).toBe(0);
 }
 
 async function clickRollDialog(page, values = {}) {
@@ -138,6 +142,80 @@ async function clickRollDialog(page, values = {}) {
 }
 
 test.describe("Cypher Foundry live gameplay", () => {
+  test("retains XP and Pool when Lucky Shot is rejected from the real sheet", async ({ e2ePage: page }) => {
+    const actorId = await createActor(page);
+    const setup = await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      await actor.update({ "system.xp": 3, "system.stats.might.pool.value": 0 });
+      const [weapon] = await actor.createEmbeddedDocuments("Item", [{
+        name: "E2E cost boundary", type: "attack", system: { stat: "might", freelyUsable: true }
+      }]);
+      await actor.sheet.render(true);
+      return { weaponId: weapon.id, warning: game.i18n.format("CYPHER.Warning.NotEnoughPool", {
+        stat: game.i18n.localize("CYPHER.Stat.might")
+      }) };
+    }, actorId);
+    await dismissActiveTour(page);
+    await page.locator(`[data-action="rollAttack"][data-item-id="${setup.weaponId}"]`).first().click();
+    const form = page.locator("form").filter({ has: page.locator('input[name="difficulty"]') }).last();
+    await form.locator('[name="luckyShot"]').check();
+    await clickRollDialog(page, { effort: 1 });
+    await expect(page.getByText(setup.warning, { exact: true })).toBeVisible();
+    expect(await readActor(page, actorId)).toMatchObject({ xp: 3, might: 0 });
+  });
+
+  test("rerolls a real task repeatedly from chat while retaining the best result", async ({ e2ePage: page }) => {
+    const actorId = await createActor(page);
+    const messageId = await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      await actor.update({ "system.xp": 3 });
+      await actor.rollTask({ difficulty: 1 });
+      return [...game.messages].reverse().find(message => message.getFlag("cypher", "actorId") === id).id;
+    }, actorId);
+    await setDiceUniform(page, 0.375); // d20 = 13.
+    // The fresh world's sidebar starts collapsed; open its persistent chat log.
+    await page.evaluate(() => {
+      ui.sidebar.changeTab("chat", "primary");
+      ui.sidebar.expand();
+    });
+    await dismissActiveTour(page);
+    // Foundry also renders a transient copy in #chat-notifications.
+    const button = page.locator(`#chat .chat-log [data-message-id="${messageId}"] .cypher-reroll-button`);
+    await button.click({ timeout: 10_000 });
+    await expect.poll(() => page.evaluate(id => game.messages.get(id).getFlag("cypher", "d20"), messageId)).toBe(13);
+    await setDiceUniform(page, 0.925); // d20 = 2; retain 13.
+    await button.click({ timeout: 10_000 });
+    await expect.poll(async () => (await readActor(page, actorId)).xp).toBe(1);
+    expect(await page.evaluate(id => game.messages.get(id).getFlag("cypher", "d20"), messageId)).toBe(13);
+  });
+
+  test("a real depletion reroll keeps the usable outcome and persists the restored Item", async ({ e2ePage: page }) => {
+    const actorId = await createActor(page);
+    await setDiceUniform(page, 0.925); // d6 = 1, inside depletion 1–2.
+    const setup = await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      await actor.update({ "system.xp": 3 });
+      const [item] = await actor.createEmbeddedDocuments("Item", [{
+        name: "E2E depletion contract", type: "artifact",
+        system: { depletionDie: "d6", depletionMin: 1, depletionMax: 2 }
+      }]);
+      await item.rollDepletion();
+      const message = [...game.messages].reverse().find(entry => entry.getFlag("cypher", "itemId") === item.id);
+      if (!item.system.depleted) throw new Error("Expected initial depletion");
+      return { itemId: item.id, messageId: message.id };
+    }, actorId);
+    await setDiceUniform(page, 0.225); // d6 = 5, a usable outcome.
+    await page.evaluate(async ({ actorId, messageId }) => {
+      await game.actors.get(actorId).rerollMessage(game.messages.get(messageId));
+    }, { actorId, messageId: setup.messageId });
+    const result = await page.evaluate(({ actorId, itemId, messageId }) => {
+      const actor = game.actors.get(actorId);
+      return { depleted: actor.items.get(itemId).toObject().system.depleted,
+        xp: actor.system.xp, best: game.messages.get(messageId).getFlag("cypher", "originalRoll") };
+    }, { actorId, ...setup });
+    expect(result).toEqual({ depleted: false, xp: 2, best: 5 });
+  });
+
   test("renders a complete playable PC dashboard for a newly created actor", async ({
     e2ePage: page
   }) => {

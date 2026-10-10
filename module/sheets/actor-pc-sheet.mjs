@@ -1,3 +1,4 @@
+import { promptRollOptions, promptWeaponAttackCategory, promptWeaponAbility } from "./dialogs.mjs";
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
 
@@ -145,84 +146,9 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
   static async #onRollStat(event, target) {
     const stat = target.dataset.stat;
     const difficulty = Number(target.dataset.difficulty ?? 3);
-    const result = await CypherPCSheet.#promptRollOptions(this.actor, { difficulty });
+    const result = await promptRollOptions(this.actor, { difficulty });
     if (!result) return;
     await this.actor.rollTask({ stat, ...result });
-  }
-
-  /**
-   * Opens the shared roll-options dialog used by task and attack rolls.
-   *
-   * @param {Actor} actor PC actor being rolled.
-   * @param {object} [options] Roll configuration.
-   * @param {number} [options.difficulty=3] Initial difficulty.
-   * @param {boolean} [options.isAttack=false] Whether to expose attack-only
-   *   options such as Lucky Shot.
-   * @returns {Promise<object|null>} Selected roll options, or `null` if cancelled.
-   */
-  static async #promptRollOptions(actor, {
-    difficulty = 3, isAttack = false, weapon = null, isWeaponAbility = false
-  } = {}) {
-    const maxDifficulty = actor.system.maxDifficulty ?? 10;
-    const maxEffort = actor.system.effort ?? 1;
-
-    const skillOptions = actor.items.filter(i => i.type === "skill")
-      .map(i => `<option value="${i.id}">${i.name} (${game.i18n.localize(`CYPHER.SkillLevel.${i.system.level}`)})</option>`).join("");
-
-    const content = `
-      <div class="form-group" ${isWeaponAbility ? 'hidden' : ''}>
-        <label>${game.i18n.localize("CYPHER.Roll.Difficulty")}</label>
-        <input type="number" name="difficulty" value="${difficulty}" min="0" max="${maxDifficulty}"/>
-      </div>
-      <div class="form-group">
-        <label>${game.i18n.localize("CYPHER.Roll.LinkedSkill")}</label>
-        <select name="skillItemId">
-          <option value="">${game.i18n.localize("CYPHER.Roll.NoSkill")}</option>
-          ${skillOptions}
-        </select>
-      </div>
-      <div class="form-group">
-        <label>${game.i18n.localize("CYPHER.Roll.EffortLevels")} (${game.i18n.format("CYPHER.Roll.MaxEffortHint", { max: maxEffort })})</label>
-        <input type="number" name="effort" value="0" min="0" max="${maxEffort}"/>
-      </div>
-      <div class="form-group">
-        <label>${game.i18n.localize("CYPHER.Roll.AssetSteps")}</label>
-        <input type="number" name="assets" value="0" min="0" max="2"/>
-      </div>
-      ${isAttack && !isWeaponAbility ? `
-      <div class="form-group inline">
-        <label><input type="checkbox" name="luckyShot"/> ${game.i18n.localize("CYPHER.XP.LuckyShot")} (${CONFIG.CYPHER.xpCosts.luckyShot} PX, ${game.i18n.localize("CYPHER.XP.LuckyShotHint")})</label>
-      </div>` : ""}
-      ${isAttack && weapon?.system?.mechanics?.hinderedWhenUsedOneHanded ? `
-      <div class="form-group inline">
-        <label><input type="checkbox" name="oneHanded"/> ${game.i18n.localize("CYPHER.Attack.OneHanded")}</label>
-        <p class="hint">${game.i18n.localize("CYPHER.Attack.OneHandedHint")}</p>
-      </div>` : ""}
-      ${isAttack ? `
-      <div class="form-group inline">
-        <label><input type="checkbox" name="atExtremeRange"/> ${game.i18n.localize("CYPHER.Attack.ExtremeRange")}</label>
-        <p class="hint">${game.i18n.localize("CYPHER.Attack.ExtremeRangeHint")}</p>
-      </div>` : ""}`;
-
-    return foundry.applications.api.DialogV2.prompt({
-      window: { title: isAttack ? game.i18n.localize("CYPHER.Roll.Attack") : game.i18n.localize("CYPHER.Roll.Task") },
-      content,
-      ok: {
-        label: game.i18n.localize("CYPHER.Roll.Roll"),
-        callback: (event, button) => {
-          const form = button.form;
-          return {
-            difficulty: Number(form.difficulty.value),
-            effortLevels: Number(form.effort.value),
-            assetSteps: Number(form.assets.value),
-            skillItemId: form.skillItemId.value || null,
-            luckyShot: isAttack ? !!form.luckyShot?.checked : false,
-            oneHanded: isAttack ? !!form.oneHanded?.checked : false,
-            atExtremeRange: isAttack ? !!form.atExtremeRange?.checked : false
-          };
-        }
-      }
-    });
   }
 
   /**
@@ -262,60 +188,19 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     const item = this.actor.items.get(target.closest("[data-item-id]")?.dataset.itemId);
     await rollCypherVariant(item);
   }
-
-  /** Collect explicit weapon, target, adjacency, and reach declarations. */
+  /** Gather both dialogs before the service may spend any resources. */
   static async #onUseWeaponAbility(event, target) {
     const item = this.actor.items.get(target.closest("[data-item-id]")?.dataset.itemId);
-    const kind = getWeaponAbilityKind(item);
-    if (!kind) return;
-    const escape = value => foundry.utils.escapeHTML(String(value));
-    const weapons = this.actor.items.filter(candidate => candidate.type === "attack");
-    const npcChoices = new Map(game.actors.filter(candidate => candidate.type === "npc")
-      .map(actor => [actor.id, actor]));
-    const selected = [...(game.user.targets ?? [])].map(token => {
-      if (token.actor?.type !== "npc") return null;
-      // Preserve synthetic Actors: targeting an unlinked token must not damage
-      // its world Actor or another token derived from the same Actor.
-      const key = token.actor.isToken ? token.document.uuid : token.actor.id;
-      npcChoices.set(key, token.actor);
-      return key;
-    });
-    const targetCount = kind === "arc-spray" ? 3 : 1;
-    const selection = await foundry.applications.api.DialogV2.prompt({
-      window: { title: item.name },
-      content: `<div class="form-group"><label>${game.i18n.localize("CYPHER.WeaponAbility.Weapon")}</label>
-        <select name="weaponId">${weapons.map(weapon => `<option value="${weapon.id}">${escape(weapon.name)}</option>`).join("")}</select></div>
-        ${Array.from({ length: targetCount }, (_, index) => `<div class="form-group">
-          <label>${game.i18n.localize("CYPHER.Roll.Target")} ${index + 1}</label>
-          <select name="target${index}">${[...npcChoices].map(([key, npc]) => `<option value="${key}" ${selected[index] === key ? "selected" : ""}>${escape(npc.name)} (${npc.system.level})</option>`).join("")}</select></div>`).join("")}
-        <p>${game.i18n.localize("CYPHER.WeaponAbility.TargetDifficulty")}</p>
-        <label><input type="checkbox" name="confirmed"/> ${game.i18n.localize(kind === "arc-spray"
-          ? "CYPHER.WeaponAbility.Adjacent" : "CYPHER.WeaponAbility.ThrownInReach")}</label>`,
-      ok: {
-        label: game.i18n.localize("CYPHER.Roll.Attack"),
-        callback: (event, button) => ({
-          weaponId: button.form.weaponId.value,
-          targetIds: Array.from({ length: targetCount }, (_, index) => button.form[`target${index}`].value),
-          confirmed: button.form.confirmed.checked
-        })
-      }
-    });
-    // Both dialogs must complete before calling the service that spends points.
-    // Closing either dialog leaves the character's resources untouched.
+    const selection = await promptWeaponAbility(this.actor, item);
     if (!selection) return;
     const weapon = this.actor.items.get(selection.weaponId);
-    const rollOptions = await CypherPCSheet.#promptRollOptions(this.actor, {
+    const rollOptions = await promptRollOptions(this.actor, {
       isAttack: true, weapon, isWeaponAbility: true
     });
     if (!rollOptions) return;
-    await executeWeaponAbility(item, {
-      weaponId: selection.weaponId,
-      targets: selection.targetIds.map(id => npcChoices.get(id)),
-      allAdjacent: kind === "arc-spray" && selection.confirmed,
-      thrownWeaponsInReach: kind === "spray" && selection.confirmed,
-      rollOptions
-    });
+    await executeWeaponAbility(item, { ...selection, rollOptions });
   }
+
 
   /**
    * Rolls the depletion check for the selected item.
@@ -423,27 +308,11 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     if (abilityId) {
       const ability = abilities.find(candidate => candidate.id === abilityId);
       const weaponSkillCategory = ability?.chooseWeaponAttackCategory
-        ? await CypherPCSheet.#promptWeaponAttackCategory()
+        ? await promptWeaponAttackCategory()
         : null;
       if (ability?.chooseWeaponAttackCategory && !weaponSkillCategory) return;
       await selectFocusAbility(actor, abilityId, weaponSkillCategory);
     }
-  }
-
-  static async #promptWeaponAttackCategory() {
-    return foundry.applications.api.DialogV2.prompt({
-      window: { title: game.i18n.localize("CYPHER.FocusSelection.ChooseWeaponCategoryTitle") },
-      content: `<div class="form-group">
-        <label>${game.i18n.localize("CYPHER.FocusSelection.ChooseWeaponCategory")}</label>
-        <select name="weaponCategory">${CONFIG.CYPHER.attackSkillCategories.map(category =>
-          `<option value="${category}">${game.i18n.localize(`CYPHER.AttackSkill.${category}`)}</option>`
-        ).join("")}</select>
-      </div>`,
-      ok: {
-        label: game.i18n.localize("CYPHER.Confirm.Add"),
-        callback: (event, button) => button.form.weaponCategory.value
-      }
-    });
   }
 
   /**
@@ -455,7 +324,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
   static async #onRollAttack(event, target) {
     const item = this.actor.items.get(target.dataset.itemId);
     if (!item) return;
-    const result = await CypherPCSheet.#promptRollOptions(this.actor, {
+    const result = await promptRollOptions(this.actor, {
       difficulty: 3,
       isAttack: true,
       weapon: item
@@ -918,7 +787,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     for (const abilityId of selectedIds) {
       const ability = tierOneAbilities.find(candidate => candidate.id === abilityId);
       if (!ability?.chooseWeaponAttackCategory) continue;
-      const category = await CypherPCSheet.#promptWeaponAttackCategory();
+      const category = await promptWeaponAttackCategory();
       if (!category) return;
       weaponSkillCategories[abilityId] = category;
     }

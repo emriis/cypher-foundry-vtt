@@ -11,7 +11,9 @@ Follow [the compendium workflow](../skills/foundry-compendium-workflow/SKILL.md)
 
 If the Type identity, authoritative CRD section, or French localization cannot be located, ask one concise blocking question. Otherwise proceed end to end:
 
-1. Use CRD prose for mechanics and the French Character Book for localization. Do not derive mechanics from translated prose.
+1. Use the supplied CRD as the sole authority for all content and mechanics.
+   French wording must faithfully render its complete content; another book
+   cannot add facts. Record the CRD version and section.
 2. Inspect `module/data-models/item-type.mjs`, the focused compendium tests, the target genre/subgenre folders, and the closest existing bilingual Type pair.
 3. Create matching filenames under `packs/types-en/_source/` and `packs/types-fr/_source/`. Use unique 16-character document IDs, matching `_key` values, source-faithful descriptions, and the correct language-specific folder IDs.
 4. Keep document-level mechanics and ability counts aligned. Follow

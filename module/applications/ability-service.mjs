@@ -1,3 +1,4 @@
+import { runActorAction } from "./action-guard.mjs";
 import { activateAbilityEffect } from "./ability-runtime-service.mjs";
 import { resolveAbilityCost } from "../rules/ability-costs.mjs";
 
@@ -17,7 +18,14 @@ import { resolveAbilityCost } from "../rules/ability-costs.mjs";
  * @returns {Promise<boolean>} Whether an effect was posted.
  */
 export async function chooseAbilityEffect(item, effectId, options = {}) {
+  if (item?.actor?.type !== "pc") return executeAbilityEffect(item, effectId, options);
+  return (await runActorAction(item.actor, "abilityEffect", () => executeAbilityEffect(item, effectId, options))) ?? false;
+}
+
+/** Guarded activation; validation precedes cost/effect writes and chat. */
+async function executeAbilityEffect(item, effectId, options) {
   if (!item || item.type !== "ability") return false;
+  if (item.actor?.isOwner === false) return false;
 
   const effect = (item.system.effects ?? [])
     .find(candidate => candidate.id === effectId);

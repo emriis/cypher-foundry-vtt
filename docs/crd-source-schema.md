@@ -6,6 +6,12 @@ This document defines the authored source contract for content extracted from th
 The schema defines the common provenance and identity envelope while each Foundry
 document type keeps its domain-specific system schema.
 
+The supplied CRD is the sole source of truth for rules and all compendium facts.
+Editable `_source/` JSON is the authoring surface, not an independent authority.
+Code, tests, translations, other books, and generated packs cannot override the
+CRD. French records must render that CRD content faithfully; translation aids
+may provide wording only and must not introduce different content or mechanics.
+
 ## 1. Source record envelope
 
 A CRD-derived Foundry source record contains:

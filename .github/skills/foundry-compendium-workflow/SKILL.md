@@ -14,7 +14,9 @@ item DataModel, paired `_source` entries, and tests before editing. Check
 The detailed source-fidelity and transformation policy is maintained in
 `docs/crd-source-schema.md`. All agents and authoring prompts use that policy.
 
-- Treat `packs/<pack-name>/_source/` as the reviewable source of truth.
+- The supplied CRD is the sole authority for all compendium facts, descriptions,
+  mechanics, names, and structure. Treat `packs/<pack-name>/_source/` as the
+  reviewable authoring surface, not an independent source of truth.
 - Edit the English and French `_source` records directly. Keep paired filenames,
   document structure, mechanical data, and supported item fields aligned.
 - Keep paired French and English records aligned in identifiers, document
@@ -24,7 +26,8 @@ The detailed source-fidelity and transformation policy is maintained in
   `!items!<_id>`. Check for uniqueness and valid document type/ID.
 - The English CRD is the absolute authority for descriptions. Under the Cypher Open License,
    store its complete text rather than summaries. Use the complete matching Character Book
-   translation for French when available; otherwise copy the English text verbatim. If a match is
+   translation only as a faithful French rendering of the CRD, never as authority
+   for additional content or mechanics; otherwise copy the English text verbatim. If a match is
    ambiguous, do not guess: retain the unresolved report and leave names, IDs, and mechanics
    unchanged. Preserve the required Cypher Open License attribution.
 

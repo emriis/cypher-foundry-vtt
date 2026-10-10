@@ -11,12 +11,13 @@ Use this workflow for Focus/Foci/Foyer compendium content and its directed abili
 
 1. Read the relevant sections of `docs/development.md`, the Focus DataModel, `tests/content/focus-graphs.test.mjs`, and representative paired records under `packs/foci-{en,fr}/_source/`.
 2. Consult only the relevant files in `docs/local/` and follow `.github/skills/local-reference-library/SKILL.md`. If a required source is unavailable, stop instead of reconstructing mechanics from memory.
-3. Map each field to its authority before authoring:
+3. Map every content fact to the supplied CRD, the sole authority:
    - Use CRD prose for ability names, tiers, costs, and mechanical facts.
-   - Use the authoritative flowchart image only for directed prerequisite edges.
-   - Use French reference material for localization unless the task establishes that it owns a mechanic.
-   - Use existing records for schema and style, not as authority over conflicting source material.
-4. When source ownership does not resolve a material conflict, ask the user. Do not silently merge contradictory evidence.
+   - Use a flowchart only when it is part of that CRD, for explicit directed prerequisite edges.
+   - French wording must faithfully render the CRD; it cannot establish mechanics or extra content.
+   - Existing records show schema and style, not evidence of source correctness.
+4. If the CRD itself leaves a material ambiguity or required graph unavailable,
+   identify the gap. Do not fill it using another book or an external diagram.
 
 ## Encode the graph
 
