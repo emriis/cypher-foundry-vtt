@@ -94,7 +94,7 @@ export async function rollTask(actor, {
     skillItemId = null, isAttack = false, baseDamage = 0, flavor = "",
     extraHinderSteps = 0, extraEaseSteps = 0, luckyShot = false,
     specialEffectChoice = null, weaponTargetEffects = [], weaponSource = {},
-    weaponRangeAdjudication = null,
+    weaponRangeAdjudication = null, abilitySource = null, spentAbilityEdge = 0,
     defenseType = null, incomingSeverity = "minor", armorModifier = 0, shieldItemId = null,
     targetActor = null, armorBypass = 0, incomingWounds = 1,
     applyIncomingWound = true
@@ -136,7 +136,7 @@ export async function rollTask(actor, {
     const edge = (statData.edge ?? 0) + abilityEdge;
     const poolValue = statData.pool.value;
     const poolMax = statData.pool.max + abilityPoolMax;
-    const totalCost = computeEffortCost(effortLevels, edge);
+    const totalCost = computeEffortCost(effortLevels, Math.max(0, edge - spentAbilityEdge));
 
     if (totalCost > poolValue) {
       ui.notifications.error(game.i18n.format("CYPHER.Warning.NotEnoughPool", { stat: statLabel }));
@@ -256,6 +256,7 @@ export async function rollTask(actor, {
     const messageFlavor = `
       <div class="cypher-roll-card">
         <h3>${flavor || game.i18n.localize("CYPHER.Roll.Task")}</h3>
+        ${abilitySource ? `<p class="cypher-weapon-ability">${foundry.utils.escapeHTML(abilitySource.name)}${targetActor ? ` — ${foundry.utils.escapeHTML(targetActor.name)}` : ""}</p>` : ""}
         ${weaponTimingNote}
         <p>${statLabel} —
            ${game.i18n.localize("CYPHER.Roll.Difficulty")} ${difficulty}
@@ -283,6 +284,7 @@ export async function rollTask(actor, {
         "cypher": {
           rerollable: true,
           rollType: "task",
+          abilitySource,
           actorId: actor.id,
           d20,
           targetNumber,

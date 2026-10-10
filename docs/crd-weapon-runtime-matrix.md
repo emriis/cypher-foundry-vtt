@@ -35,7 +35,8 @@ present in an Item, copied to a chat flag, or shown in descriptive text.
 | `properties` | Preserves CRD weapon-note text for display and fidelity. The runtime does not parse arbitrary prose. | Descriptive-only | Keep this source-facing text; automate only mechanics backed by structured fields and explicit rules. |
 | `mechanics.twoHanded` | Preserved in the Item model; does not track occupied hands. | Stored only / model gap | Needs an explicit equipment-hand model before enforcing two-handed use. |
 | `mechanics.hinderedWhenUsedOneHanded` | CRD-explicit flag on affected weapons; the PC attack dialog exposes a one-handed choice and adds one hindrance step when selected. | Runtime | E2E covers unmarked weapons, the marked option left off, and the selected one-handed hindrance. |
-| `mechanics.rapidFire` | Ability prerequisite resolver consumes the flag for abilities whose structured CRD prerequisites require rapid fire. Pure Spray/Arc Spray rule contracts now describe use counts and per-target attack modifiers. | Rule contract | Connect the contracts to PC sheet actions, dice rolls, resource transactions, target selection, attack resolution, chat cards, and Foundry E2E tests. |
+| `mechanics.rapidFire` | Spray/Arc Spray sheet actions validate weapon eligibility and execute the source-backed attack contracts against selected NPCs. | Runtime | Additional rapid-fire Abilities require their own source-backed contracts. |
+| `availableUses` | Optional, explicitly tracked ammunition/power/thrown-weapon store. Spray consumes the capped d6 + 1 count and persists the remainder. | Runtime | Ordinary attacks and Arc Spray do not infer consumption rules from this field. |
 | `mechanics.ignoresPhysicalArmor` | Numeric Armor bypass is passed from the weapon to the attack resolver and applied once against selected NPC Armor. | Runtime | Source-specific exceptions still require explicit modelling. |
 | `mechanics.cutsThroughMaterialsLevel` | Preserved in the Item model. | Stored only / model gap | Requires an interactable material/object model with levels and a CRD-backed resolution contract. |
 | `mechanics.targetEffects` | Filters effects by target level, persists them to targeted NPCs on a successful attack, and consumes supported `hindered` / `loseNextAction` effects according to duration. | Runtime | Extend only when additional CRD effect semantics are structured. |
@@ -70,15 +71,15 @@ damage on a successful attack. The pure `resolveArcSprayAttacks` rule requires
 three distinct targets with explicit adjacency confirmation and returns a
 separate one-step-hindered attack profile for each.
 
-These are **rule contracts**, not complete playable actions. The PC sheet,
-resource persistence, attack execution, chat presentation, and E2E scenarios
-remain to be integrated. See `docs/weapon-ability-execution.md`.
+Both contracts are connected to PC Ability cards, application services,
+explicit target selection, Pool/resource persistence, normal weapon attack
+resolution, chat cards, and sheet-driven E2E scenarios. See
+`docs/weapon-ability-execution.md` for the supported scope.
 
 ## Recommended implementation order
 
-1. Wire the pure Spray/Arc Spray contracts to the PC sheet and Foundry
-   application services, including target selection, explicit resource tracking,
-   and separate attack results.
+1. Continue the remaining structured weapon and Ability audit, including
+   additional rapid-fire Abilities with explicit CRD execution contracts.
 2. Tripod/operator requirements still need reliable equipment setup and
    participation state. Two-handed occupancy and material cutting remain
    blocked on equipment/object models.

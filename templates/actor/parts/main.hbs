@@ -253,6 +253,11 @@
               <i class="fa-solid fa-list-check"></i> {{localize "CYPHER.Ability.ChooseEffect"}}
             </button>
             {{/if}}
+            {{#if item.weaponAbilityKind}}
+            <button type="button" class="pc-primary-action" data-action="useWeaponAbility">
+              <i class="fa-solid fa-crosshairs"></i> {{localize "CYPHER.Roll.Attack"}}
+            </button>
+            {{/if}}
             {{#if item.system.rollTables.length}}
               {{#if item.system.variants.length}}
           <button type="button" data-action="rollCypherVariant"

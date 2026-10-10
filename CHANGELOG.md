@@ -9,6 +9,13 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ## [Unreleased]
 
+### Added
+
+- Added playable Spray and Arc Spray actions to PC Ability cards, with explicit
+  weapon/target selection, prerequisite checks, tracked Spray resource use,
+  activation/Edge/Effort costs, NPC damage, and Ability-aware attack chat cards.
+- Added application contracts and live PC-sheet scenarios for both actions.
+
 ### Changed
 
 - Reworked the PC ApplicationV2 sheet into a single responsive player dashboard with

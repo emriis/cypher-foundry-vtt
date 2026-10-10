@@ -253,8 +253,10 @@ structured data already present in the source packs.
   target and persist Health changes.
 - [x] Consume `mechanics.ignoresPhysicalArmor` through a pure Armor-bypass rule
   exactly once.
-- [ ] Implement range resolution after defining the target-token/scene-distance
-  contract.
+- [x] Implement explicitly adjudicated extreme-range hindrance. Automatic
+  scene-distance resolution remains a separate, undefined contract.
+- [x] Integrate Spray/Arc Spray with the PC sheet, target selection, costs,
+  tracked Spray resources, weapon attacks, chat cards, and E2E scenarios.
 - [ ] Close remaining stored-only weapon mechanics when their CRD semantics and
   required state models are explicit.
 - [ ] Verify all structured granted Type/Focus benefits in gameplay, including
@@ -398,7 +400,8 @@ Completed families require, as applicable:
 - [x] Establish structured Ability runtime.
 - [x] Establish core equipment/attack runtime.
 - [ ] Close remaining structured weapon mechanics.
-- [ ] Close generic Cypher variants/random tables.
+- [x] Close generic Cypher variants and structured random tables.
+- [ ] Close generic Cypher `randomRange` resolution.
 - [x] Audit structured weapon mechanics with an extracted/modelled/runtime-gap
   matrix.
 - [ ] Complete the extracted/modelled/validated/runtime/E2E matrix for all

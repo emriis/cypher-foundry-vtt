@@ -16,6 +16,7 @@ import {
 } from "../applications/character-service.mjs";
 import { toggleEquipped } from "../applications/equipment-service.mjs";
 import { getWeaponConfiguration, rollCypherTable, rollCypherVariant, toggleAttackConfiguration } from "../applications/item-service.mjs";
+import { executeWeaponAbility, getWeaponAbilityKind } from "../applications/weapon-ability-service.mjs";
 
 /**
  * Foundry VTT sheet for player characters using the Cypher system.
@@ -42,6 +43,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       rollCypherTable: CypherPCSheet.#onRollCypherTable,
       rollCypherVariant: CypherPCSheet.#onRollCypherVariant,
       rollAttack: CypherPCSheet.#onRollAttack,
+      useWeaponAbility: CypherPCSheet.#onUseWeaponAbility,
       toggleAttackConfiguration: CypherPCSheet.#onToggleAttackConfiguration,
       rallyWound: CypherPCSheet.#onRallyWound,
       toggleSecondDescriptor: CypherPCSheet.#onToggleSecondDescriptor,
@@ -97,7 +99,10 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     context.config = CONFIG.CYPHER;
     context.items = {
       skills: this.actor.items.filter(i => i.type === "skill"),
-      abilities: this.actor.items.filter(i => i.type === "ability"),
+      abilities: this.actor.items.filter(i => i.type === "ability").map(item => ({
+        id: item.id, name: item.name, system: item.system,
+        weaponAbilityKind: getWeaponAbilityKind(item)
+      })),
       cyphers: this.actor.items.filter(i => i.type === "cypher"),
       artifacts: this.actor.items.filter(i => i.type === "artifact"),
       equipment: this.actor.items.filter(i => i.type === "equipment"),
@@ -152,7 +157,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
    * @returns {Promise<object|null>} Selected roll options, or `null` if cancelled.
    */
   static async #promptRollOptions(actor, {
-    difficulty = 3, isAttack = false, weapon = null
+    difficulty = 3, isAttack = false, weapon = null, isWeaponAbility = false
   } = {}) {
     const maxDifficulty = actor.system.maxDifficulty ?? 10;
     const maxEffort = actor.system.effort ?? 1;
@@ -161,7 +166,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       .map(i => `<option value="${i.id}">${i.name} (${game.i18n.localize(`CYPHER.SkillLevel.${i.system.level}`)})</option>`).join("");
 
     const content = `
-      <div class="form-group">
+      <div class="form-group" ${isWeaponAbility ? 'hidden' : ''}>
         <label>${game.i18n.localize("CYPHER.Roll.Difficulty")}</label>
         <input type="number" name="difficulty" value="${difficulty}" min="0" max="${maxDifficulty}"/>
       </div>
@@ -180,7 +185,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
         <label>${game.i18n.localize("CYPHER.Roll.AssetSteps")}</label>
         <input type="number" name="assets" value="0" min="0" max="2"/>
       </div>
-      ${isAttack ? `
+      ${isAttack && !isWeaponAbility ? `
       <div class="form-group inline">
         <label><input type="checkbox" name="luckyShot"/> ${game.i18n.localize("CYPHER.XP.LuckyShot")} (${CONFIG.CYPHER.xpCosts.luckyShot} PX, ${game.i18n.localize("CYPHER.XP.LuckyShotHint")})</label>
       </div>` : ""}
@@ -252,6 +257,58 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
   static async #onRollCypherVariant(event, target) {
     const item = this.actor.items.get(target.closest("[data-item-id]")?.dataset.itemId);
     await rollCypherVariant(item);
+  }
+
+  /** Collect explicit weapon, target, adjacency, and reach declarations. */
+  static async #onUseWeaponAbility(event, target) {
+    const item = this.actor.items.get(target.closest("[data-item-id]")?.dataset.itemId);
+    const kind = getWeaponAbilityKind(item);
+    if (!kind) return;
+    const escape = value => foundry.utils.escapeHTML(String(value));
+    const weapons = this.actor.items.filter(candidate => candidate.type === "attack");
+    const npcChoices = new Map(game.actors.filter(candidate => candidate.type === "npc")
+      .map(actor => [actor.id, actor]));
+    const selected = [...(game.user.targets ?? [])].map(token => {
+      if (token.actor?.type !== "npc") return null;
+      // Preserve synthetic Actors: targeting an unlinked token must not damage
+      // its world Actor or another token derived from the same Actor.
+      const key = token.actor.isToken ? token.document.uuid : token.actor.id;
+      npcChoices.set(key, token.actor);
+      return key;
+    });
+    const targetCount = kind === "arc-spray" ? 3 : 1;
+    const selection = await foundry.applications.api.DialogV2.prompt({
+      window: { title: item.name },
+      content: `<div class="form-group"><label>${game.i18n.localize("CYPHER.WeaponAbility.Weapon")}</label>
+        <select name="weaponId">${weapons.map(weapon => `<option value="${weapon.id}">${escape(weapon.name)}</option>`).join("")}</select></div>
+        ${Array.from({ length: targetCount }, (_, index) => `<div class="form-group">
+          <label>${game.i18n.localize("CYPHER.Roll.Target")} ${index + 1}</label>
+          <select name="target${index}">${[...npcChoices].map(([key, npc]) => `<option value="${key}" ${selected[index] === key ? "selected" : ""}>${escape(npc.name)} (${npc.system.level})</option>`).join("")}</select></div>`).join("")}
+        <p>${game.i18n.localize("CYPHER.WeaponAbility.TargetDifficulty")}</p>
+        <label><input type="checkbox" name="confirmed"/> ${game.i18n.localize(kind === "arc-spray"
+          ? "CYPHER.WeaponAbility.Adjacent" : "CYPHER.WeaponAbility.ThrownInReach")}</label>`,
+      ok: {
+        label: game.i18n.localize("CYPHER.Roll.Attack"),
+        callback: (event, button) => ({
+          weaponId: button.form.weaponId.value,
+          targetIds: Array.from({ length: targetCount }, (_, index) => button.form[`target${index}`].value),
+          confirmed: button.form.confirmed.checked
+        })
+      }
+    });
+    if (!selection) return;
+    const weapon = this.actor.items.get(selection.weaponId);
+    const rollOptions = await CypherPCSheet.#promptRollOptions(this.actor, {
+      isAttack: true, weapon, isWeaponAbility: true
+    });
+    if (!rollOptions) return;
+    await executeWeaponAbility(item, {
+      weaponId: selection.weaponId,
+      targets: selection.targetIds.map(id => npcChoices.get(id)),
+      allAdjacent: kind === "arc-spray" && selection.confirmed,
+      thrownWeaponsInReach: kind === "spray" && selection.confirmed,
+      rollOptions
+    });
   }
 
   /**

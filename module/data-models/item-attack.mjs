@@ -118,6 +118,11 @@ export default class CypherAttackData extends foundry.abstract.TypeDataModel {
         { required: true, initial: [] }
       ),
       mechanics: createWeaponMechanicsField(),
+      // Explicit attacks-worth of ammunition, power, or thrown weapons.
+      // Null means this store is not tracked by the campaign.
+      availableUses: new NumberField({
+        required: true, nullable: true, initial: null, integer: true, min: 0
+      }),
       // Can the character use this weapon without penalty (determined by
       // their Type or by the "Other: Weapons" advancement)?
       freelyUsable: new BooleanField({ required: true, initial: false }),

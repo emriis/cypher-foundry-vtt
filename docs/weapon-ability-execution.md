@@ -1,10 +1,10 @@
-# Weapon-dependent Ability execution contracts
+# Weapon-dependent Ability execution
 
 ## Scope
 
-This change establishes deterministic rule contracts for the CRD's Spray and
-Arc Spray abilities. It does not claim that either ability is available as a
-complete action in the Foundry sheet.
+Spray and Arc Spray are playable from an owned Ability card on the PC sheet.
+Stable Ability keys select the action; localized display names are not used
+to infer mechanics. The deterministic rules remain independent of Foundry.
 
 The CRD remains the sole source of mechanics. The application layer is
 responsible for dialogs, dice rolls, target selection, resource transactions,
@@ -38,17 +38,32 @@ three separate attack profiles, each hindered by one step.
 Adjacency is deliberately supplied by the application/GM. The rule does not
 infer distance from token coordinates or grid settings.
 
-## Remaining integration
+## Foundry integration
 
-The following are not implemented by these pure contracts:
+The PC sheet collects the weapon, NPC targets, roll modifiers, and explicit
+adjacency/reach declarations. Selected unlinked tokens retain their synthetic
+Actors, so damage does not accidentally affect the originating world Actor.
 
-- buttons and dialogs on the PC sheet;
-- selecting a weapon or the thrown-weapons alternative;
-- rolling the d6 for Spray;
-- persisting ammunition/power or thrown-weapon consumption;
-- rolling attacks and applying the Spray asset and damage reduction;
-- resolving each Arc Spray target's attack against the real actor;
-- chat cards and end-to-end Foundry tests for both abilities.
+- Spray rolls its d6, consumes a tracked weapon `availableUses` store, and adds
+  one asset (subject to the usual asset cap) while reducing base damage by one.
+- The weapon Item sheet allows editing this store. Empty means untracked;
+  zero means empty. This is an explicit attacks-worth count of ammunition,
+  power, or available thrown weapons, rather than an inferred inventory.
+- Arc Spray resolves three separate attacks, each hindered by one step, using
+  the respective NPC level. It does not invent an ammunition count absent from
+  its source contract.
+- Both actions use the normal weapon engine for familiarity, configuration,
+  range adjudication, Armor bypass, successful damage, and target effects.
+- Activation is charged once. Edge is shared between activation and Effort on
+  the first attack, and a natural 20 refunds that activation charge. Additional
+  attacks are extra actions for Effort (CRD Actions); their task costs use the
+  existing engine. All requested costs are checked before the first attack.
+- The activation charge follows the Ability's structured cost stat. These
+  source Abilities have fixed Speed costs; no stat choice is inferred.
+- Attack cards identify the Ability and target, and chat flags retain the
+  Ability identity and Spray resource count. The resource die has its own card.
+- Application contracts and live sheet-driven E2E scenarios cover both actions.
 
-Those are the next integration tasks. Keep the rules pure and test them
-independently before connecting them to Foundry services.
+Lucky Shot is not offered in these Ability dialogs. Target distance and
+adjacency are not measured automatically. These actions currently target NPCs,
+matching the system's PC-to-NPC numeric-damage contract.

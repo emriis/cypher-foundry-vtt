@@ -22,7 +22,7 @@ async function selectGamemaster(page) {
   if (!usernameInput) {
     usernameInput = page
       .getByRole("textbox", {
-        name: /sélectionner un utilisateur|select a user|username/i
+        name: /sélectionner un utilisateur|select (?:a )?user|username/i
       })
       .first();
   }
@@ -61,16 +61,13 @@ async function selectGamemaster(page) {
       `Expected: ${GAMEMASTER_NAME}; actual: ${value}`
     );
   }
+  return usernameInput;
 }
 
 export async function joinAsGamemaster(page) {
   await page.goto(FOUNDRY_URL);
 
-  await selectGamemaster(page);
-
-  const usernameInput = page.locator(
-    '#join-username, input[name="username"], select[name="username"]'
-  ).first();
+  const usernameInput = await selectGamemaster(page);
   const joinForm = usernameInput.locator("xpath=ancestor::form[1]");
 
   const password = joinForm.locator('input[type="password"]').first();

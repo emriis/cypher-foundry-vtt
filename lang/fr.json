@@ -18,6 +18,16 @@
     }
   },
   "CYPHER": {
+    "WeaponAbility": {
+      "Weapon": "Arme / attaque avec armes de jet",
+      "AvailableUses": "Utilisations disponibles (munitions, énergie ou armes de jet)",
+      "AvailableUsesHint": "Laissez vide si la campagne ne suit pas ce stock. Zéro indique un stock vide. Spray consomme 1d6 + 1 utilisations, dans la limite du stock.",
+      "Adjacent": "Le MJ confirme que les trois cibles sont côte à côte.",
+      "ThrownInReach": "Cette attaque utilise plusieurs armes de jet portées ou à portée de main.",
+      "TargetDifficulty": "Chaque attaque utilise le niveau de sa cible comme difficulté. L'Effort est payé séparément pour chaque attaque.",
+      "InvalidUse": "Vérifiez l'arme, les cibles, leur proximité, les armes à portée, le stock et les points de Réserve avant d'utiliser cette capacité.",
+      "UsesConsumed": "Spray : {uses} utilisations de munitions, d'énergie ou d'armes de jet."
+    },
     "Name": "Nom",
     "Description": "Description",
     "Biography": "Biographie",
