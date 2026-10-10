@@ -1,4 +1,4 @@
-import { test, expect } from "./foundry-session-fixture.mjs";
+import { test, expect, setDiceUniform } from "./foundry-session-fixture.mjs";
 
 const ACTOR_PREFIX = "E2E Cypher";
 
@@ -822,7 +822,7 @@ test.describe("Cypher Foundry live gameplay", () => {
         if (!stunstick) throw new Error("Stunstick not found in equipment-en");
 
         const attack = await Item.create(stunstick.toObject(), { parent: pc });
-        await attack.rollAttack({ difficulty: 0, target: npc });
+        const attackResult = await attack.rollAttack({ difficulty: 0, target: npc });
 
         const message = [...game.messages]
           .reverse()
@@ -841,6 +841,7 @@ test.describe("Cypher Foundry live gameplay", () => {
 
         return {
           targetLevel: npc.system.level,
+          attackSucceeded: attackResult?.success,
           targetEffects: message?.getFlag("cypher", "weaponTargetEffects"),
           activeEffects,
           blockedAttack: blockedAttack === null,
@@ -853,6 +854,7 @@ test.describe("Cypher Foundry live gameplay", () => {
     });
 
     expect(result.targetLevel).toBe(2);
+    expect(result.attackSucceeded).toBe(true);
     expect(result.targetEffects).toEqual([{
       minimumTargetLevel: 0,
       maximumTargetLevel: 2,
@@ -926,20 +928,7 @@ test.describe("Cypher Foundry live gameplay", () => {
           );
         }
 
-        // Keep the E2E assertion focused on base damage and Armor bypass.
-        // Natural 17–20 rolls can add CRD special damage and make Health
-        // depend on randomness unrelated to the behavior under test.
-        const originalEvaluate = Roll.prototype.evaluate;
-        try {
-          Roll.prototype.evaluate = async function (...args) {
-            // Roll.total is a getter; use an evaluated numeric Roll rather
-            // than assigning a result that Foundry silently ignores.
-            return originalEvaluate.apply(new Roll("10"), args);
-          };
-          await attack.rollAttack({ difficulty: 0, target: npc });
-        } finally {
-          Roll.prototype.evaluate = originalEvaluate;
-        }
+        await attack.rollAttack({ difficulty: 0, target: npc });
 
         await new Promise(resolve => setTimeout(resolve, 100));
 
@@ -970,6 +959,8 @@ test.describe("Cypher Foundry live gameplay", () => {
 
   for (const kind of ["spray", "arc-spray"]) {
     test(`executes ${kind} from the PC sheet with persisted target damage`, async ({ e2ePage: page }) => {
+      // Spray needs d6 = 5; this input also gives d20 = 16 without special damage.
+      await setDiceUniform(page, 0.225);
       await closeActorSheet(page);
       const actorId = await createActor(page);
       const setup = await page.evaluate(async ({ actorId, kind, prefix }) => {
@@ -988,13 +979,6 @@ test.describe("Cypher Foundry live gameplay", () => {
           targets.push(await Actor.create({ name: `${prefix} ${kind} target ${index}`, type: "npc",
             system: { level: 1, health: { value: 20, max: 20 }, armor: 0 } }));
         }
-        globalThis.cypherE2EOriginalEvaluate = Roll.prototype.evaluate;
-        Roll.prototype.evaluate = async function (...args) {
-          // Preserve Foundry's public Roll serialization/chat path while
-          // replacing only the random input with an evaluated numeric Roll.
-          const deterministic = new Roll(this.formula === "1d6" ? "5" : "10");
-          return globalThis.cypherE2EOriginalEvaluate.apply(deterministic, args);
-        };
         await actor.sheet.render(true);
         return { abilityId: ability.id, weaponId: weapon.id, targetIds: targets.map(target => target.id) };
       }, { actorId, kind, prefix: ACTOR_PREFIX });
@@ -1031,8 +1015,6 @@ test.describe("Cypher Foundry live gameplay", () => {
         expect(state.difficulties).toEqual(kind === "spray" ? [0] : [2, 2, 2]);
       } finally {
         await page.evaluate(async ids => {
-          Roll.prototype.evaluate = globalThis.cypherE2EOriginalEvaluate;
-          delete globalThis.cypherE2EOriginalEvaluate;
           for (const id of ids) await game.actors.get(id)?.delete();
         }, [actorId, ...setup.targetIds]);
       }

@@ -22,6 +22,20 @@ Foundry **user-data root** and its **Data** directory separately. Foundry's
 installed into `Data/systems/cypher`, and only one uniquely named E2E world is
 created under `Data/worlds/`.
 
+## Deterministic dice
+
+Every E2E test fixes `CONFIG.Dice.randomUniform` to `0.525`: a d20 rolls 10,
+a d6 rolls 3, and a d100 rolls 48. Foundry still evaluates the original
+formulas, modifiers, dice terms, serialization, and chat messages. The fixture
+restores the original generator after each test, including failed tests.
+
+Use `setDiceUniform(page, value)` from `foundry-session-fixture.mjs` when a
+scenario requires a different outcome. Values must be in `[0, 1)`; for example,
+`0.225` produces d6 = 5 and d20 = 16 for Spray. Foundry maps the uniform input
+to a die result with `ceil((1 - value) * faces)`. Avoid replacing
+`Roll.prototype.evaluate` or assigning `Roll.total`. Node tests already use
+explicit deterministic Roll stubs, including natural-roll boundary outcomes.
+
 ## Run
 
 Run:

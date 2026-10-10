@@ -12,7 +12,33 @@ function recordBrowserLog(page, ...parts) {
   browserLogsByPage.set(page, logs);
 }
 
+/** Set the dice input while preserving Foundry's real formulas and Roll objects. */
+export async function setDiceUniform(page, value) {
+  if (!Number.isFinite(value) || value < 0 || value >= 1) {
+    throw new RangeError("Dice uniform input must be in [0, 1).");
+  }
+  await page.evaluate(value => {
+    CONFIG.Dice.randomUniform = () => value;
+  }, value);
+}
+
 export const test = base.extend({
+  deterministicDice: [async ({ e2ePage: page }, use) => {
+    await page.evaluate(() => {
+      globalThis.cypherE2EOriginalRandomUniform = CONFIG.Dice.randomUniform;
+    });
+    try {
+      // Foundry maps u to ceil((1 - u) * faces).
+      // d20 = 10, d6 = 3, d100 = 48; no natural-roll special outcomes.
+      await setDiceUniform(page, 0.525);
+      await use();
+    } finally {
+      await page.evaluate(() => {
+        CONFIG.Dice.randomUniform = globalThis.cypherE2EOriginalRandomUniform;
+        delete globalThis.cypherE2EOriginalRandomUniform;
+      });
+    }
+  }, { auto: true }],
   e2ePage: [async ({ browser }, use) => {
     const chromiumVersion = browser.version();
     const chromiumMajor = Number(chromiumVersion.split(".")[0]);
