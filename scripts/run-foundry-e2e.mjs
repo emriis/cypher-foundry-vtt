@@ -474,6 +474,8 @@ let dataPath;
 
 try {
   const isolated = await createValidationWorkspace(SOURCE_ROOT);
+  // The user's installation supplies activation metadata only. All builds,
+  // test-world documents, and system installation below live in our temp root.
   validationWorkspace = isolated.workspace;
   ROOT = isolated.root;
   userDataPath = path.join(validationWorkspace, "foundry-user-data");
@@ -507,6 +509,8 @@ try {
 
   // Normalize and build only in the temporary checkout. Package after packs,
   // so the archive and the installed runtime contain the same generated data.
+  // Build the current edited sources before installing the disposable system.
+  // ROOT points to the temporary checkout, never the original repository here.
   await runCommand(npmCommand, ["run", "migrate:packs"]);
   await runCommand(npmCommand, ["run", "build:packs"]);
   await runCommand(npmCommand, ["run", "package"]);
@@ -570,6 +574,8 @@ try {
     testProcess.on("close", code => resolve(code ?? 1));
   });
 } finally {
+  // Stop Foundry before deleting its world/LevelDB files so open handles cannot
+  // race cleanup. Preserve failure diagnostics before removing the temp copy.
   await stopProcess(child, foundryPid);
   await showFoundryLogTailOnFailure();
 

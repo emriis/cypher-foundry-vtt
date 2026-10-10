@@ -2,17 +2,15 @@
    CYPHER — Design System
    ==================================================================
    Design tokens (CSS variables) centralizing color, type, and spacing.
-   Goal: visual consistency, accessibility (WCAG AA contrast verified),
+   Goal: visual consistency, readable contrast, accessible controls,
    and compatibility with Foundry V13+'s light/dark themes (.theme-light
    / .theme-dark classes applied by core to the sheet window).
    ================================================================== */
 
 .cypher.sheet {
   /* ---- Typography ----
-  /* ---- Typography ----
-     Signika is Foundry's own native UI font (legible, humanist sans-serif) —
-     reused here for visual consistency with the rest of the software, with
-     a full system fallback stack. */
+     Fira Sans is the preferred face; Foundry's Signika and system fonts
+     provide fallbacks when that font is unavailable. */
   --cypher-font-family: "Fira Sans", "Signika", "Segoe UI", sans-serif;
   --cypher-font-family-condensed: "Fira Sans Condensed", "Fira Sans", "Signika", sans-serif;
   --cypher-font-size-xs: 0.72rem;
@@ -22,7 +20,6 @@
   --cypher-font-size-lg: 1.2rem;
   --cypher-font-size-xl: 1.4rem;
 
-  /* ---- Spacing ---- */
   /* ---- Spacing ---- */
   --cypher-space-xs: 2px;
   --cypher-space-sm: 4px;
@@ -165,7 +162,6 @@
 }
 
 /* Respect the user's system preference for reduced motion. */
-/* Respect the user's system preference for reduced motion. */
 @media (prefers-reduced-motion: reduce) {
   .cypher.sheet * {
     transition: none !important;
@@ -234,7 +230,6 @@
   gap: var(--cypher-space-lg);
 }
 
-/* "Cypher Compatible" logo badge — fixed light background (never a theme
 /* "Cypher Compatible" logo badge — fixed light background (never a theme
    token) because the logo is black/red on a transparent background: on the
    dark theme, a transparent background would make the black lines unreadable. */

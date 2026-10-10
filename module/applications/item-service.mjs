@@ -13,6 +13,13 @@ import { resolveWeaponSkillModifier } from "../rules/weapon-skills.mjs";
  * reusable orchestration for item actions.
  */
 
+/**
+ * Mark a Cypher as used, then announce its use in chat.
+ * This action only consumes the Item; its descriptive power needs adjudication.
+ *
+ * @param {Item} item Cypher to consume.
+ * @returns {Promise<boolean>} False for another Item type; true after chat creation.
+ */
 export async function useCypher(item) {
   if (item.type !== "cypher") return false;
   await item.update({ "system.depleted": true });
@@ -22,16 +29,6 @@ export async function useCypher(item) {
   });
   return true;
 }
-
-/**
- * Roll a structured result table on a Cypher and consume the one-use item.
- *
- * Invalid table IDs and invalid formulas leave the Cypher untouched.
- *
- * @param {Item} item Cypher Item.
- * @param {string} tableId Structured table identifier.
- * @returns {Promise<boolean>} Whether a table result was rolled.
- */
 
 /**
  * Roll a Cypher's structured power variants on a d100 and consume it.
@@ -84,6 +81,15 @@ export async function rollCypherVariant(item) {
   return true;
 }
 
+/**
+ * Roll an inline result table and consume the one-use Cypher.
+ * Invalid table IDs or formulas return false before depletion. A valid roll
+ * consumes the Item even if no range matches; chat then reports the missing result.
+ *
+ * @param {Item} item Actor-owned, unspent Cypher.
+ * @param {string} tableId Identifier within system.rollTables, not a world RollTable UUID.
+ * @returns {Promise<boolean>} Whether a valid table roll was completed.
+ */
 export async function rollCypherTable(item, tableId) {
   if (!item || item.type !== "cypher" || !item.actor || item.system.depleted) {
     return false;
@@ -129,6 +135,18 @@ export async function rollCypherTable(item, tableId) {
   return true;
 }
 
+/**
+ * Translate a weapon and player choices into the shared task-roll contract.
+ * Familiarity, range, and weapon category alter difficulty; the task service
+ * spends Effort, rolls the d20, and applies successful target consequences.
+ *
+ * @param {Item} item Attack embedded in the acting character.
+ * @param {object} [options={}] Roll choices and optional Ability context.
+ * @param {Actor|null} [options.target=null] Explicit target, including a token's synthetic Actor.
+ * @param {number} [options.difficulty=3] Difficulty before ease/hindrance steps.
+ * @param {number} [options.spentAbilityEdge=0] Edge already used by this action's Ability cost.
+ * @returns {Promise<object|null>} Task result, or null when the attack is rejected.
+ */
 export async function rollAttack(item, {
   effortLevels = 0, assetSteps = 0, difficulty = 3,
   luckyShot = false, skillItemId = null, target = null, oneHanded = false,
@@ -170,6 +188,8 @@ export async function rollAttack(item, {
     atExtremeRange
   });
   const weaponEase = weaponSkillModifier > 0 ? weaponSkillModifier : 0;
+  // Keep the supplied Actor object: resolving it again by world ID would lose
+  // token-specific state for an unlinked (synthetic) Actor.
   const selectedTarget = target
     ?? (game.user?.targets?.size === 1
       ? [...game.user.targets][0]?.actor
@@ -201,6 +221,13 @@ export async function rollAttack(item, {
   });
 }
 
+/**
+ * Check whether an Artifact, equipment Item, or armor exhausts its final use.
+ * Depletion uses an inclusive range; a "none" die produces chat without a roll.
+ *
+ * @param {Item} item Supported Item embedded in an Actor.
+ * @returns {Promise<boolean>} Whether a supported depletion check was handled.
+ */
 export async function rollDepletion(item) {
   if (!["artifact", "equipment", "armor"].includes(item.type) || !item.actor) return false;
   const die = item.system.depletionDie;

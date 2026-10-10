@@ -36,6 +36,8 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       resizable: true,
       title: "CYPHER.Sheet.PC"
     },
+    // Template buttons declare data-action="...". Foundry routes each name to
+    // the handler below, binding `this` to the sheet, even for static handlers.
     actions: {
       rollStat: CypherPCSheet.#onRollStat,
       rollRecovery: CypherPCSheet.#onRollRecovery,
@@ -91,6 +93,8 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
    * @returns {Promise<object>} Template context.
    */
   async _prepareContext(options) {
+    // Context is the object Handlebars reads to render the sheet. Enriched HTML
+    // and grouped Items are presentation data, not new persisted Actor fields.
     const context = await super._prepareContext(options);
     context.system = this.actor.system;
     context.actor = this.actor;
@@ -296,6 +300,8 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
         })
       }
     });
+    // Both dialogs must complete before calling the service that spends points.
+    // Closing either dialog leaves the character's resources untouched.
     if (!selection) return;
     const weapon = this.actor.items.get(selection.weaponId);
     const rollOptions = await CypherPCSheet.#promptRollOptions(this.actor, {

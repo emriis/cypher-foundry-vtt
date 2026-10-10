@@ -7,6 +7,11 @@ their existing edits.
 
 ## Architecture and ESM
 
+- Follow `docs/code-comments.md`: explain purpose, public contracts, important
+  phases, units, side effects, and surprising Foundry behavior for a new reader.
+  Update comments with code changes, remove stale/duplicate claims, and avoid
+  narrating obvious statements. Review meaning rather than comment counts.
+
 - Browser/Foundry runtime: `cypher.mjs` and `module/`. Node tooling: `scripts/`
   and `tests/`. Use explicit `.mjs` extensions in relative imports and `node:`
   prefixes for Node built-ins. Do not import Node APIs into browser modules.

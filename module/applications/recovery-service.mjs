@@ -10,10 +10,12 @@ import {
 
 /**
  * Execute a recovery roll at the Foundry application boundary.
+ * The numeric roll is published in chat; PC wound healing is determined by
+ * the interval, independently of that number. Matching active effects then expire.
  *
  * @param {Actor} actor Character recovering.
- * @param {string} interval Recovery interval.
- * @returns {Promise<object|null>} Recovery result.
+ * @param {string} [interval="hour"] Recovery interval key.
+ * @returns {Promise<Roll>} Evaluated Foundry roll after updates and chat creation.
  */
 export async function rollRecovery(actor, interval = "hour") {
     const tier = actor.system.tier ?? 1;
@@ -46,10 +48,12 @@ export async function rollRecovery(actor, interval = "hour") {
 
 /**
  * Execute a Rally action at the Foundry application boundary.
+ * Rally spends Might and removes one wound without rolling dice. Rejected
+ * inputs return early; successful actions persist changes and announce them.
  *
  * @param {Actor} actor Character rallying a wound.
  * @param {string} severity Wound severity.
- * @returns {Promise<object|null>} Rally result.
+ * @returns {Promise<void>} No result payload; completion follows persistence/chat.
  */
 export async function rallyWound(actor, severity) {
     if (actor.type !== "pc") return;

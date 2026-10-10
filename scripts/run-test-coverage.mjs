@@ -1,3 +1,8 @@
+/**
+ * Run the focused Node suites with coverage for pure rule modules.
+ * The readable report goes to stdout; LCOV goes to ignored coverage/lcov.info.
+ * This command does not normalize sources or build packs in the checkout.
+ */
 import { mkdirSync } from "node:fs";
 import { spawnSync } from "node:child_process";
 

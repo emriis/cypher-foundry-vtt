@@ -1,3 +1,6 @@
+# Build the Windows release archive from an explicit list of system files.
+# This command overwrites the output ZIP/manifest (dist by default); staging is
+# temporary, but release outputs remain in the checkout after successful cleanup.
 [CmdletBinding()]
 param(
   [string]$OutputDirectory = "dist"

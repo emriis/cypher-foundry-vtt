@@ -74,6 +74,13 @@ function getImportedLayer(filePath, specifier, moduleRoot) {
   return relative.split(path.sep)[0];
 }
 
+/**
+ * Extract static and string-literal dynamic import paths from source text.
+ * This lightweight scan is not a JavaScript parser: computed import paths and
+ * re-exports are outside its checks. Lint and syntax checks remain separate.
+ * @param {string} source Module source text.
+ * @returns {string[]} Import specifiers in pattern traversal order.
+ */
 export function extractModuleSpecifiers(source) {
   const specifiers = [];
   const patterns = [
@@ -90,6 +97,12 @@ export function extractModuleSpecifiers(source) {
   return specifiers;
 }
 
+/**
+ * Compare runtime imports with the allowed dependency direction for each layer.
+ * A violation is reported as a source-to-import pair; no file is rewritten.
+ * @param {object} [options={}] Optional module root for an isolated audit.
+ * @returns {Promise<string[]>} Forbidden cross-layer imports.
+ */
 export async function auditArchitectureDependencies({
   moduleRoot = MODULE_ROOT
 } = {}) {
@@ -125,6 +138,12 @@ export async function auditArchitectureDependencies({
   return violations;
 }
 
+/**
+ * Keep Node tooling from loading Foundry-dependent runtime modules.
+ * Only the tooling-safe runtime families accepted below may be referenced.
+ * @param {object} [options={}] Script and module roots to inspect.
+ * @returns {Promise<string[]>} Forbidden tooling-to-runtime imports.
+ */
 export async function auditScriptDependencies({
   scriptsRoot = SCRIPTS_ROOT,
   moduleRoot = MODULE_ROOT

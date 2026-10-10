@@ -48,8 +48,14 @@ checkout and should be used here only for intended content/artifact changes.
 Repository documentation, JSDoc, and implementation comments are written in
 English.
 
-Comments should explain non-obvious decisions, source constraints, or runtime
-boundaries rather than restating the code.
+Follow [the comment standard](docs/code-comments.md). Explain module purpose,
+public contracts, important phases, and non-obvious decisions so a developer
+new to JavaScript/Foundry can follow an action through the layers. Document
+units, rejection outcomes, side effects, and async ordering where relevant.
+
+Update comments alongside behavior changes; remove stale or duplicate claims.
+Review accuracy and usefulness rather than counting comment lines. The guide
+includes a reading path, glossary, examples, and a review checklist.
 
 ### Localization
 

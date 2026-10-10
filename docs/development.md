@@ -21,6 +21,10 @@ That directory is ignored by Git and is private to the local checkout.
 
 ## 1. System implementation
 
+For a beginner's reading path and the required comment quality, follow
+[Code comments and reader guidance](code-comments.md). Use its review checklist
+for new modules and changes to existing behavior, including tooling and tests.
+
 Use Node 22 for tooling, matching CI (`.nvmrc`). ESLint requires at least
 22.13 in that release line; Node 24+ is also accepted by the package's engine
 contract. These tooling versions do not describe Foundry's browser runtime.

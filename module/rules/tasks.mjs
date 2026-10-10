@@ -2,6 +2,7 @@ import { CYPHER } from "../config.mjs";
 
 /**
  * Compute the Pool cost of Effort after applying Edge once to the total cost.
+ * With first/additional costs of 3/2, two levels and Edge 1 cost 3 + 2 - 1 = 4.
  *
  * @param {number} levels Number of Effort levels spent.
  * @param {number} edge Edge available on the relevant Pool.
@@ -41,6 +42,8 @@ export function clampAssetSteps(steps) {
 
 /**
  * Combine all task step modifiers into a single net step adjustment.
+ * Positive steps ease a task; negative steps hinder it. The difficulty resolver
+ * subtracts this total from the base difficulty, so hindrance increases difficulty.
  *
  * @param {object} options Task step modifiers.
  * @returns {number} Net task step adjustment.

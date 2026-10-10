@@ -1,3 +1,8 @@
+/**
+ * npm test entry point: normalize sources and run Node tests in a private copy.
+ * The copy includes current edits, so validation tests the work in progress
+ * without leaving generated source changes in the original checkout.
+ */
 import { spawn } from "node:child_process";
 import { readdir } from "node:fs/promises";
 import path from "node:path";
@@ -16,6 +21,7 @@ function run(args) {
 
 try {
   console.log("Running source normalization and tests in an isolated checkout.");
+  // Normalize before execution because content tests read the source records.
   await run(["scripts/migrate-ability-sources.mjs"]);
   const folders = ["rules", "applications", "documents", "migrations", "content", "integration", "behaviors"];
   const files = [];
@@ -29,5 +35,6 @@ try {
   console.error(error.message);
   process.exitCode = 1;
 } finally {
+  // Cleanup must also run after a failed migration or test process.
   await removeValidationWorkspace(workspace);
 }

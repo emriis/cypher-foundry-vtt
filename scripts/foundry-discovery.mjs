@@ -10,6 +10,13 @@ import path from "node:path";
 
 const WINDOWS_EXECUTABLE = "Foundry Virtual Tabletop.exe";
 
+/**
+ * Build an ordered list of installation paths without touching the filesystem.
+ * An explicit FOUNDRY_APP_PATH takes precedence over platform defaults. Windows
+ * accepts either the executable itself or its containing installation folder.
+ * @param {object} [options={}] Platform, environment, and home-directory inputs.
+ * @returns {string[]} Candidate executable paths, in lookup order.
+ */
 export function getApplicationCandidates({
   platform = process.platform,
   env = process.env,
@@ -61,6 +68,11 @@ export function getApplicationCandidates({
   return ["/usr/bin/foundryvtt", "/usr/local/bin/foundryvtt"];
 }
 
+/**
+ * Choose the first candidate that exists as a file; never launch it here.
+ * @param {object} [options={}] Inputs passed to the candidate builder.
+ * @returns {Promise<string>} Application path; throws when no candidate exists.
+ */
 export async function findApplication(options = {}) {
   const candidates = getApplicationCandidates(options);
 

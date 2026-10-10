@@ -1,3 +1,8 @@
+/**
+ * Lint each ESM execution environment with its own available globals.
+ * Foundry's browser runtime, pure rules, Node scripts, and test mocks have
+ * different boundaries; one shared global list would hide environment mistakes.
+ */
 import globals from "globals";
 
 const foundryGlobals = Object.fromEntries([
