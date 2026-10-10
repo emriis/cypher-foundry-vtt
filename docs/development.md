@@ -141,6 +141,18 @@ npm run package
 deterministic tests and is kept separate because it requires a locally activated
 Foundry installation.
 
+For multi-document fixture creation, identify returned Items by type, stable
+key, or explicit fixture role. Do not assign semantic roles from array positions;
+the live batch can return them in a different order. The Spray/Arc Spray fixture
+replays weapon-first results to cover this failure deterministically. Keep
+gameplay assertions on costs, target state, and chat outcomes unchanged.
+The shared `afterEach` fixture owns test Actor cleanup and awaits sheet closure;
+avoid local cleanup that can replace the original assertion with a closed-page
+error after a timeout.
+The disposable browser marks the core welcome tour completed before login,
+using the installed tour's step count. Exiting it after startup can race its
+delayed rendering and leave an overlay that intercepts gameplay input.
+
 The E2E runner owns a temporary checkout and Foundry user-data directory.
 Builds and installation happen there. It reads activation metadata from the
 configured installation but never writes its settings, worlds, or systems.

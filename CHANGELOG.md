@@ -33,6 +33,11 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ### Fixed
 
+- E2E fixtures identify batched Items by their roles rather than response order;
+  Spray/Arc Spray replay weapon-first results and retain the original UI failure
+  when shared cleanup runs after a failed scenario.
+- Seed welcome-tour progress before E2E login to prevent delayed onboarding
+  overlays from intercepting gameplay in a fresh disposable world.
 - Source normalization preserves CRD provenance and pending-translation metadata
   on French fallback Abilities across repeated passes and directory order changes.
 - Ability provenance is computed after duplicate parent references are redirected,

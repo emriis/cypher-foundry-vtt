@@ -94,9 +94,9 @@ async function cleanupActors(page) {
 }
 
 async function closeActorSheet(page) {
-  await page.evaluate(() => {
+  await page.evaluate(async () => {
     for (const actor of game.actors) {
-      if (actor.sheet?.rendered) actor.sheet.close();
+      if (actor.sheet?.rendered) await actor.sheet.close();
     }
   });
 }
@@ -323,7 +323,11 @@ test.describe("Cypher Foundry live gameplay", () => {
         }
       ]);
       await actor.sheet.render(true);
-      return items.map(item => item.id);
+      // Identify fixture roles from their persisted mechanics, not batch order.
+      return {
+        marked: items.find(item => item.system.mechanics.hinderedWhenUsedOneHanded).id,
+        unmarked: items.find(item => !item.system.mechanics.hinderedWhenUsedOneHanded).id
+      };
     }, actorId);
 
     await dismissActiveTour(page);
@@ -369,11 +373,11 @@ test.describe("Cypher Foundry live gameplay", () => {
     };
 
     // An unmarked weapon has no one-handed control and no extra hindrance.
-    expect(await rollAndReadDifficulty(itemIds[1], null)).toBe(2);
+    expect(await rollAndReadDifficulty(itemIds.unmarked, null)).toBe(2);
     // A marked weapon is not hindered if the player leaves the option off.
-    expect(await rollAndReadDifficulty(itemIds[0], false)).toBe(2);
+    expect(await rollAndReadDifficulty(itemIds.marked, false)).toBe(2);
     // Selecting one-handed use adds exactly one hindrance step.
-    expect(await rollAndReadDifficulty(itemIds[0], true)).toBe(3);
+    expect(await rollAndReadDifficulty(itemIds.marked, true)).toBe(3);
 
     await page.evaluate(id => game.actors.get(id)?.sheet.close(), actorId);
   });
@@ -1043,7 +1047,7 @@ test.describe("Cypher Foundry live gameplay", () => {
       const actorId = await createActor(page);
       const setup = await page.evaluate(async ({ actorId, kind, prefix }) => {
         const actor = game.actors.get(actorId);
-        const [ability, weapon] = await actor.createEmbeddedDocuments("Item", [
+        const created = await actor.createEmbeddedDocuments("Item", [
           { name: `E2E ${kind}`, type: "ability", system: {
             key: kind, cost: { stat: "speed", amount: kind === "spray" ? 2 : 3 }
           } },
@@ -1052,6 +1056,14 @@ test.describe("Cypher Foundry live gameplay", () => {
             mechanics: { rapidFire: true }, availableUses: 2
           } }
         ]);
+        // Replay the valid return order observed in the failed trace: weapon
+        // before Ability. Fixture roles must not depend on batch positions.
+        created.sort((left, right) => Number(right.type === "attack") - Number(left.type === "attack"));
+        const ability = created.find(item => item.type === "ability" && item.system.key === kind);
+        const weapon = created.find(item => item.type === "attack");
+        if (!ability || !weapon) {
+          throw new Error("Weapon Ability fixture is missing its Ability or attack Item");
+        }
         const targets = [];
         for (let index = 0; index < 3; index += 1) {
           targets.push(await Actor.create({ name: `${prefix} ${kind} target ${index}`, type: "npc",
@@ -1060,42 +1072,40 @@ test.describe("Cypher Foundry live gameplay", () => {
         await actor.sheet.render(true);
         return { abilityId: ability.id, weaponId: weapon.id, targetIds: targets.map(target => target.id) };
       }, { actorId, kind, prefix: ACTOR_PREFIX });
-      try {
-        await dismissActiveTour(page);
-        await page.locator(`[data-item-id="${setup.abilityId}"] [data-action="useWeaponAbility"]`).click();
-        const selection = page.locator("form").filter({ has: page.locator('select[name="weaponId"]') }).last();
-        await expect(selection).toBeVisible();
-        await selection.locator('[name="weaponId"]').selectOption(setup.weaponId);
-        for (let index = 0; index < (kind === "spray" ? 1 : 3); index += 1) {
-          await selection.locator(`[name="target${index}"]`).selectOption(setup.targetIds[index]);
-        }
-        if (kind === "arc-spray") await selection.locator('[name="confirmed"]').check();
-        await selection.getByRole("button").last().click();
-        await clickRollDialog(page);
-        await expect.poll(() => page.evaluate(({ actorId, kind }) => [...game.messages].filter(message =>
-          message.getFlag("cypher", "actorId") === actorId
-          && message.getFlag("cypher", "rollType") === "task"
-          && message.getFlag("cypher", "abilitySource")?.kind === kind).length,
-        { actorId, kind })).toBe(kind === "spray" ? 1 : 3);
-        await expect.poll(() => page.evaluate(ids => ids.map(id => game.actors.get(id).system.health.value), setup.targetIds))
-          .toEqual(kind === "spray" ? [17, 20, 20] : [16, 16, 16]);
-        const state = await page.evaluate(({ actorId, weaponId, kind }) => {
-          const actor = game.actors.get(actorId);
-          return { speed: actor.system.stats.speed.pool.value,
-            uses: actor.items.get(weaponId).system.availableUses,
-            difficulties: [...game.messages].filter(message => message.getFlag("cypher", "actorId") === actorId
-              && message.getFlag("cypher", "rollType") === "task"
-              && message.getFlag("cypher", "abilitySource")?.kind === kind)
-              .map(message => message.getFlag("cypher", "effectiveDifficulty")) };
-        }, { actorId, weaponId: setup.weaponId, kind });
-        expect(state.speed).toBe(kind === "spray" ? 6 : 5);
-        expect(state.uses).toBe(kind === "spray" ? 0 : 2);
-        expect(state.difficulties).toEqual(kind === "spray" ? [0] : [2, 2, 2]);
-      } finally {
-        await page.evaluate(async ids => {
-          for (const id of ids) await game.actors.get(id)?.delete();
-        }, [actorId, ...setup.targetIds]);
+      // The shared afterEach fixture owns Actor cleanup, including failures.
+      // A closed-page error in a local finally must not replace the UI failure.
+      await dismissActiveTour(page);
+      const abilityButton = page.locator(`[data-item-id="${setup.abilityId}"] [data-action="useWeaponAbility"]`);
+      await expect(abilityButton).toBeVisible();
+      await abilityButton.click();
+      const selection = page.locator("form").filter({ has: page.locator('select[name="weaponId"]') }).last();
+      await expect(selection).toBeVisible();
+      await selection.locator('[name="weaponId"]').selectOption(setup.weaponId);
+      for (let index = 0; index < (kind === "spray" ? 1 : 3); index += 1) {
+        await selection.locator(`[name="target${index}"]`).selectOption(setup.targetIds[index]);
       }
+      if (kind === "arc-spray") await selection.locator('[name="confirmed"]').check();
+      await selection.getByRole("button").last().click();
+      await clickRollDialog(page);
+      await expect.poll(() => page.evaluate(({ actorId, kind }) => [...game.messages].filter(message =>
+        message.getFlag("cypher", "actorId") === actorId
+        && message.getFlag("cypher", "rollType") === "task"
+        && message.getFlag("cypher", "abilitySource")?.kind === kind).length,
+      { actorId, kind })).toBe(kind === "spray" ? 1 : 3);
+      await expect.poll(() => page.evaluate(ids => ids.map(id => game.actors.get(id).system.health.value), setup.targetIds))
+        .toEqual(kind === "spray" ? [17, 20, 20] : [16, 16, 16]);
+      const state = await page.evaluate(({ actorId, weaponId, kind }) => {
+        const actor = game.actors.get(actorId);
+        return { speed: actor.system.stats.speed.pool.value,
+          uses: actor.items.get(weaponId).system.availableUses,
+          difficulties: [...game.messages].filter(message => message.getFlag("cypher", "actorId") === actorId
+            && message.getFlag("cypher", "rollType") === "task"
+            && message.getFlag("cypher", "abilitySource")?.kind === kind)
+            .map(message => message.getFlag("cypher", "effectiveDifficulty")) };
+      }, { actorId, weaponId: setup.weaponId, kind });
+      expect(state.speed).toBe(kind === "spray" ? 6 : 5);
+      expect(state.uses).toBe(kind === "spray" ? 0 : 2);
+      expect(state.difficulties).toEqual(kind === "spray" ? [0] : [2, 2, 2]);
     });
   }
 

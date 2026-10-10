@@ -54,6 +54,25 @@ export const test = base.extend({
     }
 
     const context = await browser.newContext();
+    // Seed only this disposable browser's client setting before Foundry boots.
+    // Exiting after game.ready races the delayed welcome tour: its pending start
+    // can still render an overlay after exit has cleared the active tour.
+    const foundryUrl = process.env.FOUNDRY_URL || "http://127.0.0.1:30000";
+    const welcomeResponse = await context.request.get(
+      new URL("tours/welcome.json", `${foundryUrl.replace(/\/$/, "")}/`).href
+    );
+    if (!welcomeResponse.ok()) {
+      throw new Error(`Cannot load Foundry welcome tour: ${welcomeResponse.status()}`);
+    }
+    const welcome = await welcomeResponse.json();
+    if (!Array.isArray(welcome.steps) || !welcome.steps.length) {
+      throw new Error("Foundry welcome tour has no steps");
+    }
+    await context.addInitScript(stepCount => {
+      localStorage.setItem("core.tourProgress", JSON.stringify({
+        core: { welcome: stepCount }
+      }));
+    }, welcome.steps.length);
     const page = await context.newPage();
 
     // Keep browser-side failures visible. In particular, an import/runtime
@@ -127,12 +146,7 @@ export const test = base.extend({
       );
     }
 
-    // Foundry v14 opens its first-world tour automatically in a fresh E2E world.
-    // It is unrelated to the system under test and can intercept sheet input.
-    await page.evaluate(() => {
-      const Tour = globalThis.foundry?.nue?.Tour;
-      Tour?.activeTour?.exit();
-    });
+    await expect(page.locator(".tour-overlay")).toHaveCount(0);
 
     await use(page);
 
@@ -144,7 +158,7 @@ export const test = base.extend({
       }
 
       for (const actor of game.actors) {
-        if (actor.sheet?.rendered) actor.sheet.close();
+        if (actor.sheet?.rendered) await actor.sheet.close();
       }
     });
 
@@ -170,12 +184,12 @@ test.afterEach(async ({ e2ePage: page }, testInfo) => {
         actor.name.startsWith("E2E PC") ||
         actor.name.startsWith("E2E Item Actor")
     )) {
-      if (actor.sheet?.rendered) actor.sheet.close();
+      if (actor.sheet?.rendered) await actor.sheet.close();
       await actor.delete();
     }
 
     for (const application of Object.values(ui.windows ?? {})) {
-      if (application?.rendered) application.close();
+      if (application?.rendered) await application.close();
     }
   });
 });
