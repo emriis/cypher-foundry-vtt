@@ -152,7 +152,12 @@ Hooks.on("renderChatMessageHTML", (message, html) => {
   button.addEventListener("click", async (event) => {
     event.preventDefault();
     button.disabled = true;
-    await actor.rerollMessage(message);
+    try {
+      await actor.rerollMessage(message);
+    } finally {
+      // A rejected request or failed write must not leave the UI permanently blocked.
+      button.disabled = false;
+    }
   });
 
   const container = html instanceof HTMLElement ? html : html[0];

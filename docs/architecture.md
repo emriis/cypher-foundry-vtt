@@ -32,6 +32,11 @@ The main gameplay boundaries are:
 
 - `task-service.mjs`: task rolls, Effort and Pool transactions, defense
   outcomes, and task chat output.
+- `task-preparation.mjs`, `task-consequences.mjs`, and `task-message.mjs`:
+  read-only task planning, awaited effects, and localized presentation.
+- `reroll-service.mjs`: CRD paid-reroll orchestration and retained metadata;
+  `rules/task-outcome.mjs` shares outcome rules with initial task rolls.
+- `action-guard.mjs`: per-Actor, per-category overlap protection on one client.
 - `recovery-service.mjs`: recoveries and Rally.
 - `advancement-service.mjs`: advancement purchases and tier transitions.
 - `character-service.mjs`: XP spending, rerolls, Player Intrusions, and
@@ -190,6 +195,11 @@ source semantics and runtime contracts are verified.
 
 ## 7. ApplicationV2 sheets
 
+Shared PC roll, weapon-category, and weapon-Ability dialogs are implemented in
+`module/sheets/dialogs.mjs`. They collect intent and preserve synthetic target
+identities; accepted application services own writes. The PC sheet's action
+handlers delegate only after all required dialogs have completed.
+
 The system uses ApplicationV2 for PC, NPC, Community, and Item sheets.
 
 Each document sheet has an explicit ApplicationV2 root template. The root is a
@@ -247,6 +257,12 @@ The historical phase sequence is retained in project history rather than used
 as the current implementation queue.
 
 ## 10. Current architectural priorities
+
+The CRD-backed cost/reroll and refactoring contracts are documented in
+[runtime-refactor.md](runtime-refactor.md), including partial-write limits.
+Source migration is now coordinated by `scripts/migrate-ability-sources.mjs`
+with identity, source lookup, normalization, cleanup, and registry helpers under
+`scripts/source-migration/`. The authoring surface and source bytes are preserved.
 
 The architecture is no longer undergoing the broad Phase 1-8 refactor. New work
 should follow the feature workflow:

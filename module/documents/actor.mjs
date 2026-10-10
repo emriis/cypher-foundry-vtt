@@ -173,7 +173,7 @@ export default class CypherActor extends Actor {
    * Reroll a previous roll through the character application service.
    *
    * @param {object} message Foundry chat message containing reroll flags.
-   * @returns {Promise<void>|undefined} Nothing when not rerollable.
+   * @returns {Promise<object|null>} Retained-result metadata or null when rejected.
    */
   async rerollMessage(message) {
     return rerollMessage(this, message);

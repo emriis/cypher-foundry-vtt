@@ -493,6 +493,9 @@
       "Title": "Points d'Expérience",
       "Reroll": "Relancer",
       "RerollResult": "Résultat de la relance",
+      "ChooseBetterReroll": "Choisissez le résultat le plus favorable à votre personnage.",
+      "KeepOldRoll": "Garder le résultat précédent",
+      "KeepNewRoll": "Garder le nouveau résultat",
       "RerollCompare": "Ancien résultat : {old} — Nouveau : {new} — Meilleur des deux : {final}",
       "RerollHint": "Relance (1 XP) : clique sur le bouton qui apparaît sous un jet dans le chat, juste après celui-ci (le tien ou celui d'un·e autre joueur·euse).",
       "EditInHeader": "Modifie la valeur des XP directement dans l'en-tête de la fiche, en haut.",
@@ -575,6 +578,7 @@
       "Add": "Ajouter"
     },
     "Warning": {
+      "ActionPermission": "Vous ne pouvez pas modifier ce personnage ou cette cible. Demandez au MJ de résoudre l’action.",
       "NotPC": "Seuls les personnages joueurs peuvent effectuer ce jet.",
       "NotEnoughPool": "Pas assez de points dans la réserve de {stat} pour cet effort.",
       "CannotRallyMajor": "Impossible de se reprendre pour retirer une blessure majeure (hors genre super-héros).",

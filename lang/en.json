@@ -493,6 +493,9 @@
       "Title": "Experience Points",
       "Reroll": "Reroll",
       "RerollResult": "Reroll Result",
+      "ChooseBetterReroll": "Choose which result is better for your character.",
+      "KeepOldRoll": "Keep the previous result",
+      "KeepNewRoll": "Keep the new result",
       "RerollCompare": "Old result: {old} — New: {new} — Better of the two: {final}",
       "RerollHint": "Reroll (1 XP): click the button beneath any chat roll, yours or another player's.",
       "EditInHeader": "Edit XP directly in the sheet header.",
@@ -575,6 +578,7 @@
       "Add": "Add"
     },
     "Warning": {
+      "ActionPermission": "You cannot change this character or target. Ask the GM to resolve the action.",
       "NotPC": "Only player characters can make this roll.",
       "NotEnoughPool": "Not enough points in the {stat} pool for this Effort.",
       "CannotRallyMajor": "You can't rally to remove a major wound (outside the superhero genre).",

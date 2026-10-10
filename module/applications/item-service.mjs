@@ -75,6 +75,7 @@ export async function rollCypherVariant(item) {
       itemId: item.id,
       variantName: variant.name,
       powerLevel: variant.powerLevel,
+      rollFormula: "1d100",
       originalRoll: roll.total
     } }
   });
@@ -129,6 +130,7 @@ export async function rollCypherTable(item, tableId) {
       actorId: item.actor.id,
       itemId: item.id,
       tableId,
+      rollFormula: table.formula,
       originalRoll: roll.total
     } }
   });

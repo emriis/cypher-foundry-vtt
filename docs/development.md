@@ -47,6 +47,12 @@ application, sheet, migration, or compendium boundaries.
 
 ### TDD and BDD boundary
 
+The CRD is the sole authority for game rules and compendium content. Define
+observable Given/When/Then scenarios from that source before changing behavior.
+For a defect, demonstrate RED, implement GREEN, then refactor while green. For
+a behavior-preserving extraction, establish passing characterization tests
+before moving code. See [the runtime refactor contracts](runtime-refactor.md).
+
 Rule changes should begin with a deterministic test whenever the behavior can be
 expressed without Foundry.
 
@@ -67,7 +73,7 @@ or generated UUIDs.
 
 ### Recommended feature workflow
 
-1. Identify the authoritative source or rule.
+1. Identify the supplied CRD version and rule section.
 2. Add the smallest failing deterministic test.
 3. Implement the rule or application behavior.
 4. Add content contracts if source data is involved.
@@ -78,7 +84,8 @@ or generated UUIDs.
 
 ## 2. Compendium content
 
-The authoritative editable records live in paired `_source/` directories.
+Editable records live in paired `_source/` directories. The CRD remains the
+sole authority for their content; JSON records are the authoring surface.
 
 Do not edit generated LevelDB files manually.
 
@@ -134,6 +141,18 @@ npm run package
 deterministic tests and is kept separate because it requires a locally activated
 Foundry installation.
 
+For multi-document fixture creation, identify returned Items by type, stable
+key, or explicit fixture role. Do not assign semantic roles from array positions;
+the live batch can return them in a different order. The Spray/Arc Spray fixture
+replays weapon-first results to cover this failure deterministically. Keep
+gameplay assertions on costs, target state, and chat outcomes unchanged.
+The shared `afterEach` fixture owns test Actor cleanup and awaits sheet closure;
+avoid local cleanup that can replace the original assertion with a closed-page
+error after a timeout.
+The disposable browser marks the core welcome tour completed before login,
+using the installed tour's step count. Exiting it after startup can race its
+delayed rendering and leave an overlay that intercepts gameplay input.
+
 The E2E runner owns a temporary checkout and Foundry user-data directory.
 Builds and installation happen there. It reads activation metadata from the
 configured installation but never writes its settings, worlds, or systems.
@@ -149,7 +168,8 @@ modules. Test doubles are declared in test configuration; pure rules do not
 inherit browser or Foundry globals.
 
 `npm run typecheck` uses TypeScript's `allowJs`/`checkJs` and `noEmit` on the
-explicit pilot in `jsconfig.rules.json` (weapon Ability resolution). It checks
+explicit scope in `jsconfig.rules.json` (weapon Ability resolution, task costs,
+task outcomes, and reroll selection). It checks
 existing `.mjs` and JSDoc without introducing a TypeScript runtime or claiming
 full-system typing. Expand this pilot with accurate contracts, not broad `any`
 declarations for Foundry. CI runs both checks on Node 22.
@@ -169,7 +189,7 @@ Before a release:
 8. update `CHANGELOG.md`.
 
 Generated LevelDB packs and release artifacts are build outputs. Source records
-remain the editable authority.
+remain the editable authoring surface; the CRD is their content authority.
 
 ## 5. Architecture maintenance
 

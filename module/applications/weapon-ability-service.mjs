@@ -3,6 +3,7 @@
  * Pure rules decide eligibility and modifiers; this browser service validates
  * current documents, spends resources, and awaits each attack in order.
  */
+import { runActorAction } from "./action-guard.mjs";
 import { resolveSprayUse, resolveArcSprayAttacks } from "../rules/weapon-ability-resolution.mjs";
 import { resolveWeaponPrerequisites } from "../rules/ability-weapon-prerequisites.mjs";
 import { resolveAbilityCost, resolveAbilityCostStat } from "../rules/ability-costs.mjs";
@@ -24,9 +25,6 @@ const REQUIREMENTS = {
   ],
   "arc-spray": [{ kind: "rapidFire", alternativeGroup: "weapon-use" }]
 };
-// Block overlapping activations on this client. This is an in-memory guard,
-// not a lock shared with other players or a transaction across documents.
-const pendingActors = new Set();
 
 /**
  * Execute an owned Spray/Arc Spray action through the existing attack engine.
@@ -50,10 +48,8 @@ export async function executeWeaponAbility(item, {
 } = {}) {
   const actor = item?.actor;
   const kind = getWeaponAbilityKind(item);
-  if (!kind || actor?.type !== "pc" || item.parent !== actor
-      || pendingActors.has(actor)) return null;
-  pendingActors.add(actor);
-  try {
+  if (!kind || actor?.type !== "pc" || actor.isOwner === false || item.parent !== actor) return null;
+  return runActorAction(actor, "weaponAbility", async () => {
     const reject = () => {
       ui.notifications.warn(game.i18n.localize("CYPHER.WeaponAbility.InvalidUse"));
       return null;
@@ -64,7 +60,7 @@ export async function executeWeaponAbility(item, {
       item.system.weaponPrerequisites?.length ? item.system.weaponPrerequisites : REQUIREMENTS[kind],
       { weapon: weapon.system, thrownWeaponsInReach: kind === "spray" && thrownWeaponsInReach }
     ).eligible) return reject();
-    if (!Array.isArray(targets) || targets.some(target => target?.type !== "npc" || !target.id
+    if (!Array.isArray(targets) || targets.some(target => target?.type !== "npc" || target.isOwner === false || !target.id
       || !Number.isInteger(target.system?.level) || target.system.level < 0)) return reject();
     let profiles;
     if (kind === "arc-spray") {
@@ -140,7 +136,5 @@ export async function executeWeaponAbility(item, {
       results.push(result);
     }
     return { kind, spray, results };
-  } finally {
-    pendingActors.delete(actor);
-  }
+  });
 }

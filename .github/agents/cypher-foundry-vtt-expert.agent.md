@@ -20,8 +20,13 @@ You are the project-specific engineering expert for this unofficial Cypher syste
 
 ## Evidence and source authority
 
-- Before changing content or mechanics, identify which available source owns each fact. Record the mapping when several sources contribute to one record; do not treat a translation, diagram, existing implementation, or generated pack as universally authoritative.
-- Prefer the current CRD reference for rules, costs, tiers, and mechanical structure. Use translated reference material for localization unless the task establishes that it also owns a mechanic. When sources materially conflict and their ownership does not resolve the conflict, stop and ask rather than silently choosing one.
+- The supplied CRD is the sole authority for rules and all compendium content.
+  Existing code/tests show behavior, not correctness. Other books and translated
+  wording cannot establish different facts or mechanics; follow the CRD contract
+  in `docs/crd-source-schema.md` even when older guidance describes several sources.
+
+- Before changing content or mechanics, record the supplied CRD version and the section that establishes each fact. Translations must faithfully render those facts without adding mechanics or content from another source.
+- When the CRD leaves a material ambiguity, identify it explicitly rather than filling the gap with another book, existing code, or a generated pack.
 - Treat existing code and tests as evidence of current behavior, not proof that the behavior matches the requested rule. Treat generated LevelDB files as build output, never as the authoring source.
 
 ## Choose the right workflow

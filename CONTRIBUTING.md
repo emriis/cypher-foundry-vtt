@@ -65,7 +65,7 @@ Do not add new hardcoded UI text when a localized string is appropriate.
 
 ## Rebuilding compendium packs
 
-The authoritative content is stored under paired:
+Editable records derived from the CRD are stored under paired:
 
     packs/<family>-en/_source/
     packs/<family>-fr/_source/
@@ -73,6 +73,10 @@ The authoritative content is stored under paired:
 Do not edit generated LevelDB files manually.
 
 For CRD-derived content:
+
+The supplied CRD is the sole authority for rules and compendium content;
+editable sources and tests must follow it. Other references may help render
+its wording, but must not introduce or override content or mechanics.
 
 1. preserve the source-backed mechanics;
 2. preserve stable logical IDs;

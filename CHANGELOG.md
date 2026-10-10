@@ -11,6 +11,10 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ### Added
 
+- Added CRD-backed BDD regressions for rejected/overlapping actions, repeated
+  rerolls, depletion ranges, recovery formulas, and player-selected table outcomes.
+- Added source-normalization idempotence and dialogue identity/cancellation checks.
+
 - Added shared Codex instructions, discoverable skill entrypoints, ESM/runtime
   and document-transaction workflows, and runtime/review/roadmap/branch prompts.
 - Added environment-specific ESLint checks and an incremental pure-rule JSDoc
@@ -18,12 +22,32 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ### Changed
 
+- Split task preparation, resolution, consequences, and chat; extracted rerolls,
+  shared action guards, PC dialogs, and source-migration responsibilities.
+- Expanded the pure-rule JSDoc type-check pilot to task and reroll contracts.
+
 - Full tests now normalize and validate a temporary checkout; live Foundry E2E
   builds/runs in isolated checkout and user-data directories, preserving the
   installed system and working compendium sources.
 - Aligned skills/prompts with application services and CRD source fidelity.
 
 ### Fixed
+
+- E2E fixtures identify batched Items by their roles rather than response order;
+  Spray/Arc Spray replay weapon-first results and retain the original UI failure
+  when shared cleanup runs after a failed scenario.
+- Seed welcome-tour progress before E2E login to prevent delayed onboarding
+  overlays from intercepting gameplay in a fresh disposable world.
+- Source normalization preserves CRD provenance and pending-translation metadata
+  on French fallback Abilities across repeated passes and directory order changes.
+- Ability provenance is computed after duplicate parent references are redirected,
+  so the first normalized output already matches subsequent passes.
+- Lucky Shot validates XP/Pool before committing either cost. Rejected target
+  permissions cannot spend resources; overlapping local activations are guarded.
+- Paid rerolls retain the best result across successive uses, honor depletion
+  ranges and original formulas, and restore depleted Items on a better outcome.
+- Success chat is published after target writes, and failed reroll requests no
+  longer leave their chat button permanently disabled.
 
 - Restored the missing direct-damage wound resolver import exposed by linting.
 

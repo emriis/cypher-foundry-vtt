@@ -1,30 +1,15 @@
 /**
  * Shared task engine for stat rolls, weapon attacks, and player defenses.
  * The pipeline resolves modifiers and cost, spends the Pool, rolls the d20,
- * publishes chat, then persists attack/defense consequences. Rule calculations
+ * persists attack/defense consequences, then publishes chat. Rule calculations
  * live in module/rules; this service owns the Foundry document operations.
  */
-import { CYPHER } from "../config.mjs";
-import { spendXP } from "./character-service.mjs";
-import {
-  addWound,
-  applyNpcDamage,
-  reduceWound,
-  shieldAbsorbWound
-} from "./damage-service.mjs";
-import {
-  clampAssetSteps,
-  clampEffortLevels,
-  computeEffortCost,
-  computeTaskSteps,
-  resolveAttackDamage,
-  resolveSpecialRoll,
-  resolveTaskDifficulty
-} from "../rules/tasks.mjs";
-import { resolveStat } from "../rules/stats.mjs";
 import { resolveDefense } from "../rules/defense.mjs";
-import { resolveActiveAbilityModifiers } from "../rules/ability-modifiers.mjs";
-import { applyWeaponTargetEffects } from "./weapon-effect-service.mjs";
+import { resolveTaskOutcome } from "../rules/task-outcome.mjs";
+import { runActorAction } from "./action-guard.mjs";
+import { prepareTask } from "./task-preparation.mjs";
+import { buildTaskMessage } from "./task-message.mjs";
+import { applyTaskConsequences } from "./task-consequences.mjs";
 
 /**
  * Roll a Block or Dodge defense through the common task engine.
@@ -100,269 +85,112 @@ export async function rollDefense(
  * @param {Actor|null} [options.targetActor=null] Actual NPC receiving attack consequences.
  * @returns {Promise<object|null>} Roll result or null when the task is rejected.
  */
-export async function rollTask(actor, {
-    stat = "might", difficulty = 3, effortLevels = 0, assetSteps = 0,
-    skillItemId = null, isAttack = false, baseDamage = 0, flavor = "",
-    extraHinderSteps = 0, extraEaseSteps = 0, luckyShot = false,
-    specialEffectChoice = null, weaponTargetEffects = [], weaponSource = {},
-    weaponRangeAdjudication = null, abilitySource = null, spentAbilityEdge = 0,
-    defenseType = null, incomingSeverity = "minor", armorModifier = 0, shieldItemId = null,
-    targetActor = null, armorBypass = 0, incomingWounds = 1,
-    applyIncomingWound = true
-  } = {}) {
-    if (actor.type !== "pc") {
-      ui.notifications.warn(game.i18n.localize("CYPHER.Warning.NotPC"));
-      return null;
-    }
+export async function rollTask(actor, options = {}) {
+  if (!actor) return null;
+  return runActorAction(actor, "task", () => executeTask(actor, options));
+}
 
-    // Lucky shot: spend 1 XP to attack blind, hindered by 4 steps
-    if (luckyShot) {
-      if (!(await spendXP(actor, CYPHER.xpCosts.luckyShot, game.i18n.localize("CYPHER.XP.LuckyShot")))) return null;
-      extraHinderSteps += 4;
-    }
+/** Execute one locally accepted task in explicit preparation/write/chat phases. */
+async function executeTask(actor, {
+  stat = "might", difficulty = 3, effortLevels = 0, assetSteps = 0,
+  skillItemId = null, isAttack = false, baseDamage = 0, flavor = "",
+  extraHinderSteps = 0, extraEaseSteps = 0, luckyShot = false,
+  specialEffectChoice = null, weaponTargetEffects = [], weaponSource = {},
+  weaponRangeAdjudication = null, abilitySource = null, spentAbilityEdge = 0,
+  defenseType = null, incomingSeverity = "minor", armorModifier = 0, shieldItemId = null,
+  targetActor = null, armorBypass = 0, incomingWounds = 1,
+  applyIncomingWound = true
+} = {}) {
+  const prepared = prepareTask(actor, { stat, difficulty, effortLevels, assetSteps, skillItemId,
+    extraHinderSteps, extraEaseSteps, luckyShot, spentAbilityEdge, defenseType, armorModifier, targetActor });
+  if (!prepared) return null;
+  ({ effortLevels, assetSteps, extraHinderSteps } = prepared);
+  const { resolved, statLabel, totalCost, xpCost, poolValue, poolMax,
+    woundHinder, autoArmorSpeedHinder, effectiveDifficulty, targetNumber } = prepared;
 
-    const resolved = resolveStat(actor.system, stat);
-    if (!resolved) return null;
-    const statData = resolved.data;
-    const statLabel = CYPHER.stats.includes(stat) ? game.i18n.localize(resolved.label) : resolved.label;
-
-    // Asset steps are capped at 2.
-    assetSteps = clampAssetSteps(assetSteps);
-    // Effort cannot exceed the character's Effort score (max 6).
-    effortLevels = clampEffortLevels(effortLevels, actor.system.effort);
-
-    const skillItem = skillItemId ? actor.items.get(skillItemId) : null;
-    const skillSteps = skillItem ? skillItem.system.stepModifier : 0;
-
-    const abilityItems = actor.items?.contents
-      ?? (Array.isArray(actor.items)
-        ? actor.items
-        : Array.from(actor.items?.values?.() ?? []));
-    const abilityModifiers = resolveActiveAbilityModifiers(
-      actor.system.activeAbilityEffects,
-      abilityItems
-    );
-    const abilityEdge = abilityModifiers.edge?.[stat] ?? 0;
-    const abilityPoolMax = abilityModifiers.poolMax?.[stat] ?? 0;
-    const edge = (statData.edge ?? 0) + abilityEdge;
-    const poolValue = statData.pool.value;
-    const poolMax = statData.pool.max + abilityPoolMax;
-    // Edge reduces a cost; it is not a Pool of spendable points. An Ability
-    // and its first attack share the action's Edge, so subtract the portion
-    // already used for activation before reducing this attack's Effort cost.
-    const totalCost = computeEffortCost(effortLevels, Math.max(0, edge - spentAbilityEdge));
-
-    if (totalCost > poolValue) {
-      ui.notifications.error(game.i18n.format("CYPHER.Warning.NotEnoughPool", { stat: statLabel }));
-      return null;
-    }
-
-    // Each Effort level reduces difficulty by one step; assets, skill, wound hindrance,
-    // and any extra hindrance (lucky shot, unfamiliar weapon...) also apply.
-    const woundHinder = actor.system.hinderSteps ?? 0;
-
-    // An unfamiliar armor's Speed hindrance is applied to all Speed tasks, except Dodge,
-    // where armorModifier already applies the same value.
-    const autoArmorSpeedHinder = (stat === "speed" && defenseType !== "dodge")
-      ? (actor.system.armor?.speedTaskHinder ?? 0)
-      : 0;
-
-    const totalSteps = computeTaskSteps({
-      effortLevels,
-      assetSteps,
-      skillSteps,
-      extraEaseSteps,
-      woundHinder,
-      extraHinderSteps,
-      armorModifier,
-      autoArmorSpeedHinder
+  // One Actor write commits XP and Pool costs together. Subsequent target
+  // writes are separate operations; failures are surfaced without stale rollback.
+  if (totalCost > 0 || xpCost > 0) {
+    await actor.update({
+      ...(xpCost > 0 ? { "system.xp": actor.system.xp - xpCost } : {}),
+      ...(totalCost > 0 ? { [`${resolved.path}.pool.value`]: poolValue - totalCost } : {})
     });
-    const { effectiveDifficulty, targetNumber } =
-      resolveTaskDifficulty(difficulty, totalSteps);
-
-    // Persist the cost before rolling. A natural 20 can refund it below;
-    // a later document/chat failure does not automatically undo this update.
-    if (totalCost > 0) {
-      await actor.update({ [`${resolved.path}.pool.value`]: poolValue - totalCost });
-    }
-
-    const roll = await new Roll("1d20").evaluate();
-    const d20 = roll.total;
-    const success = effectiveDifficulty <= 0 ? true : d20 >= targetNumber;
-
-    // Resolve CRD special outcomes in the pure rules layer. The application
-    // layer only translates the resulting mechanics into Foundry state/chat.
-    const special = resolveSpecialRoll({
-      d20,
-      success,
-      isAttack,
-      inflictsDamage: isAttack && success && baseDamage > 0
-    });
-    let damageBonus = special.damageBonus;
-    let selectedEffect = special.effect;
-    if (special.effectOptions.length > 0 && specialEffectChoice) {
-      const selectedDamage =
-        specialEffectChoice === "damage"
-        && special.effectOptions.includes("damage");
-      const selectedMinor =
-        specialEffectChoice === "minor"
-        && special.effectOptions.includes("minor");
-      const selectedMajor =
-        specialEffectChoice === "major"
-        && special.effectOptions.includes("major");
-
-      if (selectedDamage) {
-        damageBonus = d20 === 19 ? 3 : 4;
-      } else if (selectedMinor) {
-        selectedEffect = "minor";
-      } else if (selectedMajor) {
-        selectedEffect = "major";
-      }
-    }
-
-    const effectText = special.gmIntrusion
-      ? game.i18n.localize("CYPHER.Roll.GMIntrusionFree")
-      : special.effect === "minor"
-        ? game.i18n.localize("CYPHER.Roll.MinorEffect")
-        : special.effect === "major"
-          ? game.i18n.localize("CYPHER.Roll.MajorEffect")
-          : "";
-    const refund = special.refundsCost;
-
-    // A natural 20 refunds the action's point cost.
-    if (refund && totalCost > 0) {
-      await actor.update({ [`${resolved.path}.pool.value`]: Math.min(poolMax, poolValue) });
-    }
-
-    const totalDamage = isAttack
-      ? resolveAttackDamage(success, baseDamage, damageBonus)
-      : 0;
-
-    // A successful Block can transfer the whole wound to an equipped, unbroken shield
-    // instead of reducing it by one step on the character.
-    const shieldItem = shieldItemId ? actor.items.get(shieldItemId) : null;
-    const usingShield = defenseType === "block" && shieldItem?.type === "shield" && !shieldItem.system.broken;
-
-    // Descriptive text for the defense result, shown in the message.
-    let defenseNote = "";
-    if (defenseType) {
-      if (success) {
-        if (defenseType === "block" && usingShield) {
-          defenseNote = `<p class="cypher-defense-note">${game.i18n.format("CYPHER.Shield.Absorbed", { name: shieldItem.name, severity: game.i18n.localize(`CYPHER.Wound.${incomingSeverity}`) })}</p>`;
-        } else if (defenseType === "block") {
-          defenseNote = `<p class="cypher-defense-note">${game.i18n.format("CYPHER.Defense.BlockSuccess", { severity: game.i18n.localize(`CYPHER.Wound.${incomingSeverity}`) })}</p>`;
-        } else {
-          defenseNote = `<p class="cypher-defense-note">${game.i18n.localize("CYPHER.Defense.DodgeSuccess")}</p>`;
-        }
-      } else if (applyIncomingWound) {
-        defenseNote = `<p class="cypher-defense-note failure">${game.i18n.format("CYPHER.Defense.Failed", { severity: game.i18n.localize(`CYPHER.Wound.${incomingSeverity}`) })}</p>`;
-      }
-    }
-
-    const actionTimingKey = {
-      firstAction: "CYPHER.Ability.ActionFirst",
-      action: "CYPHER.Ability.ActionStandard",
-      lastAction: "CYPHER.Ability.ActionLast"
-    }[weaponSource.actionTiming];
-    const weaponTimingNote = isAttack && actionTimingKey
-      ? `<p class="cypher-weapon-timing">${game.i18n.localize("CYPHER.Ability.Action")}: ${game.i18n.localize(actionTimingKey)}</p>`
-      : "";
-
-    const messageFlavor = `
-      <div class="cypher-roll-card">
-        <h3>${flavor || game.i18n.localize("CYPHER.Roll.Task")}</h3>
-        ${abilitySource ? `<p class="cypher-weapon-ability">${foundry.utils.escapeHTML(abilitySource.name)}${targetActor ? ` — ${foundry.utils.escapeHTML(targetActor.name)}` : ""}</p>` : ""}
-        ${weaponTimingNote}
-        <p>${statLabel} —
-           ${game.i18n.localize("CYPHER.Roll.Difficulty")} ${difficulty}
-           (${game.i18n.localize("CYPHER.Roll.Effective")}: ${effectiveDifficulty}) —
-           ${game.i18n.localize("CYPHER.Roll.Target")}: ${effectiveDifficulty <= 0 ? game.i18n.localize("CYPHER.Roll.Routine") : targetNumber}</p>
-        ${effortLevels ? `<p>${game.i18n.localize("CYPHER.Roll.EffortSpent")}: ${effortLevels} (${totalCost} ${game.i18n.localize("CYPHER.Roll.PoolPoints")})</p>` : ""}
-        ${woundHinder ? `<p class="cypher-hindered">${game.i18n.format("CYPHER.Roll.WoundHinder", { steps: woundHinder })}</p>` : ""}
-        ${extraHinderSteps ? `<p class="cypher-hindered">${game.i18n.format("CYPHER.Roll.ExtraHinder", { steps: extraHinderSteps })}</p>` : ""}
-        ${weaponRangeAdjudication?.atExtremeRange ? `<p class="cypher-hindered">${game.i18n.localize("CYPHER.Roll.ExtremeRangeHinder")}</p>` : ""}
-        ${armorModifier ? `<p class="cypher-armor-mod">${game.i18n.format("CYPHER.Roll.ArmorModifier", { steps: armorModifier })}</p>` : ""}
-        ${autoArmorSpeedHinder ? `<p class="cypher-hindered">${game.i18n.format("CYPHER.Roll.ArmorSpeedHinder", { steps: autoArmorSpeedHinder })}</p>` : ""}
-        <p class="cypher-result ${success ? "success" : "failure"}">
-          ${success ? game.i18n.localize("CYPHER.Roll.Success") : game.i18n.localize("CYPHER.Roll.Failure")}
-          ${isAttack && damageBonus ? ` — +${damageBonus} ${game.i18n.localize("CYPHER.Damage")} (${totalDamage} ${game.i18n.localize("CYPHER.Roll.TotalDamage")})` : ""}
-          ${effectText ? ` — ${effectText}` : ""}
-        </p>
-        ${refund && totalCost > 0 ? `<p class="cypher-refund">${game.i18n.localize("CYPHER.Roll.CostRefunded")}</p>` : ""}
-        ${defenseNote}
-      </div>`;
-
-    // Flags are structured metadata for rerolls and tests; the localized HTML
-    // is presentation. Chat is published before target-side writes below.
-    await roll.toMessage({
-      speaker: ChatMessage.getSpeaker({ actor: actor }),
-      flavor: messageFlavor,
-      flags: {
-        "cypher": {
-          rerollable: true,
-          rollType: "task",
-          abilitySource,
-          actorId: actor.id,
-          d20,
-          targetNumber,
-          effectiveDifficulty,
-          isAttack,
-          baseDamage,
-          weaponTargetEffects,
-          weaponRangeAdjudication,
-          weaponSource,
-          targetActorId: targetActor?.type === "npc" ? targetActor.id : null,
-          armorBypass
-        }
-      }
-    });
-
-    // Apply target-side consequences only after a successful attack.
-    let targetDamage = 0;
-    if (isAttack && success && targetActor?.type === "npc") {
-      if (totalDamage > 0) {
-        targetDamage = await applyNpcDamage(targetActor, totalDamage, {
-          armorBypass
-        });
-      }
-      await applyWeaponTargetEffects(
-        targetActor,
-        weaponTargetEffects,
-        weaponSource
-      );
-    }
-
-    // Resolve the wound based on the defense result.
-    if (defenseType) {
-      if (success) {
-        if (applyIncomingWound && defenseType === "block") {
-          for (let index = 0; index < incomingWounds; index += 1) {
-            if (usingShield) {
-              await shieldAbsorbWound(actor, shieldItem, incomingSeverity);
-            } else {
-              const reduced = reduceWound(incomingSeverity);
-              if (reduced) await addWound(actor, reduced);
-            }
-          }
-        }
-        // A successful Dodge avoids the wound entirely.
-      } else if (applyIncomingWound) {
-        for (let index = 0; index < incomingWounds; index += 1) {
-          await addWound(actor, incomingSeverity);
-        }
-      }
-    }
-
-    return {
-      roll,
-      success,
-      targetNumber,
-      effectiveDifficulty,
-      damage: totalDamage,
-      targetDamage,
-      weaponTargetEffects,
-      specialEffectOptions: special.effectOptions
-    };
   }
+
+  const roll = await new Roll("1d20").evaluate();
+  const d20 = roll.total;
+  const { success, special, damageBonus, selectedEffect, totalDamage } = resolveTaskOutcome({
+    d20, effectiveDifficulty, isAttack, baseDamage, specialEffectChoice
+  });
+  const effectText = special.gmIntrusion
+    ? game.i18n.localize("CYPHER.Roll.GMIntrusionFree")
+    : selectedEffect === "minor"
+      ? game.i18n.localize("CYPHER.Roll.MinorEffect")
+      : selectedEffect === "major"
+        ? game.i18n.localize("CYPHER.Roll.MajorEffect")
+        : "";
+  const refund = special.refundsCost;
+
+  // A natural 20 refunds the action's point cost.
+  if (refund && totalCost > 0) {
+    await actor.update({ [`${resolved.path}.pool.value`]: Math.min(poolMax, poolValue) });
+  }
+
+  // A successful Block can transfer the whole wound to an equipped, unbroken shield
+  // instead of reducing it by one step on the character.
+  const shieldItem = shieldItemId ? actor.items.get(shieldItemId) : null;
+  const usingShield = defenseType === "block" && shieldItem?.type === "shield" && !shieldItem.system.broken;
+
+  const messageFlavor = buildTaskMessage({
+    applyIncomingWound, statLabel, defenseType, success, usingShield, shieldItem, incomingSeverity,
+    weaponSource, isAttack, flavor, abilitySource, targetActor, difficulty, effectiveDifficulty,
+    targetNumber, effortLevels, totalCost, woundHinder, extraHinderSteps, weaponRangeAdjudication,
+    armorModifier, autoArmorSpeedHinder, damageBonus, totalDamage, effectText, refund
+  });
+
+  const targetDamage = await applyTaskConsequences(actor, { isAttack, success, targetActor,
+    totalDamage, armorBypass, weaponTargetEffects, weaponSource, defenseType,
+    applyIncomingWound, incomingWounds, usingShield, shieldItem, incomingSeverity });
+
+  // Flags are structured metadata for rerolls and tests; the localized HTML
+  // is presentation. Publish only after target-side writes have succeeded.
+  await roll.toMessage({
+    speaker: ChatMessage.getSpeaker({ actor: actor }),
+    flavor: messageFlavor,
+    flags: {
+      "cypher": {
+        rerollable: true,
+        rollType: "task",
+        abilitySource,
+        actorId: actor.id,
+        stat,
+        effortCost: totalCost,
+        costRefunded: refund,
+        d20,
+        targetNumber,
+        effectiveDifficulty,
+        isAttack,
+        baseDamage,
+        specialEffectChoice,
+        weaponTargetEffects,
+        weaponRangeAdjudication,
+        weaponSource,
+        targetActorId: targetActor?.type === "npc" ? targetActor.id : null,
+        armorBypass
+      }
+    }
+  });
+
+  return {
+    roll,
+    success,
+    targetNumber,
+    effectiveDifficulty,
+    damage: totalDamage,
+    targetDamage,
+    weaponTargetEffects,
+    specialEffectOptions: special.effectOptions
+  };
+}
 
 

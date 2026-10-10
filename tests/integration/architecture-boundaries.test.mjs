@@ -9,6 +9,14 @@ import {
   extractModuleSpecifiers
 } from "../../scripts/audit-architecture-dependencies.mjs";
 
+test("dependency extraction includes re-exports and ignores import text in comments and strings", () => {
+  const source = `// import ignored from "../documents/fake.mjs";
+    export { actor } from "../documents/actor.mjs";
+    const text = "import fake from '../documents/text.mjs'";
+    const lazy = () => import("../rules/tasks.mjs");`;
+  assert.deepEqual(extractModuleSpecifiers(source), ["../documents/actor.mjs", "../rules/tasks.mjs"]);
+});
+
 const MODULE_ROOT = path.resolve(import.meta.dirname, "../../module");
 
 test("architectural imports respect layer direction", async () => {

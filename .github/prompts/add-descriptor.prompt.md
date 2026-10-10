@@ -11,8 +11,9 @@ Follow [the compendium workflow](../skills/foundry-compendium-workflow/SKILL.md)
 
 If the Descriptor identity, authoritative mechanic, or French localization cannot be located, ask one concise blocking question. Otherwise proceed end to end:
 
-1. Use the CRD for Pool and skill mechanics and matching French references for
-   localization. Follow the source-fidelity policy in `docs/crd-source-schema.md`
+1. Use the supplied CRD as the sole authority for all content and mechanics.
+   Record its version and section; French wording must faithfully render it.
+   Follow the source-fidelity policy in `docs/crd-source-schema.md`
    and the compendium workflow; do not invent missing prose or translations.
 2. Inspect `module/data-models/item-descriptor.mjs`, the focused compendium tests, and the closest existing bilingual Descriptor pair.
 3. Create matching filenames under `packs/descriptors-en/_source/` and `packs/descriptors-fr/_source/`. Use unique 16-character document IDs with matching `_key` values.

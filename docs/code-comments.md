@@ -13,7 +13,9 @@ Use [architecture.md](architecture.md) for the layer map, then follow one action
 2. `templates/actor/parts/main.hbs` declares controls and `data-action` names.
 3. `module/sheets/actor-pc-sheet.mjs` collects input and handles cancellation.
 4. `module/documents/actor.mjs` keeps public Actor methods used by sheets/macros.
-5. `module/applications/task-service.mjs` coordinates costs, dice, chat, and writes.
+5. `module/applications/task-service.mjs` coordinates preparation, costs, dice,
+   consequence writes, and chat; its extracted helpers are mapped in
+   [runtime-refactor.md](runtime-refactor.md).
 6. `module/rules/tasks.mjs` calculates cost and difficulty without Foundry.
 7. `tests/applications/task-service.test.mjs` shows fixed inputs and outcomes;
    `tests/e2e/foundry-gameplay.spec.mjs` exercises the real Foundry interaction.

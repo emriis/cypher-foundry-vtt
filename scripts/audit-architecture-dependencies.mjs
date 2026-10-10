@@ -7,6 +7,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
+import ts from "typescript";
 
 const MODULE_ROOT = path.resolve(import.meta.dirname, "../module");
 const SCRIPTS_ROOT = import.meta.dirname;
@@ -75,25 +76,27 @@ function getImportedLayer(filePath, specifier, moduleRoot) {
 }
 
 /**
- * Extract static and string-literal dynamic import paths from source text.
- * This lightweight scan is not a JavaScript parser: computed import paths and
- * re-exports are outside its checks. Lint and syntax checks remain separate.
+ * Extract imports, re-exports, and literal dynamic imports from parsed source.
+ * Parsing excludes comments and strings that merely mention an import.
+ * Computed import paths remain outside this audit; syntax checks are separate.
  * @param {string} source Module source text.
- * @returns {string[]} Import specifiers in pattern traversal order.
+ * @returns {string[]} Module specifiers in source order.
  */
 export function extractModuleSpecifiers(source) {
   const specifiers = [];
-  const patterns = [
-    /\bimport\s+(?:[\s\S]*?\s+from\s+)?["']([^"']+)["']/g,
-    /\bimport\s*\(\s*["']([^"']+)["']\s*\)/g
-  ];
-
-  for (const pattern of patterns) {
-    for (const match of source.matchAll(pattern)) {
-      specifiers.push(match[1]);
+  const parsed = ts.createSourceFile("audit.mjs", source, ts.ScriptTarget.Latest, true, ts.ScriptKind.JS);
+  function visit(node) {
+    if (ts.isImportDeclaration(node) || ts.isExportDeclaration(node)) {
+      if (node.moduleSpecifier && ts.isStringLiteral(node.moduleSpecifier)) {
+        specifiers.push(node.moduleSpecifier.text);
+      }
+    } else if (ts.isCallExpression(node) && node.expression.kind === ts.SyntaxKind.ImportKeyword) {
+      const argument = node.arguments[0];
+      if (argument && ts.isStringLiteral(argument)) specifiers.push(argument.text);
     }
+    ts.forEachChild(node, visit);
   }
-
+  visit(parsed);
   return specifiers;
 }
 

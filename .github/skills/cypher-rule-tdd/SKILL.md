@@ -12,8 +12,10 @@ when the rule or terminology depends on one.
 
 ## Workflow
 
-1. Identify the intended rule and the authoritative source available in the
-   repository. Preserve the system's wound-based model and existing terminology.
+1. Identify the intended rule and its section in the supplied CRD, the sole
+   authority for rules and compendium content. Record the CRD version. Existing
+   code/tests and other books cannot establish alternative mechanics.
+   Preserve the system's wound-based model and existing terminology.
    If the rule is ambiguous, ask before choosing between materially different
    mechanics.
 2. Identify the owning layer: deterministic rules in `module/rules/`, Foundry
