@@ -65,10 +65,11 @@ present in an Item, copied to a chat flag, or shown in descriptive text.
 2. Primary/alternate configuration switching and category-derived attack timing
    are implemented for CRD-defined categories. The system records the one-action
    switch cost and presents attack timing but does not enforce turn order.
-3. Continue with rapid-fire ability prerequisites and tripod/operator
-   requirements only when the necessary runtime state and CRD contracts are
-   available. Two-handed occupancy and material cutting remain blocked on
-   equipment/object models.
+3. Rapid-fire ability prerequisites are now structured and resolved for Spray
+   and Arc Spray; actual ability execution and resource consumption remain open.
+   Tripod/operator requirements still need reliable equipment setup and
+   participation state. Two-handed occupancy and material cutting remain blocked
+   on equipment/object models.
 
 The core PC-to-NPC numeric damage contract and physical Armor bypass are already
 implemented and verified. NPC-to-PC wound/Pool attacks are also handled through
