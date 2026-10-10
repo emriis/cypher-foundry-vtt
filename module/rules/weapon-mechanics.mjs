@@ -65,7 +65,8 @@ export function resolveWeaponRangeAdjudication({
  *
  * @param {object} system Attack Item system data.
  * @returns {{configuration: string, attackType: string|null,
- *   baseDamage: number|null, switchAction: string|null}}
+ *   baseDamage: number|null, actionTiming: string|null,
+ *   switchAction: string|null}}
  */
 export function resolveWeaponConfiguration(system = {}) {
   const mechanics = system.mechanics ?? {};
@@ -76,12 +77,18 @@ export function resolveWeaponConfiguration(system = {}) {
   const attackType = isAlternate ? alternate.attackType : system.attackType;
   const explicitDamage = Number.isFinite(system.damage) ? system.damage : null;
   const categoryDamage = { light: 2, medium: 4, heavy: 6 }[attackType] ?? null;
+  const actionTiming = {
+    light: "firstAction",
+    medium: "action",
+    heavy: "lastAction"
+  }[attackType] ?? null;
   return {
     configuration: isAlternate ? "alternate" : "primary",
     attackType: attackType || null,
     baseDamage: isAlternate
       ? categoryDamage
       : (explicitDamage || categoryDamage || 2),
+    actionTiming,
     switchAction: isAlternate ? "action"
       : (alternate.enabled ? alternate.action || "action" : null)
   };

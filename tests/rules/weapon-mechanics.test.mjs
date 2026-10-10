@@ -109,6 +109,7 @@ test("weapon configuration defaults to primary and preserves its explicit damage
     configuration: "primary",
     attackType: "heavy",
     baseDamage: 7,
+    actionTiming: "lastAction",
     switchAction: "action"
   });
 });
@@ -125,6 +126,7 @@ test("alternate weapon configuration uses its category and category damage", () 
     configuration: "alternate",
     attackType: "medium",
     baseDamage: 4,
+    actionTiming: "action",
     switchAction: "action"
   });
 });
@@ -138,4 +140,22 @@ test("invalid or disabled alternate configuration cannot override the primary we
     attackType: "heavy", damage: 6,
     mechanics: { activeConfiguration: "alternate", alternateConfiguration: { enabled: true, attackType: "invalid" } }
   }).attackType, "heavy");
+});
+
+
+test("weapon category resolves the CRD action timing independently of hand use", () => {
+  assert.equal(resolveWeaponConfiguration({
+    attackType: "light", damage: 2
+  }).actionTiming, "firstAction");
+  assert.equal(resolveWeaponConfiguration({
+    attackType: "medium", damage: 4,
+    mechanics: { twoHanded: true }
+  }).actionTiming, "action");
+  assert.equal(resolveWeaponConfiguration({
+    attackType: "heavy", damage: 6,
+    mechanics: { twoHanded: false }
+  }).actionTiming, "lastAction");
+  assert.equal(resolveWeaponConfiguration({
+    attackType: null, damage: 0
+  }).actionTiming, null);
 });

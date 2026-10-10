@@ -455,7 +455,11 @@ test.describe("Cypher Foundry live gameplay", () => {
 
     expect(result.activeConfiguration).toBe("alternate");
     expect(result.baseDamage).toBe(4);
-    expect(result.weaponSource).toMatchObject({ configuration: "alternate", attackType: "medium" });
+    expect(result.weaponSource).toMatchObject({
+      configuration: "alternate",
+      attackType: "medium",
+      actionTiming: "action"
+    });
     await page.evaluate(id => game.actors.get(id)?.sheet.close(), actorId);
   });
 
@@ -922,7 +926,20 @@ test.describe("Cypher Foundry live gameplay", () => {
           );
         }
 
-        await attack.rollAttack({ difficulty: 0, target: npc });
+        // Keep the E2E assertion focused on base damage and Armor bypass.
+        // Natural 17–20 rolls can add CRD special damage and make Health
+        // depend on randomness unrelated to the behavior under test.
+        const originalEvaluate = Roll.prototype.evaluate;
+        try {
+          Roll.prototype.evaluate = async function (...args) {
+            await originalEvaluate.apply(this, args);
+            this.total = 10;
+            return this;
+          };
+          await attack.rollAttack({ difficulty: 0, target: npc });
+        } finally {
+          Roll.prototype.evaluate = originalEvaluate;
+        }
 
         await new Promise(resolve => setTimeout(resolve, 100));
 

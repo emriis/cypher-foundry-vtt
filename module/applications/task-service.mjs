@@ -244,9 +244,19 @@ export async function rollTask(actor, {
       }
     }
 
+    const actionTimingKey = {
+      firstAction: "CYPHER.Ability.ActionFirst",
+      action: "CYPHER.Ability.ActionStandard",
+      lastAction: "CYPHER.Ability.ActionLast"
+    }[weaponSource.actionTiming];
+    const weaponTimingNote = isAttack && actionTimingKey
+      ? `<p class="cypher-weapon-timing">${game.i18n.localize("CYPHER.Ability.Action")}: ${game.i18n.localize(actionTimingKey)}</p>`
+      : "";
+
     const messageFlavor = `
       <div class="cypher-roll-card">
         <h3>${flavor || game.i18n.localize("CYPHER.Roll.Task")}</h3>
+        ${weaponTimingNote}
         <p>${statLabel} —
            ${game.i18n.localize("CYPHER.Roll.Difficulty")} ${difficulty}
            (${game.i18n.localize("CYPHER.Roll.Effective")}: ${effectiveDifficulty}) —

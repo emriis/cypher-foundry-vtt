@@ -30,11 +30,13 @@ The category also determines the default price category, but price is an equipme
 Current implementation:
 - base damage: implemented;
 - light attack easing: implemented;
-- heavy two-handed source flag: implemented;
-- light First-action timing: not yet represented as structured attack timing;
-- heavy Last-action timing: not yet represented as structured attack timing.
+- heavy two-handed source flag: implemented independently from timing;
+- light First-action timing: resolved from the active weapon category and recorded in attack results;
+- medium Action timing: resolved from the active weapon category and recorded in attack results;
+- heavy Last-action timing: resolved from the active weapon category and recorded in attack results.
+- timing is presented on the roll card but is not enforced by a turn/action-economy system, which is not currently implemented.
 
-The action-order information must not be inferred from twoHanded: the CRD explicitly gives timing semantics to the weapon category.
+Action timing is derived from the active CRD weapon category, including an enabled alternate configuration. It is independent of twoHanded: a medium weapon can require two hands without becoming a Last action, and the system must not infer timing from hand use.
 
 ### Weapon familiarity
 
