@@ -33,7 +33,7 @@ present in an Item, copied to a chat flag, or shown in descriptive text.
 | `properties` | Preserves CRD weapon-note text for display and fidelity. The runtime does not parse arbitrary prose. | Descriptive-only | Keep this source-facing text; automate only mechanics backed by structured fields and explicit rules. |
 | `mechanics.twoHanded` | Preserved in the Item model; does not track occupied hands. | Stored only / model gap | Needs an explicit equipment-hand model before enforcing two-handed use. 
 | `mechanics.hinderedWhenUsedOneHanded` | CRD-explicit flag on affected weapons; the PC attack dialog exposes a one-handed choice and adds one hindrance step when selected. | Runtime | E2E covers unmarked weapons, the marked option left off, and the selected one-handed hindrance. |
-| `mechanics.rapidFire` | Preserved in the Item model. No distinct rapid-fire action or resolution path consumes it. | Stored only / rule gap | Identify the exact CRD rule and expected player workflow before implementing. Do not infer extra attacks or damage. |
+| `mechanics.rapidFire` | Ability prerequisite resolver consumes the flag for abilities whose structured CRD prerequisites require rapid fire. It does not itself add attacks or damage. | Prerequisite runtime | Spray also permits multiple thrown weapons carried by the character or within reach; that alternative is represented as contextual availability, not inferred from weapon names. Actual Spray/Arc Spray attack execution and resource consumption remain separate work. |
 | `mechanics.ignoresPhysicalArmor` | Numeric Armor bypass is passed from the weapon to the attack resolver and applied once against selected NPC Armor. | Runtime | Source-specific exceptions still require explicit modelling. |
 | `mechanics.cutsThroughMaterialsLevel` | Preserved in the Item model. | Stored only / model gap | Requires an interactable material/object model with levels and a CRD-backed resolution contract. |
 | `mechanics.targetEffects` | Filters effects by target level, persists them to targeted NPCs on a successful attack, and consumes supported `hindered` / `loseNextAction` effects according to duration. | Runtime | Extend only when additional CRD effect semantics are structured. |
@@ -65,10 +65,11 @@ present in an Item, copied to a chat flag, or shown in descriptive text.
 2. Primary/alternate configuration switching and category-derived attack timing
    are implemented for CRD-defined categories. The system records the one-action
    switch cost and presents attack timing but does not enforce turn order.
-3. Continue with rapid-fire ability prerequisites and tripod/operator
-   requirements only when the necessary runtime state and CRD contracts are
-   available. Two-handed occupancy and material cutting remain blocked on
-   equipment/object models.
+3. Rapid-fire ability prerequisites are now structured and resolved for Spray
+   and Arc Spray; actual ability execution and resource consumption remain open.
+   Tripod/operator requirements still need reliable equipment setup and
+   participation state. Two-handed occupancy and material cutting remain blocked
+   on equipment/object models.
 
 The core PC-to-NPC numeric damage contract and physical Armor bypass are already
 implemented and verified. NPC-to-PC wound/Pool attacks are also handled through

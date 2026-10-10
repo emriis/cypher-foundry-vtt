@@ -41,6 +41,7 @@ test("does not invent a Foundry model for unsupported CRD content", () => {
 test("keeps high-value CRD mechanics in structured fields", () => {
   assert.ok(CRD_MECHANICAL_FIELDS.ability.includes("cost"));
   assert.ok(CRD_MECHANICAL_FIELDS.ability.includes("effects"));
+  assert.ok(CRD_MECHANICAL_FIELDS.ability.includes("weaponPrerequisites"));
   assert.ok(CRD_MECHANICAL_FIELDS.type.includes("abilityTiers"));
   assert.ok(CRD_MECHANICAL_FIELDS.weapon.includes("range"));
   assert.ok(CRD_MECHANICAL_FIELDS.weapon.includes("properties"));

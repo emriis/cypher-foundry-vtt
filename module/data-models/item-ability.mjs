@@ -48,6 +48,17 @@ export default class CypherAbilityData extends foundry.abstract.TypeDataModel {
         choices: ["action", "firstAction", "lastAction"]
       }),
 
+      // Requirements are grouped by alternativeGroup: all groups must match,
+      // while any requirement within the same group may satisfy that group.
+      weaponPrerequisites: new ArrayField(new SchemaField({
+        kind: new StringField({
+          required: true,
+          choices: ["rapidFire", "thrownWeaponsInReach", "weaponCategory", "weaponFamily"]
+        }),
+        alternativeGroup: new StringField({ required: true, blank: false }),
+        value: new StringField({ required: true, initial: "", blank: true })
+      }), { required: true, initial: [] }),
+
       freeWeaponCategories: new ArrayField(
         new StringField({ required: true }),
         { required: true, initial: [] }

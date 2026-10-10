@@ -1551,7 +1551,19 @@
         "grantedArmorItemCategory": "",
         "effects": [],
         "rollTables": [],
-        "description": "<p>If a weapon has the ability to fire rapid shots without reloading (usually called a rapid-fire weapon, such as a crank crossbow or submachine gun), you can spray multiple shots around your target to increase the chance of hitting, gaining an asset to the attack. This ability uses 1d6 + 1 attacks’ worth of ammunition or power (or all of the weapon’s stores, if it has less ammo or power than the number rolled). If the attack is successful, it deals 1 less damage than normal. You can also use this ability on multiple thrown weapons (such as stones, shuriken, daggers, and so on) if you’re carrying them on your person or they are all within reach. Action. High-Tier Science Fiction Abilities</p>"
+        "description": "<p>If a weapon has the ability to fire rapid shots without reloading (usually called a rapid-fire weapon, such as a crank crossbow or submachine gun), you can spray multiple shots around your target to increase the chance of hitting, gaining an asset to the attack. This ability uses 1d6 + 1 attacks’ worth of ammunition or power (or all of the weapon’s stores, if it has less ammo or power than the number rolled). If the attack is successful, it deals 1 less damage than normal. You can also use this ability on multiple thrown weapons (such as stones, shuriken, daggers, and so on) if you’re carrying them on your person or they are all within reach. Action. High-Tier Science Fiction Abilities</p>",
+        "weaponPrerequisites": [
+          {
+            "kind": "rapidFire",
+            "alternativeGroup": "weapon-use",
+            "value": ""
+          },
+          {
+            "kind": "thrownWeaponsInReach",
+            "alternativeGroup": "weapon-use",
+            "value": ""
+          }
+        ]
       },
       "sources": [
         {
@@ -1598,7 +1610,14 @@
         "grantedArmorItemCategory": "",
         "effects": [],
         "rollTables": [],
-        "description": "<p>If a weapon has the ability to fire rapid shots without reloading (usually called a rapid-fire weapon, such as a crank crossbow or submachine gun), you can fire your weapon at three targets (all next to one another) at once. Make a separate hindered attack roll against each target. Action.</p>"
+        "description": "<p>If a weapon has the ability to fire rapid shots without reloading (usually called a rapid-fire weapon, such as a crank crossbow or submachine gun), you can fire your weapon at three targets (all next to one another) at once. Make a separate hindered attack roll against each target. Action.</p>",
+        "weaponPrerequisites": [
+          {
+            "kind": "rapidFire",
+            "alternativeGroup": "weapon-use",
+            "value": ""
+          }
+        ]
       },
       "sources": [
         {

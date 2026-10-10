@@ -71,3 +71,14 @@ test("ability effects can preserve tier-specific CRD improvements", () => {
   assert.equal(effect.fields.tier.options.min, 1);
   assert.equal(effect.fields.tier.options.max, 6);
 });
+
+
+test("ability model stores structured weapon prerequisite alternatives", () => {
+  const schema = Ability.defineSchema();
+  const prerequisite = schema.weaponPrerequisites.element;
+  assert.deepEqual(prerequisite.fields.kind.options.choices, [
+    "rapidFire", "thrownWeaponsInReach", "weaponCategory", "weaponFamily"
+  ]);
+  assert.ok(prerequisite.fields.alternativeGroup);
+  assert.ok(prerequisite.fields.value);
+});
