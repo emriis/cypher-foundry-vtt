@@ -21,6 +21,7 @@ const EXCLUDED = new Set([
  * @param {string} sourceRoot Repository root whose current files should be tested.
  * @returns {Promise<{workspace: string, root: string}>} Owned temp directory and checkout path.
  */
+/** Copy the working checkout, including uncommitted edits, without private data. */
 export async function createValidationWorkspace(sourceRoot) {
   const workspace = await mkdtemp(path.join(os.tmpdir(), PREFIX));
   await writeFile(path.join(workspace, MARKER), path.basename(workspace));
@@ -53,6 +54,7 @@ export async function createValidationWorkspace(sourceRoot) {
  * @param {string} workspace Owned temp directory, not its checkout subdirectory.
  * @returns {Promise<void>} Resolves after cleanup; rejects an unowned/missing marker.
  */
+/** Delete only a temporary directory created and marked by this helper. */
 export async function removeValidationWorkspace(workspace) {
   const resolved = path.resolve(workspace);
   const marker = await readFile(path.join(resolved, MARKER), "utf8").catch(error => {
