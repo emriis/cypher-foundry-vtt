@@ -8,7 +8,7 @@ import { getWeaponAbilityKind } from "../applications/weapon-ability-service.mjs
  * @returns {Promise<object|null>} Roll inputs, or null when dismissed.
  */
 export async function promptRollOptions(actor, {
-  difficulty = 3, isAttack = false, weapon = null, isWeaponAbility = false
+  difficulty = 3, isAttack = false, weapon = null, isWeaponAbility = false, fixedDifficulty = false
 } = {}) {
   const maxDifficulty = actor.system.maxDifficulty ?? 10;
   const maxEffort = actor.system.effort ?? 1;
@@ -19,7 +19,7 @@ export async function promptRollOptions(actor, {
   const content = `
     <div class="form-group" ${isWeaponAbility ? 'hidden' : ''}>
       <label>${game.i18n.localize("CYPHER.Roll.Difficulty")}</label>
-      <input type="number" name="difficulty" value="${difficulty}" min="0" max="${maxDifficulty}"/>
+      <input type="number" name="difficulty" value="${difficulty}" min="0" max="${maxDifficulty}" ${fixedDifficulty ? "readonly" : ""}/>
     </div>
     <div class="form-group">
       <label>${game.i18n.localize("CYPHER.Roll.LinkedSkill")}</label>

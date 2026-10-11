@@ -1,4 +1,7 @@
 import { promptRollOptions, promptWeaponAttackCategory, promptWeaponAbility } from "./dialogs.mjs";
+import { promptRecoveryOptions, promptRecoveryAllocation, promptTreatment, promptHealingHand } from "./healing-dialogs.mjs";
+import { getRecoverySources } from "../applications/recovery-service.mjs";
+import { getHealingAbilityKind, getHealingHandCost, treatWound, useHealingHand } from "../applications/healing-service.mjs";
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
 
@@ -49,6 +52,8 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       useWeaponAbility: CypherPCSheet.#onUseWeaponAbility,
       toggleAttackConfiguration: CypherPCSheet.#onToggleAttackConfiguration,
       rallyWound: CypherPCSheet.#onRallyWound,
+      treatWound: CypherPCSheet.#onTreatWound,
+      useHealingHand: CypherPCSheet.#onUseHealingHand,
       toggleSecondDescriptor: CypherPCSheet.#onToggleSecondDescriptor,
       toggleSecondFocus: CypherPCSheet.#onToggleSecondFocus,
       addCustomStat: CypherPCSheet.#onAddCustomStat,
@@ -102,11 +107,16 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     context.focusAbilityPendingTier =
       this.actor.getFlag("cypher", "focusAbilityPendingTier");
     context.config = CONFIG.CYPHER;
+    context.recoveryCards = CONFIG.CYPHER.recoveryIntervals.map(key => ({ key,
+      checked: Boolean(this.actor.system.recoveries[key]),
+      canRoll: getRecoverySources(this.actor, key).some(source => source.remaining > 0)
+    }));
     context.items = {
       skills: this.actor.items.filter(i => i.type === "skill"),
       abilities: this.actor.items.filter(i => i.type === "ability").map(item => ({
         id: item.id, name: item.name, system: item.system,
-        weaponAbilityKind: getWeaponAbilityKind(item)
+        weaponAbilityKind: getWeaponAbilityKind(item),
+        healingAbilityKind: getHealingAbilityKind(item), healingAbilityCost: getHealingHandCost(item)
       })),
       cyphers: this.actor.items.filter(i => i.type === "cypher"),
       artifacts: this.actor.items.filter(i => i.type === "artifact"),
@@ -159,7 +169,21 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
    */
   static async #onRollRecovery(event, target) {
     const interval = target.dataset.interval;
-    await this.actor.rollRecovery(interval);
+    const options = await promptRecoveryOptions(this.actor, interval);
+    if (options) await this.actor.rollRecovery(interval, { ...options, allocate: promptRecoveryAllocation });
+  }
+
+  /** Complete treatment only after explicit duration and task choices. */
+  static async #onTreatWound(event, target) {
+    const options = await promptTreatment(this.actor, target.dataset.severity);
+    if (options) await treatWound(this.actor, options);
+  }
+
+  /** Keep synthetic targets chosen by the dialog when invoking Healing Hand. */
+  static async #onUseHealingHand(event, target) {
+    const item = this.actor.items.get(target.closest("[data-item-id]")?.dataset.itemId);
+    const options = await promptHealingHand(this.actor);
+    if (options) await useHealingHand(item, options);
   }
 
   /**

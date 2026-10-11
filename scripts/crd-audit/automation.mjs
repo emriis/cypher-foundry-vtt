@@ -18,6 +18,12 @@ export function auditAutomation(document) {
   const implemented = [], gaps = [];
   switch (document.type) {
     case "ability":
+      if (system.key === "healing-hand") {
+        implemented.push("healing-service/PC sheet: confirmed target, PC wound reduction/NPC Health, capacity, Edge, escalation and recovery reset");
+      }
+      if (["untamed-recovery", "mind-surge", "machine-not-flesh"].includes(system.key)) {
+        implemented.push("recovery-service: source-bound daily extra action allowance, declared Pool/power restrictions");
+      }
       if (["spray", "arc-spray"].includes(system.key)) {
         implemented.push("weapon-ability-service: costs, attacks, target damage; Spray tracked uses");
       }

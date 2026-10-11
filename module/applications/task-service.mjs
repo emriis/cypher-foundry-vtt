@@ -99,8 +99,13 @@ async function executeTask(actor, {
   weaponRangeAdjudication = null, abilitySource = null, spentAbilityEdge = 0,
   defenseType = null, incomingSeverity = "minor", armorModifier = 0, shieldItemId = null,
   targetActor = null, armorBypass = 0, incomingWounds = 1,
-  applyIncomingWound = true
+  applyIncomingWound = true, woundRemovalSeverity = null
 } = {}) {
+  // Only reviewed treatment/rest services declare a wound removal. Validate
+  // its actual target before the task can spend Effort or roll dice.
+  if (woundRemovalSeverity && (targetActor?.type !== "pc" || targetActor.isOwner === false
+    || !["minor", "moderate", "major"].includes(woundRemovalSeverity)
+    || !(targetActor.system.wounds[woundRemovalSeverity].current > 0))) return null;
   const prepared = prepareTask(actor, { stat, difficulty, effortLevels, assetSteps, skillItemId,
     extraHinderSteps, extraEaseSteps, luckyShot, spentAbilityEdge, defenseType, armorModifier, targetActor });
   if (!prepared) return null;
@@ -148,9 +153,9 @@ async function executeTask(actor, {
     armorModifier, autoArmorSpeedHinder, damageBonus, totalDamage, effectText, refund
   });
 
-  const targetDamage = await applyTaskConsequences(actor, { isAttack, success, targetActor,
+  const { targetDamage, woundRemovalApplied } = await applyTaskConsequences(actor, { isAttack, success, targetActor,
     totalDamage, armorBypass, weaponTargetEffects, weaponSource, defenseType,
-    applyIncomingWound, incomingWounds, usingShield, shieldItem, incomingSeverity });
+    applyIncomingWound, incomingWounds, usingShield, shieldItem, incomingSeverity, woundRemovalSeverity });
 
   // Flags are structured metadata for rerolls and tests; the localized HTML
   // is presentation. Publish only after target-side writes have succeeded.
@@ -163,6 +168,9 @@ async function executeTask(actor, {
         rollType: "task",
         abilitySource,
         actorId: actor.id,
+        ...(woundRemovalSeverity ? { actorUuid: actor.uuid, woundRemoval: {
+          targetUuid: targetActor.uuid, severity: woundRemovalSeverity, applied: woundRemovalApplied
+        } } : {}),
         stat,
         effortCost: totalCost,
         costRefunded: refund,

@@ -108,6 +108,11 @@ coverage.
 
 ## Automation and accepted decisions
 
+The subsequent [recovery and healing implementation](recovery-and-healing.md)
+adds Healing Hand, independent source-backed recovery allowances, treatment and
+safe paid-reroll consequences. Its report records the related source contracts
+and validation; other Ability clauses in the inventory remain incomplete.
+
 | Family | Implemented consumers | Remaining work |
 | --- | --- | --- |
 | Abilities | Structured activation costs/effect selection, declared modifier aggregation, recovery expiration, inline tables, selected grants; playable Spray/Arc Spray | Most target effects, conditional/passive rules, additional costs, and Effort alternatives need individual contracts |

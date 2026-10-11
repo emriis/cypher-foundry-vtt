@@ -5,13 +5,21 @@ import { rerollMessage } from "../../module/applications/character-service.mjs";
 
 function scenario(flags, values = [10]) {
   const messages = [], formulas = [];
-  globalThis.game = { i18n: { localize: key => key, format: key => key } };
+  const storedMessages = new Map();
+  globalThis.game = { messages: storedMessages, i18n: { localize: key => key, format: key => key } };
+  function messageDocument(data) {
+    const message = { id: `message-${storedMessages.size}`, ...data,
+      getFlag(namespace, key) { return this.flags[namespace]?.[key]; },
+      async update(change) { this.flags.cypher = change["flags.cypher"]; } };
+    storedMessages.set(message.id, message);
+    return message;
+  }
   globalThis.ui = { notifications: { error() {}, warn() {} } };
   globalThis.ChatMessage = { getSpeaker: () => ({}) };
   globalThis.Roll = class {
     constructor(formula) { formulas.push(formula); }
     async evaluate() { this.total = values.shift(); return this; }
-    async toMessage(message) { messages.push(message); return message; }
+    async toMessage(data) { const message = messageDocument(data); messages.push(message); return message; }
   };
   const item = { system: { depleted: true }, async update(change) {
     this.system.depleted = change["system.depleted"];
@@ -20,9 +28,7 @@ function scenario(flags, values = [10]) {
     system: { xp: 5 }, async update(change) {
       if (change["system.xp"] !== undefined) this.system.xp = change["system.xp"];
     } };
-  const message = { flags: { cypher: { rerollable: true, ...flags } },
-    getFlag(namespace, key) { return this.flags[namespace]?.[key]; },
-    async update(change) { this.flags.cypher = change["flags.cypher"]; } };
+  const message = messageDocument({ flags: { cypher: { rerollable: true, ...flags } } });
   return { actor, item, message, messages, formulas };
 }
 
@@ -52,6 +58,71 @@ test("Given a recovery roll, when it is rerolled, then its original formula and 
   await rerollMessage(c.actor, c.message);
   assert.deepEqual(c.formulas, ["1d6 + 2"]);
   assert.equal(c.messages[0].flags.cypher.originalRoll, 6);
+});
+
+test("Given an applied recovery, then paid rerolls restore only the increase without replaying wound healing", async () => {
+  const c = scenario({ rollType: "recovery", recoveryApplied: true, rollFormula: "1d6 + 2", originalRoll: 4 }, [6, 5]);
+  c.actor.system.stats = { might: { pool: { value: 3, max: 10 }, edge: 0 } };
+  c.actor.system.wounds = { moderate: { current: 1 } };
+  const update = c.actor.update.bind(c.actor);
+  c.actor.update = async changes => {
+    await update(changes);
+    if (changes["system.stats.might.pool.value"] !== undefined) c.actor.system.stats.might.pool.value = changes["system.stats.might.pool.value"];
+  };
+  await rerollMessage(c.actor, c.message);
+  assert.equal(c.actor.system.stats.might.pool.value, 5);
+  await rerollMessage(c.actor, c.message);
+  assert.equal(c.actor.system.stats.might.pool.value, 5);
+  assert.equal(c.actor.system.wounds.moderate.current, 1);
+  assert.equal(c.actor.system.xp, 3);
+});
+
+test("Given a synthetic recovery source, then reroll points return to that token Actor", async () => {
+  const c = scenario({ rollType: "recovery", recoveryApplied: true, actorUuid: "Scene.test.Token.test.Actor.pc",
+    rollFormula: "1d6 + 2", originalRoll: 4 }, [6]);
+  const synthetic = { type: "pc", id: "pc", items: new Map(), system: { stats: { might: { pool: { value: 0, max: 10 } } } },
+    async update(changes) { this.system.stats.might.pool.value = changes["system.stats.might.pool.value"]; } };
+  globalThis.fromUuid = async () => synthetic;
+  await rerollMessage(c.actor, c.message);
+  assert.equal(synthetic.system.stats.might.pool.value, 2);
+});
+
+test("Given an older recovery reroll card, when the original already retained a higher value, then it grants no duplicate points", async () => {
+  const c = scenario({ rollType: "recovery", recoveryApplied: true, rollFormula: "1d6 + 2", originalRoll: 4 }, [5, 7, 6]);
+  c.actor.system.stats = { might: { pool: { value: 3, max: 10 } } };
+  const update = c.actor.update.bind(c.actor);
+  c.actor.update = async changes => {
+    await update(changes);
+    if (changes["system.stats.might.pool.value"] !== undefined) c.actor.system.stats.might.pool.value = changes["system.stats.might.pool.value"];
+  };
+  await rerollMessage(c.actor, c.message);
+  await rerollMessage(c.actor, c.message);
+  await rerollMessage(c.actor, c.messages[0]);
+  assert.equal(c.actor.system.stats.might.pool.value, 6);
+  assert.equal(c.messages[2].flags.cypher.originalRoll, 7);
+  assert.equal(c.actor.system.xp, 2);
+});
+
+test("Given an older failed healing reroll card, when another card already healed the wound, then another success cannot heal twice", async () => {
+  const c = scenario({ rollType: "task", d20: 4, effectiveDifficulty: 3, targetNumber: 9,
+    woundRemoval: { targetUuid: "Actor.target", severity: "minor", applied: false } }, [5, 12, 15]);
+  const target = { type: "pc", isOwner: true, system: { wounds: { minor: { current: 2 } } },
+    async update(changes) { this.system.wounds.minor.current = changes["system.wounds.minor.current"]; } };
+  globalThis.fromUuid = async () => target;
+  await rerollMessage(c.actor, c.message);
+  await rerollMessage(c.actor, c.message);
+  await rerollMessage(c.actor, c.messages[0]);
+  assert.equal(target.system.wounds.minor.current, 1);
+  assert.equal(c.messages[2].flags.cypher.woundRemoval.applied, true);
+});
+
+test("Given a reroll whose original chat card was deleted, then no further XP or consequence is spent", async () => {
+  const c = scenario({ rollType: "recovery", rollFormula: "1d6 + 2", originalRoll: 4 }, [5, 6]);
+  await rerollMessage(c.actor, c.message);
+  game.messages.delete(c.message.id);
+  assert.equal(await rerollMessage(c.actor, c.messages[0]), null);
+  assert.equal(c.actor.system.xp, 4);
+  assert.equal(c.messages.length, 1);
 });
 
 test("Given a paid task, when a reroll retains natural 20, then its original Pool cost is refunded only once", async () => {

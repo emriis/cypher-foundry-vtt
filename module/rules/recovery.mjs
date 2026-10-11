@@ -5,12 +5,13 @@ import { CYPHER } from "../config.mjs";
  *
  * @param {number} tier Character tier.
  * @param {number} bonus Recovery bonus.
+ * @param {object} [options={}] Last action adds the CRD's two-point bonus.
  * @returns {{formula: string, data: object}}
  */
-export function getRecoveryRollData(tier, bonus) {
+export function getRecoveryRollData(tier, bonus, { lastAction = false } = {}) {
   return {
     formula: "1d6 + @tier + @bonus",
-    data: { tier, bonus }
+    data: { tier, bonus: bonus + (lastAction ? 2 : 0) }
   };
 }
 
@@ -20,17 +21,19 @@ export function getRecoveryRollData(tier, bonus) {
  * @param {string} interval Recovery interval.
  * @param {object} wounds Current wound tracks.
  * @param {object} recoveries Recovery markers.
+ * @param {object} [options={}] Explicit wound choice and validated extra recovery.
  * @returns {{updates: object, woundNoteKey: string|null}}
  */
-export function computeRecoveryUpdates(interval, wounds, recoveries = {}) {
+export function computeRecoveryUpdates(interval, wounds, recoveries = {}, { woundChoice = "moderate", additional = false } = {}) {
   const updates = {};
   let woundNoteKey = null;
+  if (!CYPHER.recoveryIntervals.includes(interval) || (recoveries[interval] && !additional)) return { updates, woundNoteKey };
 
   if (interval === "tenMinutes") {
     updates["system.wounds.minor.current"] = 0;
     woundNoteKey = "CYPHER.Recovery.RemovesAllMinor";
   } else if (interval === "hour") {
-    if (wounds.moderate.current > 0) {
+    if (woundChoice !== "minor" && wounds.moderate.current > 0) {
       updates["system.wounds.moderate.current"] = wounds.moderate.current - 1;
       woundNoteKey = "CYPHER.Recovery.RemovesOneModerate";
     } else {
@@ -38,11 +41,17 @@ export function computeRecoveryUpdates(interval, wounds, recoveries = {}) {
       woundNoteKey = "CYPHER.Recovery.RemovesAllMinor";
     }
   } else if (interval === "tenHours") {
-    updates["system.wounds.moderate.current"] = 0;
-    woundNoteKey = "CYPHER.Recovery.RemovesAllModerateReminder";
+    // CRD Healing Wounds > Rest: exchange one moderate removal for all minor
+    // wounds. User adjudication also permits this with no moderate wound.
+    updates["system.wounds.moderate.current"] = woundChoice === "minor" ? Math.min(1, wounds.moderate.current) : 0;
+    if (woundChoice === "minor") updates["system.wounds.minor.current"] = 0;
+    woundNoteKey = woundChoice === "minor" ? "CYPHER.Recovery.RemovesMinorAndModerate" : "CYPHER.Recovery.RemovesAllModerate";
   }
 
-  if (!recoveries[interval]) {
+  if (interval === "tenHours") {
+    // Completion starts a new day; availability is independent of use order.
+    for (const key of CYPHER.recoveryIntervals) updates[`system.recoveries.${key}`] = false;
+  } else if (!additional) {
     updates[`system.recoveries.${interval}`] = true;
   }
 
@@ -79,7 +88,7 @@ export function computeRallyResult(
   canRallyMajor = false
 ) {
   const cost = getRallyCost(severity, canRallyMajor);
-  if (cost === null || might < cost || wounds[severity].current <= 0) {
+  if (cost === null || !Number.isFinite(might) || might < cost || !(wounds[severity]?.current > 0)) {
     return null;
   }
 

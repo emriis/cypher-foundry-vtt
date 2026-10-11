@@ -9,6 +9,8 @@
  * This file is the wiring layer that tells Foundry which implementation to use.
  */
 import { CYPHER } from "./module/config.mjs";
+import { promptRecoveryAllocation } from "./module/sheets/healing-dialogs.mjs";
+import { resolveDocumentReference } from "./module/applications/reference-resolver.mjs";
 
 import * as documents from "./module/documents/_module.mjs";
 import * as models from "./module/data-models/_module.mjs";
@@ -154,11 +156,13 @@ Hooks.on("updateItem", async (item, changes, options, userId) => {
 /**
  * Adds a one-click XP reroll action to eligible task roll messages owned by the actor.
  */
-Hooks.on("renderChatMessageHTML", (message, html) => {
+Hooks.on("renderChatMessageHTML", async (message, html) => {
   const rerollable = message.getFlag("cypher", "rerollable");
   if (!rerollable) return;
 
-  const actor = game.actors.get(message.getFlag("cypher", "actorId"));
+  const actorUuid = message.getFlag("cypher", "actorUuid");
+  const actor = actorUuid ? await resolveDocumentReference(actorUuid, "pc")
+    : game.actors.get(message.getFlag("cypher", "actorId"));
   if (!actor?.isOwner) return;
 
   const button = document.createElement("button");
@@ -169,7 +173,7 @@ Hooks.on("renderChatMessageHTML", (message, html) => {
     event.preventDefault();
     button.disabled = true;
     try {
-      await actor.rerollMessage(message);
+      await actor.rerollMessage(message, { allocateRecovery: promptRecoveryAllocation });
     } finally {
       // A rejected request or failed write must not leave the UI permanently blocked.
       button.disabled = false;

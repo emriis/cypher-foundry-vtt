@@ -23,7 +23,7 @@ describe("Given a character takes a recovery interval", () => {
     assert.equal(result.updates["system.wounds.minor.current"], undefined);
   });
 
-  test("when the hourly recovery has already been recorded, then it is not recorded again", () => {
+  test("when the hourly recovery has already been used, then it cannot heal again", () => {
     const result = computeRecoveryUpdates(
       "hour",
       {
@@ -35,6 +35,7 @@ describe("Given a character takes a recovery interval", () => {
     );
 
     assert.equal(result.updates["system.recoveries.hour"], undefined);
+    assert.equal(result.updates["system.wounds.minor.current"], undefined);
   });
 });
 

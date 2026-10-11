@@ -706,7 +706,9 @@ test.describe("Cypher Foundry live gameplay", () => {
     await page.evaluate(async id => {
       const actor = game.actors.get(id);
       await actor.update({
+        "system.xp": 3,
         "system.stats.might.pool.value": 0,
+        "system.stats.speed.pool.value": 5,
         "system.wounds.moderate.current": 1,
         "system.recoveries.hour": false
       });
@@ -717,6 +719,15 @@ test.describe("Cypher Foundry live gameplay", () => {
       '[data-action="rollRecovery"][data-interval="hour"]'
     ).click();
 
+    await page.locator('input[name="completed"]').check();
+    await page.locator('.dialog button[data-action="ok"]').click();
+    await expect(page.locator('input[name="might"]')).toBeVisible();
+    // The shared fixture fixes d6 = 3; tier one gives four points to divide.
+    await page.locator('input[name="might"]').fill("2");
+    await page.locator('input[name="speed"]').fill("2");
+    await page.locator('.dialog:has(input[name="might"]) button[data-action="ok"]').focus();
+    await page.locator('.dialog:has(input[name="might"]) button[data-action="ok"]').press("Enter");
+
     await waitForChatMessage(page, actorId);
 
     await page.waitForFunction(id => {
@@ -726,6 +737,100 @@ test.describe("Cypher Foundry live gameplay", () => {
     const actor = await readActor(page, actorId);
     expect(actor.recoveries.hour).toBe(true);
     expect(actor.wounds.moderate).toBe(0);
+    expect(actor.might).toBe(2);
+    expect(actor.speed).toBe(7);
+    await expect(page.locator('[data-action="rollRecovery"][data-interval="hour"]')).toBeDisabled();
+    const rejected = await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      await actor.update({ "system.wounds.moderate.current": 1 });
+      return { rejected: (await actor.rollRecovery("hour")) === null, wounds: actor.system.wounds.moderate.current };
+    }, actorId);
+    expect(rejected).toEqual({ rejected: true, wounds: 1 });
+
+    await setDiceUniform(page, 0.05); // New total seven adds three points to the retained four.
+    const messageId = await page.evaluate(async id => {
+      await game.actors.get(id).sheet.close();
+      ui.sidebar.changeTab("chat", "primary"); ui.sidebar.expand();
+      return [...game.messages].find(message => message.getFlag("cypher", "actorId") === id
+        && message.getFlag("cypher", "rollType") === "recovery").id;
+    }, actorId);
+    await page.locator(`#chat .chat-log [data-message-id="${messageId}"] .cypher-reroll-button`).click();
+    const allocation = page.locator('.dialog:has(input[name="might"])');
+    await allocation.locator('input[name="might"]').fill("2");
+    await allocation.locator('input[name="speed"]').fill("1");
+    await allocation.locator('button[data-action="ok"]').click();
+    await expect.poll(async () => (await readActor(page, actorId)).might).toBe(4);
+    const rerolled = await readActor(page, actorId);
+    expect(rerolled.speed).toBe(8);
+    expect(rerolled.xp).toBe(2);
+    expect(rerolled.wounds.moderate).toBe(1);
+    expect(rerolled.recoveries.hour).toBe(true);
+  });
+
+  test("completes long rest in any order, resets extra recoveries, and heals a major wound with its Might task", async ({ e2ePage: page }) => {
+    await setDiceUniform(page, 0.05); // d6 = 6, d20 = 19; no automatic refund.
+    const actorId = await createActor(page);
+    const result = await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      const untamed = (await game.packs.get("cypher.abilities-en").getDocuments()).find(item => item.system.key === "untamed-recovery");
+      await Item.create(untamed.toObject(), { parent: actor });
+      await actor.rollRecovery("action");
+      await actor.rollRecovery("action", { source: "untamed-recovery" });
+      const extraRejected = (await actor.rollRecovery("action", { source: "untamed-recovery" })) === null;
+      await actor.update({ "system.stats.might.pool.value": 0, "system.wounds.minor.current": 2,
+        "system.wounds.moderate.current": 0, "system.wounds.major.current": 1 });
+      // Recovered Might funds Effort, offsetting this major wound's hindrance.
+      await actor.rollRecovery("tenHours", { woundChoice: "minor", healMajor: true, majorTaskOptions: { effortLevels: 1 } });
+      const reset = { ...actor.system.recoveries };
+      const wounds = { minor: actor.system.wounds.minor.current, major: actor.system.wounds.major.current };
+      const extraAvailable = Boolean(await actor.rollRecovery("action", { source: "untamed-recovery" }));
+      await actor.rollRecovery("hour");
+      return { extraRejected, reset, wounds, extraAvailable, hourUsed: actor.system.recoveries.hour };
+    }, actorId);
+    expect(result).toEqual({ extraRejected: true, reset: { action: false, tenMinutes: false, hour: false, tenHours: false },
+      wounds: { minor: 0, major: 0 }, extraAvailable: true, hourUsed: true });
+  });
+
+  test("treats a minor wound through the sheet after confirmed time and task choices", async ({ e2ePage: page }) => {
+    const actorId = await createActor(page);
+    await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      await actor.update({ "system.wounds.minor.current": 1 });
+      await actor.sheet.render(true);
+    }, actorId);
+    await page.locator('[data-action="treatWound"][data-severity="minor"]').click();
+    await page.locator('input[name="completed"]').check();
+    await page.locator('.dialog button[data-action="ok"]').click();
+    await expect(page.locator('input[name="difficulty"]')).toHaveValue("0");
+    await page.locator('.dialog:has(input[name="difficulty"]) button[data-action="ok"]').click();
+    await expect.poll(async () => (await readActor(page, actorId)).wounds.minor).toBe(0);
+    expect((await readActor(page, actorId)).might).toBe(8);
+  });
+
+  test("uses Healing Hand from its CRD card, charges escalation and persists a changed wound after reopening", async ({ e2ePage: page }) => {
+    const actorId = await createActor(page);
+    const itemId = await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      const source = (await game.packs.get("cypher.abilities-en").getDocuments()).find(item => item.system.key === "healing-hand");
+      const item = await Item.create(source.toObject(), { parent: actor });
+      await actor.update({ "system.wounds.moderate.current": 1 });
+      await actor.sheet.render(true);
+      return item.id;
+    }, actorId);
+    for (const severity of ["moderate", "minor"]) {
+      await page.locator(`[data-item-id="${itemId}"] [data-action="useHealingHand"]`).click();
+      await page.locator('select[name="severity"]').selectOption(severity);
+      await page.locator('input[name="touchConfirmed"]').check();
+      await page.locator('.dialog button[data-action="ok"]').click();
+      await expect.poll(async () => (await readActor(page, actorId)).wounds[severity]).toBe(0);
+      await expect(page.locator('input[name="touchConfirmed"]')).toHaveCount(0);
+    }
+    expect((await readActor(page, actorId)).intellect).toBe(5);
+    await page.evaluate(async id => {
+      const actor = game.actors.get(id); await actor.sheet.close(); await actor.sheet.render(true);
+    }, actorId);
+    await expect(page.locator('input[name="system.wounds.minor.current"]')).toHaveValue("0");
+    await expect(page.locator('input[name="system.wounds.moderate.current"]')).toHaveValue("0");
   });
 
   test("rallies a moderate wound from the real PC sheet and charges Might", async ({
@@ -754,6 +859,121 @@ test.describe("Cypher Foundry live gameplay", () => {
     const actor = await readActor(page, actorId);
     expect(actor.might).toBe(1);
     expect(actor.wounds.moderate).toBe(0);
+  });
+
+  test("rallies a major superhero wound from the sheet for ten Might without Edge reduction", async ({ e2ePage: page }) => {
+    const actorId = await createActor(page, { system: { genre: "superhero",
+      stats: { might: { pool: { max: 12, value: 12 }, edge: 5 } } } });
+    await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      await actor.addWound("major");
+      await actor.sheet.render(true);
+    }, actorId);
+    await page.locator('[data-action="rallyWound"][data-severity="major"]').click();
+    await expect.poll(async () => (await readActor(page, actorId)).wounds.major).toBe(0);
+    expect((await readActor(page, actorId)).might).toBe(2);
+    expect(await page.evaluate(id => game.actors.get(id).statuses.has("hindered"), actorId)).toBe(false);
+  });
+
+  test("renders recovery and healing dialogs in both locales and themes at a narrow sheet width", async ({ e2ePage: page }) => {
+    const actorId = await createActor(page);
+    const originalViewport = page.viewportSize();
+    const original = await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      const source = (await game.packs.get("cypher.abilities-en").getDocuments()).find(item => item.system.key === "healing-hand");
+      await Item.create(source.toObject(), { parent: actor });
+      await actor.update({ "system.stats.might.pool.value": 3, "system.wounds.minor.current": 1 });
+      // V14 groups color preferences in uiConfig; V13 stores colorScheme directly.
+      const setting = game.settings.settings.has("core.uiConfig") ? "uiConfig" : "colorScheme";
+      return { language: game.i18n.lang, setting, config: foundry.utils.deepClone(game.settings.get("core", setting)) };
+    }, actorId);
+    const before = await readActor(page, actorId);
+    try {
+      await page.setViewportSize({ width: 1024, height: 768 });
+      for (const language of ["en", "fr"]) for (const theme of ["light", "dark"]) {
+        const labels = await page.evaluate(async ({ id, language, theme, original }) => {
+          await game.i18n.setLanguage(language);
+          const colorScheme = { applications: theme, interface: theme };
+          await game.settings.set("core", original.setting, original.setting === "uiConfig"
+            ? { ...original.config, colorScheme } : colorScheme);
+          const actor = game.actors.get(id);
+          if (actor.sheet.rendered) await actor.sheet.close();
+          await actor.sheet.render(true);
+          actor.sheet.setPosition({ width: 640, height: 700, left: 0, top: 0 });
+          return Object.fromEntries(["Roll.Recovery", "Healing.Treatment", "Healing.Apply", "Recovery.Apply", "Stat.might"]
+            .map(key => [key, game.i18n.localize(`CYPHER.${key}`)]));
+        }, { id: actorId, language, theme, original });
+        const sheet = page.locator(".cypher.sheet.actor");
+        // With no per-document override, ApplicationV2 inherits the body theme.
+        await expect(page.locator("body")).toHaveClass(new RegExp(`theme-${theme}`));
+        await expect(sheet.locator('[data-action="rollRecovery"][data-interval="hour"]')).toHaveAttribute("title", labels["Roll.Recovery"]);
+        await expect(sheet.locator('[data-action="treatWound"][data-severity="minor"]')).toContainText(labels["Healing.Treatment"]);
+        await expect(sheet.locator('[data-action="useHealingHand"]')).toContainText(labels["Healing.Apply"]);
+        await sheet.locator('[data-action="rollRecovery"][data-interval="hour"]').click();
+        await page.locator('input[name="completed"]').check();
+        await page.locator('input[name="completed"]').press("Enter");
+        const allocation = page.locator('.dialog:has(input[name="might"])');
+        await expect(allocation.getByLabel(labels["Stat.might"], { exact: true })).toHaveValue("4");
+        await expect(allocation.getByRole("button", { name: labels["Recovery.Apply"], exact: true })).toBeVisible();
+        expect(await allocation.locator(".window-content").evaluate(element => element.scrollWidth <= element.clientWidth + 1)).toBe(true);
+        // Optional local screenshots stay in the caller's ignored reports directory.
+        if (process.env.CYPHER_E2E_UI_CAPTURE_DIR) await page.screenshot({
+          path: `${process.env.CYPHER_E2E_UI_CAPTURE_DIR}/recovery-${language}-${theme}.png`
+        });
+        await allocation.press("Escape");
+        await expect(allocation).toHaveCount(0);
+        for (const action of ["treatWound", "useHealingHand"]) {
+          await sheet.locator(`[data-action="${action}"]${action === "treatWound" ? '[data-severity="minor"]' : ""}`).click();
+          const dialog = page.locator('.dialog:has(select[name="target"])');
+          await expect(dialog).toBeVisible();
+          expect(await dialog.locator(".window-content").evaluate(element => element.scrollWidth <= element.clientWidth + 1)).toBe(true);
+          await dialog.press("Escape");
+          await expect(dialog).toHaveCount(0);
+        }
+        expect(await readActor(page, actorId)).toEqual(before);
+      }
+    } finally {
+      await page.evaluate(async original => {
+        await game.settings.set("core", original.setting, original.config);
+        await game.i18n.setLanguage(original.language);
+      }, original);
+      if (originalViewport) await page.setViewportSize(originalViewport);
+    }
+  });
+
+  test("rerolls recovery and treatment from older chat cards without replaying persisted healing", async ({ e2ePage: page }) => {
+    const actorId = await createActor(page);
+    const result = await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      const { treatWound } = await import("/systems/cypher/module/applications/healing-service.mjs");
+      const lastCard = kind => [...game.messages].filter(message =>
+        message.getFlag("cypher", "actorId") === id && message.getFlag("cypher", "rollType") === kind).at(-1);
+      await actor.update({ "system.xp": 8, "system.stats.might.pool.value": 0 });
+      await actor.rollRecovery("hour"); // Deterministic d6 = 3, total = 4.
+      const recovery = lastCard("recovery");
+      CONFIG.Dice.randomUniform = () => 0.375; // Total = 5; add one point.
+      await actor.rerollMessage(recovery);
+      const olderRecovery = lastCard("recovery");
+      CONFIG.Dice.randomUniform = () => 0.05; // Total = 7; add two points.
+      await actor.rerollMessage(recovery);
+      CONFIG.Dice.randomUniform = () => 0.3; // Total = 6; older card still retains seven.
+      await actor.rerollMessage(olderRecovery);
+      const retainedRecovery = lastCard("recovery").getFlag("cypher", "originalRoll");
+      await actor.update({ "system.wounds.moderate.max": 3, "system.wounds.moderate.current": 2 });
+      CONFIG.Dice.randomUniform = () => 0.975; // d20 = 1; treatment fails.
+      await treatWound(actor, { severity: "moderate", completed: true });
+      const treatment = lastCard("task");
+      CONFIG.Dice.randomUniform = () => 0.925; // d20 = 2; first paid reroll still fails.
+      await actor.rerollMessage(treatment);
+      const olderTreatment = lastCard("task");
+      CONFIG.Dice.randomUniform = () => 0.05; // d20 = 19; removes one wound.
+      await actor.rerollMessage(treatment);
+      CONFIG.Dice.randomUniform = () => 0.025; // d20 = 20; cannot remove another wound.
+      await actor.rerollMessage(olderTreatment);
+      return { retainedRecovery, might: actor.system.stats.might.pool.value, xp: actor.system.xp,
+        moderate: actor.system.wounds.moderate.current, hourUsed: actor.system.recoveries.hour };
+    }, actorId);
+    expect(result).toEqual({ retainedRecovery: 7, might: 7, xp: 2, moderate: 1, hourUsed: true });
   });
 
   test("purchases an Effort advancement through the real Actor document", async ({
