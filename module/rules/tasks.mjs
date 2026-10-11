@@ -90,6 +90,10 @@ export function resolveTaskDifficulty(difficulty, steps) {
  * Resolve the special outcome of a d20 task roll.
  *
  * @param {object} options Roll context.
+ * @param {number|null} [options.d20=null] Natural die result, or null without dice.
+ * @param {boolean} [options.success=false] Whether the task succeeded.
+ * @param {boolean} [options.isAttack=false] Whether this is an attack.
+ * @param {boolean} [options.inflictsDamage=false] Whether the hit deals damage.
  * @returns {{
  *   gmIntrusion: boolean,
  *   damageBonus: number,
@@ -99,8 +103,8 @@ export function resolveTaskDifficulty(difficulty, steps) {
  * }}
  */
 export function resolveSpecialRoll({
-  d20,
-  success,
+  d20 = null,
+  success = false,
   isAttack = false,
   inflictsDamage = false
 } = {}) {
@@ -109,7 +113,9 @@ export function resolveSpecialRoll({
     damageBonus: 0,
     effect: null,
     effectOptions: [],
-    refundsCost: d20 === 20 && success
+    // CRD > Special Rolls: a natural 20 makes the action's Pool cost zero,
+    // even if the remaining target number is too high for it to succeed.
+    refundsCost: d20 === 20
   };
 
   if (!success) return result;

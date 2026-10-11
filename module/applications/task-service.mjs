@@ -1,6 +1,6 @@
 /**
  * Shared task engine for stat rolls, weapon attacks, and player defenses.
- * The pipeline resolves modifiers and cost, spends the Pool, rolls the d20,
+ * The pipeline resolves modifiers and cost, spends the Pool, optionally rolls the d20,
  * persists attack/defense consequences, then publishes chat. Rule calculations
  * live in module/rules; this service owns the Foundry document operations.
  */
@@ -10,6 +10,8 @@ import { runActorAction } from "./action-guard.mjs";
 import { prepareTask } from "./task-preparation.mjs";
 import { buildTaskMessage } from "./task-message.mjs";
 import { applyTaskConsequences } from "./task-consequences.mjs";
+import { syncWoundStatusEffects } from "./damage-service.mjs";
+import { resolveStat } from "../rules/stats.mjs";
 
 /**
  * Roll a Block or Dodge defense through the common task engine.
@@ -30,7 +32,8 @@ export async function rollDefense(
     incomingWounds = 1,
     applyIncomingWound = true,
     shieldItemId = null,
-    skillItemId = null
+    skillItemId = null,
+    ...taskOptions
   } = {}
 ) {
   if (actor.type !== "pc") return null;
@@ -41,6 +44,7 @@ export async function rollDefense(
   );
 
   const result = await rollTask(actor, {
+    ...taskOptions,
     stat,
     difficulty,
     effortLevels,
@@ -81,6 +85,11 @@ export async function rollDefense(
  * @param {string} [options.stat="might"] Stat whose Pool funds Effort.
  * @param {number} [options.difficulty=3] Base difficulty before task steps.
  * @param {number} [options.effortLevels=0] Requested Effort levels, not Pool points.
+ * @param {number} [options.damageEffortLevels=0] Paid attack Effort allocated to damage.
+ * @param {number} [options.freeEffortLevels=0] Declared ordinary free easing levels.
+ * @param {number} [options.freeDamageEffortLevels=0] Declared ordinary free damage levels.
+ * @param {string} [options.freeEffortSource=""] Caller-confirmed applicable CRD source.
+ * @param {boolean} [options.rollRoutine=true] Whether to roll when effective difficulty is zero.
  * @param {number} [options.assetSteps=0] Ease from assets, capped at two steps.
  * @param {Actor|null} [options.targetActor=null] Actual NPC receiving attack consequences.
  * @returns {Promise<object|null>} Roll result or null when the task is rejected.
@@ -99,7 +108,10 @@ async function executeTask(actor, {
   weaponRangeAdjudication = null, abilitySource = null, spentAbilityEdge = 0,
   defenseType = null, incomingSeverity = "minor", armorModifier = 0, shieldItemId = null,
   targetActor = null, armorBypass = 0, incomingWounds = 1,
-  applyIncomingWound = true, woundRemovalSeverity = null
+  applyIncomingWound = true, woundRemovalSeverity = null,
+  damageEffortLevels = 0, freeEffortLevels = 0, freeDamageEffortLevels = 0, freeEffortSource = "",
+  rollRoutine = true, chooseSpecialEffect = null, areaAttack = false, push = false,
+  pushDamageEffortLevels = 0, powerShiftCategories = []
 } = {}) {
   // Only reviewed treatment/rest services declare a wound removal. Validate
   // its actual target before the task can spend Effort or roll dice.
@@ -107,23 +119,37 @@ async function executeTask(actor, {
     || !["minor", "moderate", "major"].includes(woundRemovalSeverity)
     || !(targetActor.system.wounds[woundRemovalSeverity].current > 0))) return null;
   const prepared = prepareTask(actor, { stat, difficulty, effortLevels, assetSteps, skillItemId,
-    extraHinderSteps, extraEaseSteps, luckyShot, spentAbilityEdge, defenseType, armorModifier, targetActor });
+    extraHinderSteps, extraEaseSteps, luckyShot, spentAbilityEdge, defenseType, armorModifier, targetActor,
+    isAttack, baseDamage, damageEffortLevels, freeEffortLevels, freeDamageEffortLevels, freeEffortSource,
+    areaAttack, push, pushDamageEffortLevels, powerShiftCategories, abilitySource });
   if (!prepared) return null;
   ({ effortLevels, assetSteps, extraHinderSteps } = prepared);
   const { resolved, statLabel, totalCost, xpCost, poolValue, poolMax,
-    woundHinder, autoArmorSpeedHinder, effectiveDifficulty, targetNumber } = prepared;
+    woundHinder, autoArmorSpeedHinder, effectiveDifficulty, targetNumber, effort, powerShifts, pushWound, skillSteps } = prepared;
+  baseDamage += effort.damageBonus + powerShifts.damage;
 
   // One Actor write commits XP and Pool costs together. Subsequent target
   // writes are separate operations; failures are surfaced without stale rollback.
-  if (totalCost > 0 || xpCost > 0) {
+  if (totalCost > 0 || xpCost > 0 || pushWound) {
     await actor.update({
       ...(xpCost > 0 ? { "system.xp": actor.system.xp - xpCost } : {}),
-      ...(totalCost > 0 ? { [`${resolved.path}.pool.value`]: poolValue - totalCost } : {})
+      ...(totalCost > 0 ? { [`${resolved.path}.pool.value`]: poolValue - totalCost } : {}),
+      ...(pushWound ? { [`system.wounds.${pushWound.target}.current`]: pushWound.current } : {})
     });
+    if (pushWound && typeof actor.toggleStatusEffect === "function") await syncWoundStatusEffects(actor);
   }
 
-  const roll = await new Roll("1d20").evaluate();
-  const d20 = roll.total;
+  // Routine success is still an accepted action with costs and consequences.
+  // Without dice it cannot create special results, refunds or a paid reroll.
+  const roll = effectiveDifficulty <= 0 && !rollRoutine ? null : await new Roll("1d20").evaluate();
+  const d20 = roll?.total ?? null;
+  const offered = resolveTaskOutcome({ d20, effectiveDifficulty, isAttack, baseDamage }).special.effectOptions;
+  if (offered.length && !offered.includes(specialEffectChoice) && chooseSpecialEffect) {
+    specialEffectChoice = await chooseSpecialEffect(offered);
+  }
+  // Dismissing this post-roll choice cannot cancel an already resolved action.
+  // Use damage as the fallback, while an explicit player choice takes priority.
+  if (offered.length && !offered.includes(specialEffectChoice)) specialEffectChoice = "damage";
   const { success, special, damageBonus, selectedEffect, totalDamage } = resolveTaskOutcome({
     d20, effectiveDifficulty, isAttack, baseDamage, specialEffectChoice
   });
@@ -138,7 +164,10 @@ async function executeTask(actor, {
 
   // A natural 20 refunds the action's point cost.
   if (refund && totalCost > 0) {
-    await actor.update({ [`${resolved.path}.pool.value`]: Math.min(poolMax, poolValue) });
+    // Dice and a post-roll choice are asynchronous. Refund the paid amount
+    // into the current Pool instead of restoring a potentially stale snapshot.
+    const current = resolveStat(actor.system, stat);
+    await actor.update({ [`${current.path}.pool.value`]: Math.min(poolMax, current.data.pool.value + totalCost) });
   }
 
   // A successful Block can transfer the whole wound to an equipped, unbroken shield
@@ -150,7 +179,8 @@ async function executeTask(actor, {
     applyIncomingWound, statLabel, defenseType, success, usingShield, shieldItem, incomingSeverity,
     weaponSource, isAttack, flavor, abilitySource, targetActor, difficulty, effectiveDifficulty,
     targetNumber, effortLevels, totalCost, woundHinder, extraHinderSteps, weaponRangeAdjudication,
-    armorModifier, autoArmorSpeedHinder, damageBonus, totalDamage, effectText, refund
+    armorModifier, autoArmorSpeedHinder, damageBonus, totalDamage, effectText, refund,
+    effort, powerShifts, assetSteps, skillSteps, rolled: Boolean(roll)
   });
 
   const { targetDamage, woundRemovalApplied } = await applyTaskConsequences(actor, { isAttack, success, targetActor,
@@ -159,20 +189,24 @@ async function executeTask(actor, {
 
   // Flags are structured metadata for rerolls and tests; the localized HTML
   // is presentation. Publish only after target-side writes have succeeded.
-  await roll.toMessage({
+  const message = {
     speaker: ChatMessage.getSpeaker({ actor: actor }),
     flavor: messageFlavor,
     flags: {
       "cypher": {
-        rerollable: true,
+        rerollable: Boolean(roll),
         rollType: "task",
         abilitySource,
         actorId: actor.id,
-        ...(woundRemovalSeverity ? { actorUuid: actor.uuid, woundRemoval: {
+        actorUuid: actor.uuid,
+        ...(woundRemovalSeverity ? { woundRemoval: {
           targetUuid: targetActor.uuid, severity: woundRemovalSeverity, applied: woundRemovalApplied
         } } : {}),
         stat,
         effortCost: totalCost,
+        effortAllocation: effort,
+        freeEffortSource,
+        powerShifts,
         costRefunded: refund,
         d20,
         targetNumber,
@@ -187,7 +221,9 @@ async function executeTask(actor, {
         armorBypass
       }
     }
-  });
+  };
+  if (roll) await roll.toMessage(message);
+  else await ChatMessage.create({ ...message, content: messageFlavor });
 
   return {
     roll,

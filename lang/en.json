@@ -107,7 +107,9 @@
     "Superhero": {
       "Rank": "Type Rank (1-5)",
       "PowerShifts": "Power Shifts",
-      "Hint": "Each category is capped at 3. A shift acts as a free, permanent level of Effort for the relevant tasks. Tasks can go up to difficulty 15 in this genre."
+      "Hint": "Each category is capped at 3. Most shifts grant permanent bonuses to applicable tasks, outside the Effort limit; special categories follow their own rules. Tasks can reach difficulty 15 in this genre.",
+      "ChosenPool": "Superheroics Pool",
+      "ChoosePool": "Choose the Pool granted by Superheroics"
     },
     "PowerShift": {
       "accuracy": "Accuracy (attack rolls)",
@@ -504,7 +506,30 @@
       "ArmorModifier": "Armor modifier: {steps} steps",
       "ArmorSpeedHinder": "Hindered by {steps} steps (armor not freely usable)",
       "CostRefunded": "The action's point cost was refunded (natural 20).",
-      "Rallied": "{name} rallies and removes a {severity} wound."
+      "Rallied": "{name} rallies and removes a {severity} wound.",
+      "DamageEffort": "Paid Effort for damage",
+      "FreeEffort": "Free Effort for easing",
+      "FreeDamageEffort": "Free Effort for damage",
+      "FreeEffortSource": "Applicable CRD ability or grant",
+      "FreeEffortHint": "Confirm the grant applies and its conditions and remaining uses are satisfied. Ordinary free levels bypass your Effort score, but paid and free levels together cannot exceed six (except Superheroics). Do not enter wound-funded Superheroics levels here.",
+      "ConditionalModifiers": "Conditional modifiers",
+      "ExtraEase": "Other easing steps",
+      "ExtraHinderSteps": "Other hindrance steps",
+      "ExtraModifiersHint": "Declare applicable rule or circumstance modifiers. Enter assets in Assets; do not count a skill, armor, or Power Shift twice.",
+      "PowerShiftApplicability": "Confirm these Power Shifts apply to this task. Strength on an attack means melee or thrown damage; Single Attack means its chosen attack; Savant means one of its two chosen skills; Power means its chosen ability. Accuracy and Block/Dodge shifts apply automatically.",
+      "SuperheroicsPush": "Superheroics: take a moderate wound for two free levels (within your chosen Pool’s Effort limit)",
+      "RollRoutine": "Roll the die even if this task becomes routine",
+      "RollRoutineHint": "Unchecked: a routine task succeeds without dice or special results. Other tasks still require a roll.",
+      "RoutineNoDice": "Routine success without dice",
+      "SpecialChoice": "Choose the special attack result",
+      "SpecialDamage": "Extra damage (+3 on 19, +4 on 20)",
+      "InvalidModifiers": "Invalid task modifiers or Effort allocation. Check whole numbers, limits, and applicable sources.",
+      "EffortDamageBonus": "Effort adds {damage} damage on a hit.",
+      "FreeEffortApplied": "Free Effort: {ease} easing, {damage} damage levels.",
+      "PowerShiftsApplied": "Power Shifts: {ease} easing steps, +{damage} damage.",
+      "SkillAssetsApplied": "Skill: {skill} steps; assets: {assets} steps.",
+      "ConfirmChoice": "Apply choice",
+      "PushDamageEffort": "Pushed levels for damage (0–2, remaining levels ease)"
     },
     "Defense": {
       "Block": "Block",

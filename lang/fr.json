@@ -107,7 +107,9 @@
     "Superhero": {
       "Rank": "Rang du Type (1-5)",
       "PowerShifts": "Amplificateurs de Pouvoir",
-      "Hint": "Chaque catégorie est limitée à trois amplificateurs. En règle générale, un amplificateur équivaut à un niveau d'Effort gratuit et permanent pour les tâches concernées. Dans ce genre, les tâches peuvent atteindre la difficulté 15."
+      "Hint": "Chaque catégorie est limitée à trois amplificateurs. La plupart accordent des bonus permanents aux tâches concernées, hors limite d’Effort ; les catégories spéciales suivent leurs propres règles. Dans ce genre, les tâches peuvent atteindre la difficulté 15.",
+      "ChosenPool": "Réserve de Superheroics",
+      "ChoosePool": "Choisir la réserve accordée par Superheroics"
     },
     "PowerShift": {
       "accuracy": "Précision (jets d'attaque)",
@@ -504,7 +506,30 @@
       "ArmorModifier": "Modificateur d'armure : {steps} palier(s)",
       "ArmorSpeedHinder": "Tâche entravée de {steps} palier(s) parce que l'armure n'est pas utilisable librement",
       "CostRefunded": "Le coût de l'action a été remboursé (20 naturel).",
-      "Rallied": "{name} se reprend et retire une blessure {severity}."
+      "Rallied": "{name} se reprend et retire une blessure {severity}.",
+      "DamageEffort": "Effort payé pour les dégâts",
+      "FreeEffort": "Effort gratuit pour faciliter",
+      "FreeDamageEffort": "Effort gratuit pour les dégâts",
+      "FreeEffortSource": "Capacité ou bonus applicable du CRD",
+      "FreeEffortHint": "Confirmez que le bonus s’applique, que ses conditions sont remplies et qu’il reste des utilisations. Les niveaux gratuits ordinaires ne comptent pas dans votre score d’Effort, mais le total payé et gratuit ne peut dépasser six (sauf Superheroics). Ne saisissez pas ici les niveaux de Superheroics obtenus contre une blessure.",
+      "ConditionalModifiers": "Modificateurs conditionnels",
+      "ExtraEase": "Autres pas de facilitation",
+      "ExtraHinderSteps": "Autres pas de gêne",
+      "ExtraModifiersHint": "Déclarez les modificateurs applicables de règle ou de circonstance. Saisissez les atouts dans Atouts ; ne comptez pas deux fois une compétence, une armure ou un Power Shift.",
+      "PowerShiftApplicability": "Confirmez que ces Power Shifts s’appliquent. Force en attaque concerne les dégâts de mêlée ou de lancer ; Attaque unique concerne l’attaque choisie ; Savant concerne l’une des deux compétences choisies ; Pouvoir concerne la capacité choisie. Précision et les bonus de Blocage/Esquive s’appliquent automatiquement.",
+      "SuperheroicsPush": "Superheroics : subir une blessure modérée pour deux niveaux gratuits (dans la limite d’Effort de la réserve choisie)",
+      "RollRoutine": "Lancer le dé même si la tâche devient routinière",
+      "RollRoutineHint": "Décoché : une tâche routinière réussit sans dé ni résultat spécial. Les autres tâches nécessitent toujours un jet.",
+      "RoutineNoDice": "Réussite routinière sans dé",
+      "SpecialChoice": "Choisir le résultat spécial de l’attaque",
+      "SpecialDamage": "Dégâts supplémentaires (+3 sur 19, +4 sur 20)",
+      "InvalidModifiers": "Modificateurs ou répartition d’Effort invalides. Vérifiez les nombres entiers, les limites et les sources applicables.",
+      "EffortDamageBonus": "L’Effort ajoute {damage} dégâts si l’attaque touche.",
+      "FreeEffortApplied": "Effort gratuit : {ease} niveaux de facilitation, {damage} niveaux de dégâts.",
+      "PowerShiftsApplied": "Power Shifts : {ease} pas de facilitation, +{damage} dégâts.",
+      "SkillAssetsApplied": "Compétence : {skill} pas ; atouts : {assets} pas.",
+      "ConfirmChoice": "Appliquer le choix",
+      "PushDamageEffort": "Niveaux de Superheroics pour les dégâts (0–2, le reste facilite)"
     },
     "Defense": {
       "Block": "Bloquer",

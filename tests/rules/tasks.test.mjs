@@ -66,7 +66,7 @@ test("resolveTaskDifficulty never produces a negative difficulty", () => {
 });
 
 
-test("resolveSpecialRoll applies CRD special results only when the task succeeds", () => {
+test("resolveSpecialRoll requires success for effects and damage, but always refunds a natural twenty", () => {
   assert.deepEqual(resolveSpecialRoll({ d20: 1, success: false }), {
     gmIntrusion: true,
     damageBonus: 0,
@@ -143,7 +143,7 @@ test("resolveSpecialRoll applies CRD special results only when the task succeeds
     damageBonus: 0,
     effect: null,
     effectOptions: [],
-    refundsCost: false
+    refundsCost: true
   });
 });
 

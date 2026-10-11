@@ -120,6 +120,16 @@
 
   {{#if system.showSuperheroBlock}}
   <div class="superhero-block">
+    {{#if hasSuperheroics}}
+    <label>{{localize 'CYPHER.Superhero.ChosenPool'}}
+      <select name="flags.cypher.superheroicsStat">
+        <option value="">{{localize 'CYPHER.Superhero.ChoosePool'}}</option>
+        {{#each config.stats as |stat|}}
+        <option value="{{stat}}" {{#ifEquals ../superheroicsStat stat}}selected{{/ifEquals}}>{{localize (concat "CYPHER.Stat." stat)}}</option>
+        {{/each}}
+      </select>
+    </label>
+    {{/if}}
     <label class="rank-field">{{localize 'CYPHER.Superhero.Rank'}}
       <input name="system.rank" type="number" value="{{system.rank}}" min="1" max="5"/>
     </label>

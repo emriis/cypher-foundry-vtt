@@ -138,7 +138,12 @@ async function clickRollDialog(page, values = {}) {
   }
 
   await dismissActiveTour(page);
+  const applicationId = await form.evaluate(node => node.closest(".application")?.id);
   await form.getByRole("button").last().click();
+  // DialogV2 resolves input before its closing animation removes the form.
+  // Wait for this specific application, so a new action's dialog is not
+  // confused with the previous one while both temporarily exist in the DOM.
+  if (applicationId) await expect(page.locator(`[id="${applicationId}"]`)).toHaveCount(0);
 }
 
 test.describe("Cypher Foundry live gameplay", () => {
@@ -287,6 +292,121 @@ test.describe("Cypher Foundry live gameplay", () => {
 
     const after = await readActor(page, actorId);
     expect(after.might).toBe(before.might);
+  });
+
+  test("lets the player decline or keep dice on a routine task through the sheet", async ({ e2ePage: page }) => {
+    const actorId = await createActor(page);
+    await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      await actor.update({ "system.stats.might.edge": 1 });
+      await actor.sheet.render(true);
+    }, actorId);
+    await page.locator('[data-action="rollStat"][data-stat="might"]').click();
+    await page.locator('input[name="rollRoutine"]').uncheck();
+    await clickRollDialog(page, { difficulty: 1, effort: 1 });
+    await waitForChatMessage(page, actorId);
+    const automatic = await page.evaluate(id => {
+      const actor = game.actors.get(id);
+      const card = [...game.messages].find(message => message.getFlag("cypher", "actorId") === id);
+      return { pool: actor.system.stats.might.pool.value, d20: card.getFlag("cypher", "d20"),
+        rerollable: card.getFlag("cypher", "rerollable"), rollCount: card.rolls.length };
+    }, actorId);
+    expect(automatic).toEqual({ pool: 6, d20: null, rerollable: false, rollCount: 0 });
+    await setDiceUniform(page, 0.925); // Natural 2 still succeeds on a routine task.
+    await page.locator('[data-action="rollStat"][data-stat="might"]').click();
+    await expect(page.locator('input[name="rollRoutine"]')).toBeChecked();
+    await clickRollDialog(page, { difficulty: 0 });
+    await expect.poll(() => page.evaluate(id => [...game.messages].filter(message =>
+      message.getFlag("cypher", "actorId") === id).length, actorId)).toBe(2);
+    const rolled = await page.evaluate(id => [...game.messages].filter(message =>
+      message.getFlag("cypher", "actorId") === id).at(-1).getFlag("cypher", "d20"), actorId);
+    expect(rolled).toBe(2);
+  });
+
+  test("uses matching training once and splits Effort before choosing a nineteen attack effect", async ({ e2ePage: page }) => {
+    await setDiceUniform(page, 0.05); // Natural 19.
+    const actorId = await createActor(page);
+    const setup = await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      await actor.update({ "system.effort": 2, "system.stats.might.edge": 1 });
+      const items = await actor.createEmbeddedDocuments("Item", [
+        { name: "E2E Cypher task weapon", type: "attack", system: { attackType: "medium", damage: 4,
+          stat: "might", freelyUsable: true, attackSkillCategory: "mediumBladed", equipped: true } },
+        { name: "E2E Cypher task training", type: "skill", system: { level: "trained", attackCategory: "mediumBladed" } }
+      ]);
+      await actor.sheet.render(true);
+      return { weaponId: items.find(item => item.type === "attack").id, skillId: items.find(item => item.type === "skill").id };
+    }, actorId);
+    await page.locator(`[data-action="rollAttack"][data-item-id="${setup.weaponId}"]`).click();
+    await page.locator('select[name="skillItemId"]').selectOption(setup.skillId);
+    await page.locator('input[name="damageEffort"]').fill("1");
+    await clickRollDialog(page, { difficulty: 4, effort: 1 });
+    await page.locator('select[name="specialEffect"]').selectOption("minor");
+    await page.locator('.dialog:has(select[name="specialEffect"]) button[data-action="ok"]').click();
+    await waitForChatMessage(page, actorId);
+    const state = await page.evaluate(id => {
+      const actor = game.actors.get(id);
+      const flags = [...game.messages].find(message => message.getFlag("cypher", "actorId") === id).flags.cypher;
+      return { pool: actor.system.stats.might.pool.value, difficulty: flags.effectiveDifficulty,
+        damage: flags.baseDamage, choice: flags.specialEffectChoice, cost: flags.effortCost };
+    }, actorId);
+    expect(state).toEqual({ pool: 4, difficulty: 2, damage: 7, choice: "minor", cost: 4 });
+    await page.reload();
+    await page.waitForFunction(() => game.ready);
+    expect((await readActor(page, actorId)).might).toBe(4);
+  });
+
+  test("checks Arc Spray resources before each new action and preserves only performed attacks", async ({ e2ePage: page }) => {
+    const actorId = await createActor(page);
+    const result = await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      await actor.update({ "system.stats.speed.edge": 1, "system.stats.speed.pool.value": 6 });
+      const items = await actor.createEmbeddedDocuments("Item", [
+        { name: "E2E Cypher sequential Arc Spray", type: "ability", system: { key: "arc-spray", cost: { stat: "speed", amount: 3 } } },
+        { name: "E2E Cypher sequential weapon", type: "attack", system: { stat: "speed", attackType: "medium", damage: 4,
+          freelyUsable: true, mechanics: { rapidFire: true } } }
+      ]);
+      const targets = [];
+      for (let index = 0; index < 3; index++) targets.push(await Actor.create({
+        name: `E2E Cypher sequential target ${index}`, type: "npc", system: { level: 1, armor: 0, health: { value: 20, max: 20 } }
+      }));
+      const { executeWeaponAbility } = await import("/systems/cypher/module/applications/weapon-ability-service.mjs");
+      const outcome = await executeWeaponAbility(items.find(item => item.type === "ability"), {
+        weaponId: items.find(item => item.type === "attack").id, targets, allAdjacent: true, rollOptions: { effortLevels: 1 }
+      });
+      return { completed: outcome.completed, count: outcome.results.length, pool: actor.system.stats.speed.pool.value,
+        health: targets.map(target => target.system.health.value),
+        cards: [...game.messages].filter(message => message.getFlag("cypher", "actorId") === id).length };
+    }, actorId);
+    expect(result).toEqual({ completed: false, count: 1, pool: 1, health: [16, 20, 20], cards: 1 });
+  });
+
+  test("persists the Superheroics Pool choice and pays its pushed wound before the sheet task", async ({ e2ePage: page }) => {
+    const actorId = await createActor(page);
+    await page.evaluate(async id => {
+      const actor = game.actors.get(id);
+      await actor.update({ "system.genre": "superhero", "system.rank": 2, "system.effort": 6,
+        "system.stats.might.pool.max": 32, "system.stats.might.pool.value": 32, "system.stats.might.edge": 1 });
+      await actor.createEmbeddedDocuments("Item", [{ name: "E2E Cypher Superheroics", type: "ability", system: { key: "superheroics" } }]);
+      await actor.sheet.render(true);
+    }, actorId);
+    await page.locator('select[name="flags.cypher.superheroicsStat"]').selectOption("might");
+    await page.waitForFunction(id => game.actors.get(id).getFlag("cypher", "superheroicsStat") === "might", actorId);
+    await page.locator('[data-action="rollStat"][data-stat="might"]').click();
+    await expect(page.locator('input[name="effort"]')).toHaveAttribute("max", "8");
+    await clickRollDialog(page, { difficulty: 10, effort: 7 });
+    await waitForChatMessage(page, actorId);
+    expect((await readActor(page, actorId)).might).toBe(18);
+    await page.locator('[data-action="rollStat"][data-stat="might"]').click();
+    await page.locator('input[name="push"]').check();
+    await clickRollDialog(page, { difficulty: 3 });
+    await expect.poll(async () => (await readActor(page, actorId)).wounds.moderate).toBe(1);
+    expect((await readActor(page, actorId)).might).toBe(18);
+    await page.reload();
+    await page.waitForFunction(() => game.ready);
+    const persisted = await page.evaluate(id => ({ chosen: game.actors.get(id).getFlag("cypher", "superheroicsStat"),
+      wound: game.actors.get(id).system.wounds.moderate.current }), actorId);
+    expect(persisted).toEqual({ chosen: "might", wound: 1 });
   });
 
   test("one-handed hindrance applies only when selected on CRD-marked weapons", async ({
@@ -686,7 +806,9 @@ test.describe("Cypher Foundry live gameplay", () => {
 
     await expect(form).toBeVisible();
     await form.locator('select[name="incomingSeverity"]').selectOption("moderate");
-    await form.locator('input[name="difficulty"]').fill("21");
+    // CRD standard difficulty caps at ten; its target number thirty already
+    // guarantees failure without supplying an invalid out-of-range difficulty.
+    await form.locator('input[name="difficulty"]').fill("10");
     await form.getByRole("button").last().click();
 
     await page.waitForFunction(id => {
@@ -900,7 +1022,7 @@ test.describe("Cypher Foundry live gameplay", () => {
           if (actor.sheet.rendered) await actor.sheet.close();
           await actor.sheet.render(true);
           actor.sheet.setPosition({ width: 640, height: 700, left: 0, top: 0 });
-          return Object.fromEntries(["Roll.Recovery", "Healing.Treatment", "Healing.Apply", "Recovery.Apply", "Stat.might"]
+          return Object.fromEntries(["Roll.Recovery", "Healing.Treatment", "Healing.Apply", "Recovery.Apply", "Stat.might", "Roll.RollRoutine", "Roll.FreeEffort"]
             .map(key => [key, game.i18n.localize(`CYPHER.${key}`)]));
         }, { id: actorId, language, theme, original });
         const sheet = page.locator(".cypher.sheet.actor");
@@ -930,6 +1052,17 @@ test.describe("Cypher Foundry live gameplay", () => {
           await dialog.press("Escape");
           await expect(dialog).toHaveCount(0);
         }
+        await sheet.locator('[data-action="rollStat"][data-stat="might"]').click();
+        const task = page.locator('.dialog:has(input[name="freeEffort"])');
+        await expect(task.getByLabel(labels["Roll.RollRoutine"], { exact: true })).toBeChecked();
+        await task.getByLabel(labels["Roll.RollRoutine"], { exact: true }).press("Space");
+        await expect(task.getByLabel(labels["Roll.RollRoutine"], { exact: true })).not.toBeChecked();
+        await task.locator("summary").click();
+        await task.getByLabel(labels["Roll.FreeEffort"], { exact: true }).fill("1");
+        await task.locator('[name="freeEffortSource"]').fill("Confirmed CRD grant");
+        expect(await task.locator(".window-content").evaluate(element => element.scrollWidth <= element.clientWidth + 1)).toBe(true);
+        await task.press("Escape");
+        await expect(task).toHaveCount(0);
         expect(await readActor(page, actorId)).toEqual(before);
       }
     } finally {
@@ -1363,7 +1496,7 @@ test.describe("Cypher Foundry live gameplay", () => {
       }
       if (kind === "arc-spray") await selection.locator('[name="confirmed"]').check();
       await selection.getByRole("button").last().click();
-      await clickRollDialog(page);
+      for (let index = 0; index < (kind === "spray" ? 1 : 3); index++) await clickRollDialog(page);
       await expect.poll(() => page.evaluate(({ actorId, kind }) => [...game.messages].filter(message =>
         message.getFlag("cypher", "actorId") === actorId
         && message.getFlag("cypher", "rollType") === "task"

@@ -180,6 +180,7 @@ test("chooseAbilityEffect activates a structured ongoing effect on its PC actor"
     parent: actor,
     uuid: "Actor.pc.Item.fury",
     system: {
+      cost: { stat: "none", amount: 0 },
       effects: [{
         id: "fury",
         name: "Fury",
