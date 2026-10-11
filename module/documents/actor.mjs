@@ -173,10 +173,11 @@ export default class CypherActor extends Actor {
    * Reroll a previous roll through the character application service.
    *
    * @param {object} message Foundry chat message containing reroll flags.
+   * @param {object} [options={}] Optional recovery-point allocation callback.
    * @returns {Promise<object|null>} Retained-result metadata or null when rejected.
    */
-  async rerollMessage(message) {
-    return rerollMessage(this, message);
+  async rerollMessage(message, options = {}) {
+    return rerollMessage(this, message, options);
   }
 
   /**
@@ -232,10 +233,11 @@ export default class CypherActor extends Actor {
    * Take a recovery through the recovery application service.
    *
    * @param {string} [interval="hour"] Recovery interval.
+   * @param {object} [options={}] Completed-rest choices and Pool allocation.
    * @returns {Promise<object|null>} Recovery roll.
    */
-  async rollRecovery(interval = "hour") {
-    return rollRecovery(this, interval);
+  async rollRecovery(interval = "hour", options = {}) {
+    return rollRecovery(this, interval, options);
   }
 
   /**

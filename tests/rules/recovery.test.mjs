@@ -40,11 +40,12 @@ test("recovery clears all minor wounds at ten minutes", () => {
         minor: { current: 3 },
         moderate: { current: 2 }
       },
-      { tenMinutes: true }
+      { tenMinutes: false }
     ),
     {
       updates: {
-        "system.wounds.minor.current": 0
+        "system.wounds.minor.current": 0,
+        "system.recoveries.tenMinutes": true
       },
       woundNoteKey: "CYPHER.Recovery.RemovesAllMinor"
     }
@@ -64,9 +65,9 @@ test("ten-hour recovery clears moderate wounds and records the recovery", () => 
     {
       updates: {
         "system.wounds.moderate.current": 0,
-        "system.recoveries.tenHours": true
+        ...Object.fromEntries(["action", "tenMinutes", "hour", "tenHours"].map(key => [`system.recoveries.${key}`, false]))
       },
-      woundNoteKey: "CYPHER.Recovery.RemovesAllModerateReminder"
+      woundNoteKey: "CYPHER.Recovery.RemovesAllModerate"
     }
   );
 });
@@ -115,7 +116,7 @@ test("hourly recovery clears all minor wounds when no moderate wound remains", (
   );
 });
 
-test("recovery does not duplicate an already recorded interval", () => {
+test("Given a used recovery, then another activation cannot heal another wound", () => {
   assert.deepEqual(
     computeRecoveryUpdates(
       "hour",
@@ -126,12 +127,32 @@ test("recovery does not duplicate an already recorded interval", () => {
       { hour: true }
     ),
     {
-      updates: {
-        "system.wounds.minor.current": 0
-      },
-      woundNoteKey: "CYPHER.Recovery.RemovesAllMinor"
+      updates: {},
+      woundNoteKey: null
     }
   );
+});
+
+test("Given an hourly recovery, then the player can choose minor wounds even with a moderate wound present", () => {
+  const result = computeRecoveryUpdates("hour", { minor: { current: 2 }, moderate: { current: 1 } }, {}, { woundChoice: "minor" });
+  assert.equal(result.updates["system.wounds.minor.current"], 0);
+  assert.equal(result.updates["system.wounds.moderate.current"], undefined);
+});
+
+test("Given a ten-hour recovery, then exchanging one moderate removal clears every minor wound", () => {
+  const result = computeRecoveryUpdates("tenHours", { minor: { current: 3 }, moderate: { current: 2 } }, {}, { woundChoice: "minor" });
+  assert.equal(result.updates["system.wounds.minor.current"], 0);
+  assert.equal(result.updates["system.wounds.moderate.current"], 1);
+});
+
+test("Given no moderate wounds, then the adopted ten-hour adjudication still permits clearing minor wounds", () => {
+  const result = computeRecoveryUpdates("tenHours", { minor: { current: 3 }, moderate: { current: 0 } }, {}, { woundChoice: "minor" });
+  assert.equal(result.updates["system.wounds.minor.current"], 0);
+  assert.equal(result.updates["system.wounds.moderate.current"], 0);
+});
+
+test("Given an unknown interval, then recovery cannot change wounds or invent a marker", () => {
+  assert.deepEqual(computeRecoveryUpdates("week", { minor: { current: 2 }, moderate: { current: 1 } }), { updates: {}, woundNoteKey: null });
 });
 
 test("rallying requires an existing wound and sufficient Might", () => {

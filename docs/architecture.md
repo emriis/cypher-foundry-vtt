@@ -37,7 +37,9 @@ The main gameplay boundaries are:
 - `reroll-service.mjs`: CRD paid-reroll orchestration and retained metadata;
   `rules/task-outcome.mjs` shares outcome rules with initial task rolls.
 - `action-guard.mjs`: per-Actor, per-category overlap protection on one client.
-- `recovery-service.mjs`: recoveries and Rally.
+- `recovery-service.mjs`: completed recoveries, allocation, extra allowances and Rally.
+- `healing-service.mjs` and `wound-removal.mjs`: treatment/Healing Hand and
+  persisted task/reroll healing consequences; see [recovery-and-healing.md](recovery-and-healing.md).
 - `advancement-service.mjs`: advancement purchases and tier transitions.
 - `character-service.mjs`: XP spending, rerolls, Player Intrusions, and
   character data operations.

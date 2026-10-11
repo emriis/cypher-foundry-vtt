@@ -47,6 +47,11 @@ application, sheet, migration, or compendium boundaries.
 
 ### TDD and BDD boundary
 
+For recovery and healing work, follow the source contracts and persistence
+boundaries in [recovery-and-healing.md](recovery-and-healing.md). Keep ordinary
+recovery order free; test real flag-merge semantics and successful paid rerolls
+alongside cancellation, resource limits and fresh target validation.
+
 The CRD is the sole authority for game rules and compendium content. Define
 observable Given/When/Then scenarios from that source before changing behavior.
 For a defect, demonstrate RED, implement GREEN, then refactor while green. For

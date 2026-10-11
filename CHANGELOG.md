@@ -38,6 +38,15 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ### Fixed
 
+- Completed source-backed recoveries with Pool allocation, independent daily
+  availability, Last action bonus, wound choices, extra allowances and new-day
+  reset. Fixed merged-flag counters retaining prior uses.
+- Connected treatment and Healing Hand to PC sheets with confirmed duration/contact,
+  target persistence, escalation/Edge, wound capacity checks and status updates.
+  Paid rerolls grant only new recovery points or a single successful wound removal.
+- Restored the superhero major-wound Rally button by resolving its permission
+  from the Actor context inside the wound template loop.
+
 - Restored CRD-faithful compendium passages, restrictions, equipment notes,
   Genre definitions, and rule Journals; repaired swallowed Ability grants,
   incorrect names/costs, and ordinary gear classified as weapons.

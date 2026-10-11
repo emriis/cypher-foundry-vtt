@@ -1,5 +1,5 @@
 {{!-- Single-page PC dashboard: core play state remains visible without tab navigation. --}}
-{{!-- system and items come from CypherPCSheet._prepareContext. Input name paths
+{{!-- system, items and recoveryCards come from CypherPCSheet._prepareContext. Input name paths
      identify saved Actor fields; data-action buttons dispatch to sheet handlers.
      Helpers format/localize values here; gameplay calculations belong in .mjs. --}}
 <section class="pc-dashboard">
@@ -121,13 +121,16 @@
               <i class="fa-solid fa-heart-pulse"></i> {{localize "CYPHER.Wound.Rally"}}
             </button>
             {{else}}
-              {{#if system.canRallyMajor}}
+              {{#if @root.system.canRallyMajor}}
               <button type="button" class="pc-inline-action"
                 data-action="rallyWound" data-severity="major">
                 <i class="fa-solid fa-heart-pulse"></i> {{localize "CYPHER.Wound.Rally"}}
               </button>
               {{/if}}
             {{/ifNotEquals}}
+            <button type="button" class="pc-inline-action" data-action="treatWound" data-severity="{{severity}}">
+              <i class="fa-solid fa-kit-medical"></i> {{localize "CYPHER.Healing.Treatment"}}
+            </button>
           </div>
           {{/each}}
         </div>
@@ -139,12 +142,12 @@
           <h2>{{localize "CYPHER.Recovery.Title"}}</h2>
         </div>
         <div class="pc-recovery-grid">
-          {{#each system.recoveries as |checked key|}}
+          {{#each recoveryCards as |recovery|}}
           <label class="pc-recovery-card">
-            <span class="pc-recovery-name">{{localize (concat "CYPHER.Recovery." key)}}</span>
+            <span class="pc-recovery-name">{{localize (concat "CYPHER.Recovery." recovery.key)}}</span>
             <span class="pc-recovery-controls">
-              <input type="checkbox" name="system.recoveries.{{key}}" {{#if checked}}checked{{/if}}/>
-              <button type="button" data-action="rollRecovery" data-interval="{{key}}"
+              <input type="checkbox" name="system.recoveries.{{recovery.key}}" {{#if recovery.checked}}checked{{/if}}/>
+              <button type="button" data-action="rollRecovery" data-interval="{{recovery.key}}" {{#unless recovery.canRoll}}disabled{{/unless}}
                 title="{{localize 'CYPHER.Roll.Recovery'}}">
                 <i class="fa-solid fa-dice-d6"></i>
               </button>
@@ -239,11 +242,15 @@
                 <strong>{{item.name}}</strong>
                 {{#if item.system.source}}<span>{{item.system.source}}</span>{{/if}}
               </div>
+              {{#if item.healingAbilityKind}}
+              <span class="pc-chip">{{item.healingAbilityCost}} {{localize "CYPHER.Stat.intellect"}}</span>
+              {{else}}
               {{#if item.system.cost.amount}}
               <span class="pc-chip">
                 {{item.system.cost.amount}}
                 {{localize (concat "CYPHER.Stat." item.system.cost.stat)}}
               </span>
+              {{/if}}
               {{/if}}
             </div>
             {{#if item.system.action}}
@@ -259,6 +266,11 @@
             {{#if item.weaponAbilityKind}}
             <button type="button" class="pc-primary-action" data-action="useWeaponAbility">
               <i class="fa-solid fa-crosshairs"></i> {{localize "CYPHER.Roll.Attack"}}
+            </button>
+            {{/if}}
+            {{#if item.healingAbilityKind}}
+            <button type="button" class="pc-primary-action" data-action="useHealingHand">
+              <i class="fa-solid fa-hand-holding-medical"></i> {{localize "CYPHER.Healing.Apply"}}
             </button>
             {{/if}}
             {{#if item.system.rollTables.length}}
