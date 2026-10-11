@@ -7,8 +7,9 @@
 export function buildTaskMessage({
     applyIncomingWound, statLabel, defenseType, success, usingShield, shieldItem, incomingSeverity,
     weaponSource, isAttack, flavor, abilitySource, targetActor, difficulty, effectiveDifficulty,
-    targetNumber, effortLevels, totalCost, woundHinder, extraHinderSteps, weaponRangeAdjudication,
-    armorModifier, autoArmorSpeedHinder, damageBonus, totalDamage, effectText, refund
+    targetNumber, totalCost, woundHinder, extraHinderSteps, weaponRangeAdjudication,
+    armorModifier, autoArmorSpeedHinder, damageBonus, totalDamage, effectText, refund,
+    effort, powerShifts, assetSteps, skillSteps, rolled
   }) {
   // Descriptive text for the defense result, shown in the message.
   let defenseNote = "";
@@ -44,7 +45,13 @@ export function buildTaskMessage({
          ${game.i18n.localize("CYPHER.Roll.Difficulty")} ${difficulty}
          (${game.i18n.localize("CYPHER.Roll.Effective")}: ${effectiveDifficulty}) —
          ${game.i18n.localize("CYPHER.Roll.Target")}: ${effectiveDifficulty <= 0 ? game.i18n.localize("CYPHER.Roll.Routine") : targetNumber}</p>
-      ${effortLevels ? `<p>${game.i18n.localize("CYPHER.Roll.EffortSpent")}: ${effortLevels} (${totalCost} ${game.i18n.localize("CYPHER.Roll.PoolPoints")})</p>` : ""}
+      ${effort.paidLevels ? `<p>${game.i18n.localize("CYPHER.Roll.EffortSpent")}: ${effort.paidLevels} (${totalCost} ${game.i18n.localize("CYPHER.Roll.PoolPoints")})</p>` : ""}
+      ${effort.damageBonus ? `<p>${game.i18n.format("CYPHER.Roll.EffortDamageBonus", { damage: effort.damageBonus })}</p>` : ""}
+      ${effort.freeEffortLevels + effort.freeDamageEffortLevels ? `<p>${game.i18n.format("CYPHER.Roll.FreeEffortApplied", { ease: effort.freeEffortLevels, damage: effort.freeDamageEffortLevels })}</p>` : ""}
+      ${effort.pushLevels ? `<p>${game.i18n.localize("CYPHER.Roll.SuperheroicsPush")}</p>` : ""}
+      ${powerShifts.ease || powerShifts.damage ? `<p>${game.i18n.format("CYPHER.Roll.PowerShiftsApplied", powerShifts)}</p>` : ""}
+      ${assetSteps || skillSteps ? `<p>${game.i18n.format("CYPHER.Roll.SkillAssetsApplied", { skill: skillSteps, assets: assetSteps })}</p>` : ""}
+      ${!rolled ? `<p>${game.i18n.localize("CYPHER.Roll.RoutineNoDice")}</p>` : ""}
       ${woundHinder ? `<p class="cypher-hindered">${game.i18n.format("CYPHER.Roll.WoundHinder", { steps: woundHinder })}</p>` : ""}
       ${extraHinderSteps ? `<p class="cypher-hindered">${game.i18n.format("CYPHER.Roll.ExtraHinder", { steps: extraHinderSteps })}</p>` : ""}
       ${weaponRangeAdjudication?.atExtremeRange ? `<p class="cypher-hindered">${game.i18n.localize("CYPHER.Roll.ExtremeRangeHinder")}</p>` : ""}

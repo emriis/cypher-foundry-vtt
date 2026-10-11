@@ -231,6 +231,10 @@ remain the editable authoring surface; the CRD is their content authority.
 
 ## 5. Architecture maintenance
 
+Task modifier, Effort, Edge and per-action cost contracts are maintained in
+[task-rolls.md](task-rolls.md). Consult its CRD locators and test the actual
+weapon-to-task pipeline before extending task automation.
+
 The broad architecture refactor is complete. Do not reopen the completed
 Phase 1-8 work as a standing task.
 

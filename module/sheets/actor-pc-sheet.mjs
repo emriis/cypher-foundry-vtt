@@ -1,4 +1,5 @@
-import { promptRollOptions, promptWeaponAttackCategory, promptWeaponAbility } from "./dialogs.mjs";
+import { promptRollOptions, promptWeaponAttackCategory, promptWeaponAbility, taskModifierFields, readTaskModifiers } from "./dialogs.mjs";
+import { getSuperheroicsRank } from "../applications/task-preparation.mjs";
 import { promptRecoveryOptions, promptRecoveryAllocation, promptTreatment, promptHealingHand } from "./healing-dialogs.mjs";
 import { getRecoverySources } from "../applications/recovery-service.mjs";
 import { getHealingAbilityKind, getHealingHandCost, treatWound, useHealingHand } from "../applications/healing-service.mjs";
@@ -104,6 +105,8 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     const context = await super._prepareContext(options);
     context.system = this.actor.system;
     context.actor = this.actor;
+    context.superheroicsStat = this.actor.flags?.cypher?.superheroicsStat ?? "";
+    context.hasSuperheroics = this.actor.items.some(item => item.type === "ability" && item.system.key === "superheroics");
     context.focusAbilityPendingTier =
       this.actor.getFlag("cypher", "focusAbilityPendingTier");
     context.config = CONFIG.CYPHER;
@@ -156,7 +159,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
   static async #onRollStat(event, target) {
     const stat = target.dataset.stat;
     const difficulty = Number(target.dataset.difficulty ?? 3);
-    const result = await promptRollOptions(this.actor, { difficulty });
+    const result = await promptRollOptions(this.actor, { difficulty, stat });
     if (!result) return;
     await this.actor.rollTask({ stat, ...result });
   }
@@ -219,10 +222,13 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     if (!selection) return;
     const weapon = this.actor.items.get(selection.weaponId);
     const rollOptions = await promptRollOptions(this.actor, {
-      isAttack: true, weapon, isWeaponAbility: true
+      isAttack: true, weapon, isWeaponAbility: true, abilitySource: { itemId: item.id }
     });
     if (!rollOptions) return;
-    await executeWeaponAbility(item, { ...selection, rollOptions });
+    await executeWeaponAbility(item, { ...selection, rollOptions,
+      chooseAttackOptions: () => promptRollOptions(this.actor, {
+        isAttack: true, weapon, isWeaponAbility: true, abilitySource: { itemId: item.id }
+      }) });
   }
 
 
@@ -372,7 +378,8 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
   static async #onRollDefense(event, target) {
     const defenseType = target.dataset.defenseType; // "block" or "dodge"
     const maxDifficulty = this.actor.system.maxDifficulty ?? 10;
-    const maxEffort = this.actor.system.effort ?? 1;
+    const stat = defenseType === "block" ? "might" : "speed";
+    const maxEffort = Math.min(6, this.actor.system.effort ?? 1) + getSuperheroicsRank(this.actor, stat);
 
     // Only equipped, unbroken shields can contribute to a Block.
     const shields = defenseType === "block"
@@ -411,6 +418,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
         <label>${game.i18n.localize("CYPHER.Roll.AssetSteps")}</label>
         <input type="number" name="assets" value="0" min="0" max="2"/>
       </div>
+      ${taskModifierFields(this.actor, { stat, defenseType })}
       ${shields.length ? `
       <div class="form-group">
         <label>${game.i18n.localize("CYPHER.Shield.UseShield")}</label>
@@ -421,6 +429,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       </div>` : ""}`;
 
     const result = await foundry.applications.api.DialogV2.prompt({
+      rejectClose: false,
       window: { title: game.i18n.localize(defenseType === "block" ? "CYPHER.Defense.Block" : "CYPHER.Defense.Dodge") },
       content,
       ok: {
@@ -428,6 +437,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
         callback: (event, button) => {
           const form = button.form;
           return {
+            ...readTaskModifiers(form),
             incomingSeverity: form.incomingSeverity.value,
             difficulty: Number(form.difficulty.value),
             effortLevels: Number(form.effort.value),

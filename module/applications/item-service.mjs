@@ -149,11 +149,24 @@ export async function rollCypherTable(item, tableId) {
  * @param {number} [options.spentAbilityEdge=0] Edge already used by this action's Ability cost.
  * @returns {Promise<object|null>} Task result, or null when the attack is rejected.
  */
-export async function rollAttack(item, {
+export async function rollAttack(item, options = {}) {
+  const task = prepareAttackOptions(item, options);
+  return task ? item.actor.rollTask(task) : null;
+}
+
+/**
+ * Read-only weapon translation, reused before each action of a multi-attack
+ * Ability. This returns levels/steps and the actual target Actor; it neither
+ * pays costs nor rolls dice. A rejected Item yields null.
+ * @param {Item} item Actor-owned attack.
+ * @param {object} options Player choices and source context.
+ * @returns {object|null} Shared task-service inputs.
+ */
+export function prepareAttackOptions(item, {
   effortLevels = 0, assetSteps = 0, difficulty = 3,
   luckyShot = false, skillItemId = null, target = null, oneHanded = false,
   atExtremeRange = false, extraHinderSteps = 0, damageAdjustment = 0,
-  abilitySource = null, spentAbilityEdge = 0
+  abilitySource = null, spentAbilityEdge = 0, ...taskOptions
 } = {}) {
   if (item.type !== "attack" || !item.actor) return null;
   const actor = item.actor;
@@ -204,8 +217,12 @@ export async function rollAttack(item, {
     targetLevel
   );
   const weaponEaseSteps = attackType === "light" ? 1 : 0;
-  return actor.rollTask({
-    stat: item.system.stat, difficulty, effortLevels, assetSteps, skillItemId,
+  return {
+    ...taskOptions,
+    // Matching attack training is already part of weaponSkillModifier. Passing
+    // it again into the generic skill slot would ease the attack twice.
+    stat: item.system.stat, difficulty, effortLevels, assetSteps,
+    skillItemId: matchingAttackSkill ? null : skillItemId,
     isAttack: true, baseDamage: Math.max(0, baseDamage + damageAdjustment),
     extraHinderSteps: extraHinderSteps + weaponHinder + oneHandHinder
       + weaponRangeAdjudication.hinderSteps,
@@ -214,13 +231,14 @@ export async function rollAttack(item, {
     weaponSource: {
       itemId: item.id,
       itemName: item.name,
+      skillItemId,
       configuration: weaponConfiguration.configuration,
       attackType,
       actionTiming: weaponConfiguration.actionTiming
     },
     armorBypass: item.system.mechanics?.ignoresPhysicalArmor ?? 0,
     flavor: `${game.i18n.localize("CYPHER.Roll.Attack")}: ${item.name}`
-  });
+  };
 }
 
 /**

@@ -7,9 +7,9 @@ import { runActorAction } from "./action-guard.mjs";
 import { resolveSprayUse, resolveArcSprayAttacks } from "../rules/weapon-ability-resolution.mjs";
 import { resolveWeaponPrerequisites } from "../rules/ability-weapon-prerequisites.mjs";
 import { resolveAbilityCost, resolveAbilityCostStat } from "../rules/ability-costs.mjs";
-import { clampEffortLevels, computeEffortCost } from "../rules/tasks.mjs";
 import { resolveActiveAbilityModifiers } from "../rules/ability-modifiers.mjs";
-import { rollAttack } from "./item-service.mjs";
+import { prepareAttackOptions } from "./item-service.mjs";
+import { prepareTask } from "./task-preparation.mjs";
 
 /** Dispatch on the stable Ability key, never the localized display name. */
 export function getWeaponAbilityKind(item) {
@@ -28,7 +28,9 @@ const REQUIREMENTS = {
 
 /**
  * Execute an owned Spray/Arc Spray action through the existing attack engine.
- * Validate the entire action before charging costs or changing a tracked store.
+ * Validate activation and the first attack before writes. Each later attack is
+ * a new action: check its current Pool before paying or rolling, not the sum of
+ * all hypothetical future attacks. A natural 20 can fund the next action.
  * Adjacency and thrown-weapon reach are explicit declarations, not measurements.
  * Once writes begin, a later failure can leave earlier writes committed;
  * the finally block releases the local guard but does not roll resources back.
@@ -40,11 +42,12 @@ const REQUIREMENTS = {
  * @param {boolean} [options.allAdjacent=false] Caller-confirmed adjacency for Arc Spray.
  * @param {boolean} [options.thrownWeaponsInReach=false] Caller-confirmed Spray alternative.
  * @param {object} [options.rollOptions={}] Choices passed to the shared attack engine.
+ * @param {Function|null} [options.chooseAttackOptions=null] Fresh choices before each extra action; null cancels it.
  * @returns {Promise<object|null>} Per-target results, or null for a rejected activation.
  */
 export async function executeWeaponAbility(item, {
   weaponId, targets = [], allAdjacent = false, thrownWeaponsInReach = false,
-  rollOptions = {}
+  rollOptions = {}, chooseAttackOptions = null
 } = {}) {
   const actor = item?.actor;
   const kind = getWeaponAbilityKind(item);
@@ -55,6 +58,7 @@ export async function executeWeaponAbility(item, {
       return null;
     };
     const weapon = actor.items.get(weaponId);
+    if (chooseAttackOptions !== null && typeof chooseAttackOptions !== "function") return reject();
     if (weapon?.type !== "attack" || weapon.actor !== actor) return reject();
     if (!resolveWeaponPrerequisites(
       item.system.weaponPrerequisites?.length ? item.system.weaponPrerequisites : REQUIREMENTS[kind],
@@ -71,7 +75,7 @@ export async function executeWeaponAbility(item, {
       if (targets.length !== 1 || weapon.system.availableUses === 0) return reject();
       profiles = [{ targetId: targets[0].id, extraHinderSteps: 0 }];
     }
-    // Check all per-target Effort transactions before executing the first attack.
+    // The activation belongs to the first action; later attacks pay separately.
     const stat = weapon.system.stat;
     const pool = actor.system.stats[stat];
     const modifiers = resolveActiveAbilityModifiers(actor.system.activeAbilityEffects,
@@ -88,11 +92,19 @@ export async function executeWeaponAbility(item, {
     // The first attack shares Edge with the Ability activation. Subsequent
     // attacks are extra actions (CRD: Actions), with their own Effort costs.
     const spentAbilityEdge = costStat === stat ? Math.min(rawCost?.amount ?? 0, abilityEdge) : 0;
-    const effort = clampEffortLevels(rollOptions.effortLevels ?? 0, actor.system.effort);
-    const attackEdge = (pool?.edge ?? 0) + (modifiers.edge?.[stat] ?? 0);
-    const firstEffortCost = computeEffortCost(effort, Math.max(0, attackEdge - spentAbilityEdge));
-    const subsequentEffortCost = computeEffortCost(effort, attackEdge) * (profiles.length - 1);
-    if (!pool || pool.pool.value < firstEffortCost + subsequentEffortCost + (cost.stat === stat ? cost.amount : 0)) return reject();
+    const planAttack = (index, extra = {}, choices = rollOptions) => {
+      const options = prepareAttackOptions(weapon, { ...choices, ...extra, areaAttack: false,
+        difficulty: targets[index].system.level, target: targets[index],
+        extraHinderSteps: (choices.extraHinderSteps ?? 0) + profiles[index].extraHinderSteps,
+        abilitySource: { itemId: item.id, name: item.name, kind },
+        spentAbilityEdge: index === 0 ? spentAbilityEdge : 0 });
+      const plan = options && prepareTask(actor, { damageEffortLevels: 0, freeEffortLevels: 0,
+        freeDamageEffortLevels: 0, freeEffortSource: "", powerShiftCategories: [],
+        areaAttack: false, push: false, armorModifier: 0, defenseType: null, ...options });
+      return plan ? { options, plan } : null;
+    };
+    const first = planAttack(0);
+    if (!first || !pool || pool.pool.value < first.plan.totalCost + (cost.stat === stat ? cost.amount : 0)) return reject();
     // Lucky Shot is a separate action transaction and is not offered here.
     if (rollOptions.luckyShot) return reject();
     let spray = null;
@@ -117,14 +129,29 @@ export async function executeWeaponAbility(item, {
     });
     const results = [];
     for (let index = 0; index < profiles.length; index += 1) {
-      const result = await rollAttack(weapon, {
-        ...rollOptions, luckyShot: false, difficulty: targets[index].system.level,
-        target: targets[index], extraHinderSteps: profiles[index].extraHinderSteps,
-        assetSteps: (rollOptions.assetSteps ?? 0) + (spray?.assetSteps ?? 0),
+      // A conditional grant or accepted wound belongs to one action. Legacy
+      // macros can reuse paid choices, but must explicitly declare free grants
+      // again; the sheet collects fresh choices for every extra action.
+      let choices = index === 0 ? rollOptions : { ...rollOptions,
+        freeEffortLevels: 0, freeDamageEffortLevels: 0, freeEffortSource: "",
+        push: false, pushDamageEffortLevels: 0 };
+      if (index > 0 && chooseAttackOptions) {
+        choices = await chooseAttackOptions({ index, actor, target: targets[index], previous: results.at(-1) });
+        if (!choices) break;
+      }
+      if (choices.luckyShot) break;
+      // Re-read current resources immediately before each action. Refusal
+      // leaves that action's Pool, dice and target untouched; earlier actions
+      // remain committed. Do not throw as if a completed attack never happened.
+      const current = planAttack(index, {
+        luckyShot: false,
+        assetSteps: (choices.assetSteps ?? 0) + (spray?.assetSteps ?? 0),
         damageAdjustment: spray?.damageAdjustment ?? 0, abilitySource,
         spentAbilityEdge: index === 0 ? spentAbilityEdge : 0
-      });
-      if (!result) throw new Error("Validated weapon Ability attack was rejected");
+      }, choices);
+      if (!current) break;
+      const result = await actor.rollTask(current.options);
+      if (!result) break;
       // A natural 20 refunds the first action's activation cost as well as
       // its Effort (the task engine handles the latter).
       if (index === 0 && result.roll?.total === 20 && cost.amount) {
@@ -135,6 +162,6 @@ export async function executeWeaponAbility(item, {
       }
       results.push(result);
     }
-    return { kind, spray, results };
+    return { kind, spray, results, completed: results.length === profiles.length };
   });
 }

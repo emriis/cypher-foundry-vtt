@@ -1,6 +1,7 @@
 import { runActorAction } from "./action-guard.mjs";
 import { activateAbilityEffect } from "./ability-runtime-service.mjs";
-import { resolveAbilityCost } from "../rules/ability-costs.mjs";
+import { resolveAbilityCost, resolveAbilityCostStat } from "../rules/ability-costs.mjs";
+import { resolveActiveAbilityModifiers } from "../rules/ability-modifiers.mjs";
 
 /**
  * Foundry-aware application operations for interactive Ability content.
@@ -44,9 +45,19 @@ async function executeAbilityEffect(item, effectId, options) {
   }
 
   if (isOwnedPC) {
+    // CRD > Edge: even an activation without a task roll receives Edge once.
+    // Keep the cost validator explicit: weapon Abilities already discount
+    // their activation and reserve the remaining Edge for the first attack.
+    const cost = item.system.cost;
+    if (!Number.isSafeInteger(cost?.amount) || cost.amount < 0) return false;
+    const costStat = resolveAbilityCostStat(cost, options.costStat ?? null);
+    if (cost.amount > 0 && !costStat) return false;
+    const items = actor.items?.contents ?? Array.from(actor.items?.values?.() ?? []);
+    const modifiers = resolveActiveAbilityModifiers(actor.system.activeAbilityEffects, items);
+    const edge = costStat ? (actor.system.stats[costStat]?.edge ?? 0) + (modifiers.edge[costStat] ?? 0) : 0;
     const resolvedCost = resolveAbilityCost(
       actor.system,
-      item.system.cost,
+      { ...cost, amount: Math.max(0, cost.amount - edge) },
       options.costStat ?? null
     );
     if (!resolvedCost) return false;

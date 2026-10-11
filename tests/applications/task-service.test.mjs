@@ -71,7 +71,7 @@ test("rollTask caps assets and Effort before resolving difficulty and Pool cost"
   globalThis.__rollMessages = [];
   const actor = createActor({ pool: 10, edge: 1, effort: 2 });
   actor.system.hinderSteps = 1;
-  actor.items.set("trained", { system: { stepModifier: 1 } });
+  actor.items.set("trained", { type: "skill", system: { stepModifier: 1 } });
 
   const result = await CypherActor.prototype.rollTask.call(actor, {
     stat: "might",

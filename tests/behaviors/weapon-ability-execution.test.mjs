@@ -66,3 +66,44 @@ test("given a natural 20 on Spray, activation and Effort are refunded but ammuni
   assert.equal(context.actor.system.stats.speed.pool.value, 10);
   assert.equal(context.weapon.system.availableUses, 0);
 });
+
+test("Given insufficient Pool for the next Arc Spray action, then no die or target mutation occurs for that action", async () => {
+  const context = scenario("arc-spray");
+  context.actor.system.stats.speed.pool.value = 6;
+  const result = await executeWeaponAbility(context.ability, { weaponId: "weapon", targets: context.targets,
+    allAdjacent: true, rollOptions: { effortLevels: 1 } });
+  assert.equal(result.results.length, 1);
+  assert.equal(context.actor.system.stats.speed.pool.value, 1);
+  assert.deepEqual(context.targets.map(target => target.system.health.value), [7, 10, 10]);
+  assert.equal(context.messages.length, 1, "only the accepted attack rolled and published chat");
+});
+
+test("Given a natural twenty on each action, then its refund funds later attacks without an aggregate prepayment", async () => {
+  const context = scenario("arc-spray", 20);
+  context.actor.system.stats.speed.pool.value = 5;
+  const result = await executeWeaponAbility(context.ability, { weaponId: "weapon", targets: context.targets,
+    allAdjacent: true, rollOptions: { effortLevels: 1, specialEffectChoice: "damage" } });
+  assert.equal(result.completed, true);
+  assert.equal(result.results.length, 3);
+  assert.equal(context.actor.system.stats.speed.pool.value, 5);
+});
+
+test("Given extra Arc Spray actions, then fresh choices are validated before each action and cancellation spends nothing", async () => {
+  const context = scenario("arc-spray");
+  const prompts = [];
+  const result = await executeWeaponAbility(context.ability, { weaponId: "weapon", targets: context.targets,
+    allAdjacent: true, rollOptions: { effortLevels: 1 },
+    chooseAttackOptions: async ({ index }) => { prompts.push(index); return index === 1 ? { effortLevels: 0 } : null; } });
+  assert.equal(result.completed, false);
+  assert.deepEqual(prompts, [1, 2]);
+  assert.equal(context.actor.system.stats.speed.pool.value, 5, "only activation and the first action's Effort cost points");
+  assert.deepEqual(context.targets.map(target => target.system.health.value), [7, 7, 10]);
+  assert.equal(context.messages.length, 2);
+});
+
+test("Given an ordinary free grant declared for the first action, then a macro cannot reuse that declaration on extra actions", async () => {
+  const context = scenario("arc-spray");
+  const result = await executeWeaponAbility(context.ability, { weaponId: "weapon", targets: context.targets,
+    allAdjacent: true, rollOptions: { freeEffortLevels: 1, freeEffortSource: "Confirmed CRD grant" } });
+  assert.deepEqual(result.results.map(result => result.effectiveDifficulty), [1, 2, 2]);
+});

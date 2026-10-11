@@ -6,7 +6,7 @@ import { computeEffortCost } from "../../module/rules/tasks.mjs";
 function setup(kind = "spray", { uses = 2, rapidFire = true, speed = 20, edge = 0, d20 = 10 } = {}) {
   const calls = [], messages = [], warnings = [];
   globalThis.game = { i18n: { localize: key => key, format: (key, args) => `${key}:${args.uses}` } };
-  globalThis.ui = { notifications: { warn: text => warnings.push(text) } };
+  globalThis.ui = { notifications: { warn: text => warnings.push(text), error: text => warnings.push(text) } };
   globalThis.ChatMessage = { getSpeaker: () => ({}) };
   globalThis.Roll = class {
     async evaluate() { this.total = 5; return this; }
@@ -69,7 +69,7 @@ test("Arc Spray executes three distinct target-level attacks with one hindrance 
   assert.deepEqual(context.calls.map(call => call.targetActor.id), context.targets.map(target => target.id));
 });
 
-test("invalid weapon, empty store, and insufficient aggregate costs leave state untouched", async () => {
+test("invalid weapon, empty store, and an unaffordable first action leave state untouched", async () => {
   for (const options of [{ uses: 0 }, { rapidFire: false }, { speed: 1 }]) {
     const context = setup("spray", options);
     const before = context.actor.system.stats.speed.pool.value;
@@ -79,10 +79,16 @@ test("invalid weapon, empty store, and insufficient aggregate costs leave state 
     assert.equal(context.calls.length, 0);
     assert.equal(context.messages.length, 0);
   }
+});
+
+test("Given enough Pool for only the first Arc Spray action, then it executes and later actions stop without spending", async () => {
   const context = setup("arc-spray", { speed: 8 });
-  assert.equal(await executeWeaponAbility(context.item, { weaponId: "weapon", targets: context.targets,
-    allAdjacent: true, rollOptions: { effortLevels: 1 } }), null);
-  assert.equal(context.actor.system.stats.speed.pool.value, 8);
+  const result = await executeWeaponAbility(context.item, { weaponId: "weapon", targets: context.targets,
+    allAdjacent: true, rollOptions: { effortLevels: 1 } });
+  assert.equal(result.results.length, 1);
+  assert.equal(result.completed, false);
+  assert.equal(context.calls.length, 1);
+  assert.equal(context.actor.system.stats.speed.pool.value, 2);
 });
 
 test("Arc Spray rejects duplicated targets and unconfirmed adjacency before spending", async () => {
