@@ -10,7 +10,7 @@
     "enabler": true,
     "repeatable": false,
     "cost": {
-      "stat": "none",
+      "stat": "intellect",
       "amount": 0,
       "options": []
     },
@@ -23,6 +23,6 @@
     "grantedArmorItemCategory": "",
     "effects": [],
     "rollTables": [],
-    "description": "When you roll on a task you're trained in (other than an attack or defense task) and your roll is less than a 12, treat the roll as a 12. (This means you don't get a GM intrusion if you roll a 1.) Effort: Increase the minimum number rolled for this ability by 3. Enabler. At tier 3: The minimum number rolled for this ability increases to 15."
+    "description": "When you roll on a task you’re trained in (other than an attack or defense task) and your roll is less than a 12, treat the roll as a 12. (This means you don’t get a GM intrusion if you roll a 1.) Effort: Increase the minimum number rolled for this ability by 3. Enabler. At tier 3: The minimum number rolled for this ability increases to 15."
   }
 }

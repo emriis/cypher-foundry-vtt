@@ -1,0 +1,47 @@
+{
+  "_id": "491a73a84afb4956",
+  "_key": "!items!491a73a84afb4956",
+  "name": "Hand to Eye",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "hand-to-eye",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "choice",
+      "amount": 2,
+      "options": [
+        "speed",
+        "intellect"
+      ]
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "<p>When you roll to accomplish a task involving manual dexterity or mental agility—pickpocketing, lockpicking, games involving agility, and so on—and your roll is less than a 9, treat the roll as a 9. (This means you don’t get a GM intrusion if you roll a 1.)</p>\n<p>Effort: Increase the minimum number rolled for this ability by 3.</p>\n<p>Enabler.</p>\n<p>At tier 3: The minimum number rolled for this ability increases to 12.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "ability.hand-to-eye",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Science Fiction Genre / Space Opera / Scoundrel",
+        "sourceLocator": "CRD — scoundrel — Hand to Eye",
+        "transformations": [
+          "source heading represented as Item name and cost",
+          "CRD tier-one Ability represented as a standalone Item"
+        ]
+      }
+    }
+  }
+}

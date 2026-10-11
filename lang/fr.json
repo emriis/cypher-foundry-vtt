@@ -567,7 +567,12 @@
       "UnsupportedAttackDamage": "Cette attaque de PNJ n’a pas de profil de dégâts applicable aux personnages joueurs.",
       "LostNextAction": "Ce PNJ perd sa prochaine action à cause d’un effet d’arme.",
       "RollAttackTitle": "Attaque du PNJ : {name}",
-      "Defense": "Défense"
+      "Defense": "Défense",
+      "WeaponEffects": "Effets d’armes actifs",
+      "EffectRounds": "{rounds} round(s)",
+      "ExtendEffect": "Prolonger à deux rounds (MJ)",
+      "EffectHindered": "Actions gênées de {steps} cran(s)",
+      "EffectNextAction": "Prochaine action"
     },
     "Community": {
       "Resources": "Ressources"

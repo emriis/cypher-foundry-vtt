@@ -3,7 +3,7 @@
  */
 import fs from "node:fs/promises";
 import path from "node:path";
-import { root, LANGUAGES, CRD_VERSION } from "./context.mjs";
+import { root, LANGUAGES, CRD_VERSION, PENDING_FRENCH_TRANSLATION } from "./context.mjs";
 import { hash, slug } from "./identity.mjs";
 
 /**
@@ -113,6 +113,9 @@ export async function normalizeDescriptorSources() {
         const document = JSON.parse(await fs.readFile(filePath, "utf8"));
         if (document._key?.startsWith("!folders!")) continue;
 
+        const translationPending = document.flags?.cypherFoundry?.crd?.transformations
+          ?.includes(PENDING_FRENCH_TRANSLATION);
+
         const reference = english.get(`${directory}/${file}`);
         if (!reference) {
           throw new Error(
@@ -139,7 +142,8 @@ export async function normalizeDescriptorSources() {
                 : `CRD — Descriptor: ${reference.name}`,
               transformations: [
                 "mechanical fields extracted from the CRD",
-                "Descriptor source retained as a structured Foundry Item"
+                "Descriptor source retained as a structured Foundry Item",
+                ...(language === "fr" && translationPending ? [PENDING_FRENCH_TRANSLATION] : [])
               ],
               ...(language === "fr"
                 ? { sourceLogicalId: reference.logicalId }

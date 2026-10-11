@@ -1,11 +1,11 @@
 {
   "_id": "982bef99b0e3ed87",
   "_key": "!items!982bef99b0e3ed87",
-  "name": "Grand Illusion",
+  "name": "Grandiose Illusion",
   "type": "ability",
   "img": "icons/svg/upgrade.svg",
   "system": {
-    "key": "grand-illusion",
+    "key": "grandiose-illusion",
     "tier": 6,
     "enabler": false,
     "repeatable": false,
@@ -14,7 +14,7 @@
       "amount": 8,
       "options": []
     },
-    "action": null,
+    "action": "lastAction",
     "freeWeaponCategories": [],
     "freeArmorCategories": [],
     "freeWeaponFamilies": [],
@@ -23,6 +23,6 @@
     "grantedArmorItemCategory": "",
     "effects": [],
     "rollTables": [],
-    "description": "You create a vast, immensely complex illusory scene filling a 1-mile (1.6 km) cube whose closest face is within immediate range of you. You must be able to see the area when you create the illusion. The images can move freely within the cube, behave logically (reacting to fire, attacks, and so on) even when you aren’t watching, and include sound and smell. Examples include armies in battle, flying creatures, aerial machines, or an illusory landscape. The illusion lasts as long as you concentrate (using your action) or until you use a one-hour or longer recovery. Action to create."
+    "description": "<p>You create a fantastically complex scene of images that fit within a 1-mile (1.6 km) cube, the nearest edge of which must be within immediate range of you. You must be able to see the images when you create them. The images can move in the cube and act in accordance with your desires. They can also act logically (such as reacting appropriately to fire or attacks) when you aren’t directly observing them. The illusion includes sound and smell. For example, armies can clash in battle, with air support from machines or flying creatures, on and above terrain of your creation. The illusion lasts until you stop concentrating on it or you use a one-hour or longer recovery. Last action to initiate.</p>"
   }
 }

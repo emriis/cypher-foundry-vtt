@@ -1,11 +1,11 @@
 {
   "_id": "0cd8da202037407c",
   "_key": "!items!0cd8da202037407c",
-  "name": "Retribution",
+  "name": "Supreme Retribution",
   "type": "ability",
   "img": "icons/svg/upgrade.svg",
   "system": {
-    "key": "retribution",
+    "key": "supreme-retribution",
     "tier": 6,
     "enabler": false,
     "repeatable": false,
@@ -23,6 +23,6 @@
     "grantedArmorItemCategory": "",
     "effects": [],
     "rollTables": [],
-    "description": "You call down a shaft of roaring radiant flame in an immediate area within long range. Make separate Intellect attacks against each creature in the area. Success means you inflict 4 damage; all creatures take 1 damage even on a failed attack roll. Choose one creature in the area to take an additional 3 damage regardless of whether your attack succeeded or failed. Action."
+    "description": "<p>You call down a shaft of roaring radiant flame in an immediate area within long range. Make separate Intellect attacks against each creature in the area. Success means you inflict 4 damage; all creatures take 1 damage even on a failed attack roll. Choose one creature in the area to take an additional 3 damage regardless of whether your attack succeeded or failed. Action.</p>"
   }
 }

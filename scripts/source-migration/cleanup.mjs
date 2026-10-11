@@ -3,7 +3,7 @@
  */
 import fs from "node:fs/promises";
 import path from "node:path";
-import { root, LANGUAGES, PARENT_PACKS, CRD_VERSION, EDITORIAL_ARTIFACT_IDS } from "./context.mjs";
+import { root, LANGUAGES, PARENT_PACKS, CRD_VERSION, EDITORIAL_ARTIFACT_IDS, PENDING_FRENCH_TRANSLATION } from "./context.mjs";
 import { isEditorialArtifact, hash, contentIdentityShape, buildLogicalId } from "./identity.mjs";
 import { sourceFiles } from "./sources.mjs";
 
@@ -145,6 +145,10 @@ export async function mergeGenreAbilities() {
           crd: {
             ...record.provenance,
             language,
+            transformations: [...new Set([
+              ...(record.provenance.transformations ?? []),
+              ...(language === "fr" && !localized ? [PENDING_FRENCH_TRANSLATION] : [])
+            ])],
             ...(language === "fr" ? { sourceLogicalId: record.logicalId } : {})
           }
         }

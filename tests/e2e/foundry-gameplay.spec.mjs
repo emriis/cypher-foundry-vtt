@@ -952,6 +952,63 @@ test.describe("Cypher Foundry live gameplay", () => {
   });
 
 
+  test("defaults Stunstick to one round and persists the GM's optional second round from the NPC sheet", async ({ e2ePage: page }) => {
+    const setup = await page.evaluate(async prefix => {
+      const pc = await Actor.create({ name: `${prefix} Stunstick PC`, type: "pc" });
+      const npc = await Actor.create({ name: `${prefix} Stunstick target`, type: "npc", system: { level: 3, health: { value: 20, max: 20 } } });
+      // Create the real Combat before advancing its clock. Creating directly
+      // at round four bypasses Foundry's previous-turn initialization.
+      const combat = await foundry.documents.Combat.create({ active: true, flags: { cypher: { e2eOwned: true } } });
+      await combat.activate();
+      await combat.update({ round: 4 });
+      const stunstick = (await game.packs.get("cypher.equipment-en").getDocuments()).find(item => item.name === "Stunstick");
+      if (!stunstick) throw new Error("CRD Stunstick fixture is missing");
+      const attack = await Item.create(stunstick.toObject(), { parent: pc });
+      const result = await attack.rollAttack({ target: npc, difficulty: 0 });
+      await attack.rollAttack({ target: npc, difficulty: 0 });
+      await npc.sheet.render(true);
+      return { npcId: npc.id, pcId: pc.id, attackId: attack.id, combatId: combat.id, activeCombatId: game.combat?.id,
+        success: result.success, health: npc.system.health.value,
+        effects: foundry.utils.deepClone(npc.flags.cypher.activeWeaponEffects) };
+    }, ACTOR_PREFIX);
+    expect(setup.activeCombatId).toBe(setup.combatId);
+    expect(setup.success).toBe(true);
+    expect(setup.health).toBe(20);
+    expect(setup.effects).toHaveLength(1);
+    expect(setup.effects[0].duration).toBe("a round or two");
+    expect(setup.effects[0].roundCount).toBe(1);
+    expect(setup.effects[0].hinderSteps).toBe(2);
+    const extend = page.locator('[data-action="extendWeaponEffect"]');
+    await expect(extend).toBeVisible();
+    // A native button must support keyboard activation too.
+    await extend.focus();
+    await extend.press("Enter");
+    await expect.poll(() => page.evaluate(id => game.actors.get(id).flags.cypher.activeWeaponEffects[0].roundCount, setup.npcId)).toBe(2);
+    await expect(extend).toHaveCount(0);
+    await page.evaluate(async ({ npcId, combatId }) => {
+      const npc = game.actors.get(npcId);
+      await npc.sheet.close();
+      await game.combats.get(combatId).update({ round: 5 });
+      await npc.sheet.render(true);
+    }, setup);
+    await expect(page.locator(".npc-weapon-effects")).toBeVisible();
+    expect(await page.evaluate(id => game.actors.get(id).flags.cypher.activeWeaponEffects[0].roundCount, setup.npcId)).toBe(2);
+    const repeated = await page.evaluate(async ({ pcId, attackId, npcId }) => {
+      const npc = game.actors.get(npcId);
+      await game.actors.get(pcId).items.get(attackId).rollAttack({ target: npc, difficulty: 0 });
+      return { effects: foundry.utils.deepClone(npc.flags.cypher.activeWeaponEffects), health: npc.system.health.value };
+    }, setup);
+    expect(repeated.effects).toHaveLength(1);
+    expect(repeated.effects[0].hinderSteps).toBe(2);
+    expect(repeated.effects[0].roundCount).toBe(2);
+    expect(repeated.health).toBe(20);
+    await expect(extend).toHaveCount(0);
+    await page.evaluate(async ({ combatId }) => {
+      await game.combats.get(combatId).update({ round: 6 });
+    }, setup);
+    await expect(page.locator(".npc-weapon-effects")).toHaveCount(0);
+  });
+
   test("persists successful weapon damage to a targeted NPC Health value", async ({
     e2ePage: page
   }) => {

@@ -3,37 +3,18 @@
   "_key": "!items!aa87bee538007",
   "document": "Item",
   "name": "Energy pack (50)",
-  "type": "attack",
-  "crdType": "weapon",
+  "type": "equipment",
+  "crdType": "equipment",
   "system": {
-    "attackType": "light",
-    "range": "immediate",
-    "extremeRange": "",
-    "damage": 2,
-    "stat": "might",
-    "weaponFamily": "",
-    "attackSkillCategory": "",
+    "quantity": 1,
+    "level": null,
     "priceCategory": "inexpensive",
-    "properties": [
-      "Ammunition for blaster weapons"
-    ],
-    "mechanics": {
-      "twoHanded": false,
-      "rapidFire": false,
-      "ignoresPhysicalArmor": 0,
-      "cutsThroughMaterialsLevel": null,
-      "targetEffects": [],
-      "requiresTripod": false,
-      "requiredOperators": 0,
-      "alternateConfiguration": {
-        "enabled": false,
-        "attackType": "",
-        "action": ""
-      }
-    },
-    "freelyUsable": false,
     "equipped": false,
-    "description": "Ammunition for blaster weapons"
+    "depletionDie": "none",
+    "depletionMin": 1,
+    "depletionMax": 1,
+    "depleted": false,
+    "description": "<table><thead><tr><th>Ammunition for blaster weapons</th></tr></thead><tbody></tbody></table>"
   },
   "flags": {
     "cypherFoundry": {

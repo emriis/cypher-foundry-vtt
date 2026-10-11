@@ -1,0 +1,47 @@
+{
+  "_id": "cc598937fc999a30",
+  "_key": "!items!cc598937fc999a30",
+  "name": "Noble Sacrifice",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "key": "noble-sacrifice",
+    "tier": 1,
+    "enabler": true,
+    "repeatable": false,
+    "cost": {
+      "stat": "choice",
+      "amount": 2,
+      "options": [
+        "might",
+        "speed"
+      ]
+    },
+    "action": null,
+    "freeWeaponCategories": [],
+    "freeArmorCategories": [],
+    "freeWeaponFamilies": [],
+    "freeWeaponSkillCategories": [],
+    "chooseWeaponAttackCategory": false,
+    "grantedArmorItemCategory": "",
+    "effects": [],
+    "rollTables": [],
+    "description": "<p>When you take the attack meant for another character, you gain a benefit for your selflessness. The attack automatically hits you and inflicts its normal damage (plus the additional minor wound for taking the attack). You can immediately retaliate with an attack against a foe within range. If you took the attack for a person you are protecting with Noble Defender, this attack is eased. Enabler.</p>"
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "ability.noble-sacrifice",
+        "language": "en",
+        "sourceKind": "record",
+        "section": "Fantasy Genre / Epic Fantasy / Noble Warrior",
+        "sourceLocator": "CRD — noble-warrior — Noble Sacrifice",
+        "transformations": [
+          "source heading represented as Item name and cost",
+          "CRD tier-one Ability represented as a standalone Item"
+        ]
+      }
+    }
+  }
+}

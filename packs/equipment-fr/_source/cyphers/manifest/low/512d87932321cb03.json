@@ -51,7 +51,7 @@
           {
             "min": 61,
             "max": 80,
-            "description": "<p>Solid color that obscures sight (50-foot [16 m] cube)</p>"
+            "description": "<p>Solid color that obscures sight (50‑foot [16 m] cube)</p>"
           },
           {
             "min": 81,
@@ -64,7 +64,7 @@
     "internal": false,
     "identified": true,
     "depleted": false,
-    "description": "<p><strong>Effect:</strong> Projects a specific illusory or holographic scene in an immediate area up to a short distance away from you. The scene remains in place after it is created, and it includes appropriate movement, sound, and scent. For example, the scene might contain a ferocious wolf that paces back and forth but doesn’t leave the area. The scene lasts until you use aone-hour or longer recovery. Roll to determine the image. d00 Image 01– 10 Copy of you that imitates your movements and speech (10-foot [3.5 m] cube) 11– 30 Terrifying creature, perhaps extinct or fictional (10-foot [3.5 m] cube) 31– 40 Huge machine or natural feature that obscures sight (30-foot [9 m] cube) 41– 50 Beautiful pastoral scene (50-foot [16 m] cube) 51– 60 Food that looks delicious but may not be familiar (10-foot [3.5 m] cube) 61– 80 Solid color that obscures sight (50‑foot [16 m] cube) 81– 00 Incomprehensible scene that is disorienting and strange (20-foot [6 m] cube)</p><p><strong>Genre Items: illusion gem (fantasy); hologram projector (sci-fi)</strong></p>"
+    "description": "<p>Effect: Projects a specific illusory or holographic scene in an immediate area up to a short distance away from you. The scene remains in place after it is created, and it includes appropriate movement, sound, and scent. For example, the scene might contain a ferocious wolf that paces back and forth but doesn’t leave the area. The scene lasts until you use a one-hour or longer recovery. Roll to determine the image. d00 Image 01–10 Copy of you that imitates your movements and speech (10-foot [3.5 m] cube) 11–30 Terrifying creature, perhaps extinct or fictional (10-foot [3.5 m] cube) 31–40 Huge machine or natural feature that obscures sight (30-foot [9 m] cube) 41–50 Beautiful pastoral scene (50-foot [16 m] cube) 51–60 Food that looks delicious but may not be familiar (10-foot [3.5 m] cube) 61–80 Solid color that obscures sight (50‑foot [16 m] cube) 81–00 Incomprehensible scene that is disorienting and strange (20-foot [6 m] cube) Genre Items: illusion gem (fantasy); hologram projector (sci-fi)</p>"
   },
   "flags": {
     "cypherFoundry": {
@@ -78,7 +78,8 @@
         "transformations": [
           "structured CRD power classification",
           "structured CRD random range",
-          "structural field mapping only"
+          "structural field mapping only",
+          "English source retained pending French translation"
         ],
         "sourceLogicalId": "cypher.manifest.image-projector"
       }

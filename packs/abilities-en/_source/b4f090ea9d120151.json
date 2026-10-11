@@ -14,7 +14,7 @@
       "amount": 0,
       "options": []
     },
-    "action": null,
+    "action": "action",
     "freeWeaponCategories": [],
     "freeArmorCategories": [],
     "freeWeaponFamilies": [],
@@ -23,6 +23,6 @@
     "grantedArmorItemCategory": "",
     "effects": [],
     "rollTables": [],
-    "description": "The wound bleeds; on your next turn, the foe takes 2 damage that ignores armor. Action. Gut RipperGM intrusions: Your knife gets stuck in your foe and slips from your grasp. Instead of hurting your foe, you accidentally inflict a minor wound on yourself. Your knife sheath is empty and you can't complete the attack."
+    "description": "The wound bleeds; on your next turn, the foe takes 2 damage that ignores armor. Action."
   }
 }

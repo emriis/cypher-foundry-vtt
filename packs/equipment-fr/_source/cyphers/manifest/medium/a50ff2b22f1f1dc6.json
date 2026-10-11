@@ -64,7 +64,7 @@
     "internal": false,
     "identified": true,
     "depleted": false,
-    "description": "<p><strong>Effect:</strong> Projects a ray of destructive energy at a target within very long range, inflicting 8 damage. You may instead split the ray and fire at two targets within range that are within a short distance of each other (make separate attack rolls for each target), inflicting 5 damage on each. Roll a d00 to determine the type of energy. d00 Energy Type 01– 15 Cold 16– 40 Electricity 41– 50 Force 51– 80 Heat/concentrated light 81– 85 Magnetic wave 86– 90 Molecular bond disruption 91– 00 Radiation</p><p><strong>Genre Items: crystal fire dart (fantasy); one-shot blaster (sci-fi)</strong></p>"
+    "description": "<p>Effect: Projects a ray of destructive energy at a target within very long range, inflicting 8 damage. You may instead split the ray and fire at two targets within range that are within a short distance of each other (make separate attack rolls for each target), inflicting 5 damage on each. Roll a d00 to determine the type of energy. d00 Energy Type 01–15 Cold 16–40 Electricity 41–50 Force 51–80 Heat/concentrated light 81–85 Magnetic wave 86–90 Molecular bond disruption 91–00 Radiation Genre Items: crystal fire dart (fantasy); one-shot blaster (sci-fi)</p>"
   },
   "flags": {
     "cypherFoundry": {
@@ -78,7 +78,8 @@
         "transformations": [
           "structured CRD power classification",
           "structured CRD random range",
-          "structural field mapping only"
+          "structural field mapping only",
+          "English source retained pending French translation"
         ],
         "sourceLogicalId": "cypher.manifest.energy-blast"
       }

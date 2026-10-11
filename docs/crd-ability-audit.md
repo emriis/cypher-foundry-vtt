@@ -1,5 +1,10 @@
 # CRD Ability Coverage Audit
 
+This document records an earlier inventory/design audit. Its legacy counts below
+are historical, not the current catalogue. Use the
+[2026-10-11 compendium audit](crd-compendium-audit.md) for current text fidelity,
+normalization defects, and per-entry automation limitations.
+
 ## Scope
 
 The standalone Ability compendiums are the canonical catalogue of reusable
@@ -52,9 +57,9 @@ duration, Effort, or comparable mechanics.
 This prevents the Ability catalogue from becoming a generic container for every
 character modifier.
 
-## Current inventory
+## Historical inventory
 
-| Pack | Current source records | Status |
+| Pack | Source records at the original audit | Status |
 | --- | ---: | --- |
 | `abilities-en` | 53 | Legacy partial coverage |
 | `abilities-fr` | 45 | Legacy partial coverage |

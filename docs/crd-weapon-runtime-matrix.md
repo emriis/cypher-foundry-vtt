@@ -24,7 +24,7 @@ present in an Item, copied to a chat flag, or shown in descriptive text.
 
 | Field | Current behavior | Status | Remaining work |
 | --- | --- | --- | --- |
-| `attackType` | Supplies default damage when explicit damage is falsy; light attacks receive one ease step. Weapon category also participates in weapon familiarity. | Runtime | Verify source-specific exceptions and zero-damage handling separately; do not change without CRD evidence. |
+| `attackType` | Supplies default damage only when explicit damage is absent; explicit zero remains zero. Light attacks receive one ease step. Weapon category also participates in weapon familiarity. | Runtime | Source-specific exceptions need their own CRD contracts. |
 | `damage` | Becomes the base damage for the task result. A successful attack against a selected NPC now persists numeric damage to the target Health after Armor mitigation. | Runtime | Wound/Pool target damage remains a separate contract. |
 | `stat` | Chooses the Pool and stat used for the attack task. | Runtime | None identified in this field audit. |
 | `range` | Preserved on the Item and included in the attack result's range-adjudication record. The GM explicitly declares whether the target is at the weapon's range limit. | Runtime (explicit adjudication only) | No token-distance or grid measurement is inferred. A future distance contract would be a separate feature. |
@@ -39,7 +39,7 @@ present in an Item, copied to a chat flag, or shown in descriptive text.
 | `availableUses` | Optional, explicitly tracked ammunition/power/thrown-weapon store. Spray consumes the capped d6 + 1 count and persists the remainder. | Runtime | Ordinary attacks and Arc Spray do not infer consumption rules from this field. |
 | `mechanics.ignoresPhysicalArmor` | Numeric Armor bypass is passed from the weapon to the attack resolver and applied once against selected NPC Armor. | Runtime | Source-specific exceptions still require explicit modelling. |
 | `mechanics.cutsThroughMaterialsLevel` | Preserved in the Item model. | Stored only / model gap | Requires an interactable material/object model with levels and a CRD-backed resolution contract. |
-| `mechanics.targetEffects` | Filters effects by target level, persists them to targeted NPCs on a successful attack, and consumes supported `hindered` / `loseNextAction` effects according to duration. | Runtime | Extend only when additional CRD effect semantics are structured. |
+| `mechanics.targetEffects` | Filters effects by target level, persists them to targeted NPCs on a successful attack, and consumes supported `hindered` / `loseNextAction` effects in NPC attack resolution according to duration. Repeated structured Stunstick hindrance keeps two steps and the latest expiry under the accepted user adjudication. | Runtime (NPC attack consumer) | Other opposed tasks/passive NPC defenses need contracts. |
 | `mechanics.requiresTripod` | Preserved in the Item model. | Stored only / model gap | Requires deployment/positioning state and a rule for resolving attacks when the requirement is unmet. |
 | `mechanics.requiredOperators` | Preserved in the Item model. | Stored only / model gap | Requires a group/operator participation model and a rule for enforcing the minimum. |
 | `mechanics.alternateConfiguration` | Persists primary/alternate selection; the switch action is announced in chat and the active category determines attack ease/familiarity, category damage, and action timing. | Runtime (configuration switch) | Switch action cost and attack timing are recorded/presented but not enforced by a turn/action economy. Only the CRD-defined alternate category is modeled; no other weapon fields are inferred. |
@@ -60,6 +60,14 @@ present in an Item, copied to a chat flag, or shown in descriptive text.
 - Matching target effects are persisted to a selected NPC on a successful attack
   and supported `hindered` / `loseNextAction` effects are consumed according to
   their declared duration.
+- Stunstick inflicts zero damage as specified by the Science Fiction Equipment
+  table. For its level-gated hindrance lasting "a round or two", the accepted
+  adjudication is one round by default, with one explicit GM extension to two.
+  The NPC sheet displays active effects and provides the extension control only
+  to a GM who can update that Actor. Repeated, expired, and unauthorized extension
+  requests perform no writes. Combat round changes determine expiration; outside
+  combat the existing NPC-action boundary consumes the remaining narrative rounds.
+  This boundary does not measure elapsed real time or infer the end of a fight.
 - Core attack resolution computes damage and persists successful numeric damage
   to a selected NPC target, including the declared physical Armor bypass.
 

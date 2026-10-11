@@ -11,6 +11,11 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ### Added
 
+- Added a read-only local CRD audit, reviewed text evidence for CI, and a
+  per-entry inventory separating source fidelity from executable automation.
+- Added active weapon-effect display and a GM control to extend Stunstick's
+  default one-round hindrance to the source-permitted second round.
+
 - Added CRD-backed BDD regressions for rejected/overlapping actions, repeated
   rerolls, depletion ranges, recovery formulas, and player-selected table outcomes.
 - Added source-normalization idempotence and dialogue identity/cancellation checks.
@@ -32,6 +37,17 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 - Aligned skills/prompts with application services and CRD source fidelity.
 
 ### Fixed
+
+- Restored CRD-faithful compendium passages, restrictions, equipment notes,
+  Genre definitions, and rule Journals; repaired swallowed Ability grants,
+  incorrect names/costs, and ordinary gear classified as weapons.
+- Preserve explicit zero weapon damage. Stunstick effects now expire under the
+  accepted one-round default and reject unauthorized/repeated GM extensions.
+- Repeated Stunstick hindrance keeps two steps and the latest expiration under
+  the accepted adjudication, preserving a GM extension and independent effects.
+- Source normalization preserves distinct unmodeled English definitions,
+  consistent bilingual logical identities, and Type tier references when
+  identical source occurrences are merged.
 
 - E2E fixtures identify batched Items by their roles rather than response order;
   Spray/Arc Spray replay weapon-first results and retain the original UI failure

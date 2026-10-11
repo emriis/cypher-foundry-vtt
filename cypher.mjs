@@ -123,6 +123,22 @@ Hooks.once("ready", () => {
   console.log("Cypher | Prêt / Ready");
 });
 
+// Combat hooks refresh local presentation only. Expiration is evaluated by the
+// effect service; rendering must never update Actor flags or reopen a sheet.
+function refreshNPCWeaponEffectSheets() {
+  // Foundry does not await hook callbacks; retain failures in developer logs.
+  sheets.CypherNPCSheet.refreshWeaponEffects().catch(error => {
+    console.error("Cypher | Failed to refresh NPC weapon effects", error);
+  });
+}
+Hooks.on("updateCombat", (_combat, changes) => {
+  if (Object.hasOwn(changes, "round") || Object.hasOwn(changes, "active")) refreshNPCWeaponEffectSheets();
+});
+Hooks.on("createCombat", combat => {
+  if (combat.active) refreshNPCWeaponEffectSheets();
+});
+Hooks.on("deleteCombat", refreshNPCWeaponEffectSheets);
+
 /**
  * Ensures that only one armor item is equipped on an actor at a time.
  * This document-level safeguard applies regardless of which sheet changed the item.

@@ -17,6 +17,7 @@
     "test:e2e": "node scripts/run-foundry-e2e.mjs",
     "check:e2e-syntax": "node --check scripts/run-foundry-e2e.mjs && node --check playwright.config.mjs && node --check tests/e2e/foundry-session.mjs && node --check tests/e2e/foundry-runtime.spec.mjs && node --check tests/e2e/foundry-gameplay.spec.mjs",
     "audit:architecture": "node scripts/audit-architecture-dependencies.mjs",
+    "audit:crd": "node scripts/audit-crd-compendiums.mjs",
     "build:packs": "node scripts/build-packs.mjs",
     "package": "node scripts/package.mjs",
     "migrate:packs": "node scripts/migrate-ability-sources.mjs",

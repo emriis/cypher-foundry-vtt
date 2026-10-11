@@ -3,6 +3,7 @@
  */
 import crypto from "node:crypto";
 import { CRD_VERSION } from "./context.mjs";
+import { plainText } from "../crd-audit/text-fidelity.mjs";
 
 /**
  * Produce the SHA-256 signature used for deterministic source identities.
@@ -83,15 +84,18 @@ function mechanicalShape(ability) {
 }
 
 /**
- * Build the editorial-free comparison object used by the existing identity contract.
+ * Build a conservative English source-definition identity.
+ * Partial structured fields cannot prove equivalence for rules still in prose.
+ * Keep the English definition as evidence; never parse it into inferred mechanics.
+ * French pairing removes this source text and uses explicit reference/ID pairs.
  * @param {object} ability Authored Ability data.
- * @returns {object} Structured mechanics with editorial fields removed.
+ * @returns {object} Structured mechanics plus the preserved English definition.
  */
 export function contentIdentityShape(ability) {
-  return stripEditorial({
-    mechanics: mechanicalShape(ability),
-    description: String(ability.description ?? "").trim()
-  });
+  return {
+    mechanics: stripEditorial(mechanicalShape(ability)),
+    description: plainText(ability.description ?? "")
+  };
 }
 
 function contentIdentityShapeWithoutDescription(ability) {
@@ -175,9 +179,9 @@ export function localizedLooseMechanicalShape(ability) {
 }
 
 /**
- * Combine a normalized source key and mechanical signature into stable technical identifiers.
+ * Combine a normalized source key and definition signature into stable technical identifiers.
  * @param {object} ability Authored Ability data.
- * @returns {{key: string, signature: string, id: string}} Source key, full mechanics digest, and 16-character Foundry ID.
+ * @returns {{key: string, signature: string, id: string}} Source key, full definition digest, and 16-character Foundry ID.
  */
 export function identity(ability) {
   const key = slug(ability.id || ability.name);
@@ -186,10 +190,10 @@ export function identity(ability) {
 }
 
 /**
- * Append a signature suffix only when a source key has distinct mechanical variants.
+ * Append a signature suffix only when a source key has distinct definitions.
  * @param {string} key Normalized source key.
- * @param {string} signature Full mechanical SHA-256 digest.
- * @param {number} variants Number of distinct mechanical variants under that key.
+ * @param {string} signature Full source-definition SHA-256 digest.
+ * @param {number} variants Number of distinct definitions under that key.
  * @returns {string} Language-neutral logical ID used in CRD provenance.
  */
 export function buildLogicalId(key, signature, variants) {

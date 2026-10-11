@@ -1,3 +1,5 @@
+import { extendWeaponEffect, getWeaponEffectDisplayData } from "../applications/weapon-effect-service.mjs";
+
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
 
@@ -8,6 +10,33 @@ const { ActorSheetV2 } = foundry.applications.sheets;
  * while delegating common sheet behavior to ActorSheetV2.
  */
 export default class CypherNPCSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
+  // Keep actual sheet instances, including synthetic token Actors. Resolving
+  // them again through game.actors would lose the token-specific effect state.
+  static #openSheets = new Set();
+
+  /**
+   * Refresh duration display after a combat boundary without document writes.
+   * Called by bootstrap hooks; closed sheets are never opened by a clock change.
+   * @returns {Promise<void>} Resolves after visible NPC sheets have rendered.
+   */
+  static async refreshWeaponEffects() {
+    for (const sheet of [...CypherNPCSheet.#openSheets]) {
+      if (sheet.rendered && sheet.actor.flags?.cypher?.activeWeaponEffects?.length) await sheet.render();
+    }
+  }
+
+  /** Register a visible sheet after Foundry finishes rendering its content. */
+  async _onRender(context, options) {
+    await super._onRender(context, options);
+    CypherNPCSheet.#openSheets.add(this);
+  }
+
+  /** Release the sheet reference as soon as its window has closed. */
+  _onClose(options) {
+    CypherNPCSheet.#openSheets.delete(this);
+    super._onClose(options);
+  }
+
   /** Default application configuration and sheet actions. */
   static DEFAULT_OPTIONS = {
     classes: ["cypher", "sheet", "actor", "npc"],
@@ -15,7 +44,8 @@ export default class CypherNPCSheet extends HandlebarsApplicationMixin(ActorShee
     window: { resizable: true, title: "CYPHER.Sheet.NPC" },
     actions: {
       applyDamage: CypherNPCSheet.#onApplyDamage,
-      rollNpcAttack: CypherNPCSheet.#onRollNpcAttack
+      rollNpcAttack: CypherNPCSheet.#onRollNpcAttack,
+      extendWeaponEffect: CypherNPCSheet.#onExtendWeaponEffect
     },
     form: { submitOnChange: true }
   };
@@ -42,6 +72,15 @@ export default class CypherNPCSheet extends HandlebarsApplicationMixin(ActorShee
     const context = await super._prepareContext(options);
     context.system = this.actor.system;
     context.actor = this.actor;
+    // Read-only presentation; expiry/persistence belongs to the effect service.
+    context.weaponEffects = getWeaponEffectDisplayData(this.actor).map(effect => ({
+      ...effect,
+      effectLabel: effect.effect === "hindered"
+        ? game.i18n.format("CYPHER.NPC.EffectHindered", { steps: effect.hinderSteps })
+        : game.i18n.localize("CYPHER.NPC.LostNextAction"),
+      durationLabel: effect.rounds === null ? game.i18n.localize("CYPHER.NPC.EffectNextAction")
+        : game.i18n.format("CYPHER.NPC.EffectRounds", { rounds: effect.rounds })
+    }));
 
     const enrich = (html) => foundry.applications.ux.TextEditor.implementation.enrichHTML(html ?? "", { relativeTo: this.actor });
     context.enrichedCombat = await enrich(this.actor.system.combat);
@@ -53,12 +92,11 @@ export default class CypherNPCSheet extends HandlebarsApplicationMixin(ActorShee
     return context;
   }
 
-  /**
-   * Prompts for NPC damage and applies the selected armor behavior.
-   * @param {Event} event Action event supplied by Foundry.
-   * @param {HTMLElement} target Action target supplied by Foundry.
-   * @returns {Promise<void>}
-   */
+  /** Apply the GM's optional second round; the service rechecks authorization. */
+  static async #onExtendWeaponEffect(event, target) {
+    if (await extendWeaponEffect(this.actor, target.dataset.effectId)) await this.render();
+  }
+
   /**
    * Starts a structured NPC attack against the single targeted PC.
    *
@@ -105,6 +143,7 @@ export default class CypherNPCSheet extends HandlebarsApplicationMixin(ActorShee
     });
   }
 
+  /** Prompt for NPC damage, then persist it through the document facade. */
   static async #onApplyDamage(event, target) {
     const content = `
       <div class="form-group">
