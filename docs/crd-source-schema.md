@@ -177,6 +177,21 @@ The validator does not attempt to judge the correctness of CRD prose. Fidelity
 is established against the extracted source material and representative source
 contracts.
 
+The local `audit:crd` workflow compares every English record's description,
+Effort text, equipment properties, nested effect/table descriptions, and Journal
+pages with the supplied reference. See [the current audit](crd-compendium-audit.md).
+Exact fragments establish matching words only; complete named definitions require
+bounded passages or explicitly reviewed selections, including relevant callouts.
+Headings may move into names/cost fields, and table cells may become HTML, while
+their wording, numbers, and row order remain unchanged.
+
+`data/crd-text-fidelity.json` records reviewed source locations and plain-text
+SHA-256 evidence for CI. Its scopes distinguish fragments, whole passages,
+selected sections, and excluded editorial callouts. These hashes protect reviewed
+text against drift; they do not certify missing fields, numeric extraction,
+catalogue completeness, or runtime automation. Updating evidence requires a new
+comparison with the actual CRD, never regeneration from pack JSON alone.
+
 ## 10. Current source-backed content families
 
 The current CRD source conversion covers:

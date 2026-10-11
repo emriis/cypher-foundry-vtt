@@ -3,7 +3,7 @@
  */
 import fs from "node:fs/promises";
 import path from "node:path";
-import { root, PARENT_PACKS } from "./context.mjs";
+import { root, PARENT_PACKS, PENDING_FRENCH_TRANSLATION } from "./context.mjs";
 import { isEditorialArtifact, identity, buildLogicalId, provenance, hash, contentIdentityShape, localizedPairingMechanicalShape, localizedLooseMechanicalShape, inferAction } from "./identity.mjs";
 import { sourceFiles } from "./sources.mjs";
 
@@ -159,9 +159,13 @@ export async function collectStandaloneEnglishLogicalIds() {
     entries.push({ key, signature, document });
   }
 
-  const counts = new Map();
+  // A duplicate occurrence is not a source variant. Count distinct definitions
+  // before deduplication so EN/FR logical IDs also agree on the first pass.
+  const signaturesByKey = new Map();
   for (const entry of entries) {
-    counts.set(entry.key, (counts.get(entry.key) ?? 0) + 1);
+    const signatures = signaturesByKey.get(entry.key) ?? new Set();
+    signatures.add(entry.signature);
+    signaturesByKey.set(entry.key, signatures);
   }
 
   const exact = new Map();
@@ -176,7 +180,7 @@ export async function collectStandaloneEnglishLogicalIds() {
     const logicalId = buildLogicalId(
       entry.key,
       entry.signature,
-      counts.get(entry.key)
+      signaturesByKey.get(entry.key).size
     );
     byLogicalId.set(logicalId, entry);
     exact.set(`${entry.key}:${entry.signature}`, logicalId);
@@ -270,8 +274,6 @@ async function collectFrenchEnglishReferencePairs() {
   return pairs;
 }
 
-const PENDING_FRENCH_TRANSLATION = "English source retained pending French translation";
-
 /**
  * Keep an untranslated French fallback traceable to its canonical English CRD
  * record on creation and subsequent passes. It has no French parent reference
@@ -301,10 +303,13 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
     documents.push({ file, document });
   }
 
-  const keyCounts = new Map();
+  const signaturesByKey = new Map();
   for (const { document } of documents) {
     const key = document.system?.key;
-    if (key) keyCounts.set(key, (keyCounts.get(key) ?? 0) + 1);
+    if (!key) continue;
+    const signatures = signaturesByKey.get(key) ?? new Set();
+    signatures.add(hash(JSON.stringify(contentIdentityShape(document.system))));
+    signaturesByKey.set(key, signatures);
   }
 
   const referencePairs = language === "fr"
@@ -354,6 +359,14 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
         logicalId = selectCandidate(pairedCandidates);
       }
       if (!logicalId) {
+        // Paired standalone records usually share a Foundry ID even when no
+        // Type/Focus currently references them. This explicit pairing remains
+        // unambiguous when CRD prose contains rules absent from schema fields.
+        const sameDocumentCandidates = [...(englishLogicalIds.byDocumentId.get(document._id) ?? [])]
+          .filter(candidate => englishLogicalIds.byKey.get(key)?.has(candidate));
+        logicalId = selectCandidate(sameDocumentCandidates);
+      }
+      if (!logicalId) {
         const exact = englishLogicalIds.exact.get(
           `${key}:${signature}`
         );
@@ -386,7 +399,7 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
         logicalId = selectCandidate(englishLogicalIds.byKey.get(key));
       }
     } else {
-      logicalId = buildLogicalId(key, signature, keyCounts.get(key));
+      logicalId = buildLogicalId(key, signature, signaturesByKey.get(key).size);
     }
 
     if (!logicalId) {
@@ -454,6 +467,15 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
           changed = true;
           return uuid.replace(/Item\.[A-Za-z0-9]{16}$/, `Item.${replacement}`);
         });
+        // Types store the same UUIDs alongside grant tiers. Redirect that
+        // persisted reference too; otherwise grants point to deleted aliases.
+        for (const entry of document.system.abilityTiers ?? []) {
+          if (typeof entry.ability !== "string") continue;
+          const replacement = duplicateIds.get(entry.ability.split(".").at(-1));
+          if (!replacement) continue;
+          entry.ability = entry.ability.replace(/Item\.[A-Za-z0-9]{16}$/, `Item.${replacement}`);
+          changed = true;
+        }
         if (document.system.flowchart) {
           for (const edge of document.system.flowchart.edges ?? []) {
             const from = duplicateIds.get(edge.from);

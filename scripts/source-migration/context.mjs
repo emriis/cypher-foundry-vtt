@@ -4,4 +4,5 @@ export const root = path.resolve(import.meta.dirname, "../..");
 export const LANGUAGES = ["en", "fr"];
 export const PARENT_PACKS = ["types", "foci"];
 export const CRD_VERSION = "2026-07-29";
+export const PENDING_FRENCH_TRANSLATION = "English source retained pending French translation";
 export const EDITORIAL_ARTIFACT_IDS = new Set(["fecb5c4df49a4667"]);

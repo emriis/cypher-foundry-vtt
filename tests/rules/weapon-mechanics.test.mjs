@@ -114,6 +114,11 @@ test("weapon configuration defaults to primary and preserves its explicit damage
   });
 });
 
+test("Given the CRD Stunstick's explicit zero damage, then category defaults cannot add damage", () => {
+  assert.equal(resolveWeaponConfiguration({ attackType: "medium", damage: 0 }).baseDamage, 0);
+  assert.equal(resolveWeaponConfiguration({ attackType: "medium" }).baseDamage, 4);
+});
+
 test("alternate weapon configuration uses its category and category damage", () => {
   assert.deepEqual(resolveWeaponConfiguration({
     attackType: "heavy",

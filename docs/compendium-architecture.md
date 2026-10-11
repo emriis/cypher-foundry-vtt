@@ -20,8 +20,9 @@ packs/*/_source/
 Foundry LevelDB packs
 ```
 
-The `_source/` records are authoritative. Generated LevelDB files are build
-artifacts and must not be edited manually.
+The supplied CRD is the sole authority. The `_source/` records are the reviewable
+authoring surface. Generated LevelDB files are build artifacts and must not be
+edited manually.
 
 CRD provenance is recorded under `flags.cypherFoundry.crd`.
 
@@ -30,7 +31,7 @@ CRD provenance is recorded under `flags.cypherFoundry.crd`.
 | Family | Foundry representation | Current status |
 | --- | --- | --- |
 | Skills | Item | Complete source-backed inventory |
-| Abilities | Item | Complete canonical catalogue |
+| Abilities | Item | Canonical catalogue; individual definition and runtime closure tracked by the current audit |
 | Types | Item | Complete source-backed inventory |
 | Descriptors | Item | Complete source-backed inventory |
 | Foci | Item | Complete source-backed inventory and flowcharts |
@@ -43,7 +44,7 @@ CRD provenance is recorded under `flags.cypherFoundry.crd`.
 | Power Boost Cyphers | Item/cypher | Complete source-backed inventory |
 | Artifact | Item/artifact | Model exists; source-blocked because the supplied CRD has no Artifact inventory |
 | Creatures/NPCs | Actor/npc | General system capability; not a CRD extraction family because the supplied CRD has no creature inventory |
-| Journals | JournalEntry | Rules packs exist; full CRD Journal conversion remains future work |
+| Journals | JournalEntry | Seven reviewed CRD rule selections; full CRD Journal conversion remains future work |
 
 The W4 equipment source inventory currently contains 259 English records paired
 with 259 French records across equipment, weapons, armor, and shields.
@@ -102,8 +103,9 @@ Known gaps are:
 
 ### Weapons
 
-`system.mechanics.targetEffects` is extracted, modeled, and fidelity-tested,
-but attack resolution does not yet generically apply those effects.
+Attack resolution applies supported level-gated NPC `hindered` and
+`loseNextAction` effects. Stunstick has one-round expiration and an explicit GM
+extension to two rounds. Other effect kinds require individual source contracts.
 
 Other structured weapon properties must be audited to distinguish mechanics that
 require runtime behavior from properties that are descriptive.
@@ -112,17 +114,14 @@ require runtime behavior from properties that are descriptive.
 
 Depletion is runtime-functional.
 
-Generic runtime handling for structured:
+Variant selection and inline roll-table resolution are implemented.
+`randomRange` stores generation-table placement; it is not an effect-roll
+formula. Individual power effects, targets, durations, and damage/stat
+consequences remain descriptive and need executable contracts.
 
-- `variants`;
-- `randomRange`;
-- `rollTables`;
-- item-specific structured effects
-
-is still being completed.
-
-The implementation should remain generic rather than hardcoding individual
-Cyphers such as Teleporter.
+The [per-entry audit](crd-compendium-audit.md) records consumers and limitations.
+The implementation should share effect contracts when the CRD supports the same
+behavior across entries, while preserving their individual parameters.
 
 ### Granted benefits
 

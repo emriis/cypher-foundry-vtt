@@ -24,5 +24,14 @@
     "effects": [],
     "rollTables": [],
     "description": "Make an Intellect roll to scan for mental presences of living creatures and undead spirits within short range. You detect any such creature whose level is equal to or less than the level of your result. Barriers of higher level than the level of your result block this sense. Effort: Until your next turn you can pinpoint those presences in physical space. Action."
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "English source retained pending French translation"
+        ]
+      }
+    }
   }
 }

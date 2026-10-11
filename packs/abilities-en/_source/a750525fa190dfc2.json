@@ -14,7 +14,7 @@
       "amount": 0,
       "options": []
     },
-    "action": null,
+    "action": "action",
     "freeWeaponCategories": [],
     "freeArmorCategories": [],
     "freeWeaponFamilies": [],
@@ -23,6 +23,6 @@
     "grantedArmorItemCategory": "",
     "effects": [],
     "rollTables": [],
-    "description": "The attack inflicts 1 less damage, but the foe's actions are hindered until they use an action to recover. Action. Split SkullGM intrusions: Your axe flies out of your hand, landing a short distance away. Your axe head becomes stuck in the foe and pulls free of your grasp. Your axe haft splinters or breaks, making it unusable until repaired. Your axe ricochets and you inflict a moderate wound on yourself."
+    "description": "The attack inflicts 1 less damage, but the foe’s actions are hindered until they use an action to recover. Action."
   }
 }

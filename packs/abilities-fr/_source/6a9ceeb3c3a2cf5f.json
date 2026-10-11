@@ -24,5 +24,14 @@
     "effects": [],
     "rollTables": [],
     "description": "You mentally attack a target you can see within short range, focusing your mind to blast their thoughts for 2 damage (ignores armor). Creatures without minds (such as relatively mindless undead) might be immune. Action."
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "English source retained pending French translation"
+        ]
+      }
+    }
   }
 }

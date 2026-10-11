@@ -179,6 +179,11 @@ test.afterEach(async ({ e2ePage: page }, testInfo) => {
   browserLogsByPage.delete(page);
 
   await page.evaluate(async () => {
+    // The duration scenario marks its temporary Combat explicitly; other
+    // encounters are not cleanup targets, even inside a disposable world.
+    for (const combat of game.combats ?? []) {
+      if (combat.getFlag("cypher", "e2eOwned")) await combat.delete();
+    }
     for (const actor of game.actors.filter(
       actor => actor.name.startsWith("E2E Cypher") ||
         actor.name.startsWith("E2E PC") ||

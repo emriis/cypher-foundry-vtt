@@ -2,9 +2,9 @@
  * Migrates embedded Type/Focus abilities into standalone ability compendium
  * sources.
  *
- * The migration is deterministic. Localized names and descriptions never
- * determine technical identity; mechanical differences create distinct
- * ability documents. Focus prerequisites become flowchart edges.
+ * The migration is deterministic. English definitions and structured mechanics
+ * distinguish source variants; localized prose does not determine pairing.
+ * Focus prerequisites become flowchart edges.
  *
  * Run with: npm run migrate:packs
  */

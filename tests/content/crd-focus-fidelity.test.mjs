@@ -87,7 +87,7 @@ const fixtures = [
   {
     slug: "fights-dirty",
     description:
-      "<p>You'll do anything to win a fight: bite, scratch, kick, trick, " +
+      "<p>You’ll do anything to win a fight: bite, scratch, kick, trick, " +
       "and worse.</p>",
     abilityCount: 14,
     edgeCount: 14
@@ -97,7 +97,7 @@ const fixtures = [
     description:
       "<p>You use your brain like a computer, interfacing “wirelessly” " +
       "with any electronic device. You can control and influence them in " +
-      "ways that others can't.</p>",
+      "ways that others can’t.</p>",
     abilityCount: 13,
     edgeCount: 11
   },
@@ -114,7 +114,7 @@ const fixtures = [
   {
     slug: "doesnt-do-much",
     description:
-      "<p>You're a slacker, but you know a little about a lot of things.</p>",
+      "<p>You’re a slacker, but you know a little about a lot of things.</p>",
     abilityCount: 11,
     edgeCount: 12,
     counts: { 1: 3, 2: 2, 3: 2, 4: 2, 5: 1, 6: 1 },

@@ -87,7 +87,9 @@ export function resolveWeaponConfiguration(system = {}) {
     attackType: attackType || null,
     baseDamage: isAlternate
       ? categoryDamage
-      : (explicitDamage || categoryDamage || 2),
+      // Zero is a declared CRD damage value (for example, Stunstick).
+      // Only missing damage falls back to the weapon category.
+      : (explicitDamage ?? categoryDamage ?? 2),
     actionTiming,
     switchAction: isAlternate ? "action"
       : (alternate.enabled ? alternate.action || "action" : null)

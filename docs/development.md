@@ -116,6 +116,39 @@ It does not rewrite the working checkout. `test:all` and focused suites test
 current sources without normalization. Explicit `migrate:packs`, `build:packs`,
 and `package` still change this checkout's sources or generated artifacts.
 
+### Rechecking CRD text and automation
+
+The [compendium audit](crd-compendium-audit.md) separates text fidelity, complete
+entry boundaries, structured data, and executable behavior. Check each separately;
+a valid schema, a chat card, or a matching fragment does not establish completion.
+
+With the private supplied CRD and Python 3 available locally, run:
+
+```powershell
+npm run audit:crd
+npm run audit:crd -- --normalized --output reports/crd-compendium-audit-normalized.json
+```
+
+The first command reads the authored sources. The second normalizes an owned
+temporary checkout and checks the distributable content there. Both leave the
+authoring sources and private reference unchanged. `--crd` selects a reference
+path; `CRD_AUDIT_PYTHON` selects the optional Python interpreter. Reports are
+local diagnostics under ignored `reports/`. Exit status zero means that the
+report was produced, not that every entry is certified or fully automated.
+
+CI does not require Python or private documents. It checks independently
+CRD-reviewed text hashes in `data/crd-text-fidelity.json` and focused source
+regressions. Never refresh a hash from a changed pack to make a test pass.
+Re-read the corresponding CRD passage, review its boundaries and transformations,
+then update the source locator and evidence. Run the live audit again when the
+reference changes; reviewed paragraph mappings require the same reference hash.
+
+Fiction-dependent effects require explicit player/GM confirmation before
+application and automatic tracking. This is the accepted automation policy,
+not a claim that every descriptive Ability or Cypher already executes it. New
+effect families need source-backed Given/When/Then contracts covering acceptance,
+cancellation, permissions, costs, target writes, and expiration.
+
 ## 3. Validation and CI
 
 Useful local commands are:

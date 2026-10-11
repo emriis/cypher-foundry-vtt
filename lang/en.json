@@ -567,7 +567,12 @@
       "UnsupportedAttackDamage": "This NPC attack has no supported player-target damage profile.",
       "LostNextAction": "This NPC loses its next action because of a weapon effect.",
       "RollAttackTitle": "NPC Attack: {name}",
-      "Defense": "Defense"
+      "Defense": "Defense",
+      "WeaponEffects": "Active weapon effects",
+      "EffectRounds": "{rounds} round(s)",
+      "ExtendEffect": "Extend to two rounds (GM)",
+      "EffectHindered": "Hindered by {steps} step(s)",
+      "EffectNextAction": "Next action"
     },
     "Community": {
       "Resources": "Resources"

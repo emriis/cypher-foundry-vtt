@@ -50,6 +50,24 @@
     <prose-mirror name="system.combat" value="{{system.combat}}"></prose-mirror>
   </div>
 
+  {{#if weaponEffects.length}}
+    {{!-- The service owns durations; only the GM can choose the second round. --}}
+    <div class="npc-section npc-weapon-effects">
+      <h3>{{localize 'CYPHER.NPC.WeaponEffects'}}</h3>
+      {{#each weaponEffects as |effect|}}
+        <div data-effect-id="{{effect.id}}">
+          <strong>{{effect.sourceItemName}}</strong>
+          <span> — {{effect.effectLabel}} — {{effect.durationLabel}}</span>
+          {{#if effect.canExtend}}
+            <button type="button" data-action="extendWeaponEffect" data-effect-id="{{effect.id}}">
+              {{localize 'CYPHER.NPC.ExtendEffect'}}
+            </button>
+          {{/if}}
+        </div>
+      {{/each}}
+    </div>
+  {{/if}}
+
   <div class="npc-section">
     <h3>{{localize 'CYPHER.NPC.Interaction'}}</h3>
     <prose-mirror name="system.interaction" value="{{system.interaction}}"></prose-mirror>

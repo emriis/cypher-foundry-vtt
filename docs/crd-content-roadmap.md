@@ -6,6 +6,11 @@ Document (CRD) into a Foundry-first content and automation layer.
 Completed work remains recorded here as completed history. Only work that is
 obsolete or contradicted by the current source is removed.
 
+The [2026-10-11 compendium audit](crd-compendium-audit.md) supersedes broad
+completion claims for text fidelity and individual power automation. Historical
+completed phases describe their accepted infrastructure/inventory scope; they
+do not certify every CRD definition or execute every described mechanic.
+
 ## 1. Status legend
 
 - **Complete** — implementation and acceptance contracts are complete and merged.
@@ -23,14 +28,14 @@ tests, and a deterministic build where applicable.
 | --- | --- |
 | Architecture and source/build foundations | Complete |
 | Core Cypher rules and character foundations | Complete for the implemented system scope |
-| Skills | Complete |
-| Abilities | Complete canonical catalogue and runtime lifecycle |
-| Types | Complete |
-| Descriptors | Complete |
-| Foci | Complete |
+| Skills | Inventory and selected-skill modifiers implemented; source procedures require adjudication |
+| Abilities | Catalogue/lifecycle implemented; individual effect automation remains in progress |
+| Types | Inventory/grants implemented; referenced Ability limitations remain |
+| Descriptors | Inventory/stat/skill grants implemented; passive benefits need executable contracts |
+| Foci | 42 Focus records and graph/grant infrastructure; individual Ability limitations remain |
 | W4 equipment/weapons/armor/shields | Complete source-backed inventory |
 | Subtle/Manifest/Power Boost Cyphers | Complete source-backed inventory |
-| CRD Journals | Planned |
+| CRD Journals | Seven source-faithful rule selections exist; full CRD navigation remains planned |
 | Quick Reference | Planned |
 | Player/GM guides | Planned |
 | Genre Ability integration | Complete |
@@ -401,13 +406,19 @@ Completed families require, as applicable:
 - [x] Establish core equipment/attack runtime.
 - [ ] Close remaining structured weapon mechanics.
 - [x] Close generic Cypher variants and structured random tables.
-- [ ] Close generic Cypher `randomRange` resolution.
+- [ ] Build an explicitly requested Cypher generation workflow using source
+  `randomRange` table placement; this is not a power-effect roll.
 - [x] Audit structured weapon mechanics with an extracted/modelled/runtime-gap
   matrix.
 - [ ] Complete the extracted/modelled/validated/runtime/E2E matrix for all
   structured mechanics, including Cypher effects.
 - [ ] Expand high-value player and GM E2E workflows.
 - [ ] Run final provenance/reference/stale-build audits.
+
+The [current per-entry audit](crd-compendium-audit.md) is the W9 baseline for
+Ability/Cypher effect contracts, passive descriptor benefits, and weapon setup
+state. Text repair and supported Stunstick duration are implemented; generic
+confirmation policy alone does not complete the remaining power effects.
 
 ## 13. Historical milestones
 
