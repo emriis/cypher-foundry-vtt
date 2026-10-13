@@ -167,6 +167,7 @@ function isSpecificIcon(img) {
 /**
  * Index each language by its source-backed logical ID, ignoring folder records.
  * Legacy W4 source filenames differ between EN and FR and must not be paired.
+ * Other, unmigrated families can use their identical relative source filenames.
  */
 async function readItems(family, language) {
   const directory = path.join(root, "packs", family + "-" + language, "_source");
@@ -180,9 +181,9 @@ async function readItems(family, language) {
     // Legacy equipment source filenames are odd in English and even in French.
     // Pair by canonical CRD identity; translated names and filenames are not keys.
     const crd = document.flags?.cypherFoundry?.crd;
-    const baseId = language === "fr"
+    const baseId = (language === "fr"
       ? crd?.sourceLogicalId ?? crd?.logicalId
-      : crd?.logicalId;
+      : crd?.logicalId) ?? "source:" + family + "/" + relative.replace(/\\/g, "/");
     // The pre-migration W4 source can reuse a name at different price levels.
     // Its normalized identity adds that level, so do the same before migration.
     const w4 = ["equipment", "weapon", "armor", "shield"].includes(document.crdType);
