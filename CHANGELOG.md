@@ -11,6 +11,12 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ### Added
 
+- Added distinct, locally packaged SVG icons for 53 descriptors, 457 equipment/cypher
+  entries, and three previously unillustrated foci. EN/FR pairs share the same
+  artwork without changing their CRD mechanics or existing Type portraits.
+- Added icon-source coverage tests and automated synchronization of icon assets,
+  bilingual compendium records, compiled packs and release packages.
+
 - Added a read-only local CRD audit, reviewed text evidence for CI, and a
   per-entry inventory separating source fidelity from executable automation.
 - Added active weapon-effect display and a GM control to extend Stunstick's
