@@ -20,3 +20,13 @@ For source-backed CRD content:
 
 The generated pack output is consumed by Foundry at runtime but is never the
 authoritative editing surface.
+
+## Item icons
+
+`npm run migrate:packs` also synchronizes `img` between matching English and
+French Descriptor, Focus and Equipment records. Specific existing Focus artwork
+is preserved; missing and generic images receive deterministic SVG artwork
+under `assets/compendium/`. The artwork is system-owned and included in the
+release archive. Run migration before compendium tests and pack compilation;
+PR generated-artifact automation synchronizes updated sources, SVG files and
+compiled packs. Do not manually edit compiled LevelDB or generated SVGs.
