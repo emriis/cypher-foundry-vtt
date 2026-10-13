@@ -1,7 +1,6 @@
 /**
- * Iconography is part of compendium source normalization: all item families
- * must have images, every bilingual pair must resolve to the same artwork,
- * and system-owned image URLs must resolve to packageable local assets.
+ * Every Descriptor, Focus and Equipment/Cypher Item needs a readable icon,
+ * consistent EN/FR assignment, and bundled assets for system-owned artwork.
  */
 import assert from "node:assert/strict";
 import fs from "node:fs";
@@ -20,7 +19,13 @@ function readRecords(family, language) {
       fs.readFileSync(path.join(source, file), "utf8")
     );
     if (document._key?.startsWith("!folders!")) continue;
-    records.set(file.replace(/\\/g, "/"), document);
+    const crd = document.flags?.cypherFoundry?.crd;
+    const logicalId = language === "fr"
+      ? crd?.sourceLogicalId ?? crd?.logicalId
+      : crd?.logicalId;
+    assert.ok(logicalId, file + "/logical identity");
+    assert.ok(!records.has(logicalId), file + "/duplicate identity");
+    records.set(logicalId, { file, document });
   }
   return records;
 }
@@ -33,8 +38,8 @@ for (const family of families) {
     assert.deepEqual([...french.keys()].sort(), [...english.keys()].sort());
 
     const generated = new Set();
-    for (const [file, en] of english) {
-      const fr = french.get(file);
+    for (const [logicalId, { file, document: en }] of english) {
+      const fr = french.get(logicalId).document;
       assert.equal(typeof en.img, "string", file + "/en");
       assert.ok(en.img.length > 0, file + "/image");
       assert.equal(fr.img, en.img, file + "/bilingual");
@@ -54,8 +59,8 @@ for (const family of families) {
         assert.ok(!generated.has(en.img), file + "/duplicate icon asset");
         generated.add(en.img);
       } else {
-        // Built-in Foundry images already curated for this record.
-        assert.match(en.img, /^icons\//, file + "/external image");
+        // Built-in Foundry icons are kept when already tailored to the entry.
+        assert.match(en.img, /^icons\//, file + "/builtin image");
       }
     }
     if (family !== "foci") assert.ok(generated.size > 0, family);
@@ -64,7 +69,7 @@ for (const family of families) {
 
 test("generic descriptor artwork is replaced with individually authored icons", () => {
   const descriptors = readRecords("descriptors", "en");
-  const images = [...descriptors.values()].map(document => document.img);
+  const images = [...descriptors.values()].map(entry => entry.document.img);
   assert.equal(new Set(images).size, images.length);
   for (const icon of images) {
     assert.notEqual(icon, "icons/svg/aura.svg");
