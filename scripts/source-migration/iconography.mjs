@@ -8,6 +8,7 @@
  */
 import fs from "node:fs/promises";
 import path from "node:path";
+import { pathToFileURL } from "node:url";
 import { root } from "./context.mjs";
 
 const FAMILIES = ["descriptors", "foci", "equipment"];
@@ -179,9 +180,15 @@ async function readItems(family, language) {
     // Legacy equipment source filenames are odd in English and even in French.
     // Pair by canonical CRD identity; translated names and filenames are not keys.
     const crd = document.flags?.cypherFoundry?.crd;
-    const logicalId = language === "fr"
+    const baseId = language === "fr"
       ? crd?.sourceLogicalId ?? crd?.logicalId
       : crd?.logicalId;
+    // The pre-migration W4 source can reuse a name at different price levels.
+    // Its normalized identity adds that level, so do the same before migration.
+    const w4 = ["equipment", "weapon", "armor", "shield"].includes(document.crdType);
+    const logicalId = baseId && w4
+      ? baseId + "::" + String(document.system?.priceCategory ?? "")
+      : baseId;
     if (!logicalId) {
       throw new Error("Compendium icon record lacks a logical ID: " + file);
     }
@@ -233,4 +240,10 @@ export async function synchronizeCompendiumIcons() {
       }
     }
   }
+}
+
+// CI can produce icon-only artifacts without rerunning unrelated CRD migrations.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  await synchronizeCompendiumIcons();
+  console.log("Compendium icon artwork synchronized.");
 }
