@@ -29,6 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Normalize source records and materialize compendium icons
+        run: npm run migrate:packs
+
       - name: Build compiled compendium packs
         run: npm run build:packs
 
@@ -55,9 +58,9 @@ jobs:
       - name: Reject unexpected generated changes
         run: |
           set -euo pipefail
-          if [ -n "$(git status --porcelain -- . ':!packs' ':!dist')" ]; then
+          if [ -n "$(git status --porcelain -- . ':!packs' ':!dist' ':!assets/compendium')" ]; then
             echo "::error::Generation changed files outside packs/ and dist/."
-            git status --short -- . ':!packs' ':!dist'
+            git status --short -- . ':!packs' ':!dist' ':!assets/compendium'
             exit 1
           fi
 
@@ -65,15 +68,15 @@ jobs:
         if: github.event_name == 'pull_request'
         run: |
           set -euo pipefail
-          if [ -z "$(git status --porcelain -- packs dist)" ]; then
+          if [ -z "$(git status --porcelain -- packs dist assets/compendium)" ]; then
             echo "Generated artifacts are synchronized with the checked-out branch."
             exit 0
           fi
 
-          git status --short -- packs dist
+          git status --short -- packs dist assets/compendium
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add packs dist
+          git add packs dist assets/compendium
           git commit -m "chore: synchronize generated artifacts"
           git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
 
@@ -93,5 +96,5 @@ jobs:
         run: |
           echo "## Generated artifact preparation" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
-          echo "Generated files: packs/ and dist/." >> "$GITHUB_STEP_SUMMARY"
+          echo "Generated files: packs/, dist/, and assets/compendium/." >> "$GITHUB_STEP_SUMMARY"
           echo "Pull-request runs automatically synchronize generated artifacts when they are stale."
