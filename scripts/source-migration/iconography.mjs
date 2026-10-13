@@ -74,7 +74,14 @@ function symbolFor(family, relativeFile, document) {
     const slug = path.posix.basename(relativeFile, ".json");
     return DESCRIPTOR_SYMBOLS[slug] ?? "star";
   }
-  if (family === "foci") return "star";
+  if (family === "foci") {
+    const slug = path.posix.basename(relativeFile, ".json");
+    return {
+      "grows-to-towering-heights": "mountain",
+      infiltrates: "mask",
+      "masters-telekinesis": "brain"
+    }[slug] ?? "star";
+  }
   const name = String(document.name ?? "").toLowerCase();
   const type = String(document.crdType ?? document.type ?? "");
   const matches = [
