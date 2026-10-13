@@ -12,6 +12,7 @@ import { pathToFileURL } from "node:url";
 import { normalizeDescriptorSources, normalizeTypeSources, normalizeFocusSources, normalizeEquipmentSources } from "./source-migration/normalization.mjs";
 import { pruneAbilityArtifacts, pruneAbilityReferences, mergeGenreAbilities } from "./source-migration/cleanup.mjs";
 import { collectEnglishRegistry, collectStandaloneEnglishLogicalIds, migrateLanguage } from "./source-migration/registry.mjs";
+import { synchronizeCompendiumIcons } from "./source-migration/iconography.mjs";
 
 
 /**
@@ -37,6 +38,7 @@ export async function migrateAbilitySources() {
   await normalizeTypeSources();
   await normalizeFocusSources();
   await normalizeEquipmentSources();
+  await synchronizeCompendiumIcons();
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
