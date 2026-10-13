@@ -77,7 +77,7 @@ function symbolFor(family, relativeFile, document) {
   const name = String(document.name ?? "").toLowerCase();
   const type = String(document.crdType ?? document.type ?? "");
   const matches = [
-    [/\b(arrow|bullet|ammunition|bolt|dart|shot|quiver)\b/, "bow"],
+    [/\b(arrow|bullet|ammunition|bolt|dart|shot|quiver)\w*/, "bow"],
     [/\b(sword|knife|blade|dagger|saber|katana|rapier|machete|spear|lance|axe)\b/, "sword"],
     [/\b(bow|crossbow|rifle|gun|pistol|revolver|shotgun|blaster|launcher)\b/, "bow"],
     [/\b(shield|barrier|force field)\b/, "shield"],
@@ -168,42 +168,69 @@ function isSpecificIcon(img) {
  * Existing non-generic icons are preferred over generated artwork. Matching
  * filenames, not translated display names, determine pair identity.
  */
+async function readItems(family, language) {
+  const directory = path.join(root, "packs", family + "-" + language, "_source");
+  const byLogicalId = new Map();
+
+  for (const relative of (await fs.readdir(directory, { recursive: true }))
+    .filter(file => file.endsWith(".json")).sort()) {
+    const file = path.join(directory, relative);
+    const document = JSON.parse(await fs.readFile(file, "utf8"));
+    if (document._key?.startsWith("!folders!")) continue;
+    // Legacy equipment source filenames are odd in English and even in French.
+    // Pair by canonical CRD identity; translated names and filenames are not keys.
+    const crd = document.flags?.cypherFoundry?.crd;
+    const logicalId = language === "fr"
+      ? crd?.sourceLogicalId ?? crd?.logicalId
+      : crd?.logicalId;
+    if (!logicalId) {
+      throw new Error("Compendium icon record lacks a logical ID: " + file);
+    }
+    if (byLogicalId.has(logicalId)) {
+      throw new Error("Duplicate compendium icon logical ID: " + logicalId);
+    }
+    byLogicalId.set(logicalId, { document, file, relative });
+  }
+  return byLogicalId;
+}
+
+/**
+ * Materialize locally hosted artwork and identical image paths for paired packs.
+ * Existing non-generic icons are preferred over generated artwork. CRD logical
+ * IDs (not display names or filenames) determine English/French pairs.
+ */
 export async function synchronizeCompendiumIcons() {
   for (const family of FAMILIES) {
-    const englishRoot = path.join(root, "packs", family + "-en", "_source");
-    const frenchRoot = path.join(root, "packs", family + "-fr", "_source");
-    const entries = (await fs.readdir(englishRoot, { recursive: true }))
-      .filter(file => file.endsWith(".json")).sort();
-
-    for (const relative of entries) {
-      const enFile = path.join(englishRoot, relative);
-      const frFile = path.join(frenchRoot, relative);
-      const [en, fr] = await Promise.all([
-        fs.readFile(enFile, "utf8").then(JSON.parse),
-        fs.readFile(frFile, "utf8").then(JSON.parse)
-      ]);
-      if (en._key?.startsWith("!folders!")) continue;
-      if (fr._key?.startsWith("!folders!")) {
-        throw new Error("Compendium icon pair is a folder: " + frFile);
+    const english = await readItems(family, "en");
+    const french = await readItems(family, "fr");
+    if (english.size !== french.size) {
+      throw new Error("Compendium icon pairing count differs for " + family);
+    }
+    for (const [logicalId, item] of english) {
+      const counterpart = french.get(logicalId);
+      if (!counterpart) {
+        throw new Error("Missing French icon counterpart for " + logicalId);
       }
-
+      const en = item.document;
+      const fr = counterpart.document;
+      const relative = item.relative.replace(/\\/g, "/");
       const generatedUrl = "systems/cypher/assets/compendium/" +
-        family + "/" + relative.replace(/\.json$/, ".svg").replace(/\\/g, "/");
+        family + "/" + relative.replace(/\.json$/, ".svg");
       const image = isSpecificIcon(en.img) ? en.img :
         isSpecificIcon(fr.img) ? fr.img : generatedUrl;
 
       if (image === generatedUrl) {
         const target = path.join(root, "assets", "compendium", family,
           relative.replace(/\.json$/, ".svg"));
-        await writeChanged(target, svgFor(family, relative.replace(/\\/g, "/"), en));
+        await writeChanged(target, svgFor(family, relative, en));
       }
       if (en.img !== image) {
         en.img = image;
-        await writeChanged(enFile, JSON.stringify(en, null, 2) + "\n");
+        await writeChanged(item.file, JSON.stringify(en, null, 2) + "\n");
       }
       if (fr.img !== image) {
         fr.img = image;
-        await writeChanged(frFile, JSON.stringify(fr, null, 2) + "\n");
+        await writeChanged(counterpart.file, JSON.stringify(fr, null, 2) + "\n");
       }
     }
   }
