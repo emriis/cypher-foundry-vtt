@@ -73,10 +73,12 @@ SVG emblems when no specific image exists. Artwork is presentation only; it
 never changes CRD text or game mechanics.
 
 The icon normalizer runs at the end of `npm run migrate:packs`. It uses the
-English item name and CRD logical identity for both languages, writes
-`img` to the paired `_source` JSON records, and writes missing SVGs under
-`assets/compendium/`. The PR artifact workflow calls the icon materializer independently, then
-compiles the LevelDB packs and release package. It synchronizes the icon-only
+English item name for the artwork and pairs existing Descriptor, Focus and
+Cypher source paths across languages. Legacy equipment records, whose filenames
+differ by language, are paired by CRD identity and price category. It writes
+`img` to the paired `_source` JSON records and creates SVGs under
+`assets/compendium/`. The PR artifact workflow calls the icon materializer
+independently, then compiles the LevelDB packs and release package. It synchronizes the icon-only
 source changes, image assets, packs and distributable artifacts on the PR
 branch without running unrelated CRD migrations. Do not edit
 compiled LevelDB files directly. Running the migration a second time must not
