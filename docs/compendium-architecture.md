@@ -64,7 +64,24 @@ Current bilingual packs include:
 Types and Foci reference standalone Ability Items. They do not duplicate the
 full Ability definition.
 
-## 4. Identity and references
+## 4. Compendium icon artwork
+
+Types keep their existing illustrated WebP portraits. Focus entries retain their
+existing curated Foundry icons. Descriptor and equipment entries (including
+weapons, armor, shields and cyphers) use individually generated, locally hosted
+SVG emblems when no specific image exists. Artwork is presentation only; it
+never changes CRD text or game mechanics.
+
+The icon normalizer runs at the end of `npm run migrate:packs`. It uses the
+English item name and its stable source filename for both languages, writes
+`img` to the paired `_source` JSON records, and writes missing SVGs under
+`assets/compendium/`. The PR artifact workflow compiles those images into the
+LevelDB packs and release package; it synchronizes source records, image
+assets, packs and distributable artifacts on the PR branch. Do not edit
+compiled LevelDB files directly. Running the migration a second time must not
+change the icon mapping.
+
+## 5. Identity and references
 
 Every CRD-derived source record uses a stable logical ID independent of its
 Foundry UUID and display name.
@@ -77,7 +94,7 @@ Foundry UUIDs only after the complete source set is known.
 
 Builds reject unresolved or ambiguous references.
 
-## 5. Structured mechanics
+## 6. Structured mechanics
 
 The source architecture is deliberately stronger than a prose-only conversion.
 
@@ -94,7 +111,7 @@ current DataModel supports it. Examples include:
 Extraction alone is not runtime integration. A structured field is fully
 integrated only when the runtime consumes it where the game rule requires it.
 
-## 6. Current runtime closure gaps
+## 7. Current runtime closure gaps
 
 The current content layer already preserves more mechanics than the runtime
 currently executes.
@@ -130,7 +147,7 @@ categories. Remaining work is to verify that every source-backed benefit is both
 stored and applied correctly in actual gameplay, including granted armor where
 applicable.
 
-## 7. Journals, Quick Reference, and guides
+## 8. Journals, Quick Reference, and guides
 
 The intended navigation layer remains:
 
@@ -145,7 +162,7 @@ Items.
 Journals must not become a second source of truth for mechanics already modeled
 as reusable Items.
 
-## 8. Genre content
+## 9. Genre content
 
 Genre-specific Abilities are already integrated into the canonical Ability
 catalogue with stable identity, variants, localization, provenance, and contract
@@ -153,7 +170,7 @@ tests.
 
 The broader genre reference/navigation layer remains future work.
 
-## 9. Translation and provenance
+## 10. Translation and provenance
 
 English CRD content is the mechanical authority.
 
@@ -167,7 +184,7 @@ French records:
 
 Every CRD-derived record remains traceable through its provenance envelope.
 
-## 10. Build contract
+## 11. Build contract
 
 Source changes should be followed by:
 
@@ -179,7 +196,7 @@ npm run build:packs
 
 The generated LevelDB packs are never hand-edited.
 
-## 11. Definition of done
+## 12. Definition of done
 
 A CRD content family is complete when all applicable contracts are satisfied:
 
