@@ -73,7 +73,7 @@ SVG emblems when no specific image exists. Artwork is presentation only; it
 never changes CRD text or game mechanics.
 
 The icon normalizer runs at the end of `npm run migrate:packs`. It uses the
-English item name and its stable source filename for both languages, writes
+English item name and CRD logical identity for both languages, writes
 `img` to the paired `_source` JSON records, and writes missing SVGs under
 `assets/compendium/`. The PR artifact workflow compiles those images into the
 LevelDB packs and release package; it synchronizes source records, image
