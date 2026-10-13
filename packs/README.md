@@ -23,8 +23,8 @@ authoritative editing surface.
 
 ## Item icons
 
-`npm run migrate:packs` also synchronizes `img` between matching English and
-French Descriptor, Focus and Equipment records. Specific existing Focus artwork
+`npm run migrate:packs` also synchronizes `img` between English and French Descriptor,
+Focus and Equipment records paired by canonical CRD logical identity. Specific existing Focus artwork
 is preserved; missing and generic images receive deterministic SVG artwork
 under `assets/compendium/`. The artwork is system-owned and included in the
 release archive. Run migration before compendium tests and pack compilation;
