@@ -181,15 +181,18 @@ async function readItems(family, language) {
     // Legacy equipment source filenames are odd in English and even in French.
     // Pair by canonical CRD identity; translated names and filenames are not keys.
     const crd = document.flags?.cypherFoundry?.crd;
-    const baseId = (language === "fr"
+    const sourceKey = "source:" + family + "/" + relative.replace(/\\/g, "/");
+    const baseId = language === "fr"
       ? crd?.sourceLogicalId ?? crd?.logicalId
-      : crd?.logicalId) ?? "source:" + family + "/" + relative.replace(/\\/g, "/");
-    // The pre-migration W4 source can reuse a name at different price levels.
-    // Its normalized identity adds that level, so do the same before migration.
-    const w4 = ["equipment", "weapon", "armor", "shield"].includes(document.crdType);
-    const logicalId = baseId && w4
-      ? baseId + "::" + String(document.system?.priceCategory ?? "")
-      : baseId;
+      : crd?.logicalId;
+    const isW4 = family === "equipment" &&
+      ["equipment", "weapon", "armor", "shield"].includes(document.crdType);
+    // Paired filenames are stable for Descriptor, Focus and Cypher sources.
+    // Legacy W4 equipment filenames differ by language (odd/even indexes);
+    // pair those by their shared CRD ID plus price level before normalization.
+    const logicalId = isW4
+      ? baseId && baseId + "::" + String(document.system?.priceCategory ?? "")
+      : sourceKey;
     if (!logicalId) {
       throw new Error("Compendium icon record lacks a logical ID: " + file);
     }
