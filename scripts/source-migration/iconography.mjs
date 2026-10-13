@@ -164,9 +164,8 @@ function isSpecificIcon(img) {
 }
 
 /**
- * Materialize locally hosted artwork and identical image paths for paired packs.
- * Existing non-generic icons are preferred over generated artwork. Matching
- * filenames, not translated display names, determine pair identity.
+ * Index each language by its source-backed logical ID, ignoring folder records.
+ * Legacy W4 source filenames differ between EN and FR and must not be paired.
  */
 async function readItems(family, language) {
   const directory = path.join(root, "packs", family + "-" + language, "_source");
