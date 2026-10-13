@@ -28,5 +28,6 @@ Focus and Equipment records paired by canonical CRD logical identity. Specific e
 is preserved; missing and generic images receive deterministic SVG artwork
 under `assets/compendium/`. The artwork is system-owned and included in the
 release archive. Run migration before compendium tests and pack compilation;
-PR generated-artifact automation synchronizes updated sources, SVG files and
-compiled packs. Do not manually edit compiled LevelDB or generated SVGs.
+PR generated-artifact automation invokes the icon materializer alone so it
+can synchronize updated sources, SVG files and compiled packs without
+modifying unrelated canonical content. Do not manually edit compiled LevelDB or generated SVGs.
