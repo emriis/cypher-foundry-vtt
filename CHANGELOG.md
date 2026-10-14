@@ -44,6 +44,10 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ### Fixed
 
+- Disabled public IP discovery for local E2E servers to avoid Foundry 14.369's
+  invitation-address startup race; retained browser bootstrap errors and guarded
+  welcome-tour settings against opaque document origins.
+
 - Made standalone pack builds normalize a temporary copy before translation
   validation, preserving authoring sources and existing outputs on preflight failure.
 - Kept French Ability CRD provenance canonical and stable across repeated

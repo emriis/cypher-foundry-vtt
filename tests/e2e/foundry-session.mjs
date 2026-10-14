@@ -65,58 +65,90 @@ export async function selectGamemaster(page) {
   return usernameInput;
 }
 
+/**
+ * Join the seeded user once, retaining exceptions before navigation finishes.
+ * @param {import("@playwright/test").Page} page Disposable Foundry client.
+ * @returns {Promise<void>} Resolves after readiness; login/bootstrap failures propagate.
+ */
 export async function joinAsGamemaster(page) {
-  await page.goto(FOUNDRY_URL);
+  let startupFailure = null;
+  const captureFailure = error => { startupFailure ??= error; };
+  page.on("pageerror", captureFailure);
+  try {
+    await page.goto(FOUNDRY_URL);
 
-  const usernameInput = await selectGamemaster(page);
-  const joinForm = usernameInput.locator("xpath=ancestor::form[1]");
+    const usernameInput = await selectGamemaster(page);
+    const joinForm = usernameInput.locator("xpath=ancestor::form[1]");
 
-  const password = joinForm.locator('input[type="password"]').first();
-  if (await password.count()) {
-    await password.fill("");
+    const password = joinForm.locator('input[type="password"]').first();
+    if (await password.count()) {
+      await password.fill("");
+    }
+
+    const joinButton = joinForm.locator(
+      'button[type="submit"], input[type="submit"]'
+    ).first();
+    await joinButton.waitFor({ state: "visible", timeout: 10_000 });
+
+    await Promise.all([
+      page.waitForURL(url => !url.pathname.endsWith("/join"), {
+        timeout: 60_000
+      }),
+      // Preserve the submitter's action name for ApplicationV2 join handlers.
+      joinButton.evaluate(button => button.form.requestSubmit(button))
+    ]);
+
+    await waitForFoundryReady(page, { startupError: () => startupFailure });
+  } finally {
+    page.off("pageerror", captureFailure);
   }
+}
 
-  const joinButton = joinForm.locator(
-    'button[type="submit"], input[type="submit"]'
-  ).first();
-  await joinButton.waitFor({ state: "visible", timeout: 10_000 });
+/** Read only nonsecret bootstrap state; never expose settings, credentials or world documents. */
+async function readStartupState(page) {
+  return page.evaluate(() => ({
+    ready: globalThis.game?.ready === true,
+    view: globalThis.game?.view,
+    url: location.href,
+    title: document.title,
+    body: document.body?.innerText?.slice(0, 4000) || ""
+  }));
+}
 
-  await Promise.all([
-    page.waitForURL(url => !url.pathname.endsWith("/join"), {
-      timeout: 60_000
-    }),
-    // Preserve the submitter's action name for ApplicationV2 join handlers.
-    joinButton.evaluate(button => button.form.requestSubmit(button))
-  ]);
+function describeStartupState(state) {
+  return `URL: ${state.url}\nTitle: ${state.title}\nView: ${state.view}\nPage content:\n${state.body}`;
+}
 
-  const deadline = Date.now() + 60_000;
+/**
+ * Wait for actual client readiness, failing promptly on a captured bootstrap exception.
+ * HTTP reachability alone does not guarantee that Foundry can vend world data.
+ * @param {import("@playwright/test").Page} page Disposable Foundry client.
+ * @param {{timeoutMs?: number, startupError?: () => Error|null}} options Deadline in milliseconds and captured page-error reader.
+ * @returns {Promise<void>} Resolves on game.ready; otherwise rejects with the cause and client state.
+ */
+export async function waitForFoundryReady(page, { timeoutMs = 60_000, startupError = () => null } = {}) {
+  const deadline = Date.now() + timeoutMs;
+  let state;
   while (Date.now() < deadline) {
-    const state = await page.evaluate(() => ({
-      ready: globalThis.game?.ready === true,
-      view: globalThis.game?.view,
-      url: location.href,
-      title: document.title,
-      body: document.body?.innerText?.slice(0, 4000) || ""
-    }));
+    state = await readStartupState(page);
 
     if (state.ready) return;
+    const cause = startupError();
+    if (cause) {
+      throw new Error(`Foundry client initialization failed: ${cause.message}\n${describeStartupState(state)}`, { cause });
+    }
 
     if (/game\s*worlds|configuration and setup/i.test(state.body)) {
       throw new Error(
         "Foundry did not auto-launch the E2E world. " +
         "The browser reached Setup instead. " +
-        `URL: ${state.url}\n` +
-        `Title: ${state.title}\n` +
-        `View: ${state.view}\n` +
-        `Setup content:\n${state.body}`
+        describeStartupState(state)
       );
     }
 
     await page.waitForTimeout(250);
   }
 
-  throw new Error(
-    "Foundry did not become ready within 60 seconds. " +
-    `URL: ${await page.url()}`
-  );
+  state ??= await readStartupState(page);
+  throw new Error(`Foundry did not become ready within ${timeoutMs / 1000} seconds. ${describeStartupState(state)}`);
 }

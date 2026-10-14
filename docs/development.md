@@ -204,6 +204,17 @@ configured installation but never writes its settings, worlds, or systems.
 Cleanup checks the temporary workspace's ownership marker before removal.
 Failure diagnostics are retained under ignored `reports/` paths.
 
+The local E2E server uses `--noipdiscovery` as well as `--noupnp`: invitation
+links do not require external address discovery in a local test run.
+Foundry 14.369 can otherwise vend world data before its address lookup finishes,
+leaving the first client's bootstrap incomplete. See the
+[official command-line options](https://foundryvtt.com/article/configuration/).
+Login waits for `game.ready`; a client initialization exception is reported
+immediately with its original cause and page state. Bootstrap failures emit
+browser diagnostics even when the worker fixture never reaches `afterEach`.
+Client-setting init scripts must check the Foundry origin before accessing
+localStorage, since Playwright also executes them in opaque documents.
+
 `FOUNDRY_SERVER_PATH` can explicitly select a standalone Foundry `main.js` or
 `main.mjs` instead of the desktop installation. The runner reads the version
 from that server's own `package.json`; it never automatically selects a pending

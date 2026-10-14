@@ -15,6 +15,7 @@ import { spawn } from "node:child_process";
 import os from "node:os";
 import path from "node:path";
 import { findServer, readCoreVersion } from "./foundry-discovery.mjs";
+import { foundryServerArguments } from "./foundry-server-options.mjs";
 import { createValidationWorkspace, removeValidationWorkspace } from "./validation-workspace.mjs";
 
 const SOURCE_ROOT = path.resolve(import.meta.dirname, "..");
@@ -210,13 +211,7 @@ async function createWorld(dataPath, coreVersion, systemVersion) {
 }
 
 function spawnFoundry(serverPath, userDataPath) {
-  const args = [
-    "--port=" + PORT,
-    "--noupnp",
-    "--noupdate",
-    "--world=" + WORLD_ID,
-    "--dataPath=" + userDataPath
-  ];
+  const args = foundryServerArguments({ port: PORT, worldId: WORLD_ID, userDataPath });
 
   // Run Foundry's Node server instead of the Electron executable for E2E.
   // Playwright supplies the browser, so Electron provides no test value here.
