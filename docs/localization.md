@@ -178,14 +178,14 @@ document writes.
 
 ### Building French compendiums
 
-The build reads the normalized EN/FR catalogue and materializes selected French
-proposals into temporary compiler JSON. It preserves the source files under
+The standalone build normalizes an owned disposable checkout, reads its EN/FR
+catalogue and materializes selected French proposals into temporary compiler
+JSON. No preceding source migration is required. It preserves source files under
 `packs/*/_source/` and the proposal review statuses. Its generated LevelDB output
 is the ordinary content that Foundry loads.
 
 ```powershell
-# In an authorized content-authoring checkout or an owned isolated checkout:
-npm run migrate:packs
+# Replace generated packs while preserving authored sources:
 npm run build:packs
 
 # Compile all French editorial drafts for review:
@@ -203,10 +203,12 @@ normalized catalogue. The compiled documents record the selected status under
 `flags.cypherFoundry.translation`; compiling a draft never promotes it to
 `reviewed`.
 
-`migrate:packs` rewrites source records, and `build:packs` replaces generated
-LevelDB outputs in its checkout. Use an owned isolated checkout for validation
-without those authoring changes. The E2E runner handles that isolation itself.
-All selected translations are checked before the build replaces any pack:
+`migrate:packs` explicitly rewrites source records when authoring normalization
+is intended; it is not a prerequisite for building. `build:packs` replaces only
+generated LevelDB outputs in its checkout. Use an owned isolated checkout for
+validation without generated changes. The E2E runner handles that isolation itself.
+All selected translations are checked and all packs compiled before the build
+replaces any pack:
 allowed display fields, exact source hashes, markup/numeric/reference safeguards,
 bilingual typed mechanical parity and translated Skill-label referents. A stale,
 incomplete or mechanically divergent proposal fails the build rather than being

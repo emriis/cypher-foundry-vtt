@@ -47,10 +47,11 @@ The detailed source-fidelity and transformation policy is maintained in
    warrants it.
 2. Run `audit:i18n` and, when reviewing translations, `preview:translations`.
    Both normalize a disposable copy; previews do not overwrite source records.
-   For intended artifact builds, normalize the build checkout with
-   `migrate:packs`, then use `build:packs`. It compiles reviewed proposals into
-   temporary JSON; `--include-proposed` explicitly includes complete drafts.
-   Sources and review status remain unchanged by translation compilation.
+   For intended artifact builds, use `build:packs` directly. It normalizes a
+   disposable copy before compiling reviewed proposals into temporary JSON;
+   `--include-proposed` explicitly includes complete drafts. Use `migrate:packs`
+   only when source rewrites are intended. Builds preserve sources and review
+   status, and finish validation/compilation before replacing generated packs.
    Preserve all fourteen existing family/language collection IDs.
 3. Check the pack output and Git status. Do not commit transient `LOCK`/`LOG`
    files or unrelated generated artifacts.

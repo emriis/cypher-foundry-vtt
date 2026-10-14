@@ -44,6 +44,11 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ### Fixed
 
+- Made standalone pack builds normalize a temporary copy before translation
+  validation, preserving authoring sources and existing outputs on preflight failure.
+- Kept French Ability CRD provenance canonical and stable across repeated
+  normalization, including repaired bilingual parent references.
+
 - Preserved canonical content identities when translated names change; aligned
   bilingual typed rule fields and references independently of localized prose.
 - Matched bilingual granted Skills by their CRD identity, preserving existing

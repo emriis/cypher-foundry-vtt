@@ -489,9 +489,11 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
     }
   }
 
-  // Duplicate IDs now point to their retained record. Derive provenance from
-  // these final parent references, not the references that existed before
-  // deduplication; otherwise the next pass can choose a different CRD section.
+  // English duplicate IDs now point to their retained record, so its final
+  // parent supplies the canonical CRD locator. French parent references are
+  // aligned later in the pipeline and may still describe a legacy occurrence.
+  // Reuse the finalized English provenance for French counterparts: translating
+  // a heading or repairing a reference must not change the CRD source location.
   const references = await collectReferenceProvenance(language);
   for (const [logicalId, { file, document }] of canonicalDocuments) {
     const reference = references.get(document._id) ?? {
@@ -503,17 +505,19 @@ async function enrichStandaloneLanguage(language, englishLogicalIds) {
       && previousProvenance?.transformations?.includes(PENDING_FRENCH_TRANSLATION);
     const sourceProvenance = englishLogicalIds.byLogicalId.get(logicalId)
       ?.document.flags?.cypherFoundry?.crd;
+    if (language === "fr" && !sourceProvenance) {
+      throw new Error(`French Ability "${logicalId}" has no canonical English provenance.`);
+    }
     document.flags = {
       ...(document.flags ?? {}),
       cypherFoundry: {
         ...(document.flags?.cypherFoundry ?? {}),
-        crd: isPendingFrench ? pendingFrenchProvenance(logicalId, sourceProvenance) : provenance(
-          language,
-          reference.parent,
-          reference.document,
-          { name: document.name },
-          logicalId
-        )
+        crd: language === "fr"
+          ? isPendingFrench
+            ? pendingFrenchProvenance(logicalId, sourceProvenance)
+            : { ...sourceProvenance, language, sourceLogicalId: logicalId }
+          : provenance(language, reference.parent, reference.document,
+            { name: document.name }, logicalId)
       }
     };
     await fs.writeFile(file, JSON.stringify(document, null, 2) + "\n");
