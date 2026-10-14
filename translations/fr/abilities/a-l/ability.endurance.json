@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.endurance",
+  "sourceLogicalId": "ability.endurance",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "98c8abf84e23ff3f2a659b3077ece7a75697e7b0c215e05d86c1f28241689220",
+      "text": "Endurance"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "7be59b774aed6610b93605df536a66e7725b9e371765fe8832255029d65b37fe",
+      "text": "Toute durée liée aux actions physiques est doublée ou divisée par deux, selon ce qui vous avantage. Par exemple, si une personne ordinaire peut retenir son souffle trente secondes, vous pouvez le retenir une minute. Si elle peut marcher quatre heures sans s’arrêter, vous pouvez marcher huit heures. Pour les effets nocifs, si un poison paralyse ses victimes pendant une minute, vous êtes paralysé pendant trente secondes. La durée minimum est toujours d’un round. Aptitude passive."
+    }
+  ]
+}

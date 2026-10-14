@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.speed-surge",
+  "sourceLogicalId": "ability.speed-surge",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "4383ceed6dd457418459926a77eced22cd830c0e48b9d6d52c9ada2b5d687d85",
+      "text": "Afflux de Célérité"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "aa4a1875b66890ec19e2e2198e1cd9aad59341f5b825b28fbdc3ef765ef4c891",
+      "text": "Vous récupérez immédiatement 1d6 + 6 points dans votre réserve de Célérité. Cette aptitude se renouvelle lorsque vous prenez une récupération de dix heures. Aptitude passive."
+    }
+  ]
+}

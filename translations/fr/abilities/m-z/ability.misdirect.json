@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.misdirect",
+  "sourceLogicalId": "ability.misdirect",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "7aaaa078e25257bc7331f19620723268fca25cd8aa0afffde6afd4e3543d2ba2",
+      "text": "Détourner l’attention"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "87606fd3f149c5b1845f37e4be5d4fcaa7a943011a3a3620f10594a4afcbc20a",
+      "text": "Lorsqu’un adversaire vous manque, vous pouvez rediriger son attaque vers une autre cible de votre choix à portée immédiate de vous. Effectuez un jet d’attaque sans modificateur contre la nouvelle cible : n’utilisez aucun de vos modificateurs ni de ceux de l’adversaire, mais vous pouvez appliquer de l’Effort pour améliorer la précision. Si l’attaque touche, la cible subit des dégâts égaux au niveau de l’adversaire qui attaquait. Aptitude passive."
+    }
+  ]
+}

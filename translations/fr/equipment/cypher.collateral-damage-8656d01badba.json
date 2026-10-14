@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.collateral-damage",
+  "sourceLogicalId": "cypher.collateral-damage",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "fe05a3cf5110e0d627f4259fdce7161be6b8531619e01fe6c4b97d2e939b200e",
+      "text": "Dégâts collatéraux"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "330e51c7f148c0020932030f80a618af79d11f2c326e1febd2af40690b46debe",
+      "text": "<p><strong>Effet :</strong> Une attaque au corps à corps ou à distance effectuée par vous ou par un adversaire endommage également un objet proche de niveau 4 au maximum, qui n’appartient ni à vous ni à cet adversaire, et le brise ou le détruit automatiquement.</p><p><strong>Explication :</strong> Votre mouvement de recul a cassé la table. Le tir de l’adversaire a brisé la fenêtre. La fin de votre mouvement a fissuré une conduite de vapeur.</p>"
+    }
+  ]
+}

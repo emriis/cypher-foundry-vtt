@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.righteous-cloak",
+  "sourceLogicalId": "ability.righteous-cloak",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "09729fb0009f6df27acd5e94a6e90eabbc0169dfca327a10cdba1472eede0a42",
+      "text": "Manteau de vertu"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "9c2801b7a78d8f17fabc4ec4768697b9f810ae5cb04cdaeba1ae9d9e745b5ae8",
+      "text": "Vous rayonnez d’une lumière bienfaisante, infligeant automatiquement 4 dégâts, sans jet, à quiconque tente de vous toucher ou de vous frapper avec une attaque de mêlée. Tant que Manteau de vertu (Righteous Cloak) est actif, une lumière vive éclaire une zone courte autour de vous si vous le souhaitez. Cette aptitude dure jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Aptitude passive."
+    }
+  ]
+}

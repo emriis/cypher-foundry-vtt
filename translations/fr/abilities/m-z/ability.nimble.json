@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.nimble",
+  "sourceLogicalId": "ability.nimble",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "3db79629f58f9503f804e72906c95cf64af1553ade58a472bb5872db3b6ca989",
+      "text": "Agilité"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "322b12a8bfa9afcd935f095e44ac5b8d8f8a5d9a3ebd3b5d5cb85499c8305020",
+      "text": "En tant qu’Action réflexe, vous vous déplacez jusqu’à une courte distance, puis pouvez accomplir une autre Action réflexe, par exemple attaquer avec une arme légère ou ouvrir une porte. Le déplacement précède l’Action réflexe, et non l’inverse. Contrairement au cas normal d’une action accompagnée d’un déplacement sur une courte distance, ce déplacement n’entrave pas vos tâches. Aptitude passive."
+    }
+  ]
+}

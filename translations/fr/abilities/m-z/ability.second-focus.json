@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.second-focus",
+  "sourceLogicalId": "ability.second-focus",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "b81e33a47f3c8c320e8603fda8e25c3c9285fd37bc4bbc3de242804cd83b1c4f",
+      "text": "Second focus"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "ef533c173167d909a975857bd68cbe05bda8012fd8ebcfae3047e64690f55804",
+      "text": "Vous possédez deux foci au lieu d’un. Au rang 1, vous obtenez deux aptitudes de chacun. Lorsque vous passez à un nouveau rang, vous obtenez une nouvelle aptitude de chaque focus."
+    }
+  ]
+}

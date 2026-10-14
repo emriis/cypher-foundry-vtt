@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.enhanced-self-repair",
+  "sourceLogicalId": "ability.enhanced-self-repair",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "e5c14cc683c1a14304150d0e94d2710261c182893a7b68b752889651fac16982",
+      "text": "Autoréparation améliorée"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "adbcab91d097d02917e71b4078693bb98b9e3f4d5907ee7753655c8c0f10085f",
+      "text": "Vous réduisez de 2 le coût en Puissance pour vous reprendre afin de retirer des blessures."
+    }
+  ]
+}

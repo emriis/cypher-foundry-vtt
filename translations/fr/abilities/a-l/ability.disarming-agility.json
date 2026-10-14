@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.disarming-agility",
+  "sourceLogicalId": "ability.disarming-agility",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "337b81785be95f83bb7c935a5fd334e5c2200cd416b812ba798475a74a717fa0",
+      "text": "Agilité désarmante"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "cb2ea11c68045f5df149c57f52f456ca73b484b02c33844d27f396b5e397caa6",
+      "text": "L’attaque inflige 1 dégât de moins, mais votre adversaire lâche un objet qu’il tient dans une main, comme une arme ou un bouclier. Pour récupérer l’objet lâché, il doit utiliser une action. Action."
+    }
+  ]
+}

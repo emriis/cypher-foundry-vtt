@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.contingent-activator",
+  "sourceLogicalId": "cypher.manifest.contingent-activator",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "e9445177c6f24272c86e47855d635aaf3814323a95b54b4abc9deb30345ffb41",
+      "text": "Activateur conditionnel"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "16b63447829387bcd487061c3f60dcd380fdcb66700934aab92fb0abeaaf2586",
+      "text": "<p><strong>Effet :</strong> Vous créez une liaison à distance avec un Cypher manifeste que vous touchez et précisez une condition qui l’activera. Par exemple, si vous créez cette liaison avec un Cypher de soins, vous pouvez préciser qu’il s’active si vous subissez une blessure majeure ou perdez connaissance. Le Cypher lié peut toujours être activé normalement, sans le déclencheur conditionnel. L’activateur conditionnel compte dans votre limite de Cyphers jusqu’à ce que le Cypher lié soit utilisé, perdu ou abandonné.</p><p><strong>Objets du genre : bougie d’activation conditionnelle (fantasy) ; télécommande (science-fiction)</strong></p>"
+    }
+  ]
+}

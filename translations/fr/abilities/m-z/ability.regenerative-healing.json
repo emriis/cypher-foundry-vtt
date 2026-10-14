@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.regenerative-healing",
+  "sourceLogicalId": "ability.regenerative-healing",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "88992cd21875aecda0372c092854b310c626359d685b7b20a5da70cd3236fcf5",
+      "text": "Soins régénérateurs"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "19a46ecdc147f24640bc11279bac5d8ab164334aef11f4383296a04b800eb613",
+      "text": "<p>Votre facteur de guérison agit constamment et soigne automatiquement vos blessures sans nécessiter votre volonté ni vos actions. Vous soignez automatiquement une blessure mineure par round. Si vous n’avez aucune blessure mineure, vous pouvez soigner une blessure modérée par round en dépensant 2 Puissance. Si vous n’avez ni blessure mineure ni blessure modérée, vous pouvez soigner une blessure majeure par minute en dépensant 5 Puissance. Si vos blessures devraient vous tuer mais que vous dépensez 5 Puissance pour soigner une blessure majeure, votre régénération vous maintient en vie, mais inconscient, pendant les soins de cette blessure. Vous décidez de dépenser ou non la Puissance nécessaire pour soigner une blessure, même si vous êtes inconscient ou incapable d’agir. Autrement dit, vous n’êtes pas obligé de dépenser de la Puissance pour vous soigner si vous ne le souhaitez pas.</p>"
+    }
+  ]
+}

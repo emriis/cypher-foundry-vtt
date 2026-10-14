@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.twisting-the-knife",
+  "sourceLogicalId": "ability.twisting-the-knife",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "12e0a7056e950eb68907f581df8e6249e0e0b53878b091681b6e8f6f4a8ef2a1",
+      "text": "Tourner le couteau"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "c3a10a4e5db2cc5087c7d30dc16d212e63d1c3a94750d2c6f1879deeda536d38",
+      "text": "Si vous avez touché un adversaire avec une arme de mêlée pendant ce combat, vous le touchez automatiquement de nouveau avec la même arme, sans jet, et infligez les dégâts normaux. Vous ne pouvez pas utiliser cette aptitude avec une attaque spéciale ni si vous souhaitez appliquer de l’Effort pour augmenter les dégâts ; toutefois, les aptitudes qui modifient automatiquement vos dégâts s’appliquent. Action."
+    }
+  ]
+}

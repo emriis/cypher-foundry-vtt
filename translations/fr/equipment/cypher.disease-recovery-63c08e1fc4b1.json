@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.disease-recovery",
+  "sourceLogicalId": "cypher.disease-recovery",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "49942974dcde9c40780ab31e3d0e2e6f884780d7040e375cb85bb941e81f6d89",
+      "text": "Récupération de maladie"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "7f2b6de5c0fa6480ab3509b187946f854d702905f7083ceb8bc20de95273bb96",
+      "text": "<p><strong>Effet :</strong> Une maladie de niveau 4 ou moins actuellement présente dans votre organisme n’a plus d’effet sur vous.</p><p><strong>Explication :</strong> Vous avez un système immunitaire puissant. Vous avez déjà été exposé à cette maladie. La souche infectieuse était déjà affaiblie avant de vous atteindre.</p>"
+    }
+  ]
+}

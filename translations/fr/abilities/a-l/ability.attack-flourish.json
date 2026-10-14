@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.attack-flourish",
+  "sourceLogicalId": "ability.attack-flourish",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "b30d515d7bcb1d1a28fd53970f5881c0032dda8b062ee1c4377cff0a78ef3a33",
+      "text": "Attaque spectaculaire"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "4f2453f15315e7e6a478e96e7473a915f7a4386b7e6a8fe57302a6457df8d825",
+      "text": "Lorsque vous attaquez, vous ajoutez des mouvements élégants, des plaisanteries amusantes ou un certain élément qui divertit ou impressionne les autres. Une créature de votre choix à portée courte qui peut vous voir bénéficie d’un atout pour sa prochaine tâche, si elle l’effectue dans un round ou deux. Aptitude passive."
+    }
+  ]
+}

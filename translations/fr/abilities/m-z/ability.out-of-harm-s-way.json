@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.out-of-harm-s-way",
+  "sourceLogicalId": "ability.out-of-harm-s-way",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "447fb0b9c90053f030c1de3af4b676abc9c6184d04b2dc9f85e8e1fb7a34bf42",
+      "text": "Hors de danger"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "385fe46354db65e4ec32e361dc786de1a3d2a96a849b1d373aa3785c7b8616a0",
+      "text": "Lorsque vous réussissez une tâche d’esquive, vous pouvez immédiatement vous déplacer sur une distance immédiate, même hors de votre tour. Aptitude passive."
+    }
+  ]
+}

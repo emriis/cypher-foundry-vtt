@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.power-boost.damage-boost",
+  "sourceLogicalId": "cypher.power-boost.damage-boost",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "de08dbca6d31543745b8edbb0c9a2322f6d78e018892203ccdada48054cac296",
+      "text": "Renforcement de dégâts"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "9646bf426bf384c356e863f6b04488541a2184cd58c0813902f637a751423204",
+      "text": "<p><strong>Effet :</strong> Votre aptitude d’attaque inflige des dégâts supplémentaires comme si vous aviez appliqué deux niveaux d’Effort aux dégâts.</p>"
+    }
+  ]
+}

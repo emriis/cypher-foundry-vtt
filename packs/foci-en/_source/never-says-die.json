@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/svg/heart.svg",
   "system": {
-    "description": "<p>You never quit, can shrug off a beating, and always come back for more.</p>",
+    "description": "<p>You never quit, can shrug off a beating, and always come back for more.</p>\n<ul>\n<li>Genre themes: fighter (fantasy), soldier or survivor (fantasy, real world, science fiction, postapocalypse), tank (superhero)</li>\n<li>GM intrusions: Sometimes, it’s equipment or weapons that give out.</li>\n</ul>",
     "abilities": [
       "Compendium.cypher.abilities-en.Item.cf1e5063aac812e1",
       "Compendium.cypher.abilities-en.Item.cc08928a91d47925",
@@ -81,6 +81,13 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references"
+        ]
+      }
     }
   }
 }

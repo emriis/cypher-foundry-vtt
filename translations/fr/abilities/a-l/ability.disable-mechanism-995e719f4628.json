@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.disable-mechanism-995e719f4628",
+  "sourceLogicalId": "ability.disable-mechanism-995e719f4628",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "116995baa97b9aa6b3036133495eee6aa5690d1d94bc7c392c5d0ec0a6aba290",
+      "text": "Désactiver un mécanisme"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "9d0c6635206348af6e4f6c46de52269b6fca47d3233fa425132c468fd2177ac7",
+      "text": "En réussissant une attaque d’Intellect pour pirater une machine, un robot ou un appareil intelligent ou non, à portée immédiate, vous le perturbez de l’une des manières suivantes : toutes les tâches de la machine sont entravées jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus ; la vitesse de la machine est divisée par deux ; la machine ne peut effectuer aucune action pendant un round ; la gravité des attaques de la machine est réduite d’un degré, avec un minimum d’une blessure mineure, jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Vous devez toucher la machine, le robot ou l’appareil pour le perturber ; si vous effectuez une attaque, elle n’inflige aucun dégât. Effort : augmentez la portée jusqu’à tout ce que vous pouvez voir directement avec vos propres yeux, sans caméra distante ni autre interface. Ciblez une machine par une interface réseau à laquelle vous avez un accès sans restriction ; cela nécessite deux niveaux d’Effort. Action."
+    }
+  ]
+}

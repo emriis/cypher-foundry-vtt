@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.audacious-blast",
+  "sourceLogicalId": "ability.audacious-blast",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "e24d0b9ce23e231b4e8028429f743a1bd35776272fd094056a2255f3b5289fd3",
+      "text": "Tir audacieux"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "26a9d50651fc5247b60d827bcbad3cc016f87ab5eb8e7c96442fcd05800d83d2",
+      "text": "<p>Vous attaquez avec un blaster, ou une autre arme à distance adaptée au genre, d’une manière qui augmente le risque d’erreur mais procure un bénéfice supplémentaire. Votre plage d’intrusion du MJ pour cette attaque augmente de 2, passant de 1 sur un d20 à 1–3 sur un d20, mais si vous touchez, vous pouvez choisir l’un des effets supplémentaires suivants :</p>\n<p>Tir désarmant : l’attaque inflige 1 dégât de moins, mais votre adversaire lâche un objet tenu dans une main, comme une arme ou un bouclier. Pour récupérer cet objet, il doit utiliser une action.</p>\n<p>Précision pénétrante : l’adversaire subit +2 dégâts.</p>\n<p>Action.</p>"
+    }
+  ]
+}

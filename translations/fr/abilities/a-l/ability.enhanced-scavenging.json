@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.enhanced-scavenging",
+  "sourceLogicalId": "ability.enhanced-scavenging",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "3d923c5420ea6092d69dcf60eaadd60ff51424d80a82f0d689aa3f6c6d08060c",
+      "text": "Récupération de ressources améliorée"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "b874489b9a0ff8653f1f408c42102da64b27b2a900d3b46f06c1b9c7ac3d4a6d",
+      "text": "Lorsque vous faites un jet pour chercher quelque chose d’utile dans le paysage postapocalyptique et que votre résultat est inférieur à 9, considérez-le comme un 9. Cela signifie que vous ne subissez pas d’intrusion du MJ sur un 1. Votre effet renforcé persiste jusqu’à une récupération de dix minutes ou plus. Effort : augmentez de 3 le résultat minimum de cette aptitude. Aptitude passive. Au rang 3 : le résultat minimum de cette aptitude passe à 12."
+    }
+  ]
+}

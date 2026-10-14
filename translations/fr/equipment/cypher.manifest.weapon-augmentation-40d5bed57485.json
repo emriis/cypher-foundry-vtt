@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.weapon-augmentation",
+  "sourceLogicalId": "cypher.manifest.weapon-augmentation",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "776703475f7474a4bd010f4dfbc549f4dad32b16589981f955e33a9c5ade1b49",
+      "text": "Amélioration d’arme"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "230d62535450fee8914a1de78cbfc9dc331db86b1f320a8b432c3e959f970b01",
+      "text": "<p><strong>Effet :</strong> Choisissez une arme physique, comme une épée ou un pistolet. Jusqu’à ce que vous preniez une récupération d’une heure ou plus, les attaques avec cette arme infligent 2 dégâts supplémentaires ; une arme à projectiles, comme un arc, une arbalète ou un pistolet, ajoute ces dégâts au projectile. La source de ces dégâts dépend du Cypher : certains ajoutent un effet spécial tel que le froid, l’électricité, le feu ou le poison ; d’autres libèrent une décharge d’énergie nécromantique ou de nanites qui détruisent les cellules ; d’autres rendent simplement l’arme intrinsèquement plus efficace, en affûtant une lame ou en augmentant la masse d’un projectile au moment de l’impact. Au lieu d’utiliser le Cypher sur une arme physique fabriquée, vous pouvez l’utiliser sur une partie de votre corps servant à vos attaques à mains nues, comme un poing ou un pied.</p><p><strong>Objets du genre : huile d’amélioration d’arme (fantasy) ; modulateur de densité (science-fiction)</strong></p>"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.wraith-cloak",
+  "sourceLogicalId": "ability.wraith-cloak",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "8c4246223d3fc9788b9f4ce59a0ef6736cbaf6a5996257098d3d79ad325f3c9c",
+      "text": "Manteau spectral"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d0248b5564f916d57cbf3e5c469617c5c95b75ba05e0ac89f5e302acfea36d8f",
+      "text": "À votre demande, un esprit mort-vivant proche s’enroule autour de vous jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Pendant ce temps, il est renforcé et inflige automatiquement 4 dégâts, sans jet, à quiconque tente de vous toucher ou de vous frapper avec une attaque de mêlée. Tant que ce manteau spectral est actif, toutes vos tâches de discrétion sont facilitées. Aptitude passive."
+    }
+  ]
+}

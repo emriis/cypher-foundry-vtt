@@ -1,0 +1,18 @@
+{
+  "logicalId": "skill.piloting-spacecraft",
+  "sourceLogicalId": "skill.piloting-spacecraft",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "aabb8437dee4916ac21c21dcdf17181c8b8bfd83d3c0ea465f2fe1849bd62b4c",
+      "text": "Pilotage de vaisseaux spatiaux"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "569ad7472337ddbe4a306105e131eecaf7f9caffb774dcb71b08d7c959e5b774",
+      "text": "<p>Vous savez piloter un vaisseau spatial, notamment pour naviguer vers d’autres destinations dans l’espace, en fonction des capacités de votre appareil et du cadre de la partie.</p>"
+    }
+  ]
+}

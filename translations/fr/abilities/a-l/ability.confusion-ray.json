@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.confusion-ray",
+  "sourceLogicalId": "ability.confusion-ray",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "6359b568da48ec331bcfaf9753e29cb3c0e410f635368613ba2185cf60243584",
+      "text": "Rayon de confusion"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "52f335f20bfdf991b0d86036943c2498b3ba3ef23cb8437337a19f678bfe0774",
+      "text": "Vous projetez un rayon gris d’énergie mentale perturbatrice vers une créature à portée courte. Effectuez une attaque d’Intellect contre votre adversaire ; en cas de réussite, vous infligez 1 dégât qui ignore l’armure et ses tâches sont entravées jusqu’à votre prochain tour. Action."
+    }
+  ]
+}

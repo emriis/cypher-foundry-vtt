@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.phase-grasp",
+  "sourceLogicalId": "ability.phase-grasp",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "fe7e0e357d9402fb5b3769950aec41b516a06347420faea78dce837c342b29b1",
+      "text": "Prise de phase"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "9803928cd21de51937f675851d49cdc3b2ec77a304ccec497857a36920e84d7b",
+      "text": "Vous déphasez un objet à longue portée pour qu’il disparaisse et réapparaisse dans vos mains ou à portée immédiate de vous. Vous devez pouvoir voir cet objet et être capable de le porter à deux mains. S’il est tenu par une créature ou placé derrière un obstacle, vous devez réussir une attaque d’Intellect contre la créature ou l’obstacle pour le transporter. Action."
+    }
+  ]
+}

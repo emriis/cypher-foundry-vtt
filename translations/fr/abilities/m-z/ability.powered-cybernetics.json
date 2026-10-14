@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.powered-cybernetics",
+  "sourceLogicalId": "ability.powered-cybernetics",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "c68abd1bc26b7fa4ea6d8652b7575d2b527d50eb0a216d11e918ebf5aa4b3d9d",
+      "text": "Cybernétique alimentée"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "e4653d391bd0162aba74af8958eddce3816561781d3ac486b708bcc218017d30",
+      "text": "Vous pouvez utiliser votre cybernétique pour soutenir et améliorer vos actions physiques. Lorsque vous effectuez un jet pour porter, escalader, sauter ou fracasser et que le résultat est inférieur à 9, considérez qu’il est de 9. Vous ne subissez donc pas d’intrusion du MJ si vous obtenez 1. Cette aptitude se renouvelle lorsque vous prenez une récupération. Aptitude passive ; action pour porter, escalader, sauter ou fracasser. Effort : augmentez de 3 le résultat minimal de cette aptitude. Au rang 3 : le résultat minimal de cette aptitude passe à 12."
+    }
+  ]
+}

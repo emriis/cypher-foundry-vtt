@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.remote-mapper",
+  "sourceLogicalId": "cypher.manifest.remote-mapper",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "9bcac5d9ea834b23ca376ca8a3cfeae9b7eb5fa269eb1278a3992a81e84f239b",
+      "text": "Cartographie à distance"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d5c12b1261412358379e5b69daef798549580b7a29b55deaee401b9c1e1adf14",
+      "text": "<p><strong>Effet :</strong> Vous lancez un minuscule objet qui se déplace à grande vitesse pour cartographier et scanner une zone de votre choix, en commençant à une distance courte. Il parcourt jusqu’à 3 000 pieds (900 m) au total, scannant une zone à 1800 pieds (540 m) par niveau autour de lui, suivant un trajet qui optimise la surface couverte. Il repère la disposition générale, les créatures et les principales sources d’énergie, puis vous transmet ces informations, par télépathie ou signal électronique par exemple, ou revient vous montrer ce qu’il a vu. Toute barrière physique ou énergétique bloque son déplacement.</p><p><strong>Objets du genre : œil de cristal espion (fantasy) ; drone d’infiltration (science-fiction)</strong></p>"
+    }
+  ]
+}

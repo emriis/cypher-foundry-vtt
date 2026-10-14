@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.romantic-flair",
+  "sourceLogicalId": "ability.romantic-flair",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "62128e19de3131a2c020e9d64b9c84f1b3374d25c9e0ed1c5cc0fad73bd0a406",
+      "text": "Panache romantique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "cfa9a395d1f073c9b3ae57322619460f50b77658cdc1c28e9e2aff421195a3de",
+      "text": "Votre charme exubérant, votre confiance audacieuse, une révérence parfaitement placée ou un clin d’œil suggestif vous permettent de considérer comme un 9 tout résultat inférieur à 9 lors d’un jet pour charmer ou impressionner. Vous ne subissez donc pas d’intrusion du MJ si vous obtenez 1. Effort : augmentez de 3 le résultat minimal de cette aptitude. Action. Au rang 3 : le résultat minimal de cette aptitude passe à 12."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.always-mighty-b82fee47708f",
+  "sourceLogicalId": "ability.always-mighty-b82fee47708f",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "9d7068e8fa1a9d65bd4f60784294137235d244f91f3b4e2e879ae93f96ce26ab",
+      "text": "Toujours puissant"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "3dcedd127eaf4519f9db2e84768cbb6fda35bc8cc47da9b439ba5a5633115ff1",
+      "text": "Chaque fois que vous utilisez une récupération, si votre réserve de Puissance n’est pas déjà pleine, vous obtenez 1 point supplémentaire à restituer à votre réserve de Puissance. Vous pouvez sélectionner cette aptitude jusqu’à trois fois. Vous pouvez notamment choisir de nouveau Toujours puissant si votre focus est Accomplit des exploits de force, qui propose cette aptitude."
+    }
+  ]
+}

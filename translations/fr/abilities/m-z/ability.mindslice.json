@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.mindslice",
+  "sourceLogicalId": "ability.mindslice",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "fd40f7e3e03176c8c8f4489bb2b12c678275013f9107adacd34253f2a16ef3ad",
+      "text": "Entaille mentale"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "9d73d58fa6854cc2f9d8fa0aa51f4e16cff4af6020d4c74b41021ece249bf5c5",
+      "text": "<p>Vous attaquez mentalement une cible que vous voyez à courte portée, concentrant votre esprit pour frapper ses pensées et infliger 2 dégâts qui ignorent l’armure. Les créatures dépourvues d’esprit, comme certains morts-vivants relativement dénués de pensée, peuvent être immunisées. Action.</p>"
+    }
+  ]
+}

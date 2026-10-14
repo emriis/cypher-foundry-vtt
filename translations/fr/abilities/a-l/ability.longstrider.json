@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.longstrider",
+  "sourceLogicalId": "ability.longstrider",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "35a995a2dad61040828ad74863f4def0c7ffde3ba86bb0863b740c90414630a1",
+      "text": "Grandes enjambées"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "18340bb430fbda4b54a83d2adea200f2668bbf9dcaef69cf2b1a362ddd259481",
+      "text": "Lorsque vous êtes plus grand que la normale, votre vitesse de déplacement sur la durée (pas vos déplacements de chaque round, mais la marche, la course ou la randonnée pendant une minute ou plus) est doublée grâce à vos plus grandes enjambées et à votre meilleure endurance."
+    }
+  ]
+}

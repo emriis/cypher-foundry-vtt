@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.ferocious-when-cornered",
+  "sourceLogicalId": "ability.ferocious-when-cornered",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "10607d51f031381d7e74165bc266ae1af45d569f32d82d9defde5e5a546bfce3",
+      "text": "Féroce quand acculé"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "6c5577e86331a2757de1c4bf99545c07ebfc01801abe34168d5690c503fc8c47",
+      "text": "Tant que vous avez au moins trois blessures mineures, au moins deux blessures modérées ou au moins une blessure majeure, vous bénéficiez d’un niveau d’Effort gratuit que vous pouvez appliquer à l’une de vos attaques à chaque round. Aptitude passive. Au rang 3 : le bénéfice passe à deux niveaux d’Effort gratuits."
+    }
+  ]
+}

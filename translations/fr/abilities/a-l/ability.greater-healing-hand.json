@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.greater-healing-hand",
+  "sourceLogicalId": "ability.greater-healing-hand",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "f9e63a122341f019f5b31b597437aeab2ebda2869edd22e0452f2d1ce58ca95f",
+      "text": "Main guérisseuse supérieure"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "1d54aed6f8b455c0fcfbc8afcbd8b83b8b81a4262ac7ab63c55e7abb77901f34",
+      "text": "Vous supprimez toutes les blessures mineures d’un personnage que vous touchez, transformez deux blessures modérées en blessures mineures, ou transformez deux blessures majeures en blessures modérées. Chaque fois que vous utilisez Main guérisseuse supérieure, son coût en points d’Intellect augmente de 2. Ce coût revient à sa valeur de base après que vous avez pris une récupération. Aptitude passive."
+    }
+  ]
+}

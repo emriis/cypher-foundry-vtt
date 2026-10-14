@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.lightning-bolt",
+  "sourceLogicalId": "ability.lightning-bolt",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "6501d6e4ac16bd7d91b28cd7cd45032d91705b6770f10a4f48ef5e3d61d2d239",
+      "text": "Éclair"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "3782842eb8dedc297e93b2182454a280b73a491c1f0864e6817ec9ec8de2097b",
+      "text": "Vous lancez un éclair sur une cible à portée longue, infligeant 6 dégâts en cas de jet d’attaque réussi. Vous pouvez aussi vous entendre avec votre MJ pour que l’éclair soit constitué d’une autre forme d’énergie ou utilise le même type d’énergie que celui suggéré par votre focus. Par exemple, si votre focus est Flamboie, cette aptitude pourrait produire un rayon de feu et se nommer Rayon ardent. Action lente. Au rang 3 : l’éclair se ramifie et attaque aussi une seconde cible à portée courte de la première (effectuez un jet d’attaque distinct pour chacune)."
+    }
+  ]
+}

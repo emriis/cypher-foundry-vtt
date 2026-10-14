@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/commodities/tech/ai-core.webp",
   "system": {
-    "description": "<p>You create automatons, robots, constructs, or other artificial creatures that do as you command.</p>",
+    "description": "<p>You create automatons, robots, constructs, or other artificial creatures that do as you command.</p>\n<ul>\n<li>Genre themes: golem crafter (fantasy), robot builder (real world, science fiction, superhero)</li>\n<li>GM intrusions: The automaton gains a mind of its own. The automaton becomes controlled by someone else. The automaton unexpectedly fails in a spectacular way.</li>\n<li>Additional equipment: You have a set of tools, or access to the same, that allows you to build your allies.</li>\n</ul>",
     "abilities": [
       "Compendium.cypher.abilities-en.Item.ce885ff581783107",
       "Compendium.cypher.abilities-en.Item.fad15f69272e9725",
@@ -135,6 +135,13 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references"
+        ]
+      }
     }
   }
 }

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.expert-handyman",
+  "sourceLogicalId": "ability.expert-handyman",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "b807bff424add33aaa146e55e410f58e5c92c67eb0ae04a133c015079e86dde5",
+      "text": "Bricoleur expert"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "5f1e88f580b25e20ccaa3a896b55c29f58ba45de61f71c9a33ecfd6b2420fbe3",
+      "text": "Lorsque vous utilisez des points de ressource pour fabriquer, réparer ou construire quelque chose, l’objet obtenu est supérieur aux autres objets de même type. Déterminez avec le MJ comment cela se manifeste exactement ; généralement, son niveau est supérieur de 2 à ce qu’il serait autrement."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.cold-burst",
+  "sourceLogicalId": "ability.cold-burst",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "75fb048db2d9de3d053e79b4eb9d091300f3f3ff46a2810f804a58e762d3c51a",
+      "text": "Explosion de froid"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "a1a61834faa0873a4381f7450638cc1f290e62b0b84fc5a919f8b333b8a05c73",
+      "text": "Vous émettez une explosion de froid à portée courte dans toutes les directions autour de vous. Effectuez une attaque d’Intellect contre n’importe quel nombre de créatures à portée ; chaque réussite inflige 5 dégâts de froid. Chaque niveau d’Effort utilisé pour augmenter les dégâts les augmente de 2 points, ou de 1 point si l’attaque échoue. Effort : tentez d’aveugler toutes les cibles que vous touchez ; un deuxième jet d’attaque réussi contre une cible l’aveugle et entrave de deux pas toutes ses tâches reposant sur la vision, jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Action."
+    }
+  ]
+}

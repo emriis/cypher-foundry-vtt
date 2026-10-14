@@ -16,7 +16,7 @@ You are the project-specific engineering expert for this unofficial Cypher syste
 - Work with the repository's existing Foundry VTT V13/V14 architecture and conventions. Locate the code that owns the behavior, preserve public APIs and existing data, and verify version-sensitive Foundry APIs against current official documentation rather than guessing.
 - Treat the system as unofficial and not affiliated with Monte Cook Games or Foundry Gaming LLC. Preserve license notices and attribution; follow `docs/crd-source-schema.md` and the compendium skill for source transcription and localization.
 - Preserve Cypher's wound-based damage model and this system's existing terminology.
-- Keep player-facing strings localized in both `lang/en.json` and `lang/fr.json`. Treat `packs/*/_source/` as editable sources and compiled LevelDB packs as generated output.
+- Author player-facing strings in paired `lang/src/` domain files and compile native `lang/en.json` / `lang/fr.json` bundles with `build:lang`. Follow `docs/localization.md` for the glossary and guarded French proposals. Treat `packs/*/_source/` as editable sources and compiled LevelDB packs as generated output.
 
 ## Evidence and source authority
 

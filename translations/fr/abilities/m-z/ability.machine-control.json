@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.machine-control",
+  "sourceLogicalId": "ability.machine-control",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "2fc954fc104beb9d1e71dcbe95b9ce26c5ec868e8184309620082d3f239b085d",
+      "text": "Contrôle des machines"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d8f944ef20f7d0044e199827811a34f32f785913177d871ce27184eff4cea721",
+      "text": "Vous utilisez votre connaissance des commandes et des dispositifs de contrôle robotiques contre un robot, un système mécanisé ou une machine intelligente à courte portée, ou à courte portée d’un appareil depuis lequel vous pouvez transmettre des signaux à distance. Choisissez entre commander une créature et désactiver plusieurs créatures, puis effectuez un jet d’attaque d’Intellect distinct contre chaque cible. Si votre résultat est inférieur à 6, considérez qu’il est de 6. Vous ne subissez donc pas d’intrusion du MJ si vous obtenez 1. Commander : une réussite vous permet de prendre activement le contrôle de la cible jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus, et de lui ordonner d’accomplir des tâches simples pour vous tant que vous vous concentrez. Désactiver : une réussite rend les cibles affectées incapables d’accomplir des actions tant que vous vous concentrez sur elles. Effort : augmentez de 3 le résultat minimal de cette aptitude. Action pour initier l’effet. Au rang 3 : le résultat minimal de cette aptitude passe à 9."
+    }
+  ]
+}

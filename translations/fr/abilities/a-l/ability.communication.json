@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.communication",
+  "sourceLogicalId": "ability.communication",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "3981a2b9c1ef7fce8dbf5e3d44fefc58746dee11b3de35655e166c25142612ba",
+      "text": "Communication"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "6dc80e603417f17288b8567c10936f93c0ccd95a428f06159133d896fdaf09d7",
+      "text": "Vous pouvez transmettre un concept simple à une créature qui, normalement, ne peut ni parler ni comprendre la parole. La créature peut aussi vous donner une réponse très simple à une question simple. Action."
+    }
+  ]
+}

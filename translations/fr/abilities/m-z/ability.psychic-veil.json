@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.psychic-veil",
+  "sourceLogicalId": "ability.psychic-veil",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "32633013f98cd9e88a7696763ea86db0432e5f579cedebe15142dd34f037d2fb",
+      "text": "Voile psychique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "e91acd80305f18a39c7c80880e527cd3178d446671fa639439298e5a94f4d480",
+      "text": "Votre apparence est déformée, comme vue à travers l’aura visuelle d’une migraine, jusqu’à ce que vous preniez une récupération de dix minutes ou plus. Cette déformation ne gêne pas vos actions, mais facilite vos jets d’esquive et de défense d’Intellect. Pendant qu’elle est active, elle vous protège des attaques mentales en réduisant la gravité de leurs blessures d’un degré : majeure à modérée, modérée à mineure, mineure à aucune. Par exemple, si une attaque de décharge psychique vous touche et inflige une blessure modérée, vous ne subissez qu’une blessure mineure. Aptitude passive."
+    }
+  ]
+}

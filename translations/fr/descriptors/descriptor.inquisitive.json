@@ -1,0 +1,28 @@
+{
+  "logicalId": "descriptor.inquisitive",
+  "sourceLogicalId": "descriptor.inquisitive",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "c2127976df7ceacf33aacb93bcda3c3ef7a1fa71f7ed22efbb7a0f192dda7c1e",
+      "text": "Curieux"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "463edf5a83ae289dbd415d2cc99d9d445e8f7fcfd7b48c2ba8168f82c2b5a407",
+      "text": "<p>Le monde est vaste et mystérieux, rempli de merveilles et de secrets capables de vous émerveiller pendant plusieurs vies. Vous ressentez cet appel au fond du cœur : explorer les vestiges des civilisations passées, découvrir de nouveaux peuples et de nouveaux lieux et rencontrer en chemin toutes sortes d’étranges merveilles. Toutefois, aussi forte que soit votre envie de parcourir le monde, vous savez que les dangers abondent et prenez des précautions pour être prêt à toute éventualité. Les recherches, la préparation et la disponibilité vous aideront à vivre assez longtemps pour voir tout ce que vous souhaitez voir et faire tout ce que vous souhaitez faire.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>+2 à votre Réserve d’Intellect</p>\n<p>Vous êtes entraîné pour l’une des compétences suivantes : Collecte d’informations ou Identification</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "5ea107214017919b63ad99aad4da2bf79c41f35fba6b4c50ca9888264ecb021c",
+      "text": "Collecte d’informations"
+    },
+    {
+      "path": "system.skillOptions.1",
+      "sourceHash": "c6c35a92ec25bdde90a81955b126e749dd3585af8f283bd7139349700a720f8d",
+      "text": "Identification"
+    }
+  ]
+}

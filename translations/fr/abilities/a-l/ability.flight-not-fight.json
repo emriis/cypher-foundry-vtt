@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.flight-not-fight",
+  "sourceLogicalId": "ability.flight-not-fight",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "2bca679d098b18cc951de6f1be5695941b769d55092d2be3a074f89595e81df7",
+      "text": "Fuir plutôt que combattre"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "329ed4abe400555640265761e76505a49775ddf49fc7367104d305215f6bc9f4",
+      "text": "Si vous utilisez votre action uniquement pour vous déplacer, vos tâches d’esquive sont facilitées jusqu’à votre prochain tour. Aptitude passive."
+    }
+  ]
+}

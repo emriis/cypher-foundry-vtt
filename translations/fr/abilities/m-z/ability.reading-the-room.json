@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.reading-the-room",
+  "sourceLogicalId": "ability.reading-the-room",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "d4096aa860a8601c9a3d949e01155b600b36f5f55fc74a7cece699259ec91053",
+      "text": "Percevoir l’ambiance"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "ea3e43467887c74292bc04801f0186a54ef37a3df91ff671f9369550c5935079",
+      "text": "Vous obtenez des connaissances sur un endroit en parlant aux esprits des morts ou à leurs énergies résiduelles. Vous pouvez poser une question au MJ, qui doit être simple et factuelle. Vous devez réussir un jet d’Intellect contre la difficulté de la question, fixée par le MJ. « Qu’est-ce qui a tué le bétail dans cette grange ? » est un bon exemple de question simple. « Pourquoi ce bétail a-t-il été tué ? » n’est pas une question appropriée, car elle concerne davantage l’état d’esprit du tueur que la grange. Les questions simples ont généralement une difficulté de 2, mais les questions extrêmement techniques ou portant sur des faits destinés à rester secrets peuvent avoir une difficulté bien supérieure. Action."
+    }
+  ]
+}

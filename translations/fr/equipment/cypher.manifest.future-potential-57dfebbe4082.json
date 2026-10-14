@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.future-potential",
+  "sourceLogicalId": "cypher.manifest.future-potential",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "bd0064a15995cd1c17408b8e07ac7e6d516dd773bd5c97178c212eafae32718f",
+      "text": "Potentiel futur"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "6ab7d892af72661835a2a70bf20b7ffefc427d66c9950981fb339ca140f58d53",
+      "text": "<p><strong>Effet :</strong> Choisissez une aptitude de votre focus que vous ne possédez pas actuellement. Elle doit être une aptitude que vous pourriez sélectionner comme progression à votre rang actuel ou au rang suivant. Jusqu’à ce que vous preniez une récupération d’une heure ou plus, vous pouvez utiliser cette aptitude comme si vous l’aviez choisie comme progression ; vous devez payer normalement ses éventuels coûts en points de réserve ou autres pour l’activer. Par exemple, si vous êtes un personnage de rang 1 avec le focus Flamboie, vous pouvez utiliser ce cypher pour apprendre temporairement une aptitude de focus de rang 1 que vous ne connaissez pas ou une aptitude de focus de rang 2.</p><p><strong>Objets du genre : potion de gloire future (fantasy) ; extracteur personnel de tachyons (science-fiction)</strong></p>"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.sound-dampener",
+  "sourceLogicalId": "cypher.manifest.sound-dampener",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "75fb5623e8d816f72d4f27fda818c212a4a21458fd6047628383edbc91ef2af4",
+      "text": "Atténuateur sonore"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "1e4325e8e89144483d99fe9a8fd564fc11e1dc59b33d09b1bb8b2862e7b39879",
+      "text": "<p><strong>Effet :</strong> Jusqu’à ce que vous preniez une récupération d’une heure ou plus, le son à portée immédiate de vous est atténué, donnant à tous les occupants de la zone un atout aux tâches de discrétion et entravant les attaques et effets sonores qui proviennent de la zone ou y entrent.</p><p><strong>Objets du genre : parchemin de silence (fantasy) ; suppresseur de décibels (science-fiction). Les tâches de perception auditive d’une créature sourde sont entravées de deux à quatre pas selon l’importance de sa perte d’audition.</strong></p>"
+    }
+  ]
+}

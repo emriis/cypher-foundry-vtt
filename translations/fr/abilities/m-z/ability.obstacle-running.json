@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.obstacle-running",
+  "sourceLogicalId": "ability.obstacle-running",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "7639608dd7a590a5d4168a2c6f50d86b83e1f764e4cec8d4628abbb6401c2bb9",
+      "text": "Course d’obstacles"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "03df656dcfdb7da788fe12363db6800da8b63d78c0e2de8c4f61b5059ab41805",
+      "text": "Tout déplacement que vous effectuez ce round ignore la plupart des terrains difficiles qui vous ralentiraient normalement. Vous pouvez donc vous déplacer à vitesse normale dans les zones contenant des décombres, des clôtures, des tables et des objets similaires qu’il faudrait normalement franchir ou contourner. Ce déplacement peut inclure une glissade sur une rampe, une brève course le long d’un mur, ou même un appui sur une créature pour franchir un obstacle. Si un obstacle nécessite normalement une tâche de Puissance ou de Célérité, comme se balancer à une corde, tenir en équilibre sur une corde ou sauter par-dessus un trou, cette tâche est facilitée. Aptitude passive."
+    }
+  ]
+}

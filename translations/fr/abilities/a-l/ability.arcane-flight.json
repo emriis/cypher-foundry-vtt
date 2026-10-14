@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.arcane-flight",
+  "sourceLogicalId": "ability.arcane-flight",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "2f65be52f5f3f1264cc2d894654ea602e0a00a2b3a1ae56c3146d21fdf5afcaa",
+      "text": "Vol arcanique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "5812792ec54c0cb87321d0fd0578a0c1977587348327f7b13db8c9208fc90a1e",
+      "text": "Vous pouvez flotter et voler dans les airs à votre vitesse normale au sol jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Pour les déplacements sur de longues distances, une créature volante parcourt environ 20 miles (32 km) par heure sans être affectée par le terrain. Effort : affectez une créature supplémentaire de votre taille ou plus petite que vous touchez ; vous dirigez ses mouvements, et elle doit rester dans votre champ de vision sous peine de tomber. Une action pour commencer. Vol arcanique est supérieur à Lévitation ; si vous possédez les deux, vous pouvez échanger Lévitation contre une autre aptitude de rang 2 ou moins du focus Lance des sorts."
+    }
+  ]
+}

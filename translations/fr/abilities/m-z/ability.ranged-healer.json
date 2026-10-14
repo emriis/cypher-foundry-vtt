@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.ranged-healer",
+  "sourceLogicalId": "ability.ranged-healer",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "4df08b0fa9c80e6ed934a0bd7009e4362d32cdbae1ec491b104506dd3b9d06b8",
+      "text": "Soins à distance"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "b250d112c1b8f61185ef5a8c66f4b58b03c064a649a22a20de3cdca8cfd702fa",
+      "text": "Toutes vos aptitudes de focus à courte portée fonctionnent à longue portée. Toutes vos aptitudes de focus nécessitant le contact ou une portée immédiate fonctionnent à courte portée."
+    }
+  ]
+}

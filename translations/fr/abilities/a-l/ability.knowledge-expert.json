@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.knowledge-expert",
+  "sourceLogicalId": "ability.knowledge-expert",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "815dcc16b2b224dcfde3dcab0e768a5905556418032965473a1e1659e7920def",
+      "text": "Expertise des connaissances"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "9b82c0fa1962c76981cf56e0df4abc2682ac6b20d1ecc7627ef75e70cc0e77eb",
+      "text": "<p>Vous êtes formé au niveau expert dans deux vastes compétences de science ou de connaissance (comme les mathématiques, la physique, l’ingénierie, la géologie, l’histoire, le piratage informatique, etc.) dans lesquelles vous êtes déjà spécialisé. Vous pouvez aussi améliorer votre maîtrise dans deux compétences de science ou de connaissance (de non entraîné à entraîné, ou d’entraîné à spécialisé). Aptitude passive.</p>"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.knowing-the-audience",
+  "sourceLogicalId": "ability.knowing-the-audience",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "47b018e69d346123439e435097242f07f4f382e0c5de2ce3743d05d7b8ec2ee2",
+      "text": "Connaître son public"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "25c24105ca41a6722cf0b0025316d123a1522f052df09f659725245ff2f340ef",
+      "text": "Vous déterminez l’humeur générale d’un groupe de personnes à portée courte. Si elles essaient de dissimuler cette information, vous pouvez tenter une tâche de difficulté 3 pour découvrir leur véritable attitude. Au round suivant, vous gagnez aussi un atout à une seule tâche de reconnaissance des motivations concernant une personne de ce groupe, afin d’obtenir davantage de détails et d’informations sur elle. Action lente."
+    }
+  ]
+}

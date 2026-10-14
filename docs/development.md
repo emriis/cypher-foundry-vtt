@@ -40,7 +40,8 @@ application, sheet, migration, or compendium boundaries.
 | Pure Cypher rules | `module/rules/` |
 | Actor and Item schemas | `module/data-models/` |
 | Foundry applications and UI | `module/sheets/`, `templates/`, `css/` |
-| Localization | `lang/` |
+| UI localization sources / Foundry bundles | `lang/src/` / `lang/en.json`, `lang/fr.json` |
+| French compendium proposals | `translations/fr/` |
 | Compendium source | `packs/*/_source/` |
 | Pack/build tooling | `scripts/` |
 | Automated tests | `tests/` |
@@ -102,10 +103,16 @@ For CRD-derived records:
   them;
 - record CRD provenance;
 - keep English and French records mechanically equivalent;
-- use the Character Book translation only when it faithfully corresponds to the
-  CRD content;
-- otherwise retain the English source text for later translation rather than
-  inventing a translation.
+- write complete French editorial proposals against the exact English fields,
+  with source hashes and explicit review status;
+- use another French rendering only when it faithfully corresponds to the CRD;
+  leave unresolved editorial or mechanical questions visible for review.
+
+Follow [Localization authoring and review](localization.md) for domain ownership,
+the approved action vocabulary, guarded proposals and reviewable previews.
+`npm run check:lang` verifies native bundles without rewriting them.
+`npm run audit:i18n` normalizes a disposable copy and writes a coverage report;
+`npm run preview:translations` also writes French JSON previews under `reports/`.
 
 Run:
 
@@ -196,6 +203,16 @@ Builds and installation happen there. It reads activation metadata from the
 configured installation but never writes its settings, worlds, or systems.
 Cleanup checks the temporary workspace's ownership marker before removal.
 Failure diagnostics are retained under ignored `reports/` paths.
+
+`FOUNDRY_SERVER_PATH` can explicitly select a standalone Foundry `main.js` or
+`main.mjs` instead of the desktop installation. The runner reads the version
+from that server's own `package.json`; it never automatically selects a pending
+update. This supports testing another complete core installation in the same
+disposable Data boundary without modifying the active installation.
+Windows discovery also checks the current per-user installation under
+`%LOCALAPPDATA%/Programs/Foundry Virtual Tabletop/` before legacy installation
+locations. Explicit `FOUNDRY_APP_PATH` and read-only `FOUNDRY_DATA_PATH` hints
+remain available for other locations.
 
 ### ESM and static checks
 

@@ -1,0 +1,23 @@
+{
+  "logicalId": "equipment.Real-World.moderate.Hand grenade",
+  "sourceLogicalId": "equipment.Real-World.moderate.Hand grenade",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "48790a095c2dec28c6daa509d73d99913721958bc2ecf3fc437acd7cd00298b4",
+      "text": "Grenade à main"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "0839cc933f88d3741a5d77baf251db194e3f904422773c4a55035f1e7956072c",
+      "text": "Arme explosive, peut être lancée à distance courte, inflige 4 dégâts dans un rayon immédiat"
+    },
+    {
+      "path": "system.properties.0",
+      "sourceHash": "0839cc933f88d3741a5d77baf251db194e3f904422773c4a55035f1e7956072c",
+      "text": "Arme explosive, peut être lancée à distance courte, inflige 4 dégâts dans un rayon immédiat"
+    }
+  ]
+}

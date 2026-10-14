@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/svg/sword.svg",
   "system": {
-    "description": "<p>You are a master user of a particular type of weapon, be it a sword, whip, dagger, bow, gun, or something else.</p>",
+    "description": "<p>You are a master user of a particular type of weapon, be it a sword, whip, dagger, bow, gun, or something else.</p>\n<ul>\n<li>Genre themes: fighter or paladin or ranger (fantasy), soldier or weapons master (historical, real world, science fiction, superhero)</li>\n<li>GM intrusions: Weapons break. Weapons can be stolen. Weapons can be dropped or forced out of your hand.</li>\n<li>Additional equipment: You have a weapon appropriate to your area of mastery.</li>\n</ul>",
     "abilities": [
       "Compendium.cypher.abilities-en.Item.7e30d79548684919",
       "Compendium.cypher.abilities-en.Item.e39822b9d74d694c",
@@ -118,6 +118,13 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references"
+        ]
+      }
     }
   }
 }

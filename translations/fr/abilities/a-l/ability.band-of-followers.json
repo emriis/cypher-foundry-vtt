@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.band-of-followers",
+  "sourceLogicalId": "ability.band-of-followers",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "c0fe9f5fe582b601fb45c56535e960e326a9c4963c31e8a0bec1352df2cc99b7",
+      "text": "Groupe de compagnons"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "56d4e58525e62aef28094c8ec7dea9226c30418a22e646aafb56e12e25d1b094",
+      "text": "Vous gagnez quatre compagnons de niveau 3, chacun possédant trois modifications de niveau 4 de votre choix. Au lieu de gagner quatre nouveaux compagnons de niveau 3, vous pouvez faire passer quatre compagnons existants de niveau 2 au niveau 3 et obtenir un nouveau compagnon de niveau 2 à la place de chacun d’eux."
+    }
+  ]
+}

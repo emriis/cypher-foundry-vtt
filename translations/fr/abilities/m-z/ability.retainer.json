@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.retainer",
+  "sourceLogicalId": "ability.retainer",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "4d4beb05cb06cb8ae26e66993e43880ab76242998c8c51671bc55c75a696f523",
+      "text": "Suivant"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "cd1822b834c31350b299bc29dee20ac85c7bd9144de04d694bcafc247331ecdc",
+      "text": "<p>Vous bénéficiez des services d’un suivant loyal de niveau 2 qui s’occupe de vos affaires, de vos comptes, de vos repas, de vos vêtements et d’autres besoins mineurs afin que vous n’ayez pas à le faire. Définissez les détails de ce suivant avec votre MJ.</p>\n<p>En dépensant 2 Intellect, vous pouvez lui faire recevoir une attaque qui vous était destinée. Si l’attaque réduit sa santé à 0, il est inconscient mais pas mort ; vous pouvez le rétablir en utilisant vos points de ressource et en organisant ou fournissant quelques jours de soins.</p>\n<p>Aux rangs supérieurs : votre suivant s’améliore lorsque vous atteignez le rang 3, puis le rang 5, comme expliqué dans la section consacrée aux suivants.</p>\n<h4>Votre suivant peut être un robot ou un animal extraterrestre si vous le préférez.</h4>"
+    }
+  ]
+}

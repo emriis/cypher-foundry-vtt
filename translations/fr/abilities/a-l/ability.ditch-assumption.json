@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.ditch-assumption",
+  "sourceLogicalId": "ability.ditch-assumption",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "05c4d6bd167b6988f376482ff0ea05ece66a15d8632f010f6963fde8dbe39645",
+      "text": "Écarter une hypothèse"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "5cbae7013d5fa65e30e8328e545d042e95d79761ce44ad35bebac763f930db42",
+      "text": "Après une observation et une enquête attentives, par exemple en interrogeant un ou plusieurs PNJ sur un sujet, en fouillant une zone ou un dossier, en réévaluant vos convictions antérieures ou par une activité similaire, vous clarifiez un sujet : le MJ identifie une hypothèse fausse que vous avez concernant votre enquête actuelle. Par exemple, si vous avez cru à tort qu’un fait était vrai, le MJ vous le fait savoir. Si vous avez plusieurs suspects possibles pour un crime, le MJ peut à la place en éliminer un. Cependant, si vous ne travaillez pas à partir de fausses informations, ne suivez pas une fausse piste et n’avez pas de suspects erronés à éliminer, vous n’apprenez rien. Cette aptitude se renouvelle après une récupération de dix heures. Dix minutes pour commencer."
+    }
+  ]
+}

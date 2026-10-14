@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.resist-the-storm",
+  "sourceLogicalId": "ability.resist-the-storm",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "ee20dd8d5deb79798c32708f7ed60ce7d1187b9805c036fc04253f80b69604a6",
+      "text": "Résister à la tempête"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "be4b118ea42eae52d42e922afe912745d8bb2807a5fdf0d5f6304ec65a25fff5",
+      "text": "Vous résistez aux dangers naturels des tempêtes. Choisissez l’électricité ou l’énergie sonore. Si vous subissez une attaque de ce type d’énergie, réduisez la gravité de la blessure d’un degré : majeure à modérée, modérée à mineure, mineure à aucune. Vous pouvez choisir cette aptitude deux fois, chaque fois pour un type d’énergie différent. Aptitude passive."
+    }
+  ]
+}

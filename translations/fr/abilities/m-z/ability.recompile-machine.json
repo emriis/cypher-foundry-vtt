@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.recompile-machine",
+  "sourceLogicalId": "ability.recompile-machine",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "be871269e88261003cd447738e1e1f2d9b6ecbf6b4c82d613207b5c520f7b9d6",
+      "text": "Recompiler une machine"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "a3f5942400bb4f1f719e16ec3bd09f2d091513bf87724bbec8bd6dfbfa9ba68b",
+      "text": "Une attaque d’Intellect réussie contre une machine de niveau 4 ou moins à longue portée, intelligente ou non, vous connecte directement à son système central. Choisissez l’un des effets suivants. La machine cesse totalement de fonctionner et devient inutilisable. La machine redémarre après quelques rounds, puis vous sert de compagnon mécanique supplémentaire pendant environ un jour ; après avoir terminé une récupération de dix heures, vous devez réutiliser cette aptitude sur elle pour éviter qu’elle retrouve sa programmation initiale, ou sa conscience d’elle-même s’il s’agit d’une machine intelligente. La machine explose et inflige 4 dégâts à toutes les créatures à portée immédiate ; effectuez un jet d’attaque d’Intellect distinct contre chacune. Effort : augmentez de 1 le niveau maximal de la machine que vous pouvez affecter. Action lente."
+    }
+  ]
+}

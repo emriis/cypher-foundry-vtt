@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.phased-attack",
+  "sourceLogicalId": "ability.phased-attack",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "7ad19fb8a73eb859b3196120c2db5b56018e1e9b2ef351e361abc1df6b4be392",
+      "text": "Attaque déphasée"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "1d5cb9c6c9f52269ff455df4b2db7f484232b772d76e63cc77efcd5e9d771a1f",
+      "text": "Les attaques que vous effectuez ce tour ignorent l’armure de votre adversaire. Aptitude passive."
+    }
+  ]
+}

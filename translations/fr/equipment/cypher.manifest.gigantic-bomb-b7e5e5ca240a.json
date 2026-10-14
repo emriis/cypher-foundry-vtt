@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.gigantic-bomb",
+  "sourceLogicalId": "cypher.manifest.gigantic-bomb",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "2f4e57c337797ed467ee8df32db18c0588af2b06f8c24d32579d4d7d866b7e65",
+      "text": "Bombe gigantesque"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "a6ab0e3c08d9c6ede85969d639e723d7d6e27a59b1a5e7023f0709432a3b716d",
+      "text": "<p><strong>Effet :</strong> Améliore un cypher de bombe, tel qu’une bombe incendiaire ou une bombe à éclats, pour qu’il affecte une zone courte plutôt qu’une zone immédiate. Une fois qu’un cypher de bombe gigantesque a servi à améliorer un autre cypher, la bombe gigantesque est consommée et ne compte plus dans votre limite de cyphers.</p><p><strong>Objets du genre : parchemin d’explosion magique élargie (fantasy) ; amplificateur de bombe (science-fiction). Certains MJ peuvent décider que, lorsqu’un personnage trouve un cypher de bombe gigantesque, il s’agit en réalité d’un cypher de bombe existant déjà amélioré par un cypher de bombe gigantesque.</strong></p>"
+    }
+  ]
+}

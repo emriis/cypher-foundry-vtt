@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.shock-bomb",
+  "sourceLogicalId": "cypher.manifest.shock-bomb",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "ed55bec3f98c6104d981b1ca73390ec35bd147f5f60d8ba063519d8520d77658",
+      "text": "Bombe de décharge"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "70463c40881004d96afce93cd586657f3c8ee1f91a335c11c13cfccfd4309adc",
+      "text": "<p><strong>Effet :</strong> Crée une explosion d’électricité d’un rayon immédiat jusqu’à une distance courte. Effectuez des attaques de Célérité distinctes contre chaque créature dans la zone. En cas de réussite, elle subit 4 dégâts ; en cas d’échec, elle subit tout de même 2 dégâts.</p><p><strong>Objets du genre : parchemin de déflagration électrique (fantasy) ; grenade d’ampérage (science-fiction)</strong></p>"
+    }
+  ]
+}

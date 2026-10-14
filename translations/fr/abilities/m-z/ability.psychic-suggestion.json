@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.psychic-suggestion",
+  "sourceLogicalId": "ability.psychic-suggestion",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "3ebe7d26993805d8794937d6c6a1045bb6f466d7685f3d33256e3452db5377f7",
+      "text": "Suggestion psychique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "14b62aec0f441fa9622fb3ef780bd40b72fd633d0312b52947ca0f66fea23176",
+      "text": "Vous tentez d’amener un adversaire à courte portée à accomplir l’action que vous indiquez lors de son prochain tour. Effectuez une attaque d’Intellect contre lui. Si cette action lui inflige directement du mal, ou en inflige à ses alliés, l’attaque mentale est entravée. Action."
+    }
+  ]
+}

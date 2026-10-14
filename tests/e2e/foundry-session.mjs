@@ -4,37 +4,37 @@ const FOUNDRY_URL =
 const GAMEMASTER_NAME = "gamemaster";
 const GAMEMASTER_ROLE = /game\s*master|gamemaster|ma[iî]tre\s+de\s+jeu/i;
 
-async function selectGamemaster(page) {
+/**
+ * Wait for the seeded user's control across native and legacy join forms.
+ * Native options may store a Foundry User ID, so their displayed profile label
+ * establishes which user was selected. Search inputs still submit a username.
+ * @param {import("@playwright/test").Page} page Disposable Foundry login page.
+ * @returns {Promise<import("@playwright/test").Locator>} Selected username control.
+ */
+export async function selectGamemaster(page) {
+  const usernameLabel = /sélectionner un utilisateur|select (?:a )?user|username/i;
   const candidates = [
     page.locator("#join-username"),
     page.locator('input[name="username"]'),
-    page.locator('select[name="username"]')
+    page.locator('select[name="username"]'),
+    page.getByRole("combobox", { name: usernameLabel }),
+    page.getByRole("textbox", { name: usernameLabel })
   ];
-
-  let usernameInput = null;
-  for (const candidate of candidates) {
-    if (await candidate.count()) {
-      usernameInput = candidate.first();
-      break;
-    }
-  }
-
-  if (!usernameInput) {
-    usernameInput = page
-      .getByRole("textbox", {
-        name: /sélectionner un utilisateur|select (?:a )?user|username/i
-      })
-      .first();
-  }
-
+  // ApplicationV2 can mount after navigation completes. A locator union keeps
+  // every supported control eligible while waiting, rather than freezing a
+  // missing textbox fallback after a single early count of the new combobox.
+  const usernameInput = candidates.reduce((combined, candidate) => combined.or(candidate)).first();
   await usernameInput.waitFor({
     state: "visible",
     timeout: 30_000
   });
 
   const tagName = await usernameInput.evaluate(element => element.tagName);
+  let selectedProfile;
+  let availableUsers = [];
   if (tagName === "SELECT") {
     const options = await usernameInput.locator("option").allTextContents();
+    availableUsers = options;
     const match = options.find(
       option => option.trim().toLowerCase() === GAMEMASTER_NAME
     );
@@ -45,20 +45,21 @@ async function selectGamemaster(page) {
       );
     }
     await usernameInput.selectOption({ label: match });
+    selectedProfile = (await usernameInput.locator("option:checked").allTextContents()).join(", ").trim();
   } else {
     await usernameInput.click();
     await usernameInput.fill(GAMEMASTER_NAME);
     await usernameInput.press("ArrowDown");
     await usernameInput.press("Enter");
+    selectedProfile = await usernameInput.inputValue();
   }
 
-  const value = await usernameInput.inputValue();
-  if (value.toLowerCase() !== GAMEMASTER_NAME) {
+  if (selectedProfile.toLowerCase() !== GAMEMASTER_NAME) {
     throw new Error(
       "Available users: " +
-      (await page.locator("#join-username option").allTextContents()).join(", ") +
+      availableUsers.join(", ") +
       ". Foundry did not select the gamemaster profile. " +
-      `Expected: ${GAMEMASTER_NAME}; actual: ${value}`
+      `Expected: ${GAMEMASTER_NAME}; actual: ${selectedProfile}`
     );
   }
   return usernameInput;
@@ -84,7 +85,8 @@ export async function joinAsGamemaster(page) {
     page.waitForURL(url => !url.pathname.endsWith("/join"), {
       timeout: 60_000
     }),
-    joinForm.evaluate(form => form.requestSubmit())
+    // Preserve the submitter's action name for ApplicationV2 join handlers.
+    joinButton.evaluate(button => button.form.requestSubmit(button))
   ]);
 
   const deadline = Date.now() + 60_000;

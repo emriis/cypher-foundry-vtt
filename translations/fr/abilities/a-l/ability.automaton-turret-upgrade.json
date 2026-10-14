@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.automaton-turret-upgrade",
+  "sourceLogicalId": "ability.automaton-turret-upgrade",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "db88d7c571f29570010389faed8d843e86d12d8c6fe0541abbfc625bbe56b9c6",
+      "text": "Amélioration d’automate : tourelle"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "f6cdb3ad8af33a71dd5e26f6025e40a859cab6c3b7d6f3943c00364e83c84e98",
+      "text": "Vous avez intégré une nouvelle capacité à l’un de vos automates : il peut se reconfigurer pour devenir une arme à énergie immobile sur un support à cardan. La tourelle est une arme lourde de portée très longue qui inflige 7 dégâts. Si vous laissez l’automate agir seul, il effectue une attaque entravée par round. Si vous ou un allié utilisez la tourelle comme arme, les attaques avec elle sont facilitées. Une action pour changer la configuration de l’automate ; une action lente pour attaquer avec la tourelle. Dans un univers de fantasy, la tourelle tire probablement du feu ou des éclairs. Dans un univers de science-fiction, elle tire probablement des lasers."
+    }
+  ]
+}

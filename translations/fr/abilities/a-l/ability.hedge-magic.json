@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.hedge-magic",
+  "sourceLogicalId": "ability.hedge-magic",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "fed543206753e3ae0709dbd1679198cc8e681ee562435a39e5424e491494fbaf",
+      "text": "Magie rudimentaire"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "1b66b7a82154334edcf6d936bb71a168caf24eabc43f4b4d6346b89e36c86b1e",
+      "text": "Vous pouvez réaliser de petits tours : changer temporairement la couleur ou l’apparence générale d’un petit objet, faire flotter de petits objets dans les airs, nettoyer une petite zone, réparer un objet cassé, préparer de la nourriture (mais pas la créer), et ainsi de suite. Vous ne pouvez pas utiliser Magie rudimentaire pour blesser une autre créature ou endommager un objet. Action."
+    }
+  ]
+}

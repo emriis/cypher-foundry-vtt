@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.wild-affinity",
+  "sourceLogicalId": "ability.wild-affinity",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "d21f5d1e5146dbe590433ede20d4210c31d0d687587017abd4f1cb5bab50e290",
+      "text": "Affinité sauvage"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "8c55aed61ff55f14c52500c1bb8373a0e77611cee8cb28ec71a037f292e1ac68",
+      "text": "Un animal sauvage naturel, sain d’esprit et dans son environnement naturel ne vous attaque pas, sauf s’il est provoqué ou contrôlé."
+    }
+  ]
+}

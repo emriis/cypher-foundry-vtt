@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.phase-door",
+  "sourceLogicalId": "ability.phase-door",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "c7c8a94d58be45d2fad6ef73446e44325817485682e7a72ce8c509071ebbefc8",
+      "text": "Porte de phase"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "41249a364a46b09bde30c17034d2f2b3c7d4b66cb1bb76b6f3ecae315dbf28de",
+      "text": "Vous pouvez vous déphaser pour entrer dans un objet solide adjacent, puis ressortir de n’importe quel autre objet solide à longue portée du premier, même si les deux objets ne sont pas reliés. Aucun obstacle ne doit s’interposer entre eux et vous devez connaître l’objet de destination ou pouvoir le voir. Effort : augmentez la portée du déplacement d’une longue distance. Action."
+    }
+  ]
+}

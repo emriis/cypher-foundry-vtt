@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/magic/nature/wolf-paw-glow-brown.webp",
   "system": {
-    "description": "<p>You can transform into various animals, gaining their natural abilities as if you were born with them.</p>",
+    "description": "<p>You can transform into various animals, gaining their natural abilities as if you were born with them.</p>\n<ul>\n<li>Genre themes: animal druid (fantasy), shapeshifter (science fiction, superhero)</li>\n<li>GM intrusions: Something triggers an involuntary transformation. An NPC is frightened by or aggressive toward the shapeshifter. The transformation takes longer than expected.</li>\n</ul>",
     "abilities": [
       "Compendium.cypher.abilities-en.Item.6e934cd2a0406921",
       "Compendium.cypher.abilities-en.Item.d16889f5ebf9ab5e",
@@ -135,6 +135,13 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references"
+        ]
+      }
     }
   }
 }

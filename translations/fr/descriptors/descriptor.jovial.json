@@ -1,0 +1,28 @@
+{
+  "logicalId": "descriptor.jovial",
+  "sourceLogicalId": "descriptor.jovial",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "bb68a4aae9099db9a3cff04dda0c576cb9cce8a8d6f40a78dff407ccbecd1279",
+      "text": "Jovial"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "3dfa815477dcf9db7b7b7aa5f355c2c621bfb7dec6009f2a5c13cd81b91a4e0c",
+      "text": "<p>Vous êtes joyeux, amical et sociable. Vous mettez les autres à l’aise avec un grand sourire et une plaisanterie, parfois à vos propres dépens, même si taquiner gentiment les compagnons qui le supportent est aussi l’un de vos passe-temps favoris. On vous reproche parfois de ne jamais rien prendre au sérieux. C’est faux, bien sûr, mais vous avez appris que s’attarder trop longtemps sur le malheur prive vite le monde de sa joie. Vous avez toujours une nouvelle blague en réserve, car vous les collectionnez comme d’autres collectionnent les bouteilles de vin.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>+2 à votre Réserve d’Intellect</p>\n<p>Vous êtes entraîné pour l’une des compétences suivantes : Charme ou Arts du spectacle et arts plastiques</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "cb202ce740ea23b09a039a51724a26f05a05cbd44cb1fb5692f72a7c406b4201",
+      "text": "Charme"
+    },
+    {
+      "path": "system.skillOptions.1",
+      "sourceHash": "442aded87a55aa8c8f7d5ff0c30228150d4b1cb8756e4be138d615ca4708fc26",
+      "text": "Arts du spectacle et arts plastiques"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.enhanced-animal-shape",
+  "sourceLogicalId": "ability.enhanced-animal-shape",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "77ee860840a7053128690723bd4f572b83f4d9b17d0afc0b33adaab1e53f0155",
+      "text": "Forme animale renforcée"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "3928a7c30480ba6cfd11b0d3dd4537ca2b512519c2236112e60cdd5620faf851",
+      "text": "Lorsque vous utilisez Forme animale, votre forme animale reçoit ces bonus supplémentaires : +3 à votre réserve de Puissance, +2 à votre réserve de Célérité, et vous pouvez ignorer les blessures mineures dues aux attaques physiques. Aptitude passive."
+    }
+  ]
+}

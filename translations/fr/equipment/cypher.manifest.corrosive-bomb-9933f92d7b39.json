@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.corrosive-bomb",
+  "sourceLogicalId": "cypher.manifest.corrosive-bomb",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "af4e8bdd005510934ca4548047ffd28b7b13e5c949b815238429e7a67289f2a5",
+      "text": "Bombe corrosive"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "fc9b4e8b0dde3ce1b23ca510f9c6b94dbcd81a2e371b950182787d319214f7bc",
+      "text": "<p><strong>Effet :</strong> Crée une explosion d’acide d’un rayon immédiat jusqu’à une distance courte. Effectuez des attaques de Célérité distinctes contre chaque créature vivante dans la zone. En cas de réussite, elle subit 4 dégâts ; en cas d’échec, elle subit tout de même 2 dégâts.</p><p><strong>Objets du genre : parchemin de déflagration acide (fantasy) ; grenade corrosive (science-fiction)</strong></p>"
+    }
+  ]
+}

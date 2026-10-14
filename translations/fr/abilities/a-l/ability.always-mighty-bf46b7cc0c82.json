@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.always-mighty-bf46b7cc0c82",
+  "sourceLogicalId": "ability.always-mighty-bf46b7cc0c82",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "9d7068e8fa1a9d65bd4f60784294137235d244f91f3b4e2e879ae93f96ce26ab",
+      "text": "Toujours puissant"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "9117f4a0f766543847c36713c0ca05b4852c028809a6f623587b11b8252b0990",
+      "text": "Chaque fois que vous utilisez une récupération, si votre réserve de Puissance n’est pas déjà pleine, vous obtenez 1 point supplémentaire à restituer à votre réserve de Puissance. Vous pouvez sélectionner cette aptitude jusqu’à trois fois."
+    }
+  ]
+}

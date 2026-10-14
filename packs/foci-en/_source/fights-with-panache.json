@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/skills/melee/sword-parry.webp",
   "system": {
-    "description": "<p>You’re a swashbuckling daredevil who fights with a flamboyant style that’s entertaining to watch.</p>",
+    "description": "<p>You’re a swashbuckling daredevil who fights with a flamboyant style that’s entertaining to watch.</p>\n<ul>\n<li>Genre themes: pirate or swashbuckler (fantasy, historical), duelist or swordmaster (science fiction)</li>\n<li>GM intrusions: The display comes off looking silly, clumsy, or unattractive.</li>\n</ul>",
     "abilities": [
       "Compendium.cypher.abilities-en.Item.c0850a7cabfc59b2",
       "Compendium.cypher.abilities-en.Item.3ba2ca9b7eca76da",
@@ -92,6 +92,13 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references"
+        ]
+      }
     }
   }
 }

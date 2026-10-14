@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.eye-for-detail",
+  "sourceLogicalId": "ability.eye-for-detail",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "8522c585f4e8760ab4dd7a531b946729cc5c3e17089c56c464faef0677b11c30",
+      "text": "Sens du détail"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d4835d8bfac30dfbbb2f7abd8d566bc0310397778bc25cb306983d728abcc17f",
+      "text": "Lorsque vous passez environ cinq minutes à explorer minutieusement une zone dont le diamètre ne dépasse pas une distance courte, ou un objet auquel vous avez directement accès, vous pouvez poser une question au MJ sur cette zone ou cet objet. Le MJ doit vous répondre honnêtement. Cette aptitude se réinitialise lorsque vous utilisez une récupération de dix heures. Cinq minutes pour explorer la zone ou l’objet."
+    }
+  ]
+}

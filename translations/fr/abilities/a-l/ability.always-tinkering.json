@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.always-tinkering",
+  "sourceLogicalId": "ability.always-tinkering",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "9d0597642dbf29beb78c75ab5a78e339419604de85edfc9dc06e69b9a318a87b",
+      "text": "Bricolage incessant"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "ad56cca49c7ed23e2466cf36ae8dfd6f1732197d7464181c5a6ab39c163c341a",
+      "text": "Vous construisez un appareil technologique à usage unique. Vous pouvez choisir son effet dans la table des cyphers manifestes de faible puissance. Votre appareil-cypher compte dans votre limite de cyphers, ou dans celle de la personne à qui vous le donnez. Si vous avez déjà atteint votre limite, l’un de vos cyphers actuels, au choix, subit un court-circuit, doit être démonté pour fournir les pièces du nouvel appareil ou connaît un événement similaire, et le nouvel appareil le remplace. Dix minutes pour le construire. Au rang 3 : vous pouvez choisir un cypher manifeste de faible puissance ou de puissance moyenne comme appareil à usage unique. Au rang 6 : vous pouvez choisir un cypher manifeste de faible puissance, de puissance moyenne ou de puissance avancée comme appareil à usage unique. Chaque fois que vous utilisez Bricolage incessant, vous pouvez choisir un cypher manifeste différent à construire."
+    }
+  ]
+}

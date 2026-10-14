@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.fortunate-fluke",
+  "sourceLogicalId": "cypher.fortunate-fluke",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "116c49318b24f3719ab998db4500ba81a230f40d7eb64fa16d1405ea85b59774",
+      "text": "Heureux hasard"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "4daee533d67ee5b10c16b49cb00fef4f27a996e7e9a17460da56e12c24e8d9ab",
+      "text": "<p><strong>Effet :</strong> Relancez le dé que vous venez de lancer, même s’il indiquait un 1 naturel. Vous devez utiliser le nouveau résultat, même s’il s’agit d’un 1.</p><p><strong>Explication :</strong> Les choses ne se passent pas toujours comme elles en ont d’abord l’air. La chance sourit aux personnes préparées. Ce n’est pas vous qui avez eu de la chance, mais vos adversaires qui ont eu de la malchance.</p>"
+    }
+  ]
+}

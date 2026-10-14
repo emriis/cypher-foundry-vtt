@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.potion-cyphers",
+  "sourceLogicalId": "ability.potion-cyphers",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "08bfc6a0f5419494e81f53fe881d3d5c685415d0ddfcb9f5db5cfe8db6813820",
+      "text": "Cyphers en potion"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "8870eb5ae2b4ba88c5a69b9987ff655537dac2ccaea5a0e5ba3c2e1fe6b42ad0",
+      "text": "Vous pouvez porter deux cyphers supplémentaires à la fois, à condition de les avoir créés avec Préparer une potion (Brew Potion)."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.flash-bomb",
+  "sourceLogicalId": "cypher.manifest.flash-bomb",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "f839e7abb11b0f65b6fb68d2a9e03028ee9c67a88e02430ac5a74ee83070cab2",
+      "text": "Bombe éclair"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "cf56ce522ed6fd0ce7f22c57cd516bd19ccdab5179090d394ead7c7c65524c5d",
+      "text": "<p><strong>Effet :</strong> Crée une explosion de lumière vive d’un rayon immédiat jusqu’à une distance courte. Effectuez des attaques de Célérité distinctes contre chaque créature dans la zone. En cas de réussite, elle est aveuglée jusqu’à ce que vous preniez une récupération de dix minutes ou plus.</p><p><strong>Objets du genre : parchemin de cécité (fantasy) ; grenade éclair (science-fiction)</strong></p>"
+    }
+  ]
+}

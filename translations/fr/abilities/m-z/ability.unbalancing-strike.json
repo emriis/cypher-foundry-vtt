@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.unbalancing-strike",
+  "sourceLogicalId": "ability.unbalancing-strike",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "6d6c60133b1c4b77d90472ccd32e3d2b9f603246a39e5968cec1f4d34a2f398c",
+      "text": "Frappe déséquilibrante"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "6a4d63d091d189b9c21aa52ec9231196474969cf32dd1578507c95c4149d1d9e",
+      "text": "Effectuez une attaque de mêlée pour déséquilibrer votre adversaire. Cette attaque est facilitée de deux pas. En cas de réussite, vous infligez des dégâts et toutes les actions qu’il tente à son prochain tour sont entravées. Action."
+    }
+  ]
+}

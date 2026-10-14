@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.repair",
+  "sourceLogicalId": "cypher.manifest.repair",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "1196b6c538ecc61a658445255dcb19ebe23e05465acd46c4aa5d995667bd8cfe",
+      "text": "Réparation"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "37375fcbc2b1f549ea31cd7d85aa29af0d5efe1a2a8384623ba0e88b370bbe1a",
+      "text": "<p><strong>Effet :</strong> Vous réparez un objet endommagé ou négligé, le remettant en parfait état de fonctionnement s’il était initialement de niveau 6 ou moins. Par exemple, vous pouvez remettre à neuf un ordinateur portable cassé ou une épée rouillée. Si l’objet était initialement de niveau 7 ou plus, il n’est pas entièrement réparé, mais récupère 1 à 2 niveaux perdus du fait des dégâts. La réparation s’effectue à un rythme accéléré ; selon le genre, elle peut être instantanée ou prendre environ une minute. Cette réparation ne vous coûte aucun point de ressource.</p><p><strong>Objets du genre : rune de réparation (fantasy) ; robot réparateur (science-fiction)</strong></p>"
+    }
+  ]
+}

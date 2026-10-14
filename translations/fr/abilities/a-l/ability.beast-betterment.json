@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.beast-betterment",
+  "sourceLogicalId": "ability.beast-betterment",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "6d0d77ac51d29931fbfce499fba1338bc60b9f4c7d336fabc9316f2161ca3ebe",
+      "text": "Bienfait de la bête"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "65dfec35edd4ffd6e5bb41609cc75895c866ab638b8adb3a4d8d9c9ed2733ea7",
+      "text": "Lorsque vous prenez une récupération à portée immédiate de votre compagnon animal, vous obtenez 3 points de réserve supplémentaires. Aptitude passive."
+    }
+  ]
+}

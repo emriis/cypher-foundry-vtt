@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.enchant-object",
+  "sourceLogicalId": "ability.enchant-object",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "ef1e3d625c9736c3ae8a56f45588df24be9c9fe99895c8b837d653919a51d8f9",
+      "text": "Enchanter un objet"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d75bd889f94abdccdee2511b553c7851ad688b36c171774c6fe112bff2caf4e6",
+      "text": "Vous imprégnez une arme, un outil ou un autre objet utilisable d’une magie qui améliore ses performances, jusqu’à ce que vous, ou l’utilisateur de l’objet, utilisiez une récupération de dix minutes ou plus. À tout moment pendant que l’aptitude est active, la créature utilisant l’objet bénéficie d’un atout pour une action qui nécessite cet objet. Vous décidez si l’objet garde son apparence, brille comme une bougie ou reçoit une rune magique pendant la durée du sort. Action."
+    }
+  ]
+}

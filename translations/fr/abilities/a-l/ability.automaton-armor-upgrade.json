@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.automaton-armor-upgrade",
+  "sourceLogicalId": "ability.automaton-armor-upgrade",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "d8ed97e909455e44d798e46ad45d238031b85588b13df150fb4a6ad75549b330",
+      "text": "Amélioration d’automate : armure"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "e783c0eb7854d4619e495fbc8ed473bdb6d3b803433ee13f3cf8a334233f86dc",
+      "text": "Vous avez intégré une nouvelle capacité à l’un de vos automates : il peut utiliser son action pour se transformer en une combinaison blindée que vous portez jusqu’à ce que vous utilisiez une récupération d’une heure ou plus. Si vous êtes à distance immédiate lorsqu’il se transforme, il se forme automatiquement autour de vous. L’automate transformé sert d’armure légère ; puisqu’il anticipe vos mouvements et y réagit, vous pouvez utiliser librement cette armure. Aptitude passive."
+    }
+  ]
+}

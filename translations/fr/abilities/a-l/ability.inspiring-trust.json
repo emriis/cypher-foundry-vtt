@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.inspiring-trust",
+  "sourceLogicalId": "ability.inspiring-trust",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "f3f9947ad7c78dea79538c80d8edfad7248b78fd65d860d35c9e5bbcc0a4daa6",
+      "text": "Inspirer confiance"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "b94665b214c3dab7df8ac185e5a9af1001275827c46f67ad4668aedb969b1da9",
+      "text": "Les alliés en votre présence qui partagent votre conception du bien et du mal ajoutent +1 à leurs récupérations. Aptitude passive."
+    }
+  ]
+}

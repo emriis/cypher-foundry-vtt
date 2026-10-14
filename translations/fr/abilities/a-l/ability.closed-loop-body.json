@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.closed-loop-body",
+  "sourceLogicalId": "ability.closed-loop-body",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "a2d64b1ddabf5a8c939a350a0f2119ae9bccc5249c6855088cdea70d2d218bfb",
+      "text": "Corps en circuit fermé"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "3c702b329c4c57d0e1c10491e9acdd96f976e46a6386a29278f8c39a62955d4d",
+      "text": "Vous n’avez besoin ni de manger ni de respirer, et le vide ou les températures extrêmes ne vous font subir aucun effet néfaste ; le feu, le froid et les autres attaques vous affectent toutefois normalement."
+    }
+  ]
+}

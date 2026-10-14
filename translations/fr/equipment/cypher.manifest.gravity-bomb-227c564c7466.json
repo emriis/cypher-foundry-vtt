@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.gravity-bomb",
+  "sourceLogicalId": "cypher.manifest.gravity-bomb",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "a3cb996cef00ccb855755e80ebdd0e44611a5b33d440fd94e019f64b0245574f",
+      "text": "Bombe gravitationnelle"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "6fdc8c77ab221ff2bfc80f46fb4c31a46ec7e90ec64fe4b78952586ec6409609",
+      "text": "<p><strong>Effet :</strong> Crée une explosion de gravité accrue d’un rayon immédiat jusqu’à une distance courte. Effectuez des attaques de Célérité distinctes contre chaque créature dans la zone. En cas de réussite, elle subit 3 dégâts, est projetée au sol et ne peut pas effectuer d’actions physiques pendant un round. En cas d’échec, elle subit tout de même 1 dégât mais n’est pas renversée et peut agir normalement.</p><p><strong>Objets du genre : pierre d’aimant (fantasy) ; grenade de singularité (science-fiction)</strong></p>"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.terrifying-gaze",
+  "sourceLogicalId": "ability.terrifying-gaze",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "45894407354c07b668a63b98c8b91136d173f3806040e30377adb04511c959c7",
+      "text": "Regard terrifiant"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "ca22d2f81d72438f0b3d39021e32ab05f6812b8c5905375670431ca8b883d1c5",
+      "text": "Vous lancez un regard effrayant à jusqu’à cinq créatures vivantes à courte portée qui peuvent vous voir. Effectuez un jet d’attaque d’Intellect distinct contre chacune. Une réussite signifie que la créature est figée par la peur, incapable de se déplacer ou d’agir, jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus, qu’elle soit attaquée ou que vous quittiez son champ de vision. Certaines créatures dépourvues d’esprit, comme des monstres gélatineux ou des statues animées, peuvent être immunisées contre Regard terrifiant (Terrifying Gaze). Action."
+    }
+  ]
+}

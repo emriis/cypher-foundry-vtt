@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.power-boost.burst-boost",
+  "sourceLogicalId": "cypher.power-boost.burst-boost",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "319b4c727793c7940ec4be2a1b75a9000d3c2da9b680ac4d5d5c19027d3ec287",
+      "text": "Renforcement d’explosion"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "015ae293c079cb80138ef867c80e3f5aa1092e1a4e8d9c6278c3ee9afa9d288d",
+      "text": "<p><strong>Effet :</strong> Votre attaque à distance visant une seule cible émane de vous. Sa portée est réduite à immédiate, centrée sur vous, mais elle affecte tout ce qui se trouve à portée immédiate. Si l’aptitude est une attaque, vous bénéficiez d’un atout à votre jet d’attaque contre les créatures dans la zone.</p>"
+    }
+  ]
+}

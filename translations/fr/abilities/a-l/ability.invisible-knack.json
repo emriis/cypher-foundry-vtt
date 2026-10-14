@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.invisible-knack",
+  "sourceLogicalId": "ability.invisible-knack",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "edd1c69dcf4f2ff18b72fc18654b0cefd6af945b1db0ecad344ca5326f25b06e",
+      "text": "Talent invisible"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "59ba0278311c921e8ae06eef2c730c3b07de192afa7ba07cf279bc60d9d3c0bc",
+      "text": "<p>Quand vous le souhaitez, vous devenez invisible, avec vos vêtements et votre équipement. L’effet prend fin si vous faites quelque chose qui révèle votre présence ou votre position — attaquer, utiliser une aptitude, déplacer un objet volumineux, etc. — mais vous pouvez redevenir invisible à votre prochain tour. Si vous utilisez une action, vous pouvez accorder l’invisibilité à une créature ou à un objet que vous touchez, à votre place ou en plus de vous-même. Cette invisibilité dure jusqu’à ce que la cible affectée fasse quelque chose qui révèle sa présence, que l’objet soit frappé ou déplacé de force, ou que la cible ou vous preniez une récupération de dix minutes ou plus. Effort : affectez une créature ou un objet à portée longue plutôt qu’au contact. Aptitude passive pour vous-même ; action pour une autre créature ou un objet. L’attaque d’un personnage invisible est facilitée de deux pas. Les attaques contre un personnage invisible sont entravées de quatre pas, ou presque impossibles si l’attaquant n’a aucune idée de l’endroit où il peut se trouver.</p>"
+    }
+  ]
+}

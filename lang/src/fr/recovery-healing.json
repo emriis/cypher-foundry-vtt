@@ -1,0 +1,60 @@
+{
+  "CYPHER": {
+    "Recovery": {
+      "Title": "Récupérations",
+      "action": "Une action",
+      "tenMinutes": "10 minutes",
+      "hour": "1 heure",
+      "tenHours": "10 heures",
+      "RemovesAllMinor": "Retire toutes les blessures mineures.",
+      "RemovesOneModerate": "Retire une blessure modérée.",
+      "RemovesAllModerateReminder": "Retire toutes les blessures modérées. Un jet de Puissance de difficulté 6 peut aussi retirer une blessure majeure.",
+      "RemovesAllModerate": "Retire toutes les blessures modérées.",
+      "RemovesMinorAndModerate": "Retire toutes les blessures mineures et toutes les blessures modérées sauf une, s’il y en a.",
+      "SourceLabel": "Récupération disponible",
+      "Sources": {
+        "standard": "Récupération ordinaire",
+        "power-shift-healing": "Amplificateurs de puissance : Guérison",
+        "untamed-recovery": "Récupération sauvage",
+        "mind-surge": "Afflux mental (Intellect uniquement)",
+        "machine-not-flesh": "Corps mécanique (connecté à une alimentation)"
+      },
+      "Completed": "La durée complète de récupération ({interval}) est écoulée.",
+      "LastAction": "Effectuer en action lente (+2 points)",
+      "WoundChoice": "Blessures retirées par le repos",
+      "OneModerate": "Une blessure modérée, ou toutes les blessures mineures en l’absence de blessure modérée",
+      "AllModerate": "Toutes les blessures modérées",
+      "AllMinor": "Toutes les blessures mineures",
+      "MinorInstead": "Toutes les blessures mineures ; conserver une blessure modérée s’il y en a",
+      "MajorTask": "Tenter un jet de Puissance de difficulté 6 pour retirer une blessure majeure",
+      "MachinePowered": "La machine dispose d’une alimentation adaptée pendant cette récupération.",
+      "Allocate": "Répartir les points de réserve récupérés",
+      "PointsAvailable": "Points disponibles : {total}",
+      "AllocationHint": "Répartissez les points entre les réserves autorisées, sans dépasser leur maximum. Les points non attribués ne sont pas utilisés.",
+      "Apply": "Appliquer la récupération",
+      "Unavailable": "Cette récupération est déjà utilisée, ou sa condition préalable n’est pas confirmée.",
+      "InvalidAllocation": "La répartition dépasse les points récupérés ou les limites actuelles des réserves. Aucune récupération n’a été consommée."
+    },
+    "Healing": {
+      "Treatment": "Traitement",
+      "TimeProfile": "Durée du traitement convenue avec le MJ",
+      "Profiles": {
+        "standard": "Fantasy de donjon / épées et sorcellerie",
+        "realistic": "Monde réel / fantasy épique / science-fiction réaliste / postapocalypse",
+        "heroic": "Action / space opera / superhéros"
+      },
+      "Times": {
+        "minor": "Mineure : 1 minute normalement ; 10 minutes dans un univers réaliste ; une action lente dans un univers héroïque.",
+        "moderate": "Modérée : 10 minutes normalement ; 1 heure dans un univers réaliste ; 1 minute dans un univers héroïque.",
+        "major": "Majeure : 1 heure normalement ; 1 semaine dans un univers réaliste ; 10 minutes dans un univers héroïque."
+      },
+      "Completed": "Les deux participants ont effectué la durée convenue, et le traitement est applicable à cette cible.",
+      "Hand": "Main guérisseuse",
+      "Wound": "Blessure du PJ à réduire",
+      "NPCHealth": "Un PNJ récupère 5 points de Santé au lieu de réduire une blessure.",
+      "TouchConfirmed": "La cible est au contact et peut recevoir cet effet de soin.",
+      "Apply": "Appliquer le soin",
+      "HandResult": "Main guérisseuse affecte {name} ; {cost} points d’Intellect dépensés."
+    }
+  }
+}

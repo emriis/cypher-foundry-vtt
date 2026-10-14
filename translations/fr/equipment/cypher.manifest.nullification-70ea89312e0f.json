@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.nullification",
+  "sourceLogicalId": "cypher.manifest.nullification",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "73ef49b5ccc9c24260d428d30fe0509addf3b8bfe698dd851ff3588275774b5a",
+      "text": "Annulation"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "170a1b89c472cb23d76a17b43988c351223a3b9ef709901820e07170fe5a7076",
+      "text": "<p><strong>Effet :</strong> Choisissez un effet en cours à portée longue, comme un mur d’énergie, une illusion ou une paralysie. Si l’effet provient d’un artefact, d’un Cypher ou de l’aptitude d’une créature et qu’il est de niveau 5 ou moins, il prend fin immédiatement ; vous pouvez affecter un effet de niveau 6 ou plus si vous réussissez une attaque d’Intellect entravée contre lui. Si l’effet provient d’une aptitude de PJ, vous et l’autre PJ effectuez chacun un jet d’Intellect. Si votre résultat dépasse le sien, l’effet prend fin.</p><p><strong>Objets du genre : rune de dissipation (fantasy) ; brouilleur universel (science-fiction)</strong></p>"
+    }
+  ]
+}

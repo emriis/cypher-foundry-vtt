@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.detect-spirit",
+  "sourceLogicalId": "ability.detect-spirit",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "63214769339e6c9487dc25cfe67c1b0fc4634d4d69725f11365e6eacf5352e52",
+      "text": "Détecter un esprit"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "b00dbd0abf16f712c595f1aa1e59ab9a5684d6c7ed1bb24c0e941a8a6067a6e9",
+      "text": "<p>Effectuez un jet d’Intellect pour rechercher les présences mentales de créatures vivantes et d’esprits morts-vivants à portée courte. Vous détectez chacune de ces créatures dont le niveau est inférieur ou égal au niveau de votre résultat. Les barrières de niveau supérieur au niveau de votre résultat bloquent ce sens.</p>\n<p>Effort : jusqu’à votre prochain tour, vous pouvez localiser précisément ces présences dans l’espace physique.</p>\n<p>Action.</p>"
+    }
+  ]
+}

@@ -52,6 +52,16 @@ test("Given an Ability followed by another costed Ability, then a global substri
   assert.equal(compareText("Convince a creature. Action. Hand to Eye (2 Speed or Intellect): Improve a roll. Enabler.", paragraphs, passages).status, "passage-difference");
 });
 
+test("Given a Word label omits spacing before a cost, then the next costed Ability still ends the previous definition", () => {
+  const paragraphs = [
+    { index: 1, text: "Poison Bite (4 Might): Make a poisonous bite. Action.", style: "BodyText", section: "Howls at the Moon" },
+    { index: 2, text: "Wings (4 Might): Sprout wings. Action.", leadingLabel: "Wings(4 Might)", style: "BodyText", section: "Howls at the Moon" }
+  ];
+  const passages = abilityPassages("Poison Bite", paragraphs, ["Poison Bite"]);
+  assert.equal(compareText("Make a poisonous bite. Action.", paragraphs, passages).status, "exact-passage");
+  assert.equal(compareText("Make a poisonous bite. Action. Wings (4 Might): Sprout wings. Action.", paragraphs, passages).status, "passage-difference");
+});
+
 test("Given a Word callout and Effort paragraph, then the complete Ability includes them", () => {
   const paragraphs = [
     { index: 1, text: "Healing Hand (1 Intellect): Heal one wound.", style: "BodyText" },

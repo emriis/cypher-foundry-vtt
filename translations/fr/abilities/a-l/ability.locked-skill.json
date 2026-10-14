@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.locked-skill",
+  "sourceLogicalId": "ability.locked-skill",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "14d88027a32fc999ca929bb95eeb94c03295b7611a0c74daf49e1930d8ceffda",
+      "text": "Compétence verrouillée"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "eefd024232ade9bceeb5a540f78e7b92a563735ba4ad454d97db9e77e6727a4f",
+      "text": "Lorsque vous activez Processeur de données, choisissez l’une des compétences dans lesquelles il vous entraîne ; il s’agit de votre compétence « verrouillée ». Votre entraînement dans cette compétence dure jusqu’à ce que vous preniez une récupération de dix heures. Si vous activez à nouveau Processeur de données avant cette récupération, vous pouvez réinitialiser la durée de votre compétence verrouillée ou choisir de verrouiller une autre compétence. Vous pouvez choisir cette aptitude jusqu’à trois fois. Chaque fois que vous la choisissez, votre nombre maximal de compétences verrouillées augmente d’une. Aptitude passive."
+    }
+  ]
+}

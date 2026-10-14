@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.repair-flesh",
+  "sourceLogicalId": "ability.repair-flesh",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "8f6a185d87ecf0caa2641f6918386454cc11608c32c8c4320eb7cbdc160400d2",
+      "text": "Réparer la chair"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "198869207fdece916095b9dadafcec268993dcd1cc42d00593d67510466e793d",
+      "text": "Vous pouvez ressouder la chair endommagée par contact. Vous pouvez réduire une blessure d’un degré de gravité : majeure à modérée, modérée à mineure, mineure à aucune. À la place de soigner une blessure, vous pouvez améliorer la prochaine récupération d’un personnage de +2 points de réserve. Sur un PNJ vivant ou mort-vivant, vous restaurez 3 points de santé. Action."
+    }
+  ]
+}

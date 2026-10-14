@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.shapechanger-healing",
+  "sourceLogicalId": "ability.shapechanger-healing",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "0b4f6ba25ef889015d4275ef4133b051ba3105c53fb319f6b9e342b9462cb078",
+      "text": "Soins du métamorphe"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "34829779ccec7f76c58bfef6808f038647f478db51bdfd6d494973bca264cac6",
+      "text": "Lorsque vous adoptez une forme animale, vous soignez une blessure, quelle que soit sa gravité. Cette aptitude se renouvelle après une récupération de dix heures. Aptitude passive."
+    }
+  ]
+}

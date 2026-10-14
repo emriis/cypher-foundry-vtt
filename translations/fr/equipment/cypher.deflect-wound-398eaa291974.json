@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.deflect-wound",
+  "sourceLogicalId": "cypher.deflect-wound",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "72bc94da8543f0635caa8c1c800a3573eb8d3131d31c6413f86dc3db5d5f347f",
+      "text": "Dévier une blessure"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "70de32ea77bea2a574383c7b27ac36cf7da7bd38625213a0f76df7c16b19905b",
+      "text": "<p><strong>Effet :</strong> Une attaque contre vous qui devrait infliger une blessure mineure ou modérée ne vous fait finalement aucun mal.</p><p><strong>Explication :</strong> Un élément de votre tenue ou de votre équipement a dévié les dégâts. Quelque chose a distrait votre adversaire. Vous êtes plus résistant que vous ne le pensiez.</p>"
+    }
+  ]
+}

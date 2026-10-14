@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/creatures/mammals/wolf-howl-moon.webp",
   "system": {
-    "description": "<p>For brief periods, you become a fearsome and powerful creature with control issues.</p>",
+    "description": "<p>For brief periods, you become a fearsome and powerful creature with control issues.</p>\n<ul>\n<li>Genre themes: lycanthrope (fantasy, superhero), genetic mishap (science fiction)</li>\n<li>GM intrusions: The change happens in an uncontrolled fashion. People are terrified of monsters. Self-control (if any) is lost during this transformation.</li>\n</ul>",
     "abilities": [
       "Compendium.cypher.abilities-en.Item.78a661a918988465",
       "Compendium.cypher.abilities-en.Item.5596619727dffdf1",
@@ -20,6 +20,7 @@
       "Compendium.cypher.abilities-en.Item.823e2fc77346d7f7",
       "Compendium.cypher.abilities-en.Item.b0c4eb1b6a89a121",
       "Compendium.cypher.abilities-en.Item.5e25ccb17f5abfa3",
+      "Compendium.cypher.abilities-en.Item.4ab36d7eb01530f5",
       "Compendium.cypher.abilities-en.Item.90b2464f8bd44111",
       "Compendium.cypher.abilities-en.Item.a5bee5a8d98d64d2",
       "Compendium.cypher.abilities-en.Item.36f3181dc02365a2",
@@ -29,8 +30,16 @@
     "flowchart": {
       "edges": [
         {
+          "from": "5596619727dffdf1",
+          "to": "78a661a918988465"
+        },
+        {
           "from": "78a661a918988465",
           "to": "5596619727dffdf1"
+        },
+        {
+          "from": "6e934cd2a0406921",
+          "to": "78a661a918988465"
         },
         {
           "from": "78a661a918988465",
@@ -42,11 +51,11 @@
         },
         {
           "from": "78a661a918988465",
-          "to": "2c65bbe95cd81a8a"
+          "to": "de83ef8d1bb5d31e"
         },
         {
           "from": "78a661a918988465",
-          "to": "de83ef8d1bb5d31e"
+          "to": "2c65bbe95cd81a8a"
         },
         {
           "from": "78a661a918988465",
@@ -57,43 +66,79 @@
           "to": "c49da0a09f0249e1"
         },
         {
-          "from": "2c65bbe95cd81a8a",
+          "from": "72ac41cdf564d656",
           "to": "a9f31cd4b06cce50"
+        },
+        {
+          "from": "de83ef8d1bb5d31e",
+          "to": "a9f31cd4b06cce50"
+        },
+        {
+          "from": "2c65bbe95cd81a8a",
+          "to": "520980fdd2aa1db6"
         },
         {
           "from": "ddbd7845e51d0301",
           "to": "520980fdd2aa1db6"
         },
         {
+          "from": "c49da0a09f0249e1",
+          "to": "5e25ccb17f5abfa3"
+        },
+        {
+          "from": "a9f31cd4b06cce50",
+          "to": "5e25ccb17f5abfa3"
+        },
+        {
+          "from": "a9f31cd4b06cce50",
+          "to": "b0c4eb1b6a89a121"
+        },
+        {
           "from": "a9f31cd4b06cce50",
           "to": "823e2fc77346d7f7"
         },
         {
-          "from": "de83ef8d1bb5d31e",
+          "from": "520980fdd2aa1db6",
           "to": "b0c4eb1b6a89a121"
         },
         {
           "from": "520980fdd2aa1db6",
-          "to": "5e25ccb17f5abfa3"
+          "to": "823e2fc77346d7f7"
+        },
+        {
+          "from": "520980fdd2aa1db6",
+          "to": "4ab36d7eb01530f5"
+        },
+        {
+          "from": "5e25ccb17f5abfa3",
+          "to": "a5bee5a8d98d64d2"
+        },
+        {
+          "from": "b0c4eb1b6a89a121",
+          "to": "a5bee5a8d98d64d2"
         },
         {
           "from": "823e2fc77346d7f7",
           "to": "90b2464f8bd44111"
         },
         {
-          "from": "823e2fc77346d7f7",
-          "to": "a5bee5a8d98d64d2"
+          "from": "4ab36d7eb01530f5",
+          "to": "90b2464f8bd44111"
         },
         {
           "from": "a5bee5a8d98d64d2",
           "to": "36f3181dc02365a2"
         },
         {
-          "from": "b0c4eb1b6a89a121",
+          "from": "a5bee5a8d98d64d2",
           "to": "cab794a1fda9daf2"
         },
         {
-          "from": "5e25ccb17f5abfa3",
+          "from": "90b2464f8bd44111",
+          "to": "cab794a1fda9daf2"
+        },
+        {
+          "from": "90b2464f8bd44111",
           "to": "70364fde69572c8a"
         }
       ]
@@ -107,6 +152,14 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references",
+          "All 28 directed prerequisite arrows independently verified against the supplied CRD Howls at the Moon diagram anchored at paragraph 4368"
+        ]
+      }
     }
   }
 }

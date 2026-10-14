@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.blast",
+  "sourceLogicalId": "ability.blast",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "7223497e37180a35bba165f7ba6ee3f4fd299cdd84659b873601d463d48eeaf6",
+      "text": "Décharge"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "897123238a6169a9a9710986f5cd23866c98618c204564c8fe5a5e14b023e414",
+      "text": "Vous émettez une décharge d’énergie à portée courte qui inflige 4 dégâts à une cible si votre jet d’attaque réussit. Déterminez avec le MJ le type d’énergie qui compose votre décharge. Vous pouvez régler l’effet pour qu’il soit assez chaud pour découper un matériau de niveau 5 ou moins, d’une épaisseur maximale de 1 pied (30 cm), en vous concentrant pendant quelques rounds. Si vous possédez une autre aptitude d’attaque infligeant des dégâts, provenant de votre focus ou de votre type, vous pouvez utiliser Décharge pour renforcer cette aptitude en augmentant ses dégâts de 1. Effort : obtenez un contrôle précis de l’effet jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus, et faites varier son intensité à votre guise à portée immédiate ; vous pouvez par exemple chauffer la zone, cuire des aliments sans les brûler, éclairer vivement la zone, etc. Augmentez de 1 le niveau maximum du matériau que vous pouvez découper. Une action pour attaquer ; une action lente pour commencer le contrôle précis ; aptitude passive pour renforcer une autre aptitude d’attaque. L’énergie libérée peut être du feu, auquel cas vous pouvez appeler cette aptitude Décharge de feu. Votre focus peut aussi suggérer le type d’énergie. Par exemple, elle peut produire un rayon d’électricité, particulièrement si votre focus est Chevauche la foudre, et s’appeler Décharge de foudre."
+    }
+  ]
+}

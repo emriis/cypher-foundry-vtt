@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.beast-healing",
+  "sourceLogicalId": "ability.beast-healing",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "fa3a5179b8ac9066ac50f67f203f6519d6632d76b44eb90da44ff09e0889300b",
+      "text": "Guérison bestiale"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "3d03c2d1d04726b6d41ed19eb7eed86011b75a555439aaff9325168eb214fb5c",
+      "text": "Lorsque vous prenez votre forme bestiale, une blessure de n’importe quelle gravité est immédiatement soignée. Cette aptitude se renouvelle après une récupération de dix heures. Aptitude passive."
+    }
+  ]
+}

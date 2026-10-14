@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.phase-foe",
+  "sourceLogicalId": "ability.phase-foe",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "115cab4dbe8f3b82c9f3a09af5ef5cbea412e1b2deef84725b3cca82ff49e26f",
+      "text": "Déphaser un adversaire"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "0f71bbacab2984eda21fd6482968b49e7ecb9ccf4fff704cf20b5b1ca48ab145",
+      "text": "Vous concentrez une énergie perturbatrice au bout de votre doigt et touchez une créature. Si votre attaque réussit, elle devient déphasée comme si vous aviez utilisé Intouchable (Untouchable) sur elle. Toutefois, à moins de comprendre comment contrôler son déplacement dans cet état, ce dont la plupart des créatures n’ont aucune expérience, elle s’enfonce à travers le sol ou toute autre matière solide. Si elle ne parvient ensuite ni à contrôler son déplacement ni à mettre fin à l’effet, elle peut disparaître définitivement, car lorsqu’elle redevient solide après une minute, elle se trouve probablement profondément sous terre. Cette aptitude ne peut affecter qu’une cible de niveau 4 ou moins. Effort : augmentez de 1 le niveau maximal de la cible que vous pouvez affecter. Action."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.cluster-bomb",
+  "sourceLogicalId": "cypher.manifest.cluster-bomb",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "99e624a4d56a2e7ced6cadbc662e9615cd852420962cec830f37fb5bdc946885",
+      "text": "Bombe à sous-munitions"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "b4d1e35a9c3947059c076a664c32e23d60a4cf699a64db3ac76f7f8257870816",
+      "text": "<p><strong>Effet :</strong> Améliore un Cypher de bombe, comme une bombe incendiaire ou à fragmentation, pour lui donner une portée longue et un effet différé supplémentaire. Lorsque le Cypher amélioré explose, il crée aussi quatre bombes supplémentaires qui parcourent chacune une distance courte dans une direction aléatoire différente, puis explosent au round suivant de la même manière que le Cypher de bombe d’origine non modifié. Une fois utilisé pour améliorer un autre Cypher, le Cypher de bombe à sous-munitions est consommé et ne compte plus dans votre limite de Cyphers.</p><p><strong>Objets du genre : parchemin de destruction métamagique (fantasy) ; cascade de bombes (science-fiction). Certains MJ peuvent décider qu’un Cypher de bombe à sous-munitions trouvé par un personnage est en réalité un Cypher de bombe déjà amélioré par un Cypher de bombe à sous-munitions.</strong></p>"
+    }
+  ]
+}

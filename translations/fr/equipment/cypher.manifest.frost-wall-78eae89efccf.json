@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.frost-wall",
+  "sourceLogicalId": "cypher.manifest.frost-wall",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "4ae0a1a3b3be7e3414f6586890267d4e29f05cf1217246536b7045efed26ea40",
+      "text": "Mur de givre"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "b2454cb9119aefeb595c35b02657f9855d174dae3597a7a07628646fa840287c",
+      "text": "<p>Effet : Vous créez un mur de givre tourbillonnant jusqu’à une distance courte, qui dure jusqu’à ce que vous preniez une récupération de dix minutes ou plus. Le mur mesure au maximum 30 pieds sur 30 pieds sur 1 pied (9 m sur 9 m sur 30 cm) et s’adapte à l’espace disponible. Tout ce qui le traverse subit 3 dégâts.</p>\n<p>Objets du genre : diamant de givre (fantasy) ; module de plan cryogénique (science-fiction)</p>"
+    }
+  ]
+}

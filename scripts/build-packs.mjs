@@ -8,6 +8,8 @@ import { compilePack } from "@foundryvtt/foundryvtt-cli";
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
+import { readCompendiumCatalogue, readFrenchProposals } from "./review-translations.mjs";
+import { materializeTranslations } from "./localization/materialize-translations.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
 async function discoverPacks() {
@@ -33,6 +35,10 @@ async function discoverPacks() {
 }
 
 const packs = await discoverPacks();
+// Validate every selected overlay before replacing any generated pack. Source
+// JSON stays editable and is never rewritten by the translation compile step.
+const [catalogue, proposals] = await Promise.all([readCompendiumCatalogue(root), readFrenchProposals(root)]);
+const translations = materializeTranslations(catalogue, proposals, { includeProposed: process.argv.includes("--include-proposed") });
 
 const FOUNDRY_ID_PATTERN = /^[A-Za-z0-9]{16}$/;
 
@@ -67,7 +73,8 @@ async function normalizeSourceTree(sourceRoot, normalizedRoot) {
       if (!entry.isFile() || !entry.name.endsWith(".json")) continue;
 
       const relativePath = path.relative(normalizedRoot, entryPath);
-      const data = JSON.parse(await fs.readFile(entryPath, "utf8"));
+      const sourceFile = path.relative(root, path.join(sourceRoot, relativePath)).replaceAll(path.sep, "/");
+      const data = structuredClone(translations.get(sourceFile) ?? JSON.parse(await fs.readFile(entryPath, "utf8")));
       const normalizedId = normalizeId(data._id, relativePath);
       data._id = normalizedId;
 

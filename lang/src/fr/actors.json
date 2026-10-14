@@ -1,0 +1,83 @@
+{
+  "CYPHER": {
+    "Stat": {
+      "Label": "Caractéristique",
+      "might": "Puissance",
+      "speed": "Célérité",
+      "intellect": "Intellect",
+      "none": "Aucune",
+      "AddCustom": "Ajouter une caractéristique",
+      "RemoveCustom": "Retirer cette caractéristique",
+      "CustomName": "Nom de la caractéristique",
+      "CustomNamePlaceholder": "ex. Chance, Foi, Volonté…",
+      "ConfirmDeleteCustom": "Retirer définitivement cette caractéristique personnalisée ?",
+      "PoolValue": "Points actuels",
+      "PoolMax": "Maximum",
+      "Depleted": "Réserve épuisée"
+    },
+    "Wound": {
+      "Title": "Blessures",
+      "minor": "Mineure",
+      "moderate": "Modérée",
+      "major": "Majeure",
+      "CurrentLabel": "actuelles",
+      "Rally": "Se reprendre (dépenser des points de Puissance pour retirer cette blessure)",
+      "RallyMajorSuperhero": "Se reprendre (10 points de Puissance, genre superhéros uniquement)",
+      "Hint": "La capacité par défaut est de trois blessures de chaque gravité. Lorsque la capacité de blessures modérées est atteinte, toutes les tâches sont entravées. Chaque blessure majeure ajoute un pas d’entrave à toutes les tâches. Trois blessures majeures entraînent la mort.",
+      "HinderedBanner": "Personnage entravé",
+      "DeadBanner": "Personnage mort",
+      "HinderedStatus": "Entravé",
+      "DeadStatus": "Mort"
+    },
+    "NPC": {
+      "Level": "Niveau",
+      "TargetNumber": "Nombre cible",
+      "Health": "Santé",
+      "Movement": "Mouvement",
+      "Modifications": "Modificateurs",
+      "ModificationsPlaceholder": "ex. attaque comme un niveau 5, +2 à l’Esquive…",
+      "Combat": "Combat",
+      "Interaction": "Interaction",
+      "Use": "Utilisation",
+      "Loot": "Butin",
+      "GMNotes": "Notes du MJ",
+      "ApplyDamage": "Appliquer des dégâts",
+      "IgnoreArmor": "Ignorer l’armure",
+      "Description": "Description",
+      "Motive": "Motivation",
+      "Environment": "Environnement",
+      "GMIntrusion": "Intrusion du MJ",
+      "Attacks": "Attaques structurées",
+      "RollAttack": "Lancer l’attaque",
+      "NoStructuredAttacks": "Aucune attaque structurée configurée.",
+      "SinglePCTarget": "Ciblez exactement un personnage joueur.",
+      "UnsupportedAttackDamage": "Cette attaque de PNJ n’a pas de profil de dégâts applicable aux personnages joueurs.",
+      "LostNextAction": "Ce PNJ perd sa prochaine action à cause d’un effet d’arme.",
+      "RollAttackTitle": "Attaque du PNJ : {name}",
+      "Defense": "Défense",
+      "WeaponEffects": "Effets d’armes actifs",
+      "EffectRounds": "{rounds} round(s)",
+      "ExtendEffect": "Prolonger à deux rounds (MJ)",
+      "EffectHindered": "Actions entravées de {steps} pas.",
+      "EffectNextAction": "Prochaine action",
+      "DamagePlaceholder": "ex. 4",
+      "MovementPlaceholder": "ex. courte"
+    },
+    "Community": {
+      "Resources": "Ressources"
+    },
+    "CustomField": {
+      "Title": "Champs personnalisés",
+      "Hint": "Ajoutez les informations propres à votre personnage que le système ne prévoit pas déjà : statut, réputation, allié, dette, etc.",
+      "Add": "Ajouter un champ",
+      "Remove": "Retirer ce champ",
+      "Label": "Nom du champ",
+      "LabelPlaceholder": "ex. Réputation, Allié, Dette…",
+      "Type": "Type de champ",
+      "text": "Texte",
+      "number": "Nombre",
+      "checkbox": "Case à cocher",
+      "ConfirmDelete": "Supprimer définitivement ce champ personnalisé ?"
+    }
+  }
+}

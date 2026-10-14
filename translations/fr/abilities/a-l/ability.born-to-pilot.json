@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.born-to-pilot",
+  "sourceLogicalId": "ability.born-to-pilot",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "8a11086fd0b0a674d9a00eb6397103e646dff04a647e4f036b7f9712de5c272c",
+      "text": "Né pour piloter"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "b2b22a47238e2aaf880fab993e2568b67656ec5c77ec1dd82cc14f4e74886ee3",
+      "text": "Lorsque vous faites un jet pour piloter un vaisseau spatial et que votre résultat est inférieur à 9, considérez le résultat comme un 9. Cela signifie que vous ne subissez pas d’intrusion du MJ sur un 1. Les tâches de pilotage spatial comprennent des manœuvres précises, comme amarrer le vaisseau en sécurité, le faire tourner ou accélérer assez progressivement pour éviter une gravité dangereusement élevée sur une durée prolongée, remarquer un élément inhabituel sur les capteurs, etc. Effort : augmentez de 3 le résultat minimum de cette aptitude. Cette aptitude se renouvelle lorsque vous prenez une récupération. Action. Au rang 3 : le résultat minimum de cette aptitude passe à 12."
+    }
+  ]
+}

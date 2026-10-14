@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.black-thumb",
+  "sourceLogicalId": "ability.black-thumb",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "0ec8dccdee820f53e3d963325930d36664cf03ecb8957c0af6cf8271a097611d",
+      "text": "Main de mécanicien"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "c4199e97ab46dcf16e7c4c3fad99794b0e8372430a357d7ccec087585bf95907",
+      "text": "<p>Lorsque vous réparez, modifiez ou construisez des machines ou des appareils de n’importe quel type, votre tâche prend moitié moins de temps que la normale.</p>"
+    }
+  ]
+}

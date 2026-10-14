@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.ice-slide",
+  "sourceLogicalId": "ability.ice-slide",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "55f5a9e7f19b0d95993aa84203f808e838ad161519fc92e74fb149cf97ad478f",
+      "text": "Glissade de glace"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "2254cfa541017046f5e1f18bb4d1fd87beebca42478847b045c4986fac06d83b",
+      "text": "Vous créez un chemin de glace lisse entre vous et un emplacement à portée longue, et glissez sans danger jusqu’à celui-ci. Vous devez disposer d’un passage dégagé et sans obstacle vers cet emplacement ; pour le reste, il peut se trouver au-dessus, en dessous, ou même de l’autre côté d’un vide. La glace fond après quelques secondes. Action."
+    }
+  ]
+}

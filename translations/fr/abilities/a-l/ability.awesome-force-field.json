@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.awesome-force-field",
+  "sourceLogicalId": "ability.awesome-force-field",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "45fd769b1fbd2686caeaee5b3c88d8c92f620add70ba1e2357abd9fc3bb26475",
+      "text": "Champ de force extraordinaire"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "33547cf21b8b5cfe48f7dfe0503424ba43493ac40e537583864a1b85d0948e98",
+      "text": "<p>Un champ de force invisible vous entoure jusqu’à ce que vous preniez une récupération de dix minutes ou plus. Il vous permet de tenter de bloquer les attaques avec un jet de défense d’Intellect facilité plutôt qu’un jet de défense de Puissance ; en cas de réussite, vous réduisez la gravité de la blessure d’un degré. Si l’attaque bloquée doit encore infliger une blessure, vous pouvez dépenser 5 points d’Intellect pour l’annuler entièrement, ce qui brise votre champ de force jusqu’à votre prochain tour. Effort : créez, jusqu’à une distance courte, un champ de force de niveau 6 identique à un cypher de champ de force, qui dure jusqu’à ce que vous preniez une récupération de dix minutes ou plus. Vous pouvez avoir plusieurs de ces champs de force actifs à la fois, mais chaque champ au-delà du premier exige un niveau d’Effort supplémentaire pour être activé : deux niveaux pour un deuxième champ de force, et ainsi de suite. Votre champ de force personnel ne compte pas dans ce total. Action.</p>"
+    }
+  ]
+}

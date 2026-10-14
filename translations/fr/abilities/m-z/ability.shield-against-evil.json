@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.shield-against-evil",
+  "sourceLogicalId": "ability.shield-against-evil",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "9f50ce4fe5329c54d45f5f776667bb4bafc68bc60b7e715e2a43fbbb977cdba4",
+      "text": "Bouclier contre le mal"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "c1a2c2f3a3e23d1efdfeda2240d477c12e0dad40fa537682e50d872b91695ee7",
+      "text": "Vous bénissez vous-même ou un allié touché pour le protéger des morts-vivants, des démons ou des créatures de nature similaire jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Cette protection facilite les jets de défense contre la catégorie de créatures indiquée et immunise contre l’influence mentale, la peur et la possession, quelle qu’en soit la source. Action."
+    }
+  ]
+}

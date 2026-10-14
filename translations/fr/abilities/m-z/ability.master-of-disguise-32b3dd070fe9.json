@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.master-of-disguise-32b3dd070fe9",
+  "sourceLogicalId": "ability.master-of-disguise-32b3dd070fe9",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "75e6fd749804ca5193d02260041e17df9fe127455138e7b99fcaccd2c6ec0d2f",
+      "text": "Maîtrise du déguisement"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "829bd0c295025482206918f1ac923c7c3926b9a09fc69bf9d3dd31a567b00fb8",
+      "text": "Vous pouvez créer un déguisement en une Action lente au lieu de la minute ou davantage normalement nécessaire. Lorsque votre jet de déguisement donne un résultat inférieur à 6, considérez qu’il est de 6. Vous ne subissez donc pas d’intrusion du MJ si vous obtenez 1. Cette aptitude se renouvelle lorsque vous prenez une récupération. Effort : augmentez de 3 le résultat minimal de cette aptitude. Aptitude passive. Au rang 3 : le résultat minimal de cette aptitude passe à 9."
+    }
+  ]
+}

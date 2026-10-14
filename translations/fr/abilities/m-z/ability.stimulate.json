@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.stimulate",
+  "sourceLogicalId": "ability.stimulate",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "3671053dac49d90ef0ea5aa44434794408f03129e2fb13a87b68cc8cbc5f81bd",
+      "text": "Stimuler"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "df8e0d5c2902ee833c4f3c1db6bb1af72f38dd126d18766f1f974823f7756588",
+      "text": "Vos paroles encouragent une cible à portée immédiate capable de vous comprendre. Sa prochaine action est facilitée de trois pas. Pour cette tâche, la limite d’atouts est de trois au lieu de deux. Action."
+    }
+  ]
+}

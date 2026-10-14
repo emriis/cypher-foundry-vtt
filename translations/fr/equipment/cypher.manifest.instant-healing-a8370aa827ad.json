@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.instant-healing",
+  "sourceLogicalId": "cypher.manifest.instant-healing",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "43f6bcc66b8761471298abb36fb47a84d345a0c6441be0245bace76cf9bd8558",
+      "text": "Guérison instantanée"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "0335e7f8f36b0dea75fd8c31c446fcbdf0f1ac7bd505c05d43043b034d44c802",
+      "text": "<p><strong>Effet :</strong> Vous guérissez une blessure modérée ou majeure, ainsi que toutes vos blessures mineures.</p><p><strong>Objets du genre : potion de guérison (fantasy) ; stimpack (science-fiction)</strong></p>"
+    }
+  ]
+}

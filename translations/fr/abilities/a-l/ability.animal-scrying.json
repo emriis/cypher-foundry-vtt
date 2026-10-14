@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.animal-scrying",
+  "sourceLogicalId": "ability.animal-scrying",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "d5131260c06a19007dfd4a682484732eda2dc8c31fb99fd13bff134dc1e9fe4c",
+      "text": "Perception par l’animal"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "741a68208115407af35340646a9e674ffb8527635f85686554a0f3f379eefc5d",
+      "text": "Si vous connaissez l’emplacement général d’un animal qui vous est amical et qui se trouve à moins de 1 mile (1.6 km) de vous, vous pouvez percevoir par ses sens jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Vous devez être sous forme animale, ou sous une forme semblable à celle de cet animal, pour activer cette aptitude. Effort : activez cette aptitude même si vous n’êtes pas sous forme animale, ni sous une forme semblable à celle de cet animal. Une action pour établir le lien."
+    }
+  ]
+}

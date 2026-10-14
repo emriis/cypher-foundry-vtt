@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.ice-armor",
+  "sourceLogicalId": "ability.ice-armor",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "bdb78c6e60a4c521ba92f2e55a4111686aa9cbf82d2d64151fb27d38461f4d11",
+      "text": "Armure de glace"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "04149e846aad6b0ce6d1e388934e3607dc346a2d6225cedb7200171051c84a8a",
+      "text": "Vous recouvrez votre corps d’une fine couche de glace jusqu’à ce que vous preniez une récupération de dix minutes ou plus, ce qui facilite vos jets de défense de Puissance pour bloquer les attaques. De plus, réduisez d’un degré la gravité des blessures causées par les effets de froid et de glace utilisés contre vous (de majeure à modérée, de modérée à mineure, de mineure à aucune). Par exemple, si vous êtes touché par un souffle de froid qui cause une blessure modérée, vous subissez à la place une blessure mineure. Vous pouvez effectuer une attaque légère à mains nues de « contact glacé » contre un adversaire, infligeant 2 dégâts de froid dus à l’armure de glace si votre attaque réussit. Aptitude passive."
+    }
+  ]
+}

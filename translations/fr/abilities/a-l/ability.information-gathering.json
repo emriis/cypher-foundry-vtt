@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.information-gathering",
+  "sourceLogicalId": "ability.information-gathering",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "4ce05ea1a95260df52b6a7a8dba0593e23d8ea77aae137d6f6be42a21c46a444",
+      "text": "Collecte d’informations"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "8902b715f16027013cf8e15a95069ac54647f5e015b2c700c5bc81983785e8bc",
+      "text": "Vous communiquez sans fil avec une, plusieurs ou toutes les machines non intelligentes dans un rayon de 1 mile (1,6 km). Vous pouvez poser une question simple les concernant ou portant sur ce qui se passe à proximité d’elles, et recevoir une réponse simple. Par exemple, dans une zone comportant de nombreuses machines, vous pourriez demander où se trouve une créature ou une personne précise ; si elle est à portée, une ou plusieurs machines fourniront probablement la réponse. Action."
+    }
+  ]
+}

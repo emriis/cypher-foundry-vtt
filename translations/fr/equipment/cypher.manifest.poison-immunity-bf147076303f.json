@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.poison-immunity",
+  "sourceLogicalId": "cypher.manifest.poison-immunity",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "0be142668a3eeca559c5afd9e2cbc7d81e704c6ea9593ad0ab9a75c66dccbd76",
+      "text": "Immunité aux poisons"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "f5ab72bb3926f7909959e04ffbe87803c6421627125307ca88f9370f13a9f559",
+      "text": "<p><strong>Effet :</strong> Jusqu’à ce que vous preniez une récupération d’une heure ou plus, vous êtes immunisé contre les poisons de niveau 5 ou moins et bénéficiez de deux atouts aux tâches de défense contre les poisons de niveau 6 ou plus. Pour cette tâche, la limite d’atouts est de trois au lieu de deux.</p><p><strong>Objets du genre : amulette de robustesse (fantasy) ; injection d’antivenin (science-fiction)</strong></p>"
+    }
+  ]
+}

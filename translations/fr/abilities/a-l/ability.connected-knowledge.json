@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.connected-knowledge",
+  "sourceLogicalId": "ability.connected-knowledge",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "f7da9f0610e62dc79470ab38f00266370022e8d1893ca0eec11fee0fdc474a57",
+      "text": "Savoir connecté"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "a0c956cfa4bfc0dea0d74e2106f034c1543ee0a1fe385fd27c759a7a443f711e",
+      "text": "Vous pouvez vous connecter à des données restreintes, par un implant, un appareil portatif, un assistant drone robotique ou un moyen similaire, qui ne sont pas accessibles au public. Posez une question au MJ et obtenez une réponse brève mais exacte si vous réussissez une tâche d’Intellect. La difficulté est routinière s’il s’agit de quelque chose que n’importe qui pourrait apprendre par son propre moyen d’accès ; de niveau 3 si les connaissances sensibles ou secrètes concernent principalement l’ingénierie ou la science ; et de niveau 5 ou plus si le MJ estime que l’information est particulièrement sensible ou secrète, qu’elle soit scientifique ou non. Action lente."
+    }
+  ]
+}

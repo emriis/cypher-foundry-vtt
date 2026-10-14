@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/svg/eye.svg",
   "system": {
-    "description": "<p>You use shadows and darkness to make your way unseen, moving quickly and smoothly, and you never seem to be where danger is. Maybe you use these abilities to hunt treasures, or maybe just to steal.</p>",
+    "description": "<p>You use shadows and darkness to make your way unseen, moving quickly and smoothly, and you never seem to be where danger is. Maybe you use these abilities to hunt treasures, or maybe just to steal.</p>\n<ul>\n<li>Genre themes: burglar or thief or treasure hunter (fantasy), thief or spy (historical, real world, science fiction, superhero)</li>\n<li>GM intrusions: You get thrown in jail. Powerful enemies are made. You have a moment of clumsiness.</li>\n</ul>",
     "abilities": [
       "Compendium.cypher.abilities-en.Item.53458b09ac3104e5",
       "Compendium.cypher.abilities-en.Item.e0e84ebc3ed2bdf5",
@@ -94,6 +94,13 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references"
+        ]
+      }
     }
   }
 }

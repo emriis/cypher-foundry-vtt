@@ -1,0 +1,43 @@
+{
+  "logicalId": "descriptor.species.gnome",
+  "sourceLogicalId": "descriptor.species.gnome",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "4ea2afcc4ab25c4abed0bf89cdc8f05e6e580f7f81c3799af18741d66cbe4534",
+      "text": "Gnome"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "17be663323c3267bc349cf1d7e855245dbd67972465493e333568b7611f92b2e",
+      "text": "<p>Vous mesurez environ trois pieds et demi (100 cm), vous êtes curieux et aimez découvrir comment transformer vos trouvailles en œuvres d’art, outils ou armes. Vous êtes peut-être sculpteur, forgeron, artiste, cuisinier, conteur ou inventeur. L’alchimie, la magie et l’ingénierie vous fascinent. Les autres peuvent voir en vous un étrange mélange d’elfe amoureux de la nature et de nain obsédé par la fabrication, mais votre peuple et vous êtes uniques, animés par une passion pour la vie, l’exploration et la création.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>Vous ne subissez pas d’intrusion du MJ lorsque vous obtenez un 1 sur un jet d’esquive.</p>\n<p>Vous êtes entraîné en fabrication.</p>\n<p>Vous infligez +1 dégât avec les armes de mêlée légères.</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "000b821603b6642608a49169b354e5bd95c66163c7ffc56cd20bcf1d480ecefd",
+      "text": "Fabrication"
+    },
+    {
+      "path": "system.benefits.0.name",
+      "sourceHash": "18ba186ed13eaeb27446cd2b33df47246cd53e5c2bfa40be76b69c3a123ed5fe",
+      "text": "Esquive sans intrusion du MJ"
+    },
+    {
+      "path": "system.benefits.0.description",
+      "sourceHash": "18e4fc4a12c33804c25b730510942c7aa1bb669112df4683bc5cdf6e980e042c",
+      "text": "<p>Vous ne subissez pas d’intrusion du MJ lorsque vous obtenez un 1 sur un jet d’esquive.</p>"
+    },
+    {
+      "path": "system.benefits.1.name",
+      "sourceHash": "b92a92e3917dd0f1967fb09adf8cb89cef97d304cd50021d65eab8bf7bd8605f",
+      "text": "Dégâts de mêlée légère"
+    },
+    {
+      "path": "system.benefits.1.description",
+      "sourceHash": "765942ab75e31bd5cde5861f5d9306f759f8ef1dbac69fb154536f52d95c6be1",
+      "text": "<p>Vous infligez +1 dégât avec les armes de mêlée légères.</p>"
+    }
+  ]
+}

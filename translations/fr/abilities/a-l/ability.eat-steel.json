@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.eat-steel",
+  "sourceLogicalId": "ability.eat-steel",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "b62db4b481d24ca3c841c2fc4ba2063bfb6c6d34ca787d8ded443c8c98b5fbd0",
+      "text": "Mange de l’acier"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "3a72ad0f19da983e62e202a9d49bfc5871a9ac6d92560460c3d9de796533b108",
+      "text": "L’adversaire subit +2 dégâts."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.extended-range",
+  "sourceLogicalId": "ability.extended-range",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "e9e1a74525dd41d9987660884aafcd1b01abb973755eeba7673b00b73d78c0ec",
+      "text": "Portée étendue"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "31e4cb1cec780f3d3b19b26b4a510b707e7f04df7600693cbdd8f10ec86e1e15",
+      "text": "<p>Vous augmentez la portée de l’une de vos aptitudes mentales. Choisissez une aptitude de votre focus qui affecte une autre créature. Sa portée augmente d’une catégorie : contact devient immédiate, puis courte, longue, très longue, 1 mile, 100 miles et, enfin, n’importe où sur la même planète. Vous pouvez choisir cette aptitude plusieurs fois, en augmentant à chaque fois la portée de cette aptitude ou d’une autre d’une catégorie supplémentaire.</p>"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.taunting-defense",
+  "sourceLogicalId": "ability.taunting-defense",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "d252f7fc0997aa66939fa689d9062bd10736d8820508f7001021645c32cee069",
+      "text": "Défense provocatrice"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "5a9c31d6c00d5658214c396b106275006f1ad1e305ad8e9e0996ae431a2bfbf4",
+      "text": "Lorsque vous vous défendez contre une attaque de mêlée, vos gestes moqueurs, vos plaisanteries aux dépens de l’adversaire ou une autre particularité attisent sa colère. Son attaque est entravée, mais s’il touche, il vous inflige une blessure mineure supplémentaire. Aptitude passive."
+    }
+  ]
+}

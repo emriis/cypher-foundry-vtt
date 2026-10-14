@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.high-and-low",
+  "sourceLogicalId": "ability.high-and-low",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "d0a7dc49fbd4a9400cae60ae267774ec439cca16aca66fff475a71ad31a85e4f",
+      "text": "Haut et bas"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "4213adc0536dc50bc69c38d67ad57642eb1f5eb39a67b74ba08f032e938f543e",
+      "text": "Un allié et vous coordonnez vos attaques contre un adversaire pour être plus efficaces. Choisissez un allié que vous pouvez voir. Si vous touchez un adversaire que cet allié a touché avec une attaque de corps à corps pendant ce tour, votre attaque inflige 2 dégâts supplémentaires. Aptitude passive."
+    }
+  ]
+}

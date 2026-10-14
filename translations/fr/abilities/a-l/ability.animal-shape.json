@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.animal-shape",
+  "sourceLogicalId": "ability.animal-shape",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "6b04776831c5c5accf2362c68fc5d65b6c206f23cda5c76438aaaeec4976eae8",
+      "text": "Forme animale"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "05502ce6f77670e0ed8d635a20b22cb6f7a685ee97f333e39dc267bee462a289",
+      "text": "Vous vous transformez en un animal dont la taille peut aller de celle d’un rat à votre propre taille, comme un grand chien ou un petit ours, jusqu’à ce que vous utilisiez une récupération. Chaque transformation peut vous donner une forme animale différente. Votre équipement fait partie de la transformation et devient inutilisable, sauf s’il possède un effet passif, comme une armure. Sous cette forme, vos caractéristiques restent celles de votre forme normale, mais vous pouvez vous déplacer et attaquer selon votre forme animale sans pénalité : les attaques de la plupart des animaux de taille humaine infligent 4 dégâts, celles des animaux plus petits infligent 2 dégâts. Les tâches nécessitant des mains, comme utiliser des poignées de porte ou appuyer sur des boutons, sont entravées sous forme animale. Vous ne pouvez pas parler, mais vous pouvez encore utiliser les aptitudes qui ne dépendent pas de la parole humaine. Vous gagnez une aptitude mineure associée à la créature que vous devenez ; voir l’encadré Aptitudes mineures des formes animales. Par exemple, si vous devenez une chauve-souris, vous pouvez voler jusqu’à une distance longue par round. Si vous devenez une pieuvre, vous pouvez respirer sous l’eau. Effort : bénéficiez d’un atout pour une compétence associée à la créature que vous devenez ; voir l’encadré Aptitudes mineures des formes animales. Effort : devenez un animal parlant ; vous ressemblez exactement à un animal normal, mais vous pouvez encore parler et utiliser les aptitudes qui dépendent de la parole humaine. Effort : adoptez une forme hybride, semblable à votre forme normale mais dotée de traits animaux, même si cet animal est bien plus petit que vous, comme une chauve-souris ou un rat. Sous forme hybride, vous pouvez parler, utiliser toutes vos aptitudes, attaquer comme un animal et accomplir les tâches nécessitant des mains sans entrave. Toute personne vous voyant clairement sous forme hybride ne pourrait vous prendre pour un simple animal. Une action pour vous transformer ou reprendre votre forme."
+    }
+  ]
+}

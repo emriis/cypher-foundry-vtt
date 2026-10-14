@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.lightning-hand",
+  "sourceLogicalId": "ability.lightning-hand",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "fc15f4f196ea9d9fbf0fede6e8fb6ef086fd2be9e555c940c306fef41198ec2d",
+      "text": "Main de foudre"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "f98c2b13696207b3dfaaed190e687dc6d791ae711a2ea7761a7747ce62aa9d08",
+      "text": "Vos mains crépitent d’électricité, vous permettant d’effectuer soit une attaque au contact, soit une attaque d’éclair à portée longue, infligeant 4 dégâts. Vous pouvez aussi, si vous maniez une arme, la faire crépiter d’électricité pour qu’elle inflige 1 dégât supplémentaire. Cette version de l’aptitude dure jusqu’à ce que vous preniez une récupération de dix minutes ou plus. Action pour le contact ; aptitude passive pour l’arme. Les attaques au contact sont effectivement des attaques légères à mains nues, et sont donc facilitées."
+    }
+  ]
+}

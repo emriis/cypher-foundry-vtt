@@ -1,0 +1,28 @@
+{
+  "logicalId": "descriptor.kind",
+  "sourceLogicalId": "descriptor.kind",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "f5387f9bb6ed70315a77fdcb9335facc27a9bf241f35955bd2755c55e0c016c7",
+      "text": "Bienveillant"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "be976ff589c0703f733ba943c62a4d9ae66f4d8fbe3fe24fbdbade746e3742a7",
+      "text": "<p>Il vous a toujours été facile de voir les choses du point de vue des autres. Cette capacité vous rend sensible à ce qu’ils veulent ou à ce dont ils ont réellement besoin. De votre point de vue, vous appliquez simplement le vieux proverbe selon lequel « on attrape plus de mouches avec du miel qu’avec du vinaigre », mais les autres y voient de la bonté. Bien sûr, être bienveillant prend du temps, et le vôtre est limité. Vous avez appris qu’une petite partie des gens ne méritent ni votre temps ni votre bienveillance : les véritables sadiques, narcissiques et personnes de ce genre ne font que gaspiller votre énergie. Vous réglez donc rapidement leur cas, réservant votre bienveillance aux personnes qui la méritent et peuvent bénéficier de votre attention.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>+2 à votre Réserve d’Intellect</p>\n<p>Vous êtes entraîné pour l’une des compétences suivantes : Charme ou Soins</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "cb202ce740ea23b09a039a51724a26f05a05cbd44cb1fb5692f72a7c406b4201",
+      "text": "Charme"
+    },
+    {
+      "path": "system.skillOptions.1",
+      "sourceHash": "44bc3799892c50fad1f4f76100cd74ebf28f922da6f977a772352d3291b92fdf",
+      "text": "Soins"
+    }
+  ]
+}

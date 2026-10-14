@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.fence-out-evil",
+  "sourceLogicalId": "ability.fence-out-evil",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "a8dd15fd67e3dca065d57c58f33adadf34f21640befdca4ab75663a119ceaa11",
+      "text": "Tenir le mal à distance"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "6462c1891cc7250c76ed4b453c9d1ede81e840fa0dd130002199c1288d16b861",
+      "text": "<p>Vous entourez une zone courte d’un mur transparent et immatériel de lumière purificatrice, jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Lorsque le mur apparaît, chaque mort-vivant, démon ou créature similaire dans sa zone, ou qui y entre, subit automatiquement chaque round 3 dégâts de lumière qui ignorent l’armure, sans jet d’attaque. De plus, vous pouvez tenter à chaque round une attaque d’Intellect contre une créature concernée dans la zone par votre action. En cas de réussite, elle est affectée comme si vous aviez utilisé avec succès Réprimander le mal contre elle. Une action pour commencer ; une action pour chaque utilisation ciblée.</p>"
+    }
+  ]
+}

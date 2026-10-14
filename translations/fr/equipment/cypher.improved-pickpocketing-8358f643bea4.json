@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.improved-pickpocketing",
+  "sourceLogicalId": "cypher.improved-pickpocketing",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "43c56be3e1b3caf3479211985069f96189c991cb8d78ff03fd83aaf10b5b3745",
+      "text": "Pickpocket amélioré"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "ec6f565fdb8bc0eb63c30df41c16b57038d8f0d826941378d89201047b9e697b",
+      "text": "<p><strong>Effet :</strong> Vous bénéficiez de trois atouts à votre tâche de vol à la tire. Pour cette tâche, la limite d’atouts est de trois au lieu de deux. Vous pouvez utiliser ce cypher avant ou après votre jet.</p><p><strong>Explication :</strong> Les poches de votre victime sont particulièrement lâches. Quelque chose la distrait au moment précis où vous allez la voler. Vous avez exactement la bonne taille pour saisir ce que vous voulez sur elle.</p>"
+    }
+  ]
+}

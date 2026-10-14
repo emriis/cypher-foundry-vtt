@@ -1,0 +1,28 @@
+{
+  "logicalId": "descriptor.empathic",
+  "sourceLogicalId": "descriptor.empathic",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "b0fb30bbb50bb83d6b73603f2c2effdb7856c05d5afb63b3d81fe2de17c45abf",
+      "text": "Empathique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "5fd9f0980113e3295af33ef0db6a2efddb2f7160af00fc5e75fad9822b68b449",
+      "text": "<p>Les autres sont pour vous des livres ouverts. Vous savez peut-être lire leurs signes révélateurs, ces mouvements subtils qui expriment l’humeur et les dispositions d’une personne. Ou vous recevez ces informations plus directement, en ressentant ses émotions comme des choses tangibles, des sensations qui effleurent votre esprit. Votre don d’empathie vous aide à évoluer dans les situations sociales et à les maîtriser pour éviter les malentendus et prévenir l’apparition de conflits inutiles.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>+2 à votre Réserve d’Intellect</p>\n<p>Vous êtes entraîné pour l’une des compétences suivantes : Collecte d’informations ou Analyse des intentions</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "5ea107214017919b63ad99aad4da2bf79c41f35fba6b4c50ca9888264ecb021c",
+      "text": "Collecte d’informations"
+    },
+    {
+      "path": "system.skillOptions.1",
+      "sourceHash": "cdcb24358ca22d0138d75f04a3f51d529f0be8025e0ce18b7bda77724e4baea4",
+      "text": "Analyse des intentions"
+    }
+  ]
+}

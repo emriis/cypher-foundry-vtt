@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.warm-air",
+  "sourceLogicalId": "ability.warm-air",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "bff3f0ad7baca48bd94d721b1dfc2606b03c02a175eefcab25227dc32ff4a296",
+      "text": "Air chaud"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "5c705d0e19f9dabc2fe76f60dcacf7a193318a4fcfd2adb46bbb1d319cad7486",
+      "text": "Tant que Voile de flammes (Shroud of Flame) est actif, vous réchauffez l’air sous vous, ce qui permet de tomber sans danger d’une hauteur maximale de 10 pieds (3,5 m). Les chutes de plus de 10 pieds sont traitées comme si elles étaient de 10 pieds de moins. Aptitude passive."
+    }
+  ]
+}

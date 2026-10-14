@@ -295,7 +295,8 @@ test("live E2E joins the deterministic gamemaster profile", () => {
 
   assert.match(source, /const GAMEMASTER_NAME = "gamemaster"/);
   assert.match(source, /getByRole\("textbox",/);
-  const selector = source.match(/name:\s*\/(.+)\/i/);
+  assert.match(source, /getByRole\("combobox",/);
+  const selector = source.match(/(?:name:\s*|usernameLabel\s*=\s*)\/(.+)\/i/);
   assert.ok(selector, "Gamemaster login must expose a localized user selector");
   const labelPattern = new RegExp(selector[1], "i");
   for (const label of ["Sélectionner un utilisateur", "Select a User", "Select User", "Username"]) {
@@ -348,7 +349,7 @@ test("live E2E packages the release before installing the system", () => {
   );
   assert.match(
     source,
-    /await runCommand\(npmCommand, \["run", "build:packs"\]\)/
+    /await runCommand\(npmCommand, \["run", "build:packs"(?:,|\])/
   );
 });
 
@@ -422,10 +423,10 @@ test("live E2E uses an isolated Foundry server process boundary", () => {
     "utf8"
   );
 
-  assert.ok(source.includes("function spawnFoundry(appPath, userDataPath)"));
-  assert.ok(source.includes('"resources",'));
-  assert.ok(source.includes('"app",'));
-  assert.ok(source.includes('"main.js"'));
+  assert.ok(source.includes("function spawnFoundry(serverPath, userDataPath)"));
+  assert.ok(source.includes('import { findServer, readCoreVersion } from "./foundry-discovery.mjs"'));
+  assert.ok(source.includes("const serverPath = await findServer()"));
+  assert.ok(source.includes("const coreVersion = await readCoreVersion(serverPath)"));
   assert.ok(source.includes(
     "spawn(process.execPath, [serverPath, ...args],"
   ));
@@ -433,4 +434,5 @@ test("live E2E uses an isolated Foundry server process boundary", () => {
     "function spawnScript(command, args, options = {})"
   ));
   assert.ok(source.includes("shell: false"));
+  assert.ok(source.includes("windowsHide: true"));
 });

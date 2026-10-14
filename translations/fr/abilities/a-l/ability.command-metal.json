@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.command-metal",
+  "sourceLogicalId": "ability.command-metal",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "5dacf61680502c8246bd182643292d23a6622eaa254ec2ce6041e11471dcadf9",
+      "text": "Commander le métal"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "3b154da98565b2d19ee20e44216a25a4262b5e5cf3a6f8984b3276089be800b1",
+      "text": "Vous remodelez à votre guise un objet métallique visible à portée courte. Sa masse ne peut pas dépasser la vôtre. Vous pouvez affecter plusieurs objets à la fois tant que leur masse cumulée ne dépasse pas la vôtre. Vous pouvez fusionner plusieurs objets. Vous pouvez utiliser ce pouvoir pour détruire un objet métallique, comme avec l’aptitude Déchirer le métal, ou lui donner une autre forme souhaitée, grossièrement, sauf si vous réussissez une tâche de sculpture ou de fabrication. Vous pouvez ensuite déplacer le nouvel objet n’importe où à portée. Vous pouvez par exemple fusionner quelques boucliers ou panneaux métalliques et utiliser la forme obtenue pour bloquer une porte. Vous pouvez utiliser cette aptitude pour attaquer une cible à portée courte, en resserrant l’armure d’un adversaire, en transformant un objet métallique en éclats que vous projetez sur le champ de bataille, etc. Quelle que soit la forme de l’attaque, il s’agit d’une attaque d’Intellect qui inflige 7 dégâts. Une action lente ; une action pour attaquer."
+    }
+  ]
+}

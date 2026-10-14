@@ -1,0 +1,18 @@
+{
+  "logicalId": "skill.hacking",
+  "sourceLogicalId": "skill.hacking",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "04a766309dda23efa01326a9be30f864960a177372f5ee7b5c108f2ab10c8ecf",
+      "text": "Piratage informatique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "e672164a063ecac3b7dd8f3f19dbfbfe0d2e4e4f4aad538488c076328351e38f",
+      "text": "<p>Vous savez exploiter les faiblesses d’un ordinateur ou d’une machine informatisée pour y accéder sans autorisation, détourner sa fonction prévue, l’endommager et/ou contrarier autrement son fonctionnement normal. Le piratage nécessite une connexion et un moyen de manipuler le système, comme un clavier ou une interface plus avancée. Il demande au moins quelques rounds, voire quelques minutes d’efforts, et peut-être beaucoup plus longtemps selon le résultat recherché. Tenter d’exploiter, de casser ou de détourner un système informatisé, par opposition à son utilisation prévue, constitue une tâche de piratage informatique.</p>"
+    }
+  ]
+}

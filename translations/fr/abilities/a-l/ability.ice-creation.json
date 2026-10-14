@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.ice-creation",
+  "sourceLogicalId": "ability.ice-creation",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "232eac941d8756254c573a92ba6de2e9bb8572c326b715027e4b508f7aa4f74e",
+      "text": "Création de glace"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "79194320304b0e243d5f702eab335cfff7b50903e3967e0a08823da3a8968121",
+      "text": "Vous créez un objet de votre taille ou plus petit, fait de glace de niveau 3. Il est rudimentaire et ne peut comporter aucune pièce mobile : vous pouvez donc créer une épée, un bouclier, un petit mur, une courte échelle, etc. Si vous n’êtes pas à portée courte de l’objet, il se brise ou fond dès que vous prenez une récupération de dix minutes ou plus. Vous pouvez choisir cette aptitude plusieurs fois. Chaque fois que vous la choisissez à nouveau, vous doublez la taille de base de l’objet que vous pouvez créer. Effort : doublez la taille maximale de l’objet que vous pouvez créer. Augmentez d’une catégorie de portée la distance à laquelle l’objet peut se trouver de vous. Action. Un mur de glace mesurant environ 5 pieds sur 5 pieds et 1 pouce d’épaisseur (1,5 m sur 1,5 m et 3 cm d’épaisseur) est à peu près de la taille d’une personne."
+    }
+  ]
+}

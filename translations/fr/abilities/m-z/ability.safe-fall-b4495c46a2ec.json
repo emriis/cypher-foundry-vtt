@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.safe-fall-b4495c46a2ec",
+  "sourceLogicalId": "ability.safe-fall-b4495c46a2ec",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "a0ccae04fc8e7b0c76450f23aa1003931668c125ca7fb1c548d07f9ffbf870af",
+      "text": "Chute sans danger"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "800d749151b728edf6a9319b97e38006319f202fc4e0dad9e977a85b38e427e2",
+      "text": "Lorsque vous subissez une blessure due à une chute, réduisez sa gravité d’un degré. Aptitude passive."
+    }
+  ]
+}

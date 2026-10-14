@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.terrifying-image",
+  "sourceLogicalId": "ability.terrifying-image",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "5495c489ae5084356c5c1a7773d8397ea56174e543aa48ac20a0baba249c1694",
+      "text": "Image terrifiante"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "7e6f676d5eacd3b457e5bd043a6d1df0a8444d40026d93a9f1e491de10fd1330",
+      "text": "Vous pouvez terrifier vos adversaires par des illusions issues de leurs propres peurs. Effectuez des attaques d’Intellect distinctes contre jusqu’à cinq créatures à longue portée. En cas de réussite, une créature fuit de terreur, poursuivie par ses cauchemars jusqu’à ce qu’elle ait parcouru au moins une très longue distance ou que vous utilisiez une récupération de dix minutes ou plus. En cas d’échec, elle ignore les images, qui ne la gênent en rien. Action."
+    }
+  ]
+}

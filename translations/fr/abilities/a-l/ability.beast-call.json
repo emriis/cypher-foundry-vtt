@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.beast-call",
+  "sourceLogicalId": "ability.beast-call",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "995875d8906f541644188e8ef201e9883557d626e2223c4f387f378852c28109",
+      "text": "Appel des bêtes"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "2c10d7acc9f69aebb9f729997f3151cb2be0d31a9ae015a0a549d943bcbbdb58",
+      "text": "Vous appelez temporairement une bête de niveau 4, ou une horde de petites bêtes fonctionnant ensemble comme une créature de niveau 4, pour vous aider. La bête ou les bêtes vous obéissent tant que vous concentrez votre attention, mais vous devez utiliser votre action à chaque tour pour les diriger. Elles sont originaires de la région et viennent par leurs propres moyens ; cette aptitude ne fonctionne donc pas si vous vous trouvez dans un endroit inaccessible. Action."
+    }
+  ]
+}

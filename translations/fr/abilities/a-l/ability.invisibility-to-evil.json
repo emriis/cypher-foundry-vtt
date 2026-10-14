@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.invisibility-to-evil",
+  "sourceLogicalId": "ability.invisibility-to-evil",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "5f2e1f09f9290db2622c9bfad845e971d85234714ba490dd2ac68ff11c9972bc",
+      "text": "Invisible au mal"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "8e9d97286991ed576a5f60b7aa906aaba394630f20f8a478151e300a2a1f9d5b",
+      "text": "Vous ou un allié que vous touchez devenez effectivement invisible aux morts-vivants, aux démons ou aux créatures de même nature de niveau 3 ou moins, jusqu’à ce que vous preniez une récupération de dix minutes ou plus. Cet effet prend fin si la cible fait quelque chose qui révèle sa présence ou sa position — attaquer, utiliser une aptitude, déplacer un objet volumineux, etc. Effort : augmentez de 1 le niveau maximal des adversaires qui ne peuvent pas percevoir la cible invisible. Action pour commencer."
+    }
+  ]
+}

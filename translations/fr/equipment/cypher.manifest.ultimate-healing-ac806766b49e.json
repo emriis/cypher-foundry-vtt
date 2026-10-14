@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.ultimate-healing",
+  "sourceLogicalId": "cypher.manifest.ultimate-healing",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "4524948caadad04862e8345aea7d43b3e3a5b09e099f824c105d1d908d555c63",
+      "text": "Guérison ultime"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "820b29156eb26a565c2bd11160db4ca55d843982ac56d2bcf394d39350fcfb6b",
+      "text": "<p><strong>Effet :</strong> Vous guérissez toutes vos blessures mineures, modérées et majeures.</p><p><strong>Objets du genre : potion de guérison ultime (fantasy) ; stimpack avancé (science-fiction)</strong></p>"
+    }
+  ]
+}

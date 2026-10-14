@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.reveal-illusion",
+  "sourceLogicalId": "ability.reveal-illusion",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "0d9a0b1a7bef872fca66cd7ac92eaf86e97e8d254cb842ca00350a30a21e79ba",
+      "text": "Révéler une illusion"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "151d8d3f9def5378737aa6184c8b912ca41c3be9c123a55129358a3836c146ab",
+      "text": "Lorsque vous effectuez un jet pour trouver une illusion ou une cible invisible à courte portée et que le résultat est inférieur à 12, considérez qu’il est de 12. Vous ne subissez donc pas d’intrusion du MJ si vous obtenez 1. Cette aptitude dure jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Action pour initier l’effet. Effort : augmentez de 3 le résultat minimal de cette aptitude. Au rang 3 : le résultat minimal de cette aptitude passe à 15."
+    }
+  ]
+}

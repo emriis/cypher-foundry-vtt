@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.inhibit-foe",
+  "sourceLogicalId": "cypher.inhibit-foe",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "4d0a222359bdc01e93d6baca61598d0c1fba96aa3733f8d08f2dac5a1fda3531",
+      "text": "Inhibition de l’adversaire"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "3265efbbb230b0c48f546cff007a911d594a74f49ac6e358e525dcfaeabe8e1f",
+      "text": "<p><strong>Effet :</strong> Avec une deuxième action après une attaque réussie, vous gênez votre adversaire : jusqu’à votre prochain tour, la gravité des blessures infligées par ses attaques diminue d’un pas.</p><p><strong>Explication :</strong> Votre attaque l’a fait boiter. Votre agressivité l’a démoralisé. Quelque chose l’a distrait.</p>"
+    }
+  ]
+}

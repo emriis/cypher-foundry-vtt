@@ -44,7 +44,7 @@
       "speed",
       "intellect"
     ],
-    "description": "<p>Your suite of extraordinary powers elevates you far beyond human capabilities. You might have a versatile combination of special attributes, possibly including enhanced strength and durability that allow you to withstand immense impacts and lift incredible weights, or super-speed for rapid movement and reaction, or even more exotic abilities like flight, energy manipulation, or advanced telepathy. Superhumans are capable in a variety of different situations, though your particular specialty will determine how many ways you can benefit your group or allies during a team-up.</p>",
+    "description": "<p>Your suite of extraordinary powers elevates you far beyond human capabilities. You might have a versatile combination of special attributes, possibly including enhanced strength and durability that allow you to withstand immense impacts and lift incredible weights, or super-speed for rapid movement and reaction, or even more exotic abilities like flight, energy manipulation, or advanced telepathy.</p>\n<p>Superhumans are capable in a variety of different situations, though your particular specialty will determine how many ways you can benefit your group or allies during a team-up.</p>\n<h3>Background</h3>\n<ul>\n<li>You learned when you were young that if you didn’t regularly use your special abilities, they would build up until they flared out of control. So becoming a “superhero” was more necessity than decision—doing anything less risks everyone around you.</li>\n<li>Your old college friend is running for senator on an anti-superhuman platform.</li>\n<li>You’ve decided the city or larger state is corrupt, and it’s up to you to make it right.</li>\n<li>You recently saved hundreds by stabilizing a falling building long enough for everyone to flee.</li>\n<li>When the rampaging kaiju came ashore last week, you were one of the city’s defenders.</li>\n<li>You were raised in a lab under harsh conditions. One day the researchers let you go and went into hiding. You’ve been trying to find them—and whoever was behind them—ever since.</li>\n<li>A few weeks ago, you got a message from a parent who you were told died when you were young.</li>\n<li>A villain with insect-control powers vowed to destroy you, but that was months ago.</li>\n</ul>\n<h3>Superhuman Abilities</h3>\n<p>You gain all of the following benefits:</p>\n<ul>\n<li>Able to take three more minor wounds and one more moderate wound</li>\n<li>Add +6 to Might Pool</li>\n<li>Add +6 to Speed Pool</li>\n<li>Add +6 to Intellect Pool</li>\n<li>Add +4 to the Pool you choose for your Superheroics ability</li>\n<li>Add +1 Edge in Pool of your choice</li>\n<li>Freely use all weapons</li>\n<li>Freely use all armor</li>\n<li>Four power shifts</li>\n<li>One ability from the Origin Superhero Abilities list</li>\n<li>At tier 3 and tier 6, choose an appropriate ability from the Science Fiction Genre Abilities list or the Fantasy Genre Abilities list</li>\n<li>At tier 1, you gain the following abilities:</li>\n</ul>",
     "abilityTiers": [
       {
         "ability": "Compendium.cypher.abilities-en.Item.d23c7e05acbc7905",
@@ -83,7 +83,8 @@
         "sourceLocator": "CRD — Type: Superhuman (Rank 3)",
         "transformations": [
           "mechanical fields extracted from the CRD",
-          "Type ability occurrences represented as standalone Ability UUID references"
+          "Type ability occurrences represented as standalone Ability UUID references",
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references"
         ]
       }
     }

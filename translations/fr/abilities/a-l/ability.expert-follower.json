@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.expert-follower",
+  "sourceLogicalId": "ability.expert-follower",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "a82599d6974a7eb43cef8be6d71114ef95386a592bffaaacf458b1ef0965576c",
+      "text": "Compagnon expert"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "c21b63923bdb600608ff541c47354bca36e9a4d29d76b2d9b036d09559065d98",
+      "text": "Vous gagnez un compagnon de niveau 3 possédant trois modifications de niveau 4 de votre choix. Au lieu de gagner un nouveau compagnon de niveau 3, vous pouvez faire passer un compagnon existant au niveau 3 et gagner un nouveau compagnon de niveau 2. Vous pouvez prendre cette aptitude plusieurs fois, en gagnant un autre compagnon à chaque fois."
+    }
+  ]
+}

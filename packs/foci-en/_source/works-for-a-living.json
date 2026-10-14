@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/tools/hand/hammer-steel.webp",
   "system": {
-    "description": "<p>You take great satisfaction in a job well done, whether it’s coding, building houses, or mining asteroids.</p>",
+    "description": "<p>You take great satisfaction in a job well done, whether it’s coding, building houses, or mining asteroids.</p>\n<ul>\n<li>Genre themes: contractor (real world), technician, engineer (science fiction)</li>\n<li>GM intrusions: Repairs sometimes fail. Wiring can be tricky to decipher and still carry an electrical charge. Some people are rude to those who work for a living.</li>\n</ul>",
     "abilities": [
       "Compendium.cypher.abilities-en.Item.749fa426aa276343",
       "Compendium.cypher.abilities-en.Item.587ed5bf54d637c0",
@@ -81,6 +81,13 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references"
+        ]
+      }
     }
   }
 }

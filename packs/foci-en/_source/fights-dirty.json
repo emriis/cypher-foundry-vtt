@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/skills/melee/strike-dagger-blood-red.webp",
   "system": {
-    "description": "<p>You’ll do anything to win a fight: bite, scratch, kick, trick, and worse.</p>",
+    "description": "<p>You’ll do anything to win a fight: bite, scratch, kick, trick, and worse.</p>\n<ul>\n<li>Genre themes: troublemaker, loner (any genre)</li>\n<li>GM intrusions: People look poorly upon those who cheat or fight without honor. Sometimes a dirty trick backfires.</li>\n</ul>",
     "abilities": [
       "Compendium.cypher.abilities-en.Item.8e92b89ce32bebc6",
       "Compendium.cypher.abilities-en.Item.c0436f8572c0cc6a",
@@ -91,6 +91,13 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references"
+        ]
+      }
     }
   }
 }

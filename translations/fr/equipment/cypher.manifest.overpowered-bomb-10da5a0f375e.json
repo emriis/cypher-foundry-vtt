@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.overpowered-bomb",
+  "sourceLogicalId": "cypher.manifest.overpowered-bomb",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "a16fff82d56106601466f1b46e25dad01c99de74f0e80942e3c4605cb8069d2e",
+      "text": "Bombe surpuissante"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "602598d0e38529ceb0ce5b89673906e613c06fb10719c2455b4bedfd9d1c81e1",
+      "text": "<p><strong>Effet :</strong> Améliore un cypher de bombe qui inflige des dégâts, tel qu’une bombe incendiaire ou une bombe à éclats, pour qu’il inflige 4 dégâts supplémentaires. Une fois qu’un cypher de bombe surpuissante a servi à améliorer un autre cypher, la bombe surpuissante est consommée et ne compte plus dans votre limite de cyphers.</p><p><strong>Objets du genre : parchemin d’explosion magique renforcée (fantasy) ; amplificateur de bombe (science-fiction). Certains MJ peuvent décider que, lorsqu’un personnage trouve un cypher de bombe surpuissante, il s’agit en réalité d’un cypher de bombe existant déjà amélioré par un cypher de bombe surpuissante.</strong></p>"
+    }
+  ]
+}

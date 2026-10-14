@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.incredible-speed",
+  "sourceLogicalId": "cypher.manifest.incredible-speed",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "cfdbe7bd63372e415b8b73519b6a5a14faa105fb27a93350176e14a1ef6165ff",
+      "text": "Vitesse incroyable"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "f63412a670ded9307fa92a0bf0403fab82ad44042a90169cba3e49a317adaf7d",
+      "text": "<p><strong>Effet :</strong> Vous pouvez entreprendre une action supplémentaire pendant votre tour, mais pas plus d’une fois par tour. Par exemple, vous pouvez effectuer toutes vos actions normales pendant votre tour, puis entreprendre une action supplémentaire pour vous déplacer ou attaquer. Le cypher prend fin après trois utilisations de cette capacité ou si vous prenez une récupération d’une heure ou plus.</p><p><strong>Objets du genre : potion de hâte (fantasy) ; harnais accélérateur (science-fiction)</strong></p>"
+    }
+  ]
+}

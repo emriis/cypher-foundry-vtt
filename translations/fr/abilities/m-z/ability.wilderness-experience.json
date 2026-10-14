@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.wilderness-experience",
+  "sourceLogicalId": "ability.wilderness-experience",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "2844932158625e9d4d2f7d80647dd08bfffeb136fddf6f4a1e52ce973289075d",
+      "text": "Expérience du milieu sauvage"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "1cbceb91caedb1ef4e8ed91d265bf757fa4f796d6a9d420ccec0fa0053abe1cc",
+      "text": "En environ une heure, vous pouvez toujours trouver de la nourriture comestible et de l’eau potable en milieu sauvage, en quantité suffisante pour vous-même et quelques autres personnes. Votre expérience des animaux venimeux et des plantes toxiques vous protège davantage contre eux. Vos jets de défense contre le poison sont facilités et la gravité des blessures de poison est réduite d’un degré : majeure à modérée, modérée à mineure, mineure à aucune. Par exemple, si un serpent dont le poison inflige une blessure modérée vous mord, le poison ne vous inflige qu’une blessure mineure. Vous êtes immunisé contre les maladies naturelles. En milieu sauvage, vous ignorez les pénalités de tâches et de déplacement dues aux herbes hautes, aux broussailles épaisses, au terrain accidenté, au climat et aux autres causes naturelles."
+    }
+  ]
+}

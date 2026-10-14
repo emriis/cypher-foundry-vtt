@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.sense-evil",
+  "sourceLogicalId": "ability.sense-evil",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "6bdf32afcf075cec76a9fba974ac47f741d85ce035df765b5db4d52edc319acb",
+      "text": "Percevoir le mal"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "9b445e50d72e6fa34075175797b21fb58e37f01d7da6b2bee0310f497540203a",
+      "text": "Lorsque vous utilisez une action pour percevoir les morts-vivants, les démons, les créatures possédées par des démons ou les créatures de nature similaire à portée immédiate, si vous obtenez 9 ou moins, considérez que le résultat est de 9. Vous ne subissez donc pas d’intrusion du MJ si vous obtenez 1. Cette aptitude dure jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Effort : augmentez de 3 le résultat minimal de cette aptitude. Action pour initier l’effet. Au rang 3 : le résultat minimal de cette aptitude passe à 12."
+    }
+  ]
+}

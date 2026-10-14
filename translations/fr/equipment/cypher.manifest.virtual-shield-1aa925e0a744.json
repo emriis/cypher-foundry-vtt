@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.virtual-shield",
+  "sourceLogicalId": "cypher.manifest.virtual-shield",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "93086b41c9a6f4f2ba7ec3173ad2942866cc505858fbf7ef30e7db20811fb0c3",
+      "text": "Bouclier virtuel"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "9f482d2a37362e28f9dea7d6f5b67715ddf8babcfa0e34e92d174cd66d3cd732",
+      "text": "<p><strong>Effet :</strong> Jusqu’à ce que vous preniez une récupération d’une heure ou plus, vous êtes protégé comme si vous utilisiez un bouclier. Le Cypher prend fin immédiatement si vous utilisez cette protection pour annuler une blessure majeure.</p><p><strong>Objets du genre : parchemin de bouclier (fantasy) ; armure ablative (science-fiction)</strong></p>"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.hindering-throw",
+  "sourceLogicalId": "ability.hindering-throw",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "d5ea4ad6aa6bb8ff45f029f0506917f0ff8cd16a949dfa902c1c4f543026f19e",
+      "text": "Lancer entravant"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "50a4bec0bb6456903e43463611786aadb3dd5c389db2ec146720ec4f0dfc4b11",
+      "text": "Votre attaque à distance réussie avec un couteau se fiche dans la cible, s’accrochant à ses vêtements, à sa chair, au sol ou à une autre surface adjacente, de manière à infliger les dégâts normaux et à entraver ses tâches à son prochain tour. Action."
+    }
+  ]
+}

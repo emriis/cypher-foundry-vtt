@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.sense-weakness",
+  "sourceLogicalId": "ability.sense-weakness",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "7f736ef3081d6d65955c9a66fe6a6a9ac1d7eebd658a769f76239cec2e031eb1",
+      "text": "Percevoir les faiblesses"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "debde1bbf7ceec28a5bfbf43cb577b75c7bc7d8a1893ae675d100620fc6db715",
+      "text": "Après avoir observé une créature pendant un round, vous connaissez ses éventuelles faiblesses particulières et vos attaques contre elle infligent 1 dégât supplémentaire. Action pour initier l’effet."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.picking-up-the-slack",
+  "sourceLogicalId": "ability.picking-up-the-slack",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "952ca54dbcc74b60918dc0b79ac7d15f5139626b78a127d3c4ea98fdacf70710",
+      "text": "Prendre le relais"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "2eb4347e716de68fcf6ee152ba053d00003c264fcf4c236d380f3b6fca86dc96",
+      "text": "Vous pouvez remplacer un allié compétent lorsqu’il ne peut pas accomplir une tâche précise. Si un allié à longue portée est entraîné ou meilleur dans une compétence, mais ne peut pas tenter la tâche, par exemple si une serrure doit être crochetée alors qu’il est inconscient ou trop éloigné, vous obtenez un atout pour cette tâche. Vous ne pouvez pas utiliser cette aptitude si vous êtes entraîné ou meilleur dans cette compétence. Aptitude passive."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.acrobatic-attack",
+  "sourceLogicalId": "ability.acrobatic-attack",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "411c579a4ca51c23a63e6b087ab3600a0f5fc1b6f6f438d72bbbb2022847307f",
+      "text": "Attaque acrobatique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "f368c9da2691b982cb21c66bfd354cd3730545b1a92c51f2cb68fbfd431873cb",
+      "text": "Vous bondissez pour attaquer, en pivotant ou en effectuant un saut périlleux dans les airs. Si vous utilisez de l’Effort sur le jet d’attaque, vous bénéficiez d’un niveau d’Effort gratuit sur ce jet. Si vous obtenez un 17 ou un 18 naturel, vous pouvez choisir un effet mineur au lieu d’infliger des dégâts supplémentaires. Vous ne pouvez pas utiliser cette aptitude si vous ne pouvez pas utiliser librement l’armure que vous portez. Aptitude passive."
+    }
+  ]
+}

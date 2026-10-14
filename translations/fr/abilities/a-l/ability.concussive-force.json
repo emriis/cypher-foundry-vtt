@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.concussive-force",
+  "sourceLogicalId": "ability.concussive-force",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "204659fd11c9a401c166daab3a9fc504fd0905037cb9fbd2943eb703c805c720",
+      "text": "Force percutante"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "c98d8482c96ec91e57fb7afe327e0fc08fb96ac3938128dd54fdad54c1557212",
+      "text": "<p>Vous faites exploser une impulsion de force à partir d’un point choisi à portée longue. L’impulsion s’étend jusqu’à une portée courte dans toutes les directions et inflige 5 dégâts à tout ce qui se trouve dans la zone ; effectuez un jet d’attaque distinct contre chaque cible. Même si le jet d’attaque contre une créature dans la zone échoue, elle subit encore 1 dégât. Action.</p>"
+    }
+  ]
+}

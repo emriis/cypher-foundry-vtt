@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.telepathic-prodigy",
+  "sourceLogicalId": "ability.telepathic-prodigy",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "efeb74666b3a7b8e2ff4e7ee59cdeabaea3dde09e1643f8488276af72830fead",
+      "text": "Prodige télépathique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "00d50209847ecb6f52abda217e00a29ebb9089d7f2becaa5628408016ebaa713",
+      "text": "<p>Vous pouvez parler télépathiquement avec une créature à longue portée. La communication est bidirectionnelle, mais elle doit être consentante et capable de communiquer. Vous n’avez pas à la voir, mais devez savoir qu’elle est à portée. Effort : lisez les pensées superficielles d’une créature non consentante en réussissant une tâche d’Intellect contre elle ; cela permet aussi de lui parler télépathiquement même si elle ne veut pas écouter, jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Aptitude passive.</p>"
+    }
+  ]
+}

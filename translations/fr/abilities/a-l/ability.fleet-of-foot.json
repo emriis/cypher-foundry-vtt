@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.fleet-of-foot",
+  "sourceLogicalId": "ability.fleet-of-foot",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "ffeb01a2af85c69333989e46ec638d361a88b5be7b96a63f832d082321c31545",
+      "text": "Pied véloce"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "afb792d93aa5ea8713df548aea81e9dae0002caad04a1bfb20a1a13df67f151b",
+      "text": "Par une action supplémentaire pendant ce tour, vous pouvez vous déplacer jusqu’à une distance courte. Ce déplacement n’entrave pas vos tâches. Effort : par une action supplémentaire pendant ce tour, vous pouvez vous déplacer jusqu’à une distance longue au lieu d’une distance courte ; ce déplacement n’entrave pas vos tâches. Aptitude passive."
+    }
+  ]
+}

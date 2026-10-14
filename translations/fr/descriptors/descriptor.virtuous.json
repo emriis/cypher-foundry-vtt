@@ -1,0 +1,28 @@
+{
+  "logicalId": "descriptor.virtuous",
+  "sourceLogicalId": "descriptor.virtuous",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "e961069a113842c50458afaa023807b904f4084649bfdc89478eed4f9fdb9217",
+      "text": "Vertueux"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d1363fe3dfcd2834d3d7c6c5c4677368bc42d339cdc3081768644a217123b177",
+      "text": "<p>Faire ce qui est juste est pour vous un mode de vie. Vous suivez un code et vous y conformez chaque jour. Lorsque vous vous en écartez, vous vous reprochez cette faiblesse puis revenez aussitôt sur le droit chemin. Votre code comprend probablement la modération, le respect d’autrui, la propreté et d’autres qualités que la plupart des gens considèrent comme des vertus, tandis que vous rejetez leurs opposés : la paresse, l’avidité, la gloutonnerie, etc.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>+2 à votre Réserve de Puissance</p>\n<p>Vous êtes entraîné pour l’une des compétences suivantes : Philosophie ou Connaissances religieuses</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "7f3d81eb0817c1bf0e04af5bc5888c49fc70fb1f11190b307c81a05f8ced39c2",
+      "text": "Philosophie"
+    },
+    {
+      "path": "system.skillOptions.1",
+      "sourceHash": "67b2c49b851738a3005241af6fda12b1c34e72ac8985cd45d1eda188365b548b",
+      "text": "Connaissances religieuses"
+    }
+  ]
+}

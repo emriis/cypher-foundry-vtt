@@ -1,0 +1,33 @@
+{
+  "logicalId": "descriptor.mechanical",
+  "sourceLogicalId": "descriptor.mechanical",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "39bf205ed033228fefade2789181da5c5cf74d5ffb536d7e57c789d95806562d",
+      "text": "Mécanicien"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "18362510deb36a0e70d52068e7c7d9d84855dd1249f2c69612fa8c85f738957c",
+      "text": "<p>Vous avez un talent particulier pour toutes sortes de machines et savez les comprendre et, si nécessaire, les réparer. Vous êtes peut-être aussi un peu inventeur et créez de nouvelles machines de temps en temps. On vous surnomme « le technicien », « le techno », « le mécano », « le bricoleur », « le passionné de moteurs » ou de bien d’autres manières. Les mécaniciens portent généralement des vêtements de travail pratiques et transportent beaucoup d’outils.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>+2 à votre Réserve d’Intellect</p>\n<p>Vous êtes entraîné pour l’une des compétences suivantes : Ingénierie, Conduite d’engins lourds ou Utilisation de systèmes</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "729bb48d0f86a9e240a9839bf8c50f62f7ed973338514432666cf53c5d30c9ca",
+      "text": "Ingénierie"
+    },
+    {
+      "path": "system.skillOptions.1",
+      "sourceHash": "6509e6e35b97630139c6131c0c9a10b1c23dd1f8a49a58be8953f2fd845fe136",
+      "text": "Conduite d’engins lourds"
+    },
+    {
+      "path": "system.skillOptions.2",
+      "sourceHash": "86eeb735577ac0672523a757501c4e77c17ca90c777281358dd6efc7e3ee1d97",
+      "text": "Utilisation de systèmes"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.identify-machine",
+  "sourceLogicalId": "ability.identify-machine",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "233d58d962c133458f6f8e2126989a35c525dfcbc360eaba291aa5370079b88b",
+      "text": "Identifier une machine"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "9a857c21b19dd50ab775bb79531ca7bb705fed4868c189dab0e2b2f196f19115",
+      "text": "Vous comprenez la fonction, le fonctionnement, le niveau et l’état d’un seul robot ou appareil alimenté en énergie à portée immédiate. Action lente."
+    }
+  ]
+}

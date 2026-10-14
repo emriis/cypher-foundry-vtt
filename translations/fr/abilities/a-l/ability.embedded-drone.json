@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.embedded-drone",
+  "sourceLogicalId": "ability.embedded-drone",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "b2e3069922de806c97a5bf1bd4b804f1dfbbf70139f89167cbdfc54fc8bbcd42",
+      "text": "Drone intégré"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "8d6ea034777500af7cf1fca2b0c0ea28c907e33a5f72a7c2f8eb1e97e6a21f48",
+      "text": "Vous possédez un drone intégré à votre corps que vous pouvez lancer et contrôler jusqu’à ce que vous utilisiez une récupération d’une heure ou plus ; il revient alors vers vous. Le drone ne mesure pas plus de 1 pied (30 cm) de côté. Il possède des manipulateurs lui permettant de tenter des tâches physiques, et une arme à feu intégrée pour attaquer. Il peut immédiatement effectuer une action pendant le tour où vous le lancez. Si le drone est détruit, vous pouvez utiliser vos ressources pour le restaurer sur plusieurs jours. Une action pour commencer. Drone intégré : niveau 4 ; son pistolet intégré à portée longue inflige 4 dégâts ; vole sur une distance courte par round."
+    }
+  ]
+}

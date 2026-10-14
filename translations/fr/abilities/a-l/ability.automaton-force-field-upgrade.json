@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.automaton-force-field-upgrade",
+  "sourceLogicalId": "ability.automaton-force-field-upgrade",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "479f2ef579fe143a8b0bd0c152eba6fb16bacc488d2da99c31ff6209d36ccca1",
+      "text": "Amélioration d’automate : champ de force"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "f3f429e91db41cd5aff1c6f3aa08e8eac2a1417a50a210e4f7f8f178a8fb9f9d",
+      "text": "Vous avez intégré une nouvelle capacité à l’un de vos automates : il peut dresser un champ de force translucide de niveau 5 autour de lui et de toute personne à sa portée immédiate, jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Toute créature protégée par le champ réduit d’un degré de gravité les blessures subies ; les PNJ subissent 3 dégâts de moins. Aptitude passive."
+    }
+  ]
+}

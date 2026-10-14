@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.font-of-healing",
+  "sourceLogicalId": "ability.font-of-healing",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "a7ef9ed57a02c5f1ea446aa2ae34adbd941ec353b70ab72556b8e2e74ac4dc93",
+      "text": "Source de guérison"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "aafe357a4e2ca7e16738de1401d688560d91f5011fd6b6d40ca8321423465c26",
+      "text": "Vous possédez un pouvoir de guérison auquel les autres peuvent accéder par un contact. Si un allié utilise son action pour vous toucher et dépense 2 points d’Intellect, il choisit de soigner deux blessures mineures, une blessure modérée ou, s’il dépense 5 points d’Intellect, une blessure majeure. Après avoir utilisé cette aptitude, cet allié ne peut plus l’utiliser avant sa prochaine récupération de dix heures. Aptitude passive."
+    }
+  ]
+}

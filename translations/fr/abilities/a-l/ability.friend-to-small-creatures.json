@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.friend-to-small-creatures",
+  "sourceLogicalId": "ability.friend-to-small-creatures",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "6a408cc41e2c1bec409c9ea2fabb7b215b442b291e70d06f8c08963a4715ce2c",
+      "text": "Ami des petites créatures"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "145da5519784eed0b46ed4f4464da97cb69adc9bfde4d865cab95681921220b4",
+      "text": "Un type de petite créature que vous nommez et qui existe dans l’environnement proche, comme des insectes, des rats, des chauves-souris ou des oiseaux, passe sous votre influence si vous réussissez une tâche d’Intellect de survie en milieu sauvage de difficulté 2. Les créatures affectées à portée courte ne vous font pas de mal, ni aux personnes que vous désignez comme alliées, jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Cette aptitude ne fonctionne pas contre les essaims hostiles de créatures de niveau 3 ou plus. Vos créatures, même des insectes ordinaires de niveau 0, peuvent se rassembler assez nombreuses pour entraver les attaques ou les défenses d’une cible, ou effectuer une autre action. Vous pouvez utiliser cette aptitude pour calmer ou commander des lianes, des brins d’herbe, des plantes grimpantes, des racines ou des branches de plantes proches au lieu d’animaux. Effort : vos créatures répondent collectivement à vos ordres comme un allié PNJ. Action. Un allié PNJ peut fournir un atout à une tâche par round, comme la perception ou la défense, sauf si le MJ estime qu’il n’est pas capable de fournir ce type d’atout."
+    }
+  ]
+}

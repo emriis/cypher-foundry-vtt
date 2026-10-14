@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.summon-giant-spider",
+  "sourceLogicalId": "ability.summon-giant-spider",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "418f169c5804b1aae50dcf17678603e5bd770da8f3657f3d70a0c886afea7b2d",
+      "text": "Invoquer une araignée géante"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "9961856efc718ad3d45edf7f73e73b46c4cc540e4245b760d2189e14f4e1e9aa",
+      "text": "Vous invoquez une araignée géante qui apparaît à portée immédiate. Elle agit selon sa nature, attaquant une créature proche qui semble constituer une proie convenable. Elle reste jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus, puis disparaît. Effort : faites-lui comprendre et suivre vos instructions verbales. Action pour initier l’effet. Araignée géante : niveau 3 ; perception comme au niveau 5 ; défense de Célérité comme au niveau 4 grâce à sa rapidité ; santé 12 ; morsure infligeant 3 dégâts plus 1 dégât de Célérité de poison qui ignore l’armure ; se déplace sur une longue distance par round sur les toiles."
+    }
+  ]
+}

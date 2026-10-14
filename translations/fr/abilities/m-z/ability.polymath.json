@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.polymath",
+  "sourceLogicalId": "ability.polymath",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "7b637403250dff5e72f986e67de584615d01eb9dd3e792d1e900d1d7479d1dd7",
+      "text": "Polymathie"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "7e831be362ee12b5de31ab1c7bb67d1cad25f3be0623272d3d4d0d7569d8aad8",
+      "text": "Lorsque vous effectuez un jet pour une tâche dans laquelle vous êtes entraîné, autre qu’une tâche d’attaque ou de défense, et que le résultat est inférieur à 12, considérez qu’il est de 12. Vous ne subissez donc pas d’intrusion du MJ si vous obtenez 1. Effort : augmentez de 3 le résultat minimal de cette aptitude. Aptitude passive. Au rang 3 : le résultat minimal de cette aptitude passe à 15."
+    }
+  ]
+}

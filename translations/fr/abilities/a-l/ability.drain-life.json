@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.drain-life",
+  "sourceLogicalId": "ability.drain-life",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "74cad17c31008099357993b586191e7162efb2672159118226d0e0b56be4f586",
+      "text": "Drainer la vie"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "58e0c13ccf7cfec6d0b0b38145f6a35a94d825cdf63f2e6cc01ecd311ce565eb",
+      "text": "Vous projetez une vrille cendreuse à portée courte, infligeant 2 dégâts à une cible vivante si vous réussissez un jet d’attaque d’Intellect. Vous profitez de la vie drainée pour soigner une blessure mineure sur vous-même ou un allié à portée immédiate. Action. Au rang 3 : si vous appliquez deux niveaux d’Effort, une attaque réussie inflige 5 dégâts et soigne une blessure modérée ou mineure sur vous-même ou un allié à portée immédiate."
+    }
+  ]
+}

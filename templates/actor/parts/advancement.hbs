@@ -6,7 +6,7 @@
     <div class="xp-row">
       <span class="xp-value-label">{{localize 'CYPHER.XP.Label'}} : <strong>{{system.xp}}</strong></span>
       <button type="button" data-action="playerIntrusion">
-        <i class="fa-solid fa-bolt"></i> {{localize 'CYPHER.XP.PlayerIntrusion'}} ({{config.xpCosts.playerIntrusion}} PX)
+        <i class="fa-solid fa-bolt"></i> {{localize 'CYPHER.XP.PlayerIntrusion'}} ({{config.xpCosts.playerIntrusion}} {{localize 'CYPHER.XP.Label'}})
       </button>
     </div>
     <p class="xp-hint">{{localize 'CYPHER.XP.EditInHeader'}}</p>
@@ -62,7 +62,7 @@
         <span class="slot-bought-badge"><i class="fa-solid fa-circle-check"></i> {{localize 'CYPHER.Advancement.Bought'}}</span>
         {{else}}
         <button type="button" data-action="purchaseAdvancement" data-slot="{{@index}}">
-          {{localize 'CYPHER.Advancement.Buy'}} ({{../config.xpCosts.advancementSlot}} PX)
+          {{localize 'CYPHER.Advancement.Buy'}} ({{../config.xpCosts.advancementSlot}} {{localize 'CYPHER.XP.Label'}})
         </button>
         {{/if}}
       </div>

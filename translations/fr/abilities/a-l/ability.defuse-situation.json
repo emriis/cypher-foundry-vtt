@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.defuse-situation",
+  "sourceLogicalId": "ability.defuse-situation",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "4d42c499c2ad34cd4c23c2fb9d914a3b5606d946433585506c173c3c8dd7f678",
+      "text": "Désamorcer une situation"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "cc839184690dfd2128c7fce03fb97c8067c6e1f02f5c1f07c64e1f280894a526",
+      "text": "Au cours d’une enquête, vos questions provoquent parfois une réaction colérique, voire violente. Par la dissimulation, une distraction verbale ou une esquive similaire, vous empêchez un adversaire vivant d’attaquer qui que ce soit ou quoi que ce soit pendant un round si vous réussissez une tâche de charme, de tromperie, d’intimidation ou une autre tâche d’interaction. Action."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.illusory-disguise",
+  "sourceLogicalId": "ability.illusory-disguise",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "2e8eb3d4171d24e5583a378bdd3e6a880bd91ca67214a9bb4ef4bed02e617717",
+      "text": "Déguisement illusoire"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "c6cb5434c0b53c7335881b0a6a1c00c1921817f852fa955a7d1b6eee9ade624b",
+      "text": "Vous prenez l’apparence de quelqu’un ou de quelque chose d’autre, de taille et de forme approximativement semblables aux vôtres, jusqu’à ce que vous preniez une récupération d’une heure ou plus. Une fois créé, le déguisement ne demande aucune concentration. Effort : déguisez une créature supplémentaire (1 point d’Intellect) ; si vous perdez de vue une créature déguisée, elle perd son déguisement. Action."
+    }
+  ]
+}

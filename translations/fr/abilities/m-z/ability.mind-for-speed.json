@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.mind-for-speed",
+  "sourceLogicalId": "ability.mind-for-speed",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "174c3752191ed51c9fa419664d034d31ebf65202e89d3db80d0f536ddf5a4c0d",
+      "text": "L’esprit pour la Célérité"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "07e1c6a9b2716043522fa6f1b235ada4e81660bf2cdb97089b47c895d283e8e7",
+      "text": "Lorsque vous accomplissez une tâche nécessitant normalement de dépenser des points de votre réserve d’Intellect, vous pouvez dépenser des points de votre réserve de Célérité à la place, et inversement."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.keen-eye",
+  "sourceLogicalId": "ability.keen-eye",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "638cadb38ca7893411c475d034619130772ecbd042de0103aa1caf8b318e2696",
+      "text": "Œil aiguisé"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "093b3a3ca9fd5a7bb8c9ef07fca151cd4b2c67b4477ed787927598ffe95edc7b",
+      "text": "Vous voyez parfaitement à une distance supérieure de moitié à la normale. Vous ignorez les pénalités d’attaque et de perception dues au brouillard, à la fumée, à la brume, à une lumière faible ou à une lumière très faible."
+    }
+  ]
+}

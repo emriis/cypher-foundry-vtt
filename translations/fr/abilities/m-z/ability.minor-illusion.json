@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.minor-illusion",
+  "sourceLogicalId": "ability.minor-illusion",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "48a7a2fc6615014bce42eae7493a2395be913a9729dbca22277c6a8c2e35f62e",
+      "text": "Illusion mineure"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d8b9882ea49f7a052771ed9564815640d0e611267a2163959f65f658245adac0",
+      "text": "Vous créez une image unique d’une créature ou d’un objet à portée immédiate. L’image doit tenir dans une zone immédiate. Elle peut se déplacer, par exemple représenter une personne qui marche ou attaque, mais ne peut pas quitter la zone. L’illusion comprend des sons, mais aucune odeur. Elle dure jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Si vous souhaitez modifier sensiblement l’illusion initiale, par exemple faire apparaître une créature blessée, vous devez utiliser une action pour vous concentrer de nouveau dessus. Si vous quittez la portée, l’illusion disparaît. À la place d’une illusion réaliste, vous pouvez créer un motif d’images déroutantes autour d’une créature à courte portée. Tant que vous utilisez votre action pour changer ce motif, vous entravez les attaques et les défenses de la créature, sans jet d’attaque pour l’affecter. Action pour créer l’illusion ; action pour la modifier. Vous n’avez généralement pas à effectuer de jet contre un observateur occasionnel pour lui faire croire que votre illusion est réelle, mais cela devient probablement nécessaire s’il doute ou recherche des détails inhabituels. Un observateur qui reconnaît une illusion peut l’ignorer, mais elle peut toujours le distraire et gêner sa vision."
+    }
+  ]
+}

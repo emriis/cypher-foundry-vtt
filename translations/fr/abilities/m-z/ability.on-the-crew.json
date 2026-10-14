@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.on-the-crew",
+  "sourceLogicalId": "ability.on-the-crew",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "f9f0b3e89f4c3f32149615203ff53ba2f09d50b9fb8b0b17e6a37cd3c2799cec",
+      "text": "Membre de l’équipe"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "59364bf80b136aef4d4387a7fcf27b0af33362efda4bdf1d39e013d952b23121",
+      "text": "Lorsque vous travaillez avec une équipe comprenant au moins deux autres alliés, vous prononcez quelques mots d’encouragement et accordez à vous-même ainsi qu’à ces alliés l’une des aptitudes suivantes, jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. +1 dégât aux attaques. Ignorer la première blessure mineure subie. Ajouter +6 à la prochaine récupération. Action lente pour initier l’effet."
+    }
+  ]
+}

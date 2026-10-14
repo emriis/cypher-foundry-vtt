@@ -1,0 +1,18 @@
+{
+  "logicalId": "skill.perception",
+  "sourceLogicalId": "skill.perception",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "bd18e320a6bb9f539bf38e7c789035e1da2897d310fd54fc9c868f2365d776c7",
+      "text": "Perception"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "e08ef763b1c8339770747785940fe8f453786798c7e051928d448d78c8f0900c",
+      "text": "<p>Vous avez davantage de chances de remarquer ce que les autres manquent dans un environnement physique lorsque vous fouillez une zone, écoutez attentivement ou utilisez un autre sens pour découvrir ce qui est caché ou peu évident.</p>"
+    }
+  ]
+}

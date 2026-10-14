@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.elemental-protection",
+  "sourceLogicalId": "ability.elemental-protection",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "c9ca04060e6c510f86bb3b0c44aed5d5a0363fd9cd42fde6db9243c8eecb5165",
+      "text": "Protection élémentaire"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "10e9a913b0aa5abd110c0f637af4e7fc874290d546850691cca2ac93bb125951",
+      "text": "<p>Vous et chaque créature désignée à portée immédiate bénéficiez d’une protection contre un type de dégâts énergétiques, comme le feu, l’électricité ou le froid. Les créatures réduisent d’un degré la gravité des blessures dues à cette énergie : majeure devient modérée, modérée devient mineure, et mineure devient aucune blessure. Cette protection dure pour chaque créature jusqu’à ce qu’elle utilise une récupération d’une heure ou plus ; lorsqu’un individu met fin à l’aptitude, cela n’affecte pas sa durée pour les autres créatures. Effort : réduisez la gravité de la blessure d’un degré supplémentaire. Action.</p>"
+    }
+  ]
+}

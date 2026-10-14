@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.noble-sacrifice",
+  "sourceLogicalId": "ability.noble-sacrifice",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "b1db94eb5ab1b92719d81941e38dc650c6865bf76443e41bd454b6c3f2f66962",
+      "text": "Noble sacrifice"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "a10b5b3d9d712d38874fd2169c95f61912a9efa14dbde5c4a5fa39d7a949ec9d",
+      "text": "<p>Lorsque vous recevez l’attaque destinée à un autre personnage, votre altruisme vous accorde un bénéfice. L’attaque vous touche automatiquement et inflige ses dégâts normaux, plus la blessure mineure supplémentaire liée au fait de recevoir l’attaque. Vous pouvez immédiatement riposter en attaquant un adversaire à portée. Si vous avez reçu l’attaque pour une personne que vous protégez avec Noble défenseur (Noble Defender), cette attaque est facilitée. Aptitude passive.</p>"
+    }
+  ]
+}

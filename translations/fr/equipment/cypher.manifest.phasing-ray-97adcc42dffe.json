@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.phasing-ray",
+  "sourceLogicalId": "cypher.manifest.phasing-ray",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "2691e7e417fbc38d60e4a0d4bdd5932d724dbd3b6662fcee7831345a9d0fe080",
+      "text": "Rayon de déphasage"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "b6b1c87fd1b90245b4ed82b524ddf9032f30f3bf1db2cfa47c95ae431665826c",
+      "text": "<p><strong>Effet :</strong> Choisissez une partie d’une structure physique à portée courte, comme un mur, un sol ou un autre espace d’environ 10 pieds sur 10 pieds (3.5 m sur 3.5 m) au maximum. Jusqu’à ce que vous preniez une récupération d’une heure ou plus, cette zone se déphase, permettant aux créatures et aux objets de la traverser comme si elle n’existait pas. Son apparence reste identique ; par exemple, un mur bloque toujours la lumière et vous ne pouvez pas voir à travers. Le Cypher ne peut pas affecter les structures de niveau supérieur à 5.</p><p><strong>Objets du genre : huile de mur spectral (fantasy) ; résonateur paradimensionnel (science-fiction)</strong></p>"
+    }
+  ]
+}

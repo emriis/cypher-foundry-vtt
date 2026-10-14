@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.throw-weapon",
+  "sourceLogicalId": "ability.throw-weapon",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "769b9fd781afe05acaeb93a945ada853d88eb0e5a66f3820fe29d20f8d60f6ae",
+      "text": "Lancer d’arme"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "46e387179bf8e38aa2a358f0afbe3a45673dad091c8978f0c566af9ba1f0499d",
+      "text": "Vous lancez votre arme de mêlée légère ou moyenne sur un adversaire à courte portée comme s’il s’agissait d’une arme de jet moyenne. Qu’elle touche ou manque, elle rebondit vers votre main si vous réussissez une tâche de Célérité de difficulté 3, ou 4 si l’arme possède un tranchant. Effort : lancez une arme lourde, à la place d’une arme légère ou moyenne, par une Action lente. Action ; Action lente pour lancer une arme lourde. Si vous lancez votre arme et ne parvenez pas à la rattraper après le rebond, elle se retrouve probablement à courte distance de vous."
+    }
+  ]
+}

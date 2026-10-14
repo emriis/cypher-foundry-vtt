@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.sleep-inducer",
+  "sourceLogicalId": "cypher.manifest.sleep-inducer",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "9f8165363820eee2d91a01a0840d3dc364ea3c4fef885b3afa82f96381c3ee28",
+      "text": "Inducteur de sommeil"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "8f7741154f2fd50984820ba4ca3357f607a46d7c2315850765cd79c4fd2c9380",
+      "text": "<p><strong>Effet :</strong> Effectuez une attaque d’Intellect contre chaque créature vivante dans une zone immédiate à portée courte ; si la créature est de niveau 7 ou plus, l’attaque est entravée de deux pas. En cas de réussite, la créature s’endort jusqu’à ce que vous preniez une récupération de dix minutes ou plus. Des dégâts, un bruit extrêmement fort ou une action violente, comme la secouer, réveillent une créature endormie.</p><p><strong>Objets du genre : parchemin de sommeil (fantasy) ; somnotron (science-fiction)</strong></p>"
+    }
+  ]
+}

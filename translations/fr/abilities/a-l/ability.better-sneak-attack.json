@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.better-sneak-attack",
+  "sourceLogicalId": "ability.better-sneak-attack",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "c6abbf2b446acf617ab4fcce6c737ccbbf7d36f37d4951de5a180a3e8a3cbc64",
+      "text": "Attaque sournoise améliorée"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "61270a97485cb9af938f0b667333bb7e38bbb4b046efc250436ab0ebabb1c1d7",
+      "text": "Lorsque vous utilisez Attaque sournoise, vous bénéficiez d’un atout sur l’attaque. À votre prochain tour, votre cible subit 5 dégâts supplémentaires qui ignorent l’armure. La cible peut empêcher ces dégâts supplémentaires en prenant une récupération, en utilisant une aptitude qui la soigne ou en utilisant son action pour s’occuper de la blessure. Aptitude passive."
+    }
+  ]
+}

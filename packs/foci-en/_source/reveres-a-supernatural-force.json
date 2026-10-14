@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/svg/star.svg",
   "system": {
-    "description": "<p>You are a member of a religious order that studies the mystical power that unites all things across galactic distances, granting you psychic and physical abilities.</p>",
+    "description": "<p>You are a member of a religious order that studies the mystical power that unites all things across galactic distances, granting you psychic and physical abilities.</p>\n<ul>\n<li>Genre themes: eldritch knight (fantasy), psychic knight (science fiction)</li>\n<li>GM intrusions: Sensing a sudden and massive number of deaths can be overwhelming. A foe reveals their own connection to the mystic power.</li>\n</ul>",
     "abilities": [
       "Compendium.cypher.abilities-en.Item.207b3866ed0667b7",
       "Compendium.cypher.abilities-en.Item.8a56d9811d7e6ae0",
@@ -107,6 +107,13 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references"
+        ]
+      }
     }
   }
 }

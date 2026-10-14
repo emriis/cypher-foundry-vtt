@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.homing-projectile",
+  "sourceLogicalId": "cypher.manifest.homing-projectile",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "54a619c63a6276fb2247b70a28d247b932b6631f4aa83e51b8eefe6fe2c31c90",
+      "text": "Projectile à tête chercheuse"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "bf0d303ed42e71b00049d0a4c4708f43d64c0a3c71eb40b1e9f52e9173de534f",
+      "text": "<p><strong>Effet :</strong> Vous lancez un projectile autoguidé contre un adversaire à portée longue. Effectuez une attaque de Célérité contre lui. En cas de réussite, le projectile inflige 8 dégâts. En cas d’échec, il manque sa cible mais réessaie un round plus tard, à votre tour, ce qui nécessite un autre jet d’attaque mais aucune action. Le projectile est consommé s’il manque sa cible quatre fois. Le type de dégâts dépend du Cypher ; les plus courants sont le froid, l’électricité, le feu, les dégâts perforants ou le poison.</p><p><strong>Objets du genre : flèche chercheuse (fantasy) ; drone chercheur (science-fiction)</strong></p>"
+    }
+  ]
+}

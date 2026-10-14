@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.shot-collision",
+  "sourceLogicalId": "ability.shot-collision",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "98b5ce45f3c689614386b55e6a54a0557f7b8ba2a91210a35fdd8328942bfeed",
+      "text": "Collision de tirs"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "f3209d77d4be3431d560ac67e174e4165c5e1bc704dd3ef43d11d157d7c6fd67",
+      "text": "Une fois par round, si quelqu’un vous attaque avec une arme à feu, une arme de jet ou un autre projectile physique, comme une flèche, une balle ou un carreau d’arbalète, vous pouvez tenter de tirer sur le projectile en vol au lieu de tenter une tâche de défense. Effectuez une attaque contre le projectile à la même difficulté que la tâche de défense. Si vous touchez, votre tir le dévie, le détruit ou l’empêche autrement de vous atteindre. Si vous le souhaitez, l’objet dévié avec succès éclate de façon explosive dans un rayon immédiat de votre choix entre vous et l’attaquant, infligeant 2 dégâts à toutes les créatures et tous les objets dans la zone, avec un jet d’attaque distinct contre chacun. Si vous appliquez de l’Effort pour augmenter les dégâts, vous infligez 2 dégâts supplémentaires par niveau d’Effort au lieu de 3 ; les cibles de la zone subissent 1 dégât même si vous échouez au jet d’attaque. Aptitude passive."
+    }
+  ]
+}

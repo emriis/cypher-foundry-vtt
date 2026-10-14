@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.repel-metal",
+  "sourceLogicalId": "ability.repel-metal",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "8e92c343b7d265a13711c332af6affa5510ceac8920f2b7351eb7103652ef48f",
+      "text": "Repousser le métal"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "840d9b2875b5ef3d43b5071cea60a3606abe7dce34d498708e4f0a86d8e57e6e",
+      "text": "En manipulant le magnétisme, vous obtenez un atout pour vos jets de blocage et d’esquive contre les attaques impliquant du métal, comme les balles, les couteaux lancés, les flèches et les carreaux d’arbalète à pointe métallique, etc."
+    }
+  ]
+}

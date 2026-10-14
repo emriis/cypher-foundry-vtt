@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/skills/melee/unarmed-punch-fist.webp",
   "system": {
-    "description": "<p>You’re a scrapper and love a good fight. Punches, kicks, and full-body movements are your weapons.</p>",
+    "description": "<p>You’re a scrapper and love a good fight. Punches, kicks, and full-body movements are your weapons.</p>\n<ul>\n<li>Genre themes: brawler or monk (fantasy), boxer or martial artist (real world, science fiction, superhero)</li>\n<li>GM intrusions: Brawlers trip and fall. Even the battlefield can work against you with things falling or collapsing. Striking certain foes hurts you as much as it hurts them. Opponents with weapons have greater reach. Complicated martial arts moves can knock you off balance.</li>\n</ul>",
     "abilities": [
       "Compendium.cypher.abilities-en.Item.28af35150802ec35",
       "Compendium.cypher.abilities-en.Item.b1e7865d7241c209",
@@ -82,6 +82,13 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references"
+        ]
+      }
     }
   }
 }

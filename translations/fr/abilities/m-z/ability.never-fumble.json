@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.never-fumble",
+  "sourceLogicalId": "ability.never-fumble",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "033308c6acc58958f42ed975bf90f3cc972c18491dc23f5295ba74d209b3e911",
+      "text": "Jamais de maladresse"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "45fc616803d9bffc24a071261b406d0be54de6fdd23cb22c9ef2499bdd80fb4e",
+      "text": "Si vous obtenez un 1 naturel en attaquant avec l’arme que vous avez choisie, vous pouvez ignorer ou annuler l’intrusion du MJ de ce jet. On ne peut jamais vous désarmer de cette arme et vous ne la lâchez jamais accidentellement."
+    }
+  ]
+}

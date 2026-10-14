@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.craft-device",
+  "sourceLogicalId": "ability.craft-device",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "d38b55aacd62a10b98f8af608cf8b68f8057ef19dca65d33ab2876d49ef4d569",
+      "text": "Fabriquer un appareil"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "82a2e4703681fb62e95957ac658c06370cbf40e233dab8d900b48355727c0fa4",
+      "text": "Vous construisez un nouvel appareil, quelque peu fragile, si vous réussissez une tâche d’ingénierie de difficulté 3. Vous pouvez choisir son effet dans la table des cyphers manifestes de faible puissance. L’appareil obtenu n’est pas un cypher, ne compte pas dans votre limite de cyphers et n’est généralement pas limité à une utilisation : il possède à la place un épuisement de 1 sur 1d6. L’appareil est assez petit pour être transporté. Une heure pour le construire. Au rang 3 : si vous appliquez un niveau d’Effort à cette aptitude, vous pouvez choisir un cypher manifeste de puissance moyenne comme appareil. Au rang 6 : si vous appliquez deux niveaux d’Effort à cette aptitude, vous pouvez choisir un cypher manifeste de puissance avancée comme appareil."
+    }
+  ]
+}

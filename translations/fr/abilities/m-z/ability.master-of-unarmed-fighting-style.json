@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.master-of-unarmed-fighting-style",
+  "sourceLogicalId": "ability.master-of-unarmed-fighting-style",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "cf38de58e3172a727cae0447fcb73d50f3ef19eca9e14d3c560eb2bf7043fd10",
+      "text": "Maîtrise du combat à mains nues"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "a93b9ee3aeead5ac9722f887dc076bc25b4363e40661145b8774b463ba99eaa4",
+      "text": "Vous infligez 3 dégâts supplémentaires avec vos attaques à mains nues. Lorsque vous réussissez un jet de défense de Puissance pour bloquer une attaque à mains nues contre vous, réduisez sa gravité de deux degrés au lieu d’un : une blessure majeure devient mineure ; les blessures modérées et mineures sont supprimées. Aptitude passive."
+    }
+  ]
+}

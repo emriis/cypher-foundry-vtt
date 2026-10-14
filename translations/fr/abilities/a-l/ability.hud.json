@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.hud",
+  "sourceLogicalId": "ability.hud",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "c40c747ee79e90e16e46d58fa8ba3a289bb9fc8042af339561d423d71a7671c5",
+      "text": "Affichage tête haute"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "831d6a43d81d9096a44da9ea16588d63c1ab9dd96289854bc8a825338412bb16",
+      "text": "Vous disposez d’un système d’affichage tête haute qui vous aide à percevoir votre environnement. Vous voyez dans une lumière très faible comme en pleine lumière. Vous voyez dans l’obscurité totale comme dans une lumière très faible. Vous voyez jusqu’à une distance courte à travers le brouillard, la fumée et les autres phénomènes qui obscurcissent la vue. Effort : vous pouvez appliquer différentes quantités d’Effort pour obtenir les effets alternatifs suivants : Affichage de combat : si vous appliquez deux niveaux d’Effort, l’affichage souligne la silhouette de vos adversaires et prévoit leurs attaques pendant ce round, vous donnant un atout à votre prochaine tâche de blocage ou d’esquive. Affichage grossissant : si vous appliquez un niveau d’Effort, pendant les deux prochains rounds, l’affichage porte votre distance de vision à 5 miles (8 km) et vous permet de voir, sous forme d’images en fausses couleurs, à travers des matériaux ordinaires de niveau 4 ou moins (tels que le bois, le béton, le plastique et la pierre), jusqu’à une distance courte. Affichage de détection : si vous appliquez deux niveaux d’Effort, pendant les deux prochains rounds, l’affichage vous permet de voir, sous forme d’images en fausses couleurs, à travers des matériaux spéciaux de niveau 4 ou moins (tels que du plomb massif ou un champ de force opaque), jusqu’à une distance immédiate. Si vous réussissez une tâche d’Intellect, vous pouvez voir à travers des matériaux de niveau 5 ou plus. Aptitude passive."
+    }
+  ]
+}

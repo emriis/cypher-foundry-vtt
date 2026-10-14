@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.flurry",
+  "sourceLogicalId": "ability.flurry",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "db3c6f56a4dbe0df41bc792a93cf3ebce1ce6091601afa0c525f7ccdb17cecef",
+      "text": "Rafale de coups"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "9e2da2d80e639b7296998934c723e31268f68c30aee16015e66b212cc3fa0699",
+      "text": "Après une attaque légère à mains nues, vous effectuez une autre attaque légère à mains nues contre la même cible ou une autre, par une action supplémentaire pendant votre tour. Action. Au rang 3 : vous pouvez effectuer une troisième attaque légère à mains nues par une troisième action pendant votre tour. Certaines aptitudes de personnage permettent de traiter une attaque à mains nues comme une arme moyenne plutôt que légère. Vous ne pouvez pas utiliser Rafale de coups avec une attaque moyenne à mains nues."
+    }
+  ]
+}

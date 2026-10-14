@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.cool-water",
+  "sourceLogicalId": "ability.cool-water",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "c84cf8aef9483cf5c50ad07f24d868aa83a179f2c2388efd1ac6863a4e33198c",
+      "text": "Eau fraîche"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "46ea7dfb90e51dabc0a30bca877985796082b86b4757e9dbc98d09f6180c294d",
+      "text": "Vous condensez l’eau présente dans l’air pour créer assez d’eau froide potable pour faire vivre cinq créatures pendant un jour. Action."
+    }
+  ]
+}

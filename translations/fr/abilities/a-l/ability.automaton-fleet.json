@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.automaton-fleet",
+  "sourceLogicalId": "ability.automaton-fleet",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "f65658de6547cdcedc7f8b71cfba5384329c69a7895dadd84ff551b69bf9394a",
+      "text": "Flotte d’automates"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "075822e765f73073fb1cf2447173c9150878e57491e26e5f24a1c664151364fb",
+      "text": "Vous avez construit quatre compagnons automates de niveau 2, chacun ne dépassant pas votre taille. Vous et le MJ devez préciser l’apparence et la personnalité de chacun. Si l’un de ces automates est détruit, il peut être restauré avec vos ressources après quelques jours de travail."
+    }
+  ]
+}

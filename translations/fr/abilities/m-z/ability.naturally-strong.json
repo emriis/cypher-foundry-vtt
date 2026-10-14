@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.naturally-strong",
+  "sourceLogicalId": "ability.naturally-strong",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "2aa670f8ddc6196ee4b4a7659602f345e7125c097415cd06528033406b811500",
+      "text": "Force naturelle"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "e68bbd0724758e6777390852238a16b80f32b71f01481d0647ebaece7d5d2487",
+      "text": "Lorsque vous effectuez un jet pour porter, escalader, sauter ou fracasser et que le résultat est inférieur à 9, considérez qu’il est de 9. Vous ne subissez donc pas d’intrusion du MJ si vous obtenez 1. Cette aptitude se renouvelle lorsque vous prenez une récupération. Effort : augmentez de 3 le résultat minimal de cette aptitude. Aptitude passive. Au rang 3 : le résultat minimal de cette aptitude passe à 12."
+    }
+  ]
+}

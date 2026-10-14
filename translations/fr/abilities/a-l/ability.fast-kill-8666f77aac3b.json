@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.fast-kill-8666f77aac3b",
+  "sourceLogicalId": "ability.fast-kill-8666f77aac3b",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "a68442f04a8dde71fa3f9c9b6788d424c442065ad62f525c7e7d5c3c023d3fe4",
+      "text": "Exécution rapide"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "c1fc8618245d7656bbfa6b78719567479eb59b2f911f6c32b69e8cc7b16ec92d",
+      "text": "Lorsque vous touchez avec une attaque de mêlée ou à distance, vous infligez 4 dégâts supplémentaires. Vous ne pouvez pas utiliser cette aptitude pendant deux rounds consécutifs. Aptitude passive."
+    }
+  ]
+}

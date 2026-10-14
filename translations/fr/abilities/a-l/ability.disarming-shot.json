@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.disarming-shot",
+  "sourceLogicalId": "ability.disarming-shot",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "88f7afb099b78c8eec8ccda7c9081370a3e03c10a5b1f25f894657b6edb1a281",
+      "text": "Tir désarmant"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "6807d349ec58bdeccc51016c48606c6c4171f8b07bf1d8a79a374f6f20571d8e",
+      "text": "L’attaque inflige 1 dégât de moins, mais votre adversaire lâche un objet qu’il tient dans une main, comme une arme ou un bouclier. Pour récupérer l’objet, il doit utiliser une action."
+    }
+  ]
+}

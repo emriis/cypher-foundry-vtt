@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.divert-attacks",
+  "sourceLogicalId": "ability.divert-attacks",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "a23919001d52a6224fdd21cafeff10140ed6ed78c46677d764815d78e7e0d5c9",
+      "text": "Détourner les attaques"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "c2e0fad43413600e18451ad35904f95b2ba98a46967fe09f22db959418a77a7f",
+      "text": "Jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus, vous déviez, bloquez ou esquivez automatiquement toutes les attaques de projectiles à distance, sans jet. Cependant, pendant votre prochain tour après avoir subi une attaque de projectiles à distance, toutes vos autres actions sont entravées. Une action pour commencer."
+    }
+  ]
+}

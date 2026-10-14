@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.roguish-smile",
+  "sourceLogicalId": "ability.roguish-smile",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "264f33f2eeb37e0e4fec5ad7e43a6e19ef9a80cde77e1a2be240bf792fa9b0a8",
+      "text": "Sourire canaille"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "2bc3a263b4a285a692f7efbea03dd18b475de898a917b60dc4cd1f1a8c5af25d",
+      "text": "Avec un sourire, et peut-être un clin d’œil, vous effacez le dernier round de la mémoire d’une cible de niveau 3 ou moins à distance immédiate ; effectuez une attaque d’Intellect contre elle pour réussir. Effort : augmentez de 1 le niveau maximal de l’adversaire que vous pouvez affecter. Action."
+    }
+  ]
+}

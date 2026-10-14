@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.mystic-flurry",
+  "sourceLogicalId": "ability.mystic-flurry",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "8cafb34e2d4dd35e6950dd5d394709bbad460ab53a68b045d6b8f180fd12a072",
+      "text": "Déluge mystique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "037d5c5df3285fdd332b41eab18842dcaa41abf00a1db670cb341cca787dcc5f",
+      "text": "Vous infligez 1 dégât supplémentaire avec vos attaques à mains nues utilisant votre source mystique."
+    }
+  ]
+}

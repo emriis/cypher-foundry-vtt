@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.inspire-aggression",
+  "sourceLogicalId": "cypher.inspire-aggression",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "e48045991df85814e11ca4eb046f7ffe87b6618c9008813406bc32ef7a784e13",
+      "text": "Inspirer l’agression"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "1e67d1e355d4db417198b36eb11f4471dae50351cf7af7428a64fc6e612d9e03",
+      "text": "<p><strong>Effet :</strong> Un adversaire de niveau 4 ou moins à portée courte utilise son prochain tour pour attaquer une créature de votre choix à portée courte. La créature qui attaque inflige des dégâts égaux à son niveau.</p><p><strong>Explication :</strong> Vous l’avez convaincu que cette créature avait dit ou fait quelque chose d’impardonnable. Votre provocation l’a désorienté. Il pensait que la créature qu’il a attaquée était de votre côté.</p>"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.power-boost.range-boost",
+  "sourceLogicalId": "cypher.power-boost.range-boost",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "78176a7546409389576a688b5426ce87006ada5456eda539902979c6981adcb1",
+      "text": "Renforcement de portée"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "4292eab4e2bc589070fca086a45db3fb84cdc16de84c5a3e5325feab21c83393",
+      "text": "<p><strong>Effet :</strong> La portée de votre aptitude augmente. Si l’aptitude ne vous affecte normalement que vous, vous pouvez l’utiliser sur une personne que vous touchez. Sinon, sa portée augmente d’une catégorie : d’immédiate à courte, de courte à longue, et ainsi de suite.</p>"
+    }
+  ]
+}

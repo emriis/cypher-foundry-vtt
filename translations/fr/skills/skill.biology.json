@@ -1,0 +1,18 @@
+{
+  "logicalId": "skill.biology",
+  "sourceLogicalId": "skill.biology",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "aea1058d135f60dfba545402db425a0a98c99472241af4441b730f3bc86bedcd",
+      "text": "Biologie"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "0819b123e5e0c8fb40c6e37b3f2dc315a0d4c2b1a96ca6473ee21a64c98a67ae",
+      "text": "<p>Vous possédez une solide connaissance pratique des systèmes vivants, notamment des animaux, des plantes et des insectes adaptés au cadre de votre partie.</p>"
+    }
+  ]
+}

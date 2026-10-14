@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.adhesion-bomb",
+  "sourceLogicalId": "cypher.manifest.adhesion-bomb",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "e9d90b7432503030be19dec865aaf674207cefc8d37c25f772491991faa0c3bb",
+      "text": "Bombe adhésive"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "f8f6cb8490848ea8edfeec99d897eb37ebac1aa26f0b86db32df6e9036e69677",
+      "text": "<p><strong>Effet :</strong> Crée une explosion de substance gluante d’un rayon immédiat, jusqu’à une distance courte. Effectuez des attaques de Célérité distinctes contre chaque créature dans la zone. En cas de réussite, elles sont immobilisées sur place. La substance dure jusqu’à ce que vous preniez une récupération de dix minutes ou plus, mais peut être coupée, brisée ou brûlée ; la brûler inflige 4 dégâts de feu à toute personne qu’elle retient. Les PNJ peuvent se libérer avec une action ; vous pouvez les en empêcher en effectuant un jet de Célérité contre eux.</p><p><strong>Objets du genre : parchemin de toile (fantasy) ; grenade de contention (science-fiction). Au lieu de filaments gluants, certaines bombes adhésives remplissent la zone de mousse à durcissement rapide, de lianes constrictrices, de tentacules spectraux ou d’effets similaires produisant le même résultat.</strong></p>"
+    }
+  ]
+}

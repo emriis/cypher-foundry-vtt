@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.determination",
+  "sourceLogicalId": "ability.determination",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "c07513328104b15e2b3be00a018a690231b1fdf8fa441b5103182b3d8199aa55",
+      "text": "Détermination"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "0924a13485ad95680fb90505581682e948f6c73d5414e1b348f22e40e78376cf",
+      "text": "Lorsque vous retentez une tâche échouée, vous bénéficiez d’un niveau d’Effort gratuit en plus du niveau d’Effort obligatoire que vous devez utiliser. Vous ne pouvez pas réutiliser cette aptitude avant d’avoir pris une récupération. Aptitude passive."
+    }
+  ]
+}

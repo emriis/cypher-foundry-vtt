@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.healing-shield",
+  "sourceLogicalId": "ability.healing-shield",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "62ab703705ae4f3d49aeaf4c9890c61341f73eb6fe6085cd21798960955dc3a7",
+      "text": "Bouclier guérisseur"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "af94bb556a51df9af0652dbb67094ddf12defc396a4b04bb21564b954f0865a3",
+      "text": "Vous fortifiez la santé d’un allié grâce à votre pouvoir de guérison, le protégeant des blessures. Choisissez un allié à portée courte ; il gagne un atout qu’il peut utiliser sur un jet de blocage de son choix, et qui est dépensé lorsqu’il l’utilise. Cette aptitude se renouvelle lorsque vous prenez une récupération. Aptitude passive."
+    }
+  ]
+}

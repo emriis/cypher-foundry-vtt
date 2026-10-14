@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.escape-plan",
+  "sourceLogicalId": "ability.escape-plan",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "5f48dec662908e7259b8045baf39e84f4305513df410053f92c69de9cdca3320",
+      "text": "Plan de fuite"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "ee70ba523ba1d29a3a8d35a5b80c113f5fc6a7e1a79650dfc6f1e73a3c913764",
+      "text": "Lorsque vous tuez un adversaire, vous pouvez tenter une tâche de discrétion par une action supplémentaire pendant votre tour pour vous cacher de toute personne présente, à condition qu’un abri approprié soit proche. Aptitude passive."
+    }
+  ]
+}

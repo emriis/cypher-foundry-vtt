@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.will-of-a-leader",
+  "sourceLogicalId": "ability.will-of-a-leader",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "3c66807a33a07e17e81ab288d7d16d0abeee2689294494eaad225353c768e6b2",
+      "text": "Volonté de meneur"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "bdd0e1d27da692c0e07173bcb6f8e2ed6d097aa76a99811531e6a35b5e6814ba",
+      "text": "<p>Vous renforcez la détermination et les capacités de vos alliés par un discours inspirant d’au moins une minute. Tous les alliés à portée immédiate, vous compris, ajoutent +1 d’Avantage à une caractéristique choisie individuellement. L’effet dure pour chacun jusqu’à une récupération d’une heure ou plus ; sa fin pour une personne n’affecte pas sa durée pour les autres. Une minute pour terminer.</p>"
+    }
+  ]
+}

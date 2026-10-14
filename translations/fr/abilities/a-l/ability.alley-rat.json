@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.alley-rat",
+  "sourceLogicalId": "ability.alley-rat",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "f496f7720b0e243f440662ffdc4812b143c0dc9dfde354ccc3df08381c50c826",
+      "text": "Rat des ruelles"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "ce7b9a3f1ea2eeabd0726507126c4196e305ad992b17d4f366abf29d5a05d4b2",
+      "text": "Dans une ville, vous tentez de trouver ou de créer un raccourci important, une entrée secrète ou une voie de fuite d’urgence là où il semblait n’en exister aucune. Vous devez pour cela réussir une tâche d’Intellect dont le MJ fixe la difficulté selon la situation. Vous et le MJ devez préciser les détails de ce chemin inattendu, mais il doit vous permettre de vous éloigner d’au moins une distance courte de votre position actuelle. Action."
+    }
+  ]
+}

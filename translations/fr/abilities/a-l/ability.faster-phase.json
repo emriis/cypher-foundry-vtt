@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.faster-phase",
+  "sourceLogicalId": "ability.faster-phase",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "abd3bb04b18988834343bf0180957aadab8fc2613fce611c4115ff05f0273c96",
+      "text": "Déphasage accéléré"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "21589d5700fe7ac53a74eff6b548bf3b29508fc1286ad3daf22d1b6a3b611c7a",
+      "text": "Lorsque vous utilisez Traverser les murs, vous franchissez les barrières physiques plus rapidement, en augmentant votre vitesse de base de 3 pieds (1 m) supplémentaires par round, et cela devient une action plutôt qu’une action lente ; vous pouvez effectuer votre déplacement normal avant ou après votre action de déphasage. Aptitude passive."
+    }
+  ]
+}

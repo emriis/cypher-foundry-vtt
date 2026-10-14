@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.improved-dashing-defense",
+  "sourceLogicalId": "ability.improved-dashing-defense",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "3dcf6114fc160a7a6b50b04d4c81bd446dcda75586d5a12debc34da665c42c8e",
+      "text": "Défense fringante améliorée"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "9adc3266941a584efe2dc6d794fbeef2d2a772eb9464ba4f135a96c7eb4c7031",
+      "text": "Un allié à portée immédiate qui utilise une arme légère ou moyenne bénéficie de Défense fringante jusqu’à votre prochain tour. Aptitude passive."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.stoneknowing",
+  "sourceLogicalId": "ability.stoneknowing",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "6eebfccd1adc34a1818623247544fc6e03e419035e25bf85a242a887f951e82f",
+      "text": "Connaissance de la pierre"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "6704feeb6e24b29c39da4f82a334e3e6154aca4c67af651148eaf283d9c815fb",
+      "text": "Vous avez un entraînement au travail de tout type de pierre. En outre, si vous touchez un objet ou une structure de pierre ou de cristal et vous concentrez, vous apprenez son niveau et peut-être des informations pertinentes sur ses matériaux et sa structure. Vous pouvez par exemple apprendre qu’un mur de briques est de niveau 3 et dissimule un espace derrière lui, ou qu’un rocher est de niveau 5 et contient du minerai de fer. Le MJ peut exiger une tâche d’Intellect pour découvrir un élément particulièrement subtil ou secret. Action lente."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "skill.scavenging",
+  "sourceLogicalId": "skill.scavenging",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "07bd89a700f1e12f44a09230715d5cc8151f0ed29999e845eb1cf678fac20be2",
+      "text": "Récupération de ressources"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "b138bf897e1aaee26891d2efdd63dcc4ea5757130a1ef3e141c822333d43f299",
+      "text": "<p>Vous avez de l’expérience dans la recherche de nourriture, d’eau et d’un abri parmi les vestiges, et, lorsque vous avez particulièrement de la chance, d’une pièce aléatoire d’équipement postapocalyptique. Une tentative de tâche de récupération de ressources demande généralement au moins dix minutes, mais peut s’étendre sur deux à quatre heures de recherches dans les décombres et les ruines.</p>\n<p>Récupération de ressources et tâches associées</p>\n<table><thead><tr><th>Niveau</th><th>Tâche</th></tr></thead><tbody><tr><td>5</td><td>Trouver suffisamment de nourriture et d’eau potable pour qu’un groupe de cinq personnages puisse manger et boire pendant une journée</td></tr><tr><td>5</td><td>Trouver un endroit relativement sûr pour se regrouper, s’abriter des intempéries et se cacher d’autres groupes ou créatures dangereux</td></tr><tr><td>–</td><td>La tâche est entravée d’un pas par tranche de deux personnes supplémentaires, au-delà de cinq, pour lesquelles la personne qui cherche tente de trouver des ressources ou un refuge</td></tr><tr><td>+</td><td>La tâche est facilitée d’un pas par tranche de deux personnes de moins, en deçà de cinq, pour lesquelles la personne qui cherche tente de trouver des ressources ou un refuge</td></tr></tbody></table>\n<p>La récupération de ressources convient surtout aux cadres postapocalyptiques offrant un accès facile aux ruines d’une civilisation disparue, où se trouvent encore des objets potentiellement utiles, notamment des aliments conservés et de l’eau potable. Dans les autres genres, ou pour rechercher des choses utiles en milieu sauvage, utilisez la survie en milieu sauvage.</p>"
+    }
+  ]
+}

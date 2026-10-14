@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.rewind-time",
+  "sourceLogicalId": "ability.rewind-time",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "4ea81d59cfc7fe6f3a0e3a0e836e1ea47c78ad670fec5d42e72b703cbd90e5a6",
+      "text": "Remonter le temps"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "cab59526b7a4f0b8f47fd2f4806c9194bde332dcd1d2e44664e57e568d3f9771",
+      "text": "Vous remontez le temps de quelques secondes, permettant à quelqu’un d’annuler ce qu’il vient de faire et d’accomplir une autre action. Choisissez une créature à courte portée qui est la dernière à avoir accompli une action. Le temps revient juste avant cette action : c’est désormais son tour. Elle peut répéter l’action ou tenter autre chose. Elle n’a conscience ni de ce qu’elle a fait auparavant ni de votre retour dans le temps, mais peut avoir conscience que vous avez fait quelque chose. Cette aptitude se renouvelle lorsque vous utilisez une récupération. Aptitude passive."
+    }
+  ]
+}

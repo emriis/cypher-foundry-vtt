@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.invisibility",
+  "sourceLogicalId": "cypher.manifest.invisibility",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "d53895c6eb7816fb44ec7f46db45019172de4793a42ccaf893ed71ec8ed00743",
+      "text": "Invisibilité"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "2ea345c397d1979e468582f6a2e85a9a3b1d8583a5b6b774fdb42414e2f40ab3",
+      "text": "<p><strong>Effet :</strong> Vous devenez invisible. L’invisibilité est suspendue si vous révélez votre présence ou votre position, par exemple en attaquant, en utilisant une aptitude de personnage, en déplaçant un grand objet, etc. Vous pouvez réactiver l’invisibilité suspendue en consacrant une action à vous concentrer pour vous cacher ; sinon, elle prend fin après une récupération d’une heure ou plus.</p><p><strong>Objets du genre : potion d’invisibilité (fantasy) ; voile furtif (science-fiction). L’attaque d’un personnage invisible est facilitée de deux pas. Les attaques contre un personnage invisible sont entravées de quatre pas, ou presque impossibles si l’attaquant n’a aucune idée de l’endroit où il se trouve.</strong></p>"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "logicalId": "ability.divine-radiance",
+  "sourceLogicalId": "ability.divine-radiance",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "1be6012604fdff7ad0046bb92be1068e42b74ff7871221b1caac07dca8fab9ba",
+      "text": "Rayonnement divin"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "0c0d5152d88892e47b588bd15bb7386cbbb91be04e6d3e9b6813ee51089990a7",
+      "text": "<p>Vous canalisez une influence divine pour obtenir l’un des effets suivants.</p>\n<p>Bénédiction : une cible à portée courte reçoit une grâce divine bienveillante. À tout moment avant sa prochaine récupération de dix minutes ou plus, elle bénéficie d’un atout pour une action.</p>\n<p>Effort : affectez deux cibles supplémentaires.</p>\n<p>Action.</p>\n<p>Repousser les morts-vivants : jusqu’à cinq créatures mortes-vivantes de niveau 2 ou moins à portée courte sont frappées par un rayonnement divin ; effectuez un jet d’attaque d’Intellect distinct contre chaque cible. Les cibles affectées sont repoussées et doivent passer leur prochain tour à fuir votre présence.</p>\n<p>Selon le jeu, votre MJ peut décider que Repousser les morts-vivants fonctionne sur les démons ou des créatures similaires à la place des morts-vivants, ou en plus d’eux.</p>\n<p>Effort : affectez deux cibles supplémentaires. Augmentez de 1 le niveau maximum des morts-vivants que vous pouvez affecter.</p>\n<p>Action.</p>\n<p>Au rang 3 : au lieu de faire fuir les cibles affectées, vous pouvez les empêcher d’effectuer des actions pendant un tour.</p>\n<p>Lorsqu’une aptitude ou un effet vous permet d’attaquer plusieurs créatures pendant votre tour, chaque attaque après la première est une action supplémentaire pendant votre tour. Une attaque effectuée par une action supplémentaire pendant votre tour compte comme une action distincte pour modifier la tâche avec de l’Effort.</p>"
+    },
+    {
+      "path": "system.effects.blessing.name",
+      "sourceHash": "5f4c7406a101c4c4d4288fb369af767fd4ad0bd5c6c0cef286a7e639e8b7a5ba",
+      "text": "Bénédiction"
+    },
+    {
+      "path": "system.effects.blessing.description",
+      "sourceHash": "c6d6752075f18273b60554389d39d9dabd3b8c343efb240456984e1d5fac337c",
+      "text": "<p>une cible à portée courte reçoit une grâce divine bienveillante. À tout moment avant sa prochaine récupération de dix minutes ou plus, elle bénéficie d’un atout pour une action.</p>\n<p>Action.</p>"
+    },
+    {
+      "path": "system.effects.blessing.effort",
+      "sourceHash": "e4653e84431bc62dca3919b145376abda0d05399051820a027f7a009dc5be809",
+      "text": "Affectez deux cibles supplémentaires."
+    },
+    {
+      "path": "system.effects.turn-undead.name",
+      "sourceHash": "fdaf4c326c78e664646d79690583807802285e6f6e6db9173ec602132058d5c7",
+      "text": "Repousser les morts-vivants"
+    },
+    {
+      "path": "system.effects.turn-undead.description",
+      "sourceHash": "228751e88766c951145b4aa82f79c2ebce2b3ee26ce58af7862038f5d150bc47",
+      "text": "<p>jusqu’à cinq créatures mortes-vivantes de niveau 2 ou moins à portée courte sont frappées par un rayonnement divin ; effectuez un jet d’attaque d’Intellect distinct contre chaque cible. Les cibles affectées sont repoussées et doivent passer leur prochain tour à fuir votre présence.</p>\n<p>Selon le jeu, votre MJ peut décider que Repousser les morts-vivants fonctionne sur les démons ou des créatures similaires à la place des morts-vivants, ou en plus d’eux.</p>\n<p>Action.</p>\n<p>Au rang 3 : au lieu de faire fuir les cibles affectées, vous pouvez les empêcher d’effectuer des actions pendant un tour.</p>\n<p>Lorsqu’une aptitude ou un effet vous permet d’attaquer plusieurs créatures pendant votre tour, chaque attaque après la première est une action supplémentaire pendant votre tour. Une attaque effectuée par une action supplémentaire pendant votre tour compte comme une action distincte pour modifier la tâche avec de l’Effort.</p>"
+    },
+    {
+      "path": "system.effects.turn-undead.effort",
+      "sourceHash": "1ba5fdb1cb8cb1388f13ec5111cb23b9e40cfd8770d0ab7ae6865152d2719c10",
+      "text": "Affectez deux cibles supplémentaires. Augmentez de 1 le niveau maximum des morts-vivants que vous pouvez affecter."
+    }
+  ]
+}

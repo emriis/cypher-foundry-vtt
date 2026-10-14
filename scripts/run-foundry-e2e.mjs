@@ -14,7 +14,7 @@ import { closeSync, openSync } from "node:fs";
 import { spawn } from "node:child_process";
 import os from "node:os";
 import path from "node:path";
-import { findApplication } from "./foundry-discovery.mjs";
+import { findServer, readCoreVersion } from "./foundry-discovery.mjs";
 import { createValidationWorkspace, removeValidationWorkspace } from "./validation-workspace.mjs";
 
 const SOURCE_ROOT = path.resolve(import.meta.dirname, "..");
@@ -36,6 +36,7 @@ const SHOW_FOUNDRY_LOGS =
   /^(1|true|yes)$/i.test(
     process.env.FOUNDRY_E2E_SHOW_FOUNDRY_LOGS || ""
   );
+const INCLUDE_PROPOSED_TRANSLATIONS = process.argv.includes("--proposed-translations");
 const E2E_SPECS = [
   "tests/e2e/foundry-runtime.spec.mjs",
   "tests/e2e/foundry-gameplay.spec.mjs"
@@ -95,31 +96,6 @@ async function getFoundryPaths() {
     userDataPath,
     dataPath: path.join(userDataPath, "Data")
   };
-}
-
-async function readCoreVersion(appPath) {
-  const candidate = path.join(
-    path.dirname(appPath),
-    "resources",
-    "app",
-    "package.json"
-  );
-
-  try {
-    const data = JSON.parse(await readFile(candidate, "utf8"));
-    if (data.version) return data.version;
-  } catch {
-    // Fall back to the explicit environment variable below.
-  }
-
-  if (process.env.FOUNDRY_CORE_VERSION) {
-    return process.env.FOUNDRY_CORE_VERSION;
-  }
-
-  throw new Error(
-    "Unable to determine the Foundry core version. Set " +
-    "FOUNDRY_CORE_VERSION explicitly."
-  );
 }
 
 async function waitForPidFile(filePath, timeout = 10_000) {
@@ -233,7 +209,7 @@ async function createWorld(dataPath, coreVersion, systemVersion) {
   return worldPath;
 }
 
-function spawnFoundry(appPath, userDataPath) {
+function spawnFoundry(serverPath, userDataPath) {
   const args = [
     "--port=" + PORT,
     "--noupnp",
@@ -246,13 +222,6 @@ function spawnFoundry(appPath, userDataPath) {
   // Playwright supplies the browser, so Electron provides no test value here.
   // This also removes the Windows elevation and Chromium/GPU lifecycle
   // problems caused by controlling a separately elevated Electron process.
-  const serverPath = path.join(
-    path.dirname(appPath),
-    "resources",
-    "app",
-    "main.js"
-  );
-
   // Keep the runner output focused on Playwright by default. Foundry logs are
   // captured separately and the tail is shown automatically if E2E fails.
   // Set FOUNDRY_E2E_SHOW_FOUNDRY_LOGS=true to stream Foundry logs live.
@@ -456,9 +425,9 @@ async function stopProcess(child, foundryPid) {
   }
 }
 
-const appPath = await findApplication();
+const serverPath = await findServer();
 const { userDataPath: licenseSource } = await getFoundryPaths();
-const coreVersion = await readCoreVersion(appPath);
+const coreVersion = await readCoreVersion(serverPath);
 const systemManifest = JSON.parse(
   await readFile(path.join(ROOT, "system.json"), "utf8")
 );
@@ -484,7 +453,7 @@ try {
   // Copy activation metadata without printing it or copying user settings/worlds.
   await cp(path.join(licenseSource, "Config", "license.json"),
     path.join(userDataPath, "Config", "license.json"));
-  console.log(`Foundry executable: ${appPath}`);
+  console.log(`Foundry Node server: ${serverPath}`);
   console.log(`Foundry User Data path: ${userDataPath}`);
   console.log(`Foundry Data path: ${dataPath}`);
   console.log(`Test world: ${WORLD_ID}`);
@@ -512,7 +481,7 @@ try {
   // Build the current edited sources before installing the disposable system.
   // ROOT points to the temporary checkout, never the original repository here.
   await runCommand(npmCommand, ["run", "migrate:packs"]);
-  await runCommand(npmCommand, ["run", "build:packs"]);
+  await runCommand(npmCommand, ["run", "build:packs", ...(INCLUDE_PROPOSED_TRANSLATIONS ? ["--", "--include-proposed"] : [])]);
   await runCommand(npmCommand, ["run", "package"]);
   await runCommand(npmCommand, ["run", "check:system-syntax"]);
   await runCommand(npmCommand, ["run", "check:e2e-syntax"]);
@@ -533,7 +502,7 @@ try {
 
   // Foundry's --dataPath option expects the user-data root. The actual
   // Data directory is the child directory resolved above.
-  child = spawnFoundry(appPath, userDataPath);
+  child = spawnFoundry(serverPath, userDataPath);
   child.once("error", error => {
     console.error("Unable to start Foundry:", error);
   });
@@ -550,7 +519,7 @@ try {
       "test",
       ...E2E_SPECS,
       "--config=playwright.config.mjs",
-      ...process.argv.slice(2).filter(argument => argument !== "--debug-foundry-logs")
+      ...process.argv.slice(2).filter(argument => !["--debug-foundry-logs", "--proposed-translations"].includes(argument))
     ];
     // Use Node directly so Windows cmd/npm cannot reinterpret a grep regex,
     // spaces, or shell metacharacters in user-supplied Playwright arguments.
@@ -564,7 +533,8 @@ try {
       env: {
         ...process.env,
         FOUNDRY_URL: BASE_URL,
-        FOUNDRY_E2E_WORLD_ID: WORLD_ID
+        FOUNDRY_E2E_WORLD_ID: WORLD_ID,
+        CYPHER_E2E_TRANSLATION_PREVIEW: String(INCLUDE_PROPOSED_TRANSLATIONS)
       }
     });
     testProcess.on("error", error => {

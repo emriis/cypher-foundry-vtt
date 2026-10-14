@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/commodities/tech/circuit-board.webp",
   "system": {
-    "description": "<p>You use your brain like a computer, interfacing “wirelessly” with any electronic device. You can control and influence them in ways that others can’t.</p>",
+    "description": "<p>You use your brain like a computer, interfacing “wirelessly” with any electronic device. You can control and influence them in ways that others can’t.</p>\n<ul>\n<li>Genre themes: golem whisperer (fantasy), coder (real world), cyber mind (science fiction, superhero)</li>\n<li>GM intrusions: The machine malfunctions or acts unpredictably.</li>\n</ul>\n<p>If you Talk to Machines, you can use your abilities at the indicated range, use them within range of a device you can remotely transmit data from, and (regardless of physical distance) affect networked machines that are on the same network you’re accessing.</p>",
     "abilities": [
       "Compendium.cypher.abilities-en.Item.177e1219d645cdf4",
       "Compendium.cypher.abilities-en.Item.add09689309ed9f0",
@@ -78,6 +78,13 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references"
+        ]
+      }
     }
   }
 }

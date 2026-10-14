@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.willing-sacrifice",
+  "sourceLogicalId": "ability.willing-sacrifice",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "1141b2e8bdacbc176ab4bc190bb6c328b5dfa4550eeab051227c7aaebbad99ce",
+      "text": "Sacrifice consenti"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "12a3156e2838574a4df9108b673aba23982adb18f80d1530be87b73bd690b879",
+      "text": "Lorsque vous attirez avec succès une attaque ou recevez celle destinée à un autre personnage et échouez à l’esquiver ou la bloquer, réduisez la gravité de sa blessure d’un degré : majeure à modérée, modérée à mineure, mineure à aucune. Vous pouvez attirer ou recevoir plusieurs attaques dans un même round si elles étaient toutes destinées à une seule cible. Aptitude passive."
+    }
+  ]
+}

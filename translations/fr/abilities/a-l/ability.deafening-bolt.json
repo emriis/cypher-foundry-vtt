@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.deafening-bolt",
+  "sourceLogicalId": "ability.deafening-bolt",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "02403f5e0ba9c1859ebce91a57976d94ba19bee6ff1ceae62befffea153ce696",
+      "text": "Éclair assourdissant"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "e91001243f501433f278d7c4233418e5d8072fa1b47063f0803a4df25e6b87f3",
+      "text": "Vous libérez un éclair contre une cible à portée longue. Si votre attaque réussit, la cible subit 5 dégâts et devient sourde jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus ; pendant cette durée, elle n’entend rien et ses tâches de défense sont entravées. Action."
+    }
+  ]
+}

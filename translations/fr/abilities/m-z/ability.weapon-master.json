@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.weapon-master",
+  "sourceLogicalId": "ability.weapon-master",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "619fa391500560f40e790a14e09dcbc7ab1c2f021f53bc031164a940f500ceae",
+      "text": "Maîtrise des armes"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "a36112deb86e1e43bca349cbe335345ab85acb9535c687061e6fb5f6c4b8088e",
+      "text": "Vous maîtrisez un type d’arme qui vous serait autrement peu familier, comme les lames moyennes, les armes contondantes légères ou les armes lourdes à distance. Vous pouvez l’utiliser librement et sans pénalité. Avec ce type d’arme, vous infligez 1 dégât supplémentaire. Vous avez un entraînement à sa fabrication, ce qui permet de fabriquer et réparer facilement ces armes en utilisant vos ressources. Vous pouvez obtenir cette aptitude plusieurs fois ; choisissez chaque fois un nouveau type d’arme à maîtriser."
+    }
+  ]
+}

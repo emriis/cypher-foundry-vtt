@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.selective-phase-attack",
+  "sourceLogicalId": "ability.selective-phase-attack",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "f946ae9c3b47ad7428225e23167467a18e19e98413648f875499327352d62d34",
+      "text": "Attaque de phase sélective"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "c3a201996c32097e6076558937d44f89067510989b4e60d8440efd351d380b3b",
+      "text": "Une attaque par round que vous effectuez avec Attaque déphasée (Phased Attack) inflige 5 dégâts supplémentaires. Aptitude passive. Utilisée contre un PJ, Attaque déphasée fait échouer ses tentatives de blocage."
+    }
+  ]
+}

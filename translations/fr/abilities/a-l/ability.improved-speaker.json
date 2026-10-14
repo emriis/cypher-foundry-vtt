@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.improved-speaker",
+  "sourceLogicalId": "ability.improved-speaker",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "f1d266080198d56bb5c7e293ff762073e242df00e32a1804d9320d1400bd0b7d",
+      "text": "Orateur amélioré"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d953b0f0d6303e76cc5f80bfc381928a9909ff7832c8fab22b927ac8cfa841be",
+      "text": "Lorsque vous utilisez Porte-parole des morts, pour chaque point d’Intellect supplémentaire que vous dépensez au-delà du coût initial de l’aptitude, vous pouvez poser une question supplémentaire. Aptitude passive."
+    }
+  ]
+}

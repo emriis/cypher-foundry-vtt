@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.wounded-fury-a4a66a23e161",
+  "sourceLogicalId": "ability.wounded-fury-a4a66a23e161",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "4934884632660d126163167dce20d1c164b0b2a00cc1eaa44a559c215c1a844a",
+      "text": "Fureur des blessures"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "64f615ddec39ddb7bb3c27454c87d17c1e2421b65dd9860fa43d735f56b167ff",
+      "text": "Tant que vous avez au moins trois blessures modérées ou au moins une blessure majeure, vous obtenez deux niveaux d’Effort gratuits applicables à une attaque par round. Ce bénéfice dure jusqu’à votre prochaine récupération de dix minutes ou plus, ou jusqu’à ce que vous ne subissiez plus ces blessures. Aptitude passive."
+    }
+  ]
+}

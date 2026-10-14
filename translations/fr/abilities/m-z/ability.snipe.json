@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.snipe",
+  "sourceLogicalId": "ability.snipe",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "f9ef72b810ac16a6cef2e06008b0bec53941cf9ec65a070a80a919248c9f38b7",
+      "text": "Tir de précision"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "c694eec199bcdc02206079ba44e7991a97c26b7cc9b90160a44fc320ec0a0f90",
+      "text": "<p>Vous consacrez une action à viser un adversaire. Si vous l’attaquez à votre prochain tour, votre attaque est facilitée et inflige 5 dégâts supplémentaires si elle touche. Action réflexe.</p>"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "logicalId": "descriptor.species.halfling",
+  "sourceLogicalId": "descriptor.species.halfling",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "5806c79980acdd8edda0b985bd487808806b44659f8fececfe95bcb680a4a82c",
+      "text": "Halfelin"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "358e7dcadf06aea329797acca0a3c7e5370ea3d020290c4add09297193653c81",
+      "text": "<p>Vous mesurez trois pieds (1 m) et êtes fier de chaque pouce. Vous aimez le confort du foyer, mais avez parfois envie d’un peu d’aventure. Petit et rapide, vous savez vous entendre avec tout le monde. Vous avez peut-être grandi dans un village de halfelins, dans une communauté mixte où humains et petites gens travaillent et partagent leurs repas en amis, ou dans un environnement moins accueillant où votre peuple se débrouille par la tromperie et les activités criminelles. Vous et les humains avez beaucoup en commun : vous êtes simplement plus compact et plus efficace.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>Vous ne subissez pas d’intrusion du MJ lorsque vous obtenez un 1 sur une tâche de discrétion.</p>\n<p>Vous êtes entraîné en évasion.</p>\n<p>Vous infligez +1 dégât avec les armes de lancer légères.</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "436b2c357e5eac16dc4f401004eeba08ac07bd613b5eb79ed9d153f006d71a9a",
+      "text": "Évasion"
+    },
+    {
+      "path": "system.benefits.0.name",
+      "sourceHash": "8e924b490042af935eb8d6a1b48e5735ad724eca0d8a57f07e088c9eb847c4ad",
+      "text": "Discrétion sans intrusion du MJ"
+    },
+    {
+      "path": "system.benefits.0.description",
+      "sourceHash": "447cb20d7f71843e7a1bd1a38fa53a3cce5dc80c57b7a951fe32013fe17d8942",
+      "text": "<p>Vous ne subissez pas d’intrusion du MJ lorsque vous obtenez un 1 sur une tâche de discrétion.</p>"
+    },
+    {
+      "path": "system.benefits.1.name",
+      "sourceHash": "2ff16e4e708f34954b94f86b359e6a3669c0971b4897bc8442e3a4d62e942aa6",
+      "text": "Dégâts des armes de lancer légères"
+    },
+    {
+      "path": "system.benefits.1.description",
+      "sourceHash": "f46e499383ea6161e2bc4dee703e3d5280bf12e2fc22a352a36bbb2d36f979b1",
+      "text": "<p>Vous infligez +1 dégât avec les armes de lancer légères.</p>"
+    }
+  ]
+}

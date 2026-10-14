@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.escape-57d312370b50",
+  "sourceLogicalId": "ability.escape-57d312370b50",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "037c968467aa3fd7c059c7d0b57e3460aa332f30db816efcd98943724a1d8db0",
+      "text": "Échapper"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "bdf6d77a2a64ad8caad73f75174ad027c5d42322dcf03b37d35cd71c326b7a7f",
+      "text": "Lorsque vous faites un jet pour vous échapper, par exemple en vous libérant de vos liens, en vous glissant entre des barreaux, en rompant la prise d’une créature qui vous tient ou en vous dégageant de sables mouvants, et que votre résultat est inférieur à 9, considérez-le comme un 9. Cela signifie que vous ne subissez pas d’intrusion du MJ sur un 1. Action. Effort : augmentez de 3 le résultat minimum de cette aptitude. Au rang 3 : le résultat minimum de cette aptitude passe à 12."
+    }
+  ]
+}

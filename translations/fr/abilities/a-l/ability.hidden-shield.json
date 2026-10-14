@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.hidden-shield",
+  "sourceLogicalId": "ability.hidden-shield",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "c51d16ff47b6b61f52a07324e7abe24f6c987ab51959ace40b299767119efa2a",
+      "text": "Bouclier caché"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "359583b68d6a82075e10cfd59c9377d37b960bf4c5ba29ea20268f680f3957ee",
+      "text": "Un bouclier constitué d’un composite de métal et de polymères avancés est intégré à votre corps (probablement à votre bras). Il reste dissimulé jusqu’à ce que vous souhaitiez l’utiliser. Vous pouvez librement manier le bouclier d’une main comme une arme légère de corps à corps. En tant qu’action supplémentaire pendant votre tour, vous pouvez effectuer une attaque de corps à corps avec le bouclier, mais si vous le faites, l’attaque principale et celle du bouclier sont toutes deux entravées. Si votre bouclier est détruit en bloquant des blessures, vous ne pouvez plus l’utiliser avant d’avoir dépensé vos ressources pour le réparer, ce qui prend environ une journée."
+    }
+  ]
+}

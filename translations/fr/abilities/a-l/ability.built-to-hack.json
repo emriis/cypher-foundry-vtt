@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.built-to-hack",
+  "sourceLogicalId": "ability.built-to-hack",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "5ab71c00bb8065d79786ff1267f53f793a09aec2d47871ad085ffbfac0e6a2ba",
+      "text": "Conçu pour pirater"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "b44587eacce8eb36002079ba7872253375b386a7e781a21bd9e451aa70ac8c9f",
+      "text": "Lorsque vous faites un jet pour pirater un ordinateur ou une machine non intelligente et que votre résultat est inférieur à 9, considérez-le comme un 9. Cela signifie que vous ne subissez pas d’intrusion du MJ sur un 1. Les tâches de piratage, que vous pouvez entreprendre par votre capacité de connexion sans fil ou en vous connectant directement à la machine cible, comprennent l’intrusion dans des bases de données sécurisées, la prise de contrôle temporaire de tourelles à distance, le déverrouillage d’accès électroniques sécurisés, etc. Effort : augmentez de 3 le résultat minimum de cette aptitude. Aptitude passive. Au rang 3 : le résultat minimum de cette aptitude passe à 12."
+    }
+  ]
+}

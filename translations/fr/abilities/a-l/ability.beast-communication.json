@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.beast-communication",
+  "sourceLogicalId": "ability.beast-communication",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "3b5cb837088920686030896851c9fd0e0e1f25c63ef557977e2165cc832dfadc",
+      "text": "Communication animale"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "6dc80e603417f17288b8567c10936f93c0ccd95a428f06159133d896fdaf09d7",
+      "text": "Vous pouvez transmettre un concept simple à une créature qui, normalement, ne peut ni parler ni comprendre la parole. La créature peut aussi vous donner une réponse très simple à une question simple. Action."
+    }
+  ]
+}

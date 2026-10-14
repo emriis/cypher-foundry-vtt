@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.identify-magic",
+  "sourceLogicalId": "ability.identify-magic",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "17ba31bc5525d8a03190a9f6c5d8324283b472855bbe721933a3cff91381ca0e",
+      "text": "Identifier la magie"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "1a861dc0c83dc99feee3282b440f0bacf7daf857b736a550834d97358bcb4354",
+      "text": "Si vous avez détecté de la magie à l’aide de l’aptitude de rang 1, vous pouvez obtenir davantage de précisions sur ce que vous percevez : le niveau de la magie, sa source (un lanceur de sorts, une créature magique, un effet magique en cours ou un objet enchanté) et les effets généraux de la magie à l’œuvre. Action lente."
+    }
+  ]
+}

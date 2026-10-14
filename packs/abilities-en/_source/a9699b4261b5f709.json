@@ -14,7 +14,7 @@
       "amount": 1,
       "options": []
     },
-    "action": null,
+    "action": "action",
     "freeWeaponCategories": [],
     "freeArmorCategories": [],
     "freeWeaponFamilies": [],
@@ -23,6 +23,6 @@
     "grantedArmorItemCategory": "",
     "effects": [],
     "rollTables": [],
-    "description": "You attack in a way that has a greater risk of making an error but gains an additional benefit. Your GM intrusion range for this attack increases by 2 (from 1 on a d20 to 1–3 on a d20), but if you hit you can choose one of the following additional effects:"
+    "description": "<p>You attack in a way that has a greater risk of making an error but gains an additional benefit. Your GM intrusion range for this attack increases by 2 (from 1 on a d20 to 1–3 on a d20), but if you hit you can choose one of the following additional effects:</p>\n<p>Daring Lunge: The foe takes +2 damage.</p>\n<p>Disarming Agility: The attack inflicts 1 less damage, but your foe drops something they are holding in one hand (such as a weapon or shield). To retrieve the dropped item, the foe must use an action.</p>\n<p>Action.</p>"
   }
 }

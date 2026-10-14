@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.special-shot",
+  "sourceLogicalId": "ability.special-shot",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "171051ea0e048184c23472f37d9f9f6fdd774213901ca19347ee94f382f307c1",
+      "text": "Tir spécial"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "4d5de15438fb5e5217fb2b028d56996aecdc720a702f8e5e8ccb570e79d0660e",
+      "text": "Lorsque vous touchez une cible avec une attaque d’arme à feu, vous pouvez choisir de réduire les dégâts de 1 point pour atteindre un endroit précis. Les effets possibles comprennent notamment les suivants. Faire tomber d’un tir un objet tenu en main. Atteindre une jambe, une aile ou un autre membre servant au déplacement, ce qui réduit la vitesse maximale de déplacement à une distance immédiate pendant quelques jours ou jusqu’à des soins médicaux experts. Couper d’un tir une sangle retenant un sac à dos, une armure ou un objet similaire pour le faire tomber. Aptitude passive."
+    }
+  ]
+}

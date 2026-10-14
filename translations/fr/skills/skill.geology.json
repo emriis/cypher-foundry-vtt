@@ -1,0 +1,18 @@
+{
+  "logicalId": "skill.geology",
+  "sourceLogicalId": "skill.geology",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "54cda0543a402949d4e223cc16e9dbd93b48c514c48026db1fbf38cf711f46cd",
+      "text": "Géologie"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "844a59942374f8991dbdd23b92d711453edb58499e3c7ce1d388c345033e7785",
+      "text": "<p>Vous connaissez la structure, la composition et les processus planétaires, notamment le fonctionnement des séismes, des volcans et de la formation des ressources naturelles.</p>"
+    }
+  ]
+}

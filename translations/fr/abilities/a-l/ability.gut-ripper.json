@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.gut-ripper",
+  "sourceLogicalId": "ability.gut-ripper",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "cbca852c8d17e3fd1a31ef0e83be543ed8c8485a3b643c7bc5b0a6f841ccc873",
+      "text": "Éventreur"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "5867e1169ab1bced07c51f90b115a33fcb87f6dc3eb64692234db5769d95d4e8",
+      "text": "<p>Vous attaquez avec un couteau d’une manière qui augmente le risque de commettre une erreur, mais procure un bénéfice supplémentaire. La plage des résultats provoquant une intrusion du MJ pour cette attaque augmente de 2 (de 1 sur un d20 à 1–3 sur un d20), mais si vous touchez, vous pouvez choisir l’un des effets supplémentaires suivants :</p>\n<p>Entaille profonde : l’adversaire subit +2 dégâts.</p>\n<p>Les laisser saigner : la blessure saigne ; à votre prochain tour, l’adversaire subit 2 dégâts qui ignorent l’armure.</p>\n<p>Action.</p>"
+    }
+  ]
+}

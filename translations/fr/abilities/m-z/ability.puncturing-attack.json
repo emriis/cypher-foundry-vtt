@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.puncturing-attack",
+  "sourceLogicalId": "ability.puncturing-attack",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "c2ae85d4d1123369c21cda83dc7695f3ea2f5ee25d4caae34ec4937397326cdf",
+      "text": "Attaque perforante"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "45ca30d9a32530862e416201942adc3a4a9c7a3fbbda4602dcafe8b716719255",
+      "text": "<p>Vos attaques ignorent 2 points d’armure de votre adversaire.</p>"
+    }
+  ]
+}

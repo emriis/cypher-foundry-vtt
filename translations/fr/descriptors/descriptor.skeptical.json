@@ -1,0 +1,28 @@
+{
+  "logicalId": "descriptor.skeptical",
+  "sourceLogicalId": "descriptor.skeptical",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "f8ab36cc63c8e34cfc4fe4269a89c93ea6edcfabaa20175b02361b36c29981c4",
+      "text": "Sceptique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "1cbc0f1697510c53bb730850743744de6cbfdcbb795de26ce1e7eca6a8088bc6",
+      "text": "<p>Vous remettez en question les affirmations que les autres prennent souvent pour acquises. Vous n’êtes pas nécessairement un « saint Thomas », c’est-à-dire un sceptique qui refuse de croire quoi que ce soit sans en avoir fait personnellement l’expérience, mais il vous a souvent été utile de mettre en doute les déclarations, les opinions et les idées reçues que les autres vous présentent.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>+2 à votre Réserve d’Intellect</p>\n<p>Vous êtes entraîné pour l’une des compétences suivantes : Identification ou Analyse des intentions</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "c6c35a92ec25bdde90a81955b126e749dd3585af8f283bd7139349700a720f8d",
+      "text": "Identification"
+    },
+    {
+      "path": "system.skillOptions.1",
+      "sourceHash": "cdcb24358ca22d0138d75f04a3f51d529f0be8025e0ce18b7bda77724e4baea4",
+      "text": "Analyse des intentions"
+    }
+  ]
+}

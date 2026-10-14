@@ -2371,13 +2371,21 @@
       "id": "472e7732b7f841be",
       "name": "Idol",
       "field": "system.description",
-      "sha256": "9aa69909e874e753b972e126238cc057c9deaa764b4af08c8ad58eb30092e399",
+      "sha256": "fd4c800a34995215b5f6c7c8d2f49b31991990f7ce9960828e0c2f8474da12e8",
       "source": {
         "start": 1305,
-        "end": 1306,
-        "section": "Fantasy Genre / Swords & Sorcery / Priest"
+        "end": 1312,
+        "section": "Fantasy Genre / Swords & Sorcery / Priest",
+        "segments": [
+          {
+            "start": 1305,
+            "end": 1312,
+            "stripLeadingLabel": true
+          }
+        ],
+        "selection": "Complete Idol including Bestial Fury, Healing and Spiritual Cleanse benefits, NPC consequence, Effort and ritual timing; next Retribution definition excluded"
       },
-      "scope": "bounded-passage"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/abilities-en/_source/4790a2012f02bbac.json",
@@ -3250,24 +3258,32 @@
       "id": "5da9dbaa0336ab81",
       "name": "Audacious Blast",
       "field": "system.description",
-      "sha256": "d4f089b4e7ef67fbaa4e50b51c3fd544436d6df1f4b81c21663a7bf2ba5ff355",
+      "sha256": "87ed7beba26ac603c34a91214dcaf11fa186de89e1d7db81bdc1eff0ef9b684e",
       "source": {
         "start": 2432,
-        "end": 2432,
-        "section": "Science Fiction Genre / Space Opera / Starpilot"
+        "end": 2435,
+        "section": "Science Fiction Genre / Space Opera / Starpilot",
+        "segments": [
+          {
+            "start": 2432,
+            "end": 2435,
+            "stripLeadingLabel": true
+          }
+        ],
+        "selection": "Complete Audacious Blast including its embedded Disarming Shot/Piercing Accuracy options; separate GM callout excluded"
       },
-      "scope": "bounded-passage"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/abilities-en/_source/5e25ccb17f5abfa3.json",
       "id": "5e25ccb17f5abfa3",
       "name": "Poison Bite",
       "field": "system.description",
-      "sha256": "f024d361d13a8d3252080262ab36dcf6aeb67bf3b7e9acba69284b6936aa9cc5",
+      "sha256": "fd618718c87a207b5cdde8e689765acea2b9f51d6ea8f6c5e1579091eab70977",
       "scope": "bounded-passage",
       "source": {
         "start": 4389,
-        "end": 4390,
+        "end": 4389,
         "section": "Foci / Understanding Your Focus / Howls at the Moon"
       }
     },
@@ -3699,13 +3715,21 @@
       "id": "6c7c41fa266dbd72",
       "name": "Split Skull",
       "field": "system.description",
-      "sha256": "32aba9c92f62b0b7df657ba46ecf18e84a41e1fdf89453907e0b2851455f6301",
+      "sha256": "22c0b7cc76d8e40fee9697b1f7ab0d365f5d7d3106d7ff0de83bdc5e13b6bc6b",
       "source": {
         "start": 1236,
-        "end": 1236,
-        "section": "Fantasy Genre / Swords & Sorcery / Axe Fighter"
+        "end": 1239,
+        "section": "Fantasy Genre / Swords & Sorcery / Axe Fighter",
+        "segments": [
+          {
+            "start": 1236,
+            "end": 1239,
+            "stripLeadingLabel": true
+          }
+        ],
+        "selection": "Complete Split Skull with embedded Brute Force/Head Trauma choices; separate GM callout excluded"
       },
-      "scope": "bounded-passage"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/abilities-en/_source/6cad3b9e78af3a07.json",
@@ -4798,13 +4822,21 @@
       "id": "8df5baa32a6dbbbc",
       "name": "Gut Ripper",
       "field": "system.description",
-      "sha256": "482abe4c8fc386cb8b42e38b1558711ac28566d642763aa67c52f777c23773f8",
+      "sha256": "71ebbc0ad0fbfcaffccdc04ff4bb994392b4ef1a4baba837c9a7174bb48ecf84",
       "source": {
         "start": 1271,
-        "end": 1271,
-        "section": "Fantasy Genre / Swords & Sorcery / Knife Fighter"
+        "end": 1274,
+        "section": "Fantasy Genre / Swords & Sorcery / Knife Fighter",
+        "segments": [
+          {
+            "start": 1271,
+            "end": 1274,
+            "stripLeadingLabel": true
+          }
+        ],
+        "selection": "Complete Gut Ripper with embedded Deep Slice/Let Them Bleed choices; separate GM callout excluded"
       },
-      "scope": "bounded-passage"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/abilities-en/_source/8e92b89ce32bebc6.json",
@@ -5809,13 +5841,21 @@
       "id": "a9699b4261b5f709",
       "name": "Flamboyant Swordplay",
       "field": "system.description",
-      "sha256": "3ad3879916bc80145d3bfa5a3640ebd74ecd335da1dd4649189497989d636252",
+      "sha256": "8f9fc29a95ae2b3d9ffa0d378941a9e9589258980090045c3481702b9c5cc9d7",
       "source": {
         "start": 1647,
-        "end": 1647,
-        "section": "Fantasy Genre / Epic Fantasy / Swashbuckler"
+        "end": 1650,
+        "section": "Fantasy Genre / Epic Fantasy / Swashbuckler",
+        "segments": [
+          {
+            "start": 1647,
+            "end": 1650,
+            "stripLeadingLabel": true
+          }
+        ],
+        "selection": "Complete Flamboyant Swordplay with embedded Daring Lunge/Disarming Agility choices; separate GM callout excluded"
       },
-      "scope": "bounded-passage"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/abilities-en/_source/a97edbe5b08620a4.json",
@@ -6752,13 +6792,21 @@
       "id": "c527bf562ea77e1c",
       "name": "Sorcerous Suggestion",
       "field": "system.description",
-      "sha256": "7c4b5094185eae0a53704356fad2198c369da638ef664845ef12aaaf70d20769",
+      "sha256": "23f4e00b48f312766904e97c3f718a05da37ae1921e3158da7034ac7b79baa43",
       "source": {
         "start": 1348,
-        "end": 1351,
-        "section": "Fantasy Genre / Swords & Sorcery / Sorcerer"
+        "end": 1348,
+        "section": "Fantasy Genre / Swords & Sorcery / Sorcerer",
+        "segments": [
+          {
+            "start": 1348,
+            "end": 1348,
+            "stripLeadingLabel": true
+          }
+        ],
+        "selection": "Sorcerous Suggestion child only; Open Inner Eye ritual timing and Sorcerer editorial callout remain outside this child"
       },
-      "scope": "bounded-passage"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/abilities-en/_source/c5385d09f7d0a50f.json",
@@ -8510,13 +8558,21 @@
       "id": "fb781f705a259c99",
       "name": "Swing Through",
       "field": "system.description",
-      "sha256": "e6496ac9518c48bb29bc0130551d2be33b78d9467fd6e3e99c95e6522f97cde2",
+      "sha256": "ee594c492391477962dd4f5c6d0f688e0659a32956c87ae60a908abff3072fb4",
       "source": {
         "start": 1383,
-        "end": 1383,
-        "section": "Fantasy Genre / Swords & Sorcery / Sword Fighter"
+        "end": 1386,
+        "section": "Fantasy Genre / Swords & Sorcery / Sword Fighter",
+        "segments": [
+          {
+            "start": 1383,
+            "end": 1386,
+            "stripLeadingLabel": true
+          }
+        ],
+        "selection": "Complete Swing Through with embedded Eat Steel/Slice and Step choices; separate GM callout excluded"
       },
-      "scope": "bounded-passage"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/abilities-en/_source/fbb4222a43856210.json",
@@ -19040,546 +19096,840 @@
       "id": "abidesinstC609BA",
       "name": "Abides in Stone",
       "field": "system.description",
-      "sha256": "0a41426082a92b98abab05403772da37839d0c35e92574bc48169a54647a3eb2",
+      "sha256": "76438083892b21cf04375523d0687220f5889a3e28aac2d6883c8ffc89f11bce",
       "source": {
-        "start": 3504,
-        "end": 3504,
-        "section": "Foci / Understanding Your Focus / Abides in Stone"
+        "start": 3503,
+        "end": 3506,
+        "section": "Foci / Understanding Your Focus / Abides in Stone",
+        "segments": [
+          {
+            "start": 3503,
+            "end": 3506
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/blazes-with-fire.json",
       "id": "blazeswith1B6077",
       "name": "Blazes With Fire",
       "field": "system.description",
-      "sha256": "65d610931fa099dd3856bf1fd463cff2dd0e75d81267de7daa740b5d3c03e493",
+      "sha256": "9589dfca3333c4de2f4c704b2c3225154ce70479945f74ba3f11272aa7941590",
       "source": {
         "start": 3540,
-        "end": 3540,
-        "section": "Foci / Understanding Your Focus / Blazes With Fire"
+        "end": 3542,
+        "section": "Foci / Understanding Your Focus / Blazes With Fire",
+        "segments": [
+          {
+            "start": 3540,
+            "end": 3542
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/builds-allies.json",
       "id": "buildsalliE105E2",
       "name": "Builds Allies",
       "field": "system.description",
-      "sha256": "134cf58085cb1b27b7b130b027da28aed84e263948da24072bb0563d9af78fa0",
+      "sha256": "cd8612113199b97da6bba6262fc817bd452d56bab9b6d62ba78981552f267446",
       "source": {
         "start": 3571,
-        "end": 3571,
-        "section": "Foci / Understanding Your Focus / Builds Allies"
+        "end": 3576,
+        "section": "Foci / Understanding Your Focus / Builds Allies",
+        "segments": [
+          {
+            "start": 3571,
+            "end": 3576
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/carries-a-gun.json",
       "id": "carriesaguA8BEFF",
       "name": "Carries a Gun",
       "field": "system.description",
-      "sha256": "70fc5af02b56d4de45152b4677a8fa61b7b971efd6b1c6546c1f49fc59372576",
+      "sha256": "7e69c5c82af5c4527aa75f2591d2859ce2e62598ef7c9d231456578399d6e310",
       "source": {
         "start": 3607,
-        "end": 3607,
-        "section": "Foci / Understanding Your Focus / Carries a Gun"
+        "end": 3612,
+        "section": "Foci / Understanding Your Focus / Carries a Gun",
+        "segments": [
+          {
+            "start": 3607,
+            "end": 3612
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/casts-spells.json",
       "id": "castsspell489030",
       "name": "Casts Spells",
       "field": "system.description",
-      "sha256": "ad048b04360b8fe28070804ff9130df86a6397f2c95ae794cf2946fc8ea38471",
+      "sha256": "c158b9dee4cc157d2feff24f3b9e5eb363e8b3a8b9bb69371ab4beba62ca4277",
       "source": {
         "start": 3652,
-        "end": 3652,
-        "section": "Foci / Understanding Your Focus / Casts Spells"
+        "end": 3656,
+        "section": "Foci / Understanding Your Focus / Casts Spells",
+        "segments": [
+          {
+            "start": 3652,
+            "end": 3656
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/changes-shape.json",
       "id": "changessha9EFDA0",
       "name": "Changes Shape",
       "field": "system.description",
-      "sha256": "e4128ecf375d946fff3bd7a78ab062ffe5aa91dc9609a81d77b80273f2e04e48",
+      "sha256": "e4858cc41877923f713509507e987af00a82b65da16d8438832a56062f330f7d",
       "source": {
         "start": 3713,
-        "end": 3713,
-        "section": "Foci / Understanding Your Focus / Changes Shape"
+        "end": 3717,
+        "section": "Foci / Understanding Your Focus / Changes Shape",
+        "segments": [
+          {
+            "start": 3713,
+            "end": 3717
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/commands-mental-powers.json",
       "id": "commandsme2D0A3B",
       "name": "Commands Mental Powers",
       "field": "system.description",
-      "sha256": "3c447faa8bbbac80b3666f0344e08152e495c2ace45a2ffca5f23524db529d53",
+      "sha256": "a016301a11c2a4cb99f116c8848ff7691654a0d8889c4d755bf341daf35cf8c0",
       "source": {
         "start": 3837,
-        "end": 3837,
-        "section": "Foci / Understanding Your Focus / Commands Mental Powers"
+        "end": 3840,
+        "section": "Foci / Understanding Your Focus / Commands Mental Powers",
+        "segments": [
+          {
+            "start": 3837,
+            "end": 3840
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/consorts-with-the-dead.json",
       "id": "consortswiF70F00",
       "name": "Consorts With the Dead",
       "field": "system.description",
-      "sha256": "9e2739c13eb54c7178fd423d5d6041ce214078ce78b127e212cf2e4a166ab85f",
+      "sha256": "cbacf2b0db58377ac9bcd9f2baa74f00fe72a39d2e32c403bdd81e6c6e54cb94",
       "source": {
         "start": 3875,
-        "end": 3875,
-        "section": "Foci / Understanding Your Focus / Consorts With the Dead"
+        "end": 3878,
+        "section": "Foci / Understanding Your Focus / Consorts With the Dead",
+        "segments": [
+          {
+            "start": 3875,
+            "end": 3878
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/controls-beasts.json",
       "id": "controlsbeDF587B",
       "name": "Controls Beasts",
       "field": "system.description",
-      "sha256": "5cdab648f8fb90f88e36137fdfa35a6cc51f7c46db4d8747ca0f7635989cbed9",
+      "sha256": "f2a9199ac35bd70c25249b3e798e434d0a69abe14ad4b78bf409e625f52ef04f",
       "source": {
         "start": 3916,
-        "end": 3916,
-        "section": "Foci / Understanding Your Focus / Controls Beasts"
+        "end": 3919,
+        "section": "Foci / Understanding Your Focus / Controls Beasts",
+        "segments": [
+          {
+            "start": 3916,
+            "end": 3919
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/crafts-illusions.json",
       "id": "craftsillu6ADE99",
       "name": "Crafts Illusions",
       "field": "system.description",
-      "sha256": "2308109162b3eaa2604a7e5d42fdf8520f9f3ca21ecd57f57fdd0b277d0e2587",
+      "sha256": "db94b2724ce16879eb3089815497e6436eb90942a64ea6c3ebe6c582edfb9012",
       "source": {
         "start": 3954,
-        "end": 3954,
-        "section": "Foci / Understanding Your Focus / Crafts Illusions"
+        "end": 3957,
+        "section": "Foci / Understanding Your Focus / Crafts Illusions",
+        "segments": [
+          {
+            "start": 3954,
+            "end": 3957
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/doesnt-do-much.json",
       "id": "doesntdomuBBA343",
       "name": "Doesn't Do Much",
       "field": "system.description",
-      "sha256": "0d4d901ea6cdab72634d3603868ecbc8b3b46afd4e58d6489047c3e67350e350",
+      "sha256": "6fc2b34e573706f3c8d3b8efd376fb7b1831531fec233c1a7eab54d7e9a6e226",
       "source": {
         "start": 3994,
-        "end": 3994,
-        "section": "Foci / Understanding Your Focus / Doesn’t Do Much"
+        "end": 3997,
+        "section": "Foci / Understanding Your Focus / Doesn’t Do Much",
+        "segments": [
+          {
+            "start": 3994,
+            "end": 3997
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/employs-magnetism.json",
       "id": "employsmagFC84B3",
       "name": "Employs Magnetism",
       "field": "system.description",
-      "sha256": "61144295f096b009a67293916a414bdcda2e0cca41db1c94753db60bf7def622",
+      "sha256": "40ebf0840d85ebb441292f7079f43888b37081b4f889abc77c488e14e9aa19d1",
       "source": {
         "start": 4020,
-        "end": 4020,
-        "section": "Foci / Understanding Your Focus / Employs Magnetism"
+        "end": 4023,
+        "section": "Foci / Understanding Your Focus / Employs Magnetism",
+        "segments": [
+          {
+            "start": 4020,
+            "end": 4023
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/entertains.json",
       "id": "entertains1AA590",
       "name": "Entertains",
       "field": "system.description",
-      "sha256": "4078d819b05987af498123ead42a565e5442945feb6a251556a1864567048404",
+      "sha256": "4d8d6f8e94d5a11c55d8a1578d1f47883d4fcd19f6d3500563c6af409b1c6052",
       "source": {
         "start": 4067,
-        "end": 4067,
-        "section": "Foci / Understanding Your Focus / Entertains"
+        "end": 4070,
+        "section": "Foci / Understanding Your Focus / Entertains",
+        "segments": [
+          {
+            "start": 4067,
+            "end": 4070
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/explores.json",
       "id": "exploresxx24D578",
       "name": "Explores",
       "field": "system.description",
-      "sha256": "076e4d3b5ff29a1515b9d90b506142f5c7a9b8105864c3bc8e2586bc9ea4e54d",
+      "sha256": "1f087e51d49d22ffd7ec705db7820534dd6939f68d0909844b50d43473cb31f4",
       "source": {
         "start": 4103,
-        "end": 4103,
-        "section": "Foci / Understanding Your Focus / Explores"
+        "end": 4106,
+        "section": "Foci / Understanding Your Focus / Explores",
+        "segments": [
+          {
+            "start": 4103,
+            "end": 4106
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/fights-dirty.json",
       "id": "fightsdirtFF551D",
       "name": "Fights Dirty",
       "field": "system.description",
-      "sha256": "db743c718069f565f33598bb2776ee679bda5cd21dcf242dac374c321b052a9c",
+      "sha256": "f3bcda3d031106139418aea71d06d22c2e285ffa3b0c62f33bde6d30fe1302de",
       "source": {
         "start": 4139,
-        "end": 4139,
-        "section": "Foci / Understanding Your Focus / Fights Dirty"
+        "end": 4142,
+        "section": "Foci / Understanding Your Focus / Fights Dirty",
+        "segments": [
+          {
+            "start": 4139,
+            "end": 4142
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/fights-unarmed.json",
       "id": "fightsunar882F49",
       "name": "Fights Unarmed",
       "field": "system.description",
-      "sha256": "916c630618c78990dbc13ce4ef5f8fcce857dd1d1016724d203291c8f9c2bebe",
+      "sha256": "532af9a0299b88aaf732f2bdd375b53404d3f563a00ce6747835a9caadfbc3de",
       "source": {
         "start": 4178,
-        "end": 4178,
-        "section": "Foci / Understanding Your Focus / Fights Unarmed"
+        "end": 4181,
+        "section": "Foci / Understanding Your Focus / Fights Unarmed",
+        "segments": [
+          {
+            "start": 4178,
+            "end": 4181
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/fights-with-panache.json",
       "id": "fightswithC3802D",
       "name": "Fights With Panache",
       "field": "system.description",
-      "sha256": "2cadbf49f983e25f80ff1e067039b8a1137f7b5e621f000b16def24ae4c25502",
+      "sha256": "2700a2d3f04451b55e668a373abcffa8035937ecfde41e48842e8a19b6348567",
       "source": {
         "start": 4209,
-        "end": 4209,
-        "section": "Foci / Understanding Your Focus / Fights With Panache"
+        "end": 4212,
+        "section": "Foci / Understanding Your Focus / Fights With Panache",
+        "segments": [
+          {
+            "start": 4209,
+            "end": 4212
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/fuses-flesh-and-steel.json",
       "id": "fusesflesh7A8E2C",
       "name": "Fuses Flesh and Steel",
       "field": "system.description",
-      "sha256": "87105d8814ac03df76bc02e051b9b75dfd2b55a135f677873b3e22cee1429345",
+      "sha256": "1133ac30982f88fe919e568da76816ac46ef48bdbb557bf39ba09868af211e22",
       "source": {
         "start": 4249,
-        "end": 4249,
-        "section": "Foci / Understanding Your Focus / Fuses Flesh and Steel"
+        "end": 4252,
+        "section": "Foci / Understanding Your Focus / Fuses Flesh and Steel",
+        "segments": [
+          {
+            "start": 4249,
+            "end": 4252
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/fuses-mind-and-machine.json",
       "id": "fusesminda11815F",
       "name": "Fuses Mind and Machine",
       "field": "system.description",
-      "sha256": "e361aeba33b9f988cec59d066d9809bbabde922a7a33a7853ec6cd4247c8c142",
+      "sha256": "332032dee1b12fb30a8ae09870d026e3bd1a1ec511b3e332224195128e7a561a",
       "source": {
         "start": 4292,
-        "end": 4292,
-        "section": "Foci / Understanding Your Focus / Fuses Mind and Machine"
+        "end": 4295,
+        "section": "Foci / Understanding Your Focus / Fuses Mind and Machine",
+        "segments": [
+          {
+            "start": 4292,
+            "end": 4295
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/grows-to-towering-heights.json",
       "id": "growstotow738FB1",
       "name": "Grows to Towering Heights",
       "field": "system.description",
-      "sha256": "d39b07b18f46a27fbe05cd980f183e2a82769a126afbe9a6450a93ad9a08178c",
+      "sha256": "e5a8e725dea5c6c85bd5bad4c9e168bbe4dd6236d3e24b7bfaf8613127b43c4c",
       "source": {
         "start": 4331,
-        "end": 4331,
-        "section": "Foci / Understanding Your Focus / Grows to Towering Heights"
+        "end": 4334,
+        "section": "Foci / Understanding Your Focus / Grows to Towering Heights",
+        "segments": [
+          {
+            "start": 4331,
+            "end": 4334
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/howls-at-the-moon.json",
       "id": "howlsatthe8892A3",
       "name": "Howls at the Moon",
       "field": "system.description",
-      "sha256": "3c0a25c9420db474796211ff77d62ee416739b25662b766f7c4033474b0580b1",
+      "sha256": "7ef64b8b6b9b8b08db24ce3478b89655f9a38642a5205f97a61faa98ecdb8a70",
       "source": {
         "start": 4365,
-        "end": 4365,
-        "section": "Foci / Understanding Your Focus / Howls at the Moon"
+        "end": 4368,
+        "section": "Foci / Understanding Your Focus / Howls at the Moon",
+        "segments": [
+          {
+            "start": 4365,
+            "end": 4368
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/hunts.json",
       "id": "huntsxxxxxD663B1",
       "name": "Hunts",
       "field": "system.description",
-      "sha256": "469d75bc327d35bf806e25fc00c12ff64751d66e9bfaa33c899774ab24ba3d9a",
+      "sha256": "593df044d3b3b1ed4e0934800a2bbe8b9d57c4abf5dbe0c330a6a8991b43a464",
       "source": {
         "start": 4401,
-        "end": 4401,
-        "section": "Foci / Understanding Your Focus / Hunts"
+        "end": 4404,
+        "section": "Foci / Understanding Your Focus / Hunts",
+        "segments": [
+          {
+            "start": 4401,
+            "end": 4404
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/infiltrates.json",
       "id": "infiltrate6C997E",
       "name": "Infiltrates",
       "field": "system.description",
-      "sha256": "905f7ce11eae7f085cd94047af1f7d98e490f36e71aef2c3cfd16be11cf85eec",
+      "sha256": "63459ae0c127d2b10c912edee991edf3d213f1272cb87b13ab7af10278d40001",
       "source": {
         "start": 4439,
-        "end": 4439,
-        "section": "Foci / Understanding Your Focus / Infiltrates"
+        "end": 4442,
+        "section": "Foci / Understanding Your Focus / Infiltrates",
+        "segments": [
+          {
+            "start": 4439,
+            "end": 4442
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/leads.json",
       "id": "leadsxxxxxAEF450",
       "name": "Leads",
       "field": "system.description",
-      "sha256": "e1cf392fabb3c4935e4a3c6fea485a70ca2ac4f65925bdca2d43f15f06e69566",
+      "sha256": "ded4ebccc0f45b935ac308083792c10c822768ba6a2aecaf923131051b8a3d7c",
       "source": {
         "start": 4479,
-        "end": 4479,
-        "section": "Foci / Understanding Your Focus / Leads"
+        "end": 4482,
+        "section": "Foci / Understanding Your Focus / Leads",
+        "segments": [
+          {
+            "start": 4479,
+            "end": 4482
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/masters-telekinesis.json",
       "id": "masterstelE70965",
       "name": "Masters Telekinesis",
       "field": "system.description",
-      "sha256": "bcf2248793a75b7d9751a0767a60ff5462c300b18a47abb9d04c24323f16d3a1",
+      "sha256": "2b3b818ef6631c8e8affa7ad1eb57c9cad1ea7a6d94fa3ed0ad4755523f51290",
       "source": {
         "start": 4523,
-        "end": 4523,
-        "section": "Foci / Understanding Your Focus / Masters Telekinesis"
+        "end": 4526,
+        "section": "Foci / Understanding Your Focus / Masters Telekinesis",
+        "segments": [
+          {
+            "start": 4523,
+            "end": 4526
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/masters-weaponry.json",
       "id": "mastersweaD08626",
       "name": "Masters Weaponry",
       "field": "system.description",
-      "sha256": "114adb2bc7689f0b40875803820feab891af291071e4de8739929b485a5b9658",
+      "sha256": "ef0d7cb3e8ed8caa6f8abeb372373f8665511699c5c2090b307aa6a529944878",
       "source": {
         "start": 4565,
-        "end": 4565,
-        "section": "Foci / Understanding Your Focus / Masters Weaponry"
+        "end": 4569,
+        "section": "Foci / Understanding Your Focus / Masters Weaponry",
+        "segments": [
+          {
+            "start": 4565,
+            "end": 4569
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/moves-like-the-wind.json",
       "id": "movesliket07248B",
       "name": "Moves Like the Wind",
       "field": "system.description",
-      "sha256": "be34123018ae50e62c4f5646942b8bbdc0abfdab2d2e3d0c6625282f0268021a",
+      "sha256": "642663e942b905f1f00101023c4cb108d8457fc8ca2890ba370e905379ab9bf2",
       "source": {
         "start": 4622,
-        "end": 4622,
-        "section": "Foci / Understanding Your Focus / Moves Like the Wind"
+        "end": 4627,
+        "section": "Foci / Understanding Your Focus / Moves Like the Wind",
+        "segments": [
+          {
+            "start": 4622,
+            "end": 4627
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/never-says-die.json",
       "id": "neversaysd0738A3",
       "name": "Never Says Die",
       "field": "system.description",
-      "sha256": "1b598565b2972e1a5c68607af8c8728da85ded6aecc7f44ec505dc12debbb51f",
+      "sha256": "215e8ede5d0b8b052aaf7b3baf13b601432dcf7c44bb9db11f1f0c3d3516c657",
       "source": {
         "start": 4660,
-        "end": 4660,
-        "section": "Foci / Understanding Your Focus / Never Says Die"
+        "end": 4663,
+        "section": "Foci / Understanding Your Focus / Never Says Die",
+        "segments": [
+          {
+            "start": 4660,
+            "end": 4663
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/performs-feats-of-strength.json",
       "id": "performsfeB8CCF4",
       "name": "Performs Feats of Strength",
       "field": "system.description",
-      "sha256": "1a72536d79fb1215415c154c6445430819f6da6d2401e348467192e46c49c34b",
+      "sha256": "2d3eea0644f2486a1cdf7fbfb585db3c0367e6f0303ec2b8c7f357eb940048a7",
       "source": {
         "start": 4696,
-        "end": 4696,
-        "section": "Foci / Understanding Your Focus / Performs Feats of Strength"
+        "end": 4699,
+        "section": "Foci / Understanding Your Focus / Performs Feats of Strength",
+        "segments": [
+          {
+            "start": 4696,
+            "end": 4699
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/quells-evil.json",
       "id": "quellsevil7D0321",
       "name": "Quells Evil",
       "field": "system.description",
-      "sha256": "ef56634be859b3e986ff4c5ba7ad918a5ff832f04df1b805e39c7516c2a8865a",
+      "sha256": "c0d35a2534ebb9e0e5a20f7e6d69ee45a994ffa4e0f1899354dec0ffefb85bb4",
       "source": {
         "start": 4727,
-        "end": 4727,
-        "section": "Foci / Understanding Your Focus / Quells Evil"
+        "end": 4730,
+        "section": "Foci / Understanding Your Focus / Quells Evil",
+        "segments": [
+          {
+            "start": 4727,
+            "end": 4730
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/reveres-a-supernatural-force.json",
       "id": "reveresasuB73D53",
       "name": "Reveres a Supernatural Force",
       "field": "system.description",
-      "sha256": "a937bc1a6dc10d6e686cd50ff4765f556f1937cd66781b4255b93c38c2763985",
+      "sha256": "74543b8f90380ba67f1df8091745d9ce4614f624959151417246f38b357791cb",
       "source": {
         "start": 4765,
-        "end": 4765,
-        "section": "Foci / Understanding Your Focus / Reveres a Supernatural Force"
+        "end": 4768,
+        "section": "Foci / Understanding Your Focus / Reveres a Supernatural Force",
+        "segments": [
+          {
+            "start": 4765,
+            "end": 4768
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/rides-the-lightning.json",
       "id": "ridestheliA835CF",
       "name": "Rides the Lightning",
       "field": "system.description",
-      "sha256": "476742e2e56011e710bfc1256b533cf1e2d1d0959b7b63f64f0c1557d6dc1047",
+      "sha256": "7516b1acbf7287377e34b175464ce70ea5119662bd0024636f07098c2fb1fd64",
       "source": {
         "start": 4797,
-        "end": 4797,
-        "section": "Foci / Understanding Your Focus / Rides the Lightning"
+        "end": 4800,
+        "section": "Foci / Understanding Your Focus / Rides the Lightning",
+        "segments": [
+          {
+            "start": 4797,
+            "end": 4800
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/sneaks-through-the-shadows.json",
       "id": "sneaksthroA199BB",
       "name": "Sneaks Through the Shadows",
       "field": "system.description",
-      "sha256": "7479ff52023e7dedca57a17ecefde00ef61e005335c29ac56919f85eff39218d",
+      "sha256": "0da6c682d2ee627b2ae4d4ba556bfc8df8fcc4c549eed59cd81196be70aa5ee3",
       "source": {
         "start": 4845,
-        "end": 4845,
-        "section": "Foci / Understanding Your Focus / Sneaks Through the Shadows"
+        "end": 4848,
+        "section": "Foci / Understanding Your Focus / Sneaks Through the Shadows",
+        "segments": [
+          {
+            "start": 4845,
+            "end": 4848
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/solves-mysteries.json",
       "id": "solvesmyst69025C",
       "name": "Solves Mysteries",
       "field": "system.description",
-      "sha256": "9b107a07f8fc29f5b98489a90d7ae25fdce4c16b29106aec816294169cd018a6",
+      "sha256": "539275d5dd9c2632bf61b248e7d329b722ab9a33f117bb09d80e46fe04d55101",
       "source": {
         "start": 4876,
-        "end": 4876,
-        "section": "Foci / Understanding Your Focus / Solves Mysteries"
+        "end": 4879,
+        "section": "Foci / Understanding Your Focus / Solves Mysteries",
+        "segments": [
+          {
+            "start": 4876,
+            "end": 4879
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/speaks-for-the-land.json",
       "id": "speaksfort77CB10",
       "name": "Speaks for the Land",
       "field": "system.description",
-      "sha256": "19729993c600b21fce06e70c2dde17204a5956817d4b4b33bbc472ae8d34df91",
+      "sha256": "721496404de096e5ec2d1633aee71444ef45c43a21848408ec4fcf3a64df16b2",
       "source": {
         "start": 4911,
-        "end": 4911,
-        "section": "Foci / Understanding Your Focus / Speaks for the Land"
+        "end": 4914,
+        "section": "Foci / Understanding Your Focus / Speaks for the Land",
+        "segments": [
+          {
+            "start": 4911,
+            "end": 4914
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/stands-like-a-bastion.json",
       "id": "standslikeBF0452",
       "name": "Stands Like A Bastion",
       "field": "system.description",
-      "sha256": "76e08ce8df1d7750fa232ce401075b57ce2ceb26527d3c7b1cfe020c482ab25a",
+      "sha256": "2ec9e9ce65a80e115d5423dbe2d4fbc101fa9ebdba0ea2f98709f993a9b0ee55",
       "source": {
         "start": 4955,
-        "end": 4955,
-        "section": "Foci / Understanding Your Focus / Stands Like A Bastion"
+        "end": 4959,
+        "section": "Foci / Understanding Your Focus / Stands Like A Bastion",
+        "segments": [
+          {
+            "start": 4955,
+            "end": 4959
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/strikes-with-mystic-might.json",
       "id": "strikeswit88C320",
       "name": "Strikes With Mystic Might",
       "field": "system.description",
-      "sha256": "47ad8153d9c3a864c4536e96a9a5285bb5b6f9ed5534bfcabed5f8fa67ee0e97",
+      "sha256": "2825d77548beca0a426d6201d73301e31b26644cbbe0cd108e9561b6df2ce3f6",
       "source": {
         "start": 4992,
-        "end": 4992,
-        "section": "Foci / Understanding Your Focus / Strikes With Mystic Might"
+        "end": 4995,
+        "section": "Foci / Understanding Your Focus / Strikes With Mystic Might",
+        "segments": [
+          {
+            "start": 4992,
+            "end": 4995
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/talks-to-machines.json",
       "id": "talkstomac4E0F3A",
       "name": "Talks to Machines",
       "field": "system.description",
-      "sha256": "67eca51738e255fa2fb953d4d2dd0c1c42e8145dd3b30247627b3020ea911c61",
+      "sha256": "a70f81eebedfafc01690f3d894e83a0f7af9a52acfe844ad16918b15000bffa6",
       "source": {
         "start": 5027,
-        "end": 5027,
-        "section": "Foci / Understanding Your Focus / Talks to Machines"
+        "end": 5031,
+        "section": "Foci / Understanding Your Focus / Talks to Machines",
+        "segments": [
+          {
+            "start": 5027,
+            "end": 5031
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/tends-to-the-wounded.json",
       "id": "tendstotheE5D9C7",
       "name": "Tends to the Wounded",
       "field": "system.description",
-      "sha256": "f3410bb2d82fa6a829a11c947415321bed273fb541ab68f0231a3e9a98ec8be6",
+      "sha256": "8f924e388245cb8f90e9a62cfa72e5d3efb6d9b3a4eaa50e8871a72c9fa48069",
       "source": {
         "start": 5076,
-        "end": 5076,
-        "section": "Foci / Understanding Your Focus / Tends to the Wounded"
+        "end": 5079,
+        "section": "Foci / Understanding Your Focus / Tends to the Wounded",
+        "segments": [
+          {
+            "start": 5076,
+            "end": 5079
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/walks-through-walls.json",
       "id": "walksthrou280AD5",
       "name": "Walks Through Walls",
       "field": "system.description",
-      "sha256": "5e7f2fdbf38f5228341b2711a97a37a8c05862f04fae8aab21101a95ee34c6be",
+      "sha256": "baf75603a16f5445b101d0f79901f049068c5b8745d472ff217eeb2640a539d7",
       "source": {
         "start": 5115,
-        "end": 5115,
-        "section": "Foci / Understanding Your Focus / Walks Through Walls"
+        "end": 5118,
+        "section": "Foci / Understanding Your Focus / Walks Through Walls",
+        "segments": [
+          {
+            "start": 5115,
+            "end": 5118
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/wears-a-sheen-of-ice.json",
       "id": "wearsashee6F9BB4",
       "name": "Wears a Sheen of Ice",
       "field": "system.description",
-      "sha256": "a08f667cccd245a313938f474bd8c9e1c24819338f44f7c5ecc40e0fc4c9bff8",
+      "sha256": "ca4dba00497414b11514a169b10645d810dba92bb3cb57ce34d5fb2f91427621",
       "source": {
         "start": 5157,
-        "end": 5157,
-        "section": "Foci / Understanding Your Focus / Wears a Sheen of Ice"
+        "end": 5160,
+        "section": "Foci / Understanding Your Focus / Wears a Sheen of Ice",
+        "segments": [
+          {
+            "start": 5157,
+            "end": 5160
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/foci-en/_source/works-for-a-living.json",
       "id": "worksforal856231",
       "name": "Works for a Living",
       "field": "system.description",
-      "sha256": "408484db4a4778ab6a78ded79333e0fb6829337a0fd95e578a64ee3f17c02f95",
+      "sha256": "6e74b40692b4ff4f9201a59c72cd71a2e61830e9ef51060cca3784d701d96758",
       "source": {
         "start": 5198,
-        "end": 5198,
-        "section": "Foci / Understanding Your Focus / Works for a Living"
+        "end": 5201,
+        "section": "Foci / Understanding Your Focus / Works for a Living",
+        "segments": [
+          {
+            "start": 5198,
+            "end": 5201
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/rules-en/_source/a1b2c3d4e5f60708.json",
@@ -20544,715 +20894,1329 @@
       "id": "42r1hx6a6x7XwEz0",
       "name": "Android",
       "field": "system.description",
-      "sha256": "477d1fdc7c460115e8e5522ec9d87aba95e3924bfcf6aef789a4b5d698ab30eb",
+      "sha256": "291ee5f018455b9d7a04f9f939a53fc20e884510c0e2312e4048c068bfc41252",
       "source": {
         "start": 2259,
-        "end": 2260,
-        "section": "Science Fiction Genre / Space Opera / Android"
+        "end": 2302,
+        "section": "Science Fiction Genre / Space Opera / Android",
+        "segments": [
+          {
+            "start": 2259,
+            "end": 2281
+          },
+          {
+            "start": 2300,
+            "end": 2302
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/archer-epic-fantasy.json",
       "id": "WViQX05LUq5DD9c8",
       "name": "Archer",
       "field": "system.description",
-      "sha256": "1c35e1e056e8c26c435ca664a4edcae4877aed3195196608cd08a1535509b5ca",
+      "sha256": "e5c5458a33c74565137e7868f5ab39aded89c06a9b79f34b5c09c594fdd03cfd",
       "source": {
         "start": 1179,
-        "end": 1180,
-        "section": "Fantasy Genre / Swords & Sorcery / Archer"
+        "end": 1555,
+        "section": "Fantasy Genre / Epic Fantasy / Archer (Epic Fantasy)",
+        "segments": [
+          {
+            "start": 1555,
+            "end": 1555
+          },
+          {
+            "start": 1179,
+            "end": 1199
+          },
+          {
+            "start": 1205,
+            "end": 1207
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/archer.json",
       "id": "jaG0L5YF0VDKs8eG",
       "name": "Archer",
       "field": "system.description",
-      "sha256": "1c35e1e056e8c26c435ca664a4edcae4877aed3195196608cd08a1535509b5ca",
+      "sha256": "a6acff9aea45bba74a18486d77e1b91c41c195b11e532115e7be655e7bb3ecfd",
       "source": {
         "start": 1179,
-        "end": 1180,
-        "section": "Fantasy Genre / Swords & Sorcery / Archer"
+        "end": 1207,
+        "section": "Fantasy Genre / Swords & Sorcery / Archer",
+        "segments": [
+          {
+            "start": 1179,
+            "end": 1199
+          },
+          {
+            "start": 1205,
+            "end": 1207
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/axe-fighter.json",
       "id": "FUz05AfjlxPzrHTz",
       "name": "Axe Fighter",
       "field": "system.description",
-      "sha256": "2c9218b940572fb967f5ec4f27f806081e28fd7666a99ac45c07927d17d88503",
+      "sha256": "d4d402b2b9324179a137b61d86f686ebb22f7e53563b2fd13b70288c8d239f6b",
       "source": {
         "start": 1209,
-        "end": 1210,
-        "section": "Fantasy Genre / Swords & Sorcery / Axe Fighter"
+        "end": 1243,
+        "section": "Fantasy Genre / Swords & Sorcery / Axe Fighter",
+        "segments": [
+          {
+            "start": 1209,
+            "end": 1229
+          },
+          {
+            "start": 1241,
+            "end": 1243
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/barbarian-swords-sorcery.json",
       "id": "xNofQYwoVkBI6C5a",
       "name": "Barbarian",
       "field": "system.description",
-      "sha256": "7b356afa0071bc8f6897e22b36f965f4de2212ff49eb2141007083fbaa72e67d",
+      "sha256": "f868ed513f45105afc2412646d412dc6ac2c462479efb944b42d6181a8985812",
       "source": {
         "start": 751,
-        "end": 752,
-        "section": "Fantasy Genre / Dungeon Fantasy / Barbarian"
+        "end": 1245,
+        "section": "Fantasy Genre / Swords & Sorcery / Barbarian (Swords & Sorcery)",
+        "segments": [
+          {
+            "start": 1245,
+            "end": 1245
+          },
+          {
+            "start": 751,
+            "end": 772
+          },
+          {
+            "start": 779,
+            "end": 781
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/barbarian.json",
       "id": "cBy4vHd3CHyNjLF7",
       "name": "Barbarian",
       "field": "system.description",
-      "sha256": "7b356afa0071bc8f6897e22b36f965f4de2212ff49eb2141007083fbaa72e67d",
+      "sha256": "5cc2da360cd33f2dcbff5139469f5d2ad14470152302680557398a214934995a",
       "source": {
         "start": 751,
-        "end": 752,
-        "section": "Fantasy Genre / Dungeon Fantasy / Barbarian"
+        "end": 781,
+        "section": "Fantasy Genre / Dungeon Fantasy / Barbarian",
+        "segments": [
+          {
+            "start": 751,
+            "end": 772
+          },
+          {
+            "start": 779,
+            "end": 781
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/bard.json",
       "id": "kEsAIo4VzInCvXMb",
       "name": "Bard",
       "field": "system.description",
-      "sha256": "59c532958218a4aef9f760a18c6ddff34b4e9e2a155e1b3e16c51c259c461c48",
+      "sha256": "aadd3f3b72a83ea66898d5927fc5c74b8700a7ecf457de85ba153e2b93aeab26",
       "source": {
         "start": 783,
-        "end": 784,
-        "section": "Fantasy Genre / Dungeon Fantasy / Bard"
+        "end": 817,
+        "section": "Fantasy Genre / Dungeon Fantasy / Bard",
+        "segments": [
+          {
+            "start": 783,
+            "end": 806
+          },
+          {
+            "start": 815,
+            "end": 817
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/burglar.json",
       "id": "I4x9vsQnkiNYUZDI",
       "name": "Burglar",
       "field": "system.description",
-      "sha256": "87186e3ae63410a1be50a8c1cf75714bd1c52fc3c412d91313efeb5c3fc3bfb3",
+      "sha256": "95b9d5c9e6066f6d3ef3ef77384667e1415442b714042df5c9e3c4be1eda33a8",
       "source": {
         "start": 1557,
-        "end": 1558,
-        "section": "Fantasy Genre / Epic Fantasy / Burglar"
+        "end": 1589,
+        "section": "Fantasy Genre / Epic Fantasy / Burglar",
+        "segments": [
+          {
+            "start": 1557,
+            "end": 1578
+          },
+          {
+            "start": 1587,
+            "end": 1589
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/cleric.json",
       "id": "6lrBA0S14lV2ueqi",
       "name": "Cleric",
       "field": "system.description",
-      "sha256": "49842429eddff03fca6c587002f20fb3f80fb598ab5db15e35e15737e8837017",
+      "sha256": "338f1d3fd947eecdd00a1b397ace3bc3e850493724c47e5e896c5789cc998260",
       "source": {
         "start": 819,
-        "end": 820,
-        "section": "Fantasy Genre / Dungeon Fantasy / Cleric"
+        "end": 860,
+        "section": "Fantasy Genre / Dungeon Fantasy / Cleric",
+        "segments": [
+          {
+            "start": 819,
+            "end": 841
+          },
+          {
+            "start": 858,
+            "end": 860
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/crimefighter-rank-1.json",
       "id": "lOd3JPulVZlotC2c",
       "name": "Crimefighter (Rank 1)",
       "field": "system.description",
-      "sha256": "4a83a438b4c3197a91f1c67a2d4f9599092dea6d8e684f09cde8e686cb22a9ef",
+      "sha256": "a598c6d0b9b98421a724cbbca5cdc7f0ae9994ec9ab17de6183606f4c4fc3774",
       "source": {
         "start": 3091,
-        "end": 3092,
-        "section": "Superheroes Genre / Power Shifts / Crimefighter (Rank 1)"
+        "end": 3114,
+        "section": "Superheroes Genre / Power Shifts / Crimefighter (Rank 1)",
+        "segments": [
+          {
+            "start": 3091,
+            "end": 3114
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/dealer.json",
       "id": "b7mWQ5AAYa7UWYyb",
       "name": "Dealer",
       "field": "system.description",
-      "sha256": "84c9bffd5e61ce95457eb16a25c985f36ffe9592c0914c45ba0c9e3bcfa405d4",
+      "sha256": "86e67f90be85664fe110a17418781600673804cbc8efb50a70f61f534fd31f2e",
       "source": {
         "start": 2608,
-        "end": 2609,
-        "section": "Science Fiction Genre / Postapocalypse / Dealer"
+        "end": 2641,
+        "section": "Science Fiction Genre / Postapocalypse / Dealer",
+        "segments": [
+          {
+            "start": 2608,
+            "end": 2629
+          },
+          {
+            "start": 2639,
+            "end": 2641
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/diplomat-space-opera.json",
       "id": "i1u799y71fBRgwqN",
       "name": "Diplomat",
       "field": "system.description",
-      "sha256": "bee899ff497e86da09665e0c7113e937e560f02d1b624581bd2f35d8f597783f",
+      "sha256": "c4e88bca892138293e6c49c105860df3810aa23e06139efd16f3d6790a680135",
       "source": {
         "start": 1964,
-        "end": 1965,
-        "section": "Science Fiction Genre / Hard Science Fiction / SoldierDiplomat"
+        "end": 2304,
+        "section": "Science Fiction Genre / Space Opera / Diplomat (Space Opera)",
+        "segments": [
+          {
+            "start": 2304,
+            "end": 2304
+          },
+          {
+            "start": 1964,
+            "end": 1984
+          },
+          {
+            "start": 1992,
+            "end": 1994
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/diplomat.json",
       "id": "jAbj0CJpsXr2UY2Z",
       "name": "Diplomat",
       "field": "system.description",
-      "sha256": "bee899ff497e86da09665e0c7113e937e560f02d1b624581bd2f35d8f597783f",
+      "sha256": "e2932a16cea6e4fc29062fa5c99fc7c5a4c4f501ec57ff061133b94538e67126",
       "source": {
         "start": 1964,
-        "end": 1965,
-        "section": "Science Fiction Genre / Hard Science Fiction / SoldierDiplomat"
+        "end": 1994,
+        "section": "Science Fiction Genre / Hard Science Fiction / SoldierDiplomat",
+        "segments": [
+          {
+            "start": 1964,
+            "end": 1984
+          },
+          {
+            "start": 1992,
+            "end": 1994
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/druid.json",
       "id": "gW89yUSQj00aDd3e",
       "name": "Druid",
       "field": "system.description",
-      "sha256": "8ea2f1b5634d815b155c3aec034734f7e887447398860218aa54e229aa9d2a23",
+      "sha256": "82037392a3a377a8e0e16fca91568fbd1b4c68185d1f1a9f98b5fba34fd636ff",
       "source": {
         "start": 862,
-        "end": 863,
-        "section": "Fantasy Genre / Dungeon Fantasy / Druid"
+        "end": 896,
+        "section": "Fantasy Genre / Dungeon Fantasy / Druid",
+        "segments": [
+          {
+            "start": 862,
+            "end": 882
+          },
+          {
+            "start": 894,
+            "end": 896
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/engineer.json",
       "id": "m8VfowivP1BqyQyf",
       "name": "Engineer",
       "field": "system.description",
-      "sha256": "f395aed90a71b0e9e9424ab5e88cc0f3ee8be4d96229eac448fa31f8b060e8ae",
+      "sha256": "1021a4593e5680551bbdfeb7920f86212616b58324cafdacae76408cf13ccf55",
       "source": {
         "start": 1996,
-        "end": 1997,
-        "section": "Science Fiction Genre / Hard Science Fiction / Engineer"
+        "end": 2029,
+        "section": "Science Fiction Genre / Hard Science Fiction / Engineer",
+        "segments": [
+          {
+            "start": 1996,
+            "end": 2016
+          },
+          {
+            "start": 2027,
+            "end": 2029
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/enhanced-hero-rank-2.json",
       "id": "SGM1MyYDwiCSbYOc",
       "name": "Enhanced Hero (Rank 2)",
       "field": "system.description",
-      "sha256": "402b72d4bbd148ab285200814394e7fa328caa90950076db68ed6f9130c458bf",
+      "sha256": "9c17a4efbeedc1a726e226d6bfee5a398e3202282b1d32d736f2ef2fc2c85e0e",
       "source": {
         "start": 3167,
-        "end": 3168,
-        "section": "Superheroes Genre / Power Shifts / Enhanced Hero (Rank 2)"
+        "end": 3191,
+        "section": "Superheroes Genre / Power Shifts / Enhanced Hero (Rank 2)",
+        "segments": [
+          {
+            "start": 3167,
+            "end": 3191
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/fighter.json",
       "id": "bkU5g5hJEMhxnZQv",
       "name": "Fighter",
       "field": "system.description",
-      "sha256": "9a36ac3e78c37b2600db1fc633a657da2bb453799a82d607f1ef6e8d056ca9e5",
+      "sha256": "46c473d233e496ed5ab2a5a1e32d9ae43fb74e5b0243f553c686de90c5295774",
       "source": {
         "start": 898,
-        "end": 899,
-        "section": "Fantasy Genre / Dungeon Fantasy / Fighter"
+        "end": 927,
+        "section": "Fantasy Genre / Dungeon Fantasy / Fighter",
+        "segments": [
+          {
+            "start": 898,
+            "end": 919
+          },
+          {
+            "start": 925,
+            "end": 927
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/heavy.json",
       "id": "Gboda1lb43FGHfbZ",
       "name": "Heavy",
       "field": "system.description",
-      "sha256": "c2ba616b3553a801feaf34ac6cf6761baa3b40d0693a3068df13786e82124b7e",
+      "sha256": "c1d4ec6099eb07abca7ecfe4337e43a70daa07c9a98de54570e0f3dcebba240a",
       "source": {
         "start": 2643,
-        "end": 2644,
-        "section": "Science Fiction Genre / Postapocalypse / Heavy"
+        "end": 2674,
+        "section": "Science Fiction Genre / Postapocalypse / Heavy",
+        "segments": [
+          {
+            "start": 2643,
+            "end": 2665
+          },
+          {
+            "start": 2672,
+            "end": 2674
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/knife-fighter.json",
       "id": "WakPf2hXozURF5Uw",
       "name": "Knife Fighter",
       "field": "system.description",
-      "sha256": "47cc83bd90b0436753c7abc1a1b411c4e21d5af435499ee5e7110ac690b886ab",
+      "sha256": "7f532d4e0c56dac713da70c60708e2c194c80aa8d943bb4153c321bb69f434cf",
       "source": {
         "start": 1247,
-        "end": 1248,
-        "section": "Fantasy Genre / Swords & Sorcery / Knife Fighter"
+        "end": 1280,
+        "section": "Fantasy Genre / Swords & Sorcery / Knife Fighter",
+        "segments": [
+          {
+            "start": 1247,
+            "end": 1267
+          },
+          {
+            "start": 1278,
+            "end": 1280
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/living-god-rank-5.json",
       "id": "Ic1i9V2ORmoT72Ce",
       "name": "Living God (Rank 5)",
       "field": "system.description",
-      "sha256": "b4c5df431ed5e842145bc8a1a077125fabeb06fa3764a14b433fe107b605ffec",
+      "sha256": "c233467c0a2bf917bbff21bf98886900bbdf8e097ddd0bbfc5f1d08ccca8330d",
       "source": {
         "start": 3306,
-        "end": 3307,
-        "section": "Superheroes Genre / Power Shifts / Living God (Rank 5)"
+        "end": 3331,
+        "section": "Superheroes Genre / Power Shifts / Living God (Rank 5)",
+        "segments": [
+          {
+            "start": 3306,
+            "end": 3331
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/mage.json",
       "id": "PJt0TDw12UnoBErw",
       "name": "Mage",
       "field": "system.description",
-      "sha256": "0b18311d857c7f20b0eba629c2a43bdf08d052d844981bbacee8ba272fd4793f",
+      "sha256": "3c6bab29a369a06b24608e6d9d9af3f3563dc3ea32c5cbdbe5b58c4375be03e0",
       "source": {
         "start": 929,
-        "end": 930,
-        "section": "Fantasy Genre / Dungeon Fantasy / Mage"
+        "end": 966,
+        "section": "Fantasy Genre / Dungeon Fantasy / Mage",
+        "segments": [
+          {
+            "start": 929,
+            "end": 949
+          },
+          {
+            "start": 964,
+            "end": 966
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/medic-space-opera.json",
       "id": "KFtw0GBTSgzlvE7u",
       "name": "Medic",
       "field": "system.description",
-      "sha256": "89e9f9e4ce1a2f98c174a88c1f0b74b8e228876775d8a212bd354493aab5c57f",
+      "sha256": "173a25d8e349d26e9b1fd8d4e5ab4650334632f240f74e3845d6331070af4cbb",
       "source": {
         "start": 2031,
-        "end": 2032,
-        "section": "Science Fiction Genre / Hard Science Fiction / Medic"
+        "end": 2306,
+        "section": "Science Fiction Genre / Space Opera / Medic (Space Opera)",
+        "segments": [
+          {
+            "start": 2306,
+            "end": 2306
+          },
+          {
+            "start": 2031,
+            "end": 2051
+          },
+          {
+            "start": 2059,
+            "end": 2062
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/medic.json",
       "id": "p8VTYD5mXCde7KAo",
       "name": "Medic",
       "field": "system.description",
-      "sha256": "89e9f9e4ce1a2f98c174a88c1f0b74b8e228876775d8a212bd354493aab5c57f",
+      "sha256": "a4de9b02367573568aecb203af44f0611a8b627cb56377011f858314af6c21c9",
       "source": {
         "start": 2031,
-        "end": 2032,
-        "section": "Science Fiction Genre / Hard Science Fiction / Medic"
+        "end": 2062,
+        "section": "Science Fiction Genre / Hard Science Fiction / Medic",
+        "segments": [
+          {
+            "start": 2031,
+            "end": 2051
+          },
+          {
+            "start": 2059,
+            "end": 2062
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/monk.json",
       "id": "R1EeFJsIvRySI9m5",
       "name": "Monk",
       "field": "system.description",
-      "sha256": "0cc06f83ec9408e8783cb81eb69c0c67f0778a7cfe23a9a7522a7dd109eebc92",
+      "sha256": "a5d7f972809211c39d52dd72507a58adf02e021cf905e8f79c39d170cc61b680",
       "source": {
         "start": 968,
-        "end": 969,
-        "section": "Fantasy Genre / Dungeon Fantasy / Monk"
+        "end": 995,
+        "section": "Fantasy Genre / Dungeon Fantasy / Monk",
+        "segments": [
+          {
+            "start": 968,
+            "end": 987
+          },
+          {
+            "start": 993,
+            "end": 995
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/necromancer.json",
       "id": "MmtQGmQztYZoUGiX",
       "name": "Necromancer",
       "field": "system.description",
-      "sha256": "dff103097ee970aac113cc29d437a82ffa117725d2886d2a9ca3d31dd52de6bd",
+      "sha256": "779132d9eb2c8c8d0f4173301d40942e0db66ef575f24b84b571d0a31bb94f16",
       "source": {
         "start": 997,
-        "end": 998,
-        "section": "Fantasy Genre / Dungeon Fantasy / Necromancer"
+        "end": 1028,
+        "section": "Fantasy Genre / Dungeon Fantasy / Necromancer",
+        "segments": [
+          {
+            "start": 997,
+            "end": 1017
+          },
+          {
+            "start": 1026,
+            "end": 1028
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/noble-hard-science-fiction.json",
       "id": "bHwyuPOyc6pSNInn",
       "name": "Noble",
       "field": "system.description",
-      "sha256": "087b0fc545f4d6b9f85999684ded947b1a5354fa739892a796e42c4eb58f038e",
+      "sha256": "decc98d457155e8089c676338eae7cdc8beed8c6a74acd24caacbf279ad7571e",
       "source": {
-        "start": 2308,
-        "end": 2309,
-        "section": "Science Fiction Genre / Space Opera / Noble"
+        "start": 2064,
+        "end": 2342,
+        "section": "Science Fiction Genre / Hard Science Fiction / Noble (Hard Science Fiction)",
+        "segments": [
+          {
+            "start": 2064,
+            "end": 2064
+          },
+          {
+            "start": 2308,
+            "end": 2332
+          },
+          {
+            "start": 2340,
+            "end": 2342
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/noble-warrior.json",
       "id": "n2kf6GkpcrWUi2DN",
       "name": "Noble Warrior",
       "field": "system.description",
-      "sha256": "c9133e29c10631087eff34c8d2d3350544fc3b6943bf32b0d5ec4457005fd223",
+      "sha256": "310602a26c20f61efd6bb2c6be9336ae515d8113dd3c234af27aeeafe74691e7",
       "source": {
         "start": 1591,
-        "end": 1592,
-        "section": "Fantasy Genre / Epic Fantasy / Noble Warrior"
+        "end": 1622,
+        "section": "Fantasy Genre / Epic Fantasy / Noble Warrior",
+        "segments": [
+          {
+            "start": 1591,
+            "end": 1612
+          },
+          {
+            "start": 1620,
+            "end": 1622
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/noble.json",
       "id": "ClePwau6r486Ln5U",
       "name": "Noble",
       "field": "system.description",
-      "sha256": "087b0fc545f4d6b9f85999684ded947b1a5354fa739892a796e42c4eb58f038e",
+      "sha256": "3063acc2d98c6e6f880131eedb87c4dd11a66158199efd0f2657923a075d607e",
       "source": {
         "start": 2308,
-        "end": 2309,
-        "section": "Science Fiction Genre / Space Opera / Noble"
+        "end": 2342,
+        "section": "Science Fiction Genre / Space Opera / Noble",
+        "segments": [
+          {
+            "start": 2308,
+            "end": 2332
+          },
+          {
+            "start": 2340,
+            "end": 2342
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/operative.json",
       "id": "iVNGKLu0a9L9e9EF",
       "name": "Operative",
       "field": "system.description",
-      "sha256": "5ae6761b0938173b83e7361148f23c916b667906772436fc6bd1a064c559220b",
+      "sha256": "ed436c354ea50affeeaba2b09577147787dcb6ecb84ea0ec74c817273dd154d8",
       "source": {
         "start": 2066,
-        "end": 2067,
-        "section": "Science Fiction Genre / Hard Science Fiction / Operative"
+        "end": 2106,
+        "section": "Science Fiction Genre / Hard Science Fiction / Operative",
+        "segments": [
+          {
+            "start": 2066,
+            "end": 2087
+          },
+          {
+            "start": 2104,
+            "end": 2106
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/paladin.json",
       "id": "X1h08rRRFh0zsoFX",
       "name": "Paladin",
       "field": "system.description",
-      "sha256": "c725249a99c2fb66f5bda999cb58fe94a1912e505d14e0f437963d6620cb26aa",
+      "sha256": "5920318e687f24ab1bfdb0d9f389dcff39ef1921a6199e781a7b02b3bfa321f7",
       "source": {
         "start": 1030,
-        "end": 1031,
-        "section": "Fantasy Genre / Dungeon Fantasy / Paladin"
+        "end": 1060,
+        "section": "Fantasy Genre / Dungeon Fantasy / Paladin",
+        "segments": [
+          {
+            "start": 1030,
+            "end": 1051
+          },
+          {
+            "start": 1058,
+            "end": 1060
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/pilot.json",
       "id": "eclN3JAsIXFovNO7",
       "name": "Pilot",
       "field": "system.description",
-      "sha256": "040823821365c3361329624b3533db2828eed32c99d14cd96d5488f063535e9f",
+      "sha256": "f3f9d561779e8a22f03b09f203e73356aad2aa8ec5e80b2fa3f86513ea5628b5",
       "source": {
         "start": 2108,
-        "end": 2109,
-        "section": "Science Fiction Genre / Hard Science Fiction / Pilot"
+        "end": 2142,
+        "section": "Science Fiction Genre / Hard Science Fiction / Pilot",
+        "segments": [
+          {
+            "start": 2108,
+            "end": 2129
+          },
+          {
+            "start": 2140,
+            "end": 2142
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/powerhouse-rank-4.json",
       "id": "3FJT6cqpCQDC047t",
       "name": "Powerhouse (Rank 4)",
       "field": "system.description",
-      "sha256": "00f1c70278ef8b441126f6c083b455022e2c85d5eb1748df8529e84df9d7cf8c",
+      "sha256": "1c2a76d05b1abec71d91f98a9f905f2924bcd22db3349cc4bec0863b77e37697",
       "source": {
         "start": 3268,
-        "end": 3269,
-        "section": "Superheroes Genre / Power Shifts / Powerhouse (Rank 4)"
+        "end": 3292,
+        "section": "Superheroes Genre / Power Shifts / Powerhouse (Rank 4)",
+        "segments": [
+          {
+            "start": 3268,
+            "end": 3292
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/powerstar-rank-2.json",
       "id": "w9dJ5sFz6Jfdxs4u",
       "name": "Powerstar (Rank 2)",
       "field": "system.description",
-      "sha256": "e11cbd7d6e6d00700b37eb617ca63a9d04121e9dc07cc83dc3ab72b12f64c83f",
+      "sha256": "410378530f8aef188e13abab12d0c0a00e7eb1d7cd1d9ffac358f6b6ce28fa1d",
       "source": {
         "start": 3199,
-        "end": 3200,
-        "section": "Superheroes Genre / Power Shifts / Powerstar (Rank 2)"
+        "end": 3223,
+        "section": "Superheroes Genre / Power Shifts / Powerstar (Rank 2)",
+        "segments": [
+          {
+            "start": 3199,
+            "end": 3223
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/priest.json",
       "id": "3VZNLzO9gjuMcvsz",
       "name": "Priest",
       "field": "system.description",
-      "sha256": "8c761abc2fb4b33fe48fba8efe166cd26f43b81a4cfb435ec45c783368c5e121",
+      "sha256": "59898501a535e7e9a5ef226928f38d6ac6c1bfc580677158e41ea37059c5ae2a",
       "source": {
         "start": 1282,
-        "end": 1283,
-        "section": "Fantasy Genre / Swords & Sorcery / Priest"
+        "end": 1318,
+        "section": "Fantasy Genre / Swords & Sorcery / Priest",
+        "segments": [
+          {
+            "start": 1282,
+            "end": 1303
+          },
+          {
+            "start": 1316,
+            "end": 1318
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/psion.json",
       "id": "w3ooBpVRVaftfvC0",
       "name": "Psion",
       "field": "system.description",
-      "sha256": "c91219bd82f35e937a20fe22f25e0ca8e22a2406a07006bf3c87e30d2b8cdc4e",
+      "sha256": "df816f7b19fe42e04710974ea1c7789ae59b8bccf3908c7be1f86def73713557",
       "source": {
         "start": 2344,
-        "end": 2345,
-        "section": "Science Fiction Genre / Space Opera / Psion"
+        "end": 2372,
+        "section": "Science Fiction Genre / Space Opera / Psion",
+        "segments": [
+          {
+            "start": 2344,
+            "end": 2363
+          },
+          {
+            "start": 2370,
+            "end": 2372
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/ranger.json",
       "id": "xRsw0HAFkWeZRK9C",
       "name": "Ranger",
       "field": "system.description",
-      "sha256": "4e39078027d3e1a2e665951361f5e81ed8ca1bd0a1cf4a3f74eea384a17177a1",
+      "sha256": "9d24311f79dcebd61116035283555defc587f0f2d6c3f639297fea8a0aa5b0a2",
       "source": {
         "start": 1062,
-        "end": 1063,
-        "section": "Fantasy Genre / Dungeon Fantasy / Ranger"
+        "end": 1092,
+        "section": "Fantasy Genre / Dungeon Fantasy / Ranger",
+        "segments": [
+          {
+            "start": 1062,
+            "end": 1084
+          },
+          {
+            "start": 1090,
+            "end": 1092
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/rogue.json",
       "id": "GdMpMt4bUZCGajQm",
       "name": "Rogue",
       "field": "system.description",
-      "sha256": "1c0dc086aba32f4127ea7d71cdd791276d5a989a7ffd663491be62c4543a6749",
+      "sha256": "96fbdd902fc02d2b457e7bf605bb92a528efaca0b81db303b549bb7f84023b2a",
       "source": {
         "start": 1094,
-        "end": 1095,
-        "section": "Fantasy Genre / Dungeon Fantasy / Rogue"
+        "end": 1130,
+        "section": "Fantasy Genre / Dungeon Fantasy / Rogue",
+        "segments": [
+          {
+            "start": 1094,
+            "end": 1115
+          },
+          {
+            "start": 1128,
+            "end": 1130
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/scoundrel.json",
       "id": "YHre761k7EWxE6Gi",
       "name": "Scoundrel",
       "field": "system.description",
-      "sha256": "7e5e80fbd38fab472110e2b6030e74458b7e0ee6d3be718f9e63619902f75b11",
+      "sha256": "0884fbcf2baedb458a4b63bb0785c2b62fc1bc3d8d0181a2e35f502f1f8b2e83",
       "source": {
         "start": 2374,
-        "end": 2375,
-        "section": "Science Fiction Genre / Space Opera / Scoundrel"
+        "end": 2404,
+        "section": "Science Fiction Genre / Space Opera / Scoundrel",
+        "segments": [
+          {
+            "start": 2374,
+            "end": 2395
+          },
+          {
+            "start": 2402,
+            "end": 2404
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/soldier-space-opera.json",
       "id": "o5NKl3nOFqS7bE5g",
       "name": "Soldier",
       "field": "system.description",
-      "sha256": "0c0026ef2d5767a4aed6c12c9f89dd3b2541d8984b14fd8354b409e92077ccae",
+      "sha256": "93b02586f970500430faae72c743d75109a4d0f6300d17bfd27e559771492b10",
       "source": {
         "start": 2144,
-        "end": 2145,
-        "section": "Science Fiction Genre / Hard Science Fiction / Soldier"
+        "end": 2406,
+        "section": "Science Fiction Genre / Space Opera / Soldier (Space Opera)",
+        "segments": [
+          {
+            "start": 2406,
+            "end": 2406
+          },
+          {
+            "start": 2144,
+            "end": 2165
+          },
+          {
+            "start": 2177,
+            "end": 2179
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/soldier.json",
       "id": "8V8OsTeKGq9Amfym",
       "name": "Soldier",
       "field": "system.description",
-      "sha256": "0c0026ef2d5767a4aed6c12c9f89dd3b2541d8984b14fd8354b409e92077ccae",
+      "sha256": "0bbb349379dce706d1a55bc8f435e7b4017984f95130c21e6ce17274c429c142",
       "source": {
         "start": 2144,
-        "end": 2145,
-        "section": "Science Fiction Genre / Hard Science Fiction / Soldier"
+        "end": 2179,
+        "section": "Science Fiction Genre / Hard Science Fiction / Soldier",
+        "segments": [
+          {
+            "start": 2144,
+            "end": 2165
+          },
+          {
+            "start": 2177,
+            "end": 2179
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/sorcerer.json",
       "id": "w9vkm6BGzM68ZTcl",
       "name": "Sorcerer",
       "field": "system.description",
-      "sha256": "824568a7d09ea6cf410c18e3c93e660c95b14995ab892e79561333649953bc1f",
+      "sha256": "b13cf14d0c5b951cfab87e01ea34d980e78c4e87e295e88bbe9d56655d983ebc",
       "source": {
         "start": 1320,
-        "end": 1321,
-        "section": "Fantasy Genre / Swords & Sorcery / Sorcerer"
+        "end": 1355,
+        "section": "Fantasy Genre / Swords & Sorcery / Sorcerer",
+        "segments": [
+          {
+            "start": 1320,
+            "end": 1340
+          },
+          {
+            "start": 1353,
+            "end": 1355
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/starpilot.json",
       "id": "Uujfcf8lTwhFEkKN",
       "name": "Starpilot",
       "field": "system.description",
-      "sha256": "b8f95065bc3f14adc1fef453e5c7a310380fe34fce0355d5ab1a48dd8f6b1d81",
+      "sha256": "7480b23d03ac36be5bd871ce72761766df591c78a7f886bdafb1b9ae384d6a48",
       "source": {
         "start": 2408,
-        "end": 2409,
-        "section": "Science Fiction Genre / Space Opera / Starpilot"
+        "end": 2446,
+        "section": "Science Fiction Genre / Space Opera / Starpilot",
+        "segments": [
+          {
+            "start": 2408,
+            "end": 2431
+          },
+          {
+            "start": 2444,
+            "end": 2446
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/superhuman-rank-3.json",
       "id": "UZ8dGtHJn6oaLXIX",
       "name": "Superhuman (Rank 3)",
       "field": "system.description",
-      "sha256": "88e3623725c8741baff6c467eae32a41b4d9ef74c2b6ed5c48bf467b398b8dbb",
+      "sha256": "1d9ce00e9ab41c5f68cf222201f5083ca570dd9debd999c2238cc03f7be1fd1e",
       "source": {
         "start": 3231,
-        "end": 3232,
-        "section": "Superheroes Genre / Power Shifts / Superhuman (Rank 3)"
+        "end": 3255,
+        "section": "Superheroes Genre / Power Shifts / Superhuman (Rank 3)",
+        "segments": [
+          {
+            "start": 3231,
+            "end": 3255
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/survivor.json",
       "id": "vQYLlQ2Dgojid09Q",
       "name": "Survivor",
       "field": "system.description",
-      "sha256": "109ef19f799ab822f7b6ebd51a2b62af43baf2695143956f31b44d67e2d1b95f",
+      "sha256": "df5f0fcff64a51bd39ff088fcbd0d58ddbaafa81bb6e5aad6a24151ea53c445c",
       "source": {
         "start": 2676,
-        "end": 2677,
-        "section": "Science Fiction Genre / Postapocalypse / Survivor"
+        "end": 2707,
+        "section": "Science Fiction Genre / Postapocalypse / Survivor",
+        "segments": [
+          {
+            "start": 2676,
+            "end": 2698
+          },
+          {
+            "start": 2705,
+            "end": 2707
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/swashbuckler.json",
       "id": "F2t78BNPgxAMetLR",
       "name": "Swashbuckler",
       "field": "system.description",
-      "sha256": "d7f82ff344a95cad3a6df097899dddf57507b335416e5e6888a101599a7c0bba",
+      "sha256": "69ab220ad3334a0d7ae001691eec0033b9d2ea5afcfa68fc6cdf2f84966b84d5",
       "source": {
         "start": 1624,
-        "end": 1625,
-        "section": "Fantasy Genre / Epic Fantasy / Swashbuckler"
+        "end": 1660,
+        "section": "Fantasy Genre / Epic Fantasy / Swashbuckler",
+        "segments": [
+          {
+            "start": 1624,
+            "end": 1645
+          },
+          {
+            "start": 1658,
+            "end": 1660
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/sword-fighter.json",
       "id": "GyPCIzb4j6WJMCR8",
       "name": "Sword Fighter",
       "field": "system.description",
-      "sha256": "8a4d70ec35831af906073ed5a863655ed53bd50774516476e72d3edc8718b136",
+      "sha256": "f8599ca245a2d70c7b759ffa7de88099c33a5c7b5417e01c8594eb0dcac2c8fa",
       "source": {
         "start": 1357,
-        "end": 1358,
-        "section": "Fantasy Genre / Swords & Sorcery / Sword Fighter"
+        "end": 1390,
+        "section": "Fantasy Genre / Swords & Sorcery / Sword Fighter",
+        "segments": [
+          {
+            "start": 1357,
+            "end": 1378
+          },
+          {
+            "start": 1388,
+            "end": 1390
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/tech.json",
       "id": "kfMFJ6AbPluI7ffS",
       "name": "Tech",
       "field": "system.description",
-      "sha256": "4806f6911e0b7cb7ce0505950eb0cb56173cd31cb0352d2682567c3bd0a98878",
+      "sha256": "d2ecae0d0ee35db9074e26c466239f790336faddb975b7dd67922e395282db1e",
       "source": {
         "start": 2448,
-        "end": 2449,
-        "section": "Science Fiction Genre / Space Opera / Tech"
+        "end": 2483,
+        "section": "Science Fiction Genre / Space Opera / Tech",
+        "segments": [
+          {
+            "start": 2448,
+            "end": 2469
+          },
+          {
+            "start": 2481,
+            "end": 2483
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/tender.json",
       "id": "OnrTW1vwR86uLXxV",
       "name": "Tender",
       "field": "system.description",
-      "sha256": "a03482dc1d56a2c7bb062eec999e1e558fd8dfa973c5694e73393968f4468211",
+      "sha256": "14d2342d28bc6eac4e4ace0c5be1e1c8ecda877049e72256e1ff8aa357589269",
       "source": {
         "start": 2709,
-        "end": 2710,
-        "section": "Science Fiction Genre / Postapocalypse / Tender"
+        "end": 2738,
+        "section": "Science Fiction Genre / Postapocalypse / Tender",
+        "segments": [
+          {
+            "start": 2709,
+            "end": 2731
+          },
+          {
+            "start": 2735,
+            "end": 2738
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/thief.json",
       "id": "RQi056TCzuh0Xe2d",
       "name": "Thief",
       "field": "system.description",
-      "sha256": "6c34411de527f69341ec192b66dbc954280f58867ea48ba67253eb2df9b8c92d",
+      "sha256": "54ec73c98f9dbcec8fba85f1d38a00afb3cfd6b7705dd0381035c17c749bac90",
       "source": {
         "start": 1392,
-        "end": 1393,
-        "section": "Fantasy Genre / Swords & Sorcery / Thief"
+        "end": 1428,
+        "section": "Fantasy Genre / Swords & Sorcery / Thief",
+        "segments": [
+          {
+            "start": 1392,
+            "end": 1413
+          },
+          {
+            "start": 1426,
+            "end": 1428
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/trader.json",
       "id": "JqATkvjDIwIMhX6Z",
       "name": "Trader",
       "field": "system.description",
-      "sha256": "ddc2acdd6cfc394503980c4ce2e332723d80fbb1de9485d238671f58780d12f2",
+      "sha256": "b72b3e011cfeeecac00991bd9c765e02583c962b079593771ac3292e1505d92d",
       "source": {
         "start": 2485,
-        "end": 2486,
-        "section": "Science Fiction Genre / Space Opera / Trader"
+        "end": 2516,
+        "section": "Science Fiction Genre / Space Opera / Trader",
+        "segments": [
+          {
+            "start": 2485,
+            "end": 2506
+          },
+          {
+            "start": 2514,
+            "end": 2516
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/two-weapon-fighter.json",
       "id": "LO0HzKyoMuwIxTL4",
       "name": "Two-Weapon Fighter",
       "field": "system.description",
-      "sha256": "de1db7e148964a08a7b6357e31cde34946cad378a36ee68f4fa4a0f8f332798c",
+      "sha256": "f01e8314434cb9bf5effb089c79503726567566415f459eeef0fc8d4571378ec",
       "source": {
         "start": 1430,
-        "end": 1431,
-        "section": "Fantasy Genre / Swords & Sorcery / Two-Weapon Fighter"
+        "end": 1461,
+        "section": "Fantasy Genre / Swords & Sorcery / Two-Weapon Fighter",
+        "segments": [
+          {
+            "start": 1430,
+            "end": 1451
+          },
+          {
+            "start": 1459,
+            "end": 1461
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/vigilante-rank-1.json",
       "id": "j2u0l8sd7unk3Nae",
       "name": "Vigilante (Rank 1)",
       "field": "system.description",
-      "sha256": "297e77abe11053040f6945e1a509d152aeca1345eb0c319a823dbe610903e39d",
+      "sha256": "16bafdf99158f7637ec75f819d5ca9c750ab327e728ef42b16ad1377f0048951",
       "source": {
         "start": 3128,
-        "end": 3129,
-        "section": "Superheroes Genre / Power Shifts / Vigilante (Rank 1)"
+        "end": 3151,
+        "section": "Superheroes Genre / Power Shifts / Vigilante (Rank 1)",
+        "segments": [
+          {
+            "start": 3128,
+            "end": 3151
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/warrior.json",
       "id": "7doSDZLDoR64oREK",
       "name": "Warrior",
       "field": "system.description",
-      "sha256": "c9133e29c10631087eff34c8d2d3350544fc3b6943bf32b0d5ec4457005fd223",
+      "sha256": "56a9cbdd1b04115a05794fea6296ad36ec9e7b4ef4707aca2a1f7dd9a71d87df",
       "source": {
-        "start": 1591,
-        "end": 1592,
-        "section": "Fantasy Genre / Epic Fantasy / Noble Warrior"
+        "start": 1662,
+        "end": 1691,
+        "section": "Fantasy Genre / Epic Fantasy / Warrior",
+        "segments": [
+          {
+            "start": 1662,
+            "end": 1683
+          },
+          {
+            "start": 1689,
+            "end": 1691
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/witch.json",
       "id": "qmfVoqpmlheb3UkX",
       "name": "Witch",
       "field": "system.description",
-      "sha256": "b9b4cd8d7266a330ff38bebe60fd3c9b7a40b728c2b67ef2ba02ef1c0a1c53a9",
+      "sha256": "f533af5597c6eaf265e5673a34a3155212b0451456658e89bb2a26e9222727bb",
       "source": {
         "start": 1463,
-        "end": 1464,
-        "section": "Fantasy Genre / Swords & Sorcery / Witch"
+        "end": 1496,
+        "section": "Fantasy Genre / Swords & Sorcery / Witch",
+        "segments": [
+          {
+            "start": 1463,
+            "end": 1484
+          },
+          {
+            "start": 1494,
+            "end": 1496
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
     },
     {
       "file": "packs/types-en/_source/wizard.json",
       "id": "5MwI09yGOYrbD8Te",
       "name": "Wizard",
       "field": "system.description",
-      "sha256": "91ef7e038d01dc5d44326cbf22bac39963a2c95ad97161eec9c349b294905cb3",
+      "sha256": "57b0f35b09dec8f9903c62b003469e074b85b8de54ccd5c5c88d96fe62b4cccc",
       "source": {
         "start": 1693,
-        "end": 1694,
-        "section": "Fantasy Genre / Epic Fantasy / Wizard"
+        "end": 1728,
+        "section": "Fantasy Genre / Epic Fantasy / Wizard",
+        "segments": [
+          {
+            "start": 1693,
+            "end": 1714
+          },
+          {
+            "start": 1726,
+            "end": 1728
+          }
+        ],
+        "selection": "Complete parent context; playable Ability definitions are separate referenced Items"
       },
-      "scope": "fragment"
+      "scope": "reviewed-passage"
+    },
+    {
+      "file": "packs/abilities-en/_source/4ab36d7eb01530f5.json",
+      "id": "4ab36d7eb01530f5",
+      "name": "Wings",
+      "field": "system.description",
+      "sha256": "560fbfd244b3f1c2443a3834d712a4734c14446efc075d73bb74c6f71c9e9cab",
+      "scope": "bounded-passage",
+      "source": {
+        "start": 4390,
+        "end": 4390,
+        "section": "Foci / Understanding Your Focus / Howls at the Moon"
+      }
     }
   ]
 }

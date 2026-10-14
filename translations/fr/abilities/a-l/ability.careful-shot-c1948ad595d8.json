@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.careful-shot-c1948ad595d8",
+  "sourceLogicalId": "ability.careful-shot-c1948ad595d8",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "efcc94415279370bccb659e4dcca09a9673d19b262a9e5e29450c3cb6ca9a3ad",
+      "text": "Tir soigneux"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "786d34baff7812d8e3bbbc8c66eb4f7c57f04414797ee286fc89881bd5b2299c",
+      "text": "Vous pouvez utiliser de l’Effort de Célérité ou d’Intellect pour augmenter les dégâts de votre arme à distance. De plus, si vous utilisez une action pour préparer votre visée, l’attaque de votre prochain tour inflige 2 dégâts supplémentaires par niveau d’Effort appliqué à l’augmentation des dégâts, soit 5 dégâts au total par niveau d’Effort. Aptitude passive."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.blast-evil",
+  "sourceLogicalId": "ability.blast-evil",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "2081446913beaf46a68459fab55355f872c0c74743abd315c30407ec6c23c4f9",
+      "text": "Foudroyer le mal"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "9ef96799f7d0186a079eab808033b5d5220edf2d10245e3a87ea1260e0a765eb",
+      "text": "Vous frappez une zone immédiate adjacente d’un rayonnement purificateur, infligeant 3 dégâts à jusqu’à trois cibles dans cette zone ; effectuez un jet d’attaque distinct contre chacune. Si les cibles sont des morts-vivants, des démons ou des créatures similaires, elles subissent à la place 6 dégâts. Si une cible est possédée par un esprit, un démon ou une entité similaire, elle bénéficie d’une nouvelle possibilité de résister à l’effet et d’expulser l’entité qui la possède. Action."
+    }
+  ]
+}

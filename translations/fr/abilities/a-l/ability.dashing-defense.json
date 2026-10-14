@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.dashing-defense",
+  "sourceLogicalId": "ability.dashing-defense",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "21725789e161a77d581327714d65eb690b1d6708025468f77a523a3110d95a4a",
+      "text": "Défense fringante"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "19e60fb5ed68abbc31f806bb024271b0f29103e1aee16155c0516eb1cb6a9610",
+      "text": "Lorsque vous maniez une arme légère ou moyenne contre un adversaire de votre taille ou plus petit, si vous ratez l’esquive d’une attaque, vous pouvez encore tenter de la bloquer. Aptitude passive."
+    }
+  ]
+}

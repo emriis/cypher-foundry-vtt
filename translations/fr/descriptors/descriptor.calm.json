@@ -1,0 +1,28 @@
+{
+  "logicalId": "descriptor.calm",
+  "sourceLogicalId": "descriptor.calm",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "38f6b83e2dc175c7e2545a6c36b85774e3816c0b90782a8e3d24800445344990",
+      "text": "Calme"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "491435990e1e8a80e67ad58d34c856322b625d63b0603ba87e0694b74984fd31",
+      "text": "<p>Vous gardez votre stabilité et vous vous troublez difficilement face au stress ou à l’adversité. Vous cherchez à vous concentrer sur un calme intérieur pour réagir avec réflexion plutôt que sous l’impulsion du moment. De même, votre présence peut rassurer les personnes qui vous entourent lorsqu’elles observent votre sérénité et écoutent vos conseils patients.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>+2 à votre Réserve d’Intellect</p>\n<p>Vous êtes entraîné pour l’une des compétences suivantes : Charme ou Métier spécialisé</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "cb202ce740ea23b09a039a51724a26f05a05cbd44cb1fb5692f72a7c406b4201",
+      "text": "Charme"
+    },
+    {
+      "path": "system.skillOptions.1",
+      "sourceHash": "e6744fe4aa66ecd82bebdfe9f746ed63e05af0aae52bfead48c29d34e98743aa",
+      "text": "Métier spécialisé"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.snap-shot",
+  "sourceLogicalId": "ability.snap-shot",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "e665677b48b1c4a4f93a131697922c54bde2f9312787d57bb3b210fe78984cae",
+      "text": "Tir éclair"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "3b76a01ac973269fcbfb09fef90777a9a6769d6595dc073b7c8967af5a488c0e",
+      "text": "Vous pouvez attaquer avec votre arme à feu, puis attaquer de nouveau en tant qu’action supplémentaire pendant votre tour. La deuxième attaque est entravée de deux pas. Aptitude passive."
+    }
+  ]
+}

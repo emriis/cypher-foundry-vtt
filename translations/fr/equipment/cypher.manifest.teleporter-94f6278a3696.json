@@ -1,0 +1,38 @@
+{
+  "logicalId": "cypher.manifest.teleporter",
+  "sourceLogicalId": "cypher.manifest.teleporter",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "8b3e34288edc3933cc01039aaeed6fa936851e2f620e717504a00143d977e70e",
+      "text": "Téléporteur"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "cb8220aa9b0a78bc58b4496838df013c437528c3a0ca6a358e279314d3cf7e06",
+      "text": "<p><strong>Effet :</strong> Vous vous téléportez à un endroit à portée et y arrivez sans danger. La téléportation inclut votre équipement, mais ne peut emmener d’autres créatures avec vous. Si vous ne pouvez tenir dans la destination choisie, vous apparaissez dans l’espace libre le plus proche. Lancez un dé pour déterminer le type de téléportation que peut effectuer le cypher. d00 — Type — Niveau de puissance : 01–50 — Bondissant — Moyenne ; 51–80 — Voyageur — Avancée ; 81–95 — Planétaire — Élevée ; 96–00 — Interstellaire — Ultra. Bondissant : un endroit situé à 500 pieds au maximum (150 m) que vous pouvez voir, ou jusqu’à 500 pieds dans la direction et à la distance que vous spécifiez, comme « 200 pieds vers l’ouest et 20 pieds vers le haut ». Voyageur : un endroit situé à 500 miles au maximum (800 km) que vous pouvez voir ou que vous avez déjà visité ou vu. Planétaire : un endroit sur la même planète que vous pouvez voir ou que vous avez déjà visité ou vu. Interstellaire : un endroit dans la même galaxie que vous pouvez voir ou que vous avez déjà visité ou vu.</p><p><strong>Objets du genre : parchemin de téléportation (fantasy) ; pistolet à portails (science-fiction)</strong></p>"
+    },
+    {
+      "path": "system.variants.0.name",
+      "sourceHash": "4730eb2cabdc25cb23e8c062fefa4b15a1eccf83cb05af5686da4c27bcb9fc9f",
+      "text": "Bondissant"
+    },
+    {
+      "path": "system.variants.1.name",
+      "sourceHash": "a439863df1f8e5af56705fea6d67ceb656240ba3a2664b708663ba2a6db635e3",
+      "text": "Voyageur"
+    },
+    {
+      "path": "system.variants.2.name",
+      "sourceHash": "5b681e6beee2c18c03fba2dde1d676d4bbcc0adee45397489023474ee632ef72",
+      "text": "Planétaire"
+    },
+    {
+      "path": "system.variants.3.name",
+      "sourceHash": "f1d900598a08c421496ab7dce06c5e728d1845907fda325bb52138ce9bbbd69b",
+      "text": "Interstellaire"
+    }
+  ]
+}

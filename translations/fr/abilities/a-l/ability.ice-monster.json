@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.ice-monster",
+  "sourceLogicalId": "ability.ice-monster",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "3cc78e64add358196cad9cf6b5a6d520ef61b214d3be05b9ad08dcbea97d2410",
+      "text": "Monstre de glace"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "17e8f284146cede1e136380d84e0352e673f4aad0a0da8b2155238bb594075fa",
+      "text": "Vous créez un automate de neige ou de glace dont la forme et la taille générales sont les vôtres, qui dure jusqu’à ce que vous preniez une récupération de dix minutes ou plus. Cet allié PNJ agit chaque round selon vos directives. Diriger le monstre est une action, et vous ne pouvez lui donner d’ordres que si vous êtes à portée longue de lui. Sans ordre, le monstre continue de suivre votre précédent ordre. Vous pouvez aussi lui programmer une action simple, comme « Attends ici et attaque quiconque arrive à portée courte jusqu’à ce qu’il soit mort. » Action pour créer ; action pour diriger. Automate : niveau 5 ; Armure 1 ; les attaques de frappe infligent 6 dégâts (dont la moitié provient d’un froid intense)"
+    }
+  ]
+}

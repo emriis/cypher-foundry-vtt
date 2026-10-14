@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.inspiring-performance",
+  "sourceLogicalId": "ability.inspiring-performance",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "d2bb15aaf09928b8bc2778b5f147b6581c00c0ebc07969c2f0fab3199aa1d521",
+      "text": "Prestation inspirante"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "617fa80c4197865388687c842348115e5c2f1a4221ddd5b294a2e42f8a893d81",
+      "text": "Par un discours exaltant ou une musique inspirante, vous remontez le moral de trois alliés qui peuvent vous entendre et vous voir, et vous les inspirez. Tant que vous continuez à parler ou à jouer chaque round en guise d’action, les alliés affectés gagnent un atout dans une tâche que vous choisissez (de combat ou hors combat) en rapport avec votre prestation. Même après la fin de l’effet, les alliés affectés sont si inspirés qu’ils ajoutent +1 à leur prochaine récupération. Effort : affectez trois alliés supplémentaires. Action. Au rang 3 : les alliés affectés ajoutent +2 à leur prochaine récupération."
+    }
+  ]
+}

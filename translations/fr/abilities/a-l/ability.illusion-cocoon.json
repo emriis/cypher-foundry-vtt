@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.illusion-cocoon",
+  "sourceLogicalId": "ability.illusion-cocoon",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "58ab3620d8343d0946a0b1d7822299c75da7c64b92d78757f81b251372c5c7d0",
+      "text": "Cocon d’illusion"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "1a1bb94a27092fedee04d81cd69937a79c83ffc6a47cc3fe1d26ea13c30a4117",
+      "text": "Avec une attaque d’Intellect réussie, vous enveloppez une cible à portée longue dans une illusion qui mobilise tous ses sens et est si envahissante qu’elle est impuissante, perdant son tour chaque round jusqu’à ce que vous preniez une récupération de dix minutes ou plus, ou jusqu’à ce qu’elle subisse des dégâts physiques directs. Action."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.range-extender",
+  "sourceLogicalId": "cypher.manifest.range-extender",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "6897200c030b6e16014a75aa508f2e74d0ae5e21889fa0681e2328ac6b8a3713",
+      "text": "Extension de portée"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "0778f0b314dec787589c7c03f33230368bd8b674cfd367a01e23728ee9138d5c",
+      "text": "<p><strong>Effet :</strong> Jusqu’à ce que vous preniez une récupération d’une heure ou plus, la portée de toute arme à distance que vous utilisez augmente d’une catégorie : d’immédiate à courte, de courte à longue, de longue à très longue, de très longue à 1 000 pieds [300 m]. La portée d’une arme dont la portée dépasse déjà la catégorie très longue est doublée.</p><p><strong>Objets du genre : huile de tirs lointains (fantasy) ; lunette de précision (science-fiction)</strong></p>"
+    }
+  ]
+}

@@ -102,7 +102,7 @@ export async function promptRollOptions(actor, {
     ${taskModifierFields(actor, { stat, isAttack, abilitySource })}
     ${isAttack && !isWeaponAbility ? `
     <div class="form-group inline">
-      <label><input type="checkbox" name="luckyShot"/> ${game.i18n.localize("CYPHER.XP.LuckyShot")} (${CONFIG.CYPHER.xpCosts.luckyShot} PX, ${game.i18n.localize("CYPHER.XP.LuckyShotHint")})</label>
+      <label><input type="checkbox" name="luckyShot"/> ${game.i18n.localize("CYPHER.XP.LuckyShot")} (${CONFIG.CYPHER.xpCosts.luckyShot} ${game.i18n.localize("CYPHER.XP.Label")}, ${game.i18n.localize("CYPHER.XP.LuckyShotHint")})</label>
     </div>` : ""}
     ${isAttack && weapon?.system?.mechanics?.hinderedWhenUsedOneHanded ? `
     <div class="form-group inline">

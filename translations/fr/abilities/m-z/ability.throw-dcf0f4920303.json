@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.throw-dcf0f4920303",
+  "sourceLogicalId": "ability.throw-dcf0f4920303",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "c78054582e89a9a7d8cdf08a74f1b78f2f158a338703e9baf1ed56ef0104e738",
+      "text": "Projeter"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "52a653ee686a7fc3a8bb0d8186132bab8ac947a31f19eb52ca0ac2b4ee72dffa",
+      "text": "Lorsque votre attaque à mains nues inflige des dégâts à une créature de votre taille ou plus petite, vous la projetez à 1d20 pieds de vous. Elle retombe à terre. Aptitude passive."
+    }
+  ]
+}

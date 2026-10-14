@@ -253,9 +253,9 @@
               {{/if}}
               {{/if}}
             </div>
-            {{#if item.system.action}}
+            {{#if item.actionLabel}}
             <span class="pc-action-badge">
-              {{localize (concat "CYPHER.Ability.Action." item.system.action)}}
+              {{item.actionLabel}}
             </span>
             {{/if}}
             {{#if item.system.effects.length}}
@@ -530,7 +530,7 @@
         <span class="pc-xp-value">{{localize "CYPHER.ResourcePoints"}} <strong>{{system.resourcePoints}}</strong></span>
         <button type="button" data-action="playerIntrusion">
           <i class="fa-solid fa-bolt"></i>
-          {{localize "CYPHER.XP.PlayerIntrusion"}} ({{config.xpCosts.playerIntrusion}} PX)
+          {{localize "CYPHER.XP.PlayerIntrusion"}} ({{config.xpCosts.playerIntrusion}} {{localize "CYPHER.XP.Label"}})
         </button>
       </div>
     </div>
@@ -594,7 +594,7 @@
         </span>
         {{else}}
         <button type="button" data-action="purchaseAdvancement" data-slot="{{@index}}">
-          {{localize "CYPHER.Advancement.Buy"}} ({{../config.xpCosts.advancementSlot}} PX)
+          {{localize "CYPHER.Advancement.Buy"}} ({{../config.xpCosts.advancementSlot}} {{localize "CYPHER.XP.Label"}})
         </button>
         {{/if}}
       </div>

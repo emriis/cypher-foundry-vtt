@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.improved-healing",
+  "sourceLogicalId": "cypher.improved-healing",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "7306041bd800f31591a39ca54dba0147e1f39bf05a7bc8b34e0d9d948785f01d",
+      "text": "Soins renforcés"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "a2441eeea50d048870d761d429a67ed891973f0d0f3057de9a8218d6de75db86",
+      "text": "<p><strong>Effet :</strong> Vous bénéficiez de trois atouts à votre tâche de soins, de médecine ou de chirurgie. Pour cette tâche, la limite d’atouts est de trois au lieu de deux. Vous pouvez utiliser ce cypher avant ou après votre jet.</p><p><strong>Explication :</strong> La personne n’était pas aussi gravement blessée qu’il semblait au départ. Vous venez d’étudier comment traiter ce type de lésion. Tout s’est facilement remis en place.</p>"
+    }
+  ]
+}

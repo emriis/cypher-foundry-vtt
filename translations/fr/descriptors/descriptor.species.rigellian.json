@@ -1,0 +1,43 @@
+{
+  "logicalId": "descriptor.species.rigellian",
+  "sourceLogicalId": "descriptor.species.rigellian",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "d09fca59fb5aad769f6fc6ee09fe270100680f590f0e748e7cfef93dc29335f3",
+      "text": "Rigellien"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "e1130722e04b64cc7b8d479605631561f2ff24e28b15d41825ff30a333529f0a",
+      "text": "<p>En tant que rigellien, vous êtes un humanoïde de 7 pieds (2 m) couvert d’une épaisse fourrure. Les rigelliens sont réputés pour leur force, leur loyauté et leur langage rugissant. La plupart vivent paisiblement sur un monde natal technologiquement avancé qui orbite autour d’une lointaine étoile supergéante bleue. Vous partagez peut-être le sens de l’honneur de la plupart des vôtres, mais vous avez probablement quitté votre foyer pour chercher l’aventure dans la vaste galaxie.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>Vous ne subissez pas d’intrusion du MJ lorsque vous obtenez un 1 sur une tâche d’athlétisme.</p>\n<p>Vous êtes entraîné en utilisation de systèmes.</p>\n<p>Vous infligez +1 dégât avec les armes à projectiles à distance.</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "86eeb735577ac0672523a757501c4e77c17ca90c777281358dd6efc7e3ee1d97",
+      "text": "Utilisation de systèmes"
+    },
+    {
+      "path": "system.benefits.0.name",
+      "sourceHash": "f361577428ee47c6deee36267f33a95a11354caa94b341fa3b45990a85fe7244",
+      "text": "Athlétisme sans intrusion du MJ"
+    },
+    {
+      "path": "system.benefits.0.description",
+      "sourceHash": "b5db322233df55bb3c0cb84438f88ca22cfb8b45c5afccfdb0020c9f49816d77",
+      "text": "<p>Vous ne subissez pas d’intrusion du MJ lorsque vous obtenez un 1 sur une tâche d’athlétisme.</p>"
+    },
+    {
+      "path": "system.benefits.1.name",
+      "sourceHash": "facd232f71b23125e2c271245c47e722e0eba9df66686663020ad6ecc4a8794b",
+      "text": "Dégâts des armes à projectiles"
+    },
+    {
+      "path": "system.benefits.1.description",
+      "sourceHash": "b5b5b7a0a19824188a24d39d1a18198cbe7d975381a60748008c29dbf07cdcf4",
+      "text": "<p>Vous infligez +1 dégât avec les armes à projectiles à distance.</p>"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.locate-machine",
+  "sourceLogicalId": "ability.locate-machine",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "62b9f378d7b2d547e11f61bd75dca9e3d0f53ec927198e0b7aa7559916a2c1c6",
+      "text": "Localiser une machine"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "327e778c537584a205ca131a5f80ef69ce044d7626b7d60220bff0e5bce5a411",
+      "text": "Vous pouvez retrouver une machine précise depuis des miles de distance. Choisissez une machine, un robot ou un appareil intelligent que vous avez identifié, soit en trouvant des informations permettant de l’identifier lors de recherches sur un réseau, soit parce que vous avez personnellement interagi avec lui. Si vous réussissez une attaque d’Intellect, vous pouvez percevoir sa direction générale ou sa distance tant qu’il se trouve dans un rayon de 10 miles (16 km) de vous, en consacrant une action à vous concentrer, à consulter votre appareil ou à faire quelque chose de similaire. Au-delà de cette distance, vous ne percevez que sa direction générale. Une machine qui prend conscience de votre traçage tente de s’en débarrasser ; vous devez réussir un nouveau jet d’attaque d’Intellect toutes les dix heures pour maintenir le traçage. Action pour commencer ; action pour mettre à jour les informations de direction et/ou de distance."
+    }
+  ]
+}

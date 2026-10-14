@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/svg/target.svg",
   "system": {
-    "description": "<p>You are a stalking hunter who excels at bringing down your selected quarry, whether person or beast.</p>",
+    "description": "<p>You are a stalking hunter who excels at bringing down your selected quarry, whether person or beast.</p>\n<ul>\n<li>Genre themes: assassin or ranger (fantasy), bounty hunter (real world, science fiction, superhero)</li>\n<li>GM intrusions: Your target notices you. The target isn’t as vulnerable as it seemed. Someone reacts poorly to knowing you hunt.</li>\n</ul>",
     "abilities": [
       "Compendium.cypher.abilities-en.Item.2b460282fa97faed",
       "Compendium.cypher.abilities-en.Item.f7d15d8a533909a5",
@@ -96,6 +96,13 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references"
+        ]
+      }
     }
   }
 }

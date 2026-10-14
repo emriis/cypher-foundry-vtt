@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.paralyzer",
+  "sourceLogicalId": "cypher.manifest.paralyzer",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "a14057f0214bae7282a0401f40fa85a184b8bc008dfec0c6a80630e8927934ab",
+      "text": "Paralyseur"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "6cad6e5453afee14838033274352caaacd6597c033554c0786064385a5c32fd8",
+      "text": "<p><strong>Effet :</strong> Effectuez une attaque d’Intellect contre un adversaire à portée courte ; si l’adversaire est de niveau 7 ou plus, l’attaque est entravée de deux pas. En cas de réussite, il est étourdi et ne peut entreprendre aucune action jusqu’à ce que vous preniez une récupération de dix minutes ou plus.</p><p><strong>Objets du genre : dard de paralysie cristallin (fantasy) ; neurosuppresseur (science-fiction)</strong></p>"
+    }
+  ]
+}

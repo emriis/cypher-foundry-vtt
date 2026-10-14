@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.obstacle-bomb",
+  "sourceLogicalId": "cypher.manifest.obstacle-bomb",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "b4496daa39311d0727677f0048d93c5380e58dfbf3a1f37ebade0894d90eb8bd",
+      "text": "Bombe d’obstacles"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "5df6f1fbca339486d57b63f1dfa3b36071fc9b8bd610320da60c91e2e38ea6cb",
+      "text": "<p><strong>Effet :</strong> Transforme une zone courte à portée longue en terrain difficile, jusqu’à ce que vous preniez une récupération d’une heure ou plus. La plupart de ces Cyphers créent un obstacle adapté au lieu, comme de la glace, de la neige épaisse, de la boue, des décombres ou des buissons ; certains créent des obstacles étranges ou fantastiques, comme des épines géantes, des membres d’ombre ou des billes.</p><p><strong>Objets du genre : rune d’explosion d’épines (fantasy) ; bombe de décombres (science-fiction)</strong></p>"
+    }
+  ]
+}

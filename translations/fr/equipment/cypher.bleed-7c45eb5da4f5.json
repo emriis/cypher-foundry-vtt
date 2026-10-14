@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.bleed",
+  "sourceLogicalId": "cypher.bleed",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "2574b5ca76b0782c9d1c8d5558d32fa74df5b6e0aeb30ea4b7cd0ab0fb0be9de",
+      "text": "Saignement"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "8e7ab853be36438dc9346920094327eb480826cb9ff725d214c20a0a22338449",
+      "text": "<p><strong>Effet :</strong> Votre attaque physique réussie inflige à votre adversaire une blessure hémorragique qui cause 3 dégâts supplémentaires ignorant l’armure à votre prochain tour. L’adversaire peut empêcher ces dégâts supplémentaires en utilisant une aptitude qui le soigne ou en consacrant son action à arrêter le saignement. Vous pouvez utiliser ce cypher avant ou après votre jet. Si vous consacrez de l’Effort à cette attaque spécifiquement pour ce cypher, la blessure hémorragique dure un round supplémentaire pour chaque niveau d’Effort utilisé de cette manière.</p><p><strong>Explication :</strong> Vous avez touché un gros vaisseau sanguin à la surface de sa peau. Vous avez entaillé une artère. Les blessures à la tête saignent beaucoup.</p>"
+    }
+  ]
+}

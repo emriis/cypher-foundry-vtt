@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.skill-exemplar",
+  "sourceLogicalId": "ability.skill-exemplar",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "5b5fcb7f5721f17a5d5f1686e6662ab33a2e07e1ed0f18e4110b6dec61d1fe1a",
+      "text": "Excellence dans une compétence"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "b85e1b0c32d4f96481178b8a1f28adde1f67a9ce3e4a7b163ecec578df2ba6cc",
+      "text": "<p>Vous comptez parmi les meilleurs dans votre domaine d’expertise. Choisissez une compétence dans laquelle vous êtes entraîné ou spécialisé, autre qu’une compétence d’attaque ou de défense, comme les soins, l’athlétisme, la discrétion, la physique, le vol à la tire, le piratage informatique, la gymnastique, etc. Lorsque vous effectuez un jet pour cette compétence et que le résultat est inférieur à 15, considérez qu’il est de 15. Vous ne subissez donc pas d’intrusion du MJ si vous obtenez 1. Effort : augmentez de 3 le résultat minimal de cette aptitude. Au rang 3 : le résultat minimal de cette aptitude passe à 18.</p>"
+    }
+  ]
+}

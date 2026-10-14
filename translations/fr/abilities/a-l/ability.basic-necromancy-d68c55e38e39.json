@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.basic-necromancy-d68c55e38e39",
+  "sourceLogicalId": "ability.basic-necromancy-d68c55e38e39",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "68063b33efb4756b228e2b27931a65d0646366bd0735dceea3e27e87072ab6bc",
+      "text": "Nécromancie élémentaire"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "c5ebbfc6e2c345e432d832c7ea500077b9b0a5a1d142217ae7f117e232b7fb8a",
+      "text": "Vous animez le corps d’une créature morte approximativement de votre taille ou plus petite, à portée immédiate, créant ainsi un compagnon mort-vivant de niveau 1. Il ne possède ni l’intelligence, ni les souvenirs, ni les aptitudes spéciales qu’il avait de son vivant. La créature suit vos ordres verbaux jusqu’à ce que vous utilisiez une récupération d’une heure ou plus, après quoi elle devient un cadavre inerte. Sauf si la créature est tuée par des dégâts, vous pouvez la réanimer lorsque la durée expire, mais tous les dégâts qu’elle avait subis avant de devenir inerte s’appliquent à son état nouvellement réanimé. Si vous utilisez Nécromancie élémentaire pour animer un deuxième corps, tout corps que vous avez déjà animé avec cette aptitude redevient un cadavre inerte. Une action pour animer."
+    }
+  ]
+}

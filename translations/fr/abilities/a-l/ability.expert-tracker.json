@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.expert-tracker",
+  "sourceLogicalId": "ability.expert-tracker",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "6eb706d4c538a2675fbf5a17428c39de91bd8de3843996e2c4cd0101661a47d7",
+      "text": "Pisteur expert"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "dd1a5957db13ecfb0affdb85e69560e28bd97784370898432ca6e1789453fb28",
+      "text": "Vous êtes entraîné en pistage. Au rang 6 : vous pouvez devenir expert en pistage si vous êtes déjà spécialisé, mais vous devez acquérir la compétence normalement, par exemple par un avancement de personnage."
+    }
+  ]
+}

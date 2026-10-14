@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.intimidating-presence",
+  "sourceLogicalId": "ability.intimidating-presence",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "50f2df7903c8205362a6a5d8e507855374bc031e08fe0619bdf280aba4de4c15",
+      "text": "Présence intimidante"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "afe17891b378d753802adafdcc0a49a8d146b93eaa5d778c5cfac953fa0df25e",
+      "text": "Votre présence minérale vous accorde un atout à toutes vos tentatives d’intimidation."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.investigative-knack",
+  "sourceLogicalId": "ability.investigative-knack",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "b0268bd712bc1d73f328842b5dce57ee97457cc06af9228553972dfb2b197c0c",
+      "text": "Talent d’investigation"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "8af36a3fb7e4b31b0d55eca739eb0097d60cf103c87787b1b2b65924285449c2",
+      "text": "Vous avez un œil attentif aux détails et remarquez les indices subtils montrant que quelqu’un ment ou dissimule des informations. Lorsque vous examinez une zone à la recherche d’indices ou conversez avec quelqu’un (ou l’interrogez) pour obtenir des informations, si vous obtenez 9 ou moins à votre tâche de perception, d’interaction ou de reconnaissance des motivations, considérez le résultat comme un 9. (Cela signifie que vous ne subissez pas d’intrusion du MJ si vous obtenez un 1.) Cette aptitude dure jusqu’à ce que vous preniez une récupération de dix minutes ou plus. Effort : augmentez de 3 le résultat minimal du jet pour cette aptitude. Action pour commencer. Au rang 3 : le résultat minimal du jet pour cette aptitude passe à 12."
+    }
+  ]
+}

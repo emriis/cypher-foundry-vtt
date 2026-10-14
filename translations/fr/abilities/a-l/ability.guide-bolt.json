@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.guide-bolt",
+  "sourceLogicalId": "ability.guide-bolt",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "251bc394b19d02e72e77bbf96e451f50949b56144d3fa8e64b2d698dfff389f9",
+      "text": "Projectile guidé"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "c05c5fde97908c6f9ada5732186d67eebb258f248bd79a4914b8b0f3b2fd5ab0",
+      "text": "Lorsque vous effectuez une attaque utilisant un projectile métallique — notamment une balle, un couteau lancé, un carreau métallique ou une flèche à pointe métallique — contre une cible à portée courte, vous pouvez améliorer la précision et la vitesse du projectile, ce qui accorde un atout à l’attaque et inflige 3 dégâts supplémentaires. Vous ne pouvez utiliser cette aptitude qu’une fois par round. Effort : affectez l’attaque d’un allié à la place de la vôtre si elle passe à portée courte de vous. Aptitude passive."
+    }
+  ]
+}

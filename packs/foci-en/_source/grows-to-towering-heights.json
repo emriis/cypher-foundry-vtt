@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/svg/aura.svg",
   "system": {
-    "description": "<p>You can grow larger and, with enough experience, to towering heights.</p>",
+    "description": "<p>You can grow larger and, with enough experience, to towering heights.</p>\n<ul>\n<li>Genre themes: giant (fantasy), alien (science fiction), bruiser (superhero)</li>\n<li>GM intrusions: Rapid growth knocks over furnishings or smashes through ceilings or hanging lights. An enlarged character breaks through the floor.</li>\n</ul>",
     "abilities": [
       "Compendium.cypher.abilities-en.Item.a4db1cfcafefc041",
       "Compendium.cypher.abilities-en.Item.34197538648b5560",
@@ -82,6 +82,13 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references"
+        ]
+      }
     }
   }
 }

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.calm",
+  "sourceLogicalId": "ability.calm",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "38f6b83e2dc175c7e2545a6c36b85774e3816c0b90782a8e3d24800445344990",
+      "text": "Apaiser"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "2022c53144f619929888548a0342955661fce0661b7db68f5ac6c6d53b856b7b",
+      "text": "Si vous réussissez une attaque d’Intellect contre un adversaire vivant qui peut vous voir et vous entendre, vous l’empêchez d’attaquer qui que ce soit ou quoi que ce soit pendant un round grâce à vos plaisanteries, votre chanson ou une autre prestation. Action."
+    }
+  ]
+}

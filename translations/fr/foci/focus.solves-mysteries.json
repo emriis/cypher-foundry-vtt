@@ -1,0 +1,18 @@
+{
+  "logicalId": "focus.solves-mysteries",
+  "sourceLogicalId": "focus.solves-mysteries",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "c1aa5dafb01979e2a98f968fd66b2116fcff3bea39c68ce245df0ed0842f28e8",
+      "text": "Résout des mystères"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "966542486c02068d94a862c67ac9c104f29dc9d3fced90d2d07b33dacd4f2a24",
+      "text": "<p>Vous êtes un maître de la déduction, utilisant les indices pour trouver la réponse.</p>\n<ul>\n<li>Thèmes selon le genre : chercheur de vérité (fantasy), détective (monde réel, science-fiction, superhéros)</li>\n<li>Intrusions du MJ : des preuves disparaissent, des fausses pistes sèment la confusion et des témoins mentent. Les premières recherches peuvent être erronées.</li>\n</ul>"
+    }
+  ]
+}

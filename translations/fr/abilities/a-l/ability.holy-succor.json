@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.holy-succor",
+  "sourceLogicalId": "ability.holy-succor",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "04df974839e6bf3c875bdb0c9edae3db30bca9dd3839d8bae0e7f0672349689a",
+      "text": "Secours sacré"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "01729b34207f27e1f4fb218bf20739e8cf0554f7bf53a31b1589b0f7f8979c66",
+      "text": "Tant qu’un allié à portée immédiate de vous présente au moins trois blessures modérées ou au moins une blessure majeure, vous pouvez lui accorder votre grâce divine, qui lui donne un niveau d’Effort gratuit à appliquer chaque round à un jet d’attaque ou de défense. La grâce divine dont il bénéficie dure jusqu’à ce que ses blessures soient soignées ou qu’il prenne une récupération de dix minutes ou plus. Chaque fois que vous utilisez Secours sacré, le coût en Intellect augmente de 1. Ce coût revient à 1 après que vous avez pris une récupération. Aptitude passive."
+    }
+  ]
+}

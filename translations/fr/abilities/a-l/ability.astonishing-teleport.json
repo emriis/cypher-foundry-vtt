@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.astonishing-teleport",
+  "sourceLogicalId": "ability.astonishing-teleport",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "9df07e2e4371fec1ad704b9d4f455217b2cd564410c69e7bebb3551359f1e22f",
+      "text": "Téléportation stupéfiante"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "ecb15cf89ba34475d24fc33a7fb4486849adc0780c2607086c2e7ae2953e6c17",
+      "text": "<p>Vous pouvez vous téléporter instantanément partout où vous voyez ou dont vous connaissez l’existence. Vous pouvez vous téléporter instantanément dans un lieu à portée immédiate, puis effectuer une action réflexe, comme attaquer avec une arme légère ou ouvrir une porte : la téléportation se produit avant votre action réflexe, et non l’inverse. Vous pouvez effectuer une action, puis vous téléporter à portée courte par une action supplémentaire pendant votre tour. Par une action lente, vous pouvez vous téléporter dans un lieu à portée longue. Action réflexe, action ou action lente.</p>"
+    }
+  ]
+}

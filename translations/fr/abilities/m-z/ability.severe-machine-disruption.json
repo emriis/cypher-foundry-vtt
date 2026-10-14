@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.severe-machine-disruption",
+  "sourceLogicalId": "ability.severe-machine-disruption",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "1d7d1eec94ea2e7f6487ee55b34821e609346ee583684315cd0d5eb63a1d5548",
+      "text": "Perturbation mécanique majeure"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "baa872ce62c698b1b62601be0ec518c360238d05e4923d10116b249cc5e218a6",
+      "text": "<p>En réussissant une attaque d’Intellect pour pirater une machine, un robot, un mécanisme ou un appareil à portée immédiate, intelligent ou non, vous le perturbez simultanément de toutes les façons suivantes. Toutes ses tâches sont entravées jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Sa vitesse est divisée par deux. Il ne peut accomplir aucune action pendant un round. La gravité de ses attaques est réduite d’un degré, jusqu’à un minimum de blessure mineure, jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Vous devez toucher la machine pour la perturber ; si vous effectuez une attaque, elle n’inflige aucun dégât. Effort : augmentez la portée jusqu’à la distance à laquelle vous pouvez voir directement, de vos propres yeux et non par une caméra distante ou une autre interface. Ciblez une machine par une interface réseau à laquelle vous disposez d’un accès sans restriction ; cela nécessite deux niveaux d’Effort. Action.</p>"
+    }
+  ]
+}

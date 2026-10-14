@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/svg/hand.svg",
   "system": {
-    "description": "<p>A muscled prodigy, you can haul incredible weight, hurl your body through the air, and punch through doors.</p>",
+    "description": "<p>A muscled prodigy, you can haul incredible weight, hurl your body through the air, and punch through doors.</p>\n<ul>\n<li>Genre themes: fighter (fantasy), athlete (real world, science fiction), brick (superhero)</li>\n<li>GM intrusions: It’s easy to break delicate things or hurt someone accidentally.</li>\n</ul>",
     "abilities": [
       "Compendium.cypher.abilities-en.Item.a92e437a358d0cd6",
       "Compendium.cypher.abilities-en.Item.e7e68d4974efda02",
@@ -94,6 +94,13 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references"
+        ]
+      }
     }
   }
 }

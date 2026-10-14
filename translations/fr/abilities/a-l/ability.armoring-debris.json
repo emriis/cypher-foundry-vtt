@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.armoring-debris",
+  "sourceLogicalId": "ability.armoring-debris",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "ad63fe4d81e0a789f37d37e1aaebaf9c686fc4a2f509f57ea310536e3d667517",
+      "text": "Protection de débris"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "6a21911845c6f29eb52ed5f4860852c28da01e3b3ea6349f126c88e674856d86",
+      "text": "Vous utilisez de petits objets proches provenant de l’environnement, comme des pierres, des objets brisés ou des mottes de terre, pour intercepter les attaques entrantes jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Cela vous permet de tenter de mieux bloquer les blessures : les tâches de blocage sont facilitées d’un pas supplémentaire ; les tâches d’esquive ne sont pas affectées. Une action pour commencer."
+    }
+  ]
+}

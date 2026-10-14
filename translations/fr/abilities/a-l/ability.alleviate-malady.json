@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.alleviate-malady",
+  "sourceLogicalId": "ability.alleviate-malady",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "5215896c54aec5a7ccd60bf095b1672d36a532befc0077dbba54a45d4d4b943c",
+      "text": "Soulager une affection"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "1994d5b14b11a1d9d91b95be4245b77d3b871b42fd2e6c8880b187924174b62d",
+      "text": "Vous annulez ou guérissez une maladie, un poison ou une affection similaire chez une créature que vous touchez si vous réussissez un jet d’Intellect contre le niveau de l’affection. Certaines affections peuvent nécessiter plusieurs réussites pour être guéries. Action."
+    }
+  ]
+}

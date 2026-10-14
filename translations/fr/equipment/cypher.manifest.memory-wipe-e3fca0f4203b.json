@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.memory-wipe",
+  "sourceLogicalId": "cypher.manifest.memory-wipe",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "284e518e7dca177e5de267acf19be70244219b6bfd2e9a3e4b542e6d2ca7600d",
+      "text": "Effacement de mémoire"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "8f4d346d7af5f7663030dff6b6f787df192f384d393f10ea75e543ffdf79f144",
+      "text": "<p><strong>Effet :</strong> Effectuez une attaque d’Intellect contre une créature capable de penser, que vous pouvez voir à portée longue. En cas de réussite, elle perd son prochain tour et n’a aucun souvenir de l’heure précédente.</p><p><strong>Objets du genre : parchemin de brouillard mental (fantasy) ; émetteur d’amnésie (science-fiction)</strong></p>"
+    }
+  ]
+}

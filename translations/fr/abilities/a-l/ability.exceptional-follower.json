@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.exceptional-follower",
+  "sourceLogicalId": "ability.exceptional-follower",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "f3a312bc4def600ad51625d7f0dee99cf28c5f1916f8f9d657ac67706c402daa",
+      "text": "Compagnon exceptionnel"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "f1f4d31fd7a3a1aea6ea5a12020b5957108e50b7be7857b207be22dcd953cd2b",
+      "text": "<p>Vous gagnez un compagnon de niveau 3.</p>"
+    }
+  ]
+}

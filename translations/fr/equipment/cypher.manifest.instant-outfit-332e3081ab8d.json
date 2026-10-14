@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.instant-outfit",
+  "sourceLogicalId": "cypher.manifest.instant-outfit",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "187785777ddcb9dd26ed1545a155e93ae44401c0f5847a778281b1f637c461e7",
+      "text": "Tenue instantanée"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "dc215039e5f9d18961a3410c5c4f4123a2338714bcd69299406b9a56104d6198",
+      "text": "<p><strong>Effet :</strong> Vous créez une tenue à la mode. Elle vous va parfaitement et vous met en valeur. À l’activation du Cypher, vous pouvez préciser son apparence ou décrire un événement ou une situation pour le laisser produire une tenue adaptée. Jusqu’à ce que vous preniez une récupération de dix heures, la tenue vous donne un atout aux tâches d’interaction ; elle devient ensuite un vêtement normal sans bénéfice supplémentaire.</p><p><strong>Objets du genre : chrysobéryl de costume (fantasy) ; nanospray de tailleur (science-fiction)</strong></p>"
+    }
+  ]
+}

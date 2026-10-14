@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.dual-wield",
+  "sourceLogicalId": "ability.dual-wield",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "b4bf473149ee28dd6922bb4e051b46a38f7de2891dda987c680e4079b91d0248",
+      "text": "Maniement de deux armes"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "bec2cbd3d4128895da9af0898fc1543c5216abd466dd5a0b4d762be5cf930ba3",
+      "text": "Vous pouvez utiliser deux armes légères de mêlée à la fois, ou une arme légère et une arme moyenne de mêlée à la fois. Vous pouvez attaquer avec l’une par votre action, puis attaquer avec l’autre par une action supplémentaire pendant votre tour. Aptitude passive. Au rang 3 : vous pouvez choisir d’utiliser deux armes moyennes de mêlée à la fois. Lorsque Maniement de deux armes vous permet d’attaquer deux fois pendant votre tour, vous ne pouvez pas utiliser une action réflexe pour attaquer avec une arme légère de mêlée, puis attaquer de nouveau avec l’autre arme par une action ; vos deux actions se produisent à la place dans l’ordre d’initiative normal."
+    }
+  ]
+}

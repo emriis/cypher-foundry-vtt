@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.hunter-s-determination",
+  "sourceLogicalId": "ability.hunter-s-determination",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "e4154197e01171a5437eaafc7a0d0bc373cd32f54beb6d1aaff2164349a80e05",
+      "text": "Détermination du chasseur"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "2a76007d0a6d69c9d04b2364db4b792722c00423e7bab292dac11817ac0c3da7",
+      "text": "Lorsque vous attaquez un adversaire et le manquez, vous gagnez un atout à vos attaques et à vos défenses contre lui. Si vous le manquez à nouveau, vous gagnez un second atout contre lui. Vous perdez ces atouts si vous changez de cible ou si le combat prend fin. Aptitude passive."
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "CYPHER": {
+    "Stat": {
+      "Label": "Stat",
+      "might": "Might",
+      "speed": "Speed",
+      "intellect": "Intellect",
+      "none": "None",
+      "AddCustom": "Add a Stat",
+      "RemoveCustom": "Remove this stat",
+      "CustomName": "Stat Name",
+      "CustomNamePlaceholder": "e.g. Luck, Faith, Willpower...",
+      "ConfirmDeleteCustom": "Permanently remove this custom stat?",
+      "PoolValue": "Current points",
+      "PoolMax": "Maximum",
+      "Depleted": "Pool depleted"
+    },
+    "Wound": {
+      "Title": "Wounds",
+      "minor": "Minor",
+      "moderate": "Moderate",
+      "major": "Major",
+      "CurrentLabel": "current",
+      "Rally": "Rally (spend Might points to remove this wound)",
+      "RallyMajorSuperhero": "Rally (10 Might — Superhero genre only)",
+      "Hint": "The default capacity is three wounds of each severity. A full moderate wound track hinders all tasks. Each major wound adds one step of hindrance to all tasks. Three major wounds cause death.",
+      "HinderedBanner": "Character Hindered",
+      "DeadBanner": "Character Dead",
+      "HinderedStatus": "Hindered",
+      "DeadStatus": "Dead"
+    },
+    "NPC": {
+      "Level": "Level",
+      "TargetNumber": "Target Number",
+      "Health": "Health",
+      "Movement": "Movement",
+      "Modifications": "Modifications",
+      "ModificationsPlaceholder": "e.g. attacks as level 5, +2 to Dodge...",
+      "Combat": "Combat",
+      "Interaction": "Interaction",
+      "Use": "Use",
+      "Loot": "Loot",
+      "GMNotes": "GM Notes",
+      "ApplyDamage": "Apply Damage",
+      "IgnoreArmor": "Ignore Armor",
+      "Description": "Description",
+      "Motive": "Motive",
+      "Environment": "Environment",
+      "GMIntrusion": "GM Intrusion",
+      "Attacks": "Structured Attacks",
+      "RollAttack": "Roll Attack",
+      "NoStructuredAttacks": "No structured attacks configured.",
+      "SinglePCTarget": "Target exactly one player character.",
+      "UnsupportedAttackDamage": "This NPC attack has no supported player-target damage profile.",
+      "LostNextAction": "This NPC loses its next action because of a weapon effect.",
+      "RollAttackTitle": "NPC Attack: {name}",
+      "Defense": "Defense",
+      "WeaponEffects": "Active weapon effects",
+      "EffectRounds": "{rounds} round(s)",
+      "ExtendEffect": "Extend to two rounds (GM)",
+      "EffectHindered": "Hindered by {steps} step(s)",
+      "EffectNextAction": "Next action",
+      "DamagePlaceholder": "e.g. 4",
+      "MovementPlaceholder": "e.g. short"
+    },
+    "Community": {
+      "Resources": "Resources"
+    },
+    "CustomField": {
+      "Title": "Custom Fields",
+      "Hint": "Add anything specific to your character that the system doesn't already provide for (status, reputation, ally, debt, etc.).",
+      "Add": "Add a Field",
+      "Remove": "Remove this field",
+      "Label": "Field Name",
+      "LabelPlaceholder": "e.g. Reputation, Ally, Debt...",
+      "Type": "Field Type",
+      "text": "Text",
+      "number": "Number",
+      "checkbox": "Checkbox",
+      "ConfirmDelete": "Permanently remove this custom field?"
+    }
+  }
+}

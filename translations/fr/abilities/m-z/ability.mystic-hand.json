@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.mystic-hand",
+  "sourceLogicalId": "ability.mystic-hand",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "2ad183bb1b166f13550d3819eed15f883d9f6c29ca19f303b761e0ce8d83e3b7",
+      "text": "Main mystique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "99e294a7cab5849f699257f7e4125628e106ca2fdcb1b064f4ae81229e6578bf",
+      "text": "Vous infligez 1 dégât supplémentaire avec vos attaques à mains nues utilisant votre source mystique. Une fois par round, si vous subissez une blessure et n’êtes pas sans défense, vous pouvez dépenser 3 points de Célérité pour réduire sa gravité d’un degré. Aptitude passive."
+    }
+  ]
+}

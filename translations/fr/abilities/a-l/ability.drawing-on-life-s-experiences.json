@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.drawing-on-life-s-experiences",
+  "sourceLogicalId": "ability.drawing-on-life-s-experiences",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "b40cc807cfe6269eeb48ce33f01e3e6ec9650ac2fca405c1025c711c3e9b4a26",
+      "text": "Puiser dans l’expérience de la vie"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "9f5a68eb7465ccddbedf4b752c47e5449ca35c19ff7d601c0677a5e73a6dc7d9",
+      "text": "Vous avez beaucoup vu et beaucoup fait, et cette expérience vous est utile. Posez une question au MJ et vous recevrez une réponse générale. Le MJ attribue un niveau à la question : plus la réponse est obscure, plus la tâche est difficile. Généralement, une connaissance que vous pourriez trouver en cherchant ailleurs qu’à votre emplacement actuel est de niveau 1, et une connaissance obscure du passé est de niveau 7. Action."
+    }
+  ]
+}

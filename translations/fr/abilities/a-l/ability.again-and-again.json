@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.again-and-again",
+  "sourceLogicalId": "ability.again-and-again",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "961f2af7effdddd008c0257dabdaacccd37999aed4fa16b2adb445a1e2d6b09c",
+      "text": "Encore et encore"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "778147c4041f82dead39f2d57be1f65972df16eb6345710b71afdf275f088344",
+      "text": "Vous pouvez effectuer une action supplémentaire pendant votre tour. Aptitude passive."
+    }
+  ]
+}

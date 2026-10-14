@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.cybernetic-alacrity",
+  "sourceLogicalId": "ability.cybernetic-alacrity",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "0e081985e8317c96c721da375d958f01cbe0ef415eae4da72178479da199cb86",
+      "text": "Vivacité cybernétique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "c0a3f8afd21103c3b0e8117d9d5f4e7c45640e451e84faf6e05daf91e16d198e",
+      "text": "Chaque fois que vous utilisez de l’Effort pour une tâche de Célérité hors combat, ajoutez l’une des options suivantes au choix : un niveau d’Effort gratuit pour l’action, ou un effet mineur pour l’action. Aptitude passive."
+    }
+  ]
+}

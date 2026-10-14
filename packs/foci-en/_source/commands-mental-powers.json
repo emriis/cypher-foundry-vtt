@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/magic/perception/third-eye-blue-red.webp",
   "system": {
-    "description": "<p>You can send and receive thoughts as easily as communicating by voice.</p>",
+    "description": "<p>You can send and receive thoughts as easily as communicating by voice.</p>\n<ul>\n<li>Genre themes: enchanter (fantasy), telepath (real world, science fiction, superhero)</li>\n<li>GM intrusions: Something glimpsed in the target’s mind is horrifying. A feedback loop allows the target to read the character’s mind.</li>\n</ul>",
     "abilities": [
       "Compendium.cypher.abilities-en.Item.c63aaad4c957d42e",
       "Compendium.cypher.abilities-en.Item.1c852564abb383f1",
@@ -130,6 +130,13 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references"
+        ]
+      }
     }
   }
 }

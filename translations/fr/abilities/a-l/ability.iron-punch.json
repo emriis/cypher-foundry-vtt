@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.iron-punch",
+  "sourceLogicalId": "ability.iron-punch",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "15dee671463b419b9932adcc9fedebbc49eacb45735f3b7919eec73c28d330b4",
+      "text": "Coup de poing de fer"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "7c1646d85e27b833641c331be263dd2767afc38d04f3e20f6da92aaa54b723c1",
+      "text": "Vous soulevez par magnétisme un objet métallique lourd à portée courte et le projetez sur une cible à portée courte. Avec une attaque d’Intellect réussie, vous infligez 10 dégâts à la cible et à l’objet. Effort : affectez une cible supplémentaire adjacente à la première. Action. Diamagnétisme remplace Magnétiser ; si vous possédez les deux, vous pouvez donc échanger Magnétiser contre une autre aptitude de ce focus de rang égal ou inférieur."
+    }
+  ]
+}

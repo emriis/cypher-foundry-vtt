@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/creatures/mammals/wolf-howl-moon-black.webp",
   "system": {
-    "description": "<p>Your ability to communicate and lead beasts is uncanny.</p>",
+    "description": "<p>Your ability to communicate and lead beasts is uncanny.</p>\n<ul>\n<li>Genre themes: druid or ranger (fantasy), animal telepath (real world, science fiction, superhero)</li>\n<li>GM intrusions: The community is reluctant to welcome dangerous animals. Out-of-control beasts become a hazard.</li>\n</ul>",
     "abilities": [
       "Compendium.cypher.abilities-en.Item.bee172df46baed49",
       "Compendium.cypher.abilities-en.Item.819cfb3a4c30ffc7",
@@ -114,6 +114,13 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references"
+        ]
+      }
     }
   }
 }

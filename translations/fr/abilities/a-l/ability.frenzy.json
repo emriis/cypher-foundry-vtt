@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.frenzy",
+  "sourceLogicalId": "ability.frenzy",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "148b8f01ccb30c07d3bd3fb26370f7976cdc4a08a1e1d2c6be996306d8cc274e",
+      "text": "Frénésie"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "849820f03de78fdf2887001f1c834a23e39ab8e0967ad2ff08d96a5e78119416",
+      "text": "Au combat, vous pouvez entrer dans un état de frénésie. Dans cet état, vous ne pouvez pas utiliser de points d’Intellect, mais vous ajoutez +1 à votre Avantage de Puissance et à votre Avantage de Célérité. L’effet dure aussi longtemps que vous le souhaitez, mais prend fin si aucun combat n’a lieu à portée de vos sens. Effort : facilitez les attaques de vos alliés contre un adversaire de votre choix pour le reste du combat. Aptitude passive."
+    }
+  ]
+}

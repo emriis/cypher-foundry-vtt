@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.tower-of-will",
+  "sourceLogicalId": "ability.tower-of-will",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "f30bd0f08355ffcb81b1c09cb2aa66b4429b3792874600712f95a9b1a5e9a1bc",
+      "text": "Tour de volonté"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "a0ab655caeea1136acdd2d976eedee04c03d62cc7836037998614dd309909910",
+      "text": "Vous obtenez un atout pour les tâches de défense d’Intellect et ajoutez +3 points à votre réserve d’Intellect. Aptitude passive."
+    }
+  ]
+}

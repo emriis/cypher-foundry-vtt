@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.word-of-death",
+  "sourceLogicalId": "ability.word-of-death",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "53869042a9ae02636e5702d355ed62775043acb88826ebb83008dbe4ccae6162",
+      "text": "Mot de mort"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "409cba743f2e0cb7c8735ad150b87074e27c96e6a1a0261787946b7cfd44f29c",
+      "text": "Vous prononcez un mot magique si puissant qu’il peut tuer instantanément un adversaire. Effectuez une attaque d’Intellect contre un adversaire à courte portée. En cas de réussite, vous infligez 10 dégâts. Action."
+    }
+  ]
+}

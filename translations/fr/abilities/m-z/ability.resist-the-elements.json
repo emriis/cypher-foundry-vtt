@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.resist-the-elements",
+  "sourceLogicalId": "ability.resist-the-elements",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "7631732b4c47b73ae219cdc4c335bd78976a12685981421caed33319e5e16177",
+      "text": "Résister aux éléments"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "8dd716d9ce274d520124ff164bfe7a34c471a51f34c9b424bcba64636f2f7c00",
+      "text": "Vous devenez résistant à un type d’énergie nocive. Choisissez une sorte d’énergie, comme le feu ou l’électricité. Réduisez la gravité des blessures dues à cette énergie d’un degré : majeure à modérée, modérée à mineure, mineure à aucune."
+    }
+  ]
+}

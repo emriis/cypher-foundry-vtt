@@ -1,0 +1,18 @@
+{
+  "logicalId": "skill.forensics",
+  "sourceLogicalId": "skill.forensics",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "64e34ce2ec320026f638a38f9b75e0a6e14a991b93e53004d66fcfe1adb48616",
+      "text": "Criminalistique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "776991e45f9c68e9e9aed8fb880d6eff8abf3d6ff3f4bad020978920570d91ea",
+      "text": "<p>Vous savez interpréter les indices matériels pour déterminer ce qui s’est produit à un endroit, par exemple sur une scène de crime, ou ce qui a pu conduire un objet à son état actuel, comme la cause de la mort dans le cas d’un corps.</p>"
+    }
+  ]
+}

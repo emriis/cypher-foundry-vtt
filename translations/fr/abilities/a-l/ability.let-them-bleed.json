@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.let-them-bleed",
+  "sourceLogicalId": "ability.let-them-bleed",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "971997038f1b2f38f7666a776c563de2c11f1aceb418e7d7d7b6147a85217039",
+      "text": "Les laisser saigner"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "f3f8c0bcc6c9a5ecc6596ecc8add83101b3b6f8b1a9c45c5f449c89883ac55f5",
+      "text": "La blessure saigne ; à votre prochain tour, l’adversaire subit 2 dégâts qui ignorent l’armure. Action."
+    }
+  ]
+}

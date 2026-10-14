@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.noble-defender",
+  "sourceLogicalId": "ability.noble-defender",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "bdaf032e831dd59cb3c6bf37c174607f2c27054645199231fcd29cc1fa0cf963",
+      "text": "Noble défenseur"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "07b4bbd5a6a714a98cdff7bbb1d5aac1b424417c7520933feecb73ea256ab5b7",
+      "text": "<p>Choisissez un personnage que vous pouvez voir. Il passe sous votre protection. Vous obtenez un atout pour toutes les tâches visant à le retrouver, le soigner, interagir avec lui et le protéger. Lorsque vous utilisez l’action d’aide pour assister son blocage ou son esquive, vous lui accordez deux atouts au lieu d’un. Vous pouvez utiliser l’action d’aide pour assister sa défense d’Intellect, contre les attaques directes comme la peur et le contrôle mental, ainsi que les influences subtiles comme le charme et l’intimidation ; vous lui accordez alors deux atouts. Vous ne pouvez protéger qu’un personnage à la fois.</p>\n<p>Action réflexe.</p>\n<p>Au rang 3 : deux personnages à la fois peuvent être sous votre protection.</p>"
+    }
+  ]
+}

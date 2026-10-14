@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.lethal-strike",
+  "sourceLogicalId": "ability.lethal-strike",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "e16f61ac18530fb43bd29dcfeba88f5713189a8287e30aff0e8eb0088c3c44e6",
+      "text": "Frappe létale"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "182be4b426d903e2870df7b92cd8de6b8249b8473a1f97346dbe265c57f5b1ae",
+      "text": "Par une attaque rapide et soudaine avec une arme de corps à corps ou à distance, vous frappez un adversaire à un point vital. Si vous touchez, vous infligez 7 dégâts supplémentaires. Action."
+    }
+  ]
+}

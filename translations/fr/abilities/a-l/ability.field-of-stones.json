@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.field-of-stones",
+  "sourceLogicalId": "ability.field-of-stones",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "f05326c5aa264c2789c04aa23ee8c5980591b5ec36a5790df363cda2dafe0471",
+      "text": "Champ de pierres"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "33790e591d8d2ab3476e385d88f8707f54efc6b401bd1ecad04ffdca07a58f89",
+      "text": "Vous pouvez tenter de vous cacher dans un terrain naturel en prenant l’apparence d’une formation rocheuse naturelle. Si le terrain est rocheux et que votre jet de discrétion est inférieur ou égal à 15, vous pouvez le considérer comme un 15. Cela signifie que vous ne subissez pas d’intrusion du MJ sur un 1. Dans un autre terrain, votre tâche de discrétion pour vous fondre dans l’environnement sous forme de pierres est facilitée de deux pas. Au rang 3 : le résultat minimum de cette aptitude passe à 18."
+    }
+  ]
+}

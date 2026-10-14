@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.lend-animal-shape",
+  "sourceLogicalId": "ability.lend-animal-shape",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "6c8c5a08508d398914e6d9c6dc5b557aa689924fee6476ff2d4b8d6aef345914",
+      "text": "Prêter une forme animale"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "7107d5e382c01f9995f7090e591819993d61f4355848cad5ab588ec811013f07",
+      "text": "Vous vous transformez en animal comme si vous utilisiez Forme animale, et une créature consentante à portée immédiate se transforme aussi en un animal de cette sorte (ours, tigre, loup, etc.) jusqu’à ce que vous preniez une récupération de dix minutes ou plus, comme si elle utilisait votre aptitude Forme animale. Toutes les créatures se transformant avec vous doivent être de votre taille ou plus petites. Une créature peut retrouver sa forme normale en une action, mais ne peut alors plus reprendre la forme animale. Le changement de forme d’une créature, qu’il s’agisse de vous ou de quelqu’un d’autre, n’affecte aucune autre créature touchée par cette aptitude. Effort : affectez une créature supplémentaire. Action."
+    }
+  ]
+}

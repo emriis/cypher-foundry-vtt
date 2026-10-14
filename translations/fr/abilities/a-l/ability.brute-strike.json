@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.brute-strike",
+  "sourceLogicalId": "ability.brute-strike",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "e279f9922805fec7d4ce52cad61b6ab0a9b39a48d6ebe62fbdfbe9edc6574b94",
+      "text": "Frappe brutale"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "77682ccedd3d0c5ad558ba212f3cda8f06943cc3557f57eda39c72d9a330d035",
+      "text": "Lorsque vous touchez avec une attaque de Puissance, vous infligez 6 dégâts supplémentaires. Vous ne pouvez pas utiliser cette aptitude pendant deux rounds consécutifs. Aptitude passive."
+    }
+  ]
+}

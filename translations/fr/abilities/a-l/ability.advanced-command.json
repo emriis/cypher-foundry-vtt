@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.advanced-command",
+  "sourceLogicalId": "ability.advanced-command",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "8050986bfb35814a3acb0506919b792dcdf0218fbc26b67cf6f1ee86216de1c5",
+      "text": "Commandement avancé"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d5e0fe858d0e59e38dd203d1b6fb79c4059f18b37a46d428acef7a1db65ac034",
+      "text": "Vous donnez un ordre à une créature à portée courte qui peut vous entendre et vous comprendre. Si vous réussissez un jet d’Intellect contre elle, elle obéit à cet ordre pendant un round. Si l’ordre lui cause directement du tort, ou en cause à ses alliés, l’attaque est entravée. Effort : tentez de lui donner un ordre à chaque round suivant, en effectuant une attaque d’Intellect pour chaque ordre supplémentaire ; l’aptitude prend fin lorsque vous ratez l’attaque. Action."
+    }
+  ]
+}

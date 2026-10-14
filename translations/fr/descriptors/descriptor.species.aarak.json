@@ -1,0 +1,48 @@
+{
+  "logicalId": "descriptor.species.aarak",
+  "sourceLogicalId": "descriptor.species.aarak",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "f079c88aac30a75ec166d006706e166236dc58de38e270768bea2f5b5e492630",
+      "text": "Aarak"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "e05364d8ea7c6376f44070e8cc693c9cb149b53a73d454bed8ef22b6ea08f1f3",
+      "text": "<p>Les aaraks comme vous viennent d’un monde volcanique creusé de canyons, où abondent les courants thermiques, les ascendances formées lorsque le vent franchit les montagnes et les crêtes, et les « rues de nuages », ces couloirs de cumulus alignés parallèlement au vent. Votre corps porte des plumes et des os légers, et certaines autres espèces vous décrivent comme « aviaire ». Vous avez quitté votre monde natal à la recherche d’aventures, et de courants thermiques, sur d’autres planètes et dans d’autres habitats.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>Si vous sautez depuis une hauteur située au moins 30 pieds (9 m) au-dessus de votre environnement, vous pouvez planer sur une distance longue avant d’atterrir en un point moins élevé à portée.</p>\n<p>Vous réduisez d’un degré de gravité les blessures dues aux dégâts d’une chute.</p>\n<p>Vous ne subissez pas d’intrusion du MJ lorsque vous obtenez un 1 sur un jet d’esquive.</p>\n<p>Aarak : Vous pouvez prolonger la durée, et peut-être la distance, de votre vol plané si vous trouvez un courant thermique, une succession de courants thermiques ou un environnement de faible gravité capable de vous maintenir plus longtemps en l’air. Déterminez avec le MJ les conditions locales.</p>"
+    },
+    {
+      "path": "system.benefits.0.name",
+      "sourceHash": "f27752c0d9f3c62b5ff129c3daea4d02c1b43d861b018a547fb4b23e6fbef4dd",
+      "text": "Vol plané"
+    },
+    {
+      "path": "system.benefits.0.description",
+      "sourceHash": "2b918284f4cd81aa5c2c8d729bd2c5e679f922ade747695c65561d33f9a6a0e4",
+      "text": "<p>Si vous sautez depuis une hauteur située au moins 30 pieds (9 m) au-dessus de votre environnement, vous pouvez planer sur une distance longue avant d’atterrir en un point moins élevé à portée.</p>"
+    },
+    {
+      "path": "system.benefits.1.name",
+      "sourceHash": "b0b67ed87c840ddb7746065e52938eee9191940ce7315b46df6aacf4858075e7",
+      "text": "Dégâts de chute réduits"
+    },
+    {
+      "path": "system.benefits.1.description",
+      "sourceHash": "d5193d5b3ad122bbde7f6e152cc4ba03ff460f46adbd37da3548787d17933f54",
+      "text": "<p>Vous réduisez d’un degré de gravité les blessures dues aux dégâts d’une chute.</p>"
+    },
+    {
+      "path": "system.benefits.2.name",
+      "sourceHash": "18ba186ed13eaeb27446cd2b33df47246cd53e5c2bfa40be76b69c3a123ed5fe",
+      "text": "Esquive sans intrusion du MJ"
+    },
+    {
+      "path": "system.benefits.2.description",
+      "sourceHash": "18e4fc4a12c33804c25b730510942c7aa1bb669112df4683bc5cdf6e980e042c",
+      "text": "<p>Vous ne subissez pas d’intrusion du MJ lorsque vous obtenez un 1 sur un jet d’esquive.</p>"
+    }
+  ]
+}

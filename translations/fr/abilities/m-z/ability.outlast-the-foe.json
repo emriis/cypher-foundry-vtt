@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.outlast-the-foe",
+  "sourceLogicalId": "ability.outlast-the-foe",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "405cce168042243a51216bd213d887e2c8f7279cfeb3b52f3119e461db53b9fe",
+      "text": "Surpasser l’endurance de l’adversaire"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "bd34d538e45b842fce3371ef3be6fe67402737f84dee73ef0a7e24ad1a537c94",
+      "text": "Si vous avez participé au combat pendant cinq rounds complets, vous obtenez un atout pour toutes les tâches pendant le reste du combat et infligez 1 dégât supplémentaire par attaque. Aptitude passive."
+    }
+  ]
+}

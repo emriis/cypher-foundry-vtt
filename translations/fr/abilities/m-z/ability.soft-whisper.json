@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.soft-whisper",
+  "sourceLogicalId": "ability.soft-whisper",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "91c158da12f1a66d9128250954835b7470c8fc6bcfab51aeb239a7fc2c53b3ef",
+      "text": "Murmure discret"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "7b1ba2b7e449e08bc0614175e050ae510b93259252282c712dd61615b16ae0b9",
+      "text": "Vous pouvez dire quelque chose à un être à portée immédiate sans que personne d’autre l’entende. Aptitude passive."
+    }
+  ]
+}

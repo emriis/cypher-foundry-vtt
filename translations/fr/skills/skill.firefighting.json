@@ -1,0 +1,18 @@
+{
+  "logicalId": "skill.firefighting",
+  "sourceLogicalId": "skill.firefighting",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "0c7415c90fec4e9ba3e79ce62b1e35275a71c34609f8a4b837b11c4eb2134f73",
+      "text": "Lutte contre les incendies"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "5ed6fdd56f0cde48ca0facbfb84384e50ed29e9112e36c5f7dabab8afa910ed6",
+      "text": "<p>Vous maîtrisez les méthodes permettant de contenir les incendies et connaissez les meilleures façons d’utiliser des haches, des tuyaux, des extincteurs et d’autres outils pour éteindre directement le feu.</p>"
+    }
+  ]
+}

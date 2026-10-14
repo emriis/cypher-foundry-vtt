@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.reload",
+  "sourceLogicalId": "ability.reload",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "bdc090ec61e3fcfc65f469951dfe00f3f2ecfc6003c44deac8e05b7237092de6",
+      "text": "Recharger"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "e01cdc6ef50cd1c6151b2fefb586b3c48cc7cd1693c90e142ce64ee2ba36503a",
+      "text": "Vous pouvez recharger une arme à feu en tant qu’action supplémentaire pendant votre tour. Aptitude passive."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.powerful-blast",
+  "sourceLogicalId": "ability.powerful-blast",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "b35a5a4ace644aff8ea7970c5f63bdc1fce201f13fab98707c9bcb44f33258f3",
+      "text": "Décharge puissante"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d5ac90c29a1f46df9aec5bccdf36d7ffcc92581b9c7732dc5969c411112fb7b5",
+      "text": "<p>Vous pouvez émettre une décharge d’énergie à longue portée qui inflige 4 dégâts en cas de jet d’attaque réussi, ou 6 points si vous utilisez une Action lente pour attaquer. Définissez avec votre MJ le type d’énergie de cette décharge : froid, électricité, feu, etc. Action ou Action lente.</p>"
+    }
+  ]
+}

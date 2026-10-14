@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.discharge",
+  "sourceLogicalId": "ability.discharge",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "1de694364549a0059c4f2b2ef78036425dadd89897070f9881db785ecad195b5",
+      "text": "Décharge énergétique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "9d34942117e7647761eed6e087f8d3133ac7cd8ad84796ba6ab53ebb29e18ed1",
+      "text": "Vous vous couvrez d’une lueur, d’une teinte ou d’une décharge énergétique crépitante visible. Cet effet est inoffensif, sauf si vous choisissez de le diriger vers l’extérieur. Tant que cette aptitude est active, vous pouvez, par une action, frapper jusqu’à trois cibles à portée courte, en effectuant des jets d’attaque d’Intellect distincts. Chaque réussite inflige 4 dégâts. Cette aptitude dure jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Effort : augmentez l’effet sur une cible afin qu’en plus des dégâts, elle perde son prochain tour. Une action pour commencer."
+    }
+  ]
+}

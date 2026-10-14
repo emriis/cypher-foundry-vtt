@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.weave-an-iron-wall",
+  "sourceLogicalId": "ability.weave-an-iron-wall",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "f0de0152bb0eeacfa804c3ff1143998507233bc2a695935adb3ad2cd2eb939a7",
+      "text": "Tisser un mur de fer"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "4fff1e004d6a2511438a10e3416b23b27b0d448c294cfb3f9d01de945a4e79e2",
+      "text": "Vous taillez et entrecroisez vos armes si vite qu’elles ressemblent presque à un mur. Cette barrière suffit à bloquer le passage à travers une zone immédiate. Vous devez utiliser votre action à chaque round pour la maintenir. Toute créature tentant de la traverser subit 10 dégâts, sans jet ; en tant qu’action supplémentaire, vous pouvez effectuer une attaque de mêlée contre elle et la repousser si vous réussissez. Action pour initier l’effet."
+    }
+  ]
+}

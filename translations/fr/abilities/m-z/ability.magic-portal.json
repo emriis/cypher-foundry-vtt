@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.magic-portal",
+  "sourceLogicalId": "ability.magic-portal",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "be772c4acb6ae59f77722e0af93623e53ce5fac5ae1dbb1648d965278a2c9e99",
+      "text": "Portail magique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "705b11f9eab3ca8bb0fb99b294fd7ea2bc3feabb5ce01494d798a3abf61df34b",
+      "text": "<p>Vous créez un tunnel à travers l’espace permettant de se rendre à un endroit à longue portée. Vous devez pouvoir voir cet endroit ou savoir qu’il existe, par exemple au-delà d’une porte fermée ou dans un espace ouvert sous le sol. Cette ouverture dans la réalité est assez grande pour vous accueillir, ainsi que les créatures de votre taille ou plus petites. Tout ce qui entre dans l’ouverture ressort immédiatement de l’autre côté. Elle reste ouverte jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Action.</p>"
+    }
+  ]
+}

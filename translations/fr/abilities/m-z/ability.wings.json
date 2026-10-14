@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.wings",
+  "sourceLogicalId": "ability.wings",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "d80f7da094e11c894ecd51a891e975e3916eb836276a2b4599c7f33be51f250d",
+      "text": "Ailes"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "560fbfd244b3f1c2443a3834d712a4734c14446efc075d73bb74c6f71c9e9cab",
+      "text": "Vous faites pousser des ailes assez grandes pour vous permettre de voler jusqu’à une longue distance par round. Vous pouvez transporter une créature de votre taille ou plus petite (si vous utilisez Forme bestiale agrandie, vous pouvez transporter jusqu’à trois créatures de votre taille normale ou plus petites). Action sous votre forme normale ; aptitude passive lorsque vous utilisez Forme bestiale."
+    }
+  ]
+}

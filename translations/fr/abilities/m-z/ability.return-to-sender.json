@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.return-to-sender",
+  "sourceLogicalId": "ability.return-to-sender",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "6e6e82ddd9c9f0af1dde4cb5f1fd1865b68c5f5cb3a35975464962a7ef047446",
+      "text": "Retour à l’expéditeur"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "b2dbafb9b1cbbfd935a8dab813359831576812038b8f76c008996e4811af3bd3",
+      "text": "Si vous bloquez ou esquivez avec succès une attaque de mêlée, vous pouvez immédiatement effectuer une attaque de mêlée contre l’adversaire qui vous attaquait. Vous ne pouvez réutiliser cette aptitude qu’après avoir joué votre tour normal. Aptitude passive."
+    }
+  ]
+}

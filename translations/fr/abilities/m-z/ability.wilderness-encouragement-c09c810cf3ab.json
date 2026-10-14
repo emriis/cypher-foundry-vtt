@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.wilderness-encouragement-c09c810cf3ab",
+  "sourceLogicalId": "ability.wilderness-encouragement-c09c810cf3ab",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "a9ab959b1681446a457567bf89ebfb0eb7c744d71827596a32a06eafeee0da14",
+      "text": "Encouragement sauvage"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "f4651e20468dfe65759b48bfacf25c7ec34b6fbac1b656c3ed8f0c8375d72440",
+      "text": "Vos connaissances et votre expérience permettent d’aider les autres à se reposer et récupérer. En milieu sauvage ou lorsque vous parlez du temps que vous y avez passé, choisissez un allié à courte portée qui peut vous comprendre ; vous pouvez vous choisir vous-même. Cet allié peut immédiatement prendre une récupération supplémentaire d’une action ou retirer une blessure modérée. Vous ne pouvez pas réutiliser cette aptitude sur la même créature avant qu’elle ait utilisé l’une de ses propres récupérations. Action."
+    }
+  ]
+}

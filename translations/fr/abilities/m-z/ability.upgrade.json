@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.upgrade",
+  "sourceLogicalId": "ability.upgrade",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "7ec0261b8e8aa3e0b1affde5f18ca1930ae73d81a5303d667aae9ffd2803cbc7",
+      "text": "Amélioration"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "f192678171b592eca93fcefaf41fb50b4ef9b42667c899a81f341dfac75425df",
+      "text": "Si vous réussissez une tâche d’ingénierie de difficulté 3, vous faites fonctionner l’appareil environ 25 pour cent au-dessus de ses caractéristiques nominales. Lorsque vous prenez une récupération de dix heures, l’appareil tombe en panne et nécessite une réparation complète, plutôt qu’une nouvelle tâche de Modifier un appareil (Modify Device), pour retrouver son fonctionnement initial non modifié. Vous pouvez par exemple suralimenter un blaster moyen pour qu’il inflige 1 dégât supplémentaire, modifier une imprimante alimentaire pour que chaque tasse de café ait meilleur goût, améliorer l’accélération d’un moteur de vaisseau spatial de 25 pour cent, etc. Que vous répariez ou amélioriez l’appareil, il possède désormais un épuisement de 1–6 sur un d20, à vérifier après chaque utilisation. Dix minutes pour terminer. Au rang 3 : l’épuisement de l’appareil modifié s’améliore à 1–2 sur un d20."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "skill.defending",
+  "sourceLogicalId": "skill.defending",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "5e8e568276464989864dcb129ebb6add5e899b3268f8838c68295eaf2e9847cb",
+      "text": "Défense"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "455b5c20cd68d30c360e8baadc78af2e418b565965df149a13296aa5c6399b7d",
+      "text": "<p>Choisissez un type de défense pour chaque entraînement que vous obtenez dans cette compétence : bloquer une attaque, une tâche de Puissance ; esquiver une attaque, une tâche de Célérité ; effectuer un jet de défense de Puissance pour endurer un effet physique indésirable ; ou effectuer un jet de défense d’Intellect pour résister à un effet mental indésirable.</p>"
+    }
+  ]
+}

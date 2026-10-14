@@ -1,0 +1,23 @@
+{
+  "logicalId": "equipment.Real-World.veryExpensive.Assault rifle",
+  "sourceLogicalId": "equipment.Real-World.veryExpensive.Assault rifle",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "59b225bb0102ca7f95647332b56ebab6e3ae36345e3a4e10cf57dbe18b42d8ff",
+      "text": "Fusil d’assaut"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "cadc7f36e5253dc0c8c151a7a55710d62d390c3e2551051b64ce9c1fda59e3ba",
+      "text": "Arme lourde, arme à tir rapide, portée longue"
+    },
+    {
+      "path": "system.properties.0",
+      "sourceHash": "cadc7f36e5253dc0c8c151a7a55710d62d390c3e2551051b64ce9c1fda59e3ba",
+      "text": "Arme lourde, arme à tir rapide, portée longue"
+    }
+  ]
+}

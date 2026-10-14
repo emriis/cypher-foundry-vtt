@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.final-defiance",
+  "sourceLogicalId": "ability.final-defiance",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "7fba5fc69f203d107ae4b245714d232e859c051d4eed22203eed9dccc9f85683",
+      "text": "Ultime défi"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "edd98fe96994f0adb560334c8fc0376cb0332b680b9d809454e8c92292f72185",
+      "text": "Lorsque vous devriez normalement mourir, vous restez à la place conscient et actif pendant un round supplémentaire. Cette aptitude s’active avant Pas encore mort. Par une action supplémentaire pendant votre tour à chaque round suivant, vous pouvez tenter une tâche de Puissance de difficulté 5 pour rester en vie un round de plus. Pendant ces rounds de vie supplémentaires, toutes vos tâches sont entravées. Si, au dernier round où vous êtes vivant, vous n’avez pas reçu de soins, gagné des points dans une réserve, utilisé Se reprendre ou retiré autrement une blessure qui vous a tué, Pas encore mort s’active. Aptitude passive."
+    }
+  ]
+}

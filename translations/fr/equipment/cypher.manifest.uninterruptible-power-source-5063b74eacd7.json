@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.uninterruptible-power-source",
+  "sourceLogicalId": "cypher.manifest.uninterruptible-power-source",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "450e5ab29cacd494ccbf9bca564585208065b3c52d0396dc15193973e86f4ed8",
+      "text": "Source d’énergie ininterrompue"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "999c89d67de6fb261cf87d634b245396754a3e7d1ce9cababb9a5ae87d864eda",
+      "text": "<p><strong>Effet :</strong> Vous fixez le cypher à un autre appareil de niveau 6 au maximum, lui fournissant de l’énergie jusqu’à ce que vous preniez une récupération de dix heures.</p><p><strong>Objets du genre : pierre d’énergie (fantasy) ; microgénérateur (science-fiction). Un cypher d’alimentation sans interruption moderne ou de science-fiction fournit généralement de l’électricité, mais une technologie exotique pourrait faire fonctionner un moteur à essence ou une machine à énergie nucléaire.</strong></p>"
+    }
+  ]
+}

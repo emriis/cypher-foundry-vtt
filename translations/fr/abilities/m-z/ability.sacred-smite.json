@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.sacred-smite",
+  "sourceLogicalId": "ability.sacred-smite",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "f2a9305e92058d0535b84534b7d946d11759576689dcc2f4069ebf55e98dce00",
+      "text": "Châtiment sacré"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "b1a50768959f1775026e7bbb10b384be70864b69e495edde300b947e76fc6426",
+      "text": "Choisissez une créature que vous voyez et dont vous souhaitez punir les transgressions. Jusqu’à ce que vous attaquiez une autre créature, vos attaques contre cette cible infligent +1 dégât grâce à l’énergie divine qui parcourt votre arme de mêlée ou à distance. Si la cible est un mort-vivant, un démon ou une créature de nature similaire définie par votre MJ, vous choisissez si votre attaque réussie inflige +2 dégâts ou force l’adversaire à vous fuir pendant un tour. Aptitude passive. Au rang 3 : le bonus de dégâts contre les morts-vivants, les démons et les créatures similaires passe à +3."
+    }
+  ]
+}

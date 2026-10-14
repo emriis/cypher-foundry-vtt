@@ -1,4 +1,5 @@
 import { promptRollOptions, promptWeaponAttackCategory, promptWeaponAbility, taskModifierFields, readTaskModifiers } from "./dialogs.mjs";
+import { abilityActionLabel } from "../abilities.mjs";
 import { getSuperheroicsRank } from "../applications/task-preparation.mjs";
 import { promptRecoveryOptions, promptRecoveryAllocation, promptTreatment, promptHealingHand } from "./healing-dialogs.mjs";
 import { getRecoverySources } from "../applications/recovery-service.mjs";
@@ -118,6 +119,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       skills: this.actor.items.filter(i => i.type === "skill"),
       abilities: this.actor.items.filter(i => i.type === "ability").map(item => ({
         id: item.id, name: item.name, system: item.system,
+        actionLabel: abilityActionLabel(item.system, key => game.i18n.localize(key)),
         weaponAbilityKind: getWeaponAbilityKind(item),
         healingAbilityKind: getHealingAbilityKind(item), healingAbilityCost: getHealingHandCost(item)
       })),
@@ -490,7 +492,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
         <textarea name="description" rows="3"></textarea>
       </div>`;
     const description = await foundry.applications.api.DialogV2.prompt({
-      window: { title: `${game.i18n.localize("CYPHER.XP.PlayerIntrusion")} (${CONFIG.CYPHER.xpCosts.playerIntrusion} PX)` },
+      window: { title: `${game.i18n.localize("CYPHER.XP.PlayerIntrusion")} (${CONFIG.CYPHER.xpCosts.playerIntrusion} ${game.i18n.localize("CYPHER.XP.Label")})` },
       content,
       ok: {
         label: game.i18n.localize("CYPHER.Confirm.Add"),

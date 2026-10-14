@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.enhanced-beast-form",
+  "sourceLogicalId": "ability.enhanced-beast-form",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "99cc46f5338092082710b52115206114a274fb28874443bbdadf13d00a518167",
+      "text": "Forme bestiale renforcée"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "2645c514a3bce7d7f84306c2a27e55c6f51a455f4e3116f756d24e946a43ec83",
+      "text": "Lorsque vous utilisez Forme bestiale, votre forme bestiale reçoit ces bonus supplémentaires : +3 à votre réserve de Puissance, +2 à votre réserve de Célérité, et vous pouvez ignorer toutes les blessures mineures dues aux attaques physiques."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.press-advantage",
+  "sourceLogicalId": "ability.press-advantage",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "4d3469a79e98ee6b8b94c3d95fb18f5d684ab563e3dd9d536fd998dbd425afdb",
+      "text": "Exploiter l’avantage"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "0b305058cc8c589779f3c2ca414c9c51458e473cba3eb0cf7aefbd84b95518bc",
+      "text": "<p>Lorsque votre jet d’attaque infligeant des dégâts est de 17 ou plus, vous infligez +1 dégât avec cette attaque. Si vous obtenez 19 ou 20, ce dégât supplémentaire s’applique que vous choisissiez d’infliger davantage de dégâts ou de produire un effet spécial mineur ou majeur.</p>"
+    }
+  ]
+}

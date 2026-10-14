@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.invisibility-1deb88a5b977",
+  "sourceLogicalId": "ability.invisibility-1deb88a5b977",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "d53895c6eb7816fb44ec7f46db45019172de4793a42ccaf893ed71ec8ed00743",
+      "text": "Invisibilité"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "136a320677c74bb6ad6186980600895c8f63ae9fb21d5d8b678660459ab6ce05",
+      "text": "Vous devenez invisible. Cet effet prend fin si vous faites quelque chose qui révèle votre présence ou votre position — attaquer, utiliser une aptitude, déplacer un objet volumineux, etc. — ou si vous prenez une récupération de dix minutes ou plus. Effort : utilisez cette aptitude sur une créature que vous touchez à votre place ; elle reste invisible jusqu’à ce qu’elle agisse de manière précipitée, ou qu’elle ou vous preniez une récupération de dix minutes ou plus. Action pour commencer. L’attaque d’un personnage invisible est facilitée de deux pas. Les attaques contre un personnage invisible sont entravées de quatre pas, ou presque impossibles si l’attaquant n’a aucune idée de l’endroit où il peut se trouver."
+    }
+  ]
+}

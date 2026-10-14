@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.multiple-quarries",
+  "sourceLogicalId": "ability.multiple-quarries",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "05a67ae6eb7f840cd6a99ebed052ad2f787cd95010f8ecf8e70d203686e65291",
+      "text": "Proies multiples"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "6a2e97cc0b5ed3f7427d7a85f24677043c9c919062ea6f5f805d9af30af1c435",
+      "text": "Lorsque vous activez Proie (Quarry), vous pouvez désigner quatre créatures que vous voyez comme proies au lieu d’une seule. Chaque proie supplémentaire ajoute 2 points d’Intellect au coût de Proie. Aptitude passive."
+    }
+  ]
+}

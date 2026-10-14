@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.golem-grip",
+  "sourceLogicalId": "ability.golem-grip",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "281ed8b4078afd4e15b24991504aa824bace2eee1c1f0f6ca727d9f6b2179a95",
+      "text": "Prise du golem"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "e35c6a26992ed935881ca014dcb8f87b1f5a8bcdcc5e8b50fabd358dead4e98c",
+      "text": "Vos poings de pierre vous permettent de saisir facilement les adversaires. Effectuez une attaque facilitée contre un adversaire. En cas de réussite, vous limitez ses mouvements, l’empêchez de s’éloigner et entravez ses attaques physiques et ses tentatives de libération. Si la cible tente de se libérer par son action, vous devez faire un jet de Puissance pour continuer à la tenir. Si vous tenez une cible, vous pouvez automatiquement l’écraser pendant votre tour, sans jet, en lui infligeant 4 dégâts. Action."
+    }
+  ]
+}

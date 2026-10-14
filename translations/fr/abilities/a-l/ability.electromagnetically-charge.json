@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.electromagnetically-charge",
+  "sourceLogicalId": "ability.electromagnetically-charge",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "969548436ec1f90db493378769a74e2d34a03ee058a5344f9d2d80fcf0e2ffb4",
+      "text": "Charge électromagnétique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "53a935ae8bac16decaf68928fb9da288caf20037b99f9ef1418dda335041c91b",
+      "text": "Vous recueillez de l’énergie dans les champs électromagnétiques qui remplissent invisiblement la plupart des lieux, puis l’utilisez pour vous soigner en réduisant la gravité d’une de vos blessures. Vous soignez une blessure mineure, réduisez une blessure modérée à une blessure mineure ou réduisez une blessure majeure à une blessure modérée. Vous pouvez à la place utiliser cette aptitude pour recharger un appareil portatif ordinaire utilisant l’électricité, comme un téléphone portable ou une petite radio, qui a perdu sa charge ou dont les piles sont épuisées. Chaque utilisation augmente le coût en points d’Intellect de 1. Ce coût revient à 1 après une récupération. Action lente."
+    }
+  ]
+}

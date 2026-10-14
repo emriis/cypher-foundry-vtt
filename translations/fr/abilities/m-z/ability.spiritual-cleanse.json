@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.spiritual-cleanse",
+  "sourceLogicalId": "ability.spiritual-cleanse",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "4740ae4aa6b891b8b43d892423a4c3443701e3e1c95a2f7a550908202a47fac8",
+      "text": "Purification spirituelle"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "03da0fcdf66592dc90fa617a95801635e7aeed5649edd010588acebe49cc6fb6",
+      "text": "Le suppliant est libéré d’une malédiction, d’une possession démoniaque ou d’une affliction spirituelle similaire de niveau 5 ou moins. Effort : vous pouvez emporter l’idole avec vous. Dix minutes pour initier l’effet."
+    }
+  ]
+}

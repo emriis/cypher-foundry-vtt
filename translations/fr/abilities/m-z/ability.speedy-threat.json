@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.speedy-threat",
+  "sourceLogicalId": "ability.speedy-threat",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "b95c567ff5810c3dda6aa9f144018330eebc036f00ee5fb5ed71d8031b167220",
+      "text": "Menace fulgurante"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "6ff7693894f73e7bb010de3e7ac82e8e328626a1d36e4adcec7d7a4cc2851474",
+      "text": "Vous tournez et vous déplacez de manière à renforcer vos attaques par votre rapidité. Si vous parcourez au moins une distance immédiate pendant votre tour, votre attaque de mêlée de ce tour obtient un atout. Aptitude passive."
+    }
+  ]
+}

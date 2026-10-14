@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.expert-combatant-1fa1a6453c1f",
+  "sourceLogicalId": "ability.expert-combatant-1fa1a6453c1f",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "358af8542c936bdcd083b09682d958c271bd927b48b4c4776875bdc3b083f5a9",
+      "text": "Combattant expert"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "933b76a365ddb201cef31e1dd22d715a4f3b6072b422818e424e6d8f213bde15",
+      "text": "<p>Vous êtes entraîné dans une attaque d’arme précise de votre choix, comme les épées, les haches ou les arcs, ou dans une catégorie plus large d’attaques, comme les armes contondantes légères, les armes tranchantes légères, les armes à distance légères, les armes contondantes moyennes, les armes tranchantes moyennes, les armes à distance moyennes, etc.</p>\n<p>Au rang 2 : vous pouvez choisir de devenir spécialisé dans la méthode d’attaque choisie au rang 1, mais vous devez acquérir la compétence normalement, par exemple par un avancement de personnage.</p>\n<p>Au rang 6 : vous pouvez devenir expert dans une méthode d’attaque précise, celle choisie au rang 1 ou une autre compétence d’arme dans laquelle vous êtes déjà spécialisé, mais vous devez acquérir la compétence normalement.</p>"
+    }
+  ]
+}

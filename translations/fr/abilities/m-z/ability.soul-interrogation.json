@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.soul-interrogation",
+  "sourceLogicalId": "ability.soul-interrogation",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "34a7a8139eaa6e602ec6c3223a8a8af87bcab12ff4b3cf8bf34aa0a1e7e4e022",
+      "text": "Interroger une âme"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "6c219a0f11b24329931e6cec030b5ea39102911bcc875068aef5f696a396c50e",
+      "text": "Vous tentez d’apprendre des informations secrètes sur un adversaire pour les utiliser contre lui. Effectuez une attaque d’Intellect contre une créature à longue portée. Une réussite révèle son niveau, ses aptitudes de base et ses faiblesses évidentes, comme une vulnérabilité au feu ou à l’argent, ainsi que ses manières et les qualités personnelles que vous pourriez découvrir en conversant longtemps avec elle. Pendant les quelques mois suivants, vos actions contre cette créature sont facilitées. Action."
+    }
+  ]
+}

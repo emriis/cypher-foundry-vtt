@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.sprint-and-grab",
+  "sourceLogicalId": "ability.sprint-and-grab",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "1558db05b79de5179b4f0b948bb240d89b3256bf80980bb2cafe2f53fada9bc5",
+      "text": "Sprinter et saisir"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "a078d2018cb20300ca24da10e06e4034b68be95803d15f745445af7f388af42d",
+      "text": "Vous parcourez une courte distance et effectuez une attaque de mêlée pour saisir un adversaire de votre taille ou plus petit. Contrairement au cas normal d’une action accompagnée d’un déplacement sur une courte distance, cela n’entrave pas vos tâches. Une attaque réussie signifie que vous saisissez l’adversaire et arrêtez son déplacement s’il bougeait ; cela peut être traité comme un plaquage si cela convient. Action."
+    }
+  ]
+}

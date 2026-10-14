@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.golem-stomp",
+  "sourceLogicalId": "ability.golem-stomp",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "d2f7015b6bd27758cf00e4f8c0c703c49fca200024d78ab3d9a6758f06040421",
+      "text": "Piétinement du golem"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "c76a0f8842b13b8a07a3665caa97c91e7ffd7ea7f861a26c63ca0ba174dfe0a7",
+      "text": "Vous frappez le sol de toutes vos forces, créant une onde de choc. Effectuez des attaques distinctes contre trois créatures à portée immédiate. Chaque créature que vous touchez subit 3 dégâts, et vous choisissez si elle est repoussée au-delà de la portée immédiate ou renversée au sol. Action."
+    }
+  ]
+}

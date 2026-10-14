@@ -14,7 +14,7 @@
       "amount": 1,
       "options": []
     },
-    "action": null,
+    "action": "action",
     "freeWeaponCategories": [],
     "freeArmorCategories": [],
     "freeWeaponFamilies": [],
@@ -23,6 +23,6 @@
     "grantedArmorItemCategory": "",
     "effects": [],
     "rollTables": [],
-    "description": "You attack with a knife in a way that has a greater risk of making an error but gains an additional benefit. Your GM intrusion range for this attack increases by 2 (from 1 on a d20 to 1–3 on a d20), but if you hit you can choose one of the following additional effects:"
+    "description": "<p>You attack with a knife in a way that has a greater risk of making an error but gains an additional benefit. Your GM intrusion range for this attack increases by 2 (from 1 on a d20 to 1–3 on a d20), but if you hit you can choose one of the following additional effects:</p>\n<p>Deep Slice: The foe takes +2 damage.</p>\n<p>Let Them Bleed: The wound bleeds; on your next turn, the foe takes 2 damage that ignores armor.</p>\n<p>Action.</p>"
   }
 }

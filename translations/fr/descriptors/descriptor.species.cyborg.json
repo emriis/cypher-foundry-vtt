@@ -1,0 +1,43 @@
+{
+  "logicalId": "descriptor.species.cyborg",
+  "sourceLogicalId": "descriptor.species.cyborg",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "b98c9f3a387273e945501726f15b464faa86213f0e899d246d62eafb25544ed2",
+      "text": "Cyborg"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "ff1d59c078b62bb894d30bef85b21440070d4e992db63b7e35a00bdb6e24172a",
+      "text": "<p>Vous portez divers implants cybernétiques. Certains remplacent des organes manquants que vous auriez eus en tant qu’humain, tandis que d’autres améliorent les éléments biologiques qui vous restent. Vous êtes peut-être issu d’un processus de naissance commun à toute votre colonie, vous avez volontairement reçu des augmentations pendant votre service militaire, ou vous avez été intégré contre votre volonté à un collectif cybernétique dont vous vous êtes ensuite échappé. Vous ignorez peut-être simplement pourquoi vous êtes à moitié machine. La plupart du temps, vous jugez que cela n’a pas d’importance. Ce qui compte, ce n’est pas ce qui vous compose, mais ce que vous faites.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>Vous ne subissez pas d’intrusion du MJ lorsque vous obtenez un 1 sur une tâche de défense de Puissance.</p>\n<p>Vous êtes entraîné en piratage informatique.</p>\n<p>Vous infligez +1 dégât avec les attaques de mêlée grâce à l’électricité conduite par votre corps.</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "04a766309dda23efa01326a9be30f864960a177372f5ee7b5c108f2ab10c8ecf",
+      "text": "Piratage informatique"
+    },
+    {
+      "path": "system.benefits.0.name",
+      "sourceHash": "258f25d2b4e752c480b9cff962e751ca2f0f77cb610b91a593e1b11fd1781abd",
+      "text": "Défense de Puissance sans intrusion du MJ"
+    },
+    {
+      "path": "system.benefits.0.description",
+      "sourceHash": "e974edfe5f13b8b77e3798555a8716694bd3a0ee24ee13dbd393cbae1f73d84c",
+      "text": "<p>Vous ne subissez pas d’intrusion du MJ lorsque vous obtenez un 1 sur une tâche de défense de Puissance.</p>"
+    },
+    {
+      "path": "system.benefits.1.name",
+      "sourceHash": "bfcb040fff8c50afd15f9f2d992d84df8b2d31011d50743595a21e331a9d85e0",
+      "text": "Conduction électrique"
+    },
+    {
+      "path": "system.benefits.1.description",
+      "sourceHash": "85218661a9201d544f4f85356d28f80f11a28986f171309f5ef34be18ae234f6",
+      "text": "<p>Vous infligez +1 dégât avec les attaques de mêlée grâce à l’électricité conduite par votre corps.</p>"
+    }
+  ]
+}

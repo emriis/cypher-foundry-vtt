@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.that-was-a-feint",
+  "sourceLogicalId": "ability.that-was-a-feint",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "c545b5bac3307ec0784007fd3d9669dab69b6d99975dd4f4552bb0208454b8f0",
+      "text": "C’était une feinte"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "ecb22be38a43090e866dfd8936ea37e9c4a8f2d69e9c17188f9199ff146d05a9",
+      "text": "Vous retentez immédiatement un jet d’attaque manqué avec l’arme que vous avez choisie, mais bénéficiez cette fois d’un atout pour la tâche. Si cette nouvelle tentative échoue, vous ne pouvez pas utiliser cette aptitude pour la retenter encore. Aptitude passive."
+    }
+  ]
+}

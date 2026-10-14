@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.power-boost.source-boost",
+  "sourceLogicalId": "cypher.power-boost.source-boost",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "d9eb90bda05b68700a867a0c4e9420295513b152ca4c9f86ae15bb6575dcc029",
+      "text": "Renforcement de source"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "c822ad8dc8e65ae3a8128ec157f66b868e99ff27a9eb3184191d6ee4992d12b3",
+      "text": "<p><strong>Effet :</strong> Votre aptitude coûte 6 points de réserve de moins.</p>"
+    }
+  ]
+}

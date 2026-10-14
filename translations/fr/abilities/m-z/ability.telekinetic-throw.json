@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.telekinetic-throw",
+  "sourceLogicalId": "ability.telekinetic-throw",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "b2a99224e20948d556a809d75e3bed2f08512cb0a687eff8181b59b9ea97b0b9",
+      "text": "Projection télékinétique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "6c170fe6d55fe79f1a0446d653a608e166498bbf474da3b2a90af75d471c2fdf",
+      "text": "Vous saisissez télékinétiquement un objet à courte portée et le lancez sur une cible à courte portée. Pour lancer une créature à la place d’un objet, vous devez d’abord la saisir télékinétiquement avec une attaque d’Intellect réussie. Effectuez une attaque d’Intellect contre votre cible. En cas de réussite, la cible et ce que vous projetez subissent chacun 6 dégâts. Action."
+    }
+  ]
+}

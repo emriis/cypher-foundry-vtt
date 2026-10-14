@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.not-dead-yet",
+  "sourceLogicalId": "ability.not-dead-yet",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "3235e921fdefa99ab562734259fd4e288860183059c6e006b0263b54c83eb24f",
+      "text": "Pas encore mort"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "f801b13d23ba58787ff7f18cd10f4b0240c932927071a7d523b42107b5b06e72",
+      "text": "Lorsque vous devriez normalement mourir, vous tombez à la place inconscient pendant un round, puis vous vous réveillez. À ce réveil, vous obtenez immédiatement 1d6 + 6 points pour restaurer vos réserves de caractéristique et retirez une blessure modérée et une blessure majeure. Une fois cette aptitude utilisée, vos tâches sont entravées jusqu’à ce que vous utilisiez une récupération de dix heures. Si vous mourez de nouveau avant cette récupération, vous êtes réellement mort. Vous pouvez choisir cette aptitude deux fois. La deuxième fois, les soins passent à 1d6 + 12 et vous retirez deux fois plus de blessures. Aptitude passive."
+    }
+  ]
+}

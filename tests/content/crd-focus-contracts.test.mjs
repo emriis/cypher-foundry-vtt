@@ -16,7 +16,7 @@ const EXPECTED_FOCI = [
   ["consorts-with-the-dead", "Consorts With the Dead"],
   ["controls-beasts", "Controls Beasts"],
   ["crafts-illusions", "Crafts Illusions"],
-  ["doesnt-do-much", "Doesn't Do Much"],
+  ["doesnt-do-much", "Doesn’t Do Much"],
   ["employs-magnetism", "Employs Magnetism"],
   ["entertains", "Entertains"],
   ["explores", "Explores"],

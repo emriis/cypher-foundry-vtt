@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.overwatch",
+  "sourceLogicalId": "ability.overwatch",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "608031181c6eeeab2c1dd234c55360092c790035c3e4cf21ab29a4402846fc4f",
+      "text": "Tir de couverture"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "9f29485034518c138dc7fb64beca375b4118b7318e65f806946bce12f4de6e19",
+      "text": "Vous utilisez une arme à distance pour couvrir une zone limitée, comme une porte, un couloir ou le côté est de la clairière où vous vous trouvez. Dès qu’une cible valable entre dans la zone, vous pouvez l’attaquer. Cela fonctionne comme le fait de retarder votre action, mais annule aussi tout bénéfice que la cible tirerait du couvert, de sa position, de la surprise, de la portée, de l’éclairage ou de la visibilité. Votre attaque inflige +1 dégât. Vous pouvez maintenir ce tir de couverture aussi longtemps que vous le souhaitez, dans des limites raisonnables. Vous pouvez également utiliser cette aptitude pendant votre tour contre une cible déjà dans la zone limitée. Action."
+    }
+  ]
+}

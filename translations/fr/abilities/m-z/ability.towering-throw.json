@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.towering-throw",
+  "sourceLogicalId": "ability.towering-throw",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "e95863e02874f19abe943aab1ff16fb1bd0b49c3e2dd861e00bc19cdc181d0e6",
+      "text": "Projection titanesque"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "f91daadba849eff69607e868f658678065848ee543fabfda165a954195c79223",
+      "text": "Lorsque vous infligez des dégâts à une créature de votre taille ou plus petite avec une attaque à mains nues, vous la projetez à 1d20 pieds de vous. Elle retombe à terre. Lorsque votre taille dépasse la normale, chaque augmentation — Agrandissement (Enlarge), Plus grand (Bigger), Immense (Huge), Gigantesque (Gargantuan) et Colossal — ajoute 1d6 pieds à la distance de projection et inflige 1 dégât supplémentaire à l’impact. Aptitude passive."
+    }
+  ]
+}

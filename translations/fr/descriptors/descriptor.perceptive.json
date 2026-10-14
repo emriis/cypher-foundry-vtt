@@ -1,0 +1,28 @@
+{
+  "logicalId": "descriptor.perceptive",
+  "sourceLogicalId": "descriptor.perceptive",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "935c1a88782d034979a1ff475ae5ed9c457678c2709d85804d024b1592ff6b8f",
+      "text": "Perspicace"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "c5524648c9c2120315f0592a1bff3f048ae7939ccccea0111fd5deac1c917b5c",
+      "text": "<p>Peu de choses vous échappent. Vous remarquez les petits détails du monde qui vous entoure et savez tirer des déductions des informations recueillies. Ces talents font de vous un enquêteur exceptionnel ou un éclaireur doué.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>+2 à votre Réserve d’Intellect</p>\n<p>Vous êtes entraîné pour l’une des compétences suivantes : Perception ou Analyse des intentions</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "bd18e320a6bb9f539bf38e7c789035e1da2897d310fd54fc9c868f2365d776c7",
+      "text": "Perception"
+    },
+    {
+      "path": "system.skillOptions.1",
+      "sourceHash": "cdcb24358ca22d0138d75f04a3f51d529f0be8025e0ce18b7bda77724e4baea4",
+      "text": "Analyse des intentions"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.pry-open-defense",
+  "sourceLogicalId": "ability.pry-open-defense",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "21abe6f633740e03ccfdf928eb60321942e344eb7bb650e5db63a1caa939e72e",
+      "text": "Ouvrir une brèche dans la défense"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "dd49cf1f6bcc7cc6e340aa4dd76e239a1768e0282be8ba6481e1056017c6f767",
+      "text": "<p>En réussissant une attaque d’Intellect, vous déchirez les défenses d’une créature à longue portée. Toutes ses défenses magiques, comme un sort de protection, sont annulées. Si elle n’a aucune défense magique, son armure est réduite de 2. Si elle n’a ni défense magique ni armure, ses tâches de défense sont entravées. Cet effet dure jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Action.</p>"
+    }
+  ]
+}

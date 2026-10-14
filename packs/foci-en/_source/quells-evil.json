@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/svg/holy-symbol.svg",
   "system": {
-    "description": "<p>You are skilled in finding, destroying, and banishing undead, demons, and creatures of similar ilk.</p>",
+    "description": "<p>You are skilled in finding, destroying, and banishing undead, demons, and creatures of similar ilk.</p>\n<ul>\n<li>Genre themes: cleric (fantasy), priest (real world with a touch of magic), spiritual super (superhero)</li>\n<li>GM intrusions: Some evil creatures are more powerful and resilient than they first seem. Too much evil contact risks contagion with evil influence.</li>\n</ul>",
     "abilities": [
       "Compendium.cypher.abilities-en.Item.5f7e144001b3d683",
       "Compendium.cypher.abilities-en.Item.3a47cdefd28f8793",
@@ -81,6 +81,13 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references"
+        ]
+      }
     }
   }
 }

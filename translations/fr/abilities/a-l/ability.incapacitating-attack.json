@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.incapacitating-attack",
+  "sourceLogicalId": "ability.incapacitating-attack",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "340ccc326cf2733275914233018d40965e41f88dacd730c2f753c0b27467a81c",
+      "text": "Attaque incapacitante"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "49f6cb37c193e0828374f9f7c82eeaef6376061cba599db68d062d37efac0491",
+      "text": "Votre attaque réussie neutralise également brièvement la cible. Jusqu’à ce que vous preniez une récupération de dix minutes ou plus (ou que quelqu’un utilise une action pour lui porter secours), elle est au sol, incapable de se relever ou de ramper sur plus d’une distance immédiate par round, et ses défenses sont entravées. Aptitude passive."
+    }
+  ]
+}

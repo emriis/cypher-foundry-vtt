@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.increasing-determination",
+  "sourceLogicalId": "ability.increasing-determination",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "e1bfb9447cfc097224c50065b17e684559500c84123b426883209d2418869c16",
+      "text": "Détermination croissante"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "2b90d5052f424f75204700d995dc68ebf7a0bbb29d685bfd4c9a8bebf8426e4e",
+      "text": "Si vous échouez à une tâche physique hors combat (comme forcer une porte ou escalader une falaise) puis la tentez à nouveau, la tâche est facilitée. Si vous échouez de nouveau, vous ne recevez aucun bénéfice particulier. Aptitude passive."
+    }
+  ]
+}

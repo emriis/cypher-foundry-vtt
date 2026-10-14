@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.defensive-phasing",
+  "sourceLogicalId": "ability.defensive-phasing",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "3815f4afb51f9745332f9bcf5efd6d9223b18187eafd4aab2979a1addcff4db1",
+      "text": "Déphasage défensif"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "dfc7e3a13e50f77364e57ded1fab2bc5eb96df7c1fbbba6ac74e13e2a31e0790",
+      "text": "Jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus, vous bénéficiez d’un atout aux tâches d’esquive en modifiant sélectivement votre phase afin que certaines attaques vous traversent sans vous nuire. Une action pour commencer."
+    }
+  ]
+}

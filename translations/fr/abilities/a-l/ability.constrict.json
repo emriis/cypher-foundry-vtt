@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.constrict",
+  "sourceLogicalId": "ability.constrict",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "5a911549e0d8732ff5898ebf4ac24a81547478e090e1988da0277750189771c5",
+      "text": "Constriction"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "7ed533157dc723f89fd6c14d89df98166607fcad35ebdee4103cccfa12ce7ca0",
+      "text": "Sous forme bestiale, si vous effectuez une attaque à mains nues par une action lente, votre attaque inflige 2 dégâts de moins et vous saisissez la cible, éventuellement en enroulant une partie de votre corps autour d’elle. Toutes les tâches de la cible saisie sont entravées, y compris ses tentatives de fuite. À chaque round où elle reste saisie, vous pouvez utiliser votre action pour lui infliger 5 dégâts, sans jet. Une action lente pour commencer ; une action pour resserrer votre étreinte sur une cible saisie."
+    }
+  ]
+}

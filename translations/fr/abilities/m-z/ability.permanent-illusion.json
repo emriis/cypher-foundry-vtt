@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.permanent-illusion",
+  "sourceLogicalId": "ability.permanent-illusion",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "d525cecb7f6cedc9cf1fcb0d85888bd71cffff6411acd2664c8dc36cbeb7f4b9",
+      "text": "Illusion permanente"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "ce19d8cb2822a368061096b0516bfda3b3355e6a16b5f532c16abf71476940b0",
+      "text": "Vous rendez permanente l’une de vos illusions en cours. Choisissez une illusion, ou une partie d’illusion, que vous avez créée. Elle doit tenir dans une zone immédiate et reste dans cette zone. L’illusion est permanente et persiste seule, sans votre attention ni votre présence. Vous pouvez y mettre définitivement fin par une action, mais toute autre personne souhaitant y mettre fin doit faire preuve d’une ingéniosité exceptionnelle pour l’empêcher de se reformer après un certain temps. Aptitude passive."
+    }
+  ]
+}

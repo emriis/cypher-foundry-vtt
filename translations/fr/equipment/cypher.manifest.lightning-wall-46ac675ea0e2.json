@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.lightning-wall",
+  "sourceLogicalId": "cypher.manifest.lightning-wall",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "0886882459f489435e42a8a63021baa220fd7ef198f867d941241f70c5742671",
+      "text": "Mur de foudre"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "34c43a744f8ee98e934c4a869b8d39f616635e60624ae73c49b09bbc573d19b0",
+      "text": "<p><strong>Effet :</strong> Vous créez un mur d’arcs électriques jusqu’à une distance courte, qui dure jusqu’à ce que vous preniez une récupération de dix minutes ou plus. Le mur mesure jusqu’à 30 pieds sur 30 pieds sur 1 pied (9 m sur 9 m sur 30 cm) et s’adapte à l’espace disponible. Tout ce qui le traverse subit 3 dégâts.</p><p><strong>Objets du genre : topaze de foudre (fantasy) ; module d’électroplan (science-fiction)</strong></p>"
+    }
+  ]
+}

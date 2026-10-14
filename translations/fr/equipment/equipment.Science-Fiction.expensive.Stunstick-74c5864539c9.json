@@ -1,0 +1,23 @@
+{
+  "logicalId": "equipment.Science Fiction.expensive.Stunstick",
+  "sourceLogicalId": "equipment.Science Fiction.expensive.Stunstick",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "7869b640827979cd31854396e5186409abaeccdea6d9b9266e91ecadf947e818",
+      "text": "Bâton paralysant"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "fbf46b48be5ba0680b2ca054e97b8ab6a734e5c7f7833ca098aa46d5c24b9492",
+      "text": "Arme moyenne, n’inflige aucun dégât, une créature de niveau 2 ou moins perd sa prochaine action, une créature de niveau 3 ou plus est entravée de deux pas pendant un round ou deux"
+    },
+    {
+      "path": "system.properties.0",
+      "sourceHash": "fbf46b48be5ba0680b2ca054e97b8ab6a734e5c7f7833ca098aa46d5c24b9492",
+      "text": "Arme moyenne, n’inflige aucun dégât, une créature de niveau 2 ou moins perd sa prochaine action, une créature de niveau 3 ou plus est entravée de deux pas pendant un round ou deux"
+    }
+  ]
+}

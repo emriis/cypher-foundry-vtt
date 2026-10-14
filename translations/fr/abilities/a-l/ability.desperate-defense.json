@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.desperate-defense",
+  "sourceLogicalId": "ability.desperate-defense",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "6b5ddf6287504bef6fd45802f2b9299ccd9b7a682d005c2ef2ecc5de4cb144df",
+      "text": "Défense désespérée"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "88cb7af1f615df8a4ac8faf3a26647f37be1e941075e159523addc5cf8c68806",
+      "text": "Tant que vous avez au moins une blessure modérée ou une blessure majeure, vous pouvez choisir d’entrer dans un état de vigilance accrue face aux menaces. Dans cet état, vous ne pouvez pas utiliser les points de votre réserve d’Intellect, mais vous ajoutez +1 à votre Avantage de Célérité et bénéficiez de deux atouts aux tâches de blocage et d’esquive. Si vous choisissez de mettre fin à cet état alors que vous êtes encore blessé, vous ne pouvez pas le reprendre avant d’avoir utilisé une récupération. Aptitude passive."
+    }
+  ]
+}

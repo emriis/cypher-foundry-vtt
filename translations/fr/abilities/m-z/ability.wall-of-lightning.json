@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.wall-of-lightning",
+  "sourceLogicalId": "ability.wall-of-lightning",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "2b97f8796297ee3863bd7e340b108bccc754a8432138622975bae7cd1d6091d7",
+      "text": "Mur de foudre"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "49736d0061bf0e79ad6d59df0957f8e52a2a0f0585598590b0198cafff2b5bc8",
+      "text": "Vous créez une barrière d’électricité crépitante composée de six carrés de 10 pieds sur 10 pieds (3,5 m sur 3,5 m), chacun épais de 1 pouce (2,5 cm), disposés comme vous le souhaitez. Le mur est un obstacle de niveau 7. Un côté ou les deux crépitent d’un surplus d’électricité ; toute personne à distance immédiate d’un côté chargé subit 10 dégâts, sans jet, ou le double si elle le traverse. Le mur dure jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Action pour créer le mur."
+    }
+  ]
+}

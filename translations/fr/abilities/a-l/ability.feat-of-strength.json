@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.feat-of-strength",
+  "sourceLogicalId": "ability.feat-of-strength",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "fb70a7d99d175a706ddc8974b19b336e6d2702cc566a1377e7ad1fac46738a7e",
+      "text": "Prouesse de force"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "2066dd3c299b0b2920a4c0d79d099b6bf676e329bab34598b20872561d571ed5",
+      "text": "Votre action physique impressionne, inspire un allié ou intimide un adversaire. Après avoir réussi une tâche reposant sur la force brute, comme défoncer une porte barrée, ouvrir de force un conteneur verrouillé, soulever ou déplacer un objet lourd ou frapper quelqu’un avec une arme de mêlée, choisissez une créature qui vous a vu réussir. Si c’est un allié, vous facilitez sa prochaine tâche. Si c’est un adversaire, vous pouvez entraver l’une de ses tâches à son prochain tour ou tenter immédiatement une tâche d’intimidation facilitée contre lui. Aptitude passive."
+    }
+  ]
+}

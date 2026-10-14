@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.foil-danger",
+  "sourceLogicalId": "ability.foil-danger",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "ad64df278ffb647042f5e6c8717f4f9d5e35baceccfd5396176c8e52bb396a4c",
+      "text": "Déjouer le danger"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "cedef90adabc1c85124e8aa0b37114c2c7eca10ec49e7041fcdc5affdf3e39c1",
+      "text": "<p>Si vous avez conscience d’un danger à distance immédiate et réussissez un jet d’Intellect contre son niveau, vous neutralisez ce danger pendant un round. Le danger peut par exemple être un élément du paysage comme une fosse de boue ou d’acide, un piège déclenché par un fil ou une aptitude naturelle d’une créature, comme le venin d’un serpent ou une décharge radioactive d’un cafard lumineux. Il peut même s’agir d’une attaque ou d’une action ordinaire d’un adversaire, comme une attaque d’arme ou une tentative d’actionner un interrupteur ; dans ce cas, cette aptitude l’empêche d’effectuer cette action à son prochain tour. Action.</p>"
+    }
+  ]
+}
