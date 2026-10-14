@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.improved-ice-armor",
+  "sourceLogicalId": "ability.improved-ice-armor",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "867d467698f5261af088731d220f024279eb2edc49c00e0986af8bf3f15307e5",
+      "text": "Armure de glace améliorée"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "afb0e21873400acb5f0a0bfad24cebed176ddab97c3a74b07b750f32b5180ed3",
+      "text": "Votre Armure de glace facilite d’un pas supplémentaire vos jets de défense de Puissance pour bloquer les attaques. Les dégâts du contact glacé de votre Armure de glace, d’Éclair de givre et d’Étreinte hivernale augmentent de 1."
+    }
+  ]
+}

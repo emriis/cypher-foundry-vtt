@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.mind-control",
+  "sourceLogicalId": "cypher.manifest.mind-control",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "fc2feab8e0f150a00217954e9ff3ae1aba97e1a9b5938a6a7d5cb084bb20747c",
+      "text": "Contrôle mental"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "41501afa829d7655b9d7a96a11e87277af7ccda7da11b42c34eb788c4c5ce201",
+      "text": "<p><strong>Effet :</strong> Effectuez une attaque d’Intellect contre un adversaire à portée courte ; s’il est de niveau 7 ou plus, l’attaque est entravée de deux pas. En cas de réussite, la créature devient calme et n’attaque ni vous ni vos alliés sauf si elle est menacée ou attaquée ; cet effet dure jusqu’à ce que vous preniez une récupération de dix minutes ou plus. Elle obéit à vos ordres verbaux. Si vous lui ordonnez quelque chose qui va à l’encontre de son éthique ou de son code moral, comme trahir ou attaquer ses alliés ou se faire du mal, vous devez réussir une nouvelle attaque d’Intellect contre elle à la même difficulté que l’attaque initiale ; sinon, elle échappe à votre contrôle. Si vous utilisez ce Cypher sur une créature non sapiente, généralement dotée d’une intelligence animale, l’effet dure jusqu’à ce que vous preniez une récupération d’une heure ou plus.</p><p><strong>Objets du genre : parchemin de contrôle mental (fantasy) ; dominateur cérébral (science-fiction)</strong></p>"
+    }
+  ]
+}

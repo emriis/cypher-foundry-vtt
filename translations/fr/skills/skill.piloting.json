@@ -1,0 +1,18 @@
+{
+  "logicalId": "skill.piloting",
+  "sourceLogicalId": "skill.piloting",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "025fbd244e557dd4e92f6bfe2b36c5d308b5eacdab9ef6bd04ad7d8d5694c39f",
+      "text": "Pilotage"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "2b25fa4d7f5d1bf22836c5e49dd2ab61b3542da390632b415eecfdfd4a11dbde",
+      "text": "<p>Vous savez piloter des avions, des bateaux, des submersibles ou des engins adaptés au cadre de votre partie.</p>"
+    }
+  ]
+}

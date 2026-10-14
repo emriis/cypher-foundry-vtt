@@ -13,6 +13,58 @@ import { resolveDocumentReferences } from "./reference-resolver.mjs";
  * actor-owned Item.
  */
 
+/** Read an imported Skill's language-independent CRD identity, if present. */
+function skillSourceIdentity(item) {
+  const provenance = item.flags?.cypherFoundry?.crd;
+  return provenance?.sourceLogicalId ?? provenance?.logicalId ?? null;
+}
+
+/**
+ * Resolve chosen labels through the two native Skill indices before any writes.
+ * Type/Descriptor choices are legacy display strings; the indexed source flags
+ * let French and English choices grant the same Skill without parsing prose.
+ * Foundry caches these minimal indices; no second runtime identity store exists.
+ * Missing packs leave custom name matching available. Index read failures and
+ * ambiguous source labels propagate before the Actor gains any benefits.
+ * @param {string[]} names Selected or fixed granted Skill labels.
+ * @returns {Promise<Map<string,object>>} Lowercase label to canonical indexed Skill.
+ */
+async function resolveGrantedSkillSources(names) {
+  const requested = new Set(names.map(name => name.toLowerCase()));
+  const sources = new Map();
+  if (!requested.size) return sources;
+  const packs = ["cypher.skills-en", "cypher.skills-fr"]
+    .map(id => game.packs?.get(id)).filter(Boolean);
+  const indices = await Promise.all(packs.map(pack => pack.getIndex({
+    fields: ["name", "type", "flags.cypherFoundry.crd"]
+  })));
+  for (const index of indices) {
+    for (const entry of index) {
+      const name = entry.name?.toLowerCase();
+      const identity = skillSourceIdentity(entry);
+      if (entry.type !== "skill" || !identity || !requested.has(name)) continue;
+      if (sources.has(name) && skillSourceIdentity(sources.get(name)) !== identity) {
+        throw new Error(`Ambiguous CRD Skill label: ${entry.name}`);
+      }
+      sources.set(name, entry);
+    }
+  }
+  return sources;
+}
+
+/** Source identity wins; only Skills without CRD provenance use the name fallback. */
+function findGrantedSkill(actor, name, source) {
+  const identity = source && skillSourceIdentity(source);
+  return (identity && actor.items.find(item => item.type === "skill" && skillSourceIdentity(item) === identity))
+    || actor.items.find(item => item.type === "skill" && !skillSourceIdentity(item)
+      && item.name.toLowerCase() === name.toLowerCase());
+}
+
+/** Preserve canonical provenance when a grant creates a new actor-owned Skill. */
+function grantedSkillFlags(source) {
+  return source ? { flags: { cypherFoundry: { crd: structuredClone(source.flags.cypherFoundry.crd) } } } : {};
+}
+
 /**
  * Resolve referenced content abilities for presentation or application use.
  *
@@ -98,6 +150,8 @@ async function applyTypeInternal(actor, typeItem, { stat = null, skillName = nul
   }
 
   const system = typeItem.system;
+  const finalSkillName = skillName?.trim() || (system.skillOptions ?? []).find(value => value?.trim());
+  const skillSources = await resolveGrantedSkillSources(finalSkillName ? [finalSkillName] : []);
   const poolBonuses = system.poolBonuses ?? {};
   const woundBonuses = system.woundBonuses ?? {};
   const chosenStat = stat && CYPHER.stats.includes(stat) ? stat : "might";
@@ -145,10 +199,10 @@ async function applyTypeInternal(actor, typeItem, { stat = null, skillName = nul
 
   await actor.update(updates);
 
-  const finalSkillName = skillName?.trim() || (system.skillOptions ?? []).find(value => value?.trim());
   let skillNote = "";
   if (finalSkillName) {
-    const existing = actor.items.find(item => item.type === "skill" && item.name.toLowerCase() === finalSkillName.toLowerCase());
+    const source = skillSources.get(finalSkillName.toLowerCase());
+    const existing = findGrantedSkill(actor, finalSkillName, source);
     if (existing) {
       const order = ["inability", "practiced", "trained", "specialized", "expert"];
       const index = Math.max(0, order.indexOf(existing.system.level));
@@ -159,6 +213,7 @@ async function applyTypeInternal(actor, typeItem, { stat = null, skillName = nul
       await actor.createEmbeddedDocuments("Item", [{
         name: finalSkillName,
         type: "skill",
+        ...grantedSkillFlags(source),
         system: { level: "trained", description: game.i18n.format("CYPHER.Type.GrantedFrom", { name: typeItem.name }) }
       }]);
       skillNote = game.i18n.format("CYPHER.Type.SkillGranted", { name: finalSkillName });
@@ -420,6 +475,19 @@ export async function applyDescriptor(
   const statOptions = descriptorItem.system.statOptions ?? [];
   const chosenStat = stat && statOptions.includes(stat) ? stat : statOptions[0];
   const finalSkillName = skillName?.trim();
+  const grantedSkills = (descriptorItem.system.grantedSkills ?? []).map(name => name.trim()).filter(Boolean);
+  const skillSources = await resolveGrantedSkillSources([finalSkillName, ...grantedSkills].filter(Boolean));
+  // A player's English choice can be the same Skill as a fixed French grant.
+  // Deduplicate by source identity so it still represents one trained benefit.
+  const skillNames = [];
+  const grantedIdentities = new Set();
+  for (const name of [finalSkillName, ...grantedSkills].filter(Boolean)) {
+    const source = skillSources.get(name.toLowerCase());
+    const identity = source ? `crd:${skillSourceIdentity(source)}` : `custom:${name.toLowerCase()}`;
+    if (grantedIdentities.has(identity)) continue;
+    grantedIdentities.add(identity);
+    skillNames.push(name);
+  }
   const amount = descriptorItem.system.statAmount ?? 2;
   const applyingSecondDescriptor = !isSpecies && Boolean(actor.getFlag("cypher", "appliedDescriptorId"));
   const updates = isSpecies
@@ -438,15 +506,14 @@ export async function applyDescriptor(
   }
   await actor.update(updates);
 
-  // Advance an existing skill of the same name, or create a new trained skill, using the
-  // same progression logic as purchaseAdvancementSlot's "skill" advancement.
+  // Reuse the same source Skill across languages while retaining its chosen name.
+  // Training still follows the existing Descriptor advancement rules.
   const order = ["inability", "practiced", "trained", "specialized", "expert"];
-  const grantedSkills = (descriptorItem.system.grantedSkills ?? []).map(name => name.trim()).filter(Boolean);
-  const skillNames = [...new Set([finalSkillName, ...grantedSkills].filter(Boolean))];
   const chatNotes = [];
 
   for (const grantedSkillName of skillNames) {
-    const existing = actor.items.find(item => item.type === "skill" && item.name.toLowerCase() === grantedSkillName.toLowerCase());
+    const source = skillSources.get(grantedSkillName.toLowerCase());
+    const existing = findGrantedSkill(actor, grantedSkillName, source);
     if (existing) {
       const newLevel = existing.system.level === "inability"
         ? "trained"
@@ -457,6 +524,7 @@ export async function applyDescriptor(
       const [created] = await actor.createEmbeddedDocuments("Item", [{
         name: grantedSkillName,
         type: "skill",
+        ...grantedSkillFlags(source),
         system: {
           level: "trained",
           description: game.i18n.format("CYPHER.Descriptor.GrantedFrom", { name: descriptorItem.name })

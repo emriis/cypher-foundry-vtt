@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.basic-follower",
+  "sourceLogicalId": "ability.basic-follower",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "4249d529d568ead1178e4bbf8122ce032ea76e01acfd255137a0d62f592e8706",
+      "text": "Compagnon de base"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "32e7dec8a80ad6aef5331c8e6f1b83097c201ab544d164161fdedadb8c957d1e",
+      "text": "Vous gagnez un compagnon de niveau 2 possédant deux modifications de niveau 3, dont l’une est le charme. Vous pouvez prendre cette aptitude plusieurs fois, en gagnant un autre compagnon à chaque fois."
+    }
+  ]
+}

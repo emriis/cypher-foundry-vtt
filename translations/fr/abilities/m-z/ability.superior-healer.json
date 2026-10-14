@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.superior-healer",
+  "sourceLogicalId": "ability.superior-healer",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "c06cdf0d19f94316095c5a6848d98ea491b44d48bc9055aaf190a4284ec44b4b",
+      "text": "Soins supérieurs"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "22dfbf17e05096736c159c97a47d74590708d9d978e8c443b88a1f9af02b993c",
+      "text": "Si vous possédez Source de récupération (Font of Recovery) ou Source de guérison (Font of Healing), l’allié peut dépenser 2 Intellect supplémentaires pour obtenir deux fois le bénéfice normal. Si vous possédez Réanimer (Resuscitate), cette aptitude soigne deux fois le nombre normal de blessures et permet de ranimer une créature morte depuis une heure au maximum. Si vous possédez Bouclier guérisseur (Healing Shield), l’allié obtient deux atouts au lieu d’un, utilisables ensemble sur un jet de blocage ou séparément sur deux jets différents. Effort : augmentez le délai de mort maximal de Réanimer à 24 heures, une semaine pour deux niveaux d’Effort, un mois pour trois niveaux d’Effort, ou un an pour cinq niveaux d’Effort. Aptitude passive."
+    }
+  ]
+}

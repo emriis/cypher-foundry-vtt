@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.intellect-restorer",
+  "sourceLogicalId": "cypher.manifest.intellect-restorer",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "a53ab4471f36bb3fa60fa115e689ff5240cccd920a68a1a21247ca77d41f2123",
+      "text": "Restauration d’Intellect"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "561461d7218980f1c0e8994153171cf3656965be2167138efe5dc2917d1ae942",
+      "text": "<p><strong>Effet :</strong> Vous restaurez 6 points dans votre réserve d’Intellect.</p><p><strong>Objets du genre : potion de méditation (fantasy) ; régénérateur synaptique (science-fiction)</strong></p>"
+    }
+  ]
+}

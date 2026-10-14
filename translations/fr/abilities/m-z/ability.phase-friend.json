@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.phase-friend",
+  "sourceLogicalId": "ability.phase-friend",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "a8c7a818b494e790b91e000b2081322b39dec2aca03916e290e58e6760c2ccbd",
+      "text": "Déphaser un allié"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "fb762014b0e880c628c39f6275f1617e57287bd115c4aba004d408a7d1e5898a",
+      "text": "Lorsque vous utilisez une aptitude de déphasage, vous emmenez un allié à portée immédiate. Effort : emmenez un allié supplémentaire. Aptitude passive."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.sonic-bomb",
+  "sourceLogicalId": "cypher.manifest.sonic-bomb",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "3eb6cec09a3ff91a7e410f4223af5d83d6867b09e55deff314f461c4de25a67e",
+      "text": "Bombe sonique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "acecaeef248824978aed36b6bbfd342fa34e20862533cda0c16df60416364a39",
+      "text": "<p><strong>Effet :</strong> Crée une explosion de son intense d’un rayon immédiat jusqu’à une distance courte. Effectuez des attaques de Célérité distinctes contre chaque créature dans la zone. En cas de réussite, elle subit 3 dégâts et devient sourde jusqu’à ce que vous preniez une récupération de dix minutes ou plus. En cas d’échec, elle subit tout de même 1 dégât mais ne devient pas sourde.</p><p><strong>Objets du genre : parchemin de déflagration sonique (fantasy) ; grenade à décibels (science-fiction)</strong></p>"
+    }
+  ]
+}

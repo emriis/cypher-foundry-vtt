@@ -1,0 +1,18 @@
+{
+  "logicalId": "skill.disarming-traps",
+  "sourceLogicalId": "skill.disarming-traps",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "ecc5645092bd554bc01d78f92d9dd8741cc32c1fb85afe78576f0d7a28f19cf7",
+      "text": "Désamorçage de pièges"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "b87f13a4330332f9bc2b2300d6f3ca3ff933b5630e44b86d2bb09691c130362e",
+      "text": "<p>Vous avez le don de comprendre le fonctionnement des mécanismes et des pièges ingénieux, ce qui augmente vos chances de les neutraliser, sinon définitivement, du moins assez longtemps pour les contourner.</p>"
+    }
+  ]
+}

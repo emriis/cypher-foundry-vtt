@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.empathic-sense",
+  "sourceLogicalId": "ability.empathic-sense",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "5d943b0255ba50de5996f0e63aed4357209074d65b4369b363b82c993b4daf62",
+      "text": "Sens empathique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d05be5a6c7609df8987e5aecd18258fff19c19d047c74bdd55ee1d818e399666",
+      "text": "<p>Vous percevez l’état mental général d’un être à portée courte. Vous pouvez percevoir son émotion générale et, en particulier, ses sentiments envers vous. Action lente.</p>"
+    }
+  ]
+}

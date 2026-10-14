@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.retaliatory-swipe",
+  "sourceLogicalId": "ability.retaliatory-swipe",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "bd867f2bb6f27e6ef22db4255f6f49f6e0d81aaf95cb8a0429d15eb82958463e",
+      "text": "Frappe de représailles"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d5333c4c113086a707adcc7f016d7edfcea6dc7943bc47bc9eb804bf51291e9f",
+      "text": "Si une attaque de mêlée vous touche, vous pouvez immédiatement effectuer une attaque de mêlée contre son auteur. Vous ne pouvez utiliser cette aptitude qu’une fois par tour. Aptitude passive."
+    }
+  ]
+}

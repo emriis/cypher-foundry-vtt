@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.inspiring-suggestion",
+  "sourceLogicalId": "ability.inspiring-suggestion",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "8a9888e2c0dbc0350d3c01813b760f2eea41749768ed8b8a7a6f367a137a187c",
+      "text": "Suggestion inspirante"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "65d58a16d678470bf96b662bc3ae48b4360a9e0d2a0897e488420b8b1dac2896",
+      "text": "Choisissez un allié qui peut vous voir et vous comprendre facilement. Suggérez-lui une action précise à accomplir, comme « attaque le chef » ou « escalade le mur ». Si l’allié choisit d’accomplir exactement cette action à son prochain tour, il gagne deux atouts à cette tâche. Action réflexe."
+    }
+  ]
+}

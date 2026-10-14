@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.assassin-strike",
+  "sourceLogicalId": "ability.assassin-strike",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "4891280e035c341cb05395896298f866fa5d44c8f6e68e73f87d9933c2ee879b",
+      "text": "Frappe d’assassin"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "46c2ead476a5b823e6c3a7aa5639dcca43f089aac40cf5d06a3fbc04f77f1081",
+      "text": "<p>Si vous réussissez une attaque contre une créature qui ignorait auparavant votre présence, vous infligez +6 dégâts. Si vous possédez aussi Surgir des ombres, ajoutez les dégâts supplémentaires des deux aptitudes. Aptitude passive.</p>"
+    }
+  ]
+}

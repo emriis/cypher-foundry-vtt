@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.poison-recovery",
+  "sourceLogicalId": "cypher.poison-recovery",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "f2a62ce0463a5e0029dd478f133496942bb7d75afb6716419fe638417f5baed1",
+      "text": "Récupération d’empoisonnement"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "ccab47063b400ecf04913fdc05497a04083fc06e19cbf6a421a41603a6524d02",
+      "text": "<p><strong>Effet :</strong> Un poison de niveau 4 ou moins actuellement présent dans votre organisme n’a plus d’effet sur vous.</p><p><strong>Explication :</strong> La blessure n’était qu’une égratignure et presque aucun poison n’a pénétré dans votre organisme. Vous avez pris le temps de développer une résistance à ce poison précis. Un médicament que vous prenez interfère avec le poison.</p>"
+    }
+  ]
+}

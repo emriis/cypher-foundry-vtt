@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.rebuke-evil",
+  "sourceLogicalId": "ability.rebuke-evil",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "00009e98e892a09aec38711beec3dfc20b9236fb5333b9d8846f55a0b3d4ee2b",
+      "text": "Réprimander le mal"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d26ba5db6b190ecb4d7fdd7538fd296b73903d8965c36b7febb3f58fcb80ff4c",
+      "text": "Vous réprimandez un mort-vivant, un démon ou une créature de nature similaire à courte portée contre laquelle vous réussissez une attaque d’Intellect. La créature affectée fait de son mieux pour accomplir l’objectif que vous énoncez, même si cela nuit à elle-même ou à ses alliés, jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Effort : affectez un adversaire supplémentaire, avec un jet d’attaque distinct contre chacun ; vous devez donner le même ordre à toutes les créatures affectées. Action lente."
+    }
+  ]
+}

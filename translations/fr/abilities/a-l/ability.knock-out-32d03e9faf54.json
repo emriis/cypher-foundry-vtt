@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.knock-out-32d03e9faf54",
+  "sourceLogicalId": "ability.knock-out-32d03e9faf54",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "86b77c2b6ca57adf60913c39c56278c85bb3bc18cae70660639f58cade856520",
+      "text": "Assommer"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "23ad13c74960f9945121994d7756c654b792fd44957d5113986eae28a7b9a61d",
+      "text": "Effectuez une attaque de corps à corps entravée contre un adversaire de niveau 3 ou moins. Si l’attaque touche, au lieu d’infliger des dégâts, vous l’assommez jusqu’à ce que vous preniez une récupération de dix minutes ou plus (ou que quelqu’un utilise une action pour le ramener à lui). Effort : augmentez de 1 le niveau maximal de l’adversaire que vous pouvez affecter. Action."
+    }
+  ]
+}

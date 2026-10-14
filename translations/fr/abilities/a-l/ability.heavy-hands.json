@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.heavy-hands",
+  "sourceLogicalId": "ability.heavy-hands",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "4216a5bf548cae46bca629ef54016056a3da26927062eedb8994f3313b889d92",
+      "text": "Mains lourdes"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "764036f9c124c0695e5f6d5bc48765d4c0cac7b454537daeaccb67dcadf9166e",
+      "text": "Vos attaques à mains nues infligent 2 dégâts supplémentaires."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "equipment.Fantasy.veryExpensive.Warhorse",
+  "sourceLogicalId": "equipment.Fantasy.veryExpensive.Warhorse",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "081be115c2d54999a3e3769ce8521f3ddc08cbf7919aeb79de2a9e7be2debeb8",
+      "text": "Cheval de guerre"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d56cb49abfaa02749cb6be1c94914226c14162825942436c57332e2475f29a97",
+      "text": "niveau 4 ; parcourt une distance longue à chaque round"
+    }
+  ]
+}

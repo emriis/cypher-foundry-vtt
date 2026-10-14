@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-const { applyType, applyFocus, getInitialFocusAbilityChoices } = await import(
+const { applyType, applyFocus, applyDescriptor, getInitialFocusAbilityChoices } = await import(
   "../../module/applications/content-service.mjs"
 );
 
@@ -41,6 +41,171 @@ function createActor() {
       return documents;
     }
   };
+}
+
+/** Keep language labels separate from the Skill identity shared by both packs. */
+function setupSkillGrants({ failIndex = false } = {}) {
+  const provenance = language => ({ version: "2026-07-29", logicalId: "skill.athletics",
+    language, ...(language === "fr" ? { sourceLogicalId: "skill.athletics" } : {}) });
+  const packs = new Map(["en", "fr"].map(language => [`cypher.skills-${language}`, {
+    async getIndex() {
+      if (failIndex) throw new Error("Skill index unavailable");
+      return [{ type: "skill", name: language === "fr" ? "Athlétisme" : "Athletics",
+        flags: { cypherFoundry: { crd: provenance(language) } } }];
+    }
+  }]));
+  globalThis.game = { packs, i18n: { localize: value => value, format: value => value } };
+  globalThis.ui = { notifications: { warn() {} } };
+  globalThis.ChatMessage = { getSpeaker: () => ({}), create: async () => {} };
+  return provenance;
+}
+
+function existingSkill(name, provenance) {
+  return { type: "skill", name, system: { level: "trained" },
+    ...(provenance ? { flags: { cypherFoundry: { crd: provenance } } } : {}),
+    async update(values) { this.system.level = values["system.level"]; } };
+}
+
+test("Given an English imported Skill, when a French Type grants its translation, then the same Skill advances without a duplicate", async () => {
+  const provenance = setupSkillGrants();
+  const actor = createActor();
+  const skill = existingSkill("Athletics", provenance("en"));
+  actor.items.push(skill);
+  assert.equal(await applyType(actor, { type: "type", id: "type", name: "Guerrier",
+    system: { skillOptions: ["Athlétisme"], abilities: [] } }), true);
+  assert.equal(actor.items.length, 1);
+  assert.equal(skill.system.level, "specialized");
+  assert.equal(skill.name, "Athletics");
+});
+
+test("Given a renamed French imported Skill, when an English Descriptor grants its CRD source, then identity preserves the existing Skill", async () => {
+  const provenance = setupSkillGrants();
+  const actor = createActor();
+  const skill = existingSkill("Mon entraînement physique", { ...provenance("fr"), logicalId: "localized.legacy-athletics" });
+  actor.items.push(skill);
+  assert.equal(await applyDescriptor(actor, { type: "descriptor", id: "descriptor", name: "Strong",
+    system: { statAmount: 0, grantedSkills: ["Athletics"] } }), true);
+  assert.equal(actor.items.length, 1);
+  assert.equal(skill.system.level, "specialized");
+  assert.equal(skill.name, "Mon entraînement physique");
+});
+
+test("Given a custom Skill without CRD provenance, when a Type grants its name, then legacy name matching still advances it", async () => {
+  setupSkillGrants();
+  const actor = createActor();
+  const skill = existingSkill("Navigation des rêves");
+  actor.items.push(skill);
+  assert.equal(await applyType(actor, { type: "type", id: "type", name: "Rêveur",
+    system: { skillOptions: ["navigation des rêves"], abilities: [] } }), true);
+  assert.equal(actor.items.length, 1);
+  assert.equal(skill.system.level, "specialized");
+});
+
+test("Given no existing Skill, when a French Type grants one then an English Descriptor grants its source, then provenance joins both grants", async () => {
+  setupSkillGrants();
+  const actor = createActor();
+  await applyType(actor, { type: "type", id: "type", name: "Guerrier",
+    system: { skillOptions: ["Athlétisme"], abilities: [] } });
+  assert.equal(actor.items[0].flags?.cypherFoundry?.crd?.sourceLogicalId, "skill.athletics");
+  // Actor-owned Items expose update after Foundry creates them; the fake supplies
+  // that persistence method for the second content application.
+  actor.items[0].update = async values => { actor.items[0].system.level = values["system.level"]; };
+  await applyDescriptor(actor, { type: "descriptor", id: "descriptor", name: "Strong",
+    system: { statAmount: 0, grantedSkills: ["Athletics"] } });
+  assert.equal(actor.items.length, 1);
+  assert.equal(actor.items[0].system.level, "specialized");
+});
+
+test("Given two translated labels for one Skill, when a Descriptor grants both, then the canonical Skill is granted only once", async () => {
+  setupSkillGrants();
+  const actor = createActor();
+  assert.equal(await applyDescriptor(actor, { type: "descriptor", id: "descriptor", name: "Fort",
+    system: { statAmount: 0, grantedSkills: ["Athlétisme"] } }, { skillName: "Athletics" }), true);
+  assert.equal(actor.items.length, 1);
+  assert.equal(actor.items[0].system.level, "trained");
+});
+
+test("Given a same-name Skill from another CRD source, when a Type grants Athletics, then the unrelated Skill is preserved", async () => {
+  setupSkillGrants();
+  const actor = createActor();
+  const skill = existingSkill("Athlétisme", { logicalId: "skill.acrobatics" });
+  actor.items.push(skill);
+  await applyType(actor, { type: "type", id: "type", name: "Guerrier",
+    system: { skillOptions: ["Athlétisme"], abilities: [] } });
+  assert.equal(actor.items.length, 2);
+  assert.equal(skill.system.level, "trained");
+  assert.equal(actor.items[1].flags?.cypherFoundry?.crd?.sourceLogicalId, "skill.athletics");
+});
+
+test("Given a custom matching name and a renamed CRD Skill, when a Type grants that source, then CRD identity takes priority", async () => {
+  const provenance = setupSkillGrants();
+  const actor = createActor();
+  const custom = existingSkill("Athlétisme");
+  const imported = existingSkill("Mon entraînement", provenance("en"));
+  actor.items.push(custom, imported);
+  await applyType(actor, { type: "type", id: "type", name: "Guerrier",
+    system: { skillOptions: ["Athlétisme"], abilities: [] } });
+  assert.equal(actor.items.length, 2);
+  assert.equal(custom.system.level, "trained");
+  assert.equal(imported.system.level, "specialized");
+});
+
+for (const kind of ["type", "descriptor"]) {
+  test(`Given an ambiguous bilingual Skill label, when a ${kind} grants it, then no Actor state changes`, async () => {
+    setupSkillGrants();
+    game.packs.set("cypher.skills-en", {
+      async getIndex() {
+        return [{ type: "skill", name: "Athlétisme",
+          flags: { cypherFoundry: { crd: { logicalId: "skill.acrobatics" } } } }];
+      }
+    });
+    const actor = createActor();
+    const original = structuredClone({ system: actor.system, flags: actor.flags });
+    const item = { type: kind, id: "source", name: "Source", system: {
+      statAmount: 2, statOptions: ["might"], poolBonuses: { might: 2 },
+      skillOptions: ["Athlétisme"], grantedSkills: ["Athlétisme"], abilities: [] } };
+    await assert.rejects(kind === "type" ? applyType(actor, item) : applyDescriptor(actor, item),
+      /Ambiguous CRD Skill label/);
+    assert.deepEqual({ system: actor.system, flags: actor.flags }, original);
+    assert.equal(actor.items.length, 0);
+  });
+}
+
+test("Given no native Skill packs, when a Type grants a custom Skill, then legacy matching remains available", async () => {
+  setupSkillGrants();
+  game.packs.clear();
+  const actor = createActor();
+  const skill = existingSkill("Navigation des rêves");
+  actor.items.push(skill);
+  assert.equal(await applyType(actor, { type: "type", id: "type", name: "Rêveur",
+    system: { skillOptions: ["navigation des rêves"], abilities: [] } }), true);
+  assert.equal(actor.items.length, 1);
+  assert.equal(skill.system.level, "specialized");
+  assert.equal(skill.flags, undefined);
+});
+
+test("Given unavailable Skill indices, when a Type grants no Skill, then its unrelated benefits still apply", async () => {
+  setupSkillGrants({ failIndex: true });
+  const actor = createActor();
+  assert.equal(await applyType(actor, { type: "type", id: "type", name: "Warrior",
+    system: { poolBonuses: { might: 2 }, abilities: [] } }), true);
+  assert.equal(actor.system.stats.might.pool.max, 10);
+  assert.equal(actor.system.stats.might.pool.value, 10);
+  assert.equal(actor.items.length, 0);
+});
+
+for (const kind of ["type", "descriptor"]) {
+  test(`Given an unavailable Skill index, when a ${kind} is applied, then the failure occurs before any Actor mutation`, async () => {
+    setupSkillGrants({ failIndex: true });
+    const actor = createActor();
+    const original = structuredClone({ system: actor.system, flags: actor.flags });
+    const item = { type: kind, id: "source", name: "Source", system: {
+      statAmount: 2, statOptions: ["might"], poolBonuses: { might: 2 }, skillOptions: ["Athlétisme"],
+      grantedSkills: ["Athlétisme"], abilities: [] } };
+    await assert.rejects(kind === "type" ? applyType(actor, item) : applyDescriptor(actor, item), /index unavailable/);
+    assert.deepEqual({ system: actor.system, flags: actor.flags }, original);
+    assert.equal(actor.items.length, 0);
+  });
 }
 
 test("applyType copies mechanics from resolved standalone abilities", async () => {

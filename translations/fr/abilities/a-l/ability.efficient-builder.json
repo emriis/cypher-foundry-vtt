@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.efficient-builder",
+  "sourceLogicalId": "ability.efficient-builder",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "2abfe0c3233955a03b47195f318a42d70e83fdc5dd0dcbbc02a60a84d52a6668",
+      "text": "Constructeur efficace"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "779a7077e29a801d9d5eb68d53f128acc714462e8e46eb317bcf4b8c890d3f5a",
+      "text": "Chaque fois que vous obtenez des points de ressource, vous gagnez 1 point supplémentaire, mais ce point ne peut être dépensé que pour la réparation ou la fabrication."
+    }
+  ]
+}

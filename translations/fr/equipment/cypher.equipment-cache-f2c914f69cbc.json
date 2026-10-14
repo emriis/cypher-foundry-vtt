@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.equipment-cache",
+  "sourceLogicalId": "cypher.equipment-cache",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "d307d32b0373d7bd8b164b26fc86cf439af2026f2a93411cf1429b86fa207eef",
+      "text": "Cache d’équipement"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "df7caadc8565a9f9149b40d21e96e8c2db8396121337cd4a41a520abe2307b24",
+      "text": "<p>Effet : Vous fouillez dans les environs et créez ou trouvez une pièce d’équipement ordinaire de niveau 4 au maximum, comme une arme, une pièce d’armure ou une corde, mais pas un cypher ni un artefact. Cet équipement persiste pendant au maximum une journée, sauf s’il s’agit d’un équipement consommé après utilisation, comme une boîte de cartouches ou une grenade.</p>\n<p>Un cypher de cache d’équipement signifie probablement que vous découvrez une réserve oubliée d’équipement ou trouvez quelque chose d’utile sur un adversaire tombé.</p>"
+    }
+  ]
+}

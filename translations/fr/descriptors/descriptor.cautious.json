@@ -1,0 +1,28 @@
+{
+  "logicalId": "descriptor.cautious",
+  "sourceLogicalId": "descriptor.cautious",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "5fe257db86adbd23c86fc77486197434e7ff25f33d873c93b4e7d0f255cf741a",
+      "text": "Prudent"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "1e096ad4533d80eec67f1c33addfcb865d6e11ec23eecb2edfa27cf802aa0aab",
+      "text": "<p>Vous ne vous précipitez pas dans une situation nouvelle sans y avoir suffisamment réfléchi. Vous craignez ce qui pourrait arriver si vous n’examinez pas soigneusement les détails d’un nouvel emploi, d’une occasion ou d’une enquête. Les personnes moins vigilantes que vous peuvent vous trouver timide, mais vous soupçonnez que la bravoure n’est qu’un autre nom pour la témérité.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>+2 à votre Réserve de Célérité</p>\n<p>Vous êtes entraîné pour l’une des compétences suivantes : Collecte d’informations ou Perception</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "5ea107214017919b63ad99aad4da2bf79c41f35fba6b4c50ca9888264ecb021c",
+      "text": "Collecte d’informations"
+    },
+    {
+      "path": "system.skillOptions.1",
+      "sourceHash": "bd18e320a6bb9f539bf38e7c789035e1da2897d310fd54fc9c868f2365d776c7",
+      "text": "Perception"
+    }
+  ]
+}

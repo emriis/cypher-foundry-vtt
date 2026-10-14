@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/environment/wilderness/tree-oak.webp",
   "system": {
-    "description": "<p>Your spiritual connection to nature and the environment grants you mystical abilities.</p>",
+    "description": "<p>Your spiritual connection to nature and the environment grants you mystical abilities.</p>\n<ul>\n<li>Genre themes: nature priest, plant druid (fantasy), plant psychic (real world, science fiction, superhero)</li>\n<li>GM intrusions: An injured natural (but dangerous) creature is discovered. Someone is poaching wildlife for their skins, leaving the carcasses to rot. A tree falls in the forest, one of the last elder trees.</li>\n</ul>",
     "abilities": [
       "Compendium.cypher.abilities-en.Item.0e176c045f4a74e7",
       "Compendium.cypher.abilities-en.Item.ec6a00aa2aa77608",
@@ -81,6 +81,13 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references"
+        ]
+      }
     }
   }
 }

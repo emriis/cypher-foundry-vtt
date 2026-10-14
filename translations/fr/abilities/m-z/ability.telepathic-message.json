@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.telepathic-message",
+  "sourceLogicalId": "ability.telepathic-message",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "47ec60555983902eb9fc85e25eaf86de57437328307a201b58ba161bdf494591",
+      "text": "Message télépathique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d8bf0604e40db6f774a67f414b0b8517979eb77a2d43e202cb2aa07d4d19abf8",
+      "text": "Vous pouvez envoyer un message télépathique à sens unique durant environ une minute. Vous devez avoir au moins déjà vu la cible et elle doit se trouver sur la même planète que vous. Elle reconnaît le contact comme un message télépathique et peut reconnaître votre « voix » mentale. Effort : augmentez la portée à tout endroit du même système stellaire. Augmentez la portée à tout endroit de la même galaxie, pour trois niveaux d’Effort. Action pour initier l’effet."
+    }
+  ]
+}

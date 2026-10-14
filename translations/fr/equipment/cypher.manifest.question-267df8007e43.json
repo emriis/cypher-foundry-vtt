@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.question",
+  "sourceLogicalId": "cypher.manifest.question",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "289aff12b04274cb04b8f7dbf486ba8b3528c6fd16b60b9a31d31ce23b339236",
+      "text": "Question"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "4032c628f7cd498a437ba34a40a77d8d5f230fd262db7cbd8906be64ce5f91a8",
+      "text": "<p><strong>Effet :</strong> Vous pouvez poser une question au MJ et obtenir une réponse générale. Le MJ attribue un niveau à la question : plus la réponse est obscure, plus la tâche est difficile. En général, une information que vous pourriez découvrir en cherchant ailleurs que dans votre lieu actuel est de niveau 1, et une connaissance obscure du passé est de niveau 7. Obtenir une connaissance de l’avenir est de niveau 10, et une telle connaissance reste toujours sujette à interprétation. Le Cypher ne peut pas répondre à une question de niveau supérieur à 6.</p><p><strong>Objets du genre : grimoire de divination (fantasy) ; bibliothécaire universel (science-fiction)</strong></p>"
+    }
+  ]
+}

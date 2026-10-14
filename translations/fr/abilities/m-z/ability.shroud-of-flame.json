@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.shroud-of-flame",
+  "sourceLogicalId": "ability.shroud-of-flame",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "1f005944537c4f9899e5ba734bd6f7da668bf0360147d460303c585e5fb96a96",
+      "text": "Voile de flammes"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "3eb10230a2dd66b6375301a6db6e01b472a37388319fb13e4e53dc71c1f581e4",
+      "text": "À votre demande, tout votre corps s’enveloppe de flammes jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Le feu ne brûle ni vous ni votre équipement, mais inflige 2 dégâts à quiconque tente de vous toucher ou de vous frapper avec une attaque de mêlée, sans jet. Pendant que les flammes vous enveloppent, réduisez la gravité des blessures dues à la chaleur et aux flammes d’un degré : majeure à modérée, modérée à mineure, mineure à aucune. Par exemple, une attaque de feu infligeant une blessure modérée ne vous inflige qu’une blessure mineure. Pendant que les flammes vous enveloppent, vous pouvez toucher un adversaire comme une attaque légère à mains nues, infligeant 2 dégâts de feu. Aptitude passive."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.fiery-bomb",
+  "sourceLogicalId": "cypher.manifest.fiery-bomb",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "8f9c54075cf2b2e959c0228beb9c4ac6ecde60b0ccd247305e8714f8d50e2928",
+      "text": "Bombe incendiaire"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "07726250975bada9f6c6f252c49327701df3f368fccb1798938d2e5aeecedd88",
+      "text": "<p><strong>Effet :</strong> Crée une explosion de feu ou de chaleur d’un rayon immédiat jusqu’à une distance courte. Effectuez des attaques de Célérité distinctes contre chaque créature dans la zone. En cas de réussite, elle subit 4 dégâts ; en cas d’échec, elle subit tout de même 2 dégâts.</p><p><strong>Objets du genre : parchemin de boule de feu (fantasy) ; grenade incendiaire (science-fiction)</strong></p>"
+    }
+  ]
+}

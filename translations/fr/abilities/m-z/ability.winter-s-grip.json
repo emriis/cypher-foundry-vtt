@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.winter-s-grip",
+  "sourceLogicalId": "ability.winter-s-grip",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "777f395b9f3261cfee482b654fac8f8008379223d64a14feb22d51137625e49a",
+      "text": "Étreinte hivernale"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "4b119e9ac6e4763be572fa9401a833ee085ec879dbad0c88140557c056bc8e96",
+      "text": "Effectuez une attaque d’Intellect contre un adversaire à courte portée. En cas de réussite, une couche de glace le retient jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus ou qu’il utilise une action pour se libérer. Il ne peut pas quitter sa position actuelle et ses tâches physiques, notamment ses attaques et ses défenses, sont entravées. Si Armure de glace (Ice Armor) est active et que vous touchez l’adversaire à la place, l’attaque d’Intellect est facilitée et vous ajoutez les 2 dégâts de votre contact glacé. Effort : infligez 3 dégâts de froid au round où l’adversaire est retenu pour la première fois. Action."
+    }
+  ]
+}

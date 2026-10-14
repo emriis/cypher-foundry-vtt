@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.walk-through-walls",
+  "sourceLogicalId": "ability.walk-through-walls",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "c44831ae2d08ee6a868627daa5af0f22f3a16acbb10422c1014537d368d438bb",
+      "text": "Traverser les murs"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "eafd8d572ac16116ba94565c2093a61b0f608c2caa7826d0bbbc673a78ab97ec",
+      "text": "Vous pouvez traverser lentement les obstacles physiques de niveau 5 ou moins à raison de 1 pied (30 cm) par round, avec un minimum d’une Action lente pour franchir tout obstacle. Vous pouvez percevoir votre environnement en étant déphasé dans un obstacle ou un objet, ce qui peut permettre de regarder à travers les murs. Cette aptitude ne permet pas de traverser les barrières énergétiques. Effort : augmentez de 1 le niveau maximal de l’obstacle que vous pouvez traverser. Action lente."
+    }
+  ]
+}

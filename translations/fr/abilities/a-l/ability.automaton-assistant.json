@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.automaton-assistant",
+  "sourceLogicalId": "ability.automaton-assistant",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "88c7e38da1d21257b794e2253498d68d2224146387fd8273ea1543584dec818b",
+      "text": "Assistant automate"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "8baf9e30a3d61019201843fe837a7e6de55c57a89901fb65e697092b6d13a39e",
+      "text": "Vous avez construit un compagnon automate de niveau 2, de votre taille ou plus petit, qui vous accompagne et suit vos instructions. Vous et le MJ devez préciser son apparence et sa personnalité. Si l’automate est endommagé, quelques minutes d’attention de votre part le réparent : il récupère 2 points de Santé. S’il est détruit, vous pouvez le restaurer avec vos ressources en passant quelques jours à bricoler. Selon le genre, vos automates peuvent être des robots métalliques, des objets animés, des androïdes organiques, des golems magiques, des constructions steampunk, des statues éveillées ou quelque chose de complètement différent."
+    }
+  ]
+}

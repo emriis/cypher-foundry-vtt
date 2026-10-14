@@ -1,0 +1,43 @@
+{
+  "logicalId": "descriptor.species.zantari",
+  "sourceLogicalId": "descriptor.species.zantari",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "cb64dee6185653a92b46c98bb4ca580f923a90cde4b097cca3e7316edcefeb65",
+      "text": "Zantari"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "543d1d3a2c8628874cde9e6bfc1444a054f4c6b6b6ed439abe9d062a96da151c",
+      "text": "<p>Vos antennes améliorent vos sens et votre peau épaisse vous protège du froid de la lune glacée où vit votre peuple, mais votre apparence reste autrement humanoïde. Les apparences peuvent cependant tromper : les zantaris ont cinq genres, que les étrangers ont du mal à distinguer. En tant que zantari, vous accordez de la valeur à l’honneur, au combat rituel et au service militaire, mais aussi à l’art. On vous décrit parfois comme émotif, ce que vous prenez pour un compliment : sans l’intensité des sentiments, comment la vie pourrait-elle valoir la peine d’être vécue ?</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>Réduisez d’un degré de gravité les blessures que vous recevez de la glace et du froid.</p>\n<p>Vous êtes entraîné en perception.</p>\n<p>Vous infligez +1 dégât avec les armes à énergie à distance.</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "bd18e320a6bb9f539bf38e7c789035e1da2897d310fd54fc9c868f2365d776c7",
+      "text": "Perception"
+    },
+    {
+      "path": "system.benefits.0.name",
+      "sourceHash": "a2119707e5a0679767495d39f1f19fe49c20ef7975cc943ecf4dab84ca04d669",
+      "text": "Résistance aux blessures de glace et de froid"
+    },
+    {
+      "path": "system.benefits.0.description",
+      "sourceHash": "5b1ff3544b7415133663fa75349010595eb810de4e455cfbba709b0d73e402c9",
+      "text": "<p>Réduisez d’un degré de gravité les blessures que vous recevez de la glace et du froid.</p>"
+    },
+    {
+      "path": "system.benefits.1.name",
+      "sourceHash": "5a1ea92656dffac30c4141178fe9c5321715a312ee1a969fd38789b93ac02cd2",
+      "text": "Dégâts des armes à énergie à distance"
+    },
+    {
+      "path": "system.benefits.1.description",
+      "sourceHash": "8530b7e973a05e0f0fe34ffc6a098761b9655dfdc23f6c4b279d9390eedb860e",
+      "text": "<p>Vous infligez +1 dégât avec les armes à énergie à distance.</p>"
+    }
+  ]
+}

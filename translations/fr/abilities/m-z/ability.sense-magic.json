@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.sense-magic",
+  "sourceLogicalId": "ability.sense-magic",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "29cc128a25ce788e2dbf0247b6536a35a5fd87b0d5bbb2ba354602f8ca3ba4c1",
+      "text": "Percevoir la magie"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "33aa77b8f7eed7b5c3d31ff604aebcc3e5085bccaf02b7e4230d37f1ea6033e8",
+      "text": "Si une magie quelconque agit à courte portée, vous en avez conscience, sans en connaître les détails. Action lente."
+    }
+  ]
+}

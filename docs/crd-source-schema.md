@@ -159,6 +159,20 @@ The pairing model is:
 
 French is a localization layer, not an independent mechanical source.
 
+Author complete French editorial proposals under `translations/fr/`, against
+the exact English fields and their source hashes. The maintained workflow and
+glossary are in [Localization authoring and review](localization.md). Proposals
+have an explicit `proposed` or `reviewed` status; neither legacy English fallback
+text nor a successful build establishes French semantic approval.
+
+Source normalization preserves the French identity and canonical English CRD
+locators, aligns structured mechanics, and resolves references to the French
+counterparts. Compilation applies eligible text-only proposals to temporary
+JSON, leaving the authored `_source` records unchanged. Normal builds select
+reviewed proposals; including proposed text is an explicit editorial-preview
+option. Translation never determines source identity, action identifiers, costs,
+semantic durations or graph edges.
+
 ## 9. Validation contract
 
 The source validator rejects:
@@ -243,11 +257,19 @@ translation key.
 
 - The content-family prefix is one of the canonical CRD content families.
 - The source name is normalized deterministically.
-- Identifiers use lowercase ASCII characters, digits, and hyphens.
+- New slug-based identifiers use lowercase ASCII characters, digits, and hyphens.
 - The two components are separated by one period.
 - Localized names never replace the logical ID.
 - Foundry _id values remain implementation identifiers.
 - Logical IDs remain stable across pack rebuilds and language variants.
+
+The equipment inventory predates the slug convention. Its existing logical IDs
+use the canonical English tuple of genre, price category and source name, for
+example `equipment.Fantasy.inexpensive.Arrows (12)`. Preserve these grandfathered
+IDs exactly, including capitalization, spaces and punctuation. Resolve their
+English source relationship using the tuple rather than a localized display
+name. Do not rename these IDs, document IDs or live UUIDs merely to make them
+look like newer slugs.
 
 ### English/French pairing
 

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.expert-automaton",
+  "sourceLogicalId": "ability.expert-automaton",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "ee7ce596e706a460b1b18d1481768d243738605fe9319215c9d6274dc3f3bd4c",
+      "text": "Automate expert"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "b215aea82c9bdd6250d090da37a1cebce579487920f8ecab0c1f35b3c957ae73",
+      "text": "Vous avez construit un compagnon automate de niveau 3. Il fonctionne autrement comme votre automate de niveau 2 d’Assistant automate. Au lieu de gagner un nouvel automate de niveau 3, vous pouvez améliorer un compagnon automate existant de niveau 2 ou 3 en augmentant son niveau de 1, et obtenir un nouvel automate de niveau 2. Vous pouvez prendre cette aptitude plusieurs fois, en gagnant un autre automate à chaque fois."
+    }
+  ]
+}

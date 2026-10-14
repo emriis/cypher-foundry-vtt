@@ -68,11 +68,14 @@ export const test = base.extend({
     if (!Array.isArray(welcome.steps) || !welcome.steps.length) {
       throw new Error("Foundry welcome tour has no steps");
     }
-    await context.addInitScript(stepCount => {
+    await context.addInitScript(({ stepCount, origin }) => {
+      // Playwright also runs init scripts in about:blank and child frames.
+      // Opaque origins reject localStorage access before Foundry even boots.
+      if (location.origin !== origin) return;
       localStorage.setItem("core.tourProgress", JSON.stringify({
         core: { welcome: stepCount }
       }));
-    }, welcome.steps.length);
+    }, { stepCount: welcome.steps.length, origin: new URL(foundryUrl).origin });
     const page = await context.newPage();
 
     // Keep browser-side failures visible. In particular, an import/runtime
@@ -107,7 +110,19 @@ export const test = base.extend({
       );
     });
 
-    await joinAsGamemaster(page);
+    try {
+      await joinAsGamemaster(page);
+    } catch (error) {
+      // afterEach cannot obtain e2ePage when its worker fixture never initialized.
+      // Emit captured browser failures here and preserve the original exception.
+      const logs = browserLogsByPage.get(page) ?? [];
+      console.error("\n--- E2E browser diagnostics (failed bootstrap) ---\n" +
+        (logs.join("\n") || "(No browser diagnostics captured)") +
+        "\n--- End E2E browser diagnostics ---");
+      browserLogsByPage.delete(page);
+      await context.close().catch(() => {});
+      throw error;
+    }
 
     const bootstrap = await page.evaluate(() => ({
       system: {

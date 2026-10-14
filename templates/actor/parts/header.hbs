@@ -136,7 +136,7 @@
     <div class="power-shifts">
       <span class="power-shifts-label">{{localize 'CYPHER.Superhero.PowerShifts'}} ({{system.powerShiftTotal}})</span>
       {{#each system.powerShifts as |value category|}}
-      <label class="power-shift-item">{{localize (concat "CYPHER.PowerShift." category)}}
+      <label class="power-shift-item" title="{{localize (concat 'CYPHER.PowerShiftDescription.' category)}}">{{localize (concat "CYPHER.PowerShift." category)}}
         <input name="system.powerShifts.{{category}}" type="number" value="{{value}}" min="0" max="3"/>
       </label>
       {{/each}}

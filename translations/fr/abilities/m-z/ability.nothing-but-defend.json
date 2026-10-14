@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.nothing-but-defend",
+  "sourceLogicalId": "ability.nothing-but-defend",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "0a5182e628d0c7f902d88b74f81304d00814271a79673ad889f2913ae5c0b7f2",
+      "text": "Défense totale"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "3931d79c0e893f0caa55bfb28b7035242cf0090ce73f35ae9df95ebef15f802e",
+      "text": "Lorsque vous montez la garde, vous obtenez un atout pour toutes les tâches de défense. Action."
+    }
+  ]
+}

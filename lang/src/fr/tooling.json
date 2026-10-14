@@ -1,0 +1,23 @@
+{
+  "CYPHER": {
+    "Import": {
+      "Button": "Importer (Character Builder)",
+      "Title": "Importer un export du Character Builder",
+      "PickFile": "Fichier JSON exporté depuis le Character Builder officiel",
+      "Hint": "Crée un personnage à partir d’un fichier .json exporté par le Character Builder officiel de Cypher. Les structures de données diffèrent : certains champs, dont le genre, l’espèce et les caractéristiques des compétences et armes, sont approximés et peuvent nécessiter un ajustement après l’import.",
+      "NoFile": "Choisissez d’abord un fichier.",
+      "ParseError": "Impossible de lire ce fichier comme du JSON valide.",
+      "OnlyPC": "Seuls les exports de personnages joueurs peuvent être importés.",
+      "DefaultName": "Personnage importé",
+      "Success": "{name} a été importé. Vérifiez le genre de jeu, l’espèce ou le second descripteur, ainsi que les caractéristiques associées aux compétences et aux armes.",
+      "WarningsCount": "Import terminé avec {count} avertissement(s) — voir la console (F12) pour le détail.",
+      "UnsupportedType": "Objet « {name} » ({type}) : ce type d’objet n’est pas encore pris en charge par l’import, il a été ignoré.",
+      "ItemFailed": "Objet « {name} » : échec de l’import ({error})."
+    },
+    "Migration": {
+      "Begin": "Cypher : migration des données du monde vers la version {version}. Gardez le jeu ouvert jusqu’à la fin de la migration.",
+      "Complete": "Cypher : migration des données du monde vers la version {version} terminée.",
+      "TooOld": "Vos données Cypher (version {version}) sont trop anciennes pour une migration automatique. Installez les versions intermédiaires, ou demandez de l’aide."
+    }
+  }
+}

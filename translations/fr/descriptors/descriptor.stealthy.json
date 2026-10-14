@@ -1,0 +1,28 @@
+{
+  "logicalId": "descriptor.stealthy",
+  "sourceLogicalId": "descriptor.stealthy",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "c973859f44e0a88e6765f9ccbd093b53d5600d7697f0935a96f20de44c230f9b",
+      "text": "Furtif"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "64a7cf7fd3bad0cc82940fe787ccb67a7020faaa5c9dc842030d2a6a29299b40",
+      "text": "<p>Vous êtes discret, insaisissable et rapide. Ces talents vous aident à vous cacher, à vous déplacer silencieusement et à rester invisible. Vous avez peut-être une silhouette petite et nerveuse. Ce qui compte davantage, c’est votre capacité à utiliser les ombres, les abris et les distractions pour rester hors de vue et silencieux, ainsi qu’à rendre vos mouvements fluides et délibérés. Quoi qu’il en soit, votre expertise améliore vos chances lorsque vous souhaitez observer sans être repéré, vous infiltrer ou tendre une embuscade. Ou peut-être simplement tenter un tour de passe-passe pour délester quelqu’un de ses objets de valeur.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>+2 à votre Réserve de Célérité</p>\n<p>Vous êtes entraîné pour l’une des compétences suivantes : Vol à la tire ou Discrétion</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "5a341adb3b1844d20adc1c9adf9cc7762f84d2d1bb13e459e2915844d8d9eb92",
+      "text": "Vol à la tire"
+    },
+    {
+      "path": "system.skillOptions.1",
+      "sourceHash": "526a40a447ddd7aa52d34bb62dbf1da04dc4aba8403769d239ade80893ffef7a",
+      "text": "Discrétion"
+    }
+  ]
+}

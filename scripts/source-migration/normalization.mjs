@@ -12,6 +12,32 @@ import { hash, slug } from "./identity.mjs";
  * @returns {Promise<void>} Resolves after source writes; errors propagate.
  */
 export async function normalizeEquipmentSources() {
+  const normalizedTypes = new Set(["equipment", "weapon", "armor", "shield"]);
+  const englishDirectory = path.join(root, "packs", "equipment-en", "_source");
+  const english = new Map();
+
+  // Legacy inventories use different EN/FR filenames and may omit price from
+  // their logical ID. Retain both old and canonical keys, then disambiguate by
+  // the structured genre/price tuple. A translated name is never identity data.
+  for (const file of await fs.readdir(englishDirectory, { recursive: true })) {
+    if (!file.endsWith(".json")) continue;
+    const document = JSON.parse(await fs.readFile(path.join(englishDirectory, file), "utf8"));
+    if (!normalizedTypes.has(document.crdType)) continue;
+    const provenance = document.flags?.cypherFoundry?.crd;
+    const genre = String(provenance?.section ?? "").replace(/ Equipment$/, "");
+    const priceCategory = document.system?.priceCategory;
+    if (!provenance?.logicalId || !genre || !priceCategory || !document.name) {
+      throw new Error(`English equipment source "${file}" is missing canonical identity fields.`);
+    }
+    const canonicalId = `equipment.${genre}.${priceCategory}.${document.name}`;
+    const reference = { document, genre, priceCategory, canonicalId };
+    for (const key of new Set([provenance.logicalId, canonicalId])) {
+      const candidates = english.get(key) ?? [];
+      candidates.push(reference);
+      english.set(key, candidates);
+    }
+  }
+
   for (const language of LANGUAGES) {
     const directory = path.join(root, "packs", `equipment-${language}`, "_source");
 
@@ -31,7 +57,6 @@ export async function normalizeEquipmentSources() {
       // identity is genre + price category + source name. Cyphers and future
       // artifact sources live in the equipment pack directory but have their
       // own CRD identity contracts and must not be normalized as equipment.
-      const normalizedTypes = new Set(["equipment", "weapon", "armor", "shield"]);
       if (!normalizedTypes.has(document.crdType)) continue;
 
       const genre = String(provenance.section ?? "").replace(/ Equipment$/, "");
@@ -40,12 +65,23 @@ export async function normalizeEquipmentSources() {
         throw new Error(`Equipment source "${filePath}" is missing canonical identity fields.`);
       }
 
-      // Equipment identity is the full canonical inventory tuple:
-      // genre + price category + source name. The previous extractor omitted
-      // price category, which collides for same-named entries at different prices.
-      const logicalId = `equipment.${genre}.${priceCategory}.${document.name}`;
+      const sourceId = provenance.sourceLogicalId ?? provenance.logicalId;
+      const candidates = (english.get(sourceId) ?? [])
+        .filter(reference => reference.genre === genre && reference.priceCategory === priceCategory);
+      if (candidates.length !== 1) {
+        throw new Error(`Equipment source "${filePath}" has no unambiguous English CRD counterpart for "${sourceId}".`);
+      }
+      const reference = candidates[0];
+
+      // The CRD inventory row supplies the English source name, genre and price.
+      // This preserves existing normalized IDs when French wording changes.
+      const logicalId = reference.canonicalId;
       provenance.logicalId = logicalId;
-      if (provenance.language === "fr") provenance.sourceLogicalId = logicalId;
+      if (language === "fr") {
+        provenance.sourceLogicalId = logicalId;
+        provenance.section = reference.document.flags.cypherFoundry.crd.section;
+        provenance.sourceLocator = reference.document.flags.cypherFoundry.crd.sourceLocator;
+      }
 
       const id = hash(logicalId).slice(0, 16);
       document._id = id;
@@ -167,6 +203,7 @@ export async function normalizeDescriptorSources() {
  * @returns {Promise<void>} Resolves after source writes; errors propagate.
  */
 export async function normalizeTypeSources() {
+  const englishNames = await canonicalSourceNames("types");
   for (const language of LANGUAGES) {
     const directory = path.join(
       root,
@@ -183,6 +220,8 @@ export async function normalizeTypeSources() {
       if (document._key?.startsWith("!folders!")) continue;
 
       const logicalId = `type.${slug(path.basename(file, ".json"))}`;
+      const sourceName = englishNames.get(file);
+      if (!sourceName) throw new Error(`Missing English Type source for ${file}.`);
       document.document = "Item";
       document.crdType = "type";
       document.flags = {
@@ -194,8 +233,8 @@ export async function normalizeTypeSources() {
             logicalId,
             language,
             sourceKind: "record",
-            section: `Character Creation — Type — ${document.name}`,
-            sourceLocator: `CRD — Type: ${document.name}`,
+            section: `Character Creation — Type — ${sourceName}`,
+            sourceLocator: `CRD — Type: ${sourceName}`,
             transformations: [
               "mechanical fields extracted from the CRD",
               "Type source retained as a structured Foundry Item"
@@ -219,6 +258,7 @@ export async function normalizeTypeSources() {
  * @returns {Promise<void>} Resolves after source writes; errors propagate.
  */
 export async function normalizeFocusSources() {
+  const englishNames = await canonicalSourceNames("foci");
   for (const language of LANGUAGES) {
     const directory = path.join(
       root,
@@ -235,6 +275,8 @@ export async function normalizeFocusSources() {
       if (document._key?.startsWith("!folders!")) continue;
 
       const logicalId = `focus.${slug(path.basename(file, ".json"))}`;
+      const sourceName = englishNames.get(file);
+      if (!sourceName) throw new Error(`Missing English Focus source for ${file}.`);
       document.document = "Item";
       document.crdType = "focus";
       document.flags = {
@@ -246,8 +288,8 @@ export async function normalizeFocusSources() {
             logicalId,
             language,
             sourceKind: "record",
-            section: `Character Creation — Focus — ${document.name} — Abilities`,
-            sourceLocator: `CRD — Focus: ${document.name}`,
+            section: `Character Creation — Focus — ${sourceName} — Abilities`,
+            sourceLocator: `CRD — Focus: ${sourceName}`,
             transformations: [
               "mechanical fields extracted from the CRD",
               "Focus abilities represented as standalone Ability UUID references"
@@ -260,4 +302,16 @@ export async function normalizeFocusSources() {
       await fs.writeFile(filePath, JSON.stringify(document, null, 2) + "\n");
     }
   }
+}
+
+/** Read canonical CRD heading names from the paired English authoring files. */
+async function canonicalSourceNames(family) {
+  const directory = path.join(root, "packs", `${family}-en`, "_source");
+  const names = new Map();
+  for (const file of await fs.readdir(directory)) {
+    if (!file.endsWith(".json")) continue;
+    const document = JSON.parse(await fs.readFile(path.join(directory, file), "utf8"));
+    if (!document._key?.startsWith("!folders!")) names.set(file, document.name);
+  }
+  return names;
 }

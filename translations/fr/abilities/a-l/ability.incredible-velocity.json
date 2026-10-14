@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.incredible-velocity",
+  "sourceLogicalId": "ability.incredible-velocity",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "29edc9b0c37ac986dca594df563627de4c8cdb30af35ed5d4b9f95c8c9f6e057",
+      "text": "Vélocité incroyable"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "505888255c6a2a8d19caba1bb442625e9e70cb62712315a9c853df031eebaf10",
+      "text": "<p>Vous pouvez parcourir une distance longue en tant qu’action réflexe (au lieu de ne parcourir qu’une distance immédiate en tant qu’action réflexe), mais vos tâches sont entravées de deux pas jusqu’à la fin de votre prochain tour. Vous pouvez aussi accomplir une action, puis parcourir une distance courte pendant votre tour (au lieu d’une distance immédiate seulement), sans que vos tâches soient entravées jusqu’à la fin de votre prochain tour. Si vous ne faites que vous déplacer pendant trois actions d’affilée, vous accélérez considérablement et pouvez atteindre 700 miles par heure (1 100 km/h) pendant environ dix minutes au maximum.</p>"
+    }
+  ]
+}

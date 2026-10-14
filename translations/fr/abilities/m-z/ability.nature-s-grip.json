@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.nature-s-grip",
+  "sourceLogicalId": "ability.nature-s-grip",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "a3c5bdb4bf9e91fdc84ed31f8c1ebf9741c2898169d43dab1d8b5f48161729c1",
+      "text": "Étreinte de la nature"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "625dcd85915ce07c8ce7fff035daa51ceda1a3fb2c16194aa94096efb6333116",
+      "text": "Effectuez une attaque d’Intellect contre un adversaire à courte portée. En cas de réussite, des branches, de l’herbe ou d’autres végétaux naturels l’accrochent et le retiennent jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Il ne peut pas quitter sa position actuelle, et ses tâches physiques, notamment ses attaques et ses défenses, sont entravées. S’il tente de se libérer, vous pouvez continuer à le retenir grâce à un autre jet d’Intellect. Vous pouvez utiliser cette aptitude pour repousser des plantes enchevêtrées dans une zone immédiate à courte portée, en dégageant un espace sans obstacle. Effort : infligez 3 dégâts au round où l’adversaire est retenu pour la première fois. Action."
+    }
+  ]
+}

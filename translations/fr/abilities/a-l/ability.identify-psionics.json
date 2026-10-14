@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.identify-psionics",
+  "sourceLogicalId": "ability.identify-psionics",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "5884a35298dd9953ff707e5088a66d0971b325e7f91aa4265812a7d7451bbdf4",
+      "text": "Identifier les pouvoirs psioniques"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "8bef6f45c7310332f9443b9dc4cbd16dd99d6c316b3ff0e782a5cca48be79e87",
+      "text": "Si vous avez détecté des pouvoirs psioniques à l’aide de l’aptitude de rang 1, vous pouvez obtenir davantage de précisions sur ce que vous percevez : le niveau de l’effet, sa source (une créature ou un effet psychique en cours) et les effets généraux des pouvoirs psioniques à l’œuvre. Action lente."
+    }
+  ]
+}

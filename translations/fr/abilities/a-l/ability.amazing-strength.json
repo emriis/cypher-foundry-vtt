@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.amazing-strength",
+  "sourceLogicalId": "ability.amazing-strength",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "c61a7734576481361988e4c939d4d4eaab90ab2a6bd9e089a7c5f1661f1a550b",
+      "text": "Force extraordinaire"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "a36623e54fc8eb904c7bde8be6fd54eccdac808fecf3a6a1005693c5f47da909",
+      "text": "Lorsque vous utilisez de l’Effort de votre réserve de Puissance pour une tâche hors combat, vous bénéficiez d’un niveau d’Effort gratuit pour cette tâche. Aptitude passive."
+    }
+  ]
+}

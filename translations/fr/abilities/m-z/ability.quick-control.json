@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.quick-control",
+  "sourceLogicalId": "ability.quick-control",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "9d6a95b40e98d36fc745d40e6cc9bef0f3a263cd0dc3bbc516efe383a765d266",
+      "text": "Contrôle rapide"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "57debdc11546f85f10dfdd60924644f44d55fc3410ea57b5ac520680aac440f3",
+      "text": "Une attaque d’Intellect réussie vous permet d’ordonner à une machine ou à un automate à courte portée, intelligent ou non, d’accomplir à son prochain tour une action à sa portée, indépendamment de sa programmation ou de son attitude normales. Si cette action lui cause directement du mal ou en cause à ses alliés, votre attaque d’Intellect contre lui est entravée. Si vous utilisez cette aptitude pour commander une machine ou un automate intelligent, il devient probablement hostile à votre égard ensuite. Action."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.perfect-follow-through",
+  "sourceLogicalId": "ability.perfect-follow-through",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "945d29bb33e09c69b7b9097bc1b1340431708a6f7e06ac5b7422df80f851595c",
+      "text": "Enchaînement parfait"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "54c6f839ea5b38ae2eb88c86479a4e78181379d1badda60664bf359bbc86dbb6",
+      "text": "Vous pouvez attaquer avec l’arme que vous avez choisie et accomplir une autre action en tant qu’action supplémentaire pendant votre tour. Aptitude passive."
+    }
+  ]
+}

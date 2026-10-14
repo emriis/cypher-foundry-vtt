@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.magnetic-field",
+  "sourceLogicalId": "ability.magnetic-field",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "c35fa0dcbb2892c8436661d28db2eaf39dbd64053a94f059cee559a33c10bdd8",
+      "text": "Champ magnétique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "21d80a1635ba2bce2d1a064b23b9341b9beab49c731c1d17a8efb9a462e9f87f",
+      "text": "Un champ magnétique autour de vous attire vers le sol les attaques à distance constituées de projectiles métalliques, comme les flèches, les balles, un couteau métallique lancé, etc. Il disperse aussi les attaques énergétiques faisant partie du spectre électromagnétique, comme l’électricité, les rayons X et les lasers. Vous êtes immunisé contre ces attaques pendant un round. Vous devez avoir conscience d’une attaque pour la déjouer. Aptitude passive."
+    }
+  ]
+}

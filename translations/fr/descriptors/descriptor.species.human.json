@@ -1,0 +1,28 @@
+{
+  "logicalId": "descriptor.species.human",
+  "sourceLogicalId": "descriptor.species.human",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "9ffa865f2bc6e850157bb454ef3e00fa789e3f8cc631552941a99ba3fcddde51",
+      "text": "Humain"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "44af0813327fcecbd874acbc0145023353c8f001c88e784981ade5bd8bbb1bb4",
+      "text": "<p>Les humains comptent parmi les espèces les plus jeunes. C’est peut-être pour cette raison que, dans leur ensemble, ils ont davantage tendance à explorer, à conquérir et à étendre leurs communautés, même si cela implique de prendre aux autres espèces ou aux autres humains. Individuellement, les humains présentent une diversité immense. Vous pouvez donc mesurer moins de 5 pieds (150 cm) et peser à peine 100 livres (45 kg), ou dépasser largement 6 pieds (180 cm) et peser 250 livres (113 kg) ; avoir les yeux bleus, bruns, noirs, verts ou d’une autre couleur ; être chauve, porter une longue chevelure dorée, des dreadlocks remarquables, une crête ou une autre coiffure élégante ; consacrer votre vie à votre foi, à l’exploration de lieux anciens, à repousser le mal, à vous enrichir ou à une autre vocation ; et ainsi de suite. Une chose est certaine : vous n’avez pas peur de lutter pour ce que vous voulez et ce en quoi vous croyez.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>Choisissez un second descripteur et ajoutez ses bénéfices à ceux de votre descripteur habituel.</p>\n<p>Si vous choisissez Humain comme espèce, votre phrase de personnage « Je suis un adjectif espèce nom qui verbe » gagne un élément supplémentaire : votre second descripteur. Par exemple, elle pourrait devenir « Je suis un Combattant Humain Impétueux et Rustique qui Maîtrise les armes ».</p>\n<p>Dans une partie où tout le monde est humain, utiliser l’option d’espèce Humain n’a pas nécessairement de sens. Votre MJ peut vous permettre de choisir Humain comme espèce uniquement si d’autres espèces participent également à la partie.</p>"
+    },
+    {
+      "path": "system.benefits.0.name",
+      "sourceHash": "e9ff54e5b13d5b8e708af0666acfe0f951bed643e60140de6ed98749673931e4",
+      "text": "Second descripteur"
+    },
+    {
+      "path": "system.benefits.0.description",
+      "sourceHash": "de0743cde5da6d66bdcb745cd2560222362881637c8139d625bf0590fc627e4b",
+      "text": "<p>Choisissez un second descripteur et ajoutez ses bénéfices à ceux de votre descripteur habituel.</p>"
+    }
+  ]
+}

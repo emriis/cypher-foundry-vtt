@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.find-motivation",
+  "sourceLogicalId": "ability.find-motivation",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "c6353880dbadc19b026beac48d0f13bfe587d0789d90761be507d3a2407a4b02",
+      "text": "Découvrir la motivation"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "49209bb2eabc377b2e0331b8e8ae496d08c183b9669351ec40aae1b94a2e69b2",
+      "text": "Lorsque votre esprit doit être affecté négativement par un effet de niveau 4 ou moins, comme des ordres psychiques, une maladie, la peur, l’ennui, le contrôle mental, etc., vous pouvez ignorer cet effet. Si l’effet dure un certain temps, comme la peur ou le contrôle mental, il n’a aucun pouvoir sur vous jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. S’il est instantané, comme une décharge psychique infligeant des dégâts, il ne vous affecte pas du tout. Effort : augmentez de 1 le niveau maximum de l’effet que vous pouvez ignorer. Aptitude passive."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.fearsome-reputation",
+  "sourceLogicalId": "ability.fearsome-reputation",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "24ac33f892cced35141ffbb6a8b66bdae4a277598ff26ae8277d6966759b7c01",
+      "text": "Réputation redoutable"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d1fa6c68d7161c62c811161238498351cb59355f6c03dbe44cf14dda20577dd4",
+      "text": "Vous annoncez votre identité, peut-être en mentionnant un exploit intimidant, à tous les adversaires à portée longue qui peuvent vous entendre et vous comprendre. Effectuez un jet d’attaque d’Intellect distinct contre chacun. En cas de réussite, ils vous craignent et vos tâches contre eux sont facilitées jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Action."
+    }
+  ]
+}

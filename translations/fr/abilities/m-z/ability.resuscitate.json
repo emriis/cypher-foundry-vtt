@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.resuscitate",
+  "sourceLogicalId": "ability.resuscitate",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "b472a89d22c9b901188c51ba67bf1f8d34e89dc2bb7a051897315d4a0c5addd2",
+      "text": "Réanimer"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "613f8567c884db6c5c0e5262648af7ced917bef7269569974b49dc82da62deb1",
+      "text": "Vous pouvez réanimer un PJ blessé que vous touchez. Il choisit de soigner une blessure majeure, une blessure modérée ou trois blessures mineures. S’il est mort de ses blessures, mais que son corps est autrement intact et que moins d’une minute s’est écoulée depuis sa mort, vous pouvez le réanimer comme décrit ci-dessus en réussissant une tâche de soins de niveau 6. Si vous utilisez cette aptitude sur un PNJ mort, sans point de santé, mais dont le corps est autrement intact et qui est mort depuis moins d’une minute, vous le réanimez avec 1 point de santé. Chaque utilisation de Réanimer (Resuscitate) augmente son coût en points d’Intellect de 3. Ce coût revient à sa valeur de base après que vous utilisez une récupération. Action."
+    }
+  ]
+}

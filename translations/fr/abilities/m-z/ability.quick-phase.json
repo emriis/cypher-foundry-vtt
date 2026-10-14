@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.quick-phase",
+  "sourceLogicalId": "ability.quick-phase",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "3813c5ce78457cb7718ecddff25f574cd61df3ec49e91e97cbc1bf3b934f4a55",
+      "text": "Déphasage rapide"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "0a8911a870b0a05b7afcc9e0c8db4cf258190c43644e1e6c2081148b913de4ac",
+      "text": "Lorsque vous utilisez Traverser les murs (Walk Through Walls), vous traversez les obstacles physiques beaucoup plus rapidement, augmentant votre vitesse de base de 10 pieds (3,5 m) supplémentaires par round. Vous pouvez aussi vous déphaser sur une distance maximale de 10 pieds (3,5 m) en une Action réflexe. Aptitude passive."
+    }
+  ]
+}

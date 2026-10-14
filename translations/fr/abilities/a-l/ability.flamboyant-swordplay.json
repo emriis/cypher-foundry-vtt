@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.flamboyant-swordplay",
+  "sourceLogicalId": "ability.flamboyant-swordplay",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "66030116149082293dfdc1ef36292db08e842113610c3805012fe565a4b32609",
+      "text": "Escrime flamboyante"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "ccd7a0bd619cfa75b8576af5799cbf1bf96b666df0298a5825018249f803ee3f",
+      "text": "<p>Vous attaquez d’une manière qui augmente le risque de commettre une erreur, mais procure un bénéfice supplémentaire. La plage des résultats provoquant une intrusion du MJ pour cette attaque augmente de 2 (de 1 sur un d20 à 1–3 sur un d20), mais si vous touchez, vous pouvez choisir l’un des effets supplémentaires suivants :</p>\n<p>Fente audacieuse : l’adversaire subit +2 dégâts.</p>\n<p>Agilité désarmante : l’attaque inflige 1 dégât de moins, mais votre adversaire lâche quelque chose qu’il tient dans une main (comme une arme ou un bouclier). Pour récupérer l’objet lâché, il doit utiliser une action.</p>\n<p>Action.</p>"
+    }
+  ]
+}

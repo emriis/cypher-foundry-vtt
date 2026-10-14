@@ -1,0 +1,28 @@
+{
+  "logicalId": "descriptor.resilient",
+  "sourceLogicalId": "descriptor.resilient",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "94f8690d2572ff0f0c5af7d35bcd33b8e942fe992d5e77ea0c30f1c7c5d07264",
+      "text": "Résilient"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "a3b8b4143846d928ac79d5f64b01a190d5c6b0f9bb065675205a64766c18e1c8",
+      "text": "<p>Vous avez plus de résistance que la plupart des gens, ce qui vous permet d’encaisser les épreuves et d’en supporter encore davantage. Mais si les événements finissent par vous submerger, vous ne paniquez pas : vous vous concentrez simplement sur la manière de vous libérer de ce qui vous entrave. La résilience consiste, au moins en partie, à savoir sortir d’une mauvaise situation.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>+2 à votre Réserve de Puissance</p>\n<p>Vous êtes entraîné pour l’une des compétences suivantes : Athlétisme ou Évasion</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "ec1345a87fbf028b2c8b6fa67000e2197ffee49008665602ff56fe44bea7bd02",
+      "text": "Athlétisme"
+    },
+    {
+      "path": "system.skillOptions.1",
+      "sourceHash": "436b2c357e5eac16dc4f401004eeba08ac07bd613b5eb79ed9d153f006d71a9a",
+      "text": "Évasion"
+    }
+  ]
+}

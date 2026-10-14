@@ -1,0 +1,78 @@
+{
+  "CYPHER": {
+    "CharacterLine": {
+      "Prefix": "I am a",
+      "Middle": "who is",
+      "Who": "who",
+      "And": "and",
+      "AddSecondDescriptor": "Add a second descriptor",
+      "RemoveSecondDescriptor": "Remove the second descriptor",
+      "AddSecondFocus": "Add a second focus",
+      "RemoveSecondFocus": "Remove the second focus"
+    },
+    "Descriptor2": "Second Descriptor",
+    "Focus": "Focus",
+    "Focus2": "Second Focus",
+    "FocusSelection": {
+      "AlreadyApplied": "A Focus has already been applied to this character.",
+      "ApplyTitle": "Apply Focus: {name}",
+      "ApplyPrompt": "Apply {name} and choose its two initial tier-1 abilities.",
+      "ChooseTwo": "Choose two tier-1 abilities.",
+      "ChooseExactlyTwo": "Choose exactly two tier-1 Focus abilities.",
+      "ChooseAbility": "Choose Focus Ability",
+      "ChooseAbilityTitle": "Choose Focus Ability",
+      "ChooseAbilityPrompt": "Choose the Focus ability gained at tier {tier}.",
+      "ChooseWeaponCategoryTitle": "Choose a weapon category",
+      "ChooseWeaponCategory": "Weapon kind to master",
+      "ArmorItemDescription": "This armor is freely usable only while the corresponding Focus ability is active."
+    },
+    "Profession": "Profession",
+    "Species": "Species",
+    "SpeciesPlaceholder": "e.g. Human, Elf, Cyborg... (optional)",
+    "Genre": {
+      "Label": "Genre",
+      "none": "Unspecified",
+      "realWorld": "Real World",
+      "fantasy": "Fantasy",
+      "sciFi": "Science Fiction",
+      "superhero": "Superhero",
+      "custom": "Custom (all fields)",
+      "RealWorldHint": "Real World: no Type or Focus — a Descriptor + Profession is enough. By default, inability with medium/heavy weapons (unless offset by a dedicated background skill)."
+    },
+    "Superhero": {
+      "Rank": "Type Rank (1-5)",
+      "PowerShifts": "Power Shifts",
+      "Hint": "Each category is capped at 3. Most shifts grant permanent bonuses to applicable tasks, outside the Effort limit; special categories follow their own rules. Tasks can reach difficulty 15 in this genre.",
+      "ChosenPool": "Superheroics Pool",
+      "ChoosePool": "Choose the Pool enhanced by Superheroics"
+    },
+    "PowerShift": {
+      "accuracy": "Accuracy",
+      "dexterity": "Dexterity",
+      "flight": "Flight*",
+      "healing": "Healing*",
+      "increasedRange": "Increased Range*",
+      "intelligence": "Intelligence",
+      "power": "Power",
+      "prodigy": "Prodigy*",
+      "resilience": "Resilience",
+      "savant": "Savant",
+      "singleAttack": "Single Attack",
+      "strength": "Strength"
+    },
+    "PowerShiftDescription": {
+      "accuracy": "Accuracy: All attack rolls.",
+      "dexterity": "Dexterity: Dodging, Speed defense rolls, movement, acrobatics, gymnastics, initiative.",
+      "flight": "Flight*: Can fly as fast as a regular human’s ground speed; not particularly maneuverable; can carry a creature of your size or smaller.",
+      "healing": "Healing*: One extra one-action recovery each day.",
+      "increasedRange": "Increased Range*: Increases the range of one ability; touch or immediate becomes short, short becomes long, long becomes very long.",
+      "intelligence": "Intelligence: Intellect defense; all knowledge skills, science skills, and crafting skills.",
+      "power": "Power: Effects and damage of one of your character abilities, but not attack rolls with it.",
+      "prodigy": "Prodigy*: Trade one of your tier 1 abilities for a tier 2 focus ability, or trade two tier 1 abilities for a tier 3 focus ability. (This skips earlier abilities in your focus flowchart.)",
+      "resilience": "Resilience: Blocking, Might defense rolls, tasks requiring hardiness and endurance.",
+      "savant": "Savant: Two specific skills (other than an attack skill, a defense skill, or a character ability that requires an attack roll), such as history, perception, or charm. You can assign this shift to an ability that treats your roll as a minimum number, such as Incredible Instinct.",
+      "singleAttack": "Single Attack: Attack rolls and damage for one specific kind of attack, such as pistols, punches, swords, or an attack special ability like laser eyes or a psychic blast.",
+      "strength": "Strength: Athletics, noncombat strength rolls, melee damage, thrown weapon damage."
+    }
+  }
+}

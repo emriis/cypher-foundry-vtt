@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.prepared-medic",
+  "sourceLogicalId": "ability.prepared-medic",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "1a574fb08f93f1aa8819c2d2856fdf57683ff8df51d0b5cf32ce4bd9f661b0f1",
+      "text": "Soignant préparé"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "ca3158aef6e3e29098276edf88197a193ab9f21bc48e6ed304b3dcb527612f1c",
+      "text": "Avec accès à une trousse médicale de terrain ou à un équipement similaire, vous pouvez traiter une blessure en deux fois moins de temps que normalement, ou traiter deux fois plus de blessures d’un même personnage dans la durée normale. Aptitude passive."
+    }
+  ]
+}

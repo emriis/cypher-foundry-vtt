@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.enhanced-stat",
+  "sourceLogicalId": "ability.enhanced-stat",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "dc4ba3af7f4401fd790738bb003894ee3edd79ad806785566c3950f0ff4badee",
+      "text": "Caractéristique renforcée"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d0cb8f7713f4077ebe71fc1b536093b37235e78a81fceaa9bd10d1aaddd5e8dc",
+      "text": "<p>Vous gagnez 4 points dans une réserve de votre choix.</p>"
+    }
+  ]
+}

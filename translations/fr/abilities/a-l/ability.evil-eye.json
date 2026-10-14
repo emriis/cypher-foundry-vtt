@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.evil-eye",
+  "sourceLogicalId": "ability.evil-eye",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "cf980848060b87945152cf3fd63dc19980269cbd9f3c121ccd3fdd27ebeb0991",
+      "text": "Mauvais œil"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "c75148b701af267e08e2006cf65b4dbd3099e5996a2a4682d971a018983bd2d9",
+      "text": "Vous faites le signe du mauvais œil et ciblez une créature à portée courte par votre attaque d’Intellect. En cas de réussite, elle est affligée par un esprit de malchance jusqu’à ce que vous utilisiez une récupération d’une heure. Pendant cette période, le MJ l’afflige en introduisant des événements gênants, par une intrusion si la cible est un PJ, comme trébucher, perdre un objet, manquer un rendez-vous, etc. Effort : prolongez la malchance jusqu’à une récupération de dix heures. Infligez 2 dégâts d’Intellect par niveau d’Effort sur une attaque réussie, en plus de la malchance. Action lente. Au rang 3 : vous pouvez utiliser deux niveaux d’Effort pour rendre la malchance permanente ; il s’agit d’une malédiction de niveau 4 pour les aptitudes qui retirent les affections."
+    }
+  ]
+}

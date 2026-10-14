@@ -1,0 +1,58 @@
+{
+  "logicalId": "cypher.manifest.image-projector",
+  "sourceLogicalId": "cypher.manifest.image-projector",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "1842e49e4c980b5ae62340096cb4b31fb4e0079f1fd128c8a8403b63470e23ae",
+      "text": "Projecteur d’images"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "694975103459bbc63c820e8adf62ee5c65383b7af0f29b50394d7034a873f495",
+      "text": "<p>Effet : Projette une scène illusoire ou holographique précise dans une zone immédiate jusqu’à une distance courte de vous. La scène reste en place après sa création et comprend les mouvements, les sons et les odeurs appropriés. Elle peut par exemple montrer un loup féroce qui va et vient sans quitter la zone. Elle dure jusqu’à ce que vous preniez une récupération d’une heure ou plus.</p>\n<p>Lancez le dé pour déterminer l’image.</p>\n<table><thead><tr><th>d00</th><th>Image</th></tr></thead><tbody><tr><td>01–10</td><td>Copie de vous qui imite vos mouvements et vos paroles (cube de 10 pieds [3,5 m])</td></tr><tr><td>11–30</td><td>Créature terrifiante, peut-être éteinte ou fictive (cube de 10 pieds [3,5 m])</td></tr><tr><td>31–40</td><td>Machine immense ou élément naturel qui masque la vue (cube de 30 pieds [9 m])</td></tr><tr><td>41–50</td><td>Beau paysage pastoral (cube de 50 pieds [16 m])</td></tr><tr><td>51–60</td><td>Nourriture d’apparence délicieuse, mais peut-être inconnue (cube de 10 pieds [3,5 m])</td></tr><tr><td>61–80</td><td>Couleur unie qui masque la vue (cube de 50 pieds [16 m])</td></tr><tr><td>81–00</td><td>Scène incompréhensible, déroutante et étrange (cube de 20 pieds [6 m])</td></tr></tbody></table>\n<p>Objets du genre : gemme d’illusion (fantasy) ; projecteur d’hologrammes (science-fiction)</p>"
+    },
+    {
+      "path": "system.rollTables.image.name",
+      "sourceHash": "1aa4cb0bcca76e92e30677e809bb3d4b5c066715ef4d558184e319496bcc5125",
+      "text": "Image"
+    },
+    {
+      "path": "system.rollTables.image.results.0.description",
+      "sourceHash": "739f3e9a940575dd3e1d1f0d3a64ed878d6e020634e8cbfdffc1a86de54a2c52",
+      "text": "<p>Copie de vous qui imite vos mouvements et vos paroles (cube de 10 pieds [3,5 m])</p>"
+    },
+    {
+      "path": "system.rollTables.image.results.1.description",
+      "sourceHash": "b7f72f863205c5ffad016318af6c5f37775dfe92610fe1b4126afaccdc92012a",
+      "text": "<p>Créature terrifiante, peut-être éteinte ou fictive (cube de 10 pieds [3,5 m])</p>"
+    },
+    {
+      "path": "system.rollTables.image.results.2.description",
+      "sourceHash": "a0c60fc1b4ecef98094d246a57172619fc926ef85ef6fcaa6a8f10aa3606d628",
+      "text": "<p>Machine immense ou élément naturel qui masque la vue (cube de 30 pieds [9 m])</p>"
+    },
+    {
+      "path": "system.rollTables.image.results.3.description",
+      "sourceHash": "30b1504a757ab6bda15535db2b8cab824de4a087aa827157f02beec7bbd84c8e",
+      "text": "<p>Beau paysage pastoral (cube de 50 pieds [16 m])</p>"
+    },
+    {
+      "path": "system.rollTables.image.results.4.description",
+      "sourceHash": "9205023462ddd3b822fa52c9fc603ecda42d3b2ad96d6822a5f3919936e5bcc1",
+      "text": "<p>Nourriture d’apparence délicieuse, mais peut-être inconnue (cube de 10 pieds [3,5 m])</p>"
+    },
+    {
+      "path": "system.rollTables.image.results.5.description",
+      "sourceHash": "f3f0731de5aabea7240690d1f62a2a05dff6506f7734dcb3c1f544e43356ca20",
+      "text": "<p>Couleur unie qui masque la vue (cube de 50 pieds [16 m])</p>"
+    },
+    {
+      "path": "system.rollTables.image.results.6.description",
+      "sourceHash": "b8c44e69546cb75eb9113b0df20cf8f191f66c14bc0421fe5c6ed8e4cc39d181",
+      "text": "<p>Scène incompréhensible, déroutante et étrange (cube de 20 pieds [6 m])</p>"
+    }
+  ]
+}

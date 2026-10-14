@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/equipment/shield/heater-steel.webp",
   "system": {
-    "description": "<p>Your armor, along with your size, strength, incredible training, or machine enhancement, makes you difficult to move or hurt.</p>",
+    "description": "<p>Your armor, along with your size, strength, incredible training, or machine enhancement, makes you difficult to move or hurt.</p>\n<ul>\n<li>Genre themes: stalwart warrior (fantasy), tank (science fiction, superhero)</li>\n<li>GM intrusions: Armor is damaged. Small foes conspire in ingenious ways.</li>\n<li>Additional equipment: You have a set of medium or heavy armor.</li>\n</ul>",
     "abilities": [
       "Compendium.cypher.abilities-en.Item.b5867f6b46930f96",
       "Compendium.cypher.abilities-en.Item.847b36993db3863f",
@@ -100,6 +100,13 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references"
+        ]
+      }
     }
   }
 }

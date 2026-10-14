@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.use-the-force",
+  "sourceLogicalId": "ability.use-the-force",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "74883d1dd46b87fe5157a5734b89e9811ca5c852416664b258eaaa4dd356c34f",
+      "text": "Utiliser la Force"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "660aa8b280c1c7935d99b2ecc8ceb423bd9d5f3eaa6f7efa3df0e1f0772e8773",
+      "text": "Vous obtenez un atout pour une seule tâche hors combat que vous tentez ce tour. Vous ne pouvez réutiliser cette aptitude qu’après avoir pris une récupération. Aptitude passive."
+    }
+  ]
+}

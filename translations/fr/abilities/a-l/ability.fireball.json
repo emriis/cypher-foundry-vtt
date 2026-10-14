@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.fireball",
+  "sourceLogicalId": "ability.fireball",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "cc173df6702cba90cfae123f149085dc44e3f6c660816c528f063c75083e5a9e",
+      "text": "Boule de feu"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "b7bb4b079e5b61e3af687e131c9d82c0411870541e8806a6d796fc527ee003d8",
+      "text": "Vous créez une explosion de feu à portée longue qui remplit une zone immédiate. Faites un jet contre chaque créature dans la zone ; vous infligez 3 dégâts en cas de réussite, ou 1 dégât en cas d’échec. Les objets inflammables peuvent prendre feu. Chaque niveau d’Effort appliqué pour augmenter les dégâts ajoute 2 dégâts à chaque cible, au lieu de 3. Action."
+    }
+  ]
+}

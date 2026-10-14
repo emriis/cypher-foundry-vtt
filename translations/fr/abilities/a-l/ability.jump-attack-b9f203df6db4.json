@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.jump-attack-b9f203df6db4",
+  "sourceLogicalId": "ability.jump-attack-b9f203df6db4",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "b856ddf442eb239968ef2a61f2371f92cc8f5ac95f26c8e0aff077ae65e836d6",
+      "text": "Attaque bondissante"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "51a0f7f19c110e0057d10032d9c470d4e5797e4ca6c1f5dd03f5e817531fbcda",
+      "text": "<p>Vous bondissez jusqu’à 4 pieds (1 m) dans les airs et effectuez une attaque de corps à corps contre un adversaire pendant votre ascension ou votre descente. Si vous touchez, vous infligez des dégâts et pouvez tenter un jet de Puissance de difficulté 4 pour infliger 4 dégâts supplémentaires et le renverser au sol. Effort : ajoutez 2 pieds à la hauteur du saut et +2 dégâts à l’attaque (que vous renversiez la cible au sol ou non). Action.</p>"
+    }
+  ]
+}

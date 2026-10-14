@@ -1,0 +1,38 @@
+{
+  "logicalId": "descriptor.species.delph",
+  "sourceLogicalId": "descriptor.species.delph",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "1b810ea0b2ecae5d4bfe8bd16bd787f582d587744a425729e88a62637ffbbfe7",
+      "text": "Delph"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "6b365e3cc00b69c7dbb2da8fca48863711851340249ae292565e58295d8deaa0",
+      "text": "<p>Les delphs sont bien accueillis presque partout, généralement grâce à leur art cutané : la capacité métachrotique de votre peuple à créer des dessins et motifs colorés uniques sur tout votre corps, y compris sur vos somptueux tentacules crâniens. Lorsque vous vous y consacrez vraiment, vous pouvez créer des motifs d’une beauté extraordinaire, ou vous camoufler dans certains environnements si vous disposez d’environ dix minutes pour dessiner un nouveau motif sur votre peau. On connaît moins la capacité de votre peuple à produire des phéromones intraspécifiques, généralement que vous le vouliez ou non, que presque tout le monde, delphs comme autres espèces, trouve séduisantes ou du moins agréables.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>Vous pouvez appliquer un atout aux interactions sociales positives, que vous utilisiez le charme ou la tromperie, si vos phéromones affectent votre interlocuteur.</p>\n<p>Lorsque vous consacrez dix minutes à adapter les motifs de votre peau à un environnement donné, vous gagnez un atout pour les tâches de discrétion dans cet environnement.</p>\n<p>Delph : Vos phéromones n’affectent pas les machines et peuvent ne pas agir sur toutes les espèces extraterrestres. Déterminez avec le MJ qui est susceptible de trouver votre présence agréable.</p>"
+    },
+    {
+      "path": "system.benefits.0.name",
+      "sourceHash": "b60909493cd9e0541169f356138aade5f9aafd7d22d0a52d7c5d43ee5db11ac6",
+      "text": "Phéromones"
+    },
+    {
+      "path": "system.benefits.0.description",
+      "sourceHash": "b3bc88b9c59d99490234f9c5fbf185660cce8fac2b7e7ef3cbae7ca860c43015",
+      "text": "<p>Vous pouvez appliquer un atout aux interactions sociales positives, que vous utilisiez le charme ou la tromperie, si vos phéromones affectent votre interlocuteur.</p>\n<p>Vos phéromones n’affectent pas les machines et peuvent ne pas agir sur toutes les espèces extraterrestres. Déterminez avec le MJ qui est susceptible de trouver votre présence agréable.</p>"
+    },
+    {
+      "path": "system.benefits.1.name",
+      "sourceHash": "0eabe694ff084ab1536c0e0fa5d59b640bfc1dab4dfe3b98829eab67702426c5",
+      "text": "Camouflage cutané"
+    },
+    {
+      "path": "system.benefits.1.description",
+      "sourceHash": "92bf5a0bcfbe614e4a7a01957e55835b428ab665939eaa4e78dd42c2bf1dfcd2",
+      "text": "<p>Lorsque vous consacrez dix minutes à adapter les motifs de votre peau à un environnement donné, vous gagnez un atout pour les tâches de discrétion dans cet environnement.</p>"
+    }
+  ]
+}

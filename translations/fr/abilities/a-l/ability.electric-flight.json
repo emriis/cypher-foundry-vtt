@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.electric-flight",
+  "sourceLogicalId": "ability.electric-flight",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "6ff31ef9ded475ee01aa981ddac210d1423ccf8e310348147d8440ad58dbc590",
+      "text": "Vol électrique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "e167543122d9d0a1f085d4604fd753048130e933cbcfad3dcf3bdcb709eb1481",
+      "text": "Tant qu’Armure électrique est active, vous pouvez voler. Vous pouvez vous déplacer d’une distance courte et effectuer une action, ou vous déplacer d’une distance longue par votre action. Contrairement à une action accompagnée d’un déplacement court dans une situation normale, cela n’entrave pas vos tâches. Vous pouvez transporter une créature de votre taille ou plus petite. Votre Armure électrique ne lui nuit pas. Effort : couvrez et protégez un passager avec Armure électrique comme s’il était vous. Aptitude passive."
+    }
+  ]
+}

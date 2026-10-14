@@ -1,0 +1,28 @@
+{
+  "logicalId": "descriptor.intuitive",
+  "sourceLogicalId": "descriptor.intuitive",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "1c08cbde57680ac5a93da559e4b0b6716df4eef76f15bcef53c8c347476ab4fb",
+      "text": "Intuitif"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "a9264cd70b0db3811080bd77c4d2868d8037d582082142039686ec8af8c2a727",
+      "text": "<p>Vous avez souvent l’intuition de ce que quelqu’un va dire, de sa réaction ou du déroulement possible des événements. Vous possédez peut-être un sens mutant, vous voyez peut-être quelques instants dans l’avenir, ou vous savez simplement bien lire les gens et extrapoler une situation. Quoi qu’il en soit, beaucoup de personnes qui croisent votre regard détournent aussitôt les yeux, comme si elles craignaient ce que vous pourriez lire dans leur expression.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>+2 à votre Réserve d’Intellect</p>\n<p>Vous êtes entraîné pour l’une des compétences suivantes : Psychologie ou Analyse des intentions</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "131b0658b108704d4660e187234f1e5941af556e6c340bbd7cc26f5578039d3d",
+      "text": "Psychologie"
+    },
+    {
+      "path": "system.skillOptions.1",
+      "sourceHash": "cdcb24358ca22d0138d75f04a3f51d529f0be8025e0ce18b7bda77724e4baea4",
+      "text": "Analyse des intentions"
+    }
+  ]
+}

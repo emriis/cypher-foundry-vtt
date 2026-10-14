@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.natural-sneak",
+  "sourceLogicalId": "ability.natural-sneak",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "438af88d4aaa1909b893e5578fc967cde8011fc117726c57c343f1cafafb7f09",
+      "text": "Discrétion innée"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "8c7d47e85bbb4d3b7d1622bda9542cbf529fba9f35753d0328a85f287d48c014",
+      "text": "Lorsque vous effectuez un jet de crochetage, de perception, de vol à la tire ou de discrétion et que le résultat est inférieur à 6, considérez qu’il est de 6. Vous ne subissez donc pas d’intrusion du MJ si vous obtenez 1. Cette aptitude se renouvelle lorsque vous prenez une récupération. Effort : augmentez de 3 le résultat minimal de cette aptitude. Aptitude passive. Au rang 3 : le résultat minimal de cette aptitude passe à 9."
+    }
+  ]
+}

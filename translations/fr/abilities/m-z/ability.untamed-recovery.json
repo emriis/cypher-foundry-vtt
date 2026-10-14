@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.untamed-recovery",
+  "sourceLogicalId": "ability.untamed-recovery",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "0c6a659e9c5d77fab9b2dfa9e2ee0d977e8188981ac059755507f0b31e2ba9dd",
+      "text": "Récupération sauvage"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "97a317560ee62aec1994048f26b71119bb915e10735dad45e34f492a43c467db",
+      "text": "Vous obtenez chaque jour une récupération supplémentaire d’une action."
+    }
+  ]
+}

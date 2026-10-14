@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.insect-eruption",
+  "sourceLogicalId": "ability.insect-eruption",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "7320d7cff2ecfc8a84d88f4edb4f9acf205c1669dc632ddddc8324e1b7be9219",
+      "text": "Éruption d’insectes"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "a71c288a5eb3b845c95e5dfaaa32710bd9a31060e4d11444d3ff6950911c7685",
+      "text": "Vous appelez un essaim d’insectes qui vous obéit jusqu’à ce que vous preniez une récupération de dix minutes ou plus. Les insectes apparaissent à portée longue et suivent vos ordres. Ils entravent automatiquement un nombre quelconque d’adversaires à portée (sans jet). Si vous utilisez une action pour concentrer l’essaim dans une zone immédiate, vous pouvez effectuer une attaque d’Intellect contre chaque adversaire dans cette zone ; en cas de réussite, les créatures affectées subissent 2 dégâts. Vous pouvez utiliser l’essaim pour déplacer des objets lourds par un effort collectif, ronger des murs de bois et accomplir d’autres actions adaptées à un essaim surnaturel. Vous ne pouvez pas utiliser cette aptitude dans une zone inaccessible aux insectes, comme une pièce hermétiquement fermée. Action pour commencer."
+    }
+  ]
+}

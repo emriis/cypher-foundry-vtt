@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.winning-smile",
+  "sourceLogicalId": "ability.winning-smile",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "14e9c602471faa163d5fb3026a9ec76d6fc57d9b63674d85db07714b6fe17dd9",
+      "text": "Sourire séduisant"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "fda1f025d7491d6f4c8db65b85936618b2e8fdc7fe35700945b273ca3a5a72cf",
+      "text": "<p>Lorsque vous effectuez un jet pour charmer ou influencer quelqu’un et que le résultat est inférieur à 9, considérez qu’il est de 9. Vous ne subissez donc pas d’intrusion du MJ si vous obtenez 1. Cette influence accrue persiste jusqu’à votre prochaine récupération de dix minutes ou plus. Effort : augmentez de 3 le résultat minimal de cette aptitude. Action.</p>"
+    }
+  ]
+}

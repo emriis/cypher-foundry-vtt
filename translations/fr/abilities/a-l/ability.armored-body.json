@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.armored-body",
+  "sourceLogicalId": "ability.armored-body",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "57ea326772e51733ba2743ec12e1a54bc6021c58e4c7f777bd3d2a2bde684c6b",
+      "text": "Corps cuirassé"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d993966c8ff7a45b7abe7942ddbc3b898eb62258f0854e3c976a355b5d761ae2",
+      "text": "<p>Vous résistez particulièrement bien aux dégâts parce que votre corps est composé de roche ou de métal, grâce à votre robustesse incroyable, ou pour une raison similaire. Vous ignorez les blessures mineures. Vous pouvez subir une blessure modérée et une blessure majeure supplémentaires.</p>"
+    }
+  ]
+}

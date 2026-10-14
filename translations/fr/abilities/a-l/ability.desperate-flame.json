@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.desperate-flame",
+  "sourceLogicalId": "ability.desperate-flame",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "916cdc492ef3352f63001b327c474f8acecf0012cdd4c3971da22aaea293c300",
+      "text": "Flamme désespérée"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "f6be5304ef9ff38033a146c4fa4e2f38868ed56bff64dd251712780a6c1b2694",
+      "text": "Tant que vous avez au moins trois blessures modérées ou au moins une blessure majeure, vous bénéficiez de deux niveaux d’Effort gratuits que vous pouvez appliquer à une attaque de feu par round. Ce bénéfice dure jusqu’à votre prochaine récupération de dix minutes ou plus, ou jusqu’à ce que vous n’ayez plus les blessures requises. Aptitude passive."
+    }
+  ]
+}

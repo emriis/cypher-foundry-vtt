@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.offensive-object-break",
+  "sourceLogicalId": "cypher.offensive-object-break",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "1b680960213695854125d19b748b481f5bc8dbc76d7fe4b77aa151cf85fd40f2",
+      "text": "Bris d’objet offensif"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "00706387a8acc7a37d7bc1a8218c78cc9048bb432000168384caffdbd36a62c6",
+      "text": "<p><strong>Effet :</strong> Un objet ordinaire proche, assez près pour que vous le touchiez, blesse un adversaire à portée immédiate de cet objet, soit en le frappant, soit en se brisant et en le touchant avec ses morceaux. Cela inflige automatiquement 4 dégâts si l’adversaire est de niveau 4 ou moins, ou 1 dégât s’il est de niveau 5 ou plus. Cet effet ne peut pas affecter les objets fixés sur place ou tenus par une autre créature.</p><p><strong>Explication :</strong> Vous avez renversé le vase. Vous avez brisé le pichet en verre. Vous avez poussé la sculpture.</p>"
+    }
+  ]
+}

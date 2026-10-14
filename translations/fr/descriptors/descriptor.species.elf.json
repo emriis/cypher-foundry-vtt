@@ -1,0 +1,43 @@
+{
+  "logicalId": "descriptor.species.elf",
+  "sourceLogicalId": "descriptor.species.elf",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "698d9ad03b1af5f1cc28a01f1d21e872699b526223939816b4da0d470776e77e",
+      "text": "Elfe"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "0c2a2996ba3da07b0695b98c98e736525d4de32536388921aef185b9f769cd13",
+      "text": "<p>Vous fréquentez les forêts et les profondeurs des domaines naturels, comme votre peuple le fait depuis des millénaires. Vous êtes la flèche dans la nuit, l’ombre dans la clairière et le rire porté par le vent. En tant qu’elfe, vous êtes mince, rapide, gracieux et bénéficiez d’une longue vie. Vous surmontez les peines de vivre bien plus longtemps que la plupart des autres par le chant, le vin et l’appréciation de la beauté profonde des êtres vivants, surtout des arbres, qui peuvent vivre plus longtemps encore que vous.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>Vous ne subissez pas d’intrusion du MJ lorsque vous obtenez un 1 sur un jet de défense d’Intellect.</p>\n<p>Vous êtes entraîné en discrétion lorsque vous êtes dans des zones boisées.</p>\n<p>Vous infligez +1 dégât avec les arcs.</p>\n<p>Les demi-elfes gagnent soit les caractéristiques de l’espèce Elfe, soit celles de l’espèce Humain, selon le choix effectué à la création du personnage demi-elfe.</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "526a40a447ddd7aa52d34bb62dbf1da04dc4aba8403769d239ade80893ffef7a",
+      "text": "Discrétion"
+    },
+    {
+      "path": "system.benefits.0.name",
+      "sourceHash": "9cc77461cee8d9f9ab14d4919f67c86fb654ea5c3280377c18c02ad6f549a452",
+      "text": "Défense d’Intellect sans intrusion du MJ"
+    },
+    {
+      "path": "system.benefits.0.description",
+      "sourceHash": "c181014131feaaacc50ac41073693004491955bd6a671cddebff6b2974c4df9e",
+      "text": "<p>Vous ne subissez pas d’intrusion du MJ lorsque vous obtenez un 1 sur un jet de défense d’Intellect.</p>"
+    },
+    {
+      "path": "system.benefits.1.name",
+      "sourceHash": "f8a7049edad1282935c9c1523d454ba48dad8759aadd8d9728a58a1865cac36c",
+      "text": "Dégâts des arcs"
+    },
+    {
+      "path": "system.benefits.1.description",
+      "sourceHash": "7077a463834fced5e65832a9d3948ea7e735e83a314a5b293c0b1c102240ca64",
+      "text": "<p>Vous infligez +1 dégât avec les arcs.</p>"
+    }
+  ]
+}

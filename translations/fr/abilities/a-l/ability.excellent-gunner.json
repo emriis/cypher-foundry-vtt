@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.excellent-gunner",
+  "sourceLogicalId": "ability.excellent-gunner",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "d0ee7e86b7f89ab4878578a5604febec7ae754866360772e0f27c72d73b9146e",
+      "text": "Canonnier d’excellence"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "e641ecb274a2bbe3a56b435c29d13d6335683ab5f249efcf48fa4c1b971bfacc",
+      "text": "Vous pouvez utiliser librement les armes à feu sans pénalité. Vous infligez 1 dégât supplémentaire avec les armes à feu. Pour une attaque effectuée avec une arme à feu, vous pouvez faire deux jets et utiliser le meilleur résultat. Cette aptitude se renouvelle lorsque vous prenez une récupération de dix minutes ou plus. Aptitude passive."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "CYPHER": {
+    "Name": "Nom",
+    "Description": "Description",
+    "Biography": "Biographie",
+    "Notes": "Notes",
+    "Level": "Niveau",
+    "Sheet": {
+      "PC": "Fiche de personnage",
+      "NPC": "Fiche de PNJ",
+      "Community": "Fiche de communauté",
+      "Core": "Actions principales",
+      "StatsAndHealth": "Caractéristiques, réserves et santé",
+      "Skills": "Compétences",
+      "Abilities": "Aptitudes",
+      "NoSkills": "Aucune compétence pour le moment.",
+      "NoAbilities": "Aucune aptitude pour le moment.",
+      "NoAttacks": "Aucune attaque pour le moment.",
+      "NoCyphers": "Aucun cypher porté.",
+      "NoEquipment": "Aucun équipement pour le moment.",
+      "CharacterDetails": "Biographie, notes et champs personnalisés",
+      "Item": "Fiche d’objet"
+    },
+    "Tab": {
+      "main": "Principal",
+      "skills": "Compétences",
+      "abilities": "Aptitudes",
+      "inventory": "Inventaire",
+      "advancement": "Avancement",
+      "biography": "Biographie"
+    },
+    "Confirm": {
+      "Delete": "Confirmer la suppression",
+      "DeleteItem": "Supprimer définitivement « {name} » ?",
+      "Add": "Ajouter"
+    },
+    "Warning": {
+      "ActionPermission": "Vous ne pouvez pas modifier ce personnage ou cette cible. Demandez au MJ de résoudre l’action.",
+      "NotPC": "Seuls les personnages joueurs peuvent effectuer ce jet.",
+      "NotEnoughPool": "La réserve de {stat} ne contient pas assez de points pour cette action.",
+      "CannotRallyMajor": "Impossible de se reprendre pour retirer une blessure majeure (hors genre super-héros).",
+      "NotEnoughMightToRally": "Pas assez de points de Puissance pour se reprendre.",
+      "CharacterDied": "{name} a subi sa troisième blessure majeure et meurt.",
+      "CustomStatExists": "Une caractéristique avec ce nom existe déjà.",
+      "NotEnoughXP": "Points d’expérience insuffisants : {amount} requis pour {reason}.",
+      "ChooseAdvancementType": "Choisissez d’abord un type d’avancement pour cet emplacement.",
+      "CapabilitiesMustSumFour": "La répartition doit totaliser exactement 4 points."
+    }
+  },
+  "TYPES": {
+    "Actor": {
+      "pc": "Personnage joueur",
+      "npc": "PNJ",
+      "community": "Communauté"
+    },
+    "Item": {
+      "skill": "Compétence",
+      "ability": "Aptitude",
+      "cypher": "Cypher",
+      "artifact": "Artefact",
+      "equipment": "Équipement",
+      "attack": "Attaque",
+      "armor": "Armure",
+      "shield": "Bouclier",
+      "descriptor": "Descripteur",
+      "type": "Type",
+      "focus": "Focus"
+    }
+  }
+}

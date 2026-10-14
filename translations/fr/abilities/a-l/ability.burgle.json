@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.burgle",
+  "sourceLogicalId": "ability.burgle",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "fabde70723e1c4f89398832c38576a34da9719bf035fe80e5433bc00b9369c47",
+      "text": "Cambrioler"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "ee1b4df806b15a2de82004fb8998a04e27845e3daf5663874d6d48ece63813e6",
+      "text": "Lorsque vous réussissez une tâche de discrétion, vous pouvez aussi accomplir l’une des tâches suivantes par une action supplémentaire pendant votre tour, même si cette tâche nécessite généralement une action lente : tenter de crocheter une serrure ; saisir un objet non fixé dont la taille ne dépasse pas un cinquième de la vôtre et le dissimuler sur vous ; vous déplacer jusqu’à une distance longue ; ou attaquer une cible à portée immédiate avec une arme légère. Aptitude passive."
+    }
+  ]
+}

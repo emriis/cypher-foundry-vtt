@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.armored-beast",
+  "sourceLogicalId": "ability.armored-beast",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "ed06afa41e13884520e354792e5794660e5a08a8dede6cecd6b97dd89a454253",
+      "text": "Bête cuirassée"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "29af9b5c14404594a3752df7f19ab8f3436a9e8604f64c8bc31fe52b4bce90b5",
+      "text": "L’Armure de votre bête augmente de 2."
+    }
+  ]
+}

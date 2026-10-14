@@ -1,0 +1,18 @@
+{
+  "logicalId": "skill.initiative",
+  "sourceLogicalId": "skill.initiative",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "3e687de48a6ad4e5cde7376ae2e49c1f6d3e3d2ee31ffe168ed065a10a9f91be",
+      "text": "Initiative"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "eec280baa7bcd9af409a6089058c2012ce51abb78b05bc27d38530283f749b03",
+      "text": "<p>Vos réflexes sont affûtés et vous rendent compétent dans les tâches d’initiative pendant le combat.</p>"
+    }
+  ]
+}

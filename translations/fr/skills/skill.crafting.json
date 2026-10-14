@@ -1,0 +1,18 @@
+{
+  "logicalId": "skill.crafting",
+  "sourceLogicalId": "skill.crafting",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "000b821603b6642608a49169b354e5bd95c66163c7ffc56cd20bcf1d480ecefd",
+      "text": "Fabrication"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d34e92e19cf3180e4db1eb52aa349b80ad396106a49cd400f0260778bc936072",
+      "text": "<p>Vous maîtrisez un domaine de fabrication adapté au cadre de votre partie. Les possibilités comprennent la cuisine ; le tissage ; le travail des métaux ou la forge ; le travail du cuir ; le brassage, la vinification et/ou la distillation ; le travail du bois ; la poterie ; la fabrication d’armes à feu et de munitions ; ou un autre domaine disponible dans le genre choisi. Un entraînement en fabrication vous permet de fabriquer, et si cela convient de réparer, les objets correspondants en utilisant vos ressources.</p>"
+    }
+  ]
+}

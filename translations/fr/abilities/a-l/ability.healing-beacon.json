@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.healing-beacon",
+  "sourceLogicalId": "ability.healing-beacon",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "140e3f37131860e3fd6c79b7149695ea40e64134d580e8e852f4cda9f123840a",
+      "text": "Balise de guérison"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "21ab4ce95a7a6d702939749ad1a16534a24a193e3e2a33259dff2980e021db42",
+      "text": "L’un de vos alliés est automatiquement soigné chaque fois que vous utilisez votre pouvoir de guérison. Choisissez un allié qui sera votre balise de guérison. Jusqu’à ce que vous preniez une récupération d’une heure ou plus, lorsque vous utilisez Main guérisseuse ou une aptitude similaire, cet allié peut lui aussi réduire la gravité de l’une de ses blessures (à condition qu’elle ne soit pas plus grave que celle que vous soignez). L’allié balise doit se trouver à portée courte de vous pour bénéficier de ces soins. Il ne bénéficie pas de cet effet si vous le soignez directement. Action pour commencer."
+    }
+  ]
+}

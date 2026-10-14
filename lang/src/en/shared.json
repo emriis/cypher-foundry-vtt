@@ -1,0 +1,70 @@
+{
+  "CYPHER": {
+    "Name": "Name",
+    "Description": "Description",
+    "Biography": "Biography",
+    "Notes": "Notes",
+    "Level": "Level",
+    "Sheet": {
+      "PC": "Character Sheet",
+      "NPC": "NPC Sheet",
+      "Community": "Community Sheet",
+      "Core": "Core gameplay",
+      "StatsAndHealth": "Stats, Pools and health",
+      "Skills": "Skills",
+      "Abilities": "Abilities",
+      "NoSkills": "No skills yet.",
+      "NoAbilities": "No abilities yet.",
+      "NoAttacks": "No attacks yet.",
+      "NoCyphers": "No Cyphers carried.",
+      "NoEquipment": "No equipment yet.",
+      "CharacterDetails": "Biography, notes and custom fields",
+      "Item": "Item Sheet"
+    },
+    "Tab": {
+      "main": "Main",
+      "skills": "Skills",
+      "abilities": "Abilities",
+      "inventory": "Inventory",
+      "advancement": "Advancement",
+      "biography": "Biography"
+    },
+    "Confirm": {
+      "Delete": "Confirm Deletion",
+      "DeleteItem": "Permanently delete \"{name}\"?",
+      "Add": "Add"
+    },
+    "Warning": {
+      "ActionPermission": "You cannot change this character or target. Ask the GM to resolve the action.",
+      "NotPC": "Only player characters can make this roll.",
+      "NotEnoughPool": "Not enough points in the {stat} Pool for this action.",
+      "CannotRallyMajor": "You can't rally to remove a major wound (outside the superhero genre).",
+      "NotEnoughMightToRally": "Not enough Might points to rally.",
+      "CharacterDied": "{name} has taken a third major wound and dies.",
+      "CustomStatExists": "A stat with that name already exists.",
+      "NotEnoughXP": "Not enough Experience Points ({amount} required for: {reason}).",
+      "ChooseAdvancementType": "Choose an advancement type for this slot first.",
+      "CapabilitiesMustSumFour": "The distribution must add up to exactly 4 points."
+    }
+  },
+  "TYPES": {
+    "Actor": {
+      "pc": "Player Character",
+      "npc": "NPC",
+      "community": "Community"
+    },
+    "Item": {
+      "skill": "Skill",
+      "ability": "Ability",
+      "cypher": "Cypher",
+      "artifact": "Artifact",
+      "equipment": "Equipment",
+      "attack": "Attack",
+      "armor": "Armor",
+      "shield": "Shield",
+      "descriptor": "Descriptor",
+      "type": "Type",
+      "focus": "Focus"
+    }
+  }
+}

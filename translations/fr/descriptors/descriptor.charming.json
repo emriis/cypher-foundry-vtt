@@ -1,0 +1,28 @@
+{
+  "logicalId": "descriptor.charming",
+  "sourceLogicalId": "descriptor.charming",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "bf3654a9a3dd6dda842284998049d6b5b98560f7d5bbd8040b680522394035d9",
+      "text": "Charmeur"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "361c8f07246ded874ea9dbfdf5e921b97a7d5268ead1a8bf979fcb4cd06c0343",
+      "text": "<p>Vous avez la parole facile et savez charmer. Par des moyens apparemment surnaturels ou simplement grâce à votre aisance avec les mots, vous pouvez convaincre les autres de faire ce que vous souhaitez. Vous êtes probablement d’un physique séduisant ou, du moins, très charismatique, et les autres aiment écouter votre voix. Vous faites sans doute attention à votre apparence et à votre présentation. Vous vous faites facilement des amis. Vous mettez en avant l’aspect personnel et relationnel de votre caractéristique d’Intellect ; l’intelligence n’est pas votre point fort. Vous avez le contact agréable.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>+2 à votre Réserve d’Intellect</p>\n<p>Vous êtes entraîné pour l’une des compétences suivantes : Charme ou Tromperie</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "cb202ce740ea23b09a039a51724a26f05a05cbd44cb1fb5692f72a7c406b4201",
+      "text": "Charme"
+    },
+    {
+      "path": "system.skillOptions.1",
+      "sourceHash": "17455029fb9994a3f2fdd256533040999bee973dc3ba05978883b20af2c9c010",
+      "text": "Tromperie"
+    }
+  ]
+}

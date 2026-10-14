@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.summon-creature",
+  "sourceLogicalId": "cypher.manifest.summon-creature",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "f8634139c4065c98e176ac8f34f83f41b373a0053734e0594db16af0aeff462b",
+      "text": "Invocation de créature"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "9a768ac0325a88c088ed79e3aa67cd0caaad13ca0deec49bf304be9b87f00689",
+      "text": "<p><strong>Effet :</strong> Une créature aléatoire de niveau 6, provenant de quelque part dans le monde, ou éventuellement d’un autre monde ou d’une autre dimension, apparaît à un endroit de votre choix à portée courte. La créature attaque l’adversaire le plus proche, passant à d’autres adversaires si elle vainc le premier, jusqu’à ce que vous preniez une récupération de dix minutes ou plus ; elle retourne ensuite d’où elle vient.</p><p><strong>Objets du genre : parchemin d’invocation de monstre (fantasy) ; portail zoologique (science-fiction). Dans certains univers, un cypher d’invocation de créature peut créer un robot de combat à usage unique ou cloner temporairement une créature plutôt que d’en faire venir une d’ailleurs.</strong></p>"
+    }
+  ]
+}

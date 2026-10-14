@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.inspiring-defense",
+  "sourceLogicalId": "ability.inspiring-defense",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "442bda3fb63dce1cd73f09b1460d8fa73796a19b7df5822c808854288aa10d0d",
+      "text": "Défense inspirante"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "90c31f89a5a9f0fd8b83161ca6c5eaf37e815e94204bc662c07b050595969969",
+      "text": "Lorsque vous réussissez un jet de défense contre une attaque qui vous aurait porté un coup ou un effet particulièrement puissant, selon l’appréciation de votre MJ, vous récupérez 4 points dans votre réserve de Puissance. Chaque utilisation de cette aptitude après la première rend 1 point de réserve de moins ; cela se réinitialise après que vous avez pris une récupération de dix heures. Aptitude passive."
+    }
+  ]
+}

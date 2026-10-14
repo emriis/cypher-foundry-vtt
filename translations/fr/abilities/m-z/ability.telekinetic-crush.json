@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.telekinetic-crush",
+  "sourceLogicalId": "ability.telekinetic-crush",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "19a6264ec74f6b6af738031928b6fc6192cb7fc5cd870a2048319e0116b71c80",
+      "text": "Écrasement télékinétique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "adfb7ce20849271ea7e923328953c2d83f8f33d3dea16218b51ac8bebaa1dd39",
+      "text": "Effectuez une attaque d’Intellect entravée contre un adversaire non vivant, comme un robot ou un zombie. En cas de réussite, vous l’écrasez et lui infligez 6 dégâts. Action."
+    }
+  ]
+}

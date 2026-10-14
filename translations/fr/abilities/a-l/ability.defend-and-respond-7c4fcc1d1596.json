@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.defend-and-respond-7c4fcc1d1596",
+  "sourceLogicalId": "ability.defend-and-respond-7c4fcc1d1596",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "bb30f05fa27f99a65fe38dc4e73c7d76dcbd462b144a03a3d7e17c2d409cf0c9",
+      "text": "Défendre et riposter"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "40825301125dc61025554fbc4d9dcd30d2e2fe30eaf5ab0da31f7493f59bb6a6",
+      "text": "Si vous bloquez ou esquivez une attaque de mêlée, vous pouvez immédiatement effectuer une attaque de mêlée contre votre attaquant. Vous ne pouvez pas utiliser cette aptitude plus d’une fois par round. Aptitude passive."
+    }
+  ]
+}

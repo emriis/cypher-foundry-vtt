@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.prepare-spell-2d7a36fdd65a",
+  "sourceLogicalId": "ability.prepare-spell-2d7a36fdd65a",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "e364c15e65e1826c213e473456d7b7f4a8639b4584efd0b27f209dd386b06fdd",
+      "text": "Préparer un sort"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "a538fe7645a1a7f278c0f4cd9e7a1af055591a083c2d0b7236fc9a2f08a9bd20",
+      "text": "Chaque jour, vous pouvez choisir un effet magique différent et le lancer comme sort. Choisissez un cypher manifesté de faible puissance. Après dix minutes de préparation, vous obtenez son effet comme sort, c’est-à-dire une aptitude spéciale de personnage. Vous pouvez lancer ce sort en une action, pour un coût de 2 Intellect. Il ne compte pas dans votre limite de cyphers. Contrairement à l’utilisation d’un cypher, lancer le sort ne vous le fait pas perdre. Chaque fois que vous prenez une récupération de dix heures, vous pouvez changer le cypher choisi comme sort. Ce changement met fin à toutes les durées de votre précédent sort préparé. Vous pouvez choisir cette aptitude jusqu’à trois fois, ce qui permet de choisir un, deux ou trois cyphers comme sorts chaque jour. Dix minutes pour terminer la préparation d’un cypher comme sort ; action pour lancer un cypher comme sort. Au rang 3 : vous pouvez choisir un cypher de faible ou de moyenne puissance comme sort. Lancer un sort de cypher de moyenne puissance coûte une action et 4 Intellect. Au rang 6 : vous pouvez choisir un cypher de faible, de moyenne ou de haute puissance comme sort. Lancer un sort de cypher de haute puissance coûte une action et 6 Intellect."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.lighting-a-fire-under-them",
+  "sourceLogicalId": "ability.lighting-a-fire-under-them",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "c047fd6dc2100ea027c2297160cf50c8b86d513164baf94f6ca5a3c4e597b808",
+      "text": "Les pousser à agir"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "0f0e76c432293d06f7ed66396fbe3b8a6d5fcb2387f690d09df494a745655d93",
+      "text": "Vous donnez un ordre à un compagnon ou à un allié à portée courte, et sa prochaine action est une action réflexe (si elle devait être une action lente, elle se produit normalement). Vous ne pouvez plus utiliser cette aptitude avant votre prochaine récupération de dix minutes ou plus. Action lente."
+    }
+  ]
+}

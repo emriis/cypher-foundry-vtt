@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.defensive-precognition",
+  "sourceLogicalId": "ability.defensive-precognition",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "c4edd9fc330c9d8f3c347a2f0eb8357c6a6b76770244c10feb5d69326ef2dd73",
+      "text": "Précognition défensive"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "baa215250bdd465e90170937bdf43e65476139dea06838c8ff5b841daa24ee4a",
+      "text": "Vous esquivez automatiquement toutes les attaques à distance, sans jet. Cependant, pendant votre prochain tour après avoir subi une attaque à distance, toutes vos autres actions sont entravées. Cette aptitude dure jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Une action pour commencer."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.bolts-of-power-76c16b62e874",
+  "sourceLogicalId": "ability.bolts-of-power-76c16b62e874",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "b91ae8fb735ae90ca98ce1fbbd735308b5e44f7d04e43a4a1d083c3e3c687745",
+      "text": "Éclairs de puissance"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "ea902715bb4e2f823410ac4320505df146bd003e4dceaa6c74cd0eaeef69a952",
+      "text": "Vous libérez simultanément quatre éclairs, en effectuant quatre attaques distinctes contre des cibles à portée courte. Chaque éclair inflige 4 dégâts, ou 1 dégât si le jet d’attaque échoue. Action."
+    }
+  ]
+}

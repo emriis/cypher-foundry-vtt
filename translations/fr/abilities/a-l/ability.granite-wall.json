@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.granite-wall",
+  "sourceLogicalId": "ability.granite-wall",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "75207c4459ef7c66a4624209ba886defc6b683855b73ba92ec843c7dfb2724d4",
+      "text": "Mur de granit"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "95301da08faef6e8c51b885d099ff7ace0872d15585f72dc976cd59ec50cfe76",
+      "text": "Vous créez un mur de granit de niveau 5 à portée courte. Il se compose de quatre carrés de 10 pieds sur 10 pieds (3,5 m sur 3,5 m), chacun épais de 1 pouce (2,5 cm), disposés comme vous le souhaitez. Le mur dure jusqu’à ce que vous preniez une récupération d’une heure ou plus, après quoi il tombe en poussière. Effort : prolongez la durée jusqu’à votre prochaine récupération de dix heures. Rendez la durée permanente (cela nécessite trois niveaux d’Effort). Action."
+    }
+  ]
+}

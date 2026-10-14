@@ -1,0 +1,43 @@
+{
+  "logicalId": "descriptor.species.vendeer",
+  "sourceLogicalId": "descriptor.species.vendeer",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "5770679ee44e916aed9154578850304127ef6ad245a6c9f49c21937a0121c236",
+      "text": "Vendeer"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "f753153134fa5524f09197756ea678af11cac432b6859f01726dbb59bfb1c010",
+      "text": "<p>Vous êtes un vendeer, ce qui signifie que vous mesurez 9 pieds (2,5 m), avez une silhouette mince et la peau violette. Vos « cheveux » en forme de crinière vous rendent un peu plus sensible aux phénomènes psychiques, notamment aux pensées et aux émotions des autres créatures, intelligentes ou non. Les vendeers sont originaires d’une lune couverte de forêts luxuriantes. Bien que votre peuple ne soit pas technologiquement avancé, il possède une vie culturelle et spirituelle riche. Mais l’attrait d’autres planètes et étoiles vous a entraîné loin de chez vous, et vous menez désormais une vie très différente de celle des chasseurs-cueilleurs que vous avez laissés derrière vous.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>Vous ne subissez pas d’intrusion du MJ lorsque vous obtenez un 1 sur une tâche d’analyse des intentions.</p>\n<p>Vous êtes entraîné en perception.</p>\n<p>Vous infligez +1 dégât avec les lances, ou leurs équivalents de haute technologie.</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "bd18e320a6bb9f539bf38e7c789035e1da2897d310fd54fc9c868f2365d776c7",
+      "text": "Perception"
+    },
+    {
+      "path": "system.benefits.0.name",
+      "sourceHash": "90aee51654e3505cb0710a21095a90e78e22134c8228ecca47841084587009aa",
+      "text": "Analyse des intentions sans intrusion du MJ"
+    },
+    {
+      "path": "system.benefits.0.description",
+      "sourceHash": "7ec6512df96069e4609a9ed1d32bda31196719adff7a72a9515012c11da3df29",
+      "text": "<p>Vous ne subissez pas d’intrusion du MJ lorsque vous obtenez un 1 sur une tâche d’analyse des intentions.</p>"
+    },
+    {
+      "path": "system.benefits.1.name",
+      "sourceHash": "2c720e785114e87413c3ba962ed935d348d520037f56c271786278c080c642b8",
+      "text": "Dégâts des lances"
+    },
+    {
+      "path": "system.benefits.1.description",
+      "sourceHash": "f09369569171dc99b49002cbdf8ede9dc7f8a81f666708a8fd01fff0a387ee26",
+      "text": "<p>Vous infligez +1 dégât avec les lances, ou leurs équivalents de haute technologie.</p>"
+    }
+  ]
+}

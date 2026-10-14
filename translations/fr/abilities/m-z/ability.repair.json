@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.repair",
+  "sourceLogicalId": "ability.repair",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "1196b6c538ecc61a658445255dcb19ebe23e05465acd46c4aa5d995667bd8cfe",
+      "text": "Réparer"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "10f3c7e1d8e90df4e179d0b8bf816f13fb9da431aa5ec7d91c4a088b1437d3b7",
+      "text": "Si vous réussissez une tâche d’ingénierie de difficulté égale au niveau de l’appareil + 1, vous réparez temporairement une pièce d’équipement cassée ou une source d’énergie inactive pour en tirer quelques utilisations supplémentaires. Réparer complètement un appareil, contrairement au dépannage de Modifier un appareil (Modify Device), est souvent possible, mais nécessite généralement au moins quelques jours, des outils et des pièces spécialisés, ainsi que l’utilisation de points de ressource."
+    }
+  ]
+}

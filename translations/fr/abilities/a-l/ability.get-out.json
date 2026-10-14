@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.get-out",
+  "sourceLogicalId": "ability.get-out",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "b5256e0c5599bb43435934c712c198b18590837907a1a1037b1f4255981b7101",
+      "text": "Sors de là"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "eaeb48ab07478cb84294566fc147bb7f9300576d875f77a60e87e4e2f7091e5e",
+      "text": "Si vous vous déplacez d’au moins une distance immédiate pour vous éloigner de la menace la plus évidente, ou vers un lieu qui semble offrir la sécurité, une tâche que vous tentez au prochain round est facilitée. Aptitude passive."
+    }
+  ]
+}

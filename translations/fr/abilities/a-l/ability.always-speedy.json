@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.always-speedy",
+  "sourceLogicalId": "ability.always-speedy",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "197f75957a01c99498a8a9c0cb1c4f30676173da033a1f3b56280f6012bdfb8b",
+      "text": "Toujours rapide"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "b5e227f425ab6c3b11ee12653fd9d7220217785c04334daa42e2cb87f845f058",
+      "text": "Chaque fois que vous utilisez une récupération, si votre réserve de Célérité n’est pas déjà pleine, vous obtenez 1 point supplémentaire à restituer à votre réserve de Célérité. Vous pouvez sélectionner cette aptitude jusqu’à trois fois."
+    }
+  ]
+}

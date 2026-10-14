@@ -1,0 +1,28 @@
+{
+  "logicalId": "descriptor.strong-willed",
+  "sourceLogicalId": "descriptor.strong-willed",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "de216733bc6d6345c2f9ea6df0ffb9d64be6c96ebb6b23af14885c19174ff721",
+      "text": "Déterminé"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "71c3ca2fba7b43f748250b30e4ecf25682efbda7c5c7f7467b16db18402b33b0",
+      "text": "<p>Vous avez un esprit ferme, de la volonté et de l’indépendance. Personne ne peut vous convaincre de faire quelque chose ni vous faire changer d’avis lorsque vous ne le souhaitez pas. Cette qualité ne vous rend pas nécessairement intelligent, mais elle fait de vous un modèle de volonté et de résolution. Vous vous habillez et vous comportez probablement avec un style et un panache singuliers, sans vous soucier de ce que les autres pensent.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>+2 à votre Réserve d’Intellect</p>\n<p>Vous êtes entraîné pour l’une des compétences suivantes : Charme ou Intimidation</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "cb202ce740ea23b09a039a51724a26f05a05cbd44cb1fb5692f72a7c406b4201",
+      "text": "Charme"
+    },
+    {
+      "path": "system.skillOptions.1",
+      "sourceHash": "5459202ae7f07cdbe5d60d80c0a243911ca4f3722eb88f7c5a23786f8d75f3a5",
+      "text": "Intimidation"
+    }
+  ]
+}

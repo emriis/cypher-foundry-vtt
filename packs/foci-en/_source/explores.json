@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/environment/wilderness/terrain-rocks.webp",
   "system": {
-    "description": "<p>You love discovering and exploring new locations, whether a tranquil valley, a dangerous wasteland, or a forbidding planet—and you have the necessary skills to survive and thrive in those places.</p>",
+    "description": "<p>You love discovering and exploring new locations, whether a tranquil valley, a dangerous wasteland, or a forbidding planet—and you have the necessary skills to survive and thrive in those places.</p>\n<ul>\n<li>Genre themes: druid or ranger (fantasy), survivor (postapocalypse, science fiction), planetary explorer (science fiction)</li>\n<li>GM intrusions: Maps get lost. An important detail is overlooked. An NPC disparages the character for being ignorant or uncivilized.</li>\n</ul>",
     "abilities": [
       "Compendium.cypher.abilities-en.Item.84c1de36bfdcdb79",
       "Compendium.cypher.abilities-en.Item.717cbbb1fe15ca8e",
@@ -86,6 +86,13 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references"
+        ]
+      }
     }
   }
 }

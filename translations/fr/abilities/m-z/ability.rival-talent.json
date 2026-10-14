@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.rival-talent",
+  "sourceLogicalId": "ability.rival-talent",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "bd04c9698d0368e832a7b0a03284d4129e3301837a7b40734a593973937d2949",
+      "text": "Talent rival"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "aa6261625c3ab8acd3501765d69ebebaa59d79d267849f86ced7a482d21722d9",
+      "text": "L’arme que quelqu’un manie vous en apprend beaucoup sur lui. Toutes vos tâches, qu’il s’agisse d’attaque, de défense, d’influence, de pistage, etc., contre un adversaire utilisant le même type d’arme que l’arme que vous avez choisie sont facilitées."
+    }
+  ]
+}

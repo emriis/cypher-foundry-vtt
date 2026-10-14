@@ -1,0 +1,43 @@
+{
+  "logicalId": "descriptor.species.d-nec",
+  "sourceLogicalId": "descriptor.species.d-nec",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "3c68b5b670972fcdba57849714a8317fcb6ea9059b556e4a4c7f051d5de1b9bb",
+      "text": "D’nec"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "6a1458199b3cb068e9521f8c10d660b804b336575116c66bfa51e7b0f6452391",
+      "text": "<p>Comme les autres membres de votre espèce, vous êtes un humanoïde de 4 pieds (1 m) aux yeux lumineux. Les d’necs sont une espèce nomade capable de réparer les appareils électroniques, moteurs, robots et autres dispositifs endommagés ou récupérés, puis de trouver un marché pour les produits remis en état. Bien que vous ayez été élevé dans les mêmes disciplines que les autres d’necs, vous avez choisi de partir de votre côté, dans l’espoir de découvrir des occasions et des expériences nouvelles que le d’nec moyen ne peut même pas imaginer.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>Vous gagnez 1 point supplémentaire dans votre Réserve d’Intellect chaque fois que vous utilisez une récupération.</p>\n<p>Vous êtes entraîné en utilisation de systèmes.</p>\n<p>Vous infligez +1 dégât avec les armes à énergie légères à distance.</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "86eeb735577ac0672523a757501c4e77c17ca90c777281358dd6efc7e3ee1d97",
+      "text": "Utilisation de systèmes"
+    },
+    {
+      "path": "system.benefits.0.name",
+      "sourceHash": "033f7e56fc5fa86c050014aa5dc3a8e74188393cf35df973fb19107a91ed2184",
+      "text": "Récupération d’Intellect"
+    },
+    {
+      "path": "system.benefits.0.description",
+      "sourceHash": "d32920e25d372e7f7577f72d24e6f088ea6d96b24f2b78faa8438f648207f850",
+      "text": "<p>Vous gagnez 1 point supplémentaire dans votre Réserve d’Intellect chaque fois que vous utilisez une récupération.</p>"
+    },
+    {
+      "path": "system.benefits.1.name",
+      "sourceHash": "5ab1b5b23dbac73a231531a56be797f6a50a518d0d79e8c5a5636b17aec9a039",
+      "text": "Dégâts des armes à énergie légères"
+    },
+    {
+      "path": "system.benefits.1.description",
+      "sourceHash": "fa4005fadbbce2e0df175cf2e20c8c73fa428f2e9bd0140f8e6322c0d206a56f",
+      "text": "<p>Vous infligez +1 dégât avec les armes à énergie légères à distance.</p>"
+    }
+  ]
+}

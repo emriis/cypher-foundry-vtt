@@ -41,7 +41,7 @@
       <li class="item" data-item-id="{{item.id}}">
         <span class="item-name">{{item.name}}</span>
         <span class="item-detail">{{localize (concat "CYPHER.AttackType." item.activeWeaponConfiguration.attackType)}} — {{item.activeWeaponConfiguration.baseDamage}} {{localize 'CYPHER.Damage'}} — {{localize (concat "CYPHER.Attack.Configuration." item.activeWeaponConfiguration.configuration)}}
-          {{#ifEquals item.system.mechanics.activeConfiguration "alternate"}} — {{localize "CYPHER.Attack.Configuration.Alternate"}}{{/ifEquals}}
+          {{#ifEquals item.system.mechanics.activeConfiguration "alternate"}} — {{localize "CYPHER.Attack.Configuration.alternate"}}{{/ifEquals}}
         </span>
         {{#if item.system.mechanics.alternateConfiguration.enabled}}
         <button type="button" data-action="toggleAttackConfiguration" title="{{localize 'CYPHER.Attack.SwitchConfiguration'}}">

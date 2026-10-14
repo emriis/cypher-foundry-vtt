@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.poison-bomb",
+  "sourceLogicalId": "cypher.manifest.poison-bomb",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "fb05c30fb89c340a335851a8c0763f5ea9798ac4e491386953580f00668b36bd",
+      "text": "Bombe toxique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "8d9c4791fdba8005c59222efa493ed00be56b289aea28e1aa92a1ee5f22ec406",
+      "text": "<p><strong>Effet :</strong> Crée une explosion de gaz toxique d’un rayon immédiat jusqu’à une distance courte. Effectuez des attaques de Célérité distinctes contre chaque créature dans la zone. En cas de réussite, elle subit 4 dégâts ; en cas d’échec, elle subit tout de même 2 dégâts. Environ la moitié de ces Cyphers infligent des dégâts à la Puissance et l’autre moitié à la Célérité.</p><p><strong>Objets du genre : émeraude de venin (fantasy) ; grenade toxique (science-fiction)</strong></p>"
+    }
+  ]
+}

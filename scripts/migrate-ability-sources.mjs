@@ -12,6 +12,7 @@ import { pathToFileURL } from "node:url";
 import { normalizeDescriptorSources, normalizeTypeSources, normalizeFocusSources, normalizeEquipmentSources } from "./source-migration/normalization.mjs";
 import { pruneAbilityArtifacts, pruneAbilityReferences, mergeGenreAbilities } from "./source-migration/cleanup.mjs";
 import { collectEnglishRegistry, collectStandaloneEnglishLogicalIds, migrateLanguage } from "./source-migration/registry.mjs";
+import { alignFrenchMechanics } from "./source-migration/bilingual-mechanics.mjs";
 
 
 /**
@@ -37,6 +38,8 @@ export async function migrateAbilitySources() {
   await normalizeTypeSources();
   await normalizeFocusSources();
   await normalizeEquipmentSources();
+  // Pair references only after every family has its final canonical identity.
+  await alignFrenchMechanics();
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

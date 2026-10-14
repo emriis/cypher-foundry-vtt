@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.speaker-for-the-dead",
+  "sourceLogicalId": "ability.speaker-for-the-dead",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "419789baaa56e3f3248c65927a2c8d03d6c7274056904ab3ae8d21eec570947f",
+      "text": "Porte-parole des morts"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "5483fc999a7af75f3040f376868c8ec87952facfdea57f4a84f2ffeb40ac4afa",
+      "text": "Vous touchez le cadavre d’un être mort et lui posez une question. Il ne peut pas répondre à une question qu’il n’aurait pas comprise de son vivant, ni donner une réponse qu’il n’aurait pas connue. Il n’est nullement obligé de vous répondre ; vous pouvez donc devoir interagir avec lui d’une manière qui l’aurait convaincu de son vivant. Vous pouvez par exemple promettre de lui donner une sépulture convenable, de venger sa mort ou de transmettre un message à une personne qu’il connaissait. Cela nécessite probablement un jet d’interaction, généralement de charme ou d’intimidation. Action."
+    }
+  ]
+}

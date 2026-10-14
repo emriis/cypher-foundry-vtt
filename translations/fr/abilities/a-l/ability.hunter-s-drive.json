@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.hunter-s-drive",
+  "sourceLogicalId": "ability.hunter-s-drive",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "a1e23ea05a538531dbdcd75b90b37e13027c3a51afc3bf4ca033d9544ae575b4",
+      "text": "Élan du chasseur"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "3680e735361939f4110dfc96bdc2a768b15b6d14b4f789f23eb1318fd1f75a55",
+      "text": "Vous devenez plus redoutable à la chasse. Si votre proie se trouve à moins de 10 miles (16 km) de vous, votre vitesse de déplacement est doublée lorsque vous cherchez à la rejoindre. Vous gagnez un atout supplémentaire aux tâches liées à votre proie. Cette aptitude dure jusqu’à ce que vous preniez une récupération de dix minutes ou plus. Aptitude passive."
+    }
+  ]
+}

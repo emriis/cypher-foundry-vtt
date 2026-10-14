@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.axe-hook",
+  "sourceLogicalId": "ability.axe-hook",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "55dc0a6af544ed4701b4bd6c287d0147efec6744b55d3cb24faad2beccf9fa1e",
+      "text": "Crochet de hache"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "62993db6e91a16f24ec72efb547ea2e28d27a004489264c1de97ba891f56b5b7",
+      "text": "Cette attaque à la hache utilise la « barbe » de votre hache, la partie de la lame située directement sous son tranchant, pour accrocher l’arme ou le bouclier d’une cible. Une attaque réussie inflige 2 dégâts de moins que la normale mais lui fait lâcher l’un ou l’autre. Pour récupérer son arme ou son bouclier, la cible doit utiliser une action. Vous pouvez à la place accrocher un membre pour déséquilibrer la cible. Cette attaque inflige 1 dégât de moins que la normale mais entrave les tâches de votre cible jusqu’à votre prochain tour. Action."
+    }
+  ]
+}

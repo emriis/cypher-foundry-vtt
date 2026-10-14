@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.no-need-for-weapons-e286df086fb2",
+  "sourceLogicalId": "ability.no-need-for-weapons-e286df086fb2",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "a3b8a4c286620978f1a3386748edb75e42a03def3141d7526788ad17df7c8b69",
+      "text": "Nul besoin d’armes"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "e35d93d16ca7bf6bf3a0e925dcfdb047f89c51b0f5b2327c9e7c221bb4fb3d9a",
+      "text": "Vos attaques à mains nues, comme les coups de poing, de pied, de coude ou de genou, infligent 2 dégâts supplémentaires."
+    }
+  ]
+}

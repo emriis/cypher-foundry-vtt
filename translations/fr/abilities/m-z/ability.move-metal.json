@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.move-metal",
+  "sourceLogicalId": "ability.move-metal",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "a53cfb8d94d1a3af0c7787f6a688bc43fdb89f23e39c4c050c48cfd7ebd491b6",
+      "text": "Déplacer le métal"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "704d5a89c85f228a03653c554c8d47be3099fd02267591d4aa6e520dedaa4cc4",
+      "text": "Jusqu’à ce que vous utilisiez une récupération d’une heure ou plus, vous pouvez exercer une force sur des objets métalliques à courte portée en y consacrant votre action. Chaque utilisation de cette aptitude nécessite une action et permet de déplacer à distance un objet contenant du métal ou composé de métal. Vous ne pouvez déplacer ou manipuler un objet que si vous pourriez le faire physiquement avec vos mains. Par exemple, vous pouvez soulever un objet métallique léger situé à portée et l’attirer vers vous, ou déplacer un objet lourd, comme un meuble, sur une distance immédiate. Ce pouvoir manque de finesse pour manier une arme ou déplacer rapidement des objets ; dans la plupart des situations, il ne permet donc pas d’attaquer directement. Toutefois, vous pouvez arracher un objet métallique à une autre créature, pousser une créature en armure métallique sur une distance immédiate, ou entraver l’attaque ou la défense d’une créature en exerçant une pression contraignante sur une jambe ou un bras en armure, ou sur une arme métallique. Affecter une créature non consentante ou son équipement nécessite un jet d’attaque d’Intellect. Vous pouvez utiliser votre action pour créer une perturbation magnétique à courte portée, entravant de deux pas les appareils électroniques, les machines électroniques et les créatures mécaniques, comme les robots, pendant un round. Action pour initier l’effet ; action pour déplacer du métal ou perturber l’électronique."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.psychic-burst",
+  "sourceLogicalId": "ability.psychic-burst",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "fbb1f6c3a00ceab0854b9990696205bc8e73ac654bd70963b42c6a8656e5f8ad",
+      "text": "Explosion psychique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "17bf3db41bfb9424c7574ae20e1e6cbaf8163a668e1a229f1dcf5ed1fac6161f",
+      "text": "Vous projetez des vagues de force mentale dans l’esprit de trois cibles à courte portée ; effectuez un jet d’Intellect contre chacune. Cette explosion inflige 3 dégâts d’Intellect, qui ignorent l’armure. Effort : attaquez une cible supplémentaire. Action."
+    }
+  ]
+}

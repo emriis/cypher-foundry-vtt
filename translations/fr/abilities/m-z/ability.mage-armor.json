@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.mage-armor",
+  "sourceLogicalId": "ability.mage-armor",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "41b7590882c44f25ba88ccb7bf6f329d26b3eb75af4860cbe03f0467adc07e5e",
+      "text": "Armure du mage"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "e1afd5344c4273a87ef538395277c5e296bf378124abeb3b6440b2c3714d9235",
+      "text": "Un champ d’énergie invisible vous entoure jusqu’à ce que vous utilisiez une récupération de dix heures. Il vous permet de tenter de bloquer les attaques avec un jet de défense d’Intellect facilité à la place d’un jet de défense de Puissance ; en cas de réussite, vous réduisez la gravité de la blessure d’un degré. Action. Au rang 3 : votre jet de défense d’Intellect pour bloquer une attaque est facilité de deux pas au total."
+    }
+  ]
+}

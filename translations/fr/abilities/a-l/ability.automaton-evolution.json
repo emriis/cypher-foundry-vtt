@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.automaton-evolution",
+  "sourceLogicalId": "ability.automaton-evolution",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "41ba4c7298caa792068e1adb550ed7ec7ad3ce9d3a89753f9ad35ea5b2f9e30d",
+      "text": "Évolution d’automate"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "28a9080d6d344a4603734765f54cd33516a9c89875c0eac34e318b5cf6fd2c18",
+      "text": "L’un de vos compagnons automates est amélioré, ce qui augmente son niveau de 1. Vous pouvez sélectionner cette aptitude plusieurs fois. À chaque fois, le niveau de l’un de vos automates augmente de 1."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.piloting-flourish",
+  "sourceLogicalId": "ability.piloting-flourish",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "4c17f840caa400679713aab89bad06939e32d7b60858d3ddd82a63a15a6cf072",
+      "text": "Panache du pilote"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "e82db8a96b2cda782e2bbbac9e27c5d96c44267e1df23c6b991cac12f01b646b",
+      "text": "Lorsque vous manœuvrez un vaisseau spatial, votre talent de pilotage, vos plaisanteries distrayantes et/ou votre façon d’exécuter une manœuvre divertissent ou impressionnent les autres. Une créature de votre choix, à bord du vaisseau ou à proximité, qui peut vous voir ou a autrement conscience de la manœuvre, obtient un atout pour sa prochaine tâche si elle l’accomplit dans un ou deux rounds. Au rang 3 : vous pouvez impressionner simultanément jusqu’à trois créatures choisies. Aptitude passive."
+    }
+  ]
+}

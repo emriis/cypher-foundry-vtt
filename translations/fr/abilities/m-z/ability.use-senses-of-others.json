@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.use-senses-of-others",
+  "sourceLogicalId": "ability.use-senses-of-others",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "0b838f7ea006cf59ddd52057940979d359ee309b1f63711a2bb3e03732c05912",
+      "text": "Utiliser les sens d’autrui"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "a08db1373aee5cfcab6207f7393afc3c7f2c4a29e4930cac4263247bb9fdd64d",
+      "text": "Vous pouvez voir, entendre, sentir, toucher et goûter par les sens d’une autre créature à longue portée. Vous n’avez pas à la voir, mais devez savoir qu’elle est à portée. Si elle est intelligente et non consentante, vous devez réussir une attaque d’Intellect pour commencer à percevoir par ses sens. Ce partage dure jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Action pour établir le lien."
+    }
+  ]
+}

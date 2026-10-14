@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.earthshake-0ddc3d51346e",
+  "sourceLogicalId": "ability.earthshake-0ddc3d51346e",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "41810e55a6156d2d61db9f5767935544ab8bbc05975b288f5fbc979699182a83",
+      "text": "Séisme"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "61909f9e9a2e212ac8fb3ef1f8f88723ea1d41a3fb5c0cd1e4b22a4097db040a",
+      "text": "Vous déclenchez un violent mouvement du sol dans une zone courte à portée très longue. Les bâtiments et les éléments de terrain sont endommagés, leur niveau étant réduit de 1 à 3, et perdent des débris et des gravats. Les créatures dans la zone subissent 6 dégâts dus aux secousses, aux débris qui tombent, ou aux deux ; effectuez un jet d’attaque distinct contre chacune. Même en cas d’échec de l’attaque, les créatures dans la zone subissent encore 3 dégâts. Action."
+    }
+  ]
+}

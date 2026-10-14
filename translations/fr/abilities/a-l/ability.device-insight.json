@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.device-insight",
+  "sourceLogicalId": "ability.device-insight",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "39409e49c7e055dec37f54dcfdba1eddac3aeca74c22fca6ac3f2d2233f683d1",
+      "text": "Comprendre un appareil"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "3259061ecfb227c17eea790890b366b7d58dfabec35afa1d78cc3e406138cbe4",
+      "text": "Lorsque vous examinez un appareil inconnu, extraterrestre, surnaturel ou de technologie avancée, vous pouvez poser une question au MJ pour vous faire une idée de ses capacités, de son fonctionnement, de la manière de l’activer ou de le désactiver, de ses éventuelles faiblesses, de la manière de le réparer, ou d’un sujet similaire. Cette compréhension concerne les éléments difficiles ou étranges qui dépassent ce qu’une compétence de connaissances ou technique appropriée permet d’identifier facilement. Action."
+    }
+  ]
+}

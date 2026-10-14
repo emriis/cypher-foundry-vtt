@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.spin-identity",
+  "sourceLogicalId": "ability.spin-identity",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "24b7b198fc00cf35ab9d608989da107b8c67d77de483e185cdf7bb4d8388f635",
+      "text": "Façonner une identité"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d684e0f096783fa1ff845dc7310f4d3063cbeeed09edd3af58481c22b81214cc",
+      "text": "Lorsque vous effectuez un jet pour convaincre une créature intelligente, y compris un ordinateur ou un système de surveillance, que vous êtes quelqu’un ou quelque chose d’autre, et que le résultat est inférieur à 6, considérez qu’il est de 6. Vous ne subissez donc pas d’intrusion du MJ si vous obtenez 1. Cette aptitude ne permet pas d’imiter une personne précise : elle convainc plutôt les observateurs que vous êtes un inconnu appartenant à une certaine catégorie. « Je travaille pour le gouvernement. » « Je suis simplement un voyageur qui s’occupe de ses affaires. » « Votre commandant m’a envoyé. » Les utilisations réussies de Façonner une identité (Spin Identity) persistent jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus, sauf si vos actions ou d’autres circonstances révèlent votre véritable identité avant. Effort : augmentez de 3 le résultat minimal de cette aptitude. Action. Au rang 3 : le résultat minimal de cette aptitude passe à 12."
+    }
+  ]
+}

@@ -17,29 +17,42 @@ The detailed source-fidelity and transformation policy is maintained in
 - The supplied CRD is the sole authority for all compendium facts, descriptions,
   mechanics, names, and structure. Treat `packs/<pack-name>/_source/` as the
   reviewable authoring surface, not an independent source of truth.
-- Edit the English and French `_source` records directly. Keep paired filenames,
-  document structure, mechanical data, and supported item fields aligned.
+- Author canonical CRD-backed English content and paired structural data under
+  `_source/`; author complete French display text as source-hashed proposals
+  under `translations/fr/`. Follow `docs/localization.md` for paths, status,
+  glossary and compilation. Legacy paired filenames need not be identical.
 - Keep paired French and English records aligned in identifiers, document
   structure, mechanical data, and supported item fields. Respect the item
   DataModel and existing naming/ID conventions.
 - Every source record needs its Foundry `_key` in the documented form, such as
   `!items!<_id>`. Check for uniqueness and valid document type/ID.
-- The English CRD is the absolute authority for descriptions. Under the Cypher Open License,
-   store its complete text rather than summaries. Use the complete matching Character Book
-   translation only as a faithful French rendering of the CRD, never as authority
-   for additional content or mechanics; otherwise copy the English text verbatim. If a match is
-   ambiguous, do not guess: retain the unresolved report and leave names, IDs, and mechanics
-   unchanged. Preserve the required Cypher Open License attribution.
+- Under the Cypher Open License, retain complete English CRD passages rather
+  than summaries, including relevant callouts, examples and exceptions. A
+  translation aid supplies wording only; compare it with the actual CRD before
+  reuse. Provide full French proposals when that is the authorized scope, and
+  keep unresolved terminology or mechanics visible for review. Legacy English
+  fallback is not an approved French translation. Preserve the attribution.
+- Keep confirmed activation labels `First action` / `Action` / `Last action`
+  as `Action réflexe` / `Action` / `Action lente`. Ordinary ordinal wording
+  such as "your first action in combat" may require "votre première action du
+  combat" instead. Keep enum values and other semantic rule strings unchanged.
+- Preserve logical IDs, Foundry IDs and English CRD locators independently of
+  translated names. Grandfathered equipment logical IDs retain their canonical
+  English genre/price/name tuple, including legacy capitalization and spaces.
 
 ## Validation and packaging
 
 1. Inspect both language diffs and run focused compendium tests (for example `node --test
    tests/content/compendium-sources.test.mjs`) and `npm test` when source or behavior
    warrants it.
-2. Rebuild each affected Foundry-readable LevelDB pack using the documented
-   `@foundryvtt/foundryvtt-cli` workflow in `CONTRIBUTING.md`. The CLI may need
-   to be installed locally; do not change dependency manifests just to install
-   this optional tool.
+2. Run `audit:i18n` and, when reviewing translations, `preview:translations`.
+   Both normalize a disposable copy; previews do not overwrite source records.
+   For intended artifact builds, use `build:packs` directly. It normalizes a
+   disposable copy before compiling reviewed proposals into temporary JSON;
+   `--include-proposed` explicitly includes complete drafts. Use `migrate:packs`
+   only when source rewrites are intended. Builds preserve sources and review
+   status, and finish validation/compilation before replacing generated packs.
+   Preserve all fourteen existing family/language collection IDs.
 3. Check the pack output and Git status. Do not commit transient `LOCK`/`LOG`
    files or unrelated generated artifacts.
    `npm test` normalizes only a temporary copy. Explicit source migrations and

@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.power-boost.split-boost",
+  "sourceLogicalId": "cypher.power-boost.split-boost",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "a3295d108f09c351ac6c89da5fa67bd9dd9015caef6384f751e6a5b714b93332",
+      "text": "Renforcement partagé"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "4103a0b18aca277dc804d6fc286abf3396b411a030273305987ef527950dd99d",
+      "text": "<p><strong>Effet :</strong> Votre aptitude affecte deux fois plus de cibles ou deux fois plus de zones. Par exemple, si vous possédez une aptitude de contrôle mental qui affecte une créature, vous pouvez l’utiliser sur deux créatures ; si vous possédez une explosion de feu qui affecte une zone immédiate, vous pouvez affecter deux zones immédiates. Les cibles ou zones doivent être à votre portée, mais n’ont pas à être proches les unes des autres. Choisir deux fois la même cible ou faire se chevaucher deux zones n’a aucun effet. Si l’aptitude est une attaque, effectuez des attaques distinctes pour les cibles ou les zones.</p>"
+    }
+  ]
+}

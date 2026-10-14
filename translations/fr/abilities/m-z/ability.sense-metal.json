@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.sense-metal",
+  "sourceLogicalId": "ability.sense-metal",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "6f2a70ed490a7589ebc554612c580fac15bda85d95f36e413dfe24bdef8c308d",
+      "text": "Percevoir le métal"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "ae8d4d287947d690b9238669afc2349829b0097ebe7d5829d017abcb30c542f7",
+      "text": "Si un métal ferromagnétique quelconque se trouve à courte portée, vous en avez conscience et connaissez aussi sa quantité, son type et sa position générale. Action lente."
+    }
+  ]
+}

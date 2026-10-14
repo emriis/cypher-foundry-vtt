@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.freezing-bomb",
+  "sourceLogicalId": "cypher.manifest.freezing-bomb",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "cf9d0b468a14b1a7e9b34e92f6a644da42f74b83d01d784ab6633d971be19f40",
+      "text": "Bombe glaciale"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "f377290fa5bc2148dacc74db037d85f78552f270ee0c9526385777ec48f54164",
+      "text": "<p><strong>Effet :</strong> Crée une explosion de froid intense d’un rayon immédiat jusqu’à une distance courte. Effectuez des attaques de Célérité distinctes contre chaque créature dans la zone. En cas de réussite, elle subit 4 dégâts ; en cas d’échec, elle subit tout de même 2 dégâts.</p><p><strong>Objets du genre : parchemin de déflagration glaciale (fantasy) ; grenade cryogénique (science-fiction)</strong></p>"
+    }
+  ]
+}

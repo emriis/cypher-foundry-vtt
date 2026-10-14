@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.expert-engineer",
+  "sourceLogicalId": "ability.expert-engineer",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "d382ea81ede68de8536ceae412560dec399223c4e1c7bb5cea754e12835d519e",
+      "text": "Ingénieur expert"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d9ef4069bc37ce17e11c6e7180d6591931b06c76e1a5a6e82265e1398714d9a0",
+      "text": "Vous êtes entraîné en ingénierie. Au rang 6 : vous pouvez devenir expert en ingénierie si vous êtes déjà spécialisé, mais vous devez acquérir la compétence normalement, par exemple par un avancement de personnage."
+    }
+  ]
+}

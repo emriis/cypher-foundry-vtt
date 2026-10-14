@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.scratching-and-kicking",
+  "sourceLogicalId": "ability.scratching-and-kicking",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "aa5700ac1bc91bc13daf04feb93f5506d5004dacb48504e978eb1aba4a757738",
+      "text": "Griffures et coups de pied"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "338aecaa51be050bd436f4c5b92faf65914a76018326d8b55a909ca3f5fa0259",
+      "text": "Votre attaque de mêlée inflige 1 dégât supplémentaire parce qu’elle comprend une combinaison de griffures, de coups de pied et/ou de morsures. Aptitude passive."
+    }
+  ]
+}

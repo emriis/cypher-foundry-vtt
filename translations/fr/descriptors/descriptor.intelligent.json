@@ -1,0 +1,33 @@
+{
+  "logicalId": "descriptor.intelligent",
+  "sourceLogicalId": "descriptor.intelligent",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "6e3403770c7528a1d20c9024b20c5bcbb6c9bfb83ca8fa371f98a13f06bd3ce4",
+      "text": "Intelligent"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "adbea5e5561283203b879435cebc3585e7a02204d4c1fd12f7df6515c8e87346",
+      "text": "<p>Vous avez une grande intelligence. Votre mémoire est précise, et vous comprenez facilement des concepts que d’autres peinent à saisir. Cette aptitude ne signifie pas nécessairement que vous avez suivi de longues études, mais vous avez beaucoup appris au cours de votre vie, surtout parce que vous assimilez rapidement et retenez une grande quantité d’informations.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>+2 à votre Réserve d’Intellect</p>\n<p>Vous êtes entraîné pour l’une des compétences suivantes : Chimie, Ingénierie ou Mathématiques, ou une discipline similaire</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "ab2cc833ed40c8b3c97b0617e4df0ec6097084c7e3a68c2befb0d34347bf69c2",
+      "text": "Chimie"
+    },
+    {
+      "path": "system.skillOptions.1",
+      "sourceHash": "729bb48d0f86a9e240a9839bf8c50f62f7ed973338514432666cf53c5d30c9ca",
+      "text": "Ingénierie"
+    },
+    {
+      "path": "system.skillOptions.2",
+      "sourceHash": "cdba6dc33e22fb468026fce488b4a6dc484e9647345ee03901eb8fc3b0ee1693",
+      "text": "Mathématiques"
+    }
+  ]
+}

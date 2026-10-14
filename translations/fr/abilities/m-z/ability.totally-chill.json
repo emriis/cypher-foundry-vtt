@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.totally-chill",
+  "sourceLogicalId": "ability.totally-chill",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "da72654c4688cd1e3a8de4047034fa0091a24c19b13caeeade33c690503faac1",
+      "text": "Détente absolue"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "7b0193fce2252bd51299cd319b736f42f8d05a520e3e09f6c810f5cac8afced3",
+      "text": "Votre récupération de dix minutes ne prend qu’une action et votre récupération d’une heure prend dix minutes."
+    }
+  ]
+}

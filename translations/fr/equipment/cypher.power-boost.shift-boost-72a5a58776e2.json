@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.power-boost.shift-boost",
+  "sourceLogicalId": "cypher.power-boost.shift-boost",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "1fa0e593105452ed3040c6a258e61b35ddd1a6ac109113461b6af811674ee844",
+      "text": "Renforcement d’amplificateur"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "0ab0e31cd9ef19d8b116af8a48ddda2cf1ca592bb5b99b31d0eb7e486ef5c3f7",
+      "text": "<p><strong>Effet :</strong> Vous gagnez un amplificateur de puissance supplémentaire pendant un round. Cet amplificateur doit appartenir à une catégorie que vous possédez déjà. Par exemple, si vous possédez des amplificateurs en Dextérité et en Résilience, vous pouvez gagner un amplificateur supplémentaire dans l’une de ces deux catégories pendant un round.</p>"
+    }
+  ]
+}

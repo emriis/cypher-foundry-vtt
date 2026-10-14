@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/svg/wind.svg",
   "system": {
-    "description": "<p>You are an incredibly fast runner, whether moving toward a foe or away from danger.</p>",
+    "description": "<p>You are an incredibly fast runner, whether moving toward a foe or away from danger.</p>\n<ul>\n<li>Genre themes: coward or messenger or scout (fantasy, historical, real world), athlete or coward or scout (real world, science fiction), speedster (superhero)</li>\n<li>GM intrusions: Quick movements sometimes lead to dropped items, slipping on uneven ground, or going the wrong way by accident.</li>\n</ul>\n<p>Some of the special abilities on the Moves Like the Wind flowchart are genre restricted, meaning those particular abilities are probably only suitable for a superhero, space opera, or other fantastic genre. The other abilities are suitable for most genres.</p>",
     "abilities": [
       "Compendium.cypher.abilities-en.Item.1e3bf17716bc0925",
       "Compendium.cypher.abilities-en.Item.9b53e25680f24e5c",
@@ -103,6 +103,13 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references"
+        ]
+      }
     }
   }
 }

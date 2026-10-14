@@ -65,7 +65,10 @@ export function abilityPassages(name, paragraphs, abilityNames) {
     for (const next of paragraphs.slice(index + 1)) {
       const text = plainText(next.text);
       if (!text) continue;
-      const label = plainText(next.leadingLabel);
+      // Word can split the runs before a cost parenthesis without retaining
+      // its space in leadingLabel. Normalize only this boundary hint; the
+      // independently compared CRD wording and stored description stay exact.
+      const label = plainText(next.leadingLabel).replace(/\s*\(/g, " (");
       const isBody = ["BodyText", "FirstParagraph"].includes(next.style);
       // An unknown costed header can reveal an Ability swallowed by extraction.
       // Uncosted sub-options such as Heavy Throw remain inside their parent.

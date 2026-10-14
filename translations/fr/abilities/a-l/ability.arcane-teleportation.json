@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.arcane-teleportation",
+  "sourceLogicalId": "ability.arcane-teleportation",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "da8d658976c583669cad6333a70f4e87e56cc1b12b37b3281fe87e2311dba6c6",
+      "text": "Téléportation arcanique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "f10e7030b725c6d2dfadb1c47fac012f08df7a51df8f8a9b0e4a0fe900a08a52",
+      "text": "Vous vous téléportez instantanément dans n’importe quel lieu visible à une distance courte. Effort : augmentez votre portée d’une distance courte. Téléportez-vous dans un lieu que vous ne voyez pas. Emmenez avec vous une créature de votre taille ou plus petite. Au rang 5 : si vous dépensez 5 points d’Intellect, votre distance de base et l’augmentation de distance par Effort passent à une portée longue, et chaque niveau d’Effort appliqué vous permet d’emmener deux personnes. Au rang 6 : si vous dépensez 6 points d’Intellect, votre distance de base s’étend à n’importe quel lieu de la même planète, et chaque niveau d’Effort utilisé vous permet d’emmener trois personnes. Action."
+    }
+  ]
+}

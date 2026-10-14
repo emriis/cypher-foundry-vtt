@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.inferno-wall",
+  "sourceLogicalId": "cypher.manifest.inferno-wall",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "27c910ca970076123311857758f97c65192f83e72a010321b3944152835bac11",
+      "text": "Mur infernal"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d0f1727c96b76529e2823b1940e12c1ee899738bc4177245f9aa4f463cbbc138",
+      "text": "<p><strong>Effet :</strong> Vous créez un mur de chaleur miroitante ou de flammes vacillantes jusqu’à une distance courte, qui dure jusqu’à ce que vous preniez une récupération de dix minutes ou plus. Le mur mesure jusqu’à 30 pieds sur 30 pieds sur 1 pied (9 m sur 9 m sur 30 cm) et s’adapte à l’espace disponible. Tout ce qui le traverse subit 3 dégâts.</p><p><strong>Objets du genre : rubis infernal (fantasy) ; module d’infernoplan (science-fiction)</strong></p>"
+    }
+  ]
+}

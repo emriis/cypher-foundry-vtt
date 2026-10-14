@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.mystic-step",
+  "sourceLogicalId": "ability.mystic-step",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "e1352e1b856d2c7c16edc97f9f9cc56933519b04441ac532f71c82a2330fc5d4",
+      "text": "Pas mystique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "6d10bebb79332e2d86c207feb852dd7dcdabb80f67e43bfe91786c26b009dffa",
+      "text": "Vous canalisez votre source mystique pour vous transporter instantanément vers un nouvel endroit que vous voyez à longue portée. Si vous apparaissez à portée immédiate d’un adversaire, vous pouvez effectuer une attaque à mains nues contre lui en tant qu’action supplémentaire. Effort : atteignez un endroit à portée que vous ne voyez pas directement parce qu’un mur ou une structure bloque la vue. Action réflexe. Si vous tentez d’atteindre un endroit où il n’y a pas assez de place pour vous avec Pas mystique (Mystic Step), l’aptitude échoue automatiquement et vous ne quittez pas votre position initiale."
+    }
+  ]
+}

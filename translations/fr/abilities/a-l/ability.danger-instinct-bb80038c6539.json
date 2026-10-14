@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.danger-instinct-bb80038c6539",
+  "sourceLogicalId": "ability.danger-instinct-bb80038c6539",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "35b382f6ea7f52f0be4c7ccba246a4c22e43304ab65fa7b5caad3314abba54cd",
+      "text": "Instinct du danger"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "a129aeae6d11a0669737a9024e4314a6e18c5aa8c06eacce325692f90717c891",
+      "text": "Si vous êtes attaqué par surprise, que ce soit par une créature, un appareil ou simplement un danger environnemental comme un arbre qui vous tombe dessus, vous pouvez vous déplacer d’une distance immédiate avant que l’attaque se produise. Si ce déplacement empêche l’attaque, vous êtes en sécurité. Si l’attaque peut encore vous affecter, par exemple si la créature attaquante peut se déplacer pour vous suivre ou si l’attaque couvre une zone trop grande pour vous en échapper, votre défense contre elle est facilitée. Aptitude passive."
+    }
+  ]
+}

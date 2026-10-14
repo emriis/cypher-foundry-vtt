@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.flameblade",
+  "sourceLogicalId": "ability.flameblade",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "b681571a10f06156e7490f948ba22fc7c1fcf0a0c1f9cd91ba6bbcecd3d99c92",
+      "text": "Lame de flammes"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "713e553d7a71d279c5220d71ef152bf59fe442ca5807067c68f7a733a81c2da0",
+      "text": "Votre Voile de flammes couvre de feu une arme que vous maniez, comme une arme fabriquée telle qu’une épée ou un arc. Vous pouvez aussi intensifier la flamme qui enveloppe déjà votre main pour améliorer vos attaques à mains nues. Toute attaque avec l’arme enflammée inflige 1 dégât de feu supplémentaire ; si l’arme tire des projectiles, comme les flèches d’un arc, ces dégâts s’appliquent aux projectiles. La flamme prend fin si vous cessez de tenir ou de porter l’arme, mais vous pouvez couvrir de flammes une autre arme que vous maniez par une action supplémentaire pendant votre tour. Cette aptitude prend automatiquement fin lorsque vous utilisez une récupération de dix minutes ou plus. Aptitude passive."
+    }
+  ]
+}

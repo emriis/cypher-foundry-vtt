@@ -1,0 +1,43 @@
+{
+  "logicalId": "descriptor.species.naron",
+  "sourceLogicalId": "descriptor.species.naron",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "e385794972e5a0276eabbe30fc62a346c08f33560143f2c6af11b1e45065f72a",
+      "text": "Naron"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "ff1141a36acd380e1f20f39b83f6b011dea207c59006890881bfedd3f7993723",
+      "text": "<p>Vous descendez d’une espèce de télépathes naturels qui communiquent d’esprit à esprit plutôt que par un langage parlé. Vous mesurez environ 5 pieds (1,5 m), et votre émanation, généralement une lueur discrète qui dessine faiblement la silhouette de votre tête chauve, ondule lentement lorsque vous êtes détendu ou clignote et pulse lorsque vous êtes excité ou stressé, à moins que vous ne la réprimiez consciemment. Les narons sont généralement un peuple pacifique, mais certains d’entre vous ont découvert que la galaxie offre des occasions intéressantes dans toutes les couches de la société, parmi des créatures chez lesquelles les facultés psychiques sont rares, voire inexistantes.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>Vous ne pouvez pas produire de sons vocaux, mais communiquez télépathiquement avec une seule, plusieurs ou toutes les créatures intelligentes à distance courte aussi facilement que si vous échangiez à voix haute.</p>\n<p>Vous êtes entraîné en charme ou en tromperie.</p>\n<p>Vous êtes entraîné en analyse des intentions.</p>\n<p>La télépathie naron ne permet pas de lire les pensées des autres, ni même de leur parler s’ils souhaitent vous tenir à l’écart. Si, en tant que naron, vous voulez explorer vos dons télépathiques latents, choisissez Psion comme Type et/ou un focus axé sur les pouvoirs psychiques, comme Commande les pouvoirs mentaux. D’autres foci peuvent toutefois être adaptés ou présentés autrement afin que les aptitudes qu’ils accordent soient considérées comme issues de vos facultés psychiques latentes.</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "cb202ce740ea23b09a039a51724a26f05a05cbd44cb1fb5692f72a7c406b4201",
+      "text": "Charme"
+    },
+    {
+      "path": "system.skillOptions.1",
+      "sourceHash": "17455029fb9994a3f2fdd256533040999bee973dc3ba05978883b20af2c9c010",
+      "text": "Tromperie"
+    },
+    {
+      "path": "system.grantedSkills.0",
+      "sourceHash": "cdcb24358ca22d0138d75f04a3f51d529f0be8025e0ce18b7bda77724e4baea4",
+      "text": "Analyse des intentions"
+    },
+    {
+      "path": "system.benefits.0.name",
+      "sourceHash": "15ea6ba91d436ee0a5c95e99b83502318a561900fe99967f586efeeccc0897f1",
+      "text": "Communication télépathique"
+    },
+    {
+      "path": "system.benefits.0.description",
+      "sourceHash": "8f74b9cde972308f785fcbc52850e3bd7a2402af27dae763a31e38e192b0aac3",
+      "text": "<p>Vous ne pouvez pas produire de sons vocaux, mais communiquez télépathiquement avec une seule, plusieurs ou toutes les créatures intelligentes à distance courte aussi facilement que si vous échangiez à voix haute.</p>\n<p>La télépathie naron ne permet pas de lire les pensées des autres, ni même de leur parler s’ils souhaitent vous tenir à l’écart. Si, en tant que naron, vous voulez explorer vos dons télépathiques latents, choisissez Psion comme Type et/ou un focus axé sur les pouvoirs psychiques, comme Commande les pouvoirs mentaux. D’autres foci peuvent toutefois être adaptés ou présentés autrement afin que les aptitudes qu’ils accordent soient considérées comme issues de vos facultés psychiques latentes.</p>"
+    }
+  ]
+}

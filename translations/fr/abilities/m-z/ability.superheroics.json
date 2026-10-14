@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.superheroics",
+  "sourceLogicalId": "ability.superheroics",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "8de1b6c0b00ab7c925e2ff203cbfb9eede4ec12243a9b1570a19399ed7457006",
+      "text": "Prouesses héroïques"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d3fa88c558f13ce4d6a58b1edaf23ca9eaf8e9ef041d9edf01091f9dd1d97065",
+      "text": "Choisissez une réserve : Puissance, Célérité ou Intellect. Pour les tâches utilisant cette réserve, ajoutez votre degré de puissance à la quantité d’Effort que vous pouvez appliquer, ce qui permet d’utiliser des niveaux d’Effort supplémentaires pour ces tâches. En outre, vous pouvez choisir de vous dépasser au point de subir une blessure modérée en échange de deux niveaux d’Effort gratuits à appliquer aux tâches de votre réserve choisie, à condition de ne pas dépasser la limite d’Effort de cette réserve. Enfin, ajoutez votre degré de puissance comme bonus à votre récupération ; ces points ne peuvent aller que dans la réserve que vous avez choisie."
+    }
+  ]
+}

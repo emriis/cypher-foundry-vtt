@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.poison-crafter",
+  "sourceLogicalId": "ability.poison-crafter",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "d9e8b17549c99b3b8516c4fb993eb16f20d7f893b270ed5aabf38603ab83e1ac",
+      "text": "Fabrication de poisons"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "caf60279ba540abb720f6ab56658019a0d514eed0c8d01a05685ed6ac46db588",
+      "text": "Si vous disposez d’environ une heure, vous pouvez utiliser vos ressources pour fabriquer une dose de poison de contact à appliquer sur une arme. Une arme enduite de ce poison, ce qui nécessite une Action lente pour l’appliquer soigneusement, inflige 2 dégâts supplémentaires jusqu’à ce que vous utilisiez une récupération d’une heure ou plus. Votre expérience des poisons vous procure aussi des bénéfices connexes. Vous obtenez un atout pour détecter, identifier et résister au poison. Vos jets de défense contre le poison sont facilités, et vous subissez 2 dégâts de Célérité de moins si le poison inflige des dégâts de Célérité, ou réduisez la gravité des blessures de poison d’un degré : majeure à modérée, modérée à mineure, mineure à aucune. Par exemple, une attaque qui ajoute une blessure modérée de poison ne vous inflige qu’une blessure mineure de poison. La fabrication de poisons utilise des points de ressource ; dans ce cas, utilisez Fabriquer un cypher (Craft Cypher) et le cypher d’augmentation d’arme pour créer un poison à appliquer sur votre arme. Ce poison, un cypher manifesté, compte dans votre limite de cyphers."
+    }
+  ]
+}

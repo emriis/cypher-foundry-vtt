@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.rapid-attack",
+  "sourceLogicalId": "ability.rapid-attack",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "abbf45552b798d70ba4cbe05d3b55a7a8a00f16a39bab11d0ccda39996099563",
+      "text": "Attaque rapide"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "bd284dc7212283c53f9ea86edc8685dfe85eff9eff86956ac9f5b8b45a6e73e7",
+      "text": "Vous effectuez une attaque supplémentaire pendant votre tour avec l’arme que vous avez choisie. Vous ne pouvez utiliser cette aptitude qu’une fois par round. Aptitude passive."
+    }
+  ]
+}

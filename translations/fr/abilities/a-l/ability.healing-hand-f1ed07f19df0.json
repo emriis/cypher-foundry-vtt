@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.healing-hand-f1ed07f19df0",
+  "sourceLogicalId": "ability.healing-hand-f1ed07f19df0",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "c46503479ef45dd318f0d808fe7d6adee3d6854e8408f93e66925d9efe11d669",
+      "text": "Main guérisseuse"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "9c3a38757747a903a2edec6d65227729cd0dc7b1dca15fa1a5a7004f3eed9e8f",
+      "text": "D’un contact, vous réduisez d’un degré la gravité d’une blessure (sauf si la cible ne peut plus subir de blessures de cette moindre gravité). Une blessure mineure soignée disparaît complètement, une blessure modérée devient une blessure mineure, ou une blessure majeure devient une blessure modérée. Chaque fois que vous utilisez Main guérisseuse, le coût en Intellect augmente de 1. Ce coût revient à 1 après que vous avez pris une récupération. Action lente."
+    }
+  ]
+}

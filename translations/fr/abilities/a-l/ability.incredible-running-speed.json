@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.incredible-running-speed",
+  "sourceLogicalId": "ability.incredible-running-speed",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "65d52a29345c40b0d23dc24ca0f35da728bdeb9bd53ff156c04e3cae497c53c5",
+      "text": "Vitesse de course incroyable"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "30c45f0c60a528755a23e40126f6d40d14667a339cfedef6c5f9db87ab2dfcff",
+      "text": "Vous vous déplacez beaucoup plus loin que la normale en un round. Lorsque vous utilisez Pied véloce, toutes les distances que vous parcourez sont doublées. Si vous courez sur une distance longue en y consacrant toute votre action, toutes vos tâches sont entravées d’un pas jusqu’à la fin de votre prochain tour (au lieu de deux pas). En tant qu’action lente, vous pouvez courir jusqu’à 500 pieds (150 m), mais toutes vos tâches sont entravées de deux pas jusqu’à la fin de votre prochain tour. Aptitude passive."
+    }
+  ]
+}

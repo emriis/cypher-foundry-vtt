@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.take-one-for-the-team",
+  "sourceLogicalId": "cypher.take-one-for-the-team",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "85f6c66b31ccc40e2405002a22d03dc40a7ec5f34d879e48573533c72077b36f",
+      "text": "Encaisser pour l’équipe"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d531ef06ee3073604c8260bb23f371edc6f123ec56d3f5ed8d8e3de4545e37a7",
+      "text": "<p><strong>Effet :</strong> Lorsque vous encaissez l’attaque d’un adversaire de niveau 4 ou moins, cette attaque n’inflige aucun dégât et vous ne subissez pas non plus la blessure mineure supplémentaire que vous subiriez normalement.</p><p><strong>Explication :</strong> L’adversaire était trop surpris par votre manœuvre pour porter un coup efficace. Votre mouvement d’interception a partiellement dévié l’attaque. Le karma vous a immédiatement récompensé.</p>"
+    }
+  ]
+}

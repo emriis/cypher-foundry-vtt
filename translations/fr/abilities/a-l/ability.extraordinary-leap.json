@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.extraordinary-leap",
+  "sourceLogicalId": "ability.extraordinary-leap",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "13b46f0d160c16e049f2eef23b0669b5b360fca2baa3a14a4be9da110dc9bb91",
+      "text": "Bond extraordinaire"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "f5e3861066b23a769966ec7ef1cf631ce30a897e0ab96853add1fa4a8a73a39c",
+      "text": "<p>Lorsque vous vous déplacez, au lieu de marcher ou de courir, vous pouvez sauter vers le haut, vers le bas ou en travers jusqu’à n’importe quel endroit à portée longue, si le trajet est dégagé et sans obstacle. Vous pouvez par exemple sauter au sommet d’un immeuble de dix étages, ou de son sommet jusqu’au sol. Si vous ne faites que sauter pendant trois actions consécutives, chaque bond vous porte plus loin jusqu’à ce que vous parcouriez une distance très longue par round, vous déplaçant effectivement à environ 55 miles par heure (88 kph) pendant une dizaine de minutes maximum.</p>"
+    }
+  ]
+}

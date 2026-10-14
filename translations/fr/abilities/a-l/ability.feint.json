@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.feint",
+  "sourceLogicalId": "ability.feint",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "82a1660a47a16b62387019e11169ab6c4b5ad0682fc9a6aaefb1a0fe0f459b3a",
+      "text": "Feinte"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "14a7b8355e6d2fba23412d9aca6ceb54cf5f455c310faa655ee205af1182e93e",
+      "text": "Si vous utilisez une action pour créer une diversion ou induire votre adversaire en erreur, vous pouvez profiter de ses défenses relâchées au round suivant. Effectuez un jet d’attaque de mêlée contre cet adversaire. Vous bénéficiez d’un atout pour cette attaque. Si l’attaque réussit, elle inflige 4 dégâts supplémentaires. Action."
+    }
+  ]
+}

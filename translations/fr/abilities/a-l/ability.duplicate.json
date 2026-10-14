@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.duplicate",
+  "sourceLogicalId": "ability.duplicate",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "02cdaabfca805d6ab75d81043998bdc733451b9ea48958ebf8098022d102ba2e",
+      "text": "Double"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "e1e35a572e44caf55b513235eb8efab584b0434fb5f1761752fd5e348a71d8d8",
+      "text": "<p>Vous faites apparaître une copie temporaire de vous-même en n’importe quel point visible à portée courte. Elle demeure jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. La copie est un compagnon de niveau 2 qui apparaît avec des copies de vos vêtements et de votre équipement, sauf les cyphers et les artefacts, et possède tous vos souvenirs. Elle obéit à vos ordres et agit selon vos instructions. Elle se dissipe plus tôt si vous la renvoyez par une action supplémentaire pendant votre tour, si vous utilisez de nouveau cette aptitude ou si elle est tuée. Lorsque la copie disparaît, les vêtements et l’équipement avec lesquels elle est apparue disparaissent aussi ; tout nouvel équipement qu’elle a acquis reste sur place. Chaque fois qu’une copie est tuée, vous subissez une blessure modérée. Normalement, vous ne pouvez avoir qu’une copie à la fois ; en créer une deuxième fait disparaître la première. Effort : créez un double supplémentaire de vous-même, actif simultanément avec le double normal de cette aptitude ; chaque double peut être renvoyé séparément par une action supplémentaire pendant votre tour. Augmentez le niveau de l’un de vos doubles de 1. Une action pour commencer.</p>"
+    }
+  ]
+}

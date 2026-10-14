@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.expert-sneak",
+  "sourceLogicalId": "ability.expert-sneak",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "029e3ebc8ad46c6281d2d56c91cfdc32fca86a4816bb06bbf124b3db2bae9cc3",
+      "text": "Expert en discrétion"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "0bd48ce0342e577b0d8d0d639c14ec77a8cbc4b96d9876bff586ccfc58018231",
+      "text": "Vous êtes entraîné en discrétion. Au rang 6 : vous pouvez devenir expert en discrétion si vous êtes déjà spécialisé, mais vous devez acquérir la compétence normalement, par exemple par un avancement de personnage."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.discerning-mind",
+  "sourceLogicalId": "ability.discerning-mind",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "ec9818df98b2c5f0483136d311d9999645291c02881d5472727e6992e4e8d052",
+      "text": "Esprit discernant"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "1db8fb18456b2c4a2953cd761c409efa90a56c56b7e562b1fcc55745623798c0",
+      "text": "<p>Votre esprit résiste aux blessures d’une attaque mentale, d’un traumatisme psychique ou d’un effet similaire, en réduisant sa gravité d’un degré : majeure devient modérée, modérée devient mineure, et mineure devient aucune blessure. Aptitude passive.</p>"
+    }
+  ]
+}

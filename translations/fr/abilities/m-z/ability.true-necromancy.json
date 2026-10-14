@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.true-necromancy",
+  "sourceLogicalId": "ability.true-necromancy",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "3c12f5c5d3f34389515ae362ffeeb88501753062ef517e10aed4cb4c1ebd20f7",
+      "text": "Nécromancie véritable"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "db90405f17a7560784f11656694b48ea9119610be844d88adbdee72406c4a2b4",
+      "text": "Vous animez le corps d’une créature morte à courte portée, ne dépassant pas deux fois votre taille, et créez un suivant mort-vivant de niveau 5. Il ne possède aucune de l’intelligence, des souvenirs ou des aptitudes spéciales qu’il avait de son vivant. Il suit vos ordres verbaux jusqu’à ce que vous utilisiez une récupération d’une heure ou plus, puis redevient un cadavre inerte. Vous pouvez l’animer de nouveau lorsqu’il devient inerte ou s’il est « tué » par des dégâts, mais devrez peut-être consacrer du temps à recoudre les parties détachées ou mal fixées avec une aiguille et du fil. Chaque créature animée au-delà de la première coûte 3 points d’Intellect supplémentaires, soit 11 points pour deux corps, 14 pour trois, etc. Action pour animer."
+    }
+  ]
+}

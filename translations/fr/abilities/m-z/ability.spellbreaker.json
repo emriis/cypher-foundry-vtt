@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.spellbreaker",
+  "sourceLogicalId": "ability.spellbreaker",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "addfa03e4d9972d541e51955c4627da04dbcff176e2ee69e349927c28f240b2b",
+      "text": "Briser les sorts"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "b9d31669e43f043d925f31ea34608f056e205d1ea74b820a82473d69e4648655",
+      "text": "<p>Vous mettez immédiatement fin à un effet magique en cours à portée immédiate, comme un effet créé par une aptitude de personnage, un cypher ou un appareil magique, si vous réussissez une attaque d’Intellect contre lui. Si vous ciblez un cypher ou un appareil magique et réussissez votre attaque, il cesse de fonctionner jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Effort : utilisez cette aptitude comme une aptitude passive, ce qui permet de réagir à une attaque hors de votre tour. Action, ou aptitude passive pour un usage défensif.</p>"
+    }
+  ]
+}

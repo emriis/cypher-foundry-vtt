@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.shrapnel-bomb",
+  "sourceLogicalId": "cypher.manifest.shrapnel-bomb",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "aba8ef56b34a5501f631af33300682cb72b463b2f98594f3539beadbd4eeef94",
+      "text": "Bombe à fragmentation"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "fcc65ed46e7b154408be01a149953c2dc41dbf7bf56269d71d1b03baca9bf5a0",
+      "text": "<p><strong>Effet :</strong> Crée une explosion d’éclats tranchants d’un rayon immédiat jusqu’à une distance courte. Effectuez des attaques de Célérité distinctes contre chaque créature dans la zone. En cas de réussite, elle subit 4 dégâts ; en cas d’échec, elle subit tout de même 2 dégâts.</p><p><strong>Objets du genre : dague explosive (fantasy) ; grenade à fragmentation (science-fiction)</strong></p>"
+    }
+  ]
+}

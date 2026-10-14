@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.hurl-flame",
+  "sourceLogicalId": "ability.hurl-flame",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "6d63e75f8ad940729ea83a716f98735f58915438af1990b1ef1c9a837174ccda",
+      "text": "Projeter une flamme"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "91475d0422429d560de7815869e4ee9171f682cc23178bbbb2070e68dd118f39",
+      "text": "Tant que votre Voile de flammes est actif, vous pouvez puiser dans votre halo et lancer une poignée de feu sur une cible à portée courte, lui infligeant 4 dégâts de feu si vous réussissez une attaque d’Intellect. Action."
+    }
+  ]
+}

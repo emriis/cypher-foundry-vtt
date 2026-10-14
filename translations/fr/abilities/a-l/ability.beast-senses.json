@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.beast-senses",
+  "sourceLogicalId": "ability.beast-senses",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "72c1a80d47641e0cdbaaa6e326f66befe51ffe21d2169fec557d14d931b23f28",
+      "text": "Sens bestiaux"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "4fa8b2e38ee55e2e24bb6217ab13fbc469f86f2033cf4a67ee5907639c9bed45",
+      "text": "Vos sens sont aiguisés ; vous bénéficiez d’un atout aux tâches de perception et d’initiative. Sous forme bestiale, vous bénéficiez de deux atouts et, même si vous n’avez pas conscience d’une attaque imminente, l’attaquant ne bénéficie d’aucun avantage contre vous, par exemple lié à la surprise."
+    }
+  ]
+}

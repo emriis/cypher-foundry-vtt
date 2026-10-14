@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.mount",
+  "sourceLogicalId": "ability.mount",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "d5605821c44ba5cb4cae8b0a284383cd55c01966ceca6cf8aa836c622e338767",
+      "text": "Monture"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "930f8b02a2050268b4ee84880bd6fe7e22f17c92cf6838909b304c62aefda3bc",
+      "text": "Vous obtenez un suivant qui est une bête de niveau 3 et vous sert de monture. Votre MJ et vous devez définir son apparence et sa personnalité. Son déplacement dépend de son type de créature, oiseau, animal nageur, etc. Au lieu d’acquérir une nouvelle monture, votre compagnon animal peut devenir votre monture, ce qui peut impliquer une poussée de croissance, et passer au niveau 3 ; vous obtenez alors un autre compagnon animal de niveau 2. Lorsque vous chevauchez votre monture, elle peut se déplacer pendant votre tour et vous pouvez effectuer une attaque, pour laquelle vous obtenez un atout. Il s’agit d’une exception spéciale à la façon dont les suivants peuvent normalement aider votre attaque. Toute aptitude de focus affectant votre compagnon animal, comme Yeux de la bête (Beast Eyes) ou Compagnon amélioré (Improved Companion), peut affecter votre monture à la place, au choix. Si votre monture meurt, vous pouvez utiliser vos ressources et passer environ une semaine à chasser en milieu sauvage pour en trouver et en entraîner une nouvelle."
+    }
+  ]
+}

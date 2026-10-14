@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.hitting-harder",
+  "sourceLogicalId": "ability.hitting-harder",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "18dea7e31b16fa1d85fe24071656ef407195bd57bcc4199b998233f2152f7283",
+      "text": "Frapper plus fort"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "64e8d91b6388331e607dcab2427338bff6c3e87647304c4787d8b044b44f0b65",
+      "text": "Vous infligez 1 dégât supplémentaire avec vos attaques à mains nues."
+    }
+  ]
+}

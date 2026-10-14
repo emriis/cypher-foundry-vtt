@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.major-illusion",
+  "sourceLogicalId": "ability.major-illusion",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "9208323ea8f0846aaef24f34525f1506f39038d4faa005e6ab700811d53f3c2c",
+      "text": "Illusion majeure"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "41ee7f349cb40bf3c3be9642a9e311c5727dbd53535c52b4da624b51cc0ed96e",
+      "text": "Vous créez une scène complexe d’images à portée immédiate. L’ensemble de la scène doit tenir dans une zone longue. Les images peuvent se déplacer, mais ne peuvent pas quitter cette zone. L’illusion comprend des sons et des odeurs. Elle dure jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus et change selon vos instructions, sans nécessiter de concentration. Si vous vous éloignez au-delà de la portée immédiate du bord de l’illusion, celle-ci disparaît. À la place d’une illusion réaliste, vous pouvez créer des images illusoires déroutantes autour d’une créature à courte portée, entravant ses attaques et ses défenses jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus, sans jet d’attaque pour l’affecter. Vous n’avez pas à utiliser votre action à chaque round pour maintenir cet effet. Effort : affectez une créature supplémentaire avec les images déroutantes. Action pour créer l’illusion."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.inferno-trail",
+  "sourceLogicalId": "ability.inferno-trail",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "0601f413c6ac09668073cb783dc17c4596101c9b840922ffc9ca9d08f7d0c5eb",
+      "text": "Traînée infernale"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "a0757d2a7b9c5e1515c76a7f6769f5173247d4a7a8211c7b6c2f772111899185",
+      "text": "Votre Voile de flammes laisse une traînée de feu dans votre sillage. La traînée suit votre trajet, créant un mur de flammes d’environ 6 pieds (2 m) de haut qui inflige 5 dégâts à toute créature qui le traverse. Si les cibles sont inflammables, elles prennent aussi feu et subissent 1 dégât supplémentaire chaque round jusqu’à ce qu’elles consacrent un round à éteindre les flammes. Vous pouvez supprimer la traînée de feu quand vous le souhaitez en tant qu’action supplémentaire pendant votre tour (et la rétablir de la même manière), ou mettre fin prématurément à l’effet dans son ensemble. Sinon, l’effet prend fin après que vous avez pris une récupération de dix minutes ou plus. Action."
+    }
+  ]
+}

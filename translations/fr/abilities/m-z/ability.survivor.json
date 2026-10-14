@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.survivor",
+  "sourceLogicalId": "ability.survivor",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "51b40c9947e4735a4b2e949c262bddab5549473f92b7cbebfce78c1f8acd76b6",
+      "text": "Survivant"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "594c06b08850fa0077f89a2ede10869f82b111da29f8ea3bc4e0c34490b35663",
+      "text": "Si vous avez une blessure mineure ou modérée, vous pouvez vous reprendre sans dépenser de point de Puissance. Cette aptitude se renouvelle chaque fois que vous prenez une récupération. Aptitude passive."
+    }
+  ]
+}

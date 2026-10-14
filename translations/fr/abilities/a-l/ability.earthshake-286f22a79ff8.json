@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.earthshake-286f22a79ff8",
+  "sourceLogicalId": "ability.earthshake-286f22a79ff8",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "41810e55a6156d2d61db9f5767935544ab8bbc05975b288f5fbc979699182a83",
+      "text": "Séisme"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "e7b554fa19fca769c2eb270f9f759a084e66ffb86b82324765d0721143afb925",
+      "text": "Vous déclenchez un violent mouvement du sol dans une zone courte à portée très longue. Les bâtiments et les éléments de terrain sont endommagés, leur niveau étant réduit de 1 à 3, et perdent des débris et des gravats. Toutes les créatures dans la zone subissent 7 dégâts dus aux secousses, ou 13 dégâts si elles sont dans un bâtiment ou un élément de terrain affecté, ou à côté, sans jet. Action lente."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.rend-metal",
+  "sourceLogicalId": "ability.rend-metal",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "927124e67c5e21119faa4509c0d8aef11c62122f23893aad564c5ed1c9cc0be5",
+      "text": "Déchirer le métal"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "f6b027fdae9fc85d1843d529fa328ebb8f2d8d31c16b18bf7bc55d59405aab8a",
+      "text": "Vous déchirez, éventrez ou faites éclater instantanément un objet métallique de niveau 3 ou moins à courte portée. Vous devez pouvoir le voir et il ne doit pas dépasser la moitié de votre taille ; s’il fait partie d’un objet plus grand, comme un mur, la portion affectée ne doit pas dépasser la moitié de votre taille. L’objet affecté est détruit ; vous pouvez aussi lui faire projeter des éclats infligeant 1 dégât par niveau à toutes les créatures à portée immédiate, avec des jets d’attaque d’Intellect distincts. Affecter l’équipement d’une créature non consentante nécessite un jet d’attaque d’Intellect, facilité de deux pas. Effort : augmentez de 1 le niveau maximal de l’objet métallique que vous pouvez affecter. Action."
+    }
+  ]
+}

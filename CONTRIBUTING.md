@@ -59,9 +59,15 @@ includes a reading path, glossary, examples, and a review checklist.
 
 ### Localization
 
-User-facing strings belong in the localization files.
+Author UI text in matching domain files under `lang/src/en/` and `lang/src/fr/`.
+Run `npm run build:lang` to assemble the native Foundry bundles `lang/en.json`
+and `lang/fr.json`, then `npm run check:lang`. Do not edit the bundles directly.
 
 Do not add new hardcoded UI text when a localized string is appropriate.
+
+Follow [the localization guide](docs/localization.md) for the glossary,
+interpolation contracts, complete French compendium proposals, and source
+freshness checks. Translation text never determines a document identity or a rule.
 
 ## Rebuilding compendium packs
 
@@ -82,8 +88,10 @@ its wording, but must not introduce or override content or mechanics.
 2. preserve stable logical IDs;
 3. preserve CRD provenance;
 4. keep English/French mechanical data aligned;
-5. use the Character Book localization only when it faithfully matches the CRD;
-6. otherwise retain the English source text rather than inventing a translation.
+5. write complete French proposals against the canonical English field under
+   `translations/fr/`, preserving every condition, number, unit and exception;
+6. use an existing translation only after checking it against the supplied CRD,
+   and keep unresolved wording explicitly proposed rather than guessing rules.
 
 Run:
 

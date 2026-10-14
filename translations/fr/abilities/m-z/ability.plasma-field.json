@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.plasma-field",
+  "sourceLogicalId": "ability.plasma-field",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "312260f439518369319569fe85fe05c11339640b79cca42e55246a27c807a032",
+      "text": "Champ de plasma"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "2cf6b4a63954e6b0dda4f4f415d6d90f5441cc1049d541c869e2358162edb751",
+      "text": "Une portion choisie de votre voile de feu atteint une température assez élevée pour incinérer les attaques à distance entrantes, comme les flèches, les balles ou un couteau métallique lancé, les réduisant instantanément en cendres. Vous êtes immunisé contre ces attaques pendant un round. Vous devez avoir conscience d’une attaque pour l’incinérer. Aptitude passive."
+    }
+  ]
+}

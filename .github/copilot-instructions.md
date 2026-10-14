@@ -24,8 +24,11 @@
   must faithfully render the CRD; other books cannot supply different content
   or mechanics. Never guess an unresolved match or modify names, IDs, or rules
   to force one. Follow `docs/crd-source-schema.md` for this source contract.
-- Keep player-facing strings localized in both `lang/en.json` and
-  `lang/fr.json`; validate JSON and avoid duplicate keys.
+- Author player-facing strings in matching `lang/src/en/` and `lang/src/fr/`
+  domain files. Compile `lang/en.json` and `lang/fr.json` with `build:lang`;
+  `check:lang` rejects collisions, missing keys, stale bundles and changed
+  variables. Follow `docs/localization.md` for terminology and source-guarded
+  French compendium proposals. Translated display names never determine IDs.
 - Treat `packs/*/_source/` as editable sources and generated LevelDB packs as
   build outputs. Edit paired English and French source records directly, then
   use the documented validation and packaging workflows.

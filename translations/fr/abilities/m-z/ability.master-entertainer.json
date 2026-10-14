@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.master-entertainer",
+  "sourceLogicalId": "ability.master-entertainer",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "2be2491c0ed8e14b6a437e79c9a2c84142e1e0a5b87fb1f03696bc7a227bc3b0",
+      "text": "Maîtrise des arts"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "1d10f8f359e4dc51f71fcbabc52f0f3412b5c99af883bf8bb9273c2f786715db",
+      "text": "Vos alliés affectés par Facilitation inspirante (Inspiring Ease) peuvent faciliter une deuxième tâche chaque jour, ou faciliter une tâche de deux pas au lieu d’un seul."
+    }
+  ]
+}

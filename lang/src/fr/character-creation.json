@@ -1,0 +1,78 @@
+{
+  "CYPHER": {
+    "CharacterLine": {
+      "Prefix": "Je suis un(e)",
+      "Middle": "qui",
+      "Who": "et qui",
+      "And": "et",
+      "AddSecondDescriptor": "Ajouter un second descripteur",
+      "RemoveSecondDescriptor": "Retirer le second descripteur",
+      "AddSecondFocus": "Ajouter un second focus",
+      "RemoveSecondFocus": "Retirer le second focus"
+    },
+    "Descriptor2": "Second descripteur",
+    "Focus": "Focus",
+    "Focus2": "Second focus",
+    "FocusSelection": {
+      "AlreadyApplied": "Un Focus a déjà été appliqué à ce personnage.",
+      "ApplyTitle": "Appliquer le Focus : {name}",
+      "ApplyPrompt": "Appliquez {name} et choisissez ses deux aptitudes initiales de rang 1.",
+      "ChooseTwo": "Choisissez deux aptitudes de rang 1.",
+      "ChooseExactlyTwo": "Choisissez exactement deux aptitudes de focus de rang 1.",
+      "ChooseAbility": "Choisir une aptitude de Focus",
+      "ChooseAbilityTitle": "Choisir une aptitude de Focus",
+      "ChooseAbilityPrompt": "Choisissez l’aptitude de focus obtenue au rang {tier}.",
+      "ChooseWeaponCategoryTitle": "Choisir une catégorie d’arme",
+      "ChooseWeaponCategory": "Type d’arme à maîtriser",
+      "ArmorItemDescription": "Cette armure est utilisable librement uniquement lorsque l’aptitude de Focus correspondante est active."
+    },
+    "Profession": "Profession",
+    "Species": "Espèce",
+    "SpeciesPlaceholder": "ex. Humain, Elfe, Cyborg… (optionnel)",
+    "Genre": {
+      "Label": "Genre de jeu",
+      "none": "Non spécifié",
+      "realWorld": "Monde réel",
+      "fantasy": "Fantasy",
+      "sciFi": "Science-fiction",
+      "superhero": "Superhéros",
+      "custom": "Personnalisé (tous les champs)",
+      "RealWorldHint": "Monde réel : un descripteur et une profession suffisent, sans type ni focus. Par défaut, les personnages ont une inaptitude avec les armes moyennes et lourdes, sauf si une compétence liée à leur histoire compense cette inaptitude."
+    },
+    "Superhero": {
+      "Rank": "Degré de puissance du type (1–5)",
+      "PowerShifts": "Amplificateurs de puissance",
+      "Hint": "Chaque catégorie est limitée à trois amplificateurs de puissance. La plupart accordent des bonus permanents aux tâches concernées, hors limite d’Effort ; les catégories spéciales suivent leurs propres règles. Dans ce genre, les tâches peuvent atteindre la difficulté 15.",
+      "ChosenPool": "Réserve des Prouesses héroïques",
+      "ChoosePool": "Choisir la réserve améliorée par Prouesses héroïques"
+    },
+    "PowerShift": {
+      "accuracy": "Précision",
+      "dexterity": "Dextérité",
+      "flight": "Vol*",
+      "healing": "Guérison*",
+      "increasedRange": "Portée accrue*",
+      "intelligence": "Intelligence",
+      "power": "Pouvoir",
+      "prodigy": "Prodige*",
+      "resilience": "Résilience",
+      "savant": "Savant",
+      "singleAttack": "Attaque unique",
+      "strength": "Force"
+    },
+    "PowerShiftDescription": {
+      "accuracy": "Précision : tous les jets d’attaque.",
+      "dexterity": "Dextérité : esquive, jets de défense de Célérité, mouvement, acrobaties, gymnastique, initiative.",
+      "flight": "Vol* : permet de voler aussi vite qu’un humain ordinaire se déplace au sol ; la maniabilité est limitée ; permet de transporter une créature de votre taille ou plus petite.",
+      "healing": "Guérison* : une récupération supplémentaire d’une action chaque jour.",
+      "increasedRange": "Portée accrue* : augmente la portée d’une aptitude ; contact ou immédiate devient courte, courte devient longue, longue devient très longue.",
+      "intelligence": "Intelligence : défense d’Intellect ; toutes les compétences de connaissances, de science et de fabrication.",
+      "power": "Pouvoir : effets et dégâts de l’une des aptitudes de votre personnage, mais pas ses jets d’attaque.",
+      "prodigy": "Prodige* : échangez une de vos aptitudes de rang 1 contre une aptitude de focus de rang 2, ou deux aptitudes de rang 1 contre une aptitude de focus de rang 3. Cela permet de passer les aptitudes précédentes dans l’arbre de votre focus.",
+      "resilience": "Résilience : blocage, jets de défense de Puissance, tâches demandant de la robustesse et de l’endurance.",
+      "savant": "Savant : deux compétences précises, autres qu’une compétence d’attaque, une compétence de défense ou une aptitude de personnage nécessitant un jet d’attaque, comme l’histoire, la perception ou le charme. Vous pouvez affecter cet amplificateur à une aptitude qui fixe un résultat minimum à votre jet, comme Instinct incroyable (Incredible Instinct).",
+      "singleAttack": "Attaque unique : jets d’attaque et dégâts d’un type d’attaque précis, comme les pistolets, les coups de poing, les épées ou une aptitude spéciale d’attaque telle que des yeux laser ou une décharge psychique.",
+      "strength": "Force : athlétisme, jets de force hors combat, dégâts de mêlée, dégâts des armes de jet."
+    }
+  }
+}

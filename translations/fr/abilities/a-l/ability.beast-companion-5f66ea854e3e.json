@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.beast-companion-5f66ea854e3e",
+  "sourceLogicalId": "ability.beast-companion-5f66ea854e3e",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "f093c837df0bd8bf34e0d1576a30e3d1ec206b974cb72043174df86868eada7f",
+      "text": "Compagnon animal"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "b45c02e0db6f231f1e87dc8d85f5acd005418f5c45ad27607287599b1e454764",
+      "text": "Vous gagnez un compagnon qui est une bête de niveau 2, de votre taille ou plus petite, qui vous accompagne et suit vos instructions. Vous et le MJ devez préciser l’apparence et la personnalité de votre bête. Son déplacement dépend de son type de créature : oiseau, nageur, etc. Si votre compagnon animal meurt, vous pouvez utiliser vos ressources pour rechercher pendant quelques jours, dans la nature, un nouvel animal à trouver et à apprivoiser."
+    }
+  ]
+}

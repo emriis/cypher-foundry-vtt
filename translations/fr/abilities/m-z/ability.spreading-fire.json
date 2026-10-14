@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.spreading-fire",
+  "sourceLogicalId": "ability.spreading-fire",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "4e9c2c1520ab86bc7f6be5079aefb3ddc7ffe48b4a0f51aec8c69a357f797ca6",
+      "text": "Propagation du feu"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "3452608181eefd2d5f0f61767d1b0fe9183a7d5feadb9a51fe4501173258b2c7",
+      "text": "Une fois par tour, si vous abattez un adversaire avec une attaque infligeant des dégâts de feu, vous pouvez immédiatement effectuer une autre attaque de feu ce même tour contre un nouvel adversaire à courte portée, en tant qu’action supplémentaire pendant votre tour. Aptitude passive."
+    }
+  ]
+}

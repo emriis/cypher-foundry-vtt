@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.sniper",
+  "sourceLogicalId": "ability.sniper",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "3d46249e7981482f0ae8d3a7eb770a5e27e5c863d1a4f8aa9e4e3e5e4808b4e2",
+      "text": "Tireur d’élite"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "f6e4a48da6f8d6d09b4c2fba77a851ada18c4da3a8c1cb916c3e70997c37eca6",
+      "text": "Vous êtes efficace à une portée beaucoup plus grande que la normale. Doublez la portée de toute arme à feu dans vos mains. Si vous tirez à très longue portée ou davantage, vous infligez 1 dégât supplémentaire."
+    }
+  ]
+}

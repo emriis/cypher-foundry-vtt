@@ -1,0 +1,43 @@
+{
+  "logicalId": "descriptor.species.drakain",
+  "sourceLogicalId": "descriptor.species.drakain",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "ed223ba1906d1d9886702105df537bbcd4079208c710f7e62da1c9868e6c7961",
+      "text": "Drakain"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "b426fc23154c2e99c7d69dbfb6fa268d1223c435201e92a4020e17dc1825e119",
+      "text": "<p>Votre peau est parcourue de lignes osseuses et vous mesurez probablement au moins 6 pieds (2 m). Certains comparent les drakains aux humains, mais seuls les imprudents le font à voix haute. Vous et les autres drakains accordez une grande valeur au combat et à l’honneur, considérant la mort au combat comme l’une des fins les plus glorieuses. Votre peuple guerrier est fier, et les drakains ont jadis transformé leurs prouesses en de grands empires. Vous chérissez votre héritage, sans que cela vous empêche de vous lier d’amitié avec des êtres d’autres espèces et d’explorer les occasions qui se présentent à vous.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>Vous pouvez subir une blessure mineure de plus que la normale.</p>\n<p>Vous êtes entraîné en intimidation, sauf contre les autres drakains.</p>\n<p>Vous infligez +1 dégât avec les armes à lame, ou leurs équivalents de haute technologie.</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "5459202ae7f07cdbe5d60d80c0a243911ca4f3722eb88f7c5a23786f8d75f3a5",
+      "text": "Intimidation"
+    },
+    {
+      "path": "system.benefits.0.name",
+      "sourceHash": "dbc0f9f5b4da9b5998c50dcad5e64ad38a67afa7a6049ca83879ea6d900b05dd",
+      "text": "Blessure mineure supplémentaire"
+    },
+    {
+      "path": "system.benefits.0.description",
+      "sourceHash": "9cbceb88cfa40c91ebe89fd624a0b7f8aec5d839e4f412beb42e3cffb630702d",
+      "text": "<p>Vous pouvez subir une blessure mineure de plus que la normale.</p>"
+    },
+    {
+      "path": "system.benefits.1.name",
+      "sourceHash": "d441f25010d400942f85a9d59846744f5f651fc1e60cb1c4cc4114ac3f16d9db",
+      "text": "Dégâts des armes à lame"
+    },
+    {
+      "path": "system.benefits.1.description",
+      "sourceHash": "f035dc98fa9bf7e39292f611d1dd726ce7168b7ab85cf4b494939ee2b04216f4",
+      "text": "<p>Vous infligez +1 dégât avec les armes à lame, ou leurs équivalents de haute technologie.</p>"
+    }
+  ]
+}

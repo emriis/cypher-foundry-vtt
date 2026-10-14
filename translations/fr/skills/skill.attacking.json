@@ -1,0 +1,18 @@
+{
+  "logicalId": "skill.attacking",
+  "sourceLogicalId": "skill.attacking",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "bc066998a5164698887f133188e646aa3c75f2e914bd410e97038bea4d496c97",
+      "text": "Attaque"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "ac734cd77768266880d65d0aeb8b1b0ff3b4fd86326c2ae48d20ed13f844f607",
+      "text": "<p>Choisissez un type d’action d’attaque pour chaque entraînement que vous obtenez dans cette compétence : arme contondante légère, arme à lame légère, arme à distance légère, arme contondante moyenne, arme à lame moyenne, arme à distance moyenne, arme contondante lourde, arme à lame lourde, arme à distance lourde, ou vos attaques à mains nues. Vous pouvez aussi devenir plus efficace pour attaquer avec l’une de vos aptitudes spéciales, comme Décharge (Blast) ou Assaut (Onslaught), ou avec un type d’arme que vous pouvez utiliser librement, comme les épées ou les fusils.</p>"
+    }
+  ]
+}

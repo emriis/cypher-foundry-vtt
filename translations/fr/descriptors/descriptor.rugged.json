@@ -1,0 +1,28 @@
+{
+  "logicalId": "descriptor.rugged",
+  "sourceLogicalId": "descriptor.rugged",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "b3de55bdd4b9c1e31212544fb7514e4736a12370fd11339c12fae920a37a0ba2",
+      "text": "Rustique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "6dc2f2de1980673e4d108bc97b58fc0e8d122bf9dfa5a6a5e4fa80679b87ad73",
+      "text": "<p>Vous aimez la nature et avez l’habitude de vivre à la dure, en opposant votre ingéniosité aux éléments. Vous êtes probablement habile à la chasse, à la cueillette ou à l’étude de la nature. Des années passées dans les terres sauvages ont laissé leur marque : un visage buriné, une chevelure indomptée ou des cicatrices. Vos vêtements sont sans doute bien moins raffinés que ceux des citadins.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>+2 à votre Réserve de Puissance</p>\n<p>Vous êtes entraîné pour l’une des compétences suivantes : Soins aux animaux ou Survie en milieu sauvage</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "02a6bb06e9c9a77b99b76359802ddd2788333f629e14b1de549447daf9bd36f0",
+      "text": "Soins aux animaux"
+    },
+    {
+      "path": "system.skillOptions.1",
+      "sourceHash": "f02059c08548dd2b926fc7dd2b32f0ab8f2fc4bcfeac00edfadf7e27b01e1543",
+      "text": "Survie en milieu sauvage"
+    }
+  ]
+}

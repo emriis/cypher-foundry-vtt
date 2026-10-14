@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.attention-to-detail",
+  "sourceLogicalId": "ability.attention-to-detail",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "64342bbf46181089efc4516a1471a71f2ed4e142a31f9cd4f4ca4fcf282cbc92",
+      "text": "Souci du détail"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "a24937f693b2a1acfca5d6c24903a59c29514ef34feb67e73998dd3f778c5b32",
+      "text": "Votre tâche de ce round, autre qu’une attaque, bénéficie d’un atout si vous la tentez par une action lente plutôt que par une action ou une action réflexe. Aptitude passive."
+    }
+  ]
+}

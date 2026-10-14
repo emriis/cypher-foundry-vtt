@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.power-prowess",
+  "sourceLogicalId": "ability.power-prowess",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "0f5cecccf31b882d88503729ff7fd0fdb17ea69f63be90c6d3ebaca48b7229f1",
+      "text": "Maîtrise des pouvoirs"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "da33da2a5fc34fe59e30b78841501a36adeefe7cfa4298fab11572350ccafe00",
+      "text": "Vous infligez +1 dégât avec toute attaque impliquant vos pouvoirs."
+    }
+  ]
+}

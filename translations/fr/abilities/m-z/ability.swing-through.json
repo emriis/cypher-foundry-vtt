@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.swing-through",
+  "sourceLogicalId": "ability.swing-through",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "4c75c7293c0e6489235e63c6ab4fe42cc17e920b7984467b1183ee99c6546285",
+      "text": "Frappe traversante"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "b42a10d0acbe05a670c771af4ec50b8478063ec7c232460dbe104810bbe87a40",
+      "text": "<p>Vous attaquez à l’épée d’une manière qui présente un risque accru d’erreur, mais accorde un bénéfice supplémentaire. La plage de résultats déclenchant une intrusion du MJ augmente de 2 pour cette attaque (passant de 1 sur un d20 à 1–3 sur un d20), mais si vous touchez, vous pouvez choisir l’un des effets supplémentaires suivants :</p>\n<p>Mange de l’acier : l’adversaire subit +2 dégâts.</p>\n<p>Frapper et se déplacer : vous déplacez votre adversaire ou vous-même sur une distance immédiate, ce qui facilite votre attaque à votre prochain tour (contre cet adversaire ou un autre).</p>\n<p>Action.</p>"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.poison-bite",
+  "sourceLogicalId": "ability.poison-bite",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "9efafee605f751dfe02a0873999a945f5c38e040c76a6850f9cd1c6f338fc669",
+      "text": "Morsure venimeuse"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "3056ca76075b0216e48ff48fd59cd1ca13ff69ed51631feafafe60ebd5861ad1",
+      "text": "Vous faites pousser des crocs et avancez votre mâchoire supérieure ou inférieure, ce qui vous permet d’effectuer des morsures venimeuses comme attaques légères à mains nues (attaque facilitée, 2 dégâts) jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Si votre morsure touche, la cible subit 5 dégâts supplémentaires de poison (qui ignorent l’armure) et ses tâches sont entravées pendant un round. Action sous votre forme normale ; aptitude passive lorsque vous utilisez Forme bestiale."
+    }
+  ]
+}

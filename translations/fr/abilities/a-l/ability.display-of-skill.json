@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.display-of-skill",
+  "sourceLogicalId": "ability.display-of-skill",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "8017a263018e91b0a7971a5ff5b18fd1365707ea160f5d623f8a7ad8d4e05f65",
+      "text": "Démonstration de maîtrise"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "7014b996c771d2dea62b96a526fcf19d534f315fb71d72df9f8dc436909a593f",
+      "text": "Vous voir manier votre arme au combat, ou effectuer des mouvements spectaculaires hors combat, inspire à un allié une confiance équivalant à un niveau d’Effort gratuit qu’il peut utiliser pour une action de son choix avant sa prochaine récupération de dix minutes ou plus, ou avant la vôtre. À l’inverse, cette démonstration peut intimider un adversaire et vous donner un niveau d’Effort gratuit pour une tâche d’intimidation ultérieure. Aptitude passive ; une action hors combat."
+    }
+  ]
+}

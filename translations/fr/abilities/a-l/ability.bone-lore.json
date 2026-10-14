@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.bone-lore",
+  "sourceLogicalId": "ability.bone-lore",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "369dea41d19222a608d5f94f0d0d7512909abed47a4b3cc7643745b22d32566f",
+      "text": "Savoir des os"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "ff735eb62759981582534c425d52dab8eb574d4b5a6a157fa64d4cf5465685b9",
+      "text": "Par un contact, vous déterminez la cause de la mort d’un cadavre, le temps écoulé depuis sa mort et son espèce de son vivant. Action lente."
+    }
+  ]
+}

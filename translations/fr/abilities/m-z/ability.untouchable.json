@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.untouchable",
+  "sourceLogicalId": "ability.untouchable",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "fc035c587b70ecc7563533769ab106e7e113d44073016597b891d2c385a07afa",
+      "text": "Intouchable"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "8925d830bf50dc9d9626d1be6fe7a44b9d9f910be243eb368dff932a4e9782a9",
+      "text": "Vous changez d’état de phase pour ne plus pouvoir affecter la matière ou l’énergie ordinaires, ni être affecté par elles. Seules les attaques mentales et des énergies, appareils ou aptitudes transdimensionnels particuliers peuvent vous affecter ; en contrepartie, vous ne pouvez ni attaquer physiquement, ni toucher, ni affecter autrement quoi que ce soit. Cela dure jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Action pour initier l’effet."
+    }
+  ]
+}

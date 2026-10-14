@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/magic/death/skull-humanoid-crown-white.webp",
   "system": {
-    "description": "<p>The dead answer your questions, and their reanimated corpses serve you.</p>",
+    "description": "<p>The dead answer your questions, and their reanimated corpses serve you.</p>\n<ul>\n<li>Genre themes: necromancer (fantasy), mad scientist (real world, superhero)</li>\n<li>GM intrusions: The character’s necromantic reputation precedes them. A corpse seeks revenge for being reanimated.</li>\n</ul>",
     "abilities": [
       "Compendium.cypher.abilities-en.Item.5069da728f6ff127",
       "Compendium.cypher.abilities-en.Item.b75cbdf61bee89d5",
@@ -139,6 +139,13 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references"
+        ]
+      }
     }
   }
 }

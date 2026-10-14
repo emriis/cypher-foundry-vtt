@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.automaton-cypher-upgrade",
+  "sourceLogicalId": "ability.automaton-cypher-upgrade",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "a7fe5cedbcf554f5aa5a7662383c793fad32bd1cf663813c133a1fc38182115a",
+      "text": "Amélioration d’automate : cyphers"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "8e4ee09a883884a696a0589f0bd9e57170fa5c4a206a53cdf345bc6974b4b192",
+      "text": "Vous avez intégré une nouvelle capacité à l’un de vos automates : pendant un jour, il augmente votre limite de cyphers d’un. Aptitude passive."
+    }
+  ]
+}

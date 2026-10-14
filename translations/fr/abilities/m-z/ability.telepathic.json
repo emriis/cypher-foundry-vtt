@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.telepathic",
+  "sourceLogicalId": "ability.telepathic",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "451f0f443e685558a23b0983708f77c5648ff419d192d37afc4b0bafcd34d078",
+      "text": "Télépathie"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "c29a23e7694702078486db339c5f94e30878d518eb7fa80d56b6cd5e655e2468",
+      "text": "Vous pouvez parler télépathiquement avec d’autres personnes à longue portée. La communication est bidirectionnelle, mais l’interlocuteur doit être consentant et capable de communiquer. Vous n’avez pas à voir la cible, mais devez savoir qu’elle est à portée. Vous pouvez maintenir plusieurs contacts simultanément, mais devez établir chacun individuellement. Chaque contact dure jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Effort : prolongez la durée jusqu’à votre prochaine récupération de dix heures. Action pour établir le contact."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.comprehension",
+  "sourceLogicalId": "cypher.manifest.comprehension",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "b941fa4adc33a7ff38121d43fa30c8822446f176c387467b0ed83a7046c70e46",
+      "text": "Compréhension"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d7178fcbdbec21dbf4756c940919ee51f83fa2232fe7dd251cc892b2e09461b9",
+      "text": "<p><strong>Effet :</strong> Après quelques minutes d’interaction avec une créature ou un appareil utilisant une langue que vous ne comprenez pas, vous apprenez cette langue et pouvez communiquer dans celle-ci. Cet apprentissage est permanent et ne compte pas dans votre limite de Cyphers.</p><p><strong>Objets du genre : parchemin de traduction (fantasy) ; implant traducteur (science-fiction). Certains Cyphers de compréhension imposent une langue prédéfinie plutôt que de vous laisser choisir une langue inconnue. Un Cypher de compréhension fonctionne même si vous n’utilisez normalement pas de langage, par exemple si vous êtes naturellement télépathe.</strong></p>"
+    }
+  ]
+}

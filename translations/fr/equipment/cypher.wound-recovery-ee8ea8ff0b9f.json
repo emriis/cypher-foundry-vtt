@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.wound-recovery",
+  "sourceLogicalId": "cypher.wound-recovery",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "81e24e375ec7cc18bbe30b00eadc1da81aa896f52c18e9dd0bc6206f7996e679",
+      "text": "Récupération de blessure"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "fa625ba951c3b62e453833b4e4450c9d675fe4d2b5b74878fdf9f073ca72e7a1",
+      "text": "<p><strong>Effet :</strong> Vous guérissez deux blessures mineures, guérissez une blessure modérée ou réduisez une blessure majeure en blessure modérée.</p><p><strong>Explication :</strong> Le coup n’était pas aussi grave qu’il en avait l’air. Vous pouvez tenir bon malgré cela. Votre adversaire a dû retenir son coup.</p>"
+    }
+  ]
+}

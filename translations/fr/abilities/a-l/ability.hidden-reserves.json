@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.hidden-reserves",
+  "sourceLogicalId": "ability.hidden-reserves",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "45bc863f872c6ad3e7a553ca61cc826d76446aefaf193910b74cfb2672fe8bd0",
+      "text": "Réserves cachées"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "26f991d92b645b2e2e823b28182dad12c4c0227ed30d6d74e48f1fb4d6bd4a2f",
+      "text": "Lorsque vous prenez une récupération d’une action, vous ajoutez +1 à votre Avantage de Puissance et à votre Avantage de Célérité jusqu’à ce que vous preniez une récupération de dix minutes ou plus. Aptitude passive."
+    }
+  ]
+}

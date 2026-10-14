@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.wall-of-bones",
+  "sourceLogicalId": "ability.wall-of-bones",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "c8098b36369a889f93026e1170beb45bdc366cd3913a51a45521933ecf5824e4",
+      "text": "Mur d’ossements"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "7b197c45aeb22ac388e117c33243256c66c1397fa0c296ff0b7d9b746a4262eb",
+      "text": "Vous créez une barrière d’ossements imprégnés de non-vie, composée de quatre carrés de 10 pieds sur 10 pieds (3,5 m sur 3,5 m), chacun épais de 1 pouce (2,5 cm), disposés comme vous le souhaitez. Le mur est un obstacle de niveau 5. Un côté ou les deux émettent une énergie nécrotique ; toute personne à distance immédiate d’un tel côté subit 5 dégâts, sans jet, ou le double si elle le traverse. Le mur dure jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Action pour créer le mur."
+    }
+  ]
+}

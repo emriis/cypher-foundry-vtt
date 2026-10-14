@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.machine-reading",
+  "sourceLogicalId": "ability.machine-reading",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "5de0b3df49aed8a92eb8eea601776ab7c4238c87508adf23c60e5db45cd5a3e0",
+      "text": "Lecture des machines"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "75477607b4147436baef54a787277c0d4f143e0a4d8692fd83aa24b822daec78",
+      "text": "Vous pouvez lire les « pensées » superficielles d’une machine à courte portée, même contre sa volonté. Vous devez pouvoir la voir. Une fois le contact établi, vous pouvez lire ses pensées jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Action pour initier l’effet."
+    }
+  ]
+}

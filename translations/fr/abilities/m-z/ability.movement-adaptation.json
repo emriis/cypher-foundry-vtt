@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.movement-adaptation",
+  "sourceLogicalId": "ability.movement-adaptation",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "719d09fde869186acc413d5c2b96ec2030df2a20853244b9c999f73c4be75543",
+      "text": "Adaptation du déplacement"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "2aad21ffc5c7ff748f6a1cd708c0c2ac7732cd0c8e4034084135fdb93664a0b8",
+      "text": "Vous pouvez modifier votre forme animale, soit en faisant pousser des ailes pour voler, soit en devenant aquatique avec des nageoires et des branchies. Par exemple, sous forme de gorille, vous pouvez devenir un gorille ailé ou un gorille aux caractéristiques de poisson. Si vous choisissez le vol, vous pouvez parcourir une longue distance en volant à chaque round. Si vous choisissez l’adaptation aquatique, vous pouvez respirer dans l’eau et nager à votre vitesse terrestre normale. Vous pouvez transporter une créature de votre taille ou plus petite, ou, sous l’effet de Forme animale agrandie (Bigger Animal Shape), trois créatures de votre taille habituelle ou plus petites. Si vous utilisez Forme animale (Animal Shape), vous bénéficiez de cette aptitude sans consacrer une action à son déclenchement. Action ; aptitude passive lors de l’utilisation de Forme animale."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.shrink",
+  "sourceLogicalId": "ability.shrink",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "33435b9713584d37a9f446dba53b65844bbaaa56ca2a581b010dc272074bb1ca",
+      "text": "Rétrécir"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "71e2f96408870b4db802cafc176deeb3b2fc6a61da81ae1c4dfda8ed412c6572",
+      "text": "<p>Votre taille diminue proportionnellement jusqu’à une hauteur de 1 pouce (3 cm), jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Vos vêtements et votre équipement changent de taille avec vous. Sous cette petite taille, vous ajoutez 7 points à votre réserve de Célérité et +2 à votre Avantage de Célérité. Vos tâches d’esquive et de discrétion sont facilitées de deux pas et votre vitesse de déplacement est réduite à un dixième de la normale ; vos attaques de mêlée infligent toujours leurs dégâts normaux, leur force étant concentrée dans une zone très petite. Chaque utilisation de Rétrécir (Shrink) augmente le coût en Puissance de 1. Le coût revient à 1 après une récupération. Action réflexe ; aptitude passive pour réutiliser l’effet afin de rester petit.</p>"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.frost-bolt",
+  "sourceLogicalId": "ability.frost-bolt",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "ffcec5057cba19354df742a71ec9edc499982df1c921d1efd538068b6a32b950",
+      "text": "Éclair de givre"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "9efd47e452dcdcd8d0c9354d498577e228f8a9b371f2c56644c835c7928ce820",
+      "text": "Vous émettez un rayon de froid intense vers un adversaire à portée courte. S’il touche, il inflige 4 dégâts de froid. Au lieu d’attaquer avec un rayon, vous pouvez intensifier le froid d’Armure de glace sur vos mains, ajoutant 2 dégâts à votre contact froid et aux dégâts de vos armes de mêlée et à distance. Cet aspect de l’aptitude dure jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Une action ; une action pour commencer le froid plus intense."
+    }
+  ]
+}

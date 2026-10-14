@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.fast-talk",
+  "sourceLogicalId": "ability.fast-talk",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "70e48906c1a5e557a6c6e58da889eb44f6a9bb39bc98b2e2a297a4338904efc4",
+      "text": "Baratin"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "5d73fa697544987f293dc7a14db8da0bc4cf890ba8c2b0bfed437d1922611a14",
+      "text": "<p>Lorsque vous parlez à une créature intelligente qui peut vous comprendre et n’est pas hostile, vous la convainquez d’effectuer une action raisonnable pendant le prochain round. Le MJ doit approuver ce qui est raisonnable : l’action ne doit pas mettre la créature ou ses alliés en danger évident, ni être radicalement contraire à son caractère. Action.</p>"
+    }
+  ]
+}

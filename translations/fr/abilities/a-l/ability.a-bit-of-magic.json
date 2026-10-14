@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.a-bit-of-magic",
+  "sourceLogicalId": "ability.a-bit-of-magic",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "83373629ea202b3247fbc7b3f96487fedf26853d0e9d303566286ebe44a41556",
+      "text": "Un peu de magie"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "18a5683fa7c7ab258c90c3bb7056b5d9cbf268ee2e7ffb3aa95bf2f7b5355c2b",
+      "text": "<p>Chaque jour, vous pouvez choisir un effet magique différent et le lancer comme un sort. Choisissez un cypher manifeste de faible puissance ou de puissance moyenne. Vous pouvez lancer ce sort par une action, pour un coût de 3 points d’Intellect pour un cypher de faible puissance ou de 5 points d’Intellect pour un cypher de puissance moyenne. Ce sort ne compte pas dans votre limite de cyphers. Contrairement à un cypher, vous ne perdez pas ce sort après l’avoir lancé. Pendant une récupération de dix heures, vous pouvez changer le cypher que vous avez choisi comme sort. Dix minutes pour préparer un cypher comme sort ; une action pour lancer un cypher comme sort. Au rang 6 : vous pouvez utiliser cette aptitude pour choisir comme sort un cypher de faible puissance, de puissance moyenne ou de puissance avancée. Vous pouvez lancer un sort issu d’un cypher de puissance avancée par une action, pour un coût de 7 points d’Intellect.</p>"
+    }
+  ]
+}

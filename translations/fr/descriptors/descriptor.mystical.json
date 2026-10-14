@@ -1,0 +1,33 @@
+{
+  "logicalId": "descriptor.mystical",
+  "sourceLogicalId": "descriptor.mystical",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "15026946fb49e760a2a108911b35f4f6d0e1a154d23f9b3681a476468f44bc3b",
+      "text": "Mystique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "a4e5315ce1e875c75c631bab8b510f4e9de0b14d39d04072bf0dd87159acea00",
+      "text": "<p>Vous vous considérez comme mystique, en harmonie avec le mystérieux et le paranormal. Vos véritables talents relèvent du surnaturel. Vous connaissez probablement des savoirs anciens et pouvez percevoir et manier le surnaturel ; à vous de décider, et sans doute aussi à votre entourage, s’il s’agit de « magie », de « phénomènes psychiques » ou d’autre chose. Les personnages mystiques portent souvent des bijoux, comme une bague ou une amulette, ou des tatouages ou d’autres marques qui révèlent leurs centres d’intérêt.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>+2 à votre Réserve d’Intellect</p>\n<p>Vous êtes entraîné pour l’une des compétences suivantes : Connaissances magiques, Connaissances psychiques ou Connaissances religieuses</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "5a04d3a80d6b177d18f6ba85ec71af258677970663e4761ea6b5b4736217e7cc",
+      "text": "Connaissances magiques"
+    },
+    {
+      "path": "system.skillOptions.1",
+      "sourceHash": "c1263b9c506ba4d137f0f196551121bcb136fd203d371319219c8f932b035742",
+      "text": "Connaissances psychiques"
+    },
+    {
+      "path": "system.skillOptions.2",
+      "sourceHash": "67b2c49b851738a3005241af6fda12b1c34e72ac8985cd45d1eda188365b548b",
+      "text": "Connaissances religieuses"
+    }
+  ]
+}

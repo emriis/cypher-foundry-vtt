@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.from-the-shadows",
+  "sourceLogicalId": "ability.from-the-shadows",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "d058b5e08cfbc84c793883d190bb35a74c014ca94a8ca5fc820e1d83cc647fcc",
+      "text": "Surgir des ombres"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "f13fc898a89bd7c6a852a3de5021938ffe55ff5f0f4024e70d2f4c85f3d2aa82",
+      "text": "<p>Votre attaque réussie contre une créature qui ignorait auparavant votre présence inflige +3 dégâts. Aptitude passive.</p>"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.up-to-speed",
+  "sourceLogicalId": "ability.up-to-speed",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "e89d56460e77f979150f98c8519e0edc6be21e13b473e65a456ff1eeb43b4bff",
+      "text": "Mise à niveau"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "995a58ca4982ce065be63f16a6d9cb3e4bf42dc5bd2c3752d438459a509086e9",
+      "text": "Si vous ne faites que vous déplacer pendant trois actions consécutives, vous accélérez considérablement et pouvez atteindre environ 200 mph (320 km/h), soit environ 2 000 pieds (600 m) par round, pendant dix minutes ou environ 35 miles (60 km). Vous devez ensuite vous arrêter et prendre une récupération. Aptitude passive."
+    }
+  ]
+}

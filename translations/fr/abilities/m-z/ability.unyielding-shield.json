@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.unyielding-shield",
+  "sourceLogicalId": "ability.unyielding-shield",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "0d111376347ecfa0e04e5d3ff2e9c6a57bb8eb3bd02f006b1bb2d77f5c761188",
+      "text": "Bouclier inflexible"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "9cc4ad449d595f0808538db0e2ffba36445c56f97599e2429987ef2abd306167",
+      "text": "<p>Vous portez un bouclier presque indestructible. S’il reçoit une blessure majeure à votre place, au lieu d’être détruit, la force transmise à travers lui vous fait perdre votre prochain tour ; le MJ peut choisir de déclencher une intrusion à la place. Chaque fois que vous prenez une récupération, retirez toutes les blessures mineures et modérées du bouclier. Vous pouvez utiliser librement le bouclier à une main comme arme légère de mêlée. Vous pouvez le lancer comme arme légère à courte portée. Qu’il touche ou manque, vous pouvez tenter une tâche de Célérité de difficulté 2 pour qu’il rebondisse vers votre main. Effort : une attaque réussie avec le bouclier entrave aussi la cible pendant un round. Si vous perdez votre bouclier, vous pouvez, selon vos compétences, fabriquer un remplaçant ou en commander un ; cela demande 1d6 jours d’efforts soutenus.</p>"
+    }
+  ]
+}

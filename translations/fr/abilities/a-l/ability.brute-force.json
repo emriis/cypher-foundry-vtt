@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.brute-force",
+  "sourceLogicalId": "ability.brute-force",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "04db7833b130bb128e2b4ba657a7004cedc81cf2d61fb05e805d4b3220b53111",
+      "text": "Force brute"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "3a72ad0f19da983e62e202a9d49bfc5871a9ac6d92560460c3d9de796533b108",
+      "text": "L’adversaire subit +2 dégâts."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.divination",
+  "sourceLogicalId": "ability.divination",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "c80c49892e26ab7cf42ff5a80568129d1fbaf8450d9157c0e671cf7aeb9cb540",
+      "text": "Divination"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "8c9a744d373f1d1cb0f406954895332ae9dc6ca36ea93e69885e6115e3ebae45",
+      "text": "Vous contactez une entité puissante, comme une divinité, un seigneur démon ou une créature d’une dimension du savoir, posez une question et obtenez une réponse générale. Le MJ attribue un niveau à la question : plus la réponse est obscure, plus la tâche est difficile. Généralement, une connaissance que vous pourriez trouver en cherchant ailleurs qu’à votre emplacement actuel est de niveau 1, une connaissance obscure du passé est de niveau 7, et une connaissance précise d’événements futurs au-delà des prochaines minutes est impossible. Action."
+    }
+  ]
+}

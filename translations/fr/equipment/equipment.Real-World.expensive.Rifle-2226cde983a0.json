@@ -1,0 +1,23 @@
+{
+  "logicalId": "equipment.Real-World.expensive.Rifle",
+  "sourceLogicalId": "equipment.Real-World.expensive.Rifle",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "478e5ec5fe9296b278a897fa9189b0894f7092e40555a1ee2eef4a5bde7b5d48",
+      "text": "Fusil"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "16bbd3f4d6ab59faf0a75966a48c45e3930bb5c1a437f1597157baacaecea42c",
+      "text": "Arme moyenne, portée longue, attaque entravée si elle est utilisée d’une seule main"
+    },
+    {
+      "path": "system.properties.0",
+      "sourceHash": "16bbd3f4d6ab59faf0a75966a48c45e3930bb5c1a437f1597157baacaecea42c",
+      "text": "Arme moyenne, portée longue, attaque entravée si elle est utilisée d’une seule main"
+    }
+  ]
+}

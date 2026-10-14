@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.sorcerous-suggestion",
+  "sourceLogicalId": "ability.sorcerous-suggestion",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "2a8d3e4cb7c5f8c7080aabf66aa4f8e4a3053991f2b0d134bda6af1f90161206",
+      "text": "Suggestion sorcière"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "65137216e084db152d79378686931912d63f72efb1759a4f4d83b21ee629ca5d",
+      "text": "<p>Si vous réussissez une attaque d’Intellect contre une créature possédant un esprit, elle tente à son prochain tour d’accomplir l’une des actions suivantes, que vous indiquez : s’identifier, expliquer sa présence, fermer ou ouvrir une porte ou un contenant, lâcher ou ramasser quelque chose, se déplacer sur une distance immédiate, vous remettre un objet qu’elle tient, ou simplement rester immobile et silencieuse sans rien faire. Action.</p>"
+    }
+  ]
+}

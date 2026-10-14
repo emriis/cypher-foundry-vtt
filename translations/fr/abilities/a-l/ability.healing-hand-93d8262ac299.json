@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.healing-hand-93d8262ac299",
+  "sourceLogicalId": "ability.healing-hand-93d8262ac299",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "c46503479ef45dd318f0d808fe7d6adee3d6854e8408f93e66925d9efe11d669",
+      "text": "Main guérisseuse"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "6386264535203ec4da02b3183a0e559737cfa5ab14ea73563a2759f34782f4ce",
+      "text": "D’un contact, vous réduisez la gravité d’une blessure. Une blessure mineure soignée disparaît complètement, une blessure modérée devient une blessure mineure, ou une blessure majeure devient une blessure modérée. (Si le personnage a atteint sa limite de blessures de moindre gravité, vous ne pouvez pas utiliser cette aptitude pour réduire la gravité de ses blessures.) Chaque fois que vous utilisez Main guérisseuse, le coût en Intellect augmente de 1. Ce coût revient à 1 après que vous avez pris une récupération. Action lente. Un PNJ bénéficiant de Main guérisseuse récupère 5 points de santé."
+    }
+  ]
+}

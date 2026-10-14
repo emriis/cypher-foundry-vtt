@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/magic/water/iceberg-glacier-blue.webp",
   "system": {
-    "description": "<p>You command the wintry power of cold and ice.</p>",
+    "description": "<p>You command the wintry power of cold and ice.</p>\n<ul>\n<li>Genre themes: elemental ancestry (fantasy), lord of ice (superhero)</li>\n<li>GM intrusions: Ice makes surfaces slippery. Extreme cold causes objects to crack and break.</li>\n</ul>",
     "abilities": [
       "Compendium.cypher.abilities-en.Item.17fde222705df765",
       "Compendium.cypher.abilities-en.Item.822cea619f6a0285",
@@ -68,6 +68,13 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references"
+        ]
+      }
     }
   }
 }

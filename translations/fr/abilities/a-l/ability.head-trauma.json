@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.head-trauma",
+  "sourceLogicalId": "ability.head-trauma",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "046d6b9063b1b24396e772724dfb6595d36aa9f81ea68a69830a07a1b548140f",
+      "text": "Traumatisme crânien"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "626b2f0792d339d9a840a6a88729a2c0b6a02cd6370e6a003ae184ce425f0035",
+      "text": "L’attaque inflige 1 dégât de moins, mais les actions de l’adversaire sont entravées jusqu’à ce qu’il utilise une action pour se remettre. Action."
+    }
+  ]
+}

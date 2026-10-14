@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.bestial-fury",
+  "sourceLogicalId": "ability.bestial-fury",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "78fc7886f86aee73c00a84ad516e9f10998cbf53b0660dd569a82ad9810b5fd9",
+      "text": "Fureur bestiale"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "b2c8223799fd6c7ec427a088ce8ed720952b67ac2332061a0cd93593b03d6050",
+      "text": "Le suppliant reçoit un esprit latent de fureur bestiale. La fureur s’active lorsqu’il perd son sang-froid ou choisit de l’éveiller par une action supplémentaire pendant son tour. Quand elle surgit, le personnage se transforme visiblement en une version de lui-même gonflée et emplie de rage. Durant la fureur, il ne peut pas dépenser de points d’Intellect, sauf pour tenter de retrouver son calme. Il attaque toute créature vivante à portée courte, sans exception, en lançant deux fois les dés pour chaque attaque et en gardant le meilleur résultat. La fureur dure jusqu’à ce qu’il utilise une récupération de dix minutes ou plus, ou qu’il consacre une action à réussir une tâche d’Intellect de difficulté 2. Lorsque le suppliant redevient normal, le contrecoup physique de la transformation inflige deux blessures modérées. Un suppliant PNJ furieux est effectivement d’un niveau supérieur et subit 6 dégâts lorsque la fureur prend fin."
+    }
+  ]
+}

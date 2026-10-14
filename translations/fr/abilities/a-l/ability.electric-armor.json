@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.electric-armor",
+  "sourceLogicalId": "ability.electric-armor",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "1eba134fac432b287208da91b8640947f8fe8c8a2693a6aa75bc3aa18d1246aa",
+      "text": "Armure électrique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "dcb77b3d17703971ccbebf6e5199e02ddb2551770cce6418d9927ff45ec41001",
+      "text": "Des éclairs crépitent sur votre corps jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. L’électricité ne vous nuit pas, mais elle inflige automatiquement 3 dégâts à toute personne qui tente de vous toucher ou de vous frapper par une attaque de mêlée, sans jet. Tant que cette aptitude est active, vous ignorez les blessures modérées et mineures dues à l’électricité. Tant qu’elle est active, vous pouvez effectuer une attaque de contact infligeant 2 dégâts électriques. Aptitude passive."
+    }
+  ]
+}

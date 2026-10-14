@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.fury",
+  "sourceLogicalId": "ability.fury",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "8d6b26d9d186cbca18c668339ce2cac085681e1c5c6f87243a5b0820097f4c6b",
+      "text": "Fureur"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "b5c2ec320aa5ee7e333e3e0a69f41146ac3b96879a9b9fc0c394bef3954ea988",
+      "text": "<p>Vos attaques de mêlée infligent +2 dégâts. Cette aptitude dure jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Action.</p>"
+    }
+  ]
+}

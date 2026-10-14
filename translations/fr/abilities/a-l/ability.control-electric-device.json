@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.control-electric-device",
+  "sourceLogicalId": "ability.control-electric-device",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "7af114f52d9e98c7ce4351983dc654560530a7f5d2bcee2ce86d30172ebefff7",
+      "text": "Contrôler un appareil électrique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "148f56bf38bb2ea41ef4961da22deaa247133f7888fc3df18e9af8bd48ecc949",
+      "text": "Vous pouvez tenter de contrôler ou de perturber un appareil électrique, c’est-à-dire un appareil ou une machine non intelligente alimentée par l’électricité, à portée longue. Effectuez une attaque d’Intellect contre l’appareil. Si votre résultat est inférieur à 12, considérez-le comme un 12. Cela signifie que vous ne subissez pas d’intrusion du MJ sur un 1. En cas de réussite, vous pouvez contrôler l’appareil comme si vous étiez à côté de lui, même si vous devriez normalement le toucher, lire un écran ou le manipuler. Si la machine est protégée contre les accès ordinaires par un protocole de sécurité, vos tâches pour pirater ou contourner cette sécurité sont entravées, sauf si vous êtes à portée immédiate. Si une autre créature tient l’appareil, vous devez réussir contre le niveau de la créature ou celui de l’appareil, selon le plus élevé. Si vous tentez de perturber l’appareil, une réussite provoque un court-circuit et, si vous le souhaitez, une explosion dans un rayon immédiat, infligeant 1 dégât à toutes les créatures de la zone ; effectuez un jet d’attaque d’Intellect distinct contre chacune. Effort : augmentez de 3 le résultat minimum de cette aptitude. Action. Au rang 3 : le résultat minimum de cette aptitude passe à 15."
+    }
+  ]
+}

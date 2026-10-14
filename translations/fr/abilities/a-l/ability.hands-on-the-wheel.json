@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.hands-on-the-wheel",
+  "sourceLogicalId": "ability.hands-on-the-wheel",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "89e0c32e2c15b7c94919adf718e63513de6e9cff018dde671e8112433a3a8728",
+      "text": "Les mains sur le volant"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "2540355b744959548f2849b898d2d6d98f256e543ec846b19d8afc56c919aad4",
+      "text": "<p>Lorsque vous pilotez ou conduisez un engin mécanique et que votre résultat est inférieur à 9, considérez-le comme un 9. (Cela signifie que vous ne subissez pas d’intrusion du MJ si vous obtenez un 1.) Le bénéfice de cette aptitude persiste jusqu’à ce que vous preniez une récupération de dix minutes ou plus. Effort : augmentez de 3 le résultat minimal du jet pour cette aptitude. Aptitude passive. Au rang 3 : le résultat minimal du jet pour cette aptitude passe à 12.</p>"
+    }
+  ]
+}

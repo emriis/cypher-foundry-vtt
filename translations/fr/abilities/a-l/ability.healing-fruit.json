@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.healing-fruit",
+  "sourceLogicalId": "ability.healing-fruit",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "48dacdaa7e9b5c745970e85a587e9a03066adf19dfd8d935ff0b51be58d3dae1",
+      "text": "Fruit guérisseur"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "61b1f9cf8132c5d2e868f1cb10867be251cb5cb43fa520a200a69b3cee3e4f60",
+      "text": "Vous imprégnez un fruit ou une graine de magie curative. Une créature qui le mange récupère 1d6 points dans une réserve de caractéristique de son choix ou guérit d’une blessure mineure. Une créature ne peut plus bénéficier de cet effet avant d’avoir pris une récupération de dix minutes ou plus. Un fruit non consommé perd automatiquement sa magie curative lorsque vous prenez une récupération de dix minutes ou plus. Action."
+    }
+  ]
+}

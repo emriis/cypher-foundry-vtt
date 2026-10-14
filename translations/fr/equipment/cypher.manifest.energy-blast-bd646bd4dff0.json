@@ -1,0 +1,58 @@
+{
+  "logicalId": "cypher.manifest.energy-blast",
+  "sourceLogicalId": "cypher.manifest.energy-blast",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "206de9bd6860fca1873656ff07f1b80416dac6fd1bae5a851d36873fc8113c13",
+      "text": "Décharge d’énergie"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "8056c988401ed7908147d6f523106f1d7c72b25152e05659197e013c50cbef3c",
+      "text": "<p>Effet : Projette un rayon d’énergie destructrice sur une cible à portée très longue, infligeant 8 dégâts. Vous pouvez à la place diviser le rayon et tirer sur deux cibles à portée, séparées d’au maximum une distance courte ; effectuez un jet d’attaque distinct pour chaque cible, infligeant 5 dégâts à chacune. Lancez un d00 pour déterminer le type d’énergie.</p>\n<table><thead><tr><th>d00</th><th>Type d’énergie</th></tr></thead><tbody><tr><td>01–15</td><td>Froid</td></tr><tr><td>16–40</td><td>Électricité</td></tr><tr><td>41–50</td><td>Force</td></tr><tr><td>51–80</td><td>Chaleur/lumière concentrée</td></tr><tr><td>81–85</td><td>Onde magnétique</td></tr><tr><td>86–90</td><td>Rupture des liaisons moléculaires</td></tr><tr><td>91–00</td><td>Radiations</td></tr></tbody></table>\n<p>Objets du genre : dard de feu cristallin (fantasy) ; blaster à usage unique (science-fiction)</p>"
+    },
+    {
+      "path": "system.rollTables.energy-type.name",
+      "sourceHash": "1be02e430ccd84856429b306c6ea6d617a3a593983467d71390a87688c240b63",
+      "text": "Type d’énergie"
+    },
+    {
+      "path": "system.rollTables.energy-type.results.0.description",
+      "sourceHash": "8ea214688ca6cc08d970703dbceb4b6eb8d2a1612239d6dc419456935198731c",
+      "text": "<p>Froid</p>"
+    },
+    {
+      "path": "system.rollTables.energy-type.results.1.description",
+      "sourceHash": "e6abe679c23365692e608b2358cf9be5254fb6bd6ce63060ade7095283adc1e0",
+      "text": "<p>Électricité</p>"
+    },
+    {
+      "path": "system.rollTables.energy-type.results.2.description",
+      "sourceHash": "1cf8912347adbeee772576a965c68ba3faf7c0e5cdd62316b89070ec631106cc",
+      "text": "<p>Force</p>"
+    },
+    {
+      "path": "system.rollTables.energy-type.results.3.description",
+      "sourceHash": "fb9c7a93a0f5d7201907359c952b356da9c0acf023ab47f32d7b709450b5566d",
+      "text": "<p>Chaleur/lumière concentrée</p>"
+    },
+    {
+      "path": "system.rollTables.energy-type.results.4.description",
+      "sourceHash": "685660a0a2c950d93377e25c7a22176a8accf888cbf9bde98baf7ce6a3c48110",
+      "text": "<p>Onde magnétique</p>"
+    },
+    {
+      "path": "system.rollTables.energy-type.results.5.description",
+      "sourceHash": "c2465091ec9b90d528a61e09b0b42e52e68544691d7ec7ef477ece1a3ea0bd07",
+      "text": "<p>Rupture des liaisons moléculaires</p>"
+    },
+    {
+      "path": "system.rollTables.energy-type.results.6.description",
+      "sourceHash": "44ac108eb4d492e99ac06b3c389aebd435f4db609da3a520d2aca4aede703863",
+      "text": "<p>Radiations</p>"
+    }
+  ]
+}

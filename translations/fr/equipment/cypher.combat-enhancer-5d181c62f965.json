@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.combat-enhancer",
+  "sourceLogicalId": "cypher.combat-enhancer",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "4325b3170e467d903116cb5b381a2a7bdaa0b9550602c3c9b7cf146c70b2e91b",
+      "text": "Amélioration de combat"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "60c3492f36fec29404d33d9cc17854600a161d8d9563c54ebb0ebd4ed2d480eb",
+      "text": "<p><strong>Effet :</strong> Vous bénéficiez de deux atouts à une tâche de combat ou hors combat. Vous pouvez utiliser ce cypher avant ou après votre jet.</p><p><strong>Explication :</strong> Voilà sans doute ce que l’on ressent lorsque le temps ralentit autour des balles. Ils ont commis une erreur fatale. Deux impacts : vous les frappez, puis ils frappent le sol.</p>"
+    }
+  ]
+}

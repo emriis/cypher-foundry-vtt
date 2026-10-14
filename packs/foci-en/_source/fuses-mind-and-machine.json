@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/commodities/tech/circuit-board-chip.webp",
   "system": {
-    "description": "<p>Electronic aids implanted in your brain make you a mental powerhouse.</p>",
+    "description": "<p>Electronic aids implanted in your brain make you a mental powerhouse.</p>\n<ul>\n<li>Genre themes: cyborg or living computer (science fiction, superhero)</li>\n<li>GM intrusions: Machines malfunction and shut down. Powerful machine intelligences can take control of lesser thinking machines. Some people don’t trust a person who isn’t fully organic.</li>\n</ul>",
     "abilities": [
       "Compendium.cypher.abilities-en.Item.22d49d5780043e84",
       "Compendium.cypher.abilities-en.Item.f907be249821cf48",
@@ -77,6 +77,13 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references"
+        ]
+      }
     }
   }
 }

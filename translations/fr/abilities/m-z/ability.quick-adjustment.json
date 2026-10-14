@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.quick-adjustment",
+  "sourceLogicalId": "ability.quick-adjustment",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "18b14faab323e1c4a5802e9aa05a3254d1aa3682c609a095bd5f24dc784f3067",
+      "text": "Ajustement rapide"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "8ab880ad8e7ac614100125b67463e5a7fa8c0f730c2c605dfb82cdc293b754a1",
+      "text": "Votre attaque non létale, qu’il s’agisse d’une tentative de désarmement, d’une attaque contre un objet inanimé ou d’une attaque pour neutraliser sans tuer, est une Action réflexe. Aptitude passive."
+    }
+  ]
+}

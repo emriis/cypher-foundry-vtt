@@ -1,0 +1,28 @@
+{
+  "logicalId": "descriptor.strong",
+  "sourceLogicalId": "descriptor.strong",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "30a04fdcb6bb10b03f55db14e88d7c1f5bcc9129d511e9b6b7dadd49bcb1a755",
+      "text": "Fort"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "16d85829639ab668666519b313ebbb633612c8d484db43e740f5c9df27510067",
+      "text": "<p>Vous avez une force et une puissance physique exceptionnelles, et vous savez les utiliser, que ce soit par la violence, les prouesses athlétiques ou la capacité à endurer les mauvais traitements. Vous avez probablement une carrure imposante et une musculature impressionnante, même si vous pouvez aussi être fort tout en ayant une silhouette nerveuse.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>+2 à votre Réserve de Puissance</p>\n<p>Vous êtes entraîné pour l’une des compétences suivantes : Athlétisme ou Intimidation</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "ec1345a87fbf028b2c8b6fa67000e2197ffee49008665602ff56fe44bea7bd02",
+      "text": "Athlétisme"
+    },
+    {
+      "path": "system.skillOptions.1",
+      "sourceHash": "5459202ae7f07cdbe5d60d80c0a243911ca4f3722eb88f7c5a23786f8d75f3a5",
+      "text": "Intimidation"
+    }
+  ]
+}

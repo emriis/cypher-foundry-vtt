@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.mental-concentration",
+  "sourceLogicalId": "cypher.mental-concentration",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "712a64c295def198372c2bd75872508a2c41e0880b9629c31d2dbcd2575a2a43",
+      "text": "Concentration mentale"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "20b48c0381352b9f7bdcdb2dd453411db5d9e438935a4ba6cc9d7bdd85468115",
+      "text": "<p><strong>Effet :</strong> Vous bénéficiez de trois atouts à votre tâche de défense d’Intellect. Pour cette tâche, la limite d’atouts est de trois au lieu de deux. Vous pouvez utiliser ce cypher avant ou après votre jet. Si vous échouez à cette tâche de défense, l’attaque inflige 4 dégâts d’Intellect de moins ; ou, si votre réserve d’Intellect est vide et que l’attaque devait infliger des blessures, elle réduit la gravité de la blessure d’un pas.</p><p><strong>Explication :</strong> Vous avez l’œil du tigre. Vous gardez les yeux sur la balle. Vos amis comptent sur vous.</p>"
+    }
+  ]
+}

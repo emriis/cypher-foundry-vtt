@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.mind-reading-613857bce03f",
+  "sourceLogicalId": "ability.mind-reading-613857bce03f",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "946cde347f9e154c87880ee5da1cf59414bd58853ac3f2a884e098375bc23ca3",
+      "text": "Lecture des pensées"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "9bfe516ee64a1370cbe7152315b9344290c0d9eebd8c8be358be55df2d29f282",
+      "text": "Vous pouvez lire les pensées superficielles d’une créature que vous voyez à courte portée. Si elle n’est pas consentante, vous devez effectuer une attaque d’Intellect contre elle pour lire ses pensées. Une fois le contact établi, vous pouvez lire les pensées de la cible jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Action pour initier l’effet."
+    }
+  ]
+}

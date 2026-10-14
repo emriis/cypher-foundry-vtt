@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.motion-sensor",
+  "sourceLogicalId": "cypher.manifest.motion-sensor",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "b1dca4a8a2967f89155c21e8b996b9db59cfa8572fc13d1564598a7da852ccc8",
+      "text": "Détecteur de mouvement"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "abc1d91359ba0e36b08d3f4b889e92721f65256d95e4d3cf0066c013a0f95558",
+      "text": "<p><strong>Effet :</strong> Jusqu’à ce que vous preniez une récupération d’une heure ou plus, vous savez quand un mouvement se produit à portée courte et quand de grandes créatures ou de grands objets se déplacent à portée longue ; vous pouvez distinguer ces deux cas. Vous percevez ces mouvements même si leur source est cachée, derrière une barrière ou invisible. Lorsque vous détectez un mouvement, vous connaissez également le nombre et la taille de ce qui se déplace.</p><p><strong>Objets du genre : potion de vigilance (fantasy) ; omnidar (science-fiction)</strong></p>"
+    }
+  ]
+}

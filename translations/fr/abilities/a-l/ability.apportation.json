@@ -1,0 +1,38 @@
+{
+  "logicalId": "ability.apportation",
+  "sourceLogicalId": "ability.apportation",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "ed4e21d61670408d1a403e32ba55b821eded3e361c61dae2259995164b241417",
+      "text": "Apportation"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "004c1ef9ba2567060dfd1d49ce58eba4c310be81ccc38ffed6999753991747a2",
+      "text": "Vous attirez jusqu’à vous un objet physique situé à presque n’importe quelle distance. Vous pouvez choisir n’importe quelle pièce d’équipement normal dans la liste d’équipement de votre genre, ou, une fois entre chaque récupération de dix heures, laisser le MJ déterminer aléatoirement l’objet qui apparaît. Vous ne pouvez pas utiliser cette aptitude pour prendre un objet tenu par une autre créature. L’objet apparaît à côté de vous. Action. Objet aléatoire d20 Résultats 1–10 Équipement standard 11–12 Cypher manifeste 13–20 Déchets sans valeur"
+    },
+    {
+      "path": "system.rollTables.random-object.name",
+      "sourceHash": "c0c36c7272c7f203aa62017be35bb9b248c9838176e7fee576bc8e6411c401aa",
+      "text": "Objet aléatoire"
+    },
+    {
+      "path": "system.rollTables.random-object.results.0.description",
+      "sourceHash": "412879003503fb0176c32f051a6b1b6b187b5dd813a8d98c5e8b594ce0e19dd7",
+      "text": "Équipement standard"
+    },
+    {
+      "path": "system.rollTables.random-object.results.1.description",
+      "sourceHash": "e3d912fcbeac3f9e2378ed062a4fba36849c852d4797de361073cd8ebc359d77",
+      "text": "Cypher manifeste"
+    },
+    {
+      "path": "system.rollTables.random-object.results.2.description",
+      "sourceHash": "47c4f9e3f0010b668da20bc3f2101f0df7c74b33f2910ced78bf1234aac3c562",
+      "text": "Déchets sans valeur"
+    }
+  ]
+}

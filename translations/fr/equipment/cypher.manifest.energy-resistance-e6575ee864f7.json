@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.energy-resistance",
+  "sourceLogicalId": "cypher.manifest.energy-resistance",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "f27bf95a76b61fe80aec58c508ea2244885f65f7e738447ed718d57fb1336e59",
+      "text": "Résistance aux énergies"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "867404d6e32fd8be134f14c6b1707495211d3177ddd81128f0b1070a0be4f9d3",
+      "text": "<p><strong>Effet :</strong> Choisissez un type d’énergie ou de dégâts d’attaque spéciale, comme l’acide, le froid, l’électricité, le feu, l’ombre ou les épines. Jusqu’à ce que vous preniez une récupération d’une heure ou plus, si vous subissez une blessure causée par ce type d’attaque, réduisez sa gravité d’un degré. Par exemple, si vous atténuez les dégâts de feu, une blessure modérée due au feu devient mineure. Vous pouvez aussi utiliser ce Cypher sur un objet, entravant de deux pas les attaques de ce type d’énergie contre lui jusqu’à ce que vous preniez une récupération d’une heure ou plus.</p><p><strong>Objets du genre : potion de résistance au feu (fantasy) ; spray de contre-mesures (science-fiction)</strong></p>"
+    }
+  ]
+}

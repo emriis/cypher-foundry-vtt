@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.retribution",
+  "sourceLogicalId": "ability.retribution",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "1d79fa2249232f49d9300f55010f5cc336e6bc792c55f0b115c79434c7a8814c",
+      "text": "Rétribution"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d70e3f4ff21e3e64659899bc104da5a4c59e3325c58e663110614c0c43f87f35",
+      "text": "Vous invoquez les pouvoirs d’une divinité pour assaillir un adversaire que vous voyez à courte portée. Si votre attaque d’Intellect touche, la cible subit 3 dégâts et porte un signe évident associé à cette divinité jusqu’à ce que vous preniez une récupération de dix minutes ou plus. Par exemple, si vous invoquez la rétribution de Thesk, le Seigneur des serpents, l’attaque ressemble à des serpents éphémères qui s’enroulent autour de votre adversaire et le mordent ; des crocs lumineux ou une tête de serpent le marquent au front ou à un autre endroit visible. Action lente. Au rang 3 : les dégâts de la rétribution passent à 5."
+    }
+  ]
+}

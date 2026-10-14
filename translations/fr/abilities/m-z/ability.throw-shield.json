@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.throw-shield",
+  "sourceLogicalId": "ability.throw-shield",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "6fb2a02735b73188d711d6af564c939d4e333573f0678dcdd670084d0e30b5f3",
+      "text": "Lancer de bouclier"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "5796b244c05f91cf60cae4f8ca3f2f7c3e9d02bf8c16f3685753ca20f32284f6",
+      "text": "Vous lancez votre bouclier comme une arme légère à courte portée. Qu’il touche ou manque, il rebondit vers votre main si vous réussissez une tâche de Célérité de difficulté 2. Effort : une attaque réussie avec le bouclier entrave aussi la cible pendant un round. Action. Si vous lancez votre bouclier avec cette aptitude et ne parvenez pas à le rattraper après le rebond, il se retrouve probablement à courte distance de vous."
+    }
+  ]
+}

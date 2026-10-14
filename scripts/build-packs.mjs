@@ -1,17 +1,22 @@
 /**
  * Builds Foundry-readable LevelDB packs from the editable JSON sources.
  *
- * The script compiles into a temporary workspace first, then replaces each
- * pack's generated files while preserving its `_source` authoring directory.
+ * Normalize a disposable checkout before selecting source-hashed translations.
+ * Compile every pack before publishing generated files; authoring JSON and
+ * proposal review statuses stay unchanged, including for legacy input sources.
  */
 import { compilePack } from "@foundryvtt/foundryvtt-cli";
 import fs from "node:fs/promises";
-import os from "node:os";
 import path from "node:path";
+import { execFile } from "node:child_process";
+import { promisify } from "node:util";
+import { readCompendiumCatalogue, readFrenchProposals } from "./review-translations.mjs";
+import { materializeTranslations } from "./localization/materialize-translations.mjs";
+import { createValidationWorkspace, removeValidationWorkspace } from "./validation-workspace.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
-async function discoverPacks() {
-  const packsRoot = path.join(root, "packs");
+async function discoverPacks(checkoutRoot) {
+  const packsRoot = path.join(checkoutRoot, "packs");
   const entries = await fs.readdir(packsRoot, { withFileTypes: true });
 
   const packNames = [];
@@ -31,8 +36,6 @@ async function discoverPacks() {
 
   return packNames.sort();
 }
-
-const packs = await discoverPacks();
 
 const FOUNDRY_ID_PATTERN = /^[A-Za-z0-9]{16}$/;
 
@@ -54,7 +57,8 @@ function normalizeId(id, relativePath) {
   return stableId(relativePath + ":" + String(id ?? ""));
 }
 
-async function normalizeSourceTree(sourceRoot, normalizedRoot) {
+/** Apply validated display overlays and repair legacy Folder IDs only in compiler input. */
+async function normalizeSourceTree(checkoutRoot, sourceRoot, normalizedRoot, translations) {
   await fs.cp(sourceRoot, normalizedRoot, { recursive: true });
 
   async function visit(directory) {
@@ -66,8 +70,9 @@ async function normalizeSourceTree(sourceRoot, normalizedRoot) {
       }
       if (!entry.isFile() || !entry.name.endsWith(".json")) continue;
 
-      const relativePath = path.relative(normalizedRoot, entryPath);
-      const data = JSON.parse(await fs.readFile(entryPath, "utf8"));
+      const relativePath = path.relative(normalizedRoot, entryPath).replaceAll(path.sep, "/");
+      const sourceFile = path.relative(checkoutRoot, path.join(sourceRoot, relativePath)).replaceAll(path.sep, "/");
+      const data = structuredClone(translations.get(sourceFile) ?? JSON.parse(await fs.readFile(entryPath, "utf8")));
       const normalizedId = normalizeId(data._id, relativePath);
       data._id = normalizedId;
 
@@ -88,21 +93,35 @@ async function normalizeSourceTree(sourceRoot, normalizedRoot) {
 }
 
 async function compile() {
-  // Keep intermediate compiler output outside the repository's pack folders.
-  const workspace = await fs.mkdtemp(path.join(os.tmpdir(), "cypher-packs-"));
-
+  const { workspace, root: checkoutRoot } = await createValidationWorkspace(root);
   try {
+    // The migrator binds its root to import.meta.dirname. Execute the copied
+    // script, rather than importing the author's script and mutating its checkout.
+    console.log("Normalizing temporary compendium sources...");
+    await promisify(execFile)(process.execPath, ["scripts/migrate-ability-sources.mjs"],
+      { cwd: checkoutRoot, maxBuffer: 8 * 1024 * 1024 });
+    const packs = await discoverPacks(checkoutRoot);
+    const [catalogue, proposals] = await Promise.all([
+      readCompendiumCatalogue(checkoutRoot), readFrenchProposals(checkoutRoot)
+    ]);
+    const translations = materializeTranslations(catalogue, proposals,
+      { includeProposed: process.argv.includes("--include-proposed") });
+
+    // Complete validation and compilation before touching existing outputs.
+    // A compiler failure in a later pack must preserve every previous database.
     for (const pack of packs) {
-      const source = path.join(root, "packs", pack, "_source");
+      const source = path.join(checkoutRoot, "packs", pack, "_source");
       const normalizedSource = path.join(workspace, `${pack}-source`);
       const output = path.join(workspace, pack);
 
-      await normalizeSourceTree(source, normalizedSource);
-      const destination = path.join(root, "packs", pack);
-
+      await normalizeSourceTree(checkoutRoot, source, normalizedSource, translations);
       console.log(`Building ${pack}...`);
       await compilePack(normalizedSource, output, { recursive: true });
+    }
 
+    for (const pack of packs) {
+      const destination = path.join(root, "packs", pack);
+      const output = path.join(workspace, pack);
       // Remove the previous compiled database, but keep the editable source directory.
       const entries = await fs.readdir(destination);
       for (const entry of entries) {
@@ -124,7 +143,7 @@ async function compile() {
     }
   } finally {
     // Always remove the temporary workspace, even when one pack fails to compile.
-    await fs.rm(workspace, { recursive: true, force: true });
+    await removeValidationWorkspace(workspace);
   }
 }
 

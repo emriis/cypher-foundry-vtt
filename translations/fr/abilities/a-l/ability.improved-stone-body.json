@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.improved-stone-body",
+  "sourceLogicalId": "ability.improved-stone-body",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "b33f48a6b420bd230a05b91e4113dc10f3efcb03135b40dc754b0e536677793b",
+      "text": "Corps de pierre amélioré"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "ab3faaf79be3393cdba21827da1cb0e437b94fabbbca5c7d6222d99e923beaa0",
+      "text": "Vous pouvez subir une blessure modérée de plus que la normale."
+    }
+  ]
+}

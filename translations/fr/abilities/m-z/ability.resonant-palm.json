@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.resonant-palm",
+  "sourceLogicalId": "ability.resonant-palm",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "38b28b973fa5a83f6ea958c703bcddefb4bb3b8f6897ed118d01cadc3ef397fb",
+      "text": "Paume résonante"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "93cce611d96a6080ca79f4e92ff6dc08f8cac86af4730843b487932c3afaacc9",
+      "text": "Vous établissez un lien mystique avec une créature consentante que vous touchez ou un adversaire que vous attaquez avec succès ; cette attaque inflige 2 dégâts de moins que normalement. À tout moment dans les dix jours suivants, vous pouvez tenter d’affecter la cible d’une des façons suivantes, quelle que soit votre distance. Le lien se rompt après cette tentative, si vous forcez un lien avec une autre créature, ou lorsque dix jours passent. Transférez une blessure de la créature à vous-même : aucune aptitude, aucun effet ni équipement ne peut en réduire la gravité, mais vous pouvez vous reprendre ou tenter de la soigner par les méthodes normales. Effectuez une attaque à mains nues facilitée contre la cible, ou une attaque facilitée avec l’une de vos aptitudes, comme si la cible était à portée. Action lente pour initier l’effet ; action pour soigner ou attaquer la créature."
+    }
+  ]
+}

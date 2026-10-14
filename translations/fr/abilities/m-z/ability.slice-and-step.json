@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.slice-and-step",
+  "sourceLogicalId": "ability.slice-and-step",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "6cd1a846449eafaa4c00eea3dd8f3ab8eb5a3aa7abdc785fb31f9009ce1dc0cb",
+      "text": "Frapper et se déplacer"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "e5b8a126dfa1d593fe03a7c7b98819b23d227b1e46bd555e45a661c383727b8b",
+      "text": "Vous repositionnez votre adversaire ou vous-même à une distance immédiate, ce qui facilite votre attaque au prochain tour, contre cet adversaire ou un autre. Action."
+    }
+  ]
+}

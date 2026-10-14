@@ -1,11 +1,11 @@
 {
   "_id": "doesntdomuBBA343",
   "_key": "!items!doesntdomuBBA343",
-  "name": "Doesn't Do Much",
+  "name": "Doesn’t Do Much",
   "type": "focus",
   "img": "icons/skills/social/diplomacy-handshake.webp",
   "system": {
-    "description": "<p>You’re a slacker, but you know a little about a lot of things.</p>",
+    "description": "<p>You’re a slacker, but you know a little about a lot of things.</p>\n<ul>\n<li>Genre themes: Free spirit, itinerant (any genre)</li>\n<li>GM intrusions: New situations are confounding and stressful. Past actions (or inactions) come back to haunt the character.\\</li>\n</ul>",
     "abilities": [
       "Compendium.cypher.abilities-en.Item.0874ff0ca60c855a",
       "Compendium.cypher.abilities-en.Item.027f1628cdf234ce",
@@ -80,6 +80,13 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references"
+        ]
+      }
     }
   }
 }

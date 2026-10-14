@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.hand-to-eye",
+  "sourceLogicalId": "ability.hand-to-eye",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "e20fa7373bc5aeb530d54a531e6738b80852bb4901501abba117bf19e41b57d5",
+      "text": "De la main à l’œil"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "686930acd4dad68226d3e1b4d719507c0e382a55bd814f56fcd1fb73d484cb68",
+      "text": "<p>Lorsque vous faites un jet pour accomplir une tâche qui demande de la dextérité manuelle ou de l’agilité mentale — vol à la tire, crochetage, jeux faisant appel à l’agilité, etc. — et que votre résultat est inférieur à 9, considérez-le comme un 9. (Cela signifie que vous ne subissez pas d’intrusion du MJ si vous obtenez un 1.)</p>\n<p>Effort : augmentez de 3 le résultat minimal du jet pour cette aptitude.</p>\n<p>Aptitude passive.</p>\n<p>Au rang 3 : le résultat minimal du jet pour cette aptitude passe à 12.</p>"
+    }
+  ]
+}

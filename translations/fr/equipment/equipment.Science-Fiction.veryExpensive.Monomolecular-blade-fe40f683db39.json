@@ -1,0 +1,28 @@
+{
+  "logicalId": "equipment.Science Fiction.veryExpensive.Monomolecular blade",
+  "sourceLogicalId": "equipment.Science Fiction.veryExpensive.Monomolecular blade",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "238a3bba1f88be35b42fe6113520713071e78f2bb8d111bd72085a75ca2621ea",
+      "text": "Lame monomoléculaire"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "88cd20e711cc8710cee9d58d9e5eb29e1d19c223f27abe1fd2a0e79fbab89b93",
+      "text": "Arme légère, ignore 1 point d’armure physique, coupe les matériaux physiques jusqu’au niveau 6"
+    },
+    {
+      "path": "system.properties.0",
+      "sourceHash": "af13c954a28772a2a4b3aa7877653a6650a7b9cd3b85f999e905ebe5021668c4",
+      "text": "ignore 1 point d’armure physique"
+    },
+    {
+      "path": "system.properties.1",
+      "sourceHash": "95e6eb9ee23636ddd365a87ba39c38643ec82bf934bbae697db89c4f2407530b",
+      "text": "coupe les matériaux physiques jusqu’au niveau 6"
+    }
+  ]
+}

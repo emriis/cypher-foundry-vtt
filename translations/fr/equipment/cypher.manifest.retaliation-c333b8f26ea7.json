@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.retaliation",
+  "sourceLogicalId": "cypher.manifest.retaliation",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "5dd0cd4a0b58d82ac59a82fe30adb6d4d1e502ca5aa2cdeaee6c251cd33e40c6",
+      "text": "Riposte"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "eef55ad2fb05d81ebcc455257df26e7aacf7d57d36d12ca166fcefaf9d902623",
+      "text": "<p><strong>Effet :</strong> Jusqu’à ce que vous preniez une récupération d’une heure ou plus, quiconque vous frappe à portée de mêlée subit automatiquement 2 dégâts, sans action ni jet. La source de ces dégâts dépend du Cypher : certains créent une décharge électrique ou de feu, certains injectent une toxine ou des nanites destructeurs, et d’autres recouvrent temporairement votre corps de pointes ou d’écailles tranchantes.</p><p><strong>Objets du genre : rune de bouclier de feu (fantasy) ; champ dissuasif (science-fiction)</strong></p>"
+    }
+  ]
+}

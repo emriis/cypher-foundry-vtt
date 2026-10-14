@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.smooth-operator",
+  "sourceLogicalId": "ability.smooth-operator",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "ef572605215dabf8236cbe3d277c1b5e4a6dd242e424c7671b140a5a3595828e",
+      "text": "Négociateur habile"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "17ce64ddf9431164e1836ba2353c22428a7f19148f7d730554880bd7a0ef9804",
+      "text": "Vous achetez un objet coûteux au prix d’un objet de prix modéré. Cette aptitude ne peut être utilisée que dans un lieu où l’on achète et vend régulièrement des services et des objets. Effort : achetez un objet très coûteux au prix d’un objet coûteux, pour deux niveaux d’Effort ; achetez un objet exorbitant au prix d’un objet très coûteux, pour quatre niveaux d’Effort. Cette aptitude se renouvelle lorsque vous accédez à un nouveau marché ou qu’au moins un mois s’est écoulé dans le marché où vous l’avez utilisée la dernière fois. Aptitude passive. Au rang 3 : vous pouvez l’utiliser deux fois avant de devoir la renouveler en allant ailleurs ou en laissant passer assez de temps."
+    }
+  ]
+}

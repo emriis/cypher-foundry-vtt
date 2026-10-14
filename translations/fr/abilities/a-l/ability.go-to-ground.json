@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.go-to-ground",
+  "sourceLogicalId": "ability.go-to-ground",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "2da5c12855e6916cdfbf9384dd1e3df2ee0cec7febca6fb7c9f9d16eb7dc8452",
+      "text": "Se terrer"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "74fe5637c1fafa8761238e4ee13c7bc0a92b54c42614288b403f79bad6075fd1",
+      "text": "Par votre action, vous vous déplacez jusqu’à une distance longue puis tentez de vous cacher. Vous bénéficiez d’un atout à la tâche de discrétion pour vous fondre dans l’environnement, disparaître ou échapper autrement aux sens de toute personne qui connaissait auparavant votre présence ; ce déplacement n’entrave pas votre tâche de discrétion. Action."
+    }
+  ]
+}

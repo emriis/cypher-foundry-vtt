@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.stunning-attack",
+  "sourceLogicalId": "ability.stunning-attack",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "d56afbd22f0aa6b40021f82c85a54d0e12240fe19ab540381fc29538cb9b5f9e",
+      "text": "Attaque étourdissante"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "b85a14a1e5e774b813324019ec554cdbec329bb28e3ac61fa21a6a824f967087",
+      "text": "Lorsque vous effectuez une attaque à mains nues, vous pouvez choisir d’entraver le jet d’attaque ; si vous touchez, en plus de l’effet normal de l’attaque, l’adversaire perd son prochain tour. Aptitude passive."
+    }
+  ]
+}

@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/magic/earth/construct-stone.webp",
   "system": {
-    "description": "<p>Your flesh is made of hard mineral, making you a hulking, difficult-to-harm humanoid.</p>",
+    "description": "<p>Your flesh is made of hard mineral, making you a hulking, difficult-to-harm humanoid.</p>\n<ul>\n<li>Genre themes: golem (fantasy), crystal alien (science fiction), rock monster (superhero)</li>\n<li>GM intrusions: Creatures of stone sometimes forget their own strength or weight. A walking statue can terrify common folk.</li>\n</ul>",
     "abilities": [
       "Compendium.cypher.abilities-en.Item.a135b8438dee2f47",
       "Compendium.cypher.abilities-en.Item.1c19d2dc7fa543aa",
@@ -108,6 +108,13 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references"
+        ]
+      }
     }
   }
 }

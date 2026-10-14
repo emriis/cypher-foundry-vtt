@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.resurrection",
+  "sourceLogicalId": "cypher.manifest.resurrection",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "7f65e66d7b992f00e39bd0933f6ed9732c99bf22e061c0fbf46af3aeb1c52bc0",
+      "text": "Résurrection"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "8510585b491eb53518726df34dca1deab992175c61f1309af998c475b1be46ad",
+      "text": "<p><strong>Effet :</strong> Si vous êtes mort au cours de la dernière heure, vous revenez à la vie. La lésion, la blessure ou l’effet censé vous avoir tué est annulé. Vous êtes entravé jusqu’à ce que vous preniez une récupération. Le nombre de blessures modérées que vous pouvez subir diminue définitivement d’une unité. Vous pouvez utiliser ce Cypher sur une autre créature plutôt que sur vous-même. S’il s’agit d’un PNJ, il est entravé jusqu’à ce qu’il se repose pendant une heure, au lieu de devoir prendre une récupération ; sa santé maximale diminue de 5, jusqu’à un minimum de 1.</p><p><strong>Objets du genre : sceptre de résurrection (fantasy) ; module Lazare (science-fiction)</strong></p>"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.enhance-strength",
+  "sourceLogicalId": "ability.enhance-strength",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "7679b2a54cc808af62738d637d6c32592c1d3cb746c0d2f79a7ab7d92e0d5bc6",
+      "text": "Renforcer la force"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "993af680b803e8c938058841a4fcd9016a4c1b2553c839276f702d2194b1759b",
+      "text": "Jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus, vous utilisez votre télékinésie pour renforcer vos actions physiques. Lorsque vous faites un jet pour une tâche utilisant la force brute, comme déplacer un objet lourd ou défoncer une porte, et que votre résultat est inférieur à 9, considérez-le comme un 9. Cela signifie que vous ne subissez pas d’intrusion du MJ sur un 1. Effort : augmentez de 3 le résultat minimum de cette aptitude. Une action pour commencer."
+    }
+  ]
+}

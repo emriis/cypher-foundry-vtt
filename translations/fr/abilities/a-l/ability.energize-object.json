@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.energize-object",
+  "sourceLogicalId": "ability.energize-object",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "75e5fc4e5fd2334a8d20f9fdd9d834791dc1fc32c6be57092fb06ffb91c9b469",
+      "text": "Énergiser un objet"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "f9f08f7564aa03461804bd8a42120c5c35ba3200a5334dae20196240f5a9aa4e",
+      "text": "Vous canalisez de l’énergie dans un objet, comme une arme de mêlée ou à distance. Jusqu’à ce que vous utilisiez une récupération d’une heure ou plus, toute attaque que vous effectuez avec l’objet énergisé inflige 1 dégât énergétique supplémentaire ; si l’arme tire des projectiles, comme les balles d’un fusil, ces dégâts s’appliquent aux projectiles. L’énergie se dissipe si vous cessez de tenir ou de porter l’objet, mais vous pouvez énergiser un autre objet par une action supplémentaire pendant votre tour. Action. Lorsque vous énergisez un objet, vous utilisez une énergie psychokinétique qui tend à donner aux armes affectées une discrète lueur violette."
+    }
+  ]
+}

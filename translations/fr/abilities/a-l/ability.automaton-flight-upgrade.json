@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.automaton-flight-upgrade",
+  "sourceLogicalId": "ability.automaton-flight-upgrade",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "9a150621bf3650d1cbbe4161ff320c137e1b54f86b9714b6d7d74137a8cce9f6",
+      "text": "Amélioration d’automate : vol"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "44e60c072a3d17bae6234f1848deb57158e6d6cc235b44b53301f1824bcc837c",
+      "text": "Vous avez intégré une nouvelle capacité à l’un de vos automates : lors de son déplacement normal, il peut voler jusqu’à une distance longue. Si vous le souhaitez, il peut vous transporter, mais il ne peut alors se déplacer que de 20 pieds (6 m) au maximum par round, dans n’importe quelle direction."
+    }
+  ]
+}

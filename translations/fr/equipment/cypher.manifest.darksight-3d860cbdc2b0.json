@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.darksight",
+  "sourceLogicalId": "cypher.manifest.darksight",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "63f2a339036b27511f89b36f3fdc2f1d2852e3054b519af693033c7dc372cb79",
+      "text": "Vision dans l’obscurité"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "900c8649bc06ba3d309c57e4897d8d490f24fc110e3f13c90e3488964314e3cf",
+      "text": "<p><strong>Effet :</strong> Jusqu’à ce que vous preniez une récupération de dix heures, vous voyez dans l’obscurité jusqu’à portée immédiate comme dans une lumière faible, et jusqu’à portée courte comme dans une lumière très faible. Vous pouvez utiliser ce Cypher sur un maximum de six créatures ; dans ce cas, il dure jusqu’à ce qu’elles prennent une récupération d’une heure ou plus. La fin de l’effet pour une créature ne modifie pas sa durée pour les autres.</p><p><strong>Objets du genre : potion de vision dans l’obscurité (fantasy) ; gouttes de vision nocturne (science-fiction)</strong></p>"
+    }
+  ]
+}

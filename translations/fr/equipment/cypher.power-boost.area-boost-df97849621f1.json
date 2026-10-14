@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.power-boost.area-boost",
+  "sourceLogicalId": "cypher.power-boost.area-boost",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "523aa29d1464818e5ae9ed44fa5b24760e7a01bfbaa25e045ff022be8a0335ce",
+      "text": "Renforcement de zone"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "bc733ad2b90cccd2a5409cfa1c4b4c02acb094cbdc256bffcec361f6ecb0800c",
+      "text": "<p><strong>Effet :</strong> Votre aptitude affecte une zone plus grande. Si elle affecte normalement une créature, elle affecte également la zone immédiate autour de cette créature. Les aptitudes qui affectent déjà une zone passent à la catégorie de taille supérieure : d’immédiate à courte, de courte à longue, de longue à très longue, de très longue à 1 000 pieds [300 m] de diamètre.</p>"
+    }
+  ]
+}

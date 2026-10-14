@@ -1,0 +1,28 @@
+{
+  "logicalId": "descriptor.chaotic",
+  "sourceLogicalId": "descriptor.chaotic",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "a971bd6f76abf2ef9a2918816d38829bfc6b44a53b121cd4945e3ea74b656dd9",
+      "text": "Chaotique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d915fd7a57b818b98e8b9664afa51eb9c7d54e6ab934461d0d9524ee0099d04c",
+      "text": "<p>Le danger ne vous impressionne guère, surtout parce que vous ne pensez pas beaucoup aux conséquences. En fait, vous aimez semer les surprises, simplement pour voir ce qui va se passer. Plus le résultat est inattendu, plus vous êtes satisfait. Vous traversez parfois des périodes d’excitation particulièrement intense et, pour le bien de vos compagnons, vous vous retenez d’entreprendre des actions dont vous savez qu’elles conduiront au désastre.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>+2 à votre Réserve de Célérité</p>\n<p>Vous êtes entraîné pour l’une des compétences suivantes : Initiative ou Arts du spectacle et arts plastiques</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "3e687de48a6ad4e5cde7376ae2e49c1f6d3e3d2ee31ffe168ed065a10a9f91be",
+      "text": "Initiative"
+    },
+    {
+      "path": "system.skillOptions.1",
+      "sourceHash": "442aded87a55aa8c8f7d5ff0c30228150d4b1cb8756e4be138d615ca4708fc26",
+      "text": "Arts du spectacle et arts plastiques"
+    }
+  ]
+}

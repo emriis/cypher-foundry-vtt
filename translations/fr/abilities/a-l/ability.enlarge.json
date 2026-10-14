@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.enlarge",
+  "sourceLogicalId": "ability.enlarge",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "a1c1212619a38d2d2469bb5c7e5c689c5d4d2aaeabaee512b13db9639ab91db7",
+      "text": "Agrandissement"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "b5e9f82dbd2fd361ccf10bf6bcbcac9d375fe605671797e5dfbfdd6d77fa9c7a",
+      "text": "Vous atteignez une taille de 9 pieds (3 m) jusqu’à ce que vous utilisiez une récupération. Votre équipement grandit avec vous. Pendant cet agrandissement, vous ajoutez +1 à votre Avantage de Puissance, vous pouvez ignorer la première blessure modérée que vous subissez, et vos attaques à mains nues infligent 4 dégâts. Pendant cet agrandissement, vos tâches d’esquive sont entravées. Chaque fois que vous utilisez Agrandissement, le coût en Puissance augmente de 1. Le coût est réinitialisé après une récupération. Une action lente ; aptitude passive pour l’utiliser de nouveau afin de rester agrandi. Si plusieurs aptitudes vous permettent de grandir, leurs effets ne se cumulent pas : vous bénéficiez seulement de ceux de la plus grande taille."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.speed-for-mind",
+  "sourceLogicalId": "ability.speed-for-mind",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "4fb674c54d676dc10162eed7ed5c7aac1f9b92997bec10c95c94c110db92e730",
+      "text": "La Célérité pour l’esprit"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "cbde2218f34b3531abebc6c8f6be33f53c7d8edee89b6a023346db8b3df3d5a1",
+      "text": "Lorsque vous tentez une tâche de Célérité, vous pouvez dépenser des points de votre réserve d’Intellect à la place de votre réserve de Célérité, et inversement. Utilisez l’Avantage de la réserve dans laquelle vous dépensez les points. Aptitude passive."
+    }
+  ]
+}

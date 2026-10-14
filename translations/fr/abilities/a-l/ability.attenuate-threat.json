@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.attenuate-threat",
+  "sourceLogicalId": "ability.attenuate-threat",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "8211fd2c99c9fdae4b77f68b76abb4192fe9860592f6efcb785bf4f1eaa2c81f",
+      "text": "Atténuer la menace"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "9f3572b84c16746993b8408a33495ba2a2da7c298c8a717a94b61796ee4bcd8a",
+      "text": "Si vous effectuez votre attaque de ce round par une action lente plutôt que par une action ou une action réflexe, vous pouvez ignorer une blessure que vous subissez avant le début de votre prochain tour. Aptitude passive."
+    }
+  ]
+}

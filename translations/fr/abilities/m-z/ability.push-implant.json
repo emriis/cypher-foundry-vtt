@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.push-implant",
+  "sourceLogicalId": "ability.push-implant",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "5b95f91d682c3e81f50134c1e11598bd97502e99169f5e628b75e500965453c7",
+      "text": "Implant de surpassement"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "20736c9d278a0f2e8241a1989b2897829010cb57f6b4085f983202e819ce2b06",
+      "text": "Après avoir attaqué, vous pouvez activer un implant de combat pour effectuer une attaque supplémentaire en tant qu’action supplémentaire pendant votre tour. Cela vous inflige une blessure modérée. Aptitude passive. Si vous souhaitez un personnage capable de combattre sans les implants décrits dans Amélioration de combat (Combat Enhancement), vous pouvez préférer utiliser le type Combattant du genre d’exploration de donjons comme base, en adaptant ses éléments au genre mais en utilisant ses aptitudes à la place de celles du Soldat."
+    }
+  ]
+}

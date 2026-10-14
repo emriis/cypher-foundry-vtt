@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.shield-master",
+  "sourceLogicalId": "ability.shield-master",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "51dc980a554c119ec521888616ee5a72e7d3de884cacaf1d3c606ef046db6994",
+      "text": "Maîtrise du bouclier"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "42a8ec870c47ddef2130880798e5619805e4a0d029b7bf802df149a2a4e937d6",
+      "text": "Lorsque vous utilisez un bouclier, il peut subir une blessure modérée de plus que la normale avant d’être détruit."
+    }
+  ]
+}

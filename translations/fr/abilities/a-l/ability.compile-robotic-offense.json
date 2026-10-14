@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.compile-robotic-offense",
+  "sourceLogicalId": "ability.compile-robotic-offense",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "8b3b945f7a73bfb814ae082f46e31937de18fdc7569c7bd99c390fdee43754bf",
+      "text": "Compiler une offensive robotique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "274baf46cea2a14f64e5237aa4e9be6bfbe6fa67ecb0101a565004fd7293a477",
+      "text": "Votre attaque de ce round contre un robot ou une machine intelligente bénéficie d’un atout si vous l’effectuez par une action lente plutôt que par une action ou une action réflexe. Aptitude passive."
+    }
+  ]
+}

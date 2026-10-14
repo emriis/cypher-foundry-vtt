@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.magnetize",
+  "sourceLogicalId": "ability.magnetize",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "f92695d79406dca86906440d774d1b14f3f8218dfac3cc702a0fb9950b8771a0",
+      "text": "Magnétiser"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "5abf82479a982af849007c3f17f96efc13a3fc0251beec94249f0711950882bf",
+      "text": "Votre contact magnétise définitivement un objet, métallique ou non, ne dépassant pas votre taille, avec une force magnétique de niveau 5, ou démagnétise un objet ne dépassant pas votre taille dont la force magnétique est de niveau 5 ou moins. Un objet magnétisé attire le métal amené à moins de 1 pied (30 cm). Séparer le métal nécessite une tâche de Puissance réussie. Magnétiser ou démagnétiser un équipement électronique le détruit s’il est de niveau 5 ou moins. Vous pouvez utiliser des aptitudes magnétiques, comme Déplacer le métal (Move Metal) et Commander le métal (Command Metal), sur un objet magnétisé. Vous pouvez aussi créer un champ magnétique qui repousse les objets métalliques de niveau 3 ou moins : il fonctionne en pratique comme un champ de force n’affectant que les objets métalliques. Effort : augmentez de 1 le niveau d’une nouvelle force magnétique. Augmentez de 1 le niveau maximal d’une force magnétique existante que vous souhaitez démagnétiser. Action."
+    }
+  ]
+}

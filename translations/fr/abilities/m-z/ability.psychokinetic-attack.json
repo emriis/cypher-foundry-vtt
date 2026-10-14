@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.psychokinetic-attack",
+  "sourceLogicalId": "ability.psychokinetic-attack",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "50b1c00db141bc4214f3cf6e9af75a2b861c268714b449d5ad42d850d32296df",
+      "text": "Attaque psychokinétique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "4ecef027b117d5c49ec44ad5ce7aeb0012c177b8320c5dafea264659d95c686b",
+      "text": "Vous pouvez utiliser cette aptitude de deux façons. Projection lourde : vous saisissez télékinétiquement un objet à courte portée et le lancez sur une cible à courte portée. Pour lancer une créature à la place d’un objet, vous devez d’abord la saisir télékinétiquement avec une attaque d’Intellect réussie. Effectuez une attaque d’Intellect contre votre cible. En cas de réussite, la cible et ce que vous projetez subissent 6 dégâts. Explosion destructrice : vous déchaînez directement votre pouvoir contre un objet à courte portée ne dépassant pas la moitié de votre taille. Effectuez une attaque d’Intellect, facilitée de trois pas par rapport à une attaque de force physique contre cet objet. En cas de réussite, vous le détruisez instantanément. Action."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.decay-metal",
+  "sourceLogicalId": "cypher.manifest.decay-metal",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "fb7ee29faa610931507978602bc51c3f14b4db91b364156ef514bfc66eba602b",
+      "text": "Dégradation du métal"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "12ac8e9078b39b25e2766edaf112bc7fac9f7b1d3ea7ac5ffcf5d5064b2f6824",
+      "text": "<p><strong>Effet :</strong> Vous créez un jet de liquide ou de mousse qui recouvre une zone d’environ 3 pieds sur 3 pieds (1 m sur 1 m) à distance immédiate. Le métal de niveau 6 ou moins dans cette zone devient aussi fragile que du verre mince (niveau 0) sur une profondeur d’environ 6 pouces (15 cm). Pour affecter du métal de niveau 7 ou plus, vous devez réussir une attaque d’Intellect contre lui.</p><p><strong>Objets du genre : gantelet de rouille (fantasy) ; métaoxydant métallique (science-fiction)</strong></p>"
+    }
+  ]
+}

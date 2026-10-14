@@ -4,37 +4,37 @@ const FOUNDRY_URL =
 const GAMEMASTER_NAME = "gamemaster";
 const GAMEMASTER_ROLE = /game\s*master|gamemaster|ma[iî]tre\s+de\s+jeu/i;
 
-async function selectGamemaster(page) {
+/**
+ * Wait for the seeded user's control across native and legacy join forms.
+ * Native options may store a Foundry User ID, so their displayed profile label
+ * establishes which user was selected. Search inputs still submit a username.
+ * @param {import("@playwright/test").Page} page Disposable Foundry login page.
+ * @returns {Promise<import("@playwright/test").Locator>} Selected username control.
+ */
+export async function selectGamemaster(page) {
+  const usernameLabel = /sélectionner un utilisateur|select (?:a )?user|username/i;
   const candidates = [
     page.locator("#join-username"),
     page.locator('input[name="username"]'),
-    page.locator('select[name="username"]')
+    page.locator('select[name="username"]'),
+    page.getByRole("combobox", { name: usernameLabel }),
+    page.getByRole("textbox", { name: usernameLabel })
   ];
-
-  let usernameInput = null;
-  for (const candidate of candidates) {
-    if (await candidate.count()) {
-      usernameInput = candidate.first();
-      break;
-    }
-  }
-
-  if (!usernameInput) {
-    usernameInput = page
-      .getByRole("textbox", {
-        name: /sélectionner un utilisateur|select (?:a )?user|username/i
-      })
-      .first();
-  }
-
+  // ApplicationV2 can mount after navigation completes. A locator union keeps
+  // every supported control eligible while waiting, rather than freezing a
+  // missing textbox fallback after a single early count of the new combobox.
+  const usernameInput = candidates.reduce((combined, candidate) => combined.or(candidate)).first();
   await usernameInput.waitFor({
     state: "visible",
     timeout: 30_000
   });
 
   const tagName = await usernameInput.evaluate(element => element.tagName);
+  let selectedProfile;
+  let availableUsers = [];
   if (tagName === "SELECT") {
     const options = await usernameInput.locator("option").allTextContents();
+    availableUsers = options;
     const match = options.find(
       option => option.trim().toLowerCase() === GAMEMASTER_NAME
     );
@@ -45,76 +45,110 @@ async function selectGamemaster(page) {
       );
     }
     await usernameInput.selectOption({ label: match });
+    selectedProfile = (await usernameInput.locator("option:checked").allTextContents()).join(", ").trim();
   } else {
     await usernameInput.click();
     await usernameInput.fill(GAMEMASTER_NAME);
     await usernameInput.press("ArrowDown");
     await usernameInput.press("Enter");
+    selectedProfile = await usernameInput.inputValue();
   }
 
-  const value = await usernameInput.inputValue();
-  if (value.toLowerCase() !== GAMEMASTER_NAME) {
+  if (selectedProfile.toLowerCase() !== GAMEMASTER_NAME) {
     throw new Error(
       "Available users: " +
-      (await page.locator("#join-username option").allTextContents()).join(", ") +
+      availableUsers.join(", ") +
       ". Foundry did not select the gamemaster profile. " +
-      `Expected: ${GAMEMASTER_NAME}; actual: ${value}`
+      `Expected: ${GAMEMASTER_NAME}; actual: ${selectedProfile}`
     );
   }
   return usernameInput;
 }
 
+/**
+ * Join the seeded user once, retaining exceptions before navigation finishes.
+ * @param {import("@playwright/test").Page} page Disposable Foundry client.
+ * @returns {Promise<void>} Resolves after readiness; login/bootstrap failures propagate.
+ */
 export async function joinAsGamemaster(page) {
-  await page.goto(FOUNDRY_URL);
+  let startupFailure = null;
+  const captureFailure = error => { startupFailure ??= error; };
+  page.on("pageerror", captureFailure);
+  try {
+    await page.goto(FOUNDRY_URL);
 
-  const usernameInput = await selectGamemaster(page);
-  const joinForm = usernameInput.locator("xpath=ancestor::form[1]");
+    const usernameInput = await selectGamemaster(page);
+    const joinForm = usernameInput.locator("xpath=ancestor::form[1]");
 
-  const password = joinForm.locator('input[type="password"]').first();
-  if (await password.count()) {
-    await password.fill("");
+    const password = joinForm.locator('input[type="password"]').first();
+    if (await password.count()) {
+      await password.fill("");
+    }
+
+    const joinButton = joinForm.locator(
+      'button[type="submit"], input[type="submit"]'
+    ).first();
+    await joinButton.waitFor({ state: "visible", timeout: 10_000 });
+
+    await Promise.all([
+      page.waitForURL(url => !url.pathname.endsWith("/join"), {
+        timeout: 60_000
+      }),
+      // Preserve the submitter's action name for ApplicationV2 join handlers.
+      joinButton.evaluate(button => button.form.requestSubmit(button))
+    ]);
+
+    await waitForFoundryReady(page, { startupError: () => startupFailure });
+  } finally {
+    page.off("pageerror", captureFailure);
   }
+}
 
-  const joinButton = joinForm.locator(
-    'button[type="submit"], input[type="submit"]'
-  ).first();
-  await joinButton.waitFor({ state: "visible", timeout: 10_000 });
+/** Read only nonsecret bootstrap state; never expose settings, credentials or world documents. */
+async function readStartupState(page) {
+  return page.evaluate(() => ({
+    ready: globalThis.game?.ready === true,
+    view: globalThis.game?.view,
+    url: location.href,
+    title: document.title,
+    body: document.body?.innerText?.slice(0, 4000) || ""
+  }));
+}
 
-  await Promise.all([
-    page.waitForURL(url => !url.pathname.endsWith("/join"), {
-      timeout: 60_000
-    }),
-    joinForm.evaluate(form => form.requestSubmit())
-  ]);
+function describeStartupState(state) {
+  return `URL: ${state.url}\nTitle: ${state.title}\nView: ${state.view}\nPage content:\n${state.body}`;
+}
 
-  const deadline = Date.now() + 60_000;
+/**
+ * Wait for actual client readiness, failing promptly on a captured bootstrap exception.
+ * HTTP reachability alone does not guarantee that Foundry can vend world data.
+ * @param {import("@playwright/test").Page} page Disposable Foundry client.
+ * @param {{timeoutMs?: number, startupError?: () => Error|null}} options Deadline in milliseconds and captured page-error reader.
+ * @returns {Promise<void>} Resolves on game.ready; otherwise rejects with the cause and client state.
+ */
+export async function waitForFoundryReady(page, { timeoutMs = 60_000, startupError = () => null } = {}) {
+  const deadline = Date.now() + timeoutMs;
+  let state;
   while (Date.now() < deadline) {
-    const state = await page.evaluate(() => ({
-      ready: globalThis.game?.ready === true,
-      view: globalThis.game?.view,
-      url: location.href,
-      title: document.title,
-      body: document.body?.innerText?.slice(0, 4000) || ""
-    }));
+    state = await readStartupState(page);
 
     if (state.ready) return;
+    const cause = startupError();
+    if (cause) {
+      throw new Error(`Foundry client initialization failed: ${cause.message}\n${describeStartupState(state)}`, { cause });
+    }
 
     if (/game\s*worlds|configuration and setup/i.test(state.body)) {
       throw new Error(
         "Foundry did not auto-launch the E2E world. " +
         "The browser reached Setup instead. " +
-        `URL: ${state.url}\n` +
-        `Title: ${state.title}\n` +
-        `View: ${state.view}\n` +
-        `Setup content:\n${state.body}`
+        describeStartupState(state)
       );
     }
 
     await page.waitForTimeout(250);
   }
 
-  throw new Error(
-    "Foundry did not become ready within 60 seconds. " +
-    `URL: ${await page.url()}`
-  );
+  state ??= await readStartupState(page);
+  throw new Error(`Foundry did not become ready within ${timeoutMs / 1000} seconds. ${describeStartupState(state)}`);
 }

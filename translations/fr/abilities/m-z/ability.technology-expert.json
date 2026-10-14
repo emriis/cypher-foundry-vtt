@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.technology-expert",
+  "sourceLogicalId": "ability.technology-expert",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "1af7a1b4c28c8eae6cc8128659503c7d88553befccbd028661646f994b802983",
+      "text": "Expertise technologique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "e1bc4c57be1b1a508865e298df37c44eaa494047d8d07be6e5f36002b061dcc9",
+      "text": "<p>Lorsque vous effectuez un jet pour utiliser un appareil mécanique de n’importe quel type, autre qu’une arme, et que le résultat est inférieur à 9, considérez qu’il est de 9. Vous ne subissez donc pas d’intrusion du MJ si vous obtenez 1. Effort : augmentez de 3 le résultat minimal de cette aptitude. Au rang 3 : le résultat minimal de cette aptitude passe à 12.</p>"
+    }
+  ]
+}

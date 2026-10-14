@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.fear",
+  "sourceLogicalId": "cypher.manifest.fear",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "140262b32b0c98dfc6afb74b287d2df7f50e0645cea8c1dd907c793699180ee2",
+      "text": "Peur"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "15f1cb37cda9f11e57c3a090d3dadd5a0c565ebf591d0a578d16f67056a01c8c",
+      "text": "<p><strong>Effet :</strong> Effectuez une attaque d’Intellect contre un adversaire à portée courte. En cas de réussite, il est terrifié par vous et tente de fuir la zone, restant à l’écart jusqu’à ce que vous preniez une récupération de dix minutes ou plus. S’il ne peut pas partir, toutes ses tâches contre vous sont entravées jusqu’à ce que vous preniez une récupération de dix minutes ou plus.</p><p><strong>Objets du genre : rune de peur (fantasy) ; stimulateur de l’amygdale (science-fiction). Certaines créatures, comme les automates et les entités sans esprit, ne peuvent pas ressentir la peur et sont immunisées à un Cypher de peur.</strong></p>"
+    }
+  ]
+}

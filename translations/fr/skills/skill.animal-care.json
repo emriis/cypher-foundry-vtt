@@ -1,0 +1,18 @@
+{
+  "logicalId": "skill.animal-care",
+  "sourceLogicalId": "skill.animal-care",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "0faa029f019864346dae8c491ac0343dca3b4175a46090c38d425ffc25ea653d",
+      "text": "Soins aux animaux"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "6e98eb22f210e2107b3ab9c74a3a7c4942df7d4971a354f1d48c4dcfb0a5db1e",
+      "text": "<p>Votre expérience des animaux vous permet de comprendre leurs besoins et leurs intentions, de calmer les animaux en détresse et de tenter de les influencer pacifiquement.</p>"
+    }
+  ]
+}

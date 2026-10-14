@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.make-passage",
+  "sourceLogicalId": "cypher.make-passage",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "0bbc9a2088195111a48367ab5791d7e239c9271e6b33254bcd92e2e9e07d74ee",
+      "text": "Ouvrir un passage"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "5cb1ec19cbec4775f60b0f4a82ecdfee93b5ea4eaabc7bfc893e39e509b85fde",
+      "text": "<p><strong>Effet :</strong> Dans le cadre de votre déplacement, vous créez ou utilisez une ouverture dans une barrière de niveau 4 au maximum et la traversez.</p><p><strong>Explication :</strong> Le plancher était pourri. La cloison en plaques de plâtre était mal posée. Le mortier entre les briques était fragile. Vous pouvez aussi utiliser un cypher de création de passage pour ouvrir une porte ou un portail existant, ou même faire arriver un ascenseur lorsque vous en avez besoin.</p>"
+    }
+  ]
+}

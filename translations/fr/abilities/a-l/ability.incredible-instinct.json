@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.incredible-instinct",
+  "sourceLogicalId": "ability.incredible-instinct",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "786b8e5b04f2a5558e6b3ab387552f62d66c951ffdfd52993797bba9243c56d8",
+      "text": "Instinct incroyable"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "14e3091bda7a96c7d2916cbec18f2d22dbe0fcc97fc2ad2e7acdb39f594302cc",
+      "text": "<p>Si vous êtes attaqué par surprise, que ce soit par une créature, un dispositif ou simplement un danger environnemental (comme un gaz toxique provenant d’une bouche d’aération), vous vous déplacez d’une distance immédiate avant que l’attaque ne se produise. Si ce déplacement évite l’attaque, vous êtes en sécurité. Si l’attaque peut encore vous affecter (la créature attaquante peut se déplacer pour vous suivre, l’attaque couvre une zone trop grande pour que vous puissiez y échapper, etc.), votre défense contre elle est facilitée. Lorsque vous faites un jet d’initiative et que votre résultat est inférieur à 9, considérez-le comme un 9. (Cela signifie que vous ne subissez pas d’intrusion du MJ si vous obtenez un 1.) Effort : augmentez de 3 le résultat minimal du jet pour cette aptitude. Au rang 3 : le résultat minimal du jet pour cette aptitude passe à 12.</p>"
+    }
+  ]
+}

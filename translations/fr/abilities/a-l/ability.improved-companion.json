@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.improved-companion",
+  "sourceLogicalId": "ability.improved-companion",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "0b9f54b19cbd607a7209c9cddf569ffdaf2bb8194a22af9ada69a021702a4484",
+      "text": "Compagnon amélioré"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "a3a74496920dcc08edf5fda8f0825d94457631426454ddf1aad41a292f563113",
+      "text": "Augmentez de 1 le niveau de votre compagnon animal (ainsi que ses modificateurs, le cas échéant). Vous pouvez choisir cette aptitude jusqu’à trois fois. Chaque fois que vous la choisissez à nouveau, augmentez de 1 le niveau de votre animal."
+    }
+  ]
+}

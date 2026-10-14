@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.enhanced-flames",
+  "sourceLogicalId": "ability.enhanced-flames",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "7b2986c34fb7a0df368e5f0b85310c2b10a23d2e0c6eed751cbf7d4f9da56b84",
+      "text": "Flammes renforcées"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d737bf174371ed333ec1bfec35269a774c4d43f9c61bc8e546e16b064fc3459e",
+      "text": "Les dégâts de feu que vous infligez avec des aptitudes spéciales augmentent de 2 dégâts par attaque."
+    }
+  ]
+}

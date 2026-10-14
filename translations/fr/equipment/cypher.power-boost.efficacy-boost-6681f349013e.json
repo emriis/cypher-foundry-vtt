@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.power-boost.efficacy-boost",
+  "sourceLogicalId": "cypher.power-boost.efficacy-boost",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "eebd3a3dbb0e72657cd07da2079771ec8137cc6c0a4797bf7097297dff3e0ee5",
+      "text": "Renforcement d’efficacité"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "b6e0f19a938fe8352768eeb5344bf30efa8117083f3065b1a669f28270fc3c2a",
+      "text": "<p><strong>Effet :</strong> Vous bénéficiez de deux atouts pour une aptitude qui nécessite un jet de compétence. Vous pouvez utiliser ce cypher avant ou après votre jet.</p>"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.go-for-the-eyes",
+  "sourceLogicalId": "ability.go-for-the-eyes",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "bc610a8cbf865a3ba7710c9fd5c781cd381f4a33d75f0d034cfd6596227d75b6",
+      "text": "Viser les yeux"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "70bfce03f2fedd5a353abcfa9a212d052eae7aa74c1d7ddcf86510456f8fac3e",
+      "text": "Vous tentez de blesser l’œil de votre adversaire, par exemple en l’arrachant ou en lui jetant de la terre au visage. Effectuez une attaque de mêlée entravée ; en cas de réussite, sa vision est altérée jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus, ce qui entrave ses tâches reposant sur la vue, c’est-à-dire la plupart des tâches. Action."
+    }
+  ]
+}

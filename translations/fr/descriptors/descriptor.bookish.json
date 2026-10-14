@@ -1,0 +1,33 @@
+{
+  "logicalId": "descriptor.bookish",
+  "sourceLogicalId": "descriptor.bookish",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "fc4f9625abe4a15ec9a00815040caf14c25873472f638b5dbc552c6f4e187e20",
+      "text": "Érudit"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "6d1e49933d38d3013c3587533ab98baef72b9c4bba41bbb4845191c390139b5b",
+      "text": "<p>Vous avez consacré l’essentiel de votre vie à des activités sédentaires — lire des livres, observer les étoiles, écrire de la poésie, etc. — plutôt qu’à des occupations physiques. Vous connaissez bien toutes sortes de disciplines universitaires ou d’autres activités intellectuelles. Vous n’êtes pas nécessairement faible ou fragile, même si ce descripteur convient bien aux personnages âgés, mais vous manquez d’expérience dans les activités plus physiques.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>+2 à votre Réserve d’Intellect</p>\n<p>Vous êtes entraîné pour l’une des compétences suivantes : Histoire, Philosophie ou Psychologie, ou une discipline similaire</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "0e769600933790607b2a13b33ddfade0fa17810eb62c3b28ee23e59516516491",
+      "text": "Histoire"
+    },
+    {
+      "path": "system.skillOptions.1",
+      "sourceHash": "7f3d81eb0817c1bf0e04af5bc5888c49fc70fb1f11190b307c81a05f8ced39c2",
+      "text": "Philosophie"
+    },
+    {
+      "path": "system.skillOptions.2",
+      "sourceHash": "131b0658b108704d4660e187234f1e5941af556e6c340bbd7cc26f5578039d3d",
+      "text": "Psychologie"
+    }
+  ]
+}

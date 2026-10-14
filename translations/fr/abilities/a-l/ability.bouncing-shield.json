@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.bouncing-shield",
+  "sourceLogicalId": "ability.bouncing-shield",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "5fe6bb81435edabd5086dd0804f376390b12f4f595c02ac7bf75a70416411396",
+      "text": "Bouclier rebondissant"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "efc1b5e07d87095133f74494c27687bd6ae9f9a31307d0d3bbab6739bfc0424c",
+      "text": "Vous lancez votre bouclier comme une arme légère sur un adversaire à portée courte. Qu’il touche ou manque sa cible, le bouclier rebondit pour attaquer deux cibles supplémentaires ; la troisième peut être la même que la première. Effectuez une attaque distincte contre chaque cible. À la fin de ces attaques, le bouclier revient dans votre main si vous réussissez une tâche de Célérité de difficulté 2 ; sinon, il tombe à votre portée immédiate. Effort : un coup réussi avec le bouclier entrave la cible pendant un round. Action."
+    }
+  ]
+}

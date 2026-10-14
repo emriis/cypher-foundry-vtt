@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.telepathic-bond",
+  "sourceLogicalId": "ability.telepathic-bond",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "8a3d1109238b6e2dfee2829ba06b8e6a275af6e6ab2ad6cae72813eb685300bb",
+      "text": "Lien télépathique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "19685e9b59d6cb47700c5862cc44bdbf9a8d1c636ffe8e1c65a672c61b0c93f7",
+      "text": "Vous créez un lien avec une autre créature, permettant à chacun de communiquer mentalement avec l’autre à volonté. Vous devez la toucher pour activer cette aptitude et elle doit être consentante. Chacun de vous peut dissoudre le lien par une Action lente. Vous pouvez vous parler télépathiquement à tout moment tant que vous êtes tous deux consentants et à moins de 100 miles (160 km) l’un de l’autre. Vous ne pouvez avoir qu’un lien télépathique à la fois. Action lente pour former ou dissoudre le lien."
+    }
+  ]
+}

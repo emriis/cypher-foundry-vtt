@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.fire-tendrils",
+  "sourceLogicalId": "ability.fire-tendrils",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "6aae889854eb66cc234e9502c3aedcee3e00c8365cde1c19c3c3cf97b1d39ebd",
+      "text": "Vrilles de feu"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "c5b3956e85b635f4a607e948cad2da0364f8d1cd6f45e10b1f4c738a1cf05fa0",
+      "text": "Votre Voile de flammes fait pousser trois vrilles de feu qui durent jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Vous pouvez attaquer avec chaque vrille par une action supplémentaire pendant votre tour. Chaque vrille inflige 3 dégâts, ou 5 dégâts avec Flammes renforcées. Si vous n’utilisez pas les vrilles pour attaquer, elles restent présentes sans agir. Une action pour commencer. Après le round où vous activez Vrilles de feu, attaquer avec elles par des actions supplémentaires pendant votre tour compte comme votre action globale pour ce round."
+    }
+  ]
+}

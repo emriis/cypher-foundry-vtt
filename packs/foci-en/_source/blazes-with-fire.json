@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/magic/fire/projectile-fireball-orange.webp",
   "system": {
-    "description": "<p>You can sheathe your body in flames, which protect you and harm your foes.</p>",
+    "description": "<p>You can sheathe your body in flames, which protect you and harm your foes.</p>\n<ul>\n<li>Genre themes: fire wizard (fantasy), lava world alien (science fiction), fiery super (superhero)</li>\n<li>GM intrusions: Fire burns flammable material. Fire spreads out of control. Primitive creatures fear fire and often attack what they fear.</li>\n</ul>",
     "abilities": [
       "Compendium.cypher.abilities-en.Item.a02982ac8c4c898b",
       "Compendium.cypher.abilities-en.Item.ba7f2293e5eef3b8",
@@ -119,6 +119,13 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references"
+        ]
+      }
     }
   }
 }

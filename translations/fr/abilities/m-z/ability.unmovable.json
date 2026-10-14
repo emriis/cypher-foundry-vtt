@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.unmovable",
+  "sourceLogicalId": "ability.unmovable",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "a25143f80108a282b04619cdd58eabb354b6610d7226a3da2e0f8630c2a2f058",
+      "text": "Inébranlable"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "300480c867ad7c981b7f74aa747a315022a72d77bd09284b979d8903756be96f",
+      "text": "Vous évitez d’être renversé, repoussé ou déplacé contre votre volonté tant que vous êtes debout et capable d’agir. Aptitude passive."
+    }
+  ]
+}

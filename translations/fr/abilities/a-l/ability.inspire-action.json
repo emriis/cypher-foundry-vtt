@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.inspire-action",
+  "sourceLogicalId": "ability.inspire-action",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "1c3dcd799472e1fa014fe7575ee87e1aa2b4da599491b95b6be19783f02237e2",
+      "text": "Inspirer l’action"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "ac7f6b23436c552ebdc196774637226f0acbe56776fd27bd66699500d8bced3d",
+      "text": "<p>Si un allié peut vous voir et vous comprendre facilement, vous pouvez lui demander d’accomplir une action. S’il choisit d’accomplir exactement cette action, il peut le faire immédiatement en tant qu’action supplémentaire. Cela ne l’empêche pas d’accomplir une action normale pendant son tour. Action.</p>"
+    }
+  ]
+}

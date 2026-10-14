@@ -11,6 +11,12 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 
 ### Added
 
+- Added domain-owned UI dictionaries, deterministic native Foundry locale
+  bundles and checks for collisions, missing references and stale translations.
+- Added complete French editorial proposals with exact English field hashes,
+  review status, coverage reports, isolated JSON previews and guarded pack
+  compilation. Normal builds select reviewed text; draft builds opt in explicitly.
+
 - Added a read-only local CRD audit, reviewed text evidence for CI, and a
   per-entry inventory separating source fidelity from executable automation.
 - Added active weapon-effect display and a GM control to extend Stunstick's
@@ -37,6 +43,22 @@ follows [Semantic Versioning](https://semver.org/) on a best-effort basis while 
 - Aligned skills/prompts with application services and CRD source fidelity.
 
 ### Fixed
+
+- Disabled public IP discovery for local E2E servers to avoid Foundry 14.369's
+  invitation-address startup race; retained browser bootstrap errors and guarded
+  welcome-tour settings against opaque document origins.
+
+- Made standalone pack builds normalize a temporary copy before translation
+  validation, preserving authoring sources and existing outputs on preflight failure.
+- Kept French Ability CRD provenance canonical and stable across repeated
+  normalization, including repaired bilingual parent references.
+
+- Preserved canonical content identities when translated names change; aligned
+  bilingual typed rule fields and references independently of localized prose.
+- Matched bilingual granted Skills by their CRD identity, preserving existing
+  imported Skills and custom name fallback across English/French content.
+- Corrected missing UI labels, hardcoded XP examples, Ability action badges and
+  French action vocabulary: action réflexe, action and action lente.
 
 - Completed source-backed recoveries with Pool allocation, independent daily
   availability, Last action bonus, wound choices, extra allowances and new-day

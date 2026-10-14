@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.brainwashing",
+  "sourceLogicalId": "ability.brainwashing",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "ff2593a10699ddeed4373241acb11f32508d828307e8235ef85b5de8b03fd80f",
+      "text": "Lavage de cerveau"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "9d4e84ab68430c89da980a265b951905888db2472ef4828c687f145e5c4eaa10",
+      "text": "Vous utilisez des ruses, des mensonges habilement formulés et des produits chimiques qui affectent l’esprit, ou d’autres moyens adaptés à votre genre, comme la magie ou une technologie avancée, pour contrôler les actions d’une autre créature que vous touchez. La créature doit être de niveau 3 ou moins et vous devez réussir une attaque d’Intellect contre elle. Le contrôle dure jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus ; si vous pouvez voir la créature, vous décidez au cas par cas si elle suit vos ordres ou peut agir librement. À la fin de la durée, elle ne se souvient ni d’avoir été contrôlée, ni de ce qu’elle a fait sous vos ordres. Effort : augmentez de 1 le niveau maximum de la créature que vous pouvez affecter. Une action pour commencer."
+    }
+  ]
+}

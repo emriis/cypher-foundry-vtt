@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.scent-transformation",
+  "sourceLogicalId": "ability.scent-transformation",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "ffe919e1f1943d1b438c4c986564bd4c8ead005d5c98c5e052340d0a6093e230",
+      "text": "Transformer son odeur"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d817ae7f1e059957c22a3db91bd0a509bd876a1ea065160913a919d29a4086fa",
+      "text": "Vous modifiez votre odeur pour sentir comme un animal de votre choix jusqu’à votre prochaine récupération de dix minutes ou plus. Cela peut déjouer les tentatives de pistage fondées sur l’odorat. Lorsque vous tentez d’interagir avec des animaux du type choisi qui se fient beaucoup à leur odorat, vos tâches sont facilitées de deux pas. Vous pouvez utiliser cette aptitude quelle que soit votre forme. Action pour initier l’effet."
+    }
+  ]
+}

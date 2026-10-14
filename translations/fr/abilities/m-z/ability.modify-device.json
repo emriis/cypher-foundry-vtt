@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.modify-device",
+  "sourceLogicalId": "ability.modify-device",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "287aa700914fc8996b14f13eca92be3481c4326973637dac516adf3952c9ead9",
+      "text": "Modifier un appareil"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "a316b825201ccceecfd69248239fdccb201319ad3fbdb728b34003063b8f0388",
+      "text": "Vous bricolez rapidement une pièce d’équipement ou une source d’énergie pour la réparer ou l’améliorer. Cela nécessite l’accès aux pièces et aux outils appropriés."
+    }
+  ]
+}

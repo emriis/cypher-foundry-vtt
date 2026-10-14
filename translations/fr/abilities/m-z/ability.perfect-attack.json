@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.perfect-attack",
+  "sourceLogicalId": "ability.perfect-attack",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "8a4fd5ebe8bbead548dd1cab277d75033c51583de633a6972df15cd1b1b71d4c",
+      "text": "Attaque parfaite"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "be72a8ad94aca73c4cc6dad6564cb75ab69de14f1aa47081df0ebf2fb31526b7",
+      "text": "Effectuez une attaque avec l’arme que vous avez choisie. Si votre résultat est inférieur à 9, considérez qu’il est de 9. Vous ne subissez donc pas d’intrusion du MJ si vous obtenez 1. En cas de réussite, l’attaque inflige ses dégâts normaux. Cette aptitude ne permet pas de réussir une attaque impossible, comme frapper à l’épée une personne à un mile de distance ou tirer une flèche sur la lune. Cette aptitude se renouvelle lorsque vous prenez une récupération. Effort : augmentez de 3 le résultat minimal de cette aptitude. Action. Au rang 3 : le résultat minimal de cette aptitude passe à 12."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.instant-building",
+  "sourceLogicalId": "cypher.manifest.instant-building",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "2f76518572376058f607a5977592558f186b677f01a85873455794fe14ba567f",
+      "text": "Bâtiment instantané"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "5a8e275c6d468f1fd60f55d241a847d435ea590396f6daf2360e4e75800cdcd9",
+      "text": "<p><strong>Effet :</strong> Crée un bâtiment simple d’une seule pièce dans un espace adjacent à vous. Sa taille minimale est de 10 pieds sur 10 pieds sur 20 pieds (3,5 m sur 3,5 m sur 6 m). Il comprend une pièce, une porte et une fenêtre transparente, et est constitué d’un matériau durable et ininflammable semblable au grès. Le bâtiment est permanent et immobile une fois créé. Si l’espace ne suffit pas pour qu’il atteigne sa taille complète, il remplit l’espace disponible, mais son apparition et sa croissance n’exercent aucune force ni pression sur les surfaces qui le limitent.</p><p><strong>Objets du genre : parchemin d’abri sûr (fantasy) ; unité de fabrication structurelle (science-fiction)</strong></p>"
+    }
+  ]
+}

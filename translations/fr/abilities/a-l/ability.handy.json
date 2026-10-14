@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.handy",
+  "sourceLogicalId": "ability.handy",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "e80649a6418b6c24fccb199dab7cb5bd6ec37593ea0285d52d717fcc7aee5fb3",
+      "text": "Débrouillard"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d41e3eef8153642b1a51f69d34bd0d74f7315134683a601abab0b120566fdcb5",
+      "text": "Vous êtes entraîné en fabrication. Chaque fois que vous gagnez des points de ressources, vous obtenez 1 point supplémentaire, mais ce point ne peut servir qu’à réparer ou à fabriquer."
+    }
+  ]
+}

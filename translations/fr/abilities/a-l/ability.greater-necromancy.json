@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.greater-necromancy",
+  "sourceLogicalId": "ability.greater-necromancy",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "80b7380d516d44e33087e7058c3c9133266db72ecd0f67efd32851731cfb91e0",
+      "text": "Nécromancie supérieure"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "0f74f58f19cacaf11b4b21f46c39b17dece97caa9c4f0aa6570e5964f885ba78",
+      "text": "<p>Vous animez le corps d’une créature morte dont la taille peut atteindre le double de la vôtre, à portée courte, créant un compagnon de niveau 3 qui est une créature morte-vivante. Elle ne conserve ni l’intelligence, ni les souvenirs, ni les aptitudes spéciales qu’elle possédait de son vivant. La créature suit vos ordres verbaux jusqu’à ce que vous preniez une récupération d’une heure ou plus ; elle redevient alors un cadavre inerte. Vous pouvez l’animer à nouveau lorsqu’elle devient inerte ou si elle est « tuée » par des dégâts (bien que vous deviez peut-être consacrer du temps, avec une aiguille et du fil, à rattacher les parties détachées ou mal fixées).</p>\n<p>Chaque créature animée au-delà de la première coûte 2 points d’Intellect supplémentaires (soit 7 points pour deux corps, 9 points pour trois, et ainsi de suite).</p>\n<p>Action pour animer.</p>"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.gentle-warmth",
+  "sourceLogicalId": "ability.gentle-warmth",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "f6ecaa7544181eb8d1aec095cee0377d493ce9be408adeb6d13cc107b598afe9",
+      "text": "Douce chaleur"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "12cf7e736ac6780a917daf1549bc093e26d5917df8eea3bc6c8122ccace3ea85",
+      "text": "Vous réchauffez une zone immédiate jusqu’à 30˚ F (15˚ C) jusqu’à ce que vous preniez une récupération de dix minutes ou plus ; cela réduit de deux degrés la gravité des blessures dues aux environnements froids. Cet effet est centré sur vous et vous suit. Action."
+    }
+  ]
+}

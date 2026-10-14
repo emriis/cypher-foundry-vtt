@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.ignore-affliction",
+  "sourceLogicalId": "ability.ignore-affliction",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "754da1746ec23c3dfe2f8c71b47d382e58c858da8e07c0fcb6d25fcc6cfa8a13",
+      "text": "Ignorer une affection"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "f53fd33d550140bc46a59d406e8c58c3566b11072bc1f9579611c5cc1e3bb458",
+      "text": "Jusqu’à ce que vous preniez une récupération d’une heure ou plus, vous ignorez tout état ou toute affection indésirable (comme une maladie, une paralysie, un contrôle mental, un membre cassé, etc., mais pas les dégâts) et agissez comme s’ils ne vous affectaient pas. Si cet état devait normalement durer moins d’une heure, il est entièrement annulé. Vous pouvez utiliser cette aptitude même si l’état vous empêche d’accomplir des actions. Action."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.find-the-way",
+  "sourceLogicalId": "ability.find-the-way",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "232416ae6945592a775a32a9fe68fd459e623475555d1599877408ac6896fbbf",
+      "text": "Trouver le chemin"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "aaeb4d5f4c66e596798c16a58bbf12492b0e8e9db72cc7be9e351415abf68de3",
+      "text": "Lorsque vous pistez une créature, vous êtes perdu, vous ignorez comment commencer un voyage ou vous tentez de choisir entre deux itinéraires ou plus, vous pouvez poser une question à votre MJ sur cette tâche et obtenir une réponse très brève et utile. Après avoir utilisé cette aptitude, vous ne pouvez plus l’utiliser avant votre prochaine récupération. Action."
+    }
+  ]
+}

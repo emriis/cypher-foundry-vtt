@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.gather-your-strength",
+  "sourceLogicalId": "ability.gather-your-strength",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "71adc79b23bc36d01eb7211de01fab16b8ddfb9ebdf4c664f686ed9bad5a0e84",
+      "text": "Rassembler ses forces"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "1779b9bc7b0915376d5a2e38f744b4fe252ac09e22e362a8d26bcee6f466cfe1",
+      "text": "Votre attaque de ce round inflige 2 dégâts supplémentaires si vous l’effectuez par une action lente plutôt que par une action ou une action réflexe. Aptitude passive."
+    }
+  ]
+}

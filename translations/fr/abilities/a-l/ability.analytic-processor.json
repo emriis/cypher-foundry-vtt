@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.analytic-processor",
+  "sourceLogicalId": "ability.analytic-processor",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "e6548fe12dd6c30b9d5d39bb13359e930871655601ff77fc4f71372830fc2937",
+      "text": "Processeur analytique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "2bd98840018aa9ae7757f77a2cb22c81ff5b7b40703698efd4f7e18bf5b40e8e",
+      "text": "Posez au MJ une question à laquelle vous souhaitez obtenir une réponse. Le MJ fixe la difficulté de la réponse : plus celle-ci est obscure, plus la tâche est difficile. Si vous réussissez une tâche d’Intellect de cette difficulté, vous obtenez une réponse brève à la question. En cas d’échec, vous subissez 4 dégâts d’Intellect dus à un retour numérique. Action."
+    }
+  ]
+}

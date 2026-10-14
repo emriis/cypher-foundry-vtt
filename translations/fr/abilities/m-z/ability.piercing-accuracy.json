@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.piercing-accuracy",
+  "sourceLogicalId": "ability.piercing-accuracy",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "64cb73d9ed80feaa3f269c49ae920b600dd5589361c3379679a2e92746e7de25",
+      "text": "Précision pénétrante"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "f5025fbbfe3e9223b202156dba493eb36eeafc1623f319c8d8498c2bfd26ab55",
+      "text": "L’adversaire subit +2 dégâts. Action."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.horde-fighting",
+  "sourceLogicalId": "ability.horde-fighting",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "1bec2699efeeb19e13ede3e1c04f4d9477001765bd354a2e652f0ec20ff4a62f",
+      "text": "Combattre les hordes"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "c1ded52345b71c56548799c6b84e11299a26d45f1fe8f79e14df4bdadd1d927f",
+      "text": "Lorsque deux adversaires ou plus vous attaquent simultanément au corps à corps, vous pouvez les utiliser les uns contre les autres. Chaque round, choisissez si vous gagnez un atout à vos jets de blocage et d’esquive contre eux ou à vos jets d’attaque contre eux. Aptitude passive."
+    }
+  ]
+}

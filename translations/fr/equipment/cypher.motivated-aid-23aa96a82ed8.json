@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.motivated-aid",
+  "sourceLogicalId": "cypher.motivated-aid",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "d1eadc9dc338373be5448caa022b7e796d7521fb282898e2452a980109138a09",
+      "text": "Aide motivée"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "6e75973a4b4ddf1950f593930d3eb24927cb1f21df694ec5eeca590296a69510",
+      "text": "<p><strong>Effet :</strong> Si vous utilisez votre action pour aider quelqu’un, cette personne bénéficie au total de trois atouts à sa tâche. Pour cette tâche, la limite d’atouts est de trois au lieu de deux. Vous pouvez utiliser ce cypher avant ou après son jet.</p><p><strong>Explication :</strong> Vous ne supportiez pas de la voir échouer. Vous vous êtes souvenu du jour où elle s’était donné du mal pour vous. Vous voulez qu’elle vous doive une faveur.</p>"
+    }
+  ]
+}

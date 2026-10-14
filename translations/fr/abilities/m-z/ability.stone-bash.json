@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.stone-bash",
+  "sourceLogicalId": "ability.stone-bash",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "2659e34ee197dd130525f32ea4e3b4045f8cca1fde6c61e8106133c4edb41191",
+      "text": "Coup de pierre"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "870fbaf7e18d1d8133b6e21e5cfd186676fd42659a11257adcb2d33cd03be9ac",
+      "text": "Votre attaque à mains nues de ce round inflige 2 dégâts supplémentaires si vous l’effectuez comme une Action lente."
+    }
+  ]
+}

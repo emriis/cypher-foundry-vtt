@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.force-field",
+  "sourceLogicalId": "cypher.manifest.force-field",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "440776ee6666a337c61c1e8b1dc4c0d1db2c972728ff21d53106659e1b4cb92c",
+      "text": "Champ de force"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "65d699c9b69ad63e4ba629feb42992402863d7208a455de6d2546d1fc22282f7",
+      "text": "<p><strong>Effet :</strong> Vous créez un champ de force de niveau 6 jusqu’à une distance courte. Choisissez si le champ forme un cube, une sphère, un mur ou un chemin. Un cube ou une sphère de force mesure environ une distance immédiate de côté ou de diamètre. Un mur a une hauteur immédiate et une largeur courte, ou l’inverse. Un chemin ressemble à un mur, mais horizontal plutôt que vertical. Le champ de force s’adapte autrement à l’espace disponible, s’arrêtant aux obstacles solides sans exercer de pression sur eux. Il dure jusqu’à ce que vous preniez une récupération d’une heure ou plus. Vous pouvez utiliser un cube ou une sphère de force pour piéger des adversaires dans son volume ; effectuez des attaques d’Intellect contre chaque adversaire pour l’y enfermer. Le gaz ne traverse pas le champ, mais le volume à l’intérieur d’un cube ou d’une sphère suffit pour que ses occupants ne risquent probablement pas de suffoquer.</p><p><strong>Objets du genre : cube de force (fantasy) ; générateur de champ de force (science-fiction). Les champs de force peuvent être invisibles, transparents, translucides ou opaques.</strong></p>"
+    }
+  ]
+}

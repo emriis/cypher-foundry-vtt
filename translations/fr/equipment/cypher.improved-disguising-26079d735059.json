@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.improved-disguising",
+  "sourceLogicalId": "cypher.improved-disguising",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "6374f30eab66907dc5bbe5a174ce5116663762fceb08efcb46f11ada04246c1e",
+      "text": "Déguisement renforcé"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "912b31ee157fb5a670e84bbe04517e202c13ce1ae939c8777fa5267c2099c93f",
+      "text": "<p><strong>Effet :</strong> Vous bénéficiez de trois atouts à votre tâche de déguisement. Pour cette tâche, la limite d’atouts est de trois au lieu de deux. Vous pouvez utiliser ce cypher avant ou après votre jet.</p><p><strong>Explication :</strong> Les gens ne font pas vraiment attention à votre apparence. Vous ressemblez effectivement à la personne dont vous avez pris l’apparence. Vous avez trouvé une astuce pour transformer quelque chose en accessoire ou en élément de costume.</p>"
+    }
+  ]
+}

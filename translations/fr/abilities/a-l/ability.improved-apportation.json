@@ -1,0 +1,38 @@
+{
+  "logicalId": "ability.improved-apportation",
+  "sourceLogicalId": "ability.improved-apportation",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "5cd382ee030714e91f4acb76acd3c42580db5f1e490f49b85f9efbae24b7d5ee",
+      "text": "Apportation améliorée"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "4d361d7d58565cba610ae8ab9c6461c928220119edf1f3c7746f1c2311420678",
+      "text": "Vous attirez à vous une créature de niveau 3 ou moins depuis presque n’importe quelle distance. Vous pouvez choisir une sorte de créature que vous avez déjà rencontrée ou, une fois entre chaque récupération de dix heures, laisser le MJ déterminer aléatoirement la créature qui apparaît. La créature apparaît à côté de vous. Elle ne se souvient de rien de ce qui précède votre appel, mais possède les connaissances générales d’une créature typique de son espèce. Elle est disposée à communiquer et à vous aider. Action. Créature aléatoire d20 Résultats 1–16 Niveau 3 17–18 Niveau 4 19–20 Niveau 5"
+    },
+    {
+      "path": "system.rollTables.random-creature.name",
+      "sourceHash": "16fb4b3c519364ef96da7bfcf14b2600e479bcf19a816b6002a6255bc8f9ed79",
+      "text": "Créature aléatoire"
+    },
+    {
+      "path": "system.rollTables.random-creature.results.0.description",
+      "sourceHash": "42b03421cde76b84ff90b7eb6cb1a2821ad6388bdb15b3d67cb73fd5c508da0b",
+      "text": "Niveau 3"
+    },
+    {
+      "path": "system.rollTables.random-creature.results.1.description",
+      "sourceHash": "3d275ef75669d15c6046b359d481dc9136bf872f77c5d31c70a842ed2e849457",
+      "text": "Niveau 4"
+    },
+    {
+      "path": "system.rollTables.random-creature.results.2.description",
+      "sourceHash": "0d0e64159b64b45187e37a643586453f0b2875978053bf6b97ee158f7996628f",
+      "text": "Niveau 5"
+    }
+  ]
+}

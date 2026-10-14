@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.wilderness-awareness",
+  "sourceLogicalId": "ability.wilderness-awareness",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "eefdd7111389e02aca579be6dcd2ba7f99d8132194b7103cfef21b13635000cf",
+      "text": "Conscience du milieu sauvage"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "11eafbe572ddc6fab235f6c0acd7e497795706844f110b8b37b5eaa4683bda0c",
+      "text": "Votre lien avec la nature atteint un degré que certains qualifieraient de surnaturel. En milieu sauvage, vous pouvez étendre vos sens à 1 mile (1,6 km) dans n’importe quelle direction et poser au MJ une question très simple et générale sur cette zone, comme « Où se trouve le camp ennemi ? », « Mon ami Deithan est-il encore vivant ? » ou « Où se trouve la chose la plus toxique que je pourrais trouver ? ». Si la réponse recherchée ne se trouve pas dans la zone, vous n’obtenez aucune information. Action."
+    }
+  ]
+}

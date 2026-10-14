@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.combat-prowess-e9702199ab7f",
+  "sourceLogicalId": "ability.combat-prowess-e9702199ab7f",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "48f794f0d00505e8655da564b79e7d63f60f551fd578756275eb28cf46305ad0",
+      "text": "Prouesse martiale"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "a2ecefc1d17092796bd24f5b04caee0982d3347a7dc4395ac215c09899234218",
+      "text": "Vous ajoutez +1 dégât à un type d’attaque d’arme de votre choix : les attaques avec une arme de mêlée ou les attaques avec une arme à distance."
+    }
+  ]
+}

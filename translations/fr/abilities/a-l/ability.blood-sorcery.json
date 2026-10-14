@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.blood-sorcery",
+  "sourceLogicalId": "ability.blood-sorcery",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "0de35af9c8ad0cf871af07ec5e81323b80779363b8cd73c3a61af787e1a01ded",
+      "text": "Sorcellerie du sang"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "baec34ccb71659141a45986ac4516b358c9c5884f942e0f7d7345c1f226146a8",
+      "text": "<p>Vous puisez dans votre propre sang, votre esprit ou votre énergie vitale pour alimenter vos aptitudes. Vous subissez une blessure modérée et ajoutez +1 à l’Avantage de la réserve de votre choix tant que vous conservez cette blessure. Aptitude passive.</p>\n<h4>Vous ne pouvez obtenir qu’un seul +1 d’Avantage à la fois avec Sorcellerie du sang.</h4>"
+    }
+  ]
+}

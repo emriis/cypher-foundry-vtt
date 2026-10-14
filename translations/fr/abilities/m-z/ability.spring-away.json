@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.spring-away",
+  "sourceLogicalId": "ability.spring-away",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "d87465fb3c39c680c735b35f73253a16a93475d900e788aba711a7c576a6e6f7",
+      "text": "Bond de retrait"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "67db44d566336f90efe383b24631f12ff0a9b7cc37cbe86cf2386b203ebfed9f",
+      "text": "Après avoir esquivé avec succès une attaque ou un autre danger, vous pouvez immédiatement vous déplacer jusqu’à une courte distance. Ce déplacement n’entrave pas vos tâches. Une fois cette aptitude utilisée, vous ne pouvez pas la réutiliser avant votre prochain tour. Aptitude passive."
+    }
+  ]
+}

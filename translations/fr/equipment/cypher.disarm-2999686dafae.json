@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.disarm",
+  "sourceLogicalId": "cypher.disarm",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "0449aa195af99b148f7e64c9d8ab2e20ecba3dd1dbe8a43025d6c2dee335b553",
+      "text": "Désarmement"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "f83ef35c43f114cbbb2fa03e55a23842ac265390a3ccc94da4a5657a114d050f",
+      "text": "<p><strong>Effet :</strong> Après une attaque réussie, vous tentez de désarmer un adversaire avec une action supplémentaire. Effectuez un jet d’attaque utilisant la même réserve que l’attaque initiale. En cas de réussite, l’adversaire lâche immédiatement tout ce qu’il tient dans une main de votre choix ; cela atterrit à une distance immédiate. Au lieu de laisser l’objet tomber au sol, si vous appliquez un niveau d’Effort à cette attaque et avez une main libre, vous pouvez saisir ou rattraper ce que l’adversaire a lâché.</p><p><strong>Explication :</strong> Vous avez frappé un groupe de nerfs. L’objet est plus glissant que prévu. Vous avez vu cette astuce une fois dans un film.</p>"
+    }
+  ]
+}

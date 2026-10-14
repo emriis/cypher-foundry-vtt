@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.onslaught",
+  "sourceLogicalId": "ability.onslaught",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "3d956150539f05acad046c9b3b303490605a2e9f9546aa9bc58fb0b8256412a9",
+      "text": "Assaut"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "0e28f12aca958497fe847a7dda1207e20a2ac4c6ec3348918e24f93c895a7101",
+      "text": "Vous attaquez un adversaire avec des énergies qui assaillent soit son corps, soit son esprit. Dans les deux cas, vous devez pouvoir voir la cible. Si l’attaque est physique, vous émettez un rayon de force à courte portée qui inflige 4 dégâts. Si l’attaque est mentale, vous concentrez votre énergie mentale pour frapper ses processus de pensée par une entaille mentale infligeant 2 dégâts d’Intellect, qui ignorent l’armure. Certaines créatures dépourvues d’esprit, comme les robots, peuvent être immunisées contre cette entaille mentale. Action. Au rang 3 : vous infligez 1 dégât supplémentaire avec Assaut (Onslaught)."
+    }
+  ]
+}

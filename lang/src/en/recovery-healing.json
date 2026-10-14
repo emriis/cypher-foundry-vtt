@@ -1,0 +1,60 @@
+{
+  "CYPHER": {
+    "Recovery": {
+      "Title": "Recoveries",
+      "action": "One Action",
+      "tenMinutes": "10 Minutes",
+      "hour": "1 Hour",
+      "tenHours": "10 Hours",
+      "RemovesAllMinor": "Removes all minor wounds.",
+      "RemovesOneModerate": "Removes one moderate wound.",
+      "RemovesAllModerateReminder": "Removes all moderate wounds. A difficulty 6 Might task can also remove one major wound.",
+      "RemovesAllModerate": "Removes all moderate wounds.",
+      "RemovesMinorAndModerate": "Removes all minor wounds and all but one moderate wound, if any.",
+      "SourceLabel": "Recovery allowance",
+      "Sources": {
+        "standard": "Ordinary recovery",
+        "power-shift-healing": "Healing power shifts",
+        "untamed-recovery": "Untamed Recovery",
+        "mind-surge": "Mind Surge (Intellect only)",
+        "machine-not-flesh": "Machine Not Flesh (connected to power)"
+      },
+      "Completed": "The full recovery time ({interval}) has been completed.",
+      "LastAction": "Use as a Last action (+2 points)",
+      "WoundChoice": "Wounds removed by rest",
+      "OneModerate": "One moderate wound, or all minor wounds if there are no moderate wounds",
+      "AllModerate": "All moderate wounds",
+      "AllMinor": "All minor wounds",
+      "MinorInstead": "All minor wounds; retain one moderate wound if present",
+      "MajorTask": "Attempt a difficulty 6 Might task to remove one major wound",
+      "MachinePowered": "The machine has access to a suitable power supply during this recovery.",
+      "Allocate": "Distribute recovered Pool points",
+      "PointsAvailable": "Available points: {total}",
+      "AllocationHint": "Divide these points among the permitted Pools, up to each maximum. Unassigned points are unused.",
+      "Apply": "Apply recovery",
+      "Unavailable": "This recovery has already been used or its prerequisite is not confirmed.",
+      "InvalidAllocation": "The allocation exceeds the recovered points or the current Pool limits. No recovery was consumed."
+    },
+    "Healing": {
+      "Treatment": "Treatment",
+      "TimeProfile": "Treatment time agreed with the GM",
+      "Profiles": {
+        "standard": "Dungeon fantasy / swords & sorcery",
+        "realistic": "Real world / epic fantasy / hard sci-fi / postapocalypse",
+        "heroic": "Action / space opera / superheroes"
+      },
+      "Times": {
+        "minor": "Minor: 1 minute normally; 10 minutes in realistic settings; a Last action in heroic settings.",
+        "moderate": "Moderate: 10 minutes normally; 1 hour in realistic settings; 1 minute in heroic settings.",
+        "major": "Major: 1 hour normally; 1 week in realistic settings; 10 minutes in heroic settings."
+      },
+      "Completed": "Both participants have completed the agreed treatment time, and the treatment is applicable to this target.",
+      "Hand": "Healing Hand",
+      "Wound": "PC wound to reduce",
+      "NPCHealth": "An NPC recipient regains 5 Health instead of reducing a wound.",
+      "TouchConfirmed": "The target is in contact and can receive this healing effect.",
+      "Apply": "Apply healing",
+      "HandResult": "Healing Hand affects {name}; {cost} Intellect points spent."
+    }
+  }
+}

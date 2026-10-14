@@ -5,7 +5,7 @@
   "type": "focus",
   "img": "icons/magic/symbols/runes-carved-stone-purple.webp",
   "system": {
-    "description": "<p>You have a book of various spells and can change which ones you have ready to cast each day—blasts of energy, summoning monsters, magical flight, teleportation, and copying cyphers can all be part of your repertoire.</p>",
+    "description": "<p>You have a book of various spells and can change which ones you have ready to cast each day—blasts of energy, summoning monsters, magical flight, teleportation, and copying cyphers can all be part of your repertoire.</p>\n<p>Character abilities from the Casts Spells focus are magical spells or rituals. Your character has to use specific magic words and gestures to activate them, and they may require tiny amounts of strange ingredients like spider eyes and powdered gemstones. These are just story and flavor requirements; in terms of game mechanics, these abilities work just like abilities from other foci and from various types.</p>\n<ul>\n<li>Genre themes: sorcerer or wizard (fantasy), magician (real world with magic and/or horror), master of the mystic arts (superhero)</li>\n<li>GM intrusions: A spell goes wrong. A summoned creature turns on the caster. A rival spellcaster is drawn to the magic use.</li>\n</ul>",
     "abilities": [
       "Compendium.cypher.abilities-en.Item.62fb10cd0bc47fa2",
       "Compendium.cypher.abilities-en.Item.3f2b9a73cd33341b",
@@ -202,6 +202,13 @@
   "flags": {
     "cypher": {
       "sourceLicense": "Full text from the Cypher Reference Document (CRD), used under the Cypher Open License."
+    },
+    "cypherFoundry": {
+      "crd": {
+        "transformations": [
+          "Complete CRD parent context retained; playable Ability definitions represented by separate Item references"
+        ]
+      }
     }
   }
 }

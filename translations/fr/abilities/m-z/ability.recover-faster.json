@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.recover-faster",
+  "sourceLogicalId": "ability.recover-faster",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "7864bbaa28e155efc2c5d545cf866da332d1aebbbcf041033e93c3cf5e2ad198",
+      "text": "Récupération accélérée"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "06049f8c1ab1c23cd7bd38a01a6328ed3e5126909244fdf6a0ba6f5ee97f83ad",
+      "text": "Lorsque vous vous reprenez en y consacrant votre action, vous obtenez une action supplémentaire pendant votre tour, utilisable uniquement pour vous déplacer. Aptitude passive."
+    }
+  ]
+}

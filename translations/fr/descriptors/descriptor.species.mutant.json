@@ -1,0 +1,38 @@
+{
+  "logicalId": "descriptor.species.mutant",
+  "sourceLogicalId": "descriptor.species.mutant",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "7804c6fd2c1ac6d0afdb5964b2ad8e1ddf4fa6a08952433c58e6e1faa6d3f64a",
+      "text": "Mutant"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "2fc51a7b196a3ba73cba4326240782e752fd0b284113ece47e842694b2cfea30",
+      "text": "<p>Des forces dévastatrices, assez puissantes pour détruire un monde, vous ont transformé. Vous avez acquis des mutations, peut-être par des mutations latentes transmises par des ancêtres ayant survécu à l’apocalypse, ou parce que quelque chose en vous réagit à l’exposition aux radiations ou à une autre source mutagène. Vous pouvez ressembler assez étroitement aux autres membres de votre espèce, ou présenter une ou plusieurs différences physiques évidentes qui rendent difficile la dissimulation de votre nature. Définissez vos particularités avec le MJ. Vous ne souhaitez d’ailleurs pas forcément cacher ce que vous êtes ; vous pouvez préférer montrer fièrement ce qui vous rend différent et, selon vous, meilleur.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>Vous ne subissez pas d’intrusion du MJ lorsque vous obtenez un 1 sur une tâche de défense de Puissance.</p>\n<p>Choisissez n’importe quelle aptitude de rang 1 dans n’importe quel focus ; adaptez-la avec le MJ pour qu’elle représente votre mutation.</p>"
+    },
+    {
+      "path": "system.benefits.0.name",
+      "sourceHash": "258f25d2b4e752c480b9cff962e751ca2f0f77cb610b91a593e1b11fd1781abd",
+      "text": "Défense de Puissance sans intrusion du MJ"
+    },
+    {
+      "path": "system.benefits.0.description",
+      "sourceHash": "e974edfe5f13b8b77e3798555a8716694bd3a0ee24ee13dbd393cbae1f73d84c",
+      "text": "<p>Vous ne subissez pas d’intrusion du MJ lorsque vous obtenez un 1 sur une tâche de défense de Puissance.</p>"
+    },
+    {
+      "path": "system.benefits.1.name",
+      "sourceHash": "c26ee0e4b915257d995cffde4cc7b77a97c1e0cfa544836fdcb28329d1dc749a",
+      "text": "Mutation"
+    },
+    {
+      "path": "system.benefits.1.description",
+      "sourceHash": "c3c4f07c8acb6ca3b1fe2fe36676ff100e2e369c23d794d4289436b50292edb0",
+      "text": "<p>Choisissez n’importe quelle aptitude de rang 1 dans n’importe quel focus ; adaptez-la avec le MJ pour qu’elle représente votre mutation.</p>"
+    }
+  ]
+}

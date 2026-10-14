@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.sleuthing",
+  "sourceLogicalId": "ability.sleuthing",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "f20482c157b706ee3e6f78f04f8d9051beebba12023f9a30e0c8781d080c55fa",
+      "text": "Investigation"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "cd1b178a3bb40d922223dd885c41c740552498696c4529d8f3798e5c304baf88",
+      "text": "Lorsque vous pistez une cible, cherchez un élément inhabituel, comme un indice ou une pièce à conviction, sur une scène qui vous intéresse, ou tentez autrement d’éclaircir un mystère, vous pouvez poser au MJ une question sur la tâche et obtenir une réponse très brève et utile. Elle peut être évidente pour votre personnage, mais pas pour le joueur qui ne possède pas son expérience. Action."
+    }
+  ]
+}

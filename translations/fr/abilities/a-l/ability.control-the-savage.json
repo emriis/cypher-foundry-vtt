@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.control-the-savage",
+  "sourceLogicalId": "ability.control-the-savage",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "0c0f584c3a79de8595a669a9818d840ec40cf9496118ddacd86447d4f922638f",
+      "text": "Contrôler la bête sauvage"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "c3cc4538ad99c9acf7af6faf62d16ce4880fafc8a5b8cc9c9f9e7337c1c36dc9",
+      "text": "Effectuez un jet d’attaque d’Intellect pour contrôler une bête non humaine calme à portée courte. Vous la contrôlez tant que vous utilisez votre action à chaque round pour vous concentrer sur elle. Action."
+    }
+  ]
+}

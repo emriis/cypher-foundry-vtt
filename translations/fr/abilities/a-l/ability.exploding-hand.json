@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.exploding-hand",
+  "sourceLogicalId": "ability.exploding-hand",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "f06e742abc20934f6e9bd5d5476acd4315e8960140638edc0c9446b1b93acb31",
+      "text": "Main explosive"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "a29121d376ce3fbaa22450e2f907fe35990567790d80d85ca2c9cf0d6b47edc5",
+      "text": "Vous faites appel à votre source mystique et la projetez vers une cible à portée longue et deux cibles supplémentaires à portée immédiate de la première. Effectuez une attaque distincte contre chacune. Une attaque réussie inflige 4 dégâts ; même en cas d’échec, vous infligez encore 1 dégât. Action."
+    }
+  ]
+}

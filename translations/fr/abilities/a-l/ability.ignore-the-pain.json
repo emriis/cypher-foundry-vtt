@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.ignore-the-pain",
+  "sourceLogicalId": "ability.ignore-the-pain",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "0d803c3c745727091e79b895a82a54467340960bea0b4508e8655184439d35eb",
+      "text": "Ignorer la douleur"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "4b759e31d2befaa28e9d80a3b24404b7711bbf6ff2979a2e07fdecf50ac2d1f5",
+      "text": "Vous ignorez un pas d’entrave dû à une blessure majeure ou au fait d’avoir subi toutes vos blessures modérées. Vous pouvez choisir cette aptitude jusqu’à trois fois. Chaque fois que vous la choisissez, elle vous permet d’ignorer un pas d’entrave supplémentaire causé par les blessures. Aptitude passive."
+    }
+  ]
+}

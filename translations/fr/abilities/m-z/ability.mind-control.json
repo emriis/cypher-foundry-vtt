@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.mind-control",
+  "sourceLogicalId": "ability.mind-control",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "fc2feab8e0f150a00217954e9ff3ae1aba97e1a9b5938a6a7d5cb084bb20747c",
+      "text": "Contrôle mental"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "cceeecc04c016ee5350494481da5e2fc3fd5b7c90f322a5408b52a037e9cfdc5",
+      "text": "Vous contrôlez les actions d’une autre créature que vous touchez. Elle doit être de niveau 2 ou moins et vous devez réussir une attaque d’Intellect contre elle. Le contrôle dure jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Pendant ce temps, vous maintenez un contact mental avec la cible et percevez ce qu’elle perçoit. Vous décidez au cas par cas si elle suit vos ordres ou agit librement. À la fin de l’effet, elle ne se souvient ni d’avoir été contrôlée, ni de ce qu’elle a fait sous vos ordres. Effort : augmentez de 1 le niveau maximal de la cible que vous pouvez affecter. Action pour initier l’effet."
+    }
+  ]
+}

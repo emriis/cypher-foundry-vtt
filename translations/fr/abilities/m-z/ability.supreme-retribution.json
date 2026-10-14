@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.supreme-retribution",
+  "sourceLogicalId": "ability.supreme-retribution",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "c0ba3e7ac67ffe9993ff06390222d21595adc9812ab9b20fc2dfdae5ca2ceaab",
+      "text": "Rétribution suprême"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "81c0fe681bb9d0a083d26786a64c10f567e8047f0de385f000878608ec47e0fb",
+      "text": "<p>Vous faites tomber une colonne de flammes rayonnantes et rugissantes dans une zone immédiate à longue portée. Effectuez une attaque d’Intellect distincte contre chaque créature dans la zone. Une réussite inflige 4 dégâts ; toutes les créatures subissent 1 dégât même en cas de jet d’attaque manqué. Choisissez une créature dans la zone qui subit 3 dégâts supplémentaires, que votre attaque ait réussi ou échoué. Action.</p>"
+    }
+  ]
+}

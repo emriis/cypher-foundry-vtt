@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.might-for-mind",
+  "sourceLogicalId": "ability.might-for-mind",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "5b4560184ca6582665eaf2eee8879fe0a74d7cb144ff4eaeda81410187fbff0f",
+      "text": "La Puissance pour l’esprit"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d65f75b717e2814288aee2fab25c62831b69337a04f1f584ee911adb40193bc7",
+      "text": "Lorsque vous accomplissez une tâche nécessitant normalement de dépenser des points de votre réserve de Puissance, vous pouvez dépenser des points de votre réserve d’Intellect à la place, et inversement."
+    }
+  ]
+}

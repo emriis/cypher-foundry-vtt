@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.grab",
+  "sourceLogicalId": "ability.grab",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "7d935f258918d1a5b94b12c6509388a466f996c68ca6f254dc1ced2738a38a4b",
+      "text": "Saisir"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "ba90165fc4459a1fbe93138a777988dddee9fb9bbc7be32c77db3be38d04a5ed",
+      "text": "Si vous effectuez une attaque à mains nues en tant qu’action lente, votre attaque inflige 2 dégâts de moins et la cible est agrippée. Toutes les tâches de la cible agrippée sont entravées, y compris ses tentatives pour se dégager de votre prise. En guise d’attaque, vous pouvez infliger 4 dégâts à l’adversaire que vous agrippez (sans jet d’attaque). Lorsque vous êtes plus grand que la normale, chaque accroissement de taille (Agrandissement, Plus grand, Énorme, Gargantuesque et Colossal) entrave les tentatives de la cible pour se dégager d’un pas supplémentaire et augmente les dégâts de votre prise de 1. Action lente pour commencer ; action pour serrer les cibles agrippées."
+    }
+  ]
+}

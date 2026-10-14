@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.object-duplicator",
+  "sourceLogicalId": "cypher.manifest.object-duplicator",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "5ef47a6f3dcf5a8dc70c4e22545d319550dd7f9869957a26f4cf0c2fba0805ed",
+      "text": "Duplicateur d’objet"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "a03ec767936cafb532b4e4e3ed98c6996375e3fba77cc7ec24a6ec930b27c96c",
+      "text": "<p><strong>Effet :</strong> Vous dupliquez un objet touché que vous pouvez tenir d’une main, comme une arme, un bouclier ou une pièce d’équipement, en créant une copie fonctionnelle. L’objet d’origine doit être de niveau 6 ou moins. La copie persiste jusqu’à ce que vous preniez une récupération d’une heure ou plus, sauf s’il s’agit d’un équipement consommé après utilisation, comme une boîte de balles ou une grenade.</p><p><strong>Objets du genre : argile prométhéenne (fantasy) ; nanoréplicateur (science-fiction)</strong></p>"
+    }
+  ]
+}

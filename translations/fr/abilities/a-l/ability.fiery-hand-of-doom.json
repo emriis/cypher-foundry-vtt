@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.fiery-hand-of-doom",
+  "sourceLogicalId": "ability.fiery-hand-of-doom",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "23914099d9d550ade60116e393f1eae35401d10617ba837e8ba09eb974ec984a",
+      "text": "Main ardente de la damnation"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "96b6f423409b636a737d2ddba0109b21f6f949d3fbd68e0bc383566ea66f6f4a",
+      "text": "Tant que Voile de flammes est actif, vous pouvez plonger la main dans votre halo et en tirer une main de flammes animées pouvant atteindre 3 pieds (1 m) d’envergure, qui dure jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. La main est une créature de niveau 3 qui inflige 1 dégât de feu supplémentaire lorsqu’elle attaque, soit 4 dégâts au total. Elle flotte dans les airs et agit selon vos instructions. La diriger nécessite une action. Sans ordre, elle ne fait que vous suivre. Elle peut parcourir une distance longue en un round, mais ne s’éloigne jamais de vous au-delà de la portée longue. Elle peut attaquer, saisir, déplacer et transporter des objets. Elle inflige 3 dégâts par round à tout objet inflammable qu’elle tient. Une action pour la créer ; une action pour la diriger."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "logicalId": "descriptor.species.stelan",
+  "sourceLogicalId": "descriptor.species.stelan",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "d78ba2e39014b209b962638434590c6c5c1e1c94ac5985bafb86c8798b2553ac",
+      "text": "Stelan"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "2c7805ec4b1752f76d255e71edaaa448a99e5b3499b0f9c1df08dfea0ad01ed1",
+      "text": "<p>Sans les traits plus anguleux de votre visage par rapport aux humains, les étrangers auraient du mal à vous distinguer d’eux. Votre différence de tempérament est toutefois plus évidente. Quelques minutes en votre présence suffisent pour comprendre que les stelans placent la pensée rationnelle au-dessus de tout, n’accordant guère de valeur aux intuitions viscérales, aux émotions qui obscurcissent le jugement ou aux anecdotes opposées à des données compilées.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>Vous ne subissez pas d’intrusion du MJ lorsque vous obtenez un 1 sur une tâche de défense d’Intellect.</p>\n<p>Vous êtes entraîné en collecte d’informations.</p>\n<p>Lorsqu’une attaque à mains nues réussit, vous pouvez choisir de faire perdre à la cible son prochain tour au lieu de lui infliger des dégâts.</p>"
+    },
+    {
+      "path": "system.skillOptions.0",
+      "sourceHash": "5ea107214017919b63ad99aad4da2bf79c41f35fba6b4c50ca9888264ecb021c",
+      "text": "Collecte d’informations"
+    },
+    {
+      "path": "system.benefits.0.name",
+      "sourceHash": "9cc77461cee8d9f9ab14d4919f67c86fb654ea5c3280377c18c02ad6f549a452",
+      "text": "Défense d’Intellect sans intrusion du MJ"
+    },
+    {
+      "path": "system.benefits.0.description",
+      "sourceHash": "946df55ca57083bb1fffcbc5a4f497c67771c868f2bfba1c15c300b5531303f3",
+      "text": "<p>Vous ne subissez pas d’intrusion du MJ lorsque vous obtenez un 1 sur une tâche de défense d’Intellect.</p>"
+    },
+    {
+      "path": "system.benefits.1.name",
+      "sourceHash": "ae5483c72ad7a41b28dd96f8aaf4c4f0086fc22503cedc488a1cbb73b52597d4",
+      "text": "Étourdissement à mains nues"
+    },
+    {
+      "path": "system.benefits.1.description",
+      "sourceHash": "4e61f347f4d2f7f669cdf0ff6d9d015c7cf14d5415f58ea7bb4037b99c98405a",
+      "text": "<p>Lorsqu’une attaque à mains nues réussit, vous pouvez choisir de faire perdre à la cible son prochain tour au lieu de lui infliger des dégâts.</p>"
+    }
+  ]
+}

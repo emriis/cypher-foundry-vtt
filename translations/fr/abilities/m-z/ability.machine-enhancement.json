@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.machine-enhancement",
+  "sourceLogicalId": "ability.machine-enhancement",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "381b7dc20fec4c43c426a97baf4cb87fb8cb7c7ae2cd51b260815c869a2a757d",
+      "text": "Amélioration mécanique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "96cc6c692d10e9467fa4f8483d1b93e4c86513a55d80858f0f728b6a872eea42",
+      "text": "Chaque fois que vous utilisez de l’Effort pour une action d’Intellect, ajoutez l’une des options suivantes, au choix : un niveau d’Effort gratuit pour cette action ou un effet mineur pour cette action. Aptitude passive."
+    }
+  ]
+}

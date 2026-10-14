@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.seeds-of-fury-7224a09c7f5c",
+  "sourceLogicalId": "ability.seeds-of-fury-7224a09c7f5c",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "c8bc2492c2c7729639e922a25f883306ba7eb6dbbbfeb06242b6020c0f42fd78",
+      "text": "Graines de fureur"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "85fa02357231128decc7a0c8a59c3db08f1455131f08718191a7619c7994ce34",
+      "text": "Vous lancez en l’air une poignée de graines qui s’enflamment et filent vers une cible à longue portée, brûlant l’air de traînées de fumée tortueuses. Une attaque réussie inflige 3 dégâts et embrase la cible, qui subit +1 dégât par round jusqu’à ce qu’elle utilise une action pour éteindre les flammes ou que vous preniez votre prochaine récupération. Action."
+    }
+  ]
+}

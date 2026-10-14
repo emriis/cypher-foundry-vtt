@@ -1,0 +1,18 @@
+{
+  "logicalId": "cypher.manifest.water-breathing",
+  "sourceLogicalId": "cypher.manifest.water-breathing",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "4fa023594764255f8647832f7cd80cead2e0c4094348f33648bd7c2f48b1537c",
+      "text": "Respiration aquatique"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "023ebeba6ebe3fff765c214a8a6ee92efd58a684e7ef527d3b0b4567cf547f39",
+      "text": "<p><strong>Effet :</strong> Jusqu’à ce que vous preniez une récupération de dix heures, vous pouvez respirer sous l’eau aussi bien que dans l’air. Vous pouvez utiliser ce Cypher sur un maximum de six créatures ; dans ce cas, il dure jusqu’à ce qu’elles prennent une récupération d’une heure ou plus. La fin de l’effet pour une créature ne modifie pas sa durée pour les autres.</p><p><strong>Objets du genre : potion de respiration aquatique (fantasy) ; fluide respiratoire (science-fiction)</strong></p>"
+    }
+  ]
+}

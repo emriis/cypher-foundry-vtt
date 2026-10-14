@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.damage-dealer-aeb2dea33464",
+  "sourceLogicalId": "ability.damage-dealer-aeb2dea33464",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "fd9469564518a3a65bcf6a9cc72e7ae2267b56f5956322792ded7a7fb347f0da",
+      "text": "Dégâts accrus"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "97b3fd2b8108a4bd15ddd52569673f986d5d6c7b0e86972264320c949f8f5935",
+      "text": "Vous êtes devenu plus efficace pour tuer avec un type d’arme. Choisissez une arme de mêlée ou à distance. Vous infligez 3 dégâts supplémentaires avec cette arme. Vous pouvez sélectionner cette aptitude jusqu’à deux fois pour une arme donnée, pour un total de 6 dégâts."
+    }
+  ]
+}

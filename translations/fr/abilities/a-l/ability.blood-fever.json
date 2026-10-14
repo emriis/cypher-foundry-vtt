@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.blood-fever",
+  "sourceLogicalId": "ability.blood-fever",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "1b6c881401c86ae009b139c4fa25ae235f187753b7272f489ee22510383d7773",
+      "text": "Fièvre du sang"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "87211af6c3cc6d56633af799e6ea20ea483c6f9ac45c9d3bc70622c0c707c276",
+      "text": "Tant qu’au moins une de vos réserves ne contient plus de points, ou que vous avez au moins deux blessures modérées ou une blessure majeure, vous bénéficiez d’un atout aux attaques ou aux jets de défense, au choix, ainsi qu’aux jets d’intimidation. Aptitude passive."
+    }
+  ]
+}

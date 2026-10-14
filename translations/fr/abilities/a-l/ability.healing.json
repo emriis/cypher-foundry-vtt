@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.healing",
+  "sourceLogicalId": "ability.healing",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "44bc3799892c50fad1f4f76100cd74ebf28f922da6f977a772352d3291b92fdf",
+      "text": "Guérison"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "39fc0c238fa9982dd40a3e9db28ffb101463a3edf8fa2e6b66cf629de026dd61",
+      "text": "La gravité de l’une des blessures du suppliant est réduite d’un degré."
+    }
+  ]
+}

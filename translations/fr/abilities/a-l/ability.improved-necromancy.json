@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.improved-necromancy",
+  "sourceLogicalId": "ability.improved-necromancy",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "b50f1eacaf6881d5cfd53189310edbdc57cc36cd83a6864d60202a2978a6508a",
+      "text": "Nécromancie améliorée"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "4ccbe9b7983aeaae39da811be4d196c95d055f174759bd4741df7c1f71c20cd7",
+      "text": "Vous pouvez utiliser Nécromancie élémentaire pour animer plusieurs corps à la fois. Chaque créature animée au-delà de la première coûte 1 point d’Intellect supplémentaire (soit 4 points pour deux corps, 5 points pour trois, et ainsi de suite). La portée de Nécromancie élémentaire passe à courte, y compris lorsque vous animez plusieurs corps."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.sneak-attack-3370384928b5",
+  "sourceLogicalId": "ability.sneak-attack-3370384928b5",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "b4d41a3fea0e7a6c79a2a8ba6f03532d568df5ca2f9fbeb0d3e0f1c2029f8560",
+      "text": "Attaque sournoise"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "1cdb290919084cbb9c13ecaf75b3b74d6d2e758ec1b95abf8bcd16a99c9940cf",
+      "text": "Si vous utilisez une arme légère pour attaquer un adversaire dans l’une des conditions suivantes, votre attaque inflige +5 dégâts. Cette aptitude ne fonctionne pas avec les armes moyennes ou lourdes. Vous attaquez par surprise. Un allié utilise son action pour faciliter votre attaque. Les défenses de votre adversaire sont entravées par une autre distraction directe et persistante. Votre adversaire ne peut pas jouer son prochain tour à cause d’une attaque incapacitante ou d’une situation similaire. Action réflexe."
+    }
+  ]
+}

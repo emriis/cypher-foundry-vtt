@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.towering-strike",
+  "sourceLogicalId": "ability.towering-strike",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "562dbe0a30480c7c2ef58293417d9245634b1fbe3de26e52b61244c39e433841",
+      "text": "Frappe titanesque"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "d3e47e6f33ebcea7daa79e572295d4e3e23ecfddf67cf920a21118190f01e5e8",
+      "text": "Lorsque vous touchez avec une attaque de Puissance, vous infligez 4 dégâts supplémentaires. Lorsque votre taille dépasse la normale, chaque augmentation — Agrandissement (Enlarge), Plus grand (Bigger), Immense (Huge), Gigantesque (Gargantuan) et Colossal — inflige 1 dégât supplémentaire. Cette aptitude se renouvelle après une récupération. Aptitude passive."
+    }
+  ]
+}

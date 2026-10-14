@@ -1,0 +1,18 @@
+{
+  "logicalId": "ability.cast-illusion",
+  "sourceLogicalId": "ability.cast-illusion",
+  "language": "fr",
+  "status": "proposed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "4636054e1920588bf3585d5556e17a9e3ea352769eec3684f2e40e50604fcc53",
+      "text": "Projeter une illusion"
+    },
+    {
+      "path": "system.description",
+      "sourceHash": "aef075227dd03b3ae37db6b7d651738730d372debf746c802aa752363882b17c",
+      "text": "Vos illusions à portée immédiate, comme Illusion mineure, Illusion majeure et Illusion grandiose, passent à une portée courte. Les déguisements créés par Déguisement illusoire durent environ une minute après que les créatures déguisées ont quitté votre champ de vision."
+    }
+  ]
+}
