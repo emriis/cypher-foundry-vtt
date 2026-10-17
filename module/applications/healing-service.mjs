@@ -5,7 +5,7 @@
  */
 import { healingHandUpdates, treatmentProfile } from "../rules/healing.mjs";
 import { resolveActiveAbilityModifiers } from "../rules/ability-modifiers.mjs";
-import { runActorAction } from "./action-guard.mjs";
+import { runActorActions, ACTION_CONTEXT } from "./action-guard.mjs";
 import { rollTask } from "./task-service.mjs";
 import { syncHealingStatuses } from "./wound-removal.mjs";
 
@@ -14,8 +14,7 @@ function itemsOf(actor) {
 }
 
 function withHealingTargets(healer, target, execute) {
-  return runActorAction(healer, "healing", () => target === healer
-    ? execute() : runActorAction(target, "healing", execute));
+  return runActorActions([healer, target], "healing", execute);
 }
 
 /** Stable source key dispatch; translated names never activate a rule. */
@@ -48,10 +47,10 @@ export function getTreatmentProfile(target, severity, profile = "standard") {
  */
 export async function treatWound(healer, { target = healer, severity, timeProfile = "standard", completed = false, rollOptions = {} } = {}) {
   if (healer?.type !== "pc" || target?.type !== "pc" || healer.isOwner === false || target.isOwner === false || completed !== true) return null;
-  return withHealingTargets(healer, target, async () => {
+  return withHealingTargets(healer, target, async context => {
     const profile = getTreatmentProfile(target, severity, timeProfile);
     if (!profile || !(target.system.wounds[severity]?.current > 0)) return null;
-    const result = await rollTask(healer, { ...rollOptions, stat: "intellect", difficulty: profile.difficulty,
+    const result = await rollTask(healer, { ...rollOptions, [ACTION_CONTEXT]: context, stat: "intellect", difficulty: profile.difficulty,
       targetActor: target, woundRemovalSeverity: severity,
       flavor: game.i18n.localize("CYPHER.Healing.Treatment") });
     return result;

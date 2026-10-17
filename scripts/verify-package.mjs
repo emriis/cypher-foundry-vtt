@@ -2,15 +2,12 @@
  * Compare an existing release archive and manifest with the current checkout.
  * Extract into temporary storage, check the allowed file list, then compare
  * bytes. This never rebuilds dist; stale artifacts must be regenerated explicitly.
- * The external unzip command must be available on the validation machine.
  */
-import { execFile } from "node:child_process";
 import { mkdtemp, readFile, readdir, rm, stat } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
-import { promisify } from "node:util";
+import { extractArchive } from "./archive.mjs";
 
-const exec = promisify(execFile);
 const root = path.resolve(import.meta.dirname, "..");
 const dist = path.join(root, "dist");
 const manifest = path.join(root, "system.json");
@@ -42,7 +39,7 @@ async function main() {
   await assertSameFile(manifest, releaseManifest, "dist/system.json");
   const staging = await mkdtemp(path.join(os.tmpdir(), "cypher-package-verify-"));
   try {
-    await exec("unzip", ["-q", archive, "-d", staging]);
+    await extractArchive(archive, staging);
     const actualFiles = await listFiles(staging);
     const expectedFiles = [];
     for (const relativePath of requiredPaths) {

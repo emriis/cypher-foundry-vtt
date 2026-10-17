@@ -1,3 +1,4 @@
+import { runActorAction } from "./action-guard.mjs";
 import { CYPHER } from "../config.mjs";
 import {
   resolveWeaponConfiguration,
@@ -18,10 +19,15 @@ import { resolveWeaponSkillModifier } from "../rules/weapon-skills.mjs";
  * This action only consumes the Item; its descriptive power needs adjudication.
  *
  * @param {Item} item Cypher to consume.
- * @returns {Promise<boolean>} False for another Item type; true after chat creation.
+ * @returns {Promise<boolean>} True after depletion and chat; false for invalid, depleted, unauthorized or busy Items.
  */
 export async function useCypher(item) {
-  if (item.type !== "cypher") return false;
+  if (!item || item.isOwner === false) return false;
+  return (await runActorAction(item, "cypherUse", () => useCypherAccepted(item))) ?? false;
+}
+
+async function useCypherAccepted(item) {
+  if (item.type !== "cypher" || item.system.depleted) return false;
   await item.update({ "system.depleted": true });
   await ChatMessage.create({
     speaker: ChatMessage.getSpeaker({ actor: item.actor }),
@@ -37,6 +43,11 @@ export async function useCypher(item) {
  * @returns {Promise<boolean>} Whether a variant was resolved.
  */
 export async function rollCypherVariant(item) {
+  if (!item || item.isOwner === false) return false;
+  return (await runActorAction(item, "cypherUse", () => rollCypherVariantAccepted(item))) ?? false;
+}
+
+async function rollCypherVariantAccepted(item) {
   if (!item || item.type !== "cypher" || !item.actor || item.system.depleted) {
     return false;
   }
@@ -92,6 +103,11 @@ export async function rollCypherVariant(item) {
  * @returns {Promise<boolean>} Whether a valid table roll was completed.
  */
 export async function rollCypherTable(item, tableId) {
+  if (!item || item.isOwner === false) return false;
+  return (await runActorAction(item, "cypherUse", () => rollCypherTableAccepted(item, tableId))) ?? false;
+}
+
+async function rollCypherTableAccepted(item, tableId) {
   if (!item || item.type !== "cypher" || !item.actor || item.system.depleted) {
     return false;
   }

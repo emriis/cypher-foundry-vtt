@@ -1,8 +1,9 @@
+/** Pure rule scenarios: narrative names do not imply persisted service orchestration. */
 import assert from "node:assert/strict";
 import { describe, test } from "node:test";
 
-import { resolveDefense } from "../../module/rules/defense.mjs";
-import { computeTaskSteps } from "../../module/rules/tasks.mjs";
+import { resolveDefense } from "../../../module/rules/defense.mjs";
+import { computeTaskSteps } from "../../../module/rules/tasks.mjs";
 
 describe("Given a character chooses a defense", () => {
   test("when blocking with armor, then Might and armor Block ease are used", () => {

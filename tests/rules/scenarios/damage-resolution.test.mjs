@@ -1,10 +1,11 @@
+/** Pure rule scenarios: narrative names do not imply persisted service orchestration. */
 import assert from "node:assert/strict";
 import { describe, test } from "node:test";
 
 import {
   resolveNpcDamage,
   resolvePoolDamage
-} from "../../module/rules/wounds.mjs";
+} from "../../../module/rules/wounds.mjs";
 
 describe("Given a PC takes damage to a stat Pool", () => {
   test("when the damage exceeds the Pool, then only the overflow becomes a wound", () => {

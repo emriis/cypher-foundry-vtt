@@ -61,15 +61,11 @@ test("Power Boost Cyphers preserve CRD form ambiguity and random-table ranges",(
   }
 });
 
-test("Power Boost Cypher random table preserves the CRD fallback range",()=>{
+test("Power Boost Cypher random table preserves the nine CRD entry ranges",()=>{
   const ranges=read("en").map(r=>[r.name,r.system.randomRange.min,r.system.randomRange.max]);
   assert.deepEqual(
     ranges.sort((a,b)=>a[1]-b[1]),
     EXPECTED
   );
-  assert.equal(
-    37,
-    37
-  );
-  assert.equal(100,100);
+
 });

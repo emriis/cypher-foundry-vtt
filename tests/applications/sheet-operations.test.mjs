@@ -32,8 +32,8 @@ test("toggleEquipped unequips another armor before equipping the new one", async
     items: [other, item],
     async updateEmbeddedDocuments(type, changes) {
       assert.equal(type, "Item");
-      changes[0]["system.equipped"] = false;
-      other.system.equipped = false;
+      assert.deepEqual(changes, [{ _id: "other", "system.equipped": false }]);
+      other.system.equipped = changes[0]["system.equipped"];
     }
   };
   item.actor = actor;

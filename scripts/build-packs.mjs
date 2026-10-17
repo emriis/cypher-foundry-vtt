@@ -12,7 +12,9 @@ import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 import { readCompendiumCatalogue, readFrenchProposals } from "./review-translations.mjs";
 import { materializeTranslations } from "./localization/materialize-translations.mjs";
-import { createValidationWorkspace, removeValidationWorkspace } from "./validation-workspace.mjs";
+import { createValidationWorkspace, removeValidationWorkspace, assertValidationCheckout } from "./validation-workspace.mjs";
+
+import { compileBeforePublish } from "./pack-publication.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
 async function discoverPacks(checkoutRoot) {
@@ -93,13 +95,19 @@ async function normalizeSourceTree(checkoutRoot, sourceRoot, normalizedRoot, tra
 }
 
 async function compile() {
-  const { workspace, root: checkoutRoot } = await createValidationWorkspace(root);
+  const reuse = process.argv.includes("--normalized-workspace");
+  if (reuse) await assertValidationCheckout(root);
+  const owned = reuse ? null : await createValidationWorkspace(root);
+  const checkoutRoot = owned?.root ?? root;
+  const workspace = reuse ? await fs.mkdtemp(path.join(path.dirname(root), "pack-build-")) : owned.workspace;
   try {
     // The migrator binds its root to import.meta.dirname. Execute the copied
     // script, rather than importing the author's script and mutating its checkout.
-    console.log("Normalizing temporary compendium sources...");
-    await promisify(execFile)(process.execPath, ["scripts/migrate-ability-sources.mjs"],
-      { cwd: checkoutRoot, maxBuffer: 8 * 1024 * 1024 });
+    if (!reuse) {
+      console.log("Normalizing temporary compendium sources...");
+      await promisify(execFile)(process.execPath, ["scripts/migrate-ability-sources.mjs"],
+        { cwd: checkoutRoot, maxBuffer: 8 * 1024 * 1024 });
+    }
     const packs = await discoverPacks(checkoutRoot);
     const [catalogue, proposals] = await Promise.all([
       readCompendiumCatalogue(checkoutRoot), readFrenchProposals(checkoutRoot)
@@ -109,7 +117,7 @@ async function compile() {
 
     // Complete validation and compilation before touching existing outputs.
     // A compiler failure in a later pack must preserve every previous database.
-    for (const pack of packs) {
+    await compileBeforePublish(packs, async pack => {
       const source = path.join(checkoutRoot, "packs", pack, "_source");
       const normalizedSource = path.join(workspace, `${pack}-source`);
       const output = path.join(workspace, pack);
@@ -117,9 +125,7 @@ async function compile() {
       await normalizeSourceTree(checkoutRoot, source, normalizedSource, translations);
       console.log(`Building ${pack}...`);
       await compilePack(normalizedSource, output, { recursive: true });
-    }
-
-    for (const pack of packs) {
+    }, async pack => {
       const destination = path.join(root, "packs", pack);
       const output = path.join(workspace, pack);
       // Remove the previous compiled database, but keep the editable source directory.
@@ -140,10 +146,11 @@ async function compile() {
           { recursive: true }
         );
       }
-    }
+    });
   } finally {
     // Always remove the temporary workspace, even when one pack fails to compile.
-    await removeValidationWorkspace(workspace);
+    if (reuse) await fs.rm(workspace, { recursive: true, force: true });
+    else await removeValidationWorkspace(workspace);
   }
 }
 

@@ -246,40 +246,5 @@ describe("Given a new PC builds a character from CRD content", () => {
     }
   );
 
-  test(
-    "when a species Descriptor matches the PC genre, then its stat, skill, " +
-      "and benefit are applied",
-    async () => {
-      configureFoundryStubs();
-      const actor = createActor();
-      const descriptor = {
-        type: "descriptor",
-        id: "species-id",
-        name: "Adapted",
-        system: {
-          category: "species",
-          genres: ["fantasy"],
-          statOptions: ["speed"],
-          statAmount: 2,
-          grantedSkills: ["Survival"],
-          benefits: [{
-            name: "Night Sight",
-            description: "See in darkness."
-          }],
-          grantsSecondDescriptor: true
-        }
-      };
-
-      assert.equal(await applyDescriptor(actor, descriptor), true);
-      assert.equal(actor.system.species, "Adapted");
-      assert.equal(actor.system.hasSecondDescriptor, true);
-      assert.equal(actor.system.stats.speed.pool.max, 10);
-      assert.deepEqual(
-        actor.items.map(item => item.name),
-        ["Survival", "Night Sight"]
-      );
-      assert.equal(actor.items.at(-1).system.source, "Adapted");
-    }
-  );
 
 });

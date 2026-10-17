@@ -33,6 +33,32 @@ test("validates a CRD source record", () => {
   assert.equal(getCrdProvenance(baseRecord).version, CRD_SOURCE_VERSION);
 });
 
+for (const [field, value, message] of [
+  ["_id", "short", /_id/], ["_key", "!actors!0123456789abcdef", /_key/],
+  ["document", "Unknown", /document/], ["name", " ", /name/],
+  ["crdType", "unknown", /content type/], ["type", null, /item type/],
+  ["flags.cypherFoundry.crd.version", "old", /version/],
+  ["flags.cypherFoundry.crd.logicalId", " ", /logicalId/],
+  ["flags.cypherFoundry.crd.language", "de", /language/],
+  ["flags.cypherFoundry.crd.sourceKind", "unknown", /sourceKind/],
+  ["flags.cypherFoundry.crd.section", "", /section/],
+  ["flags.cypherFoundry.crd.sourceLocator", "", /sourceLocator/],
+  ["flags.cypherFoundry.crd.transformations", {}, /transformations/]
+]) {
+  test(`rejects invalid ${field} without mutating the source`, () => {
+    const record = structuredClone(baseRecord), parts = field.split(".");
+    let target = record;
+    for (const part of parts.slice(0, -1)) target = target[part];
+    target[parts.at(-1)] = value;
+    const before = structuredClone(record);
+    assert.match(validateCrdSourceRecord(record).join(" "), message);
+    assert.deepEqual(record, before);
+  });
+}
+test("rejects non-object source roots", () => {
+  for (const record of [null, [], "text"]) assert.match(validateCrdSourceRecord(record).join(" "), /object/);
+});
+
 test("rejects missing provenance", () => {
   const record = { ...baseRecord };
   delete record.flags;

@@ -1,7 +1,8 @@
+/** Pure rule scenarios: narrative names do not imply persisted service orchestration. */
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { resolveWeaponSkillModifier } from "../../module/rules/weapon-skills.mjs";
+import { resolveWeaponSkillModifier } from "../../../module/rules/weapon-skills.mjs";
 
 test("Scenario: an unfamiliar weapon with a trained attack skill is practiced", () => {
   const given = {

@@ -223,6 +223,7 @@ test("useCypher depletes the item and creates a chat message", async () => {
   ChatMessage.create = async data => { message = data; };
   const item = {
     type: "cypher",
+    system: { depleted: false },
     name: "Ghost Lens",
     actor: { id: "actor-1" },
     update: async changes => { update = changes; }

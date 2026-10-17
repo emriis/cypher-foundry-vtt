@@ -12,8 +12,10 @@ function commandForPlatform() {
 
   // Git for Windows normally provides bash.exe. Prefer the same packaging
   // implementation used by CI so Windows builds produce identical ZIP bytes.
-  const bashCheck = spawnSync("bash", ["--version"], {
+  const bashCheck = spawnSync("bash", ["-c", "command -v zip && command -v unzip && command -v find && command -v touch"], {
     stdio: "ignore",
+    timeout: 2000,
+    windowsHide: true,
     shell: false
   });
   if (bashCheck.status === 0) {
@@ -26,6 +28,7 @@ function commandForPlatform() {
 const command = commandForPlatform();
 const child = spawn(command[0], command[1], {
   stdio: "inherit",
+  windowsHide: true,
   shell: false
 });
 

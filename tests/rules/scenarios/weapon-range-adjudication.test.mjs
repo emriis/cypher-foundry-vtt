@@ -1,7 +1,8 @@
+/** Pure rule scenarios: narrative names do not imply persisted service orchestration. */
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { resolveWeaponRangeAdjudication } from "../../module/rules/weapon-mechanics.mjs";
+import { resolveWeaponRangeAdjudication } from "../../../module/rules/weapon-mechanics.mjs";
 
 test("Given a weapon with a listed range, when the GM marks its range limit, then the attack is hindered once", () => {
   const result = resolveWeaponRangeAdjudication({

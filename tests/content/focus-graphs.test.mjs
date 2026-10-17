@@ -91,6 +91,7 @@ test("same-name abilities can remain distinct documents when their mechanics dif
     byName.set(ability.name, list);
   }
 
+  let variantNames = 0;
   for (const [name, documents] of byName) {
     const signatures = new Set(documents.map(document =>
       JSON.stringify({
@@ -104,10 +105,12 @@ test("same-name abilities can remain distinct documents when their mechanics dif
       })
     ));
     if (signatures.size > 1) {
+      variantNames++;
       assert.ok(
-        documents.every(document => document._id),
+        new Set(documents.map(document => document._id)).size === documents.length,
         `${name} has distinct technical identities`
       );
     }
   }
+  assert.ok(variantNames > 0, "The identity regression must exercise actual same-name mechanical variants");
 });

@@ -5,7 +5,9 @@ import test from "node:test";
 
 const ROOT = path.resolve("packs");
 
+const recordsByLanguage = new Map();
 function readRecords(language) {
+  if (recordsByLanguage.has(language)) return recordsByLanguage.get(language);
   const root = path.join(ROOT, `equipment-${language}`, "_source");
   const records = [];
 
@@ -24,6 +26,7 @@ function readRecords(language) {
   }
 
   visit(root);
+  recordsByLanguage.set(language, records);
   return records;
 }
 
@@ -344,10 +347,10 @@ test("W4 weapon extraction structures every explicit special mechanic", () => {
         );
       }
 
-      if (/requires a tripod and (\\d+) people to operate/i.test(properties)) {
+      if (/requires a tripod and (\d+) people to operate/i.test(properties)) {
         const expectedOperators = Number(
           properties.match(
-            /requires a tripod and (\\d+) people to operate/i
+            /requires a tripod and (\d+) people to operate/i
           )[1]
         );
         if (mechanics.requiredOperators !== expectedOperators) {
@@ -360,7 +363,7 @@ test("W4 weapon extraction structures every explicit special mechanic", () => {
       }
 
       const armorMatch = properties.match(
-        /ignores (\\d+) point(?:s)? of physical armor/i
+        /ignores (\d+) point(?:s)? of physical armor/i
       );
       if (armorMatch) {
         const expectedArmor = Number(armorMatch[1]);
@@ -375,7 +378,7 @@ test("W4 weapon extraction structures every explicit special mechanic", () => {
       }
 
       const materialMatch = properties.match(
-        /cuts through physical materials up to level (\\d+)/i
+        /cuts through physical materials up to level (\d+)/i
       );
       if (materialMatch) {
         const expectedLevel = Number(materialMatch[1]);
@@ -406,10 +409,10 @@ test("W4 weapon extraction structures every explicit special mechanic", () => {
       }
 
       const lowerLevelMatch = properties.match(
-        /level (\\d+) or lower creature loses their next action/i
+        /level (\d+) or lower creature loses their next action/i
       );
       const higherLevelMatch = properties.match(
-        /level (\\d+) or higher is hindered by (\\d+) steps for a round or two/i
+        /level (\d+) or higher is hindered by (\d+|two) steps for a round or two/i
       );
 
       if (lowerLevelMatch || higherLevelMatch) {
@@ -430,7 +433,7 @@ test("W4 weapon extraction structures every explicit special mechanic", () => {
             minimumTargetLevel: Number(higherLevelMatch[1]),
             maximumTargetLevel: null,
             effect: "hindered",
-            hinderSteps: Number(higherLevelMatch[2]),
+            hinderSteps: higherLevelMatch[2].toLowerCase() === "two" ? 2 : Number(higherLevelMatch[2]),
             duration: "a round or two"
           });
         }

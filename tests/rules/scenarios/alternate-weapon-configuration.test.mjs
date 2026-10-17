@@ -1,7 +1,8 @@
+/** Pure rule scenarios: narrative names do not imply persisted service orchestration. */
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { resolveWeaponConfiguration } from "../../module/rules/weapon-mechanics.mjs";
+import { resolveWeaponConfiguration } from "../../../module/rules/weapon-mechanics.mjs";
 
 test("Given a weapon with a CRD-defined alternate category, when the alternate configuration is active, then its category determines damage", () => {
   const result = resolveWeaponConfiguration({

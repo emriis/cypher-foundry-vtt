@@ -1,8 +1,14 @@
 import { test as base, expect } from "@playwright/test";
 import { joinAsGamemaster } from "./foundry-session.mjs";
 
+import { setDiceUniform, restoreDiceUniform, assertNoUnexpectedPageErrors } from "./browser-contracts.mjs";
+export { setDiceUniform } from "./browser-contracts.mjs";
+
 const MIN_CHROMIUM_MAJOR = 146;
 const browserLogsByPage = new WeakMap();
+const pageErrors = new WeakMap();
+const ownedBaselines = new WeakMap();
+const applicationBaselines = new WeakMap();
 
 function recordBrowserLog(page, ...parts) {
   const logs = browserLogsByPage.get(page) ?? [];
@@ -12,31 +18,20 @@ function recordBrowserLog(page, ...parts) {
   browserLogsByPage.set(page, logs);
 }
 
-/** Set the dice input while preserving Foundry's real formulas and Roll objects. */
-export async function setDiceUniform(page, value) {
-  if (!Number.isFinite(value) || value < 0 || value >= 1) {
-    throw new RangeError("Dice uniform input must be in [0, 1).");
-  }
-  await page.evaluate(value => {
-    CONFIG.Dice.randomUniform = () => value;
-  }, value);
-}
-
 export const test = base.extend({
+  scenarioState: [async ({ e2ePage: page }, use, testInfo) => {
+    await beginScenario(page);
+    try { await use(); }
+    finally { await endScenario(page, testInfo); }
+  }, { auto: true }],
   deterministicDice: [async ({ e2ePage: page }, use) => {
-    await page.evaluate(() => {
-      globalThis.cypherE2EOriginalRandomUniform = CONFIG.Dice.randomUniform;
-    });
     try {
       // Foundry maps u to ceil((1 - u) * faces).
       // d20 = 10, d6 = 3, d100 = 48; no natural-roll special outcomes.
       await setDiceUniform(page, 0.525);
       await use();
     } finally {
-      await page.evaluate(() => {
-        CONFIG.Dice.randomUniform = globalThis.cypherE2EOriginalRandomUniform;
-        delete globalThis.cypherE2EOriginalRandomUniform;
-      });
+      await restoreDiceUniform(page);
     }
   }, { auto: true }],
   e2ePage: [async ({ browser }, use) => {
@@ -82,6 +77,9 @@ export const test = base.extend({
     // error in cypher.mjs can leave Foundry running with the generic core
     // Actor/Item classes, which otherwise looks like a sheet rendering bug.
     page.on("pageerror", error => {
+      const errors = pageErrors.get(page) ?? [];
+      errors.push(error.stack || error.message);
+      pageErrors.set(page, errors);
       recordBrowserLog(
         page,
         "[E2E pageerror]",
@@ -113,7 +111,7 @@ export const test = base.extend({
     try {
       await joinAsGamemaster(page);
     } catch (error) {
-      // afterEach cannot obtain e2ePage when its worker fixture never initialized.
+      // Scenario teardown cannot run when its worker page never initialized.
       // Emit captured browser failures here and preserve the original exception.
       const logs = browserLogsByPage.get(page) ?? [];
       console.error("\n--- E2E browser diagnostics (failed bootstrap) ---\n" +
@@ -181,7 +179,22 @@ export const test = base.extend({
   }, { scope: "worker" }]
 });
 
-test.afterEach(async ({ e2ePage: page }, testInfo) => {
+async function beginScenario(page) {
+  applicationBaselines.set(page, await page.evaluate(() => [
+    ...foundry.applications.instances.keys(),
+    ...Object.values(ui.windows ?? {}).map(application => String(application.id ?? application.appId))
+  ]));
+  ownedBaselines.set(page, await page.evaluate(() => Object.fromEntries(
+    ["combats", "scenes", "actors", "items", "messages", "journal", "tables", "users"]
+      .map(name => [name, [...(game[name] ?? [])].map(document => document.id)])
+  )));
+}
+
+async function endScenario(page, testInfo) {
+  const errors = pageErrors.get(page) ?? [];
+  // Keep the same buffer through cleanup so its exceptions cannot become green
+  // or be attributed to the next scenario when the worker page is reused.
+  pageErrors.set(page, errors);
   if (testInfo.status !== testInfo.expectedStatus) {
     const logs = browserLogsByPage.get(page) ?? [];
     console.error(
@@ -193,25 +206,42 @@ test.afterEach(async ({ e2ePage: page }, testInfo) => {
 
   browserLogsByPage.delete(page);
 
-  await page.evaluate(async () => {
-    // The duration scenario marks its temporary Combat explicitly; other
-    // encounters are not cleanup targets, even inside a disposable world.
-    for (const combat of game.combats ?? []) {
-      if (combat.getFlag("cypher", "e2eOwned")) await combat.delete();
+  const baseline = ownedBaselines.get(page);
+  ownedBaselines.delete(page);
+  const applicationIds = applicationBaselines.get(page) ?? [];
+  applicationBaselines.delete(page);
+  if (baseline) await page.waitForFunction(ids => {
+    const original = new Set(ids);
+    const rendered = [...game.messages].filter(message => !original.has(message.id) && message.visible)
+      .every(message => document.querySelector(`#chat .chat-log [data-message-id="${message.id}"]`));
+    // V14 posts transient cards asynchronously after persistence resolves. Deleting
+    // a message while its hidden card/spacer is pending breaks the core animation.
+    return rendered && !document.querySelector("#chat-notifications .message[hidden], #chat-notifications .spacer");
+  }, baseline.messages, { timeout: 10_000 });
+  if (baseline) await page.evaluate(async ({ baseline, applicationIds }) => {
+    // IDs captured before this scenario establish ownership even after reload.
+    // Close only scenario-owned document sheets and dialogs. Core UI services
+    // can retain delayed callbacks and must not be torn down between scenarios.
+    const originalApplications = new Set(applicationIds);
+    const applications = new Set([...foundry.applications.instances.values(), ...Object.values(ui.windows ?? {})]);
+    for (const application of applications) {
+      if (originalApplications.has(String(application.id ?? application.appId))) continue;
+      if ((application.document || application instanceof foundry.applications.api.DialogV2) && application.rendered) {
+        await application.close();
+      }
     }
-    for (const actor of game.actors.filter(
-      actor => actor.name.startsWith("E2E Cypher") ||
-        actor.name.startsWith("E2E PC") ||
-        actor.name.startsWith("E2E Item Actor")
-    )) {
-      if (actor.sheet?.rendered) await actor.sheet.close();
-      await actor.delete();
+    for (const [name, ids] of Object.entries(baseline)) {
+      const existing = new Set(ids);
+      for (const document of [...(game[name] ?? [])]) {
+        if (!existing.has(document.id)) {
+          if (document.sheet?.rendered) await document.sheet.close();
+          await document.delete();
+        }
+      }
     }
-
-    for (const application of Object.values(ui.windows ?? {})) {
-      if (application?.rendered) await application.close();
-    }
-  });
-});
+  }, { baseline, applicationIds });
+  pageErrors.delete(page);
+  assertNoUnexpectedPageErrors(errors, testInfo.status !== testInfo.expectedStatus);
+}
 
 export { expect };

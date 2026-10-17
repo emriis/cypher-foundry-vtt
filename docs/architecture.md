@@ -36,7 +36,10 @@ The main gameplay boundaries are:
   read-only task planning, awaited effects, and localized presentation.
 - `reroll-service.mjs`: CRD paid-reroll orchestration and retained metadata;
   `rules/task-outcome.mjs` shares outcome rules with initial task rolls.
-- `action-guard.mjs`: per-Actor, per-category overlap protection on one client.
+- `action-guard.mjs`: reserves actual Actor identities across competing action
+  categories on one client. Nested services carry an explicit parent context;
+  multi-target actions reserve all owners before execution. This rejects overlap
+  rather than queuing and does not provide a cross-client lock or rollback.
 - `recovery-service.mjs`: completed recoveries, allocation, extra allowances and Rally.
 - `healing-service.mjs` and `wound-removal.mjs`: treatment/Healing Hand and
   persisted task/reroll healing consequences; see [recovery-and-healing.md](recovery-and-healing.md).
