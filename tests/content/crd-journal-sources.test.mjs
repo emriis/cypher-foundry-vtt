@@ -29,7 +29,7 @@ test("Task Difficulty CRD journal sources satisfy the source contract", () => {
   }
 });
 
-test("English and French Task Difficulty sources preserve the same mechanics", () => {
+test("English and French Task Difficulty sources preserve the same markup structure", () => {
   const en = read("en");
   const fr = read("fr");
 

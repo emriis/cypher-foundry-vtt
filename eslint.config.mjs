@@ -4,6 +4,9 @@
  * different boundaries; one shared global list would hide environment mistakes.
  */
 import globals from "globals";
+import { builtinModules, isBuiltin } from "node:module";
+
+const nodeImports = [...new Set(builtinModules.flatMap(name => [name, `node:${name}`]))];
 
 const foundryGlobals = Object.fromEntries([
   "foundry", "game", "ui", "canvas", "CONFIG", "CONST", "Hooks", "Actor",
@@ -35,12 +38,26 @@ export default [
   },
   {
     files: ["cypher.mjs", "module/**/*.mjs"],
+    plugins: { runtime: { rules: {
+      "no-node-dynamic-import": {
+        create(context) {
+          return { ImportExpression(node) {
+            if (typeof node.source.value === "string" && isBuiltin(node.source.value)) {
+              context.report({ node, message: "Node APIs cannot run in Foundry browser modules." });
+            }
+          } };
+        }
+      }
+    } } },
     languageOptions: { globals: { ...globals.browser, ...foundryGlobals } },
-    rules: { "no-restricted-imports": ["error", { patterns: [
+    rules: { "no-restricted-imports": ["error", {
+      paths: nodeImports.map(name => ({ name, message: "Node APIs cannot run in Foundry browser modules." })),
+      patterns: [
       { group: ["node:*"], message: "Node APIs cannot run in Foundry browser modules." },
       { regex: "^\\.{1,2}/(?!.*\\.mjs$)",
         message: "Relative ESM imports must include their .mjs extension." }
-    ] }] }
+    ] }],
+    "runtime/no-node-dynamic-import": "error" }
   },
   {
     files: ["module/rules/**/*.mjs", "module/crd/**/*.mjs", "module/config.mjs"],

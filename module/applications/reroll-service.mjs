@@ -6,7 +6,7 @@
 import { CYPHER } from "../config.mjs";
 import { resolveRerollPlan, selectRerollValue } from "../rules/rerolls.mjs";
 import { resolveTaskOutcome } from "../rules/task-outcome.mjs";
-import { runActorAction } from "./action-guard.mjs";
+import { runActorAction, runActorActions } from "./action-guard.mjs";
 import { resolveStat } from "../rules/stats.mjs";
 import { resolveActiveAbilityModifiers } from "../rules/ability-modifiers.mjs";
 import { defaultRecoveryAllocation, recoveryPoolUpdates } from "../rules/recovery-points.mjs";
@@ -36,7 +36,7 @@ async function describeChoice(item, flags, value) {
  */
 export async function rerollMessage(actor, message, { chooseResult = null, allocateRecovery = null } = {}) {
   if (actor?.type !== "pc" || actor.isOwner === false || !message?.getFlag("cypher", "rerollable")) return null;
-  return runActorAction(actor, "reroll", async () => {
+  return runActorAction(actor, "reroll", async context => {
     // Every new reroll card points to one original message. An older card can
     // otherwise replay already-granted Pool points, healing or cost refunds.
     const originId = message.flags.cypher.rerollOriginId;
@@ -139,8 +139,7 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
         flags: { cypher: metadata } });
       return metadata;
     };
-    return appliesRecovery || woundTarget ? runActorAction(sourceActor, "healing", () =>
-      woundTarget && woundTarget !== sourceActor ? runActorAction(woundTarget, "healing", execute) : execute()) : execute();
+    return runActorActions([sourceActor ?? actor, woundTarget], "rerollSource", execute, context);
   });
 }
 

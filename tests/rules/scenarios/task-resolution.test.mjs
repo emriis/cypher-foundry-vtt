@@ -1,3 +1,4 @@
+/** Pure rule scenarios: narrative names do not imply persisted service orchestration. */
 import assert from "node:assert/strict";
 import { describe, test } from "node:test";
 
@@ -6,7 +7,7 @@ import {
   resolveAttackDamage,
   resolveSpecialRoll,
   resolveTaskDifficulty
-} from "../../module/rules/tasks.mjs";
+} from "../../../module/rules/tasks.mjs";
 
 describe("Given a Cypher task", () => {
   describe("when the character succeeds on a standard task", () => {

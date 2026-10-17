@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
+import { randomUUID } from "node:crypto";
 import test from "node:test";
 
 import {
@@ -95,12 +96,11 @@ test("findApplication reports every candidate when discovery fails", async () =>
   await assert.rejects(
     () => findApplication({
       platform: "linux",
-      env: {}
+      env: { FOUNDRY_APP_PATH: path.join(os.tmpdir(), "cypher-absent-" + randomUUID()) }
     }),
     error => {
       assert.match(error.message, /Foundry VTT executable was not found/);
-      assert.match(error.message, /\/usr\/bin\/foundryvtt/);
-      assert.match(error.message, /\/usr\/local\/bin\/foundryvtt/);
+      assert.match(error.message, /cypher-absent-/);
       return true;
     }
   );

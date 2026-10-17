@@ -1,7 +1,8 @@
+/** Pure rule scenarios: narrative names do not imply persisted service orchestration. */
 import assert from "node:assert/strict";
 import { describe, test } from "node:test";
 
-import { resolveAbilityCost } from "../../module/rules/ability-costs.mjs";
+import { resolveAbilityCost } from "../../../module/rules/ability-costs.mjs";
 
 const system = {
   stats: {

@@ -1,5 +1,11 @@
 import assert from "node:assert/strict";
-import test from "node:test";
+import test, { beforeEach } from "node:test";
+
+beforeEach(() => {
+  globalThis.game = { i18n: { localize: key => key, format: key => key } };
+  globalThis.ChatMessage = { getSpeaker: () => ({}), create: async data => data };
+  globalThis.ui = { notifications: { error() {}, warn() {} } };
+});
 
 import {
   rollAttack,
@@ -9,6 +15,64 @@ import {
   toggleAttackConfiguration,
   useCypher
 } from "../../module/applications/item-service.mjs";
+import { applyDocumentUpdate } from "../helpers/document-updates.mjs";
+
+test("repeated and overlapping Cypher consumption commits one depletion and one announcement", async () => {
+  let cards = 0, writes = 0;
+  globalThis.ChatMessage.create = async () => { cards++; };
+  const item = { type: "cypher", name: "One use", system: { depleted: false },
+    async update(changes) { await Promise.resolve(); writes++; applyDocumentUpdate(this, changes); } };
+  const results = await Promise.all([useCypher(item), useCypher(item)]);
+  assert.equal(results.filter(Boolean).length, 1);
+  assert.equal(await useCypher(item), false);
+  assert.equal(writes, 1);
+  assert.equal(cards, 1);
+});
+
+test("failed depletion publishes no card and releases the Item for a later attempt", async () => {
+  let cards = 0;
+  globalThis.ChatMessage.create = async () => { cards++; };
+  const item = { type: "cypher", system: { depleted: false }, async update() { throw new Error("depletion failed"); } };
+  await assert.rejects(useCypher(item), /depletion failed/);
+  assert.equal(cards, 0);
+  assert.equal(item.system.depleted, false);
+  item.update = async changes => applyDocumentUpdate(item, changes);
+  assert.equal(await useCypher(item), true);
+});
+
+test("overlapping Cypher table uses evaluate and announce only the accepted activation", async () => {
+  let rolls = 0, cards = 0, writes = 0;
+  globalThis.Roll = class {
+    async evaluate() { rolls++; await Promise.resolve(); this.total = 1; return this; }
+    async toMessage() { cards++; }
+  };
+  globalThis.foundry = { applications: { ux: { TextEditor: { implementation: { enrichHTML: async text => text } } } } };
+  const item = { id: "table-cypher", type: "cypher", actor: { id: "owner" }, system: {
+    depleted: false, rollTables: [{ id: "power", formula: "1d6", results: [{ min: 1, max: 6, description: "Power" }] }]
+  }, async update(changes) { writes++; applyDocumentUpdate(this, changes); } };
+  const results = await Promise.all([rollCypherTable(item, "power"), rollCypherTable(item, "power")]);
+  assert.equal(results.filter(Boolean).length, 1);
+  assert.deepEqual({ rolls, cards, writes }, { rolls: 1, cards: 1, writes: 1 });
+  assert.equal(item.system.depleted, true);
+});
+
+test("chat failure retains committed depletion and never announces a second use", async () => {
+  globalThis.ChatMessage.create = async () => { throw new Error("chat failed"); };
+  const item = { type: "cypher", system: { depleted: false }, async update(changes) { applyDocumentUpdate(this, changes); } };
+  await assert.rejects(useCypher(item), /chat failed/);
+  assert.equal(item.system.depleted, true);
+  assert.equal(await useCypher(item), false);
+});
+
+test("missing Cypher tables and depleted Cyphers reject before rolling or writing", async () => {
+  globalThis.Roll = class { constructor() { assert.fail("Rejected use must not roll"); } };
+  const item = { type: "cypher", actor: {}, system: { depleted: false, rollTables: [] },
+    async update() { assert.fail("Rejected use must not mutate"); } };
+  assert.equal(await rollCypherTable(item, "missing"), false);
+  item.system.depleted = true;
+  assert.equal(await rollCypherTable(item, "missing"), false);
+  assert.equal(await rollCypherVariant(item), false);
+});
 
 test("useCypher depletes the item and posts a message", async () => {
   let update;

@@ -9,13 +9,13 @@
     "test": "node scripts/run-isolated-validation.mjs",
     "lint": "eslint cypher.mjs module scripts tests *.config.mjs --max-warnings=0",
     "typecheck": "tsc -p jsconfig.rules.json",
-    "test:all": "node --test --test-reporter=spec tests/rules/*.test.mjs tests/applications/*.test.mjs tests/documents/*.test.mjs tests/migrations/*.test.mjs tests/content/*.test.mjs tests/integration/*.test.mjs tests/behaviors/*.test.mjs",
-    "test:unit": "node --test --test-reporter=spec tests/rules/*.test.mjs tests/applications/*.test.mjs tests/documents/*.test.mjs tests/migrations/*.test.mjs",
-    "test:content": "node --test --test-reporter=spec tests/content/*.test.mjs",
-    "test:integration": "node --test --test-reporter=spec tests/integration/*.test.mjs",
-    "test:behavior": "node --test --test-reporter=spec tests/behaviors/*.test.mjs",
+    "test:all": "node scripts/run-tests.mjs all",
+    "test:unit": "node scripts/run-tests.mjs unit",
+    "test:content": "node scripts/run-tests.mjs content",
+    "test:integration": "node scripts/run-tests.mjs integration",
+    "test:behavior": "node scripts/run-tests.mjs behavior",
     "test:e2e": "node scripts/run-foundry-e2e.mjs",
-    "check:e2e-syntax": "node --check scripts/run-foundry-e2e.mjs && node --check playwright.config.mjs && node --check tests/e2e/foundry-session.mjs && node --check tests/e2e/foundry-runtime.spec.mjs && node --check tests/e2e/foundry-gameplay.spec.mjs",
+    "check:e2e-syntax": "node scripts/check-e2e-syntax.mjs",
     "audit:architecture": "node scripts/audit-architecture-dependencies.mjs",
     "audit:crd": "node scripts/audit-crd-compendiums.mjs",
     "build:lang": "node scripts/build-locales.mjs",
@@ -29,7 +29,10 @@
     "test:coverage": "node scripts/run-test-coverage.mjs",
     "check:e2e-browser": "node scripts/check-playwright-browser.mjs",
     "check:system-syntax": "node scripts/check-system-syntax.mjs",
-    "test:e2e-debug": "node scripts/run-foundry-e2e.mjs --debug-foundry-logs"
+    "test:e2e-debug": "node scripts/run-foundry-e2e.mjs --debug-foundry-logs",
+    "test:sources": "node scripts/run-tests.mjs sources",
+    "test:runtime": "node scripts/run-tests.mjs runtime",
+    "test:build": "node scripts/run-tests.mjs build"
   },
   "dependencies": {
     "@foundryvtt/foundryvtt-cli": "^3.0.4"

@@ -1,3 +1,4 @@
+/** Pure rule scenarios: narrative names do not imply persisted service orchestration. */
 import assert from "node:assert/strict";
 import { describe, test } from "node:test";
 
@@ -5,7 +6,7 @@ import {
   computeRallyResult,
   computeRecoveryUpdates,
   getRallyCost
-} from "../../module/rules/recovery.mjs";
+} from "../../../module/rules/recovery.mjs";
 
 describe("Given a character takes a recovery interval", () => {
   test("when the character has a moderate wound at the hourly interval, then one moderate wound is removed", () => {

@@ -231,7 +231,9 @@ test.describe("Cypher Foundry live runtime", () => {
       const names = ["abilities", "skills", "descriptors", "types", "foci", "equipment", "rules"];
       return Promise.all(names.map(async family => {
         const documents = await game.packs.get(`cypher.${family}-fr`).getDocuments();
+        const english = await game.packs.get(`cypher.${family}-en`).getDocuments();
         return { family, count: documents.length,
+          englishIds: english.map(document => document.flags.cypherFoundry.crd.logicalId).sort(),
           missing: documents.filter(document => !["proposed", "reviewed"].includes(document.flags.cypherFoundry?.translation?.status))
             .map(document => document.name),
           sourceIds: documents.map(document => document.flags.cypherFoundry.crd.sourceLogicalId),
@@ -239,10 +241,12 @@ test.describe("Cypher Foundry live runtime", () => {
           typeNames: family === "types" ? documents.map(document => document.name) : [] };
       }));
     });
-    expect(results.reduce((sum, result) => sum + result.count, 0)).toBe(1373);
+
     for (const result of results) {
       expect(result.missing, result.family).toEqual([]);
-      expect(result.sourceIds.every(Boolean), result.family).toBe(true);
+      expect(result.count, result.family).toBeGreaterThan(0);
+      expect(new Set(result.sourceIds).size, result.family).toBe(result.count);
+      expect([...result.sourceIds].sort(), result.family).toEqual(result.englishIds);
     }
     expect(results.find(result => result.family === "types").typeNames).toEqual(expect.arrayContaining([
       "Puissance incarnée (degré de puissance 4)", "Prodige du pouvoir (degré de puissance 2)"

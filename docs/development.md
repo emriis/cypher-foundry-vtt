@@ -64,18 +64,25 @@ expressed without Foundry.
 
 Use the test layers according to the behavior:
 
-- `tests/rules/`: pure rule contracts;
+- `tests/rules/`: pure rule contracts, including Given/When/Then examples in `scenarios/`;
 - `tests/applications/`: application-service behavior;
 - `tests/documents/`: document compatibility and persistence boundaries;
+- `tests/data-models/`: schema and derived-preparation contracts without document writes;
 - `tests/content/`: source, schema, identity, provenance, bilingual pairing,
   and mechanical fidelity contracts;
 - `tests/integration/`: cross-module behavior;
-- `tests/behaviors/`: business/BDD-style vertical behavior contracts;
+- `tests/behaviors/`: vertical contracts spanning application services and state changes;
 - `tests/e2e/`: real Foundry and browser behavior.
 
 Do not weaken a contract test merely to make extraction or packaging pass.
 Prefer assertions on stable business invariants over incidental compendium order
 or generated UUIDs.
+
+Given/When/Then wording does not determine the layer: a scenario calling only
+pure rules belongs under `tests/rules/scenarios/`. Keep detailed service examples
+with their application service, leaving representative public API contracts in
+the Actor compatibility suite. Exercise derived preparation through its public
+entry point, including repeated calls and the prohibition on persistence.
 
 ### Recommended feature workflow
 
@@ -127,6 +134,27 @@ and runs the complete suite there, then removes its owned temporary directory.
 It does not rewrite the working checkout. `test:all` and focused suites test
 current sources without normalization. Explicit `migrate:packs`, `build:packs`,
 and `package` still change this checkout's sources or generated artifacts.
+
+Test files are classified recursively in `scripts/test-suites.mjs`; a test in
+an unknown family fails discovery. `test:unit` includes rules, applications,
+documents, DataModels and fast migrations. `test:runtime` adds behavior tests;
+`test:sources` owns expensive whole-catalogue normalization contracts. `npm test`
+includes both lanes plus content and integration contracts. `test:build` reads
+compiled outputs and remains explicit, as does the licensed `test:e2e` suite.
+Build checks independently normalize expected sources in temporary storage;
+the live runner reuses its already normalized, ownership-checked checkout.
+
+`test:coverage` uses the fast runtime lane and reports loaded runtime modules,
+including behavior-covered paths. Unimported modules are absent from this report.
+The manual mutation command also uses this lane; its threshold remains
+informational until an observed baseline is reviewed. See
+[test audit remediation](test-audit-remediation.md) for the changed contracts.
+
+The live runner packages and verifies the exact ZIP installed in its disposable
+Foundry Data directory. It checks an existing Chromium before attempting an
+installation. `--proposed-translations` explicitly includes the French preview
+scenarios. Only an ownership-checked temporary checkout may pass the internal
+`build:packs -- --normalized-workspace` flag after normalization.
 
 ### Rechecking CRD text and automation
 
@@ -191,9 +219,11 @@ key, or explicit fixture role. Do not assign semantic roles from array positions
 the live batch can return them in a different order. The Spray/Arc Spray fixture
 replays weapon-first results to cover this failure deterministically. Keep
 gameplay assertions on costs, target state, and chat outcomes unchanged.
-The shared `afterEach` fixture owns test Actor cleanup and awaits sheet closure;
-avoid local cleanup that can replace the original assertion with a closed-page
-error after a timeout.
+The automatic `scenarioState` fixture owns each scenario's created documents,
+awaits owned sheet closure and chat rendering, and rejects unexpected page
+exceptions through teardown. It runs for every spec importing the shared test
+type. Avoid local cleanup that can replace the original assertion with a
+closed-page error after a timeout.
 The disposable browser marks the core welcome tour completed before login,
 using the installed tour's step count. Exiting it after startup can race its
 delayed rendering and leave an overlay that intercepts gameplay input.

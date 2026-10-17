@@ -35,7 +35,7 @@ async function extractedDocuments(directory) {
     .map(async file => JSON.parse(await readFile(path.join(directory, file), "utf8"))));
 }
 
-test("Given legacy bilingual authoring sources, when standalone packs build, then identities and draft translations compile without source writes and stale reviews preserve existing outputs", async () => {
+test("Given legacy bilingual sources, when packs build, then reviewed and draft overlays roundtrip without source writes and stale reviews preserve outputs", async () => {
   const { workspace, root } = await createValidationWorkspace(path.resolve(import.meta.dirname, "../.."));
   try {
     // npm test may supply an already normalized checkout. Recreate a supported
@@ -44,6 +44,17 @@ test("Given legacy bilingual authoring sources, when standalone packs build, the
     const source = JSON.parse(await readFile(sourceFile, "utf8"));
     if (source.flags?.cypherFoundry?.crd) delete source.flags.cypherFoundry.crd.logicalId;
     await writeFile(sourceFile, JSON.stringify(source, null, 2) + "\n");
+    // Simulate editorial approval only inside this test's disposable checkout.
+    // One existing build exercises effects, table results and embedded journal text.
+    const reviewed = new Map();
+    for (const relative of ["abilities/a-l/ability.divine-radiance.json",
+      "abilities/a-l/ability.apportation.json", "rules/journal.task-difficulty.json"]) {
+      const file = path.join(root, "translations/fr", relative);
+      const proposal = JSON.parse(await readFile(file, "utf8"));
+      proposal.status = "reviewed";
+      reviewed.set(proposal.logicalId, proposal);
+      await writeFile(file, JSON.stringify(proposal, null, 2) + "\n");
+    }
     const inputs = await snapshot(root);
     const build = (...args) => promisify(execFile)(process.execPath, ["scripts/build-packs.mjs", ...args],
       { cwd: root, maxBuffer: 8 * 1024 * 1024 });
@@ -67,6 +78,47 @@ test("Given legacy bilingual authoring sources, when standalone packs build, the
       }
     }
 
+    const frenchAbilitiesDirectory = path.join(workspace, "reviewed-abilities");
+    const frenchRulesDirectory = path.join(workspace, "reviewed-rules");
+    await extractPack(path.join(root, "packs/abilities-fr"), frenchAbilitiesDirectory);
+    await extractPack(path.join(root, "packs/rules-fr"), frenchRulesDirectory);
+    const frenchAbilities = await extractedDocuments(frenchAbilitiesDirectory);
+    const frenchRules = await extractedDocuments(frenchRulesDirectory);
+    const reviewedDocument = (documents, logicalId) => {
+      const document = documents.find(document => document.flags?.cypherFoundry?.crd?.logicalId === logicalId);
+      assert.ok(document, `Missing compiled reviewed record: ${logicalId}`);
+      assert.equal(document.flags.cypherFoundry.translation.status, "reviewed");
+      assert.equal(document.name, reviewed.get(logicalId).fields.find(field => field.path === "name").text);
+      return document;
+    };
+    const expectedText = (id, fieldPath) => {
+      const field = reviewed.get(id).fields.find(field => field.path === fieldPath);
+      assert.ok(field, `Expected proposal field: ${id}/${fieldPath}`);
+      return field.text;
+    };
+    const radiance = reviewedDocument(frenchAbilities, "ability.divine-radiance");
+    for (const effect of ["blessing", "turn-undead"]) {
+      const compiled = radiance.system.effects.find(candidate => candidate.id === effect);
+      assert.ok(compiled, `Missing translated effect: ${effect}`);
+      for (const field of ["name", "description", "effort"]) {
+        assert.equal(compiled[field], expectedText("ability.divine-radiance", `system.effects.${effect}.${field}`));
+      }
+    }
+    const apportation = reviewedDocument(frenchAbilities, "ability.apportation");
+    const table = apportation.system.rollTables.find(table => table.id === "random-object");
+    assert.ok(table, "Compiled table identity must survive translation");
+    assert.equal(table.name, expectedText("ability.apportation", "system.rollTables.random-object.name"));
+    for (const [index, result] of table.results.entries()) {
+      assert.equal(result.description, expectedText("ability.apportation", `system.rollTables.random-object.results.${index}.description`));
+    }
+    assert.equal(table.results.length, 3);
+    const journal = reviewedDocument(frenchRules, "journal.task-difficulty");
+    const page = journal.pages.find(page => page._id === "b2c3d4e5f6070810");
+    assert.ok(page, "Compiled page identity must survive translation");
+    assert.equal(page.name, expectedText("journal.task-difficulty", `pages.${page._id}.name`));
+    assert.equal(page.text.content, expectedText("journal.task-difficulty", `pages.${page._id}.text.content`));
+    assertUnchanged(await snapshot(root), inputs, "Reviewed compilation must not change sources or proposal statuses");
+
     const proposalFile = path.join(root, "translations/fr/foci/focus.abides-in-stone.json");
     const proposal = JSON.parse(await readFile(proposalFile, "utf8"));
     await build("--include-proposed");
@@ -76,6 +128,12 @@ test("Given legacy bilingual authoring sources, when standalone packs build, the
       .find(document => document.flags?.cypherFoundry?.crd?.logicalId === "focus.abides-in-stone");
     assert.equal(translated.name, proposal.fields.find(field => field.path === "name").text);
     assert.equal(translated.flags.cypherFoundry.translation.status, "proposed");
+    const frenchAbilityIds = new Set(frenchAbilities.filter(document => document.type === "ability").map(document => document._id));
+    assert.ok(translated.system.abilities.length > 0);
+    for (const uuid of translated.system.abilities) {
+      assert.match(uuid, /^Compendium\.cypher\.abilities-fr\.Item\./);
+      assert.ok(frenchAbilityIds.has(uuid.split(".").at(-1)), `French Focus reference must resolve: ${uuid}`);
+    }
     assertUnchanged(await snapshot(root), inputs, "Both build modes must preserve all authored sources and proposals");
 
     // A selected stale review fails before any previously compiled pack changes.

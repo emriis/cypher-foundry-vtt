@@ -1,10 +1,11 @@
+/** Pure rule scenarios: narrative names do not imply persisted service orchestration. */
 import assert from "node:assert/strict";
 import { describe, test } from "node:test";
 
 import {
   computeRecoveryUpdates,
   getRallyCost
-} from "../../module/rules/recovery.mjs";
+} from "../../../module/rules/recovery.mjs";
 
 describe("Given a PC has accumulated wounds", () => {
   test("when the PC completes a ten-minute recovery, then all minor wounds clear", () => {

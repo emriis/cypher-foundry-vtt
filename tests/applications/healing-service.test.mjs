@@ -32,6 +32,25 @@ function dice(total) {
   globalThis.Roll = class { async evaluate() { this.total = total; return this; } async toMessage(message) { published.push(message); } };
 }
 
+test("a Healing Hand target write failure retains its committed cost, posts no success and releases both owners", async () => {
+  const healer = pc(), target = pc();
+  const update = target.update, chat = globalThis.ChatMessage;
+  const cards = [];
+  globalThis.ChatMessage = { getSpeaker: () => ({}), create: async card => { cards.push(card); } };
+  try {
+    target.update = async () => { throw new Error("target write failed"); };
+    await assert.rejects(useHealingHand(hand(healer), { target, severity: "moderate", touchConfirmed: true }), /target write failed/);
+    assert.equal(healer.system.stats.intellect.pool.value, 9);
+    assert.equal(healer.flags.cypher.healingUses["healing-hand"], 1);
+    assert.equal(target.system.wounds.moderate.current, 2);
+    assert.deepEqual(cards, []);
+    target.update = update;
+    assert.equal((await useHealingHand(hand(healer), { target, severity: "moderate", touchConfirmed: true })).cost, 2);
+    assert.equal(healer.system.stats.intellect.pool.value, 7);
+    assert.equal(cards.length, 1);
+  } finally { target.update = update; globalThis.ChatMessage = chat; }
+});
+
 test("Given Healing Hand on oneself, then one update reduces severity and charges the escalating Intellect cost", async () => {
   const actor = pc(); const ability = hand(actor);
   assert.equal((await useHealingHand(ability, { severity: "moderate", touchConfirmed: true })).cost, 1);

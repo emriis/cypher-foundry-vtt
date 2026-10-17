@@ -23,3 +23,10 @@ test("ESM lint distinguishes pure rules, Foundry runtime, and Node tooling", asy
     .some(message => message.ruleId === "no-restricted-imports"));
   assert.deepEqual(await errors('import fs from "node:fs"; process.cwd();', "scripts/example.mjs"), []);
 });
+
+test("browser imports reject bare and dynamic Node APIs without forbidding local lazy loading", async () => {
+  for (const code of ['import fs from "fs";', 'import("node:fs");', 'import("fs/promises");']) {
+    assert.ok((await errors(code, "module/applications/example.mjs")).length, code);
+  }
+  assert.deepEqual(await errors('import("../rules/example.mjs");', "module/applications/example.mjs"), []);
+});

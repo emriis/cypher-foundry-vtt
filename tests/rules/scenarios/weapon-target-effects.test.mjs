@@ -1,7 +1,8 @@
+/** Pure rule scenarios: narrative names do not imply persisted service orchestration. */
 import assert from "node:assert/strict";
 import { describe, test } from "node:test";
 
-import { resolveWeaponTargetEffects } from "../../module/rules/weapon-mechanics.mjs";
+import { resolveWeaponTargetEffects } from "../../../module/rules/weapon-mechanics.mjs";
 
 describe("Given a weapon with structured target effects", () => {
   test("when attacking an eligible target, then the matching effect is carried", () => {

@@ -12,6 +12,24 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  validate-fork:
+    name: Validate fork artifacts without writes
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build:packs
+      - run: npm run test:build
+      - run: npm run package
+      - run: node scripts/verify-package.mjs
+
   prepare:
     name: Build and validate generated artifacts
     runs-on: ubuntu-latest

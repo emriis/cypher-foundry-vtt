@@ -11,7 +11,7 @@ const GAMEMASTER_ROLE = /game\s*master|gamemaster|ma[iî]tre\s+de\s+jeu/i;
  * @param {import("@playwright/test").Page} page Disposable Foundry login page.
  * @returns {Promise<import("@playwright/test").Locator>} Selected username control.
  */
-export async function selectGamemaster(page) {
+export async function selectGamemaster(page, profileName = GAMEMASTER_NAME) {
   const usernameLabel = /sélectionner un utilisateur|select (?:a )?user|username/i;
   const candidates = [
     page.locator("#join-username"),
@@ -36,7 +36,7 @@ export async function selectGamemaster(page) {
     const options = await usernameInput.locator("option").allTextContents();
     availableUsers = options;
     const match = options.find(
-      option => option.trim().toLowerCase() === GAMEMASTER_NAME
+      option => option.trim().toLowerCase() === profileName.toLowerCase()
     );
     if (!match) {
       throw new Error(
@@ -48,18 +48,18 @@ export async function selectGamemaster(page) {
     selectedProfile = (await usernameInput.locator("option:checked").allTextContents()).join(", ").trim();
   } else {
     await usernameInput.click();
-    await usernameInput.fill(GAMEMASTER_NAME);
+    await usernameInput.fill(profileName);
     await usernameInput.press("ArrowDown");
     await usernameInput.press("Enter");
     selectedProfile = await usernameInput.inputValue();
   }
 
-  if (selectedProfile.toLowerCase() !== GAMEMASTER_NAME) {
+  if (selectedProfile.toLowerCase() !== profileName.toLowerCase()) {
     throw new Error(
       "Available users: " +
       availableUsers.join(", ") +
       ". Foundry did not select the gamemaster profile. " +
-      `Expected: ${GAMEMASTER_NAME}; actual: ${selectedProfile}`
+      `Expected: ${profileName}; actual: ${selectedProfile}`
     );
   }
   return usernameInput;
@@ -70,14 +70,14 @@ export async function selectGamemaster(page) {
  * @param {import("@playwright/test").Page} page Disposable Foundry client.
  * @returns {Promise<void>} Resolves after readiness; login/bootstrap failures propagate.
  */
-export async function joinAsGamemaster(page) {
+export async function joinAsGamemaster(page, profileName = GAMEMASTER_NAME) {
   let startupFailure = null;
   const captureFailure = error => { startupFailure ??= error; };
   page.on("pageerror", captureFailure);
   try {
     await page.goto(FOUNDRY_URL);
 
-    const usernameInput = await selectGamemaster(page);
+    const usernameInput = await selectGamemaster(page, profileName);
     const joinForm = usernameInput.locator("xpath=ancestor::form[1]");
 
     const password = joinForm.locator('input[type="password"]').first();

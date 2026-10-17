@@ -1,5 +1,7 @@
 import { test, expect, setDiceUniform } from "./foundry-session-fixture.mjs";
 
+import { waitForFoundryReady } from "./foundry-session.mjs";
+
 const ACTOR_PREFIX = "E2E Cypher";
 
 async function createActor(page, overrides = {}) {
@@ -132,14 +134,13 @@ async function clickRollDialog(page, values = {}) {
   await expect(form).toBeVisible();
   for (const [name, value] of Object.entries(values)) {
     const field = form.locator(`[name="${name}"]`);
-    if (await field.count()) {
-      await field.fill(String(value));
-    }
+    await expect(field, `Required roll field: ${name}`).toBeVisible();
+    await field.fill(String(value));
   }
 
   await dismissActiveTour(page);
   const applicationId = await form.evaluate(node => node.closest(".application")?.id);
-  await form.getByRole("button").last().click();
+  await form.locator('button[type="submit"]').click();
   // DialogV2 resolves input before its closing animation removes the form.
   // Wait for this specific application, so a new action's dialog is not
   // confused with the previous one while both temporarily exist in the DOM.
@@ -173,6 +174,7 @@ test.describe("Cypher Foundry live gameplay", () => {
     const actorId = await createActor(page);
     const messageId = await page.evaluate(async id => {
       const actor = game.actors.get(id);
+      if (actor.sheet.rendered) await actor.sheet.close();
       await actor.update({ "system.xp": 3 });
       await actor.rollTask({ difficulty: 1 });
       return [...game.messages].reverse().find(message => message.getFlag("cypher", "actorId") === id).id;
@@ -1535,7 +1537,8 @@ test.describe("Cypher Foundry live gameplay", () => {
     }, actorId);
 
     await page.evaluate(id => game.actors.get(id).sheet.close(), actorId);
-    await page.waitForTimeout(250);
+    await page.reload();
+    await waitForFoundryReady(page);
 
     await page.evaluate(id => game.actors.get(id).sheet.render(true), actorId);
 

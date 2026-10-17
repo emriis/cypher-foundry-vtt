@@ -101,14 +101,21 @@ Run:
 
 ## Testing
 
+Use `npm run test:runtime` for fast rules, services, documents, DataModels and
+behavior regressions. Whole-catalogue normalization contracts have their own
+`npm run test:sources` lane. `npm test` includes both in a normalized temporary
+checkout. Build validation (`npm run test:build`) requires compiled packs and
+extracts them rather than just checking for LevelDB filenames.
+
 Use the lowest test layer that expresses the behavior:
 
-- tests/rules/ for deterministic rules
+- tests/rules/ for deterministic rules, including Given/When/Then examples in scenarios/
 - tests/applications/ for application services
 - tests/documents/ for Foundry document boundaries
+- tests/data-models/ for schemas and derived preparation without persistence
 - tests/content/ for source and compendium contracts
 - tests/integration/ for cross-module behavior
-- tests/behaviors/ for business/BDD-style contracts
+- tests/behaviors/ for vertical contracts spanning application services and state changes
 - tests/e2e/ for real Foundry/browser behavior
 
 Start rule changes with a failing deterministic test whenever possible.

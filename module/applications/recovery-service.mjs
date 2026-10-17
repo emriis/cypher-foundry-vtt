@@ -8,7 +8,7 @@ import { defaultRecoveryAllocation, recoveryPoolUpdates } from "../rules/recover
 import { recoverySources } from "../rules/recovery-sources.mjs";
 import { resolveActiveAbilityModifiers } from "../rules/ability-modifiers.mjs";
 import { expireAbilityEffectsOnRecovery } from "./ability-runtime-service.mjs";
-import { runActorAction } from "./action-guard.mjs";
+import { runActorAction, ACTION_CONTEXT } from "./action-guard.mjs";
 import { rollTask } from "./task-service.mjs";
 import { syncHealingStatuses } from "./wound-removal.mjs";
 
@@ -54,7 +54,7 @@ function availableSource(actor, interval, sourceId, powered) {
  */
 export async function rollRecovery(actor, interval = "hour", options = {}) {
   if (actor?.type !== "pc" || actor.isOwner === false || (options.completed !== undefined && options.completed !== true)) return null;
-  return runActorAction(actor, "healing", async () => {
+  return runActorAction(actor, "healing", async context => {
     const sourceId = options.source ?? "standard";
     const source = availableSource(actor, interval, sourceId, options.machinePowered);
     if (!source) {
@@ -100,7 +100,7 @@ export async function rollRecovery(actor, interval = "hour", options = {}) {
     // The Might task follows completion: restored Pools can fund its Effort.
     // Failure leaves the normal recovery benefits and consumption intact.
     if (options.healMajor && actor.system.wounds.major.current > 0) {
-      await rollTask(actor, { ...options.majorTaskOptions, stat: "might", difficulty: 6,
+      await rollTask(actor, { ...options.majorTaskOptions, [ACTION_CONTEXT]: context, stat: "might", difficulty: 6,
         targetActor: actor, woundRemovalSeverity: "major",
         flavor: game.i18n.localize("CYPHER.Recovery.MajorTask") });
     }

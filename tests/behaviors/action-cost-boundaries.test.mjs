@@ -85,6 +85,19 @@ test("Given overlapping task requests, when both are activated, then only one co
   assert.equal(actor.system.stats.might.pool.value, 7);
 });
 
+test("Given competing task and Ability costs, then an overlapping category cannot overwrite the accepted Pool spend", async () => {
+  const { actor } = scenario({ pool: 10 });
+  const update = actor.update.bind(actor);
+  actor.update = async changes => { await Promise.resolve(); return update(changes); };
+  const item = { type: "ability", actor, parent: actor,
+    system: { cost: { stat: "might", amount: 2 }, effects: [{ id: "effect" }] } };
+  globalThis.foundry = { applications: { ux: { TextEditor: { implementation: { enrichHTML: async v => v } } } } };
+  globalThis.ChatMessage.create = async data => data;
+  const results = await Promise.all([rollTask(actor, { effortLevels: 1 }), chooseAbilityEffect(item, "effect")]);
+  assert.equal(results.filter(Boolean).length, 1);
+  assert.equal(actor.system.stats.might.pool.value, 7);
+});
+
 test("Given overlapping ongoing Ability activation, when clicked twice, then its cost and effect are applied once", async () => {
   const { actor, messages } = scenario({ pool: 10 });
   actor.system.activeAbilityEffects = [];

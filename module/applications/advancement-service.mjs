@@ -1,3 +1,4 @@
+import { runActorAction } from "./action-guard.mjs";
 import { CYPHER } from "../config.mjs";
 import { spendXP } from "./character-service.mjs";
 import { getEligibleFocusAbilities } from "../rules/focus.mjs";
@@ -14,13 +15,16 @@ import {
  * @param {Actor} actor Character receiving the advancement.
  * @param {number} index Advancement slot index.
  * @param {object} extra User-selected advancement options.
- * @returns {Promise<void>}
+ * @returns {Promise<void|null>} Completes after mutation, or null when another action owns the Actor.
  */
 export async function purchaseAdvancementSlot(actor, index, extra = {}) {
-    if (actor.type !== "pc") return;
+  if (actor?.type !== "pc" || actor.isOwner === false || !Number.isInteger(index) || index < 0) return;
+  return runActorAction(actor, "advancement", async context => {
     const slots = actor.system.advancementSlots.map(s => ({ ...s }));
     const slot = slots[index];
     if (!slot || slot.bought) return;
+    if (slot.type === "perfection" && !Object.hasOwn(actor.system.stats, extra.stat || "might")) return;
+    if (slot.type === "skill" && (extra.skillId ? actor.items.get(extra.skillId)?.type !== "skill" : (typeof extra.newSkillName !== "string" || !extra.newSkillName.trim()))) return;
     if (!slot.type) {
       ui.notifications.warn(game.i18n.localize("CYPHER.Warning.ChooseAdvancementType"));
       return;
@@ -30,23 +34,24 @@ export async function purchaseAdvancementSlot(actor, index, extra = {}) {
       return;
     }
 
+    if (!["capabilities", "perfection", "effort", "skill", "other"].includes(slot.type)) return;
+    if (slot.type === "other" && !["recovery", "focus", "armor", "weapons", "genre"].includes(slot.otherType)) return;
+
     const validationError = validateAdvancementChoices(slot, extra);
     if (validationError) {
       ui.notifications.error(game.i18n.localize(validationError));
       return;
     }
 
+    // Resolve all known choices before the first persistent write.
+    const { updates, skillAction } = computeAdvancementEffects(slot, extra, actor.system);
     if (!(await spendXP(
       actor,
       CYPHER.xpCosts.advancementSlot,
-      game.i18n.localize("CYPHER.Tab.advancement")
+      game.i18n.localize("CYPHER.Tab.advancement"),
+      context
     ))) return;
 
-    const { updates, skillAction } = computeAdvancementEffects(
-      slot,
-      extra,
-      actor.system
-    );
 
     let chatNote = "";
     if (skillAction?.type === "advance") {
@@ -103,7 +108,8 @@ export async function purchaseAdvancementSlot(actor, index, extra = {}) {
 
     const boughtCount = slots.filter(s => s.bought).length;
     if (boughtCount >= 4) await advanceTier(actor);
-  }
+  });
+}
 
   /**
    * Advances the character a tier, resets advancement slots, and reminds about automatic

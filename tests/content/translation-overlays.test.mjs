@@ -42,6 +42,19 @@ test("Given adjacent table cells, when numeric fidelity is checked, then markup 
   assert.deepEqual(translationSafetyErrors("<td>A 50/50.</td><td>4</td>", "<td>50/50, selon le cas.</td><td>4</td>", "table"), []);
 });
 
+for (const [source, translated, error] of [
+  ["Roll 1d6", "Lancez 6d1", /dice/],
+  ["@UUID[Item.abc]", "@UUID[Item.def]", /references/],
+  ["Hello {name}", "Bonjour {other}", /references/]
+]) {
+  test(`translation independently rejects ${error.source}: ${source}`, () => {
+    assert.match(translationSafetyErrors(source, translated, "example").join(" "), error);
+  });
+}
+test("reference and placeholder reordering preserves the translation contract", () => {
+  assert.deepEqual(translationSafetyErrors("{name} @UUID[Item.abc] {count}", "{count} @UUID[Item.abc] {name}", "example"), []);
+});
+
 test("Given locale-specific numeric punctuation, when fidelity is checked, then equivalent quantities are accepted", () => {
   assert.deepEqual(translationSafetyErrors("1.5 m and 1,000 points", "1,5 m et 1\u202f000 points", "measurements"), []);
   assert.match(translationSafetyErrors("1.5 m and 1,000 points", "1,5 m et 1,000 points", "measurements").join(" "), /numeric/);

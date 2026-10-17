@@ -8,11 +8,13 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import ts from "typescript";
+import { isBuiltin } from "node:module";
 
 const MODULE_ROOT = path.resolve(import.meta.dirname, "../module");
 const SCRIPTS_ROOT = import.meta.dirname;
 
 export const LAYER_RULES = {
+  crd: new Set(["crd", "config.mjs"]),
   rules: new Set(["rules", "config.mjs"]),
   "data-models": new Set(["data-models", "config.mjs"]),
   applications: new Set(["applications", "rules", "config.mjs"]),
@@ -70,7 +72,7 @@ function getImportedLayer(filePath, specifier, moduleRoot) {
 
   const target = path.resolve(path.dirname(filePath), specifier);
   const relative = path.relative(moduleRoot, target);
-  if (relative.startsWith("..") || path.isAbsolute(relative)) return null;
+  if (relative === ".." || relative.startsWith(`..${path.sep}`) || path.isAbsolute(relative)) return "outside-module";
 
   return relative.split(path.sep)[0];
 }
@@ -118,6 +120,10 @@ export async function auditArchitectureDependencies({
 
     const source = await fs.readFile(filePath, "utf8");
     for (const specifier of extractModuleSpecifiers(source)) {
+      if (isBuiltin(specifier)) {
+        violations.push(path.relative(moduleRoot, filePath) + " -> " + specifier);
+        continue;
+      }
       const importedLayer = getImportedLayer(
         filePath,
         specifier,
@@ -157,7 +163,7 @@ export async function auditScriptDependencies({
   for (const filePath of files) {
     const source = await fs.readFile(filePath, "utf8");
     for (const specifier of extractModuleSpecifiers(source)) {
-      if (!specifier.startsWith("../module/")) continue;
+      if (!specifier.startsWith(".")) continue;
 
       const target = path.resolve(path.dirname(filePath), specifier);
       const relative = path.relative(moduleRoot, target);

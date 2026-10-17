@@ -1,3 +1,4 @@
+/** Pure rule scenarios: narrative names do not imply persisted service orchestration. */
 import assert from "node:assert/strict";
 import { describe, test } from "node:test";
 
@@ -5,7 +6,7 @@ import {
   computeWoundIncrease,
   reduceWoundSeverity,
   resolveWoundSeverity
-} from "../../module/rules/wounds.mjs";
+} from "../../../module/rules/wounds.mjs";
 
 describe("Given a character receives a wound", () => {
   const track = {

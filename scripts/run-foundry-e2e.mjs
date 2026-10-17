@@ -18,6 +18,10 @@ import { findServer, readCoreVersion } from "./foundry-discovery.mjs";
 import { foundryServerArguments } from "./foundry-server-options.mjs";
 import { createValidationWorkspace, removeValidationWorkspace } from "./validation-workspace.mjs";
 
+import { discoverTests } from "./test-suites.mjs";
+import { extractArchive } from "./archive.mjs";
+import { stopOwnedProcess, waitForOwnedServer } from "./process-lifecycle.mjs";
+
 const SOURCE_ROOT = path.resolve(import.meta.dirname, "..");
 let ROOT = SOURCE_ROOT;
 const PORT = Number(process.env.FOUNDRY_PORT || 30000);
@@ -38,10 +42,7 @@ const SHOW_FOUNDRY_LOGS =
     process.env.FOUNDRY_E2E_SHOW_FOUNDRY_LOGS || ""
   );
 const INCLUDE_PROPOSED_TRANSLATIONS = process.argv.includes("--proposed-translations");
-const E2E_SPECS = [
-  "tests/e2e/foundry-runtime.spec.mjs",
-  "tests/e2e/foundry-gameplay.spec.mjs"
-];
+const E2E_SPECS = await discoverTests(SOURCE_ROOT, "e2e");
 
 async function getFoundryPaths() {
   if (process.env.FOUNDRY_DATA_PATH) {
@@ -99,42 +100,6 @@ async function getFoundryPaths() {
   };
 }
 
-async function waitForPidFile(filePath, timeout = 10_000) {
-  const deadline = Date.now() + timeout;
-
-  while (Date.now() < deadline) {
-    try {
-      const pid = Number((await readFile(filePath, "utf8")).trim());
-      if (Number.isInteger(pid) && pid > 0) return pid;
-    } catch {
-      // The PowerShell launcher has not written the PID yet.
-    }
-    await new Promise(resolve => setTimeout(resolve, 100));
-  }
-
-  throw new Error("Foundry launcher did not report its process ID.");
-}
-
-async function waitForServer(url, timeout = 60_000) {
-  const deadline = Date.now() + timeout;
-  let lastError;
-
-  while (Date.now() < deadline) {
-    try {
-      const response = await fetch(url);
-      if (response.ok || response.status === 401) return;
-    } catch (error) {
-      lastError = error;
-    }
-    await new Promise(resolve => setTimeout(resolve, 500));
-  }
-
-  throw new Error(
-    `Foundry did not become reachable at ${url}.` +
-    (lastError ? ` Last error: ${lastError.message}` : "")
-  );
-}
-
 async function ensureDataPath(userDataPath, dataPath) {
   await mkdir(dataPath, { recursive: true });
 
@@ -160,24 +125,10 @@ async function installSystem(dataPath) {
   // Never layer one E2E installation over a previous system copy. Stale
   // templates or modules can otherwise survive between test runs.
   await rm(target, { recursive: true, force: true });
-  const releasePaths = [
-    "system.json",
-    "cypher.mjs",
-    "module",
-    "templates",
-    "css",
-    "lang",
-    "packs",
-    "assets",
-    "LICENSE.txt",
-    "README.md"
-  ];
-
-  for (const relativePath of releasePaths) {
-    const source = path.join(ROOT, relativePath);
-    const destination = path.join(target, relativePath);
-    await cp(source, destination, { recursive: true });
-  }
+  await mkdir(target, { recursive: true });
+  await extractArchive(path.join(ROOT, "dist", "system.zip"), target);
+  const installed = JSON.parse(await readFile(path.join(target, "system.json"), "utf8"));
+  if (installed.id !== "cypher") throw new Error("Packaged system has an unexpected ID");
 }
 
 async function createWorld(dataPath, coreVersion, systemVersion) {
@@ -258,7 +209,7 @@ function windowsCommand(command, args) {
 }
 
 function spawnScript(command, args, options = {}) {
-  if (process.platform === "win32") {
+  if (process.platform === "win32" && /\.cmd$/i.test(command)) {
     return spawn(
       process.env.ComSpec || "cmd.exe",
       ["/d", "/s", "/c", windowsCommand(command, args)],
@@ -275,46 +226,23 @@ function spawnScript(command, args, options = {}) {
   return spawn(command, args, {
     cwd: ROOT,
     stdio: "inherit",
+    windowsHide: true,
     shell: false,
     ...options
   });
 }
 
-async function runCommand(command, args) {
+async function runCommand(command, args, options = {}) {
+  const started = performance.now();
   await new Promise((resolve, reject) => {
-    const childProcess = spawnScript(command, args);
+    const childProcess = spawnScript(command, args, options);
     childProcess.on("error", reject);
     childProcess.on("close", code => {
+      console.log(`${args.join(" ")}: ${((performance.now() - started) / 1000).toFixed(1)}s`);
       if (code === 0) resolve();
       else reject(new Error(`Command failed with exit code ${code}: ${command}`));
     });
   });
-}
-
-async function waitForWindowsProcessExit(pid, timeout = 30_000) {
-  if (process.platform !== "win32" || !Number.isInteger(pid)) return;
-
-  const deadline = Date.now() + timeout;
-  while (Date.now() < deadline) {
-    const result = await new Promise(resolve => {
-      const probe = spawn(
-        "tasklist",
-        ["/fi", `PID eq ${pid}`, "/fo", "csv", "/nh"],
-        { stdio: ["ignore", "pipe", "ignore"], windowsHide: true }
-      );
-      let output = "";
-      probe.stdout.on("data", chunk => {
-        output += chunk;
-      });
-      probe.on("close", () => resolve(output));
-      probe.on("error", () => resolve(""));
-    });
-
-    if (!String(result).includes(`"${pid}"`)) return;
-    await new Promise(resolve => setTimeout(resolve, 250));
-  }
-
-  throw new Error(`Process ${pid} did not exit within ${timeout}ms.`);
 }
 
 async function removeWorld(worldPath) {
@@ -394,30 +322,12 @@ async function runWindowsTaskkill(pid, force = false) {
 }
 
 async function stopProcess(child, foundryPid) {
-  if (!child || !Number.isInteger(foundryPid)) return;
-
-  if (process.platform === "win32") {
-    await runWindowsTaskkill(foundryPid);
-  } else if (!child.killed) {
-    child.kill("SIGTERM");
-  }
-
-  try {
-    await waitForWindowsProcessExit(foundryPid, 10_000);
-  } catch {
-    if (process.platform === "win32") {
-      await runWindowsTaskkill(foundryPid, true);
-      await waitForWindowsProcessExit(foundryPid, 10_000);
-    } else {
-      throw new Error(
-        "Foundry server did not exit after SIGTERM within 10 seconds."
-      );
-    }
-  }
-
-  if (!child.killed) {
-    child.kill();
-  }
+  if (!Number.isInteger(foundryPid) || foundryPid <= 0) return;
+  // The existing child handle can terminate our Node server on Windows without
+  // a separate taskkill process. Reserve tree escalation for a failed shutdown.
+  await stopOwnedProcess(child, force => process.platform === "win32" && force
+    ? runWindowsTaskkill(foundryPid, true)
+    : child.kill(force ? "SIGKILL" : "SIGTERM"));
 }
 
 const serverPath = await findServer();
@@ -469,21 +379,29 @@ try {
   }
 
   const npmCommand = process.platform === "win32" ? "npm.cmd" : "npm";
-  const command = process.platform === "win32" ? "npx.cmd" : "npx";
 
   // Normalize and build only in the temporary checkout. Package after packs,
   // so the archive and the installed runtime contain the same generated data.
   // Build the current edited sources before installing the disposable system.
   // ROOT points to the temporary checkout, never the original repository here.
   await runCommand(npmCommand, ["run", "migrate:packs"]);
-  await runCommand(npmCommand, ["run", "build:packs", ...(INCLUDE_PROPOSED_TRANSLATIONS ? ["--", "--include-proposed"] : [])]);
+  await runCommand(npmCommand, ["run", "build:packs", "--", "--normalized-workspace", ...(INCLUDE_PROPOSED_TRANSLATIONS ? ["--include-proposed"] : [])]);
   await runCommand(npmCommand, ["run", "package"]);
+  await runCommand(npmCommand, ["run", "test:build"], {
+    env: { ...process.env, CYPHER_TEST_NORMALIZED_SOURCES: "true" }
+  });
+  await runCommand(process.execPath, ["scripts/verify-package.mjs"]);
   await runCommand(npmCommand, ["run", "check:system-syntax"]);
   await runCommand(npmCommand, ["run", "check:e2e-syntax"]);
-  if (process.env.PLAYWRIGHT_SKIP_BROWSER_INSTALL !== "true") {
-    await runCommand(command, ["playwright", "install", "chromium"]);
+  try {
+    // Reuse a working browser without taking Playwright's installation lock or
+    // writing outside the owned workspace. Install only when the preflight fails.
+    await runCommand(npmCommand, ["run", "check:e2e-browser"]);
+  } catch (error) {
+    if (process.env.PLAYWRIGHT_SKIP_BROWSER_INSTALL === "true") throw error;
+    await runCommand(process.execPath, ["node_modules/@playwright/test/cli.js", "install", "chromium"]);
+    await runCommand(npmCommand, ["run", "check:e2e-browser"]);
   }
-  await runCommand(npmCommand, ["run", "check:e2e-browser"]);
 
   await ensureDataPath(userDataPath, dataPath);
   await installSystem(dataPath);
@@ -506,8 +424,10 @@ try {
   if (!Number.isInteger(foundryPid) || foundryPid <= 0) {
     throw new Error("Foundry server did not expose a valid process ID.");
   }
+  await writeFile(FOUNDRY_PID_FILE, String(foundryPid));
+  console.log(`Foundry process ID: ${foundryPid}`);
 
-  await waitForServer(BASE_URL);
+  await waitForOwnedServer(child, BASE_URL);
 
   exitCode = await new Promise(resolve => {
     const testArgs = [
@@ -541,18 +461,24 @@ try {
 } finally {
   // Stop Foundry before deleting its world/LevelDB files so open handles cannot
   // race cleanup. Preserve failure diagnostics before removing the temp copy.
-  await stopProcess(child, foundryPid);
+  let shutdownFailed = false;
+  try { await stopProcess(child, foundryPid); }
+  catch (error) {
+    shutdownFailed = true;
+    exitCode = 1;
+    console.error("Foundry shutdown failed:", error);
+  }
   await showFoundryLogTailOnFailure();
 
   if (exitCode === 0) {
     await rm(FOUNDRY_LOG_PATH, { force: true });
   }
 
-  if (worldCreated) {
+  if (worldCreated && !shutdownFailed) {
     await removeWorld(worldPath);
   }
 
-  await rm(FOUNDRY_PID_FILE, { force: true });
+  if (!shutdownFailed) await rm(FOUNDRY_PID_FILE, { force: true });
   if (validationWorkspace && exitCode !== 0) {
     const reportPath = path.join(SOURCE_ROOT, "reports", WORLD_ID);
     try {
@@ -562,7 +488,8 @@ try {
       if (error.code !== "ENOENT") throw error;
     }
   }
-  if (validationWorkspace) await removeValidationWorkspace(validationWorkspace);
+  if (validationWorkspace && !shutdownFailed) await removeValidationWorkspace(validationWorkspace);
+  if (shutdownFailed) console.error(`Retained owned workspace for shutdown recovery: ${validationWorkspace}`);
 }
 
 process.exitCode = exitCode;

@@ -1,3 +1,4 @@
+import { runActorAction } from "./action-guard.mjs";
 import { CYPHER } from "../config.mjs";
 
 /**
@@ -9,24 +10,26 @@ import { CYPHER } from "../config.mjs";
  * @param {Actor} actor Character spending XP.
  * @param {number} amount Number of XP to spend.
  * @param {string} [reasonLabel=""] Localized reason shown in the warning.
+ * @param {object|null} [context=null] Explicit context of a parent action reserving this Actor.
  * @returns {Promise<boolean>} True when the XP was successfully spent.
  */
-export async function spendXP(actor, amount, reasonLabel = "") {
-  if (actor.type !== "pc") return false;
+export async function spendXP(actor, amount, reasonLabel = "", context = null) {
+  if (actor?.type !== "pc" || actor.isOwner === false || !Number.isSafeInteger(amount) || amount < 0) return false;
+  return (await runActorAction(actor, "xp", async () => {
+    const currentXP = actor.system.xp ?? 0;
+    if (currentXP < amount) {
+      ui.notifications.error(
+        game.i18n.format("CYPHER.Warning.NotEnoughXP", {
+          amount,
+          reason: reasonLabel
+        })
+      );
+      return false;
+    }
 
-  const currentXP = actor.system.xp ?? 0;
-  if (currentXP < amount) {
-    ui.notifications.error(
-      game.i18n.format("CYPHER.Warning.NotEnoughXP", {
-        amount,
-        reason: reasonLabel
-      })
-    );
-    return false;
-  }
-
-  await actor.update({ "system.xp": currentXP - amount });
-  return true;
+    await actor.update({ "system.xp": currentXP - amount });
+    return true;
+  }, context)) ?? false;
 }
 
 // Preserve the existing Actor/macro API while the reroll service owns the flow.

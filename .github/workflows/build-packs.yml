@@ -7,7 +7,16 @@ on:
     paths:
       - "packs/**/_source/**"
       - "scripts/build-packs.mjs"
+      - "scripts/pack-publication.mjs"
       - "scripts/migrate-ability-sources.mjs"
+      - "scripts/source-migration/**"
+      - "scripts/crd-audit/**"
+      - "scripts/localization/**"
+      - "scripts/review-translations.mjs"
+      - "scripts/validation-workspace.mjs"
+      - "module/crd/**"
+      - "translations/fr/**"
+      - "system.json"
       - "package.json"
       - "package-lock.json"
       - ".github/workflows/build-packs.yml"
@@ -27,14 +36,14 @@ jobs:
         with:
           node-version: 22
 
-      - name: Install Foundry CLI
-        run: npm install --no-save @foundryvtt/foundryvtt-cli@3.0.4
+      - name: Install locked dependencies
+        run: npm ci
 
       - name: Normalize CRD source metadata
         run: npm run migrate:packs
 
       - name: Validate compendium sources
-        run: node --test tests/content/*.test.mjs
+        run: npm run test:content
 
       - name: Build LevelDB packs
         run: npm run build:packs

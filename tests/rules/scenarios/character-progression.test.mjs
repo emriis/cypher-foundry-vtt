@@ -1,12 +1,13 @@
+/** Pure rule scenarios: narrative names do not imply persisted service orchestration. */
 import assert from "node:assert/strict";
 import { describe, test } from "node:test";
 
 import {
   getEligibleFocusAbilities
-} from "../../module/rules/focus.mjs";
+} from "../../../module/rules/focus.mjs";
 import {
   computeTierAdvancement
-} from "../../module/rules/advancement.mjs";
+} from "../../../module/rules/advancement.mjs";
 
 describe("Given a character progresses through a Focus", () => {
   const focus = {

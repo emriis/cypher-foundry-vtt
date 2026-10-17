@@ -21,12 +21,12 @@ const EXCLUDED = new Set([
  * @param {string} sourceRoot Repository root whose current files should be tested.
  * @returns {Promise<{workspace: string, root: string}>} Owned temp directory and checkout path.
  */
-/** Copy the working checkout, including uncommitted edits, without private data. */
 export async function createValidationWorkspace(sourceRoot) {
   const workspace = await mkdtemp(path.join(os.tmpdir(), PREFIX));
-  await writeFile(path.join(workspace, MARKER), path.basename(workspace));
   const root = path.join(workspace, "checkout");
   try {
+    await writeFile(path.join(workspace, MARKER), path.basename(workspace));
+    await lstat(path.join(sourceRoot, "node_modules"));
     await cp(sourceRoot, root, {
       recursive: true,
       filter: async source => {
@@ -43,19 +43,21 @@ export async function createValidationWorkspace(sourceRoot) {
       process.platform === "win32" ? "junction" : "dir");
     return { workspace, root };
   } catch (error) {
-    await removeValidationWorkspace(workspace);
+    // This path came directly from mkdtemp above, including when marker creation failed.
+    if (path.dirname(workspace) !== path.resolve(os.tmpdir()) || !path.basename(workspace).startsWith(PREFIX)) throw error;
+    try { await rm(workspace, { recursive: true, force: true }); }
+    catch (cleanupError) { throw new AggregateError([error, cleanupError], "Workspace creation and cleanup failed"); }
     throw error;
   }
 }
 
 /**
- * Delete only a temporary directory created and marked by this helper.
- * All three ownership checks must pass before the recursive removal begins.
+ * Verify a temporary directory created and marked by this helper.
+ * All ownership checks must pass before reuse or recursive cleanup.
  * @param {string} workspace Owned temp directory, not its checkout subdirectory.
- * @returns {Promise<void>} Resolves after cleanup; rejects an unowned/missing marker.
+ * @returns {Promise<string>} Absolute owned path; rejects an unowned/missing marker.
  */
-/** Delete only a temporary directory created and marked by this helper. */
-export async function removeValidationWorkspace(workspace) {
+export async function assertValidationWorkspace(workspace) {
   const resolved = path.resolve(workspace);
   const marker = await readFile(path.join(resolved, MARKER), "utf8").catch(error => {
     if (error.code === "ENOENT") return null;
@@ -66,5 +68,19 @@ export async function removeValidationWorkspace(workspace) {
       || marker !== path.basename(resolved)) {
     throw new Error("Refusing to remove an unowned validation workspace.");
   }
+  return resolved;
+}
+
+/** Verify ownership before reusing a normalized temporary checkout. */
+export async function assertValidationCheckout(root) {
+  const resolved = path.resolve(root);
+  if (path.basename(resolved) !== "checkout") throw new Error("Expected an owned validation checkout");
+  await assertValidationWorkspace(path.dirname(resolved));
+  return resolved;
+}
+
+/** Delete only a marked temporary workspace, after verifying its absolute path. */
+export async function removeValidationWorkspace(workspace) {
+  const resolved = await assertValidationWorkspace(workspace);
   await rm(resolved, { recursive: true, force: true, maxRetries: 3, retryDelay: 250 });
 }

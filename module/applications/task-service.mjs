@@ -6,7 +6,7 @@
  */
 import { resolveDefense } from "../rules/defense.mjs";
 import { resolveTaskOutcome } from "../rules/task-outcome.mjs";
-import { runActorAction } from "./action-guard.mjs";
+import { runActorActions, ACTION_CONTEXT } from "./action-guard.mjs";
 import { prepareTask } from "./task-preparation.mjs";
 import { buildTaskMessage } from "./task-message.mjs";
 import { applyTaskConsequences } from "./task-consequences.mjs";
@@ -96,7 +96,7 @@ export async function rollDefense(
  */
 export async function rollTask(actor, options = {}) {
   if (!actor) return null;
-  return runActorAction(actor, "task", () => executeTask(actor, options));
+  return runActorActions([actor, options.targetActor], "task", () => executeTask(actor, options), options[ACTION_CONTEXT]);
 }
 
 /** Execute one locally accepted task in explicit preparation/write/chat phases. */

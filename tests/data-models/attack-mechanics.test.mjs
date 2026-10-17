@@ -77,7 +77,7 @@ test("weapon configuration mechanics keep tripod and alternate configuration dat
 
   assert.equal(mechanics.requiresTripod.options.initial, false);
   assert.equal(mechanics.requiredOperators.options.initial, 0);
-  assert.equal(
+  assert.deepEqual(
     mechanics.alternateConfiguration.options.attackType.options.choices,
     ["", "light", "medium", "heavy"]
   );

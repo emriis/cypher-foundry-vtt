@@ -3,7 +3,7 @@
  * Pure rules decide eligibility and modifiers; this browser service validates
  * current documents, spends resources, and awaits each attack in order.
  */
-import { runActorAction } from "./action-guard.mjs";
+import { runActorActions, ACTION_CONTEXT } from "./action-guard.mjs";
 import { resolveSprayUse, resolveArcSprayAttacks } from "../rules/weapon-ability-resolution.mjs";
 import { resolveWeaponPrerequisites } from "../rules/ability-weapon-prerequisites.mjs";
 import { resolveAbilityCost, resolveAbilityCostStat } from "../rules/ability-costs.mjs";
@@ -52,7 +52,7 @@ export async function executeWeaponAbility(item, {
   const actor = item?.actor;
   const kind = getWeaponAbilityKind(item);
   if (!kind || actor?.type !== "pc" || actor.isOwner === false || item.parent !== actor) return null;
-  return runActorAction(actor, "weaponAbility", async () => {
+  return runActorActions([actor, ...(Array.isArray(targets) ? targets : [])], "weaponAbility", async context => {
     const reject = () => {
       ui.notifications.warn(game.i18n.localize("CYPHER.WeaponAbility.InvalidUse"));
       return null;
@@ -93,7 +93,7 @@ export async function executeWeaponAbility(item, {
     // attacks are extra actions (CRD: Actions), with their own Effort costs.
     const spentAbilityEdge = costStat === stat ? Math.min(rawCost?.amount ?? 0, abilityEdge) : 0;
     const planAttack = (index, extra = {}, choices = rollOptions) => {
-      const options = prepareAttackOptions(weapon, { ...choices, ...extra, areaAttack: false,
+      const options = prepareAttackOptions(weapon, { ...choices, ...extra, [ACTION_CONTEXT]: context, areaAttack: false,
         difficulty: targets[index].system.level, target: targets[index],
         extraHinderSteps: (choices.extraHinderSteps ?? 0) + profiles[index].extraHinderSteps,
         abilitySource: { itemId: item.id, name: item.name, kind },

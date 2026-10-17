@@ -11,7 +11,9 @@ globalThis.foundry = {
     StringField: FieldDefinition,
     NumberField: FieldDefinition,
     HTMLField: FieldDefinition,
-    BooleanField: FieldDefinition
+    BooleanField: FieldDefinition,
+    ArrayField: FieldDefinition,
+    SchemaField: FieldDefinition
   }}
 };
 

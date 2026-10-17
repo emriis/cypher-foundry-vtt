@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
+import { withTemporaryDirectory } from "../helpers/temporary-directory.mjs";
 
 import {
   auditArchitectureDependencies,
@@ -68,4 +69,24 @@ test("architecture audit recognizes dynamic local imports", () => {
     extractModuleSpecifiers('import("./applications/task-service.mjs");'),
     ["./applications/task-service.mjs"]
   );
+});
+
+test("invalid nested tooling, outside-root, CRD and Node imports are rejected", async () => {
+  await withTemporaryDirectory(async root => {
+    const moduleRoot = path.join(root, "module"), scriptsRoot = path.join(root, "scripts");
+    for (const dir of ["module/rules", "module/crd", "module/documents", "scripts/nested"]) {
+      await fs.mkdir(path.join(root, dir), { recursive: true });
+    }
+    await fs.writeFile(path.join(scriptsRoot, "nested/bad.mjs"), 'import "../../module/documents/actor.mjs";');
+    await fs.writeFile(path.join(moduleRoot, "rules/bad.mjs"), 'import "../../scripts/tool.mjs"; import("node:fs");');
+    await fs.writeFile(path.join(moduleRoot, "crd/bad.mjs"), 'export { Actor } from "../documents/actor.mjs";');
+    const tooling = await auditScriptDependencies({ scriptsRoot, moduleRoot });
+    const runtime = await auditArchitectureDependencies({ moduleRoot });
+    assert.equal(tooling.length, 1);
+    assert.equal(runtime.length, 3);
+    assert.ok(runtime.some(value => value.includes("node:fs")));
+    await fs.writeFile(path.join(moduleRoot, "rules/bad.mjs"), 'import "../config.mjs";');
+    await fs.writeFile(path.join(moduleRoot, "crd/bad.mjs"), 'export { schema } from "./schema.mjs";');
+    assert.deepEqual(await auditArchitectureDependencies({ moduleRoot }), []);
+  });
 });

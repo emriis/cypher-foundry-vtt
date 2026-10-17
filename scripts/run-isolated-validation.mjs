@@ -4,7 +4,6 @@
  * without leaving generated source changes in the original checkout.
  */
 import { spawn } from "node:child_process";
-import { readdir } from "node:fs/promises";
 import path from "node:path";
 import { createValidationWorkspace, removeValidationWorkspace } from "./validation-workspace.mjs";
 
@@ -23,14 +22,7 @@ try {
   console.log("Running source normalization and tests in an isolated checkout.");
   // Normalize before execution because content tests read the source records.
   await run(["scripts/migrate-ability-sources.mjs"]);
-  const folders = ["rules", "applications", "documents", "migrations", "content", "integration", "behaviors"];
-  const files = [];
-  for (const folder of folders) {
-    for (const name of (await readdir(path.join(root, "tests", folder))).sort()) {
-      if (name.endsWith(".test.mjs")) files.push(`tests/${folder}/${name}`);
-    }
-  }
-  await run(["--test", "--test-reporter=spec", ...files]);
+  await run(["scripts/run-tests.mjs", "all"]);
 } catch (error) {
   console.error(error.message);
   process.exitCode = 1;
