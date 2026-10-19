@@ -43,10 +43,10 @@ test("Shield Master delays shield overflow without changing the PC or saved maxi
   globalThis.foundry = { utils: { escapeHTML: value => value } };
   const messages = [];
   globalThis.ChatMessage = { getSpeaker: () => ({}), create: async message => messages.push(message) };
-  const actor = { type: "pc", isOwner: true, system: {}, items: [{ type: "ability", system: {
+  const ability = { type: "ability", system: {
     passiveModifiers: [{ kind: "shieldWoundCapacity", severity: "moderate", amount: 1 }]
-  } }] };
-  const shield = { id: "shield", type: "shield", system: { equipped: true, wounds: {
+  } };
+  const shield = { id: "shield", name: "Shield", type: "shield", system: { equipped: true, wounds: {
     minor: { current: 3, max: 3 }, moderate: { current: 2, max: 2 }, major: { current: 0, max: 1 }
   } }, async update(changes) {
     for (const [path, value] of Object.entries(changes)) {
@@ -54,14 +54,18 @@ test("Shield Master delays shield overflow without changing the PC or saved maxi
       else this.system.wounds[path.split(".")[2]].current = value;
     }
   } };
-  actor.items = new Map([...actor.items.map((item, i) => [String(i), item]), [shield.id, shield]]);
-  await shieldAbsorbWound(actor, shield, "minor");
+  const actor = {
+    type: "pc", isOwner: true, system: {},
+    items: new Map([["ability", ability], [shield.id, shield]])
+  };
+  assert.equal(await shieldAbsorbWound(actor, shield, "minor"), true);
   assert.equal(shield.system.wounds.moderate.current, 3);
   assert.equal(shield.system.wounds.moderate.max, 2);
   assert.equal(shield.system.wounds.major.current, 0);
   assert.equal(messages.length, 0);
-  await shieldAbsorbWound(actor, shield, "moderate");
+  assert.equal(await shieldAbsorbWound(actor, shield, "moderate"), true);
   assert.equal(shield.system.wounds.major.current, 1);
+  assert.equal(shield.system.equipped, false);
   assert.equal(messages.length, 1);
 });
 
