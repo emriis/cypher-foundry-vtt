@@ -1,5 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import { readFile } from "node:fs/promises";
+import { resolveActiveAbilityModifiers } from "../../module/rules/ability-modifiers.mjs";
 
 const { applyType, applyFocus, applyDescriptor, getInitialFocusAbilityChoices } = await import(
   "../../module/applications/content-service.mjs"
@@ -64,6 +66,49 @@ function existingSkill(name, provenance) {
   return { type: "skill", name, system: { level: "trained" },
     ...(provenance ? { flags: { cypherFoundry: { crd: provenance } } } : {}),
     async update(values) { this.system.level = values["system.level"]; } };
+}
+
+test("species and Descriptor benefit Items persist distinct grant origins without parsing names", async () => {
+  setupSkillGrants();
+  const actor = createActor();
+  for (const category of ["species", "descriptor"]) {
+    const source = { type: "descriptor", id: category, name: "Same translated source", system: {
+      category, genres: ["fantasy"], statOptions: [], statAmount: 0,
+      benefits: [{ name: "Same benefit", description: "Source benefit text" }]
+    } };
+    assert.equal(await applyDescriptor(actor, source), true);
+    const benefit = actor.items.at(-1);
+    assert.deepEqual(benefit.flags?.cypher?.grantOrigin, { kind: category, sourceId: category });
+    assert.equal(typeof benefit.system.key, "string", "Generated benefits must satisfy the Ability schema");
+    assert.ok(benefit.system.key.length);
+  }
+});
+
+for (const language of ["en", "fr"]) {
+  for (const species of ["drakain", "orc", "prota"]) {
+    test(`${language} ${species} automatically grants minor capacity in addition to Tough`, async () => {
+      setupSkillGrants();
+      const source = JSON.parse(await readFile(new URL(
+        `../../packs/descriptors-${language}/_source/species/${species}.json`, import.meta.url), "utf8"));
+      const actor = createActor();
+      actor.system.genre = species === "orc" ? "fantasy" : "sciFi";
+      actor.items.push({ type: "ability", system: { key: "tough", passiveModifiers: [
+        { kind: "woundCapacity", severity: "minor", amount: 1 }
+      ] } });
+      assert.equal(await applyDescriptor(actor, source), true);
+      const benefit = actor.items.find(item => item.flags?.cypher?.grantOrigin?.kind === "species"
+        && item.system.passiveModifiers?.length);
+      assert.ok(benefit, "The applied species must create its structured capacity benefit");
+      assert.equal(resolveActiveAbilityModifiers([], actor.items, actor.system).woundCapacity.minor, 2);
+      assert.equal(actor.system.wounds.minor.max, 3);
+      const itemCount = actor.items.length;
+      assert.equal(await applyDescriptor(actor, source), false);
+      assert.equal(actor.items.length, itemCount);
+      // Owned configuration is independent of its authoring/compendium source.
+      benefit.system.passiveModifiers[0].amount = 2;
+      assert.equal(source.system.benefits.find(entry => entry.passiveModifiers?.length).passiveModifiers[0].amount, 1);
+    });
+  }
 }
 
 test("Given an English imported Skill, when a French Type grants its translation, then the same Skill advances without a duplicate", async () => {

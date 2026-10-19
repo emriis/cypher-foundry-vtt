@@ -606,6 +606,7 @@ export async function migrateLanguage(language, english, englishLogicalIds) {
         chooseWeaponAttackCategory: Boolean(canonical.chooseWeaponAttackCategory),
         grantedArmorItemCategory: canonical.grantedArmorItemCategory ?? "",
         effects: canonical.effects ?? [],
+        ...(canonical.passiveModifiers?.length ? { passiveModifiers: canonical.passiveModifiers } : {}),
         rollTables: canonical.rollTables ?? [],
         description: ability.description ?? canonical.description ?? ""
       },

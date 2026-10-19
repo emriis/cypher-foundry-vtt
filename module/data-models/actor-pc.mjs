@@ -1,4 +1,5 @@
 import { CYPHER } from "../config.mjs";
+import { resolveAbilityWoundTrack } from "../rules/ability-modifiers.mjs";
 
 const { SchemaField, NumberField, StringField, HTMLField, BooleanField, ArrayField } = foundry.data.fields;
 
@@ -190,7 +191,12 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
 
     // Wound boxes determine task hindrance separately from depleted stat Pools.
     // A full moderate track adds one step; each major wound adds another.
-    const w = this.wounds;
+    // Keep saved maxima unchanged: recomputing or removing an Ability must not
+    // accumulate bonuses or erase wounds already received.
+    const items = this.parent?.items;
+    this.effectiveWounds = resolveAbilityWoundTrack(this.wounds, this.activeAbilityEffects,
+      items?.contents ?? (Array.isArray(items) ? items : Array.from(items?.values?.() ?? [])), this);
+    const w = this.effectiveWounds;
     let hinderSteps = 0;
     if (w.moderate.current >= w.moderate.max && w.moderate.max > 0) hinderSteps += 1;
     hinderSteps += w.major.current;
@@ -248,6 +254,7 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
 
   /** Keep sheet context usable after preparation fails; do not repair saved data here. */
   _applyDerivedDataFallback() {
+    this.effectiveWounds ??= this.wounds;
     this.hindered ??= false;
     this.hinderSteps ??= 0;
     this.stepModifier ??= 0;

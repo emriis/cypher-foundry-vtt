@@ -23,6 +23,14 @@
     "grantedArmorItemCategory": "",
     "effects": [],
     "rollTables": [],
-    "description": "You can take an additional minor wound."
+    "description": "You can take an additional minor wound.",
+    "passiveModifiers": [
+      {
+        "kind": "woundCapacity",
+        "stat": "",
+        "severity": "minor",
+        "amount": 1
+      }
+    ]
   }
 }

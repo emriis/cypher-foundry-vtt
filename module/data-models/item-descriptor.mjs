@@ -1,3 +1,5 @@
+import { createAbilityEffectModifiersField } from "./ability-fields.mjs";
+
 const { StringField, NumberField, HTMLField, ArrayField, BooleanField, SchemaField } = foundry.data.fields;
 
 /**
@@ -5,7 +7,7 @@ const { StringField, NumberField, HTMLField, ArrayField, BooleanField, SchemaFie
  *
  * A Descriptor is a one-time package of actor benefits, not an item that stays
  * on the actor. Dragging it to a PC sheet calls CypherActor#applyDescriptor;
- * the actor keeps the granted Pool bonus, descriptor name, and Skill item.
+ * the actor keeps the granted Pool bonus, descriptor name, Skills and benefit Abilities.
  */
 export default class CypherDescriptorData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
@@ -33,7 +35,10 @@ export default class CypherDescriptorData extends foundry.abstract.TypeDataModel
 
       benefits: new ArrayField(new SchemaField({
         name: new StringField({ required: true, blank: false }),
-        description: new HTMLField({ required: true, blank: false })
+        description: new HTMLField({ required: true, blank: false }),
+        // Authored mechanics are copied to the owned benefit Ability. Empty
+        // defaults preserve older descriptive benefits without parsing prose.
+        passiveModifiers: createAbilityEffectModifiersField()
       }), { required: true, initial: [] }),
       description: new HTMLField({ required: true, blank: true })
     };

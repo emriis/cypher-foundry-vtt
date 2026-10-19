@@ -701,7 +701,15 @@
         "grantedArmorItemCategory": "",
         "effects": [],
         "rollTables": [],
-        "description": "<p>You can take an additional minor wound.</p>"
+        "description": "<p>You can take an additional minor wound.</p>",
+        "passiveModifiers": [
+          {
+            "kind": "woundCapacity",
+            "stat": "",
+            "severity": "minor",
+            "amount": 1
+          }
+        ]
       },
       "sources": [
         {
@@ -2087,7 +2095,23 @@
         "grantedArmorItemCategory": "",
         "effects": [],
         "rollTables": [],
-        "description": "<p>You are very resistant to damage due to your body being composed of rock or metal, your incredible toughness, or a similar reason. You ignore minor wounds. You can take an additional moderate wound and major wound.</p>"
+        "description": "<p>You are very resistant to damage due to your body being composed of rock or metal, your incredible toughness, or a similar reason. You ignore minor wounds. You can take an additional moderate wound and major wound.</p>",
+        "passiveModifiers": [
+          {
+            "kind": "woundCapacity",
+            "stat": "",
+            "severity": "moderate",
+            "amount": 1,
+            "minimumRank": 2
+          },
+          {
+            "kind": "woundCapacity",
+            "stat": "",
+            "severity": "major",
+            "amount": 1,
+            "minimumRank": 2
+          }
+        ]
       },
       "sources": [
         {
@@ -2839,7 +2863,15 @@
         "grantedArmorItemCategory": "",
         "effects": [],
         "rollTables": [],
-        "description": "<p>Your body is elastic and rubbery, granting you the following benefits. You can take an extra moderate wound. As your action, you can stretch and reshape your body and limbs thin enough to easily pull free from mundane bindings, or squeeze through a tight spot as small as half an inch (1 cm) in diameter. You can stretch your arms up to a long distance, allowing you to touch, grab, or interact with anything you can see as if you were standing next to it and could use your hands normally. You can attempt to grab a creature as an eased attack by enveloping yourself around them or wrapping them in extra lengths of your stretchy limbs. If you hit, you prevent them from moving on their turn, and their physical attacks are hindered. If they try to escape, you must succeed at a Might task to maintain your grip. As your action, you can automatically inflict 4 damage to a grabbed target by squeezing them.</p>"
+        "description": "<p>Your body is elastic and rubbery, granting you the following benefits. You can take an extra moderate wound. As your action, you can stretch and reshape your body and limbs thin enough to easily pull free from mundane bindings, or squeeze through a tight spot as small as half an inch (1 cm) in diameter. You can stretch your arms up to a long distance, allowing you to touch, grab, or interact with anything you can see as if you were standing next to it and could use your hands normally. You can attempt to grab a creature as an eased attack by enveloping yourself around them or wrapping them in extra lengths of your stretchy limbs. If you hit, you prevent them from moving on their turn, and their physical attacks are hindered. If they try to escape, you must succeed at a Might task to maintain your grip. As your action, you can automatically inflict 4 damage to a grabbed target by squeezing them.</p>",
+        "passiveModifiers": [
+          {
+            "kind": "woundCapacity",
+            "stat": "",
+            "severity": "moderate",
+            "amount": 1
+          }
+        ]
       },
       "sources": [
         {

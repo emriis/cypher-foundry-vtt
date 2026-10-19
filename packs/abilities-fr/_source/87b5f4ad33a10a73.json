@@ -23,6 +23,14 @@
     "grantedArmorItemCategory": "",
     "effects": [],
     "rollTables": [],
-    "description": "Tu peux subir une blessure majeure supplémentaire par rapport à la normale."
+    "description": "Tu peux subir une blessure majeure supplémentaire par rapport à la normale.",
+    "passiveModifiers": [
+      {
+        "kind": "woundCapacity",
+        "stat": "",
+        "severity": "major",
+        "amount": 1
+      }
+    ]
   }
 }

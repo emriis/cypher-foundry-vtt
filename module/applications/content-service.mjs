@@ -65,6 +65,11 @@ function grantedSkillFlags(source) {
   return source ? { flags: { cypherFoundry: { crd: structuredClone(source.flags.cypherFoundry.crd) } } } : {};
 }
 
+/** Persist mechanical origin independently of localized source/benefit names. */
+function abilityGrantFlags(kind, sourceId) {
+  return { flags: { cypher: { grantOrigin: { kind, sourceId: sourceId ?? null } } } };
+}
+
 /**
  * Resolve referenced content abilities for presentation or application use.
  *
@@ -226,6 +231,7 @@ async function applyTypeInternal(actor, typeItem, { stat = null, skillName = nul
       abilities.map(ability => ({
         name: ability.name,
         type: "ability",
+        ...abilityGrantFlags("type", typeItem.id ?? typeItem._id),
         system: {
           ...ability.system,
           source: typeItem.name
@@ -330,6 +336,7 @@ export async function applyFocus(
     return {
       name: source.name,
       type: "ability",
+      ...abilityGrantFlags("focus", focusItem.id ?? focusItem._id),
       system: {
         ...source.system,
         source: focusItem.name,
@@ -409,6 +416,7 @@ export async function selectFocusAbility(
   const items = [{
     name: source[0].name,
     type: "ability",
+    ...abilityGrantFlags("focus", actor.getFlag("cypher", "appliedFocusId")),
     system: {
       ...source[0].system,
       source: actor.system.focus,
@@ -536,16 +544,25 @@ export async function applyDescriptor(
 
   const benefits = descriptorItem.system.benefits ?? [];
   if (benefits.length) {
-    await actor.createEmbeddedDocuments("Item", benefits.map(benefit => ({
+    await actor.createEmbeddedDocuments("Item", benefits.map((benefit, index) => ({
       name: benefit.name,
       type: "ability",
+      // Representation as an Ability must not turn a species/Descriptor benefit
+      // into a genre/Type/Focus grant for capacity stacking. Preserve origin in
+      // flags rather than reconstructing it from a localized source/name later.
+      ...abilityGrantFlags(isSpecies ? "species" : "descriptor", descriptorId),
       system: {
+        // Generated benefits need a nonblank Ability key too. Source identity
+        // and the authored benefit slot avoid executing a localized label;
+        // this technical key is not a CRD catalogue identity or dispatch key.
+        key: `${isSpecies ? "species" : "descriptor"}-benefit-${descriptorId ?? "custom"}-${index}`,
         source: descriptorItem.name,
         tier: 1,
         enabler: true,
         cost: { stat: "none", amount: 0, options: [] },
         action: null,
         repeatable: false,
+        passiveModifiers: structuredClone(benefit.passiveModifiers ?? []),
         effects: [],
         rollTables: [],
         description: benefit.description

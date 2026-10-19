@@ -23,6 +23,14 @@
     "grantedArmorItemCategory": "",
     "effects": [],
     "rollTables": [],
-    "description": "Tu peux encaisser une blessure modérée supplémentaire."
+    "description": "Tu peux encaisser une blessure modérée supplémentaire.",
+    "passiveModifiers": [
+      {
+        "kind": "woundCapacity",
+        "stat": "",
+        "severity": "moderate",
+        "amount": 1
+      }
+    ]
   }
 }

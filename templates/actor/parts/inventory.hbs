@@ -83,9 +83,9 @@
           {{#if item.system.broken}}
             {{localize 'CYPHER.Shield.BrokenLabel'}}
           {{else}}
-            {{localize 'CYPHER.Wound.minor'}} {{item.system.wounds.minor.current}}/{{item.system.wounds.minor.max}} —
-            {{localize 'CYPHER.Wound.moderate'}} {{item.system.wounds.moderate.current}}/{{item.system.wounds.moderate.max}} —
-            {{localize 'CYPHER.Wound.major'}} {{item.system.wounds.major.current}}/{{item.system.wounds.major.max}}
+            {{localize 'CYPHER.Wound.minor'}} {{item.system.effectiveWounds.minor.current}}/{{item.system.effectiveWounds.minor.max}} —
+            {{localize 'CYPHER.Wound.moderate'}} {{item.system.effectiveWounds.moderate.current}}/{{item.system.effectiveWounds.moderate.max}} —
+            {{localize 'CYPHER.Wound.major'}} {{item.system.effectiveWounds.major.current}}/{{item.system.effectiveWounds.major.max}}
           {{/if}}
         </span>
         <label><input type="checkbox" data-action="toggleEquipped" {{#if item.system.equipped}}checked{{/if}}/> {{localize 'CYPHER.Equipped'}}</label>

@@ -272,6 +272,7 @@ test("applyType applies pool, Edge, wound, and equipment benefits once", async (
 
   assert.equal(await applyType(actor, typeItem, { stat: "speed" }), true);
   assert.equal(actor.system.type, "Barbarian");
+  assert.equal(actor.items[0].flags.cypher.grantOrigin.kind, "type");
   assert.equal(actor.system.genre, "fantasy");
   assert.deepEqual(actor.system.stats.might.pool, { max: 11, value: 8 });
   assert.deepEqual(actor.system.stats.speed.pool, { max: 9, value: 9 });
@@ -417,6 +418,7 @@ test("applyFocus records two tier-1 selections and creates their ability items",
   assert.equal(actor.system.focus, "Abides in Stone");
   assert.deepEqual(actor.flags.cypher.focusAbilityIds, ["intimidating-presence", "stone-body"]);
   assert.deepEqual(actor.items.map(item => item.system.focusAbilityId), ["intimidating-presence", "stone-body"]);
+  assert.deepEqual(actor.items.map(item => item.flags.cypher.grantOrigin.kind), ["focus", "focus"]);
 });
 
 test("applyFocus applies only the selected abilities' free-use grants", async () => {

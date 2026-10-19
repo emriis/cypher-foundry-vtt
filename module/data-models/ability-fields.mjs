@@ -15,22 +15,21 @@ const {
 } = foundry.data.fields;
 
 /**
- * Creates a structured recovery-based end condition.
+ * Create one typed self-modifier shared by passive benefits and active effects.
+ * This stores a definition; ownership/activation and explicit rank eligibility
+ * determine applicability. Shield capacity remains separate from PC capacity.
  *
- * This represents only the recovery boundary explicitly stated by the source.
- * Runtime state (active/inactive, applied effects, cooldowns) belongs to
- * actor-owned data and is deliberately not stored here.
- *
- * @returns {SchemaField} Recovery end-condition definition.
+ * @returns {SchemaField} Pool, Edge or wound-capacity modifier definition.
  */
 function createAbilityEffectModifierField() {
   return new SchemaField({
     kind: new StringField({
       required: true,
-      choices: ["poolMax", "edge", "woundCapacity"]
+      choices: ["poolMax", "edge", "woundCapacity", "shieldWoundCapacity"]
     }),
     stat: new StringField({ required: true, blank: true, initial: "" }),
     severity: new StringField({ required: true, blank: true, initial: "" }),
+    minimumRank: new NumberField({ required: true, integer: true, initial: 0, min: 0, max: 5 }),
     amount: new NumberField({
       required: true,
       integer: true,
@@ -40,7 +39,7 @@ function createAbilityEffectModifierField() {
 }
 
 /**
- * Creates structured self-modifiers for an Ability effect.
+ * Creates structured self-modifiers for an Ability or one of its effects.
  *
  * Only mechanics with an explicit, source-grounded representation are stored
  * here. Effect prose is never parsed into modifiers.

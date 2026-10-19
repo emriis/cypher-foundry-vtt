@@ -20,6 +20,17 @@ test("dependency extraction includes re-exports and ignores import text in comme
 
 const MODULE_ROOT = path.resolve(import.meta.dirname, "../../module");
 
+test("DataModel preparation may consume pure rules but cannot import application services", async () => {
+  await withTemporaryDirectory(async moduleRoot => {
+    await fs.mkdir(path.join(moduleRoot, "data-models"));
+    const file = path.join(moduleRoot, "data-models/model.mjs");
+    await fs.writeFile(file, 'import "../rules/ability-modifiers.mjs";');
+    assert.deepEqual(await auditArchitectureDependencies({ moduleRoot }), []);
+    await fs.writeFile(file, 'import "../applications/damage-service.mjs";');
+    assert.equal((await auditArchitectureDependencies({ moduleRoot })).length, 1);
+  });
+});
+
 test("architectural imports respect layer direction", async () => {
   const violations = await auditArchitectureDependencies();
 

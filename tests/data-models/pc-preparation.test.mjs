@@ -31,6 +31,35 @@ test("repeated public PC preparation preserves Pools, wounds and embedded armor 
   model.prepareDerivedData();
   assert.deepEqual({ armor: model.armor, hinderSteps: model.hinderSteps }, prepared);
   assert.deepEqual({ pools: pools(), wounds: model.wounds, armor: armor.system }, stored);
+  model.parent.items.push({ type: "ability", system: { passiveModifiers: [
+    { kind: "woundCapacity", severity: "minor", amount: 1 },
+    { kind: "woundCapacity", severity: "moderate", amount: 1 }
+  ] } });
+  model.prepareDerivedData();
+  model.prepareDerivedData();
+  assert.equal(model.effectiveWounds.minor.max, 4);
+  assert.equal(model.effectiveWounds.moderate.max, 4);
+  assert.deepEqual(model.wounds, stored.wounds);
+  model.parent.items.pop();
+  model.prepareDerivedData();
+  assert.equal(model.effectiveWounds.minor.max, 3);
+  // Resilience/Armored Body capacity moves the full-track thresholds, while
+  // existing major wounds still hinder individually under the core rule.
+  model.parent.items.push({ type: "ability", system: { passiveModifiers: [
+    { kind: "woundCapacity", severity: "moderate", amount: 1 },
+    { kind: "woundCapacity", severity: "major", amount: 1 }
+  ] } });
+  model.wounds.moderate.current = 3;
+  model.wounds.major.current = 3;
+  model.prepareDerivedData();
+  assert.equal(model.hinderSteps, 3);
+  assert.equal(model.dead, false);
+  model.wounds.moderate.current = 4;
+  model.wounds.major.current = 4;
+  model.prepareDerivedData();
+  assert.equal(model.hinderSteps, 5);
+  assert.equal(model.dead, true);
+  assert.equal(model.wounds.major.max, 3);
 });
 test("armor free use is checked against the equipped armor's exact category", () => {
   const actorData = {

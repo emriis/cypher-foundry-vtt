@@ -1,4 +1,5 @@
 import { CYPHER } from "../config.mjs";
+import { resolveAbilityWoundTrack, resolveShieldWoundTrack } from "../rules/ability-modifiers.mjs";
 import {
   computeWoundIncrease,
   convertDamageToWound,
@@ -28,7 +29,10 @@ export function reduceWound(severity) {
  * @returns {Promise<void>} Completes after the shield is updated.
  */
 export async function shieldAbsorbWound(actor, shieldItem, severity) {
-  const wounds = shieldItem.system.wounds;
+  if (actor.isOwner === false || shieldItem.isOwner === false) return;
+  const items = actor.items;
+  const wounds = resolveShieldWoundTrack(shieldItem.system.wounds, actor.system?.activeAbilityEffects,
+    items?.contents ?? (Array.isArray(items) ? items : Array.from(items?.values?.() ?? [])), actor.system);
   const target = resolveShieldWoundSeverity(severity, wounds);
   const newCurrent = wounds[target].current + 1;
 
@@ -61,9 +65,11 @@ export async function shieldAbsorbWound(actor, shieldItem, severity) {
  * @returns {Promise<void>} Completes after the actor has been updated.
  */
 export async function addWound(actor, severity) {
-  if (actor.type !== "pc") return;
+  if (actor.type !== "pc" || actor.isOwner === false) return;
 
-  const wounds = actor.system.wounds;
+  const items = actor.items;
+  const wounds = resolveAbilityWoundTrack(actor.system.wounds, actor.system.activeAbilityEffects,
+    items?.contents ?? (Array.isArray(items) ? items : Array.from(items?.values?.() ?? [])), actor.system);
   const { target, current } = computeWoundIncrease(severity, wounds);
 
   await actor.update({

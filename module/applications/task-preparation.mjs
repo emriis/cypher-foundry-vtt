@@ -4,7 +4,7 @@ import { clampAssetSteps, computeTaskSteps, resolveTaskDifficulty } from "../rul
 import { resolveTaskEffort, resolveTaskPowerShifts } from "../rules/task-effort.mjs";
 import { computeWoundIncrease } from "../rules/wounds.mjs";
 import { resolveStat } from "../rules/stats.mjs";
-import { resolveActiveAbilityModifiers } from "../rules/ability-modifiers.mjs";
+import { resolveActiveAbilityModifiers, resolveAbilityWoundTrack } from "../rules/ability-modifiers.mjs";
 
 /**
  * Read the source-key Ability and its explicitly chosen Pool, never its name.
@@ -71,7 +71,7 @@ export function prepareTask(actor, { stat, difficulty, effortLevels, assetSteps,
       : Array.from(actor.items?.values?.() ?? []));
   const abilityModifiers = resolveActiveAbilityModifiers(
     actor.system.activeAbilityEffects,
-    abilityItems
+    abilityItems, actor.system
   );
   const abilityEdge = abilityModifiers.edge?.[stat] ?? 0;
   const abilityPoolMax = abilityModifiers.poolMax?.[stat] ?? 0;
@@ -110,7 +110,7 @@ export function prepareTask(actor, { stat, difficulty, effortLevels, assetSteps,
     // The wound is an action cost, not ordinary free Effort. Plan the same
     // track overflow as addWound before writes, including its new hindrance.
     if (!actor.system.wounds) return invalidTask();
-    const wounds = Object.fromEntries(Object.entries(actor.system.wounds).map(([key, wound]) => [key, { ...wound }]));
+    const wounds = resolveAbilityWoundTrack(actor.system.wounds, actor.system.activeAbilityEffects, abilityItems, actor.system);
     pushWound = computeWoundIncrease("moderate", wounds);
     if (pushWound.current <= wounds[pushWound.target].current) return invalidTask();
     wounds[pushWound.target].current = pushWound.current;

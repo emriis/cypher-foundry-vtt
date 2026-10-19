@@ -1,4 +1,4 @@
-import { createAbilityEffectsField, createAbilityRollTablesField } from "./ability-fields.mjs";
+import { createAbilityEffectsField, createAbilityRollTablesField, createAbilityEffectModifiersField } from "./ability-fields.mjs";
 
 const { StringField, NumberField, HTMLField, BooleanField, ArrayField, SchemaField } = foundry.data.fields;
 
@@ -83,6 +83,9 @@ export default class CypherAbilityData extends foundry.abstract.TypeDataModel {
       }),
 
       effects: createAbilityEffectsField(),
+      // Passive benefits use current eligibility without an activation reference. Missing fields
+      // in older Items hydrate to []; never infer a benefit from a display name.
+      passiveModifiers: createAbilityEffectModifiersField(),
       rollTables: createAbilityRollTablesField(),
       description: new HTMLField({ required: true, blank: true })
     };

@@ -4,7 +4,7 @@
  * sequential writes to different Actors are not an atomic Foundry transaction.
  */
 import { healingHandUpdates, treatmentProfile } from "../rules/healing.mjs";
-import { resolveActiveAbilityModifiers } from "../rules/ability-modifiers.mjs";
+import { resolveActiveAbilityModifiers, resolveAbilityWoundTrack } from "../rules/ability-modifiers.mjs";
 import { runActorActions, ACTION_CONTEXT } from "./action-guard.mjs";
 import { rollTask } from "./task-service.mjs";
 import { syncHealingStatuses } from "./wound-removal.mjs";
@@ -27,7 +27,7 @@ export function getHealingHandCost(item) {
   if (!getHealingAbilityKind(item) || item.actor?.type !== "pc") return null;
   const healer = item.actor;
   const prior = healer.flags?.cypher?.healingUses?.["healing-hand"] ?? 0;
-  const modifiers = resolveActiveAbilityModifiers(healer.system.activeAbilityEffects, itemsOf(healer));
+  const modifiers = resolveActiveAbilityModifiers(healer.system.activeAbilityEffects, itemsOf(healer), healer.system);
   return Math.max(0, 1 + prior - (healer.system.stats.intellect.edge ?? 0) - (modifiers.edge.intellect ?? 0));
 }
 
@@ -73,9 +73,8 @@ export async function useHealingHand(item, { target = item?.actor, severity = "m
   if (!getHealingAbilityKind(item) || healer?.type !== "pc" || item.parent !== healer || healer.isOwner === false
     || !["pc", "npc"].includes(target?.type) || target.isOwner === false || touchConfirmed !== true) return null;
   return withHealingTargets(healer, target, async () => {
-    const targetModifiers = resolveActiveAbilityModifiers(target.system.activeAbilityEffects, itemsOf(target));
-    const wounds = target.type === "pc" ? Object.fromEntries(Object.entries(target.system.wounds).map(([key, wound]) =>
-      [key, { current: wound.current, max: wound.max + (targetModifiers.woundCapacity[key] ?? 0) }])) : null;
+    const wounds = target.type === "pc" ? resolveAbilityWoundTrack(target.system.wounds,
+      target.system.activeAbilityEffects, itemsOf(target), target.system) : null;
     const targetUpdates = target.type === "pc" ? healingHandUpdates(wounds, severity)
       : target.system.health.value < target.system.health.max
         ? { "system.health.value": Math.min(target.system.health.max, target.system.health.value + 5) } : null;

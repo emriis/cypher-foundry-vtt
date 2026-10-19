@@ -106,7 +106,7 @@
           <h2>{{localize "CYPHER.Wound.Title"}}</h2>
         </div>
         <div class="pc-wound-grid">
-          {{#each system.wounds as |wound severity|}}
+          {{#each system.effectiveWounds as |wound severity|}}
           <div class="pc-wound">
             <div class="pc-wound-title">
               <span>{{localize (concat "CYPHER.Wound." severity)}}</span>
@@ -491,9 +491,9 @@
             <span class="pc-state pc-state-danger">{{localize "CYPHER.Shield.BrokenLabel"}}</span>
             {{else}}
             <span>
-              {{item.system.wounds.minor.current}}/{{item.system.wounds.minor.max}} —
-              {{item.system.wounds.moderate.current}}/{{item.system.wounds.moderate.max}} —
-              {{item.system.wounds.major.current}}/{{item.system.wounds.major.max}}
+              {{item.system.effectiveWounds.minor.current}}/{{item.system.effectiveWounds.minor.max}} —
+              {{item.system.effectiveWounds.moderate.current}}/{{item.system.effectiveWounds.moderate.max}} —
+              {{item.system.effectiveWounds.major.current}}/{{item.system.effectiveWounds.major.max}}
             </span>
             {{/if}}
           </div>

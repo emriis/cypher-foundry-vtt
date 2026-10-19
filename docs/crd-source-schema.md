@@ -80,6 +80,38 @@ The schema does not translate, normalize, infer, or otherwise rewrite mechanics.
 
 ## 5. Structured Ability end conditions
 
+Standalone Abilities may also declare `system.passiveModifiers`, using the same
+typed modifier records as effects (`kind`, `stat`, `severity`, `amount`). These
+are owned benefits with no activation or expiration reference. A modifier's
+optional `minimumRank` defaults to zero; Armored Body uses 2. The separate
+`shieldWoundCapacity` kind applies only to a shield's effective track.
+Missing fields default to an empty array; neither `enabler` nor a
+localized name implies a passive modifier. Tough explicitly grants one minor
+wound of capacity (CRD 2026-07-29, Fantasy Genre / Mid-Tier Fantasy Abilities;
+also Foci / Explores). Both source occurrences preserve this structured grant.
+The [complete reviewed capacity inventory](passive-wound-capacity.md) records
+the other grants, their source sections, rank eligibility and shield scope.
+
+Descriptor/species `system.benefits[]` may explicitly declare `passiveModifiers`
+using that same schema. Content application copies these definitions into the
+owned benefit Ability without modifying the source. Missing definitions default
+to an empty array; they are never inferred from a benefit's label or prose.
+Drakain, Orc and Prota have reviewed +1 minor-wound grants in both language sources.
+
+When content application creates an owned Ability benefit, its runtime
+`flags.cypher.grantOrigin` records the granting `kind` and `sourceId` separately
+from CRD provenance. Species/Descriptor origins add outside the genre/Type/Focus
+capacity group. This flag is not inferred from localized names and does not
+automatically structure a benefit's prose. Legacy untagged Ability Items retain
+their existing default scope; world documents are not rewritten on startup.
+
+No world-data transformation is required for this additive field. Existing
+owned Tough Items without the new metadata retain their previous behavior until
+their source data is explicitly refreshed or the Item is replaced. Loading a
+world never parses prose or rewrites owned Items. Saved wound maxima remain the
+base capacities; `effectiveWounds` is derived without persistence. Removing an
+Ability never deletes existing wounds, even when their count exceeds base capacity.
+
 Ability effects may contain a structured endConditions collection when the CRD
 states an explicit recovery boundary.
 
