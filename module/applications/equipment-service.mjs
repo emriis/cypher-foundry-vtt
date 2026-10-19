@@ -3,6 +3,18 @@
  *
  * Sheets collect the user's intent; this module enforces equipment invariants.
  */
+import { canShieldAbsorbWound, isShieldBroken } from "../rules/wounds.mjs";
+import { runActorAction } from "./action-guard.mjs";
+
+/**
+ * Expose current shield choices to sheets without putting eligibility rules in UI.
+ * @param {Actor} actor Actual owner, including a synthetic token Actor.
+ * @returns {Item[]} Equipped, intact shield Items available for an explicit Block choice.
+ */
+export function getAvailableShields(actor) {
+  const items = actor.items?.contents ?? (Array.isArray(actor.items) ? actor.items : Array.from(actor.items?.values?.() ?? []));
+  return items.filter(canShieldAbsorbWound);
+}
 
 /**
  * Toggle an item's equipped state.
@@ -13,9 +25,14 @@
  * @returns {Promise<boolean>} Whether the item was updated.
  */
 export async function toggleEquipped(item) {
-  if (!item?.actor) return false;
+  if (!item?.actor || item.actor.isOwner === false || item.isOwner === false) return false;
+  return Boolean(await runActorAction(item.actor, "equipment", () => toggleOwnedEquipment(item)));
+}
 
+/** Keep equipment changes outside another pending task on the same owner. */
+async function toggleOwnedEquipment(item) {
   const newState = !item.system.equipped;
+  if (newState && item.type === "shield" && isShieldBroken(item.system.wounds)) return false;
   if (item.type === "armor" && newState) {
     const others = item.actor.items.filter(
       candidate =>

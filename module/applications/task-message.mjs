@@ -6,6 +6,7 @@
  */
 export function buildTaskMessage({
     applyIncomingWound, statLabel, defenseType, success, usingShield, shieldItem, incomingSeverity,
+    shieldWoundsAbsorbed = 0, incomingWounds = 1,
     weaponSource, isAttack, flavor, abilitySource, targetActor, difficulty, effectiveDifficulty,
     targetNumber, totalCost, woundHinder, extraHinderSteps, weaponRangeAdjudication,
     armorModifier, autoArmorSpeedHinder, damageBonus, totalDamage, effectText, refund,
@@ -16,7 +17,11 @@ export function buildTaskMessage({
   if (defenseType) {
     if (success) {
       if (defenseType === "block" && usingShield) {
-        defenseNote = `<p class="cypher-defense-note">${game.i18n.format("CYPHER.Shield.Absorbed", { name: shieldItem.name, severity: game.i18n.localize(`CYPHER.Wound.${incomingSeverity}`) })}</p>`;
+        const absorptionKey = incomingWounds > 1 ? "CYPHER.Shield.AbsorbedCount" : "CYPHER.Shield.Absorbed";
+        defenseNote = `<p class="cypher-defense-note">${game.i18n.format(absorptionKey, { name: foundry.utils.escapeHTML(shieldItem.name), severity: game.i18n.localize(`CYPHER.Wound.${incomingSeverity}`), count: shieldWoundsAbsorbed })}</p>`;
+        if (shieldWoundsAbsorbed < incomingWounds) {
+          defenseNote += `<p class="cypher-defense-note">${game.i18n.format("CYPHER.Shield.RemainingReduced", { count: incomingWounds - shieldWoundsAbsorbed })}</p>`;
+        }
       } else if (defenseType === "block") {
         defenseNote = `<p class="cypher-defense-note">${game.i18n.format("CYPHER.Defense.BlockSuccess", { severity: game.i18n.localize(`CYPHER.Wound.${incomingSeverity}`) })}</p>`;
       } else {

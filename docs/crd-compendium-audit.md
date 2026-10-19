@@ -149,7 +149,7 @@ and validation; other Ability clauses in the inventory remain incomplete.
 | Descriptors/species | Pool/skill choices, selection guards, and structured extra minor wound grants for Drakain, Orc, and Prota | Other descriptive benefits do not execute resistance, damage, recovery, or conditional modifiers |
 | Skills | Selected task modifiers and tier restrictions | Source procedures, applicable circumstances, kits and assets require explicit adjudication |
 | Weapons | Familiarity, attack modifiers, numeric NPC damage, supported target effects, explicit range/one-handed adjudication, alternate category | Hands, deployment, operator participation, material/object interaction, and enforced action economy need explicit contracts/state |
-| Armor/shields | Equipping, protection, damage/repair, hindrance | Individual special notes require source-backed contracts |
+| Armor/shields | Equipping, armor damage/repair and hindrance; shield Block choice, independent wounds, overflow and destruction ([contract](shield-runtime.md)) | Individual special notes and special shield Abilities require source-backed contracts |
 | Ordinary equipment | Quantity/equipping and declared depletion | Task assets, environmental effects, travel and equipment setup remain adjudicated |
 | Cyphers | Use/depletion, variant selection and inline tables | Actual power effects, targeting, duration, damage and stat consequences remain descriptive |
 | Journals | Rules reference | Reference content does not execute gameplay |

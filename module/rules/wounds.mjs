@@ -108,3 +108,24 @@ export function resolveWoundSeverity(severity, wounds) {
 export function resolveShieldWoundSeverity(severity, wounds) {
   return resolveWoundSeverity(severity, wounds);
 }
+
+/**
+ * CRD / Defending / Armor and Shields: any major wound destroys a normal shield.
+ * Read stored wounds rather than a possibly stale derived flag. A customized
+ * maximum does not make an ordinary shield survive a major wound.
+ * @param {object} wounds Shield wound track.
+ * @returns {boolean} Whether the shield no longer has any effect.
+ */
+export function isShieldBroken(wounds) {
+  return (wounds?.major?.current ?? 0) > 0;
+}
+
+/**
+ * Check the source-backed equipment state, independently of ownership checks.
+ * @param {object|null} item Item-shaped snapshot, including type and system.
+ * @returns {boolean} Whether an equipped shield can take a wound.
+ */
+export function canShieldAbsorbWound(item) {
+  return item?.type === "shield" && item.system?.equipped === true
+    && !isShieldBroken(item.system.wounds);
+}

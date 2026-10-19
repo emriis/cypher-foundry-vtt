@@ -88,7 +88,7 @@
             {{localize 'CYPHER.Wound.major'}} {{item.system.effectiveWounds.major.current}}/{{item.system.effectiveWounds.major.max}}
           {{/if}}
         </span>
-        <label><input type="checkbox" data-action="toggleEquipped" {{#if item.system.equipped}}checked{{/if}}/> {{localize 'CYPHER.Equipped'}}</label>
+        <label><input type="checkbox" data-action="toggleEquipped" {{#if item.system.broken}}disabled{{/if}} {{#if item.system.equipped}}checked{{/if}}/> {{localize 'CYPHER.Equipped'}}</label>
         <a data-action="itemEdit"><i class="fa-solid fa-edit"></i></a>
         <a data-action="itemDelete"><i class="fa-solid fa-trash"></i></a>
       </li>

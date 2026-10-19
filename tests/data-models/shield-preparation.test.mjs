@@ -32,3 +32,12 @@ test("shield capacity follows the actual owner's Items and preserves wounds afte
   shield.prepareDerivedData();
   assert.equal(shield.effectiveWounds.moderate.max, 2);
 });
+
+test("a major wound marks a shield broken regardless of a customized maximum", () => {
+  const shield = Object.assign(Object.create(Shield.prototype), { wounds: {
+    minor: { current: 0, max: 3 }, moderate: { current: 0, max: 2 }, major: { current: 1, max: 3 }
+  } });
+  shield.prepareDerivedData();
+  assert.equal(shield.broken, true);
+  assert.equal(shield.wounds.major.max, 3);
+});

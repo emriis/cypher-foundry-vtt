@@ -125,7 +125,7 @@ export default class CypherActor extends Actor {
    *
    * @param {object} shieldItem Shield receiving the wound.
    * @param {string} severity Incoming wound severity.
-   * @returns {Promise<void>} Completes after the shield is updated.
+   * @returns {Promise<boolean>} Whether an equipped, intact owned shield absorbed it.
    */
   async _shieldAbsorbWound(shieldItem, severity) {
     return shieldAbsorbWound(this, shieldItem, severity);

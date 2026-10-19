@@ -499,6 +499,7 @@
           </div>
           <label class="pc-equip-control">
             <input type="checkbox" data-action="toggleEquipped"
+              {{#if item.system.broken}}disabled{{/if}}
               {{#if item.system.equipped}}checked{{/if}}/>
             {{localize "CYPHER.Equipped"}}
           </label>

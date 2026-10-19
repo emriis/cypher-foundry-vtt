@@ -40,23 +40,32 @@ test("Tough receives one more minor wound before overflow, preserving base capac
 
 test("Shield Master delays shield overflow without changing the PC or saved maxima", async () => {
   globalThis.game = { i18n: { localize: key => key, format: key => key } };
+  globalThis.foundry = { utils: { escapeHTML: value => value } };
   const messages = [];
   globalThis.ChatMessage = { getSpeaker: () => ({}), create: async message => messages.push(message) };
-  const actor = { type: "pc", isOwner: true, system: {}, items: [{ type: "ability", system: {
+  const ability = { type: "ability", system: {
     passiveModifiers: [{ kind: "shieldWoundCapacity", severity: "moderate", amount: 1 }]
-  } }] };
-  const shield = { system: { wounds: {
+  } };
+  const shield = { id: "shield", name: "Shield", type: "shield", system: { equipped: true, wounds: {
     minor: { current: 3, max: 3 }, moderate: { current: 2, max: 2 }, major: { current: 0, max: 1 }
   } }, async update(changes) {
-    for (const [path, value] of Object.entries(changes)) this.system.wounds[path.split(".")[2]].current = value;
+    for (const [path, value] of Object.entries(changes)) {
+      if (path === "system.equipped") this.system.equipped = value;
+      else this.system.wounds[path.split(".")[2]].current = value;
+    }
   } };
-  await shieldAbsorbWound(actor, shield, "minor");
+  const actor = {
+    type: "pc", isOwner: true, system: {},
+    items: new Map([["ability", ability], [shield.id, shield]])
+  };
+  assert.equal(await shieldAbsorbWound(actor, shield, "minor"), true);
   assert.equal(shield.system.wounds.moderate.current, 3);
   assert.equal(shield.system.wounds.moderate.max, 2);
   assert.equal(shield.system.wounds.major.current, 0);
   assert.equal(messages.length, 0);
-  await shieldAbsorbWound(actor, shield, "moderate");
+  assert.equal(await shieldAbsorbWound(actor, shield, "moderate"), true);
   assert.equal(shield.system.wounds.major.current, 1);
+  assert.equal(shield.system.equipped, false);
   assert.equal(messages.length, 1);
 });
 
@@ -237,8 +246,10 @@ test("damageArmor caps accumulated Block damage at the armor base bonus", async 
 test("shieldAbsorbWound cascades shield damage into the next severity", async () => {
   let update;
   const shield = {
+    id: "shield", type: "shield",
     name: "Shield",
     system: {
+      equipped: true,
       wounds: {
         minor: { current: 3, max: 3 },
         moderate: { current: 0, max: 2 },
@@ -250,7 +261,7 @@ test("shieldAbsorbWound cascades shield damage into the next severity", async ()
     }
   };
 
-  await shieldAbsorbWound({ name: "Test" }, shield, "minor");
+  await shieldAbsorbWound({ type: "pc", name: "Test", items: new Map([[shield.id, shield]]) }, shield, "minor");
 
   assert.deepEqual(update, {
     "system.wounds.moderate.current": 1

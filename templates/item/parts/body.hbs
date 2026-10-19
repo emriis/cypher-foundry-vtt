@@ -536,7 +536,7 @@
   {{#ifEquals item.type "shield"}}
   <p class="shield-hint">{{localize 'CYPHER.Shield.SheetHint'}}</p>
   <div class="form-group inline">
-    <label><input type="checkbox" name="system.equipped" {{#if system.equipped}}checked{{/if}}/> {{localize 'CYPHER.Equipped'}}</label>
+    <label><input type="checkbox" name="system.equipped" {{#if system.broken}}disabled{{/if}} {{#if system.equipped}}checked{{/if}}/> {{localize 'CYPHER.Equipped'}}</label>
     {{#if system.broken}}<span class="shield-broken-badge">{{localize 'CYPHER.Shield.BrokenLabel'}}</span>{{/if}}
   </div>
   <div class="shield-wounds-row">

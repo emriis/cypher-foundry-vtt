@@ -20,12 +20,13 @@ import {
  * @param {Actor|null} [options.target=null] Target PC. When omitted, exactly
  * one targeted PC is required.
  * @param {string} [options.defenseType="dodge"] Block or Dodge.
+ * @param {string|null} [options.shieldItemId=null] Target-owned shield explicitly chosen for a Block.
  * @returns {Promise<object|null>} Defense and damage result.
  */
 export async function rollNpcAttack(
   actor,
   attack,
-  { target = null, defenseType = "dodge" } = {}
+  { target = null, defenseType = "dodge", shieldItemId = null } = {}
 ) {
   if (actor.type !== "npc") return null;
 
@@ -61,6 +62,7 @@ export async function rollNpcAttack(
   }
 
   const defense = await rollDefense(selectedTarget, defenseType, {
+    shieldItemId,
     difficulty: effectiveLevel,
     incomingSeverity: damage.mode === "wound" ? damage.severity : "minor",
     incomingWounds: damage.mode === "wound" ? damage.wounds : 1,

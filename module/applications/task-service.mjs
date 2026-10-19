@@ -12,6 +12,7 @@ import { buildTaskMessage } from "./task-message.mjs";
 import { applyTaskConsequences } from "./task-consequences.mjs";
 import { syncWoundStatusEffects } from "./damage-service.mjs";
 import { resolveStat } from "../rules/stats.mjs";
+import { canShieldAbsorbWound } from "../rules/wounds.mjs";
 
 /**
  * Roll a Block or Dodge defense through the common task engine.
@@ -96,7 +97,7 @@ export async function rollDefense(
  */
 export async function rollTask(actor, options = {}) {
   if (!actor) return null;
-  return runActorActions([actor, options.targetActor], "task", () => executeTask(actor, options), options[ACTION_CONTEXT]);
+  return runActorActions([actor, options.targetActor], "task", context => executeTask(actor, options, context), options[ACTION_CONTEXT]);
 }
 
 /** Execute one locally accepted task in explicit preparation/write/chat phases. */
@@ -112,7 +113,15 @@ async function executeTask(actor, {
   damageEffortLevels = 0, freeEffortLevels = 0, freeDamageEffortLevels = 0, freeEffortSource = "",
   rollRoutine = true, chooseSpecialEffect = null, areaAttack = false, push = false,
   pushDamageEffortLevels = 0, powerShiftCategories = []
-} = {}) {
+} = {}, actionContext = null) {
+  // Validate an explicit shield selection before any cost or dice. Equipment
+  // may change while a dialog is open; never silently spend on a stale choice.
+  const shieldItem = shieldItemId ? actor.items?.get(shieldItemId) : null;
+  if (shieldItemId && (defenseType !== "block" || !canShieldAbsorbWound(shieldItem)
+    || shieldItem.isOwner === false)) return null;
+  if (defenseType && (!["block", "dodge"].includes(defenseType)
+    || !["minor", "moderate", "major"].includes(incomingSeverity)
+    || !Number.isSafeInteger(incomingWounds) || incomingWounds < 1)) return null;
   // Only reviewed treatment/rest services declare a wound removal. Validate
   // its actual target before the task can spend Effort or roll dice.
   if (woundRemovalSeverity && (targetActor?.type !== "pc" || targetActor.isOwner === false
@@ -172,20 +181,20 @@ async function executeTask(actor, {
 
   // A successful Block can transfer the whole wound to an equipped, unbroken shield
   // instead of reducing it by one step on the character.
-  const shieldItem = shieldItemId ? actor.items.get(shieldItemId) : null;
-  const usingShield = defenseType === "block" && shieldItem?.type === "shield" && !shieldItem.system.broken;
+  const usingShield = defenseType === "block" && canShieldAbsorbWound(shieldItem);
+
+  const { targetDamage, woundRemovalApplied, shieldWoundsAbsorbed } = await applyTaskConsequences(actor, { isAttack, success, targetActor,
+    totalDamage, armorBypass, weaponTargetEffects, weaponSource, defenseType,
+    applyIncomingWound, incomingWounds, usingShield, shieldItem, incomingSeverity, woundRemovalSeverity, actionContext });
 
   const messageFlavor = buildTaskMessage({
-    applyIncomingWound, statLabel, defenseType, success, usingShield, shieldItem, incomingSeverity,
+    applyIncomingWound, statLabel, defenseType, success, usingShield: shieldWoundsAbsorbed > 0, shieldItem, incomingSeverity,
+    shieldWoundsAbsorbed, incomingWounds,
     weaponSource, isAttack, flavor, abilitySource, targetActor, difficulty, effectiveDifficulty,
     targetNumber, effortLevels, totalCost, woundHinder, extraHinderSteps, weaponRangeAdjudication,
     armorModifier, autoArmorSpeedHinder, damageBonus, totalDamage, effectText, refund,
     effort, powerShifts, assetSteps, skillSteps, rolled: Boolean(roll)
   });
-
-  const { targetDamage, woundRemovalApplied } = await applyTaskConsequences(actor, { isAttack, success, targetActor,
-    totalDamage, armorBypass, weaponTargetEffects, weaponSource, defenseType,
-    applyIncomingWound, incomingWounds, usingShield, shieldItem, incomingSeverity, woundRemovalSeverity });
 
   // Flags are structured metadata for rerolls and tests; the localized HTML
   // is presentation. Publish only after target-side writes have succeeded.
@@ -199,6 +208,7 @@ async function executeTask(actor, {
         abilitySource,
         actorId: actor.id,
         actorUuid: actor.uuid,
+        ...(defenseType ? { defenseType, shieldItemId, shieldWoundsAbsorbed, incomingWounds, incomingSeverity } : {}),
         ...(woundRemovalSeverity ? { woundRemoval: {
           targetUuid: targetActor.uuid, severity: woundRemovalSeverity, applied: woundRemovalApplied
         } } : {}),
