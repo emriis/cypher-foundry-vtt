@@ -59,7 +59,7 @@ export function auditAutomation(document) {
       if (system.benefits?.some(benefit => benefit.passiveModifiers?.length)) {
         implemented.push("content-service/ability-modifiers: explicitly structured passive benefit modifiers");
       }
-      if (system.benefits?.length) gaps.push("unstructured benefit clauses and conditional effects need individual execution contracts");
+      if (system.benefits?.length) gaps.push("unstructured benefit clauses and conditional effects are not executed; individual execution contracts are required");
       break;
     case "skill":
       implemented.push("task/content services: selected skill modifier and advancement tier restrictions");
