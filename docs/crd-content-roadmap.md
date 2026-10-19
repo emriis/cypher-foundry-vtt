@@ -240,6 +240,16 @@ structured data already present in the source packs.
 
 ### 10.2 Current runtime closure work
 
+- [x] Apply Tough's explicit passive minor-wound capacity through derived sheet
+  display, damage overflow and Healing Hand, without rewriting base maxima.
+  This was the initial capacity slice; other passive effect families still need individual contracts.
+- [x] Encode all ten reviewed Ability capacity families, including Shield Master
+  on shields and Armored Body's rank gate; see the [capacity inventory](passive-wound-capacity.md).
+  Individual capacity clauses are supported; interpretation of overlapping
+  grants remains separate from each Ability's other effects.
+- [x] Automatically grant Drakain, Orc and Prota's source-backed extra minor
+  wound on species application, additively with genre/Type/Focus Ability capacity.
+
 - [x] Resolve weapon `mechanics.targetEffects` against the selected NPC level
   and carry matching effects into the attack result/chat flags.
 - [x] Audit every structured weapon `range`, `properties`, and `mechanics`

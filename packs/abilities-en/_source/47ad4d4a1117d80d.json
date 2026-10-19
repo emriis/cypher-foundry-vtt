@@ -23,6 +23,14 @@
     "grantedArmorItemCategory": "",
     "effects": [],
     "rollTables": [],
-    "description": "When you use a shield, it can take one more moderate wound than normal before being destroyed."
+    "description": "When you use a shield, it can take one more moderate wound than normal before being destroyed.",
+    "passiveModifiers": [
+      {
+        "kind": "shieldWoundCapacity",
+        "stat": "",
+        "severity": "moderate",
+        "amount": 1
+      }
+    ]
   }
 }

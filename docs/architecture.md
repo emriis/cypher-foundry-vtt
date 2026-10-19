@@ -72,6 +72,11 @@ It contains calculations and decisions such as:
 Application services adapt Foundry documents to these pure functions and persist
 the resulting state.
 
+DataModel derived preparation may also consume pure rules, without importing
+application services or persisting changes. Effective wound capacities combine
+saved maxima with declared Ability modifiers; saved maxima and wound counts
+remain unchanged during preparation.
+
 ## 3. Structured Ability architecture
 
 Abilities are standalone Items. Types and Foci reference reusable Ability

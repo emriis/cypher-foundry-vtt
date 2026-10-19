@@ -1,4 +1,5 @@
 import { CYPHER } from "../config.mjs";
+import { resolveShieldWoundTrack } from "../rules/ability-modifiers.mjs";
 
 /**
  * Data model for a shield and its independent wound track.
@@ -39,6 +40,12 @@ export default class CypherShieldData extends foundry.abstract.TypeDataModel {
   }
 
   prepareDerivedData() {
+    const actor = this.parent?.actor;
+    const items = actor?.items;
+    // The owner supplies Shield Master; the Item keeps its independent saved
+    // track. Unowned shields receive no benefit and no saved values are changed.
+    this.effectiveWounds = resolveShieldWoundTrack(this.wounds, actor?.system.activeAbilityEffects,
+      items?.contents ?? (Array.isArray(items) ? items : Array.from(items?.values?.() ?? [])), actor?.system);
     // The shield is destroyed as soon as it takes a major wound.
     this.broken =
       this.wounds.major.current >= this.wounds.major.max &&

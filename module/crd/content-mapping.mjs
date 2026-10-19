@@ -32,7 +32,7 @@ export const CRD_MECHANICAL_FIELDS = Object.freeze({
     "tier", "key", "enabler", "repeatable", "cost", "action", "effects",
     "rollTables", "weaponPrerequisites", "freeWeaponCategories", "freeArmorCategories",
     "freeWeaponFamilies", "freeWeaponSkillCategories",
-    "chooseWeaponAttackCategory", "grantedArmorItemCategory"
+    "chooseWeaponAttackCategory", "grantedArmorItemCategory", "passiveModifiers"
   ],
   type: [
     "tier", "genre", "subgenre", "poolBonuses", "edgeChoice", "woundBonuses",

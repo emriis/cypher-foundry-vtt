@@ -23,6 +23,14 @@
     "grantedArmorItemCategory": "",
     "effects": [],
     "rollTables": [],
-    "description": "Tu possèdes deux focus au lieu d'un seul. Au rang 1, tu gagnes deux aptitudes pour chacun de ces deux focus. À chaque montée de rang, tu gagnes une nouvelle aptitude dans chacun des deux focus."
+    "description": "Tu possèdes deux focus au lieu d'un seul. Au rang 1, tu gagnes deux aptitudes pour chacun de ces deux focus. À chaque montée de rang, tu gagnes une nouvelle aptitude dans chacun des deux focus.",
+    "passiveModifiers": [
+      {
+        "kind": "woundCapacity",
+        "stat": "",
+        "severity": "moderate",
+        "amount": 1
+      }
+    ]
   }
 }

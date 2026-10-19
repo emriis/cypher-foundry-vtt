@@ -53,7 +53,7 @@ async function executeAbilityEffect(item, effectId, options) {
     const costStat = resolveAbilityCostStat(cost, options.costStat ?? null);
     if (cost.amount > 0 && !costStat) return false;
     const items = actor.items?.contents ?? Array.from(actor.items?.values?.() ?? []);
-    const modifiers = resolveActiveAbilityModifiers(actor.system.activeAbilityEffects, items);
+    const modifiers = resolveActiveAbilityModifiers(actor.system.activeAbilityEffects, items, actor.system);
     const edge = costStat ? (actor.system.stats[costStat]?.edge ?? 0) + (modifiers.edge[costStat] ?? 0) : 0;
     const resolvedCost = resolveAbilityCost(
       actor.system,

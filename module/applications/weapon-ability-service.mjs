@@ -79,7 +79,7 @@ export async function executeWeaponAbility(item, {
     const stat = weapon.system.stat;
     const pool = actor.system.stats[stat];
     const modifiers = resolveActiveAbilityModifiers(actor.system.activeAbilityEffects,
-      actor.items.contents ?? Array.from(actor.items.values()));
+      actor.items.contents ?? Array.from(actor.items.values()), actor.system);
     const rawCost = item.system.cost;
     if (!Number.isInteger(rawCost?.amount) || rawCost.amount < 0) return reject();
     const costStat = resolveAbilityCostStat(rawCost);

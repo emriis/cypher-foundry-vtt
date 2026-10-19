@@ -23,6 +23,14 @@
     "grantedArmorItemCategory": "",
     "effects": [],
     "rollTables": [],
-    "description": "You can take one more moderate wound than normal."
+    "description": "You can take one more moderate wound than normal.",
+    "passiveModifiers": [
+      {
+        "kind": "woundCapacity",
+        "stat": "",
+        "severity": "moderate",
+        "amount": 1
+      }
+    ]
   }
 }

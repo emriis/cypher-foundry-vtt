@@ -543,22 +543,22 @@
     <div class="wound-severity wound-minor">
       <label>{{localize 'CYPHER.Wound.minor'}}</label>
       <div class="wound-boxes">
-        <input name="system.wounds.minor.current" type="number" value="{{system.wounds.minor.current}}" min="0" max="{{system.wounds.minor.max}}"/>
-        <span>/ {{system.wounds.minor.max}}</span>
+        <input name="system.wounds.minor.current" type="number" value="{{system.wounds.minor.current}}" min="0" max="{{system.effectiveWounds.minor.max}}"/>
+        <span>/ {{system.effectiveWounds.minor.max}}</span>
       </div>
     </div>
     <div class="wound-severity wound-moderate">
       <label>{{localize 'CYPHER.Wound.moderate'}}</label>
       <div class="wound-boxes">
-        <input name="system.wounds.moderate.current" type="number" value="{{system.wounds.moderate.current}}" min="0" max="{{system.wounds.moderate.max}}"/>
-        <span>/ {{system.wounds.moderate.max}}</span>
+        <input name="system.wounds.moderate.current" type="number" value="{{system.wounds.moderate.current}}" min="0" max="{{system.effectiveWounds.moderate.max}}"/>
+        <span>/ {{system.effectiveWounds.moderate.max}}</span>
       </div>
     </div>
     <div class="wound-severity wound-major">
       <label>{{localize 'CYPHER.Wound.major'}}</label>
       <div class="wound-boxes">
-        <input name="system.wounds.major.current" type="number" value="{{system.wounds.major.current}}" min="0" max="{{system.wounds.major.max}}"/>
-        <span>/ {{system.wounds.major.max}}</span>
+        <input name="system.wounds.major.current" type="number" value="{{system.wounds.major.current}}" min="0" max="{{system.effectiveWounds.major.max}}"/>
+        <span>/ {{system.effectiveWounds.major.max}}</span>
       </div>
     </div>
   </div>

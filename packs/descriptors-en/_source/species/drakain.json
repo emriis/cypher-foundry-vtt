@@ -18,7 +18,15 @@
     "benefits": [
       {
         "name": "Extra Minor Wound",
-        "description": "<p>You can take one more minor wound than normal.</p>"
+        "description": "<p>You can take one more minor wound than normal.</p>",
+        "passiveModifiers": [
+          {
+            "kind": "woundCapacity",
+            "stat": "",
+            "severity": "minor",
+            "amount": 1
+          }
+        ]
       },
       {
         "name": "Bladed Weapon Damage",

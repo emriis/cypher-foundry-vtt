@@ -18,7 +18,15 @@
     "benefits": [
       {
         "name": "Blessure mineure supplémentaire",
-        "description": "<p>Tu peux encaisser une blessure mineure de plus que la normale.</p>"
+        "description": "<p>Tu peux encaisser une blessure mineure de plus que la normale.</p>",
+        "passiveModifiers": [
+          {
+            "kind": "woundCapacity",
+            "stat": "",
+            "severity": "minor",
+            "amount": 1
+          }
+        ]
       },
       {
         "name": "Dégâts de mêlée lourde",

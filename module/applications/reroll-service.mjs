@@ -112,7 +112,7 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
         if (outcome.special.refundsCost && !flags.costRefunded && flags.effortCost > 0) {
           const stat = resolveStat(sourceActor.system, flags.stat);
           const modifiers = resolveActiveAbilityModifiers(sourceActor.system.activeAbilityEffects,
-            sourceActor.items?.contents ?? Array.from(sourceActor.items?.values?.() ?? []));
+            sourceActor.items?.contents ?? Array.from(sourceActor.items?.values?.() ?? []), sourceActor.system);
           const pool = stat.data.pool;
           await sourceActor.update({ [`${stat.path}.pool.value`]: Math.min(
             pool.max + (modifiers.poolMax[flags.stat] ?? 0), pool.value + flags.effortCost) });

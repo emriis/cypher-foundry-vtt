@@ -32,6 +32,21 @@ function dice(total) {
   globalThis.Roll = class { async evaluate() { this.total = total; return this; } async toMessage(message) { published.push(message); } };
 }
 
+test("Healing Hand uses Tough's extra minor capacity when reducing a moderate wound", async () => {
+  const healer = pc(), target = pc();
+  target.system.wounds.minor.current = 3;
+  target.items.set("tough", { type: "ability", system: { passiveModifiers: [
+    { kind: "woundCapacity", severity: "minor", amount: 1 }
+  ] } });
+  const result = await useHealingHand(hand(healer), { target, severity: "moderate", touchConfirmed: true });
+  assert.equal(result.cost, 1);
+  assert.equal(target.system.wounds.minor.current, 4);
+  assert.equal(target.system.wounds.minor.max, 3);
+  assert.equal(target.system.wounds.moderate.current, 1);
+  assert.equal(await useHealingHand(hand(healer), { target, severity: "moderate", touchConfirmed: true }), null);
+  assert.equal(healer.system.stats.intellect.pool.value, 9);
+});
+
 test("a Healing Hand target write failure retains its committed cost, posts no success and releases both owners", async () => {
   const healer = pc(), target = pc();
   const update = target.update, chat = globalThis.ChatMessage;

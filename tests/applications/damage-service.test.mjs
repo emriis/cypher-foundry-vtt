@@ -8,6 +8,58 @@ import {
   shieldAbsorbWound
 } from "../../module/applications/damage-service.mjs";
 
+test("Tough receives one more minor wound before overflow, preserving base capacity", async () => {
+  const updates = [];
+  const actor = {
+    type: "pc", isOwner: true, statuses: new Set(),
+    items: [{ type: "ability", system: { passiveModifiers: [
+      { kind: "woundCapacity", severity: "minor", amount: 1 }
+    ] } }],
+    system: { hindered: false, dead: false, wounds: {
+      minor: { current: 3, max: 3 }, moderate: { current: 0, max: 2 }, major: { current: 0, max: 1 }
+    } },
+    async update(change) {
+      updates.push(change);
+      for (const [path, value] of Object.entries(change)) this.system.wounds[path.split(".")[2]].current = value;
+    }
+  };
+  await addWound(actor, "minor");
+  assert.equal(actor.system.wounds.minor.current, 4);
+  await addWound(actor, "minor");
+  assert.equal(actor.system.wounds.moderate.current, 1);
+  assert.equal(actor.system.wounds.minor.max, 3);
+  // Losing the benefit retains existing wounds and resumes ordinary overflow.
+  actor.items = [];
+  await addWound(actor, "minor");
+  assert.equal(actor.system.wounds.minor.current, 4);
+  assert.equal(actor.system.wounds.moderate.current, 2);
+  actor.isOwner = false;
+  await addWound(actor, "minor");
+  assert.equal(updates.length, 3);
+});
+
+test("Shield Master delays shield overflow without changing the PC or saved maxima", async () => {
+  globalThis.game = { i18n: { localize: key => key, format: key => key } };
+  const messages = [];
+  globalThis.ChatMessage = { getSpeaker: () => ({}), create: async message => messages.push(message) };
+  const actor = { type: "pc", isOwner: true, system: {}, items: [{ type: "ability", system: {
+    passiveModifiers: [{ kind: "shieldWoundCapacity", severity: "moderate", amount: 1 }]
+  } }] };
+  const shield = { system: { wounds: {
+    minor: { current: 3, max: 3 }, moderate: { current: 2, max: 2 }, major: { current: 0, max: 1 }
+  } }, async update(changes) {
+    for (const [path, value] of Object.entries(changes)) this.system.wounds[path.split(".")[2]].current = value;
+  } };
+  await shieldAbsorbWound(actor, shield, "minor");
+  assert.equal(shield.system.wounds.moderate.current, 3);
+  assert.equal(shield.system.wounds.moderate.max, 2);
+  assert.equal(shield.system.wounds.major.current, 0);
+  assert.equal(messages.length, 0);
+  await shieldAbsorbWound(actor, shield, "moderate");
+  assert.equal(shield.system.wounds.major.current, 1);
+  assert.equal(messages.length, 1);
+});
+
 test("addWound cascades overflow and updates token statuses", async () => {
   globalThis.game = {
     i18n: {

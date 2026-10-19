@@ -24,11 +24,12 @@ globalThis.foundry = {
   }}
 };
 
-const [{ default: Ability }, { default: Type }, { default: Focus }] =
+const [{ default: Ability }, { default: Type }, { default: Focus }, { default: Descriptor }] =
   await Promise.all([
     import("../../module/data-models/item-ability.mjs"),
     import("../../module/data-models/item-type.mjs"),
-    import("../../module/data-models/item-focus.mjs")
+    import("../../module/data-models/item-focus.mjs"),
+    import("../../module/data-models/item-descriptor.mjs")
   ]);
 
 test("standalone ability action model exposes only supported categories", () => {
@@ -36,6 +37,23 @@ test("standalone ability action model exposes only supported categories", () => 
   assert.deepEqual(schema.action.options.choices, ["action", "firstAction", "lastAction"]);
   assert.equal(schema.action.options.initial, null);
   assert.equal(schema.action.options.nullable, true);
+});
+
+test("older Ability Items default to no passive benefit without changing effect state", () => {
+  const schema = Ability.defineSchema();
+  assert.deepEqual(schema.passiveModifiers.options.initial, []);
+  assert.equal(schema.passiveModifiers.options.required, true);
+  assert.ok(schema.passiveModifiers.element.fields.kind.options.choices.includes("woundCapacity"));
+  assert.ok(schema.passiveModifiers.element.fields.kind.options.choices.includes("shieldWoundCapacity"));
+  assert.equal(schema.passiveModifiers.element.fields.minimumRank.options.initial, 0);
+});
+
+test("older Descriptor benefits hydrate with an empty modifier definition", () => {
+  const benefit = Descriptor.defineSchema().benefits.element.fields;
+  assert.deepEqual(benefit.passiveModifiers.options.initial, []);
+  assert.ok(benefit.passiveModifiers.element.fields.kind.options.choices.includes("woundCapacity"));
+  assert.ok(benefit.name);
+  assert.ok(benefit.description);
 });
 
 test("Types store ability UUID references rather than embedded ability data", () => {

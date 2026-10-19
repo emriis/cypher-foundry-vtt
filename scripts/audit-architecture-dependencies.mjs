@@ -16,7 +16,9 @@ const SCRIPTS_ROOT = import.meta.dirname;
 export const LAYER_RULES = {
   crd: new Set(["crd", "config.mjs"]),
   rules: new Set(["rules", "config.mjs"]),
-  "data-models": new Set(["data-models", "config.mjs"]),
+  // Derived preparation may reuse deterministic rules; persistence and other
+  // Foundry orchestration remain forbidden dependencies of DataModels.
+  "data-models": new Set(["data-models", "rules", "config.mjs"]),
   applications: new Set(["applications", "rules", "config.mjs"]),
   documents: new Set(["documents", "applications", "rules", "config.mjs"]),
   sheets: new Set([

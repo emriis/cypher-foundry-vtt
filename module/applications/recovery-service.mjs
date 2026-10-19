@@ -24,7 +24,7 @@ function resetCounters(counters = {}) {
 
 /** Read effective Pool maxima, including declared active Ability modifiers. */
 export function getRecoveryPools(actor) {
-  const modifiers = resolveActiveAbilityModifiers(actor.system.activeAbilityEffects, itemsOf(actor));
+  const modifiers = resolveActiveAbilityModifiers(actor.system.activeAbilityEffects, itemsOf(actor), actor.system);
   return Object.fromEntries(Object.entries(actor.system.stats ?? {}).map(([stat, data]) =>
     [stat, { value: data.pool.value, max: data.pool.max + (modifiers.poolMax[stat] ?? 0) }]));
 }

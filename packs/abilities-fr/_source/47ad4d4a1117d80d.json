@@ -23,6 +23,14 @@
     "grantedArmorItemCategory": "",
     "effects": [],
     "rollTables": [],
-    "description": "Quand tu utilises un bouclier, il peut encaisser une blessure modérée supplémentaire avant d’être détruit."
+    "description": "Quand tu utilises un bouclier, il peut encaisser une blessure modérée supplémentaire avant d’être détruit.",
+    "passiveModifiers": [
+      {
+        "kind": "shieldWoundCapacity",
+        "stat": "",
+        "severity": "moderate",
+        "amount": 1
+      }
+    ]
   }
 }

@@ -56,7 +56,10 @@ export function auditAutomation(document) {
       break;
     case "descriptor":
       implemented.push("content-service: Pool choice, skill training, species/descriptor selection guards");
-      if (system.benefits?.length) gaps.push("benefits are copied as descriptive Abilities; passive/conditional effects are not executed");
+      if (system.benefits?.some(benefit => benefit.passiveModifiers?.length)) {
+        implemented.push("content-service/ability-modifiers: explicitly structured passive benefit modifiers");
+      }
+      if (system.benefits?.length) gaps.push("unstructured benefit clauses and conditional effects need individual execution contracts");
       break;
     case "skill":
       implemented.push("task/content services: selected skill modifier and advancement tier restrictions");

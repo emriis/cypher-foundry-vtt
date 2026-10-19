@@ -108,6 +108,35 @@ coverage.
 
 ## Automation and accepted decisions
 
+The [capacity inventory](passive-wound-capacity.md) extends the initial Tough
+slice to every reviewed Ability clause granting additional wounds, including
+shield capacity and explicit rank eligibility. It records the source locations
+and the user's severity-specific interpretation of overlapping capacity grants. Support for
+an additional-wound clause does not certify the other effects in that Ability.
+
+Tough now supplies an explicit unconditional minor-wound capacity modifier.
+Derived preparation, PC wound overflow and Healing Hand consume the same
+effective track without persisting bonus maxima. Removing the Item preserves
+existing wound counts. Other passive benefits remain open; this does not certify
+Armored Body's immunity or any Descriptor effect. Older owned Tough Items require an explicit
+source refresh because runtime behavior never infers modifiers from their names.
+
+Validation for this slice on 2026-10-17: isolated `npm test` passed 724/724;
+the current-source runtime lane passed 475/475. Lint, the type-check pilot,
+architecture, system/E2E syntax and locale checks passed. The isolated build
+passed all 15 compiled-pack checks and ZIP/manifest verification. A focused live
+Foundry 14.369.0 scenario passed using actual EN/FR Tough documents, rendered
+capacity, wound overflow, reload persistence and removal without lost wounds.
+This is focused gameplay evidence; it does not claim full-suite V13 or V14
+gameplay verification. The verified manifest build is now 14.369.
+
+A separate direct run of `tests/integration/repository-contracts.test.mjs` on
+raw authoring sources passed six checks and rejected legacy equipment IDs in
+the catalogue check. Those equipment records are unchanged from `main`; the
+same contract passed in the normalized isolated suite above. The focused
+manifest check passed again after updating the verified build. No unrelated
+equipment normalization or generated-pack writes were applied to this checkout.
+
 The subsequent [recovery and healing implementation](recovery-and-healing.md)
 adds Healing Hand, independent source-backed recovery allowances, treatment and
 safe paid-reroll consequences. Its report records the related source contracts
@@ -117,7 +146,7 @@ and validation; other Ability clauses in the inventory remain incomplete.
 | --- | --- | --- |
 | Abilities | Structured activation costs/effect selection, declared modifier aggregation, recovery expiration, inline tables, selected grants; playable Spray/Arc Spray | Most target effects, conditional/passive rules, additional costs, and Effort alternatives need individual contracts |
 | Types/Foci | Character grants and referenced Abilities; Focus tier/prerequisite selection | Inherit individual Ability limitations; full source-package field review remains separate |
-| Descriptors | Pool/skill choices and selection guards | Descriptive benefits do not execute resistance, damage, recovery, or conditional modifiers |
+| Descriptors/species | Pool/skill choices, selection guards, and structured extra minor wound grants for Drakain, Orc, and Prota | Other descriptive benefits do not execute resistance, damage, recovery, or conditional modifiers |
 | Skills | Selected task modifiers and tier restrictions | Source procedures, applicable circumstances, kits and assets require explicit adjudication |
 | Weapons | Familiarity, attack modifiers, numeric NPC damage, supported target effects, explicit range/one-handed adjudication, alternate category | Hands, deployment, operator participation, material/object interaction, and enforced action economy need explicit contracts/state |
 | Armor/shields | Equipping, protection, damage/repair, hindrance | Individual special notes require source-backed contracts |
