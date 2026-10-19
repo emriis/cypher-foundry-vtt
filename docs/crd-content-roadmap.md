@@ -239,6 +239,9 @@ structured data already present in the source packs.
   special shield Abilities retain their individual execution boundaries.
 - [x] Cypher depletion.
 - [x] Damage, wounds, and recovery.
+- [x] Replace recorded failed-defense consequences after a successful paid
+  reroll, preserving later wounds, original expenditure and synthetic identity;
+  see [defense reroll contracts](defense-rerolls.md).
 - [x] Player-facing Playwright/Foundry E2E runner infrastructure.
 
 ### 10.2 Current runtime closure work

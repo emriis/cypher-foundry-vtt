@@ -657,6 +657,8 @@
     },
     "XP": {
       "ChooseBetterReroll": "Choose which result is better for your character.",
+      "DefenseCorrectionApplied": "The retained defense result was applied. Only this defense's recorded damage was corrected; later wounds remain unchanged.",
+      "DefenseCorrectionManual": "This defense's previous damage can no longer be identified safely. Ask the GM to apply the retained result. No damage was automatically corrected by this reroll.",
       "EditInHeader": "Edit XP directly in the sheet header.",
       "KeepNewRoll": "Keep the new result",
       "KeepOldRoll": "Keep the previous result",

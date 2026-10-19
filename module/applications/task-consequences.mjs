@@ -1,5 +1,6 @@
 /** Persist target and defense consequences before publishing a successful chat result. */
-import { addWound, applyNpcDamage, reduceWound, shieldAbsorbWound } from "./damage-service.mjs";
+import { applyNpcDamage } from "./damage-service.mjs";
+import { applyDefenseConsequences } from "./defense-consequence-service.mjs";
 import { applyWeaponTargetEffects } from "./weapon-effect-service.mjs";
 import { removeWound } from "./wound-removal.mjs";
 /**
@@ -10,10 +11,9 @@ import { removeWound } from "./wound-removal.mjs";
  */
 export async function applyTaskConsequences(actor, { isAttack, success, targetActor, totalDamage,
   armorBypass, weaponTargetEffects, weaponSource, defenseType, applyIncomingWound,
-  incomingWounds, usingShield, shieldItem, incomingSeverity, woundRemovalSeverity, actionContext }) {
+  incomingWounds, usingShield, shieldItem, incomingSeverity, incomingPoolDamage, woundRemovalSeverity, actionContext }) {
   // Apply target-side consequences only after a successful attack.
   let targetDamage = 0;
-  let shieldWoundsAbsorbed = 0;
   if (isAttack && success && targetActor?.type === "npc") {
     if (totalDamage > 0) {
       targetDamage = await applyNpcDamage(targetActor, totalDamage, {
@@ -27,28 +27,10 @@ export async function applyTaskConsequences(actor, { isAttack, success, targetAc
     );
   }
 
-  // Resolve the wound based on the defense result.
-  if (defenseType) {
-    if (success) {
-      if (applyIncomingWound && defenseType === "block") {
-        for (let index = 0; index < incomingWounds; index += 1) {
-          if (usingShield && await shieldAbsorbWound(actor, shieldItem, incomingSeverity, actionContext)) {
-            shieldWoundsAbsorbed++;
-          } else {
-            const reduced = reduceWound(incomingSeverity);
-            if (reduced) await addWound(actor, reduced);
-          }
-        }
-      }
-      // A successful Dodge avoids the wound entirely.
-    } else if (applyIncomingWound) {
-      for (let index = 0; index < incomingWounds; index += 1) {
-        await addWound(actor, incomingSeverity);
-      }
-    }
-  }
+  const defense = defenseType ? await applyDefenseConsequences(actor, { defenseType, success,
+    applyIncomingWound, incomingWounds, usingShield, shieldItem, incomingSeverity, incomingPoolDamage, actionContext }) : {};
 
   const woundRemovalApplied = Boolean(success && woundRemovalSeverity
     && await removeWound(targetActor, woundRemovalSeverity));
-  return { targetDamage, woundRemovalApplied, shieldWoundsAbsorbed };
+  return { targetDamage, woundRemovalApplied, shieldWoundsAbsorbed: 0, ...defense };
 }

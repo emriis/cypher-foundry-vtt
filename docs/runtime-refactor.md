@@ -60,9 +60,9 @@ Foundry does not provide a transaction spanning several Actor/Item documents.
 If a later write fails, the service throws and releases its guard; already
 committed costs or consequences may remain. Do not restore stale snapshots
 over another client's changes. A GM must reconcile partial state. Local guards
-prevent overlapping requests only within the same client, Actor instance, and
-action category. They are not distributed locks and do not serialize unrelated
-action categories.
+reserve actual Actor instances across action categories on one client; nested
+services carry an explicit accepted context. They are not distributed locks and
+do not serialize another client's writes.
 
 Foundry permission checks are platform constraints, not new game rules.
 When a player cannot update a target, a GM must resolve the action. The runtime
@@ -82,9 +82,11 @@ Recovery rerolls retain the recovery value without consuming another interval
 or replaying wound healing. Table rerolls do not consume another Cypher; closing
 a post-roll result choice keeps the old result and still costs the accepted XP.
 
-Task rerolls report the retained result but do not replay or reverse previously
-applied damage, wounds, shield changes, weapon effects, or Ability activation
-costs. Those consequences require GM reconciliation. Older cards lacking cost
+New defense rerolls replace a failed defense's recorded damage when the retained
+result succeeds, preserving later wounds and original action expenditure; see
+[defense rerolls](defense-rerolls.md) for attribution, shield and partial-write
+contracts. Attack damage, weapon effects and Ability activation costs are not
+replayed by generic task rerolls. Older cards lacking cost
 metadata cannot automatically refund an unrecorded cost. The chat UI currently
 offers rerolls through the owning Actor; it does not implement selecting another
 PC to pay for someone else's roll. A service call can use another payer only

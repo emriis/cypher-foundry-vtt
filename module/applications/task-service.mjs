@@ -108,6 +108,7 @@ async function executeTask(actor, {
   specialEffectChoice = null, weaponTargetEffects = [], weaponSource = {},
   weaponRangeAdjudication = null, abilitySource = null, spentAbilityEdge = 0,
   defenseType = null, incomingSeverity = "minor", armorModifier = 0, shieldItemId = null,
+  incomingPoolDamage = null,
   targetActor = null, armorBypass = 0, incomingWounds = 1,
   applyIncomingWound = true, woundRemovalSeverity = null,
   damageEffortLevels = 0, freeEffortLevels = 0, freeDamageEffortLevels = 0, freeEffortSource = "",
@@ -122,6 +123,9 @@ async function executeTask(actor, {
   if (defenseType && (!["block", "dodge"].includes(defenseType)
     || !["minor", "moderate", "major"].includes(incomingSeverity)
     || !Number.isSafeInteger(incomingWounds) || incomingWounds < 1)) return null;
+  if (incomingPoolDamage && (!defenseType || !["might", "speed", "intellect"].includes(incomingPoolDamage.stat)
+    || !Number.isSafeInteger(incomingPoolDamage.amount) || incomingPoolDamage.amount < 0
+    || !resolveStat(actor.system, incomingPoolDamage.stat))) return null;
   // Only reviewed treatment/rest services declare a wound removal. Validate
   // its actual target before the task can spend Effort or roll dice.
   if (woundRemovalSeverity && (targetActor?.type !== "pc" || targetActor.isOwner === false
@@ -183,9 +187,9 @@ async function executeTask(actor, {
   // instead of reducing it by one step on the character.
   const usingShield = defenseType === "block" && canShieldAbsorbWound(shieldItem);
 
-  const { targetDamage, woundRemovalApplied, shieldWoundsAbsorbed } = await applyTaskConsequences(actor, { isAttack, success, targetActor,
+  const { targetDamage, woundRemovalApplied, shieldWoundsAbsorbed, defenseConsequences, defensePoolDamage } = await applyTaskConsequences(actor, { isAttack, success, targetActor,
     totalDamage, armorBypass, weaponTargetEffects, weaponSource, defenseType,
-    applyIncomingWound, incomingWounds, usingShield, shieldItem, incomingSeverity, woundRemovalSeverity, actionContext });
+    applyIncomingWound, incomingWounds, usingShield, shieldItem, incomingSeverity, incomingPoolDamage, woundRemovalSeverity, actionContext });
 
   const messageFlavor = buildTaskMessage({
     applyIncomingWound, statLabel, defenseType, success, usingShield: shieldWoundsAbsorbed > 0, shieldItem, incomingSeverity,
@@ -208,7 +212,8 @@ async function executeTask(actor, {
         abilitySource,
         actorId: actor.id,
         actorUuid: actor.uuid,
-        ...(defenseType ? { defenseType, shieldItemId, shieldWoundsAbsorbed, incomingWounds, incomingSeverity } : {}),
+        ...(defenseType ? { defenseType, shieldItemId, shieldWoundsAbsorbed, incomingWounds, incomingSeverity,
+          applyIncomingWound, incomingPoolDamage, defenseConsequences } : {}),
         ...(woundRemovalSeverity ? { woundRemoval: {
           targetUuid: targetActor.uuid, severity: woundRemovalSeverity, applied: woundRemovalApplied
         } } : {}),
@@ -242,6 +247,7 @@ async function executeTask(actor, {
     effectiveDifficulty,
     damage: totalDamage,
     targetDamage,
+    defensePoolDamage,
     weaponTargetEffects,
     specialEffectOptions: special.effectOptions
   };

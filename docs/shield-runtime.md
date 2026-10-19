@@ -79,8 +79,9 @@ already make a shield unavailable, even if its saved equipped flag remains true.
   options and resource-based repair taking about a day. It does not establish
   automatic repair for ordinary shields, and its special procedure remains
   outside this normal-shield contract.
-- Paid task rerolls currently do not replay or reverse previously persisted
-  attack/defense damage. That existing reroll boundary also applies to shields.
+- [Defense rerolls](defense-rerolls.md) now replace recorded failed-defense
+  consequences once. A Block that already succeeded does not repair its shield;
+  generic attack rerolls still do not replay NPC damage or effects.
 
 These limitations must remain visible when assessing complete Ability automation.
 

@@ -17,6 +17,10 @@ import * as models from "./module/data-models/_module.mjs";
 import * as sheets from "./module/sheets/_module.mjs";
 import { importFromBuilder, openImportDialog, registerImportButton } from "./module/import.mjs";
 import { enforceSingleEquippedArmor } from "./module/applications/equipment-service.mjs";
+import { stampDefenseRevisions } from "./module/applications/defense-history.mjs";
+
+// Persist attribution invalidation with the same healing/manual Actor update.
+Hooks.on("preUpdateActor", stampDefenseRevisions);
 
 Hooks.once("init", () => {
   console.log("Cypher | Initialisation / Initializing");

@@ -13,6 +13,7 @@ import { defaultRecoveryAllocation, recoveryPoolUpdates } from "../rules/recover
 import { getRecoveryPools } from "./recovery-service.mjs";
 import { resolveDocumentReference } from "./reference-resolver.mjs";
 import { removeWound } from "./wound-removal.mjs";
+import { reconcileDefenseConsequences } from "./defense-consequence-service.mjs";
 
 async function describeChoice(item, flags, value) {
   if (flags.rollType === "cypherVariant") {
@@ -28,7 +29,8 @@ async function describeChoice(item, flags, value) {
  * Reroll an accepted message without treating a table as a d20 task.
  * Document writes are not atomic across Actors/Items. Errors propagate, retain
  * accepted costs, and release the local guard; no stale state is rolled back.
- * Previously applied task consequences are not replayed by this chat operation.
+ * Defense contributions are reconciled only when a failed defense becomes a
+ * success. Other attack/effect consequences are not replayed by this operation.
  * @param {Actor} actor PC paying XP, potentially for another player's roll.
  * @param {ChatMessage} message Original message or a prior reroll message.
  * @param {object} [options={}] Optional result chooser or recovery-point allocation callback.
@@ -49,6 +51,7 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
     const sourceActor = flags.actorUuid ? await resolveDocumentReference(flags.actorUuid, "pc")
       : !flags.actorId || flags.actorId === actor.id ? actor : game.actors?.get(flags.actorId);
     const appliesRecovery = plan.kind === "recovery" && flags.recoveryApplied === true;
+    if (flags.defenseType && (sourceActor?.type !== "pc" || sourceActor.isOwner === false)) return null;
     if (appliesRecovery && (sourceActor?.type !== "pc" || sourceActor.isOwner === false)) return null;
     const woundTarget = flags.woundRemoval ? await resolveDocumentReference(flags.woundRemoval.targetUuid, "pc") : null;
     if (flags.woundRemoval && (!woundTarget || woundTarget.isOwner === false || sourceActor?.type !== "pc"
@@ -56,9 +59,12 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
     const execute = async () => {
       // UUID resolution awaited before the healing guard; another accepted
       // action may have advanced the original card during that read.
-      flags = origin.flags.cypher;
+      // A pending checkpoint updates the origin during this action. Keep the
+      // accepted starting metadata independent of Foundry's in-place flag merge.
+      flags = structuredClone(origin.flags.cypher);
       plan = resolveRerollPlan(flags);
       if (!plan) return null;
+      if (flags.defenseType && (sourceActor?.type !== "pc" || sourceActor.isOwner === false)) return null;
       const item = sourceActor?.items?.get(flags.itemId);
       if (plan.kind === "task" && flags.effortCost > 0
         && (!sourceActor || sourceActor.isOwner === false || !resolveStat(sourceActor.system, flags.stat))) return null;
@@ -105,11 +111,21 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
       if (plan.kind === "task") {
         const outcome = resolveTaskOutcome({ ...flags, d20: retained });
         metadata.d20 = retained;
+        if (flags.defenseType) {
+          const corrected = await reconcileDefenseConsequences(sourceActor, flags, outcome,
+            async pending => {
+              // This original-card checkpoint survives a partial Actor/Item write.
+              // A later card must never repeat a partially completed correction.
+              await origin.update({ "flags.cypher": { ...metadata, defenseConsequences: pending } });
+            }, context);
+          Object.assign(metadata, corrected);
+        }
         if (outcome.success && flags.woundRemoval && !flags.woundRemoval.applied) {
           metadata.woundRemoval = { ...flags.woundRemoval,
             applied: await removeWound(woundTarget, flags.woundRemoval.severity) };
         }
-        if (outcome.special.refundsCost && !flags.costRefunded && flags.effortCost > 0) {
+        if (outcome.special.refundsCost && !flags.costRefunded && flags.effortCost > 0
+          && flags.defenseConsequences?.state !== "pending" && flags.defenseConsequences?.reason !== "partial") {
           const stat = resolveStat(sourceActor.system, flags.stat);
           const modifiers = resolveActiveAbilityModifiers(sourceActor.system.activeAbilityEffects,
             sourceActor.items?.contents ?? Array.from(sourceActor.items?.values?.() ?? []), sourceActor.system);
@@ -121,6 +137,10 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
         resultText = `<p class="cypher-result ${outcome.success ? "success" : "failure"}">${game.i18n.localize(outcome.success ? "CYPHER.Roll.Success" : "CYPHER.Roll.Failure")}</p>`;
         if (outcome.damageBonus) resultText += `<p>+${outcome.damageBonus} ${game.i18n.localize("CYPHER.Damage")} (${outcome.totalDamage})</p>`;
         if (outcome.selectedEffect) resultText += `<p>${game.i18n.localize(outcome.selectedEffect === "minor" ? "CYPHER.Roll.MinorEffect" : "CYPHER.Roll.MajorEffect")}</p>`;
+        if (metadata.defenseNote) {
+          resultText += `<p class="cypher-defense-note">${game.i18n.localize(metadata.defenseNote)}</p>`;
+          if (metadata.defenseNote === "CYPHER.XP.DefenseCorrectionManual") ui.notifications.warn(game.i18n.localize(metadata.defenseNote));
+        }
       } else if (plan.kind === "depletion") {
         const depletes = retained >= plan.min && retained <= plan.max;
         if (item.system.depleted !== depletes) await item.update({ "system.depleted": depletes });
