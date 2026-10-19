@@ -1,4 +1,5 @@
 import { extendWeaponEffect, getWeaponEffectDisplayData } from "../applications/weapon-effect-service.mjs";
+import { getAvailableShields } from "../applications/equipment-service.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -118,7 +119,13 @@ export default class CypherNPCSheet extends HandlebarsApplicationMixin(ActorShee
       return;
     }
 
+    // Preserve the actual target Actor and let the player/GM explicitly choose
+    // absorption instead of silently spending a shield's remaining wounds.
+    const shieldOptions = (attack.damage?.mode === "wound" ? getAvailableShields(selectedTarget) : [])
+      .map(item => `<option value="shield:${item.id}">${game.i18n.localize("CYPHER.Defense.Block")} — ${foundry.utils.escapeHTML(item.name)}</option>`)
+      .join("");
     const result = await foundry.applications.api.DialogV2.prompt({
+      rejectClose: false,
       window: { title: game.i18n.format("CYPHER.NPC.RollAttackTitle", { name: attack.name }) },
       content: `
         <div class="form-group">
@@ -126,20 +133,24 @@ export default class CypherNPCSheet extends HandlebarsApplicationMixin(ActorShee
           <select name="defenseType">
             <option value="dodge">${game.i18n.localize("CYPHER.Defense.Dodge")}</option>
             <option value="block">${game.i18n.localize("CYPHER.Defense.Block")}</option>
+            ${shieldOptions}
           </select>
         </div>`,
       ok: {
         label: game.i18n.localize("CYPHER.NPC.RollAttack"),
-        callback: (event, button) => ({
-          defenseType: button.form.defenseType.value
-        })
+        callback: (event, button) => {
+          const choice = button.form.defenseType.value;
+          return { defenseType: choice.startsWith("shield:") ? "block" : choice,
+            shieldItemId: choice.startsWith("shield:") ? choice.slice(7) : null };
+        }
       }
     });
 
     if (!result) return;
     await this.actor.rollNpcAttack(attack, {
       target: selectedTarget,
-      defenseType: result.defenseType
+      defenseType: result.defenseType,
+      shieldItemId: result.shieldItemId
     });
   }
 

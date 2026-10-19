@@ -2,6 +2,7 @@ import { CYPHER } from "../config.mjs";
 import { resolveAbilityWoundTrack, resolveShieldWoundTrack } from "../rules/ability-modifiers.mjs";
 import {
   computeWoundIncrease,
+  canShieldAbsorbWound,
   convertDamageToWound,
   reduceWoundSeverity,
   resolveNpcDamage,
@@ -9,6 +10,7 @@ import {
   resolveShieldWoundSeverity
 } from "../rules/wounds.mjs";
 import { resolveStat } from "../rules/stats.mjs";
+import { runActorAction } from "./action-guard.mjs";
 
 /**
  * Reduce a wound by one severity step.
@@ -26,10 +28,22 @@ export function reduceWound(severity) {
  * @param {Actor} actor Character protected by the shield.
  * @param {object} shieldItem Equipped shield receiving the wound.
  * @param {string} severity Incoming wound severity.
- * @returns {Promise<void>} Completes after the shield is updated.
+ * @param {object|null} [actionContext=null] Explicit context of a parent task.
+ * @returns {Promise<boolean>} Whether a wound was absorbed; rejection writes nothing.
  */
-export async function shieldAbsorbWound(actor, shieldItem, severity) {
-  if (actor.isOwner === false || shieldItem.isOwner === false) return;
+export async function shieldAbsorbWound(actor, shieldItem, severity, actionContext = null) {
+  return Boolean(await runActorAction(actor, "shield", async () => {
+    // The actual embedded Item must belong to this owner (including synthetic
+    // Actors). Recheck every wound so destruction cannot absorb later hits.
+    if (actor.type !== "pc" || actor.isOwner === false || shieldItem?.isOwner === false
+      || !CYPHER.woundSeverities.includes(severity) || !canShieldAbsorbWound(shieldItem)
+      || actor.items?.get?.(shieldItem.id) !== shieldItem) return false;
+    return absorbShieldWound(actor, shieldItem, severity);
+  }, actionContext));
+}
+
+/** Persist one validated shield wound, then announce destruction after success. */
+async function absorbShieldWound(actor, shieldItem, severity) {
   const items = actor.items;
   const wounds = resolveShieldWoundTrack(shieldItem.system.wounds, actor.system?.activeAbilityEffects,
     items?.contents ?? (Array.isArray(items) ? items : Array.from(items?.values?.() ?? [])), actor.system);
@@ -39,22 +53,24 @@ export async function shieldAbsorbWound(actor, shieldItem, severity) {
   await shieldItem.update({
     [`system.wounds.${target}.current`]: Math.min(
       newCurrent,
-      wounds[target].max
-    )
+      target === "major" ? 1 : wounds[target].max
+    ),
+    ...(target === "major" ? { "system.equipped": false } : {})
   });
 
-  if (target === "major" && newCurrent >= wounds.major.max) {
+  if (target === "major") {
     await ChatMessage.create({
       speaker: ChatMessage.getSpeaker({ actor }),
       content: `<div class="cypher-roll-card"><h3>${
         game.i18n.localize("CYPHER.Shield.Broken")
       }</h3><p>${
         game.i18n.format("CYPHER.Shield.BrokenNote", {
-          name: shieldItem.name
+          name: foundry.utils.escapeHTML(shieldItem.name)
         })
       }</p></div>`
     });
   }
+  return true;
 }
 
 /**

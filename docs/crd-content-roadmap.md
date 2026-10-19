@@ -234,6 +234,9 @@ structured data already present in the source packs.
 - [x] Type/Focus advancement benefits for supported structured categories.
 - [x] Weapon attacks for core attack/damage behavior.
 - [x] Armor and shield runtime behavior covered by current models/services.
+  The [shield audit](shield-runtime.md) covers independent wounds, explicit Block
+  choices, immediate destruction, equipment eligibility and synthetic targets;
+  special shield Abilities retain their individual execution boundaries.
 - [x] Cypher depletion.
 - [x] Damage, wounds, and recovery.
 - [x] Player-facing Playwright/Foundry E2E runner infrastructure.

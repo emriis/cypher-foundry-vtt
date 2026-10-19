@@ -508,10 +508,12 @@
     },
     "Shield": {
       "Absorbed": "{name} absorbe entièrement la blessure {severity} — aucun dégât subi.",
+      "AbsorbedCount": "{name} a absorbé {count} blessures entrantes de gravité {severity}.",
       "Broken": "Bouclier détruit",
       "BrokenLabel": "Détruit",
       "BrokenNote": "{name} a subi sa blessure majeure et est détruit.",
       "NoneReduceInstead": "Aucun bouclier : réduire la blessure d’un degré de gravité",
+      "RemainingReduced": "Les {count} blessures entrantes restantes ont été résolues en réduisant leur gravité d’un degré sur le personnage.",
       "SheetHint": "Tout personnage peut utiliser un bouclier librement, quel que soit son type. En cas de blocage réussi, choisissez de réduire la blessure d’un degré de gravité, ou de la faire absorber entièrement par un bouclier équipé.",
       "Title": "Boucliers",
       "UseShield": "Utiliser un bouclier (Blocage réussi = blessure entière absorbée)"

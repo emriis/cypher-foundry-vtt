@@ -118,6 +118,8 @@
       "heavy": "Heavy (6 damage)"
     },
     "Shield": {
+      "AbsorbedCount": "{name} absorbed {count} incoming wounds of severity {severity}.",
+      "RemainingReduced": "The {count} remaining incoming wounds were resolved by reducing their severity by one step on the character.",
       "Title": "Shields",
       "SheetHint": "Any character can use a shield freely, regardless of their Type. On a successful Block, choose to reduce the wound by one step as usual, or have it absorbed entirely by an equipped shield.",
       "UseShield": "Use a shield (successful Block = whole wound absorbed)",

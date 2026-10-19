@@ -1,5 +1,6 @@
 import { CYPHER } from "../config.mjs";
 import { resolveShieldWoundTrack } from "../rules/ability-modifiers.mjs";
+import { isShieldBroken } from "../rules/wounds.mjs";
 
 /**
  * Data model for a shield and its independent wound track.
@@ -47,8 +48,6 @@ export default class CypherShieldData extends foundry.abstract.TypeDataModel {
     this.effectiveWounds = resolveShieldWoundTrack(this.wounds, actor?.system.activeAbilityEffects,
       items?.contents ?? (Array.isArray(items) ? items : Array.from(items?.values?.() ?? [])), actor?.system);
     // The shield is destroyed as soon as it takes a major wound.
-    this.broken =
-      this.wounds.major.current >= this.wounds.major.max &&
-      this.wounds.major.max > 0;
+    this.broken = isShieldBroken(this.wounds);
   }
 }

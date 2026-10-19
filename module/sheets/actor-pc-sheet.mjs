@@ -20,7 +20,7 @@ import {
   toggleSecondDescriptor,
   toggleSecondFocus
 } from "../applications/character-service.mjs";
-import { toggleEquipped } from "../applications/equipment-service.mjs";
+import { getAvailableShields, toggleEquipped } from "../applications/equipment-service.mjs";
 import { getWeaponConfiguration, rollCypherTable, rollCypherVariant, toggleAttackConfiguration } from "../applications/item-service.mjs";
 import { executeWeaponAbility, getWeaponAbilityKind } from "../applications/weapon-ability-service.mjs";
 
@@ -385,9 +385,9 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
 
     // Only equipped, unbroken shields can contribute to a Block.
     const shields = defenseType === "block"
-      ? this.actor.items.filter(i => i.type === "shield" && i.system.equipped && !i.system.broken)
+      ? getAvailableShields(this.actor)
       : [];
-    const shieldOptions = shields.map(s => `<option value="${s.id}">${s.name}</option>`).join("");
+    const shieldOptions = shields.map(s => `<option value="${s.id}">${foundry.utils.escapeHTML(s.name)}</option>`).join("");
 
     const skillOptions = this.actor.items.filter(i => i.type === "skill")
       .map(i => `<option value="${i.id}">${i.name} (${game.i18n.localize(`CYPHER.SkillLevel.${i.system.level}`)})</option>`).join("");
@@ -756,7 +756,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
   static async #onToggleEquipped(event, target) {
     const item = this.actor.items.get(target.closest("[data-item-id]").dataset.itemId);
     if (!item) return;
-    await toggleEquipped(item);
+    if (!await toggleEquipped(item)) await this.render({ force: true });
   }
 
   /* -------------------------------------------- */

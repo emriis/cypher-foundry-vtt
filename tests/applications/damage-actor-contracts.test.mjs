@@ -13,8 +13,10 @@ beforeEach(() => {
 test("shieldAbsorbWound cascades a full minor shield wound into moderate", async () => {
   let update;
   const shield = {
+    id: "shield", type: "shield",
     name: "Shield",
     system: {
+      equipped: true,
       wounds: {
         minor: { current: 3, max: 3 },
         moderate: { current: 0, max: 2 },
@@ -25,7 +27,8 @@ test("shieldAbsorbWound cascades a full minor shield wound into moderate", async
   };
   const actor = {
     type: "pc",
-    name: "Test PC"
+    name: "Test PC",
+    items: new Map([[shield.id, shield]])
   };
 
   await shieldAbsorbWound(actor, shield, "minor");
