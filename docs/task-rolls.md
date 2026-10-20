@@ -114,7 +114,8 @@ A natural twenty refunds paid Pool points even if a remaining target number
 above twenty makes the task fail. Failure still causes no attack damage or
 minor/major effect. Refunds add paid points to current Pool state rather than
 restoring an old snapshot. See [runtime-refactor.md](runtime-refactor.md) for
-paid-reroll persistence and its consequence-reconciliation limits.
+paid-reroll persistence and [attack-rerolls.md](attack-rerolls.md) for recorded
+target damage, special choices, original effect intervals and partial-write limits.
 
 ## Maintaining the contract
 

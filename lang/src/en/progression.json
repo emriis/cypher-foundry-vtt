@@ -21,7 +21,10 @@
       "PlayerIntrusionPrompt": "Describe how you alter the situation in your favor.",
       "LuckyShot": "Lucky Shot",
       "LuckyShotHint": "hindered by 4 steps",
-      "LuckyShotHint2": "Lucky Shot (1 XP): available directly in the attack roll dialog, to attempt a blind attack."
+      "LuckyShotHint2": "Lucky Shot (1 XP): available directly in the attack roll dialog, to attempt a blind attack.",
+      "AttackCorrectionApplied": "The retained attack result was applied using its recorded damage contribution and original effect interval.",
+      "AttackCorrectionManual": "This attack's consequences can no longer be reconciled safely. Ask the GM to apply the retained result; this reroll made no further automatic target changes.",
+      "AttackNarrativeEffect": "Resolve the retained minor or major effect with the GM, replacing any narrative effect of the previous result."
     },
     "Advancement": {
       "Title": "Character Advancement",

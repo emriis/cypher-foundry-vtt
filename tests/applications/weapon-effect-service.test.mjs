@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import { applyDocumentUpdate } from "../helpers/document-updates.mjs";
 
 import {
   applyWeaponTargetEffects,
@@ -16,14 +17,7 @@ function createNpc(effects = []) {
     updates: [],
     async update(changes) {
       this.updates.push(changes);
-      const [path, value] = Object.entries(changes)[0];
-      const parts = path.split(".");
-      let target = this;
-      for (const part of parts.slice(0, -1)) {
-        target[part] ??= {};
-        target = target[part];
-      }
-      target[parts.at(-1)] = value;
+      applyDocumentUpdate(this, changes);
     },
     async setFlag(scope, key, value) {
       this.updates.push({ flagScope: scope, flagKey: key, flagValue: value });

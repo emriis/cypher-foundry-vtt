@@ -1,7 +1,6 @@
 /** Persist target and defense consequences before publishing a successful chat result. */
-import { applyNpcDamage } from "./damage-service.mjs";
+import { applyAttackConsequences } from "./attack-consequence-service.mjs";
 import { applyDefenseConsequences } from "./defense-consequence-service.mjs";
-import { applyWeaponTargetEffects } from "./weapon-effect-service.mjs";
 import { removeWound } from "./wound-removal.mjs";
 /**
  * Await writes in gameplay order; propagate failure without stale rollback.
@@ -12,25 +11,14 @@ import { removeWound } from "./wound-removal.mjs";
 export async function applyTaskConsequences(actor, { isAttack, success, targetActor, totalDamage,
   armorBypass, weaponTargetEffects, weaponSource, defenseType, applyIncomingWound,
   incomingWounds, usingShield, shieldItem, incomingSeverity, incomingPoolDamage, woundRemovalSeverity, actionContext }) {
-  // Apply target-side consequences only after a successful attack.
-  let targetDamage = 0;
-  if (isAttack && success && targetActor?.type === "npc") {
-    if (totalDamage > 0) {
-      targetDamage = await applyNpcDamage(targetActor, totalDamage, {
-        armorBypass
-      });
-    }
-    await applyWeaponTargetEffects(
-      targetActor,
-      weaponTargetEffects,
-      weaponSource
-    );
-  }
+  const attack = isAttack && targetActor?.type === "npc"
+    ? await applyAttackConsequences(targetActor, { success, totalDamage, armorBypass, weaponTargetEffects, weaponSource })
+    : { targetDamage: 0 };
 
   const defense = defenseType ? await applyDefenseConsequences(actor, { defenseType, success,
     applyIncomingWound, incomingWounds, usingShield, shieldItem, incomingSeverity, incomingPoolDamage, actionContext }) : {};
 
   const woundRemovalApplied = Boolean(success && woundRemovalSeverity
     && await removeWound(targetActor, woundRemovalSeverity));
-  return { targetDamage, woundRemovalApplied, shieldWoundsAbsorbed: 0, ...defense };
+  return { ...attack, woundRemovalApplied, shieldWoundsAbsorbed: 0, ...defense };
 }

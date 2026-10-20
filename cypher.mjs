@@ -18,12 +18,15 @@ import * as sheets from "./module/sheets/_module.mjs";
 import { importFromBuilder, openImportDialog, registerImportButton } from "./module/import.mjs";
 import { enforceSingleEquippedArmor } from "./module/applications/equipment-service.mjs";
 import { stampDefenseRevisions } from "./module/applications/defense-history.mjs";
+import { stampAttackHealthRevision } from "./module/applications/attack-history.mjs";
+import { promptSpecialEffect } from "./module/sheets/dialogs.mjs";
 import { skipUnyieldingShieldTurn } from "./module/applications/shield-lifecycle-service.mjs";
 
 Hooks.on("updateCombat", skipUnyieldingShieldTurn);
 
 // Persist attribution invalidation with the same healing/manual Actor update.
 Hooks.on("preUpdateActor", stampDefenseRevisions);
+Hooks.on("preUpdateActor", stampAttackHealthRevision);
 
 Hooks.once("init", () => {
   console.log("Cypher | Initialisation / Initializing");
@@ -180,7 +183,7 @@ Hooks.on("renderChatMessageHTML", async (message, html) => {
     event.preventDefault();
     button.disabled = true;
     try {
-      await actor.rerollMessage(message, { allocateRecovery: promptRecoveryAllocation });
+      await actor.rerollMessage(message, { allocateRecovery: promptRecoveryAllocation, chooseSpecialEffect: promptSpecialEffect });
     } finally {
       // A rejected request or failed write must not leave the UI permanently blocked.
       button.disabled = false;

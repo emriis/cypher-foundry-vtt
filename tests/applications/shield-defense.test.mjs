@@ -1,6 +1,7 @@
 /** CRD / Rules of the Game / Defending / Armor and Shields, paragraphs 7930–7935. */
 import assert from "node:assert/strict";
 import test from "node:test";
+import { applyDocumentUpdate } from "../helpers/document-updates.mjs";
 import { shieldAbsorbWound } from "../../module/applications/damage-service.mjs";
 import { rollDefense } from "../../module/applications/task-service.mjs";
 import { toggleEquipped } from "../../module/applications/equipment-service.mjs";
@@ -114,7 +115,7 @@ test("concurrent shield absorption accepts only one pending action", async () =>
 
 test("a chosen shield absorbs a wound from the NPC attack entrypoint", async () => {
   const { actor, shield } = fixture();
-  const npc = { type: "npc", system: { level: 1 } };
+  const npc = { type: "npc", system: { level: 1 }, async update(changes) { applyDocumentUpdate(this, changes); } };
   const result = await rollNpcAttack(npc, { damage: { mode: "wound", severity: "moderate", wounds: 1 } },
     { target: actor, defenseType: "block", shieldItemId: shield.id });
   assert.equal(result.defense.success, true);

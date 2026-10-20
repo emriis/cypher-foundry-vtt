@@ -75,9 +75,11 @@ The first Bouncing Shield attack includes its 3 Speed activation cost; later
 attacks do not repay activation and have independent Effort/Edge. The task's
 recorded cost includes activation, so the initial or a later retained 20 uses
 the existing once-only refund contract. Each paid reroll still costs XP.
-Attack rerolls retain the existing generic boundary: they do not replay NPC
-damage or arbitrary target effects. Catch and defense consequences have explicit
-reconciliation contracts; see [defense rerolls](defense-rerolls.md).
+[Attack rerolls](attack-rerolls.md) reconcile recorded NPC damage and newly
+earned structured target effects within their original interval. They do not
+replay shield throws, activation costs or additional attacks. Catch and defense
+consequences retain their explicit reconciliation contracts; see
+[defense rerolls](defense-rerolls.md).
 
 Hidden Shield work starts only for its destroyed designated shield after
 confirmation that resources are provided. Unyielding replacement starts only
