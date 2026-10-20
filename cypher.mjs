@@ -18,6 +18,9 @@ import * as sheets from "./module/sheets/_module.mjs";
 import { importFromBuilder, openImportDialog, registerImportButton } from "./module/import.mjs";
 import { enforceSingleEquippedArmor } from "./module/applications/equipment-service.mjs";
 import { stampDefenseRevisions } from "./module/applications/defense-history.mjs";
+import { skipUnyieldingShieldTurn } from "./module/applications/shield-lifecycle-service.mjs";
+
+Hooks.on("updateCombat", skipUnyieldingShieldTurn);
 
 // Persist attribution invalidation with the same healing/manual Actor update.
 Hooks.on("preUpdateActor", stampDefenseRevisions);

@@ -11,6 +11,7 @@ import { expireAbilityEffectsOnRecovery } from "./ability-runtime-service.mjs";
 import { runActorAction, ACTION_CONTEXT } from "./action-guard.mjs";
 import { rollTask } from "./task-service.mjs";
 import { syncHealingStatuses } from "./wound-removal.mjs";
+import { recoverUnyieldingShields } from "./shield-lifecycle-service.mjs";
 
 function itemsOf(actor) {
   return actor.items?.contents ?? (Array.isArray(actor.items) ? actor.items : Array.from(actor.items?.values?.() ?? []));
@@ -95,6 +96,7 @@ export async function rollRecovery(actor, interval = "hour", options = {}) {
       if (options.machinePowered && flags.machineRecoveryPowerRequired) updates["flags.cypher.machineRecoveryPowerRequired"] = false;
     }
     await actor.update({ ...poolUpdates, ...updates });
+    await recoverUnyieldingShields(actor);
     await expireAbilityEffectsOnRecovery(actor, interval);
     await syncHealingStatuses(actor);
     // The Might task follows completion: restored Pools can fund its Effort.

@@ -14,6 +14,8 @@ import { getRecoveryPools } from "./recovery-service.mjs";
 import { resolveDocumentReference } from "./reference-resolver.mjs";
 import { removeWound } from "./wound-removal.mjs";
 import { reconcileDefenseConsequences } from "./defense-consequence-service.mjs";
+import { isShieldBroken } from "../rules/wounds.mjs";
+import { shieldSurvivesMajor, shieldOwnerItems } from "../rules/shield-abilities.mjs";
 
 async function describeChoice(item, flags, value) {
   if (flags.rollType === "cypherVariant") {
@@ -51,7 +53,8 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
     const sourceActor = flags.actorUuid ? await resolveDocumentReference(flags.actorUuid, "pc")
       : !flags.actorId || flags.actorId === actor.id ? actor : game.actors?.get(flags.actorId);
     const appliesRecovery = plan.kind === "recovery" && flags.recoveryApplied === true;
-    if (flags.defenseType && (sourceActor?.type !== "pc" || sourceActor.isOwner === false)) return null;
+    if ((flags.defenseType || flags.shieldReturn) && (sourceActor?.type !== "pc" || sourceActor.isOwner === false)) return null;
+    if (flags.shieldReturn && sourceActor.items?.get(flags.shieldReturn.itemId)?.isOwner === false) return null;
     if (appliesRecovery && (sourceActor?.type !== "pc" || sourceActor.isOwner === false)) return null;
     const woundTarget = flags.woundRemoval ? await resolveDocumentReference(flags.woundRemoval.targetUuid, "pc") : null;
     if (flags.woundRemoval && (!woundTarget || woundTarget.isOwner === false || sourceActor?.type !== "pc"
@@ -107,10 +110,35 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
       const metadata = { ...flags, ...(origin.id ? { rerollOriginId: origin.id } : {}),
         actorId: sourceActor?.id ?? flags.actorId ?? actor.id,
         rerollable: true, originalRoll: retained };
+      let shieldCheckpointed = false;
+      const checkpointShield = async () => {
+        if (!flags.shieldReturn || shieldCheckpointed) return;
+        // Catching and the natural-20 refund are separate writes. An original
+        // card checkpoint prevents retrying an uncertain partial completion.
+        await origin.update({ "flags.cypher": { ...metadata,
+          shieldReturn: { ...metadata.shieldReturn, state: "pending" } } });
+        shieldCheckpointed = true;
+      };
       let resultText = "";
       if (plan.kind === "task") {
         const outcome = resolveTaskOutcome({ ...flags, d20: retained });
         metadata.d20 = retained;
+        if (outcome.success && flags.shieldReturn
+          && (flags.shieldReturn.state === "pending" || flags.shieldReturn.reason === "partial")) {
+          metadata.shieldReturn = { ...flags.shieldReturn, state: "manual", reason: "partial", stale: true };
+        } else if (outcome.success && flags.shieldReturn && !flags.shieldReturn.applied) {
+          const shield = sourceActor?.items?.get(flags.shieldReturn.itemId);
+          // Old catch cards cannot retrieve a shield from a later throw/project.
+          if (shield?.type === "shield" && shield.isOwner !== false
+            && shield.system.flightId === flags.shieldReturn.flightId && shield.system.inHand === false
+            && !isShieldBroken(shield.system.wounds, shieldSurvivesMajor(shield, shieldOwnerItems(shield)))) {
+            await checkpointShield();
+            await shield.update({ "system.inHand": true, "system.equipped": true });
+            metadata.shieldReturn = { ...flags.shieldReturn, applied: true };
+          } else if (shield?.system.inHand !== true || shield.system.flightId !== flags.shieldReturn.flightId) {
+            metadata.shieldReturn = { ...flags.shieldReturn, stale: true };
+          }
+        }
         if (flags.defenseType) {
           const corrected = await reconcileDefenseConsequences(sourceActor, flags, outcome,
             async pending => {
@@ -125,21 +153,29 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
             applied: await removeWound(woundTarget, flags.woundRemoval.severity) };
         }
         if (outcome.special.refundsCost && !flags.costRefunded && flags.effortCost > 0
-          && flags.defenseConsequences?.state !== "pending" && flags.defenseConsequences?.reason !== "partial") {
+          && flags.defenseConsequences?.state !== "pending" && flags.defenseConsequences?.reason !== "partial"
+          && flags.shieldReturn?.state !== "pending" && flags.shieldReturn?.reason !== "partial") {
           const stat = resolveStat(sourceActor.system, flags.stat);
           const modifiers = resolveActiveAbilityModifiers(sourceActor.system.activeAbilityEffects,
             sourceActor.items?.contents ?? Array.from(sourceActor.items?.values?.() ?? []), sourceActor.system);
           const pool = stat.data.pool;
+          await checkpointShield();
           await sourceActor.update({ [`${stat.path}.pool.value`]: Math.min(
             pool.max + (modifiers.poolMax[flags.stat] ?? 0), pool.value + flags.effortCost) });
           metadata.costRefunded = true;
         }
+        if (shieldCheckpointed) metadata.shieldReturn = { ...metadata.shieldReturn,
+          state: metadata.shieldReturn.stale ? "manual" : "resolved" };
         resultText = `<p class="cypher-result ${outcome.success ? "success" : "failure"}">${game.i18n.localize(outcome.success ? "CYPHER.Roll.Success" : "CYPHER.Roll.Failure")}</p>`;
         if (outcome.damageBonus) resultText += `<p>+${outcome.damageBonus} ${game.i18n.localize("CYPHER.Damage")} (${outcome.totalDamage})</p>`;
         if (outcome.selectedEffect) resultText += `<p>${game.i18n.localize(outcome.selectedEffect === "minor" ? "CYPHER.Roll.MinorEffect" : "CYPHER.Roll.MajorEffect")}</p>`;
         if (metadata.defenseNote) {
           resultText += `<p class="cypher-defense-note">${game.i18n.localize(metadata.defenseNote)}</p>`;
           if (metadata.defenseNote === "CYPHER.XP.DefenseCorrectionManual") ui.notifications.warn(game.i18n.localize(metadata.defenseNote));
+        }
+        if (metadata.shieldReturn?.stale) {
+          resultText += `<p>${game.i18n.localize("CYPHER.ShieldAbility.StaleCatch")}</p>`;
+          ui.notifications.warn(game.i18n.localize("CYPHER.ShieldAbility.StaleCatch"));
         }
       } else if (plan.kind === "depletion") {
         const depletes = retained >= plan.min && retained <= plan.max;

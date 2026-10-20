@@ -23,6 +23,9 @@ import {
 import { getAvailableShields, toggleEquipped } from "../applications/equipment-service.mjs";
 import { getWeaponConfiguration, rollCypherTable, rollCypherVariant, toggleAttackConfiguration } from "../applications/item-service.mjs";
 import { executeWeaponAbility, getWeaponAbilityKind } from "../applications/weapon-ability-service.mjs";
+import { executeShieldAbility } from "../applications/shield-attack-service.mjs";
+import { getShieldAbilityKind, designateShield, startShieldWork, finishShieldWork, retrieveShield, resolveShieldTurnLoss } from "../applications/shield-lifecycle-service.mjs";
+import { promptShieldAbility, confirmShieldWork } from "./shield-dialogs.mjs";
 
 /**
  * Foundry VTT sheet for player characters using the Cypher system.
@@ -52,6 +55,9 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       rollCypherVariant: CypherPCSheet.#onRollCypherVariant,
       rollAttack: CypherPCSheet.#onRollAttack,
       useWeaponAbility: CypherPCSheet.#onUseWeaponAbility,
+      useShieldAbility: CypherPCSheet.#onUseShieldAbility,
+      retrieveShield: CypherPCSheet.#onRetrieveShield,
+      resolveShieldTurnLoss: CypherPCSheet.#onResolveShieldTurnLoss,
       toggleAttackConfiguration: CypherPCSheet.#onToggleAttackConfiguration,
       rallyWound: CypherPCSheet.#onRallyWound,
       treatWound: CypherPCSheet.#onTreatWound,
@@ -121,6 +127,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
         id: item.id, name: item.name, system: item.system,
         actionLabel: abilityActionLabel(item.system, key => game.i18n.localize(key)),
         weaponAbilityKind: getWeaponAbilityKind(item),
+        shieldAbilityKind: getShieldAbilityKind(item),
         healingAbilityKind: getHealingAbilityKind(item), healingAbilityCost: getHealingHandCost(item)
       })),
       cyphers: this.actor.items.filter(i => i.type === "cypher"),
@@ -133,8 +140,15 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
         activeWeaponConfiguration: getWeaponConfiguration(item)
       })),
       armor: this.actor.items.filter(i => i.type === "armor"),
-      shields: this.actor.items.filter(i => i.type === "shield")
+      shields: this.actor.items.filter(i => i.type === "shield").map(item => ({
+        id: item.id, name: item.name, system: item.system, away: item.system.inHand === false,
+        workPending: item.system.repairReadyAt != null || item.system.replacementReadyAt != null,
+        workHours: item.system.repairReadyAt != null || item.system.replacementReadyAt != null
+          ? Math.max(0, Math.ceil(((item.system.repairReadyAt ?? item.system.replacementReadyAt) - game.time.worldTime) / 3600)) : null
+      }))
     };
+    context.shieldTurnLossPending = this.actor.flags?.cypher?.shieldTurnLossPending === true;
+    context.shieldCanIntrude = game.user.isGM;
     context.enrichedBiography =
       await foundry.applications.ux.TextEditor.implementation.enrichHTML(
         this.actor.system.biography,
@@ -218,6 +232,36 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     await rollCypherVariant(item);
   }
   /** Gather both dialogs before the service may spend any resources. */
+  /** Dispatch already collected shield intent; cancellation performs no service write. */
+  static async #onUseShieldAbility(event, target) {
+    const ability = this.actor.items.get(target.closest("[data-item-id]")?.dataset.itemId);
+    if (!getShieldAbilityKind(ability)) return;
+    const options = await promptShieldAbility(ability);
+    if (!options) return;
+    const shield = this.actor.items.get(options.shieldId);
+    let result;
+    if (options.operation === "create" || options.operation === "bind") {
+      if (options.operation === "bind" && !shield) return;
+      result = await designateShield(ability, options.operation === "bind" ? shield.id : null);
+    } else if (options.operation === "retrieve") result = await retrieveShield(shield);
+    else if (options.operation === "startWork") {
+      if (!await confirmShieldWork()) return;
+      result = await startShieldWork(shield, { resourcesConfirmed: true });
+    } else if (options.operation === "finishWork") {
+      if (!await confirmShieldWork(true)) return;
+      result = await finishShieldWork(shield, { workCompleted: true });
+    } else result = await executeShieldAbility(ability, options);
+    if (!result) ui.notifications.warn(game.i18n.localize("CYPHER.ShieldAbility.InvalidUse"));
+  }
+
+  static async #onRetrieveShield(event, target) {
+    await retrieveShield(this.actor.items.get(target.closest("[data-item-id]")?.dataset.itemId));
+  }
+
+  static async #onResolveShieldTurnLoss(event, target) {
+    await resolveShieldTurnLoss(this.actor, { gmIntrusion: target.dataset.resolution === "intrusion" });
+  }
+
   static async #onUseWeaponAbility(event, target) {
     const item = this.actor.items.get(target.closest("[data-item-id]")?.dataset.itemId);
     const selection = await promptWeaponAbility(this.actor, item);

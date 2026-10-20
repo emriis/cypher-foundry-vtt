@@ -11,6 +11,8 @@ import { clampEffortLevels, computeEffortCost } from "./tasks.mjs";
  * @param {object} input Counts in levels, Edge in Pool points.
  * @param {number} [input.effortLevels=0] Paid levels allocated to easing.
  * @param {number} [input.damageEffortLevels=0] Paid levels allocated to attack damage.
+ * @param {number} [input.effectEffortLevels=0] Paid levels reserved for a source-defined attack effect.
+ * @param {number} [input.activationCost=0] Ability activation points sharing this action's Edge.
  * @param {number} [input.freeEffortLevels=0] Ordinary free easing levels.
  * @param {number} [input.freeDamageEffortLevels=0] Ordinary free damage levels.
  * @param {number} [input.effortScore] Character score; a missing score rejects the request.
@@ -23,27 +25,30 @@ import { clampEffortLevels, computeEffortCost } from "./tasks.mjs";
  * @returns {object|null} Allocation and cost, or null for invalid choices.
  */
 export function resolveTaskEffort({ effortLevels = 0, damageEffortLevels = 0,
+  effectEffortLevels = 0, activationCost = 0,
   freeEffortLevels = 0, freeDamageEffortLevels = 0, effortScore, edge = 0,
   superheroicsRank = 0, push = false, pushDamageEffortLevels = 0, isAttack = false, areaAttack = false } = {}) {
   if (![effortLevels, damageEffortLevels, freeEffortLevels, freeDamageEffortLevels,
-    effortScore, edge, superheroicsRank, pushDamageEffortLevels].every(value => Number.isSafeInteger(value) && value >= 0)) return null;
-  if (!isAttack && (damageEffortLevels || freeDamageEffortLevels || pushDamageEffortLevels)) return null;
+    effortScore, edge, superheroicsRank, pushDamageEffortLevels, effectEffortLevels, activationCost].every(value => Number.isSafeInteger(value) && value >= 0)) return null;
+  if (!isAttack && (damageEffortLevels || freeDamageEffortLevels || pushDamageEffortLevels || effectEffortLevels)) return null;
   if (push && !superheroicsRank) return null;
   if (pushDamageEffortLevels > 2 || (pushDamageEffortLevels && !push)) return null;
   const maximum = 6 + superheroicsRank;
   const scoreLimit = effortScore + superheroicsRank;
-  if (!damageEffortLevels && !freeEffortLevels && !freeDamageEffortLevels && !push) {
+  if (!damageEffortLevels && !effectEffortLevels && !freeEffortLevels && !freeDamageEffortLevels && !push) {
     effortLevels = clampEffortLevels(effortLevels, scoreLimit, maximum);
   }
-  const paidLevels = effortLevels + damageEffortLevels;
+  const paidLevels = effortLevels + damageEffortLevels + effectEffortLevels;
   const pushLevels = push ? 2 : 0;
   if (paidLevels + pushLevels > scoreLimit
     || paidLevels + pushLevels + freeEffortLevels + freeDamageEffortLevels > maximum) return null;
   return { effortLevels, damageEffortLevels, freeEffortLevels, freeDamageEffortLevels,
+    ...(effectEffortLevels ? { effectEffortLevels } : {}),
+    ...(activationCost ? { activationCost } : {}),
     paidLevels, pushLevels, pushDamageEffortLevels,
     easingLevels: effortLevels + freeEffortLevels + pushLevels - pushDamageEffortLevels,
     damageBonus: (damageEffortLevels + freeDamageEffortLevels + pushDamageEffortLevels) * (areaAttack ? 2 : 3),
-    cost: computeEffortCost(paidLevels, edge), scoreLimit, maximum };
+    cost: Math.max(0, computeEffortCost(paidLevels, 0) + activationCost - edge), scoreLimit, maximum };
 }
 
 /**

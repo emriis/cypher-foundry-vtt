@@ -236,7 +236,8 @@ structured data already present in the source packs.
 - [x] Armor and shield runtime behavior covered by current models/services.
   The [shield audit](shield-runtime.md) covers independent wounds, explicit Block
   choices, immediate destruction, equipment eligibility and synthetic targets;
-  special shield Abilities retain their individual execution boundaries.
+  [physical shield Abilities](shield-abilities.md) add explicit source designation,
+  exceptional destruction/recovery, attacks, catch tasks and timed work.
 - [x] Cypher depletion.
 - [x] Damage, wounds, and recovery.
 - [x] Replace recorded failed-defense consequences after a successful paid

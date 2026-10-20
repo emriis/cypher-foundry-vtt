@@ -1,0 +1,40 @@
+{
+  "CYPHER": {
+    "ShieldAbility": {
+      "Use": "Shield abilities",
+      "Designation": "Designated ability: {name}",
+      "Operation": "Operation",
+      "Continue": "Continue",
+      "create": "Create the shield granted by this ability",
+      "bind": "Designate an existing shield for this ability",
+      "melee": "Attack with the shield in melee",
+      "throw": "Throw the shield",
+      "paired": "Main attack and extra Hidden Shield attack (both hindered)",
+      "startWork": "Begin repair or replacement",
+      "finishWork": "Complete repair or replacement",
+      "retrieve": "Retrieve the shield",
+      "Target": "Target",
+      "MainAttack": "Main attack",
+      "MeleeStat": "Melee attack stat",
+      "RangeHint": "For attacks, confirm melee reach or short throwing range. Target order is attack order; Bouncing Shield permits the third target to be the first target again.",
+      "RangeConfirmed": "The targets are within the required range",
+      "EffectEffort": "Spend one Effort level to hinder a hit target for one round",
+      "Catch": "Catch the returning shield (difficulty 2 Speed)",
+      "StaleCatch": "The retained roll succeeded, but this catch's consequences can no longer be confirmed automatically. Check the shield's current location and any point-cost refund with the GM.",
+      "LandsImmediate": "The shield is not in hand. After a failed catch, Bouncing Shield lands within immediate range. Retrieve it before using it again.",
+      "LandsShort": "The shield is not in hand. After a failed catch, it most likely lands a short distance away. Retrieve it before using it again.",
+      "Away": "Not in hand",
+      "ResourcesConfirm": "Confirm that the required resources and crafting skill or outside arrangements have been provided. Hidden Shield repair takes about one day; an Unyielding Shield replacement takes 1d6 days of concerted effort. The CRD gives no fixed resource price, so this requires adjudication.",
+      "WorkCompletedConfirm": "Confirm that the required repair or replacement work has actually been completed. Its game-time deadline must also have elapsed.",
+      "WorkStarted": "Shield work started: {days} day(s) of work required.",
+      "WorkRemaining": "Work: at least {hours} hour(s) remaining",
+      "WorkReady": "Work deadline elapsed; confirm completion through the ability control",
+      "TurnLossPending": "Unyielding Shield survived a major wound. Your next turn is lost unless the GM chooses an intrusion instead. The combat tracker skips that turn automatically; outside combat, acknowledge the lost turn here.",
+      "AcknowledgeTurn": "Acknowledge the lost turn",
+      "ChooseIntrusion": "GM: replace the lost turn with an intrusion",
+      "TurnLost": "The next turn was lost because of Unyielding Shield.",
+      "IntrusionChosen": "The GM chose an intrusion instead of the lost turn from Unyielding Shield. Resolve that intrusion with the GM.",
+      "InvalidUse": "This shield operation is unavailable. Check ownership, designation, equipment state, targets, resources and the work deadline."
+    }
+  }
+}

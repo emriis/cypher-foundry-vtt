@@ -12,6 +12,8 @@ export function taskModifierFields(actor, { stat, isAttack = false, defenseType 
   const number = (name, key) => `<div class="form-group"><label>${label(key)}
     <input type="number" name="${name}" min="0" max="${6 + getSuperheroicsRank(actor, stat)}" step="1" value="0"/></label></div>`;
   const shifts = actor.system.powerShifts ?? {};
+  const shieldEffect = isAttack && ["throw-shield", "bouncing-shield", "unyielding-shield"]
+    .includes(actor.items?.get?.(abilitySource?.itemId)?.system.key);
   const selectable = ["dexterity", "intelligence", "resilience", "strength", "savant", "singleAttack", "power"]
     .filter(key => shifts[key] > 0 && !(key === "dexterity" && defenseType === "dodge")
       && !(key === "resilience" && defenseType === "block")
@@ -19,6 +21,8 @@ export function taskModifierFields(actor, { stat, isAttack = false, defenseType 
       && !(key === "power" && !abilitySource)
       && !(isAttack && ["dexterity", "intelligence", "resilience"].includes(key)));
   return `${isAttack ? number("damageEffort", "DamageEffort") : ""}
+    ${shieldEffect ? `<div class="form-group"><label><input type="checkbox" name="effectEffort"/>
+      ${game.i18n.localize("CYPHER.ShieldAbility.EffectEffort")}</label></div>` : ""}
     <details><summary>${label("ConditionalModifiers")}</summary>
       ${number("freeEffort", "FreeEffort")}
       ${isAttack ? number("freeDamageEffort", "FreeDamageEffort") : ""}
@@ -43,6 +47,7 @@ export function readTaskModifiers(form) {
   const value = name => Number(form.elements?.namedItem(name)?.value ?? form[name]?.value ?? 0);
   const checked = name => Boolean(form.elements?.namedItem(name)?.checked ?? form[name]?.checked);
   return { damageEffortLevels: value("damageEffort"), freeEffortLevels: value("freeEffort"),
+    ...(form.effectEffort ? { effectEffortLevels: checked("effectEffort") ? 1 : 0 } : {}),
     freeDamageEffortLevels: value("freeDamageEffort"), freeEffortSource: form.freeEffortSource?.value ?? "",
     extraEaseSteps: value("extraEase"), extraHinderSteps: value("extraHinder"), push: checked("push"),
     pushDamageEffortLevels: value("pushDamageEffort"),

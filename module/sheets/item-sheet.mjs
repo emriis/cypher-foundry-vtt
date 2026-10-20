@@ -47,6 +47,9 @@ export default class CypherItemSheet extends HandlebarsApplicationMixin(ItemShee
     const context = await super._prepareContext(options);
     context.item = this.item;
     context.system = this.item.system;
+    if (this.item.type === "shield") {
+      context.shieldAbilityName = this.item.actor?.items.get(this.item.system.abilityItemId)?.name ?? "";
+    }
     context.config = CONFIG.CYPHER;
     context.enrichedDescription = await foundry.applications.ux.TextEditor.implementation.enrichHTML(
       this.item.system.description ?? "", { relativeTo: this.item }

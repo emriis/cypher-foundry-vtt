@@ -73,18 +73,23 @@ export function isStunstickHindrance(effect) {
  */
 export function resolveWeaponEffectStacking(effects, combat) {
   const remaining = [];
-  let stunIndex = -1;
+  const indices = new Map();
   const expiry = effect => combat
     ? effect.combatRound + weaponEffectRounds(effect)
     : effect.narrativeRoundsRemaining ?? weaponEffectRounds(effect);
   for (const effect of effects) {
-    if (!isStunstickHindrance(effect)) {
+    // A rebound can hit its first target again. The same one-round shield
+    // hindrance refreshes its deadline; it never becomes two hindered steps.
+    const kind = isStunstickHindrance(effect) ? "stunstick"
+      : effect.shieldHindrance === true && effect.effect === "hindered"
+        && effect.hinderSteps === 1 && effect.duration === "one round" ? "shield" : null;
+    if (!kind) {
       remaining.push(effect);
-    } else if (stunIndex < 0) {
-      stunIndex = remaining.length;
+    } else if (!indices.has(kind)) {
+      indices.set(kind, remaining.length);
       remaining.push(effect);
-    } else if (expiry(effect) > expiry(remaining[stunIndex])) {
-      remaining[stunIndex] = effect;
+    } else if (expiry(effect) > expiry(remaining[indices.get(kind)])) {
+      remaining[indices.get(kind)] = effect;
     }
   }
   return remaining;

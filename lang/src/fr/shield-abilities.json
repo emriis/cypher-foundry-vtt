@@ -1,0 +1,40 @@
+{
+  "CYPHER": {
+    "ShieldAbility": {
+      "Use": "Aptitudes de bouclier",
+      "Designation": "Aptitude associée : {name}",
+      "Operation": "Opération",
+      "Continue": "Continuer",
+      "create": "Créer le bouclier accordé par cette aptitude",
+      "bind": "Désigner un bouclier existant pour cette aptitude",
+      "melee": "Attaquer au corps à corps avec le bouclier",
+      "throw": "Lancer le bouclier",
+      "paired": "Attaque principale et attaque supplémentaire du bouclier intégré (les deux sont entravées)",
+      "startWork": "Commencer la réparation ou le remplacement",
+      "finishWork": "Terminer la réparation ou le remplacement",
+      "retrieve": "Récupérer le bouclier",
+      "Target": "Cible",
+      "MainAttack": "Attaque principale",
+      "MeleeStat": "Caractéristique de l’attaque au corps à corps",
+      "RangeHint": "Pour les attaques, confirmez la portée de corps à corps ou la portée courte du lancer. L’ordre des cibles est celui des attaques ; le bouclier rebondissant peut frapper de nouveau la première cible lors de sa troisième attaque.",
+      "RangeConfirmed": "Les cibles sont à la portée requise",
+      "EffectEffort": "Consacrer un niveau d’Effort à entraver la cible touchée pendant un round",
+      "Catch": "Rattraper le bouclier (tâche de Vitesse de difficulté 2)",
+      "StaleCatch": "Le jet conservé est réussi, mais les conséquences de ce rattrapage ne peuvent plus être confirmées automatiquement. Vérifiez la position actuelle du bouclier et l’éventuel remboursement du coût avec le MJ.",
+      "LandsImmediate": "Le bouclier n’est plus en main. Après un rattrapage raté, le bouclier rebondissant tombe à portée immédiate. Récupérez-le avant de le réutiliser.",
+      "LandsShort": "Le bouclier n’est plus en main. Après un rattrapage raté, il termine très probablement à une courte distance. Récupérez-le avant de le réutiliser.",
+      "Away": "N’est plus en main",
+      "ResourcesConfirm": "Confirmez que les ressources nécessaires et les compétences artisanales ou les arrangements extérieurs ont été fournis. La réparation du bouclier intégré prend environ un jour ; le remplacement du bouclier indestructible demande 1d6 jours de travail soutenu. Le CRD ne chiffre pas ces ressources : leur coût doit être arbitré.",
+      "WorkCompletedConfirm": "Confirmez que le travail de réparation ou de remplacement a effectivement été accompli. Le délai en temps de jeu doit également être écoulé.",
+      "WorkStarted": "Travail sur le bouclier commencé : {days} jour(s) de travail nécessaire(s).",
+      "WorkRemaining": "Travail : au moins {hours} heure(s) restante(s)",
+      "WorkReady": "Délai écoulé ; confirmez la fin du travail depuis l’aptitude",
+      "TurnLossPending": "Le bouclier indestructible a résisté à une blessure majeure. Votre prochain tour est perdu, sauf si le MJ choisit une intrusion à la place. Le suivi de combat saute ce tour automatiquement ; hors combat, confirmez ici que le tour a été perdu.",
+      "AcknowledgeTurn": "Confirmer que le tour a été perdu",
+      "ChooseIntrusion": "MJ : remplacer le tour perdu par une intrusion",
+      "TurnLost": "Le prochain tour a été perdu à cause du bouclier indestructible.",
+      "IntrusionChosen": "Le MJ a choisi une intrusion à la place du tour perdu dû au bouclier indestructible. Résolvez cette intrusion avec le MJ.",
+      "InvalidUse": "Cette opération est indisponible. Vérifiez les droits, le bouclier désigné, son équipement, les cibles, les ressources et le délai des travaux."
+    }
+  }
+}

@@ -52,6 +52,9 @@ The main gameplay boundaries are:
   character data operations.
 - `damage-service.mjs`: damage, wounds, armor, shields, repair, and token
   statuses.
+- `shield-lifecycle-service.mjs` and `shield-attack-service.mjs`: explicitly
+  designated physical shield Abilities, lost turns, timed work and source-backed
+  attacks through the shared task engine; see [shield Abilities](shield-abilities.md).
 - `reference-resolver.mjs`: document/reference resolution at the Foundry
   boundary.
 

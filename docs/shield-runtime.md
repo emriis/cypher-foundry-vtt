@@ -69,16 +69,12 @@ already make a shield unavailable, even if its saved equipped flag remains true.
 
 ## Explicit boundaries
 
-- Unyielding Shield (Superheroes Genre / Origin Superhero Abilities, paragraphs
-  3425–3428) changes destruction and recovery, and permits attacks. Those clauses
-  require a separate source-bound shield designation and action contract; owning
-  a descriptive Ability does not make every shield indestructible.
-- Throw Shield, Bouncing Shield, Improvised Shield and Virtual Shield retain
-  their individual execution boundaries; this change does not implement them.
-- Hidden Shield (Fuses Flesh and Steel, paragraphs 4256–4259) has its own attack
-  options and resource-based repair taking about a day. It does not establish
-  automatic repair for ordinary shields, and its special procedure remains
-  outside this normal-shield contract.
+- [Physical shield Abilities](shield-abilities.md) have separate source-bound
+  contracts for Unyielding/Hidden Shield designation, destruction/recovery,
+  attacks, thrown returns, work and GM adjudication. Owning one does not change
+  every inventory shield. Their repair procedures do not repair ordinary shields.
+- Improvised Shield and Virtual Shield are Cyphers with separate contracts;
+  they are not implemented by the physical shield Ability workflow.
 - [Defense rerolls](defense-rerolls.md) now replace recorded failed-defense
   consequences once. A Block that already succeeded does not repair its shield;
   generic attack rerolls still do not replay NPC damage or effects.

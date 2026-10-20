@@ -12,7 +12,8 @@ import { buildTaskMessage } from "./task-message.mjs";
 import { applyTaskConsequences } from "./task-consequences.mjs";
 import { syncWoundStatusEffects } from "./damage-service.mjs";
 import { resolveStat } from "../rules/stats.mjs";
-import { canShieldAbsorbWound } from "../rules/wounds.mjs";
+import { canShieldAbsorbWound, isShieldBroken } from "../rules/wounds.mjs";
+import { shieldSurvivesMajor, shieldOwnerItems, SHIELD_ABILITY_KEYS } from "../rules/shield-abilities.mjs";
 
 /**
  * Roll a Block or Dodge defense through the common task engine.
@@ -107,6 +108,7 @@ async function executeTask(actor, {
   extraHinderSteps = 0, extraEaseSteps = 0, luckyShot = false,
   specialEffectChoice = null, weaponTargetEffects = [], weaponSource = {},
   weaponRangeAdjudication = null, abilitySource = null, spentAbilityEdge = 0,
+  effectEffortLevels = 0, activationCost = 0, shieldReturn = null,
   defenseType = null, incomingSeverity = "minor", armorModifier = 0, shieldItemId = null,
   incomingPoolDamage = null,
   targetActor = null, armorBypass = 0, incomingWounds = 1,
@@ -120,6 +122,15 @@ async function executeTask(actor, {
   const shieldItem = shieldItemId ? actor.items?.get(shieldItemId) : null;
   if (shieldItemId && (defenseType !== "block" || !canShieldAbsorbWound(shieldItem)
     || shieldItem.isOwner === false)) return null;
+  if (shieldReturn) {
+    const returning = actor.items?.get(shieldReturn.itemId);
+    const ability = actor.items?.get(abilitySource?.itemId);
+    if (stat !== "speed" || difficulty !== 2 || isAttack || ability?.type !== "ability"
+      || !SHIELD_ABILITY_KEYS.includes(ability.system.key) || ability.system.key === "hidden-shield"
+      || returning?.type !== "shield" || returning.isOwner === false || typeof shieldReturn.flightId !== "string"
+      || isShieldBroken(returning.system.wounds, shieldSurvivesMajor(returning, shieldOwnerItems(returning)))
+      || !shieldReturn.flightId || returning.system.flightId !== shieldReturn.flightId || returning.system.inHand !== false) return null;
+  }
   if (defenseType && (!["block", "dodge"].includes(defenseType)
     || !["minor", "moderate", "major"].includes(incomingSeverity)
     || !Number.isSafeInteger(incomingWounds) || incomingWounds < 1)) return null;
@@ -134,7 +145,7 @@ async function executeTask(actor, {
   const prepared = prepareTask(actor, { stat, difficulty, effortLevels, assetSteps, skillItemId,
     extraHinderSteps, extraEaseSteps, luckyShot, spentAbilityEdge, defenseType, armorModifier, targetActor,
     isAttack, baseDamage, damageEffortLevels, freeEffortLevels, freeDamageEffortLevels, freeEffortSource,
-    areaAttack, push, pushDamageEffortLevels, powerShiftCategories, abilitySource });
+    areaAttack, push, pushDamageEffortLevels, powerShiftCategories, abilitySource, effectEffortLevels, activationCost });
   if (!prepared) return null;
   ({ effortLevels, assetSteps, extraHinderSteps } = prepared);
   const { resolved, statLabel, totalCost, xpCost, poolValue, poolMax,
@@ -190,6 +201,9 @@ async function executeTask(actor, {
   const { targetDamage, woundRemovalApplied, shieldWoundsAbsorbed, defenseConsequences, defensePoolDamage } = await applyTaskConsequences(actor, { isAttack, success, targetActor,
     totalDamage, armorBypass, weaponTargetEffects, weaponSource, defenseType,
     applyIncomingWound, incomingWounds, usingShield, shieldItem, incomingSeverity, incomingPoolDamage, woundRemovalSeverity, actionContext });
+  if (success && shieldReturn) {
+    await actor.items.get(shieldReturn.itemId).update({ "system.inHand": true, "system.equipped": true });
+  }
 
   const messageFlavor = buildTaskMessage({
     applyIncomingWound, statLabel, defenseType, success, usingShield: shieldWoundsAbsorbed > 0, shieldItem, incomingSeverity,
@@ -212,6 +226,7 @@ async function executeTask(actor, {
         abilitySource,
         actorId: actor.id,
         actorUuid: actor.uuid,
+        ...(shieldReturn ? { shieldReturn: { ...shieldReturn, applied: success } } : {}),
         ...(defenseType ? { defenseType, shieldItemId, shieldWoundsAbsorbed, incomingWounds, incomingSeverity,
           applyIncomingWound, incomingPoolDamage, defenseConsequences } : {}),
         ...(woundRemovalSeverity ? { woundRemoval: {

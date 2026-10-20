@@ -1,5 +1,6 @@
 import { CYPHER } from "../config.mjs";
 import { resolveNpcHealthDamage } from "./npc-combat.mjs";
+import { shieldSurvivesMajor, shieldOwnerItems } from "./shield-abilities.mjs";
 
 /**
  * Resolve the damage that remains after NPC Armor.
@@ -114,10 +115,11 @@ export function resolveShieldWoundSeverity(severity, wounds) {
  * Read stored wounds rather than a possibly stale derived flag. A customized
  * maximum does not make an ordinary shield survive a major wound.
  * @param {object} wounds Shield wound track.
+ * @param {boolean} [survivesMajor=false] Source-designated Unyielding Shield exception.
  * @returns {boolean} Whether the shield no longer has any effect.
  */
-export function isShieldBroken(wounds) {
-  return (wounds?.major?.current ?? 0) > 0;
+export function isShieldBroken(wounds, survivesMajor = false) {
+  return !survivesMajor && (wounds?.major?.current ?? 0) > 0;
 }
 
 /**
@@ -127,5 +129,6 @@ export function isShieldBroken(wounds) {
  */
 export function canShieldAbsorbWound(item) {
   return item?.type === "shield" && item.system?.equipped === true
-    && !isShieldBroken(item.system.wounds);
+    && item.system.inHand !== false
+    && !isShieldBroken(item.system.wounds, shieldSurvivesMajor(item, shieldOwnerItems(item)));
 }
