@@ -27,7 +27,7 @@ export async function rollNpcAttack(
   attack,
   { target = null, defenseType = "dodge", shieldItemId = null } = {}
 ) {
-  if (actor.type !== "npc") return null;
+  if (actor.type !== "npc" || actor.isOwner === false) return null;
 
   const selectedTarget = target
     ?? (game.user?.targets?.size === 1
@@ -69,8 +69,8 @@ export async function rollNpcAttack(
     incomingPoolDamage: damage.mode === "pool" ? { stat: damage.stat, amount: damage.amount } : null
   });
 
-  await expireWeaponEffectsAfterAction(actor);
   if (!defense) return null;
+  await expireWeaponEffectsAfterAction(actor);
 
   const targetDamage = defense.defensePoolDamage ?? 0;
 

@@ -13,6 +13,17 @@ import { runActorAction } from "./action-guard.mjs";
 const EFFECTS_FLAG = "flags.cypher.activeWeaponEffects";
 
 /**
+ * Freeze the original interval so a paid reroll cannot restart an expired effect.
+ * @param {Actor} actor Actual NPC whose completed actions bound narrative durations.
+ * @returns {object} Combat interval, wall-clock milliseconds and persisted action revision.
+ */
+export function weaponEffectContext(actor) {
+  const combat = globalThis.game?.combat;
+  return { appliedAt: Date.now(), combatId: combat?.id ?? null, combatRound: combat?.round ?? null,
+    actionRevision: actor?.flags?.cypher?.weaponActionRevision ?? 0 };
+}
+
+/**
  * Persist a GM's explicit second round for a CRD "a round or two" effect.
  * Reject players, expired/missing effects, and repeated extensions before writes.
  * The supplied Actor remains the owner, including an unlinked token's Actor.
@@ -83,9 +94,10 @@ export function getWeaponEffectDisplayData(actor) {
  * @param {Actor} target NPC target.
  * @param {Array<object>} effects Effects already filtered for target level.
  * @param {object} [source={}] Weapon/source identity.
+ * @param {object} [context] Original interval when reconciling a rerolled attack.
  * @returns {Promise<number>} Number of effects accepted, including refreshed effects.
  */
-export async function applyWeaponTargetEffects(target, effects = [], source = {}) {
+export async function applyWeaponTargetEffects(target, effects = [], source = {}, context = weaponEffectContext(target)) {
   if (target?.type !== "npc" || !Array.isArray(effects) || !effects.length) {
     return 0;
   }
@@ -99,11 +111,14 @@ export async function applyWeaponTargetEffects(target, effects = [], source = {}
       id: `${source.itemId ?? "weapon"}-${Date.now()}-${index}`,
       sourceItemId: source.itemId ?? null,
       sourceItemName: source.itemName ?? "",
-      appliedAt: Date.now(),
-      combatId: combat?.id ?? null,
-      combatRound: combat?.round ?? null,
+      appliedAt: context.appliedAt,
+      combatId: context.combatId,
+      combatRound: context.combatRound,
       ...(effect.duration === "a round or two" ? { roundCount: 1, narrativeRoundsRemaining: 1 } : {})
-    }));
+    }))
+    .filter(effect => weaponEffectIsActive(effect, combat)
+      && (!(effect.duration === "next action" || weaponEffectRounds(effect) !== null && !effect.combatId)
+        || context.actionRevision === (target.flags?.cypher?.weaponActionRevision ?? 0)));
 
   if (!applied.length) return 0;
 
@@ -125,7 +140,10 @@ export async function expireWeaponEffectsAfterAction(actor) {
   const remaining = getActiveWeaponEffects(actor)
     .map(effect => consumeWeaponEffectAction(effect, !inNarrativeRound)).filter(Boolean);
   const removed = existing.length - remaining.length;
-  if (removed || remaining.some((effect, index) => effect !== existing[index])) await writeEffects(actor, remaining);
+  // Even an unaffected NPC action closes the interval for an older missed
+  // attack's next-action effect. Persist clock and effects in the same update.
+  await actor.update({ [EFFECTS_FLAG]: remaining,
+    "flags.cypher.weaponActionRevision": (actor.flags?.cypher?.weaponActionRevision ?? 0) + 1 });
   return removed;
 }
 

@@ -77,7 +77,8 @@ already make a shield unavailable, even if its saved equipped flag remains true.
   they are not implemented by the physical shield Ability workflow.
 - [Defense rerolls](defense-rerolls.md) now replace recorded failed-defense
   consequences once. A Block that already succeeded does not repair its shield;
-  generic attack rerolls still do not replay NPC damage or effects.
+  [attack rerolls](attack-rerolls.md) reconcile their own recorded NPC damage and
+  structured effects, preserving the original effect interval.
 
 These limitations must remain visible when assessing complete Ability automation.
 

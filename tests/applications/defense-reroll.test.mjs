@@ -154,7 +154,7 @@ test("a defense without recorded history remains rerollable but never guesses wh
 test("a paid NPC Pool-defense reroll restores only its recorded loss and overflow wound", async () => {
   const s = scenario();
   s.actor.system.stats.might.pool.value = 2;
-  const npc = { type: "npc", system: { level: 3 } };
+  const npc = { type: "npc", system: { level: 3 }, async update(changes) { applyDocumentUpdate(this, changes); } };
   await rollNpcAttack(npc, { damage: { mode: "pool", stat: "might", amount: 7 } }, { target: s.actor, defenseType: "dodge" });
   assert.equal(s.actor.system.stats.might.pool.value, 0);
   assert.equal(s.actor.system.wounds.moderate.current, 1);

@@ -198,7 +198,7 @@ async function executeTask(actor, {
   // instead of reducing it by one step on the character.
   const usingShield = defenseType === "block" && canShieldAbsorbWound(shieldItem);
 
-  const { targetDamage, woundRemovalApplied, shieldWoundsAbsorbed, defenseConsequences, defensePoolDamage } = await applyTaskConsequences(actor, { isAttack, success, targetActor,
+  const { targetDamage, attackConsequences, woundRemovalApplied, shieldWoundsAbsorbed, defenseConsequences, defensePoolDamage } = await applyTaskConsequences(actor, { isAttack, success, targetActor,
     totalDamage, armorBypass, weaponTargetEffects, weaponSource, defenseType,
     applyIncomingWound, incomingWounds, usingShield, shieldItem, incomingSeverity, incomingPoolDamage, woundRemovalSeverity, actionContext });
   if (success && shieldReturn) {
@@ -248,6 +248,7 @@ async function executeTask(actor, {
         weaponRangeAdjudication,
         weaponSource,
         targetActorId: targetActor?.type === "npc" ? targetActor.id : null,
+        ...(attackConsequences ? { attackConsequences } : {}),
         armorBypass
       }
     }

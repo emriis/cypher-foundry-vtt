@@ -85,8 +85,10 @@ a post-roll result choice keeps the old result and still costs the accepted XP.
 New defense rerolls replace a failed defense's recorded damage when the retained
 result succeeds, preserving later wounds and original action expenditure; see
 [defense rerolls](defense-rerolls.md) for attribution, shield and partial-write
-contracts. Attack damage, weapon effects and Ability activation costs are not
-replayed by generic task rerolls. Older cards lacking cost
+contracts. New attack cards reconcile their actual NPC Health contribution and
+newly earned structured target effects within the original interval; see
+[attack rerolls](attack-rerolls.md). Original action and Ability activation costs
+are not paid again. Older cards lacking cost
 metadata cannot automatically refund an unrecorded cost. The chat UI currently
 offers rerolls through the owning Actor; it does not implement selecting another
 PC to pay for someone else's roll. A service call can use another payer only

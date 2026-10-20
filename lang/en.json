@@ -692,6 +692,9 @@
       "moderate": "Moderate"
     },
     "XP": {
+      "AttackCorrectionApplied": "The retained attack result was applied using its recorded damage contribution and original effect interval.",
+      "AttackCorrectionManual": "This attack's consequences can no longer be reconciled safely. Ask the GM to apply the retained result; this reroll made no further automatic target changes.",
+      "AttackNarrativeEffect": "Resolve the retained minor or major effect with the GM, replacing any narrative effect of the previous result.",
       "ChooseBetterReroll": "Choose which result is better for your character.",
       "DefenseCorrectionApplied": "The retained defense result was applied. Only this defense's recorded damage was corrected; later wounds remain unchanged.",
       "DefenseCorrectionManual": "This defense's previous damage can no longer be identified safely. Ask the GM to apply the retained result. No damage was automatically corrected by this reroll.",

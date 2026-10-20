@@ -74,10 +74,7 @@ function setRollResult(value) {
 test("failed NPC Pool attack applies its declared PC Pool damage", async () => {
   setRollResult(1);
   const target = createTarget();
-  const npc = {
-    type: "npc",
-    system: { level: 3 }
-  };
+  const npc = createNpc();
 
   const result = await rollNpcAttack(
     npc,
@@ -94,10 +91,7 @@ test("failed NPC Pool attack applies its declared PC Pool damage", async () => {
 test("failed NPC wound attack applies all declared wounds", async () => {
   setRollResult(1);
   const target = createTarget();
-  const npc = {
-    type: "npc",
-    system: { level: 3 }
-  };
+  const npc = createNpc();
 
   const result = await rollNpcAttack(
     npc,
@@ -115,10 +109,7 @@ test("failed NPC wound attack applies all declared wounds", async () => {
 test("successful NPC Pool attack does not damage the PC", async () => {
   setRollResult(20);
   const target = createTarget();
-  const npc = {
-    type: "npc",
-    system: { level: 3 }
-  };
+  const npc = createNpc();
 
   const result = await rollNpcAttack(
     npc,
@@ -129,6 +120,30 @@ test("successful NPC Pool attack does not damage the PC", async () => {
   assert.equal(result.defense.success, true);
   assert.equal(result.targetDamage, 0);
   assert.equal(target.system.stats.intellect.pool.value, 8);
+});
+
+test("a completed NPC action advances the effect clock even when no effect was present", async () => {
+  setRollResult(12);
+  const npc = createNpc();
+  await rollNpcAttack(npc, { damage: { mode: "pool", amount: 1, stat: "might" } }, { target: createTarget() });
+  assert.equal(npc.flags.cypher.weaponActionRevision, 1);
+});
+
+test("a rejected defense does not consume the NPC's action interval", async () => {
+  const npc = createNpc();
+  assert.equal(await rollNpcAttack(npc, { damage: { mode: "pool", amount: 1, stat: "might" } },
+    { target: createTarget(), defenseType: "block", shieldItemId: "missing" }), null);
+  assert.equal(npc.flags.cypher.weaponActionRevision ?? 0, 0);
+  assert.equal(npc.updates.length, 0);
+});
+
+test("an unowned NPC rejects before defense damage or action-clock persistence", async () => {
+  const npc = createNpc(), target = createTarget();
+  npc.isOwner = false;
+  globalThis.Roll = class { async evaluate() { throw Error("unauthorized roll"); } };
+  assert.equal(await rollNpcAttack(npc, { damage: { mode: "pool", amount: 4, stat: "might" } }, { target }), null);
+  assert.equal(target.updates.length, 0);
+  assert.equal(npc.updates.length, 0);
 });
 
 
