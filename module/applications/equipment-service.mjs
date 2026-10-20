@@ -5,6 +5,7 @@
  */
 import { canShieldAbsorbWound, isShieldBroken } from "../rules/wounds.mjs";
 import { runActorAction } from "./action-guard.mjs";
+import { shieldSurvivesMajor, shieldOwnerItems } from "../rules/shield-abilities.mjs";
 
 /**
  * Expose current shield choices to sheets without putting eligibility rules in UI.
@@ -32,7 +33,8 @@ export async function toggleEquipped(item) {
 /** Keep equipment changes outside another pending task on the same owner. */
 async function toggleOwnedEquipment(item) {
   const newState = !item.system.equipped;
-  if (newState && item.type === "shield" && isShieldBroken(item.system.wounds)) return false;
+  if (newState && item.type === "shield" && (item.system.inHand === false
+    || isShieldBroken(item.system.wounds, shieldSurvivesMajor(item, shieldOwnerItems(item))))) return false;
   if (item.type === "armor" && newState) {
     const others = item.actor.items.filter(
       candidate =>

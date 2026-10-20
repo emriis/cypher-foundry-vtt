@@ -41,3 +41,17 @@ test("a major wound marks a shield broken regardless of a customized maximum", (
   assert.equal(shield.broken, true);
   assert.equal(shield.wounds.major.max, 3);
 });
+
+test("a source designation changes derived destruction only, and older shield data keeps safe defaults", () => {
+  const actor = { system: {}, items: [{ id: "a", type: "ability", system: { key: "unyielding-shield" } }] };
+  const shield = Object.assign(Object.create(Shield.prototype), { abilityItemId: "a", wounds: {
+    minor: { current: 0, max: 3 }, moderate: { current: 0, max: 2 }, major: { current: 1, max: 1 }
+  }, update() { assert.fail("Preparation must not write"); } });
+  shield.parent = { actor, system: shield };
+  shield.prepareDerivedData();
+  assert.equal(shield.broken, false);
+  assert.equal(shield.wounds.major.current, 1);
+  delete shield.abilityItemId;
+  shield.prepareDerivedData();
+  assert.equal(shield.broken, true);
+});

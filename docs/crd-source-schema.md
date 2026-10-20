@@ -80,6 +80,13 @@ The schema does not translate, normalize, infer, or otherwise rewrite mechanics.
 
 ## 5. Structured Ability end conditions
 
+Physical shield runtime designation is stored on the owned shield as
+`system.abilityItemId`, referencing an owned Hidden/Unyielding Shield Ability.
+It does not alter compendium definitions or infer mechanics from text. Existing
+source keys identify Throw/Bouncing Shield actions. See the [shield Ability
+contract](shield-abilities.md) for additive defaults and persisted work/flight
+state; no source content or saved base wound capacity is rewritten.
+
 Standalone Abilities may also declare `system.passiveModifiers`, using the same
 typed modifier records as effects (`kind`, `stat`, `severity`, `amount`). These
 are owned benefits with no activation or expiration reference. A modifier's

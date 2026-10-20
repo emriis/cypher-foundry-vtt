@@ -1,4 +1,5 @@
 import { CYPHER } from "../config.mjs";
+import { shieldSurvivesMajor, shieldOwnerItems } from "../rules/shield-abilities.mjs";
 import { resolveAbilityWoundTrack, resolveShieldWoundTrack } from "../rules/ability-modifiers.mjs";
 import {
   computeWoundIncrease,
@@ -49,16 +50,21 @@ async function absorbShieldWound(actor, shieldItem, severity) {
     items?.contents ?? (Array.isArray(items) ? items : Array.from(items?.values?.() ?? [])), actor.system);
   const target = resolveShieldWoundSeverity(severity, wounds);
   const newCurrent = wounds[target].current + 1;
+  const unyielding = shieldSurvivesMajor(shieldItem, shieldOwnerItems(shieldItem));
 
   await shieldItem.update({
     [`system.wounds.${target}.current`]: Math.min(
       newCurrent,
       target === "major" ? 1 : wounds[target].max
     ),
-    ...(target === "major" ? { "system.equipped": false } : {})
+    ...(target === "major" && !unyielding ? { "system.equipped": false } : {})
   });
 
-  if (target === "major") {
+  if (target === "major" && unyielding) {
+    await actor.update({ "flags.cypher.shieldTurnLossPending": true });
+    await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }),
+      content: `<p>${game.i18n.localize("CYPHER.ShieldAbility.TurnLossPending")}</p>` });
+  } else if (target === "major") {
     await ChatMessage.create({
       speaker: ChatMessage.getSpeaker({ actor }),
       content: `<div class="cypher-roll-card"><h3>${

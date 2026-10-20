@@ -1,4 +1,3 @@
-import { addWound, applyDamage } from "./damage-service.mjs";
 import { rollDefense } from "./task-service.mjs";
 import { resolveNpcAttackTargetDamage } from "../rules/npc-combat.mjs";
 import {
@@ -66,18 +65,14 @@ export async function rollNpcAttack(
     difficulty: effectiveLevel,
     incomingSeverity: damage.mode === "wound" ? damage.severity : "minor",
     incomingWounds: damage.mode === "wound" ? damage.wounds : 1,
-    applyIncomingWound: damage.mode === "wound"
+    applyIncomingWound: damage.mode === "wound",
+    incomingPoolDamage: damage.mode === "pool" ? { stat: damage.stat, amount: damage.amount } : null
   });
 
   await expireWeaponEffectsAfterAction(actor);
   if (!defense) return null;
 
-  let targetDamage = 0;
-  if (!defense.success && damage.mode === "pool") {
-    targetDamage = await applyDamage(selectedTarget, damage.amount, {
-      stat: damage.stat
-    });
-  }
+  const targetDamage = defense.defensePoolDamage ?? 0;
 
   return {
     defense,

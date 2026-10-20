@@ -5,6 +5,7 @@ import { resolveTaskEffort, resolveTaskPowerShifts } from "../rules/task-effort.
 import { computeWoundIncrease } from "../rules/wounds.mjs";
 import { resolveStat } from "../rules/stats.mjs";
 import { resolveActiveAbilityModifiers, resolveAbilityWoundTrack } from "../rules/ability-modifiers.mjs";
+import { SHIELD_ABILITY_KEYS } from "../rules/shield-abilities.mjs";
 
 /**
  * Read the source-key Ability and its explicitly chosen Pool, never its name.
@@ -30,7 +31,8 @@ export function getSuperheroicsRank(actor, stat) {
 export function prepareTask(actor, { stat, difficulty, effortLevels, assetSteps, skillItemId,
   extraHinderSteps, extraEaseSteps, luckyShot, spentAbilityEdge, defenseType, armorModifier, targetActor,
   isAttack, baseDamage, damageEffortLevels, freeEffortLevels, freeDamageEffortLevels, freeEffortSource,
-  areaAttack, push, pushDamageEffortLevels, powerShiftCategories, abilitySource }) {
+  areaAttack, push, pushDamageEffortLevels, powerShiftCategories, abilitySource,
+  effectEffortLevels = 0, activationCost = 0 }) {
   if (actor.type !== "pc") {
     ui.notifications.warn(game.i18n.localize("CYPHER.Warning.NotPC"));
     return null;
@@ -47,6 +49,14 @@ export function prepareTask(actor, { stat, difficulty, effortLevels, assetSteps,
     || difficulty > (actor.system.maxDifficulty ?? (actor.system.genre === "superhero" ? 15 : 10))) return invalidTask();
   if ((freeEffortLevels || freeDamageEffortLevels)
     && (typeof freeEffortSource !== "string" || !freeEffortSource.trim())) return invalidTask();
+  // Only explicitly supported owned sources can allocate special Effort or an
+  // activation cost into this task. The sheet cannot mint a generic bonus.
+  if (effectEffortLevels || activationCost) {
+    const source = actor.items?.get(abilitySource?.itemId);
+    if (source?.type !== "ability" || !SHIELD_ABILITY_KEYS.includes(source.system.key)
+      || effectEffortLevels > 1 || source.system.key === "hidden-shield"
+      || (activationCost && (source.system.key !== "bouncing-shield" || stat !== "speed" || activationCost !== 3))) return invalidTask();
+  }
 
   // CRD > Lucky Shot: the cost belongs to an accepted action. Validate all
   // resources first; a rejected request must not spend its XP.
@@ -82,6 +92,7 @@ export function prepareTask(actor, { stat, difficulty, effortLevels, assetSteps,
   // and its first attack share the action's Edge, so subtract the portion
   // already used for activation before reducing this attack's Effort cost.
   const effort = resolveTaskEffort({ effortLevels, damageEffortLevels, freeEffortLevels,
+    effectEffortLevels, activationCost,
     freeDamageEffortLevels, effortScore: actor.system.effort,
     edge: Math.max(0, edge - spentAbilityEdge), superheroicsRank: getSuperheroicsRank(actor, stat),
     push, pushDamageEffortLevels, isAttack, areaAttack });

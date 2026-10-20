@@ -36,6 +36,10 @@ The main gameplay boundaries are:
   read-only task planning, awaited effects, and localized presentation.
 - `reroll-service.mjs`: CRD paid-reroll orchestration and retained metadata;
   `rules/task-outcome.mjs` shares outcome rules with initial task rolls.
+- `defense-consequence-service.mjs`: record actual incoming damage and reconcile
+  a failed defense with its retained successful reroll. `defense-history.mjs`
+  stamps attribution revisions in the Actor pre-update hook; pure
+  `rules/defense-correction.mjs` plans safe incremental removal.
 - `action-guard.mjs`: reserves actual Actor identities across competing action
   categories on one client. Nested services carry an explicit parent context;
   multi-target actions reserve all owners before execution. This rejects overlap
@@ -48,6 +52,9 @@ The main gameplay boundaries are:
   character data operations.
 - `damage-service.mjs`: damage, wounds, armor, shields, repair, and token
   statuses.
+- `shield-lifecycle-service.mjs` and `shield-attack-service.mjs`: explicitly
+  designated physical shield Abilities, lost turns, timed work and source-backed
+  attacks through the shared task engine; see [shield Abilities](shield-abilities.md).
 - `reference-resolver.mjs`: document/reference resolution at the Foundry
   boundary.
 

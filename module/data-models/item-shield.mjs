@@ -1,6 +1,7 @@
 import { CYPHER } from "../config.mjs";
 import { resolveShieldWoundTrack } from "../rules/ability-modifiers.mjs";
 import { isShieldBroken } from "../rules/wounds.mjs";
+import { shieldSurvivesMajor } from "../rules/shield-abilities.mjs";
 
 /**
  * Data model for a shield and its independent wound track.
@@ -25,6 +26,13 @@ export default class CypherShieldData extends foundry.abstract.TypeDataModel {
     return {
       // Any character can use a shield freely, regardless of their Type.
       equipped: new BooleanField({ required: true, initial: false }),
+      // Additive defaults preserve ordinary shields. A designation references
+      // one owned Ability; a display name never grants an exception.
+      abilityItemId: new StringField({ required: true, initial: "", blank: true }),
+      inHand: new BooleanField({ required: true, initial: true }),
+      flightId: new StringField({ required: true, initial: "", blank: true }),
+      repairReadyAt: new NumberField({ required: true, nullable: true, initial: null, min: 0 }),
+      replacementReadyAt: new NumberField({ required: true, nullable: true, initial: null, min: 0 }),
       priceCategory: new StringField({
         required: true, initial: "moderate", choices: CYPHER.priceCategories
       }),
@@ -47,7 +55,9 @@ export default class CypherShieldData extends foundry.abstract.TypeDataModel {
     // track. Unowned shields receive no benefit and no saved values are changed.
     this.effectiveWounds = resolveShieldWoundTrack(this.wounds, actor?.system.activeAbilityEffects,
       items?.contents ?? (Array.isArray(items) ? items : Array.from(items?.values?.() ?? [])), actor?.system);
-    // The shield is destroyed as soon as it takes a major wound.
-    this.broken = isShieldBroken(this.wounds);
+    // Unyielding Shield replaces destruction, but does not erase the recorded
+    // major wound. Losing its owning Ability removes that exception.
+    this.broken = isShieldBroken(this.wounds, shieldSurvivesMajor(this.parent,
+      items?.contents ?? (Array.isArray(items) ? items : Array.from(items?.values?.() ?? []))));
   }
 }
