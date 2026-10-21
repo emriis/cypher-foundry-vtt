@@ -102,6 +102,28 @@ jobs:
           if-no-files-found: warn
           retention-days: 7
 
+  callouts:
+    name: CRD callouts and source completeness inventory
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Audit original CRD boxes and English normalized sources
+        run: npm run audit:callouts -- --normalized
+      - name: Upload PR4 CRD coverage inventory
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: crd-callout-coverage
+          path: reports/crd-callout-coverage.json
+          retention-days: 14
+          if-no-files-found: error
+
   integration:
     name: Integration and architecture tests
     runs-on: ubuntu-latest
@@ -204,6 +226,7 @@ jobs:
       - behavior
       - content
       - identities
+      - callouts
       - integration
       - repository
       - coverage
@@ -220,6 +243,7 @@ jobs:
           echo "| BDD behavior tests | ${{ needs.behavior.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Content contracts | ${{ needs.content.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Compendium identity audit | ${{ needs.identities.result }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| CRD callout source audit | ${{ needs.callouts.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Integration and architecture | ${{ needs.integration.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Source normalization | ${{ needs.sources.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Repository checks | ${{ needs.repository.result }} |" >> "$GITHUB_STEP_SUMMARY"
@@ -229,6 +253,7 @@ jobs:
              [ "${{ needs.behavior.result }}" != "success" ] || \
              [ "${{ needs.content.result }}" != "success" ] || \
              [ "${{ needs.identities.result }}" != "success" ] || \
+             [ "${{ needs.callouts.result }}" != "success" ] || \
              [ "${{ needs.integration.result }}" != "success" ] || \
              [ "${{ needs.repository.result }}" != "success" ] || \
              [ "${{ needs.sources.result }}" != "success" ] || \
