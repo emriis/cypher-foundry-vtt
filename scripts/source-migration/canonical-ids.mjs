@@ -12,7 +12,7 @@ import { root } from "./context.mjs";
 import { proposedLogicalId, proposedFoundryId, proposedFolderId, proposedPageId } from "./id-contract.mjs";
 
 const PACK_PATTERN = /^(abilities|skills|descriptors|types|foci|equipment|rules)-(en|fr)$/;
-const UUID_PATTERN = /Compendium\.cypher\.([a-z-]+)\.(Item|JournalEntry)\.([A-Za-z0-9]{16})/g;
+const UUID_PATTERN = /Compendium\.cypher\.([a-z-]+)\.(Item|JournalEntry)\.([A-Za-z0-9]{16})(?:\.JournalEntryPage\.([A-Za-z0-9]{16}))?/g;
 
 function groupKey(family, logicalId) {
   return family + ":" + logicalId;
@@ -37,7 +37,7 @@ async function catalogue(checkout) {
 /** Apply a known compendium UUID substitution in stored structured and HTML text. */
 export function rewriteCompendiumLinks(value, mapped) {
   if (typeof value === "string") {
-    return value.replace(UUID_PATTERN, (uuid, pack, kind, id) => {
+    return value.replace(UUID_PATTERN, (uuid, pack, kind, id, pageId) => {
       // Keep third-party links outside this system untouched.
       if (!PACK_PATTERN.test(pack)) return uuid;
       const replacement = mapped.get(uuid);
@@ -120,6 +120,14 @@ export async function migrateCanonicalIds(checkout = root) {
       const targetId = proposedPageId(pair.canonical, anchor);
       for (const row of [pair.en, pair.fr]) {
         const page = row.data.pages[index];
+        const oldPageUuid = "Compendium.cypher." + row.pack + ".JournalEntry." +
+          row.data._id + ".JournalEntryPage." + page._id;
+        const newPageUuid = "Compendium.cypher." + row.pack + ".JournalEntry." +
+          proposedFoundryId(pair.canonical) + ".JournalEntryPage." + targetId;
+        if (UUIDs.has(oldPageUuid) && UUIDs.get(oldPageUuid) !== newPageUuid) {
+          throw new Error("Conflicting Journal page UUID: " + oldPageUuid);
+        }
+        UUIDs.set(oldPageUuid, newPageUuid);
         page.flags ??= {};
         page.flags.cypherFoundry ??= {};
         page.flags.cypherFoundry.identity ??= {};
