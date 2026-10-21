@@ -136,6 +136,24 @@ no Artifact inventory, so extraction is explicitly source-blocked.
 
 ## 7. Phase 4 — CRD Journals, Quick Reference, and guides — Planned
 
+### PR4 source-callout preflight (2026-10-21)
+
+- [x] Add a source-backed OOXML inventory of callout candidates, boxed passages,
+  examples, GM intrusions and tables from the checked-in CRD.
+- [x] Enforce the preservation of all 42 Focus Genre themes and GM intrusion
+  paragraphs against normalized English compendiums.
+- [x] Record source-locked deferral of four general rule/example paragraphs
+  outside the seven selected Journal scopes.
+- [ ] Adjudicate the 100 visual groups whose **complete** boxed content is
+  not yet proven to reside in the current EN compendiums; do not mistake
+  absent Item evidence for a proven rule omission.
+- [ ] Incorporate deferred equipment GM advice and genre/rules examples in
+  their appropriate future full-CRD Journals.
+
+Reproduce the [callout inventory](crd-callout-audit.md) using
+`npm run audit:callouts -- --normalized`. No summaries or invented rule
+text are permitted to close the outstanding entries.
+
 ### 7.1 Core CRD Journal
 
 - [ ] Inventory reference and procedure sections.

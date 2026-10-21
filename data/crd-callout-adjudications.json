@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "referenceSha256": "cbf439c9d6fc2c55860a8d0fa52a70be838522e66482d2706bd6ea3f6142c729",
+  "policy": "These annotations are review dispositions, not claims that the CRD text is already in a compendium. They do not rewrite or summarize source passages.",
+  "decisions": [
+    {
+      "paragraph": 3035,
+      "kind": "example",
+      "sectionPrefix": "Superheroes Genre / Creating Superhero Characters / Secret Identity Equipment Bundle",
+      "status": "deferred-full-crd-journal",
+      "target": "Genre creation examples",
+      "reason": "Character-building example, not a missing Item Ability definition; the seven existing Journals cover selected core rules only."
+    },
+    {
+      "paragraph": 3036,
+      "kind": "example",
+      "sectionPrefix": "Superheroes Genre / Creating Superhero Characters / Secret Identity Equipment Bundle",
+      "status": "deferred-full-crd-journal",
+      "target": "Genre creation examples",
+      "reason": "Character-building example, not a missing Item Ability definition; requires a complete genre reference Journal."
+    },
+    {
+      "paragraph": 5594,
+      "kind": "gm-intrusion",
+      "sectionPrefix": "Equipment",
+      "status": "deferred-full-crd-journal",
+      "target": "Equipment GM-intrusion reference",
+      "reason": "General limited-use equipment GM intrusion, not tied to one equipment record; no equipment rules Journal currently exists."
+    },
+    {
+      "paragraph": 7953,
+      "kind": "clarification",
+      "sectionPrefix": "Rules of the Game / Doing Something Else",
+      "status": "deferred-full-crd-journal",
+      "target": "Doing Something Else rules reference",
+      "reason": "General guidance passage outside the seven currently selected rule Journals."
+    }
+  ]
+}

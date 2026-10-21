@@ -6,6 +6,18 @@ mechanical fields. Those verified defects were corrected. Individual Ability,
 Cypher, and passive-benefit automation remains incomplete; catalogue presence,
 schema validation, and chat output do not establish executable behavior.
 
+## Later source audit (PR4, 2026-10-21)
+
+The historical 2026-10-11 review below used a private DOCX and describes the
+then-current **1,372-document** normalized catalogue. It is retained as a
+dated result, not a current completeness claim. The repository now contains
+a source file at `docs/Cypher-Reference-Document-2026-07-29.docx` with a
+**different file SHA-256**, and the normalized catalogue includes 1,373 EN
+records. See [the PR4 source callout inventory](crd-callout-audit.md) for the
+current DOCX SHA, 890 callout candidates, 226 visual groups, 61 tables, exact
+coverage evidence and source-locked outstanding decisions. Do not silently
+reuse historical paragraph locators against the newer file.
+
 ## Evidence and reproducibility
 
 The private reference is `docs/local/Cypher-Reference-Document-2026-07-29.docx`,
