@@ -52,7 +52,7 @@ test("Given legacy bilingual sources, when packs build, then reviewed and draft 
     const oldFrench = JSON.parse(await readFile(legacyFrench, "utf8"));
     oldFrench.name = "OLD FRENCH NAME MUST NOT APPEAR";
     oldFrench.system.description = "<p>OLD FRENCH CONTENT MUST NOT APPEAR.</p>";
-    await writeFile(legacyFrench, JSON.stringify(oldFrench, null, 2) + "\\n");
+    await writeFile(legacyFrench, JSON.stringify(oldFrench, null, 2) + "\n");
     // Simulate editorial approval only inside this test's disposable checkout.
     // One existing build exercises effects, table results and embedded journal text.
     const reviewed = new Map();
