@@ -302,13 +302,22 @@ translation key.
 - Foundry _id values remain implementation identifiers.
 - Logical IDs remain stable across pack rebuilds and language variants.
 
-The equipment inventory predates the slug convention. Its existing logical IDs
-use the canonical English tuple of genre, price category and source name, for
-example `equipment.Fantasy.inexpensive.Arrows (12)`. Preserve these grandfathered
-IDs exactly, including capitalization, spaces and punctuation. Resolve their
-English source relationship using the tuple rather than a localized display
-name. Do not rename these IDs, document IDs or live UUIDs merely to make them
-look like newer slugs.
+The equipment inventory originally used non-slug English genre/price/name
+tuples (for example `equipment.Fantasy.inexpensive.Arrows (12)`). PR2
+normalization now canonicalizes these to
+`equipment.fantasy.inexpensive.arrows-12`. All tuple components remain
+present; French display names never participate in identity computation.
+Legacy editable source files and French editorial proposals may retain old
+keys until normalization/translation materialization, but the published
+normalized packs use only canonical identities.
+
+Every normalized Item and JournalEntry document has the same `_id` in EN and
+FR, computed as the first 16 hex characters of SHA-256 of the canonical UTF-8
+logical ID. The parent-derived Folder IDs and English-anchored Journal page
+IDs are deterministic too. The full UUID still differs by its EN/FR pack
+collection. A translation-only edit cannot alter any of these identities.
+This is an intentional breaking change for existing world-stored compendium
+UUIDs; back up and reimport or migrate world documents explicitly.
 
 ### English/French pairing
 
