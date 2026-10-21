@@ -6,7 +6,8 @@
  * then compare its distributable identities with the untouched authoring IDs.
  * This module never changes compendium sources or generated LevelDB packs.
  */
-import { createHash } from "node:crypto";
+import { identitySlug, proposedLogicalId, proposedFoundryId, proposedPageId, proposedFolderId } from "./source-migration/id-contract.mjs";
+export { identitySlug, proposedLogicalId, proposedFoundryId } from "./source-migration/id-contract.mjs";
 import { execFileSync } from "node:child_process";
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -17,41 +18,6 @@ import { createValidationWorkspace, removeValidationWorkspace } from "./validati
 const ROOT = path.resolve(import.meta.dirname, "..");
 const FOUNDRY_ID = /^[A-Za-z0-9]{16}$/;
 const UUID_REFERENCE = /Compendium\.cypher\.([A-Za-z0-9-]+)\.(Item|JournalEntry)\.([A-Za-z0-9]{16})/g;
-
-/** Normalize a human-readable source identity component without using French text. */
-export function identitySlug(value) {
-  return String(value).normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-}
-
-/**
- * Propose a stable, language-neutral logical ID for PR2.
- * Existing equipment IDs include the English genre/price/name tuple; retain
- * all its components before sluggifying. Any collision is reported, not guessed.
- * @param {string} logicalId Canonical English source ID from normalized records.
- * @returns {string} Candidate identity, never applied by this audit.
- */
-export function proposedLogicalId(logicalId) {
-  if (typeof logicalId !== "string" || !logicalId.trim()) {
-    throw new Error("Missing canonical English logicalId.");
-  }
-  const components = logicalId.split(".");
-  if (components.some(component => !identitySlug(component))) {
-    throw new Error("Cannot normalize logicalId: " + logicalId);
-  }
-  return components.map(identitySlug).join(".");
-}
-
-/**
- * Foundry accepts sixteen ASCII alphanumerics for document IDs. The full
- * proposed canonical logical ID is hashed; display names and locale never enter.
- * @param {string} logicalId Proposed language-neutral ID.
- * @returns {string} Deterministic 16-character hexadecimal Foundry document ID.
- */
-export function proposedFoundryId(logicalId) {
-  if (!logicalId) throw new Error("Cannot hash an empty logicalId.");
-  return createHash("sha256").update(logicalId, "utf8").digest("hex").slice(0, 16);
-}
 
 function documentKind(document) {
   return document.document === "JournalEntry" ? "JournalEntry" : "Item";
@@ -81,6 +47,7 @@ function inspectEntry(record, authoring, canonicalId, targetId) {
     pages: (document.pages ?? []).map((page, index) => ({
       index,
       currentId: page._id,
+      sourcePageId: page.flags?.cypherFoundry?.identity?.sourcePageId ?? page._id,
       currentKey: page._key,
       // Keep the stable EN page identity as the pairing anchor (see pairPages).
       proposedId: null
@@ -113,8 +80,8 @@ function pairPages(english, french, targetLogicalId, issues) {
     });
   }
   for (const [index, page] of enPages.entries()) {
-    const anchor = page.currentId ?? "ordinal-" + index;
-    const target = proposedFoundryId(targetLogicalId + ":page:" + anchor);
+    const anchor = page.sourcePageId;
+    const target = proposedPageId(targetLogicalId, anchor);
     page.proposedId = target;
     if (frPages[index]) frPages[index].proposedId = target;
   }
@@ -290,7 +257,7 @@ export function auditFolderPairs(folders) {
   const entries = [...groups.values()].sort((a, b) => a.family.localeCompare(b.family, "en") ||
     a.relative.localeCompare(b.relative, "en"));
   for (const group of entries) {
-    const id = proposedFoundryId(group.logicalId);
+    const id = proposedFolderId(group.family, group.relative);
     if (!group.en || !group.fr) issues.missingPairs.push({ relative: group.relative, family: group.family });
     for (const item of [group.en, group.fr]) {
       if (!item) continue;
