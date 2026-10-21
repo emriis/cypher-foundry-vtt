@@ -148,6 +148,10 @@ The [Rules Journals localization](localization-rules-journals.md) integrates all
 
 The [transversal bilingual audit](localization-integrity.md) validates all 1,373 source-backed English/French pairs, normative UI glossary bindings and the strict reviewed-only compile plan. Semantic proof, naming in contextual prose and final visible/UI checks remain deferred to the in-Foundry review. No localized prose is rewritten by this audit.
 
+### Strict release candidate and final Foundry checks
+
+The [final Foundry acceptance checklist](localization-foundry-acceptance.md) covers strict reviewed-only compendium generation, reproducible system packaging and a separate in-application EN/FR acceptance process. CI packaging success must not be confused with licensed live Foundry E2E or semantic translation certification.
+
 ## Compendium organization and source identities
 
 Keep packs separated by family **and** language. Items and JournalEntries have
