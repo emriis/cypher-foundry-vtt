@@ -2,7 +2,7 @@
   "logicalId": "ability.a-smile-and-a-word",
   "sourceLogicalId": "ability.a-smile-and-a-word",
   "language": "fr",
-  "status": "proposed",
+  "status": "reviewed",
   "fields": [
     {
       "path": "name",
@@ -12,7 +12,7 @@
     {
       "path": "system.description",
       "sourceHash": "5482efe4f880e0a7792ab3bbfca05ba1a155a730ac64c55218985534d3c7bb0b",
-      "text": "Lorsque vous interagissez avec succès avec une créature en réussissant une tâche de charme, de tromperie ou d’intimidation, même pour calmer des animaux ou communiquer avec quelqu’un ou quelque chose dont vous ne parlez pas la langue, vous apprenez aussi une petite information utile ou, du moins, intéressante. Par exemple, si vous convainquez le garde de vous laisser passer, vous pourriez aussi apprendre que son supérieur revient dans dix minutes. Action."
+      "text": "Lorsque vous interagissez avec succès avec une créature en réussissant une tâche de charme, de tromperie ou d’intimidation, même pour calmer des animaux ou communiquer avec quelqu’un ou quelque chose dont vous ne parlez pas la langue, vous apprenez aussi une petite information utile ou, du moins, intéressante. Par exemple, si vous convainquez une personne chargée de garder un passage de vous laisser passer, vous pourriez aussi apprendre que la personne qui la supervise revient dans dix minutes. Action."
     }
   ]
 }
