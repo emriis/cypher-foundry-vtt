@@ -2,7 +2,7 @@
   "logicalId": "ability.improved-follower",
   "sourceLogicalId": "ability.improved-follower",
   "language": "fr",
-  "status": "proposed",
+  "status": "reviewed",
   "fields": [
     {
       "path": "name",
@@ -12,7 +12,7 @@
     {
       "path": "system.description",
       "sourceHash": "cc3c6bdb70e042394702317fc0789d5ab620adf282dc8f012424b633b7d427ac",
-      "text": "L’un de vos compagnons accroît sa puissance générale, ses connaissances et ses capacités. Choisissez l’un de vos compagnons. Son niveau augmente de 1, chacun de ses modificateurs existants augmente de 1, et il gagne un nouveau modificateur (égal à son niveau de base plus 1). Vous pouvez choisir cette aptitude une fois par rang, en améliorant chaque fois un compagnon (le même ou un autre)."
+      "text": "L’un de vos compagnons accroît sa puissance générale, ses connaissances et ses capacités. Choisissez l’un de vos compagnons. Son niveau augmente de 1, chacune de ses modifications existantes augmente de 1, et il gagne une nouvelle modification (égal à son niveau de base plus 1). Vous pouvez choisir cette aptitude une fois par rang, en améliorant chaque fois un compagnon (le même ou un autre)."
     }
   ]
 }
