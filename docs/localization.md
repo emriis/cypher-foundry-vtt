@@ -120,9 +120,13 @@ while the release's global reviewed-only gate is still pending.
 The [PR9 editorial preflight](localization-pr9-abilities-batch3.md) selects the
 next **175 canonical Ability IDs** after PR7 and PR8, and produces a complete
 source-backed bilingual comparison via `npm run audit:abilities-pr9`.
-The tranche is **not yet approved**: its statuses stay `proposed` until every
-source clause is checked, corrected where necessary and explicitly validated.
-The reviewed count remains **461 / 1,373**; strict publication remains gated.
+The tranche has been marked `reviewed` in its 175 editorial proposals,
+bringing the repository status count to **636 / 1,373** (525 Abilities and
+111 Skills/Descriptors). The audit reports all source-hashed bilingual
+fields, but a green structural audit does **not** independently prove full
+semantic fidelity; the clause-by-clause editorial proof must be confirmed
+before interpreting these statuses as a completed human review.
+Strict publication remains gated for the 737 pending records.
 
 ## Compendium organization and source identities
 
