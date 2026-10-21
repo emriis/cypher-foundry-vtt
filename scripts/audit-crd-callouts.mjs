@@ -69,16 +69,19 @@ export async function auditCallouts({ root = ROOT, reference = path.join(ROOT, D
     const baseline = JSON.parse(await fs.readFile(path.join(root, "data/crd-text-fidelity.json"), "utf8"));
     const actualHash = createHash("sha256").update(await fs.readFile(reference)).digest("hex");
     if (actualHash !== inventory.referenceSha256) throw new Error("CRD extractor SHA mismatch.");
-    if (actualHash !== baseline.referenceSha256) {
-      throw new Error("CRD reference differs from verified baseline; re-adjudicate source locators.");
-    }
+    // The committed CRD can differ byte-for-byte from the historical private
+    // reference used by the original evidence catalogue. In that case do not
+    // apply stale positional locators: direct source-text matches remain valid,
+    // and the report requires fresh paragraph-by-paragraph adjudication.
+    const baselineHashMatches = actualHash === baseline.referenceSha256;
+    const trustworthyLocators = baselineHashMatches ? baseline.fields : [];
     const texts = sourceFields(records);
     const candidates = inventory.candidates.map(raw => {
       const p = paragraphs[raw.paragraph];
       if (!p || p.index !== raw.paragraph) throw new Error("CRD source locator mismatch: " + raw.paragraph);
       return {
         ...raw,
-        coverage: locateCallout({ ...raw, text: p.text }, texts, baseline.fields)
+        coverage: locateCallout({ ...raw, text: p.text }, texts, trustworthyLocators)
       };
     });
     const statusCounts = {};
@@ -98,7 +101,8 @@ export async function auditCallouts({ root = ROOT, reference = path.join(ROOT, D
       scope: "CRD callout candidates and tables; no completeness claim for full CRD Journals.",
       inputs: { reference: DOCX, sourceMode: normalized ? "normalized" : "authored",
         englishDocuments: records.filter(row => row.pack.endsWith("-en")).length,
-        baselineContracts: baseline.fields.length },
+        baselineContracts: baseline.fields.length, baselineHashMatches,
+        historicalReferenceSha256: baseline.referenceSha256 },
       summary: { paragraphs: inventory.paragraphs, candidates: candidates.length,
         tables: inventory.tables.length, kinds: inventory.candidateTypes,
         coverage: statusCounts, coverageByKind: kindCounts,
@@ -109,7 +113,8 @@ export async function auditCallouts({ root = ROOT, reference = path.join(ROOT, D
     await fs.mkdir(path.dirname(output), { recursive: true });
     await fs.writeFile(output, JSON.stringify(data, null, 2) + "\n");
     console.log(JSON.stringify({
-      report: path.relative(root, output), sourceHashMatched: true,
+      report: path.relative(root, output), baselineHashMatches,
+      actualReferenceSha256: actualHash, historicalReferenceSha256: baseline.referenceSha256,
       englishDocuments: data.inputs.englishDocuments, summary: {
         paragraphs: data.summary.paragraphs, tables: data.summary.tables,
         candidates: data.summary.candidates, kinds: data.summary.kinds,
