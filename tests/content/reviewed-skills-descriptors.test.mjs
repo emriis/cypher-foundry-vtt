@@ -8,6 +8,7 @@ import path from "node:path";
 import test from "node:test";
 import { readCompendiumCatalogue, readFrenchProposals, reviewCatalogue } from "../../scripts/review-translations.mjs";
 import { materializeTranslations } from "../../scripts/localization/materialize-translations.mjs";
+import { sourceHash, translationFields } from "../../scripts/localization/compendium-translations.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "../..");
 
@@ -88,5 +89,29 @@ test("unreviewed parent retains English Skill references until its own review", 
     logicalId: document.flags.cypherFoundry.crd.logicalId,
     document
   }));
-  const { sourceHash, translationFields } = null;
+  const proposal = (source, translations, status) => ({
+    logicalId: source.flags.cypherFoundry.crd.logicalId,
+    sourceLogicalId: source.flags.cypherFoundry.crd.logicalId,
+    language: "fr", status,
+    fields: [...translationFields(source)].map(([field, text]) => ({
+      path: field, text: translations[field] ?? text, sourceHash: sourceHash(text)
+    }))
+  });
+  const proposals = new Map([
+    ["skill.charm", { file: "skill.charm.json", proposal: proposal(skillEn, {
+      name: "Charme", "system.description": "<p>Une interaction sociale positive.</p>"
+    }, "reviewed") }],
+    ["descriptor.example", { file: "descriptor.example.json", proposal: proposal(descEn, {
+      name: "Exemple", "system.description": "<p>Choisissez une compétence.</p>",
+      "system.skillOptions.0": "Charme"
+    }, "proposed") }]
+  ]);
+  const published = materializeTranslations(rows, proposals);
+  assert.equal(published.get("sf").name, "Charme");
+  assert.equal(published.get("df").name, "Example");
+  assert.deepEqual(published.get("df").system.skillOptions, ["Charm"]);
+  assert.equal(published.get("df").flags.cypherFoundry.translation.status, "untranslated");
+  const preview = materializeTranslations(rows, proposals, { includeProposed: true });
+  assert.equal(preview.get("df").name, "Exemple");
+  assert.deepEqual(preview.get("df").system.skillOptions, ["Charme"]);
 });
