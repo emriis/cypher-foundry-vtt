@@ -115,6 +115,15 @@ keeps mechanically different versions separate and the audit
 comparison worksheet. PR7's reviewed content remains strictly checked,
 while the release's global reviewed-only gate is still pending.
 
+### PR9 — Third Ability review tranche (preflight)
+
+The [PR9 editorial preflight](localization-pr9-abilities-batch3.md) selects the
+next **175 canonical Ability IDs** after PR7 and PR8, and produces a complete
+source-backed bilingual comparison via `npm run audit:abilities-pr9`.
+The tranche is **not yet approved**: its statuses stay `proposed` until every
+source clause is checked, corrected where necessary and explicitly validated.
+The reviewed count remains **461 / 1,373**; strict publication remains gated.
+
 ## Compendium organization and source identities
 
 Keep packs separated by family **and** language. Items and JournalEntries have
