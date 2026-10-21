@@ -128,6 +128,10 @@ semantic fidelity; the clause-by-clause editorial proof must be confirmed
 before interpreting these statuses as a completed human review.
 Strict publication remains gated for the 737 pending records.
 
+### PR10 — Final 176 Abilities (review pending)
+
+The [fourth batch](localization-pr10-abilities-batch4.md) inventories the remaining **176 Abilities** from `ability.resuscitate` to `ability.wraith-cloak`. The new comparison audit `npm run audit:abilities-pr10` preserves source-backed English and French pairs. These drafts remain `proposed` until semantic source review; earlier 636 reviewed records stay unchanged.
+
 ## Compendium organization and source identities
 
 Keep packs separated by family **and** language. Items and JournalEntries have
