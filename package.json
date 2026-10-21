@@ -38,7 +38,8 @@
     "audit:terminology": "node scripts/audit-terminology.mjs",
     "audit:abilities-pr7": "node scripts/audit-ability-batch-1.mjs",
     "audit:abilities-pr8": "node scripts/audit-ability-batch-2.mjs",
-    "audit:abilities-pr9": "node scripts/audit-ability-batch-3.mjs"
+    "audit:abilities-pr9": "node scripts/audit-ability-batch-3.mjs",
+    "audit:abilities-pr10": "node scripts/audit-ability-batch-4.mjs"
   },
   "dependencies": {
     "@foundryvtt/foundryvtt-cli": "^3.0.4"
