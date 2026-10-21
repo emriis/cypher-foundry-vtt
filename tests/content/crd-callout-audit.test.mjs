@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { locateCallout } from "../../scripts/audit-crd-callouts.mjs";
+import { locateCallout, validateFocusCallouts, validateAdjudications } from "../../scripts/audit-crd-callouts.mjs";
 
 const fields = [
   { file: "packs/foci-en/_source/example.json", logicalId: "focus.example",
@@ -46,4 +46,29 @@ test("absent passages are never silently treated as verified", () => {
   const result = locateCallout({ paragraph: 999, text: "The GM may alter the condition." },
     fields, []);
   assert.equal(result.status, "no-proven-pack-coverage");
+});
+
+test("all canonical Focus sidebars must be matched in their entirety", () => {
+  const candidates = [
+    { paragraph: 1, kind: "genre-themes", section: "Foci / Understanding Your Focus / Example",
+      coverage: { status: "verbatim-in-english-pack" } },
+    { paragraph: 2, kind: "gm-intrusion", section: "Foci / Understanding Your Focus / Example",
+      coverage: { status: "verbatim-in-english-pack" } }
+  ];
+  assert.deepEqual(validateFocusCallouts(candidates, 1), []);
+  candidates[1].coverage.status = "no-proven-pack-coverage";
+  assert.match(validateFocusCallouts(candidates, 1).join("\n"), /Unrepresented Focus gm-intrusion/);
+  assert.match(validateFocusCallouts(candidates, 2).join("\n"), /Expected 2 Focus/);
+});
+
+test("editorial deferrals must match the exact CRD and cannot disguise a represented passage", () => {
+  const candidate = { paragraph: 9, kind: "gm-intrusion", section: "Equipment / Special Rules",
+    coverage: { status: "no-proven-pack-coverage" } };
+  const registry = { referenceSha256: "abc",
+    decisions: [{ paragraph: 9, kind: "gm-intrusion", sectionPrefix: "Equipment",
+      status: "deferred-full-crd-journal", reason: "General rule.", target: "Equipment Journal" }] };
+  assert.equal(validateAdjudications([candidate], registry, "abc").size, 1);
+  assert.throws(() => validateAdjudications([candidate], registry, "changed"), /different source revision/);
+  candidate.coverage.status = "verbatim-in-english-pack";
+  assert.throws(() => validateAdjudications([candidate], registry, "abc"), /Already-covered/);
 });
