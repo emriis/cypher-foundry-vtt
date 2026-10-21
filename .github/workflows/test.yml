@@ -258,7 +258,7 @@ jobs:
           retention-days: 30
           if-no-files-found: error
   equipment-pr12:
-    name: PR12 English/French Types and Foci editorial audit
+    name: PR12 English/French Equipment and Cyphers audit
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -274,7 +274,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: pr12-types-foci-comparative-review
+          name: pr12-equipment-comparative-review
           path: reports/equipment-review-pr12.json
           retention-days: 30
           if-no-files-found: error
