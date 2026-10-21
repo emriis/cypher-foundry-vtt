@@ -57,43 +57,25 @@ from the EN or FR family pack to obtain that language's content. Changing the
 interface language leaves existing world Items, Journals and Actor-owned Items
 in their imported language.
 
-## Editorial glossary
+## Terminology and inclusive editorial style
 
-| Source term | French | Status and meaning |
-| --- | --- | --- |
-| First action | Action réflexe | Confirmed by the user; activation class `firstAction` |
-| Action | Action | Confirmed by the user; activation class `action` |
-| Last action | Action lente | Confirmed by the user; activation class `lastAction` |
-| Powerhouse | Puissance incarnée | User-confirmed Type name; includes physical, dexterous and intellectual capabilities |
-| Powerstar | Prodige du pouvoir | User-confirmed Type name; one central spectacular superpower |
-| Edge | Avantage | User's established term; Pool cost reduction, never a different die-roll procedure |
-| Might / Speed / Intellect | Puissance / Célérité / Intellect | Existing stat vocabulary; identifiers remain unchanged |
-| Pool | Réserve | Current points and maximum capacity remain distinct |
-| Effort | Effort | Levels applied and points paid are different quantities |
-| Tier | Rang | Editorial proposal; ordinary character progression |
-| Rank | Degré de puissance | Editorial proposal; superhero Type progression |
-| Ability | Aptitude | Editorial proposal |
-| Enabler | Aptitude passive | Editorial proposal for activation classification; not necessarily permanent, cost-free or unlimited |
-| Step | Pas | Difficulty change; use degré de gravité when discussing a wound severity |
-| Ease / hinder | Faciliter / entraver | Preserve the direction and number of steps |
-| Asset | Atout | Distinct from Avantage and Effort |
-| Superheroics | Prouesses héroïques | Editorial proposal; preserve its stated Effort exceptions |
-| Power Shifts | Amplificateurs de puissance | Editorial proposal; the Power category itself is Pouvoir |
-| Rally | Se reprendre | Healing action; retain its genre-specific conditions |
-| Focus / Cypher | Focus / Cypher | Editorial proposal to retain these terms |
+The single normative French mechanics lexicon is
+[`data/localization/glossary-fr.json`](../data/localization/glossary-fr.json);
+the accompanying [translation and inclusive writing policy](terminology-fr.md)
+defines confirmed/established/proposed terminology, grammatical conventions,
+review criteria and source fidelity boundaries. Historical tables in this
+document and earlier UI reviews are not separate translation authorities.
 
-Use consistent **vous**, sentence case, French punctuation and readable sentences.
-Maintain the same register across names, help and warnings. Preserve measurements
-in both source unit systems, formulas, examples, prerequisites, duration, targets,
-action classes and cancellation conditions. Do not introduce D&D-style
-“advantage/disadvantage” wording to describe easing and hindrance.
+```bash
+npm run audit:terminology
+```
 
-Action labels translate a source classification, not the order of every ordinary
-sentence. “Your first action in combat” may mean *votre première action du combat*;
-it must not automatically become *votre action réflexe*. Likewise, *action réflexe*
-does not grant a reaction outside the CRD action sequence, and *action lente* does
-not change the rule's duration. Stored enum values remain `firstAction`, `action`
-and `lastAction`.
+The audit enforces exact term ownership for the explicitly bound UI labels and
+produces an advisory report on inclusive-language and mechanical ambiguities
+in the **proposed** French compendium text. Never replace source CRD passages
+mechanically based on a word list or automatically approve an entry. A
+glossary term's status is **independent** of a proposal's `reviewed` status;
+neither terminology nor CI structural checks certify semantic fidelity.
 
 ## Compendium organization and source identities
 
