@@ -164,6 +164,10 @@ English CRD content is the mechanical authority.
 
 French records:
 
+- have no independent editorial authority in `packs/*-fr/_source/`; every translated display field is materialized at compilation from English CRD text and the uniquely authored `translations/fr/` proposal;
+- fall back visibly to canonical English (status `untranslated`, source language `en`) until a reviewed French proposal exists, rather than using historical French `_source` text;
+- can be included as drafts only with `--include-proposed`; tagged releases use `--require-reviewed` and reject incomplete approvals;
+
 - share the canonical logical ID;
 - preserve equivalent mechanics;
 - use the supplied Character Book localization when it faithfully matches the
