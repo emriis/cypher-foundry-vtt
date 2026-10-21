@@ -39,3 +39,29 @@ test("PR9 audit cannot approve a draft or alter canonical identity", async () =>
   const ids = await selectPR9Abilities(ROOT);
   assert.ok(ids.every(id => /^ability\.[a-z0-9-]+$/.test(id)));
 });
+
+test("PR9 locked variants remain separate, and none of its drafts is silently promoted", async () => {
+  const manifest = JSON.parse(await fs.readFile(path.join(ROOT, "data/localization/ability-review-batch-3.json"), "utf8"));
+  assert.equal(manifest.schemaVersion, 1);
+  assert.equal(manifest.expected, 175);
+  assert.equal(manifest.ids.length, 175);
+  assert.equal(new Set(manifest.ids).size, 175);
+  assert.equal(manifest.ids[0], "ability.infer-thoughts");
+  assert.equal(manifest.ids.at(-1), "ability.resonant-palm");
+  for (const variants of [
+    ["ability.invisibility-1deb88a5b977", "ability.invisibility-724e3c5611b4"],
+    ["ability.jump-attack-a7b79b914e52", "ability.jump-attack-b9f203df6db4"],
+    ["ability.machine-companion-5cf919f68484", "ability.machine-companion-8746b7c84e90"],
+    ["ability.mind-reading-086a4c8ea1f4", "ability.mind-reading-613857bce03f", "ability.mind-reading-9cc67835a3aa"],
+    ["ability.no-need-for-weapons-e116a685139a", "ability.no-need-for-weapons-e286df086fb2"],
+    ["ability.prepare-spell-2d7a36fdd65a", "ability.prepare-spell-9fb0e71b461c"],
+    ["ability.quarry-2b6cfec01a1b", "ability.quarry-ba43f470f733"]
+  ]) {
+    for (const id of variants) assert.ok(manifest.ids.includes(id), "Missing independent rules variant: " + id);
+  }
+  const proposals = await readFrenchProposals(ROOT);
+  for (const id of manifest.ids) {
+    assert.ok(proposals.has(id), "Missing source-backed editorial record: " + id);
+    assert.equal(proposals.get(id).proposal.language, "fr", id);
+  }
+});
