@@ -66,7 +66,7 @@ test("PR9 locked variants remain separate, and none of its drafts is silently pr
   }
 });
 
-test("PR9 yields 525 reviewed Abilities, 111 earlier records and 737 remaining proposals", async () => {
+test("PR9 approvals remain intact when later batches are reviewed", async () => {
   const records = await readCompendiumCatalogue(ROOT);
   const proposals = await readFrenchProposals(ROOT);
   const review = reviewCatalogue(records, proposals);
@@ -75,8 +75,8 @@ test("PR9 yields 525 reviewed Abilities, 111 earlier records and 737 remaining p
     counts.set(row.status, (counts.get(row.status) ?? 0) + 1);
   }
   assert.equal(review.entries.length, 1373);
-  assert.equal(review.entries.filter(row => row.logicalId.startsWith("ability.") && row.status === "reviewed").length, 525);
-  assert.equal(counts.get("reviewed"), 636);
-  assert.equal(counts.get("proposed"), 737);
+  const reviewedAbilities = review.entries.filter(row => row.logicalId.startsWith("ability.") && row.status === "reviewed");
+  assert.ok(reviewedAbilities.length >= 525, "Later batches must not roll back PR9 approvals");
+  assert.equal((counts.get("reviewed") ?? 0) + (counts.get("proposed") ?? 0), 1373);
   assert.deepEqual(review.orphanedProposals, []);
 });
