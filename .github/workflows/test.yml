@@ -80,6 +80,28 @@ jobs:
           echo 'Command: `npm run test:content`' >> "$GITHUB_STEP_SUMMARY"
           echo "Content failures are isolated from rule and application failures." >> "$GITHUB_STEP_SUMMARY"
 
+  identities:
+    name: Bilingual compendium identity inventory
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Audit unmodified authored and normalized identities
+        run: npm run audit:ids
+      - name: Upload proposed EN/FR migration map
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: compendium-identity-audit
+          path: reports/compendium-identity-audit.json
+          if-no-files-found: warn
+          retention-days: 7
+
   integration:
     name: Integration and architecture tests
     runs-on: ubuntu-latest
@@ -181,6 +203,7 @@ jobs:
       - unit
       - behavior
       - content
+      - identities
       - integration
       - repository
       - coverage
@@ -196,6 +219,7 @@ jobs:
           echo "| Unit and document tests | ${{ needs.unit.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| BDD behavior tests | ${{ needs.behavior.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Content contracts | ${{ needs.content.result }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Compendium identity audit | ${{ needs.identities.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Integration and architecture | ${{ needs.integration.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Source normalization | ${{ needs.sources.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Repository checks | ${{ needs.repository.result }} |" >> "$GITHUB_STEP_SUMMARY"
@@ -204,6 +228,7 @@ jobs:
           if [ "${{ needs.unit.result }}" != "success" ] || \
              [ "${{ needs.behavior.result }}" != "success" ] || \
              [ "${{ needs.content.result }}" != "success" ] || \
+             [ "${{ needs.identities.result }}" != "success" ] || \
              [ "${{ needs.integration.result }}" != "success" ] || \
              [ "${{ needs.repository.result }}" != "success" ] || \
              [ "${{ needs.sources.result }}" != "success" ] || \
