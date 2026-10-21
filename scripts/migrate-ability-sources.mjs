@@ -13,6 +13,7 @@ import { normalizeDescriptorSources, normalizeTypeSources, normalizeFocusSources
 import { pruneAbilityArtifacts, pruneAbilityReferences, mergeGenreAbilities } from "./source-migration/cleanup.mjs";
 import { collectEnglishRegistry, collectStandaloneEnglishLogicalIds, migrateLanguage } from "./source-migration/registry.mjs";
 import { alignFrenchMechanics } from "./source-migration/bilingual-mechanics.mjs";
+import { migrateCanonicalIds } from "./source-migration/canonical-ids.mjs";
 
 
 /**
@@ -40,6 +41,8 @@ export async function migrateAbilitySources() {
   await normalizeEquipmentSources();
   // Pair references only after every family has its final canonical identity.
   await alignFrenchMechanics();
+  // Only now do all families have source-backed pairing, stable mechanics and final references.
+  await migrateCanonicalIds();
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
