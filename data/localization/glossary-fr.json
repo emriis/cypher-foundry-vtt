@@ -1,0 +1,578 @@
+{
+  "schemaVersion": 1,
+  "reference": "Cypher Reference Document 2026-07-29 (EN). Existing UI labels and confirmed decisions as documented in docs/localization.md.",
+  "policy": "Only status=confirmed reflects an explicit user-confirmed translation choice. Established reflects the project's existing UI usage. Proposed labels require editorial review and do not imply approval of any CRD translation.",
+  "entries": [
+    {
+      "id": "activation.action",
+      "english": "Action",
+      "french": "Action",
+      "status": "confirmed",
+      "context": "Activation class `action`; distinguish from ordinary French infinitives.",
+      "uiBindings": [
+        "CYPHER.Ability.ActionStandard"
+      ]
+    },
+    {
+      "id": "activation.first-action",
+      "english": "First action",
+      "french": "Action réflexe",
+      "status": "confirmed",
+      "context": "Activation class `firstAction`; not the chronological first action in ordinary prose.",
+      "uiBindings": [
+        "CYPHER.Ability.ActionFirst"
+      ]
+    },
+    {
+      "id": "activation.last-action",
+      "english": "Last action",
+      "french": "Action lente",
+      "status": "confirmed",
+      "context": "Activation class `lastAction`; not a general duration.",
+      "uiBindings": [
+        "CYPHER.Ability.ActionLast"
+      ]
+    },
+    {
+      "id": "mechanic.ability",
+      "english": "Ability",
+      "french": "Aptitude",
+      "status": "proposed",
+      "context": "Both Type and Focus granted abilities; not a Skill.",
+      "uiBindings": [
+        "TYPES.Item.ability"
+      ]
+    },
+    {
+      "id": "mechanic.armor",
+      "english": "Armor",
+      "french": "Armure",
+      "status": "proposed",
+      "context": "Categories are light/medium/heavy rule categories, not weight.",
+      "uiBindings": [
+        "CYPHER.Armor.Title"
+      ]
+    },
+    {
+      "id": "mechanic.asset",
+      "english": "Asset",
+      "french": "Atout",
+      "status": "proposed",
+      "context": "Difficulty-easing Asset; distinct from Edge and Effort.",
+      "uiBindings": []
+    },
+    {
+      "id": "mechanic.attack",
+      "english": "Attack",
+      "french": "Attaque",
+      "status": "proposed",
+      "context": "Attack roll and defensive task semantics remain distinct.",
+      "uiBindings": []
+    },
+    {
+      "id": "mechanic.attack-roll",
+      "english": "Attack Roll",
+      "french": "Jet d’attaque",
+      "status": "established",
+      "context": "Attack-task roll; distinguish from damage resolution.",
+      "uiBindings": [
+        "CYPHER.Roll.Attack"
+      ]
+    },
+    {
+      "id": "mechanic.attack-skill-category",
+      "english": "Attack skill category",
+      "french": "Catégorie de compétence d’attaque",
+      "status": "established",
+      "context": "Structured weapon attack skill category; not a weapon family.",
+      "uiBindings": [
+        "CYPHER.AttackSkill.Category"
+      ]
+    },
+    {
+      "id": "mechanic.block",
+      "english": "Block",
+      "french": "Bloquer",
+      "status": "proposed",
+      "context": "Defense choice, not Dodge.",
+      "uiBindings": [
+        "CYPHER.Defense.Block"
+      ]
+    },
+    {
+      "id": "mechanic.cypher",
+      "english": "Cypher",
+      "french": "Cypher",
+      "status": "proposed",
+      "context": "Item class; plural Cyphers when an in-app document label requires it.",
+      "uiBindings": [
+        "TYPES.Item.cypher"
+      ]
+    },
+    {
+      "id": "mechanic.dodge",
+      "english": "Dodge",
+      "french": "Esquiver",
+      "status": "proposed",
+      "context": "Defense choice, not Block.",
+      "uiBindings": [
+        "CYPHER.Defense.Dodge"
+      ]
+    },
+    {
+      "id": "mechanic.ease",
+      "english": "Ease",
+      "french": "Faciliter",
+      "status": "proposed",
+      "context": "Lower difficulty by steps; context forms must be conjugated.",
+      "uiBindings": []
+    },
+    {
+      "id": "mechanic.edge",
+      "english": "Edge",
+      "french": "Avantage",
+      "status": "established",
+      "context": "Reduces stat Pool expenditure; not a D&D die-roll advantage.",
+      "uiBindings": [
+        "CYPHER.Edge"
+      ]
+    },
+    {
+      "id": "mechanic.effort",
+      "english": "Effort",
+      "french": "Effort",
+      "status": "established",
+      "context": "Separate level applied, level paid and stat points spent.",
+      "uiBindings": [
+        "CYPHER.Effort"
+      ]
+    },
+    {
+      "id": "mechanic.enabler",
+      "english": "Enabler",
+      "french": "Aptitude passive",
+      "status": "proposed",
+      "context": "Classification, not unlimited, permanently enabled or without cost.",
+      "uiBindings": [
+        "CYPHER.Ability.ActionEnabler",
+        "CYPHER.FocusSheet.Enabler"
+      ]
+    },
+    {
+      "id": "mechanic.experience-points",
+      "english": "Experience points",
+      "french": "Points d’expérience",
+      "status": "established",
+      "context": "Experience currency in French abbreviated PX, not XP.",
+      "uiBindings": [
+        "CYPHER.XP.Title"
+      ]
+    },
+    {
+      "id": "mechanic.focus",
+      "english": "Focus",
+      "french": "Focus",
+      "status": "proposed",
+      "context": "Keep name in document labels; lower-case in running French prose.",
+      "uiBindings": [
+        "CYPHER.Focus",
+        "CYPHER.FocusSheet.Label"
+      ]
+    },
+    {
+      "id": "mechanic.gm-intrusion",
+      "english": "GM intrusion",
+      "french": "Intrusion du MJ",
+      "status": "proposed",
+      "context": "GM intrusion; distinguish free intrusion on a 1 result.",
+      "uiBindings": [
+        "CYPHER.NPC.GMIntrusion"
+      ]
+    },
+    {
+      "id": "mechanic.health",
+      "english": "Health",
+      "french": "Santé",
+      "status": "established",
+      "context": "NPC Health, distinct from character wound capacity.",
+      "uiBindings": [
+        "CYPHER.NPC.Health"
+      ]
+    },
+    {
+      "id": "mechanic.heavy-armor",
+      "english": "Heavy armor",
+      "french": "Armures lourdes",
+      "status": "established",
+      "context": "Plural equipment category label; not measured weight.",
+      "uiBindings": [
+        "CYPHER.Type.ArmorCategory.heavy"
+      ]
+    },
+    {
+      "id": "mechanic.heavy-weapons",
+      "english": "Heavy weapons",
+      "french": "Armes lourdes",
+      "status": "established",
+      "context": "A weapon rule category, not a physical weight value.",
+      "uiBindings": [
+        "CYPHER.Type.WeaponCategory.heavy"
+      ]
+    },
+    {
+      "id": "mechanic.hinder",
+      "english": "Hinder",
+      "french": "Entraver",
+      "status": "proposed",
+      "context": "Increase difficulty by steps; never conflate with Avantage.",
+      "uiBindings": []
+    },
+    {
+      "id": "mechanic.inability",
+      "english": "Inability",
+      "french": "Inaptitude",
+      "status": "established",
+      "context": "Skill inability hinders tasks by one step; not untrained neutral skill.",
+      "uiBindings": [
+        "CYPHER.SkillLevel.inability"
+      ]
+    },
+    {
+      "id": "mechanic.level",
+      "english": "Level",
+      "french": "Niveau",
+      "status": "proposed",
+      "context": "NPC Level is distinct from character Tier.",
+      "uiBindings": [
+        "CYPHER.NPC.Level"
+      ]
+    },
+    {
+      "id": "mechanic.light-armor",
+      "english": "Light armor",
+      "french": "Armures légères",
+      "status": "established",
+      "context": "Plural equipment category label; not measured weight.",
+      "uiBindings": [
+        "CYPHER.Type.ArmorCategory.light"
+      ]
+    },
+    {
+      "id": "mechanic.light-weapons",
+      "english": "Light weapons",
+      "french": "Armes légères",
+      "status": "established",
+      "context": "A weapon rule category, not a physical weight value.",
+      "uiBindings": [
+        "CYPHER.Type.WeaponCategory.light"
+      ]
+    },
+    {
+      "id": "mechanic.major-wound",
+      "english": "Major wound",
+      "french": "Blessure majeure",
+      "status": "proposed",
+      "context": "Severity adjective; distinct from major effect.",
+      "uiBindings": []
+    },
+    {
+      "id": "mechanic.medium-armor",
+      "english": "Medium armor",
+      "french": "Armures moyennes",
+      "status": "established",
+      "context": "Plural equipment category label; not measured weight.",
+      "uiBindings": [
+        "CYPHER.Type.ArmorCategory.medium"
+      ]
+    },
+    {
+      "id": "mechanic.medium-weapons",
+      "english": "Medium weapons",
+      "french": "Armes moyennes",
+      "status": "established",
+      "context": "A weapon rule category, not a physical weight value.",
+      "uiBindings": [
+        "CYPHER.Type.WeaponCategory.medium"
+      ]
+    },
+    {
+      "id": "mechanic.minor-wound",
+      "english": "Minor wound",
+      "french": "Blessure mineure",
+      "status": "proposed",
+      "context": "Severity adjective; not task minor effect.",
+      "uiBindings": []
+    },
+    {
+      "id": "mechanic.moderate-wound",
+      "english": "Moderate wound",
+      "french": "Blessure modérée",
+      "status": "proposed",
+      "context": "Severity adjective; distinct from tier/rank.",
+      "uiBindings": []
+    },
+    {
+      "id": "mechanic.movement",
+      "english": "Movement",
+      "french": "Mouvement",
+      "status": "established",
+      "context": "NPC Movement, not a directly inferred movement rate.",
+      "uiBindings": [
+        "CYPHER.NPC.Movement"
+      ]
+    },
+    {
+      "id": "mechanic.npc-loot",
+      "english": "Loot",
+      "french": "Butin",
+      "status": "established",
+      "context": "NPC loot field; not an automatic generation rule.",
+      "uiBindings": [
+        "CYPHER.NPC.Loot"
+      ]
+    },
+    {
+      "id": "mechanic.npc-motive",
+      "english": "Motive",
+      "french": "Motivation",
+      "status": "established",
+      "context": "NPC narrative motive, not a scripted target condition.",
+      "uiBindings": [
+        "CYPHER.NPC.Motive"
+      ]
+    },
+    {
+      "id": "mechanic.pool",
+      "english": "Pool",
+      "french": "Réserve",
+      "status": "established",
+      "context": "Differentiate current points from maximum Pool capacity.",
+      "uiBindings": []
+    },
+    {
+      "id": "mechanic.power-shift-intelligence",
+      "english": "Intelligence",
+      "french": "Intelligence",
+      "status": "proposed",
+      "context": "Superhero Power Shift only, never the Intellect stat.",
+      "uiBindings": [
+        "CYPHER.PowerShift.intelligence"
+      ]
+    },
+    {
+      "id": "mechanic.power-shift-power",
+      "english": "Power",
+      "french": "Pouvoir",
+      "status": "proposed",
+      "context": "Power Shift category `power`, not Might/Puissance.",
+      "uiBindings": [
+        "CYPHER.PowerShift.power"
+      ]
+    },
+    {
+      "id": "mechanic.power-shifts",
+      "english": "Power Shifts",
+      "french": "Amplificateurs de puissance",
+      "status": "proposed",
+      "context": "Superhero category bonuses; special applicability preserved.",
+      "uiBindings": [
+        "CYPHER.Superhero.PowerShifts"
+      ]
+    },
+    {
+      "id": "mechanic.rally",
+      "english": "Rally",
+      "french": "Se reprendre",
+      "status": "proposed",
+      "context": "Healing action; eligibility and costs remain those of CRD.",
+      "uiBindings": []
+    },
+    {
+      "id": "mechanic.recovery",
+      "english": "Recovery",
+      "french": "Récupération",
+      "status": "proposed",
+      "context": "Recovery procedure, not generic wound removal.",
+      "uiBindings": []
+    },
+    {
+      "id": "mechanic.recovery-roll",
+      "english": "Recovery Roll",
+      "french": "Jet de récupération",
+      "status": "established",
+      "context": "Recovery mechanic, not an immediate wound cure.",
+      "uiBindings": [
+        "CYPHER.Roll.Recovery"
+      ]
+    },
+    {
+      "id": "mechanic.skill",
+      "english": "Skill",
+      "french": "Compétence",
+      "status": "established",
+      "context": "Trained abilities are not the same as Skill ranks.",
+      "uiBindings": [
+        "TYPES.Item.skill"
+      ]
+    },
+    {
+      "id": "mechanic.skill-level",
+      "english": "Skill level",
+      "french": "Niveau d’entraînement",
+      "status": "established",
+      "context": "UI control for inability/practiced/trained/specialized/expert; rules remain tier-limited.",
+      "uiBindings": [
+        "CYPHER.Skill.Level"
+      ]
+    },
+    {
+      "id": "mechanic.stat",
+      "english": "Stat",
+      "french": "Caractéristique",
+      "status": "established",
+      "context": "Primary Might, Speed, Intellect stat, distinct from character Tier.",
+      "uiBindings": [
+        "CYPHER.Stat.Label"
+      ]
+    },
+    {
+      "id": "mechanic.step",
+      "english": "Step",
+      "french": "Pas",
+      "status": "proposed",
+      "context": "Difficulty modification; not a wound severity level.",
+      "uiBindings": [
+        "CYPHER.Roll.Steps"
+      ]
+    },
+    {
+      "id": "mechanic.superhero-rank",
+      "english": "Rank",
+      "french": "Degré de puissance",
+      "status": "proposed",
+      "context": "Superhero Type rank only; explanatory UI suffix is intentional.",
+      "uiBindings": []
+    },
+    {
+      "id": "mechanic.superheroics",
+      "english": "Superheroics",
+      "french": "Prouesses héroïques",
+      "status": "proposed",
+      "context": "Exceptional Effort limits and wounds must remain explicit.",
+      "uiBindings": []
+    },
+    {
+      "id": "mechanic.target-number",
+      "english": "Target number",
+      "french": "Nombre cible",
+      "status": "proposed",
+      "context": "Target number is not task difficulty.",
+      "uiBindings": [
+        "CYPHER.Roll.Target",
+        "CYPHER.NPC.TargetNumber"
+      ]
+    },
+    {
+      "id": "mechanic.task-difficulty",
+      "english": "Task difficulty",
+      "french": "Difficulté",
+      "status": "proposed",
+      "context": "Difficulty is not the target number.",
+      "uiBindings": [
+        "CYPHER.Roll.Difficulty"
+      ]
+    },
+    {
+      "id": "mechanic.task-roll",
+      "english": "Task Roll",
+      "french": "Jet de tâche",
+      "status": "established",
+      "context": "Difficulty-task roll; do not infer attack effects.",
+      "uiBindings": [
+        "CYPHER.Roll.Task"
+      ]
+    },
+    {
+      "id": "mechanic.tier",
+      "english": "Tier",
+      "french": "Rang",
+      "status": "proposed",
+      "context": "Normal character Tier; not superhero Type Rank.",
+      "uiBindings": [
+        "CYPHER.Tier"
+      ]
+    },
+    {
+      "id": "mechanic.wound",
+      "english": "Wound",
+      "french": "Blessure",
+      "status": "proposed",
+      "context": "Source has three severity classes; no extra damage-tracker rule.",
+      "uiBindings": []
+    },
+    {
+      "id": "mechanic.wound-severity",
+      "english": "Wound severity",
+      "french": "Gravité de la blessure",
+      "status": "proposed",
+      "context": "Say degré de gravité, not pas, when reducing wound severity.",
+      "uiBindings": []
+    },
+    {
+      "id": "mechanic.xp",
+      "english": "XP",
+      "french": "PX",
+      "status": "established",
+      "context": "French abbreviation only; mechanical fields and IDs unchanged.",
+      "uiBindings": [
+        "CYPHER.XP.Label"
+      ]
+    },
+    {
+      "id": "stat.intellect",
+      "english": "Intellect",
+      "french": "Intellect",
+      "status": "established",
+      "context": "Stat Pool label; not the `Intelligence` Power Shift.",
+      "uiBindings": [
+        "CYPHER.Stat.intellect"
+      ]
+    },
+    {
+      "id": "stat.might",
+      "english": "Might",
+      "french": "Puissance",
+      "status": "established",
+      "context": "Stat Pool label; never confuse with the Power shift category.",
+      "uiBindings": [
+        "CYPHER.Stat.might"
+      ]
+    },
+    {
+      "id": "stat.speed",
+      "english": "Speed",
+      "french": "Célérité",
+      "status": "established",
+      "context": "Stat Pool label, keep mechanical key `speed`.",
+      "uiBindings": [
+        "CYPHER.Stat.speed"
+      ]
+    },
+    {
+      "id": "type.powerhouse",
+      "english": "Powerhouse",
+      "french": "Puissance incarnée",
+      "status": "confirmed",
+      "context": "Superhero Type name; not merely physical might.",
+      "uiBindings": []
+    },
+    {
+      "id": "type.powerstar",
+      "english": "Powerstar",
+      "french": "Prodige du pouvoir",
+      "status": "confirmed",
+      "context": "Superhero Type name; distinctive main superpower.",
+      "uiBindings": []
+    }
+  ]
+}

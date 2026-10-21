@@ -37,8 +37,13 @@ The detailed source-fidelity and transformation policy is maintained in
   such as "your first action in combat" may require "votre première action du
   combat" instead. Keep enum values and other semantic rule strings unchanged.
 - Preserve logical IDs, Foundry IDs and English CRD locators independently of
-  translated names. Grandfathered equipment logical IDs retain their canonical
-  English genre/price/name tuple, including legacy capitalization and spaces.
+  translated names. Normalized equipment identities retain the English
+  genre/price/name tuple with deterministic slug components; historical
+  authored filenames do not determine canonical IDs.
+- Apply the normative mechanics lexicon from `data/localization/glossary-fr.json`
+  and the editorial conventions in `docs/terminology-fr.md`. Run
+  `npm run audit:terminology` when authoring French content; prose warnings
+  require manual review and never promote draft text automatically.
 
 ## Validation and packaging
 
