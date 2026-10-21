@@ -12,6 +12,7 @@ import { createValidationWorkspace, removeValidationWorkspace } from "./validati
 import { applyTranslation, mechanicalProjection, sourceHash, translationFields, translationSafetyErrors } from "./localization/compendium-translations.mjs";
 import { materializeTranslations } from "./localization/materialize-translations.mjs";
 import { parseUniqueJSON } from "./localization/locales.mjs";
+import { proposedLogicalId, proposedPageId } from "./source-migration/id-contract.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 
@@ -65,8 +66,21 @@ export async function readFrenchProposals(root) {
   for (const file of (await fs.readdir(directory, { recursive: true })).filter(file => file.endsWith(".json")).sort()) {
     const proposal = parseUniqueJSON(await fs.readFile(path.join(directory, file), "utf8"), file);
     validateFrenchProposal(proposal, file);
-    if (proposals.has(proposal.logicalId)) throw new Error(`Duplicate French proposal for ${proposal.logicalId}: ${file}`);
-    proposals.set(proposal.logicalId, { file: file.replaceAll(path.sep, "/"), proposal });
+    // PR2 changes canonical W4 logical IDs and Journal page IDs. Preserve the
+    // single existing editorial draft without regenerating its source hashes.
+    // The on-disk proposal is a legacy input; this read adapter does not edit it.
+    const canonicalId = proposedLogicalId(proposal.logicalId);
+    const canonical = structuredClone(proposal);
+    canonical.logicalId = canonicalId;
+    canonical.sourceLogicalId = canonicalId;
+    if (canonicalId.startsWith("journal.")) {
+      for (const field of canonical.fields) {
+        const match = /^pages\\.([^.]+)(\\..+)$/.exec(field.path);
+        if (match) field.path = "pages." + proposedPageId(canonicalId, match[1]) + match[2];
+      }
+    }
+    if (proposals.has(canonicalId)) throw new Error(`Duplicate French proposal for ${canonicalId}: ${file}`);
+    proposals.set(canonicalId, { file: file.replaceAll(path.sep, "/"), proposal: canonical });
   }
   return proposals;
 }
