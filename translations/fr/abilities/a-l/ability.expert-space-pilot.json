@@ -2,7 +2,7 @@
   "logicalId": "ability.expert-space-pilot",
   "sourceLogicalId": "ability.expert-space-pilot",
   "language": "fr",
-  "status": "proposed",
+  "status": "reviewed",
   "fields": [
     {
       "path": "name",
@@ -12,7 +12,7 @@
     {
       "path": "system.description",
       "sourceHash": "07ab8f5567a3ba3a754f32dbd2daa6282e9a74394a1ba2209e69253df82a709b",
-      "text": "Vous êtes entraîné en pilotage de vaisseaux spatiaux. Au rang 6 : vous pouvez devenir expert en pilotage de vaisseaux spatiaux si vous êtes déjà spécialisé, mais vous devez acquérir la compétence normalement, par exemple par un avancement de personnage."
+      "text": "Vous bénéficiez d’un entraînement en pilotage de vaisseaux spatiaux. Au rang 6 : vous pouvez atteindre le niveau expert en pilotage de vaisseaux spatiaux si vous possédez déjà une spécialisation, mais vous devez acquérir la compétence normalement, par exemple par un avancement de personnage."
     }
   ]
 }
