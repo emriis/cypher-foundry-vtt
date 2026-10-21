@@ -68,7 +68,7 @@ export function inclusiveStyleHints(value) {
       recommendation: "Préférer « la personne qui joue », « les personnes participantes » ou une formulation avec « vous » selon le contexte." },
     { id: "gendered-pairing", expression: /\b(?:il ou elle|ils ou elles|celui ou celle|ceux ou celles)\b/giu,
       recommendation: "Privilégier une expression épicène sans modifier le sens de l’exemple." },
-    { id: "gender-parentheses", expression: /\b\p{L}+\((?:e|ne|se|ère)\)s?\b/giu,
+    { id: "gender-parentheses", expression: /\b\p{L}+\((?:e|ne|se|ère)\)s?(?=$|[^\p{L}])/giu,
       recommendation: "Éviter les parenthèses binaires ; privilégier les termes épicènes, puis le point médian si nécessaire." }
   ];
   for (const { id, expression, recommendation } of patterns) {
