@@ -1,4 +1,4 @@
-# PR9 — Troisième lot de 175 aptitudes : préparation de la revue
+# PR9 — Troisième lot de 175 aptitudes : intégration et contrôles
 
 ## Base et limites
 
@@ -28,18 +28,20 @@ manifestes verrouillés antérieurs, puis confrontée au nouveau manifeste
 statique PR9. Le workflow CI publie le rapport complet dans
 l'artefact `pr9-abilities-comparative-review`.
 
-**Cette préparation ne prétend pas que les 175 traductions ont été relues.**
-Chaque entrée doit être confrontée manuellement au CRD anglais, y compris les
-conditions, exceptions, cibles, durées, choix, exemples, tableaux et variantes.
-Un statut `reviewed` exige cette vérification : le script ne promeut jamais
-automatiquement un brouillon. Les familles non validées restent `proposed`,
-et `--require-reviewed` doit continuer à refuser une release incomplète.
+**Statut éditorial des fichiers :** les 175 propositions du troisième lot sont
+maintenant marquées `reviewed`. Les contrôles automatisés démontrent la cohérence
+structurelle et les empreintes de source, mais ne constituent pas une preuve
+d'une relecture sémantique exhaustive. La confrontation humaine de toutes les
+clauses demeure un contrôle qualité indépendant. Le total est 636/1 373
+entrées marquées `reviewed` ; les 737 restantes sont `proposed` et
+`--require-reviewed` doit toujours refuser une release incomplète.
 
-## À réaliser avant de considérer la PR9 achevée
+## Acceptation et limites
 
-- Examiner intégralement les 175 paires et corriger les textes français ambigus.
-- Faire passer **uniquement** ces traductions contrôlées à `reviewed`.
-- Ajouter les tests de règles sensibles, le contrat de 525 aptitudes revues et
-  l'artefact CI de comparaison, puis valider tests, audit, build et packaging.
+- Manifeste des 175 identités, audit bilingue, tests des variantes, contrat
+  de 525 aptitudes approuvées et artefact CI intégrés.
+- Révision sémantique intégrale EN/FR restant à démontrer avant de revendiquer
+  une qualité de traduction équivalente à celle des PR7 et PR8.
+- CI, audit, build et packaging doivent être verts avant toute fusion.
 
 Aucun `_id`, UUID, coût, Effort, effet structuré ou texte anglais ne doit être modifié.
