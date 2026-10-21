@@ -6,6 +6,8 @@ import { computeWoundIncrease } from "../rules/wounds.mjs";
 import { resolveStat } from "../rules/stats.mjs";
 import { resolveActiveAbilityModifiers, resolveAbilityWoundTrack } from "../rules/ability-modifiers.mjs";
 import { SHIELD_ABILITY_KEYS } from "../rules/shield-abilities.mjs";
+import { resolveGeneralModifiers } from "../rules/general-effects.mjs";
+import { getGeneralEffects } from "./general-effect-service.mjs";
 
 /**
  * Read the source-key Ability and its explicitly chosen Pool, never its name.
@@ -32,7 +34,7 @@ export function prepareTask(actor, { stat, difficulty, effortLevels, assetSteps,
   extraHinderSteps, extraEaseSteps, luckyShot, spentAbilityEdge, defenseType, armorModifier, targetActor,
   isAttack, baseDamage, damageEffortLevels, freeEffortLevels, freeDamageEffortLevels, freeEffortSource,
   areaAttack, push, pushDamageEffortLevels, powerShiftCategories, abilitySource,
-  effectEffortLevels = 0, activationCost = 0 }) {
+  effectEffortLevels = 0, activationCost = 0, noPhysicalMovement = false, attackForm = null, automaticFailure = false }) {
   if (actor.type !== "pc") {
     ui.notifications.warn(game.i18n.localize("CYPHER.Warning.NotPC"));
     return null;
@@ -41,6 +43,15 @@ export function prepareTask(actor, { stat, difficulty, effortLevels, assetSteps,
     ui.notifications.warn(game.i18n.localize("CYPHER.Warning.ActionPermission"));
     return null;
   }
+  const generalModifiers = resolveGeneralModifiers(getGeneralEffects(actor), getGeneralEffects(targetActor), {
+    isAttack, isDefense: Boolean(defenseType), noPhysicalMovement, attackForm
+  });
+  if (generalModifiers.rejected && !(automaticFailure && defenseType)) {
+    ui.notifications.warn(game.i18n.localize("CYPHER.General.ActionPrevented"));
+    return null;
+  }
+  extraEaseSteps += generalModifiers.ease;
+  extraHinderSteps += generalModifiers.hinder;
 
   // HTML min/max attributes do not protect macro/API callers. Reject malformed
   // units before costs or dice; legitimate over-limit assets are still capped.
@@ -149,7 +160,7 @@ export function prepareTask(actor, { stat, difficulty, effortLevels, assetSteps,
     resolveTaskDifficulty(difficulty, totalSteps);
 
   return { resolved, statLabel, effortLevels: effort.effortLevels, assetSteps, extraHinderSteps,
-    effort, powerShifts, pushWound, skillSteps,
+    effort, powerShifts, pushWound, skillSteps, generalModifiers,
     totalCost, xpCost, poolValue, poolMax, woundHinder, autoArmorSpeedHinder,
     effectiveDifficulty, targetNumber, totalSteps };
 }

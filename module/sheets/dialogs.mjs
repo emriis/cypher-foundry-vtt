@@ -1,6 +1,15 @@
 /** Foundry dialogs collect player intent only; accepted services own all writes. */
 import { getWeaponAbilityKind } from "../applications/weapon-ability-service.mjs";
 import { getSuperheroicsRank } from "../applications/task-preparation.mjs";
+import { getGeneralEffects } from "../applications/general-effect-service.mjs";
+
+/** Select the declared help that applies to this task, preserving unrelated future help. */
+export function helpChoiceFields(actor, isDefense = false) {
+  const effects = getGeneralEffects(actor).filter(effect => effect.kind === "help" || isDefense && effect.kind === "defenseHelp");
+  return effects.length ? `<label>${game.i18n.localize("CYPHER.General.applicableHelp")}<select name="cooperativeEffectIds" multiple>
+    ${effects.map(effect => `<option value="${effect.id}">${foundry.utils.escapeHTML(effect.taskLabel || game.i18n.localize("CYPHER.General.defenseHelp"))} (+${effect.assets})</option>`).join("")}
+    </select></label>` : "";
+}
 
 /**
  * Shared controls for stat, attack and defense tasks. Ordinary free levels are
@@ -21,9 +30,18 @@ export function taskModifierFields(actor, { stat, isAttack = false, defenseType 
       && !(key === "power" && !abilitySource)
       && !(isAttack && ["dexterity", "intelligence", "resilience"].includes(key)));
   return `${isAttack ? number("damageEffort", "DamageEffort") : ""}
+    ${getGeneralEffects(actor).some(effect => effect.kind === "help" || defenseType && effect.kind === "defenseHelp") ? `
+      <div class="form-group"><label>${game.i18n.localize("CYPHER.General.cooperation")}<select name="cooperativeMode">
+      <option value="none">${game.i18n.localize("CYPHER.General.none")}</option>
+      <option value="help">${game.i18n.localize("CYPHER.General.help")}</option></select></label>${helpChoiceFields(actor, Boolean(defenseType))}</div>` : ""}
     ${shieldEffect ? `<div class="form-group"><label><input type="checkbox" name="effectEffort"/>
       ${game.i18n.localize("CYPHER.ShieldAbility.EffectEffort")}</label></div>` : ""}
     <details><summary>${label("ConditionalModifiers")}</summary>
+      <div class="form-group"><label><input name="noPhysicalMovement" type="checkbox"/>${game.i18n.localize("CYPHER.General.noPhysicalMovement")}</label></div>
+      ${isAttack ? `<div class="form-group"><label>${game.i18n.localize("CYPHER.General.attackForm")}<select name="attackForm">
+        <option value="">${game.i18n.localize("CYPHER.General.unspecified")}</option>
+        <option value="melee">${game.i18n.localize("CYPHER.General.melee")}</option>
+        <option value="ranged">${game.i18n.localize("CYPHER.General.ranged")}</option></select></label></div>` : ""}
       ${number("freeEffort", "FreeEffort")}
       ${isAttack ? number("freeDamageEffort", "FreeDamageEffort") : ""}
       <div class="form-group"><label>${label("FreeEffortSource")}
@@ -47,6 +65,10 @@ export function readTaskModifiers(form) {
   const value = name => Number(form.elements?.namedItem(name)?.value ?? form[name]?.value ?? 0);
   const checked = name => Boolean(form.elements?.namedItem(name)?.checked ?? form[name]?.checked);
   return { damageEffortLevels: value("damageEffort"), freeEffortLevels: value("freeEffort"),
+    ...(form.cooperativeMode ? { cooperativeMode: form.cooperativeMode.value } : {}),
+    ...(form.cooperativeEffectIds ? { cooperativeEffectIds: [...form.cooperativeEffectIds.selectedOptions].map(option => option.value) } : {}),
+    ...(checked("noPhysicalMovement") ? { noPhysicalMovement: true } : {}),
+    ...(form.attackForm?.value ? { attackForm: form.attackForm.value } : {}),
     ...(form.effectEffort ? { effectEffortLevels: checked("effectEffort") ? 1 : 0 } : {}),
     freeDamageEffortLevels: value("freeDamageEffort"), freeEffortSource: form.freeEffortSource?.value ?? "",
     extraEaseSteps: value("extraEase"), extraHinderSteps: value("extraHinder"), push: checked("push"),

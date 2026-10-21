@@ -20,6 +20,9 @@ import {
 } from "../applications/damage-service.mjs";
 import { rollDefense, rollTask } from "../applications/task-service.mjs";
 import { rollNpcAttack } from "../applications/npc-combat-service.mjs";
+import { declareCooperation } from "../applications/cooperative-service.mjs";
+import { rollCooperativeAction, passGuard, resistSpecialDamage, repeatDiseaseExposure } from "../applications/general-action-service.mjs";
+import { setGuarding, setGeneralCondition, removeGeneralEffect } from "../applications/general-effect-service.mjs";
 import {
   advanceTier,
   purchaseAdvancementSlot
@@ -52,6 +55,30 @@ import { convertDamageToWound } from "../rules/wounds.mjs";
  * facades and genuinely document-specific helpers.
  */
 export default class CypherActor extends Actor {
+
+  /** Declare no-roll help/distraction/draw on the actual target Actor. */
+  async declareCooperation(target, options = {}) { return declareCooperation(this, target, options); }
+
+  /** Resolve complementary help, a determined draw or a guard intervention through task history. */
+  async rollCooperativeAction(target, options = {}) { return rollCooperativeAction(this, target, options); }
+
+  /** Attempt the explicit Speed task needed to pass an NPC guard. */
+  async passGuard(target, options = {}) { return passGuard(this, target, options); }
+
+  /** Start or end the sustained guard declaration. */
+  async setGuarding(active = true) { return setGuarding(this, active); }
+
+  /** Apply a declared condition and optional next-turn duration. */
+  async setGeneralCondition(kind, options = {}) { return setGeneralCondition(this, kind, options); }
+
+  /** End an effect by identity, including an explicitly completed specialist treatment. */
+  async removeGeneralEffect(id) { return removeGeneralEffect(this, id); }
+
+  /** Resolve a declared poison/disease/psychic profile with attributable consequences. */
+  async resistSpecialDamage(options = {}) { return resistSpecialDamage(this, options); }
+
+  /** Repeat one stored daily disease profile after game time or confirmed day passage. */
+  async repeatDiseaseExposure(id, options = {}) { return repeatDiseaseExposure(this, id, options); }
 
   /* -------------------------------------------- */
   /*  Effort cost                                    */
@@ -132,10 +159,10 @@ export default class CypherActor extends Actor {
   }
 
   /**
-   * Rolls a Defense task by mapping Block/Dodge to the correct stat and
-   * armor modifier before delegating to the normal task service.
+   * Map Block/Dodge or a declared stat defense to the shared task service.
+   * Stat defenses do not receive Block/Dodge armor modifiers.
    *
-   * @param {string} defenseType "block" or "dodge".
+   * @param {string} defenseType "block", "dodge", "might", "speed" or "intellect".
    * @param {object} [options={}] Defense roll options.
    * @returns {Promise<object|null>} Roll result or null when rejected.
    */

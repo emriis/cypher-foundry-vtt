@@ -12,6 +12,7 @@ import { runActorAction, ACTION_CONTEXT } from "./action-guard.mjs";
 import { rollTask } from "./task-service.mjs";
 import { syncHealingStatuses } from "./wound-removal.mjs";
 import { recoverUnyieldingShields } from "./shield-lifecycle-service.mjs";
+import { specialDamageLimits } from "./special-damage-healing.mjs";
 
 function itemsOf(actor) {
   return actor.items?.contents ?? (Array.isArray(actor.items) ? actor.items : Array.from(actor.items?.values?.() ?? []));
@@ -25,9 +26,11 @@ function resetCounters(counters = {}) {
 
 /** Read effective Pool maxima, including declared active Ability modifiers. */
 export function getRecoveryPools(actor) {
+  const limits = specialDamageLimits(actor);
   const modifiers = resolveActiveAbilityModifiers(actor.system.activeAbilityEffects, itemsOf(actor), actor.system);
   return Object.fromEntries(Object.entries(actor.system.stats ?? {}).map(([stat, data]) =>
-    [stat, { value: data.pool.value, max: data.pool.max + (modifiers.poolMax[stat] ?? 0) }]));
+    [stat, { value: data.pool.value, max: Math.max(data.pool.value,
+      data.pool.max + (modifiers.poolMax[stat] ?? 0) - (limits.pools[stat] ?? 0)) }]));
 }
 
 /** Read source allowances without changing booleans or optional extra-use flags. */
@@ -80,6 +83,12 @@ export async function rollRecovery(actor, interval = "hour", options = {}) {
     }
     const { updates, woundNoteKey } = computeRecoveryUpdates(interval, actor.system.wounds,
       actor.system.recoveries, { woundChoice: options.woundChoice, additional: sourceId !== "standard" });
+    const limits = specialDamageLimits(actor);
+    for (const severity of Object.keys(limits.wounds)) {
+      const path = `system.wounds.${severity}.current`;
+      if (Object.hasOwn(updates, path)) updates[path] = Math.max(updates[path],
+        Math.min(actor.system.wounds[severity].current, limits.wounds[severity]));
+    }
     const flags = actor.flags?.cypher ?? {};
     if (sourceId !== "standard") updates["flags.cypher.additionalRecoveriesUsed"] = {
       ...flags.additionalRecoveriesUsed, [sourceId]: source.used + 1
@@ -127,6 +136,7 @@ export async function rollRecovery(actor, interval = "hour", options = {}) {
 export async function rallyWound(actor, severity) {
   if (actor?.type !== "pc" || actor.isOwner === false) return false;
   return runActorAction(actor, "healing", async () => {
+    if (!(actor.system.wounds[severity]?.current > (specialDamageLimits(actor).wounds[severity] ?? 0))) return false;
     const cost = getRallyCost(severity, actor.system.canRallyMajor);
     if (cost === null) {
       if (severity === "major") ui.notifications.warn(game.i18n.localize("CYPHER.Warning.CannotRallyMajor"));

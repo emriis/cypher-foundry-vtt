@@ -66,6 +66,25 @@ function setRollResult(value) {
   };
 }
 
+test("dazed tasks and guarding defenses use persisted general effects", async () => {
+  setRollResult(9);
+  const actor = createActor();
+  actor.flags = { cypher: { generalEffects: [{ id: "daze", kind: "dazed" }] } };
+  const result = await CypherActor.prototype.rollTask.call(actor, { stat: "speed", difficulty: 3 });
+  assert.equal(result.effectiveDifficulty, 4);
+});
+
+test("stunned characters cannot spend on attacks but can defend", async () => {
+  setRollResult(9);
+  const actor = createActor();
+  actor.flags = { cypher: { generalEffects: [{ id: "stun", kind: "stunned" }] } };
+  const result = await CypherActor.prototype.rollTask.call(actor, { isAttack: true, effortLevels: 1 });
+  assert.equal(result, null);
+  assert.equal(actor.updates.length, 0);
+  const defense = await CypherActor.prototype.rollDefense.call(actor, "dodge", { applyIncomingWound: false });
+  assert.equal(defense.success, true);
+});
+
 test("rollTask caps assets and Effort before resolving difficulty and Pool cost", async () => {
   setRollResult(6);
   globalThis.__rollMessages = [];

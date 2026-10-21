@@ -1,5 +1,6 @@
 {{!-- NPC statistics and descriptive sections; input names map directly to Actor system fields. --}}
 <section class="npc-body">
+  {{> "systems/cypher/templates/actor/parts/general-actions.hbs"}}
   <div class="npc-section">
     <h3>{{localize 'CYPHER.NPC.Description'}}</h3>
     <prose-mirror name="system.description" value="{{system.description}}"></prose-mirror>

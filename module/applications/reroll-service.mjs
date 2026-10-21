@@ -19,6 +19,7 @@ import { resolveInitiativeScore } from "../rules/initiative.mjs";
 import { resolveInitiativeOwner, persistInitiative, initiativeMessageOptions } from "./initiative-history.mjs";
 import { isShieldBroken } from "../rules/wounds.mjs";
 import { shieldSurvivesMajor, shieldOwnerItems } from "../rules/shield-abilities.mjs";
+import { applyRuleEffect } from "./rule-effect-consequence.mjs";
 
 async function describeChoice(item, flags, value) {
   if (flags.rollType === "cypherVariant") {
@@ -60,6 +61,11 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
     if (flags.shieldReturn && sourceActor.items?.get(flags.shieldReturn.itemId)?.isOwner === false) return null;
     if (appliesRecovery && (sourceActor?.type !== "pc" || sourceActor.isOwner === false)) return null;
     const woundTarget = flags.woundRemoval ? await resolveDocumentReference(flags.woundRemoval.targetUuid, "pc") : null;
+    const defenseRecipient = flags.defenseConsequences?.recipientUuid
+      ? await resolveDocumentReference(flags.defenseConsequences.recipientUuid, "pc") : sourceActor;
+    if (flags.defenseConsequences?.recipientUuid && (!defenseRecipient || defenseRecipient.isOwner === false)) return null;
+    const ruleTarget = flags.ruleEffect ? await resolveDocumentReference(flags.ruleEffect.targetUuid) : null;
+    if (flags.ruleEffect && (!ruleTarget || ruleTarget.isOwner === false)) return null;
     const initiativeOwner = flags.initiative ? await resolveInitiativeOwner(flags.initiative, sourceActor, { reroll: true }) : null;
     if (flags.initiative && (!initiativeOwner || !Number.isSafeInteger(flags.initiative.steps))) return null;
     const attackUuid = flags.isAttack ? flags.attackConsequences?.targetUuid : null;
@@ -124,6 +130,12 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
         actorId: sourceActor?.id ?? flags.actorId ?? actor.id,
         rerollable: true, originalRoll: retained };
       let shieldCheckpointed = false;
+      let ruleCheckpointed = false;
+      const checkpointRule = async () => {
+        if (!flags.ruleEffect || ruleCheckpointed) return;
+        await origin.update({ "flags.cypher": { ...metadata, ruleEffect: { ...metadata.ruleEffect, state: "pending" } } });
+        ruleCheckpointed = true;
+      };
       let initiativeCheckpointed = false;
       const checkpointInitiative = async () => {
         if (!flags.initiative || initiativeCheckpointed) return;
@@ -160,6 +172,15 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
         metadata.specialEffectChoice = specialEffectChoice;
         const outcome = resolveTaskOutcome({ ...flags, d20: retained, specialEffectChoice });
         metadata.d20 = retained;
+        if (flags.ruleEffect && outcome.success && !flags.ruleEffect.applied) {
+          if (["pending", "manual"].includes(flags.ruleEffect.state)) {
+            metadata.ruleEffect = { ...flags.ruleEffect, state: "manual" };
+            ui.notifications.warn(game.i18n.localize("CYPHER.General.ManualCorrection"));
+          } else {
+            await checkpointRule();
+            metadata.ruleEffect = await applyRuleEffect(ruleTarget, flags.ruleEffect, true);
+          }
+        }
         if (flags.initiative) {
           if (flags.initiative.state === "pending" || flags.initiative.reason === "partial") {
             metadata.initiative = { ...flags.initiative, state: "manual", reason: "partial",
@@ -196,7 +217,7 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
               // This original-card checkpoint survives a partial Actor/Item write.
               // A later card must never repeat a partially completed correction.
               await origin.update({ "flags.cypher": { ...metadata, defenseConsequences: pending } });
-            }, context);
+            }, context, defenseRecipient);
           Object.assign(metadata, corrected);
         }
         if (outcome.success && flags.woundRemoval && !flags.woundRemoval.applied) {
@@ -207,6 +228,7 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
           && flags.defenseConsequences?.state !== "pending" && flags.defenseConsequences?.reason !== "partial"
           && flags.attackConsequences?.state !== "pending" && flags.attackConsequences?.reason !== "partial"
           && !flags.attackRefundPending
+          && !["pending", "manual"].includes(flags.ruleEffect?.state)
           && flags.initiative?.state !== "pending" && flags.initiative?.reason !== "partial"
           && flags.shieldReturn?.state !== "pending" && flags.shieldReturn?.reason !== "partial") {
           const stat = resolveStat(sourceActor.system, flags.stat);
@@ -215,6 +237,7 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
           const pool = stat.data.pool;
           await checkpointShield();
           await checkpointInitiative();
+          await checkpointRule();
           if (flags.isAttack) await checkpointAttack();
           await sourceActor.update({ [`${stat.path}.pool.value`]: Math.min(
             pool.max + (modifiers.poolMax[flags.stat] ?? 0), pool.value + flags.effortCost) });
@@ -274,7 +297,7 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
       flags.initiative ? initiativeMessageOptions(flags.initiative) : {});
       return metadata;
     };
-    return runActorActions([sourceActor ?? actor, woundTarget, attackTarget, initiativeOwner?.combat], "rerollSource", execute, context);
+    return runActorActions([sourceActor ?? actor, woundTarget, defenseRecipient, ruleTarget, attackTarget, initiativeOwner?.combat], "rerollSource", execute, context);
   });
 }
 

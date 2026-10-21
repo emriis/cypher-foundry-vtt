@@ -16,12 +16,18 @@ import { canShieldAbsorbWound, isShieldBroken } from "../rules/wounds.mjs";
 import { shieldSurvivesMajor, shieldOwnerItems, SHIELD_ABILITY_KEYS } from "../rules/shield-abilities.mjs";
 import { resolveInitiativeScore } from "../rules/initiative.mjs";
 import { persistInitiative, resolveInitiativeOwner, initiativeMessageOptions } from "./initiative-history.mjs";
+import { cooperativeTaskPlan, consumeCooperationUpdate } from "./cooperative-service.mjs";
+import { applyRuleEffect, validateRuleEffect } from "./rule-effect-consequence.mjs";
+import { getGeneralEffects, nextSourceTurn } from "./general-effect-service.mjs";
+import { specialDamageLimits } from "./special-damage-healing.mjs";
+import { blockStillHits } from "../rules/general-effects.mjs";
+import { resolveShieldWoundTrack } from "../rules/ability-modifiers.mjs";
 
 /**
- * Roll a Block or Dodge defense through the common task engine.
+ * Roll Block, Dodge or a declared stat defense through the common task engine.
  *
  * @param {Actor} actor PC Actor.
- * @param {string} defenseType "block" or "dodge".
+ * @param {string} defenseType "block", "dodge", "might", "speed" or "intellect".
  * @param {object} options Defense roll options.
  * @returns {Promise<object|null>} Roll result.
  */
@@ -63,7 +69,7 @@ export async function rollDefense(
     flavor: game.i18n.localize(
       defenseType === "block"
         ? "CYPHER.Defense.Block"
-        : "CYPHER.Defense.Dodge"
+        : defenseType === "dodge" ? "CYPHER.Defense.Dodge" : `CYPHER.Stat.${defenseType}`
     )
   });
 
@@ -104,7 +110,7 @@ export async function rollTask(actor, options = {}) {
   if (options.initiative && (!initiativeOwner || actor.type !== "pc" || options.stat !== "speed"
     || options.difficulty !== 0 || options.isAttack || options.defenseType || options.targetActor
     || options.woundRemovalSeverity || options.shieldReturn || options.luckyShot)) return null;
-  return runActorActions([actor, options.targetActor, initiativeOwner?.combat], "task",
+  return runActorActions([actor, options.targetActor, options.npcSource, options.takeAttackActor, initiativeOwner?.combat], "task",
     context => executeTask(actor, options, context, initiativeOwner), options[ACTION_CONTEXT]);
 }
 
@@ -122,7 +128,9 @@ async function executeTask(actor, {
   applyIncomingWound = true, woundRemovalSeverity = null,
   damageEffortLevels = 0, freeEffortLevels = 0, freeDamageEffortLevels = 0, freeEffortSource = "",
   rollRoutine = true, chooseSpecialEffect = null, areaAttack = false, push = false,
-  pushDamageEffortLevels = 0, powerShiftCategories = []
+  pushDamageEffortLevels = 0, powerShiftCategories = [], noPhysicalMovement = false, attackForm = null,
+  cooperativeMode = null, cooperativeEffectIds = null, ruleEffect = null, conditionsOnFailure = [], npcSource = null, takeAttackActor = null,
+  automaticFailure = false, specialistRequired = false
 } = {}, actionContext = null, initiativeOwner = null) {
   // Validate an explicit shield selection before any cost or dice. Equipment
   // may change while a dialog is open; never silently spend on a stale choice.
@@ -138,9 +146,18 @@ async function executeTask(actor, {
       || isShieldBroken(returning.system.wounds, shieldSurvivesMajor(returning, shieldOwnerItems(returning)))
       || !shieldReturn.flightId || returning.system.flightId !== shieldReturn.flightId || returning.system.inHand !== false) return null;
   }
-  if (defenseType && (!["block", "dodge"].includes(defenseType)
+  if (defenseType && (!["block", "dodge", "might", "speed", "intellect"].includes(defenseType)
     || !["minor", "moderate", "major"].includes(incomingSeverity)
     || !Number.isSafeInteger(incomingWounds) || incomingWounds < 1)) return null;
+  if (!Array.isArray(conditionsOnFailure) || automaticFailure && !defenseType) return null;
+  if (cooperativeMode === "take" && !takeAttackActor) return null;
+  if (conditionsOnFailure.length && (!defenseType || conditionsOnFailure.some(effect =>
+    !["dazed", "stunned", "paralyzed", "unconscious", "blinded", "hindered"].includes(effect.kind)
+    || !Number.isSafeInteger(effect.steps ?? 1) || (effect.steps ?? 1) < 1))) return null;
+  if (ruleEffect && !validateRuleEffect(actor, targetActor, ruleEffect)) return null;
+  if (takeAttackActor && (cooperativeMode !== "take" || !defenseType || npcSource?.type !== "npc"
+    || takeAttackActor === actor || takeAttackActor.type !== "pc" || takeAttackActor.isOwner === false
+    || getGeneralEffects(takeAttackActor).some(effect => ["takeCooldown", "unconscious", "stunned", "paralyzed"].includes(effect.kind)))) return null;
   if (incomingPoolDamage && (!defenseType || !["might", "speed", "intellect"].includes(incomingPoolDamage.stat)
     || !Number.isSafeInteger(incomingPoolDamage.amount) || incomingPoolDamage.amount < 0
     || !resolveStat(actor.system, incomingPoolDamage.stat))) return null;
@@ -148,25 +165,33 @@ async function executeTask(actor, {
   // its actual target before the task can spend Effort or roll dice.
   if (woundRemovalSeverity && (targetActor?.type !== "pc" || targetActor.isOwner === false
     || !["minor", "moderate", "major"].includes(woundRemovalSeverity)
-    || !(targetActor.system.wounds[woundRemovalSeverity].current > 0))) return null;
+    || !(targetActor.system.wounds[woundRemovalSeverity].current > specialDamageLimits(targetActor).wounds[woundRemovalSeverity]))) return null;
+  const cooperation = cooperativeTaskPlan(actor, cooperativeMode, Boolean(defenseType), npcSource, cooperativeEffectIds);
+  if (!cooperation) return null;
+  assetSteps += cooperation.assets;
+  extraEaseSteps += cooperation.ease;
+  extraHinderSteps += cooperation.hinder;
   const prepared = prepareTask(actor, { stat, difficulty, effortLevels, assetSteps, skillItemId,
     extraHinderSteps, extraEaseSteps, luckyShot, spentAbilityEdge, defenseType, armorModifier, targetActor,
     isAttack, baseDamage, damageEffortLevels, freeEffortLevels, freeDamageEffortLevels, freeEffortSource,
-    areaAttack, push, pushDamageEffortLevels, powerShiftCategories, abilitySource, effectEffortLevels, activationCost });
+    areaAttack, push, pushDamageEffortLevels, powerShiftCategories, abilitySource, effectEffortLevels, activationCost,
+    noPhysicalMovement, attackForm, automaticFailure });
   if (!prepared) return null;
   ({ effortLevels, assetSteps, extraHinderSteps } = prepared);
   const { resolved, statLabel, totalCost, xpCost, poolValue, poolMax,
     woundHinder, autoArmorSpeedHinder, effort, powerShifts, pushWound, skillSteps, totalSteps } = prepared;
   // Initiative has no success threshold. Retain unclamped task steps for its
   // score instead of deriving them from a difficulty already clamped to zero.
-  const effectiveDifficulty = initiative ? 0 : prepared.effectiveDifficulty;
-  const targetNumber = initiative ? 0 : prepared.targetNumber;
+  const automaticHit = prepared.generalModifiers.automaticHit;
+  const effectiveDifficulty = automaticFailure ? Math.max(1, prepared.effectiveDifficulty) : initiative || automaticHit ? 0 : prepared.effectiveDifficulty;
+  const targetNumber = automaticFailure ? effectiveDifficulty * 3 : initiative || automaticHit ? 0 : prepared.targetNumber;
   baseDamage += effort.damageBonus + powerShifts.damage;
 
   // One Actor write commits XP and Pool costs together. Subsequent target
   // writes are separate operations; failures are surfaced without stale rollback.
-  if (totalCost > 0 || xpCost > 0 || pushWound) {
+  if (totalCost > 0 || xpCost > 0 || pushWound || cooperation.consumed.length) {
     await actor.update({
+      ...consumeCooperationUpdate(actor, cooperation.consumed),
       ...(xpCost > 0 ? { "system.xp": actor.system.xp - xpCost } : {}),
       ...(totalCost > 0 ? { [`${resolved.path}.pool.value`]: poolValue - totalCost } : {}),
       ...(pushWound ? { [`system.wounds.${pushWound.target}.current`]: pushWound.current } : {})
@@ -176,7 +201,7 @@ async function executeTask(actor, {
 
   // Routine success is still an accepted action with costs and consequences.
   // Without dice it cannot create special results, refunds or a paid reroll.
-  const roll = !initiative && effectiveDifficulty <= 0 && !rollRoutine ? null : await new Roll("1d20").evaluate();
+  const roll = automaticFailure || automaticHit || !initiative && effectiveDifficulty <= 0 && !rollRoutine ? null : await new Roll("1d20").evaluate();
   const d20 = roll?.total ?? null;
   const offered = resolveTaskOutcome({ d20, effectiveDifficulty, isAttack, baseDamage }).special.effectOptions;
   if (offered.length && !offered.includes(specialEffectChoice) && chooseSpecialEffect) {
@@ -209,9 +234,20 @@ async function executeTask(actor, {
   // instead of reducing it by one step on the character.
   const usingShield = defenseType === "block" && canShieldAbsorbWound(shieldItem);
 
+  const takeOnSuccessfulBlock = Boolean(takeAttackActor && blockStillHits({ defenseType, applyIncomingWound,
+    incomingSeverity, incomingWounds, shieldWounds: usingShield ? resolveShieldWoundTrack(shieldItem.system.wounds,
+      actor.system.activeAbilityEffects, shieldOwnerItems(shieldItem), actor.system) : null,
+    survivesMajor: usingShield && shieldSurvivesMajor(shieldItem, shieldOwnerItems(shieldItem)) }));
+  const defenseRecipient = takeAttackActor && (!success || takeOnSuccessfulBlock) ? takeAttackActor : actor;
+  const takeCooldownId = defenseRecipient !== actor ? foundry.utils.randomID() : null;
+  if (defenseRecipient !== actor) await defenseRecipient.update({ "flags.cypher.generalEffects": [
+    ...getGeneralEffects(defenseRecipient), { id: takeCooldownId, kind: "takeCooldown", until: nextSourceTurn(defenseRecipient) }
+  ] });
   const { targetDamage, attackConsequences, woundRemovalApplied, shieldWoundsAbsorbed, defenseConsequences, defensePoolDamage } = await applyTaskConsequences(actor, { isAttack, success, targetActor,
     totalDamage, armorBypass, weaponTargetEffects, weaponSource, defenseType,
-    applyIncomingWound, incomingWounds, usingShield, shieldItem, incomingSeverity, incomingPoolDamage, woundRemovalSeverity, actionContext });
+    applyIncomingWound, incomingWounds, usingShield, shieldItem, incomingSeverity, incomingPoolDamage,
+    conditionsOnFailure, woundRemovalSeverity, actionContext, defenseRecipient, takeCooldownId, specialistRequired });
+  if (ruleEffect) ruleEffect = await applyRuleEffect(targetActor, ruleEffect, success);
   if (success && shieldReturn) {
     await actor.items.get(shieldReturn.itemId).update({ "system.inHand": true, "system.equipped": true });
   }
@@ -220,7 +256,7 @@ async function executeTask(actor, {
     await persistInitiative(initiativeOwner, initiative.score, initiative);
   }
 
-  const messageFlavor = initiative ? `<div class="cypher-roll-card"><h3>${game.i18n.localize("CYPHER.Initiative.Label")}</h3>
+  let messageFlavor = initiative ? `<div class="cypher-roll-card"><h3>${game.i18n.localize("CYPHER.Initiative.Label")}</h3>
     <p>${game.i18n.format("CYPHER.Initiative.Result", { roll: d20, steps: totalSteps, score: initiative.score })}</p>
     ${effectText ? `<p>${effectText}</p>` : ""}
     ${refund && totalCost > 0 ? `<p>${game.i18n.localize("CYPHER.Roll.CostRefunded")}</p>` : ""}</div>` : buildTaskMessage({
@@ -229,8 +265,9 @@ async function executeTask(actor, {
     weaponSource, isAttack, flavor, abilitySource, targetActor, difficulty, effectiveDifficulty,
     targetNumber, effortLevels, totalCost, woundHinder, extraHinderSteps, weaponRangeAdjudication,
     armorModifier, autoArmorSpeedHinder, damageBonus, totalDamage, effectText, refund,
-    effort, powerShifts, assetSteps, skillSteps, rolled: Boolean(roll)
+    effort, powerShifts, assetSteps, skillSteps, rolled: Boolean(roll), automatic: automaticHit || automaticFailure
   });
+  if (defenseRecipient !== actor) messageFlavor += `<p>${game.i18n.format("CYPHER.General.Taken", { name: foundry.utils.escapeHTML(defenseRecipient.name) })}</p>`;
 
   // Flags are structured metadata for rerolls and tests; the localized HTML
   // is presentation. Publish only after target-side writes have succeeded.
@@ -248,11 +285,14 @@ async function executeTask(actor, {
         ...(initiative ? { initiative } : {}),
         ...(shieldReturn ? { shieldReturn: { ...shieldReturn, applied: success } } : {}),
         ...(defenseType ? { defenseType, shieldItemId, shieldWoundsAbsorbed, incomingWounds, incomingSeverity,
-          applyIncomingWound, incomingPoolDamage, defenseConsequences } : {}),
+          applyIncomingWound, incomingPoolDamage, conditionsOnFailure, defenseConsequences } : {}),
         ...(woundRemovalSeverity ? { woundRemoval: {
           targetUuid: targetActor.uuid, severity: woundRemovalSeverity, applied: woundRemovalApplied
         } } : {}),
         stat,
+        cooperativeMode,
+        ...(takeAttackActor ? { takeOnSuccessfulBlock } : {}),
+        ...(ruleEffect ? { ruleEffect } : {}),
         effortCost: totalCost,
         effortAllocation: effort,
         freeEffortSource,

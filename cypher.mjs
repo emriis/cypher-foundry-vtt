@@ -21,12 +21,16 @@ import { stampDefenseRevisions } from "./module/applications/defense-history.mjs
 import { stampAttackHealthRevision } from "./module/applications/attack-history.mjs";
 import { promptSpecialEffect, promptInitiativeOptions } from "./module/sheets/dialogs.mjs";
 import { skipUnyieldingShieldTurn } from "./module/applications/shield-lifecycle-service.mjs";
+import { enforceSpecialDamageHealing } from "./module/applications/special-damage-healing.mjs";
+import { stampGeneralTurnRevision } from "./module/applications/general-effect-service.mjs";
 
 Hooks.on("updateCombat", skipUnyieldingShieldTurn);
 
 // Persist attribution invalidation with the same healing/manual Actor update.
 Hooks.on("preUpdateActor", stampDefenseRevisions);
 Hooks.on("preUpdateActor", stampAttackHealthRevision);
+Hooks.on("preUpdateActor", enforceSpecialDamageHealing);
+Hooks.on("preUpdateCombat", stampGeneralTurnRevision);
 
 Hooks.once("init", () => {
   console.log("Cypher | Initialisation / Initializing");
@@ -151,6 +155,21 @@ Hooks.on("createCombat", combat => {
   if (combat.active) refreshNPCWeaponEffectSheets();
 });
 Hooks.on("deleteCombat", refreshNPCWeaponEffectSheets);
+
+/** Refresh only existing general-effect sheets at turn boundaries; preparation never writes flags. */
+function refreshGeneralEffectSheets(combat) {
+  const actors = new Set([...(game.actors ?? []), ...(combat?.combatants ?? []).map(entry => entry.actor)]);
+  for (const actor of actors) {
+    if (!actor?.flags?.cypher?.generalEffects?.length) continue;
+    for (const app of Object.values(actor.apps ?? {})) {
+      if (app.rendered) app.render().catch(error => console.error("Cypher | Failed to refresh general effects", error));
+    }
+  }
+}
+Hooks.on("updateCombat", (combat, changes) => {
+  if (["turn", "round", "active"].some(key => Object.hasOwn(changes, key))) refreshGeneralEffectSheets(combat);
+});
+Hooks.on("deleteCombat", refreshGeneralEffectSheets);
 
 /**
  * Ensures that only one armor item is equipped on an actor at a time.

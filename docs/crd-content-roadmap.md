@@ -258,6 +258,9 @@ structured data already present in the source packs.
   exceptional destruction/recovery, attacks, catch tasks and timed work.
 - [x] Cypher depletion.
 - [x] Damage, wounds, and recovery.
+- [x] Explicit cooperative modes, guarding, conditions and declared special
+  damage with source-turn persistence and attributed rerolls; see
+  [general action contracts](general-actions.md) for automation boundaries.
 - [x] Replace recorded failed-defense consequences after a successful paid
   reroll, preserving later wounds, original expenditure and synthetic identity;
   see [defense reroll contracts](defense-rerolls.md).

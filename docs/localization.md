@@ -16,6 +16,7 @@ Edit the paired domain files under `lang/src/en/` and `lang/src/fr/`:
 | `character-creation.json` | Character sentence, genres, superhero configuration and Power Shifts |
 | `progression.json` | Tier, Effort, Edge, XP and advancement |
 | `tasks-combat.json` | Task rolls, defenses, weapons, armor and shields |
+| `general-actions.json` | Cooperation, guarding, conditions and declared special damage |
 | `recovery-healing.json` | Recoveries, Rally, treatment and healing |
 | `items-content.json` | Items, Skills, Abilities, Types, Foci and descriptive controls |
 | `tooling.json` | Imports and migrations |

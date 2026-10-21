@@ -8,6 +8,7 @@ import { resolveActiveAbilityModifiers, resolveAbilityWoundTrack } from "../rule
 import { runActorActions, ACTION_CONTEXT } from "./action-guard.mjs";
 import { rollTask } from "./task-service.mjs";
 import { syncHealingStatuses } from "./wound-removal.mjs";
+import { specialDamageLimits, conventionalHealingAllowed } from "./special-damage-healing.mjs";
 
 function itemsOf(actor) {
   return actor.items?.contents ?? (Array.isArray(actor.items) ? actor.items : Array.from(actor.items?.values?.() ?? []));
@@ -49,7 +50,7 @@ export async function treatWound(healer, { target = healer, severity, timeProfil
   if (healer?.type !== "pc" || target?.type !== "pc" || healer.isOwner === false || target.isOwner === false || completed !== true) return null;
   return withHealingTargets(healer, target, async context => {
     const profile = getTreatmentProfile(target, severity, timeProfile);
-    if (!profile || !(target.system.wounds[severity]?.current > 0)) return null;
+    if (!profile || !(target.system.wounds[severity]?.current > specialDamageLimits(target).wounds[severity])) return null;
     const result = await rollTask(healer, { ...rollOptions, [ACTION_CONTEXT]: context, stat: "intellect", difficulty: profile.difficulty,
       targetActor: target, woundRemovalSeverity: severity,
       flavor: game.i18n.localize("CYPHER.Healing.Treatment") });
@@ -79,6 +80,7 @@ export async function useHealingHand(item, { target = item?.actor, severity = "m
       : target.system.health.value < target.system.health.max
         ? { "system.health.value": Math.min(target.system.health.max, target.system.health.value + 5) } : null;
     if (!targetUpdates) return null;
+    if (target.type === "pc" && !conventionalHealingAllowed(target, targetUpdates)) return null;
     const uses = healer.flags?.cypher?.healingUses ?? {};
     const prior = Math.max(0, uses["healing-hand"] ?? 0);
     const pool = healer.system.stats.intellect;
