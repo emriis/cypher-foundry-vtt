@@ -43,5 +43,5 @@ export async function auditEquipment12(root=ROOT,output=path.join(root,"reports/
  }finally{await removeValidationWorkspace(workspace.workspace);}
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(path.resolve(process.argv[1])).href){
- auditTypeFocus11().catch(e=>{console.error(e.stack??e.message);process.exitCode=1;});
+ auditEquipment12().catch(e=>{console.error(e.stack??e.message);process.exitCode=1;});
 }
