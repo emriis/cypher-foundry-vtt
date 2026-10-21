@@ -8,7 +8,7 @@ import { materializeTranslations } from "../../scripts/localization/materialize-
 
 const ROOT = path.resolve(import.meta.dirname, "../..");
 
-test("PR7 keeps precisely 175 approved Abilities and 526 unreviewed future Abilities", async () => {
+test("PR7 preserves its 175 reviewed Abilities while subsequent batches advance", async () => {
   const manifest = JSON.parse(await fs.readFile(
     path.join(ROOT, "data/localization/ability-review-batch-1.json"), "utf8"));
   assert.equal(manifest.expected, 175);
@@ -24,9 +24,12 @@ test("PR7 keeps precisely 175 approved Abilities and 526 unreviewed future Abili
   assert.equal(abilityRows.length, 701, "Entire 2026 CRD ability inventory changed.");
   const selected = new Set(manifest.ids);
   for (const row of abilityRows) {
-    const expected = selected.has(row.logicalId) ? "reviewed" : "proposed";
-    assert.equal(row.status, expected,
-      row.logicalId + " expected " + expected + ", got " + row.status + "; " + row.errors.join("; "));
+    if (selected.has(row.logicalId)) {
+      assert.equal(row.status, "reviewed", "PR7 reviewed content regressed: " + row.logicalId);
+    } else {
+      assert.ok(["proposed", "reviewed"].includes(row.status),
+        "Another batch has invalid status: " + row.logicalId + "; " + row.errors.join("; "));
+    }
     assert.equal(row.sourceFields, row.translatedFields, row.logicalId);
     assert.deepEqual(row.errors, [], row.logicalId);
     assert.deepEqual(row.missingFields, [], row.logicalId);
