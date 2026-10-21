@@ -1,7 +1,9 @@
-# Compendium identity migration — PR1 baseline and contract
+# Compendium identity migration — PR1 baseline and PR2 implementation
 
-This document records the *proposed* identity policy for the bilingual
-Cypher compendium refactor. **PR1 audits; it does not rewrite existing IDs.**
+This document records the original PR1 pre-migration inventory and the PR2
+canonical identity policy. **PR2 migrates the normalized documents and references
+in `scripts/source-migration/canonical-ids.mjs`; the PR1 baseline below is
+historical, not an assertion about the new outputs.**
 The canonical 2026-07-29 CRD, not localized names or historical French JSON,
 determines source identities and mechanics.
 
@@ -48,7 +50,7 @@ job's normalizer. A separate clean-checkout CI identity job now measures raw
 authoring IDs independently before normalization; review its JSON artifact
 for exact historical-to-normalized mappings.
 
-## Proposed invariant for PR2
+## Applied invariant in normalized PR2 outputs
 
 | Field | Contract |
 | --- | --- |
@@ -62,13 +64,13 @@ for exact historical-to-normalized mappings.
 | Journal page IDs | Deterministic child IDs derived from parent logical ID and a stable English page anchor |
 | Folder IDs | Deterministic family-scoped IDs using stable *source paths*, not translated folder names |
 
-The audit proposes ASCII lower-case slug components for grandfathered logical
+The migration uses ASCII lower-case slug components for grandfathered logical
 IDs (notably equipment such as
 `equipment.Fantasy.inexpensive.Arrows (12)` ->
 `equipment.fantasy.inexpensive.arrows-12`). **This is not an approved automatic
-rename**: inspect every normalization collision and source-identity ambiguity
-before PR2. Do not use a French display label or a filename from a French
-translation to generate canonical Item identities.
+rename**: the preflight audit verifies that there are no proposed collisions.
+The new migrator fails on missing pairs, collisions or unresolved references,
+rather than guessing repairs. No French display label determines canonical IDs.
 
 Folder and Journal child IDs need their own documented namespace; PR2 must
 ensure parent/child references, Foundry `_key` values, and any stored page
@@ -113,7 +115,7 @@ collisions, fill in incomplete pairings, or modify authoring or generated packs.
 Failure to normalize, read the catalogue or write the requested report exits
 nonzero. The CI content job uploads the JSON as a review artifact.
 
-## Required PR2 implementation gates
+## PR2 migration gates and operation
 
 1. Review the PR1 report and resolve ambiguities and proposed logical-ID
    collisions *before* any writes to authored sources. Verify identity stability
@@ -142,3 +144,33 @@ PR3 will remove competing French translation authorities and retain
 CRD callouts and establishes inclusive-language and mechanical-terminology
 policies before approving French prose. **PR1 does not approve translations,
 change game rules, or regenerate published databases.**
+
+
+## PR2 implementation and deployment
+
+The new `scripts/source-migration/id-contract.mjs` owns the pure canonical
+identity policy. `scripts/source-migration/canonical-ids.mjs` runs last in
+`migrate:packs`, after the existing Type/Focus/Ability pairing and French
+mechanical normalization. It first checks all pairs, collisions, Journal page
+counts and Folder identities, then rewrites IDs and references across both
+languages. Re-running the migration on already normalized input must produce
+the same output; regression tests exercise this.
+
+`build:packs`, `npm test`, and `audit:i18n` perform migration only in their
+temporary checkouts. The authored `packs/*/_source/` records retain their old
+IDs until a deliberate `npm run migrate:packs` is run. The main-branch
+`Build Compendium Packs` workflow runs that migration and commits normalized
+source files together with generated LevelDB outputs following merge. The PR
+artifact build verifies generated packs without updating the branch.
+
+The 259 legacy equipment translations remain authored under their existing
+editorial files; `readFrenchProposals` maps their keys and old Journal page
+selectors into the canonical namespace in memory. This is a migration bridge,
+not a second translation authority or evidence of semantic review. The next
+localization refactor (PR3) will remove historic fallback behavior.
+
+**Breaking saved references:** old world-owned Items, external macros, Journal
+links, and UUIDs imported from previous pack builds are not automatically
+converted. Export or back up any world before installing this migration,
+then reimport affected content or run a separately verified world migration.
+Do not silently change a user's Foundry Data directory.
