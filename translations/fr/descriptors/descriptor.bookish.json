@@ -2,17 +2,17 @@
   "logicalId": "descriptor.bookish",
   "sourceLogicalId": "descriptor.bookish",
   "language": "fr",
-  "status": "proposed",
+  "status": "reviewed",
   "fields": [
     {
       "path": "name",
       "sourceHash": "fc4f9625abe4a15ec9a00815040caf14c25873472f638b5dbc552c6f4e187e20",
-      "text": "Érudit"
+      "text": "Érudit·e"
     },
     {
       "path": "system.description",
       "sourceHash": "6d1e49933d38d3013c3587533ab98baef72b9c4bba41bbb4845191c390139b5b",
-      "text": "<p>Vous avez consacré l’essentiel de votre vie à des activités sédentaires — lire des livres, observer les étoiles, écrire de la poésie, etc. — plutôt qu’à des occupations physiques. Vous connaissez bien toutes sortes de disciplines universitaires ou d’autres activités intellectuelles. Vous n’êtes pas nécessairement faible ou fragile, même si ce descripteur convient bien aux personnages âgés, mais vous manquez d’expérience dans les activités plus physiques.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>+2 à votre Réserve d’Intellect</p>\n<p>Vous êtes entraîné pour l’une des compétences suivantes : Histoire, Philosophie ou Psychologie, ou une discipline similaire</p>"
+      "text": "<p>Vous avez consacré l’essentiel de votre vie à des activités sédentaires — lire des livres, observer les étoiles, écrire de la poésie, etc. — plutôt qu’à des occupations physiques. Vous connaissez bien toutes sortes de disciplines universitaires ou d’autres activités intellectuelles. Vous n’êtes pas nécessairement faible ou fragile, même si ce descripteur convient bien aux personnages âgés, mais vous manquez d’expérience dans les activités plus physiques.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>+2 à votre Réserve d’Intellect</p>\n<p>Vous gagnez un entraînement dans l’une des compétences suivantes : Histoire, Philosophie ou Psychologie, ou une discipline similaire</p>"
     },
     {
       "path": "system.skillOptions.0",
