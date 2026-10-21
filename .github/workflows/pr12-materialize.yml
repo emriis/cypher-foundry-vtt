@@ -1,5 +1,5 @@
 name: PR12 one-time translation status materialization
-# Repair run: ensure valid newline bytes in generated JSON files.
+# Final materialization: compare using canonical proposal IDs, not source filenames.
 on:
   push:
     branches:
