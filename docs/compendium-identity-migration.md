@@ -19,6 +19,35 @@ language: 701 abilities, 58 skills, 53 descriptors, 55 types, 42 foci, 457
 equipment/cyphers, and seven rule Journals. This is a historical baseline,
 **not a newly measured assertion**. Run the audit to get current values.
 
+## Measured normalized baseline (CI, 2026-10-21)
+
+The first successful CI identity-audit run measured **1,373 paired records**
+(2,746 documents) with **210 different current EN/FR `_id` values**.
+This validates the need for an explicit migration instead of assuming all
+source IDs are already paired.
+
+| Family | Paired records | Different current IDs | EN records needing new ID | FR records needing new ID | Logical IDs proposed to change |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Abilities | 701 | 121 | 634 | 634 | 0 |
+| Descriptors | 53 | 33 | 53 | 53 | 0 |
+| Equipment and cyphers | 457 | 0 | 457 | 457 | 259 |
+| Foci | 42 | 0 | 42 | 42 | 0 |
+| Rules | 7 | 0 | 7 | 7 | 0 |
+| Skills | 58 | 1 | 58 | 58 | 0 |
+| Types | 55 | 55 | 55 | 55 | 0 |
+| **Total** | **1,373** | **210** | **1,306** | **1,306** | **259** |
+
+For that normalized catalogue, the first CI report found **zero** missing
+counterparts, duplicate identities, proposed slug/ID collisions, invalid
+document IDs, dangling compendium UUIDs, dangling Focus edges, Journal page
+count mismatches or unpaired Folders. These are static findings for the
+inspected source set, not live Foundry migration results.
+
+The first CI run audited an already-normalized CI worktree after the content
+job's normalizer. A separate clean-checkout CI identity job now measures raw
+authoring IDs independently before normalization; review its JSON artifact
+for exact historical-to-normalized mappings.
+
 ## Proposed invariant for PR2
 
 | Field | Contract |
