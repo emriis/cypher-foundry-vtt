@@ -40,6 +40,50 @@ export function locateCallout(candidate, authoredFields, sourceContracts = []) {
   };
 }
 
+/** Keep focused player-facing editorial passages source-complete in EN. */
+export function validateFocusCallouts(candidates, focusCount) {
+  const focus = candidates.filter(item => item.section?.startsWith("Foci /") &&
+    ["gm-intrusion", "genre-themes"].includes(item.kind));
+  const errors = [];
+  for (const kind of ["gm-intrusion", "genre-themes"]) {
+    const entries = focus.filter(item => item.kind === kind);
+    if (entries.length !== focusCount) {
+      errors.push("Expected " + focusCount + " Focus " + kind + " source paragraphs, found " + entries.length + ".");
+    }
+    for (const item of entries) {
+      if (item.coverage.status !== "verbatim-in-english-pack") {
+        errors.push("Unrepresented Focus " + kind + " at CRD paragraph " + item.paragraph + ".");
+      }
+    }
+  }
+  return errors;
+}
+
+/** Source-locked editorial decisions cannot silently drift to another paragraph. */
+export function validateAdjudications(candidates, decisionFile, referenceHash) {
+  if (decisionFile.referenceSha256 !== referenceHash) {
+    throw new Error("CRD decision inventory is tied to a different source revision.");
+  }
+  const indexed = new Map(candidates.map(item => [item.paragraph, item]));
+  const seen = new Set();
+  for (const decision of decisionFile.decisions) {
+    if (seen.has(decision.paragraph)) throw new Error("Duplicate callout disposition: " + decision.paragraph);
+    seen.add(decision.paragraph);
+    const current = indexed.get(decision.paragraph);
+    if (!current || current.kind !== decision.kind ||
+        !current.section.startsWith(decision.sectionPrefix)) {
+      throw new Error("Callout disposition no longer matches the CRD: " + decision.paragraph);
+    }
+    if (current.coverage.status === "verbatim-in-english-pack") {
+      throw new Error("Already-covered callout should not be deferred: " + decision.paragraph);
+    }
+    if (decision.status !== "deferred-full-crd-journal" || !decision.reason.trim() || !decision.target.trim()) {
+      throw new Error("Unsupported or incomplete callout decision: " + decision.paragraph);
+    }
+  }
+  return new Map(decisionFile.decisions.map(item => [item.paragraph, item]));
+}
+
 function sourceFields(records) {
   return records.filter(record => record.pack.endsWith("-en"))
     .flatMap(record => [...translationFields(record.document)]
@@ -97,6 +141,15 @@ export async function auditCallouts({ root = ROOT, reference = path.join(ROOT, D
         coverage: locateCallout({ ...raw, text: p.text }, texts, revalidatedLocators)
       };
     });
+    const expectedFocusCount = records.filter(row => row.pack === "foci-en").length;
+    const focusErrors = validateFocusCallouts(candidates, expectedFocusCount);
+    if (focusErrors.length) throw new Error(focusErrors.join("\n"));
+    const decisionFile = JSON.parse(await fs.readFile(
+      path.join(root, "data/crd-callout-adjudications.json"), "utf8"));
+    const decisions = validateAdjudications(candidates, decisionFile, actualHash);
+    for (const entry of candidates) {
+      if (decisions.has(entry.paragraph)) entry.adjudication = decisions.get(entry.paragraph);
+    }
     const statusCounts = {};
     const kindCounts = {};
     for (const entry of candidates) {
@@ -138,11 +191,14 @@ export async function auditCallouts({ root = ROOT, reference = path.join(ROOT, D
       scope: "CRD callout candidates and tables; no completeness claim for full CRD Journals.",
       inputs: { reference: DOCX, sourceMode: normalized ? "normalized" : "authored",
         englishDocuments: records.filter(row => row.pack.endsWith("-en")).length,
-        baselineContracts: baseline.fields.length, revalidatedContracts: revalidatedLocators.length, baselineHashMatches,
+        baselineContracts: baseline.fields.length, revalidatedContracts: revalidatedLocators.length,
+        verifiedFocusCallouts: expectedFocusCount * 2, explicitlyDeferred: decisions.size, baselineHashMatches,
         historicalReferenceSha256: baseline.referenceSha256 },
       summary: { paragraphs: inventory.paragraphs, candidates: candidates.length,
         tables: inventory.tables.length, visualBoxes: boxes.length,
         visualBoxesNeedingReview: boxes.filter(item => item.status !== "all-paragraphs-match").length,
+        sourceVerifiedFocusEditorialParagraphs: expectedFocusCount * 2,
+        explicitlyDeferred: decisions.size,
         kinds: inventory.candidateTypes,
         coverage: statusCounts, coverageByKind: kindCounts,
         visualSignals: inventory.visualSignals, paragraphStyles: inventory.paragraphStyles },
