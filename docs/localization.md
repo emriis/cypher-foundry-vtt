@@ -77,6 +77,17 @@ mechanically based on a word list or automatically approve an entry. A
 glossary term's status is **independent** of a proposal's `reviewed` status;
 neither terminology nor CI structural checks certify semantic fidelity.
 
+## Reviewed content batches
+
+**PR6 — Skills and Descriptors:** The [source-backed translation review](localization-pr6-skills-descriptors.md)
+validates 58 Skill and 53 Descriptor/species editorial records, including
+their structured Skill choices, fixed grants and GM intrusion exceptions.
+Their `translations/fr/` entries are `reviewed`; the remaining families
+retain independent unreviewed editorial status. The normal compiler permits
+reviewed French Skill names to coexist with **English** labels in Types and
+Foci that are not yet approved. No previously reviewed item IDs or rule data
+are renamed by this change.
+
 ## Compendium organization and source identities
 
 Keep packs separated by family **and** language. Items and JournalEntries have
