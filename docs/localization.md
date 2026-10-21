@@ -144,6 +144,10 @@ All **457 Equipment-family records** (259 ordinary equipment, weapons, armor and
 
 The [Rules Journals localization](localization-rules-journals.md) integrates all seven source-backed Journal entries with a canonical inventory, bilingual source audit and content contracts. All **1,373/1,373** translation proposals now carry `reviewed` status. The final semantic and UI fidelity review will take place directly in FoundryVTT after localization is complete; source hashes and typed parity do not certify prose equivalence. The seven Journals are selected CRD rule extracts, not a full manual.
 
+### Cross-family translation integrity
+
+The [transversal bilingual audit](localization-integrity.md) validates all 1,373 source-backed English/French pairs, normative UI glossary bindings and the strict reviewed-only compile plan. Semantic proof, naming in contextual prose and final visible/UI checks remain deferred to the in-Foundry review. No localized prose is rewritten by this audit.
+
 ## Compendium organization and source identities
 
 Keep packs separated by family **and** language. Items and JournalEntries have
