@@ -88,7 +88,7 @@ test("more subtle skill effects, augmenting attacks and one-use costs remain sou
   assert.match(flex, /Vous ne pouvez pas utiliser cette aptitude/);
   assert.match(flex, /devenir spécialisé/);
   const fury = (await fr("frenzy"))["system.description"];
-  assert.match(fury, /+1 à votre Avantage de Puissance/);
+  assert.match(fury, /\+1 à votre Avantage de Puissance/);
   assert.match(fury, /Avantage de Célérité/);
   assert.match(fury, /ne pouvez pas utiliser de points d’Intellect/);
   const grab = (await fr("grab"))["system.description"];
