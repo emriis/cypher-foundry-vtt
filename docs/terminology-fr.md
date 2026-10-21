@@ -23,7 +23,7 @@ toujours être confrontée au passage CRD intégral.
 
 ## Distinctions mécaniques incontournables
 
-Le glossaire versionné couvre 42 entrées, dont les classifications d'action et
+Le glossaire versionné couvre 60 entrées, dont les classifications d'action et
 les familles de mécaniques principales. Il décrit explicitement leurs limites
 contextuelles. Les distinctions suivantes doivent être préservées :
 
@@ -88,6 +88,17 @@ passages cités du CRD) :
 | « Le joueur qui rate son jet… » | « Si vous échouez à votre jet… » |
 | « Il ou elle dépense… » | « Le personnage dépense… » |
 | « Un personnage avec un avantage aux jets… » | Vérifier si le CRD parle d'un **Atout**, d'une **facilitation** ou d'**Avantage** au coût des réserves |
+
+## Décisions stylistiques encore ouvertes
+
+Les libellés actuels des degrés de compétence dans l'interface
+(`Familier(e)`, `Entraîné(e)`, `Spécialisé(e)`, `Expert(e)`) ont des
+parenthèses binaires. Le nouvel audit les signale pour revue ; il **ne**
+les remplace pas automatiquement. Choisir une forme épicène définitive devra
+se faire avec le contexte de chaque niveau mécanique et dans une PR éditoriale
+de l'interface, sans fusionner `practiced`, `trained`,
+`specialized` et `expert`. L'absence de correction immédiate ne valide
+pas les anciennes formes.
 
 ## Validation et contrôle humain
 
