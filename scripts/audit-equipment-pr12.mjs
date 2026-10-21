@@ -13,7 +13,7 @@ const MANIFEST="data/localization/equipment-review-pr12.json";
 export async function auditEquipment12(root=ROOT,output=path.join(root,"reports/equipment-review-pr12.json")){
  const manifest=JSON.parse(await fs.readFile(path.join(root,MANIFEST),"utf8"));
  const proposals=await readFrenchProposals(root);
- const current=[...proposals.keys()].filter(id=>id.startsWith("equipment.")||id.startsWith("cypher.")).sort();
+ const current=[...proposals.values()].map(row=>path.basename(row.file,".json")).filter(id=>id.startsWith("equipment.")||id.startsWith("cypher.")).sort();
  if(manifest.expected!==457||manifest.ids.length!==457||new Set(manifest.ids).size!==457||
     current.length!==457||JSON.stringify(current)!==JSON.stringify(manifest.ids)||
     manifest.ids.filter(id=>id.startsWith("equipment.")).length!==259||
@@ -26,7 +26,11 @@ export async function auditEquipment12(root=ROOT,output=path.join(root,"reports/
    const audits=reviewCatalogue(records,proposals);
    const checks=new Map(audits.entries.map(row=>[row.logicalId,row]));
    const sources=new Map(records.filter(row=>row.pack==="equipment-en").map(row=>[row.logicalId,row]));
-   const details=manifest.ids.map(id=>{
+   const byFilename=new Map([...proposals.entries()].map(([id,row])=>[path.basename(row.file,".json"),{id,row}]));
+ const details=manifest.ids.map(filename=>{
+     const matched=byFilename.get(filename);
+     if(!matched)throw new Error("Missing PR12 translation file "+filename);
+     const id=matched.id;
      const source=sources.get(id),item=proposals.get(id),check=checks.get(id);
      if(!source||!item||!check||check.errors.length||check.missingFields.length||
        !check.mechanicalParity||check.sourceFields!==check.translatedFields){

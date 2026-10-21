@@ -13,7 +13,8 @@ test("PR12 Equipment and Cypher inventory is canonically complete and validated"
  const [records,proposals]=await Promise.all([readCompendiumCatalogue(ROOT),readFrenchProposals(ROOT)]);
  const review=reviewCatalogue(records,proposals);
  const byId=new Map(review.entries.map(row=>[row.logicalId,row]));
- for(const id of m.ids){const row=byId.get(id);assert.ok(row,id);
+ const byFilename=new Map([...proposals.entries()].map(([id,entry])=>[path.basename(entry.file,".json"),id]));
+ for(const filename of m.ids){const id=byFilename.get(filename);assert.ok(id,filename);const row=byId.get(id);assert.ok(row,id);
    assert.equal(row.status,"reviewed",id);assert.deepEqual(row.errors,[],id);
    assert.deepEqual(row.missingFields,[],id);assert.equal(row.mechanicalParity,true,id);
    assert.equal(row.sourceFields,row.translatedFields,id);

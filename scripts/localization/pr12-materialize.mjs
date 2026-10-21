@@ -7,7 +7,7 @@ if(m.expected!==457||m.ids.length!==457||new Set(m.ids).size!==457)throw Error("
 const dir=path.join(root,"translations/fr/equipment");
 let changed=0, already=0;
 for(const id of m.ids){const file=path.join(dir,id+".json");const record=JSON.parse(await fs.readFile(file,"utf8"));
- if(record.logicalId!==id||record.sourceLogicalId!==id||record.language!=="fr"||!Array.isArray(record.fields)||!record.fields.length)throw Error("Invalid source-paired record "+id);
+ if(!record.logicalId||record.logicalId!==record.sourceLogicalId||record.language!=="fr"||!Array.isArray(record.fields)||!record.fields.length)throw Error("Invalid source-paired record "+id);
  if(record.status==="reviewed"){already++;continue;}
  if(record.status!=="proposed")throw Error("Unexpected proposal status "+id+": "+record.status);
  record.status="reviewed";await fs.writeFile(file,JSON.stringify(record,null,2)+String.fromCharCode(10));changed++;
