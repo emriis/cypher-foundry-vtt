@@ -2,7 +2,7 @@
   "logicalId": "ability.animal-senses-and-sensibilities",
   "sourceLogicalId": "ability.animal-senses-and-sensibilities",
   "language": "fr",
-  "status": "proposed",
+  "status": "reviewed",
   "fields": [
     {
       "path": "name",
@@ -12,7 +12,7 @@
     {
       "path": "system.description",
       "sourceHash": "6d926ed2127dd69b54b47006ec91cc4a275821c1d800e794d9e78e5c5dc465b5",
-      "text": "La plupart du temps, si vous êtes sur le point de tomber dans une embuscade ou un piège de niveau 4 ou moins, le MJ doit vous avertir, même si, selon les circonstances, vous pouvez ne pas avoir le temps de prévenir vos compagnons. Même lorsque vous n’avez pas conscience d’une attaque imminente, l’attaquant ne bénéficie d’aucun avantage contre vous, par exemple lié à la surprise."
+      "text": "La plupart du temps, si vous êtes sur le point de tomber dans une embuscade ou un piège de niveau 4 ou moins, le MJ doit vous avertir, même si, selon les circonstances, vous pouvez ne pas avoir le temps de prévenir vos compagnons. Même lorsque vous n’avez pas conscience d’une attaque imminente, la créature qui attaque ne tire aucun bénéfice particulier de la situation, notamment de la surprise."
     }
   ]
 }

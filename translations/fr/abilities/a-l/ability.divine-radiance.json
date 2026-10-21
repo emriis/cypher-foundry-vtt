@@ -2,7 +2,7 @@
   "logicalId": "ability.divine-radiance",
   "sourceLogicalId": "ability.divine-radiance",
   "language": "fr",
-  "status": "proposed",
+  "status": "reviewed",
   "fields": [
     {
       "path": "name",
@@ -22,7 +22,7 @@
     {
       "path": "system.effects.blessing.description",
       "sourceHash": "c6d6752075f18273b60554389d39d9dabd3b8c343efb240456984e1d5fac337c",
-      "text": "<p>une cible à portée courte reçoit une grâce divine bienveillante. À tout moment avant sa prochaine récupération de dix minutes ou plus, elle bénéficie d’un atout pour une action.</p>\n<p>Action.</p>"
+      "text": "<p>Une cible à portée courte reçoit une grâce divine bienveillante. À tout moment avant sa prochaine récupération de dix minutes ou plus, elle bénéficie d’un atout pour une action.</p>\n<p>Action.</p>"
     },
     {
       "path": "system.effects.blessing.effort",
@@ -37,7 +37,7 @@
     {
       "path": "system.effects.turn-undead.description",
       "sourceHash": "228751e88766c951145b4aa82f79c2ebce2b3ee26ce58af7862038f5d150bc47",
-      "text": "<p>jusqu’à cinq créatures mortes-vivantes de niveau 2 ou moins à portée courte sont frappées par un rayonnement divin ; effectuez un jet d’attaque d’Intellect distinct contre chaque cible. Les cibles affectées sont repoussées et doivent passer leur prochain tour à fuir votre présence.</p>\n<p>Selon le jeu, votre MJ peut décider que Repousser les morts-vivants fonctionne sur les démons ou des créatures similaires à la place des morts-vivants, ou en plus d’eux.</p>\n<p>Action.</p>\n<p>Au rang 3 : au lieu de faire fuir les cibles affectées, vous pouvez les empêcher d’effectuer des actions pendant un tour.</p>\n<p>Lorsqu’une aptitude ou un effet vous permet d’attaquer plusieurs créatures pendant votre tour, chaque attaque après la première est une action supplémentaire pendant votre tour. Une attaque effectuée par une action supplémentaire pendant votre tour compte comme une action distincte pour modifier la tâche avec de l’Effort.</p>"
+      "text": "<p>Jusqu’à cinq créatures mortes-vivantes de niveau 2 ou moins à portée courte sont frappées par un rayonnement divin ; effectuez un jet d’attaque d’Intellect distinct contre chaque cible. Les cibles affectées sont repoussées et doivent passer leur prochain tour à fuir votre présence.</p>\n<p>Selon le jeu, votre MJ peut décider que Repousser les morts-vivants fonctionne sur les démons ou des créatures similaires à la place des morts-vivants, ou en plus d’eux.</p>\n<p>Action.</p>\n<p>Au rang 3 : au lieu de faire fuir les cibles affectées, vous pouvez les empêcher d’effectuer des actions pendant un tour.</p>\n<p>Lorsqu’une aptitude ou un effet vous permet d’attaquer plusieurs créatures pendant votre tour, chaque attaque après la première est une action supplémentaire pendant votre tour. Une attaque effectuée par une action supplémentaire pendant votre tour compte comme une action distincte pour modifier la tâche avec de l’Effort.</p>"
     },
     {
       "path": "system.effects.turn-undead.effort",

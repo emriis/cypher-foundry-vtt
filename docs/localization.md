@@ -88,6 +88,19 @@ reviewed French Skill names to coexist with **English** labels in Types and
 Foci that are not yet approved. No previously reviewed item IDs or rule data
 are renamed by this change.
 
+### PR7 — First 175 Abilities reviewed
+
+The [first Ability review batch](localization-pr7-abilities-batch1.md) validates
+**175 of 701 Abilities**, from `ability.a-bit-of-magic` through
+`ability.divine-radiance`. They are now `reviewed`, in addition to the
+111 Skills and Descriptors approved by PR6; the other **526** Ability
+records remain `proposed` for later batches. The
+[locked selection](../data/localization/ability-review-batch-1.json)
+keeps same-name/different-rule variants separate. The
+`npm run audit:abilities-pr7` command writes a bilingual,
+source-hashed comparison worksheet; the normal build includes reviewed
+French entries while the release gate stays strict for the rest.
+
 ## Compendium organization and source identities
 
 Keep packs separated by family **and** language. Items and JournalEntries have

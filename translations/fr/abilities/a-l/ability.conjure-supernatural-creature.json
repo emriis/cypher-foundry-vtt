@@ -2,7 +2,7 @@
   "logicalId": "ability.conjure-supernatural-creature",
   "sourceLogicalId": "ability.conjure-supernatural-creature",
   "language": "fr",
-  "status": "proposed",
+  "status": "reviewed",
   "fields": [
     {
       "path": "name",
@@ -12,7 +12,7 @@
     {
       "path": "system.description",
       "sourceHash": "9bf0c3093894fd9e9a17a2d39775cc45665fa6528107aa4951bbe90cbe46b0ce",
-      "text": "Une créature surnaturelle d’une autre dimension, comme un ange, un démon ou un élémentaire, se manifeste sous forme physique à portée immédiate. Elle agit selon sa nature, généralement en attaquant un adversaire proche opposé à ses valeurs : un ange attaquerait un démon ou un nécromancien, un démon attaquerait un innocent ou un prêtre sacré, et un élémentaire attaquerait une créature de l’élément opposé. La créature reste jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus, puis disparaît, même si un démon ou un élémentaire peut rester quelque temps pour semer le trouble. Effort : faites en sorte que la créature surnaturelle vous comprenne et obéisse à vos instructions verbales. Une action pour commencer. Ange : niveau 5 ; Santé 15 ; une attaque physique, magique ou énergétique inflige 6 dégâts ; vole sur une distance courte par round. Démon : niveau 5 ; Santé 25 ; une attaque physique, magique ou énergétique inflige 6 dégâts ; vole sur une distance courte par round. Élémentaire : niveau 5 ; Santé 25 ; une attaque physique ou énergétique inflige 5 dégâts ; sa forme amorphe peut passer par des espaces de seulement 1 pied (30 cm) ; l’élémentaire d’air vole sur une distance longue par round ; l’élémentaire de terre possède une Armure de 3 ; l’élémentaire de feu possède une Armure de 10 contre le feu ; l’élémentaire d’eau nage sur une distance longue par round."
+      "text": "Une créature surnaturelle d’une autre dimension, comme un ange, un démon ou un élémentaire, se manifeste sous forme physique à portée immédiate. Elle agit selon sa nature, généralement en attaquant un adversaire proche opposé à ses valeurs : un ange attaquerait un démon ou un nécromancien, un démon attaquerait une personne innocente ou un prêtre sacré, et un élémentaire attaquerait une créature de l’élément opposé. La créature reste jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus, puis disparaît, même si un démon ou un élémentaire peut rester quelque temps pour semer le trouble. Effort : faites en sorte que la créature surnaturelle vous comprenne et obéisse à vos instructions verbales. Une action pour commencer. Ange : niveau 5 ; Santé 15 ; une attaque physique, magique ou énergétique inflige 6 dégâts ; vole sur une distance courte par round. Démon : niveau 5 ; Santé 25 ; une attaque physique, magique ou énergétique inflige 6 dégâts ; vole sur une distance courte par round. Élémentaire : niveau 5 ; Santé 25 ; une attaque physique ou énergétique inflige 5 dégâts ; sa forme amorphe peut passer par des espaces de seulement 1 pied (30 cm) ; l’élémentaire d’air vole sur une distance longue par round ; l’élémentaire de terre possède une Armure de 3 ; l’élémentaire de feu possède une Armure de 10 contre le feu ; l’élémentaire d’eau nage sur une distance longue par round."
     }
   ]
 }

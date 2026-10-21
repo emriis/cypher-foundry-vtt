@@ -2,7 +2,7 @@
   "logicalId": "ability.data-processor",
   "sourceLogicalId": "ability.data-processor",
   "language": "fr",
-  "status": "proposed",
+  "status": "reviewed",
   "fields": [
     {
       "path": "name",
@@ -12,7 +12,7 @@
     {
       "path": "system.description",
       "sourceHash": "dd2daaa2a0df591b9f280643fb61cffd9fb025d7301b0babd0e07d6c1ec57a23",
-      "text": "En utilisant des informations enregistrées et votre capacité à traiter les données entrantes à une vitesse extraordinaire, vous devenez temporairement entraîné dans une tâche mentale. Chaque fois que vous activez cette aptitude, choisissez une compétence d’Intellect, comme le piratage, la défense d’Intellect, une compétence de connaissances ou la perception ; vous êtes entraîné dans cette compétence jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Normalement, cette aptitude ne peut vous entraîner que dans une compétence à la fois ; la réactiver remplace l’utilisation précédente par une nouvelle compétence entraînée. Effort : augmentez d’une votre capacité maximale de compétences temporairement entraînées. Une action pour commencer."
+      "text": "En utilisant des informations enregistrées et votre capacité à traiter les données entrantes à une vitesse extraordinaire, vous bénéficiez temporairement d’un entraînement pour une tâche mentale. Chaque fois que vous activez cette aptitude, choisissez une compétence d’Intellect, comme le piratage, la défense d’Intellect, une compétence de connaissances ou la perception ; vous bénéficiez d’un entraînement dans cette compétence jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Normalement, cette aptitude ne peut vous entraîner que dans une compétence à la fois ; la réactiver remplace l’utilisation précédente par un nouvel entraînement dans une autre compétence. Effort : augmentez d’une votre capacité maximale de compétences temporairement entraînées. Une action pour commencer."
     }
   ]
 }

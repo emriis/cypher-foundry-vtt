@@ -2,7 +2,7 @@
   "logicalId": "ability.damage-dealer-51f3fd2be3a5",
   "sourceLogicalId": "ability.damage-dealer-51f3fd2be3a5",
   "language": "fr",
-  "status": "proposed",
+  "status": "reviewed",
   "fields": [
     {
       "path": "name",
@@ -12,7 +12,7 @@
     {
       "path": "system.description",
       "sourceHash": "10f2190cea4f245ae99b267494d184b7aa99bc991ac9bde3b9d7ec14049e9fa2",
-      "text": "Vous êtes devenu plus efficace pour tuer avec les armes à feu, avec lesquelles vous infligez 3 dégâts supplémentaires."
+      "text": "Votre efficacité létale avec les armes à feu s’est améliorée : vous infligez 3 dégâts supplémentaires avec ces armes."
     }
   ]
 }

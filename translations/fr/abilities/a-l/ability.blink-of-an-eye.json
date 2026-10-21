@@ -2,7 +2,7 @@
   "logicalId": "ability.blink-of-an-eye",
   "sourceLogicalId": "ability.blink-of-an-eye",
   "language": "fr",
-  "status": "proposed",
+  "status": "reviewed",
   "fields": [
     {
       "path": "name",
@@ -12,7 +12,7 @@
     {
       "path": "system.description",
       "sourceHash": "949c65021566dd854dbf8647493b6aa46bfc12aa73a175f48b1c7538a0ba697f",
-      "text": "Vous vous déplacez de jusqu’à 1 000 pieds (300 m). (Ce déplacement n’entrave pas vos tâches.) Action lente."
+      "text": "Vous vous déplacez sur une distance pouvant atteindre 1 000 pieds (300 m). (Ce déplacement n’entrave pas vos tâches.) Action lente."
     }
   ]
 }

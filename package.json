@@ -35,7 +35,8 @@
     "test:build": "node scripts/run-tests.mjs build",
     "audit:ids": "node scripts/audit-compendium-identities.mjs",
     "audit:callouts": "node scripts/audit-crd-callouts.mjs",
-    "audit:terminology": "node scripts/audit-terminology.mjs"
+    "audit:terminology": "node scripts/audit-terminology.mjs",
+    "audit:abilities-pr7": "node scripts/audit-ability-batch-1.mjs"
   },
   "dependencies": {
     "@foundryvtt/foundryvtt-cli": "^3.0.4"
