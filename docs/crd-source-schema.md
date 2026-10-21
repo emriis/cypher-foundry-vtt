@@ -245,6 +245,14 @@ text against drift; they do not certify missing fields, numeric extraction,
 catalogue completeness, or runtime automation. Updating evidence requires a new
 comparison with the actual CRD, never regeneration from pack JSON alone.
 
+The [CRD callout inventory](crd-callout-audit.md) checks the exact versioned
+DOCX in `docs/` for Word box styles, labels, GM intrusions, Genre themes and
+tables. Its source digest differs from the earlier local document digest
+associated with `data/crd-text-fidelity.json`, so only independently
+revalidated paragraph windows may supply positional evidence. A full
+paragraph match does not imply complete visual box preservation, and the
+seven rule Journals remain selected sections of the source.
+
 ## 10. Current source-backed content families
 
 The current CRD source conversion covers:
