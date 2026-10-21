@@ -33,7 +33,8 @@
     "test:sources": "node scripts/run-tests.mjs sources",
     "test:runtime": "node scripts/run-tests.mjs runtime",
     "test:build": "node scripts/run-tests.mjs build",
-    "audit:ids": "node scripts/audit-compendium-identities.mjs"
+    "audit:ids": "node scripts/audit-compendium-identities.mjs",
+    "audit:callouts": "node scripts/audit-crd-callouts.mjs"
   },
   "dependencies": {
     "@foundryvtt/foundryvtt-cli": "^3.0.4"
