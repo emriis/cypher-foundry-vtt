@@ -70,7 +70,12 @@ Every CRD-derived source record uses a stable logical ID independent of its
 Foundry UUID and display name.
 
 English and French records share that logical ID. French records additionally
-identify the English source logical ID.
+identify the English source logical ID. After normalization, paired records
+have **identical deterministic 16-character Foundry `_id` values** (SHA-256
+of the canonical English `logicalId`), while their complete UUIDs still
+differ by compendium collection (`-en` or `-fr`). Focus references,
+`abilityTiers`, Folder membership and Journal pages are remapped in the
+same normalization pass. Legacy authored filenames may remain unchanged.
 
 Source-to-source references use logical IDs. Pack compilation resolves them to
 Foundry UUIDs only after the complete source set is known.

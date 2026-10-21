@@ -5,6 +5,7 @@ import os from "node:os";
 import path from "node:path";
 import test from "node:test";
 import { readFrenchProposals } from "../../scripts/review-translations.mjs";
+import { proposedLogicalId } from "../../scripts/source-migration/id-contract.mjs";
 
 function proposal() {
   return { logicalId: "ability.example", sourceLogicalId: "ability.example", language: "fr", status: "proposed",
@@ -24,14 +25,18 @@ async function withFile(source, callback) {
   }
 }
 
-test("Given a valid proposed or reviewed editorial file, when proposals are read, then the exact status and legacy identity are preserved", async () => {
+test("Given a valid proposed or reviewed editorial file, when proposals are read, then the review status is kept under the canonical English identity", async () => {
   for (const status of ["proposed", "reviewed"]) {
     const value = proposal();
     value.status = status;
     value.logicalId = value.sourceLogicalId = "equipment.Fantasy.inexpensive.Arrows (12)";
     await withFile(JSON.stringify(value), async root => {
       const result = await readFrenchProposals(root);
-      assert.deepEqual(result.get(value.logicalId), { file: "example.json", proposal: value });
+      const normalized = proposedLogicalId(value.logicalId);
+      assert.deepEqual(result.get(normalized), { file: "example.json",
+        proposal: { ...value, logicalId: normalized, sourceLogicalId: normalized } });
+      assert.equal(value.logicalId, "equipment.Fantasy.inexpensive.Arrows (12)",
+        "Reading must not mutate legacy editorial files");
     });
   }
 });

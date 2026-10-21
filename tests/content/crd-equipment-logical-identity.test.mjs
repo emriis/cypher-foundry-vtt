@@ -4,6 +4,7 @@ import path from "node:path";
 import test from "node:test";
 
 import { CRD_EQUIPMENT_INVENTORY } from "../fixtures/crd-equipment-inventory.mjs";
+import { proposedLogicalId, proposedFoundryId } from "../../scripts/source-migration/id-contract.mjs";
 
 const ROOT = path.resolve("packs");
 
@@ -29,7 +30,7 @@ function equipmentRecords(language) {
 function expectedLogicalIds() {
   return new Set(
     CRD_EQUIPMENT_INVENTORY.map(([genre, priceCategory, sourceName]) =>
-      `equipment.${genre}.${priceCategory}.${sourceName}`
+      proposedLogicalId(`equipment.${genre}.${priceCategory}.${sourceName}`)
     )
   );
 }
@@ -43,7 +44,7 @@ for (const language of ["en", "fr"]) {
     for (const record of records) {
       const provenance = record.flags?.cypherFoundry?.crd;
       const actual = provenance?.logicalId;
-      if (!expected.has(actual)) {
+      if (!expected.has(actual) || record._id !== proposedFoundryId(actual)) {
         failures.push(`${record.name}: unexpected logicalId=${actual}`);
       }
 

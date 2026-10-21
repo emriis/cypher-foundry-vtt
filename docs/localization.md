@@ -99,7 +99,7 @@ and `lastAction`.
 
 Keep packs separated by family **and** language. Items and JournalEntries have
 different schemas; [Foundry compendiums hold one document type per pack](https://foundryvtt.com/article/compendium/).
-The existing paired packs keep collections small and preserve saved UUIDs.
+The existing paired packs keep collections small, but PR2 intentionally changes document UUIDs: all bilingual counterparts now derive the same _id from the English CRD logical identity.
 Do not combine them into one huge pack per language or rename pack collections
 merely to reorganize translation files.
 
@@ -111,12 +111,26 @@ English source-backed typed data and French display text have different roles.
 `migrate:packs` pairs records by their language-neutral CRD logical identity,
 aligns typed French fields with the canonical CRD-backed fields, and maps UUIDs
 and Focus graph endpoints to French counterparts. Translated names cannot change
-equipment IDs, cost fields, semantic durations, action identifiers or provenance
+canonical _ids, costs, semantic durations, action identifiers or provenance
 locators. Existing worlds are not rewritten by this source normalization.
 
 Changing the Foundry interface language does not translate an Item already
 imported into a world. Choose the appropriate pack when importing. A future
 world-language conversion requires a separate persisted-data migration.
+
+**Canonical ID migration (PR2):** after bilingual mechanics normalization, each
+Item or JournalEntry obtains `_id = sha256(canonicalLogicalId).slice(0, 16)`.
+EN/FR differ only in pack collection IDs; Folder and Journal page IDs are
+migrated deterministically as well. Existing imported Items, world UUIDs and
+macros are *not* automatically migrated; back up worlds and reimport relevant
+compendium content after installing the new system.
+
+The 259 legacy W4 equipment logical IDs are canonicalized from the English
+genre/price/name tuple. The proposal reader temporarily maps the existing
+`translations/fr/` editorial files (including Journal page paths) into this
+canonical namespace; proposal files remain unchanged until the dedicated
+PR3 editorial-source refactor. No historical French `_source` fallback is
+approved by this mapping.
 
 ## Complete French proposals
 

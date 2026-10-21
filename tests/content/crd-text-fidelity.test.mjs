@@ -18,20 +18,26 @@ test("Given CRD-verified passages, when English sources change, then their text 
     if (!packs.has(pack)) {
       const directory = path.join(root, "packs", pack, "_source");
       packs.set(pack, fs.readdirSync(directory, { recursive: true }).filter(file => file.endsWith(".json"))
-        .map(file => JSON.parse(fs.readFileSync(path.join(directory, file), "utf8"))));
+        .map(file => ({ file: file.replaceAll(path.sep, "/"),
+          document: JSON.parse(fs.readFileSync(path.join(directory, file), "utf8")) })));
     }
     const documents = packs.get(pack);
-    const exactId = documents.find(document => document._id === contract.id);
+    // The fixture refers to an independently CRD-reviewed authoring file.
+    // Document IDs are intentionally rewritten; source provenance and hash
+    // evidence remain bound to the same file and must never be regenerated.
+    const exactFile = contract.file.split("/_source/")[1];
+    const exactEntry = documents.find(entry => entry.file === exactFile);
+    const exactId = exactEntry?.document ?? null;
     // Editorial callouts exist in the legacy authoring catalogue but the
     // documented normalizer excludes them from playable Ability packs.
     if (!exactId && contract.scope === "editorial-excluded-from-normalized-packs") {
       assert.match(contract.name, /GM intrusions/);
-      assert.ok(!documents.some(document => document.name === contract.name));
+      assert.ok(!documents.some(entry => entry.document.name === contract.name));
       continue;
     }
     // Normalization may merge a duplicate or normalize an equipment ID. The
     // checked text must survive on the same named entry in the same family.
-    const candidates = exactId ? [exactId] : documents.filter(document => document.name === contract.name);
+    const candidates = exactId ? [exactId] : documents.filter(entry => entry.document.name === contract.name).map(entry => entry.document);
     const matches = candidates.some(document => {
       const value = contract.field.split(".").reduce((value, key) => value?.[key], document);
       if (typeof value !== "string") return false;

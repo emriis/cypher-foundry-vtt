@@ -5,7 +5,9 @@
  * _ids and must never be derived from localized display names.
  */
 
-export const CRD_ID_PATTERN = /^[a-z][a-z0-9]*(?:-[a-z0-9]+)*\.[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/;
+// Equipment retains four semantic components (family, English genre,
+// price category, source-name slug); ordinary families may use only two.
+export const CRD_ID_PATTERN = /^[a-z][a-z0-9]*(?:-[a-z0-9]+)*\.[a-z0-9]+(?:-[a-z0-9]+)*(?:\.[a-z0-9]+(?:-[a-z0-9]+)*)*$/;
 
 /**
  * Normalize a source label for use as an identifier component.

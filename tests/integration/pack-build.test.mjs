@@ -7,6 +7,7 @@ import { readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { promisify } from "node:util";
 import { extractPack } from "@foundryvtt/foundryvtt-cli";
+import { proposedPageId } from "../../scripts/source-migration/id-contract.mjs";
 import { createValidationWorkspace, removeValidationWorkspace } from "../../scripts/validation-workspace.mjs";
 
 /** Hash all authoring inputs or generated outputs, reporting only changed paths. */
@@ -113,10 +114,10 @@ test("Given legacy bilingual sources, when packs build, then reviewed and draft 
     }
     assert.equal(table.results.length, 3);
     const journal = reviewedDocument(frenchRules, "journal.task-difficulty");
-    const page = journal.pages.find(page => page._id === "b2c3d4e5f6070810");
+    const page = journal.pages.find(page => page._id === proposedPageId("journal.task-difficulty", "b2c3d4e5f6070810"));
     assert.ok(page, "Compiled page identity must survive translation");
-    assert.equal(page.name, expectedText("journal.task-difficulty", `pages.${page._id}.name`));
-    assert.equal(page.text.content, expectedText("journal.task-difficulty", `pages.${page._id}.text.content`));
+    assert.equal(page.name, expectedText("journal.task-difficulty", "pages.b2c3d4e5f6070810.name"));
+    assert.equal(page.text.content, expectedText("journal.task-difficulty", "pages.b2c3d4e5f6070810.text.content"));
     assertUnchanged(await snapshot(root), inputs, "Reviewed compilation must not change sources or proposal statuses");
 
     const proposalFile = path.join(root, "translations/fr/foci/focus.abides-in-stone.json");

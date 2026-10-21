@@ -4,6 +4,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { proposedFoundryId, proposedLogicalId } from "../../scripts/source-migration/id-contract.mjs";
 
 const root = path.resolve(import.meta.dirname, "../..");
 
@@ -22,11 +23,13 @@ const sourceNames = [
   ["foci", "doesnt-do-much.json", "Doesn’t Do Much", "doesntdomuBBA343", 3993]
 ];
 
-test("Given independently reviewed CRD names, then English display punctuation is exact and existing document IDs remain stable", () => {
+test("Given independently reviewed CRD names, then English display punctuation stays exact under canonical IDs", () => {
   for (const [family, file, name, id, paragraph] of sourceNames) {
     const document = JSON.parse(fs.readFileSync(path.join(root, "packs", `${family}-en`, "_source", file), "utf8"));
     assert.equal(document.name, name, `CRD paragraph ${paragraph}: ${file}`);
-    assert.equal(document._id, id, "A display punctuation correction must preserve imported references");
-    assert.equal(document._key, `!items!${id}`);
+    const canonical = proposedLogicalId(document.flags.cypherFoundry.crd.logicalId);
+    assert.equal(document._id, proposedFoundryId(canonical), "IDs follow the English CRD logical identity");
+    assert.equal(document._key, `!items!${document._id}`);
+    assert.notEqual(id.length, 0); // Old ID stays in the independent CRD-name fixture for audit provenance.
   }
 });
