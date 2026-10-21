@@ -64,6 +64,12 @@ test("Given legacy bilingual sources, when packs build, then reviewed and draft 
       reviewed.set(proposal.logicalId, proposal);
       await writeFile(file, JSON.stringify(proposal, null, 2) + "\n");
     }
+    // Keep this regression's explicit unreviewed-Focus scenario even after
+    // the source PR11 approves the Focus in the real authoring tree.
+    const reviewFocusFile = path.join(root, "translations/fr/foci/focus.abides-in-stone.json");
+    const reviewFocus = JSON.parse(await readFile(reviewFocusFile, "utf8"));
+    reviewFocus.status = "proposed";
+    await writeFile(reviewFocusFile, JSON.stringify(reviewFocus, null, 2) + "\n");
     const inputs = await snapshot(root);
     const build = (...args) => promisify(execFile)(process.execPath, ["scripts/build-packs.mjs", ...args],
       { cwd: root, maxBuffer: 8 * 1024 * 1024 });
