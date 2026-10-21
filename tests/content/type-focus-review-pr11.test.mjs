@@ -19,8 +19,9 @@ test("PR11 canonical coverage and inherited approvals stay intact",async()=>{
    assert.deepEqual(row.missingFields,[],id);
    assert.equal(row.sourceFields,row.translatedFields,id);
    assert.equal(row.mechanicalParity,true,id);
-   assert.ok(["proposed","reviewed"].includes(row.status),id);
+   assert.equal(row.status,"reviewed",id);
  }
  assert.equal(review.entries.filter(row=>row.logicalId.startsWith("ability.")&&row.status==="reviewed").length,701);
- assert.ok(review.entries.filter(row=>row.status==="reviewed").length>=812);
+ assert.equal(review.entries.filter(row=>row.status==="reviewed").length,909);
+ assert.equal(review.entries.filter(row=>row.status==="proposed").length,464);
 });
