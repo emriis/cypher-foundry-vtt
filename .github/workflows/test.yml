@@ -72,6 +72,17 @@ jobs:
         run: npm run migrate:packs
       - name: Run content tests
         run: npm run test:content
+      - name: Audit bilingual document identities
+        if: always()
+        run: npm run audit:ids
+      - name: Upload PR1 identity migration report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: compendium-identity-audit
+          path: reports/compendium-identity-audit.json
+          if-no-files-found: warn
+          retention-days: 7
       - name: Publish diagnostics
         if: always()
         run: |
