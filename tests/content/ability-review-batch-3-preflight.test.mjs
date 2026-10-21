@@ -29,7 +29,7 @@ test("PR9 third Ability tranche is deterministic, complete and disjoint from PR7
     assert.equal(row.mechanicalParity, true, id);
     assert.equal(row.sourceFields, row.translatedFields, id);
     if (previous.includes(id)) assert.equal(row.status, "reviewed", id);
-    else assert.ok(["proposed", "reviewed"].includes(row.status), id);
+    else assert.equal(row.status, "reviewed", "PR9 reviewed entry regressed: " + id);
   }
 });
 
@@ -64,4 +64,19 @@ test("PR9 locked variants remain separate, and none of its drafts is silently pr
     assert.ok(proposals.has(id), "Missing source-backed editorial record: " + id);
     assert.equal(proposals.get(id).proposal.language, "fr", id);
   }
+});
+
+test("PR9 yields 525 reviewed Abilities, 111 earlier records and 737 remaining proposals", async () => {
+  const records = await readCompendiumCatalogue(ROOT);
+  const proposals = await readFrenchProposals(ROOT);
+  const review = reviewCatalogue(records, proposals);
+  const counts = new Map();
+  for (const row of review.entries) {
+    counts.set(row.status, (counts.get(row.status) ?? 0) + 1);
+  }
+  assert.equal(review.entries.length, 1373);
+  assert.equal(review.entries.filter(row => row.logicalId.startsWith("ability.") && row.status === "reviewed").length, 525);
+  assert.equal(counts.get("reviewed"), 636);
+  assert.equal(counts.get("proposed"), 737);
+  assert.deepEqual(review.orphanedProposals, []);
 });
