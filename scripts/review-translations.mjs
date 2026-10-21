@@ -75,7 +75,7 @@ export async function readFrenchProposals(root) {
     canonical.sourceLogicalId = canonicalId;
     if (canonicalId.startsWith("journal.")) {
       for (const field of canonical.fields) {
-        const match = /^pages\\.([^.]+)(\\..+)$/.exec(field.path);
+        const match = /^pages\.([^.]+)(\..+)$/.exec(field.path);
         if (match) field.path = "pages." + proposedPageId(canonicalId, match[1]) + match[2];
       }
     }
