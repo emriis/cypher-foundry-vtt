@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "scope": "rules-journals-fr",
+  "reference": "Cypher Reference Document 2026-07-29",
+  "expected": 7,
+  "ids": [
+    "journal.combat",
+    "journal.distance-movement",
+    "journal.effort-edge",
+    "journal.recoveries-healing",
+    "journal.task-difficulty",
+    "journal.task-resolution",
+    "journal.xp-advancement"
+  ]
+}
