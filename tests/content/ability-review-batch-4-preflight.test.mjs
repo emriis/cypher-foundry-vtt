@@ -6,7 +6,7 @@ import { selectPR10Abilities } from "../../scripts/audit-ability-batch-4.mjs";
 import { readCompendiumCatalogue, readFrenchProposals, reviewCatalogue } from "../../scripts/review-translations.mjs";
 const ROOT = path.resolve(import.meta.dirname, "../..");
 
-test("PR10 locks the last 176 canonical Ability IDs after 525 earlier approvals", async () => {
+test("PR10 locks and checks the last 176 reviewed Ability IDs after 525 earlier approvals", async () => {
   const manifests = await Promise.all([1,2,3,4].map(async n =>
     JSON.parse(await fs.readFile(path.join(ROOT, "data/localization/ability-review-batch-"+n+".json"),"utf8"))));
   const previous = manifests.slice(0,3).flatMap(x=>x.ids), current=manifests[3].ids;
@@ -28,7 +28,7 @@ test("PR10 locks the last 176 canonical Ability IDs after 525 earlier approvals"
   for(const id of current){
     const row=byId.get(id);
     assert.ok(row,id);
-    assert.equal(row.status,"proposed","Unreviewed PR10 entry was approved: "+id);
+    assert.equal(row.status,"reviewed","PR10 Ability review lost: "+id);
     assert.deepEqual(row.errors,[],id);
     assert.deepEqual(row.missingFields,[],id);
     assert.equal(row.mechanicalParity,true,id);
@@ -39,6 +39,6 @@ test("PR10 locks the last 176 canonical Ability IDs after 525 earlier approvals"
     "ability.telekinesis-63c5636158a2","ability.telekinesis-94fdd863524f",
     "ability.wounded-fury-a4a66a23e161","ability.wounded-fury-e1d585e375b8",
     "ability.wounded-fury-e58a6c9dcfd9"]) assert.ok(current.includes(id),id);
-  assert.equal(report.entries.filter(x=>x.status==="reviewed").length,636);
-  assert.equal(report.entries.filter(x=>x.status==="proposed").length,737);
+  assert.equal(report.entries.filter(x=>x.status==="reviewed").length,812);
+  assert.equal(report.entries.filter(x=>x.status==="proposed").length,561);
 });
