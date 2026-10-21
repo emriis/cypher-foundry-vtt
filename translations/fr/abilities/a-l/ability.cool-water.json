@@ -2,7 +2,7 @@
   "logicalId": "ability.cool-water",
   "sourceLogicalId": "ability.cool-water",
   "language": "fr",
-  "status": "proposed",
+  "status": "reviewed",
   "fields": [
     {
       "path": "name",
@@ -12,7 +12,7 @@
     {
       "path": "system.description",
       "sourceHash": "46ea7dfb90e51dabc0a30bca877985796082b86b4757e9dbc98d09f6180c294d",
-      "text": "Vous condensez l’eau présente dans l’air pour créer assez d’eau froide potable pour faire vivre cinq créatures pendant un jour. Action."
+      "text": "Vous condensez l’eau présente dans l’air pour produire assez d’eau froide potable pour subvenir aux besoins en eau de cinq créatures pendant une journée. Action."
     }
   ]
 }
