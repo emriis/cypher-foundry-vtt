@@ -205,17 +205,37 @@ npm run build:packs
 # Compile all French editorial drafts for review:
 npm run build:packs -- --include-proposed
 
+# Check release eligibility: refuse all missing or unreviewed translations:
+npm run build:packs -- --require-reviewed
+
 # Build and exercise those drafts in a disposable Foundry world:
 npm run test:e2e -- --proposed-translations
 ```
 
-Normal builds select only `reviewed` proposals. They otherwise use the existing
-French source records, which may contain legacy English fallback text; that text
-is not counted as an approved French translation. `--include-proposed` selects
-both proposed and reviewed text and requires complete proposal coverage for the
-normalized catalogue. The compiled documents record the selected status under
-`flags.cypherFoundry.translation`; compiling a draft never promotes it to
-`reviewed`.
+**There is one French editorial authority:** `translations/fr/`. Every French
+document is materialized at build time from the canonical English CRD display
+fields plus a complete source-hashed French proposal when it is eligible. The
+historical display strings in `packs/*-fr/_source/` are **never** used as a
+fallback and cannot influence the compiled French text. Those authoring files
+remain temporary mechanical/identity shells pending their removal in a separate
+schema migration; they must not be edited as translations.
+
+Normal builds select only `reviewed` proposals. When the corresponding
+translation is not reviewed or absent, the build uses the **current English
+CRD text**, not any legacy French text. It records
+`flags.cypherFoundry.translation.status = "untranslated"` and
+`sourceLanguage = "en"` so nobody mistakes that content for an approved
+French translation.
+
+`--include-proposed` explicitly selects complete draft and reviewed proposals
+and requires full proposal coverage. It is an **editorial preview**, not an
+approval workflow. `--require-reviewed` rejects every non-reviewed or missing
+translation before compiling any pack. These options are mutually exclusive.
+Tagged GitHub releases use the strict mode and consequently cannot publish
+until all 1,373 current entries (plus future additions) are reviewed. Standard
+CI compiles traceable English-fallback builds to keep the translation project
+testable without calling those texts complete. Review and publication status
+remain authored exclusively in `translations/fr/`.
 
 `migrate:packs` explicitly rewrites source records when authoring normalization
 is intended; it is not a prerequisite for building. `build:packs` replaces only
