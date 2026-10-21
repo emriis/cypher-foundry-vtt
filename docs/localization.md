@@ -101,6 +101,20 @@ keeps same-name/different-rule variants separate. The
 source-hashed comparison worksheet; the normal build includes reviewed
 French entries while the release gate stays strict for the rest.
 
+### PR8 — Next 175 Abilities reviewed
+
+The [second Ability review batch](localization-pr8-abilities-batch2.md)
+approves **175 additional source-backed Abilities** from
+`ability.drain-life` to `ability.incredible-velocity`. With the
+[PR7 batch](localization-pr7-abilities-batch1.md) and the previously
+approved Skills/Descriptors, this gives **461 reviewed FR documents**
+out of 1,373. Another **351 Abilities** and **561 other documents**
+remain `proposed`. The [canonical batch manifest](../data/localization/ability-review-batch-2.json)
+keeps mechanically different versions separate and the audit
+`npm run audit:abilities-pr8` writes a complete English/French
+comparison worksheet. PR7's reviewed content remains strictly checked,
+while the release's global reviewed-only gate is still pending.
+
 ## Compendium organization and source identities
 
 Keep packs separated by family **and** language. Items and JournalEntries have
