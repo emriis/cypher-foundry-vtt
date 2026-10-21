@@ -2,7 +2,7 @@
   "logicalId": "ability.ice-armor",
   "sourceLogicalId": "ability.ice-armor",
   "language": "fr",
-  "status": "proposed",
+  "status": "reviewed",
   "fields": [
     {
       "path": "name",
@@ -12,7 +12,7 @@
     {
       "path": "system.description",
       "sourceHash": "04149e846aad6b0ce6d1e388934e3607dc346a2d6225cedb7200171051c84a8a",
-      "text": "Vous recouvrez votre corps d’une fine couche de glace jusqu’à ce que vous preniez une récupération de dix minutes ou plus, ce qui facilite vos jets de défense de Puissance pour bloquer les attaques. De plus, réduisez d’un degré la gravité des blessures causées par les effets de froid et de glace utilisés contre vous (de majeure à modérée, de modérée à mineure, de mineure à aucune). Par exemple, si vous êtes touché par un souffle de froid qui cause une blessure modérée, vous subissez à la place une blessure mineure. Vous pouvez effectuer une attaque légère à mains nues de « contact glacé » contre un adversaire, infligeant 2 dégâts de froid dus à l’armure de glace si votre attaque réussit. Aptitude passive."
+      "text": "Vous recouvrez votre corps d’une fine couche de glace jusqu’à ce que vous preniez une récupération de dix minutes ou plus, ce qui facilite vos jets de défense de Puissance pour bloquer les attaques. De plus, réduisez d’un degré la gravité des blessures causées par les effets de froid et de glace utilisés contre vous (de majeure à modérée, de modérée à mineure, de mineure à aucune). Par exemple, si un souffle de froid vous atteint et provoque une blessure modérée, vous subissez à la place une blessure mineure. Vous pouvez effectuer une attaque légère à mains nues de « contact glacé » contre un adversaire, infligeant 2 dégâts de froid dus à l’armure de glace si votre attaque réussit. Aptitude passive."
     }
   ]
 }
