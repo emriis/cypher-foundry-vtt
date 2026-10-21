@@ -69,8 +69,16 @@ test("Given CRD named definitions, then extraction preserves their names, bounda
 
 test("Given the CRD Noble Warrior package, then its three tier-one Abilities are separate references", () => {
   const type = JSON.parse(fs.readFileSync(path.join(root, "packs/types-en/_source/noble-warrior.json"), "utf8"));
-  const names = type.system.abilities.map(uuid => JSON.parse(fs.readFileSync(
-    path.join(root, `packs/abilities-en/_source/${uuid.split(".").at(-1)}.json`), "utf8")).name);
+  // Filenames preserve authoring provenance and need not equal canonical _ids.
+  const directory = path.join(root, "packs/abilities-en/_source");
+  const abilities = new Map(fs.readdirSync(directory).filter(file => file.endsWith(".json"))
+    .map(file => JSON.parse(fs.readFileSync(path.join(directory, file), "utf8")))
+    .map(document => [document._id, document]));
+  const names = type.system.abilities.map(uuid => {
+    const ability = abilities.get(uuid.split(".").at(-1));
+    assert.ok(ability, "Noble Warrior Ability reference must resolve");
+    return ability.name;
+  });
   assert.deepEqual(names, ["Expert Combatant", "Noble Defender", "Noble Sacrifice"]);
 });
 
