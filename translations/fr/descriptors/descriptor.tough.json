@@ -2,7 +2,7 @@
   "logicalId": "descriptor.tough",
   "sourceLogicalId": "descriptor.tough",
   "language": "fr",
-  "status": "proposed",
+  "status": "reviewed",
   "fields": [
     {
       "path": "name",
@@ -12,7 +12,7 @@
     {
       "path": "system.description",
       "sourceHash": "33df6ed28097b922dcc79ac970490c184f3979ceec0d20fb31f0e9dfa6ab1dd7",
-      "text": "<p>Vous êtes fort et pouvez supporter davantage d’épreuves physiques : vous continuez, ignorant les douleurs et les blessures qui ralentiraient ou mettraient hors de combat une personne moins résistante. Vous avez peut-être une grande carrure et une mâchoire carrée. Les personnages robustes portent souvent des cicatrices visibles.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>+2 à votre Réserve de Puissance</p>\n<p>Vous êtes entraîné pour l’une des compétences suivantes : Athlétisme ou Survie en milieu sauvage</p>"
+      "text": "<p>Votre force vous permet de supporter davantage d’épreuves physiques : vous continuez, ignorant les douleurs et les blessures qui ralentiraient ou mettraient hors de combat une personne moins résistante. Vous avez peut-être une grande carrure et une mâchoire carrée. Les personnages robustes portent souvent des cicatrices visibles.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>+2 à votre Réserve de Puissance</p>\n<p>Vous gagnez un entraînement dans l’une des compétences suivantes : Athlétisme ou Survie en milieu sauvage</p>"
     },
     {
       "path": "system.skillOptions.0",
