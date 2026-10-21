@@ -2,7 +2,7 @@
   "logicalId": "ability.flex-skill",
   "sourceLogicalId": "ability.flex-skill",
   "language": "fr",
-  "status": "proposed",
+  "status": "reviewed",
   "fields": [
     {
       "path": "name",
@@ -12,7 +12,7 @@
     {
       "path": "system.description",
       "sourceHash": "29e7b297f923dd8c529d69d842b9fcd1696d925857b1c45cfe5ea5c93ec6dee3",
-      "text": "Choisissez une tâche sur laquelle concentrer vos efforts, autre qu’une compétence d’attaque ou de défense. Pour le reste de la journée, vous êtes entraîné dans cette tâche. Vous ne pouvez pas utiliser cette aptitude sur une compétence dans laquelle vous êtes déjà entraîné pour devenir spécialisé. Cette aptitude se renouvelle lorsque vous utilisez une récupération de dix heures. Aptitude passive. Les androïdes utilisant Compétence adaptable obtiennent généralement cet entraînement en développant des données déjà téléchargées, compressées et stockées dans leur système, même si l’accès à une compétence spécialisée peut parfois nécessiter une connexion à un centre de données externe."
+      "text": "Choisissez une tâche sur laquelle concentrer vos efforts, autre qu’une compétence d’attaque ou de défense. Pour le reste de la journée, vous bénéficiez d’un entraînement pour cette tâche. Vous ne pouvez pas utiliser cette aptitude sur une compétence pour laquelle vous bénéficiez déjà d’un entraînement pour devenir spécialisé. Cette aptitude se renouvelle lorsque vous utilisez une récupération de dix heures. Aptitude passive. Les personnages androïdes utilisant Compétence adaptable obtiennent généralement cet entraînement en développant des données déjà téléchargées, compressées et stockées dans leur système, même si l’accès à une compétence spécialisée peut parfois nécessiter une connexion à un centre de données externe."
     }
   ]
 }

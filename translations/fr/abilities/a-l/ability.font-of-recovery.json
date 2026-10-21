@@ -2,7 +2,7 @@
   "logicalId": "ability.font-of-recovery",
   "sourceLogicalId": "ability.font-of-recovery",
   "language": "fr",
-  "status": "proposed",
+  "status": "reviewed",
   "fields": [
     {
       "path": "name",
@@ -12,7 +12,7 @@
     {
       "path": "system.description",
       "sourceHash": "630b8cfaad4d510466788ec0aaedea2b626fee02ab132ee57f5201822fb1e8c3",
-      "text": "Vous possédez un pouvoir réparateur auquel les autres peuvent accéder par un contact. Si un allié utilise son action pour vous toucher et dépense 1 point d’Intellect, il choisit de récupérer 1d6 points de Puissance ou 1d6 points de Célérité. Après avoir utilisé cette aptitude, cet allié ne peut plus l’utiliser avant sa prochaine récupération de dix heures. Aptitude passive."
+      "text": "Vous possédez un pouvoir réparateur auquel les autres peuvent accéder par un contact. Si une personne alliée utilise son action pour vous toucher et dépense 1 point d’Intellect, il choisit de récupérer 1d6 points de Puissance ou 1d6 points de Célérité. Après avoir utilisé cette aptitude, cette personne alliée ne peut plus l’utiliser avant sa prochaine récupération de dix heures. Aptitude passive."
     }
   ]
 }
