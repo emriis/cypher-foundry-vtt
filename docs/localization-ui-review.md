@@ -5,7 +5,15 @@ compendium translations. UI copy describes the implemented control or result;
 English CRD-derived descriptions must retain the supplied CRD wording, and
 French descriptions must preserve every condition, limit and consequence.
 
-## Editorial glossary
+## Historical UI glossary snapshot (pre-PR5)
+
+This table records decisions and proposals at the time of the UI review.
+It is **not** a second editorial authority. The current machine-readable
+normative glossary is
+[`data/localization/glossary-fr.json`](../data/localization/glossary-fr.json);
+see [inclusive writing and term governance](terminology-fr.md) for current
+status, scope and validation rules.
+
 
 The following French wording is the current editorial proposal. Confirmed
 user decisions take precedence over these proposed defaults.
