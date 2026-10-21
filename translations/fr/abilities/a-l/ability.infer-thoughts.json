@@ -2,7 +2,7 @@
   "logicalId": "ability.infer-thoughts",
   "sourceLogicalId": "ability.infer-thoughts",
   "language": "fr",
-  "status": "proposed",
+  "status": "reviewed",
   "fields": [
     {
       "path": "name",
@@ -12,7 +12,7 @@
     {
       "path": "system.description",
       "sourceHash": "a62297943f277d644727a97d8525270c66ea46de715d9a18fd37acde1d3a1728",
-      "text": "Si vous interagissez avec une cible de niveau 4 ou moins ou l’étudiez pendant au moins un round, vous comprenez si bien ses pensées superficielles que cela revient à lire dans son esprit (sans jet), même si le sujet ne le souhaite pas. Vous devez pouvoir voir la cible. Une fois que vous avez une idée de ce qu’elle pense — grâce à son langage corporel, à ses paroles et à ce qu’elle dit ou ne dit pas — vous pouvez continuer à déduire ses pensées superficielles jusqu’à ce que vous preniez une récupération de dix minutes ou plus, tant que vous pouvez toujours la voir et l’entendre. Effort : augmentez de 1 le niveau maximal d’une cible que vous pouvez affecter. Action pour préparer ; action pour commencer."
+      "text": "Si, pendant au moins un round, vous interagissez avec une cible de niveau 4 ou moins ou l’étudiez, vous comprenez si bien ses pensées superficielles que cela revient à lire dans son esprit (sans jet), même si le sujet ne le souhaite pas. Vous devez pouvoir voir la cible. Une fois que vous avez une idée de ce qu’elle pense — grâce à son langage corporel, à ses paroles et à ce qu’elle dit ou ne dit pas — vous pouvez continuer à déduire ses pensées superficielles jusqu’à ce que vous preniez une récupération de dix minutes ou plus, tant que vous pouvez toujours la voir et l’entendre. Effort : augmentez de 1 le niveau maximal d’une cible que vous pouvez affecter. Action pour préparer ; action pour commencer."
     }
   ]
 }
