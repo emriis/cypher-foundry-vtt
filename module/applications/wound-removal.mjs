@@ -1,5 +1,6 @@
 /** Shared persistence for one source-backed treatment/rest wound removal. */
 import { syncWoundStatusEffects } from "./damage-service.mjs";
+import { specialDamageLimits } from "./special-damage-healing.mjs";
 
 /** Synchronize real Actor token statuses; compatibility facades can lack token APIs. */
 export async function syncHealingStatuses(actor) {
@@ -16,7 +17,7 @@ export async function syncHealingStatuses(actor) {
  */
 export async function removeWound(target, severity) {
   if (target?.type !== "pc" || target.isOwner === false || !["minor", "moderate", "major"].includes(severity)
-    || !(target.system.wounds[severity].current > 0)) return false;
+    || !(target.system.wounds[severity].current > specialDamageLimits(target).wounds[severity])) return false;
   await target.update({ [`system.wounds.${severity}.current`]: target.system.wounds[severity].current - 1 });
   await syncHealingStatuses(target);
   return true;

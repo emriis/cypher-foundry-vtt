@@ -26,6 +26,8 @@ import { executeWeaponAbility, getWeaponAbilityKind } from "../applications/weap
 import { executeShieldAbility } from "../applications/shield-attack-service.mjs";
 import { getShieldAbilityKind, designateShield, startShieldWork, finishShieldWork, retrieveShield, resolveShieldTurnLoss } from "../applications/shield-lifecycle-service.mjs";
 import { promptShieldAbility, confirmShieldWork } from "./shield-dialogs.mjs";
+import { generalEffectDisplay, toggleGuarding, clearGeneralEffect, promptGeneralCondition,
+  promptCooperativeAction, promptSpecialDamage, promptDiseaseCheck } from "./general-action-dialogs.mjs";
 
 /**
  * Foundry VTT sheet for player characters using the Cypher system.
@@ -48,6 +50,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     // Template buttons declare data-action="...". Foundry routes each name to
     // the handler below, binding `this` to the sheet, even for static handlers.
     actions: {
+      toggleGuarding, clearGeneralEffect, promptGeneralCondition, promptCooperativeAction, promptSpecialDamage, promptDiseaseCheck,
       rollStat: CypherPCSheet.#onRollStat,
       rollRecovery: CypherPCSheet.#onRollRecovery,
       useCypher: CypherPCSheet.#onUseCypher,
@@ -94,7 +97,8 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       template: "systems/cypher/templates/actor/pc.hbs",
       templates: [
         "systems/cypher/templates/actor/parts/header.hbs",
-        "systems/cypher/templates/actor/parts/main.hbs"
+        "systems/cypher/templates/actor/parts/main.hbs",
+        "systems/cypher/templates/actor/parts/general-actions.hbs"
       ],
       scrollable: [".pc-dashboard"]
     }
@@ -112,6 +116,8 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     const context = await super._prepareContext(options);
     context.system = this.actor.system;
     context.actor = this.actor;
+    context.generalEffects = generalEffectDisplay(this.actor);
+    context.generalPC = true;
     context.superheroicsStat = this.actor.flags?.cypher?.superheroicsStat ?? "";
     context.hasSuperheroics = this.actor.items.some(item => item.type === "ability" && item.system.key === "superheroics");
     context.focusAbilityPendingTier =

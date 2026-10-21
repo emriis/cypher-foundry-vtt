@@ -6,6 +6,7 @@
  * @returns {{stat: string, armorModifier: number}}
  */
 export function resolveDefense(defenseType, armor = {}) {
+  if (["might", "speed", "intellect"].includes(defenseType)) return { stat: defenseType, armorModifier: 0 };
   if (defenseType === "block") {
     return {
       stat: "might",

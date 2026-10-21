@@ -1,5 +1,9 @@
 import { rollDefense } from "./task-service.mjs";
 import { resolveNpcAttackTargetDamage } from "../rules/npc-combat.mjs";
+import { getGeneralEffects } from "./general-effect-service.mjs";
+import { resolveGeneralModifiers } from "../rules/general-effects.mjs";
+import { resolveDocumentReference } from "./reference-resolver.mjs";
+import { runActorActions, ACTION_CONTEXT } from "./action-guard.mjs";
 import {
   expireWeaponEffectsAfterAction,
   expireWeaponEffectsOutsideCurrentRound,
@@ -18,18 +22,19 @@ import {
  * @param {object} [options={}] Attack options.
  * @param {Actor|null} [options.target=null] Target PC. When omitted, exactly
  * one targeted PC is required.
- * @param {string} [options.defenseType="dodge"] Block or Dodge.
+ * @param {string} [options.defenseType="dodge"] Block, Dodge or explicitly declared stat defense.
  * @param {string|null} [options.shieldItemId=null] Target-owned shield explicitly chosen for a Block.
  * @returns {Promise<object|null>} Defense and damage result.
  */
 export async function rollNpcAttack(
   actor,
   attack,
-  { target = null, defenseType = "dodge", shieldItemId = null } = {}
+  { target = null, defenseType = "dodge", shieldItemId = null, cooperativeMode = null,
+    takeAttackActor = null, physicalAttack = true, attackForm = null, ...taskOptions } = {}
 ) {
   if (actor.type !== "npc" || actor.isOwner === false) return null;
 
-  const selectedTarget = target
+  let selectedTarget = target
     ?? (game.user?.targets?.size === 1
       ? [...game.user.targets][0]?.actor
       : null);
@@ -39,34 +44,57 @@ export async function rollNpcAttack(
     return null;
   }
 
-  if (!["block", "dodge"].includes(defenseType)) return null;
-
-  await expireWeaponEffectsOutsideCurrentRound(actor);
-  const targetEffects = getActiveWeaponEffects(actor);
-  if (targetEffects.some(effect => effect.effect === "loseNextAction")) {
-    ui.notifications.warn(game.i18n.localize("CYPHER.NPC.LostNextAction"));
-    await expireWeaponEffectsAfterAction(actor);
-    return null;
+  if (!["block", "dodge", "might", "speed", "intellect"].includes(defenseType)) return null;
+  if (cooperativeMode === "draw") {
+    const draw = getGeneralEffects(actor).find(effect => effect.kind === "draw" && !effect.cancelled);
+    if (!draw) return null;
+    selectedTarget = await resolveDocumentReference(draw.sourceUuid, "pc");
+    // The task validates any chosen shield against this actual drawn target.
+    if (!selectedTarget || selectedTarget.isOwner === false) return null;
   }
+  return runActorActions([actor, selectedTarget, takeAttackActor], "npcAttack", async context => {
+    const generalEffects = getGeneralEffects(actor);
+    if (generalEffects.some(effect => effect.kind === "preventAction")) {
+      await expireWeaponEffectsAfterAction(actor);
+      ui.notifications.warn(game.i18n.localize("CYPHER.General.GuardStopped"));
+      return { stopped: true };
+    }
+    if (resolveGeneralModifiers(generalEffects, [], { isAttack: true, noPhysicalMovement: !physicalAttack }).rejected) {
+      ui.notifications.warn(game.i18n.localize("CYPHER.General.ActionPrevented"));
+      return null;
+    }
 
-  const hinderSteps = targetEffects
-    .filter(effect => effect.effect === "hindered")
-    .reduce((total, effect) => total + Math.max(0, effect.hinderSteps ?? 0), 0);
-  const effectiveLevel = Math.max(0, actor.system.level - hinderSteps);
+    await expireWeaponEffectsOutsideCurrentRound(actor);
+    const targetEffects = getActiveWeaponEffects(actor);
+    if (targetEffects.some(effect => effect.effect === "loseNextAction")) {
+      ui.notifications.warn(game.i18n.localize("CYPHER.NPC.LostNextAction"));
+      await expireWeaponEffectsAfterAction(actor);
+      return null;
+    }
 
-  const damage = resolveNpcAttackTargetDamage(attack);
-  if (!damage) {
-    ui.notifications.warn(game.i18n.localize("CYPHER.NPC.UnsupportedAttackDamage"));
-    return null;
-  }
+    const hinderSteps = targetEffects
+      .filter(effect => effect.effect === "hindered")
+      .reduce((total, effect) => total + Math.max(0, effect.hinderSteps ?? 0), 0);
+    const npcHinder = resolveGeneralModifiers(generalEffects, [], { isAttack: true }).hinder;
+    const effectiveLevel = Math.max(0, actor.system.level - hinderSteps - npcHinder);
 
-  const defense = await rollDefense(selectedTarget, defenseType, {
-    shieldItemId,
-    difficulty: effectiveLevel,
-    incomingSeverity: damage.mode === "wound" ? damage.severity : "minor",
-    incomingWounds: damage.mode === "wound" ? damage.wounds : 1,
-    applyIncomingWound: damage.mode === "wound",
-    incomingPoolDamage: damage.mode === "pool" ? { stat: damage.stat, amount: damage.amount } : null
+    const damage = resolveNpcAttackTargetDamage(attack);
+    if (!damage) {
+      ui.notifications.warn(game.i18n.localize("CYPHER.NPC.UnsupportedAttackDamage"));
+      return null;
+    }
+
+    const defense = await rollDefense(selectedTarget, defenseType, {
+      ...taskOptions,
+      [ACTION_CONTEXT]: context,
+      cooperativeMode, npcSource: actor, takeAttackActor, attackForm,
+      automaticFailure: physicalAttack && getGeneralEffects(selectedTarget).some(effect => ["paralyzed", "unconscious"].includes(effect.kind)),
+      shieldItemId,
+      difficulty: effectiveLevel,
+      incomingSeverity: damage.mode === "wound" ? damage.severity : "minor",
+      incomingWounds: damage.mode === "wound" ? damage.wounds : 1,
+      applyIncomingWound: damage.mode === "wound",
+      incomingPoolDamage: damage.mode === "pool" ? { stat: damage.stat, amount: damage.amount } : null
   });
 
   if (!defense) return null;
@@ -79,4 +107,5 @@ export async function rollNpcAttack(
     damage,
     targetDamage
   };
+  });
 }

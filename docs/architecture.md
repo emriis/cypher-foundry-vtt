@@ -52,6 +52,12 @@ The main gameplay boundaries are:
   character data operations.
 - `damage-service.mjs`: damage, wounds, armor, shields, repair, and token
   statuses.
+- `general-action-service.mjs`, `cooperative-service.mjs` and
+  `general-effect-service.mjs`: explicit cooperation, guard and condition
+  declarations, source-turn intervals and declared special-damage profiles;
+  `rule-effect-consequence.mjs` handles their attributed successful task effects.
+  `special-damage-healing.mjs` protects declared specialist-only damage.
+  See [general actions](general-actions.md) for source contracts and limits.
 - `shield-lifecycle-service.mjs` and `shield-attack-service.mjs`: explicitly
   designated physical shield Abilities, lost turns, timed work and source-backed
   attacks through the shared task engine; see [shield Abilities](shield-abilities.md).

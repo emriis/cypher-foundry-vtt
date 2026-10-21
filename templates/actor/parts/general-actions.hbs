@@ -1,0 +1,20 @@
+{{!-- Both actor sheets share explicit general-rule declarations and read-only effect labels. --}}
+<section class="pc-section general-actions">
+  <h3>{{localize "CYPHER.General.title"}}</h3>
+  <div class="flexrow">
+    <button type="button" data-action="toggleGuarding">{{localize "CYPHER.General.toggleGuard"}}</button>
+    <button type="button" data-action="promptGeneralCondition">{{localize "CYPHER.General.conditions"}}</button>
+    {{#if generalPC}}
+    <button type="button" data-action="promptCooperativeAction">{{localize "CYPHER.General.cooperation"}}</button>
+    <button type="button" data-action="promptSpecialDamage">{{localize "CYPHER.General.specialDamage"}}</button>
+    {{/if}}
+  </div>
+  {{#each generalEffects as |effect|}}
+  <div class="flexrow">
+    <span>{{effect.label}}{{#if effect.detail}} — {{effect.detail}}{{/if}} — {{effect.duration}}</span>
+    {{#if effect.disease}}<button type="button" data-action="promptDiseaseCheck" data-effect-id="{{effect.id}}">{{localize "CYPHER.General.repeatDisease"}}</button>{{/if}}
+    <button type="button" data-action="clearGeneralEffect" data-effect-id="{{effect.id}}"
+      aria-label="{{localize 'CYPHER.General.remove'}}: {{effect.label}}">{{localize "CYPHER.General.remove"}}</button>
+  </div>
+  {{/each}}
+</section>
