@@ -37,7 +37,8 @@
     "audit:callouts": "node scripts/audit-crd-callouts.mjs",
     "audit:terminology": "node scripts/audit-terminology.mjs",
     "audit:abilities-pr7": "node scripts/audit-ability-batch-1.mjs",
-    "audit:abilities-pr8": "node scripts/audit-ability-batch-2.mjs"
+    "audit:abilities-pr8": "node scripts/audit-ability-batch-2.mjs",
+    "audit:abilities-pr9": "node scripts/audit-ability-batch-3.mjs"
   },
   "dependencies": {
     "@foundryvtt/foundryvtt-cli": "^3.0.4"
