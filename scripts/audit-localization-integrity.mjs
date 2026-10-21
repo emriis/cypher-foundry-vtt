@@ -40,7 +40,7 @@ export function analyzeLocalization(records, proposals, glossary, uiEn, uiFr) {
       const sourceRow=englishById.get(row.logicalId);
       if(!sourceRow)continue;
       if(field.text.trim().length<30)continue;
-      if(/^[\\x00-\\x7f]+$/.test(field.text)&&/\\b(the|you|your|with|from|when|attack|skill|damage|level)\\b/i.test(field.text))
+      if(/^[\x00-\x7f]+$/.test(field.text)&&/\b(the|you|your|with|from|when|attack|skill|damage|level)\b/i.test(field.text))
         warnings.push({id:row.logicalId,field:field.path,type:"possible-english-prose"});
     }
   }
@@ -81,7 +81,7 @@ export async function auditFrenchLocalization(root=path.resolve(import.meta.dirn
     ]);
     const report=analyzeLocalization(records,proposals,JSON.parse(glossaryText),en.dictionary,fr.dictionary);
     await fs.mkdir(path.dirname(output),{recursive:true});
-    await fs.writeFile(output,JSON.stringify(report,null,2)+"\\n");
+    await fs.writeFile(output,JSON.stringify(report,null,2)+"\n");
     console.log(JSON.stringify(report.summary,null,2));
     if(report.errors.length)throw Error("Localization integrity audit found "+report.errors.length+" hard defects. See "+output);
     return report;
