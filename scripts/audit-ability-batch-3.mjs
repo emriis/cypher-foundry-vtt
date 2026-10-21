@@ -11,14 +11,14 @@ import { readCompendiumCatalogue, readFrenchProposals, reviewCatalogue } from ".
 import { inspectAbilityPair8 } from "./audit-ability-batch-2.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
-const MANIFESTS = [1, 2].map(n => "data/localization/ability-review-batch-" + n + ".json");
+const MANIFESTS = [1, 2, 3].map(n => "data/localization/ability-review-batch-" + n + ".json");
 const filenameCompare = (a, b) => a + ".json" < b + ".json" ? -1 : a + ".json" > b + ".json" ? 1 : 0;
 
 /** Select the exact third tranche after the two previously locked manifests. */
 export async function selectPR9Abilities(root = ROOT, proposals = null) {
   const manifests = await Promise.all(MANIFESTS.map(async file => JSON.parse(await fs.readFile(path.join(root, file), "utf8"))));
-  const previous = new Set(manifests.flatMap(m => m.ids));
-  if (manifests.some(m => m.expected !== 175 || m.ids.length !== 175) || previous.size !== 350) {
+  const previous = new Set(manifests.slice(0, 2).flatMap(m => m.ids));
+  if (manifests.some(m => m.expected !== 175 || m.ids.length !== 175 || new Set(m.ids).size !== 175) || previous.size !== 350) {
     throw new Error("PR7/PR8 manifests are not the expected disjoint 350 identities");
   }
   const authored = proposals ?? await readFrenchProposals(root);
@@ -27,7 +27,8 @@ export async function selectPR9Abilities(root = ROOT, proposals = null) {
   if (all.slice(0, 350).some(id => !previous.has(id))) throw new Error("First two batches no longer match canonical sort order");
   const ids = all.slice(350, 525);
   if (ids.length !== 175 || ids.some(id => previous.has(id))) throw new Error("PR9 selection overlaps prior reviews");
-  return ids;
+  if (JSON.stringify(ids) !== JSON.stringify(manifests[2].ids)) throw new Error("PR9 locked manifest drifted from canonical order");
+  return manifests[2].ids;
 }
 
 export async function auditAbilityBatch9(root = ROOT, output = path.join(root, "reports/ability-review-batch-3.json")) {
