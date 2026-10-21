@@ -37,6 +37,9 @@ test("canonical migration preserves all bilingual links, folders and Journal pag
   await withCatalogue(async ({ root, add, read, files }) => {
     const oldEn = "aaaaaaaaaaaaaaaa", oldFr = "bbbbbbbbbbbbbbbb";
     const oldFocus = "cccccccccccccccc";
+    const oldJournal = "3333333333333333", oldPage = "4444444444444444";
+    const oldPageLink = "Compendium.cypher.rules-en.JournalEntry." + oldJournal +
+      ".JournalEntryPage." + oldPage;
     const oldFolderEn = "dddddddddddddddd", oldFolderFr = "eeeeeeeeeeeeeeee";
     const enUuid = "Compendium.cypher.abilities-en.Item." + oldEn;
     const frUuid = "Compendium.cypher.abilities-fr.Item." + oldFr;
@@ -54,7 +57,7 @@ test("canonical migration preserves all bilingual links, folders and Journal pag
     await add("abilities-fr", "light", item(abilityLogical, oldFr, "fr",
       "ability", { key: "summon-light", description: "Invoque la lumière." }));
     await add("foci-en", "focus", item("focus.illumination", oldFocus, "en", "focus", {
-      description: "A Focus.", abilities: [enUuid], abilityTiers: [{ ability: enUuid, tier: 1 }],
+      description: "@UUID[" + oldPageLink + "]", abilities: [enUuid], abilityTiers: [{ ability: enUuid, tier: 1 }],
       flowchart: { edges: [{ from: oldEn, to: oldEn }] }
     }));
     await add("foci-fr", "focus", item("focus.illumination", oldFocus, "fr", "focus", {
@@ -70,7 +73,7 @@ test("canonical migration preserves all bilingual links, folders and Journal pag
       flags: { cypherFoundry: { crd: { logicalId: "journal.example", language,
         ...(language === "fr" ? { sourceLogicalId: "journal.example" } : {}) } } }
     });
-    await add("rules-en", "rule", rule("en", "3333333333333333", "4444444444444444"));
+    await add("rules-en", "rule", rule("en", oldJournal, oldPage));
     await add("rules-fr", "rule", rule("fr", "5555555555555555", "6666666666666666"));
 
     const first = await migrateCanonicalIds(root);
@@ -89,6 +92,10 @@ test("canonical migration preserves all bilingual links, folders and Journal pag
     assert.equal(focusFr.system.abilityTiers[0].ability, focusFr.system.abilities[0]);
     assert.deepEqual(focusEn.system.flowchart.edges, [{ from: expectedAbilityId, to: expectedAbilityId }]);
     assert.deepEqual(focusFr.system.flowchart.edges, focusEn.system.flowchart.edges);
+    assert.equal(focusEn.system.description,
+      "@UUID[Compendium.cypher.rules-en.JournalEntry." +
+      proposedFoundryId("journal.example") + ".JournalEntryPage." +
+      proposedPageId("journal.example", oldPage) + "]");
     const dEn = await read("descriptors-en", "example");
     const dFr = await read("descriptors-fr", "example");
     assert.equal(dEn.folder, proposedFolderId("descriptors", "folder-general.json"));
