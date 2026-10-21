@@ -301,9 +301,7 @@
       "french": "Gravité de la blessure",
       "status": "proposed",
       "context": "Say degré de gravité, not pas, when reducing wound severity.",
-      "uiBindings": [
-        "CYPHER.Defense.IncomingSeverity"
-      ]
+      "uiBindings": []
     },
     {
       "id": "mechanic.recovery",
