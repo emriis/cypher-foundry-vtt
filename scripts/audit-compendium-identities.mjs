@@ -300,8 +300,12 @@ export async function runIdentityAudit(root = ROOT) {
     report.folders = auditFolderPairs(authoredFolders);
     report.issueCounts.folderMissingPairs = report.folders.issues.missingPairs.length;
     report.issueCounts.folderDanglingParents = report.folders.issues.danglingFolderReferences.length;
+    // PR1's authored Folder IDs and PR2's normalized deterministic Folder IDs
+    // are both valid lookup keys during a migration report. The current
+    // checkout may contain either generation, depending on its lifecycle.
     const folderIds = new Map(report.folders.entries.flatMap(group =>
-      [group.en, group.fr].filter(Boolean).map(item => [item.pack + ":" + item.currentId, item])));
+      [group.en, group.fr].filter(Boolean).flatMap(item =>
+        [item.currentId, item.proposedId].map(id => [item.pack + ":" + id, item]))));
     report.folderAssignments = normalized.filter(record => record.document.folder).map(record => {
       const currentFolderId = record.document.folder;
       const target = folderIds.get(record.pack + ":" + currentFolderId);
