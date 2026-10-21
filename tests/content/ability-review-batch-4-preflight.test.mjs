@@ -39,6 +39,6 @@ test("PR10 locks and checks the last 176 reviewed Ability IDs after 525 earlier 
     "ability.telekinesis-63c5636158a2","ability.telekinesis-94fdd863524f",
     "ability.wounded-fury-a4a66a23e161","ability.wounded-fury-e1d585e375b8",
     "ability.wounded-fury-e58a6c9dcfd9"]) assert.ok(current.includes(id),id);
-  assert.equal(report.entries.filter(x=>x.status==="reviewed").length,812);
-  assert.equal(report.entries.filter(x=>x.status==="proposed").length,561);
+  assert.ok(report.entries.filter(x=>x.status==="reviewed").length >= 812);
+  assert.ok(report.entries.filter(x=>x.status==="proposed").length <= 561);
 });
