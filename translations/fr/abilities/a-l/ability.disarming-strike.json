@@ -2,7 +2,7 @@
   "logicalId": "ability.disarming-strike",
   "sourceLogicalId": "ability.disarming-strike",
   "language": "fr",
-  "status": "proposed",
+  "status": "reviewed",
   "fields": [
     {
       "path": "name",
@@ -12,7 +12,7 @@
     {
       "path": "system.description",
       "sourceHash": "e5aa2739b95c2aa025617f020bb5a9d90e776506b46b35f7f81d7d175cce48fa",
-      "text": "Effectuez une attaque contre un adversaire avec votre arme choisie. Si vous touchez, vous infligez 1 dégât de moins que la normale, mais vous désarmez votre adversaire en projetant son arme au sol à 10 pieds (3.5 m). Si votre arme choisie est un fouet, vous pouvez à la place choisir d’entraver votre attaque ; en cas de réussite, l’arme de l’adversaire atterrit dans votre autre main. Si votre arme choisie est un arc, vous pouvez à la place choisir d’entraver votre attaque ; en cas de réussite, l’arme de l’adversaire est « clouée » à un objet ou à une structure proche. Action."
+      "text": "Effectuez une attaque contre un adversaire avec votre arme choisie. Si vous touchez, vous infligez 1 dégât de moins que la normale, mais vous désarmez votre adversaire en projetant son arme au sol à 10 pieds (3,5 m). Si votre arme choisie est un fouet, vous pouvez à la place choisir d’entraver votre attaque ; en cas de réussite, l’arme de l’adversaire atterrit dans votre autre main. Si votre arme choisie est un arc, vous pouvez à la place choisir d’entraver votre attaque ; en cas de réussite, l’arme de l’adversaire est « clouée » à un objet ou à une structure proche. Action."
     }
   ]
 }
