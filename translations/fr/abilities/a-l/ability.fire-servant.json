@@ -2,7 +2,7 @@
   "logicalId": "ability.fire-servant",
   "sourceLogicalId": "ability.fire-servant",
   "language": "fr",
-  "status": "proposed",
+  "status": "reviewed",
   "fields": [
     {
       "path": "name",
@@ -12,7 +12,7 @@
     {
       "path": "system.description",
       "sourceHash": "980b18e84a6748761fb7a1639dc8066e34e0a5c7d1bf5c6dd74e93ddecceec66",
-      "text": "Vous utilisez Voile de flammes pour créer un automate de feu de votre forme et taille générales, qui dure jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Cet allié PNJ agit selon vos instructions à chaque round. Le diriger nécessite une action, et vous ne pouvez lui donner un ordre que si vous êtes à sa portée longue. Sans ordre, il continue à suivre votre ordre précédent. Vous pouvez aussi lui donner une action simple programmée, comme « Attends ici et attaque toute personne qui arrive à portée courte jusqu’à sa mort. » Une action pour le créer ; une action pour le diriger. Automate de feu : niveau 5 ; Armure 1 ; ses attaques contondantes infligent 6 dégâts, dont 1 de feu."
+      "text": "Vous utilisez Voile de flammes pour créer un automate de feu de votre forme et taille générales, qui dure jusqu’à ce que vous utilisiez une récupération de dix minutes ou plus. Cet allié PNJ agit selon vos instructions à chaque round. Le diriger nécessite une action, et vous ne pouvez lui donner un ordre que si vous êtes à portée longue de l’automate. Sans ordre, il continue à suivre votre ordre précédent. Vous pouvez aussi lui donner une action simple programmée, comme « Attends ici et attaque toute personne qui arrive à portée courte jusqu’à sa mort. » Une action pour le créer ; une action pour le diriger. Automate de feu : niveau 5 ; Armure 1 ; ses attaques contondantes infligent 6 dégâts, dont 1 de feu."
     }
   ]
 }
