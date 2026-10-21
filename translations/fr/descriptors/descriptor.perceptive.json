@@ -2,7 +2,7 @@
   "logicalId": "descriptor.perceptive",
   "sourceLogicalId": "descriptor.perceptive",
   "language": "fr",
-  "status": "proposed",
+  "status": "reviewed",
   "fields": [
     {
       "path": "name",
@@ -12,7 +12,7 @@
     {
       "path": "system.description",
       "sourceHash": "c5524648c9c2120315f0592a1bff3f048ae7939ccccea0111fd5deac1c917b5c",
-      "text": "<p>Peu de choses vous échappent. Vous remarquez les petits détails du monde qui vous entoure et savez tirer des déductions des informations recueillies. Ces talents font de vous un enquêteur exceptionnel ou un éclaireur doué.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>+2 à votre Réserve d’Intellect</p>\n<p>Vous êtes entraîné pour l’une des compétences suivantes : Perception ou Analyse des intentions</p>"
+      "text": "<p>Peu de choses vous échappent. Vous remarquez les petits détails du monde qui vous entoure et savez tirer des déductions des informations recueillies. Ces talents vous permettent d’exceller dans l’enquête ou les missions de reconnaissance.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>+2 à votre Réserve d’Intellect</p>\n<p>Vous gagnez un entraînement dans l’une des compétences suivantes : Perception ou Analyse des intentions</p>"
     },
     {
       "path": "system.skillOptions.0",
