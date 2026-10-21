@@ -113,6 +113,8 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
+      - name: Check OOXML callout extraction with synthetic Word fixtures
+        run: python3 -m unittest discover -s tests/python -p 'test_*.py'
       - name: Audit original CRD boxes and English normalized sources
         run: npm run audit:callouts -- --normalized
       - name: Upload PR4 CRD coverage inventory
