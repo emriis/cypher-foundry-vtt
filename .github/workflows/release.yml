@@ -33,8 +33,11 @@ jobs:
             throw "Tag '$tag' does not match system.json version '$version'."
           }
 
-      - name: Build compendium packs
-        run: npm run build:packs
+      # Tag releases must never publish French packs that contain unreviewed
+      # English fallback. This gate remains intentionally closed until the
+      # remaining editorial translation PRs have been approved.
+      - name: Build fully reviewed compendium packs
+        run: npm run build:packs -- --require-reviewed
 
       - name: Validate compiled packs
         run: npm run test:build
