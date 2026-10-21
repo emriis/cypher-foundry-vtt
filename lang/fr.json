@@ -316,6 +316,12 @@
       "UnsupportedType": "Objet « {name} » ({type}) : ce type d’objet n’est pas encore pris en charge par l’import, il a été ignoré.",
       "WarningsCount": "Import terminé avec {count} avertissement(s) — voir la console (F12) pour le détail."
     },
+    "Initiative": {
+      "Hint": "Lancez la Célérité pour l’initiative. Chaque étape d’aisance ajoute 3 ; chaque étape d’entrave retire 3. Les PNJ utilisent leur niveau multiplié par 3. Un PJ agit avant un PNJ en cas d’égalité.",
+      "Label": "Initiative",
+      "ManualCorrection": "Une correction précédente de l’initiative a été interrompue. Le meilleur dé est conservé ; demandez au MJ de corriger le suivi de combat et tout remboursement de réserve en attente.",
+      "Result": "Initiative : {score} (dé {roll}, modificateur en étapes {steps})."
+    },
     "Item": {
       "Delete": "Supprimer",
       "Edit": "Modifier",

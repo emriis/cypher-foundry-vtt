@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { promptRollOptions, promptWeaponAttackCategory, promptWeaponAbility } from "../../module/sheets/dialogs.mjs";
+import { promptRollOptions, promptWeaponAttackCategory, promptWeaponAbility, promptInitiativeOptions } from "../../module/sheets/dialogs.mjs";
 
 function dialogEnvironment(result) {
   const prompts = [];
@@ -24,6 +24,16 @@ test("Given a cancelled roll dialog, then no Actor writes occur", async () => {
   assert.equal(await promptRollOptions(actor, { isAttack: true }), null);
   assert.equal(await promptWeaponAttackCategory(), null);
   assert.equal(await promptWeaponAbility(actor, { type: "ability", system: { key: "spray" } }), null);
+});
+
+test("initiative choices use Speed, hide routine/difficulty controls and cancel without writes", async () => {
+  const prompts = dialogEnvironment(null);
+  const actor = { system: { effort: 2 }, items: { filter: () => [] },
+    async update() { assert.fail("No initiative resources before acceptance"); } };
+  assert.equal(await promptInitiativeOptions(actor), null);
+  assert.equal(prompts[0].window.title, "CYPHER.Initiative.Label");
+  assert.match(prompts[0].content, /CYPHER.Initiative.Hint/);
+  assert.match(prompts[0].content, /<div class="form-group" hidden><label><input type="checkbox" name="rollRoutine"/);
 });
 
 test("Given an unlinked targeted NPC, when weapon choices are accepted, then the actual synthetic Actor is preserved", async () => {

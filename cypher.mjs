@@ -19,7 +19,7 @@ import { importFromBuilder, openImportDialog, registerImportButton } from "./mod
 import { enforceSingleEquippedArmor } from "./module/applications/equipment-service.mjs";
 import { stampDefenseRevisions } from "./module/applications/defense-history.mjs";
 import { stampAttackHealthRevision } from "./module/applications/attack-history.mjs";
-import { promptSpecialEffect } from "./module/sheets/dialogs.mjs";
+import { promptSpecialEffect, promptInitiativeOptions } from "./module/sheets/dialogs.mjs";
 import { skipUnyieldingShieldTurn } from "./module/applications/shield-lifecycle-service.mjs";
 
 Hooks.on("updateCombat", skipUnyieldingShieldTurn);
@@ -34,7 +34,7 @@ Hooks.once("init", () => {
   // Publish shared configuration and macro entry points before sheets are opened.
   // Exposed for macro use, even if the sidebar button fails to find its
   // anchor point on a given Foundry version.
-  game.cypher = { CYPHER, importFromBuilder, openImportDialog };
+  game.cypher = { CYPHER, importFromBuilder, openImportDialog, promptInitiativeOptions };
   CONFIG.CYPHER = CYPHER;
 
   registerImportButton();
@@ -45,6 +45,7 @@ Hooks.once("init", () => {
   /* -------------------------------------------- */
   CONFIG.Actor.documentClass = documents.CypherActor;
   CONFIG.Item.documentClass = documents.CypherItem;
+  CONFIG.Combat.documentClass = documents.CypherCombat;
 
   /* -------------------------------------------- */
   /*  Data models                                  */
