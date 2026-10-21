@@ -2,7 +2,7 @@
   "logicalId": "ability.expert-doctor",
   "sourceLogicalId": "ability.expert-doctor",
   "language": "fr",
-  "status": "proposed",
+  "status": "reviewed",
   "fields": [
     {
       "path": "name",
@@ -12,7 +12,7 @@
     {
       "path": "system.description",
       "sourceHash": "b306f625862367098b1691cf80104c58d8d00818a858d5fa9b8b1887671fbfe5",
-      "text": "Vous êtes entraîné en soins. Au rang 6 : vous pouvez devenir expert en soins si vous êtes déjà spécialisé, mais vous devez acquérir la compétence normalement, par exemple par un avancement de personnage."
+      "text": "Vous bénéficiez d’un entraînement en soins. Au rang 6 : vous pouvez atteindre le niveau expert en soins si vous possédez déjà une spécialisation, mais vous devez acquérir la compétence normalement, par exemple par un avancement de personnage."
     }
   ]
 }

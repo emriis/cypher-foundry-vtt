@@ -2,7 +2,7 @@
   "logicalId": "ability.expert-interlocuter",
   "sourceLogicalId": "ability.expert-interlocuter",
   "language": "fr",
-  "status": "proposed",
+  "status": "reviewed",
   "fields": [
     {
       "path": "name",
@@ -12,7 +12,7 @@
     {
       "path": "system.description",
       "sourceHash": "bcb8f12bd8afafa66f47fc6fd3df96be68acad453b591dfe5f13befcf79fc867",
-      "text": "Vous êtes entraîné en charme, en tromperie ou en intimidation, au choix. Au rang 6 : vous pouvez devenir expert dans cette même compétence si vous êtes déjà spécialisé, mais vous devez acquérir la compétence normalement, par exemple par un avancement de personnage."
+      "text": "Vous bénéficiez d’un entraînement en charme, en tromperie ou en intimidation, au choix. Au rang 6 : vous pouvez atteindre le niveau expert dans cette même compétence si vous possédez déjà une spécialisation, mais vous devez acquérir la compétence normalement, par exemple par un avancement de personnage."
     }
   ]
 }

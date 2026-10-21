@@ -170,6 +170,28 @@ jobs:
           retention-days: 30
           if-no-files-found: error
 
+  abilities-pr8:
+    name: PR8 English/French Ability clauses and translation review
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Compare the next 175 normalized Ability source texts
+        run: npm run audit:abilities-pr8
+      - name: Archive full comparative review worksheet
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr8-abilities-comparative-review
+          path: reports/ability-review-batch-2.json
+          retention-days: 30
+          if-no-files-found: error
+
   integration:
     name: Integration and architecture tests
     runs-on: ubuntu-latest
@@ -275,6 +297,7 @@ jobs:
       - callouts
       - terminology
       - abilities-pr7
+      - abilities-pr8
       - integration
       - repository
       - coverage
@@ -294,6 +317,7 @@ jobs:
           echo "| CRD callout source audit | ${{ needs.callouts.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| French normative terminology | ${{ needs.terminology.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| PR7 Ability comparative review | ${{ needs.abilities-pr7.result }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| PR8 Ability comparative review | ${{ needs.abilities-pr8.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Integration and architecture | ${{ needs.integration.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Source normalization | ${{ needs.sources.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Repository checks | ${{ needs.repository.result }} |" >> "$GITHUB_STEP_SUMMARY"
@@ -306,6 +330,7 @@ jobs:
              [ "${{ needs.callouts.result }}" != "success" ] || \
              [ "${{ needs.terminology.result }}" != "success" ] || \
              [ "${{ needs.abilities-pr7.result }}" != "success" ] || \
+             [ "${{ needs.abilities-pr8.result }}" != "success" ] || \
              [ "${{ needs.integration.result }}" != "success" ] || \
              [ "${{ needs.repository.result }}" != "success" ] || \
              [ "${{ needs.sources.result }}" != "success" ] || \
