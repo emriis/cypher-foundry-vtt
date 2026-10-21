@@ -2,7 +2,7 @@
   "logicalId": "ability.lower-temperature",
   "sourceLogicalId": "ability.lower-temperature",
   "language": "fr",
-  "status": "proposed",
+  "status": "reviewed",
   "fields": [
     {
       "path": "name",
@@ -12,7 +12,7 @@
     {
       "path": "system.description",
       "sourceHash": "4c9200122f41aa101d132a50aa96afdadb4f062dca4482158afa32129bab4a10",
-      "text": "Vous abaissez la température de jusqu’à 30˚ F (15˚ C) dans une zone immédiate jusqu’à ce que vous preniez une récupération de dix minutes ou plus (cela réduit de deux degrés la gravité des blessures causées par les environnements chauds). Cet effet est centré sur vous et vous accompagne dans vos déplacements. Action."
+      "text": "Vous abaissez la température d’au plus 30˚ F (15˚ C) dans une zone immédiate jusqu’à ce que vous preniez une récupération de dix minutes ou plus (cela réduit de deux degrés la gravité des blessures causées par les environnements chauds). Cet effet est centré sur vous et vous accompagne dans vos déplacements. Action."
     }
   ]
 }
