@@ -26,6 +26,9 @@ test("builds language-neutral logical IDs", () => {
     "ability.wounded-fury"
   );
   assert.ok(isValidCrdLogicalId("focus.howls-at-the-moon"));
+  assert.ok(isValidCrdLogicalId("equipment.fantasy.inexpensive.arrows-12"));
+  assert.equal(getCrdPairingKey("equipment.fantasy.inexpensive.arrows-12"),
+    "equipment.fantasy.inexpensive.arrows-12");
 });
 
 test("logical IDs are pairing keys and are not localized", () => {
@@ -37,6 +40,8 @@ test("logical IDs are pairing keys and are not localized", () => {
 test("invalid logical IDs are rejected", () => {
   assert.equal(isValidCrdLogicalId("Wounded Fury"), false);
   assert.equal(isValidCrdLogicalId("ability/Wounded Fury"), false);
+  assert.equal(isValidCrdLogicalId("equipment..arrows"), false);
+  assert.equal(isValidCrdLogicalId("equipment.Fantasy.inexpensive.Arrows (12)"), false);
   assert.throws(
     () => getCrdPairingKey("ability"),
     /Invalid CRD logical ID/
