@@ -132,6 +132,10 @@ Strict publication remains gated for the 737 pending records.
 
 The [fourth batch](localization-pr10-abilities-batch4.md) inventories the remaining **176 Abilities** from `ability.resuscitate` to `ability.wraith-cloak`. The new comparison audit `npm run audit:abilities-pr10` preserves source-backed English and French pairs. All 176 final-batch proposal records have been marked `reviewed` following bilingual checks, bringing the status count to **812/1,373** (**701 Abilities**, 58 Skills, 53 Descriptors). The remaining **561 documents** (Types, Foci, Equipment, Rules) stay `proposed`. Automated checks alone do not prove that every French phrase is semantically equivalent; the full comparative worksheet is retained for independent editorial verification.
 
+### PR11 — Types and Foci bilingual editorial review
+
+The [PR11 manifest](../data/localization/type-focus-review-pr11.json) locks all **55 Types** and **42 Foci** from the CRD. `npm run audit:types-foci-pr11` compares full source-backed EN/FR passages and mechanically typed fields. All 97 records are currently marked `reviewed`, bringing the repository total to **909/1,373** (701 Abilities, 58 Skills, 53 Descriptors, 55 Types, 42 Foci); 464 Equipment/Rules entries remain `proposed`. The status change alone does not establish that all 97 full passages were individually checked against the English CRD, so semantic editorial certification remains a distinct acceptance gate. The CI archives the complete bilingual review evidence; mechanical parity does not prove semantic fidelity.
+
 ## Compendium organization and source identities
 
 Keep packs separated by family **and** language. Items and JournalEntries have

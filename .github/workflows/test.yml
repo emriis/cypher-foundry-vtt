@@ -236,6 +236,28 @@ jobs:
           retention-days: 30
           if-no-files-found: error
 
+  types-foci-pr11:
+    name: PR11 English/French Types and Foci editorial audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Compare 55 Types and 42 Foci against the source
+        run: npm run audit:types-foci-pr11
+      - name: Archive 97 bilingual pairs for review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr11-types-foci-comparative-review
+          path: reports/type-focus-review-pr11.json
+          retention-days: 30
+          if-no-files-found: error
+
   integration:
     name: Integration and architecture tests
     runs-on: ubuntu-latest
