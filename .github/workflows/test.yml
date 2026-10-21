@@ -257,6 +257,27 @@ jobs:
           path: reports/type-focus-review-pr11.json
           retention-days: 30
           if-no-files-found: error
+  equipment-pr12:
+    name: PR12 English/French Equipment and Cyphers audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Compare 457 Equipment and Cypher documents against the source
+        run: npm run audit:equipment-pr12
+      - name: Archive 457 bilingual pairs for review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr12-equipment-comparative-review
+          path: reports/equipment-review-pr12.json
+          retention-days: 30
+          if-no-files-found: error
 
   integration:
     name: Integration and architecture tests

@@ -136,6 +136,10 @@ The [fourth batch](localization-pr10-abilities-batch4.md) inventories the remain
 
 The [PR11 manifest](../data/localization/type-focus-review-pr11.json) locks all **55 Types** and **42 Foci** from the CRD. `npm run audit:types-foci-pr11` compares full source-backed EN/FR passages and mechanically typed fields. All 97 records are currently marked `reviewed`, bringing the repository total to **909/1,373** (701 Abilities, 58 Skills, 53 Descriptors, 55 Types, 42 Foci); 464 Equipment/Rules entries remain `proposed`. The status change alone does not establish that all 97 full passages were individually checked against the English CRD, so semantic editorial certification remains a distinct acceptance gate. The CI archives the complete bilingual review evidence; mechanical parity does not prove semantic fidelity.
 
+### PR12 — Equipment and Cyphers
+
+All **457 Equipment-family records** (259 ordinary equipment, weapons, armor and shields; 198 Cyphers) have a source-locked bilingual inventory in [PR12](localization-pr12-equipment.md) and a CI comparison audit (`npm run audit:equipment-pr12`). French drafts are mechanically paired to their canonical English counterparts. Review statuses are tracked separately from the final in-Foundry semantic and presentation review. With 457 Equipment records recorded as `reviewed`, cumulative coverage is **1,366 / 1,373**, leaving seven CRD Rules Journals for PR13. Automated approval does not prove full semantic fidelity.
+
 ## Compendium organization and source identities
 
 Keep packs separated by family **and** language. Items and JournalEntries have
