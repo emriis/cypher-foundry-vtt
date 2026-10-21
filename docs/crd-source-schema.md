@@ -74,7 +74,7 @@ data model permits it.
 This includes costs, tiers, levels, ranges, durations, damage, prerequisites,
 table results, conditions, depletion values, variants, and document references.
 
-Localized prose belongs in the language-specific record.
+French display prose is authored only in source-hashed editorial proposals under `translations/fr/`. Normalized French `_source` files remain structural counterparts; compilation overwrites every translatable field with the English canonical text or its selected French proposal.
 
 The schema does not translate, normalize, infer, or otherwise rewrite mechanics.
 
