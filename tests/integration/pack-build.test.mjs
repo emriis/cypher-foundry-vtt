@@ -45,6 +45,14 @@ test("Given legacy bilingual sources, when packs build, then reviewed and draft 
     const source = JSON.parse(await readFile(sourceFile, "utf8"));
     if (source.flags?.cypherFoundry?.crd) delete source.flags.cypherFoundry.crd.logicalId;
     await writeFile(sourceFile, JSON.stringify(source, null, 2) + "\n");
+    // Deliberately corrupt historical French prose. A normal build must
+    // reconstruct display fields from the canonical English source and never
+    // ship either of these legacy sentences into a compiled FR document.
+    const legacyFrench = path.join(root, "packs/foci-fr/_source/abides-in-stone.json");
+    const oldFrench = JSON.parse(await readFile(legacyFrench, "utf8"));
+    oldFrench.name = "OLD FRENCH NAME MUST NOT APPEAR";
+    oldFrench.system.description = "<p>OLD FRENCH CONTENT MUST NOT APPEAR.</p>";
+    await writeFile(legacyFrench, JSON.stringify(oldFrench, null, 2) + "\n");
     // Simulate editorial approval only inside this test's disposable checkout.
     // One existing build exercises effects, table results and embedded journal text.
     const reviewed = new Map();
@@ -83,6 +91,17 @@ test("Given legacy bilingual sources, when packs build, then reviewed and draft 
     const frenchRulesDirectory = path.join(workspace, "reviewed-rules");
     await extractPack(path.join(root, "packs/abilities-fr"), frenchAbilitiesDirectory);
     await extractPack(path.join(root, "packs/rules-fr"), frenchRulesDirectory);
+    const baselineFrenchFociDir = path.join(workspace, "english-fallback-foci");
+    await extractPack(path.join(root, "packs/foci-fr"), baselineFrenchFociDir);
+    const baselineFocus = (await extractedDocuments(baselineFrenchFociDir))
+      .find(document => document.flags?.cypherFoundry?.crd?.logicalId === "focus.abides-in-stone");
+    const originalFocus = foci.find(document =>
+      document.flags?.cypherFoundry?.crd?.logicalId === "focus.abides-in-stone");
+    assert.ok(baselineFocus && originalFocus);
+    assert.equal(baselineFocus.name, originalFocus.name);
+    assert.equal(baselineFocus.system.description, originalFocus.system.description);
+    assert.equal(baselineFocus.flags.cypherFoundry.translation.status, "untranslated");
+    assert.equal(baselineFocus.flags.cypherFoundry.translation.sourceLanguage, "en");
     const frenchAbilities = await extractedDocuments(frenchAbilitiesDirectory);
     const frenchRules = await extractedDocuments(frenchRulesDirectory);
     const reviewedDocument = (documents, logicalId) => {
@@ -119,6 +138,14 @@ test("Given legacy bilingual sources, when packs build, then reviewed and draft 
     assert.equal(page.name, expectedText("journal.task-difficulty", "pages.b2c3d4e5f6070810.name"));
     assert.equal(page.text.content, expectedText("journal.task-difficulty", "pages.b2c3d4e5f6070810.text.content"));
     assertUnchanged(await snapshot(root), inputs, "Reviewed compilation must not change sources or proposal statuses");
+
+    // Release policy must fail before replacing any generated pack when the
+    // catalogue has a mix of reviewed and unreviewed French proposals.
+    const preStrictOutputs = await snapshot(root, { generated: true });
+    await assert.rejects(build("--require-reviewed"),
+      error => /requires a reviewed proposal/i.test(error.stderr));
+    assertUnchanged(await snapshot(root, { generated: true }), preStrictOutputs,
+      "Strict publication rejection must preserve all compiled packs.");
 
     const proposalFile = path.join(root, "translations/fr/foci/focus.abides-in-stone.json");
     const proposal = JSON.parse(await readFile(proposalFile, "utf8"));

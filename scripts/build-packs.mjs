@@ -2,8 +2,9 @@
  * Builds Foundry-readable LevelDB packs from the editable JSON sources.
  *
  * Normalize a disposable checkout before selecting source-hashed translations.
- * Compile every pack before publishing generated files; authoring JSON and
- * proposal review statuses stay unchanged, including for legacy input sources.
+ * French compiler input always starts from English CRD display text, not legacy
+ * French _source prose. Compile all packs before publication, preserving authored
+ * inputs and proposal review statuses.
  */
 import { compilePack } from "@foundryvtt/foundryvtt-cli";
 import fs from "node:fs/promises";
@@ -59,7 +60,7 @@ function normalizeId(id, relativePath) {
   return stableId(relativePath + ":" + String(id ?? ""));
 }
 
-/** Apply validated display overlays and repair legacy Folder IDs only in compiler input. */
+/** Install every generated French document and normalize Folder IDs in temporary compiler input. */
 async function normalizeSourceTree(checkoutRoot, sourceRoot, normalizedRoot, translations) {
   await fs.cp(sourceRoot, normalizedRoot, { recursive: true });
 
@@ -112,8 +113,10 @@ async function compile() {
     const [catalogue, proposals] = await Promise.all([
       readCompendiumCatalogue(checkoutRoot), readFrenchProposals(checkoutRoot)
     ]);
-    const translations = materializeTranslations(catalogue, proposals,
-      { includeProposed: process.argv.includes("--include-proposed") });
+    const translations = materializeTranslations(catalogue, proposals, {
+      includeProposed: process.argv.includes("--include-proposed"),
+      requireReviewed: process.argv.includes("--require-reviewed")
+    });
 
     // Complete validation and compilation before touching existing outputs.
     // A compiler failure in a later pack must preserve every previous database.

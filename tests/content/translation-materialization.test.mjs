@@ -10,6 +10,8 @@ function fixture() {
     flags: { cypherFoundry: { crd: { logicalId: "ability.example", language: "en" } } } };
   const french = structuredClone(english);
   french._id = "frenchIdentity";
+  french.name = "Legacy French name";
+  french.system.description = "<p>Legacy French prose with a noncanonical rule.</p>";
   Object.assign(french.flags.cypherFoundry.crd, { language: "fr", sourceLogicalId: "ability.example",
     transformations: ["English source retained pending French translation", "Source formatting converted to HTML"] });
   const records = [{ pack: "abilities-en", file: "en.json", logicalId: "ability.example", document: english },
@@ -22,7 +24,15 @@ function fixture() {
 
 test("Given a proposed complete translation, when production or draft compilation selects text, then review status is respected and source documents stay unchanged", () => {
   const { records, proposals } = fixture();
-  assert.equal(materializeTranslations(records, proposals).size, 0);
+  const unreviewed = materializeTranslations(records, proposals);
+  assert.equal(unreviewed.size, 1, "Every French document must be materialized.");
+  assert.equal(unreviewed.get("fr.json").name, "Example", "Legacy names never reach compiled packs.");
+  assert.equal(unreviewed.get("fr.json").system.description, "<p>Spend 3 points.</p>",
+    "The English source, not historical French text, is the only unreviewed fallback.");
+  assert.equal(unreviewed.get("fr.json").flags.cypherFoundry.translation.status, "untranslated");
+  assert.equal(unreviewed.get("fr.json").flags.cypherFoundry.translation.sourceLanguage, "en");
+  assert.throws(() => materializeTranslations(records, proposals, { requireReviewed: true }),
+    /requires a reviewed proposal/i);
   const result = materializeTranslations(records, proposals, { includeProposed: true }).get("fr.json");
   assert.equal(result.name, "Exemple");
   assert.equal(result.flags.cypherFoundry.translation.status, "proposed");
@@ -30,11 +40,12 @@ test("Given a proposed complete translation, when production or draft compilatio
   assert.ok(result.flags.cypherFoundry.crd.transformations.includes("Source formatting converted to HTML"));
   assert.equal(result._id, "frenchIdentity");
   assert.deepEqual(result.system.cost, records[0].document.system.cost);
-  assert.equal(records[1].document.name, "Example");
+  assert.equal(records[1].document.name, "Legacy French name");
   assert.ok(records[1].document.flags.cypherFoundry.crd.transformations.includes("English source retained pending French translation"));
   assert.equal(proposals.get("ability.example").proposal.status, "proposed");
   proposals.get("ability.example").proposal.status = "reviewed";
   assert.equal(materializeTranslations(records, proposals).get("fr.json").flags.cypherFoundry.translation.status, "reviewed");
+  assert.equal(materializeTranslations(records, proposals, { requireReviewed: true }).get("fr.json").name, "Exemple");
 });
 
 test("Given missing, stale, duplicate or mechanically divergent data, when compilation is planned, then it fails before returning a partial plan", () => {
@@ -47,7 +58,31 @@ test("Given missing, stale, duplicate or mechanically divergent data, when compi
   proposals.get("ability.example").proposal.fields[0].sourceHash = sourceHash("Example");
   records[1].document.system.cost.amount = 4;
   assert.throws(() => materializeTranslations(records, proposals, draft), /mechanical.*differs/i);
-  assert.equal(records[1].document.name, "Example");
+  assert.equal(records[1].document.name, "Legacy French name");
+});
+
+test("Given missing draft text, a default build shows only traced English source instead of old French prose", () => {
+  const { records } = fixture();
+  const plan = materializeTranslations(records, new Map());
+  const fallback = plan.get("fr.json");
+  assert.equal(fallback.name, "Example");
+  assert.equal(fallback.system.description, "<p>Spend 3 points.</p>");
+  assert.equal(fallback.flags.cypherFoundry.translation.status, "untranslated");
+  assert.throws(() => materializeTranslations(records, new Map(), { requireReviewed: true }),
+    /requires a reviewed proposal/i);
+  assert.throws(() => materializeTranslations(records, new Map(), { includeProposed: true }),
+    /Missing French proposal/i);
+  assert.throws(() => materializeTranslations(records, new Map(),
+    { includeProposed: true, requireReviewed: true }), /mutually exclusive/i);
+});
+
+test("Given different historical French wording, unreviewed outputs remain byte-equivalent", () => {
+  const { records, proposals } = fixture();
+  const original = materializeTranslations(records, proposals).get("fr.json");
+  records[1].document.name = "Une autre ancienne traduction";
+  records[1].document.system.description = "<p>Texte historique modifié.</p>";
+  const second = materializeTranslations(records, proposals).get("fr.json");
+  assert.deepEqual(second, original, "Legacy FR _source must have no influence on compiler output.");
 });
 
 test("Given an ambiguous embedded ID, when translation fields are inventoried, then a selector cannot hide a second effect", () => {
