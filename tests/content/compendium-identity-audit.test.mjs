@@ -5,7 +5,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import {
-  auditIdentityCatalogue, identitySlug, proposedFoundryId, proposedLogicalId
+  auditFolderPairs, auditIdentityCatalogue, identitySlug, proposedFoundryId, proposedLogicalId
 } from "../../scripts/audit-compendium-identities.mjs";
 
 function record(family, language, logicalId, id, options = {}) {
@@ -124,4 +124,27 @@ test("Given duplicate logical ownership and mismatched Journal pages, defects re
   const report = auditIdentityCatalogue([en, fr, duplicate]);
   assert.equal(report.issueCounts.duplicateLogicalIds, 1);
   assert.equal(report.issueCounts.journalPageMismatches, 1);
+});
+
+test("Given English and French Folder names, mapping uses the stable source path, not the translation", () => {
+  const rows = [
+    { pack: "descriptors-en", file: "packs/descriptors-en/_source/folder-general.json",
+      document: { _id: "dscGeneralEn0001", _key: "!folders!dscGeneralEn0001", name: "General Descriptors" } },
+    { pack: "descriptors-fr", file: "packs/descriptors-fr/_source/folder-general.json",
+      document: { _id: "dscGeneralFr0001", _key: "!folders!dscGeneralFr0001", name: "Descripteurs généraux" } }
+  ];
+  const report = auditFolderPairs(rows);
+  assert.equal(report.entries.length, 1);
+  assert.equal(report.entries[0].en.proposedId, report.entries[0].fr.proposedId);
+  assert.equal(report.entries[0].en.proposedKey, "!folders!" + report.entries[0].en.proposedId);
+  assert.equal(report.issues.missingPairs.length, 0);
+});
+
+test("Given an unpaired Folder and unknown parent, audit does not assume the relationship", () => {
+  const report = auditFolderPairs([{
+    pack: "equipment-en", file: "packs/equipment-en/_source/equipment-folder.json",
+    document: { _id: "EqEnRootFolder01", name: "Equipment", folder: "unknown-parent" }
+  }]);
+  assert.equal(report.issues.missingPairs.length, 1);
+  assert.equal(report.issues.danglingFolderReferences.length, 1);
 });
