@@ -160,7 +160,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Compare the first 175 normalized Ability source texts
-        run: npm run audit:abilities-pr7
+        run: npm run audit:abilities-pr7 -- --print-pairs
       - name: Archive full comparative review worksheet
         if: always()
         uses: actions/upload-artifact@v4
