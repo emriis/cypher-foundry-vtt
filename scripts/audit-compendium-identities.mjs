@@ -260,15 +260,88 @@ export function auditIdentityCatalogue(records, authored = []) {
   };
 }
 
+/**
+ * Folder identities are scoped to the family and the authored English-relative
+ * filename. This deliberately ignores localized folder labels. The PR2 migrator
+ * must also redirect Item.folder and nested Folder.folder references.
+ * @param {object[]} folders Folder source rows with pack/file/document.
+ * @returns {object} Folder migration map and missing-pair/collision diagnostics.
+ */
+export function auditFolderPairs(folders) {
+  const groups = new Map();
+  const issues = { missingPairs: [], duplicatePaths: [], danglingFolderReferences: [] };
+  const oldFolderIds = new Map();
+
+  for (const row of folders) {
+    const family = row.pack.replace(/-(en|fr)$/, "");
+    const lang = row.pack.endsWith("-fr") ? "fr" : "en";
+    const relative = row.file.split("/_source/")[1];
+    const key = family + ":" + relative;
+    const group = groups.get(key) ?? {
+      family, relative, logicalId: "folder." + family + "." + identitySlug(relative.replace(/\.json$/, ""))
+    };
+    if (group[lang]) issues.duplicatePaths.push({ pack: row.pack, file: row.file });
+    group[lang] = { pack: row.pack, file: row.file, name: row.document.name,
+      currentId: row.document._id, parentId: row.document.folder ?? null };
+    groups.set(key, group);
+    oldFolderIds.set(row.pack + ":" + row.document._id, key);
+  }
+
+  const entries = [...groups.values()].sort((a, b) => a.family.localeCompare(b.family, "en") ||
+    a.relative.localeCompare(b.relative, "en"));
+  for (const group of entries) {
+    const id = proposedFoundryId(group.logicalId);
+    if (!group.en || !group.fr) issues.missingPairs.push({ relative: group.relative, family: group.family });
+    for (const item of [group.en, group.fr]) {
+      if (!item) continue;
+      item.proposedId = id;
+      item.proposedKey = "!folders!" + id;
+      if (item.parentId && !oldFolderIds.has(item.pack + ":" + item.parentId)) {
+        issues.danglingFolderReferences.push({ file: item.file, parentId: item.parentId });
+      }
+    }
+  }
+  return { entries, issues };
+}
+
+async function readFolderSources(root) {
+  const folders = [];
+  const packs = (await fs.readdir(path.join(root, "packs"))).filter(pack => /-(en|fr)$/.test(pack));
+  for (const pack of packs) {
+    const directory = path.join(root, "packs", pack, "_source");
+    for (const relative of await fs.readdir(directory, { recursive: true })) {
+      if (!relative.endsWith(".json")) continue;
+      const document = JSON.parse(await fs.readFile(path.join(directory, relative), "utf8"));
+      if (document._key?.startsWith("!folders!")) {
+        folders.push({ pack, file: ("packs/" + pack + "/_source/" + relative).replaceAll("\\", "/"), document });
+      }
+    }
+  }
+  return folders;
+}
+
 /** Compare the current raw catalogue to a disposable, normalized checkout. */
 export async function runIdentityAudit(root = ROOT) {
   const authored = await readCompendiumCatalogue(root);
+  const authoredFolders = await readFolderSources(root);
   const isolated = await createValidationWorkspace(root);
   try {
     execFileSync(process.execPath, ["scripts/migrate-ability-sources.mjs"],
       { cwd: isolated.root, windowsHide: true, stdio: "pipe" });
     const normalized = await readCompendiumCatalogue(isolated.root);
-    return auditIdentityCatalogue(normalized, authored);
+    const report = auditIdentityCatalogue(normalized, authored);
+    report.folders = auditFolderPairs(authoredFolders);
+    report.issueCounts.folderMissingPairs = report.folders.issues.missingPairs.length;
+    report.issueCounts.folderDanglingParents = report.folders.issues.danglingFolderReferences.length;
+    const folderIds = new Map(report.folders.entries.flatMap(group =>
+      [group.en, group.fr].filter(Boolean).map(item => [item.pack + ":" + item.currentId, item])));
+    report.folderAssignments = normalized.filter(record => record.document.folder).map(record => {
+      const currentFolderId = record.document.folder;
+      const target = folderIds.get(record.pack + ":" + currentFolderId);
+      return { source: record.file, currentFolderId, proposedFolderId: target?.proposedId ?? null };
+    });
+    report.issueCounts.danglingFolderAssignments = report.folderAssignments.filter(item => !item.proposedFolderId).length;
+    return report;
   } finally {
     await removeValidationWorkspace(isolated.workspace);
   }
