@@ -125,6 +125,14 @@ export async function auditAbilityBatch(root = ROOT, output = path.join(root, "r
     };
     await fs.mkdir(path.dirname(output), { recursive: true });
     await fs.writeFile(output, JSON.stringify(report, null, 2) + "\n");
+    if (process.argv.includes("--print-pairs")) {
+      for (const row of details) {
+        console.log("PR7_PAIR:" + JSON.stringify({ id: row.logicalId, EN: row.nameEN,
+          FR: row.nameFR, cost: row.cost, tier: row.tier,
+          fields: row.fields.map(({ path, english, french, semanticReviewCues }) =>
+            ({ path, english, french, flags: semanticReviewCues })) }));
+      }
+    }
     console.log(JSON.stringify({
       reference: report.reference, batch: report.batch, count: report.sourcePairCount,
       statuses, flagged: flagged.length, warnings: report.warningCounts,
