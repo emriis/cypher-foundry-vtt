@@ -2,7 +2,7 @@
   "logicalId": "ability.always-witty",
   "sourceLogicalId": "ability.always-witty",
   "language": "fr",
-  "status": "proposed",
+  "status": "reviewed",
   "fields": [
     {
       "path": "name",
@@ -12,7 +12,7 @@
     {
       "path": "system.description",
       "sourceHash": "1ad5883e648ba625917d441d759391eaec362243798bec27bf24bc29136eb4b6",
-      "text": "Chaque fois que vous utilisez une récupération, si votre réserve d’Intellect n’est pas déjà pleine, vous obtenez 1 point supplémentaire à restituer à votre réserve d’Intellect. Vous pouvez sélectionner cette aptitude jusqu’à trois fois."
+      "text": "Chaque fois que vous utilisez une récupération, si votre réserve d’Intellect n’est pas déjà pleine, vous obtenez 1 point supplémentaire à récupérer à votre réserve d’Intellect. Vous pouvez sélectionner cette aptitude jusqu’à trois fois."
     }
   ]
 }
