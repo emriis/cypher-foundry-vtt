@@ -32,7 +32,8 @@
     "test:e2e-debug": "node scripts/run-foundry-e2e.mjs --debug-foundry-logs",
     "test:sources": "node scripts/run-tests.mjs sources",
     "test:runtime": "node scripts/run-tests.mjs runtime",
-    "test:build": "node scripts/run-tests.mjs build"
+    "test:build": "node scripts/run-tests.mjs build",
+    "audit:ids": "node scripts/audit-compendium-identities.mjs"
   },
   "dependencies": {
     "@foundryvtt/foundryvtt-cli": "^3.0.4"
