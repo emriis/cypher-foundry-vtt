@@ -15,7 +15,14 @@ test("PR8 keeps exactly 175 newly source-backed reviewed Abilities and all earli
   assert.equal(pr8.expected, 175);
   assert.equal(pr8.ids.length, 175);
   assert.equal(new Set(pr8.ids).size, 175);
-  assert.deepEqual(pr8.ids, [...pr8.ids].sort(), "Batch ordering must remain canonical.");
+  // The manifest sorts source *filenames*, not naked logical IDs: for example,
+  // healing-shield.json sorts before healing.json even though the bare IDs
+  // would sort the other way around (a '.' delimiter is not a hyphen).
+  const filenameOrdered = [...pr8.ids].sort((a, b) => {
+    const x = a + ".json", y = b + ".json";
+    return x < y ? -1 : x > y ? 1 : 0;
+  });
+  assert.deepEqual(pr8.ids, filenameOrdered, "Batch file order must remain canonical.");
   assert.equal(pr8.ids[0], "ability.drain-life");
   assert.equal(pr8.ids.at(-1), "ability.incredible-velocity");
   const selected = new Set(pr8.ids);
