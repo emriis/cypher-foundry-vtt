@@ -139,6 +139,14 @@ test("Given legacy bilingual sources, when packs build, then reviewed and draft 
     assert.equal(page.text.content, expectedText("journal.task-difficulty", "pages.b2c3d4e5f6070810.text.content"));
     assertUnchanged(await snapshot(root), inputs, "Reviewed compilation must not change sources or proposal statuses");
 
+    // Release policy must fail before replacing any generated pack when the
+    // catalogue has a mix of reviewed and unreviewed French proposals.
+    const preStrictOutputs = await snapshot(root, { generated: true });
+    await assert.rejects(build("--require-reviewed"),
+      error => /requires a reviewed proposal/i.test(error.stderr));
+    assertUnchanged(await snapshot(root, { generated: true }), preStrictOutputs,
+      "Strict publication rejection must preserve all compiled packs.");
+
     const proposalFile = path.join(root, "translations/fr/foci/focus.abides-in-stone.json");
     const proposal = JSON.parse(await readFile(proposalFile, "utf8"));
     await build("--include-proposed");
