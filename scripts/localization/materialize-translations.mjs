@@ -109,14 +109,16 @@ export function materializeTranslations(records, proposals,
         const skillRecord = french.get(skillId);
         const selectedSkill = plan.get(skillRecord?.file);
         const currentLabel = result.system[key][index];
-        // English CRD labels can differ from their Skill heading in case
-        // ("Systems Operation" vs "Systems operation"). This is not a French
-        // translation. Reviewed French references must still match exactly.
-        const englishCaseVariant = result.flags.cypherFoundry.translation.status === "untranslated" &&
-          selectedSkill?.flags?.cypherFoundry?.translation?.status === "untranslated" &&
-          currentLabel?.trim().toLocaleLowerCase("en") ===
-            selectedSkill.name.trim().toLocaleLowerCase("en");
-        if (!selectedSkill || (currentLabel !== selectedSkill.name && !englishCaseVariant)) {
+        // A document whose translation is not yet reviewed displays its
+        // *unchanged English CRD source*, even when the referenced Skill has
+        // already been reviewed in French. Once the *parent* is reviewed (or
+        // explicitly previewed), it must use the selected French Skill label
+        // exactly. This preserves PR3's no-legacy-fallback contract while
+        // allowing independent PR6 / PR11 review batches.
+        const parentUntranslated =
+          result.flags.cypherFoundry.translation.status === "untranslated";
+        const expectedLabel = parentUntranslated ? label : selectedSkill?.name;
+        if (!selectedSkill || currentLabel !== expectedLabel) {
           throw new Error("Translated Skill label differs from " + skillId + ": " + id + "." + key + "." + index + ".");
         }
       }

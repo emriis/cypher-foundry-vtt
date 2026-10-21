@@ -2,7 +2,7 @@
   "logicalId": "descriptor.species.prota",
   "sourceLogicalId": "descriptor.species.prota",
   "language": "fr",
-  "status": "proposed",
+  "status": "reviewed",
   "fields": [
     {
       "path": "name",
@@ -12,7 +12,7 @@
     {
       "path": "system.description",
       "sourceHash": "8a1e3896fb9df3beaf9c598962fee9aa0815b5231b04b4bc42f0184890689575",
-      "text": "<p>Votre chair ressemble à de l’argile extensible : vous pouvez modifier votre forme générale, passant d’une simple masse évoquant une limace ou une sphère ronde à un être doté de plusieurs pseudopodes servant de bras et de jambes. Votre maîtrise de votre forme reste limitée : vous ne pouvez pas reproduire exactement d’autres créatures ou objets, mais vous pouvez en évoquer la forme, même s’il vous faut environ dix minutes pour en adopter une nouvelle. Les protas sont rares : votre monde natal a été détruit par la guerre bien avant votre naissance. Vous rencontrez rarement d’autres membres de votre espèce, et avez donc appris à vous entendre avec d’autres êtres, dont certains sont devenus vos amis ou votre famille choisie.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>Vous pouvez subir une blessure mineure de plus que la normale.</p>\n<p>Vous êtes entraîné en charme.</p>\n<p>Vous gagnez un atout pour une tâche précise à laquelle vous avez adapté la forme de votre corps.</p>\n<p>Après avoir consacré dix minutes à modifier sa forme, un prota peut par exemple gagner un atout pour se cacher dans un endroit particulier, se glisser dans une petite ouverture précise, escalader un mur donné, viser un emplacement déterminé, porter une charge particulièrement lourde, etc.</p>"
+      "text": "<p>Votre chair ressemble à de l’argile extensible : vous pouvez modifier votre forme générale, passant d’une simple masse évoquant une limace ou une sphère ronde à un être doté de plusieurs pseudopodes servant de bras et de jambes. Votre maîtrise de votre forme reste limitée : vous ne pouvez pas reproduire exactement d’autres créatures ou objets, mais vous pouvez en évoquer la forme, même s’il vous faut environ dix minutes pour en adopter une nouvelle. Les protas sont rares : votre monde natal a été détruit par la guerre bien avant votre naissance. Vous rencontrez rarement d’autres membres de votre espèce, et avez donc appris à vous entendre avec d’autres êtres, dont certains sont devenus vos amis ou votre famille choisie.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>Vous pouvez subir une blessure mineure de plus que la normale.</p>\n<p>Vous bénéficiez d’un entraînement en charme.</p>\n<p>Vous gagnez un atout pour une tâche précise à laquelle vous avez adapté la forme de votre corps.</p>\n<p>Après avoir consacré dix minutes à modifier sa forme, un prota peut par exemple gagner un atout pour se cacher dans un endroit particulier, se glisser dans une petite ouverture précise, escalader un mur donné, viser un emplacement déterminé, porter une charge particulièrement lourde, etc.</p>"
     },
     {
       "path": "system.skillOptions.0",

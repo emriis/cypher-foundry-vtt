@@ -2,7 +2,7 @@
   "logicalId": "skill.skilled-trade",
   "sourceLogicalId": "skill.skilled-trade",
   "language": "fr",
-  "status": "proposed",
+  "status": "reviewed",
   "fields": [
     {
       "path": "name",
@@ -12,7 +12,7 @@
     {
       "path": "system.description",
       "sourceHash": "ee6e40ea6dfc1fd74fc7151d028cf2c7eb2d15020145b80e407131dbf51e650c",
-      "text": "<p>Vous avez de l’expérience dans un métier spécialisé, qui peut vous permettre de gagner un salaire comme charpentier, maçon, plaquiste, plombier, mécanicien, couvreur, électricien ou dans un métier similaire adapté au cadre de jeu.</p>"
+      "text": "<p>Vous avez de l’expérience dans un métier spécialisé, ce qui peut vous permettre de gagner votre vie dans la charpenterie, la maçonnerie, la pose de plaques de plâtre, la plomberie, la mécanique, la couverture, l’électricité ou un métier similaire adapté au cadre de jeu.</p>"
     }
   ]
 }

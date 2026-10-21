@@ -2,7 +2,7 @@
   "logicalId": "descriptor.fast",
   "sourceLogicalId": "descriptor.fast",
   "language": "fr",
-  "status": "proposed",
+  "status": "reviewed",
   "fields": [
     {
       "path": "name",
@@ -12,7 +12,7 @@
     {
       "path": "system.description",
       "sourceHash": "dfa09efb7e3258890715e0026a7929e3c5130ca12b673c311a564f345410a562",
-      "text": "<p>Vous avez le pied léger. Votre rapidité vous permet d’accomplir les tâches plus vite que les autres. Mais vous n’êtes pas seulement rapide dans vos déplacements : vos mains sont vives, et vous pensez et réagissez rapidement. Même votre parole est rapide.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>+2 à votre Réserve de Célérité</p>\n<p>Vous êtes entraîné pour l’une des compétences suivantes : Tromperie ou Initiative</p>"
+      "text": "<p>Vous avez le pied léger. Votre rapidité vous permet d’accomplir les tâches plus vite que les autres. Mais vous n’êtes pas seulement rapide dans vos déplacements : vos mains sont vives, et vous pensez et réagissez rapidement. Même votre parole est rapide.</p>\n<p>Vous gagnez les caractéristiques suivantes :</p>\n<p>+2 à votre Réserve de Célérité</p>\n<p>Vous gagnez un entraînement dans l’une des compétences suivantes : Tromperie ou Initiative</p>"
     },
     {
       "path": "system.skillOptions.0",
