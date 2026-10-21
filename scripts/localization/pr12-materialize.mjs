@@ -10,7 +10,7 @@ for(const id of m.ids){const file=path.join(dir,id+".json");const record=JSON.pa
  if(record.logicalId!==id||record.sourceLogicalId!==id||record.language!=="fr"||!Array.isArray(record.fields)||!record.fields.length)throw Error("Invalid source-paired record "+id);
  if(record.status==="reviewed"){already++;continue;}
  if(record.status!=="proposed")throw Error("Unexpected proposal status "+id+": "+record.status);
- record.status="reviewed";await fs.writeFile(file,JSON.stringify(record,null,2)+"\\n");changed++;
+ record.status="reviewed";await fs.writeFile(file,JSON.stringify(record,null,2)+String.fromCharCode(10));changed++;
 }
 const actual=(await fs.readdir(dir)).filter(n=>n.endsWith(".json"));
 if(actual.length!==457)throw Error("Unexpected translation file count "+actual.length);
