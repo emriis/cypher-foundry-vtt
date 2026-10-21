@@ -36,12 +36,32 @@ clauses demeure un contrôle qualité indépendant. Le total est 636/1 373
 entrées marquées `reviewed` ; les 737 restantes sont `proposed` et
 `--require-reviewed` doit toujours refuser une release incomplète.
 
-## Acceptation et limites
+## Clauses et variantes surveillées
 
-- Manifeste des 175 identités, audit bilingue, tests des variantes, contrat
-  de 525 aptitudes approuvées et artefact CI intégrés.
-- Révision sémantique intégrale EN/FR restant à démontrer avant de revendiquer
-  une qualité de traduction équivalente à celle des PR7 et PR8.
-- CI, audit, build et packaging doivent être verts avant toute fusion.
+- `Infer Thoughts` : cible de niveau 4 ou moins, lecture sans jet, perception
+  continue seulement tant qu'elle est visible et audible, Effort sur le plafond.
+- `Inspire Action` et `Inspiring Performance` : action supplémentaire de
+  l'allié distincte d'une action normale ; nombre d'alliés, Effort, durée de
+  concentration et bonus de récupération de la prestation conservés.
+- `Inspiring Ease` et `Master Entertainer` : récupération de dix heures,
+  suspension avec la distance, une ou deux tâches facilitées selon l'aptitude.
+- `Moon Shape` : condition lunaire, réserves, Avantages, intrusion du MJ,
+  retour à la normale et pénalités de faim distincts.
+- `Mind Reading`, `Machine Companion`, `Jump Attack`, `Prepare Spell`,
+  `Quarry`, `No Need for Weapons` : variantes indépendantes conservées.
+- `Onslaught`, `Magnetize`, `Psychokinetic Attack`, `Recompile Machine` :
+  modes alternatifs, dommages, portées, plafonds et jets distincts.
+- `Resonant Palm` : lien de dix jours, un transfert de blessure sans réduction
+  ou une attaque à distance, et rupture du lien après utilisation.
+
+## Contrôles et limites
+
+La CI vérifie le manifeste, la complétude des champs, la fraîcheur des empreintes,
+la parité des données structurées, les 525 aptitudes au statut `reviewed`, les
+111 entrées antérieures, les 737 propositions restantes, les règles sensibles
+et la génération des artefacts. Le rapport CI est conservé pour une relecture
+indépendante. La validation d'une traduction reste une décision éditoriale :
+aucun automate ne peut démontrer à lui seul l'identité complète du sens.
+
 
 Aucun `_id`, UUID, coût, Effort, effet structuré ou texte anglais ne doit être modifié.
