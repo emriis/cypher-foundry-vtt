@@ -4,6 +4,7 @@ import path from "node:path";
 import test from "node:test";
 
 import { validateCrdSourceRecord } from "../../module/crd/source-schema.mjs";
+import { proposedFoundryId } from "../../scripts/source-migration/id-contract.mjs";
 
 const root = path.resolve(import.meta.dirname, "../..");
 const id = "a1b2c3d4e5f60708";
@@ -23,7 +24,7 @@ test("Task Difficulty CRD journal sources satisfy the source contract", () => {
     assert.deepEqual(validateCrdSourceRecord(record), []);
     assert.equal(record.document, "JournalEntry");
     assert.equal(record.crdType, "journal");
-    assert.equal(record._key, `!journal!${id}`);
+    assert.equal(record._key, `!journal!${proposedFoundryId("journal.task-difficulty")}`);
     assert.equal(record.flags.cypherFoundry.crd.logicalId, "journal.task-difficulty");
     assert.equal(record.flags.cypherFoundry.crd.language, language);
   }
