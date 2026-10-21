@@ -108,7 +108,15 @@ export function materializeTranslations(records, proposals,
         if (!skillId) continue;
         const skillRecord = french.get(skillId);
         const selectedSkill = plan.get(skillRecord?.file);
-        if (!selectedSkill || result.system[key][index] !== selectedSkill.name) {
+        const currentLabel = result.system[key][index];
+        // English CRD labels can differ from their Skill heading in case
+        // ("Systems Operation" vs "Systems operation"). This is not a French
+        // translation. Reviewed French references must still match exactly.
+        const englishCaseVariant = result.flags.cypherFoundry.translation.status === "untranslated" &&
+          selectedSkill?.flags?.cypherFoundry?.translation?.status === "untranslated" &&
+          currentLabel?.trim().toLocaleLowerCase("en") ===
+            selectedSkill.name.trim().toLocaleLowerCase("en");
+        if (!selectedSkill || (currentLabel !== selectedSkill.name && !englishCaseVariant)) {
           throw new Error("Translated Skill label differs from " + skillId + ": " + id + "." + key + "." + index + ".");
         }
       }
