@@ -140,6 +140,10 @@ The [PR11 manifest](../data/localization/type-focus-review-pr11.json) locks all 
 
 All **457 Equipment-family records** (259 ordinary equipment, weapons, armor and shields; 198 Cyphers) have a source-locked bilingual inventory in [PR12](localization-pr12-equipment.md) and a CI comparison audit (`npm run audit:equipment-pr12`). French drafts are mechanically paired to their canonical English counterparts. Review statuses are tracked separately from the final in-Foundry semantic and presentation review. With 457 Equipment records recorded as `reviewed`, cumulative coverage is **1,366 / 1,373**, leaving seven CRD Rules Journals for PR13. Automated approval does not prove full semantic fidelity.
 
+### French Rules Journals
+
+The [Rules Journals localization](localization-rules-journals.md) integrates all seven source-backed Journal entries with a canonical inventory, bilingual source audit and content contracts. All **1,373/1,373** translation proposals now carry `reviewed` status. The final semantic and UI fidelity review will take place directly in FoundryVTT after localization is complete; source hashes and typed parity do not certify prose equivalence. The seven Journals are selected CRD rule extracts, not a full manual.
+
 ## Compendium organization and source identities
 
 Keep packs separated by family **and** language. Items and JournalEntries have

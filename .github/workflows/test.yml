@@ -279,6 +279,28 @@ jobs:
           retention-days: 30
           if-no-files-found: error
 
+  rules-journals-localization:
+    name: French Rules Journals source and structural audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Check seven bilingual Rules Journals
+        run: npm run audit:rules-journals
+      - name: Archive bilingual comparison report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rules-journals-bilingual-review
+          path: reports/rules-journals-review.json
+          retention-days: 30
+          if-no-files-found: error
+
   integration:
     name: Integration and architecture tests
     runs-on: ubuntu-latest
