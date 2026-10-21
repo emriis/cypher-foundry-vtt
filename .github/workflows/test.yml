@@ -126,6 +126,28 @@ jobs:
           retention-days: 14
           if-no-files-found: error
 
+  terminology:
+    name: French normative glossary and inclusive-language review
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Audit shared CRD terminology and French editorial proposals
+        run: npm run audit:terminology
+      - name: Upload terminology and inclusive-language findings
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: french-terminology-review
+          path: reports/terminology-fr.json
+          retention-days: 14
+          if-no-files-found: error
+
   integration:
     name: Integration and architecture tests
     runs-on: ubuntu-latest
@@ -229,6 +251,7 @@ jobs:
       - content
       - identities
       - callouts
+      - terminology
       - integration
       - repository
       - coverage
@@ -246,6 +269,7 @@ jobs:
           echo "| Content contracts | ${{ needs.content.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Compendium identity audit | ${{ needs.identities.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| CRD callout source audit | ${{ needs.callouts.result }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| French normative terminology | ${{ needs.terminology.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Integration and architecture | ${{ needs.integration.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Source normalization | ${{ needs.sources.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Repository checks | ${{ needs.repository.result }} |" >> "$GITHUB_STEP_SUMMARY"
@@ -256,6 +280,7 @@ jobs:
              [ "${{ needs.content.result }}" != "success" ] || \
              [ "${{ needs.identities.result }}" != "success" ] || \
              [ "${{ needs.callouts.result }}" != "success" ] || \
+             [ "${{ needs.terminology.result }}" != "success" ] || \
              [ "${{ needs.integration.result }}" != "success" ] || \
              [ "${{ needs.repository.result }}" != "success" ] || \
              [ "${{ needs.sources.result }}" != "success" ] || \
