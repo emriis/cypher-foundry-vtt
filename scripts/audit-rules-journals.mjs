@@ -32,15 +32,15 @@ export async function auditRulesJournals(root=ROOT,output=path.join(root,"report
        throw new Error("Rules Journal bilingual field/mechanic mismatch: "+id+" "+JSON.stringify(check));}
      return {...inspectAbilityPair8(id,source.document,item.proposal),status:item.proposal.status,sourceFile:source.file,proposalFile:item.file};
    });
-   const report={version:1,batch:manifest.batch,reference:manifest.reference,expected:7,
+   const report={version:1,scope:manifest.scope,reference:manifest.reference,expected:7,
     semanticCertification:false,warning:"Automated checks cannot approve Rules Journals semantic fidelity.",
     statuses:details.reduce((a,row)=>(a[row.status]=(a[row.status]??0)+1,a),{}),details};
    await fs.mkdir(path.dirname(output),{recursive:true});
    await fs.writeFile(output,JSON.stringify(report,null,2)+"\n");
-   console.log(JSON.stringify({batch:report.batch,counts:report.statuses,first:manifest.ids[0],last:manifest.ids.at(-1)}));
+   console.log(JSON.stringify({scope:report.scope,counts:report.statuses,first:manifest.ids[0],last:manifest.ids.at(-1)}));
    return report;
  }finally{await removeValidationWorkspace(workspace.workspace);}
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(path.resolve(process.argv[1])).href){
- auditTypeFocus11().catch(e=>{console.error(e.stack??e.message);process.exitCode=1;});
+ auditRulesJournals().catch(e=>{console.error(e.stack??e.message);process.exitCode=1;});
 }
