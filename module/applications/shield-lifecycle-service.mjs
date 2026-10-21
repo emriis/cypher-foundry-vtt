@@ -136,7 +136,7 @@ export async function resolveShieldTurnLoss(actor, { gmIntrusion = false } = {})
  */
 export async function skipUnyieldingShieldTurn(combat, changes, options) {
   if (game.users?.activeGM?.id !== game.user?.id || !game.user?.isGM
-    || !Object.hasOwn(changes, "turn") || !combat.started
+    || options?.cypherInitiativeReorder || !Object.hasOwn(changes, "turn") || !combat.started
     || (options?.direction ?? 1) < 0) return;
   const previous = combat.previous;
   if (previous?.round != null && (combat.round < previous.round

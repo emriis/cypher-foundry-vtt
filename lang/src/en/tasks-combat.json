@@ -156,6 +156,12 @@
       "ItemHint": "Select \"Equipped\" to use this armor. Equipping it automatically unequips any other armor."
     },
     "Equipped": "Equipped",
-    "Damage": "Damage"
+    "Damage": "Damage",
+    "Initiative": {
+      "Label": "Initiative",
+      "Hint": "Roll Speed for initiative. Each eased step adds 3; each hindered step subtracts 3. NPCs use level times 3. A PC wins a tie with an NPC.",
+      "Result": "Initiative: {score} (die {roll}, net steps {steps}).",
+      "ManualCorrection": "An earlier initiative correction was interrupted. The best die is retained; ask the GM to reconcile the tracker and any pending Pool refund."
+    }
   }
 }

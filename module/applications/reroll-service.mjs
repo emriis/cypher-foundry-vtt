@@ -15,6 +15,8 @@ import { resolveDocumentReference } from "./reference-resolver.mjs";
 import { removeWound } from "./wound-removal.mjs";
 import { reconcileDefenseConsequences } from "./defense-consequence-service.mjs";
 import { reconcileAttackConsequences } from "./attack-consequence-service.mjs";
+import { resolveInitiativeScore } from "../rules/initiative.mjs";
+import { resolveInitiativeOwner, persistInitiative, initiativeMessageOptions } from "./initiative-history.mjs";
 import { isShieldBroken } from "../rules/wounds.mjs";
 import { shieldSurvivesMajor, shieldOwnerItems } from "../rules/shield-abilities.mjs";
 
@@ -58,6 +60,8 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
     if (flags.shieldReturn && sourceActor.items?.get(flags.shieldReturn.itemId)?.isOwner === false) return null;
     if (appliesRecovery && (sourceActor?.type !== "pc" || sourceActor.isOwner === false)) return null;
     const woundTarget = flags.woundRemoval ? await resolveDocumentReference(flags.woundRemoval.targetUuid, "pc") : null;
+    const initiativeOwner = flags.initiative ? await resolveInitiativeOwner(flags.initiative, sourceActor, { reroll: true }) : null;
+    if (flags.initiative && (!initiativeOwner || !Number.isSafeInteger(flags.initiative.steps))) return null;
     const attackUuid = flags.isAttack ? flags.attackConsequences?.targetUuid : null;
     if (attackUuid && typeof attackUuid !== "string") return null;
     const attackTarget = attackUuid ? await resolveDocumentReference(attackUuid, "npc") : null;
@@ -74,6 +78,7 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
       flags = structuredClone(origin.flags.cypher);
       plan = resolveRerollPlan(flags);
       if (!plan) return null;
+      if (flags.initiative && await resolveInitiativeOwner(flags.initiative, sourceActor, { reroll: true }) === null) return null;
       if (attackUuid && (flags.attackConsequences?.targetUuid !== attackUuid || attackTarget.isOwner === false)) return null;
       if (flags.defenseType && (sourceActor?.type !== "pc" || sourceActor.isOwner === false)) return null;
       const item = sourceActor?.items?.get(flags.itemId);
@@ -119,6 +124,13 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
         actorId: sourceActor?.id ?? flags.actorId ?? actor.id,
         rerollable: true, originalRoll: retained };
       let shieldCheckpointed = false;
+      let initiativeCheckpointed = false;
+      const checkpointInitiative = async () => {
+        if (!flags.initiative || initiativeCheckpointed) return;
+        await origin.update({ "flags.cypher": { ...metadata,
+          initiative: { ...metadata.initiative, state: "pending" } } });
+        initiativeCheckpointed = true;
+      };
       let attackCheckpointed = false;
       const checkpointAttack = async pending => {
         // A targetless attack has no damage ledger, but its cost refund still
@@ -148,6 +160,16 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
         metadata.specialEffectChoice = specialEffectChoice;
         const outcome = resolveTaskOutcome({ ...flags, d20: retained, specialEffectChoice });
         metadata.d20 = retained;
+        if (flags.initiative) {
+          if (flags.initiative.state === "pending" || flags.initiative.reason === "partial") {
+            metadata.initiative = { ...flags.initiative, state: "manual", reason: "partial",
+              score: resolveInitiativeScore(retained, flags.initiative.steps) };
+          } else if (retained > plan.oldValue) {
+            metadata.initiative = { ...flags.initiative, score: resolveInitiativeScore(retained, flags.initiative.steps) };
+            await checkpointInitiative();
+            await persistInitiative(initiativeOwner, metadata.initiative.score, metadata.initiative);
+          }
+        }
         if (flags.isAttack && (flags.targetActorId || flags.attackConsequences)) {
           Object.assign(metadata, await reconcileAttackConsequences(attackTarget, flags, outcome, checkpointAttack));
         }
@@ -185,12 +207,14 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
           && flags.defenseConsequences?.state !== "pending" && flags.defenseConsequences?.reason !== "partial"
           && flags.attackConsequences?.state !== "pending" && flags.attackConsequences?.reason !== "partial"
           && !flags.attackRefundPending
+          && flags.initiative?.state !== "pending" && flags.initiative?.reason !== "partial"
           && flags.shieldReturn?.state !== "pending" && flags.shieldReturn?.reason !== "partial") {
           const stat = resolveStat(sourceActor.system, flags.stat);
           const modifiers = resolveActiveAbilityModifiers(sourceActor.system.activeAbilityEffects,
             sourceActor.items?.contents ?? Array.from(sourceActor.items?.values?.() ?? []), sourceActor.system);
           const pool = stat.data.pool;
           await checkpointShield();
+          await checkpointInitiative();
           if (flags.isAttack) await checkpointAttack();
           await sourceActor.update({ [`${stat.path}.pool.value`]: Math.min(
             pool.max + (modifiers.poolMax[flags.stat] ?? 0), pool.value + flags.effortCost) });
@@ -204,7 +228,14 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
             metadata.attackConsequences = { ...metadata.attackConsequences, state: "applied" };
           }
         }
-        resultText = `<p class="cypher-result ${outcome.success ? "success" : "failure"}">${game.i18n.localize(outcome.success ? "CYPHER.Roll.Success" : "CYPHER.Roll.Failure")}</p>`;
+        if (initiativeCheckpointed) metadata.initiative = { ...metadata.initiative, state: "applied" };
+        resultText = flags.initiative
+          ? `<p>${game.i18n.format("CYPHER.Initiative.Result", { roll: retained, steps: flags.initiative.steps, score: metadata.initiative.score })}</p>`
+          : `<p class="cypher-result ${outcome.success ? "success" : "failure"}">${game.i18n.localize(outcome.success ? "CYPHER.Roll.Success" : "CYPHER.Roll.Failure")}</p>`;
+        if (metadata.initiative?.state === "manual") {
+          resultText += `<p>${game.i18n.localize("CYPHER.Initiative.ManualCorrection")}</p>`;
+          ui.notifications.warn(game.i18n.localize("CYPHER.Initiative.ManualCorrection"));
+        }
         if (outcome.damageBonus) resultText += `<p>+${outcome.damageBonus} ${game.i18n.localize("CYPHER.Damage")} (${outcome.totalDamage})</p>`;
         if (outcome.selectedEffect) resultText += `<p>${game.i18n.localize(outcome.selectedEffect === "minor" ? "CYPHER.Roll.MinorEffect" : "CYPHER.Roll.MajorEffect")}</p>`;
         if (metadata.attackNote) {
@@ -239,10 +270,11 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
       await roll.toMessage({ speaker: ChatMessage.getSpeaker({ actor: sourceActor ?? actor }),
         flavor: `<div class="cypher-roll-card cypher-reroll-card"><h3>${game.i18n.localize("CYPHER.XP.RerollResult")}</h3>
           <p>${game.i18n.format("CYPHER.XP.RerollCompare", { old: plan.oldValue, new: roll.total, final: retained })}</p>${resultText}</div>`,
-        flags: { cypher: metadata } });
+        flags: { cypher: metadata, ...(flags.initiative ? { core: { initiativeRoll: true } } : {}) } },
+      flags.initiative ? initiativeMessageOptions(flags.initiative) : {});
       return metadata;
     };
-    return runActorActions([sourceActor ?? actor, woundTarget, attackTarget], "rerollSource", execute, context);
+    return runActorActions([sourceActor ?? actor, woundTarget, attackTarget, initiativeOwner?.combat], "rerollSource", execute, context);
   });
 }
 

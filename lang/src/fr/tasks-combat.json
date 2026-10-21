@@ -156,6 +156,12 @@
       "ItemHint": "Cochez « Équipé » pour utiliser cette armure. L’équiper déséquipe automatiquement toute autre armure."
     },
     "Equipped": "Équipé",
-    "Damage": "Dégâts"
+    "Damage": "Dégâts",
+    "Initiative": {
+      "Label": "Initiative",
+      "Hint": "Lancez la Célérité pour l’initiative. Chaque étape d’aisance ajoute 3 ; chaque étape d’entrave retire 3. Les PNJ utilisent leur niveau multiplié par 3. Un PJ agit avant un PNJ en cas d’égalité.",
+      "Result": "Initiative : {score} (dé {roll}, modificateur en étapes {steps}).",
+      "ManualCorrection": "Une correction précédente de l’initiative a été interrompue. Le meilleur dé est conservé ; demandez au MJ de corriger le suivi de combat et tout remboursement de réserve en attente."
+    }
   }
 }

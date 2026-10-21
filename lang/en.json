@@ -316,6 +316,12 @@
       "UnsupportedType": "Item \"{name}\" ({type}): this item type isn't supported by the importer yet, it was skipped.",
       "WarningsCount": "Import finished with {count} warning(s) — see the console (F12) for details."
     },
+    "Initiative": {
+      "Hint": "Roll Speed for initiative. Each eased step adds 3; each hindered step subtracts 3. NPCs use level times 3. A PC wins a tie with an NPC.",
+      "Label": "Initiative",
+      "ManualCorrection": "An earlier initiative correction was interrupted. The best die is retained; ask the GM to reconcile the tracker and any pending Pool refund.",
+      "Result": "Initiative: {score} (die {roll}, net steps {steps})."
+    },
     "Item": {
       "Delete": "Delete",
       "Edit": "Edit",

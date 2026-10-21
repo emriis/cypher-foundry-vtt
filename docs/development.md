@@ -191,6 +191,28 @@ cancellation, permissions, costs, target writes, and expiration.
 
 ## 3. Validation and CI
 
+PR workflows trigger automatically on `pull_request`. Artifact preparation
+builds and validates packs and the package in the runner, then uploads
+`system.json` and `system.zip` as a `generated-system-<run>-<attempt>` artifact
+retained for seven days. It does not commit or push generated files to PR
+branches. Release builds still rebuild and publish their own validated package.
+
+This avoids a second **Approve and run workflows** gate after automatic artifact
+synchronization: a push made with `GITHUB_TOKEN` creates approval-required PR
+workflow runs, even when the original PR belongs to the repository owner. See
+[GitHub's token-trigger contract](https://docs.github.com/en/actions/concepts/security/github_token#when-github_token-triggers-workflow-runs).
+The preparation workflow uses read-only repository permissions and checks out
+the triggering PR head SHA, so it validates the requested revision.
+
+The approval gate for Copilot-created changes is controlled separately:
+repository **Settings → Copilot → Cloud agent → Actions workflow approval**
+contains **Require approval for workflow runs**. An administrator can disable
+that setting to let these workflows start automatically. See
+[GitHub's configuration guide](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/configuring-agent-settings#allowing-github-actions-workflows-to-run-automatically-when-copilot-pushes).
+Fork-contributor approval is a different repository setting under **Actions →
+General**. Neither setting is changed by adding `workflow_dispatch` or editing
+the PR event in YAML.
+
 Useful local commands are:
 
 ```powershell
@@ -292,6 +314,8 @@ remain the editable authoring surface; the CRD is their content authority.
 Task modifier, Effort, Edge and per-action cost contracts are maintained in
 [task-rolls.md](task-rolls.md). Consult its CRD locators and test the actual
 weapon-to-task pipeline before extending task automation.
+The standard combat tracker's Speed rolls, NPC target-number initiatives,
+PC ties and paid rerolls are documented in [initiative.md](initiative.md).
 
 The broad architecture refactor is complete. Do not reopen the completed
 Phase 1-8 work as a standing task.

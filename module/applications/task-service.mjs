@@ -14,6 +14,8 @@ import { syncWoundStatusEffects } from "./damage-service.mjs";
 import { resolveStat } from "../rules/stats.mjs";
 import { canShieldAbsorbWound, isShieldBroken } from "../rules/wounds.mjs";
 import { shieldSurvivesMajor, shieldOwnerItems, SHIELD_ABILITY_KEYS } from "../rules/shield-abilities.mjs";
+import { resolveInitiativeScore } from "../rules/initiative.mjs";
+import { persistInitiative, resolveInitiativeOwner, initiativeMessageOptions } from "./initiative-history.mjs";
 
 /**
  * Roll a Block or Dodge defense through the common task engine.
@@ -98,7 +100,12 @@ export async function rollDefense(
  */
 export async function rollTask(actor, options = {}) {
   if (!actor) return null;
-  return runActorActions([actor, options.targetActor], "task", context => executeTask(actor, options, context), options[ACTION_CONTEXT]);
+  const initiativeOwner = options.initiative ? await resolveInitiativeOwner(options.initiative, actor) : null;
+  if (options.initiative && (!initiativeOwner || actor.type !== "pc" || options.stat !== "speed"
+    || options.difficulty !== 0 || options.isAttack || options.defenseType || options.targetActor
+    || options.woundRemovalSeverity || options.shieldReturn || options.luckyShot)) return null;
+  return runActorActions([actor, options.targetActor, initiativeOwner?.combat], "task",
+    context => executeTask(actor, options, context, initiativeOwner), options[ACTION_CONTEXT]);
 }
 
 /** Execute one locally accepted task in explicit preparation/write/chat phases. */
@@ -108,7 +115,7 @@ async function executeTask(actor, {
   extraHinderSteps = 0, extraEaseSteps = 0, luckyShot = false,
   specialEffectChoice = null, weaponTargetEffects = [], weaponSource = {},
   weaponRangeAdjudication = null, abilitySource = null, spentAbilityEdge = 0,
-  effectEffortLevels = 0, activationCost = 0, shieldReturn = null,
+  effectEffortLevels = 0, activationCost = 0, shieldReturn = null, initiative = null,
   defenseType = null, incomingSeverity = "minor", armorModifier = 0, shieldItemId = null,
   incomingPoolDamage = null,
   targetActor = null, armorBypass = 0, incomingWounds = 1,
@@ -116,7 +123,7 @@ async function executeTask(actor, {
   damageEffortLevels = 0, freeEffortLevels = 0, freeDamageEffortLevels = 0, freeEffortSource = "",
   rollRoutine = true, chooseSpecialEffect = null, areaAttack = false, push = false,
   pushDamageEffortLevels = 0, powerShiftCategories = []
-} = {}, actionContext = null) {
+} = {}, actionContext = null, initiativeOwner = null) {
   // Validate an explicit shield selection before any cost or dice. Equipment
   // may change while a dialog is open; never silently spend on a stale choice.
   const shieldItem = shieldItemId ? actor.items?.get(shieldItemId) : null;
@@ -149,7 +156,11 @@ async function executeTask(actor, {
   if (!prepared) return null;
   ({ effortLevels, assetSteps, extraHinderSteps } = prepared);
   const { resolved, statLabel, totalCost, xpCost, poolValue, poolMax,
-    woundHinder, autoArmorSpeedHinder, effectiveDifficulty, targetNumber, effort, powerShifts, pushWound, skillSteps } = prepared;
+    woundHinder, autoArmorSpeedHinder, effort, powerShifts, pushWound, skillSteps, totalSteps } = prepared;
+  // Initiative has no success threshold. Retain unclamped task steps for its
+  // score instead of deriving them from a difficulty already clamped to zero.
+  const effectiveDifficulty = initiative ? 0 : prepared.effectiveDifficulty;
+  const targetNumber = initiative ? 0 : prepared.targetNumber;
   baseDamage += effort.damageBonus + powerShifts.damage;
 
   // One Actor write commits XP and Pool costs together. Subsequent target
@@ -165,7 +176,7 @@ async function executeTask(actor, {
 
   // Routine success is still an accepted action with costs and consequences.
   // Without dice it cannot create special results, refunds or a paid reroll.
-  const roll = effectiveDifficulty <= 0 && !rollRoutine ? null : await new Roll("1d20").evaluate();
+  const roll = !initiative && effectiveDifficulty <= 0 && !rollRoutine ? null : await new Roll("1d20").evaluate();
   const d20 = roll?.total ?? null;
   const offered = resolveTaskOutcome({ d20, effectiveDifficulty, isAttack, baseDamage }).special.effectOptions;
   if (offered.length && !offered.includes(specialEffectChoice) && chooseSpecialEffect) {
@@ -204,8 +215,15 @@ async function executeTask(actor, {
   if (success && shieldReturn) {
     await actor.items.get(shieldReturn.itemId).update({ "system.inHand": true, "system.equipped": true });
   }
+  if (initiative) {
+    initiative = { ...initiative, steps: totalSteps, score: resolveInitiativeScore(d20, totalSteps), state: "applied" };
+    await persistInitiative(initiativeOwner, initiative.score, initiative);
+  }
 
-  const messageFlavor = buildTaskMessage({
+  const messageFlavor = initiative ? `<div class="cypher-roll-card"><h3>${game.i18n.localize("CYPHER.Initiative.Label")}</h3>
+    <p>${game.i18n.format("CYPHER.Initiative.Result", { roll: d20, steps: totalSteps, score: initiative.score })}</p>
+    ${effectText ? `<p>${effectText}</p>` : ""}
+    ${refund && totalCost > 0 ? `<p>${game.i18n.localize("CYPHER.Roll.CostRefunded")}</p>` : ""}</div>` : buildTaskMessage({
     applyIncomingWound, statLabel, defenseType, success, usingShield: shieldWoundsAbsorbed > 0, shieldItem, incomingSeverity,
     shieldWoundsAbsorbed, incomingWounds,
     weaponSource, isAttack, flavor, abilitySource, targetActor, difficulty, effectiveDifficulty,
@@ -220,12 +238,14 @@ async function executeTask(actor, {
     speaker: ChatMessage.getSpeaker({ actor: actor }),
     flavor: messageFlavor,
     flags: {
+      ...(initiative ? { core: { initiativeRoll: true } } : {}),
       "cypher": {
         rerollable: Boolean(roll),
         rollType: "task",
         abilitySource,
         actorId: actor.id,
         actorUuid: actor.uuid,
+        ...(initiative ? { initiative } : {}),
         ...(shieldReturn ? { shieldReturn: { ...shieldReturn, applied: success } } : {}),
         ...(defenseType ? { defenseType, shieldItemId, shieldWoundsAbsorbed, incomingWounds, incomingSeverity,
           applyIncomingWound, incomingPoolDamage, defenseConsequences } : {}),
@@ -253,7 +273,7 @@ async function executeTask(actor, {
       }
     }
   };
-  if (roll) await roll.toMessage(message);
+  if (roll) await roll.toMessage(message, initiative ? initiativeMessageOptions(initiative) : {});
   else await ChatMessage.create({ ...message, content: messageFlavor });
 
   return {

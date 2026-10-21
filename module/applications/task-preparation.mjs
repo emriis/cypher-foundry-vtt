@@ -151,7 +151,7 @@ export function prepareTask(actor, { stat, difficulty, effortLevels, assetSteps,
   return { resolved, statLabel, effortLevels: effort.effortLevels, assetSteps, extraHinderSteps,
     effort, powerShifts, pushWound, skillSteps,
     totalCost, xpCost, poolValue, poolMax, woundHinder, autoArmorSpeedHinder,
-    effectiveDifficulty, targetNumber };
+    effectiveDifficulty, targetNumber, totalSteps };
 }
 
 /** Report validation rejection without turning it into a partial transaction. */

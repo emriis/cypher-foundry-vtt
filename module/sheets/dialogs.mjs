@@ -7,7 +7,7 @@ import { getSuperheroicsRank } from "../applications/task-preparation.mjs";
  * a caller-confirmed grant, not an automatic interpretation of Ability prose.
  * Keep the source declaration visible so limited grants can be adjudicated.
  */
-export function taskModifierFields(actor, { stat, isAttack = false, defenseType = null, abilitySource = null } = {}) {
+export function taskModifierFields(actor, { stat, isAttack = false, defenseType = null, abilitySource = null, isInitiative = false } = {}) {
   const label = key => game.i18n.localize(`CYPHER.Roll.${key}`);
   const number = (name, key) => `<div class="form-group"><label>${label(key)}
     <input type="number" name="${name}" min="0" max="${6 + getSuperheroicsRank(actor, stat)}" step="1" value="0"/></label></div>`;
@@ -38,7 +38,7 @@ export function taskModifierFields(actor, { stat, isAttack = false, defenseType 
     ${getSuperheroicsRank(actor, stat) ? `<div class="form-group"><label><input type="checkbox" name="push"/>
       ${label("SuperheroicsPush")}</label></div>${isAttack ? `<div class="form-group"><label>${label("PushDamageEffort")}
       <input type="number" name="pushDamageEffort" value="0" min="0" max="2" step="1"/></label></div>` : ""}` : ""}
-    <div class="form-group"><label><input type="checkbox" name="rollRoutine" checked/>
+    <div class="form-group" ${isInitiative ? "hidden" : ""}><label><input type="checkbox" name="rollRoutine" checked/>
       ${label("RollRoutine")}</label><p class="hint">${label("RollRoutineHint")}</p></div>`;
 }
 
@@ -76,7 +76,7 @@ export async function promptSpecialEffect(options) {
  */
 export async function promptRollOptions(actor, {
   difficulty = 3, isAttack = false, weapon = null, isWeaponAbility = false, fixedDifficulty = false,
-  stat = weapon?.system.stat, abilitySource = null
+  stat = weapon?.system.stat, abilitySource = null, isInitiative = false
 } = {}) {
   const maxDifficulty = actor.system.maxDifficulty ?? 10;
   const maxEffort = Math.min(6, actor.system.effort ?? 1) + getSuperheroicsRank(actor, stat);
@@ -85,7 +85,8 @@ export async function promptRollOptions(actor, {
     .map(i => `<option value="${i.id}">${i.name} (${game.i18n.localize(`CYPHER.SkillLevel.${i.system.level}`)})</option>`).join("");
 
   const content = `
-    <div class="form-group" ${isWeaponAbility ? 'hidden' : ''}>
+    ${isInitiative ? `<p>${game.i18n.localize("CYPHER.Initiative.Hint")}</p>` : ""}
+    <div class="form-group" ${isWeaponAbility || isInitiative ? 'hidden' : ''}>
       <label>${game.i18n.localize("CYPHER.Roll.Difficulty")}</label>
       <input type="number" name="difficulty" value="${difficulty}" min="0" max="${maxDifficulty}" ${fixedDifficulty ? "readonly" : ""}/>
     </div>
@@ -104,7 +105,7 @@ export async function promptRollOptions(actor, {
       <label>${game.i18n.localize("CYPHER.Roll.AssetSteps")}</label>
       <input type="number" name="assets" value="0" min="0" max="2"/>
     </div>
-    ${taskModifierFields(actor, { stat, isAttack, abilitySource })}
+    ${taskModifierFields(actor, { stat, isAttack, abilitySource, isInitiative })}
     ${isAttack && !isWeaponAbility ? `
     <div class="form-group inline">
       <label><input type="checkbox" name="luckyShot"/> ${game.i18n.localize("CYPHER.XP.LuckyShot")} (${CONFIG.CYPHER.xpCosts.luckyShot} ${game.i18n.localize("CYPHER.XP.Label")}, ${game.i18n.localize("CYPHER.XP.LuckyShotHint")})</label>
@@ -122,7 +123,7 @@ export async function promptRollOptions(actor, {
 
   return foundry.applications.api.DialogV2.prompt({
     rejectClose: false,
-    window: { title: isAttack ? game.i18n.localize("CYPHER.Roll.Attack") : game.i18n.localize("CYPHER.Roll.Task") },
+    window: { title: game.i18n.localize(isInitiative ? "CYPHER.Initiative.Label" : isAttack ? "CYPHER.Roll.Attack" : "CYPHER.Roll.Task") },
     content,
     ok: {
       label: game.i18n.localize("CYPHER.Roll.Roll"),
@@ -142,6 +143,11 @@ export async function promptRollOptions(actor, {
       }
     }
   });
+}
+
+/** Collect Speed task choices from the standard combat tracker, before costs or dice. */
+export function promptInitiativeOptions(actor) {
+  return promptRollOptions(actor, { stat: "speed", difficulty: 0, fixedDifficulty: true, isInitiative: true });
 }
 
 /**
