@@ -15,7 +15,7 @@ test("the actual canonical glossary's UI mechanical labels match all current loc
     readLocaleSources(root, "en"), readLocaleSources(root, "fr")
   ]);
   const glossary = JSON.parse(data);
-  assert.ok(glossary.entries.length >= 40);
+  assert.ok(glossary.entries.length >= 60);
   assert.deepEqual(validateGlossary(glossary, en.dictionary, fr.dictionary), []);
   assert.equal(glossary.entries.find(x => x.id === "activation.first-action").french, "Action réflexe");
   assert.equal(glossary.entries.find(x => x.id === "mechanic.edge").french, "Avantage");
@@ -48,6 +48,7 @@ test("inclusive writing review flags gendered generic address but protects epice
   assert.ok(findings.some(x => x.id === "gendered-pairing"));
   assert.deepEqual(inclusiveStyleHints("<p>Vous choisissez ; la personne qui joue agit.</p>"), []);
   assert.deepEqual(inclusiveStyleHints("@UUID[Compendium.test.Item.123]"), []);
+  assert.ok(inclusiveStyleHints("Entraîné(e)").some(x => x.id === "gender-parentheses"));
 });
 
 test("mechanical caveats flag possible D&D-style rolls without banning ordinary Edge wording", () => {
