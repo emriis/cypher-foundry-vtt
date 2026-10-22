@@ -287,9 +287,12 @@ The CRD-backed cost/reroll and refactoring contracts are documented in
 Round scheduling and Actor-owned action usage are documented in
 [round-flow.md](round-flow.md); the Combat adapter delegates to application
 services, while pure phase calculations remain in `module/rules/round-flow.mjs`.
+
 Intrusion decisions use persisted ChatMessage requests and an elected GM
 settlement authority. Per-Actor XP receipts support partial-write recovery;
 see [intrusions.md](intrusions.md) for ownership and transaction limits.
+=======
+
 Source migration is now coordinated by `scripts/migrate-ability-sources.mjs`
 with identity, source lookup, normalization, cleanup, and registry helpers under
 `scripts/source-migration/`. The authoring surface and source bytes are preserved.

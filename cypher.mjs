@@ -1,3 +1,4 @@
+
 import { renderIntrusionControls } from "./module/sheets/intrusion-dialogs.mjs";
 import * as intrusionService from "./module/applications/intrusion-service.mjs";
 import { attachRoundControls, refreshRoundPanels, closeRoundPanel } from "./module/sheets/round-flow-panel.mjs";
@@ -237,3 +238,4 @@ Hooks.on("userConnected", resumeAuthorizedIntrusionShares);
 Hooks.on("createChatMessage", message => {
   if (intrusionService.getIntrusion(message)?.kind === "choice") resumeAuthorizedIntrusionShares();
 });
+
