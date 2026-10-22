@@ -4,6 +4,7 @@ import { getGeneralEffects } from "./general-effect-service.mjs";
 import { resolveGeneralModifiers } from "../rules/general-effects.mjs";
 import { resolveDocumentReference } from "./reference-resolver.mjs";
 import { runActorActions, ACTION_CONTEXT } from "./action-guard.mjs";
+import { roundActionContext, consumeRoundAction, ROUND_ACTION_OWNER } from "./round-action-service.mjs";
 import {
   expireWeaponEffectsAfterAction,
   expireWeaponEffectsOutsideCurrentRound,
@@ -53,8 +54,11 @@ export async function rollNpcAttack(
     if (!selectedTarget || selectedTarget.isOwner === false) return null;
   }
   return runActorActions([actor, selectedTarget, takeAttackActor], "npcAttack", async context => {
+    const roundContext = roundActionContext(actor, { isAttack: true, actionTiming: taskOptions.actionTiming });
+    if (roundContext && !roundContext.kind) return null;
     const generalEffects = getGeneralEffects(actor);
     if (generalEffects.some(effect => effect.kind === "preventAction")) {
+      if (!await consumeRoundAction(roundContext, context)) return null;
       await expireWeaponEffectsAfterAction(actor);
       ui.notifications.warn(game.i18n.localize("CYPHER.General.GuardStopped"));
       return { stopped: true };
@@ -67,6 +71,7 @@ export async function rollNpcAttack(
     await expireWeaponEffectsOutsideCurrentRound(actor);
     const targetEffects = getActiveWeaponEffects(actor);
     if (targetEffects.some(effect => effect.effect === "loseNextAction")) {
+      if (!await consumeRoundAction(roundContext, context)) return null;
       ui.notifications.warn(game.i18n.localize("CYPHER.NPC.LostNextAction"));
       await expireWeaponEffectsAfterAction(actor);
       return null;
@@ -87,6 +92,7 @@ export async function rollNpcAttack(
     const defense = await rollDefense(selectedTarget, defenseType, {
       ...taskOptions,
       [ACTION_CONTEXT]: context,
+      [ROUND_ACTION_OWNER]: actor,
       cooperativeMode, npcSource: actor, takeAttackActor, attackForm,
       automaticFailure: physicalAttack && getGeneralEffects(selectedTarget).some(effect => ["paralyzed", "unconscious"].includes(effect.kind)),
       shieldItemId,

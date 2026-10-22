@@ -572,6 +572,27 @@
       "TotalDamage": "dégâts totaux",
       "WoundHinder": "Entrave due aux blessures : {steps} pas."
     },
+    "Round": {
+      "Advance": "Commencer / étape suivante",
+      "Complete": "Effectuer une action sans jet",
+      "Confirm": "Confirmer les déclarations",
+      "DeclarationHint": "Le MJ confirme le moment de l’action et ses prérequis. Action réflexe : cette action seule. Activité complémentaire : non offensive. Action lente : aucune activité séparée. La préparation occupe tout le round et permet une action réflexe au round suivant. Les scores d’initiative sont conservés.",
+      "HeavyMovement": "Déplacement immédiat avec une arme lourde : attaque entravée d’un pas",
+      "Minor": "Activité complémentaire non offensive",
+      "Plan": "Préparer le premier / prochain round",
+      "Resume": "Reprendre avant cet événement",
+      "Title": "Déroulement du round",
+      "Trigger": "Déclencheur (facultatif)",
+      "TriggerHint": "Confirmez que le déclencheur déclaré va se produire et qu’il est possible d’agir juste avant.",
+      "Unavailable": "Cette action est indisponible à cette étape du round. Aucun coût n’a été dépensé.",
+      "Wait": "Attendre / préparer un déclencheur",
+      "first": "Action réflexe",
+      "followUp": "Activité complémentaire",
+      "last": "Action lente",
+      "normal": "Action ordinaire",
+      "prepare": "Préparation du prochain round",
+      "wait": "Attente"
+    },
     "Sheet": {
       "Abilities": "Aptitudes",
       "CharacterDetails": "Biographie, notes et champs personnalisés",

@@ -1,0 +1,25 @@
+{
+  "CYPHER": {
+    "Round": {
+      "Title": "Round sequence",
+      "Plan": "Plan the first / next round",
+      "Advance": "Start / next step",
+      "Wait": "Wait / ready a trigger",
+      "Resume": "Resume before this event",
+      "Minor": "Minor nonattack activity",
+      "Trigger": "Trigger (optional)",
+      "TriggerHint": "Confirm that the declared trigger is about to occur and that acting immediately before it makes sense.",
+      "DeclarationHint": "The GM confirms the action timing and prerequisites. First: only that action. Follow-up: minor nonattack activity. Last: no separate activity. Preparation occupies the entire round and grants a First action next round. Initiative scores are preserved.",
+      "Confirm": "Confirm declarations",
+      "Unavailable": "This action is unavailable in the current round slot. No costs were spent.",
+      "HeavyMovement": "Immediate movement with a heavy weapon: attack hindered by one step",
+      "normal": "Ordinary action",
+      "first": "First action",
+      "last": "Last action",
+      "prepare": "Prepare for the next round",
+      "wait": "Wait",
+      "followUp": "Follow-up activity",
+      "Complete": "Record an action without a roll"
+    }
+  }
+}

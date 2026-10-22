@@ -239,3 +239,40 @@ test("Given an unrelated hindrance alongside repeated Stunstick hits, then its i
   assert.equal(getActiveWeaponEffects(npc).length, 2);
   assert.equal(getActiveWeaponEffects(npc).reduce((steps, effect) => steps + effect.hinderSteps, 0), 3);
 });
+
+
+test("source-bound weapon effects survive the round change and expire at the next source turn", async () => {
+  const source = { uuid: "Actor.source" };
+  const combat = game.combat = { id: "combat", round: 1, turns: [{ id: "source", actor: source }],
+    flags: { cypher: { turnRevisions: { source: 1 } } } };
+  const npc = createNpc();
+  await applyWeaponTargetEffects(npc, [{ effect: "hindered", hinderSteps: 1, duration: "one round" }],
+    { itemId: "weapon", actorUuid: source.uuid });
+  combat.round = 2;
+  assert.equal(getActiveWeaponEffects(npc).length, 1);
+  combat.flags.cypher.turnRevisions.source = 2;
+  assert.equal(getActiveWeaponEffects(npc).length, 0);
+});
+
+test("overlapping source-bound hindrance survives the earlier source turn without doubling its steps", async () => {
+  const fast = { uuid: "Actor.fast" }, slow = { uuid: "Actor.slow" };
+  const combat = game.combat = { id: "combat", round: 1, turns: [{ id: "fast", actor: fast }, { id: "slow", actor: slow }],
+    flags: { cypher: { turnRevisions: { fast: 1, slow: 1 } } } };
+  game.user = { isGM: true };
+  const npc = createNpc();
+  const effects = [{ effect: "hindered", hinderSteps: 2, duration: "a round or two", minimumTargetLevel: 3, maximumTargetLevel: null }];
+  await applyWeaponTargetEffects(npc, effects, { itemId: "fast-weapon", actorUuid: fast.uuid });
+  await applyWeaponTargetEffects(npc, effects, { itemId: "slow-weapon", actorUuid: slow.uuid });
+  assert.equal(getActiveWeaponEffects(npc).reduce((sum, effect) => sum + effect.hinderSteps, 0), 2);
+  await expireWeaponEffectsAfterAction(npc);
+  combat.round = 2; combat.flags.cypher.turnRevisions.fast = 2;
+  await expireWeaponEffectsOutsideCurrentRound(npc);
+  const active = getActiveWeaponEffects(npc);
+  assert.equal(active.length, 1);
+  assert.equal(active[0].sourceItemId, "slow-weapon");
+  assert.equal(await extendWeaponEffect(npc, active[0].id), true);
+  combat.flags.cypher.turnRevisions.slow = 2;
+  assert.equal(getActiveWeaponEffects(npc).length, 1);
+  combat.flags.cypher.turnRevisions.slow = 3;
+  assert.equal(getActiveWeaponEffects(npc).length, 0);
+});

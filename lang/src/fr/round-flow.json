@@ -1,0 +1,25 @@
+{
+  "CYPHER": {
+    "Round": {
+      "Title": "Déroulement du round",
+      "Plan": "Préparer le premier / prochain round",
+      "Advance": "Commencer / étape suivante",
+      "Wait": "Attendre / préparer un déclencheur",
+      "Resume": "Reprendre avant cet événement",
+      "Minor": "Activité complémentaire non offensive",
+      "Trigger": "Déclencheur (facultatif)",
+      "TriggerHint": "Confirmez que le déclencheur déclaré va se produire et qu’il est possible d’agir juste avant.",
+      "DeclarationHint": "Le MJ confirme le moment de l’action et ses prérequis. Action réflexe : cette action seule. Activité complémentaire : non offensive. Action lente : aucune activité séparée. La préparation occupe tout le round et permet une action réflexe au round suivant. Les scores d’initiative sont conservés.",
+      "Confirm": "Confirmer les déclarations",
+      "Unavailable": "Cette action est indisponible à cette étape du round. Aucun coût n’a été dépensé.",
+      "HeavyMovement": "Déplacement immédiat avec une arme lourde : attaque entravée d’un pas",
+      "normal": "Action ordinaire",
+      "first": "Action réflexe",
+      "last": "Action lente",
+      "prepare": "Préparation du prochain round",
+      "wait": "Attente",
+      "followUp": "Activité complémentaire",
+      "Complete": "Effectuer une action sans jet"
+    }
+  }
+}

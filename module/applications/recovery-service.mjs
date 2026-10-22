@@ -13,6 +13,7 @@ import { rollTask } from "./task-service.mjs";
 import { syncHealingStatuses } from "./wound-removal.mjs";
 import { recoverUnyieldingShields } from "./shield-lifecycle-service.mjs";
 import { specialDamageLimits } from "./special-damage-healing.mjs";
+import { roundActionContext, consumeRoundAction } from "./round-action-service.mjs";
 
 function itemsOf(actor) {
   return actor.items?.contents ?? (Array.isArray(actor.items) ? actor.items : Array.from(actor.items?.values?.() ?? []));
@@ -61,6 +62,9 @@ export async function rollRecovery(actor, interval = "hour", options = {}) {
   return runActorAction(actor, "healing", async context => {
     const sourceId = options.source ?? "standard";
     const source = availableSource(actor, interval, sourceId, options.machinePowered);
+    const roundContext = interval === "action" ? roundActionContext(actor,
+      { actionTiming: options.lastAction ? "lastAction" : "action" }) : null;
+    if (roundContext && !roundContext.kind) return null;
     if (!source) {
       ui.notifications.warn(game.i18n.localize("CYPHER.Recovery.Unavailable"));
       return null;
@@ -89,6 +93,7 @@ export async function rollRecovery(actor, interval = "hour", options = {}) {
       if (Object.hasOwn(updates, path)) updates[path] = Math.max(updates[path],
         Math.min(actor.system.wounds[severity].current, limits.wounds[severity]));
     }
+    if (!await consumeRoundAction(roundContext, context)) return null;
     const flags = actor.flags?.cypher ?? {};
     if (sourceId !== "standard") updates["flags.cypher.additionalRecoveriesUsed"] = {
       ...flags.additionalRecoveriesUsed, [sourceId]: source.used + 1
@@ -135,7 +140,7 @@ export async function rollRecovery(actor, interval = "hour", options = {}) {
  */
 export async function rallyWound(actor, severity) {
   if (actor?.type !== "pc" || actor.isOwner === false) return false;
-  return runActorAction(actor, "healing", async () => {
+  return runActorAction(actor, "healing", async context => {
     if (!(actor.system.wounds[severity]?.current > (specialDamageLimits(actor).wounds[severity] ?? 0))) return false;
     const cost = getRallyCost(severity, actor.system.canRallyMajor);
     if (cost === null) {
@@ -148,6 +153,7 @@ export async function rallyWound(actor, severity) {
       if (actor.system.stats.might.pool.value < cost) ui.notifications.warn(game.i18n.localize("CYPHER.Warning.NotEnoughMightToRally"));
       return false;
     }
+    if (!await consumeRoundAction(roundActionContext(actor), context)) return false;
     await actor.update({ "system.stats.might.pool.value": result.remainingMight,
       [`system.wounds.${severity}.current`]: result.remainingWound });
     await syncHealingStatuses(actor);

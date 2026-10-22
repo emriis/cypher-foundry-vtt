@@ -1,3 +1,4 @@
+import { roundActionContext } from "./round-action-service.mjs";
 import { runActorAction } from "./action-guard.mjs";
 import { CYPHER } from "../config.mjs";
 import {
@@ -182,7 +183,7 @@ export function prepareAttackOptions(item, {
   effortLevels = 0, assetSteps = 0, difficulty = 3,
   luckyShot = false, skillItemId = null, target = null, oneHanded = false,
   atExtremeRange = false, extraHinderSteps = 0, damageAdjustment = 0,
-  abilitySource = null, spentAbilityEdge = 0, ...taskOptions
+  abilitySource = null, spentAbilityEdge = 0, immediateMovement = false, ...taskOptions
 } = {}) {
   if (item.type !== "attack" || !item.actor) return null;
   const actor = item.actor;
@@ -233,7 +234,7 @@ export function prepareAttackOptions(item, {
     targetLevel
   );
   const weaponEaseSteps = attackType === "light" ? 1 : 0;
-  return {
+  const task = {
     ...taskOptions,
     // Matching attack training is already part of weaponSkillModifier. Passing
     // it again into the generic skill slot would ease the attack twice.
@@ -241,7 +242,7 @@ export function prepareAttackOptions(item, {
     skillItemId: matchingAttackSkill ? null : skillItemId,
     isAttack: true, baseDamage: Math.max(0, baseDamage + damageAdjustment),
     extraHinderSteps: extraHinderSteps + weaponHinder + oneHandHinder
-      + weaponRangeAdjudication.hinderSteps,
+      + weaponRangeAdjudication.hinderSteps + (immediateMovement && attackType === "heavy" ? 1 : 0),
     extraEaseSteps: weaponEaseSteps + weaponEase, luckyShot, weaponTargetEffects,
     targetActor: selectedTarget, weaponRangeAdjudication, abilitySource, spentAbilityEdge,
     weaponSource: {
@@ -255,6 +256,8 @@ export function prepareAttackOptions(item, {
     armorBypass: item.system.mechanics?.ignoresPhysicalArmor ?? 0,
     flavor: `${game.i18n.localize("CYPHER.Roll.Attack")}: ${item.name}`
   };
+  const context = roundActionContext(actor, task);
+  return context && !context.kind ? null : task;
 }
 
 /**

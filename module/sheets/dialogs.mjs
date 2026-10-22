@@ -37,6 +37,8 @@ export function taskModifierFields(actor, { stat, isAttack = false, defenseType 
     ${shieldEffect ? `<div class="form-group"><label><input type="checkbox" name="effectEffort"/>
       ${game.i18n.localize("CYPHER.ShieldAbility.EffectEffort")}</label></div>` : ""}
     <details><summary>${label("ConditionalModifiers")}</summary>
+      ${!isAttack && !defenseType ? `<div class="form-group"><label><input name="minorActivity" type="checkbox"/>${game.i18n.localize("CYPHER.Round.Minor")}</label></div>` : ""}
+      ${isAttack ? `<div class="form-group"><label><input name="immediateMovement" type="checkbox"/>${game.i18n.localize("CYPHER.Round.HeavyMovement")}</label></div>` : ""}
       <div class="form-group"><label><input name="noPhysicalMovement" type="checkbox"/>${game.i18n.localize("CYPHER.General.noPhysicalMovement")}</label></div>
       ${isAttack ? `<div class="form-group"><label>${game.i18n.localize("CYPHER.General.attackForm")}<select name="attackForm">
         <option value="">${game.i18n.localize("CYPHER.General.unspecified")}</option>
@@ -64,7 +66,7 @@ export function taskModifierFields(actor, { stat, isAttack = false, defenseType 
 export function readTaskModifiers(form) {
   const value = name => Number(form.elements?.namedItem(name)?.value ?? form[name]?.value ?? 0);
   const checked = name => Boolean(form.elements?.namedItem(name)?.checked ?? form[name]?.checked);
-  return { damageEffortLevels: value("damageEffort"), freeEffortLevels: value("freeEffort"),
+  return { minorActivity: checked("minorActivity"), immediateMovement: checked("immediateMovement"), damageEffortLevels: value("damageEffort"), freeEffortLevels: value("freeEffort"),
     ...(form.cooperativeMode ? { cooperativeMode: form.cooperativeMode.value } : {}),
     ...(form.cooperativeEffectIds ? { cooperativeEffectIds: [...form.cooperativeEffectIds.selectedOptions].map(option => option.value) } : {}),
     ...(checked("noPhysicalMovement") ? { noPhysicalMovement: true } : {}),

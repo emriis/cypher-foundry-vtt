@@ -22,6 +22,7 @@ import { getGeneralEffects, nextSourceTurn } from "./general-effect-service.mjs"
 import { specialDamageLimits } from "./special-damage-healing.mjs";
 import { blockStillHits } from "../rules/general-effects.mjs";
 import { resolveShieldWoundTrack } from "../rules/ability-modifiers.mjs";
+import { roundActionContext, consumeRoundAction, ROUND_ACTION_OWNER } from "./round-action-service.mjs";
 
 /**
  * Roll Block, Dodge or a declared stat defense through the common task engine.
@@ -110,7 +111,8 @@ export async function rollTask(actor, options = {}) {
   if (options.initiative && (!initiativeOwner || actor.type !== "pc" || options.stat !== "speed"
     || options.difficulty !== 0 || options.isAttack || options.defenseType || options.targetActor
     || options.woundRemovalSeverity || options.shieldReturn || options.luckyShot)) return null;
-  return runActorActions([actor, options.targetActor, options.npcSource, options.takeAttackActor, initiativeOwner?.combat], "task",
+  return runActorActions([actor, options.targetActor, options.npcSource, options.takeAttackActor, initiativeOwner?.combat,
+    roundActionContext(options[ROUND_ACTION_OWNER] ?? actor, options)?.combat], "task",
     context => executeTask(actor, options, context, initiativeOwner), options[ACTION_CONTEXT]);
 }
 
@@ -130,7 +132,9 @@ async function executeTask(actor, {
   rollRoutine = true, chooseSpecialEffect = null, areaAttack = false, push = false,
   pushDamageEffortLevels = 0, powerShiftCategories = [], noPhysicalMovement = false, attackForm = null,
   cooperativeMode = null, cooperativeEffectIds = null, ruleEffect = null, conditionsOnFailure = [], npcSource = null, takeAttackActor = null,
-  automaticFailure = false, specialistRequired = false
+  automaticFailure = false, specialistRequired = false,
+  minorActivity = false, extraAction = false, extraActionSource = "", actionTiming = null,
+  [ROUND_ACTION_OWNER]: roundActionOwner = null
 } = {}, actionContext = null, initiativeOwner = null) {
   // Validate an explicit shield selection before any cost or dice. Equipment
   // may change while a dialog is open; never silently spend on a stale choice.
@@ -177,6 +181,13 @@ async function executeTask(actor, {
     areaAttack, push, pushDamageEffortLevels, powerShiftCategories, abilitySource, effectEffortLevels, activationCost,
     noPhysicalMovement, attackForm, automaticFailure });
   if (!prepared) return null;
+  const roundContext = roundActionOwner ? roundActionContext(roundActionOwner, { isAttack: true, actionTiming })
+    : roundActionContext(actor, { isAttack, weaponSource, abilitySource, defenseType,
+      initiative, shieldReturn, minorActivity, extraAction, extraActionSource, actionTiming });
+  if (!await consumeRoundAction(roundContext, actionContext)) {
+    ui.notifications.warn(game.i18n.localize("CYPHER.Round.Unavailable"));
+    return null;
+  }
   ({ effortLevels, assetSteps, extraHinderSteps } = prepared);
   const { resolved, statLabel, totalCost, xpCost, poolValue, poolMax,
     woundHinder, autoArmorSpeedHinder, effort, powerShifts, pushWound, skillSteps, totalSteps } = prepared;
@@ -186,6 +197,7 @@ async function executeTask(actor, {
   const effectiveDifficulty = automaticFailure ? Math.max(1, prepared.effectiveDifficulty) : initiative || automaticHit ? 0 : prepared.effectiveDifficulty;
   const targetNumber = automaticFailure ? effectiveDifficulty * 3 : initiative || automaticHit ? 0 : prepared.targetNumber;
   baseDamage += effort.damageBonus + powerShifts.damage;
+  weaponSource = { ...weaponSource, actorUuid: actor.uuid };
 
   // One Actor write commits XP and Pool costs together. Subsequent target
   // writes are separate operations; failures are surfaced without stale rollback.

@@ -572,6 +572,27 @@
       "TotalDamage": "total damage",
       "WoundHinder": "Hindered by {steps} steps from wounds"
     },
+    "Round": {
+      "Advance": "Start / next step",
+      "Complete": "Record an action without a roll",
+      "Confirm": "Confirm declarations",
+      "DeclarationHint": "The GM confirms the action timing and prerequisites. First: only that action. Follow-up: minor nonattack activity. Last: no separate activity. Preparation occupies the entire round and grants a First action next round. Initiative scores are preserved.",
+      "HeavyMovement": "Immediate movement with a heavy weapon: attack hindered by one step",
+      "Minor": "Minor nonattack activity",
+      "Plan": "Plan the first / next round",
+      "Resume": "Resume before this event",
+      "Title": "Round sequence",
+      "Trigger": "Trigger (optional)",
+      "TriggerHint": "Confirm that the declared trigger is about to occur and that acting immediately before it makes sense.",
+      "Unavailable": "This action is unavailable in the current round slot. No costs were spent.",
+      "Wait": "Wait / ready a trigger",
+      "first": "First action",
+      "followUp": "Follow-up activity",
+      "last": "Last action",
+      "normal": "Ordinary action",
+      "prepare": "Prepare for the next round",
+      "wait": "Wait"
+    },
     "Sheet": {
       "Abilities": "Abilities",
       "CharacterDetails": "Biography, notes and custom fields",

@@ -1,3 +1,4 @@
+import { roundActionContext, consumeRoundAction } from "./round-action-service.mjs";
 /** Explicit cooperation declarations; task rolls consume only their selected mode. */
 import { helpAssets, resolveGeneralModifiers } from "../rules/general-effects.mjs";
 import { getGeneralEffects, nextSourceTurn } from "./general-effect-service.mjs";
@@ -13,7 +14,7 @@ export async function declareCooperation(actor, target, { kind, skillItemId = nu
   if (actor?.type !== "pc" || actor.isOwner === false || target?.isOwner === false || actor === target
     || !actor.uuid || !target?.uuid || !["help", "defenseHelp", "distraction", "draw"].includes(kind)
     || (["distraction", "draw"].includes(kind) ? target.type !== "npc" : target.type !== "pc")) return false;
-  return Boolean(await runActorActions([actor, target], "cooperation", async () => {
+  return Boolean(await runActorActions([actor, target], "cooperation", async context => {
     if (resolveGeneralModifiers(getGeneralEffects(actor)).rejected) return false;
     const skill = skillItemId ? actor.items?.get(skillItemId) : null;
     if (skillItemId && (skill?.type !== "skill" || skill.isOwner === false)) return false;
@@ -34,6 +35,7 @@ export async function declareCooperation(actor, target, { kind, skillItemId = nu
       effects.push({ id: foundry.utils.randomID(), kind, sourceUuid: actor.uuid, assets: kind === "defenseHelp" ? 1 : assets,
         taskLabel: taskLabel.trim(), until: kind === "help" ? null : nextSourceTurn(actor) });
     }
+    if (!await consumeRoundAction(roundActionContext(actor), context)) return false;
     await target.update({ "flags.cypher.generalEffects": effects });
     return true;
   }));

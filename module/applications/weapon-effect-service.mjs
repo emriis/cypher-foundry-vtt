@@ -2,7 +2,8 @@
  * Persist and resolve source-backed weapon effects on NPC targets.
  *
  * Only explicit structured effects and their declared durations are stored.
- * Combat-round effects are scoped to the combat and round in which they apply.
+ * Round effects follow their source's primary turns when attribution is known;
+ * legacy flags retain their original combat-round interval.
  */
 
 import {
@@ -15,11 +16,15 @@ const EFFECTS_FLAG = "flags.cypher.activeWeaponEffects";
 /**
  * Freeze the original interval so a paid reroll cannot restart an expired effect.
  * @param {Actor} actor Actual NPC whose completed actions bound narrative durations.
- * @returns {object} Combat interval, wall-clock milliseconds and persisted action revision.
+ * @param {object} [source={}] Source Actor UUID retained by the accepted attack.
+ * @returns {object} Combat/source interval, wall-clock milliseconds and persisted action revision.
  */
-export function weaponEffectContext(actor) {
+export function weaponEffectContext(actor, source = {}) {
   const combat = globalThis.game?.combat;
+  const combatant = source.actorUuid && combat?.round > 0 && combat.turns?.find(entry => entry.actor?.uuid === source.actorUuid);
   return { appliedAt: Date.now(), combatId: combat?.id ?? null, combatRound: combat?.round ?? null,
+    ...(combatant ? { sourceCombatantId: combatant.id,
+      sourceTurnRevision: combat.flags?.cypher?.turnRevisions?.[combatant.id] ?? 0 } : {}),
     actionRevision: actor?.flags?.cypher?.weaponActionRevision ?? 0 };
 }
 
@@ -35,7 +40,7 @@ export function weaponEffectContext(actor) {
 export async function extendWeaponEffect(actor, effectId) {
   if (actor?.type !== "npc" || actor.isOwner === false || !globalThis.game?.user?.isGM) return false;
   return (await runActorAction(actor, "weaponEffectAdjudication", async () => {
-    const effects = getActiveWeaponEffects(actor);
+    const effects = retainedIntervals(readEffects(actor), globalThis.game?.combat);
     const effect = effects.find(effect => effect.id === effectId);
     if (!effect || effect.duration !== "a round or two" || weaponEffectRounds(effect) !== 1
       || !weaponEffectIsActive(effect, globalThis.game?.combat)) return false;
@@ -47,6 +52,18 @@ export async function extendWeaponEffect(actor, effectId) {
 
 function readEffects(actor) {
   return actor?.flags?.cypher?.activeWeaponEffects ?? [];
+}
+
+/**
+ * Keep independently expiring source contributions in storage. Their future
+ * order can change through waiting or First/Last declarations; discarding one
+ * merely because both currently grant the same hindrance would end it early.
+ * Presentation still resolves the nonstacking benefit through the pure rule.
+ */
+function retainedIntervals(effects, combat) {
+  const active = effects.filter(effect => weaponEffectIsActive(effect, combat));
+  const bound = effect => Boolean(effect.sourceCombatantId) && Number.isSafeInteger(effect.sourceTurnRevision);
+  return [...resolveWeaponEffectStacking(active.filter(effect => !bound(effect)), combat), ...active.filter(bound)];
 }
 
 async function writeEffects(actor, effects) {
@@ -97,13 +114,13 @@ export function getWeaponEffectDisplayData(actor) {
  * @param {object} [context] Original interval when reconciling a rerolled attack.
  * @returns {Promise<number>} Number of effects accepted, including refreshed effects.
  */
-export async function applyWeaponTargetEffects(target, effects = [], source = {}, context = weaponEffectContext(target)) {
+export async function applyWeaponTargetEffects(target, effects = [], source = {}, context = weaponEffectContext(target, source)) {
   if (target?.type !== "npc" || !Array.isArray(effects) || !effects.length) {
     return 0;
   }
 
-  const existing = getActiveWeaponEffects(target);
   const combat = globalThis.game?.combat;
+  const existing = retainedIntervals(readEffects(target), combat);
   const applied = effects
     .filter(effect => effect && typeof effect.effect === "string")
     .map((effect, index) => ({
@@ -114,6 +131,8 @@ export async function applyWeaponTargetEffects(target, effects = [], source = {}
       appliedAt: context.appliedAt,
       combatId: context.combatId,
       combatRound: context.combatRound,
+      ...(context.sourceCombatantId ? { sourceCombatantId: context.sourceCombatantId,
+        sourceTurnRevision: context.sourceTurnRevision } : {}),
       ...(effect.duration === "a round or two" ? { roundCount: 1, narrativeRoundsRemaining: 1 } : {})
     }))
     .filter(effect => weaponEffectIsActive(effect, combat)
@@ -122,7 +141,7 @@ export async function applyWeaponTargetEffects(target, effects = [], source = {}
 
   if (!applied.length) return 0;
 
-  await writeEffects(target, resolveWeaponEffectStacking([...existing, ...applied], combat));
+  await writeEffects(target, retainedIntervals([...existing, ...applied], combat));
   return applied.length;
 }
 
@@ -137,7 +156,7 @@ export async function expireWeaponEffectsAfterAction(actor) {
 
   const existing = readEffects(actor);
   const inNarrativeRound = !globalThis.game?.combat;
-  const remaining = getActiveWeaponEffects(actor)
+  const remaining = retainedIntervals(existing, globalThis.game?.combat)
     .map(effect => consumeWeaponEffectAction(effect, !inNarrativeRound)).filter(Boolean);
   const removed = existing.length - remaining.length;
   // Even an unaffected NPC action closes the interval for an older missed
@@ -148,7 +167,7 @@ export async function expireWeaponEffectsAfterAction(actor) {
 }
 
 /**
- * Remove expired intervals and consolidate active Stunstick overlaps.
+ * Remove expired intervals, retaining independently expiring source contributions.
  *
  * @param {Actor} actor NPC whose effects are being checked.
  * @returns {Promise<number>} Number of effects removed.
@@ -157,7 +176,7 @@ export async function expireWeaponEffectsOutsideCurrentRound(actor) {
   if (actor?.type !== "npc") return 0;
 
   const existing = readEffects(actor);
-  const remaining = getActiveWeaponEffects(actor);
+  const remaining = retainedIntervals(existing, globalThis.game?.combat);
   const removed = existing.length - remaining.length;
   if (removed) await writeEffects(actor, remaining);
   return removed;

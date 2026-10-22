@@ -1,3 +1,4 @@
+import { attachRoundControls, refreshRoundPanels, closeRoundPanel } from "./module/sheets/round-flow-panel.mjs";
 /**
  * Foundry VTT entry point for the Cypher system.
  *
@@ -149,7 +150,8 @@ function refreshNPCWeaponEffectSheets() {
   });
 }
 Hooks.on("updateCombat", (_combat, changes) => {
-  if (Object.hasOwn(changes, "round") || Object.hasOwn(changes, "active")) refreshNPCWeaponEffectSheets();
+  if (["turn", "round", "active"].some(key => Object.hasOwn(changes, key))
+    || changes.flags?.cypher?.turnRevisions) refreshNPCWeaponEffectSheets();
 });
 Hooks.on("createCombat", combat => {
   if (combat.active) refreshNPCWeaponEffectSheets();
@@ -213,3 +215,9 @@ Hooks.on("renderChatMessageHTML", async (message, html) => {
   const container = html instanceof HTMLElement ? html : html[0];
   container?.querySelector(".message-content")?.appendChild(button);
 });
+
+// Execution phases are presented separately from rolled initiative scores.
+Hooks.on("renderCombatTracker", attachRoundControls);
+Hooks.on("updateCombat", refreshRoundPanels);
+Hooks.on("updateActor", refreshRoundPanels);
+Hooks.on("deleteCombat", closeRoundPanel);
