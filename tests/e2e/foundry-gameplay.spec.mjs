@@ -1147,7 +1147,9 @@ test.describe("Cypher Foundry live gameplay", () => {
     const result = await page.evaluate(async id => {
       const actor = game.actors.get(id);
       await actor.update({ "system.xp": 2 });
-      await actor.usePlayerIntrusion("E2E intrusion");
+      const request = await actor.usePlayerIntrusion("E2E intrusion");
+      if (actor.system.xp !== 2) throw Error("Pending intrusion spent XP before acceptance");
+      await game.cypher.intrusions.resolvePlayerIntrusion(request);
       return {
         xp: actor.system.xp,
         messageCount: game.messages.size
@@ -1704,7 +1706,8 @@ test("completes a player vertical slice from real CRD compendiums", async ({
         "system.advancementSlots.0.type": "effort",
         "system.advancementSlots.0.bought": false
       });
-      await actor.usePlayerIntrusion("Alpha vertical-slice intrusion");
+      const intrusionRequest = await actor.usePlayerIntrusion("Alpha vertical-slice intrusion");
+      await game.cypher.intrusions.resolvePlayerIntrusion(intrusionRequest);
       const xpAfterIntrusion = actor.system.xp;
       await actor.purchaseAdvancementSlot(0);
 

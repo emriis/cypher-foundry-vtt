@@ -48,8 +48,9 @@ The main gameplay boundaries are:
 - `healing-service.mjs` and `wound-removal.mjs`: treatment/Healing Hand and
   persisted task/reroll healing consequences; see [recovery-and-healing.md](recovery-and-healing.md).
 - `advancement-service.mjs`: advancement purchases and tier transitions.
-- `character-service.mjs`: XP spending, rerolls, Player Intrusions, and
-  character data operations.
+- `character-service.mjs`: XP spending and character data operations;
+  its Player Intrusion facade delegates to `intrusion-service.mjs`, which owns
+  GM decisions, player requests, and receipt-based XP settlement.
 - `damage-service.mjs`: damage, wounds, armor, shields, repair, and token
   statuses.
 - `general-action-service.mjs`, `cooperative-service.mjs` and
@@ -286,6 +287,12 @@ The CRD-backed cost/reroll and refactoring contracts are documented in
 Round scheduling and Actor-owned action usage are documented in
 [round-flow.md](round-flow.md); the Combat adapter delegates to application
 services, while pure phase calculations remain in `module/rules/round-flow.mjs`.
+
+Intrusion decisions use persisted ChatMessage requests and an elected GM
+settlement authority. Per-Actor XP receipts support partial-write recovery;
+see [intrusions.md](intrusions.md) for ownership and transaction limits.
+=======
+
 Source migration is now coordinated by `scripts/migrate-ability-sources.mjs`
 with identity, source lookup, normalization, cleanup, and registry helpers under
 `scripts/source-migration/`. The authoring surface and source bytes are preserved.

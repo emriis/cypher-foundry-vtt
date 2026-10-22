@@ -178,7 +178,8 @@ The live suite currently validates:
    removal.
 9. Rally initiated from the PC sheet, including the correct Might cost.
 10. Effort advancement on a real Actor document.
-11. Player Intrusion XP expenditure and chat output.
+11. Player Intrusion requests, explicit GM decisions, XP sharing, persisted
+    settlement, free natural-one declarations, and next-turn reactions.
 12. Actor state persistence across sheet close/reopen.
 
 The tests intentionally avoid depending on editorial compendium names or

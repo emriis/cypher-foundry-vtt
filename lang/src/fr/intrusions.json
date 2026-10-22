@@ -1,0 +1,32 @@
+{
+  "CYPHER": {
+    "Intrusion": {
+      "player": "Intrusion joueur",
+      "gm": "Intrusion du MJ",
+      "gmFree": "Intrusion gratuite du MJ",
+      "choice": "Demande de partage de PX",
+      "pending": "En attente du MJ",
+      "awaitingRecipient": "Choisissez un autre joueur pour le partage obligatoire du PX",
+      "processing": "Règlement en cours — reprendre sans répéter les changements de PX",
+      "resolved": "Résolue",
+      "rejected": "Refusée — aucun PX dépensé",
+      "superseded": "Un autre choix de partage a été retenu",
+      "Description": "Décrivez l’intrusion",
+      "Recipient": "Bénéficiaire",
+      "Share": "Donner 1 PX à un autre joueur",
+      "Accept": "Accepter et dépenser 1 PX",
+      "Reject": "Refuser sans dépenser de PX",
+      "Resume": "Reprendre le règlement",
+      "React": "Réagir à votre prochain tour (1 PX)",
+      "Request": "Proposer au MJ",
+      "Declare": "Déclarer l’intrusion",
+      "Free": "Déclarer l’intrusion gratuite",
+      "Unavailable": "Cette intrusion est indisponible pour le moment. Vérifiez les PX, les permissions, le MJ actif et le tour prévu pour une réaction.",
+      "NoRecipient": "Attribuez un PJ à un autre joueur avant ce partage. L’attribution des PX reste en attente.",
+      "ShareHint": "Le joueur concerné reçoit 2 PX et donne immédiatement 1 PX à un autre joueur. Après ce choix, le système applique le gain net de 1 PX à chaque PJ.",
+      "FreeHint": "Un 1 naturel permet une intrusion gratuite du MJ. Elle ne rapporte aucun PX. Le MJ décide de la conséquence narrative.",
+      "PlayerHint": "Le MJ décide si ce changement narratif convient. Une acceptation coûte 1 PX ; un refus ne coûte rien. Aucune action n’est consommée.",
+      "ReactionHint": "Cette réaction est disponible uniquement à votre prochain tour principal, sans consommer son action."
+    }
+  }
+}

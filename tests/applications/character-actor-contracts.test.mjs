@@ -9,12 +9,12 @@ beforeEach(() => {
   globalThis.ChatMessage = { getSpeaker: () => ({}), create: async () => {} };
   delete globalThis.fromUuid;
 });
-beforeEach(() => { globalThis.foundry = { utils: { randomID: () => "abc123" } }; });
-test("an accepted Player Intrusion commits one XP write and announces its description", async () => {
+beforeEach(() => { globalThis.foundry = { utils: { randomID: () => "abc123", escapeHTML: value => value } }; });
+test("a Player Intrusion creates a pending request without spending its XP", async () => {
   let spent = 0;
   let message;
   const actor = {
-    id: "actor-1",
+    id: "actor-1", uuid: "Actor.actor-1",
     type: "pc",
     system: { xp: 1 },
     async update(changes) {
@@ -22,6 +22,7 @@ test("an accepted Player Intrusion commits one XP write and announces its descri
       this.system.xp = changes["system.xp"];
     }
   };
+  game.user = { id: "player", isGM: false };
   const originalCreate = ChatMessage.create;
   ChatMessage.create = async data => { message = data; };
 
@@ -31,7 +32,8 @@ test("an accepted Player Intrusion commits one XP write and announces its descri
     ChatMessage.create = originalCreate;
   }
 
-  assert.equal(spent, 1);
+  assert.equal(spent, 0);
+  assert.equal(message.flags.cypher.intrusion.state, "pending");
   assert.match(message.content, /Find a hidden passage/);
 });
 

@@ -5,6 +5,9 @@
     <h3>{{localize 'CYPHER.XP.Title'}}</h3>
     <div class="xp-row">
       <span class="xp-value-label">{{localize 'CYPHER.XP.Label'}} : <strong>{{system.xp}}</strong></span>
+      {{#if canDeclareGMIntrusion}}
+      <button type="button" data-action="gmIntrusion">{{localize "CYPHER.Intrusion.gm"}}</button>
+      {{/if}}
       <button type="button" data-action="playerIntrusion">
         <i class="fa-solid fa-bolt"></i> {{localize 'CYPHER.XP.PlayerIntrusion'}} ({{config.xpCosts.playerIntrusion}} {{localize 'CYPHER.XP.Label'}})
       </button>

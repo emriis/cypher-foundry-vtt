@@ -1,0 +1,32 @@
+{
+  "CYPHER": {
+    "Intrusion": {
+      "player": "Player intrusion",
+      "gm": "GM intrusion",
+      "gmFree": "Free GM intrusion",
+      "choice": "XP share request",
+      "pending": "Awaiting the GM",
+      "awaitingRecipient": "Choose another player for the mandatory XP share",
+      "processing": "Settlement in progress — resume without repeating XP changes",
+      "resolved": "Resolved",
+      "rejected": "Rejected — no XP spent",
+      "superseded": "Another share choice was retained",
+      "Description": "Describe the intrusion",
+      "Recipient": "Recipient",
+      "Share": "Give 1 XP to another player",
+      "Accept": "Accept and spend 1 XP",
+      "Reject": "Reject without spending XP",
+      "Resume": "Resume settlement",
+      "React": "React on your next turn (1 XP)",
+      "Request": "Send to the GM",
+      "Declare": "Declare intrusion",
+      "Free": "Declare the free intrusion",
+      "Unavailable": "This intrusion is currently unavailable. Check XP, ownership, the active GM and any reaction deadline.",
+      "NoRecipient": "Assign a PC to another player before sharing this XP. The award remains pending.",
+      "ShareHint": "The affected player receives 2 XP and immediately gives 1 XP to another player. The system applies the net +1 XP to each PC after that choice.",
+      "FreeHint": "A natural 1 permits a free GM intrusion. It awards no XP. The GM decides the narrative consequence.",
+      "PlayerHint": "The GM decides whether this narrative change is suitable. Acceptance costs 1 XP; rejection costs nothing. It does not consume an action.",
+      "ReactionHint": "This reaction is available only on your next primary turn, without consuming its action."
+    }
+  }
+}
