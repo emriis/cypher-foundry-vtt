@@ -1,3 +1,4 @@
+import { roundActionContext, consumeRoundAction } from "./round-action-service.mjs";
 /** Persist explicit general-rule effects on the actual Actor, including synthetic Actors. */
 import { CONDITION_KINDS, generalEffectIsActive, resolveGeneralModifiers } from "../rules/general-effects.mjs";
 import { runActorAction } from "./action-guard.mjs";
@@ -14,8 +15,8 @@ export function generalEffectClock() {
 }
 
 /** Read active flags without writing during sheet or task preparation. */
-export function getGeneralEffects(actor) {
-  return (actor?.flags?.cypher?.generalEffects ?? []).filter(effect => generalEffectIsActive(effect, generalEffectClock())
+export function getGeneralEffects(actor, clock = generalEffectClock()) {
+  return (actor?.flags?.cypher?.generalEffects ?? []).filter(effect => generalEffectIsActive(effect, clock)
     && (effect.actionRevision == null || effect.actionRevision === (actor.flags?.cypher?.weaponActionRevision ?? 0)));
 }
 
@@ -36,6 +37,13 @@ export function nextSourceTurn(actor) {
  * ahead of the active combatant after an initiative reroll.
  */
 export function stampGeneralTurnRevision(combat, changes, options = {}) {
+  if (options.cypherRoundFlow) {
+    const ids = [...new Set(options.cypherPrimaryTurns ?? [])];
+    if (!ids.length || (options.direction ?? 1) < 0) return;
+    changes.flags ??= {}; changes.flags.cypher ??= {}; changes.flags.cypher.turnRevisions ??= {};
+    for (const id of ids) changes.flags.cypher.turnRevisions[id] = (combat.flags?.cypher?.turnRevisions?.[id] ?? 0) + 1;
+    return;
+  }
   if (options.cypherInitiativeReorder || (options.direction ?? 1) < 0
     || !["turn", "round"].some(key => Object.hasOwn(changes, key))) return;
   const round = changes.round ?? combat.round, turn = changes.turn ?? combat.turn;
@@ -80,9 +88,10 @@ export async function removeGeneralEffect(actor, id) {
 /** Guarding persists until explicitly ended and forbids attacks through the shared task engine. */
 export async function setGuarding(actor, active = true) {
   if (!["pc", "npc"].includes(actor?.type) || actor.isOwner === false) return false;
-  return Boolean(await runActorAction(actor, "guarding", async () => {
+  return Boolean(await runActorAction(actor, "guarding", async context => {
     if (active && resolveGeneralModifiers(getGeneralEffects(actor)).rejected) return false;
     const effects = getGeneralEffects(actor).filter(effect => effect.kind !== "guarding");
+    if (active && !await consumeRoundAction(roundActionContext(actor), context)) return false;
     if (active) effects.push({ id: foundry.utils.randomID(), kind: "guarding" });
     await actor.update({ "flags.cypher.generalEffects": effects });
     return true;

@@ -31,8 +31,9 @@ and drawn-shield choices. No cooperation mode is silently selected.
 ## Conditions and declared threats
 
 * Dazed hinders all tasks and eases attacks against the affected NPC.
-* Stunned prevents tasks other than defenses. The tracker can still be advanced
-  normally; this does not automatically skip all stunned combatants.
+* Stunned prevents tasks other than defenses. The round scheduler skips its
+  unavailable slots, after evaluating conditions expiring at that primary boundary;
+  see [round-flow.md](round-flow.md).
 * Paralysis prevents actions requiring movement. A caller can explicitly declare
   an action requiring no physical movement. Paralysis and unconsciousness make
   incoming physical attacks automatic hits, without dice or a paid reroll.

@@ -117,7 +117,7 @@ jobs:
         run: python3 -m unittest discover -s tests/python -p 'test_*.py'
       - name: Audit original CRD boxes and English normalized sources
         run: npm run audit:callouts -- --normalized
-      - name: Upload PR4 CRD coverage inventory
+      - name: Upload CRD coverage inventory
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -149,7 +149,7 @@ jobs:
           if-no-files-found: error
 
   abilities-pr7:
-    name: PR7 English/French Ability clauses and translation review
+    name: English/French Ability clauses and translation review
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -171,7 +171,7 @@ jobs:
           if-no-files-found: error
 
   abilities-pr8:
-    name: PR8 English/French Ability clauses and translation review
+    name: English/French Ability clauses and translation review
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -193,7 +193,7 @@ jobs:
           if-no-files-found: error
 
   abilities-pr9:
-    name: PR9 English/French Ability clauses and translation review
+    name: English/French Ability clauses and translation review
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -215,7 +215,7 @@ jobs:
           if-no-files-found: error
 
   abilities-pr10:
-    name: PR10 English/French Ability clauses and translation review
+    name: English/French Ability clauses and translation review
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -237,7 +237,7 @@ jobs:
           if-no-files-found: error
 
   types-foci-pr11:
-    name: PR11 English/French Types and Foci editorial audit
+    name: English/French Types and Foci editorial audit
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -258,7 +258,7 @@ jobs:
           retention-days: 30
           if-no-files-found: error
   equipment-pr12:
-    name: PR12 English/French Equipment and Cyphers audit
+    name: English/French Equipment and Cyphers audit
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -491,8 +491,8 @@ jobs:
           echo "| Compendium identity audit | ${{ needs.identities.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| CRD callout source audit | ${{ needs.callouts.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| French normative terminology | ${{ needs.terminology.result }} |" >> "$GITHUB_STEP_SUMMARY"
-          echo "| PR7 Ability comparative review | ${{ needs.abilities-pr7.result }} |" >> "$GITHUB_STEP_SUMMARY"
-          echo "| PR8 Ability comparative review | ${{ needs.abilities-pr8.result }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Ability comparative review | ${{ needs.abilities-pr7.result }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Ability comparative review | ${{ needs.abilities-pr8.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Integration and architecture | ${{ needs.integration.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Source normalization | ${{ needs.sources.result }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Repository checks | ${{ needs.repository.result }} |" >> "$GITHUB_STEP_SUMMARY"

@@ -15,7 +15,7 @@ export async function applyAttackConsequences(target, { success, totalDamage, ar
   const armor = target.system.armor ?? 0;
   const before = target.system.health?.value;
   const healthRevision = attackHealthRevision(target);
-  const effectContext = weaponEffectContext(target);
+  const effectContext = weaponEffectContext(target, weaponSource);
   let targetDamage = 0;
   if (success) {
     if (totalDamage > 0) targetDamage = await applyNpcDamage(target, totalDamage, { armorBypass });

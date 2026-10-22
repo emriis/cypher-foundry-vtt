@@ -16,7 +16,9 @@ export function weaponEffectRounds(effect) {
 }
 
 /**
- * Decide whether a round effect still belongs to the current combat interval.
+ * Decide whether a round effect still belongs to its source-turn interval.
+ * New source-attributed effects use primary-turn revisions; a round change or
+ * Follow-up alone cannot consume one. Legacy effects retain round-number expiry.
  * Older flags without roundCount retain the one-round default. Outside combat,
  * NPC actions are narrative round boundaries, matching the existing contract.
  * @param {object} effect Duration plus persisted combat ID/application round.
@@ -27,6 +29,11 @@ export function weaponEffectIsActive(effect, combat = null) {
   const rounds = weaponEffectRounds(effect);
   if (rounds === null) return true;
   if (!combat) return effect.combatId === null;
+  if (effect.sourceCombatantId && Number.isSafeInteger(effect.sourceTurnRevision)) {
+    return effect.combatId === combat.id && combat.round >= effect.combatRound
+      && combat.turns?.some(entry => entry.id === effect.sourceCombatantId)
+      && (combat.flags?.cypher?.turnRevisions?.[effect.sourceCombatantId] ?? 0) < effect.sourceTurnRevision + rounds;
+  }
   return effect.combatId === combat.id && Number.isInteger(effect.combatRound)
     && combat.round >= effect.combatRound && combat.round < effect.combatRound + rounds;
 }

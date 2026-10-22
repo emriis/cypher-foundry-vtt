@@ -1,0 +1,25 @@
+<section>
+  <p>{{localize "CYPHER.Round.DeclarationHint"}}</p>
+  <div class="flexrow">
+    <button type="button" data-action="plan">{{localize "CYPHER.Round.Plan"}}</button>
+    <button type="button" data-action="advance">{{localize "CYPHER.Round.Advance"}}</button>
+  </div>
+  <ol>
+    {{#each queue}}
+    <li {{#if current}}aria-current="step"{{/if}}>
+      {{#if current}}<strong>{{name}} — {{phaseLabel}}</strong>{{else}}{{name}} — {{phaseLabel}}{{/if}}
+      {{#if done}}✓{{/if}}
+    </li>
+    {{/each}}
+  </ol>
+  {{#if started}}
+  <div class="flexrow">
+    <button type="button" data-action="complete">{{localize "CYPHER.Round.Complete"}}</button>
+    <button type="button" data-action="wait">{{localize "CYPHER.Round.Wait"}}</button>
+    <button type="button" data-action="activity">{{localize "CYPHER.Round.Minor"}}</button>
+  </div>
+  {{/if}}
+  {{#each waiting}}
+  <p>{{name}}: {{trigger}} <button type="button" data-action="resume" data-combatant-id="{{combatantId}}">{{localize "CYPHER.Round.Resume"}}</button></p>
+  {{/each}}
+</section>

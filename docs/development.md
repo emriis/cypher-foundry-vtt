@@ -316,6 +316,8 @@ Task modifier, Effort, Edge and per-action cost contracts are maintained in
 weapon-to-task pipeline before extending task automation.
 The standard combat tracker's Speed rolls, NPC target-number initiatives,
 PC ties and paid rerolls are documented in [initiative.md](initiative.md).
+First/Last phases, waiting and source-turn intervals are documented in
+[round-flow.md](round-flow.md).
 
 The broad architecture refactor is complete. Do not reopen the completed
 Phase 1-8 work as a standing task.

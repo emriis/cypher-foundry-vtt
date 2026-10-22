@@ -50,10 +50,9 @@ Client-local guards reserve the encounter and actual Actors. This is not a
 distributed transaction across clients; failures propagate without restoring
 stale snapshots. No persisted DataModel schema or world migration is introduced.
 
-This lot establishes initiative and its reroll/tracker boundary. First/Last and
-Follow-up action scheduling, waiting within one round, grouped NPC adjudication
-and source-turn-based expiration of temporary effects remain separate work.
-Existing combat-round effect expiration remains unchanged. Owning an Ability
+First/Last and Follow-up scheduling, waiting, readiness and source-turn intervals
+are documented in [round-flow.md](round-flow.md). Grouped NPC adjudication
+remains explicit GM input. Owning an Ability
 does not automatically grant initiative training without its own supported
 structured contract.
 

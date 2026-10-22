@@ -570,3 +570,25 @@ test("failed attacks deal no damage", async () => {
   assert.equal(result.success, false);
   assert.equal(result.damage, 0);
 });
+
+
+test("round slots reject duplicate or mistimed spending while defenses remain available", async () => {
+  const { createRoundFlow } = await import("../../module/rules/round-flow.mjs");
+  setRollResult(9); const actor = createActor(); actor.flags = { cypher: {} };
+  const flow = createRoundFlow(["pc"]); flow.cursor = 0;
+  game.combat = { id: "combat", round: 1, started: true, flags: { cypher: { roundFlow: flow } },
+    combatants: new Map([["pc", { id: "pc", actor }]]) };
+  try {
+    const roll = options => CypherActor.prototype.rollTask.call(actor, options);
+    assert.equal(await roll({ effortLevels: 1, isAttack: true, weaponSource: { actionTiming: "lastAction" } }), null);
+    assert.equal(actor.system.stats.might.pool.value, 10);
+    assert.ok(await roll({ effortLevels: 1 }));
+    assert.equal(actor.system.stats.might.pool.value, 7);
+    assert.equal(await roll({ effortLevels: 1 }), null);
+    assert.equal(actor.system.stats.might.pool.value, 7);
+    assert.ok(await roll({ stat: "speed", defenseType: "dodge", applyIncomingWound: false }));
+    assert.ok(await roll({ minorActivity: true }));
+    assert.equal(await roll({ minorActivity: true }), null);
+    assert.equal(await roll({ extraAction: true }), null);
+  } finally { delete game.combat; }
+});

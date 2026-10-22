@@ -66,7 +66,7 @@ export async function executeShieldAbility(ability, { shieldId, mode = "throw", 
       const weapon = mode === "paired" && index === 0 ? main : shieldAttackProfile(shield, { thrown, stat: choices.stat });
       const abilitySource = { itemId: ability.id, name: ability.name, kind, shieldItemId: shield.id };
       const options = prepareAttackOptions(weapon, { ...choices, [ACTION_CONTEXT]: context,
-        target: targets[index], difficulty: targets[index].system.level, areaAttack: false,
+        target: targets[index], difficulty: targets[index].system.level, areaAttack: false, extraAction: index > 0,
         abilitySource, activationCost: index === 0 && kind === "bouncing-shield" ? 3 : 0,
         extraHinderSteps: (choices.extraHinderSteps ?? 0) + (mode === "paired" ? 1 : 0) });
       if (!options) return null;

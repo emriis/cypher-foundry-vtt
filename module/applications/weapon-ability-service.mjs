@@ -94,7 +94,7 @@ export async function executeWeaponAbility(item, {
     const spentAbilityEdge = costStat === stat ? Math.min(rawCost?.amount ?? 0, abilityEdge) : 0;
     const planAttack = (index, extra = {}, choices = rollOptions) => {
       const options = prepareAttackOptions(weapon, { ...choices, ...extra, [ACTION_CONTEXT]: context, areaAttack: false,
-        difficulty: targets[index].system.level, target: targets[index],
+        difficulty: targets[index].system.level, target: targets[index], extraAction: index > 0,
         extraHinderSteps: (choices.extraHinderSteps ?? 0) + profiles[index].extraHinderSteps,
         abilitySource: { itemId: item.id, name: item.name, kind },
         spentAbilityEdge: index === 0 ? spentAbilityEdge : 0 });

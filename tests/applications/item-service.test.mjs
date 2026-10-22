@@ -711,3 +711,13 @@ test("toggleAttackConfiguration persists the next configuration and records its 
   assert.equal(message.flags.cypher.actionCost, "action");
   assert.equal(await toggleAttackConfiguration({ type: "attack", system: { mechanics: { alternateConfiguration: { enabled: false } } } }), false);
 });
+
+
+test("heavy immediate movement adds one hindered step while retaining Last timing", async () => {
+  const actor = { system: { freeWeaponCategories: ["heavy"] }, items: new Map(), async rollTask(options) { return options; } };
+  const item = { id: "heavy", type: "attack", actor, name: "Heavy", system: { attackType: "heavy", damage: 6, stat: "might" } };
+  const stationary = await rollAttack(item);
+  const moving = await rollAttack(item, { immediateMovement: true });
+  assert.equal(moving.extraHinderSteps, stationary.extraHinderSteps + 1);
+  assert.equal(moving.weaponSource.actionTiming, "lastAction");
+});

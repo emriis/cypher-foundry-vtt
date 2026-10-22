@@ -61,7 +61,8 @@ async function absorbShieldWound(actor, shieldItem, severity) {
   });
 
   if (target === "major" && unyielding) {
-    await actor.update({ "flags.cypher.shieldTurnLossPending": true });
+    await actor.update({ "flags.cypher.shieldTurnLossPending": true,
+      "flags.cypher.shieldTurnLossRevision": (actor.flags?.cypher?.shieldTurnLossRevision ?? 0) + 1 });
     await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }),
       content: `<p>${game.i18n.localize("CYPHER.ShieldAbility.TurnLossPending")}</p>` });
   } else if (target === "major") {
