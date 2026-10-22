@@ -1,3 +1,5 @@
+import { renderIntrusionControls } from "./module/sheets/intrusion-dialogs.mjs";
+import * as intrusionService from "./module/applications/intrusion-service.mjs";
 import { attachRoundControls, refreshRoundPanels, closeRoundPanel } from "./module/sheets/round-flow-panel.mjs";
 /**
  * Foundry VTT entry point for the Cypher system.
@@ -39,7 +41,7 @@ Hooks.once("init", () => {
   // Publish shared configuration and macro entry points before sheets are opened.
   // Exposed for macro use, even if the sidebar button fails to find its
   // anchor point on a given Foundry version.
-  game.cypher = { CYPHER, importFromBuilder, openImportDialog, promptInitiativeOptions };
+  game.cypher = { CYPHER, importFromBuilder, openImportDialog, promptInitiativeOptions, intrusions: intrusionService };
   CONFIG.CYPHER = CYPHER;
 
   registerImportButton();
@@ -221,3 +223,17 @@ Hooks.on("renderCombatTracker", attachRoundControls);
 Hooks.on("updateCombat", refreshRoundPanels);
 Hooks.on("updateActor", refreshRoundPanels);
 Hooks.on("deleteCombat", closeRoundPanel);
+
+// Requests cross clients through persisted chat; only the elected GM settles XP.
+Hooks.on("renderChatMessageHTML", (message, html) => {
+  renderIntrusionControls(message, html).catch(error => console.error("Cypher | Intrusion card rendering failed", error));
+});
+function resumeAuthorizedIntrusionShares() {
+  if (!game.ready) return;
+  intrusionService.resumeIntrusionShares().catch(error => console.error("Cypher | Intrusion settlement remains pending", error));
+}
+Hooks.once("ready", resumeAuthorizedIntrusionShares);
+Hooks.on("userConnected", resumeAuthorizedIntrusionShares);
+Hooks.on("createChatMessage", message => {
+  if (intrusionService.getIntrusion(message)?.kind === "choice") resumeAuthorizedIntrusionShares();
+});

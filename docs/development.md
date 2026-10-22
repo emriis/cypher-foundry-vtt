@@ -318,6 +318,8 @@ The standard combat tracker's Speed rolls, NPC target-number initiatives,
 PC ties and paid rerolls are documented in [initiative.md](initiative.md).
 First/Last phases, waiting and source-turn intervals are documented in
 [round-flow.md](round-flow.md).
+GM declarations, player requests, mandatory XP sharing, and their resumable
+settlement are documented in [intrusions.md](intrusions.md).
 
 The broad architecture refactor is complete. Do not reopen the completed
 Phase 1-8 work as a standing task.

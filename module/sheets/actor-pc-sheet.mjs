@@ -1,3 +1,4 @@
+import { promptGMIntrusion, promptPlayerIntrusion } from "./intrusion-dialogs.mjs";
 import { promptRollOptions, promptWeaponAttackCategory, promptWeaponAbility, taskModifierFields, readTaskModifiers } from "./dialogs.mjs";
 import { abilityActionLabel } from "../abilities.mjs";
 import { getSuperheroicsRank } from "../applications/task-preparation.mjs";
@@ -76,6 +77,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       itemDelete: CypherPCSheet.#onItemDelete,
       toggleEquipped: CypherPCSheet.#onToggleEquipped,
       playerIntrusion: CypherPCSheet.#onPlayerIntrusion,
+      gmIntrusion: async function() { await promptGMIntrusion(this.actor); },
       purchaseAdvancement: CypherPCSheet.#onPurchaseAdvancement,
       rollDefense: CypherPCSheet.#onRollDefense,
       damageArmor: CypherPCSheet.#onDamageArmor,
@@ -155,6 +157,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     };
     context.shieldTurnLossPending = this.actor.flags?.cypher?.shieldTurnLossPending === true;
     context.shieldCanIntrude = game.user.isGM;
+    context.canDeclareGMIntrusion = game.user.isGM;
     context.enrichedBiography =
       await foundry.applications.ux.TextEditor.implementation.enrichHTML(
         this.actor.system.biography,
@@ -530,26 +533,13 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
   }
 
   /**
-   * Prompts for a player intrusion description and applies its XP transaction.
+   * Prompts for a narrative request; acceptance and XP settlement belong to the GM service.
    *
    * @param {PointerEvent} event Action event.
    * @param {HTMLElement} target Action target element.
    */
   static async #onPlayerIntrusion(event, target) {
-    const content = `
-      <div class="form-group">
-        <label>${game.i18n.localize("CYPHER.XP.PlayerIntrusionPrompt")}</label>
-        <textarea name="description" rows="3"></textarea>
-      </div>`;
-    const description = await foundry.applications.api.DialogV2.prompt({
-      window: { title: `${game.i18n.localize("CYPHER.XP.PlayerIntrusion")} (${CONFIG.CYPHER.xpCosts.playerIntrusion} ${game.i18n.localize("CYPHER.XP.Label")})` },
-      content,
-      ok: {
-        label: game.i18n.localize("CYPHER.Confirm.Add"),
-        callback: (event, button) => button.form.description.value
-      }
-    });
-    if (description !== null && description !== undefined) await this.actor.usePlayerIntrusion(description);
+    await promptPlayerIntrusion(this.actor);
   }
 
   /**

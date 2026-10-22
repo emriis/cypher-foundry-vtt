@@ -219,13 +219,14 @@ export default class CypherActor extends Actor {
   }
 
   /**
-   * Use a Player Intrusion through the character application service.
+   * Request a Player Intrusion through the compatibility service facade.
    *
    * @param {string} description Player-provided intrusion description.
-   * @returns {Promise<void>} Completes after the intrusion message is created.
+   * @param {object} [options={}] Optional source GM intrusion for a next-turn reaction.
+   * @returns {Promise<ChatMessage|null>} Pending request; XP are charged only after GM acceptance.
    */
-  async usePlayerIntrusion(description) {
-    return usePlayerIntrusion(this, description);
+  async usePlayerIntrusion(description, options = {}) {
+    return usePlayerIntrusion(this, description, options);
   }
 
   /* -------------------------------------------- */

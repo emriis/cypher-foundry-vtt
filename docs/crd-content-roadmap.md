@@ -213,6 +213,10 @@ text are permitted to close the outstanding entries.
 
 ### 9.1 GM procedures
 
+Runtime intrusion declarations, player approval, XP sharing, and reaction timing
+are implemented separately; see [intrusions.md](intrusions.md). The following
+checkboxes track authored GM-library content rather than that runtime support.
+
 - [ ] GM procedures.
 - [ ] GM Intrusions.
 - [ ] Encounter guidance.

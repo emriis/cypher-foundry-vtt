@@ -5,7 +5,8 @@ import { CYPHER } from "../config.mjs";
  * Spend XP at the application boundary.
  *
  * Keeping this operation outside the Actor document makes XP spending reusable
- * by task rolls, rerolls, intrusions, and future application use cases.
+ * by task rolls, rerolls, and future application use cases. Intrusion settlement
+ * writes XP with its own receipt so a partially completed decision can resume.
  *
  * @param {Actor} actor Character spending XP.
  * @param {number} amount Number of XP to spend.
@@ -35,28 +36,8 @@ export async function spendXP(actor, amount, reasonLabel = "", context = null) {
 // Preserve the existing Actor/macro API while the reroll service owns the flow.
 export { rerollMessage } from "./reroll-service.mjs";
 
-/**
- * Apply a Player Intrusion after charging its XP cost.
- *
- * @param {Actor} actor Character using the intrusion.
- * @param {string} description Player-provided intrusion description.
- * @returns {Promise<void>} Completes after the chat message is created.
- */
-export async function usePlayerIntrusion(actor, description) {
-  if (!(await spendXP(
-    actor,
-    CYPHER.xpCosts.playerIntrusion,
-    game.i18n.localize("CYPHER.XP.PlayerIntrusion")
-  ))) return;
-
-  await ChatMessage.create({
-    speaker: ChatMessage.getSpeaker({ actor }),
-    content: `<div class="cypher-roll-card"><h3>${
-      game.i18n.localize("CYPHER.XP.PlayerIntrusion")
-    }</h3><p>${description || ""}</p></div>`
-  });
-}
-
+/** Preserve the public Actor/macro entry point; acceptance and XP belong to the intrusion service. */
+export { requestPlayerIntrusion as usePlayerIntrusion } from "./intrusion-service.mjs";
 
 /**
  * Add a custom character stat.

@@ -18,6 +18,7 @@ Edit the paired domain files under `lang/src/en/` and `lang/src/fr/`:
 | `tasks-combat.json` | Task rolls, defenses, weapons, armor and shields |
 | `general-actions.json` | Cooperation, guarding, conditions and declared special damage |
 | `round-flow.json` | Round phases, waiting, readiness and execution controls |
+| `intrusions.json` | GM declarations, player requests, XP sharing and reaction controls |
 | `recovery-healing.json` | Recoveries, Rally, treatment and healing |
 | `items-content.json` | Items, Skills, Abilities, Types, Foci and descriptive controls |
 | `tooling.json` | Imports and migrations |
