@@ -1,0 +1,36 @@
+{
+  "CYPHER": {
+    "Environment": {
+      "title": "Dangers environnementaux",
+      "declare": "Déclarer un danger",
+      "name": "Danger ou circonstance",
+      "mode": "Résolution",
+      "immediate": "Conséquences immédiates (sans défense)",
+      "defense": "Défense contre le danger déclaré",
+      "stat": "Caractéristique de défense (si une défense est requise)",
+      "defenseValue": "Défense de {stat}, difficulté {difficulty}",
+      "protectionValue": "{source} : blessures −{wounds} degrés de gravité ; dégâts de Réserve −{pool} points",
+      "noPhysicalMovement": "Cette défense ne nécessite aucun mouvement physique",
+      "interval": "Intervalle en secondes de jeu (0 = une seule fois)",
+      "intervalValue": "Toutes les {seconds} secondes de jeu",
+      "once": "Une occurrence",
+      "protection": "Protection applicable",
+      "source": "Source de protection validée par le MJ",
+      "woundReduction": "Réduire chaque blessure déclarée de ce nombre de degrés de gravité",
+      "poolReduction": "Réduire de ce nombre de points les dégâts de Réserve de chaque occurrence",
+      "immune": "Immunité déclarée à toutes les conséquences de ce profil",
+      "protectionHint": "Nommez la source applicable avant d’appliquer une réduction ou une immunité. L’armure, les boucliers et les objets équipés ne sont pas sélectionnés automatiquement. Déclarez un nouveau profil si la protection change.",
+      "hint": "Le MJ déclare la défense, les conséquences et l’intervalle. Aucun barème de chute, de feu, de froid ou d’asphyxie n’est déduit. L’enregistrement n’applique aucun dégât. Les états persistent jusqu’à leur retrait explicite.",
+      "save": "Enregistrer le profil de danger",
+      "apply": "Appliquer une exposition",
+      "end": "Arrêter les expositions futures",
+      "ready": "En attente d’une application explicite",
+      "processing": "Application interrompue ou en cours",
+      "manual": "Réconciliation par le MJ requise",
+      "manualHint": "Certaines conséquences peuvent déjà être enregistrées. Vérifiez la fiche et le chat avant d’arrêter cette exposition et de déclarer un nouveau profil. La répétition automatique est bloquée.",
+      "confirmInterval": "L’intervalle déclaré s’est-il écoulé depuis l’occurrence précédente ? Confirmez uniquement si ce temps s’est écoulé dans la fiction.",
+      "protected": "La protection déclarée empêche toutes les conséquences ; aucun coût de défense n’a été dépensé.",
+      "unavailable": "Cette exposition est indisponible. Vérifiez le MJ actif, les permissions, les conséquences déclarées, l’intervalle écoulé et l’occurrence courante."
+    }
+  }
+}

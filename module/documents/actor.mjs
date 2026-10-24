@@ -23,6 +23,7 @@ import { rollNpcAttack } from "../applications/npc-combat-service.mjs";
 import { declareCooperation } from "../applications/cooperative-service.mjs";
 import { rollCooperativeAction, passGuard, resistSpecialDamage, repeatDiseaseExposure } from "../applications/general-action-service.mjs";
 import { setGuarding, setGeneralCondition, removeGeneralEffect } from "../applications/general-effect-service.mjs";
+import { declareEnvironmentalExposure, resolveEnvironmentalExposure, endEnvironmentalExposure } from "../applications/environment-service.mjs";
 import {
   advanceTier,
   purchaseAdvancementSlot
@@ -76,6 +77,15 @@ export default class CypherActor extends Actor {
 
   /** Resolve a declared poison/disease/psychic profile with attributable consequences. */
   async resistSpecialDamage(options = {}) { return resistSpecialDamage(this, options); }
+
+  /** Save an explicit GM hazard profile; no damage or action cost occurs at declaration. */
+  async declareEnvironmentalExposure(profile) { return declareEnvironmentalExposure(this, profile); }
+
+  /** Apply one GM-triggered occurrence; options.expectedSequence prevents stale repeated activation. */
+  async resolveEnvironmentalExposure(id, options = {}) { return resolveEnvironmentalExposure(this, id, options); }
+
+  /** Stop future exposure; interrupted checkpoints require options.reconciled after GM adjudication. */
+  async endEnvironmentalExposure(id, options = {}) { return endEnvironmentalExposure(this, id, options); }
 
   /** Repeat one stored daily disease profile after game time or confirmed day passage. */
   async repeatDiseaseExposure(id, options = {}) { return repeatDiseaseExposure(this, id, options); }

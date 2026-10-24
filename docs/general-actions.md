@@ -47,6 +47,9 @@ Conditions can end manually or at the affected source's next turn. The CRD's
 "usually about one round" for dazed does not impose a universal duration on all
 sources. Other unusual effects and sensory circumstances require adjudication;
 there is no automatic hallucination, gravity, drowning or disease-severity rule.
+Explicit environmental declarations now execute through the separate
+[environmental hazard workflow](environmental-hazards.md), without inventing
+damage tables for those circumstances.
 These general effects are displayed on sheets; unrelated core token-status icons
 are not treated as an alternative rules store.
 

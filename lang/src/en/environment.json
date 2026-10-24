@@ -1,0 +1,36 @@
+{
+  "CYPHER": {
+    "Environment": {
+      "title": "Environmental hazards",
+      "declare": "Declare a hazard",
+      "name": "Danger or circumstance",
+      "mode": "Resolution",
+      "immediate": "Immediate consequences (no defense)",
+      "defense": "Defense against the declared danger",
+      "stat": "Defense stat (when a defense is required)",
+      "defenseValue": "{stat} defense, difficulty {difficulty}",
+      "protectionValue": "{source}: wounds −{wounds} severity steps; Pool damage −{pool} points",
+      "noPhysicalMovement": "This defense requires no physical movement",
+      "interval": "Repeat interval in game seconds (0 = once)",
+      "intervalValue": "Every {seconds} game seconds",
+      "once": "One occurrence",
+      "protection": "Applicable protection",
+      "source": "Protection source adjudicated by the GM",
+      "woundReduction": "Reduce each declared wound by this many severity steps",
+      "poolReduction": "Reduce each occurrence's Pool damage by this many points",
+      "immune": "Declared immunity to all this profile's consequences",
+      "protectionHint": "Name the applicable source before applying a reduction or immunity. Armor, shields and equipped Items are not selected automatically. Declare a new profile if protection changes.",
+      "hint": "The GM declares the defense, consequences and interval. No falling, fire, cold or suffocation damage table is inferred. Saving does not apply damage. Conditions remain until explicitly ended.",
+      "save": "Save the hazard profile",
+      "apply": "Apply one exposure",
+      "end": "End future exposure",
+      "ready": "Ready for an explicit application",
+      "processing": "Application interrupted or in progress",
+      "manual": "GM reconciliation required",
+      "manualHint": "Some consequences may already be saved. Reconcile the sheet and chat before ending this exposure and declaring a replacement. Automatic replay is blocked.",
+      "confirmInterval": "Has the declared interval passed since the previous occurrence? Confirm only if that time has passed in the fiction.",
+      "protected": "The declared protection prevents all consequences; no defense cost was spent.",
+      "unavailable": "This exposure is unavailable. Check the elected GM, permissions, declared consequences, elapsed interval and current occurrence."
+    }
+  }
+}
