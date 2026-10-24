@@ -43,7 +43,7 @@ try {
     if ((Get-Item -LiteralPath $sourcePath).PSIsContainer) {
       New-Item -ItemType Directory -Force -Path $destinationPath | Out-Null
       Get-ChildItem -LiteralPath $sourcePath -Recurse -Force |
-        Where-Object { -not $_.PSIsContainer -and $_.Name -notin @("LOCK") -and $_.Name -notlike "LOG*" -and $_.Name -notlike "*.log" } |
+        Where-Object { -not $_.PSIsContainer -and $_.FullName -notmatch '[\\/]_source[\\/]' -and $_.Name -notin @("LOCK") -and $_.Name -notlike "LOG*" -and $_.Name -notlike "*.log" } |
         ForEach-Object {
           $relativeFilePath = $_.FullName.Substring($sourcePath.Length).TrimStart('\', '/')
           $targetPath = Join-Path $destinationPath $relativeFilePath

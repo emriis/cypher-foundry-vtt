@@ -43,7 +43,7 @@ jobs:
         run: npm run test:build
 
       - name: Build release artifacts
-        run: npm run package
+        run: npm run package:release
 
       - name: Verify the published archive
         run: node scripts/verify-package.mjs

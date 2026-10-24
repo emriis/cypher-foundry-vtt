@@ -341,13 +341,13 @@ jobs:
       - name: Validate compiled LevelDB compendiums
         run: npm run test:build
       - name: Package Foundry system
-        run: npm run package
+        run: npm run package:archive
       - name: Check archive against current release sources
         run: node scripts/verify-package.mjs
       - name: Confirm reproducible release archive
         run: |
           cp dist/system.zip /tmp/cypher-release-candidate.zip
-          npm run package
+          npm run package:archive
           cmp /tmp/cypher-release-candidate.zip dist/system.zip
       - name: Archive installable candidate
         uses: actions/upload-artifact@v4

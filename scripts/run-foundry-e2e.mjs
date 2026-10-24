@@ -384,9 +384,9 @@ try {
   // so the archive and the installed runtime contain the same generated data.
   // Build the current edited sources before installing the disposable system.
   // ROOT points to the temporary checkout, never the original repository here.
-  await runCommand(npmCommand, ["run", "migrate:packs"]);
+  await runCommand(npmCommand, ["run", "migrate:packs", "--", "--english-only"]);
   await runCommand(npmCommand, ["run", "build:packs", "--", "--normalized-workspace", ...(INCLUDE_PROPOSED_TRANSLATIONS ? ["--include-proposed"] : [])]);
-  await runCommand(npmCommand, ["run", "package"]);
+  await runCommand(npmCommand, ["run", "package:archive"]);
   await runCommand(npmCommand, ["run", "test:build"], {
     env: { ...process.env, CYPHER_TEST_NORMALIZED_SOURCES: "true" }
   });

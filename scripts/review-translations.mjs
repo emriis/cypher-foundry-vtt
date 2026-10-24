@@ -17,9 +17,9 @@ import { proposedLogicalId, proposedPageId } from "./source-migration/id-contrac
 const ROOT = path.resolve(import.meta.dirname, "..");
 
 /** Read authored document JSON, never generated LevelDB data or private references. */
-export async function readCompendiumCatalogue(root) {
+export async function readCompendiumCatalogue(root, { languages = ["en", "fr"] } = {}) {
   const records = [];
-  for (const pack of (await fs.readdir(path.join(root, "packs"))).filter(name => /-(?:en|fr)$/.test(name)).sort()) {
+  for (const pack of (await fs.readdir(path.join(root, "packs"))).filter(name => languages.some(language => name.endsWith("-" + language))).sort()) {
     const directory = path.join(root, "packs", pack, "_source");
     for (const file of (await fs.readdir(directory, { recursive: true })).filter(file => file.endsWith(".json")).sort()) {
       const document = JSON.parse(await fs.readFile(path.join(directory, file), "utf8"));
@@ -63,7 +63,7 @@ function validateFrenchProposal(proposal, file) {
 export async function readFrenchProposals(root) {
   const directory = path.join(root, "translations", "fr");
   const proposals = new Map();
-  for (const file of (await fs.readdir(directory, { recursive: true })).filter(file => file.endsWith(".json")).sort()) {
+  for (const file of (await fs.readdir(directory, { recursive: true })).filter(file => file.endsWith(".json") && file !== "_folders.json").sort()) {
     const proposal = parseUniqueJSON(await fs.readFile(path.join(directory, file), "utf8"), file);
     validateFrenchProposal(proposal, file);
     // PR2 changes canonical W4 logical IDs and Journal page IDs. Preserve the

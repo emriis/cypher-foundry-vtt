@@ -11,7 +11,7 @@ import { hash, slug } from "./identity.mjs";
  * Writes only the configured source checkout; callers validate in temporary storage.
  * @returns {Promise<void>} Resolves after source writes; errors propagate.
  */
-export async function normalizeEquipmentSources() {
+export async function normalizeEquipmentSources(languages = LANGUAGES) {
   const normalizedTypes = new Set(["equipment", "weapon", "armor", "shield"]);
   const englishDirectory = path.join(root, "packs", "equipment-en", "_source");
   const english = new Map();
@@ -38,7 +38,7 @@ export async function normalizeEquipmentSources() {
     }
   }
 
-  for (const language of LANGUAGES) {
+  for (const language of languages) {
     const directory = path.join(root, "packs", `equipment-${language}`, "_source");
 
     for (const relativeFile of await fs.readdir(directory, { recursive: true })) {
@@ -104,8 +104,8 @@ export async function normalizeEquipmentSources() {
  * Writes only the configured source checkout; callers validate in temporary storage.
  * @returns {Promise<void>} Resolves after source writes; errors propagate.
  */
-export async function normalizeDescriptorSources() {
-  const descriptorPacks = LANGUAGES.map(language => ({
+export async function normalizeDescriptorSources(languages = LANGUAGES) {
+  const descriptorPacks = languages.map(language => ({
     language,
     pack: `descriptors-${language}`
   }));
@@ -202,9 +202,9 @@ export async function normalizeDescriptorSources() {
  * Writes only the configured source checkout; callers validate in temporary storage.
  * @returns {Promise<void>} Resolves after source writes; errors propagate.
  */
-export async function normalizeTypeSources() {
+export async function normalizeTypeSources(languages = LANGUAGES) {
   const englishNames = await canonicalSourceNames("types");
-  for (const language of LANGUAGES) {
+  for (const language of languages) {
     const directory = path.join(
       root,
       "packs",
@@ -257,9 +257,9 @@ export async function normalizeTypeSources() {
  * Writes only the configured source checkout; callers validate in temporary storage.
  * @returns {Promise<void>} Resolves after source writes; errors propagate.
  */
-export async function normalizeFocusSources() {
+export async function normalizeFocusSources(languages = LANGUAGES) {
   const englishNames = await canonicalSourceNames("foci");
-  for (const language of LANGUAGES) {
+  for (const language of languages) {
     const directory = path.join(
       root,
       "packs",

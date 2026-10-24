@@ -48,7 +48,7 @@ async function main() {
         for (const file of await listFiles(source)) {
           const basename = path.posix.basename(file);
           if (
-            basename === "LOCK" ||
+            file.split("/").includes("_source") || basename === "LOCK" ||
             basename === "LOG" ||
             basename === "LOG.old" ||
             basename.endsWith(".log")
