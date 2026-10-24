@@ -1,6 +1,7 @@
 /** Independent CRD expectations for the three species capacity clauses. */
 import assert from "node:assert/strict";
 import test from "node:test";
+import path from "node:path";
 import { readPackSourceMap, readPackSources as canonicalPackSources } from "../helpers/canonical-sources.mjs";
 import { readFile } from "node:fs/promises";
 
