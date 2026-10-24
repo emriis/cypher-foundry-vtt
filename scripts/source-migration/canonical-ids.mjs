@@ -19,9 +19,9 @@ function groupKey(family, logicalId) {
 }
 
 /** Resolve all materialized documents and Folder entries from authored JSON. */
-async function catalogue(checkout) {
+async function catalogue(checkout, { englishOnly = false } = {}) {
   const rows = [];
-  for (const pack of (await fs.readdir(path.join(checkout, "packs"))).filter(name => PACK_PATTERN.test(name)).sort()) {
+  for (const pack of (await fs.readdir(path.join(checkout, "packs"))).filter(name => PACK_PATTERN.test(name) && (!englishOnly || name.endsWith("-en"))).sort()) {
     const base = path.join(checkout, "packs", pack, "_source");
     for (const relative of (await fs.readdir(base, { recursive: true })).filter(name => name.endsWith(".json")).sort()) {
       const file = path.join(base, relative);
@@ -60,7 +60,7 @@ export function rewriteCompendiumLinks(value, mapped) {
  * @returns {Promise<object>} Migration counts; all sources rewritten once validation succeeds.
  */
 export async function migrateCanonicalIds(checkout = root, { englishOnly = false } = {}) {
-  const rows = (await catalogue(checkout)).filter(row => !englishOnly || row.language === "en");
+  const rows = await catalogue(checkout, { englishOnly });
   const pairs = new Map();
   const folders = new Map();
   const UUIDs = new Map();
@@ -197,6 +197,6 @@ export async function migrateCanonicalIds(checkout = root, { englishOnly = false
   for (const row of rows) {
     await fs.writeFile(row.file, JSON.stringify(row.data, null, 2) + "\n");
   }
-  return { documents: pairs.size * 2, pairs: pairs.size, folders: folders.size * 2,
+  return { documents: pairs.size * (englishOnly ? 1 : 2), pairs: pairs.size, folders: folders.size * (englishOnly ? 1 : 2),
     uuidMappings: UUIDs.size, abilityMappings: abilityIds.size };
 }
