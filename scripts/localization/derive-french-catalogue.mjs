@@ -16,7 +16,7 @@ export function frenchReference(value) {
   return value;
 }
 
-export function deriveFrenchCatalogue(englishRecords) {
+export function deriveFrenchCatalogue(englishRecords, { allowUnnormalized = false } = {}) {
   const records = [];
   for (const record of englishRecords) {
     if (!record.pack.endsWith("-en")) {
@@ -24,12 +24,15 @@ export function deriveFrenchCatalogue(englishRecords) {
     }
     const source = record.document;
     const id = source.flags?.cypherFoundry?.crd?.logicalId;
-    if (!id || record.logicalId !== id) {
+    if ((!id && !allowUnnormalized) || (id && record.logicalId !== id)) {
       throw new Error("Missing canonical CRD identity: " + record.file);
     }
     const document = frenchReference(structuredClone(source));
+    document.flags ??= {};
+    document.flags.cypherFoundry ??= {};
+    document.flags.cypherFoundry.crd ??= {};
     document.flags.cypherFoundry.crd.language = "fr";
-    document.flags.cypherFoundry.crd.sourceLogicalId = id;
+    if (id) document.flags.cypherFoundry.crd.sourceLogicalId = id;
     records.push({
       ...record,
       pack: record.pack.replace(/-en$/, "-fr"),

@@ -6,7 +6,7 @@
  * distinguish source variants; localized prose does not determine pairing.
  * Focus prerequisites become flowchart edges.
  *
- * Run with: npm run migrate:packs
+ * Run with: npm run migrate:packs (English canonical sources only)
  */
 import { pathToFileURL } from "node:url";
 import { normalizeDescriptorSources, normalizeTypeSources, normalizeFocusSources, normalizeEquipmentSources } from "./source-migration/normalization.mjs";
@@ -24,6 +24,7 @@ import { migrateCanonicalIds } from "./source-migration/canonical-ids.mjs";
  * validation callers must run it in their temporary checkout.
  * @returns {Promise<void>} Resolves after all source writes; errors propagate.
  */
+/** Historical-only migration. Requires explicit --legacy-bilingual and paired fixtures. */
 export async function migrateAbilitySources() {
   const removedAbilityIds = await pruneAbilityArtifacts();
   await pruneAbilityReferences(removedAbilityIds);
@@ -68,11 +69,11 @@ export async function migrateEnglishSources() {
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  if (process.argv.includes("--english-only")) {
+  if (process.argv.includes("--legacy-bilingual")) {
+    await migrateAbilitySources();
+    console.log("Legacy bilingual source migration complete.");
+  } else {
     await migrateEnglishSources();
     console.log("English CRD source normalization complete.");
-  } else {
-    await migrateAbilitySources();
-    console.log("Standalone ability sources migrated.");
   }
 }

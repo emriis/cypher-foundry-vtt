@@ -273,17 +273,29 @@ export function auditFolderPairs(folders) {
 
 async function readFolderSources(root) {
   const folders = [];
-  const packs = (await fs.readdir(path.join(root, "packs"))).filter(pack => /-(en|fr)$/.test(pack));
+  const names = JSON.parse(await fs.readFile(path.join(root, "translations/fr/_folders.json"), "utf8"));
+  const packs = (await fs.readdir(path.join(root, "packs"))).filter(pack => pack.endsWith("-en"));
   for (const pack of packs) {
     const directory = path.join(root, "packs", pack, "_source");
     for (const relative of await fs.readdir(directory, { recursive: true })) {
       if (!relative.endsWith(".json")) continue;
       const document = JSON.parse(await fs.readFile(path.join(directory, relative), "utf8"));
-      if (document._key?.startsWith("!folders!")) {
-        folders.push({ pack, file: ("packs/" + pack + "/_source/" + relative).replaceAll("\\", "/"), document });
-      }
+      if (!document._key?.startsWith("!folders!")) continue;
+      const enFile = ("packs/" + pack + "/_source/" + relative).replaceAll("\\", "/");
+      folders.push({ pack, file: enFile, document });
+      const family = pack.slice(0, -3);
+      const key = family + "/" + relative.replaceAll("\\", "/");
+      const label = names[key];
+      if (label && label.source !== document.name) throw new Error("Stale folder translation: " + key);
+      const fr = structuredClone(document);
+      fr.name = label?.text ?? document.name;
+      const frPack = family + "-fr";
+      folders.push({ pack: frPack, file: enFile.replace("/" + pack + "/", "/" + frPack + "/"), document: fr });
     }
   }
+  const expected = new Set(folders.filter(row => row.pack.endsWith("-fr"))
+    .map(row => row.pack.slice(0, -3) + "/" + row.file.split("/_source/")[1]));
+  for (const key of Object.keys(names)) if (!expected.has(key)) throw new Error("Orphaned folder translation: " + key);
   return folders;
 }
 
