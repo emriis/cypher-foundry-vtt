@@ -282,8 +282,8 @@ compiler input, then overlaid with a complete source-hashed French proposal
 when eligible. No historical `packs/*-fr/_source/` file participates in
 compilation. The nine existing localized Folder labels are defined separately
 in `translations/fr/_folders.json` and validated against their English names.
-Legacy French source shells remain only for historical normalization and tests;
-their removal is the next migration, not a dependency of pack compilation.
+Legacy French source shells were removed. Audits, tests, and compiled packs
+derive their French counterparts directly from canonical English definitions.
 The installed ZIP contains neither English nor French `_source` authoring files.
 
 Normal builds select only `reviewed` proposals. When the corresponding
@@ -303,8 +303,8 @@ CI compiles traceable English-fallback builds to keep the translation project
 testable without calling those texts complete. Review and publication status
 remain authored exclusively in `translations/fr/`.
 
-`migrate:packs` explicitly rewrites source records when authoring normalization
-is intended; it is not a prerequisite for building. `build:packs` replaces only
+`migrate:packs` explicitly normalizes **English** authored source records when
+authoring migration is intended; it is not a prerequisite for building. `build:packs` replaces only
 generated LevelDB outputs in its checkout. Use an owned isolated checkout for
 validation without generated changes. The E2E runner handles that isolation itself.
 All selected translations are checked and all packs compiled before the build

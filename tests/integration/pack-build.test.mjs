@@ -36,7 +36,7 @@ async function extractedDocuments(directory) {
     .map(async file => JSON.parse(await readFile(path.join(directory, file), "utf8"))));
 }
 
-test("Given legacy bilingual sources, when packs build, then reviewed and draft overlays roundtrip without source writes and stale reviews preserve outputs", async () => {
+test("Given only English authoring sources, when packs build, then reviewed and draft overlays roundtrip without source writes and stale reviews preserve outputs", async () => {
   const { workspace, root } = await createValidationWorkspace(path.resolve(import.meta.dirname, "../.."));
   try {
     // npm test may supply an already normalized checkout. Recreate a supported
@@ -45,18 +45,11 @@ test("Given legacy bilingual sources, when packs build, then reviewed and draft 
     const source = JSON.parse(await readFile(sourceFile, "utf8"));
     if (source.flags?.cypherFoundry?.crd) delete source.flags.cypherFoundry.crd.logicalId;
     await writeFile(sourceFile, JSON.stringify(source, null, 2) + "\n");
-    // Deliberately corrupt historical French prose. A normal build must
-    // reconstruct display fields from the canonical English source and never
-    // ship either of these legacy sentences into a compiled FR document.
-    const legacyFrench = path.join(root, "packs/foci-fr/_source/abides-in-stone.json");
-    const oldFrench = JSON.parse(await readFile(legacyFrench, "utf8"));
-    oldFrench.name = "OLD FRENCH NAME MUST NOT APPEAR";
-    oldFrench.system.description = "<p>OLD FRENCH CONTENT MUST NOT APPEAR.</p>";
-    await writeFile(legacyFrench, JSON.stringify(oldFrench, null, 2) + "\n");
-    // A build must succeed even if no historical French source files exist.
-    // This checkout is private; never remove sources from the author's working tree.
+    // French authoring source directories no longer exist in a checkout.
+    // This build exercises that absence directly.
     for (const pack of ["abilities", "skills", "descriptors", "types", "foci", "equipment", "rules"]) {
-      await rm(path.join(root, "packs", pack + "-fr", "_source"), { recursive: true, force: true });
+      await assert.rejects(readFile(path.join(root, "packs", pack + "-fr", "_source", "missing.json")),
+        error => error.code === "ENOENT");
     }
     // Simulate editorial approval only inside this test's disposable checkout.
     // One existing build exercises effects, table results and embedded journal text.
