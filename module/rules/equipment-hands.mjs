@@ -1,4 +1,4 @@
-/** CRD Weapons 5267–5269; explicit weapon notes 5401, 5405, 5589, 5761, 5814. */
+/** CRD Weapons 5267–5269; explicit weapon notes 5401, 5405, 5589, 5763, 5814. */
 import { resolveWeaponConfiguration } from "./weapon-mechanics.mjs";
 
 /** Minimum declared grip; zero remains an explicit option for attacks requiring no hands. */

@@ -154,7 +154,7 @@ test.describe("Cypher Foundry live gameplay", () => {
       const actor = game.actors.get(id);
       await actor.update({ "system.xp": 3, "system.stats.might.pool.value": 0 });
       const [weapon] = await actor.createEmbeddedDocuments("Item", [{
-        name: "E2E cost boundary", type: "attack", system: { stat: "might", freelyUsable: true }
+        name: "E2E cost boundary", type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } }, system: { stat: "might", freelyUsable: true }
       }]);
       await actor.sheet.render(true);
       return { weaponId: weapon.id, warning: game.i18n.format("CYPHER.Warning.NotEnoughPool", {
@@ -332,7 +332,7 @@ test.describe("Cypher Foundry live gameplay", () => {
       const actor = game.actors.get(id);
       await actor.update({ "system.effort": 2, "system.stats.might.edge": 1 });
       const items = await actor.createEmbeddedDocuments("Item", [
-        { name: "E2E Cypher task weapon", type: "attack", system: { attackType: "medium", damage: 4,
+        { name: "E2E Cypher task weapon", type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } }, system: { attackType: "medium", damage: 4,
           stat: "might", freelyUsable: true, attackSkillCategory: "mediumBladed", equipped: true } },
         { name: "E2E Cypher task training", type: "skill", system: { level: "trained", attackCategory: "mediumBladed" } }
       ]);
@@ -365,7 +365,7 @@ test.describe("Cypher Foundry live gameplay", () => {
       await actor.update({ "system.stats.speed.edge": 1, "system.stats.speed.pool.value": 6 });
       const items = await actor.createEmbeddedDocuments("Item", [
         { name: "E2E Cypher sequential Arc Spray", type: "ability", system: { key: "arc-spray", cost: { stat: "speed", amount: 3 } } },
-        { name: "E2E Cypher sequential weapon", type: "attack", system: { stat: "speed", attackType: "medium", damage: 4,
+        { name: "E2E Cypher sequential weapon", type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } }, system: { stat: "speed", attackType: "medium", damage: 4,
           freelyUsable: true, mechanics: { rapidFire: true } } }
       ]);
       const targets = [];
@@ -411,7 +411,7 @@ test.describe("Cypher Foundry live gameplay", () => {
     expect(persisted).toEqual({ chosen: "might", wound: 1 });
   });
 
-  test("one-handed hindrance applies only when selected on CRD-marked weapons", async ({
+  test("one-handed hindrance follows the declared grip on CRD-marked weapons", async ({
     e2ePage: page
   }) => {
     const actorId = await createActor(page);
@@ -423,7 +423,7 @@ test.describe("Cypher Foundry live gameplay", () => {
       const items = await actor.createEmbeddedDocuments("Item", [
         {
           name: "E2E Marked Rifle",
-          type: "attack",
+          type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } },
           system: {
             attackType: "medium",
             damage: 4,
@@ -434,7 +434,7 @@ test.describe("Cypher Foundry live gameplay", () => {
         },
         {
           name: "E2E Unmarked Weapon",
-          type: "attack",
+          type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } },
           system: {
             attackType: "medium",
             damage: 4,
@@ -455,6 +455,14 @@ test.describe("Cypher Foundry live gameplay", () => {
     await dismissActiveTour(page);
 
     const rollAndReadDifficulty = async (itemId, oneHanded) => {
+      await page.evaluate(async ({ actorId, itemId, oneHanded }) => {
+        const { configureEquipmentUse } = await import("/systems/cypher/module/applications/equipment-hands-service.mjs");
+        const actor = game.actors.get(actorId);
+        for (const weapon of actor.items.filter(entry => entry.type === "attack")) {
+          if (weapon.id !== itemId) await configureEquipmentUse(weapon, { held: false, hands: 0 });
+        }
+        await configureEquipmentUse(actor.items.get(itemId), { held: true, hands: oneHanded ? 1 : 2 });
+      }, { actorId, itemId, oneHanded });
       const messageCount = await page.evaluate(() => game.messages.size);
       await page.locator(
         '[data-action="rollAttack"][data-item-id="' + itemId + '"]'
@@ -469,7 +477,8 @@ test.describe("Cypher Foundry live gameplay", () => {
         await expect(oneHandedInput).toHaveCount(0);
       } else {
         await expect(oneHandedInput).toBeVisible();
-        if (oneHanded) await oneHandedInput.check();
+        await expect(oneHandedInput).toBeDisabled();
+        if (oneHanded) await expect(oneHandedInput).toBeChecked();
       }
 
       await form.locator('input[name="difficulty"]').fill("2");
@@ -496,7 +505,7 @@ test.describe("Cypher Foundry live gameplay", () => {
 
     // An unmarked weapon has no one-handed control and no extra hindrance.
     expect(await rollAndReadDifficulty(itemIds.unmarked, null)).toBe(2);
-    // A marked weapon is not hindered if the player leaves the option off.
+    // A marked weapon is not hindered with its declared two-handed grip.
     expect(await rollAndReadDifficulty(itemIds.marked, false)).toBe(2);
     // Selecting one-handed use adds exactly one hindrance step.
     expect(await rollAndReadDifficulty(itemIds.marked, true)).toBe(3);
@@ -513,7 +522,7 @@ test.describe("Cypher Foundry live gameplay", () => {
       await actor.update({ "system.freeWeaponCategories": ["medium"] });
       const [weapon] = await actor.createEmbeddedDocuments("Item", [{
         name: "E2E Range Test Rifle",
-        type: "attack",
+        type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } },
         system: {
           attackType: "medium",
           range: "long",
@@ -597,7 +606,7 @@ test.describe("Cypher Foundry live gameplay", () => {
       const actor = game.actors.get(id);
       const [weapon] = await actor.createEmbeddedDocuments("Item", [{
         name: "E2E Alternate Configuration Cannon",
-        type: "attack",
+        type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } },
         system: {
           attackType: "heavy",
           damage: 6,
@@ -1187,7 +1196,7 @@ test.describe("Cypher Foundry live gameplay", () => {
       }]);
       const [attack] = await actor.createEmbeddedDocuments("Item", [{
         name: "E2E Attack",
-        type: "attack",
+        type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } },
         system: { damage: 4, stat: "might", equipped: true }
       }]);
 
@@ -1226,7 +1235,7 @@ test.describe("Cypher Foundry live gameplay", () => {
       moderateMax: 2
     });
     expect(result.attack).toMatchObject({
-      type: "attack",
+      type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } },
       damage: 4,
       stat: "might"
     });
@@ -1394,7 +1403,7 @@ test.describe("Cypher Foundry live gameplay", () => {
       try {
         const [attack] = await pc.createEmbeddedDocuments("Item", [{
           name: "E2E Armor Piercer",
-          type: "attack",
+          type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } },
           system: {
             attackType: "heavy",
             damage: 6,
@@ -1465,7 +1474,7 @@ test.describe("Cypher Foundry live gameplay", () => {
           { name: `E2E ${kind}`, type: "ability", system: {
             key: kind, cost: { stat: "speed", amount: kind === "spray" ? 2 : 3 }
           } },
-          { name: "E2E rapid-fire weapon", type: "attack", system: {
+          { name: "E2E rapid-fire weapon", type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } }, system: {
             attackType: "medium", damage: 4, stat: "speed", freelyUsable: true,
             mechanics: { rapidFire: true }, availableUses: 2
           } }

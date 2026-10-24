@@ -33,17 +33,17 @@ present in an Item, copied to a chat flag, or shown in descriptive text.
 | `attackSkillCategory` | Matches an owned attack-category Skill and participates in familiarity/skill adjustment. | Runtime | None identified in this field audit. |
 | `freelyUsable` | Removes the unfamiliar-weapon penalty. | Runtime | None identified in this field audit. |
 | `properties` | Preserves CRD weapon-note text for display and fidelity. The runtime does not parse arbitrary prose. | Descriptive-only | Keep this source-facing text; automate only mechanics backed by structured fields and explicit rules. |
-| `mechanics.twoHanded` | Preserved in the Item model; does not track occupied hands. | Stored only / model gap | Needs an explicit equipment-hand model before enforcing two-handed use. |
-| `mechanics.hinderedWhenUsedOneHanded` | CRD-explicit flag on affected weapons; the PC attack dialog exposes a one-handed choice and adds one hindrance step when selected. | Runtime | E2E covers unmarked weapons, the marked option left off, and the selected one-handed hindrance. |
+| `mechanics.twoHanded` | Enforces the structured two-hand minimum against a saved actual grip, including medium weapons; heavy active categories also require two hands unless the source explicitly permits hindered one-handed use. | Runtime | Descriptive exceptions still need structured source contracts. See [equipment constraints](equipment-constraints.md). |
+| `mechanics.hinderedWhenUsedOneHanded` | Actual declared one-hand grip adds one hindrance step; a two-hand grip does not. The roll dialog reflects saved grip instead of allowing the penalty to be unchecked. | Runtime | E2E covers unmarked weapons and both declared grip states. |
 | `mechanics.rapidFire` | Spray/Arc Spray sheet actions validate weapon eligibility and execute the source-backed attack contracts against selected NPCs. | Runtime | Additional rapid-fire Abilities require their own source-backed contracts. |
 | `availableUses` | Optional, explicitly tracked ammunition/power/thrown-weapon store. Spray consumes the capped d6 + 1 count and persists the remainder. | Runtime | Ordinary attacks and Arc Spray do not infer consumption rules from this field. |
 | `mechanics.ignoresPhysicalArmor` | Numeric Armor bypass is passed from the weapon to the attack resolver and applied once against selected NPC Armor. | Runtime | Source-specific exceptions still require explicit modelling. |
 | `mechanics.cutsThroughMaterialsLevel` | Preserved in the Item model. | Stored only / model gap | Requires an interactable material/object model with levels and a CRD-backed resolution contract. |
 | `mechanics.targetEffects` | Filters effects by target level, persists them to targeted NPCs on a successful attack, and consumes supported `hindered` / `loseNextAction` effects in NPC attack resolution according to duration. Repeated structured Stunstick hindrance keeps two steps and the latest expiry under the accepted user adjudication. | Runtime (NPC attack consumer) | Other opposed tasks/passive NPC defenses need contracts. |
-| `mechanics.requiresTripod` | Preserved in the Item model. | Stored only / model gap | Requires deployment/positioning state and a rule for resolving attacks when the requirement is unmet. |
-| `mechanics.requiredOperators` | Preserved in the Item model. | Stored only / model gap | Requires a group/operator participation model and a rule for enforcing the minimum. |
-| `mechanics.alternateConfiguration` | Persists primary/alternate selection; the switch action is announced in chat and the active category determines attack ease/familiarity, category damage, and action timing. | Runtime (configuration switch) | Switch action cost and attack timing are recorded/presented but not enforced by a turn/action economy. Only the CRD-defined alternate category is modeled; no other weapon fields are inferred. |
-| active weapon category timing | Light resolves to `firstAction`, medium to `action`, and heavy to `lastAction`; timing is included in attack chat flags and shown on the roll card. | Resolved/presented | Not enforced because turn/action-economy state is not implemented. Timing is derived from category, never from `twoHanded`. |
+| `mechanics.requiresTripod` | Requires explicitly declared deployment before weapon attacks, checked again before task costs. | Runtime | No deployment duration or positioning distance is invented. |
+| `mechanics.requiredOperators` | Counts the acting PC plus distinct assigned actual PC/NPC UUIDs; missing or incapacitated participants do not satisfy the requirement. Synthetic identity survives reload. | Runtime | Participation remains explicit. No helper action cost or bonus is inferred. |
+| `mechanics.alternateConfiguration` | Persists primary/alternate selection; the switch action is announced in chat and the active category determines attack ease/familiarity, category damage, and action timing. | Runtime (configuration switch) | Switch action cost is announced but not enforced; active attack timing is enforced by round flow. Only the CRD-defined alternate category is modeled; no other weapon fields are inferred. |
+| active weapon category timing | Light supports First timing, medium ordinary timing, and heavy requires Last timing in the managed round flow. | Runtime | Special eligibility remains an explicit declaration. See [round execution](round-flow.md). Timing derives from category, not the `twoHanded` flag. |
 
 ## Existing runtime contracts
 
@@ -86,13 +86,18 @@ resolution, chat cards, and sheet-driven E2E scenarios. See
 
 ## Recommended implementation order
 
-1. Continue the remaining structured weapon and Ability audit, including
-   additional rapid-fire Abilities with explicit CRD execution contracts.
-2. Tripod/operator requirements still need reliable equipment setup and
-   participation state. Two-handed occupancy and material cutting remain
-   blocked on equipment/object models.
-3. Continue the remaining structured weapon and ability audit without inferring
-   mechanics from descriptive text or names.
+Held/stowed state, finite hand capacity, weapon/shield conflicts, tripod setup
+and actual operator participation are implemented in
+[equipment constraints](equipment-constraints.md). Missing legacy grips require
+explicit declaration; they are not inferred from carrying inventory.
+
+1. Establish an interactable object/material contract before automating
+   `cutsThroughMaterialsLevel`.
+2. Address configuration-switch action spending and other remaining equipment
+   interactions through their explicit source contracts. Do not invent generic
+   ammunition consumption or setup durations.
+3. Continue the remaining structured weapon and Ability audit, including
+   additional rapid-fire Abilities, without inferring mechanics from prose.
 
 The core PC-to-NPC numeric damage contract and physical Armor bypass are already
 implemented and verified. NPC-to-PC wound/Pool attacks are also handled through

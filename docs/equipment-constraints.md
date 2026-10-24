@@ -87,3 +87,25 @@ Object/material interaction for `cutsThroughMaterialsLevel`, broad ammunition
 consumption rules, source-specific hand exceptions not yet represented by
 structured fields, and generic equipment power effects remain separate work.
 Passing this workflow does not mark all equipment or Ability mechanics complete.
+
+## Observed validation — 2026-10-24
+
+After the French-source refactors on `main` (`5200f66`), `npm test` passed all
+1,002 tests in an isolated normalized checkout containing this equipment work.
+There were no failures or skipped tests.
+
+The current runtime suite passes 692 tests, including regression coverage for
+hand conflicts, explicit hands-free approval, unavailable crew, configuration
+changes and cancellation before costs. Lint, the scoped typecheck, architecture
+dependencies and locale source/bundle consistency checks pass.
+
+Eleven distinct scoped Foundry scenarios passed across the initial run and a
+targeted rerun of the equipment UI scenario. The initial UI test exposed a
+dialog-close timing issue in its selector; the rerun waits for the old dialog
+to close. Observed live coverage uses Foundry 14.369 and Chromium 153, including
+EN/FR, light/dark themes at 640×700, reload persistence, synthetic operator
+identity, thrown-shield catches, paid rerolls and existing shield Abilities.
+The isolated E2E preparation also passed 15 pack-readability contracts and
+package verification. This is targeted gameplay coverage, not a claim that the
+entire E2E suite or Foundry V13 was validated. No compatibility declaration was
+changed.

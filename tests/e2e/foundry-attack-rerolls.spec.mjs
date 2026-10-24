@@ -12,7 +12,7 @@ test("attack rerolls from chat correct only original synthetic target damage aft
   const ids = await page.evaluate(async () => {
     const pc = await Actor.create({ name: "E2E attack reroll source", type: "pc", system: { xp: 5, effort: 2,
       stats: { might: { pool: { value: 10, max: 10 }, edge: 0 } } } });
-    const [weapon] = await pc.createEmbeddedDocuments("Item", [{ name: "E2E reroll weapon", type: "attack",
+    const [weapon] = await pc.createEmbeddedDocuments("Item", [{ name: "E2E reroll weapon", type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } },
       system: { stat: "might", damage: 5, freelyUsable: true, range: "immediate" } }]);
     const base = await Actor.create({ name: "E2E attack reroll base", type: "npc",
       system: { level: 3, armor: 1, health: { value: 20, max: 20 } } });
@@ -55,7 +55,7 @@ test("attack rerolls offer the real major-effect dialog and refund a natural twe
     const pc = await Actor.create({ name: "E2E attack special choice", type: "pc", system: { xp: 5,
       stats: { might: { pool: { value: 10, max: 10 }, edge: 0 } } } });
     const npc = await Actor.create({ name: "E2E special target", type: "npc", system: { level: 3, armor: 1, health: { value: 20, max: 20 } } });
-    const [weapon] = await pc.createEmbeddedDocuments("Item", [{ name: "E2E special weapon", type: "attack",
+    const [weapon] = await pc.createEmbeddedDocuments("Item", [{ name: "E2E special weapon", type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } },
       system: { stat: "might", damage: 5, freelyUsable: true, range: "immediate" } }]);
     await weapon.rollAttack({ target: npc, difficulty: 4, effortLevels: 1 });
     const origin = [...game.messages].find(message => message.flags.cypher?.actorId === pc.id && message.flags.cypher.isAttack);

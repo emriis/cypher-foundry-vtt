@@ -5,6 +5,7 @@
  * live in module/rules; this service owns the Foundry document operations.
  */
 import { resolveDefense } from "../rules/defense.mjs";
+import { equipmentAttackProblem, canReadyShield, shieldReadyUpdate } from "./equipment-hands-service.mjs";
 import { resolveTaskOutcome } from "../rules/task-outcome.mjs";
 import { runActorActions, ACTION_CONTEXT } from "./action-guard.mjs";
 import { prepareTask } from "./task-preparation.mjs";
@@ -140,9 +141,12 @@ async function executeTask(actor, {
   // may change while a dialog is open; never silently spend on a stale choice.
   const shieldItem = shieldItemId ? actor.items?.get(shieldItemId) : null;
   if (shieldItemId && (defenseType !== "block" || !canShieldAbsorbWound(shieldItem)
-    || shieldItem.isOwner === false)) return null;
+    || shieldItem.isOwner === false || !canReadyShield(shieldItem))) return null;
+  const physicalWeapon = isAttack && weaponSource?.itemId ? actor.items?.get?.(weaponSource.itemId) : null;
+  if (physicalWeapon && equipmentAttackProblem(physicalWeapon, { abilitySource, equipmentFlightId: weaponSource.equipmentFlightId })) return null;
   if (shieldReturn) {
     const returning = actor.items?.get(shieldReturn.itemId);
+    if (!canReadyShield(returning)) return null;
     const ability = actor.items?.get(abilitySource?.itemId);
     if (stat !== "speed" || difficulty !== 2 || isAttack || ability?.type !== "ability"
       || !SHIELD_ABILITY_KEYS.includes(ability.system.key) || ability.system.key === "hidden-shield"
@@ -264,7 +268,8 @@ async function executeTask(actor, {
     conditionsOnFailure, woundRemovalSeverity, actionContext, defenseRecipient, takeCooldownId, specialistRequired });
   if (ruleEffect) ruleEffect = await applyRuleEffect(targetActor, ruleEffect, success);
   if (success && shieldReturn) {
-    await actor.items.get(shieldReturn.itemId).update({ "system.inHand": true, "system.equipped": true });
+    const returning = actor.items.get(shieldReturn.itemId);
+    await returning.update(shieldReadyUpdate(returning));
   }
   if (initiative) {
     initiative = { ...initiative, steps: totalSteps, score: resolveInitiativeScore(d20, totalSteps), state: "applied" };

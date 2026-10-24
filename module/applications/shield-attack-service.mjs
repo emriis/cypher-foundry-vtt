@@ -60,12 +60,13 @@ export async function executeShieldAbility(ability, { shieldId, mode = "throw", 
     if (mode === "paired" && (main?.type !== "attack" || main.actor !== actor || main.isOwner === false)) return null;
     if (chooseAttackOptions !== null && typeof chooseAttackOptions !== "function") return null;
     if (chooseCatchOptions !== null && typeof chooseCatchOptions !== "function") return null;
+    let flightId = null;
     const planAttack = (index, choices) => {
       if (!choices || choices.luckyShot || (choices.stat && !["might", "speed"].includes(choices.stat))) return null;
       if (kind === "hidden-shield" && choices.effectEffortLevels) return null;
       const weapon = mode === "paired" && index === 0 ? main : shieldAttackProfile(shield, { thrown, stat: choices.stat });
       const abilitySource = { itemId: ability.id, name: ability.name, kind, shieldItemId: shield.id };
-      const options = prepareAttackOptions(weapon, { ...choices, [ACTION_CONTEXT]: context,
+      const options = prepareAttackOptions(weapon, { ...choices, [ACTION_CONTEXT]: context, equipmentFlightId: flightId,
         target: targets[index], difficulty: targets[index].system.level, areaAttack: false, extraAction: index > 0,
         abilitySource, activationCost: index === 0 && kind === "bouncing-shield" ? 3 : 0,
         extraHinderSteps: (choices.extraHinderSteps ?? 0) + (mode === "paired" ? 1 : 0) });
@@ -81,7 +82,8 @@ export async function executeShieldAbility(ability, { shieldId, mode = "throw", 
     };
     const first = planAttack(0, rollOptions);
     if (!first) return null;
-    const flightId = thrown ? foundry.utils.randomID() : null;
+    flightId = thrown ? foundry.utils.randomID() : null;
+    first.weaponSource.equipmentFlightId = flightId;
     if (thrown) await shield.update({ "system.inHand": false, "system.equipped": false, "system.flightId": flightId });
     const results = [];
     for (let index = 0; index < targets.length; index++) {

@@ -30,7 +30,7 @@ function setup(kind = "spray", { uses = 2, rapidFire = true, speed = 20, edge = 
     }
   };
   const weapon = {
-    id: "weapon", type: "attack", name: "Weapon", actor,
+    id: "weapon", type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } }, name: "Weapon", actor,
     system: { stat: "speed", attackType: "medium", damage: 4, freelyUsable: true,
       mechanics: { rapidFire }, availableUses: uses },
     async update(change) { this.system.availableUses = change["system.availableUses"]; }

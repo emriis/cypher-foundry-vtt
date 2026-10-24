@@ -202,10 +202,10 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
           const shield = sourceActor?.items?.get(flags.shieldReturn.itemId);
           // Old catch cards cannot retrieve a shield from a later throw/project.
           if (shield?.type === "shield" && shield.isOwner !== false
-            && shield.system.flightId === flags.shieldReturn.flightId && shield.system.inHand === false
+            && shield.system.flightId === flags.shieldReturn.flightId && shield.system.inHand === false && canReadyShield(shield)
             && !isShieldBroken(shield.system.wounds, shieldSurvivesMajor(shield, shieldOwnerItems(shield)))) {
             await checkpointShield();
-            await shield.update({ "system.inHand": true, "system.equipped": true });
+            await shield.update(shieldReadyUpdate(shield));
             metadata.shieldReturn = { ...flags.shieldReturn, applied: true };
           } else if (shield?.system.inHand !== true || shield.system.flightId !== flags.shieldReturn.flightId) {
             metadata.shieldReturn = { ...flags.shieldReturn, stale: true };
@@ -315,3 +315,4 @@ async function promptRerollChoice(oldValue, newValue, oldDescription, newDescrip
       callback: (event, button) => button.form.resultChoice.value }
   });
 }
+import { canReadyShield, shieldReadyUpdate } from "./equipment-hands-service.mjs";

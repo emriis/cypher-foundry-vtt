@@ -45,6 +45,31 @@ tests, and a deterministic build where applicable.
 | Runtime consumption of all structured mechanics | In progress |
 | Playwright/Foundry E2E infrastructure | Complete; gameplay coverage continues to grow |
 
+### Core-rule runtime progress — 2026-10-24
+
+Inventory completion and executable rule support are separate milestones. The
+following contracts are present in the current implementation; they do not
+claim that every Ability, Cypher or descriptive equipment note is automated.
+Use Git/PR history for merge status and each linked contract for validation scope.
+
+| Runtime lot | Implemented support | Explicit remaining boundary |
+| --- | --- | --- |
+| Tasks and costs | Difficulty, skills, Effort allocation, Edge, natural-roll outcomes and costs ([contract](task-rolls.md)) | Source-specific power limits still need their own contracts. |
+| Wounds, armor and shields | Wound overflow, mitigation, shield-specific tracks, destruction/repair and supported shield exceptions ([shields](shield-runtime.md), [shield Abilities](shield-abilities.md)) | This is not blanket automation of all defensive powers. |
+| Paid rerolls | Attack/defense consequence attribution, correction, successive rerolls and saved history ([contract](runtime-refactor.md)) | Ambiguous intervening healing and partial writes require explicit reconciliation. |
+| Recovery and healing | Standard recoveries, Rally, treatment, Healing Hand and supported healing consequences ([contract](recovery-and-healing.md)) | Other source-specific healing powers remain separate. |
+| Cooperation, guarding and conditions | Supported cooperative modes, guarding, conditions and declared poison/disease/psychic profiles ([contract](general-actions.md)) | Applicability and source-specific durations remain explicit declarations. |
+| Initiative and rounds | Initiative scores/rerolls, First/Last, waiting, readiness, follow-up activities and supported extra actions ([initiative](initiative.md), [round flow](round-flow.md)) | Source-specific eligibility and configuration-switch action costs are not all enforced. |
+| Intrusions | GM declarations, mandatory XP sharing, explicit player-intrusion approval, next-turn reactions and persistent settlement ([contract](intrusions.md)) | Narrative consequences remain GM adjudication. |
+| Environmental hazards | Immediate/defended consequences, declared protection and repeated exposures ([contract](environmental-hazards.md)) | No universal danger table, unattended dice or inferred anatomy/equipment protection. |
+| Equipment constraints | Held/stowed declarations, hand capacity, heavy/two-handed use, weapon/shield conflicts, tripod and distinct available operators ([contract](equipment-constraints.md)) | Descriptive exceptions, material/object interactions and broad ammunition rules remain separate. |
+
+The next verified gaps outside Ability automation are concrete Cypher power
+effects and remaining object/equipment mechanics. The Journal/reference,
+Quick Reference, player/GM navigation and cross-family runtime/E2E audit work
+also remain open. Do not reopen completed core-rule lots from stale historical
+audit tables without first checking their current implementation.
+
 ## 3. End-state architecture
 
 ### 3.1 Structured reusable content
@@ -410,7 +435,10 @@ Completed families require, as applicable:
 - [x] Extract provenance and bilingual pairing.
 - [x] Add fidelity and contract tests.
 
-### W5 — CRD Journal foundation — Planned
+### W5 — CRD Journal foundation — In progress
+
+Seven source-faithful rule selections already exist. The remaining work is the
+broader reference inventory, hierarchy and navigation, not starting from no Journals.
 
 - [ ] Inventory reference/procedure sections.
 - [ ] Define Journal source schema and hierarchy.
@@ -446,6 +474,10 @@ Completed families require, as applicable:
 - [x] Build the real Foundry/Playwright runner.
 - [x] Establish structured Ability runtime.
 - [x] Establish core equipment/attack runtime.
+- [x] Implement source-backed core-rule contracts for rerolls, recovery,
+  cooperation/guarding, initiative/round flow and intrusions.
+- [x] Implement explicit environmental profiles and equipment grip/setup
+  constraints; keep GM adjudication and remaining model gaps documented.
 - [ ] Close remaining structured weapon mechanics.
 - [x] Close generic Cypher variants and structured random tables.
 - [ ] Build an explicitly requested Cypher generation workflow using source

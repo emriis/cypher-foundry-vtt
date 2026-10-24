@@ -136,7 +136,7 @@ export async function promptRollOptions(actor, {
     </div>` : ""}
     ${isAttack && weapon?.system?.mechanics?.hinderedWhenUsedOneHanded ? `
     <div class="form-group inline">
-      <label><input type="checkbox" name="oneHanded"/> ${game.i18n.localize("CYPHER.Attack.OneHanded")}</label>
+      <label><input type="checkbox" name="oneHanded" ${weapon.flags?.cypher?.equipmentUse?.version === 1 ? `disabled ${weapon.flags.cypher.equipmentUse.hands === 1 ? "checked" : ""}` : ""}/> ${game.i18n.localize("CYPHER.Attack.OneHanded")}</label>
       <p class="hint">${game.i18n.localize("CYPHER.Attack.OneHandedHint")}</p>
     </div>` : ""}
     ${isAttack ? `
