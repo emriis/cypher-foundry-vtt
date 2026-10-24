@@ -1,4 +1,6 @@
 import { promptGMIntrusion, promptPlayerIntrusion } from "./intrusion-dialogs.mjs";
+import { environmentalDisplay, promptEnvironment, promptEnvironmentExposure, endEnvironment } from "./environment-dialogs.mjs";
+import { isEnvironmentAuthority } from "../applications/environment-service.mjs";
 import { promptRollOptions, promptWeaponAttackCategory, promptWeaponAbility, taskModifierFields, readTaskModifiers } from "./dialogs.mjs";
 import { abilityActionLabel } from "../abilities.mjs";
 import { getSuperheroicsRank } from "../applications/task-preparation.mjs";
@@ -51,6 +53,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     // Template buttons declare data-action="...". Foundry routes each name to
     // the handler below, binding `this` to the sheet, even for static handlers.
     actions: {
+      promptEnvironment, promptEnvironmentExposure, endEnvironment,
       toggleGuarding, clearGeneralEffect, promptGeneralCondition, promptCooperativeAction, promptSpecialDamage, promptDiseaseCheck,
       rollStat: CypherPCSheet.#onRollStat,
       rollRecovery: CypherPCSheet.#onRollRecovery,
@@ -100,7 +103,8 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       templates: [
         "systems/cypher/templates/actor/parts/header.hbs",
         "systems/cypher/templates/actor/parts/main.hbs",
-        "systems/cypher/templates/actor/parts/general-actions.hbs"
+        "systems/cypher/templates/actor/parts/general-actions.hbs",
+        "systems/cypher/templates/actor/parts/environment.hbs"
       ],
       scrollable: [".pc-dashboard"]
     }
@@ -120,6 +124,8 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     context.actor = this.actor;
     context.generalEffects = generalEffectDisplay(this.actor);
     context.generalPC = true;
+    context.environmentAuthority = isEnvironmentAuthority();
+    context.environmentalExposures = environmentalDisplay(this.actor);
     context.superheroicsStat = this.actor.flags?.cypher?.superheroicsStat ?? "";
     context.hasSuperheroics = this.actor.items.some(item => item.type === "ability" && item.system.key === "superheroics");
     context.focusAbilityPendingTier =

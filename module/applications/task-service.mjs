@@ -20,7 +20,7 @@ import { cooperativeTaskPlan, consumeCooperationUpdate } from "./cooperative-ser
 import { applyRuleEffect, validateRuleEffect } from "./rule-effect-consequence.mjs";
 import { getGeneralEffects, nextSourceTurn } from "./general-effect-service.mjs";
 import { specialDamageLimits } from "./special-damage-healing.mjs";
-import { blockStillHits } from "../rules/general-effects.mjs";
+import { blockStillHits, CONDITION_KINDS } from "../rules/general-effects.mjs";
 import { resolveShieldWoundTrack } from "../rules/ability-modifiers.mjs";
 import { roundActionContext, consumeRoundAction, ROUND_ACTION_OWNER } from "./round-action-service.mjs";
 
@@ -132,7 +132,7 @@ async function executeTask(actor, {
   rollRoutine = true, chooseSpecialEffect = null, areaAttack = false, push = false,
   pushDamageEffortLevels = 0, powerShiftCategories = [], noPhysicalMovement = false, attackForm = null,
   cooperativeMode = null, cooperativeEffectIds = null, ruleEffect = null, conditionsOnFailure = [], npcSource = null, takeAttackActor = null,
-  automaticFailure = false, specialistRequired = false,
+  automaticFailure = false, specialistRequired = false, environmentalSource = null,
   minorActivity = false, extraAction = false, extraActionSource = "", actionTiming = null,
   [ROUND_ACTION_OWNER]: roundActionOwner = null
 } = {}, actionContext = null, initiativeOwner = null) {
@@ -156,9 +156,12 @@ async function executeTask(actor, {
   if (!Array.isArray(conditionsOnFailure) || automaticFailure && !defenseType) return null;
   if (cooperativeMode === "take" && !takeAttackActor) return null;
   if (conditionsOnFailure.length && (!defenseType || conditionsOnFailure.some(effect =>
-    !["dazed", "stunned", "paralyzed", "unconscious", "blinded", "hindered"].includes(effect.kind)
+    !CONDITION_KINDS.includes(effect.kind)
     || !Number.isSafeInteger(effect.steps ?? 1) || (effect.steps ?? 1) < 1))) return null;
   if (ruleEffect && !validateRuleEffect(actor, targetActor, ruleEffect)) return null;
+  if (environmentalSource && (!defenseType || typeof environmentalSource.id !== "string"
+    || !environmentalSource.id || typeof environmentalSource.name !== "string" || !environmentalSource.name.trim()
+    || !Number.isSafeInteger(environmentalSource.sequence) || environmentalSource.sequence < 0)) return null;
   if (takeAttackActor && (cooperativeMode !== "take" || !defenseType || npcSource?.type !== "npc"
     || takeAttackActor === actor || takeAttackActor.type !== "pc" || takeAttackActor.isOwner === false
     || getGeneralEffects(takeAttackActor).some(effect => ["takeCooldown", "unconscious", "stunned", "paralyzed"].includes(effect.kind)))) return null;
@@ -280,6 +283,7 @@ async function executeTask(actor, {
     effort, powerShifts, assetSteps, skillSteps, rolled: Boolean(roll), automatic: automaticHit || automaticFailure
   });
   if (defenseRecipient !== actor) messageFlavor += `<p>${game.i18n.format("CYPHER.General.Taken", { name: foundry.utils.escapeHTML(defenseRecipient.name) })}</p>`;
+  if (environmentalSource) messageFlavor += `<p>${game.i18n.localize("CYPHER.Environment.title")}: ${foundry.utils.escapeHTML(environmentalSource.name)}</p>`;
 
   // Flags are structured metadata for rerolls and tests; the localized HTML
   // is presentation. Publish only after target-side writes have succeeded.
@@ -294,6 +298,7 @@ async function executeTask(actor, {
         abilitySource,
         actorId: actor.id,
         actorUuid: actor.uuid,
+        ...(environmentalSource ? { environmentalSource } : {}),
         ...(initiative ? { initiative } : {}),
         ...(shieldReturn ? { shieldReturn: { ...shieldReturn, applied: success } } : {}),
         ...(defenseType ? { defenseType, shieldItemId, shieldWoundsAbsorbed, incomingWounds, incomingSeverity,

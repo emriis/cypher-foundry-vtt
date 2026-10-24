@@ -320,6 +320,8 @@ First/Last phases, waiting and source-turn intervals are documented in
 [round-flow.md](round-flow.md).
 GM declarations, player requests, mandatory XP sharing, and their resumable
 settlement are documented in [intrusions.md](intrusions.md).
+GM-declared environmental damage, protection, repetition and failure checkpoints
+are documented in [environmental-hazards.md](environmental-hazards.md).
 
 The broad architecture refactor is complete. Do not reopen the completed
 Phase 1-8 work as a standing task.

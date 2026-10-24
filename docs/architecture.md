@@ -59,6 +59,10 @@ The main gameplay boundaries are:
   `rule-effect-consequence.mjs` handles their attributed successful task effects.
   `special-damage-healing.mjs` protects declared specialist-only damage.
   See [general actions](general-actions.md) for source contracts and limits.
+- `environment-service.mjs`: GM-declared PC hazards, explicit protection and
+  checkpointed repeated exposures. It composes shared defenses and consequence
+  attribution; pure validation lives in `module/rules/environment.mjs`.
+  See [environmental hazards](environmental-hazards.md).
 - `shield-lifecycle-service.mjs` and `shield-attack-service.mjs`: explicitly
   designated physical shield Abilities, lost turns, timed work and source-backed
   attacks through the shared task engine; see [shield Abilities](shield-abilities.md).

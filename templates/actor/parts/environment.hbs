@@ -1,0 +1,19 @@
+{{!-- Profiles are GM declarations; all mechanics and readiness checks belong to services. --}}
+<section class="pc-section environmental-exposures">
+  <h3>{{localize "CYPHER.Environment.title"}}</h3>
+  {{#if environmentAuthority}}
+  <button type="button" data-action="promptEnvironment">{{localize "CYPHER.Environment.declare"}}</button>
+  {{/if}}
+  {{#each environmentalExposures as |exposure|}}
+  <div class="environmental-exposure">
+    <p><strong>{{exposure.name}}</strong> — {{exposure.mode}} — {{exposure.interval}} — {{exposure.state}}</p>
+    <p>{{exposure.detail}}</p>
+    {{#if exposure.protection}}<p>{{localize "CYPHER.Environment.protection"}}: {{exposure.protection}}</p>{{/if}}
+    {{#if exposure.manual}}<p>{{localize "CYPHER.Environment.manualHint"}}</p>{{/if}}
+    {{#if ../environmentAuthority}}
+    {{#if exposure.ready}}<button type="button" data-action="promptEnvironmentExposure" data-exposure-id="{{exposure.id}}" data-sequence="{{exposure.sequence}}">{{localize "CYPHER.Environment.apply"}}</button>{{/if}}
+    <button type="button" data-action="endEnvironment" data-exposure-id="{{exposure.id}}">{{localize "CYPHER.Environment.end"}}</button>
+    {{/if}}
+  </div>
+  {{/each}}
+</section>
