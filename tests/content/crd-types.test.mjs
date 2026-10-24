@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { readPackSourceMap, readPackSources } from "../helpers/canonical-sources.mjs";
 import { validateCrdSourceRecord } from "../../module/crd/source-schema.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "../..");
@@ -60,12 +61,11 @@ const TYPE_NAMES = [
 ];
 
 function readTypes(language) {
-  const directory = path.join(ROOT, "packs", `types-${language}`, "_source");
+  const sources = readPackSourceMap(ROOT, `types-${language}`);
   return TYPE_NAMES.map(name => {
-    const filename = `${name}.json`;
-    const file = path.join(directory, filename);
-    assert.ok(fs.existsSync(file), `${language}: missing ${filename}`);
-    return JSON.parse(fs.readFileSync(file, "utf8"));
+    const doc = sources.get(name + ".json");
+    assert.ok(doc, `${language}: missing ${name}.json`);
+    return doc;
   });
 }
 

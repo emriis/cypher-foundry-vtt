@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { readPackSourceMap, readPackSources } from "../helpers/canonical-sources.mjs";
 
 import { CRD_EQUIPMENT_INVENTORY } from "../fixtures/crd-equipment-inventory.mjs";
 import { proposedLogicalId, proposedFoundryId } from "../../scripts/source-migration/id-contract.mjs";
@@ -24,7 +25,8 @@ function readJsonRecords(directory) {
 }
 
 function equipmentRecords(language) {
-  return readJsonRecords(path.join(ROOT, `equipment-${language}`, "_source"));
+  return readPackSources(path.resolve("."), `equipment-${language}`)
+    .filter(record => record.document === "Item" && ["equipment", "weapon", "armor", "shield"].includes(record.crdType));
 }
 
 function expectedLogicalIds() {

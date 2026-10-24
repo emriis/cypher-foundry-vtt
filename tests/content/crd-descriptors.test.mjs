@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { readPackSourceMap, readPackSources } from "../helpers/canonical-sources.mjs";
 
 import {
   getCrdLogicalId,
@@ -70,24 +71,9 @@ const SPECIES_DESCRIPTORS = [
 ].map(value => value === "stela(n)" ? "stelan" : value).sort();
 
 function readSources(language, category) {
-  const directory = path.join(
-    root,
-    "packs",
-    `descriptors-${language}`,
-    "_source",
-    category
-  );
-
-  return new Map(
-    fs.readdirSync(directory)
-      .filter(file => file.endsWith(".json"))
-      .map(file => [
-        path.basename(file, ".json"),
-        JSON.parse(
-          fs.readFileSync(path.join(directory, file), "utf8")
-        )
-      ])
-  );
+  const all = readPackSourceMap(root, `descriptors-${language}`);
+  return new Map([...all].filter(([file]) => file.startsWith(category + "/"))
+    .map(([file, document]) => [path.basename(file, ".json"), document]));
 }
 
 test("CRD Descriptor inventory is complete in both languages", () => {

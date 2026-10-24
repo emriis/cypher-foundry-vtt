@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { readPackSourceMap, readPackSources } from "../helpers/canonical-sources.mjs";
 
 import { validateCrdSourceRecord } from "../../module/crd/source-schema.mjs";
 
@@ -10,13 +11,8 @@ const languages = ["en", "fr"];
 const expectedCount = 58;
 
 function readSkills(language) {
-  const directory = path.join(root, "packs", `skills-${language}`, "_source");
-  return fs.readdirSync(directory)
-    .filter(file => file.endsWith(".json"))
-    .sort()
-    .map(file => JSON.parse(
-      fs.readFileSync(path.join(directory, file), "utf8")
-    ));
+  return [...readPackSourceMap(root, `skills-${language}`)].sort(([a], [b]) => a.localeCompare(b))
+    .map(([, doc]) => doc);
 }
 
 test("CRD skill source packs contain the complete Master Skill List", () => {

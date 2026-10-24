@@ -7,6 +7,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
+import { readPackSourceMap, readPackSources } from "../helpers/canonical-sources.mjs";
 import { readCompendiumCatalogue } from "../../scripts/review-translations.mjs";
 import { proposedFoundryId, proposedLogicalId, proposedPageId, proposedFolderId } from "../../scripts/source-migration/id-contract.mjs";
 
@@ -56,9 +57,7 @@ test("every normalized Folder ID and Item.folder reference uses the same bilingu
   const root = path.resolve(import.meta.dirname, "../..");
   const folders = new Map(), records = [];
   for (const pack of (await fs.readdir(path.join(root, "packs"))).filter(name => /-(?:en|fr)$/.test(name))) {
-    const directory = path.join(root, "packs", pack, "_source");
-    for (const relative of (await fs.readdir(directory, { recursive: true })).filter(file => file.endsWith(".json"))) {
-      const d = JSON.parse(await fs.readFile(path.join(directory, relative), "utf8"));
+    for (const [relative, d] of readPackSourceMap(root, pack)) {
       if (d._key?.startsWith("!folders!")) {
         const target = proposedFolderId(pack.replace(/-(en|fr)$/, ""), relative);
         assert.equal(d._id, target);

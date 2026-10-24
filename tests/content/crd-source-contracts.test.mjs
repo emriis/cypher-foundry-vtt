@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { readPackSourceMap, readPackSources } from "../helpers/canonical-sources.mjs";
 
 import {
   getCrdLogicalId,
@@ -19,21 +20,8 @@ const CONTENT_PACKS = [
 ];
 
 function readSources(family, language) {
-  const directory = path.join(
-    root,
-    "packs",
-    `${family}-${language}`,
-    "_source"
-  );
-
-  return fs.readdirSync(directory, { recursive: true })
-    .filter(file => file.endsWith(".json"))
-    .map(file => ({
-      file,
-      document: JSON.parse(
-        fs.readFileSync(path.join(directory, file), "utf8")
-      )
-    }))
+  return [...readPackSourceMap(root, `${family}-${language}`)]
+    .map(([file, document]) => ({ file, document }))
     .filter(({ document }) => !document._key?.startsWith("!folders!"));
 }
 

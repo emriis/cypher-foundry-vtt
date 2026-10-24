@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { readPackSourceMap, readPackSources } from "../helpers/canonical-sources.mjs";
 
 import { validateCrdSourceRecord, getCrdLogicalId } from "../../module/crd/source-schema.mjs";
 
@@ -13,16 +14,7 @@ function readPackSources(packName) {
     return packSourceCache.get(packName);
   }
 
-  const directory = path.join(root, "packs", packName, "_source");
-  const sources = new Map(
-    fs.readdirSync(directory, { recursive: true })
-      .filter(file => file.endsWith(".json"))
-      .map(file => [
-        file,
-        JSON.parse(fs.readFileSync(path.join(directory, file), "utf8"))
-      ])
-  );
-
+  const sources = readPackSourceMap(root, packName);
   packSourceCache.set(packName, sources);
   return sources;
 }

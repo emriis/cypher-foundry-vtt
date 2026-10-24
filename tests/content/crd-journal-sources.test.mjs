@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { readPackSourceMap, readPackSources } from "../helpers/canonical-sources.mjs";
 
 import { validateCrdSourceRecord } from "../../module/crd/source-schema.mjs";
 import { proposedFoundryId } from "../../scripts/source-migration/id-contract.mjs";
@@ -10,12 +11,7 @@ const root = path.resolve(import.meta.dirname, "../..");
 const id = "a1b2c3d4e5f60708";
 
 function read(language) {
-  return JSON.parse(
-    fs.readFileSync(
-      path.join(root, "packs", `rules-${language}`, "_source", `${id}.json`),
-      "utf8"
-    )
-  );
+  return readPackSourceMap(root, `rules-${language}`).get(id + ".json");
 }
 
 test("Task Difficulty CRD journal sources satisfy the source contract", () => {
