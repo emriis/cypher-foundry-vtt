@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { execFile } from "node:child_process";
 import { createHash } from "node:crypto";
-import { readdir, readFile, writeFile } from "node:fs/promises";
+import { readdir, readFile, writeFile, rm } from "node:fs/promises";
 import path from "node:path";
 import { promisify } from "node:util";
 import { extractPack } from "@foundryvtt/foundryvtt-cli";
@@ -53,6 +53,11 @@ test("Given legacy bilingual sources, when packs build, then reviewed and draft 
     oldFrench.name = "OLD FRENCH NAME MUST NOT APPEAR";
     oldFrench.system.description = "<p>OLD FRENCH CONTENT MUST NOT APPEAR.</p>";
     await writeFile(legacyFrench, JSON.stringify(oldFrench, null, 2) + "\n");
+    // A build must succeed even if no historical French source files exist.
+    // This checkout is private; never remove sources from the author's working tree.
+    for (const pack of ["abilities", "skills", "descriptors", "types", "foci", "equipment", "rules"]) {
+      await rm(path.join(root, "packs", pack + "-fr", "_source"), { recursive: true, force: true });
+    }
     // Simulate editorial approval only inside this test's disposable checkout.
     // One existing build exercises effects, table results and embedded journal text.
     const reviewed = new Map();

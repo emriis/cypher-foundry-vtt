@@ -12,13 +12,13 @@ import { sourceFiles } from "./sources.mjs";
  * Writes only the configured source checkout; callers validate in temporary storage.
  * @returns {Promise<Set<string>>} Removed Foundry IDs whose parent references must be pruned next.
  */
-export async function pruneAbilityArtifacts() {
+export async function pruneAbilityArtifacts(languages = LANGUAGES) {
   // Keep known editorial IDs in the removal set even when a stale source file
   // has already disappeared. Parent documents can otherwise retain orphaned
   // references to those artifacts indefinitely.
   const removedIds = new Set(EDITORIAL_ARTIFACT_IDS);
 
-  for (const language of LANGUAGES) {
+  for (const language of languages) {
     for (const file of await sourceFiles(`abilities-${language}`)) {
       const document = JSON.parse(await fs.readFile(file, "utf8"));
       if (document._key?.startsWith("!folders!")) continue;
@@ -40,11 +40,11 @@ export async function pruneAbilityArtifacts() {
  * @param {Set<string>} removedIds IDs removed from the source catalogue.
  * @returns {Promise<void>} Resolves after source writes; errors propagate.
  */
-export async function pruneAbilityReferences(removedIds) {
+export async function pruneAbilityReferences(removedIds, languages = LANGUAGES) {
   if (!removedIds.size) return;
 
   for (const parent of PARENT_PACKS) {
-    for (const language of LANGUAGES) {
+    for (const language of languages) {
       for (const file of await sourceFiles(`${parent}-${language}`)) {
         const document = JSON.parse(await fs.readFile(file, "utf8"));
         if (document._key?.startsWith("!folders!")) continue;
@@ -92,7 +92,7 @@ export async function pruneAbilityReferences(removedIds) {
  * Writes only the configured source checkout; callers validate in temporary storage.
  * @returns {Promise<void>} Resolves after source writes; errors propagate.
  */
-export async function mergeGenreAbilities() {
+export async function mergeGenreAbilities(languages = LANGUAGES) {
   const manifestPath = path.join(root, "data", "crd-genre-abilities.json");
   let manifest;
   try {
@@ -169,7 +169,7 @@ export async function mergeGenreAbilities() {
 
     if (!current) {
       await writeRecord("en", record);
-      await writeRecord("fr", record);
+      if (languages.includes("fr")) await writeRecord("fr", record);
       continue;
     }
 
@@ -184,11 +184,13 @@ export async function mergeGenreAbilities() {
     };
     await fs.writeFile(current.file, JSON.stringify(current.document, null, 2) + "\n");
 
-    const frFile = path.join(root, "packs", "abilities-fr", "_source", `${current.document._id}.json`);
-    try {
-      await fs.access(frFile);
-    } catch {
-      await writeRecord("fr", record);
+    if (languages.includes("fr")) {
+      const frFile = path.join(root, "packs", "abilities-fr", "_source", `${current.document._id}.json`);
+      try {
+        await fs.access(frFile);
+      } catch {
+        await writeRecord("fr", record);
+      }
     }
   }
 

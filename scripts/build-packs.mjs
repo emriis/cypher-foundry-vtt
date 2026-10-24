@@ -115,7 +115,7 @@ async function compile() {
     // script, rather than importing the author's script and mutating its checkout.
     if (!reuse) {
       console.log("Normalizing temporary compendium sources...");
-      await promisify(execFile)(process.execPath, ["scripts/migrate-ability-sources.mjs"],
+      await promisify(execFile)(process.execPath, ["scripts/migrate-ability-sources.mjs", "--english-only"],
         { cwd: checkoutRoot, maxBuffer: 8 * 1024 * 1024 });
     }
     const packs = await discoverPacks(checkoutRoot);

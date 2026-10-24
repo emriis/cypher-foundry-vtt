@@ -45,7 +45,34 @@ export async function migrateAbilitySources() {
   await migrateCanonicalIds();
 }
 
+/**
+ * Build-only normalization: canonical English sources alone determine every
+ * generated EN/FR document. Legacy FR authoring is not inspected or modified.
+ */
+export async function migrateEnglishSources() {
+  const onlyEnglish = ["en"];
+  const removed = await pruneAbilityArtifacts(onlyEnglish);
+  await pruneAbilityReferences(removed, onlyEnglish);
+  await mergeGenreAbilities(onlyEnglish);
+  const english = await collectEnglishRegistry();
+  let ids = await collectStandaloneEnglishLogicalIds();
+  await migrateLanguage("en", english, ids);
+  ids = await collectStandaloneEnglishLogicalIds();
+  const after = await pruneAbilityArtifacts(onlyEnglish);
+  await pruneAbilityReferences(after, onlyEnglish);
+  await normalizeDescriptorSources(onlyEnglish);
+  await normalizeTypeSources(onlyEnglish);
+  await normalizeFocusSources(onlyEnglish);
+  await normalizeEquipmentSources(onlyEnglish);
+  await migrateCanonicalIds(undefined, { englishOnly: true });
+}
+
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  await migrateAbilitySources();
-  console.log("Standalone ability sources migrated.");
+  if (process.argv.includes("--english-only")) {
+    await migrateEnglishSources();
+    console.log("English CRD source normalization complete.");
+  } else {
+    await migrateAbilitySources();
+    console.log("Standalone ability sources migrated.");
+  }
 }

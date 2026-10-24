@@ -59,8 +59,8 @@ export function rewriteCompendiumLinks(value, mapped) {
  * @param {string} checkout Valid owned authoring checkout/root.
  * @returns {Promise<object>} Migration counts; all sources rewritten once validation succeeds.
  */
-export async function migrateCanonicalIds(checkout = root) {
-  const rows = await catalogue(checkout);
+export async function migrateCanonicalIds(checkout = root, { englishOnly = false } = {}) {
+  const rows = (await catalogue(checkout)).filter(row => !englishOnly || row.language === "en");
   const pairs = new Map();
   const folders = new Map();
   const UUIDs = new Map();
@@ -107,18 +107,18 @@ export async function migrateCanonicalIds(checkout = root) {
   }
 
   for (const [key, pair] of pairs) {
-    if (!pair.en || !pair.fr) throw new Error("Missing bilingual CRD source: " + key);
-    if (pair.en.data.document !== pair.fr.data.document || pair.en.data.type !== pair.fr.data.type) {
+    if (!pair.en || (!englishOnly && !pair.fr)) throw new Error("Missing bilingual CRD source: " + key);
+    if (pair.fr && (pair.en.data.document !== pair.fr.data.document || pair.en.data.type !== pair.fr.data.type)) {
       throw new Error("Bilingual document kind differs: " + key);
     }
     const englishPages = pair.en.data.pages ?? [];
-    const frenchPages = pair.fr.data.pages ?? [];
-    if (englishPages.length !== frenchPages.length) throw new Error("Journal page count differs: " + key);
+    const frenchPages = pair.fr?.data.pages ?? [];
+    if (!englishOnly && englishPages.length !== frenchPages.length) throw new Error("Journal page count differs: " + key);
     for (const [index, english] of englishPages.entries()) {
       const anchor = english.flags?.cypherFoundry?.identity?.sourcePageId ?? english._id;
       if (!anchor) throw new Error("Missing Journal page ID: " + key + "/" + index);
       const targetId = proposedPageId(pair.canonical, anchor);
-      for (const row of [pair.en, pair.fr]) {
+      for (const row of englishOnly ? [pair.en] : [pair.en, pair.fr]) {
         const page = row.data.pages[index];
         const oldPageUuid = "Compendium.cypher." + row.pack + ".JournalEntry." +
           row.data._id + ".JournalEntryPage." + page._id;
@@ -139,9 +139,9 @@ export async function migrateCanonicalIds(checkout = root) {
   }
 
   for (const [key, pair] of folders) {
-    if (!pair.en || !pair.fr) throw new Error("Missing bilingual Folder: " + key);
+    if (!pair.en || (!englishOnly && !pair.fr)) throw new Error("Missing bilingual Folder: " + key);
     const id = proposedFolderId(pair.en.family, pair.en.relative);
-    for (const row of [pair.en, pair.fr]) {
+    for (const row of englishOnly ? [pair.en] : [pair.en, pair.fr]) {
       if (folderIds.has(row.pack + ":" + row.data._id)) {
         throw new Error("Duplicate old Folder ID in " + row.pack);
       }
