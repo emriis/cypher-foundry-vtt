@@ -241,7 +241,7 @@ test("rollAttack delegates weapon familiarity to the common task service", async
     }
   };
   const item = {
-    type: "attack",
+    type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } },
     name: "Sword",
     actor,
     system: {
@@ -281,7 +281,7 @@ test("rollAttack hinders a weapon explicitly used one-handed", async () => {
     }
   };
   const item = {
-    type: "attack",
+    type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } },
     name: "Rifle",
     actor,
     system: {
@@ -293,8 +293,10 @@ test("rollAttack hinders a weapon explicitly used one-handed", async () => {
     }
   };
 
+  item.flags.cypher.equipmentUse.hands = 1;
   await rollAttack(item, { oneHanded: true });
   assert.equal(received.extraHinderSteps, 1);
+  item.flags.cypher.equipmentUse.hands = 2;
   await rollAttack(item, { oneHanded: false });
   assert.equal(received.extraHinderSteps, 0);
 });
@@ -324,7 +326,7 @@ test("rollAttack resolves target effects from the selected NPC level", async () 
     system: { level: 2 }
   };
   const item = {
-    type: "attack",
+    type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } },
     name: "Stunner",
     actor,
     system: {
@@ -373,7 +375,7 @@ test("rollAttack passes the selected NPC target and Armor bypass to task resolut
     system: { level: 4, armor: 4 }
   };
   const item = {
-    type: "attack",
+    type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } },
     name: "Armor Piercer",
     actor,
     system: {
@@ -506,7 +508,7 @@ test("rollAttack applies trained attack skill after unfamiliar weapon cancellati
     }
   };
   const item = {
-    type: "attack",
+    type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } },
     name: "Sword",
     actor,
     system: {
@@ -550,7 +552,7 @@ test("rollAttack applies specialized weapon skill as one remaining ease when unf
     }
   };
   const item = {
-    type: "attack",
+    type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } },
     name: "Sword",
     actor,
     system: {
@@ -594,7 +596,7 @@ test("rollAttack does not double-count an explicit inability skill", async () =>
     }
   };
   const item = {
-    type: "attack",
+    type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } },
     name: "Sword",
     actor,
     system: {
@@ -634,7 +636,7 @@ test("rollAttack applies and forwards explicitly adjudicated extreme range", asy
     }
   };
   const item = {
-    type: "attack",
+    type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } },
     name: "Range Test Rifle",
     actor,
     system: {
@@ -677,7 +679,7 @@ test("rollAttack consumes the active alternate configuration for category and da
   };
   const item = {
     id: "configurable-weapon",
-    type: "attack",
+    type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } },
     name: "Configurable Cannon",
     actor,
     system: {
@@ -699,7 +701,7 @@ test("toggleAttackConfiguration persists the next configuration and records its 
   globalThis.game = { i18n: { localize: value => value, format: (value, data) => value + ":" + data.configuration } };
   globalThis.ChatMessage = { getSpeaker: () => ({}), create: async value => { message = value; } };
   const item = {
-    id: "configurable-weapon", type: "attack", name: "Configurable Cannon",
+    id: "configurable-weapon", type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } }, name: "Configurable Cannon",
     actor: { id: "pc-id" },
     system: { mechanics: { activeConfiguration: "primary", alternateConfiguration: { enabled: true, attackType: "medium", action: "action" } } },
     async update(value) { update = value; }
@@ -709,13 +711,13 @@ test("toggleAttackConfiguration persists the next configuration and records its 
   assert.deepEqual(update, { "system.mechanics.activeConfiguration": "alternate" });
   assert.equal(message.flags.cypher.configuration, "alternate");
   assert.equal(message.flags.cypher.actionCost, "action");
-  assert.equal(await toggleAttackConfiguration({ type: "attack", system: { mechanics: { alternateConfiguration: { enabled: false } } } }), false);
+  assert.equal(await toggleAttackConfiguration({ type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } }, system: { mechanics: { alternateConfiguration: { enabled: false } } } }), false);
 });
 
 
 test("heavy immediate movement adds one hindered step while retaining Last timing", async () => {
   const actor = { system: { freeWeaponCategories: ["heavy"] }, items: new Map(), async rollTask(options) { return options; } };
-  const item = { id: "heavy", type: "attack", actor, name: "Heavy", system: { attackType: "heavy", damage: 6, stat: "might" } };
+  const item = { id: "heavy", type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } }, actor, name: "Heavy", system: { attackType: "heavy", damage: 6, stat: "might" } };
   const stationary = await rollAttack(item);
   const moving = await rollAttack(item, { immediateMovement: true });
   assert.equal(moving.extraHinderSteps, stationary.extraHinderSteps + 1);

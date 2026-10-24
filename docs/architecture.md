@@ -53,6 +53,9 @@ The main gameplay boundaries are:
   GM decisions, player requests, and receipt-based XP settlement.
 - `damage-service.mjs`: damage, wounds, armor, shields, repair, and token
   statuses.
+- `equipment-hands-service.mjs`: explicit held/stowed declarations, finite hand
+  capacity and source-required tripod/operators, with rules in
+  `module/rules/equipment-hands.mjs`. See [equipment constraints](equipment-constraints.md).
 - `general-action-service.mjs`, `cooperative-service.mjs` and
   `general-effect-service.mjs`: explicit cooperation, guard and condition
   declarations, source-turn intervals and declared special-damage profiles;

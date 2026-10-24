@@ -1,4 +1,6 @@
 import { roundActionContext } from "./round-action-service.mjs";
+import { equipmentAttackProblem, equipmentGrip } from "./equipment-hands-service.mjs";
+import { minimumWeaponHands } from "../rules/equipment-hands.mjs";
 import { runActorAction } from "./action-guard.mjs";
 import { CYPHER } from "../config.mjs";
 import {
@@ -187,6 +189,13 @@ export function prepareAttackOptions(item, {
 } = {}) {
   if (item.type !== "attack" || !item.actor) return null;
   const actor = item.actor;
+  const equipmentProblem = equipmentAttackProblem(item, { abilitySource, equipmentFlightId: taskOptions.equipmentFlightId });
+  if (equipmentProblem) {
+    ui.notifications.warn(game.i18n.localize(`CYPHER.EquipmentHands.${equipmentProblem}`));
+    return null;
+  }
+  const actualGrip = equipmentGrip(actor.items?.get?.(item.id) ?? item);
+  if (oneHanded && actualGrip?.hands !== 1) return null;
   const weaponConfiguration = resolveWeaponConfiguration(item.system);
   const attackType = weaponConfiguration.attackType;
   const baseDamage = weaponConfiguration.baseDamage;
@@ -212,7 +221,7 @@ export function prepareAttackOptions(item, {
     skillLevel: matchingAttackSkill?.system.level ?? null
   });
   const weaponHinder = weaponSkillModifier < 0 ? Math.abs(weaponSkillModifier) : 0;
-  const oneHandHinder = oneHanded
+  const oneHandHinder = actualGrip?.hands === 1
     && item.system.mechanics?.hinderedWhenUsedOneHanded ? 1 : 0;
   const weaponRangeAdjudication = resolveWeaponRangeAdjudication({
     range: item.system.range,
@@ -251,7 +260,8 @@ export function prepareAttackOptions(item, {
       skillItemId,
       configuration: weaponConfiguration.configuration,
       attackType,
-      actionTiming: weaponConfiguration.actionTiming
+      actionTiming: weaponConfiguration.actionTiming,
+      equipmentFlightId: taskOptions.equipmentFlightId ?? null
     },
     armorBypass: item.system.mechanics?.ignoresPhysicalArmor ?? 0,
     flavor: `${game.i18n.localize("CYPHER.Roll.Attack")}: ${item.name}`
@@ -303,12 +313,22 @@ export async function rollDepletion(item) {
 
 /** Switch a weapon between its CRD-defined primary and alternate configurations. */
 export async function toggleAttackConfiguration(item) {
+  if (!item || item.isOwner === false || item.actor?.isOwner === false) return false;
+  return (await runActorAction(item.actor ?? item, "weaponConfiguration", () => toggleWeaponConfiguration(item))) ?? false;
+}
+
+/** Configuration changes share the equipment owner's local reservation with attacks and grip changes. */
+async function toggleWeaponConfiguration(item) {
   if (item?.type !== "attack" || !item.system.mechanics?.alternateConfiguration?.enabled) {
     return false;
   }
   const current = item.system.mechanics.activeConfiguration === "alternate"
     ? "alternate" : "primary";
   const next = current === "primary" ? "alternate" : "primary";
+  const grip = equipmentGrip(item);
+  const nextSystem = { ...item.system, mechanics: { ...item.system.mechanics, activeConfiguration: next } };
+  if (item.isOwner === false || item.actor?.isOwner === false
+    || grip?.held && grip.hands < minimumWeaponHands(nextSystem)) return false;
   await item.update({ "system.mechanics.activeConfiguration": next });
   await ChatMessage.create({
     speaker: ChatMessage.getSpeaker({ actor: item.actor }),

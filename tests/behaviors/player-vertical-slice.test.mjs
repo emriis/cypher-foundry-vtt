@@ -132,7 +132,7 @@ describe("Given a player-facing Cypher character", () => {
     assert.ok(actor.items.some(item => item.type === "ability"));
 
     const attack = {
-      type: "attack", name: "Training sword", actor,
+      type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } }, name: "Training sword", actor,
       system: { attackType: "medium", damage: 4, stat: "might", freelyUsable: true, weaponFamily: "", attackSkillCategory: "" }
     };
     actor.rollTask = async options => ({ success: true, damage: options.baseDamage });

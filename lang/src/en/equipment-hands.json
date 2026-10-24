@@ -1,0 +1,28 @@
+{
+  "CYPHER": {
+    "EquipmentHands": {
+      "title": "Hands and weapon setup",
+      "configure": "Grip and setup",
+      "capacity": "Declare available hands (GM)",
+      "unknown": "Grip not declared",
+      "carried": "Carried, not held",
+      "held": "Held: {hands} hands",
+      "ready": "Ready",
+      "hold": "Hold / ready this object or attack",
+      "hands": "Occupied hands (0 only for an explicitly hands-free attack or object)",
+      "zeroHint": "A zero-hand attack must first be declared by the GM for this Item. This cannot bypass a heavy or explicitly two-handed weapon requirement.",
+      "minimum": "Source-required minimum while held: {hands} hands.",
+      "tripod": "Required tripod is deployed",
+      "operators": "Other participating operators (Ctrl/Cmd to select several)",
+      "crewHint": "The acting character counts as one operator. Participants must be distinct actual characters and able to operate the weapon. Participation and deployment are explicit declarations; no distance, bonus or action cost is inferred.",
+      "hint": "Carrying equipment does not occupy hands. Declare what is actually held. Heavy weapons require two hands unless their source explicitly permits hindered one-handed use. Stowing an object keeps it in inventory. Conflicting grips never unequip another object.",
+      "save": "Save declaration",
+      "needGrip": "Declare that this attack or object is held before using it.",
+      "needTwoHands": "The declared number of hands does not satisfy this weapon's requirements.",
+      "handsFull": "Not enough free hands. Stow another object or ask the GM to adjust available hands.",
+      "needTripod": "Deploy the required tripod before attacking.",
+      "needCrew": "Assign enough distinct available operators before attacking.",
+      "invalid": "Declaration refused. Check free hands, source requirements, shield possession and available distinct operators. Nothing else was unequipped."
+    }
+  }
+}

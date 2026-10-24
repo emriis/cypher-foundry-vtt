@@ -6,6 +6,7 @@
 import { canShieldAbsorbWound, isShieldBroken } from "../rules/wounds.mjs";
 import { runActorAction } from "./action-guard.mjs";
 import { shieldSurvivesMajor, shieldOwnerItems } from "../rules/shield-abilities.mjs";
+import { canReadyShield, equipmentGrip } from "./equipment-hands-service.mjs";
 
 /**
  * Expose current shield choices to sheets without putting eligibility rules in UI.
@@ -14,7 +15,7 @@ import { shieldSurvivesMajor, shieldOwnerItems } from "../rules/shield-abilities
  */
 export function getAvailableShields(actor) {
   const items = actor.items?.contents ?? (Array.isArray(actor.items) ? actor.items : Array.from(actor.items?.values?.() ?? []));
-  return items.filter(canShieldAbsorbWound);
+  return items.filter(item => canShieldAbsorbWound(item) && equipmentGrip(item)?.held && canReadyShield(item));
 }
 
 /**
@@ -33,6 +34,7 @@ export async function toggleEquipped(item) {
 /** Keep equipment changes outside another pending task on the same owner. */
 async function toggleOwnedEquipment(item) {
   const newState = !item.system.equipped;
+  if (newState && item.type === "shield" && !canReadyShield(item)) return false;
   if (newState && item.type === "shield" && (item.system.inHand === false
     || isShieldBroken(item.system.wounds, shieldSurvivesMajor(item, shieldOwnerItems(item))))) return false;
   if (item.type === "armor" && newState) {
@@ -54,7 +56,9 @@ async function toggleOwnedEquipment(item) {
     }
   }
 
-  await item.update({ "system.equipped": newState });
+  const grip = item.flags?.cypher?.equipmentUse;
+  await item.update({ "system.equipped": newState,
+    ...(item.type === "shield" && grip?.version === 1 ? { "flags.cypher.equipmentUse": { ...grip, held: newState } } : {}) });
   return true;
 }
 

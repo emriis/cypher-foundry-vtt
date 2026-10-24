@@ -2130,3 +2130,13 @@
     grid-template-columns: minmax(0, 1fr) auto;
   }
 }
+
+/* Long source names and translated setup messages must wrap in narrow PC sheets. */
+.cypher.sheet .equipment-hands .flexrow {
+  flex-wrap: wrap;
+}
+
+.cypher.sheet .equipment-hands .flexrow > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}

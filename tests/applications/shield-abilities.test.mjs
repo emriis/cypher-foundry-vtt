@@ -191,7 +191,8 @@ test("invalid targets, missing range and insufficient activation reject without 
 test("Hidden Shield hinders both the main melee attack and its extra shield attack", async () => {
   const s = scenario("hidden-shield", [12, 12]);
   await designateShield(s.ability, s.shield.id);
-  const main = { id: "main", type: "attack", actor: s.actor,
+  s.ordinary.system.equipped = false;
+  const main = { id: "main", type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 1 } } }, actor: s.actor,
     system: { stat: "might", attackType: "medium", damage: 4, freelyUsable: true, range: "immediate" } };
   s.actor.items.set(main.id, main);
   await executeShieldAbility(s.ability, { ...s.options, mode: "paired", mainAttackId: main.id,
@@ -272,7 +273,8 @@ test("unowned shields and stale special designations reject before dice or Pool 
 test("Hidden Shield's extra melee attack may follow a ranged main attack", async () => {
   const s = scenario("hidden-shield", [12, 12]);
   await designateShield(s.ability, s.shield.id);
-  const main = { id: "ranged", type: "attack", actor: s.actor, system: {
+  s.ordinary.system.equipped = false;
+  const main = { id: "ranged", type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 1 } } }, actor: s.actor, system: {
     stat: "speed", attackType: "medium", damage: 4, freelyUsable: true, range: "short"
   } };
   s.actor.items.set(main.id, main);

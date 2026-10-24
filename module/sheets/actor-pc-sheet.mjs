@@ -1,4 +1,5 @@
 import { promptGMIntrusion, promptPlayerIntrusion } from "./intrusion-dialogs.mjs";
+import { equipmentHandsDisplay, promptEquipmentUse, promptHandCapacity, ensureEquipmentUse } from "./equipment-hands-dialogs.mjs";
 import { environmentalDisplay, promptEnvironment, promptEnvironmentExposure, endEnvironment } from "./environment-dialogs.mjs";
 import { isEnvironmentAuthority } from "../applications/environment-service.mjs";
 import { promptRollOptions, promptWeaponAttackCategory, promptWeaponAbility, taskModifierFields, readTaskModifiers } from "./dialogs.mjs";
@@ -53,6 +54,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     // Template buttons declare data-action="...". Foundry routes each name to
     // the handler below, binding `this` to the sheet, even for static handlers.
     actions: {
+      promptEquipmentUse, promptHandCapacity,
       promptEnvironment, promptEnvironmentExposure, endEnvironment,
       toggleGuarding, clearGeneralEffect, promptGeneralCondition, promptCooperativeAction, promptSpecialDamage, promptDiseaseCheck,
       rollStat: CypherPCSheet.#onRollStat,
@@ -104,7 +106,8 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
         "systems/cypher/templates/actor/parts/header.hbs",
         "systems/cypher/templates/actor/parts/main.hbs",
         "systems/cypher/templates/actor/parts/general-actions.hbs",
-        "systems/cypher/templates/actor/parts/environment.hbs"
+        "systems/cypher/templates/actor/parts/environment.hbs",
+        "systems/cypher/templates/actor/parts/equipment-hands.hbs"
       ],
       scrollable: [".pc-dashboard"]
     }
@@ -124,6 +127,8 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     context.actor = this.actor;
     context.generalEffects = generalEffectDisplay(this.actor);
     context.generalPC = true;
+    context.equipmentHands = equipmentHandsDisplay(this.actor);
+    context.canSetHandCapacity = game.user.isGM;
     context.environmentAuthority = isEnvironmentAuthority();
     context.environmentalExposures = environmentalDisplay(this.actor);
     context.superheroicsStat = this.actor.flags?.cypher?.superheroicsStat ?? "";
@@ -265,7 +270,10 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     } else if (options.operation === "finishWork") {
       if (!await confirmShieldWork(true)) return;
       result = await finishShieldWork(shield, { workCompleted: true });
-    } else result = await executeShieldAbility(ability, options);
+    } else {
+      if (options.mainAttackId && !await ensureEquipmentUse(this, this.actor.items.get(options.mainAttackId))) return;
+      result = await executeShieldAbility(ability, options);
+    }
     if (!result) ui.notifications.warn(game.i18n.localize("CYPHER.ShieldAbility.InvalidUse"));
   }
 
@@ -282,6 +290,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     const selection = await promptWeaponAbility(this.actor, item);
     if (!selection) return;
     const weapon = this.actor.items.get(selection.weaponId);
+    if (!await ensureEquipmentUse(this, weapon)) return;
     const rollOptions = await promptRollOptions(this.actor, {
       isAttack: true, weapon, isWeaponAbility: true, abilitySource: { itemId: item.id }
     });
@@ -415,6 +424,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
   static async #onRollAttack(event, target) {
     const item = this.actor.items.get(target.dataset.itemId);
     if (!item) return;
+    if (!await ensureEquipmentUse(this, item)) return;
     const result = await promptRollOptions(this.actor, {
       difficulty: 3,
       isAttack: true,

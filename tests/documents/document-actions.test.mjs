@@ -73,7 +73,7 @@ test("applyDamage converts pool overflow into a wound and synchronizes statuses"
 test("rollAttack delegates weapon familiarity and damage to the actor task roll", async () => {
   let received;
   const item = {
-    type: "attack",
+    type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } },
     name: "Sword",
     system: { damage: 4, attackType: "medium", stat: "might", freelyUsable: false },
     actor: {
@@ -93,7 +93,7 @@ test("document rollAttack forwards an explicit target to weapon mechanics", asyn
   let received;
   const target = { type: "npc", system: { level: 2 } };
   const item = {
-    type: "attack",
+    type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } },
     name: "Stunstick",
     system: {
       damage: 0,
@@ -129,7 +129,7 @@ test("document rollAttack forwards an explicit target to weapon mechanics", asyn
 test("light weapons use the Core Character baseline and ease their attack", async () => {
   let received;
   const item = {
-    type: "attack",
+    type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } },
     name: "Knife",
     system: { damage: 2, attackType: "light", stat: "speed", freelyUsable: false },
     actor: {
@@ -152,7 +152,7 @@ test("light weapons use the Core Character baseline and ease their attack", asyn
 test("a practiced skill for the exact attack category cancels unfamiliar-weapon hindrance", async () => {
   let received;
   const item = {
-    type: "attack",
+    type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } },
     name: "Broadsword",
     system: {
       damage: 4,
@@ -194,7 +194,7 @@ test("Weapon Master familiarity applies only to its selected attack category", a
     rollTask: async options => { received = options; return "rolled"; }
   };
   const item = {
-    type: "attack",
+    type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } },
     name: "Broadsword",
     system: {
       damage: 4,
@@ -360,7 +360,7 @@ test("rollDefense integration applies a wound on a failed defense", async () => 
 test("document attack forwards trained weapon skill without retaining unfamiliar hindrance", async () => {
   let received;
   const item = {
-    type: "attack",
+    type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } },
     name: "Broadsword",
     system: {
       damage: 4,
@@ -394,7 +394,7 @@ test("document attack forwards trained weapon skill without retaining unfamiliar
 test("document attack forwards specialized weapon skill as one ease when unfamiliar", async () => {
   let received;
   const item = {
-    type: "attack",
+    type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } },
     name: "Broadsword",
     system: {
       damage: 4,

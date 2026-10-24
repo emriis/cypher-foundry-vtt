@@ -322,6 +322,8 @@ GM declarations, player requests, mandatory XP sharing, and their resumable
 settlement are documented in [intrusions.md](intrusions.md).
 GM-declared environmental damage, protection, repetition and failure checkpoints
 are documented in [environmental-hazards.md](environmental-hazards.md).
+Held equipment, weapon/shield compatibility, tripod and crew prerequisites are
+documented in [equipment-constraints.md](equipment-constraints.md).
 
 The broad architecture refactor is complete. Do not reopen the completed
 Phase 1-8 work as a standing task.

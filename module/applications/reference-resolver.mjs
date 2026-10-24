@@ -32,6 +32,14 @@ export async function resolveDocumentReference(reference, expectedType) {
   return document;
 }
 
+/** Resolve a cached world/token document synchronously for read-only equipment preflight. */
+export function resolveCachedDocumentReference(uuid) {
+  try {
+    const resolve = globalThis.foundry?.utils?.fromUuidSync ?? globalThis.fromUuidSync;
+    return typeof uuid === "string" && resolve ? resolve(uuid) : null;
+  } catch { return null; }
+}
+
 /**
  * Resolve a collection of references while preserving input order.
  * Invalid or wrong-type references are omitted.

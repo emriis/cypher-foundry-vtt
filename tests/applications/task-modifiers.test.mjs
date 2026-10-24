@@ -40,7 +40,7 @@ test("Given matching weapon training, when the real attack pipeline runs, then s
   for (const [level, steps] of [["trained", 1], ["specialized", 2], ["expert", 3]]) {
     const actor = pc();
     actor.items.set("skill", { type: "skill", system: { level, stepModifier: steps, attackCategory: "mediumBladed" } });
-    const weapon = { type: "attack", actor, name: "Sword", system: {
+    const weapon = { type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } }, actor, name: "Sword", system: {
       stat: "might", damage: 4, attackType: "medium", attackSkillCategory: "mediumBladed", freelyUsable: true
     } };
     const result = await rollAttack(weapon, { difficulty: 6, skillItemId: "skill" });

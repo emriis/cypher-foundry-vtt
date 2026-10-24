@@ -24,7 +24,7 @@ test("Hidden Shield ability controls create its shield and hinder both paired at
   const ids = await setup(page, "hidden-shield");
   const mainId = await page.evaluate(async ids => {
     const actor = game.actors.get(ids.actor);
-    const [main] = await actor.createEmbeddedDocuments("Item", [{ name: "Main melee attack", type: "attack",
+    const [main] = await actor.createEmbeddedDocuments("Item", [{ name: "Main melee attack", type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 1 } } },
       system: { stat: "might", attackType: "medium", damage: 4, freelyUsable: true, range: "immediate" } }]);
     await actor.sheet.render({ force: true });
     return main.id;

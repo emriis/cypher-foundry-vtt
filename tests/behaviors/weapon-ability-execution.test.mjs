@@ -27,7 +27,7 @@ function scenario(kind, d20 = 10) {
     rollTask(options) { return rollTask(this, options); } };
   const ability = { id: "ability", type: "ability", name: kind, parent: actor, actor,
     system: { key: kind, cost: { stat: "speed", amount: kind === "spray" ? 2 : 3 } } };
-  const weapon = { id: "weapon", type: "attack", name: "Weapon", actor, update,
+  const weapon = { id: "weapon", type: "attack", flags: { cypher: { equipmentUse: { version: 1, held: true, hands: 2 } } }, name: "Weapon", actor, update,
     system: { stat: "speed", attackType: "medium", damage: 4, freelyUsable: true,
       availableUses: 2, mechanics: { rapidFire: true } } };
   actor.items.set(ability.id, ability);
