@@ -27,7 +27,7 @@ jobs:
       - run: npm ci
       - run: npm run build:packs
       - run: npm run test:build
-      - run: npm run package
+      - run: npm run package:archive
       - run: node scripts/verify-package.mjs
       - name: Upload generated system
         uses: actions/upload-artifact@v4
@@ -70,7 +70,7 @@ jobs:
         run: |
           set -euo pipefail
           cp dist/system.zip /tmp/system-first.zip
-          npm run package
+          npm run package:archive
           cmp --silent /tmp/system-first.zip dist/system.zip || {
             echo "::error::The release package is not reproducible: two consecutive builds produced different dist/system.zip files."
             exit 1

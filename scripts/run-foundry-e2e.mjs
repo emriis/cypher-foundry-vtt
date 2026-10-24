@@ -386,7 +386,7 @@ try {
   // ROOT points to the temporary checkout, never the original repository here.
   await runCommand(npmCommand, ["run", "migrate:packs"]);
   await runCommand(npmCommand, ["run", "build:packs", "--", "--normalized-workspace", ...(INCLUDE_PROPOSED_TRANSLATIONS ? ["--include-proposed"] : [])]);
-  await runCommand(npmCommand, ["run", "package"]);
+  await runCommand(npmCommand, ["run", "package:archive"]);
   await runCommand(npmCommand, ["run", "test:build"], {
     env: { ...process.env, CYPHER_TEST_NORMALIZED_SOURCES: "true" }
   });

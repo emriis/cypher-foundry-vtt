@@ -2,8 +2,8 @@
  * Builds Foundry-readable LevelDB packs from the editable JSON sources.
  *
  * Normalize a disposable checkout before selecting source-hashed translations.
- * French compiler input always starts from English CRD display text, not legacy
- * French _source prose. Compile all packs before publication, preserving authored
+ * French compiler input derives directly from normalized English CRD documents
+ * and translations/fr; legacy French _source files are never consulted. Compile all packs before publication, preserving authored
  * inputs and proposal review statuses.
  */
 import { compilePack } from "@foundryvtt/foundryvtt-cli";
@@ -13,6 +13,7 @@ import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 import { readCompendiumCatalogue, readFrenchProposals } from "./review-translations.mjs";
 import { materializeTranslations } from "./localization/materialize-translations.mjs";
+import { deriveFrenchCatalogue, frenchReference } from "./localization/derive-french-catalogue.mjs";
 import { createValidationWorkspace, removeValidationWorkspace, assertValidationCheckout } from "./validation-workspace.mjs";
 
 import { compileBeforePublish } from "./pack-publication.mjs";
@@ -26,7 +27,7 @@ async function discoverPacks(checkoutRoot) {
 
   for (const entry of entries) {
     if (!entry.isDirectory()) continue;
-    if (!entry.name.endsWith("-en") && !entry.name.endsWith("-fr")) continue;
+    if (!entry.name.endsWith("-en")) continue;
 
     const source = path.join(packsRoot, entry.name, "_source");
     try {
@@ -37,7 +38,7 @@ async function discoverPacks(checkoutRoot) {
     }
   }
 
-  return packNames.sort();
+  return packNames.flatMap(name => [name, name.replace(/-en$/, "-fr")]).sort();
 }
 
 const FOUNDRY_ID_PATTERN = /^[A-Za-z0-9]{16}$/;
@@ -61,7 +62,7 @@ function normalizeId(id, relativePath) {
 }
 
 /** Install every generated French document and normalize Folder IDs in temporary compiler input. */
-async function normalizeSourceTree(checkoutRoot, sourceRoot, normalizedRoot, translations) {
+async function normalizeSourceTree(checkoutRoot, sourceRoot, normalizedRoot, overrides, pack, folderNames) {
   await fs.cp(sourceRoot, normalizedRoot, { recursive: true });
 
   async function visit(directory) {
@@ -75,7 +76,15 @@ async function normalizeSourceTree(checkoutRoot, sourceRoot, normalizedRoot, tra
 
       const relativePath = path.relative(normalizedRoot, entryPath).replaceAll(path.sep, "/");
       const sourceFile = path.relative(checkoutRoot, path.join(sourceRoot, relativePath)).replaceAll(path.sep, "/");
-      const data = structuredClone(translations.get(sourceFile) ?? JSON.parse(await fs.readFile(entryPath, "utf8")));
+      const data = structuredClone(overrides.get(sourceFile) ?? JSON.parse(await fs.readFile(entryPath, "utf8")));
+      if (pack.endsWith("-fr") && data._key?.startsWith("!folders!")) {
+        const relative = relativePath.replaceAll(path.sep, "/");
+        const folder = folderNames[`${pack.slice(0, -3)}/${relative}`];
+        if (folder) {
+          if (data.name !== folder.source) throw new Error("Stale French folder label for " + relative);
+          data.name = folder.text;
+        }
+      }
       const normalizedId = normalizeId(data._id, relativePath);
       data._id = normalizedId;
 
@@ -111,21 +120,27 @@ async function compile() {
     }
     const packs = await discoverPacks(checkoutRoot);
     const [catalogue, proposals] = await Promise.all([
-      readCompendiumCatalogue(checkoutRoot), readFrenchProposals(checkoutRoot)
+      readCompendiumCatalogue(checkoutRoot, { languages: ["en"] }), readFrenchProposals(checkoutRoot)
     ]);
-    const translations = materializeTranslations(catalogue, proposals, {
+    const translations = materializeTranslations([...catalogue, ...deriveFrenchCatalogue(catalogue)], proposals, {
       includeProposed: process.argv.includes("--include-proposed"),
       requireReviewed: process.argv.includes("--require-reviewed")
     });
 
+    // Map each translated document onto its English file path for the compiler.
+    const translatedEnglishFiles = new Map([...translations].map(([file, document]) =>
+      [file.replace(/-fr\/_source\//, "-en/_source/"), frenchReference(document)]));
+    const folderNames = JSON.parse(await fs.readFile(
+      path.join(checkoutRoot, "translations/fr/_folders.json"), "utf8"));
     // Complete validation and compilation before touching existing outputs.
     // A compiler failure in a later pack must preserve every previous database.
     await compileBeforePublish(packs, async pack => {
-      const source = path.join(checkoutRoot, "packs", pack, "_source");
+      const source = path.join(checkoutRoot, "packs", pack.replace(/-fr$/, "-en"), "_source");
       const normalizedSource = path.join(workspace, `${pack}-source`);
       const output = path.join(workspace, pack);
 
-      await normalizeSourceTree(checkoutRoot, source, normalizedSource, translations);
+      await normalizeSourceTree(checkoutRoot, source, normalizedSource,
+        pack.endsWith("-fr") ? translatedEnglishFiles : new Map(), pack, folderNames);
       console.log(`Building ${pack}...`);
       await compilePack(normalizedSource, output, { recursive: true });
     }, async pack => {

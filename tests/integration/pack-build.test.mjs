@@ -109,6 +109,15 @@ test("Given legacy bilingual sources, when packs build, then reviewed and draft 
     assert.equal(baselineFocus.flags.cypherFoundry.translation.status, "untranslated");
     assert.equal(baselineFocus.flags.cypherFoundry.translation.sourceLanguage, "en");
     const frenchAbilities = await extractedDocuments(frenchAbilitiesDirectory);
+    const lowerTemperature = frenchAbilities.find(document =>
+      document.flags?.cypherFoundry?.crd?.logicalId === "ability.lower-temperature");
+    const temperatureProposal = JSON.parse(await readFile(
+      path.join(root, "translations/fr/abilities/a-l/ability.lower-temperature.json"), "utf8"));
+    assert.ok(lowerTemperature, "Missing compiled Lower Temperature ability");
+    assert.equal(lowerTemperature.system.description,
+      temperatureProposal.fields.find(field => field.path === "system.description").text,
+      "The compiled French Ability must match its sole translation authority");
+    assert.doesNotMatch(lowerTemperature.system.description, /Farenheit|Celsius\?\?\?/i);
     const frenchRules = await extractedDocuments(frenchRulesDirectory);
     const reviewedDocument = (documents, logicalId) => {
       const document = documents.find(document => document.flags?.cypherFoundry?.crd?.logicalId === logicalId);

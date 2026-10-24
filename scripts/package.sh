@@ -50,6 +50,7 @@ for relative_path in "${required_paths[@]}"; do
         ! -name "LOG" \
         ! -name "LOG.old" \
         ! -name "*.log" \
+        ! -path "*/_source/*" \
         -print0
     ) | while IFS= read -r -d "" file; do
       relative_file="${file#./}"

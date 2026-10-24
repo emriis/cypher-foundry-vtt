@@ -23,7 +23,7 @@
     "audit:i18n": "node scripts/review-translations.mjs",
     "preview:translations": "node scripts/review-translations.mjs --preview",
     "build:packs": "node scripts/build-packs.mjs",
-    "package": "node scripts/package.mjs",
+    "package": "npm run build:lang && npm run build:packs && node scripts/package.mjs",
     "migrate:packs": "node scripts/migrate-ability-sources.mjs",
     "audit:public-data": "node scripts/audit-public-data.mjs",
     "test:coverage": "node scripts/run-test-coverage.mjs",
@@ -43,7 +43,9 @@
     "audit:types-foci-pr11": "node scripts/audit-type-focus-pr11.mjs",
     "audit:equipment-pr12": "node scripts/audit-equipment-pr12.mjs",
     "audit:rules-journals": "node scripts/audit-rules-journals.mjs",
-    "audit:localization-integrity": "node scripts/audit-localization-integrity.mjs"
+    "audit:localization-integrity": "node scripts/audit-localization-integrity.mjs",
+    "package:archive": "node scripts/package.mjs",
+    "package:release": "npm run build:lang && npm run build:packs -- --require-reviewed && node scripts/package.mjs"
   },
   "dependencies": {
     "@foundryvtt/foundryvtt-cli": "^3.0.4"
