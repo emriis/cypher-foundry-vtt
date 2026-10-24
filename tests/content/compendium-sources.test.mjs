@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
-import { readPackSourceMap, readPackSources } from "../helpers/canonical-sources.mjs";
+import { readPackSourceMap } from "../helpers/canonical-sources.mjs";
 
 import { validateCrdSourceRecord, getCrdLogicalId } from "../../module/crd/source-schema.mjs";
 
