@@ -253,14 +253,17 @@ document writes.
 
 ### Building French compendiums
 
-The standalone build normalizes an owned disposable checkout, reads its EN/FR
-catalogue and materializes selected French proposals into temporary compiler
-JSON. No preceding source migration is required. It preserves source files under
+The standalone build normalizes an owned disposable checkout, reads its **English**
+catalogue, derives French documents from it, and applies selected French proposals
+into temporary compiler JSON. No preceding source migration is required. It preserves source files under
 `packs/*/_source/` and the proposal review statuses. Its generated LevelDB output
 is the ordinary content that Foundry loads.
 
 ```powershell
-# Replace generated packs while preserving authored sources:
+# Normal use: rebuild UI dictionaries, LevelDB packs, and installable ZIP:
+npm run package
+
+# Rebuild packs only (independent of historical FR _source):
 npm run build:packs
 
 # Compile all French editorial drafts for review:
@@ -274,12 +277,14 @@ npm run test:e2e -- --proposed-translations
 ```
 
 **There is one French editorial authority:** `translations/fr/`. Every French
-document is materialized at build time from the canonical English CRD display
-fields plus a complete source-hashed French proposal when it is eligible. The
-historical display strings in `packs/*-fr/_source/` are **never** used as a
-fallback and cannot influence the compiled French text. Those authoring files
-remain temporary mechanical/identity shells pending their removal in a separate
-schema migration; they must not be edited as translations.
+document is derived from the normalized **English** CRD documents in temporary
+compiler input, then overlaid with a complete source-hashed French proposal
+when eligible. No historical `packs/*-fr/_source/` file participates in
+compilation. The nine existing localized Folder labels are defined separately
+in `translations/fr/_folders.json` and validated against their English names.
+Legacy French source shells remain only for historical normalization and tests;
+their removal is the next migration, not a dependency of pack compilation.
+The installed ZIP contains neither English nor French `_source` authoring files.
 
 Normal builds select only `reviewed` proposals. When the corresponding
 translation is not reviewed or absent, the build uses the **current English

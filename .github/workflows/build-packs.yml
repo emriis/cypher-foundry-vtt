@@ -39,14 +39,13 @@ jobs:
       - name: Install locked dependencies
         run: npm ci
 
-      - name: Normalize CRD source metadata
-        run: npm run migrate:packs
-
-      - name: Validate compendium sources
-        run: npm run test:content
-
+      # Compilation normalizes privately: the generation job never rewrites
+      # canonical authoring records, nor the legacy FR source shells.
       - name: Build LevelDB packs
         run: npm run build:packs
+
+      - name: Verify compiled packs
+        run: npm run test:build
 
       - name: Commit generated packs
         shell: bash

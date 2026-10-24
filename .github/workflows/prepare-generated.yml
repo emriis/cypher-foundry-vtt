@@ -63,7 +63,7 @@ jobs:
       - name: Validate compiled compendium packs
         run: node --test --test-reporter=spec tests/build/compendium-packs.test.mjs
 
-      - name: Build release package
+      - name: Build release package from authored inputs
         run: npm run package
 
       - name: Verify package reproducibility
