@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { readPackSourceMap, readPackSources as canonicalPackSources } from "../helpers/canonical-sources.mjs";
 import { plainText } from "../../scripts/crd-audit/text-fidelity.mjs";
 
 const root = path.resolve(import.meta.dirname, "../..");
@@ -30,9 +31,9 @@ test("Given separate CRD Ability passages, then English descriptions exclude adj
 
 test("Given separate CRD equipment table rows, then Climbing gear does not include the Communicator row", () => {
   for (const language of ["en", "fr"]) {
-    const directory = path.join(root, `packs/equipment-${language}/_source/science-fiction`);
-    const record = fs.readdirSync(directory).filter(file => file.endsWith(".json"))
-      .map(file => JSON.parse(fs.readFileSync(path.join(directory, file), "utf8")))
+    const record = [...readPackSourceMap(root, `equipment-${language}`)]
+      .filter(([file]) => file.startsWith("science-fiction/"))
+      .map(([, document]) => document)
       .find(record => record.name === "Climbing gear");
     assert.equal(plainText(record.system.description), "Asset for climbing tasks");
   }

@@ -1,7 +1,9 @@
 /** Source-backed Tough contract; catalogue presence alone does not grant capacity. */
 import assert from "node:assert/strict";
 import test from "node:test";
-import { readFile, readdir } from "node:fs/promises";
+import { readPackSourceMap, readPackSources as canonicalPackSources } from "../helpers/canonical-sources.mjs";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import { resolveActiveAbilityModifiers } from "../../module/rules/ability-modifiers.mjs";
 
 // Independently transcribed capacity clauses from CRD 2026-07-29. The full
@@ -22,9 +24,7 @@ const CAPACITY_GRANTS = {
 test("all reviewed capacity grants exist in EN/FR and survive genre materialization", async () => {
   const genre = JSON.parse(await readFile(new URL("../../data/crd-genre-abilities.json", import.meta.url), "utf8"));
   for (const language of ["en", "fr"]) {
-    const directory = new URL(`../../packs/abilities-${language}/_source/`, import.meta.url);
-    const records = await Promise.all((await readdir(directory)).filter(name => name.endsWith(".json"))
-      .map(async name => JSON.parse(await readFile(new URL(name, directory), "utf8"))));
+    const records = canonicalPackSources(path.resolve(import.meta.dirname, "../.."), `abilities-${language}`);
     // Some genre definitions only become standalone Items during normalization.
     const items = [...records.filter(item => item.type === "ability"),
       ...genre.records.map(record => ({ type: "ability", system: record.system }))];
@@ -45,9 +45,7 @@ test("all reviewed capacity grants exist in EN/FR and survive genre materializat
 test("CRD Tough encodes the same unconditional minor-wound benefit in EN/FR and genre sources", async () => {
   const genre = JSON.parse(await readFile(new URL("../../data/crd-genre-abilities.json", import.meta.url), "utf8"));
   const items = (await Promise.all(["en", "fr"].map(async language => {
-    const directory = new URL(`../../packs/abilities-${language}/_source/`, import.meta.url);
-    const records = await Promise.all((await readdir(directory)).filter(name => name.endsWith(".json"))
-      .map(async name => JSON.parse(await readFile(new URL(name, directory), "utf8"))));
+    const records = canonicalPackSources(path.resolve(import.meta.dirname, "../.."), `abilities-${language}`);
     const tough = records.filter(record => record.type === "ability" && record.system.key === "tough");
     assert.ok(tough.length, `Tough must exist in ${language}`);
     return tough;

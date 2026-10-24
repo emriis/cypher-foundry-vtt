@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { readPackSourceMap, readPackSources as canonicalPackSources } from "../helpers/canonical-sources.mjs";
 
 const root = path.resolve(import.meta.dirname, "../..");
 
@@ -36,7 +37,8 @@ test("Foundry manifest points to existing system entry points, locales, and pack
   }
 
   for (const pack of manifest.packs) {
-    assert.ok(fs.existsSync(path.join(root, pack.path, "_source")), `Pack source does not exist: ${pack.path}`);
+    assert.ok(fs.existsSync(path.join(root, pack.path.replace(/-fr$/, "-en"), "_source")),
+      `Canonical pack source does not exist: ${pack.path}`);
     assert.ok(["Item", "JournalEntry"].includes(pack.type));
     assert.equal(pack.system, manifest.id);
   }
@@ -72,15 +74,15 @@ test("each declared pack has a corresponding language-specific source set", () =
   const failures = [];
 
   for (const pack of manifest.packs) {
-    const sourceDirectory = path.join(root, pack.path, "_source");
-    const sourceFiles = fs.readdirSync(sourceDirectory, { recursive: true }).filter(file => file.endsWith(".json"));
+    const records = readPackSourceMap(root, pack.path);
+    const sourceFiles = [...records.keys()];
     if (sourceFiles.length === 0) {
       failures.push(`${pack.name}: pack has no JSON source files`);
       continue;
     }
 
     for (const file of sourceFiles) {
-      const item = JSON.parse(fs.readFileSync(path.join(sourceDirectory, file), "utf8"));
+      const item = records.get(file);
       const label = `${pack.name}/${file}`;
 
       if (item._key.startsWith("!folders!")) {

@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { readPackSourceMap, readPackSources as canonicalPackSources } from "../helpers/canonical-sources.mjs";
 
 const ROOT=path.resolve("packs");
 const EXPECTED=[
@@ -17,9 +18,9 @@ const EXPECTED=[
 ];
 
 function read(language){
-  const dir=path.join(ROOT,`equipment-${language}`,"_source","cyphers","power-boost");
-  return fs.readdirSync(dir).filter(f=>f.endsWith(".json"))
-    .map(f=>JSON.parse(fs.readFileSync(path.join(dir,f),"utf8")));
+  return [...readPackSourceMap(path.resolve("."), `equipment-${language}`)]
+    .filter(([file]) => file.startsWith("cyphers/power-boost/"))
+    .map(([, document]) => document);
 }
 
 test("CRD Power Boost Cyphers cover all nine distinct descriptions",()=>{
