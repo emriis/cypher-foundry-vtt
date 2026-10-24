@@ -44,6 +44,14 @@ test("Foundry manifest points to existing system entry points, locales, and pack
   }
 });
 
+test("French compendium source directories are absent and only English authoring remains", () => {
+  for (const family of ["abilities", "descriptors", "equipment", "foci", "rules", "skills", "types"]) {
+    assert.equal(fs.existsSync(path.join(root, "packs", family + "-fr", "_source")), false,
+      "Legacy French authoring returned: " + family);
+    assert.ok(readPackSourceMap(root, family + "-fr").size > 0, "Missing generated French view: " + family);
+  }
+});
+
 test("French and English locales expose the same keys and interpolation variables", () => {
   const en = readJson("lang/en.json");
   const fr = readJson("lang/fr.json");
@@ -69,12 +77,12 @@ test("locale interpolation placeholders use Foundry's single-brace format", () =
   }
 });
 
-test("each declared pack has a corresponding language-specific source set", () => {
+test("each declared pack has a canonical English source set and generated French view", () => {
   const manifest = readJson("system.json");
   const failures = [];
 
   for (const pack of manifest.packs) {
-    const records = readPackSourceMap(root, pack.path);
+    const records = readPackSourceMap(root, pack.path.replace(/^packs\//, ""));
     const sourceFiles = [...records.keys()];
     if (sourceFiles.length === 0) {
       failures.push(`${pack.name}: pack has no JSON source files`);

@@ -74,7 +74,7 @@ data model permits it.
 This includes costs, tiers, levels, ranges, durations, damage, prerequisites,
 table results, conditions, depletion values, variants, and document references.
 
-French display prose is authored only in source-hashed editorial proposals under `translations/fr/`. Compilation derives every French Item and Journal from the normalized English CRD source and then applies reviewed proposals. Historical French `_source` files are not compiler inputs; they are retained temporarily only by legacy normalization/test tooling.
+French display prose is authored only in source-hashed editorial proposals under `translations/fr/`. Compilation derives every French Item and Journal from the normalized English CRD source and then applies reviewed proposals. No French `_source` files remain in source control; tests and audits derive their structural French counterparts in memory.
 
 The schema does not translate, normalize, infer, or otherwise rewrite mechanics.
 

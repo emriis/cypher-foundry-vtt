@@ -169,11 +169,11 @@ The seven families retain their fourteen existing collection IDs: `abilities`,
 with `-en` or `-fr`. Editorial subfolders do not create additional compendiums.
 
 English source-backed typed data and French display text have different roles.
-`migrate:packs` pairs records by their language-neutral CRD logical identity,
-aligns typed French fields with the canonical CRD-backed fields, and maps UUIDs
-and Focus graph endpoints to French counterparts. Translated names cannot change
-canonical _ids, costs, semantic durations, action identifiers or provenance
-locators. Existing worlds are not rewritten by this source normalization.
+`migrate:packs` normalizes **English-only** records. The compiler derives
+French counterparts in memory, keeping their CRD logical identity, typed mechanics
+and deterministic Foundry IDs while rewriting scoped UUIDs to the French pack.
+Translated names cannot change canonical _ids, costs, semantic durations,
+action identifiers or provenance locators. Existing worlds are not rewritten.
 
 Changing the Foundry interface language does not translate an Item already
 imported into a world. Choose the appropriate pack when importing. A future
@@ -263,7 +263,7 @@ is the ordinary content that Foundry loads.
 # Normal use: rebuild UI dictionaries, LevelDB packs, and installable ZIP:
 npm run package
 
-# Rebuild packs only (independent of historical FR _source):
+# Rebuild packs only (there are no FR _source authored files):
 npm run build:packs
 
 # Compile all French editorial drafts for review:

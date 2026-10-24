@@ -146,7 +146,7 @@ policies before approving French prose. **PR1 does not approve translations,
 change game rules, or regenerate published databases.**
 
 
-## PR2 implementation and deployment
+## PR2 implementation and deployment (historical behavior, superseded by PR159)
 
 The new `scripts/source-migration/id-contract.mjs` owns the pure canonical
 identity policy. `scripts/source-migration/canonical-ids.mjs` runs last in

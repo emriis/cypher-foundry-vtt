@@ -27,3 +27,11 @@ reserved for explicitly constructed legacy fixtures (`--legacy-bilingual`).
 
 The installation ZIP excludes all `_source` directories. Existing world-owned
 Item copies are not automatically updated by reinstalling compendium databases.
+
+
+## Regression guarantees
+
+CI checks the derived French catalogue without authored French source files,
+verifies all 14 LevelDB databases and complete strict translation coverage, and
+ensures the installable ZIP omits all `_source` directories. Live Foundry
+v14/Playwright acceptance remains a separate licensed-environment step.
