@@ -2,31 +2,13 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { readPackSourceMap, readPackSources as canonicalPackSources } from "../helpers/canonical-sources.mjs";
 
 const ROOT = path.resolve("packs");
 
 function readRecords(language) {
-  const root = path.join(ROOT, `equipment-${language}`, "_source");
-  const records = [];
-
-  function visit(directory) {
-    for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
-      const fullPath = path.join(directory, entry.name);
-      if (entry.isDirectory()) {
-        visit(fullPath);
-        continue;
-      }
-      if (!entry.name.endsWith(".json")) continue;
-
-      const record = JSON.parse(fs.readFileSync(fullPath, "utf8"));
-      if (record.document === "Item") {
-        records.push(record);
-      }
-    }
-  }
-
-  visit(root);
-  return records;
+  return canonicalPackSources(path.resolve("."), `equipment-${language}`)
+    .filter(record => record.document === "Item");
 }
 
 function stable(value) {

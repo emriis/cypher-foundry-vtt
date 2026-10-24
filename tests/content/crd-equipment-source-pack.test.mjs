@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { readPackSourceMap, readPackSources } from "../helpers/canonical-sources.mjs";
 
 import { validateCrdSourceRecord } from "../../module/crd/source-schema.mjs";
 
@@ -27,7 +28,8 @@ function readJsonRecords(directory) {
 }
 
 function equipmentRecords(language) {
-  return readJsonRecords(path.join(ROOT, `equipment-${language}`, "_source"));
+  return readPackSources(path.resolve("."), `equipment-${language}`)
+    .filter(record => record.document === "Item" && ["equipment", "weapon", "armor", "shield"].includes(record.crdType));
 }
 
 for (const language of ["en", "fr"]) {

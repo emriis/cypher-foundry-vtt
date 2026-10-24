@@ -20,11 +20,18 @@ packs, then creates the Foundry ZIP. `npm run package:release` requires all
 French translations to be reviewed. `npm run package:archive` assembles an
 archive from **already** compiled packs, needed for preview/E2E builds.
 
-Do not write French prose into `packs/*-fr/_source`. These historical shells
-remain in the checkout *only* because the legacy source-migration and authoring
-test suite still consult them; **pack compilation no longer uses them**.
-A follow-up migration removes those shells after rewriting their remaining
-normalization and test contracts.
+There are no tracked `packs/*-fr/_source` documents. The canonical English
+CRD source tree is the only authored rule/structure surface; source audits and
+tests derive French counterparts in memory. Historical two-language migration is
+reserved for explicitly constructed legacy fixtures (`--legacy-bilingual`).
 
 The installation ZIP excludes all `_source` directories. Existing world-owned
 Item copies are not automatically updated by reinstalling compendium databases.
+
+
+## Regression guarantees
+
+CI checks the derived French catalogue without authored French source files,
+verifies all 14 LevelDB databases and complete strict translation coverage, and
+ensures the installable ZIP omits all `_source` directories. Live Foundry
+v14/Playwright acceptance remains a separate licensed-environment step.

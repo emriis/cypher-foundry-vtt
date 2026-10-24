@@ -11,24 +11,28 @@ import { pathToFileURL } from "node:url";
 import { createValidationWorkspace, removeValidationWorkspace } from "./validation-workspace.mjs";
 import { applyTranslation, mechanicalProjection, sourceHash, translationFields, translationSafetyErrors } from "./localization/compendium-translations.mjs";
 import { materializeTranslations } from "./localization/materialize-translations.mjs";
+import { deriveFrenchCatalogue } from "./localization/derive-french-catalogue.mjs";
 import { parseUniqueJSON } from "./localization/locales.mjs";
 import { proposedLogicalId, proposedPageId } from "./source-migration/id-contract.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 
-/** Read authored document JSON, never generated LevelDB data or private references. */
+/** Read only English authored source files. French rows exist in memory only. */
 export async function readCompendiumCatalogue(root, { languages = ["en", "fr"] } = {}) {
-  const records = [];
-  for (const pack of (await fs.readdir(path.join(root, "packs"))).filter(name => languages.some(language => name.endsWith("-" + language))).sort()) {
+  const english = [];
+  for (const pack of (await fs.readdir(path.join(root, "packs"))).filter(name => name.endsWith("-en")).sort()) {
     const directory = path.join(root, "packs", pack, "_source");
-    for (const file of (await fs.readdir(directory, { recursive: true })).filter(file => file.endsWith(".json")).sort()) {
+    for (const file of (await fs.readdir(directory, { recursive: true })).filter(name => name.endsWith(".json")).sort()) {
       const document = JSON.parse(await fs.readFile(path.join(directory, file), "utf8"));
       if (document._key?.startsWith("!folders!")) continue;
-      records.push({ pack, file: path.join("packs", pack, "_source", file).replaceAll(path.sep, "/"),
+      english.push({ pack, file: path.join("packs", pack, "_source", file).replaceAll(path.sep, "/"),
         logicalId: document.flags?.cypherFoundry?.crd?.logicalId, document });
     }
   }
-  return records;
+  return [
+    ...(languages.includes("en") ? english : []),
+    ...(languages.includes("fr") ? deriveFrenchCatalogue(english, { allowUnnormalized: true }) : [])
+  ];
 }
 
 /**

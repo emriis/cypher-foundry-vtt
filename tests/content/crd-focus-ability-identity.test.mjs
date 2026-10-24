@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { readPackSourceMap, readPackSources as canonicalPackSources } from "../helpers/canonical-sources.mjs";
 
 const root = path.resolve(import.meta.dirname, "../..");
 const FOCUS_SLUGS = [
@@ -22,10 +23,7 @@ const FOCUS_SLUGS = [
 ];
 
 function readSources(family, language) {
-  const directory = path.join(root, "packs", family + "-" + language, "_source");
-  return fs.readdirSync(directory)
-    .filter(file => file.endsWith(".json"))
-    .map(file => JSON.parse(fs.readFileSync(path.join(directory, file), "utf8")))
+  return canonicalPackSources(root, family + "-" + language)
     .filter(document => !document._key?.startsWith("!folders!"));
 }
 
@@ -57,10 +55,7 @@ test("CRD Foci use the same Ability logical identities in EN and FR", () => {
   const frFoci = new Map();
   for (const slug of FOCUS_SLUGS) {
     for (const language of ["en", "fr"]) {
-      const file = path.join(
-        root, "packs", "foci-" + language, "_source", slug + ".json"
-      );
-      const document = JSON.parse(fs.readFileSync(file, "utf8"));
+      const document = readPackSourceMap(root, "foci-" + language).get(slug + ".json");
       (language === "en" ? enFoci : frFoci).set(slug, document);
     }
   }

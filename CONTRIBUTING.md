@@ -71,12 +71,13 @@ freshness checks. Translation text never determines a document identity or a rul
 
 ## Rebuilding compendium packs
 
-Editable records derived from the CRD are stored under paired:
+Canonical CRD records are authored **only** under:
 
     packs/<family>-en/_source/
-    packs/<family>-fr/_source/
 
-Do not edit generated LevelDB files manually.
+French editorial text and Folder names are authored under `translations/fr/`.
+The `-fr` compendium records are generated from the canonical English records;
+there is no second French `_source` tree. Never edit generated LevelDB files.
 
 For CRD-derived content:
 

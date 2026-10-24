@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { readPackSourceMap, readPackSources as canonicalPackSources } from "../helpers/canonical-sources.mjs";
 
 const root = path.resolve(import.meta.dirname, "../..");
 
@@ -33,10 +34,7 @@ const { default: CypherFocusData } =
   await import("../../module/data-models/item-focus.mjs");
 
 function readPack(pack) {
-  const directory = path.join(root, "packs", pack, "_source");
-  return fs.readdirSync(directory)
-    .filter(file => file.endsWith(".json"))
-    .map(file => JSON.parse(fs.readFileSync(path.join(directory, file), "utf8")));
+  return canonicalPackSources(root, pack);
 }
 
 function readAbilities(language) {

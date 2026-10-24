@@ -34,7 +34,7 @@ const packNames = fs
   .filter(entry => entry.isDirectory())
   .map(entry => entry.name)
   .filter(name => name.endsWith("-en") || name.endsWith("-fr"))
-  .filter(name => fs.existsSync(path.join(packsRoot, name, "_source")))
+  .filter(name => fs.existsSync(path.join(packsRoot, name.replace(/-fr$/, "-en"), "_source")))
   .sort();
 
 for (const packName of packNames) {
@@ -43,7 +43,7 @@ for (const packName of packNames) {
 
     assert.ok(fs.existsSync(directory), `Missing pack directory: ${packName}`);
     assert.ok(
-      fs.existsSync(path.join(directory, "_source")),
+      fs.existsSync(path.join(packsRoot, packName.replace(/-fr$/, "-en"), "_source")),
       `Missing source directory: ${packName}`
     );
     assert.ok(
@@ -63,7 +63,7 @@ for (const packName of packNames) {
       const documents = fs.readdirSync(output).filter(file => file.endsWith(".json"))
         .map(file => JSON.parse(fs.readFileSync(path.join(output, file), "utf8")));
       assert.ok(documents.length > 0, `${packName}: empty database`);
-      const source = path.join(expectedRoot, "packs", packName, "_source");
+      const source = path.join(expectedRoot, "packs", packName.replace(/-fr$/, "-en"), "_source");
       const authored = fs.readdirSync(source, { recursive: true }).filter(file => file.endsWith(".json"))
         .map(file => JSON.parse(fs.readFileSync(path.join(source, file), "utf8")));
       assert.equal(documents.length, authored.length, `${packName}: a source record disappeared during compilation`);

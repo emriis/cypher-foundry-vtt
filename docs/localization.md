@@ -169,11 +169,11 @@ The seven families retain their fourteen existing collection IDs: `abilities`,
 with `-en` or `-fr`. Editorial subfolders do not create additional compendiums.
 
 English source-backed typed data and French display text have different roles.
-`migrate:packs` pairs records by their language-neutral CRD logical identity,
-aligns typed French fields with the canonical CRD-backed fields, and maps UUIDs
-and Focus graph endpoints to French counterparts. Translated names cannot change
-canonical _ids, costs, semantic durations, action identifiers or provenance
-locators. Existing worlds are not rewritten by this source normalization.
+`migrate:packs` normalizes **English-only** records. The compiler derives
+French counterparts in memory, keeping their CRD logical identity, typed mechanics
+and deterministic Foundry IDs while rewriting scoped UUIDs to the French pack.
+Translated names cannot change canonical _ids, costs, semantic durations,
+action identifiers or provenance locators. Existing worlds are not rewritten.
 
 Changing the Foundry interface language does not translate an Item already
 imported into a world. Choose the appropriate pack when importing. A future
@@ -263,7 +263,7 @@ is the ordinary content that Foundry loads.
 # Normal use: rebuild UI dictionaries, LevelDB packs, and installable ZIP:
 npm run package
 
-# Rebuild packs only (independent of historical FR _source):
+# Rebuild packs only (there are no FR _source authored files):
 npm run build:packs
 
 # Compile all French editorial drafts for review:
@@ -282,8 +282,8 @@ compiler input, then overlaid with a complete source-hashed French proposal
 when eligible. No historical `packs/*-fr/_source/` file participates in
 compilation. The nine existing localized Folder labels are defined separately
 in `translations/fr/_folders.json` and validated against their English names.
-Legacy French source shells remain only for historical normalization and tests;
-their removal is the next migration, not a dependency of pack compilation.
+Legacy French source shells were removed. Audits, tests, and compiled packs
+derive their French counterparts directly from canonical English definitions.
 The installed ZIP contains neither English nor French `_source` authoring files.
 
 Normal builds select only `reviewed` proposals. When the corresponding
@@ -303,8 +303,8 @@ CI compiles traceable English-fallback builds to keep the translation project
 testable without calling those texts complete. Review and publication status
 remain authored exclusively in `translations/fr/`.
 
-`migrate:packs` explicitly rewrites source records when authoring normalization
-is intended; it is not a prerequisite for building. `build:packs` replaces only
+`migrate:packs` explicitly normalizes **English** authored source records when
+authoring migration is intended; it is not a prerequisite for building. `build:packs` replaces only
 generated LevelDB outputs in its checkout. Use an owned isolated checkout for
 validation without generated changes. The E2E runner handles that isolation itself.
 All selected translations are checked and all packs compiled before the build

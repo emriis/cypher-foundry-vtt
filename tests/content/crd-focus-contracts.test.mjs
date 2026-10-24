@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { readPackSourceMap, readPackSources as canonicalPackSources } from "../helpers/canonical-sources.mjs";
 
 const root = path.resolve(import.meta.dirname, "../..");
 
@@ -51,18 +52,7 @@ const EXPECTED_FOCI = [
 ];
 
 function readPackSources(family, language) {
-  const directory = path.join(
-    root,
-    "packs",
-    `${family}-${language}`,
-    "_source"
-  );
-
-  return fs.readdirSync(directory)
-    .filter(file => file.endsWith(".json"))
-    .map(file => JSON.parse(
-      fs.readFileSync(path.join(directory, file), "utf8")
-    ))
+  return canonicalPackSources(root, family + "-" + language)
     .filter(document => !document._key?.startsWith("!folders!"));
 }
 

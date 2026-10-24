@@ -2,21 +2,14 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { readPackSourceMap, readPackSources as canonicalPackSources } from "../helpers/canonical-sources.mjs";
 
 const ROOT=path.resolve("packs");
 
 function readManifest(language){
-  const base=path.join(ROOT,`equipment-${language}`,"_source","cyphers","manifest");
-  const records=[];
-  function visit(dir){
-    for(const entry of fs.readdirSync(dir,{withFileTypes:true})){
-      const full=path.join(dir,entry.name);
-      if(entry.isDirectory()) visit(full);
-      else if(entry.name.endsWith(".json")) records.push(JSON.parse(fs.readFileSync(full,"utf8")));
-    }
-  }
-  visit(base);
-  return records;
+  return [...readPackSourceMap(path.resolve("."), `equipment-${language}`)]
+    .filter(([file]) => file.startsWith("cyphers/manifest/"))
+    .map(([, document]) => document);
 }
 
 test("CRD manifest cyphers cover the complete 103-entry inventory",()=>{

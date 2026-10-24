@@ -146,7 +146,7 @@ policies before approving French prose. **PR1 does not approve translations,
 change game rules, or regenerate published databases.**
 
 
-## PR2 implementation and deployment
+## PR2 implementation and deployment (historical behavior, superseded by PR159)
 
 The new `scripts/source-migration/id-contract.mjs` owns the pure canonical
 identity policy. `scripts/source-migration/canonical-ids.mjs` runs last in
@@ -174,3 +174,13 @@ links, and UUIDs imported from previous pack builds are not automatically
 converted. Export or back up any world before installing this migration,
 then reimport affected content or run a separately verified world migration.
 Do not silently change a user's Foundry Data directory.
+
+
+## PR159 — French source deletion
+
+The historical PR1/PR2 baseline described above is preserved for migration
+history only. Current authoring keeps `packs/*-en/_source` and `translations/fr`.
+French structural counterparts, Folder IDs and language-tagged provenance are
+computed from English records, never read from a second French authored tree.
+`npm run migrate:packs` normalizes English only. All historical source
+names and counts earlier in this document refer to their dated pre-PR159 audits.

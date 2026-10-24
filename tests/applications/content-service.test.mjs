@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { readFile } from "node:fs/promises";
+import path from "node:path";
+import { readPackSourceMap } from "../helpers/canonical-sources.mjs";
 import { resolveActiveAbilityModifiers } from "../../module/rules/ability-modifiers.mjs";
 
 const { applyType, applyFocus, applyDescriptor, getInitialFocusAbilityChoices } = await import(
@@ -88,8 +89,8 @@ for (const language of ["en", "fr"]) {
   for (const species of ["drakain", "orc", "prota"]) {
     test(`${language} ${species} automatically grants minor capacity in addition to Tough`, async () => {
       setupSkillGrants();
-      const source = JSON.parse(await readFile(new URL(
-        `../../packs/descriptors-${language}/_source/species/${species}.json`, import.meta.url), "utf8"));
+      const source = readPackSourceMap(path.resolve(import.meta.dirname, "../.."),
+        `descriptors-${language}`).get(`species/${species}.json`);
       const actor = createActor();
       actor.system.genre = species === "orc" ? "fantasy" : "sciFi";
       actor.items.push({ type: "ability", system: { key: "tough", passiveModifiers: [

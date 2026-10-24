@@ -8,6 +8,7 @@ import { promisify } from "node:util";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { createValidationWorkspace, removeValidationWorkspace } from "../../scripts/validation-workspace.mjs";
+import { readCompendiumCatalogue } from "../../scripts/review-translations.mjs";
 
 async function sourceSnapshot(root) {
   const snapshot = {};
@@ -33,23 +34,16 @@ function assertUnchanged(actual, expected) {
 
 /** Localization retains the actual English CRD heading, including repaired parent references. */
 async function assertCanonicalAbilityProvenance(root) {
-  const english = new Map();
-  for (const language of ["en", "fr"]) {
-    const directory = path.join(root, "packs", `abilities-${language}`, "_source");
-    for (const filename of await readdir(directory)) {
-      if (!filename.endsWith(".json")) continue;
-      const document = JSON.parse(await readFile(path.join(directory, filename), "utf8"));
-      if (document._key?.startsWith("!folders!")) continue;
-      const provenance = document.flags.cypherFoundry.crd;
-      if (language === "en") english.set(provenance.logicalId, provenance);
-      else {
-        const source = english.get(provenance.sourceLogicalId);
-        assert.ok(source, `${filename} must have an explicit canonical English source`);
-        assert.equal(provenance.language, "fr");
-        assert.equal(provenance.section, source.section, `${filename} must cite the English CRD section on the first pass`);
-        assert.equal(provenance.sourceLocator, source.sourceLocator, `${filename} must cite the English CRD heading on the first pass`);
-      }
-    }
+  const catalogue = await readCompendiumCatalogue(root);
+  const english = new Map(catalogue.filter(row => row.pack === "abilities-en")
+    .map(row => [row.logicalId, row.document.flags.cypherFoundry.crd]));
+  for (const row of catalogue.filter(row => row.pack === "abilities-fr")) {
+    const provenance = row.document.flags.cypherFoundry.crd;
+    const source = english.get(provenance.sourceLogicalId);
+    assert.ok(source, row.logicalId + " must have a canonical English source");
+    assert.equal(provenance.language, "fr");
+    assert.equal(provenance.section, source.section);
+    assert.equal(provenance.sourceLocator, source.sourceLocator);
   }
 }
 

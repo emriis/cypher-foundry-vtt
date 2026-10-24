@@ -2,16 +2,14 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import { readPackSourceMap, readPackSources as canonicalPackSources } from "../helpers/canonical-sources.mjs";
 
 const ROOT = path.resolve("packs");
 
 function readCyphers(language) {
-  const directory = path.join(
-    ROOT, "equipment-" + language, "_source", "cyphers", "subtle"
-  );
-  return fs.readdirSync(directory)
-    .filter(file => file.endsWith(".json"))
-    .map(file => JSON.parse(fs.readFileSync(path.join(directory, file), "utf8")));
+  return [...readPackSourceMap(path.resolve("."), `equipment-${language}`)]
+    .filter(([file]) => file.startsWith("cyphers/subtle/"))
+    .map(([, document]) => document);
 }
 
 const EXPECTED_SUBTLE = [
