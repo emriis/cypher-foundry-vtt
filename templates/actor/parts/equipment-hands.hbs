@@ -1,0 +1,11 @@
+{{!-- Inventory possession does not itself declare a grip. These controls persist explicit readiness. --}}
+<section class="pc-section equipment-hands">
+  <h3>{{localize "CYPHER.EquipmentHands.title"}} — {{equipmentHands.used}} / {{equipmentHands.capacity}}</h3>
+  {{#if canSetHandCapacity}}<button type="button" data-action="promptHandCapacity">{{localize "CYPHER.EquipmentHands.capacity"}}</button>{{/if}}
+  {{#each equipmentHands.items as |item|}}
+  <div class="flexrow" data-item-id="{{item.id}}">
+    <span>{{item.name}} — {{item.state}}{{#if item.problem}} — {{item.problem}}{{/if}}</span>
+    <button type="button" data-action="promptEquipmentUse" data-item-id="{{item.id}}">{{localize "CYPHER.EquipmentHands.configure"}}</button>
+  </div>
+  {{/each}}
+</section>
