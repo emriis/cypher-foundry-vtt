@@ -32,6 +32,9 @@ The main gameplay boundaries are:
 
 - `task-service.mjs`: task rolls, Effort and Pool transactions, defense
   outcomes, and task chat output.
+- `task-retry-service.mjs` and `task-retry-history.mjs`: fresh same-task
+  attempts, explicit GM possibility declarations, lineage and pre-mutation
+  checkpoints; see [task retries](task-retries.md).
 - `task-preparation.mjs`, `task-consequences.mjs`, and `task-message.mjs`:
   read-only task planning, awaited effects, and localized presentation.
 - `reroll-service.mjs`: CRD paid-reroll orchestration and retained metadata;

@@ -1,3 +1,4 @@
+import { retryTask } from "../applications/task-retry-service.mjs";
 import { CYPHER } from "../config.mjs";
 import {
   addCustomField,
@@ -205,6 +206,9 @@ export default class CypherActor extends Actor {
   async spendXP(amount, reasonLabel = "") {
     return spendXP(this, amount, reasonLabel);
   }
+
+  /** Perform a fresh same-task attempt with paid Effort; never undo the previous action. */
+  async retryTask(message, options = {}) { return retryTask(this, message, options); }
 
   /**
    * Reroll a previous roll through the character application service.

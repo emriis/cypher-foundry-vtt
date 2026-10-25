@@ -802,6 +802,24 @@
       "main": "Principal",
       "skills": "Compétences"
     },
+    "TaskRetry": {
+      "allow": "MJ : autoriser les nouvelles tentatives",
+      "blocked": "Le MJ a jugé que cette tâche ne pouvait plus être retentée.",
+      "close": "MJ : clore la tentative interrompue",
+      "closed": "La tentative interrompue a été close après réconciliation explicite du MJ.",
+      "confirm": "Je confirme qu’il s’agit de la même tâche, qu’elle prend le même temps et qu’elle reste possible dans la fiction.",
+      "continued": "Cet échec a déjà donné lieu à une nouvelle tentative. Utilisez la dernière carte d’échec éligible.",
+      "duration": "Durée initiale (identique pour cette tentative)",
+      "forbid": "MJ : interdire les nouvelles tentatives",
+      "hint": "Il s’agit d’une nouvelle tentative de la même tâche ordinaire, pas d’une relance contre des PX. Appliquez au moins un niveau d’Effort payé ; l’Avantage réduit toujours son coût en points. Les dépenses et résultats précédents sont conservés.",
+      "interrupted": "Une nouvelle tentative a été interrompue après son point de reprise. Ne la rejouez pas ; demandez au MJ de réconcilier l’action, les dépenses et le chat.",
+      "invalid": "Nouvelle tentative refusée. Vérifiez l’Effort payé, les ressources actuelles, la durée et la disponibilité de l’action.",
+      "label": "Tâche que vous recommencez",
+      "reason": "Motif (facultatif)",
+      "reconcile": "Réconciliez d’abord l’action utilisée, les dépenses et le résultat éventuellement publié. Confirmer clôt cette tentative interrompue sans rembourser de points, relancer de dé ni restaurer un état antérieur.",
+      "retry": "Retenter cette tâche — nouvelle action",
+      "unavailable": "Cette carte n’est pas un échec de tâche ordinaire éligible, ou la tâche enregistrée a déjà réussi."
+    },
     "Tier": "Rang",
     "Type": {
       "Abilities": "Aptitudes du Type",

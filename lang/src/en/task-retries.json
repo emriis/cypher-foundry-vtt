@@ -1,0 +1,22 @@
+{
+  "CYPHER": {
+    "TaskRetry": {
+      "retry": "Retry this task — new action",
+      "hint": "This is a new attempt at the same ordinary task, not an XP reroll. Apply at least one paid Effort level; Edge still reduces its point cost. Previous costs and results remain.",
+      "label": "Task being attempted again",
+      "duration": "Original duration (same duration for this attempt)",
+      "confirm": "I confirm this is the same task, takes the same time, and remains possible in the fiction.",
+      "forbid": "GM: forbid further attempts",
+      "allow": "GM: allow further attempts",
+      "reason": "Reason (optional)",
+      "blocked": "The GM has ruled that further attempts at this task are impossible.",
+      "unavailable": "This card is not an eligible failed ordinary task, or its recorded task has already succeeded.",
+      "continued": "This failed attempt has already led to a new attempt. Use the latest eligible failed card.",
+      "interrupted": "A new attempt was interrupted after its checkpoint. Do not replay it; ask the GM to reconcile the action, costs and chat.",
+      "invalid": "The new attempt was refused. Check paid Effort, current resources, duration and action availability.",
+      "close": "GM: close the interrupted attempt",
+      "reconcile": "First reconcile the actual action usage, costs and any published result. Confirming closes this interrupted predecessor; it does not refund points, roll again or restore previous state.",
+      "closed": "The interrupted predecessor was closed after explicit GM reconciliation."
+    }
+  }
+}

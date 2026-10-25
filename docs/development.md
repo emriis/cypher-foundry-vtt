@@ -322,6 +322,8 @@ GM declarations, player requests, mandatory XP sharing, and their resumable
 settlement are documented in [intrusions.md](intrusions.md).
 GM-declared environmental damage, protection, repetition and failure checkpoints
 are documented in [environmental-hazards.md](environmental-hazards.md).
+Fresh ordinary attempts after failure, required paid Effort, GM veto and
+card lineage are documented in [task-retries.md](task-retries.md).
 Character advancement, skill gates, no-banking Ability selection and progression
 beyond tier 6 are documented in [character-advancement.md](character-advancement.md).
 Held equipment, weapon/shield compatibility, tripod and crew prerequisites are

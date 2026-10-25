@@ -16,7 +16,7 @@ export function helpChoiceFields(actor, isDefense = false) {
  * a caller-confirmed grant, not an automatic interpretation of Ability prose.
  * Keep the source declaration visible so limited grants can be adjudicated.
  */
-export function taskModifierFields(actor, { stat, isAttack = false, defenseType = null, abilitySource = null, isInitiative = false } = {}) {
+export function taskModifierFields(actor, { stat, isAttack = false, defenseType = null, abilitySource = null, isInitiative = false, isRetry = false } = {}) {
   const label = key => game.i18n.localize(`CYPHER.Roll.${key}`);
   const number = (name, key) => `<div class="form-group"><label>${label(key)}
     <input type="number" name="${name}" min="0" max="${6 + getSuperheroicsRank(actor, stat)}" step="1" value="0"/></label></div>`;
@@ -37,7 +37,7 @@ export function taskModifierFields(actor, { stat, isAttack = false, defenseType 
     ${shieldEffect ? `<div class="form-group"><label><input type="checkbox" name="effectEffort"/>
       ${game.i18n.localize("CYPHER.ShieldAbility.EffectEffort")}</label></div>` : ""}
     <details><summary>${label("ConditionalModifiers")}</summary>
-      ${!isAttack && !defenseType ? `<div class="form-group"><label><input name="minorActivity" type="checkbox"/>${game.i18n.localize("CYPHER.Round.Minor")}</label></div>` : ""}
+      ${!isAttack && !defenseType && !isRetry ? `<div class="form-group"><label><input name="minorActivity" type="checkbox"/>${game.i18n.localize("CYPHER.Round.Minor")}</label></div>` : ""}
       ${isAttack ? `<div class="form-group"><label><input name="immediateMovement" type="checkbox"/>${game.i18n.localize("CYPHER.Round.HeavyMovement")}</label></div>` : ""}
       <div class="form-group"><label><input name="noPhysicalMovement" type="checkbox"/>${game.i18n.localize("CYPHER.General.noPhysicalMovement")}</label></div>
       ${isAttack ? `<div class="form-group"><label>${game.i18n.localize("CYPHER.General.attackForm")}<select name="attackForm">
@@ -100,7 +100,7 @@ export async function promptSpecialEffect(options) {
  */
 export async function promptRollOptions(actor, {
   difficulty = 3, isAttack = false, weapon = null, isWeaponAbility = false, fixedDifficulty = false,
-  stat = weapon?.system.stat, abilitySource = null, isInitiative = false
+  stat = weapon?.system.stat, abilitySource = null, isInitiative = false, retryAttempt = null
 } = {}) {
   const maxDifficulty = actor.system.maxDifficulty ?? 10;
   const maxEffort = Math.min(6, actor.system.effort ?? 1) + getSuperheroicsRank(actor, stat);
@@ -109,6 +109,10 @@ export async function promptRollOptions(actor, {
     .map(i => `<option value="${i.id}">${i.name} (${game.i18n.localize(`CYPHER.SkillLevel.${i.system.level}`)})</option>`).join("");
 
   const content = `
+    ${retryAttempt ? `<p>${game.i18n.localize("CYPHER.TaskRetry.hint")}</p>
+      <label>${game.i18n.localize("CYPHER.TaskRetry.label")}<input type="text" name="retryLabel" required value="${foundry.utils.escapeHTML(retryAttempt.label)}"/></label>
+      <label>${game.i18n.localize("CYPHER.TaskRetry.duration")}<input type="text" name="retryDuration" required value="${foundry.utils.escapeHTML(retryAttempt.duration ?? "")}" ${retryAttempt.duration ? "readonly" : ""}/></label>
+      <label><input type="checkbox" name="sameTaskConfirmed" required/>${game.i18n.localize("CYPHER.TaskRetry.confirm")}</label>` : ""}
     ${isInitiative ? `<p>${game.i18n.localize("CYPHER.Initiative.Hint")}</p>` : ""}
     <div class="form-group" ${isWeaponAbility || isInitiative ? 'hidden' : ''}>
       <label>${game.i18n.localize("CYPHER.Roll.Difficulty")}</label>
@@ -123,13 +127,13 @@ export async function promptRollOptions(actor, {
     </div>
     <div class="form-group">
       <label>${game.i18n.localize("CYPHER.Roll.EffortLevels")} (${game.i18n.format("CYPHER.Roll.MaxEffortHint", { max: maxEffort })})</label>
-      <input type="number" name="effort" value="0" min="0" max="${maxEffort}"/>
+      <input type="number" name="effort" value="${retryAttempt ? 1 : 0}" min="${retryAttempt ? 1 : 0}" step="1" max="${maxEffort}"/>
     </div>
     <div class="form-group">
       <label>${game.i18n.localize("CYPHER.Roll.AssetSteps")}</label>
       <input type="number" name="assets" value="0" min="0" max="2"/>
     </div>
-    ${taskModifierFields(actor, { stat, isAttack, abilitySource, isInitiative })}
+    ${taskModifierFields(actor, { stat, isAttack, abilitySource, isInitiative, isRetry: Boolean(retryAttempt) })}
     ${isAttack && !isWeaponAbility ? `
     <div class="form-group inline">
       <label><input type="checkbox" name="luckyShot"/> ${game.i18n.localize("CYPHER.XP.LuckyShot")} (${CONFIG.CYPHER.xpCosts.luckyShot} ${game.i18n.localize("CYPHER.XP.Label")}, ${game.i18n.localize("CYPHER.XP.LuckyShotHint")})</label>
@@ -155,6 +159,7 @@ export async function promptRollOptions(actor, {
         const form = button.form;
         return {
           ...readTaskModifiers(form),
+          ...(retryAttempt ? { label: form.retryLabel.value.trim(), duration: form.retryDuration.value.trim(), sameTaskConfirmed: form.sameTaskConfirmed.checked } : {}),
           chooseSpecialEffect: promptSpecialEffect,
           difficulty: Number(form.difficulty.value),
           effortLevels: Number(form.effort.value),

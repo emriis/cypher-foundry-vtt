@@ -153,7 +153,7 @@ export function canRetryTask({
   isAttack = false,
   effortLevels = 0
 } = {}) {
-  return Boolean(failed) && !isAttack && effortLevels >= 1;
+  return failed === true && !isAttack && Number.isSafeInteger(effortLevels) && effortLevels >= 1;
 }
 
 /**
