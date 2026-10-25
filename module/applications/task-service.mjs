@@ -1,3 +1,5 @@
+import { isOrdinaryRetryTask } from "../rules/task-retries.mjs";
+import { TASK_RETRY_CONTEXT, validTaskRetry, beginTaskRetry, releaseTaskRetry, finishTaskRetry } from "./task-retry-history.mjs";
 /**
  * Shared task engine for stat rolls, weapon attacks, and player defenses.
  * The pipeline resolves modifiers and cost, spends the Pool, optionally rolls the d20,
@@ -135,8 +137,10 @@ async function executeTask(actor, {
   cooperativeMode = null, cooperativeEffectIds = null, ruleEffect = null, conditionsOnFailure = [], npcSource = null, takeAttackActor = null,
   automaticFailure = false, specialistRequired = false, environmentalSource = null,
   minorActivity = false, extraAction = false, extraActionSource = "", actionTiming = null,
+  taskLabel = "", taskDuration = null, [TASK_RETRY_CONTEXT]: retryContext = null,
   [ROUND_ACTION_OWNER]: roundActionOwner = null
 } = {}, actionContext = null, initiativeOwner = null) {
+  if (typeof taskLabel !== "string" || taskDuration !== null && typeof taskDuration !== "string") return null;
   // Validate an explicit shield selection before any cost or dice. Equipment
   // may change while a dialog is open; never silently spend on a stale choice.
   const shieldItem = shieldItemId ? actor.items?.get(shieldItemId) : null;
@@ -177,6 +181,9 @@ async function executeTask(actor, {
   if (woundRemovalSeverity && (targetActor?.type !== "pc" || targetActor.isOwner === false
     || !["minor", "moderate", "major"].includes(woundRemovalSeverity)
     || !(targetActor.system.wounds[woundRemovalSeverity].current > specialDamageLimits(targetActor).wounds[woundRemovalSeverity]))) return null;
+  const ordinaryTask = isOrdinaryRetryTask({ isAttack, defenseType, initiative, shieldReturn, woundRemovalSeverity,
+    abilitySource, ruleEffect, targetActor, cooperativeMode, environmentalSource, npcSource, minorActivity, extraAction, activationCost });
+  if (retryContext && !ordinaryTask) return null;
   const cooperation = cooperativeTaskPlan(actor, cooperativeMode, Boolean(defenseType), npcSource, cooperativeEffectIds);
   if (!cooperation) return null;
   assetSteps += cooperation.assets;
@@ -191,7 +198,12 @@ async function executeTask(actor, {
   const roundContext = roundActionOwner ? roundActionContext(roundActionOwner, { isAttack: true, actionTiming })
     : roundActionContext(actor, { isAttack, weaponSource, abilitySource, defenseType,
       initiative, shieldReturn, minorActivity, extraAction, extraActionSource, actionTiming });
+  if (retryContext) {
+    if (!validTaskRetry(actor, retryContext, prepared.effort, stat) || roundContext && !roundContext.kind) return null;
+    await beginTaskRetry(retryContext);
+  }
   if (!await consumeRoundAction(roundContext, actionContext)) {
+    if (retryContext) await releaseTaskRetry(retryContext);
     ui.notifications.warn(game.i18n.localize("CYPHER.Round.Unavailable"));
     return null;
   }
@@ -301,6 +313,10 @@ async function executeTask(actor, {
         rerollable: Boolean(roll),
         rollType: "task",
         abilitySource,
+        ...(ordinaryTask ? { taskAttempt: { version: 1, stat, difficulty, skillItemId,
+          label: retryContext?.label ?? (taskLabel || flavor || statLabel),
+          duration: retryContext?.duration ?? taskDuration,
+          parentMessageId: retryContext?.source.id ?? null } } : {}),
         actorId: actor.id,
         actorUuid: actor.uuid,
         ...(environmentalSource ? { environmentalSource } : {}),
@@ -335,8 +351,9 @@ async function executeTask(actor, {
       }
     }
   };
-  if (roll) await roll.toMessage(message, initiative ? initiativeMessageOptions(initiative) : {});
-  else await ChatMessage.create({ ...message, content: messageFlavor });
+  const published = roll ? await roll.toMessage(message, initiative ? initiativeMessageOptions(initiative) : {})
+    : await ChatMessage.create({ ...message, content: messageFlavor });
+  if (retryContext) await finishTaskRetry(retryContext, published);
 
   return {
     roll,
@@ -347,7 +364,8 @@ async function executeTask(actor, {
     targetDamage,
     defensePoolDamage,
     weaponTargetEffects,
-    specialEffectOptions: special.effectOptions
+    specialEffectOptions: special.effectOptions,
+    ...(retryContext ? { message: published } : {})
   };
 }
 

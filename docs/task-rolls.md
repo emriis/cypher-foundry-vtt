@@ -117,6 +117,13 @@ restoring an old snapshot. See [runtime-refactor.md](runtime-refactor.md) for
 paid-reroll persistence and [attack-rerolls.md](attack-rerolls.md) for recorded
 target damage, special choices, original effect intervals and partial-write limits.
 
+## New attempts after failure
+
+A new ordinary attempt is distinct from a paid XP reroll: it applies at least
+one paid Effort level, consumes a fresh action, keeps the original expenses and
+records explicit same-task/time confirmation. See [task retries](task-retries.md)
+for GM veto, lineage, retained-result and interrupted-write boundaries.
+
 ## Maintaining the contract
 
 Use deterministic Given/When/Then regressions at the pure and application layers.

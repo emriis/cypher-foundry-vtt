@@ -15,6 +15,7 @@ Edit the paired domain files under `lang/src/en/` and `lang/src/fr/`:
 | `actors.json` | Pools, wounds, NPCs, communities and custom fields |
 | `character-creation.json` | Character sentence, genres, superhero configuration and Power Shifts |
 | `progression.json` | Tier, Effort, Edge, XP and advancement |
+| `task-retries.json` | Ordinary task retries, explicit same-task/time confirmation and GM veto |
 | `tasks-combat.json` | Task rolls, defenses, weapons, armor and shields |
 | `general-actions.json` | Cooperation, guarding, conditions and declared special damage |
 | `environment.json` | Explicit environmental profiles, protection and exposure controls |

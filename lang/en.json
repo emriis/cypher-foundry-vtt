@@ -802,6 +802,24 @@
       "main": "Main",
       "skills": "Skills"
     },
+    "TaskRetry": {
+      "allow": "GM: allow further attempts",
+      "blocked": "The GM has ruled that further attempts at this task are impossible.",
+      "close": "GM: close the interrupted attempt",
+      "closed": "The interrupted predecessor was closed after explicit GM reconciliation.",
+      "confirm": "I confirm this is the same task, takes the same time, and remains possible in the fiction.",
+      "continued": "This failed attempt has already led to a new attempt. Use the latest eligible failed card.",
+      "duration": "Original duration (same duration for this attempt)",
+      "forbid": "GM: forbid further attempts",
+      "hint": "This is a new attempt at the same ordinary task, not an XP reroll. Apply at least one paid Effort level; Edge still reduces its point cost. Previous costs and results remain.",
+      "interrupted": "A new attempt was interrupted after its checkpoint. Do not replay it; ask the GM to reconcile the action, costs and chat.",
+      "invalid": "The new attempt was refused. Check paid Effort, current resources, duration and action availability.",
+      "label": "Task being attempted again",
+      "reason": "Reason (optional)",
+      "reconcile": "First reconcile the actual action usage, costs and any published result. Confirming closes this interrupted predecessor; it does not refund points, roll again or restore previous state.",
+      "retry": "Retry this task — new action",
+      "unavailable": "This card is not an eligible failed ordinary task, or its recorded task has already succeeded."
+    },
     "Tier": "Tier",
     "Type": {
       "Abilities": "Type abilities",

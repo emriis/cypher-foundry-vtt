@@ -1,3 +1,5 @@
+import { renderTaskRetryControls } from "./module/sheets/task-retry-controls.mjs";
+import * as taskRetryService from "./module/applications/task-retry-service.mjs";
 
 import { renderIntrusionControls } from "./module/sheets/intrusion-dialogs.mjs";
 import * as intrusionService from "./module/applications/intrusion-service.mjs";
@@ -42,7 +44,7 @@ Hooks.once("init", () => {
   // Publish shared configuration and macro entry points before sheets are opened.
   // Exposed for macro use, even if the sidebar button fails to find its
   // anchor point on a given Foundry version.
-  game.cypher = { CYPHER, importFromBuilder, openImportDialog, promptInitiativeOptions, intrusions: intrusionService };
+  game.cypher = { CYPHER, importFromBuilder, openImportDialog, promptInitiativeOptions, taskRetries: taskRetryService, intrusions: intrusionService };
   CONFIG.CYPHER = CYPHER;
 
   registerImportButton();
@@ -217,6 +219,11 @@ Hooks.on("renderChatMessageHTML", async (message, html) => {
 
   const container = html instanceof HTMLElement ? html : html[0];
   container?.querySelector(".message-content")?.appendChild(button);
+});
+
+// Fresh attempts own separate costs and action slots; sheets own their controls.
+Hooks.on("renderChatMessageHTML", (message, html) => {
+  renderTaskRetryControls(message, html).catch(error => console.error("Cypher | Task retry controls failed", error));
 });
 
 // Execution phases are presented separately from rolled initiative scores.
