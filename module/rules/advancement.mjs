@@ -1,17 +1,18 @@
 import { CYPHER } from "../config.mjs";
 
 /**
- * Advance a skill by one progression step.
+ * Apply ordinary advancement training: cancel inability or advance up to specialization.
  *
  * @param {string} level Current skill level.
  * @returns {string} Next skill level.
  */
 export function advanceSkillLevel(level) {
   const order = ["inability", "practiced", "trained", "specialized", "expert"];
-  if (level === "inability") return "trained";
+  if (level === "inability") return "practiced";
+  if (level === "expert") return "expert";
 
   const index = order.indexOf(level);
-  return order[Math.min(order.length - 1, index + 1)];
+  return order[Math.min(order.indexOf("specialized"), index + 1)];
 }
 
 
@@ -25,11 +26,10 @@ export function advanceSkillLevel(level) {
 export function validateAdvancementChoices(slot, extra = {}) {
   if (slot?.type === "capabilities") {
     const distribution = extra.distribution ?? {};
-    const total = CYPHER.stats.reduce(
-      (sum, stat) => sum + (Number(distribution[stat]) || 0),
-      0
-    );
-    if (total !== 4) return "CYPHER.Warning.CapabilitiesMustSumFour";
+    const values = CYPHER.stats.map(stat => distribution[stat] ?? 0);
+    const total = values.reduce((sum, value) => sum + value, 0);
+    if (Object.keys(distribution).some(stat => !CYPHER.stats.includes(stat))
+      || !values.every(value => Number.isSafeInteger(value) && value >= 0) || total !== 4) return "CYPHER.Warning.CapabilitiesMustSumFour";
   }
   return null;
 }
@@ -126,7 +126,41 @@ export function createFreshAdvancementSlots() {
  */
 export function computeTierAdvancement(tier) {
   return {
-    newTier: Math.min(6, tier + 1),
+    newTier: tier + 1,
     freshSlots: createFreshAdvancementSlots()
   };
+}
+
+/** CRD Gaining Resource Points: the purchasing tier determines the reward. */
+export function advancementResourcePoints(tier) { return tier >= 5 ? 3 : tier >= 3 ? 2 : 1; }
+
+/** CRD Skill advancement: incapacity cancellation, ordinary specialization and combat gates. */
+export function canPurchaseSkillTraining(skill, tier) {
+  if (!Number.isSafeInteger(tier) || tier < 1) return false;
+  const level = skill.level ?? "practiced";
+  if (!["inability", "practiced", "trained"].includes(level)) return false;
+  // The authored restriction also covers source Skills such as Gunnery. Custom
+  // attack/defense training declares its kind; localized names never decide it.
+  const combat = ["attack", "defense"].includes(skill.skillKind) || Boolean(skill.attackCategory);
+  if (level === "inability") return tier >= Math.max(combat ? 2 : 1, skill.minimumTier ?? 0);
+  const minimum = level === "trained"
+    ? Math.max(combat ? 4 : 2, skill.minimumSpecializationTier ?? 0)
+    : Math.max(combat ? 2 : 1, skill.minimumTier ?? 0);
+  return tier >= minimum;
+}
+
+/** Reject duplicate main purchases and multiple replacements using immutable purchase records. */
+export function canPurchaseAdvancement(slot, index, system, purchases = []) {
+  const tier = system.tier ?? 1;
+  if (!Number.isSafeInteger(tier) || tier < 1 || tier >= Number.MAX_SAFE_INTEGER) return false;
+  const prior = (system.advancementSlots ?? []).flatMap((entry, position) => {
+    const saved = purchases.find(record => record.tier === tier && record.index === position);
+    return saved ? [saved] : entry.bought ? [entry] : [];
+  });
+  if (purchases.some(record => record.tier === tier && record.index === index)) return false;
+  if (prior.some(record => record.type === slot.type)) return false;
+  if (slot.type === "other") return ["recovery", "focus", "armor", "weapons", "genre"].includes(slot.otherType)
+    && (slot.otherType !== "genre" || tier >= 3);
+  return ["capabilities", "perfection", "effort", "skill"].includes(slot.type)
+    && (slot.type !== "effort" || system.effort < 6);
 }

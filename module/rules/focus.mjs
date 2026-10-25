@@ -22,7 +22,10 @@ export function isFocusAbilityEligible(
   if (!ability.repeatable && selected.has(ability.id)) return false;
   if (ability.tier === 1) return true;
 
-  return (ability.prerequisites ?? []).some(
+  const prerequisites = focus.flowchart?.edges
+    ? focus.flowchart.edges.filter(edge => edge.to === abilityId).map(edge => edge.from)
+    : ability.prerequisites ?? [];
+  return prerequisites.some(
     prerequisiteId => selected.has(prerequisiteId)
   );
 }

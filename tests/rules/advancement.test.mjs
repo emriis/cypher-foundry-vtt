@@ -1,17 +1,18 @@
+import { isFocusAbilityEligible } from "../../module/rules/focus.mjs";
 import assert from "node:assert/strict";
 import test from "node:test";
 
 import {
   advanceSkillLevel,
   computeAdvancementEffects,
-  computeTierAdvancement
+  computeTierAdvancement, validateAdvancementChoices
 } from "../../module/rules/advancement.mjs";
 
 test("advancement skill progression follows the configured skill ladder", () => {
-  assert.equal(advanceSkillLevel("inability"), "trained");
+  assert.equal(advanceSkillLevel("inability"), "practiced");
   assert.equal(advanceSkillLevel("practiced"), "trained");
   assert.equal(advanceSkillLevel("trained"), "specialized");
-  assert.equal(advanceSkillLevel("specialized"), "expert");
+  assert.equal(advanceSkillLevel("specialized"), "specialized");
   assert.equal(advanceSkillLevel("expert"), "expert");
 });
 
@@ -59,13 +60,13 @@ test("advancement effects calculate capabilities, Effort, and permissions", () =
   );
 });
 
-test("tier advancement resets four slots and caps the tier", () => {
+test("tier advancement resets four slots and continues beyond six", () => {
   const result = computeTierAdvancement(5);
   assert.equal(result.newTier, 6);
   assert.equal(result.freshSlots.length, 4);
   assert.ok(result.freshSlots.every(slot => !slot.bought));
 
-  assert.equal(computeTierAdvancement(6).newTier, 6);
+  assert.equal(computeTierAdvancement(6).newTier, 7);
 });
 
 test("capability advancement validation requires exactly four points", async () => {
@@ -180,4 +181,18 @@ test("invalid advancement choices do not silently create skill actions", () => {
     ),
     { updates: {}, skillAction: null }
   );
+});
+
+
+test("capability allocations reject negative, fractional, nonfinite and unknown-stat inputs", () => {
+  for (const distribution of [{ might: -1, speed: 5 }, { might: 1.5, speed: 2.5 }, { might: NaN }, { might: "4" }, { might: 4, custom: 0 }]) {
+    assert.ok(validateAllocation(distribution));
+  }
+});
+function validateAllocation(distribution) { return validateAdvancementChoices({ type: "capabilities" }, { distribution }); }
+
+test("Focus graph edges govern eligibility when reusable Ability data contain no prerequisites", () => {
+  const focus = { abilities: [{ id: "root", tier: 1 }, { id: "next", tier: 2 }], flowchart: { edges: [{ from: "root", to: "next" }] } };
+  assert.equal(isFocusAbilityEligible(focus, ["root"], "next", 2), true);
+  assert.equal(isFocusAbilityEligible(focus, [], "next", 6), false);
 });

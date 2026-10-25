@@ -1,7 +1,7 @@
 /** Exercise the PC public preparation boundary without persisting derived data. */
 import assert from "node:assert/strict";
 import test from "node:test";
-class StubField {}
+class StubField { constructor(options = {}) { this.options = options; } }
 globalThis.foundry = {
   abstract: { TypeDataModel: class {} },
   data: { fields: Object.fromEntries(["SchemaField", "NumberField", "StringField", "HTMLField", "BooleanField", "ArrayField"].map(name => [name, StubField])) }
@@ -142,4 +142,13 @@ test("armor derived dodge uses explicit encumbrance and CRD overrides", () => {
   prepare(actorData);
   assert.equal(actorData.armor.dodgeHinder, 0);
   assert.equal(actorData.armor.speedTaskHinder, 0);
+});
+
+
+test("the PC tier accepts advancement beyond six while preserving the legacy default", () => {
+  const tier = CypherPCData.defineSchema().tier.options;
+  assert.equal(tier.initial, 1);
+  assert.equal(tier.min, 1);
+  assert.equal(tier.integer, true);
+  assert.equal(tier.max, undefined);
 });

@@ -47,7 +47,10 @@ The main gameplay boundaries are:
 - `recovery-service.mjs`: completed recoveries, allocation, extra allowances and Rally.
 - `healing-service.mjs` and `wound-removal.mjs`: treatment/Healing Hand and
   persisted task/reroll healing consequences; see [recovery-and-healing.md](recovery-and-healing.md).
-- `advancement-service.mjs`: advancement purchases and tier transitions.
+- `advancement-service.mjs`: validated advancement purchases, resource rewards,
+  no-banking tier transitions and legacy pending-choice settlement.
+  `advancement-grants.mjs` resolves actual Focus/Genre source grants before costs;
+  see [character advancement](character-advancement.md).
 - `character-service.mjs`: XP spending and character data operations;
   its Player Intrusion facade delegates to `intrusion-service.mjs`, which owns
   GM decisions, player requests, and receipt-based XP settlement.

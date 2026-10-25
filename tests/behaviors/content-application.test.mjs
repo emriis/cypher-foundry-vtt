@@ -211,6 +211,7 @@ describe("Given a new PC builds a character from CRD content", () => {
         },
         flags: {
           cypher: {
+            focusAbilityPendingTier: 2,
             focusAbilityIds: ["first", "second"],
             appliedFocusGraph: {
               abilities: [

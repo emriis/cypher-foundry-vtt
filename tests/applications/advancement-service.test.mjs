@@ -53,8 +53,9 @@ test("overlapping purchases create one skill and charge one advancement", async 
   assert.equal(pc.created.length, 1);
   assert.equal(pc.system.xp, 4);
   assert.equal(pc.system.advancementSlots[0].bought, true);
+  assert.equal(pc.flags.cypher.advancementPending, null);
 });
-test("failed Item creation preserves committed XP, posts no success, and releases the guard", async () => {
+test("failed Item creation preserves its checkpoint and rejects a replay without charging again", async () => {
   const pc = actor(); let cards = 0;
   globalThis.ChatMessage.create = async () => { cards++; };
   pc.createEmbeddedDocuments = async () => { throw new Error("Item write failed"); };
@@ -64,5 +65,7 @@ test("failed Item creation preserves committed XP, posts no success, and release
   assert.equal(cards, 0);
   pc.createEmbeddedDocuments = async () => [];
   await purchaseAdvancementSlot(pc, 0, { newSkillName: "Athletics" });
-  assert.equal(pc.system.advancementSlots[0].bought, true);
+  assert.equal(pc.system.advancementSlots[0].bought, false);
+  assert.equal(pc.system.xp, 4);
+  assert.ok(pc.flags.cypher.advancementPending);
 });
