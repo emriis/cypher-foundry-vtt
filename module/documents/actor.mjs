@@ -257,10 +257,11 @@ export default class CypherActor extends Actor {
   /**
    * Advance the character's tier through the advancement application service.
    *
-   * @returns {Promise<void>} Completes after the tier transition.
+   * @param {object} [options={}] Required Focus/Genre source choices for the new tier.
+   * @returns {Promise<boolean>} Whether the completed tier and its grants were applied.
    */
-  async _advanceTier() {
-    return advanceTier(this);
+  async _advanceTier(options = {}) {
+    return advanceTier(this, options);
   }
 
   /* -------------------------------------------- */

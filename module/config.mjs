@@ -40,7 +40,7 @@ CYPHER.poolDamageToWound = [
   { max: Infinity, severity: "major" }
 ];
 
-/** Supported character tiers. */
+/** CRD content tiers; character advancement itself continues beyond tier six. */
 CYPHER.tiers = [1, 2, 3, 4, 5, 6];
 
 /** Supported item data-model types. */

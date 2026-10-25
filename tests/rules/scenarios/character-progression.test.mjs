@@ -59,7 +59,7 @@ describe("Given a character completes four advancements", () => {
     assert.ok(result.freshSlots.every(slot => slot.bought === false));
   });
 
-  test("when the character is already at the maximum tier, then the tier stays capped", () => {
-    assert.equal(computeTierAdvancement(6).newTier, 6);
+  test("when the character reaches tier six, then advancement may continue to tier seven", () => {
+    assert.equal(computeTierAdvancement(6).newTier, 7);
   });
 });

@@ -86,7 +86,7 @@ test("getFocusAbilityChoices delegates Focus graph eligibility to the applicatio
             { id: "first", tier: 1, prerequisites: [] },
             { id: "second", tier: 2, prerequisites: ["first"] }
           ],
-          flowchart: { edges: [] }
+          flowchart: { edges: [{ from: "first", to: "second" }] }
         };
       }
       if (key === "focusAbilityIds") return ["first"];

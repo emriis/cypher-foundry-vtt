@@ -561,11 +561,13 @@
       </div>
     </div>
 
-    {{#if focusAbilityPendingTier}}
-    <button type="button" class="pc-primary-action" data-action="chooseFocusAbility">
-      <i class="fa-solid fa-diagram-project"></i> {{localize "CYPHER.FocusSelection.ChooseAbility"}}
-    </button>
+    {{#if advancementInterrupted}}
+    <p role="alert">{{localize "CYPHER.Advancement.Interrupted"}}</p>
+    {{#if advancementCanReconcile}}<button type="button" data-action="promptAdvancementReconciliation">{{localize "CYPHER.Advancement.Reconcile"}}</button>{{/if}}
     {{/if}}
+    {{#each advancementChoices as |choice|}}
+    <button type="button" data-action="promptAdvancementChoice" data-choice-id="{{choice.id}}">{{choice.label}}</button>
+    {{/each}}
 
     <div class="pc-advancement-grid">
       {{#each system.advancementSlots as |slot|}}
@@ -573,7 +575,9 @@
         <input type="hidden" name="system.advancementSlots.{{@index}}.bought"
           value="{{slot.bought}}"/>
         <div class="pc-slot-index">{{localize "CYPHER.Advancement.Slot"}} {{@index}}</div>
-        <select name="system.advancementSlots.{{@index}}.type">
+        {{#if slot.bought}}<input type="hidden" name="system.advancementSlots.{{@index}}.type" value="{{slot.type}}"/>{{/if}}
+        {{!-- Disabled selects stay unnamed: FormDataExtended otherwise groups them with their hidden copy. --}}
+        <select {{#unless slot.bought}}name="system.advancementSlots.{{@index}}.type"{{/unless}} {{#if slot.bought}}disabled{{/if}}>
           <option value="">—</option>
           <option value="capabilities" {{#ifEquals slot.type "capabilities"}}selected{{/ifEquals}}>
             {{localize "CYPHER.Advancement.capabilities"}}
@@ -592,7 +596,8 @@
           </option>
         </select>
         {{#ifEquals slot.type "other"}}
-        <select name="system.advancementSlots.{{@index}}.otherType">
+        {{#if slot.bought}}<input type="hidden" name="system.advancementSlots.{{@index}}.otherType" value="{{slot.otherType}}"/>{{/if}}
+        <select {{#unless slot.bought}}name="system.advancementSlots.{{@index}}.otherType"{{/unless}} {{#if slot.bought}}disabled{{/if}}>
           <option value="">—</option>
           <option value="recovery" {{#ifEquals slot.otherType "recovery"}}selected{{/ifEquals}}>
             {{localize "CYPHER.Advancement.other-recovery"}}

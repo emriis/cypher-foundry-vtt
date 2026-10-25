@@ -57,7 +57,7 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
       descriptor2: new StringField({ required: true, blank: true }),
       hasSecondFocus: new BooleanField({ required: true, initial: false }),
       focus2: new StringField({ required: true, blank: true }),
-      tier: new NumberField({ required: true, integer: true, initial: 1, min: 1, max: 6 }),
+      tier: new NumberField({ required: true, integer: true, initial: 1, min: 1 }),
       effort: new NumberField({ required: true, integer: true, initial: 1, min: 1 }),
       xp: new NumberField({ required: true, integer: true, initial: 0, min: 0 }),
       resourcePoints: new NumberField({ required: true, integer: true, initial: 0, min: 0 }),

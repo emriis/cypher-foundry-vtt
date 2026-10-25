@@ -1,3 +1,5 @@
+import { promptAdvancementPurchase, promptAdvancementChoice, promptAdvancementReconciliation } from "./advancement-dialogs.mjs";
+import { getAdvancementChoices } from "../applications/advancement-service.mjs";
 import { promptGMIntrusion, promptPlayerIntrusion } from "./intrusion-dialogs.mjs";
 import { equipmentHandsDisplay, promptEquipmentUse, promptHandCapacity, ensureEquipmentUse } from "./equipment-hands-dialogs.mjs";
 import { environmentalDisplay, promptEnvironment, promptEnvironmentExposure, endEnvironment } from "./environment-dialogs.mjs";
@@ -83,7 +85,8 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       toggleEquipped: CypherPCSheet.#onToggleEquipped,
       playerIntrusion: CypherPCSheet.#onPlayerIntrusion,
       gmIntrusion: async function() { await promptGMIntrusion(this.actor); },
-      purchaseAdvancement: CypherPCSheet.#onPurchaseAdvancement,
+      purchaseAdvancement: promptAdvancementPurchase,
+      promptAdvancementChoice, promptAdvancementReconciliation,
       rollDefense: CypherPCSheet.#onRollDefense,
       damageArmor: CypherPCSheet.#onDamageArmor,
       repairArmor: CypherPCSheet.#onRepairArmor,
@@ -135,6 +138,9 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     context.hasSuperheroics = this.actor.items.some(item => item.type === "ability" && item.system.key === "superheroics");
     context.focusAbilityPendingTier =
       this.actor.getFlag("cypher", "focusAbilityPendingTier");
+    context.advancementChoices = getAdvancementChoices(this.actor).map(choice => ({ ...choice, label: game.i18n.format("CYPHER.Advancement.PendingChoice", { kind: game.i18n.localize(`CYPHER.Advancement.${choice.kind === "focus" ? "FocusChoice" : "GenreChoice"}`), tier: choice.tier }) }));
+    context.advancementInterrupted = Boolean(this.actor.flags?.cypher?.advancementPending);
+    context.advancementCanReconcile = game.user.isGM;
     context.config = CONFIG.CYPHER;
     context.recoveryCards = CONFIG.CYPHER.recoveryIntervals.map(key => ({ key,
       checked: Boolean(this.actor.system.recoveries[key]),
@@ -556,87 +562,6 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
    */
   static async #onPlayerIntrusion(event, target) {
     await promptPlayerIntrusion(this.actor);
-  }
-
-  /**
-   * Collects advancement-specific choices and purchases the selected slot.
-   *
-   * @param {PointerEvent} event Action event.
-   * @param {HTMLElement} target Action target element.
-   */
-  static async #onPurchaseAdvancement(event, target) {
-    const index = Number(target.dataset.slot);
-    const slot = this.actor.system.advancementSlots[index];
-    if (!slot) return;
-
-    let extra = {};
-
-    if (slot.type === "capabilities") {
-      const content = `
-        <p>${game.i18n.localize("CYPHER.Advancement.CapabilitiesDialogHint")}</p>
-        <div class="form-group inline">
-          <label>${game.i18n.localize("CYPHER.Stat.might")} <input type="number" name="might" value="0" min="0" max="4"/></label>
-          <label>${game.i18n.localize("CYPHER.Stat.speed")} <input type="number" name="speed" value="0" min="0" max="4"/></label>
-          <label>${game.i18n.localize("CYPHER.Stat.intellect")} <input type="number" name="intellect" value="0" min="0" max="4"/></label>
-        </div>`;
-      const result = await foundry.applications.api.DialogV2.prompt({
-        window: { title: game.i18n.localize("CYPHER.Advancement.capabilities") },
-        content,
-        ok: {
-          label: game.i18n.localize("CYPHER.Confirm.Add"),
-          callback: (event, button) => ({
-            might: Number(button.form.might.value),
-            speed: Number(button.form.speed.value),
-            intellect: Number(button.form.intellect.value)
-          })
-        }
-      });
-      if (!result) return;
-      extra.distribution = result;
-    } else if (slot.type === "perfection") {
-      const content = `
-        <div class="form-group">
-          <label>${game.i18n.localize("CYPHER.Stat.Label")}</label>
-          <select name="stat">
-            <option value="might">${game.i18n.localize("CYPHER.Stat.might")}</option>
-            <option value="speed">${game.i18n.localize("CYPHER.Stat.speed")}</option>
-            <option value="intellect">${game.i18n.localize("CYPHER.Stat.intellect")}</option>
-          </select>
-        </div>`;
-      const stat = await foundry.applications.api.DialogV2.prompt({
-        window: { title: game.i18n.localize("CYPHER.Advancement.perfection") },
-        content,
-        ok: { label: game.i18n.localize("CYPHER.Confirm.Add"), callback: (event, button) => button.form.stat.value }
-      });
-      if (!stat) return;
-      extra.stat = stat;
-    } else if (slot.type === "skill") {
-      const skillOptions = this.actor.items.filter(i => i.type === "skill")
-        .map(i => `<option value="${i.id}">${i.name} (${game.i18n.localize(`CYPHER.SkillLevel.${i.system.level}`)})</option>`).join("");
-      const content = `
-        <div class="form-group">
-          <label>${game.i18n.localize("CYPHER.Advancement.PickExistingSkill")}</label>
-          <select name="skillId"><option value="">—</option>${skillOptions}</select>
-        </div>
-        <div class="form-group">
-          <label>${game.i18n.localize("CYPHER.Advancement.OrNewSkillName")}</label>
-          <input type="text" name="newSkillName"/>
-        </div>`;
-      const result = await foundry.applications.api.DialogV2.prompt({
-        window: { title: game.i18n.localize("CYPHER.Advancement.skill") },
-        content,
-        ok: {
-          label: game.i18n.localize("CYPHER.Confirm.Add"),
-          callback: (event, button) => ({ skillId: button.form.skillId.value, newSkillName: button.form.newSkillName.value })
-        }
-      });
-      if (!result) return;
-      extra.skillId = result.skillId || null;
-      extra.newSkillName = result.newSkillName || null;
-      if (!extra.skillId && !extra.newSkillName) return;
-    }
-
-    await this.actor.purchaseAdvancementSlot(index, extra);
   }
 
   /**

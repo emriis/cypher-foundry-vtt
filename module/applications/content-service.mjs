@@ -351,86 +351,8 @@ export async function applyFocus(
   return true;
 }
 
-/**
- * Select one additional Focus ability after a character reaches a new tier.
- *
- * @param {object} actor PC Actor.
- * @param {string} abilityId Focus ability id.
- * @param {string|null} [weaponSkillCategory=null] Weapon skill choice.
- * @returns {Promise<boolean>} Whether the ability was selected.
- */
-export async function selectFocusAbility(
-  actor,
-  abilityId,
-  weaponSkillCategory = null
-) {
-  if (actor.type !== "pc") return false;
-  const focus = actor.getFlag("cypher", "appliedFocusGraph");
-  const selected = actor.getFlag("cypher", "focusAbilityIds") ?? [];
-  if (!isFocusAbilityEligible(focus, selected, abilityId, actor.system.tier)) return false;
-
-  const ability = focus.abilities.find(candidate => candidate.id === abilityId);
-  if (ability.chooseWeaponAttackCategory && !CYPHER.attackSkillCategories.includes(weaponSkillCategory)) return false;
-  const updates = {
-    "flags.cypher.focusAbilityIds": [...selected, abilityId],
-    "flags.cypher.focusAbilityPendingTier": null
-  };
-  const freeWeaponCategories = ability.freeWeaponCategories ?? [];
-  const freeArmorCategories = ability.freeArmorCategories ?? [];
-  const freeWeaponFamilies = ability.freeWeaponFamilies ?? [];
-  const freeWeaponSkillCategories = [
-    ...(ability.freeWeaponSkillCategories ?? []),
-    ...(weaponSkillCategory ? [weaponSkillCategory] : [])
-  ];
-  if (freeWeaponCategories.length) {
-    updates["system.freeWeaponCategories"] = [...new Set([
-      ...(actor.system.freeWeaponCategories ?? CYPHER.coreFreeWeaponCategories),
-      ...freeWeaponCategories
-    ])];
-  }
-  if (freeArmorCategories.length) {
-    updates["system.freeArmorCategories"] = [...new Set([
-      ...(actor.system.freeArmorCategories ?? CYPHER.coreFreeArmorCategories),
-      ...freeArmorCategories
-    ])];
-  }
-  if (freeWeaponFamilies.length) {
-    updates["system.freeWeaponFamilies"] = [...new Set([
-      ...(actor.system.freeWeaponFamilies ?? []),
-      ...freeWeaponFamilies
-    ])];
-  }
-  if (freeWeaponSkillCategories.length) {
-    updates["system.freeWeaponSkillCategories"] = [...new Set([
-      ...(actor.system.freeWeaponSkillCategories ?? []),
-      ...freeWeaponSkillCategories
-    ])];
-  }
-  const source = await resolveDocumentReferences([ability.uuid], "ability");
-  if (source.length !== 1) return false;
-
-  await actor.update({
-    ...updates
-  });
-
-  const items = [{
-    name: source[0].name,
-    type: "ability",
-    ...abilityGrantFlags("focus", actor.getFlag("cypher", "appliedFocusId")),
-    system: {
-      ...source[0].system,
-      source: actor.system.focus,
-      focusAbilityId: ability.id
-    }
-  }];
-  if (ability.grantedArmorItemCategory) {
-    items.push(
-      focusArmorItemData({ name: actor.system.focus }, ability)
-    );
-  }
-  await actor.createEmbeddedDocuments("Item", items);
-  return true;
-}
+/** Preserve the public content API; progression owns entitlement consumption. */
+export { selectFocusAbility } from "./advancement-service.mjs";
 
 function focusArmorItemData(focus, ability) {
   return {

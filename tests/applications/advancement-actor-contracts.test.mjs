@@ -87,11 +87,12 @@ test("all-category advancements store every weapon or armor category", async () 
   }
 });
 
-test("advancing a tier records a pending Focus selection when an ability becomes eligible", async () => {
+test("advancing a completed tier grants the selected eligible Focus ability", async () => {
   globalThis.game = { i18n: { localize: value => value, format: value => value } };
   globalThis.ChatMessage = { getSpeaker: () => ({}), create: async () => {} };
   const actor = {
-    system: { tier: 1 },
+    type: "pc",
+    system: { tier: 1, advancementSlots: ["capabilities", "perfection", "effort", "skill"].map(type => ({ type, bought: true })) },
     flags: {
       cypher: {
         appliedFocusGraph: {
@@ -110,9 +111,11 @@ test("advancing a tier records a pending Focus selection when an ability becomes
     }
   };
 
-  await advanceTier(actor);
+  globalThis.fromUuid = async () => ({ type: "ability", name: "Grip", system: { tier: 2 } });
+  actor.createEmbeddedDocuments = async () => [];
+  await advanceTier(actor, { focus: { abilityId: "golem-grip" } });
   assert.equal(actor.lastUpdate["system.tier"], 2);
-  assert.equal(actor.lastUpdate["flags.cypher.focusAbilityPendingTier"], 2);
+  assert.equal(actor.lastUpdate["flags.cypher.focusAbilityPendingTier"], null);
 });
 
 test("advancement purchases capabilities and applies only the requested pool increases", async () => {
@@ -149,7 +152,7 @@ test("advancement purchases perfection and increments only the selected Edge", a
   assert.equal(actor.system.xp, 6);
 });
 
-test("advancement increases Effort but caps it at six", async () => {
+test("capped Effort cannot consume XP for a useless advancement", async () => {
   globalThis.game = { i18n: { localize: value => value, format: value => value } };
   globalThis.ChatMessage = { getSpeaker: () => ({}), create: async () => {} };
 
@@ -157,7 +160,8 @@ test("advancement increases Effort but caps it at six", async () => {
   await purchaseAdvancementSlot(actor, 0);
 
   assert.equal(actor.system.effort, 6);
-  assert.equal(actor.system.resourcePoints, 1);
+  assert.equal(actor.system.resourcePoints, 0);
+  assert.equal(actor.system.xp, 10);
 });
 
 test("skill advancement upgrades an existing skill and creates a trained skill when requested", async () => {
@@ -177,14 +181,9 @@ test("skill advancement upgrades an existing skill and creates a trained skill w
   await purchaseAdvancementSlot(actor, 0, { skillId: skill.id });
   assert.equal(skill.system.level, "trained");
 
-  actor.system.advancementSlots[0] = {
-    type: "skill", otherType: "", bought: false
-  };
-  await purchaseAdvancementSlot(actor, 0, {
-    newSkillName: "Lore"
-  });
-
-  assert.equal(actor.items.get("lore").system.level, "trained");
+  const fresh = makeAdvancementActor({ type: "skill" });
+  await purchaseAdvancementSlot(fresh, 0, { newSkillName: "Lore" });
+  assert.equal(fresh.items.get("lore").system.level, "trained");
 });
 
 test("Other advancements grant recovery, armor, and weapon permissions", async () => {
@@ -215,9 +214,9 @@ test("completing four advancement slots advances the tier and resets the slots",
     { tier: 1 }
   );
   actor.system.advancementSlots = [
-    { type: "effort", otherType: "", bought: true },
-    { type: "effort", otherType: "", bought: true },
-    { type: "effort", otherType: "", bought: true },
+    { type: "capabilities", otherType: "", bought: true },
+    { type: "perfection", otherType: "", bought: true },
+    { type: "skill", otherType: "", bought: true },
     { type: "effort", otherType: "", bought: false }
   ];
   actor.flags.cypher.appliedFocusGraph = {
@@ -227,10 +226,12 @@ test("completing four advancement slots advances the tier and resets the slots",
   };
   actor.flags.cypher.focusAbilityIds = ["tier-one"];
 
-  await purchaseAdvancementSlot(actor, 3);
+  globalThis.fromUuid = async () => ({ type: "ability", name: "Tier Two", system: { tier: 2 } });
+  actor.flags.cypher.appliedFocusGraph.abilities[0].uuid = "Item.tier-two";
+  await purchaseAdvancementSlot(actor, 3, { tierChoices: { focus: { abilityId: "tier-two" } } });
 
   assert.equal(actor.system.tier, 2);
   assert.equal(actor.system.advancementSlots.length, 4);
   assert.ok(actor.system.advancementSlots.every(slot => !slot.bought));
-  assert.equal(actor.flags.cypher.focusAbilityPendingTier, 2);
+  assert.equal(actor.flags.cypher.focusAbilityPendingTier, null);
 });
