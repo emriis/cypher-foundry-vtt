@@ -223,12 +223,13 @@ test("useCypher depletes the item and creates a chat message", async () => {
   ChatMessage.create = async data => { message = data; };
   const item = {
     type: "cypher",
-    system: { depleted: false },
+    id: "cypher", system: { depleted: false, cypherType: "manifest" },
     name: "Ghost Lens",
-    actor: { id: "actor-1" },
+    actor: { id: "actor-1", type: "pc", items: new Map() },
     update: async changes => { update = changes; }
   };
 
+  item.actor.items.set(item.id, item);
   try {
     await CypherItem.prototype.useCypher.call(item);
   } finally {

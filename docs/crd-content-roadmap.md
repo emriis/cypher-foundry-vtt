@@ -34,7 +34,7 @@ tests, and a deterministic build where applicable.
 | Descriptors | Inventory/stat/skill grants implemented; passive benefits need executable contracts |
 | Foci | 42 Focus records and graph/grant infrastructure; individual Ability limitations remain |
 | W4 equipment/weapons/armor/shields | Complete source-backed inventory |
-| Subtle/Manifest/Power Boost Cyphers | Complete source-backed inventory |
+| Subtle/Manifest/Power Boost Cyphers | Source-backed inventory and common lifecycle implemented; particular powers remain open |
 | CRD Journals | Seven source-faithful rule selections exist; full CRD navigation remains planned |
 | Quick Reference | Planned |
 | Player/GM guides | Planned |
@@ -45,7 +45,7 @@ tests, and a deterministic build where applicable.
 | Runtime consumption of all structured mechanics | In progress |
 | Playwright/Foundry E2E infrastructure | Complete; gameplay coverage continues to grow |
 
-### Core-rule runtime progress — 2026-10-25
+### Core-rule runtime progress — 2026-10-26
 
 Inventory completion and executable rule support are separate milestones. The
 following contracts are present in the current implementation; they do not
@@ -67,9 +67,13 @@ Use Git/PR history for merge status and each linked contract for validation scop
 | Equipment constraints | Held/stowed declarations, hand capacity, heavy/two-handed use, weapon/shield conflicts, tripod and distinct available operators ([contract](equipment-constraints.md)) | Descriptive exceptions and broad ammunition rules remain separate. |
 | Objects and materials | Targetable Object Actors, current-level difficulty/protection, two-stage breaking/destruction and source-backed cutting ([contract](object-damage.md)) | Hardness and non-tool applicability are explicit declarations; later target edits require manual reroll reconciliation. |
 | Resource-point projects | Explicit prerequisites, downtime, collaboration, receipted spending and concrete crafting/repair results ([contract](resource-projects.md)) | Narrative outcomes, higher-level repair and Ability-specific quick crafting or restricted bonus points remain separate. |
+| Common cypher lifecycle | Exact weighted generation, explicit GM awards, carried limit, physical custody, action timing and single-use consumption ([contract](cypher-lifecycle.md)) | Particular powers, targets and durations follow by source-backed families. |
 
-The next core-rule lot is enforced configuration-switch action spending.
-Concrete Cypher power effects follow that lot. The Journal/reference,
+The current cypher lot implements the [common lifecycle](cypher-lifecycle.md):
+weighted generation, explicit GM awards, carried capacity, physical custody,
+activation timing and one-use consumption. Particular Cypher effects follow by
+source-backed families. Enforced configuration-switch action spending remains
+a separate open core-rule task. The Journal/reference,
 Quick Reference, player/GM navigation and cross-family runtime/E2E audit work
 also remain open. Do not reopen completed core-rule lots from stale historical
 audit tables without first checking their current implementation.
@@ -338,7 +342,8 @@ structured data already present in the source packs.
 - [ ] Verify all structured granted Type/Focus benefits in gameplay, including
   granted armor categories.
 - [x] Implement generic Cypher `variants` resolution.
-- [ ] Implement generic Cypher `randomRange` resolution.
+- [x] Implement source-backed Cypher generation tables, including power selection
+  and superhero redirection; table placement is not a power-effect roll.
 - [x] Implement generic Cypher `rollTables` resolution.
 - [ ] Audit structured Cypher effects and implement source-backed runtime
   semantics where required.
@@ -494,8 +499,8 @@ broader reference inventory, hierarchy and navigation, not starting from no Jour
   collaboration and resumable payments; see [projects](resource-projects.md).
 - [ ] Close remaining structured weapon mechanics.
 - [x] Close generic Cypher variants and structured random tables.
-- [ ] Build an explicitly requested Cypher generation workflow using source
-  `randomRange` table placement; this is not a power-effect roll.
+- [x] Build explicitly requested Cypher generation and common lifecycle controls;
+  see [common cypher lifecycle](cypher-lifecycle.md). Particular powers remain open.
 - [x] Audit structured weapon mechanics with an extracted/modelled/runtime-gap
   matrix.
 - [ ] Complete the extracted/modelled/validated/runtime/E2E matrix for all

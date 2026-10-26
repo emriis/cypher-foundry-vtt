@@ -415,7 +415,7 @@
   </div>
   <div class="form-group">
     <label>{{localize 'CYPHER.Cypher.Type'}}</label>
-    <select name="system.cypherType">
+    <select name="system.cypherType" {{#unless cypherFormEditable}}disabled{{/unless}}>
       <option value="" {{#ifEquals system.cypherType ""}}selected{{/ifEquals}}>{{localize 'CYPHER.Cypher.GMChoice'}}</option>
       <option value="subtle" {{#ifEquals system.cypherType "subtle"}}selected{{/ifEquals}}>{{localize 'CYPHER.Cypher.Subtle'}}</option>
       <option value="manifest" {{#ifEquals system.cypherType "manifest"}}selected{{/ifEquals}}>{{localize 'CYPHER.Cypher.Manifest'}}</option>

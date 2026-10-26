@@ -54,6 +54,10 @@ The main gameplay boundaries are:
   no-banking tier transitions and legacy pending-choice settlement.
   `advancement-grants.mjs` resolves actual Focus/Genre source grants before costs;
   see [character advancement](character-advancement.md).
+- `cypher-generation-service.mjs` and `cypher-inventory-service.mjs`: exact CRD
+  generation, elected-GM awards, capacity, custody and one-use action timing;
+  Item/Actor batch hooks delegate native inventory checks. See
+  [common cypher lifecycle](cypher-lifecycle.md). Particular powers remain separate.
 - `project-service.mjs`: source-backed resource-point costs, explicit downtime
   projects, elected-GM settlement, contribution receipts and concrete results;
   see [resource-point projects](resource-projects.md).

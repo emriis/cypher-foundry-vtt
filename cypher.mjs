@@ -1,3 +1,5 @@
+import * as cypherInventoryService from "./module/applications/cypher-inventory-service.mjs";
+import * as cypherGenerationService from "./module/applications/cypher-generation-service.mjs";
 import * as projectService from "./module/applications/project-service.mjs";
 import { refreshProjectSheets } from "./module/sheets/project-dialogs.mjs";
 import * as objectService from "./module/applications/object-service.mjs";
@@ -50,7 +52,7 @@ Hooks.once("init", () => {
   // Publish shared configuration and macro entry points before sheets are opened.
   // Exposed for macro use, even if the sidebar button fails to find its
   // anchor point on a given Foundry version.
-  game.cypher = { CYPHER, importFromBuilder, openImportDialog, promptInitiativeOptions, objects: objectService, projects: projectService, taskRetries: taskRetryService, intrusions: intrusionService };
+  game.cypher = { cyphers: { ...cypherInventoryService, ...cypherGenerationService }, CYPHER, importFromBuilder, openImportDialog, promptInitiativeOptions, objects: objectService, projects: projectService, taskRetries: taskRetryService, intrusions: intrusionService };
   CONFIG.CYPHER = CYPHER;
 
   registerImportButton();

@@ -1,3 +1,5 @@
+import { cypherInventoryDisplay } from "../applications/cypher-inventory-service.mjs";
+import { promptCypherAward, promptCypherDiscard, promptCypherCustody, promptCypherReconciliation } from "./cypher-dialogs.mjs";
 import { projectDisplay, isProjectAuthority } from "../applications/project-service.mjs";
 import { promptProject, promptProjectAction, promptResourceAward, promptBefriendPenalty } from "./project-dialogs.mjs";
 import { promptAdvancementPurchase, promptAdvancementChoice, promptAdvancementReconciliation } from "./advancement-dialogs.mjs";
@@ -59,6 +61,9 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     // the handler below, binding `this` to the sheet, even for static handlers.
     actions: {
       promptProject, promptResourceAward, promptBefriendPenalty,
+      generateCypher: promptCypherAward, awardCypher: promptCypherAward, discardCyphers: promptCypherDiscard,
+      stashCypher: promptCypherCustody, retrieveCypher: promptCypherCustody, transferCypher: promptCypherCustody, formCypher: promptCypherCustody,
+      reconcileCypherTransfer: promptCypherCustody, reconcileCypherAward: promptCypherReconciliation,
       approveProject: promptProjectAction, completeProject: promptProjectAction, cancelProject: promptProjectAction,
       resumeProject: promptProjectAction, reconcileProject: promptProjectAction,
       promptEquipmentUse, promptHandCapacity,
@@ -154,6 +159,8 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       checked: Boolean(this.actor.system.recoveries[key]),
       canRoll: getRecoverySources(this.actor, key).some(source => source.remaining > 0)
     }));
+    context.cypherInventory = cypherInventoryDisplay(this.actor);
+    context.cypherCanAward = game.user.isGM;
     context.items = {
       skills: this.actor.items.filter(i => i.type === "skill"),
       abilities: this.actor.items.filter(i => i.type === "ability").map(item => ({
@@ -163,7 +170,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
         shieldAbilityKind: getShieldAbilityKind(item),
         healingAbilityKind: getHealingAbilityKind(item), healingAbilityCost: getHealingHandCost(item)
       })),
-      cyphers: this.actor.items.filter(i => i.type === "cypher"),
+      cyphers: context.cypherInventory.items,
       artifacts: this.actor.items.filter(i => i.type === "artifact"),
       equipment: this.actor.items.filter(i => i.type === "equipment"),
       attacks: this.actor.items.filter(i => i.type === "attack").map(item => ({
@@ -247,7 +254,8 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
    */
   static async #onUseCypher(event, target) {
     const item = this.actor.items.get(target.dataset.itemId);
-    await item?.useCypher();
+    if (item?.system.variants?.length) await rollCypherVariant(item);
+    else await item?.useCypher();
   }
 
   /**

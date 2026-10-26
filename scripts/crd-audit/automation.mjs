@@ -96,10 +96,11 @@ export function auditAutomation(document) {
       gaps.push("task assets, deployment, travel, environmental and special note effects are adjudicated");
       break;
     case "cypher":
+      implemented.push("cypher lifecycle: GM generation/awards, carried capacity, custody and activation timing");
       implemented.push("item-service: use/deplete");
       if (system.variants?.length) implemented.push("item-service: random variant resolution");
       if (system.rollTables?.length) implemented.push("item-service: inline table resolution");
-      if (system.randomRange?.min != null) gaps.push("generation-table placement is stored, not a runtime effect roll");
+      if (system.randomRange?.min != null) implemented.push("cypher-generation-service: acquisition table placement, not a power-effect roll");
       gaps.push("CRD power effect, targeting, duration and stat/damage consequences remain descriptive");
       break;
     default:

@@ -17,11 +17,19 @@ import {
 } from "../../module/applications/item-service.mjs";
 import { applyDocumentUpdate } from "../helpers/document-updates.mjs";
 
+/** Attach the fixture to its actual PC inventory, as Foundry does for embedded Items. */
+function embedCypher(item) {
+  item.id ??= "cypher-id";
+  item.system.cypherType ??= "manifest";
+  item.actor = { type: "pc", id: "actor-id", uuid: "Actor.actor-id", isOwner: true, system: { cypherLimit: 2 }, items: new Map([[item.id, item]]) };
+}
+
 test("repeated and overlapping Cypher consumption commits one depletion and one announcement", async () => {
   let cards = 0, writes = 0;
   globalThis.ChatMessage.create = async () => { cards++; };
   const item = { type: "cypher", name: "One use", system: { depleted: false },
     async update(changes) { await Promise.resolve(); writes++; applyDocumentUpdate(this, changes); } };
+  embedCypher(item);
   const results = await Promise.all([useCypher(item), useCypher(item)]);
   assert.equal(results.filter(Boolean).length, 1);
   assert.equal(await useCypher(item), false);
@@ -33,6 +41,7 @@ test("failed depletion publishes no card and releases the Item for a later attem
   let cards = 0;
   globalThis.ChatMessage.create = async () => { cards++; };
   const item = { type: "cypher", system: { depleted: false }, async update() { throw new Error("depletion failed"); } };
+  embedCypher(item);
   await assert.rejects(useCypher(item), /depletion failed/);
   assert.equal(cards, 0);
   assert.equal(item.system.depleted, false);
@@ -50,6 +59,7 @@ test("overlapping Cypher table uses evaluate and announce only the accepted acti
   const item = { id: "table-cypher", type: "cypher", actor: { id: "owner" }, system: {
     depleted: false, rollTables: [{ id: "power", formula: "1d6", results: [{ min: 1, max: 6, description: "Power" }] }]
   }, async update(changes) { writes++; applyDocumentUpdate(this, changes); } };
+  embedCypher(item);
   const results = await Promise.all([rollCypherTable(item, "power"), rollCypherTable(item, "power")]);
   assert.equal(results.filter(Boolean).length, 1);
   assert.deepEqual({ rolls, cards, writes }, { rolls: 1, cards: 1, writes: 1 });
@@ -59,6 +69,7 @@ test("overlapping Cypher table uses evaluate and announce only the accepted acti
 test("chat failure retains committed depletion and never announces a second use", async () => {
   globalThis.ChatMessage.create = async () => { throw new Error("chat failed"); };
   const item = { type: "cypher", system: { depleted: false }, async update(changes) { applyDocumentUpdate(this, changes); } };
+  embedCypher(item);
   await assert.rejects(useCypher(item), /chat failed/);
   assert.equal(item.system.depleted, true);
   assert.equal(await useCypher(item), false);
@@ -68,6 +79,7 @@ test("missing Cypher tables and depleted Cyphers reject before rolling or writin
   globalThis.Roll = class { constructor() { assert.fail("Rejected use must not roll"); } };
   const item = { type: "cypher", actor: {}, system: { depleted: false, rollTables: [] },
     async update() { assert.fail("Rejected use must not mutate"); } };
+  embedCypher(item);
   assert.equal(await rollCypherTable(item, "missing"), false);
   item.system.depleted = true;
   assert.equal(await rollCypherTable(item, "missing"), false);
@@ -90,6 +102,7 @@ test("useCypher depletes the item and posts a message", async () => {
     system: { depleted: false },
     async update(value) { update = value; }
   };
+  embedCypher(item);
 
   assert.equal(await useCypher(item), true);
   assert.deepEqual(update, { "system.depleted": true });
@@ -138,6 +151,7 @@ test("rollCypherTable resolves the matching result and consumes the Cypher", asy
     },
     async update(value) { update = value; }
   };
+  embedCypher(item);
 
   assert.equal(await rollCypherTable(item, "effect-table"), true);
   assert.deepEqual(update, { "system.depleted": true });
@@ -177,6 +191,7 @@ test("rollCypherVariant resolves the matching power and consumes the Cypher", as
     },
     async update(value) { update = value; }
   };
+  embedCypher(item);
 
   assert.equal(await rollCypherVariant(item), true);
   assert.deepEqual(update, { "system.depleted": true });
@@ -203,6 +218,7 @@ test("rollCypherVariant leaves the Cypher untouched when no variant matches", as
     },
     async update() { updateCalled = true; }
   };
+  embedCypher(item);
 
   assert.equal(await rollCypherVariant(item), false);
   assert.equal(updateCalled, false);
@@ -218,6 +234,7 @@ test("rollCypherTable rejects missing tables and already-depleted Cyphers", asyn
     system: { depleted: true, rollTables: [] },
     async update() { updateCalled = true; }
   };
+  embedCypher(item);
 
   assert.equal(await rollCypherTable(item, "missing"), false);
   assert.equal(updateCalled, false);
