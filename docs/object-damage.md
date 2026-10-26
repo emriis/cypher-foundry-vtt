@@ -78,8 +78,9 @@ distributed transactions between clients.
 ## Boundaries and verification
 
 Objects are explicit interactable targets, not automatically generated from
-inventory equipment, prices or descriptive text. Generic item repairs, crafting
-and resource-point projects remain separate. The optional **Damage to Objects**
+inventory equipment, prices or descriptive text. Resource-point crafting and eligible Object repairs now have their own
+[project contract](resource-projects.md). Higher-level repairs and special
+power effects still need individual contracts. The optional **Damage to Objects**
 suggestion to treat hacking/lockpicking progress as level damage (paragraph 7749)
 has no automatic damage conversion in this contract.
 

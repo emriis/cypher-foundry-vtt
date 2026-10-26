@@ -1,0 +1,24 @@
+<section class="pc-section">
+  <div class="pc-section-heading"><h2>{{localize "CYPHER.Project.title"}}</h2>
+    <button type="button" data-action="promptProject">{{localize "CYPHER.Project.new"}}</button>
+  </div>
+  <p>{{localize "CYPHER.Project.deferred"}}</p>
+  {{#if projectAuthority}}
+  <button type="button" data-action="promptResourceAward">{{localize "CYPHER.Project.award"}}</button>
+  <button type="button" data-action="promptBefriendPenalty">{{localize "CYPHER.Project.befriendHarm"}}</button>
+  {{/if}}
+  {{#each projects as |project|}}
+  <article class="pc-advancement-slot" data-project-id="{{project.id}}">
+    <h3>{{project.proposal.label}}</h3>
+    <p>{{localize project.kindLabel}} — {{localize project.stateLabel}}</p>
+    <p>{{localize "CYPHER.Project.customCost"}}: {{#if project.hasCost}}{{project.cost}}{{else}}{{localize "CYPHER.Project.costPending"}}{{/if}}
+      {{#if project.hasDeadline}} · {{localize "CYPHER.Project.hoursRemaining"}}: {{project.hoursRemaining}}{{/if}}</p>
+    <p>{{project.proposal.benefits}}</p>
+    {{#if project.canApprove}}<button type="button" data-action="approveProject" data-project-id="{{project.id}}">{{localize "CYPHER.Project.approve"}}</button>{{/if}}
+    {{#if project.canComplete}}<button type="button" data-action="completeProject" data-project-id="{{project.id}}">{{localize "CYPHER.Project.complete"}}</button>{{/if}}
+    {{#if project.canCancel}}<button type="button" data-action="cancelProject" data-project-id="{{project.id}}">{{localize "CYPHER.Project.cancel"}}</button>{{/if}}
+    {{#if project.canResume}}<button type="button" data-action="resumeProject" data-project-id="{{project.id}}">{{localize "CYPHER.Project.resume"}}</button>{{/if}}
+    {{#if project.canReconcile}}<button type="button" data-action="reconcileProject" data-project-id="{{project.id}}">{{localize "CYPHER.Project.reconcile"}}</button>{{/if}}
+  </article>
+  {{/each}}
+</section>

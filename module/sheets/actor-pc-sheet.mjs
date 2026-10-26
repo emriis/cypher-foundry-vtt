@@ -1,3 +1,5 @@
+import { projectDisplay, isProjectAuthority } from "../applications/project-service.mjs";
+import { promptProject, promptProjectAction, promptResourceAward, promptBefriendPenalty } from "./project-dialogs.mjs";
 import { promptAdvancementPurchase, promptAdvancementChoice, promptAdvancementReconciliation } from "./advancement-dialogs.mjs";
 import { getAdvancementChoices } from "../applications/advancement-service.mjs";
 import { promptGMIntrusion, promptPlayerIntrusion } from "./intrusion-dialogs.mjs";
@@ -56,6 +58,9 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     // Template buttons declare data-action="...". Foundry routes each name to
     // the handler below, binding `this` to the sheet, even for static handlers.
     actions: {
+      promptProject, promptResourceAward, promptBefriendPenalty,
+      approveProject: promptProjectAction, completeProject: promptProjectAction, cancelProject: promptProjectAction,
+      resumeProject: promptProjectAction, reconcileProject: promptProjectAction,
       promptEquipmentUse, promptHandCapacity,
       promptEnvironment, promptEnvironmentExposure, endEnvironment,
       toggleGuarding, clearGeneralEffect, promptGeneralCondition, promptCooperativeAction, promptSpecialDamage, promptDiseaseCheck,
@@ -108,6 +113,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       templates: [
         "systems/cypher/templates/actor/parts/header.hbs",
         "systems/cypher/templates/actor/parts/main.hbs",
+        "systems/cypher/templates/actor/parts/projects.hbs",
         "systems/cypher/templates/actor/parts/general-actions.hbs",
         "systems/cypher/templates/actor/parts/environment.hbs",
         "systems/cypher/templates/actor/parts/equipment-hands.hbs"
@@ -126,6 +132,8 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     // Context is the object Handlebars reads to render the sheet. Enriched HTML
     // and grouped Items are presentation data, not new persisted Actor fields.
     const context = await super._prepareContext(options);
+    context.projects = projectDisplay(this.actor);
+    context.projectAuthority = isProjectAuthority();
     context.system = this.actor.system;
     context.actor = this.actor;
     context.generalEffects = generalEffectDisplay(this.actor);

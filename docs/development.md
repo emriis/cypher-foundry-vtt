@@ -326,6 +326,8 @@ Fresh ordinary attempts after failure, required paid Effort, GM veto and
 card lineage are documented in [task-retries.md](task-retries.md).
 Character advancement, skill gates, no-banking Ability selection and progression
 beyond tier 6 are documented in [character-advancement.md](character-advancement.md).
+Resource-point projects, collaboration, time and resumable settlement are
+documented in [resource-projects.md](resource-projects.md).
 Held equipment, weapon/shield compatibility, tripod and crew prerequisites are
 documented in [equipment-constraints.md](equipment-constraints.md).
 

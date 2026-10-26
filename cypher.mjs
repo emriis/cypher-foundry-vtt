@@ -1,3 +1,5 @@
+import * as projectService from "./module/applications/project-service.mjs";
+import { refreshProjectSheets } from "./module/sheets/project-dialogs.mjs";
 import * as objectService from "./module/applications/object-service.mjs";
 import { renderTaskRetryControls } from "./module/sheets/task-retry-controls.mjs";
 import * as taskRetryService from "./module/applications/task-retry-service.mjs";
@@ -40,13 +42,15 @@ Hooks.on("preUpdateActor", objectService.stampObjectRevision);
 Hooks.on("preUpdateActor", enforceSpecialDamageHealing);
 Hooks.on("preUpdateCombat", stampGeneralTurnRevision);
 
+Hooks.on("updateWorldTime", refreshProjectSheets);
+
 Hooks.once("init", () => {
   console.log("Cypher | Initialisation / Initializing");
 
   // Publish shared configuration and macro entry points before sheets are opened.
   // Exposed for macro use, even if the sidebar button fails to find its
   // anchor point on a given Foundry version.
-  game.cypher = { CYPHER, importFromBuilder, openImportDialog, promptInitiativeOptions, objects: objectService, taskRetries: taskRetryService, intrusions: intrusionService };
+  game.cypher = { CYPHER, importFromBuilder, openImportDialog, promptInitiativeOptions, objects: objectService, projects: projectService, taskRetries: taskRetryService, intrusions: intrusionService };
   CONFIG.CYPHER = CYPHER;
 
   registerImportButton();
