@@ -56,7 +56,7 @@ Use Git/PR history for merge status and each linked contract for validation scop
 | --- | --- | --- |
 | Tasks and costs | Difficulty, skills, Effort allocation, Edge, natural-roll outcomes and costs ([contract](task-rolls.md)) | Source-specific power limits still need their own contracts. |
 | Wounds, armor and shields | Wound overflow, mitigation, shield-specific tracks, destruction/repair and supported shield exceptions ([shields](shield-runtime.md), [shield Abilities](shield-abilities.md)) | This is not blanket automation of all defensive powers. |
-| Character advancement | Unique purchases, one replacement, skill tier gates, tier-based resource gains, source-backed Focus/Genre grants and progression beyond tier 6 ([contract](character-advancement.md)) | Project spending remains separate; old incorrect gains require explicit review. |
+| Character advancement | Unique purchases, one replacement, skill tier gates, tier-based resource gains, source-backed Focus/Genre grants and progression beyond tier 6 ([contract](character-advancement.md)) | Resource-point projects have their own contract; old incorrect gains require explicit review. |
 | Ordinary task retries | Explicit failed-card lineage, same-task/time confirmation, at least one paid Effort level, fresh costs/action, GM veto and persistent interruption handling ([contract](task-retries.md)) | Specialized source actions and legacy cards retain their own workflows; duration is declared. |
 | Paid rerolls | Attack/defense consequence attribution, correction, successive rerolls and saved history ([contract](runtime-refactor.md)) | Ambiguous intervening healing and partial writes require explicit reconciliation. |
 | Recovery and healing | Standard recoveries, Rally, treatment, Healing Hand and supported healing consequences ([contract](recovery-and-healing.md)) | Other source-specific healing powers remain separate. |
@@ -66,9 +66,10 @@ Use Git/PR history for merge status and each linked contract for validation scop
 | Environmental hazards | Immediate/defended consequences, declared protection and repeated exposures ([contract](environmental-hazards.md)) | No universal danger table, unattended dice or inferred anatomy/equipment protection. |
 | Equipment constraints | Held/stowed declarations, hand capacity, heavy/two-handed use, weapon/shield conflicts, tripod and distinct available operators ([contract](equipment-constraints.md)) | Descriptive exceptions and broad ammunition rules remain separate. |
 | Objects and materials | Targetable Object Actors, current-level difficulty/protection, two-stage breaking/destruction and source-backed cutting ([contract](object-damage.md)) | Hardness and non-tool applicability are explicit declarations; later target edits require manual reroll reconciliation. |
+| Resource-point projects | Explicit prerequisites, downtime, collaboration, receipted spending and concrete crafting/repair results ([contract](resource-projects.md)) | Narrative outcomes, higher-level repair and Ability-specific quick crafting or restricted bonus points remain separate. |
 
-The next core-rule lots are enforced configuration-switch action spending and resource-point
-projects. Concrete Cypher power effects follow those lots. The Journal/reference,
+The next core-rule lot is enforced configuration-switch action spending.
+Concrete Cypher power effects follow that lot. The Journal/reference,
 Quick Reference, player/GM navigation and cross-family runtime/E2E audit work
 also remain open. Do not reopen completed core-rule lots from stale historical
 audit tables without first checking their current implementation.
@@ -489,6 +490,8 @@ broader reference inventory, hierarchy and navigation, not starting from no Jour
   constraints; keep GM adjudication and remaining model gaps documented.
 - [x] Implement object/material targets, breaking and destruction, and connect
   structured material cutting; see [objects and materials](object-damage.md).
+- [x] Connect resource-point projects, source-backed costs, explicit time/qualification,
+  collaboration and resumable payments; see [projects](resource-projects.md).
 - [ ] Close remaining structured weapon mechanics.
 - [x] Close generic Cypher variants and structured random tables.
 - [ ] Build an explicitly requested Cypher generation workflow using source

@@ -54,6 +54,9 @@ The main gameplay boundaries are:
   no-banking tier transitions and legacy pending-choice settlement.
   `advancement-grants.mjs` resolves actual Focus/Genre source grants before costs;
   see [character advancement](character-advancement.md).
+- `project-service.mjs`: source-backed resource-point costs, explicit downtime
+  projects, elected-GM settlement, contribution receipts and concrete results;
+  see [resource-point projects](resource-projects.md).
 - `character-service.mjs`: XP spending and character data operations;
   its Player Intrusion facade delegates to `intrusion-service.mjs`, which owns
   GM decisions, player requests, and receipt-based XP settlement.
