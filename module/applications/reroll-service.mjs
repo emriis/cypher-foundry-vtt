@@ -1,3 +1,4 @@
+import { reconcileObjectConsequences } from "./object-service.mjs";
 /**
  * Apply the CRD paid-reroll contract to structured chat metadata.
  * Validate metadata/source before XP, keep the appropriate result, and carry
@@ -68,9 +69,9 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
     if (flags.ruleEffect && (!ruleTarget || ruleTarget.isOwner === false)) return null;
     const initiativeOwner = flags.initiative ? await resolveInitiativeOwner(flags.initiative, sourceActor, { reroll: true }) : null;
     if (flags.initiative && (!initiativeOwner || !Number.isSafeInteger(flags.initiative.steps))) return null;
-    const attackUuid = flags.isAttack ? flags.attackConsequences?.targetUuid : null;
+    const attackUuid = flags.isAttack ? flags.objectConsequences?.targetUuid ?? flags.attackConsequences?.targetUuid : null;
     if (attackUuid && typeof attackUuid !== "string") return null;
-    const attackTarget = attackUuid ? await resolveDocumentReference(attackUuid, "npc") : null;
+    const attackTarget = attackUuid ? await resolveDocumentReference(attackUuid, flags.objectConsequences ? "object" : "npc") : null;
     // World Actor IDs cannot identify an unlinked token. Never substitute the
     // currently selected target or a base Actor when the original is missing.
     if (attackUuid && (!attackTarget || attackTarget.isOwner === false)) return null;
@@ -85,7 +86,7 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
       plan = resolveRerollPlan(flags);
       if (!plan) return null;
       if (flags.initiative && await resolveInitiativeOwner(flags.initiative, sourceActor, { reroll: true }) === null) return null;
-      if (attackUuid && (flags.attackConsequences?.targetUuid !== attackUuid || attackTarget.isOwner === false)) return null;
+      if (attackUuid && ((flags.objectConsequences?.targetUuid ?? flags.attackConsequences?.targetUuid) !== attackUuid || attackTarget.isOwner === false)) return null;
       if (flags.defenseType && (sourceActor?.type !== "pc" || sourceActor.isOwner === false)) return null;
       const item = sourceActor?.items?.get(flags.itemId);
       if (plan.kind === "task" && flags.effortCost > 0
@@ -143,6 +144,9 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
           initiative: { ...metadata.initiative, state: "pending" } } });
         initiativeCheckpointed = true;
       };
+      const checkpointObject = async pending => {
+        await origin.update({ "flags.cypher": { ...metadata, objectConsequences: pending } });
+      };
       let attackCheckpointed = false;
       const checkpointAttack = async pending => {
         // A targetless attack has no damage ledger, but its cost refund still
@@ -191,6 +195,9 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
             await persistInitiative(initiativeOwner, metadata.initiative.score, metadata.initiative);
           }
         }
+        if (flags.objectConsequences) {
+          Object.assign(metadata, await reconcileObjectConsequences(attackTarget, flags, outcome, checkpointObject));
+        }
         if (flags.isAttack && (flags.targetActorId || flags.attackConsequences)) {
           Object.assign(metadata, await reconcileAttackConsequences(attackTarget, flags, outcome, checkpointAttack));
         }
@@ -227,6 +234,7 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
         if (outcome.special.refundsCost && !flags.costRefunded && flags.effortCost > 0
           && flags.defenseConsequences?.state !== "pending" && flags.defenseConsequences?.reason !== "partial"
           && flags.attackConsequences?.state !== "pending" && flags.attackConsequences?.reason !== "partial"
+          && flags.objectConsequences?.state !== "pending" && flags.objectConsequences?.reason !== "partial"
           && !flags.attackRefundPending
           && !["pending", "manual"].includes(flags.ruleEffect?.state)
           && flags.initiative?.state !== "pending" && flags.initiative?.reason !== "partial"
@@ -263,7 +271,7 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
         if (outcome.selectedEffect) resultText += `<p>${game.i18n.localize(outcome.selectedEffect === "minor" ? "CYPHER.Roll.MinorEffect" : "CYPHER.Roll.MajorEffect")}</p>`;
         if (metadata.attackNote) {
           resultText += `<p>${game.i18n.localize(metadata.attackNote)}</p>`;
-          if (metadata.attackNote === "CYPHER.XP.AttackCorrectionManual") ui.notifications.warn(game.i18n.localize(metadata.attackNote));
+          if (["CYPHER.XP.AttackCorrectionManual", "CYPHER.Object.manual"].includes(metadata.attackNote)) ui.notifications.warn(game.i18n.localize(metadata.attackNote));
         }
         if (flags.isAttack && retained > plan.oldValue
           && (outcome.selectedEffect || ["minor", "major"].includes(flags.specialEffectChoice))) {

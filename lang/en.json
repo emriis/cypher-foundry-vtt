@@ -547,6 +547,35 @@
     },
     "Name": "Name",
     "Notes": "Notes",
+    "Object": {
+      "broken": "Broken",
+      "corrected": "Object consequences corrected for the retained result.",
+      "damage": "Apply raw damage",
+      "destroyed": "Destroyed",
+      "destructionDamage": "Damage after breaking",
+      "functional": "Functional",
+      "hardEnough": "Tool at least as hard as the material?",
+      "hint": "At level 0 the object is broken. Only subsequent hits count toward destruction, at damage equal to its original level.",
+      "ineffective": "The softer tool has no effect.",
+      "invalid": "Invalid object state",
+      "invalidAttack": "Object attack rejected: check ownership, state and material compatibility.",
+      "levelDamage": "Level damage",
+      "manual": "Object consequences require GM reconciliation: subsequent changes have been preserved.",
+      "material": "Material",
+      "method": "Attack method",
+      "no": "No",
+      "originalLevel": "Original level",
+      "other": "Other method (GM adjudication)",
+      "physical": "Physical material",
+      "physicalTool": "Physical tool",
+      "reset": "Reset damage",
+      "resetConfirm": "Clear all damage? This is an explicit GM adjudication.",
+      "result": "{name}: level {level}, {status}.",
+      "sheet": "Object Sheet",
+      "toolHint": "Declare material compatibility; hardness is never inferred from a name",
+      "unknown": "Not declared",
+      "yes": "Yes"
+    },
     "PowerShift": {
       "accuracy": "Accuracy",
       "dexterity": "Dexterity",
@@ -941,6 +970,7 @@
     "Actor": {
       "community": "Community",
       "npc": "NPC",
+      "object": "Object",
       "pc": "Player Character"
     },
     "Item": {

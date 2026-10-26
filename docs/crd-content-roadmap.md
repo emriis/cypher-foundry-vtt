@@ -64,10 +64,10 @@ Use Git/PR history for merge status and each linked contract for validation scop
 | Initiative and rounds | Initiative scores/rerolls, First/Last, waiting, readiness, follow-up activities and supported extra actions ([initiative](initiative.md), [round flow](round-flow.md)) | Source-specific eligibility and configuration-switch action costs are not all enforced. |
 | Intrusions | GM declarations, mandatory XP sharing, explicit player-intrusion approval, next-turn reactions and persistent settlement ([contract](intrusions.md)) | Narrative consequences remain GM adjudication. |
 | Environmental hazards | Immediate/defended consequences, declared protection and repeated exposures ([contract](environmental-hazards.md)) | No universal danger table, unattended dice or inferred anatomy/equipment protection. |
-| Equipment constraints | Held/stowed declarations, hand capacity, heavy/two-handed use, weapon/shield conflicts, tripod and distinct available operators ([contract](equipment-constraints.md)) | Descriptive exceptions, material/object interactions and broad ammunition rules remain separate. |
+| Equipment constraints | Held/stowed declarations, hand capacity, heavy/two-handed use, weapon/shield conflicts, tripod and distinct available operators ([contract](equipment-constraints.md)) | Descriptive exceptions and broad ammunition rules remain separate. |
+| Objects and materials | Targetable Object Actors, current-level difficulty/protection, two-stage breaking/destruction and source-backed cutting ([contract](object-damage.md)) | Hardness and non-tool applicability are explicit declarations; later target edits require manual reroll reconciliation. |
 
-The next core-rule lots are enforced configuration-switch action spending,
-object/material damage and resource-point
+The next core-rule lots are enforced configuration-switch action spending and resource-point
 projects. Concrete Cypher power effects follow those lots. The Journal/reference,
 Quick Reference, player/GM navigation and cross-family runtime/E2E audit work
 also remain open. Do not reopen completed core-rule lots from stale historical
@@ -487,6 +487,8 @@ broader reference inventory, hierarchy and navigation, not starting from no Jour
   cooperation/guarding, initiative/round flow and intrusions.
 - [x] Implement explicit environmental profiles and equipment grip/setup
   constraints; keep GM adjudication and remaining model gaps documented.
+- [x] Implement object/material targets, breaking and destruction, and connect
+  structured material cutting; see [objects and materials](object-damage.md).
 - [ ] Close remaining structured weapon mechanics.
 - [x] Close generic Cypher variants and structured random tables.
 - [ ] Build an explicitly requested Cypher generation workflow using source
