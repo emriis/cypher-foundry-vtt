@@ -1,0 +1,33 @@
+{
+  "CYPHER": {
+    "Object": {
+      "sheet": "Fiche d’objet",
+      "originalLevel": "Niveau initial",
+      "material": "Matériau",
+      "physical": "Matériau physique",
+      "levelDamage": "Dégâts au niveau",
+      "destructionDamage": "Dégâts après la casse",
+      "functional": "Fonctionnel",
+      "broken": "Cassé",
+      "destroyed": "Détruit",
+      "invalid": "État d’objet invalide",
+      "damage": "Appliquer des dégâts bruts",
+      "reset": "Réinitialiser les dégâts",
+      "resetConfirm": "Effacer tous les dégâts ? Cette décision relève du MJ.",
+      "hint": "Au niveau 0, l’objet est cassé. Seuls les coups suivants comptent pour sa destruction, à hauteur de son niveau initial.",
+      "toolHint": "Déclarez la compatibilité des matériaux ; la dureté n’est jamais déduite du nom",
+      "method": "Méthode d’attaque",
+      "physicalTool": "Outil physique",
+      "other": "Autre méthode (décision du MJ)",
+      "hardEnough": "L’outil est-il au moins aussi dur que le matériau ?",
+      "unknown": "Non déclaré",
+      "yes": "Oui",
+      "no": "Non",
+      "invalidAttack": "Attaque d’objet refusée : vérifiez les permissions, l’état et la compatibilité des matériaux.",
+      "result": "{name} : niveau {level}, {status}.",
+      "ineffective": "L’outil plus tendre n’a aucun effet.",
+      "manual": "Les conséquences sur l’objet nécessitent une correction du MJ : les modifications ultérieures ont été préservées.",
+      "corrected": "Conséquences sur l’objet corrigées pour le résultat retenu."
+    }
+  }
+}

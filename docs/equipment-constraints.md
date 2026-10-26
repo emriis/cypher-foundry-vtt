@@ -83,8 +83,8 @@ invented grips. The behavior change for old weapon macros is explicit above.
 
 ## Scope remaining
 
-Object/material interaction for `cutsThroughMaterialsLevel`, broad ammunition
-consumption rules, source-specific hand exceptions not yet represented by
+Object/material interaction now has its own [runtime contract](object-damage.md).
+Broad ammunition consumption rules, source-specific hand exceptions not yet represented by
 structured fields, and generic equipment power effects remain separate work.
 Passing this workflow does not mark all equipment or Ability mechanics complete.
 

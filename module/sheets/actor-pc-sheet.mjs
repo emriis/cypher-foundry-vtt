@@ -431,13 +431,13 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     const item = this.actor.items.get(target.dataset.itemId);
     if (!item) return;
     if (!await ensureEquipmentUse(this, item)) return;
+    const targets = Array.from(game.user.targets ?? []);
+    const objectTarget = targets.length === 1 && targets[0].actor?.type === "object" ? targets[0].actor : null;
     const result = await promptRollOptions(this.actor, {
-      difficulty: 3,
-      isAttack: true,
-      weapon: item
+      difficulty: 3, isAttack: true, weapon: item, objectTarget
     });
     if (!result) return;
-    await item.rollAttack(result);
+    await item.rollAttack({ ...result, ...(objectTarget ? { target: objectTarget } : {}) });
   }
 
   static async #onToggleAttackConfiguration(event, target) {

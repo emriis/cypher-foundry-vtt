@@ -100,15 +100,20 @@ export async function promptSpecialEffect(options) {
  */
 export async function promptRollOptions(actor, {
   difficulty = 3, isAttack = false, weapon = null, isWeaponAbility = false, fixedDifficulty = false,
-  stat = weapon?.system.stat, abilitySource = null, isInitiative = false, retryAttempt = null
+  stat = weapon?.system.stat, abilitySource = null, isInitiative = false, retryAttempt = null, objectTarget = null
 } = {}) {
+  if (objectTarget) { difficulty = objectTarget.system.level; fixedDifficulty = true; }
   const maxDifficulty = actor.system.maxDifficulty ?? 10;
   const maxEffort = Math.min(6, actor.system.effort ?? 1) + getSuperheroicsRank(actor, stat);
 
   const skillOptions = actor.items.filter(i => i.type === "skill")
     .map(i => `<option value="${i.id}">${i.name} (${game.i18n.localize(`CYPHER.SkillLevel.${i.system.level}`)})</option>`).join("");
 
+  const objectRevision = objectTarget?.flags?.cypher?.objectRevision ?? 0;
   const content = `
+    ${objectTarget ? `<p>${game.i18n.localize("CYPHER.Object.toolHint")}: ${foundry.utils.escapeHTML(objectTarget.system.material)}</p>
+      <label>${game.i18n.localize("CYPHER.Object.method")}<select name="objectMethod"><option value="physicalTool">${game.i18n.localize("CYPHER.Object.physicalTool")}</option><option value="other">${game.i18n.localize("CYPHER.Object.other")}</option></select></label>
+      <label>${game.i18n.localize("CYPHER.Object.hardEnough")}<select name="toolHardEnough"><option value="">${game.i18n.localize("CYPHER.Object.unknown")}</option><option value="yes">${game.i18n.localize("CYPHER.Object.yes")}</option><option value="no">${game.i18n.localize("CYPHER.Object.no")}</option></select></label>` : ""}
     ${retryAttempt ? `<p>${game.i18n.localize("CYPHER.TaskRetry.hint")}</p>
       <label>${game.i18n.localize("CYPHER.TaskRetry.label")}<input type="text" name="retryLabel" required value="${foundry.utils.escapeHTML(retryAttempt.label)}"/></label>
       <label>${game.i18n.localize("CYPHER.TaskRetry.duration")}<input type="text" name="retryDuration" required value="${foundry.utils.escapeHTML(retryAttempt.duration ?? "")}" ${retryAttempt.duration ? "readonly" : ""}/></label>
@@ -159,6 +164,7 @@ export async function promptRollOptions(actor, {
         const form = button.form;
         return {
           ...readTaskModifiers(form),
+          ...(objectTarget ? { objectInteraction: { method: form.objectMethod.value, toolHardEnough: form.toolHardEnough.value === "" ? null : form.toolHardEnough.value === "yes", targetUuid: objectTarget.uuid, revision: objectRevision } } : {}),
           ...(retryAttempt ? { label: form.retryLabel.value.trim(), duration: form.retryDuration.value.trim(), sameTaskConfirmed: form.sameTaskConfirmed.checked } : {}),
           chooseSpecialEffect: promptSpecialEffect,
           difficulty: Number(form.difficulty.value),

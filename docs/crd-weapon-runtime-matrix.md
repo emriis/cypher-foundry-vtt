@@ -38,7 +38,7 @@ present in an Item, copied to a chat flag, or shown in descriptive text.
 | `mechanics.rapidFire` | Spray/Arc Spray sheet actions validate weapon eligibility and execute the source-backed attack contracts against selected NPCs. | Runtime | Additional rapid-fire Abilities require their own source-backed contracts. |
 | `availableUses` | Optional, explicitly tracked ammunition/power/thrown-weapon store. Spray consumes the capped d6 + 1 count and persists the remainder. | Runtime | Ordinary attacks and Arc Spray do not infer consumption rules from this field. |
 | `mechanics.ignoresPhysicalArmor` | Numeric Armor bypass is passed from the weapon to the attack resolver and applied once against selected NPC Armor. | Runtime | Source-specific exceptions still require explicit modelling. |
-| `mechanics.cutsThroughMaterialsLevel` | Preserved in the Item model. | Stored only / model gap | Requires an interactable material/object model with levels and a CRD-backed resolution contract. |
+| `mechanics.cutsThroughMaterialsLevel` | An owned cutting weapon ignores protection against physical Object targets at or below its threshold; an attack roll remains required. | Runtime | Material compatibility is explicit; see [objects and materials](object-damage.md). |
 | `mechanics.targetEffects` | Filters effects by target level, persists them to targeted NPCs on a successful attack, and consumes supported `hindered` / `loseNextAction` effects in NPC attack resolution according to duration. Repeated structured Stunstick hindrance keeps two steps and the latest expiry under the accepted user adjudication. | Runtime (NPC attack consumer) | Other opposed tasks/passive NPC defenses need contracts. |
 | `mechanics.requiresTripod` | Requires explicitly declared deployment before weapon attacks, checked again before task costs. | Runtime | No deployment duration or positioning distance is invented. |
 | `mechanics.requiredOperators` | Counts the acting PC plus distinct assigned actual PC/NPC UUIDs; missing or incapacitated participants do not satisfy the requirement. Synthetic identity survives reload. | Runtime | Participation remains explicit. No helper action cost or bonus is inferred. |
@@ -91,12 +91,13 @@ and actual operator participation are implemented in
 [equipment constraints](equipment-constraints.md). Missing legacy grips require
 explicit declaration; they are not inferred from carrying inventory.
 
-1. Establish an interactable object/material contract before automating
-   `cutsThroughMaterialsLevel`.
-2. Address configuration-switch action spending and other remaining equipment
+The [object/material contract](object-damage.md) also consumes
+`cutsThroughMaterialsLevel`; generic repairs and projects remain separate.
+
+1. Address configuration-switch action spending and other remaining equipment
    interactions through their explicit source contracts. Do not invent generic
    ammunition consumption or setup durations.
-3. Continue the remaining structured weapon and Ability audit, including
+2. Continue the remaining structured weapon and Ability audit, including
    additional rapid-fire Abilities, without inferring mechanics from prose.
 
 The core PC-to-NPC numeric damage contract and physical Armor bypass are already

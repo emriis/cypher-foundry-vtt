@@ -547,6 +547,35 @@
     },
     "Name": "Nom",
     "Notes": "Notes",
+    "Object": {
+      "broken": "Cassé",
+      "corrected": "Conséquences sur l’objet corrigées pour le résultat retenu.",
+      "damage": "Appliquer des dégâts bruts",
+      "destroyed": "Détruit",
+      "destructionDamage": "Dégâts après la casse",
+      "functional": "Fonctionnel",
+      "hardEnough": "L’outil est-il au moins aussi dur que le matériau ?",
+      "hint": "Au niveau 0, l’objet est cassé. Seuls les coups suivants comptent pour sa destruction, à hauteur de son niveau initial.",
+      "ineffective": "L’outil plus tendre n’a aucun effet.",
+      "invalid": "État d’objet invalide",
+      "invalidAttack": "Attaque d’objet refusée : vérifiez les permissions, l’état et la compatibilité des matériaux.",
+      "levelDamage": "Dégâts au niveau",
+      "manual": "Les conséquences sur l’objet nécessitent une correction du MJ : les modifications ultérieures ont été préservées.",
+      "material": "Matériau",
+      "method": "Méthode d’attaque",
+      "no": "Non",
+      "originalLevel": "Niveau initial",
+      "other": "Autre méthode (décision du MJ)",
+      "physical": "Matériau physique",
+      "physicalTool": "Outil physique",
+      "reset": "Réinitialiser les dégâts",
+      "resetConfirm": "Effacer tous les dégâts ? Cette décision relève du MJ.",
+      "result": "{name} : niveau {level}, {status}.",
+      "sheet": "Fiche d’objet",
+      "toolHint": "Déclarez la compatibilité des matériaux ; la dureté n’est jamais déduite du nom",
+      "unknown": "Non déclaré",
+      "yes": "Oui"
+    },
     "PowerShift": {
       "accuracy": "Précision",
       "dexterity": "Dextérité",
@@ -941,6 +970,7 @@
     "Actor": {
       "community": "Communauté",
       "npc": "PNJ",
+      "object": "Objet",
       "pc": "Personnage joueur"
     },
     "Item": {

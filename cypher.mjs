@@ -1,3 +1,4 @@
+import * as objectService from "./module/applications/object-service.mjs";
 import { renderTaskRetryControls } from "./module/sheets/task-retry-controls.mjs";
 import * as taskRetryService from "./module/applications/task-retry-service.mjs";
 
@@ -35,6 +36,7 @@ Hooks.on("updateCombat", skipUnyieldingShieldTurn);
 // Persist attribution invalidation with the same healing/manual Actor update.
 Hooks.on("preUpdateActor", stampDefenseRevisions);
 Hooks.on("preUpdateActor", stampAttackHealthRevision);
+Hooks.on("preUpdateActor", objectService.stampObjectRevision);
 Hooks.on("preUpdateActor", enforceSpecialDamageHealing);
 Hooks.on("preUpdateCombat", stampGeneralTurnRevision);
 
@@ -44,7 +46,7 @@ Hooks.once("init", () => {
   // Publish shared configuration and macro entry points before sheets are opened.
   // Exposed for macro use, even if the sidebar button fails to find its
   // anchor point on a given Foundry version.
-  game.cypher = { CYPHER, importFromBuilder, openImportDialog, promptInitiativeOptions, taskRetries: taskRetryService, intrusions: intrusionService };
+  game.cypher = { CYPHER, importFromBuilder, openImportDialog, promptInitiativeOptions, objects: objectService, taskRetries: taskRetryService, intrusions: intrusionService };
   CONFIG.CYPHER = CYPHER;
 
   registerImportButton();
@@ -63,6 +65,7 @@ Hooks.once("init", () => {
   CONFIG.Actor.dataModels = {
     pc: models.CypherPCData,
     npc: models.CypherNPCData,
+    object: models.CypherObjectData,
     community: models.CypherCommunityData
   };
 
@@ -90,6 +93,10 @@ Hooks.once("init", () => {
     types: ["pc"],
     makeDefault: true,
     label: "CYPHER.Sheet.PC"
+  });
+
+  DocumentSheetConfig.registerSheet(foundry.documents.Actor, "cypher", sheets.CypherObjectSheet, {
+    types: ["object"], makeDefault: true, label: "CYPHER.Object.sheet"
   });
 
   DocumentSheetConfig.registerSheet(foundry.documents.Actor, "cypher", sheets.CypherNPCSheet, {

@@ -1,0 +1,17 @@
+<section class="standard-form">
+  <h1>{{actor.name}}</h1>
+  <p>{{localize "CYPHER.Level"}}: {{object.level}} — {{localize (concat "CYPHER.Object." object.status)}}</p>
+  <fieldset {{#unless canConfigure}}disabled{{/unless}}>
+    <div class="form-group"><label>{{localize "CYPHER.Name"}}</label><input name="name" value="{{actor.name}}"/></div>
+    <div class="form-group"><label>{{localize "CYPHER.Object.originalLevel"}}</label><input name="system.originalLevel" type="number" min="1" step="1" value="{{system.originalLevel}}"/></div>
+    <div class="form-group"><label>{{localize "CYPHER.Object.material"}}</label><input name="system.material" value="{{system.material}}"/></div>
+    <div class="form-group"><label>{{localize "CYPHER.Object.physical"}}</label><input name="system.physical" type="checkbox" {{checked system.physical}}/></div>
+    <div class="form-group"><label>{{localize "CYPHER.Object.levelDamage"}}</label><input name="system.levelDamage" type="number" min="0" step="1" value="{{system.levelDamage}}"/></div>
+    <div class="form-group"><label>{{localize "CYPHER.Object.destructionDamage"}}</label><input name="system.destructionDamage" type="number" min="0" step="1" value="{{system.destructionDamage}}"/></div>
+  </fieldset>
+  <p class="hint">{{localize "CYPHER.Object.hint"}}</p>
+  {{#if canConfigure}}
+  <button type="button" data-action="damageObject">{{localize "CYPHER.Object.damage"}}</button>
+  <button type="button" data-action="resetObject">{{localize "CYPHER.Object.reset"}}</button>
+  {{/if}}
+</section>

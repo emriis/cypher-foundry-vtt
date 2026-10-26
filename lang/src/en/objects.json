@@ -1,0 +1,33 @@
+{
+  "CYPHER": {
+    "Object": {
+      "sheet": "Object Sheet",
+      "originalLevel": "Original level",
+      "material": "Material",
+      "physical": "Physical material",
+      "levelDamage": "Level damage",
+      "destructionDamage": "Damage after breaking",
+      "functional": "Functional",
+      "broken": "Broken",
+      "destroyed": "Destroyed",
+      "invalid": "Invalid object state",
+      "damage": "Apply raw damage",
+      "reset": "Reset damage",
+      "resetConfirm": "Clear all damage? This is an explicit GM adjudication.",
+      "hint": "At level 0 the object is broken. Only subsequent hits count toward destruction, at damage equal to its original level.",
+      "toolHint": "Declare material compatibility; hardness is never inferred from a name",
+      "method": "Attack method",
+      "physicalTool": "Physical tool",
+      "other": "Other method (GM adjudication)",
+      "hardEnough": "Tool at least as hard as the material?",
+      "unknown": "Not declared",
+      "yes": "Yes",
+      "no": "No",
+      "invalidAttack": "Object attack rejected: check ownership, state and material compatibility.",
+      "result": "{name}: level {level}, {status}.",
+      "ineffective": "The softer tool has no effect.",
+      "manual": "Object consequences require GM reconciliation: subsequent changes have been preserved.",
+      "corrected": "Object consequences corrected for the retained result."
+    }
+  }
+}

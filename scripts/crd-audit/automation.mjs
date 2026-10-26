@@ -8,8 +8,7 @@ import { isStunstickHindrance } from "../../module/rules/weapon-effect-duration.
 const WEAPON_FIELDS = {
   twoHanded: "equipment-hand state missing",
   requiresTripod: "deployment state missing",
-  requiredOperators: "operator participation state missing",
-  cutsThroughMaterialsLevel: "target object/material level state missing"
+  requiredOperators: "operator participation state missing"
 };
 
 /** Describe current application entrypoints and known gaps for one source Item. */
@@ -67,6 +66,10 @@ export function auditAutomation(document) {
       break;
     case "attack":
       implemented.push("item/task services: familiarity, skill, damage, explicit range/one-handed adjudication, NPC persistence");
+      if (system.mechanics?.cutsThroughMaterialsLevel != null) {
+        implemented.push("object-service: physical material cutting threshold, attack roll, level damage, breaking/destruction and saved reroll correction");
+        gaps.push("object material/tool compatibility is explicitly adjudicated; later target changes require manual reroll reconciliation");
+      }
       for (const [field, limitation] of Object.entries(WEAPON_FIELDS)) {
         if (system.mechanics?.[field]) gaps.push(`${field}: ${limitation}`);
       }

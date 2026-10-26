@@ -1,3 +1,4 @@
+import { objectDisplay, prepareObjectAttack } from "./object-service.mjs";
 import { isOrdinaryRetryTask } from "../rules/task-retries.mjs";
 import { TASK_RETRY_CONTEXT, validTaskRetry, beginTaskRetry, releaseTaskRetry, finishTaskRetry } from "./task-retry-history.mjs";
 /**
@@ -105,7 +106,7 @@ export async function rollDefense(
  * @param {string} [options.freeEffortSource=""] Caller-confirmed applicable CRD source.
  * @param {boolean} [options.rollRoutine=true] Whether to roll when effective difficulty is zero.
  * @param {number} [options.assetSteps=0] Ease from assets, capped at two steps.
- * @param {Actor|null} [options.targetActor=null] Actual NPC receiving attack consequences.
+ * @param {Actor|null} [options.targetActor=null] Actual NPC or Object Actor receiving attack consequences.
  * @returns {Promise<object|null>} Roll result or null when the task is rejected.
  */
 export async function rollTask(actor, options = {}) {
@@ -137,6 +138,7 @@ async function executeTask(actor, {
   cooperativeMode = null, cooperativeEffectIds = null, ruleEffect = null, conditionsOnFailure = [], npcSource = null, takeAttackActor = null,
   automaticFailure = false, specialistRequired = false, environmentalSource = null,
   minorActivity = false, extraAction = false, extraActionSource = "", actionTiming = null,
+  objectInteraction = null,
   taskLabel = "", taskDuration = null, [TASK_RETRY_CONTEXT]: retryContext = null,
   [ROUND_ACTION_OWNER]: roundActionOwner = null
 } = {}, actionContext = null, initiativeOwner = null) {
@@ -184,6 +186,11 @@ async function executeTask(actor, {
   const ordinaryTask = isOrdinaryRetryTask({ isAttack, defenseType, initiative, shieldReturn, woundRemovalSeverity,
     abilitySource, ruleEffect, targetActor, cooperativeMode, environmentalSource, npcSource, minorActivity, extraAction, activationCost });
   if (retryContext && !ordinaryTask) return null;
+  const objectPlan = targetActor?.type === "object" ? prepareObjectAttack(actor, targetActor, objectInteraction, weaponSource) : null;
+  if (targetActor?.type === "object") {
+    if (!isAttack || !objectPlan) { ui.notifications.warn(game.i18n.localize("CYPHER.Object.invalidAttack")); return null; }
+    difficulty = objectPlan.before.originalLevel - objectPlan.before.levelDamage;
+  }
   const cooperation = cooperativeTaskPlan(actor, cooperativeMode, Boolean(defenseType), npcSource, cooperativeEffectIds);
   if (!cooperation) return null;
   assetSteps += cooperation.assets;
@@ -274,7 +281,7 @@ async function executeTask(actor, {
   if (defenseRecipient !== actor) await defenseRecipient.update({ "flags.cypher.generalEffects": [
     ...getGeneralEffects(defenseRecipient), { id: takeCooldownId, kind: "takeCooldown", until: nextSourceTurn(defenseRecipient) }
   ] });
-  const { targetDamage, attackConsequences, woundRemovalApplied, shieldWoundsAbsorbed, defenseConsequences, defensePoolDamage } = await applyTaskConsequences(actor, { isAttack, success, targetActor,
+  const { targetDamage, attackConsequences, objectConsequences, woundRemovalApplied, shieldWoundsAbsorbed, defenseConsequences, defensePoolDamage } = await applyTaskConsequences(actor, { objectPlan, isAttack, success, targetActor,
     totalDamage, armorBypass, weaponTargetEffects, weaponSource, defenseType,
     applyIncomingWound, incomingWounds, usingShield, shieldItem, incomingSeverity, incomingPoolDamage,
     conditionsOnFailure, woundRemovalSeverity, actionContext, defenseRecipient, takeCooldownId, specialistRequired });
@@ -300,6 +307,13 @@ async function executeTask(actor, {
     effort, powerShifts, assetSteps, skillSteps, rolled: Boolean(roll), automatic: automaticHit || automaticFailure
   });
   if (defenseRecipient !== actor) messageFlavor += `<p>${game.i18n.format("CYPHER.General.Taken", { name: foundry.utils.escapeHTML(defenseRecipient.name) })}</p>`;
+  if (objectConsequences) {
+    const state = objectDisplay(targetActor);
+    messageFlavor += `<p>${game.i18n.format("CYPHER.Object.result", { name: foundry.utils.escapeHTML(targetActor.name), level: state.level,
+      status: game.i18n.localize(`CYPHER.Object.${state.status}`) })}</p>`;
+    if (objectConsequences.ineffective) messageFlavor += `<p>${game.i18n.localize("CYPHER.Object.ineffective")}</p>`;
+    if (objectConsequences.state === "manual") messageFlavor += `<p>${game.i18n.localize("CYPHER.Object.manual")}</p>`;
+  }
   if (environmentalSource) messageFlavor += `<p>${game.i18n.localize("CYPHER.Environment.title")}: ${foundry.utils.escapeHTML(environmentalSource.name)}</p>`;
 
   // Flags are structured metadata for rerolls and tests; the localized HTML
@@ -347,6 +361,7 @@ async function executeTask(actor, {
         weaponSource,
         targetActorId: targetActor?.type === "npc" ? targetActor.id : null,
         ...(attackConsequences ? { attackConsequences } : {}),
+        ...(objectConsequences ? { objectConsequences } : {}),
         armorBypass
       }
     }
