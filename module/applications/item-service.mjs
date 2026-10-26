@@ -1,4 +1,5 @@
 import { roundActionContext } from "./round-action-service.mjs";
+import { runCypherActivation } from "./cypher-inventory-service.mjs";
 import { equipmentAttackProblem, equipmentGrip } from "./equipment-hands-service.mjs";
 import { minimumWeaponHands } from "../rules/equipment-hands.mjs";
 import { runActorAction } from "./action-guard.mjs";
@@ -26,15 +27,18 @@ import { resolveWeaponSkillModifier } from "../rules/weapon-skills.mjs";
  */
 export async function useCypher(item) {
   if (!item || item.isOwner === false) return false;
-  return (await runActorAction(item, "cypherUse", () => useCypherAccepted(item))) ?? false;
+  return runCypherActivation(item, () => useCypherAccepted(item));
 }
+
+/** Plain names enter HTML chat output; descriptive HTML is enriched separately. */
+const escape = value => String(value ?? "").replace(/[&<>"']/g, character => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[character]);
 
 async function useCypherAccepted(item) {
   if (item.type !== "cypher" || item.system.depleted) return false;
   await item.update({ "system.depleted": true });
   await ChatMessage.create({
     speaker: ChatMessage.getSpeaker({ actor: item.actor }),
-    content: `<h3>${item.name}</h3><p>${game.i18n.localize("CYPHER.Cypher.Used")}</p>`
+    content: `<h3>${escape(item.name)}</h3><p>${game.i18n.localize("CYPHER.Cypher.Used")}</p><p>${game.i18n.localize("CYPHER.CypherLife.effectsDeferred")}</p>`
   });
   return true;
 }
@@ -47,7 +51,7 @@ async function useCypherAccepted(item) {
  */
 export async function rollCypherVariant(item) {
   if (!item || item.isOwner === false) return false;
-  return (await runActorAction(item, "cypherUse", () => rollCypherVariantAccepted(item))) ?? false;
+  return runCypherActivation(item, () => rollCypherVariantAccepted(item), () => Boolean(item.system.variants?.length));
 }
 
 async function rollCypherVariantAccepted(item) {
@@ -81,11 +85,12 @@ async function rollCypherVariantAccepted(item) {
   await item.update({ "system.depleted": true });
   await roll.toMessage({
     speaker: ChatMessage.getSpeaker({ actor: item.actor }),
-    flavor: `<strong>${item.name}</strong> — ${variant.name} (${variant.powerLevel})`,
+    flavor: `<strong>${escape(item.name)}</strong> — ${escape(variant.name)} (${escape(game.i18n.localize(`CYPHER.CypherLife.${variant.powerLevel}`))})`,
     flags: { cypher: {
       rerollable: true,
       rollType: "cypherVariant",
       actorId: item.actor.id,
+      actorUuid: item.actor.uuid,
       itemId: item.id,
       variantName: variant.name,
       powerLevel: variant.powerLevel,
@@ -107,7 +112,11 @@ async function rollCypherVariantAccepted(item) {
  */
 export async function rollCypherTable(item, tableId) {
   if (!item || item.isOwner === false) return false;
-  return (await runActorAction(item, "cypherUse", () => rollCypherTableAccepted(item, tableId))) ?? false;
+  return runCypherActivation(item, () => rollCypherTableAccepted(item, tableId), () => {
+    const table = item.system.rollTables?.find(table => table.id === tableId);
+    if (!table) return false;
+    try { new Roll(table.formula); return true; } catch { return false; }
+  });
 }
 
 async function rollCypherTableAccepted(item, tableId) {
@@ -142,11 +151,12 @@ async function rollCypherTableAccepted(item, tableId) {
   await item.update({ "system.depleted": true });
   await roll.toMessage({
     speaker: ChatMessage.getSpeaker({ actor: item.actor }),
-    flavor: `<strong>${item.name}</strong> — ${table.name}<br>${description}`,
+    flavor: `<strong>${escape(item.name)}</strong> — ${escape(table.name)}<br>${description}`,
     flags: { cypher: {
       rerollable: true,
       rollType: "cypherTable",
       actorId: item.actor.id,
+      actorUuid: item.actor.uuid,
       itemId: item.id,
       tableId,
       rollFormula: table.formula,

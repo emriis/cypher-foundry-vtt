@@ -1,4 +1,5 @@
 import { retryTask } from "../applications/task-retry-service.mjs";
+import { validateActorCyphers } from "../applications/cypher-inventory-service.mjs";
 import { CYPHER } from "../config.mjs";
 import {
   addCustomField,
@@ -57,6 +58,11 @@ import { convertDamageToWound } from "../rules/wounds.mjs";
  * facades and genuinely document-specific helpers.
  */
 export default class CypherActor extends Actor {
+  /** New Actor imports obey carried capacity; existing over-limit Actors are never rewritten on load. */
+  static async _preCreateOperation(documents, operation, user) {
+    if (await super._preCreateOperation(documents, operation, user) === false) return false;
+    return validateActorCyphers(documents);
+  }
 
   /** Declare no-roll help/distraction/draw on the actual target Actor. */
   async declareCooperation(target, options = {}) { return declareCooperation(this, target, options); }

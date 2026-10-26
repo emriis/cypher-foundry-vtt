@@ -362,33 +362,44 @@
 
     <section class="pc-section">
       <div class="pc-section-heading compact">
-        <h2>{{localize "CYPHER.Cypher.Title"}} ({{items.cyphers.length}}/{{system.cypherLimit}})</h2>
-        <button type="button" data-action="itemCreate" data-type="cypher"
-          title="{{localize 'CYPHER.Cypher.Title'}}">
-          <i class="fa-solid fa-plus"></i>
-        </button>
+        <h2>{{localize "CYPHER.Cypher.Title"}} ({{cypherInventory.count}}/{{cypherInventory.limit}})</h2>
+        {{#if cypherCanAward}}
+        <button type="button" data-action="generateCypher">{{localize "CYPHER.CypherLife.generate"}}</button>
+        <button type="button" data-action="awardCypher">{{localize "CYPHER.CypherLife.award"}}</button>
+        {{/if}}
+        <button type="button" data-action="discardCyphers">{{localize "CYPHER.CypherLife.discard"}}</button>
       </div>
+      <p>{{localize "CYPHER.CypherLife.effectsDeferred"}}</p>
+      {{#if cypherInventory.overLimit}}<p role="status">{{localize "CYPHER.CypherLife.capacity"}}</p>{{/if}}
+      {{#if cypherCanAward}}{{#each cypherInventory.pendingAwards as |award|}}
+      <button type="button" data-action="reconcileCypherAward" data-acquisition-id="{{award.id}}">{{localize "CYPHER.CypherLife.reconcile"}}</button>
+      {{/each}}{{/if}}
       {{#if items.cyphers.length}}
       <div class="pc-table">
         {{#each items.cyphers as |item|}}
-        <div class="pc-table-row {{#if item.system.depleted}}depleted{{/if}}"
+        <div class="pc-table-row pc-cypher-row {{#if item.system.depleted}}depleted{{/if}}"
           data-item-id="{{item.id}}">
           <div>
             <strong>{{item.name}}</strong>
-            <span>{{#if item.system.powerLevel}}{{item.system.powerLevel}}{{else}}{{item.system.level}}{{/if}}</span>
+            <span>{{#if item.powerLabel}}{{localize item.powerLabel}}{{else}}{{item.system.level}}{{/if}}</span>
           </div>
-          <span>{{item.system.cypherType}}</span>
+          <span>{{localize item.typeLabel}} · {{localize item.custodyLabel}}</span>
           {{#each item.system.rollTables as |table|}}
           <button type="button" data-action="rollCypherTable" data-table-id="{{table.id}}"
             data-item-id="{{../item.id}}" title="{{table.name}}"
-            {{#if ../item.system.depleted}}disabled{{/if}}>
+            {{#unless ../item.canUse}}disabled{{/unless}}>
             <i class="fa-solid fa-dice"></i> {{table.name}}
           </button>
           {{/each}}
           <button type="button" class="pc-primary-action" data-action="useCypher"
-            data-item-id="{{item.id}}" {{#if item.system.depleted}}disabled{{/if}}>
+            data-item-id="{{item.id}}" {{#unless item.canUse}}disabled{{/unless}}>
             <i class="fa-solid fa-bolt"></i> {{localize "CYPHER.Cypher.Use"}}
           </button>
+          {{#if item.canStash}}<button type="button" data-action="stashCypher">{{localize "CYPHER.CypherLife.stash"}}</button>{{/if}}
+          {{#if item.canRetrieve}}<button type="button" data-action="retrieveCypher">{{localize "CYPHER.CypherLife.retrieve"}}</button>{{/if}}
+          {{#if item.canTransfer}}<button type="button" data-action="transferCypher">{{localize "CYPHER.CypherLife.transfer"}}</button>{{/if}}
+          {{#if item.canSetForm}}<button type="button" data-action="formCypher">{{localize "CYPHER.CypherLife.form"}}</button>{{/if}}
+          {{#if item.canReconcile}}<button type="button" data-action="reconcileCypherTransfer">{{localize "CYPHER.CypherLife.reconcile"}}</button>{{/if}}
           <div class="pc-row-controls">
             <button type="button" data-action="itemEdit" title="{{localize 'CYPHER.Item.Edit'}}">
               <i class="fa-solid fa-pen"></i>

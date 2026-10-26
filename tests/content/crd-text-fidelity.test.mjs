@@ -103,7 +103,8 @@ test("Given a reviewed embedded definition, then the audit compares selected CRD
 test("Given descriptive powers, then the runtime audit never equates storage or chat output with complete automation", () => {
   const cypher = auditAutomation({ type: "cypher", system: { randomRange: { min: 1, max: 4 } } });
   assert.equal(cypher.status, "partial-or-adjudicated");
-  assert.ok(cypher.gaps.some(gap => gap.includes("generation-table")));
+  assert.ok(cypher.implemented.some(feature => feature.includes("acquisition table")));
+  assert.ok(cypher.gaps.some(gap => gap.includes("power effect") && gap.includes("remain descriptive")));
   const descriptor = auditAutomation({ type: "descriptor", system: { benefits: [{ description: "Reduce a wound." }] } });
   assert.ok(descriptor.gaps.some(gap => gap.includes("not executed")));
 });

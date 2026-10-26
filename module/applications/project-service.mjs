@@ -4,6 +4,7 @@
  * flags hold workflow/history, not a second balance. No old data is converted.
  */
 import { quoteProject } from "../rules/projects.mjs";
+import { canAcquireCyphers } from "./cypher-inventory-service.mjs";
 import { runActorActions } from "./action-guard.mjs";
 import { resolveDocumentReference } from "./reference-resolver.mjs";
 import { objectDisplay } from "./object-service.mjs";
@@ -224,6 +225,7 @@ export async function completeProject(actor, id, { workConfirmed = false } = {})
   const owners = [actor, plan.target, plan.worker, ...plan.contributors.map(entry => entry.actor)];
   return Boolean(await runActorActions(owners, "project", async context => {
     if (JSON.stringify(record(actor, id)) !== JSON.stringify(project)) return false;
+    if (project.proposal.kind === "craftCypher" && !canAcquireCyphers(actor)) return false;
     if (plan.contributors.some(entry => !Number.isSafeInteger(entry.actor.system.resourcePoints) || entry.actor.system.resourcePoints < entry.amount)) return false;
     const settlement = { participants: plan.contributors.map(entry => ({ uuid: entry.actor.uuid, amount: entry.amount })),
       result: resultPlan(project, plan), resultState: "unstarted" };
@@ -246,6 +248,7 @@ async function settle(actor, id, context = null) {
   const target = result.targetUuid ? await resolveDocumentReference(result.targetUuid) : null;
   if (result.targetUuid && (!target || target.isOwner === false)) return false;
   return runActorActions([actor, target, ...participants.map(entry => entry.actor)], "projectSettlement", async () => {
+    if (settlement.resultState === "unstarted" && result.kind === "item" && result.data.type === "cypher" && !canAcquireCyphers(actor)) return false;
     const receiptId = `${actor.uuid}:${id}`;
     if (participants.some(entry => !receipts(entry.actor).some(receipt => receipt.id === receiptId)
       && (!Number.isSafeInteger(entry.actor.system.resourcePoints) || entry.actor.system.resourcePoints < entry.amount))) return false;
@@ -265,6 +268,7 @@ async function settle(actor, id, context = null) {
       if (result.kind === "restore") await target.update({ "system.health.value": target.system.health.max });
       if (result.kind === "item") {
         const [created] = await actor.createEmbeddedDocuments("Item", [result.data]);
+        if (!created) throw Error("Project result creation was rejected");
         settlement.resultUuid = created?.uuid ?? null;
       }
       if (result.kind === "object") {

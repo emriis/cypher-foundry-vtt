@@ -6,7 +6,7 @@ import { applyDocumentUpdate } from "../helpers/document-updates.mjs";
 let actor, helper, target, documents, nextId, outputs;
 function pc(id) {
   return { type: "pc", id, uuid: `Actor.${id}`, isOwner: true, flags: {},
-    system: { resourcePoints: 10, xp: 5 }, items: new Map([["skill", { type: "skill", system: { level: "trained" } }]]),
+    system: { resourcePoints: 10, xp: 5, cypherLimit: 2 }, items: new Map([["skill", { type: "skill", system: { level: "trained" } }]]),
     async update(changes) { applyDocumentUpdate(this, changes); },
     async createEmbeddedDocuments(_type, data) { outputs.push(...structuredClone(data)); return data; } };
 }
@@ -218,4 +218,17 @@ test("old or malformed optional flags do not break sheets or manufacture an elap
   const id = await active(); delete saved(id).readyAt;
   assert.equal(await completeProject(actor, id, { workConfirmed: true }), false);
   assert.equal(actor.system.resourcePoints, 10); assert.equal(actor.flags.cypher.projects.old.version, 0);
+});
+
+test("a full cypher inventory can start work but must free a slot before any completion debit", async () => {
+  const source = { type: "cypher", uuid: "Item.capacitySource", system: { cypherType: "manifest", powerLevel: "low" },
+    toObject() { return { system: structuredClone(this.system) }; } };
+  documents.set(source.uuid, source); actor.system.cypherLimit = 0;
+  const id = await active({ label: "Craft with inventory full", kind: "craftCypher", power: "low", sourceUuid: source.uuid,
+    durationSeconds: 0, genreConfirmed: true, skillAppropriate: true, skillItemId: "skill" });
+  assert.equal(await completeProject(actor, id, { workConfirmed: true }), false);
+  assert.equal(actor.system.resourcePoints, 10); assert.equal(saved(id).state, "active"); assert.equal(outputs.length, 0);
+  actor.system.cypherLimit = 1;
+  assert.equal(await completeProject(actor, id, { workConfirmed: true }), true);
+  assert.equal(actor.system.resourcePoints, 8); assert.equal(outputs.length, 1);
 });

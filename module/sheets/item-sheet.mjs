@@ -47,6 +47,7 @@ export default class CypherItemSheet extends HandlebarsApplicationMixin(ItemShee
     const context = await super._prepareContext(options);
     context.item = this.item;
     context.system = this.item.system;
+    if (this.item.type === "cypher") context.cypherFormEditable = this.item.system.cypherCategory !== "powerBoost" || game.user.isGM;
     if (this.item.type === "shield") {
       context.shieldAbilityName = this.item.actor?.items.get(this.item.system.abilityItemId)?.name ?? "";
     }

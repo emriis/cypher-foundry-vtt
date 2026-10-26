@@ -163,7 +163,7 @@ and validation; other Ability clauses in the inventory remain incomplete.
 | Weapons | Familiarity, attack modifiers, numeric NPC damage, supported target effects, explicit range/one-handed adjudication, alternate category | Hands, deployment, operator participation, material/object interaction, and enforced action economy need explicit contracts/state |
 | Armor/shields | Equipping, armor damage/repair and hindrance; shield Block choice, independent wounds, overflow and destruction ([contract](shield-runtime.md)) | Individual special notes and special shield Abilities require source-backed contracts |
 | Ordinary equipment | Quantity/equipping and declared depletion | Task assets, environmental effects, travel and equipment setup remain adjudicated |
-| Cyphers | Use/depletion, variant selection and inline tables | Actual power effects, targeting, duration, damage and stat consequences remain descriptive |
+| Cyphers | Common generation/acquisition, capacity, custody, timing, depletion, variant selection and inline tables ([contract](cypher-lifecycle.md)) | Actual power effects, targeting, duration, damage and stat consequences remain descriptive |
 | Journals | Rules reference | Reference content does not execute gameplay |
 
 `system.randomRange` is a position in a generation table, not a power's damage

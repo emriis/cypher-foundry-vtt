@@ -2140,3 +2140,16 @@
   min-width: 0;
   overflow-wrap: anywhere;
 }
+
+/* Cypher custody adds optional controls; wrap them without widening the dashboard. */
+.cypher.sheet.pc .pc-cypher-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cypher.sheet.pc .pc-cypher-row > div:first-child {
+  flex: 1 1 12rem;
+}
+.cypher.sheet.pc .pc-cypher-row > button {
+  width: auto;
+  white-space: normal;
+}

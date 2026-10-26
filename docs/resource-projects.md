@@ -159,3 +159,11 @@ results and synthetic follower restoration without changing the base Actor.
 The runner built, extracted and verified the package in its own temporary
 checkout. No packs, distribution artifacts, installation settings or user worlds
 were changed in the working checkout or configured Foundry installation.
+
+### Common cypher inventory integration
+
+Cypher crafting can be approved while inventory is full, but completion and
+resumption require a free carried slot before any new resource debit. The
+native Item batch hook also checks the eventual result. Rejected creation leaves
+an uncertain-output checkpoint rather than a completed project; inspect and
+reconcile it explicitly. See [common cypher lifecycle](cypher-lifecycle.md).

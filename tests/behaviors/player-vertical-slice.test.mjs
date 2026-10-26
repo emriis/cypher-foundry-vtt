@@ -140,9 +140,11 @@ describe("Given a player-facing Cypher character", () => {
     assert.equal(attackResult.damage, 4);
 
     const cypher = {
-      type: "cypher", name: "Amazing effort", actor, system: { depleted: false },
+      id: "cypher", type: "cypher", name: "Amazing effort", actor, system: { depleted: false, cypherType: "subtle" },
       async update(changes) { this.system.depleted = changes["system.depleted"]; }
     };
+    actor.items.push(cypher);
+    actor.items.get = id => actor.items.find(item => item.id === id);
     await useCypher(cypher);
     assert.equal(cypher.system.depleted, true);
 
