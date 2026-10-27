@@ -1,3 +1,5 @@
+import { speciesTaskPlan, speciesDamageReduction } from "./species-benefit-service.mjs";
+import { followerTaskPlan } from "./follower-service.mjs";
 import { objectDisplay, prepareObjectAttack } from "./object-service.mjs";
 import { isOrdinaryRetryTask } from "../rules/task-retries.mjs";
 import { TASK_RETRY_CONTEXT, validTaskRetry, beginTaskRetry, releaseTaskRetry, finishTaskRetry } from "./task-retry-history.mjs";
@@ -129,13 +131,13 @@ async function executeTask(actor, {
   weaponRangeAdjudication = null, abilitySource = null, spentAbilityEdge = 0,
   effectEffortLevels = 0, activationCost = 0, shieldReturn = null, initiative = null,
   defenseType = null, incomingSeverity = "minor", armorModifier = 0, shieldItemId = null,
-  incomingPoolDamage = null,
+  incomingPoolDamage = null, incomingDamageTags = [],
   targetActor = null, armorBypass = 0, incomingWounds = 1,
   applyIncomingWound = true, woundRemovalSeverity = null,
   damageEffortLevels = 0, freeEffortLevels = 0, freeDamageEffortLevels = 0, freeEffortSource = "",
   rollRoutine = true, chooseSpecialEffect = null, areaAttack = false, push = false,
   pushDamageEffortLevels = 0, powerShiftCategories = [], noPhysicalMovement = false, attackForm = null,
-  cooperativeMode = null, cooperativeEffectIds = null, ruleEffect = null, conditionsOnFailure = [], npcSource = null, takeAttackActor = null,
+  benefitSelections = [], followerChoices = null, cooperativeMode = null, cooperativeEffectIds = null, ruleEffect = null, conditionsOnFailure = [], npcSource = null, takeAttackActor = null,
   automaticFailure = false, specialistRequired = false, environmentalSource = null,
   minorActivity = false, extraAction = false, extraActionSource = "", actionTiming = null,
   objectInteraction = null,
@@ -163,6 +165,7 @@ async function executeTask(actor, {
   if (defenseType && (!["block", "dodge", "might", "speed", "intellect"].includes(defenseType)
     || !["minor", "moderate", "major"].includes(incomingSeverity)
     || !Number.isSafeInteger(incomingWounds) || incomingWounds < 1)) return null;
+  if (!Array.isArray(incomingDamageTags) || incomingDamageTags.some(tag => !["falling", "fire", "heat", "cold", "ice"].includes(tag))) return null;
   if (!Array.isArray(conditionsOnFailure) || automaticFailure && !defenseType) return null;
   if (cooperativeMode === "take" && !takeAttackActor) return null;
   if (conditionsOnFailure.length && (!defenseType || conditionsOnFailure.some(effect =>
@@ -193,14 +196,19 @@ async function executeTask(actor, {
   }
   const cooperation = cooperativeTaskPlan(actor, cooperativeMode, Boolean(defenseType), npcSource, cooperativeEffectIds);
   if (!cooperation) return null;
-  assetSteps += cooperation.assets;
+  const following = await followerTaskPlan(actor, followerChoices, { isAttack, defenseType });
+  if (!following) { ui.notifications.warn(game.i18n.localize("CYPHER.Follower.unavailable")); return null; }
+  const species = speciesTaskPlan(actor, { selected: benefitSelections, isAttack, defenseType, skillItemId, weaponSource, attackForm });
+  if (!species) { ui.notifications.warn(game.i18n.localize("CYPHER.Benefit.unavailable")); return null; }
+  assetSteps += cooperation.assets + following.assets + species.assets;
+  baseDamage += species.damage;
   extraEaseSteps += cooperation.ease;
   extraHinderSteps += cooperation.hinder;
   const prepared = prepareTask(actor, { stat, difficulty, effortLevels, assetSteps, skillItemId,
     extraHinderSteps, extraEaseSteps, luckyShot, spentAbilityEdge, defenseType, armorModifier, targetActor,
     isAttack, baseDamage, damageEffortLevels, freeEffortLevels, freeDamageEffortLevels, freeEffortSource,
     areaAttack, push, pushDamageEffortLevels, powerShiftCategories, abilitySource, effectEffortLevels, activationCost,
-    noPhysicalMovement, attackForm, automaticFailure });
+    noPhysicalMovement, attackForm, automaticFailure, conditionalSkillSteps: species.skillSteps });
   if (!prepared) return null;
   const roundContext = roundActionOwner ? roundActionContext(roundActionOwner, { isAttack: true, actionTiming })
     : roundActionContext(actor, { isAttack, weaponSource, abilitySource, defenseType,
@@ -249,7 +257,7 @@ async function executeTask(actor, {
   // Use damage as the fallback, while an explicit player choice takes priority.
   if (offered.length && !offered.includes(specialEffectChoice)) specialEffectChoice = "damage";
   const { success, special, damageBonus, selectedEffect, totalDamage } = resolveTaskOutcome({
-    d20, effectiveDifficulty, isAttack, baseDamage, specialEffectChoice
+    d20, effectiveDifficulty, isAttack, baseDamage, specialEffectChoice, suppressIntrusion: species.suppressIntrusion
   });
   const effectText = special.gmIntrusion
     ? game.i18n.localize("CYPHER.Roll.GMIntrusionFree")
@@ -273,7 +281,7 @@ async function executeTask(actor, {
   const usingShield = defenseType === "block" && canShieldAbsorbWound(shieldItem);
 
   const takeOnSuccessfulBlock = Boolean(takeAttackActor && blockStillHits({ defenseType, applyIncomingWound,
-    incomingSeverity, incomingWounds, shieldWounds: usingShield ? resolveShieldWoundTrack(shieldItem.system.wounds,
+    incomingSeverity, incomingWounds, personalWoundReduction: speciesDamageReduction(actor, incomingDamageTags), shieldWounds: usingShield ? resolveShieldWoundTrack(shieldItem.system.wounds,
       actor.system.activeAbilityEffects, shieldOwnerItems(shieldItem), actor.system) : null,
     survivesMajor: usingShield && shieldSurvivesMajor(shieldItem, shieldOwnerItems(shieldItem)) }));
   const defenseRecipient = takeAttackActor && (!success || takeOnSuccessfulBlock) ? takeAttackActor : actor;
@@ -283,7 +291,7 @@ async function executeTask(actor, {
   ] });
   const { targetDamage, attackConsequences, objectConsequences, woundRemovalApplied, shieldWoundsAbsorbed, defenseConsequences, defensePoolDamage } = await applyTaskConsequences(actor, { objectPlan, isAttack, success, targetActor,
     totalDamage, armorBypass, weaponTargetEffects, weaponSource, defenseType,
-    applyIncomingWound, incomingWounds, usingShield, shieldItem, incomingSeverity, incomingPoolDamage,
+    incomingDamageTags, applyIncomingWound, incomingWounds, usingShield, shieldItem, incomingSeverity, incomingPoolDamage,
     conditionsOnFailure, woundRemovalSeverity, actionContext, defenseRecipient, takeCooldownId, specialistRequired });
   if (ruleEffect) ruleEffect = await applyRuleEffect(targetActor, ruleEffect, success);
   if (success && shieldReturn) {
@@ -337,12 +345,14 @@ async function executeTask(actor, {
         ...(initiative ? { initiative } : {}),
         ...(shieldReturn ? { shieldReturn: { ...shieldReturn, applied: success } } : {}),
         ...(defenseType ? { defenseType, shieldItemId, shieldWoundsAbsorbed, incomingWounds, incomingSeverity,
-          applyIncomingWound, incomingPoolDamage, conditionsOnFailure, defenseConsequences } : {}),
+          incomingDamageTags, applyIncomingWound, incomingPoolDamage, conditionsOnFailure, defenseConsequences } : {}),
         ...(woundRemovalSeverity ? { woundRemoval: {
           targetUuid: targetActor.uuid, severity: woundRemovalSeverity, applied: woundRemovalApplied
         } } : {}),
         stat,
         cooperativeMode,
+        ...(species.applied.length ? { speciesBenefits: species.applied, suppressIntrusion: species.suppressIntrusion } : {}),
+        ...(following.sources.length ? { followerHelp: following.sources } : {}),
         ...(takeAttackActor ? { takeOnSuccessfulBlock } : {}),
         ...(ruleEffect ? { ruleEffect } : {}),
         effortCost: totalCost,

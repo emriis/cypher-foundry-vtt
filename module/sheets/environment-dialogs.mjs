@@ -44,6 +44,7 @@ export async function promptEnvironment() {
       <div class="form-group"><label>${general("steps")}<input name="steps" type="number" min="1" step="1" value="1" required/></label></div>
       <div class="form-group"><label><input name="noPhysicalMovement" type="checkbox"/>${label("noPhysicalMovement")}</label></div>
       <div class="form-group"><label>${label("interval")}<input name="intervalSeconds" type="number" min="0" step="1" value="0" required/></label></div>
+      <label>${game.i18n.localize("CYPHER.Benefit.damageTags")}<select name="damageTags" multiple>${["falling", "fire", "heat", "cold", "ice"].map(tag => `<option value="${tag}">${game.i18n.localize(`CYPHER.Benefit.${tag}`)}</option>`).join("")}</select></label>
       <fieldset><legend>${label("protection")}</legend><p>${label("protectionHint")}</p>
       <div class="form-group"><label>${label("source")}<input name="protectionSource"/></label></div>
       <div class="form-group"><label>${label("woundReduction")}<input name="woundReduction" type="number" min="0" max="3" step="1" value="0" required/></label></div>
@@ -52,6 +53,7 @@ export async function promptEnvironment() {
     ok: { label: label("save"), callback: (_event, button) => {
       const form = button.form.elements, amount = Number(form.amount.value), interval = Number(form.intervalSeconds.value);
       return { name: form.hazardName.value, mode: form.mode.value, stat: form.stat.value, difficulty: Number(form.difficulty.value),
+        damageTags: Array.from(form.damageTags.selectedOptions).map(option => option.value),
         severity: form.severity.value === "none" ? null : form.severity.value, wounds: Number(form.wounds.value),
         poolDamage: amount === 0 ? null : { stat: form.poolStat.value, amount },
         conditions: form.condition.value === "none" ? [] : [{ kind: form.condition.value, steps: Number(form.steps.value) }],

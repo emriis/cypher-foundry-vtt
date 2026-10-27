@@ -184,3 +184,17 @@ test("a lost completion acknowledgement cannot repeat saved damage after reload"
   assert.equal(await resolve(entry), null);
   assert.equal(pc.system.wounds.moderate.current, 1);
 });
+
+test("a typed hazard cancelled by species resistance spends no Effort and needs no defense die", async () => {
+  pc.items.set("gift", { type: "ability", system: {}, flags: { cypher: { ruleBenefit: { version: 1, id: "descriptor.species.hellborn:0" } } } });
+  const entry = await declareEnvironmentalExposure(pc, { name: "Small flame", mode: "defense", stat: "might", difficulty: 5, severity: "minor", damageTags: ["fire"] });
+  const result = await resolve(entry, { effortLevels: 1 });
+  assert.equal(result.protected, true); assert.equal(rolls, 0); assert.equal(pc.system.stats.might.pool.value, 10);
+  assert.equal(pc.system.wounds.minor.current, 0);
+});
+
+test("stale follower/benefit choices reject a hazard defense before its processing checkpoint", async () => {
+  const entry = await declareEnvironmentalExposure(pc, defense), writes = pc.updates.length;
+  assert.equal(await resolve(entry, { benefitSelections: ["unowned"] }), null);
+  assert.equal(getEnvironmentalExposures(pc)[0].state, "ready"); assert.equal(pc.updates.length, writes); assert.equal(rolls, 0);
+});

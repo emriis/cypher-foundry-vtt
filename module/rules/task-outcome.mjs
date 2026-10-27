@@ -9,14 +9,16 @@ import { resolveAttackDamage, resolveSpecialRoll } from "./tasks.mjs";
  * @param {number} input.effectiveDifficulty Difficulty after task modifiers.
  * @param {boolean} [input.isAttack=false] Whether this is an attack.
  * @param {number} [input.baseDamage=0] Weapon damage before the special result.
+ * @param {boolean} [input.suppressIntrusion=false] Source-bound immunity for this task only.
  * @param {string|null} [input.specialEffectChoice=null] "damage", "minor", or "major".
  * @returns {{success: boolean, special: ReturnType<typeof resolveSpecialRoll>, damageBonus: number, selectedEffect: string|null, totalDamage: number}} Resolved outcome.
  */
 export function resolveTaskOutcome({ d20, effectiveDifficulty, isAttack = false,
-  baseDamage = 0, specialEffectChoice = null }) {
+  baseDamage = 0, specialEffectChoice = null, suppressIntrusion = false }) {
   const success = effectiveDifficulty <= 0 || (d20 !== null && d20 >= effectiveDifficulty * 3);
   const special = resolveSpecialRoll({ d20, success, isAttack,
     inflictsDamage: isAttack && success && baseDamage > 0 });
+  if (suppressIntrusion === true) special.gmIntrusion = false;
   let damageBonus = special.damageBonus;
   let selectedEffect = special.effect;
   if (special.effectOptions.includes(specialEffectChoice)) {

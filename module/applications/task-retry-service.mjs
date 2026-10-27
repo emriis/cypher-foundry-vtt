@@ -6,7 +6,7 @@ import { taskRetryOrigin, taskRetryProblem, TASK_RETRY_CONTEXT } from "./task-re
 
 /** Only these fresh player choices can enter the ordinary task pipeline. */
 const CHOICES = ["effortLevels", "difficulty", "assetSteps", "skillItemId", "extraEaseSteps", "extraHinderSteps",
-  "cooperativeMode", "cooperativeEffectIds", "freeEffortLevels", "freeEffortSource", "rollRoutine", "powerShiftCategories", "noPhysicalMovement", "push"];
+  "benefitSelections", "followerChoices", "cooperativeMode", "cooperativeEffectIds", "freeEffortLevels", "freeEffortSource", "rollRoutine", "powerShiftCategories", "noPhysicalMovement", "push"];
 
 /** Repeated calls share the actual Actor reservation with paid rerolls and ordinary actions. */
 export async function retryTask(actor, message, options = {}) {

@@ -1,3 +1,6 @@
+import { followerTaskPlan } from "./follower-service.mjs";
+import { speciesTaskPlan, speciesDamageReduction } from "./species-benefit-service.mjs";
+import { reduceWoundSeverity } from "../rules/wounds.mjs";
 /** GM-adjudicated hazards on actual PCs; CRD Special Damage (7815–7823), no invented hazard table. */
 import { normalizeEnvironmentalProfile, environmentalConsequences, environmentalExposureDue } from "../rules/environment.mjs";
 import { runActorAction, ACTION_CONTEXT } from "./action-guard.mjs";
@@ -44,19 +47,22 @@ export async function declareEnvironmentalExposure(actor, input) {
 }
 
 const choiceKeys = ["effortLevels", "assetSteps", "skillItemId", "extraHinderSteps", "extraEaseSteps", "rollRoutine",
-  "push", "freeEffortLevels", "freeEffortSource", "powerShiftCategories", "luckyShot", "cooperativeMode", "cooperativeEffectIds"];
+  "push", "freeEffortLevels", "freeEffortSource", "powerShiftCategories", "luckyShot", "followerChoices", "benefitSelections", "cooperativeMode", "cooperativeEffectIds"];
 
 /** Read-only preflight precedes the processing checkpoint; the task engine checks fresh state again. */
-function defenseAvailable(actor, profile, choices) {
+async function defenseAvailable(actor, profile, choices) {
   const cooperation = cooperativeTaskPlan(actor, choices.cooperativeMode ?? null, true, null, choices.cooperativeEffectIds ?? null);
   if (!cooperation) return false;
+  const following = await followerTaskPlan(actor, choices.followerChoices ?? null, { defenseType: profile.stat });
+  const species = speciesTaskPlan(actor, { selected: choices.benefitSelections ?? [], defenseType: profile.stat, skillItemId: choices.skillItemId ?? null });
+  if (!following || !species) return false;
   return Boolean(prepareTask(actor, { stat: profile.stat, difficulty: profile.difficulty,
     effortLevels: 0, skillItemId: null,
     luckyShot: false, spentAbilityEdge: 0, defenseType: profile.stat, armorModifier: 0,
     targetActor: null, isAttack: false, baseDamage: 0, damageEffortLevels: 0,
     freeEffortLevels: 0, freeDamageEffortLevels: 0, freeEffortSource: "", areaAttack: false,
     push: false, pushDamageEffortLevels: 0, powerShiftCategories: [], abilitySource: null,
-    ...choices, assetSteps: (choices.assetSteps ?? 0) + cooperation.assets,
+    ...choices, conditionalSkillSteps: species.skillSteps, assetSteps: (choices.assetSteps ?? 0) + cooperation.assets + following.assets + species.assets,
     extraEaseSteps: (choices.extraEaseSteps ?? 0) + cooperation.ease,
     extraHinderSteps: (choices.extraHinderSteps ?? 0) + cooperation.hinder,
     noPhysicalMovement: profile.noPhysicalMovement }));
@@ -79,10 +85,14 @@ export async function resolveEnvironmentalExposure(actor, id, options = {}) {
     if (!profile || entry.actorUuid !== actor.uuid
       || !environmentalExposureDue(entry, options.expectedSequence, now, options.intervalPassed)) return null;
     const effects = environmentalConsequences(profile);
-    const protectedFromAll = !effects.severity && !effects.poolDamage && !effects.conditions.length;
+    // Preview personal resistance for complete protection without reducing the
+    // packet twice: actual consequence writes still receive its original severity.
+    let personalSeverity = effects.severity;
+    for (let step = 0; personalSeverity && step < speciesDamageReduction(actor, profile.damageTags ?? []); step++) personalSeverity = reduceWoundSeverity(personalSeverity);
+    const protectedFromAll = !personalSeverity && !effects.poolDamage && !effects.conditions.length;
     const choices = Object.fromEntries(choiceKeys.filter(key => key in options).map(key => [key, options[key]]));
     if (effects.poolDamage && !resolveStat(actor.system, effects.poolDamage.stat)
-      || profile.mode === "defense" && !protectedFromAll && !defenseAvailable(actor, profile, choices)) return null;
+      || profile.mode === "defense" && !protectedFromAll && !await defenseAvailable(actor, profile, choices)) return null;
     // Persist before the first cost/die/damage write. A crash cannot silently replay this occurrence.
     await saveExposure(actor, { ...entry, state: "processing" });
     try {
@@ -90,14 +100,14 @@ export async function resolveEnvironmentalExposure(actor, id, options = {}) {
       const source = { id, sequence: entry.sequence, name: profile.name };
       if (profile.mode === "defense" && !protectedFromAll) {
         result = await rollDefense(actor, profile.stat, { ...choices, difficulty: profile.difficulty,
-          incomingSeverity: effects.severity ?? "minor", incomingWounds: effects.wounds,
+          incomingDamageTags: profile.damageTags ?? [], incomingSeverity: effects.severity ?? "minor", incomingWounds: effects.wounds,
           applyIncomingWound: effects.severity !== null, incomingPoolDamage: effects.poolDamage,
           conditionsOnFailure: effects.conditions, noPhysicalMovement: profile.noPhysicalMovement,
           environmentalSource: source, shieldItemId: null, isAttack: false, [ACTION_CONTEXT]: context });
         if (!result) { await saveExposure(actor, entry); return null; }
       } else {
         const applied = await applyDefenseConsequences(actor, { defenseType: profile.stat ?? "might", success: false,
-          incomingSeverity: effects.severity ?? "minor", incomingWounds: effects.wounds,
+          incomingDamageTags: profile.damageTags ?? [], incomingSeverity: effects.severity ?? "minor", incomingWounds: effects.wounds,
           applyIncomingWound: effects.severity !== null, incomingPoolDamage: effects.poolDamage,
           conditionsOnFailure: effects.conditions, usingShield: false, actionContext: context });
         const escape = value => foundry.utils.escapeHTML(String(value));

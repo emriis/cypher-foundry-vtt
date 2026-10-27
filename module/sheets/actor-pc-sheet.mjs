@@ -1,3 +1,7 @@
+import { speciesBenefitDisplay } from "../applications/species-benefit-service.mjs";
+import { promptSpeciesBenefit } from "./species-benefit-dialogs.mjs";
+import { followerDisplay } from "../applications/follower-service.mjs";
+import { promptFollower, promptFollowerAction } from "./follower-dialogs.mjs";
 import { cypherInventoryDisplay } from "../applications/cypher-inventory-service.mjs";
 import { promptCypherAward, promptCypherDiscard, promptCypherCustody, promptCypherReconciliation } from "./cypher-dialogs.mjs";
 import { projectDisplay, isProjectAuthority } from "../applications/project-service.mjs";
@@ -61,6 +65,10 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     // the handler below, binding `this` to the sheet, even for static handlers.
     actions: {
       promptProject, promptResourceAward, promptBefriendPenalty,
+      prepareBenefit: promptSpeciesBenefit, finishBenefit: promptSpeciesBenefit, chooseBenefitEnergy: promptSpeciesBenefit,
+      refreshSpeciesBenefits: promptSpeciesBenefit, reviewConditionalTraining: promptSpeciesBenefit,
+      promptFollower, configureFollower: promptFollowerAction, openFollower: promptFollowerAction, syncFollower: promptFollowerAction,
+      replaceFollower: promptFollowerAction, reconcileFollower: promptFollowerAction,
       generateCypher: promptCypherAward, awardCypher: promptCypherAward, discardCyphers: promptCypherDiscard,
       stashCypher: promptCypherCustody, retrieveCypher: promptCypherCustody, transferCypher: promptCypherCustody, formCypher: promptCypherCustody,
       reconcileCypherTransfer: promptCypherCustody, reconcileCypherAward: promptCypherReconciliation,
@@ -119,6 +127,8 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
         "systems/cypher/templates/actor/parts/header.hbs",
         "systems/cypher/templates/actor/parts/main.hbs",
         "systems/cypher/templates/actor/parts/projects.hbs",
+        "systems/cypher/templates/actor/parts/followers.hbs",
+        "systems/cypher/templates/actor/parts/species-benefits.hbs",
         "systems/cypher/templates/actor/parts/general-actions.hbs",
         "systems/cypher/templates/actor/parts/environment.hbs",
         "systems/cypher/templates/actor/parts/equipment-hands.hbs"
@@ -159,6 +169,9 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       checked: Boolean(this.actor.system.recoveries[key]),
       canRoll: getRecoverySources(this.actor, key).some(source => source.remaining > 0)
     }));
+    context.speciesBenefits = speciesBenefitDisplay(this.actor);
+    context.followers = await followerDisplay(this.actor);
+    context.followerCanManage = game.user.isGM;
     context.cypherInventory = cypherInventoryDisplay(this.actor);
     context.cypherCanAward = game.user.isGM;
     context.items = {

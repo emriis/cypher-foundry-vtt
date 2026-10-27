@@ -592,3 +592,32 @@ test("round slots reject duplicate or mistimed spending while defenses remain av
     assert.equal(await roll({ extraAction: true }), null);
   } finally { delete game.combat; }
 });
+
+test("follower help and PC cooperative help coexist while their combined assets retain the global cap", async () => {
+  const { registerFollower } = await import("../../module/applications/follower-service.mjs");
+  const { applyDocumentUpdate } = await import("../helpers/document-updates.mjs");
+  const actor = createActor(); actor.uuid = "Actor.pc"; actor.system.tier = 2; actor.flags = { cypher: { generalEffects: [{ id: "help", kind: "help", assets: 1 }] } };
+  actor.update = async changes => { actor.updates.push(changes); applyDocumentUpdate(actor, changes); };
+  const npc = { type: "npc", uuid: "Actor.follower", name: "Follower", flags: {}, system: { level: 4, health: { value: 12, max: 12 } }, async update(changes) { applyDocumentUpdate(this, changes); } };
+  const previous = { game: globalThis.game, foundry: globalThis.foundry, fromUuid: globalThis.fromUuid };
+  try {
+    globalThis.game = { ...previous.game, user: { isGM: true } };
+    globalThis.foundry = { utils: { randomID: () => "slot", escapeHTML: value => value } };
+    globalThis.fromUuid = async uuid => uuid === npc.uuid ? npc : actor;
+    await registerFollower(actor, npc, { confirmed: true, source: "Confirmed source" }); setRollResult(10);
+    const result = await CypherActor.prototype.rollTask.call(actor, { difficulty: 5, assetSteps: 1, cooperativeMode: "help", cooperativeEffectIds: ["help"] });
+    assert.equal(result.effectiveDifficulty, 3);
+    assert.equal(globalThis.__rollMessages.at(-1).flags.cypher.followerHelp[0].npcUuid, npc.uuid);
+    assert.deepEqual(actor.flags.cypher.generalEffects, []); assert.equal(npc.system.health.value, 12);
+  } finally { Object.assign(globalThis, previous); }
+});
+
+test("an owned species gift suppresses a natural-one intrusion only on its matching defense and persists that context", async () => {
+  const actor = createActor(); actor.items.set("gift", { type: "ability", system: {}, flags: { cypher: { ruleBenefit: { version: 1, id: "descriptor.species.aarak:2" } } } });
+  setRollResult(1);
+  await CypherActor.prototype.rollTask.call(actor, { difficulty: 2, defenseType: "dodge", applyIncomingWound: false });
+  const message = globalThis.__rollMessages.at(-1);
+  assert.equal(message.flags.cypher.suppressIntrusion, true); assert.doesNotMatch(message.flavor, /GMIntrusionFree/);
+  await CypherActor.prototype.rollTask.call(actor, { difficulty: 2, defenseType: "block", applyIncomingWound: false });
+  assert.match(globalThis.__rollMessages.at(-1).flavor, /GMIntrusionFree/);
+});

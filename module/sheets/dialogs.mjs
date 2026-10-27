@@ -1,3 +1,5 @@
+import { speciesConditionFields } from "./species-benefit-dialogs.mjs";
+import { followerDisplaySync } from "../applications/follower-service.mjs";
 /** Foundry dialogs collect player intent only; accepted services own all writes. */
 import { getWeaponAbilityKind } from "../applications/weapon-ability-service.mjs";
 import { getSuperheroicsRank } from "../applications/task-preparation.mjs";
@@ -29,7 +31,9 @@ export function taskModifierFields(actor, { stat, isAttack = false, defenseType 
       && !(key === "singleAttack" && !isAttack) && !(key === "savant" && (isAttack || defenseType))
       && !(key === "power" && !abilitySource)
       && !(isAttack && ["dexterity", "intelligence", "resilience"].includes(key)));
-  return `${isAttack ? number("damageEffort", "DamageEffort") : ""}
+  const followers = followerDisplaySync(actor).filter(entry => entry.canHelp && (!isAttack || entry.mode === "attack") && (!defenseType || entry.mode === "defense"));
+  const followerFields = followers.length ? `<fieldset><legend>${game.i18n.localize("CYPHER.Follower.help")}</legend>${followers.map(entry => `<label>${foundry.utils.escapeHTML(entry.name)}<select name="follower-${entry.id}"><option value="base" selected>${game.i18n.localize("CYPHER.Follower.baseLevel")} (${entry.level})</option><option value="none">${game.i18n.localize("CYPHER.Follower.none")}</option>${entry.tasks.map(task => `<option value="${task.id}">${foundry.utils.escapeHTML(task.label)} (${task.level})</option>`).join("")}</select></label>`).join("")}</fieldset>` : "";
+  return `${speciesConditionFields(actor, { isAttack, defenseType })}${followerFields}${isAttack ? number("damageEffort", "DamageEffort") : ""}
     ${getGeneralEffects(actor).some(effect => effect.kind === "help" || defenseType && effect.kind === "defenseHelp") ? `
       <div class="form-group"><label>${game.i18n.localize("CYPHER.General.cooperation")}<select name="cooperativeMode">
       <option value="none">${game.i18n.localize("CYPHER.General.none")}</option>
@@ -66,7 +70,9 @@ export function taskModifierFields(actor, { stat, isAttack = false, defenseType 
 export function readTaskModifiers(form) {
   const value = name => Number(form.elements?.namedItem(name)?.value ?? form[name]?.value ?? 0);
   const checked = name => Boolean(form.elements?.namedItem(name)?.checked ?? form[name]?.checked);
-  return { minorActivity: checked("minorActivity"), immediateMovement: checked("immediateMovement"), damageEffortLevels: value("damageEffort"), freeEffortLevels: value("freeEffort"),
+  const followerControls = Array.from(form.querySelectorAll?.('select[name^="follower-"]') ?? []);
+  const benefitSelections = Array.from(form.querySelectorAll?.('input[name="benefit"]:checked') ?? []).map(input => input.value);
+  return { benefitSelections, ...(followerControls.length ? { followerChoices: followerControls.filter(control => control.value !== "none").map(control => ({ id: control.name.slice(9), ...(control.value !== "base" ? { taskId: control.value } : {}) })) } : {}), minorActivity: checked("minorActivity"), immediateMovement: checked("immediateMovement"), damageEffortLevels: value("damageEffort"), freeEffortLevels: value("freeEffort"),
     ...(form.cooperativeMode ? { cooperativeMode: form.cooperativeMode.value } : {}),
     ...(form.cooperativeEffectIds ? { cooperativeEffectIds: [...form.cooperativeEffectIds.selectedOptions].map(option => option.value) } : {}),
     ...(checked("noPhysicalMovement") ? { noPhysicalMovement: true } : {}),

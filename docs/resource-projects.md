@@ -89,8 +89,12 @@ const id = await game.cypher.projects.createProject(pc, {
 
 Repair clears the actual Object's level/destruction damage; its revision changes
 normally, invalidating stale attack-reroll attribution. Restore Follower restores
-the actual NPC's numeric Health to maximum. Other follower effects, replacement
-fiction and circumstances require the GM's explicit adjudication.
+the actual NPC's numeric Health to maximum. Linked follower availability is restored after successful completion. Actual
+links, progression and replacement now have their own
+[follower contract](followers-and-benefits.md); unlinked historical followers
+retain explicit GM confirmation. Known other-owner, obsolete or unsynchronized
+links reject before payment. Source-specific powers and narrative circumstances
+still require explicit adjudication.
 
 Crafting copies the selected template's mechanics and complete description into
 one new owned Item, with quantity one, unequipped and not depleted where those

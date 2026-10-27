@@ -58,6 +58,12 @@ The main gameplay boundaries are:
   generation, elected-GM awards, capacity, custody and one-use action timing;
   Item/Actor batch hooks delegate native inventory checks. See
   [common cypher lifecycle](cypher-lifecycle.md). Particular powers remain separate.
+- `follower-service.mjs`: explicit actual-NPC links, tier progression, help roles,
+  replacement receipts and restoration availability; NPC/PC sheets share the same
+  source-bound task-level projection.
+- `species-benefit-service.mjs`: reviewed species numeric contracts, explicit
+  applicability/preparation, conditional training and opt-in historical source
+  binding. See [followers and benefits](followers-and-benefits.md).
 - `project-service.mjs`: source-backed resource-point costs, explicit downtime
   projects, elected-GM settlement, contribution receipts and concrete results;
   see [resource-point projects](resource-projects.md).

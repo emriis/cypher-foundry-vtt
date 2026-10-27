@@ -11,7 +11,7 @@ export function normalizeEnvironmentalProfile(input) {
   if (!input || typeof input.name !== "string" || !input.name.trim()
     || !["immediate", "defense"].includes(input.mode)) return null;
   const { mode, stat = null, difficulty = null, severity = null, wounds = 1, poolDamage = null,
-    conditions = [], intervalSeconds = null, noPhysicalMovement = false, protection = {} } = input;
+    damageTags = [], conditions = [], intervalSeconds = null, noPhysicalMovement = false, protection = {} } = input;
   if (mode === "defense" && (!["might", "speed", "intellect"].includes(stat)
     || !Number.isSafeInteger(difficulty) || difficulty < 0 || difficulty > 15)) return null;
   if (severity !== null && !["minor", "moderate", "major"].includes(severity)
@@ -19,6 +19,7 @@ export function normalizeEnvironmentalProfile(input) {
     || intervalSeconds !== null && (!Number.isSafeInteger(intervalSeconds) || intervalSeconds < 1)) return null;
   if (poolDamage !== null && (!poolDamage || !["might", "speed", "intellect"].includes(poolDamage.stat)
     || !Number.isSafeInteger(poolDamage.amount) || poolDamage.amount < 1)) return null;
+  if (!Array.isArray(damageTags) || damageTags.some(tag => !["falling", "fire", "heat", "cold", "ice"].includes(tag))) return null;
   if (!Array.isArray(conditions) || conditions.some(effect => !effect || !CONDITION_KINDS.includes(effect.kind)
     || !Number.isSafeInteger(effect.steps ?? 1) || (effect.steps ?? 1) < 1)) return null;
   if (!severity && !poolDamage && !conditions.length || !protection || typeof protection !== "object") return null;
@@ -30,6 +31,7 @@ export function normalizeEnvironmentalProfile(input) {
   return { name: input.name.trim(), mode, stat: mode === "defense" ? stat : null,
     difficulty: mode === "defense" ? difficulty : null, severity, wounds,
     poolDamage: poolDamage ? { stat: poolDamage.stat, amount: poolDamage.amount } : null,
+    ...(damageTags.length ? { damageTags: [...new Set(damageTags)] } : {}),
     conditions: conditions.map(effect => ({ kind: effect.kind, steps: effect.steps ?? 1 })),
     intervalSeconds, noPhysicalMovement,
     protection: { source: source.trim(), woundReduction, poolReduction, immune } };

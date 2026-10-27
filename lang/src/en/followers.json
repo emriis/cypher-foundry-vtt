@@ -1,0 +1,41 @@
+{
+  "CYPHER": {
+    "Follower": {
+      "title": "Followers",
+      "register": "Link a follower",
+      "registerHint": "Select an existing NPC granted by the rules or explicitly approved by the GM. Target an unlinked token to use its actual Actor.",
+      "source": "Grant / source confirmed by the GM",
+      "npc": "Actual NPC",
+      "acquiredTier": "Tier at acquisition",
+      "healthPerLevel": "Health increase per gained level",
+      "healthHint": "NPC Health is often three times level. Confirm the growth for this actual follower; existing damage is preserved.",
+      "tasks": "Task levels: one label=level per line",
+      "taskExample": "Perception=3",
+      "mode": "Follower role",
+      "attack": "Helps attacks",
+      "defense": "Helps defenses",
+      "independent": "Acts independently",
+      "available": "Present and able to help",
+      "absent": "Unavailable / lost",
+      "configure": "Role and availability",
+      "extraLevels": "Additional level improvements granted by the GM",
+      "replace": "Replace follower",
+      "replaceHint": "The selected replacement inherits the original numeric profile, acquisition tier and all recorded improvements. The old NPC remains unchanged.",
+      "sync": "Update progression",
+      "pending": "Progression / link to finish",
+      "manual": "Manual change to reconcile",
+      "active": "Up to date",
+      "reconcile": "Reconcile changes",
+      "reconcileHint": "Inspect and correct the NPC first. This adopts its current level and maximum Health as the corrected baseline, retaining recorded improvements and current Health.",
+      "note": "Correction note",
+      "unavailable": "Follower operation unavailable: check ownership, source, role and progression.",
+      "open": "Open NPC",
+      "empty": "No linked follower.",
+      "level": "Level",
+      "help": "Follower help",
+      "helpHint": "Available followers help according to their role, separately from PC cooperation. All assets share the same cap. Select a specific task level in roll options when it applies.",
+      "baseLevel": "General task level",
+      "none": "Does not help this task"
+    }
+  }
+}

@@ -232,3 +232,11 @@ test("a full cypher inventory can start work but must free a slot before any com
   assert.equal(await completeProject(actor, id, { workConfirmed: true }), true);
   assert.equal(actor.system.resourcePoints, 8); assert.equal(outputs.length, 1);
 });
+
+test("a known follower of another character cannot be restored by an unrelated project host", async () => {
+  target.type = "npc"; target.system = { level: 3, health: { value: 0, max: 9 } };
+  target.flags.cypher = { followerProgress: { version: 1, ownerUuid: helper.uuid, slotId: "other" } };
+  const id = await createProject(actor, { label: "Unrelated follower", kind: "restoreFollower", targetUuid: target.uuid, followerConfirmed: true, durationSeconds: 604800 });
+  assert.equal(await approveProject(actor, id, { confirmed: true }), false);
+  assert.equal(actor.system.resourcePoints, 10); assert.equal(target.system.health.value, 0);
+});

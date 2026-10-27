@@ -1,3 +1,4 @@
+import { synchronizeFollowers } from "./follower-service.mjs";
 /** CRD advancement purchases, source-backed Ability choices and legacy entitlement settlement. */
 import { runActorAction } from "./action-guard.mjs";
 import { CYPHER } from "../config.mjs";
@@ -106,7 +107,7 @@ function skillPlan(actor, extra) {
  */
 export async function purchaseAdvancementSlot(actor, index, extra = {}) {
   if (!ownedPC(actor) || !Number.isInteger(index) || index < 0) return false;
-  return (await runActorAction(actor, "advancement", async () => {
+  return (await runActorAction(actor, "advancement", async context => {
     if (flag(actor, "advancementPending")) { warn("Interrupted"); return false; }
     if (getAdvancementChoices(actor).length) { warn("ResolvePending"); return false; }
     const slots = actor.system.advancementSlots.map(slot => ({ ...slot }));
@@ -141,7 +142,7 @@ export async function purchaseAdvancementSlot(actor, index, extra = {}) {
     } else updates["system.xp"] = actor.system.xp - cost;
     await actor.update(updates);
     await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<p>${game.i18n.format("CYPHER.Advancement.PurchaseResult", { type: game.i18n.localize(`CYPHER.Advancement.${slot.type === "other" ? `other-${slot.otherType}` : slot.type}`), points: advancementResourcePoints(tier) })}</p>` });
-    if (updates["system.tier"]) await announceTier(actor, updates["system.tier"]);
+    if (updates["system.tier"]) { await synchronizeFollowers(actor, context); await announceTier(actor, updates["system.tier"]); }
     return true;
   })) ?? false;
 }
@@ -149,7 +150,7 @@ export async function purchaseAdvancementSlot(actor, index, extra = {}) {
 /** Explicit completion requires four bought slots; ordinary purchases already compose this update. */
 export async function advanceTier(actor, options = {}) {
   if (!ownedPC(actor)) return false;
-  return (await runActorAction(actor, "advancement", async () => {
+  return (await runActorAction(actor, "advancement", async context => {
     if (flag(actor, "advancementPending") || actor.system.advancementSlots?.length !== 4
       || !actor.system.advancementSlots.every(slot => slot.bought)) return false;
     const tier = actor.system.tier;
@@ -163,6 +164,7 @@ export async function advanceTier(actor, options = {}) {
       await actor.createEmbeddedDocuments("Item", plan.items);
     }
     await actor.update({ ...plan.updates, "flags.cypher.advancementPending": null });
+    await synchronizeFollowers(actor, context);
     await announceTier(actor, tier + 1);
     return true;
   })) ?? false;
@@ -176,7 +178,7 @@ async function announceTier(actor, tier) {
 /** Settle an explicitly saved legacy choice before allowing further progression. */
 export async function selectAdvancementAbility(actor, choiceId, options = {}) {
   if (!ownedPC(actor)) return false;
-  return (await runActorAction(actor, "advancement", async () => {
+  return (await runActorAction(actor, "advancement", async context => {
     if (flag(actor, "advancementPending")) { warn("Interrupted"); return false; }
     const choices = getAdvancementChoices(actor);
     const choice = choices.find(choice => choice.id === choiceId);
@@ -202,7 +204,7 @@ export async function selectFocusAbility(actor, abilityId, weaponSkillCategory =
 /** GM acknowledgement only clears the interruption after explicit manual state reconciliation. */
 export async function clearAdvancementInterruption(actor, { reconciled = false } = {}) {
   if (!ownedPC(actor) || !game.user?.isGM || !reconciled) return false;
-  return Boolean(await runActorAction(actor, "advancement", async () => {
+  return Boolean(await runActorAction(actor, "advancement", async context => {
     if (!flag(actor, "advancementPending")) return false;
     await actor.update({ "flags.cypher.advancementPending": null });
     return true;
