@@ -1,3 +1,4 @@
+import { speciesRecovery } from "./species-benefit-service.mjs";
 /**
  * CRD Recoveries / Healing Wounds: commit a completed rest or Rally on its
  * actual Actor. Sheets collect choices; this service validates fresh state,
@@ -72,7 +73,7 @@ export async function rollRecovery(actor, interval = "hour", options = {}) {
     if ((options.lastAction && interval !== "action")
       || (options.healMajor && interval !== "tenHours")
       || (options.woundChoice && !["minor", "moderate"].includes(options.woundChoice))) return null;
-    const { formula, data } = getRecoveryRollData(actor.system.tier ?? 1, actor.system.recoveryBonus ?? 0, options);
+    const { formula, data } = getRecoveryRollData(actor.system.tier ?? 1, (actor.system.recoveryBonus ?? 0) + speciesRecovery(actor).bonus, options);
     const roll = await new Roll(formula, data).evaluate();
     const pools = getRecoveryPools(actor);
     const proposed = defaultRecoveryAllocation(roll.total, pools, source.allowedStats);
@@ -84,6 +85,12 @@ export async function rollRecovery(actor, interval = "hour", options = {}) {
     if (!poolUpdates) {
       if (allocation !== null) ui.notifications.warn(game.i18n.localize("CYPHER.Recovery.InvalidAllocation"));
       return null;
+    }
+    const fixedIntellect = speciesRecovery(actor).intellect;
+    if (fixedIntellect) {
+      const current = getRecoveryPools(actor).intellect;
+      const path = "system.stats.intellect.pool.value";
+      poolUpdates[path] = Math.min(current.max, (poolUpdates[path] ?? current.value) + fixedIntellect);
     }
     const { updates, woundNoteKey } = computeRecoveryUpdates(interval, actor.system.wounds,
       actor.system.recoveries, { woundChoice: options.woundChoice, additional: sourceId !== "standard" });

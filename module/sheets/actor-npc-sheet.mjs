@@ -1,3 +1,4 @@
+import { followerNPCDisplay } from "../applications/follower-service.mjs";
 import { extendWeaponEffect, getWeaponEffectDisplayData } from "../applications/weapon-effect-service.mjs";
 import { getAvailableShields } from "../applications/equipment-service.mjs";
 import { generalEffectDisplay, toggleGuarding, clearGeneralEffect, promptGeneralCondition, incomingCooperationChoices } from "./general-action-dialogs.mjs";
@@ -76,6 +77,7 @@ export default class CypherNPCSheet extends HandlebarsApplicationMixin(ActorShee
     const context = await super._prepareContext(options);
     context.system = this.actor.system;
     context.actor = this.actor;
+    context.followerProfile = await followerNPCDisplay(this.actor);
     context.generalEffects = generalEffectDisplay(this.actor);
     // Read-only presentation; expiry/persistence belongs to the effect service.
     context.weaponEffects = getWeaponEffectDisplayData(this.actor).map(effect => ({

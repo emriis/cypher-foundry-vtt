@@ -1,3 +1,4 @@
+import { speciesSourceRules } from "../../module/rules/species-benefits.mjs";
 /**
  * Inventory implemented consumers, not inferred rules. Each source Item gets a
  * conservative runtime assessment: accepting a field or posting prose to chat
@@ -53,13 +54,17 @@ export function auditAutomation(document) {
       implemented.push("content-service: tier/prerequisite graph and referenced Ability grants");
       gaps.push("referenced Ability automation inherits each Ability's limitations");
       break;
-    case "descriptor":
+    case "descriptor": {
+      const numeric = speciesSourceRules(document);
       implemented.push("content-service: Pool choice, skill training, species/descriptor selection guards");
       if (system.benefits?.some(benefit => benefit.passiveModifiers?.length)) {
         implemented.push("content-service/ability-modifiers: explicitly structured passive benefit modifiers");
       }
-      if (system.benefits?.length) gaps.push("unstructured benefit clauses and conditional effects are not executed; individual execution contracts are required");
+      if (numeric.length) implemented.push("species-benefit-service: reviewed numeric gifts, explicit conditions/preparation and conditional training");
+      if (system.benefits?.some((benefit, index) => !benefit.passiveModifiers?.length && !numeric.some(rule => rule.benefitIndex === index))) gaps.push("unstructured benefit clauses are not executed; individual execution contracts are required");
+      if (numeric.length) gaps.push("fiction-dependent applicability requires explicit declaration; legacy conditional training requires GM review");
       break;
+    }
     case "skill":
       implemented.push("task/content services: selected skill modifier and advancement tier restrictions");
       gaps.push("GM/player identifies applicable task; special procedures/assets require explicit choices");

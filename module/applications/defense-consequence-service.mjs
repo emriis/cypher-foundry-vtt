@@ -1,3 +1,4 @@
+import { speciesDamageReduction } from "./species-benefit-service.mjs";
 /** Persist defense consequences and reconcile a failed defense once its reroll succeeds. */
 import { CYPHER } from "../config.mjs";
 import { planDefenseCorrection } from "../rules/defense-correction.mjs";
@@ -21,7 +22,7 @@ const woundRevisions = actor => Object.fromEntries(CYPHER.woundSeverities.map(se
  * @returns {Promise<object>} Recorded contribution, absorption count and Pool damage.
  */
 export async function applyDefenseConsequences(actor, { defenseType, success, applyIncomingWound,
-  incomingSeverity, incomingWounds, usingShield, shieldItem, incomingPoolDamage = null,
+  incomingDamageTags = [], incomingSeverity, incomingWounds, usingShield, shieldItem, incomingPoolDamage = null,
   conditionsOnFailure = [], additionalMinorWound = false, specialistRequired = false, actionContext }) {
   const before = woundCounts(actor);
   const revisions = woundRevisions(actor);
@@ -32,7 +33,8 @@ export async function applyDefenseConsequences(actor, { defenseType, success, ap
     defensePoolDamage = await applyDamage(actor, incomingPoolDamage.amount, { stat: incomingPoolDamage.stat });
   }
   if (applyIncomingWound) {
-    const severity = success ? defenseType === "block" ? reduceWound(incomingSeverity) : null : incomingSeverity;
+    let severity = success ? defenseType === "block" ? reduceWound(incomingSeverity) : null : incomingSeverity;
+    for (let step = 0; severity && step < speciesDamageReduction(actor, incomingDamageTags); step++) severity = reduceWound(severity);
     for (let index = 0; index < incomingWounds; index++) {
       if (success && defenseType === "block" && usingShield
         && await shieldAbsorbWound(actor, shieldItem, incomingSeverity, actionContext)) shieldWoundsAbsorbed++;
@@ -108,7 +110,7 @@ export async function reconcileDefenseConsequences(actor, flags, outcome, checkp
     getGeneralEffects(recipient).filter(effect => !contribution.effects.includes(effect.id)) });
   const applied = await applyDefenseConsequences(actor, { defenseType: flags.defenseType, success: true,
     applyIncomingWound: flags.applyIncomingWound, incomingSeverity: flags.incomingSeverity,
-    incomingWounds: flags.incomingWounds, incomingPoolDamage: flags.incomingPoolDamage,
+    incomingWounds: flags.incomingWounds, incomingPoolDamage: flags.incomingPoolDamage, incomingDamageTags: flags.incomingDamageTags ?? [],
     usingShield: canShieldAbsorbWound(shield), shieldItem: shield, actionContext });
   return { ...applied, defenseConsequences: { ...applied.defenseConsequences, state: "corrected" },
     defenseNote: "CYPHER.XP.DefenseCorrectionApplied" };

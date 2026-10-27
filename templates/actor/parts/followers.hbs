@@ -1,0 +1,21 @@
+<section class="pc-section">
+  <div class="pc-section-heading compact"><h2>{{localize "CYPHER.Follower.title"}}</h2>
+    {{#if followerCanManage}}<button type="button" data-action="promptFollower">{{localize "CYPHER.Follower.register"}}</button>{{/if}}
+  </div>
+  <p>{{localize "CYPHER.Follower.helpHint"}}</p>
+  {{#each followers as |follower|}}
+  <article class="pc-table-row pc-flex-row" data-follower-id="{{follower.id}}">
+    <div><strong>{{follower.name}}</strong><span>{{localize "CYPHER.Follower.level"}} {{follower.level}} · {{follower.health.value}}/{{follower.health.max}}</span>
+      <p>{{localize follower.modeLabel}} · {{localize follower.stateLabel}}{{#if follower.unavailable}} · {{localize "CYPHER.Follower.absent"}}{{/if}}</p>
+      {{#each follower.tasks as |task|}}<span>{{task.label}}: {{task.level}} </span>{{/each}}
+    </div>
+    <button type="button" data-action="configureFollower" data-follower-id="{{follower.id}}">{{localize "CYPHER.Follower.configure"}}</button>
+    <button type="button" data-action="syncFollower" data-follower-id="{{follower.id}}">{{localize "CYPHER.Follower.sync"}}</button>
+    {{#if ../followerCanManage}}
+    <button type="button" data-action="openFollower" data-follower-id="{{follower.id}}">{{localize "CYPHER.Follower.open"}}</button>
+    <button type="button" data-action="replaceFollower" data-follower-id="{{follower.id}}">{{localize "CYPHER.Follower.replace"}}</button>
+    {{#ifEquals follower.state "manual"}}<button type="button" data-action="reconcileFollower" data-follower-id="{{follower.id}}">{{localize "CYPHER.Follower.reconcile"}}</button>{{/ifEquals}}
+    {{/if}}
+  </article>
+  {{else}}<p>{{localize "CYPHER.Follower.empty"}}</p>{{/each}}
+</section>

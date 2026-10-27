@@ -1,0 +1,16 @@
+<section class="pc-section">
+  <div class="pc-section-heading compact pc-wrap-heading"><h2>{{localize "CYPHER.Benefit.title"}}</h2>
+    {{#if followerCanManage}}<button type="button" data-action="refreshSpeciesBenefits">{{localize "CYPHER.Benefit.refresh"}}</button>
+    <button type="button" data-action="reviewConditionalTraining">{{localize "CYPHER.Benefit.review"}}</button>{{/if}}
+  </div>
+  <p>{{localize "CYPHER.Benefit.conditionsHint"}}</p>
+  {{#each speciesBenefits as |benefit|}}
+  <article class="pc-table-row pc-flex-row" data-benefit-id="{{benefit.id}}"><div><strong>{{benefit.name}}</strong>
+    <span>{{localize benefit.conditionLabel}} {{benefit.value}} {{benefit.preparation.scope}}</span>
+    {{#if benefit.canPrepare}}<span>{{#ifEquals benefit.preparation.state "ready"}}{{localize "CYPHER.Benefit.ready"}}{{else}}{{localize "CYPHER.Benefit.notReady"}}{{/ifEquals}}</span>{{/if}}
+  </div>
+  {{#if benefit.canPrepare}}<button type="button" data-action="prepareBenefit" data-benefit-id="{{benefit.id}}">{{localize "CYPHER.Benefit.prepare"}}</button>
+  <button type="button" data-action="finishBenefit" data-benefit-id="{{benefit.id}}">{{localize "CYPHER.Benefit.finish"}}</button>{{/if}}
+  {{#if benefit.needsEnergy}}<button type="button" data-action="chooseBenefitEnergy" data-benefit-id="{{benefit.id}}">{{localize "CYPHER.Benefit.chooseEnergy"}}</button>{{/if}}
+  </article>{{else}}<p>{{localize "CYPHER.Benefit.empty"}}</p>{{/each}}
+</section>

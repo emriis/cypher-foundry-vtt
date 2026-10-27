@@ -1,6 +1,13 @@
 {{!-- NPC statistics and descriptive sections; input names map directly to Actor system fields. --}}
 <section class="npc-body">
   {{> "systems/cypher/templates/actor/parts/general-actions.hbs"}}
+  {{#if followerProfile}}
+  <section class="npc-section" data-follower-profile="{{followerProfile.id}}">
+    <h3>{{localize "CYPHER.Follower.title"}} — {{followerProfile.ownerName}}</h3>
+    <p>{{localize followerProfile.modeLabel}} · {{localize followerProfile.stateLabel}}</p>
+    {{#each followerProfile.tasks as |task|}}<p>{{task.label}}: {{task.level}}</p>{{/each}}
+  </section>
+  {{/if}}
   <div class="npc-section">
     <h3>{{localize 'CYPHER.NPC.Description'}}</h3>
     <prose-mirror name="system.description" value="{{system.description}}"></prose-mirror>

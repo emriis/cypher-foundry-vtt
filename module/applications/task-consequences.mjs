@@ -11,7 +11,7 @@ import { removeWound } from "./wound-removal.mjs";
  */
 export async function applyTaskConsequences(actor, { objectPlan = null, isAttack, success, targetActor, totalDamage,
   armorBypass, weaponTargetEffects, weaponSource, defenseType, applyIncomingWound,
-  incomingWounds, usingShield, shieldItem, incomingSeverity, incomingPoolDamage, conditionsOnFailure, woundRemovalSeverity,
+  incomingDamageTags = [], incomingWounds, usingShield, shieldItem, incomingSeverity, incomingPoolDamage, conditionsOnFailure, woundRemovalSeverity,
   actionContext, defenseRecipient = actor, takeCooldownId = null, specialistRequired = false }) {
   const attack = isAttack && targetActor?.type === "npc"
     ? await applyAttackConsequences(targetActor, { success, totalDamage, armorBypass, weaponTargetEffects, weaponSource })
@@ -19,7 +19,7 @@ export async function applyTaskConsequences(actor, { objectPlan = null, isAttack
       ? await applyObjectConsequences(targetActor, objectPlan, success, totalDamage) : { targetDamage: 0 };
 
   const defense = defenseType ? await applyDefenseConsequences(defenseRecipient, { defenseType, success: defenseRecipient !== actor ? false : success,
-    applyIncomingWound, incomingWounds, usingShield, shieldItem, incomingSeverity, incomingPoolDamage,
+    incomingDamageTags, applyIncomingWound, incomingWounds, usingShield, shieldItem, incomingSeverity, incomingPoolDamage,
     conditionsOnFailure, additionalMinorWound: defenseRecipient !== actor, specialistRequired, actionContext }) : {};
   if (takeCooldownId) defense.defenseConsequences.effects.push(takeCooldownId);
   if (defenseRecipient !== actor) defense.defenseConsequences.success = success;

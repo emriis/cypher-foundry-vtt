@@ -1,3 +1,4 @@
+import { speciesBenefitBinding, speciesConditionalTraining } from "./species-benefit-service.mjs";
 import { CYPHER } from "../config.mjs";
 import {
   getEligibleFocusAbilities,
@@ -68,6 +69,14 @@ function grantedSkillFlags(source) {
 /** Persist mechanical origin independently of localized source/benefit names. */
 function abilityGrantFlags(kind, sourceId) {
   return { flags: { cypher: { grantOrigin: { kind, sourceId: sourceId ?? null } } } };
+}
+
+/** Add only a reviewed numeric rule binding; other gifts retain their complete descriptive source. */
+function benefitGrantFlags(kind, source, index) {
+  const flags = abilityGrantFlags(kind, source.id ?? source._id);
+  const binding = speciesBenefitBinding(source, index);
+  if (binding) flags.flags.cypher.ruleBenefit = binding;
+  return flags;
 }
 
 /**
@@ -438,13 +447,18 @@ export async function applyDescriptor(
 
   // Reuse the same source Skill across languages while retaining its chosen name.
   // Training still follows the existing Descriptor advancement rules.
+  const conditionalTraining = speciesConditionalTraining(descriptorItem);
   const order = ["inability", "practiced", "trained", "specialized", "expert"];
   const chatNotes = [];
 
   for (const grantedSkillName of skillNames) {
     const source = skillSources.get(grantedSkillName.toLowerCase());
     const existing = findGrantedSkill(actor, grantedSkillName, source);
-    if (existing) {
+    if (existing && conditionalTraining) {
+      const previous = existing.flags?.cypher?.conditionalTraining ?? [];
+      if (!previous.some(binding => binding.id === conditionalTraining.id)) await existing.update({ "flags.cypher.conditionalTraining": [...previous, { version: 1, id: conditionalTraining.id }] });
+      chatNotes.push(game.i18n.format("CYPHER.Benefit.conditionalTrainingGranted", { name: existing.name }));
+    } else if (existing) {
       const newLevel = existing.system.level === "inability"
         ? "trained"
         : order[Math.min(order.length - 1, order.indexOf(existing.system.level) + 1)];
@@ -455,8 +469,9 @@ export async function applyDescriptor(
         name: grantedSkillName,
         type: "skill",
         ...grantedSkillFlags(source),
+        ...(conditionalTraining ? { flags: { ...grantedSkillFlags(source).flags, cypher: { conditionalTraining: [{ version: 1, id: conditionalTraining.id }] } } } : {}),
         system: {
-          level: "trained",
+          level: conditionalTraining ? "practiced" : "trained",
           description: game.i18n.format("CYPHER.Descriptor.GrantedFrom", { name: descriptorItem.name })
         }
       }]);
@@ -472,7 +487,7 @@ export async function applyDescriptor(
       // Representation as an Ability must not turn a species/Descriptor benefit
       // into a genre/Type/Focus grant for capacity stacking. Preserve origin in
       // flags rather than reconstructing it from a localized source/name later.
-      ...abilityGrantFlags(isSpecies ? "species" : "descriptor", descriptorId),
+      ...benefitGrantFlags(isSpecies ? "species" : "descriptor", descriptorItem, index),
       system: {
         // Generated benefits need a nonblank Ability key too. Source identity
         // and the authored benefit slot avoid executing a localized label;

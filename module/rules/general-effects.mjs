@@ -51,10 +51,13 @@ export function helpAssets(skillSteps = 0) {
   return skillSteps < 0 ? 0 : skillSteps > 0 ? 2 : 1;
 }
 
-/** Forecast whether even a successful Block leaves a wound the ally can intercept. */
+/** Forecast whether Block and personal resistance leave a wound the ally can intercept; shields still absorb the original severity. */
 export function blockStillHits({ defenseType, applyIncomingWound, incomingSeverity, incomingWounds,
-  shieldWounds = null, survivesMajor = false }) {
-  if (defenseType !== "block" || !applyIncomingWound || !reduceWoundSeverity(incomingSeverity)) return false;
+  shieldWounds = null, survivesMajor = false, personalWoundReduction = 0 }) {
+  if (defenseType !== "block" || !applyIncomingWound) return false;
+  let remaining = reduceWoundSeverity(incomingSeverity);
+  for (let step = 0; remaining && step < personalWoundReduction; step++) remaining = reduceWoundSeverity(remaining);
+  if (!remaining) return false;
   if (!shieldWounds) return true;
   const track = Object.fromEntries(Object.entries(shieldWounds).map(([severity, data]) => [severity, { ...data }]));
   for (let index = 0; index < incomingWounds; index++) {

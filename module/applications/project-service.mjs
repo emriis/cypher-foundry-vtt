@@ -1,3 +1,4 @@
+import { restoreFollowerAvailability, followerRestorationAllowed } from "./follower-service.mjs";
 /**
  * CRD Resource Points: persistent downtime proposals and elected-GM settlement.
  * Existing system.resourcePoints remains the only currency store. Versioned
@@ -78,7 +79,7 @@ async function resolvePlan(actor, project) {
       if (!["broken", "functional"].includes(state.status) || state.levelDamage === 0) return null;
       quoted.level = state.originalLevel;
     } else {
-      if (proposal.followerConfirmed !== true || !(target.system.health?.max > 0)) return null;
+      if (proposal.followerConfirmed !== true || !(target.system.health?.max > 0) || !followerRestorationAllowed(actor, target)) return null;
       quoted.level = target.system.level;
       // The CRD default is about a week; a shorter source-specific duration
       // must be explicitly identified rather than inferred from an NPC name.
@@ -247,7 +248,7 @@ async function settle(actor, id, context = null) {
   const result = settlement.result;
   const target = result.targetUuid ? await resolveDocumentReference(result.targetUuid) : null;
   if (result.targetUuid && (!target || target.isOwner === false)) return false;
-  return runActorActions([actor, target, ...participants.map(entry => entry.actor)], "projectSettlement", async () => {
+  return runActorActions([actor, target, ...participants.map(entry => entry.actor)], "projectSettlement", async settlementContext => {
     if (settlement.resultState === "unstarted" && result.kind === "item" && result.data.type === "cypher" && !canAcquireCyphers(actor)) return false;
     const receiptId = `${actor.uuid}:${id}`;
     if (participants.some(entry => !receipts(entry.actor).some(receipt => receipt.id === receiptId)
@@ -265,7 +266,10 @@ async function settle(actor, id, context = null) {
       settlement.resultState = "pending";
       await write(actor, id, { ...project, settlement });
       if (result.kind === "repair") await target.update({ "system.levelDamage": 0, "system.destructionDamage": 0 });
-      if (result.kind === "restore") await target.update({ "system.health.value": target.system.health.max });
+      if (result.kind === "restore") {
+        await target.update({ "system.health.value": target.system.health.max });
+        if (!await restoreFollowerAvailability(actor, target.uuid, settlementContext)) throw Error("Follower availability restoration was rejected");
+      }
       if (result.kind === "item") {
         const [created] = await actor.createEmbeddedDocuments("Item", [result.data]);
         if (!created) throw Error("Project result creation was rejected");

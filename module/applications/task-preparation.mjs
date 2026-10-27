@@ -34,7 +34,7 @@ export function prepareTask(actor, { stat, difficulty, effortLevels, assetSteps,
   extraHinderSteps, extraEaseSteps, luckyShot, spentAbilityEdge, defenseType, armorModifier, targetActor,
   isAttack, baseDamage, damageEffortLevels, freeEffortLevels, freeDamageEffortLevels, freeEffortSource,
   areaAttack, push, pushDamageEffortLevels, powerShiftCategories, abilitySource,
-  effectEffortLevels = 0, activationCost = 0, noPhysicalMovement = false, attackForm = null, automaticFailure = false }) {
+  effectEffortLevels = 0, activationCost = 0, noPhysicalMovement = false, attackForm = null, automaticFailure = false, conditionalSkillSteps = null }) {
   if (actor.type !== "pc") {
     ui.notifications.warn(game.i18n.localize("CYPHER.Warning.NotPC"));
     return null;
@@ -83,7 +83,7 @@ export function prepareTask(actor, { stat, difficulty, effortLevels, assetSteps,
   assetSteps = clampAssetSteps(assetSteps);
   const skillItem = skillItemId ? actor.items.get(skillItemId) : null;
   if (skillItemId && skillItem?.type !== "skill") return invalidTask();
-  const skillSteps = skillItem ? skillItem.system.stepModifier : 0;
+  const skillSteps = conditionalSkillSteps ?? (skillItem ? skillItem.system.stepModifier : 0);
   if (!Number.isSafeInteger(skillSteps) || skillSteps < -1 || skillSteps > 3) return invalidTask();
 
   const abilityItems = actor.items?.contents

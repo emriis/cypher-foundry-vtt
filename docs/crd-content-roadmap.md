@@ -31,7 +31,7 @@ tests, and a deterministic build where applicable.
 | Skills | Inventory and selected-skill modifiers implemented; source procedures require adjudication |
 | Abilities | Catalogue/lifecycle implemented; individual effect automation remains in progress |
 | Types | Inventory/grants implemented; referenced Ability limitations remain |
-| Descriptors | Inventory/stat/skill grants implemented; passive benefits need executable contracts |
+| Descriptors | Inventory/stat/skill grants and reviewed numeric species gifts implemented; narrative and source-specific powers retain separate contracts |
 | Foci | 42 Focus records and graph/grant infrastructure; individual Ability limitations remain |
 | W4 equipment/weapons/armor/shields | Complete source-backed inventory |
 | Subtle/Manifest/Power Boost Cyphers | Source-backed inventory and common lifecycle implemented; particular powers remain open |
@@ -45,7 +45,7 @@ tests, and a deterministic build where applicable.
 | Runtime consumption of all structured mechanics | In progress |
 | Playwright/Foundry E2E infrastructure | Complete; gameplay coverage continues to grow |
 
-### Core-rule runtime progress — 2026-10-26
+### Core-rule runtime progress — 2026-10-27
 
 Inventory completion and executable rule support are separate milestones. The
 following contracts are present in the current implementation; they do not
@@ -68,14 +68,14 @@ Use Git/PR history for merge status and each linked contract for validation scop
 | Objects and materials | Targetable Object Actors, current-level difficulty/protection, two-stage breaking/destruction and source-backed cutting ([contract](object-damage.md)) | Hardness and non-tool applicability are explicit declarations; later target edits require manual reroll reconciliation. |
 | Resource-point projects | Explicit prerequisites, downtime, collaboration, receipted spending and concrete crafting/repair results ([contract](resource-projects.md)) | Narrative outcomes, higher-level repair and Ability-specific quick crafting or restricted bonus points remain separate. |
 | Common cypher lifecycle | Exact weighted generation, explicit GM awards, carried limit, physical custody, action timing and single-use consumption ([contract](cypher-lifecycle.md)) | Particular powers, targets and durations follow by source-backed families. |
+| Followers and conditional gifts | Actual follower links, two-tier progression, help/replacement, restored availability, 34 reviewed species rules and explicit legacy training review ([contract](followers-and-benefits.md)) | Independent NPC-versus-NPC outcomes and source-specific powers require GM/family contracts. |
 
-The current cypher lot implements the [common lifecycle](cypher-lifecycle.md):
-weighted generation, explicit GM awards, carried capacity, physical custody,
-activation timing and one-use consumption. Particular Cypher effects follow by
-source-backed families. Enforced configuration-switch action spending remains
-a separate open core-rule task. The Journal/reference,
-Quick Reference, player/GM navigation and cross-family runtime/E2E audit work
-also remain open. Do not reopen completed core-rule lots from stale historical
+The common cypher lifecycle and follower/conditional-benefit foundations are
+implemented. Continue with source-backed Ability and Cypher effect families,
+using the shared progression, source-condition and consequence contracts.
+Enforced configuration-switch action spending remains a separate open core-rule
+task. Journal/reference, Quick Reference, player/GM navigation and cross-family
+runtime/E2E audits also remain open. Do not reopen completed core-rule lots from stale historical
 audit tables without first checking their current implementation.
 
 ## 3. End-state architecture

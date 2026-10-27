@@ -1,3 +1,4 @@
+import { followerCanAct } from "./follower-service.mjs";
 import { rollDefense } from "./task-service.mjs";
 import { resolveNpcAttackTargetDamage } from "../rules/npc-combat.mjs";
 import { getGeneralEffects } from "./general-effect-service.mjs";
@@ -53,6 +54,7 @@ export async function rollNpcAttack(
     // The task validates any chosen shield against this actual drawn target.
     if (!selectedTarget || selectedTarget.isOwner === false) return null;
   }
+  if (!await followerCanAct(actor)) return null;
   return runActorActions([actor, selectedTarget, takeAttackActor], "npcAttack", async context => {
     const roundContext = roundActionContext(actor, { isAttack: true, actionTiming: taskOptions.actionTiming });
     if (roundContext && !roundContext.kind) return null;

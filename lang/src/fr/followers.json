@@ -1,0 +1,41 @@
+{
+  "CYPHER": {
+    "Follower": {
+      "title": "Suivants",
+      "register": "Lier un suivant",
+      "registerHint": "Choisissez un PNJ existant accordé par les règles ou explicitement approuvé par le MJ. Ciblez un token non lié pour utiliser son acteur propre.",
+      "source": "Octroi / source confirmé par le MJ",
+      "npc": "PNJ concerné",
+      "acquiredTier": "Rang lors de l’acquisition",
+      "healthPerLevel": "Gain de Santé par niveau gagné",
+      "healthHint": "La Santé d’un PNJ vaut souvent trois fois son niveau. Confirmez la progression de ce suivant ; les dégâts déjà subis sont conservés.",
+      "tasks": "Niveaux des tâches : un libellé=niveau par ligne",
+      "taskExample": "Perception=3",
+      "mode": "Rôle du suivant",
+      "attack": "Aide aux attaques",
+      "defense": "Aide aux défenses",
+      "independent": "Agit de façon indépendante",
+      "available": "Présent et en mesure d’aider",
+      "absent": "Indisponible / perdu",
+      "configure": "Rôle et disponibilité",
+      "extraLevels": "Améliorations de niveau supplémentaires accordées par le MJ",
+      "replace": "Remplacer le suivant",
+      "replaceHint": "Le remplaçant choisi hérite du profil numérique d’origine, du rang d’acquisition et de toutes les améliorations enregistrées. L’ancien PNJ reste inchangé.",
+      "sync": "Actualiser la progression",
+      "pending": "Progression / lien à terminer",
+      "manual": "Modification manuelle à régulariser",
+      "active": "À jour",
+      "reconcile": "Régulariser les modifications",
+      "reconcileHint": "Inspectez et corrigez d’abord le PNJ. Ceci adopte son niveau et sa Santé maximale comme référence corrigée, tout en conservant les améliorations enregistrées et la Santé actuelle.",
+      "note": "Note de correction",
+      "unavailable": "Opération indisponible : vérifiez les droits, la source, le rôle et la progression du suivant.",
+      "open": "Ouvrir le PNJ",
+      "empty": "Aucun suivant lié.",
+      "level": "Niveau",
+      "help": "Aide des suivants",
+      "helpHint": "Les suivants disponibles aident selon leur rôle, indépendamment des actions coopératives des PJ. Tous les atouts partagent le même plafond. Sélectionnez un niveau de tâche spécifique dans les options du jet lorsqu’il s’applique.",
+      "baseLevel": "Niveau général",
+      "none": "N’aide pas cette tâche"
+    }
+  }
+}

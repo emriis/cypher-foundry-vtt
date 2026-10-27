@@ -1,3 +1,6 @@
+import { refreshFollowerOwnerSheet } from "./module/sheets/follower-dialogs.mjs";
+import * as speciesBenefitService from "./module/applications/species-benefit-service.mjs";
+import * as followerService from "./module/applications/follower-service.mjs";
 import * as cypherInventoryService from "./module/applications/cypher-inventory-service.mjs";
 import * as cypherGenerationService from "./module/applications/cypher-generation-service.mjs";
 import * as projectService from "./module/applications/project-service.mjs";
@@ -52,7 +55,7 @@ Hooks.once("init", () => {
   // Publish shared configuration and macro entry points before sheets are opened.
   // Exposed for macro use, even if the sidebar button fails to find its
   // anchor point on a given Foundry version.
-  game.cypher = { cyphers: { ...cypherInventoryService, ...cypherGenerationService }, CYPHER, importFromBuilder, openImportDialog, promptInitiativeOptions, objects: objectService, projects: projectService, taskRetries: taskRetryService, intrusions: intrusionService };
+  game.cypher = { speciesBenefits: speciesBenefitService, followers: followerService, cyphers: { ...cypherInventoryService, ...cypherGenerationService }, CYPHER, importFromBuilder, openImportDialog, promptInitiativeOptions, objects: objectService, projects: projectService, taskRetries: taskRetryService, intrusions: intrusionService };
   CONFIG.CYPHER = CYPHER;
 
   registerImportButton();
@@ -259,3 +262,7 @@ Hooks.on("createChatMessage", message => {
   if (intrusionService.getIntrusion(message)?.kind === "choice") resumeAuthorizedIntrusionShares();
 });
 
+
+Hooks.on("updateActor", followerService.onFollowerTierUpdate);
+
+Hooks.on("updateActor", refreshFollowerOwnerSheet);

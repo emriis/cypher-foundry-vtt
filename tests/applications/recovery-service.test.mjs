@@ -279,3 +279,10 @@ test("Given Foundry merges flag objects, then completed rest resets existing ext
   assert.equal(actor.flags.cypher.additionalRecoveriesUsed["untamed-recovery"], 0);
   assert.equal(actor.flags.cypher.healingUses["healing-hand"], 0);
 });
+
+test("D'nec receives one fixed Intellect point in addition to the roll, without changing its rolled total", async () => {
+  setRecoveryRoll(); const actor = createPc(); actor.system.stats.intellect = { pool: { value: 0, max: 10 } };
+  actor.items = new Map([["gift", { type: "ability", system: {}, flags: { cypher: { ruleBenefit: { version: 1, id: "descriptor.species.d-nec:0" } } } }]]);
+  const roll = await CypherActor.prototype.rollRecovery.call(actor, "hour");
+  assert.equal(roll.total, 5); assert.equal(actor.system.stats.intellect.pool.value, 6);
+});

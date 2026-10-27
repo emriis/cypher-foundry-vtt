@@ -16,6 +16,8 @@ Edit the paired domain files under `lang/src/en/` and `lang/src/fr/`:
 | `character-creation.json` | Character sentence, genres, superhero configuration and Power Shifts |
 | `progression.json` | Tier, Effort, Edge, XP and advancement |
 | `cypher-lifecycle.json` | Common cypher acquisition, custody, capacity and timing |
+| `followers.json` | Actual follower links, progression, roles and explicit profile declarations |
+| `species-benefits.json` | Source-bound species conditions, preparation and historical training review |
 | `projects.json` | Resource-point projects, explicit work/qualification and GM settlement |
 | `task-retries.json` | Ordinary task retries, explicit same-task/time confirmation and GM veto |
 | `tasks-combat.json` | Task rolls, defenses, weapons, armor and shields |
