@@ -2,6 +2,8 @@ import { speciesBenefitDisplay } from "../applications/species-benefit-service.m
 import { promptSpeciesBenefit } from "./species-benefit-dialogs.mjs";
 import { followerDisplay } from "../applications/follower-service.mjs";
 import { promptFollower, promptFollowerAction } from "./follower-dialogs.mjs";
+import { promptFollowerAbility, resumeFollowerAbility } from "./follower-ability-dialogs.mjs";
+import { followerAbilityUses } from "../applications/follower-ability-service.mjs";
 import { cypherInventoryDisplay } from "../applications/cypher-inventory-service.mjs";
 import { promptCypherAward, promptCypherDiscard, promptCypherCustody, promptCypherReconciliation } from "./cypher-dialogs.mjs";
 import { projectDisplay, isProjectAuthority } from "../applications/project-service.mjs";
@@ -67,7 +69,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       promptProject, promptResourceAward, promptBefriendPenalty,
       prepareBenefit: promptSpeciesBenefit, finishBenefit: promptSpeciesBenefit, chooseBenefitEnergy: promptSpeciesBenefit,
       refreshSpeciesBenefits: promptSpeciesBenefit, reviewConditionalTraining: promptSpeciesBenefit,
-      promptFollower, configureFollower: promptFollowerAction, openFollower: promptFollowerAction, syncFollower: promptFollowerAction,
+      promptFollower, promptFollowerAbility, resumeFollowerAbility, configureFollower: promptFollowerAction, openFollower: promptFollowerAction, syncFollower: promptFollowerAction,
       replaceFollower: promptFollowerAction, reconcileFollower: promptFollowerAction,
       generateCypher: promptCypherAward, awardCypher: promptCypherAward, discardCyphers: promptCypherDiscard,
       stashCypher: promptCypherCustody, retrieveCypher: promptCypherCustody, transferCypher: promptCypherCustody, formCypher: promptCypherCustody,
@@ -172,6 +174,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     context.speciesBenefits = speciesBenefitDisplay(this.actor);
     context.followers = await followerDisplay(this.actor);
     context.followerCanManage = game.user.isGM;
+    context.followerAbilityPending = followerAbilityUses(this.actor).filter(use => use.state === "pending");
     context.cypherInventory = cypherInventoryDisplay(this.actor);
     context.cypherCanAward = game.user.isGM;
     context.items = {

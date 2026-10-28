@@ -156,7 +156,7 @@ and validation; other Ability clauses in the inventory remain incomplete.
 
 | Family | Implemented consumers | Remaining work |
 | --- | --- | --- |
-| Abilities | Structured activation costs/effect selection, declared modifier aggregation, recovery expiration, inline tables, selected grants; playable Spray/Arc Spray | Most target effects, conditional/passive rules, additional costs, and Effort alternatives need individual contracts |
+| Abilities | Structured activation costs/effect selection, declared modifier aggregation, recovery expiration, inline tables, selected grants; playable Spray/Arc Spray; fourteen permanent follower benefit contracts ([contract](follower-abilities.md)) | Active/temporary companion powers, mounted combat, interception, most other target effects, conditional/passive rules, additional costs, and Effort alternatives need individual contracts |
 | Types/Foci | Character grants and referenced Abilities; Focus tier/prerequisite selection | Inherit individual Ability limitations; full source-package field review remains separate |
 | Descriptors/species | Pool/skill choices, selection guards, extra minor wound grants and 34 reviewed numeric/conditional species contracts ([contract](followers-and-benefits.md)) | Narrative mobility/communication, adapted Mutation and turn-replacement powers retain separate family contracts; old Skill history requires explicit review |
 | Skills | Selected task modifiers and tier restrictions | Source procedures, applicable circumstances, kits and assets require explicit adjudication |

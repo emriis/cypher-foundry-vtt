@@ -14,11 +14,15 @@ const records = actor => Object.values(actor.flags?.cypher?.followers ?? {}).fil
   && ["active", "pending", "manual"].includes(record.state) && ["attack", "defense", "independent"].includes(record.mode) && typeof record.available === "boolean"
   && Number.isSafeInteger(record.acquiredTier) && record.acquiredTier > 0 && natural(record.earned) && natural(record.extraLevels)
   && Number.isSafeInteger(record.baseLevel) && record.baseLevel > 0 && Number.isSafeInteger(record.baseHealth) && record.baseHealth > 0 && natural(record.healthPerLevel)
-  && Number.isSafeInteger(record.revision) && record.revision > 0 && validTasks(record.taskLevels) && Array.isArray(record.previous));
+  && Number.isSafeInteger(record.revision) && record.revision > 0 && validTasks(record.taskLevels)
+  && natural(record.taskLevelExclusions ?? 0) && (record.taskLevelExclusions ?? 0) <= record.extraLevels
+  && record.taskLevels.every(task => (task.gainedAt ?? 0) <= record.earned + record.extraLevels - (record.taskLevelExclusions ?? 0)) && Array.isArray(record.previous));
+/** Valid persisted slots for source-backed family actions; callers still validate permissions before writes. */
+export const followerRecords = actor => records(actor);
 const get = (actor, id) => records(actor).find(record => record.id === id);
 const write = (actor, record) => actor.update({ [path(record.id)]: record });
 const modes = ["attack", "defense", "independent"];
-const validTasks = tasks => Array.isArray(tasks) && tasks.every(task => task && typeof task.id === "string" && /^[A-Za-z0-9]+$/.test(task.id) && typeof task.label === "string" && task.label.trim() && natural(task.level))
+const validTasks = tasks => Array.isArray(tasks) && tasks.every(task => task && typeof task.id === "string" && /^[A-Za-z0-9]+$/.test(task.id) && typeof task.label === "string" && task.label.trim() && natural(task.level) && (task.gainedAt === undefined || natural(task.gainedAt)))
   && new Set(tasks.map(task => task.id)).size === tasks.length;
 
 /** Register an actual NPC with an explicitly confirmed grant and numeric profile. No new creature is invented. */
@@ -26,6 +30,7 @@ export async function registerFollower(actor, npc, { confirmed = false, source =
   healthPerLevel = 3, taskLevels = [], mode = "attack" } = {}) {
   if (!game.user?.isGM || !ownedPC(actor) || !ownedNPC(npc) || confirmed !== true || typeof source !== "string" || !source.trim() || !natural(healthPerLevel)
     || !Number.isSafeInteger(acquiredTier) || acquiredTier < 1 || acquiredTier > actor.system.tier || !validTasks(taskLevels)
+    || taskLevels.some(task => task.gainedAt !== undefined)
     || !modes.includes(mode) || !npc.uuid || npc.flags?.cypher?.followerProgress || records(actor).some(record => record.npcUuid === npc.uuid)) return false;
   return Boolean(await runActorActions([actor, npc], "followerRegister", async context => {
     const record = { version: 1, id: foundry.utils.randomID(), npcUuid: npc.uuid, source: source.trim(), acquiredTier,
@@ -133,7 +138,7 @@ function present(actor, record, npc) {
   return { ...record, unavailable: !record.available || blocked, name: npc?.name ?? record.npcUuid, level: npc?.system.level, health: npc?.system.health, pending,
     modeLabel: `CYPHER.Follower.${record.mode}`, stateLabel: `CYPHER.Follower.${pending ? record.state === "manual" ? "manual" : "pending" : "active"}`,
     canHelp: !pending && !blocked && record.available && npc.system.health.value > 0 && record.mode !== "independent",
-    tasks: record.taskLevels.map(task => ({ ...task, level: task.level + record.earned + record.extraLevels })) };
+    tasks: record.taskLevels.map(task => ({ ...task, level: task.level + record.earned + record.extraLevels - (record.taskLevelExclusions ?? 0) - (task.gainedAt ?? 0) })) };
 }
 
 /** Resolve actual token UUIDs for sheets and authoritative action preflight. */
