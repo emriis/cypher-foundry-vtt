@@ -1,0 +1,27 @@
+{
+  "CYPHER": {
+    "FollowerAbility": {
+      "apply": "Appliquer une aptitude de suivant",
+      "ability": "Aptitude acquise",
+      "existing": "Rattacher un ancien octroi manuel (conserver son profil et son rang initial d'acquisition)",
+      "alternative": "Choisir le bénéfice complet",
+      "new": "Obtenir de nouveaux suivants",
+      "upgrade": "Améliorer des suivants existants (et obtenir les remplaçants prévus)",
+      "hint": "Confirmez l'aptitude acquise et les caractéristiques de créature exigées par sa description. Choisissez des PNJ existants au niveau initial indiqué. Rien n'est appliqué avant confirmation de tous les choix. Ce bénéfice s'applique une fois par exemplaire acquis.",
+      "tier": "Rang lors de l'acquisition de cette aptitude",
+      "newFollower": "Nouveau suivant",
+      "npc": "PNJ concerné",
+      "level": "Niveau",
+      "health": "Gain de Santé par niveau supplémentaire",
+      "taskProfile": "Choisissez {count} modifications, chacune au niveau {level}.",
+      "charm": "Charme",
+      "task": "Modification",
+      "tasks": "Autres modifications de créature éventuelles : une ligne libellé=niveau",
+      "upgradeFollower": "Suivant à améliorer",
+      "newTask": "Nouvelle modification",
+      "newTaskHint": "Son niveau vaut le niveau initial du suivant à son acquisition + 1. Seuls les gains ultérieurs améliorent cette nouvelle modification.",
+      "resume": "Terminer l'application du bénéfice",
+      "unavailable": "Bénéfice indisponible : vérifiez les exemplaires acquis, les limites de choix, la famille et les niveaux des suivants rattachés à une source, les droits sur les PNJ et le MJ actif. Les bénéfices en attente peuvent être repris."
+    }
+  }
+}

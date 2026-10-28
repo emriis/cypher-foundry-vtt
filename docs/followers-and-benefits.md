@@ -173,6 +173,10 @@ implementation. Individual Cypher power effects also remain separate.
 
 The next family work should consume these shared contracts, rather than duplicate
 progression, caps, permissions, preparation, attribution or resource spending.
+The [permanent follower Ability family](follower-abilities.md) now adds fourteen
+source-backed grant/improvement contracts, source limits, complete alternatives,
+historical binding and resumable use receipts. Its contract separately lists
+active powers, temporary followers and remaining companion exceptions.
 
 ## Validation
 

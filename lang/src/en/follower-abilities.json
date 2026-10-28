@@ -1,0 +1,27 @@
+{
+  "CYPHER": {
+    "FollowerAbility": {
+      "apply": "Apply follower Ability",
+      "ability": "Acquired Ability",
+      "existing": "Link an earlier manual grant (retain its existing profile and original acquisition tier)",
+      "alternative": "Choose the complete benefit",
+      "new": "Gain new followers",
+      "upgrade": "Improve existing followers (and gain replacements if granted)",
+      "hint": "Confirm the acquired Ability and the creature details required by its description. Select existing NPCs at the stated initial level. Nothing is applied until every choice is confirmed. This benefit can be applied once per acquired copy.",
+      "tier": "Tier when this Ability was acquired",
+      "newFollower": "New follower",
+      "npc": "Actual NPC",
+      "level": "Level",
+      "health": "Health increase per gained level",
+      "taskProfile": "Choose {count} modifications, each at level {level}.",
+      "charm": "Charm",
+      "task": "Modification",
+      "tasks": "Other creature modifications, if any: one label=level per line",
+      "upgradeFollower": "Follower to improve",
+      "newTask": "New modification",
+      "newTaskHint": "Its level is the follower's initial acquisition level + 1. Only subsequent gains improve this new modification.",
+      "resume": "Finish applying benefit",
+      "unavailable": "Benefit unavailable: check the acquired copies, selection limits, source-linked follower family and levels, NPC ownership and active GM. Pending benefits can be resumed."
+    }
+  }
+}

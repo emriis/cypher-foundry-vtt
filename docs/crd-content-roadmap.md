@@ -69,6 +69,7 @@ Use Git/PR history for merge status and each linked contract for validation scop
 | Resource-point projects | Explicit prerequisites, downtime, collaboration, receipted spending and concrete crafting/repair results ([contract](resource-projects.md)) | Narrative outcomes, higher-level repair and Ability-specific quick crafting or restricted bonus points remain separate. |
 | Common cypher lifecycle | Exact weighted generation, explicit GM awards, carried limit, physical custody, action timing and single-use consumption ([contract](cypher-lifecycle.md)) | Particular powers, targets and durations follow by source-backed families. |
 | Followers and conditional gifts | Actual follower links, two-tier progression, help/replacement, restored availability, 34 reviewed species rules and explicit legacy training review ([contract](followers-and-benefits.md)) | Independent NPC-versus-NPC outcomes and source-specific powers require GM/family contracts. |
+| Permanent follower Ability benefits | Fourteen source-backed grant/improvement contracts, complete alternatives, source-limited acquired copies, explicit historical binding and resumable receipts ([contract](follower-abilities.md)) | Active/temporary powers, mounted combat, retainer interception, quick repair and further companion upgrades remain separate. |
 
 The common cypher lifecycle and follower/conditional-benefit foundations are
 implemented. Continue with source-backed Ability and Cypher effect families,

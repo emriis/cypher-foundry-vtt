@@ -1,4 +1,5 @@
 import { speciesSourceRules } from "../../module/rules/species-benefits.mjs";
+import { followerAbilityPlan } from "../../module/rules/follower-abilities.mjs";
 /**
  * Inventory implemented consumers, not inferred rules. Each source Item gets a
  * conservative runtime assessment: accepting a field or posting prose to chat
@@ -18,6 +19,10 @@ export function auditAutomation(document) {
   const implemented = [], gaps = [];
   switch (document.type) {
     case "ability":
+      if (followerAbilityPlan(system.key)) {
+        implemented.push("follower-ability-service/PC sheet: permanent grants, complete alternatives, acquired-copy limits, historical binding and resumable NPC improvement receipts");
+        gaps.push("creature details require GM confirmation; active powers, quick repair, mounted combat and interception are separate contracts");
+      }
       if (system.key === "healing-hand") {
         implemented.push("healing-service/PC sheet: confirmed target, PC wound reduction/NPC Health, capacity, Edge, escalation and recovery reset");
       }

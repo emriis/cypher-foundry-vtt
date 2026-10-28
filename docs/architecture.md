@@ -61,6 +61,9 @@ The main gameplay boundaries are:
 - `follower-service.mjs`: explicit actual-NPC links, tier progression, help roles,
   replacement receipts and restoration availability; NPC/PC sheets share the same
   source-bound task-level projection.
+- `follower-ability-service.mjs`: acquired permanent grant/improvement alternatives,
+  historical source binding, selection limits and checkpointed multi-NPC receipts;
+  see [follower Ability benefits](follower-abilities.md).
 - `species-benefit-service.mjs`: reviewed species numeric contracts, explicit
   applicability/preparation, conditional training and opt-in historical source
   binding. See [followers and benefits](followers-and-benefits.md).

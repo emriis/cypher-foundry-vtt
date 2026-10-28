@@ -1,8 +1,12 @@
 <section class="pc-section">
-  <div class="pc-section-heading compact"><h2>{{localize "CYPHER.Follower.title"}}</h2>
-    {{#if followerCanManage}}<button type="button" data-action="promptFollower">{{localize "CYPHER.Follower.register"}}</button>{{/if}}
+  <div class="pc-section-heading compact pc-wrap-heading"><h2>{{localize "CYPHER.Follower.title"}}</h2>
+    {{#if followerCanManage}}<button type="button" data-action="promptFollowerAbility">{{localize "CYPHER.FollowerAbility.apply"}}</button>
+    <button type="button" data-action="promptFollower">{{localize "CYPHER.Follower.register"}}</button>{{/if}}
   </div>
   <p>{{localize "CYPHER.Follower.helpHint"}}</p>
+  {{#if followerCanManage}}{{#each followerAbilityPending as |use|}}
+    <p>{{use.source}} · {{localize "CYPHER.Follower.pending"}} <button type="button" data-action="resumeFollowerAbility" data-use-id="{{use.id}}">{{localize "CYPHER.FollowerAbility.resume"}}</button></p>
+  {{/each}}{{/if}}
   {{#each followers as |follower|}}
   <article class="pc-table-row pc-flex-row" data-follower-id="{{follower.id}}">
     <div><strong>{{follower.name}}</strong><span>{{localize "CYPHER.Follower.level"}} {{follower.level}} · {{follower.health.value}}/{{follower.health.max}}</span>
