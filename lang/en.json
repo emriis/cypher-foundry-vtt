@@ -212,6 +212,32 @@
     "Community": {
       "Resources": "Resources"
     },
+    "Companion": {
+      "alive": "Present and alive",
+      "calmed": "Already calmed beast",
+      "cancelRepair": "Cancel attention",
+      "circumstances": "Companion circumstances",
+      "circumstancesHint": "Declare the actual companion and update these circumstances when they change. A calmed beast must already have been calmed and remain friendly; this does not perform Soothe the Savage. The GM or an NPC owner establishes a new link. Stronger Together requires a conscious helper; Beast Betterment requires only a present, living companion.",
+      "companion": "Actual companion",
+      "finishRepair": "Complete attention",
+      "friendly": "Calmed beast remains well disposed",
+      "healthDamage": "Declared Health damage before NPC Armor",
+      "hitConfirmed": "GM confirms the attack hits this retainer",
+      "ignoresArmor": "Points of NPC Armor ignored",
+      "immediate": "Within immediate distance",
+      "intercepted": "The retainer takes the attack",
+      "interception": "Retainer interception",
+      "interceptionHint": "Instead of the PC's defense, spend 2 Intellect (Edge applies) and redirect this attack to a source-bound retainer. The GM confirms the hit and declares numeric Health damage before NPC Armor. Wounds and Pool damage are not converted. Choose no cooperative mode or shield.",
+      "minutes": "Declared duration in minutes",
+      "none": "None",
+      "pendingInterception": "Paid interception to finish",
+      "repair": "Attend to damaged automaton",
+      "repairHint": "Automaton Assistant and Expert Automaton regain 2 Health after a few minutes of your uninterrupted attention. Declare that duration, advance game time, then confirm the completed work. A destroyed or zero-Health automaton requires restoration instead.",
+      "resume": "Finish interception",
+      "riding": "Mounted attack while the mount moves on your turn",
+      "unavailable": "Companion action unavailable: check source, actual NPC permissions, declared circumstances, completed time and pending work.",
+      "workConfirmed": "Has the declared uninterrupted attention actually been completed?"
+    },
     "Confirm": {
       "Add": "Add",
       "Delete": "Confirm Deletion",

@@ -103,9 +103,9 @@ rollback overwrites later wounds, Health changes or improvements.
 
 ## Explicit remaining contracts
 
-This does not certify all effects of these Abilities. Retainer interception,
-Automaton Assistant's quick repair, Mount's mounted movement/attack exception,
-Stronger Together, Beast Betterment, Beast Eyes, automaton armor/cypher/flight/
+The [companion support family](companion-powers.md) now covers Retainer
+interception, Assistant/Expert quick repair, mounted movement/attack support,
+Stronger Together and Beast Betterment. Beast Eyes, automaton armor/cypher/flight/
 turret/force-field upgrades and other active companion powers remain separate.
 Team-Up Ally also needs its availability/charm and superhero-power contract.
 Temporary followers from necromancy, Duplicate and Recompile Machine require

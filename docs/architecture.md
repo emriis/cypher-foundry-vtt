@@ -64,6 +64,10 @@ The main gameplay boundaries are:
 - `follower-ability-service.mjs`: acquired permanent grant/improvement alternatives,
   historical source binding, selection limits and checkpointed multi-NPC receipts;
   see [follower Ability benefits](follower-abilities.md).
+- `companion-power-service.mjs` and `companion-support-service.mjs`: declared
+  proximity/life/mounted movement, conditional task/recovery/NPC-defense benefits,
+  timed automaton attention and checkpointed paid Retainer interception. See
+  [companion support powers](companion-powers.md).
 - `species-benefit-service.mjs`: reviewed species numeric contracts, explicit
   applicability/preparation, conditional training and opt-in historical source
   binding. See [followers and benefits](followers-and-benefits.md).

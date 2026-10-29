@@ -21,7 +21,11 @@ export function auditAutomation(document) {
     case "ability":
       if (followerAbilityPlan(system.key)) {
         implemented.push("follower-ability-service/PC sheet: permanent grants, complete alternatives, acquired-copy limits, historical binding and resumable NPC improvement receipts");
-        gaps.push("creature details require GM confirmation; active powers, quick repair, mounted combat and interception are separate contracts");
+        gaps.push("creature details require GM confirmation; further active and temporary companion powers require individual contracts");
+      }
+      if (["automaton-assistant", "expert-automaton", "stronger-together", "beast-betterment", "mount", "retainer"].includes(system.key)) {
+        implemented.push("companion-power/support services: declared proximity/living status, conditional damage/defense/recovery, mounted attack exception, timed quick repair or paid Retainer interception as defined by the source");
+        gaps.push("position, calmed disposition, uninterrupted attention and intercepted NPC hit/damage require explicit adjudication; no automatic geometry, Soothe the Savage or PC-wound conversion");
       }
       if (system.key === "healing-hand") {
         implemented.push("healing-service/PC sheet: confirmed target, PC wound reduction/NPC Health, capacity, Edge, escalation and recovery reset");

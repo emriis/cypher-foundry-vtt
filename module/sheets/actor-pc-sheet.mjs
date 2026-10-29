@@ -4,6 +4,9 @@ import { followerDisplay } from "../applications/follower-service.mjs";
 import { promptFollower, promptFollowerAction } from "./follower-dialogs.mjs";
 import { promptFollowerAbility, resumeFollowerAbility } from "./follower-ability-dialogs.mjs";
 import { followerAbilityUses } from "../applications/follower-ability-service.mjs";
+import { companionContext } from "../applications/companion-power-service.mjs";
+import { companionSupportDisplay, companionRepairChoices } from "../applications/companion-support-service.mjs";
+import { promptCompanionContext, promptCompanionRepair, finishCompanionRepair, cancelCompanionRepair, resumeRetainerInterception } from "./companion-dialogs.mjs";
 import { cypherInventoryDisplay } from "../applications/cypher-inventory-service.mjs";
 import { promptCypherAward, promptCypherDiscard, promptCypherCustody, promptCypherReconciliation } from "./cypher-dialogs.mjs";
 import { projectDisplay, isProjectAuthority } from "../applications/project-service.mjs";
@@ -71,6 +74,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       refreshSpeciesBenefits: promptSpeciesBenefit, reviewConditionalTraining: promptSpeciesBenefit,
       promptFollower, promptFollowerAbility, resumeFollowerAbility, configureFollower: promptFollowerAction, openFollower: promptFollowerAction, syncFollower: promptFollowerAction,
       replaceFollower: promptFollowerAction, reconcileFollower: promptFollowerAction,
+      promptCompanionContext, promptCompanionRepair, finishCompanionRepair, cancelCompanionRepair, resumeRetainerInterception,
       generateCypher: promptCypherAward, awardCypher: promptCypherAward, discardCyphers: promptCypherDiscard,
       stashCypher: promptCypherCustody, retrieveCypher: promptCypherCustody, transferCypher: promptCypherCustody, formCypher: promptCypherCustody,
       reconcileCypherTransfer: promptCypherCustody, reconcileCypherAward: promptCypherReconciliation,
@@ -175,6 +179,10 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     context.followers = await followerDisplay(this.actor);
     context.followerCanManage = game.user.isGM;
     context.followerAbilityPending = followerAbilityUses(this.actor).filter(use => use.state === "pending");
+    const repairable = await companionRepairChoices(this.actor);
+    context.followers = context.followers.map(follower => ({ ...follower, canRepair: repairable.some(choice => choice.id === follower.id) }));
+    context.companion = await companionContext(this.actor);
+    context.companionSupport = companionSupportDisplay(this.actor);
     context.cypherInventory = cypherInventoryDisplay(this.actor);
     context.cypherCanAward = game.user.isGM;
     context.items = {

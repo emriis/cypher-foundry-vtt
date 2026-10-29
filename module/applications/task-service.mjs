@@ -1,5 +1,6 @@
 import { speciesTaskPlan, speciesDamageReduction } from "./species-benefit-service.mjs";
 import { followerTaskPlan } from "./follower-service.mjs";
+import { companionTaskPlan, companionTargetDefense } from "./companion-power-service.mjs";
 import { objectDisplay, prepareObjectAttack } from "./object-service.mjs";
 import { isOrdinaryRetryTask } from "../rules/task-retries.mjs";
 import { TASK_RETRY_CONTEXT, validTaskRetry, beginTaskRetry, releaseTaskRetry, finishTaskRetry } from "./task-retry-history.mjs";
@@ -196,12 +197,15 @@ async function executeTask(actor, {
   }
   const cooperation = cooperativeTaskPlan(actor, cooperativeMode, Boolean(defenseType), npcSource, cooperativeEffectIds);
   if (!cooperation) return null;
-  const following = await followerTaskPlan(actor, followerChoices, { isAttack, defenseType });
+  const companion = await companionTaskPlan(actor, { isAttack, defenseType });
+  const following = await followerTaskPlan(actor, followerChoices, { isAttack, defenseType,
+    excludedIds: companion.mounted ? [companion.followerId] : [] });
   if (!following) { ui.notifications.warn(game.i18n.localize("CYPHER.Follower.unavailable")); return null; }
   const species = speciesTaskPlan(actor, { selected: benefitSelections, isAttack, defenseType, skillItemId, weaponSource, attackForm });
   if (!species) { ui.notifications.warn(game.i18n.localize("CYPHER.Benefit.unavailable")); return null; }
-  assetSteps += cooperation.assets + following.assets + species.assets;
-  baseDamage += species.damage;
+  assetSteps += cooperation.assets + following.assets + species.assets + companion.assets;
+  baseDamage += species.damage + companion.damage;
+  if (isAttack) extraHinderSteps += await companionTargetDefense(targetActor);
   extraEaseSteps += cooperation.ease;
   extraHinderSteps += cooperation.hinder;
   const prepared = prepareTask(actor, { stat, difficulty, effortLevels, assetSteps, skillItemId,
@@ -353,6 +357,8 @@ async function executeTask(actor, {
         cooperativeMode,
         ...(species.applied.length ? { speciesBenefits: species.applied, suppressIntrusion: species.suppressIntrusion } : {}),
         ...(following.sources.length ? { followerHelp: following.sources } : {}),
+        ...(companion.contextId ? { companionBenefits: { contextId: companion.contextId, npcUuid: companion.npcUuid,
+          assets: companion.assets, damage: companion.damage, mounted: companion.mounted } } : {}),
         ...(takeAttackActor ? { takeOnSuccessfulBlock } : {}),
         ...(ruleEffect ? { ruleEffect } : {}),
         effortCost: totalCost,

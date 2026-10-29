@@ -1,4 +1,5 @@
 import { followerNPCDisplay } from "../applications/follower-service.mjs";
+import { retainerChoices } from "../applications/companion-support-service.mjs";
 import { extendWeaponEffect, getWeaponEffectDisplayData } from "../applications/weapon-effect-service.mjs";
 import { getAvailableShields } from "../applications/equipment-service.mjs";
 import { generalEffectDisplay, toggleGuarding, clearGeneralEffect, promptGeneralCondition, incomingCooperationChoices } from "./general-action-dialogs.mjs";
@@ -126,6 +127,7 @@ export default class CypherNPCSheet extends HandlebarsApplicationMixin(ActorShee
     }
 
     const cooperationChoices = await incomingCooperationChoices(this.actor, selectedTarget);
+    const retainers = game.user.isGM ? await retainerChoices(selectedTarget) : [];
     // Preserve the actual target Actor and let the player/GM explicitly choose
     // absorption instead of silently spending a shield's remaining wounds.
     const shieldOptions = (attack.damage?.mode === "wound" ? getAvailableShields(selectedTarget) : [])
@@ -148,7 +150,13 @@ export default class CypherNPCSheet extends HandlebarsApplicationMixin(ActorShee
             ${shieldOptions}
             ${drawnShields}
           </select>
-        </div>${cooperationChoices.content}`,
+        </div>${cooperationChoices.content}
+        ${retainers.length ? `<fieldset><legend>${game.i18n.localize("CYPHER.Companion.interception")}</legend>
+          <p>${game.i18n.localize("CYPHER.Companion.interceptionHint")}</p>
+          <label>${game.i18n.localize("CYPHER.Companion.companion")}<select name="retainerId"><option value="">${game.i18n.localize("CYPHER.Companion.none")}</option>${retainers.map(follower => `<option value="${follower.id}">${foundry.utils.escapeHTML(follower.name)}</option>`).join("")}</select></label>
+          <label>${game.i18n.localize("CYPHER.Companion.healthDamage")}<input name="retainerAmount" type="number" min="0" step="1"/></label>
+          <label>${game.i18n.localize("CYPHER.Companion.ignoresArmor")}<input name="retainerIgnoresArmor" type="number" min="0" step="1" value="${attack.damage?.ignoresArmor ?? 0}"/></label>
+          <label><input name="retainerConfirmed" type="checkbox"/>${game.i18n.localize("CYPHER.Companion.hitConfirmed")}</label></fieldset>` : ""}`,
       ok: {
         label: game.i18n.localize("CYPHER.NPC.RollAttack"),
         callback: (event, button) => {
@@ -156,7 +164,10 @@ export default class CypherNPCSheet extends HandlebarsApplicationMixin(ActorShee
           return { defenseType: choice.startsWith("shield:") || choice.startsWith("drawShield:") ? "block" : choice,
             shieldItemId: choice.includes(":") ? choice.split(":")[1] : null,
             cooperativeEffectIds: button.form.cooperativeEffectIds ? [...button.form.cooperativeEffectIds.selectedOptions].map(option => option.value) : null,
-            cooperativeMode: choice.startsWith("drawShield:") ? "draw" : button.form.cooperativeMode.value };
+            cooperativeMode: choice.startsWith("drawShield:") ? "draw" : button.form.cooperativeMode.value,
+            retainerId: button.form.elements.retainerId?.value || null,
+            retainerDamage: button.form.elements.retainerId?.value ? { amount: button.form.elements.retainerAmount.value === "" ? NaN : Number(button.form.elements.retainerAmount.value),
+              ignoresArmor: Number(button.form.elements.retainerIgnoresArmor.value), confirmed: button.form.elements.retainerConfirmed.checked } : null };
         }
       }
     });
@@ -168,6 +179,7 @@ export default class CypherNPCSheet extends HandlebarsApplicationMixin(ActorShee
     await this.actor.rollNpcAttack(attack, {
       ...cooperation,
       cooperativeEffectIds: result.cooperativeEffectIds,
+      retainerId: result.retainerId, retainerDamage: result.retainerDamage,
       target: selectedTarget,
       physicalAttack: ["block", "dodge"].includes(result.defenseType),
       defenseType: result.defenseType,
