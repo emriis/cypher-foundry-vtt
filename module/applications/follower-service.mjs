@@ -134,7 +134,8 @@ function present(actor, record, npc) {
   const progress = followerProgression(record.acquiredTier, actor.system.tier, record.earned), receipt = npc?.flags?.cypher?.followerProgress;
   const pending = record.state !== "active" || !npc || progress?.pending > 0 || receipt?.revision !== record.revision || receipt?.ownerUuid !== actor.uuid || receipt?.slotId !== record.id
     || receipt.level !== npc.system.level || receipt.healthMax !== npc.system.health.max;
-  const blocked = Boolean(npc && resolveGeneralModifiers(getGeneralEffects(npc)).rejected);
+  const blocked = Boolean(npc && (resolveGeneralModifiers(getGeneralEffects(npc)).rejected
+    || ["unconscious", "stunned", "paralyzed", "dead"].some(status => npc.statuses?.has(status))));
   return { ...record, unavailable: !record.available || blocked, name: npc?.name ?? record.npcUuid, level: npc?.system.level, health: npc?.system.health, pending,
     modeLabel: `CYPHER.Follower.${record.mode}`, stateLabel: `CYPHER.Follower.${pending ? record.state === "manual" ? "manual" : "pending" : "active"}`,
     canHelp: !pending && !blocked && record.available && npc.system.health.value > 0 && record.mode !== "independent",
@@ -152,12 +153,15 @@ export function followerDisplaySync(actor) {
 }
 
 /** A follower's assets are independent of PC cooperation; the task engine applies the shared final cap. */
-export async function followerTaskPlan(actor, choices = null, { isAttack = false, defenseType = null } = {}) {
+export async function followerTaskPlan(actor, choices = null, { isAttack = false, defenseType = null, excludedIds = [] } = {}) {
   const followers = await followerDisplay(actor), selected = [];
   if (choices === null) choices = followers.filter(entry => entry.canHelp && (!isAttack || entry.mode === "attack") && (!defenseType || entry.mode === "defense")).map(entry => ({ id: entry.id }));
   if (!Array.isArray(choices) || new Set(choices.map(choice => choice?.id)).size !== choices.length) return null;
   if (!choices.length) return { assets: 0, sources: [] };
   for (const choice of choices) {
+    // Mounted movement grants its own one-asset exception; the same mount
+    // cannot simultaneously supply ordinary follower help to this attack.
+    if (excludedIds.includes(choice?.id)) continue;
     const follower = followers.find(entry => entry.id === choice?.id);
     if (!follower?.canHelp || isAttack && follower.mode !== "attack" || defenseType && follower.mode !== "defense") return null;
     const task = choice.taskId ? follower.tasks.find(task => task.id === choice.taskId) : null;
@@ -186,10 +190,17 @@ export async function onFollowerTierUpdate(actor, changes) {
 /** Restore Follower returns the linked slot to normal availability after its concrete NPC has been restored. */
 export async function restoreFollowerAvailability(actor, npcUuid, context = null) {
   const record = records(actor).find(record => record.npcUuid === npcUuid);
-  if (!record || record.available) return true;
+  if (!record) return true;
   if (!ownedPC(actor)) return false;
-  return Boolean(await runActorActions([actor], "followerRestore", async () => {
-    await write(actor, { ...record, available: true }); return true;
+  const npc = await resolveDocumentReference(npcUuid, "npc");
+  const effects = npc?.flags?.cypher?.generalEffects ?? [];
+  const clearRetainer = npc?.system.health.value > 0 && effects.some(effect => effect.kind === "unconscious" && effect.source === "retainer");
+  if (clearRetainer && npc.isOwner === false) return false;
+  if (record.available && !clearRetainer) return true;
+  return Boolean(await runActorActions([actor, npc], "followerRestore", async () => {
+    if (clearRetainer && npc.system.health.value > 0) await npc.update({ "flags.cypher.generalEffects": (npc.flags?.cypher?.generalEffects ?? [])
+      .filter(effect => !(effect.kind === "unconscious" && effect.source === "retainer")) });
+    if (!record.available) await write(actor, { ...record, available: true }); return true;
   }, context));
 }
 

@@ -4,6 +4,13 @@
     <button type="button" data-action="promptFollower">{{localize "CYPHER.Follower.register"}}</button>{{/if}}
   </div>
   <p>{{localize "CYPHER.Follower.helpHint"}}</p>
+  <button type="button" data-action="promptCompanionContext">{{localize "CYPHER.Companion.circumstances"}}</button>
+  {{#if companion}}<p>{{companion.npc.name}} · {{#if companion.immediate}}{{localize "CYPHER.Companion.immediate"}} · {{/if}}{{#if companion.alive}}{{localize "CYPHER.Companion.alive"}}{{/if}}{{#if companion.riding}} · {{localize "CYPHER.Companion.riding"}}{{/if}}</p>{{/if}}
+  {{#each companionSupport.repairs as |repair|}}<p>{{localize "CYPHER.Companion.repair"}} · {{repair.remaining}} s
+    <button type="button" data-action="finishCompanionRepair" data-repair-id="{{repair.id}}">{{localize "CYPHER.Companion.finishRepair"}}</button>
+    {{#if repair.working}}<button type="button" data-action="cancelCompanionRepair" data-repair-id="{{repair.id}}">{{localize "CYPHER.Companion.cancelRepair"}}</button>{{/if}}</p>{{/each}}
+  {{#if followerCanManage}}{{#each companionSupport.interceptions as |interception|}}<p>{{localize "CYPHER.Companion.pendingInterception"}}
+    <button type="button" data-action="resumeRetainerInterception" data-interception-id="{{interception.id}}">{{localize "CYPHER.Companion.resume"}}</button></p>{{/each}}{{/if}}
   {{#if followerCanManage}}{{#each followerAbilityPending as |use|}}
     <p>{{use.source}} · {{localize "CYPHER.Follower.pending"}} <button type="button" data-action="resumeFollowerAbility" data-use-id="{{use.id}}">{{localize "CYPHER.FollowerAbility.resume"}}</button></p>
   {{/each}}{{/if}}
@@ -15,6 +22,7 @@
     </div>
     <button type="button" data-action="configureFollower" data-follower-id="{{follower.id}}">{{localize "CYPHER.Follower.configure"}}</button>
     <button type="button" data-action="syncFollower" data-follower-id="{{follower.id}}">{{localize "CYPHER.Follower.sync"}}</button>
+    {{#if follower.canRepair}}<button type="button" data-action="promptCompanionRepair" data-follower-id="{{follower.id}}">{{localize "CYPHER.Companion.repair"}}</button>{{/if}}
     {{#if ../followerCanManage}}
     <button type="button" data-action="openFollower" data-follower-id="{{follower.id}}">{{localize "CYPHER.Follower.open"}}</button>
     <button type="button" data-action="replaceFollower" data-follower-id="{{follower.id}}">{{localize "CYPHER.Follower.replace"}}</button>

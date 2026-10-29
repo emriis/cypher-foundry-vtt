@@ -1,0 +1,30 @@
+{
+  "CYPHER": {
+    "Companion": {
+      "circumstances": "Companion circumstances",
+      "circumstancesHint": "Declare the actual companion and update these circumstances when they change. A calmed beast must already have been calmed and remain friendly; this does not perform Soothe the Savage. The GM or an NPC owner establishes a new link. Stronger Together requires a conscious helper; Beast Betterment requires only a present, living companion.",
+      "companion": "Actual companion",
+      "none": "None",
+      "calmed": "Already calmed beast",
+      "immediate": "Within immediate distance",
+      "alive": "Present and alive",
+      "riding": "Mounted attack while the mount moves on your turn",
+      "friendly": "Calmed beast remains well disposed",
+      "repair": "Attend to damaged automaton",
+      "repairHint": "Automaton Assistant and Expert Automaton regain 2 Health after a few minutes of your uninterrupted attention. Declare that duration, advance game time, then confirm the completed work. A destroyed or zero-Health automaton requires restoration instead.",
+      "minutes": "Declared duration in minutes",
+      "finishRepair": "Complete attention",
+      "cancelRepair": "Cancel attention",
+      "workConfirmed": "Has the declared uninterrupted attention actually been completed?",
+      "interception": "Retainer interception",
+      "interceptionHint": "Instead of the PC's defense, spend 2 Intellect (Edge applies) and redirect this attack to a source-bound retainer. The GM confirms the hit and declares numeric Health damage before NPC Armor. Wounds and Pool damage are not converted. Choose no cooperative mode or shield.",
+      "healthDamage": "Declared Health damage before NPC Armor",
+      "ignoresArmor": "Points of NPC Armor ignored",
+      "hitConfirmed": "GM confirms the attack hits this retainer",
+      "intercepted": "The retainer takes the attack",
+      "pendingInterception": "Paid interception to finish",
+      "resume": "Finish interception",
+      "unavailable": "Companion action unavailable: check source, actual NPC permissions, declared circumstances, completed time and pending work."
+    }
+  }
+}

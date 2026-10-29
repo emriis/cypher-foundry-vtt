@@ -30,10 +30,11 @@ test("permanent follower contracts trace to independently reviewed CRD paragraph
   }
 });
 
-test("runtime audit distinguishes permanent benefits from unimplemented companion powers", () => {
+test("runtime audit distinguishes permanent grants, implemented support and further companion powers", () => {
   const audit = auditAutomation({ type: "ability", system: { key: "mount" } });
   assert.equal(audit.status, "partial-or-adjudicated");
   assert.ok(audit.implemented.some(entry => entry.includes("follower-ability-service")));
-  assert.ok(audit.gaps.some(entry => entry.includes("mounted combat")));
+  assert.ok(audit.implemented.some(entry => entry.includes("companion-power/support")));
+  assert.ok(audit.gaps.some(entry => entry.includes("further active and temporary")));
   assert.ok(!auditAutomation({ type: "ability", system: { key: "basic-necromancy" } }).implemented.some(entry => entry.includes("follower-ability-service")));
 });

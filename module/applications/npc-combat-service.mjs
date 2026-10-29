@@ -1,4 +1,5 @@
 import { followerCanAct } from "./follower-service.mjs";
+import { interceptRetainer } from "./companion-support-service.mjs";
 import { rollDefense } from "./task-service.mjs";
 import { resolveNpcAttackTargetDamage } from "../rules/npc-combat.mjs";
 import { getGeneralEffects } from "./general-effect-service.mjs";
@@ -18,6 +19,8 @@ import {
  * Cypher NPCs do not make attack rolls: the targeted player makes the defense
  * roll against the NPC level. Only wound and Pool target damage have a defined
  * PC-side contract here; numeric damage remains an NPC Health mechanic.
+ * A confirmed Retainer interception delegates numeric NPC damage before the
+ * PC defense branch, with its own payment and durable action-cleanup receipt.
  *
  * @param {Actor} actor NPC performing the attack.
  * @param {object} attack Structured NPC attack.
@@ -26,13 +29,15 @@ import {
  * one targeted PC is required.
  * @param {string} [options.defenseType="dodge"] Block, Dodge or explicitly declared stat defense.
  * @param {string|null} [options.shieldItemId=null] Target-owned shield explicitly chosen for a Block.
+ * @param {string|null} [options.retainerId=null] Target PC's actual source-bound follower slot.
+ * @param {object|null} [options.retainerDamage=null] GM-confirmed hit and numeric damage before NPC Armor.
  * @returns {Promise<object|null>} Defense and damage result.
  */
 export async function rollNpcAttack(
   actor,
   attack,
   { target = null, defenseType = "dodge", shieldItemId = null, cooperativeMode = null,
-    takeAttackActor = null, physicalAttack = true, attackForm = null, ...taskOptions } = {}
+    takeAttackActor = null, physicalAttack = true, attackForm = null, retainerId = null, retainerDamage = null, ...taskOptions } = {}
 ) {
   if (actor.type !== "npc" || actor.isOwner === false) return null;
 
@@ -55,6 +60,7 @@ export async function rollNpcAttack(
     if (!selectedTarget || selectedTarget.isOwner === false) return null;
   }
   if (!await followerCanAct(actor)) return null;
+  if (retainerId && (cooperativeMode && cooperativeMode !== "none" || takeAttackActor || shieldItemId || !retainerDamage)) return null;
   return runActorActions([actor, selectedTarget, takeAttackActor], "npcAttack", async context => {
     const roundContext = roundActionContext(actor, { isAttack: true, actionTiming: taskOptions.actionTiming });
     if (roundContext && !roundContext.kind) return null;
@@ -84,6 +90,12 @@ export async function rollNpcAttack(
       .reduce((total, effect) => total + Math.max(0, effect.hinderSteps ?? 0), 0);
     const npcHinder = resolveGeneralModifiers(generalEffects, [], { isAttack: true }).hinder;
     const effectiveLevel = Math.max(0, actor.system.level - hinderSteps - npcHinder);
+
+    if (retainerId) {
+      const intercepted = await interceptRetainer(selectedTarget, retainerId, { ...retainerDamage, attacker: actor, actionTiming: taskOptions.actionTiming }, context);
+      if (!intercepted) return null;
+      return { intercepted: true, retainerId };
+    }
 
     const damage = resolveNpcAttackTargetDamage(attack);
     if (!damage) {

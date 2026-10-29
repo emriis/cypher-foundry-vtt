@@ -1,0 +1,30 @@
+{
+  "CYPHER": {
+    "Companion": {
+      "circumstances": "Situation du compagnon",
+      "circumstancesHint": "Désignez le compagnon concerné et actualisez ces conditions lorsqu'elles changent. Une bête apaisée doit déjà l'avoir été et rester bien disposée : ceci n'exécute pas Soothe the Savage. Le MJ ou un propriétaire du PNJ établit un nouveau lien. Stronger Together exige un compagnon conscient et capable d'aider ; Beast Betterment exige seulement sa présence et qu'il soit vivant.",
+      "companion": "Compagnon concerné",
+      "none": "Aucun",
+      "calmed": "Bête déjà apaisée",
+      "immediate": "À distance immédiate",
+      "alive": "Présent et vivant",
+      "riding": "Attaque à dos de monture pendant qu'elle se déplace à votre tour",
+      "friendly": "La bête apaisée reste bien disposée",
+      "repair": "S'occuper de l'automate endommagé",
+      "repairHint": "Automaton Assistant et Expert Automaton récupèrent 2 points de Santé après quelques minutes de votre attention ininterrompue. Déclarez cette durée, avancez le temps de jeu, puis confirmez le travail accompli. Un automate détruit ou à zéro Santé nécessite une restauration.",
+      "minutes": "Durée déclarée en minutes",
+      "finishRepair": "Terminer l'intervention",
+      "cancelRepair": "Annuler l'intervention",
+      "workConfirmed": "L'intervention ininterrompue déclarée a-t-elle réellement été accomplie ?",
+      "interception": "Interception par Retainer",
+      "interceptionHint": "À la place de la défense du PJ, dépensez 2 points d'Intelligence (Avantage applicable) pour rediriger cette attaque vers un suivant issu de Retainer. Le MJ confirme la touche et déclare les dégâts numériques de Santé avant l'Armure du PNJ. Aucune conversion des blessures ou des dégâts de réserve. Ne choisissez ni mode coopératif ni bouclier.",
+      "healthDamage": "Dégâts de Santé déclarés avant l'Armure du PNJ",
+      "ignoresArmor": "Points d'Armure du PNJ ignorés",
+      "hitConfirmed": "Le MJ confirme que l'attaque touche ce suivant",
+      "intercepted": "Le suivant encaisse l'attaque",
+      "pendingInterception": "Interception payée à terminer",
+      "resume": "Terminer l'interception",
+      "unavailable": "Action de compagnon indisponible : vérifiez la source, les droits sur le PNJ concerné, les conditions déclarées, le temps écoulé et les opérations en attente."
+    }
+  }
+}

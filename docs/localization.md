@@ -18,6 +18,7 @@ Edit the paired domain files under `lang/src/en/` and `lang/src/fr/`:
 | `cypher-lifecycle.json` | Common cypher acquisition, custody, capacity and timing |
 | `followers.json` | Actual follower links, progression, roles and explicit profile declarations |
 | `follower-abilities.json` | Acquired permanent follower benefits, complete alternatives and historical binding |
+| `companions.json` | Declared proximity/life/mounted movement, timed attention and Retainer interception |
 | `species-benefits.json` | Source-bound species conditions, preparation and historical training review |
 | `projects.json` | Resource-point projects, explicit work/qualification and GM settlement |
 | `task-retries.json` | Ordinary task retries, explicit same-task/time confirmation and GM veto |

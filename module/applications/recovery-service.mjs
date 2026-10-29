@@ -1,4 +1,5 @@
 import { speciesRecovery } from "./species-benefit-service.mjs";
+import { companionTaskPlan } from "./companion-power-service.mjs";
 /**
  * CRD Recoveries / Healing Wounds: commit a completed rest or Rally on its
  * actual Actor. Sheets collect choices; this service validates fresh state,
@@ -73,7 +74,8 @@ export async function rollRecovery(actor, interval = "hour", options = {}) {
     if ((options.lastAction && interval !== "action")
       || (options.healMajor && interval !== "tenHours")
       || (options.woundChoice && !["minor", "moderate"].includes(options.woundChoice))) return null;
-    const { formula, data } = getRecoveryRollData(actor.system.tier ?? 1, (actor.system.recoveryBonus ?? 0) + speciesRecovery(actor).bonus, options);
+    const companion = await companionTaskPlan(actor);
+    const { formula, data } = getRecoveryRollData(actor.system.tier ?? 1, (actor.system.recoveryBonus ?? 0) + speciesRecovery(actor).bonus + companion.recovery, options);
     const roll = await new Roll(formula, data).evaluate();
     const pools = getRecoveryPools(actor);
     const proposed = defaultRecoveryAllocation(roll.total, pools, source.allowedStats);
@@ -81,6 +83,8 @@ export async function rollRecovery(actor, interval = "hour", options = {}) {
       ? await options.allocate({ total: roll.total, pools, allowedStats: source.allowedStats, proposed })
       : options.allocation ?? proposed;
     if (!availableSource(actor, interval, sourceId, options.machinePowered) || actor.isOwner === false) return null;
+    const currentCompanion = await companionTaskPlan(actor);
+    if (currentCompanion.recovery !== companion.recovery || companion.recovery && currentCompanion.contextId !== companion.contextId) return null;
     const poolUpdates = recoveryPoolUpdates(roll.total, getRecoveryPools(actor), allocation, source.allowedStats);
     if (!poolUpdates) {
       if (allocation !== null) ui.notifications.warn(game.i18n.localize("CYPHER.Recovery.InvalidAllocation"));
@@ -130,7 +134,8 @@ export async function rollRecovery(actor, interval = "hour", options = {}) {
     await roll.toMessage({
       speaker: ChatMessage.getSpeaker({ actor }),
       flags: { cypher: { rerollable: true, rollType: "recovery", actorId: actor.id, actorUuid: actor.uuid, rollFormula: formula,
-        rollData: data, originalRoll: roll.total, recoveryApplied: true, recoveryAllowedStats: source.allowedStats } },
+        rollData: data, originalRoll: roll.total, recoveryApplied: true, recoveryAllowedStats: source.allowedStats,
+        ...(companion.recovery ? { companionBenefits: { contextId: companion.contextId, npcUuid: companion.npcUuid, recovery: companion.recovery } } : {}) } },
       flavor: `<h3>${game.i18n.localize("CYPHER.Roll.Recovery")}</h3><p>${game.i18n.localize(`CYPHER.Recovery.${interval}`)}</p>
         ${woundNoteKey ? `<p>${game.i18n.localize(woundNoteKey)}</p>` : ""}`
     });
