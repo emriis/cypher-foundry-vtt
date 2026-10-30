@@ -5,6 +5,8 @@
   <section class="npc-section" data-follower-profile="{{followerProfile.id}}">
     <h3>{{localize "CYPHER.Follower.title"}} — {{followerProfile.ownerName}}</h3>
     <p>{{localize followerProfile.modeLabel}} · {{localize followerProfile.stateLabel}}</p>
+    {{#if followerProfile.flight.enabled}}<p>{{#if followerProfile.flight.meters}}{{localize "CYPHER.CompanionUpgrade.carryingFlight"}}{{else}}{{localize "CYPHER.CompanionUpgrade.longFlight"}}{{/if}}</p>{{/if}}
+    {{#if followerProfile.turretPending}}<p>{{localize "CYPHER.CompanionUpgrade.pendingShot"}}</p>{{/if}}
     {{#each followerProfile.tasks as |task|}}<p>{{task.label}}: {{task.level}}</p>{{/each}}
   </section>
   {{/if}}

@@ -1,3 +1,4 @@
+import { companionArmorUsable } from "../rules/companion-upgrades.mjs";
 import { CYPHER } from "../config.mjs";
 import { resolveAbilityWoundTrack } from "../rules/ability-modifiers.mjs";
 
@@ -222,7 +223,7 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
     let equippedArmorItem = null;
     const itemsCollection = this.parent?.items;
     if (itemsCollection && typeof itemsCollection.find === "function") {
-      equippedArmorItem = itemsCollection.find(i => i?.type === "armor" && i?.system?.equipped === true) ?? null;
+      equippedArmorItem = itemsCollection.find(i => i?.type === "armor" && i?.system?.equipped === true && companionArmorUsable(i, this.parent?.flags?.cypher, globalThis.game?.time?.worldTime ?? 0)) ?? null;
     }
     const category = equippedArmorItem?.system?.category ?? "none";
     const armorSteps = CYPHER.armorCategories[category] ?? { block: 0, dodge: 0 };

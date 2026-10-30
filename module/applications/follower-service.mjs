@@ -1,5 +1,6 @@
 import { resolveGeneralModifiers } from "../rules/general-effects.mjs";
 import { getGeneralEffects } from "./general-effect-service.mjs";
+import { automatonMode, automatonFlight } from "./companion-upgrade-read.mjs";
 /** CRD Followers: explicit links, progression, help and replacement; no Ability prose or token geometry is interpreted. */
 import { followerProgression, followerHelpAssets, followerReplacementLevel } from "../rules/followers.mjs";
 import { resolveDocumentReference } from "./reference-resolver.mjs";
@@ -138,7 +139,9 @@ function present(actor, record, npc) {
     || ["unconscious", "stunned", "paralyzed", "dead"].some(status => npc.statuses?.has(status))));
   return { ...record, unavailable: !record.available || blocked, name: npc?.name ?? record.npcUuid, level: npc?.system.level, health: npc?.system.health, pending,
     modeLabel: `CYPHER.Follower.${record.mode}`, stateLabel: `CYPHER.Follower.${pending ? record.state === "manual" ? "manual" : "pending" : "active"}`,
-    canHelp: !pending && !blocked && record.available && npc.system.health.value > 0 && record.mode !== "independent",
+    canHelp: !pending && !blocked && automatonMode(npc) === "normal" && record.available && npc.system.health.value > 0 && record.mode !== "independent",
+    physicalMode: automatonMode(npc), flight: automatonFlight(npc),
+    turretPending: Object.values(npc?.flags?.cypher?.turretRounds ?? {}).some(shot => shot.state === "pending"),
     tasks: record.taskLevels.map(task => ({ ...task, level: task.level + record.earned + record.extraLevels - (record.taskLevelExclusions ?? 0) - (task.gainedAt ?? 0) })) };
 }
 
@@ -173,6 +176,7 @@ export async function followerTaskPlan(actor, choices = null, { isAttack = false
 
 /** A linked following must be explicitly acting independently before an NPC attack can replace its help. */
 export async function followerCanAct(npc) {
+  if (automatonMode(npc) !== "normal") return false;
   const link = npc.flags?.cypher?.followerProgress;
   if (!link) return true;
   const owner = await resolveDocumentReference(link.ownerUuid, "pc"), record = owner && get(owner, link.slotId);

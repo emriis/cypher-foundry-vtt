@@ -5,6 +5,19 @@
   </div>
   <p>{{localize "CYPHER.Follower.helpHint"}}</p>
   <button type="button" data-action="promptCompanionContext">{{localize "CYPHER.Companion.circumstances"}}</button>
+  {{#if followerCanManage}}
+  <button type="button" data-action="promptCompanionInstall">{{localize "CYPHER.CompanionUpgrade.install"}}</button>
+  {{#each companionUpgrades.installations as |binding|}}<p>{{binding.name}}
+    {{#if binding.flight}}<button type="button" data-action="promptCompanionUpgradeCircumstances" data-follower-id="{{binding.followerId}}">{{localize "CYPHER.CompanionUpgrade.circumstances"}}</button>
+    {{else}}<button type="button" data-action="promptCompanionUpgrade" data-binding-id="{{binding.id}}">{{localize "CYPHER.CompanionUpgrade.activate"}}</button>{{/if}}</p>{{/each}}
+  {{#each companionUpgrades.offers as |offer|}}{{#if offer.senses}}<button type="button" data-action="promptCompanionUpgrade" data-item-id="{{offer.id}}">{{offer.name}}</button>{{/if}}{{/each}}
+  {{#each companionUpgrades.effects as |effect|}}<p>{{effect.name}}
+    {{#if effect.pending}}<button type="button" data-action="finishCompanionUpgrade" data-effect-id="{{effect.id}}">{{localize "CYPHER.CompanionUpgrade.resume"}}</button>
+    {{else}}<button type="button" data-action="stopCompanionUpgrade" data-effect-id="{{effect.id}}">{{localize "CYPHER.CompanionUpgrade.end"}}</button>
+    {{#if effect.senses}}<button type="button" data-action="promptCompanionUpgradeCircumstances" data-effect-id="{{effect.id}}">{{localize "CYPHER.CompanionUpgrade.circumstances"}}</button>{{/if}}
+    {{#if effect.field}}<button type="button" data-action="promptCompanionUpgradeCircumstances" data-effect-id="{{effect.id}}">{{localize "CYPHER.CompanionUpgrade.circumstances"}}</button>{{/if}}
+    {{#if effect.turret}}<button type="button" data-action="promptAutomatonTurret" data-effect-id="{{effect.id}}">{{localize "CYPHER.CompanionUpgrade.fire"}}</button>{{/if}}{{/if}}</p>{{/each}}
+  {{/if}}
   {{#if companion}}<p>{{companion.npc.name}} · {{#if companion.immediate}}{{localize "CYPHER.Companion.immediate"}} · {{/if}}{{#if companion.alive}}{{localize "CYPHER.Companion.alive"}}{{/if}}{{#if companion.riding}} · {{localize "CYPHER.Companion.riding"}}{{/if}}</p>{{/if}}
   {{#each companionSupport.repairs as |repair|}}<p>{{localize "CYPHER.Companion.repair"}} · {{repair.remaining}} s
     <button type="button" data-action="finishCompanionRepair" data-repair-id="{{repair.id}}">{{localize "CYPHER.Companion.finishRepair"}}</button>
@@ -19,6 +32,8 @@
     <div><strong>{{follower.name}}</strong><span>{{localize "CYPHER.Follower.level"}} {{follower.level}} · {{follower.health.value}}/{{follower.health.max}}</span>
       <p>{{localize follower.modeLabel}} · {{localize follower.stateLabel}}{{#if follower.unavailable}} · {{localize "CYPHER.Follower.absent"}}{{/if}}</p>
       {{#each follower.tasks as |task|}}<span>{{task.label}}: {{task.level}} </span>{{/each}}
+      {{#if follower.flight.enabled}}<p>{{#if follower.flight.meters}}{{localize "CYPHER.CompanionUpgrade.carryingFlight"}}{{else}}{{localize "CYPHER.CompanionUpgrade.longFlight"}}{{/if}}</p>{{/if}}
+      {{#if follower.turretPending}}<p>{{localize "CYPHER.CompanionUpgrade.pendingShot"}}</p>{{/if}}
     </div>
     <button type="button" data-action="configureFollower" data-follower-id="{{follower.id}}">{{localize "CYPHER.Follower.configure"}}</button>
     <button type="button" data-action="syncFollower" data-follower-id="{{follower.id}}">{{localize "CYPHER.Follower.sync"}}</button>

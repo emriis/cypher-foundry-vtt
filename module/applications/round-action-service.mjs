@@ -31,11 +31,16 @@ export function roundActionContext(actor, options = {}) {
   return { actor, combat, flow, step, kind, used };
 }
 
-/** Commit action usage after validation and before costs/dice; failures leave an auditable used slot. */
-export async function consumeRoundAction(context, actionContext = null) {
+/**
+ * Commit usage before costs/dice; failures leave an auditable used slot.
+ * An optional companion receipt is stored in that same Actor write, allowing
+ * a paid transformation to acknowledge a lost response without acting twice.
+ */
+export async function consumeRoundAction(context, actionContext = null, { receiptId = null } = {}) {
   if (!context) return true;
   const { actor, combat, flow, step, kind, used } = context;
   return Boolean(await runActorActions([actor, combat], "roundUsage", async () => {
+    if (receiptId && actor.flags?.cypher?.companionActions?.[receiptId]) return true;
     if (!kind || actor.isOwner === false || getRoundFlow(combat)?.revision !== flow.revision) return false;
     const latest = actor.flags?.cypher?.roundActionUsage;
     const current = latest?.combatId === combat.id && latest.stepId === step.id ? latest : {};
@@ -43,7 +48,8 @@ export async function consumeRoundAction(context, actionContext = null) {
     // Players own their Actor, not the GM's Combat. Usage belongs to that actual
     // Actor (including synthetic Actors), so an ordinary player needs no GM write.
     await actor.update({ "flags.cypher.roundActionUsage": { combatId: combat.id, stepId: step.id,
-      primary: Boolean(used.primary || kind === "primary"), activity: Boolean(used.activity || kind === "activity") } });
+      primary: Boolean(used.primary || kind === "primary"), activity: Boolean(used.activity || kind === "activity") },
+    ...(receiptId ? { [`flags.cypher.companionActions.${receiptId}`]: true } : {}) });
     return true;
   }, actionContext));
 }

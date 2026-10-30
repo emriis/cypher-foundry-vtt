@@ -1,5 +1,6 @@
 /** CRD / Special Rolls and Rerolling: persist one NPC attack's actual contribution. */
 import { resolveNpcDamage } from "../rules/wounds.mjs";
+import { companionNpcProtection } from "./companion-upgrade-read.mjs";
 import { planAttackDamage } from "../rules/attack-consequences.mjs";
 import { applyNpcDamage } from "./damage-service.mjs";
 import { attackHealthRevision } from "./attack-history.mjs";
@@ -13,18 +14,19 @@ import { applyWeaponTargetEffects, weaponEffectContext } from "./weapon-effect-s
  */
 export async function applyAttackConsequences(target, { success, totalDamage, armorBypass, weaponTargetEffects, weaponSource }) {
   const armor = target.system.armor ?? 0;
+  const protection = companionNpcProtection(target);
   const before = target.system.health?.value;
   const healthRevision = attackHealthRevision(target);
   const effectContext = weaponEffectContext(target, weaponSource);
   let targetDamage = 0;
   if (success) {
-    if (totalDamage > 0) targetDamage = await applyNpcDamage(target, totalDamage, { armorBypass });
+    if (totalDamage > 0) targetDamage = await applyNpcDamage(target, totalDamage, { armorBypass, protection });
     await applyWeaponTargetEffects(target, weaponTargetEffects, weaponSource, effectContext);
   }
   const loss = before - target.system.health?.value;
-  const resolvedDamage = success ? resolveNpcDamage(totalDamage, armor, armorBypass) : 0;
+  const resolvedDamage = success ? Math.max(0, resolveNpcDamage(totalDamage, armor, armorBypass) - protection) : 0;
   return { targetDamage, attackConsequences: { version: 1, state: "applied", targetUuid: target.uuid,
-    armor, armorBypass, resolvedDamage, damageBands: loss > 0 ? [{ from: 0, to: loss }] : [],
+    armor, armorBypass, protection, resolvedDamage, damageBands: loss > 0 ? [{ from: 0, to: loss }] : [],
     healthRevision, success, effectsApplied: success, effectContext } };
 }
 
@@ -45,8 +47,9 @@ export async function reconcileAttackConsequences(target, flags, outcome, checkp
   if (history?.state === "pending" || history?.reason === "partial") return manual("partial");
   if (!history || history.version !== 1 || !target || history.state === "manual") return manual(history?.reason ?? "history");
   if (history.state !== "applied" || typeof history.success !== "boolean" || typeof history.effectsApplied !== "boolean"
+    || !Number.isSafeInteger(history.protection ?? 0) || (history.protection ?? 0) < 0
     || ![history.armor, history.armorBypass].every(value => Number.isSafeInteger(value) && value >= 0)) return manual("history");
-  const damage = outcome.success ? resolveNpcDamage(outcome.totalDamage, history.armor, history.armorBypass) : 0;
+  const damage = outcome.success ? Math.max(0, resolveNpcDamage(outcome.totalDamage, history.armor, history.armorBypass) - (history.protection ?? 0)) : 0;
   const plan = planAttackDamage(history, damage, target.system.health?.value, target.system.health?.max, attackHealthRevision(target));
   if (!plan) return manual("history");
   const effects = outcome.success && !history.effectsApplied;

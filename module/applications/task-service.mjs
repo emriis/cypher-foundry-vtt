@@ -1,4 +1,5 @@
 import { speciesTaskPlan, speciesDamageReduction } from "./species-benefit-service.mjs";
+import { companionFieldReduction } from "./companion-upgrade-read.mjs";
 import { followerTaskPlan } from "./follower-service.mjs";
 import { companionTaskPlan, companionTargetDefense } from "./companion-power-service.mjs";
 import { objectDisplay, prepareObjectAttack } from "./object-service.mjs";
@@ -283,9 +284,10 @@ async function executeTask(actor, {
   // A successful Block can transfer the whole wound to an equipped, unbroken shield
   // instead of reducing it by one step on the character.
   const usingShield = defenseType === "block" && canShieldAbsorbWound(shieldItem);
+  const incomingFieldReduction = companionFieldReduction(actor);
 
   const takeOnSuccessfulBlock = Boolean(takeAttackActor && blockStillHits({ defenseType, applyIncomingWound,
-    incomingSeverity, incomingWounds, personalWoundReduction: speciesDamageReduction(actor, incomingDamageTags), shieldWounds: usingShield ? resolveShieldWoundTrack(shieldItem.system.wounds,
+    incomingSeverity, incomingWounds, personalWoundReduction: speciesDamageReduction(actor, incomingDamageTags) + incomingFieldReduction, shieldWounds: usingShield ? resolveShieldWoundTrack(shieldItem.system.wounds,
       actor.system.activeAbilityEffects, shieldOwnerItems(shieldItem), actor.system) : null,
     survivesMajor: usingShield && shieldSurvivesMajor(shieldItem, shieldOwnerItems(shieldItem)) }));
   const defenseRecipient = takeAttackActor && (!success || takeOnSuccessfulBlock) ? takeAttackActor : actor;
@@ -349,7 +351,7 @@ async function executeTask(actor, {
         ...(initiative ? { initiative } : {}),
         ...(shieldReturn ? { shieldReturn: { ...shieldReturn, applied: success } } : {}),
         ...(defenseType ? { defenseType, shieldItemId, shieldWoundsAbsorbed, incomingWounds, incomingSeverity,
-          incomingDamageTags, applyIncomingWound, incomingPoolDamage, conditionsOnFailure, defenseConsequences } : {}),
+          incomingDamageTags, applyIncomingWound, incomingPoolDamage, incomingFieldReduction, conditionsOnFailure, defenseConsequences } : {}),
         ...(woundRemovalSeverity ? { woundRemoval: {
           targetUuid: targetActor.uuid, severity: woundRemovalSeverity, applied: woundRemovalApplied
         } } : {}),

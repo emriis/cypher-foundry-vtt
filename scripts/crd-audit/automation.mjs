@@ -1,5 +1,6 @@
 import { speciesSourceRules } from "../../module/rules/species-benefits.mjs";
 import { followerAbilityPlan } from "../../module/rules/follower-abilities.mjs";
+import { COMPANION_UPGRADES } from "../../module/rules/companion-upgrades.mjs";
 /**
  * Inventory implemented consumers, not inferred rules. Each source Item gets a
  * conservative runtime assessment: accepting a field or posting prose to chat
@@ -19,6 +20,10 @@ export function auditAutomation(document) {
   const implemented = [], gaps = [];
   switch (document.type) {
     case "ability":
+      if (COMPANION_UPGRADES[system.key]) {
+        implemented.push("companion-upgrade services/PC sheet: source-bound installation, per-activation Edge/cost, exclusive physical forms, retained repairable armor, timed cypher capacity, declared field recipients, movement profiles, turret attacks and native Beast Eyes sight");
+        gaps.push("GM confirms physical feasibility, range, friendly calmed beasts and NPC-versus-NPC hits; numeric turret damage against PCs requires an explicit wound/Pool ruling; interrupted autonomous shots require GM review");
+      }
       if (followerAbilityPlan(system.key)) {
         implemented.push("follower-ability-service/PC sheet: permanent grants, complete alternatives, acquired-copy limits, historical binding and resumable NPC improvement receipts");
         gaps.push("creature details require GM confirmation; further active and temporary companion powers require individual contracts");

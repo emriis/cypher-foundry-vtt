@@ -1,4 +1,5 @@
 import { roundActionContext } from "./round-action-service.mjs";
+import { companionEquipmentUsable } from "./companion-upgrade-read.mjs";
 import { runCypherActivation } from "./cypher-inventory-service.mjs";
 import { equipmentAttackProblem, equipmentGrip } from "./equipment-hands-service.mjs";
 import { minimumWeaponHands } from "../rules/equipment-hands.mjs";
@@ -198,6 +199,7 @@ export function prepareAttackOptions(item, {
   abilitySource = null, spentAbilityEdge = 0, immediateMovement = false, ...taskOptions
 } = {}) {
   if (item.type !== "attack" || !item.actor) return null;
+  if (!companionEquipmentUsable(item)) return null;
   const actor = item.actor;
   const equipmentProblem = equipmentAttackProblem(item, { abilitySource, equipmentFlightId: taskOptions.equipmentFlightId });
   if (equipmentProblem) {
@@ -262,7 +264,7 @@ export function prepareAttackOptions(item, {
     isAttack: true, baseDamage: Math.max(0, baseDamage + damageAdjustment),
     extraHinderSteps: extraHinderSteps + weaponHinder + oneHandHinder
       + weaponRangeAdjudication.hinderSteps + (immediateMovement && attackType === "heavy" ? 1 : 0),
-    extraEaseSteps: weaponEaseSteps + weaponEase, luckyShot, weaponTargetEffects,
+    extraEaseSteps: weaponEaseSteps + weaponEase + (item.flags?.cypher?.companionEquipment?.kind === "turret" ? 1 : 0), luckyShot, weaponTargetEffects,
     targetActor: selectedTarget, weaponRangeAdjudication, abilitySource, spentAbilityEdge,
     weaponSource: {
       itemId: item.id,

@@ -4,6 +4,11 @@ import * as followerService from "./module/applications/follower-service.mjs";
 import * as followerAbilityService from "./module/applications/follower-ability-service.mjs";
 import * as companionPowerService from "./module/applications/companion-power-service.mjs";
 import * as companionSupportService from "./module/applications/companion-support-service.mjs";
+import * as companionUpgradeService from "./module/applications/companion-upgrade-service.mjs";
+import * as companionTurretService from "./module/applications/companion-turret-service.mjs";
+import * as companionUpgradeRead from "./module/applications/companion-upgrade-read.mjs";
+import { createCompanionTokenClass, refreshCompanionVision } from "./module/applications/companion-vision.mjs";
+import { refreshCompanionUpgradeSheets } from "./module/sheets/companion-upgrade-dialogs.mjs";
 import * as cypherInventoryService from "./module/applications/cypher-inventory-service.mjs";
 import * as cypherGenerationService from "./module/applications/cypher-generation-service.mjs";
 import * as projectService from "./module/applications/project-service.mjs";
@@ -51,6 +56,18 @@ Hooks.on("preUpdateActor", enforceSpecialDamageHealing);
 Hooks.on("preUpdateCombat", stampGeneralTurnRevision);
 
 Hooks.on("updateWorldTime", refreshProjectSheets);
+Hooks.on("updateActor", refreshCompanionVision);
+Hooks.on("updateWorldTime", refreshCompanionVision);
+Hooks.on("updateWorldTime", refreshCompanionUpgradeSheets);
+Hooks.on("canvasReady", refreshCompanionVision);
+
+// Native sheet/macro updates cannot ready a retained suit or turret after expiry.
+Hooks.on("preUpdateItem", (item, changes, options = {}) => {
+  const equips = changes["system.equipped"] ?? changes.system?.equipped;
+  if (!equips || !item.flags?.cypher?.companionEquipment || companionUpgradeRead.companionEquipmentUsable(item)) return;
+  const effect = item.actor?.flags?.cypher?.companionEffects?.[options.cypherCompanionActivation];
+  if (!(game.user.isGM && effect?.state === "pending" && effect.itemId === item.id)) return false;
+});
 
 Hooks.once("init", () => {
   console.log("Cypher | Initialisation / Initializing");
@@ -60,6 +77,8 @@ Hooks.once("init", () => {
   // anchor point on a given Foundry version.
   game.cypher = { companions: { ...companionPowerService, ...companionSupportService }, speciesBenefits: speciesBenefitService, followers: { ...followerService, ...followerAbilityService }, cyphers: { ...cypherInventoryService, ...cypherGenerationService }, CYPHER, importFromBuilder, openImportDialog, promptInitiativeOptions, objects: objectService, projects: projectService, taskRetries: taskRetryService, intrusions: intrusionService };
   CONFIG.CYPHER = CYPHER;
+  Object.assign(game.cypher.companions, companionUpgradeService, companionUpgradeRead, companionTurretService);
+  CONFIG.Token.objectClass = createCompanionTokenClass(CONFIG.Token.objectClass);
 
   registerImportButton();
 

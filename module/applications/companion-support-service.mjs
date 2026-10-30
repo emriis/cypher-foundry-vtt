@@ -4,6 +4,7 @@ import { resolveDocumentReference } from "./reference-resolver.mjs";
 import { runActorActions } from "./action-guard.mjs";
 import { resolveActiveAbilityModifiers } from "../rules/ability-modifiers.mjs";
 import { retainerHealthDamage } from "../rules/companion-powers.mjs";
+import { companionNpcProtection } from "./companion-upgrade-read.mjs";
 import { resolveGeneralModifiers } from "../rules/general-effects.mjs";
 import { getGeneralEffects } from "./general-effect-service.mjs";
 import { roundActionContext, consumeRoundAction } from "./round-action-service.mjs";
@@ -122,7 +123,8 @@ async function executeRetainerInterception(actor, id, { attacker, amount, ignore
   const resolved = await target(actor, id, "retainer");
   if (!resolved || !(await retainerChoices(actor)).some(choice => choice.id === id)) return false;
   const { npc } = resolved;
-  const damage = retainerHealthDamage(amount, npc.system.armor ?? 0, ignoresArmor);
+  const baseDamage = retainerHealthDamage(amount, npc.system.armor ?? 0, ignoresArmor);
+  const damage = baseDamage === null ? null : Math.max(0, baseDamage - companionNpcProtection(npc));
   const stat = actor.system.stats?.intellect;
   const edge = stat?.edge ?? 0;
   const modifiers = resolveActiveAbilityModifiers(actor.system.activeAbilityEffects, items(actor), actor.system);
