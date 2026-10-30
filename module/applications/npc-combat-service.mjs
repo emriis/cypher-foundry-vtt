@@ -1,4 +1,5 @@
 import { followerCanAct } from "./follower-service.mjs";
+import { resolveTurretAttack } from "./companion-upgrade-read.mjs";
 import { interceptRetainer } from "./companion-support-service.mjs";
 import { rollDefense } from "./task-service.mjs";
 import { resolveNpcAttackTargetDamage } from "../rules/npc-combat.mjs";
@@ -37,7 +38,8 @@ export async function rollNpcAttack(
   actor,
   attack,
   { target = null, defenseType = "dodge", shieldItemId = null, cooperativeMode = null,
-    takeAttackActor = null, physicalAttack = true, attackForm = null, retainerId = null, retainerDamage = null, ...taskOptions } = {}
+    takeAttackActor = null, physicalAttack = true, attackForm = null, retainerId = null, retainerDamage = null,
+    companionTurret = null, parentActionContext = null, ...taskOptions } = {}
 ) {
   if (actor.type !== "npc" || actor.isOwner === false) return null;
 
@@ -59,11 +61,21 @@ export async function rollNpcAttack(
     // The task validates any chosen shield against this actual drawn target.
     if (!selectedTarget || selectedTarget.isOwner === false) return null;
   }
-  if (!await followerCanAct(actor)) return null;
+  const turret = companionTurret ? await resolveTurretAttack(actor, companionTurret) : null;
+  if (companionTurret && !turret || !turret && !await followerCanAct(actor)) return null;
+  const turretShot = turret && actor.flags?.cypher?.turretRounds?.[companionTurret.roundId];
+  if (turret && (turretShot?.state !== "pending" || turretShot.id !== companionTurret.shotId || turretShot.effectId !== turret.effect.id
+    || turretShot.targetUuid !== selectedTarget.uuid || turretShot.defenseStarted)) return null;
+  if (turret) taskOptions.actionTiming = "lastAction";
   if (retainerId && (cooperativeMode && cooperativeMode !== "none" || takeAttackActor || shieldItemId || !retainerDamage)) return null;
   return runActorActions([actor, selectedTarget, takeAttackActor], "npcAttack", async context => {
     const roundContext = roundActionContext(actor, { isAttack: true, actionTiming: taskOptions.actionTiming });
     if (roundContext && !roundContext.kind) return null;
+    if (turret) {
+      const current = actor.flags?.cypher?.turretRounds?.[companionTurret.roundId];
+      if (current?.defenseStarted || current?.id !== companionTurret.shotId) return null;
+      await actor.update({ [`flags.cypher.turretRounds.${companionTurret.roundId}.defenseStarted`]: true });
+    }
     const generalEffects = getGeneralEffects(actor);
     if (generalEffects.some(effect => effect.kind === "preventAction")) {
       if (!await consumeRoundAction(roundContext, context)) return null;
@@ -89,7 +101,7 @@ export async function rollNpcAttack(
       .filter(effect => effect.effect === "hindered")
       .reduce((total, effect) => total + Math.max(0, effect.hinderSteps ?? 0), 0);
     const npcHinder = resolveGeneralModifiers(generalEffects, [], { isAttack: true }).hinder;
-    const effectiveLevel = Math.max(0, actor.system.level - hinderSteps - npcHinder);
+    const effectiveLevel = Math.max(0, actor.system.level - hinderSteps - npcHinder - (turret ? 1 : 0));
 
     if (retainerId) {
       const intercepted = await interceptRetainer(selectedTarget, retainerId, { ...retainerDamage, attacker: actor, actionTiming: taskOptions.actionTiming }, context);
@@ -127,5 +139,5 @@ export async function rollNpcAttack(
     damage,
     targetDamage
   };
-  });
+  }, parentActionContext);
 }

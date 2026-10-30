@@ -1,3 +1,4 @@
+import { effectiveCypherLimit } from "./companion-upgrade-read.mjs";
 /** CRD common cypher rules: custody, capacity and activation timing, independent of descriptive power effects. */
 import { isCarriedCypher, cypherCapacity } from "../rules/cyphers.mjs";
 import { runActorActions } from "./action-guard.mjs";
@@ -18,7 +19,7 @@ export function canActivateCypher(item) {
 export function cypherInventoryDisplay(actor) {
   const items = itemsOf(actor).filter(item => item.type === "cypher");
   const count = items.filter(isCarriedCypher).length;
-  return { count, limit: actor.system.cypherLimit, overLimit: count > actor.system.cypherLimit,
+  return { count, limit: effectiveCypherLimit(actor), overLimit: count > effectiveCypherLimit(actor),
     pendingAwards: Object.entries(actor.flags?.cypher?.acquisitions ?? {}).filter(([, entry]) => entry?.version === 1 && ["pending", "manual"].includes(entry.state)).map(([id]) => ({ id })),
     items: items.map(item => ({ id: item.id, name: item.name, system: item.system,
       typeLabel: `CYPHER.CypherLife.${item.system.cypherType || "unset"}`, powerLabel: item.system.powerLevel ? `CYPHER.CypherLife.${item.system.powerLevel}` : null,
@@ -30,7 +31,7 @@ export function cypherInventoryDisplay(actor) {
 }
 
 /** Capacity preflight also belongs in callers that spend resources before creating an Item, such as projects. */
-export function canAcquireCyphers(actor, incoming = 1) { return cypherCapacity(itemsOf(actor), actor.system.cypherLimit, incoming); }
+export function canAcquireCyphers(actor, incoming = 1) { return cypherCapacity(itemsOf(actor), effectiveCypherLimit(actor), incoming); }
 
 /** Final Foundry batch preflight: creations from drop/import/macro cannot each see the same free slot. */
 export function validateCypherCreation(documents, parent = null) {
@@ -78,7 +79,7 @@ export function validateCypherUpdates(documents, updates) {
       return next;
     });
     if (after.includes(null)) { warn("unavailable"); return false; }
-    if (after.filter(isCarriedCypher).length > Math.max(actor.system.cypherLimit, before.filter(isCarriedCypher).length)) { warn("capacity"); return false; }
+    if (after.filter(isCarriedCypher).length > Math.max(effectiveCypherLimit(actor), before.filter(isCarriedCypher).length)) { warn("capacity"); return false; }
   }
   return true;
 }

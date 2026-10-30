@@ -13,6 +13,23 @@ function prepare(model) {
   CypherPCData.prototype.prepareDerivedData.call(model);
 }
 
+test("retained automaton armor grants no derived protection while pending or after its recovery revision changes", () => {
+  const armor = { id: "suit", type: "armor", system: { equipped: true, category: "heavy", freelyUsable: true, blockEaseDamage: 1 },
+    flags: { cypher: { companionEquipment: { kind: "armor", followerId: "slot" } } } };
+  const effect = { version: 1, id: "e", key: "automaton-heavy-armor-upgrade", followerId: "slot", itemId: "suit", state: "pending", recoveryRevision: 0 };
+  const flags = { companionEffects: { e: effect } };
+  const model = { stats: Object.fromEntries(["might", "speed", "intellect"].map(stat => [stat, { pool: { value: 8, max: 8 }, edge: 0 }])),
+    customStats: [], genre: "none", powerShifts: {}, advancementSlots: [], freeArmorCategories: [], canFreelyUseAllArmor: false,
+    wounds: Object.fromEntries(["minor", "moderate", "major"].map(severity => [severity, { current: 0, max: 3 }])),
+    parent: { flags: { cypher: flags }, items: [armor] } };
+  prepare(model); assert.equal(model.armor.category, "none");
+  effect.state = "active"; prepare(model);
+  assert.equal(model.armor.category, "heavy"); assert.equal(model.armor.freelyUsable, true);
+  flags.companionRecoveries = { hour: 1 }; prepare(model);
+  assert.equal(model.armor.category, "none"); assert.equal(armor.system.equipped, true);
+  assert.equal(armor.system.blockEaseDamage, 1);
+});
+
 test("repeated public PC preparation preserves Pools, wounds and embedded armor without document writes", () => {
   const armor = { id: "armor", type: "armor", name: "Armor", system: {
     equipped: true, category: "medium", blockEaseDamage: 1

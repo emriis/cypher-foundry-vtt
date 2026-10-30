@@ -95,8 +95,9 @@ The public namespace is `game.cypher.companions`.
 
 ## Remaining companion families
 
-Beast Eyes, automaton armor/cypher/flight/turret/force-field upgrades, Team-Up Ally
-and temporary followers from necromancy, Duplicate and Recompile Machine remain
+Beast Eyes and automaton armor/cypher/flight/turret/force-field upgrades now have
+a separate [implementation contract](companion-upgrades.md). Team-Up Ally and
+temporary followers from necromancy, Duplicate and Recompile Machine remain
 separate contracts. Broader healing/protection/attack/movement/mental Ability
 families also remain on the roadmap.
 

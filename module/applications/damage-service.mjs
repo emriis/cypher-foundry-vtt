@@ -1,3 +1,4 @@
+import { companionFieldReduction, companionNpcProtection } from "./companion-upgrade-read.mjs";
 import { CYPHER } from "../config.mjs";
 import { shieldSurvivesMajor, shieldOwnerItems } from "../rules/shield-abilities.mjs";
 import { resolveAbilityWoundTrack, resolveShieldWoundTrack } from "../rules/ability-modifiers.mjs";
@@ -87,8 +88,10 @@ async function absorbShieldWound(actor, shieldItem, severity) {
  * @param {string} severity Wound severity to add.
  * @returns {Promise<void>} Completes after the actor has been updated.
  */
-export async function addWound(actor, severity) {
+export async function addWound(actor, severity, { fieldReduction = companionFieldReduction(actor) } = {}) {
   if (actor.type !== "pc" || actor.isOwner === false) return;
+  for (let step = 0; severity && step < fieldReduction; step++) severity = reduceWound(severity);
+  if (!severity) return;
 
   const items = actor.items;
   const wounds = resolveAbilityWoundTrack(actor.system.wounds, actor.system.activeAbilityEffects,
@@ -125,7 +128,7 @@ export async function addWound(actor, severity) {
 export async function applyDamage(
   actor,
   amount,
-  { severity = null, stat = null, ignoreArmor = false, armorBypass = 0 } = {}
+  { severity = null, stat = null, ignoreArmor = false, armorBypass = 0, fieldReduction = companionFieldReduction(actor) } = {}
 ) {
   if (actor.type !== "pc") {
     return applyNpcDamage(actor, amount, { ignoreArmor, armorBypass });
@@ -145,13 +148,13 @@ export async function applyDamage(
 
     if (resolution.overflow > 0) {
       const woundSeverity = severity ?? resolution.woundSeverity;
-      await addWound(actor, woundSeverity);
+      await addWound(actor, woundSeverity, { fieldReduction });
     }
     return resolution.poolDamage;
   }
 
   const woundSeverity = severity ?? convertDamageToWound(amount);
-  await addWound(actor, woundSeverity);
+  await addWound(actor, woundSeverity, { fieldReduction });
 }
 
 /**
@@ -167,14 +170,14 @@ export async function applyDamage(
 export async function applyNpcDamage(
   actor,
   amount,
-  { ignoreArmor = false, armorBypass = 0 } = {}
+  { ignoreArmor = false, armorBypass = 0, protection = companionNpcProtection(actor) } = {}
 ) {
   const armor = actor.system.armor ?? 0;
-  const finalDamage = resolveNpcDamage(
+  const finalDamage = Math.max(0, resolveNpcDamage(
     amount,
     armor,
     ignoreArmor ? Number.MAX_SAFE_INTEGER : armorBypass
-  );
+  ) - protection);
   const health = actor.system.health;
 
   if (!health) return;

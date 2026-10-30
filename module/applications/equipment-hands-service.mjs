@@ -5,6 +5,7 @@ import { shieldSurvivesMajor, shieldOwnerItems } from "../rules/shield-abilities
 import { getGeneralEffects } from "./general-effect-service.mjs";
 import { runActorAction } from "./action-guard.mjs";
 import { resolveCachedDocumentReference } from "./reference-resolver.mjs";
+import { companionEquipmentUsable } from "./companion-upgrade-read.mjs";
 
 const flagPath = "flags.cypher.equipmentUse";
 /** Inventory reads preserve actual embedded Item identities, including synthetic owners. */
@@ -22,6 +23,7 @@ export function equipmentGrip(item) {
   const grip = saved?.version === 1 ? saved : item?.type === "shield"
     ? { version: 1, held: Boolean(item.system.equipped), hands: 1, deployed: false, operators: [] } : null;
   if (!grip) return null;
+  if (item.flags?.cypher?.companionEquipment && !companionEquipmentUsable(item)) return { ...grip, held: false };
   if (item.type === "shield" && (!item.system.equipped || item.system.inHand === false
     || isShieldBroken(item.system.wounds, shieldSurvivesMajor(item, shieldOwnerItems(item))))) return { ...grip, held: false };
   return grip;
@@ -58,6 +60,7 @@ export function equipmentAttackProblem(item, { abilitySource = null, equipmentFl
   const actor = item?.actor;
   if (!actor || actor.isOwner === false || item.isOwner === false) return "invalid";
   const actual = actor?.items?.get?.(item?.id) ?? item;
+  if (!companionEquipmentUsable(actual)) return "invalid";
   const ability = abilitySource ? actor?.items?.get?.(abilitySource.itemId) : null;
   const flight = actual.type === "shield" && equipmentFlightId && equipmentFlightId === actual.system.flightId
     && actual.system.inHand === false && ability?.type === "ability"

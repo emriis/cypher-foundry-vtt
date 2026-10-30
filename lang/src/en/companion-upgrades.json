@@ -1,0 +1,34 @@
+{
+  "CYPHER": {
+    "CompanionUpgrade": {
+      "install": "Install automaton capability (GM)",
+      "installHint": "Bind one acquired upgrade to one synchronized automaton. Installation is free; each activation pays its Intellect cost with Edge.",
+      "ability": "Acquired ability",
+      "automaton": "Actual automaton",
+      "activate": "Activate (GM)",
+      "activationHint": "Confirm that this use is physically possible. Armor and turret replace the automaton's current physical form and use its action. Armor within immediate distance forms around you; otherwise it must be equipped later. Cypher capacity lasts one day. The level 5 force field and Beast Eyes end on your next ten-minute or longer recovery; armor ends on a one-hour or longer recovery. Beast Eyes uses your action and the declared companion from Companion circumstances. Turret operators must declare their grip before attacking.",
+      "fieldTargets": "Selected creatures within immediate range of the field (automaton included automatically)",
+      "none": "None",
+      "immediate": "All selected field recipients are within immediate range; wearer is within immediate range for automatic armor donning",
+      "withinRange": "Sensory link remains within 1 mile (1.6 km)",
+      "operator": "Turret operator",
+      "visionToken": "Actual beast token for native sight",
+      "narrative": "Narrative senses only (no map token)",
+      "resume": "Finish paid activation",
+      "end": "End transformation or benefit",
+      "circumstances": "Update circumstances",
+      "carrying": "The flying automaton is carrying you",
+      "carryingFlight": "Flight carrying you: up to 20 ft (6 m) per round",
+      "longFlight": "Flight: up to long distance as normal movement",
+      "unavailable": "Upgrade unavailable: check GM authority, acquired source, synchronized companion, permissions, costs, declared range, action timing and unfinished activations.",
+      "fire": "Autonomous turret attack (GM)",
+      "pendingShot": "Interrupted turret shot: GM review required before replaying any consequences.",
+      "fireHint": "The automaton must be set to independent action. One hindered attack per round, Last action, very long range, 7 damage. Against NPCs, adjudicate the hindered hit. A pending shot after a partial failure requires GM review and cannot replay automatically.",
+      "inRange": "Target is within very long range",
+      "hitConfirmed": "GM confirms the hindered attack hits the NPC",
+      "roundId": "Narrative round ID when outside combat (letters, digits, _ or -)",
+      "pcDamageHint": "Declare the wound corresponding to the numeric weapon against this PC; this is an explicit GM ruling. The PC makes a Dodge defense; a macro can instead provide a Pool profile or other defense options.",
+      "severity": "Declared wound"
+    }
+  }
+}

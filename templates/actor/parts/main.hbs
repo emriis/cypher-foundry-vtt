@@ -362,7 +362,7 @@
 
     <section class="pc-section">
       <div class="pc-section-heading compact">
-        <h2>{{localize "CYPHER.Cypher.Title"}} ({{cypherInventory.count}}/{{cypherInventory.limit}})</h2>
+        <h2 data-cypher-capacity>{{localize "CYPHER.Cypher.Title"}} ({{cypherInventory.count}}/{{cypherInventory.limit}})</h2>
         {{#if cypherCanAward}}
         <button type="button" data-action="generateCypher">{{localize "CYPHER.CypherLife.generate"}}</button>
         <button type="button" data-action="awardCypher">{{localize "CYPHER.CypherLife.award"}}</button>
