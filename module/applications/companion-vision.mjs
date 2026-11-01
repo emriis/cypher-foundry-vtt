@@ -1,5 +1,6 @@
 /** Beast Eyes adds a native vision source, never ownership or control of the beast's token. */
 import { liveCompanionEffects } from "./companion-upgrade-read.mjs";
+import { temporaryNpcVisible } from "./temporary-follower-read.mjs";
 
 /** Explicit token and range declarations remain necessary; hidden/off-level tokens keep core restrictions. */
 export function beastEyesVision(token) {
@@ -19,8 +20,9 @@ export function beastEyesVision(token) {
 /** Foundry V13/V14 Token extension: native profiles, blindness and source initialization remain in core. */
 export function createCompanionTokenClass(Base) {
   return class CompanionToken extends Base {
-    get hasSight() { return super.hasSight || beastEyesVision(this); }
-    _isVisionSource() { return super._isVisionSource() || beastEyesVision(this); }
+    get isVisible() { return temporaryNpcVisible(this.actor) && super.isVisible; }
+    get hasSight() { return temporaryNpcVisible(this.actor) && (super.hasSight || beastEyesVision(this)); }
+    _isVisionSource() { return temporaryNpcVisible(this.actor) && (super._isVisionSource() || beastEyesVision(this)); }
   };
 }
 

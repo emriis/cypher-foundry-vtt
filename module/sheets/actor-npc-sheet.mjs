@@ -1,4 +1,5 @@
 import { followerNPCDisplay } from "../applications/follower-service.mjs";
+import { temporaryNpcInventory, openTemporaryEquipment } from "./temporary-follower-dialogs.mjs";
 import { retainerChoices } from "../applications/companion-support-service.mjs";
 import { extendWeaponEffect, getWeaponEffectDisplayData } from "../applications/weapon-effect-service.mjs";
 import { getAvailableShields } from "../applications/equipment-service.mjs";
@@ -47,6 +48,7 @@ export default class CypherNPCSheet extends HandlebarsApplicationMixin(ActorShee
     position: { width: 600, height: 680 },
     window: { resizable: true, title: "CYPHER.Sheet.NPC" },
     actions: {
+      openTemporaryEquipment,
       toggleGuarding, clearGeneralEffect, promptGeneralCondition,
       applyDamage: CypherNPCSheet.#onApplyDamage,
       rollNpcAttack: CypherNPCSheet.#onRollNpcAttack,
@@ -79,6 +81,7 @@ export default class CypherNPCSheet extends HandlebarsApplicationMixin(ActorShee
     context.system = this.actor.system;
     context.actor = this.actor;
     context.followerProfile = await followerNPCDisplay(this.actor);
+    context.temporaryInventory = temporaryNpcInventory(this.actor);
     context.generalEffects = generalEffectDisplay(this.actor);
     // Read-only presentation; expiry/persistence belongs to the effect service.
     context.weaponEffects = getWeaponEffectDisplayData(this.actor).map(effect => ({

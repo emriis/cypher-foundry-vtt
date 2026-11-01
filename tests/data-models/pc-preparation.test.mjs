@@ -13,6 +13,22 @@ function prepare(model) {
   CypherPCData.prototype.prepareDerivedData.call(model);
 }
 
+test("copied armor on a different PC loses its derived protection with its controller's temporary instance", () => {
+  const previous = globalThis.fromUuidSync;
+  const flags = { temporaryFollowers: { copy: { version: 1, state: "active", revision: 0, recovery: "tenMinutes" } } };
+  globalThis.fromUuidSync = () => ({ flags: { cypher: flags } });
+  try {
+    const armor = { id: "suit", type: "armor", system: { equipped: true, category: "heavy", freelyUsable: true, blockEaseDamage: 1 },
+      flags: { cypher: { temporaryEquipment: { id: "copy", ownerUuid: "Actor.controller" } } } };
+    const model = { stats: Object.fromEntries(["might", "speed", "intellect"].map(stat => [stat, { pool: { value: 8, max: 8 }, edge: 0 }])),
+      customStats: [], genre: "none", powerShifts: {}, advancementSlots: [], freeArmorCategories: [], canFreelyUseAllArmor: false,
+      wounds: Object.fromEntries(["minor", "moderate", "major"].map(severity => [severity, { current: 0, max: 3 }])), parent: { items: [armor] } };
+    prepare(model); assert.equal(model.armor.category, "heavy");
+    flags.temporaryRecoveries = { tenMinutes: 1 }; prepare(model);
+    assert.equal(model.armor.category, "none"); assert.equal(armor.system.equipped, true); assert.equal(armor.system.blockEaseDamage, 1);
+  } finally { globalThis.fromUuidSync = previous; }
+});
+
 test("retained automaton armor grants no derived protection while pending or after its recovery revision changes", () => {
   const armor = { id: "suit", type: "armor", system: { equipped: true, category: "heavy", freelyUsable: true, blockEaseDamage: 1 },
     flags: { cypher: { companionEquipment: { kind: "armor", followerId: "slot" } } } };

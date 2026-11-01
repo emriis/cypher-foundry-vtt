@@ -1,4 +1,15 @@
 import { companionArmorUsable } from "../rules/companion-upgrades.mjs";
+import { temporaryCopyActive } from "../rules/temporary-followers.mjs";
+
+/** Read a copied suit's actual controller; missing/unloaded links grant no protection. */
+function temporaryArmorAvailable(item) {
+  const copy = item?.flags?.cypher?.temporaryEquipment;
+  if (!copy) return true;
+  try {
+    const resolve = globalThis.foundry?.utils?.fromUuidSync ?? globalThis.fromUuidSync;
+    return temporaryCopyActive(item, resolve?.(copy.ownerUuid)?.flags?.cypher);
+  } catch { return false; }
+}
 import { CYPHER } from "../config.mjs";
 import { resolveAbilityWoundTrack } from "../rules/ability-modifiers.mjs";
 
@@ -223,7 +234,8 @@ export default class CypherPCData extends foundry.abstract.TypeDataModel {
     let equippedArmorItem = null;
     const itemsCollection = this.parent?.items;
     if (itemsCollection && typeof itemsCollection.find === "function") {
-      equippedArmorItem = itemsCollection.find(i => i?.type === "armor" && i?.system?.equipped === true && companionArmorUsable(i, this.parent?.flags?.cypher, globalThis.game?.time?.worldTime ?? 0)) ?? null;
+      equippedArmorItem = itemsCollection.find(i => i?.type === "armor" && i?.system?.equipped === true && temporaryArmorAvailable(i)
+        && companionArmorUsable(i, this.parent?.flags?.cypher, globalThis.game?.time?.worldTime ?? 0)) ?? null;
     }
     const category = equippedArmorItem?.system?.category ?? "none";
     const armorSteps = CYPHER.armorCategories[category] ?? { block: 0, dodge: 0 };

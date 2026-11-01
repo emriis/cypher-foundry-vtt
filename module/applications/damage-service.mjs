@@ -1,4 +1,5 @@
-import { companionFieldReduction, companionNpcProtection } from "./companion-upgrade-read.mjs";
+import { companionFieldReduction, companionNpcProtection, companionEquipmentUsable } from "./companion-upgrade-read.mjs";
+import { temporaryDeathPatch, settleTemporaryDeath } from "./temporary-death-service.mjs";
 import { CYPHER } from "../config.mjs";
 import { shieldSurvivesMajor, shieldOwnerItems } from "../rules/shield-abilities.mjs";
 import { resolveAbilityWoundTrack, resolveShieldWoundTrack } from "../rules/ability-modifiers.mjs";
@@ -34,6 +35,7 @@ export function reduceWound(severity) {
  * @returns {Promise<boolean>} Whether a wound was absorbed; rejection writes nothing.
  */
 export async function shieldAbsorbWound(actor, shieldItem, severity, actionContext = null) {
+  if (!companionEquipmentUsable(shieldItem)) return false;
   return Boolean(await runActorAction(actor, "shield", async () => {
     // The actual embedded Item must belong to this owner (including synthetic
     // Actors). Recheck every wound so destruction cannot absorb later hits.
@@ -170,7 +172,7 @@ export async function applyDamage(
 export async function applyNpcDamage(
   actor,
   amount,
-  { ignoreArmor = false, armorBypass = 0, protection = companionNpcProtection(actor) } = {}
+  { ignoreArmor = false, armorBypass = 0, protection = companionNpcProtection(actor), actionContext = null } = {}
 ) {
   const armor = actor.system.armor ?? 0;
   const finalDamage = Math.max(0, resolveNpcDamage(
@@ -183,7 +185,8 @@ export async function applyNpcDamage(
   if (!health) return;
 
   const newValue = Math.max(0, health.value - finalDamage);
-  await actor.update({ "system.health.value": newValue });
+  await actor.update({ "system.health.value": newValue, ...temporaryDeathPatch(actor, newValue) });
+  if (newValue === 0 && actor.flags?.cypher?.temporaryDeathId) await settleTemporaryDeath(actor, actionContext);
   return finalDamage;
 }
 

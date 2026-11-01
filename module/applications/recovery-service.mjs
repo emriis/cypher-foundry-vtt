@@ -1,6 +1,7 @@
 import { speciesRecovery } from "./species-benefit-service.mjs";
 import { companionTaskPlan } from "./companion-power-service.mjs";
 import { companionRecoveryUpdates } from "../rules/companion-upgrades.mjs";
+import { temporaryRecoveryUpdates } from "../rules/temporary-followers.mjs";
 import { cleanupCompanionUpgrades } from "./companion-upgrade-service.mjs";
 /**
  * CRD Recoveries / Healing Wounds: commit a completed rest or Rally on its
@@ -122,7 +123,7 @@ export async function rollRecovery(actor, interval = "hour", options = {}) {
       if (flags.healingUses) updates["flags.cypher.healingUses"] = resetCounters(flags.healingUses);
       if (options.machinePowered && flags.machineRecoveryPowerRequired) updates["flags.cypher.machineRecoveryPowerRequired"] = false;
     }
-    await actor.update({ ...poolUpdates, ...updates, ...companionRecoveryUpdates(actor.flags?.cypher, interval) });
+    await actor.update({ ...poolUpdates, ...updates, ...companionRecoveryUpdates(actor.flags?.cypher, interval), ...temporaryRecoveryUpdates(actor.flags?.cypher, interval) });
     await cleanupCompanionUpgrades(actor);
     await recoverUnyieldingShields(actor);
     await expireAbilityEffectsOnRecovery(actor, interval);

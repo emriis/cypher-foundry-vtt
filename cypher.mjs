@@ -4,6 +4,10 @@ import * as followerService from "./module/applications/follower-service.mjs";
 import * as followerAbilityService from "./module/applications/follower-ability-service.mjs";
 import * as companionPowerService from "./module/applications/companion-power-service.mjs";
 import * as companionSupportService from "./module/applications/companion-support-service.mjs";
+import * as temporaryFollowerService from "./module/applications/temporary-follower-service.mjs";
+import * as temporaryMachineService from "./module/applications/temporary-machine-service.mjs";
+import { stampTemporaryDeath, queueTemporaryDeath } from "./module/applications/temporary-death-service.mjs";
+import { refreshTemporaryPresentation, advanceTemporaryReboots } from "./module/sheets/temporary-follower-dialogs.mjs";
 import * as companionUpgradeService from "./module/applications/companion-upgrade-service.mjs";
 import * as companionTurretService from "./module/applications/companion-turret-service.mjs";
 import * as companionUpgradeRead from "./module/applications/companion-upgrade-read.mjs";
@@ -50,6 +54,11 @@ Hooks.on("updateCombat", skipUnyieldingShieldTurn);
 
 // Persist attribution invalidation with the same healing/manual Actor update.
 Hooks.on("preUpdateActor", stampDefenseRevisions);
+Hooks.on("preUpdateActor", stampTemporaryDeath);
+Hooks.on("updateActor", queueTemporaryDeath);
+Hooks.on("updateActor", refreshTemporaryPresentation);
+Hooks.on("updateWorldTime", refreshTemporaryPresentation);
+Hooks.on("updateCombat", advanceTemporaryReboots);
 Hooks.on("preUpdateActor", stampAttackHealthRevision);
 Hooks.on("preUpdateActor", objectService.stampObjectRevision);
 Hooks.on("preUpdateActor", enforceSpecialDamageHealing);
@@ -77,6 +86,7 @@ Hooks.once("init", () => {
   // anchor point on a given Foundry version.
   game.cypher = { companions: { ...companionPowerService, ...companionSupportService }, speciesBenefits: speciesBenefitService, followers: { ...followerService, ...followerAbilityService }, cyphers: { ...cypherInventoryService, ...cypherGenerationService }, CYPHER, importFromBuilder, openImportDialog, promptInitiativeOptions, objects: objectService, projects: projectService, taskRetries: taskRetryService, intrusions: intrusionService };
   CONFIG.CYPHER = CYPHER;
+  game.cypher.temporaryFollowers = { ...temporaryFollowerService, ...temporaryMachineService };
   Object.assign(game.cypher.companions, companionUpgradeService, companionUpgradeRead, companionTurretService);
   CONFIG.Token.objectClass = createCompanionTokenClass(CONFIG.Token.objectClass);
 

@@ -1,8 +1,11 @@
 /** CRD / Special Rolls and Rerolling: persist one NPC attack's actual contribution. */
 import { resolveNpcDamage } from "../rules/wounds.mjs";
 import { companionNpcProtection } from "./companion-upgrade-read.mjs";
+import { temporaryDeathPatch, settleTemporaryDeath, temporaryDeathCorrection } from "./temporary-death-service.mjs";
+import { temporaryNpcLink } from "./temporary-follower-read.mjs";
+import { runActorActions } from "./action-guard.mjs";
 import { planAttackDamage } from "../rules/attack-consequences.mjs";
-import { applyNpcDamage } from "./damage-service.mjs";
+import { applyNpcDamage, syncWoundStatusEffects } from "./damage-service.mjs";
 import { attackHealthRevision } from "./attack-history.mjs";
 import { applyWeaponTargetEffects, weaponEffectContext } from "./weapon-effect-service.mjs";
 
@@ -12,7 +15,7 @@ import { applyWeaponTargetEffects, weaponEffectContext } from "./weapon-effect-s
  * @param {object} context Resolved success, numeric damage, bypass and weapon effects.
  * @returns {Promise<object>} Post-Armor damage and persisted Health/effect attribution.
  */
-export async function applyAttackConsequences(target, { success, totalDamage, armorBypass, weaponTargetEffects, weaponSource }) {
+export async function applyAttackConsequences(target, { success, totalDamage, armorBypass, weaponTargetEffects, weaponSource, actionContext = null }) {
   const armor = target.system.armor ?? 0;
   const protection = companionNpcProtection(target);
   const before = target.system.health?.value;
@@ -20,14 +23,15 @@ export async function applyAttackConsequences(target, { success, totalDamage, ar
   const effectContext = weaponEffectContext(target, weaponSource);
   let targetDamage = 0;
   if (success) {
-    if (totalDamage > 0) targetDamage = await applyNpcDamage(target, totalDamage, { armorBypass, protection });
+    if (totalDamage > 0) targetDamage = await applyNpcDamage(target, totalDamage, { armorBypass, protection, actionContext });
     await applyWeaponTargetEffects(target, weaponTargetEffects, weaponSource, effectContext);
   }
   const loss = before - target.system.health?.value;
   const resolvedDamage = success ? Math.max(0, resolveNpcDamage(totalDamage, armor, armorBypass) - protection) : 0;
   return { targetDamage, attackConsequences: { version: 1, state: "applied", targetUuid: target.uuid,
     armor, armorBypass, protection, resolvedDamage, damageBands: loss > 0 ? [{ from: 0, to: loss }] : [],
-    healthRevision, success, effectsApplied: success, effectContext } };
+    healthRevision, success, effectsApplied: success, effectContext,
+    ...(before > 0 && target.system.health?.value === 0 && target.flags?.cypher?.temporaryDeathId ? { temporaryDeathId: target.flags.cypher.temporaryDeathId } : {}) } };
 }
 
 /**
@@ -40,7 +44,15 @@ export async function applyAttackConsequences(target, { success, totalDamage, ar
  * @param {Function} checkpoint Persist pending history before any state change.
  * @returns {Promise<object>} Updated history and localized result note.
  */
-export async function reconcileAttackConsequences(target, flags, outcome, checkpoint) {
+export async function reconcileAttackConsequences(target, flags, outcome, checkpoint, actionContext = null) {
+  const temporary = temporaryNpcLink(target);
+  const owner = ["duplicate", "undead"].includes(temporary?.record?.family) ? temporary.owner : null;
+  if (!owner) return executeAttackCorrection(target, flags, outcome, checkpoint, actionContext);
+  return await runActorActions([owner], "temporaryAttackCorrection", context => executeAttackCorrection(target, flags, outcome, checkpoint, context), actionContext)
+    ?? { attackConsequences: { ...flags.attackConsequences, state: "manual" }, attackNote: "CYPHER.XP.AttackCorrectionManual" };
+}
+
+async function executeAttackCorrection(target, flags, outcome, checkpoint, actionContext) {
   const history = flags.attackConsequences;
   const manual = reason => ({ attackConsequences: { ...history, state: "manual", reason },
     attackNote: "CYPHER.XP.AttackCorrectionManual" });
@@ -52,6 +64,9 @@ export async function reconcileAttackConsequences(target, flags, outcome, checkp
   const damage = outcome.success ? Math.max(0, resolveNpcDamage(outcome.totalDamage, history.armor, history.armorBypass) - (history.protection ?? 0)) : 0;
   const plan = planAttackDamage(history, damage, target.system.health?.value, target.system.health?.max, attackHealthRevision(target));
   if (!plan) return manual("history");
+  const restoringTemporaryDeath = plan.health > 0 && target.system.health?.value === 0 && history.temporaryDeathId;
+  const deathCorrection = restoringTemporaryDeath ? await temporaryDeathCorrection(target, history.temporaryDeathId) : null;
+  if (restoringTemporaryDeath && !deathCorrection) return manual("history");
   const effects = outcome.success && !history.effectsApplied;
   const interval = history.effectContext;
   if (effects && flags.weaponTargetEffects?.length && (!interval
@@ -63,7 +78,17 @@ export async function reconcileAttackConsequences(target, flags, outcome, checkp
   delete next.health;
   if (plan.health !== target.system.health.value || effects && flags.weaponTargetEffects?.length) {
     await checkpoint({ ...next, state: "pending" });
-    if (plan.health !== target.system.health.value) await target.update({ "system.health.value": plan.health }, { cypherAttackCorrection: true });
+    if (plan.health !== target.system.health.value) {
+      await target.update({ "system.health.value": plan.health, ...temporaryDeathPatch(target, plan.health) }, { cypherAttackCorrection: true });
+      if (deathCorrection) {
+        await deathCorrection.owner.update(deathCorrection.updates, { cypherDefenseCorrection: true });
+        if (typeof deathCorrection.owner.toggleStatusEffect === "function") await syncWoundStatusEffects(deathCorrection.owner);
+      }
+      if (plan.health === 0 && target.flags?.cypher?.temporaryDeathId) {
+        await settleTemporaryDeath(target, actionContext);
+        next.temporaryDeathId = target.flags.cypher.temporaryDeathId;
+      }
+    }
     if (effects) await applyWeaponTargetEffects(target, flags.weaponTargetEffects, flags.weaponSource, history.effectContext);
   }
   return { attackConsequences: next, attackNote: "CYPHER.XP.AttackCorrectionApplied" };

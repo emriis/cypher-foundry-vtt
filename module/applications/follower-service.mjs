@@ -1,6 +1,7 @@
 import { resolveGeneralModifiers } from "../rules/general-effects.mjs";
 import { getGeneralEffects } from "./general-effect-service.mjs";
 import { automatonMode, automatonFlight } from "./companion-upgrade-read.mjs";
+import { temporaryFollowerRows, temporaryNpcAvailability } from "./temporary-follower-read.mjs";
 /** CRD Followers: explicit links, progression, help and replacement; no Ability prose or token geometry is interpreted. */
 import { followerProgression, followerHelpAssets, followerReplacementLevel } from "../rules/followers.mjs";
 import { resolveDocumentReference } from "./reference-resolver.mjs";
@@ -147,12 +148,14 @@ function present(actor, record, npc) {
 
 /** Resolve actual token UUIDs for sheets and authoritative action preflight. */
 export async function followerDisplay(actor) {
-  return Promise.all(records(actor).map(async record => present(actor, record, await resolveDocumentReference(record.npcUuid, "npc"))));
+  return [...await Promise.all(records(actor).map(async record => present(actor, record, await resolveDocumentReference(record.npcUuid, "npc")))),
+    ...temporaryFollowerRows(actor, npc => resolveGeneralModifiers(getGeneralEffects(npc)).rejected)];
 }
 
 /** Dialog rendering uses only already loaded documents; acceptance revalidates asynchronously. */
 export function followerDisplaySync(actor) {
-  return records(actor).map(record => present(actor, record, globalThis.fromUuidSync?.(record.npcUuid)));
+  return [...records(actor).map(record => present(actor, record, globalThis.fromUuidSync?.(record.npcUuid))),
+    ...temporaryFollowerRows(actor, npc => resolveGeneralModifiers(getGeneralEffects(npc)).rejected)];
 }
 
 /** A follower's assets are independent of PC cooperation; the task engine applies the shared final cap. */
@@ -176,6 +179,8 @@ export async function followerTaskPlan(actor, choices = null, { isAttack = false
 
 /** A linked following must be explicitly acting independently before an NPC attack can replace its help. */
 export async function followerCanAct(npc) {
+  const temporary = temporaryNpcAvailability(npc);
+  if (temporary !== null) return temporary;
   if (automatonMode(npc) !== "normal") return false;
   const link = npc.flags?.cypher?.followerProgress;
   if (!link) return true;

@@ -5,6 +5,9 @@ import { promptFollower, promptFollowerAction } from "./follower-dialogs.mjs";
 import { promptFollowerAbility, resumeFollowerAbility } from "./follower-ability-dialogs.mjs";
 import { followerAbilityUses } from "../applications/follower-ability-service.mjs";
 import { companionContext } from "../applications/companion-power-service.mjs";
+import { temporaryDisplay, promptTemporaryFollower, resumeTemporaryFollower, abandonTemporaryFollower, dismissTemporaryInstance, promptTemporaryMode,
+  promptTemporaryReboot, settleTemporaryDeaths, openTemporaryFollower } from "./temporary-follower-dialogs.mjs";
+import { temporaryEquipmentUsable, temporaryAbilityPlan } from "../applications/temporary-follower-read.mjs";
 import { companionUpgradeDisplay } from "../applications/companion-upgrade-service.mjs";
 import { promptCompanionInstall, promptCompanionUpgrade, finishCompanionUpgrade, stopCompanionUpgrade, promptCompanionUpgradeCircumstances, promptAutomatonTurret } from "./companion-upgrade-dialogs.mjs";
 import { companionSupportDisplay, companionRepairChoices } from "../applications/companion-support-service.mjs";
@@ -71,6 +74,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     // Template buttons declare data-action="...". Foundry routes each name to
     // the handler below, binding `this` to the sheet, even for static handlers.
     actions: {
+      promptTemporaryFollower, resumeTemporaryFollower, abandonTemporaryFollower, dismissTemporaryInstance, promptTemporaryMode, promptTemporaryReboot, settleTemporaryDeaths, openTemporaryFollower,
       promptProject, promptResourceAward, promptBefriendPenalty,
       prepareBenefit: promptSpeciesBenefit, finishBenefit: promptSpeciesBenefit, chooseBenefitEnergy: promptSpeciesBenefit,
       refreshSpeciesBenefits: promptSpeciesBenefit, reviewConditionalTraining: promptSpeciesBenefit,
@@ -186,6 +190,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     const repairable = await companionRepairChoices(this.actor);
     context.followers = context.followers.map(follower => ({ ...follower, canRepair: repairable.some(choice => choice.id === follower.id) }));
     context.companion = await companionContext(this.actor);
+    context.temporary = temporaryDisplay(this.actor);
     context.companionSupport = companionSupportDisplay(this.actor);
     context.companionUpgrades = companionUpgradeDisplay(this.actor);
     context.cypherInventory = cypherInventoryDisplay(this.actor);
@@ -194,7 +199,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       skills: this.actor.items.filter(i => i.type === "skill"),
       abilities: this.actor.items.filter(i => i.type === "ability").map(item => ({
         id: item.id, name: item.name, system: item.system,
-        actionLabel: abilityActionLabel(item.system, key => game.i18n.localize(key)),
+        actionLabel: abilityActionLabel({ ...item.system, action: temporaryAbilityPlan(item)?.action ?? item.system.action }, key => game.i18n.localize(key)),
         weaponAbilityKind: getWeaponAbilityKind(item),
         shieldAbilityKind: getShieldAbilityKind(item),
         healingAbilityKind: getHealingAbilityKind(item), healingAbilityCost: getHealingHandCost(item)
@@ -217,6 +222,8 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
       }))
     };
     context.shieldTurnLossPending = this.actor.flags?.cypher?.shieldTurnLossPending === true;
+    for (const family of ["equipment", "attacks", "armor", "shields"]) context.items[family] = context.items[family]
+      .filter(item => temporaryEquipmentUsable(this.actor.items.get(item.id)));
     context.shieldCanIntrude = game.user.isGM;
     context.canDeclareGMIntrusion = game.user.isGM;
     context.enrichedBiography =

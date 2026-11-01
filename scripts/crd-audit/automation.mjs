@@ -20,6 +20,10 @@ export function auditAutomation(document) {
   const implemented = [], gaps = [];
   switch (document.type) {
     case "ability":
+      if (["basic-necromancy", "improved-necromancy", "greater-necromancy", "true-necromancy", "duplicate", "recompile-machine"].includes(system.key)) {
+        implemented.push("temporary-follower services/PC sheet: canonical Basic variants, batch costs, dedicated Effort, recovery expiry, copied-equipment lifetime, attributed Duplicate backlash and Recompile companion attack/reboot");
+        gaps.push("GM declares actual NPC profiles, range, corpse size/repair and reboot rounds; ambiguous legacy Basic provenance requires review; Recompile bricking and explosion are not executed by the companion branch");
+      }
       if (COMPANION_UPGRADES[system.key]) {
         implemented.push("companion-upgrade services/PC sheet: source-bound installation, per-activation Edge/cost, exclusive physical forms, retained repairable armor, timed cypher capacity, declared field recipients, movement profiles, turret attacks and native Beast Eyes sight");
         gaps.push("GM confirms physical feasibility, range, friendly calmed beasts and NPC-versus-NPC hits; numeric turret damage against PCs requires an explicit wound/Pool ruling; interrupted autonomous shots require GM review");
