@@ -5,6 +5,17 @@
   </div>
   <p>{{localize "CYPHER.Follower.helpHint"}}</p>
   {{#if followerCanManage}}
+    {{#each commands.choices as |choice|}}<button type="button" data-action="promptCommandPower" data-item-id="{{choice.id}}">{{choice.name}}</button>{{/each}}
+    {{#each commands.calms as |calm|}}<p>{{calm.name}} · {{#if calm.active}}{{localize "CYPHER.Command.calm"}}{{else}}{{localize "CYPHER.Command.inactiveCalm"}}{{/if}}
+      {{#ifEquals calm.state "pending"}}<button type="button" data-action="promptCommandAction" data-command="resumeCalm" data-command-id="{{calm.id}}">{{localize "CYPHER.Command.resume"}}</button>{{/ifEquals}}
+      {{#if calm.maintainable}}<button type="button" data-action="promptCommandAction" data-command="maintain" data-command-id="{{calm.id}}">{{localize "CYPHER.Command.maintain"}}</button>{{/if}}
+      <button type="button" data-action="promptCommandAction" data-command="endCalm" data-command-id="{{calm.id}}">{{localize "CYPHER.Command.end"}}</button></p>{{/each}}
+    {{#ifEquals commands.lighting.state "pending"}}<button type="button" data-action="promptCommandAction" data-command="resumeLighting">{{localize "CYPHER.Command.resume"}}</button>{{/ifEquals}}
+    {{#each commands.allies as |ally|}}<p>{{ally.name}} · {{localize ally.stateLabel}} · {{ally.adaptation}}
+      {{#if ally.pending}}<button type="button" data-action="promptCommandAction" data-command="resumeAlly" data-command-id="{{ally.id}}">{{localize "CYPHER.Command.resume"}}</button>
+      {{else}}<button type="button" data-action="promptCommandAction" data-command="invite" data-command-id="{{ally.id}}">{{localize "CYPHER.Command.invite"}}</button>
+      <button type="button" data-action="promptCommandAction" data-command="endOuting" data-command-id="{{ally.id}}">{{localize "CYPHER.Command.endOuting"}}</button>
+      <button type="button" data-action="promptCommandAction" data-command="mode" data-command-id="{{ally.id}}">{{localize "CYPHER.Command.mode"}}</button>{{/if}}</p>{{/each}}
     {{#each temporary.choices as |choice|}}<button type="button" data-action="promptTemporaryFollower" data-item-id="{{choice.id}}">{{choice.name}}</button>{{/each}}
     {{#each temporary.pending as |use|}}<button type="button" data-action="resumeTemporaryFollower" data-use-id="{{use.id}}">{{localize "CYPHER.Temporary.resume"}}</button>
     <button type="button" data-action="abandonTemporaryFollower" data-use-id="{{use.id}}">{{localize "CYPHER.Temporary.abandon"}}</button>{{/each}}
@@ -42,7 +53,9 @@
       {{#if follower.flight.enabled}}<p>{{#if follower.flight.meters}}{{localize "CYPHER.CompanionUpgrade.carryingFlight"}}{{else}}{{localize "CYPHER.CompanionUpgrade.longFlight"}}{{/if}}</p>{{/if}}
       {{#if follower.turretPending}}<p>{{localize "CYPHER.CompanionUpgrade.pendingShot"}}</p>{{/if}}
     </div>
-    {{#if follower.temporary}}
+    {{#if follower.teamUp}}
+    <span>{{localize "CYPHER.Command.allyHint"}}</span>
+    {{else}}{{#if follower.temporary}}
     {{#if ../followerCanManage}}
     <button type="button" data-action="promptTemporaryMode" data-record-id="{{follower.id}}">{{localize "CYPHER.Temporary.mode"}}</button>
     <button type="button" data-action="openTemporaryFollower" data-record-id="{{follower.id}}">{{localize "CYPHER.Follower.open"}}</button>
@@ -56,6 +69,7 @@
     <button type="button" data-action="openFollower" data-follower-id="{{follower.id}}">{{localize "CYPHER.Follower.open"}}</button>
     <button type="button" data-action="replaceFollower" data-follower-id="{{follower.id}}">{{localize "CYPHER.Follower.replace"}}</button>
     {{#ifEquals follower.state "manual"}}<button type="button" data-action="reconcileFollower" data-follower-id="{{follower.id}}">{{localize "CYPHER.Follower.reconcile"}}</button>{{/ifEquals}}
+    {{/if}}
     {{/if}}
     {{/if}}
   </article>

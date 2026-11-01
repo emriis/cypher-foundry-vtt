@@ -1,0 +1,18 @@
+{
+  "CYPHER": { "Command": {
+    "title": "Command and allies", "unavailable": "This action is unavailable. Check the source, target, declarations and resources.",
+    "target": "Target", "beast": "The GM confirms an eligible nonhuman beast (not an alien, extradimensional being, very intelligent creature or robot).",
+    "inRange": "The target is within short range.", "seesYou": "The beast can see you.", "speaking": "You speak to the beast.",
+    "sootheHint": "Make a non-damaging Intellect attack (2 Intellect). Calm lasts until your ten-minute or longer recovery. Calm does not itself make the beast friendly.",
+    "lightingHint": "Use a Last action to command an ally or follower. Their next action becomes First; a Last action becomes ordinary. Renewed by a ten-minute or longer recovery. In managed combat, declare a Last action in the round plan so it uses an ordinary slot.",
+    "ally": "The GM confirms this target is an ally or follower.", "teamUpHint": "Bind an existing level-4 superhero NPC. Agree its Origin power adaptation and task modifications with the GM. It stays level 4. Each outing requires availability and a difficulty-2 charm task.",
+    "origin": "Origin superhero power", "adaptation": "Agreed NPC power mechanics", "tasks": "Declared task modifications (one per line: task = level)",
+    "effort": "Paid Effort levels", "assets": "Assets", "skill": "Applicable skill", "none": "None",
+    "calm": "Calm", "inactiveCalm": "No active calm", "resume": "Finish applying", "maintain": "Maintain calm (action)", "end": "End calm",
+    "maintainHint": "Spend your action to continue calming without paying Intellect again. Keep using an action each turn beyond recovery. Outside combat, the GM explicitly ends maintenance when interrupted.",
+    "invite": "Invite for an outing", "endOuting": "End outing", "mode": "Help or act independently", "outing": "Outing", "available": "The GM confirms the ally is available for this outing.",
+    "outingHint": "Make a difficulty-2 Intellect charm task. Success allows the ally to accompany you for this outing. End it explicitly when finished; an older reroll cannot reopen it.",
+    "accompanying": "Accompanying", "absent": "Not accompanying", "allyHint": "Team-Up ally: manage its outing above.",
+    "care": "For a Team-Up ally: the GM confirms several weeks of arranged or provided care; enter that duration and its source."
+  } }
+}

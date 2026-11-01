@@ -108,7 +108,7 @@ interception, Assistant/Expert quick repair, mounted movement/attack support,
 Stronger Together and Beast Betterment. Beast Eyes and automaton armor/cypher/
 flight/turret/force-field upgrades have their own
 [implementation contract](companion-upgrades.md).
-Team-Up Ally also needs its availability/charm and superhero-power contract.
+Team-Up Ally has its own [availability/charm and superhero-power contract](command-powers.md).
 Temporary followers from necromancy, Duplicate and Recompile Machine's companion
 branch now have [activation and lifecycle contracts](temporary-followers.md).
 

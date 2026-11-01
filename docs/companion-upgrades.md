@@ -55,7 +55,7 @@ transformation. Duplicate installations of the same upgrade are rejected.
   remains pending for GM review and cannot replay automatically.
 - Beast Eyes costs 3 Intellect before Edge and uses the owner's action. It uses
   the declared beast companion, chosen mount, or already calmed friendly beast;
-  it does not execute Soothe the Savage. The owner explicitly declares the
+  a calmed beast requires a tracked active [Soothe](command-powers.md). The owner explicitly declares the
   one-mile (1.6 km) range and may suspend/resume that circumstance without a
   second purchase. A ten-minute or longer owner recovery ends the link.
 

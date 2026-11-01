@@ -169,6 +169,9 @@ test("an attack reroll keeps the field protection from the original attack after
 
 test("Beast Eyes uses the declared actual token, suspends on range/disposition and never changes ownership", async () => {
   ability("soothe-the-savage"); const item = ability("beast-eyes");
+  pc.flags.cypher ??= {}; npc.flags.cypher ??= {};
+  pc.flags.cypher.commandCalms = { calm: { version: 1, id: "calm", npcUuid: npc.uuid, mode: "rest", revision: 0, state: "active" } };
+  npc.flags.cypher.commandCalms = { calm: { version: 1, ownerUuid: pc.uuid } };
   await configureCompanion(pc, { confirmed: true, calmedNpcUuid: npc.uuid, friendly: true });
   const tokenDocument = { uuid: "Scene.s.Token.t", actor: npc, parent: { id: "s" }, level: "level" };
   docs.set(tokenDocument.uuid, tokenDocument);

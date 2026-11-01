@@ -1,5 +1,6 @@
 import { companionFieldReduction, companionNpcProtection, companionEquipmentUsable } from "./companion-upgrade-read.mjs";
 import { temporaryDeathPatch, settleTemporaryDeath } from "./temporary-death-service.mjs";
+import { stampTeamUpInjury } from "./command-power-read.mjs";
 import { CYPHER } from "../config.mjs";
 import { shieldSurvivesMajor, shieldOwnerItems } from "../rules/shield-abilities.mjs";
 import { resolveAbilityWoundTrack, resolveShieldWoundTrack } from "../rules/ability-modifiers.mjs";
@@ -185,7 +186,9 @@ export async function applyNpcDamage(
   if (!health) return;
 
   const newValue = Math.max(0, health.value - finalDamage);
-  await actor.update({ "system.health.value": newValue, ...temporaryDeathPatch(actor, newValue) });
+  const changes = { "system.health.value": newValue, ...temporaryDeathPatch(actor, newValue) };
+  stampTeamUpInjury(actor, changes);
+  await actor.update(changes);
   if (newValue === 0 && actor.flags?.cypher?.temporaryDeathId) await settleTemporaryDeath(actor, actionContext);
   return finalDamage;
 }

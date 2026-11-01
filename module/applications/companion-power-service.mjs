@@ -4,6 +4,7 @@ import { followerDisplay } from "./follower-service.mjs";
 import { resolveDocumentReference } from "./reference-resolver.mjs";
 import { getGeneralEffects } from "./general-effect-service.mjs";
 import { runActorActions } from "./action-guard.mjs";
+import { hasActiveCalm } from "./command-power-read.mjs";
 const items = actor => actor?.items?.contents ?? Array.from(actor?.items?.values?.() ?? []);
 export const ownsCompanionAbility = (actor, key) => items(actor).some(item => item.type === "ability" && item.system?.key === key);
 const pcOwner = actor => actor?.type === "pc" && typeof actor.uuid === "string" && actor.isOwner !== false;
@@ -16,7 +17,7 @@ export async function companionContext(actor) {
   if (!npc || npc.flags?.cypher?.companionLinks?.[context.id]?.ownerUuid !== actor.uuid) return null;
   let family = null, available = true;
   if (context.calmed) {
-    if (!context.friendly || !ownsCompanionAbility(actor, "soothe-the-savage")) return null;
+    if (!context.friendly || !ownsCompanionAbility(actor, "soothe-the-savage") || !hasActiveCalm(actor, npc)) return null;
   } else {
     const follower = (await followerDisplay(actor)).find(follower => follower.id === context.followerId && follower.npcUuid === npc.uuid);
     if (!follower || follower.pending || !["beast", "mount"].includes(follower.sourceAbility?.family)) return null;
@@ -54,6 +55,7 @@ async function executeCompanionDeclaration(actor, { followerId = null, calmedNpc
   if (riding && (calmedNpcUuid || follower.sourceAbility.family !== "mount" || !ownsCompanionAbility(actor, "mount"))) return false;
   const npc = await resolveDocumentReference(follower?.npcUuid ?? calmedNpcUuid, "npc");
   if (!npc || typeof npc.uuid !== "string") return false;
+  if (calmedNpcUuid && !hasActiveCalm(actor, npc)) return false;
   const previous = actor.flags?.cypher?.companionContext;
   const same = previous?.npcUuid === npc.uuid && previous.followerId === followerId && previous.calmed === Boolean(calmedNpcUuid);
   const id = same ? previous.id : foundry.utils.randomID();
