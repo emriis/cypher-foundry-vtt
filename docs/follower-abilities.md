@@ -105,11 +105,12 @@ rollback overwrites later wounds, Health changes or improvements.
 
 The [companion support family](companion-powers.md) now covers Retainer
 interception, Assistant/Expert quick repair, mounted movement/attack support,
-Stronger Together and Beast Betterment. Beast Eyes, automaton armor/cypher/flight/
-turret/force-field upgrades and other active companion powers remain separate.
+Stronger Together and Beast Betterment. Beast Eyes and automaton armor/cypher/
+flight/turret/force-field upgrades have their own
+[implementation contract](companion-upgrades.md).
 Team-Up Ally also needs its availability/charm and superhero-power contract.
-Temporary followers from necromancy, Duplicate and Recompile Machine require
-activation costs, timing, expiration and their own consequences.
+Temporary followers from necromancy, Duplicate and Recompile Machine's companion
+branch now have [activation and lifecycle contracts](temporary-followers.md).
 
 Neither NPC-versus-NPC adjudication nor a universal creature damage/Health formula
 is invented. Source acquisition/advancement remains with the existing Type,

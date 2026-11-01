@@ -14,7 +14,7 @@ export async function applyTaskConsequences(actor, { objectPlan = null, isAttack
   incomingDamageTags = [], incomingWounds, usingShield, shieldItem, incomingSeverity, incomingPoolDamage, conditionsOnFailure, woundRemovalSeverity,
   actionContext, defenseRecipient = actor, takeCooldownId = null, specialistRequired = false }) {
   const attack = isAttack && targetActor?.type === "npc"
-    ? await applyAttackConsequences(targetActor, { success, totalDamage, armorBypass, weaponTargetEffects, weaponSource })
+    ? await applyAttackConsequences(targetActor, { success, totalDamage, armorBypass, weaponTargetEffects, weaponSource, actionContext })
     : isAttack && targetActor?.type === "object"
       ? await applyObjectConsequences(targetActor, objectPlan, success, totalDamage) : { targetDamage: 0 };
 

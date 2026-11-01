@@ -1,9 +1,11 @@
 /** Attribute successful complementary, draw and guard effects to their original task card. */
 import { getGeneralEffects, generalEffectClock } from "./general-effect-service.mjs";
 import { generalEffectIsActive } from "../rules/general-effects.mjs";
+import { validateRecompileEffect, applyRecompileEffect } from "./temporary-machine-effect.mjs";
 
 /** Reject unsupported declarations before dice, costs or target writes. */
 export function validateRuleEffect(actor, target, record) {
+  if (record?.effect?.kind === "recompiled") return validateRecompileEffect(actor, target, record.effect);
   return actor?.type === "pc" && actor.isOwner !== false && target?.isOwner !== false
     && target?.uuid === record.targetUuid && record.effect?.sourceUuid === actor.uuid
     && typeof record.effect.id === "string" && record.effect.id.length > 0
@@ -16,9 +18,13 @@ export function validateRuleEffect(actor, target, record) {
  * Apply once on success, retaining the original interval across paid rerolls.
  * The origin card is checkpointed by reroll-service before any target write.
  */
-export async function applyRuleEffect(target, record, success) {
+export async function applyRuleEffect(target, record, success, context = null) {
   if (!success || record.applied || record.state === "pending" || record.state === "manual") return record;
   const effect = record.effect;
+  if (effect.kind === "recompiled") {
+    const applied = await applyRecompileEffect(target, effect, context);
+    return { ...record, applied, state: applied ? "applied" : "expired" };
+  }
   if (!target || target.isOwner === false || target.uuid !== record.targetUuid
     || !generalEffectIsActive(effect, generalEffectClock())
     || (effect.actionRevision != null && effect.actionRevision !== (target.flags?.cypher?.weaponActionRevision ?? 0))) {

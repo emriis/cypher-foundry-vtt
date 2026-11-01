@@ -174,6 +174,9 @@ async function executeTask(actor, {
     !CONDITION_KINDS.includes(effect.kind)
     || !Number.isSafeInteger(effect.steps ?? 1) || (effect.steps ?? 1) < 1))) return null;
   if (ruleEffect && !validateRuleEffect(actor, targetActor, ruleEffect)) return null;
+  if (ruleEffect?.effect?.kind === "recompiled" && (damageEffortLevels || freeDamageEffortLevels || pushDamageEffortLevels)) return null;
+  if (ruleEffect?.effect?.kind === "recompiled" && (activationCost !== 8 || stat !== "intellect"
+    || ruleEffect.effect.record?.maximumLevel !== 4 + effectEffortLevels)) return null;
   if (environmentalSource && (!defenseType || typeof environmentalSource.id !== "string"
     || !environmentalSource.id || typeof environmentalSource.name !== "string" || !environmentalSource.name.trim()
     || !Number.isSafeInteger(environmentalSource.sequence) || environmentalSource.sequence < 0)) return null;
@@ -236,13 +239,17 @@ async function executeTask(actor, {
   const effectiveDifficulty = automaticFailure ? Math.max(1, prepared.effectiveDifficulty) : initiative || automaticHit ? 0 : prepared.effectiveDifficulty;
   const targetNumber = automaticFailure ? effectiveDifficulty * 3 : initiative || automaticHit ? 0 : prepared.targetNumber;
   baseDamage += effort.damageBonus + powerShifts.damage;
+  // Recompilation changes programming; generic attack damage bonuses do not
+  // turn its non-damaging companion branch into a second damage effect.
+  if (ruleEffect?.effect?.kind === "recompiled") baseDamage = 0;
   weaponSource = { ...weaponSource, actorUuid: actor.uuid };
 
   // One Actor write commits XP and Pool costs together. Subsequent target
   // writes are separate operations; failures are surfaced without stale rollback.
-  if (totalCost > 0 || xpCost > 0 || pushWound || cooperation.consumed.length) {
+  if (totalCost > 0 || xpCost > 0 || pushWound || cooperation.consumed.length || ruleEffect?.effect?.kind === "recompiled") {
     await actor.update({
       ...consumeCooperationUpdate(actor, cooperation.consumed),
+      ...(ruleEffect?.effect?.kind === "recompiled" ? { [`flags.cypher.temporaryFollowers.${ruleEffect.effect.recordId}`]: ruleEffect.effect.record } : {}),
       ...(xpCost > 0 ? { "system.xp": actor.system.xp - xpCost } : {}),
       ...(totalCost > 0 ? { [`${resolved.path}.pool.value`]: poolValue - totalCost } : {}),
       ...(pushWound ? { [`system.wounds.${pushWound.target}.current`]: pushWound.current } : {})
@@ -299,7 +306,7 @@ async function executeTask(actor, {
     totalDamage, armorBypass, weaponTargetEffects, weaponSource, defenseType,
     incomingDamageTags, applyIncomingWound, incomingWounds, usingShield, shieldItem, incomingSeverity, incomingPoolDamage,
     conditionsOnFailure, woundRemovalSeverity, actionContext, defenseRecipient, takeCooldownId, specialistRequired });
-  if (ruleEffect) ruleEffect = await applyRuleEffect(targetActor, ruleEffect, success);
+  if (ruleEffect) ruleEffect = await applyRuleEffect(targetActor, ruleEffect, success, actionContext);
   if (success && shieldReturn) {
     const returning = actor.items.get(shieldReturn.itemId);
     await returning.update(shieldReadyUpdate(returning));

@@ -1,6 +1,9 @@
 {{!-- NPC statistics and descriptive sections; input names map directly to Actor system fields. --}}
 <section class="npc-body">
   {{> "systems/cypher/templates/actor/parts/general-actions.hbs"}}
+  {{#if temporaryInventory}}<section class="npc-section"><h3>{{localize "CYPHER.Temporary.inventory"}}</h3>
+    {{#each temporaryInventory as |item|}}<button type="button" data-action="openTemporaryEquipment" data-item-id="{{item.id}}">{{item.name}}</button>{{/each}}
+  </section>{{/if}}
   {{#if followerProfile}}
   <section class="npc-section" data-follower-profile="{{followerProfile.id}}">
     <h3>{{localize "CYPHER.Follower.title"}} — {{followerProfile.ownerName}}</h3>

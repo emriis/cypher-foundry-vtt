@@ -1,6 +1,7 @@
 /** Synchronous projections for native inventory/vision hooks; never mutate on read or parse prose. */
 import { COMPANION_UPGRADES, companionEffectActive, companionArmorUsable, companionFlight } from "../rules/companion-upgrades.mjs";
 import { resolveCachedDocumentReference, resolveDocumentReference } from "./reference-resolver.mjs";
+import { temporaryEquipmentUsable } from "./temporary-follower-read.mjs";
 const clock = () => globalThis.game?.time?.worldTime ?? 0;
 export const companionEffects = actor => Object.values(actor?.flags?.cypher?.companionEffects ?? {}).filter(effect => effect?.version === 1);
 export const liveCompanionEffects = actor => companionEffects(actor).filter(effect => companionEffectActive(effect, actor.flags?.cypher, clock()));
@@ -36,6 +37,7 @@ export const companionNpcProtection = actor => companionFieldReduction(actor) * 
 
 /** A retained suit remains an ordinary repairable Item, but cannot be equipped outside its transformation. */
 export function companionEquipmentUsable(item) {
+  if (!temporaryEquipmentUsable(item)) return false;
   const tag = item?.flags?.cypher?.companionEquipment;
   if (!tag) return true;
   const owner = tag.ownerUuid === item.actor?.uuid ? item.actor : resolveCachedDocumentReference(tag.ownerUuid);

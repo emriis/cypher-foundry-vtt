@@ -23,7 +23,7 @@ export function equipmentGrip(item) {
   const grip = saved?.version === 1 ? saved : item?.type === "shield"
     ? { version: 1, held: Boolean(item.system.equipped), hands: 1, deployed: false, operators: [] } : null;
   if (!grip) return null;
-  if (item.flags?.cypher?.companionEquipment && !companionEquipmentUsable(item)) return { ...grip, held: false };
+  if ((item.flags?.cypher?.companionEquipment || item.flags?.cypher?.temporaryEquipment) && !companionEquipmentUsable(item)) return { ...grip, held: false };
   if (item.type === "shield" && (!item.system.equipped || item.system.inHand === false
     || isShieldBroken(item.system.wounds, shieldSurvivesMajor(item, shieldOwnerItems(item))))) return { ...grip, held: false };
   return grip;
@@ -81,6 +81,7 @@ export function equipmentAttackProblem(item, { abilitySource = null, equipmentFl
 
 /** Check space for a successful catch before any cost or dice, preserving the shield's declared grip. */
 export function canReadyShield(shield) {
+  if (!companionEquipmentUsable(shield)) return false;
   const hands = shield?.flags?.cypher?.equipmentUse?.hands ?? 1;
   return shield?.type === "shield" && Number.isSafeInteger(hands) && hands >= 1 && canAllocateHands(shield.actor, shield.id, hands);
 }

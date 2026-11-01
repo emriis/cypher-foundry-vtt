@@ -21,6 +21,7 @@ import { resolveInitiativeOwner, persistInitiative, initiativeMessageOptions } f
 import { isShieldBroken } from "../rules/wounds.mjs";
 import { shieldSurvivesMajor, shieldOwnerItems } from "../rules/shield-abilities.mjs";
 import { applyRuleEffect } from "./rule-effect-consequence.mjs";
+import { temporaryNpcLink } from "./temporary-follower-read.mjs";
 
 async function describeChoice(item, flags, value) {
   if (flags.rollType === "cypherVariant") {
@@ -72,6 +73,9 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
     const attackUuid = flags.isAttack ? flags.objectConsequences?.targetUuid ?? flags.attackConsequences?.targetUuid : null;
     if (attackUuid && typeof attackUuid !== "string") return null;
     const attackTarget = attackUuid ? await resolveDocumentReference(attackUuid, flags.objectConsequences ? "object" : "npc") : null;
+    const temporaryTarget = temporaryNpcLink(attackTarget);
+    const backlashOwner = ["duplicate", "undead"].includes(temporaryTarget?.record?.family) ? temporaryTarget.owner : null;
+    if (backlashOwner?.isOwner === false) return null;
     // World Actor IDs cannot identify an unlinked token. Never substitute the
     // currently selected target or a base Actor when the original is missing.
     if (attackUuid && (!attackTarget || attackTarget.isOwner === false)) return null;
@@ -182,7 +186,7 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
             ui.notifications.warn(game.i18n.localize("CYPHER.General.ManualCorrection"));
           } else {
             await checkpointRule();
-            metadata.ruleEffect = await applyRuleEffect(ruleTarget, flags.ruleEffect, true);
+            metadata.ruleEffect = await applyRuleEffect(ruleTarget, flags.ruleEffect, true, context);
           }
         }
         if (flags.initiative) {
@@ -199,7 +203,7 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
           Object.assign(metadata, await reconcileObjectConsequences(attackTarget, flags, outcome, checkpointObject));
         }
         if (flags.isAttack && (flags.targetActorId || flags.attackConsequences)) {
-          Object.assign(metadata, await reconcileAttackConsequences(attackTarget, flags, outcome, checkpointAttack));
+          Object.assign(metadata, await reconcileAttackConsequences(attackTarget, flags, outcome, checkpointAttack, context));
         }
         if (flags.isAttack && flags.attackRefundPending) metadata.attackNote = "CYPHER.XP.AttackCorrectionManual";
         if (outcome.success && flags.shieldReturn
@@ -305,7 +309,7 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
       flags.initiative ? initiativeMessageOptions(flags.initiative) : {});
       return metadata;
     };
-    return runActorActions([sourceActor ?? actor, woundTarget, defenseRecipient, ruleTarget, attackTarget, initiativeOwner?.combat], "rerollSource", execute, context);
+    return runActorActions([sourceActor ?? actor, woundTarget, defenseRecipient, ruleTarget, attackTarget, backlashOwner, initiativeOwner?.combat], "rerollSource", execute, context);
   });
 }
 

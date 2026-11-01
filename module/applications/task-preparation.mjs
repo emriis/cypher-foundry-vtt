@@ -8,6 +8,7 @@ import { resolveActiveAbilityModifiers, resolveAbilityWoundTrack } from "../rule
 import { SHIELD_ABILITY_KEYS } from "../rules/shield-abilities.mjs";
 import { resolveGeneralModifiers } from "../rules/general-effects.mjs";
 import { getGeneralEffects } from "./general-effect-service.mjs";
+import { temporaryNpcVisible } from "./temporary-follower-read.mjs";
 
 /**
  * Read the source-key Ability and its explicitly chosen Pool, never its name.
@@ -39,6 +40,7 @@ export function prepareTask(actor, { stat, difficulty, effortLevels, assetSteps,
     ui.notifications.warn(game.i18n.localize("CYPHER.Warning.NotPC"));
     return null;
   }
+  if (targetActor && !temporaryNpcVisible(targetActor)) return invalidTask();
   if (actor.isOwner === false || targetActor?.isOwner === false) {
     ui.notifications.warn(game.i18n.localize("CYPHER.Warning.ActionPermission"));
     return null;
@@ -64,9 +66,10 @@ export function prepareTask(actor, { stat, difficulty, effortLevels, assetSteps,
   // activation cost into this task. The sheet cannot mint a generic bonus.
   if (effectEffortLevels || activationCost) {
     const source = actor.items?.get(abilitySource?.itemId);
-    if (source?.type !== "ability" || !SHIELD_ABILITY_KEYS.includes(source.system.key)
+    const recompile = source?.type === "ability" && source.system.key === "recompile-machine" && stat === "intellect" && isAttack && activationCost === 8;
+    if (!recompile && (source?.type !== "ability" || !SHIELD_ABILITY_KEYS.includes(source.system.key)
       || effectEffortLevels > 1 || source.system.key === "hidden-shield"
-      || (activationCost && (source.system.key !== "bouncing-shield" || stat !== "speed" || activationCost !== 3))) return invalidTask();
+      || (activationCost && (source.system.key !== "bouncing-shield" || stat !== "speed" || activationCost !== 3)))) return invalidTask();
   }
 
   // CRD > Lucky Shot: the cost belongs to an accepted action. Validate all

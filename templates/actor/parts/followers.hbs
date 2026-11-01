@@ -4,6 +4,13 @@
     <button type="button" data-action="promptFollower">{{localize "CYPHER.Follower.register"}}</button>{{/if}}
   </div>
   <p>{{localize "CYPHER.Follower.helpHint"}}</p>
+  {{#if followerCanManage}}
+    {{#each temporary.choices as |choice|}}<button type="button" data-action="promptTemporaryFollower" data-item-id="{{choice.id}}">{{choice.name}}</button>{{/each}}
+    {{#each temporary.pending as |use|}}<button type="button" data-action="resumeTemporaryFollower" data-use-id="{{use.id}}">{{localize "CYPHER.Temporary.resume"}}</button>
+    <button type="button" data-action="abandonTemporaryFollower" data-use-id="{{use.id}}">{{localize "CYPHER.Temporary.abandon"}}</button>{{/each}}
+    <button type="button" data-action="settleTemporaryDeaths">{{localize "CYPHER.Temporary.settleDeaths"}}</button>
+    {{#each temporary.records as |record|}}{{#if record.rebooting}}<button type="button" data-action="promptTemporaryReboot" data-record-id="{{record.id}}">{{localize "CYPHER.Temporary.finishReboot"}}</button>{{/if}}{{/each}}
+  {{/if}}
   <button type="button" data-action="promptCompanionContext">{{localize "CYPHER.Companion.circumstances"}}</button>
   {{#if followerCanManage}}
   <button type="button" data-action="promptCompanionInstall">{{localize "CYPHER.CompanionUpgrade.install"}}</button>
@@ -35,6 +42,13 @@
       {{#if follower.flight.enabled}}<p>{{#if follower.flight.meters}}{{localize "CYPHER.CompanionUpgrade.carryingFlight"}}{{else}}{{localize "CYPHER.CompanionUpgrade.longFlight"}}{{/if}}</p>{{/if}}
       {{#if follower.turretPending}}<p>{{localize "CYPHER.CompanionUpgrade.pendingShot"}}</p>{{/if}}
     </div>
+    {{#if follower.temporary}}
+    {{#if ../followerCanManage}}
+    <button type="button" data-action="promptTemporaryMode" data-record-id="{{follower.id}}">{{localize "CYPHER.Temporary.mode"}}</button>
+    <button type="button" data-action="openTemporaryFollower" data-record-id="{{follower.id}}">{{localize "CYPHER.Follower.open"}}</button>
+    {{#if follower.dismissible}}<button type="button" data-action="dismissTemporaryInstance" data-record-id="{{follower.id}}">{{localize "CYPHER.Temporary.dismiss"}}</button>{{/if}}
+    {{/if}}
+    {{else}}
     <button type="button" data-action="configureFollower" data-follower-id="{{follower.id}}">{{localize "CYPHER.Follower.configure"}}</button>
     <button type="button" data-action="syncFollower" data-follower-id="{{follower.id}}">{{localize "CYPHER.Follower.sync"}}</button>
     {{#if follower.canRepair}}<button type="button" data-action="promptCompanionRepair" data-follower-id="{{follower.id}}">{{localize "CYPHER.Companion.repair"}}</button>{{/if}}
@@ -42,6 +56,7 @@
     <button type="button" data-action="openFollower" data-follower-id="{{follower.id}}">{{localize "CYPHER.Follower.open"}}</button>
     <button type="button" data-action="replaceFollower" data-follower-id="{{follower.id}}">{{localize "CYPHER.Follower.replace"}}</button>
     {{#ifEquals follower.state "manual"}}<button type="button" data-action="reconcileFollower" data-follower-id="{{follower.id}}">{{localize "CYPHER.Follower.reconcile"}}</button>{{/ifEquals}}
+    {{/if}}
     {{/if}}
   </article>
   {{else}}<p>{{localize "CYPHER.Follower.empty"}}</p>{{/each}}

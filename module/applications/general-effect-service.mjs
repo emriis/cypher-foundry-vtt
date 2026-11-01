@@ -2,6 +2,7 @@ import { roundActionContext, consumeRoundAction } from "./round-action-service.m
 /** Persist explicit general-rule effects on the actual Actor, including synthetic Actors. */
 import { CONDITION_KINDS, generalEffectIsActive, resolveGeneralModifiers } from "../rules/general-effects.mjs";
 import { runActorAction } from "./action-guard.mjs";
+import { temporaryNpcBlocked } from "./temporary-follower-read.mjs";
 
 /** Expose supported condition choices to sheets without a sheet-to-rules dependency. */
 export function getGeneralConditionKinds() { return [...CONDITION_KINDS]; }
@@ -16,8 +17,9 @@ export function generalEffectClock() {
 
 /** Read active flags without writing during sheet or task preparation. */
 export function getGeneralEffects(actor, clock = generalEffectClock()) {
-  return (actor?.flags?.cypher?.generalEffects ?? []).filter(effect => generalEffectIsActive(effect, clock)
+  const effects = (actor?.flags?.cypher?.generalEffects ?? []).filter(effect => generalEffectIsActive(effect, clock)
     && (effect.actionRevision == null || effect.actionRevision === (actor.flags?.cypher?.weaponActionRevision ?? 0)));
+  return temporaryNpcBlocked(actor) ? [...effects, { kind: "unconscious", source: "temporaryFollower" }] : effects;
 }
 
 /** Capture the start of this source's next turn; null means explicit narrative completion. */
