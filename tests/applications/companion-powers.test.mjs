@@ -45,6 +45,8 @@ test("Stronger Together needs a conscious helper while Betterment preserves a de
 
 test("calmed beasts give Stronger Together but not Betterment and losing friendliness ends their benefit", async () => {
   ability("stronger-together"); ability("beast-betterment"); ability("soothe-the-savage");
+  pc.flags.cypher.commandCalms = { calm: { version: 1, id: "calm", npcUuid: npc.uuid, mode: "rest", revision: 0, state: "active" } };
+  npc.flags.cypher.commandCalms = { calm: { version: 1, ownerUuid: pc.uuid } };
   assert.equal(await configureCompanion(pc, { calmedNpcUuid: npc.uuid, immediate: true, confirmed: true }), true);
   assert.equal((await companionTaskPlan(pc, { isAttack: true })).damage, 2);
   assert.equal((await companionTaskPlan(pc)).recovery, 0);

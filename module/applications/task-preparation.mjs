@@ -67,7 +67,8 @@ export function prepareTask(actor, { stat, difficulty, effortLevels, assetSteps,
   if (effectEffortLevels || activationCost) {
     const source = actor.items?.get(abilitySource?.itemId);
     const recompile = source?.type === "ability" && source.system.key === "recompile-machine" && stat === "intellect" && isAttack && activationCost === 8;
-    if (!recompile && (source?.type !== "ability" || !SHIELD_ABILITY_KEYS.includes(source.system.key)
+    const soothe = source?.type === "ability" && source.system.key === "soothe-the-savage" && stat === "intellect" && isAttack && activationCost === 2 && !effectEffortLevels;
+    if (!recompile && !soothe && (source?.type !== "ability" || !SHIELD_ABILITY_KEYS.includes(source.system.key)
       || effectEffortLevels > 1 || source.system.key === "hidden-shield"
       || (activationCost && (source.system.key !== "bouncing-shield" || stat !== "speed" || activationCost !== 3)))) return invalidTask();
   }

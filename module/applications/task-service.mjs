@@ -26,6 +26,7 @@ import { resolveInitiativeScore } from "../rules/initiative.mjs";
 import { persistInitiative, resolveInitiativeOwner, initiativeMessageOptions } from "./initiative-history.mjs";
 import { cooperativeTaskPlan, consumeCooperationUpdate } from "./cooperative-service.mjs";
 import { applyRuleEffect, validateRuleEffect } from "./rule-effect-consequence.mjs";
+import { commandTaskUpdates } from "./command-effect-service.mjs";
 import { getGeneralEffects, nextSourceTurn } from "./general-effect-service.mjs";
 import { specialDamageLimits } from "./special-damage-healing.mjs";
 import { blockStillHits, CONDITION_KINDS } from "../rules/general-effects.mjs";
@@ -174,6 +175,10 @@ async function executeTask(actor, {
     !CONDITION_KINDS.includes(effect.kind)
     || !Number.isSafeInteger(effect.steps ?? 1) || (effect.steps ?? 1) < 1))) return null;
   if (ruleEffect && !validateRuleEffect(actor, targetActor, ruleEffect)) return null;
+  const commandEffect = ["calmed", "teamUp"].includes(ruleEffect?.effect?.kind);
+  if (commandEffect && (damageEffortLevels || freeDamageEffortLevels || pushDamageEffortLevels || effectEffortLevels || baseDamage
+    || stat !== "intellect" || (ruleEffect.effect.kind === "calmed" ? activationCost !== 2 || !isAttack : activationCost || isAttack || difficulty !== 2))) return null;
+  if (abilitySource && actor.items?.get(abilitySource.itemId)?.system.key === "soothe-the-savage" && ruleEffect?.effect?.kind !== "calmed") return null;
   if (ruleEffect?.effect?.kind === "recompiled" && (damageEffortLevels || freeDamageEffortLevels || pushDamageEffortLevels)) return null;
   if (ruleEffect?.effect?.kind === "recompiled" && (activationCost !== 8 || stat !== "intellect"
     || ruleEffect.effect.record?.maximumLevel !== 4 + effectEffortLevels)) return null;
@@ -241,13 +246,14 @@ async function executeTask(actor, {
   baseDamage += effort.damageBonus + powerShifts.damage;
   // Recompilation changes programming; generic attack damage bonuses do not
   // turn its non-damaging companion branch into a second damage effect.
-  if (ruleEffect?.effect?.kind === "recompiled") baseDamage = 0;
+  if (ruleEffect?.effect?.kind === "recompiled" || commandEffect) baseDamage = 0;
   weaponSource = { ...weaponSource, actorUuid: actor.uuid };
 
   // One Actor write commits XP and Pool costs together. Subsequent target
   // writes are separate operations; failures are surfaced without stale rollback.
-  if (totalCost > 0 || xpCost > 0 || pushWound || cooperation.consumed.length || ruleEffect?.effect?.kind === "recompiled") {
+  if (totalCost > 0 || xpCost > 0 || pushWound || cooperation.consumed.length || ruleEffect?.effect?.kind === "recompiled" || commandEffect) {
     await actor.update({
+      ...commandTaskUpdates(ruleEffect?.effect),
       ...consumeCooperationUpdate(actor, cooperation.consumed),
       ...(ruleEffect?.effect?.kind === "recompiled" ? { [`flags.cypher.temporaryFollowers.${ruleEffect.effect.recordId}`]: ruleEffect.effect.record } : {}),
       ...(xpCost > 0 ? { "system.xp": actor.system.xp - xpCost } : {}),

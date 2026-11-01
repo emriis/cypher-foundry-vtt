@@ -1,6 +1,7 @@
 /** Beast Eyes adds a native vision source, never ownership or control of the beast's token. */
 import { liveCompanionEffects } from "./companion-upgrade-read.mjs";
 import { temporaryNpcVisible } from "./temporary-follower-read.mjs";
+import { hasActiveCalm } from "./command-power-read.mjs";
 
 /** Explicit token and range declarations remain necessary; hidden/off-level tokens keep core restrictions. */
 export function beastEyesVision(token) {
@@ -13,7 +14,7 @@ export function beastEyesVision(token) {
       if (effect.key !== "beast-eyes" || !effect.withinRange || effect.visionTokenUuid !== document.uuid || effect.npcUuid !== token.actor?.uuid) return false;
       const context = owner.flags?.cypher?.companionContext;
       return context?.id === effect.sensoryContext && context.state === "active" && context.npcUuid === effect.npcUuid
-        && context.alive && (!context.calmed || context.friendly);
+        && context.alive && (!context.calmed || context.friendly && hasActiveCalm(owner, token.actor));
     }));
 }
 

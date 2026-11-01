@@ -2,6 +2,7 @@ import { resolveGeneralModifiers } from "../rules/general-effects.mjs";
 import { getGeneralEffects } from "./general-effect-service.mjs";
 import { automatonMode, automatonFlight } from "./companion-upgrade-read.mjs";
 import { temporaryFollowerRows, temporaryNpcAvailability } from "./temporary-follower-read.mjs";
+import { teamUpRows, teamUpAvailability, teamUpRecords } from "./command-power-read.mjs";
 /** CRD Followers: explicit links, progression, help and replacement; no Ability prose or token geometry is interpreted. */
 import { followerProgression, followerHelpAssets, followerReplacementLevel } from "../rules/followers.mjs";
 import { resolveDocumentReference } from "./reference-resolver.mjs";
@@ -149,13 +150,15 @@ function present(actor, record, npc) {
 /** Resolve actual token UUIDs for sheets and authoritative action preflight. */
 export async function followerDisplay(actor) {
   return [...await Promise.all(records(actor).map(async record => present(actor, record, await resolveDocumentReference(record.npcUuid, "npc")))),
-    ...temporaryFollowerRows(actor, npc => resolveGeneralModifiers(getGeneralEffects(npc)).rejected)];
+    ...temporaryFollowerRows(actor, npc => resolveGeneralModifiers(getGeneralEffects(npc)).rejected),
+    ...teamUpRows(actor, npc => resolveGeneralModifiers(getGeneralEffects(npc)).rejected)];
 }
 
 /** Dialog rendering uses only already loaded documents; acceptance revalidates asynchronously. */
 export function followerDisplaySync(actor) {
   return [...records(actor).map(record => present(actor, record, globalThis.fromUuidSync?.(record.npcUuid))),
-    ...temporaryFollowerRows(actor, npc => resolveGeneralModifiers(getGeneralEffects(npc)).rejected)];
+    ...temporaryFollowerRows(actor, npc => resolveGeneralModifiers(getGeneralEffects(npc)).rejected),
+    ...teamUpRows(actor, npc => resolveGeneralModifiers(getGeneralEffects(npc)).rejected)];
 }
 
 /** A follower's assets are independent of PC cooperation; the task engine applies the shared final cap. */
@@ -179,6 +182,8 @@ export async function followerTaskPlan(actor, choices = null, { isAttack = false
 
 /** A linked following must be explicitly acting independently before an NPC attack can replace its help. */
 export async function followerCanAct(npc) {
+  const ally = teamUpAvailability(npc);
+  if (ally !== null) return ally;
   const temporary = temporaryNpcAvailability(npc);
   if (temporary !== null) return temporary;
   if (automatonMode(npc) !== "normal") return false;
@@ -198,6 +203,15 @@ export async function onFollowerTierUpdate(actor, changes) {
 
 /** Restore Follower returns the linked slot to normal availability after its concrete NPC has been restored. */
 export async function restoreFollowerAvailability(actor, npcUuid, context = null) {
+  const ally = teamUpRecords(actor).find(record => record.npcUuid === npcUuid);
+  if (ally) {
+    const npc = await resolveDocumentReference(npcUuid, "npc");
+    if (!ownedPC(actor) || !ownedNPC(npc) || !game.user?.isGM) return false;
+    return Boolean(await runActorActions([actor, npc], "teamUpRestore", async () => {
+      if (ally.outing) await actor.update({ [`flags.cypher.teamUpAllies.${ally.id}.outing.state`]: "ended" });
+      await npc.update({ "flags.cypher.teamUpAlly.injured": false }); return true;
+    }, context));
+  }
   const record = records(actor).find(record => record.npcUuid === npcUuid);
   if (!record) return true;
   if (!ownedPC(actor)) return false;
@@ -223,6 +237,8 @@ export async function followerNPCDisplay(npc) {
 
 /** Known links must belong to the paying host and be synchronized; old unlinked followers retain explicit GM confirmation. */
 export function followerRestorationAllowed(actor, npc) {
+  const allyLink = npc.flags?.cypher?.teamUpAlly;
+  if (allyLink) return allyLink.ownerUuid === actor.uuid && teamUpRecords(actor).some(record => record.id === allyLink.id && record.npcUuid === npc.uuid && record.state === "active") && npc.system.level === 4;
   const link = npc.flags?.cypher?.followerProgress;
   if (!link) return true;
   const record = link.version === 1 && link.ownerUuid === actor.uuid ? get(actor, link.slotId) : null;

@@ -81,6 +81,8 @@ async function resolvePlan(actor, project) {
     } else {
       if (proposal.followerConfirmed !== true || !(target.system.health?.max > 0) || !followerRestorationAllowed(actor, target)) return null;
       quoted.level = target.system.level;
+      if (target.flags?.cypher?.teamUpAlly && (proposal.teamUpCareConfirmed !== true
+        || proposal.durationSeconds <= 604800 || !proposal.durationSource?.trim())) return null;
       // The CRD default is about a week; a shorter source-specific duration
       // must be explicitly identified rather than inferred from an NPC name.
       if (proposal.durationSeconds !== 604800 && !proposal.durationSource?.trim()) return null;

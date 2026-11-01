@@ -32,8 +32,9 @@ declaration/native dead status; zero Health alone is not a universal death rule.
 already-calmed beast, immediate proximity, living/present status, disposition and
 mounted movement on the PC's turn. Players update these declarations when the
 fiction changes. Neither token coordinates, translated names nor descriptive
-prose establish mechanics. Soothe the Savage's own attack, costs and duration
-are not executed by declaring an already-calmed beast.
+prose establish mechanics. A declared calmed beast now needs a successful,
+still-active [Soothe the Savage contract](command-powers.md); the circumstance
+declaration does not replace that attack or establish friendly disposition.
 
 An initial/replaced link requires ownership of the NPC (normally GM); later
 circumstance changes require only the PC owner. Both actual owner identities,
@@ -98,8 +99,9 @@ The public namespace is `game.cypher.companions`.
 Beast Eyes and automaton armor/cypher/flight/turret/force-field upgrades now have
 a separate [implementation contract](companion-upgrades.md). Temporary followers
 from necromancy, Duplicate and Recompile Machine's companion branch now have
-[their own implementation contract](temporary-followers.md). Team-Up Ally and
-broader healing/protection/attack/movement/mental Ability
+[their own implementation contract](temporary-followers.md). Soothe the Savage,
+Lighting a Fire Under Them and Team-Up Ally have
+[command contracts](command-powers.md). Broader healing/protection/attack/movement/mental Ability
 families also remain on the roadmap.
 
 ## Validation

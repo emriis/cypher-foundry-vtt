@@ -31,7 +31,7 @@ export async function promptProject() {
     ${kind === "contact" ? select("level", "level", [3, 5, 7].map(value => [value, value]), false) : ""}
     ${kind === "craftCypher" ? select("power", "power", ["low", "medium", "advanced"].map(value => [value, label(value)]), false) : ""}
     ${["repairObject", "restoreFollower"].includes(kind) ? select("targetUuid", "target", targets.map(target => [target.uuid, target.name])) : ""}
-    ${kind === "restoreFollower" ? `${check("followerConfirmed", "followerConfirmed")}<label>${label("durationSource")}<input name="durationSource"/></label>` : ""}
+    ${kind === "restoreFollower" ? `${check("followerConfirmed", "followerConfirmed")}<label>${label("durationSource")}<input name="durationSource"/></label><label><input name="teamUpCareConfirmed" type="checkbox"/>${game.i18n.localize("CYPHER.Command.care")}</label>` : ""}
     ${kind === "investment" ? check("investmentConfirmed", "investmentConfirmed") : ""}
     ${crafting ? `${check("genreConfirmed", "genreConfirmed")}${check("skillAppropriate", "skillAppropriate")}
       ${select("skillItemId", "skill", actor.items.filter(item => item.type === "skill").map(item => [item.id, item.name]))}
@@ -51,7 +51,7 @@ export async function promptProject() {
           amount: Number(value(`contribution${index}`)) })).filter(entry => entry.amount !== 0) };
       for (const key of ["power", "targetUuid", "skillItemId", "workerUuid", "sourceUuid", "material", "durationSource"]) if (value(key)) result[key] = value(key);
       for (const key of ["level", "workerTraining", "customCost"]) if (value(key)) result[key] = Number(value(key));
-      for (const key of ["genreConfirmed", "skillAppropriate", "followerConfirmed", "advancedTechnology", "investmentConfirmed"]) result[key] = form.elements.namedItem(key)?.checked ?? false;
+      for (const key of ["genreConfirmed", "skillAppropriate", "followerConfirmed", "advancedTechnology", "investmentConfirmed", "teamUpCareConfirmed"]) result[key] = form.elements.namedItem(key)?.checked ?? false;
       return result;
     } } });
   if (!proposal) return;

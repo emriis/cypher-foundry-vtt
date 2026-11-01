@@ -6,6 +6,8 @@ import * as companionPowerService from "./module/applications/companion-power-se
 import * as companionSupportService from "./module/applications/companion-support-service.mjs";
 import * as temporaryFollowerService from "./module/applications/temporary-follower-service.mjs";
 import * as temporaryMachineService from "./module/applications/temporary-machine-service.mjs";
+import * as commandPowerService from "./module/applications/command-power-service.mjs";
+import { stampTeamUpInjury } from "./module/applications/command-power-read.mjs";
 import { stampTemporaryDeath, queueTemporaryDeath } from "./module/applications/temporary-death-service.mjs";
 import { refreshTemporaryPresentation, advanceTemporaryReboots } from "./module/sheets/temporary-follower-dialogs.mjs";
 import * as companionUpgradeService from "./module/applications/companion-upgrade-service.mjs";
@@ -55,6 +57,7 @@ Hooks.on("updateCombat", skipUnyieldingShieldTurn);
 // Persist attribution invalidation with the same healing/manual Actor update.
 Hooks.on("preUpdateActor", stampDefenseRevisions);
 Hooks.on("preUpdateActor", stampTemporaryDeath);
+Hooks.on("preUpdateActor", stampTeamUpInjury);
 Hooks.on("updateActor", queueTemporaryDeath);
 Hooks.on("updateActor", refreshTemporaryPresentation);
 Hooks.on("updateWorldTime", refreshTemporaryPresentation);
@@ -87,6 +90,7 @@ Hooks.once("init", () => {
   game.cypher = { companions: { ...companionPowerService, ...companionSupportService }, speciesBenefits: speciesBenefitService, followers: { ...followerService, ...followerAbilityService }, cyphers: { ...cypherInventoryService, ...cypherGenerationService }, CYPHER, importFromBuilder, openImportDialog, promptInitiativeOptions, objects: objectService, projects: projectService, taskRetries: taskRetryService, intrusions: intrusionService };
   CONFIG.CYPHER = CYPHER;
   game.cypher.temporaryFollowers = { ...temporaryFollowerService, ...temporaryMachineService };
+  game.cypher.commands = commandPowerService;
   Object.assign(game.cypher.companions, companionUpgradeService, companionUpgradeRead, companionTurretService);
   CONFIG.Token.objectClass = createCompanionTokenClass(CONFIG.Token.objectClass);
 

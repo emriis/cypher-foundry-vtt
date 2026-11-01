@@ -107,7 +107,8 @@ Local guards serialize participating documents on the elected GM client;
 they are not distributed locks against arbitrary external edits.
 
 Recompile's bricking and explosion branches remain for the offensive Ability
-family. Team-Up Ally and other command/allied powers remain separate work.
+family. Team-Up Ally and the next command family now have a separate
+[implementation contract](command-powers.md).
 
 ## Validation
 

@@ -1,4 +1,6 @@
 import { speciesBenefitDisplay } from "../applications/species-benefit-service.mjs";
+import { commandDisplay } from "../applications/command-power-read.mjs";
+import { promptCommandPower, promptCommandAction } from "./command-power-dialogs.mjs";
 import { promptSpeciesBenefit } from "./species-benefit-dialogs.mjs";
 import { followerDisplay } from "../applications/follower-service.mjs";
 import { promptFollower, promptFollowerAction } from "./follower-dialogs.mjs";
@@ -74,6 +76,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     // Template buttons declare data-action="...". Foundry routes each name to
     // the handler below, binding `this` to the sheet, even for static handlers.
     actions: {
+      promptCommandPower, promptCommandAction,
       promptTemporaryFollower, resumeTemporaryFollower, abandonTemporaryFollower, dismissTemporaryInstance, promptTemporaryMode, promptTemporaryReboot, settleTemporaryDeaths, openTemporaryFollower,
       promptProject, promptResourceAward, promptBefriendPenalty,
       prepareBenefit: promptSpeciesBenefit, finishBenefit: promptSpeciesBenefit, chooseBenefitEnergy: promptSpeciesBenefit,
@@ -191,6 +194,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     context.followers = context.followers.map(follower => ({ ...follower, canRepair: repairable.some(choice => choice.id === follower.id) }));
     context.companion = await companionContext(this.actor);
     context.temporary = temporaryDisplay(this.actor);
+    context.commands = commandDisplay(this.actor);
     context.companionSupport = companionSupportDisplay(this.actor);
     context.companionUpgrades = companionUpgradeDisplay(this.actor);
     context.cypherInventory = cypherInventoryDisplay(this.actor);

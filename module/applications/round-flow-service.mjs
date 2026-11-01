@@ -3,6 +3,7 @@ import { createRoundFlow, completeRoundStep, holdRoundTurn, resumeRoundTurn } fr
 import { runActorActions } from "./action-guard.mjs";
 import { getGeneralEffects, generalEffectClock } from "./general-effect-service.mjs";
 import { getRoundFlow } from "./round-action-service.mjs";
+import { commandRoundPlans, markCommandSlots } from "./command-round-service.mjs";
 export { getRoundFlow } from "./round-action-service.mjs";
 
 const owns = combat => combat && combat.isOwner !== false && game.user?.isGM === true;
@@ -37,8 +38,9 @@ export async function beginCombatRound(combat, round = 1) {
     const ids = idsOf(combat);
     const plans = (previous?.round === round ? previous.plans : previous?.nextPlans ?? [])
       .filter(entry => ids.includes(entry.combatantId));
-    const flow = createRoundFlow(ids, plans, round, previous?.prepared ?? []);
+    const flow = createRoundFlow(ids, commandRoundPlans(combat, plans), round, previous?.prepared ?? []);
     if (!flow) return combat;
+    markCommandSlots(combat, flow);
     if (previous && previous.round < round) flow.history = [...(previous.history ?? []), { ...previous, history: [] }];
     flow.cursor = 0;
     await enterRoundStep(combat, flow);
@@ -62,8 +64,9 @@ export async function advanceCombatRound(combat) {
     let flow = completeRoundStep(getRoundFlow(combat));
     if (flow.cursor >= flow.queue.length) {
       const ids = idsOf(combat);
-      const next = createRoundFlow(ids, flow.nextPlans.filter(entry => ids.includes(entry.combatantId)), flow.round + 1, flow.prepared);
+      const next = createRoundFlow(ids, commandRoundPlans(combat, flow.nextPlans.filter(entry => ids.includes(entry.combatantId))), flow.round + 1, flow.prepared);
       if (!next) return combat;
+      markCommandSlots(combat, next);
       next.history = [...(flow.history ?? []), { ...flow, history: [] }];
       next.cursor = 0;
       flow = next;

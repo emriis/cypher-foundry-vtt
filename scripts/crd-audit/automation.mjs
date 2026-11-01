@@ -20,6 +20,10 @@ export function auditAutomation(document) {
   const implemented = [], gaps = [];
   switch (document.type) {
     case "ability":
+      if (["soothe-the-savage", "lighting-a-fire-under-them", "team-up-ally"].includes(system.key)) {
+        implemented.push("command-power services/PC sheet: non-damaging calm attack and recovery/maintenance, one-use next-action timing, fixed-level superhero ally binding, availability/charm outings and resource-project care");
+        gaps.push("GM declares eligible beasts, range/speech/sight, allied disposition, outing availability, NPC power adaptation and several weeks of care; narrative maintenance requires explicit interruption; action ordering uses managed round flow");
+      }
       if (["basic-necromancy", "improved-necromancy", "greater-necromancy", "true-necromancy", "duplicate", "recompile-machine"].includes(system.key)) {
         implemented.push("temporary-follower services/PC sheet: canonical Basic variants, batch costs, dedicated Effort, recovery expiry, copied-equipment lifetime, attributed Duplicate backlash and Recompile companion attack/reboot");
         gaps.push("GM declares actual NPC profiles, range, corpse size/repair and reboot rounds; ambiguous legacy Basic provenance requires review; Recompile bricking and explosion are not executed by the companion branch");
@@ -34,7 +38,7 @@ export function auditAutomation(document) {
       }
       if (["automaton-assistant", "expert-automaton", "stronger-together", "beast-betterment", "mount", "retainer"].includes(system.key)) {
         implemented.push("companion-power/support services: declared proximity/living status, conditional damage/defense/recovery, mounted attack exception, timed quick repair or paid Retainer interception as defined by the source");
-        gaps.push("position, calmed disposition, uninterrupted attention and intercepted NPC hit/damage require explicit adjudication; no automatic geometry, Soothe the Savage or PC-wound conversion");
+        gaps.push("position, friendly disposition, uninterrupted attention and intercepted NPC hit/damage require explicit adjudication; calmed companions require a tracked successful Soothe; no automatic geometry or PC-wound conversion");
       }
       if (system.key === "healing-hand") {
         implemented.push("healing-service/PC sheet: confirmed target, PC wound reduction/NPC Health, capacity, Edge, escalation and recovery reset");

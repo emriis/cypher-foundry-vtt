@@ -3,6 +3,7 @@ import { resolveNpcDamage } from "../rules/wounds.mjs";
 import { companionNpcProtection } from "./companion-upgrade-read.mjs";
 import { temporaryDeathPatch, settleTemporaryDeath, temporaryDeathCorrection } from "./temporary-death-service.mjs";
 import { temporaryNpcLink } from "./temporary-follower-read.mjs";
+import { stampTeamUpInjury } from "./command-power-read.mjs";
 import { runActorActions } from "./action-guard.mjs";
 import { planAttackDamage } from "../rules/attack-consequences.mjs";
 import { applyNpcDamage, syncWoundStatusEffects } from "./damage-service.mjs";
@@ -19,6 +20,8 @@ export async function applyAttackConsequences(target, { success, totalDamage, ar
   const armor = target.system.armor ?? 0;
   const protection = companionNpcProtection(target);
   const before = target.system.health?.value;
+  const allyLink = target.flags?.cypher?.teamUpAlly;
+  const injury = allyLink && !allyLink.injured ? { id: allyLink.id, ownerUuid: allyLink.ownerUuid } : null;
   const healthRevision = attackHealthRevision(target);
   const effectContext = weaponEffectContext(target, weaponSource);
   let targetDamage = 0;
@@ -31,6 +34,7 @@ export async function applyAttackConsequences(target, { success, totalDamage, ar
   return { targetDamage, attackConsequences: { version: 1, state: "applied", targetUuid: target.uuid,
     armor, armorBypass, protection, resolvedDamage, damageBands: loss > 0 ? [{ from: 0, to: loss }] : [],
     healthRevision, success, effectsApplied: success, effectContext,
+    ...(injury && before > 0 && target.system.health?.value === 0 ? { teamUpInjury: injury } : {}),
     ...(before > 0 && target.system.health?.value === 0 && target.flags?.cypher?.temporaryDeathId ? { temporaryDeathId: target.flags.cypher.temporaryDeathId } : {}) } };
 }
 
@@ -64,6 +68,9 @@ async function executeAttackCorrection(target, flags, outcome, checkpoint, actio
   const damage = outcome.success ? Math.max(0, resolveNpcDamage(outcome.totalDamage, history.armor, history.armorBypass) - (history.protection ?? 0)) : 0;
   const plan = planAttackDamage(history, damage, target.system.health?.value, target.system.health?.max, attackHealthRevision(target));
   if (!plan) return manual("history");
+  const ally = target.flags?.cypher?.teamUpAlly;
+  const restoringAlly = plan.health > 0 && history.teamUpInjury && ally?.injured;
+  if (restoringAlly && (ally.id !== history.teamUpInjury.id || ally.ownerUuid !== history.teamUpInjury.ownerUuid)) return manual("history");
   const restoringTemporaryDeath = plan.health > 0 && target.system.health?.value === 0 && history.temporaryDeathId;
   const deathCorrection = restoringTemporaryDeath ? await temporaryDeathCorrection(target, history.temporaryDeathId) : null;
   if (restoringTemporaryDeath && !deathCorrection) return manual("history");
@@ -75,11 +82,15 @@ async function executeAttackCorrection(target, flags, outcome, checkpoint, actio
     || !(interval.combatId === null && interval.combatRound === null
       || typeof interval.combatId === "string" && Number.isSafeInteger(interval.combatRound)))) return manual("history");
   const next = { ...history, ...plan, success: outcome.success, effectsApplied: history.effectsApplied || outcome.success, state: "applied" };
+  if (plan.health === 0 && target.system.health.value > 0 && ally && !ally.injured) next.teamUpInjury = { id: ally.id, ownerUuid: ally.ownerUuid };
   delete next.health;
   if (plan.health !== target.system.health.value || effects && flags.weaponTargetEffects?.length) {
     await checkpoint({ ...next, state: "pending" });
     if (plan.health !== target.system.health.value) {
-      await target.update({ "system.health.value": plan.health, ...temporaryDeathPatch(target, plan.health) }, { cypherAttackCorrection: true });
+      const changes = { "system.health.value": plan.health, ...temporaryDeathPatch(target, plan.health),
+        ...(restoringAlly ? { "flags.cypher.teamUpAlly.injured": false } : {}) };
+      stampTeamUpInjury(target, changes);
+      await target.update(changes, { cypherAttackCorrection: true });
       if (deathCorrection) {
         await deathCorrection.owner.update(deathCorrection.updates, { cypherDefenseCorrection: true });
         if (typeof deathCorrection.owner.toggleStatusEffect === "function") await syncWoundStatusEffects(deathCorrection.owner);
