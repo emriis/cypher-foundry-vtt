@@ -1,0 +1,16 @@
+{
+  "CYPHER": { "Protection": {
+    "title": "Protections",
+    "unavailable": "Protection could not be applied. Check the source, recipients, declarations and resources.",
+    "activationHint": "Activate this protection as an action, paying its Intellect cost after Edge. Canceling spends nothing.",
+    "elementalHint": "The caster is always included. Choose every other protected creature and declare one energy type. Each creature's own one-hour or longer recovery ends only their protection. NPCs take 3 less damage per severity step.",
+    "energy": "Energy type (explicit declaration)", "untyped": "Leave empty for untyped damage or the existing damage tags",
+    "fire": "Fire", "cold": "Cold", "electricity": "Electricity", "effectEffort": "Paid Effort devoted to protection (0–2)",
+    "inRange": "All selected creatures are within immediate range.", "debris": "Nearby small objects are available to intercept attacks.",
+    "mageBlock": "For Block, use active Mage Armor and Intellect instead of Might.",
+    "pending": "Protection awaiting completion", "resume": "Finish applying protection", "abandon": "Abandon partial activation",
+    "abandonHint": "End this partial activation without refunding its cost. Its retained receipts grant no protection.",
+    "end": "End this protection on me", "npcRest": "Confirm NPC recovery", "npcRestHint": "Confirm this NPC completed a one-hour or longer rest. This expires their protection without restoring Health or affecting other creatures.",
+    "environmentHint": "Tracked Ability protection applies automatically for the declared energy. Do not include that same protection again in the manual reductions below."
+  } }
+}

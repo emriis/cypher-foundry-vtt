@@ -1,6 +1,7 @@
 import { companionFieldReduction, companionNpcProtection, companionEquipmentUsable } from "./companion-upgrade-read.mjs";
 import { temporaryDeathPatch, settleTemporaryDeath } from "./temporary-death-service.mjs";
 import { stampTeamUpInjury } from "./command-power-read.mjs";
+import { protectionNpcReduction, protectionWoundReduction } from "./protection-power-read.mjs";
 import { CYPHER } from "../config.mjs";
 import { shieldSurvivesMajor, shieldOwnerItems } from "../rules/shield-abilities.mjs";
 import { resolveAbilityWoundTrack, resolveShieldWoundTrack } from "../rules/ability-modifiers.mjs";
@@ -131,10 +132,11 @@ export async function addWound(actor, severity, { fieldReduction = companionFiel
 export async function applyDamage(
   actor,
   amount,
-  { severity = null, stat = null, ignoreArmor = false, armorBypass = 0, fieldReduction = companionFieldReduction(actor) } = {}
+  { severity = null, stat = null, ignoreArmor = false, armorBypass = 0, fieldReduction = companionFieldReduction(actor),
+    incomingEnergy = "", incomingDamageTags = [], elementalReduction = protectionWoundReduction(actor, incomingEnergy, incomingDamageTags) } = {}
 ) {
   if (actor.type !== "pc") {
-    return applyNpcDamage(actor, amount, { ignoreArmor, armorBypass });
+    return applyNpcDamage(actor, amount, { ignoreArmor, armorBypass, incomingEnergy, incomingDamageTags });
   }
 
   if (stat) {
@@ -151,13 +153,13 @@ export async function applyDamage(
 
     if (resolution.overflow > 0) {
       const woundSeverity = severity ?? resolution.woundSeverity;
-      await addWound(actor, woundSeverity, { fieldReduction });
+      await addWound(actor, woundSeverity, { fieldReduction: fieldReduction + elementalReduction });
     }
     return resolution.poolDamage;
   }
 
   const woundSeverity = severity ?? convertDamageToWound(amount);
-  await addWound(actor, woundSeverity, { fieldReduction });
+  await addWound(actor, woundSeverity, { fieldReduction: fieldReduction + elementalReduction });
 }
 
 /**
@@ -173,7 +175,8 @@ export async function applyDamage(
 export async function applyNpcDamage(
   actor,
   amount,
-  { ignoreArmor = false, armorBypass = 0, protection = companionNpcProtection(actor), actionContext = null } = {}
+  { ignoreArmor = false, armorBypass = 0, incomingEnergy = "", incomingDamageTags = [],
+    protection = companionNpcProtection(actor) + protectionNpcReduction(actor, incomingEnergy, incomingDamageTags), actionContext = null } = {}
 ) {
   const armor = actor.system.armor ?? 0;
   const finalDamage = Math.max(0, resolveNpcDamage(

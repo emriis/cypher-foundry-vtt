@@ -1,0 +1,16 @@
+{
+  "CYPHER": { "Protection": {
+    "title": "Protections",
+    "unavailable": "La protection n’a pas pu être appliquée. Vérifiez la source, les bénéficiaires, les déclarations et les ressources.",
+    "activationHint": "Activez cette protection comme une action, en payant son coût d’Intelligence après l’Avantage. Une annulation ne dépense rien.",
+    "elementalHint": "Le lanceur est toujours inclus. Choisissez chaque autre créature protégée et déclarez un type d’énergie. La récupération d’une heure ou plus de chaque créature termine uniquement sa propre protection. Les PNJ subissent 3 dégâts de moins par degré de réduction.",
+    "energy": "Type d’énergie (déclaration explicite)", "untyped": "Laissez vide pour des dégâts sans type ou les catégories de dégâts déjà déclarées",
+    "fire": "Feu", "cold": "Froid", "electricity": "Électricité", "effectEffort": "Effort payé consacré à la protection (0–2)",
+    "inRange": "Toutes les créatures choisies sont à portée immédiate.", "debris": "Des petits objets proches sont disponibles pour intercepter les attaques.",
+    "mageBlock": "Pour le blocage, utiliser Mage Armor actif et l’Intelligence à la place de la Puissance.",
+    "pending": "Protection en attente d’application", "resume": "Terminer l’application", "abandon": "Abandonner l’activation partielle",
+    "abandonHint": "Terminez cette activation partielle sans rembourser son coût. Ses traces conservées n’accordent aucune protection.",
+    "end": "Terminer cette protection sur moi", "npcRest": "Confirmer la récupération du PNJ", "npcRestHint": "Confirmez que ce PNJ a terminé un repos d’une heure ou plus. Cela termine sa protection sans restaurer sa Santé ni affecter les autres créatures.",
+    "environmentHint": "Les protections d’aptitudes suivies s’appliquent automatiquement à l’énergie déclarée. Ne les ajoutez pas une seconde fois aux réductions manuelles ci-dessous."
+  } }
+}

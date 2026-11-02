@@ -104,7 +104,7 @@ export async function rollNpcAttack(
     const effectiveLevel = Math.max(0, actor.system.level - hinderSteps - npcHinder - (turret ? 1 : 0));
 
     if (retainerId) {
-      const intercepted = await interceptRetainer(selectedTarget, retainerId, { ...retainerDamage, attacker: actor, actionTiming: taskOptions.actionTiming }, context);
+      const intercepted = await interceptRetainer(selectedTarget, retainerId, { ...retainerDamage, attacker: actor, actionTiming: taskOptions.actionTiming, incomingEnergy: taskOptions.incomingEnergy ?? "" }, context);
       if (!intercepted) return null;
       return { intercepted: true, retainerId };
     }

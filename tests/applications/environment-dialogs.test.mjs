@@ -6,7 +6,7 @@ import { promptEnvironment, promptEnvironmentExposure } from "../../module/sheet
 test("cancelled declarations and interval confirmations leave all state unchanged", async () => {
   const gm = { id: "gm", isGM: true }, prompts = [];
   globalThis.game = { user: gm, users: { activeGM: gm }, time: { worldTime: 10 }, i18n: { localize: key => key } };
-  globalThis.foundry = { applications: { api: { DialogV2: {
+  globalThis.foundry = { utils: { escapeHTML: value => value }, applications: { api: { DialogV2: {
     prompt: async options => { prompts.push(options); return null; }, confirm: async () => false
   } } } };
   const actor = { type: "pc", uuid: "Actor.pc", flags: { cypher: { environmentalExposures: [

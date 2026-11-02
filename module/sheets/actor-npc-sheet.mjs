@@ -1,6 +1,7 @@
 import { followerNPCDisplay } from "../applications/follower-service.mjs";
 import { temporaryNpcInventory, openTemporaryEquipment } from "./temporary-follower-dialogs.mjs";
 import { retainerChoices } from "../applications/companion-support-service.mjs";
+import { protectionDefenseFields, protectionEnergyField } from "./protection-power-dialogs.mjs";
 import { extendWeaponEffect, getWeaponEffectDisplayData } from "../applications/weapon-effect-service.mjs";
 import { getAvailableShields } from "../applications/equipment-service.mjs";
 import { generalEffectDisplay, toggleGuarding, clearGeneralEffect, promptGeneralCondition, incomingCooperationChoices } from "./general-action-dialogs.mjs";
@@ -153,7 +154,7 @@ export default class CypherNPCSheet extends HandlebarsApplicationMixin(ActorShee
             ${shieldOptions}
             ${drawnShields}
           </select>
-        </div>${cooperationChoices.content}
+        </div>${cooperationChoices.content}${protectionDefenseFields(selectedTarget)}
         ${retainers.length ? `<fieldset><legend>${game.i18n.localize("CYPHER.Companion.interception")}</legend>
           <p>${game.i18n.localize("CYPHER.Companion.interceptionHint")}</p>
           <label>${game.i18n.localize("CYPHER.Companion.companion")}<select name="retainerId"><option value="">${game.i18n.localize("CYPHER.Companion.none")}</option>${retainers.map(follower => `<option value="${follower.id}">${foundry.utils.escapeHTML(follower.name)}</option>`).join("")}</select></label>
@@ -165,6 +166,7 @@ export default class CypherNPCSheet extends HandlebarsApplicationMixin(ActorShee
         callback: (event, button) => {
           const choice = button.form.defenseType.value;
           return { defenseType: choice.startsWith("shield:") || choice.startsWith("drawShield:") ? "block" : choice,
+            incomingEnergy: button.form.incomingEnergy.value, mageArmor: button.form.mageArmor?.checked ?? false,
             shieldItemId: choice.includes(":") ? choice.split(":")[1] : null,
             cooperativeEffectIds: button.form.cooperativeEffectIds ? [...button.form.cooperativeEffectIds.selectedOptions].map(option => option.value) : null,
             cooperativeMode: choice.startsWith("drawShield:") ? "draw" : button.form.cooperativeMode.value,
@@ -186,6 +188,7 @@ export default class CypherNPCSheet extends HandlebarsApplicationMixin(ActorShee
       target: selectedTarget,
       physicalAttack: ["block", "dodge"].includes(result.defenseType),
       defenseType: result.defenseType,
+      incomingEnergy: result.incomingEnergy, mageArmor: result.mageArmor,
       shieldItemId: result.shieldItemId
     });
   }
@@ -199,7 +202,7 @@ export default class CypherNPCSheet extends HandlebarsApplicationMixin(ActorShee
       </div>
       <div class="form-group inline">
         <label><input type="checkbox" name="ignoreArmor"/> ${game.i18n.localize("CYPHER.NPC.IgnoreArmor")}</label>
-      </div>`;
+      </div>${protectionEnergyField()}`;
 
     const result = await foundry.applications.api.DialogV2.prompt({
       window: { title: game.i18n.localize("CYPHER.NPC.ApplyDamage") },
@@ -208,12 +211,12 @@ export default class CypherNPCSheet extends HandlebarsApplicationMixin(ActorShee
         label: game.i18n.localize("CYPHER.Confirm.Add"),
         callback: (event, button) => ({
           amount: Number(button.form.amount.value),
-          ignoreArmor: button.form.ignoreArmor.checked
+          ignoreArmor: button.form.ignoreArmor.checked, incomingEnergy: button.form.incomingEnergy.value
         })
       }
     });
 
     if (!result) return;
-    await this.actor.applyDamage(result.amount, { ignoreArmor: result.ignoreArmor });
+    await this.actor.applyDamage(result.amount, { ignoreArmor: result.ignoreArmor, incomingEnergy: result.incomingEnergy });
   }
 }

@@ -11,15 +11,15 @@ import { removeWound } from "./wound-removal.mjs";
  */
 export async function applyTaskConsequences(actor, { objectPlan = null, isAttack, success, targetActor, totalDamage,
   armorBypass, weaponTargetEffects, weaponSource, defenseType, applyIncomingWound,
-  incomingDamageTags = [], incomingWounds, usingShield, shieldItem, incomingSeverity, incomingPoolDamage, conditionsOnFailure, woundRemovalSeverity,
+  incomingDamageTags = [], incomingEnergy = "", incomingWounds, usingShield, shieldItem, incomingSeverity, incomingPoolDamage, conditionsOnFailure, woundRemovalSeverity,
   actionContext, defenseRecipient = actor, takeCooldownId = null, specialistRequired = false }) {
   const attack = isAttack && targetActor?.type === "npc"
-    ? await applyAttackConsequences(targetActor, { success, totalDamage, armorBypass, weaponTargetEffects, weaponSource, actionContext })
+    ? await applyAttackConsequences(targetActor, { success, totalDamage, armorBypass, weaponTargetEffects, weaponSource, actionContext, incomingEnergy, incomingDamageTags })
     : isAttack && targetActor?.type === "object"
       ? await applyObjectConsequences(targetActor, objectPlan, success, totalDamage) : { targetDamage: 0 };
 
   const defense = defenseType ? await applyDefenseConsequences(defenseRecipient, { defenseType, success: defenseRecipient !== actor ? false : success,
-    incomingDamageTags, applyIncomingWound, incomingWounds, usingShield, shieldItem, incomingSeverity, incomingPoolDamage,
+    incomingDamageTags, incomingEnergy, applyIncomingWound, incomingWounds, usingShield, shieldItem, incomingSeverity, incomingPoolDamage,
     conditionsOnFailure, additionalMinorWound: defenseRecipient !== actor, specialistRequired, actionContext }) : {};
   if (takeCooldownId) defense.defenseConsequences.effects.push(takeCooldownId);
   if (defenseRecipient !== actor) defense.defenseConsequences.success = success;

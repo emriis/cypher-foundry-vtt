@@ -1,5 +1,6 @@
 import { speciesDamageReduction } from "./species-benefit-service.mjs";
 import { companionFieldReduction } from "./companion-upgrade-read.mjs";
+import { protectionWoundReduction } from "./protection-power-read.mjs";
 /** Persist defense consequences and reconcile a failed defense once its reroll succeeds. */
 import { CYPHER } from "../config.mjs";
 import { planDefenseCorrection } from "../rules/defense-correction.mjs";
@@ -23,34 +24,35 @@ const woundRevisions = actor => Object.fromEntries(CYPHER.woundSeverities.map(se
  * @returns {Promise<object>} Recorded contribution, absorption count and Pool damage.
  */
 export async function applyDefenseConsequences(actor, { defenseType, success, applyIncomingWound,
-  incomingDamageTags = [], incomingSeverity, incomingWounds, usingShield, shieldItem, incomingPoolDamage = null,
+  incomingDamageTags = [], incomingEnergy = "", incomingSeverity, incomingWounds, usingShield, shieldItem, incomingPoolDamage = null,
   conditionsOnFailure = [], additionalMinorWound = false, specialistRequired = false, actionContext,
-  fieldReduction = companionFieldReduction(actor) }) {
+  fieldReduction = companionFieldReduction(actor), elementalReduction = protectionWoundReduction(actor, incomingEnergy, incomingDamageTags) }) {
   const before = woundCounts(actor);
   const revisions = woundRevisions(actor);
   const pool = incomingPoolDamage ? resolveStat(actor.system, incomingPoolDamage.stat) : null;
   const poolRevision = incomingPoolDamage ? defenseRevision(actor, `pool_${incomingPoolDamage.stat}`) : null;
   let shieldWoundsAbsorbed = 0, defensePoolDamage = 0;
   if (!success && incomingPoolDamage) {
-    defensePoolDamage = await applyDamage(actor, incomingPoolDamage.amount, { stat: incomingPoolDamage.stat, fieldReduction });
+    defensePoolDamage = await applyDamage(actor, incomingPoolDamage.amount, { stat: incomingPoolDamage.stat, fieldReduction,
+      elementalReduction: elementalReduction + speciesDamageReduction(actor, incomingDamageTags) });
   }
   if (applyIncomingWound) {
     let severity = success ? defenseType === "block" ? reduceWound(incomingSeverity) : null : incomingSeverity;
-    for (let step = 0; severity && step < speciesDamageReduction(actor, incomingDamageTags) + fieldReduction; step++) severity = reduceWound(severity);
+    for (let step = 0; severity && step < speciesDamageReduction(actor, incomingDamageTags) + fieldReduction + elementalReduction; step++) severity = reduceWound(severity);
     for (let index = 0; index < incomingWounds; index++) {
       if (success && defenseType === "block" && usingShield
         && await shieldAbsorbWound(actor, shieldItem, incomingSeverity, actionContext)) shieldWoundsAbsorbed++;
       else if (severity) await addWound(actor, severity, { fieldReduction: 0 });
     }
   }
-  if (additionalMinorWound) await addWound(actor, "minor", { fieldReduction });
+  if (additionalMinorWound) await addWound(actor, "minor", { fieldReduction: fieldReduction + elementalReduction + speciesDamageReduction(actor, incomingDamageTags) });
   const effects = !success ? conditionsOnFailure.map(effect => ({ ...effect, id: foundry.utils.randomID() })) : [];
   const after = woundCounts(actor);
   if (!success && specialistRequired) effects.push({ id: foundry.utils.randomID(), kind: "restrictedDamage",
     wounds: Object.fromEntries(CYPHER.woundSeverities.map(severity => [severity, Math.max(0, after[severity] - before[severity])])),
     pool: defensePoolDamage > 0 ? { stat: incomingPoolDamage.stat, amount: defensePoolDamage } : null });
   if (effects.length) await actor.update({ "flags.cypher.generalEffects": [...getGeneralEffects(actor), ...effects] });
-  const contribution = { version: 1, state: "applied", success, fieldReduction,
+  const contribution = { version: 1, state: "applied", success, fieldReduction, elementalReduction,
     ...(actor.uuid ? { recipientUuid: actor.uuid } : {}),
     wounds: Object.fromEntries(CYPHER.woundSeverities.map(severity => [severity, Math.max(0, after[severity] - before[severity])])),
     revisions, effects: effects.map(effect => effect.id),
@@ -116,7 +118,8 @@ export async function reconcileDefenseConsequences(actor, flags, outcome, checkp
     usingShield: canShieldAbsorbWound(shield), shieldItem: shield, actionContext,
     // A failed Take attack hit another PC; a successful Block can return its
     // residual wound to the original defender, whose protection was different.
-    fieldReduction: recipient === actor ? contribution.fieldReduction ?? 0 : flags.incomingFieldReduction ?? 0 });
+    fieldReduction: recipient === actor ? contribution.fieldReduction ?? 0 : flags.incomingFieldReduction ?? 0,
+    elementalReduction: recipient === actor ? contribution.elementalReduction ?? 0 : flags.incomingElementalReduction ?? 0 });
   return { ...applied, defenseConsequences: { ...applied.defenseConsequences, state: "corrected" },
     defenseNote: "CYPHER.XP.DefenseCorrectionApplied" };
 }
