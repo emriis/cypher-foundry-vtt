@@ -9,6 +9,7 @@ import { SHIELD_ABILITY_KEYS } from "../rules/shield-abilities.mjs";
 import { resolveGeneralModifiers } from "../rules/general-effects.mjs";
 import { getGeneralEffects } from "./general-effect-service.mjs";
 import { temporaryNpcVisible } from "./temporary-follower-read.mjs";
+import { protectionBlockPlan } from "./protection-power-read.mjs";
 
 /**
  * Read the source-key Ability and its explicitly chosen Pool, never its name.
@@ -35,12 +36,18 @@ export function prepareTask(actor, { stat, difficulty, effortLevels, assetSteps,
   extraHinderSteps, extraEaseSteps, luckyShot, spentAbilityEdge, defenseType, armorModifier, targetActor,
   isAttack, baseDamage, damageEffortLevels, freeEffortLevels, freeDamageEffortLevels, freeEffortSource,
   areaAttack, push, pushDamageEffortLevels, powerShiftCategories, abilitySource,
-  effectEffortLevels = 0, activationCost = 0, noPhysicalMovement = false, attackForm = null, automaticFailure = false, conditionalSkillSteps = null }) {
+  effectEffortLevels = 0, activationCost = 0, noPhysicalMovement = false, attackForm = null, automaticFailure = false, conditionalSkillSteps = null, mageArmor = false }) {
   if (actor.type !== "pc") {
     ui.notifications.warn(game.i18n.localize("CYPHER.Warning.NotPC"));
     return null;
   }
   if (targetActor && !temporaryNpcVisible(targetActor)) return invalidTask();
+  if (mageArmor && (defenseType !== "block" || stat !== "intellect")) return invalidTask();
+  if (defenseType === "block") {
+    const protection = protectionBlockPlan(actor, mageArmor);
+    if (!protection) return invalidTask();
+    extraEaseSteps += protection.ease;
+  }
   if (actor.isOwner === false || targetActor?.isOwner === false) {
     ui.notifications.warn(game.i18n.localize("CYPHER.Warning.ActionPermission"));
     return null;

@@ -5,6 +5,7 @@ import { runActorActions } from "./action-guard.mjs";
 import { resolveActiveAbilityModifiers } from "../rules/ability-modifiers.mjs";
 import { retainerHealthDamage } from "../rules/companion-powers.mjs";
 import { companionNpcProtection } from "./companion-upgrade-read.mjs";
+import { protectionNpcReduction } from "./protection-power-read.mjs";
 import { resolveGeneralModifiers } from "../rules/general-effects.mjs";
 import { getGeneralEffects } from "./general-effect-service.mjs";
 import { roundActionContext, consumeRoundAction } from "./round-action-service.mjs";
@@ -115,7 +116,7 @@ export async function interceptRetainer(actor, id, options = {}, context = null)
   return Boolean(await runActorActions([actor, options.attacker], "retainerRequest", parent => executeRetainerInterception(actor, id, options, parent), context));
 }
 
-async function executeRetainerInterception(actor, id, { attacker, amount, ignoresArmor = 0, confirmed = false, actionTiming = null } = {}, context) {
+async function executeRetainerInterception(actor, id, { attacker, amount, ignoresArmor = 0, confirmed = false, actionTiming = null, incomingEnergy = "" } = {}, context) {
   if (!owned(actor) || !electedGM() || confirmed !== true || attacker?.type !== "npc" || attacker.isOwner === false
     || ["unconscious", "dead"].some(status => actor.statuses?.has(status))
     || resolveGeneralModifiers(getGeneralEffects(actor), [], { isDefense: true, noPhysicalMovement: true }).rejected
@@ -124,7 +125,7 @@ async function executeRetainerInterception(actor, id, { attacker, amount, ignore
   if (!resolved || !(await retainerChoices(actor)).some(choice => choice.id === id)) return false;
   const { npc } = resolved;
   const baseDamage = retainerHealthDamage(amount, npc.system.armor ?? 0, ignoresArmor);
-  const damage = baseDamage === null ? null : Math.max(0, baseDamage - companionNpcProtection(npc));
+  const damage = baseDamage === null ? null : Math.max(0, baseDamage - companionNpcProtection(npc) - protectionNpcReduction(npc, incomingEnergy));
   const stat = actor.system.stats?.intellect;
   const edge = stat?.edge ?? 0;
   const modifiers = resolveActiveAbilityModifiers(actor.system.activeAbilityEffects, items(actor), actor.system);

@@ -1,0 +1,15 @@
+{{#if protection.visible}}
+<section class="pc-section">
+  <h2>{{localize "CYPHER.Protection.title"}}</h2>
+  {{#if followerCanManage}}
+    {{#each protection.choices as |choice|}}<button type="button" data-action="promptProtection" data-item-id="{{choice.id}}">{{choice.name}}</button>{{/each}}
+    {{#each protection.pending as |use|}}<p>{{localize "CYPHER.Protection.pending"}}
+      <button type="button" data-action="resumeProtectionAction" data-protection-id="{{use.id}}">{{localize "CYPHER.Protection.resume"}}</button>
+      <button type="button" data-action="abandonProtectionAction" data-protection-id="{{use.id}}">{{localize "CYPHER.Protection.abandon"}}</button></p>{{/each}}
+    {{#each protection.outgoing as |recipient|}}<p>{{recipient.name}} · {{recipient.energy}}
+      {{#if recipient.npc}}<button type="button" data-action="npcProtectionRest" data-recipient-uuid="{{recipient.uuid}}">{{localize "CYPHER.Protection.npcRest"}}</button>{{/if}}</p>{{/each}}
+  {{/if}}
+  {{#each protection.received as |effect|}}<p>{{effect.name}} {{effect.energy}}
+    <button type="button" data-action="endProtectionAction" data-protection-id="{{effect.id}}">{{localize "CYPHER.Protection.end"}}</button></p>{{/each}}
+</section>
+{{/if}}

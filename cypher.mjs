@@ -7,6 +7,8 @@ import * as companionSupportService from "./module/applications/companion-suppor
 import * as temporaryFollowerService from "./module/applications/temporary-follower-service.mjs";
 import * as temporaryMachineService from "./module/applications/temporary-machine-service.mjs";
 import * as commandPowerService from "./module/applications/command-power-service.mjs";
+import * as protectionPowerService from "./module/applications/protection-power-service.mjs";
+import { refreshProtectionSheets } from "./module/sheets/protection-power-dialogs.mjs";
 import { stampTeamUpInjury } from "./module/applications/command-power-read.mjs";
 import { stampTemporaryDeath, queueTemporaryDeath } from "./module/applications/temporary-death-service.mjs";
 import { refreshTemporaryPresentation, advanceTemporaryReboots } from "./module/sheets/temporary-follower-dialogs.mjs";
@@ -59,6 +61,7 @@ Hooks.on("preUpdateActor", stampDefenseRevisions);
 Hooks.on("preUpdateActor", stampTemporaryDeath);
 Hooks.on("preUpdateActor", stampTeamUpInjury);
 Hooks.on("updateActor", queueTemporaryDeath);
+Hooks.on("updateActor", refreshProtectionSheets);
 Hooks.on("updateActor", refreshTemporaryPresentation);
 Hooks.on("updateWorldTime", refreshTemporaryPresentation);
 Hooks.on("updateCombat", advanceTemporaryReboots);
@@ -91,6 +94,7 @@ Hooks.once("init", () => {
   CONFIG.CYPHER = CYPHER;
   game.cypher.temporaryFollowers = { ...temporaryFollowerService, ...temporaryMachineService };
   game.cypher.commands = commandPowerService;
+  game.cypher.protections = protectionPowerService;
   Object.assign(game.cypher.companions, companionUpgradeService, companionUpgradeRead, companionTurretService);
   CONFIG.Token.objectClass = createCompanionTokenClass(CONFIG.Token.objectClass);
 

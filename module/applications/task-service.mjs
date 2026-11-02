@@ -27,6 +27,8 @@ import { persistInitiative, resolveInitiativeOwner, initiativeMessageOptions } f
 import { cooperativeTaskPlan, consumeCooperationUpdate } from "./cooperative-service.mjs";
 import { applyRuleEffect, validateRuleEffect } from "./rule-effect-consequence.mjs";
 import { commandTaskUpdates } from "./command-effect-service.mjs";
+import { protectionBlockPlan, protectionWoundReduction } from "./protection-power-read.mjs";
+import { protectionEnergy } from "../rules/protection-powers.mjs";
 import { getGeneralEffects, nextSourceTurn } from "./general-effect-service.mjs";
 import { specialDamageLimits } from "./special-damage-healing.mjs";
 import { blockStillHits, CONDITION_KINDS } from "../rules/general-effects.mjs";
@@ -53,6 +55,7 @@ export async function rollDefense(
     applyIncomingWound = true,
     shieldItemId = null,
     skillItemId = null,
+    mageArmor = false,
     ...taskOptions
   } = {}
 ) {
@@ -62,10 +65,12 @@ export async function rollDefense(
     defenseType,
     actor.system.armor
   );
+  const block = defenseType === "block" ? protectionBlockPlan(actor, mageArmor) : null;
+  if (mageArmor && !block) return null;
 
   const result = await rollTask(actor, {
     ...taskOptions,
-    stat,
+    stat: defenseType === "block" && mageArmor ? block.stat : stat,
     difficulty,
     effortLevels,
     assetSteps,
@@ -76,6 +81,7 @@ export async function rollDefense(
     incomingWounds,
     applyIncomingWound,
     shieldItemId,
+    mageArmor,
     flavor: game.i18n.localize(
       defenseType === "block"
         ? "CYPHER.Defense.Block"
@@ -86,7 +92,7 @@ export async function rollDefense(
   if (!result) return null;
   return {
     ...result,
-    stat,
+    stat: defenseType === "block" && mageArmor ? block.stat : stat,
     armorModifier,
     defenseType,
     incomingSeverity
@@ -134,7 +140,7 @@ async function executeTask(actor, {
   weaponRangeAdjudication = null, abilitySource = null, spentAbilityEdge = 0,
   effectEffortLevels = 0, activationCost = 0, shieldReturn = null, initiative = null,
   defenseType = null, incomingSeverity = "minor", armorModifier = 0, shieldItemId = null,
-  incomingPoolDamage = null, incomingDamageTags = [],
+  incomingPoolDamage = null, incomingDamageTags = [], incomingEnergy = "", mageArmor = false,
   targetActor = null, armorBypass = 0, incomingWounds = 1,
   applyIncomingWound = true, woundRemovalSeverity = null,
   damageEffortLevels = 0, freeEffortLevels = 0, freeDamageEffortLevels = 0, freeEffortSource = "",
@@ -168,7 +174,8 @@ async function executeTask(actor, {
   if (defenseType && (!["block", "dodge", "might", "speed", "intellect"].includes(defenseType)
     || !["minor", "moderate", "major"].includes(incomingSeverity)
     || !Number.isSafeInteger(incomingWounds) || incomingWounds < 1)) return null;
-  if (!Array.isArray(incomingDamageTags) || incomingDamageTags.some(tag => !["falling", "fire", "heat", "cold", "ice"].includes(tag))) return null;
+  if (!Array.isArray(incomingDamageTags) || incomingDamageTags.some(tag => !["falling", "fire", "heat", "cold", "ice", "electricity"].includes(tag))
+    || protectionEnergy(incomingEnergy, incomingDamageTags) === null) return null;
   if (!Array.isArray(conditionsOnFailure) || automaticFailure && !defenseType) return null;
   if (cooperativeMode === "take" && !takeAttackActor) return null;
   if (conditionsOnFailure.length && (!defenseType || conditionsOnFailure.some(effect =>
@@ -221,7 +228,7 @@ async function executeTask(actor, {
     extraHinderSteps, extraEaseSteps, luckyShot, spentAbilityEdge, defenseType, armorModifier, targetActor,
     isAttack, baseDamage, damageEffortLevels, freeEffortLevels, freeDamageEffortLevels, freeEffortSource,
     areaAttack, push, pushDamageEffortLevels, powerShiftCategories, abilitySource, effectEffortLevels, activationCost,
-    noPhysicalMovement, attackForm, automaticFailure, conditionalSkillSteps: species.skillSteps });
+    noPhysicalMovement, attackForm, automaticFailure, conditionalSkillSteps: species.skillSteps, mageArmor });
   if (!prepared) return null;
   const roundContext = roundActionOwner ? roundActionContext(roundActionOwner, { isAttack: true, actionTiming })
     : roundActionContext(actor, { isAttack, weaponSource, abilitySource, defenseType,
@@ -298,9 +305,10 @@ async function executeTask(actor, {
   // instead of reducing it by one step on the character.
   const usingShield = defenseType === "block" && canShieldAbsorbWound(shieldItem);
   const incomingFieldReduction = companionFieldReduction(actor);
+  const incomingElementalReduction = protectionWoundReduction(actor, incomingEnergy, incomingDamageTags);
 
   const takeOnSuccessfulBlock = Boolean(takeAttackActor && blockStillHits({ defenseType, applyIncomingWound,
-    incomingSeverity, incomingWounds, personalWoundReduction: speciesDamageReduction(actor, incomingDamageTags) + incomingFieldReduction, shieldWounds: usingShield ? resolveShieldWoundTrack(shieldItem.system.wounds,
+    incomingSeverity, incomingWounds, personalWoundReduction: speciesDamageReduction(actor, incomingDamageTags) + incomingFieldReduction + incomingElementalReduction, shieldWounds: usingShield ? resolveShieldWoundTrack(shieldItem.system.wounds,
       actor.system.activeAbilityEffects, shieldOwnerItems(shieldItem), actor.system) : null,
     survivesMajor: usingShield && shieldSurvivesMajor(shieldItem, shieldOwnerItems(shieldItem)) }));
   const defenseRecipient = takeAttackActor && (!success || takeOnSuccessfulBlock) ? takeAttackActor : actor;
@@ -310,7 +318,7 @@ async function executeTask(actor, {
   ] });
   const { targetDamage, attackConsequences, objectConsequences, woundRemovalApplied, shieldWoundsAbsorbed, defenseConsequences, defensePoolDamage } = await applyTaskConsequences(actor, { objectPlan, isAttack, success, targetActor,
     totalDamage, armorBypass, weaponTargetEffects, weaponSource, defenseType,
-    incomingDamageTags, applyIncomingWound, incomingWounds, usingShield, shieldItem, incomingSeverity, incomingPoolDamage,
+    incomingDamageTags, incomingEnergy, applyIncomingWound, incomingWounds, usingShield, shieldItem, incomingSeverity, incomingPoolDamage,
     conditionsOnFailure, woundRemovalSeverity, actionContext, defenseRecipient, takeCooldownId, specialistRequired });
   if (ruleEffect) ruleEffect = await applyRuleEffect(targetActor, ruleEffect, success, actionContext);
   if (success && shieldReturn) {
@@ -364,7 +372,7 @@ async function executeTask(actor, {
         ...(initiative ? { initiative } : {}),
         ...(shieldReturn ? { shieldReturn: { ...shieldReturn, applied: success } } : {}),
         ...(defenseType ? { defenseType, shieldItemId, shieldWoundsAbsorbed, incomingWounds, incomingSeverity,
-          incomingDamageTags, applyIncomingWound, incomingPoolDamage, incomingFieldReduction, conditionsOnFailure, defenseConsequences } : {}),
+          incomingDamageTags, incomingEnergy, mageArmor, applyIncomingWound, incomingPoolDamage, incomingFieldReduction, incomingElementalReduction, conditionsOnFailure, defenseConsequences } : {}),
         ...(woundRemovalSeverity ? { woundRemoval: {
           targetUuid: targetActor.uuid, severity: woundRemovalSeverity, applied: woundRemovalApplied
         } } : {}),

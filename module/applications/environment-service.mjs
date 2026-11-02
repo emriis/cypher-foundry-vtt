@@ -9,6 +9,7 @@ import { applyDefenseConsequences } from "./defense-consequence-service.mjs";
 import { prepareTask } from "./task-preparation.mjs";
 import { cooperativeTaskPlan } from "./cooperative-service.mjs";
 import { resolveStat } from "../rules/stats.mjs";
+import { protectionWoundReduction } from "./protection-power-read.mjs";
 
 const path = "flags.cypher.environmentalExposures";
 const ownedPC = actor => actor?.type === "pc" && typeof actor.uuid === "string" && actor.isOwner !== false;
@@ -88,7 +89,8 @@ export async function resolveEnvironmentalExposure(actor, id, options = {}) {
     // Preview personal resistance for complete protection without reducing the
     // packet twice: actual consequence writes still receive its original severity.
     let personalSeverity = effects.severity;
-    for (let step = 0; personalSeverity && step < speciesDamageReduction(actor, profile.damageTags ?? []); step++) personalSeverity = reduceWoundSeverity(personalSeverity);
+    for (let step = 0; personalSeverity && step < speciesDamageReduction(actor, profile.damageTags ?? [])
+      + protectionWoundReduction(actor, profile.incomingEnergy ?? "", profile.damageTags ?? []); step++) personalSeverity = reduceWoundSeverity(personalSeverity);
     const protectedFromAll = !personalSeverity && !effects.poolDamage && !effects.conditions.length;
     const choices = Object.fromEntries(choiceKeys.filter(key => key in options).map(key => [key, options[key]]));
     if (effects.poolDamage && !resolveStat(actor.system, effects.poolDamage.stat)
@@ -100,14 +102,14 @@ export async function resolveEnvironmentalExposure(actor, id, options = {}) {
       const source = { id, sequence: entry.sequence, name: profile.name };
       if (profile.mode === "defense" && !protectedFromAll) {
         result = await rollDefense(actor, profile.stat, { ...choices, difficulty: profile.difficulty,
-          incomingDamageTags: profile.damageTags ?? [], incomingSeverity: effects.severity ?? "minor", incomingWounds: effects.wounds,
+          incomingDamageTags: profile.damageTags ?? [], incomingEnergy: profile.incomingEnergy ?? "", incomingSeverity: effects.severity ?? "minor", incomingWounds: effects.wounds,
           applyIncomingWound: effects.severity !== null, incomingPoolDamage: effects.poolDamage,
           conditionsOnFailure: effects.conditions, noPhysicalMovement: profile.noPhysicalMovement,
           environmentalSource: source, shieldItemId: null, isAttack: false, [ACTION_CONTEXT]: context });
         if (!result) { await saveExposure(actor, entry); return null; }
       } else {
         const applied = await applyDefenseConsequences(actor, { defenseType: profile.stat ?? "might", success: false,
-          incomingDamageTags: profile.damageTags ?? [], incomingSeverity: effects.severity ?? "minor", incomingWounds: effects.wounds,
+          incomingDamageTags: profile.damageTags ?? [], incomingEnergy: profile.incomingEnergy ?? "", incomingSeverity: effects.severity ?? "minor", incomingWounds: effects.wounds,
           applyIncomingWound: effects.severity !== null, incomingPoolDamage: effects.poolDamage,
           conditionsOnFailure: effects.conditions, usingShield: false, actionContext: context });
         const escape = value => foundry.utils.escapeHTML(String(value));

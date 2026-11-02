@@ -1,5 +1,7 @@
 import { speciesBenefitDisplay } from "../applications/species-benefit-service.mjs";
 import { commandDisplay } from "../applications/command-power-read.mjs";
+import { protectionDisplay } from "../applications/protection-power-read.mjs";
+import { promptProtection, resumeProtectionAction, abandonProtectionAction, endProtectionAction, npcProtectionRest } from "./protection-power-dialogs.mjs";
 import { promptCommandPower, promptCommandAction } from "./command-power-dialogs.mjs";
 import { promptSpeciesBenefit } from "./species-benefit-dialogs.mjs";
 import { followerDisplay } from "../applications/follower-service.mjs";
@@ -77,6 +79,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     // the handler below, binding `this` to the sheet, even for static handlers.
     actions: {
       promptCommandPower, promptCommandAction,
+      promptProtection, resumeProtectionAction, abandonProtectionAction, endProtectionAction, npcProtectionRest,
       promptTemporaryFollower, resumeTemporaryFollower, abandonTemporaryFollower, dismissTemporaryInstance, promptTemporaryMode, promptTemporaryReboot, settleTemporaryDeaths, openTemporaryFollower,
       promptProject, promptResourceAward, promptBefriendPenalty,
       prepareBenefit: promptSpeciesBenefit, finishBenefit: promptSpeciesBenefit, chooseBenefitEnergy: promptSpeciesBenefit,
@@ -148,6 +151,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
         "systems/cypher/templates/actor/parts/species-benefits.hbs",
         "systems/cypher/templates/actor/parts/general-actions.hbs",
         "systems/cypher/templates/actor/parts/environment.hbs",
+        "systems/cypher/templates/actor/parts/protections.hbs",
         "systems/cypher/templates/actor/parts/equipment-hands.hbs"
       ],
       scrollable: [".pc-dashboard"]
@@ -195,6 +199,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     context.companion = await companionContext(this.actor);
     context.temporary = temporaryDisplay(this.actor);
     context.commands = commandDisplay(this.actor);
+    context.protection = protectionDisplay(this.actor);
     context.companionSupport = companionSupportDisplay(this.actor);
     context.companionUpgrades = companionUpgradeDisplay(this.actor);
     context.cypherInventory = cypherInventoryDisplay(this.actor);

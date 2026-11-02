@@ -1,6 +1,7 @@
 /** Declared environmental profiles; CRD Special Damage (7815–7823), with GM adjudication. */
 import { CONDITION_KINDS } from "./general-effects.mjs";
 import { reduceWoundSeverity } from "./wounds.mjs";
+import { protectionEnergy } from "./protection-powers.mjs";
 
 /**
  * Validate and copy a GM declaration, never deriving mechanics from its name.
@@ -11,7 +12,7 @@ export function normalizeEnvironmentalProfile(input) {
   if (!input || typeof input.name !== "string" || !input.name.trim()
     || !["immediate", "defense"].includes(input.mode)) return null;
   const { mode, stat = null, difficulty = null, severity = null, wounds = 1, poolDamage = null,
-    damageTags = [], conditions = [], intervalSeconds = null, noPhysicalMovement = false, protection = {} } = input;
+    damageTags = [], incomingEnergy = "", conditions = [], intervalSeconds = null, noPhysicalMovement = false, protection = {} } = input;
   if (mode === "defense" && (!["might", "speed", "intellect"].includes(stat)
     || !Number.isSafeInteger(difficulty) || difficulty < 0 || difficulty > 15)) return null;
   if (severity !== null && !["minor", "moderate", "major"].includes(severity)
@@ -19,7 +20,8 @@ export function normalizeEnvironmentalProfile(input) {
     || intervalSeconds !== null && (!Number.isSafeInteger(intervalSeconds) || intervalSeconds < 1)) return null;
   if (poolDamage !== null && (!poolDamage || !["might", "speed", "intellect"].includes(poolDamage.stat)
     || !Number.isSafeInteger(poolDamage.amount) || poolDamage.amount < 1)) return null;
-  if (!Array.isArray(damageTags) || damageTags.some(tag => !["falling", "fire", "heat", "cold", "ice"].includes(tag))) return null;
+  if (!Array.isArray(damageTags) || damageTags.some(tag => !["falling", "fire", "heat", "cold", "ice", "electricity"].includes(tag))
+    || protectionEnergy(incomingEnergy, damageTags) === null) return null;
   if (!Array.isArray(conditions) || conditions.some(effect => !effect || !CONDITION_KINDS.includes(effect.kind)
     || !Number.isSafeInteger(effect.steps ?? 1) || (effect.steps ?? 1) < 1)) return null;
   if (!severity && !poolDamage && !conditions.length || !protection || typeof protection !== "object") return null;
@@ -32,6 +34,7 @@ export function normalizeEnvironmentalProfile(input) {
     difficulty: mode === "defense" ? difficulty : null, severity, wounds,
     poolDamage: poolDamage ? { stat: poolDamage.stat, amount: poolDamage.amount } : null,
     ...(damageTags.length ? { damageTags: [...new Set(damageTags)] } : {}),
+    ...(incomingEnergy.trim() ? { incomingEnergy: protectionEnergy(incomingEnergy) } : {}),
     conditions: conditions.map(effect => ({ kind: effect.kind, steps: effect.steps ?? 1 })),
     intervalSeconds, noPhysicalMovement,
     protection: { source: source.trim(), woundReduction, poolReduction, immune } };

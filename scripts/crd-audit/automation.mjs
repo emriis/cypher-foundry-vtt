@@ -20,6 +20,10 @@ export function auditAutomation(document) {
   const implemented = [], gaps = [];
   switch (document.type) {
     case "ability":
+      if (["mage-armor", "armoring-debris", "elemental-protection"].includes(system.key)) {
+        implemented.push("protection-power services/PC sheet: paid activation, selected Intellect Block, source-bound Block easing, per-recipient recovery, typed wound/Health reduction and original-roll protection snapshots");
+        gaps.push("GM declares nearby debris, immediate recipients and energy; custom energy names are explicit mechanical declarations; NPC reduction of 3 damage per step is an accepted extrapolation from Automaton Force Field Upgrade");
+      }
       if (["soothe-the-savage", "lighting-a-fire-under-them", "team-up-ally"].includes(system.key)) {
         implemented.push("command-power services/PC sheet: non-damaging calm attack and recovery/maintenance, one-use next-action timing, fixed-level superhero ally binding, availability/charm outings and resource-project care");
         gaps.push("GM declares eligible beasts, range/speech/sight, allied disposition, outing availability, NPC power adaptation and several weeks of care; narrative maintenance requires explicit interruption; action ordering uses managed round flow");

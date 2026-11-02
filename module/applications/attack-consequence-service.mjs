@@ -4,6 +4,7 @@ import { companionNpcProtection } from "./companion-upgrade-read.mjs";
 import { temporaryDeathPatch, settleTemporaryDeath, temporaryDeathCorrection } from "./temporary-death-service.mjs";
 import { temporaryNpcLink } from "./temporary-follower-read.mjs";
 import { stampTeamUpInjury } from "./command-power-read.mjs";
+import { protectionNpcReduction } from "./protection-power-read.mjs";
 import { runActorActions } from "./action-guard.mjs";
 import { planAttackDamage } from "../rules/attack-consequences.mjs";
 import { applyNpcDamage, syncWoundStatusEffects } from "./damage-service.mjs";
@@ -16,9 +17,9 @@ import { applyWeaponTargetEffects, weaponEffectContext } from "./weapon-effect-s
  * @param {object} context Resolved success, numeric damage, bypass and weapon effects.
  * @returns {Promise<object>} Post-Armor damage and persisted Health/effect attribution.
  */
-export async function applyAttackConsequences(target, { success, totalDamage, armorBypass, weaponTargetEffects, weaponSource, actionContext = null }) {
+export async function applyAttackConsequences(target, { success, totalDamage, armorBypass, weaponTargetEffects, weaponSource, actionContext = null, incomingEnergy = "", incomingDamageTags = [] }) {
   const armor = target.system.armor ?? 0;
-  const protection = companionNpcProtection(target);
+  const protection = companionNpcProtection(target) + protectionNpcReduction(target, incomingEnergy, incomingDamageTags);
   const before = target.system.health?.value;
   const allyLink = target.flags?.cypher?.teamUpAlly;
   const injury = allyLink && !allyLink.injured ? { id: allyLink.id, ownerUuid: allyLink.ownerUuid } : null;

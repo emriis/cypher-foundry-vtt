@@ -4,6 +4,7 @@ import { followerDisplaySync } from "../applications/follower-service.mjs";
 import { getWeaponAbilityKind } from "../applications/weapon-ability-service.mjs";
 import { getSuperheroicsRank } from "../applications/task-preparation.mjs";
 import { getGeneralEffects } from "../applications/general-effect-service.mjs";
+import { protectionDefenseFields, protectionEnergyField } from "./protection-power-dialogs.mjs";
 
 /** Select the declared help that applies to this task, preserving unrelated future help. */
 export function helpChoiceFields(actor, isDefense = false) {
@@ -33,7 +34,7 @@ export function taskModifierFields(actor, { stat, isAttack = false, defenseType 
       && !(isAttack && ["dexterity", "intelligence", "resilience"].includes(key)));
   const followers = followerDisplaySync(actor).filter(entry => entry.canHelp && (!isAttack || entry.mode === "attack") && (!defenseType || entry.mode === "defense"));
   const followerFields = followers.length ? `<fieldset><legend>${game.i18n.localize("CYPHER.Follower.help")}</legend>${followers.map(entry => `<label>${foundry.utils.escapeHTML(entry.name)}<select name="follower-${entry.id}"><option value="base" selected>${game.i18n.localize("CYPHER.Follower.baseLevel")} (${entry.level})</option><option value="none">${game.i18n.localize("CYPHER.Follower.none")}</option>${entry.tasks.map(task => `<option value="${task.id}">${foundry.utils.escapeHTML(task.label)} (${task.level})</option>`).join("")}</select></label>`).join("")}</fieldset>` : "";
-  return `${speciesConditionFields(actor, { isAttack, defenseType })}${followerFields}${isAttack ? number("damageEffort", "DamageEffort") : ""}
+  return `${defenseType ? protectionDefenseFields(actor, { block: defenseType === "block" }) : isAttack ? protectionEnergyField() : ""}${speciesConditionFields(actor, { isAttack, defenseType })}${followerFields}${isAttack ? number("damageEffort", "DamageEffort") : ""}
     ${getGeneralEffects(actor).some(effect => effect.kind === "help" || defenseType && effect.kind === "defenseHelp") ? `
       <div class="form-group"><label>${game.i18n.localize("CYPHER.General.cooperation")}<select name="cooperativeMode">
       <option value="none">${game.i18n.localize("CYPHER.General.none")}</option>
@@ -78,6 +79,8 @@ export function readTaskModifiers(form) {
     ...(checked("noPhysicalMovement") ? { noPhysicalMovement: true } : {}),
     ...(form.attackForm?.value ? { attackForm: form.attackForm.value } : {}),
     ...(form.effectEffort ? { effectEffortLevels: checked("effectEffort") ? 1 : 0 } : {}),
+    ...(form.incomingEnergy ? { incomingEnergy: form.incomingEnergy.value } : {}),
+    ...(form.mageArmor ? { mageArmor: checked("mageArmor") } : {}),
     freeDamageEffortLevels: value("freeDamageEffort"), freeEffortSource: form.freeEffortSource?.value ?? "",
     extraEaseSteps: value("extraEase"), extraHinderSteps: value("extraHinder"), push: checked("push"),
     pushDamageEffortLevels: value("pushDamageEffort"),
