@@ -75,6 +75,7 @@ async function resolvePlan(actor, project) {
     target = await resolveDocumentReference(proposal.targetUuid, proposal.kind === "repairObject" ? "object" : "npc");
     if (!target || target.isOwner === false) return null;
     if (proposal.kind === "repairObject") {
+      if (target.flags?.cypher?.awesomeBarrier) return null;
       const state = objectDisplay(target);
       if (!["broken", "functional"].includes(state.status) || state.levelDamage === 0) return null;
       quoted.level = state.originalLevel;

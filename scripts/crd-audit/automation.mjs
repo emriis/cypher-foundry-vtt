@@ -20,6 +20,10 @@ export function auditAutomation(document) {
   const implemented = [], gaps = [];
   switch (document.type) {
     case "ability":
+      if (system.key === "awesome-force-field") {
+        implemented.push("force-field services/PC sheet: personal Intellect Block, attributable shattering, remaining Edge, retained-20 refund, next-turn suspension, paid level-six Object barriers and individually tracked NPC containment");
+        gaps.push("GM declares shape, range, placement, initial NPCs and crossings; no native Wall collision, inferred geometry or opposed PC containment; interrupted unknown capture results require GM adjudication");
+      }
       if (["mage-armor", "armoring-debris", "elemental-protection"].includes(system.key)) {
         implemented.push("protection-power services/PC sheet: paid activation, selected Intellect Block, source-bound Block easing, per-recipient recovery, typed wound/Health reduction and original-roll protection snapshots");
         gaps.push("GM declares nearby debris, immediate recipients and energy; custom energy names are explicit mechanical declarations; NPC reduction of 3 damage per step is an accepted extrapolation from Automaton Force Field Upgrade");

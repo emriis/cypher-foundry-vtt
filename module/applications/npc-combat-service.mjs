@@ -1,3 +1,4 @@
+import { awesomeCrossingBlocked } from "./awesome-field-read.mjs";
 import { followerCanAct } from "./follower-service.mjs";
 import { resolveTurretAttack } from "./companion-upgrade-read.mjs";
 import { interceptRetainer } from "./companion-support-service.mjs";
@@ -41,7 +42,7 @@ export async function rollNpcAttack(
     takeAttackActor = null, physicalAttack = true, attackForm = null, retainerId = null, retainerDamage = null,
     companionTurret = null, parentActionContext = null, ...taskOptions } = {}
 ) {
-  if (actor.type !== "npc" || actor.isOwner === false) return null;
+  if (actor.type !== "npc" || actor.isOwner === false || awesomeCrossingBlocked(taskOptions.awesomeCrossing)) return null;
 
   let selectedTarget = target
     ?? (game.user?.targets?.size === 1

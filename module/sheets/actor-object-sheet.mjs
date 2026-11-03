@@ -14,7 +14,8 @@ export default class CypherObjectSheet extends HandlebarsApplicationMixin(ActorS
 
   async _prepareContext(options) {
     return { ...await super._prepareContext(options), actor: this.actor, system: this.actor.system,
-      object: objectDisplay(this.actor), canConfigure: game.user.isGM && this.actor.isOwner };
+      object: objectDisplay(this.actor), canDamage: game.user.isGM && this.actor.isOwner && objectDisplay(this.actor).status !== "expired",
+      canConfigure: game.user.isGM && this.actor.isOwner && !this.actor.flags.cypher?.awesomeBarrier };
   }
 
   static async #damage() {

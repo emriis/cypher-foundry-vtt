@@ -1,6 +1,8 @@
 import { speciesDamageReduction } from "./species-benefit-service.mjs";
 import { companionFieldReduction } from "./companion-upgrade-read.mjs";
 import { protectionWoundReduction } from "./protection-power-read.mjs";
+import { maybeShatterAwesome } from "./awesome-personal-service.mjs";
+import { blockStillHits } from "../rules/general-effects.mjs";
 /** Persist defense consequences and reconcile a failed defense once its reroll succeeds. */
 import { CYPHER } from "../config.mjs";
 import { planDefenseCorrection } from "../rules/defense-correction.mjs";
@@ -26,7 +28,7 @@ const woundRevisions = actor => Object.fromEntries(CYPHER.woundSeverities.map(se
 export async function applyDefenseConsequences(actor, { defenseType, success, applyIncomingWound,
   incomingDamageTags = [], incomingEnergy = "", incomingSeverity, incomingWounds, usingShield, shieldItem, incomingPoolDamage = null,
   conditionsOnFailure = [], additionalMinorWound = false, specialistRequired = false, actionContext,
-  fieldReduction = companionFieldReduction(actor), elementalReduction = protectionWoundReduction(actor, incomingEnergy, incomingDamageTags) }) {
+  fieldReduction = companionFieldReduction(actor), elementalReduction = protectionWoundReduction(actor, incomingEnergy, incomingDamageTags), negatedWound = false }) {
   const before = woundCounts(actor);
   const revisions = woundRevisions(actor);
   const pool = incomingPoolDamage ? resolveStat(actor.system, incomingPoolDamage.stat) : null;
@@ -36,7 +38,7 @@ export async function applyDefenseConsequences(actor, { defenseType, success, ap
     defensePoolDamage = await applyDamage(actor, incomingPoolDamage.amount, { stat: incomingPoolDamage.stat, fieldReduction,
       elementalReduction: elementalReduction + speciesDamageReduction(actor, incomingDamageTags) });
   }
-  if (applyIncomingWound) {
+  if (applyIncomingWound && !negatedWound) {
     let severity = success ? defenseType === "block" ? reduceWound(incomingSeverity) : null : incomingSeverity;
     for (let step = 0; severity && step < speciesDamageReduction(actor, incomingDamageTags) + fieldReduction + elementalReduction; step++) severity = reduceWound(severity);
     for (let index = 0; index < incomingWounds; index++) {
@@ -66,7 +68,8 @@ export async function applyDefenseConsequences(actor, { defenseType, success, ap
 }
 
 /**
- * Correct only a failure that became a success. The caller has reserved the
+ * Correct a failure that became a success, or an attributable Awesome residual
+ * newly cancelled by shattering after a paid reroll. The caller has reserved the
  * actual defender and payer. A pending checkpoint is persisted before the first
  * consequence write, so a partial failure cannot remove the same wounds twice.
  * Missing history or intervening healing requires explicit GM reconciliation.
@@ -77,11 +80,15 @@ export async function applyDefenseConsequences(actor, { defenseType, success, ap
  * @param {object} actionContext Parent reroll reservation context.
  * @returns {Promise<object>} Updated contribution metadata and localized result-note key.
  */
-export async function reconcileDefenseConsequences(actor, flags, outcome, checkpoint, actionContext, recipient = actor) {
+export async function reconcileDefenseConsequences(actor, flags, outcome, checkpoint, actionContext, recipient = actor, { chooseFieldShatter = null } = {}) {
   const contribution = flags.defenseConsequences;
-  if (!outcome.success || contribution?.success === true || contribution?.state === "corrected") return {};
+  // A retained higher result may newly make shattering affordable (especially
+  // a 20), even when the earlier successful Block left its residual wound.
+  const residualAlreadyApplied = flags.awesomeBlock && !flags.awesomeBlock.shattered && contribution?.success === true
+    && ["applied", "corrected"].includes(contribution.state) && Object.values(contribution.wounds ?? {}).some(amount => amount > 0);
+  if (!outcome.success || !residualAlreadyApplied && (contribution?.success === true || contribution?.state === "corrected")) return {};
   if (!contribution && resolveTaskOutcome(flags).success) return {};
-  if (flags.takeOnSuccessfulBlock && contribution?.recipientUuid !== actor?.uuid) {
+  if (flags.takeOnSuccessfulBlock && contribution?.recipientUuid !== actor?.uuid && !flags.awesomeBlock) {
     // A successful Block still leaves a hit after reduction/overflow. The
     // declared interception therefore still applies in full, without replay.
     return { defenseConsequences: { ...contribution, success: true, state: "corrected" } };
@@ -98,12 +105,24 @@ export async function reconcileDefenseConsequences(actor, flags, outcome, checkp
   const pool = resolved ? { value: resolved.data.pool.value,
     max: resolved.data.pool.max + (modifiers.poolMax[contribution.pool.stat] ?? 0),
     revision: defenseRevision(recipient, `pool_${contribution.pool.stat}`), path: `${resolved.path}.pool.value` } : null;
-  const updates = planDefenseCorrection({ contribution, wounds: recipient.system.wounds, revisions: woundRevisions(recipient), pool });
+  // Reuse the same attribution check for this optional residual cancellation;
+  // never manufacture a new injury or remove an untracked healed wound.
+  const removable = residualAlreadyApplied ? { ...contribution, success: false, state: "applied" } : contribution;
+  const updates = planDefenseCorrection({ contribution: removable, wounds: recipient.system.wounds, revisions: woundRevisions(recipient), pool });
   if (!updates) return manual();
   const shield = flags.shieldItemId ? actor.items.get(flags.shieldItemId) : null;
   if (canShieldAbsorbWound(shield) && shield.isOwner === false) return manual();
 
   await checkpoint({ ...contribution, state: "pending" });
+  const awesomeBlock = await maybeShatterAwesome(actor, flags.awesomeBlock, { success: true, natural20: outcome.special?.refundsCost,
+    choose: chooseFieldShatter, context: actionContext, residual: !canShieldAbsorbWound(shield) && blockStillHits({
+      defenseType: flags.defenseType, applyIncomingWound: flags.applyIncomingWound, incomingSeverity: flags.incomingSeverity,
+      incomingWounds: flags.incomingWounds, personalWoundReduction: speciesDamageReduction(actor, flags.incomingDamageTags ?? [])
+        + (flags.incomingFieldReduction ?? 0) + (flags.incomingElementalReduction ?? 0) }) });
+  if (residualAlreadyApplied && !awesomeBlock?.shattered) return { defenseConsequences: contribution };
+  if (flags.takeOnSuccessfulBlock && recipient !== actor && !awesomeBlock?.shattered) {
+    return { defenseConsequences: { ...contribution, success: true, state: "corrected" } };
+  }
   if (Object.keys(updates).length) {
     // This removes a known contribution, not an arbitrary healed wound. Other
     // defense cards retain attribution; no saved historical totals are restored.
@@ -119,7 +138,8 @@ export async function reconcileDefenseConsequences(actor, flags, outcome, checkp
     // A failed Take attack hit another PC; a successful Block can return its
     // residual wound to the original defender, whose protection was different.
     fieldReduction: recipient === actor ? contribution.fieldReduction ?? 0 : flags.incomingFieldReduction ?? 0,
-    elementalReduction: recipient === actor ? contribution.elementalReduction ?? 0 : flags.incomingElementalReduction ?? 0 });
-  return { ...applied, defenseConsequences: { ...applied.defenseConsequences, state: "corrected" },
+    elementalReduction: recipient === actor ? contribution.elementalReduction ?? 0 : flags.incomingElementalReduction ?? 0,
+    negatedWound: awesomeBlock?.shattered === true });
+  return { ...applied, ...(awesomeBlock ? { awesomeBlock, effortCost: flags.effortCost + (awesomeBlock.shattered ? awesomeBlock.cost : 0) } : {}), defenseConsequences: { ...applied.defenseConsequences, state: "corrected" },
     defenseNote: "CYPHER.XP.DefenseCorrectionApplied" };
 }

@@ -1,3 +1,4 @@
+import { awesomeCrossingField } from "./awesome-field-dialogs.mjs";
 import { speciesConditionFields } from "./species-benefit-dialogs.mjs";
 import { followerDisplaySync } from "../applications/follower-service.mjs";
 /** Foundry dialogs collect player intent only; accepted services own all writes. */
@@ -41,7 +42,7 @@ export function taskModifierFields(actor, { stat, isAttack = false, defenseType 
       <option value="help">${game.i18n.localize("CYPHER.General.help")}</option></select></label>${helpChoiceFields(actor, Boolean(defenseType))}</div>` : ""}
     ${shieldEffect ? `<div class="form-group"><label><input type="checkbox" name="effectEffort"/>
       ${game.i18n.localize("CYPHER.ShieldAbility.EffectEffort")}</label></div>` : ""}
-    <details><summary>${label("ConditionalModifiers")}</summary>
+    <details><summary>${label("ConditionalModifiers")}</summary>${awesomeCrossingField()}
       ${!isAttack && !defenseType && !isRetry ? `<div class="form-group"><label><input name="minorActivity" type="checkbox"/>${game.i18n.localize("CYPHER.Round.Minor")}</label></div>` : ""}
       ${isAttack ? `<div class="form-group"><label><input name="immediateMovement" type="checkbox"/>${game.i18n.localize("CYPHER.Round.HeavyMovement")}</label></div>` : ""}
       <div class="form-group"><label><input name="noPhysicalMovement" type="checkbox"/>${game.i18n.localize("CYPHER.General.noPhysicalMovement")}</label></div>
@@ -81,6 +82,8 @@ export function readTaskModifiers(form) {
     ...(form.effectEffort ? { effectEffortLevels: checked("effectEffort") ? 1 : 0 } : {}),
     ...(form.incomingEnergy ? { incomingEnergy: form.incomingEnergy.value } : {}),
     ...(form.mageArmor ? { mageArmor: checked("mageArmor") } : {}),
+    ...(form.blockPower ? { mageArmor: form.blockPower.value === "mage", awesomeField: form.blockPower.value === "awesome" } : {}),
+    ...(form.awesomeCrossing ? { awesomeCrossing: form.awesomeCrossing.value || null } : {}),
     freeDamageEffortLevels: value("freeDamageEffort"), freeEffortSource: form.freeEffortSource?.value ?? "",
     extraEaseSteps: value("extraEase"), extraHinderSteps: value("extraHinder"), push: checked("push"),
     pushDamageEffortLevels: value("pushDamageEffort"),

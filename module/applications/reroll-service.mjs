@@ -22,6 +22,7 @@ import { isShieldBroken } from "../rules/wounds.mjs";
 import { shieldSurvivesMajor, shieldOwnerItems } from "../rules/shield-abilities.mjs";
 import { applyRuleEffect } from "./rule-effect-consequence.mjs";
 import { temporaryNpcLink } from "./temporary-follower-read.mjs";
+import { refundAwesomeCreation } from "./awesome-capture-effect.mjs";
 
 async function describeChoice(item, flags, value) {
   if (flags.rollType === "cypherVariant") {
@@ -44,7 +45,7 @@ async function describeChoice(item, flags, value) {
  * @param {object} [options={}] Result, special-effect and recovery allocation callbacks.
  * @returns {Promise<object|null>} Retained-result metadata, or null when rejected.
  */
-export async function rerollMessage(actor, message, { chooseResult = null, allocateRecovery = null, chooseSpecialEffect = null } = {}) {
+export async function rerollMessage(actor, message, { chooseResult = null, allocateRecovery = null, chooseSpecialEffect = null, chooseFieldShatter = null } = {}) {
   if (actor?.type !== "pc" || actor.isOwner === false || !message?.getFlag("cypher", "rerollable")) return null;
   return runActorAction(actor, "reroll", async context => {
     // Every new reroll card points to one original message. An older card can
@@ -68,6 +69,7 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
     if (flags.defenseConsequences?.recipientUuid && (!defenseRecipient || defenseRecipient.isOwner === false)) return null;
     const ruleTarget = flags.ruleEffect ? await resolveDocumentReference(flags.ruleEffect.targetUuid) : null;
     if (flags.ruleEffect && (!ruleTarget || ruleTarget.isOwner === false)) return null;
+    if (flags.ruleEffect?.effect?.kind === "awesomeCapture" && (sourceActor?.type !== "pc" || sourceActor.isOwner === false)) return null;
     const initiativeOwner = flags.initiative ? await resolveInitiativeOwner(flags.initiative, sourceActor, { reroll: true }) : null;
     if (flags.initiative && (!initiativeOwner || !Number.isSafeInteger(flags.initiative.steps))) return null;
     const attackUuid = flags.isAttack ? flags.objectConsequences?.targetUuid ?? flags.attackConsequences?.targetUuid : null;
@@ -189,6 +191,11 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
             metadata.ruleEffect = await applyRuleEffect(ruleTarget, flags.ruleEffect, true, context);
           }
         }
+        if (outcome.special.refundsCost && flags.ruleEffect?.effect?.kind === "awesomeCapture"
+          && !["pending", "manual"].includes(flags.ruleEffect.state)) {
+          await checkpointRule();
+          await refundAwesomeCreation(sourceActor, flags.ruleEffect.effect);
+        }
         if (flags.initiative) {
           if (flags.initiative.state === "pending" || flags.initiative.reason === "partial") {
             metadata.initiative = { ...flags.initiative, state: "manual", reason: "partial",
@@ -228,7 +235,7 @@ export async function rerollMessage(actor, message, { chooseResult = null, alloc
               // This original-card checkpoint survives a partial Actor/Item write.
               // A later card must never repeat a partially completed correction.
               await origin.update({ "flags.cypher": { ...metadata, defenseConsequences: pending } });
-            }, context, defenseRecipient);
+            }, context, defenseRecipient, { chooseFieldShatter });
           Object.assign(metadata, corrected);
         }
         if (outcome.success && flags.woundRemoval && !flags.woundRemoval.applied) {

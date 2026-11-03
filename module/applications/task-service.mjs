@@ -29,6 +29,10 @@ import { applyRuleEffect, validateRuleEffect } from "./rule-effect-consequence.m
 import { commandTaskUpdates } from "./command-effect-service.mjs";
 import { protectionBlockPlan, protectionWoundReduction } from "./protection-power-read.mjs";
 import { protectionEnergy } from "../rules/protection-powers.mjs";
+import { awesomeBlockSnapshot, maybeShatterAwesome } from "./awesome-personal-service.mjs";
+import { refundAwesomeCreation } from "./awesome-capture-effect.mjs";
+import { awesomeCrossingBlocked } from "./awesome-field-read.mjs";
+import { computeEffortCost } from "../rules/tasks.mjs";
 import { getGeneralEffects, nextSourceTurn } from "./general-effect-service.mjs";
 import { specialDamageLimits } from "./special-damage-healing.mjs";
 import { blockStillHits, CONDITION_KINDS } from "../rules/general-effects.mjs";
@@ -56,6 +60,7 @@ export async function rollDefense(
     shieldItemId = null,
     skillItemId = null,
     mageArmor = false,
+    awesomeField = false,
     ...taskOptions
   } = {}
 ) {
@@ -65,12 +70,12 @@ export async function rollDefense(
     defenseType,
     actor.system.armor
   );
-  const block = defenseType === "block" ? protectionBlockPlan(actor, mageArmor) : null;
-  if (mageArmor && !block) return null;
+  const block = defenseType === "block" ? protectionBlockPlan(actor, mageArmor, awesomeField) : null;
+  if ((mageArmor || awesomeField) && !block || awesomeField && incomingWounds !== 1) return null;
 
   const result = await rollTask(actor, {
     ...taskOptions,
-    stat: defenseType === "block" && mageArmor ? block.stat : stat,
+    stat: defenseType === "block" && (mageArmor || awesomeField) ? block.stat : stat,
     difficulty,
     effortLevels,
     assetSteps,
@@ -82,6 +87,7 @@ export async function rollDefense(
     applyIncomingWound,
     shieldItemId,
     mageArmor,
+    awesomeField,
     flavor: game.i18n.localize(
       defenseType === "block"
         ? "CYPHER.Defense.Block"
@@ -92,7 +98,7 @@ export async function rollDefense(
   if (!result) return null;
   return {
     ...result,
-    stat: defenseType === "block" && mageArmor ? block.stat : stat,
+    stat: defenseType === "block" && (mageArmor || awesomeField) ? block.stat : stat,
     armorModifier,
     defenseType,
     incomingSeverity
@@ -138,9 +144,9 @@ async function executeTask(actor, {
   extraHinderSteps = 0, extraEaseSteps = 0, luckyShot = false,
   specialEffectChoice = null, weaponTargetEffects = [], weaponSource = {},
   weaponRangeAdjudication = null, abilitySource = null, spentAbilityEdge = 0,
-  effectEffortLevels = 0, activationCost = 0, shieldReturn = null, initiative = null,
+  effectEffortLevels = 0, activationCost = 0, previousPaidLevels = 0, awesomeCrossing = null, shieldReturn = null, initiative = null,
   defenseType = null, incomingSeverity = "minor", armorModifier = 0, shieldItemId = null,
-  incomingPoolDamage = null, incomingDamageTags = [], incomingEnergy = "", mageArmor = false,
+  incomingPoolDamage = null, incomingDamageTags = [], incomingEnergy = "", mageArmor = false, awesomeField = false, chooseFieldShatter = null,
   targetActor = null, armorBypass = 0, incomingWounds = 1,
   applyIncomingWound = true, woundRemovalSeverity = null,
   damageEffortLevels = 0, freeEffortLevels = 0, freeDamageEffortLevels = 0, freeEffortSource = "",
@@ -154,6 +160,7 @@ async function executeTask(actor, {
   [ROUND_ACTION_OWNER]: roundActionOwner = null
 } = {}, actionContext = null, initiativeOwner = null) {
   if (typeof taskLabel !== "string" || taskDuration !== null && typeof taskDuration !== "string") return null;
+  if (awesomeCrossingBlocked(awesomeCrossing)) return null;
   // Validate an explicit shield selection before any cost or dice. Equipment
   // may change while a dialog is open; never silently spend on a stale choice.
   const shieldItem = shieldItemId ? actor.items?.get(shieldItemId) : null;
@@ -182,6 +189,17 @@ async function executeTask(actor, {
     !CONDITION_KINDS.includes(effect.kind)
     || !Number.isSafeInteger(effect.steps ?? 1) || (effect.steps ?? 1) < 1))) return null;
   if (ruleEffect && !validateRuleEffect(actor, targetActor, ruleEffect)) return null;
+  const capture = ruleEffect?.effect?.kind === "awesomeCapture";
+  if (previousPaidLevels && !capture) return null;
+  if (capture) {
+    const effect = ruleEffect.effect, field = actor.flags.cypher.awesomeBarriers[effect.fieldId];
+    const first = field.targets[0].id === effect.targetId;
+    if (effect.first !== first || effect.sourceUuid !== actor.uuid || !isAttack || stat !== "intellect" || baseDamage
+      || damageEffortLevels || freeDamageEffortLevels || push || effectEffortLevels || activationCost
+      || abilitySource?.itemId !== field.itemId || previousPaidLevels !== (first ? field.levels : 0)
+      || spentAbilityEdge !== (first ? field.edgeUsed : 0)) return null;
+    difficulty = targetActor.system.level;
+  }
   const commandEffect = ["calmed", "teamUp"].includes(ruleEffect?.effect?.kind);
   if (commandEffect && (damageEffortLevels || freeDamageEffortLevels || pushDamageEffortLevels || effectEffortLevels || baseDamage
     || stat !== "intellect" || (ruleEffect.effect.kind === "calmed" ? activationCost !== 2 || !isAttack : activationCost || isAttack || difficulty !== 2))) return null;
@@ -227,9 +245,13 @@ async function executeTask(actor, {
   const prepared = prepareTask(actor, { stat, difficulty, effortLevels, assetSteps, skillItemId,
     extraHinderSteps, extraEaseSteps, luckyShot, spentAbilityEdge, defenseType, armorModifier, targetActor,
     isAttack, baseDamage, damageEffortLevels, freeEffortLevels, freeDamageEffortLevels, freeEffortSource,
-    areaAttack, push, pushDamageEffortLevels, powerShiftCategories, abilitySource, effectEffortLevels, activationCost,
-    noPhysicalMovement, attackForm, automaticFailure, conditionalSkillSteps: species.skillSteps, mageArmor });
+    areaAttack, push, pushDamageEffortLevels, powerShiftCategories, abilitySource, effectEffortLevels, activationCost, previousPaidLevels,
+    noPhysicalMovement, attackForm, automaticFailure, conditionalSkillSteps: species.skillSteps, mageArmor, awesomeField });
   if (!prepared) return null;
+  if (awesomeField && incomingWounds !== 1) return null;
+  const paidBeforeEdge = computeEffortCost(prepared.effort.paidLevels) + (prepared.effort.activationCost ?? 0);
+  let awesomeBlock = awesomeField ? awesomeBlockSnapshot(actor,
+    Math.max(0, prepared.edgeAvailable - Math.max(0, paidBeforeEdge - prepared.totalCost))) : null;
   const roundContext = roundActionOwner ? roundActionContext(roundActionOwner, { isAttack: true, actionTiming })
     : roundActionContext(actor, { isAttack, weaponSource, abilitySource, defenseType,
       initiative, shieldReturn, minorActivity, extraAction, extraActionSource, actionTiming });
@@ -253,13 +275,14 @@ async function executeTask(actor, {
   baseDamage += effort.damageBonus + powerShifts.damage;
   // Recompilation changes programming; generic attack damage bonuses do not
   // turn its non-damaging companion branch into a second damage effect.
-  if (ruleEffect?.effect?.kind === "recompiled" || commandEffect) baseDamage = 0;
+  if (ruleEffect?.effect?.kind === "recompiled" || commandEffect || capture) baseDamage = 0;
   weaponSource = { ...weaponSource, actorUuid: actor.uuid };
 
   // One Actor write commits XP and Pool costs together. Subsequent target
   // writes are separate operations; failures are surfaced without stale rollback.
-  if (totalCost > 0 || xpCost > 0 || pushWound || cooperation.consumed.length || ruleEffect?.effect?.kind === "recompiled" || commandEffect) {
+  if (totalCost > 0 || xpCost > 0 || pushWound || cooperation.consumed.length || ruleEffect?.effect?.kind === "recompiled" || commandEffect || capture) {
     await actor.update({
+      ...(capture ? { [`flags.cypher.awesomeBarriers.${ruleEffect.effect.fieldId}.targets`]: actor.flags.cypher.awesomeBarriers[ruleEffect.effect.fieldId].targets.map(entry => entry.id === ruleEffect.effect.targetId ? { ...entry, state: "rolling" } : entry) } : {}),
       ...commandTaskUpdates(ruleEffect?.effect),
       ...consumeCooperationUpdate(actor, cooperation.consumed),
       ...(ruleEffect?.effect?.kind === "recompiled" ? { [`flags.cypher.temporaryFollowers.${ruleEffect.effect.recordId}`]: ruleEffect.effect.record } : {}),
@@ -274,7 +297,7 @@ async function executeTask(actor, {
   // Without dice it cannot create special results, refunds or a paid reroll.
   const roll = automaticFailure || automaticHit || !initiative && effectiveDifficulty <= 0 && !rollRoutine ? null : await new Roll("1d20").evaluate();
   const d20 = roll?.total ?? null;
-  const offered = resolveTaskOutcome({ d20, effectiveDifficulty, isAttack, baseDamage }).special.effectOptions;
+  const offered = resolveTaskOutcome({ d20, effectiveDifficulty, isAttack: isAttack && !capture, baseDamage }).special.effectOptions;
   if (offered.length && !offered.includes(specialEffectChoice) && chooseSpecialEffect) {
     specialEffectChoice = await chooseSpecialEffect(offered);
   }
@@ -282,7 +305,7 @@ async function executeTask(actor, {
   // Use damage as the fallback, while an explicit player choice takes priority.
   if (offered.length && !offered.includes(specialEffectChoice)) specialEffectChoice = "damage";
   const { success, special, damageBonus, selectedEffect, totalDamage } = resolveTaskOutcome({
-    d20, effectiveDifficulty, isAttack, baseDamage, specialEffectChoice, suppressIntrusion: species.suppressIntrusion
+    d20, effectiveDifficulty, isAttack: isAttack && !capture, baseDamage, specialEffectChoice, suppressIntrusion: species.suppressIntrusion
   });
   const effectText = special.gmIntrusion
     ? game.i18n.localize("CYPHER.Roll.GMIntrusionFree")
@@ -300,15 +323,20 @@ async function executeTask(actor, {
     const current = resolveStat(actor.system, stat);
     await actor.update({ [`${current.path}.pool.value`]: Math.min(poolMax, current.data.pool.value + totalCost) });
   }
+  if (refund && capture) await refundAwesomeCreation(actor, ruleEffect.effect);
 
   // A successful Block can transfer the whole wound to an equipped, unbroken shield
   // instead of reducing it by one step on the character.
   const usingShield = defenseType === "block" && canShieldAbsorbWound(shieldItem);
   const incomingFieldReduction = companionFieldReduction(actor);
   const incomingElementalReduction = protectionWoundReduction(actor, incomingEnergy, incomingDamageTags);
+  awesomeBlock = await maybeShatterAwesome(actor, awesomeBlock, { success, natural20: refund, choose: chooseFieldShatter, context: actionContext,
+    residual: !usingShield && blockStillHits({ defenseType, applyIncomingWound, incomingSeverity, incomingWounds,
+      personalWoundReduction: speciesDamageReduction(actor, incomingDamageTags) + incomingFieldReduction + incomingElementalReduction }) });
+  const shatterCost = awesomeBlock?.shattered ? awesomeBlock.cost : 0;
 
   const takeOnSuccessfulBlock = Boolean(takeAttackActor && blockStillHits({ defenseType, applyIncomingWound,
-    incomingSeverity, incomingWounds, personalWoundReduction: speciesDamageReduction(actor, incomingDamageTags) + incomingFieldReduction + incomingElementalReduction, shieldWounds: usingShield ? resolveShieldWoundTrack(shieldItem.system.wounds,
+    incomingSeverity, incomingWounds, personalWoundReduction: speciesDamageReduction(actor, incomingDamageTags) + incomingFieldReduction + incomingElementalReduction + (awesomeBlock?.shattered ? 3 : 0), shieldWounds: usingShield ? resolveShieldWoundTrack(shieldItem.system.wounds,
       actor.system.activeAbilityEffects, shieldOwnerItems(shieldItem), actor.system) : null,
     survivesMajor: usingShield && shieldSurvivesMajor(shieldItem, shieldOwnerItems(shieldItem)) }));
   const defenseRecipient = takeAttackActor && (!success || takeOnSuccessfulBlock) ? takeAttackActor : actor;
@@ -316,11 +344,15 @@ async function executeTask(actor, {
   if (defenseRecipient !== actor) await defenseRecipient.update({ "flags.cypher.generalEffects": [
     ...getGeneralEffects(defenseRecipient), { id: takeCooldownId, kind: "takeCooldown", until: nextSourceTurn(defenseRecipient) }
   ] });
-  const { targetDamage, attackConsequences, objectConsequences, woundRemovalApplied, shieldWoundsAbsorbed, defenseConsequences, defensePoolDamage } = await applyTaskConsequences(actor, { objectPlan, isAttack, success, targetActor,
+  const { targetDamage, attackConsequences, objectConsequences, woundRemovalApplied, shieldWoundsAbsorbed, defenseConsequences, defensePoolDamage } = await applyTaskConsequences(actor, { objectPlan, isAttack: isAttack && !capture, success, targetActor,
     totalDamage, armorBypass, weaponTargetEffects, weaponSource, defenseType,
     incomingDamageTags, incomingEnergy, applyIncomingWound, incomingWounds, usingShield, shieldItem, incomingSeverity, incomingPoolDamage,
-    conditionsOnFailure, woundRemovalSeverity, actionContext, defenseRecipient, takeCooldownId, specialistRequired });
+    conditionsOnFailure, woundRemovalSeverity, actionContext, defenseRecipient, takeCooldownId, specialistRequired, negatedWound: awesomeBlock?.shattered === true });
   if (ruleEffect) ruleEffect = await applyRuleEffect(targetActor, ruleEffect, success, actionContext);
+  if (capture && !success) {
+    const effect = ruleEffect.effect, field = actor.flags.cypher.awesomeBarriers[effect.fieldId];
+    await actor.update({ [`flags.cypher.awesomeBarriers.${field.id}.targets`]: field.targets.map(entry => entry.id === effect.targetId ? { ...entry, state: "complete", success: false } : entry) });
+  }
   if (success && shieldReturn) {
     const returning = actor.items.get(shieldReturn.itemId);
     await returning.update(shieldReadyUpdate(returning));
@@ -342,6 +374,7 @@ async function executeTask(actor, {
     effort, powerShifts, assetSteps, skillSteps, rolled: Boolean(roll), automatic: automaticHit || automaticFailure
   });
   if (defenseRecipient !== actor) messageFlavor += `<p>${game.i18n.format("CYPHER.General.Taken", { name: foundry.utils.escapeHTML(defenseRecipient.name) })}</p>`;
+  if (awesomeBlock?.shattered) messageFlavor += `<p>${game.i18n.format("CYPHER.Awesome.shatteredCost", { cost: shatterCost })}</p>`;
   if (objectConsequences) {
     const state = objectDisplay(targetActor);
     messageFlavor += `<p>${game.i18n.format("CYPHER.Object.result", { name: foundry.utils.escapeHTML(targetActor.name), level: state.level,
@@ -372,7 +405,7 @@ async function executeTask(actor, {
         ...(initiative ? { initiative } : {}),
         ...(shieldReturn ? { shieldReturn: { ...shieldReturn, applied: success } } : {}),
         ...(defenseType ? { defenseType, shieldItemId, shieldWoundsAbsorbed, incomingWounds, incomingSeverity,
-          incomingDamageTags, incomingEnergy, mageArmor, applyIncomingWound, incomingPoolDamage, incomingFieldReduction, incomingElementalReduction, conditionsOnFailure, defenseConsequences } : {}),
+          incomingDamageTags, incomingEnergy, mageArmor, awesomeField, awesomeBlock, applyIncomingWound, incomingPoolDamage, incomingFieldReduction, incomingElementalReduction, conditionsOnFailure, defenseConsequences } : {}),
         ...(woundRemovalSeverity ? { woundRemoval: {
           targetUuid: targetActor.uuid, severity: woundRemovalSeverity, applied: woundRemovalApplied
         } } : {}),
@@ -384,7 +417,7 @@ async function executeTask(actor, {
           assets: companion.assets, damage: companion.damage, mounted: companion.mounted } } : {}),
         ...(takeAttackActor ? { takeOnSuccessfulBlock } : {}),
         ...(ruleEffect ? { ruleEffect } : {}),
-        effortCost: totalCost,
+        effortCost: totalCost + shatterCost,
         effortAllocation: effort,
         freeEffortSource,
         powerShifts,
@@ -392,13 +425,13 @@ async function executeTask(actor, {
         d20,
         targetNumber,
         effectiveDifficulty,
-        isAttack,
+        isAttack: isAttack && !capture,
         baseDamage,
         specialEffectChoice,
         weaponTargetEffects,
         weaponRangeAdjudication,
         weaponSource,
-        targetActorId: targetActor?.type === "npc" ? targetActor.id : null,
+        targetActorId: targetActor?.type === "npc" && !capture ? targetActor.id : null,
         ...(attackConsequences ? { attackConsequences } : {}),
         ...(objectConsequences ? { objectConsequences } : {}),
         armorBypass

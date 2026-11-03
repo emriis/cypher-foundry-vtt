@@ -112,8 +112,9 @@ is preserved; intervening healing keeps the existing manual reconciliation
 boundary. Rerolls do not reactivate these protections or repay their casting
 costs. Existing retained natural-20 behavior for the rerolled task is unchanged.
 
-Awesome Force Field and its remote barriers, Ice Armor/Improved Ice Armor and
-Electric Armor remain separate contracts because they introduce additional
+Awesome Force Field and its remote barriers now have their own
+[implementation contract](awesome-force-field.md). Ice Armor/Improved Ice Armor
+and Electric Armor remain separate contracts because they introduce additional
 barrier, retaliation, touch-attack or damage mechanics. This family does not
 claim blanket automation of all defensive Abilities or Cypher effects.
 

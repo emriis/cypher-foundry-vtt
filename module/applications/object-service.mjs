@@ -6,6 +6,7 @@
  */
 import { objectState, resolveObjectDamage } from "../rules/objects.mjs";
 import { runActorAction } from "./action-guard.mjs";
+import { awesomeBarrierActive } from "./awesome-field-read.mjs";
 const revision = actor => actor.flags?.cypher?.objectRevision ?? 0;
 const snapshot = actor => {
   const state = objectState(actor.system);
@@ -34,7 +35,7 @@ export function stampObjectRevision(actor, changes) {
  */
 export function prepareObjectAttack(actor, target, interaction, weaponSource = {}) {
   const before = target?.type === "object" && snapshot(target);
-  if (!before || target.isOwner === false || objectState(before).status === "destroyed"
+  if (!before || target.isOwner === false || awesomeBarrierActive(target) === false || objectState(before).status === "destroyed"
     || !["physicalTool", "other"].includes(interaction?.method)
     || interaction.targetUuid && interaction.targetUuid !== target.uuid
     || interaction.revision !== undefined && interaction.revision !== revision(target)) return null;
@@ -103,7 +104,7 @@ export async function reconcileObjectConsequences(target, flags, outcome, checkp
 
 /** Manual damage is an explicit GM adjudication, not a player bypass of attack costs or tool checks. */
 export async function damageObject(target, amount) {
-  if (target?.type !== "object" || target.isOwner === false || !game.user?.isGM) return false;
+  if (target?.type !== "object" || target.isOwner === false || !game.user?.isGM || awesomeBarrierActive(target) === false) return false;
   return Boolean(await runActorAction(target, "objectDamage", async () => {
     const hit = resolveObjectDamage(snapshot(target), amount, { usesPhysicalTool: false, toolHardEnough: null, cutLevel: null, armorBypass: 0 });
     if (!hit) return false;
@@ -114,7 +115,7 @@ export async function damageObject(target, amount) {
 
 /** Authoring reset follows explicit GM adjudication; it does not implement resource-point repair. */
 export async function resetObject(target, { confirmed = false } = {}) {
-  if (target?.type !== "object" || target.isOwner === false || !game.user?.isGM || !confirmed) return false;
+  if (target?.type !== "object" || target.isOwner === false || !game.user?.isGM || !confirmed || target.flags?.cypher?.awesomeBarrier) return false;
   return Boolean(await runActorAction(target, "objectDamage", async () => {
     await target.update({ "system.levelDamage": 0, "system.destructionDamage": 0, "flags.cypher.objectRevision": revision(target) + 1 });
     return true;
@@ -122,4 +123,7 @@ export async function resetObject(target, { confirmed = false } = {}) {
 }
 
 /** Read-only sheet projection, including a visible invalid-state boundary after raw/manual edits. */
-export function objectDisplay(actor) { return objectState(actor.system) ?? { status: "invalid", level: 0 }; }
+export function objectDisplay(actor) {
+  const state = objectState(actor.system) ?? { status: "invalid", level: 0 };
+  return awesomeBarrierActive(actor) === false ? { ...state, status: "expired" } : state;
+}

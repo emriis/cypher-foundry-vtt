@@ -1,3 +1,4 @@
+import { activateAwesomeAction, restoreAwesomeAction, createAwesomeAction, resumeAwesomeAction, endAwesomeAction, openAwesomeAction, captureAwesomeAction, reconcileAwesomeAction, releaseAwesomeAction, promptFieldShatter } from "./awesome-field-dialogs.mjs";
 import { speciesBenefitDisplay } from "../applications/species-benefit-service.mjs";
 import { commandDisplay } from "../applications/command-power-read.mjs";
 import { protectionDisplay } from "../applications/protection-power-read.mjs";
@@ -79,6 +80,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     // the handler below, binding `this` to the sheet, even for static handlers.
     actions: {
       promptCommandPower, promptCommandAction,
+      activateAwesomeAction, restoreAwesomeAction, createAwesomeAction, resumeAwesomeAction, endAwesomeAction, openAwesomeAction, captureAwesomeAction, reconcileAwesomeAction, releaseAwesomeAction,
       promptProtection, resumeProtectionAction, abandonProtectionAction, endProtectionAction, npcProtectionRest,
       promptTemporaryFollower, resumeTemporaryFollower, abandonTemporaryFollower, dismissTemporaryInstance, promptTemporaryMode, promptTemporaryReboot, settleTemporaryDeaths, openTemporaryFollower,
       promptProject, promptResourceAward, promptBefriendPenalty,
@@ -588,7 +590,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     });
 
     if (!result) return;
-    await this.actor.rollDefense(defenseType, result);
+    await this.actor.rollDefense(defenseType, { ...result, chooseFieldShatter: promptFieldShatter });
   }
 
   /**

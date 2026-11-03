@@ -12,6 +12,9 @@ export function protectionEnergyField() {
     <datalist id="cypher-protection-energies">${protectionEnergyChoices().map(energy => `<option value="${escape(energy)}">${escape(["fire", "cold", "electricity"].includes(energy) ? text(energy) : energy)}</option>`).join("")}</datalist>`;
 }
 export function protectionDefenseFields(actor, { block = true } = {}) {
+  const plan = block && protectionBlockPlan(actor);
+  if (plan?.awesomeAvailable) return protectionEnergyField() + `<label>${game.i18n.localize("CYPHER.Awesome.blockSource")}<select name="blockPower"><option value="">${game.i18n.localize("CYPHER.Stat.might")}</option>
+    ${plan.mageAvailable ? `<option value="mage">${text("mageBlock")}</option>` : ""}<option value="awesome">${game.i18n.localize("CYPHER.Awesome.intellectBlock")}</option></select></label>`;
   return protectionEnergyField() + (block && protectionBlockPlan(actor)?.mageAvailable
     ? `<label><input name="mageArmor" type="checkbox"/>${text("mageBlock")}</label>` : "");
 }
@@ -54,7 +57,7 @@ export async function npcProtectionRest(_event, target) {
 /** A caster's final acknowledgement changes recipient displays without another write to their Actors. */
 export function refreshProtectionSheets() {
   const actors = new Set([...(game.actors?.contents ?? []), ...(globalThis.canvas?.tokens?.placeables ?? []).map(token => token.actor)]);
-  for (const actor of actors) if (actor?.flags?.cypher?.protections || actor?.flags?.cypher?.protectionUses) {
+  for (const actor of actors) if (actor?.flags?.cypher?.protections || actor?.flags?.cypher?.protectionUses || actor?.flags?.cypher?.awesomePersonal || actor?.flags?.cypher?.awesomeBarriers || actor?.flags?.cypher?.awesomeContainments || actor?.flags?.cypher?.awesomeBarrier) {
     for (const sheet of Object.values(actor.apps ?? {})) if (sheet.rendered) sheet.render().catch(error => console.error("Cypher | Protection display refresh failed", error));
   }
 }

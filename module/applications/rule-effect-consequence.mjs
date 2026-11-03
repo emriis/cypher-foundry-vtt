@@ -3,9 +3,11 @@ import { getGeneralEffects, generalEffectClock } from "./general-effect-service.
 import { generalEffectIsActive } from "../rules/general-effects.mjs";
 import { validateRecompileEffect, applyRecompileEffect } from "./temporary-machine-effect.mjs";
 import { validateCommandEffect, applyCommandEffect } from "./command-effect-service.mjs";
+import { validateAwesomeCapture, applyAwesomeCapture } from "./awesome-capture-effect.mjs";
 
 /** Reject unsupported declarations before dice, costs or target writes. */
 export function validateRuleEffect(actor, target, record) {
+  if (record?.effect?.kind === "awesomeCapture") return target?.uuid === record.targetUuid && validateAwesomeCapture(actor, target, record.effect);
   if (["calmed", "teamUp"].includes(record?.effect?.kind)) return validateCommandEffect(actor, target, record.effect);
   if (record?.effect?.kind === "recompiled") return validateRecompileEffect(actor, target, record.effect);
   return actor?.type === "pc" && actor.isOwner !== false && target?.isOwner !== false
@@ -23,6 +25,10 @@ export function validateRuleEffect(actor, target, record) {
 export async function applyRuleEffect(target, record, success, context = null) {
   if (!success || record.applied || record.state === "pending" || record.state === "manual") return record;
   const effect = record.effect;
+  if (effect.kind === "awesomeCapture") {
+    const applied = await applyAwesomeCapture(target, effect, context);
+    return { ...record, applied, state: applied ? "applied" : "expired" };
+  }
   if (["calmed", "teamUp"].includes(effect.kind)) {
     const applied = await applyCommandEffect(target, effect, context);
     return { ...record, applied, state: applied ? "applied" : "expired" };

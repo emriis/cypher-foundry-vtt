@@ -36,15 +36,15 @@ export function prepareTask(actor, { stat, difficulty, effortLevels, assetSteps,
   extraHinderSteps, extraEaseSteps, luckyShot, spentAbilityEdge, defenseType, armorModifier, targetActor,
   isAttack, baseDamage, damageEffortLevels, freeEffortLevels, freeDamageEffortLevels, freeEffortSource,
   areaAttack, push, pushDamageEffortLevels, powerShiftCategories, abilitySource,
-  effectEffortLevels = 0, activationCost = 0, noPhysicalMovement = false, attackForm = null, automaticFailure = false, conditionalSkillSteps = null, mageArmor = false }) {
+  effectEffortLevels = 0, activationCost = 0, previousPaidLevels = 0, noPhysicalMovement = false, attackForm = null, automaticFailure = false, conditionalSkillSteps = null, mageArmor = false, awesomeField = false }) {
   if (actor.type !== "pc") {
     ui.notifications.warn(game.i18n.localize("CYPHER.Warning.NotPC"));
     return null;
   }
   if (targetActor && !temporaryNpcVisible(targetActor)) return invalidTask();
-  if (mageArmor && (defenseType !== "block" || stat !== "intellect")) return invalidTask();
+  if ((mageArmor || awesomeField) && (defenseType !== "block" || stat !== "intellect")) return invalidTask();
   if (defenseType === "block") {
-    const protection = protectionBlockPlan(actor, mageArmor);
+    const protection = protectionBlockPlan(actor, mageArmor, awesomeField);
     if (!protection) return invalidTask();
     extraEaseSteps += protection.ease;
   }
@@ -114,7 +114,7 @@ export function prepareTask(actor, { stat, difficulty, effortLevels, assetSteps,
   // and its first attack share the action's Edge, so subtract the portion
   // already used for activation before reducing this attack's Effort cost.
   const effort = resolveTaskEffort({ effortLevels, damageEffortLevels, freeEffortLevels,
-    effectEffortLevels, activationCost,
+    effectEffortLevels, activationCost, previousPaidLevels,
     freeDamageEffortLevels, effortScore: actor.system.effort,
     edge: Math.max(0, edge - spentAbilityEdge), superheroicsRank: getSuperheroicsRank(actor, stat),
     push, pushDamageEffortLevels, isAttack, areaAttack });
@@ -172,7 +172,7 @@ export function prepareTask(actor, { stat, difficulty, effortLevels, assetSteps,
 
   return { resolved, statLabel, effortLevels: effort.effortLevels, assetSteps, extraHinderSteps,
     effort, powerShifts, pushWound, skillSteps, generalModifiers,
-    totalCost, xpCost, poolValue, poolMax, woundHinder, autoArmorSpeedHinder,
+    totalCost, xpCost, poolValue, poolMax, woundHinder, autoArmorSpeedHinder, edgeAvailable: Math.max(0, edge - spentAbilityEdge),
     effectiveDifficulty, targetNumber, totalSteps };
 }
 
