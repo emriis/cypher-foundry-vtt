@@ -10,8 +10,10 @@
     <div class="form-group"><label>{{localize "CYPHER.Object.destructionDamage"}}</label><input name="system.destructionDamage" type="number" min="0" step="1" value="{{system.destructionDamage}}"/></div>
   </fieldset>
   <p class="hint">{{localize "CYPHER.Object.hint"}}</p>
-  {{#if canConfigure}}
+  {{#if canDamage}}
   <button type="button" data-action="damageObject">{{localize "CYPHER.Object.damage"}}</button>
+  {{/if}}
+  {{#if canConfigure}}
   <button type="button" data-action="resetObject">{{localize "CYPHER.Object.reset"}}</button>
   {{/if}}
 </section>

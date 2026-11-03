@@ -13,6 +13,7 @@ import { clampEffortLevels, computeEffortCost } from "./tasks.mjs";
  * @param {number} [input.damageEffortLevels=0] Paid levels allocated to attack damage.
  * @param {number} [input.effectEffortLevels=0] Paid levels reserved for a source-defined attack effect.
  * @param {number} [input.activationCost=0] Ability activation points sharing this action's Edge.
+ * @param {number} [input.previousPaidLevels=0] Dedicated levels already paid by the same action; reserve score and charge only its incremental cost.
  * @param {number} [input.freeEffortLevels=0] Ordinary free easing levels.
  * @param {number} [input.freeDamageEffortLevels=0] Ordinary free damage levels.
  * @param {number} [input.effortScore] Character score; a missing score rejects the request.
@@ -27,9 +28,9 @@ import { clampEffortLevels, computeEffortCost } from "./tasks.mjs";
 export function resolveTaskEffort({ effortLevels = 0, damageEffortLevels = 0,
   effectEffortLevels = 0, activationCost = 0,
   freeEffortLevels = 0, freeDamageEffortLevels = 0, effortScore, edge = 0,
-  superheroicsRank = 0, push = false, pushDamageEffortLevels = 0, isAttack = false, areaAttack = false } = {}) {
+  superheroicsRank = 0, push = false, pushDamageEffortLevels = 0, isAttack = false, areaAttack = false, previousPaidLevels = 0 } = {}) {
   if (![effortLevels, damageEffortLevels, freeEffortLevels, freeDamageEffortLevels,
-    effortScore, edge, superheroicsRank, pushDamageEffortLevels, effectEffortLevels, activationCost].every(value => Number.isSafeInteger(value) && value >= 0)) return null;
+    effortScore, edge, superheroicsRank, pushDamageEffortLevels, effectEffortLevels, activationCost, previousPaidLevels].every(value => Number.isSafeInteger(value) && value >= 0)) return null;
   if (!isAttack && (damageEffortLevels || freeDamageEffortLevels || pushDamageEffortLevels || effectEffortLevels)) return null;
   if (push && !superheroicsRank) return null;
   if (pushDamageEffortLevels > 2 || (pushDamageEffortLevels && !push)) return null;
@@ -40,15 +41,15 @@ export function resolveTaskEffort({ effortLevels = 0, damageEffortLevels = 0,
   }
   const paidLevels = effortLevels + damageEffortLevels + effectEffortLevels;
   const pushLevels = push ? 2 : 0;
-  if (paidLevels + pushLevels > scoreLimit
-    || paidLevels + pushLevels + freeEffortLevels + freeDamageEffortLevels > maximum) return null;
+  if (paidLevels + previousPaidLevels + pushLevels > scoreLimit
+    || paidLevels + previousPaidLevels + pushLevels + freeEffortLevels + freeDamageEffortLevels > maximum) return null;
   return { effortLevels, damageEffortLevels, freeEffortLevels, freeDamageEffortLevels,
     ...(effectEffortLevels ? { effectEffortLevels } : {}),
     ...(activationCost ? { activationCost } : {}),
     paidLevels, pushLevels, pushDamageEffortLevels,
     easingLevels: effortLevels + freeEffortLevels + pushLevels - pushDamageEffortLevels,
     damageBonus: (damageEffortLevels + freeDamageEffortLevels + pushDamageEffortLevels) * (areaAttack ? 2 : 3),
-    cost: Math.max(0, computeEffortCost(paidLevels, 0) + activationCost - edge), scoreLimit, maximum };
+    cost: Math.max(0, computeEffortCost(paidLevels + previousPaidLevels, 0) - computeEffortCost(previousPaidLevels, 0) + activationCost - edge), scoreLimit, maximum };
 }
 
 /**

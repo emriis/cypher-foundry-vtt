@@ -1,3 +1,5 @@
+import { promptFieldShatter, awesomeCrossingField, openAwesomeAction, releaseAwesomeAction } from "./awesome-field-dialogs.mjs";
+import { awesomeContainments } from "../applications/awesome-field-read.mjs";
 import { followerNPCDisplay } from "../applications/follower-service.mjs";
 import { temporaryNpcInventory, openTemporaryEquipment } from "./temporary-follower-dialogs.mjs";
 import { retainerChoices } from "../applications/companion-support-service.mjs";
@@ -48,7 +50,7 @@ export default class CypherNPCSheet extends HandlebarsApplicationMixin(ActorShee
     classes: ["cypher", "sheet", "actor", "npc"],
     position: { width: 600, height: 680 },
     window: { resizable: true, title: "CYPHER.Sheet.NPC" },
-    actions: {
+    actions: { openAwesomeAction, releaseAwesomeAction,
       openTemporaryEquipment,
       toggleGuarding, clearGeneralEffect, promptGeneralCondition,
       applyDamage: CypherNPCSheet.#onApplyDamage,
@@ -101,6 +103,7 @@ export default class CypherNPCSheet extends HandlebarsApplicationMixin(ActorShee
     context.enrichedLoot = await enrich(this.actor.system.loot);
     context.enrichedGmNotes = await enrich(this.actor.system.gmNotes);
 
+    context.awesomeContainment = awesomeContainments(this.actor);
     return context;
   }
 
@@ -154,7 +157,7 @@ export default class CypherNPCSheet extends HandlebarsApplicationMixin(ActorShee
             ${shieldOptions}
             ${drawnShields}
           </select>
-        </div>${cooperationChoices.content}${protectionDefenseFields(selectedTarget)}
+        </div>${cooperationChoices.content}${protectionDefenseFields(selectedTarget)}${awesomeCrossingField()}
         ${retainers.length ? `<fieldset><legend>${game.i18n.localize("CYPHER.Companion.interception")}</legend>
           <p>${game.i18n.localize("CYPHER.Companion.interceptionHint")}</p>
           <label>${game.i18n.localize("CYPHER.Companion.companion")}<select name="retainerId"><option value="">${game.i18n.localize("CYPHER.Companion.none")}</option>${retainers.map(follower => `<option value="${follower.id}">${foundry.utils.escapeHTML(follower.name)}</option>`).join("")}</select></label>
@@ -166,7 +169,8 @@ export default class CypherNPCSheet extends HandlebarsApplicationMixin(ActorShee
         callback: (event, button) => {
           const choice = button.form.defenseType.value;
           return { defenseType: choice.startsWith("shield:") || choice.startsWith("drawShield:") ? "block" : choice,
-            incomingEnergy: button.form.incomingEnergy.value, mageArmor: button.form.mageArmor?.checked ?? false,
+            incomingEnergy: button.form.incomingEnergy.value, mageArmor: button.form.blockPower ? button.form.blockPower.value === "mage" : button.form.mageArmor?.checked ?? false,
+            awesomeField: button.form.blockPower?.value === "awesome", awesomeCrossing: button.form.awesomeCrossing?.value || null,
             shieldItemId: choice.includes(":") ? choice.split(":")[1] : null,
             cooperativeEffectIds: button.form.cooperativeEffectIds ? [...button.form.cooperativeEffectIds.selectedOptions].map(option => option.value) : null,
             cooperativeMode: choice.startsWith("drawShield:") ? "draw" : button.form.cooperativeMode.value,
@@ -188,7 +192,8 @@ export default class CypherNPCSheet extends HandlebarsApplicationMixin(ActorShee
       target: selectedTarget,
       physicalAttack: ["block", "dodge"].includes(result.defenseType),
       defenseType: result.defenseType,
-      incomingEnergy: result.incomingEnergy, mageArmor: result.mageArmor,
+      incomingEnergy: result.incomingEnergy, mageArmor: result.mageArmor, awesomeField: result.awesomeField,
+      awesomeCrossing: result.awesomeCrossing, chooseFieldShatter: promptFieldShatter,
       shieldItemId: result.shieldItemId
     });
   }

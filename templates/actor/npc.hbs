@@ -1,5 +1,8 @@
 {{!-- Explicit ApplicationV2 root template for the NPC sheet. --}}
 <div class="npc-sheet-layout">
   {{> "systems/cypher/templates/actor/npc/header.hbs" }}
+  {{#each awesomeContainment as |entry|}}<p>{{localize "CYPHER.Awesome.contained"}}: {{entry.name}}
+    <button type="button" data-action="openAwesomeAction" data-object-uuid="{{entry.objectUuid}}">{{localize "CYPHER.Awesome.open"}}</button>
+    <button type="button" data-action="releaseAwesomeAction" data-containment-id="{{entry.id}}">{{localize "CYPHER.Awesome.release"}}</button></p>{{/each}}
   {{> "systems/cypher/templates/actor/npc/body.hbs" }}
 </div>

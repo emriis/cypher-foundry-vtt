@@ -1,6 +1,24 @@
 {{#if protection.visible}}
 <section class="pc-section">
   <h2>{{localize "CYPHER.Protection.title"}}</h2>
+  {{#each protection.awesome.choices as |choice|}}<p>{{choice.name}}
+    <button type="button" data-action="activateAwesomeAction" data-item-id="{{choice.id}}">{{localize "CYPHER.Awesome.activate"}}</button>
+    {{#if ../followerCanManage}}<button type="button" data-action="createAwesomeAction" data-item-id="{{choice.id}}">{{localize "CYPHER.Awesome.create"}}</button>{{/if}}</p>{{/each}}
+  {{#if protection.awesome.personal}}<p>{{localize "CYPHER.Awesome.personal"}} ·
+    {{#if protection.awesome.personal.suspended}}{{localize "CYPHER.Awesome.suspended"}}
+      {{#if followerCanManage}}<button type="button" data-action="restoreAwesomeAction">{{localize "CYPHER.Awesome.restore"}}</button>{{/if}}
+    {{else}}{{localize "CYPHER.Awesome.active"}}{{/if}}</p>{{/if}}
+  {{#each protection.awesome.barriers as |field|}}<fieldset><legend>{{field.location}}</legend>
+    <p>{{localize (concat "CYPHER.Awesome." field.shape)}} · {{localize (concat "CYPHER.Awesome." field.displayState)}} · {{localize "CYPHER.Awesome.effort"}}: {{field.levels}}</p>
+    {{#if field.objectUuid}}<button type="button" data-action="openAwesomeAction" data-object-uuid="{{field.objectUuid}}">{{localize "CYPHER.Awesome.open"}}</button>{{/if}}
+    {{#if ../followerCanManage}}
+      {{#if field.pending}}<button type="button" data-action="resumeAwesomeAction" data-field-id="{{field.id}}">{{localize "CYPHER.Protection.resume"}}</button>{{/if}}
+      {{#if field.canEnd}}<button type="button" data-action="endAwesomeAction" data-field-id="{{field.id}}">{{localize "CYPHER.Awesome.end"}}</button>{{/if}}
+      {{#each field.targets as |target|}}<p>{{target.name}} · {{localize (concat "CYPHER.Awesome." target.displayState)}}
+        {{#if target.awaiting}}<button type="button" data-action="captureAwesomeAction" data-field-id="{{field.id}}" data-target-id="{{target.id}}">{{localize "CYPHER.Awesome.capture"}}</button>{{/if}}
+        {{#if target.manual}}<button type="button" data-action="reconcileAwesomeAction" data-field-id="{{field.id}}" data-target-id="{{target.id}}">{{localize "CYPHER.Awesome.reconcile"}}</button>{{/if}}</p>{{/each}}
+    {{/if}}
+  </fieldset>{{/each}}
   {{#if followerCanManage}}
     {{#each protection.choices as |choice|}}<button type="button" data-action="promptProtection" data-item-id="{{choice.id}}">{{choice.name}}</button>{{/each}}
     {{#each protection.pending as |use|}}<p>{{localize "CYPHER.Protection.pending"}}

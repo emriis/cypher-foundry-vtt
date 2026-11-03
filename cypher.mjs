@@ -1,3 +1,6 @@
+import * as awesomePersonalService from "./module/applications/awesome-personal-service.mjs";
+import * as awesomeBarrierService from "./module/applications/awesome-barrier-service.mjs";
+import { promptFieldShatter } from "./module/sheets/awesome-field-dialogs.mjs";
 import { refreshFollowerOwnerSheet } from "./module/sheets/follower-dialogs.mjs";
 import * as speciesBenefitService from "./module/applications/species-benefit-service.mjs";
 import * as followerService from "./module/applications/follower-service.mjs";
@@ -62,6 +65,8 @@ Hooks.on("preUpdateActor", stampTemporaryDeath);
 Hooks.on("preUpdateActor", stampTeamUpInjury);
 Hooks.on("updateActor", queueTemporaryDeath);
 Hooks.on("updateActor", refreshProtectionSheets);
+Hooks.on("updateCombat", refreshProtectionSheets);
+Hooks.on("deleteCombat", refreshProtectionSheets);
 Hooks.on("updateActor", refreshTemporaryPresentation);
 Hooks.on("updateWorldTime", refreshTemporaryPresentation);
 Hooks.on("updateCombat", advanceTemporaryReboots);
@@ -95,6 +100,7 @@ Hooks.once("init", () => {
   game.cypher.temporaryFollowers = { ...temporaryFollowerService, ...temporaryMachineService };
   game.cypher.commands = commandPowerService;
   game.cypher.protections = protectionPowerService;
+  game.cypher.forceFields = { ...awesomePersonalService, ...awesomeBarrierService };
   Object.assign(game.cypher.companions, companionUpgradeService, companionUpgradeRead, companionTurretService);
   CONFIG.Token.objectClass = createCompanionTokenClass(CONFIG.Token.objectClass);
 
@@ -266,7 +272,7 @@ Hooks.on("renderChatMessageHTML", async (message, html) => {
     event.preventDefault();
     button.disabled = true;
     try {
-      await actor.rerollMessage(message, { allocateRecovery: promptRecoveryAllocation, chooseSpecialEffect: promptSpecialEffect });
+      await actor.rerollMessage(message, { allocateRecovery: promptRecoveryAllocation, chooseSpecialEffect: promptSpecialEffect, chooseFieldShatter: promptFieldShatter });
     } finally {
       // A rejected request or failed write must not leave the UI permanently blocked.
       button.disabled = false;

@@ -1,6 +1,7 @@
 /** Read-only protection projections for ordinary damage, task preflight and sheets. */
 import { PROTECTION_KEYS, protectionPlan, protectionEnergy, elementalReduction } from "../rules/protection-powers.mjs";
 import { resolveCachedDocumentReference } from "./reference-resolver.mjs";
+import { awesomePersonalActive, awesomeDisplay } from "./awesome-field-read.mjs";
 export const protectionUses = actor => Object.values(actor?.flags?.cypher?.protectionUses ?? {}).filter(use => use?.version === 1);
 
 /** A pending batch grants no benefits; a retained receipt can never renew an expired recovery interval. */
@@ -18,11 +19,14 @@ export function liveProtections(actor) {
 }
 
 /** Physical armor still applies to Block; Mage Armor changes its Pool only when explicitly selected. */
-export function protectionBlockPlan(actor, mageArmor = false) {
+export function protectionBlockPlan(actor, mageArmor = false, awesomeField = false) {
   const effects = liveProtections(actor), mage = effects.some(effect => effect.key === "mage-armor");
-  if (mageArmor && !mage) return null;
-  return { stat: mageArmor ? "intellect" : "might", ease: (mageArmor ? actor.system.tier >= 3 ? 2 : 1 : 0)
-    + (effects.some(effect => effect.key === "armoring-debris") ? 1 : 0), mageAvailable: mage };
+  const awesome = awesomePersonalActive(actor);
+  if (mageArmor && (!mage || awesomeField) || awesomeField && !awesome) return null;
+  const intellect = mageArmor || awesomeField;
+  const bonuses = new Set([...(mage ? [actor.system.tier >= 3 ? 2 : 1] : []), ...(awesome ? [1] : [])]);
+  return { stat: intellect ? "intellect" : "might", ease: (intellect ? [...bonuses].reduce((sum, value) => sum + value, 0) : 0)
+    + (effects.some(effect => effect.key === "armoring-debris") ? 1 : 0), mageAvailable: mage, awesomeAvailable: awesome };
 }
 export const protectionWoundReduction = (actor, energy = "", tags = []) => elementalReduction(liveProtections(actor), protectionEnergy(energy, tags));
 export const protectionNpcReduction = (actor, energy = "", tags = []) => 3 * protectionWoundReduction(actor, energy, tags);
@@ -41,5 +45,7 @@ export function protectionDisplay(actor) {
       return { id: use.id, uuid: target.uuid, name: npc?.name ?? target.uuid, energy: use.energy, npc: npc?.type === "npc",
         active: npc && liveProtections(npc).some(effect => effect.id === use.id) };
     })).filter(target => target.active) };
-  return { ...display, visible: display.choices.length + display.pending.length + display.received.length + display.outgoing.length > 0 };
+  const awesome = awesomeDisplay(actor);
+  return { ...display, awesome, visible: display.choices.length + display.pending.length + display.received.length + display.outgoing.length
+    + awesome.choices.length + awesome.barriers.length + awesome.containment.length > 0 || Boolean(awesome.personal) };
 }
