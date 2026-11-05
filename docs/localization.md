@@ -12,6 +12,7 @@ Edit the paired domain files under `lang/src/en/` and `lang/src/fr/`:
 | Domain | Ownership |
 | --- | --- |
 | `shared.json` | Shared controls, sheet names, warnings and document type labels |
+| `library.json` | Library navigation, editorial pilot guidance and shortcut permissions; canonical CRD text remains in bilingual compendia |
 | `actors.json` | Pools, wounds, NPCs, communities and custom fields |
 | `character-creation.json` | Character sentence, genres, superhero configuration and Power Shifts |
 | `progression.json` | Tier, Effort, Edge, XP and advancement |

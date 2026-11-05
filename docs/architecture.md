@@ -30,6 +30,12 @@ must not depend on sheets, browser APIs, or Foundry globals.
 
 The main gameplay boundaries are:
 
+- `library-service.mjs`: allowlisted canonical reference discovery, lazy pack
+  reads, actual owned PC candidates and opt-in personal shortcut creation.
+  `sheets/library.mjs` owns the library window and uses existing task dialogs
+  and cypher-generation services; see the
+  [information library plan](information-library-plan.md).
+
 - `task-service.mjs`: task rolls, Effort and Pool transactions, defense
   outcomes, and task chat output.
 - `task-retry-service.mjs` and `task-retry-history.mjs`: fresh same-task

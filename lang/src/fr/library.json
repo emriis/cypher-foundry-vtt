@@ -1,0 +1,33 @@
+{
+  "CYPHER": {
+    "Library": {
+      "Title": "Bibliothèque Cypher",
+      "Pilot": "Bibliothèque pilote : sept sélections du CRD et une première aide aux tâches. Les chapitres et guides complets restent à construire.",
+      "ContentLanguage": "Langue du contenu",
+      "Reference": "Référence du CRD et aide-mémoire",
+      "Canonical": "Ouvrir le Journal de référence :",
+      "Player": "Guide du joueur — première tâche",
+      "Task": "Effectuer un jet de tâche",
+      "TaskHint": "Consultez les références sur la difficulté des tâches, l’Effort et l’Avantage ci-dessus, puis une compétence liée si nécessaire. Choisissez votre personnage et sa caractéristique, puis utilisez le dialogue habituel pour déclarer la difficulté, une compétence acquise pertinente, les atouts et l’Effort. Le MJ décide si la tâche et les circonstances s’appliquent. Ouvrir une référence de compétence ne l’accorde pas au personnage et ne la sélectionne pas pour le jet.",
+      "LinkedSkill": "Exemple de référence de compétence :",
+      "PlayerPending": "D’autres procédures pour les joueurs et aides-mémoire seront ajoutées ici.",
+      "GM": "Guide du MJ et outils aléatoires",
+      "GMPending": "Le guide et l’écran du MJ complets seront ajoutés ici. Prévisualisez un cypher ci-dessous, puis attribuez-le séparément depuis la fiche du personnage.",
+      "Draw": "Prévisualiser un tirage de cypher",
+      "DrawHint": "Aperçu uniquement : aucun cypher n’est attribué ou consommé, aucun message n’est publié. Seul le MJ actif désigné peut générer le résultat.",
+      "TablesPending": "D’autres outils aléatoires et tables natives seront ajoutés ici.",
+      "Shortcuts": "Macros et raccourcis",
+      "CreateShortcut": "Créer mon raccourci vers la bibliothèque",
+      "ShortcutHint": "Créez ou rouvrez votre macro personnelle d’accueil, puis glissez-la depuis le répertoire des macros vers un emplacement libre de la barre de raccourcis. Votre barre reste telle quelle.",
+      "ShortcutDenied": "La création de ce raccourci nécessite les permissions de création de macros et d’exécution de macros de script. La bibliothèque reste accessible depuis les Journaux et la fiche du personnage.",
+      "MacrosPending": "D’autres raccourcis pour les joueurs et le MJ seront ajoutés ici.",
+      "Unavailable": "Cette référence est indisponible ou vous n’avez pas la permission de la consulter.",
+      "NoActor": "Vous devez disposer d’un personnage joueur dont vous êtes propriétaire pour effectuer un jet de tâche.",
+      "Actor": "Personnage",
+      "Stat": "Caractéristique",
+      "Token": "personnage du pion",
+      "Continue": "Continuer",
+      "Close": "Fermer"
+    }
+  }
+}

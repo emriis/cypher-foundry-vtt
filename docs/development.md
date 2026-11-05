@@ -46,6 +46,16 @@ application, sheet, migration, or compendium boundaries.
 | Pack/build tooling | `scripts/` |
 | Automated tests | `tests/` |
 
+### In-game library pilot
+
+The in-game library pilot is available from the Journals directory, the PC
+header, or `await game.cypher.library.open()`. Its optional personal macro uses
+that same public entry point. `await game.cypher.library.task()` opens the shared
+PC/stat selection and task workflow; neither entry point grants permissions or
+imports reference documents. Content language is selected in the library and
+does not change the UI language or existing world documents. See the
+[full information-access plan](information-library-plan.md) for future scope.
+
 ### TDD and BDD boundary
 
 For recovery and healing work, follow the source contracts and persistence

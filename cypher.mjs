@@ -26,6 +26,7 @@ import * as projectService from "./module/applications/project-service.mjs";
 import { refreshProjectSheets } from "./module/sheets/project-dialogs.mjs";
 import * as objectService from "./module/applications/object-service.mjs";
 import { renderTaskRetryControls } from "./module/sheets/task-retry-controls.mjs";
+import { openLibrary, promptLibraryTask, registerLibraryButton } from "./module/sheets/library.mjs";
 import * as taskRetryService from "./module/applications/task-retry-service.mjs";
 
 import { renderIntrusionControls } from "./module/sheets/intrusion-dialogs.mjs";
@@ -101,10 +102,12 @@ Hooks.once("init", () => {
   game.cypher.commands = commandPowerService;
   game.cypher.protections = protectionPowerService;
   game.cypher.forceFields = { ...awesomePersonalService, ...awesomeBarrierService };
+  game.cypher.library = { open: openLibrary, task: promptLibraryTask };
   Object.assign(game.cypher.companions, companionUpgradeService, companionUpgradeRead, companionTurretService);
   CONFIG.Token.objectClass = createCompanionTokenClass(CONFIG.Token.objectClass);
 
   registerImportButton();
+  registerLibraryButton();
 
   // Replace Foundry's generic Actor and Item documents with the system versions.
   /* -------------------------------------------- */

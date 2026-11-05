@@ -7,6 +7,26 @@
    / .theme-dark classes applied by core to the sheet window).
    ================================================================== */
 
+/* Library help is separate from the read-only source pane. Natural wrapping
+   keeps translated labels and canonical source tables usable in a narrow window. */
+.cypher.sheet.cypher-library .window-content { overflow-y: auto; }
+.cypher-library .library-content { display: grid; gap: var(--cypher-space-lg); }
+.cypher-library .library-content > section {
+  padding: var(--cypher-space-lg);
+  background: var(--cypher-color-bg-card);
+  border: 1px solid var(--cypher-color-border-soft);
+  border-radius: var(--cypher-radius-md);
+}
+.cypher-library .library-languages,
+.cypher-library .library-references { display: flex; flex-wrap: wrap; gap: var(--cypher-space-md); align-items: center; }
+.cypher-library button { height: auto; min-height: var(--cypher-target-size); white-space: normal; }
+.cypher-library .library-references button { flex: 1 1 180px; }
+.cypher-library button[aria-pressed="true"] { border-color: var(--cypher-color-accent); background: var(--cypher-color-bg-card-alt); }
+.cypher-library .library-source { margin-top: var(--cypher-space-lg); overflow-x: auto; }
+.cypher-library .library-source table { min-width: 100%; }
+.cypher-library .hint { color: var(--cypher-color-text-muted); }
+.cypher.sheet .pc-library-button { flex: 0 0 var(--cypher-target-size); width: var(--cypher-target-size); }
+
 .cypher.sheet {
   /* ---- Typography ----
      Fira Sans is the preferred face; Foundry's Signika and system fonts

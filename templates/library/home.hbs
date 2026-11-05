@@ -1,0 +1,44 @@
+<div class="library-content">
+  <p class="hint">{{localize 'CYPHER.Library.Pilot'}}</p>
+  <nav class="library-languages" aria-label="{{localize 'CYPHER.Library.ContentLanguage'}}">
+    <span>{{localize 'CYPHER.Library.ContentLanguage'}}</span>
+    <button type="button" data-action="language" data-language="en" aria-pressed="{{english}}" lang="en">English</button>
+    <button type="button" data-action="language" data-language="fr" aria-pressed="{{french}}" lang="fr">Français</button>
+  </nav>
+  <section aria-labelledby="library-crd-heading">
+    <h2 id="library-crd-heading">{{localize 'CYPHER.Library.Reference'}}</h2>
+    <nav class="library-references" aria-label="{{localize 'CYPHER.Library.Reference'}}" lang="{{language}}">
+      {{#each references}}
+      <button type="button" data-action="reference" data-key="{{key}}" aria-pressed="{{selected}}" {{#unless uuid}}disabled{{/unless}}>{{name}}</button>
+      {{/each}}
+    </nav>
+    {{#if unavailable}}<p role="status">{{localize 'CYPHER.Library.Unavailable'}}</p>{{/if}}
+    {{#if selected}}
+    <article class="library-source" lang="{{language}}" aria-label="{{selectedName}}">
+      <p>{{localize 'CYPHER.Library.Canonical'}} {{{sourceLink}}}</p>
+      {{#each sourcePages}}<section><h3>{{name}}</h3>{{{html}}}</section>{{/each}}
+    </article>
+    {{/if}}
+  </section>
+  <section aria-labelledby="library-player-heading">
+    <h2 id="library-player-heading">{{localize 'CYPHER.Library.Player'}}</h2>
+    <h3>{{localize 'CYPHER.Library.Task'}}</h3>
+    <p>{{localize 'CYPHER.Library.TaskHint'}}</p>
+    {{#if skillLink}}<p class="library-skill" lang="{{language}}">{{localize 'CYPHER.Library.LinkedSkill'}} {{{skillLink}}}</p>{{/if}}
+    <button type="button" data-action="task">{{localize 'CYPHER.Library.Task'}}</button>
+    <p class="hint">{{localize 'CYPHER.Library.PlayerPending'}}</p>
+  </section>
+  <section aria-labelledby="library-gm-heading">
+    <h2 id="library-gm-heading">{{localize 'CYPHER.Library.GM'}}</h2>
+    <p>{{localize 'CYPHER.Library.GMPending'}}</p>
+    {{#if isGM}}<button type="button" data-action="draw">{{localize 'CYPHER.Library.Draw'}}</button>{{/if}}
+    <p class="hint">{{localize 'CYPHER.Library.TablesPending'}}</p>
+  </section>
+  <section aria-labelledby="library-shortcuts-heading">
+    <h2 id="library-shortcuts-heading">{{localize 'CYPHER.Library.Shortcuts'}}</h2>
+    <p>{{localize 'CYPHER.Library.ShortcutHint'}}</p>
+    <button type="button" data-action="shortcut" {{#unless canShortcut}}disabled{{/unless}}>{{localize 'CYPHER.Library.CreateShortcut'}}</button>
+    {{#unless canShortcut}}<p>{{localize 'CYPHER.Library.ShortcutDenied'}}</p>{{/unless}}
+    <p class="hint">{{localize 'CYPHER.Library.MacrosPending'}}</p>
+  </section>
+</div>

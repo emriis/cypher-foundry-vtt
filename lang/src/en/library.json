@@ -1,0 +1,33 @@
+{
+  "CYPHER": {
+    "Library": {
+      "Title": "Cypher Library",
+      "Pilot": "Pilot library: seven CRD reference selections and a first task aid. Full chapters and guides are being built.",
+      "ContentLanguage": "Content language",
+      "Reference": "CRD reference and quick references",
+      "Canonical": "Open the canonical Journal:",
+      "Player": "Player guide — first task",
+      "Task": "Make a task roll",
+      "TaskHint": "Read Task Difficulty and Effort and Edge above, then consult a linked Skill if needed. Choose your character and stat, then use the standard task dialog to declare difficulty, a relevant acquired Skill, assets and Effort. The GM decides whether the task and circumstances apply. Opening a Skill reference does not grant that Skill or select it for the roll.",
+      "LinkedSkill": "Example Skill reference:",
+      "PlayerPending": "More player procedures and quick references will be added here.",
+      "GM": "GM guide and random tools",
+      "GMPending": "The full GM guide and screen will be added here. Preview a cypher below, then award it separately from the character sheet.",
+      "Draw": "Preview a cypher draw",
+      "DrawHint": "Preview only: this does not award or consume a cypher, and does not publish a chat message. Only the active elected GM can generate the result.",
+      "TablesPending": "More random tools and native tables will be added here.",
+      "Shortcuts": "Macros and shortcuts",
+      "CreateShortcut": "Create my library shortcut",
+      "ShortcutHint": "Create or reopen your personal home macro, then drag it from the Macros directory to a free hotbar slot. Your hotbar is left as it is.",
+      "ShortcutDenied": "Creating this shortcut requires permission to create macros and execute script macros. The library remains accessible from Journals and the character sheet.",
+      "MacrosPending": "More player and GM shortcuts will be added here.",
+      "Unavailable": "This reference is unavailable or you do not have permission to read it.",
+      "NoActor": "You need an owned player character to make a task roll.",
+      "Actor": "Character",
+      "Stat": "Stat",
+      "Token": "token character",
+      "Continue": "Continue",
+      "Close": "Close"
+    }
+  }
+}
