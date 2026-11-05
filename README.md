@@ -75,6 +75,7 @@ See:
 - docs/compendium-architecture.md
 - docs/crd-compendium-map.md
 - docs/crd-content-roadmap.md
+- [In-game information library plan](docs/information-library-plan.md)
 - docs/crd-source-schema.md
 
 ## Runtime capabilities

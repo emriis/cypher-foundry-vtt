@@ -26,6 +26,12 @@ tests, and a deterministic build where applicable.
 
 ## 2. Current program status
 
+The active information-access program is tracked in the
+[eight-lot in-game library plan](information-library-plan.md), including the
+complete accepted delivery order and per-lot acceptance boundaries. Its first
+pilot connects existing reference selections, canonical Skill links and shared
+tools; it does not certify full chapter or guide coverage.
+
 | Area | Status |
 | --- | --- |
 | Architecture and source/build foundations | Complete |
@@ -37,9 +43,9 @@ tests, and a deterministic build where applicable.
 | Foci | 42 Focus records and graph/grant infrastructure; individual Ability limitations remain |
 | W4 equipment/weapons/armor/shields | Complete source-backed inventory |
 | Subtle/Manifest/Power Boost Cyphers | Source-backed inventory and common lifecycle implemented; particular powers remain open |
-| CRD Journals | Seven source-faithful selections; all substantive chapters inventoried, complete passages/navigation remain open |
+| CRD Journals | Seven source-faithful selections accessible in the bilingual library pilot; all substantive chapters inventoried, complete passages/navigation remain open |
 | Quick Reference | Planned |
-| Player/GM guides | Planned |
+| Player/GM guides | First task aid and GM cypher preview implemented in the library pilot; full guides remain planned |
 | Genre Ability integration | Complete |
 | Broader genre reference layer | Planned |
 | CRD creature extraction | Not applicable: supplied CRD contains no creature inventory |
@@ -187,7 +193,13 @@ across equipment, weapons, armor, and shields.
 Artifacts are not marked incomplete through implementation: the supplied CRD has
 no Artifact inventory, so extraction is explicitly source-blocked.
 
-## 7. Phase 4 — CRD Journals, Quick Reference, and guides — Planned
+## 7. Phase 4 — CRD Journals, Quick Reference, and guides — In progress
+
+The [information library plan](information-library-plan.md) records the accepted
+eight-lot order. Lot 1 is implemented and validated, awaiting merge: bilingual
+home, seven existing reference selections, canonical Skill links, shared task
+dialog, ephemeral GM cypher preview and personal home shortcut. This adds a
+usable access path without closing the full-source and full-guide items below.
 
 ### PR4 source-callout preflight (2026-10-21)
 
@@ -211,6 +223,8 @@ text are permitted to close the outstanding entries.
 
 ### 7.1 Core CRD Journal
 
+- [x] Deliver a bilingual source-selection → canonical Skill → task-aid pilot
+  with ordinary-player access, explicit permissions and reload validation.
 - [x] Inventory all substantive CRD chapters and their current destinations in
   the [coverage review](crd-coverage-review.md).
 - [ ] Assign every remaining passage, example, boxed continuation and table.

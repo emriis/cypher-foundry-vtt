@@ -1,5 +1,6 @@
 import { activateAwesomeAction, restoreAwesomeAction, createAwesomeAction, resumeAwesomeAction, endAwesomeAction, openAwesomeAction, captureAwesomeAction, reconcileAwesomeAction, releaseAwesomeAction, promptFieldShatter } from "./awesome-field-dialogs.mjs";
 import { speciesBenefitDisplay } from "../applications/species-benefit-service.mjs";
+import { openLibrary } from "./library.mjs";
 import { commandDisplay } from "../applications/command-power-read.mjs";
 import { protectionDisplay } from "../applications/protection-power-read.mjs";
 import { promptProtection, resumeProtectionAction, abandonProtectionAction, endProtectionAction, npcProtectionRest } from "./protection-power-dialogs.mjs";
@@ -79,6 +80,7 @@ export default class CypherPCSheet extends HandlebarsApplicationMixin(ActorSheet
     // Template buttons declare data-action="...". Foundry routes each name to
     // the handler below, binding `this` to the sheet, even for static handlers.
     actions: {
+      openLibrary,
       promptCommandPower, promptCommandAction,
       activateAwesomeAction, restoreAwesomeAction, createAwesomeAction, resumeAwesomeAction, endAwesomeAction, openAwesomeAction, captureAwesomeAction, reconcileAwesomeAction, releaseAwesomeAction,
       promptProtection, resumeProtectionAction, abandonProtectionAction, endProtectionAction, npcProtectionRest,
