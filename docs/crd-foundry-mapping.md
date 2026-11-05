@@ -5,14 +5,17 @@ Document (CRD) to the Foundry document and data-model types supported by the
 system.
 
 The mapping is structural. It does not rewrite CRD rules.
+The [2026-11-05 coverage review](crd-coverage-review.md) distinguishes catalogue
+presence, full-passage evidence, structured fields, execution and verification.
+The source statuses below concern inventory, not complete effect automation.
 
 ## 1. Canonical mapping
 
 | CRD family | Foundry document | Foundry type/model | Current source status |
 | --- | --- | --- | --- |
-| Ability | Item | ability | Complete |
+| Ability | Item | ability | Catalogue implemented; particular effects remain partial |
 | Armor | Item | armor | Complete |
-| Cypher | Item | cypher | Complete |
+| Cypher | Item | cypher | Catalogue/common lifecycle implemented; particular effects remain descriptive |
 | Descriptor | Item | descriptor | Complete |
 | Equipment | Item | equipment | Complete |
 | Focus | Item | focus | Complete |
@@ -162,7 +165,7 @@ Structured data includes:
 - level;
 - power level and power-level metadata;
 - depletion state;
-- depletion range/die where supplied;
+- identification and internal state;
 - variants;
 - random ranges;
 - roll tables;
@@ -170,8 +173,9 @@ Structured data includes:
 
 ### Artifact
 
-The Artifact DataModel exists and supports level, form, identification, depletion,
-and related state. The supplied CRD does not contain an Artifact inventory, so
+The Artifact DataModel exists and supports level, form, identification, inclusive
+`depletionMin`/`depletionMax` ranges, never-depletes and legacy threshold migration.
+The supplied CRD does not contain an Artifact inventory, so
 there is no CRD Artifact source extraction to map at present.
 
 ## 3. Rules and genre content
@@ -276,14 +280,20 @@ The content mapping intentionally distinguishes extraction from runtime behavior
 
 Currently:
 
-- Ability structured costs/effects/lifecycle are runtime-functional;
+- supported generic Ability base costs, recovery lifecycle and explicit numeric
+  modifiers are executed; other effect prose requires specialized services;
 - Type/Focus advancement benefits are runtime-functional for supported categories;
 - core weapon attacks are runtime-functional;
 - Cypher depletion is runtime-functional;
-- weapon target effects are extracted and validated but not yet fully consumed
-  by attack resolution;
-- generic Cypher variants/random ranges/roll tables are not yet fully executed
-  by a generic runtime layer.
+- supported level-gated weapon effects are applied to NPCs; their hindrance and
+  lost-action consumers have defined duration and reroll contracts;
+- weapon hands, tripod and operator constraints are enforced; configuration
+  selection works, while spending its declared switch action remains open;
+- Cypher variants and inline tables are executed; weighted generation uses
+  acquisition ranges, while particular power effects remain descriptive;
+- remaining core procedures and individual powers are listed in the
+  [coverage review](crd-coverage-review.md), including NPC modifier consumers
+  beyond the supported attack path.
 
 This distinction prevents the content documentation from overstating automation
 coverage.

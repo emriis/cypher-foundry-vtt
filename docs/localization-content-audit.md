@@ -1,6 +1,8 @@
 # Compendium localization audit
 
-This document records the localization work as of 2026-10-14. The supplied
+The current inventory/status snapshot was rechecked on **2026-11-05** at
+`22e2f2a`; the source-review and live-validation history below retains its
+**2026-10-14** scope and date. The supplied
 2026-07-29 CRD is the sole authority for names, descriptions, mechanics and
 entry boundaries. French wording is an editorial rendering of that content;
 existing prose, matching numbers and passing schema checks do not establish
@@ -17,20 +19,24 @@ documents; the other families are Item documents. Folders are excluded below.
 
 | Family | Normalized EN records | Normalized FR records | French proposals | Translated fields | Review status |
 | --- | ---: | ---: | ---: | ---: | --- |
-| Abilities | 701 | 701 | 701 | 1,416 | Proposed |
-| Skills | 58 | 58 | 58 | 116 | Proposed |
-| Descriptors | 53 | 53 | 53 | 272 | Proposed |
-| Types | 55 | 55 | 55 | 110 | Proposed |
-| Foci | 42 | 42 | 42 | 84 | Proposed |
-| Rules | 7 | 7 | 7 | 25 | Proposed |
-| Equipment | 457 | 457 | 457 | 958 | Proposed |
-| Total | 1,373 | 1,373 | 1,373 | 2,981 | Editorial drafts |
+| Abilities | 701 | 701 | 701 | 1,416 | Reviewed |
+| Skills | 58 | 58 | 58 | 116 | Reviewed |
+| Descriptors | 53 | 53 | 53 | 272 | Reviewed |
+| Types | 55 | 55 | 55 | 110 | Reviewed |
+| Foci | 42 | 42 | 42 | 84 | Reviewed |
+| Rules | 7 | 7 | 7 | 25 | Reviewed |
+| Equipment | 457 | 457 | 457 | 958 | Reviewed |
+| Total | 1,373 | 1,373 | 1,373 | 2,981 | Reviewed editorial records |
 
-The normalized preview audit completed successfully: every translatable field
-has a current French proposal, with no orphaned proposals, typed mechanical
-differences or numeric/markup/reference safeguard failures. These are full
-French drafts, not English fallback records labeled as completed translations.
-None has been silently promoted to `reviewed`.
+The fresh normalized `audit:i18n` run completed successfully: every translatable
+field has a current French proposal, all records are marked `reviewed`, and
+there are no orphaned proposals, invalid/incomplete entries, typed mechanical
+differences or automated safeguard failures. This audit reads existing review
+statuses; it does not promote proposals or re-review every French sentence.
+The earlier draft-only state is historical. See the
+[Foundry acceptance gate](localization-foundry-acceptance.md) and
+[CRD coverage review](crd-coverage-review.md) for what editorial status does and
+does not establish about complete content and gameplay.
 
 Coverage includes nested effect text, Effort explanations, properties, Skill
 labels, variants, table labels/results and Journal page content where present.
@@ -182,7 +188,7 @@ conditions and graph edges are excluded from the translation allowlist.
 Maintain the fourteen existing family/language collection IDs. A single pack per
 language would reduce browsing clarity and still require a separate Journal
 pack, because an ordinary Foundry compendium has one document type. Small
-editorial folders under `translations/fr/` and the eight paired UI domains under
+editorial folders under `translations/fr/` and the paired UI domains under
 `lang/src/` organize maintenance without changing public pack identities or the
 native Foundry language contract.
 

@@ -1,283 +1,119 @@
-# CRD weapon mechanics audit
-
-## Scope
-
-This audit covers the Cypher Reference Document 2026-07-29 across the entire document, not only the genre equipment tables.
-
-The CRD is the sole authority for weapon automation. A rule is automatable only when the CRD states enough information to determine its mechanical result. Generic Cypher knowledge, inferred behavior, or conventions from other versions are not sufficient.
-
-The audit separates:
-1. weapon-native mechanics;
-2. general combat rules that apply to weapons;
-3. weapon-related rules supplied by abilities;
-4. genre/environment rules that modify weapon use;
-5. descriptive or narrative information that must remain non-automated.
-
-## 1. Core weapon rules
-
-### Weapon categories
-
-The CRD defines three standard categories:
-
-| Category | Base damage | Explicit combat behavior |
-| --- | ---: | --- |
-| Light | 2 | attack is eased; may be made as a First action |
-| Medium | 4 | normal action timing |
-| Heavy | 6 | requires two hands; attack is a Last action |
-
-The category also determines the default price category, but price is an equipment/economy mechanic rather than attack resolution.
-
-Current implementation:
-- base damage: implemented;
-- light attack easing: implemented;
-- heavy two-handed source flag: implemented independently from timing;
-- light First-action timing: resolved from the active weapon category and recorded in attack results;
-- medium Action timing: resolved from the active weapon category and recorded in attack results;
-- heavy Last-action timing: resolved from the active weapon category and recorded in attack results.
-- timing is presented on the roll card but is not enforced by a turn/action-economy system, which is not currently implemented.
-
-Action timing is derived from the active CRD weapon category, including an enabled alternate configuration. It is independent of twoHanded: a medium weapon can require two hands without becoming a Last action, and the system must not infer timing from hand use.
-
-### Weapon familiarity
-
-The CRD states that an unfamiliar weapon makes the attack hindered. This is already represented by the existing free-use/practiced weapon logic and must remain separate from weapon-specific hindrances.
-
-### Weapon ranges
-
-The CRD defines melee attacks as immediate range, thrown melee weapons as up to short range, ranged weapons by their listed maximum range, and attacks at the limit of a weapon range as extreme range and hindered. Some weapons explicitly extend their extreme range.
-
-Current implementation:
-- primary and extreme range categories: preserved as structured Item data;
-- extreme-range hindrance: implemented through an explicit attack-dialog declaration after the GM confirms whether the target is at the weapon's range limit, and the declared state adds one hindrance step;
-- the adjudication and source range categories are recorded in the task chat flags;
-- automatic token/grid distance measurement and range-limit validation: not implemented by design;
-- melee/thrown semantics: currently descriptive rather than independently represented.
-
-The attack dialog must not pretend to determine range from scene coordinates. If the GM does not declare extreme range, no range hindrance is added. An explicit extreme-range category is preserved for adjudication, but this feature does not independently validate whether a target lies inside it.
-
-The last point should only become structured if the source data gives a mechanically reliable distinction. Do not infer melee merely from a weapon name.
-
-## 2. Weapon skill and proficiency
-
-Weapon familiarity is not only a binary equipment flag. The CRD treats attack methods as skills and explicitly uses the normal skill progression.
-
-### Skill levels that affect weapon attacks
-
-| Level | Task modifier | Weapon-attack consequence |
-| --- | ---: | --- |
-| Inability | -1 step | The attack is hindered |
-| Practiced | 0 | No skill adjustment |
-| Trained | +1 step | One ease |
-| Specialized | +2 steps | Two eases |
-| Expert | +3 steps | Three eases, when an ability explicitly grants expert status |
-
-The CRD also states that gaining training twice in the same skill makes the character specialized. Expert status is not a normal advancement step and requires an ability that explicitly grants it.
-
-For weapons, distinguish:
-- weapon familiarity: whether the character can freely use the weapon/category/family;
-- attack skill: a skill for a specific attack method or broader weapon class;
-- other task modifiers: Effort, assets, wounds, light-weapon easing, range, and source-specific weapon effects.
-
-These must not be collapsed into a single boolean.
-
-### Core and Type-provided familiarity
-
-The CRD states that core characters freely use light weapons. Characters who cannot freely use a weapon are hindered when attacking with it.
-
-Types can grant broader familiarity, including all weapons, selected weapon categories, and selected weapon families.
-
-The CRD also contains explicit Type abilities such as Expert Combatant that grant training in a chosen specific attack or broader attack category. Some Types combine free weapon use with a separate trained attack skill.
-
-Therefore a character may simultaneously have free use of a weapon and a trained attack skill; no free use but a trained attack skill, where the training cancels the unfamiliar-weapon hindrance; no free use and a specialized attack skill, producing the skill's remaining ease after the familiarity penalty; or an explicit inability, which must not be counted twice with the same unfamiliar-weapon penalty.
-
-### Attack-skill scope
-
-The CRD uses weapon skills at several scopes, including a specific weapon or attack method (swords, axes, bows, guns, etc.) and broad categories such as light/medium/heavy bashing, bladed, or ranged weapons.
-
-The current data model already distinguishes weaponFamily and attackSkillCategory on attacks and attackCategory on skills. This is the correct direction, but runtime resolution must use the character's actual skill level rather than only a binary practiced flag.
-
-### Inability cancellation
-
-The CRD explicitly gives the real-world character an inability with medium and heavy weapons while allowing free use of light weapons. It also explicitly says that training in a specific medium/heavy weapon class cancels the inability but does not itself ease the attack in that special case.
-
-The runtime therefore cannot blindly add a familiarity penalty and a trained-skill ease as independent modifiers in every case. It must establish the effective weapon-skill state and apply the resulting step modifier exactly once. In particular, an inability must not double-hinder an already unfamiliar weapon.
-
-### Multiple training and specialization
-
-The CRD states that trained plus trained in the same skill becomes specialized, specialized provides two ease steps, and expert provides three ease steps only when explicitly granted by an ability.
-
-The existing skill item model already stores inability, practiced, trained, specialized, and expert. The weapon runtime should consume those levels directly rather than introducing a second proficiency scale.
-
-### Ability-driven weapon training
-
-Weapon training is not confined to equipment or Type data. The CRD contains abilities that grant training in a specific weapon attack, training in a broad weapon category, and specialization or expert status at later tiers when the character gains the skill normally. It also contains abilities that temporarily grant training in a specific attack.
-
-The audit therefore covers Types, Descriptors, Foci, ordinary skills, advancements, and abilities, not only weapon equipment.
-
-Current implementation:
-- skill levels are structurally represented;
-- Type/Descriptor skill progression can create or advance skills;
-- Focus/Ability data can grant practiced weapon categories/families;
-- attack resolution currently treats weapon familiarity mostly as a binary penalty and only recognizes a practiced matching attack skill as an explicit exception.
-
-Missing:
-1. a single pure resolver for weapon proficiency/familiarity;
-2. correct handling of trained, specialized, and expert attack skills;
-3. explicit prevention of double-counting an inability/unfamiliar-weapon penalty;
-4. source-traceable tests for Type/Focus/Ability grants at each supported scope;
-5. temporary weapon-skill states where the CRD ability explicitly makes them possible.
-## 4. Explicit weapon properties found in equipment
-
-### Two-handed use
-
-The CRD explicitly describes heavy weapons and specific medium weapons such as a quarterstaff as requiring two hands. mechanics.twoHanded is therefore valid.
-
-A medium weapon can explicitly require two hands without becoming a heavy weapon. twoHanded must remain independent from attackType.
-
-### One-handed firing hindrance
-
-The CRD explicitly lists weapons for which an attack is hindered when fired with one hand, including rifles and shotguns.
-
-The source-derived `hinderedWhenUsedOneHanded` flag is now structured for the affected CRD weapon entries. The PC attack dialog lets the user declare one-handed use; only that choice adds the hindrance. It remains independent of `twoHanded`.
-
-### Rapid-fire
-
-The CRD explicitly labels certain weapons as rapid-fire. This is a capability used by abilities such as Spray and Arc Spray.
-
-Being rapid-fire does not itself grant an additional attack. It makes the weapon eligible for specific abilities. The rapidFire flag is therefore valid, but its additional behavior belongs to ability runtime.
-
-### Armor penetration
-
-The CRD explicitly describes weapons that ignore a specified number of points of physical Armor. mechanics.ignoresPhysicalArmor is valid and already extracted.
-
-The runtime consequence is source-derived Armor bypass, not a new damage type. Individual exceptions, such as force-field exceptions, must remain source-derived.
-
-### Cutting physical materials
-
-The CRD explicitly describes the Monomolecular blade as cutting physical materials up to a specified level. cutsThroughMaterialsLevel is valid.
-
-This is object/material interaction, not ordinary NPC damage.
-
-### Tripod and required operators
-
-The CRD explicitly describes weapons requiring a tripod and a specified number of operators. requiresTripod and requiredOperators are valid.
-
-They should become attack prerequisites only when the system can reliably represent the equipment setup and participating operators. Until then, preserve the source data without inventing actor state.
-
-### Alternate configuration
-
-The CRD explicitly describes a weapon that can switch from heavy to medium configuration as an action. The structured `alternateConfiguration` projection preserves that source-defined category and action label.
-
-Runtime now persists the active primary/alternate configuration, announces the switch in chat as costing one action, and resolves attack category and category damage from the selected configuration. The runtime does not enforce the action cost because the system has no turn/action economy. Do not implement arbitrary weapon modes beyond the CRD.
-
-## 4. Special weapons
-
-### Stunstick
-
-The CRD explicitly states: no damage; level 2 or lower loses the next action; level 3 or higher is hindered by two steps for a round or two.
-
-Structured target-effect extraction and the supported persisted runtime lifecycle are implemented for the declared `loseNextAction` and `hindered` effects.
-
-### Explosive weapons
-
-The CRD has a dedicated rule for bombs, grenades, missiles, and similar explosives: they affect multiple targets in an area; affected creatures can require separate attack rolls; the GM may simplify this; success normally applies listed damage; failure typically applies smaller damage; grenades can be thrown a short distance; launchers can deliver them at range; Effort adds 2 damage per level instead of 3; PCs caught in the area make block or dodge rolls instead of the attacker making attack rolls.
-
-The word typically matters: the system must not encode failed explosive attacks as universally dealing 1 damage. Individual explosive entries must provide their own explicit failure effect when one exists.
-
-Missing structured mechanics include explosive/area identity, area size, delivery mode, explicitly stated failure effect, explosive Effort scaling, and the PC defense mode.
-
-## 5. Explicit special effects on weapon attacks
-
-The CRD contains weapon/armament descriptions with effects beyond ordinary damage, including Might defense follow-ups, stun/loss of next action, hindering, damage-track changes, burning, restraint/grappling, electrical damage, and Armor penetration.
-
-These are source-specific mechanics. They must never be inferred from names such as taser, grenade, laser, or firearm.
-
-The extraction layer must preserve the actual mechanical statement before runtime automation. targetEffects is only the first example and is not expressive enough for every explicit weapon effect in the CRD.
-
-## 6. Ammunition and weapon use
-
-The CRD science-fiction armaments section explicitly describes ammunition handling as three campaign choices: exact tracking, abstracted upkeep, or no tracking.
-
-This is not a universal weapon property. The system must not invent magazine sizes or ammunition counts, and depletion must not be repurposed as ammunition.
-
-Abilities that consume attacks worth of ammunition or power belong to ability runtime.
-
-## 7. Weapon-related abilities
-
-The CRD contains weapon-dependent abilities including Spray, Arc Spray, firearm additional attacks, Special Shot, Sniper, weapon-specific Lethal Capability, weapon mastery, knife/axe/whip/bow attacks, projectile interception, and abilities that modify ranged or melee damage.
-
-These are not intrinsic weapon mechanics. The architecture should connect weapon source capabilities to ability prerequisites/effects rather than hard-code abilities into weapon attack resolution.
-
-## 8. Environment and genre rules affecting weapons
-
-The CRD explicitly contains weapon modifiers for low gravity, high gravity, and zero gravity.
-
-Low gravity: heavy weapons that rely on weight deal 2 fewer damage, minimum 1; short range reaches long range; long range reaches very long range; low-gravity maneuvering training removes the damage penalty.
-
-High gravity: attacks and physical actions are hindered; weapon ranges are reduced by one category; high-gravity maneuvering ignores the difficulty change but not the range reduction.
-
-Zero gravity: physical tasks are hindered; short range reaches long range; long range reaches very long range.
-
-These should be implemented only when an environmental state model exists. Do not hide them inside rollAttack as unconditional modifiers.
-
-## 9. Spacecraft weapons
-
-The science-fiction section contains a separate weapon-system model: spacecraft weapon systems are heavy weapons; each crewed weapon station can contribute an attack; targeting can disable weapons, defenses, engines, or maneuverability; target lock eases the next attack; coordinate fire provides an asset; redline attacks are risky options; and weapon-system GM intrusions have explicit malfunction consequences.
-
-This is CRD material but belongs to a future spacecraft-combat domain, not the ordinary character weapon resolver.
-
-## 10. Artifact weapons
-
-The CRD contains a dedicated artifact-weapon section. Artifact weapons can operate outside the normal light/medium/heavy categories and can have level-based damage, Armor ignoring, special settings, and depletion.
-
-These must remain distinct from ordinary crdType weapon equipment.
-
-## 11. Mechanics that remain descriptive
-
-Do not automate genre suitability, narrative appearance, social/legal consequences, explanations of technology, recoil descriptions unless a rule explicitly changes a task, naming/category examples, GM intrusion examples, or suggestions for adapting unlisted weapons.
-
-Do not infer a missing category merely because the CRD says most weapons are medium.
-
-## 12. Automation backlog derived from the CRD
-
-### P0 — weapon attack resolution
-1. Represent First-action timing for light weapons.
-2. Represent Last-action timing for heavy weapons.
-3. Verify and implement extreme-range hindrance at the actual attack boundary.
-4. Add source-derived one-hand firing hindrance where explicitly stated.
-5. Preserve category timing independently from twoHanded.
-
-### P1 — explicit weapon effects
-6. Finish runtime application of targetEffects.
-7. Extend the structured special-effect model for explicit CRD weapon effects.
-8. Model explicit explosive weapon properties.
-9. Implement explosive target-resolution semantics.
-10. Implement explosive Effort scaling exactly as specified.
-
-### P2 — equipment interaction
-11. Implement alternate weapon configuration switching and attack resolution (implemented; action economy enforcement remains open).
-12. Implement tripod/operator prerequisites once actor/equipment setup supports them.
-13. Implement object/material interaction for cutsThroughMaterialsLevel.
-14. Apply explicit Armor penetration during NPC damage resolution.
-
-### P3 — cross-domain interactions
-15. Connect rapidFire to ability prerequisites.
-16. Connect weapon categories/families to weapon-related skills and abilities.
-17. Add explicit ammunition consumption where the CRD supplies it.
-18. Add environmental weapon modifiers once environmental state exists.
-19. Model spacecraft weapons separately.
-20. Model artifact weapons separately.
-
-## 13. Testing requirements
-
-Every new weapon mechanic must be tested at the appropriate layers:
-- rules/unit: pure mechanic resolution;
-- behavior/BDD: source rule expressed as a scenario;
-- content/extraction: CRD source statement maps to structured data;
-- application: attack service consumes the structured mechanic;
-- document boundary: Foundry Item/Actor APIs forward it correctly;
-- E2E: real Foundry gameplay verifies the observable result when game state changes.
-
-Content tests must validate source-derived behavior without coupling business tests to exact JSON representation.
-
-No mechanic should be added to the runtime without a CRD source statement that justifies it.
+# CRD weapon mechanics audit — reconciled 2026-11-05
+
+This audit uses only `docs/Cypher-Reference-Document-2026-07-29.docx` and the
+implementation at `22e2f2a`. It distinguishes completed weapon consumers,
+remaining general combat procedures and source-specific Ability effects.
+See the [field matrix](crd-weapon-runtime-matrix.md) and
+[current coverage review](crd-coverage-review.md) for detailed boundaries.
+
+The earlier version of this document mixed current behavior with an obsolete
+backlog and several claims without reviewed CRD locators. Those claims are
+corrected below; they must not be used as alternative rule authority.
+
+## Source and implementation map
+
+| CRD mechanic | Source locator | Current implementation and boundary |
+| --- | --- | --- |
+| Light/medium/heavy base damage, familiarity and ranges | 5264–5277 | `item-service.mjs`, `rules/weapon-mechanics.mjs` and `rules/weapon-skills.mjs` consume structured category, free-use and selected Skill data. Explicit zero damage remains zero. Names and price never determine a mechanic. |
+| First/Last category timing | 5267–5269, 7652–7663 | Managed round flow enforces timing from the active category. Light may use First or ordinary timing; heavy uses Last, including its declared immediate-movement exception. A two-handed medium weapon does not thereby become a Last attack. |
+| Familiarity versus trained/specialized/expert attacks | Skills and source-specific grants; 5265 | The pure weapon-Skill resolver combines supported familiarity and actual Skill levels once, instead of a second proficiency scale. This does not execute every Ability that could grant temporary or conditional training. |
+| Hand requirements and exceptional one-handed use | Category rule 5269 and source equipment rows | Explicit held/stowed state, available hands, structured two-hand requirements and one-hand hindrance are enforced. Descriptive exceptions require their own source contract. |
+| Extreme range | 5274–5277 | The GM declares the range-limit case; it adds one hindrance and saves the adjudication. No token/grid distance is inferred. |
+| Rapid-fire prerequisites | Spray and Arc Spray definitions | `weapon-ability-service.mjs` checks eligibility and runs supported source-specific sequences. A rapid-fire flag does not grant a generic extra attack. Spray consumes its explicitly tracked available-use store. |
+| NPC damage and physical Armor bypass | 7734–7740 and source weapon notes | Supported attacks persist Health damage and explicit physical Armor penetration. NPC-to-PC wound/Pool damage uses the separate defense contract. Do not invent an unsupported numeric-to-wound conversion. |
+| Material cutting | Source Monomolecular blade notes and 7741–7749 | `object-service.mjs` uses the actual owned weapon threshold, explicit material/tool intent, an attack roll, level damage and subsequent destruction. This is implemented, not a pending model foundation. |
+| Target effects, including Stunstick | Science Fiction equipment table, Stunstick row starting at 5768 | Supported level-gated hindrance/lost-action effects are applied and consumed in NPC attacks, with duration and reroll history. General opposing-task/NPC-defense projection still needs closure. |
+| Tripod and multiple operators | Source weapon notes | Explicit deployment and distinct eligible Actor participants are checked before costs, including synthetic Actors. Neither a universal setup time nor a helper action cost is inferred. |
+| Alternate configuration | Equipment paragraph 5806 | Selection and active category behavior work; consuming the announced switch action in managed round flow remains open. |
+
+The application contracts and tests are linked from
+[equipment constraints](equipment-constraints.md),
+[weapon Ability execution](weapon-ability-execution.md),
+[object damage](object-damage.md), [attack rerolls](attack-rerolls.md) and
+[round flow](round-flow.md). Their scoped live results remain dated evidence.
+
+## Explosives and general area attacks
+
+Paragraphs **5278–5281** give the explosive-weapon procedure; **7944–7949** give
+the general area procedure. Source targets/area, separate or GM-simplified attack
+rolls, PC defenses, delivery range, miss/minimum damage and shared Effort need a
+coordinated area contract. The existing `areaAttack` calculation already gives
+only **two** damage per allocated damage-Effort level. That formula alone does
+not implement multi-target resolution or the hindered area Dodge.
+
+The explosive rule describes usually one point of damage on a miss, with its
+qualifiers; other area effects have their own minima or explicit exceptions.
+Do not hardcode that every missed area attack deals one point, or that every
+successful defense completely cancels every source's minimum damage. Preserve
+the distinction between shared allocation and source-defined extra actions.
+Specialized Arc Spray/Bouncing Shield sequences do not close the general area
+workflow. See review entry C3.
+
+## Ammunition and limited-use equipment
+
+The CRD prices ammunition at **5271**, includes concrete equipment quantities
+such as energy packs, permits ignoring ammunition counts in favor of GM
+intrusions at **5438**, and gives depletion advice at **5594**. It does not
+establish the previously asserted three-way universal campaign procedure of
+exact tracking, abstract upkeep or no tracking.
+
+Keep actual quantity/use stores, ordinary depletion and source-specific Ability
+consumption distinct. Do not invent magazine capacities, decrement all ranged
+weapons automatically or reinterpret generic depletion as ammunition. Further
+consumption procedures require the actual source and an explicit campaign
+choice. Optional GM-intrusion handling is already compatible with the intrusion
+workflow; its reference advice still needs a Journal destination.
+
+## Circumstances, environment and source-specific attacks
+
+The source tables at **7825–7902** cover conditions and declared circumstances
+such as cover, light, mist, water, moving mounts/vehicles, gravity, aimed attacks
+and movement. Existing generic extra-step controls can represent declared
+modifiers; only some cases have dedicated automatic consumers.
+
+For gravity, **7861–7862** specify physical-task hindrance and a one-category
+change for thrown/projectile ranges. They do not establish the earlier claim
+that weight-based heavy weapons lose two damage, or the claimed generic
+low/high-gravity training exemptions. Those additions are excluded from this
+CRD backlog. Apply only a separately sourced Ability exception when one exists.
+Keep the field/condition/state model and source declaration explicit; do not
+hide new unconditional environment penalties in ordinary weapon resolution.
+
+Actual weapon-related Abilities include Spray, Arc Spray, Combat Prowess and
+Expert Combatant. Their canonical definitions and variants need individual
+contracts. Eligibility, action sharing, Edge, damage Effort, target effects,
+partial writes and rerolls belong in those services, not in a weapon-name parser.
+
+## Source limits: spacecraft and Artifact weapons
+
+The supplied CRD contains **Gunnery** at 188, **Piloting spacecraft** at 218 and
+individual Pilot/Starpilot powers, including **Redline Maneuver** at 2439–2442.
+These do not establish the detailed standalone spacecraft-combat model previously
+claimed here (weapon stations, target lock, subsystem attacks and coordinated
+fire). No reviewed CRD locator supports that combined system, so it is excluded
+from the CRD implementation queue. Review the actual Skills and Abilities in
+their existing families instead.
+
+The general Artifact discussion at **5293–5298** describes reusable effects and
+depletion. There is no dedicated Artifact-weapon inventory/section to extract
+from this CRD. The range-based depletion model and consumer already exist;
+actual Artifact powers need source material. Do not fabricate a catalogue or
+uncategorized level-based weapon damage as a pending CRD rule.
+
+## Current closure order
+
+1. General area/explosive resolution and source-specific minima (C3).
+2. Actual configuration-switch action spending (C4).
+3. Broader NPC modifier projection and declared circumstances (C5), coordinated
+   with movement penalties (C1).
+4. Additional source-specific weapon/Ability effects, secondary defenses and
+   defeat outcomes, with explicit source/target/timing contracts.
+5. Reference navigation for equipment rules, ammunition advice and circumstance
+   tables; complete the extracted/modelled/executed/verified matrix.
+
+Preserve completed category timing, Skill resolution, hand/setup requirements,
+physical Armor bypass, object cutting and supported target-effect lifecycles.
+Every new rule needs source evidence and tests at the lowest useful layer;
+Foundry UI/persistence changes also require scoped live validation. Narrative
+appearance, legality, technology explanations and genre suitability remain GM
+adjudication and reference content.

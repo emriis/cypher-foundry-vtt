@@ -2,8 +2,9 @@
 
 This document records an earlier inventory/design audit. Its legacy counts below
 are historical, not the current catalogue. Use the
-[2026-10-11 compendium audit](crd-compendium-audit.md) for current text fidelity,
-normalization defects, and per-entry automation limitations.
+[2026-11-05 coverage review](crd-coverage-review.md) for current scope and open
+work; the [2026-10-11 compendium audit](crd-compendium-audit.md) remains dated
+source-review history. The initial 53-record extraction plan below is historical.
 
 ## Scope
 

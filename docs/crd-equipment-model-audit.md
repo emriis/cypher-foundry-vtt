@@ -6,6 +6,8 @@ item models with the equipment mechanics explicitly described by the
 
 The CRD remains authoritative. This document records model requirements and
 gaps; it does not invent additional game rules.
+Updated model status was checked on 2026-11-05; see the
+[coverage review](crd-coverage-review.md) for runtime and reference boundaries.
 
 ## 1. Core equipment rules
 
@@ -16,22 +18,23 @@ gaps; it does not invent additional game rules.
 | Armor | light/medium/heavy category, free-use state, block benefit, dodge hindrance, and explicit encumbrance exceptions | category, freelyUsable, blockEaseDamage, encumbranceCategory, dodgeHindrance, equipped, priceCategory, description | **Structured** |
 | Shields | independent wound track: 3 minor, 2 moderate, 1 major; broken after major wound | wounds with max/current values, equipped, derived broken state | **Covered** |
 | Cyphers | one-use nature, standard or Power Boost category, subtle/manifest form where determined, CRD effect level, power level where applicable, identification/internal state, and source-backed random tables | cypherCategory, cypherType, level, powerLevel, powerLevels, randomRange, variants, rollTables, identified, internal, depleted, description | **Structured** |
-| Artifacts | level/form, identification, reusable depletion including never-depletes | level, form, identified, depletionDie, depletionThreshold, depleted, description | **Covered** |
+| Artifacts | level/form, identification, reusable depletion including never-depletes | level, form, identified, depletionDie, depletionMin, depletionMax, depleted, description | **Covered model; no source catalogue** |
 
 ## 2. Model gaps to resolve before automation
 
-### 2.1 Depletion ranges
+### 2.1 Depletion ranges — resolved
 
 The CRD describes artifact depletion as a range such as `1 in 1d6` or
-`1–3 in 1d20`, plus `—` for artifacts that never deplete. The current
-artifact model stores one `depletionThreshold`, which is sufficient for the
-single-value case but cannot represent a multi-value depletion range.
+`1–3 in 1d20`, plus `—` for artifacts that never deplete. Artifact and ordinary
+equipment models now store inclusive `depletionMin` and `depletionMax` bounds.
+The `none` die represents never-depletes. Legacy `depletionThreshold` values
+migrate to identical lower/upper bounds, preserving old single-value behavior.
 
-The same issue applies to any equipment or artifact source that uses a
-depletion range rather than a single threshold.
-
-**Required extension:** represent the lower and upper depletion bounds while
-preserving the existing single-value behavior as the normalized case.
+`module/applications/item-service.mjs` executes the inclusive range and retains
+its bounds for paid rerolls. Schema/migration regressions are in
+`tests/data-models/equipment-depletion.test.mjs` and
+`tests/data-models/equipment-source-semantics.test.mjs`. The missing Artifact
+catalogue is a source limitation, not an unresolved depletion model gap.
 
 ### 2.2 Cypher semantics
 

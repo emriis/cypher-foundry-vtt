@@ -15,7 +15,9 @@ on closing the runtime boundary for structured CRD mechanics that are already
 extracted into the compendium source.
 
 The current CRD content layer is substantially complete for the source-backed
-player and equipment families:
+player and equipment inventories. Inventory, effect automation and reference
+coverage are tracked separately in the
+[2026-11-05 coverage review](docs/crd-coverage-review.md):
 
 - Skills
 - Abilities
@@ -85,11 +87,12 @@ The current system includes:
 - armor and shield behavior
 - advancement and tier transitions
 - XP, rerolls, and Player Intrusions
-- structured Ability costs and effects
+- structured Ability base costs and supported explicit modifiers
 - Ability activation/deactivation and recovery-driven expiration
 - active Ability modifier aggregation
 - structured Ability roll-table resolution
 - Type and Focus advancement benefits
+- source-bound shield, follower, companion, command and protection Ability families
 - weapon attacks and core damage behavior
 - structured NPC attacks against player defenses, including wound and Pool damage
 - Cypher use and depletion
@@ -102,11 +105,17 @@ being extracted does not imply that its gameplay semantics are already executed.
 
 Current runtime work includes:
 
-- weapon mechanics.targetEffects
-- other structured weapon special mechanics
-- generic Cypher variants and random ranges
-- generic Cypher roll-table execution
-- complete runtime verification of structured granted benefits
+- declared movement penalties, non-rest recoveries and general area attacks;
+- configuration-switch action spending and broader NPC modifier projection;
+- remaining Ability, Descriptor and particular Cypher effect families;
+- source-package and cross-family runtime verification;
+- character arcs/XP awards and the optional split-XP procedure;
+- complete CRD reference Journals, table destinations and Player/GM navigation.
+
+Supported weapon target effects, held-equipment constraints, Cypher generation,
+variants and inline tables are already implemented. See the
+[runtime roadmap](docs/crd-content-roadmap.md) and its linked feature contracts
+for their exact scope and remaining exceptions.
 
 ## Compendium source of truth
 

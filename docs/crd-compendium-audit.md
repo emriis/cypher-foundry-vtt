@@ -1,5 +1,11 @@
 # CRD compendium audit — 2026-10-11
 
+For the current code/catalogue and complete rule/content work register, use the
+[2026-11-05 coverage review](crd-coverage-review.md). The figures, source hash,
+paragraph interpretations and validation results below are historical unless
+explicitly dated otherwise. Do not compare them directly with the current
+checked-in CRD or treat their runtime gap strings as current consumer evidence.
+
 The supplied **2026-07-29 CRD** is the sole authority for this audit. The English
 compendiums contained extraction errors, incomplete passages, and incorrect
 mechanical fields. Those verified defects were corrected. Individual Ability,
