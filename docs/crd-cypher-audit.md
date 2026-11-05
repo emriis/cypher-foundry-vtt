@@ -13,8 +13,15 @@ genre-item labels, or outside references.
 - Power Boost Cyphers: **9 source records per language**, with their 9 d00 placements preserved; the CRD's 37–00 entry redirects to the general Random Cypher table and is not a tenth Power Boost Cypher.
 - Artifact content: not present in the supplied CRD and therefore not extracted.
 
-French records use the English CRD text verbatim when no project-owned faithful
-French source is available. Mechanical fields remain identical.
+French build output uses source-hashed proposals from `translations/fr/`;
+the current normalized inventory has 198 reviewed Cypher proposals within the
+equipment family. Legacy English fallback in an authored compatibility record
+does not determine the compiled French status. Mechanical fields remain paired.
+
+Common generation, variants, tables, capacity and single-use consumption are
+implemented; particular power effects remain descriptive. See
+[the common lifecycle](cypher-lifecycle.md) and
+[the current coverage review](crd-coverage-review.md) for the remaining effect families.
 
 ## Subtle Cypher contract
 

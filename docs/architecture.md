@@ -74,6 +74,25 @@ The main gameplay boundaries are:
 - `project-service.mjs`: source-backed resource-point costs, explicit downtime
   projects, elected-GM settlement, contribution receipts and concrete results;
   see [resource-point projects](resource-projects.md).
+- `object-service.mjs`: level-based object protection/damage, breaking and later
+  destruction, explicit material/tool intent and attributed reroll correction;
+  see [objects and materials](object-damage.md).
+- `companion-upgrade-service.mjs` and its read/transaction helpers: installed
+  automaton forms, paid activations, source-bound equipment, flight, force-field
+  recipients, turret shots and Beast Eyes; see [companion upgrades](companion-upgrades.md).
+- `temporary-follower-service.mjs` and the necromancy/Duplicate/machine services:
+  source-bound temporary NPC lifetimes, paid batches, copied equipment, reboot,
+  death/backlash and retained-result consequences; see [temporary followers](temporary-followers.md).
+- `command-power-service.mjs` and effect/read helpers: non-damaging Soothe,
+  sustained maintenance, next-action Lighting and fixed-level Team-Up;
+  see [command powers](command-powers.md).
+- `protection-power-service.mjs` and read helpers: Mage Armor, Armoring Debris
+  and typed Elemental Protection with recipient-specific recovery and original
+  roll snapshots; see [protective foundations](protection-powers.md).
+- `awesome-personal-service.mjs`, `awesome-barrier-service.mjs` and capture/read
+  helpers: personal Intellect Block and shattering, remaining Edge, resumable
+  nonphysical Object barriers and original-target containment; see
+  [Awesome Force Field](awesome-force-field.md).
 - `character-service.mjs`: XP spending and character data operations;
   its Player Intrusion facade delegates to `intrusion-service.mjs`, which owns
   GM decisions, player requests, and receipt-based XP settlement.
@@ -159,7 +178,12 @@ application/rules services
 Runtime operations include activation, deactivation, recovery-driven expiration,
 cost handling, modifier aggregation, and roll-table resolution.
 
-The source definition never stores current activation state.
+The source definition never stores current activation state. Specialized
+families additionally keep versioned source/recipient receipts in Actor flags;
+the generic active-effect list is not the state store for every power.
+Presence of a source Item or a paid generic activation does not establish its
+particular effect. See the [coverage review](crd-coverage-review.md) for the
+remaining general-rule and effect-family contracts.
 
 ## 4. Content source and compendium architecture
 

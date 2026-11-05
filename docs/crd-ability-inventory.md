@@ -5,6 +5,16 @@ Source: `Cypher-Reference-Document-2026-07-29.docx` (2026-07-29).
 This is the first extraction inventory for the canonical Ability catalogue.
 Names are transcribed from the supplied CRD; no rules are inferred here.
 
+## Current status — 2026-11-05
+
+The current normalized catalogue contains **701 Abilities** and **42 Foci**.
+The initial extraction checklist at the end of this document is historical,
+including its then-current 53-record comparison baseline. Catalogue assembly,
+references and language pairing have since been implemented. Remaining work is
+per-clause effect automation, source-field verification and reference coverage;
+see the [current coverage review](crd-coverage-review.md) and
+[master roadmap](crd-content-roadmap.md).
+
 ## Canonical scope
 
 The inventory includes:
@@ -173,7 +183,7 @@ the same structure across superhero Types.
 
 ## Focus inventory
 
-The CRD lists 41 unique Foci:
+The CRD lists 42 unique Foci:
 
 - Abides in Stone
 - Blazes With Fire
@@ -258,9 +268,10 @@ display names match.
 9. Pair French records using the English logical ID; do not invent missing
    French translations.
 
-## Next extraction pass
+## Historical next extraction pass
 
-The remaining work is mechanical reconciliation rather than discovery:
+At the initial inventory stage, mechanical reconciliation was planned as follows.
+This is retained as extraction history, not the current implementation queue:
 
 1. Enumerate every named Focus Ability occurrence.
 2. Enumerate every named Type Ability occurrence, including genre-specific

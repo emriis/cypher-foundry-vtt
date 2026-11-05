@@ -311,6 +311,12 @@ remain the editable authoring surface; the CRD is their content authority.
 
 ## 5. Architecture maintenance
 
+Consult the [current CRD/code/documentation coverage review](crd-coverage-review.md)
+before planning a new rules lot. It inventories all substantive CRD chapters,
+remaining general-rule/effect families, table/callout destinations and known
+machine-audit classification limits. Recheck the relevant code and contract
+tests rather than interpreting a historical inventory milestone as full automation.
+
 Task modifier, Effort, Edge and per-action cost contracts are maintained in
 [task-rolls.md](task-rolls.md). Consult its CRD locators and test the actual
 weapon-to-task pipeline before extending task automation.

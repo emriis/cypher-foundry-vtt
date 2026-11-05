@@ -6,10 +6,12 @@ Document (CRD) into a Foundry-first content and automation layer.
 Completed work remains recorded here as completed history. Only work that is
 obsolete or contradicted by the current source is removed.
 
-The [2026-10-11 compendium audit](crd-compendium-audit.md) supersedes broad
-completion claims for text fidelity and individual power automation. Historical
-completed phases describe their accepted infrastructure/inventory scope; they
-do not certify every CRD definition or execute every described mechanic.
+The [2026-11-05 coverage review](crd-coverage-review.md) reconciles this roadmap
+with the current code and supplied CRD, including remaining general rules,
+effect families and full reference-content destinations. The dated
+[2026-10-11 compendium audit](crd-compendium-audit.md) remains source-review
+history. Completed phases describe accepted infrastructure/inventory scope;
+they do not certify every CRD definition or execute every described mechanic.
 
 ## 1. Status legend
 
@@ -27,7 +29,7 @@ tests, and a deterministic build where applicable.
 | Area | Status |
 | --- | --- |
 | Architecture and source/build foundations | Complete |
-| Core Cypher rules and character foundations | Complete for the implemented system scope |
+| Core Cypher rules and character foundations | Foundations implemented; specific general-rule gaps remain in review register C1–C12 |
 | Skills | Inventory and selected-skill modifiers implemented; source procedures require adjudication |
 | Abilities | Catalogue/lifecycle implemented; individual effect automation remains in progress |
 | Types | Inventory/grants implemented; referenced Ability limitations remain |
@@ -35,7 +37,7 @@ tests, and a deterministic build where applicable.
 | Foci | 42 Focus records and graph/grant infrastructure; individual Ability limitations remain |
 | W4 equipment/weapons/armor/shields | Complete source-backed inventory |
 | Subtle/Manifest/Power Boost Cyphers | Source-backed inventory and common lifecycle implemented; particular powers remain open |
-| CRD Journals | Seven source-faithful rule selections exist; full CRD navigation remains planned |
+| CRD Journals | Seven source-faithful selections; all substantive chapters inventoried, complete passages/navigation remain open |
 | Quick Reference | Planned |
 | Player/GM guides | Planned |
 | Genre Ability integration | Complete |
@@ -43,9 +45,10 @@ tests, and a deterministic build where applicable.
 | CRD creature extraction | Not applicable: supplied CRD contains no creature inventory |
 | Artifact extraction | Blocked: supplied CRD contains no Artifact inventory |
 | Runtime consumption of all structured mechanics | In progress |
+| French compendium editorial coverage | 1,373 reviewed proposals / 2,981 fields; semantic and gameplay certification remain separate |
 | Playwright/Foundry E2E infrastructure | Complete; gameplay coverage continues to grow |
 
-### Core-rule runtime progress — 2026-10-27
+### Core-rule runtime progress — reconciled 2026-11-05
 
 Inventory completion and executable rule support are separate milestones. The
 following contracts are present in the current implementation; they do not
@@ -81,7 +84,10 @@ The common cypher lifecycle and follower/conditional-benefit foundations are
 implemented. Continue with source-backed Ability and Cypher effect families,
 using the shared progression, source-condition and consequence contracts.
 Enforced configuration-switch action spending remains a separate open core-rule
-task. Journal/reference, Quick Reference, player/GM navigation and cross-family
+task. Movement penalties, non-rest recoveries, general area attacks, broader NPC
+modifier projection and character-arc/XP-award procedures also remain open;
+see C1–C12 in the [coverage review](crd-coverage-review.md). Journal/reference,
+Quick Reference, player/GM navigation and cross-family
 runtime/E2E audits also remain open. Do not reopen completed core-rule lots from stale historical
 audit tables without first checking their current implementation.
 
@@ -116,10 +122,12 @@ The completed phase established:
 
 These items remain historical acceptance criteria and are not pending work.
 
-## 5. Phase 2 — Core rules and character foundations — Complete
+## 5. Phase 2 — Core rules and character foundations — Historical foundation scope complete
 
 Completed scope includes the implemented Cypher task, Effort, Edge, wounds,
 recovery, advancement, and character-service foundations.
+This historical milestone does not close the general-rule residual register
+or the Earning XP/reference portions of the CRD.
 
 The Ability runtime model is also implemented:
 
@@ -133,7 +141,12 @@ The Ability runtime model is also implemented:
 - modifier aggregation;
 - structured Ability roll-table resolution.
 
-## 6. Phase 3 — Reusable player content — Complete
+## 6. Phase 3 — Reusable player content — Inventory scope complete
+
+The current normalized inventory is 1,373 EN documents, with paired FR documents.
+All 1,373 French proposals are marked reviewed under the editorial pipeline.
+Catalogue, source-field certification, runtime effect execution and live
+verification remain separate; see the [coverage review](crd-coverage-review.md).
 
 ### 6.1 Skills — Complete
 
@@ -187,6 +200,8 @@ no Artifact inventory, so extraction is explicitly source-blocked.
 - [ ] Adjudicate the 100 visual groups whose **complete** boxed content is
   not yet proven to reside in the current EN compendiums; do not mistake
   absent Item evidence for a proven rule omission.
+  The [destination checklist](crd-reference-destinations.md) records each group
+  and all 61 Word tables against the current source hash.
 - [ ] Incorporate deferred equipment GM advice and genre/rules examples in
   their appropriate future full-CRD Journals.
 
@@ -196,9 +211,11 @@ text are permitted to close the outstanding entries.
 
 ### 7.1 Core CRD Journal
 
-- [ ] Inventory reference and procedure sections.
-- [ ] Define Journal source schema and hierarchy.
-- [ ] Implement deterministic Journal generation.
+- [x] Inventory all substantive CRD chapters and their current destinations in
+  the [coverage review](crd-coverage-review.md).
+- [ ] Assign every remaining passage, example, boxed continuation and table.
+- [ ] Extend the selected-Journal hierarchy to complete CRD coverage.
+- [ ] Extend deterministic authoring/generation beyond the seven existing selections.
 - [ ] Link Journal entries to structured records.
 - [ ] Add EN/FR and provenance tests.
 
@@ -278,8 +295,11 @@ combat prose remains available and is not parsed automatically.
 
 ### 9.3 Random tables
 
-- [ ] Inventory actual CRD random tables.
-- [ ] Represent genuine random tables as RollTables.
+- [x] Inventory all 61 Word tables through the source callout audit.
+- [ ] Classify every table as list, reference/procedure, equipment data or actual
+  random table and assign its destination. Cypher generation/inline tables
+  already have runtime consumers.
+- [ ] Add native RollTables where useful and genuinely source-backed.
 - [ ] Keep prose lists as Journal content.
 - [ ] Validate results and weights.
 
@@ -311,6 +331,30 @@ structured data already present in the source packs.
 - [x] Player-facing Playwright/Foundry E2E runner infrastructure.
 
 ### 10.2 Current runtime closure work
+
+The [general-rule register C1–C12](crd-coverage-review.md) adds the source-backed
+gaps omitted from earlier broad completion labels:
+
+- [ ] Declared short/long movement, actual action spending and penalties through
+  the end of the next turn (C1).
+- [ ] Non-rest recovery against ongoing hostile effects, with allowance/time
+  consumption and no ordinary recovery benefits (C2).
+- [ ] General area defense and attack allocation, target sets and source-specific
+  minimum damage (C3).
+- [ ] Configuration-switch action expenditure (C4).
+- [ ] Broader NPC modifier projection and declared combat circumstances (C5).
+- [ ] Linked secondary defenses, explicit no-defense choices, defeat outcomes,
+  ordinary NPC ally/interaction procedures and optional skill procedures (C6–C10).
+- [ ] Character arcs, receipted XP awards/milestones and optional split-XP policy
+  (C9), separately from completed advancement purchase/tier rules.
+- [ ] Complete source-package and special-exception verification (C11–C12).
+
+Continue Ability and Cypher effects using the family partition in the review:
+passive/conditional benefits, direct attacks, area/multiple attacks, further
+armor/retaliation, healing, movement/spatial effects, senses/concealment,
+control/illusion/dispelling, transformations and rituals/prepared resources.
+Keep remaining branches of already implemented families visible. Generic
+activation, tables and depletion do not close all 198 particular Cypher powers.
 
 - [x] Apply Tough's explicit passive minor-wound capacity through derived sheet
   display, damage overflow and Healing Hand, without rewriting base maxima.
@@ -456,9 +500,10 @@ Completed families require, as applicable:
 Seven source-faithful rule selections already exist. The remaining work is the
 broader reference inventory, hierarchy and navigation, not starting from no Journals.
 
-- [ ] Inventory reference/procedure sections.
-- [ ] Define Journal source schema and hierarchy.
-- [ ] Implement deterministic Journal generation.
+- [x] Inventory substantive reference/procedure chapters in the coverage review.
+- [ ] Assign remaining individual passages, boxes, examples and tables.
+- [ ] Extend the selected-Journal hierarchy to the complete reference library.
+- [ ] Extend deterministic content authoring/generation beyond the seven selections.
 - [ ] Link Journals to structured records.
 - [ ] Add EN/FR and provenance tests.
 
@@ -479,7 +524,8 @@ broader reference inventory, hierarchy and navigation, not starting from no Jour
 
 - [x] Canonical Genre Ability integration.
 - [ ] Complete genre reference/navigation.
-- [ ] Add actual CRD random tables.
+- [x] Inventory the 61 Word tables; cypher generation and inline tables have consumers.
+- [ ] Complete table classification, destinations and any useful native RollTables.
 - [ ] Add GM procedures and rewards.
 - [ ] Do not add a CRD creature extraction task: the source contains no
   creature inventory.
@@ -512,6 +558,10 @@ broader reference inventory, hierarchy and navigation, not starting from no Jour
   matrix.
 - [ ] Complete the extracted/modelled/validated/runtime/E2E matrix for all
   structured mechanics, including Cypher effects.
+- [ ] Close the general-rule residuals and reference-content destinations in
+  [the current coverage review](crd-coverage-review.md), including XP earning.
+- [ ] Reconcile the machine automation classifier with existing shield, equipment
+  and round-timing consumers before using its gap strings as planning evidence.
 - [ ] Expand high-value player and GM E2E workflows.
 - [ ] Run final provenance/reference/stale-build audits.
 
