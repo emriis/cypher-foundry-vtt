@@ -1,0 +1,50 @@
+{
+  "_id": "ccc580be0bb3bd40",
+  "_key": "!journal!ccc580be0bb3bd40",
+  "name": "The Core Character",
+  "document": "JournalEntry",
+  "crdType": "journal",
+  "pages": [
+    {
+      "_id": "e9ee1cf1e7fecf60",
+      "_key": "!journal.pages!ccc580be0bb3bd40.e9ee1cf1e7fecf60",
+      "name": "Core Character Quick Summary",
+      "type": "text",
+      "sort": 100000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Your core character starts with the following.</p>\n<p class=\"crd-summary\">8 Might / 8 Speed / 8 Intellect</p>\n<p class=\"crd-summary\">6 additional points to allocate in Might, Speed, and/or Intellect</p>\n<p class=\"crd-summary\">Capacity to take three minor / three moderate / three major wounds</p>\n<p class=\"crd-summary\">Effort: 1</p>\n<p class=\"crd-summary\">Cypher limit: 2</p>\n<p class=\"crd-summary\">Freely use light weapons</p>\n<p class=\"crd-summary\">Cannot freely use any armor</p>\n<p class=\"crd-summary\">Two genre skills</p>\n<p class=\"crd-summary\">Optional: One additional genre skill in exchange for an inability in a genre skill</p>\n<p class=\"crd-summary\">One set of appropriate clothing, enough extra cash to pay for a moderately expensive item, and a set of basic equipment (from the genre you’re playing in)</p>\n<aside class=\"crd-callout\"><p>Core characters begin with either two or three skills; each must be different. And if you are a real-world character with a profession and get another skill choice, that must be different as well. The upshot is that you can’t become trained twice (specialized) in the same skill at tier 1.</p></aside>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "0557a592ca22ece3"
+          }
+        }
+      }
+    }
+  ],
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "journal.crd-core-character",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "The Core Character",
+        "sourceLocator": "CRD paragraphs 50-63",
+        "transformations": [
+          "Verbatim source paragraphs with structural HTML formatting",
+          "Complete canonical Item definitions replaced by native compendium links; paragraph destinations recorded separately"
+        ]
+      }
+    }
+  }
+}

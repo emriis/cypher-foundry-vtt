@@ -1,3 +1,4 @@
+import { EXPECTED_CATALOGUE_COUNT } from "../../scripts/crd-reference/inventory.mjs";
 import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -19,7 +20,7 @@ test("PR12 Equipment and Cypher inventory is canonically complete and validated"
    assert.deepEqual(row.missingFields,[],id);assert.equal(row.mechanicalParity,true,id);
    assert.equal(row.sourceFields,row.translatedFields,id);
  }
- assert.equal(review.entries.length,1373);
+ assert.equal(review.entries.length,EXPECTED_CATALOGUE_COUNT);
  assert.ok(review.entries.filter(row=>row.status==="reviewed").length>=1366);
  assert.ok(review.entries.filter(row=>row.status==="proposed").length<=7);
  assert.equal(review.entries.filter(row=>row.logicalId.startsWith("ability.")&&row.status==="reviewed").length,701);

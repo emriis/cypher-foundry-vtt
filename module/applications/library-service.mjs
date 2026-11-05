@@ -5,6 +5,11 @@
 import { runActorActions } from "./action-guard.mjs";
 
 const references = Object.freeze([
+  ["crd-contents", "rules", "JournalEntry"],
+  ["crd-creating-your-character", "rules", "JournalEntry"],
+  ["crd-core-character", "rules", "JournalEntry"],
+  ["crd-skills", "rules", "JournalEntry"],
+  ["crd-descriptors", "rules", "JournalEntry"],
   ["task-difficulty", "rules", "JournalEntry"],
   ["effort-edge", "rules", "JournalEntry"],
   ["recoveries-healing", "rules", "JournalEntry"],
@@ -14,6 +19,7 @@ const references = Object.freeze([
   ["xp-advancement", "rules", "JournalEntry"],
   ["athletics", "skills", "Item"]
 ].map(([key, family, documentName]) => Object.freeze({ key, family, documentName,
+  section: key.startsWith("crd-") ? "chapter" : "quick",
   logicalId: `${family === "rules" ? "journal" : "skill"}.${key}` })));
 const homeCommand = "await game.cypher.library.open();";
 

@@ -21,8 +21,18 @@
 .cypher-library .library-references { display: flex; flex-wrap: wrap; gap: var(--cypher-space-md); align-items: center; }
 .cypher-library button { height: auto; min-height: var(--cypher-target-size); white-space: normal; }
 .cypher-library .library-references button { flex: 1 1 180px; }
-.cypher-library button[aria-pressed="true"] { border-color: var(--cypher-color-accent); background: var(--cypher-color-bg-card-alt); }
+.cypher-library button[aria-pressed="true"] {
+  border-color: var(--cypher-color-accent);
+  background: var(--cypher-color-bg-card-alt);
+  color: var(--cypher-color-text);
+}
 .cypher-library .library-source { margin-top: var(--cypher-space-lg); overflow-x: auto; }
+.cypher-library .library-pages { margin-top: var(--cypher-space-lg); }
+.cypher-library .crd-callout {
+  border-inline-start: var(--cypher-radius-sm) solid var(--cypher-color-accent);
+  padding-inline-start: var(--cypher-space-lg);
+  background: var(--cypher-color-bg-card-alt);
+}
 .cypher-library .library-source table { min-width: 100%; }
 .cypher-library .hint { color: var(--cypher-color-text-muted); }
 .cypher.sheet .pc-library-button { flex: 0 0 var(--cypher-target-size); width: var(--cypher-target-size); }

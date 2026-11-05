@@ -56,6 +56,13 @@ imports reference documents. Content language is selected in the library and
 does not change the UI language or existing world documents. See the
 [full information-access plan](information-library-plan.md) for future scope.
 
+The first four reference chapters are authored from the supplied CRD through
+`npm run author:crd-chapters`; this intentionally writes their English JSON and
+`data/crd-reference-creation.json` only. Use `npm run check:crd-chapters` for a
+read-only completeness/drift check. The command needs Python's standard library
+to read DOCX; ordinary pack compilation and the browser consume JSON without
+Python. French prose remains separately authored in `translations/fr/rules/`.
+
 ### TDD and BDD boundary
 
 For recovery and healing work, follow the source contracts and persistence

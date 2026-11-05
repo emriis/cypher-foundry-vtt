@@ -1,3 +1,4 @@
+import { EXPECTED_CATALOGUE_COUNT } from "../../scripts/crd-reference/inventory.mjs";
 import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -74,9 +75,9 @@ test("PR9 approvals remain intact when later batches are reviewed", async () => 
   for (const row of review.entries) {
     counts.set(row.status, (counts.get(row.status) ?? 0) + 1);
   }
-  assert.equal(review.entries.length, 1373);
+  assert.equal(review.entries.length, EXPECTED_CATALOGUE_COUNT);
   const reviewedAbilities = review.entries.filter(row => row.logicalId.startsWith("ability.") && row.status === "reviewed");
   assert.ok(reviewedAbilities.length >= 525, "Later batches must not roll back PR9 approvals");
-  assert.equal((counts.get("reviewed") ?? 0) + (counts.get("proposed") ?? 0), 1373);
+  assert.equal((counts.get("reviewed") ?? 0) + (counts.get("proposed") ?? 0), EXPECTED_CATALOGUE_COUNT);
   assert.deepEqual(review.orphanedProposals, []);
 });

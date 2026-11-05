@@ -64,12 +64,13 @@ export class CypherLibrary extends HandlebarsApplicationMixin(ApplicationV2) {
   static DEFAULT_OPTIONS = {
     id: "cypher-library", classes: ["cypher", "sheet", "cypher-library"],
     position: { width: 740, height: 720 }, window: { title: "CYPHER.Library.Title", resizable: true },
-    actions: { reference: CypherLibrary.reference, language: CypherLibrary.language,
+    actions: { reference: CypherLibrary.reference, language: CypherLibrary.language, page: CypherLibrary.page,
       task: CypherLibrary.task, draw: CypherLibrary.draw, shortcut: CypherLibrary.shortcut }
   };
   static PARTS = { content: { template: "systems/cypher/templates/library/home.hbs" } };
   contentLanguage = game.i18n.lang.startsWith("fr") ? "fr" : "en";
   selectedKey = null;
+  selectedPageId = null;
 
   async _prepareContext() {
     const entries = await libraryIndex(this.contentLanguage);
@@ -78,10 +79,15 @@ export class CypherLibrary extends HandlebarsApplicationMixin(ApplicationV2) {
       .filter(page => page.type === "text" && page.testUserPermission(game.user, "OBSERVER"))
       .sort((left, right) => left.sort - right.sort) : [];
     const enrich = (html, relativeTo) => foundry.applications.ux.TextEditor.implementation.enrichHTML(html, { secrets: false, relativeTo });
-    const sourcePages = await Promise.all(pages.map(async page => ({ name: page.name, html: await enrich(page.text.content, page) })));
+    const isChapter = document?.flags?.cypherFoundry?.crd?.logicalId?.startsWith("journal.crd-");
+    const currentPage = pages.find(page => page.id === this.selectedPageId) ?? pages[0];
+    const sourcePages = await Promise.all((isChapter ? [currentPage].filter(Boolean) : pages)
+      .map(async page => ({ name: page.name, html: await enrich(page.text.content, page) })));
+    const navigation = entry => ({ ...entry, name: entry.name ?? label("Unavailable"), selected: entry.key === this.selectedKey });
     return { language: this.contentLanguage, english: this.contentLanguage === "en", french: this.contentLanguage === "fr",
-      references: entries.filter(entry => entry.documentName === "JournalEntry").map(entry => ({ ...entry,
-        name: entry.name ?? label("Unavailable"), selected: entry.key === this.selectedKey })),
+      chapters: entries.filter(entry => entry.section === "chapter").map(navigation),
+      references: entries.filter(entry => entry.documentName === "JournalEntry" && entry.section !== "chapter").map(navigation),
+      pageNavigation: isChapter ? pages.map(page => ({ id: page.id, name: page.name, selected: page === currentPage })) : [],
       sourcePages, selectedName: document?.name, selected: Boolean(document),
       sourceLink: document ? await enrich(`@UUID[${document.uuid}]{${escape(document.name)}}`, document) : "",
       skillLink: entries.find(entry => entry.key === "athletics")?.uuid
@@ -90,7 +96,8 @@ export class CypherLibrary extends HandlebarsApplicationMixin(ApplicationV2) {
       unavailable: Boolean(this.selectedKey && !document) };
   }
 
-  static async reference(_event, target) { this.selectedKey = target.dataset.key; await this.render(); }
+  static async reference(_event, target) { this.selectedKey = target.dataset.key; this.selectedPageId = null; await this.render(); }
+  static async page(_event, target) { this.selectedPageId = target.dataset.pageId; await this.render(); }
   static async language(_event, target) {
     if (!["en", "fr"].includes(target.dataset.language)) return;
     this.contentLanguage = target.dataset.language;

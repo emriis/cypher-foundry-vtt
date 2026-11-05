@@ -1,0 +1,23 @@
+{
+  "logicalId": "journal.crd-core-character",
+  "sourceLogicalId": "journal.crd-core-character",
+  "language": "fr",
+  "status": "reviewed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "b84f01a7277f00afda4079a33ded43007be1e0eac8203d5dd754542db83cdcfc",
+      "text": "Le personnage de base"
+    },
+    {
+      "path": "pages.0557a592ca22ece3.name",
+      "sourceHash": "ba881d458b3fd0173f7d3daec678a75056e1b3bcd0db2864124888da71584883",
+      "text": "Résumé du personnage de base"
+    },
+    {
+      "path": "pages.0557a592ca22ece3.text.content",
+      "sourceHash": "427d7b36e0eba6ceb79574e682b8d2ad68dd0c3acd57197898be63d0a37860a1",
+      "text": "<p>Votre personnage de base commence avec les éléments suivants.</p>\n<p class=\"crd-summary\">8 en Puissance / 8 en Célérité / 8 en Intellect</p>\n<p class=\"crd-summary\">6 points supplémentaires à répartir entre Puissance, Célérité et/ou Intellect</p>\n<p class=\"crd-summary\">Capacité à subir trois blessures mineures / trois modérées / trois majeures</p>\n<p class=\"crd-summary\">Effort : 1</p>\n<p class=\"crd-summary\">Limite de cyphers : 2</p>\n<p class=\"crd-summary\">Utilisation libre des armes légères</p>\n<p class=\"crd-summary\">Aucune utilisation libre d’armure</p>\n<p class=\"crd-summary\">Deux compétences de genre</p>\n<p class=\"crd-summary\">Facultatif : une compétence de genre supplémentaire en échange d’une inaptitude dans une compétence de genre</p>\n<p class=\"crd-summary\">Une tenue adaptée, assez d’argent supplémentaire pour payer un objet de prix modéré et un équipement de base issu du genre de la partie</p>\n<aside class=\"crd-callout\"><p>Les personnages de base commencent avec deux ou trois compétences, qui doivent toutes être différentes. Si vous jouez un personnage du monde réel avec une profession et obtenez un choix de compétence supplémentaire, cette compétence doit également être différente. Vous ne pouvez donc pas obtenir deux formations dans la même compétence, et devenir spécialiste, au rang 1.</p></aside>"
+    }
+  ]
+}

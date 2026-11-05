@@ -13,7 +13,29 @@ OOXML visual grouping remains a heuristic; ambiguous layout needs visual review.
 IDs below use the zero-based table/group positions in the generated report.
 Completed groups are omitted from the open list, so group IDs are not consecutive.
 
-## All 100 visual groups requiring review
+## Library tranche 2A dispositions
+
+The baseline index below is retained for traceability. The new
+[creation-chapter partition](../data/crd-reference-creation.json) establishes
+complete source-bounded destinations for these five groups; this leaves **95**
+of the baseline 100 open groups for subsequent reference tranches.
+
+| Group | Paragraphs | Validated destination |
+| --- | --- | --- |
+| B0 | 26 | `journal.crd-creating-your-character`, Skills page |
+| B1 | 63 | `journal.crd-core-character`, summary page |
+| B2 | 83–87 | `journal.crd-skills`, tier-restriction page/table |
+| B7 | 168–171 | Complete `skill.disguise` callout, linked from the Skill list |
+| B19 | 253–254 | `journal.crd-descriptors`, principles page |
+
+Word table **0**, paragraphs **228–237**, is completely preserved in
+`skill.scavenging`, reached from the chapter's Skill list. It is a consultation
+table rather than a random procedure. The other 60 table destinations remain
+to be reconciled in later chapter tranches. See the
+[lot 2 delivery register](information-library-plan.md#lot-2-delivery-register)
+for implementation and validation scope.
+
+## Baseline: 100 visual groups requiring review
 
 | Group | CRD paragraphs | Existing full paragraph matches | Source section | Proposed reference destination |
 | --- | --- | --- | --- | --- |
@@ -118,7 +140,7 @@ Completed groups are omitted from the open list, so group IDs are not consecutiv
 | B224 | 8167–8168 | 0/2 | Advancing Your Character / Resource Points / Spending Time | XP/advancement/project reference |
 | B225 | 8178–8178 | 0/1 | Advancing Your Character / Advancement Beyond Tier 6 | XP/advancement/project reference |
 
-## All 61 Word tables
+## Baseline: all 61 Word tables
 
 The current generation, Skill, equipment, form and selected-Journal consumers
 must be checked before assigning new reference content. A table may already be

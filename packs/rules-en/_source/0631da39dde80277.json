@@ -1,0 +1,116 @@
+{
+  "_id": "0631da39dde80277",
+  "_key": "!journal!0631da39dde80277",
+  "name": "Skills",
+  "document": "JournalEntry",
+  "crdType": "journal",
+  "pages": [
+    {
+      "_id": "e74b8d8edf1841b2",
+      "_key": "!journal.pages!0631da39dde80277.e74b8d8edf1841b2",
+      "name": "Skills",
+      "type": "text",
+      "sort": 100000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>A skill is a category of knowledge, an ability, or an activity relating to a task, such as athletics, navigation, or charm. A character who has a skill is better at completing related tasks than a character who lacks the skill, but even an unskilled character can attempt nearly any task.</p>\n<p>A character’s level of skill is either trained (reasonably skilled) or specialized (very skilled).</p>\n<p>Training in a skill eases attempts to accomplish that task.</p>\n<p>Specialization in a skill eases attempts to accomplish that task by two steps. (If you get trained twice in the same skill, or are already trained and get training in the same skill again later, you become specialized.)</p>\n<p>Being an expert in a skill allows you to ease a task by three steps, but becoming an expert usually requires that you have a special ability that specifically grants you that option, such as with Expert Combatant.</p>\n<p>Inability in a specific task or skill is also possible. An inability is a task your character isn’t good at. You can think of inabilities as negative skills—instead of those tasks being eased, they’re hindered.</p>\n<p>If you have neither training nor an inability, you can freely attempt a task. This is something you can do, but you do it neither better nor worse than the average person. Most people (in The Real World Genre, anyway) can freely drive their vehicle, driving every day to get places, but they would be seriously challenged to come out of a spin after going much too fast on an icy road.</p>\n<p>To carry on with the example of driving, a person who’s never been behind the wheel might have an inability in driving. A professional driver, like a bus or truck driver or an auto aficionado, might be trained in driving. A race car driver, stunt driver, or criminal getaway driver might be specialized in driving.</p>\n<p>Genre Skills: When you are given the opportunity to choose skills, select them from the appropriate genre. You can pick any skill listed for your game’s genre that isn’t restricted by your tier. For example, if the GM is running a swords &amp; sorcery or dungeon fantasy game, pick your genre skills from the Fantasy Skills list. You’ll find the description of the skill in this section, though.</p>\n<p>Each genre defines several skills. Many more skills are possible, especially in science fiction genres, but the same is true in real-world genres and fantastic games. If you’d prefer your character have an avocation or background that isn’t on the skills list for your genre, work with your GM to add that skill to your game.</p>\n<p>In most campaigns, fluency in a language is considered a skill. So if you want to speak French, that’s the same as being trained in biology or athletics.</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "82eb188c7bd1d932"
+          }
+        }
+      }
+    },
+    {
+      "_id": "14f072580edc48b0",
+      "_key": "!journal.pages!0631da39dde80277.14f072580edc48b0",
+      "name": "Background Skills",
+      "type": "text",
+      "sort": 200000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Background Skills: One of the two skill choices you are given when creating a core character is your background skill. Your choice of background skill reveals something about where your character came from and an element of their backstory. When you choose (or randomly determine, if you prefer) a background skill, you can use it as a seed to create a narrative about your past.</p>\n<p>For instance, if you choose crafting (with a focus on cooking) as your background skill, your character may have been a small-town baker who grew dissatisfied, a commissary cook for a military group that has since disbanded (or was decimated), or just someone who learned everything your grandmother was able to teach about her cooking traditions before everything changed.</p>\n<p>If you choose performance as your background skill, your character may have been a dancer in a seedy inn at the edge of town, a member of a troupe of actors who’ve all moved on to different trades, someone in a traveling circus that fell afoul of the law, or maybe someone who was once a celebrated performer but fell from grace so completely that few now recognize you.</p>\n<p>Alternately, come up with your background first, then select a background skill that suits it.</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "d6a9d312c18a90ff"
+          }
+        }
+      }
+    },
+    {
+      "_id": "0d2e73f7643d3928",
+      "_key": "!journal.pages!0631da39dde80277.0d2e73f7643d3928",
+      "name": "Tier-Restricted Skills",
+      "type": "text",
+      "sort": 300000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Tier-Restricted Skills: When you have the option to learn a skill, choose one appropriate for your genre and tier.</p>\n<p>You have to be tier 2 or higher before you can become specialized in a noncombat skill (such as charm, athletics, and gathering information).</p>\n<p>For combat skills—such as attacking with a broadsword, or defending, like dodging to avoid an attack—you have to be tier 2 or higher to become trained, and tier 4 or higher to become specialized (some character abilities like Expert Combatant can let you become trained or specialized earlier than this).</p>\n<aside class=\"crd-callout\"><p>Tier-Restricted Skillls</p></aside>\n<table><thead><tr><th>Tier</th><th>Skill</th></tr></thead><tbody><tr><td>2</td><td>You can become specialized in noncombat skills.</td></tr><tr><td>2</td><td>You can become trained in a combat skill (attacking or defending).</td></tr><tr><td>4</td><td>You can become specialized in a combat skill (attacking or defending).</td></tr></tbody></table>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "36586f98e35524b6"
+          }
+        }
+      }
+    },
+    {
+      "_id": "7e8f23249d949046",
+      "_key": "!journal.pages!0631da39dde80277.7e8f23249d949046",
+      "name": "Master Skill List",
+      "type": "text",
+      "sort": 400000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>The skills presented here are intentionally somewhat broad and high-level so you can choose a skill that best fits the kind of character you’re creating. For instance, if you want to play a character good at preparing and tanning hides, cutting and stitching what results to create a garment or leather object, and repairing the same, crafting (with a focus on leatherworking) is the skill for you. If you’re in a real‑world game, maybe you’d prefer hacking, especially if you want to hack electronic systems, write code, or try your hand at prompt engineering.</p>\n<ul><li>@UUID[Compendium.cypher.skills-en.Item.7c91e6d076a60d70]{Animal care}</li><li>@UUID[Compendium.cypher.skills-en.Item.c02e3c56c709bbfa]{Astronomy}</li><li>@UUID[Compendium.cypher.skills-en.Item.9de894794e956dc7]{Athletics}</li><li>@UUID[Compendium.cypher.skills-en.Item.15d0426c587a4c29]{Attacking (tier-restricted)}</li><li>@UUID[Compendium.cypher.skills-en.Item.b039a04e1985b563]{Biology}</li><li>@UUID[Compendium.cypher.skills-en.Item.360c45bc88bbf320]{Charm}</li><li>@UUID[Compendium.cypher.skills-en.Item.7f9dfd5260bbc78b]{Chemistry}</li><li>@UUID[Compendium.cypher.skills-en.Item.a298f3199f759d5e]{Crafting}</li><li>@UUID[Compendium.cypher.skills-en.Item.947dbcb139e676c7]{Cybernetics}</li><li>@UUID[Compendium.cypher.skills-en.Item.eda572090cad35d8]{Deception}</li><li>@UUID[Compendium.cypher.skills-en.Item.1bde50f91e286909]{Defending (tier-restricted)}</li><li>@UUID[Compendium.cypher.skills-en.Item.2203f23488e87208]{Disarming traps}</li><li>@UUID[Compendium.cypher.skills-en.Item.8fd9ef089255b0a5]{Disguise}</li><li>@UUID[Compendium.cypher.skills-en.Item.4db89f93ce47d849]{Driving}</li><li>@UUID[Compendium.cypher.skills-en.Item.ff6aabc170dce605]{Engineering}</li><li>@UUID[Compendium.cypher.skills-en.Item.e2c791b6c3de6bc2]{Escaping}</li><li>@UUID[Compendium.cypher.skills-en.Item.1fbf7306dc7d857a]{Farming}</li><li>@UUID[Compendium.cypher.skills-en.Item.2495608600fc450a]{Firefighting}</li><li>@UUID[Compendium.cypher.skills-en.Item.66db3287562e0911]{Forensics}</li><li>@UUID[Compendium.cypher.skills-en.Item.9d58fb4c33ae49c4]{Gathering information}</li><li>@UUID[Compendium.cypher.skills-en.Item.702fc0d3f1e1a678]{Geology}</li><li>@UUID[Compendium.cypher.skills-en.Item.1806e61c6e16abe2]{Gunnery (tier-restricted)}</li><li>@UUID[Compendium.cypher.skills-en.Item.bb3f847095f1319f]{Gymnastics}</li><li>@UUID[Compendium.cypher.skills-en.Item.0f52a70bd7672017]{Hacking}</li><li>@UUID[Compendium.cypher.skills-en.Item.4cd67b2cf801b036]{Healing}</li><li>@UUID[Compendium.cypher.skills-en.Item.2459d35df7be28eb]{Heavy equipment operation}</li><li>@UUID[Compendium.cypher.skills-en.Item.da548fe8de39d812]{History}</li><li>@UUID[Compendium.cypher.skills-en.Item.47182d1ab62b7c78]{Identifying}</li><li>@UUID[Compendium.cypher.skills-en.Item.4f62f570d0ccf426]{Initiative}</li><li>@UUID[Compendium.cypher.skills-en.Item.69b32dc0c5b7c100]{Intimidation}</li><li>@UUID[Compendium.cypher.skills-en.Item.c413635c92f7e75d]{Lockpicking}</li><li>@UUID[Compendium.cypher.skills-en.Item.4706f15501fe738b]{Magic lore}</li><li>@UUID[Compendium.cypher.skills-en.Item.581e1153e7cc7c05]{Mathematics}</li><li>@UUID[Compendium.cypher.skills-en.Item.bf6bc369fae6535a]{Mechanics}</li><li>@UUID[Compendium.cypher.skills-en.Item.6433384e567b0302]{Mining}</li><li>@UUID[Compendium.cypher.skills-en.Item.195bcc2cebbb3ef2]{Navigation}</li><li>@UUID[Compendium.cypher.skills-en.Item.9da1e722e186176b]{Outdoor survival}</li><li>@UUID[Compendium.cypher.skills-en.Item.37ef0bfa396926f4]{Perception}</li><li>@UUID[Compendium.cypher.skills-en.Item.cb0c348c3a2e8206]{Performance}</li><li>@UUID[Compendium.cypher.skills-en.Item.3d5e8a658d67d86a]{Philosophy}</li><li>@UUID[Compendium.cypher.skills-en.Item.3ab3ffd4fafdae8c]{Physics}</li><li>@UUID[Compendium.cypher.skills-en.Item.afdee8a836a85dbb]{Pickpocketing}</li><li>@UUID[Compendium.cypher.skills-en.Item.2d426cd754bd3d7a]{Piloting}</li><li>@UUID[Compendium.cypher.skills-en.Item.810c1ce04f86f731]{Piloting spacecraft}</li><li>@UUID[Compendium.cypher.skills-en.Item.d7c37969aa4229df]{Psychic lore}</li><li>@UUID[Compendium.cypher.skills-en.Item.e1a6af7fb35d8704]{Psychology}</li><li>@UUID[Compendium.cypher.skills-en.Item.01f5a12ccfd86f7a]{Publishing}</li><li>@UUID[Compendium.cypher.skills-en.Item.afb76b978891b3fc]{Recognizing motive}</li><li>@UUID[Compendium.cypher.skills-en.Item.fda97ad7298d83c4]{Religious lore}</li><li>@UUID[Compendium.cypher.skills-en.Item.69929e13adcc9f5f]{Riding}</li><li>@UUID[Compendium.cypher.skills-en.Item.7f127fcd88729f59]{Scavenging}</li><li>@UUID[Compendium.cypher.skills-en.Item.b93d50ddfde68b4b]{Scribing}</li><li>@UUID[Compendium.cypher.skills-en.Item.46516bc2b1a8e0cc]{Skilled trade}</li><li>@UUID[Compendium.cypher.skills-en.Item.28e9362bb1c7ae22]{Stealth}</li><li>@UUID[Compendium.cypher.skills-en.Item.1b930c08b4af94b4]{Systems operation}</li><li>@UUID[Compendium.cypher.skills-en.Item.a0fce1428a976cc7]{Tracking}</li><li>@UUID[Compendium.cypher.skills-en.Item.277dbd2274c87db2]{Woodcutting}</li><li>@UUID[Compendium.cypher.skills-en.Item.89c22bfafdfd69aa]{Zero-G fluency}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "38641f86049c2c3e"
+          }
+        }
+      }
+    }
+  ],
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "journal.crd-skills",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Skills",
+        "sourceLocator": "CRD paragraphs 64-246",
+        "transformations": [
+          "Verbatim source paragraphs with structural HTML formatting",
+          "Complete canonical Item definitions replaced by native compendium links; paragraph destinations recorded separately"
+        ]
+      }
+    }
+  }
+}

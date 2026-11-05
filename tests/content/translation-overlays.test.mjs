@@ -3,6 +3,13 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { applyTranslation, sourceHash, translationFields, translationSafetyErrors } from "../../scripts/localization/compendium-translations.mjs";
 
+test("Native link labels are translatable while targets and actual interpolation variables stay protected", () => {
+  const source = "@UUID[Compendium.cypher.skills-en.Item.0123456789abcdef]{Astronomy} {count}";
+  assert.deepEqual(translationSafetyErrors(source, "@UUID[Compendium.cypher.skills-en.Item.0123456789abcdef]{Astronomie} {count}", "link"), []);
+  assert.match(translationSafetyErrors(source, "@UUID[Compendium.cypher.skills-en.Item.0123456789abcdef]{Astronomie} {total}", "link").join(" "), /references or variables/);
+  assert.match(translationSafetyErrors(source, "@UUID[Compendium.cypher.skills-fr.Item.0123456789abcdef]{Astronomie} {count}", "link").join(" "), /references or variables/);
+});
+
 const english = {
   _id: "0123456789abcdef", name: "Example", type: "ability",
   flags: { cypherFoundry: { crd: { logicalId: "ability.example", language: "en" } } },

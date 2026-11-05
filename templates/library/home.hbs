@@ -7,6 +7,12 @@
   </nav>
   <section aria-labelledby="library-crd-heading">
     <h2 id="library-crd-heading">{{localize 'CYPHER.Library.Reference'}}</h2>
+    <nav class="library-references library-chapters" aria-label="{{localize 'CYPHER.Library.Reference'}}" lang="{{language}}">
+      {{#each chapters}}
+      <button type="button" data-action="reference" data-key="{{key}}" aria-pressed="{{selected}}" {{#unless uuid}}disabled{{/unless}}>{{name}}</button>
+      {{/each}}
+    </nav>
+    <h3>{{localize 'CYPHER.Library.QuickReferences'}}</h3>
     <nav class="library-references" aria-label="{{localize 'CYPHER.Library.Reference'}}" lang="{{language}}">
       {{#each references}}
       <button type="button" data-action="reference" data-key="{{key}}" aria-pressed="{{selected}}" {{#unless uuid}}disabled{{/unless}}>{{name}}</button>
@@ -14,6 +20,11 @@
     </nav>
     {{#if unavailable}}<p role="status">{{localize 'CYPHER.Library.Unavailable'}}</p>{{/if}}
     {{#if selected}}
+    {{#if pageNavigation.length}}
+    <nav class="library-references library-pages" aria-label="{{localize 'CYPHER.Library.Pages'}}" lang="{{language}}">
+      {{#each pageNavigation}}<button type="button" data-action="page" data-page-id="{{id}}" aria-pressed="{{selected}}">{{name}}</button>{{/each}}
+    </nav>
+    {{/if}}
     <article class="library-source" lang="{{language}}" aria-label="{{selectedName}}">
       <p>{{localize 'CYPHER.Library.Canonical'}} {{{sourceLink}}}</p>
       {{#each sourcePages}}<section><h3>{{name}}</h3>{{{html}}}</section>{{/each}}

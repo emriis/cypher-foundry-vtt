@@ -1,0 +1,72 @@
+{
+  "_id": "a4080ccb6348a01e",
+  "_key": "!journal!a4080ccb6348a01e",
+  "name": "Descriptors",
+  "document": "JournalEntry",
+  "crdType": "journal",
+  "pages": [
+    {
+      "_id": "7eba62b913c1d7bc",
+      "_key": "!journal.pages!a4080ccb6348a01e.7eba62b913c1d7bc",
+      "name": "Descriptors",
+      "type": "text",
+      "sort": 100000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>The first part of your character sentence “I am an adjective noun who verbs” is the descriptor. It’s the adjective part of the sentence. It’s the most general, easily encapsulated means of describing any character—Resilient, Cautious, Strong, and so on.</p>\n<p>Choose one of the descriptors in this section for your character. You can pick any descriptor you wish regardless of your type or focus (if any). Descriptors offer a one‑time package of characteristics, usually training in one skill of your choice and a boost to one of your stat Pools.</p>\n<p>Remember that every character has the option of gaining an extra skill in exchange for an inability. You can emphasize your descriptor more by choosing a skill and inability that are thematically appropriate for your descriptor. For example, if your descriptor is Compassionate, you might choose recognizing motive as your extra skill and intimidation as your inability. If your descriptor is Jovial, you might choose gathering information as your extra skill and deception as your inability.</p>\n<p>Your descriptor influences how your character reacts to each new situation and challenge. For instance, the differences between a Cautious Ranger and a Brash Ranger are considerable, as are the differences between a Charming Starpilot and a Skeptical Starpilot.</p>\n<p>Your descriptor matters most when you’re a beginning character. The mechanical benefits that come from your descriptor will eventually be overshadowed by the growing importance of your type and focus (assuming you’re not playing a game strictly set in the real world). However, the influence of your descriptor will remain at least somewhat important throughout your character’s life.</p>\n<aside class=\"crd-callout\"><p>Your GM may allow you to choose a different skill for your descriptor if it makes sense for the genre and suits the descriptor’s theme.</p></aside>\n<aside class=\"crd-callout\"><p>Many descriptors have similar combinations of stat Pool increases and skill training. Remember that you can further customize your character by choosing an inability and a third skill.</p></aside>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "7a3def9ea2421619"
+          }
+        }
+      }
+    },
+    {
+      "_id": "449b108ee2adbff6",
+      "_key": "!journal.pages!a4080ccb6348a01e.449b108ee2adbff6",
+      "name": "Descriptors List",
+      "type": "text",
+      "sort": 200000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<ul><li>@UUID[Compendium.cypher.descriptors-en.Item.06ddaacf0cf9a515]{Appealing}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.48f1941fb8cb6587]{Bookish}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.fedae26a086e8f8d]{Brash}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.2fdb3d16c3144e3c]{Calm}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.9cfea03df3ebc18f]{Cautious}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.9119efc68bc1e5b3]{Chaotic}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.a92ae4b38ab0f06f]{Charming}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.c224ac92be8ee6ac]{Clever}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.6db6d4c7d70e5956]{Compassionate}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.3c360677a07a16ba]{Creative}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.6de8af4665be6780]{Empathic}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.c498c5bf8fa340bf]{Fast}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.a53e6fa35d101369]{Gloomy}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.8c78931f65a0b719]{Graceful}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.a8017cc18c7bf3f5]{Guarded}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.46cd2dec497d37e8]{Honorable}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.11e29e586128bb34]{Inquisitive}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.2ee2f245c02af854]{Intelligent}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.00a8870c0668d2ab]{Intuitive}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.15397f456f7a30ba]{Jovial}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.e70bfd8d8d10945a]{Kind}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.ca24844a3ea4ec14]{Mechanical}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.4bdcb6bc9a4554c4]{Mysterious}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.b9260e5c98c36d87]{Mystical}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.d782d4580337f252]{Perceptive}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.fb77cf4c386e9010]{Resilient}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.5b32883248909257]{Rugged}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.f659c6694b9bac95]{Skeptical}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.e4c24c6bb8b570b3]{Stealthy}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.73219ae457358133]{Strong}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.e104c5a5d719ff8c]{Strong-Willed}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.92bedb2c3929db8d]{Tough}</li><li>@UUID[Compendium.cypher.descriptors-en.Item.f12d50807e70b582]{Virtuous}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "947ecff1fcf20925"
+          }
+        }
+      }
+    }
+  ],
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "journal.crd-descriptors",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Descriptors",
+        "sourceLocator": "CRD paragraphs 247-456",
+        "transformations": [
+          "Verbatim source paragraphs with structural HTML formatting",
+          "Complete canonical Item definitions replaced by native compendium links; paragraph destinations recorded separately"
+        ]
+      }
+    }
+  }
+}

@@ -20,6 +20,8 @@
     "audit:crd": "node scripts/audit-crd-compendiums.mjs",
     "build:lang": "node scripts/build-locales.mjs",
     "check:lang": "node scripts/build-locales.mjs --check",
+    "check:crd-chapters": "node scripts/author-reference-chapters.mjs",
+    "author:crd-chapters": "node scripts/author-reference-chapters.mjs --write",
     "audit:i18n": "node scripts/review-translations.mjs",
     "preview:translations": "node scripts/review-translations.mjs --preview",
     "build:packs": "node scripts/build-packs.mjs",
