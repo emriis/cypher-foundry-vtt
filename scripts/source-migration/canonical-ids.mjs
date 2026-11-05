@@ -149,6 +149,14 @@ export async function migrateCanonicalIds(checkout = root, { englishOnly = false
     }
   }
 
+  // Newly authored chapters may already link canonical IDs while older Items
+  // still carry legacy IDs. Accept only destinations proven by this catalogue;
+  // an arbitrary hexadecimal link must continue to fail closed.
+  for (const target of new Set(UUIDs.values())) {
+    if (UUIDs.has(target) && UUIDs.get(target) !== target) throw new Error("Canonical UUID collides with a legacy identity: " + target);
+    UUIDs.set(target, target);
+  }
+
   // References are rebased on the final per-pack IDs, never a text replacement
   // of bare hexadecimal sequences that could be effect/table IDs.
   for (const row of rows) {

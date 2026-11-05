@@ -43,7 +43,7 @@ tools; it does not certify full chapter or guide coverage.
 | Foci | 42 Focus records and graph/grant infrastructure; individual Ability limitations remain |
 | W4 equipment/weapons/armor/shields | Complete source-backed inventory |
 | Subtle/Manifest/Power Boost Cyphers | Source-backed inventory and common lifecycle implemented; particular powers remain open |
-| CRD Journals | Seven source-faithful selections accessible in the bilingual library pilot; all substantive chapters inventoried, complete passages/navigation remain open |
+| CRD Journals | First four chapters and contents/index authored in library tranche 2A, alongside seven existing selections; ten substantive chapters remain |
 | Quick Reference | Planned |
 | Player/GM guides | First task aid and GM cypher preview implemented in the library pilot; full guides remain planned |
 | Genre Ability integration | Complete |
@@ -196,10 +196,17 @@ no Artifact inventory, so extraction is explicitly source-blocked.
 ## 7. Phase 4 — CRD Journals, Quick Reference, and guides — In progress
 
 The [information library plan](information-library-plan.md) records the accepted
-eight-lot order. Lot 1 is implemented and validated, awaiting merge: bilingual
+eight-lot order. Lot 1 is complete and merged in PR #176: bilingual
 home, seven existing reference selections, canonical Skill links, shared task
 dialog, ephemeral GM cypher preview and personal home shortcut. This adds a
 usable access path without closing the full-source and full-guide items below.
+
+Tranche 2A of lot 2 adds the first four chapters,
+22 pages and contents/thematic navigation, assigning all 446 nonblank source
+paragraphs at 1–456. It resolves five baseline callout groups and the complete
+Scavenging consultation table through canonical linked Items. The
+[delivery register](information-library-plan.md#lot-2-delivery-register) tracks
+the remaining genre, Focus/equipment, cypher and rules/advancement tranches.
 
 ### PR4 source-callout preflight (2026-10-21)
 
@@ -225,6 +232,8 @@ text are permitted to close the outstanding entries.
 
 - [x] Deliver a bilingual source-selection → canonical Skill → task-aid pilot
   with ordinary-player access, explicit permissions and reload validation.
+- [x] Deliver validated tranche 2A: four full chapter destinations, canonical
+  definition links, contents/index, source partition and bilingual page navigation.
 - [x] Inventory all substantive CRD chapters and their current destinations in
   the [coverage review](crd-coverage-review.md).
 - [ ] Assign every remaining passage, example, boxed continuation and table.
@@ -511,10 +520,13 @@ Completed families require, as applicable:
 
 ### W5 — CRD Journal foundation — In progress
 
-Seven source-faithful rule selections already exist. The remaining work is the
-broader reference inventory, hierarchy and navigation, not starting from no Journals.
+Seven source-faithful selections and the first four full chapter destinations
+plus contents/index now exist. The remaining ten chapters retain the complete
+source/context and navigation requirements in the lot 2 delivery register.
 
 - [x] Inventory substantive reference/procedure chapters in the coverage review.
+- [x] Assign and validate all first-four-chapter paragraphs, including canonical
+  Item destinations, five baseline callout groups and the Scavenging table.
 - [ ] Assign remaining individual passages, boxes, examples and tables.
 - [ ] Extend the selected-Journal hierarchy to the complete reference library.
 - [ ] Extend deterministic content authoring/generation beyond the seven selections.

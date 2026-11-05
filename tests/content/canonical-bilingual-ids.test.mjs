@@ -1,3 +1,4 @@
+import { EXPECTED_CATALOGUE_COUNT } from "../../scripts/crd-reference/inventory.mjs";
 /**
  * Production catalogue contract after isolated source normalization.
  * Content CI normalizes source files first; authored legacy filenames remain
@@ -35,7 +36,7 @@ test("every normalized CRD document has the same deterministic ID in both langua
       assert.equal(document.flags.cypherFoundry.crd.sourceLogicalId, logicalId);
     }
   }
-  assert.equal(groups.size, 1373, "Review the inventory when CRD content is intentionally added.");
+  assert.equal(groups.size, EXPECTED_CATALOGUE_COUNT, "Review the inventory when CRD content is intentionally added.");
   for (const [key, group] of groups) {
     assert.ok(group.en && group.fr, "Missing EN/FR counterpart: " + key);
     assert.equal(group.en._id, group.fr._id);

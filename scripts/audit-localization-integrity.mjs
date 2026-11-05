@@ -4,6 +4,7 @@
  * separate human and Foundry in-application inspection.
  */
 import fs from "node:fs/promises";
+import { EXPECTED_CATALOGUE_COUNT } from "./crd-reference/inventory.mjs";
 import path from "node:path";
 import {execFileSync} from "node:child_process";
 import {pathToFileURL} from "node:url";
@@ -46,14 +47,14 @@ export function analyzeLocalization(records, proposals, glossary, uiEn, uiFr) {
   }
   for(const id of reviewed.orphanedProposals)errors.push({id,type:"orphan-proposal"});
   if(englishById.size!==english.length||frenchById.size!==french.length)errors.push({type:"duplicate-logical-id"});
-  if(english.length!==1373||french.length!==1373||proposals.size!==1373)errors.push({type:"inventory-count",english:english.length,french:french.length,proposals:proposals.size});
+  if(english.length!==EXPECTED_CATALOGUE_COUNT||french.length!==EXPECTED_CATALOGUE_COUNT||proposals.size!==EXPECTED_CATALOGUE_COUNT)errors.push({type:"inventory-count",expected:EXPECTED_CATALOGUE_COUNT,english:english.length,french:french.length,proposals:proposals.size});
   // The reviewed compiler plan must be constructible without fallback or
   // any unreviewed French field, and must preserve all document identities.
   let compiledCount=0;
   try{
     const plan=materializeTranslations(records,proposals,{requireReviewed:true});
     compiledCount=plan.size;
-    if(plan.size!==1373)errors.push({type:"compiled-count",actual:plan.size});
+    if(plan.size!==EXPECTED_CATALOGUE_COUNT)errors.push({type:"compiled-count",expected:EXPECTED_CATALOGUE_COUNT,actual:plan.size});
     for(const [file,translated] of plan){
       if(translated.flags?.cypherFoundry?.translation?.status!=="reviewed")
         errors.push({type:"compiled-not-reviewed",file});

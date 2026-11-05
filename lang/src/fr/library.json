@@ -2,9 +2,9 @@
   "CYPHER": {
     "Library": {
       "Title": "Bibliothèque Cypher",
-      "Pilot": "Bibliothèque pilote : sept sélections du CRD et une première aide aux tâches. Les chapitres et guides complets restent à construire.",
+      "Pilot": "Bibliothèque de référence : les quatre premiers chapitres du CRD, leurs définitions liées et sept références rapides. Les autres chapitres et guides sont en préparation.",
       "ContentLanguage": "Langue du contenu",
-      "Reference": "Référence du CRD et aide-mémoire",
+      "Reference": "Chapitres du CRD",
       "Canonical": "Ouvrir le Journal de référence :",
       "Player": "Guide du joueur — première tâche",
       "Task": "Effectuer un jet de tâche",
@@ -27,7 +27,9 @@
       "Stat": "Caractéristique",
       "Token": "personnage du pion",
       "Continue": "Continuer",
-      "Close": "Fermer"
+      "Close": "Fermer",
+      "QuickReferences": "Références rapides",
+      "Pages": "Pages du chapitre"
     }
   }
 }

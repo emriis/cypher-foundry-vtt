@@ -125,6 +125,19 @@ test("canonical migration rejects unresolved Foundry UUIDs rather than guessing"
   });
 });
 
+test("new chapter links can target verified canonical IDs while their Items still use legacy IDs", async () => {
+  await withCatalogue(async ({ root, add, read }) => {
+    const canonical = `Compendium.cypher.skills-en.Item.${proposedFoundryId("skill.athletics")}`;
+    for (const language of ["en", "fr"]) {
+      await add(`skills-${language}`, "athletics", item("skill.athletics", language === "en" ? "aaaaaaaaaaaaaaaa" : "bbbbbbbbbbbbbbbb", language, "skill"));
+      await add(`rules-${language}`, "chapter", { ...item("journal.chapter", "cccccccccccccccc", language, ""), document: "JournalEntry", pages: [],
+        system: { description: `@UUID[${canonical}]` } });
+    }
+    await migrateCanonicalIds(root);
+    assert.equal((await read("rules-en", "chapter")).system.description, `@UUID[${canonical}]`);
+  });
+});
+
 test("canonical migration slugifies only canonical English identity, never translated name", async () => {
   await withCatalogue(async ({ root, add, read }) => {
     const englishId = "equipment.Fantasy.inexpensive.Arrows (12)";

@@ -1,0 +1,844 @@
+{
+  "schemaVersion": 1,
+  "referenceSha256": "cbf439c9d6fc2c55860a8d0fa52a70be838522e66482d2706bd6ea3f6142c729",
+  "scope": "Information library lot 2A: CRD chapters 1–4",
+  "sourceRange": [
+    1,
+    456
+  ],
+  "nonblankParagraphs": 446,
+  "journalIds": [
+    "journal.crd-creating-your-character",
+    "journal.crd-core-character",
+    "journal.crd-skills",
+    "journal.crd-descriptors",
+    "journal.crd-contents"
+  ],
+  "destinations": [
+    {
+      "start": 1,
+      "end": 1,
+      "logicalId": "journal.crd-creating-your-character",
+      "kind": "journal",
+      "sourceSha256": "e1bb909677be1da52a3924c7ceac7efa39d1127cc4da73cc7a8742654c396288"
+    },
+    {
+      "start": 2,
+      "end": 2,
+      "logicalId": "journal.crd-creating-your-character",
+      "pageId": "837cd26d902605e2",
+      "kind": "journal",
+      "sourceSha256": "fb80659857253e858d2a92c3425694c25aef625f28aa5817ca4c85dad2b7f7b5"
+    },
+    {
+      "start": 3,
+      "end": 5,
+      "logicalId": "journal.crd-creating-your-character",
+      "pageId": "0685c88e841ebc9f",
+      "kind": "journal",
+      "sourceSha256": "ad64878b9ad1ba29880bb2a43f672f54b354d844a9ef18c0e2a16e6fb8a1a844"
+    },
+    {
+      "start": 6,
+      "end": 11,
+      "logicalId": "journal.crd-creating-your-character",
+      "pageId": "607c99e22e0b400e",
+      "kind": "journal",
+      "sourceSha256": "0bab56455401126e64a145fa32c87c52ede51b32cf9cb00d4d3f7fa99fbf5342"
+    },
+    {
+      "start": 12,
+      "end": 21,
+      "logicalId": "journal.crd-creating-your-character",
+      "pageId": "854392ede4f08bab",
+      "kind": "journal",
+      "sourceSha256": "6edd6161ed22f41b82ac6ad893b6963009f55fc0525ce88a5a16e18fad938de7"
+    },
+    {
+      "start": 22,
+      "end": 26,
+      "logicalId": "journal.crd-creating-your-character",
+      "pageId": "751bb864d693eae3",
+      "kind": "journal",
+      "sourceSha256": "b5fe7c0930c3403ffffcad98ad26c2e430c7bb1a1371b55d7bb595df13008172"
+    },
+    {
+      "start": 27,
+      "end": 29,
+      "logicalId": "journal.crd-creating-your-character",
+      "pageId": "09c89eb6dd80079e",
+      "kind": "journal",
+      "sourceSha256": "8e15f47ab5c284a37d8b73f0216137361595a6fd92794f31e08f740721922e16"
+    },
+    {
+      "start": 30,
+      "end": 32,
+      "logicalId": "journal.crd-creating-your-character",
+      "pageId": "25eb641646a35589",
+      "kind": "journal",
+      "sourceSha256": "023c2b1597dd86d8d3f1f0f982e871d9eb0af032281bbf1a4271b50679308244"
+    },
+    {
+      "start": 33,
+      "end": 35,
+      "logicalId": "journal.crd-creating-your-character",
+      "pageId": "4385eda61306cf33",
+      "kind": "journal",
+      "sourceSha256": "921ac88dd5dbd7cb1b224c53ec5bf19991893c30b03599726148eef077d3508a"
+    },
+    {
+      "start": 36,
+      "end": 37,
+      "logicalId": "journal.crd-creating-your-character",
+      "pageId": "bf9d74a14feae770",
+      "kind": "journal",
+      "sourceSha256": "1da8bdc620029990ec9c70b384902ea2d9f5b75c0a2fd52408f595ac356f1e41"
+    },
+    {
+      "start": 38,
+      "end": 39,
+      "logicalId": "journal.crd-creating-your-character",
+      "pageId": "049e61c7faadbfb6",
+      "kind": "journal",
+      "sourceSha256": "704b20fda7b8aa0087d9b47a4e9c381f5ac9b12cc0e658753b148b4ef6ba9a46"
+    },
+    {
+      "start": 40,
+      "end": 42,
+      "logicalId": "journal.crd-creating-your-character",
+      "pageId": "b3988b8101c92190",
+      "kind": "journal",
+      "sourceSha256": "6b8410601ffde03a547b0e3063829814dfc946344ccfc7fe645bbe483aa0cc4c"
+    },
+    {
+      "start": 43,
+      "end": 44,
+      "logicalId": "journal.crd-creating-your-character",
+      "pageId": "96a44b83358913da",
+      "kind": "journal",
+      "sourceSha256": "78f77d29c554fe32fec017942af26a832d0fba459df8fbcdc6e6ac076d643b0a"
+    },
+    {
+      "start": 45,
+      "end": 49,
+      "logicalId": "journal.crd-creating-your-character",
+      "pageId": "622c83d603c21392",
+      "kind": "journal",
+      "sourceSha256": "dd85f74425dddd4d616758b0baec0cc2ccf988eb7e8595e25c9e38b6cab22fef"
+    },
+    {
+      "start": 50,
+      "end": 50,
+      "logicalId": "journal.crd-core-character",
+      "kind": "journal",
+      "sourceSha256": "b84f01a7277f00afda4079a33ded43007be1e0eac8203d5dd754542db83cdcfc"
+    },
+    {
+      "start": 51,
+      "end": 63,
+      "logicalId": "journal.crd-core-character",
+      "pageId": "e9ee1cf1e7fecf60",
+      "kind": "journal",
+      "sourceSha256": "51855e9cf68ad8de43178f90968c52784e97a6233575451aa768a0fcb002fd9a"
+    },
+    {
+      "start": 64,
+      "end": 64,
+      "logicalId": "journal.crd-skills",
+      "kind": "journal",
+      "sourceSha256": "66d0f523a379b2de6f8d5fba3a817ebc395f7bcaa54cc132ca9dfa665d1e9378"
+    },
+    {
+      "start": 65,
+      "end": 75,
+      "logicalId": "journal.crd-skills",
+      "pageId": "e74b8d8edf1841b2",
+      "kind": "journal",
+      "sourceSha256": "769cd664184dd38211133e4654579da1577dcd441cf0c700d298283804bea593"
+    },
+    {
+      "start": 76,
+      "end": 79,
+      "logicalId": "journal.crd-skills",
+      "pageId": "14f072580edc48b0",
+      "kind": "journal",
+      "sourceSha256": "753159416c0c0aa2bf63f3ba5c379be448376999baaa3691093aa4e740337649"
+    },
+    {
+      "start": 80,
+      "end": 87,
+      "logicalId": "journal.crd-skills",
+      "pageId": "0d2e73f7643d3928",
+      "kind": "journal",
+      "sourceSha256": "ce44a888e4e98e38c1ad66c73fb18363c659899e995e8c1099f9f99b08f7d7b8"
+    },
+    {
+      "start": 88,
+      "end": 148,
+      "logicalId": "journal.crd-skills",
+      "pageId": "7e8f23249d949046",
+      "kind": "journal",
+      "sourceSha256": "dcad8ea1fa282d5833aa6582ad5a523ce695fdb813fd008d833138f1cfca5f45"
+    },
+    {
+      "start": 150,
+      "end": 150,
+      "logicalId": "skill.animal-care",
+      "kind": "canonical-item",
+      "sourceSha256": "67e977ec668ccc71d31c0d9a3d07dab933a2c6a3624e0a1e6ca763bce2cd14f8"
+    },
+    {
+      "start": 151,
+      "end": 151,
+      "logicalId": "skill.astronomy",
+      "kind": "canonical-item",
+      "sourceSha256": "830cb55dbab86cd4e8b7e209c7d02edb7a4a653bbfd9394059fa2aca5e87569b"
+    },
+    {
+      "start": 152,
+      "end": 153,
+      "logicalId": "skill.athletics",
+      "kind": "canonical-item",
+      "sourceSha256": "0878e4613f6f4b8e0568516ae460d58cb192aed3a3a983ae9c9c0918501ab3f7"
+    },
+    {
+      "start": 154,
+      "end": 154,
+      "logicalId": "skill.attacking",
+      "kind": "canonical-item",
+      "sourceSha256": "a415d02c3db0920d9738bb70ec896f7fe39c81c3d807335900a0146e796b0177"
+    },
+    {
+      "start": 155,
+      "end": 155,
+      "logicalId": "skill.biology",
+      "kind": "canonical-item",
+      "sourceSha256": "0d8d22c4e9e4730f8e6c93147d966cdb0f350809d1bbb3ed088d897b2b0eb3ed"
+    },
+    {
+      "start": 156,
+      "end": 157,
+      "logicalId": "skill.charm",
+      "kind": "canonical-item",
+      "sourceSha256": "26251da42eea905afa4023739605622604ffb4ce3c277670365559a746407500"
+    },
+    {
+      "start": 158,
+      "end": 158,
+      "logicalId": "skill.chemistry",
+      "kind": "canonical-item",
+      "sourceSha256": "08e515b9fc3841ba32d0273907e00136be0c859348457a5c1fe2bf14fe037a19"
+    },
+    {
+      "start": 159,
+      "end": 161,
+      "logicalId": "skill.crafting",
+      "kind": "canonical-item",
+      "sourceSha256": "744330e141388ea061df903cd2eb8fcdf767e969b951f2b82d648972c37877e0"
+    },
+    {
+      "start": 162,
+      "end": 162,
+      "logicalId": "skill.cybernetics",
+      "kind": "canonical-item",
+      "sourceSha256": "ca42dd7c082b9d1131a703edb9a6c462fd83765f3018237ea622f562ebb8f14e"
+    },
+    {
+      "start": 163,
+      "end": 164,
+      "logicalId": "skill.deception",
+      "kind": "canonical-item",
+      "sourceSha256": "32c5eda3e3d39cf27f2b4f983a04d9bec570aa69b66faa5e0292261962f168ba"
+    },
+    {
+      "start": 165,
+      "end": 165,
+      "logicalId": "skill.defending",
+      "kind": "canonical-item",
+      "sourceSha256": "3e45aa7c83ed82c5fdfd467dcaeddf9284644a83860d3345c1a97d177673a572"
+    },
+    {
+      "start": 166,
+      "end": 166,
+      "logicalId": "skill.disarming-traps",
+      "kind": "canonical-item",
+      "sourceSha256": "ff3c8e46c9fbbe944a3cb85d1cc118954e158e9b9e6dda1d1ec882fd4bb33f93"
+    },
+    {
+      "start": 167,
+      "end": 172,
+      "logicalId": "skill.disguise",
+      "kind": "canonical-item",
+      "sourceSha256": "7daee758cd85e9a9f531ab811f8fc9728bf5c826f3ede45c86b39e99cc2c87b5"
+    },
+    {
+      "start": 173,
+      "end": 173,
+      "logicalId": "skill.driving",
+      "kind": "canonical-item",
+      "sourceSha256": "36f20e949f5877809c60ea551b0e02b8c2178b4ae8ddc31dc644c83c7e82038a"
+    },
+    {
+      "start": 174,
+      "end": 179,
+      "logicalId": "skill.engineering",
+      "kind": "canonical-item",
+      "sourceSha256": "cc8a3c33047ab190e97122786f3785a6f39a0e36906989aa7807b9f8bd7837b9"
+    },
+    {
+      "start": 180,
+      "end": 180,
+      "logicalId": "skill.escaping",
+      "kind": "canonical-item",
+      "sourceSha256": "a99fd5d05340097c53e6a39cab61bdfc5075b336db8981dcaaad8cb5c5043cd7"
+    },
+    {
+      "start": 181,
+      "end": 181,
+      "logicalId": "skill.farming",
+      "kind": "canonical-item",
+      "sourceSha256": "02f43e3b63ac73c55ece1a06cf3e48fbefd7bc3267250a0820cdcfee2f973c01"
+    },
+    {
+      "start": 182,
+      "end": 182,
+      "logicalId": "skill.firefighting",
+      "kind": "canonical-item",
+      "sourceSha256": "f215ecbce8648b9aeaa4d4aece92b536c74aefa416e75e113a50449378d49d6a"
+    },
+    {
+      "start": 183,
+      "end": 183,
+      "logicalId": "skill.forensics",
+      "kind": "canonical-item",
+      "sourceSha256": "d711b49f8590350f6821c3dba4ead7f159b90e11a92b1440cd6e741e3850b4d6"
+    },
+    {
+      "start": 184,
+      "end": 186,
+      "logicalId": "skill.gathering-information",
+      "kind": "canonical-item",
+      "sourceSha256": "baed80edb72f7d805b83dcb259c67fe4fcdb6c474f69cb1881f44b9b2e1a5adb"
+    },
+    {
+      "start": 187,
+      "end": 187,
+      "logicalId": "skill.geology",
+      "kind": "canonical-item",
+      "sourceSha256": "6a8bac67e3f11452db5982626adaafb015e54d808beed07369ea4495955d89a0"
+    },
+    {
+      "start": 188,
+      "end": 188,
+      "logicalId": "skill.gunnery",
+      "kind": "canonical-item",
+      "sourceSha256": "0f70c60e04e01164db660c7cd43c7705936383f1a2d37773ab1073a0ff967f09"
+    },
+    {
+      "start": 189,
+      "end": 190,
+      "logicalId": "skill.gymnastics",
+      "kind": "canonical-item",
+      "sourceSha256": "2b85f853c43863e307eb4eed0aa726cb72448a9f21e37d069f755d0b7ea2932d"
+    },
+    {
+      "start": 191,
+      "end": 192,
+      "logicalId": "skill.hacking",
+      "kind": "canonical-item",
+      "sourceSha256": "cf86b6100e27589e94a8967f3c6aadd1e341731ebde49f3036361bb88aabc9fa"
+    },
+    {
+      "start": 193,
+      "end": 195,
+      "logicalId": "skill.healing",
+      "kind": "canonical-item",
+      "sourceSha256": "f464d2728ba39b25f499fee57242f55b9c3b06eeefb61224a5c7ba6c861ec22a"
+    },
+    {
+      "start": 196,
+      "end": 196,
+      "logicalId": "skill.heavy-equipment-operation",
+      "kind": "canonical-item",
+      "sourceSha256": "fca82581895598ce06670bb94debc2d6a485584b4674eecac5da06aee4b5d408"
+    },
+    {
+      "start": 197,
+      "end": 197,
+      "logicalId": "skill.history",
+      "kind": "canonical-item",
+      "sourceSha256": "233943f804e910766846900f5b72c499e42c847ca584f3d61e24ff7fa14e6611"
+    },
+    {
+      "start": 198,
+      "end": 198,
+      "logicalId": "skill.identifying",
+      "kind": "canonical-item",
+      "sourceSha256": "ba4b135c538173486b2a8bc2a73cab6c549cc13e8abf3d748135f8a25b5855f6"
+    },
+    {
+      "start": 199,
+      "end": 199,
+      "logicalId": "skill.initiative",
+      "kind": "canonical-item",
+      "sourceSha256": "5d7f53676a0b4b4bd30688ca332e3419a540dd3e99eb7e7f01fee4d84f64f0f5"
+    },
+    {
+      "start": 200,
+      "end": 201,
+      "logicalId": "skill.intimidation",
+      "kind": "canonical-item",
+      "sourceSha256": "00599482427483d94c438ce5231c5f23358013739c3d9a73a782a75514c63444"
+    },
+    {
+      "start": 202,
+      "end": 202,
+      "logicalId": "skill.lockpicking",
+      "kind": "canonical-item",
+      "sourceSha256": "48dcd1dc6bc602f0dd909488e8d58e1b6235319b260fec8fd3ccc7a50a47bb22"
+    },
+    {
+      "start": 203,
+      "end": 204,
+      "logicalId": "skill.magic-lore",
+      "kind": "canonical-item",
+      "sourceSha256": "0e038bf3d0c054a62207e2d495ee3f36f41451c62cbe5a74281f67be95c5de94"
+    },
+    {
+      "start": 205,
+      "end": 205,
+      "logicalId": "skill.mathematics",
+      "kind": "canonical-item",
+      "sourceSha256": "a4e8e6020467931a0fe7a5cb1e68896ddcf27bb11b4eefadd5459b62261c0efe"
+    },
+    {
+      "start": 206,
+      "end": 207,
+      "logicalId": "skill.mechanics",
+      "kind": "canonical-item",
+      "sourceSha256": "c9167ea6ab5de1030382fe963e329476eebac413da7912f637ea9f1339162a6b"
+    },
+    {
+      "start": 208,
+      "end": 209,
+      "logicalId": "skill.mining",
+      "kind": "canonical-item",
+      "sourceSha256": "a7996ebd325d4e7e8e689e05bf234faeff58303d83aef6fd573d8c6fc43f92e2"
+    },
+    {
+      "start": 210,
+      "end": 210,
+      "logicalId": "skill.navigation",
+      "kind": "canonical-item",
+      "sourceSha256": "4c129be0b324864663f76901a34b233197885c3a84cffda3093a4a06c25dcc90"
+    },
+    {
+      "start": 211,
+      "end": 211,
+      "logicalId": "skill.outdoor-survival",
+      "kind": "canonical-item",
+      "sourceSha256": "f848f743a48048d89db3e597f2ddf7ffa906c7791aebf1da4d482ac9faa32182"
+    },
+    {
+      "start": 212,
+      "end": 212,
+      "logicalId": "skill.perception",
+      "kind": "canonical-item",
+      "sourceSha256": "637cd058193c9b638b52784a02b613d720bbe9dec8e18dfe8634d19674b17877"
+    },
+    {
+      "start": 213,
+      "end": 213,
+      "logicalId": "skill.performance",
+      "kind": "canonical-item",
+      "sourceSha256": "91edae34e5b081c7e965608aaa1d7bb1c3e2f5fa3682c5f854b908cd7429b15e"
+    },
+    {
+      "start": 214,
+      "end": 214,
+      "logicalId": "skill.philosophy",
+      "kind": "canonical-item",
+      "sourceSha256": "32402fc0bf20a2887b537136acf6fccfbf587c35006bed6607944b59c5c1c0e2"
+    },
+    {
+      "start": 215,
+      "end": 215,
+      "logicalId": "skill.physics",
+      "kind": "canonical-item",
+      "sourceSha256": "b263bdceb7324e67c26a77a97d83df402dd8de94acac542bc1f71af2c39a8cd5"
+    },
+    {
+      "start": 216,
+      "end": 216,
+      "logicalId": "skill.pickpocketing",
+      "kind": "canonical-item",
+      "sourceSha256": "457fb793718d60dbc2792b8ad61c1ac7e05b44d571c4149aa0e667130d65d4ba"
+    },
+    {
+      "start": 217,
+      "end": 217,
+      "logicalId": "skill.piloting",
+      "kind": "canonical-item",
+      "sourceSha256": "1a14099b9991ba2cfaf00002b3e06ab385b8e8eb1cb542d638d72249d649c5d7"
+    },
+    {
+      "start": 218,
+      "end": 218,
+      "logicalId": "skill.piloting-spacecraft",
+      "kind": "canonical-item",
+      "sourceSha256": "e55516df0c2921bd894e5eabe626cb21992a8fdaa847e3cdd02731e80f4e48b3"
+    },
+    {
+      "start": 219,
+      "end": 219,
+      "logicalId": "skill.psychic-lore",
+      "kind": "canonical-item",
+      "sourceSha256": "677b1ecdea0d5ae88e997baa50a2446ea44e0bb7dd04c68efd7a8bdf99bebadc"
+    },
+    {
+      "start": 220,
+      "end": 220,
+      "logicalId": "skill.psychology",
+      "kind": "canonical-item",
+      "sourceSha256": "e94b1a3213b11436935e792a088a32792aa32a7b420775a414cd02ff571e3a50"
+    },
+    {
+      "start": 221,
+      "end": 221,
+      "logicalId": "skill.publishing",
+      "kind": "canonical-item",
+      "sourceSha256": "a89b422c6c0868fea1c5d23ca6321c2e37b458ff83a5ed7c1f8efde83ae0bbe2"
+    },
+    {
+      "start": 222,
+      "end": 222,
+      "logicalId": "skill.recognizing-motive",
+      "kind": "canonical-item",
+      "sourceSha256": "b173f07f5602f32bafd5a0e12d4fc098f19ace68435f198ce1af792c8bec4ccc"
+    },
+    {
+      "start": 223,
+      "end": 224,
+      "logicalId": "skill.religious-lore",
+      "kind": "canonical-item",
+      "sourceSha256": "af4864c02dec423214c315d93f5120f68230233340d05a775cc83cda6385a7d9"
+    },
+    {
+      "start": 225,
+      "end": 225,
+      "logicalId": "skill.riding",
+      "kind": "canonical-item",
+      "sourceSha256": "4b7780ddc75c2f37aeba3483fdd9d31f417510a0113ffb5bb5528162587644f0"
+    },
+    {
+      "start": 226,
+      "end": 238,
+      "logicalId": "skill.scavenging",
+      "kind": "canonical-item",
+      "sourceSha256": "e177e8ddac7f5efccad9e5e4cb0ffdf8d8cd11253a5fa019db4c9655428962a6"
+    },
+    {
+      "start": 239,
+      "end": 239,
+      "logicalId": "skill.scribing",
+      "kind": "canonical-item",
+      "sourceSha256": "f39f96ae96fe8596d3e19ecc22a4e19f14cf55720e6bcb561a1fd8865543b711"
+    },
+    {
+      "start": 240,
+      "end": 240,
+      "logicalId": "skill.skilled-trade",
+      "kind": "canonical-item",
+      "sourceSha256": "3dfe75102b13abf867006649a0b191a5ff20d97241bc70421d1625bc7895a9bc"
+    },
+    {
+      "start": 241,
+      "end": 241,
+      "logicalId": "skill.stealth",
+      "kind": "canonical-item",
+      "sourceSha256": "93805f27b61fd3f68b55e9a02d4ef362d8c252cdc1d32ce49c836674688d1f33"
+    },
+    {
+      "start": 242,
+      "end": 242,
+      "logicalId": "skill.systems-operation",
+      "kind": "canonical-item",
+      "sourceSha256": "d70f501063516d969abc5e5fcf1f70770cf9da1fc7130b1054f70cddcc428f38"
+    },
+    {
+      "start": 243,
+      "end": 243,
+      "logicalId": "skill.tracking",
+      "kind": "canonical-item",
+      "sourceSha256": "83e5bca55e5a1ad02fa1aabcc019361a3ff41d3eeef0e9bebff2f54bc75700cd"
+    },
+    {
+      "start": 244,
+      "end": 244,
+      "logicalId": "skill.woodcutting",
+      "kind": "canonical-item",
+      "sourceSha256": "748c874241ab63255089dbbb575e416ce22f9dec20fae087e04570cefc39c071"
+    },
+    {
+      "start": 245,
+      "end": 245,
+      "logicalId": "skill.zero-g-fluency",
+      "kind": "canonical-item",
+      "sourceSha256": "741f246b05499703f51a4ca21c699261988bfd0aade63bce4729e21f3016d1d5"
+    },
+    {
+      "start": 247,
+      "end": 247,
+      "logicalId": "journal.crd-descriptors",
+      "kind": "journal",
+      "sourceSha256": "3e77e7bf37d46467cf9c49c42debb7be31d22c25f1c2aa9017a077b13de9f5fb"
+    },
+    {
+      "start": 248,
+      "end": 254,
+      "logicalId": "journal.crd-descriptors",
+      "pageId": "7eba62b913c1d7bc",
+      "kind": "journal",
+      "sourceSha256": "b67a56958ba6d60702dfe2ef24f544de855d5aa35043afb1067bb5d5c1700898"
+    },
+    {
+      "start": 255,
+      "end": 289,
+      "logicalId": "journal.crd-descriptors",
+      "pageId": "449b108ee2adbff6",
+      "kind": "journal",
+      "sourceSha256": "a95dd7978f0b10f82047a90812ae55c7da8188c019cf08f9b6fe9e34ae91b261"
+    },
+    {
+      "start": 291,
+      "end": 295,
+      "logicalId": "descriptor.appealing",
+      "kind": "canonical-item",
+      "sourceSha256": "b0698ee7fda77a0269ecf50af1b6d9b118b92739d5e111626fcd84a869640f9b"
+    },
+    {
+      "start": 296,
+      "end": 300,
+      "logicalId": "descriptor.bookish",
+      "kind": "canonical-item",
+      "sourceSha256": "4feb66e2d947022a0bf39fc05ac46e896e78dccc16e57e637a6f55461e488008"
+    },
+    {
+      "start": 301,
+      "end": 305,
+      "logicalId": "descriptor.brash",
+      "kind": "canonical-item",
+      "sourceSha256": "6da8bc91791ac7c266cdd781e36dcf5c307227be85c5ca4e79a7b059eaf96666"
+    },
+    {
+      "start": 306,
+      "end": 310,
+      "logicalId": "descriptor.calm",
+      "kind": "canonical-item",
+      "sourceSha256": "7d76e2a3a43e4f642bf0cc124420f9cf7c014e2d882471796c0537827e9e15df"
+    },
+    {
+      "start": 311,
+      "end": 315,
+      "logicalId": "descriptor.cautious",
+      "kind": "canonical-item",
+      "sourceSha256": "1eedb36d0b30b90ef4d648df7e57965585bc812bd945a76db8d840eaa2bb04cc"
+    },
+    {
+      "start": 316,
+      "end": 320,
+      "logicalId": "descriptor.chaotic",
+      "kind": "canonical-item",
+      "sourceSha256": "e9e36693f53f6dc18e26a1794ba1f0d562cb712eef90ba05336ff9ffdd136dad"
+    },
+    {
+      "start": 321,
+      "end": 325,
+      "logicalId": "descriptor.charming",
+      "kind": "canonical-item",
+      "sourceSha256": "2744298b6d8eaa5cc217532113fc3067e4168b220263010caf44d89bf1b65b53"
+    },
+    {
+      "start": 326,
+      "end": 330,
+      "logicalId": "descriptor.clever",
+      "kind": "canonical-item",
+      "sourceSha256": "0daa8daa120a34ff468ec8a5cfb6445638a65d8a796531056285858890ef2b36"
+    },
+    {
+      "start": 331,
+      "end": 335,
+      "logicalId": "descriptor.compassionate",
+      "kind": "canonical-item",
+      "sourceSha256": "50dfe4a8cc93e3c51d5eb7409662b5b7085a577a7a2f1598539814520ae6d964"
+    },
+    {
+      "start": 336,
+      "end": 340,
+      "logicalId": "descriptor.creative",
+      "kind": "canonical-item",
+      "sourceSha256": "fc123a3bb522fdbbc3d37daae8aae9ac46e9379f4afb81bd7f82bdb0f83fc11b"
+    },
+    {
+      "start": 341,
+      "end": 345,
+      "logicalId": "descriptor.empathic",
+      "kind": "canonical-item",
+      "sourceSha256": "04bb04724df257829fcbd7c4c537afe8ea69f8dc0f4b5e4d827f1f9815deb90d"
+    },
+    {
+      "start": 346,
+      "end": 350,
+      "logicalId": "descriptor.fast",
+      "kind": "canonical-item",
+      "sourceSha256": "cc3a16348bbd47b8a222bf5358dbe6e08e5dee6715b851d63c060990ca909bc6"
+    },
+    {
+      "start": 351,
+      "end": 355,
+      "logicalId": "descriptor.gloomy",
+      "kind": "canonical-item",
+      "sourceSha256": "3656d9541d7d521faeae586a59d3b24a47f2f27571301445ac6112b10f8a8888"
+    },
+    {
+      "start": 356,
+      "end": 360,
+      "logicalId": "descriptor.graceful",
+      "kind": "canonical-item",
+      "sourceSha256": "1f7d453ae193cf04772b24049a79173aa67a02bdf3f45463afbebfc4bcc82101"
+    },
+    {
+      "start": 361,
+      "end": 365,
+      "logicalId": "descriptor.guarded",
+      "kind": "canonical-item",
+      "sourceSha256": "e21d9b8665eb1c461a0d7b80a62049a4f703ac7716b5139df7db6c918acfc0e4"
+    },
+    {
+      "start": 366,
+      "end": 370,
+      "logicalId": "descriptor.honorable",
+      "kind": "canonical-item",
+      "sourceSha256": "3781ca41c8ecf33a0eb9ec21278c2efd0b688cb45ffcb6628a6f1cf1cf7ba249"
+    },
+    {
+      "start": 371,
+      "end": 375,
+      "logicalId": "descriptor.inquisitive",
+      "kind": "canonical-item",
+      "sourceSha256": "8795af7832d57ba586ce61308ad30738d4b02972be0b508a7615a191f48258d3"
+    },
+    {
+      "start": 376,
+      "end": 380,
+      "logicalId": "descriptor.intelligent",
+      "kind": "canonical-item",
+      "sourceSha256": "a46bc57cfaffad3317a05b6015489f452b572785ef2814257bad776df999233e"
+    },
+    {
+      "start": 381,
+      "end": 385,
+      "logicalId": "descriptor.intuitive",
+      "kind": "canonical-item",
+      "sourceSha256": "dd98b0a5fc46a1ebd69f651c6af7095a174643c84a0e02d25406d947ac0faaef"
+    },
+    {
+      "start": 386,
+      "end": 390,
+      "logicalId": "descriptor.jovial",
+      "kind": "canonical-item",
+      "sourceSha256": "6c7e6969386385635a15f786a34232671ccb5a5e7f2dc5f5f5bd7253a7a30b9d"
+    },
+    {
+      "start": 391,
+      "end": 395,
+      "logicalId": "descriptor.kind",
+      "kind": "canonical-item",
+      "sourceSha256": "04c8e298ab43c1cca1e7e96e78f64dbd4d49fe5ab7751f5c370f60bbecea4501"
+    },
+    {
+      "start": 396,
+      "end": 400,
+      "logicalId": "descriptor.mechanical",
+      "kind": "canonical-item",
+      "sourceSha256": "2dd255d47985d830127a5aedad5229fd4c4641b9acc10c6abae896bf3d4fb561"
+    },
+    {
+      "start": 401,
+      "end": 405,
+      "logicalId": "descriptor.mysterious",
+      "kind": "canonical-item",
+      "sourceSha256": "1da16be7020d9b5d4ff8d5e54b0890145761eeccc453091e72ffadb56b0a3f08"
+    },
+    {
+      "start": 406,
+      "end": 410,
+      "logicalId": "descriptor.mystical",
+      "kind": "canonical-item",
+      "sourceSha256": "4c1a051c335f1fb167c5f6a9e8eaacd3323e8ef5f0f110f8dff77cc77ae5bd50"
+    },
+    {
+      "start": 411,
+      "end": 415,
+      "logicalId": "descriptor.perceptive",
+      "kind": "canonical-item",
+      "sourceSha256": "bf95b81c49940d6aeb425aa8ac9ec41c79aee24f86d34dcb75c161812d4f42fa"
+    },
+    {
+      "start": 416,
+      "end": 420,
+      "logicalId": "descriptor.resilient",
+      "kind": "canonical-item",
+      "sourceSha256": "6f5a1e88380d92af5641e57926a5fe262bfd38256d0299a8b42c3428a8fd9485"
+    },
+    {
+      "start": 421,
+      "end": 425,
+      "logicalId": "descriptor.rugged",
+      "kind": "canonical-item",
+      "sourceSha256": "7c5b6f0bbb78414ecbfffefbe212600968579632aa2c3224409790a1daf2c9e0"
+    },
+    {
+      "start": 426,
+      "end": 430,
+      "logicalId": "descriptor.skeptical",
+      "kind": "canonical-item",
+      "sourceSha256": "f33739ed14c48599473c0ae37ab020b4b299c193f0edc958673d2fe20d8f5e78"
+    },
+    {
+      "start": 431,
+      "end": 435,
+      "logicalId": "descriptor.stealthy",
+      "kind": "canonical-item",
+      "sourceSha256": "cc787509f697ef05048fe434a03d18a38d57fbf1b0d54d9c3776a130baf7dc86"
+    },
+    {
+      "start": 436,
+      "end": 440,
+      "logicalId": "descriptor.strong",
+      "kind": "canonical-item",
+      "sourceSha256": "a06bb9b80d8d7c59b3efc87ba44842721322413ddbe494c77a439a7a853e7433"
+    },
+    {
+      "start": 441,
+      "end": 445,
+      "logicalId": "descriptor.strong-willed",
+      "kind": "canonical-item",
+      "sourceSha256": "e1ed6ccec6ff22b1513f6cd05dbb1b1eb6c48f4f2c7929191fa9512289c39f7b"
+    },
+    {
+      "start": 446,
+      "end": 450,
+      "logicalId": "descriptor.tough",
+      "kind": "canonical-item",
+      "sourceSha256": "167f2349074468f036af7e994ee97b96a66907d15be558aa158b087976ddd961"
+    },
+    {
+      "start": 451,
+      "end": 456,
+      "logicalId": "descriptor.virtuous",
+      "kind": "canonical-item",
+      "sourceSha256": "59e6d65bfd7cfa0fe08af31b141aa33f78079e5c80b98c96204ff12f930fc597"
+    }
+  ]
+}

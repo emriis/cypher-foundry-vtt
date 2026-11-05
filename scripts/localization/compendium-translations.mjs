@@ -114,7 +114,16 @@ export function translationSafetyErrors(source, translated, path) {
     }).sort().join("|");
   }
   const markup = value => (value.match(/<[^>]*>/g) ?? []).join("");
-  const references = value => (value.match(/@(?:UUID|Compendium)\[[^\]]*\]|\{[A-Za-z][A-Za-z0-9_]*\}/g) ?? []).sort().join("|");
+  const references = value => {
+    const targets = [];
+    // A one-word native label such as {Astronomy} is display text, not a
+    // localization variable. Protect its target and count real variables in
+    // the remaining prose, without blocking translated canonical Item names.
+    const prose = value.replace(/(@(?:UUID|Compendium)\[[^\]]*\])(?:\{[^{}]*\})?/g, (_link, target) => {
+      targets.push(target); return "";
+    });
+    return [...targets, ...(prose.match(/\{[A-Za-z][A-Za-z0-9_]*\}/g) ?? [])].sort().join("|");
+  };
   const dice = value => (value.match(/\b\d+d\d+(?:\s*[+−-]\s*\d+)?/gi) ?? []).map(value => value.replace(/\s/g, "")).sort().join("|");
   if (!translated.trim()) errors.push(`${path}: translation is empty.`);
   if (numbers(source, "en") !== numbers(translated, "fr")) errors.push(`${path}: numeric information differs.`);

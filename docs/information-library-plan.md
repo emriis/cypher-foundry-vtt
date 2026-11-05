@@ -187,8 +187,8 @@ APIs. The platform guides establish the intended native capabilities:
 
 | Lot | Status | Acceptance boundary |
 | --- | --- | --- |
-| 1 | Implemented and validated; awaiting merge | Home, existing reference selections, task pilot, cypher preview and personal shortcut |
-| 2 | Planned | Full source passages and chapter structure |
+| 1 | Complete; merged in PR #176 | Home, existing reference selections, task pilot, cypher preview and personal shortcut |
+| 2 | In progress | Tranche 2A implemented and validated; remaining chapters follow the sequence below |
 | 3 | Planned | Complete player guide and quick references |
 | 4 | Planned | Complete GM guide and linked screen |
 | 5 | Planned | Native source-backed random table packs |
@@ -241,3 +241,97 @@ Validation evidence:
 V13 was not exercised live; manifest compatibility verification is unchanged.
 These checks establish the pilot, not full chapter fidelity, all accessibility
 criteria or every future tool. Lots 2–7 retain the boundaries above.
+
+## Lot 2 delivery register
+
+The baseline for tranche 2A is `5a15f3b`, after the lot 1 merge. The initial
+working tree was clean. The accepted multiple-PR split remains:
+
+| Tranche | Source chapters | Status |
+| --- | --- | --- |
+| 2A | Creation, core character, Skills, Descriptors; initial contents/index | Implemented and validated; awaiting merge |
+| 2B | Real World, cross-genre selection, Fantasy, Science Fiction, Superheroes | Planned |
+| 2C | Foci and Equipment | Planned |
+| 2D | Cyphers and reference tables | Planned |
+| 2E | Rules of the Game, Advancement, credits and final coverage reconciliation | Planned |
+
+### Tranche 2A content and identity contract
+
+Five additive Journals in `rules-en/fr` provide the first four source chapters
+and editorial contents/thematic-index pages. Existing Journal/page/Item IDs are
+preserved. Chapter/page identities use canonical logical IDs and stable English
+page anchors. Both legacy and already canonical UUID targets are accepted only
+when backed by an actual catalogue destination.
+
+`data/crd-reference-creation.json` records a complete partition of the **446
+nonblank source paragraphs at 1–456**. General instructions, examples and
+callouts are present verbatim in the new English Journals, with 49 paired
+French display fields. Definitions and their complete callouts/benefits remain
+canonical in the **58 Skill** and **33 general Descriptor** Items; chapter lists
+link to them rather than copying their descriptions. The other 20 species
+Descriptors belong to later genre chapters.
+
+The 22 new pages include an actual tier-restriction consultation table,
+chapter contents, native page links and a thematic index. Source Word table 0
+at paragraphs 228–237 remains complete in `skill.scavenging`, reached from the
+Skill list; it is a consultation table, not a random RollTable. Visual groups
+B0, B1, B2, B7 and B19 have complete bounded destinations. The other 95 baseline
+open groups and 60 tables still require their later chapter-level reviews.
+
+English source typos and source-level inconsistencies are not corrected by
+this formatting work. In particular, the tier-restricted-skills callout title
+retains its original English spelling, and no character-creation automation
+or accepted adjudication changes.
+
+The source authoring command validates the checked-in CRD SHA-256 before
+reading paragraphs and validates the entire partition and linked definitions
+before writing. `npm run check:crd-chapters` is read-only;
+`npm run author:crd-chapters` intentionally regenerates only these five English
+sources and their coverage register. Neither command writes French proposals,
+promotes editorial status, normalizes unrelated sources or touches generated
+LevelDB packs. Changes to source text require deliberate French hash review.
+
+The five new French proposals were authored and compared clause by clause,
+including numeric limits, wound overflow/death, initial choices, tier gates,
+examples, conditional clauses, and existing translated Item names. They are
+marked `reviewed` as an editorial disposition; numeric/markup/hash checks do
+not independently certify semantics or substitute for human review.
+
+The current inventory is **1,378** canonical EN documents and their FR
+counterparts, including **12** Rules Journals (seven existing selections plus
+five additions). Historical translation-batch manifests remain fixed; the
+explicit reference inventory adds the new Journals to whole-catalogue checks.
+
+The library now separates chapters from quick references and renders one
+readable chapter page at a time. Language switching, text-page permissions,
+hidden packs and secret exclusion retain the lot 1 boundaries. The native
+[Foundry Journal and dynamic-link capabilities](https://foundryvtt.com/article/journal/)
+provide the standalone contents/page/Item navigation.
+
+### Tranche 2A validation — 2026-11-05
+
+- Isolated `npm test`: **1,293 tests**, 32 suites, zero failures/skips, including
+  complete source partitioning, missing-definition rejection, canonical/page
+  references, bilingual fields and migration repeatability.
+- `check:crd-chapters` reproduced all five Journals and their paragraph register.
+  The Rules Journal audit validated **12 reviewed** proposals. The terminology
+  audit reported zero blocking errors; advisory wording/mechanic flags remain
+  separate from source fidelity and semantic certification.
+- Lint, pilot type checking, architecture, locale and runtime/E2E syntax checks
+  passed. The isolated runner built all 14 packs, passed 15 compiled-pack
+  checks and verified the archive.
+- **Four live scenarios passed** on **Foundry 14.370**, system
+  **0.2.0-alpha.1**, Chromium **153.0.8010.12**: preserved pilot behavior,
+  ordinary-player EN/FR chapter/Descriptor access, cancelled/paid tasks,
+  disabled script macros, every chapter/index page in both locales and both
+  themes, keyboard page selection, native page links and reload.
+- After inspecting a live capture, selected-button text was corrected to use
+  the theme's text token. The chapter scenario was rerun successfully on the
+  final CSS, measuring **at least 4.5:1** contrast on selected page buttons in
+  both themes at 480px window width. This is not a complete accessibility audit.
+
+V13 remains untested live and manifest verification is unchanged. The working
+tree changes cover five English sources, five French proposals, the source
+partition, authoring/localization tooling, library UI/locale bundles, focused
+tests and documentation. No generated LevelDB packs or existing source records
+were edited, and no commit/push was performed. Tranches 2B–2E remain open.

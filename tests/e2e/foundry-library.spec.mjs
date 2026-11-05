@@ -111,6 +111,18 @@ test("library pilot: ordinary player reads references and rolls, cancellation an
     });
     await expect(library.locator('[data-action="draw"]')).toHaveCount(0);
     await expect(library.locator('[data-action="shortcut"]')).toBeDisabled();
+    for (const language of ["en", "fr"]) {
+      await library.locator(`[data-action="language"][data-language="${language}"]`).click();
+      await library.locator('[data-key="crd-descriptors"]').click();
+      await library.locator('[data-action="page"]').last().click();
+      await expect(library.locator(".library-source > section .content-link")).toHaveCount(33);
+      await library.locator(".library-source > section .content-link").first().click();
+      await expect.poll(() => player.evaluate(() => [...foundry.applications.instances.values()].some(app =>
+        app.document?.type === "descriptor" && app.rendered))).toBe(true);
+      await player.evaluate(async () => {
+        for (const app of foundry.applications.instances.values()) if (app.document?.type === "descriptor" && app.rendered) await app.close();
+      });
+    }
     await library.locator('[data-action="task"]').click();
     await submit(player, 'select[name="actor"]');
     await expect(player.locator('input[name="effort"]')).toBeVisible();
@@ -129,5 +141,66 @@ test("library pilot: ordinary player reads references and rolls, cancellation an
   } finally {
     await context.close();
     await page.evaluate(async ids => { await game.settings.set("core", "permissions", ids.permissions); }, ids);
+  }
+});
+
+test("library chapters: every EN/FR chapter page, native contents links and themed narrow layout", async ({ e2ePage: page }) => {
+  const original = await page.evaluate(() => {
+    const setting = game.settings.settings.has("core.uiConfig") ? "uiConfig" : "colorScheme";
+    return { language: game.i18n.lang, setting, config: foundry.utils.deepClone(game.settings.get("core", setting)) };
+  });
+  const keys = ["creating-your-character", "core-character", "skills", "descriptors", "contents"];
+  try {
+    for (const language of ["en", "fr"]) for (const theme of ["light", "dark"]) {
+      await page.evaluate(async ({ language, theme, original }) => {
+        await game.i18n.setLanguage(language);
+        const colorScheme = { applications: theme, interface: theme };
+        await game.settings.set("core", original.setting, original.setting === "uiConfig" ? { ...original.config, colorScheme } : colorScheme);
+        await game.cypher.library.open();
+        foundry.applications.instances.get("cypher-library").setPosition({ width: 480, height: 700 });
+      }, { language, theme, original });
+      const library = page.locator("#cypher-library");
+      await library.locator(`[data-action="language"][data-language="${language}"]`).click();
+      for (const key of keys) {
+        await library.locator(`[data-key="crd-${key}"]`).click();
+        const pages = await library.locator('[data-action="page"]').evaluateAll(buttons => buttons.map(button => button.dataset.pageId));
+        expect(pages.length).toBeGreaterThan(0);
+        for (const id of pages) {
+          const button = library.locator(`[data-action="page"][data-page-id="${id}"]`);
+          await button.focus(); await button.press("Enter");
+          await expect(button).toHaveAttribute("aria-pressed", "true");
+          const contrast = await button.evaluate(element => {
+            const style = getComputedStyle(element);
+            const luminance = color => color.match(/[\d.]+/g).slice(0, 3).map(Number).map(value => {
+              const channel = value / 255; return channel <= 0.04045 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4;
+            }).reduce((sum, value, index) => sum + value * [0.2126, 0.7152, 0.0722][index], 0);
+            const foreground = luminance(style.color), background = luminance(style.backgroundColor);
+            return (Math.max(foreground, background) + 0.05) / (Math.min(foreground, background) + 0.05);
+          });
+          expect(contrast).toBeGreaterThanOrEqual(4.5);
+          await expect(library.locator(".library-source > section")).toHaveCount(1);
+          await expect(library.locator(".library-source .content-link.broken")).toHaveCount(0);
+          expect(await library.evaluate(element => element.scrollWidth <= element.clientWidth)).toBe(true);
+        }
+      }
+      // Thematic native page links must resolve to the paired language pack.
+      const link = library.locator('.library-source .content-link[data-uuid*="JournalEntryPage"]').first();
+      await expect(link).toHaveAttribute("data-uuid", new RegExp(`Compendium\\.cypher\\.rules-${language}\\.`));
+      await link.click();
+      await expect.poll(() => page.evaluate(() => [...foundry.applications.instances.values()].some(app =>
+        app.document?.documentName === "JournalEntry" && app.rendered))).toBe(true);
+      await page.evaluate(async () => {
+        for (const app of foundry.applications.instances.values()) if (app.document?.documentName === "JournalEntry" && app.rendered) await app.close();
+      });
+    }
+    await page.reload(); await waitForFoundryReady(page);
+    await page.evaluate(() => game.cypher.library.open());
+    await page.locator('#cypher-library [data-key="crd-contents"]').click();
+    await expect(page.locator("#cypher-library .library-source .content-link.broken")).toHaveCount(0);
+  } finally {
+    await page.evaluate(async original => {
+      await foundry.applications.instances.get("cypher-library")?.close();
+      await game.i18n.setLanguage(original.language); await game.settings.set("core", original.setting, original.config);
+    }, original);
   }
 });

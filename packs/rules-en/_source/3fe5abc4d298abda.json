@@ -1,0 +1,71 @@
+{
+  "_id": "3fe5abc4d298abda",
+  "_key": "!journal!3fe5abc4d298abda",
+  "name": "CRD Contents and Thematic Index",
+  "document": "JournalEntry",
+  "crdType": "journal",
+  "pages": [
+    {
+      "_id": "010d3829f88349c4",
+      "_key": "!journal.pages!3fe5abc4d298abda.010d3829f88349c4",
+      "name": "Contents",
+      "type": "text",
+      "sort": 100000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Reference chapters available in this edition:</p><ol><li>@UUID[Compendium.cypher.rules-en.JournalEntry.6bff609d936dfe2e]{Creating Your Character}<ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.6bff609d936dfe2e.JournalEntryPage.837cd26d902605e2]{Creating Your Character}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.6bff609d936dfe2e.JournalEntryPage.0685c88e841ebc9f]{Tier}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.6bff609d936dfe2e.JournalEntryPage.607c99e22e0b400e]{Your Three Stats}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.6bff609d936dfe2e.JournalEntryPage.854392ede4f08bab]{Wounds}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.6bff609d936dfe2e.JournalEntryPage.751bb864d693eae3]{Skills}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.6bff609d936dfe2e.JournalEntryPage.09c89eb6dd80079e]{Effort}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.6bff609d936dfe2e.JournalEntryPage.25eb641646a35589]{Asset}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.6bff609d936dfe2e.JournalEntryPage.4385eda61306cf33]{Cyphers}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.6bff609d936dfe2e.JournalEntryPage.bf9d74a14feae770]{Recoveries}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.6bff609d936dfe2e.JournalEntryPage.049e61c7faadbfb6]{Healing Wounds}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.6bff609d936dfe2e.JournalEntryPage.b3988b8101c92190]{Weapons and Armor}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.6bff609d936dfe2e.JournalEntryPage.96a44b83358913da]{Equipment}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.6bff609d936dfe2e.JournalEntryPage.622c83d603c21392]{What’s Next?}</li></ul></li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.ccc580be0bb3bd40]{The Core Character}<ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.ccc580be0bb3bd40.JournalEntryPage.e9ee1cf1e7fecf60]{Core Character Quick Summary}</li></ul></li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.0631da39dde80277]{Skills}<ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.0631da39dde80277.JournalEntryPage.e74b8d8edf1841b2]{Skills}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.0631da39dde80277.JournalEntryPage.14f072580edc48b0]{Background Skills}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.0631da39dde80277.JournalEntryPage.0d2e73f7643d3928]{Tier-Restricted Skills}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.0631da39dde80277.JournalEntryPage.7e8f23249d949046]{Master Skill List}</li></ul></li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.a4080ccb6348a01e]{Descriptors}<ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.a4080ccb6348a01e.JournalEntryPage.7eba62b913c1d7bc]{Descriptors}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.a4080ccb6348a01e.JournalEntryPage.449b108ee2adbff6]{Descriptors List}</li></ul></li></ol><p>The remaining CRD chapters are being prepared. The existing quick references remain available from the library.</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "488276894346f8af"
+          }
+        }
+      }
+    },
+    {
+      "_id": "fd1913461a94b11a",
+      "_key": "!journal.pages!3fe5abc4d298abda.fd1913461a94b11a",
+      "name": "Thematic Index",
+      "type": "text",
+      "sort": 200000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.6bff609d936dfe2e.JournalEntryPage.607c99e22e0b400e]{Stats, Pools and Edge}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.6bff609d936dfe2e.JournalEntryPage.854392ede4f08bab]{Wounds}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.6bff609d936dfe2e.JournalEntryPage.09c89eb6dd80079e]{Effort}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.6bff609d936dfe2e.JournalEntryPage.4385eda61306cf33]{Cyphers}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.6bff609d936dfe2e.JournalEntryPage.bf9d74a14feae770]{Recoveries}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.ccc580be0bb3bd40.JournalEntryPage.e9ee1cf1e7fecf60]{Core character summary}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.0631da39dde80277.JournalEntryPage.14f072580edc48b0]{Background Skills}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.0631da39dde80277.JournalEntryPage.0d2e73f7643d3928]{Tier-Restricted Skills}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.0631da39dde80277.JournalEntryPage.7e8f23249d949046]{Master Skill List}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.a4080ccb6348a01e.JournalEntryPage.7eba62b913c1d7bc]{Choosing a descriptor}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "b056f5ddf9657568"
+          }
+        }
+      }
+    }
+  ],
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "journal.crd-contents",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "CRD Contents and Thematic Index",
+        "sourceLocator": "Editorial navigation to CRD paragraphs 1-456",
+        "transformations": [
+          "Editorial contents and thematic links to source-backed Journals; no replacement rule text"
+        ]
+      }
+    }
+  }
+}

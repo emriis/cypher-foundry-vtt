@@ -57,6 +57,15 @@ test("French lookup uses source identity and its own pack without English fallba
   assert.equal(await libraryDocument("task-difficulty", "fr"), document);
 });
 
+test("Chapter and contents discovery uses the same permission checked lazy resolver", async () => {
+  const { pack, document } = setup();
+  pack.getIndex = async () => [{ _id: "chapter", name: "Skills", flags: { cypherFoundry: { crd: { logicalId: "journal.crd-skills" } } } }];
+  const chapter = (await libraryIndex("en")).find(row => row.key === "crd-skills");
+  assert.ok(chapter?.uuid);
+  assert.equal(chapter.section, "chapter");
+  assert.equal(await libraryDocument("crd-skills", "en"), document);
+});
+
 test("Home shortcut is permission checked, repeatable, and preserves user-edited macros", async () => {
   const { calls } = setup();
   const first = await createLibraryShortcut();
