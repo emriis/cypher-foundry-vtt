@@ -3,6 +3,7 @@
  * Node authoring only: no Foundry globals and no implicit source-file writes.
  */
 import { createHash } from "node:crypto";
+import { GENRE_JOURNAL_IDS } from "./genre-metadata.mjs";
 import { proposedFoundryId, proposedPageId, identitySlug } from "../source-migration/id-contract.mjs";
 import { translationFields } from "../localization/compendium-translations.mjs";
 import { plainText } from "../crd-audit/text-fidelity.mjs";
@@ -14,7 +15,7 @@ const escape = value => String(value).replaceAll("&", "&amp;").replaceAll("<", "
 const digest = value => createHash("sha256").update(value, "utf8").digest("hex");
 
 /** Build canonical IDs before writing so native links survive normalization. */
-function journal(key, name, start, end) {
+export function journal(key, name, start, end) {
   const logicalId = `journal.crd-${key}`, id = proposedFoundryId(logicalId);
   return { _id: id, _key: `!journal!${id}`, name, document: "JournalEntry", crdType: "journal",
     pages: [], ownership: { default: 2 }, flags: { cypherFoundry: { crd: {
@@ -26,7 +27,7 @@ function journal(key, name, start, end) {
 }
 
 /** Stable semantic anchors are independent of translated titles and page order. */
-function page(document, key, name, content) {
+export function page(document, key, name, content) {
   const anchor = proposedFoundryId(`crd-page-anchor:${key}`);
   const id = proposedPageId(document.flags.cypherFoundry.crd.logicalId, anchor);
   const result = { _id: id, _key: `!journal.pages!${document._id}.${id}`, name,
@@ -39,12 +40,13 @@ function page(document, key, name, content) {
 /** Native labels remain source-facing text; FR proposals translate the label,
  * while the compiler remaps the UUID to its paired French pack.
  */
-function link(logicalId, family, label, pageId = null) {
+export function link(logicalId, family, label, pageId = null) {
   const kind = family === "rules" ? "JournalEntry" : "Item";
   return `@UUID[Compendium.cypher.${family}-en.${kind}.${proposedFoundryId(logicalId)}${pageId ? `.JournalEntryPage.${pageId}` : ""}]{${escape(label)}}`;
 }
 
-function paragraphsHTML(paragraphs) {
+/** Format complete source paragraphs; only structural markup changes. */
+export function paragraphsHTML(paragraphs) {
   return paragraphs.filter(p => p.text.trim()).map(p => {
     const value = escape(p.text.trim());
     if (p.style === "Callout") return `<aside class="crd-callout"><p>${value}</p></aside>`;
@@ -162,10 +164,12 @@ export function buildCreationChapters(paragraphs, records) {
   documents.push(descriptors);
 
   const contents = journal("contents", "CRD Contents and Thematic Index", 1, 456);
-  contents.flags.cypherFoundry.crd.sourceLocator = "Editorial navigation to CRD paragraphs 1-456";
+  const genres = GENRE_JOURNAL_IDS.map(id => records.find(row => row.logicalId === id)?.document).filter(Boolean);
+  const navigable = [...documents, ...genres];
+  contents.flags.cypherFoundry.crd.sourceLocator = `Editorial navigation to CRD paragraphs 1-${genres.length ? 3437 : 456}`;
   contents.flags.cypherFoundry.crd.transformations = ["Editorial contents and thematic links to source-backed Journals; no replacement rule text"];
   page(contents, "reference-contents", "Contents", "<p>Reference chapters available in this edition:</p><ol>"
-    + documents.map(doc => `<li>${link(doc.flags.cypherFoundry.crd.logicalId, "rules", doc.name)}<ul>`
+    + navigable.map(doc => `<li>${link(doc.flags.cypherFoundry.crd.logicalId, "rules", doc.name)}<ul>`
       + doc.pages.map(entry => `<li>${link(doc.flags.cypherFoundry.crd.logicalId, "rules", entry.name, entry._id)}</li>`).join("") + "</ul></li>").join("")
     + "</ol><p>The remaining CRD chapters are being prepared. The existing quick references remain available from the library.</p>");
   page(contents, "reference-thematic-index", "Thematic Index", "<ul>" + [
@@ -179,7 +183,7 @@ export function buildCreationChapters(paragraphs, records) {
     const target = doc.pages.find(entry => entry.flags.cypherFoundry.identity.sourcePageId === proposedFoundryId(`crd-page-anchor:${key}`));
     if (!target) throw new Error(`Missing thematic destination: ${key}`);
     return `<li>${link(doc.flags.cypherFoundry.crd.logicalId, "rules", title, target._id)}</li>`;
-  }).join("") + "</ul>");
+  }).join("") + genres.map(doc => `<li>${link(doc.flags.cypherFoundry.crd.logicalId, "rules", doc.name, doc.pages[0]._id)}</li>`).join("") + "</ul>");
   documents.push(contents);
   const missing = slice(1, 456).filter(p => p.text.trim() && !assigned.has(p.index));
   if (missing.length) throw new Error(`Unassigned source paragraphs: ${missing.map(p => p.index).join(", ")}`);

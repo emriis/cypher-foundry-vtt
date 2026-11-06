@@ -188,7 +188,7 @@ APIs. The platform guides establish the intended native capabilities:
 | Lot | Status | Acceptance boundary |
 | --- | --- | --- |
 | 1 | Complete; merged in PR #176 | Home, existing reference selections, task pilot, cypher preview and personal shortcut |
-| 2 | In progress | Tranche 2A implemented and validated; remaining chapters follow the sequence below |
+| 2 | In progress | Tranche 2A merged; tranche 2B implements the five genre chapters; 2C–2E remain |
 | 3 | Planned | Complete player guide and quick references |
 | 4 | Planned | Complete GM guide and linked screen |
 | 5 | Planned | Native source-backed random table packs |
@@ -249,8 +249,8 @@ working tree was clean. The accepted multiple-PR split remains:
 
 | Tranche | Source chapters | Status |
 | --- | --- | --- |
-| 2A | Creation, core character, Skills, Descriptors; initial contents/index | Implemented and validated; awaiting merge |
-| 2B | Real World, cross-genre selection, Fantasy, Science Fiction, Superheroes | Planned |
+| 2A | Creation, core character, Skills, Descriptors; initial contents/index | Merged in PR #177 |
+| 2B | Real World, cross-genre selection, Fantasy, Science Fiction, Superheroes | Implemented and validated — 2026-11-06 |
 | 2C | Foci and Equipment | Planned |
 | 2D | Cyphers and reference tables | Planned |
 | 2E | Rules of the Game, Advancement, credits and final coverage reconciliation | Planned |
@@ -334,4 +334,93 @@ V13 remains untested live and manifest verification is unchanged. The working
 tree changes cover five English sources, five French proposals, the source
 partition, authoring/localization tooling, library UI/locale bundles, focused
 tests and documentation. No generated LevelDB packs or existing source records
-were edited, and no commit/push was performed. Tranches 2B–2E remain open.
+were edited, and no commit/push was performed. This records the 2A validation
+scope; the subsequent 2B delivery follows below.
+
+### Tranche 2B content and identity contract
+
+Baseline: `75455bc`, after PR #177, with a clean working tree. Five additive
+Journals provide **28 pages** and **61 French display fields** for the Real
+World, cross-genre Ability instructions, Fantasy, Science Fiction and
+Superheroes. The existing contents and thematic index now link all nine source
+chapters, for **50 reference/index pages** in total. Existing document/page
+identities, the seven quick references and all fourteen pack IDs are preserved.
+
+`data/crd-reference-genres.json` partitions every one of the **2,947 nonblank
+paragraphs at 457–3437** under the supplied CRD hash. Each contiguous interval
+identifies a Journal page or an exact canonical Item field, with its source
+hash. A paragraph is replaced by an Item link only when its whole text is
+present in that field; explicit Ability costs and owning Type references bound
+the match. Same-name Types are scoped by their CRD subgenre. Explicit
+cross-subgenre Type references point to their original definition. Ambiguous
+historical Type lists and same-name Ability occurrences remain readable in
+full and are listed in `unresolved`; names alone never select a variant.
+
+Source spelling is preserved, including the shortened Skill labels at 539 and
+2562, whose native links resolve to their explicitly identified complete
+definitions. The custom Word H2 style does not advance parser section paths;
+page anchors therefore include their locked source paragraph to distinguish
+sibling headings. Regression coverage checks uniqueness and visibility of every
+source paragraph, not just link counts.
+
+The superhero comparison at **3065–3088** is preserved as a native HTML
+consultation table, in source cell order, with paired French headings and
+labels. It is not a random RollTable. The genre partition closes **47 more
+baseline visual groups**, leaving **48** of the original 100, plus **59** of
+the 61 Word tables for subsequent chapter-level reconciliation. The generic
+callout audit remains a conservative paragraph-matching diagnostic and can
+report short linked labels as unproven; its count is not the bounded chapter
+partition. See the [destination checklist](crd-reference-destinations.md).
+
+Complete French prose was compared against the source paragraphs, including
+optional Real World action rules, wound-treatment times, genre choices, power
+shifts, really impossible tasks and examples. Existing whole translated
+passages were reused only after exact English correspondence. Named abilities,
+Types and Foci follow their canonical French proposals. Editorial status is
+`reviewed`; authoring/check/build commands never promote it automatically.
+
+The current inventory is **1,383** canonical EN documents with paired FR
+documents, including **17 Rules Journals**. Source completeness does not add
+gameplay automation: optional rules, genre exceptions, origin powers and
+power-shift advice become consultable without changing the accepted runtime
+rulings or enabling optional rules. Both formerly deferred superhero creation
+examples at 3035–3036 now have complete Journal destinations. The Equipment
+callout at 5594 and Doing Something Else at 7953 remain deferred to 2C and 2E.
+
+### Tranche 2B validation — 2026-11-06
+
+- Isolated `npm test`: **1,298 tests**, 32 suites, zero failures/skips. The
+  genre contracts cover all 2,947 paragraphs, unique page identities, exact
+  canonical field evidence, ambiguous variants, every native destination and
+  all 24 superhero table cells, including seven native Type links.
+- Both read-only authoring checks reproduced their source JSON and partitions.
+  The Rules Journal audit validated **17 reviewed** proposals and **135 paired
+  display fields** without typed mechanic differences. A final isolated
+  Journal-localization test passed after aligning the last advanced-power
+  cypher wording; direct execution against legacy unnormalized sources is not
+  the catalogue test contract.
+- Terminology audit: zero blocking errors. Remaining Effort wording flags were
+  checked against their actual source conditions and costs. Generic callout
+  audit passed with the two remaining explicit deferrals. Its paragraph-only
+  review count remains separate from the source-bounded chapter dispositions.
+- Lint, pilot type checking, architecture, locale, system and E2E syntax checks
+  passed. The disposable E2E runner built **all 14 packs**, passed **15 compiled
+  pack checks**, and verified the archive.
+- **Four live scenarios passed** on **Foundry 14.370**, system
+  **0.2.0-alpha.1**, Chromium **153.0.8010.12**. They cover the preserved pilot,
+  ephemeral cypher preview and repeatable shortcut, ordinary-player EN/FR
+  Descriptor and Ability links, cancellation without spending, a paid task,
+  script permission restrictions and reload.
+- The exhaustive chapter scenario waits for each selected chapter render,
+  checks its expected page count and visits **all 50 pages** in EN/FR and both
+  themes: **200 distinct page renders**. It checks native links, keyboard page
+  selection, one source page at a time, selected-button contrast of at least
+  4.5:1 and absence of library-level horizontal overflow at 480px. Native
+  contents/page links and reload passed. This is not a complete accessibility
+  audit. Test synchronization now waits for outgoing task dialogs and chapter
+  renders rather than racing their DOM replacement.
+
+V13 remains untested live; manifest verification is unchanged. No commit,
+push, generated LevelDB replacement or user-world mutation is part of this lot.
+The next authorized sequence remains **2C Foci and Equipment**, **2D Cyphers**,
+then **2E Rules, Advancement, credits and coverage reconciliation**.

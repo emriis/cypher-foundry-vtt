@@ -35,6 +35,33 @@ to be reconciled in later chapter tranches. See the
 [lot 2 delivery register](information-library-plan.md#lot-2-delivery-register)
 for implementation and validation scope.
 
+## Library tranche 2B dispositions
+
+The [genre partition](../data/crd-reference-genres.json) establishes complete
+bounded destinations for every substantive paragraph at **457–3437**. The
+following **47** additional baseline groups are now covered by their genre
+Journal pages and, where a whole definition is proven, their native Item links:
+
+| Chapter | Closed baseline groups |
+| --- | --- |
+| Real World | B20–B24 |
+| Cross-genre Ability instructions | B25–B28 |
+| Fantasy | B29–B32, B41–B47, B49–B52, B54–B55 |
+| Science Fiction | B61–B64, B68, B70–B73, B79–B80, B82–B85, B87, B93 |
+| Superheroes | B94–B96, B98 |
+
+Together with 2A, this leaves **48** of the baseline 100 groups open. The
+baseline table below remains unchanged as a historical index; its old match
+counts are not current completion claims. The two superhero examples at
+3035–3036 are present in full and have been removed from the deferral register.
+
+Word table **1**, paragraphs **3065–3088**, is now the superhero Type comparison
+table in `journal.crd-superheroes`, Power Shifts page. All 24 cells remain in
+source order, with translated French headings and labels. Like table 0, it is
+a consultation table rather than a random procedure. **59** tables remain for
+later chapter reconciliation. Generic substring audit results remain separate
+from these complete, source-bounded destinations.
+
 ## Baseline: 100 visual groups requiring review
 
 | Group | CRD paragraphs | Existing full paragraph matches | Source section | Proposed reference destination |

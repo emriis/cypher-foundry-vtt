@@ -66,6 +66,28 @@ test("Chapter and contents discovery uses the same permission checked lazy resol
   assert.equal(await libraryDocument("crd-skills", "en"), document);
 });
 
+test("All five genre chapters are lazy, paired-language destinations with fresh permission checks", async () => {
+  const { pack, calls, document } = setup();
+  const keys = ["real-world", "genre-abilities", "fantasy", "science-fiction", "superheroes"];
+  for (const language of ["en", "fr"]) {
+    pack.collection = `cypher.rules-${language}`;
+    game.packs = new Map([[pack.collection, pack]]);
+    pack.getIndex = async () => keys.map(key => ({ _id: key, name: key, flags: { cypherFoundry: { crd: {
+      [language === "fr" ? "sourceLogicalId" : "logicalId"]: `journal.crd-${key}`
+    } } } }));
+    const rows = (await libraryIndex(language)).filter(row => keys.some(key => row.key === `crd-${key}`));
+    assert.equal(rows.length, 5);
+    assert.equal(calls.document, language === "fr" ? 5 : 0);
+    for (const row of rows) {
+      assert.equal(row.section, "chapter");
+      assert.ok(row.uuid.startsWith(`Compendium.cypher.rules-${language}.JournalEntry.`));
+      assert.equal(await libraryDocument(row.key, language), document);
+    }
+  }
+  document.testUserPermission = () => false;
+  assert.equal(await libraryDocument("crd-fantasy", "fr"), null);
+});
+
 test("Home shortcut is permission checked, repeatable, and preserves user-edited macros", async () => {
   const { calls } = setup();
   const first = await createLibraryShortcut();
