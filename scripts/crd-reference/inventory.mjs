@@ -2,6 +2,7 @@
  * reference chapters. New source batches must extend the explicit ID inventory.
  */
 import { CHAPTER_IDS } from "./creation-chapters.mjs";
+import { GENRE_JOURNAL_IDS } from "./genre-metadata.mjs";
 
-export const EXPECTED_CATALOGUE_COUNT = 1373 + CHAPTER_IDS.length;
-export const REFERENCE_JOURNAL_IDS = [...CHAPTER_IDS];
+export const REFERENCE_JOURNAL_IDS = [...CHAPTER_IDS, ...GENRE_JOURNAL_IDS];
+export const EXPECTED_CATALOGUE_COUNT = 1373 + REFERENCE_JOURNAL_IDS.length;

@@ -63,6 +63,14 @@ read-only completeness/drift check. The command needs Python's standard library
 to read DOCX; ordinary pack compilation and the browser consume JSON without
 Python. French prose remains separately authored in `translations/fr/rules/`.
 
+The next five genre chapters use `npm run author:crd-genres` and the read-only
+`npm run check:crd-genres`. Their complete paragraph partition is
+`data/crd-reference-genres.json`. The authoring tool normalizes legacy catalogue
+identities in a disposable workspace before linking Items; it never rewrites
+those Items, French proposals or generated databases. Regenerate the contents
+with `author:crd-chapters` after intentional genre-page changes, then review
+the affected French source hashes explicitly.
+
 ### TDD and BDD boundary
 
 For recovery and healing work, follow the source contracts and persistence

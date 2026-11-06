@@ -100,6 +100,15 @@ have been reviewed.
 
 ## Interpretation and future work
 
+Library tranches 2A–2B subsequently added complete source-bounded partitions
+at paragraphs 1–3437, recorded in `data/crd-reference-creation.json` and
+`data/crd-reference-genres.json`. They close 52 of the baseline 100 open visual
+groups and preserve Word tables 0 and 1; 48 baseline groups and 59 tables remain.
+The two examples at 3035–3036 are now complete in the superhero Journal and no
+longer deferred. The remaining two explicit deferrals are 5594 and 7953.
+The original counts above describe PR4, not the expanded current catalogue.
+See the [reference destination checklist](crd-reference-destinations.md).
+
 | Report status | Meaning | Next action |
 | --- | --- | --- |
 | `verbatim-in-english-pack` | Full candidate *paragraph* appears in an indexed English source field | Review complete boxed boundaries and destination |

@@ -113,7 +113,9 @@ test("library pilot: ordinary player reads references and rolls, cancellation an
     await expect(library.locator('[data-action="shortcut"]')).toBeDisabled();
     for (const language of ["en", "fr"]) {
       await library.locator(`[data-action="language"][data-language="${language}"]`).click();
+      await expect(library.locator(`[data-action="language"][data-language="${language}"]`)).toHaveAttribute("aria-pressed", "true");
       await library.locator('[data-key="crd-descriptors"]').click();
+      await expect(library.locator('[data-key="crd-descriptors"]')).toHaveAttribute("aria-pressed", "true");
       await library.locator('[data-action="page"]').last().click();
       await expect(library.locator(".library-source > section .content-link")).toHaveCount(33);
       await library.locator(".library-source > section .content-link").first().click();
@@ -122,11 +124,26 @@ test("library pilot: ordinary player reads references and rolls, cancellation an
       await player.evaluate(async () => {
         for (const app of foundry.applications.instances.values()) if (app.document?.type === "descriptor" && app.rendered) await app.close();
       });
+      await library.locator('[data-key="crd-superheroes"]').click();
+      await expect(library.locator('[data-key="crd-superheroes"]')).toHaveAttribute("aria-pressed", "true");
+      await library.locator('[data-action="page"]').last().click();
+      const ability = library.locator('.library-source > section .content-link[data-uuid*="abilities-"]').first();
+      await expect(ability).toHaveAttribute("data-uuid", new RegExp(`Compendium\\.cypher\\.abilities-${language}\\.`));
+      await ability.click();
+      await expect.poll(() => player.evaluate(() => [...foundry.applications.instances.values()].some(app =>
+        app.document?.type === "ability" && app.rendered))).toBe(true);
+      await player.evaluate(async () => {
+        for (const app of foundry.applications.instances.values()) if (app.document?.type === "ability" && app.rendered) await app.close();
+      });
     }
     await library.locator('[data-action="task"]').click();
     await submit(player, 'select[name="actor"]');
     await expect(player.locator('input[name="effort"]')).toBeVisible();
-    await player.locator(".application.dialog").filter({ has: player.locator('input[name="effort"]') }).locator('[data-action="close"]').click();
+    const cancelledTask = player.locator(".application.dialog").filter({ has: player.locator('input[name="effort"]') });
+    await cancelledTask.locator('[data-action="close"]').click();
+    // DialogV2 closes asynchronously; a second task must wait for the cancelled
+    // form to leave the DOM, rather than fill an outgoing dialog during animation.
+    await expect(cancelledTask).toHaveCount(0);
     expect(await player.evaluate(id => game.actors.get(id).system.stats.might.pool.value, ids.actor)).toBe(10);
     await library.locator('[data-action="task"]').click();
     await submit(player, 'select[name="actor"]');
@@ -145,11 +162,16 @@ test("library pilot: ordinary player reads references and rolls, cancellation an
 });
 
 test("library chapters: every EN/FR chapter page, native contents links and themed narrow layout", async ({ e2ePage: page }) => {
+  // This exhaustive scenario performs 200 distinct page renders (50 pages in
+  // two locales and two themes), including real compendium enrichment.
+  test.setTimeout(180_000);
   const original = await page.evaluate(() => {
     const setting = game.settings.settings.has("core.uiConfig") ? "uiConfig" : "colorScheme";
     return { language: game.i18n.lang, setting, config: foundry.utils.deepClone(game.settings.get("core", setting)) };
   });
-  const keys = ["creating-your-character", "core-character", "skills", "descriptors", "contents"];
+  const keys = ["creating-your-character", "core-character", "skills", "descriptors",
+    "real-world", "genre-abilities", "fantasy", "science-fiction", "superheroes", "contents"];
+  const expectedPages = [13, 1, 4, 2, 3, 1, 9, 9, 6, 2];
   try {
     for (const language of ["en", "fr"]) for (const theme of ["light", "dark"]) {
       await page.evaluate(async ({ language, theme, original }) => {
@@ -161,10 +183,14 @@ test("library chapters: every EN/FR chapter page, native contents links and them
       }, { language, theme, original });
       const library = page.locator("#cypher-library");
       await library.locator(`[data-action="language"][data-language="${language}"]`).click();
-      for (const key of keys) {
+      await expect(library.locator(`[data-action="language"][data-language="${language}"]`)).toHaveAttribute("aria-pressed", "true");
+      for (const [index, key] of keys.entries()) {
         await library.locator(`[data-key="crd-${key}"]`).click();
+        // Await the new chapter render before collecting its page buttons;
+        // otherwise a fast click can enumerate the outgoing chapter instead.
+        await expect(library.locator(`[data-key="crd-${key}"]`)).toHaveAttribute("aria-pressed", "true");
         const pages = await library.locator('[data-action="page"]').evaluateAll(buttons => buttons.map(button => button.dataset.pageId));
-        expect(pages.length).toBeGreaterThan(0);
+        expect(pages.length).toBe(expectedPages[index]);
         for (const id of pages) {
           const button = library.locator(`[data-action="page"][data-page-id="${id}"]`);
           await button.focus(); await button.press("Enter");

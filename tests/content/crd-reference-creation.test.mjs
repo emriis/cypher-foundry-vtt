@@ -43,6 +43,9 @@ test("Whole Skill callouts and Descriptor benefit blocks must exist in the linke
 test("Chapter/page identities and every native link resolve to stable canonical destinations", () => {
   const { documents } = buildCreationChapters(paragraphs, records);
   const targets = new Set(records.filter(row => row.logicalId).map(row => `Compendium.cypher.${row.pack}.${row.document.document === "JournalEntry" ? "JournalEntry" : "Item"}.${proposedFoundryId(row.logicalId)}`));
+  for (const row of records.filter(row => row.logicalId?.startsWith("journal.crd-"))) {
+    for (const page of row.document.pages ?? []) targets.add(`Compendium.cypher.${row.pack}.JournalEntry.${proposedFoundryId(row.logicalId)}.JournalEntryPage.${page._id}`);
+  }
   // Legacy standard Descriptor IDs come from the existing canonical filename contract.
   for (const row of records.filter(row => /^packs\/descriptors-en\/_source\/standard\//.test(row.file))) targets.add(`Compendium.cypher.descriptors-en.Item.${proposedFoundryId(`descriptor.${path.basename(row.file, ".json")}`)}`);
   for (const doc of documents) {

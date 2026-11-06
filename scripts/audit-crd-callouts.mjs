@@ -19,9 +19,9 @@ const DEFAULT_OUTPUT = "reports/crd-callout-coverage.json";
 
 /** Avoid treating short names or common fragments as evidence for whole boxes. */
 export function locateCallout(candidate, authoredFields, sourceContracts = []) {
+  const target = plainText(candidate.text);
   const exact = authoredFields.filter(item => {
-    const content = plainText(item.text);
-    const target = plainText(candidate.text);
+    const content = item.normalizedText ?? plainText(item.text);
     return target.length >= 24 && content.includes(target);
   }).slice(0, 8).map(({ file, field, logicalId }) => ({ file, field, logicalId }));
   const bounded = sourceContracts.filter(item => {
@@ -89,7 +89,9 @@ function sourceFields(records) {
     .flatMap(record => [...translationFields(record.document)]
       .filter(([, value]) => typeof value === "string" && value.trim())
       .map(([field, text]) => ({
-        file: record.file, logicalId: record.logicalId, field, text
+        // Full chapter pages are large. Normalize this immutable audit snapshot
+        // once, rather than reparsing every page for every callout candidate.
+        file: record.file, logicalId: record.logicalId, field, text, normalizedText: plainText(text)
       })));
 }
 
